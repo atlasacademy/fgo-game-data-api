@@ -1,6 +1,6 @@
 List of environment variables required for the main app:
-- `NA_GAMEDATA`
-- `JP_GAMEDATA`
+- `NA_GAMEDATA`: path to NA gamedata's master folder
+- `JP_GAMEDATA`: path to JP gamedata's master folder
 
 Run `uvicorn main:app --reload` to start.
 
