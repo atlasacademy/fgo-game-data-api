@@ -29,16 +29,17 @@ logger = logging.getLogger()
 settings = Settings()
 
 masters: Dict[str, Dict[str, Any]] = {}
-MASTER_WITH_ID = ["mstSvt", "mstBuff", "mstFunc", "mstSkill"]
+MASTER_WITH_ID = ["mstSvt", "mstBuff", "mstFunc", "mstSkill", "mstTreasureDevice"]
 # MASTER_WITHOUT_ID = ["mstSkillLv", "mstSvtSkill", "mstSkillDetail"]
 SKILL_STUFFS = ["mstSkillDetail", "mstSvtSkill", "mstSkillLv"]
+TD_STUFFS = ["mstTreasureDeviceDetail", "mstSvtTreasureDevice", "mstTreasureDeviceLv"]
 region_path = [(Region.NA, settings.na_gamedata), (Region.JP, settings.jp_gamedata)]
 
 start_loading_time = time.time()
 for region_name, gamedata in region_path:
     masters[region_name] = {}
     gamedata_path = Path(gamedata).resolve()
-    for entity in MASTER_WITH_ID + SKILL_STUFFS:
+    for entity in MASTER_WITH_ID + SKILL_STUFFS + TD_STUFFS:
         with open(gamedata_path / f"{entity}.json", "r", encoding="utf-8") as fp:
             masters[region_name][entity] = json.load(fp)
     for entity in MASTER_WITH_ID:
@@ -60,17 +61,22 @@ for region_name, gamedata in region_path:
         for item in masters[region_name]["mstSvt"]
         if utils.is_equip(item["type"])
     }
-    for skill_stuff in SKILL_STUFFS:
-        masters[region_name][f"{skill_stuff}Id"] = {}
-        for item in masters[region_name][skill_stuff]:
-            if skill_stuff == "mstSkillDetail":
-                id_name = "id"
-            else:
-                id_name = "skillId"
-            if item[id_name] in masters[region_name][f"{skill_stuff}Id"]:
-                masters[region_name][f"{skill_stuff}Id"][item[id_name]].append(item)
-            else:
-                masters[region_name][f"{skill_stuff}Id"][item[id_name]] = [item]
+    for extra_list in [SKILL_STUFFS, TD_STUFFS]:
+        for extra_stuff in extra_list:
+            masters[region_name][f"{extra_stuff}Id"] = {}
+            for item in masters[region_name][extra_stuff]:
+                if "Detail" in extra_stuff:
+                    id_name = "id"
+                elif "Skill" in extra_stuff:
+                    id_name = "skillId"
+                elif extra_stuff == "mstTreasureDeviceLv":
+                    id_name = "treaureDeviceId"
+                elif extra_stuff == "mstSvtTreasureDevice":
+                    id_name = "treasureDeviceId"
+                if item[id_name] in masters[region_name][f"{extra_stuff}Id"]:
+                    masters[region_name][f"{extra_stuff}Id"][item[id_name]].append(item)
+                else:
+                    masters[region_name][f"{extra_stuff}Id"][item[id_name]] = [item]
 
 data_loading_time = time.time() - start_loading_time
 logger.info(f"Loaded the game data in {data_loading_time:.4f} seconds.")
@@ -124,6 +130,20 @@ def get_skill_entity(region: Region, skill_id: int, reverse: bool = False) -> An
             get_servant_entity(region, item_id) for item_id in reverseServantIds
         ]
     return skill_entity
+
+
+def get_td_entity(region: Region, td_id: int, reverse: bool = False) -> Any:
+    td_entity = {"mstTreasureDevice": masters[region]["mstTreasureDeviceId"][td_id]}
+    for td_extra in TD_STUFFS:
+        td_entity[td_extra] = masters[region][f"{td_extra}Id"].get(td_id, [])
+    if reverse:
+        reverseServantIds = [
+            item["svtId"] for item in td_entity["mstSvtTreasureDevice"]
+        ]
+        td_entity["reverseServants"] = [
+            get_servant_entity(region, item_id) for item_id in reverseServantIds
+        ]
+    return td_entity
 
 
 def get_servant_entity(region: Region, servant_id: int) -> Any:
@@ -194,6 +214,14 @@ async def get_skill(region: Region, item_id: int, reverse: bool = False):
         return get_skill_entity(region, item_id, reverse)
     else:
         raise HTTPException(status_code=404, detail="Skill not found")
+
+
+@app.get("/{region}/NP/{item_id}")
+async def get_td(region: Region, item_id: int, reverse: bool = False):
+    if item_id in masters[region]["mstTreasureDeviceId"]:
+        return get_td_entity(region, item_id, reverse)
+    else:
+        raise HTTPException(status_code=404, detail="NP not found")
 
 
 @app.get("/{region}/function/{item_id}")
