@@ -46,16 +46,17 @@ for region_name, gamedata in region_path:
             item["id"]: item for item in masters[region_name][entity]
         }
     masters[region_name]["mstSvtServantCollectionNo"] = {
-        item["collectionNo"]: item
+        item["collectionNo"]: item["id"]
         for item in masters[region_name]["mstSvt"]
         if utils.is_servant(item["type"])
     }
     masters[region_name]["mstSvtServantName"] = {
-        item["name"]: item
-        for item in masters[region_name]["mstSvtServantCollectionNo"].values()
+        item["name"]: item["id"]
+        for item in masters[region_name]["mstSvt"]
+        if utils.is_servant(item["type"])
     }
     masters[region_name]["mstSvtEquipCollectionNo"] = {
-        item["collectionNo"]: item
+        item["collectionNo"]: item["id"]
         for item in masters[region_name]["mstSvt"]
         if utils.is_equip(item["type"])
     }
@@ -146,8 +147,8 @@ async def add_process_time_header(request: Request, call_next):
 @app.get("/{region}/servant/{item_id}")
 async def get_servant(region: Region, item_id: int):
     if item_id in masters[region]["mstSvtServantCollectionNo"]:
-        return masters[region]["mstSvtServantCollectionNo"][item_id]
-    elif item_id in masters[region]["mstSvtId"]:
+        item_id = masters[region]["mstSvtServantCollectionNo"][item_id]
+    if item_id in masters[region]["mstSvtId"]:
         return get_servant_entity(region, item_id)
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
@@ -168,7 +169,10 @@ async def find_servant(region: Region, name: Optional[str] = None):
             if found[1] > 85
         ]
         if len(items_found) >= 1:
-            items_found = sorted(items_found, key=lambda x: x["collectionNo"])
+            items_found = [
+                get_servant_entity(region, item_id) for item_id in items_found
+            ]
+            items_found = sorted(items_found, key=lambda x: x["mstSvt"]["collectionNo"])
             return items_found[0]
         else:
             raise HTTPException(status_code=404, detail="Servant not found")
@@ -177,8 +181,8 @@ async def find_servant(region: Region, name: Optional[str] = None):
 @app.get("/{region}/equip/{item_id}")
 async def get_equip(region: Region, item_id: int):
     if item_id in masters[region]["mstSvtEquipCollectionNo"]:
-        return masters[region]["mstSvtEquipCollectionNo"][item_id]
-    elif item_id in masters[region]["mstSvtId"]:
+        item_id = masters[region]["mstSvtEquipCollectionNo"][item_id]
+    if item_id in masters[region]["mstSvtId"]:
         return get_servant_entity(region, item_id)
     else:
         raise HTTPException(status_code=404, detail="Equip not found")
