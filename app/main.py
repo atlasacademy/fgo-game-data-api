@@ -107,31 +107,48 @@ def get_buff_entity(region: Region, buff_id: int, reverse: bool = False) -> Any:
     return buff_entity
 
 
-def get_func_entity(region: Region, func_id: int, reverse: bool = False) -> Any:
-    func_entity = {"mstFunc": masters[region]["mstFuncId"][func_id]}
+def get_func_entity(
+    region: Region, func_id: int, reverse: bool = False, expand: bool = False
+) -> Any:
+    func_entity = {"mstFunc": masters[region]["mstFuncId"][func_id].copy()}
     if reverse:
         reverseSkillIds = func_to_skillId(region, func_id)
         func_entity["reverseSkills"] = [
             get_skill_entity(region, item_id, reverse) for item_id in reverseSkillIds
         ]
+    if expand:
+        expandedBuff = []
+        for buff_id in func_entity["mstFunc"]["vals"]:
+            expandedBuff.append(get_buff_entity(region, buff_id, False))
+        func_entity["mstFunc"]["vals"] = expandedBuff
     return func_entity
 
 
-def get_skill_entity(region: Region, skill_id: int, reverse: bool = False) -> Any:
+def get_skill_entity(
+    region: Region, skill_id: int, reverse: bool = False, expand: bool = False
+) -> Any:
     skill_entity = {"mstSkill": masters[region]["mstSkillId"][skill_id]}
     for skill_extra in SKILL_STUFFS:
-        skill_entity[skill_extra] = masters[region][f"{skill_extra}Id"].get(
-            skill_id, []
+        skill_entity[skill_extra] = (
+            masters[region][f"{skill_extra}Id"].get(skill_id, []).copy()
         )
     if reverse:
         reverseServantIds = {item["svtId"] for item in skill_entity["mstSvtSkill"]}
         skill_entity["reverseServants"] = [
             get_servant_entity(region, item_id) for item_id in reverseServantIds
         ]
+    if expand:
+        for skillLv in skill_entity["mstSkillLv"]:
+            expandedFunc = []
+            for func_id in skillLv["funcId"]:
+                expandedFunc.append(get_func_entity(region, func_id, False, expand))
+            skillLv["funcId"] = expandedFunc
     return skill_entity
 
 
-def get_td_entity(region: Region, td_id: int, reverse: bool = False) -> Any:
+def get_td_entity(
+    region: Region, td_id: int, reverse: bool = False, expand: bool = False
+) -> Any:
     td_entity = {"mstTreasureDevice": masters[region]["mstTreasureDeviceId"][td_id]}
     for td_extra in TD_STUFFS:
         td_entity[td_extra] = masters[region][f"{td_extra}Id"].get(td_id, [])
@@ -142,6 +159,12 @@ def get_td_entity(region: Region, td_id: int, reverse: bool = False) -> Any:
         td_entity["reverseServants"] = [
             get_servant_entity(region, item_id) for item_id in reverseServantIds
         ]
+    if expand:
+        for tdLv in td_entity["mstTreasureDeviceLv"]:
+            expandedFunc = []
+            for func_id in tdLv["funcId"]:
+                expandedFunc.append(get_func_entity(region, func_id, False, expand))
+            tdLv["funcId"] = expandedFunc
     return td_entity
 
 
@@ -224,25 +247,31 @@ async def get_equip(region: Region, item_id: int):
 
 
 @app.get("/{region}/skill/{item_id}")
-async def get_skill(region: Region, item_id: int, reverse: bool = False):
+async def get_skill(
+    region: Region, item_id: int, reverse: bool = False, expand: bool = False
+):
     if item_id in masters[region]["mstSkillId"]:
-        return get_skill_entity(region, item_id, reverse)
+        return get_skill_entity(region, item_id, reverse, expand)
     else:
         raise HTTPException(status_code=404, detail="Skill not found")
 
 
 @app.get("/{region}/NP/{item_id}")
-async def get_td(region: Region, item_id: int, reverse: bool = False):
+async def get_td(
+    region: Region, item_id: int, reverse: bool = False, expand: bool = False
+):
     if item_id in masters[region]["mstTreasureDeviceId"]:
-        return get_td_entity(region, item_id, reverse)
+        return get_td_entity(region, item_id, reverse, expand)
     else:
         raise HTTPException(status_code=404, detail="NP not found")
 
 
 @app.get("/{region}/function/{item_id}")
-async def get_function(region: Region, item_id: int, reverse: bool = False):
+async def get_function(
+    region: Region, item_id: int, reverse: bool = False, expand: bool = False
+):
     if item_id in masters[region]["mstFuncId"]:
-        return get_func_entity(region, item_id, reverse)
+        return get_func_entity(region, item_id, reverse, expand)
     else:
         raise HTTPException(status_code=404, detail="Function not found")
 
