@@ -3,7 +3,7 @@ import logging
 import time
 from enum import Enum
 from pathlib import Path
-from typing import Any, Dict, Optional, Sequence
+from typing import Any, Dict, Optional, Set
 
 from fastapi import FastAPI, HTTPException, Request
 from fuzzywuzzy import fuzz, process
@@ -82,30 +82,28 @@ data_loading_time = time.time() - start_loading_time
 logger.info(f"Loaded the game data in {data_loading_time:.4f} seconds.")
 
 
-def buff_to_func(region: Region, buff_id: int) -> Sequence[int]:
-    return [
+def buff_to_func(region: Region, buff_id: int) -> Set[int]:
+    return {
         item["id"] for item in masters[region]["mstFunc"] if buff_id in item["vals"]
-    ]
+    }
 
 
-def func_to_skillId(region: Region, func_id: int) -> Sequence[int]:
-    return list(
-        {
-            item["skillId"]
-            for item in masters[region]["mstSkillLv"]
-            if func_id in item["funcId"]
-        }
-    )
+def func_to_skillId(region: Region, func_id: int) -> Set[int]:
+    return {
+        item["skillId"]
+        for item in masters[region]["mstSkillLv"]
+        if func_id in item["funcId"]
+    }
 
 
 def get_buff_entity(region: Region, buff_id: int, reverse: bool = False) -> Any:
-    buff_item = {"mstBuff": masters[region]["mstBuffId"][buff_id]}
+    buff_entity = {"mstBuff": masters[region]["mstBuffId"][buff_id]}
     if reverse:
         reverseFunctions = buff_to_func(region, buff_id)
-        buff_item["reverseFunctions"] = [
+        buff_entity["reverseFunctions"] = [
             get_func_entity(region, item_id, reverse) for item_id in reverseFunctions
         ]
-    return buff_item
+    return buff_entity
 
 
 def get_func_entity(region: Region, func_id: int, reverse: bool = False) -> Any:
@@ -125,7 +123,7 @@ def get_skill_entity(region: Region, skill_id: int, reverse: bool = False) -> An
             skill_id, []
         )
     if reverse:
-        reverseServantIds = [item["svtId"] for item in skill_entity["mstSvtSkill"]]
+        reverseServantIds = {item["svtId"] for item in skill_entity["mstSvtSkill"]}
         skill_entity["reverseServants"] = [
             get_servant_entity(region, item_id) for item_id in reverseServantIds
         ]
@@ -137,9 +135,9 @@ def get_td_entity(region: Region, td_id: int, reverse: bool = False) -> Any:
     for td_extra in TD_STUFFS:
         td_entity[td_extra] = masters[region][f"{td_extra}Id"].get(td_id, [])
     if reverse:
-        reverseServantIds = [
+        reverseServantIds = {
             item["svtId"] for item in td_entity["mstSvtTreasureDevice"]
-        ]
+        }
         td_entity["reverseServants"] = [
             get_servant_entity(region, item_id) for item_id in reverseServantIds
         ]
