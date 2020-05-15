@@ -92,7 +92,7 @@ def func_to_skillId(region: Region, func_id: int) -> Sequence[int]:
 
 
 def get_buff_entity(region: Region, buff_id: int, reverse: bool = False) -> Any:
-    buff_item = masters[region]["mstBuffId"][buff_id].copy()
+    buff_item = {"mstBuff": masters[region]["mstBuffId"][buff_id]}
     if reverse:
         reverseFunctions = buff_to_func(region, buff_id)
         buff_item["reverseFunctions"] = [
@@ -102,7 +102,7 @@ def get_buff_entity(region: Region, buff_id: int, reverse: bool = False) -> Any:
 
 
 def get_func_entity(region: Region, func_id: int, reverse: bool = False) -> Any:
-    func_entity = masters[region]["mstFuncId"][func_id].copy()
+    func_entity = {"mstFunc": masters[region]["mstFuncId"][func_id]}
     if reverse:
         reverseSkillIds = func_to_skillId(region, func_id)
         func_entity["reverseSkills"] = [
@@ -112,7 +112,7 @@ def get_func_entity(region: Region, func_id: int, reverse: bool = False) -> Any:
 
 
 def get_skill_entity(region: Region, skill_id: int, reverse: bool = False) -> Any:
-    skill_entity = masters[region]["mstSkillId"][skill_id].copy()
+    skill_entity = {"mstSkill": masters[region]["mstSkillId"][skill_id]}
     for skill_extra in SKILL_STUFFS:
         skill_entity[skill_extra] = masters[region][f"{skill_extra}Id"].get(
             skill_id, []
@@ -126,7 +126,7 @@ def get_skill_entity(region: Region, skill_id: int, reverse: bool = False) -> An
 
 
 def get_servant_entity(region: Region, servant_id: int) -> Any:
-    servant_entity = masters[region]["mstSvtId"][servant_id].copy()
+    servant_entity = {"mstSvt": masters[region]["mstSvtId"][servant_id])}
     return servant_entity
 
 
