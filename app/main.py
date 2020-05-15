@@ -138,9 +138,9 @@ app = FastAPI()
 async def add_process_time_header(request: Request, call_next):
     start_time = time.time()
     response = await call_next(request)
-    process_time = time.time() - start_time
+    process_time = int((time.time() - start_time) * 1000)
     response.headers["X-Process-Time"] = str(process_time)
-    logger.info(f"Processed in {process_time:.4f} seconds.")
+    logger.info(f"Processed in {process_time}ms.")
     return response
 
 
