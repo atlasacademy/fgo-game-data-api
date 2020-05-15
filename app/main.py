@@ -127,7 +127,7 @@ def get_skill_entity(region: Region, skill_id: int, reverse: bool = False) -> An
 
 
 def get_servant_entity(region: Region, servant_id: int) -> Any:
-    servant_entity = {"mstSvt": masters[region]["mstSvtId"][servant_id])}
+    servant_entity = {"mstSvt": masters[region]["mstSvtId"][servant_id]}
     return servant_entity
 
 
