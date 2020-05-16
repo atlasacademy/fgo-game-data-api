@@ -202,8 +202,19 @@ async def add_process_time_header(request: Request, call_next):
     return response
 
 
-@app.get("/{region}/servant/{item_id}")
+@app.get(
+    "/raw/{region}/servant/{item_id}",
+    tags=["raw"],
+    summary="Get servant data",
+    response_description="Servant Entity",
+)
 async def get_servant(region: Region, item_id: int):
+    """
+    Get servant info from ID
+
+    If the given ID is a servants's collectionNo, the corresponding servant data is returned.
+    Otherwise, it will look up the actual ID field. As a result, it can return not servant data.
+    """
     if item_id in masters[region]["mstSvtServantCollectionNo"]:
         item_id = masters[region]["mstSvtServantCollectionNo"][item_id]
     if item_id in masters[region]["mstSvtId"]:
@@ -212,8 +223,20 @@ async def get_servant(region: Region, item_id: int):
         raise HTTPException(status_code=404, detail="Servant not found")
 
 
-@app.get("/{region}/servant/")
-async def find_servant(region: Region, name: Optional[str] = None):
+@app.get(
+    "/raw/{region}/servant/",
+    tags=["raw"],
+    summary="Find and get servant data",
+    response_description="Servant Entity",
+)
+async def find_servant(
+    region: Region, name: Optional[str] = None,
+):
+    """
+    Get servant info from ID
+
+    Search the servants' names list for the given name and return the best match.
+    """
     if name:
         servant_found = process.extract(
             name,
@@ -236,8 +259,19 @@ async def find_servant(region: Region, name: Optional[str] = None):
             raise HTTPException(status_code=404, detail="Servant not found")
 
 
-@app.get("/{region}/equip/{item_id}")
+@app.get(
+    "/raw/{region}/equip/{item_id}",
+    tags=["raw"],
+    summary="Get CE data",
+    response_description="CE entity",
+)
 async def get_equip(region: Region, item_id: int):
+    """
+    Get CE info from ID
+
+    If the given ID is a CE's collectionNo, the corresponding CE data is returned.
+    Otherwise, it will look up the actual ID field. As a result, it can return not CE data.
+    """
     if item_id in masters[region]["mstSvtEquipCollectionNo"]:
         item_id = masters[region]["mstSvtEquipCollectionNo"][item_id]
     if item_id in masters[region]["mstSvtId"]:
@@ -246,38 +280,81 @@ async def get_equip(region: Region, item_id: int):
         raise HTTPException(status_code=404, detail="Equip not found")
 
 
-@app.get("/{region}/skill/{item_id}")
+@app.get(
+    "/raw/{region}/skill/{item_id}",
+    tags=["raw"],
+    summary="Get skill data",
+    response_description="Skill entity",
+)
 async def get_skill(
     region: Region, item_id: int, reverse: bool = False, expand: bool = False
 ):
+    """
+    Get the skill data from the given ID
+
+    - **reverse**: Reverse lookup the servants that have this skill and return the reverse skill objects
+    - **expand**: Replace function IDs in mstSkillLv.funcId with actual expanded function objects
+    """
     if item_id in masters[region]["mstSkillId"]:
         return get_skill_entity(region, item_id, reverse, expand)
     else:
         raise HTTPException(status_code=404, detail="Skill not found")
 
 
-@app.get("/{region}/NP/{item_id}")
+@app.get(
+    "/raw/{region}/NP/{item_id}",
+    tags=["raw"],
+    summary="Get NP data",
+    response_description="NP entity",
+)
 async def get_td(
     region: Region, item_id: int, reverse: bool = False, expand: bool = False
 ):
+    """
+    Get the NP data from the given ID
+
+    - **reverse**: Reverse lookup the servants that have this NP and return the reverse servant objects
+    - **expand**: Replace function IDs in mstTreasureDeviceLv.funcId with actual expanded function objects
+    """
     if item_id in masters[region]["mstTreasureDeviceId"]:
         return get_td_entity(region, item_id, reverse, expand)
     else:
         raise HTTPException(status_code=404, detail="NP not found")
 
 
-@app.get("/{region}/function/{item_id}")
+@app.get(
+    "/raw/{region}/function/{item_id}",
+    tags=["raw"],
+    summary="Get function data",
+    response_description="Function entity",
+)
 async def get_function(
     region: Region, item_id: int, reverse: bool = False, expand: bool = False
 ):
+    """
+    Get the function data from the given ID
+
+    - **reverse**: Reverse lookup the skills that have this function and return the reversed skill objects
+    - **expand**: Replace buff IDs in mstFunc.vals with actual expanded buff objects
+    """
     if item_id in masters[region]["mstFuncId"]:
         return get_func_entity(region, item_id, reverse, expand)
     else:
         raise HTTPException(status_code=404, detail="Function not found")
 
 
-@app.get("/{region}/buff/{item_id}")
+@app.get(
+    "/raw/{region}/buff/{item_id}",
+    tags=["raw"],
+    summary="Get buff data",
+    response_description="Buff entity",
+)
 async def get_buff(region: Region, item_id: int, reverse: bool = False):
+    """
+    Get the buff data from the given ID
+
+    - **reverse**: Reverse lookup the functions that have this buff and return the reversed function objects
+    """
     if item_id in masters[region]["mstBuffId"]:
         return get_buff_entity(region, item_id, reverse)
     else:
