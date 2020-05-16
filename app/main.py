@@ -10,6 +10,7 @@ from fuzzywuzzy import fuzz, process
 from pydantic import BaseSettings
 
 import utils
+from models import ServantEntity, SkillEntity, TdEntity, FunctionEntity, BuffEntity
 
 
 class Region(str, Enum):
@@ -120,7 +121,7 @@ def get_func_entity(
         expandedBuff = []
         for buff_id in func_entity["mstFunc"]["vals"]:
             expandedBuff.append(get_buff_entity(region, buff_id, False))
-        func_entity["mstFunc"]["vals"] = expandedBuff
+        func_entity["mstFunc"]["expandedVals"] = expandedBuff
     return func_entity
 
 
@@ -142,7 +143,7 @@ def get_skill_entity(
             expandedFunc = []
             for func_id in skillLv["funcId"]:
                 expandedFunc.append(get_func_entity(region, func_id, False, expand))
-            skillLv["funcId"] = expandedFunc
+            skillLv["expandedFuncId"] = expandedFunc
     return skill_entity
 
 
@@ -164,7 +165,7 @@ def get_td_entity(
             expandedFunc = []
             for func_id in tdLv["funcId"]:
                 expandedFunc.append(get_func_entity(region, func_id, False, expand))
-            tdLv["funcId"] = expandedFunc
+            tdLv["expandedFuncId"] = expandedFunc
     return td_entity
 
 
@@ -211,6 +212,8 @@ async def add_process_time_header(request: Request, call_next):
     tags=["raw"],
     summary="Get servant data",
     response_description="Servant Entity",
+    response_model=ServantEntity,
+    response_model_exclude_unset=True
 )
 async def get_servant(region: Region, item_id: int):
     """
@@ -232,6 +235,8 @@ async def get_servant(region: Region, item_id: int):
     tags=["raw"],
     summary="Find and get servant data",
     response_description="Servant Entity",
+    response_model=ServantEntity,
+    response_model_exclude_unset=True
 )
 async def find_servant(
     region: Region, name: Optional[str] = None,
@@ -268,6 +273,8 @@ async def find_servant(
     tags=["raw"],
     summary="Get CE data",
     response_description="CE entity",
+    response_model=ServantEntity,
+    response_model_exclude_unset=True
 )
 async def get_equip(region: Region, item_id: int):
     """
@@ -289,6 +296,8 @@ async def get_equip(region: Region, item_id: int):
     tags=["raw"],
     summary="Get skill data",
     response_description="Skill entity",
+    response_model=SkillEntity,
+    response_model_exclude_unset=True
 )
 async def get_skill(
     region: Region, item_id: int, reverse: bool = False, expand: bool = False
@@ -310,6 +319,8 @@ async def get_skill(
     tags=["raw"],
     summary="Get NP data",
     response_description="NP entity",
+    response_model=TdEntity,
+    response_model_exclude_unset=True
 )
 async def get_td(
     region: Region, item_id: int, reverse: bool = False, expand: bool = False
@@ -331,6 +342,8 @@ async def get_td(
     tags=["raw"],
     summary="Get function data",
     response_description="Function entity",
+    response_model=FunctionEntity,
+    response_model_exclude_unset=True
 )
 async def get_function(
     region: Region, item_id: int, reverse: bool = False, expand: bool = False
@@ -352,6 +365,8 @@ async def get_function(
     tags=["raw"],
     summary="Get buff data",
     response_description="Buff entity",
+    response_model=BuffEntity,
+    response_model_exclude_unset=True
 )
 async def get_buff(region: Region, item_id: int, reverse: bool = False):
     """
