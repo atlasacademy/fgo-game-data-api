@@ -1,6 +1,7 @@
 import json
 import logging
 import time
+from copy import deepcopy
 from enum import Enum
 from pathlib import Path
 from typing import Any, Dict, Optional, Set
@@ -10,7 +11,8 @@ from fuzzywuzzy import fuzz, process
 from pydantic import BaseSettings
 
 import utils
-from models import ServantEntity, SkillEntity, TdEntity, FunctionEntity, BuffEntity
+from models import (BuffEntity, FunctionEntity, ServantEntity, SkillEntity,
+                    TdEntity)
 
 
 class Region(str, Enum):
@@ -130,8 +132,8 @@ def get_skill_entity(
 ) -> Any:
     skill_entity = {"mstSkill": masters[region]["mstSkillId"][skill_id]}
     for skill_extra in SKILL_STUFFS:
-        skill_entity[skill_extra] = (
-            masters[region][f"{skill_extra}Id"].get(skill_id, []).copy()
+        skill_entity[skill_extra] = deepcopy(
+            masters[region][f"{skill_extra}Id"].get(skill_id, [])
         )
     if reverse:
         reverseServantIds = {item["svtId"] for item in skill_entity["mstSvtSkill"]}
@@ -152,7 +154,7 @@ def get_td_entity(
 ) -> Any:
     td_entity = {"mstTreasureDevice": masters[region]["mstTreasureDeviceId"][td_id]}
     for td_extra in TD_STUFFS:
-        td_entity[td_extra] = masters[region][f"{td_extra}Id"].get(td_id, [])
+        td_entity[td_extra] = deepcopy(masters[region][f"{td_extra}Id"].get(td_id, []))
     if reverse:
         reverseServantIds = {
             item["svtId"] for item in td_entity["mstSvtTreasureDevice"]
@@ -170,7 +172,7 @@ def get_td_entity(
 
 
 def get_servant_entity(region: Region, servant_id: int, expand: bool = False) -> Any:
-    svt_entity = {"mstSvt": masters[region]["mstSvtId"][servant_id]}
+    svt_entity = {"mstSvt": deepcopy(masters[region]["mstSvtId"][servant_id])}
     skills = [
         item["skillId"]
         for item in masters[region]["mstSvtSkill"]
@@ -189,7 +191,7 @@ def get_servant_entity(region: Region, servant_id: int, expand: bool = False) ->
     ]
     for svt_extra in SVT_STUFFS:
         svt_entity[svt_extra] = (
-            masters[region][f"{svt_extra}Id"].get(servant_id, []).copy()
+            masters[region][f"{svt_extra}Id"].get(servant_id, [])
         )
     if expand:
         expandedPassive = []
