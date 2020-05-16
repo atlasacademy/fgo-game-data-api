@@ -11,8 +11,7 @@ from fuzzywuzzy import fuzz, process
 from pydantic import BaseSettings
 
 import utils
-from models import (BuffEntity, FunctionEntity, ServantEntity, SkillEntity,
-                    TdEntity)
+from models import BuffEntity, FunctionEntity, ServantEntity, SkillEntity, TdEntity
 
 
 class Region(str, Enum):
@@ -113,13 +112,14 @@ def get_buff_entity(region: Region, buff_id: int, reverse: bool = False) -> Any:
 def get_func_entity(
     region: Region, func_id: int, reverse: bool = False, expand: bool = False
 ) -> Any:
-    func_entity = {"mstFunc": masters[region]["mstFuncId"][func_id].copy()}
+    func_entity = {"mstFunc": masters[region]["mstFuncId"][func_id]}
     if reverse:
         reverseSkillIds = func_to_skillId(region, func_id)
         func_entity["reverseSkills"] = [
             get_skill_entity(region, item_id, reverse) for item_id in reverseSkillIds
         ]
     if expand:
+        func_entity["mstFunc"] = deepcopy(func_entity["mstFunc"])
         expandedBuff = []
         for buff_id in func_entity["mstFunc"]["vals"]:
             expandedBuff.append(get_buff_entity(region, buff_id, False))
@@ -132,8 +132,8 @@ def get_skill_entity(
 ) -> Any:
     skill_entity = {"mstSkill": masters[region]["mstSkillId"][skill_id]}
     for skill_extra in SKILL_STUFFS:
-        skill_entity[skill_extra] = deepcopy(
-            masters[region][f"{skill_extra}Id"].get(skill_id, [])
+        skill_entity[skill_extra] = masters[region][f"{skill_extra}Id"].get(
+            skill_id, []
         )
     if reverse:
         reverseServantIds = {item["svtId"] for item in skill_entity["mstSvtSkill"]}
@@ -141,6 +141,7 @@ def get_skill_entity(
             get_servant_entity(region, item_id) for item_id in reverseServantIds
         ]
     if expand:
+        skill_entity["mstSkillLv"] = deepcopy(skill_entity["mstSkillLv"])
         for skillLv in skill_entity["mstSkillLv"]:
             expandedFunc = []
             for func_id in skillLv["funcId"]:
@@ -154,7 +155,7 @@ def get_td_entity(
 ) -> Any:
     td_entity = {"mstTreasureDevice": masters[region]["mstTreasureDeviceId"][td_id]}
     for td_extra in TD_STUFFS:
-        td_entity[td_extra] = deepcopy(masters[region][f"{td_extra}Id"].get(td_id, []))
+        td_entity[td_extra] = masters[region][f"{td_extra}Id"].get(td_id, [])
     if reverse:
         reverseServantIds = {
             item["svtId"] for item in td_entity["mstSvtTreasureDevice"]
@@ -163,6 +164,7 @@ def get_td_entity(
             get_servant_entity(region, item_id) for item_id in reverseServantIds
         ]
     if expand:
+        td_entity["mstTreasureDeviceLv"] = deepcopy(td_entity["mstTreasureDeviceLv"])
         for tdLv in td_entity["mstTreasureDeviceLv"]:
             expandedFunc = []
             for func_id in tdLv["funcId"]:
@@ -172,7 +174,7 @@ def get_td_entity(
 
 
 def get_servant_entity(region: Region, servant_id: int, expand: bool = False) -> Any:
-    svt_entity = {"mstSvt": deepcopy(masters[region]["mstSvtId"][servant_id])}
+    svt_entity = {"mstSvt": masters[region]["mstSvtId"][servant_id]}
     skills = [
         item["skillId"]
         for item in masters[region]["mstSvtSkill"]
@@ -190,10 +192,9 @@ def get_servant_entity(region: Region, servant_id: int, expand: bool = False) ->
         get_td_entity(region, td, False, expand) for td in NPs
     ]
     for svt_extra in SVT_STUFFS:
-        svt_entity[svt_extra] = (
-            masters[region][f"{svt_extra}Id"].get(servant_id, [])
-        )
+        svt_entity[svt_extra] = masters[region][f"{svt_extra}Id"].get(servant_id, [])
     if expand:
+        svt_entity["mstSvt"] = deepcopy(svt_entity["mstSvt"])
         expandedPassive = []
         for passiveSkill in svt_entity["mstSvt"]["classPassive"]:
             expandedPassive.append(
