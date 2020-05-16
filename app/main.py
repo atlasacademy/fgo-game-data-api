@@ -169,24 +169,35 @@ def get_td_entity(
     return td_entity
 
 
-def get_servant_entity(region: Region, servant_id: int) -> Any:
+def get_servant_entity(region: Region, servant_id: int, expand: bool = False) -> Any:
     svt_entity = {"mstSvt": masters[region]["mstSvtId"][servant_id]}
     skills = [
         item["skillId"]
         for item in masters[region]["mstSvtSkill"]
         if item["svtId"] == servant_id
     ]
-    svt_entity["mstSkill"] = [get_skill_entity(region, skill) for skill in skills]
+    svt_entity["mstSkill"] = [
+        get_skill_entity(region, skill, False, expand) for skill in skills
+    ]
     NPs = [
         item["treasureDeviceId"]
         for item in masters[region]["mstSvtTreasureDevice"]
         if item["svtId"] == servant_id
     ]
-    svt_entity["mstTreasureDevice"] = [get_td_entity(region, td) for td in NPs]
+    svt_entity["mstTreasureDevice"] = [
+        get_td_entity(region, td, False, expand) for td in NPs
+    ]
     for svt_extra in SVT_STUFFS:
         svt_entity[svt_extra] = (
             masters[region][f"{svt_extra}Id"].get(servant_id, []).copy()
         )
+    if expand:
+        expandedPassive = []
+        for passiveSkill in svt_entity["mstSvt"]["classPassive"]:
+            expandedPassive.append(
+                get_skill_entity(region, passiveSkill, False, expand)
+            )
+        svt_entity["mstSvt"]["expandedClassPassive"] = expandedPassive
     return svt_entity
 
 
@@ -213,19 +224,23 @@ async def add_process_time_header(request: Request, call_next):
     summary="Get servant data",
     response_description="Servant Entity",
     response_model=ServantEntity,
-    response_model_exclude_unset=True
+    response_model_exclude_unset=True,
 )
-async def get_servant(region: Region, item_id: int):
+async def get_servant(region: Region, item_id: int, expand: bool = False):
     """
     Get servant info from ID
 
     If the given ID is a servants's collectionNo, the corresponding servant data is returned.
     Otherwise, it will look up the actual ID field. As a result, it can return not servant data.
+
+    - **expand**: Add expanded skill objects to mstSvt.expandedClassPassive
+    from the skill IDs in mstSvt.classPassive.
+    Expand all other skills and functions as well.
     """
     if item_id in masters[region]["mstSvtServantCollectionNo"]:
         item_id = masters[region]["mstSvtServantCollectionNo"][item_id]
     if item_id in masters[region]["mstSvtId"]:
-        return get_servant_entity(region, item_id)
+        return get_servant_entity(region, item_id, expand)
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
 
@@ -236,15 +251,19 @@ async def get_servant(region: Region, item_id: int):
     summary="Find and get servant data",
     response_description="Servant Entity",
     response_model=ServantEntity,
-    response_model_exclude_unset=True
+    response_model_exclude_unset=True,
 )
 async def find_servant(
-    region: Region, name: Optional[str] = None,
+    region: Region, name: Optional[str] = None, expand: bool = False
 ):
     """
     Get servant info from ID
 
     Search the servants' names list for the given name and return the best match.
+
+    - **expand**: Add expanded skill objects to mstSvt.expandedClassPassive
+    from the skill IDs in mstSvt.classPassive.
+    Expand all other skills and functions as well.
     """
     if name:
         servant_found = process.extract(
@@ -260,7 +279,7 @@ async def find_servant(
         ]
         if len(items_found) >= 1:
             items_found = [
-                get_servant_entity(region, item_id) for item_id in items_found
+                get_servant_entity(region, item_id, expand) for item_id in items_found
             ]
             items_found = sorted(items_found, key=lambda x: x["mstSvt"]["collectionNo"])
             return items_found[0]
@@ -274,19 +293,23 @@ async def find_servant(
     summary="Get CE data",
     response_description="CE entity",
     response_model=ServantEntity,
-    response_model_exclude_unset=True
+    response_model_exclude_unset=True,
 )
-async def get_equip(region: Region, item_id: int):
+async def get_equip(region: Region, item_id: int, expand: bool = False):
     """
     Get CE info from ID
 
     If the given ID is a CE's collectionNo, the corresponding CE data is returned.
     Otherwise, it will look up the actual ID field. As a result, it can return not CE data.
+
+    - **expand**: Add expanded skill objects to mstSvt.expandedClassPassive
+    from the skill IDs in mstSvt.classPassive.
+    Expand all other skills and functions as well.
     """
     if item_id in masters[region]["mstSvtEquipCollectionNo"]:
         item_id = masters[region]["mstSvtEquipCollectionNo"][item_id]
     if item_id in masters[region]["mstSvtId"]:
-        return get_servant_entity(region, item_id)
+        return get_servant_entity(region, item_id, expand)
     else:
         raise HTTPException(status_code=404, detail="Equip not found")
 
@@ -297,7 +320,7 @@ async def get_equip(region: Region, item_id: int):
     summary="Get skill data",
     response_description="Skill entity",
     response_model=SkillEntity,
-    response_model_exclude_unset=True
+    response_model_exclude_unset=True,
 )
 async def get_skill(
     region: Region, item_id: int, reverse: bool = False, expand: bool = False
@@ -305,8 +328,10 @@ async def get_skill(
     """
     Get the skill data from the given ID
 
-    - **reverse**: Reverse lookup the servants that have this skill and return the reverse skill objects
-    - **expand**: Replace function IDs in mstSkillLv.funcId with actual expanded function objects
+    - **reverse**: Reverse lookup the servants that have this skill
+    and return the reverse skill objects.
+    - **expand**: Add expanded function objects to mstSkillLv.expandedFuncId
+    from the function IDs in mstSkillLv.funcId.
     """
     if item_id in masters[region]["mstSkillId"]:
         return get_skill_entity(region, item_id, reverse, expand)
@@ -320,7 +345,7 @@ async def get_skill(
     summary="Get NP data",
     response_description="NP entity",
     response_model=TdEntity,
-    response_model_exclude_unset=True
+    response_model_exclude_unset=True,
 )
 async def get_td(
     region: Region, item_id: int, reverse: bool = False, expand: bool = False
@@ -328,8 +353,10 @@ async def get_td(
     """
     Get the NP data from the given ID
 
-    - **reverse**: Reverse lookup the servants that have this NP and return the reverse servant objects
-    - **expand**: Replace function IDs in mstTreasureDeviceLv.funcId with actual expanded function objects
+    - **reverse**: Reverse lookup the servants that have this NP
+    and return the reversed servant objects.
+    - **expand**: Add expanded function objects to mstTreasureDeviceLv.expandedFuncId
+    from the function IDs in mstTreasureDeviceLv.funcId.
     """
     if item_id in masters[region]["mstTreasureDeviceId"]:
         return get_td_entity(region, item_id, reverse, expand)
@@ -343,7 +370,7 @@ async def get_td(
     summary="Get function data",
     response_description="Function entity",
     response_model=FunctionEntity,
-    response_model_exclude_unset=True
+    response_model_exclude_unset=True,
 )
 async def get_function(
     region: Region, item_id: int, reverse: bool = False, expand: bool = False
@@ -351,8 +378,11 @@ async def get_function(
     """
     Get the function data from the given ID
 
-    - **reverse**: Reverse lookup the skills that have this function and return the reversed skill objects
-    - **expand**: Replace buff IDs in mstFunc.vals with actual expanded buff objects
+    - **reverse**: Reverse lookup the skills that have this function
+    and return the reversed skill objects.
+    Will search recursively and return all entities in path: func -> skill -> servant.
+    - **expand**: Add buff objects to mstFunc.expandedVals
+    from the buff IDs in mstFunc.vals.
     """
     if item_id in masters[region]["mstFuncId"]:
         return get_func_entity(region, item_id, reverse, expand)
@@ -366,13 +396,15 @@ async def get_function(
     summary="Get buff data",
     response_description="Buff entity",
     response_model=BuffEntity,
-    response_model_exclude_unset=True
+    response_model_exclude_unset=True,
 )
 async def get_buff(region: Region, item_id: int, reverse: bool = False):
     """
     Get the buff data from the given ID
 
-    - **reverse**: Reverse lookup the functions that have this buff and return the reversed function objects
+    - **reverse**: Reverse lookup the functions that have this buff
+    and return the reversed function objects.
+    Will search recursively and return all entities in path: buff -> func -> skill -> servant.
     """
     if item_id in masters[region]["mstBuffId"]:
         return get_buff_entity(region, item_id, reverse)

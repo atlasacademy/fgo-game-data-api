@@ -42,44 +42,6 @@ class FunctionEntityNoReverse(BaseModel):
     mstFunc: MstFunc
 
 
-class MstSvt(BaseModel):
-    relateQuestIds: List[int]  # [91500701, 94004103, 94014414],
-    individuality: List[int]  # [5000, 500800],
-    classPassive: List[int]  # [83350, 80350, 320650],
-    cardIds: List[int]  # [3, 1, 1, 1, 2],
-    script: Dict[str, int]  # { "cameraActionId: 80 },
-    id: int  # 500800,
-    baseSvtId: int  # 500800,
-    name: str  # "Merlin",
-    ruby: str  # "Merlin",
-    battleName: str  # "Merlin",
-    classId: int  # 5,
-    type: int  # 1,
-    limitMax: int  # 4,
-    rewardLv: int  # 90,
-    friendshipId: int  # 1049,
-    maxFriendshipRank: int  # 10,
-    genderType: int  # 1,
-    attri: int  # 3,
-    combineSkillId: int  # 500800,
-    combineLimitId: int  # 500800,
-    sellQp: int  # 5000,
-    sellMana: int  # 9,
-    sellRarePri: int  # 5,
-    expType: int  # 30,
-    combineMaterialId: int  # 5,
-    cost: int  # 16,
-    battleSize: int  # 2,
-    hpGaugeY: int  # -250,
-    starRate: int  # 108,
-    deathRate: int  # 360,
-    attackAttri: int  # 3,
-    illustratorId: int  # 22,
-    cvId: int  # 62,
-    collectionNo: int  # 150,
-    materialStoryPriority: int  # 1000
-
-
 class MstSkill(BaseModel):
     effectList: List[int]  # [323],
     actIndividuality: List[int]  # [401900],
@@ -91,32 +53,6 @@ class MstSkill(BaseModel):
     maxLv: int  # 10,
     iconId: int  # 317,
     motion: int  # 101
-
-
-class MstTreasureDevice(BaseModel):
-    individuality: List[int]  # [3000, 4001, 4007],
-    script: Dict[str, int]  # { "limitSeqId_12": 800140 },
-    id: int  # 500801,
-    seqId: int  # 500800,
-    name: str  # "Garden of Avalon",
-    ruby: str  # " ",
-    rank: str  # "C",
-    maxLv: int  # 5,
-    typeText: str  # "Anti-Personnel",
-    attackAttri: int  # 1
-
-
-class MstSvtCard(BaseModel):
-    normalDamage: List[int]  # [4, 9, 14, 19, 23, 31],
-    singleDamage: List[int]  # [4, 9, 14, 19, 23, 31],
-    trinityDamage: List[int]  # [4, 9, 14, 19, 23, 31],
-    unisonDamage: List[int]  # [4, 9, 14, 19, 23, 31],
-    grandDamage: List[int]  # [4, 9, 14, 19, 23, 31],
-    attackIndividuality: List[int]  # [3000],
-    svtId: int  # 5009941050,
-    cardId: int  # 5001,
-    motion: int  # 50010,
-    attackType: int  # 5001
 
 
 class MstSkillDetail(BaseModel):
@@ -149,6 +85,26 @@ class MstSkillLv(BaseModel):
     chargeTurn: int  # 7,
     skillDetailId: int  # 440450,
     priority: int  # 0
+
+
+class SkillEntityNoReverse(BaseModel):
+    mstSkill: MstSkill
+    mstSkillDetail: List[MstSkillDetail]
+    mstSvtSkill: List[MstSvtSkill]
+    mstSkillLv: List[MstSkillLv]
+
+
+class MstTreasureDevice(BaseModel):
+    individuality: List[int]  # [3000, 4001, 4007],
+    script: Dict[str, int]  # { "limitSeqId_12": 800140 },
+    id: int  # 500801,
+    seqId: int  # 500800,
+    name: str  # "Garden of Avalon",
+    ruby: str  # " ",
+    rank: str  # "C",
+    maxLv: int  # 5,
+    typeText: str  # "Anti-Personnel",
+    attackAttri: int  # 1
 
 
 class MstTreasureDeviceDetail(BaseModel):
@@ -195,18 +151,63 @@ class MstTreasureDeviceLv(BaseModel):
     qp: int  # 40000
 
 
-class SkillEntityNoReverse(BaseModel):
-    mstSkill: MstSkill
-    mstSkillDetail: List[MstSkillDetail]
-    mstSvtSkill: List[MstSvtSkill]
-    mstSkillLv: List[MstSkillLv]
-
-
 class TdEntityNoReverse(BaseModel):
     mstTreasureDevice: MstTreasureDevice
     mstTreasureDeviceDetail: List[MstTreasureDeviceDetail]
     mstSvtTreasureDevice: List[MstSvtTreasureDevice]
     mstTreasureDeviceLv: List[MstTreasureDeviceLv]
+
+
+class MstSvt(BaseModel):
+    relateQuestIds: List[int]  # [91500701, 94004103, 94014414],
+    individuality: List[int]  # [5000, 500800],
+    classPassive: List[int]  # [83350, 80350, 320650],
+    expandedClassPassive: List[SkillEntityNoReverse] = []
+    cardIds: List[int]  # [3, 1, 1, 1, 2],
+    script: Dict[str, int]  # { "cameraActionId: 80 },
+    id: int  # 500800,
+    baseSvtId: int  # 500800,
+    name: str  # "Merlin",
+    ruby: str  # "Merlin",
+    battleName: str  # "Merlin",
+    classId: int  # 5,
+    type: int  # 1,
+    limitMax: int  # 4,
+    rewardLv: int  # 90,
+    friendshipId: int  # 1049,
+    maxFriendshipRank: int  # 10,
+    genderType: int  # 1,
+    attri: int  # 3,
+    combineSkillId: int  # 500800,
+    combineLimitId: int  # 500800,
+    sellQp: int  # 5000,
+    sellMana: int  # 9,
+    sellRarePri: int  # 5,
+    expType: int  # 30,
+    combineMaterialId: int  # 5,
+    cost: int  # 16,
+    battleSize: int  # 2,
+    hpGaugeY: int  # -250,
+    starRate: int  # 108,
+    deathRate: int  # 360,
+    attackAttri: int  # 3,
+    illustratorId: int  # 22,
+    cvId: int  # 62,
+    collectionNo: int  # 150,
+    materialStoryPriority: int  # 1000
+
+
+class MstSvtCard(BaseModel):
+    normalDamage: List[int]  # [4, 9, 14, 19, 23, 31],
+    singleDamage: List[int]  # [4, 9, 14, 19, 23, 31],
+    trinityDamage: List[int]  # [4, 9, 14, 19, 23, 31],
+    unisonDamage: List[int]  # [4, 9, 14, 19, 23, 31],
+    grandDamage: List[int]  # [4, 9, 14, 19, 23, 31],
+    attackIndividuality: List[int]  # [3000],
+    svtId: int  # 5009941050,
+    cardId: int  # 5001,
+    motion: int  # 50010,
+    attackType: int  # 5001
 
 
 class ServantEntity(BaseModel):
