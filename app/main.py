@@ -99,6 +99,14 @@ def func_to_skillId(region: Region, func_id: int) -> Set[int]:
     }
 
 
+def func_to_tdId(region: Region, func_id: int) -> Set[int]:
+    return {
+        item["treaureDeviceId"]
+        for item in masters[region]["mstTreasureDeviceLv"]
+        if func_id in item["funcId"]
+    }
+
+
 def get_buff_entity(region: Region, buff_id: int, reverse: bool = False) -> Any:
     buff_entity = {"mstBuff": masters[region]["mstBuffId"][buff_id]}
     if reverse:
@@ -117,6 +125,10 @@ def get_func_entity(
         reverseSkillIds = func_to_skillId(region, func_id)
         func_entity["reverseSkills"] = [
             get_skill_entity(region, item_id, reverse) for item_id in reverseSkillIds
+        ]
+        reverseTdIds = func_to_tdId(region, func_id)
+        func_entity["reverseTds"] = [
+            get_td_entity(region, item_id, reverse) for item_id in reverseTdIds
         ]
     if expand:
         func_entity["mstFunc"] = deepcopy(func_entity["mstFunc"])

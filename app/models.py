@@ -257,6 +257,7 @@ class TdEntity(TdEntityNoReverse):
 
 class FunctionEntity(FunctionEntityNoReverse):
     reverseSkills: List[SkillEntity] = []
+    reverseTds: List[TdEntity] = []
 
 
 class BuffEntity(BuffEntityNoReverse):
