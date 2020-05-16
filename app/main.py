@@ -49,17 +49,17 @@ for region_name, gamedata in region_path:
     masters[region_name]["mstSvtServantCollectionNo"] = {
         item["collectionNo"]: item["id"]
         for item in masters[region_name]["mstSvt"]
-        if utils.is_servant(item["type"])
+        if utils.is_servant(item["type"]) and item["collectionNo"] != 0
     }
     masters[region_name]["mstSvtServantName"] = {
         item["name"]: item["id"]
         for item in masters[region_name]["mstSvt"]
-        if utils.is_servant(item["type"])
+        if utils.is_servant(item["type"]) and item["collectionNo"] != 0
     }
     masters[region_name]["mstSvtEquipCollectionNo"] = {
         item["collectionNo"]: item["id"]
         for item in masters[region_name]["mstSvt"]
-        if utils.is_equip(item["type"])
+        if utils.is_equip(item["type"]) and item["collectionNo"] != 0
     }
     for extra_stuff in SKILL_STUFFS + TD_STUFFS + SVT_STUFFS:
         masters[region_name][f"{extra_stuff}Id"] = {}
@@ -189,7 +189,11 @@ def get_servant_entity(region: Region, servant_id: int) -> Any:
     return svt_entity
 
 
-app = FastAPI()
+app = FastAPI(
+    title="FGO Game data API",
+    description="Provide raw and processed FGO game data",
+    version="0.0.1",
+)
 
 
 @app.middleware("http")
