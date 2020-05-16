@@ -1,4 +1,4 @@
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Union
 
 from pydantic import BaseModel
 
@@ -8,7 +8,7 @@ class MstBuff(BaseModel):
     tvals: List[int]  # [5000, 4001],
     ckSelfIndv: List[int]  # [4001],
     ckOpIndv: List[int]  # [2005],
-    script: Dict[str, int]  # { "HP_LOWER: 600 },
+    script: Dict[str, Union[int, str]]  # {"HP_LOWER": 600, "motionName": "MOTION_2101"}
     id: int  # 101,
     buffGroup: int  # 0,
     type: int  # 52,
@@ -208,6 +208,36 @@ class MstSvtCard(BaseModel):
     cardId: int  # 5001,
     motion: int  # 50010,
     attackType: int  # 5001
+
+
+class Master(BaseModel):
+    mstBuff: List[MstBuff]
+    mstFunc: List[MstFunc]
+    mstSkill: List[MstSkill]
+    mstSkillDetail: List[MstSkillDetail]
+    mstSkillLv: List[MstSkillLv]
+    mstSvt: List[MstSvt]
+    mstSvtCard: List[MstSvtCard]
+    mstSvtSkill: List[MstSvtSkill]
+    mstSvtTreasureDevice: List[MstSvtTreasureDevice]
+    mstTreasureDevice: List[MstTreasureDevice]
+    mstTreasureDeviceDetail: List[MstTreasureDeviceDetail]
+    mstTreasureDeviceLv: List[MstTreasureDeviceLv]
+    mstSvtId: Dict[int, MstSvt]
+    mstBuffId: Dict[int, MstBuff]
+    mstFuncId: Dict[int, MstFunc]
+    mstSkillId: Dict[int, MstSkill]
+    mstTreasureDeviceId: Dict[int, MstTreasureDevice]
+    mstSvtServantCollectionNo: Dict[int, int]
+    mstSvtServantName: Dict[str, int]
+    mstSvtEquipCollectionNo: Dict[int, int]
+    mstSkillDetailId: Dict[int, List[MstSkillDetail]]
+    mstSvtSkillId: Dict[int, List[MstSvtSkill]]
+    mstSkillLvId: Dict[int, List[MstSkillLv]]
+    mstTreasureDeviceDetailId: Dict[int, List[MstTreasureDeviceDetail]]
+    mstSvtTreasureDeviceId: Dict[int, List[MstSvtTreasureDevice]]
+    mstTreasureDeviceLvId: Dict[int, List[MstTreasureDeviceLv]]
+    mstSvtCardId: Dict[int, List[MstSvtCard]]
 
 
 class ServantEntity(BaseModel):
