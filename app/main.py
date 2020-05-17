@@ -2,6 +2,7 @@ import logging
 import time
 
 from fastapi import FastAPI, Request
+from fastapi.responses import RedirectResponse
 
 from .routers import raw
 
@@ -28,3 +29,8 @@ async def add_process_time_header(request: Request, call_next):
 app.include_router(
     raw.router, prefix="/raw", tags=["raw"],
 )
+
+
+@app.get("/")
+async def root():
+    return RedirectResponse("/docs")
