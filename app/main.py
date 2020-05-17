@@ -134,7 +134,8 @@ def get_func_entity(
         func_entity["mstFunc"] = deepcopy(func_entity["mstFunc"])
         expandedBuff = []
         for buff_id in func_entity["mstFunc"]["vals"]:
-            expandedBuff.append(get_buff_entity(region, buff_id, False))
+            if buff_id in masters[region]["mstBuffId"]:
+                expandedBuff.append(get_buff_entity(region, buff_id, False))
         func_entity["mstFunc"]["expandedVals"] = expandedBuff
     return func_entity
 
@@ -157,7 +158,8 @@ def get_skill_entity(
         for skillLv in skill_entity["mstSkillLv"]:
             expandedFunc = []
             for func_id in skillLv["funcId"]:
-                expandedFunc.append(get_func_entity(region, func_id, False, expand))
+                if func_id in masters[region]["mstFuncId"]:
+                    expandedFunc.append(get_func_entity(region, func_id, False, expand))
             skillLv["expandedFuncId"] = expandedFunc
     return skill_entity
 
@@ -180,7 +182,8 @@ def get_td_entity(
         for tdLv in td_entity["mstTreasureDeviceLv"]:
             expandedFunc = []
             for func_id in tdLv["funcId"]:
-                expandedFunc.append(get_func_entity(region, func_id, False, expand))
+                if func_id in masters[region]["mstFuncId"]:
+                    expandedFunc.append(get_func_entity(region, func_id, False, expand))
             tdLv["expandedFuncId"] = expandedFunc
     return td_entity
 
@@ -209,9 +212,10 @@ def get_servant_entity(region: Region, servant_id: int, expand: bool = False) ->
         svt_entity["mstSvt"] = deepcopy(svt_entity["mstSvt"])
         expandedPassive = []
         for passiveSkill in svt_entity["mstSvt"]["classPassive"]:
-            expandedPassive.append(
-                get_skill_entity(region, passiveSkill, False, expand)
-            )
+            if passiveSkill in masters[region]["mstSkillId"]:
+                expandedPassive.append(
+                    get_skill_entity(region, passiveSkill, False, expand)
+                )
         svt_entity["mstSvt"]["expandedClassPassive"] = expandedPassive
     return svt_entity
 
