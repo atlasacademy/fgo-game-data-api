@@ -4,10 +4,10 @@ from fastapi import APIRouter, HTTPException
 from fuzzywuzzy import fuzz, process
 
 from ..data import gamedata
-from ..data.models import (
+from ..data.models.common import Region
+from ..data.models.raw import (
     BuffEntity,
     FunctionEntity,
-    Region,
     ServantEntity,
     SkillEntity,
     TdEntity,

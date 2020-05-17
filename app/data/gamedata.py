@@ -5,9 +5,8 @@ from copy import deepcopy
 from pathlib import Path
 from typing import Any, Dict, Set
 
-from pydantic import BaseSettings
-
-from .models import Region, SvtType
+from .models.raw import SvtType
+from .models.common import Region, Settings
 
 
 def is_servant(svt_type: int) -> bool:
@@ -19,14 +18,6 @@ def is_servant(svt_type: int) -> bool:
 
 def is_equip(svt_type: int) -> bool:
     return svt_type == SvtType.SERVANT_EQUIP
-
-
-class Settings(BaseSettings):
-    na_gamedata: str
-    jp_gamedata: str
-
-    class Config:
-        env_file = ".env"
 
 
 settings = Settings()
