@@ -1,6 +1,12 @@
+from enum import Enum, IntEnum
 from typing import Any, Dict, List, Union
 
 from pydantic import BaseModel
+
+
+class Region(str, Enum):
+    NA = "NA"
+    JP = "JP"
 
 
 class MstBuff(BaseModel):
@@ -262,3 +268,17 @@ class FunctionEntity(FunctionEntityNoReverse):
 
 class BuffEntity(BuffEntityNoReverse):
     reverseFunctions: List[FunctionEntity] = []
+
+
+class SvtType(IntEnum):
+    NORMAL = 1
+    HEROINE = 2
+    COMBINE_MATERIAL = 3
+    ENEMY = 4
+    ENEMY_COLLECTION = 5
+    SERVANT_EQUIP = 6
+    STATUS_UP = 7
+    SVT_EQUIP_MATERIAL = 8
+    ENEMY_COLLECTION_DETAIL = 9
+    ALL = 10
+    COMMAND_CODE = 11

@@ -1,16 +1,20 @@
 import json
+from pathlib import Path
 from typing import Any
 
 from fastapi.testclient import TestClient
 
-from main import app
+from app.main import app
 
 
 client = TestClient(app)
+file_path = Path(__file__)
 
 
 def get_response_data(file_name: str) -> Any:
-    with open(f"test_data/{file_name}.json", "r", encoding="utf-8") as fp:
+    with open(
+        file_path.parent / "test_data" / f"{file_name}.json", "r", encoding="utf-8"
+    ) as fp:
         return json.load(fp)
 
 
