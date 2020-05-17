@@ -44,6 +44,8 @@ pydantic==1.5.1 \
 python-dotenv==0.13.0 \
     --hash=sha256:3b9909bc96b0edc6b01586e1eed05e71174ef4e04c71da5786370cebea53ad74 \
     --hash=sha256:25c0ff1a3e12f4bde8d592cc254ab075cfe734fc5dd989036716fd17ee7e5ec7
+python-levenshtein==0.12.0 \
+    --hash=sha256:033a11de5e3d19ea25c9302d11224e1a1898fe5abd23c61c7c360c25195e3eb1
 starlette==0.13.2 \
     --hash=sha256:6169ee78ded501095d1dda7b141a1dc9f9934d37ad23196e180150ace2c6449b \
     --hash=sha256:a9bb130fa7aa736eda8a814b6ceb85ccf7a209ed53843d0d61e246b380afa10f
