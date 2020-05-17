@@ -80,7 +80,9 @@ class MstSkillLv(BaseModel):
     funcId: List[int]  # [366, 216, 434],
     expandedFuncId: List[FunctionEntityNoReverse] = []
     svals: List[str]  # ["[1000,1,-1,3600]", "[1000,1,-1,200]", "[1000]"],
-    script: Dict[str, int]  # { "STAR_HIGHER": 8 },
+    script: Dict[
+        str, Union[int, str, List[str]]
+    ]  # {"STAR_HIGHER": 8, "VoiceAssetName": "ChrVoice_7100400", "followerVals": ["[2,30]"]},
     skillId: int  # 440450,
     lv: int  # 4,
     chargeTurn: int  # 7,
@@ -90,14 +92,16 @@ class MstSkillLv(BaseModel):
 
 class SkillEntityNoReverse(BaseModel):
     mstSkill: MstSkill
-    mstSkillDetail: List[MstSkillDetail]
-    mstSvtSkill: List[MstSvtSkill]
-    mstSkillLv: List[MstSkillLv]
+    mstSkillDetail: List[MstSkillDetail] = []
+    mstSvtSkill: List[MstSvtSkill] = []
+    mstSkillLv: List[MstSkillLv] = []
 
 
 class MstTreasureDevice(BaseModel):
     individuality: List[int]  # [3000, 4001, 4007],
-    script: Dict[str, int]  # { "limitSeqId_12": 800140 },
+    script: Dict[
+        str, Union[int, List[int]]
+    ]  # {"limitSeqId_12": 800140, "randomWeights_3": [50, 50]},
     id: int  # 500801,
     seqId: int  # 500800,
     name: str  # "Garden of Avalon",
@@ -154,9 +158,9 @@ class MstTreasureDeviceLv(BaseModel):
 
 class TdEntityNoReverse(BaseModel):
     mstTreasureDevice: MstTreasureDevice
-    mstTreasureDeviceDetail: List[MstTreasureDeviceDetail]
-    mstSvtTreasureDevice: List[MstSvtTreasureDevice]
-    mstTreasureDeviceLv: List[MstTreasureDeviceLv]
+    mstTreasureDeviceDetail: List[MstTreasureDeviceDetail] = []
+    mstSvtTreasureDevice: List[MstSvtTreasureDevice] = []
+    mstTreasureDeviceLv: List[MstTreasureDeviceLv] = []
 
 
 class MstSvt(BaseModel):
@@ -243,9 +247,9 @@ class Master(BaseModel):
 
 class ServantEntity(BaseModel):
     mstSvt: MstSvt
-    mstSkill: List[SkillEntityNoReverse]
-    mstTreasureDevice: List[TdEntityNoReverse]
-    mstSvtCard: List[MstSvtCard]
+    mstSkill: List[SkillEntityNoReverse] = []
+    mstTreasureDevice: List[TdEntityNoReverse] = []
+    mstSvtCard: List[MstSvtCard] = []
 
 
 class SkillEntity(SkillEntityNoReverse):
