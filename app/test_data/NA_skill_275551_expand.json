@@ -1,0 +1,838 @@
+{
+  "mstSkill": {
+    "effectList": [],
+    "actIndividuality": [],
+    "script": {},
+    "id": 275551,
+    "type": 1,
+    "name": "Beach Crisis A+",
+    "ruby": "Beach Crisis",
+    "maxLv": 10,
+    "iconId": 700,
+    "motion": 101
+  },
+  "mstSkillDetail": [
+    {
+      "id": 275551,
+      "detail": "Apply Target Focus (1 turn) & increase Critical Strength [{0}] (1 turn) for yourself",
+      "detailShort": "Apply Target Focus (1 turn) & increase Critical Strength [{0}] (1 turn) for yourself"
+    }
+  ],
+  "mstSvtSkill": [
+    {
+      "strengthStatus": 0,
+      "svtId": 602400,
+      "num": 1,
+      "priority": 1,
+      "skillId": 275551,
+      "condQuestId": 0,
+      "condQuestPhase": 0,
+      "condLv": 0,
+      "condLimitCount": 0,
+      "eventId": 0,
+      "flag": 0
+    }
+  ],
+  "mstSkillLv": [
+    {
+      "funcId": [358, 200],
+      "expandedFuncId": [
+        {
+          "mstFunc": {
+            "vals": [181],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [3004, 3023],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 181,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focused",
+                  "detail": "Increase chance of being targeted by enemies",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [328],
+            "popupTextColor": 1,
+            "id": 358,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          }
+        },
+        {
+          "mstFunc": {
+            "vals": [142],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [3004, 3006, 3031],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 142,
+                  "buffGroup": 0,
+                  "type": 18,
+                  "name": "Critical Up",
+                  "detail": "Increase Critical Hit damage",
+                  "iconId": 324,
+                  "maxRate": 5000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [331],
+            "popupTextColor": 2,
+            "id": 200,
+            "cond": 0,
+            "funcType": 16,
+            "targetType": 0,
+            "applyTarget": 3,
+            "popupIconId": 324,
+            "popupText": "Critical Up"
+          }
+        }
+      ],
+      "svals": ["[1000,1,-1,1000]", "[1000,1,-1,300]"],
+      "script": {},
+      "skillId": 275551,
+      "lv": 1,
+      "chargeTurn": 8,
+      "skillDetailId": 275551,
+      "priority": 0
+    },
+    {
+      "funcId": [358, 200],
+      "expandedFuncId": [
+        {
+          "mstFunc": {
+            "vals": [181],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [3004, 3023],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 181,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focused",
+                  "detail": "Increase chance of being targeted by enemies",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [328],
+            "popupTextColor": 1,
+            "id": 358,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          }
+        },
+        {
+          "mstFunc": {
+            "vals": [142],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [3004, 3006, 3031],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 142,
+                  "buffGroup": 0,
+                  "type": 18,
+                  "name": "Critical Up",
+                  "detail": "Increase Critical Hit damage",
+                  "iconId": 324,
+                  "maxRate": 5000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [331],
+            "popupTextColor": 2,
+            "id": 200,
+            "cond": 0,
+            "funcType": 16,
+            "targetType": 0,
+            "applyTarget": 3,
+            "popupIconId": 324,
+            "popupText": "Critical Up"
+          }
+        }
+      ],
+      "svals": ["[1000,1,-1,1200]", "[1000,1,-1,320]"],
+      "script": {},
+      "skillId": 275551,
+      "lv": 2,
+      "chargeTurn": 8,
+      "skillDetailId": 275551,
+      "priority": 0
+    },
+    {
+      "funcId": [358, 200],
+      "expandedFuncId": [
+        {
+          "mstFunc": {
+            "vals": [181],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [3004, 3023],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 181,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focused",
+                  "detail": "Increase chance of being targeted by enemies",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [328],
+            "popupTextColor": 1,
+            "id": 358,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          }
+        },
+        {
+          "mstFunc": {
+            "vals": [142],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [3004, 3006, 3031],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 142,
+                  "buffGroup": 0,
+                  "type": 18,
+                  "name": "Critical Up",
+                  "detail": "Increase Critical Hit damage",
+                  "iconId": 324,
+                  "maxRate": 5000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [331],
+            "popupTextColor": 2,
+            "id": 200,
+            "cond": 0,
+            "funcType": 16,
+            "targetType": 0,
+            "applyTarget": 3,
+            "popupIconId": 324,
+            "popupText": "Critical Up"
+          }
+        }
+      ],
+      "svals": ["[1000,1,-1,1400]", "[1000,1,-1,340]"],
+      "script": {},
+      "skillId": 275551,
+      "lv": 3,
+      "chargeTurn": 8,
+      "skillDetailId": 275551,
+      "priority": 0
+    },
+    {
+      "funcId": [358, 200],
+      "expandedFuncId": [
+        {
+          "mstFunc": {
+            "vals": [181],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [3004, 3023],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 181,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focused",
+                  "detail": "Increase chance of being targeted by enemies",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [328],
+            "popupTextColor": 1,
+            "id": 358,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          }
+        },
+        {
+          "mstFunc": {
+            "vals": [142],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [3004, 3006, 3031],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 142,
+                  "buffGroup": 0,
+                  "type": 18,
+                  "name": "Critical Up",
+                  "detail": "Increase Critical Hit damage",
+                  "iconId": 324,
+                  "maxRate": 5000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [331],
+            "popupTextColor": 2,
+            "id": 200,
+            "cond": 0,
+            "funcType": 16,
+            "targetType": 0,
+            "applyTarget": 3,
+            "popupIconId": 324,
+            "popupText": "Critical Up"
+          }
+        }
+      ],
+      "svals": ["[1000,1,-1,1600]", "[1000,1,-1,360]"],
+      "script": {},
+      "skillId": 275551,
+      "lv": 4,
+      "chargeTurn": 8,
+      "skillDetailId": 275551,
+      "priority": 0
+    },
+    {
+      "funcId": [358, 200],
+      "expandedFuncId": [
+        {
+          "mstFunc": {
+            "vals": [181],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [3004, 3023],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 181,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focused",
+                  "detail": "Increase chance of being targeted by enemies",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [328],
+            "popupTextColor": 1,
+            "id": 358,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          }
+        },
+        {
+          "mstFunc": {
+            "vals": [142],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [3004, 3006, 3031],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 142,
+                  "buffGroup": 0,
+                  "type": 18,
+                  "name": "Critical Up",
+                  "detail": "Increase Critical Hit damage",
+                  "iconId": 324,
+                  "maxRate": 5000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [331],
+            "popupTextColor": 2,
+            "id": 200,
+            "cond": 0,
+            "funcType": 16,
+            "targetType": 0,
+            "applyTarget": 3,
+            "popupIconId": 324,
+            "popupText": "Critical Up"
+          }
+        }
+      ],
+      "svals": ["[1000,1,-1,1800]", "[1000,1,-1,380]"],
+      "script": {},
+      "skillId": 275551,
+      "lv": 5,
+      "chargeTurn": 8,
+      "skillDetailId": 275551,
+      "priority": 0
+    },
+    {
+      "funcId": [358, 200],
+      "expandedFuncId": [
+        {
+          "mstFunc": {
+            "vals": [181],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [3004, 3023],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 181,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focused",
+                  "detail": "Increase chance of being targeted by enemies",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [328],
+            "popupTextColor": 1,
+            "id": 358,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          }
+        },
+        {
+          "mstFunc": {
+            "vals": [142],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [3004, 3006, 3031],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 142,
+                  "buffGroup": 0,
+                  "type": 18,
+                  "name": "Critical Up",
+                  "detail": "Increase Critical Hit damage",
+                  "iconId": 324,
+                  "maxRate": 5000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [331],
+            "popupTextColor": 2,
+            "id": 200,
+            "cond": 0,
+            "funcType": 16,
+            "targetType": 0,
+            "applyTarget": 3,
+            "popupIconId": 324,
+            "popupText": "Critical Up"
+          }
+        }
+      ],
+      "svals": ["[1000,1,-1,2000]", "[1000,1,-1,400]"],
+      "script": {},
+      "skillId": 275551,
+      "lv": 6,
+      "chargeTurn": 7,
+      "skillDetailId": 275551,
+      "priority": 0
+    },
+    {
+      "funcId": [358, 200],
+      "expandedFuncId": [
+        {
+          "mstFunc": {
+            "vals": [181],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [3004, 3023],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 181,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focused",
+                  "detail": "Increase chance of being targeted by enemies",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [328],
+            "popupTextColor": 1,
+            "id": 358,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          }
+        },
+        {
+          "mstFunc": {
+            "vals": [142],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [3004, 3006, 3031],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 142,
+                  "buffGroup": 0,
+                  "type": 18,
+                  "name": "Critical Up",
+                  "detail": "Increase Critical Hit damage",
+                  "iconId": 324,
+                  "maxRate": 5000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [331],
+            "popupTextColor": 2,
+            "id": 200,
+            "cond": 0,
+            "funcType": 16,
+            "targetType": 0,
+            "applyTarget": 3,
+            "popupIconId": 324,
+            "popupText": "Critical Up"
+          }
+        }
+      ],
+      "svals": ["[1000,1,-1,2200]", "[1000,1,-1,420]"],
+      "script": {},
+      "skillId": 275551,
+      "lv": 7,
+      "chargeTurn": 7,
+      "skillDetailId": 275551,
+      "priority": 0
+    },
+    {
+      "funcId": [358, 200],
+      "expandedFuncId": [
+        {
+          "mstFunc": {
+            "vals": [181],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [3004, 3023],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 181,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focused",
+                  "detail": "Increase chance of being targeted by enemies",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [328],
+            "popupTextColor": 1,
+            "id": 358,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          }
+        },
+        {
+          "mstFunc": {
+            "vals": [142],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [3004, 3006, 3031],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 142,
+                  "buffGroup": 0,
+                  "type": 18,
+                  "name": "Critical Up",
+                  "detail": "Increase Critical Hit damage",
+                  "iconId": 324,
+                  "maxRate": 5000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [331],
+            "popupTextColor": 2,
+            "id": 200,
+            "cond": 0,
+            "funcType": 16,
+            "targetType": 0,
+            "applyTarget": 3,
+            "popupIconId": 324,
+            "popupText": "Critical Up"
+          }
+        }
+      ],
+      "svals": ["[1000,1,-1,2400]", "[1000,1,-1,440]"],
+      "script": {},
+      "skillId": 275551,
+      "lv": 8,
+      "chargeTurn": 7,
+      "skillDetailId": 275551,
+      "priority": 0
+    },
+    {
+      "funcId": [358, 200],
+      "expandedFuncId": [
+        {
+          "mstFunc": {
+            "vals": [181],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [3004, 3023],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 181,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focused",
+                  "detail": "Increase chance of being targeted by enemies",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [328],
+            "popupTextColor": 1,
+            "id": 358,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          }
+        },
+        {
+          "mstFunc": {
+            "vals": [142],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [3004, 3006, 3031],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 142,
+                  "buffGroup": 0,
+                  "type": 18,
+                  "name": "Critical Up",
+                  "detail": "Increase Critical Hit damage",
+                  "iconId": 324,
+                  "maxRate": 5000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [331],
+            "popupTextColor": 2,
+            "id": 200,
+            "cond": 0,
+            "funcType": 16,
+            "targetType": 0,
+            "applyTarget": 3,
+            "popupIconId": 324,
+            "popupText": "Critical Up"
+          }
+        }
+      ],
+      "svals": ["[1000,1,-1,2600]", "[1000,1,-1,460]"],
+      "script": {},
+      "skillId": 275551,
+      "lv": 9,
+      "chargeTurn": 7,
+      "skillDetailId": 275551,
+      "priority": 0
+    },
+    {
+      "funcId": [358, 200],
+      "expandedFuncId": [
+        {
+          "mstFunc": {
+            "vals": [181],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [3004, 3023],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 181,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focused",
+                  "detail": "Increase chance of being targeted by enemies",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [328],
+            "popupTextColor": 1,
+            "id": 358,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          }
+        },
+        {
+          "mstFunc": {
+            "vals": [142],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [3004, 3006, 3031],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 142,
+                  "buffGroup": 0,
+                  "type": 18,
+                  "name": "Critical Up",
+                  "detail": "Increase Critical Hit damage",
+                  "iconId": 324,
+                  "maxRate": 5000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [331],
+            "popupTextColor": 2,
+            "id": 200,
+            "cond": 0,
+            "funcType": 16,
+            "targetType": 0,
+            "applyTarget": 3,
+            "popupIconId": 324,
+            "popupText": "Critical Up"
+          }
+        }
+      ],
+      "svals": ["[1000,1,-1,3000]", "[1000,1,-1,500]"],
+      "script": {},
+      "skillId": 275551,
+      "lv": 10,
+      "chargeTurn": 6,
+      "skillDetailId": 275551,
+      "priority": 0
+    }
+  ]
+}

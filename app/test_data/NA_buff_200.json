@@ -1,0 +1,16 @@
+{
+  "mstBuff": {
+    "vals": [3005, 3042],
+    "tvals": [],
+    "ckSelfIndv": [],
+    "ckOpIndv": [],
+    "script": {},
+    "id": 200,
+    "buffGroup": 0,
+    "type": 80,
+    "name": "Max HP Down",
+    "detail": "Decrease Max HP by percentage",
+    "iconId": 522,
+    "maxRate": 5000
+  }
+}

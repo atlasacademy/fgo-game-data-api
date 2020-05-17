@@ -1,0 +1,231 @@
+{
+  "mstTreasureDevice": {
+    "individuality": [3001, 4002, 4007],
+    "script": {},
+    "id": 202401,
+    "seqId": 202400,
+    "name": "Three Line Formation",
+    "ruby": " ",
+    "rank": "E～A",
+    "maxLv": 5,
+    "typeText": "Anti-Army",
+    "attackAttri": 1
+  },
+  "mstTreasureDeviceDetail": [
+    {
+      "id": 202401,
+      "detail": "Deal heavy Special Attack damage to all enemies with [Riding Skill] [{0}] <Special Attack damage increases with Overcharge>",
+      "detailShort": "Deal heavy Special Attack damage to all enemies with [Riding Skill] [{0}] <Special Attack damage increases with Overcharge>"
+    }
+  ],
+  "mstSvtTreasureDevice": [
+    {
+      "damage": [3, 5, 3, 7, 8, 10, 12, 14, 16, 22],
+      "strengthStatus": 0,
+      "svtId": 202400,
+      "num": 1,
+      "priority": 101,
+      "flag": 0,
+      "imageIndex": 0,
+      "treasureDeviceId": 202401,
+      "condQuestId": 0,
+      "condQuestPhase": 0,
+      "condLv": 0,
+      "condFriendshipRank": 0,
+      "motion": 50,
+      "cardId": 2
+    }
+  ],
+  "mstTreasureDeviceLv": [
+    {
+      "funcId": [17],
+      "expandedFuncId": [
+        {
+          "mstFunc": {
+            "vals": [],
+            "expandedVals": [],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [],
+            "popupTextColor": 1,
+            "id": 17,
+            "cond": 0,
+            "funcType": 15,
+            "targetType": 6,
+            "applyTarget": 3,
+            "popupIconId": 0,
+            "popupText": "None"
+          }
+        }
+      ],
+      "svals": ["[1000,3000,2009,1500]"],
+      "svals2": ["[1000,3000,2009,1625]"],
+      "svals3": ["[1000,3000,2009,1750]"],
+      "svals4": ["[1000,3000,2009,1875]"],
+      "svals5": ["[1000,3000,2009,2000]"],
+      "treaureDeviceId": 202401,
+      "lv": 1,
+      "gaugeCount": 1,
+      "detailId": 202401,
+      "tdPoint": 43,
+      "tdPointQ": 43,
+      "tdPointA": 43,
+      "tdPointB": 43,
+      "tdPointEx": 43,
+      "tdPointDef": 300,
+      "qp": 40000
+    },
+    {
+      "funcId": [17],
+      "expandedFuncId": [
+        {
+          "mstFunc": {
+            "vals": [],
+            "expandedVals": [],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [],
+            "popupTextColor": 1,
+            "id": 17,
+            "cond": 0,
+            "funcType": 15,
+            "targetType": 6,
+            "applyTarget": 3,
+            "popupIconId": 0,
+            "popupText": "None"
+          }
+        }
+      ],
+      "svals": ["[1000,4000,2009,1500]"],
+      "svals2": ["[1000,4000,2009,1625]"],
+      "svals3": ["[1000,4000,2009,1750]"],
+      "svals4": ["[1000,4000,2009,1875]"],
+      "svals5": ["[1000,4000,2009,2000]"],
+      "treaureDeviceId": 202401,
+      "lv": 2,
+      "gaugeCount": 2,
+      "detailId": 202401,
+      "tdPoint": 43,
+      "tdPointQ": 43,
+      "tdPointA": 43,
+      "tdPointB": 43,
+      "tdPointEx": 43,
+      "tdPointDef": 300,
+      "qp": 80000
+    },
+    {
+      "funcId": [17],
+      "expandedFuncId": [
+        {
+          "mstFunc": {
+            "vals": [],
+            "expandedVals": [],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [],
+            "popupTextColor": 1,
+            "id": 17,
+            "cond": 0,
+            "funcType": 15,
+            "targetType": 6,
+            "applyTarget": 3,
+            "popupIconId": 0,
+            "popupText": "None"
+          }
+        }
+      ],
+      "svals": ["[1000,4500,2009,1500]"],
+      "svals2": ["[1000,4500,2009,1625]"],
+      "svals3": ["[1000,4500,2009,1750]"],
+      "svals4": ["[1000,4500,2009,1875]"],
+      "svals5": ["[1000,4500,2009,2000]"],
+      "treaureDeviceId": 202401,
+      "lv": 3,
+      "gaugeCount": 2,
+      "detailId": 202401,
+      "tdPoint": 43,
+      "tdPointQ": 43,
+      "tdPointA": 43,
+      "tdPointB": 43,
+      "tdPointEx": 43,
+      "tdPointDef": 300,
+      "qp": 160000
+    },
+    {
+      "funcId": [17],
+      "expandedFuncId": [
+        {
+          "mstFunc": {
+            "vals": [],
+            "expandedVals": [],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [],
+            "popupTextColor": 1,
+            "id": 17,
+            "cond": 0,
+            "funcType": 15,
+            "targetType": 6,
+            "applyTarget": 3,
+            "popupIconId": 0,
+            "popupText": "None"
+          }
+        }
+      ],
+      "svals": ["[1000,4750,2009,1500]"],
+      "svals2": ["[1000,4750,2009,1625]"],
+      "svals3": ["[1000,4750,2009,1750]"],
+      "svals4": ["[1000,4750,2009,1875]"],
+      "svals5": ["[1000,4750,2009,2000]"],
+      "treaureDeviceId": 202401,
+      "lv": 4,
+      "gaugeCount": 2,
+      "detailId": 202401,
+      "tdPoint": 43,
+      "tdPointQ": 43,
+      "tdPointA": 43,
+      "tdPointB": 43,
+      "tdPointEx": 43,
+      "tdPointDef": 300,
+      "qp": 320000
+    },
+    {
+      "funcId": [17],
+      "expandedFuncId": [
+        {
+          "mstFunc": {
+            "vals": [],
+            "expandedVals": [],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [],
+            "popupTextColor": 1,
+            "id": 17,
+            "cond": 0,
+            "funcType": 15,
+            "targetType": 6,
+            "applyTarget": 3,
+            "popupIconId": 0,
+            "popupText": "None"
+          }
+        }
+      ],
+      "svals": ["[1000,5000,2009,1500]"],
+      "svals2": ["[1000,5000,2009,1625]"],
+      "svals3": ["[1000,5000,2009,1750]"],
+      "svals4": ["[1000,5000,2009,1875]"],
+      "svals5": ["[1000,5000,2009,2000]"],
+      "treaureDeviceId": 202401,
+      "lv": 5,
+      "gaugeCount": 3,
+      "detailId": 202401,
+      "tdPoint": 43,
+      "tdPointQ": 43,
+      "tdPointA": 43,
+      "tdPointB": 43,
+      "tdPointEx": 43,
+      "tdPointDef": 300,
+      "qp": 640000
+    }
+  ]
+}

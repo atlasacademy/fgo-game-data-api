@@ -1,0 +1,16 @@
+{
+  "mstFunc": {
+    "vals": [3004],
+    "tvals": [],
+    "questTvals": [],
+    "effectList": [347],
+    "popupTextColor": 1,
+    "id": 433,
+    "cond": 0,
+    "funcType": 2,
+    "targetType": 4,
+    "applyTarget": 3,
+    "popupIconId": 0,
+    "popupText": "Remove Buff"
+  }
+}

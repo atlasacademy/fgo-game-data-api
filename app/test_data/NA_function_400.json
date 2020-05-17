@@ -1,0 +1,16 @@
+{
+  "mstFunc": {
+    "vals": [163],
+    "tvals": [],
+    "questTvals": [],
+    "effectList": [333],
+    "popupTextColor": 2,
+    "id": 400,
+    "cond": 0,
+    "funcType": 1,
+    "targetType": 0,
+    "applyTarget": 3,
+    "popupIconId": 306,
+    "popupText": "Poison Resist\nUp"
+  }
+}

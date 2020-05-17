@@ -1,0 +1,128 @@
+{
+  "mstSvt": {
+    "relateQuestIds": [],
+    "individuality": [],
+    "classPassive": [],
+    "expandedClassPassive": [],
+    "cardIds": [3, 3, 3, 3, 3],
+    "script": {},
+    "id": 9301260,
+    "baseSvtId": 9301260,
+    "name": "Oni's Mask",
+    "ruby": "Oni's Mask",
+    "battleName": "-",
+    "classId": 1001,
+    "type": 6,
+    "limitMax": 4,
+    "rewardLv": 0,
+    "friendshipId": 1000,
+    "maxFriendshipRank": 0,
+    "genderType": 3,
+    "attri": 2,
+    "combineSkillId": 0,
+    "combineLimitId": 0,
+    "sellQp": 1000,
+    "sellMana": 3,
+    "sellRarePri": 0,
+    "expType": 19,
+    "combineMaterialId": 39,
+    "cost": 9,
+    "battleSize": 2,
+    "hpGaugeY": 0,
+    "starRate": 0,
+    "deathRate": 0,
+    "attackAttri": 1,
+    "illustratorId": 1,
+    "cvId": 0,
+    "collectionNo": 375,
+    "materialStoryPriority": 1000
+  },
+  "mstSkill": [
+    {
+      "mstSkill": {
+        "effectList": [],
+        "actIndividuality": [601900],
+        "script": {},
+        "id": 990610,
+        "type": 2,
+        "name": "Oni's Mask",
+        "ruby": "Oni's Mask",
+        "maxLv": 1,
+        "iconId": 304,
+        "motion": 102
+      },
+      "mstSkillDetail": [
+        {
+          "id": 990610,
+          "detail": "Increase all allies' Quick Card effectiveness by 15% only if Fuuma \"Evil-wind\" Kotarou (Assassin) is equipped with this Craft Essence when he is on the field.",
+          "detailShort": "Increase all allies' Quick Card effectiveness by 15% only if Fuuma \"Evil-wind\" Kotarou (Assassin) is equipped with this Craft Essence when he is on the field."
+        }
+      ],
+      "mstSvtSkill": [
+        {
+          "strengthStatus": 0,
+          "svtId": 9301260,
+          "num": 1,
+          "priority": 1,
+          "skillId": 990610,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "eventId": 0,
+          "flag": 0
+        }
+      ],
+      "mstSkillLv": [
+        {
+          "funcId": [863],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [100],
+                "expandedVals": [
+                  {
+                    "mstBuff": {
+                      "vals": [3004],
+                      "tvals": [5000, 4003],
+                      "ckSelfIndv": [4003],
+                      "ckOpIndv": [],
+                      "script": {},
+                      "id": 100,
+                      "buffGroup": 0,
+                      "type": 52,
+                      "name": "Quick Up",
+                      "detail": "Increase Quick Card effectiveness",
+                      "iconId": 312,
+                      "maxRate": 5000
+                    }
+                  }
+                ],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [331],
+                "popupTextColor": 2,
+                "id": 863,
+                "cond": 0,
+                "funcType": 16,
+                "targetType": 7,
+                "applyTarget": 3,
+                "popupIconId": 312,
+                "popupText": "Quick Up"
+              }
+            }
+          ],
+          "svals": ["[1000,-1,-1,150,OnField:1]"],
+          "script": {},
+          "skillId": 990610,
+          "lv": 1,
+          "chargeTurn": 0,
+          "skillDetailId": 990610,
+          "priority": 0
+        }
+      ]
+    }
+  ],
+  "mstTreasureDevice": [],
+  "mstSvtCard": []
+}

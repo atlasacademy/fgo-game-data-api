@@ -1,0 +1,34 @@
+{
+  "mstFunc": {
+    "vals": [142],
+    "expandedVals": [
+      {
+        "mstBuff": {
+          "vals": [3004, 3006, 3031],
+          "tvals": [],
+          "ckSelfIndv": [],
+          "ckOpIndv": [],
+          "script": {},
+          "id": 142,
+          "buffGroup": 0,
+          "type": 18,
+          "name": "Critical Up",
+          "detail": "Increase Critical Hit damage",
+          "iconId": 324,
+          "maxRate": 5000
+        }
+      }
+    ],
+    "tvals": [],
+    "questTvals": [],
+    "effectList": [330],
+    "popupTextColor": 2,
+    "id": 205,
+    "cond": 0,
+    "funcType": 16,
+    "targetType": 3,
+    "applyTarget": 3,
+    "popupIconId": 324,
+    "popupText": "Critical Up"
+  }
+}

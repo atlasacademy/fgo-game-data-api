@@ -1,0 +1,139 @@
+{
+  "mstSvt": {
+    "relateQuestIds": [],
+    "individuality": [],
+    "classPassive": [],
+    "cardIds": [3, 3, 3, 3, 3],
+    "script": {},
+    "id": 9401400,
+    "baseSvtId": 9401400,
+    "name": "Gentle Affection",
+    "ruby": "Gentle Affection",
+    "battleName": "-",
+    "classId": 1001,
+    "type": 6,
+    "limitMax": 4,
+    "rewardLv": 0,
+    "friendshipId": 1000,
+    "maxFriendshipRank": 0,
+    "genderType": 3,
+    "attri": 2,
+    "combineSkillId": 0,
+    "combineLimitId": 0,
+    "sellQp": 1000,
+    "sellMana": 3,
+    "sellRarePri": 0,
+    "expType": 19,
+    "combineMaterialId": 24,
+    "cost": 9,
+    "battleSize": 2,
+    "hpGaugeY": 0,
+    "starRate": 0,
+    "deathRate": 0,
+    "attackAttri": 1,
+    "illustratorId": 60,
+    "cvId": 0,
+    "collectionNo": 184,
+    "materialStoryPriority": 1000
+  },
+  "mstSkill": [
+    {
+      "mstSkill": {
+        "effectList": [],
+        "actIndividuality": [],
+        "script": {},
+        "id": 990324,
+        "type": 2,
+        "name": "Gentle Affection",
+        "ruby": "Gentle Affection",
+        "maxLv": 1,
+        "iconId": 611,
+        "motion": 101
+      },
+      "mstSkillDetail": [
+        {
+          "id": 990324,
+          "detail": "Increase your Healing effectiveness by 15%",
+          "detailShort": "Increase your Healing effectiveness by 15%"
+        }
+      ],
+      "mstSvtSkill": [
+        {
+          "strengthStatus": 1,
+          "svtId": 9401400,
+          "num": 1,
+          "priority": 1,
+          "skillId": 990324,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "eventId": 0,
+          "flag": 0
+        }
+      ],
+      "mstSkillLv": [
+        {
+          "funcId": [781, 796],
+          "svals": ["[1000,-1,-1,150]", "[10252,1,1,80087]"],
+          "script": {},
+          "skillId": 990324,
+          "lv": 1,
+          "chargeTurn": 0,
+          "skillDetailId": 990324,
+          "priority": 0
+        }
+      ]
+    },
+    {
+      "mstSkill": {
+        "effectList": [],
+        "actIndividuality": [],
+        "script": {},
+        "id": 990325,
+        "type": 2,
+        "name": "Gentle Affection",
+        "ruby": "Gentle Affection",
+        "maxLv": 1,
+        "iconId": 611,
+        "motion": 101
+      },
+      "mstSkillDetail": [
+        {
+          "id": 990325,
+          "detail": "Increase your Healing effectiveness by 20% [MAX]",
+          "detailShort": "Increase your Healing effectiveness by 20% [MAX]"
+        }
+      ],
+      "mstSvtSkill": [
+        {
+          "strengthStatus": 2,
+          "svtId": 9401400,
+          "num": 1,
+          "priority": 2,
+          "skillId": 990325,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 4,
+          "eventId": 0,
+          "flag": 0
+        }
+      ],
+      "mstSkillLv": [
+        {
+          "funcId": [781, 796],
+          "svals": ["[1000,-1,-1,200]", "[10252,1,2,80087]"],
+          "script": {},
+          "skillId": 990325,
+          "lv": 1,
+          "chargeTurn": 0,
+          "skillDetailId": 990325,
+          "priority": 0
+        }
+      ]
+    }
+  ],
+  "mstTreasureDevice": [],
+  "mstSvtCard": []
+}
