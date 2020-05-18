@@ -1,8 +1,8 @@
 import logging
 import time
 
-from fastapi import FastAPI, Request
-from fastapi.responses import RedirectResponse
+from fastapi import FastAPI, Request, status
+from fastapi.responses import RedirectResponse, Response
 
 from .routers import raw
 
@@ -31,6 +31,13 @@ app.include_router(
 )
 
 
-@app.get("/")
+@app.get(
+    "/",
+    status_code=status.HTTP_307_TEMPORARY_REDIRECT,
+    response_class=Response,
+    summary="Redirect to /docs",
+    tags=["default"],
+    response_description="307 redirect to /docs",
+)
 async def root():
     return RedirectResponse("/docs")

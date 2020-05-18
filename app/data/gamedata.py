@@ -43,7 +43,9 @@ SKILL_STUFFS = ["mstSkillDetail", "mstSvtSkill", "mstSkillLv"]
 TD_STUFFS = ["mstTreasureDeviceDetail", "mstSvtTreasureDevice", "mstTreasureDeviceLv"]
 region_path = [(Region.NA, settings.na_gamedata), (Region.JP, settings.jp_gamedata)]
 
+logger.info("Loading game data ...")
 start_loading_time = time.time()
+
 for region_name, gamedata in region_path:
     master = {}
     gamedata_path = Path(gamedata).resolve()
