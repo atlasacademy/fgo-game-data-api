@@ -46,7 +46,9 @@ class FunctionEntityNoReverse(BaseModel):
 class MstSkill(BaseModel):
     effectList: List[int]  # [323],
     actIndividuality: List[int]  # [401900],
-    script: Dict[Any, Any]  # {}, There's no example of this
+    script: Dict[
+        str, Union[str, int]
+    ]  # {"cutInId": 90001, "cutInVoices": "ChrVoice_7100400:0_E130:1"}
     id: int  # 263350,
     type: int  # 1,
     name: str  # "Projection C",
