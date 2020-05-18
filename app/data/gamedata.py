@@ -3,7 +3,7 @@ import logging
 import time
 from copy import deepcopy
 from pathlib import Path
-from typing import Dict, Set
+from typing import Any, Dict, Set
 
 from .models.common import Region, Settings
 from .models.raw import (
@@ -38,7 +38,8 @@ logger = logging.getLogger()
 
 masters: Dict[Region, Master] = {}
 MASTER_WITH_ID = ["mstSvt", "mstBuff", "mstFunc", "mstSkill", "mstTreasureDevice"]
-SVT_STUFFS = ["mstSvtCard"]
+MASTER_WITHOUT_ID = ["mstSvtExp"]
+SVT_STUFFS = ["mstSvtCard", "mstSvtLimit"]
 SKILL_STUFFS = ["mstSkillDetail", "mstSvtSkill", "mstSkillLv"]
 TD_STUFFS = ["mstTreasureDeviceDetail", "mstSvtTreasureDevice", "mstTreasureDeviceLv"]
 region_path = [(Region.NA, settings.na_gamedata), (Region.JP, settings.jp_gamedata)]
@@ -49,26 +50,42 @@ start_loading_time = time.time()
 for region_name, gamedata in region_path:
     master = {}
     gamedata_path = Path(gamedata).resolve()
-    for entity in MASTER_WITH_ID + SVT_STUFFS + SKILL_STUFFS + TD_STUFFS:
+
+    for entity in (
+        MASTER_WITH_ID + MASTER_WITHOUT_ID + SVT_STUFFS + SKILL_STUFFS + TD_STUFFS
+    ):
         with open(gamedata_path / f"{entity}.json", "r", encoding="utf-8") as fp:
             master[entity] = json.load(fp)
+
     for entity in MASTER_WITH_ID:
         master[f"{entity}Id"] = {item["id"]: item for item in master[entity]}
+
     master["mstSvtServantCollectionNo"] = {
         item["collectionNo"]: item["id"]
         for item in master["mstSvt"]
         if is_servant(item["type"]) and item["collectionNo"] != 0
     }
+
     master["mstSvtServantName"] = {
         item["name"]: item["id"]
         for item in master["mstSvt"]
         if is_servant(item["type"]) and item["collectionNo"] != 0
     }
+
     master["mstSvtEquipCollectionNo"] = {
         item["collectionNo"]: item["id"]
         for item in master["mstSvt"]
         if is_equip(item["type"]) and item["collectionNo"] != 0
     }
+
+    mstSvtExpId: Dict[int, Dict[str, Any]] = {}
+    for item in master["mstSvtExp"]:
+        if item["type"] in mstSvtExpId:
+            mstSvtExpId[item["type"]][item["lv"]] = item
+        else:
+            mstSvtExpId[item["type"]] = {item["lv"]: item}
+    master["mstSvtExpId"] = mstSvtExpId
+
     for extra_stuff in SKILL_STUFFS + TD_STUFFS + SVT_STUFFS:
         master[f"{extra_stuff}Id"] = {}
         for item in master[extra_stuff]:
@@ -236,13 +253,19 @@ def get_td_entity(
 def get_servant_entity(
     region: Region, servant_id: int, expand: bool = False
 ) -> ServantEntity:
-    svt_entity = ServantEntity(mstSvt=masters[region].mstSvtId[servant_id])
+    svt_entity = ServantEntity(
+        mstSvt=masters[region].mstSvtId[servant_id],
+        mstSvtCard=masters[region].mstSvtCardId.get(servant_id, []),
+        mstSvtLimit=masters[region].mstSvtLimitId.get(servant_id, []),
+    )
+
     skills = [
         item.skillId for item in masters[region].mstSvtSkill if item.svtId == servant_id
     ]
     svt_entity.mstSkill = [
         get_skill_entity_no_reverse(region, skill, expand) for skill in skills
     ]
+
     NPs = [
         item.treasureDeviceId
         for item in masters[region].mstSvtTreasureDevice
@@ -251,7 +274,7 @@ def get_servant_entity(
     svt_entity.mstTreasureDevice = [
         get_td_entity_no_reverse(region, td, expand) for td in NPs
     ]
-    svt_entity.mstSvtCard = masters[region].mstSvtCardId.get(servant_id, [])
+
     if expand:
         svt_entity.mstSvt = deepcopy(svt_entity.mstSvt)
         expandedPassive = []

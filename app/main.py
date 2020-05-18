@@ -4,7 +4,7 @@ import time
 from fastapi import FastAPI, Request, status
 from fastapi.responses import RedirectResponse, Response
 
-from .routers import raw
+from .routers import raw, nice
 
 logger = logging.getLogger()
 
@@ -24,6 +24,11 @@ async def add_process_time_header(request: Request, call_next):
     response.headers["X-Process-Time"] = str(process_time)
     logger.info(f"Processed in {process_time}ms.")
     return response
+
+
+app.include_router(
+    nice.router, prefix="/nice", tags=["nice"],
+)
 
 
 app.include_router(

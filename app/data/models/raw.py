@@ -217,6 +217,40 @@ class MstSvtCard(BaseModel):
     attackType: int  # 5001
 
 
+class MstSvtLimit(BaseModel):
+    weaponColor: int  # 16777215
+    svtId: int  # 9403170
+    limitCount: int  # 1
+    rarity: int  # 5
+    lvMax: int  # 40
+    weaponGroup: int  # 104
+    weaponScale: int  # 2
+    effectFolder: int  # 1
+    hpBase: int  # 0
+    hpMax: int  # 0
+    atkBase: int  # 500
+    atkMax: int  # 2000
+    criticalWeight: int  # 0
+    power: int  # 99
+    defense: int  # 99
+    agility: int  # 99
+    magic: int  # 99
+    luck: int  # 99
+    treasureDevice: int  # 99
+    policy: int  # 0
+    personality: int  # 0
+    deity: int  # 99
+    stepProbability: int  # 1000
+    strParam: str  #  "{\"Attack_s1\":285}"
+
+
+class MstSvtExp(BaseModel):
+    type: int  # 20,
+    lv: int  # 15,
+    exp: int  # 68000,
+    curve: int  # 141
+
+
 class Master(BaseModel):
     mstBuff: List[MstBuff]
     mstFunc: List[MstFunc]
@@ -226,6 +260,8 @@ class Master(BaseModel):
     mstSvt: List[MstSvt]
     mstSvtCard: List[MstSvtCard]
     mstSvtSkill: List[MstSvtSkill]
+    mstSvtLimit: List[MstSvtLimit]
+    mstSvtExp: List[MstSvtExp]
     mstSvtTreasureDevice: List[MstSvtTreasureDevice]
     mstTreasureDevice: List[MstTreasureDevice]
     mstTreasureDeviceDetail: List[MstTreasureDeviceDetail]
@@ -245,13 +281,16 @@ class Master(BaseModel):
     mstSvtTreasureDeviceId: Dict[int, List[MstSvtTreasureDevice]]
     mstTreasureDeviceLvId: Dict[int, List[MstTreasureDeviceLv]]
     mstSvtCardId: Dict[int, List[MstSvtCard]]
+    mstSvtLimitId: Dict[int, List[MstSvtLimit]]
+    mstSvtExpId: Dict[int, Dict[int, MstSvtExp]]
 
 
 class ServantEntity(BaseModel):
     mstSvt: MstSvt
     mstSkill: List[SkillEntityNoReverse] = []
     mstTreasureDevice: List[TdEntityNoReverse] = []
-    mstSvtCard: List[MstSvtCard] = []
+    mstSvtCard: List[MstSvtCard]
+    mstSvtLimit: List[MstSvtLimit]
 
 
 class SkillEntity(SkillEntityNoReverse):
