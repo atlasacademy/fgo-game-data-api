@@ -160,10 +160,12 @@ def get_func_entity(
 def get_skill_entity_no_reverse(
     region: Region, skill_id: int, expand: bool = False
 ) -> SkillEntityNoReverse:
-    skill_entity = SkillEntityNoReverse(mstSkill=masters[region].mstSkillId[skill_id])
-    skill_entity.mstSkillDetail = masters[region].mstSkillDetailId.get(skill_id, [])
-    skill_entity.mstSvtSkill = masters[region].mstSvtSkillId.get(skill_id, [])
-    skill_entity.mstSkillLv = masters[region].mstSkillLvId.get(skill_id, [])
+    skill_entity = SkillEntityNoReverse(
+        mstSkill=masters[region].mstSkillId[skill_id],
+        mstSkillDetail=masters[region].mstSkillDetailId.get(skill_id, []),
+        mstSvtSkill=masters[region].mstSvtSkillId.get(skill_id, []),
+        mstSkillLv=masters[region].mstSkillLvId.get(skill_id, []),
+    )
 
     if expand:
         skill_entity.mstSkillLv = deepcopy(skill_entity.mstSkillLv)
@@ -197,15 +199,13 @@ def get_td_entity_no_reverse(
     region: Region, td_id: int, expand: bool = False
 ) -> TdEntityNoReverse:
     td_entity = TdEntityNoReverse(
-        mstTreasureDevice=masters[region].mstTreasureDeviceId[td_id]
+        mstTreasureDevice=masters[region].mstTreasureDeviceId[td_id],
+        mstTreasureDeviceDetail=masters[region].mstTreasureDeviceDetailId.get(
+            td_id, []
+        ),
+        mstSvtTreasureDevice=masters[region].mstSvtTreasureDeviceId.get(td_id, []),
+        mstTreasureDeviceLv=masters[region].mstTreasureDeviceLvId.get(td_id, []),
     )
-    td_entity.mstTreasureDeviceDetail = masters[region].mstTreasureDeviceDetailId.get(
-        td_id, []
-    )
-    td_entity.mstSvtTreasureDevice = masters[region].mstSvtTreasureDeviceId.get(
-        td_id, []
-    )
-    td_entity.mstTreasureDeviceLv = masters[region].mstTreasureDeviceLvId.get(td_id, [])
 
     if expand:
         td_entity.mstTreasureDeviceLv = deepcopy(td_entity.mstTreasureDeviceLv)

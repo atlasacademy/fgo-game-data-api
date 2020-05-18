@@ -1,5 +1,5 @@
 from enum import IntEnum
-from typing import Any, Dict, List, Union
+from typing import Dict, List, Union
 
 from pydantic import BaseModel
 
@@ -94,9 +94,9 @@ class MstSkillLv(BaseModel):
 
 class SkillEntityNoReverse(BaseModel):
     mstSkill: MstSkill
-    mstSkillDetail: List[MstSkillDetail] = []
-    mstSvtSkill: List[MstSvtSkill] = []
-    mstSkillLv: List[MstSkillLv] = []
+    mstSkillDetail: List[MstSkillDetail]
+    mstSvtSkill: List[MstSvtSkill]
+    mstSkillLv: List[MstSkillLv]
 
 
 class MstTreasureDevice(BaseModel):
@@ -160,9 +160,9 @@ class MstTreasureDeviceLv(BaseModel):
 
 class TdEntityNoReverse(BaseModel):
     mstTreasureDevice: MstTreasureDevice
-    mstTreasureDeviceDetail: List[MstTreasureDeviceDetail] = []
-    mstSvtTreasureDevice: List[MstSvtTreasureDevice] = []
-    mstTreasureDeviceLv: List[MstTreasureDeviceLv] = []
+    mstTreasureDeviceDetail: List[MstTreasureDeviceDetail]
+    mstSvtTreasureDevice: List[MstSvtTreasureDevice]
+    mstTreasureDeviceLv: List[MstTreasureDeviceLv]
 
 
 class MstSvt(BaseModel):
