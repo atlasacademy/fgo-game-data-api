@@ -5924,6 +5924,108 @@
           "stepProbability": 1000,
           "strParam": "{}"
         }
+      ],
+      "mstCombineSkill": [
+        {
+          "itemIds": [6003],
+          "itemNums": [5],
+          "id": 301200,
+          "skillLv": 1,
+          "qp": 200000
+        },
+        {
+          "itemIds": [6003],
+          "itemNums": [12],
+          "id": 301200,
+          "skillLv": 2,
+          "qp": 400000
+        },
+        {
+          "itemIds": [6103],
+          "itemNums": [5],
+          "id": 301200,
+          "skillLv": 3,
+          "qp": 1200000
+        },
+        {
+          "itemIds": [6103, 6502],
+          "itemNums": [12, 6],
+          "id": 301200,
+          "skillLv": 4,
+          "qp": 1600000
+        },
+        {
+          "itemIds": [6203, 6502],
+          "itemNums": [5, 12],
+          "id": 301200,
+          "skillLv": 5,
+          "qp": 4000000
+        },
+        {
+          "itemIds": [6203, 6517],
+          "itemNums": [12, 2],
+          "id": 301200,
+          "skillLv": 6,
+          "qp": 5000000
+        },
+        {
+          "itemIds": [6517, 6501],
+          "itemNums": [4, 5],
+          "id": 301200,
+          "skillLv": 7,
+          "qp": 10000000
+        },
+        {
+          "itemIds": [6501, 6507],
+          "itemNums": [15, 15],
+          "id": 301200,
+          "skillLv": 8,
+          "qp": 12000000
+        },
+        {
+          "itemIds": [6999],
+          "itemNums": [1],
+          "id": 301200,
+          "skillLv": 9,
+          "qp": 20000000
+        }
+      ],
+      "mstCombineLimit": [
+        {
+          "itemIds": [7003],
+          "itemNums": [5],
+          "id": 301200,
+          "svtLimit": 0,
+          "qp": 100000
+        },
+        {
+          "itemIds": [7003, 6517],
+          "itemNums": [12, 3],
+          "id": 301200,
+          "svtLimit": 1,
+          "qp": 300000
+        },
+        {
+          "itemIds": [7103, 6502, 6503],
+          "itemNums": [5, 12, 15],
+          "id": 301200,
+          "svtLimit": 2,
+          "qp": 1000000
+        },
+        {
+          "itemIds": [7103, 6503, 6508],
+          "itemNums": [12, 29, 12],
+          "id": 301200,
+          "svtLimit": 3,
+          "qp": 3000000
+        },
+        {
+          "itemIds": [7999],
+          "itemNums": [1],
+          "id": 301200,
+          "svtLimit": 4,
+          "qp": 10000000
+        }
       ]
     }
   ]

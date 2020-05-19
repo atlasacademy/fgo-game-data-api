@@ -4446,7 +4446,9 @@
           "stepProbability": 1000,
           "strParam": "{}"
         }
-      ]
+      ],
+      "mstCombineSkill": [],
+      "mstCombineLimit": []
     }
   ]
 }

@@ -5076,6 +5076,108 @@
           "stepProbability": 1000,
           "strParam": "{}"
         }
+      ],
+      "mstCombineSkill": [
+        {
+          "itemIds": [6003],
+          "itemNums": [5],
+          "id": 303200,
+          "skillLv": 1,
+          "qp": 200000
+        },
+        {
+          "itemIds": [6003],
+          "itemNums": [12],
+          "id": 303200,
+          "skillLv": 2,
+          "qp": 400000
+        },
+        {
+          "itemIds": [6103],
+          "itemNums": [5],
+          "id": 303200,
+          "skillLv": 3,
+          "qp": 1200000
+        },
+        {
+          "itemIds": [6103, 6522],
+          "itemNums": [12, 15],
+          "id": 303200,
+          "skillLv": 4,
+          "qp": 1600000
+        },
+        {
+          "itemIds": [6203, 6522],
+          "itemNums": [5, 29],
+          "id": 303200,
+          "skillLv": 5,
+          "qp": 4000000
+        },
+        {
+          "itemIds": [6203, 6508],
+          "itemNums": [12, 5],
+          "id": 303200,
+          "skillLv": 6,
+          "qp": 5000000
+        },
+        {
+          "itemIds": [6508, 6532],
+          "itemNums": [10, 6],
+          "id": 303200,
+          "skillLv": 7,
+          "qp": 10000000
+        },
+        {
+          "itemIds": [6532, 6533],
+          "itemNums": [18, 72],
+          "id": 303200,
+          "skillLv": 8,
+          "qp": 12000000
+        },
+        {
+          "itemIds": [6999],
+          "itemNums": [1],
+          "id": 303200,
+          "skillLv": 9,
+          "qp": 20000000
+        }
+      ],
+      "mstCombineLimit": [
+        {
+          "itemIds": [7003],
+          "itemNums": [5],
+          "id": 303200,
+          "svtLimit": 0,
+          "qp": 100000
+        },
+        {
+          "itemIds": [7003, 6508],
+          "itemNums": [12, 8],
+          "id": 303200,
+          "svtLimit": 1,
+          "qp": 300000
+        },
+        {
+          "itemIds": [7103, 6522, 6517],
+          "itemNums": [5, 29, 2],
+          "id": 303200,
+          "svtLimit": 2,
+          "qp": 1000000
+        },
+        {
+          "itemIds": [7103, 6517, 6531],
+          "itemNums": [12, 4, 5],
+          "id": 303200,
+          "svtLimit": 3,
+          "qp": 3000000
+        },
+        {
+          "itemIds": [7999],
+          "itemNums": [1],
+          "id": 303200,
+          "svtLimit": 4,
+          "qp": 10000000
+        }
       ]
     },
     {
@@ -9856,7 +9958,9 @@
           "stepProbability": 1000,
           "strParam": "{}"
         }
-      ]
+      ],
+      "mstCombineSkill": [],
+      "mstCombineLimit": []
     },
     {
       "mstSvt": {
@@ -14636,7 +14740,9 @@
           "stepProbability": 1000,
           "strParam": "{}"
         }
-      ]
+      ],
+      "mstCombineSkill": [],
+      "mstCombineLimit": []
     }
   ]
 }

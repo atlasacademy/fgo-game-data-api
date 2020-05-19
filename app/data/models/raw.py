@@ -251,18 +251,58 @@ class MstSvtExp(BaseModel):
     curve: int  # 141
 
 
+class MstCombineLimit(BaseModel):
+    itemIds: List[int]  # [7002]
+    itemNums: List[int]  # [4]
+    id: int  # 202100
+    svtLimit: int  # 0
+    qp: int  # 50000
+
+
+class MstCombineSkill(BaseModel):
+    itemIds: List[int]  # [6505, 6521]
+    itemNums: List[int]  # [16, 3]
+    id: int  # 502300
+    skillLv: int  # 7
+    qp: int  # 5000000
+
+
+class MstItem(BaseModel):
+    individuality: List[int]  # [],
+    script: Dict[str, int]  # {},
+    eventId: int  # 0,
+    eventGroupId: int  # 0,
+    id: int  # 6505,
+    name: str  # "Void's Dust",
+    detail: str  # "\"Skill Up & Ascension Material\"\nDust that disperses when hollow shadows disappear.",
+    imageId: int  # 6505,
+    bgImageId: int  # 1,
+    type: int  # 11,
+    unit: str  # "",
+    value: int  # 0,
+    sellQp: int  # 2500,
+    isSell: bool  # true,
+    priority: int  # 203,
+    dropPriority: int  # 8201,
+    startedAt: int  # 946684800,
+    endedAt: int  # 1910908800
+
+
 class Master(BaseModel):
     mstBuff: List[MstBuff]
     mstFunc: List[MstFunc]
     mstSkill: List[MstSkill]
     mstSkillDetail: List[MstSkillDetail]
     mstSkillLv: List[MstSkillLv]
+    mstItem: List[MstItem]
     mstSvt: List[MstSvt]
     mstSvtCard: List[MstSvtCard]
     mstSvtSkill: List[MstSvtSkill]
     mstSvtLimit: List[MstSvtLimit]
     mstSvtExp: List[MstSvtExp]
     mstSvtTreasureDevice: List[MstSvtTreasureDevice]
+    mstCombineSkill: List[MstCombineSkill]
+    mstCombineLimit: List[MstCombineLimit]
     mstTreasureDevice: List[MstTreasureDevice]
     mstTreasureDeviceDetail: List[MstTreasureDeviceDetail]
     mstTreasureDeviceLv: List[MstTreasureDeviceLv]
@@ -270,6 +310,7 @@ class Master(BaseModel):
     mstBuffId: Dict[int, MstBuff]
     mstFuncId: Dict[int, MstFunc]
     mstSkillId: Dict[int, MstSkill]
+    mstItemId: Dict[int, MstItem]
     mstTreasureDeviceId: Dict[int, MstTreasureDevice]
     mstSvtServantCollectionNo: Dict[int, int]
     mstSvtServantName: Dict[str, int]
@@ -280,6 +321,8 @@ class Master(BaseModel):
     mstTreasureDeviceDetailId: Dict[int, List[MstTreasureDeviceDetail]]
     mstSvtTreasureDeviceId: Dict[int, List[MstSvtTreasureDevice]]
     mstTreasureDeviceLvId: Dict[int, List[MstTreasureDeviceLv]]
+    mstCombineSkillId: Dict[int, List[MstCombineSkill]]
+    mstCombineLimitId: Dict[int, List[MstCombineLimit]]
     mstSvtCardId: Dict[int, List[MstSvtCard]]
     mstSvtLimitId: Dict[int, List[MstSvtLimit]]
     mstSvtExpId: Dict[int, Dict[int, MstSvtExp]]
@@ -291,6 +334,8 @@ class ServantEntity(BaseModel):
     mstTreasureDevice: List[TdEntityNoReverse] = []
     mstSvtCard: List[MstSvtCard]
     mstSvtLimit: List[MstSvtLimit]
+    mstCombineSkill: List[MstCombineSkill]
+    mstCombineLimit: List[MstCombineLimit]
 
 
 class SkillEntity(SkillEntityNoReverse):

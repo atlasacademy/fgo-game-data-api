@@ -5533,6 +5533,108 @@
               "stepProbability": 1000,
               "strParam": "{}"
             }
+          ],
+          "mstCombineSkill": [
+            {
+              "itemIds": [6003],
+              "itemNums": [5],
+              "id": 301200,
+              "skillLv": 1,
+              "qp": 200000
+            },
+            {
+              "itemIds": [6003],
+              "itemNums": [12],
+              "id": 301200,
+              "skillLv": 2,
+              "qp": 400000
+            },
+            {
+              "itemIds": [6103],
+              "itemNums": [5],
+              "id": 301200,
+              "skillLv": 3,
+              "qp": 1200000
+            },
+            {
+              "itemIds": [6103, 6502],
+              "itemNums": [12, 6],
+              "id": 301200,
+              "skillLv": 4,
+              "qp": 1600000
+            },
+            {
+              "itemIds": [6203, 6502],
+              "itemNums": [5, 12],
+              "id": 301200,
+              "skillLv": 5,
+              "qp": 4000000
+            },
+            {
+              "itemIds": [6203, 6517],
+              "itemNums": [12, 2],
+              "id": 301200,
+              "skillLv": 6,
+              "qp": 5000000
+            },
+            {
+              "itemIds": [6517, 6501],
+              "itemNums": [4, 5],
+              "id": 301200,
+              "skillLv": 7,
+              "qp": 10000000
+            },
+            {
+              "itemIds": [6501, 6507],
+              "itemNums": [15, 15],
+              "id": 301200,
+              "skillLv": 8,
+              "qp": 12000000
+            },
+            {
+              "itemIds": [6999],
+              "itemNums": [1],
+              "id": 301200,
+              "skillLv": 9,
+              "qp": 20000000
+            }
+          ],
+          "mstCombineLimit": [
+            {
+              "itemIds": [7003],
+              "itemNums": [5],
+              "id": 301200,
+              "svtLimit": 0,
+              "qp": 100000
+            },
+            {
+              "itemIds": [7003, 6517],
+              "itemNums": [12, 3],
+              "id": 301200,
+              "svtLimit": 1,
+              "qp": 300000
+            },
+            {
+              "itemIds": [7103, 6502, 6503],
+              "itemNums": [5, 12, 15],
+              "id": 301200,
+              "svtLimit": 2,
+              "qp": 1000000
+            },
+            {
+              "itemIds": [7103, 6503, 6508],
+              "itemNums": [12, 29, 12],
+              "id": 301200,
+              "svtLimit": 3,
+              "qp": 3000000
+            },
+            {
+              "itemIds": [7999],
+              "itemNums": [1],
+              "id": 301200,
+              "svtLimit": 4,
+              "qp": 10000000
+            }
           ]
         }
       ]
@@ -10656,6 +10758,108 @@
               "deity": 41,
               "stepProbability": 1000,
               "strParam": "{\"Attack_g1\":223}"
+            }
+          ],
+          "mstCombineSkill": [
+            {
+              "itemIds": [6001],
+              "itemNums": [4],
+              "id": 101300,
+              "skillLv": 1,
+              "qp": 50000
+            },
+            {
+              "itemIds": [6001],
+              "itemNums": [8],
+              "id": 101300,
+              "skillLv": 2,
+              "qp": 100000
+            },
+            {
+              "itemIds": [6101],
+              "itemNums": [4],
+              "id": 101300,
+              "skillLv": 3,
+              "qp": 300000
+            },
+            {
+              "itemIds": [6101, 6510],
+              "itemNums": [8, 4],
+              "id": 101300,
+              "skillLv": 4,
+              "qp": 400000
+            },
+            {
+              "itemIds": [6201, 6510],
+              "itemNums": [4, 7],
+              "id": 101300,
+              "skillLv": 5,
+              "qp": 1000000
+            },
+            {
+              "itemIds": [6201, 6503],
+              "itemNums": [8, 10],
+              "id": 101300,
+              "skillLv": 6,
+              "qp": 1250000
+            },
+            {
+              "itemIds": [6503, 6513],
+              "itemNums": [20, 4],
+              "id": 101300,
+              "skillLv": 7,
+              "qp": 2500000
+            },
+            {
+              "itemIds": [6513, 6507],
+              "itemNums": [12, 10],
+              "id": 101300,
+              "skillLv": 8,
+              "qp": 3000000
+            },
+            {
+              "itemIds": [6999],
+              "itemNums": [1],
+              "id": 101300,
+              "skillLv": 9,
+              "qp": 5000000
+            }
+          ],
+          "mstCombineLimit": [
+            {
+              "itemIds": [7001],
+              "itemNums": [4],
+              "id": 101300,
+              "svtLimit": 0,
+              "qp": 30000
+            },
+            {
+              "itemIds": [7001, 6503],
+              "itemNums": [8, 15],
+              "id": 101300,
+              "svtLimit": 1,
+              "qp": 100000
+            },
+            {
+              "itemIds": [7101, 6510, 6511],
+              "itemNums": [4, 7, 4],
+              "id": 101300,
+              "svtLimit": 2,
+              "qp": 300000
+            },
+            {
+              "itemIds": [7101, 6511, 6507],
+              "itemNums": [8, 7, 5],
+              "id": 101300,
+              "svtLimit": 3,
+              "qp": 900000
+            },
+            {
+              "itemIds": [7999],
+              "itemNums": [1],
+              "id": 101300,
+              "svtLimit": 4,
+              "qp": 1000000
             }
           ]
         }
@@ -15831,6 +16035,108 @@
               "stepProbability": 1000,
               "strParam": "{\"Attack_g1\":223}"
             }
+          ],
+          "mstCombineSkill": [
+            {
+              "itemIds": [6001],
+              "itemNums": [4],
+              "id": 101300,
+              "skillLv": 1,
+              "qp": 50000
+            },
+            {
+              "itemIds": [6001],
+              "itemNums": [8],
+              "id": 101300,
+              "skillLv": 2,
+              "qp": 100000
+            },
+            {
+              "itemIds": [6101],
+              "itemNums": [4],
+              "id": 101300,
+              "skillLv": 3,
+              "qp": 300000
+            },
+            {
+              "itemIds": [6101, 6510],
+              "itemNums": [8, 4],
+              "id": 101300,
+              "skillLv": 4,
+              "qp": 400000
+            },
+            {
+              "itemIds": [6201, 6510],
+              "itemNums": [4, 7],
+              "id": 101300,
+              "skillLv": 5,
+              "qp": 1000000
+            },
+            {
+              "itemIds": [6201, 6503],
+              "itemNums": [8, 10],
+              "id": 101300,
+              "skillLv": 6,
+              "qp": 1250000
+            },
+            {
+              "itemIds": [6503, 6513],
+              "itemNums": [20, 4],
+              "id": 101300,
+              "skillLv": 7,
+              "qp": 2500000
+            },
+            {
+              "itemIds": [6513, 6507],
+              "itemNums": [12, 10],
+              "id": 101300,
+              "skillLv": 8,
+              "qp": 3000000
+            },
+            {
+              "itemIds": [6999],
+              "itemNums": [1],
+              "id": 101300,
+              "skillLv": 9,
+              "qp": 5000000
+            }
+          ],
+          "mstCombineLimit": [
+            {
+              "itemIds": [7001],
+              "itemNums": [4],
+              "id": 101300,
+              "svtLimit": 0,
+              "qp": 30000
+            },
+            {
+              "itemIds": [7001, 6503],
+              "itemNums": [8, 15],
+              "id": 101300,
+              "svtLimit": 1,
+              "qp": 100000
+            },
+            {
+              "itemIds": [7101, 6510, 6511],
+              "itemNums": [4, 7, 4],
+              "id": 101300,
+              "svtLimit": 2,
+              "qp": 300000
+            },
+            {
+              "itemIds": [7101, 6511, 6507],
+              "itemNums": [8, 7, 5],
+              "id": 101300,
+              "svtLimit": 3,
+              "qp": 900000
+            },
+            {
+              "itemIds": [7999],
+              "itemNums": [1],
+              "id": 101300,
+              "svtLimit": 4,
+              "qp": 1000000
+            }
           ]
         }
       ]
@@ -20807,6 +21113,108 @@
               "deity": 21,
               "stepProbability": 1000,
               "strParam": "{}"
+            }
+          ],
+          "mstCombineSkill": [
+            {
+              "itemIds": [6002],
+              "itemNums": [4],
+              "id": 202200,
+              "skillLv": 1,
+              "qp": 100000
+            },
+            {
+              "itemIds": [6002],
+              "itemNums": [10],
+              "id": 202200,
+              "skillLv": 2,
+              "qp": 200000
+            },
+            {
+              "itemIds": [6102],
+              "itemNums": [4],
+              "id": 202200,
+              "skillLv": 3,
+              "qp": 600000
+            },
+            {
+              "itemIds": [6102, 6502],
+              "itemNums": [10, 5],
+              "id": 202200,
+              "skillLv": 4,
+              "qp": 800000
+            },
+            {
+              "itemIds": [6202, 6502],
+              "itemNums": [4, 10],
+              "id": 202200,
+              "skillLv": 5,
+              "qp": 2000000
+            },
+            {
+              "itemIds": [6202, 6513],
+              "itemNums": [10, 4],
+              "id": 202200,
+              "skillLv": 6,
+              "qp": 2500000
+            },
+            {
+              "itemIds": [6513, 6518],
+              "itemNums": [8, 2],
+              "id": 202200,
+              "skillLv": 7,
+              "qp": 5000000
+            },
+            {
+              "itemIds": [6518, 6528],
+              "itemNums": [6, 12],
+              "id": 202200,
+              "skillLv": 8,
+              "qp": 6000000
+            },
+            {
+              "itemIds": [6999],
+              "itemNums": [1],
+              "id": 202200,
+              "skillLv": 9,
+              "qp": 10000000
+            }
+          ],
+          "mstCombineLimit": [
+            {
+              "itemIds": [94018806],
+              "itemNums": [1],
+              "id": 202200,
+              "svtLimit": 0,
+              "qp": 50000
+            },
+            {
+              "itemIds": [94018806],
+              "itemNums": [1],
+              "id": 202200,
+              "svtLimit": 1,
+              "qp": 150000
+            },
+            {
+              "itemIds": [94018806],
+              "itemNums": [1],
+              "id": 202200,
+              "svtLimit": 2,
+              "qp": 500000
+            },
+            {
+              "itemIds": [94018806],
+              "itemNums": [1],
+              "id": 202200,
+              "svtLimit": 3,
+              "qp": 1500000
+            },
+            {
+              "itemIds": [7999],
+              "itemNums": [1],
+              "id": 202200,
+              "svtLimit": 4,
+              "qp": 50000000
             }
           ]
         }

@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import List
+from typing import List, Dict
 
 from pydantic import BaseModel
 
@@ -15,6 +15,22 @@ class CardType(str, Enum):
     Buster = "Buster"
     Quick = "Quick"
     Extra = "Extra"
+
+
+class NiceItemAmount(BaseModel):
+    id: int
+    name: str
+    amount: int
+
+
+class NiceAscensionMaterial(BaseModel):
+    items: List[NiceItemAmount]
+    qp: int
+
+
+class NiceSkillMaterial(BaseModel):
+    items: List[NiceItemAmount]
+    qp: int
 
 
 class NiceServantEntity(BaseModel):
@@ -39,4 +55,6 @@ class NiceServantEntity(BaseModel):
     artsDistribution: List[int]
     quickDistribution: List[int]
     extraDistribution: List[int]
+    ascenionMaterials: Dict[int, NiceAscensionMaterial]
+    skillMaterials: Dict[int, NiceSkillMaterial]
     # npDistribution: List[int]

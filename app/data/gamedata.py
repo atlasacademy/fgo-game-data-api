@@ -37,9 +37,16 @@ logger = logging.getLogger()
 
 
 masters: Dict[Region, Master] = {}
-MASTER_WITH_ID = ["mstSvt", "mstBuff", "mstFunc", "mstSkill", "mstTreasureDevice"]
+MASTER_WITH_ID = [
+    "mstSvt",
+    "mstBuff",
+    "mstFunc",
+    "mstSkill",
+    "mstTreasureDevice",
+    "mstItem",
+]
 MASTER_WITHOUT_ID = ["mstSvtExp"]
-SVT_STUFFS = ["mstSvtCard", "mstSvtLimit"]
+SVT_STUFFS = ["mstSvtCard", "mstSvtLimit", "mstCombineSkill", "mstCombineLimit"]
 SKILL_STUFFS = ["mstSkillDetail", "mstSvtSkill", "mstSkillLv"]
 TD_STUFFS = ["mstTreasureDeviceDetail", "mstSvtTreasureDevice", "mstTreasureDeviceLv"]
 region_path = [(Region.NA, settings.na_gamedata), (Region.JP, settings.jp_gamedata)]
@@ -90,6 +97,8 @@ for region_name, gamedata in region_path:
         master[f"{extra_stuff}Id"] = {}
         for item in master[extra_stuff]:
             if "Detail" in extra_stuff:
+                id_name = "id"
+            elif extra_stuff in ["mstCombineSkill", "mstCombineLimit"]:
                 id_name = "id"
             elif extra_stuff in SKILL_STUFFS:
                 id_name = "skillId"
@@ -257,6 +266,8 @@ def get_servant_entity(
         mstSvt=masters[region].mstSvtId[servant_id],
         mstSvtCard=masters[region].mstSvtCardId.get(servant_id, []),
         mstSvtLimit=masters[region].mstSvtLimitId.get(servant_id, []),
+        mstCombineSkill=masters[region].mstCombineSkillId.get(servant_id, []),
+        mstCombineLimit=masters[region].mstCombineLimitId.get(servant_id, []),
     )
 
     skills = [
