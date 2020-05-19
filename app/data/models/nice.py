@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import List, Dict
+from typing import List, Dict, Union
 
 from pydantic import BaseModel
 
@@ -154,7 +154,77 @@ class NiceSkillMaterial(BaseModel):
     qp: int
 
 
-class NiceServantEntity(BaseModel):
+class Vals(BaseModel):
+    Rate: List[int] = []
+    Turn: List[int] = []
+    Count: List[int] = []
+    Value: List[int] = []
+    Value2: List[int] = []
+    UseRate: List[int] = []
+    Target: List[int] = []
+    Correction: List[int] = []
+    ParamAdd: List[int] = []
+    ParamMax: List[int] = []
+    HideMiss: List[int] = []
+    OnField: List[int] = []
+    HideNoEffect: List[int] = []
+    Unaffected: List[int] = []
+    ShowState: List[int] = []
+    AuraEffectId: List[int] = []
+    ActSet: List[int] = []
+    ActSetWeight: List[int] = []
+    ShowQuestNoEffect: List[int] = []
+    CheckDead: List[int] = []
+    RatioHPHigh: List[int] = []
+    RatioHPLow: List[int] = []
+    SetPassiveFrame: List[int] = []
+    ProcPassive: List[int] = []
+    ProcActive: List[int] = []
+    HideParam: List[int] = []
+    SkillID: List[int] = []
+    SkillLV: List[int] = []
+    ShowCardOnly: List[int] = []
+    EffectSummon: List[int] = []
+    RatioHPRangeHigh: List[int] = []
+    RatioHPRangeLow: List[int] = []
+    TargetList: List[int] = []
+    OpponentOnly: List[int] = []
+
+
+class NiceBuff(BaseModel):
+    id: int
+    name: str
+    detail: str
+    type: int
+    vals: List[Union[Trait, int]]
+    tvals: List[Union[Trait, int]]
+    ckSelfIndv: List[Union[Trait, int]]
+
+
+class NiceFunction(BaseModel):
+    funcId: int
+    funcPopupText: str
+    funcPopupIconId: int
+    functvals: List[Union[Trait, int]]
+    buffs: List[NiceBuff]
+    svals: Vals
+
+
+class NiceSkill(BaseModel):
+    id: int
+    name: str
+    iconId: int
+    detail: str
+    strengthStatus: int = -1
+    num: int = -1
+    priority: int = -1
+    condQuestId: int = -1
+    condQuestPhase: int = -1
+    coolDown: List[int]
+    functions: List[NiceFunction]
+
+
+class NiceServant(BaseModel):
     collectionNo: int
     name: str
     className: SvtClass
@@ -185,4 +255,6 @@ class NiceServantEntity(BaseModel):
     extraDistribution: List[int]
     ascenionMaterials: Dict[int, NiceAscensionMaterial]
     skillMaterials: Dict[int, NiceSkillMaterial]
+    skills: List[NiceSkill]
+    classPassive: List[NiceSkill]
     # npDistribution: List[int]

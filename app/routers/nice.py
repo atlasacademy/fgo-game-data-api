@@ -1,14 +1,15 @@
-from typing import Any, Dict
+from typing import Any, Dict, Union, List
 
 from fastapi import APIRouter, HTTPException
 
 from ..data import gamedata
 from ..data.models.common import Region
+from ..data.models.raw import SkillEntityNoReverse, FuncType
 from ..data.models.nice import (
     Attribute,
     CardType,
     Gender,
-    NiceServantEntity,
+    NiceServant,
     SvtClass,
     Trait,
 )
@@ -148,8 +149,138 @@ TRAIT_NAME: Dict[int, Trait] = {
 }
 
 
+def get_traits_list(input_idv: List[int]) -> List[Union[Trait, int]]:
+    return [TRAIT_NAME.get(item, item) for item in input_idv]
+
+
+def parseDataVals(datavals: str, functype: int) -> Dict[str, Any]:
+    output: Dict[str, Any] = {}
+    array = datavals.replace("[", "").replace("]", "").split(",")
+    for i, arrayi in enumerate(array):
+        text = ""
+        value = 0
+        try:
+            value = int(arrayi)
+            if functype in [
+                FuncType.DAMAGE_NP_INDIVIDUAL,
+                FuncType.DAMAGE_NP_STATE_INDIVIDUAL,
+                FuncType.DAMAGE_NP_STATE_INDIVIDUAL_FIX,
+            ]:
+                if i == 0:
+                    text = "Rate"
+                elif i == 1:
+                    text = "Value"
+                elif i == 2:
+                    text = "Target"
+                elif i == 3:
+                    text = "Correction"
+            elif functype in [FuncType.ADD_STATE, FuncType.ADD_STATE_SHORT]:
+                if i == 0:
+                    text = "Rate"
+                elif i == 1:
+                    text = "Turn"
+                elif i == 2:
+                    text = "Count"
+                elif i == 3:
+                    text = "Value"
+                elif i == 4:
+                    text = "UseRate"
+                elif i == 5:
+                    text = "Value2"
+            elif functype != FuncType.SUB_STATE:
+                if i == 0:
+                    text = "Rate"
+                elif i == 1:
+                    text = "Value"
+                elif i == 2:
+                    text = "Target"
+            else:
+                if i == 0:
+                    text = "Rate"
+                elif i == 1:
+                    text = "Value"
+                elif i == 2:
+                    text = "Value2"
+        except ValueError:
+            array2 = arrayi.split(":")
+            if len(array2) > 1:
+                text = array2[0]
+                try:
+                    value = int(array2[1])
+                except ValueError:
+                    if "strVals" in output:
+                        output["strVals"][text] = array2[1]
+                    else:
+                        output["strVals"] = {text: array2[1]}
+        if text != "":
+            output[text] = value
+    return output
+
+
+def get_nice_skill(skillEntity: SkillEntityNoReverse, svtId: int) -> Dict[str, Any]:
+    nice_skill: Dict[str, Any] = {}
+    nice_skill["id"] = skillEntity.mstSkill.id
+    nice_skill["name"] = skillEntity.mstSkill.name
+    nice_skill["iconId"] = skillEntity.mstSkill.iconId
+    nice_skill["detail"] = skillEntity.mstSkillDetail[0].detail.replace(" [{0}] ", " ")
+
+    chosenSvt = [item for item in skillEntity.mstSvtSkill if item.svtId == svtId]
+    if len(chosenSvt) > 0:
+        nice_skill["strengthStatus"] = chosenSvt[0].strengthStatus
+        nice_skill["num"] = chosenSvt[0].num
+        nice_skill["priority"] = chosenSvt[0].priority
+        nice_skill["condQuestId"] = chosenSvt[0].condQuestId
+        nice_skill["condQuestPhase"] = chosenSvt[0].condQuestPhase
+
+    nice_skill["coolDown"] = [skillEntity.mstSkillLv[0].chargeTurn]
+    nice_skill["functions"] = []
+
+    for i in range(len(skillEntity.mstSkillLv[0].funcId)):
+        function = skillEntity.mstSkillLv[0].expandedFuncId[i]
+        functionInfo: Dict[str, Any] = {}
+        functionInfo["funcId"] = function.mstFunc.id
+        functionInfo["funcPopupText"] = function.mstFunc.popupText
+        functionInfo["funcPopupIconId"] = function.mstFunc.popupIconId
+        functionInfo["functvals"] = get_traits_list(function.mstFunc.tvals)
+
+        buffs = []
+        if len(function.mstFunc.expandedVals) > 0:
+            for buff in function.mstFunc.expandedVals:
+                buffInfo: Dict[str, Any] = {}
+                buffInfo["id"] = buff.mstBuff.id
+                buffInfo["name"] = buff.mstBuff.name
+                buffInfo["detail"] = buff.mstBuff.detail
+                buffInfo["iconId"] = buff.mstBuff.iconId
+                buffInfo["type"] = buff.mstBuff.type
+                buffInfo["vals"] = get_traits_list(buff.mstBuff.vals)
+                buffInfo["tvals"] = get_traits_list(buff.mstBuff.tvals)
+                buffInfo["ckSelfIndv"] = get_traits_list(buff.mstBuff.ckSelfIndv)
+                buffs.append(buffInfo)
+        functionInfo["buffs"] = buffs
+
+        dataVals = parseDataVals(
+            skillEntity.mstSkillLv[0].svals[i], function.mstFunc.funcType
+        )
+        svals: Dict[str, Any] = {}
+        for key, value in dataVals.items():
+            svals[key] = [value]
+        functionInfo["svals"] = svals
+        nice_skill["functions"].append(functionInfo)
+
+    for skillLv in skillEntity.mstSkillLv[1:]:
+        nice_skill["coolDown"].append(skillLv.chargeTurn)
+        for i in range(len(skillLv.funcId)):
+            dataVals = parseDataVals(
+                skillLv.svals[i], skillLv.expandedFuncId[i].mstFunc.funcType
+            )
+            for key, value in dataVals.items():
+                nice_skill["functions"][i]["svals"][key].append(value)
+
+    return nice_skill
+
+
 def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
-    raw_data = gamedata.get_servant_entity(region, item_id)
+    raw_data = gamedata.get_servant_entity(region, item_id, True)
     nice_data: Dict[str, Any] = {}
 
     nice_data["collectionNo"] = raw_data.mstSvt.collectionNo
@@ -239,6 +370,13 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
             "qp": combineSkill.qp,
         }
     nice_data["skillMaterials"] = skillMaterials
+
+    nice_data["skills"] = [
+        get_nice_skill(skill, item_id) for skill in raw_data.mstSkill
+    ]
+    nice_data["classPassive"] = [
+        get_nice_skill(skill, item_id) for skill in raw_data.mstSvt.expandedClassPassive
+    ]
     return nice_data
 
 
@@ -249,7 +387,7 @@ router = APIRouter()
     "/{region}/servant/{item_id}",
     summary="Get servant data",
     response_description="Servant Entity",
-    response_model=NiceServantEntity,
+    response_model=NiceServant,
     response_model_exclude_unset=True,
 )
 async def get_servant(region: Region, item_id: int):
