@@ -10,6 +10,22 @@ class Gender(str, Enum):
     unknown = "unknown"
 
 
+class SvtClass(str, Enum):
+    saber = "saber"
+    archer = "archer"
+    lancer = "lancer"
+    rider = "rider"
+    caster = "caster"
+    assassin = "assassin"
+    berserker = "berserker"
+    shielder = "shielder"
+    ruler = "ruler"
+    alterEgo = "alterEgo"
+    avenger = "avenger"
+    moonCancer = "moonCancer"
+    foreigner = "foreigner"
+
+
 class CardType(str, Enum):
     arts = "arts"
     buster = "buster"
@@ -44,6 +60,7 @@ class NiceSkillMaterial(BaseModel):
 class NiceServantEntity(BaseModel):
     collectionNo: int
     name: str
+    className: SvtClass
     cost: int
     gender: Gender
     attribute: Attribute
