@@ -254,6 +254,7 @@ def get_nice_skill(skillEntity: SkillEntityNoReverse, svtId: int) -> Dict[str, A
                 buffInfo["type"] = buff.mstBuff.type
                 buffInfo["vals"] = get_traits_list(buff.mstBuff.vals)
                 buffInfo["tvals"] = get_traits_list(buff.mstBuff.tvals)
+                buffInfo["ckOpIndv"] = get_traits_list(buff.mstBuff.ckOpIndv)
                 buffInfo["ckSelfIndv"] = get_traits_list(buff.mstBuff.ckSelfIndv)
                 buffs.append(buffInfo)
         functionInfo["buffs"] = buffs

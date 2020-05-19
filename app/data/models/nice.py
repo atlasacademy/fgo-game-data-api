@@ -195,9 +195,11 @@ class NiceBuff(BaseModel):
     id: int
     name: str
     detail: str
+    iconId: int
     type: int
     vals: List[Union[Trait, int]]
     tvals: List[Union[Trait, int]]
+    ckOpIndv: List[Union[Trait, int]]
     ckSelfIndv: List[Union[Trait, int]]
 
 
