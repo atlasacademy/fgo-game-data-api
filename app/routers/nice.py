@@ -4,7 +4,7 @@ from fastapi import APIRouter, HTTPException
 
 from ..data import gamedata
 from ..data.models.common import Region
-from ..data.models.nice import CardType, Gender, NiceServantEntity
+from ..data.models.nice import Attribute, CardType, Gender, NiceServantEntity
 
 
 CARD_TYPE_NAME: Dict[int, CardType] = {
@@ -15,7 +15,16 @@ CARD_TYPE_NAME: Dict[int, CardType] = {
 }
 
 
-GENDER_NAME: Dict[int, Gender] = {1: Gender.Male, 2: Gender.Female, 3: Gender.Unknown}
+GENDER_NAME: Dict[int, Gender] = {1: Gender.male, 2: Gender.female, 3: Gender.unknown}
+
+
+ATTRIBUTE_NAME: Dict[int, Attribute] = {
+    1: Attribute.human,
+    2: Attribute.sky,
+    3: Attribute.ground,
+    4: Attribute.star,
+    5: Attribute.beast,
+}
 
 
 def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
@@ -25,6 +34,7 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
     nice_data["collectionNo"] = raw_data.mstSvt.collectionNo
     nice_data["name"] = raw_data.mstSvt.name
     nice_data["gender"] = GENDER_NAME[raw_data.mstSvt.genderType]
+    nice_data["attribute"] = ATTRIBUTE_NAME[raw_data.mstSvt.attri]
     nice_data["cost"] = raw_data.mstSvt.cost
     nice_data["instantDeathChance"] = raw_data.mstSvt.deathRate / 1000
     nice_data["starAbsorb"] = raw_data.mstSvtLimit[0].criticalWeight

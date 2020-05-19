@@ -5,9 +5,9 @@ from pydantic import BaseModel
 
 
 class Gender(str, Enum):
-    Male = "Male"
-    Female = "Female"
-    Unknown = "Unknown"
+    male = "male"
+    female = "female"
+    unknown = "unknown"
 
 
 class CardType(str, Enum):
@@ -15,6 +15,14 @@ class CardType(str, Enum):
     buster = "buster"
     quick = "quick"
     extra = "extra"
+
+
+class Attribute(str, Enum):
+    human = "human"
+    sky = "sky"
+    earth = "earth"
+    star = "star"
+    beast = "beast"
 
 
 class NiceItemAmount(BaseModel):
@@ -38,6 +46,7 @@ class NiceServantEntity(BaseModel):
     name: str
     cost: int
     gender: Gender
+    attribute: Attribute
     busterNpGain: float
     artsNpGain: float
     quickNpGain: float
