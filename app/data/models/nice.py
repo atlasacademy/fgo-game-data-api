@@ -11,10 +11,10 @@ class Gender(str, Enum):
 
 
 class CardType(str, Enum):
-    Arts = "Arts"
-    Buster = "Buster"
-    Quick = "Quick"
-    Extra = "Extra"
+    arts = "arts"
+    buster = "buster"
+    quick = "quick"
+    extra = "extra"
 
 
 class NiceItemAmount(BaseModel):
@@ -38,8 +38,12 @@ class NiceServantEntity(BaseModel):
     name: str
     cost: int
     gender: Gender
-    attackBaseNp: float
-    defenceBaseNp: float
+    busterNpGain: float
+    artsNpGain: float
+    quickNpGain: float
+    extraNpGain: float
+    npNpGain: float
+    defenceNpGain: float
     starAbsorb: int
     starGen: float
     instantDeathChance: float

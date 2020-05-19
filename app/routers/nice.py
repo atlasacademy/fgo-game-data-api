@@ -8,10 +8,10 @@ from ..data.models.nice import CardType, Gender, NiceServantEntity
 
 
 CARD_TYPE_NAME: Dict[int, CardType] = {
-    1: CardType.Arts,
-    2: CardType.Buster,
-    3: CardType.Quick,
-    4: CardType.Extra,
+    1: CardType.arts,
+    2: CardType.buster,
+    3: CardType.quick,
+    4: CardType.extra,
 }
 
 
@@ -64,8 +64,12 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
     actualTDs = [
         item for item in raw_data.mstTreasureDevice if item.mstTreasureDevice.id != 100
     ]
-    nice_data["attackBaseNp"] = actualTDs[0].mstTreasureDeviceLv[0].tdPoint / 10000
-    nice_data["defenceBaseNp"] = actualTDs[0].mstTreasureDeviceLv[0].tdPointDef / 10000
+    nice_data["busterNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPointB / 10000
+    nice_data["artsNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPointA / 10000
+    nice_data["quickNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPointQ / 10000
+    nice_data["extraNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPointEx / 10000
+    nice_data["npNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPoint / 10000
+    nice_data["defenceNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPointDef / 10000
 
     ascenionMaterials = {}
     for combineLimit in raw_data.mstCombineLimit:
