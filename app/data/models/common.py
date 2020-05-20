@@ -1,6 +1,6 @@
 from enum import Enum
 
-from pydantic import BaseSettings
+from pydantic import BaseModel, BaseSettings
 
 
 class Region(str, Enum):
@@ -14,3 +14,7 @@ class Settings(BaseSettings):
 
     class Config:
         env_file = ".env"
+
+
+class DetailMessage(BaseModel):
+    detail: str

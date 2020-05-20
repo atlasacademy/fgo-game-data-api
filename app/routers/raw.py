@@ -1,11 +1,11 @@
-from typing import Optional
+from typing import Any, Dict, Optional, Union
 
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import Response
 from fuzzywuzzy import fuzz, process
 
 from ..data import gamedata
-from ..data.models.common import Region
+from ..data.models.common import DetailMessage, Region
 from ..data.models.raw import (
     BuffEntity,
     FunctionEntity,
@@ -13,6 +13,12 @@ from ..data.models.raw import (
     SkillEntity,
     TdEntity,
 )
+
+
+responses: Dict[Union[str, int], Any] = {
+    404: {"model": DetailMessage, "description": "Item not found"}
+}
+
 
 router = APIRouter()
 
@@ -23,6 +29,7 @@ router = APIRouter()
     response_description="Servant Entity",
     response_model=ServantEntity,
     response_model_exclude_unset=True,
+    responses=responses,
 )
 async def get_servant(region: Region, item_id: int, expand: bool = False):
     """
@@ -52,6 +59,7 @@ async def get_servant(region: Region, item_id: int, expand: bool = False):
     response_description="Servant Entity",
     response_model=ServantEntity,
     response_model_exclude_unset=True,
+    responses=responses,
 )
 async def find_servant(
     region: Region, name: Optional[str] = None, expand: bool = False
@@ -99,6 +107,7 @@ async def find_servant(
     response_description="CE entity",
     response_model=ServantEntity,
     response_model_exclude_unset=True,
+    responses=responses,
 )
 async def get_equip(region: Region, item_id: int, expand: bool = False):
     """
@@ -128,6 +137,7 @@ async def get_equip(region: Region, item_id: int, expand: bool = False):
     response_description="Skill entity",
     response_model=SkillEntity,
     response_model_exclude_unset=True,
+    responses=responses,
 )
 async def get_skill(
     region: Region, item_id: int, reverse: bool = False, expand: bool = False
@@ -155,6 +165,7 @@ async def get_skill(
     response_description="NP entity",
     response_model=TdEntity,
     response_model_exclude_unset=True,
+    responses=responses,
 )
 async def get_td(
     region: Region, item_id: int, reverse: bool = False, expand: bool = False
@@ -182,6 +193,7 @@ async def get_td(
     response_description="Function entity",
     response_model=FunctionEntity,
     response_model_exclude_unset=True,
+    responses=responses,
 )
 async def get_function(
     region: Region, item_id: int, reverse: bool = False, expand: bool = False
@@ -210,6 +222,7 @@ async def get_function(
     response_description="Buff entity",
     response_model=BuffEntity,
     response_model_exclude_unset=True,
+    responses=responses,
 )
 async def get_buff(region: Region, item_id: int, reverse: bool = False):
     """
