@@ -1,6 +1,7 @@
 from typing import Optional
 
 from fastapi import APIRouter, HTTPException
+from fastapi.responses import Response
 from fuzzywuzzy import fuzz, process
 
 from ..data import gamedata
@@ -37,7 +38,10 @@ async def get_servant(region: Region, item_id: int, expand: bool = False):
     if item_id in gamedata.masters[region].mstSvtServantCollectionNo:
         item_id = gamedata.masters[region].mstSvtServantCollectionNo[item_id]
     if item_id in gamedata.masters[region].mstSvtId:
-        return gamedata.get_servant_entity(region, item_id, expand)
+        servant_entity = gamedata.get_servant_entity(region, item_id, expand)
+        return Response(
+            servant_entity.json(exclude_unset=True), media_type="application/json",
+        )
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
 
@@ -81,7 +85,10 @@ async def find_servant(
             svt_entity_found = sorted(
                 svt_entity_found, key=lambda x: x.mstSvt.collectionNo
             )
-            return svt_entity_found[0]
+            return Response(
+                svt_entity_found[0].json(exclude_unset=True),
+                media_type="application/json",
+            )
         else:
             raise HTTPException(status_code=404, detail="Servant not found")
 
@@ -107,7 +114,10 @@ async def get_equip(region: Region, item_id: int, expand: bool = False):
     if item_id in gamedata.masters[region].mstSvtEquipCollectionNo:
         item_id = gamedata.masters[region].mstSvtEquipCollectionNo[item_id]
     if item_id in gamedata.masters[region].mstSvtId:
-        return gamedata.get_servant_entity(region, item_id, expand)
+        servant_entity = gamedata.get_servant_entity(region, item_id, expand)
+        return Response(
+            servant_entity.json(exclude_unset=True), media_type="application/json",
+        )
     else:
         raise HTTPException(status_code=404, detail="Equip not found")
 
@@ -131,7 +141,10 @@ async def get_skill(
     from the function IDs in mstSkillLv.funcId.
     """
     if item_id in gamedata.masters[region].mstSkillId:
-        return gamedata.get_skill_entity(region, item_id, reverse, expand)
+        skill_entity = gamedata.get_skill_entity(region, item_id, reverse, expand)
+        return Response(
+            skill_entity.json(exclude_unset=True), media_type="application/json",
+        )
     else:
         raise HTTPException(status_code=404, detail="Skill not found")
 
@@ -155,7 +168,10 @@ async def get_td(
     from the function IDs in mstTreasureDeviceLv.funcId.
     """
     if item_id in gamedata.masters[region].mstTreasureDeviceId:
-        return gamedata.get_td_entity(region, item_id, reverse, expand)
+        td_entity = gamedata.get_td_entity(region, item_id, reverse, expand)
+        return Response(
+            td_entity.json(exclude_unset=True), media_type="application/json",
+        )
     else:
         raise HTTPException(status_code=404, detail="NP not found")
 
@@ -180,7 +196,10 @@ async def get_function(
     from the buff IDs in mstFunc.vals.
     """
     if item_id in gamedata.masters[region].mstFuncId:
-        return gamedata.get_func_entity(region, item_id, reverse, expand)
+        func_entity = gamedata.get_func_entity(region, item_id, reverse, expand)
+        return Response(
+            func_entity.json(exclude_unset=True), media_type="application/json",
+        )
     else:
         raise HTTPException(status_code=404, detail="Function not found")
 
@@ -201,6 +220,9 @@ async def get_buff(region: Region, item_id: int, reverse: bool = False):
     Will search recursively and return all entities in path: buff -> func -> skill -> servant.
     """
     if item_id in gamedata.masters[region].mstBuffId:
-        return gamedata.get_buff_entity(region, item_id, reverse)
+        buff_entity = gamedata.get_buff_entity(region, item_id, reverse)
+        return Response(
+            buff_entity.json(exclude_unset=True), media_type="application/json",
+        )
     else:
         raise HTTPException(status_code=404, detail="Buff not found")
