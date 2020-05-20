@@ -1,9 +1,10 @@
-import json
 import logging
 import time
 from copy import deepcopy
 from pathlib import Path
 from typing import Any, Dict, Set
+
+import orjson
 
 from .models.common import Region, Settings
 from .models.raw import (
@@ -61,8 +62,8 @@ for region_name, gamedata in region_path:
     for entity in (
         MASTER_WITH_ID + MASTER_WITHOUT_ID + SVT_STUFFS + SKILL_STUFFS + TD_STUFFS
     ):
-        with open(gamedata_path / f"{entity}.json", "r", encoding="utf-8") as fp:
-            master[entity] = json.load(fp)
+        with open(gamedata_path / f"{entity}.json", "rb") as fp:
+            master[entity] = orjson.loads(fp.read())
 
     for entity in MASTER_WITH_ID:
         master[f"{entity}Id"] = {item["id"]: item for item in master[entity]}

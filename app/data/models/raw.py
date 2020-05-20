@@ -3,6 +3,8 @@ from typing import Dict, List, Union
 
 from pydantic import BaseModel
 
+import orjson
+
 
 class MstBuff(BaseModel):
     vals: List[int]  # [3004],
@@ -328,6 +330,10 @@ class Master(BaseModel):
     mstSvtExpId: Dict[int, Dict[int, MstSvtExp]]
 
 
+def orjson_dumps(v, *, default):
+    return orjson.dumps(v, default=default).decode()
+
+
 class ServantEntity(BaseModel):
     mstSvt: MstSvt
     mstSkill: List[SkillEntityNoReverse] = []
@@ -337,22 +343,42 @@ class ServantEntity(BaseModel):
     mstCombineSkill: List[MstCombineSkill]
     mstCombineLimit: List[MstCombineLimit]
 
+    class Config:
+        json_loads = orjson.loads
+        json_dumps = orjson_dumps
+
 
 class SkillEntity(SkillEntityNoReverse):
     reverseServants: List[ServantEntity] = []
 
+    class Config:
+        json_loads = orjson.loads
+        json_dumps = orjson_dumps
+
 
 class TdEntity(TdEntityNoReverse):
     reverseServants: List[ServantEntity] = []
+
+    class Config:
+        json_loads = orjson.loads
+        json_dumps = orjson_dumps
 
 
 class FunctionEntity(FunctionEntityNoReverse):
     reverseSkills: List[SkillEntity] = []
     reverseTds: List[TdEntity] = []
 
+    class Config:
+        json_loads = orjson.loads
+        json_dumps = orjson_dumps
+
 
 class BuffEntity(BuffEntityNoReverse):
     reverseFunctions: List[FunctionEntity] = []
+
+    class Config:
+        json_loads = orjson.loads
+        json_dumps = orjson_dumps
 
 
 class SvtType(IntEnum):

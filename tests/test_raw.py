@@ -1,9 +1,9 @@
-import json
 from pathlib import Path
 from typing import Any
 
 from fastapi.testclient import TestClient
 
+import orjson
 from app.main import app
 
 
@@ -12,10 +12,8 @@ file_path = Path(__file__)
 
 
 def get_response_data(file_name: str) -> Any:
-    with open(
-        file_path.parent / "test_data" / f"{file_name}.json", "r", encoding="utf-8"
-    ) as fp:
-        return json.load(fp)
+    with open(file_path.parent / "test_data" / f"{file_name}.json", "rb") as fp:
+        return orjson.loads(fp.read())
 
 
 class TestServant:
