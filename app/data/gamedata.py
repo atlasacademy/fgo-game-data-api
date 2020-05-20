@@ -295,4 +295,4 @@ def get_servant_entity(
                     get_skill_entity_no_reverse(region, passiveSkill, expand)
                 )
         svt_entity.mstSvt.expandedClassPassive = expandedPassive
-    return ServantEntity.parse_obj(svt_entity)
+    return svt_entity
