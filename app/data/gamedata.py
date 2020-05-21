@@ -1,7 +1,6 @@
 import logging
 import time
 from copy import deepcopy
-from pathlib import Path
 from typing import Any, Dict, Set
 
 import orjson
@@ -47,7 +46,13 @@ MASTER_WITH_ID = [
     "mstItem",
 ]
 MASTER_WITHOUT_ID = ["mstSvtExp"]
-SVT_STUFFS = ["mstSvtCard", "mstSvtLimit", "mstCombineSkill", "mstCombineLimit"]
+SVT_STUFFS = [
+    "mstSvtCard",
+    "mstSvtLimit",
+    "mstCombineSkill",
+    "mstCombineLimit",
+    "mstSvtLimitAdd",
+]
 SKILL_STUFFS = ["mstSkillDetail", "mstSvtSkill", "mstSkillLv"]
 TD_STUFFS = ["mstTreasureDeviceDetail", "mstSvtTreasureDevice", "mstTreasureDeviceLv"]
 region_path = [(Region.NA, settings.na_gamedata), (Region.JP, settings.jp_gamedata)]
@@ -57,12 +62,11 @@ start_loading_time = time.time()
 
 for region_name, gamedata in region_path:
     master = {}
-    gamedata_path = Path(gamedata).resolve()
 
     for entity in (
         MASTER_WITH_ID + MASTER_WITHOUT_ID + SVT_STUFFS + SKILL_STUFFS + TD_STUFFS
     ):
-        with open(gamedata_path / f"{entity}.json", "rb") as fp:
+        with open(gamedata / f"{entity}.json", "rb") as fp:
             master[entity] = orjson.loads(fp.read())
 
     for entity in MASTER_WITH_ID:
@@ -269,6 +273,7 @@ def get_servant_entity(
         mstSvtLimit=masters[region].mstSvtLimitId.get(servant_id, []),
         mstCombineSkill=masters[region].mstCombineSkillId.get(servant_id, []),
         mstCombineLimit=masters[region].mstCombineLimitId.get(servant_id, []),
+        mstSvtLimitAdd=masters[region].mstSvtLimitAddId.get(servant_id, []),
     )
 
     skills = [

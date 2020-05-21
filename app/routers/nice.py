@@ -3,7 +3,7 @@ from typing import Any, Dict, Union, List
 from fastapi import APIRouter, HTTPException
 
 from ..data import gamedata
-from ..data.models.common import Region
+from ..data.models.common import Region, Settings
 from ..data.models.raw import (
     BuffEntityNoReverse,
     SkillEntityNoReverse,
@@ -24,6 +24,9 @@ from ..data.models.nice import (
 
 
 FORMATTING_BRACKETS = {"[g][o]": "", "[/o][/g]": "", " [{0}] ": " "}
+
+
+settings = Settings()
 
 
 def strip_formatting_brackets(detail_string: str) -> str:
@@ -347,6 +350,23 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
         for item in sorted(raw_data.mstSvt.individuality)
         if item != item_id
     ]
+
+    charaGraph: Dict[str, Dict[int, str]] = {}
+    charaGraph["ascension"] = {
+        1: f"{settings.asset_url}/CharaGraph/{item_id}/{item_id}a@1.png",
+        2: f"{settings.asset_url}/CharaGraph/{item_id}/{item_id}a@2.png",
+        3: f"{settings.asset_url}/CharaGraph/{item_id}/{item_id}b@1.png",
+        4: f"{settings.asset_url}/CharaGraph/{item_id}/{item_id}b@2.png",
+    }
+    costume_ids = [
+        item.battleCharaId for item in raw_data.mstSvtLimitAdd if item.limitCount == 11
+    ]
+    if len(costume_ids) > 0:
+        for costume_id in costume_ids:
+            charaGraph["costume"] = {
+                costume_id: f"{settings.asset_url}/CharaGraph/{costume_id}/{costume_id}a.png"
+            }
+    nice_data["extraAssets"] = {"charaGraph": charaGraph}
 
     atkMax = raw_data.mstSvtLimit[0].atkMax
     atkBase = raw_data.mstSvtLimit[0].atkBase

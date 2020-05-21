@@ -290,6 +290,20 @@ class MstItem(BaseModel):
     endedAt: int  # 1910908800
 
 
+class MstSvtLimitAdd(BaseModel):
+    individuality: List[int]  # [],
+    script: Dict[str, Union[int, str]]  # {},
+    svtId: int  # 102900,
+    limitCount: int  # 11,
+    battleCharaId: int  # 102930,
+    fileConvertLimitCount: int  # 0,
+    battleCharaLimitCount: int  # 2,
+    battleCharaOffsetX: int  # 0,
+    battleCharaOffsetY: int  # 0,
+    svtVoiceId: int  # 102900,
+    voicePrefix: int  # 11
+
+
 class Master(BaseModel):
     mstBuff: List[MstBuff]
     mstFunc: List[MstFunc]
@@ -303,6 +317,7 @@ class Master(BaseModel):
     mstSvtLimit: List[MstSvtLimit]
     mstSvtExp: List[MstSvtExp]
     mstSvtTreasureDevice: List[MstSvtTreasureDevice]
+    mstSvtLimitAdd: List[MstSvtLimitAdd]
     mstCombineSkill: List[MstCombineSkill]
     mstCombineLimit: List[MstCombineLimit]
     mstTreasureDevice: List[MstTreasureDevice]
@@ -327,6 +342,7 @@ class Master(BaseModel):
     mstCombineLimitId: Dict[int, List[MstCombineLimit]]
     mstSvtCardId: Dict[int, List[MstSvtCard]]
     mstSvtLimitId: Dict[int, List[MstSvtLimit]]
+    mstSvtLimitAddId: Dict[int, List[MstSvtLimitAdd]]
     mstSvtExpId: Dict[int, Dict[int, MstSvtExp]]
 
 
@@ -342,6 +358,7 @@ class ServantEntity(BaseModel):
     mstSvtLimit: List[MstSvtLimit]
     mstCombineSkill: List[MstCombineSkill]
     mstCombineLimit: List[MstCombineLimit]
+    mstSvtLimitAdd: List[MstSvtLimitAdd]
 
     class Config:
         json_loads = orjson.loads

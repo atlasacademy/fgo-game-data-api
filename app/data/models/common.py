@@ -1,6 +1,6 @@
 from enum import Enum
 
-from pydantic import BaseModel, BaseSettings
+from pydantic import BaseModel, BaseSettings, DirectoryPath, HttpUrl, validator
 
 
 class Region(str, Enum):
@@ -9,8 +9,16 @@ class Region(str, Enum):
 
 
 class Settings(BaseSettings):
-    na_gamedata: str
-    jp_gamedata: str
+    na_gamedata: DirectoryPath
+    jp_gamedata: DirectoryPath
+    asset_url: HttpUrl
+
+    @validator("asset_url")
+    def remove_last_slash(cls, value):
+        if value.endswith("/"):
+            return value[:-1]
+        else:
+            return value
 
     class Config:
         env_file = ".env"

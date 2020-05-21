@@ -1,7 +1,7 @@
 from enum import Enum
-from typing import List, Dict, Union
+from typing import List, Dict, Union, Optional
 
-from pydantic import BaseModel
+from pydantic import BaseModel, HttpUrl
 
 
 class Gender(str, Enum):
@@ -760,6 +760,15 @@ class NiceTd(BaseModel):
     functions: NiceFunctionGroup
 
 
+class CharaGraph(BaseModel):
+    ascension: Dict[int, HttpUrl]
+    costume: Optional[Dict[int, HttpUrl]] = None
+
+
+class ExtraAssets(BaseModel):
+    charaGraph: CharaGraph
+
+
 class NiceServant(BaseModel):
     id: int
     collectionNo: int
@@ -769,6 +778,7 @@ class NiceServant(BaseModel):
     gender: Gender
     attribute: Attribute
     traits: List[Union[Trait, int]]
+    extraAssets: ExtraAssets
     busterNpGain: float
     artsNpGain: float
     quickNpGain: float
