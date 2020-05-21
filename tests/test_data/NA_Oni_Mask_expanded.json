@@ -258,5 +258,6 @@
     }
   ],
   "mstCombineSkill": [],
-  "mstCombineLimit": []
+  "mstCombineLimit": [],
+  "mstSvtLimitAdd": []
 }

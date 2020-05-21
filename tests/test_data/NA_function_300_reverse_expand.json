@@ -5249,6 +5249,60 @@
               "svtLimit": 4,
               "qp": 10000000
             }
+          ],
+          "mstSvtLimitAdd": [
+            {
+              "individuality": [],
+              "script": {},
+              "svtId": 402700,
+              "limitCount": 1,
+              "battleCharaId": 402710,
+              "fileConvertLimitCount": 1,
+              "battleCharaLimitCount": 1,
+              "battleCharaOffsetX": 0,
+              "battleCharaOffsetY": 0,
+              "svtVoiceId": 402700,
+              "voicePrefix": 0
+            },
+            {
+              "individuality": [],
+              "script": {},
+              "svtId": 402700,
+              "limitCount": 2,
+              "battleCharaId": 402710,
+              "fileConvertLimitCount": 2,
+              "battleCharaLimitCount": 2,
+              "battleCharaOffsetX": 0,
+              "battleCharaOffsetY": 0,
+              "svtVoiceId": 402700,
+              "voicePrefix": 0
+            },
+            {
+              "individuality": [],
+              "script": {},
+              "svtId": 402700,
+              "limitCount": 3,
+              "battleCharaId": 402720,
+              "fileConvertLimitCount": 3,
+              "battleCharaLimitCount": 3,
+              "battleCharaOffsetX": 0,
+              "battleCharaOffsetY": 0,
+              "svtVoiceId": 402700,
+              "voicePrefix": 0
+            },
+            {
+              "individuality": [],
+              "script": {},
+              "svtId": 402700,
+              "limitCount": 4,
+              "battleCharaId": 402720,
+              "fileConvertLimitCount": 4,
+              "battleCharaLimitCount": 4,
+              "battleCharaOffsetX": 0,
+              "battleCharaOffsetY": 0,
+              "svtVoiceId": 402700,
+              "voicePrefix": 0
+            }
           ]
         }
       ]
@@ -10525,7 +10579,8 @@
               "svtLimit": 4,
               "qp": 1000000
             }
-          ]
+          ],
+          "mstSvtLimitAdd": []
         }
       ]
     },
@@ -15667,7 +15722,8 @@
               "svtLimit": 4,
               "qp": 1500000
             }
-          ]
+          ],
+          "mstSvtLimitAdd": []
         }
       ]
     },
@@ -21210,7 +21266,8 @@
               "svtLimit": 4,
               "qp": 50000000
             }
-          ]
+          ],
+          "mstSvtLimitAdd": []
         }
       ]
     }

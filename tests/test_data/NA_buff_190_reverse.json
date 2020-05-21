@@ -5179,7 +5179,8 @@
                   "svtLimit": 4,
                   "qp": 10000000
                 }
-              ]
+              ],
+              "mstSvtLimitAdd": []
             }
           ]
         },
@@ -5502,7 +5503,8 @@
                 }
               ],
               "mstCombineSkill": [],
-              "mstCombineLimit": []
+              "mstCombineLimit": [],
+              "mstSvtLimitAdd": []
             }
           ]
         },
@@ -5825,7 +5827,8 @@
                 }
               ],
               "mstCombineSkill": [],
-              "mstCombineLimit": []
+              "mstCombineLimit": [],
+              "mstSvtLimitAdd": []
             }
           ]
         },
@@ -10832,7 +10835,8 @@
                   "svtLimit": 4,
                   "qp": 50000000
                 }
-              ]
+              ],
+              "mstSvtLimitAdd": []
             }
           ]
         }
@@ -11200,7 +11204,8 @@
                 }
               ],
               "mstCombineSkill": [],
-              "mstCombineLimit": []
+              "mstCombineLimit": [],
+              "mstSvtLimitAdd": []
             }
           ]
         },
@@ -11531,7 +11536,8 @@
                 }
               ],
               "mstCombineSkill": [],
-              "mstCombineLimit": []
+              "mstCombineLimit": [],
+              "mstSvtLimitAdd": []
             }
           ]
         },

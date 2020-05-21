@@ -5178,7 +5178,8 @@
           "svtLimit": 4,
           "qp": 10000000
         }
-      ]
+      ],
+      "mstSvtLimitAdd": []
     },
     {
       "mstSvt": {
@@ -9960,7 +9961,74 @@
         }
       ],
       "mstCombineSkill": [],
-      "mstCombineLimit": []
+      "mstCombineLimit": [],
+      "mstSvtLimitAdd": [
+        {
+          "individuality": [],
+          "script": {},
+          "svtId": 9940840,
+          "limitCount": 0,
+          "battleCharaId": 9940840,
+          "fileConvertLimitCount": 0,
+          "battleCharaLimitCount": 0,
+          "battleCharaOffsetX": 0,
+          "battleCharaOffsetY": 0,
+          "svtVoiceId": 9940830,
+          "voicePrefix": 0
+        },
+        {
+          "individuality": [],
+          "script": {},
+          "svtId": 9940840,
+          "limitCount": 1,
+          "battleCharaId": 9940840,
+          "fileConvertLimitCount": 1,
+          "battleCharaLimitCount": 1,
+          "battleCharaOffsetX": 0,
+          "battleCharaOffsetY": 0,
+          "svtVoiceId": 9940830,
+          "voicePrefix": 0
+        },
+        {
+          "individuality": [],
+          "script": {},
+          "svtId": 9940840,
+          "limitCount": 2,
+          "battleCharaId": 9940840,
+          "fileConvertLimitCount": 2,
+          "battleCharaLimitCount": 2,
+          "battleCharaOffsetX": 0,
+          "battleCharaOffsetY": 0,
+          "svtVoiceId": 9940830,
+          "voicePrefix": 0
+        },
+        {
+          "individuality": [],
+          "script": {},
+          "svtId": 9940840,
+          "limitCount": 3,
+          "battleCharaId": 9940840,
+          "fileConvertLimitCount": 3,
+          "battleCharaLimitCount": 3,
+          "battleCharaOffsetX": 0,
+          "battleCharaOffsetY": 0,
+          "svtVoiceId": 9940830,
+          "voicePrefix": 0
+        },
+        {
+          "individuality": [],
+          "script": {},
+          "svtId": 9940840,
+          "limitCount": 4,
+          "battleCharaId": 9940840,
+          "fileConvertLimitCount": 4,
+          "battleCharaLimitCount": 4,
+          "battleCharaOffsetX": 0,
+          "battleCharaOffsetY": 0,
+          "svtVoiceId": 9940830,
+          "voicePrefix": 0
+        }
+      ]
     },
     {
       "mstSvt": {
@@ -14742,7 +14810,74 @@
         }
       ],
       "mstCombineSkill": [],
-      "mstCombineLimit": []
+      "mstCombineLimit": [],
+      "mstSvtLimitAdd": [
+        {
+          "individuality": [],
+          "script": {},
+          "svtId": 9940830,
+          "limitCount": 0,
+          "battleCharaId": 9940830,
+          "fileConvertLimitCount": 0,
+          "battleCharaLimitCount": 0,
+          "battleCharaOffsetX": 0,
+          "battleCharaOffsetY": 0,
+          "svtVoiceId": 9940830,
+          "voicePrefix": 0
+        },
+        {
+          "individuality": [],
+          "script": {},
+          "svtId": 9940830,
+          "limitCount": 1,
+          "battleCharaId": 9940830,
+          "fileConvertLimitCount": 1,
+          "battleCharaLimitCount": 1,
+          "battleCharaOffsetX": 0,
+          "battleCharaOffsetY": 0,
+          "svtVoiceId": 9940830,
+          "voicePrefix": 0
+        },
+        {
+          "individuality": [],
+          "script": {},
+          "svtId": 9940830,
+          "limitCount": 2,
+          "battleCharaId": 9940830,
+          "fileConvertLimitCount": 2,
+          "battleCharaLimitCount": 2,
+          "battleCharaOffsetX": 0,
+          "battleCharaOffsetY": 0,
+          "svtVoiceId": 9940830,
+          "voicePrefix": 0
+        },
+        {
+          "individuality": [],
+          "script": {},
+          "svtId": 9940830,
+          "limitCount": 3,
+          "battleCharaId": 9940830,
+          "fileConvertLimitCount": 3,
+          "battleCharaLimitCount": 3,
+          "battleCharaOffsetX": 0,
+          "battleCharaOffsetY": 0,
+          "svtVoiceId": 9940830,
+          "voicePrefix": 0
+        },
+        {
+          "individuality": [],
+          "script": {},
+          "svtId": 9940830,
+          "limitCount": 4,
+          "battleCharaId": 9940830,
+          "fileConvertLimitCount": 4,
+          "battleCharaLimitCount": 4,
+          "battleCharaOffsetX": 0,
+          "battleCharaOffsetY": 0,
+          "svtVoiceId": 9940830,
+          "voicePrefix": 0
+        }
+      ]
     }
   ]
 }

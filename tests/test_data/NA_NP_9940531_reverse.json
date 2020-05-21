@@ -4448,7 +4448,74 @@
         }
       ],
       "mstCombineSkill": [],
-      "mstCombineLimit": []
+      "mstCombineLimit": [],
+      "mstSvtLimitAdd": [
+        {
+          "individuality": [],
+          "script": {},
+          "svtId": 9940530,
+          "limitCount": 0,
+          "battleCharaId": 9940530,
+          "fileConvertLimitCount": 0,
+          "battleCharaLimitCount": 0,
+          "battleCharaOffsetX": 0,
+          "battleCharaOffsetY": 0,
+          "svtVoiceId": 9940530,
+          "voicePrefix": 0
+        },
+        {
+          "individuality": [],
+          "script": {},
+          "svtId": 9940530,
+          "limitCount": 1,
+          "battleCharaId": 9940530,
+          "fileConvertLimitCount": 1,
+          "battleCharaLimitCount": 1,
+          "battleCharaOffsetX": 0,
+          "battleCharaOffsetY": 0,
+          "svtVoiceId": 9940530,
+          "voicePrefix": 0
+        },
+        {
+          "individuality": [],
+          "script": {},
+          "svtId": 9940530,
+          "limitCount": 2,
+          "battleCharaId": 9940530,
+          "fileConvertLimitCount": 2,
+          "battleCharaLimitCount": 2,
+          "battleCharaOffsetX": 0,
+          "battleCharaOffsetY": 0,
+          "svtVoiceId": 9940530,
+          "voicePrefix": 0
+        },
+        {
+          "individuality": [],
+          "script": {},
+          "svtId": 9940530,
+          "limitCount": 3,
+          "battleCharaId": 9940530,
+          "fileConvertLimitCount": 3,
+          "battleCharaLimitCount": 3,
+          "battleCharaOffsetX": 0,
+          "battleCharaOffsetY": 0,
+          "svtVoiceId": 9940530,
+          "voicePrefix": 0
+        },
+        {
+          "individuality": [],
+          "script": {},
+          "svtId": 9940530,
+          "limitCount": 4,
+          "battleCharaId": 9940530,
+          "fileConvertLimitCount": 4,
+          "battleCharaLimitCount": 4,
+          "battleCharaOffsetX": 0,
+          "battleCharaOffsetY": 0,
+          "svtVoiceId": 9940530,
+          "voicePrefix": 0
+        }
+      ]
     }
   ]
 }
