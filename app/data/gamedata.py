@@ -274,23 +274,23 @@ def get_servant_entity(
         mstCombineSkill=masters[region].mstCombineSkillId.get(servant_id, []),
         mstCombineLimit=masters[region].mstCombineLimitId.get(servant_id, []),
         mstSvtLimitAdd=masters[region].mstSvtLimitAddId.get(servant_id, []),
+        mstSkill=[
+            get_skill_entity_no_reverse(region, skill, expand)
+            for skill in [
+                item.skillId
+                for item in masters[region].mstSvtSkill
+                if item.svtId == servant_id
+            ]
+        ],
+        mstTreasureDevice=[
+            get_td_entity_no_reverse(region, td, expand)
+            for td in [
+                item.treasureDeviceId
+                for item in masters[region].mstSvtTreasureDevice
+                if item.svtId == servant_id
+            ]
+        ],
     )
-
-    skills = [
-        item.skillId for item in masters[region].mstSvtSkill if item.svtId == servant_id
-    ]
-    svt_entity.mstSkill = [
-        get_skill_entity_no_reverse(region, skill, expand) for skill in skills
-    ]
-
-    NPs = [
-        item.treasureDeviceId
-        for item in masters[region].mstSvtTreasureDevice
-        if item.svtId == servant_id
-    ]
-    svt_entity.mstTreasureDevice = [
-        get_td_entity_no_reverse(region, td, expand) for td in NPs
-    ]
 
     if expand:
         svt_entity.mstSvt = deepcopy(svt_entity.mstSvt)

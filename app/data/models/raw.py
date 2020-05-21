@@ -352,8 +352,8 @@ def orjson_dumps(v, *, default):
 
 class ServantEntity(BaseModel):
     mstSvt: MstSvt
-    mstSkill: List[SkillEntityNoReverse] = []
-    mstTreasureDevice: List[TdEntityNoReverse] = []
+    mstSkill: List[SkillEntityNoReverse]
+    mstTreasureDevice: List[TdEntityNoReverse]
     mstSvtCard: List[MstSvtCard]
     mstSvtLimit: List[MstSvtLimit]
     mstCombineSkill: List[MstCombineSkill]
