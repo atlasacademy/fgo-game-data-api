@@ -709,14 +709,16 @@ ASSET_URL: Dict[str, str] = {
     "charaGraph3": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@1.png",
     "charaGraph4": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@2.png",
     "charaGraphcostume": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a.png",
-    "skillIcon": "{base_url}/{region}/SkillIcons/DownloadSkillIcon/DownloadSkillIconAtlas{atlas_id}/skill_{item_id:05}.png",
-    "buffIcon": "{base_url}/{region}/BuffIcons/DownloadBuffIcon/DownloadBuffIconAtlas1/bufficon_{item_id}.png",
+    "skillIcon": "{base_url}/{region}/SkillIcons/skill_{item_id:05}.png",
+    "buffIcon": "{base_url}/{region}/BuffIcons/bufficon_{item_id}.png",
+    "items": "{base_url}/{region}/Items/{item_id}.png",
 }
 
 
 class NiceItemAmount(BaseModel):
     id: int
     name: str
+    icon: HttpUrl
     amount: int
 
 

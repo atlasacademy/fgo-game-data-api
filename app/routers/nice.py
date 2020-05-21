@@ -442,6 +442,9 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
             {
                 "id": item,
                 "name": gamedata.masters[region].mstItemId[item].name,
+                "icon": ASSET_URL["items"].format(
+                    base_url=settings.asset_url, region=region, item_id=item
+                ),
                 "amount": amount,
             }
             for item, amount in zip(combineLimit.itemIds, combineLimit.itemNums)
@@ -458,6 +461,9 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
             {
                 "id": item,
                 "name": gamedata.masters[region].mstItemId[item].name,
+                "icon": ASSET_URL["items"].format(
+                    base_url=settings.asset_url, region=region, item_id=item
+                ),
                 "amount": amount,
             }
             for item, amount in zip(combineSkill.itemIds, combineSkill.itemNums)
