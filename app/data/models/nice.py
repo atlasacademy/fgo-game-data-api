@@ -751,6 +751,7 @@ class NiceTd(BaseModel):
     card: CardType
     name: str
     detail: str
+    npNpGain: float
     npDistribution: List[int]
     strengthStatus: int
     priority: int
@@ -771,7 +772,6 @@ class NiceServant(BaseModel):
     artsNpGain: float
     quickNpGain: float
     extraNpGain: float
-    npNpGain: float
     defenceNpGain: float
     starAbsorb: int
     starGen: float

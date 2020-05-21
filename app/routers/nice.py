@@ -265,6 +265,7 @@ def get_nice_td(tdEntity: TdEntityNoReverse, svtId: int) -> Dict[str, Any]:
     nice_td["name"] = tdEntity.mstTreasureDevice.name
     nice_td["rank"] = tdEntity.mstTreasureDevice.rank
     nice_td["typeText"] = tdEntity.mstTreasureDevice.typeText
+    nice_td["npNpGain"] = tdEntity.mstTreasureDeviceLv[0].tdPoint / 10000
     nice_td["detail"] = strip_formatting_brackets(
         tdEntity.mstTreasureDeviceDetail[0].detail
     )
@@ -384,7 +385,6 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
     nice_data["artsNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPointA / 10000
     nice_data["quickNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPointQ / 10000
     nice_data["extraNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPointEx / 10000
-    nice_data["npNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPoint / 10000
     nice_data["defenceNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPointDef / 10000
 
     ascenionMaterials = {}
