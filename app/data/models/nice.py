@@ -761,6 +761,7 @@ class NiceTd(BaseModel):
 
 
 class NiceServant(BaseModel):
+    id: int
     collectionNo: int
     name: str
     className: SvtClass

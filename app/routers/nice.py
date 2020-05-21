@@ -332,6 +332,7 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
     raw_data = gamedata.get_servant_entity(region, item_id, True)
     nice_data: Dict[str, Any] = {}
 
+    nice_data["id"] = raw_data.mstSvt.id
     nice_data["collectionNo"] = raw_data.mstSvt.collectionNo
     nice_data["name"] = raw_data.mstSvt.name
     nice_data["gender"] = GENDER_NAME[raw_data.mstSvt.genderType]
