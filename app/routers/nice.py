@@ -47,8 +47,8 @@ def get_traits_list(input_idv: List[int]) -> List[Union[Trait, int]]:
     return [get_safe(TRAIT_NAME, item) for item in input_idv]
 
 
-def parseDataVals(datavals: str, functype: int) -> Dict[str, Union[int, str]]:
-    output: Dict[str, Any] = {}
+def parse_dataVals(datavals: str, functype: int) -> Dict[str, int]:
+    output: Dict[str, int] = {}
     array = datavals.replace("[", "").replace("]", "").split(",")
     for i, arrayi in enumerate(array):
         text = ""
@@ -81,20 +81,20 @@ def parseDataVals(datavals: str, functype: int) -> Dict[str, Union[int, str]]:
                     text = "UseRate"
                 elif i == 5:
                     text = "Value2"
-            elif functype != FuncType.SUB_STATE:
-                if i == 0:
-                    text = "Rate"
-                elif i == 1:
-                    text = "Value"
-                elif i == 2:
-                    text = "Target"
-            else:
+            elif functype == FuncType.SUB_STATE:
                 if i == 0:
                     text = "Rate"
                 elif i == 1:
                     text = "Value"
                 elif i == 2:
                     text = "Value2"
+            else:
+                if i == 0:
+                    text = "Rate"
+                elif i == 1:
+                    text = "Value"
+                elif i == 2:
+                    text = "Target"
         except ValueError:
             array2 = arrayi.split(":")
             if len(array2) > 1:
@@ -102,10 +102,13 @@ def parseDataVals(datavals: str, functype: int) -> Dict[str, Union[int, str]]:
                 try:
                     value = int(array2[1])
                 except ValueError:
-                    if "strVals" in output:
-                        output["strVals"][text] = array2[1]
-                    else:
-                        output["strVals"] = {text: array2[1]}
+                    raise HTTPException(
+                        status_code=500, detail=f"Can't parse datavals: {datavals}"
+                    )
+            else:
+                raise HTTPException(
+                    status_code=500, detail=f"Can't parse datavals: {datavals}"
+                )
         if text != "":
             output[text] = value
     return output
@@ -273,10 +276,10 @@ def get_nice_skill(
         function = skillEntity.mstSkillLv[0].expandedFuncId[funci]
         functionInfo = get_nice_base_function(function, region)
 
-        dataVals = parseDataVals(
+        dataVals = parse_dataVals(
             skillEntity.mstSkillLv[0].svals[funci], function.mstFunc.funcType
         )
-        svals: Dict[str, Any] = {}
+        svals: Dict[str, List[int]] = {}
         for key, value in dataVals.items():
             svals[key] = [value]
         functionInfo["svals"] = svals
@@ -286,7 +289,7 @@ def get_nice_skill(
     for skillLv in skillEntity.mstSkillLv[1:]:
         nice_skill["coolDown"].append(skillLv.chargeTurn)
         for funci in range(len(skillLv.funcId)):
-            dataVals = parseDataVals(
+            dataVals = parse_dataVals(
                 skillLv.svals[funci], skillLv.expandedFuncId[funci].mstFunc.funcType
             )
             for key, value in dataVals.items():
@@ -328,11 +331,11 @@ def get_nice_td(
 
         for vali in range(1, 6):
             valName = f"svals{vali}" if vali >= 2 else "svals"
-            dataVals = parseDataVals(
+            dataVals = parse_dataVals(
                 getattr(tdEntity.mstTreasureDeviceLv[0], valName)[funci],
                 function.mstFunc.funcType,
             )
-            svals: Dict[str, Any] = {}
+            svals: Dict[str, List[int]] = {}
             for key, value in dataVals.items():
                 svals[key] = [value]
             functionInfo[valName] = svals
@@ -343,7 +346,7 @@ def get_nice_td(
         for funci in range(len(tdLv.funcId)):
             for vali in range(1, 6):
                 valName = f"svals{vali}" if vali >= 2 else "svals"
-                dataVals = parseDataVals(
+                dataVals = parse_dataVals(
                     getattr(tdLv, valName)[funci],
                     tdLv.expandedFuncId[funci].mstFunc.funcType,
                 )
