@@ -214,7 +214,6 @@ def get_nice_skill(skillEntity: SkillEntityNoReverse, svtId: int) -> Dict[str, A
             iconAtlas = 2
         iconUrl = f"{settings.asset_url}/SkillIcons/DownloadSkillIcon/DownloadSkillIconAtlas{iconAtlas}/skill_{iconId:05}.png"
         nice_skill["icon"] = iconUrl
-    print(nice_skill["icon"])
     nice_skill["detail"] = strip_formatting_brackets(
         skillEntity.mstSkillDetail[0].detail
     )
