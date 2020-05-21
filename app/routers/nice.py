@@ -189,7 +189,8 @@ def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> Dict[str, 
     buffInfo["id"] = buffEntity.mstBuff.id
     buffInfo["name"] = buffEntity.mstBuff.name
     buffInfo["detail"] = buffEntity.mstBuff.detail
-    if (iconId := buffEntity.mstBuff.iconId) != 0:
+    iconId = buffEntity.mstBuff.iconId
+    if iconId != 0:
         buffInfo["icon"] = ASSET_URL["buffIcon"].format(
             base_url=settings.asset_url, region=region, item_id=iconId
         )
@@ -209,7 +210,8 @@ def get_nice_skill(
     nice_skill: Dict[str, Any] = {}
     nice_skill["id"] = skillEntity.mstSkill.id
     nice_skill["name"] = skillEntity.mstSkill.name
-    if (iconId := skillEntity.mstSkill.iconId) != 0:
+    iconId = skillEntity.mstSkill.iconId
+    if iconId != 0:
         iconAtlas = 1 if iconId < 520 else 2
         nice_skill["icon"] = ASSET_URL["skillIcon"].format(
             base_url=settings.asset_url,
@@ -239,7 +241,8 @@ def get_nice_skill(
         functionInfo: Dict[str, Any] = {}
         functionInfo["funcId"] = function.mstFunc.id
         functionInfo["funcPopupText"] = function.mstFunc.popupText
-        if (funcPopupIconId := function.mstFunc.popupIconId) != 0:
+        funcPopupIconId = function.mstFunc.popupIconId
+        if funcPopupIconId != 0:
             functionInfo["funcPopupIcon"] = ASSET_URL["buffIcon"].format(
                 base_url=settings.asset_url, region=region, item_id=funcPopupIconId
             )
@@ -310,7 +313,8 @@ def get_nice_td(
         functionInfo["funcPopupText"] = function.mstFunc.popupText
         functionInfo["funcPopupIconId"] = function.mstFunc.popupIconId
         functionInfo["functvals"] = get_traits_list(function.mstFunc.tvals)
-        if (funcPopupIconId := function.mstFunc.popupIconId) != 0:
+        funcPopupIconId = function.mstFunc.popupIconId
+        if funcPopupIconId != 0:
             functionInfo["funcPopupIcon"] = ASSET_URL["buffIcon"].format(
                 base_url=settings.asset_url, region=region, item_id=funcPopupIconId
             )
