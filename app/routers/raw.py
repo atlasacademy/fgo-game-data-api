@@ -24,36 +24,6 @@ router = APIRouter()
 
 
 @router.get(
-    "/{region}/servant/{item_id}",
-    summary="Get servant data",
-    response_description="Servant Entity",
-    response_model=ServantEntity,
-    response_model_exclude_unset=True,
-    responses=responses,
-)
-async def get_servant(region: Region, item_id: int, expand: bool = False):
-    """
-    Get servant info from ID
-
-    If the given ID is a servants's collectionNo, the corresponding servant data is returned.
-    Otherwise, it will look up the actual ID field. As a result, it can return not servant data.
-
-    - **expand**: Add expanded skill objects to mstSvt.expandedClassPassive
-    from the skill IDs in mstSvt.classPassive.
-    Expand all other skills and functions as well.
-    """
-    if item_id in gamedata.masters[region].mstSvtServantCollectionNo:
-        item_id = gamedata.masters[region].mstSvtServantCollectionNo[item_id]
-    if item_id in gamedata.masters[region].mstSvtId:
-        servant_entity = gamedata.get_servant_entity(region, item_id, expand)
-        return Response(
-            servant_entity.json(exclude_unset=True), media_type="application/json",
-        )
-    else:
-        raise HTTPException(status_code=404, detail="Servant not found")
-
-
-@router.get(
     "/{region}/servant/search",
     summary="Find and get servant data",
     response_description="Servant Entity",
@@ -99,6 +69,36 @@ async def find_servant(
             )
         else:
             raise HTTPException(status_code=404, detail="Servant not found")
+
+
+@router.get(
+    "/{region}/servant/{item_id}",
+    summary="Get servant data",
+    response_description="Servant Entity",
+    response_model=ServantEntity,
+    response_model_exclude_unset=True,
+    responses=responses,
+)
+async def get_servant(region: Region, item_id: int, expand: bool = False):
+    """
+    Get servant info from ID
+
+    If the given ID is a servants's collectionNo, the corresponding servant data is returned.
+    Otherwise, it will look up the actual ID field. As a result, it can return not servant data.
+
+    - **expand**: Add expanded skill objects to mstSvt.expandedClassPassive
+    from the skill IDs in mstSvt.classPassive.
+    Expand all other skills and functions as well.
+    """
+    if item_id in gamedata.masters[region].mstSvtServantCollectionNo:
+        item_id = gamedata.masters[region].mstSvtServantCollectionNo[item_id]
+    if item_id in gamedata.masters[region].mstSvtId:
+        servant_entity = gamedata.get_servant_entity(region, item_id, expand)
+        return Response(
+            servant_entity.json(exclude_unset=True), media_type="application/json",
+        )
+    else:
+        raise HTTPException(status_code=404, detail="Servant not found")
 
 
 @router.get(
