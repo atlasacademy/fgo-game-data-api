@@ -3,11 +3,13 @@
 List of required environment variables for the main app:
 - `NA_GAMEDATA`: path to NA gamedata's master folder
 - `JP_GAMEDATA`: path to JP gamedata's master folder
+- `ASSET_URL`: Base URL for the game assets
 
 or make a .env file at the project root with the following entries:
 ```
 NA_GAMEDATA=""
 JP_GAMEDATA=""
+ASSET_URL="https://example.com/assets/"
 ```
 
 Run at the project root to start the API server:

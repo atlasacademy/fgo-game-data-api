@@ -13,6 +13,7 @@ from ..data.models.raw import (
 from ..data.models.nice import (
     NiceServant,
     Trait,
+    ASSET_URL,
     CARD_TYPE_NAME,
     GENDER_NAME,
     ATTRIBUTE_NAME,
@@ -23,7 +24,7 @@ from ..data.models.nice import (
 )
 
 
-FORMATTING_BRACKETS = {"[g][o]": "", "[/o][/g]": "", " [{0}] ": " "}
+FORMATTING_BRACKETS = {"[g][o]": "", "[/o][/g]": "", " [{0}] ": " ", "[{0}]": ""}
 
 
 settings = Settings()
@@ -183,15 +184,15 @@ def categorize_functions(
     return functions
 
 
-def get_nice_buff(buffEntity: BuffEntityNoReverse) -> Dict[str, Any]:
+def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> Dict[str, Any]:
     buffInfo: Dict[str, Any] = {}
     buffInfo["id"] = buffEntity.mstBuff.id
     buffInfo["name"] = buffEntity.mstBuff.name
     buffInfo["detail"] = buffEntity.mstBuff.detail
-    iconId = buffEntity.mstBuff.iconId
-    if iconId != 0:
-        iconUrl = f"{settings.asset_url}/BuffIcons/DownloadBuffIcon/DownloadBuffIconAtlas1/bufficon_{iconId}.png"
-        buffInfo["icon"] = iconUrl
+    if (iconId := buffEntity.mstBuff.iconId) != 0:
+        buffInfo["icon"] = ASSET_URL["buffIcon"].format(
+            base_url=settings.asset_url, region=region, item_id=iconId
+        )
     buffInfo["type"] = BUFF_TYPE_NAME.get(
         buffEntity.mstBuff.type, buffEntity.mstBuff.type
     )
@@ -202,18 +203,20 @@ def get_nice_buff(buffEntity: BuffEntityNoReverse) -> Dict[str, Any]:
     return buffInfo
 
 
-def get_nice_skill(skillEntity: SkillEntityNoReverse, svtId: int) -> Dict[str, Any]:
+def get_nice_skill(
+    skillEntity: SkillEntityNoReverse, svtId: int, region: Region
+) -> Dict[str, Any]:
     nice_skill: Dict[str, Any] = {}
     nice_skill["id"] = skillEntity.mstSkill.id
     nice_skill["name"] = skillEntity.mstSkill.name
-    iconId = skillEntity.mstSkill.iconId
-    if iconId != 0:
-        if iconId < 520:
-            iconAtlas = 1
-        else:
-            iconAtlas = 2
-        iconUrl = f"{settings.asset_url}/SkillIcons/DownloadSkillIcon/DownloadSkillIconAtlas{iconAtlas}/skill_{iconId:05}.png"
-        nice_skill["icon"] = iconUrl
+    if (iconId := skillEntity.mstSkill.iconId) != 0:
+        iconAtlas = 1 if iconId < 520 else 2
+        nice_skill["icon"] = ASSET_URL["skillIcon"].format(
+            base_url=settings.asset_url,
+            region=region,
+            atlas_id=iconAtlas,
+            item_id=iconId,
+        )
     nice_skill["detail"] = strip_formatting_brackets(
         skillEntity.mstSkillDetail[0].detail
     )
@@ -236,10 +239,10 @@ def get_nice_skill(skillEntity: SkillEntityNoReverse, svtId: int) -> Dict[str, A
         functionInfo: Dict[str, Any] = {}
         functionInfo["funcId"] = function.mstFunc.id
         functionInfo["funcPopupText"] = function.mstFunc.popupText
-        funcPopupIconId = function.mstFunc.popupIconId
-        if funcPopupIconId != 0:
-            iconUrl = f"{settings.asset_url}/BuffIcons/DownloadBuffIcon/DownloadBuffIconAtlas1/bufficon_{funcPopupIconId}.png"
-            functionInfo["funcPopupIcon"] = iconUrl
+        if (funcPopupIconId := function.mstFunc.popupIconId) != 0:
+            functionInfo["funcPopupIcon"] = ASSET_URL["buffIcon"].format(
+                base_url=settings.asset_url, region=region, item_id=funcPopupIconId
+            )
         functionInfo["functvals"] = get_traits_list(function.mstFunc.tvals)
         functionInfo["funcType"] = FUNC_TYPE_NAME.get(
             function.mstFunc.funcType, function.mstFunc.funcType
@@ -248,7 +251,7 @@ def get_nice_skill(skillEntity: SkillEntityNoReverse, svtId: int) -> Dict[str, A
         buffs = []
         if len(function.mstFunc.expandedVals) > 0:
             for buff in function.mstFunc.expandedVals:
-                buffs.append(get_nice_buff(buff))
+                buffs.append(get_nice_buff(buff, region))
         functionInfo["buffs"] = buffs
 
         dataVals = parseDataVals(
@@ -275,7 +278,9 @@ def get_nice_skill(skillEntity: SkillEntityNoReverse, svtId: int) -> Dict[str, A
     return nice_skill
 
 
-def get_nice_td(tdEntity: TdEntityNoReverse, svtId: int) -> Dict[str, Any]:
+def get_nice_td(
+    tdEntity: TdEntityNoReverse, svtId: int, region: Region
+) -> Dict[str, Any]:
     nice_td: Dict[str, Any] = {}
     nice_td["id"] = tdEntity.mstTreasureDevice.id
     nice_td["name"] = tdEntity.mstTreasureDevice.name
@@ -305,6 +310,10 @@ def get_nice_td(tdEntity: TdEntityNoReverse, svtId: int) -> Dict[str, Any]:
         functionInfo["funcPopupText"] = function.mstFunc.popupText
         functionInfo["funcPopupIconId"] = function.mstFunc.popupIconId
         functionInfo["functvals"] = get_traits_list(function.mstFunc.tvals)
+        if (funcPopupIconId := function.mstFunc.popupIconId) != 0:
+            functionInfo["funcPopupIcon"] = ASSET_URL["buffIcon"].format(
+                base_url=settings.asset_url, region=region, item_id=funcPopupIconId
+            )
         functionInfo["funcType"] = FUNC_TYPE_NAME.get(
             function.mstFunc.funcType, function.mstFunc.funcType
         )
@@ -312,7 +321,7 @@ def get_nice_td(tdEntity: TdEntityNoReverse, svtId: int) -> Dict[str, Any]:
         buffs = []
         if len(function.mstFunc.expandedVals) > 0:
             for buff in function.mstFunc.expandedVals:
-                buffs.append(get_nice_buff(buff))
+                buffs.append(get_nice_buff(buff, region))
         functionInfo["buffs"] = buffs
 
         for vali in range(1, 6):
@@ -366,19 +375,20 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
 
     charaGraph: Dict[str, Dict[int, str]] = {}
     charaGraph["ascension"] = {
-        1: f"{settings.asset_url}/CharaGraph/{item_id}/{item_id}a@1.png",
-        2: f"{settings.asset_url}/CharaGraph/{item_id}/{item_id}a@2.png",
-        3: f"{settings.asset_url}/CharaGraph/{item_id}/{item_id}b@1.png",
-        4: f"{settings.asset_url}/CharaGraph/{item_id}/{item_id}b@2.png",
+        i: ASSET_URL[f"charaGraph{i}"].format(
+            base_url=settings.asset_url, region=region, item_id=item_id
+        )
+        for i in range(1, 5)
     }
     costume_ids = [
         item.battleCharaId for item in raw_data.mstSvtLimitAdd if item.limitCount == 11
     ]
-    if len(costume_ids) > 0:
-        for costume_id in costume_ids:
-            charaGraph["costume"] = {
-                costume_id: f"{settings.asset_url}/CharaGraph/{costume_id}/{costume_id}a.png"
-            }
+    for costume_id in costume_ids:
+        charaGraph["costume"] = {
+            costume_id: ASSET_URL["charaGraphcostume"].format(
+                base_url=settings.asset_url, region=region, item_id=costume_id
+            )
+        }
     nice_data["extraAssets"] = {"charaGraph": charaGraph}
 
     atkMax = raw_data.mstSvtLimit[0].atkMax
@@ -454,12 +464,13 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
     nice_data["skillMaterials"] = skillMaterials
 
     nice_data["skills"] = [
-        get_nice_skill(skill, item_id) for skill in raw_data.mstSkill
+        get_nice_skill(skill, item_id, region) for skill in raw_data.mstSkill
     ]
     nice_data["classPassive"] = [
-        get_nice_skill(skill, item_id) for skill in raw_data.mstSvt.expandedClassPassive
+        get_nice_skill(skill, item_id, region)
+        for skill in raw_data.mstSvt.expandedClassPassive
     ]
-    nice_data["NPs"] = [get_nice_td(td, item_id) for td in actualTDs]
+    nice_data["NPs"] = [get_nice_td(td, item_id, region) for td in actualTDs]
     return nice_data
 
 

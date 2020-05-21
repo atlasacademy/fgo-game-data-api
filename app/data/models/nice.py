@@ -645,6 +645,17 @@ BUFF_TYPE_NAME: Dict[int, Buff] = {
 }
 
 
+ASSET_URL: Dict[str, str] = {
+    "charaGraph1": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a@1.png",
+    "charaGraph2": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a@2.png",
+    "charaGraph3": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@1.png",
+    "charaGraph4": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@2.png",
+    "charaGraphcostume": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a.png",
+    "skillIcon": "{base_url}/{region}/SkillIcons/DownloadSkillIcon/DownloadSkillIconAtlas{atlas_id}/skill_{item_id:05}.png",
+    "buffIcon": "{base_url}/{region}/BuffIcons/DownloadBuffIcon/DownloadBuffIconAtlas1/bufficon_{item_id}.png",
+}
+
+
 class NiceItemAmount(BaseModel):
     id: int
     name: str
