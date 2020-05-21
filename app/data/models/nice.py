@@ -702,7 +702,7 @@ class NiceBuff(BaseModel):
     id: int
     name: str
     detail: str
-    iconId: int
+    icon: Optional[HttpUrl] = None
     type: Union[Buff, int]
     vals: List[Union[Trait, int]]
     tvals: List[Union[Trait, int]]
@@ -714,7 +714,7 @@ class NiceFunction(BaseModel):
     funcId: int
     funcType: Union[Func, int]
     funcPopupText: str
-    funcPopupIconId: int
+    funcPopupIcon: Optional[HttpUrl] = None
     functvals: List[Union[Trait, int]]
     buffs: List[NiceBuff]
     svals: Vals
@@ -740,7 +740,7 @@ class NiceSkill(BaseModel):
     priority: int = -1
     condQuestId: int = -1
     condQuestPhase: int = -1
-    iconId: int
+    icon: Optional[HttpUrl] = None
     coolDown: List[int]
     functions: NiceFunctionGroup
 

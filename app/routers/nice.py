@@ -188,7 +188,10 @@ def get_nice_buff(buffEntity: BuffEntityNoReverse) -> Dict[str, Any]:
     buffInfo["id"] = buffEntity.mstBuff.id
     buffInfo["name"] = buffEntity.mstBuff.name
     buffInfo["detail"] = buffEntity.mstBuff.detail
-    buffInfo["iconId"] = buffEntity.mstBuff.iconId
+    iconId = buffEntity.mstBuff.iconId
+    if iconId != 0:
+        iconUrl = f"{settings.asset_url}/BuffIcons/DownloadBuffIcon/DownloadBuffIconAtlas1/bufficon_{iconId}.png"
+        buffInfo["icon"] = iconUrl
     buffInfo["type"] = BUFF_TYPE_NAME.get(
         buffEntity.mstBuff.type, buffEntity.mstBuff.type
     )
@@ -203,7 +206,15 @@ def get_nice_skill(skillEntity: SkillEntityNoReverse, svtId: int) -> Dict[str, A
     nice_skill: Dict[str, Any] = {}
     nice_skill["id"] = skillEntity.mstSkill.id
     nice_skill["name"] = skillEntity.mstSkill.name
-    nice_skill["iconId"] = skillEntity.mstSkill.iconId
+    iconId = skillEntity.mstSkill.iconId
+    if iconId != 0:
+        if iconId < 520:
+            iconAtlas = 1
+        else:
+            iconAtlas = 2
+        iconUrl = f"{settings.asset_url}/SkillIcons/DownloadSkillIcon/DownloadSkillIconAtlas{iconAtlas}/skill_{iconId:05}.png"
+        nice_skill["icon"] = iconUrl
+    print(nice_skill["icon"])
     nice_skill["detail"] = strip_formatting_brackets(
         skillEntity.mstSkillDetail[0].detail
     )
@@ -226,7 +237,10 @@ def get_nice_skill(skillEntity: SkillEntityNoReverse, svtId: int) -> Dict[str, A
         functionInfo: Dict[str, Any] = {}
         functionInfo["funcId"] = function.mstFunc.id
         functionInfo["funcPopupText"] = function.mstFunc.popupText
-        functionInfo["funcPopupIconId"] = function.mstFunc.popupIconId
+        funcPopupIconId = function.mstFunc.popupIconId
+        if funcPopupIconId != 0:
+            iconUrl = f"{settings.asset_url}/BuffIcons/DownloadBuffIcon/DownloadBuffIconAtlas1/bufficon_{funcPopupIconId}.png"
+            functionInfo["funcPopupIcon"] = iconUrl
         functionInfo["functvals"] = get_traits_list(function.mstFunc.tvals)
         functionInfo["funcType"] = FUNC_TYPE_NAME.get(
             function.mstFunc.funcType, function.mstFunc.funcType
