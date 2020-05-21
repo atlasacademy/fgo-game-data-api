@@ -6,6 +6,7 @@ from ..data import gamedata
 from ..data.models.common import Region, Settings
 from ..data.models.raw import (
     BuffEntityNoReverse,
+    FunctionEntityNoReverse,
     SkillEntityNoReverse,
     TdEntityNoReverse,
     FuncType,
@@ -20,6 +21,8 @@ from ..data.models.nice import (
     CLASS_NAME,
     TRAIT_NAME,
     FUNC_TYPE_NAME,
+    FUNC_TARGETTYPE_NAME,
+    FUNC_APPLYTARGET_NAME,
     BUFF_TYPE_NAME,
 )
 
@@ -36,11 +39,15 @@ def strip_formatting_brackets(detail_string: str) -> str:
     return detail_string
 
 
+def get_safe(input_dict: Dict[Any, Any], key: Any) -> Any:
+    return input_dict.get(key, key)
+
+
 def get_traits_list(input_idv: List[int]) -> List[Union[Trait, int]]:
-    return [TRAIT_NAME.get(item, item) for item in input_idv]
+    return [get_safe(TRAIT_NAME, item) for item in input_idv]
 
 
-def parseDataVals(datavals: str, functype: int) -> Dict[str, Any]:
+def parseDataVals(datavals: str, functype: int) -> Dict[str, Union[int, str]]:
     output: Dict[str, Any] = {}
     array = datavals.replace("[", "").replace("]", "").split(",")
     for i, arrayi in enumerate(array):
@@ -194,14 +201,40 @@ def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> Dict[str, 
         buffInfo["icon"] = ASSET_URL["buffIcon"].format(
             base_url=settings.asset_url, region=region, item_id=iconId
         )
-    buffInfo["type"] = BUFF_TYPE_NAME.get(
-        buffEntity.mstBuff.type, buffEntity.mstBuff.type
-    )
+    buffInfo["type"] = get_safe(BUFF_TYPE_NAME, buffEntity.mstBuff.type)
     buffInfo["vals"] = get_traits_list(buffEntity.mstBuff.vals)
     buffInfo["tvals"] = get_traits_list(buffEntity.mstBuff.tvals)
     buffInfo["ckOpIndv"] = get_traits_list(buffEntity.mstBuff.ckOpIndv)
     buffInfo["ckSelfIndv"] = get_traits_list(buffEntity.mstBuff.ckSelfIndv)
     return buffInfo
+
+
+def get_nice_base_function(
+    function: FunctionEntityNoReverse, region: Region
+) -> Dict[str, Any]:
+    functionInfo: Dict[str, Any] = {}
+    functionInfo["funcId"] = function.mstFunc.id
+    functionInfo["funcPopupText"] = function.mstFunc.popupText
+    functionInfo["functvals"] = get_traits_list(function.mstFunc.tvals)
+    funcPopupIconId = function.mstFunc.popupIconId
+    if funcPopupIconId != 0:
+        functionInfo["funcPopupIcon"] = ASSET_URL["buffIcon"].format(
+            base_url=settings.asset_url, region=region, item_id=funcPopupIconId
+        )
+    functionInfo["funcType"] = get_safe(FUNC_TYPE_NAME, function.mstFunc.funcType)
+    functionInfo["funcApplyTarget"] = get_safe(
+        FUNC_APPLYTARGET_NAME, function.mstFunc.applyTarget
+    )
+    functionInfo["funcTargetType"] = get_safe(
+        FUNC_TARGETTYPE_NAME, function.mstFunc.targetType
+    )
+
+    buffs = []
+    if len(function.mstFunc.expandedVals) > 0:
+        for buff in function.mstFunc.expandedVals:
+            buffs.append(get_nice_buff(buff, region))
+    functionInfo["buffs"] = buffs
+    return functionInfo
 
 
 def get_nice_skill(
@@ -238,24 +271,7 @@ def get_nice_skill(
     # Build the first function item and add the first svals value
     for funci in range(len(skillEntity.mstSkillLv[0].funcId)):
         function = skillEntity.mstSkillLv[0].expandedFuncId[funci]
-        functionInfo: Dict[str, Any] = {}
-        functionInfo["funcId"] = function.mstFunc.id
-        functionInfo["funcPopupText"] = function.mstFunc.popupText
-        funcPopupIconId = function.mstFunc.popupIconId
-        if funcPopupIconId != 0:
-            functionInfo["funcPopupIcon"] = ASSET_URL["buffIcon"].format(
-                base_url=settings.asset_url, region=region, item_id=funcPopupIconId
-            )
-        functionInfo["functvals"] = get_traits_list(function.mstFunc.tvals)
-        functionInfo["funcType"] = FUNC_TYPE_NAME.get(
-            function.mstFunc.funcType, function.mstFunc.funcType
-        )
-
-        buffs = []
-        if len(function.mstFunc.expandedVals) > 0:
-            for buff in function.mstFunc.expandedVals:
-                buffs.append(get_nice_buff(buff, region))
-        functionInfo["buffs"] = buffs
+        functionInfo = get_nice_base_function(function, region)
 
         dataVals = parseDataVals(
             skillEntity.mstSkillLv[0].svals[funci], function.mstFunc.funcType
@@ -308,25 +324,7 @@ def get_nice_td(
     # Build the first function item and add the first svals value
     for funci in range(len(tdEntity.mstTreasureDeviceLv[0].funcId)):
         function = tdEntity.mstTreasureDeviceLv[0].expandedFuncId[funci]
-        functionInfo: Dict[str, Any] = {}
-        functionInfo["funcId"] = function.mstFunc.id
-        functionInfo["funcPopupText"] = function.mstFunc.popupText
-        functionInfo["funcPopupIconId"] = function.mstFunc.popupIconId
-        functionInfo["functvals"] = get_traits_list(function.mstFunc.tvals)
-        funcPopupIconId = function.mstFunc.popupIconId
-        if funcPopupIconId != 0:
-            functionInfo["funcPopupIcon"] = ASSET_URL["buffIcon"].format(
-                base_url=settings.asset_url, region=region, item_id=funcPopupIconId
-            )
-        functionInfo["funcType"] = FUNC_TYPE_NAME.get(
-            function.mstFunc.funcType, function.mstFunc.funcType
-        )
-
-        buffs = []
-        if len(function.mstFunc.expandedVals) > 0:
-            for buff in function.mstFunc.expandedVals:
-                buffs.append(get_nice_buff(buff, region))
-        functionInfo["buffs"] = buffs
+        functionInfo = get_nice_base_function(function, region)
 
         for vali in range(1, 6):
             valName = f"svals{vali}" if vali >= 2 else "svals"
@@ -372,7 +370,7 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
     nice_data["starAbsorb"] = raw_data.mstSvtLimit[0].criticalWeight
     nice_data["starGen"] = raw_data.mstSvt.starRate / 1000
     nice_data["traits"] = [
-        TRAIT_NAME.get(item, item)
+        get_safe(TRAIT_NAME, item)
         for item in sorted(raw_data.mstSvt.individuality)
         if item != item_id
     ]

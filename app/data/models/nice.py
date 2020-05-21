@@ -137,6 +137,34 @@ class Attribute(str, Enum):
     beast = "beast"
 
 
+class FuncApplyTarget(str, Enum):
+    player = "player"
+    enemy = "enemy"
+    playerAndEnemy = "playerAndEnemy"
+
+
+class FuncTarget(str, Enum):
+    self = "self"
+    ptOne = "ptOne"
+    ptAnother = "ptAnother"
+    ptAll = "ptAll"
+    enemy = "enemy"
+    enemyAnother = "enemyAnother"
+    enemyAll = "enemyAll"
+    ptFull = "ptFull"
+    enemyFull = "enemyFull"
+    ptOther = "ptOther"
+    ptOneOther = "ptOneOther"
+    ptRandom = "ptRandom"
+    enemyOther = "enemyOther"
+    enemyRandom = "enemyRandom"
+    ptOtherFull = "ptOtherFull"
+    enemyOtherFull = "enemyOtherFull"
+    ptselectOneSub = "ptselectOneSub"
+    ptselectSub = "ptselectSub"
+    ptOneAnotherRandom = "ptOneAnotherRandom"
+
+
 class Func(str, Enum):
     none = "none"
     addState = "addState"
@@ -457,6 +485,36 @@ TRAIT_NAME: Dict[int, Trait] = {
 }
 
 
+FUNC_APPLYTARGET_NAME: Dict[int, FuncApplyTarget] = {
+    1: FuncApplyTarget.player,
+    2: FuncApplyTarget.enemy,
+    3: FuncApplyTarget.playerAndEnemy,
+}
+
+
+FUNC_TARGETTYPE_NAME: Dict[int, FuncTarget] = {
+    0: FuncTarget.self,
+    1: FuncTarget.ptOne,
+    2: FuncTarget.ptAnother,
+    3: FuncTarget.ptAll,
+    4: FuncTarget.enemy,
+    5: FuncTarget.enemyAnother,
+    6: FuncTarget.enemyAll,
+    7: FuncTarget.ptFull,
+    8: FuncTarget.enemyFull,
+    9: FuncTarget.ptOther,
+    10: FuncTarget.ptOneOther,
+    11: FuncTarget.ptRandom,
+    12: FuncTarget.enemyOther,
+    13: FuncTarget.enemyRandom,
+    14: FuncTarget.ptOtherFull,
+    15: FuncTarget.enemyOtherFull,
+    16: FuncTarget.ptselectOneSub,
+    17: FuncTarget.ptselectSub,
+    18: FuncTarget.ptOneAnotherRandom,
+}
+
+
 FUNC_TYPE_NAME: Dict[int, Func] = {
     0: Func.none,
     1: Func.addState,
@@ -724,6 +782,8 @@ class NiceBuff(BaseModel):
 class NiceFunction(BaseModel):
     funcId: int
     funcType: Union[Func, int]
+    funcTargetType: Union[FuncTarget, int]
+    funcApplyTarget: Union[FuncApplyTarget, int]
     funcPopupText: str
     funcPopupIcon: Optional[HttpUrl] = None
     functvals: List[Union[Trait, int]]

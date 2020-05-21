@@ -474,6 +474,28 @@ class FuncType(IntEnum):
     ENEMY_PROB_DOWN = 116
 
 
+class FuncTargetType(IntEnum):
+    SELF = 0
+    PT_ONE = 1
+    PT_ANOTHER = 2
+    PT_ALL = 3
+    ENEMY = 4
+    ENEMY_ANOTHER = 5
+    ENEMY_ALL = 6
+    PT_FULL = 7
+    ENEMY_FULL = 8
+    PT_OTHER = 9
+    PT_ONE_OTHER = 10
+    PT_RANDOM = 11
+    ENEMY_OTHER = 12
+    ENEMY_RANDOM = 13
+    PT_OTHER_FULL = 14
+    ENEMY_OTHER_FULL = 15
+    PTSELECT_ONE_SUB = 16
+    PTSELECT_SUB = 17
+    PT_ONE_ANOTHER_RANDOM = 18
+
+
 class BuffType(IntEnum):
     NONE = 0
     UP_COMMANDATK = 1
