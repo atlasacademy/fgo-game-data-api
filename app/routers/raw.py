@@ -54,7 +54,7 @@ async def get_servant(region: Region, item_id: int, expand: bool = False):
 
 
 @router.get(
-    "/{region}/servant/",
+    "/{region}/servant/search",
     summary="Find and get servant data",
     response_description="Servant Entity",
     response_model=ServantEntity,
