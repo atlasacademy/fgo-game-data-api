@@ -514,6 +514,40 @@ FUNC_TARGETTYPE_NAME: Dict[int, FuncTarget] = {
     18: FuncTarget.ptOneAnotherRandom,
 }
 
+TARGETTYPE_OWN_TEAM = [
+    FuncTarget.self,
+    FuncTarget.ptOne,
+    FuncTarget.ptAnother,
+    FuncTarget.ptAll,
+    FuncTarget.ptFull,
+    FuncTarget.ptOther,
+    FuncTarget.ptRandom,
+    FuncTarget.ptOtherFull,
+    FuncTarget.ptselectOneSub,
+    FuncTarget.ptselectSub,
+    FuncTarget.ptOneAnotherRandom,
+]
+
+
+TARGETTYPE_OTHER_TEAM = [
+    FuncTarget.enemy,
+    FuncTarget.enemyAnother,
+    FuncTarget.enemyAll,
+    FuncTarget.enemyFull,
+    FuncTarget.enemyRandom,
+    FuncTarget.enemyOtherFull,
+]
+
+ENEMY_FUNC_TARGETING_PLAYER_TEAM = [
+    (item, FuncApplyTarget.player) for item in TARGETTYPE_OTHER_TEAM
+]
+ENEMY_FUNC_TARGETING_ENEMY_TEAM = [
+    (item, FuncApplyTarget.enemy) for item in TARGETTYPE_OWN_TEAM
+]
+ENEMY_FUNC_SIGNATURE = (
+    ENEMY_FUNC_TARGETING_PLAYER_TEAM + ENEMY_FUNC_TARGETING_ENEMY_TEAM
+)
+
 
 FUNC_TYPE_NAME: Dict[int, Func] = {
     0: Func.none,
@@ -785,7 +819,7 @@ class NiceFunction(BaseModel):
     funcId: int
     funcType: Union[Func, int]
     funcTargetType: Union[FuncTarget, int]
-    funcApplyTarget: Union[FuncApplyTarget, int]
+    funcTargetTeam: Union[FuncApplyTarget, int]
     funcPopupText: str
     funcPopupIcon: Optional[HttpUrl] = None
     functvals: List[Union[Trait, int]]

@@ -23,6 +23,7 @@ from ..data.models.nice import (
     FUNC_TYPE_NAME,
     FUNC_TARGETTYPE_NAME,
     FUNC_APPLYTARGET_NAME,
+    ENEMY_FUNC_SIGNATURE,
     BUFF_TYPE_NAME,
 )
 
@@ -225,7 +226,7 @@ def get_nice_base_function(
             base_url=settings.asset_url, region=region, item_id=funcPopupIconId
         )
     functionInfo["funcType"] = get_safe(FUNC_TYPE_NAME, function.mstFunc.funcType)
-    functionInfo["funcApplyTarget"] = get_safe(
+    functionInfo["funcTargetTeam"] = get_safe(
         FUNC_APPLYTARGET_NAME, function.mstFunc.applyTarget
     )
     functionInfo["funcTargetType"] = get_safe(
@@ -272,28 +273,34 @@ def get_nice_skill(
     combinedFunctionList: List[Dict[str, Any]] = []
 
     # Build the first function item and add the first svals value
+    player_funcis: List[int] = []
     for funci in range(len(skillEntity.mstSkillLv[0].funcId)):
         function = skillEntity.mstSkillLv[0].expandedFuncId[funci]
         functionInfo = get_nice_base_function(function, region)
-
-        dataVals = parse_dataVals(
-            skillEntity.mstSkillLv[0].svals[funci], function.mstFunc.funcType
+        functionSignature = (
+            functionInfo["funcTargetType"],
+            functionInfo["funcTargetTeam"],
         )
-        svals: Dict[str, List[int]] = {}
-        for key, value in dataVals.items():
-            svals[key] = [value]
-        functionInfo["svals"] = svals
-        combinedFunctionList.append(functionInfo)
+        if functionSignature not in ENEMY_FUNC_SIGNATURE:
+            player_funcis.append(funci)
+            dataVals = parse_dataVals(
+                skillEntity.mstSkillLv[0].svals[funci], function.mstFunc.funcType
+            )
+            svals: Dict[str, List[int]] = {}
+            for key, value in dataVals.items():
+                svals[key] = [value]
+            functionInfo["svals"] = svals
+            combinedFunctionList.append(functionInfo)
 
     # Add the remaining cooldown and svals values
     for skillLv in skillEntity.mstSkillLv[1:]:
         nice_skill["coolDown"].append(skillLv.chargeTurn)
-        for funci in range(len(skillLv.funcId)):
+        for combinedfunci, funci in enumerate(player_funcis):
             dataVals = parse_dataVals(
                 skillLv.svals[funci], skillLv.expandedFuncId[funci].mstFunc.funcType
             )
             for key, value in dataVals.items():
-                combinedFunctionList[funci]["svals"][key].append(value)
+                combinedFunctionList[combinedfunci]["svals"][key].append(value)
 
     nice_skill["functions"] = categorize_functions(combinedFunctionList)
 
@@ -325,25 +332,31 @@ def get_nice_td(
     combinedFunctionList: List[Dict[str, Any]] = []
 
     # Build the first function item and add the first svals value
+    player_funcis: List[int] = []
     for funci in range(len(tdEntity.mstTreasureDeviceLv[0].funcId)):
         function = tdEntity.mstTreasureDeviceLv[0].expandedFuncId[funci]
         functionInfo = get_nice_base_function(function, region)
-
-        for vali in range(1, 6):
-            valName = f"svals{vali}" if vali >= 2 else "svals"
-            dataVals = parse_dataVals(
-                getattr(tdEntity.mstTreasureDeviceLv[0], valName)[funci],
-                function.mstFunc.funcType,
-            )
-            svals: Dict[str, List[int]] = {}
-            for key, value in dataVals.items():
-                svals[key] = [value]
-            functionInfo[valName] = svals
-        combinedFunctionList.append(functionInfo)
+        functionSignature = (
+            functionInfo["funcTargetType"],
+            functionInfo["funcTargetTeam"],
+        )
+        if functionSignature not in ENEMY_FUNC_SIGNATURE:
+            player_funcis.append(funci)
+            for vali in range(1, 6):
+                valName = f"svals{vali}" if vali >= 2 else "svals"
+                dataVals = parse_dataVals(
+                    getattr(tdEntity.mstTreasureDeviceLv[0], valName)[funci],
+                    function.mstFunc.funcType,
+                )
+                svals: Dict[str, List[int]] = {}
+                for key, value in dataVals.items():
+                    svals[key] = [value]
+                functionInfo[valName] = svals
+            combinedFunctionList.append(functionInfo)
 
     # Add the remaining svals values
     for tdLv in tdEntity.mstTreasureDeviceLv[1:]:
-        for funci in range(len(tdLv.funcId)):
+        for combinedfunci, funci in enumerate(player_funcis):
             for vali in range(1, 6):
                 valName = f"svals{vali}" if vali >= 2 else "svals"
                 dataVals = parse_dataVals(
@@ -351,7 +364,7 @@ def get_nice_td(
                     tdLv.expandedFuncId[funci].mstFunc.funcType,
                 )
                 for key, value in dataVals.items():
-                    combinedFunctionList[funci][valName][key].append(value)
+                    combinedFunctionList[combinedfunci][valName][key].append(value)
 
     nice_td["functions"] = categorize_functions(combinedFunctionList)
 
