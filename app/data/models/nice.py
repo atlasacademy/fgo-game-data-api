@@ -24,6 +24,9 @@ class SvtClass(str, Enum):
     avenger = "avenger"
     moonCancer = "moonCancer"
     foreigner = "foreigner"
+    ALL = "ALL"
+    OTHER = "OTHER"
+    EXTRA = "EXTRA"
 
 
 class Trait(str, Enum):
@@ -385,6 +388,9 @@ CLASS_NAME: Dict[int, SvtClass] = {
     11: SvtClass.avenger,
     23: SvtClass.moonCancer,
     25: SvtClass.foreigner,
+    1000: SvtClass.OTHER,
+    1001: SvtClass.ALL,
+    1002: SvtClass.EXTRA,
 }
 
 
@@ -742,6 +748,7 @@ ASSET_URL: Dict[str, str] = {
     "charaGraph2": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a@2.png",
     "charaGraph3": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@1.png",
     "charaGraph4": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@2.png",
+    "charaGraphEquip": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a.png",
     "charaGraphcostume": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a.png",
     "skillIcon": "{base_url}/{region}/SkillIcons/skill_{item_id:05}.png",
     "buffIcon": "{base_url}/{region}/BuffIcons/bufficon_{item_id}.png",
@@ -868,8 +875,9 @@ class NiceTd(BaseModel):
 
 
 class CharaGraph(BaseModel):
-    ascension: Dict[int, HttpUrl]
+    ascension: Optional[Dict[int, HttpUrl]] = None
     costume: Optional[Dict[int, HttpUrl]] = None
+    equip: Optional[Dict[int, HttpUrl]] = None
 
 
 class ExtraAssets(BaseModel):
@@ -911,3 +919,19 @@ class NiceServant(BaseModel):
     skills: List[NiceSkill]
     classPassive: List[NiceSkill]
     NPs: List[NiceTd]
+
+
+class NiceEquip(BaseModel):
+    id: int
+    collectionNo: int
+    name: str
+    cost: int
+    extraAssets: ExtraAssets
+    atkMax: int
+    atkBase: int
+    hpMax: int
+    hpBase: int
+    growthCurve: int
+    atkGrowth: List[int]
+    hpGrowth: List[int]
+    skills: List[NiceSkill]

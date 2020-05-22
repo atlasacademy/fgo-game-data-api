@@ -13,6 +13,7 @@ from ..data.models.raw import (
 )
 from ..data.models.nice import (
     NiceServant,
+    NiceEquip,
     Trait,
     ASSET_URL,
     CARD_TYPE_NAME,
@@ -41,6 +42,10 @@ def strip_formatting_brackets(detail_string: str) -> str:
 
 
 def get_safe(input_dict: Dict[Any, Any], key: Any) -> Any:
+    """
+    A dict getter that returns the key if it's not found in the dict.
+    The enums mapping is or will be incomplete eventually.
+    """
     return input_dict.get(key, key)
 
 
@@ -116,17 +121,19 @@ def parse_dataVals(datavals: str, functype: int) -> Dict[str, int]:
 
 
 def is_level_dependent(function: Dict[str, Any]) -> Any:
+    """Check for identical svalss dicts"""
     # not the best response type because of the Any in Dict
     return (
         function["svals"]
-        == function.get("svals2", [])
-        == function.get("svals3", [])
-        == function.get("svals4", [])
-        == function.get("svals5", [])
+        == function.get("svals2")
+        == function.get("svals3")
+        == function.get("svals4")
+        == function.get("svals5")
     )
 
 
 def is_overcharge_dependent(function: Dict[str, Any]) -> bool:
+    """Check for invariant dataVals arrays within all the svals"""
     isOvercharge = True
     svalsCount = len([key for key in function.keys() if key.startswith("svals")])
     for vali in range(1, svalsCount + 1):
@@ -138,10 +145,12 @@ def is_overcharge_dependent(function: Dict[str, Any]) -> bool:
 
 
 def is_constant(function: Dict[str, Any]) -> bool:
+    """Check if function is neither level nor overcharge dependent"""
     return is_overcharge_dependent(function) and is_level_dependent(function)
 
 
 def combine_svals_overcharge(function: Dict[str, Any]) -> Dict[str, Any]:
+    """Create svals item that varies with overcharge instead of level"""
     svals: Dict[str, List[Any]] = {}
     for valType in function["svals"]:
         svals[valType] = []
@@ -154,6 +163,7 @@ def combine_svals_overcharge(function: Dict[str, Any]) -> Dict[str, Any]:
 def categorize_functions(
     combinedFunctionList: List[Dict[str, Any]]
 ) -> Dict[str, List[Dict[str, Any]]]:
+    """Categorize functions based on how their dataVals change"""
     functions: Dict[str, List[Dict[str, Any]]] = {
         "level": [],
         "overcharge": [],
@@ -383,7 +393,6 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
     nice_data["className"] = CLASS_NAME[raw_data.mstSvt.classId]
     nice_data["cost"] = raw_data.mstSvt.cost
     nice_data["instantDeathChance"] = raw_data.mstSvt.deathRate / 1000
-    nice_data["starAbsorb"] = raw_data.mstSvtLimit[0].criticalWeight
     nice_data["starGen"] = raw_data.mstSvt.starRate / 1000
     nice_data["traits"] = [
         get_safe(TRAIT_NAME, item)
@@ -392,23 +401,33 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
     ]
 
     charaGraph: Dict[str, Dict[int, str]] = {}
-    charaGraph["ascension"] = {
-        i: ASSET_URL[f"charaGraph{i}"].format(
-            base_url=settings.asset_url, region=region, item_id=item_id
-        )
-        for i in range(1, 5)
-    }
-    costume_ids = [
-        item.battleCharaId for item in raw_data.mstSvtLimitAdd if item.limitCount == 11
-    ]
-    for costume_id in costume_ids:
-        charaGraph["costume"] = {
-            costume_id: ASSET_URL["charaGraphcostume"].format(
-                base_url=settings.asset_url, region=region, item_id=costume_id
+    if item_id in gamedata.masters[region].mstSvtServantCollectionNo.values():
+        charaGraph["ascension"] = {
+            i: ASSET_URL[f"charaGraph{i}"].format(
+                base_url=settings.asset_url, region=region, item_id=item_id
+            )
+            for i in range(1, 5)
+        }
+        costume_ids = [
+            item.battleCharaId
+            for item in raw_data.mstSvtLimitAdd
+            if item.limitCount == 11
+        ]
+        for costume_id in costume_ids:
+            charaGraph["costume"] = {
+                costume_id: ASSET_URL["charaGraphcostume"].format(
+                    base_url=settings.asset_url, region=region, item_id=costume_id
+                )
+            }
+    elif item_id in gamedata.masters[region].mstSvtEquipCollectionNo.values():
+        charaGraph["equip"] = {
+            item_id: ASSET_URL["charaGraphEquip"].format(
+                base_url=settings.asset_url, region=region, item_id=item_id
             )
         }
     nice_data["extraAssets"] = {"charaGraph": charaGraph}
 
+    nice_data["starAbsorb"] = raw_data.mstSvtLimit[0].criticalWeight
     atkMax = raw_data.mstSvtLimit[0].atkMax
     atkBase = raw_data.mstSvtLimit[0].atkBase
     hpMax = raw_data.mstSvtLimit[0].hpMax
@@ -435,19 +454,24 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
 
     nice_data["cards"] = [CARD_TYPE_NAME[item] for item in raw_data.mstSvt.cardIds]
     cardsDistribution = {item.cardId: item.normalDamage for item in raw_data.mstSvtCard}
-    nice_data["artsDistribution"] = cardsDistribution[1]
-    nice_data["busterDistribution"] = cardsDistribution[2]
-    nice_data["quickDistribution"] = cardsDistribution[3]
-    nice_data["extraDistribution"] = cardsDistribution[4]
+    if cardsDistribution:
+        nice_data["artsDistribution"] = cardsDistribution[1]
+        nice_data["busterDistribution"] = cardsDistribution[2]
+        nice_data["quickDistribution"] = cardsDistribution[3]
+        nice_data["extraDistribution"] = cardsDistribution[4]
 
+    # Filter out dummy TDs that are probably used by enemy servants that don't use their NPs
     actualTDs: List[TdEntityNoReverse] = [
         item for item in raw_data.mstTreasureDevice if item.mstTreasureDevice.id != 100
     ]
-    nice_data["busterNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPointB / 10000
-    nice_data["artsNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPointA / 10000
-    nice_data["quickNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPointQ / 10000
-    nice_data["extraNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPointEx / 10000
-    nice_data["defenceNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPointDef / 10000
+    if actualTDs:
+        nice_data["busterNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPointB / 10000
+        nice_data["artsNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPointA / 10000
+        nice_data["quickNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPointQ / 10000
+        nice_data["extraNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPointEx / 10000
+        nice_data["defenceNpGain"] = (
+            actualTDs[0].mstTreasureDeviceLv[0].tdPointDef / 10000
+        )
 
     ascenionMaterials = {}
     for combineLimit in raw_data.mstCombineLimit:
@@ -517,11 +541,29 @@ async def get_servant(region: Region, item_id: int):
     """
     if item_id in gamedata.masters[region].mstSvtServantCollectionNo:
         item_id = gamedata.masters[region].mstSvtServantCollectionNo[item_id]
-    if (
-        item_id in gamedata.masters[region].mstSvtId
-        and gamedata.masters[region].mstSvtId[item_id].collectionNo
-        in gamedata.masters[region].mstSvtServantCollectionNo
-    ):
+    if item_id in gamedata.masters[region].mstSvtServantCollectionNo.values():
         return get_nice_servant(region, item_id)
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
+
+
+@router.get(
+    "/{region}/equip/{item_id}",
+    summary="Get CE data",
+    response_description="CE Entity",
+    response_model=NiceEquip,
+    response_model_exclude_unset=True,
+)
+async def get_equip(region: Region, item_id: int):
+    """
+    Get servant info from ID
+
+    If the given ID is a servants's collectionNo, the corresponding servant data is returned.
+    Otherwise, it will look up the actual ID field.
+    """
+    if item_id in gamedata.masters[region].mstSvtEquipCollectionNo:
+        item_id = gamedata.masters[region].mstSvtEquipCollectionNo[item_id]
+    if item_id in gamedata.masters[region].mstSvtEquipCollectionNo.values():
+        return get_nice_servant(region, item_id)
+    else:
+        raise HTTPException(status_code=404, detail="Equip not found")
