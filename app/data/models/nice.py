@@ -814,6 +814,7 @@ class Vals(BaseModel):
     RatioHPRangeLow: List[int] = []
     TargetList: List[int] = []
     OpponentOnly: List[int] = []
+    TargetRarityList: List[str] = []
 
 
 class NiceBuff(BaseModel):

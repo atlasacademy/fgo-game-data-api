@@ -61,7 +61,7 @@ def parse_dataVals(datavals: str, functype: int) -> Dict[str, Union[int, str]]:
         array = datavals.replace("[", "").replace("]", "").split(",")
         for i, arrayi in enumerate(array):
             text = ""
-            value = 0
+            value: Union[int, str] = 0
             try:
                 value = int(arrayi)
                 if functype in [
@@ -111,7 +111,7 @@ def parse_dataVals(datavals: str, functype: int) -> Dict[str, Union[int, str]]:
                     try:
                         value = int(array2[1])
                     except ValueError:
-                        output[text] = value
+                        value = array2[1]
                 else:
                     raise HTTPException(
                         status_code=500, detail=f"Can't parse datavals: {datavals}"
