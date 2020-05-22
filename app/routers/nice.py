@@ -203,7 +203,7 @@ def categorize_functions(
                 else:
                     functions["level"].append(combinedFunc)
 
-        functions = {k: v for k, v in functions.items() if len(v) > 0}
+        functions = {k: v for k, v in functions.items() if v}
     return functions
 
 
@@ -245,10 +245,7 @@ def get_nice_base_function(
         FUNC_TARGETTYPE_NAME, function.mstFunc.targetType
     )
 
-    buffs = []
-    if len(function.mstFunc.expandedVals) > 0:
-        for buff in function.mstFunc.expandedVals:
-            buffs.append(get_nice_buff(buff, region))
+    buffs = [get_nice_buff(buff, region) for buff in function.mstFunc.expandedVals]
     functionInfo["buffs"] = buffs
     return functionInfo
 
@@ -273,7 +270,7 @@ def get_nice_skill(
     )
 
     chosenSvt = [item for item in skillEntity.mstSvtSkill if item.svtId == svtId]
-    if len(chosenSvt) > 0:
+    if chosenSvt:
         nice_skill["strengthStatus"] = chosenSvt[0].strengthStatus
         nice_skill["num"] = chosenSvt[0].num
         nice_skill["priority"] = chosenSvt[0].priority
