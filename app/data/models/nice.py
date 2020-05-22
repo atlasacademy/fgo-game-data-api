@@ -394,6 +394,9 @@ CLASS_NAME: Dict[int, SvtClass] = {
 }
 
 
+CLASS_NAME_REVERSE: Dict[SvtClass, int] = {v: k for k, v in CLASS_NAME.items()}
+
+
 TRAIT_NAME: Dict[int, Trait] = {
     1: Trait.genderMale,
     2: Trait.genderFemale,
@@ -489,6 +492,9 @@ TRAIT_NAME: Dict[int, Trait] = {
     5000: Trait.canBeInBattle,  # can be NPC, enemy or playable servant i.e. not CE
     5010: Trait.notBasedOnServant,
 }
+
+
+TRAIT_NAME_REVERSE: Dict[Trait, int] = {v: k for k, v in TRAIT_NAME.items()}
 
 
 FUNC_APPLYTARGET_NAME: Dict[int, FuncApplyTarget] = {
