@@ -204,7 +204,7 @@ def categorize_functions(
                 else:
                     functions["level"].append(combinedFunc)
 
-        functions = {k: v for k, v in functions.items() if v}
+    functions = {k: v for k, v in functions.items() if v}
     return functions
 
 
