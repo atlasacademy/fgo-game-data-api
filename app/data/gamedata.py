@@ -1,8 +1,9 @@
 import logging
 import time
 from copy import deepcopy
-from typing import Any, Dict, Set
+from typing import Any, Dict, Set, Union, Optional, List
 
+from fuzzywuzzy import fuzz
 import orjson
 
 from .models.common import Region, Settings
@@ -18,6 +19,12 @@ from .models.raw import (
     SvtType,
     TdEntity,
     TdEntityNoReverse,
+)
+from .models.nice import (
+    SvtClass,
+    Trait,
+    CLASS_NAME_REVERSE,
+    TRAIT_NAME_REVERSE,
 )
 
 
@@ -302,3 +309,34 @@ def get_servant_entity(
                 )
         svt_entity.mstSvt.expandedClassPassive = expandedPassive
     return svt_entity
+
+
+def search_servant(
+    region: Region,
+    name: Optional[str],
+    trait: List[Union[Trait, int]],
+    className: List[SvtClass],
+) -> List[int]:
+
+    if not trait:
+        trait = []
+    trait_ints = [TRAIT_NAME_REVERSE.get(item, item) for item in trait]  # type: ignore
+
+    if not className:
+        class_ints = list(CLASS_NAME_REVERSE.values())
+    else:
+        class_ints = [CLASS_NAME_REVERSE[item] for item in className]
+
+    matches = [
+        item
+        for item in masters[region].mstSvt
+        if set(trait_ints).issubset(set(item.individuality))
+        and item.classId in class_ints
+        and is_servant(item.type)
+        and item.collectionNo != 0
+    ]
+
+    if name:
+        matches = [item for item in matches if fuzz.token_set_ratio(name, item) > 80]
+
+    return [item.id for item in matches]

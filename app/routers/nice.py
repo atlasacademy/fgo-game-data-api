@@ -1,7 +1,6 @@
 from typing import Any, Dict, List, Optional, Union
 
 from fastapi import APIRouter, HTTPException, Query
-from fuzzywuzzy import fuzz
 
 from ..data import gamedata
 from ..data.models.common import Region, Settings
@@ -19,14 +18,12 @@ from ..data.models.nice import (
     BUFF_TYPE_NAME,
     CARD_TYPE_NAME,
     CLASS_NAME,
-    CLASS_NAME_REVERSE,
     ENEMY_FUNC_SIGNATURE,
     FUNC_APPLYTARGET_NAME,
     FUNC_TARGETTYPE_NAME,
     FUNC_TYPE_NAME,
     GENDER_NAME,
     TRAIT_NAME,
-    TRAIT_NAME_REVERSE,
     NiceEquip,
     NiceServant,
     SvtClass,
@@ -553,29 +550,8 @@ async def find_servant(
     Search and return the list of matched nice servant entities.
     """
     if trait or className or name:
-        if not trait:
-            trait = []
-        trait_ints = [get_safe(TRAIT_NAME_REVERSE, item) for item in trait]
-
-        if not className:
-            class_ints = list(CLASS_NAME.keys())
-        else:
-            class_ints = [CLASS_NAME_REVERSE[item] for item in className]
-
-        matches = [
-            item
-            for item in gamedata.masters[region].mstSvt
-            if set(trait_ints).issubset(set(item.individuality))
-            and item.classId in class_ints
-            and item.type in [SvtType.HEROINE, SvtType.NORMAL]
-            and item.collectionNo != 0
-        ]
-
-        if name:
-            matches = [
-                item for item in matches if fuzz.token_set_ratio(name, item) > 80
-            ]
-        return [get_nice_servant(region, item.id) for item in matches]
+        matches = gamedata.search_servant(region, name, trait, className)
+        return [get_nice_servant(region, item) for item in matches]
     else:
         raise HTTPException(status_code=400, detail="No query found")
 

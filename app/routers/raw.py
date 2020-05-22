@@ -1,8 +1,7 @@
-from typing import Any, Dict, Optional, Union
+from typing import Any, Dict, Optional, Union, List
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Query
 from fastapi.responses import Response
-from fuzzywuzzy import fuzz, process
 
 from ..data import gamedata
 from ..data.models.common import DetailMessage, Region
@@ -12,6 +11,10 @@ from ..data.models.raw import (
     ServantEntity,
     SkillEntity,
     TdEntity,
+)
+from ..data.models.nice import (
+    SvtClass,
+    Trait,
 )
 
 
@@ -27,12 +30,16 @@ router = APIRouter()
     "/{region}/servant/search",
     summary="Find and get servant data",
     response_description="Servant Entity",
-    response_model=ServantEntity,
+    response_model=List[ServantEntity],
     response_model_exclude_unset=True,
     responses=responses,
 )
 async def find_servant(
-    region: Region, name: Optional[str] = None, expand: bool = False
+    region: Region,
+    name: Optional[str] = None,
+    trait: List[Union[Trait, int]] = Query(None),
+    className: List[SvtClass] = Query(None),
+    expand: bool = False,
 ):
     """
     Get servant info from ID
@@ -43,32 +50,17 @@ async def find_servant(
     from the skill IDs in mstSvt.classPassive.
     Expand all other skills and functions as well.
     """
-    if name:
-        servant_found = process.extract(
-            name,
-            gamedata.masters[region].mstSvtServantName.keys(),
-            scorer=fuzz.token_set_ratio,
-        )
-        # return servant_found
-        items_found = [
-            gamedata.masters[region].mstSvtServantName[found[0]]
-            for found in servant_found
-            if found[1] > 85
+    if trait or className or name:
+        matches = gamedata.search_servant(region, name, trait, className)
+        entity_list = [
+            gamedata.get_servant_entity(region, item, expand) for item in matches
         ]
-        if len(items_found) >= 1:
-            svt_entity_found = [
-                gamedata.get_servant_entity(region, item_id, expand)
-                for item_id in items_found
-            ]
-            svt_entity_found = sorted(
-                svt_entity_found, key=lambda x: x.mstSvt.collectionNo
-            )
-            return Response(
-                svt_entity_found[0].json(exclude_unset=True),
-                media_type="application/json",
-            )
-        else:
-            raise HTTPException(status_code=404, detail="Servant not found")
+        out_json = (
+            f"[{','.join([item.json(exclude_unset=True) for item in entity_list])}]"
+        )
+        return Response(out_json, media_type="application/json",)
+    else:
+        raise HTTPException(status_code=400, detail="No query found")
 
 
 @router.get(
