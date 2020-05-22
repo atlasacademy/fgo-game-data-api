@@ -429,6 +429,7 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
     nice_data["extraAssets"] = {"charaGraph": charaGraph}
 
     nice_data["starAbsorb"] = raw_data.mstSvtLimit[0].criticalWeight
+    nice_data["rarity"] = raw_data.mstSvtLimit[0].rarity
     atkMax = raw_data.mstSvtLimit[0].atkMax
     atkBase = raw_data.mstSvtLimit[0].atkBase
     hpMax = raw_data.mstSvtLimit[0].hpMax

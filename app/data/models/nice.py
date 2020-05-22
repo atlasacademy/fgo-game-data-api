@@ -904,6 +904,7 @@ class NiceServant(BaseModel):
     collectionNo: int
     name: str
     className: SvtClass
+    rarity: int
     cost: int
     extraAssets: ExtraAssets
     gender: Gender
@@ -933,12 +934,13 @@ class NiceEquip(BaseModel):
     id: int
     collectionNo: int
     name: str
+    rarity: int
     cost: int
     extraAssets: ExtraAssets
-    atkMax: int
     atkBase: int
-    hpMax: int
+    atkMax: int
     hpBase: int
+    hpMax: int
     growthCurve: int
     atkGrowth: List[int]
     hpGrowth: List[int]
