@@ -884,36 +884,44 @@ class ExtraAssets(BaseModel):
     charaGraph: CharaGraph
 
 
+class NpGain(BaseModel):
+    buster: float
+    arts: float
+    quick: float
+    extra: float
+    defence: float
+
+
+class HitsDistribution(BaseModel):
+    buster: List[int]
+    arts: List[int]
+    quick: List[int]
+    extra: List[int]
+
+
 class NiceServant(BaseModel):
     id: int
     collectionNo: int
     name: str
     className: SvtClass
     cost: int
+    extraAssets: ExtraAssets
     gender: Gender
     attribute: Attribute
     traits: List[Union[Trait, int]]
-    extraAssets: ExtraAssets
-    busterNpGain: float
-    artsNpGain: float
-    quickNpGain: float
-    extraNpGain: float
-    defenceNpGain: float
     starAbsorb: int
     starGen: float
     instantDeathChance: float
-    atkMax: int
+    cards: List[CardType]
+    npGain: NpGain
+    hitsDistribution: HitsDistribution
     atkBase: int
-    hpMax: int
+    atkMax: int
     hpBase: int
+    hpMax: int
     growthCurve: int
     atkGrowth: List[int]
     hpGrowth: List[int]
-    cards: List[CardType]
-    busterDistribution: List[int]
-    artsDistribution: List[int]
-    quickDistribution: List[int]
-    extraDistribution: List[int]
     ascenionMaterials: Dict[int, NiceAscensionMaterial]
     skillMaterials: Dict[int, NiceSkillMaterial]
     skills: List[NiceSkill]

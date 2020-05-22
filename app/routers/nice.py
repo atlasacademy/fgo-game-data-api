@@ -456,23 +456,25 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
     nice_data["cards"] = [CARD_TYPE_NAME[item] for item in raw_data.mstSvt.cardIds]
     cardsDistribution = {item.cardId: item.normalDamage for item in raw_data.mstSvtCard}
     if cardsDistribution:
-        nice_data["artsDistribution"] = cardsDistribution[1]
-        nice_data["busterDistribution"] = cardsDistribution[2]
-        nice_data["quickDistribution"] = cardsDistribution[3]
-        nice_data["extraDistribution"] = cardsDistribution[4]
+        nice_data["hitsDistribution"] = {
+            "arts": cardsDistribution[1],
+            "buster": cardsDistribution[2],
+            "quick": cardsDistribution[3],
+            "extra": cardsDistribution[4],
+        }
 
     # Filter out dummy TDs that are probably used by enemy servants that don't use their NPs
     actualTDs: List[TdEntityNoReverse] = [
         item for item in raw_data.mstTreasureDevice if item.mstTreasureDevice.id != 100
     ]
     if actualTDs:
-        nice_data["busterNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPointB / 10000
-        nice_data["artsNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPointA / 10000
-        nice_data["quickNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPointQ / 10000
-        nice_data["extraNpGain"] = actualTDs[0].mstTreasureDeviceLv[0].tdPointEx / 10000
-        nice_data["defenceNpGain"] = (
-            actualTDs[0].mstTreasureDeviceLv[0].tdPointDef / 10000
-        )
+        nice_data["npGain"] = {
+            "buster": actualTDs[0].mstTreasureDeviceLv[0].tdPointB / 10000,
+            "arts": actualTDs[0].mstTreasureDeviceLv[0].tdPointA / 10000,
+            "quick": actualTDs[0].mstTreasureDeviceLv[0].tdPointQ / 10000,
+            "extra": actualTDs[0].mstTreasureDeviceLv[0].tdPointEx / 10000,
+            "defence": actualTDs[0].mstTreasureDeviceLv[0].tdPointDef / 10000,
+        }
 
     ascenionMaterials = {}
     for combineLimit in raw_data.mstCombineLimit:
