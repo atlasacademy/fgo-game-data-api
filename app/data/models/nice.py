@@ -906,6 +906,7 @@ class NiceServant(BaseModel):
     className: SvtClass
     rarity: int
     cost: int
+    lvMax: int
     extraAssets: ExtraAssets
     gender: Gender
     attribute: Attribute
@@ -936,6 +937,7 @@ class NiceEquip(BaseModel):
     name: str
     rarity: int
     cost: int
+    lvMax: int
     extraAssets: ExtraAssets
     atkBase: int
     atkMax: int

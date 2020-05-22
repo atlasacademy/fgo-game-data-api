@@ -9,6 +9,7 @@ from ..data.models.raw import (
     FunctionEntityNoReverse,
     SkillEntityNoReverse,
     TdEntityNoReverse,
+    SvtType,
     FuncType,
 )
 from ..data.models.nice import (
@@ -400,7 +401,7 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
     ]
 
     charaGraph: Dict[str, Dict[int, str]] = {}
-    if item_id in gamedata.masters[region].mstSvtServantCollectionNo.values():
+    if raw_data.mstSvt.type == SvtType.NORMAL:
         charaGraph["ascension"] = {
             i: ASSET_URL[f"charaGraph{i}"].format(
                 base_url=settings.asset_url, region=region, item_id=item_id
@@ -418,7 +419,7 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
                     base_url=settings.asset_url, region=region, item_id=costume_id
                 )
             }
-    elif item_id in gamedata.masters[region].mstSvtEquipCollectionNo.values():
+    elif raw_data.mstSvt.type == SvtType.SERVANT_EQUIP:
         charaGraph["equip"] = {
             item_id: ASSET_URL["charaGraphEquip"].format(
                 base_url=settings.asset_url, region=region, item_id=item_id
@@ -428,6 +429,10 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
 
     nice_data["starAbsorb"] = raw_data.mstSvtLimit[0].criticalWeight
     nice_data["rarity"] = raw_data.mstSvtLimit[0].rarity
+    lvMax = max([item.lvMax for item in raw_data.mstSvtLimit])
+    nice_data["lvMax"] = lvMax
+    if raw_data.mstSvt.type == SvtType.NORMAL:
+        lvMax = 100
     atkMax = raw_data.mstSvtLimit[0].atkMax
     atkBase = raw_data.mstSvtLimit[0].atkBase
     hpMax = raw_data.mstSvtLimit[0].hpMax
@@ -435,7 +440,7 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
     growthCurve = raw_data.mstSvt.expType
     growthCurveValues = [
         gamedata.masters[region].mstSvtExpId[growthCurve][lv].curve
-        for lv in range(1, 101)
+        for lv in range(1, lvMax + 1)
     ]
     atkGrowth = [
         atkBase + (atkMax - atkBase) * curve // 1000 for curve in growthCurveValues
