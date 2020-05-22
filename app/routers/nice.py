@@ -55,68 +55,69 @@ def get_traits_list(input_idv: List[int]) -> List[Union[Trait, int]]:
 
 def parse_dataVals(datavals: str, functype: int) -> Dict[str, int]:
     output: Dict[str, int] = {}
-    array = datavals.replace("[", "").replace("]", "").split(",")
-    for i, arrayi in enumerate(array):
-        text = ""
-        value = 0
-        try:
-            value = int(arrayi)
-            if functype in [
-                FuncType.DAMAGE_NP_INDIVIDUAL,
-                FuncType.DAMAGE_NP_STATE_INDIVIDUAL,
-                FuncType.DAMAGE_NP_STATE_INDIVIDUAL_FIX,
-            ]:
-                if i == 0:
-                    text = "Rate"
-                elif i == 1:
-                    text = "Value"
-                elif i == 2:
-                    text = "Target"
-                elif i == 3:
-                    text = "Correction"
-            elif functype in [FuncType.ADD_STATE, FuncType.ADD_STATE_SHORT]:
-                if i == 0:
-                    text = "Rate"
-                elif i == 1:
-                    text = "Turn"
-                elif i == 2:
-                    text = "Count"
-                elif i == 3:
-                    text = "Value"
-                elif i == 4:
-                    text = "UseRate"
-                elif i == 5:
-                    text = "Value2"
-            elif functype == FuncType.SUB_STATE:
-                if i == 0:
-                    text = "Rate"
-                elif i == 1:
-                    text = "Value"
-                elif i == 2:
-                    text = "Value2"
-            else:
-                if i == 0:
-                    text = "Rate"
-                elif i == 1:
-                    text = "Value"
-                elif i == 2:
-                    text = "Target"
-        except ValueError:
-            array2 = arrayi.split(":")
-            if len(array2) > 1:
-                text = array2[0]
-                try:
-                    value = int(array2[1])
-                except ValueError:
+    if datavals != "[]":
+        array = datavals.replace("[", "").replace("]", "").split(",")
+        for i, arrayi in enumerate(array):
+            text = ""
+            value = 0
+            try:
+                value = int(arrayi)
+                if functype in [
+                    FuncType.DAMAGE_NP_INDIVIDUAL,
+                    FuncType.DAMAGE_NP_STATE_INDIVIDUAL,
+                    FuncType.DAMAGE_NP_STATE_INDIVIDUAL_FIX,
+                ]:
+                    if i == 0:
+                        text = "Rate"
+                    elif i == 1:
+                        text = "Value"
+                    elif i == 2:
+                        text = "Target"
+                    elif i == 3:
+                        text = "Correction"
+                elif functype in [FuncType.ADD_STATE, FuncType.ADD_STATE_SHORT]:
+                    if i == 0:
+                        text = "Rate"
+                    elif i == 1:
+                        text = "Turn"
+                    elif i == 2:
+                        text = "Count"
+                    elif i == 3:
+                        text = "Value"
+                    elif i == 4:
+                        text = "UseRate"
+                    elif i == 5:
+                        text = "Value2"
+                elif functype == FuncType.SUB_STATE:
+                    if i == 0:
+                        text = "Rate"
+                    elif i == 1:
+                        text = "Value"
+                    elif i == 2:
+                        text = "Value2"
+                else:
+                    if i == 0:
+                        text = "Rate"
+                    elif i == 1:
+                        text = "Value"
+                    elif i == 2:
+                        text = "Target"
+            except ValueError:
+                array2 = arrayi.split(":")
+                if len(array2) > 1:
+                    text = array2[0]
+                    try:
+                        value = int(array2[1])
+                    except ValueError:
+                        raise HTTPException(
+                            status_code=500, detail=f"Can't parse datavals: {datavals}"
+                        )
+                else:
                     raise HTTPException(
                         status_code=500, detail=f"Can't parse datavals: {datavals}"
                     )
-            else:
-                raise HTTPException(
-                    status_code=500, detail=f"Can't parse datavals: {datavals}"
-                )
-        if text != "":
-            output[text] = value
+            if text != "":
+                output[text] = value
     return output
 
 
