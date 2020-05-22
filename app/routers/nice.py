@@ -55,8 +55,8 @@ def get_traits_list(input_idv: List[int]) -> List[Union[Trait, int]]:
     return [get_safe(TRAIT_NAME, item) for item in input_idv]
 
 
-def parse_dataVals(datavals: str, functype: int) -> Dict[str, int]:
-    output: Dict[str, int] = {}
+def parse_dataVals(datavals: str, functype: int) -> Dict[str, Union[int, str]]:
+    output: Dict[str, Union[int, str]] = {}
     if datavals != "[]":
         array = datavals.replace("[", "").replace("]", "").split(",")
         for i, arrayi in enumerate(array):
@@ -111,9 +111,7 @@ def parse_dataVals(datavals: str, functype: int) -> Dict[str, int]:
                     try:
                         value = int(array2[1])
                     except ValueError:
-                        raise HTTPException(
-                            status_code=500, detail=f"Can't parse datavals: {datavals}"
-                        )
+                        output[text] = value
                 else:
                     raise HTTPException(
                         status_code=500, detail=f"Can't parse datavals: {datavals}"
@@ -297,7 +295,7 @@ def get_nice_skill(
             dataVals = parse_dataVals(
                 skillEntity.mstSkillLv[0].svals[funci], function.mstFunc.funcType
             )
-            svals: Dict[str, List[int]] = {}
+            svals: Dict[str, List[Union[str, int]]] = {}
             for key, value in dataVals.items():
                 svals[key] = [value]
             functionInfo["svals"] = svals
@@ -359,7 +357,7 @@ def get_nice_td(
                     getattr(tdEntity.mstTreasureDeviceLv[0], valName)[funci],
                     function.mstFunc.funcType,
                 )
-                svals: Dict[str, List[int]] = {}
+                svals: Dict[str, List[Union[str, int]]] = {}
                 for key, value in dataVals.items():
                     svals[key] = [value]
                 functionInfo[valName] = svals
@@ -470,7 +468,9 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
 
     # Filter out dummy TDs that are probably used by enemy servants that don't use their NPs
     actualTDs: List[TdEntityNoReverse] = [
-        item for item in raw_data.mstTreasureDevice if item.mstTreasureDevice.id != 100
+        item
+        for item in raw_data.mstTreasureDevice
+        if item.mstTreasureDevice.id != 100 and item.mstTreasureDevice.id % 100 != 99
     ]
     if actualTDs:
         nice_data["npGain"] = {
