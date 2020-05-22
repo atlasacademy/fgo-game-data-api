@@ -171,38 +171,39 @@ def categorize_functions(
         "constant": [],
         "other": [],
     }
-    svalsCount = len(
-        [key for key in combinedFunctionList[0].keys() if key.startswith("svals")]
-    )
-    if svalsCount > 1:
-        # TD combinedFunc
-        for combinedFunc in combinedFunctionList:
-            if is_constant(combinedFunc):
-                for vali in range(2, 6):
-                    combinedFunc.pop(f"svals{vali}")
-                functions["constant"].append(combinedFunc)
-            elif is_level_dependent(combinedFunc):
-                for vali in range(2, 6):
-                    combinedFunc.pop(f"svals{vali}")
-                functions["level"].append(combinedFunc)
-            elif is_overcharge_dependent(combinedFunc):
-                svals = combine_svals_overcharge(combinedFunc)
-                for vali in range(2, 6):
-                    combinedFunc.pop(f"svals{vali}")
-                combinedFunc["svals"] = svals
-                functions["overcharge"].append(combinedFunc)
-            else:
-                functions["other"].append(combinedFunc)
-    else:
-        # Skill combinedFunc
-        for combinedFunc in combinedFunctionList:
-            if is_overcharge_dependent(combinedFunc):
-                # check for constant value in the datavals arrays
-                functions["constant"].append(combinedFunc)
-            else:
-                functions["level"].append(combinedFunc)
+    if combinedFunctionList:
+        svalsCount = len(
+            [key for key in combinedFunctionList[0].keys() if key.startswith("svals")]
+        )
+        if svalsCount > 1:
+            # TD combinedFunc
+            for combinedFunc in combinedFunctionList:
+                if is_constant(combinedFunc):
+                    for vali in range(2, 6):
+                        combinedFunc.pop(f"svals{vali}")
+                    functions["constant"].append(combinedFunc)
+                elif is_level_dependent(combinedFunc):
+                    for vali in range(2, 6):
+                        combinedFunc.pop(f"svals{vali}")
+                    functions["level"].append(combinedFunc)
+                elif is_overcharge_dependent(combinedFunc):
+                    svals = combine_svals_overcharge(combinedFunc)
+                    for vali in range(2, 6):
+                        combinedFunc.pop(f"svals{vali}")
+                    combinedFunc["svals"] = svals
+                    functions["overcharge"].append(combinedFunc)
+                else:
+                    functions["other"].append(combinedFunc)
+        else:
+            # Skill combinedFunc
+            for combinedFunc in combinedFunctionList:
+                if is_overcharge_dependent(combinedFunc):
+                    # check for constant value in the datavals arrays
+                    functions["constant"].append(combinedFunc)
+                else:
+                    functions["level"].append(combinedFunc)
 
-    functions = {k: v for k, v in functions.items() if len(v) > 0}
+        functions = {k: v for k, v in functions.items() if len(v) > 0}
     return functions
 
 
