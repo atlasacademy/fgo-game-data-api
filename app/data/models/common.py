@@ -12,6 +12,7 @@ class Settings(BaseSettings):
     na_gamedata: DirectoryPath
     jp_gamedata: DirectoryPath
     asset_url: HttpUrl
+    export_all_nice: bool = False
 
     @validator("asset_url")
     def remove_last_slash(cls, value):

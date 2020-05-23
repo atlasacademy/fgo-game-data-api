@@ -3,17 +3,36 @@ import time
 
 from fastapi import FastAPI, Request, status
 from fastapi.responses import RedirectResponse, Response
+from fastapi.staticfiles import StaticFiles
 
 from .routers import raw, nice
+from .data.models.common import Settings
+
 
 logger = logging.getLogger()
+settings = Settings()
 
 
-app = FastAPI(
-    title="FGO Game data API",
-    description="Provide raw and processed FGO game data",
-    version="0.0.1",
-)
+app_description = """Provide raw and processed FGO game data.
+
+Available documentation styles: [Swagger UI](/docs), [Redoc](/redoc).
+
+If you encounter bugs or missing data, you can report them at the [Atlas Academy Discord](https://discord.gg/TKJmuCR).
+"""
+export_links = """
+
+Preprocessed nice data:
+[NA servant](/export/nice_servant_NA.json),
+[NA CE](/export/nice_equip_NA.json),
+[JP servant](/export/nice_servant_JP.json),
+[JP CE](/export/nice_equip_JP.json).
+"""
+
+if settings.export_all_nice:
+    app_description += export_links
+
+
+app = FastAPI(title="FGO Game data API", description=app_description, version="0.1.0",)
 
 
 @app.middleware("http")
@@ -46,3 +65,7 @@ app.include_router(
 )
 async def root():
     return RedirectResponse("/docs")
+
+
+if settings.export_all_nice:
+    app.mount("/export", StaticFiles(directory="export"), name="export")

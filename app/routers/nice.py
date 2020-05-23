@@ -1,3 +1,6 @@
+import json
+import logging
+import time
 from typing import Any, Dict, List, Optional, Union
 
 from fastapi import APIRouter, HTTPException, Query
@@ -34,6 +37,7 @@ from ..data.models.nice import (
 FORMATTING_BRACKETS = {"[g][o]": "", "[/o][/g]": "", " [{0}] ": " ", "[{0}]": ""}
 
 
+logger = logging.getLogger()
 settings = Settings()
 
 
@@ -530,6 +534,26 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
     return nice_data
 
 
+if settings.export_all_nice:
+    for region_ in [Region.NA, Region.JP]:
+        start_time = time.time()
+        logger.info(f"Writing nice {region_} servant and equip data ...")
+        all_servant_data = [
+            get_nice_servant(region_, item_id)
+            for item_id in gamedata.masters[region_].mstSvtServantCollectionNo.values()
+        ]
+        all_equip_data = [
+            get_nice_servant(region_, item_id)
+            for item_id in gamedata.masters[region_].mstSvtEquipCollectionNo.values()
+        ]
+        with open(f"export/nice_servant_{region_}.json", "w", encoding="utf-8") as fp:
+            json.dump(all_servant_data, fp)
+        with open(f"export/nice_equip_{region_}.json", "w", encoding="utf-8") as fp:
+            json.dump(all_equip_data, fp)
+        run_time = time.time() - start_time
+        logger.info(f"Finish writing nice {region_} data in {run_time:.4f} seconds.")
+
+
 router = APIRouter()
 
 
@@ -556,20 +580,31 @@ async def find_servant(
         raise HTTPException(status_code=400, detail="No query found")
 
 
+get_servant_description = """Get servant info from ID
+
+If the given ID is a servants's collectionNo, the corresponding servant data is returned.
+Otherwise, it will look up the actual ID field.
+"""
+pre_processed_data_links = """
+
+Preprocessed data:
+- [NA servant](/export/nice_servant_NA.json)
+- [JP servant](/export/nice_servant_JP.json)
+"""
+
+if settings.export_all_nice:
+    get_servant_description += pre_processed_data_links
+
+
 @router.get(
     "/{region}/servant/{item_id}",
     summary="Get servant data",
     response_description="Servant Entity",
     response_model=NiceServant,
     response_model_exclude_unset=True,
+    description=get_servant_description,
 )
 async def get_servant(region: Region, item_id: int):
-    """
-    Get servant info from ID
-
-    If the given ID is a servants's collectionNo, the corresponding servant data is returned.
-    Otherwise, it will look up the actual ID field.
-    """
     if item_id in gamedata.masters[region].mstSvtServantCollectionNo:
         item_id = gamedata.masters[region].mstSvtServantCollectionNo[item_id]
     if item_id in gamedata.masters[region].mstSvtServantCollectionNo.values():
@@ -578,20 +613,31 @@ async def get_servant(region: Region, item_id: int):
         raise HTTPException(status_code=404, detail="Servant not found")
 
 
+get_equip_description = """Get CE info from ID
+
+If the given ID is a CE's collectionNo, the corresponding CE data is returned.
+Otherwise, it will look up the actual ID field.
+"""
+pre_processed_equip_links = """
+
+Preprocessed data:
+- [NA CE](/export/nice_equip_NA.json)
+- [JP CE](/export/nice_equip_JP.json)
+"""
+
+if settings.export_all_nice:
+    get_equip_description += pre_processed_equip_links
+
+
 @router.get(
     "/{region}/equip/{item_id}",
     summary="Get CE data",
     response_description="CE Entity",
     response_model=NiceEquip,
     response_model_exclude_unset=True,
+    description=get_equip_description,
 )
 async def get_equip(region: Region, item_id: int):
-    """
-    Get servant info from ID
-
-    If the given ID is a servants's collectionNo, the corresponding servant data is returned.
-    Otherwise, it will look up the actual ID field.
-    """
     if item_id in gamedata.masters[region].mstSvtEquipCollectionNo:
         item_id = gamedata.masters[region].mstSvtEquipCollectionNo[item_id]
     if item_id in gamedata.masters[region].mstSvtEquipCollectionNo.values():
