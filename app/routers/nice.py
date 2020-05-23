@@ -6,7 +6,7 @@ from typing import Any, Dict, List, Optional, Union
 from fastapi import APIRouter, HTTPException, Query
 
 from ..data import gamedata
-from ..data.models.common import Region, Settings
+from ..data.models.common import DetailMessage, Region, Settings
 from ..data.models.raw import (
     BuffEntityNoReverse,
     FunctionEntityNoReverse,
@@ -554,6 +554,13 @@ if settings.export_all_nice:
         logger.info(f"Finish writing nice {region_} data in {run_time:.4f} seconds.")
 
 
+responses: Dict[Union[str, int], Any] = {
+    400: {"model": DetailMessage, "description": "Insufficient querry"},
+    404: {"model": DetailMessage, "description": "Item not found"},
+    500: {"model": DetailMessage, "description": "Internal server error"},
+}
+
+
 router = APIRouter()
 
 
@@ -563,6 +570,7 @@ router = APIRouter()
     response_description="Servant Entity",
     response_model=List[NiceServant],
     response_model_exclude_unset=True,
+    responses=responses,
 )
 async def find_servant(
     region: Region,
@@ -577,7 +585,7 @@ async def find_servant(
         matches = gamedata.search_servant(region, name, trait, className)
         return [get_nice_servant(region, item) for item in matches]
     else:
-        raise HTTPException(status_code=400, detail="No query found")
+        raise HTTPException(status_code=400, detail="Insufficient querry")
 
 
 get_servant_description = """Get servant info from ID
@@ -603,6 +611,7 @@ if settings.export_all_nice:
     response_model=NiceServant,
     response_model_exclude_unset=True,
     description=get_servant_description,
+    responses=responses,
 )
 async def get_servant(region: Region, item_id: int):
     if item_id in gamedata.masters[region].mstSvtServantCollectionNo:
@@ -636,6 +645,7 @@ if settings.export_all_nice:
     response_model=NiceEquip,
     response_model_exclude_unset=True,
     description=get_equip_description,
+    responses=responses,
 )
 async def get_equip(region: Region, item_id: int):
     if item_id in gamedata.masters[region].mstSvtEquipCollectionNo:
