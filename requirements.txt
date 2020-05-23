@@ -1,3 +1,6 @@
+aiofiles==0.5.0 \
+    --hash=sha256:377fdf7815cc611870c59cbd07b68b180841d2a2b79812d8c218be02448c2acb \
+    --hash=sha256:98e6bcfd1b50f97db4980e182ddd509b7cc35909e903a8fe50d8849e02d815af
 click==7.1.2 \
     --hash=sha256:dacca89f4bfadd5de3d7489b7c8a566eee0d3676333fbb50030263894c38c0dc \
     --hash=sha256:d2b5255c7c6349bc1bd1e59e08cd12acbbd63ce649f2588755783aa94dfb6b1a
