@@ -271,7 +271,7 @@ class MstCombineSkill(BaseModel):
 
 class MstItem(BaseModel):
     individuality: List[int]  # [],
-    script: Dict[str, int]  # {},
+    script: Dict[str, Union[int, str]]  # {},
     eventId: int  # 0,
     eventGroupId: int  # 0,
     id: int  # 6505,
