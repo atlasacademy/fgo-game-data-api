@@ -269,9 +269,11 @@ def get_nice_skill(
             atlas_id=iconAtlas,
             item_id=iconId,
         )
-    nice_skill["detail"] = strip_formatting_brackets(
-        skillEntity.mstSkillDetail[0].detail
-    )
+
+    if skillEntity.mstSkillDetail:
+        nice_skill["detail"] = strip_formatting_brackets(
+            skillEntity.mstSkillDetail[0].detail
+        )
 
     chosenSvt = [item for item in skillEntity.mstSvtSkill if item.svtId == svtId]
     if chosenSvt:
@@ -654,3 +656,24 @@ async def get_equip(region: Region, item_id: int):
         return get_nice_servant(region, item_id)
     else:
         raise HTTPException(status_code=404, detail="Equip not found")
+
+
+@router.get(
+    "/{region}/svt/{item_id}",
+    summary="Get svt data",
+    response_description="Servant Entity",
+    response_model=NiceServant,
+    response_model_exclude_unset=True,
+    responses=responses,
+)
+async def get_svt(region: Region, item_id: int):
+    """
+    Get svt info from ID
+
+    Only consider actual ID. Does not convert from collectionNo.
+    The endpoint is not limited to svt or equip ids.
+    """
+    if item_id in gamedata.masters[region].mstSvtId:
+        return get_nice_servant(region, item_id)
+    else:
+        raise HTTPException(status_code=404, detail="Servant not found")

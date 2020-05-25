@@ -856,7 +856,7 @@ class NiceSkill(BaseModel):
     id: int
     num: int = -1
     name: str
-    detail: str
+    detail: Optional[str] = None
     strengthStatus: int = -1
     priority: int = -1
     condQuestId: int = -1
