@@ -670,8 +670,8 @@ async def get_svt(region: Region, item_id: int):
     """
     Get svt info from ID
 
-    Only consider actual ID. Does not convert from collectionNo.
-    The endpoint is not limited to svt or equip ids.
+    Only use actual IDs for lookup. Does not convert from collectionNo.
+    The endpoint is not limited to servants or equips ids.
     """
     if item_id in gamedata.masters[region].mstSvtId:
         return get_nice_servant(region, item_id)
