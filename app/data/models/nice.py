@@ -123,6 +123,7 @@ class Trait(str, Enum):
     beastServant = "beastServant"
     canBeInBattle = "canBeInBattle"
     notBasedOnServant = "notBasedOnServant"
+    livingHuman = "livingHuman"
 
 
 class CardType(str, Enum):
@@ -489,6 +490,7 @@ TRAIT_NAME: Dict[int, Trait] = {
     2615: Trait.genderCaenisServant,  # Phantom's 2nd skill
     2631: Trait.humanoidServant,  # used in TamaVitch's fight
     2632: Trait.beastServant,  # used in TamaVitch's fight
+    2654: Trait.livingHuman,  # Voyager's NP
     5000: Trait.canBeInBattle,  # can be NPC, enemy or playable servant i.e. not CE
     5010: Trait.notBasedOnServant,
 }
