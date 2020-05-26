@@ -294,7 +294,7 @@ def get_servant_entity(
             for td in [
                 item.treasureDeviceId
                 for item in masters[region].mstSvtTreasureDevice
-                if item.svtId == servant_id
+                if item.svtId == servant_id and item.treasureDeviceId != 100
             ]
         ],
     )
