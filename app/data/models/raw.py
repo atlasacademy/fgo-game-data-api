@@ -205,6 +205,12 @@ class MstSvt(BaseModel):
     collectionNo: int  # 150,
     materialStoryPriority: int  # 1000
 
+    def isServant(self) -> bool:
+        return self.type in [SvtType.NORMAL, SvtType.HEROINE]
+
+    def isEquip(self) -> bool:
+        return self.type == SvtType.SERVANT_EQUIP
+
 
 class MstSvtCard(BaseModel):
     normalDamage: List[int]  # [4, 9, 14, 19, 23, 31],

@@ -406,7 +406,7 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
     ]
 
     charaGraph: Dict[str, Dict[int, str]] = {}
-    if raw_data.mstSvt.type == SvtType.NORMAL:
+    if raw_data.mstSvt.isServant():
         charaGraph["ascension"] = {
             i: ASSET_URL[f"charaGraph{i}"].format(
                 base_url=settings.asset_url, region=region, item_id=item_id
@@ -424,7 +424,7 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
                     base_url=settings.asset_url, region=region, item_id=costume_id
                 )
             }
-    elif raw_data.mstSvt.type == SvtType.SERVANT_EQUIP:
+    elif raw_data.mstSvt.isEquip():
         charaGraph["equip"] = {
             item_id: ASSET_URL["charaGraphEquip"].format(
                 base_url=settings.asset_url, region=region, item_id=item_id
