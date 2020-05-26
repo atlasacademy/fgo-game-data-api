@@ -487,7 +487,7 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
             "defence": actualTDs[0].mstTreasureDeviceLv[0].tdPointDef / 10000,
         }
 
-    ascenionMaterials = {}
+    ascensionMaterials = {}
     for combineLimit in raw_data.mstCombineLimit:
         itemLists = [
             {
@@ -500,11 +500,11 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
             }
             for item, amount in zip(combineLimit.itemIds, combineLimit.itemNums)
         ]
-        ascenionMaterials[combineLimit.svtLimit + 1] = {
+        ascensionMaterials[combineLimit.svtLimit + 1] = {
             "items": itemLists,
             "qp": combineLimit.qp,
         }
-    nice_data["ascenionMaterials"] = ascenionMaterials
+    nice_data["ascensionMaterials"] = ascensionMaterials
 
     skillMaterials = {}
     for combineSkill in raw_data.mstCombineSkill:
