@@ -416,6 +416,33 @@ class Buff(str, Enum):
     upDamageEventPoint = "upDamageEventPoint"
 
 
+class NiceItemType(str, Enum):
+    qp = "qp"
+    stone = "stone"
+    apRecover = "apRecover"
+    apAdd = "apAdd"
+    mana = "mana"
+    key = "key"
+    gachaClass = "gachaClass"
+    gachaRelic = "gachaRelic"
+    gachaTicket = "gachaTicket"
+    limit = "limit"
+    skillLvUp = "skillLvUp"
+    tdLvUp = "tdLvUp"
+    friendPoint = "friendPoint"
+    eventPoint = "eventPoint"
+    eventItem = "eventItem"
+    questRewardQp = "questRewardQp"
+    chargeStone = "chargeStone"
+    rpAdd = "rpAdd"
+    boostItem = "boostItem"
+    stoneFragments = "stoneFragments"
+    anonymous = "anonymous"
+    rarePri = "rarePri"
+    costumeRelease = "costumeRelease"
+    itemSelect = "itemSelect"
+
+
 CARD_TYPE_NAME: Dict[int, CardType] = {
     1: CardType.arts,
     2: CardType.buster,
@@ -878,6 +905,34 @@ BUFF_TYPE_NAME: Dict[int, Buff] = {
 }
 
 
+ITEM_TYPE_NAME: Dict[int, NiceItemType] = {
+    1: NiceItemType.qp,
+    2: NiceItemType.stone,
+    3: NiceItemType.apRecover,
+    4: NiceItemType.apAdd,
+    5: NiceItemType.mana,
+    6: NiceItemType.key,
+    7: NiceItemType.gachaClass,
+    8: NiceItemType.gachaRelic,
+    9: NiceItemType.gachaTicket,
+    10: NiceItemType.limit,
+    11: NiceItemType.skillLvUp,
+    12: NiceItemType.tdLvUp,
+    13: NiceItemType.friendPoint,
+    14: NiceItemType.eventPoint,
+    15: NiceItemType.eventItem,
+    16: NiceItemType.questRewardQp,
+    17: NiceItemType.chargeStone,
+    18: NiceItemType.rpAdd,
+    19: NiceItemType.boostItem,
+    20: NiceItemType.stoneFragments,
+    21: NiceItemType.anonymous,
+    22: NiceItemType.rarePri,
+    23: NiceItemType.costumeRelease,
+    24: NiceItemType.itemSelect,
+}
+
+
 ASSET_URL: Dict[str, str] = {
     "charaGraph1": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a@1.png",
     "charaGraph2": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a@2.png",
@@ -891,10 +946,15 @@ ASSET_URL: Dict[str, str] = {
 }
 
 
-class NiceItemAmount(BaseModel):
+class NiceItem(BaseModel):
     id: int
     name: str
+    type: NiceItemType
     icon: HttpUrl
+
+
+class NiceItemAmount(BaseModel):
+    item: NiceItem
     amount: int
 
 

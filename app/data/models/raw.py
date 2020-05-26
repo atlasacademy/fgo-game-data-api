@@ -661,3 +661,30 @@ class DataValsType(IntEnum):
     RatioHPRangeLow = 31
     TargetList = 32
     OpponentOnly = 33
+
+
+class ItemType(IntEnum):
+    QP = 1
+    STONE = 2
+    AP_RECOVER = 3
+    AP_ADD = 4
+    MANA = 5
+    KEY = 6
+    GACHA_CLASS = 7
+    GACHA_RELIC = 8
+    GACHA_TICKET = 9
+    LIMIT = 10
+    SKILL_LV_UP = 11
+    TD_LV_UP = 12
+    FRIEND_POINT = 13
+    EVENT_POINT = 14
+    EVENT_ITEM = 15
+    QUEST_REWARD_QP = 16
+    CHARGE_STONE = 17
+    RP_ADD = 18
+    BOOST_ITEM = 19
+    STONE_FRAGMENTS = 20
+    ANONYMOUS = 21
+    RARE_PRI = 22
+    COSTUME_RELEASE = 23
+    ITEM_SELECT = 24

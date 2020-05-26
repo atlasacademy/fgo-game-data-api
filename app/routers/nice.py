@@ -26,9 +26,11 @@ from ..data.models.nice import (
     FUNC_TARGETTYPE_NAME,
     FUNC_TYPE_NAME,
     GENDER_NAME,
+    ITEM_TYPE_NAME,
     TRAIT_NAME,
     NiceEquip,
     NiceServant,
+    NiceItem,
     SvtClass,
     Trait,
 )
@@ -386,6 +388,28 @@ def get_nice_td(
     return nice_td
 
 
+def get_nice_item(region: Region, item_id: int) -> Dict[str, Union[int, str]]:
+    raw_data = gamedata.masters[region].mstItemId[item_id]
+    nice_item: Dict[str, Union[int, str]] = {
+        "id": item_id,
+        "name": raw_data.name,
+        "type": get_safe(ITEM_TYPE_NAME, raw_data.type),
+        "icon": ASSET_URL["items"].format(
+            base_url=settings.asset_url, region=region, item_id=raw_data.imageId
+        ),
+    }
+    return nice_item
+
+
+def get_nice_item_amount(
+    region: Region, item_list: List[int], amount_list: List[int]
+) -> List[Dict[str, Any]]:
+    return [
+        {"item": get_nice_item(region, item), "amount": amount}
+        for item, amount in zip(item_list, amount_list)
+    ]
+
+
 def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
     raw_data = gamedata.get_servant_entity(region, item_id, True)
     nice_data: Dict[str, Any] = {}
@@ -487,43 +511,25 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
             "defence": actualTDs[0].mstTreasureDeviceLv[0].tdPointDef,
         }
 
-    ascensionMaterials = {}
-    for combineLimit in raw_data.mstCombineLimit:
-        itemLists = [
-            {
-                "id": item,
-                "name": gamedata.masters[region].mstItemId[item].name,
-                "icon": ASSET_URL["items"].format(
-                    base_url=settings.asset_url, region=region, item_id=item
-                ),
-                "amount": amount,
-            }
-            for item, amount in zip(combineLimit.itemIds, combineLimit.itemNums)
-        ]
-        ascensionMaterials[combineLimit.svtLimit + 1] = {
-            "items": itemLists,
+    nice_data["ascensionMaterials"] = {
+        (combineLimit.svtLimit + 1): {
+            "items": get_nice_item_amount(
+                region, combineLimit.itemIds, combineLimit.itemNums
+            ),
             "qp": combineLimit.qp,
         }
-    nice_data["ascensionMaterials"] = ascensionMaterials
+        for combineLimit in raw_data.mstCombineLimit
+    }
 
-    skillMaterials = {}
-    for combineSkill in raw_data.mstCombineSkill:
-        itemLists = [
-            {
-                "id": item,
-                "name": gamedata.masters[region].mstItemId[item].name,
-                "icon": ASSET_URL["items"].format(
-                    base_url=settings.asset_url, region=region, item_id=item
-                ),
-                "amount": amount,
-            }
-            for item, amount in zip(combineSkill.itemIds, combineSkill.itemNums)
-        ]
-        skillMaterials[combineSkill.skillLv] = {
-            "items": itemLists,
+    nice_data["skillMaterials"] = {
+        combineSkill.skillLv: {
+            "items": get_nice_item_amount(
+                region, combineSkill.itemIds, combineSkill.itemNums
+            ),
             "qp": combineSkill.qp,
         }
-    nice_data["skillMaterials"] = skillMaterials
+        for combineSkill in raw_data.mstCombineSkill
+    }
 
     nice_data["skills"] = [
         get_nice_skill(skill, item_id, region) for skill in raw_data.mstSkill
@@ -548,10 +554,16 @@ if settings.export_all_nice:
             get_nice_servant(region_, item_id)
             for item_id in gamedata.masters[region_].mstSvtEquipCollectionNo.values()
         ]
+        all_item_data = [
+            get_nice_item(region_, item_id)
+            for item_id in gamedata.masters[region_].mstItemId
+        ]
         with open(f"export/nice_servant_{region_}.json", "w", encoding="utf-8") as fp:
             json.dump(all_servant_data, fp)
         with open(f"export/nice_equip_{region_}.json", "w", encoding="utf-8") as fp:
             json.dump(all_equip_data, fp)
+        with open(f"export/nice_item_{region_}.json", "w", encoding="utf-8") as fp:
+            json.dump(all_item_data, fp)
         run_time = time.time() - start_time
         logger.info(f"Finish writing nice {region_} data in {run_time:.4f} seconds.")
 
@@ -677,3 +689,31 @@ async def get_svt(region: Region, item_id: int):
         return get_nice_servant(region, item_id)
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
+
+
+get_item_description = "Get nice item info from ID"
+pre_processed_item_links = """
+
+Preprocessed data:
+- [NA Item](/export/nice_item_NA.json)
+- [JP Item](/export/nice_item_JP.json)
+"""
+
+if settings.export_all_nice:
+    get_item_description += pre_processed_item_links
+
+
+@router.get(
+    "/{region}/item/{item_id}",
+    summary="Get Item data",
+    response_description="Item Entity",
+    response_model=NiceItem,
+    response_model_exclude_unset=True,
+    description=get_item_description,
+    responses=responses,
+)
+async def get_item(region: Region, item_id: int):
+    if item_id in gamedata.masters[region].mstItemId:
+        return get_nice_item(region, item_id)
+    else:
+        raise HTTPException(status_code=404, detail="Item not found")

@@ -11,6 +11,7 @@ from ..data.models.raw import (
     ServantEntity,
     SkillEntity,
     TdEntity,
+    MstItem,
 )
 from ..data.models.nice import (
     SvtClass,
@@ -231,3 +232,21 @@ async def get_buff(region: Region, item_id: int, reverse: bool = False):
         )
     else:
         raise HTTPException(status_code=404, detail="Buff not found")
+
+
+@router.get(
+    "/{region}/item/{item_id}",
+    summary="Get Item data",
+    response_description="Item Entity",
+    response_model=MstItem,
+    response_model_exclude_unset=True,
+    responses=responses,
+)
+async def get_item(region: Region, item_id: int):
+    """
+    Get the item data from the given ID
+    """
+    if item_id in gamedata.masters[region].mstItemId:
+        return gamedata.masters[region].mstItemId[item_id]
+    else:
+        raise HTTPException(status_code=404, detail="Item not found")
