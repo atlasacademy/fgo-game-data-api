@@ -1,4 +1,6 @@
 .vscode/
+.idea/
+.vs/
 play*
 
 # Byte-compiled / optimized / DLL files
