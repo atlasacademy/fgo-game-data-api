@@ -124,6 +124,67 @@ class Trait(str, Enum):
     canBeInBattle = "canBeInBattle"
     notBasedOnServant = "notBasedOnServant"
     livingHuman = "livingHuman"
+    cardArts = "cardArts"
+    cardBuster = "cardBuster"
+    cardQuick = "cardQuick"
+    cardExtra = "cardExtra"
+    buffPositiveEffect = "buffPositiveEffect"
+    buffNegativeEffect = "buffNegativeEffect"
+    buffIncreaseDamage = "buffIncreaseDamage"
+    buffIncreaseDefence = "buffIncreaseDefence"
+    buffDecreaseDamage = "buffDecreaseDamage"
+    buffDecreaseDefence = "buffDecreaseDefence"
+    buffMentalEffect = "buffMentalEffect"
+    buffPoison = "buffPoison"
+    buffCharm = "buffCharm"
+    buffPetrify = "buffPetrify"
+    buffStun = "buffStun"
+    buffBurn = "buffBurn"
+    buffSpecialResistUp = "buffSpecialResistUp"
+    buffSpecialResistDown = "buffSpecialResistDown"
+    buffEvadeAndInvincible = "buffEvadeAndInvincible"
+    buffSureHit = "buffSureHit"
+    buffNpSeal = "buffNpSeal"
+    buffEvade = "buffEvade"
+    buffInvincible = "buffInvincible"
+    buffTargetFocus = "buffTargetFocus"
+    buffGuts = "buffGuts"
+    skillSeal = "skillSeal"
+    buffCurse = "buffCurse"
+    buffAtkUp = "buffAtkUp"
+    buffPowerModStrUp = "buffPowerModStrUp"
+    buffDamagePlus = "buffDamagePlus"
+    buffNpDamageUp = "buffNpDamageUp"
+    buffCritDamageUp = "buffCritDamageUp"
+    buffCritRateUp = "buffCritRateUp"
+    buffAtkDown = "buffAtkDown"
+    buffPowerModStrDown = "buffPowerModStrDown"
+    buffDamageMinus = "buffDamageMinus"
+    buffNpDamageDown = "buffNpDamageDown"
+    buffCritDamageDown = "buffCritDamageDown"
+    buffCritRateDown = "buffCritRateDown"
+    buffDeathResistDown = "buffDeathResistDown"
+    buffDefenceUp = "buffDefenceUp"
+    buffMaxHpUpPercent = "buffMaxHpUpPercent"
+    buffMaxHpDownPercent = "buffMaxHpDownPercent"
+    buffMaxHpUp = "buffMaxHpUp"
+    buffMaxHpDown = "buffMaxHpDown"
+    buffStunLike = "buffStunLike"
+    buffIncreasePoisonEffectiveness = "buffIncreasePoisonEffectiveness"
+    buffPigify = "buffPigify"
+    buffCurseEffectUp = "buffCurseEffectUp"
+    buffTerrorStunChanceAfterTurn = "buffTerrorStunChanceAfterTurn"
+    buffConfusion = "buffConfusion"
+    buffOffensiveMode = "buffOffensiveMode"
+    buffDefensiveMode = "buffDefensiveMode"
+    buffLockCardsDeck = "buffLockCardsDeck"
+    buffDisableColorCard = "buffDisableColorCard"
+    buffChangeField = "buffChangeField"
+    buffIncreaseDefenceAgainstIndividuality = "buffIncreaseDefenceAgainstIndividuality"
+    buffInviciblePierce = "buffInviciblePierce"
+    buffHpRecoveryPerTurn = "buffHpRecoveryPerTurn"
+    buffNegativeEffectImmunity = "buffNegativeEffectImmunity"
+    buffNegativeEffectAtTurnEnd = "buffNegativeEffectAtTurnEnd"
 
 
 class CardType(str, Enum):
@@ -491,6 +552,72 @@ TRAIT_NAME: Dict[int, Trait] = {
     2631: Trait.humanoidServant,  # used in TamaVitch's fight
     2632: Trait.beastServant,  # used in TamaVitch's fight
     2654: Trait.livingHuman,  # Voyager's NP
+    # 2xxx: CQ or Story quests buff
+    3004: Trait.buffPositiveEffect,
+    3005: Trait.buffNegativeEffect,  # mutually exclusive with 3004
+    3006: Trait.buffIncreaseDamage,  # catch all damage: atk, np, powermod, ...
+    3007: Trait.buffIncreaseDefence,  # catch all defence, including evade
+    3008: Trait.buffDecreaseDamage,
+    3009: Trait.buffDecreaseDefence,  # including death resit down and card color resist down
+    3010: Trait.buffMentalEffect,  # charm, terror, confusion
+    3011: Trait.buffPoison,
+    3012: Trait.buffCharm,
+    3013: Trait.buffPetrify,
+    3014: Trait.buffStun,  # including Pigify
+    3015: Trait.buffBurn,
+    3016: Trait.buffSpecialResistUp,  # Unused stuffs
+    3017: Trait.buffSpecialResistDown,  # Unused stuffs
+    3018: Trait.buffEvadeAndInvincible,
+    3019: Trait.buffSureHit,
+    3020: Trait.buffNpSeal,
+    3021: Trait.buffEvade,
+    3022: Trait.buffInvincible,
+    3023: Trait.buffTargetFocus,
+    3024: Trait.buffGuts,
+    3025: Trait.skillSeal,
+    3026: Trait.buffCurse,
+    3027: Trait.buffAtkUp,  # Likely not the best name for this
+    3028: Trait.buffPowerModStrUp,
+    3029: Trait.buffDamagePlus,
+    3030: Trait.buffNpDamageUp,
+    3031: Trait.buffCritDamageUp,
+    3032: Trait.buffCritRateUp,
+    3033: Trait.buffAtkDown,
+    3034: Trait.buffPowerModStrDown,
+    3035: Trait.buffDamageMinus,
+    3036: Trait.buffNpDamageDown,
+    3037: Trait.buffCritDamageDown,
+    3038: Trait.buffCritRateDown,
+    3039: Trait.buffDeathResistDown,
+    3040: Trait.buffDefenceUp,
+    3041: Trait.buffMaxHpUpPercent,
+    3042: Trait.buffMaxHpDownPercent,
+    3043: Trait.buffMaxHpUp,
+    3044: Trait.buffMaxHpDown,
+    3045: Trait.buffStunLike,  # Including Petrify, Bound, Pigify, Stun
+    3046: Trait.buffIncreasePoisonEffectiveness,
+    3047: Trait.buffPigify,
+    3048: Trait.buffCurseEffectUp,
+    3049: Trait.buffTerrorStunChanceAfterTurn,
+    3052: Trait.buffConfusion,
+    3053: Trait.buffOffensiveMode,  # Unused
+    3054: Trait.buffDefensiveMode,  # Unused
+    3055: Trait.buffLockCardsDeck,  # Summer BB
+    3056: Trait.buffDisableColorCard,
+    3057: Trait.buffChangeField,
+    3058: Trait.buffIncreaseDefenceAgainstIndividuality,  # Unsure
+    3059: Trait.buffInviciblePierce,
+    3060: Trait.buffHpRecoveryPerTurn,
+    3061: Trait.buffNegativeEffectImmunity,
+    3063: Trait.buffNegativeEffectAtTurnEnd,
+    # 6016: No detail
+    # 6021: No detail
+    # 6022: No detail
+    # 10xxx: CCC Kiara buff
+    4001: Trait.cardArts,
+    4002: Trait.cardBuster,
+    4003: Trait.cardQuick,
+    4004: Trait.cardExtra,
     5000: Trait.canBeInBattle,  # can be NPC, enemy or playable servant i.e. not CE
     5010: Trait.notBasedOnServant,
 }
