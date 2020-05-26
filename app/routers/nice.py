@@ -330,7 +330,7 @@ def get_nice_td(
     nice_td["name"] = tdEntity.mstTreasureDevice.name
     nice_td["rank"] = tdEntity.mstTreasureDevice.rank
     nice_td["typeText"] = tdEntity.mstTreasureDevice.typeText
-    nice_td["npNpGain"] = tdEntity.mstTreasureDeviceLv[0].tdPoint / 10000
+    nice_td["npNpGain"] = tdEntity.mstTreasureDeviceLv[0].tdPoint
     nice_td["detail"] = strip_formatting_brackets(
         tdEntity.mstTreasureDeviceDetail[0].detail
     )
@@ -397,8 +397,8 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
     nice_data["attribute"] = ATTRIBUTE_NAME[raw_data.mstSvt.attri]
     nice_data["className"] = CLASS_NAME[raw_data.mstSvt.classId]
     nice_data["cost"] = raw_data.mstSvt.cost
-    nice_data["instantDeathChance"] = raw_data.mstSvt.deathRate / 1000
-    nice_data["starGen"] = raw_data.mstSvt.starRate / 1000
+    nice_data["instantDeathChance"] = raw_data.mstSvt.deathRate
+    nice_data["starGen"] = raw_data.mstSvt.starRate
     nice_data["traits"] = [
         get_safe(TRAIT_NAME, item)
         for item in sorted(raw_data.mstSvt.individuality)
@@ -480,11 +480,11 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
     ]
     if actualTDs:
         nice_data["npGain"] = {
-            "buster": actualTDs[0].mstTreasureDeviceLv[0].tdPointB / 10000,
-            "arts": actualTDs[0].mstTreasureDeviceLv[0].tdPointA / 10000,
-            "quick": actualTDs[0].mstTreasureDeviceLv[0].tdPointQ / 10000,
-            "extra": actualTDs[0].mstTreasureDeviceLv[0].tdPointEx / 10000,
-            "defence": actualTDs[0].mstTreasureDeviceLv[0].tdPointDef / 10000,
+            "buster": actualTDs[0].mstTreasureDeviceLv[0].tdPointB,
+            "arts": actualTDs[0].mstTreasureDeviceLv[0].tdPointA,
+            "quick": actualTDs[0].mstTreasureDeviceLv[0].tdPointQ,
+            "extra": actualTDs[0].mstTreasureDeviceLv[0].tdPointEx,
+            "defence": actualTDs[0].mstTreasureDeviceLv[0].tdPointDef,
         }
 
     ascensionMaterials = {}

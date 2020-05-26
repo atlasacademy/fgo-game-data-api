@@ -1001,7 +1001,7 @@ class NiceTd(BaseModel):
     card: CardType
     name: str
     detail: str
-    npNpGain: float
+    npNpGain: int
     npDistribution: List[int]
     strengthStatus: int
     priority: int
@@ -1021,11 +1021,11 @@ class ExtraAssets(BaseModel):
 
 
 class NpGain(BaseModel):
-    buster: float
-    arts: float
-    quick: float
-    extra: float
-    defence: float
+    buster: int
+    arts: int
+    quick: int
+    extra: int
+    defence: int
 
 
 class HitsDistribution(BaseModel):
@@ -1048,8 +1048,8 @@ class NiceServant(BaseModel):
     attribute: Attribute
     traits: List[Union[Trait, int]]
     starAbsorb: int
-    starGen: float
-    instantDeathChance: float
+    starGen: int
+    instantDeathChance: int
     cards: List[CardType]
     npGain: NpGain
     hitsDistribution: HitsDistribution
