@@ -594,6 +594,10 @@ async def find_servant(
 ):
     """
     Search and return the list of matched nice servant entities.
+
+    - name: English if you are searching NA data and Japanese if you are searching JP data
+    - trait: an integer or an item in the trait enum. See the traits detail in the Nice Servant response.
+    - className: an item in the className enum. See the className detail in the Nice Servant response.
     """
     if trait or className or name:
         matches = gamedata.search_servant(region, name, trait, className)
