@@ -337,6 +337,8 @@ def search_servant(
     ]
 
     if name:
-        matches = [item for item in matches if fuzz.token_set_ratio(name, item) > 80]
+        matches = [
+            item for item in matches if fuzz.token_set_ratio(name, item.name) > 80
+        ]
 
     return [item.id for item in matches]
