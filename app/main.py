@@ -5,8 +5,8 @@ from fastapi import FastAPI, Request, status
 from fastapi.responses import RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
 
-from .routers import raw, nice
 from .data.models.common import Settings
+from .routers import nice, raw
 
 
 logger = logging.getLogger()

@@ -1,12 +1,14 @@
 import logging
 import time
 from copy import deepcopy
-from typing import Any, Dict, Set, Union, Optional, List
+from typing import Any, Dict, List, Optional, Set, Union
 
 from fuzzywuzzy import fuzz
+
 import orjson
 
 from .models.common import Region, Settings
+from .models.enums import CLASS_NAME_REVERSE, TRAIT_NAME_REVERSE, SvtClass, Trait
 from .models.raw import (
     BuffEntity,
     BuffEntityNoReverse,
@@ -19,12 +21,6 @@ from .models.raw import (
     SvtType,
     TdEntity,
     TdEntityNoReverse,
-)
-from .models.nice import (
-    SvtClass,
-    Trait,
-    CLASS_NAME_REVERSE,
-    TRAIT_NAME_REVERSE,
 )
 
 

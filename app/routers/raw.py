@@ -1,21 +1,18 @@
-from typing import Any, Dict, Optional, Union, List
+from typing import Any, Dict, List, Optional, Union
 
 from fastapi import APIRouter, HTTPException, Query
 from fastapi.responses import Response
 
 from ..data import gamedata
 from ..data.models.common import DetailMessage, Region
+from ..data.models.enums import SvtClass, Trait
 from ..data.models.raw import (
     BuffEntity,
     FunctionEntity,
+    MstItem,
     ServantEntity,
     SkillEntity,
     TdEntity,
-    MstItem,
-)
-from ..data.models.nice import (
-    SvtClass,
-    Trait,
 )
 
 
