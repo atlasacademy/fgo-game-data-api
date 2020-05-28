@@ -863,6 +863,8 @@ class Gender(str, Enum):
 
 GENDER_NAME: Dict[int, Gender] = {1: Gender.male, 2: Gender.female, 3: Gender.unknown}
 
+GENDER_NAME_REVERSE: Dict[Gender, int] = {v: k for k, v in GENDER_NAME.items()}
+
 
 ### Attribute ###
 
@@ -882,6 +884,9 @@ ATTRIBUTE_NAME: Dict[int, Attribute] = {
     4: Attribute.star,
     5: Attribute.beast,
 }
+
+
+ATTRIBUTE_NAME_REVERSE: Dict[Attribute, int] = {v: k for k, v in ATTRIBUTE_NAME.items()}
 
 
 ### Servant Class ###

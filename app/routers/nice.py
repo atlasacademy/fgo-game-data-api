@@ -19,6 +19,8 @@ from ..data.models.enums import (
     GENDER_NAME,
     ITEM_TYPE_NAME,
     TRAIT_NAME,
+    Attribute,
+    Gender,
     FuncType,
     SvtType,
 )
@@ -591,18 +593,26 @@ router = APIRouter()
 async def find_servant(
     region: Region,
     name: Optional[str] = None,
-    trait: List[Union[Trait, int]] = Query(None),
+    rarity: List[int] = Query(None, ge=0, le=5),
     className: List[SvtClass] = Query(None),
+    gender: List[Gender] = Query(None),
+    attribute: List[Attribute] = Query(None),
+    trait: List[Union[Trait, int]] = Query(None),
 ):
     """
     Search and return the list of matched nice servant entities.
 
-    - name: English if you are searching NA data and Japanese if you are searching JP data
-    - trait: an integer or an item in the trait enum. See the traits detail in the Nice Servant response.
-    - className: an item in the className enum. See the className detail in the Nice Servant response.
+    - **name**: English if you are searching NA data and Japanese if you are searching JP data
+    - **rarity**: Integer 0-6
+    - **className**: an item in the className enum. See the className detail in the Nice Servant response.
+    - **gender**: female, male or unknown
+    - **attribute**: human, sky, earth, star or beast
+    - **trait**: an integer or an item in the trait enum. See the traits detail in the Nice Servant response.
     """
     if trait or className or name:
-        matches = gamedata.search_servant(region, name, trait, className)
+        matches = gamedata.search_servant(
+            region, name, rarity, className, gender, attribute, trait
+        )
         return [get_nice_servant(region, item) for item in matches]
     else:
         raise HTTPException(status_code=400, detail="Insufficient querry")

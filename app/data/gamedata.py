@@ -8,7 +8,16 @@ from fuzzywuzzy import fuzz
 import orjson
 
 from .models.common import Region, Settings
-from .models.enums import CLASS_NAME_REVERSE, TRAIT_NAME_REVERSE, SvtClass, Trait
+from .models.enums import (
+    ATTRIBUTE_NAME_REVERSE,
+    CLASS_NAME_REVERSE,
+    GENDER_NAME_REVERSE,
+    TRAIT_NAME_REVERSE,
+    Attribute,
+    Gender,
+    SvtClass,
+    Trait,
+)
 from .models.raw import (
     BuffEntity,
     BuffEntityNoReverse,
@@ -310,26 +319,45 @@ def get_servant_entity(
 def search_servant(
     region: Region,
     name: Optional[str],
-    trait: List[Union[Trait, int]],
-    className: List[SvtClass],
+    rarity: Optional[List[int]],
+    className: Optional[List[SvtClass]],
+    gender: Optional[List[Gender]],
+    attribute: Optional[List[Attribute]],
+    trait: Optional[List[Union[Trait, int]]],
 ) -> List[int]:
 
-    if not trait:
-        trait = []
-    trait_ints = [TRAIT_NAME_REVERSE.get(item, item) for item in trait]  # type: ignore
+    if not rarity:
+        rarity = list(range(6))
 
     if not className:
         class_ints = list(CLASS_NAME_REVERSE.values())
     else:
         class_ints = [CLASS_NAME_REVERSE[item] for item in className]
 
+    if not gender:
+        gender_ints = list(GENDER_NAME_REVERSE.values())
+    else:
+        gender_ints = [GENDER_NAME_REVERSE[item] for item in gender]
+
+    if not attribute:
+        attribute_ints = list(ATTRIBUTE_NAME_REVERSE.values())
+    else:
+        attribute_ints = [ATTRIBUTE_NAME_REVERSE[item] for item in attribute]
+
+    if not trait:
+        trait = []
+    trait_ints = [TRAIT_NAME_REVERSE.get(item, item) for item in trait]  # type: ignore
+
     matches = [
         item
         for item in masters[region].mstSvt
-        if set(trait_ints).issubset(set(item.individuality))
-        and item.classId in class_ints
-        and is_servant(item.type)
+        if item.isServant()
         and item.collectionNo != 0
+        and item.classId in class_ints
+        and item.genderType in gender_ints
+        and item.attri in attribute_ints
+        and set(trait_ints).issubset(set(item.individuality))
+        and masters[region].mstSvtLimitId[item.id][0].rarity in rarity
     ]
 
     if name:

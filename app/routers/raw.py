@@ -5,7 +5,7 @@ from fastapi.responses import Response
 
 from ..data import gamedata
 from ..data.models.common import DetailMessage, Region
-from ..data.models.enums import SvtClass, Trait
+from ..data.models.enums import SvtClass, Attribute, Gender, Trait
 from ..data.models.raw import (
     BuffEntity,
     FunctionEntity,
@@ -35,8 +35,11 @@ router = APIRouter()
 async def find_servant(
     region: Region,
     name: Optional[str] = None,
-    trait: List[Union[Trait, int]] = Query(None),
+    rarity: List[int] = Query(None, ge=0, le=5),
     className: List[SvtClass] = Query(None),
+    gender: List[Gender] = Query(None),
+    attribute: List[Attribute] = Query(None),
+    trait: List[Union[Trait, int]] = Query(None),
     expand: bool = False,
 ):
     """
@@ -44,12 +47,19 @@ async def find_servant(
 
     Search the servants' names list for the given name and return the best match.
 
-    - **expand**: Add expanded skill objects to mstSvt.expandedClassPassive
-    from the skill IDs in mstSvt.classPassive.
+    - **name**: English if you are searching NA data and Japanese if you are searching JP data
+    - **rarity**: Integer 0-6
+    - **className**: an item in the className enum. See the className detail in the Nice Servant response.
+    - **gender**: female, male or unknown
+    - **attribute**: human, sky, earth, star or beast
+    - **trait**: an integer or an item in the trait enum. See the traits detail in the Nice Servant response.
+    - **expand**: Add expanded skill objects to mstSvt.expandedClassPassive from the skill IDs in mstSvt.classPassive.
     Expand all other skills and functions as well.
     """
     if trait or className or name:
-        matches = gamedata.search_servant(region, name, trait, className)
+        matches = gamedata.search_servant(
+            region, name, rarity, className, gender, attribute, trait
+        )
         entity_list = [
             gamedata.get_servant_entity(region, item, expand) for item in matches
         ]
