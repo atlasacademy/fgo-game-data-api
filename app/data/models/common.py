@@ -13,6 +13,7 @@ class Settings(BaseSettings):
     jp_gamedata: DirectoryPath
     asset_url: HttpUrl
     export_all_nice: bool = False
+    documentation_all_nice: bool = False
 
     @validator("asset_url")
     def remove_last_slash(cls, value):

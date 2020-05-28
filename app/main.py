@@ -28,7 +28,7 @@ Preprocessed nice data:
 [JP CE](/export/nice_equip_JP.json).
 """
 
-if settings.export_all_nice:
+if settings.documentation_all_nice:
     app_description += export_links
 
 

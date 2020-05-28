@@ -620,7 +620,7 @@ Preprocessed data:
 - [JP servant](/export/nice_servant_JP.json)
 """
 
-if settings.export_all_nice:
+if settings.documentation_all_nice:
     get_servant_description += pre_processed_data_links
 
 
@@ -654,7 +654,7 @@ Preprocessed data:
 - [JP CE](/export/nice_equip_JP.json)
 """
 
-if settings.export_all_nice:
+if settings.documentation_all_nice:
     get_equip_description += pre_processed_equip_links
 
 
@@ -705,7 +705,7 @@ Preprocessed data:
 - [JP Item](/export/nice_item_JP.json)
 """
 
-if settings.export_all_nice:
+if settings.documentation_all_nice:
     get_item_description += pre_processed_item_links
 
 
