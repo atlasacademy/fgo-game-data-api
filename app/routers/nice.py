@@ -11,13 +11,13 @@ from ..data.models.enums import (
     ATTRIBUTE_NAME,
     BUFF_TYPE_NAME,
     CARD_TYPE_NAME,
+    CLASS_NAME,
     ENEMY_FUNC_SIGNATURE,
     FUNC_APPLYTARGET_NAME,
     FUNC_TARGETTYPE_NAME,
     FUNC_TYPE_NAME,
     GENDER_NAME,
     ITEM_TYPE_NAME,
-    PLAYABLE_CLASS_NAME,
     TRAIT_NAME,
     Attribute,
     FuncType,
@@ -417,7 +417,7 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
     nice_data["name"] = raw_data.mstSvt.name
     nice_data["gender"] = GENDER_NAME[raw_data.mstSvt.genderType]
     nice_data["attribute"] = ATTRIBUTE_NAME[raw_data.mstSvt.attri]
-    nice_data["className"] = PLAYABLE_CLASS_NAME[raw_data.mstSvt.classId]
+    nice_data["className"] = CLASS_NAME[raw_data.mstSvt.classId]
     nice_data["cost"] = raw_data.mstSvt.cost
     nice_data["instantDeathChance"] = raw_data.mstSvt.deathRate
     nice_data["starGen"] = raw_data.mstSvt.starRate
