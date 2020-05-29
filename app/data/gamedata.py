@@ -10,12 +10,12 @@ import orjson
 from .models.common import Region, Settings
 from .models.enums import (
     ATTRIBUTE_NAME_REVERSE,
-    CLASS_NAME_REVERSE,
     GENDER_NAME_REVERSE,
+    PLAYABLE_CLASS_NAME_REVERSE,
     TRAIT_NAME_REVERSE,
     Attribute,
     Gender,
-    SvtClass,
+    PlayableSvtClass,
     Trait,
 )
 from .models.raw import (
@@ -320,7 +320,7 @@ def search_servant(
     region: Region,
     name: Optional[str],
     rarity: Optional[List[int]],
-    className: Optional[List[SvtClass]],
+    className: Optional[List[PlayableSvtClass]],
     gender: Optional[List[Gender]],
     attribute: Optional[List[Attribute]],
     trait: Optional[List[Union[Trait, int]]],
@@ -330,9 +330,9 @@ def search_servant(
         rarity = list(range(6))
 
     if not className:
-        class_ints = list(CLASS_NAME_REVERSE.values())
+        class_ints = list(PLAYABLE_CLASS_NAME_REVERSE.values())
     else:
-        class_ints = [CLASS_NAME_REVERSE[item] for item in className]
+        class_ints = [PLAYABLE_CLASS_NAME_REVERSE[item] for item in className]
 
     if not gender:
         gender_ints = list(GENDER_NAME_REVERSE.values())

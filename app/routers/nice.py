@@ -11,27 +11,21 @@ from ..data.models.enums import (
     ATTRIBUTE_NAME,
     BUFF_TYPE_NAME,
     CARD_TYPE_NAME,
-    CLASS_NAME,
     ENEMY_FUNC_SIGNATURE,
     FUNC_APPLYTARGET_NAME,
     FUNC_TARGETTYPE_NAME,
     FUNC_TYPE_NAME,
     GENDER_NAME,
     ITEM_TYPE_NAME,
+    PLAYABLE_CLASS_NAME,
     TRAIT_NAME,
     Attribute,
-    Gender,
     FuncType,
+    Gender,
+    PlayableSvtClass,
     SvtType,
 )
-from ..data.models.nice import (
-    ASSET_URL,
-    NiceEquip,
-    NiceItem,
-    NiceServant,
-    SvtClass,
-    Trait,
-)
+from ..data.models.nice import ASSET_URL, NiceEquip, NiceItem, NiceServant, Trait
 from ..data.models.raw import (
     BuffEntityNoReverse,
     FunctionEntityNoReverse,
@@ -423,7 +417,7 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
     nice_data["name"] = raw_data.mstSvt.name
     nice_data["gender"] = GENDER_NAME[raw_data.mstSvt.genderType]
     nice_data["attribute"] = ATTRIBUTE_NAME[raw_data.mstSvt.attri]
-    nice_data["className"] = CLASS_NAME[raw_data.mstSvt.classId]
+    nice_data["className"] = PLAYABLE_CLASS_NAME[raw_data.mstSvt.classId]
     nice_data["cost"] = raw_data.mstSvt.cost
     nice_data["instantDeathChance"] = raw_data.mstSvt.deathRate
     nice_data["starGen"] = raw_data.mstSvt.starRate
@@ -594,7 +588,7 @@ async def find_servant(
     region: Region,
     name: Optional[str] = None,
     rarity: List[int] = Query(None, ge=0, le=5),
-    className: List[SvtClass] = Query(None),
+    className: List[PlayableSvtClass] = Query(None),
     gender: List[Gender] = Query(None),
     attribute: List[Attribute] = Query(None),
     trait: List[Union[Trait, int]] = Query(None),

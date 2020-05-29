@@ -1167,6 +1167,22 @@ ATTRIBUTE_NAME_REVERSE: Dict[Attribute, int] = {v: k for k, v in ATTRIBUTE_NAME.
 ### Servant Class ###
 
 
+class PlayableSvtClass(str, Enum):
+    saber = "saber"
+    archer = "archer"
+    lancer = "lancer"
+    rider = "rider"
+    caster = "caster"
+    assassin = "assassin"
+    berserker = "berserker"
+    shielder = "shielder"
+    ruler = "ruler"
+    alterEgo = "alterEgo"
+    avenger = "avenger"
+    moonCancer = "moonCancer"
+    foreigner = "foreigner"
+
+
 class SvtClass(str, Enum):
     saber = "saber"
     archer = "archer"
@@ -1181,9 +1197,13 @@ class SvtClass(str, Enum):
     avenger = "avenger"
     moonCancer = "moonCancer"
     foreigner = "foreigner"
+    grandCaster = "grandCaster"
+    beastII = "beastII"
+    beastI = "beastI"
+    beastIIIR = "beastIIIR"
+    beastIIIL = "beastIIIL"
+    beastMaybe = "beastMaybe"
     ALL = "ALL"
-    OTHER = "OTHER"
-    EXTRA = "EXTRA"
 
 
 CLASS_NAME: Dict[int, SvtClass] = {
@@ -1200,13 +1220,39 @@ CLASS_NAME: Dict[int, SvtClass] = {
     11: SvtClass.avenger,
     23: SvtClass.moonCancer,
     25: SvtClass.foreigner,
-    1000: SvtClass.OTHER,
+    17: SvtClass.grandCaster,
+    20: SvtClass.beastII,
+    22: SvtClass.beastI,
+    24: SvtClass.beastIIIR,
+    26: SvtClass.beastIIIL,
+    27: SvtClass.beastMaybe,
     1001: SvtClass.ALL,
-    1002: SvtClass.EXTRA,
 }
 
 
 CLASS_NAME_REVERSE: Dict[SvtClass, int] = {v: k for k, v in CLASS_NAME.items()}
+
+
+PLAYABLE_CLASS_NAME: Dict[int, PlayableSvtClass] = {
+    1: PlayableSvtClass.saber,
+    2: PlayableSvtClass.archer,
+    3: PlayableSvtClass.lancer,
+    4: PlayableSvtClass.rider,
+    5: PlayableSvtClass.caster,
+    6: PlayableSvtClass.assassin,
+    7: PlayableSvtClass.berserker,
+    8: PlayableSvtClass.shielder,
+    9: PlayableSvtClass.ruler,
+    10: PlayableSvtClass.alterEgo,
+    11: PlayableSvtClass.avenger,
+    23: PlayableSvtClass.moonCancer,
+    25: PlayableSvtClass.foreigner,
+}
+
+
+PLAYABLE_CLASS_NAME_REVERSE: Dict[PlayableSvtClass, int] = {
+    v: k for k, v in PLAYABLE_CLASS_NAME.items()
+}
 
 
 ### Trait ###

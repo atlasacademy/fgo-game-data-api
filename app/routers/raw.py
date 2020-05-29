@@ -5,7 +5,7 @@ from fastapi.responses import Response
 
 from ..data import gamedata
 from ..data.models.common import DetailMessage, Region
-from ..data.models.enums import SvtClass, Attribute, Gender, Trait
+from ..data.models.enums import Attribute, Gender, PlayableSvtClass, Trait
 from ..data.models.raw import (
     BuffEntity,
     FunctionEntity,
@@ -36,7 +36,7 @@ async def find_servant(
     region: Region,
     name: Optional[str] = None,
     rarity: List[int] = Query(None, ge=0, le=5),
-    className: List[SvtClass] = Query(None),
+    className: List[PlayableSvtClass] = Query(None),
     gender: List[Gender] = Query(None),
     attribute: List[Attribute] = Query(None),
     trait: List[Union[Trait, int]] = Query(None),
