@@ -709,6 +709,281 @@ BUFF_TYPE_NAME: Dict[int, NiceBuffType] = {
 }
 
 
+### Buff Action ###
+
+
+class BuffAction(IntEnum):
+    NONE = 0
+    COMMAND_ATK = 1
+    COMMAND_DEF = 2
+    ATK = 3
+    DEFENCE = 4
+    DEFENCE_PIERCE = 5
+    SPECIALDEFENCE = 6
+    DAMAGE = 7
+    DAMAGE_INDIVIDUALITY = 8
+    DAMAGE_INDIVIDUALITY_ACTIVEONLY = 9
+    SELFDAMAGE = 10
+    CRITICAL_DAMAGE = 11
+    NPDAMAGE = 12
+    GIVEN_DAMAGE = 13
+    RECEIVE_DAMAGE = 14
+    PIERCE_INVINCIBLE = 15
+    INVINCIBLE = 16
+    BREAK_AVOIDANCE = 17
+    AVOIDANCE = 18
+    OVERWRITE_BATTLECLASS = 19
+    OVERWRITE_CLASSRELATIO_ATK = 20
+    OVERWRITE_CLASSRELATIO_DEF = 21
+    COMMAND_NP_ATK = 22
+    COMMAND_NP_DEF = 23
+    DROP_NP = 24
+    DROP_NP_DAMAGE = 25
+    COMMAND_STAR_ATK = 26
+    COMMAND_STAR_DEF = 27
+    CRITICAL_POINT = 28
+    STARWEIGHT = 29
+    TURNEND_NP = 30
+    TURNEND_STAR = 31
+    TURNEND_HP_REGAIN = 32
+    TURNEND_HP_REDUCE = 33
+    GAIN_HP = 34
+    TURNVAL_NP = 35
+    GRANT_STATE = 36
+    RESISTANCE_STATE = 37
+    AVOID_STATE = 38
+    DONOT_ACT = 39
+    DONOT_SKILL = 40
+    DONOT_NOBLE = 41
+    DONOT_RECOVERY = 42
+    INDIVIDUALITY_ADD = 43
+    INDIVIDUALITY_SUB = 44
+    HATE = 45
+    CRITICAL_RATE = 46
+    AVOID_INSTANTDEATH = 47
+    RESIST_INSTANTDEATH = 48
+    NONRESIST_INSTANTDEATH = 49
+    REGAIN_NP_USED_NOBLE = 50
+    FUNCTION_DEAD = 51
+    MAXHP_RATE = 52
+    MAXHP_VALUE = 53
+    FUNCTION_WAVESTART = 54
+    FUNCTION_SELFTURNEND = 55
+    GIVE_GAIN_HP = 56
+    FUNCTION_COMMANDATTACK = 57
+    FUNCTION_DEADATTACK = 58
+    FUNCTION_ENTRY = 59
+    CHAGETD = 60
+    GRANT_SUBSTATE = 61
+    TOLERANCE_SUBSTATE = 62
+    GRANT_INSTANTDEATH = 63
+    FUNCTION_DAMAGE = 64
+    FUNCTION_REFLECTION = 65
+    MULTIATTACK = 66
+    GIVE_NP = 67
+    RESISTANCE_DELAY_NPTURN = 68
+    PIERCE_DEFENCE = 69
+    GUTS_HP = 70
+    FUNCGAIN_NP = 71
+    FUNC_HP_REDUCE = 72
+    FUNCTION_NPATTACK = 73
+    FIX_COMMANDCARD = 74
+    DONOT_GAINNP = 75
+    FIELD_INDIVIDUALITY = 76
+    DONOT_ACT_COMMANDTYPE = 77
+    DAMAGE_EVENT_POINT = 78
+
+
+class NiceBuffAction(str, Enum):
+    none = "none"
+    commandAtk = "commandAtk"
+    commandDef = "commandDef"
+    atk = "atk"
+    defence = "defence"
+    defencePierce = "defencePierce"
+    specialdefence = "specialdefence"
+    damage = "damage"
+    damageIndividuality = "damageIndividuality"
+    damageIndividualityActiveonly = "damageIndividualityActiveonly"
+    selfdamage = "selfdamage"
+    criticalDamage = "criticalDamage"
+    npdamage = "npdamage"
+    givenDamage = "givenDamage"
+    receiveDamage = "receiveDamage"
+    pierceInvincible = "pierceInvincible"
+    invincible = "invincible"
+    breakAvoidance = "breakAvoidance"
+    avoidance = "avoidance"
+    overwriteBattleclass = "overwriteBattleclass"
+    overwriteClassrelatioAtk = "overwriteClassrelatioAtk"
+    overwriteClassrelatioDef = "overwriteClassrelatioDef"
+    commandNpAtk = "commandNpAtk"
+    commandNpDef = "commandNpDef"
+    dropNp = "dropNp"
+    dropNpDamage = "dropNpDamage"
+    commandStarAtk = "commandStarAtk"
+    commandStarDef = "commandStarDef"
+    criticalPoint = "criticalPoint"
+    starweight = "starweight"
+    turnendNp = "turnendNp"
+    turnendStar = "turnendStar"
+    turnendHpRegain = "turnendHpRegain"
+    turnendHpReduce = "turnendHpReduce"
+    gainHp = "gainHp"
+    turnvalNp = "turnvalNp"
+    grantState = "grantState"
+    resistanceState = "resistanceState"
+    avoidState = "avoidState"
+    donotAct = "donotAct"
+    donotSkill = "donotSkill"
+    donotNoble = "donotNoble"
+    donotRecovery = "donotRecovery"
+    individualityAdd = "individualityAdd"
+    individualitySub = "individualitySub"
+    hate = "hate"
+    criticalRate = "criticalRate"
+    avoidInstantdeath = "avoidInstantdeath"
+    resistInstantdeath = "resistInstantdeath"
+    nonresistInstantdeath = "nonresistInstantdeath"
+    regainNpUsedNoble = "regainNpUsedNoble"
+    functionDead = "functionDead"
+    maxhpRate = "maxhpRate"
+    maxhpValue = "maxhpValue"
+    functionWavestart = "functionWavestart"
+    functionSelfturnend = "functionSelfturnend"
+    giveGainHp = "giveGainHp"
+    functionCommandattack = "functionCommandattack"
+    functionDeadattack = "functionDeadattack"
+    functionEntry = "functionEntry"
+    chagetd = "chagetd"
+    grantSubstate = "grantSubstate"
+    toleranceSubstate = "toleranceSubstate"
+    grantInstantdeath = "grantInstantdeath"
+    functionDamage = "functionDamage"
+    functionReflection = "functionReflection"
+    multiattack = "multiattack"
+    giveNp = "giveNp"
+    resistanceDelayNpturn = "resistanceDelayNpturn"
+    pierceDefence = "pierceDefence"
+    gutsHp = "gutsHp"
+    funcgainNp = "funcgainNp"
+    funcHpReduce = "funcHpReduce"
+    functionNpattack = "functionNpattack"
+    fixCommandcard = "fixCommandcard"
+    donotGainnp = "donotGainnp"
+    fieldIndividuality = "fieldIndividuality"
+    donotActCommandtype = "donotActCommandtype"
+    damageEventPoint = "damageEventPoint"
+
+
+BUFF_ACTION_NAME: Dict[int, NiceBuffAction] = {
+    0: NiceBuffAction.none,
+    1: NiceBuffAction.commandAtk,
+    2: NiceBuffAction.commandDef,
+    3: NiceBuffAction.atk,
+    4: NiceBuffAction.defence,
+    5: NiceBuffAction.defencePierce,
+    6: NiceBuffAction.specialdefence,
+    7: NiceBuffAction.damage,
+    8: NiceBuffAction.damageIndividuality,
+    9: NiceBuffAction.damageIndividualityActiveonly,
+    10: NiceBuffAction.selfdamage,
+    11: NiceBuffAction.criticalDamage,
+    12: NiceBuffAction.npdamage,
+    13: NiceBuffAction.givenDamage,
+    14: NiceBuffAction.receiveDamage,
+    15: NiceBuffAction.pierceInvincible,
+    16: NiceBuffAction.invincible,
+    17: NiceBuffAction.breakAvoidance,
+    18: NiceBuffAction.avoidance,
+    19: NiceBuffAction.overwriteBattleclass,
+    20: NiceBuffAction.overwriteClassrelatioAtk,
+    21: NiceBuffAction.overwriteClassrelatioDef,
+    22: NiceBuffAction.commandNpAtk,
+    23: NiceBuffAction.commandNpDef,
+    24: NiceBuffAction.dropNp,
+    25: NiceBuffAction.dropNpDamage,
+    26: NiceBuffAction.commandStarAtk,
+    27: NiceBuffAction.commandStarDef,
+    28: NiceBuffAction.criticalPoint,
+    29: NiceBuffAction.starweight,
+    30: NiceBuffAction.turnendNp,
+    31: NiceBuffAction.turnendStar,
+    32: NiceBuffAction.turnendHpRegain,
+    33: NiceBuffAction.turnendHpReduce,
+    34: NiceBuffAction.gainHp,
+    35: NiceBuffAction.turnvalNp,
+    36: NiceBuffAction.grantState,
+    37: NiceBuffAction.resistanceState,
+    38: NiceBuffAction.avoidState,
+    39: NiceBuffAction.donotAct,
+    40: NiceBuffAction.donotSkill,
+    41: NiceBuffAction.donotNoble,
+    42: NiceBuffAction.donotRecovery,
+    43: NiceBuffAction.individualityAdd,
+    44: NiceBuffAction.individualitySub,
+    45: NiceBuffAction.hate,
+    46: NiceBuffAction.criticalRate,
+    47: NiceBuffAction.avoidInstantdeath,
+    48: NiceBuffAction.resistInstantdeath,
+    49: NiceBuffAction.nonresistInstantdeath,
+    50: NiceBuffAction.regainNpUsedNoble,
+    51: NiceBuffAction.functionDead,
+    52: NiceBuffAction.maxhpRate,
+    53: NiceBuffAction.maxhpValue,
+    54: NiceBuffAction.functionWavestart,
+    55: NiceBuffAction.functionSelfturnend,
+    56: NiceBuffAction.giveGainHp,
+    57: NiceBuffAction.functionCommandattack,
+    58: NiceBuffAction.functionDeadattack,
+    59: NiceBuffAction.functionEntry,
+    60: NiceBuffAction.chagetd,
+    61: NiceBuffAction.grantSubstate,
+    62: NiceBuffAction.toleranceSubstate,
+    63: NiceBuffAction.grantInstantdeath,
+    64: NiceBuffAction.functionDamage,
+    65: NiceBuffAction.functionReflection,
+    66: NiceBuffAction.multiattack,
+    67: NiceBuffAction.giveNp,
+    68: NiceBuffAction.resistanceDelayNpturn,
+    69: NiceBuffAction.pierceDefence,
+    70: NiceBuffAction.gutsHp,
+    71: NiceBuffAction.funcgainNp,
+    72: NiceBuffAction.funcHpReduce,
+    73: NiceBuffAction.functionNpattack,
+    74: NiceBuffAction.fixCommandcard,
+    75: NiceBuffAction.donotGainnp,
+    76: NiceBuffAction.fieldIndividuality,
+    77: NiceBuffAction.donotActCommandtype,
+    78: NiceBuffAction.damageEventPoint,
+}
+
+
+### Buff Limit ###
+
+
+class BuffLimit(IntEnum):
+    NONE = 0
+    UPPER = 1
+    LOWER = 2
+    NORMAL = 3
+
+
+class NiceBuffLimit(str, Enum):
+    none = "none"
+    upper = "upper"  # type: ignore # str has upper and lower methods
+    lower = "lower"  # type: ignore
+    normal = "normal"
+
+
+BUFF_LIMIT_NAME: Dict[int, NiceBuffLimit] = {
+    0: NiceBuffLimit.none,
+    1: NiceBuffLimit.upper,
+    2: NiceBuffLimit.lower,
+    3: NiceBuffLimit.normal,
+}
+
+
 ### DataVals Type ###
 
 

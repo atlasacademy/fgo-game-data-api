@@ -1,0 +1,704 @@
+{
+  "COMMAND_ATK": {
+    "limit": 3,
+    "plusTypes": [1, 52],
+    "minusTypes": [66, 60],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "COMMAND_DEF": {
+    "limit": 1,
+    "plusTypes": [105, 128],
+    "minusTypes": [106, 129],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "ATK": {
+    "limit": 2,
+    "plusTypes": [9],
+    "minusTypes": [10],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "DEFENCE": {
+    "limit": 2,
+    "plusTypes": [42],
+    "minusTypes": [43],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "DEFENCE_PIERCE": {
+    "limit": 2,
+    "plusTypes": [],
+    "minusTypes": [43],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "SPECIALDEFENCE": {
+    "limit": 3,
+    "plusTypes": [91],
+    "minusTypes": [92],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "DAMAGE": {
+    "limit": 1,
+    "plusTypes": [11],
+    "minusTypes": [12],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "DAMAGE_INDIVIDUALITY": {
+    "limit": 1,
+    "plusTypes": [110],
+    "minusTypes": [111],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "DAMAGE_INDIVIDUALITY_ACTIVEONLY": {
+    "limit": 1,
+    "plusTypes": [112],
+    "minusTypes": [113],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "SELFDAMAGE": {
+    "limit": 1,
+    "plusTypes": [20],
+    "minusTypes": [21],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "CRITICAL_DAMAGE": {
+    "limit": 1,
+    "plusTypes": [18],
+    "minusTypes": [19],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "NPDAMAGE": {
+    "limit": 1,
+    "plusTypes": [15],
+    "minusTypes": [16],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "GIVEN_DAMAGE": {
+    "limit": 0,
+    "plusTypes": [13],
+    "minusTypes": [14],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "RECEIVE_DAMAGE": {
+    "limit": 0,
+    "plusTypes": [22],
+    "minusTypes": [23],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "PIERCE_INVINCIBLE": {
+    "limit": 0,
+    "plusTypes": [72],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "INVINCIBLE": {
+    "limit": 0,
+    "plusTypes": [26],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "BREAK_AVOIDANCE": {
+    "limit": 0,
+    "plusTypes": [25],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "AVOIDANCE": {
+    "limit": 0,
+    "plusTypes": [24],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "OVERWRITE_BATTLECLASS": {
+    "limit": 0,
+    "plusTypes": [107],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "OVERWRITE_CLASSRELATIO_ATK": {
+    "limit": 0,
+    "plusTypes": [108],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "OVERWRITE_CLASSRELATIO_DEF": {
+    "limit": 0,
+    "plusTypes": [109],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "COMMAND_NP_ATK": {
+    "limit": 3,
+    "plusTypes": [51, 52],
+    "minusTypes": [68, 60],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "COMMAND_NP_DEF": {
+    "limit": 1,
+    "plusTypes": [105],
+    "minusTypes": [106],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "DROP_NP": {
+    "limit": 3,
+    "plusTypes": [17],
+    "minusTypes": [63],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "DROP_NP_DAMAGE": {
+    "limit": 3,
+    "plusTypes": [93],
+    "minusTypes": [94],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "COMMAND_STAR_ATK": {
+    "limit": 3,
+    "plusTypes": [50, 52],
+    "minusTypes": [67, 60],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "COMMAND_STAR_DEF": {
+    "limit": 1,
+    "plusTypes": [105],
+    "minusTypes": [106],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "CRITICAL_POINT": {
+    "limit": 3,
+    "plusTypes": [3],
+    "minusTypes": [4],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "STARWEIGHT": {
+    "limit": 3,
+    "plusTypes": [2],
+    "minusTypes": [61],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "TURNEND_NP": {
+    "limit": 0,
+    "plusTypes": [5],
+    "minusTypes": [62],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": false,
+    "plusAction": 71
+  },
+  "TURNEND_STAR": {
+    "limit": 0,
+    "plusTypes": [6],
+    "minusTypes": [],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": false,
+    "plusAction": 0
+  },
+  "TURNEND_HP_REGAIN": {
+    "limit": 0,
+    "plusTypes": [7],
+    "minusTypes": [],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": false,
+    "plusAction": 0
+  },
+  "TURNEND_HP_REDUCE": {
+    "limit": 0,
+    "plusTypes": [8],
+    "minusTypes": [],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": false,
+    "plusAction": 72
+  },
+  "GAIN_HP": {
+    "limit": 3,
+    "plusTypes": [64],
+    "minusTypes": [65],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "TURNVAL_NP": {
+    "limit": 0,
+    "plusTypes": [114],
+    "minusTypes": [115],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "GRANT_STATE": {
+    "limit": 3,
+    "plusTypes": [27],
+    "minusTypes": [28],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "RESISTANCE_STATE": {
+    "limit": 3,
+    "plusTypes": [29],
+    "minusTypes": [30],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "AVOID_STATE": {
+    "limit": 0,
+    "plusTypes": [31],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "DONOT_ACT": {
+    "limit": 0,
+    "plusTypes": [32],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "DONOT_SKILL": {
+    "limit": 0,
+    "plusTypes": [33],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "DONOT_NOBLE": {
+    "limit": 0,
+    "plusTypes": [34],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "DONOT_RECOVERY": {
+    "limit": 0,
+    "plusTypes": [35],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "INDIVIDUALITY_ADD": {
+    "limit": 0,
+    "plusTypes": [40],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "INDIVIDUALITY_SUB": {
+    "limit": 0,
+    "plusTypes": [41],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "HATE": {
+    "limit": 0,
+    "plusTypes": [38],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "CRITICAL_RATE": {
+    "limit": 3,
+    "plusTypes": [70],
+    "minusTypes": [71],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "AVOID_INSTANTDEATH": {
+    "limit": 3,
+    "plusTypes": [73],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "RESIST_INSTANTDEATH": {
+    "limit": 3,
+    "plusTypes": [74],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "NONRESIST_INSTANTDEATH": {
+    "limit": 3,
+    "plusTypes": [75],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "REGAIN_NP_USED_NOBLE": {
+    "limit": 0,
+    "plusTypes": [77],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_DEAD": {
+    "limit": 0,
+    "plusTypes": [78],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "MAXHP_RATE": {
+    "limit": 3,
+    "plusTypes": [79],
+    "minusTypes": [80],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "MAXHP_VALUE": {
+    "limit": 0,
+    "plusTypes": [81],
+    "minusTypes": [82],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_WAVESTART": {
+    "limit": 0,
+    "plusTypes": [84],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_SELFTURNEND": {
+    "limit": 0,
+    "plusTypes": [85],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "GIVE_GAIN_HP": {
+    "limit": 3,
+    "plusTypes": [87],
+    "minusTypes": [88],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_COMMANDATTACK": {
+    "limit": 0,
+    "plusTypes": [89],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_DEADATTACK": {
+    "limit": 0,
+    "plusTypes": [90],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_ENTRY": {
+    "limit": 0,
+    "plusTypes": [95],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "CHAGETD": {
+    "limit": 0,
+    "plusTypes": [96],
+    "minusTypes": [],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "GRANT_SUBSTATE": {
+    "limit": 3,
+    "plusTypes": [98],
+    "minusTypes": [99],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "TOLERANCE_SUBSTATE": {
+    "limit": 3,
+    "plusTypes": [100],
+    "minusTypes": [101],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "GRANT_INSTANTDEATH": {
+    "limit": 3,
+    "plusTypes": [102],
+    "minusTypes": [103],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_DAMAGE": {
+    "limit": 0,
+    "plusTypes": [86],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_REFLECTION": {
+    "limit": 0,
+    "plusTypes": [97],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "MULTIATTACK": {
+    "limit": 0,
+    "plusTypes": [116],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "GIVE_NP": {
+    "limit": 1,
+    "plusTypes": [117],
+    "minusTypes": [118],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "RESISTANCE_DELAY_NPTURN": {
+    "limit": 0,
+    "plusTypes": [119],
+    "minusTypes": [120],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "PIERCE_DEFENCE": {
+    "limit": 0,
+    "plusTypes": [121],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "GUTS_HP": {
+    "limit": 0,
+    "plusTypes": [122],
+    "minusTypes": [123],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCGAIN_NP": {
+    "limit": 0,
+    "plusTypes": [124],
+    "minusTypes": [125],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNC_HP_REDUCE": {
+    "limit": 0,
+    "plusTypes": [126],
+    "minusTypes": [127],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_NPATTACK": {
+    "limit": 0,
+    "plusTypes": [130],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FIX_COMMANDCARD": {
+    "limit": 0,
+    "plusTypes": [131],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "DONOT_GAINNP": {
+    "limit": 0,
+    "plusTypes": [132],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FIELD_INDIVIDUALITY": {
+    "limit": 0,
+    "plusTypes": [133],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "DONOT_ACT_COMMANDTYPE": {
+    "limit": 0,
+    "plusTypes": [134],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "DAMAGE_EVENT_POINT": {
+    "limit": 1,
+    "plusTypes": [135],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
+  }
+}
