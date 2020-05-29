@@ -1202,7 +1202,7 @@ class SvtClass(str, Enum):
     beastI = "beastI"
     beastIIIR = "beastIIIR"
     beastIIIL = "beastIIIL"
-    beastMaybe = "beastMaybe"
+    beastUnknown = "beastUnknown"
     ALL = "ALL"
 
 
@@ -1225,7 +1225,7 @@ CLASS_NAME: Dict[int, SvtClass] = {
     22: SvtClass.beastI,
     24: SvtClass.beastIIIR,
     26: SvtClass.beastIIIL,
-    27: SvtClass.beastMaybe,
+    27: SvtClass.beastUnknown,  # LB 5.2 beast
     1001: SvtClass.ALL,
 }
 
@@ -1281,7 +1281,7 @@ class Trait(str, Enum):
     classBeastIIIR = "classBeastIIIR"
     classForeigner = "classForeigner"
     classBeastIIIL = "classBeastIIIL"
-    classBeastMaybe = "classBeastMaybe"
+    classBeastUnknown = "classBeastUnknown"
     attributeSky = "attributeSky"
     attributeEarth = "attributeEarth"
     attributeHuman = "attributeHuman"
@@ -1349,6 +1349,7 @@ class Trait(str, Enum):
     argonaut = "argonaut"
     genderCaenisServant = "genderCaenisServant"
     humanoidServant = "humanoidServant"
+    blessedByKur = "blessedByKur"
     beastServant = "beastServant"
     canBeInBattle = "canBeInBattle"
     notBasedOnServant = "notBasedOnServant"
@@ -1439,7 +1440,7 @@ TRAIT_NAME: Dict[int, Trait] = {
     116: Trait.classBeastIIIR,
     117: Trait.classForeigner,
     118: Trait.classBeastIIIL,
-    119: Trait.classBeastMaybe,
+    119: Trait.classBeastUnknown,
     200: Trait.attributeSky,
     201: Trait.attributeEarth,
     202: Trait.attributeHuman,
@@ -1498,6 +1499,7 @@ TRAIT_NAME: Dict[int, Trait] = {
     2019: Trait.demonic,
     2037: Trait.skyOrEarthExceptPseudoAndDemi,  # Raikou's 3rd skill
     2040: Trait.divineOrDaemonOrUndead,  # Ruler Martha's 3rd skill
+    2074: Trait.blessedByKur,  # Eresh's 3rd skill add this individuality
     2075: Trait.saberClassServant,  # MHXA NP
     2076: Trait.superGiant,
     2113: Trait.king,
