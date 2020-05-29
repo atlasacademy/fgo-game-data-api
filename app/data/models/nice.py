@@ -111,10 +111,10 @@ class NiceFunction(BaseModel):
     functvals: List[Union[Trait, int]]
     buffs: List[NiceBuff]
     svals: Vals
-    # svals2: Optional[Vals] = None
-    # svals3: Optional[Vals] = None
-    # svals4: Optional[Vals] = None
-    # svals5: Optional[Vals] = None
+    svals2: Optional[Vals] = None
+    svals3: Optional[Vals] = None
+    svals4: Optional[Vals] = None
+    svals5: Optional[Vals] = None
 
 
 class NiceFunctionGroup(BaseModel):
