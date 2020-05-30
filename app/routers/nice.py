@@ -514,7 +514,9 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
     actualTDs: List[TdEntityNoReverse] = [
         item
         for item in raw_data.mstTreasureDevice
-        if item.mstTreasureDevice.id != 100 and item.mstTreasureDevice.id % 100 != 99
+        if item.mstTreasureDevice.id != 100
+        and item.mstTreasureDevice.id % 100 != 99
+        and item.mstSvtTreasureDevice[0].num == 1
     ]
     if actualTDs:
         nice_data["npGain"] = {
