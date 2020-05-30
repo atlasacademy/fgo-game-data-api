@@ -428,6 +428,7 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
     ]
 
     charaGraph: Dict[str, Dict[int, str]] = {}
+    faces: Dict[str, Dict[int, str]] = {}
     if raw_data.mstSvt.isServant():
         charaGraph["ascension"] = {
             i: ASSET_URL[f"charaGraph{i}"].format(
@@ -435,16 +436,29 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
             )
             for i in range(1, 5)
         }
+        faces["ascension"] = {
+            (i + 1): ASSET_URL["face"].format(
+                base_url=settings.asset_url, region=region, item_id=item_id, i=i
+            )
+            for i in range(4)
+        }
         costume_ids = [
             item.battleCharaId
             for item in raw_data.mstSvtLimitAdd
-            if item.limitCount == 11
+            if item.limitCount >= 11
         ]
-        for costume_id in costume_ids:
+        if costume_ids:
             charaGraph["costume"] = {
                 costume_id: ASSET_URL["charaGraphcostume"].format(
                     base_url=settings.asset_url, region=region, item_id=costume_id
                 )
+                for costume_id in costume_ids
+            }
+            faces["costume"] = {
+                costume_id: ASSET_URL["face"].format(
+                    base_url=settings.asset_url, region=region, item_id=costume_id, i=0
+                )
+                for costume_id in costume_ids
             }
     elif raw_data.mstSvt.isEquip():
         charaGraph["equip"] = {
@@ -453,6 +467,8 @@ def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
             )
         }
     nice_data["extraAssets"] = {"charaGraph": charaGraph}
+    if faces:
+        nice_data["extraAssets"]["faces"] = faces
 
     nice_data["starAbsorb"] = raw_data.mstSvtLimit[0].criticalWeight
     nice_data["rarity"] = raw_data.mstSvtLimit[0].rarity

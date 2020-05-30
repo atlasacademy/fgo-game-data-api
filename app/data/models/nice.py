@@ -26,6 +26,7 @@ ASSET_URL: Dict[str, str] = {
     "skillIcon": "{base_url}/{region}/SkillIcons/skill_{item_id:05}.png",
     "buffIcon": "{base_url}/{region}/BuffIcons/bufficon_{item_id}.png",
     "items": "{base_url}/{region}/Items/{item_id}.png",
+    "face": "{base_url}/{region}/Faces/f_{item_id}{i}.png",
 }
 
 
@@ -159,8 +160,14 @@ class CharaGraph(BaseModel):
     equip: Optional[Dict[int, HttpUrl]] = None
 
 
+class Faces(BaseModel):
+    ascension: Optional[Dict[int, HttpUrl]] = None
+    costume: Optional[Dict[int, HttpUrl]] = None
+
+
 class ExtraAssets(BaseModel):
     charaGraph: CharaGraph
+    faces: Faces
 
 
 class NpGain(BaseModel):
