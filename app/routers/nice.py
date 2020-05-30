@@ -6,6 +6,7 @@ from typing import Any, Dict, List, Optional, Union
 from fastapi import APIRouter, HTTPException, Query
 
 from ..data import gamedata
+from ..data.translations import SVT_NAME_JPEN
 from ..data.models.common import DetailMessage, Region, Settings
 from ..data.models.enums import (
     ATTRIBUTE_NAME,
@@ -25,7 +26,14 @@ from ..data.models.enums import (
     PlayableSvtClass,
     SvtType,
 )
-from ..data.models.nice import ASSET_URL, NiceEquip, NiceItem, NiceServant, Trait
+from ..data.models.nice import (
+    ASSET_URL,
+    Language,
+    NiceEquip,
+    NiceItem,
+    NiceServant,
+    Trait,
+)
 from ..data.models.raw import (
     BuffEntityNoReverse,
     FunctionEntityNoReverse,
@@ -408,13 +416,17 @@ def get_nice_item_amount(
     ]
 
 
-def get_nice_servant(region: Region, item_id: int) -> Dict[str, Any]:
+def get_nice_servant(
+    region: Region, item_id: int, lang: Optional[Language] = None
+) -> Dict[str, Any]:
     raw_data = gamedata.get_servant_entity(region, item_id, True)
     nice_data: Dict[str, Any] = {}
 
     nice_data["id"] = raw_data.mstSvt.id
     nice_data["collectionNo"] = raw_data.mstSvt.collectionNo
     nice_data["name"] = raw_data.mstSvt.name
+    if region == Region.JP and lang == Language.en:
+        nice_data["name"] = get_safe(SVT_NAME_JPEN, nice_data["name"])
     nice_data["gender"] = GENDER_NAME[raw_data.mstSvt.genderType]
     nice_data["attribute"] = ATTRIBUTE_NAME[raw_data.mstSvt.attri]
     nice_data["className"] = CLASS_NAME[raw_data.mstSvt.classId]
@@ -610,6 +622,7 @@ async def find_servant(
     gender: List[Gender] = Query(None),
     attribute: List[Attribute] = Query(None),
     trait: List[Union[Trait, int]] = Query(None),
+    lang: Optional[Language] = None,
 ):
     """
     Search and return the list of matched nice servant entities.
@@ -625,7 +638,7 @@ async def find_servant(
         matches = gamedata.search_servant(
             region, name, rarity, className, gender, attribute, trait
         )
-        return [get_nice_servant(region, item) for item in matches]
+        return [get_nice_servant(region, item, lang) for item in matches]
     else:
         raise HTTPException(status_code=400, detail="Insufficient querry")
 
@@ -655,11 +668,11 @@ if settings.documentation_all_nice:
     description=get_servant_description,
     responses=responses,
 )
-async def get_servant(region: Region, item_id: int):
+async def get_servant(region: Region, item_id: int, lang: Optional[Language] = None):
     if item_id in gamedata.masters[region].mstSvtServantCollectionNo:
         item_id = gamedata.masters[region].mstSvtServantCollectionNo[item_id]
     if item_id in gamedata.masters[region].mstSvtServantCollectionNo.values():
-        return get_nice_servant(region, item_id)
+        return get_nice_servant(region, item_id, lang)
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
 

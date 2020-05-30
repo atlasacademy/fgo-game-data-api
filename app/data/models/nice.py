@@ -1,3 +1,4 @@
+from enum import Enum
 from typing import Dict, List, Optional, Union
 
 from pydantic import BaseModel, HttpUrl
@@ -28,6 +29,10 @@ ASSET_URL: Dict[str, str] = {
     "items": "{base_url}/{region}/Items/{item_id}.png",
     "face": "{base_url}/{region}/Faces/f_{item_id}{i}.png",
 }
+
+
+class Language(str, Enum):
+    en = "en"
 
 
 class NiceItem(BaseModel):

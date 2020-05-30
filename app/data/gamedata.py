@@ -7,6 +7,7 @@ from fuzzywuzzy import fuzz
 
 import orjson
 
+from .translations import SVT_NAME_JPEN
 from .models.common import Region, Settings
 from .models.enums import (
     ATTRIBUTE_NAME_REVERSE,
@@ -360,9 +361,14 @@ def search_servant(
         and masters[region].mstSvtLimitId[item.id][0].rarity in rarity
     ]
 
+    NAME_MATCH_THRESHOLD = 80
     if name:
         matches = [
-            item for item in matches if fuzz.token_set_ratio(name, item.name) > 80
+            item
+            for item in matches
+            if fuzz.token_set_ratio(name, item.name) > NAME_MATCH_THRESHOLD
+            or fuzz.token_set_ratio(name, SVT_NAME_JPEN.get(item.name, item.name))
+            > NAME_MATCH_THRESHOLD
         ]
 
     return [item.id for item in matches]
