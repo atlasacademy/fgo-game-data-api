@@ -1415,6 +1415,12 @@ class Trait(str, Enum):
     buffHpRecoveryPerTurn = "buffHpRecoveryPerTurn"
     buffNegativeEffectImmunity = "buffNegativeEffectImmunity"
     buffNegativeEffectAtTurnEnd = "buffNegativeEffectAtTurnEnd"
+    normalAttack0 = "normalAttack0"
+    normalAttack1 = "normalAttack1"
+    normalAttack2 = "normalAttack2"
+    criticalHit = "criticalHit"
+    playerCards = "playerCards"
+    cardNP = "cardNP"
 
 
 TRAIT_NAME: Dict[int, Trait] = {
@@ -1512,6 +1518,9 @@ TRAIT_NAME: Dict[int, Trait] = {
     2632: Trait.beastServant,  # used in TamaVitch's fight
     2654: Trait.livingHuman,  # Voyager's NP
     # 2xxx: CQ or Story quests buff
+    3000: Trait.normalAttack0,  # Normal attack, including NP
+    3001: Trait.normalAttack1,  # Haven't figured out the difference between the 3
+    3002: Trait.normalAttack2,  # 
     3004: Trait.buffPositiveEffect,
     3005: Trait.buffNegativeEffect,  # mutually exclusive with 3004
     3006: Trait.buffIncreaseDamage,  # catch all damage: atk, np, powermod, ...
@@ -1577,6 +1586,9 @@ TRAIT_NAME: Dict[int, Trait] = {
     4002: Trait.cardBuster,
     4003: Trait.cardQuick,
     4004: Trait.cardExtra,
+    4007: Trait.cardNP,
+    4008: Trait.playerCards,  # Normal Buster, Arts, Quick, Extra Attack
+    4100: Trait.criticalHit,
     5000: Trait.canBeInBattle,  # can be NPC, enemy or playable servant i.e. not CE
     5010: Trait.notBasedOnServant,
 }
