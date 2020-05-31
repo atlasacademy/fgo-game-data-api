@@ -367,6 +367,7 @@ def search_servant(
             item
             for item in matches
             if fuzz.token_set_ratio(name, item.name) > NAME_MATCH_THRESHOLD
+            or fuzz.token_set_ratio(name, item.ruby) > NAME_MATCH_THRESHOLD
             or fuzz.token_set_ratio(name, SVT_NAME_JPEN.get(item.name, item.name))
             > NAME_MATCH_THRESHOLD
         ]
