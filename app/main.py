@@ -18,6 +18,11 @@ app_description = """Provide raw and processed FGO game data.
 Available documentation styles: [Swagger UI](/docs), [Redoc](/redoc).
 
 If you encounter bugs or missing data, you can report them at the [Atlas Academy Discord](https://discord.gg/TKJmuCR).
+
+Nice data for damage calculation:
+[Attribute Affinity](/export/NiceAttributeRelation.json),
+[Class Affinity](/export/NiceClassRelation.json),
+[Buff Action info](/export/NiceBuffList.ActionList.json),
 """
 export_links = """
 
@@ -67,5 +72,4 @@ async def root():
     return RedirectResponse("/docs")
 
 
-if settings.export_all_nice:
-    app.mount("/export", StaticFiles(directory="export"), name="export")
+app.mount("/export", StaticFiles(directory="export"), name="export")
