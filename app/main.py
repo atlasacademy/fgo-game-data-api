@@ -44,7 +44,7 @@ app = FastAPI(title="FGO Game data API", description=app_description, version="0
 
 
 app.add_middleware(
-    CORSMiddleware, allow_origins=["*"], allow_methods=["GET"],
+    CORSMiddleware, allow_origins=["*"], allow_methods=["GET"], allow_headers=["*"],
 )
 
 
