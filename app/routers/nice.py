@@ -234,6 +234,8 @@ def get_nice_skill(
     # Add the remaining cooldown and svals values
     for skillLv in skillEntity.mstSkillLv[1:]:
         nice_skill["coolDown"].append(skillLv.chargeTurn)
+        # combinedfunci is the location of the function in output combinedFunctionList
+        # funci is the location of the function in the input expandedFuncId
         for combinedfunci, funci in enumerate(player_funcis):
             dataVals = parse_dataVals(
                 skillLv.svals[funci], skillLv.expandedFuncId[funci].mstFunc.funcType
@@ -295,6 +297,8 @@ def get_nice_td(
 
     # Add the remaining svals values
     for tdLv in tdEntity.mstTreasureDeviceLv[1:]:
+        # combinedfunci is the location of the function in output combinedFunctionList
+        # funci is the location of the function in the input expandedFuncId
         for combinedfunci, funci in enumerate(player_funcis):
             for vali in range(1, 6):
                 valName = f"svals{vali}" if vali >= 2 else "svals"
