@@ -135,92 +135,6 @@ def parse_dataVals(datavals: str, functype: int) -> Dict[str, Union[int, str]]:
     return output
 
 
-def is_level_dependent(function: Dict[str, Any]) -> Any:
-    """Check for identical svalss dicts"""
-    # not the best response type because of the Any in Dict
-    return (
-        function["svals"]
-        == function.get("svals2")
-        == function.get("svals3")
-        == function.get("svals4")
-        == function.get("svals5")
-    )
-
-
-def is_overcharge_dependent(function: Dict[str, Any]) -> bool:
-    """Check for invariant dataVals arrays within all the svals"""
-    isOvercharge = True
-    svalsCount = len([key for key in function.keys() if key.startswith("svals")])
-    for vali in range(1, svalsCount + 1):
-        valName = f"svals{vali}" if vali >= 2 else "svals"
-        if valName in function:
-            for valValues in function[valName].values():
-                isOvercharge &= len(set(valValues)) == 1
-    return isOvercharge
-
-
-def is_constant(function: Dict[str, Any]) -> bool:
-    """Check if function is neither level nor overcharge dependent"""
-    return is_overcharge_dependent(function) and is_level_dependent(function)
-
-
-def combine_svals_overcharge(function: Dict[str, Any]) -> Dict[str, Any]:
-    """Create svals item that varies with overcharge instead of level"""
-    svals: Dict[str, List[Any]] = {}
-    for valType in function["svals"]:
-        svals[valType] = []
-        for vali in range(1, 6):
-            valName = f"svals{vali}" if vali >= 2 else "svals"
-            svals[valType].append(function[valName][valType][0])
-    return svals
-
-
-def categorize_functions(
-    combinedFunctionList: List[Dict[str, Any]]
-) -> Dict[str, List[Dict[str, Any]]]:
-    """Categorize functions based on how their dataVals change"""
-    functions: Dict[str, List[Dict[str, Any]]] = {
-        "level": [],
-        "overcharge": [],
-        "constant": [],
-        "other": [],
-    }
-    if combinedFunctionList:
-        svalsCount = len(
-            [key for key in combinedFunctionList[0].keys() if key.startswith("svals")]
-        )
-        if svalsCount > 1:
-            # TD combinedFunc
-            for combinedFunc in combinedFunctionList:
-                if is_constant(combinedFunc):
-                    for vali in range(2, 6):
-                        combinedFunc.pop(f"svals{vali}")
-                    functions["constant"].append(combinedFunc)
-                elif is_level_dependent(combinedFunc):
-                    for vali in range(2, 6):
-                        combinedFunc.pop(f"svals{vali}")
-                    functions["level"].append(combinedFunc)
-                elif is_overcharge_dependent(combinedFunc):
-                    svals = combine_svals_overcharge(combinedFunc)
-                    for vali in range(2, 6):
-                        combinedFunc.pop(f"svals{vali}")
-                    combinedFunc["svals"] = svals
-                    functions["overcharge"].append(combinedFunc)
-                else:
-                    functions["other"].append(combinedFunc)
-        else:
-            # Skill combinedFunc
-            for combinedFunc in combinedFunctionList:
-                if is_overcharge_dependent(combinedFunc):
-                    # check for constant value in the datavals arrays
-                    functions["constant"].append(combinedFunc)
-                else:
-                    functions["level"].append(combinedFunc)
-
-    functions = {k: v for k, v in functions.items() if v}
-    return functions
-
-
 def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> Dict[str, Any]:
     buffInfo: Dict[str, Any] = {}
     buffInfo["id"] = buffEntity.mstBuff.id
@@ -327,7 +241,7 @@ def get_nice_skill(
             for key, value in dataVals.items():
                 combinedFunctionList[combinedfunci]["svals"][key].append(value)
 
-    nice_skill["functions"] = categorize_functions(combinedFunctionList)
+    nice_skill["functions"] = combinedFunctionList
 
     return nice_skill
 
@@ -391,7 +305,7 @@ def get_nice_td(
                 for key, value in dataVals.items():
                     combinedFunctionList[combinedfunci][valName][key].append(value)
 
-    nice_td["functions"] = categorize_functions(combinedFunctionList)
+    nice_td["functions"] = combinedFunctionList
 
     return nice_td
 

@@ -128,13 +128,6 @@ class NiceFunction(BaseModel):
     svals5: Optional[Vals] = None
 
 
-class NiceFunctionGroup(BaseModel):
-    level: List[NiceFunction] = []
-    overcharge: List[NiceFunction] = []
-    constant: List[NiceFunction] = []
-    other: List[NiceFunction] = []
-
-
 class NiceSkill(BaseModel):
     id: int
     num: int = -1
@@ -146,7 +139,7 @@ class NiceSkill(BaseModel):
     condQuestPhase: int = -1
     icon: Optional[HttpUrl] = None
     coolDown: List[int]
-    functions: NiceFunctionGroup
+    functions: List[NiceFunction]
 
 
 class NiceTd(BaseModel):
@@ -161,7 +154,7 @@ class NiceTd(BaseModel):
     priority: int
     condQuestId: int
     condQuestPhase: int
-    functions: NiceFunctionGroup
+    functions: List[NiceFunction]
 
 
 class CharaGraph(BaseModel):
