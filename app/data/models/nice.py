@@ -147,7 +147,7 @@ class NiceTd(BaseModel):
     num: int
     card: CardType
     name: str
-    detail: str
+    detail: Optional[str] = None
     npNpGain: int
     npDistribution: List[int]
     strengthStatus: int

@@ -257,9 +257,10 @@ def get_nice_td(
     nice_td["rank"] = tdEntity.mstTreasureDevice.rank
     nice_td["typeText"] = tdEntity.mstTreasureDevice.typeText
     nice_td["npNpGain"] = tdEntity.mstTreasureDeviceLv[0].tdPoint
-    nice_td["detail"] = strip_formatting_brackets(
-        tdEntity.mstTreasureDeviceDetail[0].detail
-    )
+    if tdEntity.mstTreasureDeviceDetail:
+        nice_td["detail"] = strip_formatting_brackets(
+            tdEntity.mstTreasureDeviceDetail[0].detail
+        )
 
     chosenSvt = [item for item in tdEntity.mstSvtTreasureDevice if item.svtId == svtId]
     nice_td["strengthStatus"] = chosenSvt[0].strengthStatus
@@ -394,9 +395,7 @@ def get_nice_servant(
                 base_url=settings.asset_url, region=region, item_id=item_id
             )
         }
-    nice_data["extraAssets"] = {"charaGraph": charaGraph}
-    if faces:
-        nice_data["extraAssets"]["faces"] = faces
+    nice_data["extraAssets"] = {"charaGraph": charaGraph, "faces": faces}
 
     nice_data["starAbsorb"] = raw_data.mstSvtLimit[0].criticalWeight
     nice_data["rarity"] = raw_data.mstSvtLimit[0].rarity
@@ -432,10 +431,10 @@ def get_nice_servant(
     cardsDistribution = {item.cardId: item.normalDamage for item in raw_data.mstSvtCard}
     if cardsDistribution:
         nice_data["hitsDistribution"] = {
-            "arts": cardsDistribution[1],
-            "buster": cardsDistribution[2],
-            "quick": cardsDistribution[3],
-            "extra": cardsDistribution[4],
+            "arts": cardsDistribution.get(1, []),
+            "buster": cardsDistribution.get(2, []),
+            "quick": cardsDistribution.get(3, []),
+            "extra": cardsDistribution.get(4, []),
         }
 
     # Filter out dummy TDs that are probably used by enemy servants that don't use their NPs
