@@ -1,0 +1,100 @@
+{
+  "arts": {
+    "1": {
+      "individuality": [4001, 4008],
+      "adjustAtk": 1000,
+      "adjustTdGauge": 3000,
+      "adjustCritical": 0,
+      "addAtk": 0,
+      "addTdGauge": 1000,
+      "addCritical": 0
+    },
+    "2": {
+      "individuality": [4001, 4008],
+      "adjustAtk": 1200,
+      "adjustTdGauge": 4500,
+      "adjustCritical": 0,
+      "addAtk": 0,
+      "addTdGauge": 0,
+      "addCritical": 0
+    },
+    "3": {
+      "individuality": [4001, 4008],
+      "adjustAtk": 1400,
+      "adjustTdGauge": 6000,
+      "adjustCritical": 0,
+      "addAtk": 0,
+      "addTdGauge": 0,
+      "addCritical": 0
+    }
+  },
+  "buster": {
+    "1": {
+      "individuality": [4002, 4008],
+      "adjustAtk": 1500,
+      "adjustTdGauge": 0,
+      "adjustCritical": 100,
+      "addAtk": 500,
+      "addTdGauge": 0,
+      "addCritical": 0
+    },
+    "2": {
+      "individuality": [4002, 4008],
+      "adjustAtk": 1800,
+      "adjustTdGauge": 0,
+      "adjustCritical": 150,
+      "addAtk": 0,
+      "addTdGauge": 0,
+      "addCritical": 0
+    },
+    "3": {
+      "individuality": [4002, 4008],
+      "adjustAtk": 2100,
+      "adjustTdGauge": 0,
+      "adjustCritical": 200,
+      "addAtk": 0,
+      "addTdGauge": 0,
+      "addCritical": 0
+    }
+  },
+  "quick": {
+    "1": {
+      "individuality": [4003, 4008],
+      "adjustAtk": 800,
+      "adjustTdGauge": 1000,
+      "adjustCritical": 800,
+      "addAtk": 0,
+      "addTdGauge": 0,
+      "addCritical": 200
+    },
+    "2": {
+      "individuality": [4003, 4008],
+      "adjustAtk": 960,
+      "adjustTdGauge": 1500,
+      "adjustCritical": 1300,
+      "addAtk": 0,
+      "addTdGauge": 0,
+      "addCritical": 0
+    },
+    "3": {
+      "individuality": [4003, 4008],
+      "adjustAtk": 1120,
+      "adjustTdGauge": 2000,
+      "adjustCritical": 1800,
+      "addAtk": 0,
+      "addTdGauge": 0,
+      "addCritical": 0
+    }
+  },
+  "extra": {
+    "4": {
+      "individuality": [4004, 4008],
+      "adjustAtk": 1000,
+      "adjustTdGauge": 1000,
+      "adjustCritical": 1000,
+      "addAtk": 0,
+      "addTdGauge": 0,
+      "addCritical": 0
+    }
+  }
+}
