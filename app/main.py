@@ -2,6 +2,7 @@ import logging
 import time
 
 from fastapi import FastAPI, Request, status
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
 
@@ -39,7 +40,12 @@ if settings.documentation_all_nice:
     app_description += export_links
 
 
-app = FastAPI(title="FGO Game data API", description=app_description, version="0.1.0",)
+app = FastAPI(title="FGO Game data API", description=app_description, version="0.1.0")
+
+
+app.add_middleware(
+    CORSMiddleware, allow_origins=["*"], allow_methods=["GET"],
+)
 
 
 @app.middleware("http")
