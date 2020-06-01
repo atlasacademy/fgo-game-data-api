@@ -40,7 +40,7 @@ if settings.documentation_all_nice:
     app_description += export_links
 
 
-app = FastAPI(title="FGO Game data API", description=app_description, version="0.1.0")
+app = FastAPI(title="FGO Game data API", description=app_description, version="0.2.0")
 
 
 app.add_middleware(
