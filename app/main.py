@@ -21,7 +21,9 @@ If you encounter bugs or missing data, you can report them at the [Atlas Academy
 
 Nice data for damage calculation:
 [Attribute Affinity](/export/NiceAttributeRelation.json),
+[Class Attack Rate](/export/NiceClassAttackRate.json),
 [Class Affinity](/export/NiceClassRelation.json),
+[Card Details](/export/NiceCard.json),
 [Buff Action info](/export/NiceBuffList.ActionList.json),
 """
 export_links = """
