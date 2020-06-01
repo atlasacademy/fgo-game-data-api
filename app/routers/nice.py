@@ -63,8 +63,10 @@ def get_safe(input_dict: Dict[Any, Any], key: Any) -> Any:
     return input_dict.get(key, key)
 
 
-def get_traits_list(input_idv: List[int]) -> List[Union[Trait, int]]:
-    return [get_safe(TRAIT_NAME, item) for item in input_idv]
+def get_traits_list(input_idv: List[int]) -> List[Dict[str, Union[Trait, int]]]:
+    return [
+        {"id": item, "name": TRAIT_NAME.get(item, Trait.unknown)} for item in input_idv
+    ]
 
 
 def parse_dataVals(datavals: str, functype: int) -> Dict[str, Union[int, str]]:
@@ -433,11 +435,7 @@ def get_nice_servant(
     nice_data["cost"] = raw_data.mstSvt.cost
     nice_data["instantDeathChance"] = raw_data.mstSvt.deathRate
     nice_data["starGen"] = raw_data.mstSvt.starRate
-    nice_data["traits"] = [
-        get_safe(TRAIT_NAME, item)
-        for item in sorted(raw_data.mstSvt.individuality)
-        if item != item_id
-    ]
+    nice_data["traits"] = get_traits_list(sorted(raw_data.mstSvt.individuality))
 
     charaGraph: Dict[str, Dict[int, str]] = {}
     faces: Dict[str, Dict[int, str]] = {}

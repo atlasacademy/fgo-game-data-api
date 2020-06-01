@@ -1259,6 +1259,7 @@ PLAYABLE_CLASS_NAME_REVERSE: Dict[PlayableSvtClass, int] = {
 
 
 class Trait(str, Enum):
+    unknown = "unknown"
     genderMale = "genderMale"
     genderFemale = "genderFemale"
     genderUnknown = "genderUnknown"
@@ -1520,7 +1521,7 @@ TRAIT_NAME: Dict[int, Trait] = {
     # 2xxx: CQ or Story quests buff
     3000: Trait.normalAttack0,  # Normal attack, including NP
     3001: Trait.normalAttack1,  # Haven't figured out the difference between the 3
-    3002: Trait.normalAttack2,  # 
+    3002: Trait.normalAttack2,  #
     3004: Trait.buffPositiveEffect,
     3005: Trait.buffNegativeEffect,  # mutually exclusive with 3004
     3006: Trait.buffIncreaseDamage,  # catch all damage: atk, np, powermod, ...

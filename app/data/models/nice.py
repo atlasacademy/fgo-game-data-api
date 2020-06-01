@@ -95,16 +95,21 @@ class Vals(BaseModel):
     TargetRarityList: List[str] = []
 
 
+class NiceTrait(BaseModel):
+    id: int
+    name: Trait
+
+
 class NiceBuff(BaseModel):
     id: int
     name: str
     detail: str
     icon: Optional[HttpUrl] = None
     type: Union[NiceBuffType, int]
-    vals: List[Union[Trait, int]]
-    tvals: List[Union[Trait, int]]
-    ckOpIndv: List[Union[Trait, int]]
-    ckSelfIndv: List[Union[Trait, int]]
+    vals: List[NiceTrait]
+    tvals: List[NiceTrait]
+    ckOpIndv: List[NiceTrait]
+    ckSelfIndv: List[NiceTrait]
 
 
 class NiceFunction(BaseModel):
@@ -114,7 +119,7 @@ class NiceFunction(BaseModel):
     funcTargetTeam: Union[FuncApplyTarget, int]
     funcPopupText: str
     funcPopupIcon: Optional[HttpUrl] = None
-    functvals: List[Union[Trait, int]]
+    functvals: List[NiceTrait]
     buffs: List[NiceBuff]
     svals: Vals
     svals2: Optional[Vals] = None
@@ -201,7 +206,7 @@ class NiceServant(BaseModel):
     extraAssets: ExtraAssets
     gender: Gender
     attribute: Attribute
-    traits: List[Union[Trait, int]]
+    traits: List[NiceTrait]
     starAbsorb: int
     starGen: int
     instantDeathChance: int
