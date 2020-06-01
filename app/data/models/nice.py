@@ -219,7 +219,7 @@ class NiceServant(BaseModel):
     skillMaterials: Dict[int, NiceSkillMaterial]
     skills: List[NiceSkill]
     classPassive: List[NiceSkill]
-    NPs: List[NiceTd]
+    noblePhantasms: List[NiceTd]
 
 
 class NiceEquip(BaseModel):

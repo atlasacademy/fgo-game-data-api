@@ -566,7 +566,7 @@ def get_nice_servant(
         get_nice_skill(skill, item_id, region)
         for skill in raw_data.mstSvt.expandedClassPassive
     ]
-    nice_data["NPs"] = [get_nice_td(td, item_id, region) for td in actualTDs]
+    nice_data["noblePhantasms"] = [get_nice_td(td, item_id, region) for td in actualTDs]
     return nice_data
 
 
