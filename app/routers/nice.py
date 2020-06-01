@@ -549,6 +549,7 @@ async def find_servant(
     - **gender**: female, male or unknown
     - **attribute**: human, sky, earth, star or beast
     - **trait**: an integer or an item in the trait enum. See the traits detail in the Nice Servant response.
+    - **lang**: returns English servant names if querying JP data. Doesn't do anything if querying NA data.
     """
     if trait or className or name:
         matches = gamedata.search_servant(
@@ -563,6 +564,8 @@ get_servant_description = """Get servant info from ID
 
 If the given ID is a servants's collectionNo, the corresponding servant data is returned.
 Otherwise, it will look up the actual ID field.
+
+- **lang**: returns English servant names if querying JP data. Doesn't do anything if querying NA data.
 """
 pre_processed_data_links = """
 
