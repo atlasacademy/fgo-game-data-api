@@ -1,7 +1,10 @@
 {
   "arts": {
     "1": {
-      "individuality": [4001, 4008],
+      "individuality": [
+        { "id": 4001, "name": "cardArts" },
+        { "id": 4008, "name": "playerCards" }
+      ],
       "adjustAtk": 1000,
       "adjustTdGauge": 3000,
       "adjustCritical": 0,
@@ -10,7 +13,10 @@
       "addCritical": 0
     },
     "2": {
-      "individuality": [4001, 4008],
+      "individuality": [
+        { "id": 4001, "name": "cardArts" },
+        { "id": 4008, "name": "playerCards" }
+      ],
       "adjustAtk": 1200,
       "adjustTdGauge": 4500,
       "adjustCritical": 0,
@@ -19,7 +25,10 @@
       "addCritical": 0
     },
     "3": {
-      "individuality": [4001, 4008],
+      "individuality": [
+        { "id": 4001, "name": "cardArts" },
+        { "id": 4008, "name": "playerCards" }
+      ],
       "adjustAtk": 1400,
       "adjustTdGauge": 6000,
       "adjustCritical": 0,
@@ -30,7 +39,10 @@
   },
   "buster": {
     "1": {
-      "individuality": [4002, 4008],
+      "individuality": [
+        { "id": 4002, "name": "cardBuster" },
+        { "id": 4008, "name": "playerCards" }
+      ],
       "adjustAtk": 1500,
       "adjustTdGauge": 0,
       "adjustCritical": 100,
@@ -39,7 +51,10 @@
       "addCritical": 0
     },
     "2": {
-      "individuality": [4002, 4008],
+      "individuality": [
+        { "id": 4002, "name": "cardBuster" },
+        { "id": 4008, "name": "playerCards" }
+      ],
       "adjustAtk": 1800,
       "adjustTdGauge": 0,
       "adjustCritical": 150,
@@ -48,7 +63,10 @@
       "addCritical": 0
     },
     "3": {
-      "individuality": [4002, 4008],
+      "individuality": [
+        { "id": 4002, "name": "cardBuster" },
+        { "id": 4008, "name": "playerCards" }
+      ],
       "adjustAtk": 2100,
       "adjustTdGauge": 0,
       "adjustCritical": 200,
@@ -59,7 +77,10 @@
   },
   "quick": {
     "1": {
-      "individuality": [4003, 4008],
+      "individuality": [
+        { "id": 4003, "name": "cardQuick" },
+        { "id": 4008, "name": "playerCards" }
+      ],
       "adjustAtk": 800,
       "adjustTdGauge": 1000,
       "adjustCritical": 800,
@@ -68,7 +89,10 @@
       "addCritical": 200
     },
     "2": {
-      "individuality": [4003, 4008],
+      "individuality": [
+        { "id": 4003, "name": "cardQuick" },
+        { "id": 4008, "name": "playerCards" }
+      ],
       "adjustAtk": 960,
       "adjustTdGauge": 1500,
       "adjustCritical": 1300,
@@ -77,7 +101,10 @@
       "addCritical": 0
     },
     "3": {
-      "individuality": [4003, 4008],
+      "individuality": [
+        { "id": 4003, "name": "cardQuick" },
+        { "id": 4008, "name": "playerCards" }
+      ],
       "adjustAtk": 1120,
       "adjustTdGauge": 2000,
       "adjustCritical": 1800,
@@ -88,7 +115,10 @@
   },
   "extra": {
     "4": {
-      "individuality": [4004, 4008],
+      "individuality": [
+        { "id": 4004, "name": "cardExtra" },
+        { "id": 4008, "name": "playerCards" }
+      ],
       "adjustAtk": 1000,
       "adjustTdGauge": 1000,
       "adjustCritical": 1000,
