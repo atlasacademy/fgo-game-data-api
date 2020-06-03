@@ -1,23 +1,19 @@
 import logging
 import time
 from copy import deepcopy
-from typing import Any, Dict, List, Optional, Set, Union
+from typing import Any, Dict, List, Set
 
 from fuzzywuzzy import fuzz
 
 import orjson
 
 from .translations import SVT_NAME_JPEN
-from .models.common import Region, Settings
+from .models.common import Region, Settings, ServantSearchQueryParams
 from .models.enums import (
     ATTRIBUTE_NAME_REVERSE,
     GENDER_NAME_REVERSE,
     PLAYABLE_CLASS_NAME_REVERSE,
     TRAIT_NAME_REVERSE,
-    Attribute,
-    Gender,
-    PlayableSvtClass,
-    Trait,
 )
 from .models.raw import (
     BuffEntity,
@@ -317,58 +313,56 @@ def get_servant_entity(
     return svt_entity
 
 
-def search_servant(
-    region: Region,
-    name: Optional[str],
-    rarity: Optional[List[int]],
-    className: Optional[List[PlayableSvtClass]],
-    gender: Optional[List[Gender]],
-    attribute: Optional[List[Attribute]],
-    trait: Optional[List[Union[Trait, int]]],
-) -> List[int]:
+def search_servant(search_param: ServantSearchQueryParams) -> List[int]:
 
-    if not rarity:
+    if not search_param.rarity:
         rarity = list(range(6))
 
-    if not className:
+    if not search_param.className:
         class_ints = list(PLAYABLE_CLASS_NAME_REVERSE.values())
     else:
-        class_ints = [PLAYABLE_CLASS_NAME_REVERSE[item] for item in className]
+        class_ints = [
+            PLAYABLE_CLASS_NAME_REVERSE[item] for item in search_param.className
+        ]
 
-    if not gender:
+    if not search_param.gender:
         gender_ints = list(GENDER_NAME_REVERSE.values())
     else:
-        gender_ints = [GENDER_NAME_REVERSE[item] for item in gender]
+        gender_ints = [GENDER_NAME_REVERSE[item] for item in search_param.gender]
 
-    if not attribute:
+    if not search_param.attribute:
         attribute_ints = list(ATTRIBUTE_NAME_REVERSE.values())
     else:
-        attribute_ints = [ATTRIBUTE_NAME_REVERSE[item] for item in attribute]
+        attribute_ints = [
+            ATTRIBUTE_NAME_REVERSE[item] for item in search_param.attribute
+        ]
 
-    if not trait:
-        trait = []
-    trait_ints = [TRAIT_NAME_REVERSE.get(item, item) for item in trait]  # type: ignore
+    if not search_param.trait:
+        search_param.trait = []
+    trait_ints = [TRAIT_NAME_REVERSE.get(item, item) for item in search_param.trait]  # type: ignore
 
     matches = [
         item
-        for item in masters[region].mstSvt
+        for item in masters[search_param.region].mstSvt
         if item.isServant()
         and item.collectionNo != 0
         and item.classId in class_ints
         and item.genderType in gender_ints
         and item.attri in attribute_ints
         and set(trait_ints).issubset(set(item.individuality))
-        and masters[region].mstSvtLimitId[item.id][0].rarity in rarity
+        and masters[search_param.region].mstSvtLimitId[item.id][0].rarity in rarity
     ]
 
     NAME_MATCH_THRESHOLD = 80
-    if name:
+    if search_param.name:
         matches = [
             item
             for item in matches
-            if fuzz.token_set_ratio(name, item.name) > NAME_MATCH_THRESHOLD
-            or fuzz.token_set_ratio(name, item.ruby) > NAME_MATCH_THRESHOLD
-            or fuzz.token_set_ratio(name, SVT_NAME_JPEN.get(item.name, item.name))
+            if fuzz.token_set_ratio(search_param.name, item.name) > NAME_MATCH_THRESHOLD
+            or fuzz.token_set_ratio(search_param.name, item.ruby) > NAME_MATCH_THRESHOLD
+            or fuzz.token_set_ratio(
+                search_param.name, SVT_NAME_JPEN.get(item.name, item.name)
+            )
             > NAME_MATCH_THRESHOLD
         ]
 

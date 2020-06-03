@@ -1,11 +1,10 @@
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Dict, List, Union
 
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import Response
 
 from ..data import gamedata
-from ..data.models.common import DetailMessage, Region
-from ..data.models.enums import Attribute, Gender, PlayableSvtClass, Trait
+from ..data.models.common import DetailMessage, Region, ServantSearchQueryParams
 from ..data.models.raw import (
     BuffEntity,
     FunctionEntity,
@@ -24,44 +23,31 @@ responses: Dict[Union[str, int], Any] = {
 router = APIRouter()
 
 
+raw_find_servant_extra = """
+- **expand**: Add expanded skill objects to mstSvt.expandedClassPassive
+from the skill IDs in mstSvt.classPassive.
+Expand all other skills and functions as well.
+"""
+
+
 @router.get(
     "/{region}/servant/search",
     summary="Find and get servant data",
+    description=ServantSearchQueryParams.DESCRIPTION + raw_find_servant_extra,
     response_description="Servant Entity",
     response_model=List[ServantEntity],
     response_model_exclude_unset=True,
     responses=responses,
 )
 async def find_servant(
-    region: Region,
-    name: Optional[str] = None,
-    rarity: List[int] = Query(None, ge=0, le=5),
-    className: List[PlayableSvtClass] = Query(None),
-    gender: List[Gender] = Query(None),
-    attribute: List[Attribute] = Query(None),
-    trait: List[Union[Trait, int]] = Query(None),
+    search_param: ServantSearchQueryParams = Depends(ServantSearchQueryParams),
     expand: bool = False,
 ):
-    """
-    Get servant info from ID
-
-    Search the servants' names list for the given name and return the best match.
-
-    - **name**: English if you are searching NA data and Japanese if you are searching JP data
-    - **rarity**: Integer 0-6
-    - **className**: an item in the className enum. See the className detail in the Nice Servant response.
-    - **gender**: female, male or unknown
-    - **attribute**: human, sky, earth, star or beast
-    - **trait**: an integer or an item in the trait enum. See the traits detail in the Nice Servant response.
-    - **expand**: Add expanded skill objects to mstSvt.expandedClassPassive from the skill IDs in mstSvt.classPassive.
-    Expand all other skills and functions as well.
-    """
-    if trait or className or name:
-        matches = gamedata.search_servant(
-            region, name, rarity, className, gender, attribute, trait
-        )
+    if search_param.hasSearchParams:
+        matches = gamedata.search_servant(search_param)
         entity_list = [
-            gamedata.get_servant_entity(region, item, expand) for item in matches
+            gamedata.get_servant_entity(search_param.region, item, expand)
+            for item in matches
         ]
         out_json = (
             f"[{','.join([item.json(exclude_unset=True) for item in entity_list])}]"

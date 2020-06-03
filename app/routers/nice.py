@@ -3,11 +3,16 @@ import logging
 import time
 from typing import Any, Dict, List, Optional, Union
 
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException
 
 from ..data import gamedata
 from ..data.translations import SVT_NAME_JPEN
-from ..data.models.common import DetailMessage, Region, Settings
+from ..data.models.common import (
+    DetailMessage,
+    Region,
+    Settings,
+    ServantSearchQueryParams,
+)
 from ..data.models.enums import (
     ATTRIBUTE_NAME,
     BUFF_TYPE_NAME,
@@ -20,11 +25,9 @@ from ..data.models.enums import (
     GENDER_NAME,
     ITEM_TYPE_NAME,
     TRAIT_NAME,
-    Attribute,
     FuncType,
-    Gender,
-    PlayableSvtClass,
     SvtType,
+    Trait,
 )
 from ..data.models.nice import (
     ASSET_URL,
@@ -32,7 +35,6 @@ from ..data.models.nice import (
     NiceEquip,
     NiceItem,
     NiceServant,
-    Trait,
 )
 from ..data.models.raw import (
     BuffEntityNoReverse,
@@ -521,40 +523,27 @@ responses: Dict[Union[str, int], Any] = {
 router = APIRouter()
 
 
+nice_find_servant_extra = """
+- **lang**: returns English servant names if querying JP data. Doesn't do anything if querying NA data.
+"""
+
+
 @router.get(
     "/{region}/servant/search",
     summary="Find and get servant data",
+    description=ServantSearchQueryParams.DESCRIPTION + nice_find_servant_extra,
     response_description="Servant Entity",
     response_model=List[NiceServant],
     response_model_exclude_unset=True,
     responses=responses,
 )
 async def find_servant(
-    region: Region,
-    name: Optional[str] = None,
-    rarity: List[int] = Query(None, ge=0, le=5),
-    className: List[PlayableSvtClass] = Query(None),
-    gender: List[Gender] = Query(None),
-    attribute: List[Attribute] = Query(None),
-    trait: List[Union[Trait, int]] = Query(None),
+    search_param: ServantSearchQueryParams = Depends(ServantSearchQueryParams),
     lang: Optional[Language] = None,
 ):
-    """
-    Search and return the list of matched nice servant entities.
-
-    - **name**: English if you are searching NA data and Japanese if you are searching JP data
-    - **rarity**: Integer 0-6
-    - **className**: an item in the className enum. See the className detail in the Nice Servant response.
-    - **gender**: female, male or unknown
-    - **attribute**: human, sky, earth, star or beast
-    - **trait**: an integer or an item in the trait enum. See the traits detail in the Nice Servant response.
-    - **lang**: returns English servant names if querying JP data. Doesn't do anything if querying NA data.
-    """
-    if trait or className or name:
-        matches = gamedata.search_servant(
-            region, name, rarity, className, gender, attribute, trait
-        )
-        return [get_nice_servant(region, item, lang) for item in matches]
+    if search_param.hasSearchParams:
+        matches = gamedata.search_servant(search_param)
+        return [get_nice_servant(search_param.region, item, lang) for item in matches]
     else:
         raise HTTPException(status_code=400, detail="Insufficient querry")
 
