@@ -12,7 +12,7 @@ file_path = Path(__file__)
 
 
 def get_response_data(file_name: str) -> Any:
-    with open(file_path.parent / "test_data" / f"{file_name}.json", "rb") as fp:
+    with open(file_path.parent / "test_data_raw" / f"{file_name}.json", "rb") as fp:
         return orjson.loads(fp.read())
 
 
