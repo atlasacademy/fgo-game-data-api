@@ -25,7 +25,7 @@ Nice data for damage calculation:
 [Class Attack Rate](/export/NiceClassAttackRate.json),
 [Class Affinity](/export/NiceClassRelation.json),
 [Card Details](/export/NiceCard.json),
-[Buff Action info](/export/NiceBuffList.ActionList.json),
+[Buff Action info](/export/NiceBuffList.ActionList.json).
 """
 export_links = """
 
