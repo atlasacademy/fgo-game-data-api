@@ -99,3 +99,50 @@ class TestEquipSearch:
         response = client.get("/nice/NA/equip/search?name=Banquet")
         assert response.status_code == 200
         assert {item["id"] for item in response.json()} == {9302550, 9400290}
+
+
+class TestServantSearch:
+    def test_search_name(self):
+        response = client.get("/raw/NA/servant/search?name=Pendragon")
+        assert response.status_code == 200
+        assert {item["mstSvt"]["id"] for item in response.json()} == {
+            100100,
+            100200,
+            100300,
+            102900,
+            202600,
+            301900,
+            302000,
+            402200,
+            402700,
+        }
+
+    def test_search_name_rarity_class(self):
+        response = client.get(
+            "/nice/NA/servant/search?name=Pendragon&rarity=5&className=saber"
+        )
+        print({item["id"] for item in response.json()})
+        assert response.status_code == 200
+        assert {item["id"] for item in response.json()} == {100100, 102900}
+
+    def test_search_name_rarity_class_gender(self):
+        response = client.get(
+            "/nice/NA/servant/search?name=Pendragon&rarity=5&className=saber&gender=female"
+        )
+        print({item["id"] for item in response.json()})
+        assert response.status_code == 200
+        assert {item["id"] for item in response.json()} == {100100}
+
+    def test_search_name_class_attribute(self):
+        response = client.get("/nice/NA/servant/search?className=archer&attribute=star")
+        print({item["id"] for item in response.json()})
+        assert response.status_code == 200
+        assert {item["id"] for item in response.json()} == {201100, 202200}
+
+    def test_search_name_class_trait_rarity(self):
+        response = client.get(
+            "/nice/JP/servant/search?className=rider&trait=king&lang=en&rarity=3"
+        )
+        print({item["id"] for item in response.json()})
+        assert response.status_code == 200
+        assert {item["id"] for item in response.json()} == {401100, 401500, 403900}

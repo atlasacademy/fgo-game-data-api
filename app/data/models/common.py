@@ -59,7 +59,7 @@ class ServantSearchQueryParams:
         """
         Search and return the list of matched servant entities.
 
-        - **name**: English if you are searching NA data and Japanese if you are searching JP data
+        - **name**: servant name. Searching JP data using English name works too.
         - **rarity**: Integer 0-6
         - **className**: an item in the className enum. See the className detail in the Nice Servant response.
         - **gender**: female, male or unknown

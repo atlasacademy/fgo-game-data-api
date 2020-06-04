@@ -322,6 +322,8 @@ def search_servant(search_param: ServantSearchQueryParams) -> List[int]:
 
     if not search_param.rarity:
         rarity = list(range(6))
+    else:
+        rarity = search_param.rarity
 
     if not search_param.className:
         class_ints = list(PLAYABLE_CLASS_NAME_REVERSE.values())

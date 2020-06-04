@@ -57,9 +57,9 @@ async def find_servant(
         out_json = (
             f"[{','.join([item.json(exclude_unset=True) for item in entity_list])}]"
         )
-        return Response(out_json, media_type="application/json",)
+        return Response(out_json, media_type="application/json")
     else:
-        raise HTTPException(status_code=400, detail="No query found")
+        raise HTTPException(status_code=400, detail="Insufficient querry")
 
 
 @router.get(
