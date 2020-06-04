@@ -8,7 +8,12 @@ from fuzzywuzzy import fuzz
 import orjson
 
 from .translations import SVT_NAME_JPEN
-from .models.common import Region, Settings, ServantSearchQueryParams
+from .models.common import (
+    Region,
+    Settings,
+    EquipSearchQueryParams,
+    ServantSearchQueryParams,
+)
 from .models.enums import (
     ATTRIBUTE_NAME_REVERSE,
     GENDER_NAME_REVERSE,
@@ -364,6 +369,33 @@ def search_servant(search_param: ServantSearchQueryParams) -> List[int]:
                 search_param.name, SVT_NAME_JPEN.get(item.name, item.name)
             )
             > NAME_MATCH_THRESHOLD
+        ]
+
+    return [item.id for item in matches]
+
+
+def search_equip(search_param: EquipSearchQueryParams) -> List[int]:
+
+    if not search_param.rarity:
+        rarity = list(range(1, 6))
+    else:
+        rarity = search_param.rarity
+
+    matches = [
+        item
+        for item in masters[search_param.region].mstSvt
+        if item.isEquip()
+        and item.collectionNo != 0
+        and masters[search_param.region].mstSvtLimitId[item.id][0].rarity in rarity
+    ]
+
+    NAME_MATCH_THRESHOLD = 80
+    if search_param.name:
+        matches = [
+            item
+            for item in matches
+            if fuzz.token_set_ratio(search_param.name, item.name) > NAME_MATCH_THRESHOLD
+            or fuzz.token_set_ratio(search_param.name, item.ruby) > NAME_MATCH_THRESHOLD
         ]
 
     return [item.id for item in matches]

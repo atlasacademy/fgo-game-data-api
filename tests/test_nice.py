@@ -77,3 +77,25 @@ class TestItem:
         response = client.get("/nice/NA/item/94000201")
         assert response.status_code == 200
         assert response.json() == get_response_data("NA_item_94000201")
+
+
+class TestEquipSearch:
+    def test_search_name(self):
+        response = client.get("/nice/NA/equip/search?name=Kaleidoscope")
+        assert response.status_code == 200
+        assert {item["id"] for item in response.json()} == {9400340}
+
+    def test_search_name_raw(self):
+        response = client.get("/raw/JP/equip/search?name=カレイドスコープ")
+        assert response.status_code == 200
+        assert {item["mstSvt"]["id"] for item in response.json()} == {9400340}
+
+    def test_search_name_rarity(self):
+        response = client.get("/nice/NA/equip/search?name=Kaleidoscope&rarity=4")
+        assert response.status_code == 200
+        assert response.text == "[]"
+
+    def test_search_names(self):
+        response = client.get("/nice/NA/equip/search?name=Banquet")
+        assert response.status_code == 200
+        assert {item["id"] for item in response.json()} == {9302550, 9400290}

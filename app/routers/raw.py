@@ -4,7 +4,12 @@ from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import Response
 
 from ..data import gamedata
-from ..data.models.common import DetailMessage, Region, ServantSearchQueryParams
+from ..data.models.common import (
+    DetailMessage,
+    Region,
+    EquipSearchQueryParams,
+    ServantSearchQueryParams,
+)
 from ..data.models.raw import (
     BuffEntity,
     FunctionEntity,
@@ -85,6 +90,33 @@ async def get_servant(region: Region, item_id: int, expand: bool = False):
         )
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
+
+
+@router.get(
+    "/{region}/equip/search",
+    summary="Find and get CE data",
+    description=EquipSearchQueryParams.DESCRIPTION,
+    response_description="Equip Entity",
+    response_model=List[ServantEntity],
+    response_model_exclude_unset=True,
+    responses=responses,
+)
+async def find_equip(
+    search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
+    expand: bool = False,
+):
+    if search_param.hasSearchParams:
+        matches = gamedata.search_equip(search_param)
+        entity_list = [
+            gamedata.get_servant_entity(search_param.region, item, expand)
+            for item in matches
+        ]
+        out_json = (
+            f"[{','.join([item.json(exclude_unset=True) for item in entity_list])}]"
+        )
+        return Response(out_json, media_type="application/json")
+    else:
+        raise HTTPException(status_code=400, detail="Insufficient querry")
 
 
 @router.get(

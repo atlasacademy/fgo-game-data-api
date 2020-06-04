@@ -11,6 +11,7 @@ from ..data.models.common import (
     DetailMessage,
     Region,
     Settings,
+    EquipSearchQueryParams,
     ServantSearchQueryParams,
 )
 from ..data.models.enums import (
@@ -582,6 +583,25 @@ async def get_servant(region: Region, item_id: int, lang: Optional[Language] = N
         return get_nice_servant(region, item_id, lang)
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
+
+
+@router.get(
+    "/{region}/equip/search",
+    summary="Find and get CE data",
+    description=EquipSearchQueryParams.DESCRIPTION,
+    response_description="Equip Entity",
+    response_model=List[NiceEquip],
+    response_model_exclude_unset=True,
+    responses=responses,
+)
+async def find_equip(
+    search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
+):
+    if search_param.hasSearchParams:
+        matches = gamedata.search_equip(search_param)
+        return [get_nice_servant(search_param.region, item) for item in matches]
+    else:
+        raise HTTPException(status_code=400, detail="Insufficient querry")
 
 
 get_equip_description = """Get CE info from ID

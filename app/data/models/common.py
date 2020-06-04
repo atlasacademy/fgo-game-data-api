@@ -67,3 +67,25 @@ class ServantSearchQueryParams:
         - **trait**: an integer or an item in the trait enum. See the traits detail in the Nice Servant response.
         """
     )
+
+
+class EquipSearchQueryParams:
+    def __init__(
+        self,
+        region: Region,
+        name: Optional[str] = None,
+        rarity: List[int] = Query(None, ge=1, le=5),
+    ):
+        self.region = region
+        self.name = name
+        self.rarity = rarity
+        self.hasSearchParams = any([name, rarity])
+
+    DESCRIPTION = inspect.cleandoc(
+        """
+        Search and return the list of matched equip entities.
+
+        - **name**: in English if you are searching NA data and in Japanese if you are searching JP data
+        - **rarity**: Integer 0-6
+        """
+    )
