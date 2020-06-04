@@ -12,7 +12,7 @@ from .enums import (
     NiceFuncTargetType,
     NiceFuncType,
     NiceItemType,
-    PlayableSvtClass,
+    SvtClass,
     Trait,
 )
 
@@ -192,7 +192,7 @@ class NiceServant(BaseModel):
     id: int
     collectionNo: int
     name: str
-    className: PlayableSvtClass
+    className: SvtClass
     rarity: int
     cost: int
     lvMax: int
