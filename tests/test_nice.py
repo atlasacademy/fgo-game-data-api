@@ -47,10 +47,26 @@ class TestServant:
         assert response.status_code == 200
         assert response.json() == get_response_data("JP_Elice")
 
+    def test_JP_costume(self):
+        response = client.get("/nice/JP/servant/1")
+        assert response.status_code == 200
+        assert response.json() == get_response_data("JP_Mash")
+
     def test_JP_id_English(self):
         response = client.get("/nice/JP/servant/304300?lang=en")
         assert response.status_code == 200
         assert response.json() == get_response_data("JP_Elice_EN")
+
+    def test_JP_string_svals_values(self):
+        # See svals TargetRarityList
+        response = client.get("/nice/JP/servant/403400?lang=en")
+        assert response.status_code == 200
+        assert response.json() == get_response_data("JP_Bartholomew")
+
+    def test_JP_datavals_subState_Value2(self):
+        response = client.get("/nice/JP/servant/103800")
+        assert response.status_code == 200
+        assert response.json() == get_response_data("JP_Jason")
 
 
 class TestEquip:
@@ -64,12 +80,20 @@ class TestEquip:
         assert response.status_code == 200
         assert response.json() == get_response_data("JP_Aerial_Drive")
 
+    def test_JP_collectionNo_not_found(self):
+        response = client.get("/nice/JP/equip/2001")
+        assert response.status_code == 404
+
 
 class TestSvt:
-    def test_NA_skill(self):
+    def test_NA_svt(self):
         response = client.get("/nice/NA/svt/9939120")
         assert response.status_code == 200
         assert response.json() == get_response_data("NA_svt_9939120")
+
+    def test_JP_svt_not_found(self):
+        response = client.get("/nice/JP/svt/987626")
+        assert response.status_code == 404
 
 
 class TestItem:
@@ -77,6 +101,10 @@ class TestItem:
         response = client.get("/nice/NA/item/94000201")
         assert response.status_code == 200
         assert response.json() == get_response_data("NA_item_94000201")
+
+    def test_JP_item_not_found(self):
+        response = client.get("/nice/JP/item/1009")
+        assert response.status_code == 404
 
 
 class TestEquipSearch:
@@ -99,6 +127,14 @@ class TestEquipSearch:
         response = client.get("/nice/NA/equip/search?name=Banquet")
         assert response.status_code == 200
         assert {item["id"] for item in response.json()} == {9302550, 9400290}
+
+    def test_NA_search_no_query(self):
+        response = client.get("/nice/NA/equip/search")
+        assert response.status_code == 400
+
+    def test_JP_search_no_query(self):
+        response = client.get("/raw/JP/equip/search")
+        assert response.status_code == 400
 
 
 class TestServantSearch:
@@ -146,3 +182,11 @@ class TestServantSearch:
         print({item["id"] for item in response.json()})
         assert response.status_code == 200
         assert {item["id"] for item in response.json()} == {401100, 401500, 403900}
+
+    def test_NA_search_no_query(self):
+        response = client.get("/nice/NA/servant/search")
+        assert response.status_code == 400
+
+    def test_JP_search_no_query(self):
+        response = client.get("/raw/NA/servant/search")
+        assert response.status_code == 400

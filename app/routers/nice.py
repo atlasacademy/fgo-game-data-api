@@ -103,9 +103,9 @@ def parse_dataVals(datavals: str, functype: int) -> Dict[str, Union[int, str]]:
                         text = "Count"
                     elif i == 3:
                         text = "Value"
-                    elif i == 4:
+                    elif i == 4:  # pragma: no cover can't find anything with 5 items
                         text = "UseRate"
-                    elif i == 5:
+                    elif i == 5:  # pragma: no cover can't find anything with 6 items
                         text = "Value2"
                 elif functype == FuncType.SUB_STATE:
                     if i == 0:
@@ -132,7 +132,7 @@ def parse_dataVals(datavals: str, functype: int) -> Dict[str, Union[int, str]]:
                 else:
                     raise HTTPException(
                         status_code=500, detail=f"Can't parse datavals: {datavals}"
-                    )
+                    )  # pragma: no cover
             if text != "":
                 output[text] = value
     return output
@@ -488,7 +488,7 @@ def get_nice_servant(
     return nice_data
 
 
-if settings.export_all_nice:
+if settings.export_all_nice:  # pragma: no cover
     for region_ in [Region.NA, Region.JP]:
         start_time = time.time()
         logger.info(f"Writing nice {region_} servant and equip data ...")

@@ -76,6 +76,10 @@ class TestEquip:
         assert response.status_code == 200
         assert response.json() == get_response_data("NA_Oni_Mask_expanded")
 
+    def test_JP_collectionNo_not_found(self):
+        response = client.get("/raw/JP/equip/3001")
+        assert response.status_code == 404
+
 
 class TestSkill:
     def test_NA_skill(self):
@@ -105,6 +109,10 @@ class TestSkill:
         assert response.status_code == 200
         assert response.json() == get_response_data("NA_skill_24550")
 
+    def test_skill_not_found(self):
+        response = client.get("/raw/NA/skill/25689")
+        assert response.status_code == 404
+
 
 class TestNP:
     def test_NA_NP(self):
@@ -133,6 +141,10 @@ class TestNP:
         response = client.get("/raw/NA/NP/900101")
         assert response.status_code == 200
         assert response.json() == get_response_data("NA_NP_900101")
+
+    def test_NP_not_found(self):
+        response = client.get("/raw/JP/NP/900205")
+        assert response.status_code == 404
 
 
 class TestFunction:
@@ -168,6 +180,10 @@ class TestFunction:
         assert response.status_code == 200
         assert response.json() == get_response_data("NA_function_400")
 
+    def test_JP_function_not_found(self):
+        response = client.get("/raw/JP/function/9000")
+        assert response.status_code == 404
+
 
 class TestBuff:
     def test_NA_buff(self):
@@ -180,9 +196,17 @@ class TestBuff:
         assert response.status_code == 200
         assert response.json() == get_response_data("NA_buff_190_reverse")
 
+    def test_NA_buff_not_found(self):
+        response = client.get("/raw/NA/buff/765")
+        assert response.status_code == 404
+
 
 class TestItem:
     def test_NA_item(self):
         response = client.get("/raw/JP/item/7103")
         assert response.status_code == 200
         assert response.json() == get_response_data("JP_item_Lancer_Monument")
+
+    def test_JP_item_not_found(self):
+        response = client.get("/raw/JP/item/941234")
+        assert response.status_code == 404

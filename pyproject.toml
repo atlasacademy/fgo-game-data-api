@@ -21,6 +21,7 @@ mypy = "^0"
 black = "^19.10b0"
 pytest-xdist = "^1.32.0"
 requests = "^2.23.0"
+coverage = "^5.1"
 
 [build-system]
 requires = ["poetry>=0.12"]
