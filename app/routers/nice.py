@@ -505,11 +505,11 @@ if settings.export_all_nice:  # pragma: no cover
             for item_id in gamedata.masters[region_].mstItemId
         ]
         with open(f"export/nice_servant_{region_}.json", "w", encoding="utf-8") as fp:
-            json.dump(all_servant_data, fp)
+            json.dump(all_servant_data, fp, ensure_ascii=False)
         with open(f"export/nice_equip_{region_}.json", "w", encoding="utf-8") as fp:
-            json.dump(all_equip_data, fp)
+            json.dump(all_equip_data, fp, ensure_ascii=False)
         with open(f"export/nice_item_{region_}.json", "w", encoding="utf-8") as fp:
-            json.dump(all_item_data, fp)
+            json.dump(all_item_data, fp, ensure_ascii=False)
         run_time = time.time() - start_time
         logger.info(f"Finish writing nice {region_} data in {run_time:.4f} seconds.")
 
