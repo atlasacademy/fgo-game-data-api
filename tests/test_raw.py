@@ -179,3 +179,10 @@ class TestBuff:
         response = client.get("/raw/NA/buff/190?reverse=True")
         assert response.status_code == 200
         assert response.json() == get_response_data("NA_buff_190_reverse")
+
+
+class TestItem:
+    def test_NA_item(self):
+        response = client.get("/raw/JP/item/7103")
+        assert response.status_code == 200
+        assert response.json() == get_response_data("JP_item_Lancer_Monument")

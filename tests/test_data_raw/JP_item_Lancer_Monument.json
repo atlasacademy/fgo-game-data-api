@@ -1,0 +1,20 @@
+{
+  "individuality": [],
+  "script": {},
+  "eventId": 0,
+  "eventGroupId": 0,
+  "id": 7103,
+  "name": "ランサーモニュメント",
+  "detail": "【霊基再臨素材】\nランサークラスを称えるモニュメント",
+  "imageId": 7103,
+  "bgImageId": 3,
+  "type": 12,
+  "unit": "",
+  "value": 0,
+  "sellQp": 2500,
+  "isSell": true,
+  "priority": 309,
+  "dropPriority": 5298,
+  "startedAt": 946652400,
+  "endedAt": 1910876400
+}
