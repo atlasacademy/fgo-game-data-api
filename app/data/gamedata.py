@@ -318,6 +318,14 @@ def get_servant_entity(
     return svt_entity
 
 
+def match_name(search_param: str, name: str) -> Any:
+    NAME_MATCH_THRESHOLD = 80
+    return (
+        fuzz.token_set_ratio(search_param, name, force_ascii=False)
+        > NAME_MATCH_THRESHOLD
+    )
+
+
 def search_servant(search_param: ServantSearchQueryParams) -> List[int]:
 
     if not search_param.rarity:
@@ -360,17 +368,13 @@ def search_servant(search_param: ServantSearchQueryParams) -> List[int]:
         and masters[search_param.region].mstSvtLimitId[item.id][0].rarity in rarity
     ]
 
-    NAME_MATCH_THRESHOLD = 80
     if search_param.name:
         matches = [
             item
             for item in matches
-            if fuzz.token_set_ratio(search_param.name, item.name) > NAME_MATCH_THRESHOLD
-            or fuzz.token_set_ratio(search_param.name, item.ruby) > NAME_MATCH_THRESHOLD
-            or fuzz.token_set_ratio(
-                search_param.name, SVT_NAME_JPEN.get(item.name, item.name)
-            )
-            > NAME_MATCH_THRESHOLD
+            if match_name(search_param.name, item.name)
+            or match_name(search_param.name, item.ruby)
+            or match_name(search_param.name, SVT_NAME_JPEN.get(item.name, item.name))
         ]
 
     return [item.id for item in matches]
@@ -391,13 +395,12 @@ def search_equip(search_param: EquipSearchQueryParams) -> List[int]:
         and masters[search_param.region].mstSvtLimitId[item.id][0].rarity in rarity
     ]
 
-    NAME_MATCH_THRESHOLD = 80
     if search_param.name:
         matches = [
             item
             for item in matches
-            if fuzz.token_set_ratio(search_param.name, item.name) > NAME_MATCH_THRESHOLD
-            or fuzz.token_set_ratio(search_param.name, item.ruby) > NAME_MATCH_THRESHOLD
+            if match_name(search_param.name, item.name)
+            or match_name(search_param.name, item.ruby)
         ]
 
     return [item.id for item in matches]
