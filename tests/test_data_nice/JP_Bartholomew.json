@@ -569,6 +569,7 @@
       "condQuestPhase": 0,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00302.png",
       "coolDown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 254,
@@ -671,6 +672,7 @@
       "condQuestPhase": 0,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00537.png",
       "coolDown": [8, 8, 8, 8, 8, 7, 7, 7, 7, 6],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 1277,
@@ -780,6 +782,7 @@
       "condQuestPhase": 0,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00304.png",
       "coolDown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 101,
@@ -905,6 +908,7 @@
       "detail": "自身のQuickカードの性能を少しアップ",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00102.png",
       "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 100,
@@ -960,6 +964,7 @@
       "detail": "自身の弱体耐性を少しアップ",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00100.png",
       "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 388,
@@ -1017,6 +1022,11 @@
       "priority": 101,
       "condQuestId": 0,
       "condQuestPhase": 0,
+      "individuality": [
+        { "id": 3001, "name": "normalAttack1" },
+        { "id": 4003, "name": "cardQuick" },
+        { "id": 4007, "name": "cardNP" }
+      ],
       "functions": [
         {
           "funcId": 3854,

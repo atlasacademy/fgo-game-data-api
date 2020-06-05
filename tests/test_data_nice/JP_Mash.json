@@ -379,6 +379,7 @@
       "condQuestPhase": 0,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00400.png",
       "coolDown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 181,
@@ -441,6 +442,7 @@
       "condQuestPhase": 0,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00403.png",
       "coolDown": [9, 9, 9, 9, 9, 8, 8, 8, 8, 7],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 290,
@@ -534,6 +536,7 @@
       "condQuestPhase": 0,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00700.png",
       "coolDown": [8, 8, 8, 8, 8, 7, 7, 7, 7, 6],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 358,
@@ -653,6 +656,7 @@
       "condQuestPhase": 1,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00400.png",
       "coolDown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 181,
@@ -770,6 +774,7 @@
       "condQuestPhase": 3,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00700.png",
       "coolDown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 358,
@@ -873,6 +878,7 @@
       "condQuestPhase": 3,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00403.png",
       "coolDown": [9, 9, 9, 9, 9, 8, 8, 8, 8, 7],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 289,
@@ -1009,6 +1015,7 @@
       "condQuestPhase": 3,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00306.png",
       "coolDown": [6, 6, 6, 6, 6, 5, 5, 5, 5, 4],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 120,
@@ -1113,6 +1120,7 @@
       "condQuestPhase": 3,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00700.png",
       "coolDown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 358,
@@ -1216,6 +1224,7 @@
       "condQuestPhase": 3,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00403.png",
       "coolDown": [9, 9, 9, 9, 9, 8, 8, 8, 8, 7],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 289,
@@ -1352,6 +1361,7 @@
       "condQuestPhase": 3,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00306.png",
       "coolDown": [6, 6, 6, 6, 6, 5, 5, 5, 5, 4],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 120,
@@ -1456,6 +1466,7 @@
       "condQuestPhase": 4,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00306.png",
       "coolDown": [6, 6, 6, 6, 6, 5, 5, 5, 5, 4],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 120,
@@ -1638,6 +1649,7 @@
       "condQuestPhase": 4,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00306.png",
       "coolDown": [6, 6, 6, 6, 6, 5, 5, 5, 5, 4],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 120,
@@ -1817,6 +1829,7 @@
       "detail": "自身の弱体耐性をアップ",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00100.png",
       "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 388,
@@ -1866,6 +1879,7 @@
       "detail": "自身のQuickカードの性能を少しアップ",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00102.png",
       "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 100,
@@ -1929,6 +1943,11 @@
       "priority": 100,
       "condQuestId": 0,
       "condQuestPhase": 0,
+      "individuality": [
+        { "id": 3002, "name": "normalAttack2" },
+        { "id": 4001, "name": "cardArts" },
+        { "id": 4007, "name": "cardNP" }
+      ],
       "functions": []
     },
     {
@@ -1943,6 +1962,11 @@
       "priority": 101,
       "condQuestId": 1000008,
       "condQuestPhase": 4,
+      "individuality": [
+        { "id": 3002, "name": "normalAttack2" },
+        { "id": 4001, "name": "cardArts" },
+        { "id": 4007, "name": "cardNP" }
+      ],
       "functions": [
         {
           "funcId": 183,
@@ -2076,6 +2100,11 @@
       "priority": 104,
       "condQuestId": 1000631,
       "condQuestPhase": 3,
+      "individuality": [
+        { "id": 3002, "name": "normalAttack2" },
+        { "id": 4001, "name": "cardArts" },
+        { "id": 4007, "name": "cardNP" }
+      ],
       "functions": [
         {
           "funcId": 183,
@@ -2266,6 +2295,11 @@
       "priority": 105,
       "condQuestId": 3000124,
       "condQuestPhase": 3,
+      "individuality": [
+        { "id": 3002, "name": "normalAttack2" },
+        { "id": 4001, "name": "cardArts" },
+        { "id": 4007, "name": "cardNP" }
+      ],
       "functions": [
         {
           "funcId": 183,
@@ -2399,6 +2433,11 @@
       "priority": 105,
       "condQuestId": 3000124,
       "condQuestPhase": 3,
+      "individuality": [
+        { "id": 3002, "name": "normalAttack2" },
+        { "id": 4001, "name": "cardArts" },
+        { "id": 4007, "name": "cardNP" }
+      ],
       "functions": [
         {
           "funcId": 183,

@@ -140,6 +140,7 @@ class NiceSkill(BaseModel):
     condQuestPhase: int = -1
     icon: Optional[HttpUrl] = None
     coolDown: List[int]
+    actIndividuality: List[NiceTrait]
     functions: List[NiceFunction]
 
 
@@ -155,6 +156,7 @@ class NiceTd(BaseModel):
     priority: int
     condQuestId: int
     condQuestPhase: int
+    individuality: List[NiceTrait]
     functions: List[NiceFunction]
 
 

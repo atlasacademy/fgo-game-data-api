@@ -186,6 +186,7 @@ def get_nice_skill(
     nice_skill: Dict[str, Any] = {
         "id": skillEntity.mstSkill.id,
         "name": skillEntity.mstSkill.name,
+        "actIndividuality": get_traits_list(skillEntity.mstSkill.actIndividuality),
     }
 
     iconId = skillEntity.mstSkill.iconId
@@ -267,6 +268,7 @@ def get_nice_td(
         "rank": tdEntity.mstTreasureDevice.rank,
         "typeText": tdEntity.mstTreasureDevice.typeText,
         "npNpGain": tdEntity.mstTreasureDeviceLv[0].tdPoint,
+        "individuality": get_traits_list(tdEntity.mstTreasureDevice.individuality),
     }
 
     if tdEntity.mstTreasureDeviceDetail:

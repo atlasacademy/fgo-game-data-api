@@ -234,6 +234,7 @@
       "condQuestPhase": 0,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00306.png",
       "coolDown": [0],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 119,
@@ -326,6 +327,7 @@
       "condQuestPhase": 0,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00207.png",
       "coolDown": [0],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 1951,
@@ -350,6 +352,7 @@
       "condQuestPhase": 0,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00306.png",
       "coolDown": [0],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 119,
@@ -442,6 +445,7 @@
       "condQuestPhase": 0,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00207.png",
       "coolDown": [0],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 1951,

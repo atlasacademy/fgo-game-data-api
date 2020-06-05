@@ -526,6 +526,7 @@
       "condQuestPhase": 0,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00305.png",
       "coolDown": [8, 8, 8, 8, 8, 7, 7, 7, 7, 6],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 110,
@@ -630,6 +631,7 @@
       "condQuestPhase": 0,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00310.png",
       "coolDown": [6, 6, 6, 6, 6, 5, 5, 5, 5, 4],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 288,
@@ -738,6 +740,7 @@
       "condQuestPhase": 0,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00522.png",
       "coolDown": [8, 8, 8, 8, 8, 7, 7, 7, 7, 6],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 878,
@@ -877,6 +880,7 @@
       "detail": "自身の弱体耐性をアップ＆〔死霊〕に対する弱体耐性をアップ",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00100.png",
       "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 388,
@@ -972,6 +976,7 @@
       "detail": "自身のQuickカードの性能を少しアップ",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00102.png",
       "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 100,
@@ -1027,6 +1032,7 @@
       "detail": "自身のクリティカル威力をアップ",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00101.png",
       "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 199,
@@ -1080,6 +1086,7 @@
       "detail": "自身に与ダメージプラス状態を付与",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00326.png",
       "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "actIndividuality": [],
       "functions": [
         {
           "funcId": 265,
@@ -1141,6 +1148,11 @@
       "priority": 101,
       "condQuestId": 0,
       "condQuestPhase": 0,
+      "individuality": [
+        { "id": 3002, "name": "normalAttack2" },
+        { "id": 4001, "name": "cardArts" },
+        { "id": 4007, "name": "cardNP" }
+      ],
       "functions": [
         {
           "funcId": 632,

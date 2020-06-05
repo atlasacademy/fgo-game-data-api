@@ -247,6 +247,10 @@
       "priority": 471,
       "condQuestId": 0,
       "condQuestPhase": 0,
+      "individuality": [
+        { "id": 3001, "name": "normalAttack1" },
+        { "id": 4007, "name": "cardNP" }
+      ],
       "functions": [
         {
           "funcId": 13,
