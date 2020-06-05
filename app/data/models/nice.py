@@ -108,8 +108,8 @@ class NiceBuff(BaseModel):
     type: Union[NiceBuffType, int]
     vals: List[NiceTrait]
     tvals: List[NiceTrait]
-    ckOpIndv: List[NiceTrait]
     ckSelfIndv: List[NiceTrait]
+    ckOpIndv: List[NiceTrait]
 
 
 class NiceFunction(BaseModel):

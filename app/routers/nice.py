@@ -139,54 +139,54 @@ def parse_dataVals(datavals: str, functype: int) -> Dict[str, Union[int, str]]:
 
 
 def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> Dict[str, Any]:
-    buffInfo: Dict[str, Any] = {}
-    buffInfo["id"] = buffEntity.mstBuff.id
-    buffInfo["name"] = buffEntity.mstBuff.name
-    buffInfo["detail"] = buffEntity.mstBuff.detail
+    buffInfo: Dict[str, Any] = {
+        "id": buffEntity.mstBuff.id,
+        "name": buffEntity.mstBuff.name,
+        "detail": buffEntity.mstBuff.detail,
+        "type": get_safe(BUFF_TYPE_NAME, buffEntity.mstBuff.type),
+        "vals": get_traits_list(buffEntity.mstBuff.vals),
+        "tvals": get_traits_list(buffEntity.mstBuff.tvals),
+        "ckOpIndv": get_traits_list(buffEntity.mstBuff.ckOpIndv),
+        "ckSelfIndv": get_traits_list(buffEntity.mstBuff.ckSelfIndv),
+    }
     iconId = buffEntity.mstBuff.iconId
     if iconId != 0:
         buffInfo["icon"] = ASSET_URL["buffIcon"].format(
             base_url=settings.asset_url, region=region, item_id=iconId
         )
-    buffInfo["type"] = get_safe(BUFF_TYPE_NAME, buffEntity.mstBuff.type)
-    buffInfo["vals"] = get_traits_list(buffEntity.mstBuff.vals)
-    buffInfo["tvals"] = get_traits_list(buffEntity.mstBuff.tvals)
-    buffInfo["ckOpIndv"] = get_traits_list(buffEntity.mstBuff.ckOpIndv)
-    buffInfo["ckSelfIndv"] = get_traits_list(buffEntity.mstBuff.ckSelfIndv)
     return buffInfo
 
 
 def get_nice_base_function(
     function: FunctionEntityNoReverse, region: Region
 ) -> Dict[str, Any]:
-    functionInfo: Dict[str, Any] = {}
-    functionInfo["funcId"] = function.mstFunc.id
-    functionInfo["funcPopupText"] = function.mstFunc.popupText
-    functionInfo["functvals"] = get_traits_list(function.mstFunc.tvals)
+    functionInfo: Dict[str, Any] = {
+        "funcId": function.mstFunc.id,
+        "funcPopupText": function.mstFunc.popupText,
+        "functvals": get_traits_list(function.mstFunc.tvals),
+        "funcType": get_safe(FUNC_TYPE_NAME, function.mstFunc.funcType),
+        "funcTargetTeam": get_safe(FUNC_APPLYTARGET_NAME, function.mstFunc.applyTarget),
+        "funcTargetType": get_safe(FUNC_TARGETTYPE_NAME, function.mstFunc.targetType),
+        "buffs": [
+            get_nice_buff(buff, region) for buff in function.mstFunc.expandedVals
+        ],
+    }
     funcPopupIconId = function.mstFunc.popupIconId
     if funcPopupIconId != 0:
         functionInfo["funcPopupIcon"] = ASSET_URL["buffIcon"].format(
             base_url=settings.asset_url, region=region, item_id=funcPopupIconId
         )
-    functionInfo["funcType"] = get_safe(FUNC_TYPE_NAME, function.mstFunc.funcType)
-    functionInfo["funcTargetTeam"] = get_safe(
-        FUNC_APPLYTARGET_NAME, function.mstFunc.applyTarget
-    )
-    functionInfo["funcTargetType"] = get_safe(
-        FUNC_TARGETTYPE_NAME, function.mstFunc.targetType
-    )
-
-    buffs = [get_nice_buff(buff, region) for buff in function.mstFunc.expandedVals]
-    functionInfo["buffs"] = buffs
     return functionInfo
 
 
 def get_nice_skill(
     skillEntity: SkillEntityNoReverse, svtId: int, region: Region
 ) -> Dict[str, Any]:
-    nice_skill: Dict[str, Any] = {}
-    nice_skill["id"] = skillEntity.mstSkill.id
-    nice_skill["name"] = skillEntity.mstSkill.name
+    nice_skill: Dict[str, Any] = {
+        "id": skillEntity.mstSkill.id,
+        "name": skillEntity.mstSkill.name,
+    }
+
     iconId = skillEntity.mstSkill.iconId
     if iconId != 0:
         iconAtlas = 1 if iconId < 520 else 2
@@ -202,13 +202,19 @@ def get_nice_skill(
             skillEntity.mstSkillDetail[0].detail
         )
 
+    # .mstSvtSkill returns the list of SvtSkill with the same skill_id
     chosenSvt = [item for item in skillEntity.mstSvtSkill if item.svtId == svtId]
     if chosenSvt:
-        nice_skill["strengthStatus"] = chosenSvt[0].strengthStatus
-        nice_skill["num"] = chosenSvt[0].num
-        nice_skill["priority"] = chosenSvt[0].priority
-        nice_skill["condQuestId"] = chosenSvt[0].condQuestId
-        nice_skill["condQuestPhase"] = chosenSvt[0].condQuestPhase
+        # Wait for 3.9 for PEP 584 to use |=
+        nice_skill.update(
+            {
+                "strengthStatus": chosenSvt[0].strengthStatus,
+                "num": chosenSvt[0].num,
+                "priority": chosenSvt[0].priority,
+                "condQuestId": chosenSvt[0].condQuestId,
+                "condQuestPhase": chosenSvt[0].condQuestPhase,
+            }
+        )
 
     nice_skill["coolDown"] = [skillEntity.mstSkillLv[0].chargeTurn]
 
@@ -254,25 +260,32 @@ def get_nice_skill(
 def get_nice_td(
     tdEntity: TdEntityNoReverse, svtId: int, region: Region
 ) -> Dict[str, Any]:
-    nice_td: Dict[str, Any] = {}
-    nice_td["id"] = tdEntity.mstTreasureDevice.id
-    nice_td["name"] = tdEntity.mstTreasureDevice.name
-    nice_td["rank"] = tdEntity.mstTreasureDevice.rank
-    nice_td["typeText"] = tdEntity.mstTreasureDevice.typeText
-    nice_td["npNpGain"] = tdEntity.mstTreasureDeviceLv[0].tdPoint
+    nice_td: Dict[str, Any] = {
+        "id": tdEntity.mstTreasureDevice.id,
+        "name": tdEntity.mstTreasureDevice.name,
+        "rank": tdEntity.mstTreasureDevice.rank,
+        "typeText": tdEntity.mstTreasureDevice.typeText,
+        "npNpGain": tdEntity.mstTreasureDeviceLv[0].tdPoint,
+    }
+
     if tdEntity.mstTreasureDeviceDetail:
         nice_td["detail"] = strip_formatting_brackets(
             tdEntity.mstTreasureDeviceDetail[0].detail
         )
 
     chosenSvt = [item for item in tdEntity.mstSvtTreasureDevice if item.svtId == svtId]
-    nice_td["strengthStatus"] = chosenSvt[0].strengthStatus
-    nice_td["num"] = chosenSvt[0].num
-    nice_td["priority"] = chosenSvt[0].priority
-    nice_td["condQuestId"] = chosenSvt[0].condQuestId
-    nice_td["condQuestPhase"] = chosenSvt[0].condQuestPhase
-    nice_td["card"] = CARD_TYPE_NAME[chosenSvt[0].cardId]
-    nice_td["npDistribution"] = chosenSvt[0].damage
+    if chosenSvt:
+        nice_td.update(
+            {
+                "strengthStatus": chosenSvt[0].strengthStatus,
+                "num": chosenSvt[0].num,
+                "priority": chosenSvt[0].priority,
+                "condQuestId": chosenSvt[0].condQuestId,
+                "condQuestPhase": chosenSvt[0].condQuestPhase,
+                "card": CARD_TYPE_NAME[chosenSvt[0].cardId],
+                "npDistribution": chosenSvt[0].damage,
+            }
+        )
 
     combinedFunctionList: List[Dict[str, Any]] = []
 
@@ -343,21 +356,26 @@ def get_nice_item_amount(
 def get_nice_servant(
     region: Region, item_id: int, lang: Optional[Language] = None
 ) -> Dict[str, Any]:
+    # Get expanded servant entity to get function and buff details
     raw_data = gamedata.get_servant_entity(region, item_id, True)
-    nice_data: Dict[str, Any] = {}
+    nice_data: Dict[str, Any] = {
+        "id": raw_data.mstSvt.id,
+        "collectionNo": raw_data.mstSvt.collectionNo,
+        "name": raw_data.mstSvt.name,
+        "gender": GENDER_NAME[raw_data.mstSvt.genderType],
+        "attribute": ATTRIBUTE_NAME[raw_data.mstSvt.attri],
+        "className": CLASS_NAME[raw_data.mstSvt.classId],
+        "cost": raw_data.mstSvt.cost,
+        "instantDeathChance": raw_data.mstSvt.deathRate,
+        "starGen": raw_data.mstSvt.starRate,
+        "traits": get_traits_list(sorted(raw_data.mstSvt.individuality)),
+        "starAbsorb": raw_data.mstSvtLimit[0].criticalWeight,
+        "rarity": raw_data.mstSvtLimit[0].rarity,
+        "cards": [CARD_TYPE_NAME[item] for item in raw_data.mstSvt.cardIds],
+    }
 
-    nice_data["id"] = raw_data.mstSvt.id
-    nice_data["collectionNo"] = raw_data.mstSvt.collectionNo
-    nice_data["name"] = raw_data.mstSvt.name
     if region == Region.JP and lang == Language.en:
         nice_data["name"] = get_safe(SVT_NAME_JPEN, nice_data["name"])
-    nice_data["gender"] = GENDER_NAME[raw_data.mstSvt.genderType]
-    nice_data["attribute"] = ATTRIBUTE_NAME[raw_data.mstSvt.attri]
-    nice_data["className"] = CLASS_NAME[raw_data.mstSvt.classId]
-    nice_data["cost"] = raw_data.mstSvt.cost
-    nice_data["instantDeathChance"] = raw_data.mstSvt.deathRate
-    nice_data["starGen"] = raw_data.mstSvt.starRate
-    nice_data["traits"] = get_traits_list(sorted(raw_data.mstSvt.individuality))
 
     charaGraph: Dict[str, Dict[int, str]] = {}
     faces: Dict[str, Dict[int, str]] = {}
@@ -400,8 +418,6 @@ def get_nice_servant(
         }
     nice_data["extraAssets"] = {"charaGraph": charaGraph, "faces": faces}
 
-    nice_data["starAbsorb"] = raw_data.mstSvtLimit[0].criticalWeight
-    nice_data["rarity"] = raw_data.mstSvtLimit[0].rarity
     lvMax = max([item.lvMax for item in raw_data.mstSvtLimit])
     nice_data["lvMax"] = lvMax
     if raw_data.mstSvt.type == SvtType.NORMAL:
@@ -421,16 +437,18 @@ def get_nice_servant(
     hpGrowth = [
         hpBase + (hpMax - hpBase) * curve // 1000 for curve in growthCurveValues
     ]
+    nice_data.update(
+        {
+            "growthCurve": growthCurve,
+            "atkMax": atkMax,
+            "atkBase": atkBase,
+            "hpMax": hpMax,
+            "hpBase": hpBase,
+            "atkGrowth": atkGrowth,
+            "hpGrowth": hpGrowth,
+        }
+    )
 
-    nice_data["growthCurve"] = growthCurve
-    nice_data["atkMax"] = atkMax
-    nice_data["atkBase"] = atkBase
-    nice_data["hpMax"] = hpMax
-    nice_data["hpBase"] = hpBase
-    nice_data["atkGrowth"] = atkGrowth
-    nice_data["hpGrowth"] = hpGrowth
-
-    nice_data["cards"] = [CARD_TYPE_NAME[item] for item in raw_data.mstSvt.cardIds]
     cardsDistribution = {item.cardId: item.normalDamage for item in raw_data.mstSvtCard}
     if cardsDistribution:
         nice_data["hitsDistribution"] = {
