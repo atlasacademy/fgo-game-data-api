@@ -550,8 +550,9 @@
                 { "id": 5000, "name": "canBeInBattle" },
                 { "id": 4001, "name": "cardArts" }
               ],
+              "ckSelfIndv": [{ "id": 4001, "name": "cardArts" }],
               "ckOpIndv": [],
-              "ckSelfIndv": [{ "id": 4001, "name": "cardArts" }]
+              "maxRate": 5000
             }
           ],
           "svals": {
@@ -594,8 +595,9 @@
                 { "id": 3007, "name": "buffIncreaseDefence" }
               ],
               "tvals": [],
+              "ckSelfIndv": [],
               "ckOpIndv": [],
-              "ckSelfIndv": []
+              "maxRate": 0
             }
           ],
           "svals": {
@@ -650,8 +652,9 @@
                 { "id": 3006, "name": "buffIncreaseDamage" }
               ],
               "tvals": [],
+              "ckSelfIndv": [],
               "ckOpIndv": [],
-              "ckSelfIndv": []
+              "maxRate": 0
             }
           ],
           "svals": {
@@ -688,8 +691,9 @@
               "type": "upStarweight",
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [],
+              "ckSelfIndv": [],
               "ckOpIndv": [],
-              "ckSelfIndv": []
+              "maxRate": 500000
             }
           ],
           "svals": {
@@ -752,8 +756,9 @@
               "type": "upGrantInstantdeath",
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [],
+              "ckSelfIndv": [],
               "ckOpIndv": [],
-              "ckSelfIndv": []
+              "maxRate": 5000
             }
           ],
           "svals": {
@@ -795,8 +800,9 @@
                 { "id": 3031, "name": "buffCritDamageUp" }
               ],
               "tvals": [],
+              "ckSelfIndv": [],
               "ckOpIndv": [],
-              "ckSelfIndv": []
+              "maxRate": 5000
             }
           ],
           "svals": {
@@ -838,8 +844,9 @@
                 { "id": 3028, "name": "buffPowerModStrUp" }
               ],
               "tvals": [{ "id": 1000, "name": "basedOnServant" }],
+              "ckSelfIndv": [],
               "ckOpIndv": [{ "id": 1000, "name": "basedOnServant" }],
-              "ckSelfIndv": []
+              "maxRate": 10000
             }
           ],
           "svals": {
@@ -888,8 +895,9 @@
               "type": "upTolerance",
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [{ "id": 3005, "name": "buffNegativeEffect" }],
+              "ckSelfIndv": [],
               "ckOpIndv": [{ "id": 3005, "name": "buffNegativeEffect" }],
-              "ckSelfIndv": []
+              "maxRate": 5000
             }
           ],
           "svals": {
@@ -930,11 +938,12 @@
                 { "id": 1002, "name": "undead" },
                 { "id": 3005, "name": "buffNegativeEffect" }
               ],
+              "ckSelfIndv": [],
               "ckOpIndv": [
                 { "id": 1002, "name": "undead" },
                 { "id": 3005, "name": "buffNegativeEffect" }
               ],
-              "ckSelfIndv": []
+              "maxRate": 5000
             }
           ],
           "svals": {
@@ -987,8 +996,9 @@
                 { "id": 5000, "name": "canBeInBattle" },
                 { "id": 4003, "name": "cardQuick" }
               ],
+              "ckSelfIndv": [{ "id": 4003, "name": "cardQuick" }],
               "ckOpIndv": [],
-              "ckSelfIndv": [{ "id": 4003, "name": "cardQuick" }]
+              "maxRate": 5000
             }
           ],
           "svals": {
@@ -1039,8 +1049,9 @@
                 { "id": 3031, "name": "buffCritDamageUp" }
               ],
               "tvals": [],
+              "ckSelfIndv": [],
               "ckOpIndv": [],
-              "ckSelfIndv": []
+              "maxRate": 5000
             }
           ],
           "svals": {
@@ -1091,8 +1102,9 @@
                 { "id": 3029, "name": "buffDamagePlus" }
               ],
               "tvals": [],
+              "ckSelfIndv": [],
               "ckOpIndv": [],
-              "ckSelfIndv": []
+              "maxRate": 0
             }
           ],
           "svals": {

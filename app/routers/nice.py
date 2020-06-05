@@ -146,8 +146,9 @@ def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> Dict[str, 
         "type": get_safe(BUFF_TYPE_NAME, buffEntity.mstBuff.type),
         "vals": get_traits_list(buffEntity.mstBuff.vals),
         "tvals": get_traits_list(buffEntity.mstBuff.tvals),
-        "ckOpIndv": get_traits_list(buffEntity.mstBuff.ckOpIndv),
         "ckSelfIndv": get_traits_list(buffEntity.mstBuff.ckSelfIndv),
+        "ckOpIndv": get_traits_list(buffEntity.mstBuff.ckOpIndv),
+        "maxRate": buffEntity.mstBuff.maxRate,
     }
     iconId = buffEntity.mstBuff.iconId
     if iconId != 0:

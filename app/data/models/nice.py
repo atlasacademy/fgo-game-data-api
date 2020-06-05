@@ -110,6 +110,7 @@ class NiceBuff(BaseModel):
     tvals: List[NiceTrait]
     ckSelfIndv: List[NiceTrait]
     ckOpIndv: List[NiceTrait]
+    maxRate: int
 
 
 class NiceFunction(BaseModel):

@@ -297,8 +297,9 @@
                 { "id": 3009, "name": "buffDecreaseDefence" }
               ],
               "tvals": [],
+              "ckSelfIndv": [],
               "ckOpIndv": [],
-              "ckSelfIndv": []
+              "maxRate": 5000
             }
           ],
           "svals": {

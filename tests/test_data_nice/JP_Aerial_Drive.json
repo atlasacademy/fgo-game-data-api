@@ -258,8 +258,9 @@
                 { "id": 5000, "name": "canBeInBattle" },
                 { "id": 4002, "name": "cardBuster" }
               ],
+              "ckSelfIndv": [{ "id": 4002, "name": "cardBuster" }],
               "ckOpIndv": [],
-              "ckSelfIndv": [{ "id": 4002, "name": "cardBuster" }]
+              "maxRate": 5000
             }
           ],
           "svals": {
@@ -290,8 +291,9 @@
                 { "id": 3030, "name": "buffNpDamageUp" }
               ],
               "tvals": [],
+              "ckSelfIndv": [],
               "ckOpIndv": [],
-              "ckSelfIndv": []
+              "maxRate": 5000
             }
           ],
           "svals": {
@@ -372,8 +374,9 @@
                 { "id": 5000, "name": "canBeInBattle" },
                 { "id": 4002, "name": "cardBuster" }
               ],
+              "ckSelfIndv": [{ "id": 4002, "name": "cardBuster" }],
               "ckOpIndv": [],
-              "ckSelfIndv": [{ "id": 4002, "name": "cardBuster" }]
+              "maxRate": 5000
             }
           ],
           "svals": {
@@ -404,8 +407,9 @@
                 { "id": 3030, "name": "buffNpDamageUp" }
               ],
               "tvals": [],
+              "ckSelfIndv": [],
               "ckOpIndv": [],
-              "ckSelfIndv": []
+              "maxRate": 5000
             }
           ],
           "svals": {

@@ -591,8 +591,9 @@
                 { "id": 3030, "name": "buffNpDamageUp" }
               ],
               "tvals": [],
+              "ckSelfIndv": [],
               "ckOpIndv": [],
-              "ckSelfIndv": []
+              "maxRate": 5000
             }
           ],
           "svals": {
@@ -634,8 +635,9 @@
                 { "id": 3027, "name": "buffAtkUp" }
               ],
               "tvals": [],
+              "ckSelfIndv": [],
               "ckOpIndv": [],
-              "ckSelfIndv": []
+              "maxRate": 5000
             }
           ],
           "svals": {
@@ -687,8 +689,9 @@
               "type": "downStarweight",
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [],
+              "ckSelfIndv": [],
               "ckOpIndv": [],
-              "ckSelfIndv": []
+              "maxRate": 100000
             }
           ],
           "svals": {
@@ -741,8 +744,9 @@
                 { "id": 3031, "name": "buffCritDamageUp" }
               ],
               "tvals": [],
+              "ckSelfIndv": [],
               "ckOpIndv": [],
-              "ckSelfIndv": []
+              "maxRate": 5000
             }
           ],
           "svals": {
@@ -800,8 +804,9 @@
                 { "id": 5000, "name": "canBeInBattle" },
                 { "id": 4003, "name": "cardQuick" }
               ],
+              "ckSelfIndv": [{ "id": 4003, "name": "cardQuick" }],
               "ckOpIndv": [],
-              "ckSelfIndv": [{ "id": 4003, "name": "cardQuick" }]
+              "maxRate": 5000
             }
           ],
           "svals": {
@@ -843,8 +848,9 @@
                 { "id": 3038, "name": "buffCritRateDown" }
               ],
               "tvals": [],
+              "ckSelfIndv": [],
               "ckOpIndv": [],
-              "ckSelfIndv": []
+              "maxRate": 5000
             }
           ],
           "svals": {
@@ -923,8 +929,9 @@
                 { "id": 5000, "name": "canBeInBattle" },
                 { "id": 4003, "name": "cardQuick" }
               ],
+              "ckSelfIndv": [{ "id": 4003, "name": "cardQuick" }],
               "ckOpIndv": [],
-              "ckSelfIndv": [{ "id": 4003, "name": "cardQuick" }]
+              "maxRate": 5000
             }
           ],
           "svals": {
@@ -971,8 +978,9 @@
               "type": "upTolerance",
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [{ "id": 3005, "name": "buffNegativeEffect" }],
+              "ckSelfIndv": [],
               "ckOpIndv": [{ "id": 3005, "name": "buffNegativeEffect" }],
-              "ckSelfIndv": []
+              "maxRate": 5000
             }
           ],
           "svals": {
@@ -1069,8 +1077,9 @@
                 { "id": 3009, "name": "buffDecreaseDefence" }
               ],
               "tvals": [],
+              "ckSelfIndv": [],
               "ckOpIndv": [],
-              "ckSelfIndv": []
+              "maxRate": 5000
             }
           ],
           "svals": {
