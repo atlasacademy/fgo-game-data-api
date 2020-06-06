@@ -26,7 +26,8 @@ Nice data for damage calculation:
 [Class Affinity](/export/JP/NiceClassRelation.json),
 [Card Details](/export/JP/NiceCard.json),
 [Constants](/export/JP/NiceConstant.json),
-[Buff Action info](/export/JP/NiceBuffList.ActionList.json).
+[Buff Action info](/export/JP/NiceBuffList.ActionList.json),
+[Master Level info](/export/JP/NiceUserLevel.json).
 Change `JP` to `NA` in the URL if you are looking for NA constants.
 """
 export_links = """
@@ -42,7 +43,7 @@ if settings.documentation_all_nice:
     app_description += export_links
 
 
-app = FastAPI(title="FGO Game data API", description=app_description, version="0.2.0")
+app = FastAPI(title="FGO Game data API", description=app_description, version="0.3.0")
 
 
 app.add_middleware(CORSMiddleware, allow_origins=["*"])

@@ -15,7 +15,6 @@ from app.data.models.enums import (
     Trait,
 )
 
-
 CONSTANT_INCLUDE = {
     "ATTACK_RATE",
     "ATTACK_RATE_RANDOM_MAX",
@@ -112,6 +111,9 @@ CONSTANT_INCLUDE = {
     "TEMPORARY_IGNORE_SLEEP_MODE_FOR_TREASURE_DEVICE_SVT_ID_1",
     "TEMPORARY_IGNORE_SLEEP_MODE_FOR_TREASURE_DEVICE_SVT_ID_2",
     "TREASUREDEVICE_ID_MASHU3",
+    "FRIEND_NUM",
+    "USER_COST",
+    "USER_ACT",
 }
 
 
@@ -210,44 +212,75 @@ def get_nice_buff_action(raw_data: Any) -> Any:
     return out_data
 
 
+TO_EXPORT = [
+    {"input": "mstConstant", "converter": get_nice_constant, "output": "NiceConstant",},
+    {
+        "input": "mstClass",
+        "converter": get_nice_attackrate,
+        "output": "NiceClassAttackRate",
+    },
+    {"input": "mstCard", "converter": get_nice_card_data, "output": "NiceCard"},
+    {
+        "input": "mstAttriRelation",
+        "converter": get_nice_attri_relation,
+        "output": "NiceAttributeRelation",
+    },
+    {
+        "input": "mstClassRelation",
+        "converter": get_nice_class_relation,
+        "output": "NiceClassRelation",
+    },
+    {
+        "input": "mstBuff",
+        "converter": get_nice_buff_action,
+        "output": "NiceBuffList.ActionList",
+    },
+]
+
+
 def export_constant(region: Region, master_path: Path, export_path: Path) -> None:
-    to_export = [
-        {
-            "input": "mstConstant",
-            "converter": get_nice_constant,
-            "output": "NiceConstant",
-        },
-        {
-            "input": "mstClass",
-            "converter": get_nice_attackrate,
-            "output": "NiceClassAttackRate",
-        },
-        {"input": "mstCard", "converter": get_nice_card_data, "output": "NiceCard"},
-        {
-            "input": "mstAttriRelation",
-            "converter": get_nice_attri_relation,
-            "output": "NiceAttributeRelation",
-        },
-        {
-            "input": "mstClassRelation",
-            "converter": get_nice_class_relation,
-            "output": "NiceClassRelation",
-        },
-        {
-            "input": "mstBuff",
-            "converter": get_nice_buff_action,
-            "output": "NiceBuffList.ActionList",
-        },
-    ]
-    for item in to_export:
+    for item in TO_EXPORT:
         print(f'Exporting {item["input"]} ...')
         with open(master_path / f'{item["input"]}.json', "r", encoding="utf-8",) as fp:
             raw_data = json.load(fp)
         converter: Callable = item["converter"]  # type: ignore
-        with open(
-            export_path / region.value / f'{item["output"]}.json', "w", encoding="utf-8"
-        ) as fp:
+        export_file = export_path / region.value / f'{item["output"]}.json'
+        with open(export_file, "w", encoding="utf-8") as fp:
             json.dump(converter(raw_data), fp, ensure_ascii=False)
+
+
+def export_nice_master_lvl(region: Region, master_path: Path, export_path: Path) -> Any:
+    print("Exporting nice master level ...")
+    constant_path = export_path / region.value / f'{TO_EXPORT[0]["output"]}.json'
+    with open(constant_path, "r", encoding="utf-8",) as fp:
+        constant = json.load(fp)
+    with open(master_path / "mstUserExp.json", "r", encoding="utf-8",) as fp:
+        mstUserExp = json.load(fp)
+
+    def get_current_value(base: int, key: str, current: int) -> int:
+        return base + sum([item[key] for item in mstUserExp[: current + 1]])
+
+    def get_total_exp(current: int) -> int:
+        if current == 0:
+            return 0
+        else:
+            return mstUserExp[current - 1]["exp"]  # type: ignore
+
+    nice_data = {
+        lvl["lv"]: {
+            "requiredExp": get_total_exp(lvli),
+            "maxAp": get_current_value(constant["USER_ACT"], "addActMax", lvli),
+            "maxCost": get_current_value(constant["USER_COST"], "addCostMax", lvli),
+            "maxFriend": get_current_value(
+                constant["FRIEND_NUM"], "addFriendMax", lvli
+            ),
+        }
+        for lvli, lvl in enumerate(mstUserExp)
+    }
+
+    export_file = export_path / region.value / "NiceUserLevel.json"
+    with open(export_file, "w", encoding="utf-8") as fp:
+        json.dump(nice_data, fp, ensure_ascii=False)
 
 
 def main() -> None:
@@ -257,6 +290,7 @@ def main() -> None:
     for region, gamedata in region_path:
         print(region)
         export_constant(region, gamedata, export_path)
+        export_nice_master_lvl(region, gamedata, export_path)
 
 
 if __name__ == "__main__":
