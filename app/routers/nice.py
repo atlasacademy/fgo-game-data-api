@@ -525,11 +525,11 @@ if settings.export_all_nice:  # pragma: no cover
             get_nice_item(region_, item_id)
             for item_id in gamedata.masters[region_].mstItemId
         ]
-        with open(f"export/nice_servant_{region_}.json", "w", encoding="utf-8") as fp:
+        with open(f"export/{region_}/nice_servant.json", "w", encoding="utf-8") as fp:
             json.dump(all_servant_data, fp, ensure_ascii=False)
-        with open(f"export/nice_equip_{region_}.json", "w", encoding="utf-8") as fp:
+        with open(f"export/{region_}/nice_equip.json", "w", encoding="utf-8") as fp:
             json.dump(all_equip_data, fp, ensure_ascii=False)
-        with open(f"export/nice_item_{region_}.json", "w", encoding="utf-8") as fp:
+        with open(f"export/{region_}/nice_item.json", "w", encoding="utf-8") as fp:
             json.dump(all_item_data, fp, ensure_ascii=False)
         run_time = time.time() - start_time
         logger.info(f"Finish writing nice {region_} data in {run_time:.4f} seconds.")
@@ -580,8 +580,8 @@ Otherwise, it will look up the actual ID field.
 pre_processed_data_links = """
 
 Preprocessed data:
-- [NA servant](/export/nice_servant_NA.json)
-- [JP servant](/export/nice_servant_JP.json)
+- [NA servant](/export/NA/nice_servant.json)
+- [JP servant](/export/JP/nice_servant.json)
 """
 
 if settings.documentation_all_nice:
@@ -633,8 +633,8 @@ Otherwise, it will look up the actual ID field.
 pre_processed_equip_links = """
 
 Preprocessed data:
-- [NA CE](/export/nice_equip_NA.json)
-- [JP CE](/export/nice_equip_JP.json)
+- [NA CE](/export/NA/nice_equip.json)
+- [JP CE](/export/JP/nice_equip.json)
 """
 
 if settings.documentation_all_nice:
@@ -684,8 +684,8 @@ get_item_description = "Get nice item info from ID"
 pre_processed_item_links = """
 
 Preprocessed data:
-- [NA Item](/export/nice_item_NA.json)
-- [JP Item](/export/nice_item_JP.json)
+- [NA Item](/export/NA/nice_item.json)
+- [JP Item](/export/JP/nice_item.json)
 """
 
 if settings.documentation_all_nice:
