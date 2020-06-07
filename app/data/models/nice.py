@@ -216,6 +216,7 @@ class NiceServant(BaseModel):
     growthCurve: int
     atkGrowth: List[int]
     hpGrowth: List[int]
+    bondGrowth: List[int]
     ascensionMaterials: Dict[int, NiceAscensionMaterial]
     skillMaterials: Dict[int, NiceSkillMaterial]
     skills: List[NiceSkill]

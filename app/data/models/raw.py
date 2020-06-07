@@ -311,6 +311,15 @@ class MstSvtLimitAdd(BaseModel):
     voicePrefix: int  # 11
 
 
+class MstFriendship(BaseModel):
+    itemIds: List[int] = []  # [1000]
+    itemNums: List[int] = []  # [1]
+    id: int  # 1001
+    rank: int  # 12
+    friendship: int  # 4700000
+    qp: int = -1  # 12000000
+
+
 class Master(BaseModel):
     mstBuff: List[MstBuff]
     mstFunc: List[MstFunc]
@@ -323,6 +332,7 @@ class Master(BaseModel):
     mstSvtSkill: List[MstSvtSkill]
     mstSvtLimit: List[MstSvtLimit]
     mstSvtExp: List[MstSvtExp]
+    mstFriendship: List[MstFriendship]
     mstSvtTreasureDevice: List[MstSvtTreasureDevice]
     mstSvtLimitAdd: List[MstSvtLimitAdd]
     mstCombineSkill: List[MstCombineSkill]
@@ -351,6 +361,7 @@ class Master(BaseModel):
     mstSvtLimitId: Dict[int, List[MstSvtLimit]]
     mstSvtLimitAddId: Dict[int, List[MstSvtLimitAdd]]
     mstSvtExpId: Dict[int, Dict[int, MstSvtExp]]
+    mstFriendshipId: Dict[int, List[int]]
 
 
 def orjson_dumps(v, *, default):

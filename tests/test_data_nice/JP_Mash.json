@@ -238,6 +238,7 @@
     11400,
     11518
   ],
+  "bondGrowth": [1000, 2000, 3000, 4000, 5000],
   "ascensionMaterials": {},
   "skillMaterials": {
     "1": {

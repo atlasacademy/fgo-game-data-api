@@ -375,6 +375,9 @@ def get_nice_servant(
         "starAbsorb": raw_data.mstSvtLimit[0].criticalWeight,
         "rarity": raw_data.mstSvtLimit[0].rarity,
         "cards": [CARD_TYPE_NAME[item] for item in raw_data.mstSvt.cardIds],
+        "bondGrowth": gamedata.masters[region].mstFriendshipId.get(
+            raw_data.mstSvt.friendshipId, []
+        ),
     }
 
     if region == Region.JP and lang == Language.en:

@@ -59,7 +59,7 @@ MASTER_WITH_ID = [
     "mstTreasureDevice",
     "mstItem",
 ]
-MASTER_WITHOUT_ID = ["mstSvtExp"]
+MASTER_WITHOUT_ID = ["mstSvtExp", "mstFriendship"]
 SVT_STUFFS = [
     "mstSvtCard",
     "mstSvtLimit",
@@ -111,6 +111,18 @@ for region_name, gamedata in region_path:
         else:
             mstSvtExpId[item["type"]] = {item["lv"]: item}
     master["mstSvtExpId"] = mstSvtExpId
+
+    mstFriendshipId: Dict[int, List[int]] = {}
+    master["mstFriendship"] = sorted(
+        master["mstFriendship"], key=lambda item: item["rank"]
+    )
+    for item in master["mstFriendship"]:
+        if item["friendship"] != -1:
+            if item["id"] in mstFriendshipId:
+                mstFriendshipId[item["id"]].append(item["friendship"])
+            else:
+                mstFriendshipId[item["id"]] = [item["friendship"]]
+    master["mstFriendshipId"] = mstFriendshipId
 
     for extra_stuff in SKILL_STUFFS + TD_STUFFS + SVT_STUFFS:
         master[f"{extra_stuff}Id"] = {}
