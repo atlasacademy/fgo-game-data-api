@@ -22,6 +22,10 @@ class TestMain:
         assert response.status_code == 307
         assert response.headers["Location"] == "/docs"
 
-    def test_export_link(self):
-        response = client.get("/export/NiceCard.json")
+    def test_JP_export_link(self):
+        response = client.get("/export/JP/NiceCard.json")
+        assert response.status_code == 200
+
+    def test_NA_export_link(self):
+        response = client.get("/export/NA/NiceClassAttackRate.json")
         assert response.status_code == 200
