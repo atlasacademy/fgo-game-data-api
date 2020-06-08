@@ -1,13 +1,8 @@
-import logging
-import time
 from copy import deepcopy
-from typing import Dict, List, Set
+from typing import List, Set
 
 from fuzzywuzzy import fuzz, utils
 
-import orjson
-
-from ..config import Settings
 from ..routers.deps import EquipSearchQueryParams, ServantSearchQueryParams
 from .common import Region
 from .enums import (
@@ -16,135 +11,19 @@ from .enums import (
     PLAYABLE_CLASS_NAME_REVERSE,
     TRAIT_NAME_REVERSE,
 )
+from .gamedata import masters
 from .schemas.raw import (
     BuffEntity,
     BuffEntityNoReverse,
     FunctionEntity,
     FunctionEntityNoReverse,
-    Master,
     ServantEntity,
     SkillEntity,
     SkillEntityNoReverse,
-    SvtType,
     TdEntity,
     TdEntityNoReverse,
 )
 from .translations import SVT_NAME_JPEN
-
-
-def is_servant(svt_type: int) -> bool:
-    return svt_type in [
-        SvtType.NORMAL,
-        SvtType.HEROINE,
-    ]
-
-
-def is_equip(svt_type: int) -> bool:
-    return svt_type == SvtType.SERVANT_EQUIP
-
-
-settings = Settings()
-logger = logging.getLogger()
-
-
-masters: Dict[Region, Master] = {}
-MASTER_WITH_ID = [
-    "mstSvt",
-    "mstBuff",
-    "mstFunc",
-    "mstSkill",
-    "mstTreasureDevice",
-    "mstItem",
-]
-MASTER_WITHOUT_ID = ["mstSvtExp", "mstFriendship"]
-SVT_STUFFS = [
-    "mstSvtCard",
-    "mstSvtLimit",
-    "mstCombineSkill",
-    "mstCombineLimit",
-    "mstSvtLimitAdd",
-]
-SKILL_STUFFS = ["mstSkillDetail", "mstSvtSkill", "mstSkillLv"]
-TD_STUFFS = ["mstTreasureDeviceDetail", "mstSvtTreasureDevice", "mstTreasureDeviceLv"]
-region_path = [(Region.NA, settings.na_gamedata), (Region.JP, settings.jp_gamedata)]
-
-logger.info("Loading game data ...")
-start_loading_time = time.time()
-
-for region_name, gamedata in region_path:
-    master = {}
-
-    for entity in (
-        MASTER_WITH_ID + MASTER_WITHOUT_ID + SVT_STUFFS + SKILL_STUFFS + TD_STUFFS
-    ):
-        with open(gamedata / f"{entity}.json", "rb") as fp:
-            master[entity] = orjson.loads(fp.read())
-
-    for entity in MASTER_WITH_ID:
-        master[f"{entity}Id"] = {item["id"]: item for item in master[entity]}
-
-    master["mstSvtServantCollectionNo"] = {
-        item["collectionNo"]: item["id"]
-        for item in master["mstSvt"]
-        if is_servant(item["type"]) and item["collectionNo"] != 0
-    }
-
-    # master["mstSvtServantName"] = {
-    #     item["name"]: item["id"]
-    #     for item in master["mstSvt"]
-    #     if is_servant(item["type"]) and item["collectionNo"] != 0
-    # }
-
-    master["mstSvtEquipCollectionNo"] = {
-        item["collectionNo"]: item["id"]
-        for item in master["mstSvt"]
-        if is_equip(item["type"]) and item["collectionNo"] != 0
-    }
-
-    mstSvtExpId: Dict[int, List[int]] = {}
-    master["mstSvtExp"] = sorted(master["mstSvtExp"], key=lambda item: item["lv"])
-    for item in master["mstSvtExp"]:
-        if item["type"] in mstSvtExpId:
-            mstSvtExpId[item["type"]].append(item["curve"])
-        else:
-            mstSvtExpId[item["type"]] = [item["curve"]]
-    master["mstSvtExpId"] = mstSvtExpId
-
-    mstFriendshipId: Dict[int, List[int]] = {}
-    master["mstFriendship"] = sorted(
-        master["mstFriendship"], key=lambda item: item["rank"]
-    )
-    for item in master["mstFriendship"]:
-        if item["friendship"] != -1:
-            if item["id"] in mstFriendshipId:
-                mstFriendshipId[item["id"]].append(item["friendship"])
-            else:
-                mstFriendshipId[item["id"]] = [item["friendship"]]
-    master["mstFriendshipId"] = mstFriendshipId
-
-    for extra_stuff in SKILL_STUFFS + TD_STUFFS + SVT_STUFFS:
-        master[f"{extra_stuff}Id"] = {}
-        for item in master[extra_stuff]:
-            if "Detail" in extra_stuff:
-                id_name = "id"
-            elif extra_stuff in ["mstCombineSkill", "mstCombineLimit"]:
-                id_name = "id"
-            elif extra_stuff in SKILL_STUFFS:
-                id_name = "skillId"
-            elif extra_stuff in SVT_STUFFS:
-                id_name = "svtId"
-            elif extra_stuff == "mstTreasureDeviceLv":
-                id_name = "treaureDeviceId"
-            elif extra_stuff == "mstSvtTreasureDevice":
-                id_name = "treasureDeviceId"
-            if item[id_name] in master[f"{extra_stuff}Id"]:
-                master[f"{extra_stuff}Id"][item[id_name]].append(item)
-            else:
-                master[f"{extra_stuff}Id"][item[id_name]] = [item]
-    masters[region_name] = Master.parse_obj(master)
-
-data_loading_time = time.time() - start_loading_time
-logger.info(f"Loaded the game data in {data_loading_time:.4f} seconds.")
 
 
 def buff_to_func(region: Region, buff_id: int) -> Set[int]:

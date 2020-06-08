@@ -8,6 +8,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from ..config import Settings
 from ..data import raw
 from ..data.common import Region
+from ..data.gamedata import masters
 from ..data.nice import get_nice_item, get_nice_servant
 from ..data.schemas.nice import Language, NiceEquip, NiceItem, NiceServant
 from .deps import DetailMessage, EquipSearchQueryParams, ServantSearchQueryParams
@@ -23,15 +24,14 @@ if settings.export_all_nice:  # pragma: no cover
         logger.info(f"Writing nice {region_} servant and equip data ...")
         all_servant_data = [
             get_nice_servant(region_, item_id)
-            for item_id in raw.masters[region_].mstSvtServantCollectionNo.values()
+            for item_id in masters[region_].mstSvtServantCollectionNo.values()
         ]
         all_equip_data = [
             get_nice_servant(region_, item_id)
-            for item_id in raw.masters[region_].mstSvtEquipCollectionNo.values()
+            for item_id in masters[region_].mstSvtEquipCollectionNo.values()
         ]
         all_item_data = [
-            get_nice_item(region_, item_id)
-            for item_id in raw.masters[region_].mstItemId
+            get_nice_item(region_, item_id) for item_id in masters[region_].mstItemId
         ]
         with open(f"export/{region_}/nice_servant.json", "w", encoding="utf-8") as fp:
             json.dump(all_servant_data, fp, ensure_ascii=False)
@@ -106,9 +106,9 @@ if settings.documentation_all_nice:
     responses=responses,
 )
 async def get_servant(region: Region, item_id: int, lang: Optional[Language] = None):
-    if item_id in raw.masters[region].mstSvtServantCollectionNo:
-        item_id = raw.masters[region].mstSvtServantCollectionNo[item_id]
-    if item_id in raw.masters[region].mstSvtServantCollectionNo.values():
+    if item_id in masters[region].mstSvtServantCollectionNo:
+        item_id = masters[region].mstSvtServantCollectionNo[item_id]
+    if item_id in masters[region].mstSvtServantCollectionNo.values():
         return get_nice_servant(region, item_id, lang)
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
@@ -159,9 +159,9 @@ if settings.documentation_all_nice:
     responses=responses,
 )
 async def get_equip(region: Region, item_id: int):
-    if item_id in raw.masters[region].mstSvtEquipCollectionNo:
-        item_id = raw.masters[region].mstSvtEquipCollectionNo[item_id]
-    if item_id in raw.masters[region].mstSvtEquipCollectionNo.values():
+    if item_id in masters[region].mstSvtEquipCollectionNo:
+        item_id = masters[region].mstSvtEquipCollectionNo[item_id]
+    if item_id in masters[region].mstSvtEquipCollectionNo.values():
         return get_nice_servant(region, item_id)
     else:
         raise HTTPException(status_code=404, detail="Equip not found")
@@ -182,7 +182,7 @@ async def get_svt(region: Region, item_id: int):
     Only use actual IDs for lookup. Does not convert from collectionNo.
     The endpoint is not limited to servants or equips ids.
     """
-    if item_id in raw.masters[region].mstSvtId:
+    if item_id in masters[region].mstSvtId:
         return get_nice_servant(region, item_id)
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
@@ -210,7 +210,7 @@ if settings.documentation_all_nice:
     responses=responses,
 )
 async def get_item(region: Region, item_id: int):
-    if item_id in raw.masters[region].mstItemId:
+    if item_id in masters[region].mstItemId:
         return get_nice_item(region, item_id)
     else:
         raise HTTPException(status_code=404, detail="Item not found")

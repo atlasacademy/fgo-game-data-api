@@ -5,6 +5,7 @@ from fastapi.responses import Response
 
 from ..data import raw
 from ..data.common import Region
+from ..data.gamedata import masters
 from ..data.schemas.raw import (
     BuffEntity,
     FunctionEntity,
@@ -77,9 +78,9 @@ async def get_servant(region: Region, item_id: int, expand: bool = False):
     from the skill IDs in mstSvt.classPassive.
     Expand all other skills and functions as well.
     """
-    if item_id in raw.masters[region].mstSvtServantCollectionNo:
-        item_id = raw.masters[region].mstSvtServantCollectionNo[item_id]
-    if item_id in raw.masters[region].mstSvtId:
+    if item_id in masters[region].mstSvtServantCollectionNo:
+        item_id = masters[region].mstSvtServantCollectionNo[item_id]
+    if item_id in masters[region].mstSvtId:
         servant_entity = raw.get_servant_entity(region, item_id, expand)
         return Response(
             servant_entity.json(exclude_unset=True), media_type="application/json",
@@ -134,9 +135,9 @@ async def get_equip(region: Region, item_id: int, expand: bool = False):
     from the skill IDs in mstSvt.classPassive.
     Expand all other skills and functions as well.
     """
-    if item_id in raw.masters[region].mstSvtEquipCollectionNo:
-        item_id = raw.masters[region].mstSvtEquipCollectionNo[item_id]
-    if item_id in raw.masters[region].mstSvtId:
+    if item_id in masters[region].mstSvtEquipCollectionNo:
+        item_id = masters[region].mstSvtEquipCollectionNo[item_id]
+    if item_id in masters[region].mstSvtId:
         servant_entity = raw.get_servant_entity(region, item_id, expand)
         return Response(
             servant_entity.json(exclude_unset=True), media_type="application/json",
@@ -164,7 +165,7 @@ async def get_skill(
     - **expand**: Add expanded function objects to mstSkillLv.expandedFuncId
     from the function IDs in mstSkillLv.funcId.
     """
-    if item_id in raw.masters[region].mstSkillId:
+    if item_id in masters[region].mstSkillId:
         skill_entity = raw.get_skill_entity(region, item_id, reverse, expand)
         return Response(
             skill_entity.json(exclude_unset=True), media_type="application/json",
@@ -192,7 +193,7 @@ async def get_td(
     - **expand**: Add expanded function objects to mstTreasureDeviceLv.expandedFuncId
     from the function IDs in mstTreasureDeviceLv.funcId.
     """
-    if item_id in raw.masters[region].mstTreasureDeviceId:
+    if item_id in masters[region].mstTreasureDeviceId:
         td_entity = raw.get_td_entity(region, item_id, reverse, expand)
         return Response(
             td_entity.json(exclude_unset=True), media_type="application/json",
@@ -221,7 +222,7 @@ async def get_function(
     - **expand**: Add buff objects to mstFunc.expandedVals
     from the buff IDs in mstFunc.vals.
     """
-    if item_id in raw.masters[region].mstFuncId:
+    if item_id in masters[region].mstFuncId:
         func_entity = raw.get_func_entity(region, item_id, reverse, expand)
         return Response(
             func_entity.json(exclude_unset=True), media_type="application/json",
@@ -246,7 +247,7 @@ async def get_buff(region: Region, item_id: int, reverse: bool = False):
     and return the reversed function objects.
     Will search recursively and return all entities in path: buff -> func -> skill -> servant.
     """
-    if item_id in raw.masters[region].mstBuffId:
+    if item_id in masters[region].mstBuffId:
         buff_entity = raw.get_buff_entity(region, item_id, reverse)
         return Response(
             buff_entity.json(exclude_unset=True), media_type="application/json",
@@ -267,7 +268,7 @@ async def get_item(region: Region, item_id: int):
     """
     Get the item data from the given ID
     """
-    if item_id in raw.masters[region].mstItemId:
-        return raw.masters[region].mstItemId[item_id]
+    if item_id in masters[region].mstItemId:
+        return masters[region].mstItemId[item_id]
     else:
         raise HTTPException(status_code=404, detail="Item not found")

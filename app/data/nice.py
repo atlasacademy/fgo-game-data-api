@@ -20,7 +20,8 @@ from .enums import (
     SvtType,
     Trait,
 )
-from .raw import get_servant_entity, masters
+from .gamedata import masters
+from .raw import get_servant_entity
 from .schemas.nice import ASSET_URL, Language
 from .schemas.raw import (
     BuffEntityNoReverse,
