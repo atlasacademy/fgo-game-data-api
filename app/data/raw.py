@@ -1,7 +1,7 @@
 import logging
 import time
 from copy import deepcopy
-from typing import Any, Dict, List, Set
+from typing import Dict, List, Set
 
 from fuzzywuzzy import fuzz, utils
 
@@ -89,11 +89,11 @@ for region_name, gamedata in region_path:
         if is_servant(item["type"]) and item["collectionNo"] != 0
     }
 
-    master["mstSvtServantName"] = {
-        item["name"]: item["id"]
-        for item in master["mstSvt"]
-        if is_servant(item["type"]) and item["collectionNo"] != 0
-    }
+    # master["mstSvtServantName"] = {
+    #     item["name"]: item["id"]
+    #     for item in master["mstSvt"]
+    #     if is_servant(item["type"]) and item["collectionNo"] != 0
+    # }
 
     master["mstSvtEquipCollectionNo"] = {
         item["collectionNo"]: item["id"]
@@ -101,12 +101,13 @@ for region_name, gamedata in region_path:
         if is_equip(item["type"]) and item["collectionNo"] != 0
     }
 
-    mstSvtExpId: Dict[int, Dict[str, Any]] = {}
+    mstSvtExpId: Dict[int, List[int]] = {}
+    master["mstSvtExp"] = sorted(master["mstSvtExp"], key=lambda item: item["lv"])
     for item in master["mstSvtExp"]:
         if item["type"] in mstSvtExpId:
-            mstSvtExpId[item["type"]][item["lv"]] = item
+            mstSvtExpId[item["type"]].append(item["curve"])
         else:
-            mstSvtExpId[item["type"]] = {item["lv"]: item}
+            mstSvtExpId[item["type"]] = [item["curve"]]
     master["mstSvtExpId"] = mstSvtExpId
 
     mstFriendshipId: Dict[int, List[int]] = {}

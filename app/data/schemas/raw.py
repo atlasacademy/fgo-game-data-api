@@ -347,7 +347,7 @@ class Master(BaseModel):
     mstItemId: Dict[int, MstItem]
     mstTreasureDeviceId: Dict[int, MstTreasureDevice]
     mstSvtServantCollectionNo: Dict[int, int]
-    mstSvtServantName: Dict[str, int]
+    # mstSvtServantName: Dict[str, int]
     mstSvtEquipCollectionNo: Dict[int, int]
     mstSkillDetailId: Dict[int, List[MstSkillDetail]]
     mstSvtSkillId: Dict[int, List[MstSvtSkill]]
@@ -360,7 +360,7 @@ class Master(BaseModel):
     mstSvtCardId: Dict[int, List[MstSvtCard]]
     mstSvtLimitId: Dict[int, List[MstSvtLimit]]
     mstSvtLimitAddId: Dict[int, List[MstSvtLimitAdd]]
-    mstSvtExpId: Dict[int, Dict[int, MstSvtExp]]
+    mstSvtExpId: Dict[int, List[int]]
     mstFriendshipId: Dict[int, List[int]]
 
 
