@@ -21,7 +21,7 @@ from .enums import (
     Trait,
 )
 from .gamedata import masters
-from .raw import get_servant_entity
+from .raw import get_servant_entity, get_mystic_code_entity
 from .schemas.nice import ASSET_URL, Language
 from .schemas.raw import (
     BuffEntityNoReverse,
@@ -187,18 +187,19 @@ def get_nice_skill(
         )
 
     # .mstSvtSkill returns the list of SvtSkill with the same skill_id
-    chosenSvt = [item for item in skillEntity.mstSvtSkill if item.svtId == svtId]
-    if chosenSvt:
-        # Wait for 3.9 for PEP 584 to use |=
-        nice_skill.update(
-            {
-                "strengthStatus": chosenSvt[0].strengthStatus,
-                "num": chosenSvt[0].num,
-                "priority": chosenSvt[0].priority,
-                "condQuestId": chosenSvt[0].condQuestId,
-                "condQuestPhase": chosenSvt[0].condQuestPhase,
-            }
-        )
+    if skillEntity.mstSvtSkill:
+        chosenSvt = [item for item in skillEntity.mstSvtSkill if item.svtId == svtId]
+        if chosenSvt:
+            # Wait for 3.9 for PEP 584 to use |=
+            nice_skill.update(
+                {
+                    "strengthStatus": chosenSvt[0].strengthStatus,
+                    "num": chosenSvt[0].num,
+                    "priority": chosenSvt[0].priority,
+                    "condQuestId": chosenSvt[0].condQuestId,
+                    "condQuestPhase": chosenSvt[0].condQuestPhase,
+                }
+            )
 
     nice_skill["coolDown"] = [skillEntity.mstSkillLv[0].chargeTurn]
 
@@ -488,4 +489,22 @@ def get_nice_servant(
         for skill in raw_data.mstSvt.expandedClassPassive
     ]
     nice_data["noblePhantasms"] = [get_nice_td(td, item_id, region) for td in actualTDs]
+    return nice_data
+
+
+def get_nice_mystic_code(region: Region, mc_id: int) -> Dict[str, Any]:
+    raw_data = get_mystic_code_entity(region, mc_id, expand=True)
+    nice_data: Dict[str, Any] = {
+        "id": raw_data.mstEquip.id,
+        "name": raw_data.mstEquip.name,
+        "detail": raw_data.mstEquip.detail,
+        "maxLv": raw_data.mstEquip.maxLv,
+    }
+
+    raw_exp = sorted(raw_data.mstEquipExp, key=lambda x: x.lv)
+    nice_data["expRequired"] = [exp.exp for exp in raw_exp if exp.exp != -1]
+
+    nice_data["skills"] = [
+        get_nice_skill(skill, mc_id, region) for skill in raw_data.mstSkill
+    ]
     return nice_data

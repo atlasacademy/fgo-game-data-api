@@ -105,3 +105,14 @@ class TestItem:
     def test_JP_item_not_found(self):
         response = client.get("/nice/JP/item/1009")
         assert response.status_code == 404
+
+
+class TestMC:
+    def test_NA_MC(self):
+        response = client.get("/nice/NA/MC/110")
+        assert response.status_code == 200
+        assert response.json() == get_response_data("NA_MC_LB")
+
+    def test_JP_MC_not_found(self):
+        response = client.get("/nice/JP/MC/8732")
+        assert response.status_code == 404

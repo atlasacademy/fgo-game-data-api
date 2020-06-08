@@ -240,3 +240,12 @@ class NiceEquip(BaseModel):
     atkGrowth: List[int]
     hpGrowth: List[int]
     skills: List[NiceSkill]
+
+
+class NiceMysticCode(BaseModel):
+    id: int
+    name: str
+    detail: str
+    maxLv: int
+    skills: List[NiceSkill]
+    expRequired: List[int]

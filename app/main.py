@@ -35,8 +35,10 @@ export_links = """
 Preprocessed nice data:
 [NA servant](/export/NA/nice_servant.json),
 [NA CE](/export/NA/nice_equip.json),
+[NA MC](/export/NA/nice_mystic_code.json),
 [JP servant](/export/JP/nice_servant.json),
-[JP CE](/export/JP/nice_equip.json).
+[JP CE](/export/JP/nice_equip.json),
+[JP MC](/export/JP/nice_mystic_code.json).
 """
 
 if settings.documentation_all_nice:

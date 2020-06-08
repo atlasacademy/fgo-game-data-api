@@ -9,8 +9,14 @@ from ..config import Settings
 from ..data import raw
 from ..data.common import Region
 from ..data.gamedata import masters
-from ..data.nice import get_nice_item, get_nice_servant
-from ..data.schemas.nice import Language, NiceEquip, NiceItem, NiceServant
+from ..data.nice import get_nice_item, get_nice_servant, get_nice_mystic_code
+from ..data.schemas.nice import (
+    Language,
+    NiceEquip,
+    NiceItem,
+    NiceMysticCode,
+    NiceServant,
+)
 from .deps import DetailMessage, EquipSearchQueryParams, ServantSearchQueryParams
 
 
@@ -33,12 +39,20 @@ if settings.export_all_nice:  # pragma: no cover
         all_item_data = [
             get_nice_item(region_, item_id) for item_id in masters[region_].mstItemId
         ]
+        all_mc_data = [
+            get_nice_mystic_code(region_, item_id)
+            for item_id in masters[region_].mstEquipId
+        ]
         with open(f"export/{region_}/nice_servant.json", "w", encoding="utf-8") as fp:
             json.dump(all_servant_data, fp, ensure_ascii=False)
         with open(f"export/{region_}/nice_equip.json", "w", encoding="utf-8") as fp:
             json.dump(all_equip_data, fp, ensure_ascii=False)
         with open(f"export/{region_}/nice_item.json", "w", encoding="utf-8") as fp:
             json.dump(all_item_data, fp, ensure_ascii=False)
+        with open(
+            f"export/{region_}/nice_mystic_code.json", "w", encoding="utf-8"
+        ) as fp:
+            json.dump(all_mc_data, fp, ensure_ascii=False)
         run_time = time.time() - start_time
         logger.info(f"Finish writing nice {region_} data in {run_time:.4f} seconds.")
 
@@ -186,6 +200,35 @@ async def get_svt(region: Region, item_id: int):
         return get_nice_servant(region, item_id)
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
+
+
+get_mc_description = "Get nice Mystic Code info from ID"
+pre_processed_mc_links = """
+
+Preprocessed data:
+- [NA Mystic Code](/export/NA/nice_mystic_code.json)
+- [JP Mystic Code](/export/JP/nice_mystic_code.json)
+"""
+
+if settings.documentation_all_nice:
+    get_mc_description += pre_processed_mc_links
+
+
+@router.get(
+    "/{region}/MC/{item_id}",
+    summary="Get Mystic Code data",
+    response_description="Mystic Code entity",
+    response_model=NiceMysticCode,
+    response_model_exclude_unset=True,
+    description=get_mc_description,
+    responses=responses,
+)
+async def get_mystic_code(region: Region, item_id: int):
+    if item_id in masters[region].mstEquipId:
+        mc_entity = get_nice_mystic_code(region, item_id)
+        return mc_entity
+    else:
+        raise HTTPException(status_code=404, detail="Mystic Code not found")
 
 
 get_item_description = "Get nice item info from ID"

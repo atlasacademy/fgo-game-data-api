@@ -1,0 +1,228 @@
+{
+  "id": 110,
+  "name": "Mystic Code: Chaldea Uniform - Arctic",
+  "detail": "A Mystic Code created in anticipation of the wearer encountering extreme cold.",
+  "maxLv": 10,
+  "skills": [
+    {
+      "id": 980031,
+      "name": "Purifying Recovery",
+      "detail": "Restore HP & remove DEF Debuffs for one ally",
+      "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png",
+      "coolDown": [12, 12, 12, 12, 12, 11, 11, 11, 11, 10],
+      "actIndividuality": [],
+      "functions": [
+        {
+          "funcId": 442,
+          "funcType": "gainHp",
+          "funcTargetType": "ptOne",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "",
+          "functvals": [],
+          "buffs": [],
+          "svals": {
+            "Rate": [
+              1000,
+              1000,
+              1000,
+              1000,
+              1000,
+              1000,
+              1000,
+              1000,
+              1000,
+              1000
+            ],
+            "Value": [
+              1000,
+              1200,
+              1400,
+              1600,
+              1800,
+              2000,
+              2200,
+              2400,
+              2600,
+              3000
+            ]
+          }
+        },
+        {
+          "funcId": 2222,
+          "funcType": "subState",
+          "funcTargetType": "ptOne",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "Remove DEF Debuff",
+          "functvals": [],
+          "buffs": [],
+          "svals": {
+            "Rate": [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000]
+          }
+        }
+      ]
+    },
+    {
+      "id": 980032,
+      "name": "Illusionary Buff",
+      "detail": "Increase ATK (1 turn) & increase NP Strength (1 turn) for one ally",
+      "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00300.png",
+      "coolDown": [15, 15, 15, 15, 15, 14, 14, 14, 14, 13],
+      "actIndividuality": [],
+      "functions": [
+        {
+          "funcId": 150,
+          "funcType": "addStateShort",
+          "funcTargetType": "ptOne",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "ATK Up",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_300.png",
+          "functvals": [],
+          "buffs": [
+            {
+              "id": 126,
+              "name": "ATK Up",
+              "detail": "Increase ATK",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_300.png",
+              "type": "upAtk",
+              "vals": [
+                { "id": 3004, "name": "buffPositiveEffect" },
+                { "id": 3006, "name": "buffIncreaseDamage" },
+                { "id": 3027, "name": "buffAtkUp" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 5000
+            }
+          ],
+          "svals": {
+            "Rate": [
+              5000,
+              5000,
+              5000,
+              5000,
+              5000,
+              5000,
+              5000,
+              5000,
+              5000,
+              5000
+            ],
+            "Turn": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            "Count": [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+            "Value": [200, 220, 240, 260, 280, 300, 320, 340, 360, 400]
+          }
+        },
+        {
+          "funcId": 252,
+          "funcType": "addStateShort",
+          "funcTargetType": "ptOne",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "NP Strength Up",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_310.png",
+          "functvals": [],
+          "buffs": [
+            {
+              "id": 138,
+              "name": "NP Strength Up",
+              "detail": "Increase NP damage",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_310.png",
+              "type": "upNpdamage",
+              "vals": [
+                { "id": 3004, "name": "buffPositiveEffect" },
+                { "id": 3006, "name": "buffIncreaseDamage" },
+                { "id": 3030, "name": "buffNpDamageUp" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 5000
+            }
+          ],
+          "svals": {
+            "Rate": [
+              5000,
+              5000,
+              5000,
+              5000,
+              5000,
+              5000,
+              5000,
+              5000,
+              5000,
+              5000
+            ],
+            "Turn": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            "Count": [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+            "Value": [100, 110, 120, 130, 140, 150, 160, 170, 180, 200]
+          }
+        }
+      ]
+    },
+    {
+      "id": 980033,
+      "name": "Predictive Evasion",
+      "detail": "Apply Evade to one ally (1 time, 3 turns)",
+      "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00402.png",
+      "coolDown": [12, 12, 12, 12, 12, 11, 11, 11, 11, 10],
+      "actIndividuality": [],
+      "functions": [
+        {
+          "funcId": 284,
+          "funcType": "addState",
+          "funcTargetType": "ptOne",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "Evade",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_305.png",
+          "functvals": [],
+          "buffs": [
+            {
+              "id": 151,
+              "name": "Evade",
+              "detail": "Reduce ATK damage taken to 0",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_305.png",
+              "type": "avoidance",
+              "vals": [
+                { "id": 3004, "name": "buffPositiveEffect" },
+                { "id": 3018, "name": "buffEvadeAndInvincible" },
+                { "id": 3021, "name": "buffEvade" },
+                { "id": 3007, "name": "buffIncreaseDefence" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 0
+            }
+          ],
+          "svals": {
+            "Rate": [
+              5000,
+              5000,
+              5000,
+              5000,
+              5000,
+              5000,
+              5000,
+              5000,
+              5000,
+              5000
+            ],
+            "Turn": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+            "Count": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+          }
+        }
+      ]
+    }
+  ],
+  "expRequired": [
+    3451800,
+    10355400,
+    20710800,
+    34518000,
+    51777000,
+    72487800,
+    96650400,
+    124264800,
+    155331000
+  ]
+}

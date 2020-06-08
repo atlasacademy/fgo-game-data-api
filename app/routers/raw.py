@@ -164,12 +164,12 @@ async def get_mystic_code(region: Region, item_id: int, expand: bool = False):
     Expand all other skills and functions as well.
     """
     if item_id in masters[region].mstEquipId:
-        mc_entity = raw.get_mystic_code(region, item_id, expand)
+        mc_entity = raw.get_mystic_code_entity(region, item_id, expand)
         return Response(
             mc_entity.json(exclude_unset=True), media_type="application/json",
         )
     else:
-        raise HTTPException(status_code=404, detail="Equip not found")
+        raise HTTPException(status_code=404, detail="Mystic Code not found")
 
 
 @router.get(

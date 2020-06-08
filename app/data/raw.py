@@ -334,7 +334,7 @@ def search_equip(search_param: EquipSearchQueryParams) -> List[int]:
     return [item.id for item in matches]
 
 
-def get_mystic_code(
+def get_mystic_code_entity(
     region: Region, mc_id: int, expand: bool = False
 ) -> MysticCodeEntity:
     mc_entity = MysticCodeEntity(
