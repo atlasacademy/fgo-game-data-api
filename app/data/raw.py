@@ -7,20 +7,16 @@ from fuzzywuzzy import fuzz, utils
 
 import orjson
 
-from .translations import SVT_NAME_JPEN
-from .models.common import (
-    Region,
-    Settings,
-    EquipSearchQueryParams,
-    ServantSearchQueryParams,
-)
-from .models.enums import (
+from ..config import Settings
+from ..routers.deps import EquipSearchQueryParams, ServantSearchQueryParams
+from .common import Region
+from .enums import (
     ATTRIBUTE_NAME_REVERSE,
     GENDER_NAME_REVERSE,
     PLAYABLE_CLASS_NAME_REVERSE,
     TRAIT_NAME_REVERSE,
 )
-from .models.raw import (
+from .schemas.raw import (
     BuffEntity,
     BuffEntityNoReverse,
     FunctionEntity,
@@ -33,6 +29,7 @@ from .models.raw import (
     TdEntity,
     TdEntityNoReverse,
 )
+from .translations import SVT_NAME_JPEN
 
 
 def is_servant(svt_type: int) -> bool:

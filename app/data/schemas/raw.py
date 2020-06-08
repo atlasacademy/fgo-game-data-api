@@ -4,7 +4,7 @@ from pydantic import BaseModel
 
 import orjson
 
-from .enums import SvtType
+from ..enums import SvtType
 
 
 class MstBuff(BaseModel):

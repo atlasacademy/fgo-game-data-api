@@ -1,4 +1,4 @@
-from app.data.models.common import Settings
+from app.config import Settings
 
 
 class TestSettings:
