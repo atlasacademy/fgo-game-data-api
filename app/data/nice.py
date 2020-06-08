@@ -177,12 +177,8 @@ def get_nice_skill(
 
     iconId = skillEntity.mstSkill.iconId
     if iconId != 0:
-        iconAtlas = 1 if iconId < 520 else 2
         nice_skill["icon"] = ASSET_URL["skillIcon"].format(
-            base_url=settings.asset_url,
-            region=region,
-            atlas_id=iconAtlas,
-            item_id=iconId,
+            base_url=settings.asset_url, region=region, item_id=iconId,
         )
 
     if skillEntity.mstSkillDetail:
