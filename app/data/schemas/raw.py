@@ -276,6 +276,35 @@ class MstCombineSkill(BaseModel):
     qp: int  # 5000000
 
 
+class MstEquip(BaseModel):
+    id: int  # 20
+    name: str  # "Mystic Code: Chaldea Combat Uniform"
+    detail: str  # "Created by the tech team at the Chaldea Security Organization"
+    condUserLv: int  # 1
+    maxLv: int  # 10
+    maleImageId: int  # 21
+    femaleImageId: int  # 22
+    imageId: int  # 20
+    maleSpellId: int  # 1
+    femaleSpellId: int  # 2
+
+
+class MstEquipExp(BaseModel):
+    equipId: int  # 160
+    lv: int  # 5
+    exp: int  # 1218000
+    skillLv1: int  # 5
+    skillLv2: int  # 5
+    skillLv3: int  # 5
+
+
+class MstEquipSkill(BaseModel):
+    equipId: int  # 1
+    num: int  # 1
+    skillId: int  # 980001
+    condLv: int  # 0
+
+
 class MstItem(BaseModel):
     individuality: List[int]  # [],
     script: Dict[str, Union[int, str]]  # {},
@@ -366,6 +395,10 @@ class Master(BaseModel):
     mstSvtLimitAddId: Dict[int, List[MstSvtLimitAdd]]
     mstSvtExpId: Dict[int, List[int]]
     mstFriendshipId: Dict[int, List[int]]
+    mstEquip: List[MstEquip]
+    mstEquipId: Dict[int, MstEquip]
+    mstEquipExp: List[MstEquipExp]
+    mstEquipSkill: List[MstEquipSkill]
 
 
 def orjson_dumps(v, *, default):
@@ -414,6 +447,16 @@ class FunctionEntity(FunctionEntityNoReverse):
 
 class BuffEntity(BuffEntityNoReverse):
     reverseFunctions: List[FunctionEntity] = []
+
+    class Config:
+        json_loads = orjson.loads
+        json_dumps = orjson_dumps
+
+
+class MysticCodeEntity(BaseModel):
+    mstEquip: MstEquip
+    mstSkill: List[SkillEntityNoReverse]
+    mstEquipExp: List[MstEquipExp]
 
     class Config:
         json_loads = orjson.loads

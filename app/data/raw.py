@@ -17,6 +17,7 @@ from .schemas.raw import (
     BuffEntityNoReverse,
     FunctionEntity,
     FunctionEntityNoReverse,
+    MysticCodeEntity,
     ServantEntity,
     SkillEntity,
     SkillEntityNoReverse,
@@ -331,3 +332,21 @@ def search_equip(search_param: EquipSearchQueryParams) -> List[int]:
         ]
 
     return [item.id for item in matches]
+
+
+def get_mystic_code(
+    region: Region, mc_id: int, expand: bool = False
+) -> MysticCodeEntity:
+    mc_entity = MysticCodeEntity(
+        mstEquip=masters[region].mstEquipId[mc_id],
+        mstSkill=[
+            get_skill_entity_no_reverse(region, skill, expand)
+            for skill in [
+                mc.skillId
+                for mc in masters[region].mstEquipSkill
+                if mc.equipId == mc_id
+            ]
+        ],
+        mstEquipExp=[mc for mc in masters[region].mstEquipExp if mc.equipId == mc_id],
+    )
+    return mc_entity

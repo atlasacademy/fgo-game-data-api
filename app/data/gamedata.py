@@ -32,8 +32,9 @@ MASTER_WITH_ID = [
     "mstSkill",
     "mstTreasureDevice",
     "mstItem",
+    "mstEquip",
 ]
-MASTER_WITHOUT_ID = ["mstSvtExp", "mstFriendship"]
+MASTER_WITHOUT_ID = ["mstSvtExp", "mstFriendship", "mstEquipExp", "mstEquipSkill"]
 SVT_STUFFS = [
     "mstSvtCard",
     "mstSvtLimit",

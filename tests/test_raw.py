@@ -202,11 +202,22 @@ class TestBuff:
 
 
 class TestItem:
-    def test_NA_item(self):
+    def test_JP_item(self):
         response = client.get("/raw/JP/item/7103")
         assert response.status_code == 200
         assert response.json() == get_response_data("JP_item_Lancer_Monument")
 
     def test_JP_item_not_found(self):
         response = client.get("/raw/JP/item/941234")
+        assert response.status_code == 404
+
+
+class TestMC:
+    def test_NA_MC(self):
+        response = client.get("/raw/JP/MC/20")
+        assert response.status_code == 200
+        assert response.json() == get_response_data("JP_MC_Plugsuit")
+
+    def test_JP_item_not_found(self):
+        response = client.get("/raw/JP/MC/62537")
         assert response.status_code == 404

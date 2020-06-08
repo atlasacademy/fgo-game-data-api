@@ -10,6 +10,7 @@ from ..data.schemas.raw import (
     BuffEntity,
     FunctionEntity,
     ItemEntity,
+    MysticCodeEntity,
     ServantEntity,
     SkillEntity,
     TdEntity,
@@ -141,6 +142,31 @@ async def get_equip(region: Region, item_id: int, expand: bool = False):
         servant_entity = raw.get_servant_entity(region, item_id, expand)
         return Response(
             servant_entity.json(exclude_unset=True), media_type="application/json",
+        )
+    else:
+        raise HTTPException(status_code=404, detail="Equip not found")
+
+
+@router.get(
+    "/{region}/MC/{item_id}",
+    summary="Get Mystic Code data",
+    response_description="Mystic Code entity",
+    response_model=MysticCodeEntity,
+    response_model_exclude_unset=True,
+    responses=responses,
+)
+async def get_mystic_code(region: Region, item_id: int, expand: bool = False):
+    """
+    Get Mystic Code info from ID
+
+    - **expand**: Add expanded skill objects to mstSvt.expandedClassPassive
+    from the skill IDs in mstSvt.classPassive.
+    Expand all other skills and functions as well.
+    """
+    if item_id in masters[region].mstEquipId:
+        mc_entity = raw.get_mystic_code(region, item_id, expand)
+        return Response(
+            mc_entity.json(exclude_unset=True), media_type="application/json",
         )
     else:
         raise HTTPException(status_code=404, detail="Equip not found")
