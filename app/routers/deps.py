@@ -1,34 +1,11 @@
 import inspect
-from enum import Enum
 from typing import List, Optional, Union
 
 from fastapi import Query
-from pydantic import BaseModel, BaseSettings, DirectoryPath, HttpUrl, validator
+from pydantic import BaseModel
 
-from .enums import Attribute, Gender, PlayableSvtClass, Trait
-
-
-class Region(str, Enum):
-    NA = "NA"
-    JP = "JP"
-
-
-class Settings(BaseSettings):
-    na_gamedata: DirectoryPath
-    jp_gamedata: DirectoryPath
-    asset_url: HttpUrl
-    export_all_nice: bool = False
-    documentation_all_nice: bool = False
-
-    @validator("asset_url")
-    def remove_last_slash(cls, value):
-        if value.endswith("/"):
-            return value[:-1]
-        else:
-            return value
-
-    class Config:
-        env_file = ".env"
+from ..data.common import Region
+from ..data.enums import Attribute, Gender, PlayableSvtClass, Trait
 
 
 class DetailMessage(BaseModel):

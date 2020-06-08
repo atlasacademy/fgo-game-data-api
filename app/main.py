@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
 
-from .data.models.common import Settings
+from .config import Settings
 from .routers import nice, raw
 
 

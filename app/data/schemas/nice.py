@@ -3,7 +3,7 @@ from typing import Dict, List, Optional, Union
 
 from pydantic import BaseModel, HttpUrl
 
-from .enums import (
+from ..enums import (
     Attribute,
     CardType,
     FuncApplyTarget,
