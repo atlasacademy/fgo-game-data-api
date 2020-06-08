@@ -28,6 +28,9 @@ ASSET_URL: Dict[str, str] = {
     "buffIcon": "{base_url}/{region}/BuffIcons/bufficon_{item_id}.png",
     "items": "{base_url}/{region}/Items/{item_id}.png",
     "face": "{base_url}/{region}/Faces/f_{item_id}{i}.png",
+    "mcitem": "{base_url}/{region}/Items/masterequip{item_id:05}.png",
+    "mcmasterFace": "{base_url}/{region}/MasterFigure/equip{item_id:05}.png",
+    "mcmasterFigure": "{base_url}/{region}/MasterFace/equip{item_id:05}.png",
 }
 
 
@@ -242,10 +245,22 @@ class NiceEquip(BaseModel):
     skills: List[NiceSkill]
 
 
+class MCAssets(BaseModel):
+    male: HttpUrl
+    female: HttpUrl
+
+
+class ExtraMCAssets(BaseModel):
+    item: MCAssets
+    masterFace: MCAssets
+    masterFigure: MCAssets
+
+
 class NiceMysticCode(BaseModel):
     id: int
     name: str
     detail: str
     maxLv: int
+    extraAssets: ExtraMCAssets
     skills: List[NiceSkill]
     expRequired: List[int]

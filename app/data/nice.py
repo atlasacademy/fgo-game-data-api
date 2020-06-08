@@ -499,6 +499,21 @@ def get_nice_mystic_code(region: Region, mc_id: int) -> Dict[str, Any]:
         "name": raw_data.mstEquip.name,
         "detail": raw_data.mstEquip.detail,
         "maxLv": raw_data.mstEquip.maxLv,
+        "extraAssets": {
+            asset_category: {
+                "male": ASSET_URL[f"mc{asset_category}"].format(
+                    base_url=settings.asset_url,
+                    region=region,
+                    item_id=raw_data.mstEquip.maleImageId,
+                ),
+                "female": ASSET_URL[f"mc{asset_category}"].format(
+                    base_url=settings.asset_url,
+                    region=region,
+                    item_id=raw_data.mstEquip.femaleImageId,
+                ),
+            }
+            for asset_category in ["item", "masterFace", "masterFigure"]
+        },
     }
 
     raw_exp = sorted(raw_data.mstEquipExp, key=lambda x: x.lv)

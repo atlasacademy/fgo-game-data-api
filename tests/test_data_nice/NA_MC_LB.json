@@ -3,6 +3,20 @@
   "name": "Mystic Code: Chaldea Uniform - Arctic",
   "detail": "A Mystic Code created in anticipation of the wearer encountering extreme cold.",
   "maxLv": 10,
+  "extraAssets": {
+    "item": {
+      "male": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00111.png",
+      "female": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00112.png"
+    },
+    "masterFace": {
+      "male": "https://assets.atlasacademy.io/GameData/NA/MasterFigure/equip00111.png",
+      "female": "https://assets.atlasacademy.io/GameData/NA/MasterFigure/equip00112.png"
+    },
+    "masterFigure": {
+      "male": "https://assets.atlasacademy.io/GameData/NA/MasterFace/equip00111.png",
+      "female": "https://assets.atlasacademy.io/GameData/NA/MasterFace/equip00112.png"
+    }
+  },
   "skills": [
     {
       "id": 980031,
