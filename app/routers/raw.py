@@ -9,7 +9,7 @@ from ..data.gamedata import masters
 from ..data.schemas.raw import (
     BuffEntity,
     FunctionEntity,
-    MstItem,
+    ItemEntity,
     ServantEntity,
     SkillEntity,
     TdEntity,
@@ -260,7 +260,7 @@ async def get_buff(region: Region, item_id: int, reverse: bool = False):
     "/{region}/item/{item_id}",
     summary="Get Item data",
     response_description="Item Entity",
-    response_model=MstItem,
+    response_model=ItemEntity,
     response_model_exclude_unset=True,
     responses=responses,
 )
@@ -269,6 +269,6 @@ async def get_item(region: Region, item_id: int):
     Get the item data from the given ID
     """
     if item_id in masters[region].mstItemId:
-        return masters[region].mstItemId[item_id]
+        return {"mstItem": masters[region].mstItemId[item_id]}
     else:
         raise HTTPException(status_code=404, detail="Item not found")

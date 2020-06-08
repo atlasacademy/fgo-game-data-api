@@ -297,6 +297,10 @@ class MstItem(BaseModel):
     endedAt: int  # 1910908800
 
 
+class ItemEntity(BaseModel):
+    mstItem: MstItem
+
+
 class MstSvtLimitAdd(BaseModel):
     individuality: List[int]  # [],
     script: Dict[str, Union[int, str]]  # {},
