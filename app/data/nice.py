@@ -418,9 +418,7 @@ def get_nice_servant(
     hpMax = raw_data.mstSvtLimit[0].hpMax
     hpBase = raw_data.mstSvtLimit[0].hpBase
     growthCurve = raw_data.mstSvt.expType
-    growthCurveValues = [
-        masters[region].mstSvtExpId[growthCurve][lv].curve for lv in range(1, lvMax + 1)
-    ]
+    growthCurveValues = masters[region].mstSvtExpId[growthCurve][1 : lvMax + 1]
     atkGrowth = [
         atkBase + (atkMax - atkBase) * curve // 1000 for curve in growthCurveValues
     ]
