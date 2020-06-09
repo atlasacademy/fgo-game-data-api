@@ -1,9 +1,11 @@
+import inspect
 import logging
 import time
 
 from fastapi import FastAPI, Request, status
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import RedirectResponse, Response
+from fastapi.openapi.utils import get_openapi
+from fastapi.responses import HTMLResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
 
 from .config import Settings
@@ -45,7 +47,12 @@ if settings.documentation_all_nice:
     app_description += export_links
 
 
-app = FastAPI(title="FGO Game data API", description=app_description, version="0.3.0")
+app = FastAPI(
+    title="FGO Game data API",
+    description=app_description,
+    version="0.3.0",
+    docs_url=None,
+)
 
 
 app.add_middleware(CORSMiddleware, allow_origins=["*"])
@@ -84,3 +91,66 @@ async def root():
 
 
 app.mount("/export", StaticFiles(directory="export"), name="export")
+
+
+def custom_openapi():
+    if app.openapi_schema:
+        return app.openapi_schema
+
+    openapi_schema = get_openapi(
+        title=app.title,
+        version=app.version,
+        description=app.description,
+        routes=app.routes,
+    )
+
+    openapi_schema["tags"] = [
+        {"name": "nice", "description": "Nicely processed data"},
+        {"name": "raw", "description": "Raw game data"},
+        {"name": "default", "description": "Other miscellaneous stuffs"},
+    ]
+
+    app.openapi_schema = openapi_schema
+    return app.openapi_schema
+
+
+app.openapi = custom_openapi  # type: ignore
+
+
+def get_swagger_ui_html(
+    *,
+    openapi_url: str,
+    title: str,
+    swagger_js_url: str = "https://cdn.jsdelivr.net/npm/swagger-ui-dist@3/swagger-ui-bundle.js",
+    swagger_css_url: str = "https://cdn.jsdelivr.net/npm/swagger-ui-dist@3/swagger-ui.css",
+) -> HTMLResponse:
+
+    html = f"""
+    <!DOCTYPE html>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <link type="text/css" rel="stylesheet" href="{swagger_css_url}">
+    <div id="swagger-ui"></div>
+    <script src="{swagger_js_url}"></script>
+    <script>
+    async function main() {{
+        let spec = await fetch("{openapi_url}").then((resp) => resp.json());
+        SwaggerUIBundle({{
+            spec: spec,
+            dom_id: '#swagger-ui',
+            presets: [
+                SwaggerUIBundle.presets.apis,
+                SwaggerUIBundle.SwaggerUIStandalonePreset
+            ],
+            layout: "BaseLayout",
+            deepLinking: true
+        }})
+    }}
+    main();
+    </script>"""
+    return HTMLResponse(inspect.cleandoc(html))
+
+
+@app.get("/docs", include_in_schema=False)
+async def custom_swagger_ui_html():
+    return get_swagger_ui_html(openapi_url=str(app.openapi_url), title=app.title)
