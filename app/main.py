@@ -78,14 +78,7 @@ app.include_router(
 )
 
 
-@app.get(
-    "/",
-    status_code=status.HTTP_307_TEMPORARY_REDIRECT,
-    response_class=Response,
-    summary="Redirect to /docs",
-    tags=["default"],
-    response_description="307 redirect to /docs",
-)
+@app.get("/", include_in_schema=False)
 async def root():
     return RedirectResponse("/docs")
 
@@ -105,9 +98,8 @@ def custom_openapi():
     )
 
     openapi_schema["tags"] = [
-        {"name": "nice", "description": "Nicely processed data"},
+        {"name": "nice", "description": "Nicely bundled data"},
         {"name": "raw", "description": "Raw game data"},
-        {"name": "default", "description": "Other miscellaneous stuffs"},
     ]
 
     app.openapi_schema = openapi_schema
