@@ -2,8 +2,9 @@ import json
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Union
 
-from app.data.models.common import Region, Settings
-from app.data.models.enums import (
+from app.config import Settings
+from app.data.common import Region
+from app.data.enums import (
     ATTRIBUTE_NAME,
     BUFF_ACTION_NAME,
     BUFF_LIMIT_NAME,
@@ -241,7 +242,7 @@ TO_EXPORT = [
 def export_constant(region: Region, master_path: Path, export_path: Path) -> None:
     for item in TO_EXPORT:
         print(f'Exporting {item["input"]} ...')
-        with open(master_path / f'{item["input"]}.json', "r", encoding="utf-8",) as fp:
+        with open(master_path / f'{item["input"]}.json', "r", encoding="utf-8") as fp:
             raw_data = json.load(fp)
         converter: Callable = item["converter"]  # type: ignore
         export_file = export_path / region.value / f'{item["output"]}.json'
@@ -252,9 +253,9 @@ def export_constant(region: Region, master_path: Path, export_path: Path) -> Non
 def export_nice_master_lvl(region: Region, master_path: Path, export_path: Path) -> Any:
     print("Exporting nice master level ...")
     constant_path = export_path / region.value / f'{TO_EXPORT[0]["output"]}.json'
-    with open(constant_path, "r", encoding="utf-8",) as fp:
+    with open(constant_path, "r", encoding="utf-8") as fp:
         constant = json.load(fp)
-    with open(master_path / "mstUserExp.json", "r", encoding="utf-8",) as fp:
+    with open(master_path / "mstUserExp.json", "r", encoding="utf-8") as fp:
         mstUserExp = json.load(fp)
 
     def get_current_value(base: int, key: str, current: int) -> int:
