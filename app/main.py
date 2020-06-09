@@ -2,10 +2,10 @@ import inspect
 import logging
 import time
 
-from fastapi import FastAPI, Request, status
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.utils import get_openapi
-from fastapi.responses import HTMLResponse, RedirectResponse, Response
+from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
 from .config import Settings
@@ -16,7 +16,10 @@ logger = logging.getLogger()
 settings = Settings()
 
 
-app_description = """Provide raw and processed FGO game data.
+app_short_description = "Provide raw and nicely bundled FGO game data."
+
+
+app_more_description = """
 
 Available documentation styles: [Swagger UI](/docs), [Redoc](/redoc).
 
@@ -43,12 +46,13 @@ Preprocessed nice data:
 [JP MC](/export/JP/nice_mystic_code.json).
 """
 
+app_description = app_short_description + app_more_description
 if settings.documentation_all_nice:
     app_description += export_links
 
 
 app = FastAPI(
-    title="FGO Game data API",
+    title="FGO game data API",
     description=app_description,
     version="0.3.0",
     docs_url=None,
@@ -113,29 +117,32 @@ def get_swagger_ui_html(
     *,
     openapi_url: str,
     title: str,
+    description: str,
     swagger_js_url: str = "https://cdn.jsdelivr.net/npm/swagger-ui-dist@3/swagger-ui-bundle.js",
     swagger_css_url: str = "https://cdn.jsdelivr.net/npm/swagger-ui-dist@3/swagger-ui.css",
 ) -> HTMLResponse:
 
     html = f"""
     <!DOCTYPE html>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{title}</title>
-    <link type="text/css" rel="stylesheet" href="{swagger_css_url}">
-    <div id="swagger-ui"></div>
+    <meta name="description" content="{description}">
+    <link rel="stylesheet" href="{swagger_css_url}">
+    <div id="swagger-ui">Loading ...</div>
     <script src="{swagger_js_url}"></script>
     <script>
     async function main() {{
         let spec = await fetch("{openapi_url}").then((resp) => resp.json());
         SwaggerUIBundle({{
             spec: spec,
-            dom_id: '#swagger-ui',
+            dom_id: "#swagger-ui",
             presets: [
                 SwaggerUIBundle.presets.apis,
-                SwaggerUIBundle.SwaggerUIStandalonePreset
+                SwaggerUIBundle.SwaggerUIStandalonePreset,
             ],
-            layout: "BaseLayout",
-            deepLinking: true
+            deepLinking: true,
+            defaultModelsExpandDepth: 0,
         }})
     }}
     main();
@@ -145,4 +152,8 @@ def get_swagger_ui_html(
 
 @app.get("/docs", include_in_schema=False)
 async def custom_swagger_ui_html():
-    return get_swagger_ui_html(openapi_url=str(app.openapi_url), title=app.title)
+    return get_swagger_ui_html(
+        openapi_url=str(app.openapi_url),
+        title=app.title,
+        description=app_short_description,
+    )
