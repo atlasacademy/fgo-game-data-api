@@ -448,10 +448,14 @@ def get_nice_servant(
     actualTDs: List[TdEntityNoReverse] = [
         item
         for item in raw_data.mstTreasureDevice
-        if item.mstTreasureDevice.id != 100
-        and item.mstTreasureDevice.id % 100 != 99
-        and item.mstSvtTreasureDevice[0].num == 1
+        if item.mstSvtTreasureDevice[0].num == 1
     ]
+    if "tdTypeChangeIDs" in actualTDs[0].mstTreasureDevice.script:
+        tdTypeChangeIDs = actualTDs[0].mstTreasureDevice.script["tdTypeChangeIDs"]
+        currentActualTDsIDs = {item.mstTreasureDevice.id for item in actualTDs}
+        for td in raw_data.mstTreasureDevice:
+            if td.mstTreasureDevice.id in tdTypeChangeIDs and td.mstTreasureDevice.id not in currentActualTDsIDs:  # type: ignore
+                actualTDs.append(td)
     if actualTDs:
         nice_data["npGain"] = {
             "buster": actualTDs[0].mstTreasureDeviceLv[0].tdPointB,
