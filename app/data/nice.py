@@ -450,12 +450,6 @@ def get_nice_servant(
         for item in raw_data.mstTreasureDevice
         if item.mstSvtTreasureDevice[0].num == 1
     ]
-    if "tdTypeChangeIDs" in actualTDs[0].mstTreasureDevice.script:
-        tdTypeChangeIDs = actualTDs[0].mstTreasureDevice.script["tdTypeChangeIDs"]
-        currentActualTDsIDs = {item.mstTreasureDevice.id for item in actualTDs}
-        for td in raw_data.mstTreasureDevice:
-            if td.mstTreasureDevice.id in tdTypeChangeIDs and td.mstTreasureDevice.id not in currentActualTDsIDs:  # type: ignore
-                actualTDs.append(td)
     if actualTDs:
         nice_data["npGain"] = {
             "buster": actualTDs[0].mstTreasureDeviceLv[0].tdPointB,
@@ -464,6 +458,12 @@ def get_nice_servant(
             "extra": actualTDs[0].mstTreasureDeviceLv[0].tdPointEx,
             "defence": actualTDs[0].mstTreasureDeviceLv[0].tdPointDef,
         }
+        if "tdTypeChangeIDs" in actualTDs[0].mstTreasureDevice.script:
+            tdTypeChangeIDs = actualTDs[0].mstTreasureDevice.script["tdTypeChangeIDs"]
+            currentActualTDsIDs = {item.mstTreasureDevice.id for item in actualTDs}
+            for td in raw_data.mstTreasureDevice:
+                if td.mstTreasureDevice.id in tdTypeChangeIDs and td.mstTreasureDevice.id not in currentActualTDsIDs:  # type: ignore
+                    actualTDs.append(td)
 
     nice_data["ascensionMaterials"] = {
         (combineLimit.svtLimit + 1): {

@@ -57,6 +57,11 @@ class TestServant:
         assert response.status_code == 200
         assert response.json() == get_response_data("JP_Elice_EN")
 
+    def test_JP_multiple_NPs_space_istar(self):
+        response = client.get("/nice/JP/servant/268")
+        assert response.status_code == 200
+        assert response.json() == get_response_data("JP_Space_Ishtar")
+
     def test_JP_string_svals_values(self):
         # See svals TargetRarityList
         response = client.get("/nice/JP/servant/403400?lang=en")
