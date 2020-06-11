@@ -249,7 +249,7 @@ def get_nice_td(
         "id": tdEntity.mstTreasureDevice.id,
         "name": tdEntity.mstTreasureDevice.name,
         "rank": tdEntity.mstTreasureDevice.rank,
-        "typeText": tdEntity.mstTreasureDevice.typeText,
+        "type": tdEntity.mstTreasureDevice.typeText,
         "npNpGain": tdEntity.mstTreasureDeviceLv[0].tdPoint,
         "individuality": get_traits_list(tdEntity.mstTreasureDevice.individuality),
     }

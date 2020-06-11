@@ -242,6 +242,8 @@
       "num": 1,
       "card": "arts",
       "name": "Incineration Ritual ???",
+      "rank": "なし",
+      "type": "",
       "npNpGain": 0,
       "npDistribution": [100],
       "strengthStatus": 0,
