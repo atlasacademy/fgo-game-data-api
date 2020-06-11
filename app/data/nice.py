@@ -29,7 +29,7 @@ from .schemas.raw import (
     SkillEntityNoReverse,
     TdEntityNoReverse,
 )
-from .translations import SVT_NAME_JPEN
+from .translations import SVT_NAME_JP_EN
 
 
 FORMATTING_BRACKETS = {"[g][o]": "", "[/o][/g]": "", " [{0}] ": " ", "[{0}]": ""}
@@ -364,7 +364,7 @@ def get_nice_servant(
     }
 
     if region == Region.JP and lang == Language.en:
-        nice_data["name"] = get_safe(SVT_NAME_JPEN, nice_data["name"])
+        nice_data["name"] = get_safe(SVT_NAME_JP_EN, nice_data["name"])
 
     charaGraph: Dict[str, Dict[int, str]] = {}
     faces: Dict[str, Dict[int, str]] = {}

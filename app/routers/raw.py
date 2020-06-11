@@ -57,7 +57,7 @@ async def find_servant(
         )
         return Response(out_json, media_type="application/json")
     else:
-        raise HTTPException(status_code=400, detail="Insufficient querry")
+        raise HTTPException(status_code=400, detail="Insufficient query")
 
 
 @router.get(
@@ -114,7 +114,7 @@ async def find_equip(
         )
         return Response(out_json, media_type="application/json")
     else:
-        raise HTTPException(status_code=400, detail="Insufficient querry")
+        raise HTTPException(status_code=400, detail="Insufficient query")
 
 
 @router.get(

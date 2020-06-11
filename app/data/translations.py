@@ -7,4 +7,4 @@ MAPPING_PATH = file_path.parent / "name_mappings"
 
 
 with open(MAPPING_PATH / "servant_names.json", "r", encoding="utf-8") as fp:
-    SVT_NAME_JPEN = json.load(fp)
+    SVT_NAME_JP_EN = json.load(fp)

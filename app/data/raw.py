@@ -24,7 +24,7 @@ from .schemas.raw import (
     TdEntity,
     TdEntityNoReverse,
 )
-from .translations import SVT_NAME_JPEN
+from .translations import SVT_NAME_JP_EN
 
 
 def buff_to_func(region: Region, buff_id: int) -> Set[int]:
@@ -302,7 +302,7 @@ def search_servant(search_param: ServantSearchQueryParams) -> List[int]:
             for item in matches
             if match_name(search_param.name, item.name)
             or match_name(search_param.name, item.ruby)
-            or match_name(search_param.name, SVT_NAME_JPEN.get(item.name, item.name))
+            or match_name(search_param.name, SVT_NAME_JP_EN.get(item.name, item.name))
         ]
 
     return [item.id for item in matches]

@@ -58,7 +58,7 @@ if settings.export_all_nice:  # pragma: no cover
 
 
 responses: Dict[Union[str, int], Any] = {
-    400: {"model": DetailMessage, "description": "Insufficient querry"},
+    400: {"model": DetailMessage, "description": "Insufficient query"},
     404: {"model": DetailMessage, "description": "Item not found"},
     500: {"model": DetailMessage, "description": "Internal server error"},
 }
@@ -89,7 +89,7 @@ async def find_servant(
         matches = raw.search_servant(search_param)
         return [get_nice_servant(search_param.region, item, lang) for item in matches]
     else:
-        raise HTTPException(status_code=400, detail="Insufficient querry")
+        raise HTTPException(status_code=400, detail="Insufficient query")
 
 
 get_servant_description = """Get servant info from ID
@@ -144,7 +144,7 @@ async def find_equip(
         matches = raw.search_equip(search_param)
         return [get_nice_servant(search_param.region, item) for item in matches]
     else:
-        raise HTTPException(status_code=400, detail="Insufficient querry")
+        raise HTTPException(status_code=400, detail="Insufficient query")
 
 
 get_equip_description = """Get CE info from ID

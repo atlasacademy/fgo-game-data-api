@@ -1412,7 +1412,7 @@ class Trait(str, Enum):
     buffDisableColorCard = "buffDisableColorCard"
     buffChangeField = "buffChangeField"
     buffIncreaseDefenceAgainstIndividuality = "buffIncreaseDefenceAgainstIndividuality"
-    buffInviciblePierce = "buffInviciblePierce"
+    buffInvinciblePierce = "buffInvinciblePierce"
     buffHpRecoveryPerTurn = "buffHpRecoveryPerTurn"
     buffNegativeEffectImmunity = "buffNegativeEffectImmunity"
     buffNegativeEffectAtTurnEnd = "buffNegativeEffectAtTurnEnd"
@@ -1575,7 +1575,7 @@ TRAIT_NAME: Dict[int, Trait] = {
     3056: Trait.buffDisableColorCard,
     3057: Trait.buffChangeField,
     3058: Trait.buffIncreaseDefenceAgainstIndividuality,  # Unsure
-    3059: Trait.buffInviciblePierce,
+    3059: Trait.buffInvinciblePierce,
     3060: Trait.buffHpRecoveryPerTurn,
     3061: Trait.buffNegativeEffectImmunity,
     3063: Trait.buffNegativeEffectAtTurnEnd,
