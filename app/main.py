@@ -23,9 +23,11 @@ app_more_description = """
 
 Available documentation styles: [Swagger UI](/docs), [Redoc](/redoc).
 
-If you encounter bugs or missing data, you can report them at the [Atlas Academy Discord](https://discord.gg/TKJmuCR).
+To discuss more about the API, you can go to the [Atlas Academy Discord](https://discord.gg/TKJmuCR).
+Bug reports and feature requests are welcome.
+Source code of the API is also available on [GitHub](https://github.com/atlasacademy/fgo-game-data-api).
 
-Nice data for damage calculation:
+Static files that can be used for damage calculation:
 [Attribute Affinity](/export/JP/NiceAttributeRelation.json),
 [Class Attack Rate](/export/JP/NiceClassAttackRate.json),
 [Class Affinity](/export/JP/NiceClassRelation.json),
@@ -37,11 +39,11 @@ Change `JP` to `NA` in the URL if you are looking for NA constants.
 """
 export_links = """
 
-Preprocessed nice data:
-[NA servant](/export/NA/nice_servant.json),
+Nice data of all servants, CEs and MCs. These are pre-generated so they can be served instantly unlike querying the API:
+- [NA servant](/export/NA/nice_servant.json),
 [NA CE](/export/NA/nice_equip.json),
-[NA MC](/export/NA/nice_mystic_code.json),
-[JP servant](/export/JP/nice_servant.json),
+[NA MC](/export/NA/nice_mystic_code.json).
+- [JP servant](/export/JP/nice_servant.json),
 [JP CE](/export/JP/nice_equip.json),
 [JP MC](/export/JP/nice_mystic_code.json).
 """
