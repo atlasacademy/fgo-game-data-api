@@ -27,15 +27,14 @@ To discuss more about the API, you can go to the [Atlas Academy Discord](https:/
 Bug reports and feature requests are welcome.
 Source code of the API is also available on [GitHub](https://github.com/atlasacademy/fgo-game-data-api).
 
-Static files that can be used for damage calculation:
-[Attribute Affinity](/export/JP/NiceAttributeRelation.json),
-[Class Attack Rate](/export/JP/NiceClassAttackRate.json),
-[Class Affinity](/export/JP/NiceClassRelation.json),
-[Card Details](/export/JP/NiceCard.json),
-[Constants](/export/JP/NiceConstant.json),
-[Buff Action info](/export/JP/NiceBuffList.ActionList.json),
-[Master Level info](/export/JP/NiceUserLevel.json).
-Change `JP` to `NA` in the URL if you are looking for NA constants.
+Static files that can be used for damage calculation. Change `JP` to `NA` in the URL if you are looking for NA constants:
+- [Attribute Affinity](/export/JP/NiceAttributeRelation.json)
+- [Class Attack Rate](/export/JP/NiceClassAttackRate.json)
+- [Class Affinity](/export/JP/NiceClassRelation.json)
+- [Card Details](/export/JP/NiceCard.json)
+- [Constants](/export/JP/NiceConstant.json)
+- [Buff Action info](/export/JP/NiceBuffList.ActionList.json)
+- [Master Level info](/export/JP/NiceUserLevel.json)
 """
 export_links = """
 
