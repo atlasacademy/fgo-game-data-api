@@ -47,7 +47,7 @@ TD_STUFFS = ["mstTreasureDeviceDetail", "mstSvtTreasureDevice", "mstTreasureDevi
 region_path = [(Region.NA, settings.na_gamedata), (Region.JP, settings.jp_gamedata)]
 
 logger.info("Loading game data ...")
-start_loading_time = time.time()
+start_loading_time = time.perf_counter()
 
 for region_name, gamedata in region_path:
     master = {}
@@ -121,5 +121,5 @@ for region_name, gamedata in region_path:
                 master[f"{extra_stuff}Id"][item[id_name]] = [item]
     masters[region_name] = Master.parse_obj(master)
 
-data_loading_time = time.time() - start_loading_time
+data_loading_time = time.perf_counter() - start_loading_time
 logger.info(f"Loaded the game data in {data_loading_time:.4f} seconds.")

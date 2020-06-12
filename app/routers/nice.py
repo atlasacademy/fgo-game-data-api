@@ -26,7 +26,7 @@ settings = Settings()
 
 if settings.export_all_nice:  # pragma: no cover
     for region_ in [Region.NA, Region.JP]:
-        start_time = time.time()
+        start_time = time.perf_counter()
         logger.info(f"Writing nice {region_} servant and equip data ...")
         all_servant_data = [
             get_nice_servant(region_, item_id)
@@ -53,7 +53,7 @@ if settings.export_all_nice:  # pragma: no cover
             f"export/{region_}/nice_mystic_code.json", "w", encoding="utf-8"
         ) as fp:
             json.dump(all_mc_data, fp, ensure_ascii=False)
-        run_time = time.time() - start_time
+        run_time = time.perf_counter() - start_time
         logger.info(f"Finish writing nice {region_} data in {run_time:.4f} seconds.")
 
 
