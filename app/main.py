@@ -91,7 +91,7 @@ async def root():
 app.mount("/export", StaticFiles(directory="export"), name="export")
 
 
-def custom_openapi():
+def custom_openapi(openapi_prefix: str):
     if app.openapi_schema:
         return app.openapi_schema
 
@@ -100,6 +100,7 @@ def custom_openapi():
         version=app.version,
         description=app.description,
         routes=app.routes,
+        openapi_prefix=openapi_prefix,
     )
 
     openapi_schema["tags"] = [
