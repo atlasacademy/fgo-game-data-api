@@ -50,12 +50,7 @@ class NiceItemAmount(BaseModel):
     amount: int
 
 
-class NiceAscensionMaterial(BaseModel):
-    items: List[NiceItemAmount]
-    qp: int
-
-
-class NiceSkillMaterial(BaseModel):
+class NiceLvlUpMaterial(BaseModel):
     items: List[NiceItemAmount]
     qp: int
 
@@ -223,8 +218,8 @@ class NiceServant(BaseModel):
     atkGrowth: List[int]
     hpGrowth: List[int]
     bondGrowth: List[int]
-    ascensionMaterials: Dict[int, NiceAscensionMaterial]
-    skillMaterials: Dict[int, NiceSkillMaterial]
+    ascensionMaterials: Dict[int, NiceLvlUpMaterial]
+    skillMaterials: Dict[int, NiceLvlUpMaterial]
     skills: List[NiceSkill]
     classPassive: List[NiceSkill]
     noblePhantasms: List[NiceTd]
