@@ -390,6 +390,7 @@
           "funcPopupText": "防御力アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 146,
@@ -453,6 +454,7 @@
           "funcPopupText": "無敵",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_311.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 155,
@@ -496,6 +498,7 @@
           "funcTargetTeam": "player",
           "funcPopupText": "NP増加",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [],
           "svals": {
             "Rate": [
@@ -547,6 +550,7 @@
           "funcPopupText": "タゲ集中アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 181,
@@ -601,6 +605,7 @@
           "funcPopupText": "NP獲得アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_303.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 140,
@@ -667,6 +672,7 @@
           "funcPopupText": "防御力アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 146,
@@ -715,6 +721,7 @@
           "funcPopupText": "ダメージカット",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 149,
@@ -785,6 +792,7 @@
           "funcPopupText": "タゲ集中アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 181,
@@ -838,6 +846,7 @@
           "funcTargetTeam": "player",
           "funcPopupText": "NP増加",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [],
           "svals": {
             "Rate": [
@@ -889,6 +898,7 @@
           "funcPopupText": "無敵",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_311.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 155,
@@ -933,6 +943,7 @@
           "funcPopupText": "タゲ集中アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 181,
@@ -986,6 +997,7 @@
           "funcTargetTeam": "playerAndEnemy",
           "funcPopupText": "HP減少",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [],
           "svals": {
             "Rate": [
@@ -1026,6 +1038,7 @@
           "funcPopupText": "バスターアップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 102,
@@ -1072,6 +1085,7 @@
           "funcPopupText": "クリティカル威力アップ〔Buster〕",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 952,
@@ -1131,6 +1145,7 @@
           "funcPopupText": "タゲ集中アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 181,
@@ -1184,6 +1199,7 @@
           "funcTargetTeam": "player",
           "funcPopupText": "NP増加",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [],
           "svals": {
             "Rate": [
@@ -1235,6 +1251,7 @@
           "funcPopupText": "無敵",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_311.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 155,
@@ -1279,6 +1296,7 @@
           "funcPopupText": "タゲ集中アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 181,
@@ -1332,6 +1350,7 @@
           "funcTargetTeam": "playerAndEnemy",
           "funcPopupText": "HP減少",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [],
           "svals": {
             "Rate": [
@@ -1372,6 +1391,7 @@
           "funcPopupText": "バスターアップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 102,
@@ -1418,6 +1438,7 @@
           "funcPopupText": "クリティカル威力アップ〔Buster〕",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 952,
@@ -1477,6 +1498,7 @@
           "funcPopupText": "バスターアップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 102,
@@ -1535,6 +1557,7 @@
           "funcPopupText": "クリティカル威力アップ〔Buster〕",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 952,
@@ -1591,6 +1614,7 @@
           "funcPopupText": "防御無視",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_351.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 510,
@@ -1660,6 +1684,7 @@
           "funcPopupText": "バスターアップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 102,
@@ -1718,6 +1743,7 @@
           "funcPopupText": "クリティカル威力アップ〔Buster〕",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 952,
@@ -1774,6 +1800,7 @@
           "funcPopupText": "防御無視",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_351.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 510,
@@ -1840,6 +1867,7 @@
           "funcPopupText": "弱体耐性アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_306.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 162,
@@ -1890,6 +1918,7 @@
           "funcPopupText": "クイックアップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_312.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 100,
@@ -1981,6 +2010,7 @@
           "funcPopupText": "防御力アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 146,
@@ -2042,6 +2072,7 @@
           "funcPopupText": "ダメージカット",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 149,
@@ -2121,6 +2152,7 @@
           "funcPopupText": "防御力アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 146,
@@ -2182,6 +2214,7 @@
           "funcPopupText": "ダメージカット",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 149,
@@ -2239,6 +2272,7 @@
           "funcPopupText": "攻撃力アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_300.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 126,
@@ -2318,6 +2352,7 @@
           "funcPopupText": "防御力アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 146,
@@ -2379,6 +2414,7 @@
           "funcPopupText": "ダメージカット",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 149,
@@ -2458,6 +2494,7 @@
           "funcPopupText": "防御力アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 146,
@@ -2519,6 +2556,7 @@
           "funcPopupText": "ダメージカット",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 149,

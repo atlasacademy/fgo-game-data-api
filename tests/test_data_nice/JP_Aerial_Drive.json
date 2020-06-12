@@ -244,6 +244,7 @@
           "funcPopupText": "バスターアップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 102,
@@ -279,6 +280,7 @@
           "funcPopupText": "宝具威力アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_310.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 138,
@@ -311,6 +313,7 @@
           "funcTargetTeam": "player",
           "funcPopupText": "NP増加",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [],
           "svals": { "Rate": [1000], "Value": [3000] }
         }
@@ -336,6 +339,7 @@
           "funcTargetTeam": "playerAndEnemy",
           "funcPopupText": "〔ナイト系〕〔ゲイザー系〕〔量産型系〕出現率アップ",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [],
           "svals": { "Rate": [1155], "Value": [2], "Target": [250] }
         }
@@ -362,6 +366,7 @@
           "funcPopupText": "バスターアップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 102,
@@ -397,6 +402,7 @@
           "funcPopupText": "宝具威力アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_310.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 138,
@@ -429,6 +435,7 @@
           "funcTargetTeam": "player",
           "funcPopupText": "NP増加",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [],
           "svals": { "Rate": [1000], "Value": [5000] }
         }
@@ -454,6 +461,7 @@
           "funcTargetTeam": "playerAndEnemy",
           "funcPopupText": "〔ナイト系〕〔ゲイザー系〕〔量産型系〕出現率アップ",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [],
           "svals": { "Rate": [1155], "Value": [2], "Target": [1000] }
         }

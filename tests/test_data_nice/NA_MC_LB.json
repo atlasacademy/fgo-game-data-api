@@ -33,6 +33,7 @@
           "funcTargetTeam": "playerAndEnemy",
           "funcPopupText": "",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [],
           "svals": {
             "Rate": [
@@ -68,6 +69,7 @@
           "funcTargetTeam": "playerAndEnemy",
           "funcPopupText": "Remove DEF Debuff",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [],
           "svals": {
             "Rate": [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000]
@@ -91,6 +93,7 @@
           "funcPopupText": "ATK Up",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_300.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 126,
@@ -135,6 +138,7 @@
           "funcPopupText": "NP Strength Up",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_310.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 138,
@@ -189,6 +193,7 @@
           "funcPopupText": "Evade",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_305.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 151,

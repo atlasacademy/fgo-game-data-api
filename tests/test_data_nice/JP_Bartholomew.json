@@ -596,6 +596,7 @@
           "funcPopupText": "宝具威力アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_310.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 138,
@@ -640,6 +641,7 @@
           "funcPopupText": "攻撃力アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_300.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 126,
@@ -699,6 +701,7 @@
           "funcPopupText": "スター集中ダウン",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_518.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 388,
@@ -750,6 +753,7 @@
           "funcPopupText": "クリティカル威力アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 142,
@@ -809,6 +813,7 @@
           "funcPopupText": "クイックアップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_312.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 100,
@@ -855,6 +860,7 @@
           "funcPopupText": "クリティカル発生ダウン",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_523.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 145,
@@ -898,6 +904,7 @@
           "funcTargetTeam": "player",
           "funcPopupText": "スター獲得",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [],
           "svals": {
             "Rate": [
@@ -935,6 +942,7 @@
           "funcPopupText": "クイックアップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_312.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 100,
@@ -991,6 +999,7 @@
           "funcPopupText": "弱体耐性アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_306.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 162,
@@ -1054,6 +1063,7 @@
           "funcTargetTeam": "playerAndEnemy",
           "funcPopupText": "なし",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [],
           "svals": {
             "Rate": [1000, 1000, 1000, 1000, 1000],
@@ -1094,6 +1104,7 @@
           "funcPopupText": "防御力ダウン",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_504.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 148,

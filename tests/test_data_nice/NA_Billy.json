@@ -589,6 +589,7 @@
           "funcPopupText": "Critical Up",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_324.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 142,
@@ -647,6 +648,7 @@
           "funcTargetTeam": "player",
           "funcPopupText": "NP Gain",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [],
           "svals": {
             "Rate": [
@@ -698,6 +700,7 @@
           "funcPopupText": "Evade",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_305.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 151,
@@ -742,6 +745,7 @@
           "funcPopupText": "Critical Up",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_324.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 142,
@@ -798,6 +802,7 @@
           "funcPopupText": "Critical Up",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_324.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 142,
@@ -852,6 +857,7 @@
           "funcPopupText": "Quick Up",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_312.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 100,
@@ -919,6 +925,7 @@
           "funcPopupText": "Sure Hit",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_309.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 154,
@@ -970,6 +977,7 @@
           "funcTargetTeam": "playerAndEnemy",
           "funcPopupText": "None",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [],
           "svals": {
             "Rate": [1000, 1000, 1000, 1000, 1000],
@@ -1000,6 +1008,7 @@
           "funcPopupText": "Critical Rate\nDown",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_523.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 145,
@@ -1079,6 +1088,7 @@
           "funcPopupText": "Sure Hit",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_309.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 154,
@@ -1130,6 +1140,7 @@
           "funcTargetTeam": "playerAndEnemy",
           "funcPopupText": "None",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [],
           "svals": {
             "Rate": [1000, 1000, 1000, 1000, 1000],
@@ -1160,6 +1171,7 @@
           "funcPopupText": "Critical Rate\nDown",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_523.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 145,

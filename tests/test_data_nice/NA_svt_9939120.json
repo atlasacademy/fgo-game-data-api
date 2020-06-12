@@ -262,6 +262,7 @@
           "funcTargetTeam": "playerAndEnemy",
           "funcPopupText": "None",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [],
           "svals": {
             "Rate": [1000, 1000, 1000, 1000, 1000],
@@ -292,6 +293,7 @@
           "funcPopupText": "DEF Down",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_504.png",
           "functvals": [],
+          "funcquestTvals": [],
           "buffs": [
             {
               "id": 148,

@@ -124,6 +124,7 @@ class NiceFunction(BaseModel):
     funcPopupText: str
     funcPopupIcon: Optional[HttpUrl] = None
     functvals: List[NiceTrait]
+    funcquestTvals: List[int]
     buffs: List[NiceBuff]
     svals: Vals
     svals2: Optional[Vals] = None
