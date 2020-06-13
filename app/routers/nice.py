@@ -9,11 +9,17 @@ from ..config import Settings
 from ..data import raw
 from ..data.common import Region
 from ..data.gamedata import masters
-from ..data.nice import get_nice_item, get_nice_servant, get_nice_mystic_code
+from ..data.nice import (
+    get_nice_item,
+    get_nice_servant,
+    get_nice_mystic_code,
+    get_nice_quest_phase,
+)
 from ..data.schemas.nice import (
     Language,
     NiceEquip,
     NiceItem,
+    NiceQuestPhase,
     NiceMysticCode,
     NiceServant,
 )
@@ -257,3 +263,24 @@ async def get_item(region: Region, item_id: int):
         return get_nice_item(region, item_id)
     else:
         raise HTTPException(status_code=404, detail="Item not found")
+
+
+@router.get(
+    "/{region}/quest/{quest_id}/{phase}",
+    summary="Get Quest data",
+    response_description="Quest Phase Entity",
+    response_model=NiceQuestPhase,
+    response_model_exclude_unset=True,
+    responses=responses,
+)
+async def get_quest_phase(region: Region, quest_id: int, phase: int):
+    """
+    Get the item data from the given ID
+    """
+    if (
+        quest_id in masters[region].mstQuestId
+        and phase in masters[region].mstQuestPhaseId[quest_id]
+    ):
+        return get_nice_quest_phase(region, quest_id, phase)
+    else:
+        raise HTTPException(status_code=404, detail="Quest not found")

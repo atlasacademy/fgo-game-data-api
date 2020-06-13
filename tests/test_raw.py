@@ -221,3 +221,18 @@ class TestMC:
     def test_JP_item_not_found(self):
         response = client.get("/raw/JP/MC/62537")
         assert response.status_code == 404
+
+
+class TestQuestPhase:
+    def test_JP_quest(self):
+        response = client.get("/raw/JP/quest/94025012/1")
+        assert response.status_code == 200
+        assert response.json() == get_response_data("JP_Meaka_Fudou")
+
+    def test_JP_quest_not_found_quest(self):
+        response = client.get("/raw/JP/quest/1234567")
+        assert response.status_code == 404
+
+    def test_JP_quest_not_found_phase(self):
+        response = client.get("/raw/JP/quest/94025012/2")
+        assert response.status_code == 404

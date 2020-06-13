@@ -15,13 +15,15 @@ from .enums import (
     FUNC_TYPE_NAME,
     GENDER_NAME,
     ITEM_TYPE_NAME,
+    QUEST_TYPE_NAME,
+    QUEST_CONSUME_TYPE_NAME,
     TRAIT_NAME,
     FuncType,
     SvtType,
     Trait,
 )
 from .gamedata import masters
-from .raw import get_servant_entity, get_mystic_code_entity
+from .raw import get_servant_entity, get_mystic_code_entity, get_quest_phase_entity
 from .schemas.nice import ASSET_URL, Language
 from .schemas.raw import (
     BuffEntityNoReverse,
@@ -527,4 +529,26 @@ def get_nice_mystic_code(region: Region, mc_id: int) -> Dict[str, Any]:
     nice_data["skills"] = [
         get_nice_skill(skill, mc_id, region) for skill in raw_data.mstSkill
     ]
+    return nice_data
+
+
+def get_nice_quest_phase(region: Region, quest_id: int, phase: int) -> Dict[str, Any]:
+    raw_data = get_quest_phase_entity(region, quest_id, phase)
+    nice_data: Dict[str, Any] = {
+        "id": raw_data.mstQuest.id,
+        "phase": raw_data.mstQuestPhase.phase,
+        "name": raw_data.mstQuest.name,
+        "type": get_safe(QUEST_TYPE_NAME, raw_data.mstQuest.type),
+        "consumeType": get_safe(QUEST_CONSUME_TYPE_NAME, raw_data.mstQuest.consumeType),
+        "consume": raw_data.mstQuest.actConsume,
+        "spotId": raw_data.mstQuest.spotId,
+        "className": [CLASS_NAME[item] for item in raw_data.mstQuestPhase.classIds],
+        "individuality": get_traits_list(raw_data.mstQuestPhase.individuality),
+        "qp": raw_data.mstQuestPhase.qp,
+        "exp": raw_data.mstQuestPhase.playerExp,
+        "bond": raw_data.mstQuestPhase.friendshipExp,
+        "noticeAt": raw_data.mstQuest.noticeAt,
+        "openedAt": raw_data.mstQuest.openedAt,
+        "closedAt": raw_data.mstQuest.closedAt,
+    }
     return nice_data

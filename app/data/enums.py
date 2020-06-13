@@ -1255,6 +1255,59 @@ PLAYABLE_CLASS_NAME_REVERSE: Dict[PlayableSvtClass, int] = {
 }
 
 
+### Quest Type ###
+
+
+class QuestType(IntEnum):
+    MAIN = 1
+    FREE = 2
+    FRIENDSHIP = 3
+    EVENT = 5
+    HEROBALLAD = 6
+
+
+class NiceQuestType(str, Enum):
+    main = "main"
+    free = "free"
+    friendship = "friendship"
+    event = "event"
+    heroballad = "heroballad"
+
+
+QUEST_TYPE_NAME: Dict[int, NiceQuestType] = {
+    1: NiceQuestType.main,
+    2: NiceQuestType.free,
+    3: NiceQuestType.friendship,
+    5: NiceQuestType.event,
+    6: NiceQuestType.heroballad,
+}
+
+
+### Quest Consume Type ###
+
+
+class QuestConsumeType(IntEnum):
+    NONE = 0
+    AP = 1
+    RP = 2
+    ITEM = 3
+
+
+class NiceConsumeType(str, Enum):
+    none = "none"
+    ap = "ap"
+    rp = "rp"
+    item = "item"
+
+
+QUEST_CONSUME_TYPE_NAME: Dict[int, NiceConsumeType] = {
+    0: NiceConsumeType.none,
+    1: NiceConsumeType.ap,
+    2: NiceConsumeType.rp,
+    3: NiceConsumeType.item,
+}
+
+
 ### Trait ###
 
 

@@ -1,6 +1,6 @@
 import logging
 import time
-from typing import Dict, List
+from typing import Any, Dict, List
 
 import orjson
 
@@ -33,8 +33,15 @@ MASTER_WITH_ID = [
     "mstTreasureDevice",
     "mstItem",
     "mstEquip",
+    "mstQuest",
 ]
-MASTER_WITHOUT_ID = ["mstSvtExp", "mstFriendship", "mstEquipExp", "mstEquipSkill"]
+MASTER_WITHOUT_ID = [
+    "mstSvtExp",
+    "mstFriendship",
+    "mstEquipExp",
+    "mstEquipSkill",
+    "mstQuestPhase",
+]
 SVT_STUFFS = [
     "mstSvtCard",
     "mstSvtLimit",
@@ -99,6 +106,14 @@ for region_name, gamedata in region_path:
             else:
                 mstFriendshipId[item["id"]] = [item["friendship"]]
     master["mstFriendshipId"] = mstFriendshipId
+
+    mstQuestPhaseId: Dict[int, Dict[int, Any]] = {}
+    for item in master["mstQuestPhase"]:
+        if item["questId"] in mstQuestPhaseId:
+            mstQuestPhaseId[item["questId"]][item["phase"]] = item
+        else:
+            mstQuestPhaseId[item["questId"]] = {item["phase"]: item}
+    master["mstQuestPhaseId"] = mstQuestPhaseId
 
     for extra_stuff in SKILL_STUFFS + TD_STUFFS + SVT_STUFFS:
         master[f"{extra_stuff}Id"] = {}

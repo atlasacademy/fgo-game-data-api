@@ -9,9 +9,11 @@ from ..enums import (
     FuncApplyTarget,
     Gender,
     NiceBuffType,
+    NiceConsumeType,
     NiceFuncTargetType,
     NiceFuncType,
     NiceItemType,
+    NiceQuestType,
     SvtClass,
     Trait,
 )
@@ -262,3 +264,21 @@ class NiceMysticCode(BaseModel):
     extraAssets: ExtraMCAssets
     skills: List[NiceSkill]
     expRequired: List[int]
+
+
+class NiceQuestPhase(BaseModel):
+    id: int
+    phase: int
+    name: str
+    type: NiceQuestType
+    consumeType: NiceConsumeType
+    consume: int
+    spotId: int
+    className: List[SvtClass]
+    individuality: List[NiceTrait]
+    qp: int
+    exp: int
+    bond: int
+    noticeAt: int
+    openedAt: int
+    closedAt: int

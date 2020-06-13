@@ -1,4 +1,4 @@
-from typing import Dict, List, Union
+from typing import Any, Dict, List, Union
 
 from pydantic import BaseModel
 
@@ -353,6 +353,53 @@ class MstFriendship(BaseModel):
     qp: int = -1  # 12000000
 
 
+class MstQuest(BaseModel):
+    afterActionVals: List[str]  # []
+    id: int  # 94024618
+    name: str  # "Automata Hunt - Pride Rank"
+    nameRuby: str  # ""
+    type: int  # 5
+    consumeType: int  # 1
+    actConsume: int  # 40
+    chaldeaGateCategory: int  # 1
+    spotId: int  # 999999
+    giftId: int  # 304
+    priority: int  # 802482
+    bannerType: int  # 0
+    bannerId: int  # 94003603
+    iconId: int  # 94024608
+    charaIconId: int  # 0
+    giftIconId: int  # 0
+    forceOperation: int  # 0
+    afterClear: int  # 3
+    displayHours: int  # 0
+    intervalHours: int  # 0
+    chapterId: int  # 0
+    chapterSubId: int  # 0
+    chapterSubStr: str  # ""
+    recommendLv: str  # "90"
+    hasStartAction: int  # 1
+    flag: int  # 0
+    scriptQuestId: int  # 0
+    noticeAt: int  # 1590984000
+    openedAt: int  # 1590984000
+    closedAt: int  # 1591156799
+
+
+class MstQuestPhase(BaseModel):
+    classIds: List[int]  # [7],
+    individuality: List[int]  # [2038, 2039, 94000046],
+    script: Dict[str, Any]  # {"resultBgmId": 61},
+    questId: int  # 94004502,
+    phase: int  # 1,
+    isNpcOnly: bool  # true,
+    battleBgId: int  # 13400,
+    battleBgType: int  # 0,
+    qp: int  # 1900,
+    playerExp: int  # 550,
+    friendshipExp: int  # 165
+
+
 class Master(BaseModel):
     mstBuff: List[MstBuff]
     mstFunc: List[MstFunc]
@@ -399,6 +446,10 @@ class Master(BaseModel):
     mstEquipId: Dict[int, MstEquip]
     mstEquipExp: List[MstEquipExp]
     mstEquipSkill: List[MstEquipSkill]
+    mstQuest: List[MstQuest]
+    mstQuestId: Dict[int, MstQuest]
+    mstQuestPhase: List[MstQuestPhase]
+    mstQuestPhaseId: Dict[int, Dict[int, MstQuestPhase]]
 
 
 def orjson_dumps(v, *, default):
@@ -457,6 +508,15 @@ class MysticCodeEntity(BaseModel):
     mstEquip: MstEquip
     mstSkill: List[SkillEntityNoReverse]
     mstEquipExp: List[MstEquipExp]
+
+    class Config:
+        json_loads = orjson.loads
+        json_dumps = orjson_dumps
+
+
+class QuestPhaseEntity(BaseModel):
+    mstQuest: MstQuest
+    mstQuestPhase: MstQuestPhase
 
     class Config:
         json_loads = orjson.loads

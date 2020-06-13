@@ -18,6 +18,7 @@ from .schemas.raw import (
     FunctionEntity,
     FunctionEntityNoReverse,
     MysticCodeEntity,
+    QuestPhaseEntity,
     ServantEntity,
     SkillEntity,
     SkillEntityNoReverse,
@@ -350,3 +351,12 @@ def get_mystic_code_entity(
         mstEquipExp=[mc for mc in masters[region].mstEquipExp if mc.equipId == mc_id],
     )
     return mc_entity
+
+
+def get_quest_phase_entity(
+    region: Region, quest_id: int, phase: int
+) -> QuestPhaseEntity:
+    return QuestPhaseEntity(
+        mstQuest=masters[region].mstQuestId[quest_id],
+        mstQuestPhase=masters[region].mstQuestPhaseId[quest_id][phase],
+    )

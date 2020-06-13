@@ -121,3 +121,18 @@ class TestMC:
     def test_JP_MC_not_found(self):
         response = client.get("/nice/JP/MC/8732")
         assert response.status_code == 404
+
+
+class TestQuestPhase:
+    def test_NA_quest(self):
+        response = client.get("/nice/NA/quest/94020187/1")
+        assert response.status_code == 200
+        assert response.json() == get_response_data("NA_87th_floor")
+
+    def test_JP_quest_not_found_quest(self):
+        response = client.get("/nice/NA/quest/94021187")
+        assert response.status_code == 404
+
+    def test_JP_quest_not_found_phase(self):
+        response = client.get("/nice/NA/quest/94020187/2")
+        assert response.status_code == 404
