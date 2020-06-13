@@ -116,7 +116,6 @@ app.openapi = custom_openapi  # type: ignore
 
 
 def get_swagger_ui_html(
-    *,
     openapi_url: str,
     title: str,
     description: str,
