@@ -275,7 +275,7 @@ async def get_item(region: Region, item_id: int):
 )
 async def get_quest_phase(region: Region, quest_id: int, phase: int):
     """
-    Get the item data from the given ID
+    Get the nice quest data from the given quest ID and phase number
     """
     if (
         quest_id in masters[region].mstQuestId
