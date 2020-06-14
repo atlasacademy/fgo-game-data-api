@@ -248,7 +248,8 @@
             "id": 6503,
             "name": "英雄の証",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6503.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6503.png",
+            "background": "bronze"
           },
           "amount": 5
         }
@@ -262,7 +263,8 @@
             "id": 6512,
             "name": "竜の牙",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6512.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6512.png",
+            "background": "bronze"
           },
           "amount": 5
         }
@@ -276,7 +278,8 @@
             "id": 6502,
             "name": "世界樹の種",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6502.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6502.png",
+            "background": "silver"
           },
           "amount": 5
         }
@@ -290,7 +293,8 @@
             "id": 6515,
             "name": "八連双晶",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6515.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6515.png",
+            "background": "silver"
           },
           "amount": 5
         }
@@ -304,7 +308,8 @@
             "id": 6505,
             "name": "虚影の塵",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
+            "background": "bronze"
           },
           "amount": 5
         }
@@ -318,7 +323,8 @@
             "id": 6510,
             "name": "無間の歯車",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6510.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6510.png",
+            "background": "silver"
           },
           "amount": 5
         }
@@ -332,7 +338,8 @@
             "id": 6501,
             "name": "鳳凰の羽根",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6501.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6501.png",
+            "background": "silver"
           },
           "amount": 5
         }
@@ -346,7 +353,8 @@
             "id": 6506,
             "name": "竜の逆鱗",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6506.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6506.png",
+            "background": "gold"
           },
           "amount": 5
         }
@@ -360,7 +368,8 @@
             "id": 6999,
             "name": "伝承結晶",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6999.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6999.png",
+            "background": "gold"
           },
           "amount": 1
         }

@@ -1109,6 +1109,26 @@ ITEM_TYPE_NAME: Dict[int, NiceItemType] = {
 }
 
 
+### Item BG Type ###
+
+
+class NiceItemBGType(str, Enum):
+    zero = "zero"  # qp, friendpoint
+    bronze = "bronze"
+    silver = "silver"
+    gold = "gold"
+    questClearQPReward = "questClearQPReward"
+
+
+ITEM_BG_TYPE_NAME: Dict[int, NiceItemBGType] = {
+    0: NiceItemBGType.zero,
+    1: NiceItemBGType.bronze,
+    2: NiceItemBGType.silver,
+    3: NiceItemBGType.gold,
+    4: NiceItemBGType.questClearQPReward,
+}
+
+
 ### Card Type ###
 
 

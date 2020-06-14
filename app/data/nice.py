@@ -14,6 +14,7 @@ from .enums import (
     FUNC_TARGETTYPE_NAME,
     FUNC_TYPE_NAME,
     GENDER_NAME,
+    ITEM_BG_TYPE_NAME,
     ITEM_TYPE_NAME,
     QUEST_TYPE_NAME,
     QUEST_CONSUME_TYPE_NAME,
@@ -329,6 +330,7 @@ def get_nice_item(region: Region, item_id: int) -> Dict[str, Union[int, str]]:
         "icon": ASSET_URL["items"].format(
             base_url=settings.asset_url, region=region, item_id=raw_data.imageId
         ),
+        "background": ITEM_BG_TYPE_NAME[raw_data.bgImageId],
     }
     return nice_item
 

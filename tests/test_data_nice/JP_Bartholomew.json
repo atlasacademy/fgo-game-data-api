@@ -292,7 +292,8 @@
             "id": 7004,
             "name": "ライダーピース",
             "type": "tdLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7004.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7004.png",
+            "background": "silver"
           },
           "amount": 2
         }
@@ -306,7 +307,8 @@
             "id": 7004,
             "name": "ライダーピース",
             "type": "tdLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7004.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7004.png",
+            "background": "silver"
           },
           "amount": 4
         },
@@ -315,7 +317,8 @@
             "id": 6522,
             "name": "愚者の鎖",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6522.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6522.png",
+            "background": "bronze"
           },
           "amount": 8
         }
@@ -329,7 +332,8 @@
             "id": 7104,
             "name": "ライダーモニュメント",
             "type": "tdLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7104.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7104.png",
+            "background": "gold"
           },
           "amount": 2
         },
@@ -338,7 +342,8 @@
             "id": 6521,
             "name": "黒獣脂",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6521.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6521.png",
+            "background": "gold"
           },
           "amount": 2
         },
@@ -347,7 +352,8 @@
             "id": 6508,
             "name": "ゴーストランタン",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6508.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6508.png",
+            "background": "silver"
           },
           "amount": 2
         }
@@ -361,7 +367,8 @@
             "id": 7104,
             "name": "ライダーモニュメント",
             "type": "tdLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7104.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7104.png",
+            "background": "gold"
           },
           "amount": 4
         },
@@ -370,7 +377,8 @@
             "id": 6508,
             "name": "ゴーストランタン",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6508.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6508.png",
+            "background": "silver"
           },
           "amount": 4
         },
@@ -379,7 +387,8 @@
             "id": 6509,
             "name": "蛇の宝玉",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6509.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6509.png",
+            "background": "silver"
           },
           "amount": 4
         }
@@ -393,7 +402,8 @@
             "id": 7999,
             "name": "聖杯",
             "type": "tdLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7999.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7999.png",
+            "background": "gold"
           },
           "amount": 1
         }
@@ -409,7 +419,8 @@
             "id": 6004,
             "name": "騎の輝石",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6004.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6004.png",
+            "background": "bronze"
           },
           "amount": 2
         }
@@ -423,7 +434,8 @@
             "id": 6004,
             "name": "騎の輝石",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6004.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6004.png",
+            "background": "bronze"
           },
           "amount": 4
         }
@@ -437,7 +449,8 @@
             "id": 6104,
             "name": "騎の魔石",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6104.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6104.png",
+            "background": "silver"
           },
           "amount": 2
         }
@@ -451,7 +464,8 @@
             "id": 6104,
             "name": "騎の魔石",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6104.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6104.png",
+            "background": "silver"
           },
           "amount": 4
         },
@@ -460,7 +474,8 @@
             "id": 6521,
             "name": "黒獣脂",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6521.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6521.png",
+            "background": "gold"
           },
           "amount": 1
         }
@@ -474,7 +489,8 @@
             "id": 6204,
             "name": "騎の秘石",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6204.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6204.png",
+            "background": "gold"
           },
           "amount": 2
         },
@@ -483,7 +499,8 @@
             "id": 6521,
             "name": "黒獣脂",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6521.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6521.png",
+            "background": "gold"
           },
           "amount": 2
         }
@@ -497,7 +514,8 @@
             "id": 6204,
             "name": "騎の秘石",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6204.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6204.png",
+            "background": "gold"
           },
           "amount": 4
         },
@@ -506,7 +524,8 @@
             "id": 6522,
             "name": "愚者の鎖",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6522.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6522.png",
+            "background": "bronze"
           },
           "amount": 5
         }
@@ -520,7 +539,8 @@
             "id": 6522,
             "name": "愚者の鎖",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6522.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6522.png",
+            "background": "bronze"
           },
           "amount": 10
         },
@@ -529,7 +549,8 @@
             "id": 6526,
             "name": "追憶の貝殻",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6526.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6526.png",
+            "background": "silver"
           },
           "amount": 2
         }
@@ -543,7 +564,8 @@
             "id": 6526,
             "name": "追憶の貝殻",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6526.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6526.png",
+            "background": "silver"
           },
           "amount": 6
         },
@@ -552,7 +574,8 @@
             "id": 6534,
             "name": "励振火薬",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6534.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6534.png",
+            "background": "bronze"
           },
           "amount": 24
         }
@@ -566,7 +589,8 @@
             "id": 6999,
             "name": "伝承結晶",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6999.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6999.png",
+            "background": "gold"
           },
           "amount": 1
         }

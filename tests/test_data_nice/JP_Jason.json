@@ -297,7 +297,8 @@
             "id": 7001,
             "name": "セイバーピース",
             "type": "tdLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7001.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7001.png",
+            "background": "silver"
           },
           "amount": 2
         }
@@ -311,7 +312,8 @@
             "id": 7001,
             "name": "セイバーピース",
             "type": "tdLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7001.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7001.png",
+            "background": "silver"
           },
           "amount": 4
         },
@@ -320,7 +322,8 @@
             "id": 6512,
             "name": "竜の牙",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6512.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6512.png",
+            "background": "bronze"
           },
           "amount": 6
         }
@@ -334,7 +337,8 @@
             "id": 7101,
             "name": "セイバーモニュメント",
             "type": "tdLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7101.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7101.png",
+            "background": "gold"
           },
           "amount": 2
         },
@@ -343,7 +347,8 @@
             "id": 6503,
             "name": "英雄の証",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6503.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6503.png",
+            "background": "bronze"
           },
           "amount": 10
         },
@@ -352,7 +357,8 @@
             "id": 6501,
             "name": "鳳凰の羽根",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6501.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6501.png",
+            "background": "silver"
           },
           "amount": 2
         }
@@ -366,7 +372,8 @@
             "id": 7101,
             "name": "セイバーモニュメント",
             "type": "tdLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7101.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7101.png",
+            "background": "gold"
           },
           "amount": 4
         },
@@ -375,7 +382,8 @@
             "id": 6501,
             "name": "鳳凰の羽根",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6501.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6501.png",
+            "background": "silver"
           },
           "amount": 3
         },
@@ -384,7 +392,8 @@
             "id": 6528,
             "name": "原初の産毛",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6528.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6528.png",
+            "background": "gold"
           },
           "amount": 3
         }
@@ -398,7 +407,8 @@
             "id": 7999,
             "name": "聖杯",
             "type": "tdLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7999.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7999.png",
+            "background": "gold"
           },
           "amount": 1
         }
@@ -414,7 +424,8 @@
             "id": 6001,
             "name": "剣の輝石",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6001.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6001.png",
+            "background": "bronze"
           },
           "amount": 2
         }
@@ -428,7 +439,8 @@
             "id": 6001,
             "name": "剣の輝石",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6001.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6001.png",
+            "background": "bronze"
           },
           "amount": 4
         }
@@ -442,7 +454,8 @@
             "id": 6101,
             "name": "剣の魔石",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6101.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6101.png",
+            "background": "silver"
           },
           "amount": 2
         }
@@ -456,7 +469,8 @@
             "id": 6101,
             "name": "剣の魔石",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6101.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6101.png",
+            "background": "silver"
           },
           "amount": 4
         },
@@ -465,7 +479,8 @@
             "id": 6503,
             "name": "英雄の証",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6503.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6503.png",
+            "background": "bronze"
           },
           "amount": 5
         }
@@ -479,7 +494,8 @@
             "id": 6201,
             "name": "剣の秘石",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6201.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6201.png",
+            "background": "gold"
           },
           "amount": 2
         },
@@ -488,7 +504,8 @@
             "id": 6503,
             "name": "英雄の証",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6503.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6503.png",
+            "background": "bronze"
           },
           "amount": 10
         }
@@ -502,7 +519,8 @@
             "id": 6201,
             "name": "剣の秘石",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6201.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6201.png",
+            "background": "gold"
           },
           "amount": 4
         },
@@ -511,7 +529,8 @@
             "id": 6512,
             "name": "竜の牙",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6512.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6512.png",
+            "background": "bronze"
           },
           "amount": 4
         }
@@ -525,7 +544,8 @@
             "id": 6512,
             "name": "竜の牙",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6512.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6512.png",
+            "background": "bronze"
           },
           "amount": 8
         },
@@ -534,7 +554,8 @@
             "id": 6537,
             "name": "巨人の指輪",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6537.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6537.png",
+            "background": "silver"
           },
           "amount": 2
         }
@@ -548,7 +569,8 @@
             "id": 6537,
             "name": "巨人の指輪",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6537.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6537.png",
+            "background": "silver"
           },
           "amount": 6
         },
@@ -557,7 +579,8 @@
             "id": 6542,
             "name": "真理の卵",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6542.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6542.png",
+            "background": "gold"
           },
           "amount": 4
         }
@@ -571,7 +594,8 @@
             "id": 6999,
             "name": "伝承結晶",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6999.png"
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6999.png",
+            "background": "gold"
           },
           "amount": 1
         }

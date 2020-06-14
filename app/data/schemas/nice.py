@@ -13,6 +13,7 @@ from ..enums import (
     NiceFuncTargetType,
     NiceFuncType,
     NiceItemType,
+    NiceItemBGType,
     NiceQuestType,
     SvtClass,
     Trait,
@@ -45,6 +46,7 @@ class NiceItem(BaseModel):
     name: str
     type: NiceItemType
     icon: HttpUrl
+    background: NiceItemBGType
 
 
 class NiceItemAmount(BaseModel):

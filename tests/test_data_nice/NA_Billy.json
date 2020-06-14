@@ -285,7 +285,8 @@
             "id": 7002,
             "name": "Archer Piece",
             "type": "tdLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7002.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7002.png",
+            "background": "silver"
           },
           "amount": 4
         }
@@ -299,7 +300,8 @@
             "id": 7002,
             "name": "Archer Piece",
             "type": "tdLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7002.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7002.png",
+            "background": "silver"
           },
           "amount": 8
         },
@@ -308,7 +310,8 @@
             "id": 6513,
             "name": "Meteor Horseshoe",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6513.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6513.png",
+            "background": "silver"
           },
           "amount": 5
         }
@@ -322,7 +325,8 @@
             "id": 7102,
             "name": "Archer Monument",
             "type": "tdLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7102.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7102.png",
+            "background": "gold"
           },
           "amount": 4
         },
@@ -331,7 +335,8 @@
             "id": 6516,
             "name": "Evil Bone",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6516.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6516.png",
+            "background": "bronze"
           },
           "amount": 20
         },
@@ -340,7 +345,8 @@
             "id": 6501,
             "name": "Phoenix Feather",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6501.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6501.png",
+            "background": "silver"
           },
           "amount": 3
         }
@@ -354,7 +360,8 @@
             "id": 7102,
             "name": "Archer Monument",
             "type": "tdLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7102.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7102.png",
+            "background": "gold"
           },
           "amount": 8
         },
@@ -363,7 +370,8 @@
             "id": 6501,
             "name": "Phoenix Feather",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6501.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6501.png",
+            "background": "silver"
           },
           "amount": 6
         },
@@ -372,7 +380,8 @@
             "id": 6507,
             "name": "Claw of Chaos",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6507.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6507.png",
+            "background": "gold"
           },
           "amount": 5
         }
@@ -386,7 +395,8 @@
             "id": 7999,
             "name": "Holy Grail",
             "type": "tdLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7999.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7999.png",
+            "background": "gold"
           },
           "amount": 1
         }
@@ -402,7 +412,8 @@
             "id": 6002,
             "name": "Gem of Archer",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6002.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6002.png",
+            "background": "bronze"
           },
           "amount": 4
         }
@@ -416,7 +427,8 @@
             "id": 6002,
             "name": "Gem of Archer",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6002.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6002.png",
+            "background": "bronze"
           },
           "amount": 8
         }
@@ -430,7 +442,8 @@
             "id": 6102,
             "name": "Magic Gem of Archer",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6102.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6102.png",
+            "background": "silver"
           },
           "amount": 4
         }
@@ -444,7 +457,8 @@
             "id": 6102,
             "name": "Magic Gem of Archer",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6102.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6102.png",
+            "background": "silver"
           },
           "amount": 8
         },
@@ -453,7 +467,8 @@
             "id": 6516,
             "name": "Evil Bone",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6516.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6516.png",
+            "background": "bronze"
           },
           "amount": 10
         }
@@ -467,7 +482,8 @@
             "id": 6202,
             "name": "Secret Gem of Archer",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6202.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6202.png",
+            "background": "gold"
           },
           "amount": 4
         },
@@ -476,7 +492,8 @@
             "id": 6516,
             "name": "Evil Bone",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6516.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6516.png",
+            "background": "bronze"
           },
           "amount": 20
         }
@@ -490,7 +507,8 @@
             "id": 6202,
             "name": "Secret Gem of Archer",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6202.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6202.png",
+            "background": "gold"
           },
           "amount": 8
         },
@@ -499,7 +517,8 @@
             "id": 6513,
             "name": "Meteor Horseshoe",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6513.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6513.png",
+            "background": "silver"
           },
           "amount": 4
         }
@@ -513,7 +532,8 @@
             "id": 6513,
             "name": "Meteor Horseshoe",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6513.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6513.png",
+            "background": "silver"
           },
           "amount": 7
         },
@@ -522,7 +542,8 @@
             "id": 6505,
             "name": "Void's Dust",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6505.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6505.png",
+            "background": "bronze"
           },
           "amount": 8
         }
@@ -536,7 +557,8 @@
             "id": 6505,
             "name": "Void's Dust",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6505.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6505.png",
+            "background": "bronze"
           },
           "amount": 24
         },
@@ -545,7 +567,8 @@
             "id": 6520,
             "name": "Tearstone of Blood",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6520.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6520.png",
+            "background": "gold"
           },
           "amount": 10
         }
@@ -559,7 +582,8 @@
             "id": 6999,
             "name": "Crystallized Lore",
             "type": "skillLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6999.png"
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6999.png",
+            "background": "gold"
           },
           "amount": 1
         }
