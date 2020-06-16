@@ -4,9 +4,9 @@ aiofiles==0.5.0 \
 click==7.1.2 \
     --hash=sha256:dacca89f4bfadd5de3d7489b7c8a566eee0d3676333fbb50030263894c38c0dc \
     --hash=sha256:d2b5255c7c6349bc1bd1e59e08cd12acbbd63ce649f2588755783aa94dfb6b1a
-fastapi==0.56.1 \
-    --hash=sha256:7ee0882db243e6b714643ea60fb0fc488925876796aca64dbef11610bc7706d0 \
-    --hash=sha256:a0ac2131ae8e4752d6334e5d706afd08c11379f73c24cb907a0da4033e16d831
+fastapi==0.58.0 \
+    --hash=sha256:cdd953e806d5c6bee879178d4e6c7b2ebcee219ea252a39c1c98ad8c7b798235 \
+    --hash=sha256:bfea20cc164885af99bad4bc680a99fe3b75d8d43b278ad51f1501d97cf8f762
 fuzzywuzzy==0.18.0 \
     --hash=sha256:928244b28db720d1e0ee7587acf660ea49d7e4c632569cad4f1cd7e68a5f0993 \
     --hash=sha256:45016e92264780e58972dca1b3d939ac864b78437422beecebb3095f8efd00e8
@@ -65,9 +65,9 @@ python-dotenv==0.13.0 \
     --hash=sha256:25c0ff1a3e12f4bde8d592cc254ab075cfe734fc5dd989036716fd17ee7e5ec7
 python-levenshtein==0.12.0 \
     --hash=sha256:033a11de5e3d19ea25c9302d11224e1a1898fe5abd23c61c7c360c25195e3eb1
-starlette==0.13.2 \
-    --hash=sha256:6169ee78ded501095d1dda7b141a1dc9f9934d37ad23196e180150ace2c6449b \
-    --hash=sha256:a9bb130fa7aa736eda8a814b6ceb85ccf7a209ed53843d0d61e246b380afa10f
+starlette==0.13.4 \
+    --hash=sha256:0fb4b38d22945b46acb880fedee7ee143fd6c0542992501be8c45c0ed737dd1a \
+    --hash=sha256:04fe51d86fd9a594d9b71356ed322ccde5c9b448fc716ac74155e5821a922f8d
 uvicorn==0.11.5 \
     --hash=sha256:50577d599775dac2301bac8bd5b540d19a9560144143c5bdab13cba92783b6e7 \
     --hash=sha256:596eaa8645b6dbc24d6610e335f8ddf5f925b4c4b86fdc7146abb0bf0da65d17

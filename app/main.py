@@ -4,7 +4,6 @@ import time
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.openapi.utils import get_openapi
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
@@ -52,11 +51,18 @@ if settings.documentation_all_nice:
     app_description += export_links
 
 
+tags_metadata = [
+    {"name": "nice", "description": "Nicely bundled data"},
+    {"name": "raw", "description": "Raw game data"},
+]
+
+
 app = FastAPI(
     title="FGO game data API",
     description=app_description,
     version="0.3.0",
     docs_url=None,
+    openapi_tags=tags_metadata,
 )
 
 
@@ -91,30 +97,6 @@ async def root():
 app.mount("/export", StaticFiles(directory="export"), name="export")
 
 
-def custom_openapi(openapi_prefix: str):
-    if app.openapi_schema:
-        return app.openapi_schema
-
-    openapi_schema = get_openapi(
-        title=app.title,
-        version=app.version,
-        description=app.description,
-        routes=app.routes,
-        openapi_prefix=openapi_prefix,
-    )
-
-    openapi_schema["tags"] = [
-        {"name": "nice", "description": "Nicely bundled data"},
-        {"name": "raw", "description": "Raw game data"},
-    ]
-
-    app.openapi_schema = openapi_schema
-    return app.openapi_schema
-
-
-app.openapi = custom_openapi  # type: ignore
-
-
 def get_swagger_ui_html(
     openapi_url: str,
     title: str,
@@ -144,6 +126,8 @@ def get_swagger_ui_html(
             ],
             deepLinking: true,
             defaultModelsExpandDepth: 0,
+            showExtensions: true,
+            showCommonExtensions: true,
         }})
     }}
     main();
