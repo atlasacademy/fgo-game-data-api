@@ -72,7 +72,7 @@ class TestServantSearch:
         response = client.get("/nice/NA/servant/search?className=archer&attribute=star")
         print({item["id"] for item in response.json()})
         assert response.status_code == 200
-        assert {item["id"] for item in response.json()} == {201100, 202200}
+        assert {item["id"] for item in response.json()} == {201100, 202200, 203100}
 
     def test_search_name_class_trait_rarity(self):
         response = client.get(
