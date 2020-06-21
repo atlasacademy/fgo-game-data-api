@@ -1,5 +1,5 @@
 from copy import deepcopy
-from typing import List, Set
+from typing import Iterable, List, Set
 
 from fuzzywuzzy import fuzz, utils
 
@@ -258,24 +258,24 @@ def match_name(search_param: str, name: str) -> bool:
 def search_servant(search_param: ServantSearchQueryParams) -> List[int]:
 
     if not search_param.rarity:
-        rarity = list(range(6))
+        rarity: Iterable[int] = range(6)
     else:
         rarity = search_param.rarity
 
     if not search_param.className:
-        class_ints = list(PLAYABLE_CLASS_NAME_REVERSE.values())
+        class_ints: Iterable[int] = PLAYABLE_CLASS_NAME_REVERSE.values()
     else:
         class_ints = [
             PLAYABLE_CLASS_NAME_REVERSE[item] for item in search_param.className
         ]
 
     if not search_param.gender:
-        gender_ints = list(GENDER_NAME_REVERSE.values())
+        gender_ints: Iterable[int] = GENDER_NAME_REVERSE.values()
     else:
         gender_ints = [GENDER_NAME_REVERSE[item] for item in search_param.gender]
 
     if not search_param.attribute:
-        attribute_ints = list(ATTRIBUTE_NAME_REVERSE.values())
+        attribute_ints: Iterable[int] = ATTRIBUTE_NAME_REVERSE.values()
     else:
         attribute_ints = [
             ATTRIBUTE_NAME_REVERSE[item] for item in search_param.attribute
@@ -283,7 +283,9 @@ def search_servant(search_param: ServantSearchQueryParams) -> List[int]:
 
     if not search_param.trait:
         search_param.trait = []
-    trait_ints = [TRAIT_NAME_REVERSE.get(item, item) for item in search_param.trait]  # type: ignore
+    trait_ints: Set[int] = {
+        TRAIT_NAME_REVERSE.get(item, item) for item in search_param.trait  # type: ignore
+    }
 
     matches = [
         item
@@ -293,7 +295,7 @@ def search_servant(search_param: ServantSearchQueryParams) -> List[int]:
         and item.classId in class_ints
         and item.genderType in gender_ints
         and item.attri in attribute_ints
-        and set(trait_ints).issubset(set(item.individuality))
+        and trait_ints.issubset(set(item.individuality))
         and masters[search_param.region].mstSvtLimitId[item.id][0].rarity in rarity
     ]
 
@@ -312,7 +314,7 @@ def search_servant(search_param: ServantSearchQueryParams) -> List[int]:
 def search_equip(search_param: EquipSearchQueryParams) -> List[int]:
 
     if not search_param.rarity:
-        rarity = list(range(1, 6))
+        rarity: Iterable[int] = range(1, 6)
     else:
         rarity = search_param.rarity
 
