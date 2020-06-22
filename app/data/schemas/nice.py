@@ -9,11 +9,13 @@ from ..enums import (
     FuncApplyTarget,
     Gender,
     NiceBuffType,
+    NiceCondType,
     NiceConsumeType,
     NiceFuncTargetType,
     NiceFuncType,
     NiceItemType,
     NiceItemBGType,
+    NiceStatusRank,
     NiceQuestType,
     SvtClass,
     Trait,
@@ -196,6 +198,33 @@ class HitsDistribution(BaseModel):
     extra: List[int]
 
 
+class NiceLoreComment(BaseModel):
+    id: int
+    priority: int
+    condMessage: str
+    comment: str
+    condType: NiceCondType
+    condValues: Optional[List[int]]
+    condValue2: int
+
+
+class NiceLoreStats(BaseModel):
+    strength: NiceStatusRank  # power
+    endurance: NiceStatusRank  # defense
+    agility: NiceStatusRank
+    magic: NiceStatusRank
+    luck: NiceStatusRank
+    np: NiceStatusRank  # treasureDevice
+    # policy: NiceStatusRank
+    # personality: NiceStatusRank
+    # deity: NiceStatusRank
+
+
+class NiceLore(BaseModel):
+    stats: Optional[NiceLoreStats] = None
+    comments: List[NiceLoreComment]
+
+
 class NiceServant(BaseModel):
     id: int
     collectionNo: int
@@ -227,6 +256,7 @@ class NiceServant(BaseModel):
     skills: List[NiceSkill]
     classPassive: List[NiceSkill]
     noblePhantasms: List[NiceTd]
+    profile: Optional[NiceLore] = None
 
 
 class NiceEquip(BaseModel):
@@ -245,6 +275,7 @@ class NiceEquip(BaseModel):
     atkGrowth: List[int]
     hpGrowth: List[int]
     skills: List[NiceSkill]
+    profile: Optional[NiceLore] = None
 
 
 class MCAssets(BaseModel):

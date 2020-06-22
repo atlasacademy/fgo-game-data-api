@@ -48,6 +48,7 @@ SVT_STUFFS = [
     "mstCombineSkill",
     "mstCombineLimit",
     "mstSvtLimitAdd",
+    "mstSvtComment",
 ]
 SKILL_STUFFS = ["mstSkillDetail", "mstSvtSkill", "mstSkillLv"]
 TD_STUFFS = ["mstTreasureDeviceDetail", "mstSvtTreasureDevice", "mstTreasureDeviceLv"]

@@ -8,6 +8,7 @@ from .enums import (
     ATTRIBUTE_NAME,
     BUFF_TYPE_NAME,
     CARD_TYPE_NAME,
+    COND_TYPE_NAME,
     CLASS_NAME,
     ENEMY_FUNC_SIGNATURE,
     FUNC_APPLYTARGET_NAME,
@@ -18,10 +19,12 @@ from .enums import (
     ITEM_TYPE_NAME,
     QUEST_TYPE_NAME,
     QUEST_CONSUME_TYPE_NAME,
+    STATUS_RANK_NAME,
     TRAIT_NAME,
     FuncType,
     SvtType,
     Trait,
+    NiceStatusRank,
 )
 from .gamedata import masters
 from .raw import get_servant_entity, get_mystic_code_entity, get_quest_phase_entity
@@ -31,6 +34,7 @@ from .schemas.raw import (
     FunctionEntityNoReverse,
     SkillEntityNoReverse,
     TdEntityNoReverse,
+    MstSvtComment,
 )
 from .translations import SVT_NAME_JP_EN
 
@@ -337,10 +341,10 @@ def get_nice_item_amount(
 
 
 def get_nice_servant(
-    region: Region, item_id: int, lang: Optional[Language] = None
+    region: Region, item_id: int, lore: bool = False, lang: Optional[Language] = None
 ) -> Dict[str, Any]:
     # Get expanded servant entity to get function and buff details
-    raw_data = get_servant_entity(region, item_id, True)
+    raw_data = get_servant_entity(region, item_id, expand=True, lore=lore)
     nice_data: Dict[str, Any] = {
         "id": raw_data.mstSvt.id,
         "collectionNo": raw_data.mstSvt.collectionNo,
@@ -490,6 +494,37 @@ def get_nice_servant(
         for skill in raw_data.mstSvt.expandedClassPassive
     ]
     nice_data["noblePhantasms"] = [get_nice_td(td, item_id, region) for td in actualTDs]
+
+    if lore:
+
+        def get_nice_comment(comment: MstSvtComment):
+            return {
+                "id": comment.id,
+                "priority": comment.priority,
+                "condMessage": comment.condMessage,
+                "comment": comment.comment,
+                "condType": COND_TYPE_NAME[comment.condType],
+                "condValues": comment.condValues,
+                "condValue2": comment.condValue2,
+            }
+
+        nice_data["profile"] = {
+            "comments": [get_nice_comment(item) for item in raw_data.mstSvtComment]
+        }
+
+        def get_nice_status_rank(rank_number: int):
+            return STATUS_RANK_NAME.get(rank_number, NiceStatusRank.unknown)
+
+        if raw_data.mstSvt.isServant():
+            nice_data["profile"]["stats"] = {
+                "strength": get_nice_status_rank(raw_data.mstSvtLimit[0].power),
+                "endurance": get_nice_status_rank(raw_data.mstSvtLimit[0].defense),
+                "agility": get_nice_status_rank(raw_data.mstSvtLimit[0].agility),
+                "magic": get_nice_status_rank(raw_data.mstSvtLimit[0].magic),
+                "luck": get_nice_status_rank(raw_data.mstSvtLimit[0].luck),
+                "np": get_nice_status_rank(raw_data.mstSvtLimit[0].treasureDevice),
+            }
+
     return nice_data
 
 

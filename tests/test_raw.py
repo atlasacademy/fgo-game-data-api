@@ -27,6 +27,11 @@ class TestServant:
         assert response.status_code == 200
         assert response.json() == get_response_data("NA_Tomoe")
 
+    def test_NA_lore(self):
+        response = client.get("/raw/NA/servant/126?lore=True")
+        assert response.status_code == 200
+        assert response.json() == get_response_data("NA_Bedivere_lore")
+
     def test_NA_collectionNo_expanded(self):
         response = client.get("/raw/NA/servant/200?expand=True")
         assert response.status_code == 200

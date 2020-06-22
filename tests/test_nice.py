@@ -27,6 +27,11 @@ class TestServant:
         assert response.status_code == 200
         assert response.json() == get_response_data("NA_Billy")
 
+    def test_NA_lore(self):
+        response = client.get("/nice/NA/servant/100?lore=True")
+        assert response.status_code == 200
+        assert response.json() == get_response_data("NA_Helena_lore")
+
     def test_NA_not_integer(self):
         response = client.get("/nice/NA/servant/lkji")
         assert response.status_code == 422

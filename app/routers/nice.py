@@ -90,10 +90,13 @@ nice_find_servant_extra = """
 async def find_servant(
     search_param: ServantSearchQueryParams = Depends(ServantSearchQueryParams),
     lang: Optional[Language] = None,
+    lore: bool = False,
 ):
     if search_param.hasSearchParams:
         matches = raw.search_servant(search_param)
-        return [get_nice_servant(search_param.region, item, lang) for item in matches]
+        return [
+            get_nice_servant(search_param.region, item, lore, lang) for item in matches
+        ]
     else:
         raise HTTPException(status_code=400, detail="Insufficient query")
 
@@ -125,11 +128,13 @@ if settings.documentation_all_nice:
     description=get_servant_description,
     responses=responses,
 )
-async def get_servant(region: Region, item_id: int, lang: Optional[Language] = None):
+async def get_servant(
+    region: Region, item_id: int, lang: Optional[Language] = None, lore: bool = False
+):
     if item_id in masters[region].mstSvtServantCollectionNo:
         item_id = masters[region].mstSvtServantCollectionNo[item_id]
     if item_id in masters[region].mstSvtServantCollectionNo.values():
-        return get_nice_servant(region, item_id, lang)
+        return get_nice_servant(region, item_id, lore, lang)
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
 
@@ -145,10 +150,11 @@ async def get_servant(region: Region, item_id: int, lang: Optional[Language] = N
 )
 async def find_equip(
     search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
+    lore: bool = False,
 ):
     if search_param.hasSearchParams:
         matches = raw.search_equip(search_param)
-        return [get_nice_servant(search_param.region, item) for item in matches]
+        return [get_nice_servant(search_param.region, item, lore) for item in matches]
     else:
         raise HTTPException(status_code=400, detail="Insufficient query")
 
@@ -178,11 +184,11 @@ if settings.documentation_all_nice:
     description=get_equip_description,
     responses=responses,
 )
-async def get_equip(region: Region, item_id: int):
+async def get_equip(region: Region, item_id: int, lore: bool = False):
     if item_id in masters[region].mstSvtEquipCollectionNo:
         item_id = masters[region].mstSvtEquipCollectionNo[item_id]
     if item_id in masters[region].mstSvtEquipCollectionNo.values():
-        return get_nice_servant(region, item_id)
+        return get_nice_servant(region, item_id, lore)
     else:
         raise HTTPException(status_code=404, detail="Equip not found")
 
@@ -195,7 +201,7 @@ async def get_equip(region: Region, item_id: int):
     response_model_exclude_unset=True,
     responses=responses,
 )
-async def get_svt(region: Region, item_id: int):
+async def get_svt(region: Region, item_id: int, lore: bool = False):
     """
     Get svt info from ID
 
@@ -203,7 +209,7 @@ async def get_svt(region: Region, item_id: int):
     The endpoint is not limited to servants or equips ids.
     """
     if item_id in masters[region].mstSvtId:
-        return get_nice_servant(region, item_id)
+        return get_nice_servant(region, item_id, lore)
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
 

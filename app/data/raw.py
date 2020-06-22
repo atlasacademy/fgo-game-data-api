@@ -170,7 +170,7 @@ def get_td_entity(
 
 
 def get_servant_entity(
-    region: Region, servant_id: int, expand: bool = False
+    region: Region, servant_id: int, expand: bool = False, lore: bool = False
 ) -> ServantEntity:
     svt_entity = ServantEntity(
         mstSvt=masters[region].mstSvtId[servant_id],
@@ -206,6 +206,10 @@ def get_servant_entity(
                     get_skill_entity_no_reverse(region, passiveSkill, expand)
                 )
         svt_entity.mstSvt.expandedClassPassive = expandedPassive
+
+    if lore:
+        svt_entity.mstSvtComment = masters[region].mstSvtCommentId.get(servant_id, [])
+
     return svt_entity
 
 

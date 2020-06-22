@@ -1275,6 +1275,396 @@ PLAYABLE_CLASS_NAME_REVERSE: Dict[PlayableSvtClass, int] = {
 }
 
 
+### Status Rank Type ###
+
+
+class StatusRank(IntEnum):
+    A = 11
+    A_PLUS = 12
+    A_PLUS2 = 13
+    A_MINUS = 14
+    A_PLUS3 = 15
+    B = 21
+    B_PLUS = 22
+    B_PLUS2 = 23
+    B_MINUS = 24
+    B_PLUS3 = 25
+    C = 31
+    C_PLUS = 32
+    C_PLUS2 = 33
+    C_MINUS = 34
+    C_PLUS3 = 35
+    D = 41
+    D_PLUS = 42
+    D_PLUS2 = 43
+    D_MINUS = 44
+    D_PLUS3 = 45
+    E = 51
+    E_PLUS = 52
+    E_PLUS2 = 53
+    E_MINUS = 54
+    E_PLUS3 = 55
+    EX = 61
+    QUESTION = 98
+    NONE = 99
+
+
+class NiceStatusRank(str, Enum):
+    a = "A"
+    aPlus = "A+"
+    aPlus2 = "A++"
+    aMinus = "A-"
+    aPlus3 = "A+++"
+    b = "B"
+    bPlus = "B+"
+    bPlus2 = "B++"
+    bMinus = "B-"
+    bPlus3 = "B+++"
+    c = "C"
+    cPlus = "C+"
+    cPlus2 = "C++"
+    cMinus = "C-"
+    cPlus3 = "C+++"
+    d = "D"
+    dPlus = "D+"
+    dPlus2 = "D++"
+    dMinus = "D-"
+    dPlus3 = "D+++"
+    e = "E"
+    ePlus = "E+"
+    ePlus2 = "E++"
+    eMinus = "E-"
+    ePlus3 = "E+++"
+    ex = "EX"
+    question = "?"
+    none = "None"
+    unknown = "Unknown"
+
+
+STATUS_RANK_NAME: Dict[int, NiceStatusRank] = {
+    11: NiceStatusRank.a,
+    12: NiceStatusRank.aPlus,
+    13: NiceStatusRank.aPlus2,
+    14: NiceStatusRank.aMinus,
+    15: NiceStatusRank.aPlus3,
+    21: NiceStatusRank.b,
+    22: NiceStatusRank.bPlus,
+    23: NiceStatusRank.bPlus2,
+    24: NiceStatusRank.bMinus,
+    25: NiceStatusRank.bPlus3,
+    31: NiceStatusRank.c,
+    32: NiceStatusRank.cPlus,
+    33: NiceStatusRank.cPlus2,
+    34: NiceStatusRank.cMinus,
+    35: NiceStatusRank.cPlus3,
+    41: NiceStatusRank.d,
+    42: NiceStatusRank.dPlus,
+    43: NiceStatusRank.dPlus2,
+    44: NiceStatusRank.dMinus,
+    45: NiceStatusRank.dPlus3,
+    51: NiceStatusRank.e,
+    52: NiceStatusRank.ePlus,
+    53: NiceStatusRank.ePlus2,
+    54: NiceStatusRank.eMinus,
+    55: NiceStatusRank.ePlus3,
+    61: NiceStatusRank.ex,
+    98: NiceStatusRank.question,
+    99: NiceStatusRank.none,
+}
+
+
+### Profile Comment Type ###
+
+
+class CondType(IntEnum):
+    NONE = 0
+    QUEST_CLEAR = 1
+    ITEM_GET = 2
+    USE_ITEM_ETERNITY = 3
+    USE_ITEM_TIME = 4
+    USE_ITEM_COUNT = 5
+    SVT_LEVEL = 6
+    SVT_LIMIT = 7
+    SVT_GET = 8
+    SVT_FRIENDSHIP = 9
+    SVT_GROUP = 10
+    EVENT = 11
+    DATE = 12
+    WEEKDAY = 13
+    PURCHASE_QP_SHOP = 14
+    PURCHASE_STONE_SHOP = 15
+    WAR_CLEAR = 16
+    FLAG = 17
+    SVT_COUNT_STOP = 18
+    BIRTH_DAY = 19
+    EVENT_END = 20
+    SVT_EVENT_JOIN = 21
+    MISISION_CONDITION_DETAIL = 22
+    EVENT_MISSION_CLEAR = 23
+    EVENT_MISSION_ACHIEVE = 24
+    QUEST_CLEAR_NUM = 25
+    NOT_QUEST_GROUP_CLEAR = 26
+    RAID_ALIVE = 27
+    RAID_DEAD = 28
+    RAID_DAMAGE = 29
+    QUEST_CHALLENGE_NUM = 30
+    MASTER_MISSION = 31
+    QUEST_GROUP_CLEAR = 32
+    SUPER_BOSS_DAMAGE = 33
+    SUPER_BOSS_DAMAGE_ALL = 34
+    PURCHASE_SHOP = 35
+    QUEST_NOT_CLEAR = 36
+    NOT_SHOP_PURCHASE = 37
+    NOT_SVT_GET = 38
+    NOT_EVENT_SHOP_PURCHASE = 39
+    SVT_HAVING = 40
+    NOT_SVT_HAVING = 41
+    QUEST_CHALLENGE_NUM_EQUAL = 42
+    QUEST_CHALLENGE_NUM_BELOW = 43
+    QUEST_CLEAR_NUM_EQUAL = 44
+    QUEST_CLEAR_NUM_BELOW = 45
+    QUEST_CLEAR_PHASE = 46
+    NOT_QUEST_CLEAR_PHASE = 47
+    EVENT_POINT_GROUP_WIN = 48
+    EVENT_NORMA_POINT_CLEAR = 49
+    QUEST_AVAILABLE = 50
+    QUEST_GROUP_AVAILABLE_NUM = 51
+    EVENT_NORMA_POINT_NOT_CLEAR = 52
+    NOT_ITEM_GET = 53
+    COSTUME_GET = 54
+    QUEST_RESET_AVAILABLE = 55
+    SVT_GET_BEFORE_EVENT_END = 56
+    QUEST_CLEAR_RAW = 57
+    QUEST_GROUP_CLEAR_RAW = 58
+    EVENT_GROUP_POINT_RATIO_IN_TERM = 59
+    EVENT_GROUP_RANK_IN_TERM = 60
+    NOT_EVENT_RACE_QUEST_OR_NOT_ALL_GROUP_GOAL = 61
+    EVENT_GROUP_TOTAL_WIN_EACH_PLAYER = 62
+    EVENT_SCRIPT_PLAY = 63
+    SVT_COSTUME_RELEASED = 64
+    QUEST_NOT_CLEAR_AND = 65
+    SVT_RECOVERD = 66
+    SHOP_RELEASED = 67
+    EVENT_POINT = 68
+    EVENT_REWARD_DISP_COUNT = 69
+    EQUIP_WITH_TARGET_COSTUME = 70
+    RAID_GROUP_DEAD = 71
+    NOT_SVT_GROUP = 72
+    NOT_QUEST_RESET_AVAILABLE = 73
+    NOT_QUEST_CLEAR_RAW = 74
+    NOT_QUEST_GROUP_CLEAR_RAW = 75
+    NOT_EVENT_MISSION_CLEAR = 76
+    NOT_EVENT_MISSION_ACHIEVE = 77
+    NOT_COSTUME_GET = 78
+    NOT_SVT_COSTUME_RELEASED = 79
+    NOT_EVENT_RACE_QUEST_OR_NOT_TARGET_RANK_GOAL = 80
+    PLAYER_GENDER_TYPE = 81
+    SHOP_GROUP_LIMIT_NUM = 82
+    EVENT_GROUP_POINT = 83
+    EVENT_GROUP_POINT_BELOW = 84
+    EVENT_TOTAL_POINT = 85
+    EVENT_TOTAL_POINT_BELOW = 86
+    EVENT_VALUE = 87
+    EVENT_VALUE_BELOW = 88
+    EVENT_FLAG = 89
+    EVENT_STATUS = 90
+    NOT_EVENT_STATUS = 91
+    FORCE_FALSE = 92
+
+
+class NiceCondType(str, Enum):
+    none = "none"
+    questClear = "questClear"
+    itemGet = "itemGet"
+    useItemEternity = "useItemEternity"
+    useItemTime = "useItemTime"
+    useItemCount = "useItemCount"
+    svtLevel = "svtLevel"
+    svtLimit = "svtLimit"
+    svtGet = "svtGet"
+    svtFriendship = "svtFriendship"
+    svtGroup = "svtGroup"
+    event = "event"
+    date = "date"
+    weekday = "weekday"
+    purchaseQpShop = "purchaseQpShop"
+    purchaseStoneShop = "purchaseStoneShop"
+    warClear = "warClear"
+    flag = "flag"
+    svtCountStop = "svtCountStop"
+    birthDay = "birthDay"
+    eventEnd = "eventEnd"
+    svtEventJoin = "svtEventJoin"
+    misisionConditionDetail = "misisionConditionDetail"
+    eventMissionClear = "eventMissionClear"
+    eventMissionAchieve = "eventMissionAchieve"
+    questClearNum = "questClearNum"
+    notQuestGroupClear = "notQuestGroupClear"
+    raidAlive = "raidAlive"
+    raidDead = "raidDead"
+    raidDamage = "raidDamage"
+    questChallengeNum = "questChallengeNum"
+    masterMission = "masterMission"
+    questGroupClear = "questGroupClear"
+    superBossDamage = "superBossDamage"
+    superBossDamageAll = "superBossDamageAll"
+    purchaseShop = "purchaseShop"
+    questNotClear = "questNotClear"
+    notShopPurchase = "notShopPurchase"
+    notSvtGet = "notSvtGet"
+    notEventShopPurchase = "notEventShopPurchase"
+    svtHaving = "svtHaving"
+    notSvtHaving = "notSvtHaving"
+    questChallengeNumEqual = "questChallengeNumEqual"
+    questChallengeNumBelow = "questChallengeNumBelow"
+    questClearNumEqual = "questClearNumEqual"
+    questClearNumBelow = "questClearNumBelow"
+    questClearPhase = "questClearPhase"
+    notQuestClearPhase = "notQuestClearPhase"
+    eventPointGroupWin = "eventPointGroupWin"
+    eventNormaPointClear = "eventNormaPointClear"
+    questAvailable = "questAvailable"
+    questGroupAvailableNum = "questGroupAvailableNum"
+    eventNormaPointNotClear = "eventNormaPointNotClear"
+    notItemGet = "notItemGet"
+    costumeGet = "costumeGet"
+    questResetAvailable = "questResetAvailable"
+    svtGetBeforeEventEnd = "svtGetBeforeEventEnd"
+    questClearRaw = "questClearRaw"
+    questGroupClearRaw = "questGroupClearRaw"
+    eventGroupPointRatioInTerm = "eventGroupPointRatioInTerm"
+    eventGroupRankInTerm = "eventGroupRankInTerm"
+    notEventRaceQuestOrNotAllGroupGoal = "notEventRaceQuestOrNotAllGroupGoal"
+    eventGroupTotalWinEachPlayer = "eventGroupTotalWinEachPlayer"
+    eventScriptPlay = "eventScriptPlay"
+    svtCostumeReleased = "svtCostumeReleased"
+    questNotClearAnd = "questNotClearAnd"
+    svtRecoverd = "svtRecoverd"
+    shopReleased = "shopReleased"
+    eventPoint = "eventPoint"
+    eventRewardDispCount = "eventRewardDispCount"
+    equipWithTargetCostume = "equipWithTargetCostume"
+    raidGroupDead = "raidGroupDead"
+    notSvtGroup = "notSvtGroup"
+    notQuestResetAvailable = "notQuestResetAvailable"
+    notQuestClearRaw = "notQuestClearRaw"
+    notQuestGroupClearRaw = "notQuestGroupClearRaw"
+    notEventMissionClear = "notEventMissionClear"
+    notEventMissionAchieve = "notEventMissionAchieve"
+    notCostumeGet = "notCostumeGet"
+    notSvtCostumeReleased = "notSvtCostumeReleased"
+    notEventRaceQuestOrNotTargetRankGoal = "notEventRaceQuestOrNotTargetRankGoal"
+    playerGenderType = "playerGenderType"
+    shopGroupLimitNum = "shopGroupLimitNum"
+    eventGroupPoint = "eventGroupPoint"
+    eventGroupPointBelow = "eventGroupPointBelow"
+    eventTotalPoint = "eventTotalPoint"
+    eventTotalPointBelow = "eventTotalPointBelow"
+    eventValue = "eventValue"
+    eventValueBelow = "eventValueBelow"
+    eventFlag = "eventFlag"
+    eventStatus = "eventStatus"
+    notEventStatus = "notEventStatus"
+    forceFalse = "forceFalse"
+
+
+COND_TYPE_NAME: Dict[int, NiceCondType] = {
+    0: NiceCondType.none,
+    1: NiceCondType.questClear,
+    2: NiceCondType.itemGet,
+    3: NiceCondType.useItemEternity,
+    4: NiceCondType.useItemTime,
+    5: NiceCondType.useItemCount,
+    6: NiceCondType.svtLevel,
+    7: NiceCondType.svtLimit,
+    8: NiceCondType.svtGet,
+    9: NiceCondType.svtFriendship,
+    10: NiceCondType.svtGroup,
+    11: NiceCondType.event,
+    12: NiceCondType.date,
+    13: NiceCondType.weekday,
+    14: NiceCondType.purchaseQpShop,
+    15: NiceCondType.purchaseStoneShop,
+    16: NiceCondType.warClear,
+    17: NiceCondType.flag,
+    18: NiceCondType.svtCountStop,
+    19: NiceCondType.birthDay,
+    20: NiceCondType.eventEnd,
+    21: NiceCondType.svtEventJoin,
+    22: NiceCondType.misisionConditionDetail,
+    23: NiceCondType.eventMissionClear,
+    24: NiceCondType.eventMissionAchieve,
+    25: NiceCondType.questClearNum,
+    26: NiceCondType.notQuestGroupClear,
+    27: NiceCondType.raidAlive,
+    28: NiceCondType.raidDead,
+    29: NiceCondType.raidDamage,
+    30: NiceCondType.questChallengeNum,
+    31: NiceCondType.masterMission,
+    32: NiceCondType.questGroupClear,
+    33: NiceCondType.superBossDamage,
+    34: NiceCondType.superBossDamageAll,
+    35: NiceCondType.purchaseShop,
+    36: NiceCondType.questNotClear,
+    37: NiceCondType.notShopPurchase,
+    38: NiceCondType.notSvtGet,
+    39: NiceCondType.notEventShopPurchase,
+    40: NiceCondType.svtHaving,
+    41: NiceCondType.notSvtHaving,
+    42: NiceCondType.questChallengeNumEqual,
+    43: NiceCondType.questChallengeNumBelow,
+    44: NiceCondType.questClearNumEqual,
+    45: NiceCondType.questClearNumBelow,
+    46: NiceCondType.questClearPhase,
+    47: NiceCondType.notQuestClearPhase,
+    48: NiceCondType.eventPointGroupWin,
+    49: NiceCondType.eventNormaPointClear,
+    50: NiceCondType.questAvailable,
+    51: NiceCondType.questGroupAvailableNum,
+    52: NiceCondType.eventNormaPointNotClear,
+    53: NiceCondType.notItemGet,
+    54: NiceCondType.costumeGet,
+    55: NiceCondType.questResetAvailable,
+    56: NiceCondType.svtGetBeforeEventEnd,
+    57: NiceCondType.questClearRaw,
+    58: NiceCondType.questGroupClearRaw,
+    59: NiceCondType.eventGroupPointRatioInTerm,
+    60: NiceCondType.eventGroupRankInTerm,
+    61: NiceCondType.notEventRaceQuestOrNotAllGroupGoal,
+    62: NiceCondType.eventGroupTotalWinEachPlayer,
+    63: NiceCondType.eventScriptPlay,
+    64: NiceCondType.svtCostumeReleased,
+    65: NiceCondType.questNotClearAnd,
+    66: NiceCondType.svtRecoverd,
+    67: NiceCondType.shopReleased,
+    68: NiceCondType.eventPoint,
+    69: NiceCondType.eventRewardDispCount,
+    70: NiceCondType.equipWithTargetCostume,
+    71: NiceCondType.raidGroupDead,
+    72: NiceCondType.notSvtGroup,
+    73: NiceCondType.notQuestResetAvailable,
+    74: NiceCondType.notQuestClearRaw,
+    75: NiceCondType.notQuestGroupClearRaw,
+    76: NiceCondType.notEventMissionClear,
+    77: NiceCondType.notEventMissionAchieve,
+    78: NiceCondType.notCostumeGet,
+    79: NiceCondType.notSvtCostumeReleased,
+    80: NiceCondType.notEventRaceQuestOrNotTargetRankGoal,
+    81: NiceCondType.playerGenderType,
+    82: NiceCondType.shopGroupLimitNum,
+    83: NiceCondType.eventGroupPoint,
+    84: NiceCondType.eventGroupPointBelow,
+    85: NiceCondType.eventTotalPoint,
+    86: NiceCondType.eventTotalPointBelow,
+    87: NiceCondType.eventValue,
+    88: NiceCondType.eventValueBelow,
+    89: NiceCondType.eventFlag,
+    90: NiceCondType.eventStatus,
+    91: NiceCondType.notEventStatus,
+    92: NiceCondType.forceFalse,
+}
+
+
 ### Quest Type ###
 
 

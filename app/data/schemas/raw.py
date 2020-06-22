@@ -1,4 +1,4 @@
-from typing import Any, Dict, List, Union
+from typing import Any, Dict, List, Optional, Union
 
 from pydantic import BaseModel
 
@@ -253,6 +253,17 @@ class MstSvtLimit(BaseModel):
     strParam: str  #  "{\"Attack_s1\":285}"
 
 
+class MstSvtComment(BaseModel):
+    condValues: Optional[List[int]]  # [1]
+    svtId: int  # 1000100
+    id: int  # 2
+    priority: int  # 0
+    condMessage: str  # ""
+    comment: str  # ""
+    condType: int  # 9
+    condValue2: int  # 0
+
+
 class MstSvtExp(BaseModel):
     type: int  # 20,
     lv: int  # 15,
@@ -450,6 +461,8 @@ class Master(BaseModel):
     mstQuestId: Dict[int, MstQuest]
     mstQuestPhase: List[MstQuestPhase]
     mstQuestPhaseId: Dict[int, Dict[int, MstQuestPhase]]
+    mstSvtComment: List[MstSvtComment]
+    mstSvtCommentId: Dict[int, List[MstSvtComment]]
 
 
 def orjson_dumps(v, *, default):
@@ -465,6 +478,7 @@ class ServantEntity(BaseModel):
     mstCombineSkill: List[MstCombineSkill]
     mstCombineLimit: List[MstCombineLimit]
     mstSvtLimitAdd: List[MstSvtLimitAdd]
+    mstSvtComment: List[MstSvtComment] = []
 
     class Config:
         json_loads = orjson.loads

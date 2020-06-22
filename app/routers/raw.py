@@ -46,11 +46,12 @@ Expand all other skills and functions as well.
 async def find_servant(
     search_param: ServantSearchQueryParams = Depends(ServantSearchQueryParams),
     expand: bool = False,
+    lore: bool = False,
 ):
     if search_param.hasSearchParams:
         matches = raw.search_servant(search_param)
         entity_list = [
-            raw.get_servant_entity(search_param.region, item, expand)
+            raw.get_servant_entity(search_param.region, item, expand, lore)
             for item in matches
         ]
         out_json = (
@@ -69,7 +70,9 @@ async def find_servant(
     response_model_exclude_unset=True,
     responses=responses,
 )
-async def get_servant(region: Region, item_id: int, expand: bool = False):
+async def get_servant(
+    region: Region, item_id: int, expand: bool = False, lore: bool = False
+):
     """
     Get servant info from ID
 
@@ -83,7 +86,7 @@ async def get_servant(region: Region, item_id: int, expand: bool = False):
     if item_id in masters[region].mstSvtServantCollectionNo:
         item_id = masters[region].mstSvtServantCollectionNo[item_id]
     if item_id in masters[region].mstSvtId:
-        servant_entity = raw.get_servant_entity(region, item_id, expand)
+        servant_entity = raw.get_servant_entity(region, item_id, expand, lore)
         return Response(
             servant_entity.json(exclude_unset=True), media_type="application/json",
         )
@@ -103,11 +106,12 @@ async def get_servant(region: Region, item_id: int, expand: bool = False):
 async def find_equip(
     search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
     expand: bool = False,
+    lore: bool = False,
 ):
     if search_param.hasSearchParams:
         matches = raw.search_equip(search_param)
         entity_list = [
-            raw.get_servant_entity(search_param.region, item, expand)
+            raw.get_servant_entity(search_param.region, item, expand, lore)
             for item in matches
         ]
         out_json = (
@@ -126,7 +130,9 @@ async def find_equip(
     response_model_exclude_unset=True,
     responses=responses,
 )
-async def get_equip(region: Region, item_id: int, expand: bool = False):
+async def get_equip(
+    region: Region, item_id: int, expand: bool = False, lore: bool = False
+):
     """
     Get CE info from ID
 
@@ -140,7 +146,7 @@ async def get_equip(region: Region, item_id: int, expand: bool = False):
     if item_id in masters[region].mstSvtEquipCollectionNo:
         item_id = masters[region].mstSvtEquipCollectionNo[item_id]
     if item_id in masters[region].mstSvtId:
-        servant_entity = raw.get_servant_entity(region, item_id, expand)
+        servant_entity = raw.get_servant_entity(region, item_id, expand, lore)
         return Response(
             servant_entity.json(exclude_unset=True), media_type="application/json",
         )
