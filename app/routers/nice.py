@@ -75,6 +75,7 @@ router = APIRouter()
 
 nice_find_servant_extra = """
 - **lang**: returns English servant names if querying JP data. Doesn't do anything if querying NA data.
+- **lore**: Add profile info to the response
 """
 
 
@@ -107,6 +108,7 @@ If the given ID is a servants's collectionNo, the corresponding servant data is 
 Otherwise, it will look up the actual ID field.
 
 - **lang**: returns English servant names if querying JP data. Doesn't do anything if querying NA data.
+- **lore**: Add profile info to the response
 """
 pre_processed_data_links = """
 
@@ -163,6 +165,8 @@ get_equip_description = """Get CE info from ID
 
 If the given ID is a CE's collectionNo, the corresponding CE data is returned.
 Otherwise, it will look up the actual ID field.
+
+- **lore**: Add profile info to the response
 """
 pre_processed_equip_links = """
 

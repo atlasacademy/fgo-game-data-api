@@ -31,6 +31,7 @@ raw_find_servant_extra = """
 - **expand**: Add expanded skill objects to mstSvt.expandedClassPassive
 from the skill IDs in mstSvt.classPassive.
 Expand all other skills and functions as well.
+- **lore**: Add profile info to the response.
 """
 
 
@@ -82,6 +83,7 @@ async def get_servant(
     - **expand**: Add expanded skill objects to mstSvt.expandedClassPassive
     from the skill IDs in mstSvt.classPassive.
     Expand all other skills and functions as well.
+    - **lore**: Add profile info to the response.
     """
     if item_id in masters[region].mstSvtServantCollectionNo:
         item_id = masters[region].mstSvtServantCollectionNo[item_id]
@@ -97,7 +99,7 @@ async def get_servant(
 @router.get(
     "/{region}/equip/search",
     summary="Find and get CE data",
-    description=EquipSearchQueryParams.DESCRIPTION,
+    description=EquipSearchQueryParams.DESCRIPTION + raw_find_servant_extra,
     response_description="Equip Entity",
     response_model=List[ServantEntity],
     response_model_exclude_unset=True,
@@ -142,6 +144,7 @@ async def get_equip(
     - **expand**: Add expanded skill objects to mstSvt.expandedClassPassive
     from the skill IDs in mstSvt.classPassive.
     Expand all other skills and functions as well.
+    - **lore**: Add profile info to the response.
     """
     if item_id in masters[region].mstSvtEquipCollectionNo:
         item_id = masters[region].mstSvtEquipCollectionNo[item_id]
