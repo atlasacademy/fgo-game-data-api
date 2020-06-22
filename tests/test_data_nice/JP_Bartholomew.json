@@ -1036,39 +1036,164 @@
           "funcquestTvals": [],
           "buffs": [],
           "svals": [
-            { "Rate": 1000, "Value": 6000, "Target": 0 },
-            { "Rate": 1000, "Value": 8000, "Target": 0 },
-            { "Rate": 1000, "Value": 9000, "Target": 0 },
-            { "Rate": 1000, "Value": 9500, "Target": 0 },
-            { "Rate": 1000, "Value": 10000, "Target": 0 }
+            {
+              "Rate": 1000,
+              "Value": 6000,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            },
+            {
+              "Rate": 1000,
+              "Value": 8000,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            },
+            {
+              "Rate": 1000,
+              "Value": 9000,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            },
+            {
+              "Rate": 1000,
+              "Value": 9500,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            },
+            {
+              "Rate": 1000,
+              "Value": 10000,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            }
           ],
           "svals2": [
-            { "Rate": 1000, "Value": 6000, "Target": 0 },
-            { "Rate": 1000, "Value": 8000, "Target": 0 },
-            { "Rate": 1000, "Value": 9000, "Target": 0 },
-            { "Rate": 1000, "Value": 9500, "Target": 0 },
-            { "Rate": 1000, "Value": 10000, "Target": 0 }
+            {
+              "Rate": 1000,
+              "Value": 6000,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            },
+            {
+              "Rate": 1000,
+              "Value": 8000,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            },
+            {
+              "Rate": 1000,
+              "Value": 9000,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            },
+            {
+              "Rate": 1000,
+              "Value": 9500,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            },
+            {
+              "Rate": 1000,
+              "Value": 10000,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            }
           ],
           "svals3": [
-            { "Rate": 1000, "Value": 6000, "Target": 0 },
-            { "Rate": 1000, "Value": 8000, "Target": 0 },
-            { "Rate": 1000, "Value": 9000, "Target": 0 },
-            { "Rate": 1000, "Value": 9500, "Target": 0 },
-            { "Rate": 1000, "Value": 10000, "Target": 0 }
+            {
+              "Rate": 1000,
+              "Value": 6000,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            },
+            {
+              "Rate": 1000,
+              "Value": 8000,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            },
+            {
+              "Rate": 1000,
+              "Value": 9000,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            },
+            {
+              "Rate": 1000,
+              "Value": 9500,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            },
+            {
+              "Rate": 1000,
+              "Value": 10000,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            }
           ],
           "svals4": [
-            { "Rate": 1000, "Value": 6000, "Target": 0 },
-            { "Rate": 1000, "Value": 8000, "Target": 0 },
-            { "Rate": 1000, "Value": 9000, "Target": 0 },
-            { "Rate": 1000, "Value": 9500, "Target": 0 },
-            { "Rate": 1000, "Value": 10000, "Target": 0 }
+            {
+              "Rate": 1000,
+              "Value": 6000,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            },
+            {
+              "Rate": 1000,
+              "Value": 8000,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            },
+            {
+              "Rate": 1000,
+              "Value": 9000,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            },
+            {
+              "Rate": 1000,
+              "Value": 9500,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            },
+            {
+              "Rate": 1000,
+              "Value": 10000,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            }
           ],
           "svals5": [
-            { "Rate": 1000, "Value": 6000, "Target": 0 },
-            { "Rate": 1000, "Value": 8000, "Target": 0 },
-            { "Rate": 1000, "Value": 9000, "Target": 0 },
-            { "Rate": 1000, "Value": 9500, "Target": 0 },
-            { "Rate": 1000, "Value": 10000, "Target": 0 }
+            {
+              "Rate": 1000,
+              "Value": 6000,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            },
+            {
+              "Rate": 1000,
+              "Value": 8000,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            },
+            {
+              "Rate": 1000,
+              "Value": 9000,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            },
+            {
+              "Rate": 1000,
+              "Value": 9500,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            },
+            {
+              "Rate": 1000,
+              "Value": 10000,
+              "Target": 0,
+              "TargetRarityList": "1/2"
+            }
           ]
         },
         {

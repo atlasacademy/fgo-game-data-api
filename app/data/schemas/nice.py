@@ -92,9 +92,9 @@ class Vals(BaseModel):
     EffectSummon: Optional[int] = None
     RatioHPRangeHigh: Optional[int] = None
     RatioHPRangeLow: Optional[int] = None
-    TargetOptional: Optional[int] = None
+    TargetList: Optional[int] = None
     OpponentOnly: Optional[int] = None
-    TargetRarityOptional: Optional[str] = None
+    TargetRarityList: Optional[str] = None
 
 
 class NiceTrait(BaseModel):
