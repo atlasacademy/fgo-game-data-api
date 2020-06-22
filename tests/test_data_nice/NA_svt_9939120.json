@@ -264,26 +264,41 @@
           "functvals": [],
           "funcquestTvals": [],
           "buffs": [],
-          "svals": {
-            "Rate": [1000, 1000, 1000, 1000, 1000],
-            "Value": [4000, 4000, 4000, 4000, 4000]
-          },
-          "svals2": {
-            "Rate": [1000, 1000, 1000, 1000, 1000],
-            "Value": [4000, 4000, 4000, 4000, 4000]
-          },
-          "svals3": {
-            "Rate": [1000, 1000, 1000, 1000, 1000],
-            "Value": [4000, 4000, 4000, 4000, 4000]
-          },
-          "svals4": {
-            "Rate": [1000, 1000, 1000, 1000, 1000],
-            "Value": [4000, 4000, 4000, 4000, 4000]
-          },
-          "svals5": {
-            "Rate": [1000, 1000, 1000, 1000, 1000],
-            "Value": [4000, 4000, 4000, 4000, 4000]
-          }
+          "svals": [
+            { "Rate": 1000, "Value": 4000 },
+            { "Rate": 1000, "Value": 4000 },
+            { "Rate": 1000, "Value": 4000 },
+            { "Rate": 1000, "Value": 4000 },
+            { "Rate": 1000, "Value": 4000 }
+          ],
+          "svals2": [
+            { "Rate": 1000, "Value": 4000 },
+            { "Rate": 1000, "Value": 4000 },
+            { "Rate": 1000, "Value": 4000 },
+            { "Rate": 1000, "Value": 4000 },
+            { "Rate": 1000, "Value": 4000 }
+          ],
+          "svals3": [
+            { "Rate": 1000, "Value": 4000 },
+            { "Rate": 1000, "Value": 4000 },
+            { "Rate": 1000, "Value": 4000 },
+            { "Rate": 1000, "Value": 4000 },
+            { "Rate": 1000, "Value": 4000 }
+          ],
+          "svals4": [
+            { "Rate": 1000, "Value": 4000 },
+            { "Rate": 1000, "Value": 4000 },
+            { "Rate": 1000, "Value": 4000 },
+            { "Rate": 1000, "Value": 4000 },
+            { "Rate": 1000, "Value": 4000 }
+          ],
+          "svals5": [
+            { "Rate": 1000, "Value": 4000 },
+            { "Rate": 1000, "Value": 4000 },
+            { "Rate": 1000, "Value": 4000 },
+            { "Rate": 1000, "Value": 4000 },
+            { "Rate": 1000, "Value": 4000 }
+          ]
         },
         {
           "funcId": 197,
@@ -311,36 +326,41 @@
               "maxRate": 5000
             }
           ],
-          "svals": {
-            "Rate": [1000, 1000, 1000, 1000, 1000],
-            "Turn": [3, 3, 3, 3, 3],
-            "Count": [-1, -1, -1, -1, -1],
-            "Value": [200, 200, 200, 200, 200]
-          },
-          "svals2": {
-            "Rate": [1000, 1000, 1000, 1000, 1000],
-            "Turn": [3, 3, 3, 3, 3],
-            "Count": [-1, -1, -1, -1, -1],
-            "Value": [200, 200, 200, 200, 200]
-          },
-          "svals3": {
-            "Rate": [1000, 1000, 1000, 1000, 1000],
-            "Turn": [3, 3, 3, 3, 3],
-            "Count": [-1, -1, -1, -1, -1],
-            "Value": [200, 200, 200, 200, 200]
-          },
-          "svals4": {
-            "Rate": [1000, 1000, 1000, 1000, 1000],
-            "Turn": [3, 3, 3, 3, 3],
-            "Count": [-1, -1, -1, -1, -1],
-            "Value": [200, 200, 200, 200, 200]
-          },
-          "svals5": {
-            "Rate": [1000, 1000, 1000, 1000, 1000],
-            "Turn": [3, 3, 3, 3, 3],
-            "Count": [-1, -1, -1, -1, -1],
-            "Value": [200, 200, 200, 200, 200]
-          }
+          "svals": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+          ],
+          "svals2": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+          ],
+          "svals3": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+          ],
+          "svals4": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+          ],
+          "svals5": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+          ]
         }
       ]
     }

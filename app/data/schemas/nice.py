@@ -60,41 +60,41 @@ class NiceLvlUpMaterial(BaseModel):
 
 
 class Vals(BaseModel):
-    Rate: List[int] = []
-    Turn: List[int] = []
-    Count: List[int] = []
-    Value: List[int] = []
-    Value2: List[int] = []
-    UseRate: List[int] = []
-    Target: List[int] = []
-    Correction: List[int] = []
-    ParamAdd: List[int] = []
-    ParamMax: List[int] = []
-    HideMiss: List[int] = []
-    OnField: List[int] = []
-    HideNoEffect: List[int] = []
-    Unaffected: List[int] = []
-    ShowState: List[int] = []
-    AuraEffectId: List[int] = []
-    ActSet: List[int] = []
-    ActSetWeight: List[int] = []
-    ShowQuestNoEffect: List[int] = []
-    CheckDead: List[int] = []
-    RatioHPHigh: List[int] = []
-    RatioHPLow: List[int] = []
-    SetPassiveFrame: List[int] = []
-    ProcPassive: List[int] = []
-    ProcActive: List[int] = []
-    HideParam: List[int] = []
-    SkillID: List[int] = []
-    SkillLV: List[int] = []
-    ShowCardOnly: List[int] = []
-    EffectSummon: List[int] = []
-    RatioHPRangeHigh: List[int] = []
-    RatioHPRangeLow: List[int] = []
-    TargetList: List[int] = []
-    OpponentOnly: List[int] = []
-    TargetRarityList: List[str] = []
+    Rate: Optional[int] = None
+    Turn: Optional[int] = None
+    Count: Optional[int] = None
+    Value: Optional[int] = None
+    Value2: Optional[int] = None
+    UseRate: Optional[int] = None
+    Target: Optional[int] = None
+    Correction: Optional[int] = None
+    ParamAdd: Optional[int] = None
+    ParamMax: Optional[int] = None
+    HideMiss: Optional[int] = None
+    OnField: Optional[int] = None
+    HideNoEffect: Optional[int] = None
+    Unaffected: Optional[int] = None
+    ShowState: Optional[int] = None
+    AuraEffectId: Optional[int] = None
+    ActSet: Optional[int] = None
+    ActSetWeight: Optional[int] = None
+    ShowQuestNoEffect: Optional[int] = None
+    CheckDead: Optional[int] = None
+    RatioHPHigh: Optional[int] = None
+    RatioHPLow: Optional[int] = None
+    SetPassiveFrame: Optional[int] = None
+    ProcPassive: Optional[int] = None
+    ProcActive: Optional[int] = None
+    HideParam: Optional[int] = None
+    SkillID: Optional[int] = None
+    SkillLV: Optional[int] = None
+    ShowCardOnly: Optional[int] = None
+    EffectSummon: Optional[int] = None
+    RatioHPRangeHigh: Optional[int] = None
+    RatioHPRangeLow: Optional[int] = None
+    TargetOptional: Optional[int] = None
+    OpponentOnly: Optional[int] = None
+    TargetRarityOptional: Optional[str] = None
 
 
 class NiceTrait(BaseModel):
@@ -125,11 +125,11 @@ class NiceFunction(BaseModel):
     functvals: List[NiceTrait]
     funcquestTvals: List[int]
     buffs: List[NiceBuff]
-    svals: Vals
-    svals2: Optional[Vals] = None
-    svals3: Optional[Vals] = None
-    svals4: Optional[Vals] = None
-    svals5: Optional[Vals] = None
+    svals: List[Vals]
+    svals2: Optional[List[Vals]] = None
+    svals3: Optional[List[Vals]] = None
+    svals4: Optional[List[Vals]] = None
+    svals5: Optional[List[Vals]] = None
 
 
 class NiceSkill(BaseModel):

@@ -265,12 +265,7 @@
               "maxRate": 5000
             }
           ],
-          "svals": {
-            "Rate": [1000],
-            "Turn": [-1],
-            "Count": [-1],
-            "Value": [80]
-          }
+          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 }]
         },
         {
           "funcId": 248,
@@ -299,12 +294,7 @@
               "maxRate": 5000
             }
           ],
-          "svals": {
-            "Rate": [1000],
-            "Turn": [-1],
-            "Count": [-1],
-            "Value": [80]
-          }
+          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 }]
         },
         {
           "funcId": 460,
@@ -315,7 +305,7 @@
           "functvals": [],
           "funcquestTvals": [],
           "buffs": [],
-          "svals": { "Rate": [1000], "Value": [3000] }
+          "svals": [{ "Rate": 1000, "Value": 3000 }]
         }
       ]
     },
@@ -341,7 +331,7 @@
           "functvals": [],
           "funcquestTvals": [],
           "buffs": [],
-          "svals": { "Rate": [1155], "Value": [2], "Target": [250] }
+          "svals": [{ "Rate": 1155, "Value": 2, "Target": 250 }]
         }
       ]
     },
@@ -387,12 +377,7 @@
               "maxRate": 5000
             }
           ],
-          "svals": {
-            "Rate": [1000],
-            "Turn": [-1],
-            "Count": [-1],
-            "Value": [100]
-          }
+          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 100 }]
         },
         {
           "funcId": 248,
@@ -421,12 +406,7 @@
               "maxRate": 5000
             }
           ],
-          "svals": {
-            "Rate": [1000],
-            "Turn": [-1],
-            "Count": [-1],
-            "Value": [100]
-          }
+          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 100 }]
         },
         {
           "funcId": 460,
@@ -437,7 +417,7 @@
           "functvals": [],
           "funcquestTvals": [],
           "buffs": [],
-          "svals": { "Rate": [1000], "Value": [5000] }
+          "svals": [{ "Rate": 1000, "Value": 5000 }]
         }
       ]
     },
@@ -463,7 +443,7 @@
           "functvals": [],
           "funcquestTvals": [],
           "buffs": [],
-          "svals": { "Rate": [1155], "Value": [2], "Target": [1000] }
+          "svals": [{ "Rate": 1155, "Value": 2, "Target": 1000 }]
         }
       ]
     }

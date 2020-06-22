@@ -223,10 +223,7 @@ def get_nice_skill(
             dataVals = parse_dataVals(
                 skillEntity.mstSkillLv[0].svals[funci], function.mstFunc.funcType
             )
-            svals: Dict[str, List[Union[str, int]]] = {}
-            for key, value in dataVals.items():
-                svals[key] = [value]
-            functionInfo["svals"] = svals
+            functionInfo["svals"] = [dataVals]
             combinedFunctionList.append(functionInfo)
 
     # Add the remaining cooldown and svals values
@@ -238,8 +235,7 @@ def get_nice_skill(
             dataVals = parse_dataVals(
                 skillLv.svals[funci], skillLv.expandedFuncId[funci].mstFunc.funcType
             )
-            for key, value in dataVals.items():
-                combinedFunctionList[combinedfunci]["svals"][key].append(value)
+            combinedFunctionList[combinedfunci]["svals"].append(dataVals)
 
     nice_skill["functions"] = combinedFunctionList
 
@@ -296,10 +292,7 @@ def get_nice_td(
                     getattr(tdEntity.mstTreasureDeviceLv[0], valName)[funci],
                     function.mstFunc.funcType,
                 )
-                svals: Dict[str, List[Union[str, int]]] = {}
-                for key, value in dataVals.items():
-                    svals[key] = [value]
-                functionInfo[valName] = svals
+                functionInfo[valName] = [dataVals]
             combinedFunctionList.append(functionInfo)
 
     # Add the remaining svals values
@@ -313,8 +306,7 @@ def get_nice_td(
                     getattr(tdLv, valName)[funci],
                     tdLv.expandedFuncId[funci].mstFunc.funcType,
                 )
-                for key, value in dataVals.items():
-                    combinedFunctionList[combinedfunci][valName][key].append(value)
+                combinedFunctionList[combinedfunci][valName].append(dataVals)
 
     nice_td["functions"] = combinedFunctionList
 
