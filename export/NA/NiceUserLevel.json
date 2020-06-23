@@ -838,5 +838,65 @@
     "maxAp": 140,
     "maxCost": 112,
     "maxFriend": 80
+  },
+  "141": {
+    "requiredExp": 197119792,
+    "maxAp": 140,
+    "maxCost": 112,
+    "maxFriend": 81
+  },
+  "142": {
+    "requiredExp": 215990297,
+    "maxAp": 140,
+    "maxCost": 112,
+    "maxFriend": 82
+  },
+  "143": {
+    "requiredExp": 234873582,
+    "maxAp": 141,
+    "maxCost": 112,
+    "maxFriend": 83
+  },
+  "144": {
+    "requiredExp": 253769737,
+    "maxAp": 141,
+    "maxCost": 112,
+    "maxFriend": 84
+  },
+  "145": {
+    "requiredExp": 272678852,
+    "maxAp": 141,
+    "maxCost": 112,
+    "maxFriend": 85
+  },
+  "146": {
+    "requiredExp": 291601017,
+    "maxAp": 141,
+    "maxCost": 112,
+    "maxFriend": 86
+  },
+  "147": {
+    "requiredExp": 310536322,
+    "maxAp": 142,
+    "maxCost": 112,
+    "maxFriend": 87
+  },
+  "148": {
+    "requiredExp": 329484857,
+    "maxAp": 142,
+    "maxCost": 112,
+    "maxFriend": 88
+  },
+  "149": {
+    "requiredExp": 348446712,
+    "maxAp": 142,
+    "maxCost": 112,
+    "maxFriend": 89
+  },
+  "150": {
+    "requiredExp": 367421977,
+    "maxAp": 142,
+    "maxCost": 113,
+    "maxFriend": 90
   }
 }
