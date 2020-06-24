@@ -723,7 +723,7 @@
       "id": 184450,
       "num": 3,
       "name": "Search for the Unknown B",
-      "detail": "Increase Arts Card (3 turns) & Buster Card (3 turns) & Quick Card (3 turns) effectiveness for all allies",
+      "detail": "Increase Quick Card (3 turns) & Arts Card (3 turns) & Buster Card (3 turns) effectiveness for all allies",
       "strengthStatus": 0,
       "priority": 1,
       "condQuestId": 0,
@@ -733,27 +733,27 @@
       "actIndividuality": [],
       "functions": [
         {
-          "funcId": 124,
+          "funcId": 106,
           "funcType": "addStateShort",
           "funcTargetType": "ptAll",
           "funcTargetTeam": "playerAndEnemy",
-          "funcPopupText": "Buster Up",
-          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_314.png",
+          "funcPopupText": "Quick Up",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_312.png",
           "functvals": [],
           "funcquestTvals": [],
           "buffs": [
             {
-              "id": 102,
-              "name": "Buster Up",
-              "detail": "Increase Buster Card effectiveness",
-              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_314.png",
+              "id": 100,
+              "name": "Quick Up",
+              "detail": "Increase Quick Card effectiveness",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_312.png",
               "type": "upCommandall",
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [
                 { "id": 5000, "name": "canBeInBattle" },
-                { "id": 4002, "name": "cardBuster" }
+                { "id": 4003, "name": "cardQuick" }
               ],
-              "ckSelfIndv": [{ "id": 4002, "name": "cardBuster" }],
+              "ckSelfIndv": [{ "id": 4003, "name": "cardQuick" }],
               "ckOpIndv": [],
               "maxRate": 5000
             }
@@ -811,27 +811,27 @@
           ]
         },
         {
-          "funcId": 106,
+          "funcId": 124,
           "funcType": "addStateShort",
           "funcTargetType": "ptAll",
           "funcTargetTeam": "playerAndEnemy",
-          "funcPopupText": "Quick Up",
-          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_312.png",
+          "funcPopupText": "Buster Up",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_314.png",
           "functvals": [],
           "funcquestTvals": [],
           "buffs": [
             {
-              "id": 100,
-              "name": "Quick Up",
-              "detail": "Increase Quick Card effectiveness",
-              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_312.png",
+              "id": 102,
+              "name": "Buster Up",
+              "detail": "Increase Buster Card effectiveness",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_314.png",
               "type": "upCommandall",
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [
                 { "id": 5000, "name": "canBeInBattle" },
-                { "id": 4003, "name": "cardQuick" }
+                { "id": 4002, "name": "cardBuster" }
               ],
-              "ckSelfIndv": [{ "id": 4003, "name": "cardQuick" }],
+              "ckSelfIndv": [{ "id": 4002, "name": "cardBuster" }],
               "ckOpIndv": [],
               "maxRate": 5000
             }

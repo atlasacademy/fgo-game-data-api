@@ -224,7 +224,7 @@
             ],
             "classPassive": [34450, 88550, 62150],
             "cardIds": [3, 3, 1, 2, 2],
-            "script": {},
+            "script": { "cameraActionId": 61 },
             "id": 301200,
             "baseSvtId": 301200,
             "name": "Brynhild",
@@ -941,6 +941,242 @@
             }
           ],
           "mstTreasureDevice": [
+            {
+              "mstTreasureDevice": {
+                "individuality": [3000, 4002, 4007],
+                "script": {},
+                "id": 301298,
+                "seqId": 301201,
+                "name": "Brynhild Romantia",
+                "ruby": " ",
+                "rank": "B",
+                "maxLv": 5,
+                "typeText": "Anti-Personnel",
+                "attackAttri": 1
+              },
+              "mstTreasureDeviceDetail": [
+                {
+                  "id": 301298,
+                  "detail": "Deal significant Special Attack damage to a single [Loved One] enemy [{0}] <Special Attack damage increases with Overcharge> & increase C. Star Drop Rate (3 turns) for all allies ",
+                  "detailShort": "Deal significant Special Attack damage to a single [Loved One] enemy [{0}] <Special Attack damage increases with Overcharge> & increase C. Star Drop Rate (3 turns) for all allies "
+                }
+              ],
+              "mstSvtTreasureDevice": [
+                {
+                  "damage": [6, 13, 20, 26, 35],
+                  "strengthStatus": 0,
+                  "svtId": 301200,
+                  "num": 98,
+                  "priority": 0,
+                  "flag": 0,
+                  "imageIndex": 0,
+                  "treasureDeviceId": 301298,
+                  "condQuestId": 0,
+                  "condQuestPhase": 0,
+                  "condLv": 0,
+                  "condFriendshipRank": 0,
+                  "motion": 50,
+                  "cardId": 2
+                }
+              ],
+              "mstTreasureDeviceLv": [
+                {
+                  "funcId": [16, 303, 222],
+                  "svals": [
+                    "[1000,6000,2012,1500]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "svals2": [
+                    "[1000,6000,2012,1625]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "svals3": [
+                    "[1000,6000,2012,1750]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "svals4": [
+                    "[1000,6000,2012,1875]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "svals5": [
+                    "[1000,6000,2012,2000]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "treaureDeviceId": 301298,
+                  "lv": 1,
+                  "gaugeCount": 1,
+                  "detailId": 301298,
+                  "tdPoint": 107,
+                  "tdPointQ": 107,
+                  "tdPointA": 107,
+                  "tdPointB": 107,
+                  "tdPointEx": 107,
+                  "tdPointDef": 400,
+                  "qp": 80000
+                },
+                {
+                  "funcId": [16, 303, 222],
+                  "svals": [
+                    "[1000,8000,2012,1500]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "svals2": [
+                    "[1000,8000,2012,1625]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "svals3": [
+                    "[1000,8000,2012,1750]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "svals4": [
+                    "[1000,8000,2012,1875]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "svals5": [
+                    "[1000,8000,2012,2000]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "treaureDeviceId": 301298,
+                  "lv": 2,
+                  "gaugeCount": 2,
+                  "detailId": 301298,
+                  "tdPoint": 107,
+                  "tdPointQ": 107,
+                  "tdPointA": 107,
+                  "tdPointB": 107,
+                  "tdPointEx": 107,
+                  "tdPointDef": 400,
+                  "qp": 160000
+                },
+                {
+                  "funcId": [16, 303, 222],
+                  "svals": [
+                    "[1000,9000,2012,1500]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "svals2": [
+                    "[1000,9000,2012,1625]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "svals3": [
+                    "[1000,9000,2012,1750]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "svals4": [
+                    "[1000,9000,2012,1875]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "svals5": [
+                    "[1000,9000,2012,2000]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "treaureDeviceId": 301298,
+                  "lv": 3,
+                  "gaugeCount": 2,
+                  "detailId": 301298,
+                  "tdPoint": 107,
+                  "tdPointQ": 107,
+                  "tdPointA": 107,
+                  "tdPointB": 107,
+                  "tdPointEx": 107,
+                  "tdPointDef": 400,
+                  "qp": 320000
+                },
+                {
+                  "funcId": [16, 303, 222],
+                  "svals": [
+                    "[1000,9500,2012,1500]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "svals2": [
+                    "[1000,9500,2012,1625]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "svals3": [
+                    "[1000,9500,2012,1750]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "svals4": [
+                    "[1000,9500,2012,1875]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "svals5": [
+                    "[1000,9500,2012,2000]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "treaureDeviceId": 301298,
+                  "lv": 4,
+                  "gaugeCount": 2,
+                  "detailId": 301298,
+                  "tdPoint": 107,
+                  "tdPointQ": 107,
+                  "tdPointA": 107,
+                  "tdPointB": 107,
+                  "tdPointEx": 107,
+                  "tdPointDef": 400,
+                  "qp": 640000
+                },
+                {
+                  "funcId": [16, 303, 222],
+                  "svals": [
+                    "[1000,10000,2012,1500]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "svals2": [
+                    "[1000,10000,2012,1625]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "svals3": [
+                    "[1000,10000,2012,1750]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "svals4": [
+                    "[1000,10000,2012,1875]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "svals5": [
+                    "[1000,10000,2012,2000]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,200]"
+                  ],
+                  "treaureDeviceId": 301298,
+                  "lv": 5,
+                  "gaugeCount": 3,
+                  "detailId": 301298,
+                  "tdPoint": 107,
+                  "tdPointQ": 107,
+                  "tdPointA": 107,
+                  "tdPointB": 107,
+                  "tdPointEx": 107,
+                  "tdPointDef": 400,
+                  "qp": 1280000
+                }
+              ]
+            },
             {
               "mstTreasureDevice": {
                 "individuality": [3000, 4002, 4007],
@@ -2406,7 +2642,7 @@
                   "condQuestId": 94008002,
                   "condQuestPhase": 5,
                   "condLv": 0,
-                  "condLimitCount": 4,
+                  "condLimitCount": 3,
                   "eventId": 0,
                   "flag": 0
                 }
@@ -3021,7 +3257,7 @@
           "condQuestId": 94008002,
           "condQuestPhase": 5,
           "condLv": 0,
-          "condLimitCount": 4,
+          "condLimitCount": 3,
           "eventId": 0,
           "flag": 0
         }
@@ -3745,7 +3981,7 @@
                   "condQuestId": 94008002,
                   "condQuestPhase": 5,
                   "condLv": 0,
-                  "condLimitCount": 4,
+                  "condLimitCount": 3,
                   "eventId": 0,
                   "flag": 0
                 }

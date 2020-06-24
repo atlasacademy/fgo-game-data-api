@@ -1251,648 +1251,33 @@
             "effectList": [],
             "actIndividuality": [],
             "script": {},
-            "id": 990291,
+            "id": 961666,
             "type": 2,
-            "name": "Versus",
-            "ruby": "Versus",
+            "name": "Burning Body",
+            "ruby": "-",
             "maxLv": 1,
-            "iconId": 301,
+            "iconId": 600,
             "motion": 101
           },
-          "mstSkillDetail": [
-            {
-              "id": 990291,
-              "detail": "Apply 100% Special Attack [Divine] (3 turns) & 50% Special Defense [Divine] (3 turns) [MAX] for yourself",
-              "detailShort": "Apply 100% Special Attack [Divine] (3 turns) & 50% Special Defense [Divine] (3 turns) [MAX] for yourself"
-            }
-          ],
-          "mstSvtSkill": [
-            {
-              "strengthStatus": 2,
-              "svtId": 9401230,
-              "num": 1,
-              "priority": 2,
-              "skillId": 990291,
-              "condQuestId": 0,
-              "condQuestPhase": 0,
-              "condLv": 0,
-              "condLimitCount": 4,
-              "eventId": 0,
-              "flag": 0
-            }
-          ],
+          "mstSkillDetail": [],
+          "mstSvtSkill": [],
           "mstSkillLv": [
             {
-              "funcId": [520, 717],
-              "svals": ["[1000,3,-1,1000]", "[1000,3,-1,500]"],
+              "funcId": [2479, 520, 2476],
+              "svals": [
+                "[1000,-1,-1,961667,ShowState:1,Value2:1,UseRate:300]",
+                "[1000,-1,-1,500,ShowState:-1]",
+                "[1000,-1,-1,ShowState:-1]"
+              ],
               "script": {},
-              "skillId": 990291,
+              "skillId": 961666,
               "lv": 1,
-              "chargeTurn": 0,
-              "skillDetailId": 990291,
+              "chargeTurn": 8,
+              "skillDetailId": 1,
               "priority": 0
             }
           ],
-          "reverseServants": [
-            {
-              "mstSvt": {
-                "relateQuestIds": [],
-                "individuality": [],
-                "classPassive": [],
-                "cardIds": [3, 3, 3, 3, 3],
-                "script": {},
-                "id": 9401230,
-                "baseSvtId": 9401230,
-                "name": "Versus",
-                "ruby": "Versus",
-                "battleName": "-",
-                "classId": 1001,
-                "type": 6,
-                "limitMax": 4,
-                "rewardLv": 0,
-                "friendshipId": 1000,
-                "maxFriendshipRank": 0,
-                "genderType": 3,
-                "attri": 2,
-                "combineSkillId": 0,
-                "combineLimitId": 0,
-                "sellQp": 2000,
-                "sellMana": 5,
-                "sellRarePri": 0,
-                "expType": 20,
-                "combineMaterialId": 25,
-                "cost": 12,
-                "battleSize": 2,
-                "hpGaugeY": 0,
-                "starRate": 0,
-                "deathRate": 0,
-                "attackAttri": 1,
-                "illustratorId": 93,
-                "cvId": 0,
-                "collectionNo": 167,
-                "materialStoryPriority": 1000
-              },
-              "mstSkill": [
-                {
-                  "mstSkill": {
-                    "effectList": [],
-                    "actIndividuality": [],
-                    "script": {},
-                    "id": 990290,
-                    "type": 2,
-                    "name": "Versus",
-                    "ruby": "Versus",
-                    "maxLv": 1,
-                    "iconId": 301,
-                    "motion": 101
-                  },
-                  "mstSkillDetail": [
-                    {
-                      "id": 990290,
-                      "detail": "Apply 80% Special Attack [Divine] (3 turns) & 40% Special Defense [Divine] (3 turns) for yourself",
-                      "detailShort": "Apply 80% Special Attack [Divine] (3 turns) & 40% Special Defense [Divine] (3 turns) for yourself"
-                    }
-                  ],
-                  "mstSvtSkill": [
-                    {
-                      "strengthStatus": 1,
-                      "svtId": 9401230,
-                      "num": 1,
-                      "priority": 1,
-                      "skillId": 990290,
-                      "condQuestId": 0,
-                      "condQuestPhase": 0,
-                      "condLv": 0,
-                      "condLimitCount": 0,
-                      "eventId": 0,
-                      "flag": 0
-                    }
-                  ],
-                  "mstSkillLv": [
-                    {
-                      "funcId": [520, 717],
-                      "svals": ["[1000,3,-1,800]", "[1000,3,-1,400]"],
-                      "script": {},
-                      "skillId": 990290,
-                      "lv": 1,
-                      "chargeTurn": 0,
-                      "skillDetailId": 990290,
-                      "priority": 0
-                    }
-                  ]
-                },
-                {
-                  "mstSkill": {
-                    "effectList": [],
-                    "actIndividuality": [],
-                    "script": {},
-                    "id": 990291,
-                    "type": 2,
-                    "name": "Versus",
-                    "ruby": "Versus",
-                    "maxLv": 1,
-                    "iconId": 301,
-                    "motion": 101
-                  },
-                  "mstSkillDetail": [
-                    {
-                      "id": 990291,
-                      "detail": "Apply 100% Special Attack [Divine] (3 turns) & 50% Special Defense [Divine] (3 turns) [MAX] for yourself",
-                      "detailShort": "Apply 100% Special Attack [Divine] (3 turns) & 50% Special Defense [Divine] (3 turns) [MAX] for yourself"
-                    }
-                  ],
-                  "mstSvtSkill": [
-                    {
-                      "strengthStatus": 2,
-                      "svtId": 9401230,
-                      "num": 1,
-                      "priority": 2,
-                      "skillId": 990291,
-                      "condQuestId": 0,
-                      "condQuestPhase": 0,
-                      "condLv": 0,
-                      "condLimitCount": 4,
-                      "eventId": 0,
-                      "flag": 0
-                    }
-                  ],
-                  "mstSkillLv": [
-                    {
-                      "funcId": [520, 717],
-                      "svals": ["[1000,3,-1,1000]", "[1000,3,-1,500]"],
-                      "script": {},
-                      "skillId": 990291,
-                      "lv": 1,
-                      "chargeTurn": 0,
-                      "skillDetailId": 990291,
-                      "priority": 0
-                    }
-                  ]
-                }
-              ],
-              "mstTreasureDevice": [],
-              "mstSvtCard": [],
-              "mstSvtLimit": [
-                {
-                  "weaponColor": 16777215,
-                  "svtId": 9401230,
-                  "limitCount": 0,
-                  "rarity": 5,
-                  "lvMax": 20,
-                  "weaponGroup": 104,
-                  "weaponScale": 2,
-                  "effectFolder": 1,
-                  "hpBase": 400,
-                  "hpMax": 1600,
-                  "atkBase": 250,
-                  "atkMax": 1000,
-                  "criticalWeight": 0,
-                  "power": 99,
-                  "defense": 99,
-                  "agility": 99,
-                  "magic": 99,
-                  "luck": 99,
-                  "treasureDevice": 99,
-                  "policy": 0,
-                  "personality": 0,
-                  "deity": 99,
-                  "stepProbability": 1000,
-                  "strParam": "{}"
-                },
-                {
-                  "weaponColor": 16777215,
-                  "svtId": 9401230,
-                  "limitCount": 1,
-                  "rarity": 5,
-                  "lvMax": 40,
-                  "weaponGroup": 104,
-                  "weaponScale": 2,
-                  "effectFolder": 1,
-                  "hpBase": 400,
-                  "hpMax": 1600,
-                  "atkBase": 250,
-                  "atkMax": 1000,
-                  "criticalWeight": 0,
-                  "power": 99,
-                  "defense": 99,
-                  "agility": 99,
-                  "magic": 99,
-                  "luck": 99,
-                  "treasureDevice": 99,
-                  "policy": 0,
-                  "personality": 0,
-                  "deity": 99,
-                  "stepProbability": 1000,
-                  "strParam": "{}"
-                },
-                {
-                  "weaponColor": 16777215,
-                  "svtId": 9401230,
-                  "limitCount": 2,
-                  "rarity": 5,
-                  "lvMax": 60,
-                  "weaponGroup": 104,
-                  "weaponScale": 2,
-                  "effectFolder": 1,
-                  "hpBase": 400,
-                  "hpMax": 1600,
-                  "atkBase": 250,
-                  "atkMax": 1000,
-                  "criticalWeight": 0,
-                  "power": 99,
-                  "defense": 99,
-                  "agility": 99,
-                  "magic": 99,
-                  "luck": 99,
-                  "treasureDevice": 99,
-                  "policy": 0,
-                  "personality": 0,
-                  "deity": 99,
-                  "stepProbability": 1000,
-                  "strParam": "{}"
-                },
-                {
-                  "weaponColor": 16777215,
-                  "svtId": 9401230,
-                  "limitCount": 3,
-                  "rarity": 5,
-                  "lvMax": 80,
-                  "weaponGroup": 104,
-                  "weaponScale": 2,
-                  "effectFolder": 1,
-                  "hpBase": 400,
-                  "hpMax": 1600,
-                  "atkBase": 250,
-                  "atkMax": 1000,
-                  "criticalWeight": 0,
-                  "power": 99,
-                  "defense": 99,
-                  "agility": 99,
-                  "magic": 99,
-                  "luck": 99,
-                  "treasureDevice": 99,
-                  "policy": 0,
-                  "personality": 0,
-                  "deity": 99,
-                  "stepProbability": 1000,
-                  "strParam": "{}"
-                },
-                {
-                  "weaponColor": 16777215,
-                  "svtId": 9401230,
-                  "limitCount": 4,
-                  "rarity": 5,
-                  "lvMax": 100,
-                  "weaponGroup": 104,
-                  "weaponScale": 2,
-                  "effectFolder": 1,
-                  "hpBase": 400,
-                  "hpMax": 1600,
-                  "atkBase": 250,
-                  "atkMax": 1000,
-                  "criticalWeight": 0,
-                  "power": 99,
-                  "defense": 99,
-                  "agility": 99,
-                  "magic": 99,
-                  "luck": 99,
-                  "treasureDevice": 99,
-                  "policy": 0,
-                  "personality": 0,
-                  "deity": 99,
-                  "stepProbability": 1000,
-                  "strParam": "{}"
-                }
-              ],
-              "mstCombineSkill": [],
-              "mstCombineLimit": [],
-              "mstSvtLimitAdd": []
-            }
-          ]
-        },
-        {
-          "mstSkill": {
-            "effectList": [],
-            "actIndividuality": [],
-            "script": {},
-            "id": 990290,
-            "type": 2,
-            "name": "Versus",
-            "ruby": "Versus",
-            "maxLv": 1,
-            "iconId": 301,
-            "motion": 101
-          },
-          "mstSkillDetail": [
-            {
-              "id": 990290,
-              "detail": "Apply 80% Special Attack [Divine] (3 turns) & 40% Special Defense [Divine] (3 turns) for yourself",
-              "detailShort": "Apply 80% Special Attack [Divine] (3 turns) & 40% Special Defense [Divine] (3 turns) for yourself"
-            }
-          ],
-          "mstSvtSkill": [
-            {
-              "strengthStatus": 1,
-              "svtId": 9401230,
-              "num": 1,
-              "priority": 1,
-              "skillId": 990290,
-              "condQuestId": 0,
-              "condQuestPhase": 0,
-              "condLv": 0,
-              "condLimitCount": 0,
-              "eventId": 0,
-              "flag": 0
-            }
-          ],
-          "mstSkillLv": [
-            {
-              "funcId": [520, 717],
-              "svals": ["[1000,3,-1,800]", "[1000,3,-1,400]"],
-              "script": {},
-              "skillId": 990290,
-              "lv": 1,
-              "chargeTurn": 0,
-              "skillDetailId": 990290,
-              "priority": 0
-            }
-          ],
-          "reverseServants": [
-            {
-              "mstSvt": {
-                "relateQuestIds": [],
-                "individuality": [],
-                "classPassive": [],
-                "cardIds": [3, 3, 3, 3, 3],
-                "script": {},
-                "id": 9401230,
-                "baseSvtId": 9401230,
-                "name": "Versus",
-                "ruby": "Versus",
-                "battleName": "-",
-                "classId": 1001,
-                "type": 6,
-                "limitMax": 4,
-                "rewardLv": 0,
-                "friendshipId": 1000,
-                "maxFriendshipRank": 0,
-                "genderType": 3,
-                "attri": 2,
-                "combineSkillId": 0,
-                "combineLimitId": 0,
-                "sellQp": 2000,
-                "sellMana": 5,
-                "sellRarePri": 0,
-                "expType": 20,
-                "combineMaterialId": 25,
-                "cost": 12,
-                "battleSize": 2,
-                "hpGaugeY": 0,
-                "starRate": 0,
-                "deathRate": 0,
-                "attackAttri": 1,
-                "illustratorId": 93,
-                "cvId": 0,
-                "collectionNo": 167,
-                "materialStoryPriority": 1000
-              },
-              "mstSkill": [
-                {
-                  "mstSkill": {
-                    "effectList": [],
-                    "actIndividuality": [],
-                    "script": {},
-                    "id": 990290,
-                    "type": 2,
-                    "name": "Versus",
-                    "ruby": "Versus",
-                    "maxLv": 1,
-                    "iconId": 301,
-                    "motion": 101
-                  },
-                  "mstSkillDetail": [
-                    {
-                      "id": 990290,
-                      "detail": "Apply 80% Special Attack [Divine] (3 turns) & 40% Special Defense [Divine] (3 turns) for yourself",
-                      "detailShort": "Apply 80% Special Attack [Divine] (3 turns) & 40% Special Defense [Divine] (3 turns) for yourself"
-                    }
-                  ],
-                  "mstSvtSkill": [
-                    {
-                      "strengthStatus": 1,
-                      "svtId": 9401230,
-                      "num": 1,
-                      "priority": 1,
-                      "skillId": 990290,
-                      "condQuestId": 0,
-                      "condQuestPhase": 0,
-                      "condLv": 0,
-                      "condLimitCount": 0,
-                      "eventId": 0,
-                      "flag": 0
-                    }
-                  ],
-                  "mstSkillLv": [
-                    {
-                      "funcId": [520, 717],
-                      "svals": ["[1000,3,-1,800]", "[1000,3,-1,400]"],
-                      "script": {},
-                      "skillId": 990290,
-                      "lv": 1,
-                      "chargeTurn": 0,
-                      "skillDetailId": 990290,
-                      "priority": 0
-                    }
-                  ]
-                },
-                {
-                  "mstSkill": {
-                    "effectList": [],
-                    "actIndividuality": [],
-                    "script": {},
-                    "id": 990291,
-                    "type": 2,
-                    "name": "Versus",
-                    "ruby": "Versus",
-                    "maxLv": 1,
-                    "iconId": 301,
-                    "motion": 101
-                  },
-                  "mstSkillDetail": [
-                    {
-                      "id": 990291,
-                      "detail": "Apply 100% Special Attack [Divine] (3 turns) & 50% Special Defense [Divine] (3 turns) [MAX] for yourself",
-                      "detailShort": "Apply 100% Special Attack [Divine] (3 turns) & 50% Special Defense [Divine] (3 turns) [MAX] for yourself"
-                    }
-                  ],
-                  "mstSvtSkill": [
-                    {
-                      "strengthStatus": 2,
-                      "svtId": 9401230,
-                      "num": 1,
-                      "priority": 2,
-                      "skillId": 990291,
-                      "condQuestId": 0,
-                      "condQuestPhase": 0,
-                      "condLv": 0,
-                      "condLimitCount": 4,
-                      "eventId": 0,
-                      "flag": 0
-                    }
-                  ],
-                  "mstSkillLv": [
-                    {
-                      "funcId": [520, 717],
-                      "svals": ["[1000,3,-1,1000]", "[1000,3,-1,500]"],
-                      "script": {},
-                      "skillId": 990291,
-                      "lv": 1,
-                      "chargeTurn": 0,
-                      "skillDetailId": 990291,
-                      "priority": 0
-                    }
-                  ]
-                }
-              ],
-              "mstTreasureDevice": [],
-              "mstSvtCard": [],
-              "mstSvtLimit": [
-                {
-                  "weaponColor": 16777215,
-                  "svtId": 9401230,
-                  "limitCount": 0,
-                  "rarity": 5,
-                  "lvMax": 20,
-                  "weaponGroup": 104,
-                  "weaponScale": 2,
-                  "effectFolder": 1,
-                  "hpBase": 400,
-                  "hpMax": 1600,
-                  "atkBase": 250,
-                  "atkMax": 1000,
-                  "criticalWeight": 0,
-                  "power": 99,
-                  "defense": 99,
-                  "agility": 99,
-                  "magic": 99,
-                  "luck": 99,
-                  "treasureDevice": 99,
-                  "policy": 0,
-                  "personality": 0,
-                  "deity": 99,
-                  "stepProbability": 1000,
-                  "strParam": "{}"
-                },
-                {
-                  "weaponColor": 16777215,
-                  "svtId": 9401230,
-                  "limitCount": 1,
-                  "rarity": 5,
-                  "lvMax": 40,
-                  "weaponGroup": 104,
-                  "weaponScale": 2,
-                  "effectFolder": 1,
-                  "hpBase": 400,
-                  "hpMax": 1600,
-                  "atkBase": 250,
-                  "atkMax": 1000,
-                  "criticalWeight": 0,
-                  "power": 99,
-                  "defense": 99,
-                  "agility": 99,
-                  "magic": 99,
-                  "luck": 99,
-                  "treasureDevice": 99,
-                  "policy": 0,
-                  "personality": 0,
-                  "deity": 99,
-                  "stepProbability": 1000,
-                  "strParam": "{}"
-                },
-                {
-                  "weaponColor": 16777215,
-                  "svtId": 9401230,
-                  "limitCount": 2,
-                  "rarity": 5,
-                  "lvMax": 60,
-                  "weaponGroup": 104,
-                  "weaponScale": 2,
-                  "effectFolder": 1,
-                  "hpBase": 400,
-                  "hpMax": 1600,
-                  "atkBase": 250,
-                  "atkMax": 1000,
-                  "criticalWeight": 0,
-                  "power": 99,
-                  "defense": 99,
-                  "agility": 99,
-                  "magic": 99,
-                  "luck": 99,
-                  "treasureDevice": 99,
-                  "policy": 0,
-                  "personality": 0,
-                  "deity": 99,
-                  "stepProbability": 1000,
-                  "strParam": "{}"
-                },
-                {
-                  "weaponColor": 16777215,
-                  "svtId": 9401230,
-                  "limitCount": 3,
-                  "rarity": 5,
-                  "lvMax": 80,
-                  "weaponGroup": 104,
-                  "weaponScale": 2,
-                  "effectFolder": 1,
-                  "hpBase": 400,
-                  "hpMax": 1600,
-                  "atkBase": 250,
-                  "atkMax": 1000,
-                  "criticalWeight": 0,
-                  "power": 99,
-                  "defense": 99,
-                  "agility": 99,
-                  "magic": 99,
-                  "luck": 99,
-                  "treasureDevice": 99,
-                  "policy": 0,
-                  "personality": 0,
-                  "deity": 99,
-                  "stepProbability": 1000,
-                  "strParam": "{}"
-                },
-                {
-                  "weaponColor": 16777215,
-                  "svtId": 9401230,
-                  "limitCount": 4,
-                  "rarity": 5,
-                  "lvMax": 100,
-                  "weaponGroup": 104,
-                  "weaponScale": 2,
-                  "effectFolder": 1,
-                  "hpBase": 400,
-                  "hpMax": 1600,
-                  "atkBase": 250,
-                  "atkMax": 1000,
-                  "criticalWeight": 0,
-                  "power": 99,
-                  "defense": 99,
-                  "agility": 99,
-                  "magic": 99,
-                  "luck": 99,
-                  "treasureDevice": 99,
-                  "policy": 0,
-                  "personality": 0,
-                  "deity": 99,
-                  "stepProbability": 1000,
-                  "strParam": "{}"
-                }
-              ],
-              "mstCombineSkill": [],
-              "mstCombineLimit": [],
-              "mstSvtLimitAdd": []
-            }
-          ]
+          "reverseServants": []
         },
         {
           "mstSkill": {
@@ -2960,6 +2345,654 @@
                   "qp": 50000000
                 }
               ],
+              "mstSvtLimitAdd": []
+            }
+          ]
+        },
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
+            "id": 990290,
+            "type": 2,
+            "name": "Versus",
+            "ruby": "Versus",
+            "maxLv": 1,
+            "iconId": 301,
+            "motion": 101
+          },
+          "mstSkillDetail": [
+            {
+              "id": 990290,
+              "detail": "Apply 80% Special Attack [Divine] (3 turns) & 40% Special Defense [Divine] (3 turns) for yourself",
+              "detailShort": "Apply 80% Special Attack [Divine] (3 turns) & 40% Special Defense [Divine] (3 turns) for yourself"
+            }
+          ],
+          "mstSvtSkill": [
+            {
+              "strengthStatus": 1,
+              "svtId": 9401230,
+              "num": 1,
+              "priority": 1,
+              "skillId": 990290,
+              "condQuestId": 0,
+              "condQuestPhase": 0,
+              "condLv": 0,
+              "condLimitCount": 0,
+              "eventId": 0,
+              "flag": 0
+            }
+          ],
+          "mstSkillLv": [
+            {
+              "funcId": [520, 717],
+              "svals": ["[1000,3,-1,800]", "[1000,3,-1,400]"],
+              "script": {},
+              "skillId": 990290,
+              "lv": 1,
+              "chargeTurn": 0,
+              "skillDetailId": 990290,
+              "priority": 0
+            }
+          ],
+          "reverseServants": [
+            {
+              "mstSvt": {
+                "relateQuestIds": [],
+                "individuality": [],
+                "classPassive": [],
+                "cardIds": [3, 3, 3, 3, 3],
+                "script": {},
+                "id": 9401230,
+                "baseSvtId": 9401230,
+                "name": "Versus",
+                "ruby": "Versus",
+                "battleName": "-",
+                "classId": 1001,
+                "type": 6,
+                "limitMax": 4,
+                "rewardLv": 0,
+                "friendshipId": 1000,
+                "maxFriendshipRank": 0,
+                "genderType": 3,
+                "attri": 2,
+                "combineSkillId": 0,
+                "combineLimitId": 0,
+                "sellQp": 2000,
+                "sellMana": 5,
+                "sellRarePri": 0,
+                "expType": 20,
+                "combineMaterialId": 25,
+                "cost": 12,
+                "battleSize": 2,
+                "hpGaugeY": 0,
+                "starRate": 0,
+                "deathRate": 0,
+                "attackAttri": 1,
+                "illustratorId": 93,
+                "cvId": 0,
+                "collectionNo": 167,
+                "materialStoryPriority": 1000
+              },
+              "mstSkill": [
+                {
+                  "mstSkill": {
+                    "effectList": [],
+                    "actIndividuality": [],
+                    "script": {},
+                    "id": 990290,
+                    "type": 2,
+                    "name": "Versus",
+                    "ruby": "Versus",
+                    "maxLv": 1,
+                    "iconId": 301,
+                    "motion": 101
+                  },
+                  "mstSkillDetail": [
+                    {
+                      "id": 990290,
+                      "detail": "Apply 80% Special Attack [Divine] (3 turns) & 40% Special Defense [Divine] (3 turns) for yourself",
+                      "detailShort": "Apply 80% Special Attack [Divine] (3 turns) & 40% Special Defense [Divine] (3 turns) for yourself"
+                    }
+                  ],
+                  "mstSvtSkill": [
+                    {
+                      "strengthStatus": 1,
+                      "svtId": 9401230,
+                      "num": 1,
+                      "priority": 1,
+                      "skillId": 990290,
+                      "condQuestId": 0,
+                      "condQuestPhase": 0,
+                      "condLv": 0,
+                      "condLimitCount": 0,
+                      "eventId": 0,
+                      "flag": 0
+                    }
+                  ],
+                  "mstSkillLv": [
+                    {
+                      "funcId": [520, 717],
+                      "svals": ["[1000,3,-1,800]", "[1000,3,-1,400]"],
+                      "script": {},
+                      "skillId": 990290,
+                      "lv": 1,
+                      "chargeTurn": 0,
+                      "skillDetailId": 990290,
+                      "priority": 0
+                    }
+                  ]
+                },
+                {
+                  "mstSkill": {
+                    "effectList": [],
+                    "actIndividuality": [],
+                    "script": {},
+                    "id": 990291,
+                    "type": 2,
+                    "name": "Versus",
+                    "ruby": "Versus",
+                    "maxLv": 1,
+                    "iconId": 301,
+                    "motion": 101
+                  },
+                  "mstSkillDetail": [
+                    {
+                      "id": 990291,
+                      "detail": "Apply 100% Special Attack [Divine] (3 turns) & 50% Special Defense [Divine] (3 turns) [MAX] for yourself",
+                      "detailShort": "Apply 100% Special Attack [Divine] (3 turns) & 50% Special Defense [Divine] (3 turns) [MAX] for yourself"
+                    }
+                  ],
+                  "mstSvtSkill": [
+                    {
+                      "strengthStatus": 2,
+                      "svtId": 9401230,
+                      "num": 1,
+                      "priority": 2,
+                      "skillId": 990291,
+                      "condQuestId": 0,
+                      "condQuestPhase": 0,
+                      "condLv": 0,
+                      "condLimitCount": 4,
+                      "eventId": 0,
+                      "flag": 0
+                    }
+                  ],
+                  "mstSkillLv": [
+                    {
+                      "funcId": [520, 717],
+                      "svals": ["[1000,3,-1,1000]", "[1000,3,-1,500]"],
+                      "script": {},
+                      "skillId": 990291,
+                      "lv": 1,
+                      "chargeTurn": 0,
+                      "skillDetailId": 990291,
+                      "priority": 0
+                    }
+                  ]
+                }
+              ],
+              "mstTreasureDevice": [],
+              "mstSvtCard": [],
+              "mstSvtLimit": [
+                {
+                  "weaponColor": 16777215,
+                  "svtId": 9401230,
+                  "limitCount": 0,
+                  "rarity": 5,
+                  "lvMax": 20,
+                  "weaponGroup": 104,
+                  "weaponScale": 2,
+                  "effectFolder": 1,
+                  "hpBase": 400,
+                  "hpMax": 1600,
+                  "atkBase": 250,
+                  "atkMax": 1000,
+                  "criticalWeight": 0,
+                  "power": 99,
+                  "defense": 99,
+                  "agility": 99,
+                  "magic": 99,
+                  "luck": 99,
+                  "treasureDevice": 99,
+                  "policy": 0,
+                  "personality": 0,
+                  "deity": 99,
+                  "stepProbability": 1000,
+                  "strParam": "{}"
+                },
+                {
+                  "weaponColor": 16777215,
+                  "svtId": 9401230,
+                  "limitCount": 1,
+                  "rarity": 5,
+                  "lvMax": 40,
+                  "weaponGroup": 104,
+                  "weaponScale": 2,
+                  "effectFolder": 1,
+                  "hpBase": 400,
+                  "hpMax": 1600,
+                  "atkBase": 250,
+                  "atkMax": 1000,
+                  "criticalWeight": 0,
+                  "power": 99,
+                  "defense": 99,
+                  "agility": 99,
+                  "magic": 99,
+                  "luck": 99,
+                  "treasureDevice": 99,
+                  "policy": 0,
+                  "personality": 0,
+                  "deity": 99,
+                  "stepProbability": 1000,
+                  "strParam": "{}"
+                },
+                {
+                  "weaponColor": 16777215,
+                  "svtId": 9401230,
+                  "limitCount": 2,
+                  "rarity": 5,
+                  "lvMax": 60,
+                  "weaponGroup": 104,
+                  "weaponScale": 2,
+                  "effectFolder": 1,
+                  "hpBase": 400,
+                  "hpMax": 1600,
+                  "atkBase": 250,
+                  "atkMax": 1000,
+                  "criticalWeight": 0,
+                  "power": 99,
+                  "defense": 99,
+                  "agility": 99,
+                  "magic": 99,
+                  "luck": 99,
+                  "treasureDevice": 99,
+                  "policy": 0,
+                  "personality": 0,
+                  "deity": 99,
+                  "stepProbability": 1000,
+                  "strParam": "{}"
+                },
+                {
+                  "weaponColor": 16777215,
+                  "svtId": 9401230,
+                  "limitCount": 3,
+                  "rarity": 5,
+                  "lvMax": 80,
+                  "weaponGroup": 104,
+                  "weaponScale": 2,
+                  "effectFolder": 1,
+                  "hpBase": 400,
+                  "hpMax": 1600,
+                  "atkBase": 250,
+                  "atkMax": 1000,
+                  "criticalWeight": 0,
+                  "power": 99,
+                  "defense": 99,
+                  "agility": 99,
+                  "magic": 99,
+                  "luck": 99,
+                  "treasureDevice": 99,
+                  "policy": 0,
+                  "personality": 0,
+                  "deity": 99,
+                  "stepProbability": 1000,
+                  "strParam": "{}"
+                },
+                {
+                  "weaponColor": 16777215,
+                  "svtId": 9401230,
+                  "limitCount": 4,
+                  "rarity": 5,
+                  "lvMax": 100,
+                  "weaponGroup": 104,
+                  "weaponScale": 2,
+                  "effectFolder": 1,
+                  "hpBase": 400,
+                  "hpMax": 1600,
+                  "atkBase": 250,
+                  "atkMax": 1000,
+                  "criticalWeight": 0,
+                  "power": 99,
+                  "defense": 99,
+                  "agility": 99,
+                  "magic": 99,
+                  "luck": 99,
+                  "treasureDevice": 99,
+                  "policy": 0,
+                  "personality": 0,
+                  "deity": 99,
+                  "stepProbability": 1000,
+                  "strParam": "{}"
+                }
+              ],
+              "mstCombineSkill": [],
+              "mstCombineLimit": [],
+              "mstSvtLimitAdd": []
+            }
+          ]
+        },
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
+            "id": 990291,
+            "type": 2,
+            "name": "Versus",
+            "ruby": "Versus",
+            "maxLv": 1,
+            "iconId": 301,
+            "motion": 101
+          },
+          "mstSkillDetail": [
+            {
+              "id": 990291,
+              "detail": "Apply 100% Special Attack [Divine] (3 turns) & 50% Special Defense [Divine] (3 turns) [MAX] for yourself",
+              "detailShort": "Apply 100% Special Attack [Divine] (3 turns) & 50% Special Defense [Divine] (3 turns) [MAX] for yourself"
+            }
+          ],
+          "mstSvtSkill": [
+            {
+              "strengthStatus": 2,
+              "svtId": 9401230,
+              "num": 1,
+              "priority": 2,
+              "skillId": 990291,
+              "condQuestId": 0,
+              "condQuestPhase": 0,
+              "condLv": 0,
+              "condLimitCount": 4,
+              "eventId": 0,
+              "flag": 0
+            }
+          ],
+          "mstSkillLv": [
+            {
+              "funcId": [520, 717],
+              "svals": ["[1000,3,-1,1000]", "[1000,3,-1,500]"],
+              "script": {},
+              "skillId": 990291,
+              "lv": 1,
+              "chargeTurn": 0,
+              "skillDetailId": 990291,
+              "priority": 0
+            }
+          ],
+          "reverseServants": [
+            {
+              "mstSvt": {
+                "relateQuestIds": [],
+                "individuality": [],
+                "classPassive": [],
+                "cardIds": [3, 3, 3, 3, 3],
+                "script": {},
+                "id": 9401230,
+                "baseSvtId": 9401230,
+                "name": "Versus",
+                "ruby": "Versus",
+                "battleName": "-",
+                "classId": 1001,
+                "type": 6,
+                "limitMax": 4,
+                "rewardLv": 0,
+                "friendshipId": 1000,
+                "maxFriendshipRank": 0,
+                "genderType": 3,
+                "attri": 2,
+                "combineSkillId": 0,
+                "combineLimitId": 0,
+                "sellQp": 2000,
+                "sellMana": 5,
+                "sellRarePri": 0,
+                "expType": 20,
+                "combineMaterialId": 25,
+                "cost": 12,
+                "battleSize": 2,
+                "hpGaugeY": 0,
+                "starRate": 0,
+                "deathRate": 0,
+                "attackAttri": 1,
+                "illustratorId": 93,
+                "cvId": 0,
+                "collectionNo": 167,
+                "materialStoryPriority": 1000
+              },
+              "mstSkill": [
+                {
+                  "mstSkill": {
+                    "effectList": [],
+                    "actIndividuality": [],
+                    "script": {},
+                    "id": 990290,
+                    "type": 2,
+                    "name": "Versus",
+                    "ruby": "Versus",
+                    "maxLv": 1,
+                    "iconId": 301,
+                    "motion": 101
+                  },
+                  "mstSkillDetail": [
+                    {
+                      "id": 990290,
+                      "detail": "Apply 80% Special Attack [Divine] (3 turns) & 40% Special Defense [Divine] (3 turns) for yourself",
+                      "detailShort": "Apply 80% Special Attack [Divine] (3 turns) & 40% Special Defense [Divine] (3 turns) for yourself"
+                    }
+                  ],
+                  "mstSvtSkill": [
+                    {
+                      "strengthStatus": 1,
+                      "svtId": 9401230,
+                      "num": 1,
+                      "priority": 1,
+                      "skillId": 990290,
+                      "condQuestId": 0,
+                      "condQuestPhase": 0,
+                      "condLv": 0,
+                      "condLimitCount": 0,
+                      "eventId": 0,
+                      "flag": 0
+                    }
+                  ],
+                  "mstSkillLv": [
+                    {
+                      "funcId": [520, 717],
+                      "svals": ["[1000,3,-1,800]", "[1000,3,-1,400]"],
+                      "script": {},
+                      "skillId": 990290,
+                      "lv": 1,
+                      "chargeTurn": 0,
+                      "skillDetailId": 990290,
+                      "priority": 0
+                    }
+                  ]
+                },
+                {
+                  "mstSkill": {
+                    "effectList": [],
+                    "actIndividuality": [],
+                    "script": {},
+                    "id": 990291,
+                    "type": 2,
+                    "name": "Versus",
+                    "ruby": "Versus",
+                    "maxLv": 1,
+                    "iconId": 301,
+                    "motion": 101
+                  },
+                  "mstSkillDetail": [
+                    {
+                      "id": 990291,
+                      "detail": "Apply 100% Special Attack [Divine] (3 turns) & 50% Special Defense [Divine] (3 turns) [MAX] for yourself",
+                      "detailShort": "Apply 100% Special Attack [Divine] (3 turns) & 50% Special Defense [Divine] (3 turns) [MAX] for yourself"
+                    }
+                  ],
+                  "mstSvtSkill": [
+                    {
+                      "strengthStatus": 2,
+                      "svtId": 9401230,
+                      "num": 1,
+                      "priority": 2,
+                      "skillId": 990291,
+                      "condQuestId": 0,
+                      "condQuestPhase": 0,
+                      "condLv": 0,
+                      "condLimitCount": 4,
+                      "eventId": 0,
+                      "flag": 0
+                    }
+                  ],
+                  "mstSkillLv": [
+                    {
+                      "funcId": [520, 717],
+                      "svals": ["[1000,3,-1,1000]", "[1000,3,-1,500]"],
+                      "script": {},
+                      "skillId": 990291,
+                      "lv": 1,
+                      "chargeTurn": 0,
+                      "skillDetailId": 990291,
+                      "priority": 0
+                    }
+                  ]
+                }
+              ],
+              "mstTreasureDevice": [],
+              "mstSvtCard": [],
+              "mstSvtLimit": [
+                {
+                  "weaponColor": 16777215,
+                  "svtId": 9401230,
+                  "limitCount": 0,
+                  "rarity": 5,
+                  "lvMax": 20,
+                  "weaponGroup": 104,
+                  "weaponScale": 2,
+                  "effectFolder": 1,
+                  "hpBase": 400,
+                  "hpMax": 1600,
+                  "atkBase": 250,
+                  "atkMax": 1000,
+                  "criticalWeight": 0,
+                  "power": 99,
+                  "defense": 99,
+                  "agility": 99,
+                  "magic": 99,
+                  "luck": 99,
+                  "treasureDevice": 99,
+                  "policy": 0,
+                  "personality": 0,
+                  "deity": 99,
+                  "stepProbability": 1000,
+                  "strParam": "{}"
+                },
+                {
+                  "weaponColor": 16777215,
+                  "svtId": 9401230,
+                  "limitCount": 1,
+                  "rarity": 5,
+                  "lvMax": 40,
+                  "weaponGroup": 104,
+                  "weaponScale": 2,
+                  "effectFolder": 1,
+                  "hpBase": 400,
+                  "hpMax": 1600,
+                  "atkBase": 250,
+                  "atkMax": 1000,
+                  "criticalWeight": 0,
+                  "power": 99,
+                  "defense": 99,
+                  "agility": 99,
+                  "magic": 99,
+                  "luck": 99,
+                  "treasureDevice": 99,
+                  "policy": 0,
+                  "personality": 0,
+                  "deity": 99,
+                  "stepProbability": 1000,
+                  "strParam": "{}"
+                },
+                {
+                  "weaponColor": 16777215,
+                  "svtId": 9401230,
+                  "limitCount": 2,
+                  "rarity": 5,
+                  "lvMax": 60,
+                  "weaponGroup": 104,
+                  "weaponScale": 2,
+                  "effectFolder": 1,
+                  "hpBase": 400,
+                  "hpMax": 1600,
+                  "atkBase": 250,
+                  "atkMax": 1000,
+                  "criticalWeight": 0,
+                  "power": 99,
+                  "defense": 99,
+                  "agility": 99,
+                  "magic": 99,
+                  "luck": 99,
+                  "treasureDevice": 99,
+                  "policy": 0,
+                  "personality": 0,
+                  "deity": 99,
+                  "stepProbability": 1000,
+                  "strParam": "{}"
+                },
+                {
+                  "weaponColor": 16777215,
+                  "svtId": 9401230,
+                  "limitCount": 3,
+                  "rarity": 5,
+                  "lvMax": 80,
+                  "weaponGroup": 104,
+                  "weaponScale": 2,
+                  "effectFolder": 1,
+                  "hpBase": 400,
+                  "hpMax": 1600,
+                  "atkBase": 250,
+                  "atkMax": 1000,
+                  "criticalWeight": 0,
+                  "power": 99,
+                  "defense": 99,
+                  "agility": 99,
+                  "magic": 99,
+                  "luck": 99,
+                  "treasureDevice": 99,
+                  "policy": 0,
+                  "personality": 0,
+                  "deity": 99,
+                  "stepProbability": 1000,
+                  "strParam": "{}"
+                },
+                {
+                  "weaponColor": 16777215,
+                  "svtId": 9401230,
+                  "limitCount": 4,
+                  "rarity": 5,
+                  "lvMax": 100,
+                  "weaponGroup": 104,
+                  "weaponScale": 2,
+                  "effectFolder": 1,
+                  "hpBase": 400,
+                  "hpMax": 1600,
+                  "atkBase": 250,
+                  "atkMax": 1000,
+                  "criticalWeight": 0,
+                  "power": 99,
+                  "defense": 99,
+                  "agility": 99,
+                  "magic": 99,
+                  "luck": 99,
+                  "treasureDevice": 99,
+                  "policy": 0,
+                  "personality": 0,
+                  "deity": 99,
+                  "stepProbability": 1000,
+                  "strParam": "{}"
+                }
+              ],
+              "mstCombineSkill": [],
+              "mstCombineLimit": [],
               "mstSvtLimitAdd": []
             }
           ]
