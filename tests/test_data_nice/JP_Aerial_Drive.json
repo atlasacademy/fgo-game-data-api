@@ -11,7 +11,11 @@
         "9402750": "https://assets.atlasacademy.io/GameData/JP/CharaGraph/9402750/9402750a.png"
       }
     },
-    "faces": {}
+    "faces": {
+      "equip": {
+        "9402750": "https://assets.atlasacademy.io/GameData/JP/Faces/f_94027500.png"
+      }
+    }
   },
   "atkBase": 500,
   "atkMax": 2000,

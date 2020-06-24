@@ -166,20 +166,15 @@ class NiceTd(BaseModel):
     functions: List[NiceFunction]
 
 
-class CharaGraph(BaseModel):
+class ExtraAssetsUrl(BaseModel):
     ascension: Optional[Dict[int, HttpUrl]] = None
     costume: Optional[Dict[int, HttpUrl]] = None
     equip: Optional[Dict[int, HttpUrl]] = None
 
 
-class Faces(BaseModel):
-    ascension: Optional[Dict[int, HttpUrl]] = None
-    costume: Optional[Dict[int, HttpUrl]] = None
-
-
 class ExtraAssets(BaseModel):
-    charaGraph: CharaGraph
-    faces: Faces
+    charaGraph: ExtraAssetsUrl
+    faces: ExtraAssetsUrl
 
 
 class NpGain(BaseModel):

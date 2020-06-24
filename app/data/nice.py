@@ -417,6 +417,11 @@ def get_nice_servant(
                 base_url=settings.asset_url, region=region, item_id=item_id
             )
         }
+        faces["equip"] = {
+            item_id: ASSET_URL["face"].format(
+                base_url=settings.asset_url, region=region, item_id=item_id, i=0
+            )
+        }
     nice_data["extraAssets"] = {"charaGraph": charaGraph, "faces": faces}
 
     lvMax = max([item.lvMax for item in raw_data.mstSvtLimit])
