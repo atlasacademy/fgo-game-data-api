@@ -369,7 +369,18 @@ def get_nice_servant(
 
     charaGraph: Dict[str, Dict[int, str]] = {}
     faces: Dict[str, Dict[int, str]] = {}
-    if raw_data.mstSvt.isServant():
+    if raw_data.mstSvt.type == SvtType.ENEMY_COLLECTION_DETAIL:
+        charaGraph["ascension"] = {
+            0: ASSET_URL["charaGraphDefault"].format(
+                base_url=settings.asset_url, region=region, item_id=item_id
+            )
+        }
+        faces["ascension"] = {
+            0: ASSET_URL["face"].format(
+                base_url=settings.asset_url, region=region, item_id=item_id, i=0
+            )
+        }
+    elif raw_data.mstSvt.isServant():
         charaGraph["ascension"] = {
             i: ASSET_URL[f"charaGraph{i}"].format(
                 base_url=settings.asset_url, region=region, item_id=item_id
@@ -389,7 +400,7 @@ def get_nice_servant(
         ]
         if costume_ids:
             charaGraph["costume"] = {
-                costume_id: ASSET_URL["charaGraphcostume"].format(
+                costume_id: ASSET_URL["charaGraphDefault"].format(
                     base_url=settings.asset_url, region=region, item_id=costume_id
                 )
                 for costume_id in costume_ids
@@ -402,7 +413,7 @@ def get_nice_servant(
             }
     elif raw_data.mstSvt.isEquip():
         charaGraph["equip"] = {
-            item_id: ASSET_URL["charaGraphEquip"].format(
+            item_id: ASSET_URL["charaGraphDefault"].format(
                 base_url=settings.asset_url, region=region, item_id=item_id
             )
         }

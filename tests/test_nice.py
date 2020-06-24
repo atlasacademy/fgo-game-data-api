@@ -52,6 +52,11 @@ class TestServant:
         assert response.status_code == 200
         assert response.json() == get_response_data("JP_Elice")
 
+    def test_JP_collection_servant(self):
+        response = client.get("/nice/JP/servant/149")
+        assert response.status_code == 200
+        assert response.json() == get_response_data("JP_Tiamat")
+
     def test_JP_costume(self):
         response = client.get("/nice/JP/servant/1")
         assert response.status_code == 200

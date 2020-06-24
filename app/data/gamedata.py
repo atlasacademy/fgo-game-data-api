@@ -13,6 +13,7 @@ def is_servant(svt_type: int) -> bool:
     return svt_type in [
         SvtType.NORMAL,
         SvtType.HEROINE,
+        SvtType.ENEMY_COLLECTION_DETAIL,
     ]
 
 

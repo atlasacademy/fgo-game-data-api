@@ -207,7 +207,11 @@ class MstSvt(BaseModel):
     materialStoryPriority: int  # 1000
 
     def isServant(self) -> bool:
-        return self.type in [SvtType.NORMAL, SvtType.HEROINE]
+        return self.type in [
+            SvtType.NORMAL,
+            SvtType.HEROINE,
+            SvtType.ENEMY_COLLECTION_DETAIL,
+        ]
 
     def isEquip(self) -> bool:
         return self.type == SvtType.SERVANT_EQUIP

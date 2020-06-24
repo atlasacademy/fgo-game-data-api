@@ -27,8 +27,7 @@ ASSET_URL: Dict[str, str] = {
     "charaGraph2": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a@2.png",
     "charaGraph3": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@1.png",
     "charaGraph4": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@2.png",
-    "charaGraphEquip": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a.png",
-    "charaGraphcostume": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a.png",
+    "charaGraphDefault": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a.png",
     "skillIcon": "{base_url}/{region}/SkillIcons/skill_{item_id:05}.png",
     "buffIcon": "{base_url}/{region}/BuffIcons/bufficon_{item_id}.png",
     "items": "{base_url}/{region}/Items/{item_id}.png",
@@ -241,7 +240,7 @@ class NiceServant(BaseModel):
     starGen: int
     instantDeathChance: int
     cards: List[CardType]
-    npGain: NpGain
+    npGain: Optional[NpGain] = None
     hitsDistribution: HitsDistribution
     atkBase: int
     atkMax: int
