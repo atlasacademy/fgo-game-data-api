@@ -1215,6 +1215,7 @@ class SvtClass(str, Enum):
     ruler = "ruler"
     alterEgo = "alterEgo"
     avenger = "avenger"
+    demonGodPillar = "demonGodPillar"
     moonCancer = "moonCancer"
     foreigner = "foreigner"
     grandCaster = "grandCaster"
@@ -1223,7 +1224,11 @@ class SvtClass(str, Enum):
     beastIIIR = "beastIIIR"
     beastIIIL = "beastIIIL"
     beastUnknown = "beastUnknown"
+    unknown = "unknown"
+    # OTHER = "OTHER"
     ALL = "ALL"
+    # EXTRA = "EXTRA"
+    # ALLCLASS = "ALLCLASS"
 
 
 CLASS_NAME: Dict[int, SvtClass] = {
@@ -1238,6 +1243,7 @@ CLASS_NAME: Dict[int, SvtClass] = {
     9: SvtClass.ruler,
     10: SvtClass.alterEgo,
     11: SvtClass.avenger,
+    12: SvtClass.demonGodPillar,
     23: SvtClass.moonCancer,
     25: SvtClass.foreigner,
     17: SvtClass.grandCaster,
@@ -1246,7 +1252,11 @@ CLASS_NAME: Dict[int, SvtClass] = {
     24: SvtClass.beastIIIR,
     26: SvtClass.beastIIIL,
     27: SvtClass.beastUnknown,  # LB 5.2 beast
+    97: SvtClass.unknown,
+    # 1000: SvtClass.OTHER,
     1001: SvtClass.ALL,
+    # 1002: SvtClass.EXTRA,
+    # 1003: SvtClass.ALLCLASS,
 }
 
 
