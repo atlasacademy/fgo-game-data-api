@@ -3,6 +3,7 @@
   "collectionNo": 257,
   "name": "Bartholomew Roberts",
   "className": "rider",
+  "type": "normal",
   "rarity": 1,
   "cost": 3,
   "lvMax": 60,

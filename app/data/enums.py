@@ -19,6 +19,35 @@ class SvtType(IntEnum):
     COMMAND_CODE = 11
 
 
+class NiceSvtType(str, Enum):
+    normal = "normal"
+    heroine = "heroine"
+    combineMaterial = "combineMaterial"
+    enemy = "enemy"
+    enemyCollection = "enemyCollection"
+    servantEquip = "servantEquip"
+    statusUp = "statusUp"
+    svtEquipMaterial = "svtEquipMaterial"
+    enemyCollectionDetail = "enemyCollectionDetail"
+    all = "all"
+    commandCode = "commandCode"
+
+
+SVT_TYPE_NAME: Dict[int, NiceSvtType] = {
+    1: NiceSvtType.normal,
+    2: NiceSvtType.heroine,
+    3: NiceSvtType.combineMaterial,
+    4: NiceSvtType.enemy,
+    5: NiceSvtType.enemyCollection,
+    6: NiceSvtType.servantEquip,
+    7: NiceSvtType.statusUp,
+    8: NiceSvtType.svtEquipMaterial,
+    9: NiceSvtType.enemyCollectionDetail,
+    10: NiceSvtType.all,
+    11: NiceSvtType.commandCode,
+}
+
+
 ### Function Type ###
 
 

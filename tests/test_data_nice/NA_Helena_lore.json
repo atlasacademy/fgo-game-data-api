@@ -3,6 +3,7 @@
   "collectionNo": 100,
   "name": "Helena Blavatsky",
   "className": "caster",
+  "type": "normal",
   "rarity": 4,
   "cost": 12,
   "lvMax": 80,

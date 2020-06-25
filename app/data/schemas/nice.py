@@ -16,6 +16,7 @@ from ..enums import (
     NiceItemType,
     NiceItemBGType,
     NiceStatusRank,
+    NiceSvtType,
     NiceQuestType,
     SvtClass,
     Trait,
@@ -224,6 +225,7 @@ class NiceServant(BaseModel):
     collectionNo: int
     name: str
     className: SvtClass
+    type: NiceSvtType
     rarity: int
     cost: int
     lvMax: int

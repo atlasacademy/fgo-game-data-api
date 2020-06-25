@@ -3,6 +3,7 @@
   "collectionNo": 105,
   "name": "Billy the Kid",
   "className": "archer",
+  "type": "normal",
   "rarity": 3,
   "cost": 7,
   "lvMax": 70,

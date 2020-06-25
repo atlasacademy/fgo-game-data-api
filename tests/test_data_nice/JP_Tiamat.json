@@ -3,6 +3,7 @@
   "collectionNo": 149,
   "name": "ティアマト",
   "className": "beastII",
+  "type": "enemyCollectionDetail",
   "rarity": 5,
   "cost": 16,
   "lvMax": 90,
