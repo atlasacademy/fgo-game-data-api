@@ -326,7 +326,7 @@ FUNC_TARGETTYPE_NAME: Dict[int, NiceFuncTargetType] = {
 
 ### Building enemy func signature ###
 
-TARGETTYPE_OWN_TEAM = [
+TARGETTYPE_OWN_TEAM = (
     NiceFuncTargetType.self,
     NiceFuncTargetType.ptOne,
     NiceFuncTargetType.ptAnother,
@@ -338,27 +338,27 @@ TARGETTYPE_OWN_TEAM = [
     NiceFuncTargetType.ptselectOneSub,
     NiceFuncTargetType.ptselectSub,
     NiceFuncTargetType.ptOneAnotherRandom,
-]
+)
 
 
-TARGETTYPE_OTHER_TEAM = [
+TARGETTYPE_OTHER_TEAM = (
     NiceFuncTargetType.enemy,
     NiceFuncTargetType.enemyAnother,
     NiceFuncTargetType.enemyAll,
     NiceFuncTargetType.enemyFull,
     NiceFuncTargetType.enemyRandom,
     NiceFuncTargetType.enemyOtherFull,
-]
+)
 
 
-ENEMY_FUNC_TARGETING_PLAYER_TEAM = [
+ENEMY_FUNC_TARGETING_PLAYER_TEAM = {
     (item, FuncApplyTarget.player) for item in TARGETTYPE_OTHER_TEAM
-]
-ENEMY_FUNC_TARGETING_ENEMY_TEAM = [
+}
+ENEMY_FUNC_TARGETING_ENEMY_TEAM = {
     (item, FuncApplyTarget.enemy) for item in TARGETTYPE_OWN_TEAM
-]
+}
 ENEMY_FUNC_SIGNATURE = (
-    ENEMY_FUNC_TARGETING_PLAYER_TEAM + ENEMY_FUNC_TARGETING_ENEMY_TEAM
+    ENEMY_FUNC_TARGETING_PLAYER_TEAM | ENEMY_FUNC_TARGETING_ENEMY_TEAM
 )
 
 

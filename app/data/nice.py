@@ -75,11 +75,11 @@ def parse_dataVals(datavals: str, functype: int) -> Dict[str, Union[int, str]]:
             value: Union[int, str] = 0
             try:
                 value = int(arrayi)
-                if functype in [
+                if functype in {
                     FuncType.DAMAGE_NP_INDIVIDUAL,
                     FuncType.DAMAGE_NP_STATE_INDIVIDUAL,
                     FuncType.DAMAGE_NP_STATE_INDIVIDUAL_FIX,
-                ]:
+                }:
                     if i == 0:
                         text = "Rate"
                     elif i == 1:
@@ -88,7 +88,7 @@ def parse_dataVals(datavals: str, functype: int) -> Dict[str, Union[int, str]]:
                         text = "Target"
                     elif i == 3:
                         text = "Correction"
-                elif functype in [FuncType.ADD_STATE, FuncType.ADD_STATE_SHORT]:
+                elif functype in {FuncType.ADD_STATE, FuncType.ADD_STATE_SHORT}:
                     if i == 0:
                         text = "Rate"
                     elif i == 1:
@@ -566,7 +566,7 @@ def get_nice_mystic_code(region: Region, mc_id: int) -> Dict[str, Any]:
                     item_id=raw_data.mstEquip.femaleImageId,
                 ),
             }
-            for asset_category in ["item", "masterFace", "masterFigure"]
+            for asset_category in ("item", "masterFace", "masterFigure")
         },
     }
 

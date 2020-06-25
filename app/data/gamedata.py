@@ -10,11 +10,11 @@ from .schemas.raw import Master, SvtType
 
 
 def is_servant(svt_type: int) -> bool:
-    return svt_type in [
+    return svt_type in {
         SvtType.NORMAL,
         SvtType.HEROINE,
         SvtType.ENEMY_COLLECTION_DETAIL,
-    ]
+    }
 
 
 def is_equip(svt_type: int) -> bool:
@@ -26,7 +26,7 @@ logger = logging.getLogger()
 
 
 masters: Dict[Region, Master] = {}
-MASTER_WITH_ID = [
+MASTER_WITH_ID = {
     "mstSvt",
     "mstBuff",
     "mstFunc",
@@ -35,25 +35,25 @@ MASTER_WITH_ID = [
     "mstItem",
     "mstEquip",
     "mstQuest",
-]
-MASTER_WITHOUT_ID = [
+}
+MASTER_WITHOUT_ID = {
     "mstSvtExp",
     "mstFriendship",
     "mstEquipExp",
     "mstEquipSkill",
     "mstQuestPhase",
-]
-SVT_STUFFS = [
+}
+SVT_STUFFS = {
     "mstSvtCard",
     "mstSvtLimit",
     "mstCombineSkill",
     "mstCombineLimit",
     "mstSvtLimitAdd",
     "mstSvtComment",
-]
-SKILL_STUFFS = ["mstSkillDetail", "mstSvtSkill", "mstSkillLv"]
-TD_STUFFS = ["mstTreasureDeviceDetail", "mstSvtTreasureDevice", "mstTreasureDeviceLv"]
-region_path = [(Region.NA, settings.na_gamedata), (Region.JP, settings.jp_gamedata)]
+}
+SKILL_STUFFS = {"mstSkillDetail", "mstSvtSkill", "mstSkillLv"}
+TD_STUFFS = {"mstTreasureDeviceDetail", "mstSvtTreasureDevice", "mstTreasureDeviceLv"}
+region_path = ((Region.NA, settings.na_gamedata), (Region.JP, settings.jp_gamedata))
 
 logger.info("Loading game data ...")
 start_loading_time = time.perf_counter()
@@ -62,7 +62,7 @@ for region_name, gamedata in region_path:
     master = {}
 
     for entity in (
-        MASTER_WITH_ID + MASTER_WITHOUT_ID + SVT_STUFFS + SKILL_STUFFS + TD_STUFFS
+        MASTER_WITH_ID | MASTER_WITHOUT_ID | SVT_STUFFS | SKILL_STUFFS | TD_STUFFS
     ):
         with open(gamedata / f"{entity}.json", "rb") as fp:
             master[entity] = orjson.loads(fp.read())
@@ -117,12 +117,12 @@ for region_name, gamedata in region_path:
             mstQuestPhaseId[item["questId"]] = {item["phase"]: item}
     master["mstQuestPhaseId"] = mstQuestPhaseId
 
-    for extra_stuff in SKILL_STUFFS + TD_STUFFS + SVT_STUFFS:
+    for extra_stuff in SKILL_STUFFS | TD_STUFFS | SVT_STUFFS:
         master[f"{extra_stuff}Id"] = {}
         for item in master[extra_stuff]:
             if "Detail" in extra_stuff:
                 id_name = "id"
-            elif extra_stuff in ["mstCombineSkill", "mstCombineLimit"]:
+            elif extra_stuff in {"mstCombineSkill", "mstCombineLimit"}:
                 id_name = "id"
             elif extra_stuff in SKILL_STUFFS:
                 id_name = "skillId"

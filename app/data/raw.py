@@ -262,34 +262,28 @@ def match_name(search_param: str, name: str) -> bool:
 def search_servant(search_param: ServantSearchQueryParams) -> List[int]:
 
     if not search_param.rarity:
-        rarity: Iterable[int] = range(6)
+        rarity = set(range(6))
     else:
-        rarity = search_param.rarity
+        rarity = set(search_param.rarity)
 
     if not search_param.className:
-        class_ints: Iterable[int] = PLAYABLE_CLASS_NAME_REVERSE.values()
+        class_ints = PLAYABLE_CLASS_NAME_REVERSE.values()
     else:
-        class_ints = [
-            PLAYABLE_CLASS_NAME_REVERSE[item] for item in search_param.className
-        ]
+        class_ints = {PLAYABLE_CLASS_NAME_REVERSE[item] for item in search_param.className}  # type: ignore
 
     if not search_param.gender:
-        gender_ints: Iterable[int] = GENDER_NAME_REVERSE.values()
+        gender_ints = GENDER_NAME_REVERSE.values()
     else:
-        gender_ints = [GENDER_NAME_REVERSE[item] for item in search_param.gender]
+        gender_ints = {GENDER_NAME_REVERSE[item] for item in search_param.gender}  # type: ignore
 
     if not search_param.attribute:
-        attribute_ints: Iterable[int] = ATTRIBUTE_NAME_REVERSE.values()
+        attribute_ints = ATTRIBUTE_NAME_REVERSE.values()
     else:
-        attribute_ints = [
-            ATTRIBUTE_NAME_REVERSE[item] for item in search_param.attribute
-        ]
+        attribute_ints = {ATTRIBUTE_NAME_REVERSE[item] for item in search_param.attribute}  # type: ignore
 
     if not search_param.trait:
         search_param.trait = []
-    trait_ints: Set[int] = {
-        TRAIT_NAME_REVERSE.get(item, item) for item in search_param.trait  # type: ignore
-    }
+    trait_ints = {TRAIT_NAME_REVERSE.get(item, item) for item in search_param.trait}  # type: ignore
 
     matches = [
         item
@@ -318,9 +312,9 @@ def search_servant(search_param: ServantSearchQueryParams) -> List[int]:
 def search_equip(search_param: EquipSearchQueryParams) -> List[int]:
 
     if not search_param.rarity:
-        rarity: Iterable[int] = range(1, 6)
+        rarity = set(range(1, 6))
     else:
-        rarity = search_param.rarity
+        rarity = set(search_param.rarity)
 
     matches = [
         item
