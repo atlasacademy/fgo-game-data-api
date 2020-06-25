@@ -11,11 +11,6 @@ client = TestClient(app)
 file_path = Path(__file__)
 
 
-def get_response_data(file_name: str) -> Any:
-    with open(file_path.parent / "test_data_raw" / f"{file_name}.json", "rb") as fp:
-        return orjson.loads(fp.read())
-
-
 class TestMain:
     def test_home_redirect(self):
         response = client.get("/", allow_redirects=False)
