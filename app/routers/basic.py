@@ -22,7 +22,7 @@ settings = Settings()
 if settings.export_all_nice:  # pragma: no cover
     for region_ in (Region.NA, Region.JP):
         start_time = time.perf_counter()
-        logger.info(f"Writing nice {region_} servant and equip data ...")
+        logger.info(f"Writing basic {region_} servant and equip data ...")
         all_servant_data = [
             get_basic_svt(region_, item_id)
             for item_id in masters[region_].mstSvtServantCollectionNo.values()
