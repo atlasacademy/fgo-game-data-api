@@ -8,7 +8,7 @@ from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
 from .config import Settings
-from .routers import nice, raw
+from .routers import nice, raw, basic
 
 
 logger = logging.getLogger()
@@ -53,6 +53,7 @@ if settings.documentation_all_nice:
 
 tags_metadata = [
     {"name": "nice", "description": "Nicely bundled data"},
+    {"name": "basic", "description": "Minimal nice data for indexing"},
     {"name": "raw", "description": "Raw game data"},
 ]
 
@@ -81,6 +82,10 @@ async def add_process_time_header(request: Request, call_next):
 
 app.include_router(
     nice.router, prefix="/nice", tags=["nice"],
+)
+
+app.include_router(
+    basic.router, prefix="/basic", tags=["basic"],
 )
 
 

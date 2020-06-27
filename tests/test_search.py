@@ -27,12 +27,21 @@ class TestEquipSearch:
         assert response.status_code == 200
         assert {item["id"] for item in response.json()} == {9302550, 9400290}
 
+    def test_search_basic_name_rarity(self):
+        response = client.get("/basic/NA/equip/search?name=Kaleidoscope&rarity=4")
+        assert response.status_code == 200
+        assert response.text == "[]"
+
     def test_NA_search_no_query(self):
         response = client.get("/nice/NA/equip/search")
         assert response.status_code == 400
 
     def test_JP_search_no_query(self):
         response = client.get("/raw/JP/equip/search")
+        assert response.status_code == 400
+
+    def test_basic_search_no_query(self):
+        response = client.get("/basic/JP/equip/search")
         assert response.status_code == 400
 
 
@@ -90,6 +99,10 @@ class TestServantSearch:
         response = client.get("/raw/NA/servant/search")
         assert response.status_code == 400
 
+    def test_basic_search_no_query(self):
+        response = client.get("/basic/NA/servant/search")
+        assert response.status_code == 400
+
     def test_NA_search_fuzzy_process_empty(self):
         response = client.get("/raw/NA/servant/search?name=ÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛ")
         assert response.status_code == 200
@@ -114,3 +127,13 @@ class TestServantSearch:
         response = client.get("/raw/NA/servant/search?name=Tajima")
         assert response.status_code == 200
         assert {item["mstSvt"]["id"] for item in response.json()} == {103200}
+
+    def test_NA_basic_search_Scathach(self):
+        response = client.get("/basic/NA/servant/search?name=Scathach")
+        assert response.status_code == 200
+        assert {item["id"] for item in response.json()} == {301300, 602400}
+
+    def test_NA_basic_search_Yagyu(self):
+        response = client.get("/basic/NA/servant/search?name=Tajima")
+        assert response.status_code == 200
+        assert {item["id"] for item in response.json()} == {103200}
