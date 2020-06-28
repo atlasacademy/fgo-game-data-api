@@ -1,7 +1,7 @@
 import json
 import logging
 import time
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Dict, Iterable, List, Optional, Union
 
 from fastapi import APIRouter, Depends, HTTPException
 
@@ -19,22 +19,43 @@ logger = logging.getLogger()
 settings = Settings()
 
 
+def sort_by_collection_no(
+    input_list: Iterable[Dict[str, Any]]
+) -> Iterable[Dict[str, Any]]:
+    return sorted(input_list, key=lambda x: x["collectionNo"])
+
+
 if settings.export_all_nice:  # pragma: no cover
     for region_ in (Region.NA, Region.JP):
         start_time = time.perf_counter()
         logger.info(f"Writing basic {region_} servant and equip data ...")
-        all_servant_data = [
-            get_basic_svt(region_, item_id)
-            for item_id in masters[region_].mstSvtServantCollectionNo.values()
-        ]
-        all_equip_data = [
-            get_basic_svt(region_, item_id)
-            for item_id in masters[region_].mstSvtEquipCollectionNo.values()
-        ]
+        all_servant_data = sort_by_collection_no(
+            [
+                get_basic_svt(region_, item_id)
+                for item_id in masters[region_].mstSvtServantCollectionNo.values()
+            ]
+        )
+        all_equip_data = sort_by_collection_no(
+            [
+                get_basic_svt(region_, item_id)
+                for item_id in masters[region_].mstSvtEquipCollectionNo.values()
+            ]
+        )
         with open(f"export/{region_}/basic_servant.json", "w", encoding="utf-8") as fp:
             json.dump(all_servant_data, fp, ensure_ascii=False)
         with open(f"export/{region_}/basic_equip.json", "w", encoding="utf-8") as fp:
             json.dump(all_equip_data, fp, ensure_ascii=False)
+        if region_ == Region.JP:
+            all_servant_en = sort_by_collection_no(
+                [
+                    get_basic_svt(region_, item_id, Language.en)
+                    for item_id in masters[region_].mstSvtServantCollectionNo.values()
+                ]
+            )
+            with open(
+                f"export/{region_}/basic_servant_lang_en.json", "w", encoding="utf-8"
+            ) as fp:
+                json.dump(all_servant_en, fp, ensure_ascii=False)
         run_time = time.perf_counter() - start_time
         logger.info(f"Finish writing basic {region_} data in {run_time:.4f} seconds.")
 
@@ -86,6 +107,7 @@ pre_processed_data_links = """
 Preprocessed data:
 - [NA servant](/export/NA/basic_servant.json)
 - [JP servant](/export/JP/basic_servant.json)
+- [JP servant with English names](/export/JP/basic_servant_lang_en.json)
 """
 
 if settings.documentation_all_nice:
