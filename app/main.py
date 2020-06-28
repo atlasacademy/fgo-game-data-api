@@ -76,7 +76,7 @@ async def add_process_time_header(request: Request, call_next):
     response = await call_next(request)
     process_time = round((time.perf_counter() - start_time) * 1000, 2)
     response.headers["Server-Timing"] = f"app;dur={process_time}"
-    logger.info(f"Processed in {process_time}ms.")
+    logger.debug(f"Processed in {process_time}ms.")
     return response
 
 
