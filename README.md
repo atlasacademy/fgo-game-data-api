@@ -6,14 +6,16 @@ List of environment variables for the main app. All are required except noted:
 - `ASSET_URL`: Base URL for the game assets
 - `EXPORT_ALL_NICE`: Optional, default to `False`. If set to `True`, at start the app will generate nice data of all servant and CE in both JP and NA and serve them at the `/export` endpoint. It's recommended to serve the files in the `/export` folder using nginx or equivalent webserver to lighten the load of the API server.
 - `DOCUMENTATION_ALL_NICE`: Optional, default to `False`. If set to `True`, there will be links to the exported all nice files in the documentation.
+- `NICE_SERVANT_LRU_CACHE`: Optional, default to `False`. If set to `True`, use [lru_cache](https://docs.python.org/3/library/functools.html#functools.lru_cache) for get nice servant.
 
 You can also make a .env file at the project root with the following entries instead of setting the environment variables:
 ```
 NA_GAMEDATA="/path/to/gamedata/master/NA"
 JP_GAMEDATA="/path/to/gamedata/master/JP"
 ASSET_URL="https://example.com/assets/"
-EXPORT_ALL_NICE=True
+EXPORT_ALL_NICE=False
 DOCUMENTATION_ALL_NICE=True
+NICE_SERVANT_LRU_CACHE=False
 ```
 
 Run at the project root to start the API server:

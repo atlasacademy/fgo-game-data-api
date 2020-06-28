@@ -1,3 +1,4 @@
+from functools import lru_cache
 from typing import Any, Dict, List, Optional, Union
 
 from fastapi import HTTPException
@@ -544,6 +545,10 @@ def get_nice_servant(
             }
 
     return nice_data
+
+
+if settings.nice_servant_lru_cache:
+    get_nice_servant = lru_cache(get_nice_servant)
 
 
 def get_nice_mystic_code(region: Region, mc_id: int) -> Dict[str, Any]:

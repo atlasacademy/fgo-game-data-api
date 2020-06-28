@@ -7,6 +7,7 @@ class Settings(BaseSettings):
     asset_url: HttpUrl
     export_all_nice: bool = False
     documentation_all_nice: bool = False
+    nice_servant_lru_cache: bool = False
 
     @validator("asset_url")
     def remove_last_slash(cls, value):
