@@ -3,7 +3,7 @@ from typing import Any, Dict, List, Union
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import Response
 
-from ..data import raw
+from ..data import raw, search
 from ..data.common import Region
 from ..data.gamedata import masters
 from ..data.schemas.raw import (
@@ -50,7 +50,7 @@ async def find_servant(
     lore: bool = False,
 ):
     if search_param.hasSearchParams:
-        matches = raw.search_servant(search_param)
+        matches = search.search_servant(search_param)
         entity_list = [
             raw.get_servant_entity(search_param.region, item, expand, lore)
             for item in matches
@@ -111,7 +111,7 @@ async def find_equip(
     lore: bool = False,
 ):
     if search_param.hasSearchParams:
-        matches = raw.search_equip(search_param)
+        matches = search.search_equip(search_param)
         entity_list = [
             raw.get_servant_entity(search_param.region, item, expand, lore)
             for item in matches

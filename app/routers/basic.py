@@ -6,7 +6,7 @@ from typing import Any, Dict, Iterable, List, Optional, Union
 from fastapi import APIRouter, Depends, HTTPException
 
 from ..config import Settings
-from ..data import raw
+from ..data import search
 from ..data.basic import get_basic_svt
 from ..data.common import Region
 from ..data.gamedata import masters
@@ -89,7 +89,7 @@ async def find_servant(
     lang: Optional[Language] = None,
 ):
     if search_param.hasSearchParams:
-        matches = raw.search_servant(search_param)
+        matches = search.search_servant(search_param)
         return [get_basic_svt(search_param.region, item, lang) for item in matches]
     else:
         raise HTTPException(status_code=400, detail="Insufficient query")
@@ -145,7 +145,7 @@ async def find_equip(
     search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
 ):
     if search_param.hasSearchParams:
-        matches = raw.search_equip(search_param)
+        matches = search.search_equip(search_param)
         return [get_basic_svt(search_param.region, item) for item in matches]
     else:
         raise HTTPException(status_code=400, detail="Insufficient query")

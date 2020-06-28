@@ -6,7 +6,7 @@ from typing import Any, Dict, List, Optional, Union
 from fastapi import APIRouter, Depends, HTTPException
 
 from ..config import Settings
-from ..data import raw
+from ..data import search
 from ..data.common import Region
 from ..data.gamedata import masters
 from ..data.nice import (
@@ -94,7 +94,7 @@ async def find_servant(
     lore: bool = False,
 ):
     if search_param.hasSearchParams:
-        matches = raw.search_servant(search_param)
+        matches = search.search_servant(search_param)
         return [
             get_nice_servant(search_param.region, item, lore, lang) for item in matches
         ]
@@ -155,7 +155,7 @@ async def find_equip(
     lore: bool = False,
 ):
     if search_param.hasSearchParams:
-        matches = raw.search_equip(search_param)
+        matches = search.search_equip(search_param)
         return [get_nice_servant(search_param.region, item, lore) for item in matches]
     else:
         raise HTTPException(status_code=400, detail="Insufficient query")
