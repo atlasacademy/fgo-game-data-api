@@ -111,6 +111,7 @@ cases_immutable = [
 ]
 
 
+# These are not really needed anymore since raw data uses the Pydantic objects instead of dicts now
 @pytest.mark.parametrize("endpoint,item_id,result", cases_immutable)
 def test_immutable_master(endpoint: str, item_id: str, result: str):
     client.get(f"/raw/NA/{endpoint}/{item_id}")

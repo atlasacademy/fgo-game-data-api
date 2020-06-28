@@ -1,4 +1,3 @@
-from copy import deepcopy
 from typing import Set
 
 from .common import Region
@@ -56,7 +55,6 @@ def get_func_entity_no_reverse(
 ) -> FunctionEntityNoReverse:
     func_entity = FunctionEntityNoReverse(mstFunc=masters[region].mstFuncId[func_id])
     if expand:
-        func_entity.mstFunc = deepcopy(func_entity.mstFunc)
         expandedBuff = []
         for buff_id in func_entity.mstFunc.vals:
             if buff_id in masters[region].mstBuffId:
@@ -94,7 +92,6 @@ def get_skill_entity_no_reverse(
     )
 
     if expand:
-        skill_entity.mstSkillLv = deepcopy(skill_entity.mstSkillLv)
         for skillLv in skill_entity.mstSkillLv:
             expandedFunc = []
             for func_id in skillLv.funcId:
@@ -134,7 +131,6 @@ def get_td_entity_no_reverse(
     )
 
     if expand:
-        td_entity.mstTreasureDeviceLv = deepcopy(td_entity.mstTreasureDeviceLv)
         for tdLv in td_entity.mstTreasureDeviceLv:
             expandedFunc = []
             for func_id in tdLv.funcId:
@@ -188,7 +184,6 @@ def get_servant_entity(
     )
 
     if expand:
-        svt_entity.mstSvt = deepcopy(svt_entity.mstSvt)
         expandedPassive = []
         for passiveSkill in svt_entity.mstSvt.classPassive:
             if passiveSkill in masters[region].mstSkillId:
