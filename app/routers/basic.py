@@ -21,7 +21,7 @@ settings = Settings()
 
 def sort_by_collection_no(
     input_list: Iterable[Dict[str, Any]]
-) -> Iterable[Dict[str, Any]]:
+) -> Iterable[Dict[str, Any]]:  # pragma: no cover
     return sorted(input_list, key=lambda x: x["collectionNo"])
 
 
