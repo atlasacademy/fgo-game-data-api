@@ -8,7 +8,7 @@ from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
 from .config import Settings
-from .routers import nice, raw, basic
+from .routers import basic, nice, raw
 
 
 logger = logging.getLogger()

@@ -1,8 +1,7 @@
 from typing import Any, Dict, List, Optional, Union
 
-from pydantic import BaseModel
-
 import orjson
+from pydantic import BaseModel
 
 from ..enums import SvtType
 

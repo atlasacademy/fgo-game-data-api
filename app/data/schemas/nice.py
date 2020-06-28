@@ -13,11 +13,11 @@ from ..enums import (
     NiceConsumeType,
     NiceFuncTargetType,
     NiceFuncType,
-    NiceItemType,
     NiceItemBGType,
+    NiceItemType,
+    NiceQuestType,
     NiceStatusRank,
     NiceSvtType,
-    NiceQuestType,
     SvtClass,
     Trait,
 )

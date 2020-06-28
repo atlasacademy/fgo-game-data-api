@@ -1,6 +1,5 @@
 from typing import Any, Dict, Optional
 
-
 from ..config import Settings
 from .common import Region
 from .enums import CLASS_NAME, SVT_TYPE_NAME, SvtType

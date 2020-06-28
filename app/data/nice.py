@@ -9,8 +9,8 @@ from .enums import (
     ATTRIBUTE_NAME,
     BUFF_TYPE_NAME,
     CARD_TYPE_NAME,
-    COND_TYPE_NAME,
     CLASS_NAME,
+    COND_TYPE_NAME,
     ENEMY_FUNC_SIGNATURE,
     FUNC_APPLYTARGET_NAME,
     FUNC_TARGETTYPE_NAME,
@@ -18,25 +18,25 @@ from .enums import (
     GENDER_NAME,
     ITEM_BG_TYPE_NAME,
     ITEM_TYPE_NAME,
-    QUEST_TYPE_NAME,
     QUEST_CONSUME_TYPE_NAME,
-    SVT_TYPE_NAME,
+    QUEST_TYPE_NAME,
     STATUS_RANK_NAME,
+    SVT_TYPE_NAME,
     TRAIT_NAME,
     FuncType,
+    NiceStatusRank,
     SvtType,
     Trait,
-    NiceStatusRank,
 )
 from .gamedata import masters
-from .raw import get_servant_entity, get_mystic_code_entity, get_quest_phase_entity
+from .raw import get_mystic_code_entity, get_quest_phase_entity, get_servant_entity
 from .schemas.nice import ASSET_URL, Language
 from .schemas.raw import (
     BuffEntityNoReverse,
     FunctionEntityNoReverse,
+    MstSvtComment,
     SkillEntityNoReverse,
     TdEntityNoReverse,
-    MstSvtComment,
 )
 from .translations import SVT_NAME_JP_EN
 

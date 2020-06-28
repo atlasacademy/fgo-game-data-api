@@ -1,6 +1,6 @@
 from pydantic import BaseModel, HttpUrl
 
-from ..enums import SvtClass, NiceSvtType
+from ..enums import NiceSvtType, SvtClass
 
 
 class BasicServant(BaseModel):
