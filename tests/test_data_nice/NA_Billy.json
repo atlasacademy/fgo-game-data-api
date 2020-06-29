@@ -52,8 +52,8 @@
     "defence": 300
   },
   "hitsDistribution": {
-    "buster": [10, 20, 30, 40],
     "arts": [16, 33, 51],
+    "buster": [10, 20, 30, 40],
     "quick": [33, 67],
     "extra": [9, 18, 27, 46]
   },

@@ -37,8 +37,8 @@
   "instantDeathChance": 110,
   "cards": ["quick", "arts", "arts", "buster", "buster"],
   "hitsDistribution": {
-    "buster": [100],
     "arts": [100],
+    "buster": [100],
     "quick": [100],
     "extra": [100]
   },
