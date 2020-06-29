@@ -40,9 +40,11 @@ export_links = """
 Nice data of all servants, CEs and MCs. These are pre-generated so they can be served instantly unlike querying the API:
 - [NA servant](/export/NA/nice_servant.json),
 [NA CE](/export/NA/nice_equip.json),
+[NA material](/export/NA/nice_item.json),
 [NA MC](/export/NA/nice_mystic_code.json).
 - [JP servant](/export/JP/nice_servant.json),
 [JP CE](/export/JP/nice_equip.json),
+[JP material](/export/JP/nice_item.json),
 [JP MC](/export/JP/nice_mystic_code.json).
 """
 
