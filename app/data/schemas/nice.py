@@ -5,10 +5,10 @@ from pydantic import BaseModel, HttpUrl
 
 from ..enums import (
     Attribute,
-    CardType,
     FuncApplyTarget,
     Gender,
     NiceBuffType,
+    NiceCardType,
     NiceCondType,
     NiceConsumeType,
     NiceFuncTargetType,
@@ -155,7 +155,7 @@ class NiceSkill(BaseModel):
 class NiceTd(BaseModel):
     id: int
     num: int
-    card: CardType
+    card: NiceCardType
     name: str
     rank: str
     type: str
@@ -187,13 +187,6 @@ class NpGain(BaseModel):
     quick: int
     extra: int
     defence: int
-
-
-class HitsDistribution(BaseModel):
-    buster: List[int]
-    arts: List[int]
-    quick: List[int]
-    extra: List[int]
 
 
 class NiceLoreComment(BaseModel):
@@ -239,9 +232,9 @@ class NiceServant(BaseModel):
     starAbsorb: int
     starGen: int
     instantDeathChance: int
-    cards: List[CardType]
+    cards: List[NiceCardType]
     npGain: Optional[NpGain] = None
-    hitsDistribution: Optional[HitsDistribution] = None
+    hitsDistribution: Dict[NiceCardType, List[int]]
     atkBase: int
     atkMax: int
     hpBase: int

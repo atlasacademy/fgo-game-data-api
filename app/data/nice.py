@@ -466,14 +466,9 @@ def get_nice_servant(
         }
     )
 
-    cardsDistribution = {item.cardId: item.normalDamage for item in raw_data.mstSvtCard}
-    if cardsDistribution:
-        nice_data["hitsDistribution"] = {
-            "arts": cardsDistribution.get(1, []),
-            "buster": cardsDistribution.get(2, []),
-            "quick": cardsDistribution.get(3, []),
-            "extra": cardsDistribution.get(4, []),
-        }
+    nice_data["hitsDistribution"] = {
+        CARD_TYPE_NAME[item.cardId]: item.normalDamage for item in raw_data.mstSvtCard
+    }
 
     # Filter out dummy TDs that are probably used by enemy servants that don't use their NPs
     actualTDs: List[TdEntityNoReverse] = [

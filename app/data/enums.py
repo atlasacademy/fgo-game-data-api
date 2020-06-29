@@ -1161,18 +1161,37 @@ ITEM_BG_TYPE_NAME: Dict[int, NiceItemBGType] = {
 ### Card Type ###
 
 
-class CardType(str, Enum):
+class CardType(IntEnum):
+    NONE = 0
+    ARTS = 1
+    BUSTER = 2
+    QUICK = 3
+    ADDATTACK = 4
+    BLANK = 5
+    WEAK = 10
+    STRENGTH = 11
+
+
+class NiceCardType(str, Enum):
+    none = "none"
     arts = "arts"
     buster = "buster"
     quick = "quick"
-    extra = "extra"
+    addattack = "extra"
+    blank = "blank"
+    weak = "weak"
+    strength = "strength"
 
 
-CARD_TYPE_NAME: Dict[int, CardType] = {
-    1: CardType.arts,
-    2: CardType.buster,
-    3: CardType.quick,
-    4: CardType.extra,
+CARD_TYPE_NAME: Dict[int, NiceCardType] = {
+    0: NiceCardType.none,
+    1: NiceCardType.arts,
+    2: NiceCardType.buster,
+    3: NiceCardType.quick,
+    4: NiceCardType.addattack,
+    5: NiceCardType.blank,
+    10: NiceCardType.weak,
+    11: NiceCardType.strength,
 }
 
 

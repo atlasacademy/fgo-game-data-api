@@ -22,7 +22,7 @@
   "instantDeathChance": 1000,
   "cards": ["quick", "quick", "quick", "quick", "quick"],
   "npGain": { "buster": 0, "arts": 0, "quick": 0, "extra": 0, "defence": 0 },
-  "hitsDistribution": { "buster": [], "arts": [], "quick": [], "extra": [] },
+  "hitsDistribution": { "weak": [100], "strength": [100] },
   "atkBase": 792,
   "atkMax": 9367,
   "hpBase": 6480,
