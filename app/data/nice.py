@@ -29,7 +29,18 @@ from .enums import (
     Trait,
 )
 from .gamedata import masters
-from .raw import get_mystic_code_entity, get_quest_phase_entity, get_servant_entity
+from .raw import (
+    buff_to_func,
+    func_to_skillId,
+    func_to_tdId,
+    get_buff_entity_no_reverse,
+    get_func_entity_no_reverse,
+    get_mystic_code_entity,
+    get_quest_phase_entity,
+    get_servant_entity,
+    get_skill_entity_no_reverse,
+    get_td_entity_no_reverse,
+)
 from .schemas.nice import ASSET_URL, Language
 from .schemas.raw import (
     BuffEntityNoReverse,
@@ -549,6 +560,77 @@ def get_nice_servant(
 
 if settings.nice_servant_lru_cache:
     get_nice_servant = lru_cache(get_nice_servant)
+
+
+def get_nice_buff_alone(
+    region: Region, buff_id: int, reverse: bool = False, lang: Optional[Language] = None
+) -> Dict[str, Any]:
+    raw_data = get_buff_entity_no_reverse(region, buff_id)
+    nice_data = get_nice_buff(raw_data, region)
+    if reverse:
+        nice_data["reverseFunctions"] = [
+            get_nice_func_alone(region, func_id, reverse, lang=lang)
+            for func_id in buff_to_func(region, buff_id)
+        ]
+    return nice_data
+
+
+def get_nice_func_alone(
+    region: Region, func_id: int, reverse: bool = False, lang: Optional[Language] = None
+) -> Dict[str, Any]:
+    raw_data = get_func_entity_no_reverse(region, func_id, expand=True)
+    nice_data = get_nice_base_function(raw_data, region)
+
+    if reverse:
+        nice_data["reverseSkills"] = [
+            get_nice_skill_alone(region, skill_id, reverse, lang=lang)
+            for skill_id in func_to_skillId(region, func_id)
+        ]
+        nice_data["reverseTds"] = [
+            get_nice_td_alone(region, td_id, reverse, lang=lang)
+            for td_id in func_to_tdId(region, func_id)
+        ]
+    return nice_data
+
+
+def get_nice_skill_alone(
+    region: Region,
+    skill_id: int,
+    reverse: bool = False,
+    lang: Optional[Language] = None,
+) -> Dict[str, Any]:
+    raw_data = get_skill_entity_no_reverse(region, skill_id, expand=True)
+
+    svt_list = [item.svtId for item in raw_data.mstSvtSkill]
+    if svt_list:
+        svtId = svt_list[0]
+    else:
+        svtId = 0
+    nice_data = get_nice_skill(raw_data, svtId, region)
+
+    if reverse:
+        nice_data["reverseServants"] = [
+            get_nice_servant(region, item.svtId, lang=lang)
+            for item in raw_data.mstSvtSkill
+        ]
+    return nice_data
+
+
+def get_nice_td_alone(
+    region: Region, td_id: int, reverse: bool = False, lang: Optional[Language] = None
+) -> Dict[str, Any]:
+    raw_data = get_td_entity_no_reverse(region, td_id, expand=True)
+
+    svt_list = [item.svtId for item in raw_data.mstSvtTreasureDevice]
+    svtId = svt_list[0]  # Yes, all td_id has a svtTd entry
+    nice_data = get_nice_td(raw_data, svtId, region)
+
+    if reverse:
+        nice_data["reverseServants"] = [
+            get_nice_servant(region, item.svtId, lang=lang)
+            for item in raw_data.mstSvtTreasureDevice
+        ]
+    return nice_data
 
 
 def get_nice_mystic_code(region: Region, mc_id: int) -> Dict[str, Any]:

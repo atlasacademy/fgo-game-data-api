@@ -1,0 +1,50 @@
+{
+  "id": 267,
+  "name": "Will to Fight EX",
+  "detail": "Increase damage dealt in Raids by 120%",
+  "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_302.png",
+  "type": "upDamage",
+  "vals": [],
+  "tvals": [],
+  "ckSelfIndv": [],
+  "ckOpIndv": [],
+  "maxRate": 10000,
+  "reverseFunctions": [
+    {
+      "funcId": 922,
+      "funcType": "addState",
+      "funcTargetType": "enemyFull",
+      "funcTargetTeam": "player",
+      "funcPopupText": "Will to Fight EX",
+      "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_302.png",
+      "functvals": [],
+      "funcquestTvals": [94000046, 94000045],
+      "buffs": [
+        {
+          "id": 267,
+          "name": "Will to Fight EX",
+          "detail": "Increase damage dealt in Raids by 120%",
+          "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_302.png",
+          "type": "upDamage",
+          "vals": [],
+          "tvals": [],
+          "ckSelfIndv": [],
+          "ckOpIndv": [],
+          "maxRate": 10000
+        }
+      ],
+      "reverseSkills": [
+        {
+          "id": 960227,
+          "name": "Will to Fight EX",
+          "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png",
+          "coolDown": [8],
+          "actIndividuality": [],
+          "functions": [],
+          "reverseServants": []
+        }
+      ],
+      "reverseTds": []
+    }
+  ]
+}

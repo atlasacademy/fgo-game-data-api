@@ -117,7 +117,7 @@ class NiceBuff(BaseModel):
     maxRate: int
 
 
-class NiceFunction(BaseModel):
+class NiceBaseFunction(BaseModel):
     funcId: int
     funcType: Union[NiceFuncType, int]
     funcTargetType: Union[NiceFuncTargetType, int]
@@ -127,6 +127,9 @@ class NiceFunction(BaseModel):
     functvals: List[NiceTrait]
     funcquestTvals: List[int]
     buffs: List[NiceBuff]
+
+
+class NiceFunction(NiceBaseFunction):
     svals: List[Vals]
     svals2: Optional[List[Vals]] = None
     svals3: Optional[List[Vals]] = None
@@ -253,6 +256,23 @@ class NiceServant(BaseModel):
     classPassive: List[NiceSkill]
     noblePhantasms: List[NiceTd]
     profile: Optional[NiceLore] = None
+
+
+class NiceSkillReverse(NiceSkill):
+    reverseServants: List[NiceServant] = []
+
+
+class NiceTdReverse(NiceTd):
+    reverseServants: List[NiceServant] = []
+
+
+class NiceBaseFunctionReverse(NiceBaseFunction):
+    reverseSkills: List[NiceSkillReverse] = []
+    reverseTds: List[NiceTdReverse] = []
+
+
+class NiceBuffReverse(NiceBuff):
+    reverseFunctions: List[NiceBaseFunctionReverse] = []
 
 
 class NiceEquip(BaseModel):

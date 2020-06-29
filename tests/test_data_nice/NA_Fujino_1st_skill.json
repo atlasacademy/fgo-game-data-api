@@ -1,0 +1,129 @@
+{
+  "id": 454650,
+  "num": 1,
+  "name": "Mystic Eyes of Distortion EX",
+  "detail": "Increase Buster Card effectiveness (3 turns) & apply Ignore DEF (3 turns) & increase NP Gain (3 turns) for yourself",
+  "strengthStatus": 0,
+  "priority": 1,
+  "condQuestId": 0,
+  "condQuestPhase": 0,
+  "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00306.png",
+  "coolDown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5],
+  "actIndividuality": [],
+  "functions": [
+    {
+      "funcId": 119,
+      "funcType": "addStateShort",
+      "funcTargetType": "self",
+      "funcTargetTeam": "playerAndEnemy",
+      "funcPopupText": "Buster Up",
+      "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_314.png",
+      "functvals": [],
+      "funcquestTvals": [],
+      "buffs": [
+        {
+          "id": 102,
+          "name": "Buster Up",
+          "detail": "Increase Buster Card effectiveness",
+          "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_314.png",
+          "type": "upCommandall",
+          "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+          "tvals": [
+            { "id": 5000, "name": "canBeInBattle" },
+            { "id": 4002, "name": "cardBuster" }
+          ],
+          "ckSelfIndv": [{ "id": 4002, "name": "cardBuster" }],
+          "ckOpIndv": [],
+          "maxRate": 5000
+        }
+      ],
+      "svals": [
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 215 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 230 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 245 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 260 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 275 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 290 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 305 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 320 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 350 }
+      ]
+    },
+    {
+      "funcId": 1588,
+      "funcType": "addStateShort",
+      "funcTargetType": "self",
+      "funcTargetTeam": "playerAndEnemy",
+      "funcPopupText": "Ignore DEF",
+      "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_351.png",
+      "functvals": [],
+      "funcquestTvals": [],
+      "buffs": [
+        {
+          "id": 510,
+          "name": "Ignore DEF",
+          "detail": "Ignore DEF Up and deal damage",
+          "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_351.png",
+          "type": "pierceDefence",
+          "vals": [
+            { "id": 3004, "name": "buffPositiveEffect" },
+            { "id": 3006, "name": "buffIncreaseDamage" }
+          ],
+          "tvals": [],
+          "ckSelfIndv": [],
+          "ckOpIndv": [],
+          "maxRate": 0
+        }
+      ],
+      "svals": [
+        { "Rate": 1000, "Turn": 3, "Count": -1 },
+        { "Rate": 1000, "Turn": 3, "Count": -1 },
+        { "Rate": 1000, "Turn": 3, "Count": -1 },
+        { "Rate": 1000, "Turn": 3, "Count": -1 },
+        { "Rate": 1000, "Turn": 3, "Count": -1 },
+        { "Rate": 1000, "Turn": 3, "Count": -1 },
+        { "Rate": 1000, "Turn": 3, "Count": -1 },
+        { "Rate": 1000, "Turn": 3, "Count": -1 },
+        { "Rate": 1000, "Turn": 3, "Count": -1 },
+        { "Rate": 1000, "Turn": 3, "Count": -1 }
+      ]
+    },
+    {
+      "funcId": 337,
+      "funcType": "addStateShort",
+      "funcTargetType": "self",
+      "funcTargetTeam": "player",
+      "funcPopupText": "NP Gain Up",
+      "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_303.png",
+      "functvals": [],
+      "funcquestTvals": [],
+      "buffs": [
+        {
+          "id": 140,
+          "name": "NP Gain Up",
+          "detail": "Increase NP amount gained",
+          "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_303.png",
+          "type": "upDropnp",
+          "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+          "tvals": [],
+          "ckSelfIndv": [],
+          "ckOpIndv": [],
+          "maxRate": 5000
+        }
+      ],
+      "svals": [
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 210 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 220 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 230 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 240 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 260 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 270 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 280 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 }
+      ]
+    }
+  ]
+}

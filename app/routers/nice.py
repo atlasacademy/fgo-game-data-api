@@ -6,22 +6,20 @@ from typing import Any, Dict, List, Optional, Union
 from fastapi import APIRouter, Depends, HTTPException
 
 from ..config import Settings
-from ..data import search
+from ..data import nice, search
 from ..data.common import Region
 from ..data.gamedata import masters
-from ..data.nice import (
-    get_nice_item,
-    get_nice_mystic_code,
-    get_nice_quest_phase,
-    get_nice_servant,
-)
 from ..data.schemas.nice import (
     Language,
+    NiceBaseFunctionReverse,
+    NiceBuffReverse,
     NiceEquip,
     NiceItem,
     NiceMysticCode,
     NiceQuestPhase,
     NiceServant,
+    NiceSkillReverse,
+    NiceTdReverse,
 )
 from .deps import DetailMessage, EquipSearchQueryParams, ServantSearchQueryParams
 
@@ -35,18 +33,19 @@ if settings.export_all_nice:  # pragma: no cover
         start_time = time.perf_counter()
         logger.info(f"Writing nice {region_} servant and equip data ...")
         all_servant_data = [
-            get_nice_servant(region_, item_id)
+            nice.get_nice_servant(region_, item_id)
             for item_id in masters[region_].mstSvtServantCollectionNo.values()
         ]
         all_equip_data = [
-            get_nice_servant(region_, item_id)
+            nice.get_nice_servant(region_, item_id)
             for item_id in masters[region_].mstSvtEquipCollectionNo.values()
         ]
         all_item_data = [
-            get_nice_item(region_, item_id) for item_id in masters[region_].mstItemId
+            nice.get_nice_item(region_, item_id)
+            for item_id in masters[region_].mstItemId
         ]
         all_mc_data = [
-            get_nice_mystic_code(region_, item_id)
+            nice.get_nice_mystic_code(region_, item_id)
             for item_id in masters[region_].mstEquipId
         ]
         with open(f"export/{region_}/nice_servant.json", "w", encoding="utf-8") as fp:
@@ -96,7 +95,8 @@ async def find_servant(
     if search_param.hasSearchParams:
         matches = search.search_servant(search_param)
         return [
-            get_nice_servant(search_param.region, item, lore, lang) for item in matches
+            nice.get_nice_servant(search_param.region, item, lore, lang)
+            for item in matches
         ]
     else:
         raise HTTPException(status_code=400, detail="Insufficient query")
@@ -136,7 +136,7 @@ async def get_servant(
     if item_id in masters[region].mstSvtServantCollectionNo:
         item_id = masters[region].mstSvtServantCollectionNo[item_id]
     if item_id in masters[region].mstSvtServantCollectionNo.values():
-        return get_nice_servant(region, item_id, lore, lang)
+        return nice.get_nice_servant(region, item_id, lore, lang)
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
 
@@ -156,7 +156,9 @@ async def find_equip(
 ):
     if search_param.hasSearchParams:
         matches = search.search_equip(search_param)
-        return [get_nice_servant(search_param.region, item, lore) for item in matches]
+        return [
+            nice.get_nice_servant(search_param.region, item, lore) for item in matches
+        ]
     else:
         raise HTTPException(status_code=400, detail="Insufficient query")
 
@@ -192,7 +194,7 @@ async def get_equip(region: Region, item_id: int, lore: bool = False):
     if item_id in masters[region].mstSvtEquipCollectionNo:
         item_id = masters[region].mstSvtEquipCollectionNo[item_id]
     if item_id in masters[region].mstSvtEquipCollectionNo.values():
-        return get_nice_servant(region, item_id, lore)
+        return nice.get_nice_servant(region, item_id, lore)
     else:
         raise HTTPException(status_code=404, detail="Equip not found")
 
@@ -213,7 +215,7 @@ async def get_svt(region: Region, item_id: int, lore: bool = False):
     The endpoint is not limited to servants or equips ids.
     """
     if item_id in masters[region].mstSvtId:
-        return get_nice_servant(region, item_id, lore)
+        return nice.get_nice_servant(region, item_id, lore)
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
 
@@ -241,10 +243,104 @@ if settings.documentation_all_nice:
 )
 async def get_mystic_code(region: Region, item_id: int):
     if item_id in masters[region].mstEquipId:
-        mc_entity = get_nice_mystic_code(region, item_id)
+        mc_entity = nice.get_nice_mystic_code(region, item_id)
         return mc_entity
     else:
         raise HTTPException(status_code=404, detail="Mystic Code not found")
+
+
+@router.get(
+    "/{region}/skill/{item_id}",
+    summary="Get skill data",
+    response_description="Skill entity",
+    response_model=NiceSkillReverse,
+    response_model_exclude_unset=True,
+    responses=responses,
+)
+async def get_skill(
+    region: Region, item_id: int, reverse: bool = False, lang: Optional[Language] = None
+):
+    """
+    Get the skill data from the given ID
+
+    - **reverse**: Reverse lookup the servants that have this skill
+    and return the reverse skill objects.
+    """
+    if item_id in masters[region].mstSkillId:
+        return nice.get_nice_skill_alone(region, item_id, reverse, lang)
+    else:
+        raise HTTPException(status_code=404, detail="Skill not found")
+
+
+@router.get(
+    "/{region}/NP/{item_id}",
+    summary="Get NP data",
+    response_description="NP entity",
+    response_model=NiceTdReverse,
+    response_model_exclude_unset=True,
+    responses=responses,
+)
+async def get_td(
+    region: Region, item_id: int, reverse: bool = False, lang: Optional[Language] = None
+):
+    """
+    Get the NP data from the given ID
+
+    - **reverse**: Reverse lookup the servants that have this NP
+    and return the reversed servant objects.
+    """
+    if item_id in masters[region].mstTreasureDeviceId:
+        return nice.get_nice_td_alone(region, item_id, reverse, lang)
+    else:
+        raise HTTPException(status_code=404, detail="NP not found")
+
+
+@router.get(
+    "/{region}/function/{item_id}",
+    summary="Get function data",
+    response_description="Function entity",
+    response_model=NiceBaseFunctionReverse,
+    response_model_exclude_unset=True,
+    responses=responses,
+)
+async def get_function(
+    region: Region, item_id: int, reverse: bool = False, lang: Optional[Language] = None
+):
+    """
+    Get the function data from the given ID
+
+    - **reverse**: Reverse lookup the skills that have this function
+    and return the reversed skill objects.
+    Will search recursively and return all entities in path: func -> skill -> servant.
+    """
+    if item_id in masters[region].mstFuncId:
+        return nice.get_nice_func_alone(region, item_id, reverse, lang)
+    else:
+        raise HTTPException(status_code=404, detail="Function not found")
+
+
+@router.get(
+    "/{region}/buff/{item_id}",
+    summary="Get buff data",
+    response_description="Buff Entity",
+    response_model=NiceBuffReverse,
+    response_model_exclude_unset=True,
+    responses=responses,
+)
+async def get_buff(
+    region: Region, item_id: int, reverse: bool = False, lang: Optional[Language] = None
+):
+    """
+    Get the buff data from the given ID
+
+    - **reverse**: Reverse lookup the functions that have this buff
+    and return the reversed function objects.
+    Will search recursively and return all entities in path: buff -> func -> skill -> servant.
+    """
+    if item_id in masters[region].mstBuffId:
+        return nice.get_nice_buff_alone(region, item_id, reverse, lang)
+    else:
+        raise HTTPException(status_code=404, detail="Buff not found")
 
 
 get_item_description = "Get nice item info from ID"
@@ -270,7 +366,7 @@ if settings.documentation_all_nice:
 )
 async def get_item(region: Region, item_id: int):
     if item_id in masters[region].mstItemId:
-        return get_nice_item(region, item_id)
+        return nice.get_nice_item(region, item_id)
     else:
         raise HTTPException(status_code=404, detail="Item not found")
 
@@ -291,6 +387,6 @@ async def get_quest_phase(region: Region, quest_id: int, phase: int):
         quest_id in masters[region].mstQuestId
         and phase in masters[region].mstQuestPhaseId[quest_id]
     ):
-        return get_nice_quest_phase(region, quest_id, phase)
+        return nice.get_nice_quest_phase(region, quest_id, phase)
     else:
         raise HTTPException(status_code=404, detail="Quest not found")

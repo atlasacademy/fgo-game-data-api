@@ -1,0 +1,15 @@
+{
+  "id": 300,
+  "name": "Weak to Arts",
+  "detail": "Increase damage taken, NP generate, and C. Star drop rate upon damage from Arts Cards by 50%",
+  "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_540.png",
+  "type": "downDefencecommandall",
+  "vals": [],
+  "tvals": [
+    { "id": 5000, "name": "canBeInBattle" },
+    { "id": 4001, "name": "cardArts" }
+  ],
+  "ckSelfIndv": [],
+  "ckOpIndv": [{ "id": 4001, "name": "cardArts" }],
+  "maxRate": 5000
+}

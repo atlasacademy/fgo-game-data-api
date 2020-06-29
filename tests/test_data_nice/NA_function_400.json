@@ -1,0 +1,24 @@
+{
+  "funcId": 400,
+  "funcType": "addState",
+  "funcTargetType": "self",
+  "funcTargetTeam": "playerAndEnemy",
+  "funcPopupText": "Poison Resist\nUp",
+  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_306.png",
+  "functvals": [],
+  "funcquestTvals": [],
+  "buffs": [
+    {
+      "id": 163,
+      "name": "Poison Resist Up",
+      "detail": "Increase Poison resistance",
+      "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_306.png",
+      "type": "upTolerance",
+      "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+      "tvals": [{ "id": 3011, "name": "buffPoison" }],
+      "ckSelfIndv": [],
+      "ckOpIndv": [{ "id": 3011, "name": "buffPoison" }],
+      "maxRate": 5000
+    }
+  ]
+}
