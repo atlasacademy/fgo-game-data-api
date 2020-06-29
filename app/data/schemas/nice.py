@@ -46,7 +46,7 @@ class Language(str, Enum):
 class NiceItem(BaseModel):
     id: int
     name: str
-    type: NiceItemType
+    type: Union[NiceItemType, int]
     icon: HttpUrl
     background: NiceItemBGType
 
