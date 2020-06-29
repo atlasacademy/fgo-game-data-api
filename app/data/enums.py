@@ -95,6 +95,24 @@ class FuncType(IntEnum):
     EXTEND_BUFFCOUNT = 40
     CHANGE_BGM = 41
     DISPLAY_BUFFSTRING = 42
+    RESURRECTION = 43
+    GAIN_NP_BUFF_INDIVIDUAL_SUM = 44
+    SET_SYSTEM_ALIVE_FLAG = 45
+    FORCE_INSTANT_DEATH = 46
+    DAMAGE_NP_RARE = 47
+    GAIN_NP_FROM_TARGETS = 48
+    GAIN_HP_FROM_TARGETS = 49
+    LOSS_HP_PER = 50
+    LOSS_HP_PER_SAFE = 51
+    SHORTEN_USER_EQUIP_SKILL = 52
+    QUICK_CHANGE_BG = 53
+    SHIFT_SERVANT = 54
+    DAMAGE_NP_AND_CHECK_INDIVIDUALITY = 55
+    ABSORB_NPTURN = 56
+    OVERWRITE_DEAD_TYPE = 57
+    FORCE_ALL_BUFF_NOACT = 58
+    BREAK_GAUGE_UP = 59
+    BREAK_GAUGE_DOWN = 60
     EXP_UP = 101
     QP_UP = 102
     DROP_UP = 103
@@ -111,6 +129,11 @@ class FuncType(IntEnum):
     ENEMY_ENCOUNT_COPY_RATE_UP = 114
     ENEMY_ENCOUNT_RATE_UP = 115
     ENEMY_PROB_DOWN = 116
+    GET_REWARD_GIFT = 117
+    SEND_SUPPORT_FRIEND_POINT = 118
+    MOVE_POSITION = 119
+    REVIVAL = 120
+    DAMAGE_NP_INDIVIDUAL_SUM = 121
 
 
 class NiceFuncType(str, Enum):
@@ -157,6 +180,24 @@ class NiceFuncType(str, Enum):
     extendBuffcount = "extendBuffcount"
     changeBgm = "changeBgm"
     displayBuffstring = "displayBuffstring"
+    resurrection = "resurrection"
+    gainNpBuffIndividualSum = "gainNpBuffIndividualSum"
+    setSystemAliveFlag = "setSystemAliveFlag"
+    forceInstantDeath = "forceInstantDeath"
+    damageNpRare = "damageNpRare"
+    gainNpFromTargets = "gainNpFromTargets"
+    gainHpFromTargets = "gainHpFromTargets"
+    lossHpPer = "lossHpPer"
+    lossHpPerSafe = "lossHpPerSafe"
+    shortenUserEquipSkill = "shortenUserEquipSkill"
+    quickChangeBg = "quickChangeBg"
+    shiftServant = "shiftServant"
+    damageNpAndCheckIndividuality = "damageNpAndCheckIndividuality"
+    absorbNpturn = "absorbNpturn"
+    overwriteDeadType = "overwriteDeadType"
+    forceAllBuffNoact = "forceAllBuffNoact"
+    breakGaugeUp = "breakGaugeUp"
+    breakGaugeDown = "breakGaugeDown"
     expUp = "expUp"
     qpUp = "qpUp"
     dropUp = "dropUp"
@@ -173,6 +214,11 @@ class NiceFuncType(str, Enum):
     enemyEncountCopyRateUp = "enemyEncountCopyRateUp"
     enemyEncountRateUp = "enemyEncountRateUp"
     enemyProbDown = "enemyProbDown"
+    getRewardGift = "getRewardGift"
+    sendSupportFriendPoint = "sendSupportFriendPoint"
+    movePosition = "movePosition"
+    revival = "revival"
+    damageNpIndividualSum = "damageNpIndividualSum"
 
 
 FUNC_TYPE_NAME: Dict[int, NiceFuncType] = {
@@ -219,6 +265,24 @@ FUNC_TYPE_NAME: Dict[int, NiceFuncType] = {
     40: NiceFuncType.extendBuffcount,
     41: NiceFuncType.changeBgm,
     42: NiceFuncType.displayBuffstring,
+    43: NiceFuncType.resurrection,
+    44: NiceFuncType.gainNpBuffIndividualSum,
+    45: NiceFuncType.setSystemAliveFlag,
+    46: NiceFuncType.forceInstantDeath,
+    47: NiceFuncType.damageNpRare,
+    48: NiceFuncType.gainNpFromTargets,
+    49: NiceFuncType.gainHpFromTargets,
+    50: NiceFuncType.lossHpPer,
+    51: NiceFuncType.lossHpPerSafe,
+    52: NiceFuncType.shortenUserEquipSkill,
+    53: NiceFuncType.quickChangeBg,
+    54: NiceFuncType.shiftServant,
+    55: NiceFuncType.damageNpAndCheckIndividuality,
+    56: NiceFuncType.absorbNpturn,
+    57: NiceFuncType.overwriteDeadType,
+    58: NiceFuncType.forceAllBuffNoact,
+    59: NiceFuncType.breakGaugeUp,
+    60: NiceFuncType.breakGaugeDown,
     101: NiceFuncType.expUp,
     102: NiceFuncType.qpUp,
     103: NiceFuncType.dropUp,
@@ -235,6 +299,11 @@ FUNC_TYPE_NAME: Dict[int, NiceFuncType] = {
     114: NiceFuncType.enemyEncountCopyRateUp,
     115: NiceFuncType.enemyEncountRateUp,
     116: NiceFuncType.enemyProbDown,
+    117: NiceFuncType.getRewardGift,
+    118: NiceFuncType.sendSupportFriendPoint,
+    119: NiceFuncType.movePosition,
+    120: NiceFuncType.revival,
+    121: NiceFuncType.damageNpIndividualSum,
 }
 
 
@@ -277,6 +346,13 @@ class FuncTargetType(IntEnum):
     PTSELECT_ONE_SUB = 16
     PTSELECT_SUB = 17
     PT_ONE_ANOTHER_RANDOM = 18
+    PT_SELF_ANOTHER_RANDOM = 19
+    ENEMY_ONE_ANOTHER_RANDOM = 20
+    PT_SELF_ANOTHER_FIRST = 21
+    PT_SELF_BEFORE = 22
+    PT_SELF_AFTER = 23
+    PT_SELF_ANOTHER_LAST = 24
+    COMMAND_TYPE_SELF_TREASURE_DEVICE = 25
 
 
 class NiceFuncTargetType(str, Enum):
@@ -299,6 +375,13 @@ class NiceFuncTargetType(str, Enum):
     ptselectOneSub = "ptselectOneSub"
     ptselectSub = "ptselectSub"
     ptOneAnotherRandom = "ptOneAnotherRandom"
+    ptSelfAnotherRandom = "ptSelfAnotherRandom"
+    enemyOneAnotherRandom = "enemyOneAnotherRandom"
+    ptSelfAnotherFirst = "ptSelfAnotherFirst"
+    ptSelfBefore = "ptSelfBefore"
+    ptSelfAfter = "ptSelfAfter"
+    ptSelfAnotherLast = "ptSelfAnotherLast"
+    commandTypeSelfTreasureDevice = "commandTypeSelfTreasureDevice"
 
 
 FUNC_TARGETTYPE_NAME: Dict[int, NiceFuncTargetType] = {
@@ -321,6 +404,13 @@ FUNC_TARGETTYPE_NAME: Dict[int, NiceFuncTargetType] = {
     16: NiceFuncTargetType.ptselectOneSub,
     17: NiceFuncTargetType.ptselectSub,
     18: NiceFuncTargetType.ptOneAnotherRandom,
+    19: NiceFuncTargetType.ptSelfAnotherRandom,
+    20: NiceFuncTargetType.enemyOneAnotherRandom,
+    21: NiceFuncTargetType.ptSelfAnotherFirst,
+    22: NiceFuncTargetType.ptSelfBefore,
+    23: NiceFuncTargetType.ptSelfAfter,
+    24: NiceFuncTargetType.ptSelfAnotherLast,
+    25: NiceFuncTargetType.commandTypeSelfTreasureDevice,
 }
 
 
@@ -487,6 +577,24 @@ class BuffType(IntEnum):
     FIELD_INDIVIDUALITY = 133
     DONOT_ACT_COMMANDTYPE = 134
     UP_DAMAGE_EVENT_POINT = 135
+    UP_DAMAGE_SPECIAL = 136
+    ATTACK_FUNCTION = 137
+    COMMANDCODEATTACK_FUNCTION = 138
+    DONOT_NOBLE_COND_MISMATCH = 139
+    DONOT_SELECT_COMMANDCARD = 140
+    DONOT_REPLACE = 141
+    SHORTEN_USER_EQUIP_SKILL = 142
+    TD_TYPE_CHANGE = 143
+    OVERWRITE_CLASS_RELATION = 144
+    TD_TYPE_CHANGE_ARTS = 145
+    TD_TYPE_CHANGE_BUSTER = 146
+    TD_TYPE_CHANGE_QUICK = 147
+    COMMANDATTACK_BEFORE_FUNCTION = 148
+    GUTS_FUNCTION = 149
+    UP_CRITICAL_RATE_DAMAGE_TAKEN = 150
+    DOWN_CRITICAL_RATE_DAMAGE_TAKEN = 151
+    UP_CRITICAL_STAR_DAMAGE_TAKEN = 152
+    DOWN_CRITICAL_STAR_DAMAGE_TAKEN = 153
 
 
 class NiceBuffType(str, Enum):
@@ -611,6 +719,24 @@ class NiceBuffType(str, Enum):
     fieldIndividuality = "fieldIndividuality"
     donotActCommandtype = "donotActCommandtype"
     upDamageEventPoint = "upDamageEventPoint"
+    upDamageSpecial = "upDamageSpecial"
+    attackFunction = "attackFunction"
+    commandcodeattackFunction = "commandcodeattackFunction"
+    donotNobleCondMismatch = "donotNobleCondMismatch"
+    donotSelectCommandcard = "donotSelectCommandcard"
+    donotReplace = "donotReplace"
+    shortenUserEquipSkill = "shortenUserEquipSkill"
+    tdTypeChange = "tdTypeChange"
+    overwriteClassRelation = "overwriteClassRelation"
+    tdTypeChangeArts = "tdTypeChangeArts"
+    tdTypeChangeBuster = "tdTypeChangeBuster"
+    tdTypeChangeQuick = "tdTypeChangeQuick"
+    commandattackBeforeFunction = "commandattackBeforeFunction"
+    gutsFunction = "gutsFunction"
+    upCriticalRateDamageTaken = "upCriticalRateDamageTaken"
+    downCriticalRateDamageTaken = "downCriticalRateDamageTaken"
+    upCriticalStarDamageTaken = "upCriticalStarDamageTaken"
+    downCriticalStarDamageTaken = "downCriticalStarDamageTaken"
 
 
 BUFF_TYPE_NAME: Dict[int, NiceBuffType] = {
@@ -735,6 +861,24 @@ BUFF_TYPE_NAME: Dict[int, NiceBuffType] = {
     133: NiceBuffType.fieldIndividuality,
     134: NiceBuffType.donotActCommandtype,
     135: NiceBuffType.upDamageEventPoint,
+    136: NiceBuffType.upDamageSpecial,
+    137: NiceBuffType.attackFunction,
+    138: NiceBuffType.commandcodeattackFunction,
+    139: NiceBuffType.donotNobleCondMismatch,
+    140: NiceBuffType.donotSelectCommandcard,
+    141: NiceBuffType.donotReplace,
+    142: NiceBuffType.shortenUserEquipSkill,
+    143: NiceBuffType.tdTypeChange,
+    144: NiceBuffType.overwriteClassRelation,
+    145: NiceBuffType.tdTypeChangeArts,
+    146: NiceBuffType.tdTypeChangeBuster,
+    147: NiceBuffType.tdTypeChangeQuick,
+    148: NiceBuffType.commandattackBeforeFunction,
+    149: NiceBuffType.gutsFunction,
+    150: NiceBuffType.upCriticalRateDamageTaken,
+    151: NiceBuffType.downCriticalRateDamageTaken,
+    152: NiceBuffType.upCriticalStarDamageTaken,
+    153: NiceBuffType.downCriticalStarDamageTaken,
 }
 
 
@@ -821,6 +965,19 @@ class BuffAction(IntEnum):
     FIELD_INDIVIDUALITY = 76
     DONOT_ACT_COMMANDTYPE = 77
     DAMAGE_EVENT_POINT = 78
+    DAMAGE_SPECIAL = 79
+    FUNCTION_ATTACK = 80
+    FUNCTION_COMMANDCODEATTACK = 81
+    DONOT_NOBLE_COND_MISMATCH = 82
+    DONOT_SELECT_COMMANDCARD = 83
+    DONOT_REPLACE = 84
+    SHORTEN_USER_EQUIP_SKILL = 85
+    TD_TYPE_CHANGE = 86
+    OVERWRITE_CLASS_RELATION = 87
+    FUNCTION_COMMANDATTACK_BEFORE = 88
+    FUNCTION_GUTS = 89
+    CRITICAL_RATE_DAMAGE_TAKEN = 90
+    CRITICAL_STAR_DAMAGE_TAKEN = 91
 
 
 class NiceBuffAction(str, Enum):
@@ -903,6 +1060,19 @@ class NiceBuffAction(str, Enum):
     fieldIndividuality = "fieldIndividuality"
     donotActCommandtype = "donotActCommandtype"
     damageEventPoint = "damageEventPoint"
+    damageSpecial = "damageSpecial"
+    functionAttack = "functionAttack"
+    functionCommandcodeattack = "functionCommandcodeattack"
+    donotNobleCondMismatch = "donotNobleCondMismatch"
+    donotSelectCommandcard = "donotSelectCommandcard"
+    donotReplace = "donotReplace"
+    shortenUserEquipSkill = "shortenUserEquipSkill"
+    tdTypeChange = "tdTypeChange"
+    overwriteClassRelation = "overwriteClassRelation"
+    functionCommandattackBefore = "functionCommandattackBefore"
+    functionGuts = "functionGuts"
+    criticalRateDamageTaken = "criticalRateDamageTaken"
+    criticalStarDamageTaken = "criticalStarDamageTaken"
 
 
 BUFF_ACTION_NAME: Dict[int, NiceBuffAction] = {
@@ -985,6 +1155,19 @@ BUFF_ACTION_NAME: Dict[int, NiceBuffAction] = {
     76: NiceBuffAction.fieldIndividuality,
     77: NiceBuffAction.donotActCommandtype,
     78: NiceBuffAction.damageEventPoint,
+    79: NiceBuffAction.damageSpecial,
+    80: NiceBuffAction.functionAttack,
+    81: NiceBuffAction.functionCommandcodeattack,
+    82: NiceBuffAction.donotNobleCondMismatch,
+    83: NiceBuffAction.donotSelectCommandcard,
+    84: NiceBuffAction.donotReplace,
+    85: NiceBuffAction.shortenUserEquipSkill,
+    86: NiceBuffAction.tdTypeChange,
+    87: NiceBuffAction.overwriteClassRelation,
+    88: NiceBuffAction.functionCommandattackBefore,
+    89: NiceBuffAction.functionGuts,
+    90: NiceBuffAction.criticalRateDamageTaken,
+    91: NiceBuffAction.criticalStarDamageTaken,
 }
 
 
@@ -1051,6 +1234,35 @@ class DataValsType(IntEnum):
     RatioHPRangeLow = 31
     TargetList = 32
     OpponentOnly = 33
+    StatusEffectId = 34
+    EndBattle = 35
+    LoseBattle = 36
+    AddIndividualty = 37
+    AddLinkageTargetIndividualty = 38
+    SameBuffLimitTargetIndividuality = 39
+    SameBuffLimitNum = 40
+    CheckDuplicate = 41
+    OnFieldCount = 42
+    TargetRarityList = 43
+    DependFuncId = 44
+    DependFuncVals = 45
+    InvalidHide = 46
+    OutEnemyNpcId = 47
+    InEnemyNpcId = 48
+    OutEnemyPosition = 49
+    IgnoreIndividuality = 50
+    StarHigher = 51
+    ChangeTDCommandType = 52
+    ShiftNpcId = 53
+    DisplayLastFuncInvalidType = 54
+    AndCheckIndividualityList = 55
+    WinBattleNotRelatedSurvivalStatus = 56
+    ForceSelfInstantDeath = 57
+    ChangeMaxBreakGauge = 58
+    ParamAddMaxValue = 59
+    ParamAddMaxCount = 60
+    LossHpNoChangeDamage = 61
+    IncludePassiveIndividuality = 62
 
 
 ### Item Type ###
@@ -1081,6 +1293,8 @@ class ItemType(IntEnum):
     RARE_PRI = 22
     COSTUME_RELEASE = 23
     ITEM_SELECT = 24
+    COMMAND_CARD_PRM_UP = 25
+    DICE = 26
 
 
 class NiceItemType(str, Enum):
@@ -1108,6 +1322,8 @@ class NiceItemType(str, Enum):
     rarePri = "rarePri"
     costumeRelease = "costumeRelease"
     itemSelect = "itemSelect"
+    commandCardPrmUp = "commandCardPrmUp"
+    dice = "dice"
 
 
 ITEM_TYPE_NAME: Dict[int, NiceItemType] = {
@@ -1135,6 +1351,8 @@ ITEM_TYPE_NAME: Dict[int, NiceItemType] = {
     22: NiceItemType.rarePri,
     23: NiceItemType.costumeRelease,
     24: NiceItemType.itemSelect,
+    25: NiceItemType.commandCardPrmUp,
+    26: NiceItemType.dice,
 }
 
 
@@ -1457,7 +1675,7 @@ class CondType(IntEnum):
     BIRTH_DAY = 19
     EVENT_END = 20
     SVT_EVENT_JOIN = 21
-    MISISION_CONDITION_DETAIL = 22
+    MISSION_CONDITION_DETAIL = 22
     EVENT_MISSION_CLEAR = 23
     EVENT_MISSION_ACHIEVE = 24
     QUEST_CLEAR_NUM = 25
@@ -1528,6 +1746,49 @@ class CondType(IntEnum):
     EVENT_STATUS = 90
     NOT_EVENT_STATUS = 91
     FORCE_FALSE = 92
+    SVT_HAVING_LIMIT_MAX = 93
+    EVENT_POINT_BELOW = 94
+    SVT_EQUIP_FRIENDSHIP_HAVING = 95
+    MOVIE_NOT_DOWNLOAD = 96
+    MULTIPLE_DATE = 97
+    SVT_FRIENDSHIP_ABOVE = 98
+    SVT_FRIENDSHIP_BELOW = 99
+    MOVIE_DOWNLOADED = 100
+    ROUTE_SELECT = 101
+    NOT_ROUTE_SELECT = 102
+    LIMIT_COUNT = 103
+    LIMIT_COUNT_ABOVE = 104
+    LIMIT_COUNT_BELOW = 105
+    BAD_END_PLAY = 106
+    COMMAND_CODE_GET = 107
+    NOT_COMMAND_CODE_GET = 108
+    ALL_USERS_BOX_GACHA_COUNT = 109
+    TOTAL_TD_LEVEL = 110
+    TOTAL_TD_LEVEL_ABOVE = 111
+    TOTAL_TD_LEVEL_BELOW = 112
+    COMMON_RELEASE = 113
+    BATTLE_RESULT_WIN = 114
+    BATTLE_RESULT_LOSE = 115
+    EVENT_VALUE_EQUAL = 116
+    BOARD_GAME_TOKEN_HAVING = 117
+    BOARD_GAME_TOKEN_GROUP_HAVING = 118
+    EVENT_FLAG_ON = 119
+    EVENT_FLAG_OFF = 120
+    QUEST_STATUS_FLAG_ON = 121
+    QUEST_STATUS_FLAG_OFF = 122
+    EVENT_VALUE_NOT_EQUAL = 123
+    LIMIT_COUNT_MAX_EQUAL = 124
+    LIMIT_COUNT_MAX_ABOVE = 125
+    LIMIT_COUNT_MAX_BELOW = 126
+    BOARD_GAME_TOKEN_GET_NUM = 127
+    BATTLE_LINE_WIN_ABOVE = 128
+    BATTLE_LINE_LOSE_ABOVE = 129
+    BATTLE_LINE_CONTINUE_WIN = 130
+    BATTLE_LINE_CONTINUE_LOSE = 131
+    BATTLE_LINE_CONTINUE_WIN_BELOW = 132
+    BATTLE_LINE_CONTINUE_LOSE_BELOW = 133
+    BATTLE_GROUP_WIN_AVOVE = 134
+    BATTLE_GROUP_LOSE_AVOVE = 135
 
 
 class NiceCondType(str, Enum):
@@ -1553,7 +1814,7 @@ class NiceCondType(str, Enum):
     birthDay = "birthDay"
     eventEnd = "eventEnd"
     svtEventJoin = "svtEventJoin"
-    misisionConditionDetail = "misisionConditionDetail"
+    missionConditionDetail = "missionConditionDetail"
     eventMissionClear = "eventMissionClear"
     eventMissionAchieve = "eventMissionAchieve"
     questClearNum = "questClearNum"
@@ -1624,6 +1885,49 @@ class NiceCondType(str, Enum):
     eventStatus = "eventStatus"
     notEventStatus = "notEventStatus"
     forceFalse = "forceFalse"
+    svtHavingLimitMax = "svtHavingLimitMax"
+    eventPointBelow = "eventPointBelow"
+    svtEquipFriendshipHaving = "svtEquipFriendshipHaving"
+    movieNotDownload = "movieNotDownload"
+    multipleDate = "multipleDate"
+    svtFriendshipAbove = "svtFriendshipAbove"
+    svtFriendshipBelow = "svtFriendshipBelow"
+    movieDownloaded = "movieDownloaded"
+    routeSelect = "routeSelect"
+    notRouteSelect = "notRouteSelect"
+    limitCount = "limitCount"
+    limitCountAbove = "limitCountAbove"
+    limitCountBelow = "limitCountBelow"
+    badEndPlay = "badEndPlay"
+    commandCodeGet = "commandCodeGet"
+    notCommandCodeGet = "notCommandCodeGet"
+    allUsersBoxGachaCount = "allUsersBoxGachaCount"
+    totalTdLevel = "totalTdLevel"
+    totalTdLevelAbove = "totalTdLevelAbove"
+    totalTdLevelBelow = "totalTdLevelBelow"
+    commonRelease = "commonRelease"
+    battleResultWin = "battleResultWin"
+    battleResultLose = "battleResultLose"
+    eventValueEqual = "eventValueEqual"
+    boardGameTokenHaving = "boardGameTokenHaving"
+    boardGameTokenGroupHaving = "boardGameTokenGroupHaving"
+    eventFlagOn = "eventFlagOn"
+    eventFlagOff = "eventFlagOff"
+    questStatusFlagOn = "questStatusFlagOn"
+    questStatusFlagOff = "questStatusFlagOff"
+    eventValueNotEqual = "eventValueNotEqual"
+    limitCountMaxEqual = "limitCountMaxEqual"
+    limitCountMaxAbove = "limitCountMaxAbove"
+    limitCountMaxBelow = "limitCountMaxBelow"
+    boardGameTokenGetNum = "boardGameTokenGetNum"
+    battleLineWinAbove = "battleLineWinAbove"
+    battleLineLoseAbove = "battleLineLoseAbove"
+    battleLineContinueWin = "battleLineContinueWin"
+    battleLineContinueLose = "battleLineContinueLose"
+    battleLineContinueWinBelow = "battleLineContinueWinBelow"
+    battleLineContinueLoseBelow = "battleLineContinueLoseBelow"
+    battleGroupWinAvove = "battleGroupWinAvove"
+    battleGroupLoseAvove = "battleGroupLoseAvove"
 
 
 COND_TYPE_NAME: Dict[int, NiceCondType] = {
@@ -1649,7 +1953,7 @@ COND_TYPE_NAME: Dict[int, NiceCondType] = {
     19: NiceCondType.birthDay,
     20: NiceCondType.eventEnd,
     21: NiceCondType.svtEventJoin,
-    22: NiceCondType.misisionConditionDetail,
+    22: NiceCondType.missionConditionDetail,
     23: NiceCondType.eventMissionClear,
     24: NiceCondType.eventMissionAchieve,
     25: NiceCondType.questClearNum,
@@ -1720,6 +2024,49 @@ COND_TYPE_NAME: Dict[int, NiceCondType] = {
     90: NiceCondType.eventStatus,
     91: NiceCondType.notEventStatus,
     92: NiceCondType.forceFalse,
+    93: NiceCondType.svtHavingLimitMax,
+    94: NiceCondType.eventPointBelow,
+    95: NiceCondType.svtEquipFriendshipHaving,
+    96: NiceCondType.movieNotDownload,
+    97: NiceCondType.multipleDate,
+    98: NiceCondType.svtFriendshipAbove,
+    99: NiceCondType.svtFriendshipBelow,
+    100: NiceCondType.movieDownloaded,
+    101: NiceCondType.routeSelect,
+    102: NiceCondType.notRouteSelect,
+    103: NiceCondType.limitCount,
+    104: NiceCondType.limitCountAbove,
+    105: NiceCondType.limitCountBelow,
+    106: NiceCondType.badEndPlay,
+    107: NiceCondType.commandCodeGet,
+    108: NiceCondType.notCommandCodeGet,
+    109: NiceCondType.allUsersBoxGachaCount,
+    110: NiceCondType.totalTdLevel,
+    111: NiceCondType.totalTdLevelAbove,
+    112: NiceCondType.totalTdLevelBelow,
+    113: NiceCondType.commonRelease,
+    114: NiceCondType.battleResultWin,
+    115: NiceCondType.battleResultLose,
+    116: NiceCondType.eventValueEqual,
+    117: NiceCondType.boardGameTokenHaving,
+    118: NiceCondType.boardGameTokenGroupHaving,
+    119: NiceCondType.eventFlagOn,
+    120: NiceCondType.eventFlagOff,
+    121: NiceCondType.questStatusFlagOn,
+    122: NiceCondType.questStatusFlagOff,
+    123: NiceCondType.eventValueNotEqual,
+    124: NiceCondType.limitCountMaxEqual,
+    125: NiceCondType.limitCountMaxAbove,
+    126: NiceCondType.limitCountMaxBelow,
+    127: NiceCondType.boardGameTokenGetNum,
+    128: NiceCondType.battleLineWinAbove,
+    129: NiceCondType.battleLineLoseAbove,
+    130: NiceCondType.battleLineContinueWin,
+    131: NiceCondType.battleLineContinueLose,
+    132: NiceCondType.battleLineContinueWinBelow,
+    133: NiceCondType.battleLineContinueLoseBelow,
+    134: NiceCondType.battleGroupWinAvove,
+    135: NiceCondType.battleGroupLoseAvove,
 }
 
 
@@ -1759,6 +2106,7 @@ class QuestConsumeType(IntEnum):
     AP = 1
     RP = 2
     ITEM = 3
+    AP_ADD_ITEM = 4
 
 
 class NiceConsumeType(str, Enum):
@@ -1766,6 +2114,7 @@ class NiceConsumeType(str, Enum):
     ap = "ap"
     rp = "rp"
     item = "item"
+    apAddItem = "apAddItem"
 
 
 QUEST_CONSUME_TYPE_NAME: Dict[int, NiceConsumeType] = {
@@ -1773,6 +2122,7 @@ QUEST_CONSUME_TYPE_NAME: Dict[int, NiceConsumeType] = {
     1: NiceConsumeType.ap,
     2: NiceConsumeType.rp,
     3: NiceConsumeType.item,
+    4: NiceConsumeType.apAddItem,
 }
 
 

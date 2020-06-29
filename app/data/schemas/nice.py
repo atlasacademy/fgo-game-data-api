@@ -96,7 +96,35 @@ class Vals(BaseModel):
     RatioHPRangeLow: Optional[int] = None
     TargetList: Optional[int] = None
     OpponentOnly: Optional[int] = None
+    StatusEffectId: Optional[int] = None
+    EndBattle: Optional[int] = None
+    LoseBattle: Optional[int] = None
+    AddIndividualty: Optional[int] = None
+    AddLinkageTargetIndividualty: Optional[int] = None
+    SameBuffLimitTargetIndividuality: Optional[int] = None
+    SameBuffLimitNum: Optional[int] = None
+    CheckDuplicate: Optional[int] = None
+    OnFieldCount: Optional[int] = None
     TargetRarityList: Optional[str] = None
+    DependFuncId: Optional[int] = None
+    DependFuncVals: Optional[int] = None
+    InvalidHide: Optional[int] = None
+    OutEnemyNpcId: Optional[int] = None
+    InEnemyNpcId: Optional[int] = None
+    OutEnemyPosition: Optional[int] = None
+    IgnoreIndividuality: Optional[int] = None
+    StarHigher: Optional[int] = None
+    ChangeTDCommandType: Optional[int] = None
+    ShiftNpcId: Optional[int] = None
+    DisplayLastFuncInvalidType: Optional[int] = None
+    AndCheckIndividualityList: Optional[int] = None
+    WinBattleNotRelatedSurvivalStatus: Optional[int] = None
+    ForceSelfInstantDeath: Optional[int] = None
+    ChangeMaxBreakGauge: Optional[int] = None
+    ParamAddMaxValue: Optional[int] = None
+    ParamAddMaxCount: Optional[int] = None
+    LossHpNoChangeDamage: Optional[int] = None
+    IncludePassiveIndividuality: Optional[int] = None
 
 
 class NiceTrait(BaseModel):

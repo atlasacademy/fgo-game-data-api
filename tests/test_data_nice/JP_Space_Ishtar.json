@@ -775,7 +775,7 @@
         {
           "funcId": 4783,
           "funcType": "addState",
-          "funcTargetType": 25,
+          "funcTargetType": "commandTypeSelfTreasureDevice",
           "funcTargetTeam": "player",
           "funcPopupText": "宝具タイプチェンジ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_361.png",
@@ -787,7 +787,7 @@
               "name": "宝具タイプチェンジ",
               "detail": "宝具のタイプをチェンジする",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_361.png",
-              "type": 143,
+              "type": "tdTypeChange",
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [],
               "ckSelfIndv": [],
@@ -796,22 +796,22 @@
             }
           ],
           "svals": [
-            { "Rate": 1000, "Turn": 3, "Count": -1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1 }
+            { "Rate": 1000, "Turn": 3, "Count": -1, "InvalidHide": 1 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "InvalidHide": 1 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "InvalidHide": 1 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "InvalidHide": 1 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "InvalidHide": 1 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "InvalidHide": 1 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "InvalidHide": 1 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "InvalidHide": 1 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "InvalidHide": 1 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "InvalidHide": 1 }
           ]
         },
         {
           "funcId": 4784,
           "funcType": "addStateShort",
-          "funcTargetType": 25,
+          "funcTargetType": "commandTypeSelfTreasureDevice",
           "funcTargetTeam": "enemy",
           "funcPopupText": "宝具タイプチェンジ：Arts",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_361.png",
@@ -823,7 +823,7 @@
               "name": "宝具タイプチェンジ:Arts",
               "detail": "宝具のタイプをArtsにチェンジする",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_361.png",
-              "type": 145,
+              "type": "tdTypeChangeArts",
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [],
               "ckSelfIndv": [],
@@ -837,77 +837,87 @@
               "Turn": 3,
               "Count": -1,
               "ActSet": 1,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 1,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 1,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 1,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 1,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 1,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 1,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 1,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 1,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 1,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             }
           ]
         },
         {
           "funcId": 4785,
           "funcType": "addStateShort",
-          "funcTargetType": 25,
+          "funcTargetType": "commandTypeSelfTreasureDevice",
           "funcTargetTeam": "enemy",
           "funcPopupText": "宝具タイプチェンジ：Buster",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_361.png",
@@ -919,7 +929,7 @@
               "name": "宝具タイプチェンジ:Buster",
               "detail": "宝具のタイプをBusterにチェンジする",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_361.png",
-              "type": 146,
+              "type": "tdTypeChangeBuster",
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [],
               "ckSelfIndv": [],
@@ -933,77 +943,87 @@
               "Turn": 3,
               "Count": -1,
               "ActSet": 2,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 2,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 2,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 2,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 2,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 2,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 2,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 2,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 2,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 2,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             }
           ]
         },
         {
           "funcId": 4786,
           "funcType": "addStateShort",
-          "funcTargetType": 25,
+          "funcTargetType": "commandTypeSelfTreasureDevice",
           "funcTargetTeam": "enemy",
           "funcPopupText": "宝具タイプチェンジ：Quick",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_361.png",
@@ -1015,7 +1035,7 @@
               "name": "宝具タイプチェンジ:Quick",
               "detail": "宝具のタイプをQuickにチェンジする",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_361.png",
-              "type": 147,
+              "type": "tdTypeChangeQuick",
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [],
               "ckSelfIndv": [],
@@ -1029,70 +1049,80 @@
               "Turn": 3,
               "Count": -1,
               "ActSet": 3,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 3,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 3,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 3,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 3,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 3,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 3,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 3,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 3,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             },
             {
               "Rate": 1000,
               "Turn": 3,
               "Count": -1,
               "ActSet": 3,
-              "ActSetWeight": 30
+              "ActSetWeight": 30,
+              "InvalidHide": 1
             }
           ]
         }

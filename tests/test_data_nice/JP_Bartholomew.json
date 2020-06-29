@@ -1029,7 +1029,7 @@
       "functions": [
         {
           "funcId": 3854,
-          "funcType": 47,
+          "funcType": "damageNpRare",
           "funcTargetType": "enemyAll",
           "funcTargetTeam": "playerAndEnemy",
           "funcPopupText": "なし",
