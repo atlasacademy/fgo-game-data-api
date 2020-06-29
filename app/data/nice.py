@@ -98,9 +98,9 @@ def parse_dataVals(datavals: str, functype: int) -> Dict[str, Union[int, str]]:
                         text = "Count"
                     elif i == 3:
                         text = "Value"
-                    elif i == 4:  # pragma: no cover can't find anything with 5 items
+                    elif i == 4:
                         text = "UseRate"
-                    elif i == 5:  # pragma: no cover can't find anything with 6 items
+                    elif i == 5:
                         text = "Value2"
                 elif functype == FuncType.SUB_STATE:
                     if i == 0:
