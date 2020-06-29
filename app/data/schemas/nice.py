@@ -299,8 +299,8 @@ class NiceQuestPhase(BaseModel):
     id: int
     phase: int
     name: str
-    type: NiceQuestType
-    consumeType: NiceConsumeType
+    type: Union[NiceQuestType, int]
+    consumeType: Union[NiceConsumeType, int]
     consume: int
     spotId: int
     className: List[SvtClass]
