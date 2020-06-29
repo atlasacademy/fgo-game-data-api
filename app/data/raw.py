@@ -43,9 +43,9 @@ def get_buff_entity_no_reverse(region: Region, buff_id: int) -> BuffEntityNoReve
 def get_buff_entity(region: Region, buff_id: int, reverse: bool = False) -> BuffEntity:
     buff_entity = BuffEntity.parse_obj(get_buff_entity_no_reverse(region, buff_id))
     if reverse:
-        reverseFunctions = buff_to_func(region, buff_id)
         buff_entity.reverseFunctions = [
-            get_func_entity(region, item_id, reverse) for item_id in reverseFunctions
+            get_func_entity(region, item_id, reverse)
+            for item_id in buff_to_func(region, buff_id)
         ]
     return buff_entity
 
@@ -55,11 +55,11 @@ def get_func_entity_no_reverse(
 ) -> FunctionEntityNoReverse:
     func_entity = FunctionEntityNoReverse(mstFunc=masters[region].mstFuncId[func_id])
     if expand:
-        expandedBuff = []
-        for buff_id in func_entity.mstFunc.vals:
-            if buff_id in masters[region].mstBuffId:
-                expandedBuff.append(get_buff_entity_no_reverse(region, buff_id))
-        func_entity.mstFunc.expandedVals = expandedBuff
+        func_entity.mstFunc.expandedVals = [
+            get_buff_entity_no_reverse(region, buff_id)
+            for buff_id in func_entity.mstFunc.vals
+            if buff_id in masters[region].mstBuffId
+        ]
     return func_entity
 
 
@@ -70,13 +70,13 @@ def get_func_entity(
         get_func_entity_no_reverse(region, func_id, expand)
     )
     if reverse:
-        reverseSkillIds = func_to_skillId(region, func_id)
         func_entity.reverseSkills = [
-            get_skill_entity(region, item_id, reverse) for item_id in reverseSkillIds
+            get_skill_entity(region, item_id, reverse)
+            for item_id in func_to_skillId(region, func_id)
         ]
-        reverseTdIds = func_to_tdId(region, func_id)
         func_entity.reverseTds = [
-            get_td_entity(region, item_id, reverse) for item_id in reverseTdIds
+            get_td_entity(region, item_id, reverse)
+            for item_id in func_to_tdId(region, func_id)
         ]
     return func_entity
 
@@ -93,13 +93,11 @@ def get_skill_entity_no_reverse(
 
     if expand:
         for skillLv in skill_entity.mstSkillLv:
-            expandedFunc = []
-            for func_id in skillLv.funcId:
-                if func_id in masters[region].mstFuncId:
-                    expandedFunc.append(
-                        get_func_entity_no_reverse(region, func_id, expand)
-                    )
-            skillLv.expandedFuncId = expandedFunc
+            skillLv.expandedFuncId = [
+                get_func_entity_no_reverse(region, func_id, expand)
+                for func_id in skillLv.funcId
+                if func_id in masters[region].mstFuncId
+            ]
     return skill_entity
 
 
@@ -132,13 +130,11 @@ def get_td_entity_no_reverse(
 
     if expand:
         for tdLv in td_entity.mstTreasureDeviceLv:
-            expandedFunc = []
-            for func_id in tdLv.funcId:
-                if func_id in masters[region].mstFuncId:
-                    expandedFunc.append(
-                        get_func_entity_no_reverse(region, func_id, expand)
-                    )
-            tdLv.expandedFuncId = expandedFunc
+            tdLv.expandedFuncId = [
+                get_func_entity_no_reverse(region, func_id, expand)
+                for func_id in tdLv.funcId
+                if func_id in masters[region].mstFuncId
+            ]
     return td_entity
 
 
@@ -184,13 +180,11 @@ def get_servant_entity(
     )
 
     if expand:
-        expandedPassive = []
-        for passiveSkill in svt_entity.mstSvt.classPassive:
-            if passiveSkill in masters[region].mstSkillId:
-                expandedPassive.append(
-                    get_skill_entity_no_reverse(region, passiveSkill, expand)
-                )
-        svt_entity.mstSvt.expandedClassPassive = expandedPassive
+        svt_entity.mstSvt.expandedClassPassive = [
+            get_skill_entity_no_reverse(region, passiveSkill, expand)
+            for passiveSkill in svt_entity.mstSvt.classPassive
+            if passiveSkill in masters[region].mstSkillId
+        ]
 
     if lore:
         svt_entity.mstSvtComment = masters[region].mstSvtCommentId.get(servant_id, [])
