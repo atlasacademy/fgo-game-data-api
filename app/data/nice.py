@@ -78,6 +78,10 @@ def get_traits_list(input_idv: List[int]) -> List[Dict[str, Union[Trait, int]]]:
     ]
 
 
+def get_nice_status_rank(rank_number: int) -> NiceStatusRank:
+    return STATUS_RANK_NAME.get(rank_number, NiceStatusRank.unknown)
+
+
 def parse_dataVals(datavals: str, functype: int) -> Dict[str, Union[int, str]]:
     output: Dict[str, Union[int, str]] = {}
     if datavals != "[]":
@@ -353,6 +357,18 @@ def get_nice_item_amount(
     ]
 
 
+def get_nice_comment(comment: MstSvtComment) -> Dict[str, Any]:
+    return {
+        "id": comment.id,
+        "priority": comment.priority,
+        "condMessage": comment.condMessage,
+        "comment": comment.comment,
+        "condType": COND_TYPE_NAME[comment.condType],
+        "condValues": comment.condValues,
+        "condValue2": comment.condValue2,
+    }
+
+
 def get_nice_servant(
     region: Region, item_id: int, lore: bool = False, lang: Optional[Language] = None
 ) -> Dict[str, Any]:
@@ -521,25 +537,9 @@ def get_nice_servant(
     nice_data["noblePhantasms"] = [get_nice_td(td, item_id, region) for td in actualTDs]
 
     if lore:
-
-        def get_nice_comment(comment: MstSvtComment):
-            return {
-                "id": comment.id,
-                "priority": comment.priority,
-                "condMessage": comment.condMessage,
-                "comment": comment.comment,
-                "condType": COND_TYPE_NAME[comment.condType],
-                "condValues": comment.condValues,
-                "condValue2": comment.condValue2,
-            }
-
         nice_data["profile"] = {
             "comments": [get_nice_comment(item) for item in raw_data.mstSvtComment]
         }
-
-        def get_nice_status_rank(rank_number: int):
-            return STATUS_RANK_NAME.get(rank_number, NiceStatusRank.unknown)
-
         if raw_data.mstSvt.isServant():
             nice_data["profile"]["stats"] = {
                 "strength": get_nice_status_rank(raw_data.mstSvtLimit[0].power),
