@@ -238,7 +238,7 @@ class NiceServant(BaseModel):
     instantDeathChance: int
     cards: List[CardType]
     npGain: Optional[NpGain] = None
-    hitsDistribution: HitsDistribution
+    hitsDistribution: Optional[HitsDistribution] = None
     atkBase: int
     atkMax: int
     hpBase: int
