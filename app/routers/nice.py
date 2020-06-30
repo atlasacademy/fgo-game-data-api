@@ -31,7 +31,7 @@ settings = Settings()
 if settings.export_all_nice:  # pragma: no cover
     for region_ in (Region.NA, Region.JP):
         start_time = time.perf_counter()
-        logger.info(f"Writing nice {region_} servant and equip data ...")
+        logger.info(f"Writing nice {region_} servant and equip data …")
         all_servant_data = [
             nice.get_nice_servant(region_, item_id)
             for item_id in masters[region_].mstSvtServantCollectionNo.values()
@@ -59,7 +59,7 @@ if settings.export_all_nice:  # pragma: no cover
         ) as fp:
             json.dump(all_mc_data, fp, ensure_ascii=False)
         run_time = time.perf_counter() - start_time
-        logger.info(f"Finish writing nice {region_} data in {run_time:.4f} seconds.")
+        logger.info(f"Finished writing nice {region_} data in {run_time:.4f}s.")
 
 
 responses: Dict[Union[str, int], Any] = {
