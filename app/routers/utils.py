@@ -1,4 +1,4 @@
-from typing import Sequence
+from typing import Iterable
 
 from fastapi.responses import Response
 
@@ -12,9 +12,9 @@ def item_response(item: BaseModelORJson) -> Response:
     return Response(item.json(exclude_unset=True), media_type=JSON_MIME)
 
 
-def list_string(items: Sequence[BaseModelORJson]) -> str:
+def list_string(items: Iterable[BaseModelORJson]) -> str:
     return "[" + ",".join([item.json(exclude_unset=True) for item in items]) + "]"
 
 
-def list_response(items: Sequence[BaseModelORJson]) -> Response:
+def list_response(items: Iterable[BaseModelORJson]) -> Response:
     return Response(list_string(items), media_type=JSON_MIME)

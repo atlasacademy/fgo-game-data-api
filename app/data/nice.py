@@ -1,5 +1,5 @@
 from functools import lru_cache
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Dict, Iterable, List, Mapping, Optional, Union
 
 from fastapi import HTTPException
 
@@ -73,7 +73,7 @@ def strip_formatting_brackets(detail_string: str) -> str:
     return detail_string
 
 
-def get_safe(input_dict: Dict[Any, Any], key: Any) -> Any:
+def get_safe(input_dict: Mapping[Any, Any], key: Any) -> Any:
     """
     A dict getter that returns the key if it's not found in the dict.
     The enums mapping is or will be incomplete eventually.
@@ -81,7 +81,7 @@ def get_safe(input_dict: Dict[Any, Any], key: Any) -> Any:
     return input_dict.get(key, key)
 
 
-def get_traits_list(input_idv: List[int]) -> List[Dict[str, Union[Trait, int]]]:
+def get_traits_list(input_idv: Iterable[int]) -> List[Dict[str, Union[Trait, int]]]:
     return [
         {"id": item, "name": TRAIT_NAME.get(item, Trait.unknown)} for item in input_idv
     ]
