@@ -18,12 +18,18 @@ from .schemas.raw import (
 
 
 def buff_to_func(region: Region, buff_id: int) -> Set[int]:
-    return {item.id for item in masters[region].mstFunc if buff_id in item.vals}
+    return {
+        item.id
+        for item in masters[region].mstFunc
+        if buff_id in item.vals and item.id in masters[region].mstFuncId
+    }
 
 
 def func_to_skillId(region: Region, func_id: int) -> Set[int]:
     return {
-        item.skillId for item in masters[region].mstSkillLv if func_id in item.funcId
+        item.skillId
+        for item in masters[region].mstSkillLv
+        if func_id in item.funcId and item.skillId in masters[region].mstSkillId
     }
 
 
@@ -32,6 +38,7 @@ def func_to_tdId(region: Region, func_id: int) -> Set[int]:
         item.treaureDeviceId
         for item in masters[region].mstTreasureDeviceLv
         if func_id in item.funcId
+        and item.treaureDeviceId in masters[region].mstTreasureDeviceId
     }
 
 
