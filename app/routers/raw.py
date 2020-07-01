@@ -1,7 +1,6 @@
 from typing import Any, Dict, List, Union
 
 from fastapi import APIRouter, Depends, HTTPException
-from fastapi.responses import Response
 
 from ..data import raw, search
 from ..data.common import Region
@@ -17,6 +16,7 @@ from ..data.schemas.raw import (
     TdEntity,
 )
 from .deps import DetailMessage, EquipSearchQueryParams, ServantSearchQueryParams
+from .utils import item_response, list_response
 
 
 responses: Dict[Union[str, int], Any] = {
@@ -55,10 +55,7 @@ async def find_servant(
             raw.get_servant_entity(search_param.region, item, expand, lore)
             for item in matches
         ]
-        out_json = (
-            f"[{','.join([item.json(exclude_unset=True) for item in entity_list])}]"
-        )
-        return Response(out_json, media_type="application/json")
+        return list_response(entity_list)
     else:
         raise HTTPException(status_code=400, detail="Insufficient query")
 
@@ -89,9 +86,7 @@ async def get_servant(
         item_id = masters[region].mstSvtServantCollectionNo[item_id]
     if item_id in masters[region].mstSvtId:
         servant_entity = raw.get_servant_entity(region, item_id, expand, lore)
-        return Response(
-            servant_entity.json(exclude_unset=True), media_type="application/json",
-        )
+        return item_response(servant_entity)
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
 
@@ -116,10 +111,7 @@ async def find_equip(
             raw.get_servant_entity(search_param.region, item, expand, lore)
             for item in matches
         ]
-        out_json = (
-            f"[{','.join([item.json(exclude_unset=True) for item in entity_list])}]"
-        )
-        return Response(out_json, media_type="application/json")
+        return list_response(entity_list)
     else:
         raise HTTPException(status_code=400, detail="Insufficient query")
 
@@ -150,9 +142,7 @@ async def get_equip(
         item_id = masters[region].mstSvtEquipCollectionNo[item_id]
     if item_id in masters[region].mstSvtId:
         servant_entity = raw.get_servant_entity(region, item_id, expand, lore)
-        return Response(
-            servant_entity.json(exclude_unset=True), media_type="application/json",
-        )
+        return item_response(servant_entity)
     else:
         raise HTTPException(status_code=404, detail="Equip not found")
 
@@ -175,9 +165,7 @@ async def get_mystic_code(region: Region, item_id: int, expand: bool = False):
     """
     if item_id in masters[region].mstEquipId:
         mc_entity = raw.get_mystic_code_entity(region, item_id, expand)
-        return Response(
-            mc_entity.json(exclude_unset=True), media_type="application/json",
-        )
+        return item_response(mc_entity)
     else:
         raise HTTPException(status_code=404, detail="Mystic Code not found")
 
@@ -203,9 +191,7 @@ async def get_skill(
     """
     if item_id in masters[region].mstSkillId:
         skill_entity = raw.get_skill_entity(region, item_id, reverse, expand)
-        return Response(
-            skill_entity.json(exclude_unset=True), media_type="application/json",
-        )
+        return item_response(skill_entity)
     else:
         raise HTTPException(status_code=404, detail="Skill not found")
 
@@ -231,9 +217,7 @@ async def get_td(
     """
     if item_id in masters[region].mstTreasureDeviceId:
         td_entity = raw.get_td_entity(region, item_id, reverse, expand)
-        return Response(
-            td_entity.json(exclude_unset=True), media_type="application/json",
-        )
+        return item_response(td_entity)
     else:
         raise HTTPException(status_code=404, detail="NP not found")
 
@@ -260,9 +244,7 @@ async def get_function(
     """
     if item_id in masters[region].mstFuncId:
         func_entity = raw.get_func_entity(region, item_id, reverse, expand)
-        return Response(
-            func_entity.json(exclude_unset=True), media_type="application/json",
-        )
+        return item_response(func_entity)
     else:
         raise HTTPException(status_code=404, detail="Function not found")
 
@@ -285,9 +267,7 @@ async def get_buff(region: Region, item_id: int, reverse: bool = False):
     """
     if item_id in masters[region].mstBuffId:
         buff_entity = raw.get_buff_entity(region, item_id, reverse)
-        return Response(
-            buff_entity.json(exclude_unset=True), media_type="application/json",
-        )
+        return item_response(buff_entity)
     else:
         raise HTTPException(status_code=404, detail="Buff not found")
 
@@ -327,8 +307,6 @@ async def get_quest_phase(region: Region, quest_id: int, phase: int):
         and phase in masters[region].mstQuestPhaseId[quest_id]
     ):
         quest_entity = raw.get_quest_phase_entity(region, quest_id, phase)
-        return Response(
-            quest_entity.json(exclude_unset=True), media_type="application/json",
-        )
+        return item_response(quest_entity)
     else:
         raise HTTPException(status_code=404, detail="Quest not found")

@@ -1,9 +1,9 @@
 from typing import Any, Dict, List, Optional, Union
 
-import orjson
 from pydantic import BaseModel
 
 from ..enums import SvtType
+from .base import BaseModelORJson
 
 
 class MstBuff(BaseModel):
@@ -21,7 +21,7 @@ class MstBuff(BaseModel):
     maxRate: int  # 5000
 
 
-class BuffEntityNoReverse(BaseModel):
+class BuffEntityNoReverse(BaseModelORJson):
     mstBuff: MstBuff
 
 
@@ -41,7 +41,7 @@ class MstFunc(BaseModel):
     popupText: str  # "STR Up\nvs. Lancer"
 
 
-class FunctionEntityNoReverse(BaseModel):
+class FunctionEntityNoReverse(BaseModelORJson):
     mstFunc: MstFunc
 
 
@@ -94,7 +94,7 @@ class MstSkillLv(BaseModel):
     priority: int  # 0
 
 
-class SkillEntityNoReverse(BaseModel):
+class SkillEntityNoReverse(BaseModelORJson):
     mstSkill: MstSkill
     mstSkillDetail: List[MstSkillDetail]
     mstSvtSkill: List[MstSvtSkill]
@@ -160,14 +160,14 @@ class MstTreasureDeviceLv(BaseModel):
     qp: int  # 40000
 
 
-class TdEntityNoReverse(BaseModel):
+class TdEntityNoReverse(BaseModelORJson):
     mstTreasureDevice: MstTreasureDevice
     mstTreasureDeviceDetail: List[MstTreasureDeviceDetail]
     mstSvtTreasureDevice: List[MstSvtTreasureDevice]
     mstTreasureDeviceLv: List[MstTreasureDeviceLv]
 
 
-class MstSvt(BaseModel):
+class MstSvt(BaseModelORJson):
     relateQuestIds: List[int]  # [91500701, 94004103, 94014414],
     individuality: List[int]  # [5000, 500800],
     classPassive: List[int]  # [83350, 80350, 320650],
@@ -468,10 +468,6 @@ class Master(BaseModel):
     mstSvtCommentId: Dict[int, List[MstSvtComment]]
 
 
-def orjson_dumps(v, *, default):
-    return orjson.dumps(v, default=default).decode()
-
-
 class ServantEntity(BaseModel):
     mstSvt: MstSvt
     mstSkill: List[SkillEntityNoReverse]
@@ -483,58 +479,30 @@ class ServantEntity(BaseModel):
     mstSvtLimitAdd: List[MstSvtLimitAdd]
     mstSvtComment: List[MstSvtComment] = []
 
-    class Config:
-        json_loads = orjson.loads
-        json_dumps = orjson_dumps
-
 
 class SkillEntity(SkillEntityNoReverse):
     reverseServants: List[ServantEntity] = []
 
-    class Config:
-        json_loads = orjson.loads
-        json_dumps = orjson_dumps
-
 
 class TdEntity(TdEntityNoReverse):
     reverseServants: List[ServantEntity] = []
-
-    class Config:
-        json_loads = orjson.loads
-        json_dumps = orjson_dumps
 
 
 class FunctionEntity(FunctionEntityNoReverse):
     reverseSkills: List[SkillEntity] = []
     reverseTds: List[TdEntity] = []
 
-    class Config:
-        json_loads = orjson.loads
-        json_dumps = orjson_dumps
-
 
 class BuffEntity(BuffEntityNoReverse):
     reverseFunctions: List[FunctionEntity] = []
 
-    class Config:
-        json_loads = orjson.loads
-        json_dumps = orjson_dumps
 
-
-class MysticCodeEntity(BaseModel):
+class MysticCodeEntity(BaseModelORJson):
     mstEquip: MstEquip
     mstSkill: List[SkillEntityNoReverse]
     mstEquipExp: List[MstEquipExp]
 
-    class Config:
-        json_loads = orjson.loads
-        json_dumps = orjson_dumps
 
-
-class QuestPhaseEntity(BaseModel):
+class QuestPhaseEntity(BaseModelORJson):
     mstQuest: MstQuest
     mstQuestPhase: MstQuestPhase
-
-    class Config:
-        json_loads = orjson.loads
-        json_dumps = orjson_dumps
