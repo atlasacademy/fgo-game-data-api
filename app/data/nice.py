@@ -562,10 +562,6 @@ def get_nice_servant(
     return nice_data
 
 
-if settings.nice_servant_lru_cache:
-    get_nice_servant = lru_cache(get_nice_servant)
-
-
 def get_nice_servant_model(*args, **kwargs) -> NiceServant:
     return NiceServant.parse_obj(get_nice_servant(*args, **kwargs))
 
@@ -645,6 +641,14 @@ def get_nice_td_alone(
             for item in raw_data.mstSvtTreasureDevice
         ]
     return nice_data
+
+
+if settings.nice_servant_lru_cache:
+    get_nice_servant = lru_cache(get_nice_servant)
+    get_nice_buff_alone = lru_cache(get_nice_buff_alone)
+    get_nice_func_alone = lru_cache(get_nice_func_alone)
+    get_nice_skill_alone = lru_cache(get_nice_skill_alone)
+    get_nice_td_alone = lru_cache(get_nice_td_alone)
 
 
 def get_nice_mystic_code(region: Region, mc_id: int) -> Dict[str, Any]:
