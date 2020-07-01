@@ -1,6 +1,7 @@
 from typing import Set
 
 from .common import Region
+from .enums import FuncType
 from .gamedata import masters
 from .schemas.raw import (
     BuffEntity,
@@ -61,7 +62,11 @@ def get_func_entity_no_reverse(
     region: Region, func_id: int, expand: bool = False
 ) -> FunctionEntityNoReverse:
     func_entity = FunctionEntityNoReverse(mstFunc=masters[region].mstFuncId[func_id])
-    if expand:
+    if expand and func_entity.mstFunc.funcType not in {
+        FuncType.SUB_STATE,
+        FuncType.EVENT_DROP_UP,
+        FuncType.GAIN_NP_BUFF_INDIVIDUAL_SUM,
+    }:
         func_entity.mstFunc.expandedVals = [
             get_buff_entity_no_reverse(region, buff_id)
             for buff_id in func_entity.mstFunc.vals
