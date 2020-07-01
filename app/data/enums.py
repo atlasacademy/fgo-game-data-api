@@ -2293,6 +2293,7 @@ class Trait(str, Enum):
     criticalHit = "criticalHit"
     playerCards = "playerCards"
     cardNP = "cardNP"
+    kingProteaGrowth = "kingProteaGrowth"
 
 
 TRAIT_NAME: Dict[int, Trait] = {
@@ -2384,6 +2385,7 @@ TRAIT_NAME: Dict[int, Trait] = {
     2114: Trait.greekMythologyMales,
     2355: Trait.illya,
     2356: Trait.genderUnknownServant,  # Teach's 3rd skill
+    2387: Trait.kingProteaGrowth,
     2466: Trait.argonaut,
     2615: Trait.genderCaenisServant,  # Phantom's 2nd skill
     2631: Trait.humanoidServant,  # used in TamaVitch's fight
