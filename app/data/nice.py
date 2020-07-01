@@ -192,6 +192,14 @@ def get_nice_base_function(
             get_nice_buff(buff, region) for buff in function.mstFunc.expandedVals
         ],
     }
+
+    if function.mstFunc.funcType in {
+        FuncType.SUB_STATE,
+        FuncType.EVENT_DROP_UP,
+        FuncType.GAIN_NP_BUFF_INDIVIDUAL_SUM,
+    }:
+        functionInfo["traitVals"] = get_traits_list(function.mstFunc.vals)
+
     funcPopupIconId = function.mstFunc.popupIconId
     if funcPopupIconId != 0:
         functionInfo["funcPopupIcon"] = ASSET_URL["buffIcon"].format(

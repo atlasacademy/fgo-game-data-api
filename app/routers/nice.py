@@ -8,6 +8,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from ..config import Settings
 from ..data import nice, search
 from ..data.common import Region
+from ..data.enums import TRAIT_NAME
 from ..data.gamedata import masters
 from ..data.schemas.nice import (
     Language,
@@ -23,7 +24,6 @@ from ..data.schemas.nice import (
 )
 from .deps import DetailMessage, EquipSearchQueryParams, ServantSearchQueryParams
 from .utils import item_response, list_response, list_string
-from ..data.enums import TRAIT_NAME
 
 
 logger = logging.getLogger()

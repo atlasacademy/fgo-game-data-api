@@ -648,6 +648,7 @@
           "funcPopupText": "弱体解除",
           "functvals": [],
           "funcquestTvals": [],
+          "traitVals": [{ "id": 3005, "name": "buffNegativeEffect" }],
           "buffs": [],
           "svals": [
             { "Rate": 1000, "Value": 0, "Value2": 1 },

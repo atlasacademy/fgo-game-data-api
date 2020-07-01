@@ -1234,6 +1234,7 @@
           "funcPopupText": "防御強化解除",
           "functvals": [],
           "funcquestTvals": [],
+          "traitVals": [{ "id": 3007, "name": "buffIncreaseDefence" }],
           "buffs": [],
           "svals": [
             { "Rate": 1000 },
