@@ -468,7 +468,7 @@ class Master(BaseModel):
     mstSvtCommentId: Dict[int, List[MstSvtComment]]
 
 
-class ServantEntity(BaseModel):
+class ServantEntity(BaseModelORJson):
     mstSvt: MstSvt
     mstSkill: List[SkillEntityNoReverse]
     mstTreasureDevice: List[TdEntityNoReverse]

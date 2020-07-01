@@ -3,7 +3,7 @@ from pydantic import BaseModel
 
 
 def orjson_dumps(v, *, default):
-    return orjson.dumps(v, default=default).decode()
+    return orjson.dumps(v, default=default, option=orjson.OPT_NON_STR_KEYS).decode()
 
 
 class BaseModelORJson(BaseModel):

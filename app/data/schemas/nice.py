@@ -21,6 +21,7 @@ from ..enums import (
     SvtClass,
     Trait,
 )
+from .base import BaseModelORJson
 
 
 ASSET_URL: Dict[str, str] = {
@@ -43,7 +44,7 @@ class Language(str, Enum):
     en = "en"
 
 
-class NiceItem(BaseModel):
+class NiceItem(BaseModelORJson):
     id: int
     name: str
     type: Union[NiceItemType, int]
@@ -132,7 +133,7 @@ class NiceTrait(BaseModel):
     name: Trait
 
 
-class NiceBuff(BaseModel):
+class NiceBuff(BaseModelORJson):
     id: int
     name: str
     detail: str
@@ -145,7 +146,7 @@ class NiceBuff(BaseModel):
     maxRate: int
 
 
-class NiceBaseFunction(BaseModel):
+class NiceBaseFunction(BaseModelORJson):
     funcId: int
     funcType: Union[NiceFuncType, int]
     funcTargetType: Union[NiceFuncTargetType, int]
@@ -165,7 +166,7 @@ class NiceFunction(NiceBaseFunction):
     svals5: Optional[List[Vals]] = None
 
 
-class NiceSkill(BaseModel):
+class NiceSkill(BaseModelORJson):
     id: int
     num: int = -1
     name: str
@@ -180,7 +181,7 @@ class NiceSkill(BaseModel):
     functions: List[NiceFunction]
 
 
-class NiceTd(BaseModel):
+class NiceTd(BaseModelORJson):
     id: int
     num: int
     card: NiceCardType
@@ -244,7 +245,7 @@ class NiceLore(BaseModel):
     comments: List[NiceLoreComment]
 
 
-class NiceServant(BaseModel):
+class NiceServant(BaseModelORJson):
     id: int
     collectionNo: int
     name: str
@@ -296,7 +297,7 @@ class NiceBuffReverse(NiceBuff):
     reverseFunctions: List[NiceBaseFunctionReverse] = []
 
 
-class NiceEquip(BaseModel):
+class NiceEquip(BaseModelORJson):
     id: int
     collectionNo: int
     name: str
@@ -326,7 +327,7 @@ class ExtraMCAssets(BaseModel):
     masterFigure: MCAssets
 
 
-class NiceMysticCode(BaseModel):
+class NiceMysticCode(BaseModelORJson):
     id: int
     name: str
     detail: str
@@ -336,7 +337,7 @@ class NiceMysticCode(BaseModel):
     expRequired: List[int]
 
 
-class NiceQuestPhase(BaseModel):
+class NiceQuestPhase(BaseModelORJson):
     id: int
     phase: int
     name: str

@@ -41,7 +41,16 @@ from .raw import (
     get_skill_entity_no_reverse,
     get_td_entity_no_reverse,
 )
-from .schemas.nice import ASSET_URL, Language
+from .schemas.nice import (
+    ASSET_URL,
+    Language,
+    NiceBaseFunctionReverse,
+    NiceBuffReverse,
+    NiceEquip,
+    NiceServant,
+    NiceSkillReverse,
+    NiceTdReverse,
+)
 from .schemas.raw import (
     BuffEntityNoReverse,
     FunctionEntityNoReverse,
@@ -557,13 +566,21 @@ if settings.nice_servant_lru_cache:
     get_nice_servant = lru_cache(get_nice_servant)
 
 
+def get_nice_servant_model(*args, **kwargs) -> NiceServant:
+    return NiceServant.parse_obj(get_nice_servant(*args, **kwargs))
+
+
+def get_nice_equip_model(*args, **kwargs) -> NiceEquip:
+    return NiceEquip.parse_obj(get_nice_servant(*args, **kwargs))
+
+
 def get_nice_buff_alone(
     region: Region, buff_id: int, reverse: bool = False, lang: Optional[Language] = None
-) -> Dict[str, Any]:
+) -> NiceBuffReverse:
     raw_data = get_buff_entity_no_reverse(region, buff_id)
-    nice_data = get_nice_buff(raw_data, region)
+    nice_data = NiceBuffReverse.parse_obj(get_nice_buff(raw_data, region))
     if reverse:
-        nice_data["reverseFunctions"] = [
+        nice_data.reverseFunctions = [
             get_nice_func_alone(region, func_id, reverse, lang=lang)
             for func_id in buff_to_func(region, buff_id)
         ]
@@ -572,16 +589,18 @@ def get_nice_buff_alone(
 
 def get_nice_func_alone(
     region: Region, func_id: int, reverse: bool = False, lang: Optional[Language] = None
-) -> Dict[str, Any]:
+) -> NiceBaseFunctionReverse:
     raw_data = get_func_entity_no_reverse(region, func_id, expand=True)
-    nice_data = get_nice_base_function(raw_data, region)
+    nice_data = NiceBaseFunctionReverse.parse_obj(
+        get_nice_base_function(raw_data, region)
+    )
 
     if reverse:
-        nice_data["reverseSkills"] = [
+        nice_data.reverseSkills = [
             get_nice_skill_alone(region, skill_id, reverse, lang=lang)
             for skill_id in func_to_skillId(region, func_id)
         ]
-        nice_data["reverseTds"] = [
+        nice_data.reverseTds = [
             get_nice_td_alone(region, td_id, reverse, lang=lang)
             for td_id in func_to_tdId(region, func_id)
         ]
@@ -593,7 +612,7 @@ def get_nice_skill_alone(
     skill_id: int,
     reverse: bool = False,
     lang: Optional[Language] = None,
-) -> Dict[str, Any]:
+) -> NiceSkillReverse:
     raw_data = get_skill_entity_no_reverse(region, skill_id, expand=True)
 
     svt_list = [item.svtId for item in raw_data.mstSvtSkill]
@@ -601,11 +620,11 @@ def get_nice_skill_alone(
         svtId = svt_list[0]
     else:
         svtId = 0
-    nice_data = get_nice_skill(raw_data, svtId, region)
+    nice_data = NiceSkillReverse.parse_obj(get_nice_skill(raw_data, svtId, region))
 
     if reverse:
-        nice_data["reverseServants"] = [
-            get_nice_servant(region, item.svtId, lang=lang)
+        nice_data.reverseServants = [
+            get_nice_servant_model(region, item.svtId, lang=lang)
             for item in raw_data.mstSvtSkill
         ]
     return nice_data
@@ -613,16 +632,16 @@ def get_nice_skill_alone(
 
 def get_nice_td_alone(
     region: Region, td_id: int, reverse: bool = False, lang: Optional[Language] = None
-) -> Dict[str, Any]:
+) -> NiceTdReverse:
     raw_data = get_td_entity_no_reverse(region, td_id, expand=True)
 
     svt_list = [item.svtId for item in raw_data.mstSvtTreasureDevice]
     svtId = svt_list[0]  # Yes, all td_id has a svtTd entry
-    nice_data = get_nice_td(raw_data, svtId, region)
+    nice_data = NiceTdReverse.parse_obj(get_nice_td(raw_data, svtId, region))
 
     if reverse:
-        nice_data["reverseServants"] = [
-            get_nice_servant(region, item.svtId, lang=lang)
+        nice_data.reverseServants = [
+            get_nice_servant_model(region, item.svtId, lang=lang)
             for item in raw_data.mstSvtTreasureDevice
         ]
     return nice_data
