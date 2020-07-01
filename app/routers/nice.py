@@ -23,6 +23,7 @@ from ..data.schemas.nice import (
 )
 from .deps import DetailMessage, EquipSearchQueryParams, ServantSearchQueryParams
 from .utils import item_response, list_response, list_string
+from ..data.enums import TRAIT_NAME
 
 
 logger = logging.getLogger()
@@ -49,6 +50,8 @@ if settings.export_all_nice:  # pragma: no cover
             nice.get_nice_mystic_code(region_, item_id)
             for item_id in masters[region_].mstEquipId
         ]
+        with open(f"export/{region_}/nice_trait.json", "w", encoding="utf-8") as fp:
+            json.dump(TRAIT_NAME, fp)
         with open(f"export/{region_}/nice_servant.json", "w", encoding="utf-8") as fp:
             fp.write(list_string(all_servant_data))
         with open(f"export/{region_}/nice_equip.json", "w", encoding="utf-8") as fp:
