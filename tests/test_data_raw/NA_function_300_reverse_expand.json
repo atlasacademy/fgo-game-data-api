@@ -1527,947 +1527,6 @@
             "relateQuestIds": [],
             "individuality": [
               5000,
-              9941180,
-              1,
-              100,
-              201,
-              302,
-              303,
-              2009,
-              1000,
-              2001,
-              2000,
-              2040,
-              2008,
-              2011,
-              2037,
-              2075,
-              2002,
-              2012
-            ],
-            "classPassive": [34550, 88550, 62450],
-            "cardIds": [3, 1, 1, 2, 2],
-            "script": { "cameraActionId": 297 },
-            "id": 9941180,
-            "baseSvtId": 9941180,
-            "name": "Sigurd",
-            "ruby": "Sigurd",
-            "battleName": "Sigurd",
-            "classId": 1,
-            "type": 5,
-            "limitMax": 4,
-            "rewardLv": 90,
-            "friendshipId": 1045,
-            "maxFriendshipRank": 10,
-            "genderType": 1,
-            "attri": 3,
-            "combineSkillId": 9941180,
-            "combineLimitId": 9941180,
-            "sellQp": 5000,
-            "sellMana": 9,
-            "sellRarePri": 5,
-            "expType": 15,
-            "combineMaterialId": 5,
-            "cost": 16,
-            "battleSize": 2,
-            "hpGaugeY": -250,
-            "starRate": 100,
-            "deathRate": 280,
-            "attackAttri": 1,
-            "illustratorId": -1,
-            "cvId": -1,
-            "collectionNo": 0,
-            "materialStoryPriority": 0
-          },
-          "mstSkill": [
-            {
-              "mstSkill": {
-                "effectList": [],
-                "actIndividuality": [],
-                "script": {},
-                "id": 492450,
-                "type": 1,
-                "name": "Primordial Rune (Warrior) B",
-                "ruby": "Primordial Rune (Warrior)",
-                "maxLv": 10,
-                "iconId": 303,
-                "motion": 101
-              },
-              "mstSkillDetail": [
-                {
-                  "id": 492450,
-                  "detail": "Increase your Critical Strength [{0}] (3 times, 3 turns)",
-                  "detailShort": "Increase your Critical Strength [{0}] (3 times, 3 turns)"
-                }
-              ],
-              "mstSvtSkill": [
-                {
-                  "strengthStatus": 0,
-                  "svtId": 103300,
-                  "num": 1,
-                  "priority": 1,
-                  "skillId": 492450,
-                  "condQuestId": 0,
-                  "condQuestPhase": 0,
-                  "condLv": 0,
-                  "condLimitCount": 0,
-                  "eventId": 0,
-                  "flag": 0
-                },
-                {
-                  "strengthStatus": 0,
-                  "svtId": 9941180,
-                  "num": 1,
-                  "priority": 1,
-                  "skillId": 492450,
-                  "condQuestId": 0,
-                  "condQuestPhase": 0,
-                  "condLv": 0,
-                  "condLimitCount": 0,
-                  "eventId": 0,
-                  "flag": 0
-                }
-              ],
-              "mstSkillLv": [
-                {
-                  "funcId": [201],
-                  "svals": ["[1000,3,3,500]"],
-                  "script": {},
-                  "skillId": 492450,
-                  "lv": 1,
-                  "chargeTurn": 7,
-                  "skillDetailId": 492450,
-                  "priority": 0
-                },
-                {
-                  "funcId": [201],
-                  "svals": ["[1000,3,3,550]"],
-                  "script": {},
-                  "skillId": 492450,
-                  "lv": 2,
-                  "chargeTurn": 7,
-                  "skillDetailId": 492450,
-                  "priority": 0
-                },
-                {
-                  "funcId": [201],
-                  "svals": ["[1000,3,3,600]"],
-                  "script": {},
-                  "skillId": 492450,
-                  "lv": 3,
-                  "chargeTurn": 7,
-                  "skillDetailId": 492450,
-                  "priority": 0
-                },
-                {
-                  "funcId": [201],
-                  "svals": ["[1000,3,3,650]"],
-                  "script": {},
-                  "skillId": 492450,
-                  "lv": 4,
-                  "chargeTurn": 7,
-                  "skillDetailId": 492450,
-                  "priority": 0
-                },
-                {
-                  "funcId": [201],
-                  "svals": ["[1000,3,3,700]"],
-                  "script": {},
-                  "skillId": 492450,
-                  "lv": 5,
-                  "chargeTurn": 7,
-                  "skillDetailId": 492450,
-                  "priority": 0
-                },
-                {
-                  "funcId": [201],
-                  "svals": ["[1000,3,3,750]"],
-                  "script": {},
-                  "skillId": 492450,
-                  "lv": 6,
-                  "chargeTurn": 6,
-                  "skillDetailId": 492450,
-                  "priority": 0
-                },
-                {
-                  "funcId": [201],
-                  "svals": ["[1000,3,3,800]"],
-                  "script": {},
-                  "skillId": 492450,
-                  "lv": 7,
-                  "chargeTurn": 6,
-                  "skillDetailId": 492450,
-                  "priority": 0
-                },
-                {
-                  "funcId": [201],
-                  "svals": ["[1000,3,3,850]"],
-                  "script": {},
-                  "skillId": 492450,
-                  "lv": 8,
-                  "chargeTurn": 6,
-                  "skillDetailId": 492450,
-                  "priority": 0
-                },
-                {
-                  "funcId": [201],
-                  "svals": ["[1000,3,3,900]"],
-                  "script": {},
-                  "skillId": 492450,
-                  "lv": 9,
-                  "chargeTurn": 6,
-                  "skillDetailId": 492450,
-                  "priority": 0
-                },
-                {
-                  "funcId": [201],
-                  "svals": ["[1000,3,3,1000]"],
-                  "script": {},
-                  "skillId": 492450,
-                  "lv": 10,
-                  "chargeTurn": 5,
-                  "skillDetailId": 492450,
-                  "priority": 0
-                }
-              ]
-            },
-            {
-              "mstSkill": {
-                "effectList": [],
-                "actIndividuality": [],
-                "script": {},
-                "id": 493650,
-                "type": 1,
-                "name": "Dragon Modification EX",
-                "ruby": "Dragon Modification",
-                "maxLv": 10,
-                "iconId": 306,
-                "motion": 101
-              },
-              "mstSkillDetail": [
-                {
-                  "id": 493650,
-                  "detail": "Increase Buster Card effectiveness [{0}] (1 turn) & apply Guts (1 time, 3 turns) for yourself",
-                  "detailShort": "Increase Buster Card effectiveness [{0}] (1 turn) & apply Guts (1 time, 3 turns) for yourself"
-                }
-              ],
-              "mstSvtSkill": [
-                {
-                  "strengthStatus": 0,
-                  "svtId": 103300,
-                  "num": 2,
-                  "priority": 1,
-                  "skillId": 493650,
-                  "condQuestId": 0,
-                  "condQuestPhase": 0,
-                  "condLv": 0,
-                  "condLimitCount": 1,
-                  "eventId": 0,
-                  "flag": 0
-                },
-                {
-                  "strengthStatus": 0,
-                  "svtId": 9941180,
-                  "num": 2,
-                  "priority": 1,
-                  "skillId": 493650,
-                  "condQuestId": 0,
-                  "condQuestPhase": 0,
-                  "condLv": 0,
-                  "condLimitCount": 1,
-                  "eventId": 0,
-                  "flag": 0
-                }
-              ],
-              "mstSkillLv": [
-                {
-                  "funcId": [119, 292],
-                  "svals": ["[1000,1,-1,300]", "[1000,3,1,1000]"],
-                  "script": {},
-                  "skillId": 493650,
-                  "lv": 1,
-                  "chargeTurn": 9,
-                  "skillDetailId": 493650,
-                  "priority": 0
-                },
-                {
-                  "funcId": [119, 292],
-                  "svals": ["[1000,1,-1,320]", "[1000,3,1,1000]"],
-                  "script": {},
-                  "skillId": 493650,
-                  "lv": 2,
-                  "chargeTurn": 9,
-                  "skillDetailId": 493650,
-                  "priority": 0
-                },
-                {
-                  "funcId": [119, 292],
-                  "svals": ["[1000,1,-1,340]", "[1000,3,1,1000]"],
-                  "script": {},
-                  "skillId": 493650,
-                  "lv": 3,
-                  "chargeTurn": 9,
-                  "skillDetailId": 493650,
-                  "priority": 0
-                },
-                {
-                  "funcId": [119, 292],
-                  "svals": ["[1000,1,-1,360]", "[1000,3,1,1000]"],
-                  "script": {},
-                  "skillId": 493650,
-                  "lv": 4,
-                  "chargeTurn": 9,
-                  "skillDetailId": 493650,
-                  "priority": 0
-                },
-                {
-                  "funcId": [119, 292],
-                  "svals": ["[1000,1,-1,380]", "[1000,3,1,1000]"],
-                  "script": {},
-                  "skillId": 493650,
-                  "lv": 5,
-                  "chargeTurn": 9,
-                  "skillDetailId": 493650,
-                  "priority": 0
-                },
-                {
-                  "funcId": [119, 292],
-                  "svals": ["[1000,1,-1,400]", "[1000,3,1,1000]"],
-                  "script": {},
-                  "skillId": 493650,
-                  "lv": 6,
-                  "chargeTurn": 8,
-                  "skillDetailId": 493650,
-                  "priority": 0
-                },
-                {
-                  "funcId": [119, 292],
-                  "svals": ["[1000,1,-1,420]", "[1000,3,1,1000]"],
-                  "script": {},
-                  "skillId": 493650,
-                  "lv": 7,
-                  "chargeTurn": 8,
-                  "skillDetailId": 493650,
-                  "priority": 0
-                },
-                {
-                  "funcId": [119, 292],
-                  "svals": ["[1000,1,-1,440]", "[1000,3,1,1000]"],
-                  "script": {},
-                  "skillId": 493650,
-                  "lv": 8,
-                  "chargeTurn": 8,
-                  "skillDetailId": 493650,
-                  "priority": 0
-                },
-                {
-                  "funcId": [119, 292],
-                  "svals": ["[1000,1,-1,460]", "[1000,3,1,1000]"],
-                  "script": {},
-                  "skillId": 493650,
-                  "lv": 9,
-                  "chargeTurn": 8,
-                  "skillDetailId": 493650,
-                  "priority": 0
-                },
-                {
-                  "funcId": [119, 292],
-                  "svals": ["[1000,1,-1,500]", "[1000,3,1,1000]"],
-                  "script": {},
-                  "skillId": 493650,
-                  "lv": 10,
-                  "chargeTurn": 7,
-                  "skillDetailId": 493650,
-                  "priority": 0
-                }
-              ]
-            },
-            {
-              "mstSkill": {
-                "effectList": [],
-                "actIndividuality": [],
-                "script": {},
-                "id": 494550,
-                "type": 1,
-                "name": "Crystallized Wisdom A",
-                "ruby": "Crystallized Wisdom",
-                "maxLv": 10,
-                "iconId": 604,
-                "motion": 102
-              },
-              "mstSkillDetail": [
-                {
-                  "id": 494550,
-                  "detail": "Increase Critical Star drop rate [{0}] (1 turn) & apply Debuff Immune (1 turn) for a single ally",
-                  "detailShort": "Increase Critical Star drop rate [{0}] (1 turn) & apply Debuff Immune (1 turn) for a single ally"
-                }
-              ],
-              "mstSvtSkill": [
-                {
-                  "strengthStatus": 0,
-                  "svtId": 103300,
-                  "num": 3,
-                  "priority": 1,
-                  "skillId": 494550,
-                  "condQuestId": 0,
-                  "condQuestPhase": 0,
-                  "condLv": 0,
-                  "condLimitCount": 3,
-                  "eventId": 0,
-                  "flag": 0
-                },
-                {
-                  "strengthStatus": 0,
-                  "svtId": 9941180,
-                  "num": 3,
-                  "priority": 1,
-                  "skillId": 494550,
-                  "condQuestId": 0,
-                  "condQuestPhase": 0,
-                  "condLv": 0,
-                  "condLimitCount": 3,
-                  "eventId": 0,
-                  "flag": 0
-                }
-              ],
-              "mstSkillLv": [
-                {
-                  "funcId": [300, 219, 628],
-                  "svals": [
-                    "[1000,1,-1,500]",
-                    "[1000,1,-1,300]",
-                    "[1000,1,-1]"
-                  ],
-                  "script": {},
-                  "skillId": 494550,
-                  "lv": 1,
-                  "chargeTurn": 7,
-                  "skillDetailId": 494550,
-                  "priority": 0
-                },
-                {
-                  "funcId": [300, 219, 628],
-                  "svals": [
-                    "[1000,1,-1,550]",
-                    "[1000,1,-1,300]",
-                    "[1000,1,-1]"
-                  ],
-                  "script": {},
-                  "skillId": 494550,
-                  "lv": 2,
-                  "chargeTurn": 7,
-                  "skillDetailId": 494550,
-                  "priority": 0
-                },
-                {
-                  "funcId": [300, 219, 628],
-                  "svals": [
-                    "[1000,1,-1,600]",
-                    "[1000,1,-1,300]",
-                    "[1000,1,-1]"
-                  ],
-                  "script": {},
-                  "skillId": 494550,
-                  "lv": 3,
-                  "chargeTurn": 7,
-                  "skillDetailId": 494550,
-                  "priority": 0
-                },
-                {
-                  "funcId": [300, 219, 628],
-                  "svals": [
-                    "[1000,1,-1,650]",
-                    "[1000,1,-1,300]",
-                    "[1000,1,-1]"
-                  ],
-                  "script": {},
-                  "skillId": 494550,
-                  "lv": 4,
-                  "chargeTurn": 7,
-                  "skillDetailId": 494550,
-                  "priority": 0
-                },
-                {
-                  "funcId": [300, 219, 628],
-                  "svals": [
-                    "[1000,1,-1,700]",
-                    "[1000,1,-1,300]",
-                    "[1000,1,-1]"
-                  ],
-                  "script": {},
-                  "skillId": 494550,
-                  "lv": 5,
-                  "chargeTurn": 7,
-                  "skillDetailId": 494550,
-                  "priority": 0
-                },
-                {
-                  "funcId": [300, 219, 628],
-                  "svals": [
-                    "[1000,1,-1,750]",
-                    "[1000,1,-1,300]",
-                    "[1000,1,-1]"
-                  ],
-                  "script": {},
-                  "skillId": 494550,
-                  "lv": 6,
-                  "chargeTurn": 6,
-                  "skillDetailId": 494550,
-                  "priority": 0
-                },
-                {
-                  "funcId": [300, 219, 628],
-                  "svals": [
-                    "[1000,1,-1,800]",
-                    "[1000,1,-1,300]",
-                    "[1000,1,-1]"
-                  ],
-                  "script": {},
-                  "skillId": 494550,
-                  "lv": 7,
-                  "chargeTurn": 6,
-                  "skillDetailId": 494550,
-                  "priority": 0
-                },
-                {
-                  "funcId": [300, 219, 628],
-                  "svals": [
-                    "[1000,1,-1,850]",
-                    "[1000,1,-1,300]",
-                    "[1000,1,-1]"
-                  ],
-                  "script": {},
-                  "skillId": 494550,
-                  "lv": 8,
-                  "chargeTurn": 6,
-                  "skillDetailId": 494550,
-                  "priority": 0
-                },
-                {
-                  "funcId": [300, 219, 628],
-                  "svals": [
-                    "[1000,1,-1,900]",
-                    "[1000,1,-1,300]",
-                    "[1000,1,-1]"
-                  ],
-                  "script": {},
-                  "skillId": 494550,
-                  "lv": 9,
-                  "chargeTurn": 6,
-                  "skillDetailId": 494550,
-                  "priority": 0
-                },
-                {
-                  "funcId": [300, 219, 628],
-                  "svals": [
-                    "[1000,1,-1,1000]",
-                    "[1000,1,-1,300]",
-                    "[1000,1,-1]"
-                  ],
-                  "script": {},
-                  "skillId": 494550,
-                  "lv": 10,
-                  "chargeTurn": 5,
-                  "skillDetailId": 494550,
-                  "priority": 0
-                }
-              ]
-            }
-          ],
-          "mstTreasureDevice": [
-            {
-              "mstTreasureDevice": {
-                "individuality": [3000, 4002, 4007],
-                "script": {
-                  "limitSeqId_1": 9941180,
-                  "limitSeqId_3": 9941181,
-                  "limitSeqId_4": 9941181,
-                  "limitSeqId_2": 9941180
-                },
-                "id": 9941181,
-                "seqId": 9941180,
-                "name": "Bölverkr Gram",
-                "ruby": " ",
-                "rank": "A+",
-                "maxLv": 5,
-                "typeText": "Anti-Fortress",
-                "attackAttri": 1
-              },
-              "mstTreasureDeviceDetail": [],
-              "mstSvtTreasureDevice": [
-                {
-                  "damage": [3, 7, 10, 14, 17, 21, 28],
-                  "strengthStatus": 0,
-                  "svtId": 9941180,
-                  "num": 1,
-                  "priority": 101,
-                  "flag": 0,
-                  "imageIndex": 0,
-                  "treasureDeviceId": 9941181,
-                  "condQuestId": 0,
-                  "condQuestPhase": 0,
-                  "condLv": 0,
-                  "condFriendshipRank": 0,
-                  "motion": 50,
-                  "cardId": 2
-                }
-              ],
-              "mstTreasureDeviceLv": [
-                {
-                  "funcId": [16],
-                  "svals": ["[1000,6000,2002,1500]"],
-                  "svals2": ["[1000,6000,2002,1625]"],
-                  "svals3": ["[1000,6000,2002,1750]"],
-                  "svals4": ["[1000,6000,2002,1875]"],
-                  "svals5": ["[1000,6000,2002,2000]"],
-                  "treaureDeviceId": 9941181,
-                  "lv": 1,
-                  "gaugeCount": 1,
-                  "detailId": 1,
-                  "tdPoint": 0,
-                  "tdPointQ": 0,
-                  "tdPointA": 0,
-                  "tdPointB": 0,
-                  "tdPointEx": 0,
-                  "tdPointDef": 0,
-                  "qp": 0
-                },
-                {
-                  "funcId": [16],
-                  "svals": ["[1000,8000,2002,1500]"],
-                  "svals2": ["[1000,8000,2002,1625]"],
-                  "svals3": ["[1000,8000,2002,1750]"],
-                  "svals4": ["[1000,8000,2002,1875]"],
-                  "svals5": ["[1000,8000,2002,2000]"],
-                  "treaureDeviceId": 9941181,
-                  "lv": 2,
-                  "gaugeCount": 1,
-                  "detailId": 1,
-                  "tdPoint": 0,
-                  "tdPointQ": 0,
-                  "tdPointA": 0,
-                  "tdPointB": 0,
-                  "tdPointEx": 0,
-                  "tdPointDef": 0,
-                  "qp": 0
-                },
-                {
-                  "funcId": [16],
-                  "svals": ["[1000,9000,2002,1500]"],
-                  "svals2": ["[1000,9000,2002,1625]"],
-                  "svals3": ["[1000,9000,2002,1750]"],
-                  "svals4": ["[1000,9000,2002,1875]"],
-                  "svals5": ["[1000,9000,2002,2000]"],
-                  "treaureDeviceId": 9941181,
-                  "lv": 3,
-                  "gaugeCount": 1,
-                  "detailId": 1,
-                  "tdPoint": 0,
-                  "tdPointQ": 0,
-                  "tdPointA": 0,
-                  "tdPointB": 0,
-                  "tdPointEx": 0,
-                  "tdPointDef": 0,
-                  "qp": 0
-                },
-                {
-                  "funcId": [16],
-                  "svals": ["[1000,9500,2002,1500]"],
-                  "svals2": ["[1000,9500,2002,1625]"],
-                  "svals3": ["[1000,9500,2002,1750]"],
-                  "svals4": ["[1000,9500,2002,1875]"],
-                  "svals5": ["[1000,9500,2002,2000]"],
-                  "treaureDeviceId": 9941181,
-                  "lv": 4,
-                  "gaugeCount": 1,
-                  "detailId": 1,
-                  "tdPoint": 0,
-                  "tdPointQ": 0,
-                  "tdPointA": 0,
-                  "tdPointB": 0,
-                  "tdPointEx": 0,
-                  "tdPointDef": 0,
-                  "qp": 0
-                },
-                {
-                  "funcId": [16],
-                  "svals": ["[1000,10000,2002,1500]"],
-                  "svals2": ["[1000,10000,2002,1625]"],
-                  "svals3": ["[1000,10000,2002,1750]"],
-                  "svals4": ["[1000,10000,2002,1875]"],
-                  "svals5": ["[1000,10000,2002,2000]"],
-                  "treaureDeviceId": 9941181,
-                  "lv": 5,
-                  "gaugeCount": 1,
-                  "detailId": 1,
-                  "tdPoint": 0,
-                  "tdPointQ": 0,
-                  "tdPointA": 0,
-                  "tdPointB": 0,
-                  "tdPointEx": 0,
-                  "tdPointDef": 0,
-                  "qp": 0
-                }
-              ]
-            }
-          ],
-          "mstSvtCard": [
-            {
-              "normalDamage": [16, 33, 51],
-              "singleDamage": [16, 33, 51],
-              "trinityDamage": [16, 33, 51],
-              "unisonDamage": [16, 33, 51],
-              "grandDamage": [16, 33, 51],
-              "attackIndividuality": [3000],
-              "svtId": 9941180,
-              "cardId": 1,
-              "motion": 10,
-              "attackType": 1
-            },
-            {
-              "normalDamage": [33, 67],
-              "singleDamage": [33, 67],
-              "trinityDamage": [33, 67],
-              "unisonDamage": [33, 67],
-              "grandDamage": [33, 67],
-              "attackIndividuality": [3000],
-              "svtId": 9941180,
-              "cardId": 2,
-              "motion": 20,
-              "attackType": 1
-            },
-            {
-              "normalDamage": [10, 20, 30, 40],
-              "singleDamage": [10, 20, 30, 40],
-              "trinityDamage": [10, 20, 30, 40],
-              "unisonDamage": [10, 20, 30, 40],
-              "grandDamage": [10, 20, 30, 40],
-              "attackIndividuality": [3000],
-              "svtId": 9941180,
-              "cardId": 3,
-              "motion": 30,
-              "attackType": 1
-            },
-            {
-              "normalDamage": [6, 13, 20, 26, 35],
-              "singleDamage": [6, 13, 20, 26, 35],
-              "trinityDamage": [6, 13, 20, 26, 35],
-              "unisonDamage": [6, 13, 20, 26, 35],
-              "grandDamage": [6, 13, 20, 26, 35],
-              "attackIndividuality": [3000],
-              "svtId": 9941180,
-              "cardId": 4,
-              "motion": 40,
-              "attackType": 1
-            }
-          ],
-          "mstSvtLimit": [
-            {
-              "weaponColor": 16777215,
-              "svtId": 9941180,
-              "limitCount": 0,
-              "rarity": 5,
-              "lvMax": 50,
-              "weaponGroup": 297,
-              "weaponScale": 2,
-              "effectFolder": 1,
-              "hpBase": 2049,
-              "hpMax": 13975,
-              "atkBase": 1926,
-              "atkMax": 12465,
-              "criticalWeight": 97,
-              "power": 12,
-              "defense": 12,
-              "agility": 21,
-              "magic": 31,
-              "luck": 51,
-              "treasureDevice": 13,
-              "policy": 1,
-              "personality": 1,
-              "deity": 21,
-              "stepProbability": 1000,
-              "strParam": "{}"
-            },
-            {
-              "weaponColor": 16777215,
-              "svtId": 9941180,
-              "limitCount": 1,
-              "rarity": 5,
-              "lvMax": 60,
-              "weaponGroup": 297,
-              "weaponScale": 2,
-              "effectFolder": 1,
-              "hpBase": 2049,
-              "hpMax": 13975,
-              "atkBase": 1926,
-              "atkMax": 12465,
-              "criticalWeight": 97,
-              "power": 12,
-              "defense": 12,
-              "agility": 21,
-              "magic": 31,
-              "luck": 51,
-              "treasureDevice": 13,
-              "policy": 1,
-              "personality": 1,
-              "deity": 21,
-              "stepProbability": 1000,
-              "strParam": "{}"
-            },
-            {
-              "weaponColor": 16777215,
-              "svtId": 9941180,
-              "limitCount": 2,
-              "rarity": 5,
-              "lvMax": 70,
-              "weaponGroup": 297,
-              "weaponScale": 2,
-              "effectFolder": 1,
-              "hpBase": 2049,
-              "hpMax": 13975,
-              "atkBase": 1926,
-              "atkMax": 12465,
-              "criticalWeight": 97,
-              "power": 12,
-              "defense": 12,
-              "agility": 21,
-              "magic": 31,
-              "luck": 51,
-              "treasureDevice": 13,
-              "policy": 1,
-              "personality": 1,
-              "deity": 21,
-              "stepProbability": 1000,
-              "strParam": "{}"
-            },
-            {
-              "weaponColor": 16777215,
-              "svtId": 9941180,
-              "limitCount": 3,
-              "rarity": 5,
-              "lvMax": 80,
-              "weaponGroup": 297,
-              "weaponScale": 2,
-              "effectFolder": 2,
-              "hpBase": 2049,
-              "hpMax": 13975,
-              "atkBase": 1926,
-              "atkMax": 12465,
-              "criticalWeight": 97,
-              "power": 12,
-              "defense": 12,
-              "agility": 21,
-              "magic": 31,
-              "luck": 51,
-              "treasureDevice": 13,
-              "policy": 1,
-              "personality": 1,
-              "deity": 21,
-              "stepProbability": 1000,
-              "strParam": "{}"
-            },
-            {
-              "weaponColor": 16777215,
-              "svtId": 9941180,
-              "limitCount": 4,
-              "rarity": 5,
-              "lvMax": 90,
-              "weaponGroup": 297,
-              "weaponScale": 2,
-              "effectFolder": 2,
-              "hpBase": 2049,
-              "hpMax": 13975,
-              "atkBase": 1926,
-              "atkMax": 12465,
-              "criticalWeight": 97,
-              "power": 12,
-              "defense": 12,
-              "agility": 21,
-              "magic": 31,
-              "luck": 51,
-              "treasureDevice": 13,
-              "policy": 1,
-              "personality": 1,
-              "deity": 21,
-              "stepProbability": 1000,
-              "strParam": "{}"
-            }
-          ],
-          "mstCombineSkill": [],
-          "mstCombineLimit": [],
-          "mstSvtLimitAdd": [
-            {
-              "individuality": [],
-              "script": {},
-              "svtId": 9941180,
-              "limitCount": 0,
-              "battleCharaId": 9941180,
-              "fileConvertLimitCount": 0,
-              "battleCharaLimitCount": 0,
-              "battleCharaOffsetX": 0,
-              "battleCharaOffsetY": 0,
-              "svtVoiceId": 9941180,
-              "voicePrefix": 0
-            },
-            {
-              "individuality": [],
-              "script": {},
-              "svtId": 9941180,
-              "limitCount": 1,
-              "battleCharaId": 9941181,
-              "fileConvertLimitCount": 1,
-              "battleCharaLimitCount": 1,
-              "battleCharaOffsetX": 0,
-              "battleCharaOffsetY": 0,
-              "svtVoiceId": 9941180,
-              "voicePrefix": 0
-            },
-            {
-              "individuality": [],
-              "script": {},
-              "svtId": 9941180,
-              "limitCount": 2,
-              "battleCharaId": 9941181,
-              "fileConvertLimitCount": 2,
-              "battleCharaLimitCount": 2,
-              "battleCharaOffsetX": 0,
-              "battleCharaOffsetY": 0,
-              "svtVoiceId": 9941180,
-              "voicePrefix": 0
-            },
-            {
-              "individuality": [],
-              "script": {},
-              "svtId": 9941180,
-              "limitCount": 3,
-              "battleCharaId": 9941182,
-              "fileConvertLimitCount": 3,
-              "battleCharaLimitCount": 3,
-              "battleCharaOffsetX": 0,
-              "battleCharaOffsetY": 0,
-              "svtVoiceId": 9941180,
-              "voicePrefix": 0
-            },
-            {
-              "individuality": [],
-              "script": {},
-              "svtId": 9941180,
-              "limitCount": 4,
-              "battleCharaId": 9941182,
-              "fileConvertLimitCount": 4,
-              "battleCharaLimitCount": 4,
-              "battleCharaOffsetX": 0,
-              "battleCharaOffsetY": 0,
-              "svtVoiceId": 9941180,
-              "voicePrefix": 0
-            }
-          ]
-        },
-        {
-          "mstSvt": {
-            "relateQuestIds": [],
-            "individuality": [
-              5000,
               103300,
               1,
               100,
@@ -3506,6 +2565,947 @@
               "battleCharaOffsetX": 0,
               "battleCharaOffsetY": 0,
               "svtVoiceId": 103300,
+              "voicePrefix": 0
+            }
+          ]
+        },
+        {
+          "mstSvt": {
+            "relateQuestIds": [],
+            "individuality": [
+              5000,
+              9941180,
+              1,
+              100,
+              201,
+              302,
+              303,
+              2009,
+              1000,
+              2001,
+              2000,
+              2040,
+              2008,
+              2011,
+              2037,
+              2075,
+              2002,
+              2012
+            ],
+            "classPassive": [34550, 88550, 62450],
+            "cardIds": [3, 1, 1, 2, 2],
+            "script": { "cameraActionId": 297 },
+            "id": 9941180,
+            "baseSvtId": 9941180,
+            "name": "Sigurd",
+            "ruby": "Sigurd",
+            "battleName": "Sigurd",
+            "classId": 1,
+            "type": 5,
+            "limitMax": 4,
+            "rewardLv": 90,
+            "friendshipId": 1045,
+            "maxFriendshipRank": 10,
+            "genderType": 1,
+            "attri": 3,
+            "combineSkillId": 9941180,
+            "combineLimitId": 9941180,
+            "sellQp": 5000,
+            "sellMana": 9,
+            "sellRarePri": 5,
+            "expType": 15,
+            "combineMaterialId": 5,
+            "cost": 16,
+            "battleSize": 2,
+            "hpGaugeY": -250,
+            "starRate": 100,
+            "deathRate": 280,
+            "attackAttri": 1,
+            "illustratorId": -1,
+            "cvId": -1,
+            "collectionNo": 0,
+            "materialStoryPriority": 0
+          },
+          "mstSkill": [
+            {
+              "mstSkill": {
+                "effectList": [],
+                "actIndividuality": [],
+                "script": {},
+                "id": 492450,
+                "type": 1,
+                "name": "Primordial Rune (Warrior) B",
+                "ruby": "Primordial Rune (Warrior)",
+                "maxLv": 10,
+                "iconId": 303,
+                "motion": 101
+              },
+              "mstSkillDetail": [
+                {
+                  "id": 492450,
+                  "detail": "Increase your Critical Strength [{0}] (3 times, 3 turns)",
+                  "detailShort": "Increase your Critical Strength [{0}] (3 times, 3 turns)"
+                }
+              ],
+              "mstSvtSkill": [
+                {
+                  "strengthStatus": 0,
+                  "svtId": 103300,
+                  "num": 1,
+                  "priority": 1,
+                  "skillId": 492450,
+                  "condQuestId": 0,
+                  "condQuestPhase": 0,
+                  "condLv": 0,
+                  "condLimitCount": 0,
+                  "eventId": 0,
+                  "flag": 0
+                },
+                {
+                  "strengthStatus": 0,
+                  "svtId": 9941180,
+                  "num": 1,
+                  "priority": 1,
+                  "skillId": 492450,
+                  "condQuestId": 0,
+                  "condQuestPhase": 0,
+                  "condLv": 0,
+                  "condLimitCount": 0,
+                  "eventId": 0,
+                  "flag": 0
+                }
+              ],
+              "mstSkillLv": [
+                {
+                  "funcId": [201],
+                  "svals": ["[1000,3,3,500]"],
+                  "script": {},
+                  "skillId": 492450,
+                  "lv": 1,
+                  "chargeTurn": 7,
+                  "skillDetailId": 492450,
+                  "priority": 0
+                },
+                {
+                  "funcId": [201],
+                  "svals": ["[1000,3,3,550]"],
+                  "script": {},
+                  "skillId": 492450,
+                  "lv": 2,
+                  "chargeTurn": 7,
+                  "skillDetailId": 492450,
+                  "priority": 0
+                },
+                {
+                  "funcId": [201],
+                  "svals": ["[1000,3,3,600]"],
+                  "script": {},
+                  "skillId": 492450,
+                  "lv": 3,
+                  "chargeTurn": 7,
+                  "skillDetailId": 492450,
+                  "priority": 0
+                },
+                {
+                  "funcId": [201],
+                  "svals": ["[1000,3,3,650]"],
+                  "script": {},
+                  "skillId": 492450,
+                  "lv": 4,
+                  "chargeTurn": 7,
+                  "skillDetailId": 492450,
+                  "priority": 0
+                },
+                {
+                  "funcId": [201],
+                  "svals": ["[1000,3,3,700]"],
+                  "script": {},
+                  "skillId": 492450,
+                  "lv": 5,
+                  "chargeTurn": 7,
+                  "skillDetailId": 492450,
+                  "priority": 0
+                },
+                {
+                  "funcId": [201],
+                  "svals": ["[1000,3,3,750]"],
+                  "script": {},
+                  "skillId": 492450,
+                  "lv": 6,
+                  "chargeTurn": 6,
+                  "skillDetailId": 492450,
+                  "priority": 0
+                },
+                {
+                  "funcId": [201],
+                  "svals": ["[1000,3,3,800]"],
+                  "script": {},
+                  "skillId": 492450,
+                  "lv": 7,
+                  "chargeTurn": 6,
+                  "skillDetailId": 492450,
+                  "priority": 0
+                },
+                {
+                  "funcId": [201],
+                  "svals": ["[1000,3,3,850]"],
+                  "script": {},
+                  "skillId": 492450,
+                  "lv": 8,
+                  "chargeTurn": 6,
+                  "skillDetailId": 492450,
+                  "priority": 0
+                },
+                {
+                  "funcId": [201],
+                  "svals": ["[1000,3,3,900]"],
+                  "script": {},
+                  "skillId": 492450,
+                  "lv": 9,
+                  "chargeTurn": 6,
+                  "skillDetailId": 492450,
+                  "priority": 0
+                },
+                {
+                  "funcId": [201],
+                  "svals": ["[1000,3,3,1000]"],
+                  "script": {},
+                  "skillId": 492450,
+                  "lv": 10,
+                  "chargeTurn": 5,
+                  "skillDetailId": 492450,
+                  "priority": 0
+                }
+              ]
+            },
+            {
+              "mstSkill": {
+                "effectList": [],
+                "actIndividuality": [],
+                "script": {},
+                "id": 493650,
+                "type": 1,
+                "name": "Dragon Modification EX",
+                "ruby": "Dragon Modification",
+                "maxLv": 10,
+                "iconId": 306,
+                "motion": 101
+              },
+              "mstSkillDetail": [
+                {
+                  "id": 493650,
+                  "detail": "Increase Buster Card effectiveness [{0}] (1 turn) & apply Guts (1 time, 3 turns) for yourself",
+                  "detailShort": "Increase Buster Card effectiveness [{0}] (1 turn) & apply Guts (1 time, 3 turns) for yourself"
+                }
+              ],
+              "mstSvtSkill": [
+                {
+                  "strengthStatus": 0,
+                  "svtId": 103300,
+                  "num": 2,
+                  "priority": 1,
+                  "skillId": 493650,
+                  "condQuestId": 0,
+                  "condQuestPhase": 0,
+                  "condLv": 0,
+                  "condLimitCount": 1,
+                  "eventId": 0,
+                  "flag": 0
+                },
+                {
+                  "strengthStatus": 0,
+                  "svtId": 9941180,
+                  "num": 2,
+                  "priority": 1,
+                  "skillId": 493650,
+                  "condQuestId": 0,
+                  "condQuestPhase": 0,
+                  "condLv": 0,
+                  "condLimitCount": 1,
+                  "eventId": 0,
+                  "flag": 0
+                }
+              ],
+              "mstSkillLv": [
+                {
+                  "funcId": [119, 292],
+                  "svals": ["[1000,1,-1,300]", "[1000,3,1,1000]"],
+                  "script": {},
+                  "skillId": 493650,
+                  "lv": 1,
+                  "chargeTurn": 9,
+                  "skillDetailId": 493650,
+                  "priority": 0
+                },
+                {
+                  "funcId": [119, 292],
+                  "svals": ["[1000,1,-1,320]", "[1000,3,1,1000]"],
+                  "script": {},
+                  "skillId": 493650,
+                  "lv": 2,
+                  "chargeTurn": 9,
+                  "skillDetailId": 493650,
+                  "priority": 0
+                },
+                {
+                  "funcId": [119, 292],
+                  "svals": ["[1000,1,-1,340]", "[1000,3,1,1000]"],
+                  "script": {},
+                  "skillId": 493650,
+                  "lv": 3,
+                  "chargeTurn": 9,
+                  "skillDetailId": 493650,
+                  "priority": 0
+                },
+                {
+                  "funcId": [119, 292],
+                  "svals": ["[1000,1,-1,360]", "[1000,3,1,1000]"],
+                  "script": {},
+                  "skillId": 493650,
+                  "lv": 4,
+                  "chargeTurn": 9,
+                  "skillDetailId": 493650,
+                  "priority": 0
+                },
+                {
+                  "funcId": [119, 292],
+                  "svals": ["[1000,1,-1,380]", "[1000,3,1,1000]"],
+                  "script": {},
+                  "skillId": 493650,
+                  "lv": 5,
+                  "chargeTurn": 9,
+                  "skillDetailId": 493650,
+                  "priority": 0
+                },
+                {
+                  "funcId": [119, 292],
+                  "svals": ["[1000,1,-1,400]", "[1000,3,1,1000]"],
+                  "script": {},
+                  "skillId": 493650,
+                  "lv": 6,
+                  "chargeTurn": 8,
+                  "skillDetailId": 493650,
+                  "priority": 0
+                },
+                {
+                  "funcId": [119, 292],
+                  "svals": ["[1000,1,-1,420]", "[1000,3,1,1000]"],
+                  "script": {},
+                  "skillId": 493650,
+                  "lv": 7,
+                  "chargeTurn": 8,
+                  "skillDetailId": 493650,
+                  "priority": 0
+                },
+                {
+                  "funcId": [119, 292],
+                  "svals": ["[1000,1,-1,440]", "[1000,3,1,1000]"],
+                  "script": {},
+                  "skillId": 493650,
+                  "lv": 8,
+                  "chargeTurn": 8,
+                  "skillDetailId": 493650,
+                  "priority": 0
+                },
+                {
+                  "funcId": [119, 292],
+                  "svals": ["[1000,1,-1,460]", "[1000,3,1,1000]"],
+                  "script": {},
+                  "skillId": 493650,
+                  "lv": 9,
+                  "chargeTurn": 8,
+                  "skillDetailId": 493650,
+                  "priority": 0
+                },
+                {
+                  "funcId": [119, 292],
+                  "svals": ["[1000,1,-1,500]", "[1000,3,1,1000]"],
+                  "script": {},
+                  "skillId": 493650,
+                  "lv": 10,
+                  "chargeTurn": 7,
+                  "skillDetailId": 493650,
+                  "priority": 0
+                }
+              ]
+            },
+            {
+              "mstSkill": {
+                "effectList": [],
+                "actIndividuality": [],
+                "script": {},
+                "id": 494550,
+                "type": 1,
+                "name": "Crystallized Wisdom A",
+                "ruby": "Crystallized Wisdom",
+                "maxLv": 10,
+                "iconId": 604,
+                "motion": 102
+              },
+              "mstSkillDetail": [
+                {
+                  "id": 494550,
+                  "detail": "Increase Critical Star drop rate [{0}] (1 turn) & apply Debuff Immune (1 turn) for a single ally",
+                  "detailShort": "Increase Critical Star drop rate [{0}] (1 turn) & apply Debuff Immune (1 turn) for a single ally"
+                }
+              ],
+              "mstSvtSkill": [
+                {
+                  "strengthStatus": 0,
+                  "svtId": 103300,
+                  "num": 3,
+                  "priority": 1,
+                  "skillId": 494550,
+                  "condQuestId": 0,
+                  "condQuestPhase": 0,
+                  "condLv": 0,
+                  "condLimitCount": 3,
+                  "eventId": 0,
+                  "flag": 0
+                },
+                {
+                  "strengthStatus": 0,
+                  "svtId": 9941180,
+                  "num": 3,
+                  "priority": 1,
+                  "skillId": 494550,
+                  "condQuestId": 0,
+                  "condQuestPhase": 0,
+                  "condLv": 0,
+                  "condLimitCount": 3,
+                  "eventId": 0,
+                  "flag": 0
+                }
+              ],
+              "mstSkillLv": [
+                {
+                  "funcId": [300, 219, 628],
+                  "svals": [
+                    "[1000,1,-1,500]",
+                    "[1000,1,-1,300]",
+                    "[1000,1,-1]"
+                  ],
+                  "script": {},
+                  "skillId": 494550,
+                  "lv": 1,
+                  "chargeTurn": 7,
+                  "skillDetailId": 494550,
+                  "priority": 0
+                },
+                {
+                  "funcId": [300, 219, 628],
+                  "svals": [
+                    "[1000,1,-1,550]",
+                    "[1000,1,-1,300]",
+                    "[1000,1,-1]"
+                  ],
+                  "script": {},
+                  "skillId": 494550,
+                  "lv": 2,
+                  "chargeTurn": 7,
+                  "skillDetailId": 494550,
+                  "priority": 0
+                },
+                {
+                  "funcId": [300, 219, 628],
+                  "svals": [
+                    "[1000,1,-1,600]",
+                    "[1000,1,-1,300]",
+                    "[1000,1,-1]"
+                  ],
+                  "script": {},
+                  "skillId": 494550,
+                  "lv": 3,
+                  "chargeTurn": 7,
+                  "skillDetailId": 494550,
+                  "priority": 0
+                },
+                {
+                  "funcId": [300, 219, 628],
+                  "svals": [
+                    "[1000,1,-1,650]",
+                    "[1000,1,-1,300]",
+                    "[1000,1,-1]"
+                  ],
+                  "script": {},
+                  "skillId": 494550,
+                  "lv": 4,
+                  "chargeTurn": 7,
+                  "skillDetailId": 494550,
+                  "priority": 0
+                },
+                {
+                  "funcId": [300, 219, 628],
+                  "svals": [
+                    "[1000,1,-1,700]",
+                    "[1000,1,-1,300]",
+                    "[1000,1,-1]"
+                  ],
+                  "script": {},
+                  "skillId": 494550,
+                  "lv": 5,
+                  "chargeTurn": 7,
+                  "skillDetailId": 494550,
+                  "priority": 0
+                },
+                {
+                  "funcId": [300, 219, 628],
+                  "svals": [
+                    "[1000,1,-1,750]",
+                    "[1000,1,-1,300]",
+                    "[1000,1,-1]"
+                  ],
+                  "script": {},
+                  "skillId": 494550,
+                  "lv": 6,
+                  "chargeTurn": 6,
+                  "skillDetailId": 494550,
+                  "priority": 0
+                },
+                {
+                  "funcId": [300, 219, 628],
+                  "svals": [
+                    "[1000,1,-1,800]",
+                    "[1000,1,-1,300]",
+                    "[1000,1,-1]"
+                  ],
+                  "script": {},
+                  "skillId": 494550,
+                  "lv": 7,
+                  "chargeTurn": 6,
+                  "skillDetailId": 494550,
+                  "priority": 0
+                },
+                {
+                  "funcId": [300, 219, 628],
+                  "svals": [
+                    "[1000,1,-1,850]",
+                    "[1000,1,-1,300]",
+                    "[1000,1,-1]"
+                  ],
+                  "script": {},
+                  "skillId": 494550,
+                  "lv": 8,
+                  "chargeTurn": 6,
+                  "skillDetailId": 494550,
+                  "priority": 0
+                },
+                {
+                  "funcId": [300, 219, 628],
+                  "svals": [
+                    "[1000,1,-1,900]",
+                    "[1000,1,-1,300]",
+                    "[1000,1,-1]"
+                  ],
+                  "script": {},
+                  "skillId": 494550,
+                  "lv": 9,
+                  "chargeTurn": 6,
+                  "skillDetailId": 494550,
+                  "priority": 0
+                },
+                {
+                  "funcId": [300, 219, 628],
+                  "svals": [
+                    "[1000,1,-1,1000]",
+                    "[1000,1,-1,300]",
+                    "[1000,1,-1]"
+                  ],
+                  "script": {},
+                  "skillId": 494550,
+                  "lv": 10,
+                  "chargeTurn": 5,
+                  "skillDetailId": 494550,
+                  "priority": 0
+                }
+              ]
+            }
+          ],
+          "mstTreasureDevice": [
+            {
+              "mstTreasureDevice": {
+                "individuality": [3000, 4002, 4007],
+                "script": {
+                  "limitSeqId_1": 9941180,
+                  "limitSeqId_3": 9941181,
+                  "limitSeqId_4": 9941181,
+                  "limitSeqId_2": 9941180
+                },
+                "id": 9941181,
+                "seqId": 9941180,
+                "name": "Bölverkr Gram",
+                "ruby": " ",
+                "rank": "A+",
+                "maxLv": 5,
+                "typeText": "Anti-Fortress",
+                "attackAttri": 1
+              },
+              "mstTreasureDeviceDetail": [],
+              "mstSvtTreasureDevice": [
+                {
+                  "damage": [3, 7, 10, 14, 17, 21, 28],
+                  "strengthStatus": 0,
+                  "svtId": 9941180,
+                  "num": 1,
+                  "priority": 101,
+                  "flag": 0,
+                  "imageIndex": 0,
+                  "treasureDeviceId": 9941181,
+                  "condQuestId": 0,
+                  "condQuestPhase": 0,
+                  "condLv": 0,
+                  "condFriendshipRank": 0,
+                  "motion": 50,
+                  "cardId": 2
+                }
+              ],
+              "mstTreasureDeviceLv": [
+                {
+                  "funcId": [16],
+                  "svals": ["[1000,6000,2002,1500]"],
+                  "svals2": ["[1000,6000,2002,1625]"],
+                  "svals3": ["[1000,6000,2002,1750]"],
+                  "svals4": ["[1000,6000,2002,1875]"],
+                  "svals5": ["[1000,6000,2002,2000]"],
+                  "treaureDeviceId": 9941181,
+                  "lv": 1,
+                  "gaugeCount": 1,
+                  "detailId": 1,
+                  "tdPoint": 0,
+                  "tdPointQ": 0,
+                  "tdPointA": 0,
+                  "tdPointB": 0,
+                  "tdPointEx": 0,
+                  "tdPointDef": 0,
+                  "qp": 0
+                },
+                {
+                  "funcId": [16],
+                  "svals": ["[1000,8000,2002,1500]"],
+                  "svals2": ["[1000,8000,2002,1625]"],
+                  "svals3": ["[1000,8000,2002,1750]"],
+                  "svals4": ["[1000,8000,2002,1875]"],
+                  "svals5": ["[1000,8000,2002,2000]"],
+                  "treaureDeviceId": 9941181,
+                  "lv": 2,
+                  "gaugeCount": 1,
+                  "detailId": 1,
+                  "tdPoint": 0,
+                  "tdPointQ": 0,
+                  "tdPointA": 0,
+                  "tdPointB": 0,
+                  "tdPointEx": 0,
+                  "tdPointDef": 0,
+                  "qp": 0
+                },
+                {
+                  "funcId": [16],
+                  "svals": ["[1000,9000,2002,1500]"],
+                  "svals2": ["[1000,9000,2002,1625]"],
+                  "svals3": ["[1000,9000,2002,1750]"],
+                  "svals4": ["[1000,9000,2002,1875]"],
+                  "svals5": ["[1000,9000,2002,2000]"],
+                  "treaureDeviceId": 9941181,
+                  "lv": 3,
+                  "gaugeCount": 1,
+                  "detailId": 1,
+                  "tdPoint": 0,
+                  "tdPointQ": 0,
+                  "tdPointA": 0,
+                  "tdPointB": 0,
+                  "tdPointEx": 0,
+                  "tdPointDef": 0,
+                  "qp": 0
+                },
+                {
+                  "funcId": [16],
+                  "svals": ["[1000,9500,2002,1500]"],
+                  "svals2": ["[1000,9500,2002,1625]"],
+                  "svals3": ["[1000,9500,2002,1750]"],
+                  "svals4": ["[1000,9500,2002,1875]"],
+                  "svals5": ["[1000,9500,2002,2000]"],
+                  "treaureDeviceId": 9941181,
+                  "lv": 4,
+                  "gaugeCount": 1,
+                  "detailId": 1,
+                  "tdPoint": 0,
+                  "tdPointQ": 0,
+                  "tdPointA": 0,
+                  "tdPointB": 0,
+                  "tdPointEx": 0,
+                  "tdPointDef": 0,
+                  "qp": 0
+                },
+                {
+                  "funcId": [16],
+                  "svals": ["[1000,10000,2002,1500]"],
+                  "svals2": ["[1000,10000,2002,1625]"],
+                  "svals3": ["[1000,10000,2002,1750]"],
+                  "svals4": ["[1000,10000,2002,1875]"],
+                  "svals5": ["[1000,10000,2002,2000]"],
+                  "treaureDeviceId": 9941181,
+                  "lv": 5,
+                  "gaugeCount": 1,
+                  "detailId": 1,
+                  "tdPoint": 0,
+                  "tdPointQ": 0,
+                  "tdPointA": 0,
+                  "tdPointB": 0,
+                  "tdPointEx": 0,
+                  "tdPointDef": 0,
+                  "qp": 0
+                }
+              ]
+            }
+          ],
+          "mstSvtCard": [
+            {
+              "normalDamage": [16, 33, 51],
+              "singleDamage": [16, 33, 51],
+              "trinityDamage": [16, 33, 51],
+              "unisonDamage": [16, 33, 51],
+              "grandDamage": [16, 33, 51],
+              "attackIndividuality": [3000],
+              "svtId": 9941180,
+              "cardId": 1,
+              "motion": 10,
+              "attackType": 1
+            },
+            {
+              "normalDamage": [33, 67],
+              "singleDamage": [33, 67],
+              "trinityDamage": [33, 67],
+              "unisonDamage": [33, 67],
+              "grandDamage": [33, 67],
+              "attackIndividuality": [3000],
+              "svtId": 9941180,
+              "cardId": 2,
+              "motion": 20,
+              "attackType": 1
+            },
+            {
+              "normalDamage": [10, 20, 30, 40],
+              "singleDamage": [10, 20, 30, 40],
+              "trinityDamage": [10, 20, 30, 40],
+              "unisonDamage": [10, 20, 30, 40],
+              "grandDamage": [10, 20, 30, 40],
+              "attackIndividuality": [3000],
+              "svtId": 9941180,
+              "cardId": 3,
+              "motion": 30,
+              "attackType": 1
+            },
+            {
+              "normalDamage": [6, 13, 20, 26, 35],
+              "singleDamage": [6, 13, 20, 26, 35],
+              "trinityDamage": [6, 13, 20, 26, 35],
+              "unisonDamage": [6, 13, 20, 26, 35],
+              "grandDamage": [6, 13, 20, 26, 35],
+              "attackIndividuality": [3000],
+              "svtId": 9941180,
+              "cardId": 4,
+              "motion": 40,
+              "attackType": 1
+            }
+          ],
+          "mstSvtLimit": [
+            {
+              "weaponColor": 16777215,
+              "svtId": 9941180,
+              "limitCount": 0,
+              "rarity": 5,
+              "lvMax": 50,
+              "weaponGroup": 297,
+              "weaponScale": 2,
+              "effectFolder": 1,
+              "hpBase": 2049,
+              "hpMax": 13975,
+              "atkBase": 1926,
+              "atkMax": 12465,
+              "criticalWeight": 97,
+              "power": 12,
+              "defense": 12,
+              "agility": 21,
+              "magic": 31,
+              "luck": 51,
+              "treasureDevice": 13,
+              "policy": 1,
+              "personality": 1,
+              "deity": 21,
+              "stepProbability": 1000,
+              "strParam": "{}"
+            },
+            {
+              "weaponColor": 16777215,
+              "svtId": 9941180,
+              "limitCount": 1,
+              "rarity": 5,
+              "lvMax": 60,
+              "weaponGroup": 297,
+              "weaponScale": 2,
+              "effectFolder": 1,
+              "hpBase": 2049,
+              "hpMax": 13975,
+              "atkBase": 1926,
+              "atkMax": 12465,
+              "criticalWeight": 97,
+              "power": 12,
+              "defense": 12,
+              "agility": 21,
+              "magic": 31,
+              "luck": 51,
+              "treasureDevice": 13,
+              "policy": 1,
+              "personality": 1,
+              "deity": 21,
+              "stepProbability": 1000,
+              "strParam": "{}"
+            },
+            {
+              "weaponColor": 16777215,
+              "svtId": 9941180,
+              "limitCount": 2,
+              "rarity": 5,
+              "lvMax": 70,
+              "weaponGroup": 297,
+              "weaponScale": 2,
+              "effectFolder": 1,
+              "hpBase": 2049,
+              "hpMax": 13975,
+              "atkBase": 1926,
+              "atkMax": 12465,
+              "criticalWeight": 97,
+              "power": 12,
+              "defense": 12,
+              "agility": 21,
+              "magic": 31,
+              "luck": 51,
+              "treasureDevice": 13,
+              "policy": 1,
+              "personality": 1,
+              "deity": 21,
+              "stepProbability": 1000,
+              "strParam": "{}"
+            },
+            {
+              "weaponColor": 16777215,
+              "svtId": 9941180,
+              "limitCount": 3,
+              "rarity": 5,
+              "lvMax": 80,
+              "weaponGroup": 297,
+              "weaponScale": 2,
+              "effectFolder": 2,
+              "hpBase": 2049,
+              "hpMax": 13975,
+              "atkBase": 1926,
+              "atkMax": 12465,
+              "criticalWeight": 97,
+              "power": 12,
+              "defense": 12,
+              "agility": 21,
+              "magic": 31,
+              "luck": 51,
+              "treasureDevice": 13,
+              "policy": 1,
+              "personality": 1,
+              "deity": 21,
+              "stepProbability": 1000,
+              "strParam": "{}"
+            },
+            {
+              "weaponColor": 16777215,
+              "svtId": 9941180,
+              "limitCount": 4,
+              "rarity": 5,
+              "lvMax": 90,
+              "weaponGroup": 297,
+              "weaponScale": 2,
+              "effectFolder": 2,
+              "hpBase": 2049,
+              "hpMax": 13975,
+              "atkBase": 1926,
+              "atkMax": 12465,
+              "criticalWeight": 97,
+              "power": 12,
+              "defense": 12,
+              "agility": 21,
+              "magic": 31,
+              "luck": 51,
+              "treasureDevice": 13,
+              "policy": 1,
+              "personality": 1,
+              "deity": 21,
+              "stepProbability": 1000,
+              "strParam": "{}"
+            }
+          ],
+          "mstCombineSkill": [],
+          "mstCombineLimit": [],
+          "mstSvtLimitAdd": [
+            {
+              "individuality": [],
+              "script": {},
+              "svtId": 9941180,
+              "limitCount": 0,
+              "battleCharaId": 9941180,
+              "fileConvertLimitCount": 0,
+              "battleCharaLimitCount": 0,
+              "battleCharaOffsetX": 0,
+              "battleCharaOffsetY": 0,
+              "svtVoiceId": 9941180,
+              "voicePrefix": 0
+            },
+            {
+              "individuality": [],
+              "script": {},
+              "svtId": 9941180,
+              "limitCount": 1,
+              "battleCharaId": 9941181,
+              "fileConvertLimitCount": 1,
+              "battleCharaLimitCount": 1,
+              "battleCharaOffsetX": 0,
+              "battleCharaOffsetY": 0,
+              "svtVoiceId": 9941180,
+              "voicePrefix": 0
+            },
+            {
+              "individuality": [],
+              "script": {},
+              "svtId": 9941180,
+              "limitCount": 2,
+              "battleCharaId": 9941181,
+              "fileConvertLimitCount": 2,
+              "battleCharaLimitCount": 2,
+              "battleCharaOffsetX": 0,
+              "battleCharaOffsetY": 0,
+              "svtVoiceId": 9941180,
+              "voicePrefix": 0
+            },
+            {
+              "individuality": [],
+              "script": {},
+              "svtId": 9941180,
+              "limitCount": 3,
+              "battleCharaId": 9941182,
+              "fileConvertLimitCount": 3,
+              "battleCharaLimitCount": 3,
+              "battleCharaOffsetX": 0,
+              "battleCharaOffsetY": 0,
+              "svtVoiceId": 9941180,
+              "voicePrefix": 0
+            },
+            {
+              "individuality": [],
+              "script": {},
+              "svtId": 9941180,
+              "limitCount": 4,
+              "battleCharaId": 9941182,
+              "fileConvertLimitCount": 4,
+              "battleCharaLimitCount": 4,
+              "battleCharaOffsetX": 0,
+              "battleCharaOffsetY": 0,
+              "svtVoiceId": 9941180,
               "voicePrefix": 0
             }
           ]

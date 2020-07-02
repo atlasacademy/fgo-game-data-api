@@ -121,9 +121,8 @@ def get_skill_entity(
     )
 
     if reverse:
-        reverseServantIds = {item.svtId for item in skill_entity.mstSvtSkill}
         skill_entity.reverseServants = [
-            get_servant_entity(region, item_id) for item_id in reverseServantIds
+            get_servant_entity(region, item.svtId) for item in skill_entity.mstSvtSkill
         ]
     return skill_entity
 
@@ -156,9 +155,9 @@ def get_td_entity(
     td_entity = TdEntity.parse_obj(get_td_entity_no_reverse(region, td_id, expand))
 
     if reverse:
-        reverseServantIds = {item.svtId for item in td_entity.mstSvtTreasureDevice}
         td_entity.reverseServants = [
-            get_servant_entity(region, item_id) for item_id in reverseServantIds
+            get_servant_entity(region, item.svtId)
+            for item in td_entity.mstSvtTreasureDevice
         ]
     return td_entity
 
