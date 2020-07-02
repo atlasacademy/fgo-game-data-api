@@ -1,5 +1,6 @@
 import inspect
-from typing import List, Optional, Union
+from dataclasses import dataclass, field
+from typing import ClassVar, List, Optional, Union
 
 from fastapi import Query
 from pydantic import BaseModel
@@ -12,27 +13,30 @@ class DetailMessage(BaseModel):
     detail: str
 
 
+@dataclass
 class ServantSearchQueryParams:
-    def __init__(
-        self,
-        region: Region,
-        name: Optional[str] = None,
-        rarity: List[int] = Query(None, ge=0, le=5),
-        className: List[PlayableSvtClass] = Query(None),
-        gender: List[Gender] = Query(None),
-        attribute: List[Attribute] = Query(None),
-        trait: List[Union[Trait, int]] = Query(None),
-    ):
-        self.region = region
-        self.name = name
-        self.rarity = rarity
-        self.className = className
-        self.gender = gender
-        self.attribute = attribute
-        self.trait = trait
-        self.hasSearchParams = any([name, rarity, className, gender, attribute, trait])
+    region: Region
+    name: Optional[str] = None
+    rarity: List[int] = Query(None, ge=0, le=5)
+    className: List[PlayableSvtClass] = Query(None)
+    gender: List[Gender] = Query(None)
+    attribute: List[Attribute] = Query(None)
+    trait: List[Union[Trait, int]] = Query(None)
+    hasSearchParams: bool = field(init=False)
 
-    DESCRIPTION = inspect.cleandoc(
+    def __post_init__(self):
+        self.hasSearchParams = any(
+            [
+                self.name,
+                self.rarity,
+                self.className,
+                self.gender,
+                self.attribute,
+                self.trait,
+            ]
+        )
+
+    DESCRIPTION: ClassVar[str] = inspect.cleandoc(
         """
         Search and return the list of matched servant entities.
 
@@ -46,19 +50,17 @@ class ServantSearchQueryParams:
     )
 
 
+@dataclass
 class EquipSearchQueryParams:
-    def __init__(
-        self,
-        region: Region,
-        name: Optional[str] = None,
-        rarity: List[int] = Query(None, ge=1, le=5),
-    ):
-        self.region = region
-        self.name = name
-        self.rarity = rarity
-        self.hasSearchParams = any([name, rarity])
+    region: Region
+    name: Optional[str] = None
+    rarity: List[int] = Query(None, ge=1, le=5)
+    hasSearchParams: bool = field(init=False)
 
-    DESCRIPTION = inspect.cleandoc(
+    def __post_init__(self):
+        self.hasSearchParams = any([self.name, self.rarity])
+
+    DESCRIPTION: ClassVar[str] = inspect.cleandoc(
         """
         Search and return the list of matched equip entities.
 
