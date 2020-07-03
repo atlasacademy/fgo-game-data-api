@@ -48,13 +48,6 @@
   "starGen": 120,
   "instantDeathChance": 320,
   "cards": ["quick", "quick", "arts", "arts", "buster"],
-  "npGain": {
-    "buster": 63,
-    "arts": 63,
-    "quick": 63,
-    "extra": 63,
-    "defence": 400
-  },
   "hitsDistribution": {
     "arts": [16, 33, 51],
     "buster": [16, 33, 51],
@@ -1124,7 +1117,14 @@
       "rank": "B",
       "type": "対霊宝具",
       "detail": "敵全体に低確率で即死<オーバーチャージで確率アップ>＆強力な攻撃＆防御強化状態を解除",
-      "npNpGain": 63,
+      "npGain": {
+        "buster": [63, 63, 63, 63, 63],
+        "arts": [63, 63, 63, 63, 63],
+        "quick": [63, 63, 63, 63, 63],
+        "extra": [63, 63, 63, 63, 63],
+        "defence": [400, 400, 400, 400, 400],
+        "np": [63, 63, 63, 63, 63]
+      },
       "npDistribution": [16, 33, 51],
       "strengthStatus": 0,
       "priority": 101,

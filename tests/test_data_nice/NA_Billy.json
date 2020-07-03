@@ -44,13 +44,6 @@
   "starGen": 80,
   "instantDeathChance": 450,
   "cards": ["quick", "quick", "arts", "arts", "buster"],
-  "npGain": {
-    "buster": 56,
-    "arts": 56,
-    "quick": 56,
-    "extra": 56,
-    "defence": 300
-  },
   "hitsDistribution": {
     "arts": [16, 33, 51],
     "buster": [10, 20, 30, 40],
@@ -892,7 +885,14 @@
       "rank": "C++",
       "type": "Anti-Personnel",
       "detail": "Apply Sure Hit for yourself (1 turn) + deal significant damage to a single enemy & decrease Critical Rate (3 turns) <effect increases with Overcharge> for a single enemy",
-      "npNpGain": 56,
+      "npGain": {
+        "buster": [56, 56, 56, 56, 56],
+        "arts": [56, 56, 56, 56, 56],
+        "quick": [56, 56, 56, 56, 56],
+        "extra": [56, 56, 56, 56, 56],
+        "defence": [300, 300, 300, 300, 300],
+        "np": [56, 56, 56, 56, 56]
+      },
       "npDistribution": [16, 33, 51],
       "strengthStatus": 1,
       "priority": 101,
@@ -1085,7 +1085,14 @@
       "rank": "C+++",
       "type": "Anti-Personnel",
       "detail": "Apply Sure Hit for yourself (1 turn) + deal significant damage to a single enemy ▲ & decrease Critical Rate ▲ (3 turns) <effect increases with Overcharge> for a single enemy",
-      "npNpGain": 56,
+      "npGain": {
+        "buster": [56, 56, 56, 56, 56],
+        "arts": [56, 56, 56, 56, 56],
+        "quick": [56, 56, 56, 56, 56],
+        "extra": [56, 56, 56, 56, 56],
+        "defence": [300, 300, 300, 300, 300],
+        "np": [56, 56, 56, 56, 56]
+      },
       "npDistribution": [16, 33, 51],
       "strengthStatus": 2,
       "priority": 102,

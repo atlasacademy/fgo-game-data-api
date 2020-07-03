@@ -46,13 +46,6 @@
   "starGen": 89,
   "instantDeathChance": 450,
   "cards": ["quick", "quick", "arts", "arts", "buster"],
-  "npGain": {
-    "buster": 65,
-    "arts": 65,
-    "quick": 65,
-    "extra": 65,
-    "defence": 300
-  },
   "hitsDistribution": {
     "arts": [33, 67],
     "buster": [33, 67],
@@ -1015,7 +1008,14 @@
       "rank": "C+～B+",
       "type": "対軍宝具",
       "detail": "敵全体に強力な〔低レア〕特攻攻撃<オーバーチャージで特攻威力アップ>＆防御力をダウン(3ターン)",
-      "npNpGain": 65,
+      "npGain": {
+        "buster": [65, 65, 65, 65, 65],
+        "arts": [65, 65, 65, 65, 65],
+        "quick": [65, 65, 65, 65, 65],
+        "extra": [65, 65, 65, 65, 65],
+        "defence": [300, 300, 300, 300, 300],
+        "np": [65, 65, 65, 65, 65]
+      },
       "npDistribution": [4, 9, 14, 19, 23, 31],
       "strengthStatus": 0,
       "priority": 101,

@@ -43,13 +43,6 @@
   "starGen": 107,
   "instantDeathChance": 360,
   "cards": ["quick", "arts", "arts", "arts", "buster"],
-  "npGain": {
-    "buster": 45,
-    "arts": 45,
-    "quick": 45,
-    "extra": 45,
-    "defence": 300
-  },
   "hitsDistribution": {
     "arts": [16, 33, 51],
     "buster": [100],
@@ -959,7 +952,14 @@
       "rank": "A",
       "type": "Anti-Army",
       "detail": "Deal heavy damage to all enemies & decrease DEF (3 turns) <effect increases with Overcharge> & Critical Rate (3 turns) <effect increases with Overcharge> & Debuff Resist (3 turns) <effect increases with Overcharge> for all enemies",
-      "npNpGain": 45,
+      "npGain": {
+        "buster": [45, 45, 45, 45, 45],
+        "arts": [45, 45, 45, 45, 45],
+        "quick": [45, 45, 45, 45, 45],
+        "extra": [45, 45, 45, 45, 45],
+        "defence": [300, 300, 300, 300, 300],
+        "np": [45, 45, 45, 45, 45]
+      },
       "npDistribution": [16, 33, 51],
       "strengthStatus": 1,
       "priority": 101,
@@ -1210,7 +1210,14 @@
       "rank": "A+",
       "type": "Anti-Army",
       "detail": "Deal heavy DEF-ignoring damage to all enemies ▲ & decrease DEF (3 turns) <effect increases with Overcharge> & Critical Rate (3 turns) <effect increases with Overcharge> & Debuff Resist (3 turns) <effect increases with Overcharge> for all enemies",
-      "npNpGain": 45,
+      "npGain": {
+        "buster": [45, 45, 45, 45, 45],
+        "arts": [45, 45, 45, 45, 45],
+        "quick": [45, 45, 45, 45, 45],
+        "extra": [45, 45, 45, 45, 45],
+        "defence": [300, 300, 300, 300, 300],
+        "np": [45, 45, 45, 45, 45]
+      },
       "npDistribution": [16, 33, 51],
       "strengthStatus": 2,
       "priority": 102,

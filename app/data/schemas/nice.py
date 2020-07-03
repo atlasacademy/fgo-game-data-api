@@ -182,6 +182,15 @@ class NiceSkill(BaseModelORJson):
     functions: List[NiceFunction]
 
 
+class NpGain(BaseModel):
+    buster: List[int]
+    arts: List[int]
+    quick: List[int]
+    extra: List[int]
+    defence: List[int]
+    np: List[int]
+
+
 class NiceTd(BaseModelORJson):
     id: int
     num: int
@@ -190,7 +199,7 @@ class NiceTd(BaseModelORJson):
     rank: str
     type: str
     detail: Optional[str] = None
-    npNpGain: int
+    npGain: NpGain
     npDistribution: List[int]
     strengthStatus: int
     priority: int
@@ -209,14 +218,6 @@ class ExtraAssetsUrl(BaseModel):
 class ExtraAssets(BaseModel):
     charaGraph: ExtraAssetsUrl
     faces: ExtraAssetsUrl
-
-
-class NpGain(BaseModel):
-    buster: int
-    arts: int
-    quick: int
-    extra: int
-    defence: int
 
 
 class NiceLoreComment(BaseModel):
@@ -263,7 +264,6 @@ class NiceServant(BaseModelORJson):
     starGen: int
     instantDeathChance: int
     cards: List[NiceCardType]
-    npGain: Optional[NpGain] = None
     hitsDistribution: Dict[NiceCardType, List[int]]
     atkBase: int
     atkMax: int

@@ -98,13 +98,6 @@
       "starGen": 123,
       "instantDeathChance": 320,
       "cards": ["quick", "quick", "arts", "arts", "buster"],
-      "npGain": {
-        "buster": 55,
-        "arts": 55,
-        "quick": 55,
-        "extra": 55,
-        "defence": 400
-      },
       "hitsDistribution": {
         "arts": [33, 67],
         "buster": [100],
@@ -1082,7 +1075,14 @@
           "rank": "A",
           "type": "Anti-Army",
           "detail": "Deal heavy damage & decrease ATK (3 turns) <effect increases with Overcharge> to all enemies + apply immunity to Mental Debuffs (3 turns) for yourself",
-          "npNpGain": 55,
+          "npGain": {
+            "buster": [55, 55, 55, 55, 55],
+            "arts": [55, 55, 55, 55, 55],
+            "quick": [55, 55, 55, 55, 55],
+            "extra": [55, 55, 55, 55, 55],
+            "defence": [400, 400, 400, 400, 400],
+            "np": [55, 55, 55, 55, 55]
+          },
           "npDistribution": [16, 33, 51],
           "strengthStatus": 1,
           "priority": 101,
@@ -1271,7 +1271,14 @@
           "rank": "A+",
           "type": "Anti-Army",
           "detail": "Deal heavy damage ▲ & decrease ATK (3 turns) <effect increases with Overcharge> to all enemies + apply immunity to Mental Debuffs (3 turns) for yourself",
-          "npNpGain": 55,
+          "npGain": {
+            "buster": [55, 55, 55, 55, 55],
+            "arts": [55, 55, 55, 55, 55],
+            "quick": [55, 55, 55, 55, 55],
+            "extra": [55, 55, 55, 55, 55],
+            "defence": [400, 400, 400, 400, 400],
+            "np": [55, 55, 55, 55, 55]
+          },
           "npDistribution": [16, 33, 51],
           "strengthStatus": 2,
           "priority": 102,

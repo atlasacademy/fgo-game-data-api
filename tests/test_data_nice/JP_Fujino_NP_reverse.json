@@ -6,7 +6,14 @@
   "rank": "EX",
   "type": "対界宝具",
   "detail": "敵単体に超強力な攻撃＆強化無効状態を付与(1回・3ターン)＆攻撃力をダウン(3ターン)<オーバーチャージで効果アップ>",
-  "npNpGain": 59,
+  "npGain": {
+    "buster": [59, 59, 59, 59, 59],
+    "arts": [59, 59, 59, 59, 59],
+    "quick": [59, 59, 59, 59, 59],
+    "extra": [59, 59, 59, 59, 59],
+    "defence": [300, 300, 300, 300, 300],
+    "np": [59, 59, 59, 59, 59]
+  },
   "npDistribution": [16, 33, 51],
   "strengthStatus": 0,
   "priority": 101,
@@ -233,13 +240,6 @@
       "starGen": 79,
       "instantDeathChance": 270,
       "cards": ["quick", "arts", "arts", "buster", "buster"],
-      "npGain": {
-        "buster": 59,
-        "arts": 59,
-        "quick": 59,
-        "extra": 59,
-        "defence": 300
-      },
       "hitsDistribution": {
         "arts": [16, 33, 51],
         "buster": [16, 33, 51],
@@ -1289,7 +1289,14 @@
           "rank": "EX",
           "type": "対界宝具",
           "detail": "敵単体に超強力な攻撃＆強化無効状態を付与(1回・3ターン)＆攻撃力をダウン(3ターン)<オーバーチャージで効果アップ>",
-          "npNpGain": 59,
+          "npGain": {
+            "buster": [59, 59, 59, 59, 59],
+            "arts": [59, 59, 59, 59, 59],
+            "quick": [59, 59, 59, 59, 59],
+            "extra": [59, 59, 59, 59, 59],
+            "defence": [300, 300, 300, 300, 300],
+            "np": [59, 59, 59, 59, 59]
+          },
           "npDistribution": [16, 33, 51],
           "strengthStatus": 0,
           "priority": 101,

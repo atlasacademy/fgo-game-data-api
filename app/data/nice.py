@@ -306,7 +306,6 @@ def get_nice_td(
         "name": tdEntity.mstTreasureDevice.name,
         "rank": tdEntity.mstTreasureDevice.rank,
         "type": tdEntity.mstTreasureDevice.typeText,
-        "npNpGain": tdEntity.mstTreasureDeviceLv[0].tdPoint,
         "individuality": get_traits_list(tdEntity.mstTreasureDevice.individuality),
     }
 
@@ -314,6 +313,15 @@ def get_nice_td(
         nice_td["detail"] = strip_formatting_brackets(
             tdEntity.mstTreasureDeviceDetail[0].detail
         )
+
+    nice_td["npGain"] = {
+        "buster": [item.tdPointB for item in tdEntity.mstTreasureDeviceLv],
+        "arts": [item.tdPointA for item in tdEntity.mstTreasureDeviceLv],
+        "quick": [item.tdPointQ for item in tdEntity.mstTreasureDeviceLv],
+        "extra": [item.tdPointEx for item in tdEntity.mstTreasureDeviceLv],
+        "np": [item.tdPoint for item in tdEntity.mstTreasureDeviceLv],
+        "defence": [item.tdPointDef for item in tdEntity.mstTreasureDeviceLv],
+    }
 
     chosenSvt = [item for item in tdEntity.mstSvtTreasureDevice if item.svtId == svtId]
     if chosenSvt:
@@ -517,13 +525,6 @@ def get_nice_servant(
         if item.mstSvtTreasureDevice[0].num == 1
     ]
     if actualTDs:
-        nice_data["npGain"] = {
-            "buster": actualTDs[0].mstTreasureDeviceLv[0].tdPointB,
-            "arts": actualTDs[0].mstTreasureDeviceLv[0].tdPointA,
-            "quick": actualTDs[0].mstTreasureDeviceLv[0].tdPointQ,
-            "extra": actualTDs[0].mstTreasureDeviceLv[0].tdPointEx,
-            "defence": actualTDs[0].mstTreasureDeviceLv[0].tdPointDef,
-        }
         if "tdTypeChangeIDs" in actualTDs[0].mstTreasureDevice.script:
             tdTypeChangeIDs = actualTDs[0].mstTreasureDevice.script["tdTypeChangeIDs"]
             currentActualTDsIDs = {item.mstTreasureDevice.id for item in actualTDs}
