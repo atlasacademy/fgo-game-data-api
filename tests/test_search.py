@@ -10,11 +10,26 @@ from app.main import app
 client = TestClient(app)
 
 
-def get_item_list(response: Response, response_type: str) -> Set[int]:
+def get_item_list(response: Response, response_type: str, endpoint: str) -> Set[int]:
+    item_type = endpoint.split("/")[1]
     if response_type == "raw":
-        return {item["mstSvt"]["id"] for item in response.json()}
+        if item_type in {"servant", "equip"}:
+            main_item = "mstSvt"
+        elif item_type == "function":
+            main_item = "mstFunc"
+        elif item_type == "buff":
+            main_item = "mstBuff"
+        else:
+            raise ValueError
+        return {item[main_item]["id"] for item in response.json()}
     else:
-        return {item["id"] for item in response.json()}
+        if item_type in {"servant", "equip", "buff"}:
+            main_id = "id"
+        elif item_type == "function":
+            main_id = "funcId"
+        else:
+            raise ValueError
+        return {item[main_id] for item in response.json()}
 
 
 test_cases_dict = {
@@ -68,7 +83,7 @@ class TestSearch:
     @pytest.mark.parametrize("search_query,result", test_cases)
     def test_search(self, search_query: str, result: Set[int], response_type: str):
         response = client.get(f"/{response_type}/{search_query}")
-        result_ids = get_item_list(response, response_type)
+        result_ids = get_item_list(response, response_type, search_query)
         assert response.status_code == 200
         assert result_ids == result
 
@@ -79,6 +94,60 @@ class TestSearch:
         assert response.text == "[]"
 
     @pytest.mark.parametrize("endpoint", ["servant", "equip"])
+    def test_empty_input(self, response_type: str, endpoint: str):
+        response = client.get(f"/{response_type}/NA/{endpoint}/search")
+        assert response.status_code == 400
+
+
+test_cases_no_basic_dict = {
+    "buff_type_tvals": (
+        "NA/buff/search?type=upCommandall&tvals=cardQuick",
+        {100, 260, 499, 1084, 1094},
+    ),
+    "buff_type_vals": ("NA/buff/search?vals=buffCharm", {175, 213, 217, 926}),
+    "buff_type_ckSelfIndv": (
+        "NA/buff/search?ckSelfIndv=4002",
+        {102, 109, 110, 111, 114, 262, 290, 374, 377, 478, 607, 720, 938, 952, 980},
+    ),
+    "buff_type_ckOpIndv": (
+        "NA/buff/search?ckOpIndv=4002&type=downDefencecommandall",
+        {301, 456, 506},
+    ),
+    "buff_name": ("NA/buff/search?name=arts up", {101, 106, 107, 108, 446, 477, 722}),
+    "func_type_targetType_targetTeam_vals": (
+        "JP/function/search?type=addStateShort&targetType=ptAll&targetTeam=playerAndEnemy&vals=101",
+        {115, 116, 117},
+    ),
+    "func_tvals": (
+        "JP/function/search?type=addStateShort&tvals=divine",
+        {965, 966, 967, 1165, 1166, 1167, 3802},
+    ),
+    "func_questTvals": (
+        "JP/function/search?questTvals=94000046&targetType=ptFull",
+        {889, 890, 891},
+    ),
+    "func_popupText": (
+        "NA/function/search?popupText=Curse&targetType=self",
+        {490, 1700, 2021},
+    ),
+}
+
+
+test_cases_no_basic = [
+    pytest.param(*value, id=key) for key, value in test_cases_no_basic_dict.items()
+]
+
+
+@pytest.mark.parametrize("response_type", ["nice", "raw"])
+class TestSearchNoBasic:
+    @pytest.mark.parametrize("search_query,result", test_cases_no_basic)
+    def test_search(self, search_query: str, result: Set[int], response_type: str):
+        response = client.get(f"/{response_type}/{search_query}")
+        result_ids = get_item_list(response, response_type, search_query)
+        assert response.status_code == 200
+        assert result_ids == result
+
+    @pytest.mark.parametrize("endpoint", ["buff", "function"])
     def test_empty_input(self, response_type: str, endpoint: str):
         response = client.get(f"/{response_type}/NA/{endpoint}/search")
         assert response.status_code == 400

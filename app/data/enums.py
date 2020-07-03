@@ -307,6 +307,11 @@ FUNC_TYPE_NAME: Dict[int, NiceFuncType] = {
 }
 
 
+FUNC_TYPE_NAME_REVERSE: Dict[NiceFuncType, int] = {
+    v: k for k, v in FUNC_TYPE_NAME.items()
+}
+
+
 ### Func Apply Target ###
 
 
@@ -320,6 +325,11 @@ FUNC_APPLYTARGET_NAME: Dict[int, FuncApplyTarget] = {
     1: FuncApplyTarget.player,
     2: FuncApplyTarget.enemy,
     3: FuncApplyTarget.playerAndEnemy,
+}
+
+
+FUNC_APPLYTARGET_NAME_REVERSE: Dict[FuncApplyTarget, int] = {
+    v: k for k, v in FUNC_APPLYTARGET_NAME.items()
 }
 
 
@@ -411,6 +421,11 @@ FUNC_TARGETTYPE_NAME: Dict[int, NiceFuncTargetType] = {
     23: NiceFuncTargetType.ptSelfAfter,
     24: NiceFuncTargetType.ptSelfAnotherLast,
     25: NiceFuncTargetType.commandTypeSelfTreasureDevice,
+}
+
+
+FUNC_TARGETTYPE_NAME_REVERSE: Dict[NiceFuncTargetType, int] = {
+    v: k for k, v in FUNC_TARGETTYPE_NAME.items()
 }
 
 
@@ -879,6 +894,11 @@ BUFF_TYPE_NAME: Dict[int, NiceBuffType] = {
     151: NiceBuffType.downCriticalRateDamageTaken,
     152: NiceBuffType.upCriticalStarDamageTaken,
     153: NiceBuffType.downCriticalStarDamageTaken,
+}
+
+
+BUFF_TYPE_NAME_REVERSE: Dict[NiceBuffType, int] = {
+    v: k for k, v in BUFF_TYPE_NAME.items()
 }
 
 

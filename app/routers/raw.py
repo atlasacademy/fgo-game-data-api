@@ -15,7 +15,13 @@ from ..data.schemas.raw import (
     SkillEntity,
     TdEntity,
 )
-from .deps import DetailMessage, EquipSearchQueryParams, ServantSearchQueryParams
+from .deps import (
+    DetailMessage,
+    EquipSearchQueryParams,
+    ServantSearchQueryParams,
+    BuffSearchQueryParams,
+    FuncSearchQueryParams,
+)
 from .utils import item_response, list_response
 
 
@@ -95,7 +101,7 @@ async def get_servant(
     "/{region}/equip/search",
     summary="Find and get CE data",
     description=EquipSearchQueryParams.DESCRIPTION + raw_find_servant_extra,
-    response_description="Equip Entity",
+    response_description="CE entity",
     response_model=List[ServantEntity],
     response_model_exclude_unset=True,
     responses=responses,
@@ -222,6 +228,39 @@ async def get_td(
         raise HTTPException(status_code=404, detail="NP not found")
 
 
+raw_find_function_extra = """
+- **reverse**: Reverse lookup the skills that have this function
+and return the reversed skill objects.
+Will search recursively and return all entities in path: func -> skill/np -> servant.
+- **expand**: Add buff objects to mstFunc.expandedVals from the buff ID in mstFunc.vals.
+"""
+
+
+@router.get(
+    "/{region}/function/search",
+    summary="Find and get function data",
+    description=FuncSearchQueryParams.DESCRIPTION + raw_find_function_extra,
+    response_description="Function entity",
+    response_model=List[FunctionEntity],
+    response_model_exclude_unset=True,
+    responses=responses,
+)
+async def find_function(
+    search_param: FuncSearchQueryParams = Depends(FuncSearchQueryParams),
+    reverse: bool = False,
+    expand: bool = False,
+):
+    if search_param.hasSearchParams:
+        matches = search.search_func(search_param)
+        entity_list = [
+            raw.get_func_entity(search_param.region, item, reverse, expand)
+            for item in matches
+        ]
+        return list_response(entity_list)
+    else:
+        raise HTTPException(status_code=400, detail="Insufficient query")
+
+
 @router.get(
     "/{region}/function/{item_id}",
     summary="Get function data",
@@ -238,15 +277,45 @@ async def get_function(
 
     - **reverse**: Reverse lookup the skills that have this function
     and return the reversed skill objects.
-    Will search recursively and return all entities in path: func -> skill -> servant.
+    Will search recursively and return all entities in path: func -> skill/np -> servant.
     - **expand**: Add buff objects to mstFunc.expandedVals
-    from the buff IDs in mstFunc.vals.
+    from the buff ID in mstFunc.vals.
     """
     if item_id in masters[region].mstFuncId:
         func_entity = raw.get_func_entity(region, item_id, reverse, expand)
         return item_response(func_entity)
     else:
         raise HTTPException(status_code=404, detail="Function not found")
+
+
+raw_find_buff_extra = """
+- **reverse**: Reverse lookup the functions that have this buff
+and return the reversed function objects.
+Will search recursively and return all entities in path: buff -> func -> skill/np -> servant.
+"""
+
+
+@router.get(
+    "/{region}/buff/search",
+    summary="Find and get buff data",
+    description=BuffSearchQueryParams.DESCRIPTION + raw_find_buff_extra,
+    response_description="Function entity",
+    response_model=List[BuffEntity],
+    response_model_exclude_unset=True,
+    responses=responses,
+)
+async def find_buff(
+    search_param: BuffSearchQueryParams = Depends(BuffSearchQueryParams),
+    reverse: bool = False,
+):
+    if search_param.hasSearchParams:
+        matches = search.search_buff(search_param)
+        entity_list = [
+            raw.get_buff_entity(search_param.region, item, reverse) for item in matches
+        ]
+        return list_response(entity_list)
+    else:
+        raise HTTPException(status_code=400, detail="Insufficient query")
 
 
 @router.get(
