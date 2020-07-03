@@ -1,5 +1,16 @@
 from functools import lru_cache
-from typing import Any, Dict, Iterable, List, Mapping, Optional, Union
+from typing import (
+    Any,
+    Callable,
+    Dict,
+    Iterable,
+    List,
+    Mapping,
+    Optional,
+    TypeVar,
+    Union,
+    cast,
+)
 
 from fastapi import HTTPException
 
@@ -65,6 +76,13 @@ FORMATTING_BRACKETS = {"[g][o]": "", "[/o][/g]": "", " [{0}] ": " ", "[{0}]": ""
 
 
 settings = Settings()
+
+
+T = TypeVar("T", bound=Callable[..., Any])
+
+
+def cache_functions(func: T) -> T:
+    return cast(T, lru_cache(func)) if settings.nice_servant_lru_cache else func
 
 
 def strip_formatting_brackets(detail_string: str) -> str:
@@ -386,6 +404,7 @@ def get_nice_comment(comment: MstSvtComment) -> Dict[str, Any]:
     }
 
 
+@cache_functions
 def get_nice_servant(
     region: Region, item_id: int, lore: bool = False, lang: Optional[Language] = None
 ) -> Dict[str, Any]:
@@ -566,6 +585,7 @@ def get_nice_equip_model(*args, **kwargs) -> NiceEquip:
     return NiceEquip.parse_obj(get_nice_servant(*args, **kwargs))
 
 
+@cache_functions
 def get_nice_buff_alone(
     region: Region, buff_id: int, reverse: bool = False, lang: Optional[Language] = None
 ) -> NiceBuffReverse:
@@ -579,6 +599,7 @@ def get_nice_buff_alone(
     return nice_data
 
 
+@cache_functions
 def get_nice_func_alone(
     region: Region, func_id: int, reverse: bool = False, lang: Optional[Language] = None
 ) -> NiceBaseFunctionReverse:
@@ -599,6 +620,7 @@ def get_nice_func_alone(
     return nice_data
 
 
+@cache_functions
 def get_nice_skill_alone(
     region: Region,
     skill_id: int,
@@ -622,6 +644,7 @@ def get_nice_skill_alone(
     return nice_data
 
 
+@cache_functions
 def get_nice_td_alone(
     region: Region, td_id: int, reverse: bool = False, lang: Optional[Language] = None
 ) -> NiceTdReverse:
@@ -637,14 +660,6 @@ def get_nice_td_alone(
             for item in raw_data.mstSvtTreasureDevice
         ]
     return nice_data
-
-
-if settings.nice_servant_lru_cache:
-    get_nice_servant = lru_cache(get_nice_servant)
-    get_nice_buff_alone = lru_cache(get_nice_buff_alone)
-    get_nice_func_alone = lru_cache(get_nice_func_alone)
-    get_nice_skill_alone = lru_cache(get_nice_skill_alone)
-    get_nice_td_alone = lru_cache(get_nice_td_alone)
 
 
 def get_nice_mystic_code(region: Region, mc_id: int) -> Dict[str, Any]:

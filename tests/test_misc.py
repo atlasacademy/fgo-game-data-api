@@ -1,4 +1,5 @@
-from app.data.nice import parse_dataVals
+from app.data.common import Region
+from app.data.nice import parse_dataVals, get_nice_servant
 from app.routers.basic import sort_by_collection_no
 
 
@@ -12,6 +13,12 @@ def test_parse_dataVals_add_state_6_items():
         "UseRate": 1000,
         "Value2": 10,
     }
+
+
+def test_lru_cache():
+    get_nice_servant(Region.NA, 202900)
+    get_nice_servant(Region.NA, 202900)
+    assert get_nice_servant.cache_info().hits == 1  # type: ignore
 
 
 def test_sort_by_collection_no():
