@@ -416,29 +416,22 @@ def get_nice_servant(
 
     charaGraph: Dict[str, Dict[int, str]] = {}
     faces: Dict[str, Dict[int, str]] = {}
+
+    base_settings = {"base_url": settings.asset_url, "region": region}
+    base_settings_id = dict(item_id=item_id, **base_settings)
+
     if raw_data.mstSvt.type == SvtType.ENEMY_COLLECTION_DETAIL:
         charaGraph["ascension"] = {
-            0: ASSET_URL["charaGraphDefault"].format(
-                base_url=settings.asset_url, region=region, item_id=item_id
-            )
+            0: ASSET_URL["charaGraphDefault"].format(**base_settings_id)
         }
-        faces["ascension"] = {
-            0: ASSET_URL["face"].format(
-                base_url=settings.asset_url, region=region, item_id=item_id, i=0
-            )
-        }
+        faces["ascension"] = {0: ASSET_URL["face"].format(**base_settings_id, i=0)}
     elif raw_data.mstSvt.isServant():
         charaGraph["ascension"] = {
-            i: ASSET_URL[f"charaGraph{i}"].format(
-                base_url=settings.asset_url, region=region, item_id=item_id
-            )
+            i: ASSET_URL[f"charaGraph{i}"].format(**base_settings_id)
             for i in range(1, 5)
         }
         faces["ascension"] = {
-            (i + 1): ASSET_URL["face"].format(
-                base_url=settings.asset_url, region=region, item_id=item_id, i=i
-            )
-            for i in range(4)
+            (i + 1): ASSET_URL["face"].format(**base_settings_id, i=i) for i in range(4)
         }
         costume_ids = [
             item.battleCharaId
@@ -448,27 +441,22 @@ def get_nice_servant(
         if costume_ids:
             charaGraph["costume"] = {
                 costume_id: ASSET_URL["charaGraphDefault"].format(
-                    base_url=settings.asset_url, region=region, item_id=costume_id
+                    **base_settings, item_id=costume_id
                 )
                 for costume_id in costume_ids
             }
             faces["costume"] = {
                 costume_id: ASSET_URL["face"].format(
-                    base_url=settings.asset_url, region=region, item_id=costume_id, i=0
+                    **base_settings, item_id=costume_id, i=0
                 )
                 for costume_id in costume_ids
             }
     elif raw_data.mstSvt.isEquip():
         charaGraph["equip"] = {
-            item_id: ASSET_URL["charaGraphDefault"].format(
-                base_url=settings.asset_url, region=region, item_id=item_id
-            )
+            item_id: ASSET_URL["charaGraphDefault"].format(**base_settings_id)
         }
-        faces["equip"] = {
-            item_id: ASSET_URL["face"].format(
-                base_url=settings.asset_url, region=region, item_id=item_id, i=0
-            )
-        }
+        faces["equip"] = {item_id: ASSET_URL["face"].format(**base_settings_id, i=0)}
+
     nice_data["extraAssets"] = {"charaGraph": charaGraph, "faces": faces}
 
     lvMax = max([item.lvMax for item in raw_data.mstSvtLimit])

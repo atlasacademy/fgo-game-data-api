@@ -16,6 +16,7 @@ from app.data.enums import (
     Trait,
 )
 
+
 CONSTANT_INCLUDE = {
     "ATTACK_RATE",
     "ATTACK_RATE_RANDOM_MAX",

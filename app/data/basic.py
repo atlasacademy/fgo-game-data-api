@@ -25,13 +25,13 @@ def get_basic_svt(
     }
 
     if mstSvt.type in {SvtType.ENEMY_COLLECTION_DETAIL, SvtType.SERVANT_EQUIP}:
-        basic_servant["face"] = ASSET_URL["face"].format(
-            base_url=settings.asset_url, region=region, item_id=item_id, i=0
-        )
+        face_url_i = 0
     elif mstSvt.type in {SvtType.NORMAL, SvtType.HEROINE}:
-        basic_servant["face"] = ASSET_URL["face"].format(
-            base_url=settings.asset_url, region=region, item_id=item_id, i=3
-        )
+        face_url_i = 3
+
+    basic_servant["face"] = ASSET_URL["face"].format(
+        base_url=settings.asset_url, region=region, item_id=item_id, i=face_url_i
+    )
 
     if region == Region.JP and lang == Language.en:
         basic_servant["name"] = SVT_NAME_JP_EN.get(
