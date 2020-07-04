@@ -2314,6 +2314,11 @@ class Trait(str, Enum):
     playerCards = "playerCards"
     cardNP = "cardNP"
     kingProteaGrowth = "kingProteaGrowth"
+    fieldSunlight = "fieldSunlight"
+    fieldShore = "fieldShore"
+    fieldForest = "fieldForest"
+    fieldBurning = "fieldBurning"
+    fieldCity = "fieldCity"
 
 
 TRAIT_NAME: Dict[int, Trait] = {
@@ -2397,15 +2402,20 @@ TRAIT_NAME: Dict[int, Trait] = {
     2018: Trait.undeadOrDaemon,  # Amakusa bond Ce
     2019: Trait.demonic,
     2037: Trait.skyOrEarthExceptPseudoAndDemi,  # Raikou's 3rd skill
+    2038: Trait.fieldSunlight,
+    2039: Trait.fieldShore,
     2040: Trait.divineOrDaemonOrUndead,  # Ruler Martha's 3rd skill
+    2073: Trait.fieldForest,
     2074: Trait.blessedByKur,  # Eresh's 3rd skill add this individuality
     2075: Trait.saberClassServant,  # MHXA NP
     2076: Trait.superGiant,
     2113: Trait.king,
     2114: Trait.greekMythologyMales,
+    2121: Trait.fieldBurning,
     2355: Trait.illya,
     2356: Trait.genderUnknownServant,  # Teach's 3rd skill
     2387: Trait.kingProteaGrowth,
+    2392: Trait.fieldCity,
     2466: Trait.argonaut,
     2615: Trait.genderCaenisServant,  # Phantom's 2nd skill
     2631: Trait.humanoidServant,  # used in TamaVitch's fight
