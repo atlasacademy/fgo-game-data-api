@@ -639,9 +639,13 @@ def get_nice_skill_alone(
     nice_data = NiceSkillReverse.parse_obj(get_nice_skill(raw_data, svtId, region))
 
     if reverse:
+        activeSkills = {item.svtId for item in raw_data.mstSvtSkill}
+        passiveSkills = {
+            item.id for item in masters[region].mstSvt if skill_id in item.classPassive
+        }
         nice_data.reverseServants = [
-            get_nice_servant_model(region, item.svtId, lang=lang)
-            for item in raw_data.mstSvtSkill
+            get_nice_servant_model(region, item, lang=lang)
+            for item in activeSkills | passiveSkills
         ]
     return nice_data
 

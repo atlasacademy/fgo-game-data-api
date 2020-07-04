@@ -121,8 +121,12 @@ def get_skill_entity(
     )
 
     if reverse:
+        activeSkills = {item.svtId for item in skill_entity.mstSvtSkill}
+        passiveSkills = {
+            item.id for item in masters[region].mstSvt if skill_id in item.classPassive
+        }
         skill_entity.reverseServants = [
-            get_servant_entity(region, item.svtId) for item in skill_entity.mstSvtSkill
+            get_servant_entity(region, item) for item in activeSkills | passiveSkills
         ]
     return skill_entity
 
