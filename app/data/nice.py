@@ -122,6 +122,7 @@ def parse_dataVals(datavals: str, functype: int) -> Dict[str, Union[int, str]]:
                     FuncType.DAMAGE_NP_INDIVIDUAL,
                     FuncType.DAMAGE_NP_STATE_INDIVIDUAL,
                     FuncType.DAMAGE_NP_STATE_INDIVIDUAL_FIX,
+                    FuncType.DAMAGE_NP_INDIVIDUAL_SUM,
                 }:
                     if i == 0:
                         text = "Rate"
