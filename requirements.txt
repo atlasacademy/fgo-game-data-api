@@ -4,9 +4,9 @@ fastapi==0.58.1
 fuzzywuzzy==0.18.0
 h11==0.9.0
 httptools==0.1.1; sys_platform != "win32" and sys_platform != "cygwin" and platform_python_implementation != "PyPy"
-orjson==3.2.0
+orjson==3.2.1
 pydantic==1.5.1
-python-dotenv==0.13.0
+python-dotenv==0.14.0
 python-levenshtein==0.12.0
 starlette==0.13.4
 uvicorn==0.11.5
