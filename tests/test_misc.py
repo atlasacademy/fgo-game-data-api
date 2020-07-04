@@ -1,5 +1,5 @@
 from app.data.common import Region
-from app.data.nice import parse_dataVals, get_nice_servant
+from app.data.nice import get_nice_servant, parse_dataVals
 from app.routers.basic import sort_by_collection_no
 
 
