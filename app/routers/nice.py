@@ -82,7 +82,7 @@ responses: Dict[Union[str, int], Any] = {
 router = APIRouter()
 
 
-nice_find_servant_extra = """
+svt_lang_lore_description = """
 - **lang**: returns English servant names if querying JP data. Doesn't do anything if querying NA data.
 - **lore**: Add profile info to the response
 """
@@ -91,7 +91,7 @@ nice_find_servant_extra = """
 @router.get(
     "/{region}/servant/search",
     summary="Find and get servant data",
-    description=ServantSearchQueryParams.DESCRIPTION + nice_find_servant_extra,
+    description=ServantSearchQueryParams.DESCRIPTION + svt_lang_lore_description,
     response_description="Servant Entity",
     response_model=List[NiceServant],
     response_model_exclude_unset=True,
@@ -119,8 +119,6 @@ get_servant_description = """Get servant info from ID
 If the given ID is a servants's collectionNo, the corresponding servant data is returned.
 Otherwise, it will look up the actual ID field.
 
-- **lang**: returns English servant names if querying JP data. Doesn't do anything if querying NA data.
-- **lore**: Add profile info to the response
 """
 pre_processed_data_links = """
 
@@ -129,6 +127,8 @@ Preprocessed data:
 - [JP servant](/export/JP/nice_servant.json)
 """
 
+get_servant_description += svt_lang_lore_description
+
 if settings.documentation_all_nice:
     get_servant_description += pre_processed_data_links
 
@@ -136,10 +136,10 @@ if settings.documentation_all_nice:
 @router.get(
     "/{region}/servant/{item_id}",
     summary="Get servant data",
+    description=get_servant_description,
     response_description="Servant Entity",
     response_model=NiceServant,
     response_model_exclude_unset=True,
-    description=get_servant_description,
     responses=responses,
 )
 async def get_servant(
@@ -153,10 +153,15 @@ async def get_servant(
         raise HTTPException(status_code=404, detail="Servant not found")
 
 
+equip_lore_description = """
+- **lore**: Add profile info to the response
+"""
+
+
 @router.get(
     "/{region}/equip/search",
     summary="Find and get CE data",
-    description=EquipSearchQueryParams.DESCRIPTION,
+    description=EquipSearchQueryParams.DESCRIPTION + equip_lore_description,
     response_description="Equip Entity",
     response_model=List[NiceEquip],
     response_model_exclude_unset=True,
@@ -183,7 +188,6 @@ get_equip_description = """Get CE info from ID
 If the given ID is a CE's collectionNo, the corresponding CE data is returned.
 Otherwise, it will look up the actual ID field.
 
-- **lore**: Add profile info to the response
 """
 pre_processed_equip_links = """
 
@@ -192,6 +196,8 @@ Preprocessed data:
 - [JP CE](/export/JP/nice_equip.json)
 """
 
+get_equip_description += equip_lore_description
+
 if settings.documentation_all_nice:
     get_equip_description += pre_processed_equip_links
 
@@ -199,10 +205,10 @@ if settings.documentation_all_nice:
 @router.get(
     "/{region}/equip/{item_id}",
     summary="Get CE data",
+    description=get_equip_description,
     response_description="CE Entity",
     response_model=NiceEquip,
     response_model_exclude_unset=True,
-    description=get_equip_description,
     responses=responses,
 )
 async def get_equip(region: Region, item_id: int, lore: bool = False):
@@ -250,10 +256,10 @@ if settings.documentation_all_nice:
 @router.get(
     "/{region}/MC/{item_id}",
     summary="Get Mystic Code data",
+    description=get_mc_description,
     response_description="Mystic Code entity",
     response_model=NiceMysticCode,
     response_model_exclude_unset=True,
-    description=get_mc_description,
     responses=responses,
 )
 async def get_mystic_code(region: Region, item_id: int):
@@ -309,7 +315,7 @@ async def get_td(
         raise HTTPException(status_code=404, detail="NP not found")
 
 
-nice_find_function_extra = """
+function_reverse_lang_description = """
 - **reverse**: Reverse lookup the skills that have this function
 and return the reversed skill objects.
 Will search recursively and return all entities in path: func -> skill/np -> servant.
@@ -320,7 +326,7 @@ Will search recursively and return all entities in path: func -> skill/np -> ser
 @router.get(
     "/{region}/function/search",
     summary="Find and get function data",
-    description=FuncSearchQueryParams.DESCRIPTION + nice_find_function_extra,
+    description=FuncSearchQueryParams.DESCRIPTION + function_reverse_lang_description,
     response_description="Function entity",
     response_model=List[NiceBaseFunctionReverse],
     response_model_exclude_unset=True,
@@ -345,6 +351,8 @@ async def find_function(
 @router.get(
     "/{region}/function/{item_id}",
     summary="Get function data",
+    description="Get the function data from the given ID"
+    + function_reverse_lang_description,
     response_description="Function entity",
     response_model=NiceBaseFunctionReverse,
     response_model_exclude_unset=True,
@@ -353,20 +361,13 @@ async def find_function(
 async def get_function(
     region: Region, item_id: int, reverse: bool = False, lang: Optional[Language] = None
 ):
-    """
-    Get the function data from the given ID
-
-    - **reverse**: Reverse lookup the skills that have this function
-    and return the reversed skill objects.
-    Will search recursively and return all entities in path: func -> skill -> servant.
-    """
     if item_id in masters[region].mstFuncId:
         return item_response(nice.get_nice_func_alone(region, item_id, reverse, lang))
     else:
         raise HTTPException(status_code=404, detail="Function not found")
 
 
-nice_find_buff_extra = """
+buff_reverse_lang_description = """
 - **reverse**: Reverse lookup the functions that have this buff
 and return the reversed function objects.
 Will search recursively and return all entities in path: buff -> func -> skill/np -> servant.
@@ -377,7 +378,7 @@ Will search recursively and return all entities in path: buff -> func -> skill/n
 @router.get(
     "/{region}/buff/search",
     summary="Find and get buff data",
-    description=BuffSearchQueryParams.DESCRIPTION + nice_find_buff_extra,
+    description=BuffSearchQueryParams.DESCRIPTION + buff_reverse_lang_description,
     response_description="Function entity",
     response_model=List[NiceBuffReverse],
     response_model_exclude_unset=True,
@@ -402,6 +403,7 @@ async def find_buff(
 @router.get(
     "/{region}/buff/{item_id}",
     summary="Get buff data",
+    description="Get the buff data from the given ID" + buff_reverse_lang_description,
     response_description="Buff Entity",
     response_model=NiceBuffReverse,
     response_model_exclude_unset=True,
@@ -410,13 +412,6 @@ async def find_buff(
 async def get_buff(
     region: Region, item_id: int, reverse: bool = False, lang: Optional[Language] = None
 ):
-    """
-    Get the buff data from the given ID
-
-    - **reverse**: Reverse lookup the functions that have this buff
-    and return the reversed function objects.
-    Will search recursively and return all entities in path: buff -> func -> skill -> servant.
-    """
     if item_id in masters[region].mstBuffId:
         return item_response(nice.get_nice_buff_alone(region, item_id, reverse, lang))
     else:
@@ -438,10 +433,10 @@ if settings.documentation_all_nice:
 @router.get(
     "/{region}/item/{item_id}",
     summary="Get Item data",
+    description=get_item_description,
     response_description="Item Entity",
     response_model=NiceItem,
     response_model_exclude_unset=True,
-    description=get_item_description,
     responses=responses,
 )
 async def get_item(region: Region, item_id: int):

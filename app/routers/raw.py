@@ -33,7 +33,7 @@ responses: Dict[Union[str, int], Any] = {
 router = APIRouter()
 
 
-raw_find_servant_extra = """
+svt_expand_lore_description = """
 - **expand**: Add expanded skill objects to mstSvt.expandedClassPassive
 from the skill IDs in mstSvt.classPassive.
 Expand all other skills and functions as well.
@@ -44,7 +44,7 @@ Expand all other skills and functions as well.
 @router.get(
     "/{region}/servant/search",
     summary="Find and get servant data",
-    description=ServantSearchQueryParams.DESCRIPTION + raw_find_servant_extra,
+    description=ServantSearchQueryParams.DESCRIPTION + svt_expand_lore_description,
     response_description="Servant Entity",
     response_model=List[ServantEntity],
     response_model_exclude_unset=True,
@@ -66,9 +66,18 @@ async def find_servant(
         raise HTTPException(status_code=400, detail="Insufficient query")
 
 
+get_servant_description = """
+Get servant info from ID
+
+If the given ID is a servants's collectionNo, the corresponding servant data is returned.
+Otherwise, it will look up the actual ID field. As a result, it can return not servant data.
+"""
+
+
 @router.get(
     "/{region}/servant/{item_id}",
     summary="Get servant data",
+    description=get_servant_description + svt_expand_lore_description,
     response_description="Servant Entity",
     response_model=ServantEntity,
     response_model_exclude_unset=True,
@@ -77,17 +86,6 @@ async def find_servant(
 async def get_servant(
     region: Region, item_id: int, expand: bool = False, lore: bool = False
 ):
-    """
-    Get servant info from ID
-
-    If the given ID is a servants's collectionNo, the corresponding servant data is returned.
-    Otherwise, it will look up the actual ID field. As a result, it can return not servant data.
-
-    - **expand**: Add expanded skill objects to mstSvt.expandedClassPassive
-    from the skill IDs in mstSvt.classPassive.
-    Expand all other skills and functions as well.
-    - **lore**: Add profile info to the response.
-    """
     if item_id in masters[region].mstSvtServantCollectionNo:
         item_id = masters[region].mstSvtServantCollectionNo[item_id]
     if item_id in masters[region].mstSvtId:
@@ -100,7 +98,7 @@ async def get_servant(
 @router.get(
     "/{region}/equip/search",
     summary="Find and get CE data",
-    description=EquipSearchQueryParams.DESCRIPTION + raw_find_servant_extra,
+    description=EquipSearchQueryParams.DESCRIPTION + svt_expand_lore_description,
     response_description="CE entity",
     response_model=List[ServantEntity],
     response_model_exclude_unset=True,
@@ -122,9 +120,18 @@ async def find_equip(
         raise HTTPException(status_code=400, detail="Insufficient query")
 
 
+get_ce_description = """
+Get CE info from ID
+
+If the given ID is a CE's collectionNo, the corresponding CE data is returned.
+Otherwise, it will look up the actual ID field. As a result, it can return not CE data.
+"""
+
+
 @router.get(
     "/{region}/equip/{item_id}",
     summary="Get CE data",
+    description=get_ce_description + svt_expand_lore_description,
     response_description="CE entity",
     response_model=ServantEntity,
     response_model_exclude_unset=True,
@@ -133,17 +140,6 @@ async def find_equip(
 async def get_equip(
     region: Region, item_id: int, expand: bool = False, lore: bool = False
 ):
-    """
-    Get CE info from ID
-
-    If the given ID is a CE's collectionNo, the corresponding CE data is returned.
-    Otherwise, it will look up the actual ID field. As a result, it can return not CE data.
-
-    - **expand**: Add expanded skill objects to mstSvt.expandedClassPassive
-    from the skill IDs in mstSvt.classPassive.
-    Expand all other skills and functions as well.
-    - **lore**: Add profile info to the response.
-    """
     if item_id in masters[region].mstSvtEquipCollectionNo:
         item_id = masters[region].mstSvtEquipCollectionNo[item_id]
     if item_id in masters[region].mstSvtId:
@@ -228,7 +224,7 @@ async def get_td(
         raise HTTPException(status_code=404, detail="NP not found")
 
 
-raw_find_function_extra = """
+function_reverse_expand_description = """
 - **reverse**: Reverse lookup the skills that have this function
 and return the reversed skill objects.
 Will search recursively and return all entities in path: func -> skill/np -> servant.
@@ -239,7 +235,7 @@ Will search recursively and return all entities in path: func -> skill/np -> ser
 @router.get(
     "/{region}/function/search",
     summary="Find and get function data",
-    description=FuncSearchQueryParams.DESCRIPTION + raw_find_function_extra,
+    description=FuncSearchQueryParams.DESCRIPTION + function_reverse_expand_description,
     response_description="Function entity",
     response_model=List[FunctionEntity],
     response_model_exclude_unset=True,
@@ -264,6 +260,8 @@ async def find_function(
 @router.get(
     "/{region}/function/{item_id}",
     summary="Get function data",
+    description="Get the function data from the given ID"
+    + function_reverse_expand_description,
     response_description="Function entity",
     response_model=FunctionEntity,
     response_model_exclude_unset=True,
@@ -272,15 +270,6 @@ async def find_function(
 async def get_function(
     region: Region, item_id: int, reverse: bool = False, expand: bool = False
 ):
-    """
-    Get the function data from the given ID
-
-    - **reverse**: Reverse lookup the skills that have this function
-    and return the reversed skill objects.
-    Will search recursively and return all entities in path: func -> skill/np -> servant.
-    - **expand**: Add buff objects to mstFunc.expandedVals
-    from the buff ID in mstFunc.vals.
-    """
     if item_id in masters[region].mstFuncId:
         func_entity = raw.get_func_entity(region, item_id, reverse, expand)
         return item_response(func_entity)
@@ -288,7 +277,7 @@ async def get_function(
         raise HTTPException(status_code=404, detail="Function not found")
 
 
-raw_find_buff_extra = """
+buff_reverse_description = """
 - **reverse**: Reverse lookup the functions that have this buff
 and return the reversed function objects.
 Will search recursively and return all entities in path: buff -> func -> skill/np -> servant.
@@ -298,7 +287,7 @@ Will search recursively and return all entities in path: buff -> func -> skill/n
 @router.get(
     "/{region}/buff/search",
     summary="Find and get buff data",
-    description=BuffSearchQueryParams.DESCRIPTION + raw_find_buff_extra,
+    description=BuffSearchQueryParams.DESCRIPTION + buff_reverse_description,
     response_description="Function entity",
     response_model=List[BuffEntity],
     response_model_exclude_unset=True,
@@ -321,19 +310,13 @@ async def find_buff(
 @router.get(
     "/{region}/buff/{item_id}",
     summary="Get buff data",
+    description="Get the buff data from the given ID" + buff_reverse_description,
     response_description="Buff entity",
     response_model=BuffEntity,
     response_model_exclude_unset=True,
     responses=responses,
 )
 async def get_buff(region: Region, item_id: int, reverse: bool = False):
-    """
-    Get the buff data from the given ID
-
-    - **reverse**: Reverse lookup the functions that have this buff
-    and return the reversed function objects.
-    Will search recursively and return all entities in path: buff -> func -> skill -> servant.
-    """
     if item_id in masters[region].mstBuffId:
         buff_entity = raw.get_buff_entity(region, item_id, reverse)
         return item_response(buff_entity)
