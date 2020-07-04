@@ -154,7 +154,7 @@ class NiceBaseFunction(BaseModelORJson):
     funcPopupText: str
     funcPopupIcon: Optional[HttpUrl] = None
     functvals: List[NiceTrait]
-    funcquestTvals: List[int]
+    funcquestTvals: List[NiceTrait]
     traitVals: List[NiceTrait] = []
     buffs: List[NiceBuff]
 

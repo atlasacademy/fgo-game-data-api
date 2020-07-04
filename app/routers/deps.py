@@ -125,7 +125,7 @@ class FuncSearchQueryParams:
     targetTeam: List[FuncApplyTarget] = Query(None)
     vals: List[Union[Trait, int]] = Query([])
     tvals: List[Union[Trait, int]] = Query([])
-    questTvals: List[int] = Query([])
+    questTvals: List[Union[Trait, int]] = Query([])
     hasSearchParams: bool = field(init=False)
 
     def __post_init__(self):

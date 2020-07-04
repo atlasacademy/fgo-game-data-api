@@ -18,7 +18,10 @@
       "funcPopupText": "Will to Fight EX",
       "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_302.png",
       "functvals": [],
-      "funcquestTvals": [94000046, 94000045],
+      "funcquestTvals": [
+        { "id": 94000046, "name": "unknown" },
+        { "id": 94000045, "name": "unknown" }
+      ],
       "buffs": [
         {
           "id": 267,

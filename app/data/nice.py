@@ -201,7 +201,7 @@ def get_nice_base_function(
     functionInfo: Dict[str, Any] = {
         "funcId": function.mstFunc.id,
         "funcPopupText": function.mstFunc.popupText,
-        "funcquestTvals": function.mstFunc.questTvals,
+        "funcquestTvals": get_traits_list(function.mstFunc.questTvals),
         "functvals": get_traits_list(function.mstFunc.tvals),
         "funcType": get_safe(FUNC_TYPE_NAME, function.mstFunc.funcType),
         "funcTargetTeam": get_safe(FUNC_APPLYTARGET_NAME, function.mstFunc.applyTarget),

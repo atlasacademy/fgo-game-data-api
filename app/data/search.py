@@ -207,7 +207,7 @@ def search_func(search_param: FuncSearchQueryParams) -> List[int]:
 
     vals = reverse_traits(search_param.vals)
     tvals = reverse_traits(search_param.tvals)
-    questTvals = set(search_param.questTvals)
+    questTvals = reverse_traits(search_param.questTvals)
 
     matches = [
         item
