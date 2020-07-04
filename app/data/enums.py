@@ -431,36 +431,45 @@ FUNC_TARGETTYPE_NAME_REVERSE: Dict[NiceFuncTargetType, int] = {
 
 ### Building enemy func signature ###
 
-TARGETTYPE_OWN_TEAM = (
+TARGETTYPE_WITH_ENEMY_APPLYTARGET = (
     NiceFuncTargetType.self,
     NiceFuncTargetType.ptOne,
     NiceFuncTargetType.ptAnother,
     NiceFuncTargetType.ptAll,
     NiceFuncTargetType.ptFull,
     NiceFuncTargetType.ptOther,
+    NiceFuncTargetType.ptOneOther,
     NiceFuncTargetType.ptRandom,
     NiceFuncTargetType.ptOtherFull,
     NiceFuncTargetType.ptselectOneSub,
     NiceFuncTargetType.ptselectSub,
     NiceFuncTargetType.ptOneAnotherRandom,
+    NiceFuncTargetType.ptSelfAnotherRandom,
+    NiceFuncTargetType.ptSelfAnotherFirst,
+    NiceFuncTargetType.ptSelfBefore,
+    NiceFuncTargetType.ptSelfAfter,
+    NiceFuncTargetType.ptSelfAnotherLast,
+    NiceFuncTargetType.commandTypeSelfTreasureDevice,
 )
 
 
-TARGETTYPE_OTHER_TEAM = (
+TARGETTYPE_WITH_PLAYER_APPLYTARGET = (
     NiceFuncTargetType.enemy,
     NiceFuncTargetType.enemyAnother,
     NiceFuncTargetType.enemyAll,
     NiceFuncTargetType.enemyFull,
+    NiceFuncTargetType.enemyOther,
     NiceFuncTargetType.enemyRandom,
     NiceFuncTargetType.enemyOtherFull,
+    NiceFuncTargetType.enemyOneAnotherRandom,
 )
 
 
 ENEMY_FUNC_TARGETING_PLAYER_TEAM = {
-    (item, FuncApplyTarget.player) for item in TARGETTYPE_OTHER_TEAM
+    (item, FuncApplyTarget.player) for item in TARGETTYPE_WITH_PLAYER_APPLYTARGET
 }
 ENEMY_FUNC_TARGETING_ENEMY_TEAM = {
-    (item, FuncApplyTarget.enemy) for item in TARGETTYPE_OWN_TEAM
+    (item, FuncApplyTarget.enemy) for item in TARGETTYPE_WITH_ENEMY_APPLYTARGET
 }
 ENEMY_FUNC_SIGNATURE = (
     ENEMY_FUNC_TARGETING_PLAYER_TEAM | ENEMY_FUNC_TARGETING_ENEMY_TEAM
