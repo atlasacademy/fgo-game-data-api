@@ -125,3 +125,11 @@ class TestServantSpecial:
     def test_NA_not_integer(self):
         response = client.get("/raw/NA/servant/asdf")
         assert response.status_code == 422
+
+    def test_skill_reverse_passive(self):
+        response = client.get("/raw/NA/skill/320650?reverse=True")
+        reverse_servants = {
+            item["mstSvt"]["id"] for item in response.json()["reverseServants"]
+        }
+        assert response.status_code == 200
+        assert reverse_servants == {500800}

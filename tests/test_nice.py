@@ -80,3 +80,9 @@ class TestServantSpecial:
     def test_NA_not_integer(self):
         response = client.get("/nice/NA/servant/lkji")
         assert response.status_code == 422
+
+    def test_skill_reverse_passive(self):
+        response = client.get("/nice/NA/skill/30650?reverse=True")
+        reverse_servants = {item["id"] for item in response.json()["reverseServants"]}
+        assert response.status_code == 200
+        assert reverse_servants == {201200, 401800, 601000}
