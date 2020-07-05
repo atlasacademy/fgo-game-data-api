@@ -2328,6 +2328,7 @@ class Trait(str, Enum):
     fieldForest = "fieldForest"
     fieldBurning = "fieldBurning"
     fieldCity = "fieldCity"
+    shadowServant = "shadowServant"
 
 
 TRAIT_NAME: Dict[int, Trait] = {
@@ -2391,6 +2392,7 @@ TRAIT_NAME: Dict[int, Trait] = {
     1119: Trait.gazer,
     1120: Trait.handOrDoor,
     1121: Trait.demonGodPillar,
+    1122: Trait.shadowServant,
     1132: Trait.oni,
     1133: Trait.hand,
     1134: Trait.door,
