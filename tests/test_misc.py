@@ -1,3 +1,6 @@
+import pytest
+from fastapi import HTTPException
+
 from app.data.common import Region
 from app.data.nice import get_nice_servant, parse_dataVals
 from app.routers.basic import sort_by_collection_no
@@ -13,6 +16,11 @@ def test_parse_dataVals_add_state_6_items():
         "UseRate": 1000,
         "Value2": 10,
     }
+
+
+def test_parse_datavals_fail():
+    with pytest.raises(HTTPException):
+        parse_dataVals("[HideMiss]", 1)
 
 
 def test_lru_cache():

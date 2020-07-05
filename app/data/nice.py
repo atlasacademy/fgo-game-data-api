@@ -170,7 +170,7 @@ def parse_dataVals(datavals: str, functype: int) -> Dict[str, Union[int, str]]:
                 else:
                     raise HTTPException(
                         status_code=500, detail=f"Can't parse datavals: {datavals}"
-                    )  # pragma: no cover
+                    )
             if text != "":
                 output[text] = value
     return output
