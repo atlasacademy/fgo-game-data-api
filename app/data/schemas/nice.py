@@ -62,7 +62,7 @@ class NiceLvlUpMaterial(BaseModel):
     qp: int
 
 
-class Vals(BaseModel):
+class BaseVals(BaseModel):
     Rate: Optional[int] = None
     Turn: Optional[int] = None
     Count: Optional[int] = None
@@ -108,7 +108,6 @@ class Vals(BaseModel):
     OnFieldCount: Optional[int] = None
     TargetRarityList: Optional[str] = None
     DependFuncId: Optional[int] = None
-    DependFuncVals: Optional[int] = None
     InvalidHide: Optional[int] = None
     OutEnemyNpcId: Optional[int] = None
     InEnemyNpcId: Optional[int] = None
@@ -126,6 +125,10 @@ class Vals(BaseModel):
     ParamAddMaxCount: Optional[int] = None
     LossHpNoChangeDamage: Optional[int] = None
     IncludePassiveIndividuality: Optional[int] = None
+
+
+class Vals(BaseVals):
+    DependFuncVals: Optional[BaseVals] = None
 
 
 class NiceTrait(BaseModel):

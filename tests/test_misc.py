@@ -7,7 +7,7 @@ from app.routers.basic import sort_by_collection_no
 
 
 def test_parse_dataVals_add_state_6_items():
-    result = parse_dataVals("[1000,3,3,300,1000,10]", 1)
+    result = parse_dataVals("[1000,3,3,300,1000,10]", 1, Region.NA)
     assert result == {
         "Rate": 1000,
         "Turn": 3,
@@ -20,7 +20,7 @@ def test_parse_dataVals_add_state_6_items():
 
 def test_parse_datavals_fail():
     with pytest.raises(HTTPException):
-        parse_dataVals("[HideMiss]", 1)
+        parse_dataVals("[HideMiss]", 1, Region.NA)
 
 
 def test_lru_cache():

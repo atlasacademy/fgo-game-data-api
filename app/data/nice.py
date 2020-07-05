@@ -1,3 +1,4 @@
+import re
 from functools import lru_cache
 from typing import (
     Any,
@@ -109,10 +110,21 @@ def get_nice_status_rank(rank_number: int) -> NiceStatusRank:
     return STATUS_RANK_NAME.get(rank_number, NiceStatusRank.unknown)
 
 
-def parse_dataVals(datavals: str, functype: int) -> Dict[str, Union[int, str]]:
+def remove_brackets(val_string: str) -> str:
+    if val_string[0] == "[":
+        val_string = val_string[1:]
+    if val_string[-1] == "]":
+        val_string = val_string[:-1]
+    return val_string
+
+
+def parse_dataVals(
+    datavals: str, functype: int, region: Region
+) -> Dict[str, Union[int, str, int]]:
     output: Dict[str, Union[int, str]] = {}
     if datavals != "[]":
-        array = datavals.replace("[", "").replace("]", "").split(",")
+        datavals = remove_brackets(datavals)
+        array = re.split(r",\s*(?![^\[\]]*\])", datavals)
         for i, arrayi in enumerate(array):
             text = ""
             value: Union[int, str] = 0
@@ -163,6 +175,12 @@ def parse_dataVals(datavals: str, functype: int) -> Dict[str, Union[int, str]]:
                 array2 = arrayi.split(":")
                 if len(array2) > 1:
                     text = array2[0]
+                    if text == "DependFuncId1":
+                        output["DependFuncId"] = int(remove_brackets(array2[1]))
+                    elif text == "DependFuncVals1":
+                        func_type = masters[region].mstFuncId[output["DependFuncId"]].funcType  # type: ignore
+                        valsValue = parse_dataVals(array2[1], func_type, region)
+                        output["DependFuncVals"] = valsValue  # type: ignore
                     try:
                         value = int(array2[1])
                     except ValueError:
@@ -171,7 +189,7 @@ def parse_dataVals(datavals: str, functype: int) -> Dict[str, Union[int, str]]:
                     raise HTTPException(
                         status_code=500, detail=f"Can't parse datavals: {datavals}"
                     )
-            if text != "":
+            if text != "" and text not in {"DependFuncId1", "DependFuncVals1"}:
                 output[text] = value
     return output
 
@@ -278,7 +296,9 @@ def get_nice_skill(
         if functionSignature not in ENEMY_FUNC_SIGNATURE:
             player_funcis.append(funci)
             dataVals = parse_dataVals(
-                skillEntity.mstSkillLv[0].svals[funci], function.mstFunc.funcType
+                skillEntity.mstSkillLv[0].svals[funci],
+                function.mstFunc.funcType,
+                region,
             )
             functionInfo["svals"] = [dataVals]
             combinedFunctionList.append(functionInfo)
@@ -290,7 +310,9 @@ def get_nice_skill(
         # funci is the location of the function in the input expandedFuncId
         for combinedfunci, funci in enumerate(player_funcis):
             dataVals = parse_dataVals(
-                skillLv.svals[funci], skillLv.expandedFuncId[funci].mstFunc.funcType
+                skillLv.svals[funci],
+                skillLv.expandedFuncId[funci].mstFunc.funcType,
+                region,
             )
             combinedFunctionList[combinedfunci]["svals"].append(dataVals)
 
@@ -356,6 +378,7 @@ def get_nice_td(
                 dataVals = parse_dataVals(
                     getattr(tdEntity.mstTreasureDeviceLv[0], valName)[funci],
                     function.mstFunc.funcType,
+                    region,
                 )
                 functionInfo[valName] = [dataVals]
             combinedFunctionList.append(functionInfo)
@@ -370,6 +393,7 @@ def get_nice_td(
                 dataVals = parse_dataVals(
                     getattr(tdLv, valName)[funci],
                     tdLv.expandedFuncId[funci].mstFunc.funcType,
+                    region,
                 )
                 combinedFunctionList[combinedfunci][valName].append(dataVals)
 

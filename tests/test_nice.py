@@ -23,6 +23,7 @@ test_cases_dict = {
     "servant_JP_datavals_subState_Value2": ("JP/servant/103800", "JP_Jason"),
     "skill_NA_id": ("NA/skill/454650", "NA_Fujino_1st_skill"),
     "skill_NA_reverse": ("NA/skill/19450?reverse=True", "NA_Fionn_1st_skill_reverse"),
+    "skill_JP_dependFunc": ("JP/skill/671650", "JP_Melt_skill_dependFunc"),
     "NP_JP_id": ("JP/NP/301101", "JP_Fionn_NP"),
     "NP_JP_reverse": ("JP/NP/202901?reverse=True", "JP_Fujino_NP_reverse"),
     "function_NA_id": ("NA/function/400", "NA_function_400"),

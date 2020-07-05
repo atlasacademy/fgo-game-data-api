@@ -1,0 +1,153 @@
+{
+  "id": 671650,
+  "num": 3,
+  "name": "メルトエンヴィー EX",
+  "detail": "自身を除く味方全体からNPを吸収する ＋ 自身のスター集中度をアップ(1ターン)＆攻撃力をアップ(1ターン)",
+  "strengthStatus": 0,
+  "priority": 1,
+  "condQuestId": 0,
+  "condQuestPhase": 0,
+  "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00513.png",
+  "coolDown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5],
+  "actIndividuality": [],
+  "functions": [
+    {
+      "funcId": 3957,
+      "funcType": "gainNpFromTargets",
+      "funcTargetType": "self",
+      "funcTargetTeam": "player",
+      "funcPopupText": "NP吸収",
+      "functvals": [],
+      "funcquestTvals": [],
+      "buffs": [],
+      "svals": [
+        {
+          "Rate": 1000,
+          "DependFuncId": 3962,
+          "DependFuncVals": { "Rate": 0, "Value": 2000 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 3962,
+          "DependFuncVals": { "Rate": 0, "Value": 2100 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 3962,
+          "DependFuncVals": { "Rate": 0, "Value": 2200 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 3962,
+          "DependFuncVals": { "Rate": 0, "Value": 2300 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 3962,
+          "DependFuncVals": { "Rate": 0, "Value": 2400 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 3962,
+          "DependFuncVals": { "Rate": 0, "Value": 2500 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 3962,
+          "DependFuncVals": { "Rate": 0, "Value": 2600 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 3962,
+          "DependFuncVals": { "Rate": 0, "Value": 2700 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 3962,
+          "DependFuncVals": { "Rate": 0, "Value": 2800 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 3962,
+          "DependFuncVals": { "Rate": 0, "Value": 3000 }
+        }
+      ]
+    },
+    {
+      "funcId": 365,
+      "funcType": "addStateShort",
+      "funcTargetType": "self",
+      "funcTargetTeam": "player",
+      "funcPopupText": "スター集中アップ",
+      "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_325.png",
+      "functvals": [],
+      "funcquestTvals": [],
+      "buffs": [
+        {
+          "id": 115,
+          "name": "スター集中アップ",
+          "detail": "スターの集まりやすさをアップ",
+          "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_325.png",
+          "type": "upStarweight",
+          "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+          "tvals": [],
+          "ckSelfIndv": [],
+          "ckOpIndv": [],
+          "maxRate": 500000
+        }
+      ],
+      "svals": [
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 3000 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 3200 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 3400 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 3600 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 3800 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 4000 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 4200 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 4400 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 4600 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 5000 }
+      ]
+    },
+    {
+      "funcId": 147,
+      "funcType": "addStateShort",
+      "funcTargetType": "self",
+      "funcTargetTeam": "playerAndEnemy",
+      "funcPopupText": "攻撃力アップ",
+      "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_300.png",
+      "functvals": [],
+      "funcquestTvals": [],
+      "buffs": [
+        {
+          "id": 126,
+          "name": "攻撃力アップ",
+          "detail": "攻撃力をアップ",
+          "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_300.png",
+          "type": "upAtk",
+          "vals": [
+            { "id": 3004, "name": "buffPositiveEffect" },
+            { "id": 3006, "name": "buffIncreaseDamage" },
+            { "id": 3027, "name": "buffAtkUp" }
+          ],
+          "tvals": [],
+          "ckSelfIndv": [],
+          "ckOpIndv": [],
+          "maxRate": 5000
+        }
+      ],
+      "svals": [
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 300 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 320 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 340 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 360 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 380 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 400 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 420 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 440 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 460 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 500 }
+      ]
+    }
+  ]
+}
