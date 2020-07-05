@@ -172,7 +172,7 @@ def parse_dataVals(
                     elif i == 2:
                         text = "Target"
             except ValueError:
-                array2 = arrayi.split(":")
+                array2 = re.split(r":\s*(?![^\[\]]*\])", arrayi)
                 if len(array2) > 1:
                     text = array2[0]
                     if text == "DependFuncId1":
