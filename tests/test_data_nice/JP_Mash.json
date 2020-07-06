@@ -506,6 +506,28 @@
             { "Rate": 1000, "Value": 1800 },
             { "Rate": 1000, "Value": 2000 }
           ]
+        },
+        {
+          "funcId": 471,
+          "funcType": "hastenNpturn",
+          "funcTargetType": "ptOne",
+          "funcTargetTeam": "enemy",
+          "funcPopupText": "チャージ増加",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [],
+          "svals": [
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 }
+          ]
         }
       ]
     },
@@ -595,6 +617,67 @@
             { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 3400 },
             { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 3600 },
             { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 4000 }
+          ]
+        },
+        {
+          "funcId": 2195,
+          "funcType": "addState",
+          "funcTargetType": "self",
+          "funcTargetTeam": "enemy",
+          "funcPopupText": "タゲ集中アップ",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 487,
+              "name": "タゲ集中アップ",
+              "detail": "自身にターゲットを固定する",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
+              "type": "upHate",
+              "vals": [
+                { "id": 3004, "name": "buffPositiveEffect" },
+                { "id": 3023, "name": "buffTargetFocus" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 50000
+            }
+          ],
+          "svals": [
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 }
+          ]
+        },
+        {
+          "funcId": 470,
+          "funcType": "hastenNpturn",
+          "funcTargetType": "self",
+          "funcTargetTeam": "enemy",
+          "funcPopupText": "チャージ増加",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [],
+          "svals": [
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 }
           ]
         }
       ]
@@ -771,6 +854,67 @@
             { "Rate": 1000, "Value": 1800 },
             { "Rate": 1000, "Value": 2000 }
           ]
+        },
+        {
+          "funcId": 2195,
+          "funcType": "addState",
+          "funcTargetType": "self",
+          "funcTargetTeam": "enemy",
+          "funcPopupText": "タゲ集中アップ",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 487,
+              "name": "タゲ集中アップ",
+              "detail": "自身にターゲットを固定する",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
+              "type": "upHate",
+              "vals": [
+                { "id": 3004, "name": "buffPositiveEffect" },
+                { "id": 3023, "name": "buffTargetFocus" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 50000
+            }
+          ],
+          "svals": [
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 }
+          ]
+        },
+        {
+          "funcId": 470,
+          "funcType": "hastenNpturn",
+          "funcTargetType": "self",
+          "funcTargetTeam": "enemy",
+          "funcPopupText": "チャージ増加",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [],
+          "svals": [
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 }
+          ]
         }
       ]
     },
@@ -842,6 +986,45 @@
               "id": 181,
               "name": "タゲ集中アップ",
               "detail": "敵からの狙われやすさをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
+              "type": "upHate",
+              "vals": [
+                { "id": 3004, "name": "buffPositiveEffect" },
+                { "id": 3023, "name": "buffTargetFocus" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 50000
+            }
+          ],
+          "svals": [
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 }
+          ]
+        },
+        {
+          "funcId": 2195,
+          "funcType": "addState",
+          "funcTargetType": "self",
+          "funcTargetTeam": "enemy",
+          "funcPopupText": "タゲ集中アップ",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 487,
+              "name": "タゲ集中アップ",
+              "detail": "自身にターゲットを固定する",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
               "type": "upHate",
               "vals": [
@@ -1061,6 +1244,67 @@
             { "Rate": 1000, "Value": 1800 },
             { "Rate": 1000, "Value": 2000 }
           ]
+        },
+        {
+          "funcId": 2195,
+          "funcType": "addState",
+          "funcTargetType": "self",
+          "funcTargetTeam": "enemy",
+          "funcPopupText": "タゲ集中アップ",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 487,
+              "name": "タゲ集中アップ",
+              "detail": "自身にターゲットを固定する",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
+              "type": "upHate",
+              "vals": [
+                { "id": 3004, "name": "buffPositiveEffect" },
+                { "id": 3023, "name": "buffTargetFocus" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 50000
+            }
+          ],
+          "svals": [
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 }
+          ]
+        },
+        {
+          "funcId": 470,
+          "funcType": "hastenNpturn",
+          "funcTargetType": "self",
+          "funcTargetTeam": "enemy",
+          "funcPopupText": "チャージ増加",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [],
+          "svals": [
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 }
+          ]
         }
       ]
     },
@@ -1132,6 +1376,45 @@
               "id": 181,
               "name": "タゲ集中アップ",
               "detail": "敵からの狙われやすさをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
+              "type": "upHate",
+              "vals": [
+                { "id": 3004, "name": "buffPositiveEffect" },
+                { "id": 3023, "name": "buffTargetFocus" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 50000
+            }
+          ],
+          "svals": [
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 }
+          ]
+        },
+        {
+          "funcId": 2195,
+          "funcType": "addState",
+          "funcTargetType": "self",
+          "funcTargetTeam": "enemy",
+          "funcPopupText": "タゲ集中アップ",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 487,
+              "name": "タゲ集中アップ",
+              "detail": "自身にターゲットを固定する",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
               "type": "upHate",
               "vals": [

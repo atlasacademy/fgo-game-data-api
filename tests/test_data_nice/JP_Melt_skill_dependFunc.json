@@ -74,6 +74,68 @@
       ]
     },
     {
+      "funcId": 5046,
+      "funcType": "absorbNpturn",
+      "funcTargetType": "self",
+      "funcTargetTeam": "enemy",
+      "funcPopupText": "チャージ吸収",
+      "functvals": [],
+      "funcquestTvals": [],
+      "buffs": [],
+      "svals": [
+        {
+          "Rate": 1000,
+          "DependFuncId": 5061,
+          "DependFuncVals": { "Rate": 0, "Value": 1 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 5061,
+          "DependFuncVals": { "Rate": 0, "Value": 1 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 5061,
+          "DependFuncVals": { "Rate": 0, "Value": 1 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 5061,
+          "DependFuncVals": { "Rate": 0, "Value": 1 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 5061,
+          "DependFuncVals": { "Rate": 0, "Value": 1 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 5061,
+          "DependFuncVals": { "Rate": 0, "Value": 1 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 5061,
+          "DependFuncVals": { "Rate": 0, "Value": 1 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 5061,
+          "DependFuncVals": { "Rate": 0, "Value": 1 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 5061,
+          "DependFuncVals": { "Rate": 0, "Value": 1 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 5061,
+          "DependFuncVals": { "Rate": 0, "Value": 1 }
+        }
+      ]
+    },
+    {
       "funcId": 365,
       "funcType": "addStateShort",
       "funcTargetType": "self",
@@ -107,6 +169,46 @@
         { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 4400 },
         { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 4600 },
         { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 5000 }
+      ]
+    },
+    {
+      "funcId": 215,
+      "funcType": "addStateShort",
+      "funcTargetType": "self",
+      "funcTargetTeam": "enemy",
+      "funcPopupText": "クリティカル発生アップ",
+      "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
+      "functvals": [],
+      "funcquestTvals": [],
+      "buffs": [
+        {
+          "id": 144,
+          "name": "クリティカル発生アップ",
+          "detail": "クリティカルの発生率をアップ",
+          "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
+          "type": "upCriticalrate",
+          "vals": [
+            { "id": 3004, "name": "buffPositiveEffect" },
+            { "id": 3006, "name": "buffIncreaseDamage" },
+            { "id": 3032, "name": "buffCritRateUp" }
+          ],
+          "tvals": [],
+          "ckSelfIndv": [],
+          "ckOpIndv": [],
+          "maxRate": 5000
+        }
+      ],
+      "svals": [
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 100 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 100 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 100 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 100 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 100 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 100 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 100 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 100 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 100 },
+        { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 100 }
       ]
     },
     {

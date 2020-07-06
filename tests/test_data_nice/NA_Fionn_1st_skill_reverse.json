@@ -46,6 +46,46 @@
         { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 342 },
         { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 380 }
       ]
+    },
+    {
+      "funcId": 215,
+      "funcType": "addStateShort",
+      "funcTargetType": "self",
+      "funcTargetTeam": "enemy",
+      "funcPopupText": "Critical Rate\nUp",
+      "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_327.png",
+      "functvals": [],
+      "funcquestTvals": [],
+      "buffs": [
+        {
+          "id": 144,
+          "name": "Critical Hit Rate Up",
+          "detail": "Increase Critical Hit rate",
+          "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_327.png",
+          "type": "upCriticalrate",
+          "vals": [
+            { "id": 3004, "name": "buffPositiveEffect" },
+            { "id": 3006, "name": "buffIncreaseDamage" },
+            { "id": 3032, "name": "buffCritRateUp" }
+          ],
+          "tvals": [],
+          "ckSelfIndv": [],
+          "ckOpIndv": [],
+          "maxRate": 5000
+        }
+      ],
+      "svals": [
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 }
+      ]
     }
   ],
   "reverseServants": [
@@ -688,6 +728,46 @@
                 { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 342 },
                 { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 380 }
               ]
+            },
+            {
+              "funcId": 215,
+              "funcType": "addStateShort",
+              "funcTargetType": "self",
+              "funcTargetTeam": "enemy",
+              "funcPopupText": "Critical Rate\nUp",
+              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_327.png",
+              "functvals": [],
+              "funcquestTvals": [],
+              "buffs": [
+                {
+                  "id": 144,
+                  "name": "Critical Hit Rate Up",
+                  "detail": "Increase Critical Hit rate",
+                  "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_327.png",
+                  "type": "upCriticalrate",
+                  "vals": [
+                    { "id": 3004, "name": "buffPositiveEffect" },
+                    { "id": 3006, "name": "buffIncreaseDamage" },
+                    { "id": 3032, "name": "buffCritRateUp" }
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "maxRate": 5000
+                }
+              ],
+              "svals": [
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 }
+              ]
             }
           ]
         },
@@ -930,6 +1010,46 @@
               ]
             },
             {
+              "funcId": 221,
+              "funcType": "addStateShort",
+              "funcTargetType": "ptAll",
+              "funcTargetTeam": "enemy",
+              "funcPopupText": "Critical Rate\nUp",
+              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_327.png",
+              "functvals": [],
+              "funcquestTvals": [],
+              "buffs": [
+                {
+                  "id": 144,
+                  "name": "Critical Hit Rate Up",
+                  "detail": "Increase Critical Hit rate",
+                  "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_327.png",
+                  "type": "upCriticalrate",
+                  "vals": [
+                    { "id": 3004, "name": "buffPositiveEffect" },
+                    { "id": 3006, "name": "buffIncreaseDamage" },
+                    { "id": 3032, "name": "buffCritRateUp" }
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "maxRate": 5000
+                }
+              ],
+              "svals": [
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 }
+              ]
+            },
+            {
               "funcId": 340,
               "funcType": "addStateShort",
               "funcTargetType": "ptAll",
@@ -963,6 +1083,28 @@
                 { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 240 },
                 { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 260 },
                 { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 }
+              ]
+            },
+            {
+              "funcId": 472,
+              "funcType": "hastenNpturn",
+              "funcTargetType": "ptAll",
+              "funcTargetTeam": "enemy",
+              "funcPopupText": "Charge Gain",
+              "functvals": [],
+              "funcquestTvals": [],
+              "buffs": [],
+              "svals": [
+                { "Rate": 600, "Value": 1 },
+                { "Rate": 600, "Value": 1 },
+                { "Rate": 600, "Value": 1 },
+                { "Rate": 600, "Value": 1 },
+                { "Rate": 600, "Value": 1 },
+                { "Rate": 600, "Value": 1 },
+                { "Rate": 600, "Value": 1 },
+                { "Rate": 600, "Value": 1 },
+                { "Rate": 600, "Value": 1 },
+                { "Rate": 600, "Value": 1 }
               ]
             }
           ]

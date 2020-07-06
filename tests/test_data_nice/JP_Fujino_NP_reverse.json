@@ -916,6 +916,28 @@
                 { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 280 },
                 { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 }
               ]
+            },
+            {
+              "funcId": 470,
+              "funcType": "hastenNpturn",
+              "funcTargetType": "self",
+              "funcTargetTeam": "enemy",
+              "funcPopupText": "チャージ増加",
+              "functvals": [],
+              "funcquestTvals": [],
+              "buffs": [],
+              "svals": [
+                { "Rate": 600, "Value": 1 },
+                { "Rate": 600, "Value": 1 },
+                { "Rate": 600, "Value": 1 },
+                { "Rate": 600, "Value": 1 },
+                { "Rate": 600, "Value": 1 },
+                { "Rate": 600, "Value": 1 },
+                { "Rate": 600, "Value": 1 },
+                { "Rate": 600, "Value": 1 },
+                { "Rate": 600, "Value": 1 },
+                { "Rate": 600, "Value": 1 }
+              ]
             }
           ]
         },
@@ -992,6 +1014,46 @@
                 { "Rate": 1000, "Value": 12 },
                 { "Rate": 1000, "Value": 13 },
                 { "Rate": 1000, "Value": 15 }
+              ]
+            },
+            {
+              "funcId": 215,
+              "funcType": "addStateShort",
+              "funcTargetType": "self",
+              "funcTargetTeam": "enemy",
+              "funcPopupText": "クリティカル発生アップ",
+              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
+              "functvals": [],
+              "funcquestTvals": [],
+              "buffs": [
+                {
+                  "id": 144,
+                  "name": "クリティカル発生アップ",
+                  "detail": "クリティカルの発生率をアップ",
+                  "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
+                  "type": "upCriticalrate",
+                  "vals": [
+                    { "id": 3004, "name": "buffPositiveEffect" },
+                    { "id": 3006, "name": "buffIncreaseDamage" },
+                    { "id": 3032, "name": "buffCritRateUp" }
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "maxRate": 5000
+                }
+              ],
+              "svals": [
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 }
               ]
             }
           ]

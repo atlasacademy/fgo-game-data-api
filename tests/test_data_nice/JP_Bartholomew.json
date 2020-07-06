@@ -738,6 +738,46 @@
           ]
         },
         {
+          "funcId": 1292,
+          "funcType": "addStateShort",
+          "funcTargetType": "ptOther",
+          "funcTargetTeam": "enemy",
+          "funcPopupText": "クリティカル発生アップ",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 144,
+              "name": "クリティカル発生アップ",
+              "detail": "クリティカルの発生率をアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
+              "type": "upCriticalrate",
+              "vals": [
+                { "id": 3004, "name": "buffPositiveEffect" },
+                { "id": 3006, "name": "buffIncreaseDamage" },
+                { "id": 3032, "name": "buffCritRateUp" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 5000
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 50 }
+          ]
+        },
+        {
           "funcId": 207,
           "funcType": "addStateShort",
           "funcTargetType": "ptAll",
@@ -875,6 +915,42 @@
           ]
         },
         {
+          "funcId": 308,
+          "funcType": "addState",
+          "funcTargetType": "enemyAll",
+          "funcTargetTeam": "player",
+          "funcPopupText": "スター発生ダウン",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_510.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 118,
+              "name": "スター発生ダウン",
+              "detail": "スター発生率をダウン",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_510.png",
+              "type": "downCriticalpoint",
+              "vals": [{ "id": 3005, "name": "buffNegativeEffect" }],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 5000
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 110 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 120 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 130 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 140 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 150 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 160 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 170 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 180 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+          ]
+        },
+        {
           "funcId": 477,
           "funcType": "gainStar",
           "funcTargetType": "self",
@@ -894,6 +970,46 @@
             { "Rate": 1000, "Value": 17 },
             { "Rate": 1000, "Value": 18 },
             { "Rate": 1000, "Value": 20 }
+          ]
+        },
+        {
+          "funcId": 216,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "enemy",
+          "funcPopupText": "クリティカル発生アップ",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 144,
+              "name": "クリティカル発生アップ",
+              "detail": "クリティカルの発生率をアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
+              "type": "upCriticalrate",
+              "vals": [
+                { "id": 3004, "name": "buffPositiveEffect" },
+                { "id": 3006, "name": "buffIncreaseDamage" },
+                { "id": 3032, "name": "buffCritRateUp" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 5000
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": 2, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 2, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 2, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 2, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 2, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 2, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 2, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 2, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 2, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 2, "Count": -1, "Value": 100 }
           ]
         }
       ]

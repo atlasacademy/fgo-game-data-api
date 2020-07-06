@@ -619,6 +619,28 @@
             { "Rate": 1000, "Value": 1800 },
             { "Rate": 1000, "Value": 2000 }
           ]
+        },
+        {
+          "funcId": 472,
+          "funcType": "hastenNpturn",
+          "funcTargetType": "ptAll",
+          "funcTargetTeam": "enemy",
+          "funcPopupText": "Charge Gain",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [],
+          "svals": [
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 }
+          ]
         }
       ]
     },
@@ -669,6 +691,46 @@
             { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 5 },
             { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 5 },
             { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 5 }
+          ]
+        },
+        {
+          "funcId": 215,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "enemy",
+          "funcPopupText": "Critical Rate\nUp",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_327.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 144,
+              "name": "Critical Hit Rate Up",
+              "detail": "Increase Critical Hit rate",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_327.png",
+              "type": "upCriticalrate",
+              "vals": [
+                { "id": 3004, "name": "buffPositiveEffect" },
+                { "id": 3006, "name": "buffIncreaseDamage" },
+                { "id": 3032, "name": "buffCritRateUp" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 5000
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 100 }
           ]
         },
         {
@@ -1142,6 +1204,65 @@
           ]
         },
         {
+          "funcId": 308,
+          "funcType": "addState",
+          "funcTargetType": "enemyAll",
+          "funcTargetTeam": "player",
+          "funcPopupText": "C. Star\nDrop Rate Down",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_510.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 118,
+              "name": "C. Star Drop Rate Down",
+              "detail": "Decrease C. Star drop rate",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_510.png",
+              "type": "downCriticalpoint",
+              "vals": [{ "id": 3005, "name": "buffNegativeEffect" }],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 5000
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 }
+          ],
+          "svals2": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 }
+          ],
+          "svals3": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 }
+          ],
+          "svals4": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 }
+          ],
+          "svals5": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 }
+          ]
+        },
+        {
           "funcId": 419,
           "funcType": "addStateShort",
           "funcTargetType": "enemyAll",
@@ -1397,6 +1518,65 @@
             { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 500 },
             { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 500 },
             { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 500 }
+          ]
+        },
+        {
+          "funcId": 308,
+          "funcType": "addState",
+          "funcTargetType": "enemyAll",
+          "funcTargetTeam": "player",
+          "funcPopupText": "C. Star\nDrop Rate Down",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_510.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 118,
+              "name": "C. Star Drop Rate Down",
+              "detail": "Decrease C. Star drop rate",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_510.png",
+              "type": "downCriticalpoint",
+              "vals": [{ "id": 3005, "name": "buffNegativeEffect" }],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 5000
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 }
+          ],
+          "svals2": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 }
+          ],
+          "svals3": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 }
+          ],
+          "svals4": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 }
+          ],
+          "svals5": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 }
           ]
         },
         {

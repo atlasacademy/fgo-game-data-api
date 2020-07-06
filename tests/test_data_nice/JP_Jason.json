@@ -749,6 +749,46 @@
           ]
         },
         {
+          "funcId": 217,
+          "funcType": "addStateShort",
+          "funcTargetType": "ptOne",
+          "funcTargetTeam": "enemy",
+          "funcPopupText": "クリティカル発生アップ",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 144,
+              "name": "クリティカル発生アップ",
+              "detail": "クリティカルの発生率をアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
+              "type": "upCriticalrate",
+              "vals": [
+                { "id": 3004, "name": "buffPositiveEffect" },
+                { "id": 3006, "name": "buffIncreaseDamage" },
+                { "id": 3032, "name": "buffCritRateUp" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 5000
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 50 }
+          ]
+        },
+        {
           "funcId": 188,
           "funcType": "addState",
           "funcTargetType": "self",
@@ -865,6 +905,28 @@
           ]
         },
         {
+          "funcId": 3857,
+          "funcType": "hastenNpturn",
+          "funcTargetType": "ptOther",
+          "funcTargetTeam": "enemy",
+          "funcPopupText": "チャージ増加",
+          "functvals": [{ "id": 2466, "name": "argonaut" }],
+          "funcquestTvals": [],
+          "buffs": [],
+          "svals": [
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 }
+          ]
+        },
+        {
           "funcId": 3858,
           "funcType": "addStateShort",
           "funcTargetType": "ptOther",
@@ -938,6 +1000,46 @@
             { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 270 },
             { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 280 },
             { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 }
+          ]
+        },
+        {
+          "funcId": 3860,
+          "funcType": "addStateShort",
+          "funcTargetType": "ptOther",
+          "funcTargetTeam": "enemy",
+          "funcPopupText": "クリティカル発生アップ",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
+          "functvals": [{ "id": 2466, "name": "argonaut" }],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 144,
+              "name": "クリティカル発生アップ",
+              "detail": "クリティカルの発生率をアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
+              "type": "upCriticalrate",
+              "vals": [
+                { "id": 3004, "name": "buffPositiveEffect" },
+                { "id": 3006, "name": "buffIncreaseDamage" },
+                { "id": 3032, "name": "buffCritRateUp" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 5000
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 50 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 50 }
           ]
         }
       ]

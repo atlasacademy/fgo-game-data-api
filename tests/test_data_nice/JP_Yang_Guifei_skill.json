@@ -74,6 +74,68 @@
       ]
     },
     {
+      "funcId": 5045,
+      "funcType": "absorbNpturn",
+      "funcTargetType": "self",
+      "funcTargetTeam": "enemy",
+      "funcPopupText": "チャージ吸収",
+      "functvals": [],
+      "funcquestTvals": [],
+      "buffs": [],
+      "svals": [
+        {
+          "Rate": 1000,
+          "DependFuncId": 469,
+          "DependFuncVals": { "Rate": 0, "Value": 2000, "Value2": 100 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 469,
+          "DependFuncVals": { "Rate": 0, "Value": 2000, "Value2": 100 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 469,
+          "DependFuncVals": { "Rate": 0, "Value": 2000, "Value2": 100 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 469,
+          "DependFuncVals": { "Rate": 0, "Value": 2000, "Value2": 100 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 469,
+          "DependFuncVals": { "Rate": 0, "Value": 2000, "Value2": 100 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 469,
+          "DependFuncVals": { "Rate": 0, "Value": 2000, "Value2": 100 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 469,
+          "DependFuncVals": { "Rate": 0, "Value": 2000, "Value2": 100 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 469,
+          "DependFuncVals": { "Rate": 0, "Value": 2000, "Value2": 100 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 469,
+          "DependFuncVals": { "Rate": 0, "Value": 2000, "Value2": 100 }
+        },
+        {
+          "Rate": 1000,
+          "DependFuncId": 469,
+          "DependFuncVals": { "Rate": 0, "Value": 2000, "Value2": 100 }
+        }
+      ]
+    },
+    {
       "funcId": 197,
       "funcType": "addStateShort",
       "funcTargetType": "enemyAll",

@@ -124,6 +124,28 @@
         { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 280 },
         { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 }
       ]
+    },
+    {
+      "funcId": 470,
+      "funcType": "hastenNpturn",
+      "funcTargetType": "self",
+      "funcTargetTeam": "enemy",
+      "funcPopupText": "Charge Gain",
+      "functvals": [],
+      "funcquestTvals": [],
+      "buffs": [],
+      "svals": [
+        { "Rate": 600, "Value": 1 },
+        { "Rate": 600, "Value": 1 },
+        { "Rate": 600, "Value": 1 },
+        { "Rate": 600, "Value": 1 },
+        { "Rate": 600, "Value": 1 },
+        { "Rate": 600, "Value": 1 },
+        { "Rate": 600, "Value": 1 },
+        { "Rate": 600, "Value": 1 },
+        { "Rate": 600, "Value": 1 },
+        { "Rate": 600, "Value": 1 }
+      ]
     }
   ]
 }
