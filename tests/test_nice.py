@@ -17,10 +17,9 @@ test_cases_dict = {
     "servant_JP_id": ("JP/servant/304300", "JP_Elice"),
     "servant_JP_collection_servant": ("JP/servant/149", "JP_Tiamat"),
     "servant_JP_costume": ("JP/servant/1", "JP_Mash"),
-    "servant_JP_id_English": ("JP/servant/304300?lang=en", "JP_Elice_EN"),
     "servant_JP_multiple_NPs_space_istar": ("JP/servant/268", "JP_Space_Ishtar"),
-    "servant_JP_string_svals_values": ("JP/servant/403400?lang=en", "JP_Bartholomew"),
-    "servant_JP_datavals_subState_Value2": ("JP/servant/103800", "JP_Jason"),
+    "datavals_string_svals_values": ("JP/NP/403401", "JP_Bartholomew_NP"),
+    "datavals_subState_Value2": ("JP/skill/631000", "JP_Jason_skill_1"),
     "skill_NA_id": ("NA/skill/454650", "NA_Fujino_1st_skill"),
     "skill_NA_reverse": ("NA/skill/19450?reverse=True", "NA_Fionn_1st_skill_reverse"),
     "skill_JP_dependFunc": ("JP/skill/671650", "JP_Melt_skill_dependFunc"),
@@ -88,3 +87,8 @@ class TestServantSpecial:
         reverse_servants = {item["id"] for item in response.json()["reverseServants"]}
         assert response.status_code == 200
         assert reverse_servants == {201200, 401800, 601000}
+
+    def test_JP_English_name(self):
+        response = client.get("/nice/JP/servant/304300?lang=en")
+        assert response.status_code == 200
+        assert response.json()["name"] == "Elice Utsumi"
