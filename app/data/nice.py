@@ -134,6 +134,7 @@ def parse_dataVals(
                     FuncType.DAMAGE_NP_STATE_INDIVIDUAL,
                     FuncType.DAMAGE_NP_STATE_INDIVIDUAL_FIX,
                     FuncType.DAMAGE_NP_INDIVIDUAL_SUM,
+                    FuncType.DAMAGE_NP_RARE,
                 }:
                     if i == 0:
                         text = "Rate"
