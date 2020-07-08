@@ -38,7 +38,7 @@ ASSET_URL: Dict[str, str] = {
     "mcmasterFace": "{base_url}/{region}/MasterFigure/equip{item_id:05}.png",
     "mcmasterFigure": "{base_url}/{region}/MasterFace/equip{item_id:05}.png",
     "commandCode": "{base_url}/{region}/CommandCodes/c_{item_id}.png",
-    "commandGraph": "{base_url}/{region}/CommandGraph/{item_id}/{item_id}a.png",
+    "commandGraph": "{base_url}/{region}/CommandGraph/{item_id}a.png",
 }
 
 
