@@ -24,13 +24,8 @@ def get_basic_svt(
         "rarity": masters[region].mstSvtLimitId[item_id][0].rarity,
     }
 
-    if mstSvt.type in {SvtType.ENEMY_COLLECTION_DETAIL, SvtType.SERVANT_EQUIP}:
-        face_url_i = 0
-    elif mstSvt.type in {SvtType.NORMAL, SvtType.HEROINE}:
-        face_url_i = 3
-
     basic_servant["face"] = ASSET_URL["face"].format(
-        base_url=settings.asset_url, region=region, item_id=item_id, i=face_url_i
+        base_url=settings.asset_url, region=region, item_id=item_id, i=0
     )
 
     if region == Region.JP and lang == Language.en:
