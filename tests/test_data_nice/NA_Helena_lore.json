@@ -1152,7 +1152,7 @@
           "buffs": [
             {
               "id": 145,
-              "name": "Critical Hit rateDown",
+              "name": "Critical Hit Rate Down",
               "detail": "Decrease Critical Hit rate",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_523.png",
               "type": "downCriticalrate",
@@ -1469,7 +1469,7 @@
           "buffs": [
             {
               "id": 145,
-              "name": "Critical Hit rateDown",
+              "name": "Critical Hit Rate Down",
               "detail": "Decrease Critical Hit rate",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_523.png",
               "type": "downCriticalrate",
