@@ -37,17 +37,19 @@ Static files that can be used for damage calculation. Change `JP` to `NA` in the
 """
 export_links = """
 
-Nice data of all servants, CEs and MCs. These are pre-generated so they can be served instantly unlike querying the API:
-- [NA servant](/export/NA/nice_servant.json),
-[NA CE](/export/NA/nice_equip.json),
-[NA CC](/export/NA/nice_command_code.json),
-[NA material](/export/NA/nice_item.json),
-[NA MC](/export/NA/nice_mystic_code.json).
-- [JP servant](/export/JP/nice_servant.json),
-[JP CE](/export/JP/nice_equip.json),
-[JP CC](/export/JP/nice_command_code.json),
-[JP material](/export/JP/nice_item.json),
-[JP MC](/export/JP/nice_mystic_code.json).
+Pre-generated nice data that can be served instantly unlike querying the API:
+- NA data:
+  - [NA servant](/export/NA/nice_servant.json)
+  - [NA Craft Essence](/export/NA/nice_equip.json)
+  - [NA Command Code](/export/NA/nice_command_code.json)
+  - [NA Material](/export/NA/nice_item.json)
+  - [NA  Mystic Code](/export/NA/nice_mystic_code.json)
+- JP data:
+  - [JP servant](/export/JP/nice_servant.json)
+  - [JP Craft Essence](/export/JP/nice_equip.json)
+  - [JP Command Code](/export/JP/nice_command_code.json)
+  - [JP Material](/export/JP/nice_item.json)
+  - [JP Mystic CodeC](/export/JP/nice_mystic_code.json)
 """
 
 app_description = app_short_description + app_more_description
