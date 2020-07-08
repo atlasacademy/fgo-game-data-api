@@ -643,6 +643,7 @@ def get_nice_td_alone(
 
 def get_nice_mystic_code(region: Region, mc_id: int) -> Dict[str, Any]:
     raw_data = get_mystic_code_entity(region, mc_id, expand=True)
+    base_settings = {"base_url": settings.asset_url, "region": region}
     nice_data: Dict[str, Any] = {
         "id": raw_data.mstEquip.id,
         "name": raw_data.mstEquip.name,
@@ -651,14 +652,10 @@ def get_nice_mystic_code(region: Region, mc_id: int) -> Dict[str, Any]:
         "extraAssets": {
             asset_category: {
                 "male": ASSET_URL[f"mc{asset_category}"].format(
-                    base_url=settings.asset_url,
-                    region=region,
-                    item_id=raw_data.mstEquip.maleImageId,
+                    **base_settings, item_id=raw_data.mstEquip.maleImageId,
                 ),
                 "female": ASSET_URL[f"mc{asset_category}"].format(
-                    base_url=settings.asset_url,
-                    region=region,
-                    item_id=raw_data.mstEquip.femaleImageId,
+                    **base_settings, item_id=raw_data.mstEquip.femaleImageId,
                 ),
             }
             for asset_category in ("item", "masterFace", "masterFigure")
