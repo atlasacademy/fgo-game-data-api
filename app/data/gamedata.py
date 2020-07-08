@@ -35,6 +35,7 @@ MASTER_WITH_ID = {
     "mstItem",
     "mstEquip",
     "mstQuest",
+    "mstCommandCode",
 }
 MASTER_WITHOUT_ID = {
     "mstSvtExp",
@@ -42,6 +43,8 @@ MASTER_WITHOUT_ID = {
     "mstEquipExp",
     "mstEquipSkill",
     "mstQuestPhase",
+    "mstCommandCodeSkill",
+    "mstCommandCodeComment",
 }
 SVT_STUFFS = {
     "mstSvtCard",
@@ -132,6 +135,8 @@ for region_name, gamedata in region_path:
                 id_name = "treaureDeviceId"
             elif extra_stuff == "mstSvtTreasureDevice":
                 id_name = "treasureDeviceId"
+            else:  # pragma: no cover
+                raise ValueError("Can't set id_name")
             if item[id_name] in master[f"{extra_stuff}Id"]:
                 master[f"{extra_stuff}Id"][item[id_name]].append(item)
             else:

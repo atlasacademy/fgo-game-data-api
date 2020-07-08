@@ -7,6 +7,7 @@ from ..data.common import Region
 from ..data.gamedata import masters
 from ..data.schemas.raw import (
     BuffEntity,
+    CommandCodeEntity,
     FunctionEntity,
     ItemEntity,
     MysticCodeEntity,
@@ -161,13 +162,32 @@ async def get_mystic_code(region: Region, item_id: int, expand: bool = False):
     """
     Get Mystic Code info from ID
 
-    - **expand**: Add expanded skill objects to mstSvt.expandedClassPassive
-    from the skill IDs in mstSvt.classPassive.
-    Expand all other skills and functions as well.
+    - **expand**: Expand the skills and functions.
     """
     if item_id in masters[region].mstEquipId:
         mc_entity = raw.get_mystic_code_entity(region, item_id, expand)
         return item_response(mc_entity)
+    else:
+        raise HTTPException(status_code=404, detail="Mystic Code not found")
+
+
+@router.get(
+    "/{region}/CC/{item_id}",
+    summary="Get Command Code data",
+    response_description="Command Code entity",
+    response_model=CommandCodeEntity,
+    response_model_exclude_unset=True,
+    responses=responses,
+)
+async def get_command_code(region: Region, item_id: int, expand: bool = False):
+    """
+    Get Command Code info from ID
+
+    - **expand**: Expand the skills and functions.
+    """
+    if item_id in masters[region].mstCommandCodeId:
+        cc_entity = raw.get_command_code_entity(region, item_id, expand)
+        return item_response(cc_entity)
     else:
         raise HTTPException(status_code=404, detail="Mystic Code not found")
 

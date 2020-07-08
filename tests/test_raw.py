@@ -57,6 +57,7 @@ test_cases_dict = {
     "buff_NA_reverse": ("NA/buff/190?reverse=True", "NA_buff_190_reverse"),
     "item_JP": ("JP/item/7103", "JP_item_Lancer_Monument"),
     "MC_NA": ("JP/MC/20", "JP_MC_Plugsuit"),
+    "CC_NA": ("NA/CC/8400110", "NA_CC_Fou"),
     "quest_JP": ("JP/quest/94025012/1", "JP_Meaka_Fudou"),
 }
 
@@ -80,6 +81,7 @@ cases_404_dict = {
     "buff": "765",
     "item": "941234",
     "MC": "62537",
+    "CC": "8400111",
     "quest": "1234567",
     "quest/94025012": "2",
 }

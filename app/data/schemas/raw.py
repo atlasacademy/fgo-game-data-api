@@ -319,6 +319,32 @@ class MstEquipSkill(BaseModel):
     condLv: int  # 0
 
 
+class MstCommandCode(BaseModel):
+    id: int  # 8400110
+    collectionNo: int  # 11
+    name: str  # "Lucky Beast"
+    ruby: str  # "Lucky Beast"
+    rarity: int  # 3
+    sellQp: int  # 500
+    sellMana: int  # 1
+    sellRarePri: int  # 0
+
+
+class MstCommandCodeSkill(BaseModel):
+    commandCodeId: int  # 8400080
+    num: int  # 1
+    priority: int  # 1
+    skillId: int  # 991380
+    startedAt: int  # 946684800
+    endedAt: int  # 1893456000
+
+
+class MstCommandCodeComment(BaseModel):
+    commandCodeId: int  # 8400040
+    comment: str
+    illustratorId: int  # 81
+
+
 class MstItem(BaseModel):
     individuality: List[int]  # [],
     script: Dict[str, Union[int, str]]  # {},
@@ -466,6 +492,10 @@ class Master(BaseModel):
     mstQuestPhaseId: Dict[int, Dict[int, MstQuestPhase]]
     mstSvtComment: List[MstSvtComment]
     mstSvtCommentId: Dict[int, List[MstSvtComment]]
+    mstCommandCode: List[MstCommandCode]
+    mstCommandCodeId: Dict[int, MstCommandCode]
+    mstCommandCodeSkill: List[MstCommandCodeSkill]
+    mstCommandCodeComment: List[MstCommandCodeComment]
 
 
 class ServantEntity(BaseModelORJson):
@@ -501,6 +531,12 @@ class MysticCodeEntity(BaseModelORJson):
     mstEquip: MstEquip
     mstSkill: List[SkillEntityNoReverse]
     mstEquipExp: List[MstEquipExp]
+
+
+class CommandCodeEntity(BaseModelORJson):
+    mstCommandCode: MstCommandCode
+    mstSkill: List[SkillEntityNoReverse]
+    mstCommandCodeComment: MstCommandCodeComment
 
 
 class QuestPhaseEntity(BaseModelORJson):

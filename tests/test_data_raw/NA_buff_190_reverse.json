@@ -3015,7 +3015,43 @@
         "popupIconId": 302,
         "popupText": "STR Up\nvs. Divine"
       },
-      "reverseSkills": [],
+      "reverseSkills": [
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
+            "id": 991376,
+            "type": 2,
+            "name": "Code: Nimbus",
+            "ruby": "Code: Nimbus",
+            "maxLv": 1,
+            "iconId": 301,
+            "motion": 101
+          },
+          "mstSkillDetail": [
+            {
+              "id": 991376,
+              "detail": "Apply 5% Special Attack [Divine] effect to the engraved Card ",
+              "detailShort": "Apply 5% Special Attack [Divine] effect to the engraved Card "
+            }
+          ],
+          "mstSvtSkill": [],
+          "mstSkillLv": [
+            {
+              "funcId": [518],
+              "svals": ["[1000,-1,-1,50,ShowState:1]"],
+              "script": {},
+              "skillId": 991376,
+              "lv": 1,
+              "chargeTurn": 0,
+              "skillDetailId": 991376,
+              "priority": 0
+            }
+          ],
+          "reverseServants": []
+        }
+      ],
       "reverseTds": []
     },
     {

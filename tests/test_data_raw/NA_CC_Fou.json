@@ -1,0 +1,53 @@
+{
+  "mstCommandCode": {
+    "id": 8400110,
+    "collectionNo": 11,
+    "name": "Lucky Beast",
+    "ruby": "Lucky Beast",
+    "rarity": 3,
+    "sellQp": 500,
+    "sellMana": 1,
+    "sellRarePri": 0
+  },
+  "mstSkill": [
+    {
+      "mstSkill": {
+        "effectList": [],
+        "actIndividuality": [],
+        "script": {},
+        "id": 991384,
+        "type": 2,
+        "name": "Lucky Beast",
+        "ruby": "Lucky Beast",
+        "maxLv": 1,
+        "iconId": 600,
+        "motion": 101
+      },
+      "mstSkillDetail": [
+        {
+          "id": 991384,
+          "detail": "Recover 200 HP for yourself when attacking with the engraved Card",
+          "detailShort": "Recover 200 HP for yourself when attacking with the engraved Card"
+        }
+      ],
+      "mstSvtSkill": [],
+      "mstSkillLv": [
+        {
+          "funcId": [3600],
+          "svals": ["[1000,-1,-1,991385,Value2:1,ShowState:-1]"],
+          "script": {},
+          "skillId": 991384,
+          "lv": 1,
+          "chargeTurn": 0,
+          "skillDetailId": 991384,
+          "priority": 0
+        }
+      ]
+    }
+  ],
+  "mstCommandCodeComment": {
+    "commandCodeId": 8400110,
+    "comment": "\"Fou! Foufoufooou!!!\" (Translation: Put me on a Command Card of your choice!)",
+    "illustratorId": 40
+  }
+}
