@@ -189,7 +189,7 @@ async def get_command_code(region: Region, item_id: int, expand: bool = False):
         cc_entity = raw.get_command_code_entity(region, item_id, expand)
         return item_response(cc_entity)
     else:
-        raise HTTPException(status_code=404, detail="Mystic Code not found")
+        raise HTTPException(status_code=404, detail="Command Code not found")
 
 
 @router.get(
