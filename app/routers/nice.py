@@ -14,6 +14,7 @@ from ..data.schemas.nice import (
     Language,
     NiceBaseFunctionReverse,
     NiceBuffReverse,
+    NiceCommandCode,
     NiceEquip,
     NiceItem,
     NiceMysticCode,
@@ -56,6 +57,11 @@ if settings.export_all_nice:  # pragma: no cover
             nice.get_nice_mystic_code(region_, item_id)
             for item_id in masters[region_].mstEquipId
         ]
+        all_cc_data = [
+            nice.get_nice_command_code(region_, item_id)
+            for item_id in masters[region_].mstCommandCodeId
+        ]
+
         with open(f"export/{region_}/nice_trait.json", "w", encoding="utf-8") as fp:
             json.dump(TRAIT_NAME, fp)
         with open(f"export/{region_}/nice_servant.json", "w", encoding="utf-8") as fp:
@@ -68,6 +74,10 @@ if settings.export_all_nice:  # pragma: no cover
             f"export/{region_}/nice_mystic_code.json", "w", encoding="utf-8"
         ) as fp:
             json.dump(all_mc_data, fp, ensure_ascii=False)
+        with open(
+            f"export/{region_}/nice_command_code.json", "w", encoding="utf-8"
+        ) as fp:
+            json.dump(all_cc_data, fp, ensure_ascii=False)
         run_time = time.perf_counter() - start_time
         logger.info(f"Finished writing nice {region_} data in {run_time:.4f}s.")
 
@@ -267,6 +277,34 @@ async def get_mystic_code(region: Region, item_id: int):
         return nice.get_nice_mystic_code(region, item_id)
     else:
         raise HTTPException(status_code=404, detail="Mystic Code not found")
+
+
+get_cc_description = "Get nice Command Code info from ID"
+pre_processed_cc_links = """
+
+Preprocessed data:
+- [NA Command Code](/export/NA/nice_command_code.json)
+- [JP Command Code](/export/JP/nice_command_code.json)
+"""
+
+if settings.documentation_all_nice:
+    get_cc_description += pre_processed_cc_links
+
+
+@router.get(
+    "/{region}/CC/{item_id}",
+    summary="Get Command Code data",
+    description=get_cc_description,
+    response_description="Command Code entity",
+    response_model=NiceCommandCode,
+    response_model_exclude_unset=True,
+    responses=responses,
+)
+async def get_command_code(region: Region, item_id: int):
+    if item_id in masters[region].mstCommandCodeId:
+        return nice.get_nice_command_code(region, item_id)
+    else:
+        raise HTTPException(status_code=404, detail="Command Code not found")
 
 
 @router.get(

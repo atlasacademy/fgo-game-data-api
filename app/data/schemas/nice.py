@@ -37,6 +37,8 @@ ASSET_URL: Dict[str, str] = {
     "mcitem": "{base_url}/{region}/Items/masterequip{item_id:05}.png",
     "mcmasterFace": "{base_url}/{region}/MasterFigure/equip{item_id:05}.png",
     "mcmasterFigure": "{base_url}/{region}/MasterFace/equip{item_id:05}.png",
+    "commandCode": "{base_url}/{region}/CommandCodes/c_{item_id}.png",
+    "commandGraph": "{base_url}/{region}/CommandGraph/{item_id}/{item_id}a.png",
 }
 
 
@@ -216,6 +218,7 @@ class ExtraAssetsUrl(BaseModel):
     ascension: Optional[Dict[int, HttpUrl]] = None
     costume: Optional[Dict[int, HttpUrl]] = None
     equip: Optional[Dict[int, HttpUrl]] = None
+    cc: Optional[Dict[int, HttpUrl]] = None
 
 
 class ExtraAssets(BaseModel):
@@ -339,6 +342,16 @@ class NiceMysticCode(BaseModelORJson):
     extraAssets: ExtraMCAssets
     skills: List[NiceSkill]
     expRequired: List[int]
+
+
+class NiceCommandCode(BaseModelORJson):
+    id: int
+    collectionNo: int
+    name: str
+    rarity: int
+    extraAssets: ExtraAssets
+    skills: List[NiceSkill]
+    comment: str
 
 
 class NiceQuestPhase(BaseModelORJson):

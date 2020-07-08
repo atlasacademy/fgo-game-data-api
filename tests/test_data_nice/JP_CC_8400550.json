@@ -1,0 +1,65 @@
+{
+  "id": 8400550,
+  "collectionNo": 55,
+  "name": "オルレアンの乙女",
+  "rarity": 5,
+  "extraAssets": {
+    "charaGraph": {
+      "cc": {
+        "8400550": "https://assets.atlasacademy.io/GameData/JP/CommandGraph/8400550/8400550a.png"
+      }
+    },
+    "faces": {
+      "cc": {
+        "8400550": "https://assets.atlasacademy.io/GameData/JP/CommandCodes/c_8400550.png"
+      }
+    }
+  },
+  "skills": [
+    {
+      "id": 991981,
+      "name": "オルレアンの乙女",
+      "detail": "刻印されたカードによる攻撃時に、自身のHPを1000回復(1度使用すると再使用に3ターン必要)",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00600.png",
+      "coolDown": [3],
+      "actIndividuality": [],
+      "functions": [
+        {
+          "funcId": 3897,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "攻撃時追加効果",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_333.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 1742,
+              "name": "コマンドコード攻撃時追加効果",
+              "detail": "コマンドコードが刻印されたカードで攻撃時、追加効果を発動する",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_333.png",
+              "type": "commandattackFunction",
+              "vals": [],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 0
+            }
+          ],
+          "svals": [
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 991982,
+              "Value2": 1,
+              "ShowState": -1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "comment": "「私の本質は主に身を委ねた、ただのドンレミの娘。\n\n　ですが貴方が苦難に立ち向かい続けるのならば、\n　まっすぐに歩み続けていくのならば、\n　この旗を掲げ、振るいましょう。\n\n　―――主の御名のもとに」"
+}

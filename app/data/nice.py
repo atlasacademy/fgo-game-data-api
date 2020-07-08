@@ -45,6 +45,7 @@ from .raw import (
     func_to_skillId,
     func_to_tdId,
     get_buff_entity_no_reverse,
+    get_command_code_entity,
     get_func_entity_no_reverse,
     get_mystic_code_entity,
     get_quest_phase_entity,
@@ -667,6 +668,30 @@ def get_nice_mystic_code(region: Region, mc_id: int) -> Dict[str, Any]:
 
     nice_data["skills"] = [
         get_nice_skill(skill, mc_id, region) for skill in raw_data.mstSkill
+    ]
+    return nice_data
+
+
+def get_nice_command_code(region: Region, cc_id: int) -> Dict[str, Any]:
+    raw_data = get_command_code_entity(region, cc_id, expand=True)
+
+    base_settings = {"base_url": settings.asset_url, "region": region, "item_id": cc_id}
+    nice_data: Dict[str, Any] = {
+        "id": raw_data.mstCommandCode.id,
+        "name": raw_data.mstCommandCode.name,
+        "collectionNo": raw_data.mstCommandCode.collectionNo,
+        "rarity": raw_data.mstCommandCode.rarity,
+        "comment": raw_data.mstCommandCodeComment.comment,
+        "extraAssets": {
+            "charaGraph": {
+                "cc": {cc_id: ASSET_URL["commandGraph"].format(**base_settings)}
+            },
+            "faces": {"cc": {cc_id: ASSET_URL["commandCode"].format(**base_settings)}},
+        },
+    }
+
+    nice_data["skills"] = [
+        get_nice_skill(skill, cc_id, region) for skill in raw_data.mstSkill
     ]
     return nice_data
 

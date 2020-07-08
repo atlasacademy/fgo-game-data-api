@@ -35,6 +35,7 @@ test_cases_dict = {
     "svt_NA_id": ("NA/svt/9939120", "NA_svt_9939120"),
     "item_NA_id": ("NA/item/94000201", "NA_item_94000201"),
     "MC_NA_id": ("NA/MC/110", "NA_MC_LB"),
+    "JP_CC_id": ("JP/CC/8400550", "JP_CC_8400550"),
     "quest_NA_id_phase": ("NA/quest/94020187/1", "NA_87th_floor"),
 }
 
@@ -59,6 +60,7 @@ cases_404_dict = {
     "buff": "765",
     "item": "941234",
     "MC": "62537",
+    "CC": "8400631",
     "quest": "1234567",
     "quest/94025012": "2",
 }
