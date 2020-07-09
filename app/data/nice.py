@@ -54,7 +54,7 @@ from .raw import (
     get_td_entity_no_reverse,
 )
 from .schemas.nice import (
-    ASSET_URL,
+    AssetURL,
     Language,
     NiceBaseFunctionReverse,
     NiceBuffReverse,
@@ -209,7 +209,7 @@ def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> Dict[str, 
     }
     iconId = buffEntity.mstBuff.iconId
     if iconId != 0:
-        buffInfo["icon"] = ASSET_URL["buffIcon"].format(
+        buffInfo["icon"] = AssetURL.buffIcon.format(
             base_url=settings.asset_url, region=region, item_id=iconId
         )
     return buffInfo
@@ -240,7 +240,7 @@ def get_nice_base_function(
 
     funcPopupIconId = function.mstFunc.popupIconId
     if funcPopupIconId != 0:
-        functionInfo["funcPopupIcon"] = ASSET_URL["buffIcon"].format(
+        functionInfo["funcPopupIcon"] = AssetURL.buffIcon.format(
             base_url=settings.asset_url, region=region, item_id=funcPopupIconId
         )
     return functionInfo
@@ -257,7 +257,7 @@ def get_nice_skill(
 
     iconId = skillEntity.mstSkill.iconId
     if iconId != 0:
-        nice_skill["icon"] = ASSET_URL["skillIcon"].format(
+        nice_skill["icon"] = AssetURL.skillIcon.format(
             base_url=settings.asset_url, region=region, item_id=iconId,
         )
 
@@ -358,7 +358,7 @@ def get_nice_item(region: Region, item_id: int) -> Dict[str, Union[int, str]]:
         "id": item_id,
         "name": raw_data.name,
         "type": get_safe(ITEM_TYPE_NAME, raw_data.type),
-        "icon": ASSET_URL["items"].format(
+        "icon": AssetURL.items.format(
             base_url=settings.asset_url, region=region, item_id=raw_data.imageId
         ),
         "background": ITEM_BG_TYPE_NAME[raw_data.bgImageId],
@@ -424,16 +424,15 @@ def get_nice_servant(
 
     if raw_data.mstSvt.type == SvtType.ENEMY_COLLECTION_DETAIL:
         charaGraph["ascension"] = {
-            0: ASSET_URL["charaGraphDefault"].format(**base_settings_id)
+            0: AssetURL.charaGraphDefault.format(**base_settings_id)
         }
-        faces["ascension"] = {0: ASSET_URL["face"].format(**base_settings_id, i=0)}
+        faces["ascension"] = {0: AssetURL.face.format(**base_settings_id, i=0)}
     elif raw_data.mstSvt.isServant():
         charaGraph["ascension"] = {
-            i: ASSET_URL[f"charaGraph{i}"].format(**base_settings_id)
-            for i in range(1, 5)
+            (i + 1): AssetURL.charaGraph[i].format(**base_settings_id) for i in range(4)
         }
         faces["ascension"] = {
-            (i + 1): ASSET_URL["face"].format(**base_settings_id, i=i) for i in range(4)
+            (i + 1): AssetURL.face.format(**base_settings_id, i=i) for i in range(4)
         }
         costume_ids = [
             item.battleCharaId
@@ -442,22 +441,22 @@ def get_nice_servant(
         ]
         if costume_ids:
             charaGraph["costume"] = {
-                costume_id: ASSET_URL["charaGraphDefault"].format(
+                costume_id: AssetURL.charaGraphDefault.format(
                     **base_settings, item_id=costume_id
                 )
                 for costume_id in costume_ids
             }
             faces["costume"] = {
-                costume_id: ASSET_URL["face"].format(
+                costume_id: AssetURL.face.format(
                     **base_settings, item_id=costume_id, i=0
                 )
                 for costume_id in costume_ids
             }
     elif raw_data.mstSvt.isEquip():
         charaGraph["equip"] = {
-            item_id: ASSET_URL["charaGraphDefault"].format(**base_settings_id)
+            item_id: AssetURL.charaGraphDefault.format(**base_settings_id)
         }
-        faces["equip"] = {item_id: ASSET_URL["face"].format(**base_settings_id, i=0)}
+        faces["equip"] = {item_id: AssetURL.face.format(**base_settings_id, i=0)}
 
     nice_data["extraAssets"] = {"charaGraph": charaGraph, "faces": faces}
 
@@ -652,10 +651,10 @@ def get_nice_mystic_code(region: Region, mc_id: int) -> Dict[str, Any]:
         "maxLv": raw_data.mstEquip.maxLv,
         "extraAssets": {
             asset_category: {
-                "male": ASSET_URL[f"mc{asset_category}"].format(
+                "male": AssetURL.mc[asset_category].format(
                     **base_settings, item_id=raw_data.mstEquip.maleImageId,
                 ),
-                "female": ASSET_URL[f"mc{asset_category}"].format(
+                "female": AssetURL.mc[asset_category].format(
                     **base_settings, item_id=raw_data.mstEquip.femaleImageId,
                 ),
             }
@@ -684,9 +683,9 @@ def get_nice_command_code(region: Region, cc_id: int) -> Dict[str, Any]:
         "comment": raw_data.mstCommandCodeComment.comment,
         "extraAssets": {
             "charaGraph": {
-                "cc": {cc_id: ASSET_URL["commandGraph"].format(**base_settings)}
+                "cc": {cc_id: AssetURL.commandGraph.format(**base_settings)}
             },
-            "faces": {"cc": {cc_id: ASSET_URL["commandCode"].format(**base_settings)}},
+            "faces": {"cc": {cc_id: AssetURL.commandCode.format(**base_settings)}},
         },
     }
 

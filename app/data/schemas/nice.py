@@ -24,22 +24,26 @@ from ..enums import (
 from .base import BaseModelORJson
 
 
-ASSET_URL: Dict[str, str] = {
-    "charaGraph1": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a@1.png",
-    "charaGraph2": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a@2.png",
-    "charaGraph3": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@1.png",
-    "charaGraph4": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@2.png",
-    "charaGraphDefault": "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a.png",
-    "skillIcon": "{base_url}/{region}/SkillIcons/skill_{item_id:05}.png",
-    "buffIcon": "{base_url}/{region}/BuffIcons/bufficon_{item_id}.png",
-    "items": "{base_url}/{region}/Items/{item_id}.png",
-    "face": "{base_url}/{region}/Faces/f_{item_id}{i}.png",
-    "mcitem": "{base_url}/{region}/Items/masterequip{item_id:05}.png",
-    "mcmasterFace": "{base_url}/{region}/MasterFigure/equip{item_id:05}.png",
-    "mcmasterFigure": "{base_url}/{region}/MasterFace/equip{item_id:05}.png",
-    "commandCode": "{base_url}/{region}/CommandCodes/c_{item_id}.png",
-    "commandGraph": "{base_url}/{region}/CommandGraph/{item_id}a.png",
-}
+class AssetURL:
+    charaGraph: Dict[int, str] = {
+        0: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a@1.png",
+        1: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a@2.png",
+        2: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@1.png",
+        3: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@2.png",
+    }
+    charaGraphDefault: str = "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a.png"
+    skillIcon: str = "{base_url}/{region}/SkillIcons/skill_{item_id:05}.png"
+    buffIcon: str = "{base_url}/{region}/BuffIcons/bufficon_{item_id}.png"
+    items: str = "{base_url}/{region}/Items/{item_id}.png"
+    face: str = "{base_url}/{region}/Faces/f_{item_id}{i}.png"
+    mcitem: str = "{base_url}/{region}/Items/masterequip{item_id:05}.png"
+    mc: Dict[str, str] = {
+        "item": "{base_url}/{region}/Items/masterequip{item_id:05}.png",
+        "masterFace": "{base_url}/{region}/MasterFigure/equip{item_id:05}.png",
+        "masterFigure": "{base_url}/{region}/MasterFace/equip{item_id:05}.png",
+    }
+    commandCode: str = "{base_url}/{region}/CommandCodes/c_{item_id}.png"
+    commandGraph: str = "{base_url}/{region}/CommandGraph/{item_id}a.png"
 
 
 class Language(str, Enum):

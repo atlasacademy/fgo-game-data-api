@@ -2,9 +2,9 @@ from typing import Any, Dict, Optional
 
 from ..config import Settings
 from .common import Region
-from .enums import CLASS_NAME, SVT_TYPE_NAME, SvtType
+from .enums import CLASS_NAME, SVT_TYPE_NAME
 from .gamedata import masters
-from .schemas.nice import ASSET_URL, Language
+from .schemas.nice import AssetURL, Language
 from .translations import SVT_NAME_JP_EN
 
 
@@ -24,7 +24,7 @@ def get_basic_svt(
         "rarity": masters[region].mstSvtLimitId[item_id][0].rarity,
     }
 
-    basic_servant["face"] = ASSET_URL["face"].format(
+    basic_servant["face"] = AssetURL.face.format(
         base_url=settings.asset_url, region=region, item_id=item_id, i=0
     )
 
