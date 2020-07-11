@@ -166,6 +166,17 @@ version = "0.18.0"
 speedup = ["python-levenshtein (>=0.12)"]
 
 [[package]]
+category = "dev"
+description = "fuzzywuzzy stubs and mypy plugin"
+name = "fuzzywuzzy-stubs"
+optional = false
+python-versions = "*"
+version = "0.0.1"
+
+[package.dependencies]
+mypy = "*"
+
+[[package]]
 category = "main"
 description = "A pure-Python, bring-your-own-I/O implementation of HTTP/1.1"
 name = "h11"
@@ -544,7 +555,7 @@ python-versions = "*"
 version = "1.12.1"
 
 [metadata]
-content-hash = "d5fbf4409cbb472b7d91df889b9c063b6394a469fdc1da2e490a3be700d506a5"
+content-hash = "4bfc7d688bca4fbf4200008df3bcbc76272ce9563c50bb63c4eedf18ba323f69"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -639,6 +650,10 @@ fastapi = [
 fuzzywuzzy = [
     {file = "fuzzywuzzy-0.18.0-py2.py3-none-any.whl", hash = "sha256:928244b28db720d1e0ee7587acf660ea49d7e4c632569cad4f1cd7e68a5f0993"},
     {file = "fuzzywuzzy-0.18.0.tar.gz", hash = "sha256:45016e92264780e58972dca1b3d939ac864b78437422beecebb3095f8efd00e8"},
+]
+fuzzywuzzy-stubs = [
+    {file = "fuzzywuzzy-stubs-0.0.1.tar.gz", hash = "sha256:0c3cd21a4d5f3ead7219e36ec4bdf13187b78af66c58762a4b7579434b2608e0"},
+    {file = "fuzzywuzzy_stubs-0.0.1-py3-none-any.whl", hash = "sha256:d4965b64275c5f542ebec04a60279d7344de296d67e44e4fe5b85cbad629b150"},
 ]
 h11 = [
     {file = "h11-0.9.0-py2.py3-none-any.whl", hash = "sha256:4bc6d6a1238b7615b266ada57e0618568066f57dd6fa967d1290ec9309b2f2f1"},
