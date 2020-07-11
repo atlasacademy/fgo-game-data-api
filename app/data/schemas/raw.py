@@ -167,6 +167,18 @@ class TdEntityNoReverse(BaseModelORJson):
     mstTreasureDeviceLv: List[MstTreasureDeviceLv]
 
 
+def is_servant(svt_type: int) -> bool:
+    return svt_type in {
+        SvtType.NORMAL,
+        SvtType.HEROINE,
+        SvtType.ENEMY_COLLECTION_DETAIL,
+    }
+
+
+def is_equip(svt_type: int) -> bool:
+    return svt_type == SvtType.SERVANT_EQUIP
+
+
 class MstSvt(BaseModelORJson):
     relateQuestIds: List[int]  # [91500701, 94004103, 94014414],
     individuality: List[int]  # [5000, 500800],
@@ -206,14 +218,10 @@ class MstSvt(BaseModelORJson):
     materialStoryPriority: int  # 1000
 
     def isServant(self) -> bool:
-        return self.type in {
-            SvtType.NORMAL,
-            SvtType.HEROINE,
-            SvtType.ENEMY_COLLECTION_DETAIL,
-        }
+        return is_servant(self.type)
 
     def isEquip(self) -> bool:
-        return self.type == SvtType.SERVANT_EQUIP
+        return is_equip(self.type)
 
 
 class MstSvtCard(BaseModel):
