@@ -1244,7 +1244,8 @@
               ],
               "mstSvtLimitAdd": []
             }
-          ]
+          ],
+          "reverseMC": []
         },
         {
           "mstSkill": {
@@ -1277,7 +1278,8 @@
               "priority": 0
             }
           ],
-          "reverseServants": []
+          "reverseServants": [],
+          "reverseMC": []
         },
         {
           "mstSkill": {
@@ -2347,7 +2349,8 @@
               ],
               "mstSvtLimitAdd": []
             }
-          ]
+          ],
+          "reverseMC": []
         },
         {
           "mstSkill": {
@@ -2671,7 +2674,8 @@
               "mstCombineLimit": [],
               "mstSvtLimitAdd": []
             }
-          ]
+          ],
+          "reverseMC": []
         },
         {
           "mstSkill": {
@@ -2995,7 +2999,8 @@
               "mstCombineLimit": [],
               "mstSvtLimitAdd": []
             }
-          ]
+          ],
+          "reverseMC": []
         }
       ],
       "reverseTds": []
@@ -3049,7 +3054,8 @@
               "priority": 0
             }
           ],
-          "reverseServants": []
+          "reverseServants": [],
+          "reverseMC": []
         }
       ],
       "reverseTds": []
@@ -3400,7 +3406,8 @@
               "mstCombineLimit": [],
               "mstSvtLimitAdd": []
             }
-          ]
+          ],
+          "reverseMC": []
         },
         {
           "mstSkill": {
@@ -3732,7 +3739,8 @@
               "mstCombineLimit": [],
               "mstSvtLimitAdd": []
             }
-          ]
+          ],
+          "reverseMC": []
         },
         {
           "mstSkill": {
@@ -3761,7 +3769,8 @@
               "priority": 0
             }
           ],
-          "reverseServants": []
+          "reverseServants": [],
+          "reverseMC": []
         }
       ],
       "reverseTds": []

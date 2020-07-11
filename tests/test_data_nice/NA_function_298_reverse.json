@@ -67,7 +67,185 @@
           ]
         }
       ],
-      "reverseServants": []
+      "reverseServants": [],
+      "reverseMC": [
+        {
+          "id": 80,
+          "name": "Memories of the Lunar Sea",
+          "detail": "A Mystic Code modeled after a certain school's uniform\nfrom a certain parallel world.",
+          "maxLv": 10,
+          "extraAssets": {
+            "item": {
+              "male": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00081.png",
+              "female": "https://assets.atlasacademy.io/GameData/NA/Items/masterequip00082.png"
+            },
+            "masterFace": {
+              "male": "https://assets.atlasacademy.io/GameData/NA/MasterFace/equip00081.png",
+              "female": "https://assets.atlasacademy.io/GameData/NA/MasterFace/equip00082.png"
+            },
+            "masterFigure": {
+              "male": "https://assets.atlasacademy.io/GameData/NA/MasterFigure/equip00081.png",
+              "female": "https://assets.atlasacademy.io/GameData/NA/MasterFigure/equip00082.png"
+            }
+          },
+          "skills": [
+            {
+              "id": 980022,
+              "name": "Spiritron Boost",
+              "detail": "Increase an ally's Arts Card effectiveness (1 turn)",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00305.png",
+              "coolDown": [15, 15, 15, 15, 15, 14, 14, 14, 14, 13],
+              "actIndividuality": [],
+              "functions": [
+                {
+                  "funcId": 114,
+                  "funcType": "addStateShort",
+                  "funcTargetType": "ptOne",
+                  "funcTargetTeam": "playerAndEnemy",
+                  "funcPopupText": "Arts Up",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_313.png",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "buffs": [
+                    {
+                      "id": 101,
+                      "name": "Arts Up",
+                      "detail": "Increase Arts Card effectiveness",
+                      "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_313.png",
+                      "type": "upCommandall",
+                      "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+                      "tvals": [
+                        { "id": 5000, "name": "canBeInBattle" },
+                        { "id": 4001, "name": "cardArts" }
+                      ],
+                      "ckSelfIndv": [{ "id": 4001, "name": "cardArts" }],
+                      "ckOpIndv": [],
+                      "maxRate": 5000
+                    }
+                  ],
+                  "svals": [
+                    { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 300 },
+                    { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 320 },
+                    { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 340 },
+                    { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 360 },
+                    { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 380 },
+                    { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 400 },
+                    { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 420 },
+                    { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 440 },
+                    { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 460 },
+                    { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 500 }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 980023,
+              "name": "Stepping Stone to Ultimate Victory",
+              "detail": "Increase an ally's Critical Star drop rate (1 turn)",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00604.png",
+              "coolDown": [12, 12, 12, 12, 12, 11, 11, 11, 11, 10],
+              "actIndividuality": [],
+              "functions": [
+                {
+                  "funcId": 298,
+                  "funcType": "addState",
+                  "funcTargetType": "ptOne",
+                  "funcTargetTeam": "player",
+                  "funcPopupText": "C. Star\nDrop Rate Up",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_321.png",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "buffs": [
+                    {
+                      "id": 117,
+                      "name": "C. Star Drop Rate Up",
+                      "detail": "Increase C. Star drop rate",
+                      "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_321.png",
+                      "type": "upCriticalpoint",
+                      "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+                      "tvals": [],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [],
+                      "maxRate": 5000
+                    }
+                  ],
+                  "svals": [
+                    { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 500 },
+                    { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 550 },
+                    { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 600 },
+                    { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 650 },
+                    { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 700 },
+                    { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 750 },
+                    { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 800 },
+                    { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 850 },
+                    { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 900 },
+                    { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 980024,
+              "name": "Punishment",
+              "detail": "Apply Nullify Buff to a single enemy (1 time)",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00521.png",
+              "coolDown": [15, 15, 15, 15, 15, 14, 14, 14, 14, 13],
+              "actIndividuality": [],
+              "functions": [
+                {
+                  "funcId": 778,
+                  "funcType": "addState",
+                  "funcTargetType": "enemy",
+                  "funcTargetTeam": "playerAndEnemy",
+                  "funcPopupText": "Nullify Buff",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_531.png",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "buffs": [
+                    {
+                      "id": 230,
+                      "name": "Nullify Buff",
+                      "detail": "Unremovable",
+                      "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_531.png",
+                      "type": "avoidState",
+                      "vals": [{ "id": 3005, "name": "buffNegativeEffect" }],
+                      "tvals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [
+                        { "id": 3004, "name": "buffPositiveEffect" }
+                      ],
+                      "maxRate": 0
+                    }
+                  ],
+                  "svals": [
+                    { "Rate": 1000, "Turn": -1, "Count": 1 },
+                    { "Rate": 1000, "Turn": -1, "Count": 1 },
+                    { "Rate": 1000, "Turn": -1, "Count": 1 },
+                    { "Rate": 1000, "Turn": -1, "Count": 1 },
+                    { "Rate": 1000, "Turn": -1, "Count": 1 },
+                    { "Rate": 1000, "Turn": -1, "Count": 1 },
+                    { "Rate": 1000, "Turn": -1, "Count": 1 },
+                    { "Rate": 1000, "Turn": -1, "Count": 1 },
+                    { "Rate": 1000, "Turn": -1, "Count": 1 },
+                    { "Rate": 1000, "Turn": -1, "Count": 1 }
+                  ]
+                }
+              ]
+            }
+          ],
+          "expRequired": [
+            53000,
+            132500,
+            305000,
+            609000,
+            1218000,
+            2200000,
+            3727000,
+            5963000,
+            8950000
+          ]
+        }
+      ]
     }
   ],
   "reverseTds": []

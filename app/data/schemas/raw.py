@@ -440,6 +440,12 @@ class MstQuestPhase(BaseModel):
     friendshipExp: int  # 165
 
 
+class MysticCodeEntity(BaseModelORJson):
+    mstEquip: MstEquip
+    mstSkill: List[SkillEntityNoReverse]
+    mstEquipExp: List[MstEquipExp]
+
+
 class Master(BaseModel):
     mstBuff: List[MstBuff]
     mstFunc: List[MstFunc]
@@ -512,6 +518,7 @@ class ServantEntity(BaseModelORJson):
 
 class SkillEntity(SkillEntityNoReverse):
     reverseServants: List[ServantEntity] = []
+    reverseMC: List[MysticCodeEntity] = []
 
 
 class TdEntity(TdEntityNoReverse):
@@ -525,12 +532,6 @@ class FunctionEntity(FunctionEntityNoReverse):
 
 class BuffEntity(BuffEntityNoReverse):
     reverseFunctions: List[FunctionEntity] = []
-
-
-class MysticCodeEntity(BaseModelORJson):
-    mstEquip: MstEquip
-    mstSkill: List[SkillEntityNoReverse]
-    mstEquipExp: List[MstEquipExp]
 
 
 class CommandCodeEntity(BaseModelORJson):

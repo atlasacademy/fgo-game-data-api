@@ -218,6 +218,27 @@ class NiceTd(BaseModelORJson):
     functions: List[NiceFunction]
 
 
+class MCAssets(BaseModel):
+    male: HttpUrl
+    female: HttpUrl
+
+
+class ExtraMCAssets(BaseModel):
+    item: MCAssets
+    masterFace: MCAssets
+    masterFigure: MCAssets
+
+
+class NiceMysticCode(BaseModelORJson):
+    id: int
+    name: str
+    detail: str
+    maxLv: int
+    extraAssets: ExtraMCAssets
+    skills: List[NiceSkill]
+    expRequired: List[int]
+
+
 class ExtraAssetsUrl(BaseModel):
     ascension: Optional[Dict[int, HttpUrl]] = None
     costume: Optional[Dict[int, HttpUrl]] = None
@@ -293,6 +314,7 @@ class NiceServant(BaseModelORJson):
 
 class NiceSkillReverse(NiceSkill):
     reverseServants: List[NiceServant] = []
+    reverseMC: List[NiceMysticCode] = []
 
 
 class NiceTdReverse(NiceTd):
@@ -325,27 +347,6 @@ class NiceEquip(BaseModelORJson):
     hpGrowth: List[int]
     skills: List[NiceSkill]
     profile: Optional[NiceLore] = None
-
-
-class MCAssets(BaseModel):
-    male: HttpUrl
-    female: HttpUrl
-
-
-class ExtraMCAssets(BaseModel):
-    item: MCAssets
-    masterFace: MCAssets
-    masterFigure: MCAssets
-
-
-class NiceMysticCode(BaseModelORJson):
-    id: int
-    name: str
-    detail: str
-    maxLv: int
-    extraAssets: ExtraMCAssets
-    skills: List[NiceSkill]
-    expRequired: List[int]
 
 
 class NiceCommandCode(BaseModelORJson):

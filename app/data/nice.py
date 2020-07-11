@@ -59,6 +59,7 @@ from .schemas.nice import (
     NiceBaseFunctionReverse,
     NiceBuffReverse,
     NiceEquip,
+    NiceMysticCode,
     NiceServant,
     NiceSkillReverse,
     NiceTdReverse,
@@ -620,6 +621,11 @@ def get_nice_skill_alone(
             get_nice_servant_model(region, item, lang=lang)
             for item in activeSkills | passiveSkills
         ]
+        nice_data.reverseMC = [
+            get_nice_mystic_code(region, item.equipId)
+            for item in masters[region].mstEquipSkill
+            if item.skillId == skill_id
+        ]
     return nice_data
 
 
@@ -641,7 +647,7 @@ def get_nice_td_alone(
     return nice_data
 
 
-def get_nice_mystic_code(region: Region, mc_id: int) -> Dict[str, Any]:
+def get_nice_mystic_code(region: Region, mc_id: int) -> NiceMysticCode:
     raw_data = get_mystic_code_entity(region, mc_id, expand=True)
     base_settings = {"base_url": settings.asset_url, "region": region}
     nice_data: Dict[str, Any] = {
@@ -668,7 +674,7 @@ def get_nice_mystic_code(region: Region, mc_id: int) -> Dict[str, Any]:
     nice_data["skills"] = [
         get_nice_skill(skill, mc_id, region) for skill in raw_data.mstSkill
     ]
-    return nice_data
+    return NiceMysticCode.parse_obj(nice_data)
 
 
 def get_nice_command_code(region: Region, cc_id: int) -> Dict[str, Any]:

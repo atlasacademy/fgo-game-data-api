@@ -129,6 +129,11 @@ def get_skill_entity(
         skill_entity.reverseServants = [
             get_servant_entity(region, item) for item in activeSkills | passiveSkills
         ]
+        skill_entity.reverseMC = [
+            get_mystic_code_entity(region, item.equipId)
+            for item in masters[region].mstEquipSkill
+            if item.skillId == skill_id
+        ]
     return skill_entity
 
 

@@ -1,0 +1,597 @@
+{
+  "mstSkill": {
+    "effectList": [],
+    "actIndividuality": [],
+    "script": {},
+    "id": 980005,
+    "type": 1,
+    "name": "ガンド",
+    "ruby": "がんど",
+    "maxLv": 10,
+    "iconId": 508,
+    "motion": 103
+  },
+  "mstSkillDetail": [
+    {
+      "id": 980005,
+      "detail": "敵単体にスタン状態を付与(1ターン)",
+      "detailShort": "敵単体にスタン状態を付与(1ターン)"
+    }
+  ],
+  "mstSvtSkill": [],
+  "mstSkillLv": [
+    {
+      "funcId": [353],
+      "svals": ["[5000,1,-1]"],
+      "script": {},
+      "skillId": 980005,
+      "lv": 1,
+      "chargeTurn": 15,
+      "skillDetailId": 980005,
+      "priority": 50
+    },
+    {
+      "funcId": [353],
+      "svals": ["[5000,1,-1]"],
+      "script": {},
+      "skillId": 980005,
+      "lv": 2,
+      "chargeTurn": 15,
+      "skillDetailId": 980005,
+      "priority": 50
+    },
+    {
+      "funcId": [353],
+      "svals": ["[5000,1,-1]"],
+      "script": {},
+      "skillId": 980005,
+      "lv": 3,
+      "chargeTurn": 15,
+      "skillDetailId": 980005,
+      "priority": 50
+    },
+    {
+      "funcId": [353],
+      "svals": ["[5000,1,-1]"],
+      "script": {},
+      "skillId": 980005,
+      "lv": 4,
+      "chargeTurn": 15,
+      "skillDetailId": 980005,
+      "priority": 50
+    },
+    {
+      "funcId": [353],
+      "svals": ["[5000,1,-1]"],
+      "script": {},
+      "skillId": 980005,
+      "lv": 5,
+      "chargeTurn": 15,
+      "skillDetailId": 980005,
+      "priority": 50
+    },
+    {
+      "funcId": [353],
+      "svals": ["[5000,1,-1]"],
+      "script": {},
+      "skillId": 980005,
+      "lv": 6,
+      "chargeTurn": 14,
+      "skillDetailId": 980005,
+      "priority": 50
+    },
+    {
+      "funcId": [353],
+      "svals": ["[5000,1,-1]"],
+      "script": {},
+      "skillId": 980005,
+      "lv": 7,
+      "chargeTurn": 14,
+      "skillDetailId": 980005,
+      "priority": 50
+    },
+    {
+      "funcId": [353],
+      "svals": ["[5000,1,-1]"],
+      "script": {},
+      "skillId": 980005,
+      "lv": 8,
+      "chargeTurn": 14,
+      "skillDetailId": 980005,
+      "priority": 50
+    },
+    {
+      "funcId": [353],
+      "svals": ["[5000,1,-1]"],
+      "script": {},
+      "skillId": 980005,
+      "lv": 9,
+      "chargeTurn": 14,
+      "skillDetailId": 980005,
+      "priority": 50
+    },
+    {
+      "funcId": [353],
+      "svals": ["[5000,1,-1]"],
+      "script": {},
+      "skillId": 980005,
+      "lv": 10,
+      "chargeTurn": 13,
+      "skillDetailId": 980005,
+      "priority": 50
+    }
+  ],
+  "reverseServants": [],
+  "reverseMC": [
+    {
+      "mstEquip": {
+        "id": 20,
+        "name": "魔術礼装･カルデア戦闘服",
+        "detail": "人理継続保障機関・カルデアの技術部が\n激化する戦闘に耐えられるように作りだした魔術礼装",
+        "condUserLv": 1,
+        "maxLv": 10,
+        "maleImageId": 21,
+        "femaleImageId": 22,
+        "imageId": 20,
+        "maleSpellId": 1,
+        "femaleSpellId": 2
+      },
+      "mstSkill": [
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
+            "id": 980004,
+            "type": 1,
+            "name": "全体強化",
+            "ruby": "ぜんたいきょうか",
+            "maxLv": 10,
+            "iconId": 300,
+            "motion": 102
+          },
+          "mstSkillDetail": [
+            {
+              "id": 980004,
+              "detail": "味方全体の攻撃力をアップ[{0}](1ターン)",
+              "detailShort": "味方全体の攻撃力をアップ[{0}](1ターン)"
+            }
+          ],
+          "mstSvtSkill": [],
+          "mstSkillLv": [
+            {
+              "funcId": [152],
+              "svals": ["[5000,1,-1,200]"],
+              "script": {},
+              "skillId": 980004,
+              "lv": 1,
+              "chargeTurn": 12,
+              "skillDetailId": 980004,
+              "priority": 0
+            },
+            {
+              "funcId": [152],
+              "svals": ["[5000,1,-1,210]"],
+              "script": {},
+              "skillId": 980004,
+              "lv": 2,
+              "chargeTurn": 12,
+              "skillDetailId": 980004,
+              "priority": 0
+            },
+            {
+              "funcId": [152],
+              "svals": ["[5000,1,-1,220]"],
+              "script": {},
+              "skillId": 980004,
+              "lv": 3,
+              "chargeTurn": 12,
+              "skillDetailId": 980004,
+              "priority": 0
+            },
+            {
+              "funcId": [152],
+              "svals": ["[5000,1,-1,230]"],
+              "script": {},
+              "skillId": 980004,
+              "lv": 4,
+              "chargeTurn": 12,
+              "skillDetailId": 980004,
+              "priority": 0
+            },
+            {
+              "funcId": [152],
+              "svals": ["[5000,1,-1,240]"],
+              "script": {},
+              "skillId": 980004,
+              "lv": 5,
+              "chargeTurn": 12,
+              "skillDetailId": 980004,
+              "priority": 0
+            },
+            {
+              "funcId": [152],
+              "svals": ["[5000,1,-1,250]"],
+              "script": {},
+              "skillId": 980004,
+              "lv": 6,
+              "chargeTurn": 11,
+              "skillDetailId": 980004,
+              "priority": 0
+            },
+            {
+              "funcId": [152],
+              "svals": ["[5000,1,-1,260]"],
+              "script": {},
+              "skillId": 980004,
+              "lv": 7,
+              "chargeTurn": 11,
+              "skillDetailId": 980004,
+              "priority": 0
+            },
+            {
+              "funcId": [152],
+              "svals": ["[5000,1,-1,270]"],
+              "script": {},
+              "skillId": 980004,
+              "lv": 8,
+              "chargeTurn": 11,
+              "skillDetailId": 980004,
+              "priority": 0
+            },
+            {
+              "funcId": [152],
+              "svals": ["[5000,1,-1,280]"],
+              "script": {},
+              "skillId": 980004,
+              "lv": 9,
+              "chargeTurn": 11,
+              "skillDetailId": 980004,
+              "priority": 0
+            },
+            {
+              "funcId": [152],
+              "svals": ["[5000,1,-1,300]"],
+              "script": {},
+              "skillId": 980004,
+              "lv": 10,
+              "chargeTurn": 10,
+              "skillDetailId": 980004,
+              "priority": 0
+            }
+          ]
+        },
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
+            "id": 980005,
+            "type": 1,
+            "name": "ガンド",
+            "ruby": "がんど",
+            "maxLv": 10,
+            "iconId": 508,
+            "motion": 103
+          },
+          "mstSkillDetail": [
+            {
+              "id": 980005,
+              "detail": "敵単体にスタン状態を付与(1ターン)",
+              "detailShort": "敵単体にスタン状態を付与(1ターン)"
+            }
+          ],
+          "mstSvtSkill": [],
+          "mstSkillLv": [
+            {
+              "funcId": [353],
+              "svals": ["[5000,1,-1]"],
+              "script": {},
+              "skillId": 980005,
+              "lv": 1,
+              "chargeTurn": 15,
+              "skillDetailId": 980005,
+              "priority": 50
+            },
+            {
+              "funcId": [353],
+              "svals": ["[5000,1,-1]"],
+              "script": {},
+              "skillId": 980005,
+              "lv": 2,
+              "chargeTurn": 15,
+              "skillDetailId": 980005,
+              "priority": 50
+            },
+            {
+              "funcId": [353],
+              "svals": ["[5000,1,-1]"],
+              "script": {},
+              "skillId": 980005,
+              "lv": 3,
+              "chargeTurn": 15,
+              "skillDetailId": 980005,
+              "priority": 50
+            },
+            {
+              "funcId": [353],
+              "svals": ["[5000,1,-1]"],
+              "script": {},
+              "skillId": 980005,
+              "lv": 4,
+              "chargeTurn": 15,
+              "skillDetailId": 980005,
+              "priority": 50
+            },
+            {
+              "funcId": [353],
+              "svals": ["[5000,1,-1]"],
+              "script": {},
+              "skillId": 980005,
+              "lv": 5,
+              "chargeTurn": 15,
+              "skillDetailId": 980005,
+              "priority": 50
+            },
+            {
+              "funcId": [353],
+              "svals": ["[5000,1,-1]"],
+              "script": {},
+              "skillId": 980005,
+              "lv": 6,
+              "chargeTurn": 14,
+              "skillDetailId": 980005,
+              "priority": 50
+            },
+            {
+              "funcId": [353],
+              "svals": ["[5000,1,-1]"],
+              "script": {},
+              "skillId": 980005,
+              "lv": 7,
+              "chargeTurn": 14,
+              "skillDetailId": 980005,
+              "priority": 50
+            },
+            {
+              "funcId": [353],
+              "svals": ["[5000,1,-1]"],
+              "script": {},
+              "skillId": 980005,
+              "lv": 8,
+              "chargeTurn": 14,
+              "skillDetailId": 980005,
+              "priority": 50
+            },
+            {
+              "funcId": [353],
+              "svals": ["[5000,1,-1]"],
+              "script": {},
+              "skillId": 980005,
+              "lv": 9,
+              "chargeTurn": 14,
+              "skillDetailId": 980005,
+              "priority": 50
+            },
+            {
+              "funcId": [353],
+              "svals": ["[5000,1,-1]"],
+              "script": {},
+              "skillId": 980005,
+              "lv": 10,
+              "chargeTurn": 13,
+              "skillDetailId": 980005,
+              "priority": 50
+            }
+          ]
+        },
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
+            "id": 980006,
+            "type": 1,
+            "name": "オーダーチェンジ",
+            "ruby": "おーだーちぇんじ",
+            "maxLv": 10,
+            "iconId": 704,
+            "motion": 300
+          },
+          "mstSkillDetail": [
+            {
+              "id": 980006,
+              "detail": "バトル中のメンバーをサブメンバーと入れ替える",
+              "detailShort": "バトル中のメンバーをサブメンバーと入れ替える"
+            }
+          ],
+          "mstSvtSkill": [],
+          "mstSkillLv": [
+            {
+              "funcId": [531],
+              "svals": ["[1000,1]"],
+              "script": {},
+              "skillId": 980006,
+              "lv": 1,
+              "chargeTurn": 15,
+              "skillDetailId": 980006,
+              "priority": 0
+            },
+            {
+              "funcId": [531],
+              "svals": ["[1000,1]"],
+              "script": {},
+              "skillId": 980006,
+              "lv": 2,
+              "chargeTurn": 15,
+              "skillDetailId": 980006,
+              "priority": 0
+            },
+            {
+              "funcId": [531],
+              "svals": ["[1000,1]"],
+              "script": {},
+              "skillId": 980006,
+              "lv": 3,
+              "chargeTurn": 15,
+              "skillDetailId": 980006,
+              "priority": 0
+            },
+            {
+              "funcId": [531],
+              "svals": ["[1000,1]"],
+              "script": {},
+              "skillId": 980006,
+              "lv": 4,
+              "chargeTurn": 15,
+              "skillDetailId": 980006,
+              "priority": 0
+            },
+            {
+              "funcId": [531],
+              "svals": ["[1000,1]"],
+              "script": {},
+              "skillId": 980006,
+              "lv": 5,
+              "chargeTurn": 15,
+              "skillDetailId": 980006,
+              "priority": 0
+            },
+            {
+              "funcId": [531],
+              "svals": ["[1000,1]"],
+              "script": {},
+              "skillId": 980006,
+              "lv": 6,
+              "chargeTurn": 14,
+              "skillDetailId": 980006,
+              "priority": 0
+            },
+            {
+              "funcId": [531],
+              "svals": ["[1000,1]"],
+              "script": {},
+              "skillId": 980006,
+              "lv": 7,
+              "chargeTurn": 14,
+              "skillDetailId": 980006,
+              "priority": 0
+            },
+            {
+              "funcId": [531],
+              "svals": ["[1000,1]"],
+              "script": {},
+              "skillId": 980006,
+              "lv": 8,
+              "chargeTurn": 14,
+              "skillDetailId": 980006,
+              "priority": 0
+            },
+            {
+              "funcId": [531],
+              "svals": ["[1000,1]"],
+              "script": {},
+              "skillId": 980006,
+              "lv": 9,
+              "chargeTurn": 14,
+              "skillDetailId": 980006,
+              "priority": 0
+            },
+            {
+              "funcId": [531],
+              "svals": ["[1000,1]"],
+              "script": {},
+              "skillId": 980006,
+              "lv": 10,
+              "chargeTurn": 13,
+              "skillDetailId": 980006,
+              "priority": 0
+            }
+          ]
+        }
+      ],
+      "mstEquipExp": [
+        {
+          "equipId": 20,
+          "lv": 1,
+          "exp": 1569000,
+          "skillLv1": 1,
+          "skillLv2": 1,
+          "skillLv3": 1
+        },
+        {
+          "equipId": 20,
+          "lv": 2,
+          "exp": 4707000,
+          "skillLv1": 2,
+          "skillLv2": 2,
+          "skillLv3": 2
+        },
+        {
+          "equipId": 20,
+          "lv": 3,
+          "exp": 9414000,
+          "skillLv1": 3,
+          "skillLv2": 3,
+          "skillLv3": 3
+        },
+        {
+          "equipId": 20,
+          "lv": 4,
+          "exp": 15690000,
+          "skillLv1": 4,
+          "skillLv2": 4,
+          "skillLv3": 4
+        },
+        {
+          "equipId": 20,
+          "lv": 5,
+          "exp": 23535000,
+          "skillLv1": 5,
+          "skillLv2": 5,
+          "skillLv3": 5
+        },
+        {
+          "equipId": 20,
+          "lv": 6,
+          "exp": 32949000,
+          "skillLv1": 6,
+          "skillLv2": 6,
+          "skillLv3": 6
+        },
+        {
+          "equipId": 20,
+          "lv": 7,
+          "exp": 43932000,
+          "skillLv1": 7,
+          "skillLv2": 7,
+          "skillLv3": 7
+        },
+        {
+          "equipId": 20,
+          "lv": 8,
+          "exp": 56484000,
+          "skillLv1": 8,
+          "skillLv2": 8,
+          "skillLv3": 8
+        },
+        {
+          "equipId": 20,
+          "lv": 9,
+          "exp": 70605000,
+          "skillLv1": 9,
+          "skillLv2": 9,
+          "skillLv3": 9
+        },
+        {
+          "equipId": 20,
+          "lv": 10,
+          "exp": -1,
+          "skillLv1": 10,
+          "skillLv2": 10,
+          "skillLv3": 10
+        }
+      ]
+    }
+  ]
+}

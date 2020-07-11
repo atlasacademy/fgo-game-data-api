@@ -73,7 +73,7 @@ if settings.export_all_nice:  # pragma: no cover
         with open(
             f"export/{region_}/nice_mystic_code.json", "w", encoding="utf-8"
         ) as fp:
-            json.dump(all_mc_data, fp, ensure_ascii=False)
+            fp.write(list_string(all_mc_data))
         with open(
             f"export/{region_}/nice_command_code.json", "w", encoding="utf-8"
         ) as fp:
@@ -274,7 +274,7 @@ if settings.documentation_all_nice:
 )
 async def get_mystic_code(region: Region, item_id: int):
     if item_id in masters[region].mstEquipId:
-        return nice.get_nice_mystic_code(region, item_id)
+        return item_response(nice.get_nice_mystic_code(region, item_id))
     else:
         raise HTTPException(status_code=404, detail="Mystic Code not found")
 

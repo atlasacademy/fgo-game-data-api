@@ -35,6 +35,7 @@ test_cases_dict = {
         "NA/skill/275551?expand=True&reverse=True",
         "NA_skill_275551_reverse_expand",
     ),
+    "skill_JP_reverse_MC": ("JP/skill/980004?reverse=true", "JP_skill_980004_reverse"),
     "NP_NA": ("NA/NP/900101", "NA_NP_900101"),
     "NP_NA_reverse": ("NA/NP/9940531?reverse=True", "NA_NP_9940531_reverse"),
     "NP_NA_expand": ("NA/NP/202401?expand=True", "NA_NP_202401_expand"),
