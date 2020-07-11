@@ -2,12 +2,13 @@ import inspect
 import logging
 import time
 
-from fastapi import FastAPI, Request
+from fastapi import BackgroundTasks, FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
 from .config import Settings
+from .data.gamedata import pull_and_update
 from .routers import basic, nice, raw
 
 
@@ -103,6 +104,14 @@ app.include_router(
 @app.get("/", include_in_schema=False)
 async def root():
     return RedirectResponse("/docs")
+
+
+if settings.github_webhook_secret != "":  # pragma: no cover
+
+    @app.post(f"/{settings.github_webhook_secret}/update", include_in_schema=False)
+    async def update_gamedata(background_tasks: BackgroundTasks):
+        background_tasks.add_task(pull_and_update)
+        return {"message": "Game data is updated in the background"}
 
 
 app.mount("/export", StaticFiles(directory="export"), name="export")
