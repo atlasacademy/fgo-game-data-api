@@ -39,8 +39,8 @@ class AssetURL:
     mcitem: str = "{base_url}/{region}/Items/masterequip{item_id:05}.png"
     mc: Dict[str, str] = {
         "item": "{base_url}/{region}/Items/masterequip{item_id:05}.png",
-        "masterFace": "{base_url}/{region}/MasterFigure/equip{item_id:05}.png",
-        "masterFigure": "{base_url}/{region}/MasterFace/equip{item_id:05}.png",
+        "masterFace": "{base_url}/{region}/MasterFace/equip{item_id:05}.png",
+        "masterFigure": "{base_url}/{region}/MasterFigure/equip{item_id:05}.png",
     }
     commandCode: str = "{base_url}/{region}/CommandCodes/c_{item_id}.png"
     commandGraph: str = "{base_url}/{region}/CommandGraph/{item_id}a.png"
