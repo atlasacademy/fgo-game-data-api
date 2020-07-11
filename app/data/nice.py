@@ -419,6 +419,8 @@ def get_nice_servant(
 
     charaGraph: Dict[str, Dict[int, str]] = {}
     faces: Dict[str, Dict[int, str]] = {}
+    commands: Dict[str, Dict[int, str]] = {}
+    status: Dict[str, Dict[int, str]] = {}
 
     base_settings = {"base_url": settings.asset_url, "region": region}
     base_settings_id = dict(item_id=item_id, **base_settings)
@@ -434,6 +436,12 @@ def get_nice_servant(
         }
         faces["ascension"] = {
             (i + 1): AssetURL.face.format(**base_settings_id, i=i) for i in range(4)
+        }
+        commands["ascension"] = {
+            i: AssetURL.commands.format(**base_settings_id, i=i) for i in range(1, 4)
+        }
+        status["ascension"] = {
+            i: AssetURL.status.format(**base_settings_id, i=i) for i in range(1, 4)
         }
         costume_ids = [
             item.battleCharaId
@@ -453,13 +461,26 @@ def get_nice_servant(
                 )
                 for costume_id in costume_ids
             }
+            commands["costume"] = {
+                costume_id: AssetURL.commands.format(**base_settings_id, i=11 + i)
+                for i, costume_id in enumerate(costume_ids)
+            }
+            status["costume"] = {
+                costume_id: AssetURL.status.format(**base_settings_id, i=11 + i)
+                for i, costume_id in enumerate(costume_ids)
+            }
     elif raw_data.mstSvt.isEquip():
         charaGraph["equip"] = {
             item_id: AssetURL.charaGraphDefault.format(**base_settings_id)
         }
         faces["equip"] = {item_id: AssetURL.face.format(**base_settings_id, i=0)}
 
-    nice_data["extraAssets"] = {"charaGraph": charaGraph, "faces": faces}
+    nice_data["extraAssets"] = {
+        "charaGraph": charaGraph,
+        "faces": faces,
+        "commands": commands,
+        "status": status,
+    }
 
     lvMax = max([item.lvMax for item in raw_data.mstSvtLimit])
     nice_data["lvMax"] = lvMax

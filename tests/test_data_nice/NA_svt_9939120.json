@@ -7,7 +7,12 @@
   "rarity": 5,
   "cost": 0,
   "lvMax": 100,
-  "extraAssets": { "charaGraph": {}, "faces": {} },
+  "extraAssets": {
+    "charaGraph": {},
+    "faces": {},
+    "commands": {},
+    "status": {}
+  },
   "gender": "unknown",
   "attribute": "beast",
   "traits": [

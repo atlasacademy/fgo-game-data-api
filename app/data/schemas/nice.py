@@ -31,6 +31,8 @@ class AssetURL:
         2: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@1.png",
         3: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@2.png",
     }
+    commands: str = "{base_url}/{region}/Servants/Commands/{item_id}/card_servant_{i}.png"
+    status: str = "{base_url}/{region}/Servants/Status/{item_id}/status_servant_{i}.png"
     charaGraphDefault: str = "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a.png"
     skillIcon: str = "{base_url}/{region}/SkillIcons/skill_{item_id:05}.png"
     buffIcon: str = "{base_url}/{region}/BuffIcons/bufficon_{item_id}.png"
@@ -246,9 +248,14 @@ class ExtraAssetsUrl(BaseModel):
     cc: Optional[Dict[int, HttpUrl]] = None
 
 
-class ExtraAssets(BaseModel):
+class ExtraCCAssets(BaseModel):
     charaGraph: ExtraAssetsUrl
     faces: ExtraAssetsUrl
+
+
+class ExtraAssets(ExtraCCAssets):
+    commands: ExtraAssetsUrl
+    status: ExtraAssetsUrl
 
 
 class NiceLoreComment(BaseModel):
@@ -354,7 +361,7 @@ class NiceCommandCode(BaseModelORJson):
     collectionNo: int
     name: str
     rarity: int
-    extraAssets: ExtraAssets
+    extraAssets: ExtraCCAssets
     skills: List[NiceSkill]
     comment: str
 

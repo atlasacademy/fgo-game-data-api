@@ -17,7 +17,9 @@
       "ascension": {
         "0": "https://assets.atlasacademy.io/GameData/JP/Faces/f_99354000.png"
       }
-    }
+    },
+    "commands": {},
+    "status": {}
   },
   "gender": "female",
   "attribute": "beast",

@@ -23,6 +23,20 @@
         "3": "https://assets.atlasacademy.io/GameData/NA/Faces/f_2010002.png",
         "4": "https://assets.atlasacademy.io/GameData/NA/Faces/f_2010003.png"
       }
+    },
+    "commands": {
+      "ascension": {
+        "1": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/201000/card_servant_1.png",
+        "2": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/201000/card_servant_2.png",
+        "3": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/201000/card_servant_3.png"
+      }
+    },
+    "status": {
+      "ascension": {
+        "1": "https://assets.atlasacademy.io/GameData/NA/Servants/Status/201000/status_servant_1.png",
+        "2": "https://assets.atlasacademy.io/GameData/NA/Servants/Status/201000/status_servant_2.png",
+        "3": "https://assets.atlasacademy.io/GameData/NA/Servants/Status/201000/status_servant_3.png"
+      }
     }
   },
   "gender": "male",

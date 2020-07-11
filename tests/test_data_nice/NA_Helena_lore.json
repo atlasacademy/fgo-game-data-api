@@ -23,6 +23,20 @@
         "3": "https://assets.atlasacademy.io/GameData/NA/Faces/f_5023002.png",
         "4": "https://assets.atlasacademy.io/GameData/NA/Faces/f_5023003.png"
       }
+    },
+    "commands": {
+      "ascension": {
+        "1": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/502300/card_servant_1.png",
+        "2": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/502300/card_servant_2.png",
+        "3": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/502300/card_servant_3.png"
+      }
+    },
+    "status": {
+      "ascension": {
+        "1": "https://assets.atlasacademy.io/GameData/NA/Servants/Status/502300/status_servant_1.png",
+        "2": "https://assets.atlasacademy.io/GameData/NA/Servants/Status/502300/status_servant_2.png",
+        "3": "https://assets.atlasacademy.io/GameData/NA/Servants/Status/502300/status_servant_3.png"
+      }
     }
   },
   "gender": "female",

@@ -33,6 +33,30 @@
         "800140": "https://assets.atlasacademy.io/GameData/JP/Faces/f_8001400.png",
         "800150": "https://assets.atlasacademy.io/GameData/JP/Faces/f_8001500.png"
       }
+    },
+    "commands": {
+      "ascension": {
+        "1": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/800100/card_servant_1.png",
+        "2": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/800100/card_servant_2.png",
+        "3": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/800100/card_servant_3.png"
+      },
+      "costume": {
+        "800130": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/800100/card_servant_11.png",
+        "800140": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/800100/card_servant_12.png",
+        "800150": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/800100/card_servant_13.png"
+      }
+    },
+    "status": {
+      "ascension": {
+        "1": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/800100/status_servant_1.png",
+        "2": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/800100/status_servant_2.png",
+        "3": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/800100/status_servant_3.png"
+      },
+      "costume": {
+        "800130": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/800100/status_servant_11.png",
+        "800140": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/800100/status_servant_12.png",
+        "800150": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/800100/status_servant_13.png"
+      }
     }
   },
   "gender": "female",
