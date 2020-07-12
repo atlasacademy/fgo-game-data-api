@@ -131,11 +131,14 @@ if settings.github_webhook_secret != "":  # pragma: no cover
     @app.post(f"/{settings.github_webhook_secret}/update", include_in_schema=False)
     async def update_gamedata(background_tasks: BackgroundTasks):
         background_tasks.add_task(pull_and_update)
-        return {"message": "Game data is updated in the background"}
+        return {
+            "message": "Game data is updated in the background",
+            "file_path": str(file_path),
+        }
 
     @app.get(f"/{settings.github_webhook_secret}/info", include_in_schema=False)
     async def info():
-        return {"file_path": str(file_path)}
+        return dict(**repo_info, file_path=str(file_path))
 
 
 app.mount("/export", StaticFiles(directory="export"), name="export")
