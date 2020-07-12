@@ -146,16 +146,12 @@ update_repo_info()
 def pull_and_update():  # pragma: no cover
     logger.info(f"Sleeping {settings.github_webhook_sleep} seconds …")
     time.sleep(settings.github_webhook_sleep)
-    for region, gamedata in region_path.items():
+    for gamedata in region_path.values():
         if (gamedata.parent / ".git").exists():
             repo = Repo(gamedata.parent)
             for fetch_info in repo.remotes[0].pull():  # type: ignore
                 commit_hash = fetch_info.commit.hexsha[:6]
                 logger.info(f"Updated {fetch_info.ref} to {commit_hash}")
-                repo_info[region] = {
-                    "hash": commit_hash,
-                    "timestamp": fetch_info.committed_date,
-                }
     update_gamedata()
     generate_exports()
     update_repo_info()
