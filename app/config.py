@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     documentation_all_nice: bool = False
     nice_servant_lru_cache: bool = False
     github_webhook_secret: str = ""
+    github_webhook_git_pull: bool = False
     github_webhook_sleep: int = 0
 
     @validator("asset_url")

@@ -151,12 +151,13 @@ update_repo_info()
 def pull_and_update():  # pragma: no cover
     logger.info(f"Sleeping {settings.github_webhook_sleep} seconds …")
     time.sleep(settings.github_webhook_sleep)
-    for gamedata in region_path.values():
-        if (gamedata.parent / ".git").exists():
-            repo = Repo(gamedata.parent)
-            for fetch_info in repo.remotes[0].pull():  # type: ignore
-                commit_hash = fetch_info.commit.hexsha[:6]
-                logger.info(f"Updated {fetch_info.ref} to {commit_hash}")
+    if settings.github_webhook_git_pull:
+        for gamedata in region_path.values():
+            if (gamedata.parent / ".git").exists():
+                repo = Repo(gamedata.parent)
+                for fetch_info in repo.remotes[0].pull():  # type: ignore
+                    commit_hash = fetch_info.commit.hexsha[:6]
+                    logger.info(f"Updated {fetch_info.ref} to {commit_hash}")
     update_gamedata()
     if settings.nice_servant_lru_cache:
         get_nice_servant.cache_clear()
