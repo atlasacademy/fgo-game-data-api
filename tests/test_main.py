@@ -34,3 +34,8 @@ class TestMain:
     def test_NA_export_link(self):
         response = client.get("/export/NA/NiceClassAttackRate.json")
         assert response.status_code == 200
+
+    def test_info(self):
+        response = client.get("/info").json()
+        assert len(response["NA"]["hash"]) == 6
+        assert response["JP"]["timestamp"] > 1594450000

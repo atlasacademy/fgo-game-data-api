@@ -6,9 +6,10 @@ from fastapi import BackgroundTasks, FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel
 
 from .config import Settings
-from .data.tasks import pull_and_update
+from .data.tasks import pull_and_update, repo_info
 from .routers import basic, nice, raw
 
 
@@ -106,12 +107,35 @@ async def root():
     return RedirectResponse("/docs")
 
 
+class RegionInfo(BaseModel):
+    hash: str
+    timestamp: int
+
+
+class InfoResponse(BaseModel):
+    NA: RegionInfo
+    JP: RegionInfo
+
+
+@app.get("/info", include_in_schema=False, response_model=InfoResponse)
+async def main_info():
+    return repo_info
+
+
 if settings.github_webhook_secret != "":  # pragma: no cover
+
+    from pathlib import Path
+
+    file_path = Path(__file__).resolve()
 
     @app.post(f"/{settings.github_webhook_secret}/update", include_in_schema=False)
     async def update_gamedata(background_tasks: BackgroundTasks):
         background_tasks.add_task(pull_and_update)
         return {"message": "Game data is updated in the background"}
+
+    @app.get(f"/{settings.github_webhook_secret}/info", include_in_schema=False)
+    async def info():
+        return {"file_path": str(file_path)}
 
 
 app.mount("/export", StaticFiles(directory="export"), name="export")

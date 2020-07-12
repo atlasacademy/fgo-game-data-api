@@ -27,7 +27,7 @@ settings = Settings()
 logger = logging.getLogger()
 
 
-file_path = Path(__file__)
+file_path = Path(__file__).resolve()
 export_path = file_path.parents[2] / "export"
 
 
@@ -45,7 +45,7 @@ def dump_orjson(
         fp.write(list_string(data))
 
 
-def dump(region: Region, file_name: str, data: Any):
+def dump(region: Region, file_name: str, data: Any):  # pragma: no cover
     if isinstance(data, list) and isinstance(data[0], BaseModelORJson):
         dump_orjson(region, file_name, data)
     else:
@@ -126,13 +126,36 @@ def generate_exports():  # pragma: no cover
 generate_exports()
 
 
+repo_info = {}
+
+
+def update_repo_info():
+    for region, gamedata in region_path.items():
+        if (gamedata.parent / ".git").exists():
+            repo = Repo(gamedata.parent)
+            latest_commit = repo.commit()
+            repo_info[region] = {
+                "hash": latest_commit.hexsha[:6],  # type: ignore
+                "timestamp": latest_commit.committed_date,  # type: ignore
+            }
+
+
+update_repo_info()
+
+
 def pull_and_update():  # pragma: no cover
     logger.info(f"Sleeping {settings.github_webhook_sleep} seconds …")
     time.sleep(settings.github_webhook_sleep)
-    for gamedata in region_path.values():
+    for region, gamedata in region_path.items():
         if (gamedata.parent / ".git").exists():
             repo = Repo(gamedata.parent)
             for fetch_info in repo.remotes[0].pull():  # type: ignore
-                logger.info(f"Updated {fetch_info.ref} to {fetch_info.commit}")
+                commit_hash = fetch_info.commit.hexsha[:6]
+                logger.info(f"Updated {fetch_info.ref} to {commit_hash}")
+                repo_info[region] = {
+                    "hash": commit_hash,
+                    "timestamp": fetch_info.committed_date,
+                }
     update_gamedata()
     generate_exports()
+    update_repo_info()
