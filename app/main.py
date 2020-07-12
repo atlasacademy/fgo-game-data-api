@@ -8,7 +8,7 @@ from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
 from .config import Settings
-from .data.gamedata import pull_and_update
+from .data.tasks import pull_and_update
 from .routers import basic, nice, raw
 
 

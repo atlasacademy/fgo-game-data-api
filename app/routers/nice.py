@@ -1,6 +1,3 @@
-import json
-import logging
-import time
 from typing import Any, Dict, List, Optional, Union
 
 from fastapi import APIRouter, Depends, HTTPException
@@ -8,7 +5,6 @@ from fastapi import APIRouter, Depends, HTTPException
 from ..config import Settings
 from ..data import nice, search
 from ..data.common import Region
-from ..data.enums import TRAIT_NAME
 from ..data.gamedata import masters
 from ..data.schemas.nice import (
     Language,
@@ -30,56 +26,10 @@ from .deps import (
     FuncSearchQueryParams,
     ServantSearchQueryParams,
 )
-from .utils import item_response, list_response, list_string
+from .utils import item_response, list_response
 
 
-logger = logging.getLogger()
 settings = Settings()
-
-
-if settings.export_all_nice:  # pragma: no cover
-    for region_ in (Region.NA, Region.JP):
-        start_time = time.perf_counter()
-        logger.info(f"Writing nice {region_} servant and equip data …")
-        all_equip_data = [
-            nice.get_nice_equip_model(region_, item_id)
-            for item_id in masters[region_].mstSvtEquipCollectionNo.values()
-        ]
-        all_servant_data = [
-            nice.get_nice_servant_model(region_, item_id)
-            for item_id in masters[region_].mstSvtServantCollectionNo.values()
-        ]
-        all_item_data = [
-            nice.get_nice_item(region_, item_id)
-            for item_id in masters[region_].mstItemId
-        ]
-        all_mc_data = [
-            nice.get_nice_mystic_code(region_, item_id)
-            for item_id in masters[region_].mstEquipId
-        ]
-        all_cc_data = [
-            nice.get_nice_command_code(region_, item_id)
-            for item_id in masters[region_].mstCommandCodeId
-        ]
-
-        with open(f"export/{region_}/nice_trait.json", "w", encoding="utf-8") as fp:
-            json.dump(TRAIT_NAME, fp)
-        with open(f"export/{region_}/nice_servant.json", "w", encoding="utf-8") as fp:
-            fp.write(list_string(all_servant_data))
-        with open(f"export/{region_}/nice_equip.json", "w", encoding="utf-8") as fp:
-            fp.write(list_string(all_equip_data))
-        with open(f"export/{region_}/nice_item.json", "w", encoding="utf-8") as fp:
-            json.dump(all_item_data, fp, ensure_ascii=False)
-        with open(
-            f"export/{region_}/nice_mystic_code.json", "w", encoding="utf-8"
-        ) as fp:
-            fp.write(list_string(all_mc_data))
-        with open(
-            f"export/{region_}/nice_command_code.json", "w", encoding="utf-8"
-        ) as fp:
-            json.dump(all_cc_data, fp, ensure_ascii=False)
-        run_time = time.perf_counter() - start_time
-        logger.info(f"Finished writing nice {region_} data in {run_time:.4f}s.")
 
 
 responses: Dict[Union[str, int], Any] = {

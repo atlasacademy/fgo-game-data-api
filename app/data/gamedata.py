@@ -3,7 +3,6 @@ import time
 from typing import Any, Dict, List
 
 import orjson
-from git import Repo
 
 from ..config import Settings
 from .common import Region
@@ -139,14 +138,3 @@ def update_gamedata():
 
 
 update_gamedata()
-
-
-def pull_and_update():  # pragma: no cover
-    logger.info(f"Sleeping {settings.github_webhook_sleep} seconds …")
-    time.sleep(settings.github_webhook_sleep)
-    for gamedata in region_path.values():
-        if (gamedata.parent / ".git").exists():
-            repo = Repo(gamedata.parent)
-            for fetch_info in repo.remotes[0].pull():  # type: ignore
-                logger.info(f"Updated {fetch_info.ref} to {fetch_info.commit}")
-    update_gamedata()
