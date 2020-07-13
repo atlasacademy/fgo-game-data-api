@@ -275,6 +275,18 @@ class MstSvtComment(BaseModel):
     condValue2: int  # 0
 
 
+class MstCv(BaseModel):
+    id: int  # 93
+    name: str  # "Satoshi Hino"
+    comment: str  # ""
+
+
+class MstIllustrator(BaseModel):
+    id: int  # 2
+    name: str  # "Takashi Takeuchi"
+    comment: str  # ""
+
+
 class MstSvtExp(BaseModel):
     type: int  # 20,
     lv: int  # 15,
@@ -510,6 +522,8 @@ class Master(BaseModel):
     mstCommandCodeId: Dict[int, MstCommandCode]
     mstCommandCodeSkill: List[MstCommandCodeSkill]
     mstCommandCodeComment: List[MstCommandCodeComment]
+    mstCvId: Dict[int, MstCv]
+    mstIllustratorId: Dict[int, MstIllustrator]
 
 
 class ServantEntity(BaseModelORJson):

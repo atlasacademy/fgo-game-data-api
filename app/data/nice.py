@@ -558,8 +558,22 @@ def get_nice_servant(
     nice_data["noblePhantasms"] = [get_nice_td(td, item_id, region) for td in actualTDs]
 
     if lore:
+        if raw_data.mstSvt.cvId != 0:
+            cv = masters[region].mstCvId[raw_data.mstSvt.cvId].name
+        else:
+            cv = ""
+
+        if raw_data.mstSvt.illustratorId != 0:
+            illustrator = (
+                masters[region].mstIllustratorId[raw_data.mstSvt.illustratorId].name
+            )
+        else:
+            illustrator = ""
+
         nice_data["profile"] = {
-            "comments": [get_nice_comment(item) for item in raw_data.mstSvtComment]
+            "cv": cv,
+            "illustrator": illustrator,
+            "comments": [get_nice_comment(item) for item in raw_data.mstSvtComment],
         }
         if raw_data.mstSvt.isServant():
             nice_data["profile"]["stats"] = {

@@ -281,6 +281,8 @@ class NiceLoreStats(BaseModel):
 
 
 class NiceLore(BaseModel):
+    cv: str
+    illustrator: str
     stats: Optional[NiceLoreStats] = None
     comments: List[NiceLoreComment]
 

@@ -24,6 +24,8 @@ MASTER_WITH_ID = {
     "mstEquip",
     "mstQuest",
     "mstCommandCode",
+    "mstCv",
+    "mstIllustrator",
 }
 MASTER_WITHOUT_ID = {
     "mstSvtExp",

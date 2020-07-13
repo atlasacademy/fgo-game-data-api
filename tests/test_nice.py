@@ -94,3 +94,9 @@ class TestServantSpecial:
         response = client.get("/nice/JP/servant/304300?lang=en")
         assert response.status_code == 200
         assert response.json()["name"] == "Elice Utsumi"
+
+    def test_empty_cv_illustrator_name(self):
+        response = client.get("/nice/JP/svt/9941330?lore=true")
+        assert response.status_code == 200
+        assert response.json()["profile"]["cv"] == ""
+        assert response.json()["profile"]["illustrator"] == ""
