@@ -100,3 +100,15 @@ class TestServantSpecial:
         assert response.status_code == 200
         assert response.json()["profile"]["cv"] == ""
         assert response.json()["profile"]["illustrator"] == ""
+
+    def test_buff_reverse_skillNp(self):
+        response = client.get("/nice/NA/buff/203?reverse=True&reverseDepth=skillNp")
+        assert response.status_code == 200
+        assert response.json()["reverseFunctions"][1]["reverseSkills"]
+
+    def test_function_reverse_servant(self):
+        response = client.get(
+            "/nice/NA/function/3411?reverse=True&reverseDepth=servant"
+        )
+        assert response.status_code == 200
+        assert response.json()["reverseSkills"][0]["reverseServants"]

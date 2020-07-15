@@ -16,7 +16,7 @@ from typing import (
 from fastapi import HTTPException
 
 from ..config import Settings
-from .common import Region
+from .common import Region, ReverseDepth
 from .enums import (
     ATTRIBUTE_NAME,
     BUFF_TYPE_NAME,
@@ -598,13 +598,17 @@ def get_nice_equip_model(*args, **kwargs) -> NiceEquip:
 
 @cache_functions
 def get_nice_buff_alone(
-    region: Region, buff_id: int, reverse: bool = False, lang: Optional[Language] = None
+    region: Region,
+    buff_id: int,
+    reverse: bool = False,
+    reverseDepth: ReverseDepth = ReverseDepth.function,
+    lang: Optional[Language] = None,
 ) -> NiceBuffReverse:
     raw_data = get_buff_entity_no_reverse(region, buff_id)
     nice_data = NiceBuffReverse.parse_obj(get_nice_buff(raw_data, region))
-    if reverse:
+    if reverse and reverseDepth >= ReverseDepth.function:
         nice_data.reverseFunctions = [
-            get_nice_func_alone(region, func_id, reverse, lang=lang)
+            get_nice_func_alone(region, func_id, reverse, reverseDepth, lang=lang)
             for func_id in buff_to_func(region, buff_id)
         ]
     return nice_data
@@ -612,20 +616,24 @@ def get_nice_buff_alone(
 
 @cache_functions
 def get_nice_func_alone(
-    region: Region, func_id: int, reverse: bool = False, lang: Optional[Language] = None
+    region: Region,
+    func_id: int,
+    reverse: bool = False,
+    reverseDepth: ReverseDepth = ReverseDepth.skillNp,
+    lang: Optional[Language] = None,
 ) -> NiceBaseFunctionReverse:
     raw_data = get_func_entity_no_reverse(region, func_id, expand=True)
     nice_data = NiceBaseFunctionReverse.parse_obj(
         get_nice_base_function(raw_data, region)
     )
 
-    if reverse:
+    if reverse and reverseDepth >= ReverseDepth.skillNp:
         nice_data.reverseSkills = [
-            get_nice_skill_alone(region, skill_id, reverse, lang=lang)
+            get_nice_skill_alone(region, skill_id, reverse, reverseDepth, lang=lang)
             for skill_id in func_to_skillId(region, func_id)
         ]
         nice_data.reverseTds = [
-            get_nice_td_alone(region, td_id, reverse, lang=lang)
+            get_nice_td_alone(region, td_id, reverse, reverseDepth, lang=lang)
             for td_id in func_to_tdId(region, func_id)
         ]
     return nice_data
@@ -636,6 +644,7 @@ def get_nice_skill_alone(
     region: Region,
     skill_id: int,
     reverse: bool = False,
+    reverseDepth: ReverseDepth = ReverseDepth.servant,
     lang: Optional[Language] = None,
 ) -> NiceSkillReverse:
     raw_data = get_skill_entity_no_reverse(region, skill_id, expand=True)
@@ -647,7 +656,7 @@ def get_nice_skill_alone(
         svtId = 0
     nice_data = NiceSkillReverse.parse_obj(get_nice_skill(raw_data, svtId, region))
 
-    if reverse:
+    if reverse and reverseDepth >= ReverseDepth.servant:
         activeSkills = {item.svtId for item in raw_data.mstSvtSkill}
         passiveSkills = {
             item.id for item in masters[region].mstSvt if skill_id in item.classPassive
@@ -666,7 +675,11 @@ def get_nice_skill_alone(
 
 @cache_functions
 def get_nice_td_alone(
-    region: Region, td_id: int, reverse: bool = False, lang: Optional[Language] = None
+    region: Region,
+    td_id: int,
+    reverse: bool = False,
+    reverseDepth: ReverseDepth = ReverseDepth.servant,
+    lang: Optional[Language] = None,
 ) -> NiceTdReverse:
     raw_data = get_td_entity_no_reverse(region, td_id, expand=True)
 
@@ -674,7 +687,7 @@ def get_nice_td_alone(
     svtId = svt_list[0]  # Yes, all td_id has a svtTd entry
     nice_data = NiceTdReverse.parse_obj(get_nice_td(raw_data, svtId, region))
 
-    if reverse:
+    if reverse and reverseDepth >= ReverseDepth.servant:
         nice_data.reverseServants = [
             get_nice_servant_model(region, item.svtId, lang=lang)
             for item in raw_data.mstSvtTreasureDevice

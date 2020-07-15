@@ -1,6 +1,6 @@
 from typing import Set
 
-from .common import Region
+from .common import Region, ReverseDepth
 from .enums import FuncType
 from .gamedata import masters
 from .schemas.raw import (
@@ -49,11 +49,16 @@ def get_buff_entity_no_reverse(region: Region, buff_id: int) -> BuffEntityNoReve
     return buff_entity
 
 
-def get_buff_entity(region: Region, buff_id: int, reverse: bool = False) -> BuffEntity:
+def get_buff_entity(
+    region: Region,
+    buff_id: int,
+    reverse: bool = False,
+    reverseDepth: ReverseDepth = ReverseDepth.function,
+) -> BuffEntity:
     buff_entity = BuffEntity.parse_obj(get_buff_entity_no_reverse(region, buff_id))
-    if reverse:
+    if reverse and reverseDepth >= ReverseDepth.function:
         buff_entity.reverseFunctions = [
-            get_func_entity(region, item_id, reverse)
+            get_func_entity(region, item_id, reverse, reverseDepth)
             for item_id in buff_to_func(region, buff_id)
         ]
     return buff_entity
@@ -77,18 +82,22 @@ def get_func_entity_no_reverse(
 
 
 def get_func_entity(
-    region: Region, func_id: int, reverse: bool = False, expand: bool = False
+    region: Region,
+    func_id: int,
+    reverse: bool = False,
+    reverseDepth: ReverseDepth = ReverseDepth.skillNp,
+    expand: bool = False,
 ) -> FunctionEntity:
     func_entity = FunctionEntity.parse_obj(
         get_func_entity_no_reverse(region, func_id, expand)
     )
-    if reverse:
+    if reverse and reverseDepth >= ReverseDepth.skillNp:
         func_entity.reverseSkills = [
-            get_skill_entity(region, item_id, reverse)
+            get_skill_entity(region, item_id, reverse, reverseDepth)
             for item_id in func_to_skillId(region, func_id)
         ]
         func_entity.reverseTds = [
-            get_td_entity(region, item_id, reverse)
+            get_td_entity(region, item_id, reverse, reverseDepth)
             for item_id in func_to_tdId(region, func_id)
         ]
     return func_entity
@@ -115,13 +124,18 @@ def get_skill_entity_no_reverse(
 
 
 def get_skill_entity(
-    region: Region, skill_id: int, reverse: bool = False, expand: bool = False
+    region: Region,
+    skill_id: int,
+    reverse: bool = False,
+    reverseDepth: ReverseDepth = ReverseDepth.servant,
+    expand: bool = False,
 ) -> SkillEntity:
     skill_entity = SkillEntity.parse_obj(
         get_skill_entity_no_reverse(region, skill_id, expand)
     )
 
-    if reverse:
+    if reverse and reverseDepth >= ReverseDepth.servant:
+        print(reverseDepth)
         activeSkills = {item.svtId for item in skill_entity.mstSvtSkill}
         passiveSkills = {
             item.id for item in masters[region].mstSvt if skill_id in item.classPassive
@@ -160,11 +174,15 @@ def get_td_entity_no_reverse(
 
 
 def get_td_entity(
-    region: Region, td_id: int, reverse: bool = False, expand: bool = False
+    region: Region,
+    td_id: int,
+    reverse: bool = False,
+    reverseDepth: ReverseDepth = ReverseDepth.servant,
+    expand: bool = False,
 ) -> TdEntity:
     td_entity = TdEntity.parse_obj(get_td_entity_no_reverse(region, td_id, expand))
 
-    if reverse:
+    if reverse and reverseDepth >= ReverseDepth.servant:
         td_entity.reverseServants = [
             get_servant_entity(region, item.svtId)
             for item in td_entity.mstSvtTreasureDevice

@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, HTTPException
 
 from ..config import Settings
 from ..data import nice, search
-from ..data.common import Region
+from ..data.common import Region, ReverseDepth
 from ..data.gamedata import masters
 from ..data.schemas.nice import (
     Language,
@@ -266,7 +266,10 @@ async def get_command_code(region: Region, item_id: int):
     responses=responses,
 )
 async def get_skill(
-    region: Region, item_id: int, reverse: bool = False, lang: Optional[Language] = None
+    region: Region,
+    item_id: int,
+    reverse: bool = False,
+    lang: Optional[Language] = None,
 ):
     """
     Get the skill data from the given ID
@@ -275,7 +278,9 @@ async def get_skill(
     and return the reverse skill objects.
     """
     if item_id in masters[region].mstSkillId:
-        return item_response(nice.get_nice_skill_alone(region, item_id, reverse, lang))
+        return item_response(
+            nice.get_nice_skill_alone(region, item_id, reverse, lang=lang)
+        )
     else:
         raise HTTPException(status_code=404, detail="Skill not found")
 
@@ -289,7 +294,10 @@ async def get_skill(
     responses=responses,
 )
 async def get_td(
-    region: Region, item_id: int, reverse: bool = False, lang: Optional[Language] = None
+    region: Region,
+    item_id: int,
+    reverse: bool = False,
+    lang: Optional[Language] = None,
 ):
     """
     Get the NP data from the given ID
@@ -298,7 +306,9 @@ async def get_td(
     and return the reversed servant objects.
     """
     if item_id in masters[region].mstTreasureDeviceId:
-        return item_response(nice.get_nice_td_alone(region, item_id, reverse, lang))
+        return item_response(
+            nice.get_nice_td_alone(region, item_id, reverse, lang=lang)
+        )
     else:
         raise HTTPException(status_code=404, detail="NP not found")
 
@@ -306,7 +316,7 @@ async def get_td(
 function_reverse_lang_description = """
 - **reverse**: Reverse lookup the skills that have this function
 and return the reversed skill objects.
-Will search recursively and return all entities in path: func -> skill/np -> servant.
+- **reverseDepth**: Controls the depth of the reverse lookup: func -> skill/np -> servant.
 - **lang**: returns English servant names if querying JP data. Doesn't do anything if querying NA data.
 """
 
@@ -323,12 +333,15 @@ Will search recursively and return all entities in path: func -> skill/np -> ser
 async def find_function(
     search_param: FuncSearchQueryParams = Depends(FuncSearchQueryParams),
     reverse: bool = False,
+    reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     lang: Optional[Language] = None,
 ):
     if search_param.hasSearchParams:
         matches = search.search_func(search_param)
         entity_list = [
-            nice.get_nice_func_alone(search_param.region, item, reverse, lang)
+            nice.get_nice_func_alone(
+                search_param.region, item, reverse, reverseDepth, lang
+            )
             for item in matches
         ]
         return list_response(entity_list)
@@ -347,10 +360,16 @@ async def find_function(
     responses=responses,
 )
 async def get_function(
-    region: Region, item_id: int, reverse: bool = False, lang: Optional[Language] = None
+    region: Region,
+    item_id: int,
+    reverse: bool = False,
+    reverseDepth: ReverseDepth = ReverseDepth.skillNp,
+    lang: Optional[Language] = None,
 ):
     if item_id in masters[region].mstFuncId:
-        return item_response(nice.get_nice_func_alone(region, item_id, reverse, lang))
+        return item_response(
+            nice.get_nice_func_alone(region, item_id, reverse, reverseDepth, lang)
+        )
     else:
         raise HTTPException(status_code=404, detail="Function not found")
 
@@ -358,7 +377,7 @@ async def get_function(
 buff_reverse_lang_description = """
 - **reverse**: Reverse lookup the functions that have this buff
 and return the reversed function objects.
-Will search recursively and return all entities in path: buff -> func -> skill/np -> servant.
+- **reverseDepth**: Controls the depth of the reverse lookup: buff -> func -> skill/np -> servant.
 - **lang**: returns English servant names if querying JP data. Doesn't do anything if querying NA data.
 """
 
@@ -375,12 +394,15 @@ Will search recursively and return all entities in path: buff -> func -> skill/n
 async def find_buff(
     search_param: BuffSearchQueryParams = Depends(BuffSearchQueryParams),
     reverse: bool = False,
+    reverseDepth: ReverseDepth = ReverseDepth.function,
     lang: Optional[Language] = None,
 ):
     if search_param.hasSearchParams:
         matches = search.search_buff(search_param)
         entity_list = [
-            nice.get_nice_buff_alone(search_param.region, item, reverse, lang)
+            nice.get_nice_buff_alone(
+                search_param.region, item, reverse, reverseDepth, lang
+            )
             for item in matches
         ]
         return list_response(entity_list)
@@ -398,10 +420,16 @@ async def find_buff(
     responses=responses,
 )
 async def get_buff(
-    region: Region, item_id: int, reverse: bool = False, lang: Optional[Language] = None
+    region: Region,
+    item_id: int,
+    reverse: bool = False,
+    reverseDepth: ReverseDepth = ReverseDepth.function,
+    lang: Optional[Language] = None,
 ):
     if item_id in masters[region].mstBuffId:
-        return item_response(nice.get_nice_buff_alone(region, item_id, reverse, lang))
+        return item_response(
+            nice.get_nice_buff_alone(region, item_id, reverse, reverseDepth, lang)
+        )
     else:
         raise HTTPException(status_code=404, detail="Buff not found")
 

@@ -3,7 +3,7 @@ from typing import Any, Dict, List, Union
 from fastapi import APIRouter, Depends, HTTPException
 
 from ..data import raw, search
-from ..data.common import Region
+from ..data.common import Region, ReverseDepth
 from ..data.gamedata import masters
 from ..data.schemas.raw import (
     BuffEntity,
@@ -201,7 +201,7 @@ async def get_command_code(region: Region, item_id: int, expand: bool = False):
     responses=responses,
 )
 async def get_skill(
-    region: Region, item_id: int, reverse: bool = False, expand: bool = False
+    region: Region, item_id: int, reverse: bool = False, expand: bool = False,
 ):
     """
     Get the skill data from the given ID
@@ -212,7 +212,7 @@ async def get_skill(
     from the function IDs in mstSkillLv.funcId.
     """
     if item_id in masters[region].mstSkillId:
-        skill_entity = raw.get_skill_entity(region, item_id, reverse, expand)
+        skill_entity = raw.get_skill_entity(region, item_id, reverse, expand=expand)
         return item_response(skill_entity)
     else:
         raise HTTPException(status_code=404, detail="Skill not found")
@@ -227,7 +227,7 @@ async def get_skill(
     responses=responses,
 )
 async def get_td(
-    region: Region, item_id: int, reverse: bool = False, expand: bool = False
+    region: Region, item_id: int, reverse: bool = False, expand: bool = False,
 ):
     """
     Get the NP data from the given ID
@@ -238,7 +238,7 @@ async def get_td(
     from the function IDs in mstTreasureDeviceLv.funcId.
     """
     if item_id in masters[region].mstTreasureDeviceId:
-        td_entity = raw.get_td_entity(region, item_id, reverse, expand)
+        td_entity = raw.get_td_entity(region, item_id, reverse, expand=expand)
         return item_response(td_entity)
     else:
         raise HTTPException(status_code=404, detail="NP not found")
@@ -247,7 +247,7 @@ async def get_td(
 function_reverse_expand_description = """
 - **reverse**: Reverse lookup the skills that have this function
 and return the reversed skill objects.
-Will search recursively and return all entities in path: func -> skill/np -> servant.
+- **reverseDepth**: Controls the depth of the reverse lookup: func -> skill/np -> servant.
 - **expand**: Add buff objects to mstFunc.expandedVals from the buff ID in mstFunc.vals.
 """
 
@@ -264,12 +264,15 @@ Will search recursively and return all entities in path: func -> skill/np -> ser
 async def find_function(
     search_param: FuncSearchQueryParams = Depends(FuncSearchQueryParams),
     reverse: bool = False,
+    reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     expand: bool = False,
 ):
     if search_param.hasSearchParams:
         matches = search.search_func(search_param)
         entity_list = [
-            raw.get_func_entity(search_param.region, item, reverse, expand)
+            raw.get_func_entity(
+                search_param.region, item, reverse, reverseDepth, expand
+            )
             for item in matches
         ]
         return list_response(entity_list)
@@ -288,10 +291,16 @@ async def find_function(
     responses=responses,
 )
 async def get_function(
-    region: Region, item_id: int, reverse: bool = False, expand: bool = False
+    region: Region,
+    item_id: int,
+    reverse: bool = False,
+    reverseDepth: ReverseDepth = ReverseDepth.skillNp,
+    expand: bool = False,
 ):
     if item_id in masters[region].mstFuncId:
-        func_entity = raw.get_func_entity(region, item_id, reverse, expand)
+        func_entity = raw.get_func_entity(
+            region, item_id, reverse, reverseDepth, expand
+        )
         return item_response(func_entity)
     else:
         raise HTTPException(status_code=404, detail="Function not found")
@@ -300,7 +309,7 @@ async def get_function(
 buff_reverse_description = """
 - **reverse**: Reverse lookup the functions that have this buff
 and return the reversed function objects.
-Will search recursively and return all entities in path: buff -> func -> skill/np -> servant.
+- **reverseDepth**: Controls the depth of the reverse lookup: buff -> func -> skill/np -> servant.
 """
 
 
@@ -316,11 +325,13 @@ Will search recursively and return all entities in path: buff -> func -> skill/n
 async def find_buff(
     search_param: BuffSearchQueryParams = Depends(BuffSearchQueryParams),
     reverse: bool = False,
+    reverseDepth: ReverseDepth = ReverseDepth.function,
 ):
     if search_param.hasSearchParams:
         matches = search.search_buff(search_param)
         entity_list = [
-            raw.get_buff_entity(search_param.region, item, reverse) for item in matches
+            raw.get_buff_entity(search_param.region, item, reverse, reverseDepth)
+            for item in matches
         ]
         return list_response(entity_list)
     else:
@@ -336,9 +347,14 @@ async def find_buff(
     response_model_exclude_unset=True,
     responses=responses,
 )
-async def get_buff(region: Region, item_id: int, reverse: bool = False):
+async def get_buff(
+    region: Region,
+    item_id: int,
+    reverse: bool = False,
+    reverseDepth: ReverseDepth = ReverseDepth.function,
+):
     if item_id in masters[region].mstBuffId:
-        buff_entity = raw.get_buff_entity(region, item_id, reverse)
+        buff_entity = raw.get_buff_entity(region, item_id, reverse, reverseDepth)
         return item_response(buff_entity)
     else:
         raise HTTPException(status_code=404, detail="Buff not found")

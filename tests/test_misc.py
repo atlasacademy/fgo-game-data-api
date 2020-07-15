@@ -1,7 +1,7 @@
 import pytest
 from fastapi import HTTPException
 
-from app.data.common import Region
+from app.data.common import Region, ReverseDepth
 from app.data.nice import get_nice_servant, parse_dataVals
 from app.data.tasks import sort_by_collection_no
 
@@ -21,6 +21,11 @@ def test_parse_dataVals_add_state_6_items():
 def test_parse_datavals_fail():
     with pytest.raises(HTTPException):
         parse_dataVals("[HideMiss]", 1, Region.NA)
+
+
+def test_reverseDepth_fail():
+    with pytest.raises(TypeError):
+        print(ReverseDepth.function >= 1)
 
 
 def test_lru_cache():
