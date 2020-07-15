@@ -1,7 +1,7 @@
 from typing import Set
 
 from .common import Region, ReverseDepth
-from .enums import FuncType
+from .enums import FUNC_VALS_NOT_BUFF
 from .gamedata import masters
 from .schemas.raw import (
     BuffEntity,
@@ -23,7 +23,8 @@ def buff_to_func(region: Region, buff_id: int) -> Set[int]:
     return {
         item.id
         for item in masters[region].mstFunc
-        if buff_id in item.vals and item.id in masters[region].mstFuncId
+        if buff_id in item.vals
+        and masters[region].mstFuncId[item.id].funcType not in FUNC_VALS_NOT_BUFF
     }
 
 
@@ -68,11 +69,7 @@ def get_func_entity_no_reverse(
     region: Region, func_id: int, expand: bool = False
 ) -> FunctionEntityNoReverse:
     func_entity = FunctionEntityNoReverse(mstFunc=masters[region].mstFuncId[func_id])
-    if expand and func_entity.mstFunc.funcType not in {
-        FuncType.SUB_STATE,
-        FuncType.EVENT_DROP_UP,
-        FuncType.GAIN_NP_BUFF_INDIVIDUAL_SUM,
-    }:
+    if expand and func_entity.mstFunc.funcType not in FUNC_VALS_NOT_BUFF:
         func_entity.mstFunc.expandedVals = [
             get_buff_entity_no_reverse(region, buff_id)
             for buff_id in func_entity.mstFunc.vals
@@ -135,7 +132,6 @@ def get_skill_entity(
     )
 
     if reverse and reverseDepth >= ReverseDepth.servant:
-        print(reverseDepth)
         activeSkills = {item.svtId for item in skill_entity.mstSvtSkill}
         passiveSkills = {
             item.id for item in masters[region].mstSvt if skill_id in item.classPassive

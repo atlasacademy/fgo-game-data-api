@@ -136,6 +136,13 @@ class FuncType(IntEnum):
     DAMAGE_NP_INDIVIDUAL_SUM = 121
 
 
+FUNC_VALS_NOT_BUFF = {
+    FuncType.SUB_STATE,
+    FuncType.EVENT_DROP_UP,
+    FuncType.GAIN_NP_BUFF_INDIVIDUAL_SUM,
+}
+
+
 class NiceFuncType(str, Enum):
     none = "none"
     addState = "addState"

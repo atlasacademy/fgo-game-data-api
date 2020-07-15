@@ -1,6 +1,7 @@
 import pytest
 from fastapi.testclient import TestClient
 
+from app.data.enums import FUNC_VALS_NOT_BUFF
 from app.main import app
 
 from .utils import get_response_data
@@ -146,3 +147,10 @@ class TestServantSpecial:
         response = client.get("/raw/NA/function/3410?reverse=True&reverseDepth=servant")
         assert response.status_code == 200
         assert response.json()["reverseSkills"][0]["reverseServants"]
+
+    def test_buff_reverse_function_vals_actual_buff(self):
+        response = client.get("/raw/NA/buff/101?reverse=True")
+        assert response.status_code == 200
+        assert {
+            item["mstFunc"]["funcType"] for item in response.json()["reverseFunctions"]
+        }.isdisjoint(FUNC_VALS_NOT_BUFF)

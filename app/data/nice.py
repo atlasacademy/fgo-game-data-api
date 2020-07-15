@@ -26,6 +26,7 @@ from .enums import (
     FUNC_APPLYTARGET_NAME,
     FUNC_TARGETTYPE_NAME,
     FUNC_TYPE_NAME,
+    FUNC_VALS_NOT_BUFF,
     GENDER_NAME,
     ITEM_BG_TYPE_NAME,
     ITEM_TYPE_NAME,
@@ -232,11 +233,7 @@ def get_nice_base_function(
         ],
     }
 
-    if function.mstFunc.funcType in {
-        FuncType.SUB_STATE,
-        FuncType.EVENT_DROP_UP,
-        FuncType.GAIN_NP_BUFF_INDIVIDUAL_SUM,
-    }:
+    if function.mstFunc.funcType in FUNC_VALS_NOT_BUFF:
         functionInfo["traitVals"] = get_traits_list(function.mstFunc.vals)
 
     funcPopupIconId = function.mstFunc.popupIconId
