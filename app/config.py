@@ -1,4 +1,4 @@
-from pydantic import BaseSettings, DirectoryPath, HttpUrl, validator
+from pydantic import BaseSettings, DirectoryPath, HttpUrl, SecretStr, validator
 
 
 class Settings(BaseSettings):
@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     export_all_nice: bool = False
     documentation_all_nice: bool = False
     nice_servant_lru_cache: bool = False
-    github_webhook_secret: str = ""
+    github_webhook_secret: SecretStr = SecretStr("")
     github_webhook_git_pull: bool = False
     github_webhook_sleep: int = 0
 

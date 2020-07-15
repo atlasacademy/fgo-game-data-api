@@ -122,13 +122,16 @@ async def main_info():
     return repo_info
 
 
-if settings.github_webhook_secret != "":  # pragma: no cover
+if settings.github_webhook_secret.get_secret_value() != "":  # pragma: no cover
 
     from pathlib import Path
 
     file_path = Path(__file__).resolve()
 
-    @app.post(f"/{settings.github_webhook_secret}/update", include_in_schema=False)
+    @app.post(
+        f"/{settings.github_webhook_secret.get_secret_value()}/update",
+        include_in_schema=False,
+    )
     async def update_gamedata(background_tasks: BackgroundTasks):
         background_tasks.add_task(pull_and_update)
         return {
@@ -136,7 +139,10 @@ if settings.github_webhook_secret != "":  # pragma: no cover
             "file_path": str(file_path),
         }
 
-    @app.get(f"/{settings.github_webhook_secret}/info", include_in_schema=False)
+    @app.get(
+        f"/{settings.github_webhook_secret.get_secret_value()}/info",
+        include_in_schema=False,
+    )
     async def info():
         return dict(**repo_info, file_path=str(file_path))
 
