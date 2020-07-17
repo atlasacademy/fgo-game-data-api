@@ -7,7 +7,7 @@ gitpython==3.1.7
 h11==0.9.0
 httptools==0.1.1; sys_platform != "win32" and sys_platform != "cygwin" and platform_python_implementation != "PyPy"
 orjson==3.2.2
-pydantic==1.6
+pydantic==1.6.1
 python-dotenv==0.14.0
 python-levenshtein==0.12.0
 smmap==3.0.4
