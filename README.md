@@ -1,5 +1,7 @@
 ## FGO Game data API
 
+#### Environment variables
+
 List of environment variables for the main app. All are required except noted:
 - `NA_GAMEDATA`: path to NA gamedata's master folder
 - `JP_GAMEDATA`: path to JP gamedata's master folder
@@ -8,6 +10,7 @@ List of environment variables for the main app. All are required except noted:
 - `DOCUMENTATION_ALL_NICE`: Optional, default to `False`. If set to `True`, there will be links to the exported all nice files in the documentation.
 - `NICE_SERVANT_LRU_CACHE`: Optional, default to `False`. If set to `True`, use [lru_cache](https://docs.python.org/3/library/functools.html#functools.lru_cache) for get nice servant.
 - `GITHUB_WEBHOOK_SECRET`: Optional, default to `""`. If set, will add a webhook location at `/GITHUB_WEBHOOK_SECRET/update` that will pull and update the game data. If it's not set, the endpoint is not activated.
+- `GITHUB_WEBHOOK_GIT_PULL`: Optional, default to `False`. If set, the app will do `git pull` on the gamedata repos when the webhook above is used.
 - `GITHUB_WEBHOOK_SLEEP`: Optional, default to `0`. If set, will delay the action above by `GITHUB_WEBHOOK_SLEEP` seconds.
 
 You can also make a .env file at the project root with the following entries instead of setting the environment variables:
@@ -19,8 +22,13 @@ EXPORT_ALL_NICE=False
 DOCUMENTATION_ALL_NICE=True
 NICE_SERVANT_LRU_CACHE=False
 GITHUB_WEBHOOK_SECRET="e81c7b97-9a57-4424-a887-149b4b5adf57"
+GITHUB_WEBHOOK_GIT_PULL=True
 GITHUB_WEBHOOK_SLEEP=0
 ```
+
+List of optional enviroment variables for the [Docker image](https://github.com/tiangolo/uvicorn-gunicorn-docker#environment-variables).
+
+#### Run the API server
 
 Run at the project root to start the API server:
 ```
@@ -29,4 +37,18 @@ uvicorn app.main:app --reload --log-level debug --reload-dir app
 
 Go to http://127.0.0.1:8000/docs or http://127.0.0.1:8000/redoc for the API documentation.
 
-List of optional enviroment variables for the [Docker image](https://github.com/tiangolo/uvicorn-gunicorn-docker#environment-variables).
+#### Dependencies
+
+Use poetry to manage the dependencies. Use `poestry export` after adding a production dependency.
+
+```
+poetry export -f requirements.txt -o requirements.txt --without-hashes
+```
+
+#### Testing
+
+Run pytest at project root to run the tests or use `coverage` to get coverage statistics.
+
+```
+coverage run --source=app/ -m pytest; coverage html
+```
