@@ -555,12 +555,12 @@ def get_nice_servant(
     nice_data["noblePhantasms"] = [get_nice_td(td, item_id, region) for td in actualTDs]
 
     if lore:
-        if raw_data.mstSvt.cvId != 0:
+        if raw_data.mstSvt.cvId in masters[region].mstCvId:
             cv = masters[region].mstCvId[raw_data.mstSvt.cvId].name
         else:
             cv = ""
 
-        if raw_data.mstSvt.illustratorId != 0:
+        if raw_data.mstSvt.illustratorId in masters[region].mstIllustratorId:
             illustrator = (
                 masters[region].mstIllustratorId[raw_data.mstSvt.illustratorId].name
             )

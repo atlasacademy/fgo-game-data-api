@@ -112,3 +112,8 @@ class TestServantSpecial:
         )
         assert response.status_code == 200
         assert response.json()["reverseSkills"][0]["reverseServants"]
+
+    def test_solomon_cvId(self):
+        response = client.get("/nice/JP/servant/83?lore=true")
+        assert response.status_code == 200
+        assert response.json()["profile"]["cv"] == ""
