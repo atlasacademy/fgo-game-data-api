@@ -2,12 +2,13 @@ import pytest
 from fastapi import HTTPException
 
 from app.data.common import Region, ReverseDepth
+from app.data.enums import FuncType
 from app.data.nice import get_nice_servant, parse_dataVals
 from app.data.tasks import sort_by_collection_no
 
 
 def test_parse_dataVals_add_state_6_items():
-    result = parse_dataVals("[1000,3,3,300,1000,10]", 1, Region.NA)
+    result = parse_dataVals("[1000,3,3,300,1000,10]", FuncType.ADD_STATE, Region.NA)
     assert result == {
         "Rate": 1000,
         "Turn": 3,
@@ -15,6 +16,23 @@ def test_parse_dataVals_add_state_6_items():
         "Value": 300,
         "UseRate": 1000,
         "Value2": 10,
+    }
+
+
+def test_parse_dataVals_friendship_self():
+    result = parse_dataVals("1,200", FuncType.SERVANT_FRIENDSHIP_UP, Region.NA)
+    assert result == {
+        "FriendshipTarget": "self",
+        "RateCount": 200,
+    }
+
+
+def test_parse_dataVals_class_drop_up_rate():
+    result = parse_dataVals("[2,400,80017]", FuncType.CLASS_DROP_UP, Region.NA)
+    result = {k: v for k, v in result.items() if "aa" not in k}
+    assert result == {
+        "EventId": 80017,
+        "RateCount": 400,
     }
 
 

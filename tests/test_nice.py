@@ -1,3 +1,5 @@
+from typing import Dict
+
 import pytest
 from fastapi.testclient import TestClient
 
@@ -79,6 +81,55 @@ def test_404_nice(endpoint: str, item_id: str):
         assert response.json()["detail"][-9:] == "not found"
 
 
+cases_datavals_dict = {
+    "test_dataVals_event_point_up": (
+        940004,
+        0,
+        {"Individuality": 10132, "EventId": 80046, "RateCount": 1000},
+    ),
+    "test_dataVals_event_drop_up": (
+        990098,
+        1,
+        {"Individuality": 10005, "EventId": 80030, "AddCount": 3},
+    ),
+    "test_dataVals_event_drop_rate_up": (
+        990139,
+        2,
+        {"Individuality": 10018, "EventId": 80034, "AddCount": 400},
+    ),
+    "test_dataVals_enemy_encount_rate_up": (
+        990315,
+        2,
+        {"Individuality": 2023, "EventId": 80087, "RateCount": 1000},
+    ),
+    "test_dataVals_class_drop_up": (990326, 2, {"EventId": 80017, "AddCount": 3}),
+    "test_dataVals_enemy_prob_down": (
+        960549,
+        0,
+        {"Individuality": 100, "EventId": 80043, "RateCount": 0},
+    ),
+    "test_dataVals_servant_friendship_up": (
+        990554,
+        0,
+        {"RateCount": 20, "FriendshipTarget": "ptFull",},
+    ),
+}
+
+
+cases_datavals = [
+    pytest.param(*value, id=key) for key, value in cases_datavals_dict.items()
+]
+
+
+@pytest.mark.parametrize("skill_id,function_index,parse_result", cases_datavals)
+def test_special_datavals(
+    skill_id: int, function_index: int, parse_result: Dict[str, int]
+):
+    response = client.get(f"/nice/NA/skill/{skill_id}")
+    assert response.status_code == 200
+    assert response.json()["functions"][function_index]["svals"][0] == parse_result
+
+
 class TestServantSpecial:
     def test_NA_not_integer(self):
         response = client.get("/nice/NA/servant/lkji")
@@ -117,3 +168,12 @@ class TestServantSpecial:
         response = client.get("/nice/JP/servant/83?lore=true")
         assert response.status_code == 200
         assert response.json()["profile"]["cv"] == ""
+
+    def test_datavals_default_case_target(self):
+        response = client.get("/nice/NA/NP/600701")
+        assert response.status_code == 200
+        assert response.json()["functions"][0]["svals"][0] == {
+            "Rate": 5000,
+            "Value": 600710,
+            "Target": 0,
+        }

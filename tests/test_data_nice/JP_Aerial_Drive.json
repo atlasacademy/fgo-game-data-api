@@ -337,7 +337,9 @@
           "functvals": [],
           "funcquestTvals": [],
           "buffs": [],
-          "svals": [{ "Rate": 1155, "Value": 2, "Target": 250 }]
+          "svals": [
+            { "Individuality": 1155, "EventId": 80118, "RateCount": 250 }
+          ]
         }
       ]
     },
@@ -449,7 +451,9 @@
           "functvals": [],
           "funcquestTvals": [],
           "buffs": [],
-          "svals": [{ "Rate": 1155, "Value": 2, "Target": 1000 }]
+          "svals": [
+            { "Individuality": 1155, "EventId": 80118, "RateCount": 1000 }
+          ]
         }
       ]
     }

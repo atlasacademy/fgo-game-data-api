@@ -133,6 +133,17 @@ class BaseVals(BaseModel):
     ParamAddMaxCount: Optional[int] = None
     LossHpNoChangeDamage: Optional[int] = None
     IncludePassiveIndividuality: Optional[int] = None
+    # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
+    Individuality: Optional[int] = None
+    EventId: Optional[int] = None
+    AddCount: Optional[int] = None
+    RateCount: Optional[int] = None
+    FriendshipTarget: Optional[NiceFuncTargetType] = None
+    # aa0: Optional[int] = None
+    # aa1: Optional[int] = None
+    # aa2: Optional[int] = None
+    # aa3: Optional[int] = None
+    # aa4: Optional[int] = None
 
 
 class Vals(BaseVals):

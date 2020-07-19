@@ -36,6 +36,7 @@ from .enums import (
     SVT_TYPE_NAME,
     TRAIT_NAME,
     FuncType,
+    NiceFuncTargetType,
     NiceStatusRank,
     SvtType,
     Trait,
@@ -167,6 +168,43 @@ def parse_dataVals(
                         text = "Value"
                     elif i == 2:
                         text = "Value2"
+                elif functype in {
+                    FuncType.EVENT_POINT_UP,
+                    FuncType.EVENT_POINT_RATE_UP,
+                    FuncType.EVENT_DROP_UP,
+                    FuncType.EVENT_DROP_RATE_UP,
+                    FuncType.ENEMY_ENCOUNT_COPY_RATE_UP,
+                    FuncType.ENEMY_ENCOUNT_RATE_UP,
+                }:
+                    if i == 0:
+                        text = "Individuality"
+                    elif i == 3:
+                        text = "EventId"
+                    else:
+                        text = "aa" + str(i)
+                elif functype == FuncType.CLASS_DROP_UP:
+                    if i == 2:
+                        text = "EventId"
+                    else:
+                        text = "aa" + str(i)
+                elif functype == FuncType.ENEMY_PROB_DOWN:
+                    if i == 0:
+                        text = "Individuality"
+                    elif i == 1:
+                        text = "RateCount"
+                    elif i == 2:
+                        text = "EventId"
+                elif functype == FuncType.SERVANT_FRIENDSHIP_UP:
+                    if i == 0:
+                        text = "FriendshipTarget"
+                        if value != 1:
+                            value = NiceFuncTargetType.ptFull
+                        else:
+                            value = NiceFuncTargetType.self
+                    elif i == 1:
+                        text = "RateCount"
+                    else:
+                        text = "aa" + str(i)
                 else:
                     if i == 0:
                         text = "Rate"
@@ -194,6 +232,25 @@ def parse_dataVals(
                     )
             if text != "" and text not in {"DependFuncId1", "DependFuncVals1"}:
                 output[text] = value
+
+    if functype in {
+        FuncType.EVENT_POINT_UP,
+        FuncType.EVENT_POINT_RATE_UP,
+        FuncType.EVENT_DROP_UP,
+        FuncType.EVENT_DROP_RATE_UP,
+        FuncType.ENEMY_ENCOUNT_COPY_RATE_UP,
+        FuncType.ENEMY_ENCOUNT_RATE_UP,
+    }:
+        if output["aa1"] == 1:
+            output["AddCount"] = output["aa2"]
+        elif output["aa1"] == 2:
+            output["RateCount"] = output["aa2"]
+    elif functype == FuncType.CLASS_DROP_UP:
+        if output["aa0"] == 1:
+            output["AddCount"] = output["aa1"]
+        elif output["aa0"] == 2:
+            output["RateCount"] = output["aa1"]
+
     return output
 
 
