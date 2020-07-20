@@ -1,4 +1,5 @@
-from typing import Iterable
+import json
+from typing import Any, Iterable
 
 from fastapi.responses import Response
 
@@ -18,3 +19,9 @@ def list_string(items: Iterable[BaseModelORJson]) -> str:
 
 def list_response(items: Iterable[BaseModelORJson]) -> Response:
     return Response(list_string(items), media_type=JSON_MIME)
+
+
+def pretty_print_response(data: Any) -> Response:
+    return Response(
+        json.dumps(data, indent=2, ensure_ascii=False), media_type=JSON_MIME
+    )
