@@ -1,6 +1,6 @@
-## FGO Game data API
+# FGO Game data API
 
-#### Environment variables
+### Environment variables
 
 List of environment variables for the main app. All are required except noted:
 - `NA_GAMEDATA`: path to NA gamedata's master folder
@@ -28,7 +28,7 @@ GITHUB_WEBHOOK_SLEEP=0
 
 List of optional enviroment variables for the [Docker image](https://github.com/tiangolo/uvicorn-gunicorn-docker#environment-variables).
 
-#### Run the API server
+### Run the API server
 
 Run at the project root to start the API server:
 ```
@@ -37,15 +37,15 @@ uvicorn app.main:app --reload --log-level debug --reload-dir app
 
 Go to http://127.0.0.1:8000/docs or http://127.0.0.1:8000/redoc for the API documentation.
 
-#### Dependencies
+### Dependencies
 
-Use poetry to manage the dependencies. Use `poestry export` after adding a production dependency.
+Use [poetry](https://python-poetry.org/docs/) to manage the dependencies. Use `poetry export` after adding a production dependency.
 
 ```
 poetry export -f requirements.txt -o requirements.txt --without-hashes
 ```
 
-#### Testing
+### Testing
 
 Run pytest at project root to run the tests or use `coverage` to get coverage statistics.
 
