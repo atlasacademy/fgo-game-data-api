@@ -2,15 +2,15 @@ import inspect
 import logging
 import time
 
-from fastapi import BackgroundTasks, FastAPI, Request
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 from .config import Settings
-from .data.tasks import pull_and_update, repo_info
-from .routers import basic, nice, raw
+from .data.tasks import repo_info
+from .routers import basic, nice, raw, secret
 
 
 logger = logging.getLogger()
@@ -123,28 +123,9 @@ async def main_info():
 
 
 if settings.github_webhook_secret.get_secret_value() != "":  # pragma: no cover
-
-    from pathlib import Path
-
-    file_path = Path(__file__).resolve()
-
-    @app.post(
-        f"/{settings.github_webhook_secret.get_secret_value()}/update",
-        include_in_schema=False,
+    app.include_router(
+        secret.router, prefix=f"/{settings.github_webhook_secret.get_secret_value()}"
     )
-    async def update_gamedata(background_tasks: BackgroundTasks):
-        background_tasks.add_task(pull_and_update)
-        return {
-            "message": "Game data is updated in the background",
-            "file_path": str(file_path),
-        }
-
-    @app.get(
-        f"/{settings.github_webhook_secret.get_secret_value()}/info",
-        include_in_schema=False,
-    )
-    async def info():
-        return dict(**repo_info, file_path=str(file_path))
 
 
 app.mount("/export", StaticFiles(directory="export"), name="export")
