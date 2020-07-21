@@ -7,7 +7,7 @@ from app.data.nice import get_nice_servant, parse_dataVals
 from app.data.tasks import sort_by_collection_no
 
 
-def test_parse_dataVals_add_state_6_items():
+def test_parse_dataVals_add_state_6_items() -> None:
     result = parse_dataVals("[1000,3,3,300,1000,10]", FuncType.ADD_STATE, Region.NA)
     assert result == {
         "Rate": 1000,
@@ -19,7 +19,7 @@ def test_parse_dataVals_add_state_6_items():
     }
 
 
-def test_parse_dataVals_friendship_self():
+def test_parse_dataVals_friendship_self() -> None:
     result = parse_dataVals("1,200", FuncType.SERVANT_FRIENDSHIP_UP, Region.NA)
     assert result == {
         "FriendshipTarget": "self",
@@ -27,7 +27,7 @@ def test_parse_dataVals_friendship_self():
     }
 
 
-def test_parse_dataVals_class_drop_up_rate():
+def test_parse_dataVals_class_drop_up_rate() -> None:
     result = parse_dataVals("[2,400,80017]", FuncType.CLASS_DROP_UP, Region.NA)
     result = {k: v for k, v in result.items() if "aa" not in k}
     assert result == {
@@ -36,23 +36,23 @@ def test_parse_dataVals_class_drop_up_rate():
     }
 
 
-def test_parse_datavals_fail():
+def test_parse_datavals_fail() -> None:
     with pytest.raises(HTTPException):
         parse_dataVals("[HideMiss]", 1, Region.NA)
 
 
-def test_reverseDepth_fail():
+def test_reverseDepth_fail() -> None:
     with pytest.raises(TypeError):
-        print(ReverseDepth.function >= 1)
+        print(ReverseDepth.function >= 1)  # type: ignore
 
 
-def test_lru_cache():
+def test_lru_cache() -> None:
     get_nice_servant(Region.NA, 202900)
     get_nice_servant(Region.NA, 202900)
     assert get_nice_servant.cache_info().hits == 1  # type: ignore
 
 
-def test_sort_by_collection_no():
+def test_sort_by_collection_no() -> None:
     input_data = [
         {"id": 100100, "collectionNo": 2},
         {"id": 800100, "collectionNo": 1},

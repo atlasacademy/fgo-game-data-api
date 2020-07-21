@@ -68,9 +68,9 @@ def match_name(search_param: str, name: str) -> bool:
     # Use sorted_sect first so "Okita Souji (Alter)" works as expected
     # This way "a b c" search_param will match to "a b c d e" but not vice versa
     if sorted_sect:
-        return fuzz.ratio(sorted_sect, combined_1to2) > NAME_MATCH_THRESHOLD  # type: ignore
+        return fuzz.ratio(sorted_sect, combined_1to2) > NAME_MATCH_THRESHOLD
     else:
-        return fuzz.ratio(combined_2to1, combined_1to2) > NAME_MATCH_THRESHOLD  # type: ignore
+        return fuzz.ratio(combined_2to1, combined_1to2) > NAME_MATCH_THRESHOLD
 
 
 def search_servant(search_param: ServantSearchQueryParams) -> List[int]:

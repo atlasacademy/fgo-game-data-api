@@ -24,23 +24,23 @@ test_cases = [pytest.param(*value, id=key) for key, value in test_cases_dict.ite
 
 
 @pytest.mark.parametrize("query,result", test_cases)
-def test_basic(query: str, result: str):
+def test_basic(query: str, result: str) -> None:
     response = client.get(f"/basic/{query}")
     assert response.status_code == 200
     assert response.json() == get_response_data("test_data_basic", result)
 
 
 class TestServantSpecial:
-    def test_NA_not_integer(self):
+    def test_NA_not_integer(self) -> None:
         response = client.get("/basic/NA/servant/lkji")
         assert response.status_code == 422
 
-    def test_NA_collectionNo_not_found(self):
+    def test_NA_collectionNo_not_found(self) -> None:
         response = client.get("/basic/NA/servant/500")
         assert response.status_code == 404
 
 
 class TestEquipSpecial:
-    def test_JP_collectionNo_not_found(self):
+    def test_JP_collectionNo_not_found(self) -> None:
         response = client.get("/basic/JP/equip/2001")
         assert response.status_code == 404

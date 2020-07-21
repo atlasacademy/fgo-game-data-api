@@ -68,7 +68,7 @@ test_cases = [pytest.param(*value, id=key) for key, value in test_cases_dict.ite
 
 
 @pytest.mark.parametrize("query,result", test_cases)
-def test_raw(query: str, result: str):
+def test_raw(query: str, result: str) -> None:
     response = client.get(f"/raw/{query}")
     assert response.status_code == 200
     assert response.json() == get_response_data(DATA_FOLDER, result)
@@ -93,7 +93,7 @@ cases_404 = [pytest.param(key, value, id=key) for key, value in cases_404_dict.i
 
 
 @pytest.mark.parametrize("endpoint,item_id", cases_404)
-def test_404_raw(endpoint: str, item_id: str):
+def test_404_raw(endpoint: str, item_id: str) -> None:
     response = client.get(f"/raw/JP/{endpoint}/{item_id}")
     assert response.status_code == 404
     if endpoint == "quest":
@@ -117,7 +117,7 @@ cases_immutable = [
 
 # These are not really needed anymore since raw data uses the Pydantic objects instead of dicts now
 @pytest.mark.parametrize("endpoint,item_id,result", cases_immutable)
-def test_immutable_master(endpoint: str, item_id: str, result: str):
+def test_immutable_master(endpoint: str, item_id: str, result: str) -> None:
     client.get(f"/raw/NA/{endpoint}/{item_id}")
     client.get(f"/raw/NA/{endpoint}/{item_id}?expand=True")
     response = client.get(f"/raw/NA/{endpoint}/{item_id}")
@@ -126,11 +126,11 @@ def test_immutable_master(endpoint: str, item_id: str, result: str):
 
 
 class TestServantSpecial:
-    def test_NA_not_integer(self):
+    def test_NA_not_integer(self) -> None:
         response = client.get("/raw/NA/servant/asdf")
         assert response.status_code == 422
 
-    def test_skill_reverse_passive(self):
+    def test_skill_reverse_passive(self) -> None:
         response = client.get("/raw/NA/skill/320650?reverse=True")
         reverse_servants = {
             item["mstSvt"]["id"] for item in response.json()["reverseServants"]
@@ -138,17 +138,17 @@ class TestServantSpecial:
         assert response.status_code == 200
         assert reverse_servants == {500800}
 
-    def test_buff_reverse_skillNp(self):
+    def test_buff_reverse_skillNp(self) -> None:
         response = client.get("/raw/NA/buff/202?reverse=True&reverseDepth=skillNp")
         assert response.status_code == 200
         assert response.json()["reverseFunctions"][0]["reverseSkills"]
 
-    def test_function_reverse_servant(self):
+    def test_function_reverse_servant(self) -> None:
         response = client.get("/raw/NA/function/3410?reverse=True&reverseDepth=servant")
         assert response.status_code == 200
         assert response.json()["reverseSkills"][0]["reverseServants"]
 
-    def test_buff_reverse_function_vals_actual_buff(self):
+    def test_buff_reverse_function_vals_actual_buff(self) -> None:
         response = client.get("/raw/NA/buff/101?reverse=True")
         assert response.status_code == 200
         assert {

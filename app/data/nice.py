@@ -642,12 +642,16 @@ def get_nice_servant(
     return nice_data
 
 
-def get_nice_servant_model(*args, **kwargs) -> NiceServant:
-    return NiceServant.parse_obj(get_nice_servant(*args, **kwargs))
+def get_nice_servant_model(
+    region: Region, item_id: int, lore: bool = False, lang: Optional[Language] = None
+) -> NiceServant:
+    return NiceServant.parse_obj(get_nice_servant(region, item_id, lore, lang))
 
 
-def get_nice_equip_model(*args, **kwargs) -> NiceEquip:
-    return NiceEquip.parse_obj(get_nice_servant(*args, **kwargs))
+def get_nice_equip_model(
+    region: Region, item_id: int, lore: bool = False, lang: Optional[Language] = None
+) -> NiceEquip:
+    return NiceEquip.parse_obj(get_nice_servant(region, item_id, lore, lang))
 
 
 @cache_functions

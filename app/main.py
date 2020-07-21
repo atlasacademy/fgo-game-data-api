@@ -1,6 +1,7 @@
 import inspect
 import logging
 import time
+from typing import Any, Dict
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -79,7 +80,7 @@ app.add_middleware(CORSMiddleware, allow_origins=["*"])
 
 
 @app.middleware("http")
-async def add_process_time_header(request: Request, call_next):
+async def add_process_time_header(request: Request, call_next):  # type: ignore
     start_time = time.perf_counter()
     response = await call_next(request)
     process_time = round((time.perf_counter() - start_time) * 1000, 2)
@@ -103,7 +104,7 @@ app.include_router(
 
 
 @app.get("/", include_in_schema=False)
-async def root():
+async def root() -> RedirectResponse:
     return RedirectResponse("/docs")
 
 
@@ -118,7 +119,7 @@ class InfoResponse(BaseModel):
 
 
 @app.get("/info", include_in_schema=False, response_model=InfoResponse)
-async def main_info():
+async def main_info() -> Dict[str, Any]:
     return repo_info
 
 
@@ -170,7 +171,7 @@ def get_swagger_ui_html(
 
 
 @app.get("/docs", include_in_schema=False)
-async def custom_swagger_ui_html():
+async def custom_swagger_ui_html() -> HTMLResponse:
     return get_swagger_ui_html(
         openapi_url=str(app.openapi_url),
         title=app.title,

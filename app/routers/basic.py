@@ -42,7 +42,7 @@ nice_find_servant_extra = """
 async def find_servant(
     search_param: ServantSearchQueryParams = Depends(ServantSearchQueryParams),
     lang: Optional[Language] = None,
-):
+) -> List[Dict[str, Any]]:
     if search_param.hasSearchParams:
         matches = search.search_servant(search_param)
         return [get_basic_svt(search_param.region, item, lang) for item in matches]
@@ -78,7 +78,9 @@ if settings.documentation_all_nice:
     description=get_servant_description,
     responses=responses,
 )
-async def get_servant(region: Region, item_id: int, lang: Optional[Language] = None):
+async def get_servant(
+    region: Region, item_id: int, lang: Optional[Language] = None
+) -> Dict[str, Any]:
     if item_id in masters[region].mstSvtServantCollectionNo:
         item_id = masters[region].mstSvtServantCollectionNo[item_id]
     if item_id in masters[region].mstSvtServantCollectionNo.values():
@@ -98,7 +100,7 @@ async def get_servant(region: Region, item_id: int, lang: Optional[Language] = N
 )
 async def find_equip(
     search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
-):
+) -> List[Dict[str, Any]]:
     if search_param.hasSearchParams:
         matches = search.search_equip(search_param)
         return [get_basic_svt(search_param.region, item) for item in matches]
@@ -131,7 +133,7 @@ if settings.documentation_all_nice:
     description=get_equip_description,
     responses=responses,
 )
-async def get_equip(region: Region, item_id: int):
+async def get_equip(region: Region, item_id: int) -> Dict[str, Any]:
     if item_id in masters[region].mstSvtEquipCollectionNo:
         item_id = masters[region].mstSvtEquipCollectionNo[item_id]
     if item_id in masters[region].mstSvtEquipCollectionNo.values():

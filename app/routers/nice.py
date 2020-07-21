@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Optional, Union
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Response
 
 from ..config import Settings
 from ..data import nice, search
@@ -61,7 +61,7 @@ async def find_servant(
     search_param: ServantSearchQueryParams = Depends(ServantSearchQueryParams),
     lang: Optional[Language] = None,
     lore: bool = False,
-):
+) -> Response:
     if search_param.hasSearchParams:
         matches = search.search_servant(search_param)
         return list_response(
@@ -104,7 +104,7 @@ if settings.documentation_all_nice:
 )
 async def get_servant(
     region: Region, item_id: int, lang: Optional[Language] = None, lore: bool = False
-):
+) -> Response:
     if item_id in masters[region].mstSvtServantCollectionNo:
         item_id = masters[region].mstSvtServantCollectionNo[item_id]
     if item_id in masters[region].mstSvtServantCollectionNo.values():
@@ -130,7 +130,7 @@ equip_lore_description = """
 async def find_equip(
     search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
     lore: bool = False,
-):
+) -> Response:
     if search_param.hasSearchParams:
         matches = search.search_equip(search_param)
         return list_response(
@@ -171,7 +171,7 @@ if settings.documentation_all_nice:
     response_model_exclude_unset=True,
     responses=responses,
 )
-async def get_equip(region: Region, item_id: int, lore: bool = False):
+async def get_equip(region: Region, item_id: int, lore: bool = False) -> Response:
     if item_id in masters[region].mstSvtEquipCollectionNo:
         item_id = masters[region].mstSvtEquipCollectionNo[item_id]
     if item_id in masters[region].mstSvtEquipCollectionNo.values():
@@ -188,7 +188,7 @@ async def get_equip(region: Region, item_id: int, lore: bool = False):
     response_model_exclude_unset=True,
     responses=responses,
 )
-async def get_svt(region: Region, item_id: int, lore: bool = False):
+async def get_svt(region: Region, item_id: int, lore: bool = False) -> Response:
     """
     Get svt info from ID
 
@@ -222,7 +222,7 @@ if settings.documentation_all_nice:
     response_model_exclude_unset=True,
     responses=responses,
 )
-async def get_mystic_code(region: Region, item_id: int):
+async def get_mystic_code(region: Region, item_id: int) -> Response:
     if item_id in masters[region].mstEquipId:
         return item_response(nice.get_nice_mystic_code(region, item_id))
     else:
@@ -250,7 +250,7 @@ if settings.documentation_all_nice:
     response_model_exclude_unset=True,
     responses=responses,
 )
-async def get_command_code(region: Region, item_id: int):
+async def get_command_code(region: Region, item_id: int) -> Dict[str, Any]:
     if item_id in masters[region].mstCommandCodeId:
         return nice.get_nice_command_code(region, item_id)
     else:
@@ -270,7 +270,7 @@ async def get_skill(
     item_id: int,
     reverse: bool = False,
     lang: Optional[Language] = None,
-):
+) -> Response:
     """
     Get the skill data from the given ID
 
@@ -298,7 +298,7 @@ async def get_td(
     item_id: int,
     reverse: bool = False,
     lang: Optional[Language] = None,
-):
+) -> Response:
     """
     Get the NP data from the given ID
 
@@ -335,7 +335,7 @@ async def find_function(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     lang: Optional[Language] = None,
-):
+) -> Response:
     if search_param.hasSearchParams:
         matches = search.search_func(search_param)
         entity_list = [
@@ -365,7 +365,7 @@ async def get_function(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     lang: Optional[Language] = None,
-):
+) -> Response:
     if item_id in masters[region].mstFuncId:
         return item_response(
             nice.get_nice_func_alone(region, item_id, reverse, reverseDepth, lang)
@@ -396,7 +396,7 @@ async def find_buff(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
     lang: Optional[Language] = None,
-):
+) -> Response:
     if search_param.hasSearchParams:
         matches = search.search_buff(search_param)
         entity_list = [
@@ -425,7 +425,7 @@ async def get_buff(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
     lang: Optional[Language] = None,
-):
+) -> Response:
     if item_id in masters[region].mstBuffId:
         return item_response(
             nice.get_nice_buff_alone(region, item_id, reverse, reverseDepth, lang)
@@ -455,7 +455,7 @@ if settings.documentation_all_nice:
     response_model_exclude_unset=True,
     responses=responses,
 )
-async def get_item(region: Region, item_id: int):
+async def get_item(region: Region, item_id: int) -> Dict[str, Any]:
     if item_id in masters[region].mstItemId:
         return nice.get_nice_item(region, item_id)
     else:
@@ -470,7 +470,7 @@ async def get_item(region: Region, item_id: int):
     response_model_exclude_unset=True,
     responses=responses,
 )
-async def get_quest_phase(region: Region, quest_id: int, phase: int):
+async def get_quest_phase(region: Region, quest_id: int, phase: int) -> Dict[str, Any]:
     """
     Get the nice quest data from the given quest ID and phase number
     """

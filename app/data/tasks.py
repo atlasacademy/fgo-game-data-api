@@ -2,7 +2,7 @@ import json
 import logging
 import time
 from pathlib import Path
-from typing import Any, Dict, Iterable, List
+from typing import Any, Dict, Iterable, List, Union
 
 from git import Repo
 
@@ -36,7 +36,7 @@ file_path = Path(__file__).resolve()
 export_path = file_path.parents[2] / "export"
 
 
-def dump_normal(region: Region, file_name: str, data: Any):  # pragma: no cover
+def dump_normal(region: Region, file_name: str, data: Any) -> None:  # pragma: no cover
     file_name = file_name + ".json"
     with open(export_path / region.value / file_name, "w", encoding="utf-8") as fp:
         json.dump(data, fp, ensure_ascii=False)
@@ -44,13 +44,13 @@ def dump_normal(region: Region, file_name: str, data: Any):  # pragma: no cover
 
 def dump_orjson(
     region: Region, file_name: str, data: Iterable[BaseModelORJson]
-):  # pragma: no cover
+) -> None:  # pragma: no cover
     file_name = file_name + ".json"
     with open(export_path / region.value / file_name, "w", encoding="utf-8") as fp:
         fp.write(list_string(data))
 
 
-def dump(region: Region, file_name: str, data: Any):  # pragma: no cover
+def dump(region: Region, file_name: str, data: Any) -> None:  # pragma: no cover
     if isinstance(data, list) and isinstance(data[0], BaseModelORJson):
         dump_orjson(region, file_name, data)
     else:
@@ -61,7 +61,7 @@ def sort_by_collection_no(input_list: List[Dict[str, Any]]) -> List[Dict[str, An
     return sorted(input_list, key=lambda x: x["collectionNo"])
 
 
-def generate_exports():  # pragma: no cover
+def generate_exports() -> None:  # pragma: no cover
     if settings.export_all_nice:
         for region in region_path:
             start_time = time.perf_counter()
@@ -131,10 +131,10 @@ def generate_exports():  # pragma: no cover
 generate_exports()
 
 
-repo_info = {}
+repo_info: Dict[str, Dict[str, Union[str, int]]] = {}
 
 
-def update_repo_info():
+def update_repo_info() -> None:
     for region, gamedata in region_path.items():
         if (gamedata.parent / ".git").exists():
             repo = Repo(gamedata.parent)
@@ -148,7 +148,7 @@ def update_repo_info():
 update_repo_info()
 
 
-def pull_and_update():  # pragma: no cover
+def pull_and_update() -> None:  # pragma: no cover
     logger.info(f"Sleeping {settings.github_webhook_sleep} seconds …")
     time.sleep(settings.github_webhook_sleep)
     if settings.github_webhook_git_pull:
@@ -160,10 +160,10 @@ def pull_and_update():  # pragma: no cover
                     logger.info(f"Updated {fetch_info.ref} to {commit_hash}")
     update_gamedata()
     if settings.nice_servant_lru_cache:
-        get_nice_servant.cache_clear()
-        get_nice_buff_alone.cache_clear()
-        get_nice_func_alone.cache_clear()
-        get_nice_skill_alone.cache_clear()
-        get_nice_td_alone.cache_clear()
+        get_nice_servant.cache_clear()  # type: ignore
+        get_nice_buff_alone.cache_clear()  # type: ignore
+        get_nice_func_alone.cache_clear()  # type: ignore
+        get_nice_skill_alone.cache_clear()  # type: ignore
+        get_nice_td_alone.cache_clear()  # type: ignore
     generate_exports()
     update_repo_info()

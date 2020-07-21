@@ -1,6 +1,6 @@
 from typing import Any, Dict, List, Union
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Response
 
 from ..data import raw, search
 from ..data.common import Region, ReverseDepth
@@ -55,7 +55,7 @@ async def find_servant(
     search_param: ServantSearchQueryParams = Depends(ServantSearchQueryParams),
     expand: bool = False,
     lore: bool = False,
-):
+) -> Response:
     if search_param.hasSearchParams:
         matches = search.search_servant(search_param)
         entity_list = [
@@ -86,7 +86,7 @@ Otherwise, it will look up the actual ID field. As a result, it can return not s
 )
 async def get_servant(
     region: Region, item_id: int, expand: bool = False, lore: bool = False
-):
+) -> Response:
     if item_id in masters[region].mstSvtServantCollectionNo:
         item_id = masters[region].mstSvtServantCollectionNo[item_id]
     if item_id in masters[region].mstSvtId:
@@ -109,7 +109,7 @@ async def find_equip(
     search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
     expand: bool = False,
     lore: bool = False,
-):
+) -> Response:
     if search_param.hasSearchParams:
         matches = search.search_equip(search_param)
         entity_list = [
@@ -140,7 +140,7 @@ Otherwise, it will look up the actual ID field. As a result, it can return not C
 )
 async def get_equip(
     region: Region, item_id: int, expand: bool = False, lore: bool = False
-):
+) -> Response:
     if item_id in masters[region].mstSvtEquipCollectionNo:
         item_id = masters[region].mstSvtEquipCollectionNo[item_id]
     if item_id in masters[region].mstSvtId:
@@ -158,7 +158,9 @@ async def get_equip(
     response_model_exclude_unset=True,
     responses=responses,
 )
-async def get_mystic_code(region: Region, item_id: int, expand: bool = False):
+async def get_mystic_code(
+    region: Region, item_id: int, expand: bool = False
+) -> Response:
     """
     Get Mystic Code info from ID
 
@@ -179,7 +181,9 @@ async def get_mystic_code(region: Region, item_id: int, expand: bool = False):
     response_model_exclude_unset=True,
     responses=responses,
 )
-async def get_command_code(region: Region, item_id: int, expand: bool = False):
+async def get_command_code(
+    region: Region, item_id: int, expand: bool = False
+) -> Response:
     """
     Get Command Code info from ID
 
@@ -202,7 +206,7 @@ async def get_command_code(region: Region, item_id: int, expand: bool = False):
 )
 async def get_skill(
     region: Region, item_id: int, reverse: bool = False, expand: bool = False,
-):
+) -> Response:
     """
     Get the skill data from the given ID
 
@@ -228,7 +232,7 @@ async def get_skill(
 )
 async def get_td(
     region: Region, item_id: int, reverse: bool = False, expand: bool = False,
-):
+) -> Response:
     """
     Get the NP data from the given ID
 
@@ -266,7 +270,7 @@ async def find_function(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     expand: bool = False,
-):
+) -> Response:
     if search_param.hasSearchParams:
         matches = search.search_func(search_param)
         entity_list = [
@@ -296,7 +300,7 @@ async def get_function(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     expand: bool = False,
-):
+) -> Response:
     if item_id in masters[region].mstFuncId:
         func_entity = raw.get_func_entity(
             region, item_id, reverse, reverseDepth, expand
@@ -326,7 +330,7 @@ async def find_buff(
     search_param: BuffSearchQueryParams = Depends(BuffSearchQueryParams),
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
-):
+) -> Response:
     if search_param.hasSearchParams:
         matches = search.search_buff(search_param)
         entity_list = [
@@ -352,7 +356,7 @@ async def get_buff(
     item_id: int,
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
-):
+) -> Response:
     if item_id in masters[region].mstBuffId:
         buff_entity = raw.get_buff_entity(region, item_id, reverse, reverseDepth)
         return item_response(buff_entity)
@@ -368,7 +372,7 @@ async def get_buff(
     response_model_exclude_unset=True,
     responses=responses,
 )
-async def get_item(region: Region, item_id: int):
+async def get_item(region: Region, item_id: int) -> Dict[str, Any]:
     """
     Get the item data from the given ID
     """
@@ -386,7 +390,7 @@ async def get_item(region: Region, item_id: int):
     response_model_exclude_unset=True,
     responses=responses,
 )
-async def get_quest_phase(region: Region, quest_id: int, phase: int):
+async def get_quest_phase(region: Region, quest_id: int, phase: int) -> Response:
     """
     Get the quest data from the given quest ID and phase number
     """

@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     github_webhook_sleep: int = 0
 
     @validator("asset_url")
-    def remove_last_slash(cls, value):
+    def remove_last_slash(cls, value: str) -> str:
         if value.endswith("/"):
             return value[:-1]
         else:

@@ -81,20 +81,22 @@ not_found_cases = [
 @pytest.mark.parametrize("response_type", ["basic", "nice", "raw"])
 class TestSearch:
     @pytest.mark.parametrize("search_query,result", test_cases)
-    def test_search(self, search_query: str, result: Set[int], response_type: str):
+    def test_search(
+        self, search_query: str, result: Set[int], response_type: str
+    ) -> None:
         response = client.get(f"/{response_type}/{search_query}")
         result_ids = get_item_list(response, response_type, search_query)
         assert response.status_code == 200
         assert result_ids == result
 
     @pytest.mark.parametrize("query", not_found_cases)
-    def test_not_found_any(self, response_type: str, query: str):
+    def test_not_found_any(self, response_type: str, query: str) -> None:
         response = client.get(f"/{response_type}/{query}")
         assert response.status_code == 200
         assert response.text == "[]"
 
     @pytest.mark.parametrize("endpoint", ["servant", "equip"])
-    def test_empty_input(self, response_type: str, endpoint: str):
+    def test_empty_input(self, response_type: str, endpoint: str) -> None:
         response = client.get(f"/{response_type}/NA/{endpoint}/search")
         assert response.status_code == 400
 
@@ -141,13 +143,15 @@ test_cases_no_basic = [
 @pytest.mark.parametrize("response_type", ["nice", "raw"])
 class TestSearchNoBasic:
     @pytest.mark.parametrize("search_query,result", test_cases_no_basic)
-    def test_search(self, search_query: str, result: Set[int], response_type: str):
+    def test_search(
+        self, search_query: str, result: Set[int], response_type: str
+    ) -> None:
         response = client.get(f"/{response_type}/{search_query}")
         result_ids = get_item_list(response, response_type, search_query)
         assert response.status_code == 200
         assert result_ids == result
 
     @pytest.mark.parametrize("endpoint", ["buff", "function"])
-    def test_empty_input(self, response_type: str, endpoint: str):
+    def test_empty_input(self, response_type: str, endpoint: str) -> None:
         response = client.get(f"/{response_type}/NA/{endpoint}/search")
         assert response.status_code == 400

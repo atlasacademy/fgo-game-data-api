@@ -25,15 +25,15 @@ class DetailMessage(BaseModel):
 @dataclass
 class ServantSearchQueryParams:
     region: Region
+    hasSearchParams: bool = field(init=False)
     name: Optional[str] = None
     rarity: List[int] = Query(None, ge=0, le=5)
     className: List[PlayableSvtClass] = Query(None)
     gender: List[Gender] = Query(None)
     attribute: List[Attribute] = Query(None)
     trait: List[Union[Trait, int]] = Query([])
-    hasSearchParams: bool = field(init=False)
 
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         self.hasSearchParams = any(
             [
                 self.name,
@@ -62,11 +62,11 @@ class ServantSearchQueryParams:
 @dataclass
 class EquipSearchQueryParams:
     region: Region
+    hasSearchParams: bool = field(init=False)
     name: Optional[str] = None
     rarity: List[int] = Query(None, ge=1, le=5)
-    hasSearchParams: bool = field(init=False)
 
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         self.hasSearchParams = any([self.name, self.rarity])
 
     DESCRIPTION: ClassVar[str] = inspect.cleandoc(
@@ -82,15 +82,15 @@ class EquipSearchQueryParams:
 @dataclass
 class BuffSearchQueryParams:
     region: Region
+    hasSearchParams: bool = field(init=False)
     name: Optional[str] = None
     type: List[NiceBuffType] = Query(None)
     vals: List[Union[Trait, int]] = Query([])
     tvals: List[Union[Trait, int]] = Query([])
     ckSelfIndv: List[Union[Trait, int]] = Query([])
     ckOpIndv: List[Union[Trait, int]] = Query([])
-    hasSearchParams: bool = field(init=False)
 
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         self.hasSearchParams = any(
             [
                 self.name,
@@ -119,6 +119,7 @@ class BuffSearchQueryParams:
 @dataclass
 class FuncSearchQueryParams:
     region: Region
+    hasSearchParams: bool = field(init=False)
     popupText: Optional[str] = None
     type: List[NiceFuncType] = Query(None)
     targetType: List[NiceFuncTargetType] = Query(None)
@@ -126,9 +127,8 @@ class FuncSearchQueryParams:
     vals: List[Union[Trait, int]] = Query([])
     tvals: List[Union[Trait, int]] = Query([])
     questTvals: List[Union[Trait, int]] = Query([])
-    hasSearchParams: bool = field(init=False)
 
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         self.hasSearchParams = any(
             [
                 self.popupText,

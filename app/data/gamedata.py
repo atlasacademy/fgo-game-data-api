@@ -49,7 +49,7 @@ TD_STUFFS = {"mstTreasureDeviceDetail", "mstSvtTreasureDevice", "mstTreasureDevi
 region_path = {Region.NA: settings.na_gamedata, Region.JP: settings.jp_gamedata}
 
 
-def update_gamedata():
+def update_gamedata() -> None:
     logger.info("Loading game data …")
     start_loading_time = time.perf_counter()
 

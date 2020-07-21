@@ -46,7 +46,7 @@ test_cases = [pytest.param(*value, id=key) for key, value in test_cases_dict.ite
 
 
 @pytest.mark.parametrize("query,result", test_cases)
-def test_nice(query: str, result: str):
+def test_nice(query: str, result: str) -> None:
     response = client.get(f"/nice/{query}")
     assert response.status_code == 200
     assert response.json() == get_response_data("test_data_nice", result)
@@ -72,7 +72,7 @@ cases_404 = [pytest.param(key, value, id=key) for key, value in cases_404_dict.i
 
 
 @pytest.mark.parametrize("endpoint,item_id", cases_404)
-def test_404_nice(endpoint: str, item_id: str):
+def test_404_nice(endpoint: str, item_id: str) -> None:
     response = client.get(f"/nice/JP/{endpoint}/{item_id}")
     assert response.status_code == 404
     if endpoint == "quest":
@@ -124,52 +124,52 @@ cases_datavals = [
 @pytest.mark.parametrize("skill_id,function_index,parse_result", cases_datavals)
 def test_special_datavals(
     skill_id: int, function_index: int, parse_result: Dict[str, int]
-):
+) -> None:
     response = client.get(f"/nice/NA/skill/{skill_id}")
     assert response.status_code == 200
     assert response.json()["functions"][function_index]["svals"][0] == parse_result
 
 
 class TestServantSpecial:
-    def test_NA_not_integer(self):
+    def test_NA_not_integer(self) -> None:
         response = client.get("/nice/NA/servant/lkji")
         assert response.status_code == 422
 
-    def test_skill_reverse_passive(self):
+    def test_skill_reverse_passive(self) -> None:
         response = client.get("/nice/NA/skill/30650?reverse=True")
         reverse_servants = {item["id"] for item in response.json()["reverseServants"]}
         assert response.status_code == 200
         assert reverse_servants == {201200, 401800, 601000}
 
-    def test_JP_English_name(self):
+    def test_JP_English_name(self) -> None:
         response = client.get("/nice/JP/servant/304300?lang=en")
         assert response.status_code == 200
         assert response.json()["name"] == "Elice Utsumi"
 
-    def test_empty_cv_illustrator_name(self):
+    def test_empty_cv_illustrator_name(self) -> None:
         response = client.get("/nice/JP/svt/9941330?lore=true")
         assert response.status_code == 200
         assert response.json()["profile"]["cv"] == ""
         assert response.json()["profile"]["illustrator"] == ""
 
-    def test_buff_reverse_skillNp(self):
+    def test_buff_reverse_skillNp(self) -> None:
         response = client.get("/nice/NA/buff/203?reverse=True&reverseDepth=skillNp")
         assert response.status_code == 200
         assert response.json()["reverseFunctions"][1]["reverseSkills"]
 
-    def test_function_reverse_servant(self):
+    def test_function_reverse_servant(self) -> None:
         response = client.get(
             "/nice/NA/function/3411?reverse=True&reverseDepth=servant"
         )
         assert response.status_code == 200
         assert response.json()["reverseSkills"][0]["reverseServants"]
 
-    def test_solomon_cvId(self):
+    def test_solomon_cvId(self) -> None:
         response = client.get("/nice/JP/servant/83?lore=true")
         assert response.status_code == 200
         assert response.json()["profile"]["cv"] == ""
 
-    def test_datavals_default_case_target(self):
+    def test_datavals_default_case_target(self) -> None:
         response = client.get("/nice/NA/NP/600701")
         assert response.status_code == 200
         assert response.json()["functions"][0]["svals"][0] == {
