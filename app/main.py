@@ -1,5 +1,4 @@
 import inspect
-import logging
 import time
 from typing import Any, Dict
 
@@ -9,12 +8,11 @@ from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
-from .config import Settings
+from .config import Settings, logger
 from .data.tasks import repo_info
 from .routers import basic, nice, raw, secret
 
 
-logger = logging.getLogger()
 settings = Settings()
 
 

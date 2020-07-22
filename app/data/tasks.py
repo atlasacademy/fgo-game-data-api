@@ -1,12 +1,11 @@
 import json
-import logging
 import time
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Union
 
 from git import Repo
 
-from ..config import Settings
+from ..config import Settings, logger
 from ..routers.utils import list_string
 from .basic import get_basic_svt
 from .common import Region
@@ -29,7 +28,6 @@ from .schemas.nice import Language
 
 
 settings = Settings()
-logger = logging.getLogger()
 
 
 file_path = Path(__file__).resolve()

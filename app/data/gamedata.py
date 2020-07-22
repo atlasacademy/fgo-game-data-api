@@ -1,16 +1,14 @@
-import logging
 import time
 from typing import Any, Dict, List
 
 import orjson
 
-from ..config import Settings
+from ..config import Settings, logger
 from .common import Region
 from .schemas.raw import Master, is_equip, is_servant
 
 
 settings = Settings()
-logger = logging.getLogger()
 
 
 masters: Dict[Region, Master] = {}

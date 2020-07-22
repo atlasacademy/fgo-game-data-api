@@ -1,4 +1,14 @@
+import logging
+
 from pydantic import BaseSettings, DirectoryPath, HttpUrl, SecretStr, validator
+
+
+uvicorn_logger = logging.getLogger("uvicorn.access")
+logger = logging.getLogger(__name__)
+console_handler = logging.StreamHandler()
+console_handler.setFormatter(logging.Formatter("%(levelname)-9s %(message)s"))
+logger.addHandler(console_handler)
+logger.setLevel(uvicorn_logger.level)
 
 
 class Settings(BaseSettings):
