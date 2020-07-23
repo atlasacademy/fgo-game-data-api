@@ -138,7 +138,6 @@ class BaseVals(BaseModel):
     EventId: Optional[int] = None
     AddCount: Optional[int] = None
     RateCount: Optional[int] = None
-    FriendshipTarget: Optional[NiceFuncTargetType] = None
     # aa0: Optional[int] = None
     # aa1: Optional[int] = None
     # aa2: Optional[int] = None

@@ -108,11 +108,17 @@ cases_datavals_dict = {
         0,
         {"Individuality": 100, "EventId": 80043, "RateCount": 0},
     ),
-    "test_dataVals_servant_friendship_up": (
+    "test_dataVals_servant_friendship_up_rate": (
         990554,
         0,
-        {"RateCount": 20, "FriendshipTarget": "ptFull",},
+        {"Individuality": 0, "RateCount": 20},
     ),
+    "test_dataVals_servant_friendship_up_add": (
+        990199,
+        0,
+        {"Individuality": 0, "AddCount": 50},
+    ),
+    "test_dataVals_servant_friendpoint_up_add": (990071, 0, {"AddCount": 75},),
 }
 
 

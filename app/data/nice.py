@@ -36,7 +36,6 @@ from .enums import (
     SVT_TYPE_NAME,
     TRAIT_NAME,
     FuncType,
-    NiceFuncTargetType,
     NiceStatusRank,
     SvtType,
     Trait,
@@ -195,16 +194,13 @@ def parse_dataVals(
                     elif i == 2:
                         text = "EventId"
                 elif functype == FuncType.SERVANT_FRIENDSHIP_UP:
-                    if i == 0:
-                        text = "FriendshipTarget"
-                        if value != 1:
-                            value = NiceFuncTargetType.ptFull
-                        else:
-                            value = NiceFuncTargetType.self
-                    elif i == 1:
-                        text = "RateCount"
+                    if i == 2:
+                        text = "Individuality"
                     else:
                         text = "aa" + str(i)
+                elif functype == FuncType.FRIEND_POINT_UP:
+                    if i == 0:
+                        text = "AddCount"
                 else:
                     if i == 0:
                         text = "Rate"
@@ -245,7 +241,7 @@ def parse_dataVals(
             output["AddCount"] = output["aa2"]
         elif output["aa1"] == 2:
             output["RateCount"] = output["aa2"]
-    elif functype == FuncType.CLASS_DROP_UP:
+    elif functype in {FuncType.CLASS_DROP_UP, FuncType.SERVANT_FRIENDSHIP_UP}:
         if output["aa0"] == 1:
             output["AddCount"] = output["aa1"]
         elif output["aa0"] == 2:
