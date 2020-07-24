@@ -20,29 +20,19 @@ from .schemas.raw import (
 
 
 def buff_to_func(region: Region, buff_id: int) -> Set[int]:
-    return {
-        item.id
-        for item in masters[region].mstFunc
-        if buff_id in item.vals
-        and masters[region].mstFuncId[item.id].funcType not in FUNC_VALS_NOT_BUFF
-    }
+    return masters[region].buffToFunc.get(buff_id, set())
 
 
 def func_to_skillId(region: Region, func_id: int) -> Set[int]:
-    return {
-        item.skillId
-        for item in masters[region].mstSkillLv
-        if func_id in item.funcId and item.skillId in masters[region].mstSkillId
-    }
+    return masters[region].funcToSkill.get(func_id, set())
 
 
 def func_to_tdId(region: Region, func_id: int) -> Set[int]:
-    return {
-        item.treaureDeviceId
-        for item in masters[region].mstTreasureDeviceLv
-        if func_id in item.funcId
-        and item.treaureDeviceId in masters[region].mstTreasureDeviceId
-    }
+    return masters[region].funcToTd.get(func_id, set())
+
+
+def passive_to_svtId(region: Region, skill_id: int) -> Set[int]:
+    return masters[region].passiveSkillToSvt.get(skill_id, set())
 
 
 def get_buff_entity_no_reverse(region: Region, buff_id: int) -> BuffEntityNoReverse:
@@ -133,9 +123,7 @@ def get_skill_entity(
 
     if reverse and reverseDepth >= ReverseDepth.servant:
         activeSkills = {item.svtId for item in skill_entity.mstSvtSkill}
-        passiveSkills = {
-            item.id for item in masters[region].mstSvt if skill_id in item.classPassive
-        }
+        passiveSkills = passive_to_svtId(region, skill_id)
         skill_entity.reverseServants = [
             get_servant_entity(region, item) for item in activeSkills | passiveSkills
         ]
@@ -198,19 +186,12 @@ def get_servant_entity(
         mstSvtLimitAdd=masters[region].mstSvtLimitAddId.get(servant_id, []),
         mstSkill=[
             get_skill_entity_no_reverse(region, skill, expand)
-            for skill in [
-                item.skillId
-                for item in masters[region].mstSvtSkill
-                if item.svtId == servant_id
-            ]
+            for skill in masters[region].mstSvtSkillSvtId.get(servant_id, [])
         ],
         mstTreasureDevice=[
             get_td_entity_no_reverse(region, td, expand)
-            for td in [
-                item.treasureDeviceId
-                for item in masters[region].mstSvtTreasureDevice
-                if item.svtId == servant_id and item.treasureDeviceId != 100
-            ]
+            for td in masters[region].mstSvtTreasureDeviceSvtId.get(servant_id, [])
+            if td != 100
         ],
     )
 

@@ -1,4 +1,4 @@
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Dict, List, Optional, Set, Union
 
 from pydantic import BaseModel
 
@@ -497,9 +497,11 @@ class Master(BaseModel):
     mstSvtEquipCollectionNo: Dict[int, int]
     mstSkillDetailId: Dict[int, List[MstSkillDetail]]
     mstSvtSkillId: Dict[int, List[MstSvtSkill]]
+    mstSvtSkillSvtId: Dict[int, List[int]]
     mstSkillLvId: Dict[int, List[MstSkillLv]]
     mstTreasureDeviceDetailId: Dict[int, List[MstTreasureDeviceDetail]]
     mstSvtTreasureDeviceId: Dict[int, List[MstSvtTreasureDevice]]
+    mstSvtTreasureDeviceSvtId: Dict[int, List[int]]
     mstTreasureDeviceLvId: Dict[int, List[MstTreasureDeviceLv]]
     mstCombineSkillId: Dict[int, List[MstCombineSkill]]
     mstCombineLimitId: Dict[int, List[MstCombineLimit]]
@@ -524,6 +526,10 @@ class Master(BaseModel):
     mstCommandCodeComment: List[MstCommandCodeComment]
     mstCvId: Dict[int, MstCv]
     mstIllustratorId: Dict[int, MstIllustrator]
+    buffToFunc: Dict[int, Set[int]]
+    funcToSkill: Dict[int, Set[int]]
+    funcToTd: Dict[int, Set[int]]
+    passiveSkillToSvt: Dict[int, Set[int]]
 
 
 class ServantEntity(BaseModelORJson):

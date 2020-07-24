@@ -5,6 +5,7 @@ import orjson
 
 from ..config import Settings, logger
 from .common import Region
+from .enums import FUNC_VALS_NOT_BUFF
 from .schemas.raw import Master, is_equip, is_servant
 
 
@@ -110,8 +111,51 @@ def update_gamedata() -> None:
                 mstQuestPhaseId[item["questId"]] = {item["phase"]: item}
         master["mstQuestPhaseId"] = mstQuestPhaseId
 
+        master["buffToFunc"] = {}
+        for item in master["mstFunc"]:
+            if item["funcType"] not in FUNC_VALS_NOT_BUFF:
+                for buff_id in item["vals"]:
+                    if buff_id in master["buffToFunc"]:
+                        master["buffToFunc"][buff_id].add(item["id"])
+                    else:
+                        master["buffToFunc"][buff_id] = {item["id"]}
+
+        for masters_item, func_reverse_stuff, lookup_id in (
+            ("funcToSkill", "mstSkillLv", "skillId"),
+            ("funcToTd", "mstTreasureDeviceLv", "treaureDeviceId"),
+        ):
+            master[masters_item] = {}
+            for item in master[func_reverse_stuff]:
+                for func_id in item["funcId"]:
+                    if func_id in master[masters_item]:
+                        master[masters_item][func_id].add(item[lookup_id])
+                    else:
+                        master[masters_item][func_id] = {item[lookup_id]}
+
+        master["passiveSkillToSvt"] = {}
+        for item in master["mstSvt"]:
+            for skill_id in item["classPassive"]:
+                if skill_id in master["passiveSkillToSvt"]:
+                    master["passiveSkillToSvt"][skill_id].add(item["id"])
+                else:
+                    master["passiveSkillToSvt"][skill_id] = {item["id"]}
+
+        for svt_extra_stuff, lookup_id in (
+            ("mstSvtSkill", "skillId"),
+            ("mstSvtTreasureDevice", "treasureDeviceId"),
+        ):
+            masters_item = f"{svt_extra_stuff}SvtId"
+            master[masters_item] = {}
+            for item in master[svt_extra_stuff]:
+                id_name = "svtId"
+                if item["svtId"] in master[masters_item]:
+                    master[masters_item][item[id_name]].append(item[lookup_id])
+                else:
+                    master[masters_item][item[id_name]] = [item[lookup_id]]
+
         for extra_stuff in SKILL_STUFFS | TD_STUFFS | SVT_STUFFS:
-            master[f"{extra_stuff}Id"] = {}
+            masters_item = f"{extra_stuff}Id"
+            master[masters_item] = {}
             for item in master[extra_stuff]:
                 if "Detail" in extra_stuff:
                     id_name = "id"
@@ -127,10 +171,10 @@ def update_gamedata() -> None:
                     id_name = "treasureDeviceId"
                 else:  # pragma: no cover
                     raise ValueError("Can't set id_name")
-                if item[id_name] in master[f"{extra_stuff}Id"]:
-                    master[f"{extra_stuff}Id"][item[id_name]].append(item)
+                if item[id_name] in master[masters_item]:
+                    master[masters_item][item[id_name]].append(item)
                 else:
-                    master[f"{extra_stuff}Id"][item[id_name]] = [item]
+                    master[masters_item][item[id_name]] = [item]
         masters[region_name] = Master.parse_obj(master)
 
     data_loading_time = time.perf_counter() - start_loading_time

@@ -53,6 +53,7 @@ from .raw import (
     get_servant_entity,
     get_skill_entity_no_reverse,
     get_td_entity_no_reverse,
+    passive_to_svtId,
 )
 from .schemas.nice import (
     AssetURL,
@@ -712,9 +713,7 @@ def get_nice_skill_alone(
 
     if reverse and reverseDepth >= ReverseDepth.servant:
         activeSkills = {item.svtId for item in raw_data.mstSvtSkill}
-        passiveSkills = {
-            item.id for item in masters[region].mstSvt if skill_id in item.classPassive
-        }
+        passiveSkills = passive_to_svtId(region, skill_id)
         nice_data.reverseServants = [
             get_nice_servant_model(region, item, lang=lang)
             for item in activeSkills | passiveSkills
