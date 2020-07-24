@@ -9,6 +9,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 from .config import Settings, logger
+from .data.common import Region
 from .data.tasks import repo_info
 from .routers import basic, nice, raw, secret
 
@@ -124,12 +125,7 @@ class RegionInfo(BaseModel):
     timestamp: int
 
 
-class InfoResponse(BaseModel):
-    NA: RegionInfo
-    JP: RegionInfo
-
-
-@app.get("/info", include_in_schema=False, response_model=InfoResponse)
+@app.get("/info", include_in_schema=False, response_model=Dict[Region, RegionInfo])
 async def main_info() -> Dict[str, Any]:
     return repo_info
 
