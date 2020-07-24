@@ -35,6 +35,8 @@ Static files that can be used for damage calculation. Change `JP` to `NA` in the
 - [Constants](/export/JP/NiceConstant.json)
 - [Buff Action info](/export/JP/NiceBuffList.ActionList.json)
 - [Master Level info](/export/JP/NiceUserLevel.json)
+
+Current API data version can be found [here](/info).
 """
 export_links = """
 
@@ -44,13 +46,24 @@ Pre-generated nice data that can be served instantly unlike querying the API:
   - [NA Craft Essence](/export/NA/nice_equip.json)
   - [NA Command Code](/export/NA/nice_command_code.json)
   - [NA Material](/export/NA/nice_item.json)
-  - [NA  Mystic Code](/export/NA/nice_mystic_code.json)
+  - [NA Mystic Code](/export/NA/nice_mystic_code.json)
+  - [NA Item](/export/NA/nice_item.json)
 - JP data:
   - [JP Servant](/export/JP/nice_servant.json)
   - [JP Craft Essence](/export/JP/nice_equip.json)
   - [JP Command Code](/export/JP/nice_command_code.json)
   - [JP Material](/export/JP/nice_item.json)
   - [JP Mystic CodeC](/export/JP/nice_mystic_code.json)
+  - [JP Item](/export/JP/nice_item.json)
+
+Pre-generated basic data that can be used for indexing purposes:
+- NA data:
+  - [NA servant](/export/NA/basic_servant.json)
+  - [NA CE](/export/NA/basic_equip.json)
+- JP data:
+  - [JP servant](/export/JP/basic_servant.json)
+  - [JP servant with English names](/export/JP/basic_servant_lang_en.json)
+  - [JP CE](/export/JP/basic_equip.json)
 """
 
 app_description = app_short_description + app_more_description
@@ -134,12 +147,13 @@ def get_swagger_ui_html(
     openapi_url: str,
     title: str,
     description: str,
-    swagger_js_url: str = "https://cdn.jsdelivr.net/npm/swagger-ui-dist@3.30.0/swagger-ui-bundle.js",
-    swagger_css_url: str = "https://cdn.jsdelivr.net/npm/swagger-ui-dist@3.30.0/swagger-ui.css",
+    swagger_js_url: str = "https://cdn.jsdelivr.net/npm/swagger-ui-dist@3/swagger-ui-bundle.js",
+    swagger_css_url: str = "https://cdn.jsdelivr.net/npm/swagger-ui-dist@3/swagger-ui.css",
 ) -> HTMLResponse:
 
     html = f"""
     <!DOCTYPE html>
+    <html lang="en">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{title}</title>
