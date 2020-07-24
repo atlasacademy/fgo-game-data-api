@@ -22,7 +22,8 @@
   "individuality": [
     { "id": 3001, "name": "normalAttack1" },
     { "id": 4003, "name": "cardQuick" },
-    { "id": 4007, "name": "cardNP" }
+    { "id": 4007, "name": "cardNP" },
+    { "id": 4101, "name": "aoeNP" }
   ],
   "functions": [
     {

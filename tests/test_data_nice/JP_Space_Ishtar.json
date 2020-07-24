@@ -1714,7 +1714,8 @@
       "individuality": [
         { "id": 3002, "name": "normalAttack2" },
         { "id": 4001, "name": "cardArts" },
-        { "id": 4007, "name": "cardNP" }
+        { "id": 4007, "name": "cardNP" },
+        { "id": 4101, "name": "aoeNP" }
       ],
       "functions": [
         {
@@ -1916,7 +1917,8 @@
       "individuality": [
         { "id": 3002, "name": "normalAttack2" },
         { "id": 4002, "name": "cardBuster" },
-        { "id": 4007, "name": "cardNP" }
+        { "id": 4007, "name": "cardNP" },
+        { "id": 4101, "name": "aoeNP" }
       ],
       "functions": [
         {
@@ -2118,7 +2120,8 @@
       "individuality": [
         { "id": 3002, "name": "normalAttack2" },
         { "id": 4003, "name": "cardQuick" },
-        { "id": 4007, "name": "cardNP" }
+        { "id": 4007, "name": "cardNP" },
+        { "id": 4101, "name": "aoeNP" }
       ],
       "functions": [
         {

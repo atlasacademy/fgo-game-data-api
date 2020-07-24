@@ -2336,6 +2336,7 @@ class Trait(str, Enum):
     fieldBurning = "fieldBurning"
     fieldCity = "fieldCity"
     shadowServant = "shadowServant"
+    aoeNP = "aoeNP"
 
 
 TRAIT_NAME: Dict[int, Trait] = {
@@ -2511,6 +2512,7 @@ TRAIT_NAME: Dict[int, Trait] = {
     4007: Trait.cardNP,
     4008: Trait.playerCards,  # Normal Buster, Arts, Quick, Extra Attack
     4100: Trait.criticalHit,
+    4101: Trait.aoeNP,
     5000: Trait.canBeInBattle,  # can be NPC, enemy or playable servant i.e. not CE
     5010: Trait.notBasedOnServant,
 }
