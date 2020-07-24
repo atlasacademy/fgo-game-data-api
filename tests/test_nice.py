@@ -20,8 +20,6 @@ test_cases_dict = {
     "servant_JP_collection_servant": ("JP/servant/149", "JP_Tiamat"),
     "servant_JP_costume": ("JP/servant/1", "JP_Mash"),
     "servant_JP_multiple_NPs_space_istar": ("JP/servant/268", "JP_Space_Ishtar"),
-    "datavals_string_svals_values": ("JP/NP/403401", "JP_Bartholomew_NP"),
-    "datavals_subState_Value2": ("JP/skill/631000", "JP_Jason_skill_1"),
     "skill_NA_id": ("NA/skill/454650", "NA_Fujino_1st_skill"),
     "skill_NA_reverse": ("NA/skill/19450?reverse=True", "NA_Fionn_1st_skill_reverse"),
     "skill_JP_dependFunc": ("JP/skill/671650", "JP_Melt_skill_dependFunc"),
@@ -118,7 +116,12 @@ cases_datavals_dict = {
         0,
         {"Individuality": 0, "AddCount": 50},
     ),
-    "test_dataVals_servant_friendpoint_up_add": (990071, 0, {"AddCount": 75},),
+    "test_dataVals_servant_friendpoint_up_add": (990071, 0, {"AddCount": 75}),
+    "test_dataVals_subState_Value2": (
+        631000,
+        1,
+        {"Rate": 1000, "Value": 0, "Value2": 1},
+    ),
 }
 
 
@@ -131,7 +134,7 @@ cases_datavals = [
 def test_special_datavals(
     skill_id: int, function_index: int, parse_result: Dict[str, int]
 ) -> None:
-    response = client.get(f"/nice/NA/skill/{skill_id}")
+    response = client.get(f"/nice/JP/skill/{skill_id}")
     assert response.status_code == 200
     assert response.json()["functions"][function_index]["svals"][0] == parse_result
 
@@ -182,4 +185,15 @@ class TestServantSpecial:
             "Rate": 5000,
             "Value": 600710,
             "Target": 0,
+        }
+
+    def test_datavals_string_svals_values(self) -> None:
+        response = client.get("/nice/JP/NP/403401")
+        assert response.status_code == 200
+        assert response.json()["functions"][0]["svals"][0] == {
+            "Rate": 1000,
+            "Value": 6000,
+            "Target": 0,
+            "Correction": 1500,
+            "TargetRarityList": "1/2",
         }
