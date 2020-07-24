@@ -247,7 +247,7 @@
     "plusTypes": [3],
     "minusTypes": [4],
     "baseParam": 1000,
-    "baseValue": 0,
+    "baseValue": 1000,
     "isRec": true,
     "plusAction": 0
   },

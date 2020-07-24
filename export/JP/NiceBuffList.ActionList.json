@@ -274,7 +274,7 @@
     "plusTypes": ["upCriticalpoint"],
     "minusTypes": ["downCriticalpoint"],
     "baseParam": 1000,
-    "baseValue": 0,
+    "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
     "maxRate": [5000]

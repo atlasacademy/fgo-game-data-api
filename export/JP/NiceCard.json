@@ -126,5 +126,110 @@
       "addTdGauge": 0,
       "addCritical": 0
     }
+  },
+  "blank": {
+    "0": {
+      "individuality": [],
+      "adjustAtk": 0,
+      "adjustTdGauge": 0,
+      "adjustCritical": 0,
+      "addAtk": 0,
+      "addTdGauge": 0,
+      "addCritical": 0
+    }
+  },
+  "weak": {
+    "1": {
+      "individuality": [{ "id": 4005, "name": "unknown" }],
+      "adjustAtk": 1000,
+      "adjustTdGauge": 0,
+      "adjustCritical": 0,
+      "addAtk": 0,
+      "addTdGauge": 0,
+      "addCritical": 0
+    },
+    "2": {
+      "individuality": [{ "id": 4005, "name": "unknown" }],
+      "adjustAtk": 1000,
+      "adjustTdGauge": 0,
+      "adjustCritical": 0,
+      "addAtk": 0,
+      "addTdGauge": 0,
+      "addCritical": 0
+    },
+    "3": {
+      "individuality": [{ "id": 4005, "name": "unknown" }],
+      "adjustAtk": 1000,
+      "adjustTdGauge": 0,
+      "adjustCritical": 0,
+      "addAtk": 0,
+      "addTdGauge": 0,
+      "addCritical": 0
+    },
+    "4": {
+      "individuality": [{ "id": 4005, "name": "unknown" }],
+      "adjustAtk": 1000,
+      "adjustTdGauge": 0,
+      "adjustCritical": 0,
+      "addAtk": 0,
+      "addTdGauge": 0,
+      "addCritical": 0
+    },
+    "5": {
+      "individuality": [{ "id": 4005, "name": "unknown" }],
+      "adjustAtk": 1000,
+      "adjustTdGauge": 0,
+      "adjustCritical": 0,
+      "addAtk": 0,
+      "addTdGauge": 0,
+      "addCritical": 0
+    }
+  },
+  "strength": {
+    "1": {
+      "individuality": [{ "id": 4006, "name": "unknown" }],
+      "adjustAtk": 1000,
+      "adjustTdGauge": 0,
+      "adjustCritical": 0,
+      "addAtk": 0,
+      "addTdGauge": 0,
+      "addCritical": 0
+    },
+    "2": {
+      "individuality": [{ "id": 4006, "name": "unknown" }],
+      "adjustAtk": 1000,
+      "adjustTdGauge": 0,
+      "adjustCritical": 0,
+      "addAtk": 0,
+      "addTdGauge": 0,
+      "addCritical": 0
+    },
+    "3": {
+      "individuality": [{ "id": 4006, "name": "unknown" }],
+      "adjustAtk": 1000,
+      "adjustTdGauge": 0,
+      "adjustCritical": 0,
+      "addAtk": 0,
+      "addTdGauge": 0,
+      "addCritical": 0
+    },
+    "4": {
+      "individuality": [{ "id": 4006, "name": "unknown" }],
+      "adjustAtk": 1000,
+      "adjustTdGauge": 0,
+      "adjustCritical": 0,
+      "addAtk": 0,
+      "addTdGauge": 0,
+      "addCritical": 0
+    },
+    "5": {
+      "individuality": [{ "id": 4006, "name": "unknown" }],
+      "adjustAtk": 1000,
+      "adjustTdGauge": 0,
+      "adjustCritical": 0,
+      "addAtk": 0,
+      "addTdGauge": 0,
+      "addCritical": 0
+    }
   }
 }

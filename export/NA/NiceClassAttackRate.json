@@ -10,11 +10,13 @@
   "ruler": 1100,
   "alterEgo": 1000,
   "avenger": 1100,
+  "demonGodPillar": 1000,
   "grandCaster": 900,
   "beastII": 1000,
   "beastI": 1000,
   "moonCancer": 1000,
   "beastIIIR": 1000,
   "foreigner": 1000,
+  "unknown": 1000,
   "ALL": 1000
 }

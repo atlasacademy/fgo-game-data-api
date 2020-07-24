@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from typing import Any, Callable, Dict, List, Union
+from typing import Any, Callable, Dict, List
 
 from app.config import Settings
 from app.data.common import Region
@@ -11,10 +11,9 @@ from app.data.enums import (
     BUFF_TYPE_NAME,
     CARD_TYPE_NAME,
     CLASS_NAME,
-    TRAIT_NAME,
     BuffAction,
-    Trait,
 )
+from app.data.nice import get_traits_list
 
 
 CONSTANT_INCLUDE = {
@@ -117,12 +116,6 @@ CONSTANT_INCLUDE = {
     "USER_COST",
     "USER_ACT",
 }
-
-
-def get_traits_list(input_idv: List[int]) -> List[Dict[str, Union[Trait, int]]]:
-    return [
-        {"id": item, "name": TRAIT_NAME.get(item, Trait.unknown)} for item in input_idv
-    ]
 
 
 def get_nice_constant(raw_data: Any) -> Any:
