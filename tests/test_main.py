@@ -4,6 +4,7 @@ import pytest
 from fastapi.testclient import TestClient
 
 from app.config import Settings
+from app.data.common import Region
 from app.main import app
 
 
@@ -51,8 +52,9 @@ class TestMain:
         response = client.get(info_path)
         assert response.status_code == 200
         response_data = response.json()
-        assert response_data.pop("NA")
-        assert response_data.pop("JP")
+        assert response_data.pop(Region.NA)
+        assert response_data.pop(Region.JP)
+        assert response_data.pop("app")
         expected_data = dict(**settings.dict(), file_path=str(file_path))
         expected_data = {
             k: str(v)

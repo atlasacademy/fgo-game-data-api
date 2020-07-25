@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from fastapi import APIRouter, BackgroundTasks, Response
+from git import Repo
 
 from ..config import Settings
 from ..data.tasks import pull_and_update, repo_info
@@ -12,7 +13,17 @@ router = APIRouter()
 settings = Settings()
 
 
-instance_info = dict(**repo_info, **settings.dict(), file_path=str(file_path))
+repo = Repo(file_path)
+latest_commit = repo.commit()
+app_info = {
+    "hash": latest_commit.hexsha[:6],  # type: ignore
+    "timestamp": latest_commit.committed_date,  # type: ignore
+}
+
+
+instance_info = dict(
+    **repo_info, app=app_info, **settings.dict(), file_path=str(file_path)
+)
 instance_info = {
     k: str(v)
     if k in ("file_path", "jp_gamedata", "na_gamedata", "github_webhook_secret")

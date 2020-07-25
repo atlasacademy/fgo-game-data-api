@@ -125,7 +125,7 @@ class RegionInfo(BaseModel):
     timestamp: int
 
 
-@app.get("/info", include_in_schema=False, response_model=Dict[Region, RegionInfo])
+@app.get("/info", summary="Data version info", response_model=Dict[Region, RegionInfo])
 async def main_info() -> Dict[str, Any]:
     return repo_info
 
