@@ -3,6 +3,7 @@
   "num": 1,
   "card": "arts",
   "name": "無敗の紫靫草",
+  "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/301100/card_servant_np.png",
   "rank": "A",
   "type": "対軍宝具",
   "detail": "敵全体に強力な攻撃＆攻撃力をダウン(3ターン)<オーバーチャージで効果アップ>＋自身に精神異常無効状態を付与(3ターン)",

@@ -217,6 +217,7 @@ class NiceTd(BaseModelORJson):
     num: int
     card: NiceCardType
     name: str
+    icon: Optional[HttpUrl] = None
     rank: str
     type: str
     detail: Optional[str] = None

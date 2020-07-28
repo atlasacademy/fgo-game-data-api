@@ -375,8 +375,19 @@ def get_nice_td(
 
     chosenSvt = [item for item in tdEntity.mstSvtTreasureDevice if item.svtId == svtId]
     if chosenSvt:
+        imageId = chosenSvt[0].imageIndex
+        base_settings_id = {
+            "base_url": settings.asset_url,
+            "region": region,
+            "item_id": svtId,
+        }
+        if imageId < 2:
+            file_i = "np"
+        else:
+            file_i = "np" + str(imageId // 2)
         nice_td.update(
             {
+                "icon": AssetURL.commands.format(**base_settings_id, i=file_i),
                 "strengthStatus": chosenSvt[0].strengthStatus,
                 "num": chosenSvt[0].num,
                 "priority": chosenSvt[0].priority,

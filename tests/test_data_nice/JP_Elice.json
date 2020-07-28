@@ -1168,6 +1168,7 @@
       "num": 1,
       "card": "arts",
       "name": "天遡鉾",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/304300/card_servant_np.png",
       "rank": "B",
       "type": "対霊宝具",
       "detail": "敵全体に低確率で即死<オーバーチャージで確率アップ>＆強力な攻撃＆防御強化状態を解除",
