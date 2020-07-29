@@ -12,6 +12,6 @@ python-dotenv==0.14.0
 python-levenshtein==0.12.0
 smmap==3.0.4
 starlette==0.13.6
-uvicorn==0.11.6
+uvicorn==0.11.7
 uvloop==0.14.0; sys_platform != "win32" and sys_platform != "cygwin" and platform_python_implementation != "PyPy"
 websockets==8.1
