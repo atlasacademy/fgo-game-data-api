@@ -530,6 +530,7 @@ class Master(BaseModel):
     funcToSkill: Dict[int, Set[int]]
     funcToTd: Dict[int, Set[int]]
     passiveSkillToSvt: Dict[int, Set[int]]
+    bondEquip: Dict[int, int]
 
 
 class ServantEntity(BaseModelORJson):

@@ -5,7 +5,7 @@ import orjson
 
 from ..config import Settings, logger
 from .common import Region
-from .enums import FUNC_VALS_NOT_BUFF
+from .enums import FUNC_VALS_NOT_BUFF, SvtType
 from .schemas.raw import Master, is_equip, is_servant
 
 
@@ -175,6 +175,20 @@ def update_gamedata() -> None:
                     master[masters_item][item[id_name]].append(item)
                 else:
                     master[masters_item][item[id_name]] = [item]
+
+        bondEquip = {}
+        for item in master["mstSvt"]:
+            if (
+                item["type"] == SvtType.SERVANT_EQUIP
+                and item["id"] in master["mstSvtSkillSvtId"]
+            ):
+                skill_id = master["mstSvtSkillSvtId"][item["id"]][0]
+                actIndividuality = master["mstSkillId"][skill_id]["actIndividuality"]
+                if actIndividuality and actIndividuality[0] in master["mstSvtId"]:
+                    bondEquip[actIndividuality[0]] = item["id"]
+
+        master["bondEquip"] = bondEquip
+
         masters[region_name] = Master.parse_obj(master)
 
     data_loading_time = time.perf_counter() - start_loading_time

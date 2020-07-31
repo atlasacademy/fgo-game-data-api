@@ -474,6 +474,7 @@ def get_nice_servant(
         "bondGrowth": masters[region].mstFriendshipId.get(
             raw_data.mstSvt.friendshipId, []
         ),
+        "bondEquip": masters[region].bondEquip.get(item_id, 0),
     }
 
     if region == Region.JP and lang == Language.en:

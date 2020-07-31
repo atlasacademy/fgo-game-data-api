@@ -324,6 +324,7 @@ class NiceServant(BaseModelORJson):
     atkGrowth: List[int]
     hpGrowth: List[int]
     bondGrowth: List[int]
+    bondEquip: int
     ascensionMaterials: Dict[int, NiceLvlUpMaterial]
     skillMaterials: Dict[int, NiceLvlUpMaterial]
     skills: List[NiceSkill]
