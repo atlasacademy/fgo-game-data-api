@@ -3,6 +3,7 @@
   "num": 3,
   "name": "メルトエンヴィー EX",
   "detail": "自身を除く味方全体からNPを吸収する ＋ 自身のスター集中度をアップ(1ターン)＆攻撃力をアップ(1ターン)",
+  "type": "active",
   "strengthStatus": 0,
   "priority": 1,
   "condQuestId": 0,

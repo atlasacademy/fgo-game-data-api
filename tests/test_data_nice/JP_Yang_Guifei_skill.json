@@ -3,6 +3,7 @@
   "num": 2,
   "name": "傾国の寵姫 A",
   "detail": "敵全体のチャージを減らし、減らせた量に応じたNPを獲得する＆防御力をダウン(3ターン)",
+  "type": "active",
   "strengthStatus": 0,
   "priority": 1,
   "condQuestId": 0,

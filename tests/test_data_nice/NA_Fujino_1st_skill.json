@@ -3,6 +3,7 @@
   "num": 1,
   "name": "Mystic Eyes of Distortion EX",
   "detail": "Increase Buster Card effectiveness (3 turns) & apply Ignore DEF (3 turns) & increase NP Gain (3 turns) for yourself",
+  "type": "active",
   "strengthStatus": 0,
   "priority": 1,
   "condQuestId": 0,

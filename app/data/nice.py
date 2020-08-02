@@ -32,6 +32,7 @@ from .enums import (
     ITEM_TYPE_NAME,
     QUEST_CONSUME_TYPE_NAME,
     QUEST_TYPE_NAME,
+    SKILL_TYPE_NAME,
     STATUS_RANK_NAME,
     SVT_TYPE_NAME,
     TRAIT_NAME,
@@ -304,6 +305,7 @@ def get_nice_skill(
     nice_skill: Dict[str, Any] = {
         "id": skillEntity.mstSkill.id,
         "name": skillEntity.mstSkill.name,
+        "type": SKILL_TYPE_NAME[skillEntity.mstSkill.type],
         "actIndividuality": get_traits_list(skillEntity.mstSkill.actIndividuality),
     }
 

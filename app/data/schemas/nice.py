@@ -16,6 +16,7 @@ from ..enums import (
     NiceItemBGType,
     NiceItemType,
     NiceQuestType,
+    NiceSkillType,
     NiceStatusRank,
     NiceSvtType,
     SvtClass,
@@ -193,6 +194,7 @@ class NiceSkill(BaseModelORJson):
     num: int = -1
     name: str
     detail: Optional[str] = None
+    type: NiceSkillType
     strengthStatus: int = -1
     priority: int = -1
     condQuestId: int = -1

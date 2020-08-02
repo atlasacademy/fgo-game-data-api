@@ -48,6 +48,20 @@ SVT_TYPE_NAME: Dict[int, NiceSvtType] = {
 }
 
 
+### Skill Type ###
+
+
+class NiceSkillType(str, Enum):
+    active = "active"
+    passive = "passive"
+
+
+SKILL_TYPE_NAME: Dict[int, NiceSkillType] = {
+    1: NiceSkillType.active,
+    2: NiceSkillType.passive,
+}
+
+
 ### Function Type ###
 
 
