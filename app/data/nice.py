@@ -125,6 +125,22 @@ def remove_brackets(val_string: str) -> str:
 def parse_dataVals(
     datavals: str, functype: int, region: Region
 ) -> Dict[str, Union[int, str, int]]:
+    EVENT_FUNCTIONS = {
+        FuncType.EVENT_POINT_UP,
+        FuncType.EVENT_POINT_RATE_UP,
+        FuncType.EVENT_DROP_UP,
+        FuncType.EVENT_DROP_RATE_UP,
+        FuncType.ENEMY_ENCOUNT_COPY_RATE_UP,
+        FuncType.ENEMY_ENCOUNT_RATE_UP,
+    }
+    FRIEND_SUPPORT_FUNCTIONS = {
+        FuncType.SERVANT_FRIENDSHIP_UP,
+        FuncType.USER_EQUIP_EXP_UP,
+        FuncType.EXP_UP,
+        FuncType.QP_DROP_UP,
+        FuncType.QP_UP,
+    }
+
     output: Dict[str, Union[int, str]] = {}
     if datavals != "[]":
         datavals = remove_brackets(datavals)
@@ -169,14 +185,7 @@ def parse_dataVals(
                         text = "Value"
                     elif i == 2:
                         text = "Value2"
-                elif functype in {
-                    FuncType.EVENT_POINT_UP,
-                    FuncType.EVENT_POINT_RATE_UP,
-                    FuncType.EVENT_DROP_UP,
-                    FuncType.EVENT_DROP_RATE_UP,
-                    FuncType.ENEMY_ENCOUNT_COPY_RATE_UP,
-                    FuncType.ENEMY_ENCOUNT_RATE_UP,
-                }:
+                elif functype in EVENT_FUNCTIONS:
                     if i == 0:
                         text = "Individuality"
                     elif i == 3:
@@ -195,7 +204,7 @@ def parse_dataVals(
                         text = "RateCount"
                     elif i == 2:
                         text = "EventId"
-                elif functype == FuncType.SERVANT_FRIENDSHIP_UP:
+                elif functype in FRIEND_SUPPORT_FUNCTIONS:
                     if i == 2:
                         text = "Individuality"
                     else:
@@ -231,19 +240,12 @@ def parse_dataVals(
             if text != "" and text not in {"DependFuncId1", "DependFuncVals1"}:
                 output[text] = value
 
-    if functype in {
-        FuncType.EVENT_POINT_UP,
-        FuncType.EVENT_POINT_RATE_UP,
-        FuncType.EVENT_DROP_UP,
-        FuncType.EVENT_DROP_RATE_UP,
-        FuncType.ENEMY_ENCOUNT_COPY_RATE_UP,
-        FuncType.ENEMY_ENCOUNT_RATE_UP,
-    }:
+    if functype in EVENT_FUNCTIONS:
         if output["aa1"] == 1:
             output["AddCount"] = output["aa2"]
         elif output["aa1"] == 2:
             output["RateCount"] = output["aa2"]
-    elif functype in {FuncType.CLASS_DROP_UP, FuncType.SERVANT_FRIENDSHIP_UP}:
+    elif functype in {FuncType.CLASS_DROP_UP} | FRIEND_SUPPORT_FUNCTIONS:
         if output["aa0"] == 1:
             output["AddCount"] = output["aa1"]
         elif output["aa0"] == 2:

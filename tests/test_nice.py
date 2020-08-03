@@ -117,6 +117,12 @@ cases_datavals_dict = {
         {"Individuality": 0, "AddCount": 50},
     ),
     "test_dataVals_servant_friendpoint_up_add": (990071, 0, {"AddCount": 75}),
+    "test_dataVals_master_exp_up_rate": (990311, 0, {"RateCount": 20}),
+    "test_dataVals_master_exp_up_add": (991128, 0, {"AddCount": 50}),
+    "test_dataVals_equip_exp_up_rate": (990416, 0, {"RateCount": 100}),
+    "test_dataVals_equip_exp_up_add": (990932, 0, {"AddCount": 50}),
+    "test_dataVals_qp_drop_up_rate": (990158, 0, {"RateCount": 100}),
+    "test_dataVals_qp_drop_up_add": (990665, 0, {"AddCount": 2017}),
     "test_dataVals_subState_Value2": (
         631000,
         1,
@@ -208,6 +214,4 @@ class TestServantSpecial:
     def test_script_followerVals_Be_Graceful(self) -> None:
         response = client.get("/nice/NA/skill/991370")
         assert response.status_code == 200
-        assert response.json()["functions"][0]["followerVals"] == [
-            {"Rate": 2, "Value": 150,}
-        ]
+        assert response.json()["functions"][0]["followerVals"] == [{"RateCount": 150}]
