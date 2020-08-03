@@ -187,6 +187,14 @@ class NiceFunction(NiceBaseFunction):
     svals3: Optional[List[Vals]] = None
     svals4: Optional[List[Vals]] = None
     svals5: Optional[List[Vals]] = None
+    followerVals: Optional[List[Vals]] = None
+
+
+class NiceSkillScript(BaseModel):
+    HP_PER_LOWER: Optional[List[int]] = None
+    HP_VAL_HIGHER: Optional[List[int]] = None
+    NP_HIGHER: Optional[List[int]] = None
+    STAR_HIGHER: Optional[List[int]] = None
 
 
 class NiceSkill(BaseModelORJson):
@@ -202,6 +210,7 @@ class NiceSkill(BaseModelORJson):
     icon: Optional[HttpUrl] = None
     coolDown: List[int]
     actIndividuality: List[NiceTrait]
+    script: NiceSkillScript
     functions: List[NiceFunction]
 
 

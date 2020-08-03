@@ -242,6 +242,7 @@
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00306.png",
       "coolDown": [0],
       "actIndividuality": [],
+      "script": {},
       "functions": [
         {
           "funcId": 119,
@@ -329,6 +330,7 @@
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00207.png",
       "coolDown": [0],
       "actIndividuality": [],
+      "script": {},
       "functions": [
         {
           "funcId": 1951,
@@ -358,6 +360,7 @@
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00306.png",
       "coolDown": [0],
       "actIndividuality": [],
+      "script": {},
       "functions": [
         {
           "funcId": 119,
@@ -445,6 +448,7 @@
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00207.png",
       "coolDown": [0],
       "actIndividuality": [],
+      "script": {},
       "functions": [
         {
           "funcId": 1951,

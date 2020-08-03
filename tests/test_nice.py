@@ -197,3 +197,17 @@ class TestServantSpecial:
             "Correction": 1500,
             "TargetRarityList": "1/2",
         }
+
+    def test_script_STAR_HIGHER_Moriarty(self) -> None:
+        response = client.get("/nice/NA/skill/334552")
+        assert response.status_code == 200
+        assert response.json()["script"] == {
+            "STAR_HIGHER": [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+        }
+
+    def test_script_followerVals_Be_Graceful(self) -> None:
+        response = client.get("/nice/NA/skill/991370")
+        assert response.status_code == 200
+        assert response.json()["functions"][0]["followerVals"] == [
+            {"Rate": 2, "Value": 150,}
+        ]

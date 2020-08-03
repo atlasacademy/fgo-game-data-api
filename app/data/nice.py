@@ -337,6 +337,11 @@ def get_nice_skill(
 
     nice_skill["coolDown"] = [item.chargeTurn for item in skillEntity.mstSkillLv]
 
+    nice_skill["script"] = {
+        key: [item.script[key] for item in skillEntity.mstSkillLv]
+        for key in skillEntity.mstSkillLv[0].script.keys()
+    }
+
     nice_skill["functions"] = []
     for funci, _ in enumerate(skillEntity.mstSkillLv[0].funcId):
         function = skillEntity.mstSkillLv[0].expandedFuncId[funci]
@@ -345,6 +350,15 @@ def get_nice_skill(
             parse_dataVals(item.svals[funci], function.mstFunc.funcType, region)
             for item in skillEntity.mstSkillLv
         ]
+        if "followerVals" in skillEntity.mstSkillLv[0].script:
+            functionInfo["followerVals"] = [
+                parse_dataVals(
+                    item.script["followerVals"][funci],  # type: ignore
+                    function.mstFunc.funcType,
+                    region,
+                )
+                for item in skillEntity.mstSkillLv
+            ]
         nice_skill["functions"].append(functionInfo)
 
     return nice_skill

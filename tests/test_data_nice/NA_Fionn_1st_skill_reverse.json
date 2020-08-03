@@ -11,6 +11,7 @@
   "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00604.png",
   "coolDown": [8, 8, 8, 8, 8, 7, 7, 7, 7, 6],
   "actIndividuality": [],
+  "script": {},
   "functions": [
     {
       "funcId": 296,
@@ -709,6 +710,7 @@
           "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00604.png",
           "coolDown": [8, 8, 8, 8, 8, 7, 7, 7, 7, 6],
           "actIndividuality": [],
+          "script": {},
           "functions": [
             {
               "funcId": 296,
@@ -801,6 +803,7 @@
           "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00402.png",
           "coolDown": [12, 12, 12, 12, 12, 11, 11, 11, 11, 10],
           "actIndividuality": [],
+          "script": {},
           "functions": [
             {
               "funcId": 686,
@@ -937,6 +940,7 @@
           "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00305.png",
           "coolDown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5],
           "actIndividuality": [],
+          "script": {},
           "functions": [
             {
               "funcId": 110,
@@ -992,6 +996,7 @@
           "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00604.png",
           "coolDown": [8, 8, 8, 8, 8, 7, 7, 7, 7, 6],
           "actIndividuality": [],
+          "script": {},
           "functions": [
             {
               "funcId": 302,
@@ -1139,6 +1144,7 @@
           "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00100.png",
           "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           "actIndividuality": [],
+          "script": {},
           "functions": [
             {
               "funcId": 388,
@@ -1186,6 +1192,7 @@
           "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00326.png",
           "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           "actIndividuality": [],
+          "script": {},
           "functions": [
             {
               "funcId": 265,

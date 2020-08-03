@@ -30,6 +30,7 @@
       "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00604.png",
       "coolDown": [12, 12, 12, 12, 12, 11, 11, 11, 11, 10],
       "actIndividuality": [],
+      "script": {},
       "functions": [
         {
           "funcId": 298,

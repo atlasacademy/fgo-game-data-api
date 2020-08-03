@@ -10,11 +10,17 @@ JSON_MIME = "application/json"
 
 
 def item_response(item: BaseModelORJson) -> Response:
-    return Response(item.json(exclude_unset=True), media_type=JSON_MIME)
+    return Response(
+        item.json(exclude_unset=True, exclude_none=True), media_type=JSON_MIME
+    )
 
 
 def list_string(items: Iterable[BaseModelORJson]) -> str:
-    return "[" + ",".join([item.json(exclude_unset=True) for item in items]) + "]"
+    return (
+        "["
+        + ",".join([item.json(exclude_unset=True, exclude_none=True) for item in items])
+        + "]"
+    )
 
 
 def list_response(items: Iterable[BaseModelORJson]) -> Response:

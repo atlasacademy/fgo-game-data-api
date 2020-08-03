@@ -80,10 +80,28 @@ class MstSvtSkill(BaseModel):
     flag: int  # 0
 
 
+class SkillLvScript(BaseModel):
+    HP_PER_LOWER: Optional[int] = None
+    HP_VAL_HIGHER: Optional[int] = None
+    NP_HIGHER: Optional[int] = None
+    PlayVoiceNo: Optional[str] = None
+    PlayVoiceWait: Optional[int] = None
+    STAR_HIGHER: Optional[int] = None
+    VoiceAssetName: Optional[str] = None
+    aress: Optional[int] = None
+    down: Optional[int] = None
+    followerVals: Optional[List[str]] = None
+    revivalUnder: Optional[int] = None
+    revivalUp: Optional[int] = None
+    up: Optional[int] = None
+
+
 class MstSkillLv(BaseModel):
     funcId: List[int]  # [366, 216, 434],
     expandedFuncId: List[FunctionEntityNoReverse] = []
     svals: List[str]  # ["[1000,1,-1,3600]", "[1000,1,-1,200]", "[1000]"],
+    # script: SkillLvScript
+    # Doesn't use the SkillLvScript model so it's easier to build the nice script object
     script: Dict[
         str, Union[int, str, List[str]]
     ]  # {"STAR_HIGHER": 8, "VoiceAssetName": "ChrVoice_7100400", "followerVals": ["[2,30]"]},
