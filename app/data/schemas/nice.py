@@ -191,10 +191,14 @@ class NiceFunction(NiceBaseFunction):
 
 
 class NiceSkillScript(BaseModel):
-    HP_PER_LOWER: Optional[List[int]] = None
-    HP_VAL_HIGHER: Optional[List[int]] = None
     NP_HIGHER: Optional[List[int]] = None
+    NP_LOWER: Optional[List[int]] = None
     STAR_HIGHER: Optional[List[int]] = None
+    STAR_LOWER: Optional[List[int]] = None
+    HP_VAL_HIGHER: Optional[List[int]] = None
+    HP_VAL_LOWER: Optional[List[int]] = None
+    HP_PER_HIGHER: Optional[List[int]] = None
+    HP_PER_LOWER: Optional[List[int]] = None
 
 
 class NiceSkill(BaseModelORJson):
