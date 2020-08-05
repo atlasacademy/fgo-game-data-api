@@ -117,6 +117,7 @@ cases_datavals_dict = {
         {"Individuality": 0, "AddCount": 50},
     ),
     "test_dataVals_servant_friendpoint_up_add": (990071, 0, {"AddCount": 75}),
+    "test_dataVals_servant_friendpoint_up_dupe_add": (992320, 0, {"AddCount": 10}),
     "test_dataVals_master_exp_up_rate": (990311, 0, {"RateCount": 20}),
     "test_dataVals_master_exp_up_add": (991128, 0, {"AddCount": 50}),
     "test_dataVals_equip_exp_up_rate": (990416, 0, {"RateCount": 100}),

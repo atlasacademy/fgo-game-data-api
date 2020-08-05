@@ -209,7 +209,10 @@ def parse_dataVals(
                         text = "Individuality"
                     else:
                         text = "aa" + str(i)
-                elif functype == FuncType.FRIEND_POINT_UP:
+                elif functype in (
+                    FuncType.FRIEND_POINT_UP,
+                    FuncType.FRIEND_POINT_UP_DUPLICATE,
+                ):
                     if i == 0:
                         text = "AddCount"
                 else:

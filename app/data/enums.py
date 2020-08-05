@@ -148,6 +148,7 @@ class FuncType(IntEnum):
     MOVE_POSITION = 119
     REVIVAL = 120
     DAMAGE_NP_INDIVIDUAL_SUM = 121
+    FRIEND_POINT_UP_DUPLICATE = 123
 
 
 FUNC_VALS_NOT_BUFF = {
@@ -240,6 +241,7 @@ class NiceFuncType(str, Enum):
     movePosition = "movePosition"
     revival = "revival"
     damageNpIndividualSum = "damageNpIndividualSum"
+    friendPointUpDuplicate = "friendPointUpDuplicate"
 
 
 FUNC_TYPE_NAME: Dict[int, NiceFuncType] = {
@@ -325,6 +327,7 @@ FUNC_TYPE_NAME: Dict[int, NiceFuncType] = {
     119: NiceFuncType.movePosition,
     120: NiceFuncType.revival,
     121: NiceFuncType.damageNpIndividualSum,
+    123: NiceFuncType.friendPointUpDuplicate,
 }
 
 
@@ -640,6 +643,8 @@ class BuffType(IntEnum):
     DOWN_CRITICAL_RATE_DAMAGE_TAKEN = 151
     UP_CRITICAL_STAR_DAMAGE_TAKEN = 152
     DOWN_CRITICAL_STAR_DAMAGE_TAKEN = 153
+    CHANGE_COMMAND_CARD_TYPE = 156
+    SPECIAL_INVINCIBLE = 157
 
 
 class NiceBuffType(str, Enum):
@@ -782,6 +787,8 @@ class NiceBuffType(str, Enum):
     downCriticalRateDamageTaken = "downCriticalRateDamageTaken"
     upCriticalStarDamageTaken = "upCriticalStarDamageTaken"
     downCriticalStarDamageTaken = "downCriticalStarDamageTaken"
+    changeCommandCardType = "changeCommandCardType"
+    specialInvincible = "specialInvincible"
 
 
 BUFF_TYPE_NAME: Dict[int, NiceBuffType] = {
@@ -924,6 +931,8 @@ BUFF_TYPE_NAME: Dict[int, NiceBuffType] = {
     151: NiceBuffType.downCriticalRateDamageTaken,
     152: NiceBuffType.upCriticalStarDamageTaken,
     153: NiceBuffType.downCriticalStarDamageTaken,
+    156: NiceBuffType.changeCommandCardType,
+    157: NiceBuffType.specialInvincible,
 }
 
 
@@ -1028,6 +1037,8 @@ class BuffAction(IntEnum):
     FUNCTION_GUTS = 89
     CRITICAL_RATE_DAMAGE_TAKEN = 90
     CRITICAL_STAR_DAMAGE_TAKEN = 91
+    CHANGE_COMMAND_CARD_TYPE = 92
+    SPECIAL_INVINCIBLE = 93
 
 
 class NiceBuffAction(str, Enum):
@@ -1123,6 +1134,8 @@ class NiceBuffAction(str, Enum):
     functionGuts = "functionGuts"
     criticalRateDamageTaken = "criticalRateDamageTaken"
     criticalStarDamageTaken = "criticalStarDamageTaken"
+    changeCommandCardType = "changeCommandCardType"
+    specialInvincible = "specialInvincible"
 
 
 BUFF_ACTION_NAME: Dict[int, NiceBuffAction] = {
@@ -1218,6 +1231,8 @@ BUFF_ACTION_NAME: Dict[int, NiceBuffAction] = {
     89: NiceBuffAction.functionGuts,
     90: NiceBuffAction.criticalRateDamageTaken,
     91: NiceBuffAction.criticalStarDamageTaken,
+    92: NiceBuffAction.changeCommandCardType,
+    93: NiceBuffAction.specialInvincible,
 }
 
 
@@ -1311,8 +1326,9 @@ class DataValsType(IntEnum):
     ChangeMaxBreakGauge = 58
     ParamAddMaxValue = 59
     ParamAddMaxCount = 60
-    LossHpNoChangeDamage = 61
+    LossHpChangeDamage = 61
     IncludePassiveIndividuality = 62
+    MotionChange = 63
 
 
 ### Item Type ###

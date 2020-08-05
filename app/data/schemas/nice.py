@@ -132,8 +132,9 @@ class BaseVals(BaseModel):
     ChangeMaxBreakGauge: Optional[int] = None
     ParamAddMaxValue: Optional[int] = None
     ParamAddMaxCount: Optional[int] = None
-    LossHpNoChangeDamage: Optional[int] = None
+    LossHpChangeDamage: Optional[int] = None
     IncludePassiveIndividuality: Optional[int] = None
+    MotionChange: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
     Individuality: Optional[int] = None
     EventId: Optional[int] = None
