@@ -2367,6 +2367,7 @@ class Trait(str, Enum):
     fieldCity = "fieldCity"
     shadowServant = "shadowServant"
     aoeNP = "aoeNP"
+    giant = "giant"
 
 
 TRAIT_NAME: Dict[int, Trait] = {
@@ -2470,6 +2471,7 @@ TRAIT_NAME: Dict[int, Trait] = {
     2631: Trait.humanoidServant,  # used in TamaVitch's fight
     2632: Trait.beastServant,  # used in TamaVitch's fight
     2654: Trait.livingHuman,  # Voyager's NP
+    2666: Trait.giant,
     # 2xxx: CQ or Story quests buff
     3000: Trait.normalAttack0,  # Normal attack, including NP
     3001: Trait.normalAttack1,  # Haven't figured out the difference between the 3
