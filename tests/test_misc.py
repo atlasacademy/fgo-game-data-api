@@ -1,7 +1,7 @@
 import pytest
 from fastapi import HTTPException
 
-from app.data.common import Region, ReverseDepth
+from app.data.common import Language, Region, ReverseDepth
 from app.data.enums import FuncType
 from app.data.nice import get_nice_servant, parse_dataVals
 from app.data.tasks import sort_by_collection_no
@@ -39,9 +39,9 @@ def test_reverseDepth_fail() -> None:
 
 
 def test_lru_cache() -> None:
-    get_nice_servant(Region.NA, 202900)
-    get_nice_servant(Region.NA, 202900)
-    assert get_nice_servant.cache_info().hits == 1  # type: ignore
+    get_nice_servant(Region.NA, 202900, Language.en)
+    get_nice_servant(Region.NA, 202900, Language.en)
+    assert get_nice_servant.cache_info().hits == 1
 
 
 def test_sort_by_collection_no() -> None:

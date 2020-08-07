@@ -1,13 +1,12 @@
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Dict, List, Union
 
 from fastapi import APIRouter, Depends, HTTPException, Response
 
 from ..config import Settings
 from ..data import nice, search
-from ..data.common import Region, ReverseDepth
+from ..data.common import Language, Region, ReverseDepth
 from ..data.gamedata import masters
 from ..data.schemas.nice import (
-    Language,
     NiceBaseFunctionReverse,
     NiceBuffReverse,
     NiceCommandCode,
@@ -25,6 +24,7 @@ from .deps import (
     EquipSearchQueryParams,
     FuncSearchQueryParams,
     ServantSearchQueryParams,
+    language_parameter,
 )
 from .utils import item_response, list_response
 
@@ -59,14 +59,14 @@ svt_lang_lore_description = """
 )
 async def find_servant(
     search_param: ServantSearchQueryParams = Depends(ServantSearchQueryParams),
-    lang: Optional[Language] = None,
+    lang: Language = Depends(language_parameter),
     lore: bool = False,
 ) -> Response:
     if search_param.hasSearchParams:
         matches = search.search_servant(search_param)
         return list_response(
             [
-                nice.get_nice_servant_model(search_param.region, item, lore, lang)
+                nice.get_nice_servant_model(search_param.region, item, lang, lore)
                 for item in matches
             ]
         )
@@ -103,12 +103,15 @@ if settings.documentation_all_nice:
     responses=responses,
 )
 async def get_servant(
-    region: Region, item_id: int, lang: Optional[Language] = None, lore: bool = False
+    region: Region,
+    item_id: int,
+    lang: Language = Depends(language_parameter),
+    lore: bool = False,
 ) -> Response:
     if item_id in masters[region].mstSvtServantCollectionNo:
         item_id = masters[region].mstSvtServantCollectionNo[item_id]
     if item_id in masters[region].mstSvtServantCollectionNo.values():
-        return item_response(nice.get_nice_servant_model(region, item_id, lore, lang))
+        return item_response(nice.get_nice_servant_model(region, item_id, lang, lore))
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
 
@@ -129,13 +132,14 @@ equip_lore_description = """
 )
 async def find_equip(
     search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
+    lang: Language = Depends(language_parameter),
     lore: bool = False,
 ) -> Response:
     if search_param.hasSearchParams:
         matches = search.search_equip(search_param)
         return list_response(
             [
-                nice.get_nice_equip_model(search_param.region, item, lore)
+                nice.get_nice_equip_model(search_param.region, item, lang, lore)
                 for item in matches
             ]
         )
@@ -171,11 +175,16 @@ if settings.documentation_all_nice:
     response_model_exclude_unset=True,
     responses=responses,
 )
-async def get_equip(region: Region, item_id: int, lore: bool = False) -> Response:
+async def get_equip(
+    region: Region,
+    item_id: int,
+    lang: Language = Depends(language_parameter),
+    lore: bool = False,
+) -> Response:
     if item_id in masters[region].mstSvtEquipCollectionNo:
         item_id = masters[region].mstSvtEquipCollectionNo[item_id]
     if item_id in masters[region].mstSvtEquipCollectionNo.values():
-        return item_response(nice.get_nice_equip_model(region, item_id, lore))
+        return item_response(nice.get_nice_equip_model(region, item_id, lang, lore))
     else:
         raise HTTPException(status_code=404, detail="Equip not found")
 
@@ -188,7 +197,12 @@ async def get_equip(region: Region, item_id: int, lore: bool = False) -> Respons
     response_model_exclude_unset=True,
     responses=responses,
 )
-async def get_svt(region: Region, item_id: int, lore: bool = False) -> Response:
+async def get_svt(
+    region: Region,
+    item_id: int,
+    lang: Language = Depends(language_parameter),
+    lore: bool = False,
+) -> Response:
     """
     Get svt info from ID
 
@@ -196,7 +210,7 @@ async def get_svt(region: Region, item_id: int, lore: bool = False) -> Response:
     The endpoint is not limited to servants or equips ids.
     """
     if item_id in masters[region].mstSvtId:
-        return item_response(nice.get_nice_servant_model(region, item_id, lore))
+        return item_response(nice.get_nice_servant_model(region, item_id, lang, lore))
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
 
@@ -269,7 +283,7 @@ async def get_skill(
     region: Region,
     item_id: int,
     reverse: bool = False,
-    lang: Optional[Language] = None,
+    lang: Language = Depends(language_parameter),
 ) -> Response:
     """
     Get the skill data from the given ID
@@ -278,9 +292,7 @@ async def get_skill(
     and return the reverse skill objects.
     """
     if item_id in masters[region].mstSkillId:
-        return item_response(
-            nice.get_nice_skill_alone(region, item_id, reverse, lang=lang)
-        )
+        return item_response(nice.get_nice_skill_alone(region, item_id, lang, reverse))
     else:
         raise HTTPException(status_code=404, detail="Skill not found")
 
@@ -297,7 +309,7 @@ async def get_td(
     region: Region,
     item_id: int,
     reverse: bool = False,
-    lang: Optional[Language] = None,
+    lang: Language = Depends(language_parameter),
 ) -> Response:
     """
     Get the NP data from the given ID
@@ -306,9 +318,7 @@ async def get_td(
     and return the reversed servant objects.
     """
     if item_id in masters[region].mstTreasureDeviceId:
-        return item_response(
-            nice.get_nice_td_alone(region, item_id, reverse, lang=lang)
-        )
+        return item_response(nice.get_nice_td_alone(region, item_id, lang, reverse))
     else:
         raise HTTPException(status_code=404, detail="NP not found")
 
@@ -334,13 +344,13 @@ async def find_function(
     search_param: FuncSearchQueryParams = Depends(FuncSearchQueryParams),
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
-    lang: Optional[Language] = None,
+    lang: Language = Depends(language_parameter),
 ) -> Response:
     if search_param.hasSearchParams:
         matches = search.search_func(search_param)
         entity_list = [
             nice.get_nice_func_alone(
-                search_param.region, item, reverse, reverseDepth, lang
+                search_param.region, item, lang, reverse, reverseDepth
             )
             for item in matches
         ]
@@ -364,11 +374,11 @@ async def get_function(
     item_id: int,
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
-    lang: Optional[Language] = None,
+    lang: Language = Depends(language_parameter),
 ) -> Response:
     if item_id in masters[region].mstFuncId:
         return item_response(
-            nice.get_nice_func_alone(region, item_id, reverse, reverseDepth, lang)
+            nice.get_nice_func_alone(region, item_id, lang, reverse, reverseDepth)
         )
     else:
         raise HTTPException(status_code=404, detail="Function not found")
@@ -395,13 +405,13 @@ async def find_buff(
     search_param: BuffSearchQueryParams = Depends(BuffSearchQueryParams),
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
-    lang: Optional[Language] = None,
+    lang: Language = Depends(language_parameter),
 ) -> Response:
     if search_param.hasSearchParams:
         matches = search.search_buff(search_param)
         entity_list = [
             nice.get_nice_buff_alone(
-                search_param.region, item, reverse, reverseDepth, lang
+                search_param.region, item, lang, reverse, reverseDepth
             )
             for item in matches
         ]
@@ -424,11 +434,11 @@ async def get_buff(
     item_id: int,
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
-    lang: Optional[Language] = None,
+    lang: Language = Depends(language_parameter),
 ) -> Response:
     if item_id in masters[region].mstBuffId:
         return item_response(
-            nice.get_nice_buff_alone(region, item_id, reverse, reverseDepth, lang)
+            nice.get_nice_buff_alone(region, item_id, lang, reverse, reverseDepth)
         )
     else:
         raise HTTPException(status_code=404, detail="Buff not found")

@@ -1,22 +1,11 @@
 import re
 from functools import lru_cache
-from typing import (
-    Any,
-    Callable,
-    Dict,
-    Iterable,
-    List,
-    Mapping,
-    Optional,
-    TypeVar,
-    Union,
-    cast,
-)
+from typing import Any, Dict, Iterable, List, Mapping, Union
 
 from fastapi import HTTPException
 
 from ..config import Settings
-from .common import Region, ReverseDepth
+from .common import Language, Region, ReverseDepth
 from .enums import (
     ATTRIBUTE_NAME,
     BUFF_TYPE_NAME,
@@ -58,7 +47,6 @@ from .raw import (
 )
 from .schemas.nice import (
     AssetURL,
-    Language,
     NiceBaseFunctionReverse,
     NiceBuffReverse,
     NiceEquip,
@@ -81,13 +69,6 @@ FORMATTING_BRACKETS = {"[g][o]": "", "[/o][/g]": "", " [{0}] ": " ", "[{0}]": ""
 
 
 settings = Settings()
-
-
-T = TypeVar("T", bound=Callable[..., Any])
-
-
-def cache_functions(func: T) -> T:
-    return cast(T, lru_cache(func)) if settings.nice_servant_lru_cache else func
 
 
 def strip_formatting_brackets(detail_string: str) -> str:
@@ -471,9 +452,9 @@ def get_nice_comment(comment: MstSvtComment) -> Dict[str, Any]:
     }
 
 
-@cache_functions
+@lru_cache(maxsize=settings.lru_cache_size)
 def get_nice_servant(
-    region: Region, item_id: int, lore: bool = False, lang: Optional[Language] = None
+    region: Region, item_id: int, lang: Language, lore: bool = False
 ) -> Dict[str, Any]:
     # Get expanded servant entity to get function and buff details
     raw_data = get_servant_entity(region, item_id, expand=True, lore=lore)
@@ -673,42 +654,42 @@ def get_nice_servant(
 
 
 def get_nice_servant_model(
-    region: Region, item_id: int, lore: bool = False, lang: Optional[Language] = None
+    region: Region, item_id: int, lang: Language, lore: bool = False
 ) -> NiceServant:
-    return NiceServant.parse_obj(get_nice_servant(region, item_id, lore, lang))
+    return NiceServant.parse_obj(get_nice_servant(region, item_id, lang, lore))
 
 
 def get_nice_equip_model(
-    region: Region, item_id: int, lore: bool = False, lang: Optional[Language] = None
+    region: Region, item_id: int, lang: Language, lore: bool = False
 ) -> NiceEquip:
-    return NiceEquip.parse_obj(get_nice_servant(region, item_id, lore, lang))
+    return NiceEquip.parse_obj(get_nice_servant(region, item_id, lang, lore))
 
 
-@cache_functions
+@lru_cache(maxsize=settings.lru_cache_size)
 def get_nice_buff_alone(
     region: Region,
     buff_id: int,
+    lang: Language,
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
-    lang: Optional[Language] = None,
 ) -> NiceBuffReverse:
     raw_data = get_buff_entity_no_reverse(region, buff_id)
     nice_data = NiceBuffReverse.parse_obj(get_nice_buff(raw_data, region))
     if reverse and reverseDepth >= ReverseDepth.function:
         nice_data.reverseFunctions = [
-            get_nice_func_alone(region, func_id, reverse, reverseDepth, lang=lang)
+            get_nice_func_alone(region, func_id, lang, reverse, reverseDepth)
             for func_id in buff_to_func(region, buff_id)
         ]
     return nice_data
 
 
-@cache_functions
+@lru_cache(maxsize=settings.lru_cache_size)
 def get_nice_func_alone(
     region: Region,
     func_id: int,
+    lang: Language,
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
-    lang: Optional[Language] = None,
 ) -> NiceBaseFunctionReverse:
     raw_data = get_func_entity_no_reverse(region, func_id, expand=True)
     nice_data = NiceBaseFunctionReverse.parse_obj(
@@ -717,23 +698,23 @@ def get_nice_func_alone(
 
     if reverse and reverseDepth >= ReverseDepth.skillNp:
         nice_data.reverseSkills = [
-            get_nice_skill_alone(region, skill_id, reverse, reverseDepth, lang=lang)
+            get_nice_skill_alone(region, skill_id, lang, reverse, reverseDepth)
             for skill_id in func_to_skillId(region, func_id)
         ]
         nice_data.reverseTds = [
-            get_nice_td_alone(region, td_id, reverse, reverseDepth, lang=lang)
+            get_nice_td_alone(region, td_id, reverse, reverseDepth)
             for td_id in func_to_tdId(region, func_id)
         ]
     return nice_data
 
 
-@cache_functions
+@lru_cache(maxsize=settings.lru_cache_size)
 def get_nice_skill_alone(
     region: Region,
     skill_id: int,
+    lang: Language,
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.servant,
-    lang: Optional[Language] = None,
 ) -> NiceSkillReverse:
     raw_data = get_skill_entity_no_reverse(region, skill_id, expand=True)
 
@@ -759,13 +740,13 @@ def get_nice_skill_alone(
     return nice_data
 
 
-@cache_functions
+@lru_cache(maxsize=settings.lru_cache_size)
 def get_nice_td_alone(
     region: Region,
     td_id: int,
+    lang: Language,
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.servant,
-    lang: Optional[Language] = None,
 ) -> NiceTdReverse:
     raw_data = get_td_entity_no_reverse(region, td_id, expand=True)
 

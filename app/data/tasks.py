@@ -8,7 +8,7 @@ from git import Repo
 from ..config import Settings, logger
 from ..routers.utils import list_string
 from .basic import get_basic_svt
-from .common import Region
+from .common import Language, Region
 from .enums import TRAIT_NAME
 from .gamedata import masters, region_path, update_gamedata
 from .nice import (
@@ -24,7 +24,6 @@ from .nice import (
     get_nice_td_alone,
 )
 from .schemas.base import BaseModelORJson
-from .schemas.nice import Language
 
 
 settings = Settings()
@@ -65,11 +64,11 @@ def generate_exports() -> None:  # pragma: no cover
             start_time = time.perf_counter()
             logger.info(f"Exporting {region} data …")
             all_equip_data = [
-                get_nice_equip_model(region, item_id)
+                get_nice_equip_model(region, item_id, Language.jp)
                 for item_id in masters[region].mstSvtEquipCollectionNo.values()
             ]
             all_servant_data = [
-                get_nice_servant_model(region, item_id)
+                get_nice_servant_model(region, item_id, Language.jp)
                 for item_id in masters[region].mstSvtServantCollectionNo.values()
             ]
             all_item_data = [
@@ -157,11 +156,10 @@ def pull_and_update() -> None:  # pragma: no cover
                     commit_hash = fetch_info.commit.hexsha[:6]
                     logger.info(f"Updated {fetch_info.ref} to {commit_hash}")
     update_gamedata()
-    if settings.nice_servant_lru_cache:
-        get_nice_servant.cache_clear()  # type: ignore
-        get_nice_buff_alone.cache_clear()  # type: ignore
-        get_nice_func_alone.cache_clear()  # type: ignore
-        get_nice_skill_alone.cache_clear()  # type: ignore
-        get_nice_td_alone.cache_clear()  # type: ignore
+    get_nice_servant.cache_clear()
+    get_nice_buff_alone.cache_clear()
+    get_nice_func_alone.cache_clear()
+    get_nice_skill_alone.cache_clear()
+    get_nice_td_alone.cache_clear()
     generate_exports()
     update_repo_info()

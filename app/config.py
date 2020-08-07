@@ -17,7 +17,7 @@ class Settings(BaseSettings):
     asset_url: HttpUrl
     export_all_nice: bool = False
     documentation_all_nice: bool = False
-    nice_servant_lru_cache: bool = False
+    lru_cache_size: int = 128
     github_webhook_secret: SecretStr = SecretStr("")
     github_webhook_git_pull: bool = False
     github_webhook_sleep: int = 0

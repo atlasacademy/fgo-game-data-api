@@ -1,10 +1,10 @@
 from typing import Any, Dict, Optional
 
 from ..config import Settings
-from .common import Region
+from .common import Language, Region
 from .enums import CLASS_NAME, SVT_TYPE_NAME
 from .gamedata import masters
-from .schemas.nice import AssetURL, Language
+from .schemas.nice import AssetURL
 from .translations import SVT_NAME_JP_EN
 
 

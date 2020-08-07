@@ -49,10 +49,6 @@ class AssetURL:
     commandGraph: str = "{base_url}/{region}/CommandGraph/{item_id}a.png"
 
 
-class Language(str, Enum):
-    en = "en"
-
-
 class NiceItem(BaseModelORJson):
     id: int
     name: str

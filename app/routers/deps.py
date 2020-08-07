@@ -5,7 +5,7 @@ from typing import ClassVar, List, Optional, Union
 from fastapi import Query
 from pydantic import BaseModel
 
-from ..data.common import Region
+from ..data.common import Language, Region
 from ..data.enums import (
     Attribute,
     FuncApplyTarget,
@@ -20,6 +20,13 @@ from ..data.enums import (
 
 class DetailMessage(BaseModel):
     detail: str
+
+
+def language_parameter(lang: Optional[Language] = None) -> Language:
+    if lang:
+        return lang
+    else:
+        return Language.jp
 
 
 @dataclass

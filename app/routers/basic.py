@@ -5,10 +5,9 @@ from fastapi import APIRouter, Depends, HTTPException
 from ..config import Settings
 from ..data import search
 from ..data.basic import get_basic_svt
-from ..data.common import Region
+from ..data.common import Language, Region
 from ..data.gamedata import masters
 from ..data.schemas.basic import BasicEquip, BasicServant
-from ..data.schemas.nice import Language
 from .deps import DetailMessage, EquipSearchQueryParams, ServantSearchQueryParams
 
 

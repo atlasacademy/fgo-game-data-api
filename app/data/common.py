@@ -10,6 +10,11 @@ class Region(str, Enum):
     JP = "JP"
 
 
+class Language(str, Enum):
+    en = "en"
+    jp = "jp"
+
+
 class ReverseDepth(str, Enum):
     function = "function"
     skillNp = "skillNp"
