@@ -7,13 +7,17 @@ from pydantic import BaseModel
 
 from ..data.common import Language, Region
 from ..data.enums import (
+    ATTRIBUTE_NAME,
+    GENDER_NAME,
+    PLAYABLE_CLASS_LIST,
     Attribute,
     FuncApplyTarget,
     Gender,
     NiceBuffType,
     NiceFuncTargetType,
     NiceFuncType,
-    PlayableSvtClass,
+    NiceSvtType,
+    SvtClass,
     Trait,
 )
 
@@ -34,21 +38,24 @@ class ServantSearchQueryParams:
     region: Region
     hasSearchParams: bool = field(init=False)
     name: Optional[str] = None
-    rarity: List[int] = Query(None, ge=0, le=5)
-    className: List[PlayableSvtClass] = Query(None)
-    gender: List[Gender] = Query(None)
-    attribute: List[Attribute] = Query(None)
+    type: List[NiceSvtType] = Query(
+        [NiceSvtType.normal, NiceSvtType.heroine, NiceSvtType.enemyCollectionDetail]
+    )
+    rarity: List[int] = Query(list(range(6)), ge=0, le=5)
+    className: List[SvtClass] = Query(PLAYABLE_CLASS_LIST)
+    gender: List[Gender] = Query(list(GENDER_NAME.values()))
+    attribute: List[Attribute] = Query(list(ATTRIBUTE_NAME.values()))
     trait: List[Union[Trait, int]] = Query([])
 
     def __post_init__(self) -> None:
         self.hasSearchParams = any(
             [
                 self.name,
-                self.rarity,
-                self.className,
-                self.gender,
-                self.attribute,
-                self.trait,
+                self.rarity != list(range(6)),
+                self.className != PLAYABLE_CLASS_LIST,
+                self.gender != list(GENDER_NAME.values()),
+                self.attribute != list(ATTRIBUTE_NAME.values()),
+                self.trait != [],
             ]
         )
 
@@ -57,10 +64,13 @@ class ServantSearchQueryParams:
         Search and return the list of matched servant entities.
 
         - **name**: servant name. Searching JP data using English name works too.
-        - **rarity**: Integer 0-6
-        - **className**: an item in the className enum. See the className detail in the Nice Servant response.
-        - **gender**: female, male or unknown
-        - **attribute**: human, sky, earth, star or beast
+        - **type**: servant type, defaults to `[normal, heroine, enemyCollectionDetail]`.
+        See the NiceSvtType enum for the options. Must not be the only parameter given.
+        - **rarity**: Integers 0-6.
+        - **className**: an item in the className enum, defaults to `PLAYABLE_CLASS_LIST`.
+        See the className detail in the Nice Servant response.
+        - **gender**: female, male or unknown.
+        - **attribute**: human, sky, earth, star or beast.
         - **trait**: an integer or an item in the trait enum. See the traits detail in the Nice Servant response.
         """
     )
@@ -71,17 +81,20 @@ class EquipSearchQueryParams:
     region: Region
     hasSearchParams: bool = field(init=False)
     name: Optional[str] = None
-    rarity: List[int] = Query(None, ge=1, le=5)
+    type: List[NiceSvtType] = Query([NiceSvtType.servantEquip])
+    rarity: List[int] = Query(list(range(1, 6)), ge=1, le=5)
 
     def __post_init__(self) -> None:
-        self.hasSearchParams = any([self.name, self.rarity])
+        self.hasSearchParams = any([self.name, self.rarity != list(range(1, 6))])
 
     DESCRIPTION: ClassVar[str] = inspect.cleandoc(
         """
         Search and return the list of matched equip entities.
 
         - **name**: in English if you are searching NA data and in Japanese if you are searching JP data
-        - **rarity**: Integer 0-6
+        - **type**: servant type, defaults to `[servantEquip]`. See the NiceSvtType for the options.
+        Must not be the only parameter given.
+        - **rarity**: Integers 0-6
         """
     )
 

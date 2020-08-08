@@ -63,6 +63,10 @@ test_cases_dict = {
     "servant_JP_search_EN_name": ("JP/servant/search?name=Skadi", {503900}),
     "servant_NA_search_Scathach": ("NA/servant/search?name=Scathach", {301300, 602400}),
     "servant_search_Yagyu": ("NA/servant/search?name=Tajima", {103200}),
+    "servant_search_equip": (
+        "NA/servant/search?name=Golden%20Sumo&type=servantEquip&className=ALL",
+        {9401640},
+    ),
 }
 
 test_cases = [pytest.param(*value, id=key) for key, value in test_cases_dict.items()]
@@ -98,6 +102,11 @@ class TestSearch:
     @pytest.mark.parametrize("endpoint", ["servant", "equip"])
     def test_empty_input(self, response_type: str, endpoint: str) -> None:
         response = client.get(f"/{response_type}/NA/{endpoint}/search")
+        assert response.status_code == 400
+
+    @pytest.mark.parametrize("endpoint", ["servant", "equip"])
+    def test_only_type_given(self, response_type: str, endpoint: str) -> None:
+        response = client.get(f"/{response_type}/NA/{endpoint}/search?type=all")
         assert response.status_code == 400
 
 

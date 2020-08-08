@@ -48,6 +48,9 @@ SVT_TYPE_NAME: Dict[int, NiceSvtType] = {
 }
 
 
+SVT_TYPE_NAME_REVERSE: Dict[NiceSvtType, int] = {v: k for k, v in SVT_TYPE_NAME.items()}
+
+
 ### Skill Type ###
 
 
@@ -1593,6 +1596,23 @@ CLASS_NAME: Dict[int, SvtClass] = {
 
 
 CLASS_NAME_REVERSE: Dict[SvtClass, int] = {v: k for k, v in CLASS_NAME.items()}
+
+
+PLAYABLE_CLASS_LIST = [
+    SvtClass.saber,
+    SvtClass.archer,
+    SvtClass.lancer,
+    SvtClass.rider,
+    SvtClass.caster,
+    SvtClass.assassin,
+    SvtClass.berserker,
+    SvtClass.shielder,
+    SvtClass.ruler,
+    SvtClass.alterEgo,
+    SvtClass.avenger,
+    SvtClass.moonCancer,
+    SvtClass.foreigner,
+]
 
 
 PLAYABLE_CLASS_NAME: Dict[int, PlayableSvtClass] = {

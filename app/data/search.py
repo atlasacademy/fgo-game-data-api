@@ -11,11 +11,12 @@ from ..routers.deps import (
 from .enums import (
     ATTRIBUTE_NAME_REVERSE,
     BUFF_TYPE_NAME_REVERSE,
+    CLASS_NAME_REVERSE,
     FUNC_APPLYTARGET_NAME_REVERSE,
     FUNC_TARGETTYPE_NAME_REVERSE,
     FUNC_TYPE_NAME_REVERSE,
     GENDER_NAME_REVERSE,
-    PLAYABLE_CLASS_NAME_REVERSE,
+    SVT_TYPE_NAME_REVERSE,
     TRAIT_NAME_REVERSE,
     Trait,
 )
@@ -74,43 +75,23 @@ def match_name(search_param: str, name: str) -> bool:
 
 
 def search_servant(search_param: ServantSearchQueryParams) -> List[int]:
-
-    if not search_param.rarity:
-        rarity = set(range(6))
-    else:
-        rarity = set(search_param.rarity)
-
-    if not search_param.className:
-        class_ints = set(PLAYABLE_CLASS_NAME_REVERSE.values())
-    else:
-        class_ints = {
-            PLAYABLE_CLASS_NAME_REVERSE[item] for item in search_param.className
-        }
-
-    if not search_param.gender:
-        gender_ints = set(GENDER_NAME_REVERSE.values())
-    else:
-        gender_ints = {GENDER_NAME_REVERSE[item] for item in search_param.gender}
-
-    if not search_param.attribute:
-        attribute_ints = set(ATTRIBUTE_NAME_REVERSE.values())
-    else:
-        attribute_ints = {
-            ATTRIBUTE_NAME_REVERSE[item] for item in search_param.attribute
-        }
-
+    svt_type_ints = {SVT_TYPE_NAME_REVERSE[item] for item in search_param.type}
+    rarity_ints = set(search_param.rarity)
+    class_ints = {CLASS_NAME_REVERSE[item] for item in search_param.className}
+    gender_ints = {GENDER_NAME_REVERSE[item] for item in search_param.gender}
+    attribute_ints = {ATTRIBUTE_NAME_REVERSE[item] for item in search_param.attribute}
     trait_ints = reverse_traits(search_param.trait)
 
     matches = [
         item
         for item in masters[search_param.region].mstSvt
-        if item.isServant()
+        if item.type in svt_type_ints
         and item.collectionNo != 0
         and item.classId in class_ints
         and item.genderType in gender_ints
         and item.attri in attribute_ints
         and trait_ints.issubset(set(item.individuality))
-        and masters[search_param.region].mstSvtLimitId[item.id][0].rarity in rarity
+        and masters[search_param.region].mstSvtLimitId[item.id][0].rarity in rarity_ints
     ]
 
     if search_param.name:
@@ -126,16 +107,13 @@ def search_servant(search_param: ServantSearchQueryParams) -> List[int]:
 
 
 def search_equip(search_param: EquipSearchQueryParams) -> List[int]:
-
-    if not search_param.rarity:
-        rarity = set(range(1, 6))
-    else:
-        rarity = set(search_param.rarity)
+    svt_type = {SVT_TYPE_NAME_REVERSE[item] for item in search_param.type}
+    rarity = set(search_param.rarity)
 
     matches = [
         item
         for item in masters[search_param.region].mstSvt
-        if item.isEquip()
+        if item.type in svt_type
         and item.collectionNo != 0
         and masters[search_param.region].mstSvtLimitId[item.id][0].rarity in rarity
     ]
