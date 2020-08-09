@@ -366,6 +366,7 @@ class NiceEquip(BaseModelORJson):
     id: int
     collectionNo: int
     name: str
+    type: NiceSvtType
     rarity: int
     cost: int
     lvMax: int
