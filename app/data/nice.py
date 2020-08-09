@@ -222,10 +222,7 @@ def parse_dataVals(
                         "AndCheckIndividualityList",
                     ):
                         try:
-                            if "/" in array2[1]:
-                                list_value = [int(i) for i in array2[1].split("/")]
-                            else:
-                                list_value = [int(array2[1])]
+                            list_value = [int(i) for i in array2[1].split("/")]
                             output[array2[0]] = list_value
                         except ValueError:
                             raise datavals_exception
