@@ -28,9 +28,23 @@ def test_parse_dataVals_class_drop_up_rate() -> None:
     }
 
 
-def test_parse_datavals_fail() -> None:
+cases_datavals_fail_dict = {
+    "test_dataVals_fail_str_dataVals_no_value": "[HideMiss]",
+    "test_dataVals_fail_str_dataVals_str_value": "[HideMiss:123/abc]",
+    "test_dataVals_fail_list_str": "[TargetList:123/abc]",
+    "test_dataVals_fail_str_not_a_list": "[TargetList:abc]",
+}
+
+
+cases_datavals_fail = [
+    pytest.param(value, id=key) for key, value in cases_datavals_fail_dict.items()
+]
+
+
+@pytest.mark.parametrize("dataVals", cases_datavals_fail)
+def test_parse_datavals_fail_list_str(dataVals: str) -> None:
     with pytest.raises(HTTPException):
-        parse_dataVals("[HideMiss]", 1, Region.NA)
+        parse_dataVals(dataVals, 1, Region.NA)
 
 
 def test_reverseDepth_fail() -> None:

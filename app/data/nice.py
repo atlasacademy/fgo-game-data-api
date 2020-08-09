@@ -105,7 +105,7 @@ def remove_brackets(val_string: str) -> str:
 
 def parse_dataVals(
     datavals: str, functype: int, region: Region
-) -> Dict[str, Union[int, str, int]]:
+) -> Dict[str, Union[int, str, List[int]]]:
     EVENT_FUNCTIONS = {
         FuncType.EVENT_POINT_UP,
         FuncType.EVENT_POINT_RATE_UP,
@@ -122,13 +122,17 @@ def parse_dataVals(
         FuncType.QP_UP,
     }
 
-    output: Dict[str, Union[int, str]] = {}
+    datavals_exception = HTTPException(
+        status_code=500, detail=f"Can't parse datavals: {datavals}"
+    )
+
+    output: Dict[str, Union[int, str, List[int]]] = {}
     if datavals != "[]":
         datavals = remove_brackets(datavals)
         array = re.split(r",\s*(?![^\[\]]*\])", datavals)
         for i, arrayi in enumerate(array):
             text = ""
-            value: Union[int, str] = 0
+            value = -98765
             try:
                 value = int(arrayi)
                 if functype in {
@@ -206,22 +210,35 @@ def parse_dataVals(
             except ValueError:
                 array2 = re.split(r":\s*(?![^\[\]]*\])", arrayi)
                 if len(array2) > 1:
-                    text = array2[0]
-                    if text == "DependFuncId1":
+                    if array2[0] == "DependFuncId1":
                         output["DependFuncId"] = int(remove_brackets(array2[1]))
-                    elif text == "DependFuncVals1":
+                    elif array2[0] == "DependFuncVals1":
                         func_type = masters[region].mstFuncId[output["DependFuncId"]].funcType  # type: ignore
-                        valsValue = parse_dataVals(array2[1], func_type, region)
-                        output["DependFuncVals"] = valsValue  # type: ignore
-                    try:
-                        value = int(array2[1])
-                    except ValueError:
-                        value = array2[1]
+                        vals_value = parse_dataVals(array2[1], func_type, region)
+                        output["DependFuncVals"] = vals_value  # type: ignore
+                    elif array2[0] in (
+                        "TargetList",
+                        "TargetRarityList",
+                        "AndCheckIndividualityList",
+                    ):
+                        try:
+                            if "/" in array2[1]:
+                                list_value = [int(i) for i in array2[1].split("/")]
+                            else:
+                                list_value = [int(array2[1])]
+                            output[array2[0]] = list_value
+                        except ValueError:
+                            raise datavals_exception
+                    else:
+                        try:
+                            text = array2[0]
+                            value = int(array2[1])
+                        except ValueError:
+                            raise datavals_exception
                 else:
-                    raise HTTPException(
-                        status_code=500, detail=f"Can't parse datavals: {datavals}"
-                    )
-            if text != "" and text not in {"DependFuncId1", "DependFuncVals1"}:
+                    raise datavals_exception
+
+            if text:
                 output[text] = value
 
     if functype in EVENT_FUNCTIONS:

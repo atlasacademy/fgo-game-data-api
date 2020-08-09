@@ -194,7 +194,7 @@ class TestServantSpecial:
             "Target": 0,
         }
 
-    def test_datavals_string_svals_values(self) -> None:
+    def test_list_datavals_2_items(self) -> None:
         response = client.get("/nice/JP/NP/403401")
         assert response.status_code == 200
         assert response.json()["functions"][0]["svals"][0] == {
@@ -202,7 +202,20 @@ class TestServantSpecial:
             "Value": 6000,
             "Target": 0,
             "Correction": 1500,
-            "TargetRarityList": "1/2",
+            "TargetRarityList": [1, 2],
+        }
+
+    def test_list_datavals_1_item(self) -> None:
+        response = client.get("/nice/JP/NP/304201")
+        assert response.status_code == 200
+        assert response.json()["functions"][0]["svals"][0] == {
+            "Rate": 1000,
+            "Value": 3000,
+            "Value2": 1000,
+            "Target": 0,
+            "Correction": 200,
+            "TargetList": [2004],
+            "ParamAddMaxCount": 10,
         }
 
     def test_script_STAR_HIGHER_Moriarty(self) -> None:

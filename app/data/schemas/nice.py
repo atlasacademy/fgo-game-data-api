@@ -1,4 +1,3 @@
-from enum import Enum
 from typing import Dict, List, Optional, Union
 
 from pydantic import BaseModel, HttpUrl
@@ -100,7 +99,7 @@ class BaseVals(BaseModel):
     EffectSummon: Optional[int] = None
     RatioHPRangeHigh: Optional[int] = None
     RatioHPRangeLow: Optional[int] = None
-    TargetList: Optional[str] = None
+    TargetList: Optional[List[int]] = None
     OpponentOnly: Optional[int] = None
     StatusEffectId: Optional[int] = None
     EndBattle: Optional[int] = None
@@ -111,7 +110,7 @@ class BaseVals(BaseModel):
     SameBuffLimitNum: Optional[int] = None
     CheckDuplicate: Optional[int] = None
     OnFieldCount: Optional[int] = None
-    TargetRarityList: Optional[str] = None
+    TargetRarityList: Optional[List[int]] = None
     DependFuncId: Optional[int] = None
     InvalidHide: Optional[int] = None
     OutEnemyNpcId: Optional[int] = None
@@ -122,7 +121,7 @@ class BaseVals(BaseModel):
     ChangeTDCommandType: Optional[int] = None
     ShiftNpcId: Optional[int] = None
     DisplayLastFuncInvalidType: Optional[int] = None
-    AndCheckIndividualityList: Optional[int] = None
+    AndCheckIndividualityList: Optional[List[int]] = None
     WinBattleNotRelatedSurvivalStatus: Optional[int] = None
     ForceSelfInstantDeath: Optional[int] = None
     ChangeMaxBreakGauge: Optional[int] = None
