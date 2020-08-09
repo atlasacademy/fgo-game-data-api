@@ -100,7 +100,7 @@ class BaseVals(BaseModel):
     EffectSummon: Optional[int] = None
     RatioHPRangeHigh: Optional[int] = None
     RatioHPRangeLow: Optional[int] = None
-    TargetList: Optional[int] = None
+    TargetList: Optional[str] = None
     OpponentOnly: Optional[int] = None
     StatusEffectId: Optional[int] = None
     EndBattle: Optional[int] = None
