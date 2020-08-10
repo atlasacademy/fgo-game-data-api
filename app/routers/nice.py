@@ -264,9 +264,9 @@ if settings.documentation_all_nice:
     response_model_exclude_unset=True,
     responses=responses,
 )
-async def get_command_code(region: Region, item_id: int) -> Dict[str, Any]:
+async def get_command_code(region: Region, item_id: int) -> Response:
     if item_id in masters[region].mstCommandCodeId:
-        return nice.get_nice_command_code(region, item_id)
+        return item_response(nice.get_nice_command_code(region, item_id))
     else:
         raise HTTPException(status_code=404, detail="Command Code not found")
 

@@ -35,6 +35,14 @@ def passive_to_svtId(region: Region, skill_id: int) -> Set[int]:
     return masters[region].passiveSkillToSvt.get(skill_id, set())
 
 
+def skill_to_CCId(region: Region, skill_id: int) -> Set[int]:
+    return {
+        item.commandCodeId
+        for item in masters[region].mstCommandCodeSkill
+        if item.skillId == skill_id
+    }
+
+
 def get_buff_entity_no_reverse(region: Region, buff_id: int) -> BuffEntityNoReverse:
     buff_entity = BuffEntityNoReverse(mstBuff=masters[region].mstBuffId[buff_id])
     return buff_entity
@@ -131,6 +139,10 @@ def get_skill_entity(
             get_mystic_code_entity(region, item.equipId)
             for item in masters[region].mstEquipSkill
             if item.skillId == skill_id
+        ]
+        skill_entity.reverseCC = [
+            get_command_code_entity(region, item)
+            for item in skill_to_CCId(region, skill_id)
         ]
     return skill_entity
 

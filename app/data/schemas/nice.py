@@ -309,6 +309,16 @@ class NiceLore(BaseModel):
     comments: List[NiceLoreComment]
 
 
+class NiceCommandCode(BaseModelORJson):
+    id: int
+    collectionNo: int
+    name: str
+    rarity: int
+    extraAssets: ExtraCCAssets
+    skills: List[NiceSkill]
+    comment: str
+
+
 class NiceServant(BaseModelORJson):
     id: int
     collectionNo: int
@@ -344,24 +354,6 @@ class NiceServant(BaseModelORJson):
     profile: Optional[NiceLore] = None
 
 
-class NiceSkillReverse(NiceSkill):
-    reverseServants: List[NiceServant] = []
-    reverseMC: List[NiceMysticCode] = []
-
-
-class NiceTdReverse(NiceTd):
-    reverseServants: List[NiceServant] = []
-
-
-class NiceBaseFunctionReverse(NiceBaseFunction):
-    reverseSkills: List[NiceSkillReverse] = []
-    reverseTds: List[NiceTdReverse] = []
-
-
-class NiceBuffReverse(NiceBuff):
-    reverseFunctions: List[NiceBaseFunctionReverse] = []
-
-
 class NiceEquip(BaseModelORJson):
     id: int
     collectionNo: int
@@ -382,14 +374,23 @@ class NiceEquip(BaseModelORJson):
     profile: Optional[NiceLore] = None
 
 
-class NiceCommandCode(BaseModelORJson):
-    id: int
-    collectionNo: int
-    name: str
-    rarity: int
-    extraAssets: ExtraCCAssets
-    skills: List[NiceSkill]
-    comment: str
+class NiceSkillReverse(NiceSkill):
+    reverseServants: List[NiceServant] = []
+    reverseMC: List[NiceMysticCode] = []
+    reverseCC: List[NiceCommandCode] = []
+
+
+class NiceTdReverse(NiceTd):
+    reverseServants: List[NiceServant] = []
+
+
+class NiceBaseFunctionReverse(NiceBaseFunction):
+    reverseSkills: List[NiceSkillReverse] = []
+    reverseTds: List[NiceTdReverse] = []
+
+
+class NiceBuffReverse(NiceBuff):
+    reverseFunctions: List[NiceBaseFunctionReverse] = []
 
 
 class NiceQuestPhase(BaseModelORJson):

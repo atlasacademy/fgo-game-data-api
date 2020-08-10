@@ -138,6 +138,14 @@ class TestServantSpecial:
         assert response.status_code == 200
         assert reverse_servants == {500800}
 
+    def test_skill_reverse_CC(self) -> None:
+        response = client.get("/raw/JP/skill/991970?reverse=True")
+        reverse_ccs = {
+            item["mstCommandCode"]["id"] for item in response.json()["reverseCC"]
+        }
+        assert response.status_code == 200
+        assert reverse_ccs == {8400500}
+
     def test_buff_reverse_skillNp(self) -> None:
         response = client.get("/raw/NA/buff/202?reverse=True&reverseDepth=skillNp")
         assert response.status_code == 200

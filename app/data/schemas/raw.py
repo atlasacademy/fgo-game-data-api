@@ -383,6 +383,12 @@ class MstCommandCodeComment(BaseModel):
     illustratorId: int  # 81
 
 
+class CommandCodeEntity(BaseModelORJson):
+    mstCommandCode: MstCommandCode
+    mstSkill: List[SkillEntityNoReverse]
+    mstCommandCodeComment: MstCommandCodeComment
+
+
 class MstItem(BaseModel):
     individuality: List[int]  # [],
     script: Dict[str, Union[int, str]]  # {},
@@ -489,21 +495,21 @@ class Master(BaseModel):
     mstFunc: List[MstFunc]
     # mstSkill: List[MstSkill]
     # mstSkillDetail: List[MstSkillDetail]
-    mstSkillLv: List[MstSkillLv]
+    # mstSkillLv: List[MstSkillLv]
     # mstItem: List[MstItem]
     mstSvt: List[MstSvt]
     # mstSvtCard: List[MstSvtCard]
-    mstSvtSkill: List[MstSvtSkill]
+    # mstSvtSkill: List[MstSvtSkill]
     # mstSvtLimit: List[MstSvtLimit]
     # mstSvtExp: List[MstSvtExp]
     # mstFriendship: List[MstFriendship]
-    mstSvtTreasureDevice: List[MstSvtTreasureDevice]
+    # mstSvtTreasureDevice: List[MstSvtTreasureDevice]
     # mstSvtLimitAdd: List[MstSvtLimitAdd]
     # mstCombineSkill: List[MstCombineSkill]
     # mstCombineLimit: List[MstCombineLimit]
     # mstTreasureDevice: List[MstTreasureDevice]
     # mstTreasureDeviceDetail: List[MstTreasureDeviceDetail]
-    mstTreasureDeviceLv: List[MstTreasureDeviceLv]
+    # mstTreasureDeviceLv: List[MstTreasureDeviceLv]
     mstSvtId: Dict[int, MstSvt]
     mstBuffId: Dict[int, MstBuff]
     mstFuncId: Dict[int, MstFunc]
@@ -566,6 +572,7 @@ class ServantEntity(BaseModelORJson):
 class SkillEntity(SkillEntityNoReverse):
     reverseServants: List[ServantEntity] = []
     reverseMC: List[MysticCodeEntity] = []
+    reverseCC: List[CommandCodeEntity] = []
 
 
 class TdEntity(TdEntityNoReverse):
@@ -579,12 +586,6 @@ class FunctionEntity(FunctionEntityNoReverse):
 
 class BuffEntity(BuffEntityNoReverse):
     reverseFunctions: List[FunctionEntity] = []
-
-
-class CommandCodeEntity(BaseModelORJson):
-    mstCommandCode: MstCommandCode
-    mstSkill: List[SkillEntityNoReverse]
-    mstCommandCodeComment: MstCommandCodeComment
 
 
 class QuestPhaseEntity(BaseModelORJson):

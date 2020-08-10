@@ -44,11 +44,13 @@ from .raw import (
     get_skill_entity_no_reverse,
     get_td_entity_no_reverse,
     passive_to_svtId,
+    skill_to_CCId,
 )
 from .schemas.nice import (
     AssetURL,
     NiceBaseFunctionReverse,
     NiceBuffReverse,
+    NiceCommandCode,
     NiceEquip,
     NiceMysticCode,
     NiceServant,
@@ -751,6 +753,10 @@ def get_nice_skill_alone(
             for item in masters[region].mstEquipSkill
             if item.skillId == skill_id
         ]
+        nice_data.reverseCC = [
+            get_nice_command_code(region, item)
+            for item in skill_to_CCId(region, skill_id)
+        ]
     return nice_data
 
 
@@ -806,7 +812,7 @@ def get_nice_mystic_code(region: Region, mc_id: int) -> NiceMysticCode:
     return NiceMysticCode.parse_obj(nice_data)
 
 
-def get_nice_command_code(region: Region, cc_id: int) -> Dict[str, Any]:
+def get_nice_command_code(region: Region, cc_id: int) -> NiceCommandCode:
     raw_data = get_command_code_entity(region, cc_id, expand=True)
 
     base_settings = {"base_url": settings.asset_url, "region": region, "item_id": cc_id}
@@ -827,7 +833,7 @@ def get_nice_command_code(region: Region, cc_id: int) -> Dict[str, Any]:
     nice_data["skills"] = [
         get_nice_skill(skill, cc_id, region) for skill in raw_data.mstSkill
     ]
-    return nice_data
+    return NiceCommandCode.parse_obj(nice_data)
 
 
 def get_nice_quest_phase(region: Region, quest_id: int, phase: int) -> Dict[str, Any]:
