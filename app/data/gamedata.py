@@ -120,17 +120,23 @@ def update_gamedata() -> None:
                     else:
                         master["buffToFunc"][buff_id] = {item["id"]}
 
-        for masters_item, func_reverse_stuff, lookup_id in (
-            ("funcToSkill", "mstSkillLv", "skillId"),
-            ("funcToTd", "mstTreasureDeviceLv", "treaureDeviceId"),
+        for masters_item, func_reverse_stuff, func_reverse_check, lookup_id in (
+            ("funcToSkill", "mstSkillLv", "mstSkillId", "skillId"),
+            (
+                "funcToTd",
+                "mstTreasureDeviceLv",
+                "mstTreasureDeviceId",
+                "treaureDeviceId",
+            ),
         ):
             master[masters_item] = {}
             for item in master[func_reverse_stuff]:
                 for func_id in item["funcId"]:
-                    if func_id in master[masters_item]:
-                        master[masters_item][func_id].add(item[lookup_id])
-                    else:
-                        master[masters_item][func_id] = {item[lookup_id]}
+                    if item[lookup_id] in master[func_reverse_check]:
+                        if func_id in master[masters_item]:
+                            master[masters_item][func_id].add(item[lookup_id])
+                        else:
+                            master[masters_item][func_id] = {item[lookup_id]}
 
         master["passiveSkillToSvt"] = {}
         for item in master["mstSvt"]:
