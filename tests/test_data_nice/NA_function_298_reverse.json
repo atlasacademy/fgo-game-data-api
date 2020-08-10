@@ -21,55 +21,59 @@
       "maxRate": 5000
     }
   ],
-  "reverseSkills": [
-    {
-      "id": 980023,
-      "name": "Stepping Stone to Ultimate Victory",
-      "detail": "Increase an ally's Critical Star drop rate (1 turn)",
-      "type": "active",
-      "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00604.png",
-      "coolDown": [12, 12, 12, 12, 12, 11, 11, 11, 11, 10],
-      "actIndividuality": [],
-      "script": {},
-      "functions": [
+  "reverse": {
+    "nice": {
+      "skill": [
         {
-          "funcId": 298,
-          "funcType": "addState",
-          "funcTargetType": "ptOne",
-          "funcTargetTeam": "player",
-          "funcPopupText": "C. Star\nDrop Rate Up",
-          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_321.png",
-          "functvals": [],
-          "funcquestTvals": [],
-          "buffs": [
+          "id": 980023,
+          "name": "Stepping Stone to Ultimate Victory",
+          "detail": "Increase an ally's Critical Star drop rate (1 turn)",
+          "type": "active",
+          "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00604.png",
+          "coolDown": [12, 12, 12, 12, 12, 11, 11, 11, 11, 10],
+          "actIndividuality": [],
+          "script": {},
+          "functions": [
             {
-              "id": 117,
-              "name": "C. Star Drop Rate Up",
-              "detail": "Increase C. Star drop rate",
-              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_321.png",
-              "type": "upCriticalpoint",
-              "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
-              "tvals": [],
-              "ckSelfIndv": [],
-              "ckOpIndv": [],
-              "maxRate": 5000
+              "funcId": 298,
+              "funcType": "addState",
+              "funcTargetType": "ptOne",
+              "funcTargetTeam": "player",
+              "funcPopupText": "C. Star\nDrop Rate Up",
+              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_321.png",
+              "functvals": [],
+              "funcquestTvals": [],
+              "buffs": [
+                {
+                  "id": 117,
+                  "name": "C. Star Drop Rate Up",
+                  "detail": "Increase C. Star drop rate",
+                  "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_321.png",
+                  "type": "upCriticalpoint",
+                  "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "maxRate": 5000
+                }
+              ],
+              "svals": [
+                { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 500 },
+                { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 550 },
+                { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 600 },
+                { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 650 },
+                { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 700 },
+                { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 750 },
+                { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 800 },
+                { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 850 },
+                { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 900 },
+                { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 }
+              ]
             }
-          ],
-          "svals": [
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 500 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 550 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 600 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 650 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 700 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 750 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 800 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 850 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 900 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 }
           ]
         }
-      ]
+      ],
+      "NP": []
     }
-  ],
-  "reverseTds": []
+  }
 }

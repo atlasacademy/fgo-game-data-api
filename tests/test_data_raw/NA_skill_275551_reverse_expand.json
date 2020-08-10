@@ -835,898 +835,902 @@
       "priority": 0
     }
   ],
-  "reverseServants": [
-    {
-      "mstSvt": {
-        "relateQuestIds": [],
-        "individuality": [
-          5000,
-          602400,
-          2,
-          105,
-          203,
-          302,
-          303,
-          1000,
-          2001,
-          2008,
-          2113
-        ],
-        "classPassive": [50150],
-        "cardIds": [3, 3, 3, 1, 2],
-        "script": {},
-        "id": 602400,
-        "baseSvtId": 602400,
-        "name": "Scáthach (Assassin)",
-        "ruby": "Scáthach",
-        "battleName": "Scáthach",
-        "classId": 6,
-        "type": 1,
-        "limitMax": 4,
-        "rewardLv": 80,
-        "friendshipId": 1040,
-        "maxFriendshipRank": 10,
-        "genderType": 2,
-        "attri": 4,
-        "combineSkillId": 602400,
-        "combineLimitId": 602400,
-        "sellQp": 2000,
-        "sellMana": 6,
-        "sellRarePri": 0,
-        "expType": 4,
-        "combineMaterialId": 4,
-        "cost": 12,
-        "battleSize": 2,
-        "hpGaugeY": -250,
-        "starRate": 256,
-        "deathRate": 440,
-        "attackAttri": 1,
-        "illustratorId": 14,
-        "cvId": 32,
-        "collectionNo": 133,
-        "materialStoryPriority": 1000
-      },
-      "mstSkill": [
+  "reverse": {
+    "raw": {
+      "servant": [
         {
-          "mstSkill": {
-            "effectList": [],
-            "actIndividuality": [],
+          "mstSvt": {
+            "relateQuestIds": [],
+            "individuality": [
+              5000,
+              602400,
+              2,
+              105,
+              203,
+              302,
+              303,
+              1000,
+              2001,
+              2008,
+              2113
+            ],
+            "classPassive": [50150],
+            "cardIds": [3, 3, 3, 1, 2],
             "script": {},
-            "id": 275551,
+            "id": 602400,
+            "baseSvtId": 602400,
+            "name": "Scáthach (Assassin)",
+            "ruby": "Scáthach",
+            "battleName": "Scáthach",
+            "classId": 6,
             "type": 1,
-            "name": "Beach Crisis A+",
-            "ruby": "Beach Crisis",
-            "maxLv": 10,
-            "iconId": 700,
-            "motion": 101
+            "limitMax": 4,
+            "rewardLv": 80,
+            "friendshipId": 1040,
+            "maxFriendshipRank": 10,
+            "genderType": 2,
+            "attri": 4,
+            "combineSkillId": 602400,
+            "combineLimitId": 602400,
+            "sellQp": 2000,
+            "sellMana": 6,
+            "sellRarePri": 0,
+            "expType": 4,
+            "combineMaterialId": 4,
+            "cost": 12,
+            "battleSize": 2,
+            "hpGaugeY": -250,
+            "starRate": 256,
+            "deathRate": 440,
+            "attackAttri": 1,
+            "illustratorId": 14,
+            "cvId": 32,
+            "collectionNo": 133,
+            "materialStoryPriority": 1000
           },
-          "mstSkillDetail": [
+          "mstSkill": [
             {
-              "id": 275551,
-              "detail": "Apply Target Focus (1 turn) & increase Critical Strength [{0}] (1 turn) for yourself",
-              "detailShort": "Apply Target Focus (1 turn) & increase Critical Strength [{0}] (1 turn) for yourself"
+              "mstSkill": {
+                "effectList": [],
+                "actIndividuality": [],
+                "script": {},
+                "id": 275551,
+                "type": 1,
+                "name": "Beach Crisis A+",
+                "ruby": "Beach Crisis",
+                "maxLv": 10,
+                "iconId": 700,
+                "motion": 101
+              },
+              "mstSkillDetail": [
+                {
+                  "id": 275551,
+                  "detail": "Apply Target Focus (1 turn) & increase Critical Strength [{0}] (1 turn) for yourself",
+                  "detailShort": "Apply Target Focus (1 turn) & increase Critical Strength [{0}] (1 turn) for yourself"
+                }
+              ],
+              "mstSvtSkill": [
+                {
+                  "strengthStatus": 0,
+                  "svtId": 602400,
+                  "num": 1,
+                  "priority": 1,
+                  "skillId": 275551,
+                  "condQuestId": 0,
+                  "condQuestPhase": 0,
+                  "condLv": 0,
+                  "condLimitCount": 0,
+                  "eventId": 0,
+                  "flag": 0
+                }
+              ],
+              "mstSkillLv": [
+                {
+                  "funcId": [358, 200],
+                  "svals": ["[1000,1,-1,1000]", "[1000,1,-1,300]"],
+                  "script": {},
+                  "skillId": 275551,
+                  "lv": 1,
+                  "chargeTurn": 8,
+                  "skillDetailId": 275551,
+                  "priority": 0
+                },
+                {
+                  "funcId": [358, 200],
+                  "svals": ["[1000,1,-1,1200]", "[1000,1,-1,320]"],
+                  "script": {},
+                  "skillId": 275551,
+                  "lv": 2,
+                  "chargeTurn": 8,
+                  "skillDetailId": 275551,
+                  "priority": 0
+                },
+                {
+                  "funcId": [358, 200],
+                  "svals": ["[1000,1,-1,1400]", "[1000,1,-1,340]"],
+                  "script": {},
+                  "skillId": 275551,
+                  "lv": 3,
+                  "chargeTurn": 8,
+                  "skillDetailId": 275551,
+                  "priority": 0
+                },
+                {
+                  "funcId": [358, 200],
+                  "svals": ["[1000,1,-1,1600]", "[1000,1,-1,360]"],
+                  "script": {},
+                  "skillId": 275551,
+                  "lv": 4,
+                  "chargeTurn": 8,
+                  "skillDetailId": 275551,
+                  "priority": 0
+                },
+                {
+                  "funcId": [358, 200],
+                  "svals": ["[1000,1,-1,1800]", "[1000,1,-1,380]"],
+                  "script": {},
+                  "skillId": 275551,
+                  "lv": 5,
+                  "chargeTurn": 8,
+                  "skillDetailId": 275551,
+                  "priority": 0
+                },
+                {
+                  "funcId": [358, 200],
+                  "svals": ["[1000,1,-1,2000]", "[1000,1,-1,400]"],
+                  "script": {},
+                  "skillId": 275551,
+                  "lv": 6,
+                  "chargeTurn": 7,
+                  "skillDetailId": 275551,
+                  "priority": 0
+                },
+                {
+                  "funcId": [358, 200],
+                  "svals": ["[1000,1,-1,2200]", "[1000,1,-1,420]"],
+                  "script": {},
+                  "skillId": 275551,
+                  "lv": 7,
+                  "chargeTurn": 7,
+                  "skillDetailId": 275551,
+                  "priority": 0
+                },
+                {
+                  "funcId": [358, 200],
+                  "svals": ["[1000,1,-1,2400]", "[1000,1,-1,440]"],
+                  "script": {},
+                  "skillId": 275551,
+                  "lv": 8,
+                  "chargeTurn": 7,
+                  "skillDetailId": 275551,
+                  "priority": 0
+                },
+                {
+                  "funcId": [358, 200],
+                  "svals": ["[1000,1,-1,2600]", "[1000,1,-1,460]"],
+                  "script": {},
+                  "skillId": 275551,
+                  "lv": 9,
+                  "chargeTurn": 7,
+                  "skillDetailId": 275551,
+                  "priority": 0
+                },
+                {
+                  "funcId": [358, 200],
+                  "svals": ["[1000,1,-1,3000]", "[1000,1,-1,500]"],
+                  "script": {},
+                  "skillId": 275551,
+                  "lv": 10,
+                  "chargeTurn": 6,
+                  "skillDetailId": 275551,
+                  "priority": 0
+                }
+              ]
+            },
+            {
+              "mstSkill": {
+                "effectList": [],
+                "actIndividuality": [],
+                "script": {},
+                "id": 276550,
+                "type": 1,
+                "name": "Primordial Rune (Sea) A",
+                "ruby": "Primordial Rune (Sea)",
+                "maxLv": 10,
+                "iconId": 600,
+                "motion": 102
+              },
+              "mstSkillDetail": [
+                {
+                  "id": 276550,
+                  "detail": "Restore HP [{0}] & apply Damage Cut [{0}] (1 turn) for one ally",
+                  "detailShort": "Restore HP [{0}] & apply Damage Cut [{0}] (1 turn) for one ally"
+                }
+              ],
+              "mstSvtSkill": [
+                {
+                  "strengthStatus": 0,
+                  "svtId": 602400,
+                  "num": 2,
+                  "priority": 1,
+                  "skillId": 276550,
+                  "condQuestId": 0,
+                  "condQuestPhase": 0,
+                  "condLv": 0,
+                  "condLimitCount": 1,
+                  "eventId": 0,
+                  "flag": 0
+                }
+              ],
+              "mstSkillLv": [
+                {
+                  "funcId": [443, 279],
+                  "svals": ["[1000,1000]", "[1000,1,-1,500]"],
+                  "script": {},
+                  "skillId": 276550,
+                  "lv": 1,
+                  "chargeTurn": 8,
+                  "skillDetailId": 276550,
+                  "priority": 0
+                },
+                {
+                  "funcId": [443, 279],
+                  "svals": ["[1000,1200]", "[1000,1,-1,550]"],
+                  "script": {},
+                  "skillId": 276550,
+                  "lv": 2,
+                  "chargeTurn": 8,
+                  "skillDetailId": 276550,
+                  "priority": 0
+                },
+                {
+                  "funcId": [443, 279],
+                  "svals": ["[1000,1400]", "[1000,1,-1,600]"],
+                  "script": {},
+                  "skillId": 276550,
+                  "lv": 3,
+                  "chargeTurn": 8,
+                  "skillDetailId": 276550,
+                  "priority": 0
+                },
+                {
+                  "funcId": [443, 279],
+                  "svals": ["[1000,1600]", "[1000,1,-1,650]"],
+                  "script": {},
+                  "skillId": 276550,
+                  "lv": 4,
+                  "chargeTurn": 8,
+                  "skillDetailId": 276550,
+                  "priority": 0
+                },
+                {
+                  "funcId": [443, 279],
+                  "svals": ["[1000,1800]", "[1000,1,-1,700]"],
+                  "script": {},
+                  "skillId": 276550,
+                  "lv": 5,
+                  "chargeTurn": 8,
+                  "skillDetailId": 276550,
+                  "priority": 0
+                },
+                {
+                  "funcId": [443, 279],
+                  "svals": ["[1000,2000]", "[1000,1,-1,750]"],
+                  "script": {},
+                  "skillId": 276550,
+                  "lv": 6,
+                  "chargeTurn": 7,
+                  "skillDetailId": 276550,
+                  "priority": 0
+                },
+                {
+                  "funcId": [443, 279],
+                  "svals": ["[1000,2200]", "[1000,1,-1,800]"],
+                  "script": {},
+                  "skillId": 276550,
+                  "lv": 7,
+                  "chargeTurn": 7,
+                  "skillDetailId": 276550,
+                  "priority": 0
+                },
+                {
+                  "funcId": [443, 279],
+                  "svals": ["[1000,2400]", "[1000,1,-1,850]"],
+                  "script": {},
+                  "skillId": 276550,
+                  "lv": 8,
+                  "chargeTurn": 7,
+                  "skillDetailId": 276550,
+                  "priority": 0
+                },
+                {
+                  "funcId": [443, 279],
+                  "svals": ["[1000,2600]", "[1000,1,-1,900]"],
+                  "script": {},
+                  "skillId": 276550,
+                  "lv": 9,
+                  "chargeTurn": 7,
+                  "skillDetailId": 276550,
+                  "priority": 0
+                },
+                {
+                  "funcId": [443, 279],
+                  "svals": ["[1000,3000]", "[1000,1,-1,1000]"],
+                  "script": {},
+                  "skillId": 276550,
+                  "lv": 10,
+                  "chargeTurn": 6,
+                  "skillDetailId": 276550,
+                  "priority": 0
+                }
+              ]
+            },
+            {
+              "mstSkill": {
+                "effectList": [],
+                "actIndividuality": [],
+                "script": {},
+                "id": 277350,
+                "type": 1,
+                "name": "Midsummer Mistake C",
+                "ruby": "Midsummer Mistake",
+                "maxLv": 10,
+                "iconId": 312,
+                "motion": 101
+              },
+              "mstSkillDetail": [
+                {
+                  "id": 277350,
+                  "detail": "Apply Ignore Invincible (1 turn) & increase Quick Card effectiveness [{0}] (1 turn) for yourself",
+                  "detailShort": "Apply Ignore Invincible (1 turn) & increase Quick Card effectiveness [{0}] (1 turn) for yourself"
+                }
+              ],
+              "mstSvtSkill": [
+                {
+                  "strengthStatus": 0,
+                  "svtId": 602400,
+                  "num": 3,
+                  "priority": 1,
+                  "skillId": 277350,
+                  "condQuestId": 0,
+                  "condQuestPhase": 0,
+                  "condLv": 0,
+                  "condLimitCount": 3,
+                  "eventId": 0,
+                  "flag": 0
+                }
+              ],
+              "mstSkillLv": [
+                {
+                  "funcId": [510, 102],
+                  "svals": ["[1000,1,-1]", "[1000,1,-1,300]"],
+                  "script": {},
+                  "skillId": 277350,
+                  "lv": 1,
+                  "chargeTurn": 8,
+                  "skillDetailId": 277350,
+                  "priority": 0
+                },
+                {
+                  "funcId": [510, 102],
+                  "svals": ["[1000,1,-1]", "[1000,1,-1,320]"],
+                  "script": {},
+                  "skillId": 277350,
+                  "lv": 2,
+                  "chargeTurn": 8,
+                  "skillDetailId": 277350,
+                  "priority": 0
+                },
+                {
+                  "funcId": [510, 102],
+                  "svals": ["[1000,1,-1]", "[1000,1,-1,340]"],
+                  "script": {},
+                  "skillId": 277350,
+                  "lv": 3,
+                  "chargeTurn": 8,
+                  "skillDetailId": 277350,
+                  "priority": 0
+                },
+                {
+                  "funcId": [510, 102],
+                  "svals": ["[1000,1,-1]", "[1000,1,-1,360]"],
+                  "script": {},
+                  "skillId": 277350,
+                  "lv": 4,
+                  "chargeTurn": 8,
+                  "skillDetailId": 277350,
+                  "priority": 0
+                },
+                {
+                  "funcId": [510, 102],
+                  "svals": ["[1000,1,-1]", "[1000,1,-1,380]"],
+                  "script": {},
+                  "skillId": 277350,
+                  "lv": 5,
+                  "chargeTurn": 8,
+                  "skillDetailId": 277350,
+                  "priority": 0
+                },
+                {
+                  "funcId": [510, 102],
+                  "svals": ["[1000,1,-1]", "[1000,1,-1,400]"],
+                  "script": {},
+                  "skillId": 277350,
+                  "lv": 6,
+                  "chargeTurn": 7,
+                  "skillDetailId": 277350,
+                  "priority": 0
+                },
+                {
+                  "funcId": [510, 102],
+                  "svals": ["[1000,1,-1]", "[1000,1,-1,420]"],
+                  "script": {},
+                  "skillId": 277350,
+                  "lv": 7,
+                  "chargeTurn": 7,
+                  "skillDetailId": 277350,
+                  "priority": 0
+                },
+                {
+                  "funcId": [510, 102],
+                  "svals": ["[1000,1,-1]", "[1000,1,-1,440]"],
+                  "script": {},
+                  "skillId": 277350,
+                  "lv": 8,
+                  "chargeTurn": 7,
+                  "skillDetailId": 277350,
+                  "priority": 0
+                },
+                {
+                  "funcId": [510, 102],
+                  "svals": ["[1000,1,-1]", "[1000,1,-1,460]"],
+                  "script": {},
+                  "skillId": 277350,
+                  "lv": 9,
+                  "chargeTurn": 7,
+                  "skillDetailId": 277350,
+                  "priority": 0
+                },
+                {
+                  "funcId": [510, 102],
+                  "svals": ["[1000,1,-1]", "[1000,1,-1,500]"],
+                  "script": {},
+                  "skillId": 277350,
+                  "lv": 10,
+                  "chargeTurn": 6,
+                  "skillDetailId": 277350,
+                  "priority": 0
+                }
+              ]
             }
           ],
-          "mstSvtSkill": [
+          "mstTreasureDevice": [
             {
-              "strengthStatus": 0,
+              "mstTreasureDevice": {
+                "individuality": [3001, 4003, 4007],
+                "script": {},
+                "id": 602401,
+                "seqId": 602400,
+                "name": "Gáe Bolg Alternative",
+                "ruby": " ",
+                "rank": "B+",
+                "maxLv": 5,
+                "typeText": "Anti-Personnel/Anti-Army",
+                "attackAttri": 1
+              },
+              "mstTreasureDeviceDetail": [
+                {
+                  "id": 602401,
+                  "detail": "Deal heavy damage to all enemies [{0}] & low chance to inflict Death <chance increases with Overcharge> for all enemies",
+                  "detailShort": "Deal heavy damage to all enemies [{0}] & low chance to inflict Death <chance increases with Overcharge> for all enemies"
+                }
+              ],
+              "mstSvtTreasureDevice": [
+                {
+                  "damage": [6, 13, 20, 26, 35],
+                  "strengthStatus": 0,
+                  "svtId": 602400,
+                  "num": 1,
+                  "priority": 101,
+                  "flag": 0,
+                  "imageIndex": 0,
+                  "treasureDeviceId": 602401,
+                  "condQuestId": 0,
+                  "condQuestPhase": 0,
+                  "condLv": 0,
+                  "condFriendshipRank": 0,
+                  "motion": 50,
+                  "cardId": 3
+                }
+              ],
+              "mstTreasureDeviceLv": [
+                {
+                  "funcId": [13, 632],
+                  "svals": ["[1000,6000]", "[300]"],
+                  "svals2": ["[1000,6000]", "[400]"],
+                  "svals3": ["[1000,6000]", "[500]"],
+                  "svals4": ["[1000,6000]", "[600]"],
+                  "svals5": ["[1000,6000]", "[700]"],
+                  "treaureDeviceId": 602401,
+                  "lv": 1,
+                  "gaugeCount": 1,
+                  "detailId": 602401,
+                  "tdPoint": 71,
+                  "tdPointQ": 71,
+                  "tdPointA": 71,
+                  "tdPointB": 71,
+                  "tdPointEx": 71,
+                  "tdPointDef": 400,
+                  "qp": 40000
+                },
+                {
+                  "funcId": [13, 632],
+                  "svals": ["[1000,8000]", "[300]"],
+                  "svals2": ["[1000,8000]", "[400]"],
+                  "svals3": ["[1000,8000]", "[500]"],
+                  "svals4": ["[1000,8000]", "[600]"],
+                  "svals5": ["[1000,8000]", "[700]"],
+                  "treaureDeviceId": 602401,
+                  "lv": 2,
+                  "gaugeCount": 2,
+                  "detailId": 602401,
+                  "tdPoint": 71,
+                  "tdPointQ": 71,
+                  "tdPointA": 71,
+                  "tdPointB": 71,
+                  "tdPointEx": 71,
+                  "tdPointDef": 400,
+                  "qp": 80000
+                },
+                {
+                  "funcId": [13, 632],
+                  "svals": ["[1000,9000]", "[300]"],
+                  "svals2": ["[1000,9000]", "[400]"],
+                  "svals3": ["[1000,9000]", "[500]"],
+                  "svals4": ["[1000,9000]", "[600]"],
+                  "svals5": ["[1000,9000]", "[700]"],
+                  "treaureDeviceId": 602401,
+                  "lv": 3,
+                  "gaugeCount": 2,
+                  "detailId": 602401,
+                  "tdPoint": 71,
+                  "tdPointQ": 71,
+                  "tdPointA": 71,
+                  "tdPointB": 71,
+                  "tdPointEx": 71,
+                  "tdPointDef": 400,
+                  "qp": 160000
+                },
+                {
+                  "funcId": [13, 632],
+                  "svals": ["[1000,9500]", "[300]"],
+                  "svals2": ["[1000,9500]", "[400]"],
+                  "svals3": ["[1000,9500]", "[500]"],
+                  "svals4": ["[1000,9500]", "[600]"],
+                  "svals5": ["[1000,9500]", "[700]"],
+                  "treaureDeviceId": 602401,
+                  "lv": 4,
+                  "gaugeCount": 2,
+                  "detailId": 602401,
+                  "tdPoint": 71,
+                  "tdPointQ": 71,
+                  "tdPointA": 71,
+                  "tdPointB": 71,
+                  "tdPointEx": 71,
+                  "tdPointDef": 400,
+                  "qp": 320000
+                },
+                {
+                  "funcId": [13, 632],
+                  "svals": ["[1000,10000]", "[300]"],
+                  "svals2": ["[1000,10000]", "[400]"],
+                  "svals3": ["[1000,10000]", "[500]"],
+                  "svals4": ["[1000,10000]", "[600]"],
+                  "svals5": ["[1000,10000]", "[700]"],
+                  "treaureDeviceId": 602401,
+                  "lv": 5,
+                  "gaugeCount": 3,
+                  "detailId": 602401,
+                  "tdPoint": 71,
+                  "tdPointQ": 71,
+                  "tdPointA": 71,
+                  "tdPointB": 71,
+                  "tdPointEx": 71,
+                  "tdPointDef": 400,
+                  "qp": 640000
+                }
+              ]
+            }
+          ],
+          "mstSvtCard": [
+            {
+              "normalDamage": [16, 33, 51],
+              "singleDamage": [16, 33, 51],
+              "trinityDamage": [16, 33, 51],
+              "unisonDamage": [16, 33, 51],
+              "grandDamage": [16, 33, 51],
+              "attackIndividuality": [3000],
               "svtId": 602400,
-              "num": 1,
-              "priority": 1,
-              "skillId": 275551,
-              "condQuestId": 0,
-              "condQuestPhase": 0,
-              "condLv": 0,
-              "condLimitCount": 0,
-              "eventId": 0,
-              "flag": 0
-            }
-          ],
-          "mstSkillLv": [
-            {
-              "funcId": [358, 200],
-              "svals": ["[1000,1,-1,1000]", "[1000,1,-1,300]"],
-              "script": {},
-              "skillId": 275551,
-              "lv": 1,
-              "chargeTurn": 8,
-              "skillDetailId": 275551,
-              "priority": 0
+              "cardId": 1,
+              "motion": 10,
+              "attackType": 1
             },
             {
-              "funcId": [358, 200],
-              "svals": ["[1000,1,-1,1200]", "[1000,1,-1,320]"],
-              "script": {},
-              "skillId": 275551,
-              "lv": 2,
-              "chargeTurn": 8,
-              "skillDetailId": 275551,
-              "priority": 0
-            },
-            {
-              "funcId": [358, 200],
-              "svals": ["[1000,1,-1,1400]", "[1000,1,-1,340]"],
-              "script": {},
-              "skillId": 275551,
-              "lv": 3,
-              "chargeTurn": 8,
-              "skillDetailId": 275551,
-              "priority": 0
-            },
-            {
-              "funcId": [358, 200],
-              "svals": ["[1000,1,-1,1600]", "[1000,1,-1,360]"],
-              "script": {},
-              "skillId": 275551,
-              "lv": 4,
-              "chargeTurn": 8,
-              "skillDetailId": 275551,
-              "priority": 0
-            },
-            {
-              "funcId": [358, 200],
-              "svals": ["[1000,1,-1,1800]", "[1000,1,-1,380]"],
-              "script": {},
-              "skillId": 275551,
-              "lv": 5,
-              "chargeTurn": 8,
-              "skillDetailId": 275551,
-              "priority": 0
-            },
-            {
-              "funcId": [358, 200],
-              "svals": ["[1000,1,-1,2000]", "[1000,1,-1,400]"],
-              "script": {},
-              "skillId": 275551,
-              "lv": 6,
-              "chargeTurn": 7,
-              "skillDetailId": 275551,
-              "priority": 0
-            },
-            {
-              "funcId": [358, 200],
-              "svals": ["[1000,1,-1,2200]", "[1000,1,-1,420]"],
-              "script": {},
-              "skillId": 275551,
-              "lv": 7,
-              "chargeTurn": 7,
-              "skillDetailId": 275551,
-              "priority": 0
-            },
-            {
-              "funcId": [358, 200],
-              "svals": ["[1000,1,-1,2400]", "[1000,1,-1,440]"],
-              "script": {},
-              "skillId": 275551,
-              "lv": 8,
-              "chargeTurn": 7,
-              "skillDetailId": 275551,
-              "priority": 0
-            },
-            {
-              "funcId": [358, 200],
-              "svals": ["[1000,1,-1,2600]", "[1000,1,-1,460]"],
-              "script": {},
-              "skillId": 275551,
-              "lv": 9,
-              "chargeTurn": 7,
-              "skillDetailId": 275551,
-              "priority": 0
-            },
-            {
-              "funcId": [358, 200],
-              "svals": ["[1000,1,-1,3000]", "[1000,1,-1,500]"],
-              "script": {},
-              "skillId": 275551,
-              "lv": 10,
-              "chargeTurn": 6,
-              "skillDetailId": 275551,
-              "priority": 0
-            }
-          ]
-        },
-        {
-          "mstSkill": {
-            "effectList": [],
-            "actIndividuality": [],
-            "script": {},
-            "id": 276550,
-            "type": 1,
-            "name": "Primordial Rune (Sea) A",
-            "ruby": "Primordial Rune (Sea)",
-            "maxLv": 10,
-            "iconId": 600,
-            "motion": 102
-          },
-          "mstSkillDetail": [
-            {
-              "id": 276550,
-              "detail": "Restore HP [{0}] & apply Damage Cut [{0}] (1 turn) for one ally",
-              "detailShort": "Restore HP [{0}] & apply Damage Cut [{0}] (1 turn) for one ally"
-            }
-          ],
-          "mstSvtSkill": [
-            {
-              "strengthStatus": 0,
+              "normalDamage": [16, 33, 51],
+              "singleDamage": [16, 33, 51],
+              "trinityDamage": [16, 33, 51],
+              "unisonDamage": [16, 33, 51],
+              "grandDamage": [16, 33, 51],
+              "attackIndividuality": [3000],
               "svtId": 602400,
-              "num": 2,
-              "priority": 1,
-              "skillId": 276550,
-              "condQuestId": 0,
-              "condQuestPhase": 0,
-              "condLv": 0,
-              "condLimitCount": 1,
-              "eventId": 0,
-              "flag": 0
-            }
-          ],
-          "mstSkillLv": [
-            {
-              "funcId": [443, 279],
-              "svals": ["[1000,1000]", "[1000,1,-1,500]"],
-              "script": {},
-              "skillId": 276550,
-              "lv": 1,
-              "chargeTurn": 8,
-              "skillDetailId": 276550,
-              "priority": 0
+              "cardId": 2,
+              "motion": 20,
+              "attackType": 1
             },
             {
-              "funcId": [443, 279],
-              "svals": ["[1000,1200]", "[1000,1,-1,550]"],
-              "script": {},
-              "skillId": 276550,
-              "lv": 2,
-              "chargeTurn": 8,
-              "skillDetailId": 276550,
-              "priority": 0
-            },
-            {
-              "funcId": [443, 279],
-              "svals": ["[1000,1400]", "[1000,1,-1,600]"],
-              "script": {},
-              "skillId": 276550,
-              "lv": 3,
-              "chargeTurn": 8,
-              "skillDetailId": 276550,
-              "priority": 0
-            },
-            {
-              "funcId": [443, 279],
-              "svals": ["[1000,1600]", "[1000,1,-1,650]"],
-              "script": {},
-              "skillId": 276550,
-              "lv": 4,
-              "chargeTurn": 8,
-              "skillDetailId": 276550,
-              "priority": 0
-            },
-            {
-              "funcId": [443, 279],
-              "svals": ["[1000,1800]", "[1000,1,-1,700]"],
-              "script": {},
-              "skillId": 276550,
-              "lv": 5,
-              "chargeTurn": 8,
-              "skillDetailId": 276550,
-              "priority": 0
-            },
-            {
-              "funcId": [443, 279],
-              "svals": ["[1000,2000]", "[1000,1,-1,750]"],
-              "script": {},
-              "skillId": 276550,
-              "lv": 6,
-              "chargeTurn": 7,
-              "skillDetailId": 276550,
-              "priority": 0
-            },
-            {
-              "funcId": [443, 279],
-              "svals": ["[1000,2200]", "[1000,1,-1,800]"],
-              "script": {},
-              "skillId": 276550,
-              "lv": 7,
-              "chargeTurn": 7,
-              "skillDetailId": 276550,
-              "priority": 0
-            },
-            {
-              "funcId": [443, 279],
-              "svals": ["[1000,2400]", "[1000,1,-1,850]"],
-              "script": {},
-              "skillId": 276550,
-              "lv": 8,
-              "chargeTurn": 7,
-              "skillDetailId": 276550,
-              "priority": 0
-            },
-            {
-              "funcId": [443, 279],
-              "svals": ["[1000,2600]", "[1000,1,-1,900]"],
-              "script": {},
-              "skillId": 276550,
-              "lv": 9,
-              "chargeTurn": 7,
-              "skillDetailId": 276550,
-              "priority": 0
-            },
-            {
-              "funcId": [443, 279],
-              "svals": ["[1000,3000]", "[1000,1,-1,1000]"],
-              "script": {},
-              "skillId": 276550,
-              "lv": 10,
-              "chargeTurn": 6,
-              "skillDetailId": 276550,
-              "priority": 0
-            }
-          ]
-        },
-        {
-          "mstSkill": {
-            "effectList": [],
-            "actIndividuality": [],
-            "script": {},
-            "id": 277350,
-            "type": 1,
-            "name": "Midsummer Mistake C",
-            "ruby": "Midsummer Mistake",
-            "maxLv": 10,
-            "iconId": 312,
-            "motion": 101
-          },
-          "mstSkillDetail": [
-            {
-              "id": 277350,
-              "detail": "Apply Ignore Invincible (1 turn) & increase Quick Card effectiveness [{0}] (1 turn) for yourself",
-              "detailShort": "Apply Ignore Invincible (1 turn) & increase Quick Card effectiveness [{0}] (1 turn) for yourself"
-            }
-          ],
-          "mstSvtSkill": [
-            {
-              "strengthStatus": 0,
+              "normalDamage": [16, 33, 51],
+              "singleDamage": [16, 33, 51],
+              "trinityDamage": [16, 33, 51],
+              "unisonDamage": [16, 33, 51],
+              "grandDamage": [16, 33, 51],
+              "attackIndividuality": [3000],
               "svtId": 602400,
-              "num": 3,
-              "priority": 1,
-              "skillId": 277350,
-              "condQuestId": 0,
-              "condQuestPhase": 0,
-              "condLv": 0,
-              "condLimitCount": 3,
-              "eventId": 0,
-              "flag": 0
-            }
-          ],
-          "mstSkillLv": [
-            {
-              "funcId": [510, 102],
-              "svals": ["[1000,1,-1]", "[1000,1,-1,300]"],
-              "script": {},
-              "skillId": 277350,
-              "lv": 1,
-              "chargeTurn": 8,
-              "skillDetailId": 277350,
-              "priority": 0
+              "cardId": 3,
+              "motion": 30,
+              "attackType": 1
             },
             {
-              "funcId": [510, 102],
-              "svals": ["[1000,1,-1]", "[1000,1,-1,320]"],
-              "script": {},
-              "skillId": 277350,
-              "lv": 2,
-              "chargeTurn": 8,
-              "skillDetailId": 277350,
-              "priority": 0
-            },
-            {
-              "funcId": [510, 102],
-              "svals": ["[1000,1,-1]", "[1000,1,-1,340]"],
-              "script": {},
-              "skillId": 277350,
-              "lv": 3,
-              "chargeTurn": 8,
-              "skillDetailId": 277350,
-              "priority": 0
-            },
-            {
-              "funcId": [510, 102],
-              "svals": ["[1000,1,-1]", "[1000,1,-1,360]"],
-              "script": {},
-              "skillId": 277350,
-              "lv": 4,
-              "chargeTurn": 8,
-              "skillDetailId": 277350,
-              "priority": 0
-            },
-            {
-              "funcId": [510, 102],
-              "svals": ["[1000,1,-1]", "[1000,1,-1,380]"],
-              "script": {},
-              "skillId": 277350,
-              "lv": 5,
-              "chargeTurn": 8,
-              "skillDetailId": 277350,
-              "priority": 0
-            },
-            {
-              "funcId": [510, 102],
-              "svals": ["[1000,1,-1]", "[1000,1,-1,400]"],
-              "script": {},
-              "skillId": 277350,
-              "lv": 6,
-              "chargeTurn": 7,
-              "skillDetailId": 277350,
-              "priority": 0
-            },
-            {
-              "funcId": [510, 102],
-              "svals": ["[1000,1,-1]", "[1000,1,-1,420]"],
-              "script": {},
-              "skillId": 277350,
-              "lv": 7,
-              "chargeTurn": 7,
-              "skillDetailId": 277350,
-              "priority": 0
-            },
-            {
-              "funcId": [510, 102],
-              "svals": ["[1000,1,-1]", "[1000,1,-1,440]"],
-              "script": {},
-              "skillId": 277350,
-              "lv": 8,
-              "chargeTurn": 7,
-              "skillDetailId": 277350,
-              "priority": 0
-            },
-            {
-              "funcId": [510, 102],
-              "svals": ["[1000,1,-1]", "[1000,1,-1,460]"],
-              "script": {},
-              "skillId": 277350,
-              "lv": 9,
-              "chargeTurn": 7,
-              "skillDetailId": 277350,
-              "priority": 0
-            },
-            {
-              "funcId": [510, 102],
-              "svals": ["[1000,1,-1]", "[1000,1,-1,500]"],
-              "script": {},
-              "skillId": 277350,
-              "lv": 10,
-              "chargeTurn": 6,
-              "skillDetailId": 277350,
-              "priority": 0
-            }
-          ]
-        }
-      ],
-      "mstTreasureDevice": [
-        {
-          "mstTreasureDevice": {
-            "individuality": [3001, 4003, 4007],
-            "script": {},
-            "id": 602401,
-            "seqId": 602400,
-            "name": "Gáe Bolg Alternative",
-            "ruby": " ",
-            "rank": "B+",
-            "maxLv": 5,
-            "typeText": "Anti-Personnel/Anti-Army",
-            "attackAttri": 1
-          },
-          "mstTreasureDeviceDetail": [
-            {
-              "id": 602401,
-              "detail": "Deal heavy damage to all enemies [{0}] & low chance to inflict Death <chance increases with Overcharge> for all enemies",
-              "detailShort": "Deal heavy damage to all enemies [{0}] & low chance to inflict Death <chance increases with Overcharge> for all enemies"
-            }
-          ],
-          "mstSvtTreasureDevice": [
-            {
-              "damage": [6, 13, 20, 26, 35],
-              "strengthStatus": 0,
+              "normalDamage": [6, 13, 20, 26, 35],
+              "singleDamage": [6, 13, 20, 26, 35],
+              "trinityDamage": [6, 13, 20, 26, 35],
+              "unisonDamage": [6, 13, 20, 26, 35],
+              "grandDamage": [6, 13, 20, 26, 35],
+              "attackIndividuality": [3000],
               "svtId": 602400,
-              "num": 1,
-              "priority": 101,
-              "flag": 0,
-              "imageIndex": 0,
-              "treasureDeviceId": 602401,
-              "condQuestId": 0,
-              "condQuestPhase": 0,
-              "condLv": 0,
-              "condFriendshipRank": 0,
-              "motion": 50,
-              "cardId": 3
+              "cardId": 4,
+              "motion": 40,
+              "attackType": 1
             }
           ],
-          "mstTreasureDeviceLv": [
+          "mstSvtLimit": [
             {
-              "funcId": [13, 632],
-              "svals": ["[1000,6000]", "[300]"],
-              "svals2": ["[1000,6000]", "[400]"],
-              "svals3": ["[1000,6000]", "[500]"],
-              "svals4": ["[1000,6000]", "[600]"],
-              "svals5": ["[1000,6000]", "[700]"],
-              "treaureDeviceId": 602401,
-              "lv": 1,
-              "gaugeCount": 1,
-              "detailId": 602401,
-              "tdPoint": 71,
-              "tdPointQ": 71,
-              "tdPointA": 71,
-              "tdPointB": 71,
-              "tdPointEx": 71,
-              "tdPointDef": 400,
-              "qp": 40000
+              "weaponColor": 16777215,
+              "svtId": 602400,
+              "limitCount": 0,
+              "rarity": 4,
+              "lvMax": 40,
+              "weaponGroup": 100,
+              "weaponScale": 2,
+              "effectFolder": 0,
+              "hpBase": 1786,
+              "hpMax": 11168,
+              "atkBase": 1508,
+              "atkMax": 9049,
+              "criticalWeight": 98,
+              "power": 31,
+              "defense": 31,
+              "agility": 12,
+              "magic": 31,
+              "luck": 41,
+              "treasureDevice": 12,
+              "policy": 1,
+              "personality": 1,
+              "deity": 99,
+              "stepProbability": 1000,
+              "strParam": "{}"
             },
             {
-              "funcId": [13, 632],
-              "svals": ["[1000,8000]", "[300]"],
-              "svals2": ["[1000,8000]", "[400]"],
-              "svals3": ["[1000,8000]", "[500]"],
-              "svals4": ["[1000,8000]", "[600]"],
-              "svals5": ["[1000,8000]", "[700]"],
-              "treaureDeviceId": 602401,
-              "lv": 2,
-              "gaugeCount": 2,
-              "detailId": 602401,
-              "tdPoint": 71,
-              "tdPointQ": 71,
-              "tdPointA": 71,
-              "tdPointB": 71,
-              "tdPointEx": 71,
-              "tdPointDef": 400,
-              "qp": 80000
+              "weaponColor": 16777215,
+              "svtId": 602400,
+              "limitCount": 1,
+              "rarity": 4,
+              "lvMax": 50,
+              "weaponGroup": 100,
+              "weaponScale": 2,
+              "effectFolder": 0,
+              "hpBase": 1786,
+              "hpMax": 11168,
+              "atkBase": 1508,
+              "atkMax": 9049,
+              "criticalWeight": 98,
+              "power": 31,
+              "defense": 31,
+              "agility": 12,
+              "magic": 31,
+              "luck": 41,
+              "treasureDevice": 12,
+              "policy": 1,
+              "personality": 1,
+              "deity": 99,
+              "stepProbability": 1000,
+              "strParam": "{}"
             },
             {
-              "funcId": [13, 632],
-              "svals": ["[1000,9000]", "[300]"],
-              "svals2": ["[1000,9000]", "[400]"],
-              "svals3": ["[1000,9000]", "[500]"],
-              "svals4": ["[1000,9000]", "[600]"],
-              "svals5": ["[1000,9000]", "[700]"],
-              "treaureDeviceId": 602401,
-              "lv": 3,
-              "gaugeCount": 2,
-              "detailId": 602401,
-              "tdPoint": 71,
-              "tdPointQ": 71,
-              "tdPointA": 71,
-              "tdPointB": 71,
-              "tdPointEx": 71,
-              "tdPointDef": 400,
-              "qp": 160000
+              "weaponColor": 16777215,
+              "svtId": 602400,
+              "limitCount": 2,
+              "rarity": 4,
+              "lvMax": 60,
+              "weaponGroup": 100,
+              "weaponScale": 2,
+              "effectFolder": 0,
+              "hpBase": 1786,
+              "hpMax": 11168,
+              "atkBase": 1508,
+              "atkMax": 9049,
+              "criticalWeight": 98,
+              "power": 31,
+              "defense": 31,
+              "agility": 12,
+              "magic": 31,
+              "luck": 41,
+              "treasureDevice": 12,
+              "policy": 1,
+              "personality": 1,
+              "deity": 99,
+              "stepProbability": 1000,
+              "strParam": "{}"
             },
             {
-              "funcId": [13, 632],
-              "svals": ["[1000,9500]", "[300]"],
-              "svals2": ["[1000,9500]", "[400]"],
-              "svals3": ["[1000,9500]", "[500]"],
-              "svals4": ["[1000,9500]", "[600]"],
-              "svals5": ["[1000,9500]", "[700]"],
-              "treaureDeviceId": 602401,
-              "lv": 4,
-              "gaugeCount": 2,
-              "detailId": 602401,
-              "tdPoint": 71,
-              "tdPointQ": 71,
-              "tdPointA": 71,
-              "tdPointB": 71,
-              "tdPointEx": 71,
-              "tdPointDef": 400,
-              "qp": 320000
+              "weaponColor": 16777215,
+              "svtId": 602400,
+              "limitCount": 3,
+              "rarity": 4,
+              "lvMax": 70,
+              "weaponGroup": 100,
+              "weaponScale": 2,
+              "effectFolder": 0,
+              "hpBase": 1786,
+              "hpMax": 11168,
+              "atkBase": 1508,
+              "atkMax": 9049,
+              "criticalWeight": 98,
+              "power": 31,
+              "defense": 31,
+              "agility": 12,
+              "magic": 31,
+              "luck": 41,
+              "treasureDevice": 12,
+              "policy": 1,
+              "personality": 1,
+              "deity": 99,
+              "stepProbability": 1000,
+              "strParam": "{}"
             },
             {
-              "funcId": [13, 632],
-              "svals": ["[1000,10000]", "[300]"],
-              "svals2": ["[1000,10000]", "[400]"],
-              "svals3": ["[1000,10000]", "[500]"],
-              "svals4": ["[1000,10000]", "[600]"],
-              "svals5": ["[1000,10000]", "[700]"],
-              "treaureDeviceId": 602401,
-              "lv": 5,
-              "gaugeCount": 3,
-              "detailId": 602401,
-              "tdPoint": 71,
-              "tdPointQ": 71,
-              "tdPointA": 71,
-              "tdPointB": 71,
-              "tdPointEx": 71,
-              "tdPointDef": 400,
-              "qp": 640000
+              "weaponColor": 16777215,
+              "svtId": 602400,
+              "limitCount": 4,
+              "rarity": 4,
+              "lvMax": 80,
+              "weaponGroup": 100,
+              "weaponScale": 2,
+              "effectFolder": 0,
+              "hpBase": 1786,
+              "hpMax": 11168,
+              "atkBase": 1508,
+              "atkMax": 9049,
+              "criticalWeight": 98,
+              "power": 31,
+              "defense": 31,
+              "agility": 12,
+              "magic": 31,
+              "luck": 41,
+              "treasureDevice": 12,
+              "policy": 1,
+              "personality": 1,
+              "deity": 99,
+              "stepProbability": 1000,
+              "strParam": "{}"
             }
-          ]
+          ],
+          "mstCombineSkill": [
+            {
+              "itemIds": [6006],
+              "itemNums": [4],
+              "id": 602400,
+              "skillLv": 1,
+              "qp": 100000
+            },
+            {
+              "itemIds": [6006],
+              "itemNums": [10],
+              "id": 602400,
+              "skillLv": 2,
+              "qp": 200000
+            },
+            {
+              "itemIds": [6106],
+              "itemNums": [4],
+              "id": 602400,
+              "skillLv": 3,
+              "qp": 600000
+            },
+            {
+              "itemIds": [6106, 6502],
+              "itemNums": [10, 5],
+              "id": 602400,
+              "skillLv": 4,
+              "qp": 800000
+            },
+            {
+              "itemIds": [6206, 6502],
+              "itemNums": [4, 10],
+              "id": 602400,
+              "skillLv": 5,
+              "qp": 2000000
+            },
+            {
+              "itemIds": [6206, 6526],
+              "itemNums": [10, 4],
+              "id": 602400,
+              "skillLv": 6,
+              "qp": 2500000
+            },
+            {
+              "itemIds": [6526, 6518],
+              "itemNums": [8, 2],
+              "id": 602400,
+              "skillLv": 7,
+              "qp": 5000000
+            },
+            {
+              "itemIds": [6518, 6525],
+              "itemNums": [6, 8],
+              "id": 602400,
+              "skillLv": 8,
+              "qp": 6000000
+            },
+            {
+              "itemIds": [6999],
+              "itemNums": [1],
+              "id": 602400,
+              "skillLv": 9,
+              "qp": 10000000
+            }
+          ],
+          "mstCombineLimit": [
+            {
+              "itemIds": [94005606],
+              "itemNums": [1],
+              "id": 602400,
+              "svtLimit": 0,
+              "qp": 50000
+            },
+            {
+              "itemIds": [94005606],
+              "itemNums": [1],
+              "id": 602400,
+              "svtLimit": 1,
+              "qp": 150000
+            },
+            {
+              "itemIds": [94005606],
+              "itemNums": [1],
+              "id": 602400,
+              "svtLimit": 2,
+              "qp": 500000
+            },
+            {
+              "itemIds": [94005606],
+              "itemNums": [1],
+              "id": 602400,
+              "svtLimit": 3,
+              "qp": 1500000
+            },
+            {
+              "itemIds": [7999],
+              "itemNums": [1],
+              "id": 602400,
+              "svtLimit": 4,
+              "qp": 50000000
+            }
+          ],
+          "mstSvtLimitAdd": []
         }
       ],
-      "mstSvtCard": [
-        {
-          "normalDamage": [16, 33, 51],
-          "singleDamage": [16, 33, 51],
-          "trinityDamage": [16, 33, 51],
-          "unisonDamage": [16, 33, 51],
-          "grandDamage": [16, 33, 51],
-          "attackIndividuality": [3000],
-          "svtId": 602400,
-          "cardId": 1,
-          "motion": 10,
-          "attackType": 1
-        },
-        {
-          "normalDamage": [16, 33, 51],
-          "singleDamage": [16, 33, 51],
-          "trinityDamage": [16, 33, 51],
-          "unisonDamage": [16, 33, 51],
-          "grandDamage": [16, 33, 51],
-          "attackIndividuality": [3000],
-          "svtId": 602400,
-          "cardId": 2,
-          "motion": 20,
-          "attackType": 1
-        },
-        {
-          "normalDamage": [16, 33, 51],
-          "singleDamage": [16, 33, 51],
-          "trinityDamage": [16, 33, 51],
-          "unisonDamage": [16, 33, 51],
-          "grandDamage": [16, 33, 51],
-          "attackIndividuality": [3000],
-          "svtId": 602400,
-          "cardId": 3,
-          "motion": 30,
-          "attackType": 1
-        },
-        {
-          "normalDamage": [6, 13, 20, 26, 35],
-          "singleDamage": [6, 13, 20, 26, 35],
-          "trinityDamage": [6, 13, 20, 26, 35],
-          "unisonDamage": [6, 13, 20, 26, 35],
-          "grandDamage": [6, 13, 20, 26, 35],
-          "attackIndividuality": [3000],
-          "svtId": 602400,
-          "cardId": 4,
-          "motion": 40,
-          "attackType": 1
-        }
-      ],
-      "mstSvtLimit": [
-        {
-          "weaponColor": 16777215,
-          "svtId": 602400,
-          "limitCount": 0,
-          "rarity": 4,
-          "lvMax": 40,
-          "weaponGroup": 100,
-          "weaponScale": 2,
-          "effectFolder": 0,
-          "hpBase": 1786,
-          "hpMax": 11168,
-          "atkBase": 1508,
-          "atkMax": 9049,
-          "criticalWeight": 98,
-          "power": 31,
-          "defense": 31,
-          "agility": 12,
-          "magic": 31,
-          "luck": 41,
-          "treasureDevice": 12,
-          "policy": 1,
-          "personality": 1,
-          "deity": 99,
-          "stepProbability": 1000,
-          "strParam": "{}"
-        },
-        {
-          "weaponColor": 16777215,
-          "svtId": 602400,
-          "limitCount": 1,
-          "rarity": 4,
-          "lvMax": 50,
-          "weaponGroup": 100,
-          "weaponScale": 2,
-          "effectFolder": 0,
-          "hpBase": 1786,
-          "hpMax": 11168,
-          "atkBase": 1508,
-          "atkMax": 9049,
-          "criticalWeight": 98,
-          "power": 31,
-          "defense": 31,
-          "agility": 12,
-          "magic": 31,
-          "luck": 41,
-          "treasureDevice": 12,
-          "policy": 1,
-          "personality": 1,
-          "deity": 99,
-          "stepProbability": 1000,
-          "strParam": "{}"
-        },
-        {
-          "weaponColor": 16777215,
-          "svtId": 602400,
-          "limitCount": 2,
-          "rarity": 4,
-          "lvMax": 60,
-          "weaponGroup": 100,
-          "weaponScale": 2,
-          "effectFolder": 0,
-          "hpBase": 1786,
-          "hpMax": 11168,
-          "atkBase": 1508,
-          "atkMax": 9049,
-          "criticalWeight": 98,
-          "power": 31,
-          "defense": 31,
-          "agility": 12,
-          "magic": 31,
-          "luck": 41,
-          "treasureDevice": 12,
-          "policy": 1,
-          "personality": 1,
-          "deity": 99,
-          "stepProbability": 1000,
-          "strParam": "{}"
-        },
-        {
-          "weaponColor": 16777215,
-          "svtId": 602400,
-          "limitCount": 3,
-          "rarity": 4,
-          "lvMax": 70,
-          "weaponGroup": 100,
-          "weaponScale": 2,
-          "effectFolder": 0,
-          "hpBase": 1786,
-          "hpMax": 11168,
-          "atkBase": 1508,
-          "atkMax": 9049,
-          "criticalWeight": 98,
-          "power": 31,
-          "defense": 31,
-          "agility": 12,
-          "magic": 31,
-          "luck": 41,
-          "treasureDevice": 12,
-          "policy": 1,
-          "personality": 1,
-          "deity": 99,
-          "stepProbability": 1000,
-          "strParam": "{}"
-        },
-        {
-          "weaponColor": 16777215,
-          "svtId": 602400,
-          "limitCount": 4,
-          "rarity": 4,
-          "lvMax": 80,
-          "weaponGroup": 100,
-          "weaponScale": 2,
-          "effectFolder": 0,
-          "hpBase": 1786,
-          "hpMax": 11168,
-          "atkBase": 1508,
-          "atkMax": 9049,
-          "criticalWeight": 98,
-          "power": 31,
-          "defense": 31,
-          "agility": 12,
-          "magic": 31,
-          "luck": 41,
-          "treasureDevice": 12,
-          "policy": 1,
-          "personality": 1,
-          "deity": 99,
-          "stepProbability": 1000,
-          "strParam": "{}"
-        }
-      ],
-      "mstCombineSkill": [
-        {
-          "itemIds": [6006],
-          "itemNums": [4],
-          "id": 602400,
-          "skillLv": 1,
-          "qp": 100000
-        },
-        {
-          "itemIds": [6006],
-          "itemNums": [10],
-          "id": 602400,
-          "skillLv": 2,
-          "qp": 200000
-        },
-        {
-          "itemIds": [6106],
-          "itemNums": [4],
-          "id": 602400,
-          "skillLv": 3,
-          "qp": 600000
-        },
-        {
-          "itemIds": [6106, 6502],
-          "itemNums": [10, 5],
-          "id": 602400,
-          "skillLv": 4,
-          "qp": 800000
-        },
-        {
-          "itemIds": [6206, 6502],
-          "itemNums": [4, 10],
-          "id": 602400,
-          "skillLv": 5,
-          "qp": 2000000
-        },
-        {
-          "itemIds": [6206, 6526],
-          "itemNums": [10, 4],
-          "id": 602400,
-          "skillLv": 6,
-          "qp": 2500000
-        },
-        {
-          "itemIds": [6526, 6518],
-          "itemNums": [8, 2],
-          "id": 602400,
-          "skillLv": 7,
-          "qp": 5000000
-        },
-        {
-          "itemIds": [6518, 6525],
-          "itemNums": [6, 8],
-          "id": 602400,
-          "skillLv": 8,
-          "qp": 6000000
-        },
-        {
-          "itemIds": [6999],
-          "itemNums": [1],
-          "id": 602400,
-          "skillLv": 9,
-          "qp": 10000000
-        }
-      ],
-      "mstCombineLimit": [
-        {
-          "itemIds": [94005606],
-          "itemNums": [1],
-          "id": 602400,
-          "svtLimit": 0,
-          "qp": 50000
-        },
-        {
-          "itemIds": [94005606],
-          "itemNums": [1],
-          "id": 602400,
-          "svtLimit": 1,
-          "qp": 150000
-        },
-        {
-          "itemIds": [94005606],
-          "itemNums": [1],
-          "id": 602400,
-          "svtLimit": 2,
-          "qp": 500000
-        },
-        {
-          "itemIds": [94005606],
-          "itemNums": [1],
-          "id": 602400,
-          "svtLimit": 3,
-          "qp": 1500000
-        },
-        {
-          "itemIds": [7999],
-          "itemNums": [1],
-          "id": 602400,
-          "svtLimit": 4,
-          "qp": 50000000
-        }
-      ],
-      "mstSvtLimitAdd": []
+      "MC": [],
+      "CC": []
     }
-  ],
-  "reverseMC": [],
-  "reverseCC": []
+  }
 }

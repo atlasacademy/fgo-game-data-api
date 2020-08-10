@@ -13,659 +13,663 @@
     "popupIconId": 324,
     "popupText": "Critical Up"
   },
-  "reverseSkills": [
-    {
-      "mstSkill": {
-        "effectList": [],
-        "actIndividuality": [],
-        "script": {},
-        "id": 157352,
-        "type": 1,
-        "name": "Hero's Assistant C++",
-        "ruby": "Hero's Assistant",
-        "maxLv": 10,
-        "iconId": 311,
-        "motion": 102
-      },
-      "mstSkillDetail": [
+  "reverse": {
+    "raw": {
+      "skill": [
         {
-          "id": 157352,
-          "detail": "Increase C. Star Gather Rate [{0}] [g][o]▲[/o][/g] (3 turns) & Critical Strength [{0}] [g][o]▲[/o][/g] (3 turns) & restore HP [{0}] for one ally",
-          "detailShort": "Increase C. Star Gather Rate [{0}] [g][o]▲[/o][/g] (3 turns) & Critical Strength [{0}] [g][o]▲[/o][/g] (3 turns) & restore HP [{0}] for one ally"
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
+            "id": 157352,
+            "type": 1,
+            "name": "Hero's Assistant C++",
+            "ruby": "Hero's Assistant",
+            "maxLv": 10,
+            "iconId": 311,
+            "motion": 102
+          },
+          "mstSkillDetail": [
+            {
+              "id": 157352,
+              "detail": "Increase C. Star Gather Rate [{0}] [g][o]▲[/o][/g] (3 turns) & Critical Strength [{0}] [g][o]▲[/o][/g] (3 turns) & restore HP [{0}] for one ally",
+              "detailShort": "Increase C. Star Gather Rate [{0}] [g][o]▲[/o][/g] (3 turns) & Critical Strength [{0}] [g][o]▲[/o][/g] (3 turns) & restore HP [{0}] for one ally"
+            }
+          ],
+          "mstSvtSkill": [
+            {
+              "strengthStatus": 2,
+              "svtId": 301200,
+              "num": 3,
+              "priority": 2,
+              "skillId": 157352,
+              "condQuestId": 91301202,
+              "condQuestPhase": 3,
+              "condLv": 0,
+              "condLimitCount": 3,
+              "eventId": 0,
+              "flag": 0
+            }
+          ],
+          "mstSkillLv": [
+            {
+              "funcId": [368, 218, 203, 442],
+              "svals": [
+                "[1000,3,-1,10000]",
+                "[1000,3,-1,100]",
+                "[1000,3,-1,200]",
+                "[1000,1000]"
+              ],
+              "script": {},
+              "skillId": 157352,
+              "lv": 1,
+              "chargeTurn": 7,
+              "skillDetailId": 157352,
+              "priority": 0
+            },
+            {
+              "funcId": [368, 218, 203, 442],
+              "svals": [
+                "[1000,3,-1,12000]",
+                "[1000,3,-1,100]",
+                "[1000,3,-1,220]",
+                "[1000,1200]"
+              ],
+              "script": {},
+              "skillId": 157352,
+              "lv": 2,
+              "chargeTurn": 7,
+              "skillDetailId": 157352,
+              "priority": 0
+            },
+            {
+              "funcId": [368, 218, 203, 442],
+              "svals": [
+                "[1000,3,-1,14000]",
+                "[1000,3,-1,100]",
+                "[1000,3,-1,240]",
+                "[1000,1400]"
+              ],
+              "script": {},
+              "skillId": 157352,
+              "lv": 3,
+              "chargeTurn": 7,
+              "skillDetailId": 157352,
+              "priority": 0
+            },
+            {
+              "funcId": [368, 218, 203, 442],
+              "svals": [
+                "[1000,3,-1,16000]",
+                "[1000,3,-1,100]",
+                "[1000,3,-1,260]",
+                "[1000,1600]"
+              ],
+              "script": {},
+              "skillId": 157352,
+              "lv": 4,
+              "chargeTurn": 7,
+              "skillDetailId": 157352,
+              "priority": 0
+            },
+            {
+              "funcId": [368, 218, 203, 442],
+              "svals": [
+                "[1000,3,-1,18000]",
+                "[1000,3,-1,100]",
+                "[1000,3,-1,280]",
+                "[1000,1800]"
+              ],
+              "script": {},
+              "skillId": 157352,
+              "lv": 5,
+              "chargeTurn": 7,
+              "skillDetailId": 157352,
+              "priority": 0
+            },
+            {
+              "funcId": [368, 218, 203, 442],
+              "svals": [
+                "[1000,3,-1,20000]",
+                "[1000,3,-1,100]",
+                "[1000,3,-1,300]",
+                "[1000,2000]"
+              ],
+              "script": {},
+              "skillId": 157352,
+              "lv": 6,
+              "chargeTurn": 6,
+              "skillDetailId": 157352,
+              "priority": 0
+            },
+            {
+              "funcId": [368, 218, 203, 442],
+              "svals": [
+                "[1000,3,-1,22000]",
+                "[1000,3,-1,100]",
+                "[1000,3,-1,320]",
+                "[1000,2200]"
+              ],
+              "script": {},
+              "skillId": 157352,
+              "lv": 7,
+              "chargeTurn": 6,
+              "skillDetailId": 157352,
+              "priority": 0
+            },
+            {
+              "funcId": [368, 218, 203, 442],
+              "svals": [
+                "[1000,3,-1,24000]",
+                "[1000,3,-1,100]",
+                "[1000,3,-1,340]",
+                "[1000,2400]"
+              ],
+              "script": {},
+              "skillId": 157352,
+              "lv": 8,
+              "chargeTurn": 6,
+              "skillDetailId": 157352,
+              "priority": 0
+            },
+            {
+              "funcId": [368, 218, 203, 442],
+              "svals": [
+                "[1000,3,-1,26000]",
+                "[1000,3,-1,100]",
+                "[1000,3,-1,360]",
+                "[1000,2600]"
+              ],
+              "script": {},
+              "skillId": 157352,
+              "lv": 9,
+              "chargeTurn": 6,
+              "skillDetailId": 157352,
+              "priority": 0
+            },
+            {
+              "funcId": [368, 218, 203, 442],
+              "svals": [
+                "[1000,3,-1,30000]",
+                "[1000,3,-1,100]",
+                "[1000,3,-1,400]",
+                "[1000,3000]"
+              ],
+              "script": {},
+              "skillId": 157352,
+              "lv": 10,
+              "chargeTurn": 5,
+              "skillDetailId": 157352,
+              "priority": 0
+            }
+          ]
+        },
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
+            "id": 42650,
+            "type": 1,
+            "name": "Incite EX",
+            "ruby": "Incite ",
+            "maxLv": 10,
+            "iconId": 303,
+            "motion": 102
+          },
+          "mstSkillDetail": [
+            {
+              "id": 42650,
+              "detail": "Increase Critical Strength [{0}] (3 turns) & decrease DEF (3 turns) [Demerit] for one ally",
+              "detailShort": "Increase Critical Strength [{0}] (3 turns) & decrease DEF (3 turns) [Demerit] for one ally"
+            }
+          ],
+          "mstSvtSkill": [
+            {
+              "strengthStatus": 1,
+              "svtId": 101300,
+              "num": 3,
+              "priority": 1,
+              "skillId": 42650,
+              "condQuestId": 0,
+              "condQuestPhase": 0,
+              "condLv": 0,
+              "condLimitCount": 3,
+              "eventId": 0,
+              "flag": 0
+            }
+          ],
+          "mstSkillLv": [
+            {
+              "funcId": [203, 191],
+              "svals": ["[1000,3,-1,200]", "[5000,3,-1,200]"],
+              "script": {},
+              "skillId": 42650,
+              "lv": 1,
+              "chargeTurn": 7,
+              "skillDetailId": 42650,
+              "priority": 0
+            },
+            {
+              "funcId": [203, 191],
+              "svals": ["[1000,3,-1,220]", "[5000,3,-1,200]"],
+              "script": {},
+              "skillId": 42650,
+              "lv": 2,
+              "chargeTurn": 7,
+              "skillDetailId": 42650,
+              "priority": 0
+            },
+            {
+              "funcId": [203, 191],
+              "svals": ["[1000,3,-1,240]", "[5000,3,-1,200]"],
+              "script": {},
+              "skillId": 42650,
+              "lv": 3,
+              "chargeTurn": 7,
+              "skillDetailId": 42650,
+              "priority": 0
+            },
+            {
+              "funcId": [203, 191],
+              "svals": ["[1000,3,-1,260]", "[5000,3,-1,200]"],
+              "script": {},
+              "skillId": 42650,
+              "lv": 4,
+              "chargeTurn": 7,
+              "skillDetailId": 42650,
+              "priority": 0
+            },
+            {
+              "funcId": [203, 191],
+              "svals": ["[1000,3,-1,280]", "[5000,3,-1,200]"],
+              "script": {},
+              "skillId": 42650,
+              "lv": 5,
+              "chargeTurn": 7,
+              "skillDetailId": 42650,
+              "priority": 0
+            },
+            {
+              "funcId": [203, 191],
+              "svals": ["[1000,3,-1,300]", "[5000,3,-1,200]"],
+              "script": {},
+              "skillId": 42650,
+              "lv": 6,
+              "chargeTurn": 6,
+              "skillDetailId": 42650,
+              "priority": 0
+            },
+            {
+              "funcId": [203, 191],
+              "svals": ["[1000,3,-1,320]", "[5000,3,-1,200]"],
+              "script": {},
+              "skillId": 42650,
+              "lv": 7,
+              "chargeTurn": 6,
+              "skillDetailId": 42650,
+              "priority": 0
+            },
+            {
+              "funcId": [203, 191],
+              "svals": ["[1000,3,-1,340]", "[5000,3,-1,200]"],
+              "script": {},
+              "skillId": 42650,
+              "lv": 8,
+              "chargeTurn": 6,
+              "skillDetailId": 42650,
+              "priority": 0
+            },
+            {
+              "funcId": [203, 191],
+              "svals": ["[1000,3,-1,360]", "[5000,3,-1,200]"],
+              "script": {},
+              "skillId": 42650,
+              "lv": 9,
+              "chargeTurn": 6,
+              "skillDetailId": 42650,
+              "priority": 0
+            },
+            {
+              "funcId": [203, 191],
+              "svals": ["[1000,3,-1,400]", "[5000,3,-1,200]"],
+              "script": {},
+              "skillId": 42650,
+              "lv": 10,
+              "chargeTurn": 5,
+              "skillDetailId": 42650,
+              "priority": 0
+            }
+          ]
+        },
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
+            "id": 42900,
+            "type": 1,
+            "name": "Incite EX",
+            "ruby": "Incite ",
+            "maxLv": 10,
+            "iconId": 303,
+            "motion": 102
+          },
+          "mstSkillDetail": [
+            {
+              "id": 42900,
+              "detail": "Increase Critical Strength [{0}] (3 turns) & C. Star Drop Rate [{0}][g][o]▲[/o][/g] (3 turns) & decrease DEF (3 turns) [Demerit] for one ally",
+              "detailShort": "Increase Critical Strength [{0}] (3 turns) & C. Star Drop Rate [{0}][g][o]▲[/o][/g] (3 turns) & decrease DEF (3 turns) [Demerit] for one ally"
+            }
+          ],
+          "mstSvtSkill": [
+            {
+              "strengthStatus": 2,
+              "svtId": 101300,
+              "num": 3,
+              "priority": 2,
+              "skillId": 42900,
+              "condQuestId": 94008002,
+              "condQuestPhase": 5,
+              "condLv": 0,
+              "condLimitCount": 3,
+              "eventId": 0,
+              "flag": 0
+            }
+          ],
+          "mstSkillLv": [
+            {
+              "funcId": [203, 300, 219, 191],
+              "svals": [
+                "[1000,3,-1,200]",
+                "[1000,3,-1,500]",
+                "[1000,3,-1,200]",
+                "[5000,3,-1,200]"
+              ],
+              "script": {},
+              "skillId": 42900,
+              "lv": 1,
+              "chargeTurn": 7,
+              "skillDetailId": 42900,
+              "priority": 0
+            },
+            {
+              "funcId": [203, 300, 219, 191],
+              "svals": [
+                "[1000,3,-1,220]",
+                "[1000,3,-1,550]",
+                "[1000,3,-1,200]",
+                "[5000,3,-1,200]"
+              ],
+              "script": {},
+              "skillId": 42900,
+              "lv": 2,
+              "chargeTurn": 7,
+              "skillDetailId": 42900,
+              "priority": 0
+            },
+            {
+              "funcId": [203, 300, 219, 191],
+              "svals": [
+                "[1000,3,-1,240]",
+                "[1000,3,-1,600]",
+                "[1000,3,-1,200]",
+                "[5000,3,-1,200]"
+              ],
+              "script": {},
+              "skillId": 42900,
+              "lv": 3,
+              "chargeTurn": 7,
+              "skillDetailId": 42900,
+              "priority": 0
+            },
+            {
+              "funcId": [203, 300, 219, 191],
+              "svals": [
+                "[1000,3,-1,260]",
+                "[1000,3,-1,650]",
+                "[1000,3,-1,200]",
+                "[5000,3,-1,200]"
+              ],
+              "script": {},
+              "skillId": 42900,
+              "lv": 4,
+              "chargeTurn": 7,
+              "skillDetailId": 42900,
+              "priority": 0
+            },
+            {
+              "funcId": [203, 300, 219, 191],
+              "svals": [
+                "[1000,3,-1,280]",
+                "[1000,3,-1,700]",
+                "[1000,3,-1,200]",
+                "[5000,3,-1,200]"
+              ],
+              "script": {},
+              "skillId": 42900,
+              "lv": 5,
+              "chargeTurn": 7,
+              "skillDetailId": 42900,
+              "priority": 0
+            },
+            {
+              "funcId": [203, 300, 219, 191],
+              "svals": [
+                "[1000,3,-1,300]",
+                "[1000,3,-1,750]",
+                "[1000,3,-1,200]",
+                "[5000,3,-1,200]"
+              ],
+              "script": {},
+              "skillId": 42900,
+              "lv": 6,
+              "chargeTurn": 6,
+              "skillDetailId": 42900,
+              "priority": 0
+            },
+            {
+              "funcId": [203, 300, 219, 191],
+              "svals": [
+                "[1000,3,-1,320]",
+                "[1000,3,-1,800]",
+                "[1000,3,-1,200]",
+                "[5000,3,-1,200]"
+              ],
+              "script": {},
+              "skillId": 42900,
+              "lv": 7,
+              "chargeTurn": 6,
+              "skillDetailId": 42900,
+              "priority": 0
+            },
+            {
+              "funcId": [203, 300, 219, 191],
+              "svals": [
+                "[1000,3,-1,340]",
+                "[1000,3,-1,850]",
+                "[1000,3,-1,200]",
+                "[5000,3,-1,200]"
+              ],
+              "script": {},
+              "skillId": 42900,
+              "lv": 8,
+              "chargeTurn": 6,
+              "skillDetailId": 42900,
+              "priority": 0
+            },
+            {
+              "funcId": [203, 300, 219, 191],
+              "svals": [
+                "[1000,3,-1,360]",
+                "[1000,3,-1,900]",
+                "[1000,3,-1,200]",
+                "[5000,3,-1,200]"
+              ],
+              "script": {},
+              "skillId": 42900,
+              "lv": 9,
+              "chargeTurn": 6,
+              "skillDetailId": 42900,
+              "priority": 0
+            },
+            {
+              "funcId": [203, 300, 219, 191],
+              "svals": [
+                "[1000,3,-1,400]",
+                "[1000,3,-1,1000]",
+                "[1000,3,-1,200]",
+                "[5000,3,-1,200]"
+              ],
+              "script": {},
+              "skillId": 42900,
+              "lv": 10,
+              "chargeTurn": 5,
+              "skillDetailId": 42900,
+              "priority": 0
+            }
+          ]
+        },
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
+            "id": 431450,
+            "type": 1,
+            "name": "Rainbow Candy B",
+            "ruby": "Rainbow Candy",
+            "maxLv": 10,
+            "iconId": 302,
+            "motion": 102
+          },
+          "mstSkillDetail": [
+            {
+              "id": 431450,
+              "detail": "Increase NP Strength [{0}] (1 turn) & Critical Strength [{0}] (1 turn) for one ally",
+              "detailShort": "Increase NP Strength [{0}] (1 turn) & Critical Strength [{0}] (1 turn) for one ally"
+            }
+          ],
+          "mstSvtSkill": [
+            {
+              "strengthStatus": 0,
+              "svtId": 202200,
+              "num": 2,
+              "priority": 1,
+              "skillId": 431450,
+              "condQuestId": 0,
+              "condQuestPhase": 0,
+              "condLv": 0,
+              "condLimitCount": 1,
+              "eventId": 0,
+              "flag": 0
+            }
+          ],
+          "mstSkillLv": [
+            {
+              "funcId": [251, 203],
+              "svals": ["[1000,1,-1,200]", "[1000,1,-1,200]"],
+              "script": {},
+              "skillId": 431450,
+              "lv": 1,
+              "chargeTurn": 7,
+              "skillDetailId": 431450,
+              "priority": 0
+            },
+            {
+              "funcId": [251, 203],
+              "svals": ["[1000,1,-1,210]", "[1000,1,-1,210]"],
+              "script": {},
+              "skillId": 431450,
+              "lv": 2,
+              "chargeTurn": 7,
+              "skillDetailId": 431450,
+              "priority": 0
+            },
+            {
+              "funcId": [251, 203],
+              "svals": ["[1000,1,-1,220]", "[1000,1,-1,220]"],
+              "script": {},
+              "skillId": 431450,
+              "lv": 3,
+              "chargeTurn": 7,
+              "skillDetailId": 431450,
+              "priority": 0
+            },
+            {
+              "funcId": [251, 203],
+              "svals": ["[1000,1,-1,230]", "[1000,1,-1,230]"],
+              "script": {},
+              "skillId": 431450,
+              "lv": 4,
+              "chargeTurn": 7,
+              "skillDetailId": 431450,
+              "priority": 0
+            },
+            {
+              "funcId": [251, 203],
+              "svals": ["[1000,1,-1,240]", "[1000,1,-1,240]"],
+              "script": {},
+              "skillId": 431450,
+              "lv": 5,
+              "chargeTurn": 7,
+              "skillDetailId": 431450,
+              "priority": 0
+            },
+            {
+              "funcId": [251, 203],
+              "svals": ["[1000,1,-1,250]", "[1000,1,-1,250]"],
+              "script": {},
+              "skillId": 431450,
+              "lv": 6,
+              "chargeTurn": 6,
+              "skillDetailId": 431450,
+              "priority": 0
+            },
+            {
+              "funcId": [251, 203],
+              "svals": ["[1000,1,-1,260]", "[1000,1,-1,260]"],
+              "script": {},
+              "skillId": 431450,
+              "lv": 7,
+              "chargeTurn": 6,
+              "skillDetailId": 431450,
+              "priority": 0
+            },
+            {
+              "funcId": [251, 203],
+              "svals": ["[1000,1,-1,270]", "[1000,1,-1,270]"],
+              "script": {},
+              "skillId": 431450,
+              "lv": 8,
+              "chargeTurn": 6,
+              "skillDetailId": 431450,
+              "priority": 0
+            },
+            {
+              "funcId": [251, 203],
+              "svals": ["[1000,1,-1,280]", "[1000,1,-1,280]"],
+              "script": {},
+              "skillId": 431450,
+              "lv": 9,
+              "chargeTurn": 6,
+              "skillDetailId": 431450,
+              "priority": 0
+            },
+            {
+              "funcId": [251, 203],
+              "svals": ["[1000,1,-1,300]", "[1000,1,-1,300]"],
+              "script": {},
+              "skillId": 431450,
+              "lv": 10,
+              "chargeTurn": 5,
+              "skillDetailId": 431450,
+              "priority": 0
+            }
+          ]
         }
       ],
-      "mstSvtSkill": [
-        {
-          "strengthStatus": 2,
-          "svtId": 301200,
-          "num": 3,
-          "priority": 2,
-          "skillId": 157352,
-          "condQuestId": 91301202,
-          "condQuestPhase": 3,
-          "condLv": 0,
-          "condLimitCount": 3,
-          "eventId": 0,
-          "flag": 0
-        }
-      ],
-      "mstSkillLv": [
-        {
-          "funcId": [368, 218, 203, 442],
-          "svals": [
-            "[1000,3,-1,10000]",
-            "[1000,3,-1,100]",
-            "[1000,3,-1,200]",
-            "[1000,1000]"
-          ],
-          "script": {},
-          "skillId": 157352,
-          "lv": 1,
-          "chargeTurn": 7,
-          "skillDetailId": 157352,
-          "priority": 0
-        },
-        {
-          "funcId": [368, 218, 203, 442],
-          "svals": [
-            "[1000,3,-1,12000]",
-            "[1000,3,-1,100]",
-            "[1000,3,-1,220]",
-            "[1000,1200]"
-          ],
-          "script": {},
-          "skillId": 157352,
-          "lv": 2,
-          "chargeTurn": 7,
-          "skillDetailId": 157352,
-          "priority": 0
-        },
-        {
-          "funcId": [368, 218, 203, 442],
-          "svals": [
-            "[1000,3,-1,14000]",
-            "[1000,3,-1,100]",
-            "[1000,3,-1,240]",
-            "[1000,1400]"
-          ],
-          "script": {},
-          "skillId": 157352,
-          "lv": 3,
-          "chargeTurn": 7,
-          "skillDetailId": 157352,
-          "priority": 0
-        },
-        {
-          "funcId": [368, 218, 203, 442],
-          "svals": [
-            "[1000,3,-1,16000]",
-            "[1000,3,-1,100]",
-            "[1000,3,-1,260]",
-            "[1000,1600]"
-          ],
-          "script": {},
-          "skillId": 157352,
-          "lv": 4,
-          "chargeTurn": 7,
-          "skillDetailId": 157352,
-          "priority": 0
-        },
-        {
-          "funcId": [368, 218, 203, 442],
-          "svals": [
-            "[1000,3,-1,18000]",
-            "[1000,3,-1,100]",
-            "[1000,3,-1,280]",
-            "[1000,1800]"
-          ],
-          "script": {},
-          "skillId": 157352,
-          "lv": 5,
-          "chargeTurn": 7,
-          "skillDetailId": 157352,
-          "priority": 0
-        },
-        {
-          "funcId": [368, 218, 203, 442],
-          "svals": [
-            "[1000,3,-1,20000]",
-            "[1000,3,-1,100]",
-            "[1000,3,-1,300]",
-            "[1000,2000]"
-          ],
-          "script": {},
-          "skillId": 157352,
-          "lv": 6,
-          "chargeTurn": 6,
-          "skillDetailId": 157352,
-          "priority": 0
-        },
-        {
-          "funcId": [368, 218, 203, 442],
-          "svals": [
-            "[1000,3,-1,22000]",
-            "[1000,3,-1,100]",
-            "[1000,3,-1,320]",
-            "[1000,2200]"
-          ],
-          "script": {},
-          "skillId": 157352,
-          "lv": 7,
-          "chargeTurn": 6,
-          "skillDetailId": 157352,
-          "priority": 0
-        },
-        {
-          "funcId": [368, 218, 203, 442],
-          "svals": [
-            "[1000,3,-1,24000]",
-            "[1000,3,-1,100]",
-            "[1000,3,-1,340]",
-            "[1000,2400]"
-          ],
-          "script": {},
-          "skillId": 157352,
-          "lv": 8,
-          "chargeTurn": 6,
-          "skillDetailId": 157352,
-          "priority": 0
-        },
-        {
-          "funcId": [368, 218, 203, 442],
-          "svals": [
-            "[1000,3,-1,26000]",
-            "[1000,3,-1,100]",
-            "[1000,3,-1,360]",
-            "[1000,2600]"
-          ],
-          "script": {},
-          "skillId": 157352,
-          "lv": 9,
-          "chargeTurn": 6,
-          "skillDetailId": 157352,
-          "priority": 0
-        },
-        {
-          "funcId": [368, 218, 203, 442],
-          "svals": [
-            "[1000,3,-1,30000]",
-            "[1000,3,-1,100]",
-            "[1000,3,-1,400]",
-            "[1000,3000]"
-          ],
-          "script": {},
-          "skillId": 157352,
-          "lv": 10,
-          "chargeTurn": 5,
-          "skillDetailId": 157352,
-          "priority": 0
-        }
-      ]
-    },
-    {
-      "mstSkill": {
-        "effectList": [],
-        "actIndividuality": [],
-        "script": {},
-        "id": 42650,
-        "type": 1,
-        "name": "Incite EX",
-        "ruby": "Incite ",
-        "maxLv": 10,
-        "iconId": 303,
-        "motion": 102
-      },
-      "mstSkillDetail": [
-        {
-          "id": 42650,
-          "detail": "Increase Critical Strength [{0}] (3 turns) & decrease DEF (3 turns) [Demerit] for one ally",
-          "detailShort": "Increase Critical Strength [{0}] (3 turns) & decrease DEF (3 turns) [Demerit] for one ally"
-        }
-      ],
-      "mstSvtSkill": [
-        {
-          "strengthStatus": 1,
-          "svtId": 101300,
-          "num": 3,
-          "priority": 1,
-          "skillId": 42650,
-          "condQuestId": 0,
-          "condQuestPhase": 0,
-          "condLv": 0,
-          "condLimitCount": 3,
-          "eventId": 0,
-          "flag": 0
-        }
-      ],
-      "mstSkillLv": [
-        {
-          "funcId": [203, 191],
-          "svals": ["[1000,3,-1,200]", "[5000,3,-1,200]"],
-          "script": {},
-          "skillId": 42650,
-          "lv": 1,
-          "chargeTurn": 7,
-          "skillDetailId": 42650,
-          "priority": 0
-        },
-        {
-          "funcId": [203, 191],
-          "svals": ["[1000,3,-1,220]", "[5000,3,-1,200]"],
-          "script": {},
-          "skillId": 42650,
-          "lv": 2,
-          "chargeTurn": 7,
-          "skillDetailId": 42650,
-          "priority": 0
-        },
-        {
-          "funcId": [203, 191],
-          "svals": ["[1000,3,-1,240]", "[5000,3,-1,200]"],
-          "script": {},
-          "skillId": 42650,
-          "lv": 3,
-          "chargeTurn": 7,
-          "skillDetailId": 42650,
-          "priority": 0
-        },
-        {
-          "funcId": [203, 191],
-          "svals": ["[1000,3,-1,260]", "[5000,3,-1,200]"],
-          "script": {},
-          "skillId": 42650,
-          "lv": 4,
-          "chargeTurn": 7,
-          "skillDetailId": 42650,
-          "priority": 0
-        },
-        {
-          "funcId": [203, 191],
-          "svals": ["[1000,3,-1,280]", "[5000,3,-1,200]"],
-          "script": {},
-          "skillId": 42650,
-          "lv": 5,
-          "chargeTurn": 7,
-          "skillDetailId": 42650,
-          "priority": 0
-        },
-        {
-          "funcId": [203, 191],
-          "svals": ["[1000,3,-1,300]", "[5000,3,-1,200]"],
-          "script": {},
-          "skillId": 42650,
-          "lv": 6,
-          "chargeTurn": 6,
-          "skillDetailId": 42650,
-          "priority": 0
-        },
-        {
-          "funcId": [203, 191],
-          "svals": ["[1000,3,-1,320]", "[5000,3,-1,200]"],
-          "script": {},
-          "skillId": 42650,
-          "lv": 7,
-          "chargeTurn": 6,
-          "skillDetailId": 42650,
-          "priority": 0
-        },
-        {
-          "funcId": [203, 191],
-          "svals": ["[1000,3,-1,340]", "[5000,3,-1,200]"],
-          "script": {},
-          "skillId": 42650,
-          "lv": 8,
-          "chargeTurn": 6,
-          "skillDetailId": 42650,
-          "priority": 0
-        },
-        {
-          "funcId": [203, 191],
-          "svals": ["[1000,3,-1,360]", "[5000,3,-1,200]"],
-          "script": {},
-          "skillId": 42650,
-          "lv": 9,
-          "chargeTurn": 6,
-          "skillDetailId": 42650,
-          "priority": 0
-        },
-        {
-          "funcId": [203, 191],
-          "svals": ["[1000,3,-1,400]", "[5000,3,-1,200]"],
-          "script": {},
-          "skillId": 42650,
-          "lv": 10,
-          "chargeTurn": 5,
-          "skillDetailId": 42650,
-          "priority": 0
-        }
-      ]
-    },
-    {
-      "mstSkill": {
-        "effectList": [],
-        "actIndividuality": [],
-        "script": {},
-        "id": 42900,
-        "type": 1,
-        "name": "Incite EX",
-        "ruby": "Incite ",
-        "maxLv": 10,
-        "iconId": 303,
-        "motion": 102
-      },
-      "mstSkillDetail": [
-        {
-          "id": 42900,
-          "detail": "Increase Critical Strength [{0}] (3 turns) & C. Star Drop Rate [{0}][g][o]▲[/o][/g] (3 turns) & decrease DEF (3 turns) [Demerit] for one ally",
-          "detailShort": "Increase Critical Strength [{0}] (3 turns) & C. Star Drop Rate [{0}][g][o]▲[/o][/g] (3 turns) & decrease DEF (3 turns) [Demerit] for one ally"
-        }
-      ],
-      "mstSvtSkill": [
-        {
-          "strengthStatus": 2,
-          "svtId": 101300,
-          "num": 3,
-          "priority": 2,
-          "skillId": 42900,
-          "condQuestId": 94008002,
-          "condQuestPhase": 5,
-          "condLv": 0,
-          "condLimitCount": 3,
-          "eventId": 0,
-          "flag": 0
-        }
-      ],
-      "mstSkillLv": [
-        {
-          "funcId": [203, 300, 219, 191],
-          "svals": [
-            "[1000,3,-1,200]",
-            "[1000,3,-1,500]",
-            "[1000,3,-1,200]",
-            "[5000,3,-1,200]"
-          ],
-          "script": {},
-          "skillId": 42900,
-          "lv": 1,
-          "chargeTurn": 7,
-          "skillDetailId": 42900,
-          "priority": 0
-        },
-        {
-          "funcId": [203, 300, 219, 191],
-          "svals": [
-            "[1000,3,-1,220]",
-            "[1000,3,-1,550]",
-            "[1000,3,-1,200]",
-            "[5000,3,-1,200]"
-          ],
-          "script": {},
-          "skillId": 42900,
-          "lv": 2,
-          "chargeTurn": 7,
-          "skillDetailId": 42900,
-          "priority": 0
-        },
-        {
-          "funcId": [203, 300, 219, 191],
-          "svals": [
-            "[1000,3,-1,240]",
-            "[1000,3,-1,600]",
-            "[1000,3,-1,200]",
-            "[5000,3,-1,200]"
-          ],
-          "script": {},
-          "skillId": 42900,
-          "lv": 3,
-          "chargeTurn": 7,
-          "skillDetailId": 42900,
-          "priority": 0
-        },
-        {
-          "funcId": [203, 300, 219, 191],
-          "svals": [
-            "[1000,3,-1,260]",
-            "[1000,3,-1,650]",
-            "[1000,3,-1,200]",
-            "[5000,3,-1,200]"
-          ],
-          "script": {},
-          "skillId": 42900,
-          "lv": 4,
-          "chargeTurn": 7,
-          "skillDetailId": 42900,
-          "priority": 0
-        },
-        {
-          "funcId": [203, 300, 219, 191],
-          "svals": [
-            "[1000,3,-1,280]",
-            "[1000,3,-1,700]",
-            "[1000,3,-1,200]",
-            "[5000,3,-1,200]"
-          ],
-          "script": {},
-          "skillId": 42900,
-          "lv": 5,
-          "chargeTurn": 7,
-          "skillDetailId": 42900,
-          "priority": 0
-        },
-        {
-          "funcId": [203, 300, 219, 191],
-          "svals": [
-            "[1000,3,-1,300]",
-            "[1000,3,-1,750]",
-            "[1000,3,-1,200]",
-            "[5000,3,-1,200]"
-          ],
-          "script": {},
-          "skillId": 42900,
-          "lv": 6,
-          "chargeTurn": 6,
-          "skillDetailId": 42900,
-          "priority": 0
-        },
-        {
-          "funcId": [203, 300, 219, 191],
-          "svals": [
-            "[1000,3,-1,320]",
-            "[1000,3,-1,800]",
-            "[1000,3,-1,200]",
-            "[5000,3,-1,200]"
-          ],
-          "script": {},
-          "skillId": 42900,
-          "lv": 7,
-          "chargeTurn": 6,
-          "skillDetailId": 42900,
-          "priority": 0
-        },
-        {
-          "funcId": [203, 300, 219, 191],
-          "svals": [
-            "[1000,3,-1,340]",
-            "[1000,3,-1,850]",
-            "[1000,3,-1,200]",
-            "[5000,3,-1,200]"
-          ],
-          "script": {},
-          "skillId": 42900,
-          "lv": 8,
-          "chargeTurn": 6,
-          "skillDetailId": 42900,
-          "priority": 0
-        },
-        {
-          "funcId": [203, 300, 219, 191],
-          "svals": [
-            "[1000,3,-1,360]",
-            "[1000,3,-1,900]",
-            "[1000,3,-1,200]",
-            "[5000,3,-1,200]"
-          ],
-          "script": {},
-          "skillId": 42900,
-          "lv": 9,
-          "chargeTurn": 6,
-          "skillDetailId": 42900,
-          "priority": 0
-        },
-        {
-          "funcId": [203, 300, 219, 191],
-          "svals": [
-            "[1000,3,-1,400]",
-            "[1000,3,-1,1000]",
-            "[1000,3,-1,200]",
-            "[5000,3,-1,200]"
-          ],
-          "script": {},
-          "skillId": 42900,
-          "lv": 10,
-          "chargeTurn": 5,
-          "skillDetailId": 42900,
-          "priority": 0
-        }
-      ]
-    },
-    {
-      "mstSkill": {
-        "effectList": [],
-        "actIndividuality": [],
-        "script": {},
-        "id": 431450,
-        "type": 1,
-        "name": "Rainbow Candy B",
-        "ruby": "Rainbow Candy",
-        "maxLv": 10,
-        "iconId": 302,
-        "motion": 102
-      },
-      "mstSkillDetail": [
-        {
-          "id": 431450,
-          "detail": "Increase NP Strength [{0}] (1 turn) & Critical Strength [{0}] (1 turn) for one ally",
-          "detailShort": "Increase NP Strength [{0}] (1 turn) & Critical Strength [{0}] (1 turn) for one ally"
-        }
-      ],
-      "mstSvtSkill": [
-        {
-          "strengthStatus": 0,
-          "svtId": 202200,
-          "num": 2,
-          "priority": 1,
-          "skillId": 431450,
-          "condQuestId": 0,
-          "condQuestPhase": 0,
-          "condLv": 0,
-          "condLimitCount": 1,
-          "eventId": 0,
-          "flag": 0
-        }
-      ],
-      "mstSkillLv": [
-        {
-          "funcId": [251, 203],
-          "svals": ["[1000,1,-1,200]", "[1000,1,-1,200]"],
-          "script": {},
-          "skillId": 431450,
-          "lv": 1,
-          "chargeTurn": 7,
-          "skillDetailId": 431450,
-          "priority": 0
-        },
-        {
-          "funcId": [251, 203],
-          "svals": ["[1000,1,-1,210]", "[1000,1,-1,210]"],
-          "script": {},
-          "skillId": 431450,
-          "lv": 2,
-          "chargeTurn": 7,
-          "skillDetailId": 431450,
-          "priority": 0
-        },
-        {
-          "funcId": [251, 203],
-          "svals": ["[1000,1,-1,220]", "[1000,1,-1,220]"],
-          "script": {},
-          "skillId": 431450,
-          "lv": 3,
-          "chargeTurn": 7,
-          "skillDetailId": 431450,
-          "priority": 0
-        },
-        {
-          "funcId": [251, 203],
-          "svals": ["[1000,1,-1,230]", "[1000,1,-1,230]"],
-          "script": {},
-          "skillId": 431450,
-          "lv": 4,
-          "chargeTurn": 7,
-          "skillDetailId": 431450,
-          "priority": 0
-        },
-        {
-          "funcId": [251, 203],
-          "svals": ["[1000,1,-1,240]", "[1000,1,-1,240]"],
-          "script": {},
-          "skillId": 431450,
-          "lv": 5,
-          "chargeTurn": 7,
-          "skillDetailId": 431450,
-          "priority": 0
-        },
-        {
-          "funcId": [251, 203],
-          "svals": ["[1000,1,-1,250]", "[1000,1,-1,250]"],
-          "script": {},
-          "skillId": 431450,
-          "lv": 6,
-          "chargeTurn": 6,
-          "skillDetailId": 431450,
-          "priority": 0
-        },
-        {
-          "funcId": [251, 203],
-          "svals": ["[1000,1,-1,260]", "[1000,1,-1,260]"],
-          "script": {},
-          "skillId": 431450,
-          "lv": 7,
-          "chargeTurn": 6,
-          "skillDetailId": 431450,
-          "priority": 0
-        },
-        {
-          "funcId": [251, 203],
-          "svals": ["[1000,1,-1,270]", "[1000,1,-1,270]"],
-          "script": {},
-          "skillId": 431450,
-          "lv": 8,
-          "chargeTurn": 6,
-          "skillDetailId": 431450,
-          "priority": 0
-        },
-        {
-          "funcId": [251, 203],
-          "svals": ["[1000,1,-1,280]", "[1000,1,-1,280]"],
-          "script": {},
-          "skillId": 431450,
-          "lv": 9,
-          "chargeTurn": 6,
-          "skillDetailId": 431450,
-          "priority": 0
-        },
-        {
-          "funcId": [251, 203],
-          "svals": ["[1000,1,-1,300]", "[1000,1,-1,300]"],
-          "script": {},
-          "skillId": 431450,
-          "lv": 10,
-          "chargeTurn": 5,
-          "skillDetailId": 431450,
-          "priority": 0
-        }
-      ]
+      "NP": []
     }
-  ],
-  "reverseTds": []
+  }
 }

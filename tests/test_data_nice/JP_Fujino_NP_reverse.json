@@ -194,1381 +194,1389 @@
       ]
     }
   ],
-  "reverseServants": [
-    {
-      "id": 202900,
-      "collectionNo": 200,
-      "name": "浅上藤乃",
-      "className": "archer",
-      "type": "normal",
-      "rarity": 4,
-      "cost": 12,
-      "lvMax": 80,
-      "extraAssets": {
-        "charaGraph": {
-          "ascension": {
-            "1": "https://assets.atlasacademy.io/GameData/JP/CharaGraph/202900/202900a@1.png",
-            "2": "https://assets.atlasacademy.io/GameData/JP/CharaGraph/202900/202900a@2.png",
-            "3": "https://assets.atlasacademy.io/GameData/JP/CharaGraph/202900/202900b@1.png",
-            "4": "https://assets.atlasacademy.io/GameData/JP/CharaGraph/202900/202900b@2.png"
-          }
-        },
-        "faces": {
-          "ascension": {
-            "1": "https://assets.atlasacademy.io/GameData/JP/Faces/f_2029000.png",
-            "2": "https://assets.atlasacademy.io/GameData/JP/Faces/f_2029001.png",
-            "3": "https://assets.atlasacademy.io/GameData/JP/Faces/f_2029002.png",
-            "4": "https://assets.atlasacademy.io/GameData/JP/Faces/f_2029003.png"
-          }
-        },
-        "commands": {
-          "ascension": {
-            "1": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/202900/card_servant_1.png",
-            "2": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/202900/card_servant_2.png",
-            "3": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/202900/card_servant_3.png"
-          }
-        },
-        "status": {
-          "ascension": {
-            "1": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/202900/status_servant_1.png",
-            "2": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/202900/status_servant_2.png",
-            "3": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/202900/status_servant_3.png"
-          }
-        }
-      },
-      "gender": "female",
-      "attribute": "human",
-      "traits": [
-        { "id": 2, "name": "genderFemale" },
-        { "id": 102, "name": "classArcher" },
-        { "id": 202, "name": "attributeHuman" },
-        { "id": 300, "name": "alignmentLawful" },
-        { "id": 304, "name": "alignmentEvil" },
-        { "id": 1000, "name": "basedOnServant" },
-        { "id": 2001, "name": "humanoid" },
-        { "id": 2631, "name": "humanoidServant" },
-        { "id": 2654, "name": "livingHuman" },
-        { "id": 5000, "name": "canBeInBattle" },
-        { "id": 202900, "name": "unknown" }
-      ],
-      "starAbsorb": 148,
-      "starGen": 79,
-      "instantDeathChance": 270,
-      "cards": ["quick", "arts", "arts", "buster", "buster"],
-      "hitsDistribution": {
-        "arts": [16, 33, 51],
-        "buster": [16, 33, 51],
-        "quick": [16, 33, 51],
-        "extra": [6, 13, 20, 26, 35]
-      },
-      "atkBase": 1716,
-      "atkMax": 10299,
-      "hpBase": 1764,
-      "hpMax": 11025,
-      "growthCurve": 9,
-      "atkGrowth": [
-        1716,
-        1879,
-        2050,
-        2222,
-        2394,
-        2557,
-        2728,
-        2891,
-        3054,
-        3218,
-        3372,
-        3527,
-        3681,
-        3836,
-        3981,
-        4119,
-        4265,
-        4393,
-        4531,
-        4651,
-        4780,
-        4891,
-        5003,
-        5114,
-        5209,
-        5312,
-        5398,
-        5483,
-        5561,
-        5638,
-        5698,
-        5758,
-        5810,
-        5861,
-        5904,
-        5938,
-        5964,
-        5981,
-        5998,
-        6007,
-        6016,
-        6024,
-        6033,
-        6041,
-        6067,
-        6101,
-        6144,
-        6196,
-        6247,
-        6307,
-        6367,
-        6445,
-        6522,
-        6608,
-        6694,
-        6797,
-        6891,
-        7003,
-        7114,
-        7226,
-        7355,
-        7475,
-        7612,
-        7741,
-        7887,
-        8024,
-        8170,
-        8324,
-        8479,
-        8633,
-        8788,
-        8951,
-        9114,
-        9277,
-        9449,
-        9612,
-        9784,
-        9955,
-        10127,
-        10299,
-        10401,
-        10513,
-        10616,
-        10728,
-        10839,
-        10942,
-        11054,
-        11165,
-        11268,
-        11380,
-        11492,
-        11595,
-        11706,
-        11818,
-        11921,
-        12032,
-        12144,
-        12247,
-        12358,
-        12470
-      ],
-      "hpGrowth": [
-        1764,
-        1939,
-        2125,
-        2310,
-        2495,
-        2671,
-        2856,
-        3032,
-        3208,
-        3384,
-        3551,
-        3718,
-        3884,
-        4051,
-        4208,
-        4357,
-        4514,
-        4653,
-        4801,
-        4931,
-        5070,
-        5190,
-        5310,
-        5431,
-        5533,
-        5644,
-        5736,
-        5829,
-        5912,
-        5996,
-        6061,
-        6125,
-        6181,
-        6237,
-        6283,
-        6320,
-        6348,
-        6366,
-        6385,
-        6394,
-        6403,
-        6413,
-        6422,
-        6431,
-        6459,
-        6496,
-        6542,
-        6598,
-        6653,
-        6718,
-        6783,
-        6866,
-        6950,
-        7042,
-        7135,
-        7246,
-        7348,
-        7468,
-        7589,
-        7709,
-        7848,
-        7978,
-        8126,
-        8265,
-        8422,
-        8570,
-        8728,
-        8894,
-        9061,
-        9228,
-        9395,
-        9571,
-        9746,
-        9922,
-        10108,
-        10284,
-        10469,
-        10654,
-        10839,
-        11025,
-        11136,
-        11256,
-        11367,
-        11488,
-        11608,
-        11719,
-        11839,
-        11960,
-        12071,
-        12191,
-        12312,
-        12423,
-        12543,
-        12664,
-        12775,
-        12895,
-        13016,
-        13127,
-        13247,
-        13368
-      ],
-      "bondGrowth": [
-        3000,
-        9125,
-        15250,
-        21375,
-        27500,
-        290000,
-        580000,
-        880500,
-        1190000,
-        1505000,
-        2595000,
-        3825000,
-        5185000,
-        6685000,
-        8325000
-      ],
-      "bondEquip": 9302680,
-      "ascensionMaterials": {
-        "1": {
-          "items": [
-            {
-              "item": {
-                "id": 7002,
-                "name": "アーチャーピース",
-                "type": "tdLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7002.png",
-                "background": "silver"
-              },
-              "amount": 4
-            }
-          ],
-          "qp": 50000
-        },
-        "2": {
-          "items": [
-            {
-              "item": {
-                "id": 7002,
-                "name": "アーチャーピース",
-                "type": "tdLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7002.png",
-                "background": "silver"
-              },
-              "amount": 10
-            },
-            {
-              "item": {
-                "id": 6516,
-                "name": "凶骨",
-                "type": "skillLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6516.png",
-                "background": "bronze"
-              },
-              "amount": 18
-            }
-          ],
-          "qp": 150000
-        },
-        "3": {
-          "items": [
-            {
-              "item": {
-                "id": 7102,
-                "name": "アーチャーモニュメント",
-                "type": "tdLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7102.png",
-                "background": "gold"
-              },
-              "amount": 4
-            },
-            {
-              "item": {
-                "id": 6505,
-                "name": "虚影の塵",
-                "type": "skillLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
-                "background": "bronze"
-              },
-              "amount": 16
-            },
-            {
-              "item": {
-                "id": 6529,
-                "name": "呪獣胆石",
-                "type": "skillLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6529.png",
-                "background": "gold"
-              },
-              "amount": 2
-            }
-          ],
-          "qp": 500000
-        },
-        "4": {
-          "items": [
-            {
-              "item": {
-                "id": 7102,
-                "name": "アーチャーモニュメント",
-                "type": "tdLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7102.png",
-                "background": "gold"
-              },
-              "amount": 10
-            },
-            {
-              "item": {
-                "id": 6529,
-                "name": "呪獣胆石",
-                "type": "skillLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6529.png",
-                "background": "gold"
-              },
-              "amount": 4
-            },
-            {
-              "item": {
-                "id": 6520,
-                "name": "血の涙石",
-                "type": "skillLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6520.png",
-                "background": "gold"
-              },
-              "amount": 6
-            }
-          ],
-          "qp": 1500000
-        },
-        "5": {
-          "items": [
-            {
-              "item": {
-                "id": 7999,
-                "name": "聖杯",
-                "type": "tdLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7999.png",
-                "background": "gold"
-              },
-              "amount": 1
-            }
-          ],
-          "qp": 50000000
-        }
-      },
-      "skillMaterials": {
-        "1": {
-          "items": [
-            {
-              "item": {
-                "id": 6002,
-                "name": "弓の輝石",
-                "type": "skillLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6002.png",
-                "background": "bronze"
-              },
-              "amount": 4
-            }
-          ],
-          "qp": 100000
-        },
-        "2": {
-          "items": [
-            {
-              "item": {
-                "id": 6002,
-                "name": "弓の輝石",
-                "type": "skillLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6002.png",
-                "background": "bronze"
-              },
-              "amount": 10
-            }
-          ],
-          "qp": 200000
-        },
-        "3": {
-          "items": [
-            {
-              "item": {
-                "id": 6102,
-                "name": "弓の魔石",
-                "type": "skillLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6102.png",
-                "background": "silver"
-              },
-              "amount": 4
-            }
-          ],
-          "qp": 600000
-        },
-        "4": {
-          "items": [
-            {
-              "item": {
-                "id": 6102,
-                "name": "弓の魔石",
-                "type": "skillLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6102.png",
-                "background": "silver"
-              },
-              "amount": 10
-            },
-            {
-              "item": {
-                "id": 6505,
-                "name": "虚影の塵",
-                "type": "skillLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
-                "background": "bronze"
-              },
-              "amount": 8
-            }
-          ],
-          "qp": 800000
-        },
-        "5": {
-          "items": [
-            {
-              "item": {
-                "id": 6202,
-                "name": "弓の秘石",
-                "type": "skillLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6202.png",
-                "background": "gold"
-              },
-              "amount": 4
-            },
-            {
-              "item": {
-                "id": 6505,
-                "name": "虚影の塵",
-                "type": "skillLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
-                "background": "bronze"
-              },
-              "amount": 16
-            }
-          ],
-          "qp": 2000000
-        },
-        "6": {
-          "items": [
-            {
-              "item": {
-                "id": 6202,
-                "name": "弓の秘石",
-                "type": "skillLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6202.png",
-                "background": "gold"
-              },
-              "amount": 10
-            },
-            {
-              "item": {
-                "id": 6516,
-                "name": "凶骨",
-                "type": "skillLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6516.png",
-                "background": "bronze"
-              },
-              "amount": 12
-            }
-          ],
-          "qp": 2500000
-        },
-        "7": {
-          "items": [
-            {
-              "item": {
-                "id": 6516,
-                "name": "凶骨",
-                "type": "skillLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6516.png",
-                "background": "bronze"
-              },
-              "amount": 24
-            },
-            {
-              "item": {
-                "id": 6533,
-                "name": "宵哭きの鉄杭",
-                "type": "skillLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6533.png",
-                "background": "bronze"
-              },
-              "amount": 15
-            }
-          ],
-          "qp": 5000000
-        },
-        "8": {
-          "items": [
-            {
-              "item": {
-                "id": 6533,
-                "name": "宵哭きの鉄杭",
-                "type": "skillLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6533.png",
-                "background": "bronze"
-              },
-              "amount": 45
-            },
-            {
-              "item": {
-                "id": 6530,
-                "name": "魔術髄液",
-                "type": "skillLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6530.png",
-                "background": "bronze"
-              },
-              "amount": 60
-            }
-          ],
-          "qp": 6000000
-        },
-        "9": {
-          "items": [
-            {
-              "item": {
-                "id": 6999,
-                "name": "伝承結晶",
-                "type": "skillLvUp",
-                "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6999.png",
-                "background": "gold"
-              },
-              "amount": 1
-            }
-          ],
-          "qp": 10000000
-        }
-      },
-      "skills": [
+  "reverse": {
+    "nice": {
+      "servant": [
         {
-          "id": 454650,
-          "num": 1,
-          "name": "歪曲の魔眼 EX",
-          "detail": "自身のBusterカード性能をアップ(3ターン)＆防御無視状態を付与(3ターン)＆NP獲得量アップ(3ターン)",
-          "type": "active",
-          "strengthStatus": 0,
-          "priority": 1,
-          "condQuestId": 0,
-          "condQuestPhase": 0,
-          "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00306.png",
-          "coolDown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5],
-          "actIndividuality": [],
-          "script": {},
-          "functions": [
-            {
-              "funcId": 119,
-              "funcType": "addStateShort",
-              "funcTargetType": "self",
-              "funcTargetTeam": "playerAndEnemy",
-              "funcPopupText": "バスターアップ",
-              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
-              "functvals": [],
-              "funcquestTvals": [],
-              "buffs": [
-                {
-                  "id": 102,
-                  "name": "Busterアップ",
-                  "detail": "Busterカードの性能をアップ",
-                  "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
-                  "type": "upCommandall",
-                  "vals": [
-                    { "id": 3004, "name": "buffPositiveEffect" },
-                    { "id": 3006, "name": "buffIncreaseDamage" }
-                  ],
-                  "tvals": [
-                    { "id": 5000, "name": "canBeInBattle" },
-                    { "id": 4002, "name": "cardBuster" }
-                  ],
-                  "ckSelfIndv": [{ "id": 4002, "name": "cardBuster" }],
-                  "ckOpIndv": [],
-                  "maxRate": 5000
-                }
-              ],
-              "svals": [
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 215 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 230 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 245 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 260 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 275 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 290 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 305 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 320 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 350 }
-              ]
+          "id": 202900,
+          "collectionNo": 200,
+          "name": "浅上藤乃",
+          "className": "archer",
+          "type": "normal",
+          "rarity": 4,
+          "cost": 12,
+          "lvMax": 80,
+          "extraAssets": {
+            "charaGraph": {
+              "ascension": {
+                "1": "https://assets.atlasacademy.io/GameData/JP/CharaGraph/202900/202900a@1.png",
+                "2": "https://assets.atlasacademy.io/GameData/JP/CharaGraph/202900/202900a@2.png",
+                "3": "https://assets.atlasacademy.io/GameData/JP/CharaGraph/202900/202900b@1.png",
+                "4": "https://assets.atlasacademy.io/GameData/JP/CharaGraph/202900/202900b@2.png"
+              }
             },
-            {
-              "funcId": 1588,
-              "funcType": "addStateShort",
-              "funcTargetType": "self",
-              "funcTargetTeam": "playerAndEnemy",
-              "funcPopupText": "防御無視",
-              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_351.png",
-              "functvals": [],
-              "funcquestTvals": [],
-              "buffs": [
-                {
-                  "id": 510,
-                  "name": "防御無視",
-                  "detail": "防御力アップを無視してダメージを与える",
-                  "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_351.png",
-                  "type": "pierceDefence",
-                  "vals": [
-                    { "id": 3004, "name": "buffPositiveEffect" },
-                    { "id": 3006, "name": "buffIncreaseDamage" }
-                  ],
-                  "tvals": [],
-                  "ckSelfIndv": [],
-                  "ckOpIndv": [],
-                  "maxRate": 0
-                }
-              ],
-              "svals": [
-                { "Rate": 1000, "Turn": 3, "Count": -1 },
-                { "Rate": 1000, "Turn": 3, "Count": -1 },
-                { "Rate": 1000, "Turn": 3, "Count": -1 },
-                { "Rate": 1000, "Turn": 3, "Count": -1 },
-                { "Rate": 1000, "Turn": 3, "Count": -1 },
-                { "Rate": 1000, "Turn": 3, "Count": -1 },
-                { "Rate": 1000, "Turn": 3, "Count": -1 },
-                { "Rate": 1000, "Turn": 3, "Count": -1 },
-                { "Rate": 1000, "Turn": 3, "Count": -1 },
-                { "Rate": 1000, "Turn": 3, "Count": -1 }
-              ]
+            "faces": {
+              "ascension": {
+                "1": "https://assets.atlasacademy.io/GameData/JP/Faces/f_2029000.png",
+                "2": "https://assets.atlasacademy.io/GameData/JP/Faces/f_2029001.png",
+                "3": "https://assets.atlasacademy.io/GameData/JP/Faces/f_2029002.png",
+                "4": "https://assets.atlasacademy.io/GameData/JP/Faces/f_2029003.png"
+              }
             },
-            {
-              "funcId": 337,
-              "funcType": "addStateShort",
-              "funcTargetType": "self",
-              "funcTargetTeam": "player",
-              "funcPopupText": "NP獲得アップ",
-              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_303.png",
-              "functvals": [],
-              "funcquestTvals": [],
-              "buffs": [
-                {
-                  "id": 140,
-                  "name": "NP獲得アップ",
-                  "detail": "NP獲得量をアップ",
-                  "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_303.png",
-                  "type": "upDropnp",
-                  "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
-                  "tvals": [],
-                  "ckSelfIndv": [],
-                  "ckOpIndv": [],
-                  "maxRate": 5000
-                }
-              ],
-              "svals": [
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 210 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 220 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 230 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 240 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 260 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 270 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 280 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 }
-              ]
+            "commands": {
+              "ascension": {
+                "1": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/202900/card_servant_1.png",
+                "2": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/202900/card_servant_2.png",
+                "3": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/202900/card_servant_3.png"
+              }
             },
-            {
-              "funcId": 470,
-              "funcType": "hastenNpturn",
-              "funcTargetType": "self",
-              "funcTargetTeam": "enemy",
-              "funcPopupText": "チャージ増加",
-              "functvals": [],
-              "funcquestTvals": [],
-              "buffs": [],
-              "svals": [
-                { "Rate": 600, "Value": 1 },
-                { "Rate": 600, "Value": 1 },
-                { "Rate": 600, "Value": 1 },
-                { "Rate": 600, "Value": 1 },
-                { "Rate": 600, "Value": 1 },
-                { "Rate": 600, "Value": 1 },
-                { "Rate": 600, "Value": 1 },
-                { "Rate": 600, "Value": 1 },
-                { "Rate": 600, "Value": 1 },
-                { "Rate": 600, "Value": 1 }
-              ]
+            "status": {
+              "ascension": {
+                "1": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/202900/status_servant_1.png",
+                "2": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/202900/status_servant_2.png",
+                "3": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/202900/status_servant_3.png"
+              }
             }
-          ]
-        },
-        {
-          "id": 455350,
-          "num": 2,
-          "name": "千里眼（闇） C",
-          "detail": "自身に必中状態を付与(3ターン)＆スター獲得",
-          "type": "active",
-          "strengthStatus": 0,
-          "priority": 1,
-          "condQuestId": 0,
-          "condQuestPhase": 0,
-          "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00310.png",
-          "coolDown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5],
-          "actIndividuality": [],
-          "script": {},
-          "functions": [
-            {
-              "funcId": 288,
-              "funcType": "addState",
-              "funcTargetType": "self",
-              "funcTargetTeam": "playerAndEnemy",
-              "funcPopupText": "必中",
-              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_309.png",
-              "functvals": [],
-              "funcquestTvals": [],
-              "buffs": [
-                {
-                  "id": 154,
-                  "name": "必中",
-                  "detail": "回避を無視して、攻撃によるダメージを与える",
-                  "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_309.png",
-                  "type": "breakAvoidance",
-                  "vals": [
-                    { "id": 3004, "name": "buffPositiveEffect" },
-                    { "id": 3019, "name": "buffSureHit" },
-                    { "id": 3006, "name": "buffIncreaseDamage" }
-                  ],
-                  "tvals": [],
-                  "ckSelfIndv": [],
-                  "ckOpIndv": [],
-                  "maxRate": 0
-                }
-              ],
-              "svals": [
-                { "Rate": 1000, "Turn": 3, "Count": -1 },
-                { "Rate": 1000, "Turn": 3, "Count": -1 },
-                { "Rate": 1000, "Turn": 3, "Count": -1 },
-                { "Rate": 1000, "Turn": 3, "Count": -1 },
-                { "Rate": 1000, "Turn": 3, "Count": -1 },
-                { "Rate": 1000, "Turn": 3, "Count": -1 },
-                { "Rate": 1000, "Turn": 3, "Count": -1 },
-                { "Rate": 1000, "Turn": 3, "Count": -1 },
-                { "Rate": 1000, "Turn": 3, "Count": -1 },
-                { "Rate": 1000, "Turn": 3, "Count": -1 }
-              ]
-            },
-            {
-              "funcId": 476,
-              "funcType": "gainStar",
-              "funcTargetType": "self",
-              "funcTargetTeam": "player",
-              "funcPopupText": "スター獲得",
-              "functvals": [],
-              "funcquestTvals": [],
-              "buffs": [],
-              "svals": [
-                { "Rate": 1000, "Value": 5 },
-                { "Rate": 1000, "Value": 6 },
-                { "Rate": 1000, "Value": 7 },
-                { "Rate": 1000, "Value": 8 },
-                { "Rate": 1000, "Value": 9 },
-                { "Rate": 1000, "Value": 10 },
-                { "Rate": 1000, "Value": 11 },
-                { "Rate": 1000, "Value": 12 },
-                { "Rate": 1000, "Value": 13 },
-                { "Rate": 1000, "Value": 15 }
-              ]
-            },
-            {
-              "funcId": 215,
-              "funcType": "addStateShort",
-              "funcTargetType": "self",
-              "funcTargetTeam": "enemy",
-              "funcPopupText": "クリティカル発生アップ",
-              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
-              "functvals": [],
-              "funcquestTvals": [],
-              "buffs": [
-                {
-                  "id": 144,
-                  "name": "クリティカル発生アップ",
-                  "detail": "クリティカルの発生率をアップ",
-                  "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
-                  "type": "upCriticalrate",
-                  "vals": [
-                    { "id": 3004, "name": "buffPositiveEffect" },
-                    { "id": 3006, "name": "buffIncreaseDamage" },
-                    { "id": 3032, "name": "buffCritRateUp" }
-                  ],
-                  "tvals": [],
-                  "ckSelfIndv": [],
-                  "ckOpIndv": [],
-                  "maxRate": 5000
-                }
-              ],
-              "svals": [
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 }
-              ]
-            }
-          ]
-        },
-        {
-          "id": 456550,
-          "num": 3,
-          "name": "痛覚残留 A",
-          "detail": "自身に最大HPが2000減る状態を付与(3ターン)【デメリット】＆被ダメージカット状態を付与(3ターン)＆ガッツ状態を付与(1回・3ターン)",
-          "type": "active",
-          "strengthStatus": 0,
-          "priority": 1,
-          "condQuestId": 0,
-          "condQuestPhase": 0,
-          "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00400.png",
-          "coolDown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5],
-          "actIndividuality": [],
-          "script": {},
-          "functions": [
-            {
-              "funcId": 595,
-              "funcType": "addState",
-              "funcTargetType": "self",
-              "funcTargetTeam": "playerAndEnemy",
-              "funcPopupText": "最大HPマイナス",
-              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_522.png",
-              "functvals": [],
-              "funcquestTvals": [],
-              "buffs": [
-                {
-                  "id": 202,
-                  "name": "最大HPマイナス",
-                  "detail": "最大HPを減らす",
-                  "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_522.png",
-                  "type": "subMaxhp",
-                  "vals": [
-                    { "id": 3005, "name": "buffNegativeEffect" },
-                    { "id": 3044, "name": "buffMaxHpDown" }
-                  ],
-                  "tvals": [],
-                  "ckSelfIndv": [],
-                  "ckOpIndv": [],
-                  "maxRate": 50000
-                }
-              ],
-              "svals": [
-                { "Rate": 5000, "Turn": 3, "Count": -1, "Value": 2000 },
-                { "Rate": 5000, "Turn": 3, "Count": -1, "Value": 2000 },
-                { "Rate": 5000, "Turn": 3, "Count": -1, "Value": 2000 },
-                { "Rate": 5000, "Turn": 3, "Count": -1, "Value": 2000 },
-                { "Rate": 5000, "Turn": 3, "Count": -1, "Value": 2000 },
-                { "Rate": 5000, "Turn": 3, "Count": -1, "Value": 2000 },
-                { "Rate": 5000, "Turn": 3, "Count": -1, "Value": 2000 },
-                { "Rate": 5000, "Turn": 3, "Count": -1, "Value": 2000 },
-                { "Rate": 5000, "Turn": 3, "Count": -1, "Value": 2000 },
-                { "Rate": 5000, "Turn": 3, "Count": -1, "Value": 2000 }
-              ]
-            },
-            {
-              "funcId": 276,
-              "funcType": "addState",
-              "funcTargetType": "self",
-              "funcTargetTeam": "playerAndEnemy",
-              "funcPopupText": "ダメージカット",
-              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
-              "functvals": [],
-              "funcquestTvals": [],
-              "buffs": [
-                {
-                  "id": 149,
-                  "name": "ダメージカット",
-                  "detail": "被ダメージを減らす",
-                  "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
-                  "type": "subSelfdamage",
-                  "vals": [
-                    { "id": 3004, "name": "buffPositiveEffect" },
-                    { "id": 3007, "name": "buffIncreaseDefence" },
-                    { "id": 3040, "name": "buffDefenceUp" }
-                  ],
-                  "tvals": [],
-                  "ckSelfIndv": [],
-                  "ckOpIndv": [],
-                  "maxRate": 0
-                }
-              ],
-              "svals": [
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 1000 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 1100 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 1200 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 1300 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 1400 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 1500 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 1600 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 1700 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 1800 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 2000 }
-              ]
-            },
-            {
-              "funcId": 292,
-              "funcType": "addState",
-              "funcTargetType": "self",
-              "funcTargetTeam": "playerAndEnemy",
-              "funcPopupText": "ガッツ",
-              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_304.png",
-              "functvals": [],
-              "funcquestTvals": [],
-              "buffs": [
-                {
-                  "id": 180,
-                  "name": "ガッツ",
-                  "detail": "HPが0になった時、HPを回復して耐える",
-                  "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_304.png",
-                  "type": "guts",
-                  "vals": [
-                    { "id": 3004, "name": "buffPositiveEffect" },
-                    { "id": 3024, "name": "buffGuts" }
-                  ],
-                  "tvals": [],
-                  "ckSelfIndv": [],
-                  "ckOpIndv": [],
-                  "maxRate": 0
-                }
-              ],
-              "svals": [
-                { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 1 }
-              ]
-            }
-          ]
-        }
-      ],
-      "classPassive": [
-        {
-          "id": 34250,
-          "name": "対魔力 D",
-          "detail": "自身の弱体耐性を少しアップ",
-          "type": "passive",
-          "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00100.png",
-          "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-          "actIndividuality": [],
-          "script": {},
-          "functions": [
-            {
-              "funcId": 388,
-              "funcType": "addState",
-              "funcTargetType": "self",
-              "funcTargetTeam": "playerAndEnemy",
-              "funcPopupText": "弱体耐性アップ",
-              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_306.png",
-              "functvals": [],
-              "funcquestTvals": [],
-              "buffs": [
-                {
-                  "id": 162,
-                  "name": "弱体耐性アップ",
-                  "detail": "弱体耐性をアップ",
-                  "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_306.png",
-                  "type": "upTolerance",
-                  "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
-                  "tvals": [{ "id": 3005, "name": "buffNegativeEffect" }],
-                  "ckSelfIndv": [],
-                  "ckOpIndv": [{ "id": 3005, "name": "buffNegativeEffect" }],
-                  "maxRate": 5000
-                }
-              ],
-              "svals": [
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 125 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 125 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 125 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 125 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 125 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 125 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 125 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 125 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 125 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 125 }
-              ]
-            }
-          ]
-        },
-        {
-          "id": 20551,
-          "name": "単独行動 A+",
-          "detail": "自身のクリティカル威力をアップ",
-          "type": "passive",
-          "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00101.png",
-          "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-          "actIndividuality": [],
-          "script": {},
-          "functions": [
-            {
-              "funcId": 199,
-              "funcType": "addStateShort",
-              "funcTargetType": "self",
-              "funcTargetTeam": "playerAndEnemy",
-              "funcPopupText": "クリティカル威力アップ",
-              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
-              "functvals": [],
-              "funcquestTvals": [],
-              "buffs": [
-                {
-                  "id": 142,
-                  "name": "クリティカル威力アップ",
-                  "detail": "クリティカル時のダメージをアップ",
-                  "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
-                  "type": "upCriticaldamage",
-                  "vals": [
-                    { "id": 3004, "name": "buffPositiveEffect" },
-                    { "id": 3006, "name": "buffIncreaseDamage" },
-                    { "id": 3031, "name": "buffCritDamageUp" }
-                  ],
-                  "tvals": [],
-                  "ckSelfIndv": [],
-                  "ckOpIndv": [],
-                  "maxRate": 5000
-                }
-              ],
-              "svals": [
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 110 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 110 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 110 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 110 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 110 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 110 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 110 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 110 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 110 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 110 }
-              ]
-            }
-          ]
-        },
-        {
-          "id": 83450,
-          "name": "陣地作成 B",
-          "detail": "自身のArtsカードの性能をアップ",
-          "type": "passive",
-          "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00104.png",
-          "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-          "actIndividuality": [],
-          "script": {},
-          "functions": [
-            {
-              "funcId": 109,
-              "funcType": "addStateShort",
-              "funcTargetType": "self",
-              "funcTargetTeam": "playerAndEnemy",
-              "funcPopupText": "アーツアップ",
-              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_313.png",
-              "functvals": [],
-              "funcquestTvals": [],
-              "buffs": [
-                {
-                  "id": 101,
-                  "name": "Artsアップ",
-                  "detail": "Artsカードの性能をアップ",
-                  "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_313.png",
-                  "type": "upCommandall",
-                  "vals": [
-                    { "id": 3004, "name": "buffPositiveEffect" },
-                    { "id": 3006, "name": "buffIncreaseDamage" }
-                  ],
-                  "tvals": [
-                    { "id": 5000, "name": "canBeInBattle" },
-                    { "id": 4001, "name": "cardArts" }
-                  ],
-                  "ckSelfIndv": [{ "id": 4001, "name": "cardArts" }],
-                  "ckOpIndv": [],
-                  "maxRate": 5000
-                }
-              ],
-              "svals": [
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
-                { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 }
-              ]
-            }
-          ]
-        }
-      ],
-      "noblePhantasms": [
-        {
-          "id": 202901,
-          "num": 1,
-          "card": "buster",
-          "name": "唯識・歪曲の魔眼",
-          "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/202900/card_servant_np.png",
-          "rank": "EX",
-          "type": "対界宝具",
-          "detail": "敵単体に超強力な攻撃＆強化無効状態を付与(1回・3ターン)＆攻撃力をダウン(3ターン)<オーバーチャージで効果アップ>",
-          "npGain": {
-            "buster": [59, 59, 59, 59, 59],
-            "arts": [59, 59, 59, 59, 59],
-            "quick": [59, 59, 59, 59, 59],
-            "extra": [59, 59, 59, 59, 59],
-            "defence": [300, 300, 300, 300, 300],
-            "np": [59, 59, 59, 59, 59]
           },
-          "npDistribution": [16, 33, 51],
-          "strengthStatus": 0,
-          "priority": 101,
-          "condQuestId": 0,
-          "condQuestPhase": 0,
-          "individuality": [
-            { "id": 3002, "name": "normalAttack2" },
-            { "id": 4002, "name": "cardBuster" },
-            { "id": 4007, "name": "cardNP" }
+          "gender": "female",
+          "attribute": "human",
+          "traits": [
+            { "id": 2, "name": "genderFemale" },
+            { "id": 102, "name": "classArcher" },
+            { "id": 202, "name": "attributeHuman" },
+            { "id": 300, "name": "alignmentLawful" },
+            { "id": 304, "name": "alignmentEvil" },
+            { "id": 1000, "name": "basedOnServant" },
+            { "id": 2001, "name": "humanoid" },
+            { "id": 2631, "name": "humanoidServant" },
+            { "id": 2654, "name": "livingHuman" },
+            { "id": 5000, "name": "canBeInBattle" },
+            { "id": 202900, "name": "unknown" }
           ],
-          "functions": [
-            {
-              "funcId": 12,
-              "funcType": "damageNp",
-              "funcTargetType": "enemy",
-              "funcTargetTeam": "playerAndEnemy",
-              "funcPopupText": "なし",
-              "functvals": [],
-              "funcquestTvals": [],
-              "buffs": [],
-              "svals": [
-                { "Rate": 1000, "Value": 6000 },
-                { "Rate": 1000, "Value": 8000 },
-                { "Rate": 1000, "Value": 9000 },
-                { "Rate": 1000, "Value": 9500 },
-                { "Rate": 1000, "Value": 10000 }
-              ],
-              "svals2": [
-                { "Rate": 1000, "Value": 6000 },
-                { "Rate": 1000, "Value": 8000 },
-                { "Rate": 1000, "Value": 9000 },
-                { "Rate": 1000, "Value": 9500 },
-                { "Rate": 1000, "Value": 10000 }
-              ],
-              "svals3": [
-                { "Rate": 1000, "Value": 6000 },
-                { "Rate": 1000, "Value": 8000 },
-                { "Rate": 1000, "Value": 9000 },
-                { "Rate": 1000, "Value": 9500 },
-                { "Rate": 1000, "Value": 10000 }
-              ],
-              "svals4": [
-                { "Rate": 1000, "Value": 6000 },
-                { "Rate": 1000, "Value": 8000 },
-                { "Rate": 1000, "Value": 9000 },
-                { "Rate": 1000, "Value": 9500 },
-                { "Rate": 1000, "Value": 10000 }
-              ],
-              "svals5": [
-                { "Rate": 1000, "Value": 6000 },
-                { "Rate": 1000, "Value": 8000 },
-                { "Rate": 1000, "Value": 9000 },
-                { "Rate": 1000, "Value": 9500 },
-                { "Rate": 1000, "Value": 10000 }
-              ]
-            },
-            {
-              "funcId": 778,
-              "funcType": "addState",
-              "funcTargetType": "enemy",
-              "funcTargetTeam": "playerAndEnemy",
-              "funcPopupText": "強化無効",
-              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_531.png",
-              "functvals": [],
-              "funcquestTvals": [],
-              "buffs": [
+          "starAbsorb": 148,
+          "starGen": 79,
+          "instantDeathChance": 270,
+          "cards": ["quick", "arts", "arts", "buster", "buster"],
+          "hitsDistribution": {
+            "arts": [16, 33, 51],
+            "buster": [16, 33, 51],
+            "quick": [16, 33, 51],
+            "extra": [6, 13, 20, 26, 35]
+          },
+          "atkBase": 1716,
+          "atkMax": 10299,
+          "hpBase": 1764,
+          "hpMax": 11025,
+          "growthCurve": 9,
+          "atkGrowth": [
+            1716,
+            1879,
+            2050,
+            2222,
+            2394,
+            2557,
+            2728,
+            2891,
+            3054,
+            3218,
+            3372,
+            3527,
+            3681,
+            3836,
+            3981,
+            4119,
+            4265,
+            4393,
+            4531,
+            4651,
+            4780,
+            4891,
+            5003,
+            5114,
+            5209,
+            5312,
+            5398,
+            5483,
+            5561,
+            5638,
+            5698,
+            5758,
+            5810,
+            5861,
+            5904,
+            5938,
+            5964,
+            5981,
+            5998,
+            6007,
+            6016,
+            6024,
+            6033,
+            6041,
+            6067,
+            6101,
+            6144,
+            6196,
+            6247,
+            6307,
+            6367,
+            6445,
+            6522,
+            6608,
+            6694,
+            6797,
+            6891,
+            7003,
+            7114,
+            7226,
+            7355,
+            7475,
+            7612,
+            7741,
+            7887,
+            8024,
+            8170,
+            8324,
+            8479,
+            8633,
+            8788,
+            8951,
+            9114,
+            9277,
+            9449,
+            9612,
+            9784,
+            9955,
+            10127,
+            10299,
+            10401,
+            10513,
+            10616,
+            10728,
+            10839,
+            10942,
+            11054,
+            11165,
+            11268,
+            11380,
+            11492,
+            11595,
+            11706,
+            11818,
+            11921,
+            12032,
+            12144,
+            12247,
+            12358,
+            12470
+          ],
+          "hpGrowth": [
+            1764,
+            1939,
+            2125,
+            2310,
+            2495,
+            2671,
+            2856,
+            3032,
+            3208,
+            3384,
+            3551,
+            3718,
+            3884,
+            4051,
+            4208,
+            4357,
+            4514,
+            4653,
+            4801,
+            4931,
+            5070,
+            5190,
+            5310,
+            5431,
+            5533,
+            5644,
+            5736,
+            5829,
+            5912,
+            5996,
+            6061,
+            6125,
+            6181,
+            6237,
+            6283,
+            6320,
+            6348,
+            6366,
+            6385,
+            6394,
+            6403,
+            6413,
+            6422,
+            6431,
+            6459,
+            6496,
+            6542,
+            6598,
+            6653,
+            6718,
+            6783,
+            6866,
+            6950,
+            7042,
+            7135,
+            7246,
+            7348,
+            7468,
+            7589,
+            7709,
+            7848,
+            7978,
+            8126,
+            8265,
+            8422,
+            8570,
+            8728,
+            8894,
+            9061,
+            9228,
+            9395,
+            9571,
+            9746,
+            9922,
+            10108,
+            10284,
+            10469,
+            10654,
+            10839,
+            11025,
+            11136,
+            11256,
+            11367,
+            11488,
+            11608,
+            11719,
+            11839,
+            11960,
+            12071,
+            12191,
+            12312,
+            12423,
+            12543,
+            12664,
+            12775,
+            12895,
+            13016,
+            13127,
+            13247,
+            13368
+          ],
+          "bondGrowth": [
+            3000,
+            9125,
+            15250,
+            21375,
+            27500,
+            290000,
+            580000,
+            880500,
+            1190000,
+            1505000,
+            2595000,
+            3825000,
+            5185000,
+            6685000,
+            8325000
+          ],
+          "bondEquip": 9302680,
+          "ascensionMaterials": {
+            "1": {
+              "items": [
                 {
-                  "id": 230,
-                  "name": "強化無効",
-                  "detail": "強化を受けなくなる",
-                  "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_531.png",
-                  "type": "avoidState",
-                  "vals": [{ "id": 3005, "name": "buffNegativeEffect" }],
-                  "tvals": [{ "id": 3004, "name": "buffPositiveEffect" }],
-                  "ckSelfIndv": [],
-                  "ckOpIndv": [{ "id": 3004, "name": "buffPositiveEffect" }],
-                  "maxRate": 0
+                  "item": {
+                    "id": 7002,
+                    "name": "アーチャーピース",
+                    "type": "tdLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7002.png",
+                    "background": "silver"
+                  },
+                  "amount": 4
                 }
               ],
-              "svals": [
-                { "Rate": 1000, "Turn": 3, "Count": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1 }
-              ],
-              "svals2": [
-                { "Rate": 1000, "Turn": 3, "Count": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1 }
-              ],
-              "svals3": [
-                { "Rate": 1000, "Turn": 3, "Count": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1 }
-              ],
-              "svals4": [
-                { "Rate": 1000, "Turn": 3, "Count": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1 }
-              ],
-              "svals5": [
-                { "Rate": 1000, "Turn": 3, "Count": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1 },
-                { "Rate": 1000, "Turn": 3, "Count": 1 }
-              ]
+              "qp": 50000
             },
-            {
-              "funcId": 170,
-              "funcType": "addState",
-              "funcTargetType": "enemy",
-              "funcTargetTeam": "playerAndEnemy",
-              "funcPopupText": "攻撃力ダウン",
-              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_503.png",
-              "functvals": [],
-              "funcquestTvals": [],
-              "buffs": [
+            "2": {
+              "items": [
                 {
-                  "id": 127,
-                  "name": "攻撃力ダウン",
-                  "detail": "攻撃力をダウン",
-                  "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_503.png",
-                  "type": "downAtk",
-                  "vals": [
-                    { "id": 3005, "name": "buffNegativeEffect" },
-                    { "id": 3008, "name": "buffDecreaseDamage" },
-                    { "id": 3033, "name": "buffAtkDown" }
+                  "item": {
+                    "id": 7002,
+                    "name": "アーチャーピース",
+                    "type": "tdLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7002.png",
+                    "background": "silver"
+                  },
+                  "amount": 10
+                },
+                {
+                  "item": {
+                    "id": 6516,
+                    "name": "凶骨",
+                    "type": "skillLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6516.png",
+                    "background": "bronze"
+                  },
+                  "amount": 18
+                }
+              ],
+              "qp": 150000
+            },
+            "3": {
+              "items": [
+                {
+                  "item": {
+                    "id": 7102,
+                    "name": "アーチャーモニュメント",
+                    "type": "tdLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7102.png",
+                    "background": "gold"
+                  },
+                  "amount": 4
+                },
+                {
+                  "item": {
+                    "id": 6505,
+                    "name": "虚影の塵",
+                    "type": "skillLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
+                    "background": "bronze"
+                  },
+                  "amount": 16
+                },
+                {
+                  "item": {
+                    "id": 6529,
+                    "name": "呪獣胆石",
+                    "type": "skillLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6529.png",
+                    "background": "gold"
+                  },
+                  "amount": 2
+                }
+              ],
+              "qp": 500000
+            },
+            "4": {
+              "items": [
+                {
+                  "item": {
+                    "id": 7102,
+                    "name": "アーチャーモニュメント",
+                    "type": "tdLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7102.png",
+                    "background": "gold"
+                  },
+                  "amount": 10
+                },
+                {
+                  "item": {
+                    "id": 6529,
+                    "name": "呪獣胆石",
+                    "type": "skillLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6529.png",
+                    "background": "gold"
+                  },
+                  "amount": 4
+                },
+                {
+                  "item": {
+                    "id": 6520,
+                    "name": "血の涙石",
+                    "type": "skillLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6520.png",
+                    "background": "gold"
+                  },
+                  "amount": 6
+                }
+              ],
+              "qp": 1500000
+            },
+            "5": {
+              "items": [
+                {
+                  "item": {
+                    "id": 7999,
+                    "name": "聖杯",
+                    "type": "tdLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7999.png",
+                    "background": "gold"
+                  },
+                  "amount": 1
+                }
+              ],
+              "qp": 50000000
+            }
+          },
+          "skillMaterials": {
+            "1": {
+              "items": [
+                {
+                  "item": {
+                    "id": 6002,
+                    "name": "弓の輝石",
+                    "type": "skillLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6002.png",
+                    "background": "bronze"
+                  },
+                  "amount": 4
+                }
+              ],
+              "qp": 100000
+            },
+            "2": {
+              "items": [
+                {
+                  "item": {
+                    "id": 6002,
+                    "name": "弓の輝石",
+                    "type": "skillLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6002.png",
+                    "background": "bronze"
+                  },
+                  "amount": 10
+                }
+              ],
+              "qp": 200000
+            },
+            "3": {
+              "items": [
+                {
+                  "item": {
+                    "id": 6102,
+                    "name": "弓の魔石",
+                    "type": "skillLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6102.png",
+                    "background": "silver"
+                  },
+                  "amount": 4
+                }
+              ],
+              "qp": 600000
+            },
+            "4": {
+              "items": [
+                {
+                  "item": {
+                    "id": 6102,
+                    "name": "弓の魔石",
+                    "type": "skillLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6102.png",
+                    "background": "silver"
+                  },
+                  "amount": 10
+                },
+                {
+                  "item": {
+                    "id": 6505,
+                    "name": "虚影の塵",
+                    "type": "skillLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
+                    "background": "bronze"
+                  },
+                  "amount": 8
+                }
+              ],
+              "qp": 800000
+            },
+            "5": {
+              "items": [
+                {
+                  "item": {
+                    "id": 6202,
+                    "name": "弓の秘石",
+                    "type": "skillLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6202.png",
+                    "background": "gold"
+                  },
+                  "amount": 4
+                },
+                {
+                  "item": {
+                    "id": 6505,
+                    "name": "虚影の塵",
+                    "type": "skillLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
+                    "background": "bronze"
+                  },
+                  "amount": 16
+                }
+              ],
+              "qp": 2000000
+            },
+            "6": {
+              "items": [
+                {
+                  "item": {
+                    "id": 6202,
+                    "name": "弓の秘石",
+                    "type": "skillLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6202.png",
+                    "background": "gold"
+                  },
+                  "amount": 10
+                },
+                {
+                  "item": {
+                    "id": 6516,
+                    "name": "凶骨",
+                    "type": "skillLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6516.png",
+                    "background": "bronze"
+                  },
+                  "amount": 12
+                }
+              ],
+              "qp": 2500000
+            },
+            "7": {
+              "items": [
+                {
+                  "item": {
+                    "id": 6516,
+                    "name": "凶骨",
+                    "type": "skillLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6516.png",
+                    "background": "bronze"
+                  },
+                  "amount": 24
+                },
+                {
+                  "item": {
+                    "id": 6533,
+                    "name": "宵哭きの鉄杭",
+                    "type": "skillLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6533.png",
+                    "background": "bronze"
+                  },
+                  "amount": 15
+                }
+              ],
+              "qp": 5000000
+            },
+            "8": {
+              "items": [
+                {
+                  "item": {
+                    "id": 6533,
+                    "name": "宵哭きの鉄杭",
+                    "type": "skillLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6533.png",
+                    "background": "bronze"
+                  },
+                  "amount": 45
+                },
+                {
+                  "item": {
+                    "id": 6530,
+                    "name": "魔術髄液",
+                    "type": "skillLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6530.png",
+                    "background": "bronze"
+                  },
+                  "amount": 60
+                }
+              ],
+              "qp": 6000000
+            },
+            "9": {
+              "items": [
+                {
+                  "item": {
+                    "id": 6999,
+                    "name": "伝承結晶",
+                    "type": "skillLvUp",
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6999.png",
+                    "background": "gold"
+                  },
+                  "amount": 1
+                }
+              ],
+              "qp": 10000000
+            }
+          },
+          "skills": [
+            {
+              "id": 454650,
+              "num": 1,
+              "name": "歪曲の魔眼 EX",
+              "detail": "自身のBusterカード性能をアップ(3ターン)＆防御無視状態を付与(3ターン)＆NP獲得量アップ(3ターン)",
+              "type": "active",
+              "strengthStatus": 0,
+              "priority": 1,
+              "condQuestId": 0,
+              "condQuestPhase": 0,
+              "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00306.png",
+              "coolDown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5],
+              "actIndividuality": [],
+              "script": {},
+              "functions": [
+                {
+                  "funcId": 119,
+                  "funcType": "addStateShort",
+                  "funcTargetType": "self",
+                  "funcTargetTeam": "playerAndEnemy",
+                  "funcPopupText": "バスターアップ",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "buffs": [
+                    {
+                      "id": 102,
+                      "name": "Busterアップ",
+                      "detail": "Busterカードの性能をアップ",
+                      "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
+                      "type": "upCommandall",
+                      "vals": [
+                        { "id": 3004, "name": "buffPositiveEffect" },
+                        { "id": 3006, "name": "buffIncreaseDamage" }
+                      ],
+                      "tvals": [
+                        { "id": 5000, "name": "canBeInBattle" },
+                        { "id": 4002, "name": "cardBuster" }
+                      ],
+                      "ckSelfIndv": [{ "id": 4002, "name": "cardBuster" }],
+                      "ckOpIndv": [],
+                      "maxRate": 5000
+                    }
                   ],
-                  "tvals": [],
-                  "ckSelfIndv": [],
-                  "ckOpIndv": [],
-                  "maxRate": 5000
+                  "svals": [
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 215 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 230 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 245 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 260 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 275 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 290 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 305 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 320 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 350 }
+                  ]
+                },
+                {
+                  "funcId": 1588,
+                  "funcType": "addStateShort",
+                  "funcTargetType": "self",
+                  "funcTargetTeam": "playerAndEnemy",
+                  "funcPopupText": "防御無視",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_351.png",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "buffs": [
+                    {
+                      "id": 510,
+                      "name": "防御無視",
+                      "detail": "防御力アップを無視してダメージを与える",
+                      "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_351.png",
+                      "type": "pierceDefence",
+                      "vals": [
+                        { "id": 3004, "name": "buffPositiveEffect" },
+                        { "id": 3006, "name": "buffIncreaseDamage" }
+                      ],
+                      "tvals": [],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [],
+                      "maxRate": 0
+                    }
+                  ],
+                  "svals": [
+                    { "Rate": 1000, "Turn": 3, "Count": -1 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1 }
+                  ]
+                },
+                {
+                  "funcId": 337,
+                  "funcType": "addStateShort",
+                  "funcTargetType": "self",
+                  "funcTargetTeam": "player",
+                  "funcPopupText": "NP獲得アップ",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_303.png",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "buffs": [
+                    {
+                      "id": 140,
+                      "name": "NP獲得アップ",
+                      "detail": "NP獲得量をアップ",
+                      "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_303.png",
+                      "type": "upDropnp",
+                      "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+                      "tvals": [],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [],
+                      "maxRate": 5000
+                    }
+                  ],
+                  "svals": [
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 210 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 220 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 230 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 240 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 260 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 270 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 280 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 }
+                  ]
+                },
+                {
+                  "funcId": 470,
+                  "funcType": "hastenNpturn",
+                  "funcTargetType": "self",
+                  "funcTargetTeam": "enemy",
+                  "funcPopupText": "チャージ増加",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "buffs": [],
+                  "svals": [
+                    { "Rate": 600, "Value": 1 },
+                    { "Rate": 600, "Value": 1 },
+                    { "Rate": 600, "Value": 1 },
+                    { "Rate": 600, "Value": 1 },
+                    { "Rate": 600, "Value": 1 },
+                    { "Rate": 600, "Value": 1 },
+                    { "Rate": 600, "Value": 1 },
+                    { "Rate": 600, "Value": 1 },
+                    { "Rate": 600, "Value": 1 },
+                    { "Rate": 600, "Value": 1 }
+                  ]
                 }
+              ]
+            },
+            {
+              "id": 455350,
+              "num": 2,
+              "name": "千里眼（闇） C",
+              "detail": "自身に必中状態を付与(3ターン)＆スター獲得",
+              "type": "active",
+              "strengthStatus": 0,
+              "priority": 1,
+              "condQuestId": 0,
+              "condQuestPhase": 0,
+              "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00310.png",
+              "coolDown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5],
+              "actIndividuality": [],
+              "script": {},
+              "functions": [
+                {
+                  "funcId": 288,
+                  "funcType": "addState",
+                  "funcTargetType": "self",
+                  "funcTargetTeam": "playerAndEnemy",
+                  "funcPopupText": "必中",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_309.png",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "buffs": [
+                    {
+                      "id": 154,
+                      "name": "必中",
+                      "detail": "回避を無視して、攻撃によるダメージを与える",
+                      "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_309.png",
+                      "type": "breakAvoidance",
+                      "vals": [
+                        { "id": 3004, "name": "buffPositiveEffect" },
+                        { "id": 3019, "name": "buffSureHit" },
+                        { "id": 3006, "name": "buffIncreaseDamage" }
+                      ],
+                      "tvals": [],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [],
+                      "maxRate": 0
+                    }
+                  ],
+                  "svals": [
+                    { "Rate": 1000, "Turn": 3, "Count": -1 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1 }
+                  ]
+                },
+                {
+                  "funcId": 476,
+                  "funcType": "gainStar",
+                  "funcTargetType": "self",
+                  "funcTargetTeam": "player",
+                  "funcPopupText": "スター獲得",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "buffs": [],
+                  "svals": [
+                    { "Rate": 1000, "Value": 5 },
+                    { "Rate": 1000, "Value": 6 },
+                    { "Rate": 1000, "Value": 7 },
+                    { "Rate": 1000, "Value": 8 },
+                    { "Rate": 1000, "Value": 9 },
+                    { "Rate": 1000, "Value": 10 },
+                    { "Rate": 1000, "Value": 11 },
+                    { "Rate": 1000, "Value": 12 },
+                    { "Rate": 1000, "Value": 13 },
+                    { "Rate": 1000, "Value": 15 }
+                  ]
+                },
+                {
+                  "funcId": 215,
+                  "funcType": "addStateShort",
+                  "funcTargetType": "self",
+                  "funcTargetTeam": "enemy",
+                  "funcPopupText": "クリティカル発生アップ",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "buffs": [
+                    {
+                      "id": 144,
+                      "name": "クリティカル発生アップ",
+                      "detail": "クリティカルの発生率をアップ",
+                      "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
+                      "type": "upCriticalrate",
+                      "vals": [
+                        { "id": 3004, "name": "buffPositiveEffect" },
+                        { "id": 3006, "name": "buffIncreaseDamage" },
+                        { "id": 3032, "name": "buffCritRateUp" }
+                      ],
+                      "tvals": [],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [],
+                      "maxRate": 5000
+                    }
+                  ],
+                  "svals": [
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 456550,
+              "num": 3,
+              "name": "痛覚残留 A",
+              "detail": "自身に最大HPが2000減る状態を付与(3ターン)【デメリット】＆被ダメージカット状態を付与(3ターン)＆ガッツ状態を付与(1回・3ターン)",
+              "type": "active",
+              "strengthStatus": 0,
+              "priority": 1,
+              "condQuestId": 0,
+              "condQuestPhase": 0,
+              "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00400.png",
+              "coolDown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5],
+              "actIndividuality": [],
+              "script": {},
+              "functions": [
+                {
+                  "funcId": 595,
+                  "funcType": "addState",
+                  "funcTargetType": "self",
+                  "funcTargetTeam": "playerAndEnemy",
+                  "funcPopupText": "最大HPマイナス",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_522.png",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "buffs": [
+                    {
+                      "id": 202,
+                      "name": "最大HPマイナス",
+                      "detail": "最大HPを減らす",
+                      "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_522.png",
+                      "type": "subMaxhp",
+                      "vals": [
+                        { "id": 3005, "name": "buffNegativeEffect" },
+                        { "id": 3044, "name": "buffMaxHpDown" }
+                      ],
+                      "tvals": [],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [],
+                      "maxRate": 50000
+                    }
+                  ],
+                  "svals": [
+                    { "Rate": 5000, "Turn": 3, "Count": -1, "Value": 2000 },
+                    { "Rate": 5000, "Turn": 3, "Count": -1, "Value": 2000 },
+                    { "Rate": 5000, "Turn": 3, "Count": -1, "Value": 2000 },
+                    { "Rate": 5000, "Turn": 3, "Count": -1, "Value": 2000 },
+                    { "Rate": 5000, "Turn": 3, "Count": -1, "Value": 2000 },
+                    { "Rate": 5000, "Turn": 3, "Count": -1, "Value": 2000 },
+                    { "Rate": 5000, "Turn": 3, "Count": -1, "Value": 2000 },
+                    { "Rate": 5000, "Turn": 3, "Count": -1, "Value": 2000 },
+                    { "Rate": 5000, "Turn": 3, "Count": -1, "Value": 2000 },
+                    { "Rate": 5000, "Turn": 3, "Count": -1, "Value": 2000 }
+                  ]
+                },
+                {
+                  "funcId": 276,
+                  "funcType": "addState",
+                  "funcTargetType": "self",
+                  "funcTargetTeam": "playerAndEnemy",
+                  "funcPopupText": "ダメージカット",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "buffs": [
+                    {
+                      "id": 149,
+                      "name": "ダメージカット",
+                      "detail": "被ダメージを減らす",
+                      "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
+                      "type": "subSelfdamage",
+                      "vals": [
+                        { "id": 3004, "name": "buffPositiveEffect" },
+                        { "id": 3007, "name": "buffIncreaseDefence" },
+                        { "id": 3040, "name": "buffDefenceUp" }
+                      ],
+                      "tvals": [],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [],
+                      "maxRate": 0
+                    }
+                  ],
+                  "svals": [
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 1000 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 1100 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 1200 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 1300 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 1400 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 1500 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 1600 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 1700 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 1800 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 2000 }
+                  ]
+                },
+                {
+                  "funcId": 292,
+                  "funcType": "addState",
+                  "funcTargetType": "self",
+                  "funcTargetTeam": "playerAndEnemy",
+                  "funcPopupText": "ガッツ",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_304.png",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "buffs": [
+                    {
+                      "id": 180,
+                      "name": "ガッツ",
+                      "detail": "HPが0になった時、HPを回復して耐える",
+                      "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_304.png",
+                      "type": "guts",
+                      "vals": [
+                        { "id": 3004, "name": "buffPositiveEffect" },
+                        { "id": 3024, "name": "buffGuts" }
+                      ],
+                      "tvals": [],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [],
+                      "maxRate": 0
+                    }
+                  ],
+                  "svals": [
+                    { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 1 }
+                  ]
+                }
+              ]
+            }
+          ],
+          "classPassive": [
+            {
+              "id": 34250,
+              "name": "対魔力 D",
+              "detail": "自身の弱体耐性を少しアップ",
+              "type": "passive",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00100.png",
+              "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+              "actIndividuality": [],
+              "script": {},
+              "functions": [
+                {
+                  "funcId": 388,
+                  "funcType": "addState",
+                  "funcTargetType": "self",
+                  "funcTargetTeam": "playerAndEnemy",
+                  "funcPopupText": "弱体耐性アップ",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_306.png",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "buffs": [
+                    {
+                      "id": 162,
+                      "name": "弱体耐性アップ",
+                      "detail": "弱体耐性をアップ",
+                      "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_306.png",
+                      "type": "upTolerance",
+                      "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+                      "tvals": [{ "id": 3005, "name": "buffNegativeEffect" }],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [
+                        { "id": 3005, "name": "buffNegativeEffect" }
+                      ],
+                      "maxRate": 5000
+                    }
+                  ],
+                  "svals": [
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 125 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 125 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 125 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 125 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 125 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 125 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 125 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 125 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 125 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 125 }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 20551,
+              "name": "単独行動 A+",
+              "detail": "自身のクリティカル威力をアップ",
+              "type": "passive",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00101.png",
+              "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+              "actIndividuality": [],
+              "script": {},
+              "functions": [
+                {
+                  "funcId": 199,
+                  "funcType": "addStateShort",
+                  "funcTargetType": "self",
+                  "funcTargetTeam": "playerAndEnemy",
+                  "funcPopupText": "クリティカル威力アップ",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "buffs": [
+                    {
+                      "id": 142,
+                      "name": "クリティカル威力アップ",
+                      "detail": "クリティカル時のダメージをアップ",
+                      "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
+                      "type": "upCriticaldamage",
+                      "vals": [
+                        { "id": 3004, "name": "buffPositiveEffect" },
+                        { "id": 3006, "name": "buffIncreaseDamage" },
+                        { "id": 3031, "name": "buffCritDamageUp" }
+                      ],
+                      "tvals": [],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [],
+                      "maxRate": 5000
+                    }
+                  ],
+                  "svals": [
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 110 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 110 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 110 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 110 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 110 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 110 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 110 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 110 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 110 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 110 }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 83450,
+              "name": "陣地作成 B",
+              "detail": "自身のArtsカードの性能をアップ",
+              "type": "passive",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00104.png",
+              "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+              "actIndividuality": [],
+              "script": {},
+              "functions": [
+                {
+                  "funcId": 109,
+                  "funcType": "addStateShort",
+                  "funcTargetType": "self",
+                  "funcTargetTeam": "playerAndEnemy",
+                  "funcPopupText": "アーツアップ",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_313.png",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "buffs": [
+                    {
+                      "id": 101,
+                      "name": "Artsアップ",
+                      "detail": "Artsカードの性能をアップ",
+                      "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_313.png",
+                      "type": "upCommandall",
+                      "vals": [
+                        { "id": 3004, "name": "buffPositiveEffect" },
+                        { "id": 3006, "name": "buffIncreaseDamage" }
+                      ],
+                      "tvals": [
+                        { "id": 5000, "name": "canBeInBattle" },
+                        { "id": 4001, "name": "cardArts" }
+                      ],
+                      "ckSelfIndv": [{ "id": 4001, "name": "cardArts" }],
+                      "ckOpIndv": [],
+                      "maxRate": 5000
+                    }
+                  ],
+                  "svals": [
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
+                    { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 }
+                  ]
+                }
+              ]
+            }
+          ],
+          "noblePhantasms": [
+            {
+              "id": 202901,
+              "num": 1,
+              "card": "buster",
+              "name": "唯識・歪曲の魔眼",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/202900/card_servant_np.png",
+              "rank": "EX",
+              "type": "対界宝具",
+              "detail": "敵単体に超強力な攻撃＆強化無効状態を付与(1回・3ターン)＆攻撃力をダウン(3ターン)<オーバーチャージで効果アップ>",
+              "npGain": {
+                "buster": [59, 59, 59, 59, 59],
+                "arts": [59, 59, 59, 59, 59],
+                "quick": [59, 59, 59, 59, 59],
+                "extra": [59, 59, 59, 59, 59],
+                "defence": [300, 300, 300, 300, 300],
+                "np": [59, 59, 59, 59, 59]
+              },
+              "npDistribution": [16, 33, 51],
+              "strengthStatus": 0,
+              "priority": 101,
+              "condQuestId": 0,
+              "condQuestPhase": 0,
+              "individuality": [
+                { "id": 3002, "name": "normalAttack2" },
+                { "id": 4002, "name": "cardBuster" },
+                { "id": 4007, "name": "cardNP" }
               ],
-              "svals": [
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 }
-              ],
-              "svals2": [
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 150 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 150 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 150 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 150 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 150 }
-              ],
-              "svals3": [
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
-              ],
-              "svals4": [
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 }
-              ],
-              "svals5": [
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
-                { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 }
+              "functions": [
+                {
+                  "funcId": 12,
+                  "funcType": "damageNp",
+                  "funcTargetType": "enemy",
+                  "funcTargetTeam": "playerAndEnemy",
+                  "funcPopupText": "なし",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "buffs": [],
+                  "svals": [
+                    { "Rate": 1000, "Value": 6000 },
+                    { "Rate": 1000, "Value": 8000 },
+                    { "Rate": 1000, "Value": 9000 },
+                    { "Rate": 1000, "Value": 9500 },
+                    { "Rate": 1000, "Value": 10000 }
+                  ],
+                  "svals2": [
+                    { "Rate": 1000, "Value": 6000 },
+                    { "Rate": 1000, "Value": 8000 },
+                    { "Rate": 1000, "Value": 9000 },
+                    { "Rate": 1000, "Value": 9500 },
+                    { "Rate": 1000, "Value": 10000 }
+                  ],
+                  "svals3": [
+                    { "Rate": 1000, "Value": 6000 },
+                    { "Rate": 1000, "Value": 8000 },
+                    { "Rate": 1000, "Value": 9000 },
+                    { "Rate": 1000, "Value": 9500 },
+                    { "Rate": 1000, "Value": 10000 }
+                  ],
+                  "svals4": [
+                    { "Rate": 1000, "Value": 6000 },
+                    { "Rate": 1000, "Value": 8000 },
+                    { "Rate": 1000, "Value": 9000 },
+                    { "Rate": 1000, "Value": 9500 },
+                    { "Rate": 1000, "Value": 10000 }
+                  ],
+                  "svals5": [
+                    { "Rate": 1000, "Value": 6000 },
+                    { "Rate": 1000, "Value": 8000 },
+                    { "Rate": 1000, "Value": 9000 },
+                    { "Rate": 1000, "Value": 9500 },
+                    { "Rate": 1000, "Value": 10000 }
+                  ]
+                },
+                {
+                  "funcId": 778,
+                  "funcType": "addState",
+                  "funcTargetType": "enemy",
+                  "funcTargetTeam": "playerAndEnemy",
+                  "funcPopupText": "強化無効",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_531.png",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "buffs": [
+                    {
+                      "id": 230,
+                      "name": "強化無効",
+                      "detail": "強化を受けなくなる",
+                      "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_531.png",
+                      "type": "avoidState",
+                      "vals": [{ "id": 3005, "name": "buffNegativeEffect" }],
+                      "tvals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [
+                        { "id": 3004, "name": "buffPositiveEffect" }
+                      ],
+                      "maxRate": 0
+                    }
+                  ],
+                  "svals": [
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 }
+                  ],
+                  "svals2": [
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 }
+                  ],
+                  "svals3": [
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 }
+                  ],
+                  "svals4": [
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 }
+                  ],
+                  "svals5": [
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 }
+                  ]
+                },
+                {
+                  "funcId": 170,
+                  "funcType": "addState",
+                  "funcTargetType": "enemy",
+                  "funcTargetTeam": "playerAndEnemy",
+                  "funcPopupText": "攻撃力ダウン",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_503.png",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "buffs": [
+                    {
+                      "id": 127,
+                      "name": "攻撃力ダウン",
+                      "detail": "攻撃力をダウン",
+                      "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_503.png",
+                      "type": "downAtk",
+                      "vals": [
+                        { "id": 3005, "name": "buffNegativeEffect" },
+                        { "id": 3008, "name": "buffDecreaseDamage" },
+                        { "id": 3033, "name": "buffAtkDown" }
+                      ],
+                      "tvals": [],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [],
+                      "maxRate": 5000
+                    }
+                  ],
+                  "svals": [
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 }
+                  ],
+                  "svals2": [
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 150 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 150 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 150 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 150 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 150 }
+                  ],
+                  "svals3": [
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+                  ],
+                  "svals4": [
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 }
+                  ],
+                  "svals5": [
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 }
+                  ]
+                }
               ]
             }
           ]
         }
       ]
     }
-  ]
+  }
 }

@@ -133,7 +133,8 @@ class TestServantSpecial:
     def test_skill_reverse_passive(self) -> None:
         response = client.get("/raw/NA/skill/320650?reverse=True")
         reverse_servants = {
-            item["mstSvt"]["id"] for item in response.json()["reverseServants"]
+            item["mstSvt"]["id"]
+            for item in response.json()["reverse"]["raw"]["servant"]
         }
         assert response.status_code == 200
         assert reverse_servants == {500800}
@@ -141,7 +142,8 @@ class TestServantSpecial:
     def test_skill_reverse_CC(self) -> None:
         response = client.get("/raw/JP/skill/991970?reverse=True")
         reverse_ccs = {
-            item["mstCommandCode"]["id"] for item in response.json()["reverseCC"]
+            item["mstCommandCode"]["id"]
+            for item in response.json()["reverse"]["raw"]["CC"]
         }
         assert response.status_code == 200
         assert reverse_ccs == {8400500}
@@ -149,16 +151,21 @@ class TestServantSpecial:
     def test_buff_reverse_skillNp(self) -> None:
         response = client.get("/raw/NA/buff/202?reverse=True&reverseDepth=skillNp")
         assert response.status_code == 200
-        assert response.json()["reverseFunctions"][0]["reverseSkills"]
+        assert response.json()["reverse"]["raw"]["function"][0]["reverse"]["raw"][
+            "skill"
+        ]
 
     def test_function_reverse_servant(self) -> None:
         response = client.get("/raw/NA/function/3410?reverse=True&reverseDepth=servant")
         assert response.status_code == 200
-        assert response.json()["reverseSkills"][0]["reverseServants"]
+        assert response.json()["reverse"]["raw"]["skill"][0]["reverse"]["raw"][
+            "servant"
+        ]
 
     def test_buff_reverse_function_vals_actual_buff(self) -> None:
         response = client.get("/raw/NA/buff/101?reverse=True")
         assert response.status_code == 200
         assert {
-            item["mstFunc"]["funcType"] for item in response.json()["reverseFunctions"]
+            item["mstFunc"]["funcType"]
+            for item in response.json()["reverse"]["raw"]["function"]
         }.isdisjoint(FUNC_VALS_NOT_BUFF)

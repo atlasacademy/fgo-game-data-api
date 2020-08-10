@@ -9,33 +9,37 @@
   "ckSelfIndv": [],
   "ckOpIndv": [],
   "maxRate": 10000,
-  "reverseFunctions": [
-    {
-      "funcId": 922,
-      "funcType": "addState",
-      "funcTargetType": "enemyFull",
-      "funcTargetTeam": "player",
-      "funcPopupText": "Will to Fight EX",
-      "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_302.png",
-      "functvals": [],
-      "funcquestTvals": [
-        { "id": 94000046, "name": "unknown" },
-        { "id": 94000045, "name": "unknown" }
-      ],
-      "buffs": [
+  "reverse": {
+    "nice": {
+      "function": [
         {
-          "id": 267,
-          "name": "Will to Fight EX",
-          "detail": "Increase damage dealt in Raids by 120%",
-          "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_302.png",
-          "type": "upDamage",
-          "vals": [],
-          "tvals": [],
-          "ckSelfIndv": [],
-          "ckOpIndv": [],
-          "maxRate": 10000
+          "funcId": 922,
+          "funcType": "addState",
+          "funcTargetType": "enemyFull",
+          "funcTargetTeam": "player",
+          "funcPopupText": "Will to Fight EX",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_302.png",
+          "functvals": [],
+          "funcquestTvals": [
+            { "id": 94000046, "name": "unknown" },
+            { "id": 94000045, "name": "unknown" }
+          ],
+          "buffs": [
+            {
+              "id": 267,
+              "name": "Will to Fight EX",
+              "detail": "Increase damage dealt in Raids by 120%",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_302.png",
+              "type": "upDamage",
+              "vals": [],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 10000
+            }
+          ]
         }
       ]
     }
-  ]
+  }
 }

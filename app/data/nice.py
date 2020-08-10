@@ -45,6 +45,7 @@ from .raw import (
     get_td_entity_no_reverse,
     passive_to_svtId,
     skill_to_CCId,
+    skill_to_MCId,
 )
 from .schemas.nice import (
     AssetURL,
@@ -53,6 +54,12 @@ from .schemas.nice import (
     NiceCommandCode,
     NiceEquip,
     NiceMysticCode,
+    NiceReversedBuff,
+    NiceReversedBuffType,
+    NiceReversedFunction,
+    NiceReversedFunctionType,
+    NiceReversedSkillTd,
+    NiceReversedSkillTdType,
     NiceServant,
     NiceSkillReverse,
     NiceTdReverse,
@@ -692,10 +699,13 @@ def get_nice_buff_alone(
     raw_data = get_buff_entity_no_reverse(region, buff_id)
     nice_data = NiceBuffReverse.parse_obj(get_nice_buff(raw_data, region))
     if reverse and reverseDepth >= ReverseDepth.function:
-        nice_data.reverseFunctions = [
-            get_nice_func_alone(region, func_id, lang, reverse, reverseDepth)
-            for func_id in buff_to_func(region, buff_id)
-        ]
+        buff_reverse = NiceReversedBuff(
+            function=[
+                get_nice_func_alone(region, func_id, lang, reverse, reverseDepth)
+                for func_id in buff_to_func(region, buff_id)
+            ]
+        )
+        nice_data.reverse = NiceReversedBuffType(nice=buff_reverse)
     return nice_data
 
 
@@ -713,14 +723,17 @@ def get_nice_func_alone(
     )
 
     if reverse and reverseDepth >= ReverseDepth.skillNp:
-        nice_data.reverseSkills = [
-            get_nice_skill_alone(region, skill_id, lang, reverse, reverseDepth)
-            for skill_id in func_to_skillId(region, func_id)
-        ]
-        nice_data.reverseTds = [
-            get_nice_td_alone(region, td_id, reverse, reverseDepth)
-            for td_id in func_to_tdId(region, func_id)
-        ]
+        func_reverse = NiceReversedFunction(
+            skill=[
+                get_nice_skill_alone(region, skill_id, lang, reverse, reverseDepth)
+                for skill_id in func_to_skillId(region, func_id)
+            ],
+            NP=[
+                get_nice_td_alone(region, td_id, reverse, reverseDepth)
+                for td_id in func_to_tdId(region, func_id)
+            ],
+        )
+        nice_data.reverse = NiceReversedFunctionType(nice=func_reverse)
     return nice_data
 
 
@@ -744,19 +757,21 @@ def get_nice_skill_alone(
     if reverse and reverseDepth >= ReverseDepth.servant:
         activeSkills = {item.svtId for item in raw_data.mstSvtSkill}
         passiveSkills = passive_to_svtId(region, skill_id)
-        nice_data.reverseServants = [
-            get_nice_servant_model(region, item, lang=lang)
-            for item in activeSkills | passiveSkills
-        ]
-        nice_data.reverseMC = [
-            get_nice_mystic_code(region, item.equipId)
-            for item in masters[region].mstEquipSkill
-            if item.skillId == skill_id
-        ]
-        nice_data.reverseCC = [
-            get_nice_command_code(region, item)
-            for item in skill_to_CCId(region, skill_id)
-        ]
+        skill_reverse = NiceReversedSkillTd(
+            servant=[
+                get_nice_servant_model(region, item, lang=lang)
+                for item in activeSkills | passiveSkills
+            ],
+            MC=[
+                get_nice_mystic_code(region, item)
+                for item in skill_to_MCId(region, skill_id)
+            ],
+            CC=[
+                get_nice_command_code(region, item)
+                for item in skill_to_CCId(region, skill_id)
+            ],
+        )
+        nice_data.reverse = NiceReversedSkillTdType(nice=skill_reverse)
     return nice_data
 
 
@@ -775,10 +790,13 @@ def get_nice_td_alone(
     nice_data = NiceTdReverse.parse_obj(get_nice_td(raw_data, svtId, region))
 
     if reverse and reverseDepth >= ReverseDepth.servant:
-        nice_data.reverseServants = [
-            get_nice_servant_model(region, item.svtId, lang=lang)
-            for item in raw_data.mstSvtTreasureDevice
-        ]
+        td_reverse = NiceReversedSkillTd(
+            servant=[
+                get_nice_servant_model(region, item.svtId, lang=lang)
+                for item in raw_data.mstSvtTreasureDevice
+            ]
+        )
+        nice_data.reverse = NiceReversedSkillTdType(nice=td_reverse)
     return nice_data
 
 

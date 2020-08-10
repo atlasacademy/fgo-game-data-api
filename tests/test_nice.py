@@ -153,7 +153,9 @@ class TestServantSpecial:
 
     def test_skill_reverse_passive(self) -> None:
         response = client.get("/nice/NA/skill/30650?reverse=True")
-        reverse_servants = {item["id"] for item in response.json()["reverseServants"]}
+        reverse_servants = {
+            item["id"] for item in response.json()["reverse"]["nice"]["servant"]
+        }
         assert response.status_code == 200
         assert reverse_servants == {201200, 401800, 601000}
 
@@ -171,14 +173,18 @@ class TestServantSpecial:
     def test_buff_reverse_skillNp(self) -> None:
         response = client.get("/nice/NA/buff/203?reverse=True&reverseDepth=skillNp")
         assert response.status_code == 200
-        assert response.json()["reverseFunctions"][1]["reverseSkills"]
+        assert response.json()["reverse"]["nice"]["function"][1]["reverse"]["nice"][
+            "skill"
+        ]
 
     def test_function_reverse_servant(self) -> None:
         response = client.get(
             "/nice/NA/function/3411?reverse=True&reverseDepth=servant"
         )
         assert response.status_code == 200
-        assert response.json()["reverseSkills"][0]["reverseServants"]
+        assert response.json()["reverse"]["nice"]["skill"][0]["reverse"]["nice"][
+            "servant"
+        ]
 
     def test_solomon_cvId(self) -> None:
         response = client.get("/nice/JP/servant/83?lore=true")

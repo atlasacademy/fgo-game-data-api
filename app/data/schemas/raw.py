@@ -569,23 +569,47 @@ class ServantEntity(BaseModelORJson):
     mstSvtComment: List[MstSvtComment] = []
 
 
+class ReversedSkillTd(BaseModelORJson):
+    servant: List[ServantEntity] = []
+    MC: List[MysticCodeEntity] = []
+    CC: List[CommandCodeEntity] = []
+
+
+class ReversedSkillTdType(BaseModelORJson):
+    raw: Optional[ReversedSkillTd] = None
+
+
 class SkillEntity(SkillEntityNoReverse):
-    reverseServants: List[ServantEntity] = []
-    reverseMC: List[MysticCodeEntity] = []
-    reverseCC: List[CommandCodeEntity] = []
+    reverse: Optional[ReversedSkillTdType] = None
 
 
 class TdEntity(TdEntityNoReverse):
-    reverseServants: List[ServantEntity] = []
+    reverse: Optional[ReversedSkillTdType] = None
+
+
+class ReversedFunction(BaseModelORJson):
+    skill: List[SkillEntity] = []
+    NP: List[TdEntity] = []
+
+
+class ReversedFunctionType(BaseModelORJson):
+    raw: Optional[ReversedFunction] = None
 
 
 class FunctionEntity(FunctionEntityNoReverse):
-    reverseSkills: List[SkillEntity] = []
-    reverseTds: List[TdEntity] = []
+    reverse: Optional[ReversedFunctionType] = None
+
+
+class ReversedBuff(BaseModelORJson):
+    function: List[FunctionEntity] = []
+
+
+class ReversedBuffType(BaseModelORJson):
+    raw: Optional[ReversedBuff] = None
 
 
 class BuffEntity(BuffEntityNoReverse):
-    reverseFunctions: List[FunctionEntity] = []
+    reverse: Optional[ReversedBuffType] = None
 
 
 class QuestPhaseEntity(BaseModelORJson):

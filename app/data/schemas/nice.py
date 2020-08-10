@@ -374,23 +374,47 @@ class NiceEquip(BaseModelORJson):
     profile: Optional[NiceLore] = None
 
 
+class NiceReversedSkillTd(BaseModelORJson):
+    servant: List[NiceServant] = []
+    MC: List[NiceMysticCode] = []
+    CC: List[NiceCommandCode] = []
+
+
+class NiceReversedSkillTdType(BaseModelORJson):
+    nice: Optional[NiceReversedSkillTd] = None
+
+
 class NiceSkillReverse(NiceSkill):
-    reverseServants: List[NiceServant] = []
-    reverseMC: List[NiceMysticCode] = []
-    reverseCC: List[NiceCommandCode] = []
+    reverse: Optional[NiceReversedSkillTdType] = None
 
 
 class NiceTdReverse(NiceTd):
-    reverseServants: List[NiceServant] = []
+    reverse: Optional[NiceReversedSkillTdType] = None
+
+
+class NiceReversedFunction(BaseModelORJson):
+    skill: List[NiceSkillReverse] = []
+    NP: List[NiceTdReverse] = []
+
+
+class NiceReversedFunctionType(BaseModelORJson):
+    nice: Optional[NiceReversedFunction] = None
 
 
 class NiceBaseFunctionReverse(NiceBaseFunction):
-    reverseSkills: List[NiceSkillReverse] = []
-    reverseTds: List[NiceTdReverse] = []
+    reverse: Optional[NiceReversedFunctionType] = None
+
+
+class NiceReversedBuff(BaseModelORJson):
+    function: List[NiceBaseFunctionReverse] = []
+
+
+class NiceReversedBuffType(BaseModelORJson):
+    nice: Optional[NiceReversedBuff] = None
 
 
 class NiceBuffReverse(NiceBuff):
-    reverseFunctions: List[NiceBaseFunctionReverse] = []
+    reverse: Optional[NiceReversedBuffType] = None
 
 
 class NiceQuestPhase(BaseModelORJson):
