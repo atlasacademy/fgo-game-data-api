@@ -55,6 +55,7 @@
     { "id": 2040, "name": "divineOrDaemonOrUndead" },
     { "id": 2631, "name": "humanoidServant" },
     { "id": 2654, "name": "livingHuman" },
+    { "id": 2667, "name": "unknown" },
     { "id": 5000, "name": "canBeInBattle" },
     { "id": 304300, "name": "unknown" }
   ],

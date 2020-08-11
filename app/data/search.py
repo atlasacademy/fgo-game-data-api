@@ -86,7 +86,7 @@ def search_servant(search_param: ServantSearchQueryParams) -> List[int]:
         item
         for item in masters[search_param.region].mstSvt
         if item.type in svt_type_ints
-        and item.collectionNo != 0
+        and item.collectionNo != search_param.excludeCollectionNo
         and item.classId in class_ints
         and item.genderType in gender_ints
         and item.attri in attribute_ints
@@ -114,7 +114,7 @@ def search_equip(search_param: EquipSearchQueryParams) -> List[int]:
         item
         for item in masters[search_param.region].mstSvt
         if item.type in svt_type
-        and item.collectionNo != 0
+        and item.collectionNo != search_param.excludeCollectionNo
         and masters[search_param.region].mstSvtLimitId[item.id][0].rarity in rarity
     ]
 

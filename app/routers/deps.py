@@ -38,6 +38,7 @@ class ServantSearchQueryParams:
     region: Region
     hasSearchParams: bool = field(init=False)
     name: Optional[str] = None
+    excludeCollectionNo: int = 0
     type: List[NiceSvtType] = Query(
         [NiceSvtType.normal, NiceSvtType.heroine, NiceSvtType.enemyCollectionDetail]
     )
@@ -64,6 +65,7 @@ class ServantSearchQueryParams:
         Search and return the list of matched servant entities.
 
         - **name**: servant name. Searching JP data using English name works too.
+        - **excludeCollectionNo**: int, defaults to 0. Won't return records with the specified collectionNo.
         - **type**: servant type, defaults to `[normal, heroine, enemyCollectionDetail]`.
         See the NiceSvtType enum for the options. Must not be the only parameter given.
         - **rarity**: Integers 0-6.
@@ -72,6 +74,8 @@ class ServantSearchQueryParams:
         - **gender**: female, male or unknown.
         - **attribute**: human, sky, earth, star or beast.
         - **trait**: an integer or an item in the trait enum. See the traits detail in the Nice Servant response.
+
+        At least one of name, rarity, className, gender, attribute and trait is required for the query.
         """
     )
 
@@ -81,6 +85,7 @@ class EquipSearchQueryParams:
     region: Region
     hasSearchParams: bool = field(init=False)
     name: Optional[str] = None
+    excludeCollectionNo: int = 0
     type: List[NiceSvtType] = Query([NiceSvtType.servantEquip])
     rarity: List[int] = Query(list(range(1, 6)), ge=1, le=5)
 
@@ -91,10 +96,13 @@ class EquipSearchQueryParams:
         """
         Search and return the list of matched equip entities.
 
-        - **name**: in English if you are searching NA data and in Japanese if you are searching JP data
+        - **name**: in English if you are searching NA data and in Japanese if you are searching JP data.
+        - **excludeCollectionNo**: int, defaults to 0. Won't return records with the specified collectionNo.
         - **type**: servant type, defaults to `[servantEquip]`. See the NiceSvtType for the options.
         Must not be the only parameter given.
         - **rarity**: Integers 0-6
+
+        Either name or rarity is required for the query.
         """
     )
 
