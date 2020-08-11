@@ -7,7 +7,7 @@ from git import Repo
 
 from ..config import Settings, logger
 from ..routers.utils import list_string
-from .basic import get_basic_svt
+from .basic import get_basic_cc, get_basic_mc, get_basic_svt
 from .common import Language, Region
 from .enums import TRAIT_NAME
 from .gamedata import masters, region_path, update_gamedata
@@ -94,6 +94,13 @@ def generate_exports() -> None:  # pragma: no cover
                     for item_id in masters[region].mstSvtEquipCollectionNo.values()
                 ]
             )
+            all_basic_mc_data = [
+                get_basic_mc(region, item_id) for item_id in masters[region].mstEquipId
+            ]
+            all_basic_cc_data = [
+                get_basic_cc(region, item_id)
+                for item_id in masters[region].mstCommandCodeId
+            ]
 
             output_files = {
                 "nice_trait": TRAIT_NAME,
@@ -104,6 +111,8 @@ def generate_exports() -> None:  # pragma: no cover
                 "nice_mystic_code": all_mc_data,
                 "basic_servant": all_basic_servant_data,
                 "basic_equip": all_basic_equip_data,
+                "basic_mystic_code": all_basic_mc_data,
+                "basic_command_code": all_basic_cc_data,
             }
 
             for file_name, data in output_files.items():

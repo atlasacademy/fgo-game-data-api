@@ -3,16 +3,16 @@ from typing import Any, Dict, List, Optional, Union
 from fastapi import APIRouter, Depends, HTTPException, Response
 
 from ..config import Settings
-from ..data import search, basic
+from ..data import basic, search
 from ..data.common import Language, Region, ReverseDepth
 from ..data.gamedata import masters
 from ..data.schemas.basic import (
-    BasicEquip,
-    BasicServant,
     BasicBuffReverse,
     BasicCommandCode,
+    BasicEquip,
     BasicFunctionReverse,
     BasicMysticCode,
+    BasicServant,
     BasicSkillReverse,
     BasicTdReverse,
 )
@@ -160,15 +160,15 @@ async def get_equip(region: Region, item_id: int) -> Dict[str, Any]:
 
 
 get_mc_description = "Get basic Mystic Code info from ID"
-# pre_processed_mc_links = """
+pre_processed_mc_links = """
 
-# Preprocessed data:
-# - [NA Mystic Code](/export/NA/nice_mystic_code.json)
-# - [JP Mystic Code](/export/JP/nice_mystic_code.json)
-# """
+Preprocessed data:
+- [NA Mystic Code](/export/NA/basic_mystic_code.json)
+- [JP Mystic Code](/export/JP/basic_mystic_code.json)
+"""
 
-# if settings.documentation_all_nice:
-#     get_mc_description += pre_processed_mc_links
+if settings.documentation_all_nice:
+    get_mc_description += pre_processed_mc_links
 
 
 @router.get(
@@ -188,15 +188,15 @@ async def get_mystic_code(region: Region, item_id: int) -> Response:
 
 
 get_cc_description = "Get basic Command Code info from ID"
-# pre_processed_cc_links = """
+pre_processed_cc_links = """
 
-# Preprocessed data:
-# - [NA Command Code](/export/NA/nice_command_code.json)
-# - [JP Command Code](/export/JP/nice_command_code.json)
-# """
+Preprocessed data:
+- [NA Command Code](/export/NA/basic_command_code.json)
+- [JP Command Code](/export/JP/basic_command_code.json)
+"""
 
-# if settings.documentation_all_nice:
-#     get_cc_description += pre_processed_cc_links
+if settings.documentation_all_nice:
+    get_cc_description += pre_processed_cc_links
 
 
 @router.get(
