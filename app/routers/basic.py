@@ -159,6 +159,29 @@ async def get_equip(region: Region, item_id: int) -> Dict[str, Any]:
         raise HTTPException(status_code=404, detail="Equip not found")
 
 
+@router.get(
+    "/{region}/svt/{item_id}",
+    summary="Get svt data",
+    response_description="Servant Entity",
+    response_model=BasicServant,
+    response_model_exclude_unset=True,
+    responses=responses,
+)
+async def get_svt(
+    region: Region, item_id: int, lang: Language = Depends(language_parameter),
+) -> Response:
+    """
+    Get svt info from ID
+
+    Only use actual IDs for lookup. Does not convert from collectionNo.
+    The endpoint is not limited to servants or equips ids.
+    """
+    if item_id in masters[region].mstSvtId:
+        return item_response(basic.get_basic_servant(region, item_id, lang))
+    else:
+        raise HTTPException(status_code=404, detail="Svt not found")
+
+
 get_mc_description = "Get basic Mystic Code info from ID"
 pre_processed_mc_links = """
 

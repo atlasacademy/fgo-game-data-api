@@ -15,6 +15,7 @@ test_cases_dict = {
     "servant_JP_collectionNo": ("JP/servant/256", "JP_Gareth"),
     "servant_JP_id": ("JP/servant/303900", "JP_Gareth"),
     "servant_JP_lang_en": ("JP/servant/208?lang=en", "JP_Sieg_en"),
+    "svt_JP_lang_en": ("JP/svt/503800?lang=en", "JP_Sieg_en"),
     "equip_JP_collectionNo": ("JP/equip/467", "JP_Bitter_Chocolates"),
     "equip_JP_id": ("JP/equip/9805370", "JP_Bitter_Chocolates"),
     "skill_NA_id": ("NA/skill/455350", "NA_Fujino_2nd_skill"),
@@ -43,6 +44,7 @@ def test_basic(query: str, result: str) -> None:
 cases_404_dict = {
     "servant": "500",
     "equip": "3001",
+    "svt": "10098",
     "skill": "25689",
     "NP": "900205",
     "function": "9000",
