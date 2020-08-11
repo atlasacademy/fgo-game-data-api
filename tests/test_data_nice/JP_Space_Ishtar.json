@@ -792,7 +792,7 @@
         },
         {
           "funcId": 4783,
-          "funcType": "addState",
+          "funcType": "addStateShort",
           "funcTargetType": "commandTypeSelfTreasureDevice",
           "funcTargetTeam": "player",
           "funcPopupText": "宝具タイプチェンジ",
