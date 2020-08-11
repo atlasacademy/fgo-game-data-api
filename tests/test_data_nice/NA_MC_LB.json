@@ -101,6 +101,7 @@
               "detail": "Increase ATK",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_300.png",
               "type": "upAtk",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" },
@@ -141,6 +142,7 @@
               "detail": "Increase NP damage",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_310.png",
               "type": "upNpdamage",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" },
@@ -193,6 +195,7 @@
               "detail": "Reduce ATK damage taken to 0",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_305.png",
               "type": "avoidance",
+              "buffGroup": 200,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3018, "name": "buffEvadeAndInvincible" },

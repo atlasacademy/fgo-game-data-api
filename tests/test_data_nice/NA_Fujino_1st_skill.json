@@ -29,6 +29,7 @@
           "detail": "Increase Buster Card effectiveness",
           "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_314.png",
           "type": "upCommandall",
+          "buffGroup": 0,
           "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
           "tvals": [
             { "id": 5000, "name": "canBeInBattle" },
@@ -68,6 +69,7 @@
           "detail": "Ignore DEF Up and deal damage",
           "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_351.png",
           "type": "pierceDefence",
+          "buffGroup": 450,
           "vals": [
             { "id": 3004, "name": "buffPositiveEffect" },
             { "id": 3006, "name": "buffIncreaseDamage" }
@@ -107,6 +109,7 @@
           "detail": "Increase NP amount gained",
           "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_303.png",
           "type": "upDropnp",
+          "buffGroup": 0,
           "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
           "tvals": [],
           "ckSelfIndv": [],

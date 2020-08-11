@@ -88,6 +88,7 @@
           "detail": "攻撃力をダウン",
           "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_503.png",
           "type": "downAtk",
+          "buffGroup": 0,
           "vals": [
             { "id": 3005, "name": "buffNegativeEffect" },
             { "id": 3008, "name": "buffDecreaseDamage" },
@@ -151,6 +152,7 @@
           "detail": "精神異常を受けなくなる",
           "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_322.png",
           "type": "avoidState",
+          "buffGroup": 0,
           "vals": [
             { "id": 3004, "name": "buffPositiveEffect" },
             { "id": 3061, "name": "buffNegativeEffectImmunity" }

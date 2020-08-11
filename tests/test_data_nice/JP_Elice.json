@@ -591,6 +591,7 @@
               "detail": "Artsカードの性能をアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_313.png",
               "type": "upCommandall",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" }
@@ -633,6 +634,7 @@
               "detail": "攻撃によるダメージを0にする",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_305.png",
               "type": "avoidance",
+              "buffGroup": 200,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3018, "name": "buffEvadeAndInvincible" },
@@ -691,6 +693,7 @@
               "detail": "回避を無視して、攻撃によるダメージを与える",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_309.png",
               "type": "breakAvoidance",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3019, "name": "buffSureHit" },
@@ -731,6 +734,7 @@
               "detail": "スターの集まりやすさをアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_325.png",
               "type": "upStarweight",
+              "buffGroup": 0,
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [],
               "ckSelfIndv": [],
@@ -767,6 +771,7 @@
               "detail": "クリティカルの発生率をアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
               "type": "upCriticalrate",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" },
@@ -824,6 +829,7 @@
               "detail": "即死付与率をアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_337.png",
               "type": "upGrantInstantdeath",
+              "buffGroup": 0,
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [],
               "ckSelfIndv": [],
@@ -860,6 +866,7 @@
               "detail": "クリティカル時のダメージをアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
               "type": "upCriticaldamage",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" },
@@ -900,6 +907,7 @@
               "detail": "〔サーヴァント〕に与えるダメージをアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
               "type": "upDamage",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" },
@@ -954,6 +962,7 @@
               "detail": "弱体耐性をアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_306.png",
               "type": "upTolerance",
+              "buffGroup": 0,
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [{ "id": 3005, "name": "buffNegativeEffect" }],
               "ckSelfIndv": [],
@@ -990,6 +999,7 @@
               "detail": "〔死霊〕に対する弱体耐性をアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_306.png",
               "type": "upTolerance",
+              "buffGroup": 0,
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [
                 { "id": 1002, "name": "undead" },
@@ -1044,6 +1054,7 @@
               "detail": "Quickカードの性能をアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_312.png",
               "type": "upCommandall",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" }
@@ -1098,6 +1109,7 @@
               "detail": "クリティカル時のダメージをアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
               "type": "upCriticaldamage",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" },
@@ -1150,6 +1162,7 @@
               "detail": "与えるダメージを増やす",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
               "type": "addDamage",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" },

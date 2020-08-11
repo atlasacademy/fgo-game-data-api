@@ -157,6 +157,7 @@ class NiceBuff(BaseModelORJson):
     detail: str
     icon: Optional[HttpUrl] = None
     type: Union[NiceBuffType, int]
+    buffGroup: int
     vals: List[NiceTrait]
     tvals: List[NiceTrait]
     ckSelfIndv: List[NiceTrait]

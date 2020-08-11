@@ -428,6 +428,7 @@
               "detail": "防御力をアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
               "type": "upDefence",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3007, "name": "buffIncreaseDefence" },
@@ -489,6 +490,7 @@
               "detail": "必中を無視して、攻撃によるダメージを0にする",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_311.png",
               "type": "invincible",
+              "buffGroup": 400,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3018, "name": "buffEvadeAndInvincible" },
@@ -591,6 +593,7 @@
               "detail": "敵からの狙われやすさをアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
               "type": "upHate",
+              "buffGroup": 700,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3023, "name": "buffTargetFocus" }
@@ -630,6 +633,7 @@
               "detail": "NP獲得量をアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_303.png",
               "type": "upDropnp",
+              "buffGroup": 0,
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [],
               "ckSelfIndv": [],
@@ -666,6 +670,7 @@
               "detail": "自身にターゲットを固定する",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
               "type": "upHate",
+              "buffGroup": 700,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3023, "name": "buffTargetFocus" }
@@ -744,6 +749,7 @@
               "detail": "防御力をアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
               "type": "upDefence",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3007, "name": "buffIncreaseDefence" },
@@ -788,6 +794,7 @@
               "detail": "被ダメージを減らす",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
               "type": "subSelfdamage",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3007, "name": "buffIncreaseDefence" },
@@ -845,6 +852,7 @@
               "detail": "敵からの狙われやすさをアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
               "type": "upHate",
+              "buffGroup": 700,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3023, "name": "buffTargetFocus" }
@@ -906,6 +914,7 @@
               "detail": "自身にターゲットを固定する",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
               "type": "upHate",
+              "buffGroup": 700,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3023, "name": "buffTargetFocus" }
@@ -984,6 +993,7 @@
               "detail": "必中を無視して、攻撃によるダメージを0にする",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_311.png",
               "type": "invincible",
+              "buffGroup": 400,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3018, "name": "buffEvadeAndInvincible" },
@@ -1025,6 +1035,7 @@
               "detail": "敵からの狙われやすさをアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
               "type": "upHate",
+              "buffGroup": 700,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3023, "name": "buffTargetFocus" }
@@ -1064,6 +1075,7 @@
               "detail": "自身にターゲットを固定する",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
               "type": "upHate",
+              "buffGroup": 700,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3023, "name": "buffTargetFocus" }
@@ -1142,6 +1154,7 @@
               "detail": "Busterカードの性能をアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
               "type": "upCommandall",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" }
@@ -1184,6 +1197,7 @@
               "detail": "Busterカードのクリティカル時のダメージをアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
               "type": "upCriticaldamage",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" },
@@ -1241,6 +1255,7 @@
               "detail": "敵からの狙われやすさをアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
               "type": "upHate",
+              "buffGroup": 700,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3023, "name": "buffTargetFocus" }
@@ -1302,6 +1317,7 @@
               "detail": "自身にターゲットを固定する",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
               "type": "upHate",
+              "buffGroup": 700,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3023, "name": "buffTargetFocus" }
@@ -1380,6 +1396,7 @@
               "detail": "必中を無視して、攻撃によるダメージを0にする",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_311.png",
               "type": "invincible",
+              "buffGroup": 400,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3018, "name": "buffEvadeAndInvincible" },
@@ -1421,6 +1438,7 @@
               "detail": "敵からの狙われやすさをアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
               "type": "upHate",
+              "buffGroup": 700,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3023, "name": "buffTargetFocus" }
@@ -1460,6 +1478,7 @@
               "detail": "自身にターゲットを固定する",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
               "type": "upHate",
+              "buffGroup": 700,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3023, "name": "buffTargetFocus" }
@@ -1538,6 +1557,7 @@
               "detail": "Busterカードの性能をアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
               "type": "upCommandall",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" }
@@ -1580,6 +1600,7 @@
               "detail": "Busterカードのクリティカル時のダメージをアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
               "type": "upCriticaldamage",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" },
@@ -1637,6 +1658,7 @@
               "detail": "Busterカードの性能をアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
               "type": "upCommandall",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" }
@@ -1739,6 +1761,7 @@
               "detail": "Busterカードのクリティカル時のダメージをアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
               "type": "upCriticaldamage",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" },
@@ -1839,6 +1862,7 @@
               "detail": "防御力アップを無視してダメージを与える",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_351.png",
               "type": "pierceDefence",
+              "buffGroup": 450,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" }
@@ -1895,6 +1919,7 @@
               "detail": "Busterカードの性能をアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
               "type": "upCommandall",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" }
@@ -1997,6 +2022,7 @@
               "detail": "Busterカードのクリティカル時のダメージをアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
               "type": "upCriticaldamage",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" },
@@ -2097,6 +2123,7 @@
               "detail": "防御力アップを無視してダメージを与える",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_351.png",
               "type": "pierceDefence",
+              "buffGroup": 450,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" }
@@ -2150,6 +2177,7 @@
               "detail": "弱体耐性をアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_306.png",
               "type": "upTolerance",
+              "buffGroup": 0,
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [{ "id": 3005, "name": "buffNegativeEffect" }],
               "ckSelfIndv": [],
@@ -2198,6 +2226,7 @@
               "detail": "Quickカードの性能をアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_312.png",
               "type": "upCommandall",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" }
@@ -2301,6 +2330,7 @@
               "detail": "防御力をアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
               "type": "upDefence",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3007, "name": "buffIncreaseDefence" },
@@ -2368,6 +2398,7 @@
               "detail": "被ダメージを減らす",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
               "type": "subSelfdamage",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3007, "name": "buffIncreaseDefence" },
@@ -2461,6 +2492,7 @@
               "detail": "防御力をアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
               "type": "upDefence",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3007, "name": "buffIncreaseDefence" },
@@ -2528,6 +2560,7 @@
               "detail": "被ダメージを減らす",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
               "type": "subSelfdamage",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3007, "name": "buffIncreaseDefence" },
@@ -2591,6 +2624,7 @@
               "detail": "攻撃力をアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_300.png",
               "type": "upAtk",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" },
@@ -2684,6 +2718,7 @@
               "detail": "防御力をアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
               "type": "upDefence",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3007, "name": "buffIncreaseDefence" },
@@ -2751,6 +2786,7 @@
               "detail": "被ダメージを減らす",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
               "type": "subSelfdamage",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3007, "name": "buffIncreaseDefence" },
@@ -2844,6 +2880,7 @@
               "detail": "防御力をアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
               "type": "upDefence",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3007, "name": "buffIncreaseDefence" },
@@ -2911,6 +2948,7 @@
               "detail": "被ダメージを減らす",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
               "type": "subSelfdamage",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3007, "name": "buffIncreaseDefence" },

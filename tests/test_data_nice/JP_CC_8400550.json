@@ -42,6 +42,7 @@
               "detail": "コマンドコードが刻印されたカードで攻撃時、追加効果を発動する",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_333.png",
               "type": "commandattackFunction",
+              "buffGroup": 0,
               "vals": [],
               "tvals": [],
               "ckSelfIndv": [],

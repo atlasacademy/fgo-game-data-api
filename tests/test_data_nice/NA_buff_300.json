@@ -4,6 +4,7 @@
   "detail": "Increase damage taken, NP generate, and C. Star drop rate upon damage from Arts Cards by 50%",
   "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_540.png",
   "type": "downDefencecommandall",
+  "buffGroup": 0,
   "vals": [],
   "tvals": [
     { "id": 5000, "name": "canBeInBattle" },

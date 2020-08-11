@@ -692,6 +692,7 @@
               "detail": "Gain C. Stars at end of each turn",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_320.png",
               "type": "regainStar",
+              "buffGroup": 0,
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [],
               "ckSelfIndv": [],
@@ -728,6 +729,7 @@
               "detail": "Increase Critical Hit rate",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_327.png",
               "type": "upCriticalrate",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" },
@@ -768,6 +770,7 @@
               "detail": "Increase NP damage",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_310.png",
               "type": "upNpdamage",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" },
@@ -825,6 +828,7 @@
               "detail": "Increase Quick Card effectiveness",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_312.png",
               "type": "upCommandall",
+              "buffGroup": 0,
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [
                 { "id": 5000, "name": "canBeInBattle" },
@@ -864,6 +868,7 @@
               "detail": "Increase Arts Card effectiveness",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_313.png",
               "type": "upCommandall",
+              "buffGroup": 0,
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [
                 { "id": 5000, "name": "canBeInBattle" },
@@ -903,6 +908,7 @@
               "detail": "Increase Buster Card effectiveness",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_314.png",
               "type": "upCommandall",
+              "buffGroup": 0,
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [
                 { "id": 5000, "name": "canBeInBattle" },
@@ -956,6 +962,7 @@
               "detail": "Increase Arts Card effectiveness",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_313.png",
               "type": "upCommandall",
+              "buffGroup": 0,
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [
                 { "id": 5000, "name": "canBeInBattle" },
@@ -1007,6 +1014,7 @@
               "detail": "Increase debuff chance rate",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_307.png",
               "type": "upGrantstate",
+              "buffGroup": 0,
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [{ "id": 3005, "name": "buffNegativeEffect" }],
               "ckSelfIndv": [{ "id": 3005, "name": "buffNegativeEffect" }],
@@ -1120,6 +1128,7 @@
               "detail": "Decrease DEF",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_504.png",
               "type": "downDefence",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3005, "name": "buffNegativeEffect" },
                 { "id": 3009, "name": "buffDecreaseDefence" }
@@ -1182,6 +1191,7 @@
               "detail": "Decrease Critical Hit rate",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_523.png",
               "type": "downCriticalrate",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3005, "name": "buffNegativeEffect" },
                 { "id": 3008, "name": "buffDecreaseDamage" },
@@ -1245,6 +1255,7 @@
               "detail": "Decrease C. Star drop rate",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_510.png",
               "type": "downCriticalpoint",
+              "buffGroup": 0,
               "vals": [{ "id": 3005, "name": "buffNegativeEffect" }],
               "tvals": [],
               "ckSelfIndv": [],
@@ -1304,6 +1315,7 @@
               "detail": "Decrease debuff resistance",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_506.png",
               "type": "downTolerance",
+              "buffGroup": 0,
               "vals": [{ "id": 3005, "name": "buffNegativeEffect" }],
               "tvals": [{ "id": 3005, "name": "buffNegativeEffect" }],
               "ckSelfIndv": [],
@@ -1438,6 +1450,7 @@
               "detail": "Decrease DEF",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_504.png",
               "type": "downDefence",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3005, "name": "buffNegativeEffect" },
                 { "id": 3009, "name": "buffDecreaseDefence" }
@@ -1500,6 +1513,7 @@
               "detail": "Decrease Critical Hit rate",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_523.png",
               "type": "downCriticalrate",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3005, "name": "buffNegativeEffect" },
                 { "id": 3008, "name": "buffDecreaseDamage" },
@@ -1563,6 +1577,7 @@
               "detail": "Decrease C. Star drop rate",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_510.png",
               "type": "downCriticalpoint",
+              "buffGroup": 0,
               "vals": [{ "id": 3005, "name": "buffNegativeEffect" }],
               "tvals": [],
               "ckSelfIndv": [],
@@ -1622,6 +1637,7 @@
               "detail": "Decrease debuff resistance",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_506.png",
               "type": "downTolerance",
+              "buffGroup": 0,
               "vals": [{ "id": 3005, "name": "buffNegativeEffect" }],
               "tvals": [{ "id": 3005, "name": "buffNegativeEffect" }],
               "ckSelfIndv": [],

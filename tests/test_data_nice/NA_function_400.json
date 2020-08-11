@@ -14,6 +14,7 @@
       "detail": "Increase Poison resistance",
       "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_306.png",
       "type": "upTolerance",
+      "buffGroup": 0,
       "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
       "tvals": [{ "id": 3011, "name": "buffPoison" }],
       "ckSelfIndv": [],

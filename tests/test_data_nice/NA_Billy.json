@@ -632,6 +632,7 @@
               "detail": "Increase Critical Hit damage",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_324.png",
               "type": "upCriticaldamage",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" },
@@ -750,6 +751,7 @@
               "detail": "Reduce ATK damage taken to 0",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_305.png",
               "type": "avoidance",
+              "buffGroup": 200,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3018, "name": "buffEvadeAndInvincible" },
@@ -791,6 +793,7 @@
               "detail": "Increase Critical Hit damage",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_324.png",
               "type": "upCriticaldamage",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" },
@@ -845,6 +848,7 @@
               "detail": "Increase Critical Hit damage",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_324.png",
               "type": "upCriticaldamage",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" },
@@ -897,6 +901,7 @@
               "detail": "Increase Quick Card effectiveness",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_312.png",
               "type": "upCommandall",
+              "buffGroup": 0,
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [
                 { "id": 5000, "name": "canBeInBattle" },
@@ -968,6 +973,7 @@
               "detail": "Ignore Evade and deal ATK damage",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_309.png",
               "type": "breakAvoidance",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3019, "name": "buffSureHit" },
@@ -1076,6 +1082,7 @@
               "detail": "Decrease Critical Hit rate",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_523.png",
               "type": "downCriticalrate",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3005, "name": "buffNegativeEffect" },
                 { "id": 3008, "name": "buffDecreaseDamage" },
@@ -1139,6 +1146,7 @@
               "detail": "Decrease C. Star drop rate",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_510.png",
               "type": "downCriticalpoint",
+              "buffGroup": 0,
               "vals": [{ "id": 3005, "name": "buffNegativeEffect" }],
               "tvals": [],
               "ckSelfIndv": [],
@@ -1228,6 +1236,7 @@
               "detail": "Ignore Evade and deal ATK damage",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_309.png",
               "type": "breakAvoidance",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3019, "name": "buffSureHit" },
@@ -1336,6 +1345,7 @@
               "detail": "Decrease Critical Hit rate",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_523.png",
               "type": "downCriticalrate",
+              "buffGroup": 0,
               "vals": [
                 { "id": 3005, "name": "buffNegativeEffect" },
                 { "id": 3008, "name": "buffDecreaseDamage" },
@@ -1399,6 +1409,7 @@
               "detail": "Decrease C. Star drop rate",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_510.png",
               "type": "downCriticalpoint",
+              "buffGroup": 0,
               "vals": [{ "id": 3005, "name": "buffNegativeEffect" }],
               "tvals": [],
               "ckSelfIndv": [],
