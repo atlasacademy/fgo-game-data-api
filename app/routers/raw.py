@@ -150,6 +150,32 @@ async def get_equip(
         raise HTTPException(status_code=404, detail="Equip not found")
 
 
+get_svt_description = """
+Get servant info from ID
+
+Only uses actual ID for the lookup.
+"""
+
+
+@router.get(
+    "/{region}/svt/{item_id}",
+    summary="Get servant data",
+    description=get_servant_description + get_svt_description,
+    response_description="Servant Entity",
+    response_model=ServantEntity,
+    response_model_exclude_unset=True,
+    responses=responses,
+)
+async def get_svt(
+    region: Region, item_id: int, expand: bool = False, lore: bool = False
+) -> Response:
+    if item_id in masters[region].mstSvtId:
+        servant_entity = raw.get_servant_entity(region, item_id, expand, lore)
+        return item_response(servant_entity)
+    else:
+        raise HTTPException(status_code=404, detail="Servant not found")
+
+
 @router.get(
     "/{region}/MC/{item_id}",
     summary="Get Mystic Code data",

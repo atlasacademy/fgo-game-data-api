@@ -29,6 +29,7 @@ test_cases_dict = {
         "NA/equip/375?expand=True",
         "NA_Oni_Mask_expanded",
     ),
+    "svt_JP_id": ("NA/svt/9401400", "NA_Gentle_affection"),
     "skill_NA": ("NA/skill/24550", "NA_skill_24550"),
     "skill_NA_reverse": ("NA/skill/446550?reverse=True", "NA_skill_446550_reverse",),
     "skill_NA_expand": ("NA/skill/275551?expand=True", "NA_skill_275551_expand"),
@@ -77,6 +78,7 @@ def test_raw(query: str, result: str) -> None:
 cases_404_dict = {
     "servant": "500",
     "equip": "3001",
+    "svt": "9321362",
     "skill": "25689",
     "NP": "900205",
     "function": "9000",
