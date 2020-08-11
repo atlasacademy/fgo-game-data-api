@@ -1,6 +1,6 @@
 aiofiles==0.5.0
 click==7.1.2
-fastapi==0.60.2
+fastapi==0.61.0
 fuzzywuzzy==0.18.0
 gitdb==4.0.5
 gitpython==3.1.7
