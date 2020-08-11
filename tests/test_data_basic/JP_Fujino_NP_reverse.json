@@ -1,0 +1,19 @@
+{
+  "id": 202901,
+  "name": "唯識・歪曲の魔眼",
+  "reverse": {
+    "basic": {
+      "servant": [
+        {
+          "id": 202900,
+          "collectionNo": 200,
+          "name": "浅上藤乃",
+          "type": "normal",
+          "className": "archer",
+          "rarity": 4,
+          "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_2029000.png"
+        }
+      ]
+    }
+  }
+}

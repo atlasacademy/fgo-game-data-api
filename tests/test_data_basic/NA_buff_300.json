@@ -1,0 +1,8 @@
+{
+  "id": 300,
+  "name": "Weak to Arts",
+  "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_540.png",
+  "type": "downDefencecommandall",
+  "ckSelfIndv": [],
+  "ckOpIndv": [{ "id": 4001, "name": "cardArts" }]
+}

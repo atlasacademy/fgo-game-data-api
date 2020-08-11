@@ -1,0 +1,32 @@
+{
+  "id": 267,
+  "name": "Will to Fight EX",
+  "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_302.png",
+  "type": "upDamage",
+  "ckSelfIndv": [],
+  "ckOpIndv": [],
+  "reverse": {
+    "basic": {
+      "function": [
+        {
+          "funcId": 922,
+          "funcType": "addState",
+          "funcTargetType": "enemyFull",
+          "funcTargetTeam": "player",
+          "functvals": [],
+          "traitVals": [],
+          "buffs": [
+            {
+              "id": 267,
+              "name": "Will to Fight EX",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_302.png",
+              "type": "upDamage",
+              "ckSelfIndv": [],
+              "ckOpIndv": []
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

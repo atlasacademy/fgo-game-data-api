@@ -730,7 +730,7 @@ def get_nice_func_alone(
                 for skill_id in func_to_skillId(region, func_id)
             ],
             NP=[
-                get_nice_td_alone(region, td_id, reverse, reverseDepth)
+                get_nice_td_alone(region, td_id, lang, reverse, reverseDepth)
                 for td_id in func_to_tdId(region, func_id)
             ],
         )

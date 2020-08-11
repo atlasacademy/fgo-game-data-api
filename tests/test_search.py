@@ -67,50 +67,6 @@ test_cases_dict = {
         "NA/servant/search?name=Golden%20Sumo&type=servantEquip&className=ALL",
         {9401640},
     ),
-}
-
-test_cases = [pytest.param(*value, id=key) for key, value in test_cases_dict.items()]
-
-
-test_not_found_dict = {
-    "servant": "NA/servant/search?name=ÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛ",
-    "equip": "NA/equip/search?name=Kaleidoscope&rarity=4",
-}
-
-not_found_cases = [
-    pytest.param(value, id=key) for key, value in test_not_found_dict.items()
-]
-
-
-@pytest.mark.parametrize("response_type", ["basic", "nice", "raw"])
-class TestSearch:
-    @pytest.mark.parametrize("search_query,result", test_cases)
-    def test_search(
-        self, search_query: str, result: Set[int], response_type: str
-    ) -> None:
-        response = client.get(f"/{response_type}/{search_query}")
-        result_ids = get_item_list(response, response_type, search_query)
-        assert response.status_code == 200
-        assert result_ids == result
-
-    @pytest.mark.parametrize("query", not_found_cases)
-    def test_not_found_any(self, response_type: str, query: str) -> None:
-        response = client.get(f"/{response_type}/{query}")
-        assert response.status_code == 200
-        assert response.text == "[]"
-
-    @pytest.mark.parametrize("endpoint", ["servant", "equip"])
-    def test_empty_input(self, response_type: str, endpoint: str) -> None:
-        response = client.get(f"/{response_type}/NA/{endpoint}/search")
-        assert response.status_code == 400
-
-    @pytest.mark.parametrize("endpoint", ["servant", "equip"])
-    def test_only_type_given(self, response_type: str, endpoint: str) -> None:
-        response = client.get(f"/{response_type}/NA/{endpoint}/search?type=all")
-        assert response.status_code == 400
-
-
-test_cases_no_basic_dict = {
     "buff_type_tvals": (
         "NA/buff/search?type=upCommandall&tvals=cardQuick",
         {100, 260, 499, 1084, 1094},
@@ -160,15 +116,22 @@ test_cases_no_basic_dict = {
     ),
 }
 
+test_cases = [pytest.param(*value, id=key) for key, value in test_cases_dict.items()]
 
-test_cases_no_basic = [
-    pytest.param(*value, id=key) for key, value in test_cases_no_basic_dict.items()
+
+test_not_found_dict = {
+    "servant": "NA/servant/search?name=ÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛ",
+    "equip": "NA/equip/search?name=Kaleidoscope&rarity=4",
+}
+
+not_found_cases = [
+    pytest.param(value, id=key) for key, value in test_not_found_dict.items()
 ]
 
 
-@pytest.mark.parametrize("response_type", ["nice", "raw"])
-class TestSearchNoBasic:
-    @pytest.mark.parametrize("search_query,result", test_cases_no_basic)
+@pytest.mark.parametrize("response_type", ["basic", "nice", "raw"])
+class TestSearch:
+    @pytest.mark.parametrize("search_query,result", test_cases)
     def test_search(
         self, search_query: str, result: Set[int], response_type: str
     ) -> None:
@@ -177,7 +140,18 @@ class TestSearchNoBasic:
         assert response.status_code == 200
         assert result_ids == result
 
-    @pytest.mark.parametrize("endpoint", ["buff", "function"])
+    @pytest.mark.parametrize("query", not_found_cases)
+    def test_not_found_any(self, response_type: str, query: str) -> None:
+        response = client.get(f"/{response_type}/{query}")
+        assert response.status_code == 200
+        assert response.text == "[]"
+
+    @pytest.mark.parametrize("endpoint", ["servant", "equip", "buff", "function"])
     def test_empty_input(self, response_type: str, endpoint: str) -> None:
         response = client.get(f"/{response_type}/NA/{endpoint}/search")
+        assert response.status_code == 400
+
+    @pytest.mark.parametrize("endpoint", ["servant", "equip"])
+    def test_only_type_given(self, response_type: str, endpoint: str) -> None:
+        response = client.get(f"/{response_type}/NA/{endpoint}/search?type=all")
         assert response.status_code == 400

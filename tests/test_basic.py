@@ -17,6 +17,16 @@ test_cases_dict = {
     "servant_JP_lang_en": ("JP/servant/208?lang=en", "JP_Sieg_en"),
     "equip_JP_collectionNo": ("JP/equip/467", "JP_Bitter_Chocolates"),
     "equip_JP_id": ("JP/equip/9805370", "JP_Bitter_Chocolates"),
+    "skill_NA_id": ("NA/skill/455350", "NA_Fujino_2nd_skill"),
+    "skill_NA_reverse": ("NA/skill/19450?reverse=True", "NA_Fionn_1st_skill_reverse"),
+    "NP_JP_id": ("JP/NP/301101", "JP_Fionn_NP"),
+    "NP_JP_reverse": ("JP/NP/202901?reverse=True", "JP_Fujino_NP_reverse"),
+    "function_NA_id": ("NA/function/433", "NA_function_433"),
+    "function_JP_reverse": ("NA/function/298?reverse=True", "NA_function_298_reverse"),
+    "buff_NA_id": ("NA/buff/300", "NA_buff_300"),
+    "buff_NA_reverse": ("NA/buff/267?reverse=True", "NA_buff_267_reverse"),
+    "MC_NA_id": ("NA/MC/110", "NA_MC_LB"),
+    "JP_CC_id": ("JP/CC/8400550", "JP_CC_8400550"),
 }
 
 
@@ -30,17 +40,58 @@ def test_basic(query: str, result: str) -> None:
     assert response.json() == get_response_data("test_data_basic", result)
 
 
-class TestServantSpecial:
+cases_404_dict = {
+    "servant": "500",
+    "equip": "3001",
+    "skill": "25689",
+    "NP": "900205",
+    "function": "9000",
+    "buff": "765",
+    "MC": "62537",
+    "CC": "8400111",
+}
+
+
+cases_404 = [pytest.param(key, value, id=key) for key, value in cases_404_dict.items()]
+
+
+@pytest.mark.parametrize("endpoint,item_id", cases_404)
+def test_404_basic(endpoint: str, item_id: str) -> None:
+    response = client.get(f"/basic/JP/{endpoint}/{item_id}")
+    assert response.status_code == 404
+    assert response.json()["detail"][-9:] == "not found"
+
+
+class TestBasicSpecial:
     def test_NA_not_integer(self) -> None:
         response = client.get("/basic/NA/servant/lkji")
         assert response.status_code == 422
 
-    def test_NA_collectionNo_not_found(self) -> None:
-        response = client.get("/basic/NA/servant/500")
-        assert response.status_code == 404
+    def test_skill_reverse_passive(self) -> None:
+        response = client.get("/basic/NA/skill/30650?reverse=True")
+        reverse_servants = {
+            item["id"] for item in response.json()["reverse"]["basic"]["servant"]
+        }
+        assert response.status_code == 200
+        assert reverse_servants == {201200, 401800, 601000}
 
+    def test_JP_English_name(self) -> None:
+        response = client.get("/basic/JP/servant/304300?lang=en")
+        assert response.status_code == 200
+        assert response.json()["name"] == "Elice Utsumi"
 
-class TestEquipSpecial:
-    def test_JP_collectionNo_not_found(self) -> None:
-        response = client.get("/basic/JP/equip/2001")
-        assert response.status_code == 404
+    def test_buff_reverse_skillNp(self) -> None:
+        response = client.get("/basic/NA/buff/203?reverse=True&reverseDepth=skillNp")
+        assert response.status_code == 200
+        assert response.json()["reverse"]["basic"]["function"][1]["reverse"]["basic"][
+            "skill"
+        ]
+
+    def test_function_reverse_servant(self) -> None:
+        response = client.get(
+            "/basic/NA/function/102?reverse=True&reverseDepth=servant"
+        )
+        assert response.status_code == 200
+        assert response.json()["reverse"]["basic"]["skill"][0]["reverse"]["basic"][
+            "servant"
+        ]

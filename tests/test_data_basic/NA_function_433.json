@@ -1,0 +1,9 @@
+{
+  "funcId": 433,
+  "funcType": "subState",
+  "funcTargetType": "enemy",
+  "funcTargetTeam": "playerAndEnemy",
+  "functvals": [],
+  "traitVals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+  "buffs": []
+}
