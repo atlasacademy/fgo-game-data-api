@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, HTTPException, Response
 
 from ..config import Settings
 from ..data import nice, search
-from ..data.common import Language, Region, ReverseDepth
+from ..data.common import Language, Region, ReverseData, ReverseDepth
 from ..data.gamedata import masters
 from ..data.schemas.nice import (
     NiceBaseFunctionReverse,
@@ -308,8 +308,9 @@ async def get_command_code(region: Region, item_id: int) -> Response:
 async def get_skill(
     region: Region,
     item_id: int,
-    reverse: bool = False,
     lang: Language = Depends(language_parameter),
+    reverse: bool = False,
+    reverseData: ReverseData = ReverseData.nice,
 ) -> Response:
     """
     Get the skill data from the given ID
@@ -318,7 +319,11 @@ async def get_skill(
     and return the reverse skill objects.
     """
     if item_id in masters[region].mstSkillId:
-        return item_response(nice.get_nice_skill_alone(region, item_id, lang, reverse))
+        return item_response(
+            nice.get_nice_skill_alone(
+                region, item_id, lang, reverse, reverseData=reverseData
+            )
+        )
     else:
         raise HTTPException(status_code=404, detail="Skill not found")
 
@@ -334,8 +339,9 @@ async def get_skill(
 async def get_td(
     region: Region,
     item_id: int,
-    reverse: bool = False,
     lang: Language = Depends(language_parameter),
+    reverse: bool = False,
+    reverseData: ReverseData = ReverseData.nice,
 ) -> Response:
     """
     Get the NP data from the given ID
@@ -344,7 +350,11 @@ async def get_td(
     and return the reversed servant objects.
     """
     if item_id in masters[region].mstTreasureDeviceId:
-        return item_response(nice.get_nice_td_alone(region, item_id, lang, reverse))
+        return item_response(
+            nice.get_nice_td_alone(
+                region, item_id, lang, reverse, reverseData=reverseData
+            )
+        )
     else:
         raise HTTPException(status_code=404, detail="NP not found")
 
@@ -368,15 +378,16 @@ and return the reversed skill objects.
 )
 async def find_function(
     search_param: FuncSearchQueryParams = Depends(FuncSearchQueryParams),
+    lang: Language = Depends(language_parameter),
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
-    lang: Language = Depends(language_parameter),
+    reverseData: ReverseData = ReverseData.nice,
 ) -> Response:
     if search_param.hasSearchParams:
         matches = search.search_func(search_param)
         entity_list = [
             nice.get_nice_func_alone(
-                search_param.region, item, lang, reverse, reverseDepth
+                search_param.region, item, lang, reverse, reverseDepth, reverseData
             )
             for item in matches
         ]
@@ -398,13 +409,16 @@ async def find_function(
 async def get_function(
     region: Region,
     item_id: int,
+    lang: Language = Depends(language_parameter),
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
-    lang: Language = Depends(language_parameter),
+    reverseData: ReverseData = ReverseData.nice,
 ) -> Response:
     if item_id in masters[region].mstFuncId:
         return item_response(
-            nice.get_nice_func_alone(region, item_id, lang, reverse, reverseDepth)
+            nice.get_nice_func_alone(
+                region, item_id, lang, reverse, reverseDepth, reverseData
+            )
         )
     else:
         raise HTTPException(status_code=404, detail="Function not found")
@@ -429,15 +443,16 @@ and return the reversed function objects.
 )
 async def find_buff(
     search_param: BuffSearchQueryParams = Depends(BuffSearchQueryParams),
+    lang: Language = Depends(language_parameter),
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
-    lang: Language = Depends(language_parameter),
+    reverseData: ReverseData = ReverseData.nice,
 ) -> Response:
     if search_param.hasSearchParams:
         matches = search.search_buff(search_param)
         entity_list = [
             nice.get_nice_buff_alone(
-                search_param.region, item, lang, reverse, reverseDepth
+                search_param.region, item, lang, reverse, reverseDepth, reverseData
             )
             for item in matches
         ]
@@ -458,13 +473,16 @@ async def find_buff(
 async def get_buff(
     region: Region,
     item_id: int,
+    lang: Language = Depends(language_parameter),
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
-    lang: Language = Depends(language_parameter),
+    reverseData: ReverseData = ReverseData.nice,
 ) -> Response:
     if item_id in masters[region].mstBuffId:
         return item_response(
-            nice.get_nice_buff_alone(region, item_id, lang, reverse, reverseDepth)
+            nice.get_nice_buff_alone(
+                region, item_id, lang, reverse, reverseDepth, reverseData
+            )
         )
     else:
         raise HTTPException(status_code=404, detail="Buff not found")

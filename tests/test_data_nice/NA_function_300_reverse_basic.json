@@ -1,0 +1,57 @@
+{
+  "funcId": 300,
+  "funcType": "addState",
+  "funcTargetType": "ptOne",
+  "funcTargetTeam": "player",
+  "funcPopupText": "C. Star\nDrop Rate Up",
+  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_321.png",
+  "functvals": [],
+  "funcquestTvals": [],
+  "buffs": [
+    {
+      "id": 117,
+      "name": "C. Star Drop Rate Up",
+      "detail": "Increase C. Star drop rate",
+      "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_321.png",
+      "type": "upCriticalpoint",
+      "buffGroup": 0,
+      "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+      "tvals": [],
+      "ckSelfIndv": [],
+      "ckOpIndv": [],
+      "maxRate": 5000
+    }
+  ],
+  "reverse": {
+    "basic": {
+      "skill": [
+        {
+          "id": 42900,
+          "name": "Incite EX",
+          "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00303.png"
+        },
+        {
+          "id": 494550,
+          "name": "Crystallized Wisdom A",
+          "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00604.png"
+        },
+        {
+          "id": 231350,
+          "name": "King's Men C",
+          "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00601.png"
+        },
+        {
+          "id": 391550,
+          "name": "Coaching A",
+          "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00609.png"
+        },
+        {
+          "id": 191551,
+          "name": "Concept Improvement A+",
+          "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00313.png"
+        }
+      ],
+      "NP": []
+    }
+  }
+}

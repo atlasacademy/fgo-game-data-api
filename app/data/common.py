@@ -15,6 +15,11 @@ class Language(str, Enum):
     jp = "jp"
 
 
+class ReverseData(str, Enum):
+    basic = "basic"
+    nice = "nice"
+
+
 class ReverseDepth(str, Enum):
     function = "function"
     skillNp = "skillNp"

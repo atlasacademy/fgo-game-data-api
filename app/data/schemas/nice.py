@@ -19,9 +19,10 @@ from ..enums import (
     NiceStatusRank,
     NiceSvtType,
     SvtClass,
-    Trait,
 )
 from .base import BaseModelORJson
+from .basic import BasicReversedBuff, BasicReversedFunction, BasicReversedSkillTd
+from .common import MCAssets, NiceTrait
 
 
 class AssetURL:
@@ -146,11 +147,6 @@ class Vals(BaseVals):
     DependFuncVals: Optional[BaseVals] = None
 
 
-class NiceTrait(BaseModel):
-    id: int
-    name: Trait
-
-
 class NiceBuff(BaseModelORJson):
     id: int
     name: str
@@ -241,11 +237,6 @@ class NiceTd(BaseModelORJson):
     condQuestPhase: int
     individuality: List[NiceTrait]
     functions: List[NiceFunction]
-
-
-class MCAssets(BaseModel):
-    male: HttpUrl
-    female: HttpUrl
 
 
 class ExtraMCAssets(BaseModel):
@@ -383,6 +374,7 @@ class NiceReversedSkillTd(BaseModelORJson):
 
 class NiceReversedSkillTdType(BaseModelORJson):
     nice: Optional[NiceReversedSkillTd] = None
+    basic: Optional[BasicReversedSkillTd] = None
 
 
 class NiceSkillReverse(NiceSkill):
@@ -400,6 +392,7 @@ class NiceReversedFunction(BaseModelORJson):
 
 class NiceReversedFunctionType(BaseModelORJson):
     nice: Optional[NiceReversedFunction] = None
+    basic: Optional[BasicReversedFunction] = None
 
 
 class NiceBaseFunctionReverse(NiceBaseFunction):
@@ -412,6 +405,7 @@ class NiceReversedBuff(BaseModelORJson):
 
 class NiceReversedBuffType(BaseModelORJson):
     nice: Optional[NiceReversedBuff] = None
+    basic: Optional[BasicReversedBuff] = None
 
 
 class NiceBuffReverse(NiceBuff):

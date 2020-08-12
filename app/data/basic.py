@@ -12,7 +12,6 @@ from .enums import (
     SVT_TYPE_NAME,
 )
 from .gamedata import masters
-from .nice import get_safe, get_traits_list
 from .raw import (
     buff_to_func,
     func_to_skillId,
@@ -38,6 +37,7 @@ from .schemas.basic import (
 )
 from .schemas.nice import AssetURL
 from .translations import SVT_NAME_JP_EN
+from .utils import get_safe, get_traits_list
 
 
 settings = Settings()

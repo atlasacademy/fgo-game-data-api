@@ -11,7 +11,7 @@ from ..enums import (
     SvtClass,
 )
 from .base import BaseModelORJson
-from .nice import MCAssets, NiceTrait
+from .common import MCAssets, NiceTrait
 
 
 class BasicBuff(BaseModelORJson):

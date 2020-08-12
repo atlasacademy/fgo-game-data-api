@@ -1,0 +1,45 @@
+{
+  "id": 992154,
+  "num": 1,
+  "name": "Elegant Heavens, Generous Earth",
+  "detail": "Increase the amount of Master EXP gained by 50 when a quest is cleared",
+  "type": "passive",
+  "strengthStatus": 0,
+  "priority": 1,
+  "condQuestId": 0,
+  "condQuestPhase": 0,
+  "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00202.png",
+  "coolDown": [0],
+  "actIndividuality": [],
+  "script": {},
+  "functions": [
+    {
+      "funcId": 90,
+      "funcType": "expUp",
+      "funcTargetType": "self",
+      "funcTargetTeam": "playerAndEnemy",
+      "funcPopupText": "None",
+      "functvals": [],
+      "funcquestTvals": [],
+      "buffs": [],
+      "svals": [{ "AddCount": 50 }]
+    }
+  ],
+  "reverse": {
+    "basic": {
+      "servant": [
+        {
+          "id": 9304550,
+          "collectionNo": 1206,
+          "name": "Elegant Heavens, Generous Earth",
+          "type": "servantEquip",
+          "className": "ALL",
+          "rarity": 4,
+          "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_93045500.png"
+        }
+      ],
+      "MC": [],
+      "CC": []
+    }
+  }
+}

@@ -1,0 +1,107 @@
+[
+  {
+    "id": 2926,
+    "name": "対粛正防御",
+    "detail": "無敵貫通を無視して、攻撃によるダメージを0にする",
+    "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_368.png",
+    "type": "specialInvincible",
+    "buffGroup": 250,
+    "vals": [
+      { "id": 3004, "name": "buffPositiveEffect" },
+      { "id": 3064, "name": "unknown" },
+      { "id": 3007, "name": "buffIncreaseDefence" }
+    ],
+    "tvals": [],
+    "ckSelfIndv": [],
+    "ckOpIndv": [],
+    "maxRate": 0,
+    "reverse": {
+      "basic": {
+        "function": [
+          {
+            "funcId": 5610,
+            "funcType": "addState",
+            "funcTargetType": "self",
+            "funcTargetTeam": "playerAndEnemy",
+            "functvals": [],
+            "traitVals": [],
+            "buffs": [
+              {
+                "id": 2926,
+                "name": "対粛正防御",
+                "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_368.png",
+                "type": "specialInvincible",
+                "ckSelfIndv": [],
+                "ckOpIndv": []
+              }
+            ],
+            "reverse": { "basic": { "skill": [], "NP": [] } }
+          },
+          {
+            "funcId": 5611,
+            "funcType": "addState",
+            "funcTargetType": "ptOne",
+            "funcTargetTeam": "playerAndEnemy",
+            "functvals": [],
+            "traitVals": [],
+            "buffs": [
+              {
+                "id": 2926,
+                "name": "対粛正防御",
+                "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_368.png",
+                "type": "specialInvincible",
+                "ckSelfIndv": [],
+                "ckOpIndv": []
+              }
+            ],
+            "reverse": { "basic": { "skill": [], "NP": [] } }
+          },
+          {
+            "funcId": 5612,
+            "funcType": "addState",
+            "funcTargetType": "ptAll",
+            "funcTargetTeam": "playerAndEnemy",
+            "functvals": [],
+            "traitVals": [],
+            "buffs": [
+              {
+                "id": 2926,
+                "name": "対粛正防御",
+                "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_368.png",
+                "type": "specialInvincible",
+                "ckSelfIndv": [],
+                "ckOpIndv": []
+              }
+            ],
+            "reverse": {
+              "basic": {
+                "skill": [],
+                "NP": [
+                  {
+                    "id": 504501,
+                    "name": "きみをいだく希望の星",
+                    "reverse": {
+                      "basic": {
+                        "servant": [
+                          {
+                            "id": 504500,
+                            "collectionNo": 284,
+                            "name": "Caster Altria",
+                            "type": "normal",
+                            "className": "caster",
+                            "rarity": 5,
+                            "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_5045000.png"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+]
