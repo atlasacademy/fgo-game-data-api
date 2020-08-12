@@ -39,6 +39,7 @@ class AssetURL:
     buffIcon: str = "{base_url}/{region}/BuffIcons/bufficon_{item_id}.png"
     items: str = "{base_url}/{region}/Items/{item_id}.png"
     face: str = "{base_url}/{region}/Faces/f_{item_id}{i}.png"
+    enemy: str = "{base_url}/{region}/Enemys/{item_id}{i}.png"
     mcitem: str = "{base_url}/{region}/Items/masterequip{item_id:05}.png"
     mc: Dict[str, str] = {
         "item": "{base_url}/{region}/Items/masterequip{item_id:05}.png",

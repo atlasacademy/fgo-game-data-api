@@ -10,6 +10,7 @@ from .enums import (
     FUNC_TYPE_NAME,
     FUNC_VALS_NOT_BUFF,
     SVT_TYPE_NAME,
+    SvtType,
 )
 from .gamedata import masters
 from .raw import (
@@ -181,9 +182,15 @@ def get_basic_svt(
         "rarity": masters[region].mstSvtLimitId[item_id][0].rarity,
     }
 
-    basic_servant["face"] = AssetURL.face.format(
-        base_url=settings.asset_url, region=region, item_id=item_id, i=0
-    )
+    base_settings = {
+        "base_url": settings.asset_url,
+        "region": region,
+        "item_id": item_id,
+    }
+    if mstSvt.type in (SvtType.ENEMY, SvtType.ENEMY_COLLECTION):
+        basic_servant["face"] = AssetURL.enemy.format(**base_settings, i=1)
+    else:
+        basic_servant["face"] = AssetURL.face.format(**base_settings, i=0)
 
     if region == Region.JP and lang == Language.en:
         basic_servant["name"] = SVT_NAME_JP_EN.get(

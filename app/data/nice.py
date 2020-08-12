@@ -517,6 +517,13 @@ def get_nice_servant(
             0: AssetURL.charaGraphDefault.format(**base_settings_id)
         }
         faces["ascension"] = {0: AssetURL.face.format(**base_settings_id, i=0)}
+    elif raw_data.mstSvt.type in (SvtType.ENEMY, SvtType.ENEMY_COLLECTION):
+        faces["ascension"] = {
+            limit.limitCount: AssetURL.enemy.format(
+                **base_settings_id, i=limit.limitCount
+            )
+            for limit in raw_data.mstSvtLimit
+        }
     elif raw_data.mstSvt.isServant():
         charaGraph["ascension"] = {
             (i + 1): AssetURL.charaGraph[i].format(**base_settings_id) for i in range(4)

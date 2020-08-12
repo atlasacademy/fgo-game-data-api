@@ -9,7 +9,11 @@
   "lvMax": 100,
   "extraAssets": {
     "charaGraph": {},
-    "faces": {},
+    "faces": {
+      "ascension": {
+        "1": "https://assets.atlasacademy.io/GameData/NA/Enemys/99391201.png"
+      }
+    },
     "commands": {},
     "status": {}
   },
