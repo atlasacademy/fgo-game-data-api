@@ -7,6 +7,7 @@ from ..routers.deps import (
     EquipSearchQueryParams,
     FuncSearchQueryParams,
     ServantSearchQueryParams,
+    SvtSearchQueryParams,
 )
 from .enums import (
     ATTRIBUTE_NAME_REVERSE,
@@ -74,7 +75,9 @@ def match_name(search_param: str, name: str) -> bool:
         return fuzz.ratio(combined_2to1, combined_1to2) > NAME_MATCH_THRESHOLD
 
 
-def search_servant(search_param: ServantSearchQueryParams) -> List[int]:
+def search_servant(
+    search_param: Union[ServantSearchQueryParams, SvtSearchQueryParams]
+) -> List[int]:
     svt_type_ints = {SVT_TYPE_NAME_REVERSE[item] for item in search_param.type}
     rarity_ints = set(search_param.rarity)
     class_ints = {CLASS_NAME_REVERSE[item] for item in search_param.className}

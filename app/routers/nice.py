@@ -24,6 +24,7 @@ from .deps import (
     EquipSearchQueryParams,
     FuncSearchQueryParams,
     ServantSearchQueryParams,
+    SvtSearchQueryParams,
     language_parameter,
 )
 from .utils import item_response, list_response
@@ -190,6 +191,31 @@ async def get_equip(
 
 
 @router.get(
+    "/{region}/svt/search",
+    summary="Find and get servant data",
+    description=SvtSearchQueryParams.DESCRIPTION + svt_lang_lore_description,
+    response_description="Nice Servant Entities",
+    response_model=List[NiceServant],
+    response_model_exclude_unset=True,
+    responses=responses,
+)
+async def find_svt(
+    search_param: SvtSearchQueryParams = Depends(SvtSearchQueryParams),
+    lang: Language = Depends(language_parameter),
+    lore: bool = False,
+) -> Response:
+    if search_param.hasSearchParams:
+        matches = search.search_servant(search_param)
+        entity_list = [
+            nice.get_nice_servant_model(search_param.region, item, lang, lore)
+            for item in matches
+        ]
+        return list_response(entity_list)
+    else:
+        raise HTTPException(status_code=400, detail="Insufficient query")
+
+
+@router.get(
     "/{region}/svt/{item_id}",
     summary="Get svt data",
     response_description="Servant Entity",
@@ -212,7 +238,7 @@ async def get_svt(
     if item_id in masters[region].mstSvtId:
         return item_response(nice.get_nice_servant_model(region, item_id, lang, lore))
     else:
-        raise HTTPException(status_code=404, detail="Servant not found")
+        raise HTTPException(status_code=404, detail="Svt not found")
 
 
 get_mc_description = "Get nice Mystic Code info from ID"

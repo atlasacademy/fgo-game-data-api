@@ -13,7 +13,7 @@ client = TestClient(app)
 def get_item_list(response: Response, response_type: str, endpoint: str) -> Set[int]:
     item_type = endpoint.split("/")[1]
     if response_type == "raw":
-        if item_type in {"servant", "equip"}:
+        if item_type in ("servant", "equip", "svt"):
             main_item = "mstSvt"
         elif item_type == "function":
             main_item = "mstFunc"
@@ -23,7 +23,7 @@ def get_item_list(response: Response, response_type: str, endpoint: str) -> Set[
             raise ValueError
         return {item[main_item]["id"] for item in response.json()}
     else:
-        if item_type in {"servant", "equip", "buff"}:
+        if item_type in ("servant", "equip", "buff", "svt"):
             main_id = "id"
         elif item_type == "function":
             main_id = "funcId"
@@ -66,6 +66,10 @@ test_cases_dict = {
     "servant_search_equip": (
         "NA/servant/search?name=Golden%20Sumo&type=servantEquip&className=ALL",
         {9401640},
+    ),
+    "svt_search_enemy": (
+        "JP/svt/search?lang=en&trait=2667&type=enemyCollection",
+        {9941040, 9941050, 9942530},
     ),
     "buff_type_tvals": (
         "NA/buff/search?type=upCommandall&tvals=cardQuick",
@@ -146,12 +150,14 @@ class TestSearch:
         assert response.status_code == 200
         assert response.text == "[]"
 
-    @pytest.mark.parametrize("endpoint", ["servant", "equip", "buff", "function"])
+    @pytest.mark.parametrize(
+        "endpoint", ["servant", "equip", "svt", "buff", "function"]
+    )
     def test_empty_input(self, response_type: str, endpoint: str) -> None:
         response = client.get(f"/{response_type}/NA/{endpoint}/search")
         assert response.status_code == 400
 
-    @pytest.mark.parametrize("endpoint", ["servant", "equip"])
+    @pytest.mark.parametrize("endpoint", ["servant", "equip", "svt"])
     def test_only_type_given(self, response_type: str, endpoint: str) -> None:
         response = client.get(f"/{response_type}/NA/{endpoint}/search?type=all")
         assert response.status_code == 400

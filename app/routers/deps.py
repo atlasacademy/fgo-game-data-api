@@ -8,8 +8,10 @@ from pydantic import BaseModel
 from ..data.common import Language, Region
 from ..data.enums import (
     ATTRIBUTE_NAME,
+    CLASS_NAME,
     GENDER_NAME,
     PLAYABLE_CLASS_LIST,
+    SVT_TYPE_NAME,
     Attribute,
     FuncApplyTarget,
     Gender,
@@ -71,6 +73,49 @@ class ServantSearchQueryParams:
         - **rarity**: Integers 0-6.
         - **className**: an item in the className enum, defaults to `PLAYABLE_CLASS_LIST`.
         See the className detail in the Nice Servant response.
+        - **gender**: female, male or unknown.
+        - **attribute**: human, sky, earth, star or beast.
+        - **trait**: an integer or an item in the trait enum. See the traits detail in the Nice Servant response.
+
+        At least one of name, rarity, className, gender, attribute and trait is required for the query.
+        """
+    )
+
+
+@dataclass
+class SvtSearchQueryParams:
+    region: Region
+    hasSearchParams: bool = field(init=False)
+    name: Optional[str] = None
+    excludeCollectionNo: int = -1
+    type: List[NiceSvtType] = Query(list(SVT_TYPE_NAME.values()))
+    rarity: List[int] = Query(list(range(6)), ge=0, le=5)
+    className: List[SvtClass] = Query(list(CLASS_NAME.values()))
+    gender: List[Gender] = Query(list(GENDER_NAME.values()))
+    attribute: List[Attribute] = Query(list(ATTRIBUTE_NAME.values()))
+    trait: List[Union[Trait, int]] = Query([])
+
+    def __post_init__(self) -> None:
+        self.hasSearchParams = any(
+            [
+                self.name,
+                self.rarity != list(range(6)),
+                self.className != list(CLASS_NAME.values()),
+                self.gender != list(GENDER_NAME.values()),
+                self.attribute != list(ATTRIBUTE_NAME.values()),
+                self.trait != [],
+            ]
+        )
+
+    DESCRIPTION: ClassVar[str] = inspect.cleandoc(
+        """
+        Search and return the list of matched servant entities.
+
+        - **name**: servant name. Searching JP data using English name works too.
+        - **excludeCollectionNo**: int. Won't return records with the specified collectionNo.
+        - **type**: servant type. See the NiceSvtType enum for the options. Must not be the only parameter given.
+        - **rarity**: Integers 0-6.
+        - **className**: an item in the className enum. See the className detail in the Nice Servant response.
         - **gender**: female, male or unknown.
         - **attribute**: human, sky, earth, star or beast.
         - **trait**: an integer or an item in the trait enum. See the traits detail in the Nice Servant response.

@@ -22,6 +22,7 @@ from .deps import (
     EquipSearchQueryParams,
     FuncSearchQueryParams,
     ServantSearchQueryParams,
+    SvtSearchQueryParams,
 )
 from .utils import item_response, list_response
 
@@ -150,6 +151,31 @@ async def get_equip(
         raise HTTPException(status_code=404, detail="Equip not found")
 
 
+@router.get(
+    "/{region}/svt/search",
+    summary="Find and get servant data",
+    description=SvtSearchQueryParams.DESCRIPTION + svt_expand_lore_description,
+    response_description="Nice Servant Entities",
+    response_model=List[ServantEntity],
+    response_model_exclude_unset=True,
+    responses=responses,
+)
+async def find_svt(
+    search_param: SvtSearchQueryParams = Depends(SvtSearchQueryParams),
+    expand: bool = False,
+    lore: bool = False,
+) -> Response:
+    if search_param.hasSearchParams:
+        matches = search.search_servant(search_param)
+        entity_list = [
+            raw.get_servant_entity(search_param.region, item, expand, lore)
+            for item in matches
+        ]
+        return list_response(entity_list)
+    else:
+        raise HTTPException(status_code=400, detail="Insufficient query")
+
+
 get_svt_description = """
 Get servant info from ID
 
@@ -160,7 +186,7 @@ Only uses actual ID for the lookup.
 @router.get(
     "/{region}/svt/{item_id}",
     summary="Get servant data",
-    description=get_servant_description + get_svt_description,
+    description=get_svt_description + svt_expand_lore_description,
     response_description="Servant Entity",
     response_model=ServantEntity,
     response_model_exclude_unset=True,

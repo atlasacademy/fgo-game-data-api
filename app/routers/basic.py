@@ -22,6 +22,7 @@ from .deps import (
     EquipSearchQueryParams,
     FuncSearchQueryParams,
     ServantSearchQueryParams,
+    SvtSearchQueryParams,
     language_parameter,
 )
 from .utils import item_response, list_response
@@ -40,7 +41,7 @@ responses: Dict[Union[str, int], Any] = {
 router = APIRouter()
 
 
-nice_find_servant_extra = """
+basic_find_servant_extra = """
 - **lang**: returns English servant names if querying JP data. Doesn't do anything if querying NA data.
 """
 
@@ -48,7 +49,7 @@ nice_find_servant_extra = """
 @router.get(
     "/{region}/servant/search",
     summary="Find and get servant data",
-    description=ServantSearchQueryParams.DESCRIPTION + nice_find_servant_extra,
+    description=ServantSearchQueryParams.DESCRIPTION + basic_find_servant_extra,
     response_description="Basic Servant Entities",
     response_model=List[BasicServant],
     response_model_exclude_unset=True,
@@ -157,6 +158,29 @@ async def get_equip(region: Region, item_id: int) -> Dict[str, Any]:
         return basic.get_basic_svt(region, item_id)
     else:
         raise HTTPException(status_code=404, detail="Equip not found")
+
+
+@router.get(
+    "/{region}/svt/search",
+    summary="Find and get servant data",
+    description=SvtSearchQueryParams.DESCRIPTION + basic_find_servant_extra,
+    response_description="Basic Servant Entities",
+    response_model=List[BasicServant],
+    response_model_exclude_unset=True,
+    responses=responses,
+)
+async def find_svt(
+    search_param: SvtSearchQueryParams = Depends(SvtSearchQueryParams),
+    lang: Optional[Language] = None,
+) -> Response:
+    if search_param.hasSearchParams:
+        matches = search.search_servant(search_param)
+        entity_list = [
+            basic.get_basic_servant(search_param.region, item, lang) for item in matches
+        ]
+        return list_response(entity_list)
+    else:
+        raise HTTPException(status_code=400, detail="Insufficient query")
 
 
 @router.get(
