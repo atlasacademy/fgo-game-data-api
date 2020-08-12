@@ -14,7 +14,7 @@ client = TestClient(app)
 test_cases_dict = {
     "servant_NA_collectionNo": ("NA/servant/105", "NA_Billy"),
     "servant_NA_id": ("NA/servant/201000", "NA_Billy"),
-    "servant_NA_lore": ("NA/servant/100?lore=True", "NA_Helena_lore"),
+    "servant_NA_lore_costume": ("NA/servant/96?lore=True", "NA_Dantes_lore_costume"),
     "servant_JP_collectionNo": ("JP/servant/283", "JP_Elice"),
     "servant_JP_id": ("JP/servant/304300", "JP_Elice"),
     "servant_JP_collection_servant": ("JP/servant/149", "JP_Tiamat"),

@@ -222,6 +222,7 @@ def get_servant_entity(
         mstCombineSkill=masters[region].mstCombineSkillId.get(servant_id, []),
         mstCombineLimit=masters[region].mstCombineLimitId.get(servant_id, []),
         mstSvtLimitAdd=masters[region].mstSvtLimitAddId.get(servant_id, []),
+        mstSvtCostume=masters[region].mstSvtCostumeId.get(servant_id, []),
         mstSkill=[
             get_skill_entity_no_reverse(region, skill, expand)
             for skill in masters[region].mstSvtSkillSvtId.get(servant_id, [])

@@ -79,6 +79,7 @@ from .schemas.raw import (
     BuffEntityNoReverse,
     FunctionEntityNoReverse,
     MstSvtComment,
+    MstSvtCostume,
     SkillEntityNoReverse,
     TdEntityNoReverse,
 )
@@ -474,6 +475,17 @@ def get_nice_comment(comment: MstSvtComment) -> Dict[str, Any]:
     }
 
 
+def get_nice_costume(costume: MstSvtCostume) -> Dict[str, Union[str, int]]:
+    return {
+        "id": costume.id,
+        "costumeCollectionNo": costume.costumeCollectionNo,
+        "name": costume.name,
+        "shortName": costume.shortName,
+        "detail": costume.detail,
+        "priority": costume.priority,
+    }
+
+
 @lru_cache(maxsize=settings.lru_cache_size)
 def get_nice_servant(
     region: Region, item_id: int, lang: Language, lore: bool = False
@@ -509,6 +521,13 @@ def get_nice_servant(
     commands: Dict[str, Dict[int, str]] = {}
     status: Dict[str, Dict[int, str]] = {}
 
+    costume_limits = {item.id for item in raw_data.mstSvtCostume}
+    costume_ids = {
+        item.battleCharaId: item.limitCount
+        for item in raw_data.mstSvtLimitAdd
+        if item.limitCount in costume_limits
+    }
+
     base_settings = {"base_url": settings.asset_url, "region": region}
     base_settings_id = dict(item_id=item_id, **base_settings)
 
@@ -537,11 +556,6 @@ def get_nice_servant(
         status["ascension"] = {
             i: AssetURL.status.format(**base_settings_id, i=i) for i in range(1, 4)
         }
-        costume_ids = [
-            item.battleCharaId
-            for item in raw_data.mstSvtLimitAdd
-            if item.limitCount >= 11
-        ]
         if costume_ids:
             charaGraph["costume"] = {
                 costume_id: AssetURL.charaGraphDefault.format(
@@ -664,11 +678,18 @@ def get_nice_servant(
         else:
             illustrator = ""
 
+        costume_limit_id = {v: k for k, v in costume_ids.items()}
+
         nice_data["profile"] = {
             "cv": cv,
             "illustrator": illustrator,
+            "costume": {
+                costume_limit_id[costume.id]: get_nice_costume(costume)
+                for costume in raw_data.mstSvtCostume
+            },
             "comments": [get_nice_comment(item) for item in raw_data.mstSvtComment],
         }
+
         if raw_data.mstSvt.isServant():
             nice_data["profile"]["stats"] = {
                 "strength": get_nice_status_rank(raw_data.mstSvtLimit[0].power),

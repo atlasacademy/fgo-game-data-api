@@ -579,7 +579,8 @@
               "svtVoiceId": 9940530,
               "voicePrefix": 0
             }
-          ]
+          ],
+          "mstSvtCostume": []
         }
       ]
     }

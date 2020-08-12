@@ -428,6 +428,23 @@ class MstSvtLimitAdd(BaseModel):
     voicePrefix: int  # 11
 
 
+class MstSvtCostume(BaseModel):
+    svtId: int  # 702700,
+    id: int  # 11,
+    # groupIndex: int  # NA doesn't have this
+    name: str  # "簡易霊衣：アマゾネスCEOセット",
+    shortName: str  # "アマゾネスCEOセット",
+    detail: str  # "霊基接触の影響か、この霊衣で\n戦闘すると言動に謎の変化が見られる",
+    itemGetInfo: str  # "クエスト「エピローグ」クリアで開放",
+    releaseInfo: str  # "最終再臨かつLv.MAXで開放",
+    costumeReleaseDetail: str  # "簡易霊衣「アマゾネスCEOセット」開放権を\n獲得できます。",
+    priority: int  # 1,
+    flag: int  # 0,
+    costumeCollectionNo: int  # 32,
+    openedAt: int  # 1579683600,
+    endedAt: int  # 1893596399
+
+
 class MstFriendship(BaseModel):
     itemIds: List[int] = []  # [1000]
     itemNums: List[int] = []  # [1]
@@ -544,6 +561,7 @@ class Master(BaseModel):
     mstQuestPhaseId: Dict[int, Dict[int, MstQuestPhase]]
     # mstSvtComment: List[MstSvtComment]
     mstSvtCommentId: Dict[int, List[MstSvtComment]]
+    mstSvtCostumeId: Dict[int, List[MstSvtCostume]]
     # mstCommandCode: List[MstCommandCode]
     mstCommandCodeId: Dict[int, MstCommandCode]
     mstCommandCodeSkill: List[MstCommandCodeSkill]
@@ -566,6 +584,7 @@ class ServantEntity(BaseModelORJson):
     mstCombineSkill: List[MstCombineSkill]
     mstCombineLimit: List[MstCombineLimit]
     mstSvtLimitAdd: List[MstSvtLimitAdd]
+    mstSvtCostume: List[MstSvtCostume] = []
     mstSvtComment: List[MstSvtComment] = []
 
 

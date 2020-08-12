@@ -1343,7 +1343,8 @@
               "qp": 10000000
             }
           ],
-          "mstSvtLimitAdd": []
+          "mstSvtLimitAdd": [],
+          "mstSvtCostume": []
         },
         {
           "mstSvt": {
@@ -2253,7 +2254,8 @@
               "svtVoiceId": 9940830,
               "voicePrefix": 0
             }
-          ]
+          ],
+          "mstSvtCostume": []
         },
         {
           "mstSvt": {
@@ -3163,7 +3165,8 @@
               "svtVoiceId": 9940830,
               "voicePrefix": 0
             }
-          ]
+          ],
+          "mstSvtCostume": []
         }
       ],
       "MC": [],

@@ -295,10 +295,20 @@ class NiceLoreStats(BaseModel):
     # deity: NiceStatusRank
 
 
+class NiceCostume(BaseModel):
+    id: int
+    costumeCollectionNo: int
+    name: str
+    shortName: str
+    detail: str
+    priority: int
+
+
 class NiceLore(BaseModel):
     cv: str
     illustrator: str
     stats: Optional[NiceLoreStats] = None
+    costume: Dict[int, NiceCostume]
     comments: List[NiceLoreComment]
 
 

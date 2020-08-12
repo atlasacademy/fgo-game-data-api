@@ -1,0 +1,1658 @@
+{
+  "id": 1100200,
+  "collectionNo": 96,
+  "name": "Edmond Dantès",
+  "className": "avenger",
+  "type": "normal",
+  "rarity": 5,
+  "cost": 16,
+  "lvMax": 90,
+  "extraAssets": {
+    "charaGraph": {
+      "ascension": {
+        "1": "https://assets.atlasacademy.io/GameData/NA/CharaGraph/1100200/1100200a@1.png",
+        "2": "https://assets.atlasacademy.io/GameData/NA/CharaGraph/1100200/1100200a@2.png",
+        "3": "https://assets.atlasacademy.io/GameData/NA/CharaGraph/1100200/1100200b@1.png",
+        "4": "https://assets.atlasacademy.io/GameData/NA/CharaGraph/1100200/1100200b@2.png"
+      },
+      "costume": {
+        "1100230": "https://assets.atlasacademy.io/GameData/NA/CharaGraph/1100230/1100230a.png"
+      }
+    },
+    "faces": {
+      "ascension": {
+        "1": "https://assets.atlasacademy.io/GameData/NA/Faces/f_11002000.png",
+        "2": "https://assets.atlasacademy.io/GameData/NA/Faces/f_11002001.png",
+        "3": "https://assets.atlasacademy.io/GameData/NA/Faces/f_11002002.png",
+        "4": "https://assets.atlasacademy.io/GameData/NA/Faces/f_11002003.png"
+      },
+      "costume": {
+        "1100230": "https://assets.atlasacademy.io/GameData/NA/Faces/f_11002300.png"
+      }
+    },
+    "commands": {
+      "ascension": {
+        "1": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/1100200/card_servant_1.png",
+        "2": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/1100200/card_servant_2.png",
+        "3": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/1100200/card_servant_3.png"
+      },
+      "costume": {
+        "1100230": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/1100200/card_servant_11.png"
+      }
+    },
+    "status": {
+      "ascension": {
+        "1": "https://assets.atlasacademy.io/GameData/NA/Servants/Status/1100200/status_servant_1.png",
+        "2": "https://assets.atlasacademy.io/GameData/NA/Servants/Status/1100200/status_servant_2.png",
+        "3": "https://assets.atlasacademy.io/GameData/NA/Servants/Status/1100200/status_servant_3.png"
+      },
+      "costume": {
+        "1100230": "https://assets.atlasacademy.io/GameData/NA/Servants/Status/1100200/status_servant_11.png"
+      }
+    }
+  },
+  "gender": "male",
+  "attribute": "human",
+  "traits": [
+    { "id": 1, "name": "genderMale" },
+    { "id": 110, "name": "classAvenger" },
+    { "id": 202, "name": "attributeHuman" },
+    { "id": 301, "name": "alignmentChaotic" },
+    { "id": 304, "name": "alignmentEvil" },
+    { "id": 1000, "name": "basedOnServant" },
+    { "id": 2001, "name": "humanoid" },
+    { "id": 2008, "name": "weakToEnumaElish" },
+    { "id": 5000, "name": "canBeInBattle" },
+    { "id": 1100200, "name": "unknown" }
+  ],
+  "starAbsorb": 30,
+  "starGen": 59,
+  "instantDeathChance": 70,
+  "cards": ["quick", "quick", "arts", "buster", "buster"],
+  "hitsDistribution": {
+    "arts": [33, 67],
+    "buster": [16, 33, 51],
+    "quick": [10, 20, 30, 40],
+    "extra": [5, 11, 5, 17, 62]
+  },
+  "atkBase": 1953,
+  "atkMax": 12641,
+  "hpBase": 1785,
+  "hpMax": 12177,
+  "growthCurve": 15,
+  "atkGrowth": [
+    1953,
+    1963,
+    1974,
+    1995,
+    2027,
+    2070,
+    2113,
+    2156,
+    2220,
+    2273,
+    2348,
+    2423,
+    2498,
+    2583,
+    2679,
+    2775,
+    2882,
+    2989,
+    3107,
+    3224,
+    3353,
+    3481,
+    3609,
+    3748,
+    3898,
+    4047,
+    4197,
+    4347,
+    4507,
+    4678,
+    4838,
+    5009,
+    5180,
+    5351,
+    5533,
+    5715,
+    5896,
+    6078,
+    6260,
+    6441,
+    6634,
+    6816,
+    7008,
+    7200,
+    7382,
+    7574,
+    7767,
+    7948,
+    8141,
+    8323,
+    8504,
+    8686,
+    8868,
+    9049,
+    9231,
+    9402,
+    9573,
+    9744,
+    9904,
+    10075,
+    10236,
+    10385,
+    10535,
+    10685,
+    10834,
+    10973,
+    11101,
+    11230,
+    11358,
+    11476,
+    11593,
+    11700,
+    11807,
+    11903,
+    11999,
+    12085,
+    12160,
+    12234,
+    12309,
+    12363,
+    12427,
+    12469,
+    12491,
+    12512,
+    12534,
+    12555,
+    12576,
+    12598,
+    12619,
+    12641,
+    12758,
+    12876,
+    12993,
+    13111,
+    13239,
+    13357,
+    13474,
+    13592,
+    13720,
+    13838
+  ],
+  "hpGrowth": [
+    1785,
+    1795,
+    1805,
+    1826,
+    1857,
+    1899,
+    1940,
+    1982,
+    2044,
+    2096,
+    2169,
+    2242,
+    2314,
+    2398,
+    2491,
+    2585,
+    2689,
+    2793,
+    2907,
+    3021,
+    3146,
+    3271,
+    3395,
+    3530,
+    3676,
+    3821,
+    3967,
+    4112,
+    4268,
+    4434,
+    4590,
+    4757,
+    4923,
+    5089,
+    5266,
+    5442,
+    5619,
+    5796,
+    5972,
+    6149,
+    6336,
+    6513,
+    6700,
+    6887,
+    7064,
+    7251,
+    7438,
+    7614,
+    7801,
+    7978,
+    8155,
+    8331,
+    8508,
+    8685,
+    8861,
+    9028,
+    9194,
+    9360,
+    9516,
+    9682,
+    9838,
+    9984,
+    10129,
+    10275,
+    10420,
+    10555,
+    10680,
+    10805,
+    10929,
+    11044,
+    11158,
+    11262,
+    11366,
+    11459,
+    11553,
+    11636,
+    11709,
+    11782,
+    11854,
+    11906,
+    11969,
+    12010,
+    12031,
+    12052,
+    12073,
+    12093,
+    12114,
+    12135,
+    12156,
+    12177,
+    12291,
+    12405,
+    12519,
+    12634,
+    12758,
+    12873,
+    12987,
+    13101,
+    13226,
+    13340
+  ],
+  "bondGrowth": [
+    6000,
+    30000,
+    45000,
+    47500,
+    50000,
+    210000,
+    650000,
+    980000,
+    1330000,
+    1705000
+  ],
+  "bondEquip": 9300830,
+  "ascensionMaterials": {
+    "1": {
+      "items": [
+        {
+          "item": {
+            "id": 6516,
+            "name": "Evil Bone",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6516.png",
+            "background": "bronze"
+          },
+          "amount": 10
+        },
+        {
+          "item": {
+            "id": 6515,
+            "name": "Octuplet Crystals",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6515.png",
+            "background": "silver"
+          },
+          "amount": 10
+        }
+      ],
+      "qp": 100000
+    },
+    "2": {
+      "items": [
+        {
+          "item": {
+            "id": 6509,
+            "name": "Serpent Jewel",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6509.png",
+            "background": "silver"
+          },
+          "amount": 10
+        },
+        {
+          "item": {
+            "id": 6511,
+            "name": "Forbidden Page",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6511.png",
+            "background": "silver"
+          },
+          "amount": 10
+        }
+      ],
+      "qp": 300000
+    },
+    "3": {
+      "items": [
+        {
+          "item": {
+            "id": 6505,
+            "name": "Void's Dust",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6505.png",
+            "background": "bronze"
+          },
+          "amount": 10
+        },
+        {
+          "item": {
+            "id": 6510,
+            "name": "Eternal Gear",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6510.png",
+            "background": "silver"
+          },
+          "amount": 10
+        }
+      ],
+      "qp": 1000000
+    },
+    "4": {
+      "items": [
+        {
+          "item": {
+            "id": 6501,
+            "name": "Phoenix Feather",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6501.png",
+            "background": "silver"
+          },
+          "amount": 10
+        },
+        {
+          "item": {
+            "id": 6517,
+            "name": "Heart of the Foreign God",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6517.png",
+            "background": "gold"
+          },
+          "amount": 10
+        }
+      ],
+      "qp": 3000000
+    },
+    "5": {
+      "items": [
+        {
+          "item": {
+            "id": 7999,
+            "name": "Holy Grail",
+            "type": "tdLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7999.png",
+            "background": "gold"
+          },
+          "amount": 1
+        }
+      ],
+      "qp": 10000000
+    }
+  },
+  "skillMaterials": {
+    "1": {
+      "items": [
+        {
+          "item": {
+            "id": 6503,
+            "name": "Proof of Hero",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6503.png",
+            "background": "bronze"
+          },
+          "amount": 10
+        }
+      ],
+      "qp": 200000
+    },
+    "2": {
+      "items": [
+        {
+          "item": {
+            "id": 6502,
+            "name": "Seed of Yggdrasil",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6502.png",
+            "background": "silver"
+          },
+          "amount": 10
+        }
+      ],
+      "qp": 400000
+    },
+    "3": {
+      "items": [
+        {
+          "item": {
+            "id": 6512,
+            "name": "Dragon Fang",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6512.png",
+            "background": "bronze"
+          },
+          "amount": 12
+        }
+      ],
+      "qp": 1200000
+    },
+    "4": {
+      "items": [
+        {
+          "item": {
+            "id": 6508,
+            "name": "Ghost Lantern",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6508.png",
+            "background": "silver"
+          },
+          "amount": 12
+        }
+      ],
+      "qp": 1600000
+    },
+    "5": {
+      "items": [
+        {
+          "item": {
+            "id": 6513,
+            "name": "Meteor Horseshoe",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6513.png",
+            "background": "silver"
+          },
+          "amount": 12
+        }
+      ],
+      "qp": 4000000
+    },
+    "6": {
+      "items": [
+        {
+          "item": {
+            "id": 6514,
+            "name": "Homunculus Baby",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6514.png",
+            "background": "silver"
+          },
+          "amount": 15
+        }
+      ],
+      "qp": 5000000
+    },
+    "7": {
+      "items": [
+        {
+          "item": {
+            "id": 6507,
+            "name": "Claw of Chaos",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6507.png",
+            "background": "gold"
+          },
+          "amount": 15
+        }
+      ],
+      "qp": 10000000
+    },
+    "8": {
+      "items": [
+        {
+          "item": {
+            "id": 6506,
+            "name": "Dragon's Reverse Scale",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6506.png",
+            "background": "gold"
+          },
+          "amount": 15
+        }
+      ],
+      "qp": 12000000
+    },
+    "9": {
+      "items": [
+        {
+          "item": {
+            "id": 6999,
+            "name": "Crystallized Lore",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6999.png",
+            "background": "gold"
+          },
+          "amount": 1
+        }
+      ],
+      "qp": 20000000
+    }
+  },
+  "skills": [
+    {
+      "id": 172650,
+      "num": 1,
+      "name": "Iron Determination EX",
+      "detail": "Apply Ignore Invincible (1 turn) & increase ATK (1 turn) & Debuff Resist (3 turns) for yourself",
+      "type": "active",
+      "strengthStatus": 0,
+      "priority": 1,
+      "condQuestId": 0,
+      "condQuestPhase": 0,
+      "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00312.png",
+      "coolDown": [8, 8, 8, 8, 8, 7, 7, 7, 7, 6],
+      "actIndividuality": [],
+      "script": {},
+      "functions": [
+        {
+          "funcId": 510,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "Ignore\nInvincible",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_329.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 189,
+              "name": "Ignore Invincible",
+              "detail": "Ignore Evade and Invincible to deal damage",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_329.png",
+              "type": "pierceInvincible",
+              "buffGroup": 0,
+              "vals": [
+                { "id": 3004, "name": "buffPositiveEffect" },
+                { "id": 3006, "name": "buffIncreaseDamage" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 0
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": 1, "Count": -1 },
+            { "Rate": 1000, "Turn": 1, "Count": -1 },
+            { "Rate": 1000, "Turn": 1, "Count": -1 },
+            { "Rate": 1000, "Turn": 1, "Count": -1 },
+            { "Rate": 1000, "Turn": 1, "Count": -1 },
+            { "Rate": 1000, "Turn": 1, "Count": -1 },
+            { "Rate": 1000, "Turn": 1, "Count": -1 },
+            { "Rate": 1000, "Turn": 1, "Count": -1 },
+            { "Rate": 1000, "Turn": 1, "Count": -1 },
+            { "Rate": 1000, "Turn": 1, "Count": -1 }
+          ]
+        },
+        {
+          "funcId": 147,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "ATK Up",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_300.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 126,
+              "name": "ATK Up",
+              "detail": "Increase ATK",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_300.png",
+              "type": "upAtk",
+              "buffGroup": 0,
+              "vals": [
+                { "id": 3004, "name": "buffPositiveEffect" },
+                { "id": 3006, "name": "buffIncreaseDamage" },
+                { "id": 3027, "name": "buffAtkUp" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 5000
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 300 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 320 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 340 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 360 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 380 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 400 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 420 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 440 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 460 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 500 }
+          ]
+        },
+        {
+          "funcId": 389,
+          "funcType": "addState",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "Debuff Resist\nUp",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_306.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 162,
+              "name": "Debuff Resist Up",
+              "detail": "Increase debuff resistance",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_306.png",
+              "type": "upTolerance",
+              "buffGroup": 0,
+              "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+              "tvals": [{ "id": 3005, "name": "buffNegativeEffect" }],
+              "ckSelfIndv": [],
+              "ckOpIndv": [{ "id": 3005, "name": "buffNegativeEffect" }],
+              "maxRate": 5000
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 140 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 158 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 176 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 194 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 212 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 230 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 248 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 266 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 284 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 320 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 97550,
+      "num": 2,
+      "name": "Golden Rule A",
+      "detail": "Increase your NP Gain (3 turns)",
+      "type": "active",
+      "strengthStatus": 0,
+      "priority": 1,
+      "condQuestId": 0,
+      "condQuestPhase": 0,
+      "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00602.png",
+      "coolDown": [8, 8, 8, 8, 8, 7, 7, 7, 7, 6],
+      "actIndividuality": [],
+      "script": {},
+      "functions": [
+        {
+          "funcId": 338,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "NP Gain Up",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_303.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 140,
+              "name": "NP Gain Up",
+              "detail": "Increase NP amount gained",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_303.png",
+              "type": "upDropnp",
+              "buffGroup": 0,
+              "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 5000
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 230 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 260 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 290 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 320 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 350 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 380 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 410 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 440 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 500 }
+          ]
+        },
+        {
+          "funcId": 470,
+          "funcType": "hastenNpturn",
+          "funcTargetType": "self",
+          "funcTargetTeam": "enemy",
+          "funcPopupText": "Charge Gain",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [],
+          "svals": [
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 173550,
+      "num": 3,
+      "name": "Wisdom of Crisis A",
+      "detail": "Decrease one enemy's Charge + remove your Debuffs + gain C. Stars ",
+      "type": "active",
+      "strengthStatus": 0,
+      "priority": 1,
+      "condQuestId": 0,
+      "condQuestPhase": 0,
+      "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00513.png",
+      "coolDown": [8, 8, 8, 8, 8, 7, 7, 7, 7, 6],
+      "actIndividuality": [],
+      "script": {},
+      "functions": [
+        {
+          "funcId": 473,
+          "funcType": "delayNpturn",
+          "funcTargetType": "enemy",
+          "funcTargetTeam": "enemy",
+          "funcPopupText": "Charge Loss",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [],
+          "svals": [
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 },
+            { "Rate": 1000, "Value": 1 }
+          ]
+        },
+        {
+          "funcId": 468,
+          "funcType": "lossNp",
+          "funcTargetType": "enemy",
+          "funcTargetTeam": "player",
+          "funcPopupText": "NP Loss",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [],
+          "svals": [
+            { "Rate": 1000, "Value": 2000 },
+            { "Rate": 1000, "Value": 2000 },
+            { "Rate": 1000, "Value": 2000 },
+            { "Rate": 1000, "Value": 2000 },
+            { "Rate": 1000, "Value": 2000 },
+            { "Rate": 1000, "Value": 2000 },
+            { "Rate": 1000, "Value": 2000 },
+            { "Rate": 1000, "Value": 2000 },
+            { "Rate": 1000, "Value": 2000 },
+            { "Rate": 1000, "Value": 2000 }
+          ]
+        },
+        {
+          "funcId": 434,
+          "funcType": "subState",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "Remove Debuff",
+          "functvals": [],
+          "funcquestTvals": [],
+          "traitVals": [{ "id": 3005, "name": "buffNegativeEffect" }],
+          "buffs": [],
+          "svals": [
+            { "Rate": 1000 },
+            { "Rate": 1000 },
+            { "Rate": 1000 },
+            { "Rate": 1000 },
+            { "Rate": 1000 },
+            { "Rate": 1000 },
+            { "Rate": 1000 },
+            { "Rate": 1000 },
+            { "Rate": 1000 },
+            { "Rate": 1000 }
+          ]
+        },
+        {
+          "funcId": 215,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "enemy",
+          "funcPopupText": "Critical Rate\nUp",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_327.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 144,
+              "name": "Critical Hit Rate Up",
+              "detail": "Increase Critical Hit rate",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_327.png",
+              "type": "upCriticalrate",
+              "buffGroup": 0,
+              "vals": [
+                { "id": 3004, "name": "buffPositiveEffect" },
+                { "id": 3006, "name": "buffIncreaseDamage" },
+                { "id": 3032, "name": "buffCritRateUp" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 5000
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 200 }
+          ]
+        },
+        {
+          "funcId": 477,
+          "funcType": "gainStar",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "C. Star Gain",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [],
+          "svals": [
+            { "Rate": 1000, "Value": 10 },
+            { "Rate": 1000, "Value": 11 },
+            { "Rate": 1000, "Value": 12 },
+            { "Rate": 1000, "Value": 13 },
+            { "Rate": 1000, "Value": 14 },
+            { "Rate": 1000, "Value": 15 },
+            { "Rate": 1000, "Value": 16 },
+            { "Rate": 1000, "Value": 17 },
+            { "Rate": 1000, "Value": 18 },
+            { "Rate": 1000, "Value": 20 }
+          ]
+        }
+      ]
+    }
+  ],
+  "classPassive": [
+    {
+      "id": 169550,
+      "name": "Avenger A",
+      "detail": "Increase the amount of NP you gain when damaged + Decrease Debuff Resist for all allies (including sub-members) except yourself [Demerit]",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00107.png",
+      "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "actIndividuality": [],
+      "script": {},
+      "functions": [
+        {
+          "funcId": 726,
+          "funcType": "addState",
+          "funcTargetType": "ptOtherFull",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "Debuff Resist\nDown",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_506.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 169,
+              "name": "Debuff Resist Down",
+              "detail": "Decrease debuff resistance",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_506.png",
+              "type": "downTolerance",
+              "buffGroup": 0,
+              "vals": [{ "id": 3005, "name": "buffNegativeEffect" }],
+              "tvals": [{ "id": 3005, "name": "buffNegativeEffect" }],
+              "ckSelfIndv": [],
+              "ckOpIndv": [{ "id": 3005, "name": "buffNegativeEffect" }],
+              "maxRate": 5000
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 100 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 100 }
+          ]
+        },
+        {
+          "funcId": 769,
+          "funcType": "addState",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "NP Gain Up\nWhen Damaged",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_335.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 228,
+              "name": "NP Gain Up When Damaged",
+              "detail": "Increase amount of NP gained when taking damage",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_335.png",
+              "type": "upDamagedropnp",
+              "buffGroup": 0,
+              "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 5000
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 200 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 170450,
+      "name": "Oblivion Correction B",
+      "detail": "Increase your Critical Strength",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00108.png",
+      "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "actIndividuality": [],
+      "script": {},
+      "functions": [
+        {
+          "funcId": 199,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "Critical Up",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_324.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 142,
+              "name": "Critical Up",
+              "detail": "Increase Critical Hit damage",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_324.png",
+              "type": "upCriticaldamage",
+              "buffGroup": 0,
+              "vals": [
+                { "id": 3004, "name": "buffPositiveEffect" },
+                { "id": 3006, "name": "buffIncreaseDamage" },
+                { "id": 3031, "name": "buffCritDamageUp" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 5000
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 80 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 171250,
+      "name": "Self-Restoration (Magical Energy) D",
+      "detail": "Increase NP Gauge each turn for yourself",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00109.png",
+      "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "actIndividuality": [],
+      "script": {},
+      "functions": [
+        {
+          "funcId": 324,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "NP Gain\nPer Turn",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_319.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 119,
+              "name": "NP Gain Per Turn ",
+              "detail": "Gain NP at end of each turn",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_319.png",
+              "type": "regainNp",
+              "buffGroup": 0,
+              "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 0
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 300 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 300 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 300 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 300 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 300 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 300 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 300 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 300 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 300 },
+            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 300 }
+          ]
+        }
+      ]
+    }
+  ],
+  "noblePhantasms": [
+    {
+      "id": 1100201,
+      "num": 1,
+      "card": "quick",
+      "name": "Enfer Château d'If",
+      "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/1100200/card_servant_np.png",
+      "rank": "A",
+      "type": "Anti-Army",
+      "detail": "Deal heavy damage to all enemies & decrease DEF (3 turns) <effect increases with Overcharge> & inflict Curse (5 turns) <effect increases with Overcharge> for all enemies",
+      "npGain": {
+        "buster": [62, 62, 62, 62, 62],
+        "arts": [62, 62, 62, 62, 62],
+        "quick": [62, 62, 62, 62, 62],
+        "extra": [62, 62, 62, 62, 62],
+        "defence": [500, 500, 500, 500, 500],
+        "np": [62, 62, 62, 62, 62]
+      },
+      "npDistribution": [3, 6, 10, 13, 16, 13, 10, 29],
+      "strengthStatus": 1,
+      "priority": 101,
+      "condQuestId": 0,
+      "condQuestPhase": 0,
+      "individuality": [
+        { "id": 3000, "name": "normalAttack0" },
+        { "id": 4003, "name": "cardQuick" },
+        { "id": 4007, "name": "cardNP" }
+      ],
+      "functions": [
+        {
+          "funcId": 13,
+          "funcType": "damageNp",
+          "funcTargetType": "enemyAll",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "None",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [],
+          "svals": [
+            { "Rate": 1000, "Value": 6000 },
+            { "Rate": 1000, "Value": 8000 },
+            { "Rate": 1000, "Value": 9000 },
+            { "Rate": 1000, "Value": 9500 },
+            { "Rate": 1000, "Value": 10000 }
+          ],
+          "svals2": [
+            { "Rate": 1000, "Value": 6000 },
+            { "Rate": 1000, "Value": 8000 },
+            { "Rate": 1000, "Value": 9000 },
+            { "Rate": 1000, "Value": 9500 },
+            { "Rate": 1000, "Value": 10000 }
+          ],
+          "svals3": [
+            { "Rate": 1000, "Value": 6000 },
+            { "Rate": 1000, "Value": 8000 },
+            { "Rate": 1000, "Value": 9000 },
+            { "Rate": 1000, "Value": 9500 },
+            { "Rate": 1000, "Value": 10000 }
+          ],
+          "svals4": [
+            { "Rate": 1000, "Value": 6000 },
+            { "Rate": 1000, "Value": 8000 },
+            { "Rate": 1000, "Value": 9000 },
+            { "Rate": 1000, "Value": 9500 },
+            { "Rate": 1000, "Value": 10000 }
+          ],
+          "svals5": [
+            { "Rate": 1000, "Value": 6000 },
+            { "Rate": 1000, "Value": 8000 },
+            { "Rate": 1000, "Value": 9000 },
+            { "Rate": 1000, "Value": 9500 },
+            { "Rate": 1000, "Value": 10000 }
+          ]
+        },
+        {
+          "funcId": 198,
+          "funcType": "addStateShort",
+          "funcTargetType": "enemyAll",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "DEF Down",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_504.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 148,
+              "name": "DEF Down",
+              "detail": "Decrease DEF",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_504.png",
+              "type": "downDefence",
+              "buffGroup": 0,
+              "vals": [
+                { "id": 3005, "name": "buffNegativeEffect" },
+                { "id": 3009, "name": "buffDecreaseDefence" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 5000
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+          ],
+          "svals2": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 }
+          ],
+          "svals3": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 }
+          ],
+          "svals4": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 350 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 350 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 350 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 350 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 350 }
+          ],
+          "svals5": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 }
+          ]
+        },
+        {
+          "funcId": 321,
+          "funcType": "addState",
+          "funcTargetType": "enemyAll",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "Curse",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_521.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 125,
+              "name": "Curse",
+              "detail": "Lose HP at end of each turn",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_521.png",
+              "type": "reduceHp",
+              "buffGroup": 0,
+              "vals": [
+                { "id": 3005, "name": "buffNegativeEffect" },
+                { "id": 3026, "name": "buffCurse" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 0
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 500 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 500 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 500 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 500 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 500 }
+          ],
+          "svals2": [
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 750 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 750 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 750 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 750 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 750 }
+          ],
+          "svals3": [
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 }
+          ],
+          "svals4": [
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1250 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1250 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1250 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1250 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1250 }
+          ],
+          "svals5": [
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1500 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1500 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1500 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1500 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1500 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1100202,
+      "num": 1,
+      "card": "quick",
+      "name": "Enfer Château d'If",
+      "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/1100200/card_servant_np.png",
+      "rank": "A+",
+      "type": "Anti-Army",
+      "detail": "Deal heavy damage ▲ & decrease DEF (3 turns) <effect increases with Overcharge> & inflict Curse (5 turns) <effect increases with Overcharge> & inflict Disastrous Curse (increase Curse damage) ▲ (5 turns) to all enemies.",
+      "npGain": {
+        "buster": [62, 62, 62, 62, 62],
+        "arts": [62, 62, 62, 62, 62],
+        "quick": [62, 62, 62, 62, 62],
+        "extra": [62, 62, 62, 62, 62],
+        "defence": [500, 500, 500, 500, 500],
+        "np": [62, 62, 62, 62, 62]
+      },
+      "npDistribution": [3, 6, 10, 13, 16, 13, 10, 29],
+      "strengthStatus": 2,
+      "priority": 102,
+      "condQuestId": 94026512,
+      "condQuestPhase": 3,
+      "individuality": [
+        { "id": 3000, "name": "normalAttack0" },
+        { "id": 4003, "name": "cardQuick" },
+        { "id": 4007, "name": "cardNP" }
+      ],
+      "functions": [
+        {
+          "funcId": 13,
+          "funcType": "damageNp",
+          "funcTargetType": "enemyAll",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "None",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [],
+          "svals": [
+            { "Rate": 1000, "Value": 8000 },
+            { "Rate": 1000, "Value": 10000 },
+            { "Rate": 1000, "Value": 11000 },
+            { "Rate": 1000, "Value": 11500 },
+            { "Rate": 1000, "Value": 12000 }
+          ],
+          "svals2": [
+            { "Rate": 1000, "Value": 8000 },
+            { "Rate": 1000, "Value": 10000 },
+            { "Rate": 1000, "Value": 11000 },
+            { "Rate": 1000, "Value": 11500 },
+            { "Rate": 1000, "Value": 12000 }
+          ],
+          "svals3": [
+            { "Rate": 1000, "Value": 8000 },
+            { "Rate": 1000, "Value": 10000 },
+            { "Rate": 1000, "Value": 11000 },
+            { "Rate": 1000, "Value": 11500 },
+            { "Rate": 1000, "Value": 12000 }
+          ],
+          "svals4": [
+            { "Rate": 1000, "Value": 8000 },
+            { "Rate": 1000, "Value": 10000 },
+            { "Rate": 1000, "Value": 11000 },
+            { "Rate": 1000, "Value": 11500 },
+            { "Rate": 1000, "Value": 12000 }
+          ],
+          "svals5": [
+            { "Rate": 1000, "Value": 8000 },
+            { "Rate": 1000, "Value": 10000 },
+            { "Rate": 1000, "Value": 11000 },
+            { "Rate": 1000, "Value": 11500 },
+            { "Rate": 1000, "Value": 12000 }
+          ]
+        },
+        {
+          "funcId": 198,
+          "funcType": "addStateShort",
+          "funcTargetType": "enemyAll",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "DEF Down",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_504.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 148,
+              "name": "DEF Down",
+              "detail": "Decrease DEF",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_504.png",
+              "type": "downDefence",
+              "buffGroup": 0,
+              "vals": [
+                { "id": 3005, "name": "buffNegativeEffect" },
+                { "id": 3009, "name": "buffDecreaseDefence" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 5000
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+          ],
+          "svals2": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 }
+          ],
+          "svals3": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 }
+          ],
+          "svals4": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 350 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 350 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 350 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 350 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 350 }
+          ],
+          "svals5": [
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 },
+            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 }
+          ]
+        },
+        {
+          "funcId": 321,
+          "funcType": "addState",
+          "funcTargetType": "enemyAll",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "Curse",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_521.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 125,
+              "name": "Curse",
+              "detail": "Lose HP at end of each turn",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_521.png",
+              "type": "reduceHp",
+              "buffGroup": 0,
+              "vals": [
+                { "id": 3005, "name": "buffNegativeEffect" },
+                { "id": 3026, "name": "buffCurse" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 0
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 500 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 500 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 500 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 500 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 500 }
+          ],
+          "svals2": [
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 750 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 750 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 750 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 750 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 750 }
+          ],
+          "svals3": [
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 }
+          ],
+          "svals4": [
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1250 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1250 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1250 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1250 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1250 }
+          ],
+          "svals5": [
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1500 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1500 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1500 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1500 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1500 }
+          ]
+        },
+        {
+          "funcId": 2452,
+          "funcType": "addState",
+          "funcTargetType": "enemyAll",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "Disastrous Curse",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_547.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "buffs": [
+            {
+              "id": 1115,
+              "name": "Disastrous Curse",
+              "detail": "Increase Curse effectiveness",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_547.png",
+              "type": "upFuncHpReduce",
+              "buffGroup": 0,
+              "vals": [
+                { "id": 3005, "name": "buffNegativeEffect" },
+                { "id": 3048, "name": "buffCurseEffectUp" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [{ "id": 3026, "name": "buffCurse" }],
+              "ckOpIndv": [],
+              "maxRate": 5000
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 }
+          ],
+          "svals2": [
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 }
+          ],
+          "svals3": [
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 }
+          ],
+          "svals4": [
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 }
+          ],
+          "svals5": [
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 },
+            { "Rate": 1000, "Turn": 5, "Count": -1, "Value": 1000 }
+          ]
+        }
+      ]
+    }
+  ],
+  "profile": {
+    "cv": "Nobunaga Shimazaki",
+    "illustrator": "Rui Komatsuzaki",
+    "stats": {
+      "strength": "B",
+      "endurance": "A+",
+      "agility": "C",
+      "magic": "B",
+      "luck": "?",
+      "np": "A"
+    },
+    "costume": {
+      "1100230": {
+        "id": 11,
+        "costumeCollectionNo": 9,
+        "name": "Monte Cristo Selection",
+        "shortName": "Monte Cristo Selection",
+        "detail": "The Count of Monte Cristo's summer attire. He actually really likes the inflatable tube, but won't admit it.",
+        "priority": 1
+      }
+    },
+    "comments": [
+      {
+        "id": 1,
+        "priority": 0,
+        "condMessage": "",
+        "comment": "The world's most well known seeker of vengeance.\nKnown as \"The Count of Monte Cristo.\"\nEntrapped by a cruel plot and convicted of a crime he didn't commit, he was sent to the nightmarish Château d'If. His iron will kept him from falling into despair, and with the treasure of Monte Cristo island in hand he returned to Paris.\nThere he exacted a terrible revenge upon the city's most influential people who had betrayed him to become so.",
+        "condType": "none",
+        "condValues": [0],
+        "condValue2": 0
+      },
+      {
+        "id": 2,
+        "priority": 0,
+        "condMessage": "",
+        "comment": "Height/Weight: 185cm, 75kg\nOrigin: Dumas' \"The Count of Monte Cristo\"?\nRegion: France\nAlignment: Chaotic-Evil\nGender: Male\nHis favorite phrase is \"Attendre et espérer,\" which translates to \"Wait and hope.\"",
+        "condType": "svtFriendship",
+        "condValues": [1],
+        "condValue2": 0
+      },
+      {
+        "id": 3,
+        "priority": 0,
+        "condMessage": "",
+        "comment": "His dreadful life, his path of vengeance, his devotion to his beloved Mercédès, his struggle and regret, and finally his path to repentance... It is a story beloved by the people of France and the world that features him as the \"World's Greatest Seeker of Vengeance.\"\n\nThe story of the Count of Monte Cristo was written by Alexandre Dumas and is a work of fiction. However, the existence of the priest who gave Edmond guidance within the Château d'If, Abbé Faria, has been confirmed...",
+        "condType": "svtFriendship",
+        "condValues": [2],
+        "condValue2": 0
+      },
+      {
+        "id": 4,
+        "priority": 0,
+        "condMessage": "",
+        "comment": "His True Name is Edmond Dantès, but he considers himself a different person than the \"Edmond Dantès\" who was a sailor in Marseille.\nHis reasoning is that at the end of his quest for vengeance, \"Edmond Dantès\" abandoned his evil nature...but this Servant continues to be a personification of vengeance. Thus, he says, he is not Edmond.",
+        "condType": "svtFriendship",
+        "condValues": [3],
+        "condValue2": 0
+      },
+      {
+        "id": 5,
+        "priority": 0,
+        "condMessage": "",
+        "comment": "『Monte Cristo Mythology』\nRank: C\nNP Type: Anti-Personnel\nRange: N/A　Maximum Targets: 1\nHe is the personification of vengeance itself. He doesn't belong to any single class, and is summoned as an Extra Class, Avenger. When he materializes as an Avenger, the tales of his lifetime have been elevated to the status of Noble Phantasm and grant him a superhuman physique.\nIn addition to his physique, he can use magical energy to attack and conceal his own stats and class.\n\nThis Noble Phantasm is constantly active. It has an extra effect when his True Name is released, but it is not used in this game.",
+        "condType": "svtFriendship",
+        "condValues": [4],
+        "condValue2": 0
+      },
+      {
+        "id": 6,
+        "priority": 0,
+        "condMessage": "",
+        "comment": "『Enfer Château d'If』\nRank: A\nNP Type: Anti-Personnel/Anti-Army\nRange: 1-20　Maximum Targets: 1-100\nThe manifestation of his iron will, trained within the hellish Château d'If. He can escape not only the prison of his body, but also the formless prisons of time and space.\nBy accelerating his thought processes and forcing his body to reflect them, he can move at incredibly high speeds.\nTo those observing his movements, it might look like he has the ability to stop time.\n\nIn this game, his high-speed movements enable him to create clones and attack multiple times simultaneously.",
+        "condType": "svtFriendship",
+        "condValues": [5],
+        "condValue2": 0
+      },
+      {
+        "id": 7,
+        "priority": 0,
+        "condMessage": "",
+        "comment": "I am the Count of Monte Cristo.\nI know neither love nor compassion. Until I burn everything to cinders, I will remain an Avenger, fueled by hatred and vengeance to make myself a brightly burning black flame of rage.\nMy beloved Haydée does not exist in this world, and thus, I will be a vengeful demon for eternity...",
+        "condType": "questClear",
+        "condValues": [911100201],
+        "condValue2": 0
+      }
+    ]
+  }
+}
