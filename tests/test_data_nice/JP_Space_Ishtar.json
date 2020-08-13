@@ -30,6 +30,16 @@
         "1100930": "https://assets.atlasacademy.io/GameData/JP/Faces/f_11009300.png"
       }
     },
+    "charaFigure": {
+      "ascension": {
+        "1": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/11009000/11009000_merged.png",
+        "2": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/11009001/11009001_merged.png",
+        "3": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/11009002/11009002_merged.png"
+      },
+      "costume": {
+        "1100930": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/11009300/11009300_merged.png"
+      }
+    },
     "commands": {
       "ascension": {
         "1": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/1100900/card_servant_1.png",

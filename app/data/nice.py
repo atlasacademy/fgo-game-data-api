@@ -520,6 +520,7 @@ def get_nice_servant(
     faces: Dict[str, Dict[int, str]] = {}
     commands: Dict[str, Dict[int, str]] = {}
     status: Dict[str, Dict[int, str]] = {}
+    charaFigure: Dict[str, Dict[int, str]] = {}
 
     costume_limits = {item.id for item in raw_data.mstSvtCostume}
     costume_ids = {
@@ -556,6 +557,10 @@ def get_nice_servant(
         status["ascension"] = {
             i: AssetURL.status.format(**base_settings_id, i=i) for i in range(1, 4)
         }
+        charaFigure["ascension"] = {
+            (i + 1): AssetURL.charaFigure.format(**base_settings_id, i=i)
+            for i in range(3)
+        }
         if costume_ids:
             charaGraph["costume"] = {
                 costume_id: AssetURL.charaGraphDefault.format(
@@ -565,6 +570,12 @@ def get_nice_servant(
             }
             faces["costume"] = {
                 costume_id: AssetURL.face.format(
+                    **base_settings, item_id=costume_id, i=0
+                )
+                for costume_id in costume_ids.values()
+            }
+            charaFigure["costume"] = {
+                costume_id: AssetURL.charaFigure.format(
                     **base_settings, item_id=costume_id, i=0
                 )
                 for costume_id in costume_ids.values()
@@ -586,6 +597,7 @@ def get_nice_servant(
     nice_data["extraAssets"] = {
         "charaGraph": charaGraph,
         "faces": faces,
+        "charaFigure": charaFigure,
         "commands": commands,
         "status": status,
     }

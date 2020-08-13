@@ -35,6 +35,7 @@ class AssetURL:
     commands: str = "{base_url}/{region}/Servants/Commands/{item_id}/card_servant_{i}.png"
     status: str = "{base_url}/{region}/Servants/Status/{item_id}/status_servant_{i}.png"
     charaGraphDefault: str = "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a.png"
+    charaFigure: str = "{base_url}/{region}/CharaFigure/{item_id}{i}/{item_id}{i}_merged.png"
     skillIcon: str = "{base_url}/{region}/SkillIcons/skill_{item_id:05}.png"
     buffIcon: str = "{base_url}/{region}/BuffIcons/bufficon_{item_id}.png"
     items: str = "{base_url}/{region}/Items/{item_id}.png"
@@ -269,6 +270,7 @@ class ExtraCCAssets(BaseModel):
 
 
 class ExtraAssets(ExtraCCAssets):
+    charaFigure: ExtraAssetsUrl
     commands: ExtraAssetsUrl
     status: ExtraAssetsUrl
 
