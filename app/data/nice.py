@@ -523,7 +523,7 @@ def get_nice_servant(
 
     costume_limits = {item.id for item in raw_data.mstSvtCostume}
     costume_ids = {
-        item.battleCharaId: item.limitCount
+        item.limitCount: item.battleCharaId
         for item in raw_data.mstSvtLimitAdd
         if item.limitCount in costume_limits
     }
@@ -561,21 +561,21 @@ def get_nice_servant(
                 costume_id: AssetURL.charaGraphDefault.format(
                     **base_settings, item_id=costume_id
                 )
-                for costume_id in costume_ids
+                for costume_id in costume_ids.values()
             }
             faces["costume"] = {
                 costume_id: AssetURL.face.format(
                     **base_settings, item_id=costume_id, i=0
                 )
-                for costume_id in costume_ids
+                for costume_id in costume_ids.values()
             }
             commands["costume"] = {
-                costume_id: AssetURL.commands.format(**base_settings_id, i=11 + i)
-                for i, costume_id in enumerate(costume_ids)
+                costume_id: AssetURL.commands.format(**base_settings_id, i=limit)
+                for limit, costume_id in costume_ids.items()
             }
             status["costume"] = {
-                costume_id: AssetURL.status.format(**base_settings_id, i=11 + i)
-                for i, costume_id in enumerate(costume_ids)
+                costume_id: AssetURL.status.format(**base_settings_id, i=limit)
+                for limit, costume_id in costume_ids.items()
             }
     elif raw_data.mstSvt.isEquip():
         charaGraph["equip"] = {
@@ -678,13 +678,11 @@ def get_nice_servant(
         else:
             illustrator = ""
 
-        costume_limit_id = {v: k for k, v in costume_ids.items()}
-
         nice_data["profile"] = {
             "cv": cv,
             "illustrator": illustrator,
             "costume": {
-                costume_limit_id[costume.id]: get_nice_costume(costume)
+                costume_ids[costume.id]: get_nice_costume(costume)
                 for costume in raw_data.mstSvtCostume
             },
             "comments": [get_nice_comment(item) for item in raw_data.mstSvtComment],
