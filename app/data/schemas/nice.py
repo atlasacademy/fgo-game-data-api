@@ -27,15 +27,22 @@ from .common import MCAssets, NiceTrait
 
 class AssetURL:
     charaGraph: Dict[int, str] = {
-        0: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a@1.png",
-        1: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a@2.png",
-        2: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@1.png",
-        3: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@2.png",
+        1: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a@1.png",
+        2: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a@2.png",
+        3: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@1.png",
+        4: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@2.png",
     }
     commands: str = "{base_url}/{region}/Servants/Commands/{item_id}/card_servant_{i}.png"
     status: str = "{base_url}/{region}/Servants/Status/{item_id}/status_servant_{i}.png"
     charaGraphDefault: str = "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a.png"
     charaFigure: str = "{base_url}/{region}/CharaFigure/{item_id}{i}/{item_id}{i}_merged.png"
+    narrowFigure: Dict[int, str] = {
+        1: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}@0.png",
+        2: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}@1.png",
+        3: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}@2.png",
+        4: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}_2@0.png",
+    }
+    narrowFigureDefault: str = "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}@0.png"
     skillIcon: str = "{base_url}/{region}/SkillIcons/skill_{item_id:05}.png"
     buffIcon: str = "{base_url}/{region}/BuffIcons/bufficon_{item_id}.png"
     items: str = "{base_url}/{region}/Items/{item_id}.png"
@@ -270,6 +277,7 @@ class ExtraCCAssets(BaseModel):
 
 
 class ExtraAssets(ExtraCCAssets):
+    narrowFigure: ExtraAssetsUrl
     charaFigure: ExtraAssetsUrl
     commands: ExtraAssetsUrl
     status: ExtraAssetsUrl

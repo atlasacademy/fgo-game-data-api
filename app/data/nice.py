@@ -521,6 +521,7 @@ def get_nice_servant(
     commands: Dict[str, Dict[int, str]] = {}
     status: Dict[str, Dict[int, str]] = {}
     charaFigure: Dict[str, Dict[int, str]] = {}
+    narrowFigure: Dict[str, Dict[int, str]] = {}
 
     costume_limits = {item.id for item in raw_data.mstSvtCostume}
     costume_ids = {
@@ -546,7 +547,7 @@ def get_nice_servant(
         }
     elif raw_data.mstSvt.isServant():
         charaGraph["ascension"] = {
-            (i + 1): AssetURL.charaGraph[i].format(**base_settings_id) for i in range(4)
+            i: AssetURL.charaGraph[i].format(**base_settings_id) for i in range(1, 5)
         }
         faces["ascension"] = {
             (i + 1): AssetURL.face.format(**base_settings_id, i=i) for i in range(4)
@@ -560,6 +561,9 @@ def get_nice_servant(
         charaFigure["ascension"] = {
             (i + 1): AssetURL.charaFigure.format(**base_settings_id, i=i)
             for i in range(3)
+        }
+        narrowFigure["ascension"] = {
+            i: AssetURL.narrowFigure[i].format(**base_settings_id) for i in range(1, 5)
         }
         if costume_ids:
             charaGraph["costume"] = {
@@ -580,9 +584,17 @@ def get_nice_servant(
                 )
                 for costume_id in costume_ids.values()
             }
-            commands["costume"] = {
-                costume_id: AssetURL.commands.format(**base_settings_id, i=limit)
-                for limit, costume_id in costume_ids.items()
+            charaGraph["costume"] = {
+                costume_id: AssetURL.charaGraphDefault.format(
+                    **base_settings, item_id=costume_id
+                )
+                for costume_id in costume_ids.values()
+            }
+            narrowFigure["costume"] = {
+                costume_id: AssetURL.narrowFigureDefault.format(
+                    **base_settings, item_id=costume_id
+                )
+                for costume_id in costume_ids.values()
             }
             status["costume"] = {
                 costume_id: AssetURL.status.format(**base_settings_id, i=limit)
@@ -598,6 +610,7 @@ def get_nice_servant(
         "charaGraph": charaGraph,
         "faces": faces,
         "charaFigure": charaFigure,
+        "narrowFigure": narrowFigure,
         "commands": commands,
         "status": status,
     }

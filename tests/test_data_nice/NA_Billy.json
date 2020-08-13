@@ -24,6 +24,14 @@
         "4": "https://assets.atlasacademy.io/GameData/NA/Faces/f_2010003.png"
       }
     },
+    "narrowFigure": {
+      "ascension": {
+        "1": "https://assets.atlasacademy.io/GameData/NA/NarrowFigure/201000/201000@0.png",
+        "2": "https://assets.atlasacademy.io/GameData/NA/NarrowFigure/201000/201000@1.png",
+        "3": "https://assets.atlasacademy.io/GameData/NA/NarrowFigure/201000/201000@2.png",
+        "4": "https://assets.atlasacademy.io/GameData/NA/NarrowFigure/201000/201000_2@0.png"
+      }
+    },
     "charaFigure": {
       "ascension": {
         "1": "https://assets.atlasacademy.io/GameData/NA/CharaFigure/2010000/2010000_merged.png",
