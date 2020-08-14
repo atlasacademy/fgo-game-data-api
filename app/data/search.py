@@ -29,10 +29,15 @@ def reverse_traits(traits: Iterable[Union[Trait, int]]) -> Set[int]:
     return {TRAIT_NAME_REVERSE.get(item, item) for item in traits}  # type: ignore
 
 
+accent_from = "àáâäèéëíðñóöùúāēīŋōšαβḗḫ"
+accent_to__ = "aaaaeeeidnoouuaeinosabeh"
+translation_table = {ord(k): v for k, v in zip(accent_from, accent_to__)}
+
+
 def match_name(search_param: str, name: str) -> bool:
     """Modified from fuzzywuzzy.token_set_ratio"""
-    p1 = utils.full_process(search_param, force_ascii=True)
-    p2 = utils.full_process(name, force_ascii=True)
+    p1 = utils.full_process(search_param).translate(translation_table)
+    p2 = utils.full_process(name).translate(translation_table)
 
     if not utils.validate_string(p1):
         return False
@@ -44,6 +49,9 @@ def match_name(search_param: str, name: str) -> bool:
     # for divider in ALTERNATIVE_DIVIDER:
     #     p1 = p1.replace(divider, " ")
     #     p2 = p2.replace(divider, " ")
+
+    if len(p1) >= 5 and p1 in p2:
+        return True
 
     # pull tokens
     tokens1 = set(p1.split())

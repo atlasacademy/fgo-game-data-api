@@ -35,7 +35,8 @@ def get_item_list(response: Response, response_type: str, endpoint: str) -> Set[
 test_cases_dict = {
     "equip_name_NA": ("NA/equip/search?name=Kaleidoscope", {9400340}),
     "equip_name_JP": ("JP/equip/search?name=カレイドスコープ", {9400340}),
-    "equip_names_NA": ("NA/equip/search?name=Banquet", {9302550, 9400290}),
+    "equip_name_NA": ("NA/equip/search?name=Banquet", {9302550, 9400290}),
+    "equip_short_name": ("NA/equip/search?name=scope", {9400340}),
     "servant_name_NA": (
         "NA/servant/search?name=Pendragon",
         {100100, 100200, 100300, 102900, 202600, 301900, 302000, 402200, 402700},
@@ -61,7 +62,10 @@ test_cases_dict = {
         {1000700},  # shouldn't return Okita Saber
     ),
     "servant_JP_search_EN_name": ("JP/servant/search?name=Skadi", {503900}),
-    "servant_NA_search_Scathach": ("NA/servant/search?name=Scathach", {301300, 602400}),
+    "servant_NA_search_Scathach": (
+        "NA/servant/search?name=Scathach",
+        {301300, 503900, 602400},
+    ),
     "servant_search_Yagyu": ("NA/servant/search?name=Tajima", {103200}),
     "servant_search_equip": (
         "NA/servant/search?name=Golden%20Sumo&type=servantEquip&className=ALL",
@@ -125,6 +129,7 @@ test_cases = [pytest.param(*value, id=key) for key, value in test_cases_dict.ite
 
 test_not_found_dict = {
     "servant": "NA/servant/search?name=ÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛ",
+    "servant_empty_name": "NA/servant/search?name=      ",
     "equip": "NA/equip/search?name=Kaleidoscope&rarity=4",
 }
 
