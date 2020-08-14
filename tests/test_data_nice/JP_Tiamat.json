@@ -21,7 +21,8 @@
     "narrowFigure": {},
     "charaFigure": {},
     "commands": {},
-    "status": {}
+    "status": {},
+    "equipFace": {}
   },
   "gender": "female",
   "attribute": "beast",

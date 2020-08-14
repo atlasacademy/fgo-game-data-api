@@ -67,7 +67,8 @@
       "costume": {
         "1100230": "https://assets.atlasacademy.io/GameData/NA/Servants/Status/1100200/status_servant_11.png"
       }
-    }
+    },
+    "equipFace": {}
   },
   "gender": "male",
   "attribute": "human",

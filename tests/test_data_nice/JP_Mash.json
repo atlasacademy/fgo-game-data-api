@@ -77,7 +77,8 @@
         "800140": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/800100/status_servant_12.png",
         "800150": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/800100/status_servant_13.png"
       }
-    }
+    },
+    "equipFace": {}
   },
   "gender": "female",
   "attribute": "earth",

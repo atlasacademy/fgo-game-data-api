@@ -17,7 +17,8 @@
     "narrowFigure": {},
     "charaFigure": {},
     "commands": {},
-    "status": {}
+    "status": {},
+    "equipFace": {}
   },
   "gender": "unknown",
   "attribute": "beast",

@@ -522,6 +522,7 @@ def get_nice_servant(
     status: Dict[str, Dict[int, str]] = {}
     charaFigure: Dict[str, Dict[int, str]] = {}
     narrowFigure: Dict[str, Dict[int, str]] = {}
+    equipFace: Dict[str, Dict[int, str]] = {}
 
     costume_limits = {item.id for item in raw_data.mstSvtCostume}
     costume_ids = {
@@ -605,6 +606,9 @@ def get_nice_servant(
             item_id: AssetURL.charaGraphDefault.format(**base_settings_id)
         }
         faces["equip"] = {item_id: AssetURL.face.format(**base_settings_id, i=0)}
+        equipFace["equip"] = {
+            item_id: AssetURL.equipFace.format(**base_settings_id, i=0)
+        }
 
     nice_data["extraAssets"] = {
         "charaGraph": charaGraph,
@@ -613,6 +617,7 @@ def get_nice_servant(
         "narrowFigure": narrowFigure,
         "commands": commands,
         "status": status,
+        "equipFace": equipFace,
     }
 
     lvMax = max([item.lvMax for item in raw_data.mstSvtLimit])

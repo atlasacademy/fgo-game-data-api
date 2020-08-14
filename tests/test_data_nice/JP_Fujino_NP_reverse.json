@@ -253,7 +253,8 @@
                 "2": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/202900/status_servant_2.png",
                 "3": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/202900/status_servant_3.png"
               }
-            }
+            },
+            "equipFace": {}
           },
           "gender": "female",
           "attribute": "human",

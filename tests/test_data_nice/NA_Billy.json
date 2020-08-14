@@ -52,7 +52,8 @@
         "2": "https://assets.atlasacademy.io/GameData/NA/Servants/Status/201000/status_servant_2.png",
         "3": "https://assets.atlasacademy.io/GameData/NA/Servants/Status/201000/status_servant_3.png"
       }
-    }
+    },
+    "equipFace": {}
   },
   "gender": "male",
   "attribute": "human",
