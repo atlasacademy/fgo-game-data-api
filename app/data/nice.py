@@ -601,6 +601,10 @@ def get_nice_servant(
                 costume_id: AssetURL.status.format(**base_settings_id, i=limit)
                 for limit, costume_id in costume_ids.items()
             }
+            commands["costume"] = {
+                costume_id: AssetURL.commands.format(**base_settings_id, i=limit)
+                for limit, costume_id in costume_ids.items()
+            }
     elif raw_data.mstSvt.isEquip():
         charaGraph["equip"] = {
             item_id: AssetURL.charaGraphDefault.format(**base_settings_id)

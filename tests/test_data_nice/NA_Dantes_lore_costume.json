@@ -56,6 +56,9 @@
         "1": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/1100200/card_servant_1.png",
         "2": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/1100200/card_servant_2.png",
         "3": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/1100200/card_servant_3.png"
+      },
+      "costume": {
+        "1100230": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/1100200/card_servant_11.png"
       }
     },
     "status": {
