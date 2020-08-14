@@ -167,6 +167,12 @@ class TestServantSpecial:
         response = client.get("/nice/NA/servant/lkji")
         assert response.status_code == 422
 
+    def test_JP_Emiya_all_nps(self) -> None:
+        response = client.get("/nice/JP/servant/11")
+        nps = {item["id"] for item in response.json()["noblePhantasms"]}
+        assert response.status_code == 200
+        assert nps == {200101, 200102, 200198, 200197}
+
     def test_skill_reverse_passive(self) -> None:
         response = client.get("/nice/NA/skill/30650?reverse=True")
         reverse_servants = {

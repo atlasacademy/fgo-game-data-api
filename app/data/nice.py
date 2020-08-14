@@ -658,12 +658,15 @@ def get_nice_servant(
         for item in raw_data.mstTreasureDevice
         if item.mstSvtTreasureDevice[0].num == 1
     ]
-    if actualTDs:
-        if "tdTypeChangeIDs" in actualTDs[0].mstTreasureDevice.script:
-            tdTypeChangeIDs = actualTDs[0].mstTreasureDevice.script["tdTypeChangeIDs"]
+    if actualTDs and "tdTypeChangeIDs" in actualTDs[0].mstTreasureDevice.script:
+        for actualTD in actualTDs:
+            tdTypeChangeIDs: List[int] = actualTD.mstTreasureDevice.script["tdTypeChangeIDs"]  # type: ignore
             currentActualTDsIDs = {item.mstTreasureDevice.id for item in actualTDs}
             for td in raw_data.mstTreasureDevice:
-                if td.mstTreasureDevice.id in tdTypeChangeIDs and td.mstTreasureDevice.id not in currentActualTDsIDs:  # type: ignore
+                if (
+                    td.mstTreasureDevice.id in tdTypeChangeIDs
+                    and td.mstTreasureDevice.id not in currentActualTDsIDs
+                ):
                     actualTDs.append(td)
 
     nice_data["ascensionMaterials"] = {
