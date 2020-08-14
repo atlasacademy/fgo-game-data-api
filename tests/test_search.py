@@ -37,6 +37,7 @@ test_cases_dict = {
     "equip_name_JP": ("JP/equip/search?name=カレイドスコープ", {9400340}),
     "equip_name_NA": ("NA/equip/search?name=Banquet", {9302550, 9400290}),
     "equip_short_name": ("NA/equip/search?name=scope", {9400340}),
+    "servant_Artoria": ("JP/servant/search?name=Artoria&className=caster", {504500}),
     "servant_name_NA": (
         "NA/servant/search?name=Pendragon",
         {100100, 100200, 100300, 102900, 202600, 301900, 302000, 402200, 402700},

@@ -34,10 +34,17 @@ accent_to__ = "aaaaeeeidnoouuaeinosabeh"
 translation_table = {ord(k): v for k, v in zip(accent_from, accent_to__)}
 
 
+SPECIAL_REPLACE = {"artoria": "altria"}
+
+
 def match_name(search_param: str, name: str) -> bool:
     """Modified from fuzzywuzzy.token_set_ratio"""
     p1 = utils.full_process(search_param).translate(translation_table)
     p2 = utils.full_process(name).translate(translation_table)
+
+    for k, v in SPECIAL_REPLACE.items():
+        p1 = p1.replace(k, v)
+        p2 = p2.replace(k, v)
 
     if not utils.validate_string(p1):
         return False
