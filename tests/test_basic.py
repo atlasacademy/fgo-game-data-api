@@ -69,6 +69,10 @@ class TestBasicSpecial:
         response = client.get("/basic/NA/servant/lkji")
         assert response.status_code == 422
 
+    def test_func_addState_no_buff(self) -> None:
+        response = client.get("/basic/JP/function/4086")
+        assert response.status_code == 200
+
     def test_skill_reverse_passive(self) -> None:
         response = client.get("/basic/NA/skill/30650?reverse=True")
         reverse_servants = {

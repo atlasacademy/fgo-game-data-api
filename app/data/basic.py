@@ -87,7 +87,11 @@ def get_basic_function(
     if mstFunc.funcType in FUNC_VALS_NOT_BUFF:
         traitVals = get_traits_list(mstFunc.vals)
     else:
-        buffs = [get_basic_buff(region, buff, lang) for buff in mstFunc.vals]
+        buffs = [
+            get_basic_buff(region, buff_id, lang)
+            for buff_id in mstFunc.vals
+            if buff_id in masters[region].mstBuffId
+        ]
 
     basic_func = BasicFunctionReverse(
         funcId=mstFunc.id,
