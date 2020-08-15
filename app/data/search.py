@@ -1,5 +1,6 @@
 from typing import Iterable, List, Set, Union
 
+from fastapi import HTTPException
 from fuzzywuzzy import fuzz, utils
 
 from ..routers.deps import (
@@ -23,6 +24,12 @@ from .enums import (
 )
 from .gamedata import masters
 from .translations import SVT_NAME_JP_EN
+
+
+INSUFFICIENT_QUERY = (
+    "Insufficient query. Please check the docs for the required parameters."
+)
+TOO_MANY_RESULTS = "More than {} items found. Please narrow down the query."
 
 
 def reverse_traits(traits: Iterable[Union[Trait, int]]) -> Set[int]:
@@ -57,7 +64,7 @@ def match_name(search_param: str, name: str) -> bool:
     #     p1 = p1.replace(divider, " ")
     #     p2 = p2.replace(divider, " ")
 
-    if len(p1) >= 5 and p1 in p2:
+    if p1 in p2:
         return True
 
     # pull tokens
@@ -91,8 +98,12 @@ def match_name(search_param: str, name: str) -> bool:
 
 
 def search_servant(
-    search_param: Union[ServantSearchQueryParams, SvtSearchQueryParams]
+    search_param: Union[ServantSearchQueryParams, SvtSearchQueryParams],
+    limit: int = 100,
 ) -> List[int]:
+    if not search_param.hasSearchParams:
+        raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
+
     svt_type_ints = {SVT_TYPE_NAME_REVERSE[item] for item in search_param.type}
     rarity_ints = set(search_param.rarity)
     class_ints = {CLASS_NAME_REVERSE[item] for item in search_param.className}
@@ -121,10 +132,16 @@ def search_servant(
             or match_name(search_param.name, SVT_NAME_JP_EN.get(item.name, item.name))
         ]
 
+    if len(matches) > limit:
+        raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
+
     return [item.id for item in matches]
 
 
-def search_equip(search_param: EquipSearchQueryParams) -> List[int]:
+def search_equip(search_param: EquipSearchQueryParams, limit: int = 100) -> List[int]:
+    if not search_param.hasSearchParams:
+        raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
+
     svt_type = {SVT_TYPE_NAME_REVERSE[item] for item in search_param.type}
     rarity = set(search_param.rarity)
 
@@ -144,10 +161,15 @@ def search_equip(search_param: EquipSearchQueryParams) -> List[int]:
             or match_name(search_param.name, item.ruby)
         ]
 
+    if len(matches) > limit:
+        raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
+
     return [item.id for item in matches]
 
 
-def search_buff(search_param: BuffSearchQueryParams) -> List[int]:
+def search_buff(search_param: BuffSearchQueryParams, limit: int = 100) -> List[int]:
+    if not search_param.hasSearchParams:
+        raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
     if not search_param.type:
         buff_types = set(BUFF_TYPE_NAME_REVERSE.values())
@@ -177,10 +199,15 @@ def search_buff(search_param: BuffSearchQueryParams) -> List[int]:
             or match_name(search_param.name, item.detail)
         ]
 
+    if len(matches) > limit:
+        raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
+
     return [item.id for item in matches]
 
 
-def search_func(search_param: FuncSearchQueryParams) -> List[int]:
+def search_func(search_param: FuncSearchQueryParams, limit: int = 100) -> List[int]:
+    if not search_param.hasSearchParams:
+        raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
     if not search_param.type:
         func_types = set(FUNC_TYPE_NAME_REVERSE.values())
@@ -222,5 +249,8 @@ def search_func(search_param: FuncSearchQueryParams) -> List[int]:
             for item in matches
             if match_name(search_param.popupText, item.popupText)
         ]
+
+    if len(matches) > limit:
+        raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
 
     return [item.id for item in matches]

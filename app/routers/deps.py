@@ -47,15 +47,20 @@ def language_parameter(lang: Optional[Language] = None) -> Language:
         return Language.jp
 
 
+SERVANT_TYPE = [
+    NiceSvtType.normal,
+    NiceSvtType.heroine,
+    NiceSvtType.enemyCollectionDetail,
+]
+
+
 @dataclass
 class ServantSearchQueryParams:
     region: Region
     hasSearchParams: bool = field(init=False)
     name: Optional[str] = None
     excludeCollectionNo: int = 0
-    type: List[NiceSvtType] = Query(
-        [NiceSvtType.normal, NiceSvtType.heroine, NiceSvtType.enemyCollectionDetail]
-    )
+    type: List[NiceSvtType] = Query(SERVANT_TYPE)
     rarity: List[int] = Query(list(range(6)), ge=0, le=5)
     className: List[SvtClass] = Query(PLAYABLE_CLASS_LIST)
     gender: List[Gender] = Query(list(GENDER_NAME.values()))
@@ -66,6 +71,7 @@ class ServantSearchQueryParams:
         self.hasSearchParams = any(
             [
                 self.name,
+                self.type != SERVANT_TYPE,
                 self.rarity != list(range(6)),
                 self.className != PLAYABLE_CLASS_LIST,
                 self.gender != list(GENDER_NAME.values()),
@@ -81,7 +87,7 @@ class ServantSearchQueryParams:
         - **name**: servant name. Searching JP data using English name works too.
         - **excludeCollectionNo**: int, defaults to 0. Won't return records with the specified collectionNo.
         - **type**: servant type, defaults to `[normal, heroine, enemyCollectionDetail]`.
-        See the NiceSvtType enum for the options. Must not be the only parameter given.
+        See the NiceSvtType enum for the options.
         - **rarity**: Integers 0-6.
         - **className**: an item in the className enum, defaults to `PLAYABLE_CLASS_LIST`.
         See the className detail in the Nice Servant response.
@@ -89,7 +95,7 @@ class ServantSearchQueryParams:
         - **attribute**: human, sky, earth, star or beast.
         - **trait**: an integer or an item in the trait enum. See the traits detail in the Nice Servant response.
 
-        At least one of name, rarity, className, gender, attribute and trait is required for the query.
+        At least one of name, type, rarity, className, gender, attribute and trait is required for the query.
         """
     )
 
@@ -111,6 +117,7 @@ class SvtSearchQueryParams:
         self.hasSearchParams = any(
             [
                 self.name,
+                self.type != list(SVT_TYPE_NAME.values()),
                 self.rarity != list(range(6)),
                 self.className != list(CLASS_NAME.values()),
                 self.gender != list(GENDER_NAME.values()),
@@ -125,14 +132,14 @@ class SvtSearchQueryParams:
 
         - **name**: servant name. Searching JP data using English name works too.
         - **excludeCollectionNo**: int. Won't return records with the specified collectionNo.
-        - **type**: servant type. See the NiceSvtType enum for the options. Must not be the only parameter given.
+        - **type**: servant type. See the NiceSvtType enum for the options.
         - **rarity**: Integers 0-6.
         - **className**: an item in the className enum. See the className detail in the Nice Servant response.
         - **gender**: female, male or unknown.
         - **attribute**: human, sky, earth, star or beast.
         - **trait**: an integer or an item in the trait enum. See the traits detail in the Nice Servant response.
 
-        At least one of name, rarity, className, gender, attribute and trait is required for the query.
+        At least one of name, type, rarity, className, gender, attribute and trait is required for the query.
         """
     )
 
@@ -147,7 +154,13 @@ class EquipSearchQueryParams:
     rarity: List[int] = Query(list(range(1, 6)), ge=1, le=5)
 
     def __post_init__(self) -> None:
-        self.hasSearchParams = any([self.name, self.rarity != list(range(1, 6))])
+        self.hasSearchParams = any(
+            [
+                self.name,
+                self.type != [NiceSvtType.servantEquip],
+                self.rarity != list(range(1, 6)),
+            ]
+        )
 
     DESCRIPTION: ClassVar[str] = inspect.cleandoc(
         """
@@ -156,10 +169,9 @@ class EquipSearchQueryParams:
         - **name**: in English if you are searching NA data and in Japanese if you are searching JP data.
         - **excludeCollectionNo**: int, defaults to 0. Won't return records with the specified collectionNo.
         - **type**: servant type, defaults to `[servantEquip]`. See the NiceSvtType for the options.
-        Must not be the only parameter given.
         - **rarity**: Integers 0-6
 
-        Either name or rarity is required for the query.
+        At least one of name, type or rarity is required for the query.
         """
     )
 
@@ -197,6 +209,8 @@ class BuffSearchQueryParams:
         - **tvals**: an integer or a trait enum.
         - **ckSelfIndv**: an integer or a trait enum.
         - **ckOpIndv**: an integer or a trait enum.
+
+        At least one of the parameter is required for the query.
         """
     )
 
@@ -237,5 +251,7 @@ class FuncSearchQueryParams:
         - **vals**: an integer or a trait enum.
         - **tvals**: an integer or a trait enum.
         - **questTvals**: integer.
+
+        At least one of the parameter is required for the query.
         """
     )

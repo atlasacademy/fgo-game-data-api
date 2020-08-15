@@ -50,13 +50,8 @@ async def find_servant(
     search_param: ServantSearchQueryParams = Depends(ServantSearchQueryParams),
     lang: Optional[Language] = None,
 ) -> List[Dict[str, Any]]:
-    if search_param.hasSearchParams:
-        matches = search.search_servant(search_param)
-        return [
-            basic.get_basic_svt(search_param.region, item, lang) for item in matches
-        ]
-    else:
-        raise HTTPException(status_code=400, detail="Insufficient query")
+    matches = search.search_servant(search_param, limit=10000)
+    return [basic.get_basic_svt(search_param.region, item, lang) for item in matches]
 
 
 get_servant_description = """Get servant info from ID
@@ -110,11 +105,8 @@ async def get_servant(
 async def find_equip(
     search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
 ) -> List[Dict[str, Any]]:
-    if search_param.hasSearchParams:
-        matches = search.search_equip(search_param)
-        return [basic.get_basic_svt(search_param.region, item) for item in matches]
-    else:
-        raise HTTPException(status_code=400, detail="Insufficient query")
+    matches = search.search_equip(search_param, limit=10000)
+    return [basic.get_basic_svt(search_param.region, item) for item in matches]
 
 
 get_equip_description = """Get CE info from ID
@@ -164,14 +156,11 @@ async def find_svt(
     search_param: SvtSearchQueryParams = Depends(SvtSearchQueryParams),
     lang: Optional[Language] = None,
 ) -> Response:
-    if search_param.hasSearchParams:
-        matches = search.search_servant(search_param)
-        entity_list = [
-            basic.get_basic_servant(search_param.region, item, lang) for item in matches
-        ]
-        return list_response(entity_list)
-    else:
-        raise HTTPException(status_code=400, detail="Insufficient query")
+    matches = search.search_servant(search_param, limit=10000)
+    entity_list = [
+        basic.get_basic_servant(search_param.region, item, lang) for item in matches
+    ]
+    return list_response(entity_list)
 
 
 @router.get(
@@ -328,17 +317,12 @@ async def find_function(
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     lang: Language = Depends(language_parameter),
 ) -> Response:
-    if search_param.hasSearchParams:
-        matches = search.search_func(search_param)
-        entity_list = [
-            basic.get_basic_function(
-                search_param.region, item, lang, reverse, reverseDepth
-            )
-            for item in matches
-        ]
-        return list_response(entity_list)
-    else:
-        raise HTTPException(status_code=400, detail="Insufficient query")
+    matches = search.search_func(search_param, limit=10000)
+    entity_list = [
+        basic.get_basic_function(search_param.region, item, lang, reverse, reverseDepth)
+        for item in matches
+    ]
+    return list_response(entity_list)
 
 
 @router.get(
@@ -389,15 +373,12 @@ async def find_buff(
     reverseDepth: ReverseDepth = ReverseDepth.function,
     lang: Language = Depends(language_parameter),
 ) -> Response:
-    if search_param.hasSearchParams:
-        matches = search.search_buff(search_param)
-        entity_list = [
-            basic.get_basic_buff(search_param.region, item, lang, reverse, reverseDepth)
-            for item in matches
-        ]
-        return list_response(entity_list)
-    else:
-        raise HTTPException(status_code=400, detail="Insufficient query")
+    matches = search.search_buff(search_param, limit=10000)
+    entity_list = [
+        basic.get_basic_buff(search_param.region, item, lang, reverse, reverseDepth)
+        for item in matches
+    ]
+    return list_response(entity_list)
 
 
 @router.get(

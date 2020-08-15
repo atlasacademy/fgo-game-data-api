@@ -54,16 +54,13 @@ async def find_servant(
     lang: Language = Depends(language_parameter),
     lore: bool = False,
 ) -> Response:
-    if search_param.hasSearchParams:
-        matches = search.search_servant(search_param)
-        return list_response(
-            [
-                nice.get_nice_servant_model(search_param.region, item, lang, lore)
-                for item in matches
-            ]
-        )
-    else:
-        raise HTTPException(status_code=400, detail="Insufficient query")
+    matches = search.search_servant(search_param)
+    return list_response(
+        [
+            nice.get_nice_servant_model(search_param.region, item, lang, lore)
+            for item in matches
+        ]
+    )
 
 
 get_servant_description = """Get servant info from ID
@@ -127,16 +124,13 @@ async def find_equip(
     lang: Language = Depends(language_parameter),
     lore: bool = False,
 ) -> Response:
-    if search_param.hasSearchParams:
-        matches = search.search_equip(search_param)
-        return list_response(
-            [
-                nice.get_nice_equip_model(search_param.region, item, lang, lore)
-                for item in matches
-            ]
-        )
-    else:
-        raise HTTPException(status_code=400, detail="Insufficient query")
+    matches = search.search_equip(search_param)
+    return list_response(
+        [
+            nice.get_nice_equip_model(search_param.region, item, lang, lore)
+            for item in matches
+        ]
+    )
 
 
 get_equip_description = """Get CE info from ID
@@ -195,15 +189,12 @@ async def find_svt(
     lang: Language = Depends(language_parameter),
     lore: bool = False,
 ) -> Response:
-    if search_param.hasSearchParams:
-        matches = search.search_servant(search_param)
-        entity_list = [
-            nice.get_nice_servant_model(search_param.region, item, lang, lore)
-            for item in matches
-        ]
-        return list_response(entity_list)
-    else:
-        raise HTTPException(status_code=400, detail="Insufficient query")
+    matches = search.search_servant(search_param)
+    entity_list = [
+        nice.get_nice_servant_model(search_param.region, item, lang, lore)
+        for item in matches
+    ]
+    return list_response(entity_list)
 
 
 @router.get(
@@ -374,17 +365,14 @@ async def find_function(
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     reverseData: ReverseData = ReverseData.nice,
 ) -> Response:
-    if search_param.hasSearchParams:
-        matches = search.search_func(search_param)
-        entity_list = [
-            nice.get_nice_func_alone(
-                search_param.region, item, lang, reverse, reverseDepth, reverseData
-            )
-            for item in matches
-        ]
-        return list_response(entity_list)
-    else:
-        raise HTTPException(status_code=400, detail="Insufficient query")
+    matches = search.search_func(search_param)
+    entity_list = [
+        nice.get_nice_func_alone(
+            search_param.region, item, lang, reverse, reverseDepth, reverseData
+        )
+        for item in matches
+    ]
+    return list_response(entity_list)
 
 
 @router.get(
@@ -439,17 +427,14 @@ async def find_buff(
     reverseDepth: ReverseDepth = ReverseDepth.function,
     reverseData: ReverseData = ReverseData.nice,
 ) -> Response:
-    if search_param.hasSearchParams:
-        matches = search.search_buff(search_param)
-        entity_list = [
-            nice.get_nice_buff_alone(
-                search_param.region, item, lang, reverse, reverseDepth, reverseData
-            )
-            for item in matches
-        ]
-        return list_response(entity_list)
-    else:
-        raise HTTPException(status_code=400, detail="Insufficient query")
+    matches = search.search_buff(search_param)
+    entity_list = [
+        nice.get_nice_buff_alone(
+            search_param.region, item, lang, reverse, reverseDepth, reverseData
+        )
+        for item in matches
+    ]
+    return list_response(entity_list)
 
 
 @router.get(

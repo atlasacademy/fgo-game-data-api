@@ -33,9 +33,9 @@ def get_item_list(response: Response, response_type: str, endpoint: str) -> Set[
 
 
 test_cases_dict = {
-    "equip_name_NA": ("NA/equip/search?name=Kaleidoscope", {9400340}),
+    "equip_name_NA_1": ("NA/equip/search?name=Kaleidoscope", {9400340}),
+    "equip_name_NA_2": ("NA/equip/search?name=Banquet", {9302550, 9400290}),
     "equip_name_JP": ("JP/equip/search?name=カレイドスコープ", {9400340}),
-    "equip_name_NA": ("NA/equip/search?name=Banquet", {9302550, 9400290}),
     "equip_short_name": ("NA/equip/search?name=scope", {9400340}),
     "servant_Artoria": ("JP/servant/search?name=Artoria&className=caster", {504500}),
     "servant_name_NA": (
@@ -163,7 +163,20 @@ class TestSearch:
         response = client.get(f"/{response_type}/NA/{endpoint}/search")
         assert response.status_code == 400
 
+
+@pytest.mark.parametrize("response_type", ["nice", "raw"])
+class TestSearchNiceRaw:
     @pytest.mark.parametrize("endpoint", ["servant", "equip", "svt"])
-    def test_only_type_given(self, response_type: str, endpoint: str) -> None:
-        response = client.get(f"/{response_type}/NA/{endpoint}/search?type=all")
-        assert response.status_code == 400
+    def test_too_many_results_svt(self, response_type: str, endpoint: str) -> None:
+        response = client.get(f"/{response_type}/NA/{endpoint}/search?type=normal")
+        assert response.status_code == 403
+
+    def test_too_many_results_buff(self, response_type: str) -> None:
+        response = client.get(
+            f"/{response_type}/JP/buff/search?vals=buffPositiveEffect"
+        )
+        assert response.status_code == 403
+
+    def test_too_many_results_function(self, response_type: str) -> None:
+        response = client.get(f"/{response_type}/JP/function/search?type=addState")
+        assert response.status_code == 403

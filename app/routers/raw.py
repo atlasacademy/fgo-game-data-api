@@ -52,15 +52,12 @@ async def find_servant(
     expand: bool = False,
     lore: bool = False,
 ) -> Response:
-    if search_param.hasSearchParams:
-        matches = search.search_servant(search_param)
-        entity_list = [
-            raw.get_servant_entity(search_param.region, item, expand, lore)
-            for item in matches
-        ]
-        return list_response(entity_list)
-    else:
-        raise HTTPException(status_code=400, detail="Insufficient query")
+    matches = search.search_servant(search_param)
+    entity_list = [
+        raw.get_servant_entity(search_param.region, item, expand, lore)
+        for item in matches
+    ]
+    return list_response(entity_list)
 
 
 get_servant_description = """
@@ -106,15 +103,12 @@ async def find_equip(
     expand: bool = False,
     lore: bool = False,
 ) -> Response:
-    if search_param.hasSearchParams:
-        matches = search.search_equip(search_param)
-        entity_list = [
-            raw.get_servant_entity(search_param.region, item, expand, lore)
-            for item in matches
-        ]
-        return list_response(entity_list)
-    else:
-        raise HTTPException(status_code=400, detail="Insufficient query")
+    matches = search.search_equip(search_param)
+    entity_list = [
+        raw.get_servant_entity(search_param.region, item, expand, lore)
+        for item in matches
+    ]
+    return list_response(entity_list)
 
 
 get_ce_description = """
@@ -160,15 +154,12 @@ async def find_svt(
     expand: bool = False,
     lore: bool = False,
 ) -> Response:
-    if search_param.hasSearchParams:
-        matches = search.search_servant(search_param)
-        entity_list = [
-            raw.get_servant_entity(search_param.region, item, expand, lore)
-            for item in matches
-        ]
-        return list_response(entity_list)
-    else:
-        raise HTTPException(status_code=400, detail="Insufficient query")
+    matches = search.search_servant(search_param)
+    entity_list = [
+        raw.get_servant_entity(search_param.region, item, expand, lore)
+        for item in matches
+    ]
+    return list_response(entity_list)
 
 
 get_svt_description = """
@@ -318,17 +309,12 @@ async def find_function(
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     expand: bool = False,
 ) -> Response:
-    if search_param.hasSearchParams:
-        matches = search.search_func(search_param)
-        entity_list = [
-            raw.get_func_entity(
-                search_param.region, item, reverse, reverseDepth, expand
-            )
-            for item in matches
-        ]
-        return list_response(entity_list)
-    else:
-        raise HTTPException(status_code=400, detail="Insufficient query")
+    matches = search.search_func(search_param)
+    entity_list = [
+        raw.get_func_entity(search_param.region, item, reverse, reverseDepth, expand)
+        for item in matches
+    ]
+    return list_response(entity_list)
 
 
 @router.get(
@@ -378,15 +364,12 @@ async def find_buff(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
 ) -> Response:
-    if search_param.hasSearchParams:
-        matches = search.search_buff(search_param)
-        entity_list = [
-            raw.get_buff_entity(search_param.region, item, reverse, reverseDepth)
-            for item in matches
-        ]
-        return list_response(entity_list)
-    else:
-        raise HTTPException(status_code=400, detail="Insufficient query")
+    matches = search.search_buff(search_param)
+    entity_list = [
+        raw.get_buff_entity(search_param.region, item, reverse, reverseDepth)
+        for item in matches
+    ]
+    return list_response(entity_list)
 
 
 @router.get(
