@@ -1,4 +1,4 @@
-from typing import Any, Dict, List, Union
+from typing import Any, Dict, List
 
 from fastapi import APIRouter, Depends, HTTPException, Response
 
@@ -20,26 +20,17 @@ from ..data.schemas.nice import (
 )
 from .deps import (
     BuffSearchQueryParams,
-    DetailMessage,
     EquipSearchQueryParams,
     FuncSearchQueryParams,
     ServantSearchQueryParams,
     SvtSearchQueryParams,
+    get_error_code,
     language_parameter,
 )
 from .utils import item_response, list_response
 
 
 settings = Settings()
-
-
-responses: Dict[Union[str, int], Any] = {
-    400: {"model": DetailMessage, "description": "Insufficient query"},
-    404: {"model": DetailMessage, "description": "Item not found"},
-    500: {"model": DetailMessage, "description": "Internal server error"},
-}
-
-
 router = APIRouter()
 
 
@@ -56,7 +47,7 @@ svt_lang_lore_description = """
     response_description="Servant Entity",
     response_model=List[NiceServant],
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([400, 403, 500]),
 )
 async def find_servant(
     search_param: ServantSearchQueryParams = Depends(ServantSearchQueryParams),
@@ -101,7 +92,7 @@ if settings.documentation_all_nice:
     response_description="Servant Entity",
     response_model=NiceServant,
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([404, 500]),
 )
 async def get_servant(
     region: Region,
@@ -129,7 +120,7 @@ equip_lore_description = """
     response_description="Equip Entity",
     response_model=List[NiceEquip],
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([400, 403, 500]),
 )
 async def find_equip(
     search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
@@ -174,7 +165,7 @@ if settings.documentation_all_nice:
     response_description="CE Entity",
     response_model=NiceEquip,
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([404, 500]),
 )
 async def get_equip(
     region: Region,
@@ -197,7 +188,7 @@ async def get_equip(
     response_description="Nice Servant Entities",
     response_model=List[NiceServant],
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([400, 403, 500]),
 )
 async def find_svt(
     search_param: SvtSearchQueryParams = Depends(SvtSearchQueryParams),
@@ -221,7 +212,7 @@ async def find_svt(
     response_description="Servant Entity",
     response_model=NiceServant,
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([404, 500]),
 )
 async def get_svt(
     region: Region,
@@ -260,7 +251,7 @@ if settings.documentation_all_nice:
     response_description="Mystic Code entity",
     response_model=NiceMysticCode,
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([404, 500]),
 )
 async def get_mystic_code(region: Region, item_id: int) -> Response:
     if item_id in masters[region].mstEquipId:
@@ -288,7 +279,7 @@ if settings.documentation_all_nice:
     response_description="Command Code entity",
     response_model=NiceCommandCode,
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([404, 500]),
 )
 async def get_command_code(region: Region, item_id: int) -> Response:
     if item_id in masters[region].mstCommandCodeId:
@@ -303,7 +294,7 @@ async def get_command_code(region: Region, item_id: int) -> Response:
     response_description="Skill entity",
     response_model=NiceSkillReverse,
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([404, 500]),
 )
 async def get_skill(
     region: Region,
@@ -334,7 +325,7 @@ async def get_skill(
     response_description="NP entity",
     response_model=NiceTdReverse,
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([404, 500]),
 )
 async def get_td(
     region: Region,
@@ -374,7 +365,7 @@ and return the reversed skill objects.
     response_description="Function entity",
     response_model=List[NiceBaseFunctionReverse],
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([400, 403, 500]),
 )
 async def find_function(
     search_param: FuncSearchQueryParams = Depends(FuncSearchQueryParams),
@@ -404,7 +395,7 @@ async def find_function(
     response_description="Function entity",
     response_model=NiceBaseFunctionReverse,
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([404, 500]),
 )
 async def get_function(
     region: Region,
@@ -439,7 +430,7 @@ and return the reversed function objects.
     response_description="Function entity",
     response_model=List[NiceBuffReverse],
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([400, 403, 500]),
 )
 async def find_buff(
     search_param: BuffSearchQueryParams = Depends(BuffSearchQueryParams),
@@ -468,7 +459,7 @@ async def find_buff(
     response_description="Buff Entity",
     response_model=NiceBuffReverse,
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([404, 500]),
 )
 async def get_buff(
     region: Region,
@@ -507,7 +498,7 @@ if settings.documentation_all_nice:
     response_description="Item Entity",
     response_model=NiceItem,
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([404, 500]),
 )
 async def get_item(region: Region, item_id: int) -> Dict[str, Any]:
     if item_id in masters[region].mstItemId:
@@ -522,7 +513,7 @@ async def get_item(region: Region, item_id: int) -> Dict[str, Any]:
     response_description="Quest Phase Entity",
     response_model=NiceQuestPhase,
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([404, 500]),
 )
 async def get_quest_phase(region: Region, quest_id: int, phase: int) -> Dict[str, Any]:
     """

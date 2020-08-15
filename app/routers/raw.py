@@ -1,4 +1,4 @@
-from typing import Any, Dict, List, Union
+from typing import Any, Dict, List
 
 from fastapi import APIRouter, Depends, HTTPException, Response
 
@@ -18,18 +18,13 @@ from ..data.schemas.raw import (
 )
 from .deps import (
     BuffSearchQueryParams,
-    DetailMessage,
     EquipSearchQueryParams,
     FuncSearchQueryParams,
     ServantSearchQueryParams,
     SvtSearchQueryParams,
+    get_error_code,
 )
 from .utils import item_response, list_response
-
-
-responses: Dict[Union[str, int], Any] = {
-    404: {"model": DetailMessage, "description": "Item not found"}
-}
 
 
 router = APIRouter()
@@ -50,7 +45,7 @@ Expand all other skills and functions as well.
     response_description="Servant Entity",
     response_model=List[ServantEntity],
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([400, 403]),
 )
 async def find_servant(
     search_param: ServantSearchQueryParams = Depends(ServantSearchQueryParams),
@@ -83,7 +78,7 @@ Otherwise, it will look up the actual ID field. As a result, it can return not s
     response_description="Servant Entity",
     response_model=ServantEntity,
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([404]),
 )
 async def get_servant(
     region: Region, item_id: int, expand: bool = False, lore: bool = False
@@ -104,7 +99,7 @@ async def get_servant(
     response_description="CE entity",
     response_model=List[ServantEntity],
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([400, 403]),
 )
 async def find_equip(
     search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
@@ -137,7 +132,7 @@ Otherwise, it will look up the actual ID field. As a result, it can return not C
     response_description="CE entity",
     response_model=ServantEntity,
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([404]),
 )
 async def get_equip(
     region: Region, item_id: int, expand: bool = False, lore: bool = False
@@ -158,7 +153,7 @@ async def get_equip(
     response_description="Nice Servant Entities",
     response_model=List[ServantEntity],
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([400, 403]),
 )
 async def find_svt(
     search_param: SvtSearchQueryParams = Depends(SvtSearchQueryParams),
@@ -190,7 +185,7 @@ Only uses actual ID for the lookup.
     response_description="Servant Entity",
     response_model=ServantEntity,
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([404]),
 )
 async def get_svt(
     region: Region, item_id: int, expand: bool = False, lore: bool = False
@@ -208,7 +203,7 @@ async def get_svt(
     response_description="Mystic Code entity",
     response_model=MysticCodeEntity,
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([404]),
 )
 async def get_mystic_code(
     region: Region, item_id: int, expand: bool = False
@@ -231,7 +226,7 @@ async def get_mystic_code(
     response_description="Command Code entity",
     response_model=CommandCodeEntity,
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([404]),
 )
 async def get_command_code(
     region: Region, item_id: int, expand: bool = False
@@ -254,7 +249,7 @@ async def get_command_code(
     response_description="Skill entity",
     response_model=SkillEntity,
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([404]),
 )
 async def get_skill(
     region: Region, item_id: int, reverse: bool = False, expand: bool = False,
@@ -280,7 +275,7 @@ async def get_skill(
     response_description="NP entity",
     response_model=TdEntity,
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([404]),
 )
 async def get_td(
     region: Region, item_id: int, reverse: bool = False, expand: bool = False,
@@ -315,7 +310,7 @@ and return the reversed skill objects.
     response_description="Function entity",
     response_model=List[FunctionEntity],
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([400, 403]),
 )
 async def find_function(
     search_param: FuncSearchQueryParams = Depends(FuncSearchQueryParams),
@@ -344,7 +339,7 @@ async def find_function(
     response_description="Function entity",
     response_model=FunctionEntity,
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([404]),
 )
 async def get_function(
     region: Region,
@@ -376,7 +371,7 @@ and return the reversed function objects.
     response_description="Function entity",
     response_model=List[BuffEntity],
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([400, 403]),
 )
 async def find_buff(
     search_param: BuffSearchQueryParams = Depends(BuffSearchQueryParams),
@@ -401,7 +396,7 @@ async def find_buff(
     response_description="Buff entity",
     response_model=BuffEntity,
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([404]),
 )
 async def get_buff(
     region: Region,
@@ -422,7 +417,7 @@ async def get_buff(
     response_description="Item Entity",
     response_model=ItemEntity,
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([404]),
 )
 async def get_item(region: Region, item_id: int) -> Dict[str, Any]:
     """
@@ -440,7 +435,7 @@ async def get_item(region: Region, item_id: int) -> Dict[str, Any]:
     response_description="Quest Phase Entity",
     response_model=QuestPhaseEntity,
     response_model_exclude_unset=True,
-    responses=responses,
+    responses=get_error_code([404]),
 )
 async def get_quest_phase(region: Region, quest_id: int, phase: int) -> Response:
     """

@@ -1,6 +1,6 @@
 import inspect
 from dataclasses import dataclass, field
-from typing import ClassVar, List, Optional, Union
+from typing import Any, ClassVar, Dict, List, Optional, Union
 
 from fastapi import Query
 from pydantic import BaseModel
@@ -26,6 +26,18 @@ from ..data.enums import (
 
 class DetailMessage(BaseModel):
     detail: str
+
+
+ERROR_CODE: Dict[int, Any] = {
+    400: {"model": DetailMessage, "description": "Insufficient query"},
+    403: {"model": DetailMessage, "description": "Response too big"},
+    404: {"model": DetailMessage, "description": "Item not found"},
+    500: {"model": DetailMessage, "description": "Internal server error"},
+}
+
+
+def get_error_code(error_codes: List[int]) -> Dict[Union[str, int], Any]:
+    return {k: v for k, v in ERROR_CODE.items() if k in error_codes}
 
 
 def language_parameter(lang: Optional[Language] = None) -> Language:
