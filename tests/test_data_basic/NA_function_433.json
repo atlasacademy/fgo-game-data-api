@@ -4,6 +4,7 @@
   "funcTargetType": "enemy",
   "funcTargetTeam": "playerAndEnemy",
   "functvals": [],
+  "funcquestTvals": [],
   "traitVals": [{ "id": 3004, "name": "buffPositiveEffect" }],
   "buffs": []
 }

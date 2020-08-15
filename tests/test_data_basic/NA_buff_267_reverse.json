@@ -3,6 +3,8 @@
   "name": "Will to Fight EX",
   "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_302.png",
   "type": "upDamage",
+  "vals": [],
+  "tvals": [],
   "ckSelfIndv": [],
   "ckOpIndv": [],
   "reverse": {
@@ -14,6 +16,10 @@
           "funcTargetType": "enemyFull",
           "funcTargetTeam": "player",
           "functvals": [],
+          "funcquestTvals": [
+            { "id": 94000046, "name": "unknown" },
+            { "id": 94000045, "name": "unknown" }
+          ],
           "traitVals": [],
           "buffs": [
             {
@@ -21,6 +27,8 @@
               "name": "Will to Fight EX",
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_302.png",
               "type": "upDamage",
+              "vals": [],
+              "tvals": [],
               "ckSelfIndv": [],
               "ckOpIndv": []
             }

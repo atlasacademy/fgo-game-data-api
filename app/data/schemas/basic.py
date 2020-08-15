@@ -19,6 +19,8 @@ class BasicBuff(BaseModelORJson):
     name: str
     icon: HttpUrl
     type: Union[NiceBuffType, int]
+    vals: List[NiceTrait]
+    tvals: List[NiceTrait]
     ckSelfIndv: List[NiceTrait]
     ckOpIndv: List[NiceTrait]
 
@@ -29,6 +31,7 @@ class BasicFunction(BaseModelORJson):
     funcTargetType: Union[NiceFuncTargetType, int]
     funcTargetTeam: Union[FuncApplyTarget, int]
     functvals: List[NiceTrait]
+    funcquestTvals: List[NiceTrait]
     traitVals: List[NiceTrait] = []
     buffs: List[BasicBuff]
 

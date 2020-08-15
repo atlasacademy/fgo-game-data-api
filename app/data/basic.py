@@ -59,6 +59,8 @@ def get_basic_buff(
             base_url=settings.asset_url, region=region, item_id=mstBuff.iconId
         ),
         type=get_safe(BUFF_TYPE_NAME, mstBuff.type),
+        vals=get_traits_list(mstBuff.vals),
+        tvals=get_traits_list(mstBuff.tvals),
         ckSelfIndv=get_traits_list(mstBuff.ckSelfIndv),
         ckOpIndv=get_traits_list(mstBuff.ckOpIndv),
     )
@@ -98,6 +100,7 @@ def get_basic_function(
         funcType=get_safe(FUNC_TYPE_NAME, mstFunc.funcType),
         funcTargetTeam=get_safe(FUNC_APPLYTARGET_NAME, mstFunc.applyTarget),
         funcTargetType=get_safe(FUNC_TARGETTYPE_NAME, mstFunc.targetType),
+        funcquestTvals=get_traits_list(mstFunc.questTvals),
         functvals=get_traits_list(mstFunc.tvals),
         traitVals=traitVals,
         buffs=buffs,
