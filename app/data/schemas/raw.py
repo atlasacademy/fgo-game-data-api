@@ -445,6 +445,57 @@ class MstSvtCostume(BaseModel):
     endedAt: int  # 1893596399
 
 
+class MstVoice(BaseModel):
+    id: str  # "A010",
+    priority: int  # 2100,
+    svtVoiceType: int  # 8,
+    name: str  # "聖晶片受け取り 1",
+    nameDefault: str  # "？？？",
+    condType: int  # 0,
+    condValue: int  # 0,
+    voicePlayedValue: int  # 0,
+    firstPlayPriority: int  # 0,
+    closedType: int  # 1,
+    flag: int  # 0
+
+
+class ScriptJsonInfo(BaseModel):
+    id: str  # "0_S010"
+    face: int  # 0
+    delay: int  # 0.0
+    text: Optional[str]  # "I ask of you, are you my Master?"
+    form: int  # 0
+
+
+class ScriptJsonCond(BaseModel):
+    condType: int  # 1
+    value: int  # 0
+    eventId: int  # 0
+
+
+class ScriptJson(BaseModel):
+    overwriteName: Optional[str]
+    infos: List[ScriptJsonInfo]
+    conds: List[ScriptJsonCond]
+
+
+class MstSvtVoice(BaseModel):
+    scriptJson: List[ScriptJson]
+    id: int
+    voicePrefix: int
+    type: int
+
+
+class MstSvtGroup(BaseModel):
+    id: int
+    svtId: int
+
+
+class GlobalNewMstSubtitle(BaseModel):
+    id: str
+    serif: str
+
+
 class MstFriendship(BaseModel):
     itemIds: List[int] = []  # [1000]
     itemNums: List[int] = []  # [1]
@@ -568,6 +619,14 @@ class Master(BaseModel):
     mstCommandCodeComment: List[MstCommandCodeComment]
     mstCvId: Dict[int, MstCv]
     mstIllustratorId: Dict[int, MstIllustrator]
+    # mstSvtVoice: List[MstSvtVoice]
+    mstSvtVoiceId: Dict[int, List[MstSvtVoice]]
+    # mstVoice: List[MstVoice]
+    mstVoiceId: Dict[str, MstVoice]
+    # mstSvtGroup: List[MstSvtGroup]
+    mstSvtGroupId: Dict[int, List[int]]
+    # globalNewMstSubtitle: List[GlobalNewMstSubtitle] = []
+    mstSubtitleId: Dict[int, List[GlobalNewMstSubtitle]] = {}
     buffToFunc: Dict[int, Set[int]]
     funcToSkill: Dict[int, Set[int]]
     funcToTd: Dict[int, Set[int]]
@@ -586,6 +645,8 @@ class ServantEntity(BaseModelORJson):
     mstSvtLimitAdd: List[MstSvtLimitAdd]
     mstSvtCostume: List[MstSvtCostume] = []
     mstSvtComment: List[MstSvtComment] = []
+    mstSvtVoice: List[MstSvtVoice] = []
+    mstSubtitle: List[GlobalNewMstSubtitle] = []
 
 
 class ReversedSkillTd(BaseModelORJson):

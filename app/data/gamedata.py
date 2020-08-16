@@ -25,7 +25,9 @@ MASTER_WITH_ID = {
     "mstCommandCode",
     "mstCv",
     "mstIllustrator",
+    "mstVoice",
 }
+ID_LISTS = {"mstSvtVoice"}
 MASTER_WITHOUT_ID = {
     "mstSvtExp",
     "mstFriendship",
@@ -34,6 +36,7 @@ MASTER_WITHOUT_ID = {
     "mstQuestPhase",
     "mstCommandCodeSkill",
     "mstCommandCodeComment",
+    "mstSvtGroup",
 }
 SVT_STUFFS = {
     "mstSvtCard",
@@ -57,7 +60,12 @@ def update_gamedata() -> None:
         master = {}
 
         for entity in (
-            MASTER_WITH_ID | MASTER_WITHOUT_ID | SVT_STUFFS | SKILL_STUFFS | TD_STUFFS
+            MASTER_WITH_ID
+            | MASTER_WITHOUT_ID
+            | SVT_STUFFS
+            | SKILL_STUFFS
+            | TD_STUFFS
+            | ID_LISTS
         ):
             with open(gamedata / f"{entity}.json", "rb") as fp:
                 master[entity] = orjson.loads(fp.read())
@@ -160,13 +168,23 @@ def update_gamedata() -> None:
                 else:
                     master[masters_item][item[id_name]] = [item[lookup_id]]
 
-        for extra_stuff in SKILL_STUFFS | TD_STUFFS | SVT_STUFFS:
+        mstSvtGroupId: Dict[int, List[int]] = {}
+        for item in master["mstSvtGroup"]:
+            groupId = item["id"]
+            if groupId in mstSvtGroupId:
+                mstSvtGroupId[groupId].append(item["svtId"])
+            else:
+                mstSvtGroupId[groupId] = [item["svtId"]]
+        master["mstSvtGroupId"] = mstSvtGroupId
+
+        for extra_stuff in SKILL_STUFFS | TD_STUFFS | SVT_STUFFS | ID_LISTS:
             masters_item = f"{extra_stuff}Id"
             master[masters_item] = {}
             for item in master[extra_stuff]:
-                if "Detail" in extra_stuff:
-                    id_name = "id"
-                elif extra_stuff in {"mstCombineSkill", "mstCombineLimit"}:
+                if (
+                    "Detail" in extra_stuff
+                    or extra_stuff in {"mstCombineSkill", "mstCombineLimit"} | ID_LISTS
+                ):
                     id_name = "id"
                 elif extra_stuff in SKILL_STUFFS:
                     id_name = "skillId"
@@ -195,6 +213,21 @@ def update_gamedata() -> None:
                     bondEquip[actIndividuality[0]] = item["id"]
 
         master["bondEquip"] = bondEquip
+
+        if region_name == Region.NA:
+            with open(gamedata / "globalNewMstSubtitle.json", "rb") as fp:
+                globalNewMstSubtitle = orjson.loads(fp.read())
+            mstSubtitleId: Dict[int, Any] = {}
+            for item in globalNewMstSubtitle:
+                svt = item["id"].split("_")[0]
+                if not svt.startswith("PLAIN"):
+                    svtId = int(svt)
+                    if svtId in mstSubtitleId:
+                        mstSubtitleId[svtId].append(item)
+                    else:
+                        mstSubtitleId[svtId] = [item]
+
+            master["mstSubtitleId"] = mstSubtitleId
 
         masters[region_name] = Master.parse_obj(master)
 

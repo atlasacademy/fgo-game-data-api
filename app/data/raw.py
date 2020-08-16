@@ -243,6 +243,8 @@ def get_servant_entity(
 
     if lore:
         svt_entity.mstSvtComment = masters[region].mstSvtCommentId.get(servant_id, [])
+        svt_entity.mstSvtVoice = masters[region].mstSvtVoiceId.get(servant_id, [])
+        svt_entity.mstSubtitle = masters[region].mstSubtitleId.get(servant_id, [])
 
     return svt_entity
 

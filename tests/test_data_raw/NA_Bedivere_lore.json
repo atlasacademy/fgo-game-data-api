@@ -1110,5 +1110,495 @@
       "condType": 1,
       "condValue2": 0
     }
+  ],
+  "mstSvtVoice": [
+    {
+      "scriptJson": [
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_H010", "face": 1, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_H011", "face": 1, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 1, "value": 0, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_H020", "face": 0, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_H021", "face": 0, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 2, "value": 0, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_H030", "face": 0, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_H031", "face": 1, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 7, "value": 1000822, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_H040", "face": 0, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_H041", "face": 1, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_H050", "face": 0, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_H051", "face": 1, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_H060", "face": 0, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_H061", "face": 1, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_H062", "face": 5, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_H070", "face": 4, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_H071", "face": 1, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_H072", "face": 0, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_H080", "face": 0, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_H081", "face": 4, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_H090", "face": 0, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_H091", "face": 1, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 3, "value": 1, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_H100", "face": 1, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_H101", "face": 1, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 3, "value": 2, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_H110", "face": 0, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_H111", "face": 1, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 3, "value": 3, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_H120", "face": 0, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_H121", "face": 0, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_H122", "face": 4, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 3, "value": 4, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_H130", "face": 1, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_H131", "face": 0, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 3, "value": 5, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_H140", "face": 0, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_H141", "face": 0, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 5, "value": 1026, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_H150", "face": 0, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_H151", "face": 4, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_H152", "face": 1, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 5, "value": 1015, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_H160", "face": 5, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_H161", "face": 0, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_H162", "face": 4, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 4, "value": 100900, "eventId": 0 }]
+        }
+      ],
+      "id": 101200,
+      "voicePrefix": 0,
+      "type": 1
+    },
+    {
+      "scriptJson": [
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_G010", "face": 0, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_G011", "face": 1, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 8, "value": 0, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_G020", "face": 0, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 10, "value": 0, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_G030", "face": 0, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_G031", "face": 5, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 9, "value": 1, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_G040", "face": 4, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 9, "value": 3, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_G050", "face": 0, "delay": 0, "text": "", "form": 0 },
+            { "id": "0_G051", "face": 5, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 11, "value": 0, "eventId": 0 }]
+        }
+      ],
+      "id": 101200,
+      "voicePrefix": 0,
+      "type": 2
+    },
+    {
+      "scriptJson": [
+        {
+          "overwriteName": "",
+          "infos": [
+            {
+              "id": "0_S010",
+              "face": 0,
+              "delay": 0,
+              "text": "Saber, Bedivere.[r]Henceforth, I shall become your Servant.",
+              "form": 0
+            },
+            {
+              "id": "0_S011",
+              "face": 0,
+              "delay": 0,
+              "text": "[r]I believe that is for the sake of my king.",
+              "form": 0
+            }
+          ],
+          "conds": []
+        }
+      ],
+      "id": 101200,
+      "voicePrefix": 0,
+      "type": 3
+    },
+    {
+      "scriptJson": [
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_B010", "face": 0, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_B020", "face": 0, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_B030", "face": 0, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_B040", "face": 0, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_B080", "face": 0, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_B090", "face": 0, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_B100", "face": 0, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_B110", "face": 0, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_B120", "face": 0, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_B130", "face": 0, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_B140", "face": 0, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_B150", "face": 0, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_B160", "face": 0, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_B170", "face": 0, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_B180", "face": 0, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_B190", "face": 0, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_B200", "face": 0, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "infos": [
+            { "id": "0_B210", "face": 0, "delay": 0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        }
+      ],
+      "id": 101200,
+      "voicePrefix": 0,
+      "type": 6
+    },
+    {
+      "scriptJson": [
+        {
+          "infos": [
+            { "id": "0_B050", "face": 4, "delay": 0, "form": 0 },
+            { "id": "0_B051", "face": 4, "delay": 0, "form": 0 },
+            { "id": "0_B052", "face": 4, "delay": 0, "form": 0 },
+            { "id": "0_B053", "face": 4, "delay": 1, "form": 0 }
+          ],
+          "conds": [{ "condType": 13, "value": 0, "eventId": 0 }]
+        }
+      ],
+      "id": 101200,
+      "voicePrefix": 0,
+      "type": 7
+    }
+  ],
+  "mstSubtitle": [
+    { "id": "101200_0_B010", "serif": "Huh!" },
+    { "id": "101200_0_B020", "serif": "Tou!" },
+    { "id": "101200_0_B030", "serif": "Seiya!" },
+    { "id": "101200_0_B040", "serif": "Feel the might of my Silver Arm!" },
+    {
+      "id": "101200_0_B050",
+      "serif": "[id 101200_0_B050,101200_0_B051]Devour my soul and come forth, o silver shooting star.\n[id 101200_0_B052]...Dead End,\n[id 101200_0_B053]Airgetlám!"
+    },
+    { "id": "101200_0_B080", "serif": "My arm and my sword are for my king." },
+    { "id": "101200_0_B090", "serif": "Immortal and indomitable." },
+    {
+      "id": "101200_0_B100",
+      "serif": "I must see my loyalty through, that's all."
+    },
+    { "id": "101200_0_B110", "serif": "As long as the king is in my heart..." },
+    {
+      "id": "101200_0_B120",
+      "serif": "...This arm of Nuadha shall bring me victory."
+    },
+    {
+      "id": "101200_0_B130",
+      "serif": "My king, I dedicate this victory to you."
+    },
+    { "id": "101200_0_B140", "serif": "Ahh!!" },
+    {
+      "id": "101200_0_B150",
+      "serif": "This is nothing compared to the light of my king's blade."
+    },
+    {
+      "id": "101200_0_B160",
+      "serif": "Even if I am defeated...\nMy loyalty will not fade..."
+    },
+    { "id": "101200_0_B170", "serif": "My king... Arthur..." },
+    { "id": "101200_0_B180", "serif": "Understood." },
+    { "id": "101200_0_B190", "serif": "Leave it to me!" },
+    { "id": "101200_0_B200", "serif": "Allow me." },
+    { "id": "101200_0_B210", "serif": "I shall lend you all of my strength!" },
+    {
+      "id": "101200_0_G010",
+      "serif": "Magical energy, increased.\nThe Silver Arm has gotten stronger."
+    },
+    {
+      "id": "101200_0_G020",
+      "serif": "[id 101200_0_G020]The power of Nuadha shall become mine."
+    },
+    {
+      "id": "101200_0_G030",
+      "serif": "[id 101200_0_G030]My arm, my strength.\n[id 101200_0_G031]They are the essence of the savage soul of the War God Nuadha..."
+    },
+    {
+      "id": "101200_0_G040",
+      "serif": "[id 101200_0_G040]...This much power. I wonder, is it something that I can handle?"
+    },
+    {
+      "id": "101200_0_G050",
+      "serif": "[id 101200_0_G050]The power of Nuadha has come...\n[id 101200_0_G051]Let me show you the tyranny that equals authority as well."
+    },
+    {
+      "id": "101200_0_H010",
+      "serif": "A thousand blessings for your birth.\nLet us have a party. I, the unworthy Bedivere, will serve as your steward."
+    },
+    {
+      "id": "101200_0_H020",
+      "serif": "I feel... that something has begun.\nMaster, I await your command."
+    },
+    {
+      "id": "101200_0_H030",
+      "serif": "To prevent the incineration of the world... So that's your goal.\nThat should be something my king also wished for."
+    },
+    {
+      "id": "101200_0_H040",
+      "serif": "Master and Servant... It is a relationship and at the same time a fate shared between two people.\nAt least, that's what I think."
+    },
+    {
+      "id": "101200_0_H050",
+      "serif": "To trust you with my sword is the same as entrusting you with my fate.\n...While I devote my loyalty to my king, now I shall use this sword for you, my Master."
+    },
+    {
+      "id": "101200_0_H060",
+      "serif": "Something I like...?\nMy favorite food is steamed vegetables...\nI-I mean I have dedicated my entire being to my king!"
+    },
+    {
+      "id": "101200_0_H070",
+      "serif": "Something I dislike...\nNothing comes to mind.\nThe demons and barbarians threatening Britain, although enemies, were not exactly the objects of my hatred."
+    },
+    {
+      "id": "101200_0_H080",
+      "serif": "The Holy Grail...\nMy king and the Knights of the Round Table once sought after it, and..."
+    },
+    {
+      "id": "101200_0_H090",
+      "serif": "I am a Knight of the Round Table. My loyalty to King Arthur will never falter...\n...Master. I serve you because I feel it will bring me closer to the future my king once desired."
+    },
+    {
+      "id": "101200_0_H100",
+      "serif": "...Yes, I would consider myself a senior in the Knights of the Round Table.\nI have served the king for longer than I can remember."
+    },
+    {
+      "id": "101200_0_H110",
+      "serif": "Clerk to the Court, Servant to the king...  These are the titles I have held.\nNo, I still feel I hold them to this day."
+    },
+    {
+      "id": "101200_0_H120",
+      "serif": "My Silver Arm, Airgetlám.\nI received it from the great mage Merlin. It is said to be the arm of the Celtic God of War, Nuadha.\nHaving only one arm, I requested this power in order to keep up with the other powerful knights."
+    },
+    {
+      "id": "101200_0_H130",
+      "serif": "In some way, you are similar to my king. ...Yes, that's what I am feeling.\nIf it can be forgiven, I... I wish to offer my sword to you as well."
+    },
+    {
+      "id": "101200_0_H140",
+      "serif": "My king,\neven if not Britain, my loyalty to you remains unshaken."
+    },
+    {
+      "id": "101200_0_H150",
+      "serif": "Knights of the Round Table,\nI have seen dreams of times like this, our forces aligned."
+    },
+    {
+      "id": "101200_0_H160",
+      "serif": "...This air of rebellion...\nNo, wait, Sir Mordred may have a foul mouth and a bad attitude,\nbut secretly she's a proper knight... Prejudice is not good... I think..."
+    },
+    {
+      "id": "101200_0_S010",
+      "serif": "Saber, Bedivere.\nHenceforth, I shall become your Servant.\nI believe that is for the sake of my king."
+    }
   ]
 }
