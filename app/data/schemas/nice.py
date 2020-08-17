@@ -18,6 +18,8 @@ from ..enums import (
     NiceSkillType,
     NiceStatusRank,
     NiceSvtType,
+    NiceSvtVoiceType,
+    NiceVoiceCondType,
     SvtClass,
 )
 from .base import BaseModelORJson
@@ -316,12 +318,41 @@ class NiceCostume(BaseModel):
     priority: int
 
 
+class NiceVoiceCond(BaseModel):
+    condType: NiceVoiceCondType
+    value: int
+    valueList: List[int] = []
+    eventId: int
+
+
+class NiceVoiceLine(BaseModel):
+    name: Optional[str] = None
+    condType: Optional[NiceCondType] = None
+    condValue: Optional[int] = None
+    priority: Optional[int] = None
+    svtVoiceType: Optional[NiceSvtVoiceType] = None
+    overwriteName: str
+    id: List[str]
+    delay: List[int]
+    face: List[int]
+    form: List[int]
+    text: List[str]
+    subtitle: str
+    conds: List[NiceVoiceCond]
+
+
+class NiceVoiceGroup(BaseModel):
+    type: NiceSvtVoiceType
+    voiceLines: List[NiceVoiceLine]
+
+
 class NiceLore(BaseModel):
     cv: str
     illustrator: str
     stats: Optional[NiceLoreStats] = None
     costume: Dict[int, NiceCostume]
     comments: List[NiceLoreComment]
+    voices: List[NiceVoiceGroup]
 
 
 class NiceCommandCode(BaseModelORJson):

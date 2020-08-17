@@ -1675,6 +1675,1190 @@
         "condValues": [911100201],
         "condValue2": 0
       }
+    ],
+    "voices": [
+      {
+        "type": "home",
+        "voiceLines": [
+          {
+            "name": "Birthday",
+            "condType": "birthDay",
+            "condValue": 0,
+            "priority": 8190,
+            "svtVoiceType": "home",
+            "overwriteName": "",
+            "id": ["0_H010", "0_H011", "0_H012"],
+            "delay": [0, 0, 0],
+            "face": [1, 0, 1],
+            "form": [0, 0, 0],
+            "text": ["", "", ""],
+            "subtitle": "Congratulations Master!\nThis is the day you were born into a world filled with hardships!",
+            "conds": [
+              {
+                "condType": "birthDay",
+                "value": 0,
+                "valueList": [],
+                "eventId": 0
+              }
+            ]
+          },
+          {
+            "name": "During an Event",
+            "condType": "flag",
+            "condValue": 11,
+            "priority": 8260,
+            "svtVoiceType": "home",
+            "overwriteName": "",
+            "id": ["0_H020", "0_H021", "0_H022"],
+            "delay": [0, 0, 0],
+            "face": [0, 5, 1],
+            "form": [0, 0, 0],
+            "text": ["", "", ""],
+            "subtitle": "We'll be late to the party.\nHurry. Frenzy and mania are waiting.",
+            "conds": [
+              { "condType": "event", "value": 0, "valueList": [], "eventId": 0 }
+            ]
+          },
+          {
+            "name": "Conversation 1",
+            "condType": "flag",
+            "condValue": 12,
+            "priority": 8690,
+            "svtVoiceType": "home",
+            "overwriteName": "",
+            "id": ["0_H030"],
+            "delay": [0],
+            "face": [5],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Don't bore me, Master.",
+            "conds": []
+          },
+          {
+            "name": "Conversation 2",
+            "condType": "flag",
+            "condValue": 13,
+            "priority": 8680,
+            "svtVoiceType": "home",
+            "overwriteName": "",
+            "id": ["0_H040", "0_H041"],
+            "delay": [0, 0],
+            "face": [0, 1],
+            "form": [0, 0],
+            "text": ["", ""],
+            "subtitle": "Can you show me the path, just like the Abbé?",
+            "conds": []
+          },
+          {
+            "name": "Conversation 3",
+            "condType": "flag",
+            "condValue": 14,
+            "priority": 8670,
+            "svtVoiceType": "home",
+            "overwriteName": "",
+            "id": ["0_H050", "0_H051"],
+            "delay": [0, 0],
+            "face": [5, 4],
+            "form": [0, 0],
+            "text": ["", ""],
+            "subtitle": "I only have one mentor in life.\nAbbé Faria...",
+            "conds": []
+          },
+          {
+            "name": "Likes",
+            "condType": "flag",
+            "condValue": 15,
+            "priority": 8290,
+            "svtVoiceType": "home",
+            "overwriteName": "",
+            "id": ["0_H060", "0_H061", "0_H062"],
+            "delay": [0, 0, 0],
+            "face": [0, 0, 4],
+            "form": [0, 0, 0],
+            "text": ["", "", ""],
+            "subtitle": "What do I like?\nThat no longer holds any meaning for me.\nAll I have is determination filled with darkness.",
+            "conds": []
+          },
+          {
+            "name": "Dislikes",
+            "condType": "flag",
+            "condValue": 16,
+            "priority": 8280,
+            "svtVoiceType": "home",
+            "overwriteName": "",
+            "id": ["0_H070", "0_H071", "0_H072"],
+            "delay": [0, 0, 0],
+            "face": [5, 5, 5],
+            "form": [0, 0, 0],
+            "text": ["", "", ""],
+            "subtitle": "Of course I hate it!\nAah! The world! Everything!",
+            "conds": []
+          },
+          {
+            "name": "About the Holy Grail",
+            "condType": "flag",
+            "condValue": 17,
+            "priority": 8270,
+            "svtVoiceType": "home",
+            "overwriteName": "",
+            "id": ["0_H080", "0_H081", "0_H082", "0_H083"],
+            "delay": [0, 0, 0, 0],
+            "face": [0, 4, 5, 5],
+            "form": [0, 0, 0, 0],
+            "text": ["", "", "", ""],
+            "subtitle": "The Holy Grail, a vessel of desire which fulfills wishes...\nI'm sure it's stuffed full.\nFull of human desires... of everything evil.",
+            "conds": []
+          },
+          {
+            "name": "Bond Level 1",
+            "condType": "svtFriendship",
+            "condValue": 1,
+            "priority": 8790,
+            "svtVoiceType": "home",
+            "overwriteName": "",
+            "id": ["0_H090", "0_H091", "0_H092", "0_H093"],
+            "delay": [0, 0, 0, 0],
+            "face": [0, 0, 4, 5],
+            "form": [0, 0, 0, 0],
+            "text": ["", "", "", ""],
+            "subtitle": "If you say you are my Master then at least show me something.\nWhat? Don't be nervous.\nI'm not expecting anything.",
+            "conds": [
+              {
+                "condType": "friendship",
+                "value": 1,
+                "valueList": [],
+                "eventId": 0
+              }
+            ]
+          },
+          {
+            "name": "Bond Level 2",
+            "condType": "svtFriendship",
+            "condValue": 2,
+            "priority": 8783,
+            "svtVoiceType": "home",
+            "overwriteName": "",
+            "id": ["0_H100", "0_H101", "0_H102", "0_H103"],
+            "delay": [0, 0, 0, 0],
+            "face": [1, 0, 4, 5],
+            "form": [0, 0, 0, 0],
+            "text": ["", "", "", ""],
+            "subtitle": "My name is the Count of Monte Cristo.\nMy True Name is the same.\nI've already abandoned the name Edmond Dantès along with my past.",
+            "conds": [
+              {
+                "condType": "friendship",
+                "value": 2,
+                "valueList": [],
+                "eventId": 0
+              }
+            ]
+          },
+          {
+            "name": "Bond Level 3",
+            "condType": "svtFriendship",
+            "condValue": 3,
+            "priority": 8776,
+            "svtVoiceType": "home",
+            "overwriteName": "",
+            "id": ["0_H110", "0_H111", "0_H112", "0_H113"],
+            "delay": [0, 0, 0, 0],
+            "face": [5, 5, 5, 2],
+            "form": [0, 0, 0, 0],
+            "text": ["", "", "", ""],
+            "subtitle": "I am the Count of Monte Cristo.\nI am not the Edmond who struggled with revenge and was saved by regret and reform.\nI am the notorious incarnation of vengeance, the Avenger.",
+            "conds": [
+              {
+                "condType": "friendship",
+                "value": 3,
+                "valueList": [],
+                "eventId": 0
+              }
+            ]
+          },
+          {
+            "name": "Bond Level 4",
+            "condType": "svtFriendship",
+            "condValue": 4,
+            "priority": 8770,
+            "svtVoiceType": "home",
+            "overwriteName": "",
+            "id": ["0_H120", "0_H121", "0_H122", "0_H123"],
+            "delay": [0, 0, 0, 0],
+            "face": [0, 4, 1, 0],
+            "form": [0, 0, 0, 0],
+            "text": ["", "", "", ""],
+            "subtitle": "Be careful.\nI am made of grudges, vengeance, and poisonous flames which bring death to whoever touches them.\nBe prepared for the consequences if you touch them.",
+            "conds": [
+              {
+                "condType": "friendship",
+                "value": 4,
+                "valueList": [],
+                "eventId": 0
+              }
+            ]
+          },
+          {
+            "name": "Bond Level 5",
+            "condType": "svtFriendship",
+            "condValue": 5,
+            "priority": 8764,
+            "svtVoiceType": "home",
+            "overwriteName": "",
+            "id": ["0_H130", "0_H131", "0_H132", "0_H133", "0_H134"],
+            "delay": [0, 0, 0, 0, 0],
+            "face": [5, 5, 4, 5, 0],
+            "form": [0, 0, 0, 0, 0],
+            "text": ["", "", "", "", ""],
+            "subtitle": "...What are you?\nTo associate with me so much, it's just like...\nNo, you are not like Haydée.\nYou are you.",
+            "conds": [
+              {
+                "condType": "friendship",
+                "value": 5,
+                "valueList": [],
+                "eventId": 0
+              }
+            ]
+          },
+          {
+            "name": "Conversation 4",
+            "condType": "flag",
+            "condValue": 18,
+            "priority": 8660,
+            "svtVoiceType": "home",
+            "overwriteName": "",
+            "id": ["0_H140", "0_H141", "0_H142", "0_H143"],
+            "delay": [0, 0, 0, 0],
+            "face": [0, 1, 5, 0],
+            "form": [0, 0, 0, 0],
+            "text": ["", "", "", ""],
+            "subtitle": "Oh-ho? There is another who has materialized as an Avenger.\nI despise human nature, he laughs at it...\nI see. People are inexplicable.",
+            "conds": [
+              {
+                "condType": "svtGet",
+                "value": 1100100,
+                "valueList": [],
+                "eventId": 0
+              }
+            ]
+          },
+          {
+            "name": "Conversation 5",
+            "condType": "flag",
+            "condValue": 19,
+            "priority": 8600,
+            "svtVoiceType": "home",
+            "overwriteName": "",
+            "id": ["0_H150", "0_H151"],
+            "delay": [0, 0],
+            "face": [1, 0],
+            "form": [0, 0],
+            "text": ["", ""],
+            "subtitle": "There's another Extra Class here... Interesting.",
+            "conds": [
+              {
+                "condType": "svtGroup",
+                "value": 1005,
+                "valueList": [
+                  900100,
+                  900200,
+                  900400,
+                  900500,
+                  1000100,
+                  1000200,
+                  1000300,
+                  1000400,
+                  1000500,
+                  1000700,
+                  1100300,
+                  1100400,
+                  1100500,
+                  1100600,
+                  2300100,
+                  2300200,
+                  2500100,
+                  2500200,
+                  2500300
+                ],
+                "eventId": 0
+              }
+            ]
+          },
+          {
+            "name": "Conversation 6",
+            "condType": "flag",
+            "condValue": 20,
+            "priority": 8540,
+            "svtVoiceType": "home",
+            "overwriteName": "",
+            "id": ["0_H160", "0_H161"],
+            "delay": [0, 0],
+            "face": [0, 1],
+            "form": [0, 0],
+            "text": ["", ""],
+            "subtitle": "There's an artist-type Caster here.\nVery well.\nWaiter, bring him a coffee!",
+            "conds": [
+              {
+                "condType": "svtGroup",
+                "value": 1006,
+                "valueList": [500500, 500700],
+                "eventId": 0
+              }
+            ]
+          },
+          {
+            "name": "Conversation 7",
+            "condType": "flag",
+            "condValue": 21,
+            "priority": 8480,
+            "svtVoiceType": "home",
+            "overwriteName": "",
+            "id": ["0_H170", "0_H171", "0_H172", "0_H173", "0_H174"],
+            "delay": [0, 0, 0, 0, 0],
+            "face": [5, 4, 4, 0, 5],
+            "form": [0, 0, 0, 0, 0],
+            "text": ["", "", "", "", ""],
+            "subtitle": "Who is he?\nAh, I see...\nNapoleon Bonaparte. So that emperor has finally manifested.\nI won't meet with him right now.\nBut one of these days...",
+            "conds": [
+              {
+                "condType": "svtGet",
+                "value": 203100,
+                "valueList": [],
+                "eventId": 0
+              }
+            ]
+          },
+          {
+            "name": "Conversation 8",
+            "condType": "flag",
+            "condValue": 22,
+            "priority": 8420,
+            "svtVoiceType": "home",
+            "overwriteName": "",
+            "id": ["0_H180"],
+            "delay": [0],
+            "face": [1],
+            "form": [0],
+            "text": [""],
+            "subtitle": "His operas are nice.",
+            "conds": [
+              {
+                "condType": "svtGet",
+                "value": 1100600,
+                "valueList": [],
+                "eventId": 0
+              }
+            ]
+          },
+          {
+            "name": "Conversation 9",
+            "condType": "flag",
+            "condValue": 23,
+            "priority": 8360,
+            "svtVoiceType": "home",
+            "overwriteName": "",
+            "id": ["0_H190"],
+            "delay": [0],
+            "face": [5],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Heh. They never change...",
+            "conds": [
+              {
+                "condType": "svtGroup",
+                "value": 1101,
+                "valueList": [900100, 900200],
+                "eventId": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "groeth",
+        "voiceLines": [
+          {
+            "name": "Level up",
+            "condType": "svtLevel",
+            "condValue": 2,
+            "priority": 8990,
+            "svtVoiceType": "groeth",
+            "overwriteName": "",
+            "id": ["0_G010"],
+            "delay": [0],
+            "face": [1],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Bwahaha!",
+            "conds": [
+              {
+                "condType": "levelUp",
+                "value": 0,
+                "valueList": [],
+                "eventId": 0
+              }
+            ]
+          },
+          {
+            "name": "Ascension 2",
+            "condType": "svtLimit",
+            "condValue": 2,
+            "priority": 8880,
+            "svtVoiceType": "groeth",
+            "overwriteName": "",
+            "id": ["0_G020"],
+            "delay": [0],
+            "face": [2],
+            "form": [0],
+            "text": [""],
+            "subtitle": "[id 1100200_0_G020]Good, good...",
+            "conds": [
+              {
+                "condType": "limitCountCommon",
+                "value": 0,
+                "valueList": [],
+                "eventId": 0
+              }
+            ]
+          },
+          {
+            "name": "Ascension 1",
+            "condType": "svtLimit",
+            "condValue": 1,
+            "priority": 8890,
+            "svtVoiceType": "groeth",
+            "overwriteName": "",
+            "id": ["0_G030", "0_G031"],
+            "delay": [0, 0],
+            "face": [0, 1],
+            "form": [0, 0],
+            "text": ["", ""],
+            "subtitle": "[id 1100200_0_G030]This is how it should be.\n[id 1100200_0_G031]You've made the right choice.",
+            "conds": [
+              {
+                "condType": "limitCount",
+                "value": 1,
+                "valueList": [],
+                "eventId": 0
+              }
+            ]
+          },
+          {
+            "name": "Ascension 3",
+            "condType": "svtLimit",
+            "condValue": 3,
+            "priority": 8870,
+            "svtVoiceType": "groeth",
+            "overwriteName": "",
+            "id": ["0_G040", "0_G041"],
+            "delay": [0, 0],
+            "face": [2, 0],
+            "form": [0, 0],
+            "text": ["", ""],
+            "subtitle": "[id 1100200_0_G040]Ah, I taste Hell.\n[id 1100200_0_G041]How nostalgic.",
+            "conds": [
+              {
+                "condType": "limitCount",
+                "value": 3,
+                "valueList": [],
+                "eventId": 0
+              }
+            ]
+          },
+          {
+            "name": "Ascension 4",
+            "condType": "svtCountStop",
+            "condValue": 0,
+            "priority": 8860,
+            "svtVoiceType": "groeth",
+            "overwriteName": "",
+            "id": ["0_G050", "0_G051", "0_G052"],
+            "delay": [0, 0, 0],
+            "face": [0, 4, 5],
+            "form": [0, 0, 0],
+            "text": ["", "", ""],
+            "subtitle": "[id 1100200_0_G050]I follow an endless path.\n[id 1100200_0_G051]I'll show you too, [id 1100200_0_G052]that which lies beyond love and hate.",
+            "conds": [
+              {
+                "condType": "countStop",
+                "value": 0,
+                "valueList": [],
+                "eventId": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "firstGet",
+        "voiceLines": [
+          {
+            "name": "Summon",
+            "condType": "svtGet",
+            "condValue": 0,
+            "priority": 8090,
+            "svtVoiceType": "firstGet",
+            "overwriteName": "",
+            "id": ["0_S010", "0_S011", "0_S012", "0_S013"],
+            "delay": [0, 0, 0, 0],
+            "face": [2, 2, 5, 1],
+            "form": [0, 0, 0, 0],
+            "text": [
+              "You called me! ",
+              "The reincarnation of vengence itself?",
+              "[r]Well precisely, I am the grudge of darkness",
+              "[r]I am Extra Class, Avenger!"
+            ],
+            "subtitle": "You called me! The reincarnation of vengence itself?\nWell precisely, I am the grudge of darkness\nI am Extra Class, Avenger!",
+            "conds": []
+          }
+        ]
+      },
+      {
+        "type": "battle",
+        "voiceLines": [
+          {
+            "name": "Attack 1",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9590,
+            "svtVoiceType": "battle",
+            "overwriteName": "",
+            "id": ["0_B010"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Ooh!",
+            "conds": []
+          },
+          {
+            "name": "Attack 2",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9580,
+            "svtVoiceType": "battle",
+            "overwriteName": "",
+            "id": ["0_B020"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Nnngh!",
+            "conds": []
+          },
+          {
+            "name": "Attack 3",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9570,
+            "svtVoiceType": "battle",
+            "overwriteName": "",
+            "id": ["0_B030"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Hyah!",
+            "conds": []
+          },
+          {
+            "name": "Extra Attack",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9490,
+            "svtVoiceType": "battle",
+            "overwriteName": "",
+            "id": ["0_B040"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Bwahahaha!",
+            "conds": []
+          },
+          {
+            "name": "Skill 1",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9890,
+            "svtVoiceType": "battle",
+            "overwriteName": "",
+            "id": ["0_B080"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Hahahahaha!",
+            "conds": []
+          },
+          {
+            "name": "Skill 2",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9880,
+            "svtVoiceType": "battle",
+            "overwriteName": "",
+            "id": ["0_B090"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "That should do it.",
+            "conds": []
+          },
+          {
+            "name": "Battle Start 1",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9990,
+            "svtVoiceType": "battle",
+            "overwriteName": "",
+            "id": ["0_B100"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "You... What do I look like to you!",
+            "conds": []
+          },
+          {
+            "name": "Battle Start 2",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9980,
+            "svtVoiceType": "battle",
+            "overwriteName": "",
+            "id": ["0_B110"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Have you ever seen Hell?",
+            "conds": []
+          },
+          {
+            "name": "Victory 1",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9090,
+            "svtVoiceType": "battle",
+            "overwriteName": "",
+            "id": ["0_B120"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "...Fall into despair!\nThat itself is... Hell.",
+            "conds": []
+          },
+          {
+            "name": "Victory 2",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9080,
+            "svtVoiceType": "battle",
+            "overwriteName": "",
+            "id": ["0_B130"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "I'll show no mercy.\nDie and rot away completely.",
+            "conds": []
+          },
+          {
+            "name": "Damage 2",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9280,
+            "svtVoiceType": "battle",
+            "overwriteName": "",
+            "id": ["0_B140"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Ugh!",
+            "conds": []
+          },
+          {
+            "name": "Damage 1",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9290,
+            "svtVoiceType": "battle",
+            "overwriteName": "",
+            "id": ["0_B150"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Aaaaugh!",
+            "conds": []
+          },
+          {
+            "name": "Incapacitated 1",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9190,
+            "svtVoiceType": "battle",
+            "overwriteName": "",
+            "id": ["0_B160"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Haydée! \nI...",
+            "conds": []
+          },
+          {
+            "name": "Incapacitated 2",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9180,
+            "svtVoiceType": "battle",
+            "overwriteName": "",
+            "id": ["0_B170"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Impossible, impossible...",
+            "conds": []
+          },
+          {
+            "name": "Command Card 1",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9790,
+            "svtVoiceType": "battle",
+            "overwriteName": "",
+            "id": ["0_B180"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "That's cruel.",
+            "conds": []
+          },
+          {
+            "name": "Command Card 2",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9780,
+            "svtVoiceType": "battle",
+            "overwriteName": "",
+            "id": ["0_B190"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Hahaha!",
+            "conds": []
+          },
+          {
+            "name": "Command Card 3",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9770,
+            "svtVoiceType": "battle",
+            "overwriteName": "",
+            "id": ["0_B200"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "That's good.",
+            "conds": []
+          },
+          {
+            "name": "Noble Phantasm Card",
+            "condType": "flag",
+            "condValue": 5,
+            "priority": 9680,
+            "svtVoiceType": "battle",
+            "overwriteName": "",
+            "id": ["0_B220"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "I don't need mercy!",
+            "conds": []
+          }
+        ]
+      },
+      {
+        "type": "treasureDevice",
+        "voiceLines": [
+          {
+            "name": "Noble Phantasm",
+            "condType": "flag",
+            "condValue": 1,
+            "priority": 9390,
+            "svtVoiceType": "treasureDevice",
+            "overwriteName": "",
+            "id": ["0_B050", "0_B051", "0_B052"],
+            "delay": [0, 4, 0],
+            "face": [4, 4, 4],
+            "form": [0, 0, 0],
+            "text": ["", "", ""],
+            "subtitle": "[id 1100200_0_B050]I follow a path beyond love and hate!\n[id 1100200_0_B051,1100200_0_B052]Enfer Château d'If!",
+            "conds": [
+              {
+                "condType": "eventEnd",
+                "value": 0,
+                "valueList": [],
+                "eventId": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "home",
+        "voiceLines": [
+          {
+            "name": "About Spiritron Dress",
+            "condType": "flag",
+            "condValue": 63,
+            "priority": 8265,
+            "svtVoiceType": "home",
+            "overwriteName": "About Spiritron Dress Monte Cristo Selection",
+            "id": ["11_H9000", "11_H9001", "11_H9002"],
+            "delay": [0, 0, 0],
+            "face": [5, 0, 6],
+            "form": [0, 0, 0],
+            "text": ["", "", ""],
+            "subtitle": "Appearances mean nothing.\nBut...\nHmph. If something like this inspires you, then I see no reason to put a stop to it.",
+            "conds": []
+          }
+        ]
+      },
+      {
+        "type": "groeth",
+        "voiceLines": [
+          {
+            "name": "Level up",
+            "condType": "svtLevel",
+            "condValue": 2,
+            "priority": 8990,
+            "svtVoiceType": "groeth",
+            "overwriteName": "Level Up Monte Cristo Selection",
+            "id": ["11_G010"],
+            "delay": [0],
+            "face": [1],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Fuhaha!",
+            "conds": [
+              {
+                "condType": "levelUp",
+                "value": 0,
+                "valueList": [],
+                "eventId": 0
+              }
+            ]
+          },
+          {
+            "name": "Unlock Wardrobe",
+            "condType": "costumeGet",
+            "condValue": 11,
+            "priority": 8850,
+            "svtVoiceType": "groeth",
+            "overwriteName": "Unlock Wardrobe Monte Cristo Selection",
+            "id": ["11_G060", "11_G061"],
+            "delay": [0, 0],
+            "face": [6, 1],
+            "form": [0, 0],
+            "text": ["", ""],
+            "subtitle": "[id 1100200_11_G060,1100200_11_G061]Kuku...! \nThis is madness. ",
+            "conds": [
+              {
+                "condType": "costume",
+                "value": 1100230,
+                "valueList": [],
+                "eventId": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "battle",
+        "voiceLines": [
+          {
+            "name": "Battle Start 1",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9990,
+            "svtVoiceType": "battle",
+            "overwriteName": "Battle Start 1 Monte Cristo Selection",
+            "id": ["11_B100"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "The sea, huh...?",
+            "conds": []
+          },
+          {
+            "name": "Battle Start 2",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9980,
+            "svtVoiceType": "battle",
+            "overwriteName": "Battle Start 2 Monte Cristo Selection",
+            "id": ["11_B110"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Kuku...hahahahahaha!",
+            "conds": []
+          },
+          {
+            "name": "Skill 1",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9890,
+            "svtVoiceType": "battle",
+            "overwriteName": "Skill 1 Monte Cristo Selection",
+            "id": ["11_B080"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Kukuku!",
+            "conds": []
+          },
+          {
+            "name": "Skill 2",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9880,
+            "svtVoiceType": "battle",
+            "overwriteName": "Skill 2 Monte Cristo Selection",
+            "id": ["11_B090"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Amusing.",
+            "conds": []
+          },
+          {
+            "name": "Command Card 1",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9790,
+            "svtVoiceType": "battle",
+            "overwriteName": "Command Card 1 Monte Cristo Selection",
+            "id": ["11_B180"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Hahaha!",
+            "conds": []
+          },
+          {
+            "name": "Command Card 2",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9780,
+            "svtVoiceType": "battle",
+            "overwriteName": "Command Card 2 Monte Cristo Selection",
+            "id": ["11_B190"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Hmph.",
+            "conds": []
+          },
+          {
+            "name": "Command Card 3",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9770,
+            "svtVoiceType": "battle",
+            "overwriteName": "Command Card 3 Monte Cristo Selection",
+            "id": ["11_B200"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Boring.",
+            "conds": []
+          },
+          {
+            "name": "Noble Phantasm Card",
+            "condType": "flag",
+            "condValue": 5,
+            "priority": 9680,
+            "svtVoiceType": "battle",
+            "overwriteName": "Noble Phantasm Card Monte Cristo Selection",
+            "id": ["11_B220"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Shut up, shut up!",
+            "conds": []
+          },
+          {
+            "name": "Attack 1",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9590,
+            "svtVoiceType": "battle",
+            "overwriteName": "Attack 1 Monte Cristo Selection",
+            "id": ["11_B010"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Fuh!",
+            "conds": []
+          },
+          {
+            "name": "Attack 2",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9580,
+            "svtVoiceType": "battle",
+            "overwriteName": "Attack 2 Monte Cristo Selection",
+            "id": ["11_B020"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Hah!",
+            "conds": []
+          },
+          {
+            "name": "Attack 3",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9570,
+            "svtVoiceType": "battle",
+            "overwriteName": "Attack 3 Monte Cristo Selection",
+            "id": ["11_B030"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Zei!",
+            "conds": []
+          },
+          {
+            "name": "Extra Attack",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9490,
+            "svtVoiceType": "battle",
+            "overwriteName": "Extra Attack Monte Cristo Selection",
+            "id": ["11_B040"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Haha! Hahaha!",
+            "conds": []
+          },
+          {
+            "name": "Damage 1",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9290,
+            "svtVoiceType": "battle",
+            "overwriteName": "Damage 1 Monte Cristo Selection",
+            "id": ["11_B150"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Hahahahahaha!",
+            "conds": []
+          },
+          {
+            "name": "Damage 2",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9280,
+            "svtVoiceType": "battle",
+            "overwriteName": "Damage 2 Monte Cristo Selection",
+            "id": ["11_B140"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Hnnngh!",
+            "conds": []
+          },
+          {
+            "name": "Incapacitated 1",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9190,
+            "svtVoiceType": "battle",
+            "overwriteName": "Incapacitated 1 Monte Cristo Selection",
+            "id": ["11_B160"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "I will be there...soon...Haydée...",
+            "conds": []
+          },
+          {
+            "name": "Incapacitated 2",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9180,
+            "svtVoiceType": "battle",
+            "overwriteName": "Incapacitated 2 Monte Cristo Selection",
+            "id": ["11_B170"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Why you... WHY YOU!!!",
+            "conds": []
+          },
+          {
+            "name": "Victory 1",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9090,
+            "svtVoiceType": "battle",
+            "overwriteName": "Victory 1 Monte Cristo Selection",
+            "id": ["11_B120"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Close your eyes. Sleep.",
+            "conds": []
+          },
+          {
+            "name": "Victory 2",
+            "condType": "none",
+            "condValue": 0,
+            "priority": 9080,
+            "svtVoiceType": "battle",
+            "overwriteName": "Victory 2 Monte Cristo Selection",
+            "id": ["11_B130"],
+            "delay": [0],
+            "face": [0],
+            "form": [0],
+            "text": [""],
+            "subtitle": "Fall and rot away.",
+            "conds": []
+          }
+        ]
+      }
     ]
   }
 }

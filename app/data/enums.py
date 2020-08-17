@@ -2156,6 +2156,164 @@ COND_TYPE_NAME: Dict[int, NiceCondType] = {
 }
 
 
+### Voice Cond Type ###
+
+
+class VoiceCondType(IntEnum):
+    BIRTH_DAY = 1
+    EVENT = 2
+    FRIENDSHIP = 3
+    SVT_GET = 4
+    SVT_GROUP = 5
+    QUEST_CLEAR = 6
+    NOT_QUEST_CLEAR = 7
+    LEVEL_UP = 8
+    LIMIT_COUNT = 9
+    LIMIT_COUNT_COMMON = 10
+    COUNT_STOP = 11
+    ISNEW_WAR = 12
+    EVENT_END = 13
+    EVENT_NOEND = 14
+    EVENT_MISSION_ACTION = 15
+    MASTER_MISSION = 16
+    LIMIT_COUNT_ABOVE = 17
+    EVENT_SHOP_PURCHASE = 18
+    EVENT_PERIOD = 19
+    FRIENDSHIP_ABOVE = 20
+    SPACIFIC_SHOP_PURCHASE = 21
+    FRIENDSHIP_BELOW = 22
+    COSTUME = 23
+    LEVEL_UP_LIMIT_COUNT = 24
+    LEVEL_UP_LIMIT_COUNT_ABOVE = 25
+    LEVEL_UP_LIMIT_COUNT_BELOW = 26
+
+
+class NiceVoiceCondType(str, Enum):
+    birthDay = "birthDay"
+    event = "event"
+    friendship = "friendship"
+    svtGet = "svtGet"
+    svtGroup = "svtGroup"
+    questClear = "questClear"
+    notQuestClear = "notQuestClear"
+    levelUp = "levelUp"
+    limitCount = "limitCount"
+    limitCountCommon = "limitCountCommon"
+    countStop = "countStop"
+    isnewWar = "isnewWar"
+    eventEnd = "eventEnd"
+    eventNoend = "eventNoend"
+    eventMissionAction = "eventMissionAction"
+    masterMission = "masterMission"
+    limitCountAbove = "limitCountAbove"
+    eventShopPurchase = "eventShopPurchase"
+    eventPeriod = "eventPeriod"
+    friendshipAbove = "friendshipAbove"
+    spacificShopPurchase = "spacificShopPurchase"
+    friendshipBelow = "friendshipBelow"
+    costume = "costume"
+    levelUpLimitCount = "levelUpLimitCount"
+    levelUpLimitCountAbove = "levelUpLimitCountAbove"
+    levelUpLimitCountBelow = "levelUpLimitCountBelow"
+
+
+VOICE_COND_NAME: Dict[int, NiceVoiceCondType] = {
+    1: NiceVoiceCondType.birthDay,
+    2: NiceVoiceCondType.event,
+    3: NiceVoiceCondType.friendship,
+    4: NiceVoiceCondType.svtGet,
+    5: NiceVoiceCondType.svtGroup,
+    6: NiceVoiceCondType.questClear,
+    7: NiceVoiceCondType.notQuestClear,
+    8: NiceVoiceCondType.levelUp,
+    9: NiceVoiceCondType.limitCount,
+    10: NiceVoiceCondType.limitCountCommon,
+    11: NiceVoiceCondType.countStop,
+    12: NiceVoiceCondType.isnewWar,
+    13: NiceVoiceCondType.eventEnd,
+    14: NiceVoiceCondType.eventNoend,
+    15: NiceVoiceCondType.eventMissionAction,
+    16: NiceVoiceCondType.masterMission,
+    17: NiceVoiceCondType.limitCountAbove,
+    18: NiceVoiceCondType.eventShopPurchase,
+    19: NiceVoiceCondType.eventPeriod,
+    20: NiceVoiceCondType.friendshipAbove,
+    21: NiceVoiceCondType.spacificShopPurchase,
+    22: NiceVoiceCondType.friendshipBelow,
+    23: NiceVoiceCondType.costume,
+    24: NiceVoiceCondType.levelUpLimitCount,
+    25: NiceVoiceCondType.levelUpLimitCountAbove,
+    26: NiceVoiceCondType.levelUpLimitCountBelow,
+}
+
+
+### Voice Type ###
+
+
+class SvtVoiceType(IntEnum):
+    HOME = 1
+    GROETH = 2
+    FIRST_GET = 3
+    EVENT_JOIN = 4
+    EVENT_REWARD = 5
+    BATTLE = 6
+    TREASURE_DEVICE = 7
+    MASTER_MISSION = 8
+    EVENT_SHOP = 9
+    HOME_COSTUME = 10
+    BOX_GACHA_TALK = 11
+    BATTLE_ENTRY = 12
+    BATTLE_WIN = 13
+    EVENT_TOWER_REWARD = 14
+    GUIDE = 15
+    EVENT_DAILY_POINT = 16
+    TDDAMAGE = 17
+    SUM = 18
+
+
+class NiceSvtVoiceType(str, Enum):
+    home = "home"
+    groeth = "groeth"
+    firstGet = "firstGet"
+    eventJoin = "eventJoin"
+    eventReward = "eventReward"
+    battle = "battle"
+    treasureDevice = "treasureDevice"
+    masterMission = "masterMission"
+    eventShop = "eventShop"
+    homeCostume = "homeCostume"
+    boxGachaTalk = "boxGachaTalk"
+    battleEntry = "battleEntry"
+    battleWin = "battleWin"
+    eventTowerReward = "eventTowerReward"
+    guide = "guide"
+    eventDailyPoint = "eventDailyPoint"
+    tddamage = "tddamage"
+    sum = "sum"
+
+
+VOICE_TYPE_NAME: Dict[int, NiceSvtVoiceType] = {
+    1: NiceSvtVoiceType.home,
+    2: NiceSvtVoiceType.groeth,
+    3: NiceSvtVoiceType.firstGet,
+    4: NiceSvtVoiceType.eventJoin,
+    5: NiceSvtVoiceType.eventReward,
+    6: NiceSvtVoiceType.battle,
+    7: NiceSvtVoiceType.treasureDevice,
+    8: NiceSvtVoiceType.masterMission,
+    9: NiceSvtVoiceType.eventShop,
+    10: NiceSvtVoiceType.homeCostume,
+    11: NiceSvtVoiceType.boxGachaTalk,
+    12: NiceSvtVoiceType.battleEntry,
+    13: NiceSvtVoiceType.battleWin,
+    14: NiceSvtVoiceType.eventTowerReward,
+    15: NiceSvtVoiceType.guide,
+    16: NiceSvtVoiceType.eventDailyPoint,
+    17: NiceSvtVoiceType.tddamage,
+    18: NiceSvtVoiceType.sum,
+}
+
+
 ### Quest Type ###
 
 
