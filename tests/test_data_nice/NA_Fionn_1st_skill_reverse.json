@@ -402,6 +402,9 @@
             1490000
           ],
           "bondEquip": 9300750,
+          "ascensionAdd": {
+            "individuality": { "ascension": {}, "costume": {} }
+          },
           "ascensionMaterials": {
             "1": {
               "items": [

@@ -288,6 +288,15 @@ class ExtraAssets(ExtraCCAssets):
     equipFace: ExtraAssetsUrl
 
 
+class AscensionAddIndividuality(BaseModel):
+    ascension: Optional[Dict[int, List[NiceTrait]]] = None
+    costume: Optional[Dict[int, List[NiceTrait]]] = None
+
+
+class AscensionAdd(BaseModel):
+    individuality: AscensionAddIndividuality
+
+
 class NiceLoreComment(BaseModel):
     id: int
     priority: int
@@ -393,6 +402,7 @@ class NiceServant(BaseModelORJson):
     hpGrowth: List[int]
     bondGrowth: List[int]
     bondEquip: int
+    ascensionAdd: AscensionAdd
     ascensionMaterials: Dict[int, NiceLvlUpMaterial]
     skillMaterials: Dict[int, NiceLvlUpMaterial]
     skills: List[NiceSkill]

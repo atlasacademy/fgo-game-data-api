@@ -2562,6 +2562,7 @@ class Trait(str, Enum):
     shadowServant = "shadowServant"
     aoeNP = "aoeNP"
     giant = "giant"
+    childServant = "childServant"
 
 
 TRAIT_NAME: Dict[int, Trait] = {
@@ -2666,6 +2667,7 @@ TRAIT_NAME: Dict[int, Trait] = {
     2632: Trait.beastServant,  # used in TamaVitch's fight
     2654: Trait.livingHuman,  # Voyager's NP
     2666: Trait.giant,
+    2667: Trait.childServant,  # Summer Illya's 2nd skill
     # 2xxx: CQ or Story quests buff
     3000: Trait.normalAttack0,  # Normal attack, including NP
     3001: Trait.normalAttack1,  # Haven't figured out the difference between the 3

@@ -18,7 +18,8 @@
       "costume": {
         "800130": "https://assets.atlasacademy.io/GameData/JP/CharaGraph/800130/800130a.png",
         "800140": "https://assets.atlasacademy.io/GameData/JP/CharaGraph/800140/800140a.png",
-        "800150": "https://assets.atlasacademy.io/GameData/JP/CharaGraph/800150/800150a.png"
+        "800150": "https://assets.atlasacademy.io/GameData/JP/CharaGraph/800150/800150a.png",
+        "800160": "https://assets.atlasacademy.io/GameData/JP/CharaGraph/800160/800160a.png"
       }
     },
     "faces": {
@@ -31,7 +32,8 @@
       "costume": {
         "800130": "https://assets.atlasacademy.io/GameData/JP/Faces/f_8001300.png",
         "800140": "https://assets.atlasacademy.io/GameData/JP/Faces/f_8001400.png",
-        "800150": "https://assets.atlasacademy.io/GameData/JP/Faces/f_8001500.png"
+        "800150": "https://assets.atlasacademy.io/GameData/JP/Faces/f_8001500.png",
+        "800160": "https://assets.atlasacademy.io/GameData/JP/Faces/f_8001600.png"
       }
     },
     "narrowFigure": {
@@ -44,7 +46,8 @@
       "costume": {
         "800130": "https://assets.atlasacademy.io/GameData/JP/NarrowFigure/800130/800130@0.png",
         "800140": "https://assets.atlasacademy.io/GameData/JP/NarrowFigure/800140/800140@0.png",
-        "800150": "https://assets.atlasacademy.io/GameData/JP/NarrowFigure/800150/800150@0.png"
+        "800150": "https://assets.atlasacademy.io/GameData/JP/NarrowFigure/800150/800150@0.png",
+        "800160": "https://assets.atlasacademy.io/GameData/JP/NarrowFigure/800160/800160@0.png"
       }
     },
     "charaFigure": {
@@ -56,7 +59,8 @@
       "costume": {
         "800130": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/8001300/8001300_merged.png",
         "800140": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/8001400/8001400_merged.png",
-        "800150": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/8001500/8001500_merged.png"
+        "800150": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/8001500/8001500_merged.png",
+        "800160": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/8001600/8001600_merged.png"
       }
     },
     "commands": {
@@ -68,7 +72,8 @@
       "costume": {
         "800130": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/800100/card_servant_11.png",
         "800140": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/800100/card_servant_12.png",
-        "800150": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/800100/card_servant_13.png"
+        "800150": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/800100/card_servant_13.png",
+        "800160": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/800100/card_servant_14.png"
       }
     },
     "status": {
@@ -80,7 +85,8 @@
       "costume": {
         "800130": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/800100/status_servant_11.png",
         "800140": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/800100/status_servant_12.png",
-        "800150": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/800100/status_servant_13.png"
+        "800150": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/800100/status_servant_13.png",
+        "800160": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/800100/status_servant_14.png"
       }
     },
     "equipFace": {}
@@ -284,6 +290,12 @@
   ],
   "bondGrowth": [1000, 2000, 3000, 4000, 5000],
   "bondEquip": 0,
+  "ascensionAdd": {
+    "individuality": {
+      "ascension": {},
+      "costume": { "800130": [], "800140": [], "800150": [], "800160": [] }
+    }
+  },
   "ascensionMaterials": {},
   "skillMaterials": {
     "1": {

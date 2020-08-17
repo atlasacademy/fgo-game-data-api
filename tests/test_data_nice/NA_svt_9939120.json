@@ -245,6 +245,7 @@
   ],
   "bondGrowth": [],
   "bondEquip": 0,
+  "ascensionAdd": { "individuality": { "ascension": {}, "costume": {} } },
   "ascensionMaterials": {},
   "skillMaterials": {},
   "skills": [],

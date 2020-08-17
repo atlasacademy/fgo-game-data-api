@@ -238,6 +238,12 @@
   ],
   "bondGrowth": [3000, 9125, 15250, 21375, 27500],
   "bondEquip": 0,
+  "ascensionAdd": {
+    "individuality": {
+      "ascension": { "1": [], "2": [], "3": [], "4": [], "5": [] },
+      "costume": {}
+    }
+  },
   "ascensionMaterials": {},
   "skillMaterials": {},
   "skills": [],

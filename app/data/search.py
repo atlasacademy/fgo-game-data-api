@@ -119,7 +119,17 @@ def search_servant(
         and item.classId in class_ints
         and item.genderType in gender_ints
         and item.attri in attribute_ints
-        and trait_ints.issubset(set(item.individuality))
+        and (
+            trait_ints.issubset(set(item.individuality))
+            or any(
+                [
+                    trait_ints.issubset(set(limit.individuality))
+                    for limit in masters[search_param.region].mstSvtLimitAddId.get(
+                        item.id, []
+                    )
+                ]
+            )
+        )
         and masters[search_param.region].mstSvtLimitId[item.id][0].rarity in rarity_ints
     ]
 

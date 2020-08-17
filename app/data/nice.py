@@ -747,6 +747,21 @@ def get_nice_servant(
         CARD_TYPE_NAME[item.cardId]: item.normalDamage for item in raw_data.mstSvtCard
     }
 
+    ascensionAddIndividuality = {
+        "ascension": {
+            (item.limitCount + 1): get_traits_list(item.individuality)
+            for item in raw_data.mstSvtLimitAdd
+            if item.limitCount not in costume_ids
+        },
+        "costume": {
+            costume_ids[item.limitCount]: get_traits_list(item.individuality)
+            for item in raw_data.mstSvtLimitAdd
+            if item.limitCount in costume_ids
+        },
+    }
+
+    nice_data["ascensionAdd"] = {"individuality": ascensionAddIndividuality}
+
     # Filter out dummy TDs that are probably used by enemy servants that don't use their NPs
     actualTDs: List[TdEntityNoReverse] = [
         item
