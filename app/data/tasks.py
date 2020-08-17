@@ -71,6 +71,10 @@ def generate_exports() -> None:  # pragma: no cover
                 get_nice_servant_model(region, item_id, Language.jp)
                 for item_id in masters[region].mstSvtServantCollectionNo.values()
             ]
+            all_servant_data_lore = [
+                get_nice_servant_model(region, item_id, Language.jp, lore=True)
+                for item_id in masters[region].mstSvtServantCollectionNo.values()
+            ]
             all_item_data = [
                 get_nice_item(region, item_id) for item_id in masters[region].mstItemId
             ]
@@ -107,6 +111,7 @@ def generate_exports() -> None:  # pragma: no cover
                 "nice_command_code": all_cc_data,
                 "nice_item": all_item_data,
                 "nice_servant": all_servant_data,
+                "nice_servant_lore": all_servant_data_lore,
                 "nice_equip": all_equip_data,
                 "nice_mystic_code": all_mc_data,
                 "basic_servant": all_basic_servant_data,

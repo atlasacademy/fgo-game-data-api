@@ -72,8 +72,8 @@ Otherwise, it will look up the actual ID field.
 pre_processed_data_links = """
 
 Preprocessed data:
-- [NA servant](/export/NA/nice_servant.json)
-- [JP servant](/export/JP/nice_servant.json)
+- [NA servant](/export/NA/nice_servant.json), [NA Servant with lore](/export/NA/nice_servant_lore.json)
+- [JP servant](/export/JP/nice_servant.json), [JP Servant with lore](/export/JP/nice_servant_lore.json)
 """
 
 get_servant_description += svt_lang_lore_description
