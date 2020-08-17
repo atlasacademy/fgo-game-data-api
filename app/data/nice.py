@@ -750,7 +750,7 @@ def get_nice_servant(
 
     ascensionAddIndividuality = {
         "ascension": {
-            (item.limitCount + 1): get_traits_list(sorted(item.individuality))
+            item.limitCount: get_traits_list(sorted(item.individuality))
             for item in raw_data.mstSvtLimitAdd
             if item.limitCount not in costume_ids
         },
@@ -783,7 +783,7 @@ def get_nice_servant(
                     actualTDs.append(td)
 
     nice_data["ascensionMaterials"] = {
-        (combineLimit.svtLimit + 1): {
+        combineLimit.svtLimit: {
             "items": get_nice_item_amount(
                 region, combineLimit.itemIds, combineLimit.itemNums
             ),

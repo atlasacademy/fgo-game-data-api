@@ -304,7 +304,7 @@
   "bondEquip": 9301080,
   "ascensionAdd": { "individuality": { "ascension": {}, "costume": {} } },
   "ascensionMaterials": {
-    "1": {
+    "0": {
       "items": [
         {
           "item": {
@@ -319,7 +319,7 @@
       ],
       "qp": 30000
     },
-    "2": {
+    "1": {
       "items": [
         {
           "item": {
@@ -344,7 +344,7 @@
       ],
       "qp": 100000
     },
-    "3": {
+    "2": {
       "items": [
         {
           "item": {
@@ -379,7 +379,7 @@
       ],
       "qp": 300000
     },
-    "4": {
+    "3": {
       "items": [
         {
           "item": {
@@ -414,7 +414,7 @@
       ],
       "qp": 900000
     },
-    "5": {
+    "4": {
       "items": [
         {
           "item": {

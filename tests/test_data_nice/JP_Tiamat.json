@@ -240,7 +240,7 @@
   "bondEquip": 0,
   "ascensionAdd": {
     "individuality": {
-      "ascension": { "1": [], "2": [], "3": [], "4": [], "5": [] },
+      "ascension": { "0": [], "1": [], "2": [], "3": [], "4": [] },
       "costume": {}
     }
   },
