@@ -1,10 +1,12 @@
+import orjson
 import pytest
 from fastapi import HTTPException
 
 from app.data.common import Language, Region, ReverseDepth
 from app.data.enums import FuncType
-from app.data.nice import get_nice_servant, parse_dataVals
+from app.data.nice import get_nice_servant, get_nice_servant_model, parse_dataVals
 from app.data.tasks import sort_by_collection_no
+from app.routers.utils import list_string_exclude
 
 
 def test_parse_dataVals_add_state_6_items() -> None:
@@ -70,3 +72,11 @@ def test_sort_by_collection_no() -> None:
         {"id": 100100, "collectionNo": 2},
         {"id": 202900, "collectionNo": 200},
     ]
+
+
+def test_list_exclude() -> None:
+    test_data = get_nice_servant_model(Region.JP, 504500, Language.en)
+    excluded_keys = {"profile"}
+    json_data = list_string_exclude([test_data], exclude=excluded_keys)
+    for item in excluded_keys:
+        assert item not in orjson.loads(json_data)

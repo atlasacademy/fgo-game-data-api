@@ -6,7 +6,7 @@ from typing import Any, Dict, Iterable, List, Union
 from git import Repo
 
 from ..config import Settings, logger
-from ..routers.utils import list_string
+from ..routers.utils import list_string, list_string_exclude
 from .basic import get_basic_cc, get_basic_mc, get_basic_svt
 from .common import Language, Region
 from .enums import TRAIT_NAME
@@ -43,8 +43,12 @@ def dump_orjson(
     region: Region, file_name: str, data: Iterable[BaseModelORJson]
 ) -> None:  # pragma: no cover
     file_name = file_name + ".json"
-    with open(export_path / region.value / file_name, "w", encoding="utf-8") as fp:
-        fp.write(list_string(data))
+    if file_name in {"nice_servant.json", "nice_equip.json"}:
+        with open(export_path / region.value / file_name, "w", encoding="utf-8") as fp:
+            fp.write(list_string_exclude(data, exclude={"profile"}))
+    else:
+        with open(export_path / region.value / file_name, "w", encoding="utf-8") as fp:
+            fp.write(list_string(data))
 
 
 def dump(region: Region, file_name: str, data: Any) -> None:  # pragma: no cover
@@ -63,13 +67,9 @@ def generate_exports() -> None:  # pragma: no cover
         for region in region_path:
             start_time = time.perf_counter()
             logger.info(f"Exporting {region} data …")
-            all_equip_data = [
-                get_nice_equip_model(region, item_id, Language.jp)
+            all_equip_data_lore = [
+                get_nice_equip_model(region, item_id, Language.jp, lore=True)
                 for item_id in masters[region].mstSvtEquipCollectionNo.values()
-            ]
-            all_servant_data = [
-                get_nice_servant_model(region, item_id, Language.jp)
-                for item_id in masters[region].mstSvtServantCollectionNo.values()
             ]
             all_servant_data_lore = [
                 get_nice_servant_model(region, item_id, Language.jp, lore=True)
@@ -110,9 +110,10 @@ def generate_exports() -> None:  # pragma: no cover
                 "nice_trait": TRAIT_NAME,
                 "nice_command_code": all_cc_data,
                 "nice_item": all_item_data,
-                "nice_servant": all_servant_data,
+                "nice_servant": all_servant_data_lore,
                 "nice_servant_lore": all_servant_data_lore,
-                "nice_equip": all_equip_data,
+                "nice_equip": all_equip_data_lore,
+                "nice_equip_lore": all_equip_data_lore,
                 "nice_mystic_code": all_mc_data,
                 "basic_servant": all_basic_servant_data,
                 "basic_equip": all_basic_equip_data,

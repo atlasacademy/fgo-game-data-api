@@ -142,8 +142,8 @@ Otherwise, it will look up the actual ID field.
 pre_processed_equip_links = """
 
 Preprocessed data:
-- [NA CE](/export/NA/nice_equip.json)
-- [JP CE](/export/JP/nice_equip.json)
+- [NA CE](/export/NA/nice_equip.json), [NA CE with lore](/export/NA/nice_equip_lore.json)
+- [JP CE](/export/JP/nice_equip.json), [JP CE with lore](/export/JP/nice_equip_lore.json)
 """
 
 get_equip_description += equip_lore_description

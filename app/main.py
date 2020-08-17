@@ -44,14 +44,14 @@ export_links = """
 Pre-generated nice data that can be served instantly unlike querying the API:
 - NA data:
   - [NA Servant](/export/NA/nice_servant.json), [NA Servant with lore](/export/NA/nice_servant_lore.json)
-  - [NA Craft Essence](/export/NA/nice_equip.json)
+  - [NA Craft Essence](/export/NA/nice_equip.json), [NA Craft Essence with lore](/export/NA/nice_equip_lore.json)
   - [NA Command Code](/export/NA/nice_command_code.json)
   - [NA Material](/export/NA/nice_item.json)
   - [NA Mystic Code](/export/NA/nice_mystic_code.json)
   - [NA Item](/export/NA/nice_item.json)
 - JP data:
   - [JP Servant](/export/JP/nice_servant.json), [JP Servant with lore](/export/JP/nice_servant_lore.json)
-  - [JP Craft Essence](/export/JP/nice_equip.json)
+  - [JP Craft Essence](/export/JP/nice_equip.json), [JP Craft Essence with lore](/export/JP/nice_equip_lore.json)
   - [JP Command Code](/export/JP/nice_command_code.json)
   - [JP Material](/export/JP/nice_item.json)
   - [JP Mystic Code](/export/JP/nice_mystic_code.json)
@@ -86,7 +86,7 @@ tags_metadata = [
 app = FastAPI(
     title="FGO game data API",
     description=app_description,
-    version="4.12.0",
+    version="4.13.0",
     docs_url=None,
     openapi_tags=tags_metadata,
 )
