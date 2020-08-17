@@ -1,4 +1,4 @@
-from typing import Any, Dict, List, Optional, Set, Union
+from typing import Any, Dict, List, Optional, Set
 
 from pydantic import BaseModel
 
@@ -11,7 +11,7 @@ class MstBuff(BaseModel):
     tvals: List[int]  # [5000, 4001],
     ckSelfIndv: List[int]  # [4001],
     ckOpIndv: List[int]  # [2005],
-    script: Dict[str, Union[int, str]]  # {"HP_LOWER": 600, "motionName": "MOTION_2101"}
+    script: Dict[str, Any]  # {"HP_LOWER": 600, "motionName": "MOTION_2101"}
     id: int  # 101,
     buffGroup: int  # 0,
     type: int  # 52,
@@ -48,9 +48,7 @@ class FunctionEntityNoReverse(BaseModelORJson):
 class MstSkill(BaseModel):
     effectList: List[int]  # [323],
     actIndividuality: List[int]  # [401900],
-    script: Dict[
-        str, Union[str, int]
-    ]  # {"cutInId": 90001, "cutInVoices": "ChrVoice_7100400:0_E130:1"}
+    script: Dict[str, Any]
     id: int  # 263350,
     type: int  # 1,
     name: str  # "Projection C",
@@ -102,9 +100,7 @@ class MstSkillLv(BaseModel):
     svals: List[str]  # ["[1000,1,-1,3600]", "[1000,1,-1,200]", "[1000]"],
     # script: SkillLvScript
     # Doesn't use the SkillLvScript model so it's easier to build the nice script object
-    script: Dict[
-        str, Union[int, str, List[str]]
-    ]  # {"STAR_HIGHER": 8, "VoiceAssetName": "ChrVoice_7100400", "followerVals": ["[2,30]"]},
+    script: Dict[str, Any]
     skillId: int  # 440450,
     lv: int  # 4,
     chargeTurn: int  # 7,
@@ -121,9 +117,7 @@ class SkillEntityNoReverse(BaseModelORJson):
 
 class MstTreasureDevice(BaseModel):
     individuality: List[int]  # [3000, 4001, 4007],
-    script: Dict[
-        str, Union[int, List[int]]
-    ]  # {"limitSeqId_12": 800140, "randomWeights_3": [50, 50]},
+    script: Dict[str, Any]  # {"limitSeqId_12": 800140, "randomWeights_3": [50, 50]},
     id: int  # 500801,
     seqId: int  # 500800,
     name: str  # "Garden of Avalon",
@@ -391,7 +385,7 @@ class CommandCodeEntity(BaseModelORJson):
 
 class MstItem(BaseModel):
     individuality: List[int]  # [],
-    script: Dict[str, Union[int, str]]  # {},
+    script: Dict[str, Any]  # {},
     eventId: int  # 0,
     eventGroupId: int  # 0,
     id: int  # 6505,
@@ -416,7 +410,7 @@ class ItemEntity(BaseModel):
 
 class MstSvtLimitAdd(BaseModel):
     individuality: List[int]  # [],
-    script: Dict[str, Union[int, str]]  # {},
+    script: Dict[str, Any]  # {},
     svtId: int  # 102900,
     limitCount: int  # 11,
     battleCharaId: int  # 102930,
