@@ -203,7 +203,7 @@ class MstSvt(BaseModelORJson):
     classPassive: List[int]  # [83350, 80350, 320650],
     expandedClassPassive: List[SkillEntityNoReverse] = []
     cardIds: List[int]  # [3, 1, 1, 1, 2],
-    script: Dict[str, int]  # { "cameraActionId: 80 },
+    script: Dict[str, Any]  # { "cameraActionId: 80 },
     id: int  # 500800,
     baseSvtId: int  # 500800,
     name: str  # "Merlin",
