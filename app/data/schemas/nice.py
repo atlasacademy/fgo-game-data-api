@@ -365,6 +365,10 @@ class NiceLore(BaseModel):
     voices: List[NiceVoiceGroup]
 
 
+class NiceServantScript(BaseModel):
+    SkillRankUp: Optional[Dict[int, List[int]]] = None
+
+
 class NiceCommandCode(BaseModelORJson):
     id: int
     collectionNo: int
@@ -405,6 +409,7 @@ class NiceServant(BaseModelORJson):
     ascensionAdd: AscensionAdd
     ascensionMaterials: Dict[int, NiceLvlUpMaterial]
     skillMaterials: Dict[int, NiceLvlUpMaterial]
+    script: NiceServantScript
     skills: List[NiceSkill]
     classPassive: List[NiceSkill]
     noblePhantasms: List[NiceTd]

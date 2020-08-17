@@ -248,6 +248,7 @@
   "ascensionAdd": { "individuality": { "ascension": {}, "costume": {} } },
   "ascensionMaterials": {},
   "skillMaterials": {},
+  "script": {},
   "skills": [],
   "classPassive": [],
   "noblePhantasms": [

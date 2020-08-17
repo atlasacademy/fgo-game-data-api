@@ -2,6 +2,7 @@ import re
 from functools import lru_cache
 from typing import Any, Dict, List, Optional, Union
 
+import orjson
 from fastapi import HTTPException
 
 from ..config import Settings
@@ -376,7 +377,7 @@ def get_nice_skill(
         if "followerVals" in skillEntity.mstSkillLv[0].script:
             functionInfo["followerVals"] = [
                 parse_dataVals(
-                    item.script["followerVals"][funci],  # type: ignore
+                    item.script["followerVals"][funci],
                     function.mstFunc.funcType,
                     region,
                 )
@@ -749,12 +750,12 @@ def get_nice_servant(
 
     ascensionAddIndividuality = {
         "ascension": {
-            (item.limitCount + 1): get_traits_list(item.individuality)
+            (item.limitCount + 1): get_traits_list(sorted(item.individuality))
             for item in raw_data.mstSvtLimitAdd
             if item.limitCount not in costume_ids
         },
         "costume": {
-            costume_ids[item.limitCount]: get_traits_list(item.individuality)
+            costume_ids[item.limitCount]: get_traits_list(sorted(item.individuality))
             for item in raw_data.mstSvtLimitAdd
             if item.limitCount in costume_ids
         },
@@ -770,7 +771,9 @@ def get_nice_servant(
     ]
     if actualTDs and "tdTypeChangeIDs" in actualTDs[0].mstTreasureDevice.script:
         for actualTD in actualTDs:
-            tdTypeChangeIDs: List[int] = actualTD.mstTreasureDevice.script["tdTypeChangeIDs"]  # type: ignore
+            tdTypeChangeIDs: List[int] = actualTD.mstTreasureDevice.script[
+                "tdTypeChangeIDs"
+            ]
             currentActualTDsIDs = {item.mstTreasureDevice.id for item in actualTDs}
             for td in raw_data.mstTreasureDevice:
                 if (
@@ -798,6 +801,15 @@ def get_nice_servant(
         }
         for combineSkill in raw_data.mstCombineSkill
     }
+
+    script = {}
+    if "SkillRankUp" in raw_data.mstSvt.script:
+        script["SkillRankUp"] = {
+            item[0]: item[1:]
+            for item in orjson.loads(raw_data.mstSvt.script["SkillRankUp"])
+        }
+
+    nice_data["script"] = script
 
     nice_data["skills"] = [
         get_nice_skill(skill, item_id, region) for skill in raw_data.mstSkill

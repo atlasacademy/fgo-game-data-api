@@ -246,6 +246,16 @@ class TestServantSpecial:
             "ParamAddMaxCount": 10,
         }
 
+    def test_script_svt_SkillRankUp(self) -> None:
+        response = client.get("/nice/JP/servant/285")
+        assert response.status_code == 200
+        expected = {
+            "767650": [],
+            "682450": [964647, 964648, 964648, 964648],
+            "768550": [964649, 964650, 964650, 964650],
+        }
+        assert response.json()["script"]["SkillRankUp"] == expected
+
     def test_script_STAR_HIGHER_Moriarty(self) -> None:
         response = client.get("/nice/NA/skill/334552")
         assert response.status_code == 200
