@@ -576,6 +576,53 @@
       "qp": 20000000
     }
   },
+  "costumeMaterials": {
+    "1100230": {
+      "items": [
+        {
+          "item": {
+            "id": 6533,
+            "name": "Stake of Wailing Night",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6533.png",
+            "background": "bronze"
+          },
+          "amount": 10
+        },
+        {
+          "item": {
+            "id": 6526,
+            "name": "Shell of Reminiscence",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6526.png",
+            "background": "silver"
+          },
+          "amount": 5
+        },
+        {
+          "item": {
+            "id": 6520,
+            "name": "Tearstone of Blood",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6520.png",
+            "background": "gold"
+          },
+          "amount": 5
+        },
+        {
+          "item": {
+            "id": 6529,
+            "name": "Cursed Beast Gallstone",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6529.png",
+            "background": "gold"
+          },
+          "amount": 5
+        }
+      ],
+      "qp": 3000000
+    }
+  },
   "script": {},
   "skills": [
     {

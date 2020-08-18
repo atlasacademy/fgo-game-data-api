@@ -43,6 +43,7 @@ SVT_STUFFS = {
     "mstSvtLimit",
     "mstCombineSkill",
     "mstCombineLimit",
+    "mstCombineCostume",
     "mstSvtLimitAdd",
     "mstSvtComment",
     "mstSvtCostume",

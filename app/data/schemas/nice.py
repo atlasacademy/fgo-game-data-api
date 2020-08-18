@@ -409,6 +409,7 @@ class NiceServant(BaseModelORJson):
     ascensionAdd: AscensionAdd
     ascensionMaterials: Dict[int, NiceLvlUpMaterial]
     skillMaterials: Dict[int, NiceLvlUpMaterial]
+    costumeMaterials: Dict[int, NiceLvlUpMaterial]
     script: NiceServantScript
     skills: List[NiceSkill]
     classPassive: List[NiceSkill]

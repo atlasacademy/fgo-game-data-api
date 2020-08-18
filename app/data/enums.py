@@ -2563,6 +2563,8 @@ class Trait(str, Enum):
     aoeNP = "aoeNP"
     giant = "giant"
     childServant = "childServant"
+    buffSpecialInvincible = "buffSpecialInvincible"
+    buffSkillRankUp = "buffSkillRankUp"
 
 
 TRAIT_NAME: Dict[int, Trait] = {
@@ -2729,6 +2731,8 @@ TRAIT_NAME: Dict[int, Trait] = {
     3060: Trait.buffHpRecoveryPerTurn,
     3061: Trait.buffNegativeEffectImmunity,
     3063: Trait.buffNegativeEffectAtTurnEnd,
+    3064: Trait.buffSpecialInvincible,
+    3065: Trait.buffSkillRankUp,
     # 6016: No detail
     # 6021: No detail
     # 6022: No detail

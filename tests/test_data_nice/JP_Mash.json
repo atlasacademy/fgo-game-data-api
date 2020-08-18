@@ -434,6 +434,98 @@
       "qp": 5000000
     }
   },
+  "costumeMaterials": {
+    "800130": {
+      "items": [
+        {
+          "item": {
+            "id": 6526,
+            "name": "追憶の貝殻",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6526.png",
+            "background": "silver"
+          },
+          "amount": 5
+        },
+        {
+          "item": {
+            "id": 6515,
+            "name": "八連双晶",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6515.png",
+            "background": "silver"
+          },
+          "amount": 5
+        },
+        {
+          "item": {
+            "id": 6524,
+            "name": "大騎士勲章",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6524.png",
+            "background": "silver"
+          },
+          "amount": 5
+        },
+        {
+          "item": {
+            "id": 6501,
+            "name": "鳳凰の羽根",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6501.png",
+            "background": "silver"
+          },
+          "amount": 5
+        }
+      ],
+      "qp": 3000000
+    },
+    "800160": {
+      "items": [
+        {
+          "item": {
+            "id": 6526,
+            "name": "追憶の貝殻",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6526.png",
+            "background": "silver"
+          },
+          "amount": 5
+        },
+        {
+          "item": {
+            "id": 6524,
+            "name": "大騎士勲章",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6524.png",
+            "background": "silver"
+          },
+          "amount": 5
+        },
+        {
+          "item": {
+            "id": 6535,
+            "name": "永遠結氷",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6535.png",
+            "background": "silver"
+          },
+          "amount": 5
+        },
+        {
+          "item": {
+            "id": 6536,
+            "name": "オーロラ鋼",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6536.png",
+            "background": "silver"
+          },
+          "amount": 5
+        }
+      ],
+      "qp": 3000000
+    }
+  },
   "script": {},
   "skills": [
     {

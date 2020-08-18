@@ -585,6 +585,53 @@
       "qp": 20000000
     }
   },
+  "costumeMaterials": {
+    "1100930": {
+      "items": [
+        {
+          "item": {
+            "id": 6505,
+            "name": "虚影の塵",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
+            "background": "bronze"
+          },
+          "amount": 10
+        },
+        {
+          "item": {
+            "id": 6537,
+            "name": "巨人の指輪",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6537.png",
+            "background": "silver"
+          },
+          "amount": 5
+        },
+        {
+          "item": {
+            "id": 6528,
+            "name": "原初の産毛",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6528.png",
+            "background": "gold"
+          },
+          "amount": 5
+        },
+        {
+          "item": {
+            "id": 6542,
+            "name": "真理の卵",
+            "type": "skillLvUp",
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6542.png",
+            "background": "gold"
+          },
+          "amount": 5
+        }
+      ],
+      "qp": 3000000
+    }
+  },
   "script": {},
   "skills": [
     {

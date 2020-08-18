@@ -802,6 +802,16 @@ def get_nice_servant(
         for combineSkill in raw_data.mstCombineSkill
     }
 
+    nice_data["costumeMaterials"] = {
+        costume_ids[combineCostume.costumeId]: {
+            "items": get_nice_item_amount(
+                region, combineCostume.itemIds, combineCostume.itemNums
+            ),
+            "qp": combineCostume.qp,
+        }
+        for combineCostume in raw_data.mstCombineCostume
+    }
+
     script = {}
     if "SkillRankUp" in raw_data.mstSvt.script:
         script["SkillRankUp"] = {

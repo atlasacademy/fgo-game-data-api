@@ -8,7 +8,7 @@
     "buffGroup": 250,
     "vals": [
       { "id": 3004, "name": "buffPositiveEffect" },
-      { "id": 3064, "name": "unknown" },
+      { "id": 3064, "name": "buffSpecialInvincible" },
       { "id": 3007, "name": "buffIncreaseDefence" }
     ],
     "tvals": [],
@@ -34,7 +34,7 @@
                 "type": "specialInvincible",
                 "vals": [
                   { "id": 3004, "name": "buffPositiveEffect" },
-                  { "id": 3064, "name": "unknown" },
+                  { "id": 3064, "name": "buffSpecialInvincible" },
                   { "id": 3007, "name": "buffIncreaseDefence" }
                 ],
                 "tvals": [],
@@ -60,7 +60,7 @@
                 "type": "specialInvincible",
                 "vals": [
                   { "id": 3004, "name": "buffPositiveEffect" },
-                  { "id": 3064, "name": "unknown" },
+                  { "id": 3064, "name": "buffSpecialInvincible" },
                   { "id": 3007, "name": "buffIncreaseDefence" }
                 ],
                 "tvals": [],
@@ -86,7 +86,7 @@
                 "type": "specialInvincible",
                 "vals": [
                   { "id": 3004, "name": "buffPositiveEffect" },
-                  { "id": 3064, "name": "unknown" },
+                  { "id": 3064, "name": "buffSpecialInvincible" },
                   { "id": 3007, "name": "buffIncreaseDefence" }
                 ],
                 "tvals": [],

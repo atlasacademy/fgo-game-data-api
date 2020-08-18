@@ -322,6 +322,14 @@ class MstCombineSkill(BaseModel):
     qp: int  # 5000000
 
 
+class MstCombineCostume(BaseModel):
+    itemIds: List[int]  # [6512, 6524, 6501, 6506]
+    itemNums: List[int]  # [10, 5, 5, 5]
+    svtId: int  # 100100
+    costumeId: int  # 11
+    qp: int  # 3000000
+
+
 class MstEquip(BaseModel):
     id: int  # 20
     name: str  # "Mystic Code: Chaldea Combat Uniform"
@@ -591,6 +599,7 @@ class Master(BaseModel):
     mstTreasureDeviceLvId: Dict[int, List[MstTreasureDeviceLv]]
     mstCombineSkillId: Dict[int, List[MstCombineSkill]]
     mstCombineLimitId: Dict[int, List[MstCombineLimit]]
+    mstCombineCostumeId: Dict[int, List[MstCombineCostume]]
     mstSvtCardId: Dict[int, List[MstSvtCard]]
     mstSvtLimitId: Dict[int, List[MstSvtLimit]]
     mstSvtLimitAddId: Dict[int, List[MstSvtLimitAdd]]
@@ -636,6 +645,7 @@ class ServantEntity(BaseModelORJson):
     mstSvtLimit: List[MstSvtLimit]
     mstCombineSkill: List[MstCombineSkill]
     mstCombineLimit: List[MstCombineLimit]
+    mstCombineCostume: List[MstCombineCostume]
     mstSvtLimitAdd: List[MstSvtLimitAdd]
     mstSvtCostume: List[MstSvtCostume] = []
     mstSvtComment: List[MstSvtComment] = []

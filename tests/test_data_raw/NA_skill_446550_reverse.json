@@ -1343,6 +1343,7 @@
               "qp": 10000000
             }
           ],
+          "mstCombineCostume": [],
           "mstSvtLimitAdd": [],
           "mstSvtCostume": []
         },
@@ -2188,6 +2189,7 @@
           ],
           "mstCombineSkill": [],
           "mstCombineLimit": [],
+          "mstCombineCostume": [],
           "mstSvtLimitAdd": [
             {
               "individuality": [],
@@ -3099,6 +3101,7 @@
           ],
           "mstCombineSkill": [],
           "mstCombineLimit": [],
+          "mstCombineCostume": [],
           "mstSvtLimitAdd": [
             {
               "individuality": [],
