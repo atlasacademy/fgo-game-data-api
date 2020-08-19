@@ -160,6 +160,15 @@ class Vals(BaseVals):
     DependFuncVals: Optional[BaseVals] = None
 
 
+class NiceBuffRelationOverwrite(BaseModelORJson):
+    atkSide: Dict[SvtClass, Dict[SvtClass, int]]
+    defSide: Dict[SvtClass, Dict[SvtClass, int]]
+
+
+class NiceBuffScript(BaseModelORJson):
+    relationId: Optional[NiceBuffRelationOverwrite] = None
+
+
 class NiceBuff(BaseModelORJson):
     id: int
     name: str
@@ -167,6 +176,7 @@ class NiceBuff(BaseModelORJson):
     icon: Optional[HttpUrl] = None
     type: Union[NiceBuffType, int]
     buffGroup: int
+    script: NiceBuffScript
     vals: List[NiceTrait]
     tvals: List[NiceTrait]
     ckSelfIndv: List[NiceTrait]

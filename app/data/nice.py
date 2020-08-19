@@ -37,6 +37,7 @@ from .enums import (
     VOICE_TYPE_NAME,
     FuncType,
     NiceStatusRank,
+    SvtClass,
     SvtType,
     VoiceCondType,
 )
@@ -83,6 +84,7 @@ from .schemas.raw import (
     BuffEntityNoReverse,
     FunctionEntityNoReverse,
     GlobalNewMstSubtitle,
+    MstClassRelationOverwrite,
     MstSvtComment,
     MstSvtCostume,
     MstSvtVoice,
@@ -288,11 +290,36 @@ def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> Dict[str, 
         "ckOpIndv": get_traits_list(buffEntity.mstBuff.ckOpIndv),
         "maxRate": buffEntity.mstBuff.maxRate,
     }
+
     iconId = buffEntity.mstBuff.iconId
     if iconId != 0:
         buffInfo["icon"] = AssetURL.buffIcon.format(
             base_url=settings.asset_url, region=region, item_id=iconId
         )
+
+    script = {}
+    if "relationId" in buffEntity.mstBuff.script:
+        relationOverwrite: List[MstClassRelationOverwrite] = masters[
+            region
+        ].mstClassRelationOverwriteId.get(buffEntity.mstBuff.script["relationId"], [])
+        relationId: Dict[str, Dict[SvtClass, Dict[SvtClass, int]]] = {
+            "atkSide": {},
+            "defSide": {},
+        }
+        for item in relationOverwrite:
+            if item.atkSide == 1:
+                side = "atkSide"
+            else:
+                side = "defSide"
+            atkClass = CLASS_NAME[item.atkClass]
+            defClass = CLASS_NAME[item.defClass]
+            if atkClass in relationId[side]:
+                relationId[side][atkClass][defClass] = item.damageRate
+            else:
+                relationId[side][atkClass] = {defClass: item.damageRate}
+        script["relationId"] = relationId
+    buffInfo["script"] = script
+
     return buffInfo
 
 

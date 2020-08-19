@@ -30,6 +30,7 @@
           "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_314.png",
           "type": "upCommandall",
           "buffGroup": 0,
+          "script": {},
           "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
           "tvals": [
             { "id": 5000, "name": "canBeInBattle" },
@@ -70,6 +71,7 @@
           "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_351.png",
           "type": "pierceDefence",
           "buffGroup": 450,
+          "script": {},
           "vals": [
             { "id": 3004, "name": "buffPositiveEffect" },
             { "id": 3006, "name": "buffIncreaseDamage" }
@@ -110,6 +112,7 @@
           "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_303.png",
           "type": "upDropnp",
           "buffGroup": 0,
+          "script": {},
           "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
           "tvals": [],
           "ckSelfIndv": [],

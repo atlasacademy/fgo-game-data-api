@@ -269,6 +269,7 @@
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
               "type": "upCommandall",
               "buffGroup": 0,
+              "script": {},
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" }
@@ -301,6 +302,7 @@
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_310.png",
               "type": "upNpdamage",
               "buffGroup": 0,
+              "script": {},
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" },
@@ -389,6 +391,7 @@
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
               "type": "upCommandall",
               "buffGroup": 0,
+              "script": {},
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" }
@@ -421,6 +424,7 @@
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_310.png",
               "type": "upNpdamage",
               "buffGroup": 0,
+              "script": {},
               "vals": [
                 { "id": 3004, "name": "buffPositiveEffect" },
                 { "id": 3006, "name": "buffIncreaseDamage" },

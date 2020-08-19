@@ -43,6 +43,7 @@
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_333.png",
               "type": "commandattackFunction",
               "buffGroup": 0,
+              "script": {},
               "vals": [],
               "tvals": [],
               "ckSelfIndv": [],

@@ -507,6 +507,15 @@ class MstFriendship(BaseModel):
     qp: int = -1  # 12000000
 
 
+class MstClassRelationOverwrite(BaseModel):
+    id: int  # 100
+    atkSide: int  # 1
+    atkClass: int  # 2
+    defClass: int  # 9
+    damageRate: int  # 1300
+    type: int  # 0
+
+
 class MstQuest(BaseModel):
     afterActionVals: List[str]  # []
     id: int  # 94024618
@@ -630,6 +639,8 @@ class Master(BaseModel):
     mstSvtGroupId: Dict[int, List[int]]
     # globalNewMstSubtitle: List[GlobalNewMstSubtitle] = []
     mstSubtitleId: Dict[int, List[GlobalNewMstSubtitle]] = {}
+    # mstClassRelationOverwrite: List[MstClassRelationOverwrite]
+    mstClassRelationOverwriteId: Dict[int, List[MstClassRelationOverwrite]]
     buffToFunc: Dict[int, Set[int]]
     funcToSkill: Dict[int, Set[int]]
     funcToTd: Dict[int, Set[int]]

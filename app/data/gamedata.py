@@ -27,7 +27,7 @@ MASTER_WITH_ID = {
     "mstIllustrator",
     "mstVoice",
 }
-ID_LISTS = {"mstSvtVoice"}
+ID_LISTS = {"mstSvtVoice", "mstClassRelationOverwrite"}
 MASTER_WITHOUT_ID = {
     "mstSvtExp",
     "mstFriendship",

@@ -154,6 +154,7 @@
           "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_504.png",
           "type": "downDefence",
           "buffGroup": 0,
+          "script": {},
           "vals": [
             { "id": 3005, "name": "buffNegativeEffect" },
             { "id": 3009, "name": "buffDecreaseDefence" }

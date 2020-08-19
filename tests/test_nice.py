@@ -267,3 +267,20 @@ class TestServantSpecial:
         response = client.get("/nice/NA/skill/991370")
         assert response.status_code == 200
         assert response.json()["functions"][0]["followerVals"] == [{"RateCount": 150}]
+
+    def test_buff_script_relationId(self) -> None:
+        response = client.get("/nice/JP/buff/2585")
+        assert response.status_code == 200
+        expected = {
+            "atkSide": {"assassin": {"alterEgo": 2000}},
+            "defSide": {"alterEgo": {"assassin": 500}},
+        }
+        assert response.json()["script"]["relationId"] == expected
+
+        response_2 = client.get("/nice/JP/buff/2576")
+        assert response_2.status_code == 200
+        expected_2 = {
+            "atkSide": {},
+            "defSide": {"alterEgo": {"saber": 1500, "assassin": 1500}},
+        }
+        assert response_2.json()["script"]["relationId"] == expected_2

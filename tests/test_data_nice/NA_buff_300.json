@@ -5,6 +5,7 @@
   "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_540.png",
   "type": "downDefencecommandall",
   "buffGroup": 0,
+  "script": {},
   "vals": [],
   "tvals": [
     { "id": 5000, "name": "canBeInBattle" },
