@@ -790,25 +790,6 @@ def get_nice_servant(
 
     nice_data["ascensionAdd"] = {"individuality": ascensionAddIndividuality}
 
-    # Filter out dummy TDs that are probably used by enemy servants that don't use their NPs
-    actualTDs: List[TdEntityNoReverse] = [
-        item
-        for item in raw_data.mstTreasureDevice
-        if item.mstSvtTreasureDevice[0].num == 1
-    ]
-    if actualTDs and "tdTypeChangeIDs" in actualTDs[0].mstTreasureDevice.script:
-        for actualTD in actualTDs:
-            tdTypeChangeIDs: List[int] = actualTD.mstTreasureDevice.script[
-                "tdTypeChangeIDs"
-            ]
-            currentActualTDsIDs = {item.mstTreasureDevice.id for item in actualTDs}
-            for td in raw_data.mstTreasureDevice:
-                if (
-                    td.mstTreasureDevice.id in tdTypeChangeIDs
-                    and td.mstTreasureDevice.id not in currentActualTDsIDs
-                ):
-                    actualTDs.append(td)
-
     nice_data["ascensionMaterials"] = {
         combineLimit.svtLimit: {
             "items": get_nice_item_amount(
@@ -855,7 +836,12 @@ def get_nice_servant(
         get_nice_skill(skill, item_id, region)
         for skill in raw_data.mstSvt.expandedClassPassive
     ]
-    nice_data["noblePhantasms"] = [get_nice_td(td, item_id, region) for td in actualTDs]
+    nice_data["noblePhantasms"] = [
+        get_nice_td(td, item_id, region)
+        for td in sorted(
+            raw_data.mstTreasureDevice, key=lambda x: x.mstTreasureDevice.id
+        )
+    ]
 
     if lore:
         if raw_data.mstSvt.cvId in masters[region].mstCvId:
