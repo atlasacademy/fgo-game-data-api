@@ -228,6 +228,7 @@ class MstSvt(BaseModelORJson):
     cvId: int  # 62,
     collectionNo: int  # 150,
     materialStoryPriority: int  # 1000
+    flag: int
 
     def isServant(self) -> bool:
         return is_servant(self.type)

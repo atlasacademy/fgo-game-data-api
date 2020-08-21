@@ -48,7 +48,8 @@
     "illustratorId": 29,
     "cvId": 29,
     "collectionNo": 126,
-    "materialStoryPriority": 1000
+    "materialStoryPriority": 1000,
+    "flag": 0
   },
   "mstSkill": [
     {

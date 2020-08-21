@@ -188,7 +188,8 @@
             "illustratorId": 34,
             "cvId": -1,
             "collectionNo": 0,
-            "materialStoryPriority": 0
+            "materialStoryPriority": 0,
+            "flag": 0
           },
           "mstSkill": [],
           "mstTreasureDevice": [

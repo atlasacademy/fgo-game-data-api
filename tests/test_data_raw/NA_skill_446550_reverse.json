@@ -215,7 +215,8 @@
             "illustratorId": 46,
             "cvId": 59,
             "collectionNo": 196,
-            "materialStoryPriority": 1000
+            "materialStoryPriority": 1000,
+            "flag": 0
           },
           "mstSkill": [
             {
@@ -1398,7 +1399,8 @@
             "illustratorId": -1,
             "cvId": -1,
             "collectionNo": 0,
-            "materialStoryPriority": 0
+            "materialStoryPriority": 0,
+            "flag": 0
           },
           "mstSkill": [
             {
@@ -2310,7 +2312,8 @@
             "illustratorId": -1,
             "cvId": -1,
             "collectionNo": 0,
-            "materialStoryPriority": 0
+            "materialStoryPriority": 0,
+            "flag": 0
           },
           "mstSkill": [
             {
