@@ -20,6 +20,7 @@ from .enums import (
     BUFF_TYPE_NAME,
     CARD_TYPE_NAME,
     CLASS_NAME,
+    CLASS_OVERWRITE_NAME,
     COND_TYPE_NAME,
     FUNC_APPLYTARGET_NAME,
     FUNC_TARGETTYPE_NAME,
@@ -32,6 +33,7 @@ from .enums import (
     QUEST_TYPE_NAME,
     SKILL_TYPE_NAME,
     STATUS_RANK_NAME,
+    SVT_FLAG_NAME,
     SVT_TYPE_NAME,
     VOICE_COND_NAME,
     VOICE_TYPE_NAME,
@@ -147,9 +149,7 @@ def parse_dataVals(
         FuncType.QP_UP,
     }
 
-    datavals_exception = HTTPException(
-        status_code=500, detail=f"Can't parse datavals: {datavals}"
-    )
+    error_message = f"Can't parse datavals: {datavals}"
 
     output: Dict[str, Union[int, str, List[int]]] = {}
     if datavals != "[]":
@@ -250,15 +250,15 @@ def parse_dataVals(
                             list_value = [int(i) for i in array2[1].split("/")]
                             output[array2[0]] = list_value
                         except ValueError:
-                            raise datavals_exception
+                            raise HTTPException(status_code=500, detail=error_message)
                     else:
                         try:
                             text = array2[0]
                             value = int(array2[1])
                         except ValueError:
-                            raise datavals_exception
+                            raise HTTPException(status_code=500, detail=error_message)
                 else:
-                    raise datavals_exception
+                    raise HTTPException(status_code=500, detail=error_message)
 
             if text:
                 output[text] = value
@@ -302,7 +302,7 @@ def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> Dict[str, 
         relationOverwrite: List[MstClassRelationOverwrite] = masters[
             region
         ].mstClassRelationOverwriteId.get(buffEntity.mstBuff.script["relationId"], [])
-        relationId: Dict[str, Dict[SvtClass, Dict[SvtClass, int]]] = {
+        relationId: Dict[str, Dict[SvtClass, Dict[SvtClass, Any]]] = {
             "atkSide": {},
             "defSide": {},
         }
@@ -313,10 +313,14 @@ def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> Dict[str, 
                 side = "defSide"
             atkClass = CLASS_NAME[item.atkClass]
             defClass = CLASS_NAME[item.defClass]
+            relationDetail = {
+                "damageRate": item.damageRate,
+                "type": CLASS_OVERWRITE_NAME[item.type],
+            }
             if atkClass in relationId[side]:
-                relationId[side][atkClass][defClass] = item.damageRate
+                relationId[side][atkClass][defClass] = relationDetail
             else:
-                relationId[side][atkClass] = {defClass: item.damageRate}
+                relationId[side][atkClass] = {defClass: relationDetail}
         script["relationId"] = relationId
     buffInfo["script"] = script
 
@@ -619,6 +623,7 @@ def get_nice_servant(
         "attribute": ATTRIBUTE_NAME[raw_data.mstSvt.attri],
         "className": CLASS_NAME[raw_data.mstSvt.classId],
         "type": SVT_TYPE_NAME[raw_data.mstSvt.type],
+        "flag": SVT_FLAG_NAME[raw_data.mstSvt.flag],
         "cost": raw_data.mstSvt.cost,
         "instantDeathChance": raw_data.mstSvt.deathRate,
         "starGen": raw_data.mstSvt.starRate,

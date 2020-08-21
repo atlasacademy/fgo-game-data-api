@@ -4,6 +4,7 @@
   "name": "ティアマト",
   "className": "beastII",
   "type": "enemyCollectionDetail",
+  "flag": "normal",
   "rarity": 5,
   "cost": 16,
   "lvMax": 90,

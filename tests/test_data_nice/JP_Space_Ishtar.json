@@ -4,6 +4,7 @@
   "name": "スペース・イシュタル",
   "className": "avenger",
   "type": "normal",
+  "flag": "normal",
   "rarity": 5,
   "cost": 16,
   "lvMax": 90,

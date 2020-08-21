@@ -207,6 +207,7 @@
           "name": "浅上藤乃",
           "className": "archer",
           "type": "normal",
+          "flag": "normal",
           "rarity": 4,
           "cost": 12,
           "lvMax": 80,
@@ -268,7 +269,7 @@
             { "id": 304, "name": "alignmentEvil" },
             { "id": 1000, "name": "basedOnServant" },
             { "id": 2001, "name": "humanoid" },
-            { "id": 2631, "name": "humanoidServant" },
+            { "id": 2631, "name": "hominidaeServant" },
             { "id": 2654, "name": "livingHuman" },
             { "id": 5000, "name": "canBeInBattle" },
             { "id": 202900, "name": "unknown" }

@@ -51,6 +51,39 @@ SVT_TYPE_NAME: Dict[int, NiceSvtType] = {
 SVT_TYPE_NAME_REVERSE: Dict[NiceSvtType, int] = {v: k for k, v in SVT_TYPE_NAME.items()}
 
 
+### Servant Flag ###
+
+
+class SvtFlag(IntEnum):
+    ONLY_USE_FOR_NPC = 2
+    SVT_EQUIP_FRIEND_SHIP = 4
+    IGNORE_COMBINE_LIMIT_SPECIAL = 8
+    SVT_EQUIP_EXP = 16
+    SVT_EQUIP_CHOCOLATE = 32
+
+
+class NiceSvtFlag(str, Enum):
+    onlyUseForNpc = "onlyUseForNpc"
+    svtEquipFriendShip = "svtEquipFriendShip"
+    ignoreCombineLimitSpecial = "ignoreCombineLimitSpecial"
+    svtEquipExp = "svtEquipExp"
+    svtEquipChocolate = "svtEquipChocolate"
+    # Not in the code
+    normal = "normal"
+    goetia = "goetia"
+
+
+SVT_FLAG_NAME: Dict[int, NiceSvtFlag] = {
+    0: NiceSvtFlag.normal,
+    2: NiceSvtFlag.onlyUseForNpc,
+    4: NiceSvtFlag.svtEquipFriendShip,
+    8: NiceSvtFlag.ignoreCombineLimitSpecial,
+    16: NiceSvtFlag.svtEquipExp,
+    32: NiceSvtFlag.svtEquipChocolate,
+    63: NiceSvtFlag.goetia,
+}
+
+
 ### Skill Type ###
 
 
@@ -1350,6 +1383,28 @@ class DataValsType(IntEnum):
     PopLabelDelay = 64
 
 
+### Class Relation Overwrite Type ###
+
+
+class ClassRelationOverwriteType(IntEnum):
+    OVERWRITE_FORCE = 0
+    OVERWRITE_MORE_THAN_TARGET = 1
+    OVERWRITE_LESS_THAN_TARGET = 2
+
+
+class NiceClassRelationOverwriteType(str, Enum):
+    overwriteForce = "overwriteForce"
+    overwriteMoreThanTarget = "overwriteMoreThanTarget"
+    overwriteLessThanTarget = "overwriteLessThanTarget"
+
+
+CLASS_OVERWRITE_NAME: Dict[int, NiceClassRelationOverwriteType] = {
+    0: NiceClassRelationOverwriteType.overwriteForce,
+    1: NiceClassRelationOverwriteType.overwriteMoreThanTarget,
+    2: NiceClassRelationOverwriteType.overwriteLessThanTarget,
+}
+
+
 ### Item Type ###
 
 
@@ -2480,7 +2535,7 @@ class Trait(str, Enum):
     genderUnknownServant = "genderUnknownServant"
     argonaut = "argonaut"
     genderCaenisServant = "genderCaenisServant"
-    humanoidServant = "humanoidServant"
+    hominidaeServant = "hominidaeServant"
     blessedByKur = "blessedByKur"
     beastServant = "beastServant"
     canBeInBattle = "canBeInBattle"
@@ -2553,7 +2608,9 @@ class Trait(str, Enum):
     criticalHit = "criticalHit"
     playerCards = "playerCards"
     cardNP = "cardNP"
-    kingProteaGrowth = "kingProteaGrowth"
+    kingproteaGrowth = "kingproteaGrowth"
+    kingproteaProliferation = "kingproteaProliferation"
+    kingproteaProliferationNPDefense = "kingproteaProliferationNPDefense"
     fieldSunlight = "fieldSunlight"
     fieldShore = "fieldShore"
     fieldForest = "fieldForest"
@@ -2661,13 +2718,15 @@ TRAIT_NAME: Dict[int, Trait] = {
     2121: Trait.fieldBurning,
     2355: Trait.illya,
     2356: Trait.genderUnknownServant,  # Teach's 3rd skill
-    2387: Trait.kingProteaGrowth,
+    2386: Trait.kingproteaProliferation,
+    2387: Trait.kingproteaGrowth,
     2392: Trait.fieldCity,
     2466: Trait.argonaut,
     2615: Trait.genderCaenisServant,  # Phantom's 2nd skill
-    2631: Trait.humanoidServant,  # used in TamaVitch's fight
+    2631: Trait.hominidaeServant,  # used in TamaVitch's fight
     2632: Trait.beastServant,  # used in TamaVitch's fight
     2654: Trait.livingHuman,  # Voyager's NP
+    2664: Trait.kingproteaProliferationNPDefense,
     2666: Trait.giant,
     2667: Trait.childServant,  # Summer Illya's 2nd skill
     # 2xxx: CQ or Story quests buff

@@ -103,6 +103,7 @@
           "name": "Fionn mac Cumhaill",
           "className": "lancer",
           "type": "normal",
+          "flag": "normal",
           "rarity": 4,
           "cost": 12,
           "lvMax": 80,

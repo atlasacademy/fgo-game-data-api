@@ -8,6 +8,7 @@ from ..enums import (
     Gender,
     NiceBuffType,
     NiceCardType,
+    NiceClassRelationOverwriteType,
     NiceCondType,
     NiceConsumeType,
     NiceFuncTargetType,
@@ -17,6 +18,7 @@ from ..enums import (
     NiceQuestType,
     NiceSkillType,
     NiceStatusRank,
+    NiceSvtFlag,
     NiceSvtType,
     NiceSvtVoiceType,
     NiceVoiceCondType,
@@ -160,9 +162,14 @@ class Vals(BaseVals):
     DependFuncVals: Optional[BaseVals] = None
 
 
+class RelationOverwriteDetail(BaseModelORJson):
+    damageRate: int
+    type: NiceClassRelationOverwriteType
+
+
 class NiceBuffRelationOverwrite(BaseModelORJson):
-    atkSide: Dict[SvtClass, Dict[SvtClass, int]]
-    defSide: Dict[SvtClass, Dict[SvtClass, int]]
+    atkSide: Dict[SvtClass, Dict[SvtClass, RelationOverwriteDetail]]
+    defSide: Dict[SvtClass, Dict[SvtClass, RelationOverwriteDetail]]
 
 
 class NiceBuffScript(BaseModelORJson):
@@ -395,6 +402,7 @@ class NiceServant(BaseModelORJson):
     name: str
     className: SvtClass
     type: NiceSvtType
+    flag: NiceSvtFlag
     rarity: int
     cost: int
     lvMax: int
@@ -432,6 +440,7 @@ class NiceEquip(BaseModelORJson):
     collectionNo: int
     name: str
     type: NiceSvtType
+    flag: NiceSvtFlag
     rarity: int
     cost: int
     lvMax: int

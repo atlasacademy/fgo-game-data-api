@@ -4,6 +4,7 @@
   "name": "Billy the Kid",
   "className": "archer",
   "type": "normal",
+  "flag": "normal",
   "rarity": 3,
   "cost": 7,
   "lvMax": 70,

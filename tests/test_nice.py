@@ -272,8 +272,12 @@ class TestServantSpecial:
         response = client.get("/nice/JP/buff/2585")
         assert response.status_code == 200
         expected = {
-            "atkSide": {"assassin": {"alterEgo": 2000}},
-            "defSide": {"alterEgo": {"assassin": 500}},
+            "atkSide": {
+                "assassin": {"alterEgo": {"damageRate": 2000, "type": "overwriteForce"}}
+            },
+            "defSide": {
+                "alterEgo": {"assassin": {"damageRate": 500, "type": "overwriteForce"}}
+            },
         }
         assert response.json()["script"]["relationId"] == expected
 
@@ -281,6 +285,11 @@ class TestServantSpecial:
         assert response_2.status_code == 200
         expected_2 = {
             "atkSide": {},
-            "defSide": {"alterEgo": {"saber": 1500, "assassin": 1500}},
+            "defSide": {
+                "alterEgo": {
+                    "saber": {"damageRate": 1500, "type": "overwriteForce"},
+                    "assassin": {"damageRate": 1500, "type": "overwriteForce"},
+                }
+            },
         }
         assert response_2.json()["script"]["relationId"] == expected_2

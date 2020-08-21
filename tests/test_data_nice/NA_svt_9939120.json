@@ -4,6 +4,7 @@
   "name": "Demon God Pillar",
   "className": "berserker",
   "type": "enemy",
+  "flag": "normal",
   "rarity": 5,
   "cost": 0,
   "lvMax": 100,

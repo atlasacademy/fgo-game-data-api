@@ -208,10 +208,17 @@ def update_gamedata() -> None:
                 item["type"] == SvtType.SERVANT_EQUIP
                 and item["id"] in master["mstSvtSkillSvtId"]
             ):
-                skill_id = master["mstSvtSkillSvtId"][item["id"]][0]
-                actIndividuality = master["mstSkillId"][skill_id]["actIndividuality"]
-                if actIndividuality and actIndividuality[0] in master["mstSvtId"]:
-                    bondEquip[actIndividuality[0]] = item["id"]
+                actIndividualities = set()
+                for skill_id in master["mstSvtSkillSvtId"][item["id"]]:
+                    mstSkill = master["mstSkillId"][skill_id]
+                    actIndividualities.add(tuple(mstSkill["actIndividuality"]))
+                if len(actIndividualities) == 1:
+                    individualities = actIndividualities.pop()
+                    if (
+                        len(individualities) == 1
+                        and individualities[0] in master["mstSvtId"]
+                    ):
+                        bondEquip[individualities[0]] = item["id"]
 
         master["bondEquip"] = bondEquip
 

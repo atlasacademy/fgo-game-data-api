@@ -4,6 +4,7 @@
   "name": "マシュ・キリエライト",
   "className": "shielder",
   "type": "heroine",
+  "flag": "normal",
   "rarity": 3,
   "cost": 0,
   "lvMax": 80,
@@ -104,7 +105,7 @@
     { "id": 2008, "name": "weakToEnumaElish" },
     { "id": 2009, "name": "riding" },
     { "id": 2011, "name": "skyOrEarth" },
-    { "id": 2631, "name": "humanoidServant" },
+    { "id": 2631, "name": "hominidaeServant" },
     { "id": 2654, "name": "livingHuman" },
     { "id": 5000, "name": "canBeInBattle" },
     { "id": 800100, "name": "unknown" }
