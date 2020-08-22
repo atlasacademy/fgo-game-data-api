@@ -84,6 +84,9 @@ SVT_FLAG_NAME: Dict[int, NiceSvtFlag] = {
 }
 
 
+SVT_FLAG_NAME_REVERSE: Dict[NiceSvtFlag, int] = {v: k for k, v in SVT_FLAG_NAME.items()}
+
+
 ### Skill Type ###
 
 

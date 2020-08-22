@@ -18,6 +18,7 @@ from .enums import (
     FUNC_TARGETTYPE_NAME_REVERSE,
     FUNC_TYPE_NAME_REVERSE,
     GENDER_NAME_REVERSE,
+    SVT_FLAG_NAME_REVERSE,
     SVT_TYPE_NAME_REVERSE,
     TRAIT_NAME_REVERSE,
     Trait,
@@ -105,6 +106,7 @@ def search_servant(
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
     svt_type_ints = {SVT_TYPE_NAME_REVERSE[item] for item in search_param.type}
+    svt_flag_ints = {SVT_FLAG_NAME_REVERSE[item] for item in search_param.flag}
     rarity_ints = set(search_param.rarity)
     class_ints = {CLASS_NAME_REVERSE[item] for item in search_param.className}
     gender_ints = {GENDER_NAME_REVERSE[item] for item in search_param.gender}
@@ -115,6 +117,7 @@ def search_servant(
         item
         for item in masters[search_param.region].mstSvt
         if item.type in svt_type_ints
+        and item.flag in svt_flag_ints
         and item.collectionNo != search_param.excludeCollectionNo
         and item.classId in class_ints
         and item.genderType in gender_ints
@@ -153,12 +156,14 @@ def search_equip(search_param: EquipSearchQueryParams, limit: int = 100) -> List
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
     svt_type = {SVT_TYPE_NAME_REVERSE[item] for item in search_param.type}
+    svt_flag_ints = {SVT_FLAG_NAME_REVERSE[item] for item in search_param.flag}
     rarity = set(search_param.rarity)
 
     matches = [
         item
         for item in masters[search_param.region].mstSvt
         if item.type in svt_type
+        and item.flag in svt_flag_ints
         and item.collectionNo != search_param.excludeCollectionNo
         and masters[search_param.region].mstSvtLimitId[item.id][0].rarity in rarity
     ]

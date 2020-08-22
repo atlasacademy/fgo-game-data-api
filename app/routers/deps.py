@@ -11,6 +11,7 @@ from ..data.enums import (
     CLASS_NAME,
     GENDER_NAME,
     PLAYABLE_CLASS_LIST,
+    SVT_FLAG_NAME,
     SVT_TYPE_NAME,
     Attribute,
     FuncApplyTarget,
@@ -18,6 +19,7 @@ from ..data.enums import (
     NiceBuffType,
     NiceFuncTargetType,
     NiceFuncType,
+    NiceSvtFlag,
     NiceSvtType,
     SvtClass,
     Trait,
@@ -61,6 +63,7 @@ class ServantSearchQueryParams:
     name: Optional[str] = None
     excludeCollectionNo: int = 0
     type: List[NiceSvtType] = Query(SERVANT_TYPE)
+    flag: List[NiceSvtFlag] = Query(list(SVT_FLAG_NAME.values()))
     rarity: List[int] = Query(list(range(6)), ge=0, le=5)
     className: List[SvtClass] = Query(PLAYABLE_CLASS_LIST)
     gender: List[Gender] = Query(list(GENDER_NAME.values()))
@@ -72,6 +75,7 @@ class ServantSearchQueryParams:
             [
                 self.name,
                 self.type != SERVANT_TYPE,
+                self.flag != list(SVT_FLAG_NAME.values()),
                 self.rarity != list(range(6)),
                 self.className != PLAYABLE_CLASS_LIST,
                 self.gender != list(GENDER_NAME.values()),
@@ -88,6 +92,7 @@ class ServantSearchQueryParams:
         - **excludeCollectionNo**: int, defaults to 0. Won't return records with the specified collectionNo.
         - **type**: servant type, defaults to `[normal, heroine, enemyCollectionDetail]`.
         See the NiceSvtType enum for the options.
+        - **flag**: svt flag. See the NiceSvtFlag enum for the options.
         - **rarity**: Integers 0-6.
         - **className**: an item in the className enum, defaults to `PLAYABLE_CLASS_LIST`.
         See the className detail in the Nice Servant response.
@@ -107,6 +112,7 @@ class SvtSearchQueryParams:
     name: Optional[str] = None
     excludeCollectionNo: int = -1
     type: List[NiceSvtType] = Query(list(SVT_TYPE_NAME.values()))
+    flag: List[NiceSvtFlag] = Query(list(SVT_FLAG_NAME.values()))
     rarity: List[int] = Query(list(range(6)), ge=0, le=5)
     className: List[SvtClass] = Query(list(CLASS_NAME.values()))
     gender: List[Gender] = Query(list(GENDER_NAME.values()))
@@ -118,6 +124,7 @@ class SvtSearchQueryParams:
             [
                 self.name,
                 self.type != list(SVT_TYPE_NAME.values()),
+                self.flag != list(SVT_FLAG_NAME.values()),
                 self.rarity != list(range(6)),
                 self.className != list(CLASS_NAME.values()),
                 self.gender != list(GENDER_NAME.values()),
@@ -133,6 +140,7 @@ class SvtSearchQueryParams:
         - **name**: servant name. Searching JP data using English name works too.
         - **excludeCollectionNo**: int. Won't return records with the specified collectionNo.
         - **type**: servant type. See the NiceSvtType enum for the options.
+        - **flag**: svt flag. See the NiceSvtFlag enum for the options.
         - **rarity**: Integers 0-6.
         - **className**: an item in the className enum. See the className detail in the Nice Servant response.
         - **gender**: female, male or unknown.
@@ -151,6 +159,7 @@ class EquipSearchQueryParams:
     name: Optional[str] = None
     excludeCollectionNo: int = 0
     type: List[NiceSvtType] = Query([NiceSvtType.servantEquip])
+    flag: List[NiceSvtFlag] = Query(list(SVT_FLAG_NAME.values()))
     rarity: List[int] = Query(list(range(1, 6)), ge=1, le=5)
 
     def __post_init__(self) -> None:
@@ -158,6 +167,7 @@ class EquipSearchQueryParams:
             [
                 self.name,
                 self.type != [NiceSvtType.servantEquip],
+                self.flag != list(SVT_FLAG_NAME.values()),
                 self.rarity != list(range(1, 6)),
             ]
         )
@@ -169,6 +179,7 @@ class EquipSearchQueryParams:
         - **name**: in English if you are searching NA data and in Japanese if you are searching JP data.
         - **excludeCollectionNo**: int, defaults to 0. Won't return records with the specified collectionNo.
         - **type**: servant type, defaults to `[servantEquip]`. See the NiceSvtType for the options.
+        - **flag**: svt flag. See the NiceSvtFlag enum for the options.
         - **rarity**: Integers 0-6
 
         At least one of name, type or rarity is required for the query.

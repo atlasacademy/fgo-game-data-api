@@ -76,6 +76,7 @@ test_cases_dict = {
         "JP/svt/search?lang=en&trait=2667&type=enemyCollection",
         {9940530, 9941040, 9941050, 9942530, 2500700},
     ),
+    "svt_search_flag": ("NA/svt/search?flag=svtEquipFriendShip&name=crown", {9300010}),
     "buff_type_tvals": (
         "NA/buff/search?type=upCommandall&tvals=cardQuick",
         {100, 260, 499, 1084, 1094},
