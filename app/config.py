@@ -11,6 +11,7 @@ logger.addHandler(console_handler)
 logger.setLevel(uvicorn_logger.level)
 
 
+# pylint: disable=no-self-argument, no-self-use
 class Settings(BaseSettings):
     na_gamedata: DirectoryPath
     jp_gamedata: DirectoryPath
