@@ -61,7 +61,7 @@ class ServantSearchQueryParams:
     region: Region
     hasSearchParams: bool = field(init=False)
     name: Optional[str] = None
-    excludeCollectionNo: int = 0
+    excludeCollectionNo: List[int] = Query([0])
     type: List[NiceSvtType] = Query(SERVANT_TYPE)
     flag: List[NiceSvtFlag] = Query(list(SVT_FLAG_NAME.values()))
     rarity: List[int] = Query(list(range(6)), ge=0, le=5)
@@ -93,7 +93,7 @@ class ServantSearchQueryParams:
         - **type**: servant type, defaults to `[normal, heroine, enemyCollectionDetail]`.
         See the NiceSvtType enum for the options.
         - **flag**: svt flag. See the NiceSvtFlag enum for the options.
-        - **rarity**: Integers 0-6.
+        - **rarity**: Integer 0-6.
         - **className**: an item in the className enum, defaults to `PLAYABLE_CLASS_LIST`.
         See the className detail in the Nice Servant response.
         - **gender**: female, male or unknown.
@@ -110,7 +110,7 @@ class SvtSearchQueryParams:
     region: Region
     hasSearchParams: bool = field(init=False)
     name: Optional[str] = None
-    excludeCollectionNo: int = -1
+    excludeCollectionNo: List[int] = Query([-1])
     type: List[NiceSvtType] = Query(list(SVT_TYPE_NAME.values()))
     flag: List[NiceSvtFlag] = Query(list(SVT_FLAG_NAME.values()))
     rarity: List[int] = Query(list(range(6)), ge=0, le=5)
@@ -141,7 +141,7 @@ class SvtSearchQueryParams:
         - **excludeCollectionNo**: int. Won't return records with the specified collectionNo.
         - **type**: servant type. See the NiceSvtType enum for the options.
         - **flag**: svt flag. See the NiceSvtFlag enum for the options.
-        - **rarity**: Integers 0-6.
+        - **rarity**: Integer 0-6.
         - **className**: an item in the className enum. See the className detail in the Nice Servant response.
         - **gender**: female, male or unknown.
         - **attribute**: human, sky, earth, star or beast.
@@ -157,7 +157,7 @@ class EquipSearchQueryParams:
     region: Region
     hasSearchParams: bool = field(init=False)
     name: Optional[str] = None
-    excludeCollectionNo: int = 0
+    excludeCollectionNo: List[int] = Query([0])
     type: List[NiceSvtType] = Query([NiceSvtType.servantEquip])
     flag: List[NiceSvtFlag] = Query(list(SVT_FLAG_NAME.values()))
     rarity: List[int] = Query(list(range(1, 6)), ge=1, le=5)
@@ -180,7 +180,7 @@ class EquipSearchQueryParams:
         - **excludeCollectionNo**: int, defaults to 0. Won't return records with the specified collectionNo.
         - **type**: servant type, defaults to `[servantEquip]`. See the NiceSvtType for the options.
         - **flag**: svt flag. See the NiceSvtFlag enum for the options.
-        - **rarity**: Integers 0-6
+        - **rarity**: Integer 0-6
 
         At least one of name, type or rarity is required for the query.
         """
