@@ -8,6 +8,7 @@ from pydantic import BaseModel
 from ..data.common import Language, Region
 from ..data.enums import (
     ATTRIBUTE_NAME,
+    CARD_TYPE_NAME,
     CLASS_NAME,
     GENDER_NAME,
     PLAYABLE_CLASS_LIST,
@@ -18,6 +19,7 @@ from ..data.enums import (
     FuncApplyTarget,
     Gender,
     NiceBuffType,
+    NiceCardType,
     NiceFuncTargetType,
     NiceFuncType,
     NiceSkillType,
@@ -95,7 +97,7 @@ class ServantSearchQueryParams:
         - **type**: servant type, defaults to `[normal, heroine, enemyCollectionDetail]`.
         See the NiceSvtType enum for the options.
         - **flag**: svt flag. See the NiceSvtFlag enum for the options.
-        - **rarity**: Integer 0-6.
+        - **rarity**: rarity of the servant.
         - **className**: an item in the className enum, defaults to `PLAYABLE_CLASS_LIST`.
         See the className detail in the Nice Servant response.
         - **gender**: female, male or unknown.
@@ -143,7 +145,7 @@ class SvtSearchQueryParams:
         - **excludeCollectionNo**: int. Won't return records with the specified collectionNo.
         - **type**: servant type. See the NiceSvtType enum for the options.
         - **flag**: svt flag. See the NiceSvtFlag enum for the options.
-        - **rarity**: Integer 0-6.
+        - **rarity**: rarity of the svt object.
         - **className**: an item in the className enum. See the className detail in the Nice Servant response.
         - **gender**: female, male or unknown.
         - **attribute**: human, sky, earth, star or beast.
@@ -182,7 +184,7 @@ class EquipSearchQueryParams:
         - **excludeCollectionNo**: int, defaults to 0. Won't return records with the specified collectionNo.
         - **type**: servant type, defaults to `[servantEquip]`. See the NiceSvtType for the options.
         - **flag**: svt flag. See the NiceSvtFlag enum for the options.
-        - **rarity**: Integer 0-6
+        - **rarity**: rarity of the CE.
 
         At least one of name, type or rarity is required for the query.
         """
@@ -205,9 +207,7 @@ class SkillSearchParams:
     name: Optional[str] = None
     type: List[NiceSkillType] = Query(SkillSearchParamsDefault.type)
     num: List[int] = Query(
-        None,
-        ge=min(SkillSearchParamsDefault.num),
-        le=max(SkillSearchParamsDefault.num),
+        None, ge=min(SkillSearchParamsDefault.num), le=max(SkillSearchParamsDefault.num)
     )
     priority: List[int] = Query(
         None,
@@ -245,15 +245,86 @@ class SkillSearchParams:
 
     DESCRIPTION: ClassVar[str] = inspect.cleandoc(
         """
-        Search and return the list of matched equip entities.
+        Search and return the list of matched skill entities.
 
         - **name**: in English if you are searching NA data and in Japanese if you are searching JP data.
         - **type**: `passive` or `active`.
-        - **num**: skill number: 1, 2 or 3.
-        - **priority**: Integer 1-6.
-        - **strengthStatus**: Integer 0-99.
-        - **lvl1coolDown**: Integer -1-99. Cooldown at level 1.
-        - **numFunctions**: Integer 1-200. Number of functions in the skill.
+        - **num**: skill number on the servant: 1, 2 or 3.
+        - **priority**: visual display order. It is usually a better number for strengthening status.
+        - **strengthStatus**: strengthening status.
+        - **lvl1coolDown**: Cooldown at level 1.
+        - **numFunctions**: Number of functions in the skill.
+
+        At least one of the parameter is required for the query.
+        """
+    )
+
+
+class TdSearchParamsDefault:
+    card = list(CARD_TYPE_NAME.values())
+    hits: List[int] = list(range(1, 21))
+    strengthStatus: List[int] = [0, 1, 2]
+    numFunctions: List[int] = list(range(1, 21))
+    minNpNpGain: int = 0
+    maxNpNpGain: int = 300
+
+
+@dataclass
+class TdSearchParams:
+    region: Region
+    hasSearchParams: bool = field(init=False)
+    name: Optional[str] = None
+    card: List[NiceCardType] = Query(TdSearchParamsDefault.card)
+    hits: List[int] = Query(
+        None, ge=min(TdSearchParamsDefault.hits), le=max(TdSearchParamsDefault.hits)
+    )
+    strengthStatus: List[int] = Query(
+        None,
+        ge=min(TdSearchParamsDefault.strengthStatus),
+        le=max(TdSearchParamsDefault.strengthStatus),
+    )
+    numFunctions: List[int] = Query(
+        None,
+        ge=min(TdSearchParamsDefault.numFunctions),
+        le=max(TdSearchParamsDefault.numFunctions),
+    )
+    minNpNpGain: int = Query(
+        TdSearchParamsDefault.minNpNpGain,
+        ge=TdSearchParamsDefault.minNpNpGain,
+        le=TdSearchParamsDefault.maxNpNpGain,
+    )
+    maxNpNpGain: int = Query(
+        TdSearchParamsDefault.maxNpNpGain,
+        ge=TdSearchParamsDefault.minNpNpGain,
+        le=TdSearchParamsDefault.maxNpNpGain,
+    )
+
+    def __post_init__(self) -> None:
+        self.hasSearchParams = any(
+            [
+                self.name,
+                self.card != TdSearchParamsDefault.card,
+                self.hits,
+                self.strengthStatus,
+                self.numFunctions,
+                self.minNpNpGain != TdSearchParamsDefault.minNpNpGain,
+                self.maxNpNpGain != TdSearchParamsDefault.maxNpNpGain,
+            ]
+        )
+
+    DESCRIPTION: ClassVar[str] = inspect.cleandoc(
+        """
+        Search and return the list of matched equip entities.
+
+        - **name**: in English if you are searching NA data and in Japanese if you are searching JP data.
+        - **card**: card type of the NP.
+        - **hits**: number of hits of the NP.
+        - **strengthStatus**: strength status of the NP.
+        - **numFunctions**: number of functions the NP has.
+        - **minNpNpGain**: NP gain of the NP is at least this value.
+        - **maxNpNpGain**: NP gain of the NP is at most this value.
+
+        At least one of the parameter is required for the query.
         """
     )
 

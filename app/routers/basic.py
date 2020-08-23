@@ -23,6 +23,7 @@ from .deps import (
     ServantSearchQueryParams,
     SkillSearchParams,
     SvtSearchQueryParams,
+    TdSearchParams,
     get_error_code,
     language_parameter,
 )
@@ -293,9 +294,38 @@ async def get_skill(
         raise HTTPException(status_code=404, detail="Skill not found")
 
 
+basic_td_extra = """
+- **reverse**: Reverse lookup the servants that have this NP
+and return the reversed servant objects.
+- **lang**: returns English servant names if querying JP data. Doesn't do anything if querying NA data.
+"""
+
+
+@router.get(
+    "/{region}/NP/search",
+    summary="Find and get NP data",
+    description=TdSearchParams.DESCRIPTION + basic_td_extra,
+    response_description="Basic NP Entities",
+    response_model=List[BasicTdReverse],
+    response_model_exclude_unset=True,
+    responses=get_error_code([400, 403]),
+)
+async def find_td(
+    search_param: TdSearchParams = Depends(TdSearchParams),
+    reverse: bool = False,
+    lang: Language = Depends(language_parameter),
+) -> Response:
+    matches = search.search_td(search_param, limit=10000)
+    entity_list = [
+        basic.get_basic_td(search_param.region, item, lang, reverse) for item in matches
+    ]
+    return list_response(entity_list)
+
+
 @router.get(
     "/{region}/NP/{item_id}",
     summary="Get NP data",
+    description="Get the NP data from the given ID" + basic_td_extra,
     response_description="NP entity",
     response_model=BasicTdReverse,
     response_model_exclude_unset=True,
@@ -307,12 +337,6 @@ async def get_td(
     reverse: bool = False,
     lang: Language = Depends(language_parameter),
 ) -> Response:
-    """
-    Get the NP data from the given ID
-
-    - **reverse**: Reverse lookup the servants that have this NP
-    and return the reversed servant objects.
-    """
     if item_id in masters[region].mstTreasureDeviceId:
         return item_response(basic.get_basic_td(region, item_id, lang, reverse))
     else:

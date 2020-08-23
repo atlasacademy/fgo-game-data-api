@@ -23,6 +23,7 @@ from .deps import (
     ServantSearchQueryParams,
     SkillSearchParams,
     SvtSearchQueryParams,
+    TdSearchParams,
     get_error_code,
 )
 from .utils import item_response, list_response
@@ -284,9 +285,40 @@ async def get_skill(
         raise HTTPException(status_code=404, detail="Skill not found")
 
 
+raw_td_extra = """
+- **reverse**: Reverse lookup the servants that have this NP
+and return the reversed servant objects.
+- **expand**: Add expanded function objects to mstTreasureDeviceLv.expandedFuncId
+from the function IDs in mstTreasureDeviceLv.funcId.
+"""
+
+
+@router.get(
+    "/{region}/NP/search",
+    summary="Find and get NP data",
+    description=TdSearchParams.DESCRIPTION + raw_td_extra,
+    response_description="Nice NP Entities",
+    response_model=List[TdEntity],
+    response_model_exclude_unset=True,
+    responses=get_error_code([400, 403]),
+)
+async def find_td(
+    search_param: TdSearchParams = Depends(TdSearchParams),
+    reverse: bool = False,
+    expand: bool = False,
+) -> Response:
+    matches = search.search_td(search_param)
+    entity_list = [
+        raw.get_td_entity(search_param.region, item, reverse, expand=expand)
+        for item in matches
+    ]
+    return list_response(entity_list)
+
+
 @router.get(
     "/{region}/NP/{item_id}",
     summary="Get NP data",
+    description="Get the NP data from the given ID" + raw_td_extra,
     response_description="NP entity",
     response_model=TdEntity,
     response_model_exclude_unset=True,
@@ -295,14 +327,6 @@ async def get_skill(
 async def get_td(
     region: Region, item_id: int, reverse: bool = False, expand: bool = False,
 ) -> Response:
-    """
-    Get the NP data from the given ID
-
-    - **reverse**: Reverse lookup the servants that have this NP
-    and return the reversed servant objects.
-    - **expand**: Add expanded function objects to mstTreasureDeviceLv.expandedFuncId
-    from the function IDs in mstTreasureDeviceLv.funcId.
-    """
     if item_id in masters[region].mstTreasureDeviceId:
         td_entity = raw.get_td_entity(region, item_id, reverse, expand=expand)
         return item_response(td_entity)

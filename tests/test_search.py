@@ -10,22 +10,27 @@ from app.main import app
 client = TestClient(app)
 
 
+RAW_MAIN_ITEM = {
+    "servant": "mstSvt",
+    "equip": "mstSvt",
+    "svt": "mstSvt",
+    "function": "mstFunc",
+    "buff": "mstBuff",
+    "skill": "mstSkill",
+    "NP": "mstTreasureDevice",
+}
+
+
 def get_item_list(response: Response, response_type: str, endpoint: str) -> Set[int]:
     item_type = endpoint.split("/")[1]
     if response_type == "raw":
-        if item_type in ("servant", "equip", "svt"):
-            main_item = "mstSvt"
-        elif item_type == "function":
-            main_item = "mstFunc"
-        elif item_type == "buff":
-            main_item = "mstBuff"
-        elif item_type == "skill":
-            main_item = "mstSkill"
+        if item_type in RAW_MAIN_ITEM:
+            main_item = RAW_MAIN_ITEM[item_type]
         else:
             raise ValueError
         return {item[main_item]["id"] for item in response.json()}
     else:
-        if item_type in ("servant", "equip", "buff", "svt", "skill"):
+        if item_type in ("servant", "equip", "buff", "svt", "skill", "NP"):
             main_id = "id"
         elif item_type == "function":
             main_id = "funcId"
@@ -89,6 +94,15 @@ test_cases_dict = {
         "NA/skill/search?name=Mystic%20Eyes%20of%20Distortion%20EX&lvl1coolDown=7",
         {454650},
     ),
+    "np_search_minNp_strength": (
+        "NA/NP/search?minNpNpGain=220&strengthStatus=2",
+        {601002},
+    ),
+    "np_search_hits_maxNp_numFunc": (
+        "NA/NP/search?hits=15&maxNpNpGain=50&numFunctions=4",
+        {601501},
+    ),
+    "np_search_name": ("NA/NP/search?name=Mystic%20Eyes", {202901, 602301}),
     "buff_type_tvals": (
         "NA/buff/search?type=upCommandall&tvals=cardQuick",
         {100, 260, 499, 1084, 1094},
@@ -170,7 +184,7 @@ class TestSearch:
         assert response.text == "[]"
 
     @pytest.mark.parametrize(
-        "endpoint", ["servant", "equip", "svt", "skill", "buff", "function"]
+        "endpoint", ["servant", "equip", "svt", "skill", "NP", "buff", "function"]
     )
     def test_empty_input(self, response_type: str, endpoint: str) -> None:
         response = client.get(f"/{response_type}/NA/{endpoint}/search")
@@ -196,4 +210,8 @@ class TestSearchNiceRaw:
 
     def test_too_many_results_skill(self, response_type: str) -> None:
         response = client.get(f"/{response_type}/JP/skill/search?type=passive")
+        assert response.status_code == 403
+
+    def test_too_many_results_np(self, response_type: str) -> None:
+        response = client.get(f"/{response_type}/NA/NP/search?minNpNpGain=40")
         assert response.status_code == 403

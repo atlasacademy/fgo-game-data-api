@@ -25,6 +25,7 @@ from .deps import (
     ServantSearchQueryParams,
     SkillSearchParams,
     SvtSearchQueryParams,
+    TdSearchParams,
     get_error_code,
     language_parameter,
 )
@@ -339,10 +340,44 @@ async def get_skill(
         raise HTTPException(status_code=404, detail="Skill not found")
 
 
+nice_td_extra = """
+- **reverse**: Reverse lookup the servants that have this NP
+and return the reversed servant objects.
+- **reverseData**: if set to `basic`, will return basic entities.
+- **lang**: returns English servant names if querying JP data. Doesn't do anything if querying NA data.
+"""
+
+
+@router.get(
+    "/{region}/NP/search",
+    summary="Find and get NP data",
+    description=TdSearchParams.DESCRIPTION + nice_td_extra,
+    response_description="Nice NP Entities",
+    response_model=List[NiceTdReverse],
+    response_model_exclude_unset=True,
+    responses=get_error_code([400, 403]),
+)
+async def find_td(
+    search_param: TdSearchParams = Depends(TdSearchParams),
+    lang: Language = Depends(language_parameter),
+    reverse: bool = False,
+    reverseData: ReverseData = ReverseData.nice,
+) -> Response:
+    matches = search.search_td(search_param)
+    entity_list = [
+        nice.get_nice_td_alone(
+            search_param.region, item, lang, reverse, reverseData=reverseData
+        )
+        for item in matches
+    ]
+    return list_response(entity_list)
+
+
 @router.get(
     "/{region}/NP/{item_id}",
     summary="Get NP data",
-    response_description="NP entity",
+    description="Get the NP data from the given ID" + nice_td_extra,
+    response_description="Nice NP entity",
     response_model=NiceTdReverse,
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
@@ -354,12 +389,6 @@ async def get_td(
     reverse: bool = False,
     reverseData: ReverseData = ReverseData.nice,
 ) -> Response:
-    """
-    Get the NP data from the given ID
-
-    - **reverse**: Reverse lookup the servants that have this NP
-    and return the reversed servant objects.
-    """
     if item_id in masters[region].mstTreasureDeviceId:
         return item_response(
             nice.get_nice_td_alone(

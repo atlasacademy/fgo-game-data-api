@@ -11,11 +11,14 @@ from ..routers.deps import (
     SkillSearchParams,
     SkillSearchParamsDefault,
     SvtSearchQueryParams,
+    TdSearchParams,
+    TdSearchParamsDefault,
 )
 from .common import Region
 from .enums import (
     ATTRIBUTE_NAME_REVERSE,
     BUFF_TYPE_NAME_REVERSE,
+    CARD_TYPE_NAME_REVERSE,
     CLASS_NAME_REVERSE,
     FUNC_APPLYTARGET_NAME_REVERSE,
     FUNC_TARGETTYPE_NAME_REVERSE,
@@ -251,6 +254,79 @@ def search_skill(search_param: SkillSearchParams, limit: int = 100) -> List[int]
             search_param.region, item.id, num, priority, strengthStatus,
         )
         and search_skill_lv(search_param.region, item.id, lvl1coolDown, numFunctions,)
+    ]
+
+    if search_param.name:
+        matches = [
+            item
+            for item in matches
+            if match_name(search_param.name, item.name)
+            or match_name(search_param.name, item.ruby)
+        ]
+
+    if len(matches) > limit:
+        raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
+
+    return [item.id for item in matches]
+
+
+def search_td_svt(
+    region: Region,
+    td_id: int,
+    card: Set[int],
+    hits: List[int],
+    strengthStatus: List[int],
+) -> bool:
+    svt_td = masters[region].mstSvtTreasureDeviceId[td_id][0]
+    return (
+        svt_td.cardId in card
+        and len(svt_td.damage) in hits
+        and svt_td.strengthStatus in strengthStatus
+    )
+
+
+def search_td_lv(
+    region: Region,
+    td_id: int,
+    numFunctions: List[int],
+    minNpNpGain: int,
+    maxNpNpGain: int,
+) -> bool:
+    td_lv = masters[region].mstTreasureDeviceLvId[td_id][0]
+    return (
+        len(td_lv.funcId) in numFunctions
+        and minNpNpGain <= td_lv.tdPoint <= maxNpNpGain
+    )
+
+
+def search_td(search_param: TdSearchParams, limit: int = 100) -> List[int]:
+    if not search_param.hasSearchParams:
+        raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
+
+    card_ints = {CARD_TYPE_NAME_REVERSE[item] for item in search_param.card}
+    hits = search_param.hits if search_param.hits else TdSearchParamsDefault.hits
+    strengthStatus = (
+        search_param.strengthStatus
+        if search_param.strengthStatus
+        else TdSearchParamsDefault.strengthStatus
+    )
+    numFunctions = (
+        search_param.numFunctions
+        if search_param.numFunctions
+        else TdSearchParamsDefault.numFunctions
+    )
+
+    matches = [
+        item
+        for item in masters[search_param.region].mstTreasureDevice
+        if search_td_svt(search_param.region, item.id, card_ints, hits, strengthStatus)
+        and search_td_lv(
+            search_param.region,
+            item.id,
+            numFunctions,
+            search_param.minNpNpGain,
+            search_param.maxNpNpGain,
+        )
     ]
 
     if search_param.name:

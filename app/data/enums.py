@@ -1561,6 +1561,11 @@ CARD_TYPE_NAME: Dict[int, NiceCardType] = {
 }
 
 
+CARD_TYPE_NAME_REVERSE: Dict[NiceCardType, int] = {
+    v: k for k, v in CARD_TYPE_NAME.items()
+}
+
+
 ### Gender ###
 
 
