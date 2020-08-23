@@ -21,6 +21,7 @@ from .deps import (
     EquipSearchQueryParams,
     FuncSearchQueryParams,
     ServantSearchQueryParams,
+    SkillSearchParams,
     SvtSearchQueryParams,
     get_error_code,
     language_parameter,
@@ -242,9 +243,39 @@ async def get_command_code(region: Region, item_id: int) -> Response:
         raise HTTPException(status_code=404, detail="Command Code not found")
 
 
+basic_skill_extra = """
+- **reverse**: Reverse lookup the servants that have this skill
+and return the reverse skill objects.
+- **lang**: returns English servant names if querying JP data. Doesn't do anything if querying NA data.
+"""
+
+
+@router.get(
+    "/{region}/skill/search",
+    summary="Find and get skill data",
+    description=SkillSearchParams.DESCRIPTION + basic_skill_extra,
+    response_description="Basic Skill Entities",
+    response_model=List[BasicSkillReverse],
+    response_model_exclude_unset=True,
+    responses=get_error_code([400, 403]),
+)
+async def find_skill(
+    search_param: SkillSearchParams = Depends(SkillSearchParams),
+    reverse: bool = False,
+    lang: Language = Depends(language_parameter),
+) -> Response:
+    matches = search.search_skill(search_param, limit=10000)
+    entity_list = [
+        basic.get_basic_skill(search_param.region, item, lang, reverse)
+        for item in matches
+    ]
+    return list_response(entity_list)
+
+
 @router.get(
     "/{region}/skill/{item_id}",
     summary="Get skill data",
+    description="Get the skill data fro mthe given ID" + basic_skill_extra,
     response_description="Skill entity",
     response_model=BasicSkillReverse,
     response_model_exclude_unset=True,
@@ -256,12 +287,6 @@ async def get_skill(
     reverse: bool = False,
     lang: Language = Depends(language_parameter),
 ) -> Response:
-    """
-    Get the skill data from the given ID
-
-    - **reverse**: Reverse lookup the servants that have this skill
-    and return the reverse skill objects.
-    """
     if item_id in masters[region].mstSkillId:
         return item_response(basic.get_basic_skill(region, item_id, lang, reverse))
     else:

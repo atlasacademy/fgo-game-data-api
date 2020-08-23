@@ -19,11 +19,13 @@ def get_item_list(response: Response, response_type: str, endpoint: str) -> Set[
             main_item = "mstFunc"
         elif item_type == "buff":
             main_item = "mstBuff"
+        elif item_type == "skill":
+            main_item = "mstSkill"
         else:
             raise ValueError
         return {item[main_item]["id"] for item in response.json()}
     else:
-        if item_type in ("servant", "equip", "buff", "svt"):
+        if item_type in ("servant", "equip", "buff", "svt", "skill"):
             main_id = "id"
         elif item_type == "function":
             main_id = "funcId"
@@ -77,6 +79,16 @@ test_cases_dict = {
         {9940530, 9941040, 9941050, 9942530, 2500700},
     ),
     "svt_search_flag": ("NA/svt/search?flag=svtEquipFriendShip&name=crown", {9300010}),
+    "skill_search_type_coolDown_numFunc": (
+        "NA/skill/search?lvl1coolDown=8&numFunctions=8&type=active",
+        {961472, 961475, 961620},
+    ),
+    "skill_search_strength": ("JP/skill/search?strengthStatus=2&type=active", {94349}),
+    "skill_search_priority": ("JP/skill/search?priority=5", {744450}),
+    "skill_search_name": (
+        "NA/skill/search?name=Mystic%20Eyes%20of%20Distortion%20EX&lvl1coolDown=7",
+        {454650},
+    ),
     "buff_type_tvals": (
         "NA/buff/search?type=upCommandall&tvals=cardQuick",
         {100, 260, 499, 1084, 1094},
@@ -158,7 +170,7 @@ class TestSearch:
         assert response.text == "[]"
 
     @pytest.mark.parametrize(
-        "endpoint", ["servant", "equip", "svt", "buff", "function"]
+        "endpoint", ["servant", "equip", "svt", "skill", "buff", "function"]
     )
     def test_empty_input(self, response_type: str, endpoint: str) -> None:
         response = client.get(f"/{response_type}/NA/{endpoint}/search")
@@ -180,4 +192,8 @@ class TestSearchNiceRaw:
 
     def test_too_many_results_function(self, response_type: str) -> None:
         response = client.get(f"/{response_type}/JP/function/search?type=addState")
+        assert response.status_code == 403
+
+    def test_too_many_results_skill(self, response_type: str) -> None:
+        response = client.get(f"/{response_type}/JP/skill/search?type=passive")
         assert response.status_code == 403

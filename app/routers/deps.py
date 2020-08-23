@@ -11,6 +11,7 @@ from ..data.enums import (
     CLASS_NAME,
     GENDER_NAME,
     PLAYABLE_CLASS_LIST,
+    SKILL_TYPE_NAME,
     SVT_FLAG_NAME,
     SVT_TYPE_NAME,
     Attribute,
@@ -19,6 +20,7 @@ from ..data.enums import (
     NiceBuffType,
     NiceFuncTargetType,
     NiceFuncType,
+    NiceSkillType,
     NiceSvtFlag,
     NiceSvtType,
     SvtClass,
@@ -183,6 +185,75 @@ class EquipSearchQueryParams:
         - **rarity**: Integer 0-6
 
         At least one of name, type or rarity is required for the query.
+        """
+    )
+
+
+class SkillSearchParamsDefault:
+    type = list(SKILL_TYPE_NAME.values())
+    num: List[int] = [1, 2, 3]
+    priority: List[int] = list(range(1, 6))
+    strengthStatus: List[int] = list(range(0, 100))
+    lvl1coolDown: List[int] = list(range(-1, 100))
+    numFunctions: List[int] = list(range(1, 201))
+
+
+@dataclass
+class SkillSearchParams:
+    region: Region
+    hasSearchParams: bool = field(init=False)
+    name: Optional[str] = None
+    type: List[NiceSkillType] = Query(SkillSearchParamsDefault.type)
+    num: List[int] = Query(
+        None,
+        ge=min(SkillSearchParamsDefault.num),
+        le=max(SkillSearchParamsDefault.num),
+    )
+    priority: List[int] = Query(
+        None,
+        ge=min(SkillSearchParamsDefault.priority),
+        le=max(SkillSearchParamsDefault.priority),
+    )
+    strengthStatus: List[int] = Query(
+        None,
+        ge=min(SkillSearchParamsDefault.strengthStatus),
+        le=max(SkillSearchParamsDefault.strengthStatus),
+    )
+    lvl1coolDown: List[int] = Query(
+        None,
+        ge=min(SkillSearchParamsDefault.lvl1coolDown),
+        le=max(SkillSearchParamsDefault.lvl1coolDown),
+    )
+    numFunctions: List[int] = Query(
+        None,
+        ge=min(SkillSearchParamsDefault.numFunctions),
+        le=max(SkillSearchParamsDefault.numFunctions),
+    )
+
+    def __post_init__(self) -> None:
+        self.hasSearchParams = any(
+            [
+                self.name,
+                self.type != SkillSearchParamsDefault.type,
+                self.num,
+                self.priority,
+                self.strengthStatus,
+                self.lvl1coolDown,
+                self.numFunctions,
+            ]
+        )
+
+    DESCRIPTION: ClassVar[str] = inspect.cleandoc(
+        """
+        Search and return the list of matched equip entities.
+
+        - **name**: in English if you are searching NA data and in Japanese if you are searching JP data.
+        - **type**: `passive` or `active`.
+        - **num**: skill number: 1, 2 or 3.
+        - **priority**: Integer 1-6.
+        - **strengthStatus**: Integer 0-99.
+        - **lvl1coolDown**: Integer -1-99. Cooldown at level 1.
+        - **numFunctions**: Integer 1-200. Number of functions in the skill.
         """
     )
 

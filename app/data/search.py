@@ -8,8 +8,11 @@ from ..routers.deps import (
     EquipSearchQueryParams,
     FuncSearchQueryParams,
     ServantSearchQueryParams,
+    SkillSearchParams,
+    SkillSearchParamsDefault,
     SvtSearchQueryParams,
 )
+from .common import Region
 from .enums import (
     ATTRIBUTE_NAME_REVERSE,
     BUFF_TYPE_NAME_REVERSE,
@@ -18,6 +21,7 @@ from .enums import (
     FUNC_TARGETTYPE_NAME_REVERSE,
     FUNC_TYPE_NAME_REVERSE,
     GENDER_NAME_REVERSE,
+    SKILL_TYPE_NAME_REVERSE,
     SVT_FLAG_NAME_REVERSE,
     SVT_TYPE_NAME_REVERSE,
     TRAIT_NAME_REVERSE,
@@ -166,6 +170,87 @@ def search_equip(search_param: EquipSearchQueryParams, limit: int = 100) -> List
         and item.flag in svt_flag_ints
         and item.collectionNo not in search_param.excludeCollectionNo
         and masters[search_param.region].mstSvtLimitId[item.id][0].rarity in rarity
+    ]
+
+    if search_param.name:
+        matches = [
+            item
+            for item in matches
+            if match_name(search_param.name, item.name)
+            or match_name(search_param.name, item.ruby)
+        ]
+
+    if len(matches) > limit:
+        raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
+
+    return [item.id for item in matches]
+
+
+def search_skill_svt(
+    region: Region,
+    skill_id: int,
+    num: List[int],
+    priority: List[int],
+    strengthStatus: List[int],
+) -> bool:
+    svt_skills = masters[region].mstSvtSkillId.get(skill_id, [])
+    if svt_skills:
+        svt_skill = svt_skills[0]
+        return (
+            svt_skill.num in num
+            and svt_skill.priority in priority
+            and svt_skill.strengthStatus in strengthStatus
+        )
+    else:
+        return (
+            num == SkillSearchParamsDefault.num
+            and priority == SkillSearchParamsDefault.priority
+            and strengthStatus == SkillSearchParamsDefault.strengthStatus
+        )
+
+
+def search_skill_lv(
+    region: Region, skill_id: int, lvl1coolDown: List[int], numFunctions: List[int],
+) -> bool:
+    skill_lv = masters[region].mstSkillLvId[skill_id][0]
+    return skill_lv.chargeTurn in lvl1coolDown and len(skill_lv.funcId) in numFunctions
+
+
+def search_skill(search_param: SkillSearchParams, limit: int = 100) -> List[int]:
+    if not search_param.hasSearchParams:
+        raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
+
+    type_ints = {SKILL_TYPE_NAME_REVERSE[item] for item in search_param.type}
+    num = search_param.num if search_param.num else SkillSearchParamsDefault.num
+    priority = (
+        search_param.priority
+        if search_param.priority
+        else SkillSearchParamsDefault.priority
+    )
+    strengthStatus = (
+        search_param.strengthStatus
+        if search_param.strengthStatus
+        else SkillSearchParamsDefault.strengthStatus
+    )
+    lvl1coolDown = (
+        search_param.lvl1coolDown
+        if search_param.lvl1coolDown
+        else SkillSearchParamsDefault.lvl1coolDown
+    )
+    numFunctions = (
+        search_param.numFunctions
+        if search_param.numFunctions
+        else SkillSearchParamsDefault.numFunctions
+    )
+
+    matches = [
+        item
+        for item in masters[search_param.region].mstSkill
+        if item.type in type_ints
+        and search_skill_svt(
+            search_param.region, item.id, num, priority, strengthStatus,
+        )
+        and search_skill_lv(search_param.region, item.id, lvl1coolDown, numFunctions,)
     ]
 
     if search_param.name:

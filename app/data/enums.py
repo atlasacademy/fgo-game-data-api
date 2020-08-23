@@ -101,6 +101,11 @@ SKILL_TYPE_NAME: Dict[int, NiceSkillType] = {
 }
 
 
+SKILL_TYPE_NAME_REVERSE: Dict[NiceSkillType, int] = {
+    v: k for k, v in SKILL_TYPE_NAME.items()
+}
+
+
 ### Function Type ###
 
 

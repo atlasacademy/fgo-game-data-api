@@ -23,6 +23,7 @@ from .deps import (
     EquipSearchQueryParams,
     FuncSearchQueryParams,
     ServantSearchQueryParams,
+    SkillSearchParams,
     SvtSearchQueryParams,
     get_error_code,
     language_parameter,
@@ -279,10 +280,44 @@ async def get_command_code(region: Region, item_id: int) -> Response:
         raise HTTPException(status_code=404, detail="Command Code not found")
 
 
+nice_skill_extra = """
+- **reverse**: Reverse lookup the servants that have this skill
+and return the reverse skill objects.
+- **reverseData**: if set to `basic`, will return basic entities.
+- **lang**: returns English servant names if querying JP data. Doesn't do anything if querying NA data.
+"""
+
+
+@router.get(
+    "/{region}/skill/search",
+    summary="Find and get skill data",
+    description=SkillSearchParams.DESCRIPTION + nice_skill_extra,
+    response_description="Nice Skill entities",
+    response_model=List[NiceSkillReverse],
+    response_model_exclude_unset=True,
+    responses=get_error_code([400, 403]),
+)
+async def find_skill(
+    search_param: SkillSearchParams = Depends(SkillSearchParams),
+    lang: Language = Depends(language_parameter),
+    reverse: bool = False,
+    reverseData: ReverseData = ReverseData.nice,
+) -> Response:
+    matches = search.search_skill(search_param)
+    entity_list = [
+        nice.get_nice_skill_alone(
+            search_param.region, item, lang, reverse, reverseData=reverseData
+        )
+        for item in matches
+    ]
+    return list_response(entity_list)
+
+
 @router.get(
     "/{region}/skill/{item_id}",
     summary="Get skill data",
-    response_description="Skill entity",
+    description="Get the skill data from the given ID" + nice_skill_extra,
+    response_description="Nice Skill entity",
     response_model=NiceSkillReverse,
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
@@ -294,12 +329,6 @@ async def get_skill(
     reverse: bool = False,
     reverseData: ReverseData = ReverseData.nice,
 ) -> Response:
-    """
-    Get the skill data from the given ID
-
-    - **reverse**: Reverse lookup the servants that have this skill
-    and return the reverse skill objects.
-    """
     if item_id in masters[region].mstSkillId:
         return item_response(
             nice.get_nice_skill_alone(
@@ -345,6 +374,7 @@ function_reverse_lang_description = """
 - **reverse**: Reverse lookup the skills that have this function
 and return the reversed skill objects.
 - **reverseDepth**: Controls the depth of the reverse lookup: func -> skill/np -> servant.
+- **reverseData**: if set to `basic`, will return basic entities.
 - **lang**: returns English servant names if querying JP data. Doesn't do anything if querying NA data.
 """
 
@@ -407,6 +437,7 @@ buff_reverse_lang_description = """
 - **reverse**: Reverse lookup the functions that have this buff
 and return the reversed function objects.
 - **reverseDepth**: Controls the depth of the reverse lookup: buff -> func -> skill/np -> servant.
+- **reverseData**: if set to `basic`, will return basic entities.
 - **lang**: returns English servant names if querying JP data. Doesn't do anything if querying NA data.
 """
 

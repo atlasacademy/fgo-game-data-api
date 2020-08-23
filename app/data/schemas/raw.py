@@ -573,7 +573,7 @@ class MysticCodeEntity(BaseModelORJson):
 class Master(BaseModel):
     mstBuff: List[MstBuff]
     mstFunc: List[MstFunc]
-    # mstSkill: List[MstSkill]
+    mstSkill: List[MstSkill]
     # mstSkillDetail: List[MstSkillDetail]
     # mstSkillLv: List[MstSkillLv]
     # mstItem: List[MstItem]
@@ -587,7 +587,7 @@ class Master(BaseModel):
     # mstSvtLimitAdd: List[MstSvtLimitAdd]
     # mstCombineSkill: List[MstCombineSkill]
     # mstCombineLimit: List[MstCombineLimit]
-    # mstTreasureDevice: List[MstTreasureDevice]
+    mstTreasureDevice: List[MstTreasureDevice]
     # mstTreasureDeviceDetail: List[MstTreasureDeviceDetail]
     # mstTreasureDeviceLv: List[MstTreasureDeviceLv]
     mstSvtId: Dict[int, MstSvt]

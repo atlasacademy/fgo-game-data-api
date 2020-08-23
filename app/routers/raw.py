@@ -21,6 +21,7 @@ from .deps import (
     EquipSearchQueryParams,
     FuncSearchQueryParams,
     ServantSearchQueryParams,
+    SkillSearchParams,
     SvtSearchQueryParams,
     get_error_code,
 )
@@ -234,9 +235,40 @@ async def get_command_code(
         raise HTTPException(status_code=404, detail="Command Code not found")
 
 
+raw_skill_extra = """
+- **reverse**: Reverse lookup the servants that have this skill
+and return the reverse skill objects.
+- **expand**: Add expanded function objects to mstSkillLv.expandedFuncId
+from the function IDs in mstSkillLv.funcId.
+"""
+
+
+@router.get(
+    "/{region}/skill/search",
+    summary="Find and get skill data",
+    description=SkillSearchParams.DESCRIPTION + raw_skill_extra,
+    response_description="Basic Skill Entities",
+    response_model=List[SkillEntity],
+    response_model_exclude_unset=True,
+    responses=get_error_code([400, 403]),
+)
+async def find_skill(
+    search_param: SkillSearchParams = Depends(SkillSearchParams),
+    reverse: bool = False,
+    expand: bool = False,
+) -> Response:
+    matches = search.search_skill(search_param)
+    entity_list = [
+        raw.get_skill_entity(search_param.region, item, reverse, expand=expand)
+        for item in matches
+    ]
+    return list_response(entity_list)
+
+
 @router.get(
     "/{region}/skill/{item_id}",
     summary="Get skill data",
+    description="Get the skill data from the given ID" + raw_skill_extra,
     response_description="Skill entity",
     response_model=SkillEntity,
     response_model_exclude_unset=True,
@@ -245,14 +277,6 @@ async def get_command_code(
 async def get_skill(
     region: Region, item_id: int, reverse: bool = False, expand: bool = False,
 ) -> Response:
-    """
-    Get the skill data from the given ID
-
-    - **reverse**: Reverse lookup the servants that have this skill
-    and return the reverse skill objects.
-    - **expand**: Add expanded function objects to mstSkillLv.expandedFuncId
-    from the function IDs in mstSkillLv.funcId.
-    """
     if item_id in masters[region].mstSkillId:
         skill_entity = raw.get_skill_entity(region, item_id, reverse, expand=expand)
         return item_response(skill_entity)
