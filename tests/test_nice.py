@@ -293,3 +293,14 @@ class TestServantSpecial:
             },
         }
         assert response_2.json()["script"]["relationId"] == expected_2
+
+    def test_buff_DamageRelease(self) -> None:
+        response = client.get("/nice/JP/buff/2935")
+        assert response.status_code == 200
+        assert response.json()["script"] == {"ReleaseText": "睡眠解除", "DamageRelease": 1}
+
+    def test_negative_trait(self) -> None:
+        response = client.get("/nice/JP/buff/2966")
+        expected = {"id": 4101, "name": "aoeNP", "negative": True}
+        assert response.status_code == 200
+        assert response.json()["ckOpIndv"][0] == expected

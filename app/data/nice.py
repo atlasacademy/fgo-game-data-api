@@ -322,6 +322,11 @@ def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> Dict[str, 
             else:
                 relationId[side][atkClass] = {defClass: relationDetail}
         script["relationId"] = relationId
+
+    for script_item in ("ReleaseText", "DamageRelease"):
+        if script_item in buffEntity.mstBuff.script:
+            script[script_item] = buffEntity.mstBuff.script[script_item]
+
     buffInfo["script"] = script
 
     return buffInfo

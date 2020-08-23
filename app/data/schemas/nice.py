@@ -174,6 +174,8 @@ class NiceBuffRelationOverwrite(BaseModelORJson):
 
 class NiceBuffScript(BaseModelORJson):
     relationId: Optional[NiceBuffRelationOverwrite] = None
+    ReleaseText: Optional[str] = None
+    DamageRelease: Optional[int] = None
 
 
 class NiceBuff(BaseModelORJson):

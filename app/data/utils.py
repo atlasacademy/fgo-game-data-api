@@ -13,5 +13,12 @@ def get_safe(input_dict: Mapping[Any, Any], key: Any) -> Any:
 
 def get_traits_list(input_idv: Iterable[int]) -> List[Dict[str, Union[Trait, int]]]:
     return [
-        {"id": item, "name": TRAIT_NAME.get(item, Trait.unknown)} for item in input_idv
+        {"id": item, "name": TRAIT_NAME.get(item, Trait.unknown)}
+        if item >= 0
+        else {
+            "id": -item,
+            "name": TRAIT_NAME.get(-item, Trait.unknown),
+            "negative": True,
+        }
+        for item in input_idv
     ]
