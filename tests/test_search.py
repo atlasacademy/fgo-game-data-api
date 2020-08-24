@@ -81,7 +81,7 @@ test_cases_dict = {
     ),
     "svt_search_enemy": (
         "JP/svt/search?lang=en&trait=2667&type=enemyCollection",
-        {9940530, 9941040, 9941050, 9942530, 2500700},
+        {9940530, 9941040, 9941050, 9942530},
     ),
     "svt_search_flag": ("NA/svt/search?flag=svtEquipFriendShip&name=crown", {9300010}),
     "skill_search_type_coolDown_numFunc": (

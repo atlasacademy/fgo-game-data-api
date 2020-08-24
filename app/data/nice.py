@@ -842,15 +842,37 @@ def get_nice_servant(
     nice_data["skills"] = [
         get_nice_skill(skill, item_id, region) for skill in raw_data.mstSkill
     ]
+
     nice_data["classPassive"] = [
         get_nice_skill(skill, item_id, region)
         for skill in raw_data.mstSvt.expandedClassPassive
     ]
+
+    # Filter out dummy TDs that are used by enemy servants
+    if raw_data.mstSvt.isServant():
+        actualTDs: List[TdEntityNoReverse] = [
+            item
+            for item in raw_data.mstTreasureDevice
+            if item.mstSvtTreasureDevice[0].num == 1
+        ]
+        for actualTD in actualTDs:
+            if "tdTypeChangeIDs" in actualTD.mstTreasureDevice.script:
+                tdTypeChangeIDs: List[int] = actualTD.mstTreasureDevice.script[
+                    "tdTypeChangeIDs"
+                ]
+                currentActualTDsIDs = {item.mstTreasureDevice.id for item in actualTDs}
+                for td in raw_data.mstTreasureDevice:
+                    if (
+                        td.mstTreasureDevice.id in tdTypeChangeIDs
+                        and td.mstTreasureDevice.id not in currentActualTDsIDs
+                    ):
+                        actualTDs.append(td)
+    else:
+        actualTDs = raw_data.mstTreasureDevice
+
     nice_data["noblePhantasms"] = [
         get_nice_td(td, item_id, region)
-        for td in sorted(
-            raw_data.mstTreasureDevice, key=lambda x: x.mstTreasureDevice.id
-        )
+        for td in sorted(actualTDs, key=lambda x: x.mstTreasureDevice.id)
     ]
 
     if lore:
