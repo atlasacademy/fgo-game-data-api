@@ -275,6 +275,7 @@ class TdSearchParams:
     hasSearchParams: bool = field(init=False)
     name: Optional[str] = None
     card: List[NiceCardType] = Query(TdSearchParamsDefault.card)
+    individuality: List[Union[Trait, int]] = Query([])
     hits: List[int] = Query(
         None, ge=min(TdSearchParamsDefault.hits), le=max(TdSearchParamsDefault.hits)
     )
@@ -304,6 +305,7 @@ class TdSearchParams:
             [
                 self.name,
                 self.card != TdSearchParamsDefault.card,
+                self.individuality,
                 self.hits,
                 self.strengthStatus,
                 self.numFunctions,

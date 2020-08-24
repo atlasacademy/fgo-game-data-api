@@ -90,7 +90,7 @@ tags_metadata = [
 app = FastAPI(
     title="FGO game data API",
     description=app_description,
-    version="5.1.0",
+    version="5.2.0",
     docs_url=None,
     openapi_tags=tags_metadata,
 )

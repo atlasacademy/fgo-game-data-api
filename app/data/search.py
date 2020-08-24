@@ -130,10 +130,10 @@ def search_servant(
         and item.genderType in gender_ints
         and item.attri in attribute_ints
         and (
-            trait_ints.issubset(set(item.individuality))
+            trait_ints.issubset(item.individuality)
             or any(
                 [
-                    trait_ints.issubset(set(limit.individuality))
+                    trait_ints.issubset(limit.individuality)
                     for limit in masters[search_param.region].mstSvtLimitAddId.get(
                         item.id, []
                     )
@@ -304,6 +304,7 @@ def search_td(search_param: TdSearchParams, limit: int = 100) -> List[int]:
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
     card_ints = {CARD_TYPE_NAME_REVERSE[item] for item in search_param.card}
+    individuality = reverse_traits(search_param.individuality)
     hits = search_param.hits if search_param.hits else TdSearchParamsDefault.hits
     strengthStatus = (
         search_param.strengthStatus
@@ -319,7 +320,8 @@ def search_td(search_param: TdSearchParams, limit: int = 100) -> List[int]:
     matches = [
         item
         for item in masters[search_param.region].mstTreasureDevice
-        if search_td_svt(search_param.region, item.id, card_ints, hits, strengthStatus)
+        if individuality.issubset(item.individuality)
+        and search_td_svt(search_param.region, item.id, card_ints, hits, strengthStatus)
         and search_td_lv(
             search_param.region,
             item.id,
@@ -361,10 +363,10 @@ def search_buff(search_param: BuffSearchQueryParams, limit: int = 100) -> List[i
         item
         for item in masters[search_param.region].mstBuff
         if item.type in buff_types
-        and vals.issubset(set(item.vals))
-        and tvals.issubset(set(item.tvals))
-        and ckSelfIndv.issubset(set(item.ckSelfIndv))
-        and ckOpIndv.issubset(set(item.ckOpIndv))
+        and vals.issubset(item.vals)
+        and tvals.issubset(item.tvals)
+        and ckSelfIndv.issubset(item.ckSelfIndv)
+        and ckOpIndv.issubset(item.ckOpIndv)
     ]
 
     if search_param.name:
@@ -414,9 +416,9 @@ def search_func(search_param: FuncSearchQueryParams, limit: int = 100) -> List[i
         if item.funcType in func_types
         and item.targetType in target_types
         and item.applyTarget in apply_targets
-        and vals.issubset(set(item.vals))
-        and tvals.issubset(set(item.tvals))
-        and questTvals.issubset(set(item.questTvals))
+        and vals.issubset(item.vals)
+        and tvals.issubset(item.tvals)
+        and questTvals.issubset(item.questTvals)
     ]
 
     if search_param.popupText:

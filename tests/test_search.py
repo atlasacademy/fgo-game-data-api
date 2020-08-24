@@ -103,6 +103,10 @@ test_cases_dict = {
         {601501},
     ),
     "np_search_name": ("NA/NP/search?name=Mystic%20Eyes", {202901, 602301}),
+    "np_search_individuality": (
+        "JP/NP/search?individuality=aoeNP&hits=6&card=arts&strengthStatus=0",
+        {504201},
+    ),
     "buff_type_tvals": (
         "NA/buff/search?type=upCommandall&tvals=cardQuick",
         {100, 260, 499, 1084, 1094},
