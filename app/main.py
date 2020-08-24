@@ -38,6 +38,10 @@ Static files that can be used for damage calculation. Change `JP` to `NA` in the
 - [Master Level info](/export/JP/NiceUserLevel.json)
 
 Current API data version can be found [here](/info).
+
+It's recommended to use the static export files or search with the `/basic` endpoints and fetch nice or raw data as needed.
+A big search with nice or raw data will take a while to respond. Feel free to contact me if you would like to see an
+export file that is not currently available.
 """
 export_links = """
 

@@ -401,7 +401,8 @@ class FuncSearchQueryParams:
         - **type**: an item of NiceFuncType.
         - **targetType**: an item of NiceFuncTargetType.
         - **targetTeam**: `player`, `enemy` or `playerAndEnemy`.
-        - **vals**: an integer or a trait enum.
+        - **vals**: an integer or a trait enum. Note that trait enums will be converted to integers before searching
+        so the search might return vals with buffs that have the same ids.
         - **tvals**: an integer or a trait enum.
         - **questTvals**: integer.
 
