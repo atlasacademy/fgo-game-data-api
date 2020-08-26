@@ -1,4 +1,14 @@
-# FGO Game data API
+<!-- omit in toc -->
+# FGO game data API
+
+HTTP API for FGO game data. Transform the raw game data into something a bit more managable.
+
+- [Environment variables](#environment-variables)
+- [Run the API server](#run-the-api-server)
+- [Linting](#linting)
+- [Formatting](#formatting)
+- [Dependencies](#dependencies)
+- [Testing](#testing)
 
 ### Environment variables
 
@@ -26,7 +36,7 @@ GITHUB_WEBHOOK_GIT_PULL=True
 GITHUB_WEBHOOK_SLEEP=0
 ```
 
-List of optional enviroment variables for the [Docker image](https://github.com/tiangolo/uvicorn-gunicorn-docker#environment-variables).
+List of optional enviroment variables for the Docker image can be found [here](https://github.com/tiangolo/uvicorn-gunicorn-docker#environment-variables).
 
 ### Run the API server
 
@@ -36,6 +46,19 @@ uvicorn app.main:app --reload --log-level debug --reload-dir app
 ```
 
 Go to http://127.0.0.1:8000/docs or http://127.0.0.1:8000/redoc for the API documentation.
+
+
+### Linting
+
+[pylint](https://docs.pylint.org/en/latest/index.html) and [mypy](https://mypy.readthedocs.io/en/stable/) are used to lint the code. pylint's configuration is in [pyproject.toml](pyproject.toml#L37) and mypy's configuration is in [mypy.ini](mypy.ini).
+
+### Formatting
+
+[isort](https://pycqa.github.io/isort/) and [black](https://black.readthedocs.io/en/stable/) are used to format the code. isort's configuration is in [pyproject.toml](pyproject.tomll#L37) and black uses default settings.
+
+```
+isort app tests export; black app tests export
+```
 
 ### Dependencies
 
