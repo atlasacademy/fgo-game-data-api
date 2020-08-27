@@ -46,6 +46,9 @@ export file that is not currently available.
 export_links = """
 
 Pre-generated nice data that can be served instantly unlike querying the API:
+- Both regions (The data is the same for both of the NA and JP endpoints):
+  - [All enums](/export/JP/nice_enums.json)
+  - [Trait mapping](/export/JP/nice_trait.json)
 - NA data:
   - [NA Servant](/export/NA/nice_servant.json), [NA Servant with lore](/export/NA/nice_servant_lore.json)
   - [NA Craft Essence](/export/NA/nice_equip.json), [NA Craft Essence with lore](/export/NA/nice_equip_lore.json)
