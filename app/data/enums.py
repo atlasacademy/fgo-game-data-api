@@ -1606,22 +1606,6 @@ ATTRIBUTE_NAME_REVERSE: Dict[Attribute, int] = {v: k for k, v in ATTRIBUTE_NAME.
 ### Servant Class ###
 
 
-class PlayableSvtClass(str, Enum):
-    saber = "saber"
-    archer = "archer"
-    lancer = "lancer"
-    rider = "rider"
-    caster = "caster"
-    assassin = "assassin"
-    berserker = "berserker"
-    shielder = "shielder"
-    ruler = "ruler"
-    alterEgo = "alterEgo"
-    avenger = "avenger"
-    moonCancer = "moonCancer"
-    foreigner = "foreigner"
-
-
 class SvtClass(str, Enum):
     saber = "saber"
     archer = "archer"
@@ -1697,28 +1681,6 @@ PLAYABLE_CLASS_LIST = [
     SvtClass.moonCancer,
     SvtClass.foreigner,
 ]
-
-
-PLAYABLE_CLASS_NAME: Dict[int, PlayableSvtClass] = {
-    1: PlayableSvtClass.saber,
-    2: PlayableSvtClass.archer,
-    3: PlayableSvtClass.lancer,
-    4: PlayableSvtClass.rider,
-    5: PlayableSvtClass.caster,
-    6: PlayableSvtClass.assassin,
-    7: PlayableSvtClass.berserker,
-    8: PlayableSvtClass.shielder,
-    9: PlayableSvtClass.ruler,
-    10: PlayableSvtClass.alterEgo,
-    11: PlayableSvtClass.avenger,
-    23: PlayableSvtClass.moonCancer,
-    25: PlayableSvtClass.foreigner,
-}
-
-
-PLAYABLE_CLASS_NAME_REVERSE: Dict[PlayableSvtClass, int] = {
-    v: k for k, v in PLAYABLE_CLASS_NAME.items()
-}
 
 
 ### Status Rank Type ###
@@ -2825,3 +2787,30 @@ TRAIT_NAME: Dict[int, Trait] = {
 
 
 TRAIT_NAME_REVERSE: Dict[Trait, int] = {v: k for k, v in TRAIT_NAME.items()}
+
+
+ALL_ENUMS = {
+    "NiceSvtType": SVT_TYPE_NAME,
+    "NiceSvtFlag": SVT_FLAG_NAME,
+    "NiceSkillType": SKILL_TYPE_NAME,
+    "NiceFuncType": FUNC_TYPE_NAME,
+    "FuncApplyTarget": FUNC_APPLYTARGET_NAME,
+    "NiceFuncTargetType": FUNC_TARGETTYPE_NAME,
+    "NiceBuffType": BUFF_TYPE_NAME,
+    "NiceBuffAction": BUFF_ACTION_NAME,
+    "NiceBuffLimit": BUFF_LIMIT_NAME,
+    "NiceClassRelationOverwriteType": CLASS_OVERWRITE_NAME,
+    "NiceItemType": ITEM_TYPE_NAME,
+    "NiceItemBGType": ITEM_BG_TYPE_NAME,
+    "NiceCardType": CARD_TYPE_NAME,
+    "Gender": GENDER_NAME,
+    "Attribute": ATTRIBUTE_NAME,
+    "SvtClass": CLASS_NAME,
+    "NiceStatusRank": STATUS_RANK_NAME,
+    "NiceCondType": COND_TYPE_NAME,
+    "NiceVoiceCondType": VOICE_COND_NAME,
+    "NiceSvtVoiceType": VOICE_TYPE_NAME,
+    "NiceQuestType": QUEST_TYPE_NAME,
+    "NiceConsumeType": QUEST_CONSUME_TYPE_NAME,
+    "Trait": TRAIT_NAME,
+}

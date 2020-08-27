@@ -9,7 +9,7 @@ from ..config import Settings, logger
 from ..routers.utils import list_string, list_string_exclude
 from .basic import get_basic_cc, get_basic_mc, get_basic_svt
 from .common import Language, Region
-from .enums import TRAIT_NAME
+from .enums import TRAIT_NAME, ALL_ENUMS
 from .gamedata import masters, region_path, update_gamedata
 from .nice import (
     get_nice_buff_alone,
@@ -107,6 +107,7 @@ def generate_exports() -> None:  # pragma: no cover
             ]
 
             output_files = {
+                "nice_enums": ALL_ENUMS,
                 "nice_trait": TRAIT_NAME,
                 "nice_command_code": all_cc_data,
                 "nice_item": all_item_data,
