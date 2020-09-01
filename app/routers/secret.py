@@ -16,8 +16,8 @@ settings = Settings()
 repo = Repo(file_path)
 latest_commit = repo.commit()
 app_info = {
-    "hash": latest_commit.hexsha[:6],  # type: ignore
-    "timestamp": latest_commit.committed_date,  # type: ignore
+    "hash": latest_commit.hexsha[:6],
+    "timestamp": latest_commit.committed_date,
 }
 
 

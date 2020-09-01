@@ -9,7 +9,7 @@ from ..config import Settings, logger
 from ..routers.utils import list_string, list_string_exclude
 from .basic import get_basic_cc, get_basic_mc, get_basic_svt
 from .common import Language, Region
-from .enums import TRAIT_NAME, ALL_ENUMS
+from .enums import ALL_ENUMS, TRAIT_NAME
 from .gamedata import masters, region_path, update_gamedata
 from .nice import (
     get_nice_buff_alone,
@@ -153,8 +153,8 @@ def update_repo_info() -> None:
             repo = Repo(gamedata.parent)
             latest_commit = repo.commit()
             repo_info[region] = {
-                "hash": latest_commit.hexsha[:6],  # type: ignore
-                "timestamp": latest_commit.committed_date,  # type: ignore
+                "hash": latest_commit.hexsha[:6],
+                "timestamp": latest_commit.committed_date,
             }
 
 
@@ -168,7 +168,7 @@ def pull_and_update() -> None:  # pragma: no cover
         for gamedata in region_path.values():
             if (gamedata.parent / ".git").exists():
                 repo = Repo(gamedata.parent)
-                for fetch_info in repo.remotes[0].pull():  # type: ignore
+                for fetch_info in repo.remotes[0].pull():
                     commit_hash = fetch_info.commit.hexsha[:6]
                     logger.info(f"Updated {fetch_info.ref} to {commit_hash}")
     update_gamedata()
