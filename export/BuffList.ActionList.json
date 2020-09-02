@@ -700,5 +700,158 @@
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0
+  },
+  "DAMAGE_SPECIAL": {
+    "limit": 3,
+    "plusTypes": [136],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_ATTACK": {
+    "limit": 3,
+    "plusTypes": [137],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_COMMANDCODEATTACK": {
+    "limit": 3,
+    "plusTypes": [138],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "DONOT_NOBLE_COND_MISMATCH": {
+    "limit": 3,
+    "plusTypes": [139],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "DONOT_SELECT_COMMANDCARD": {
+    "limit": 3,
+    "plusTypes": [140],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "DONOT_REPLACE": {
+    "limit": 3,
+    "plusTypes": [141],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "SHORTEN_USER_EQUIP_SKILL": {
+    "limit": 3,
+    "plusTypes": [142],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "TD_TYPE_CHANGE": {
+    "limit": 3,
+    "plusTypes": [143],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "OVERWRITE_CLASS_RELATION": {
+    "limit": 3,
+    "plusTypes": [144],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_COMMANDATTACK_BEFORE": {
+    "limit": 3,
+    "plusTypes": [148],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_GUTS": {
+    "limit": 3,
+    "plusTypes": [149],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "CRITICAL_RATE_DAMAGE_TAKEN": {
+    "limit": 3,
+    "plusTypes": [150],
+    "minusTypes": [151],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "CRITICAL_STAR_DAMAGE_TAKEN": {
+    "limit": 3,
+    "plusTypes": [152],
+    "minusTypes": [153],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "SKILL_RANK_CHANGE": {
+    "limit": 3,
+    "plusTypes": [154],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "AVOIDANCE_INDIVIDUALITY": {
+    "limit": 3,
+    "plusTypes": [155],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "CHANGE_COMMAND_CARD_TYPE": {
+    "limit": 3,
+    "plusTypes": [156],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "SPECIAL_INVINCIBLE": {
+    "limit": 3,
+    "plusTypes": [157],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
   }
 }
