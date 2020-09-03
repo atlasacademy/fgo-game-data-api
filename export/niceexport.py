@@ -13,7 +13,7 @@ from app.data.enums import (
     CLASS_NAME,
     BuffAction,
 )
-from app.data.nice import get_traits_list
+from app.data.utils import get_traits_list
 
 
 CONSTANT_INCLUDE = {
