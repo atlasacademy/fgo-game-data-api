@@ -851,7 +851,12 @@
   },
   "tdTypeChange": {
     "limit": "none",
-    "plusTypes": ["tdTypeChange"],
+    "plusTypes": [
+      "tdTypeChange",
+      "tdTypeChangeArts",
+      "tdTypeChangeBuster",
+      "tdTypeChangeQuick"
+    ],
     "minusTypes": [],
     "baseParam": -1,
     "baseValue": 0,

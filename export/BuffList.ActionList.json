@@ -766,7 +766,7 @@
   },
   "TD_TYPE_CHANGE": {
     "limit": 0,
-    "plusTypes": [143],
+    "plusTypes": [143, 145, 146, 147],
     "minusTypes": [],
     "baseParam": -1,
     "baseValue": 0,
