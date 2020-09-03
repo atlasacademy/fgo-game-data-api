@@ -18,7 +18,7 @@
     "plusAction": 0
   },
   "ATK": {
-    "limit": 2,
+    "limit": 3,
     "plusTypes": [9],
     "minusTypes": [10],
     "baseParam": 1000,
@@ -702,16 +702,16 @@
     "plusAction": 0
   },
   "DAMAGE_SPECIAL": {
-    "limit": 3,
+    "limit": 1,
     "plusTypes": [136],
     "minusTypes": [],
     "baseParam": 1000,
-    "baseValue": 0,
+    "baseValue": 1000,
     "isRec": true,
     "plusAction": 0
   },
   "FUNCTION_ATTACK": {
-    "limit": 3,
+    "limit": 0,
     "plusTypes": [137],
     "minusTypes": [],
     "baseParam": 1000,
@@ -720,7 +720,7 @@
     "plusAction": 0
   },
   "FUNCTION_COMMANDCODEATTACK": {
-    "limit": 3,
+    "limit": 0,
     "plusTypes": [138],
     "minusTypes": [],
     "baseParam": 1000,
@@ -729,7 +729,7 @@
     "plusAction": 0
   },
   "DONOT_NOBLE_COND_MISMATCH": {
-    "limit": 3,
+    "limit": 0,
     "plusTypes": [139],
     "minusTypes": [],
     "baseParam": 1000,
@@ -738,7 +738,7 @@
     "plusAction": 0
   },
   "DONOT_SELECT_COMMANDCARD": {
-    "limit": 3,
+    "limit": 0,
     "plusTypes": [140],
     "minusTypes": [],
     "baseParam": 1000,
@@ -747,7 +747,7 @@
     "plusAction": 0
   },
   "DONOT_REPLACE": {
-    "limit": 3,
+    "limit": 0,
     "plusTypes": [141],
     "minusTypes": [],
     "baseParam": 1000,
@@ -756,7 +756,7 @@
     "plusAction": 0
   },
   "SHORTEN_USER_EQUIP_SKILL": {
-    "limit": 3,
+    "limit": 0,
     "plusTypes": [142],
     "minusTypes": [],
     "baseParam": 1000,
@@ -765,16 +765,16 @@
     "plusAction": 0
   },
   "TD_TYPE_CHANGE": {
-    "limit": 3,
+    "limit": 0,
     "plusTypes": [143],
     "minusTypes": [],
-    "baseParam": 1000,
+    "baseParam": -1,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0
   },
   "OVERWRITE_CLASS_RELATION": {
-    "limit": 3,
+    "limit": 0,
     "plusTypes": [144],
     "minusTypes": [],
     "baseParam": 1000,
@@ -783,7 +783,7 @@
     "plusAction": 0
   },
   "FUNCTION_COMMANDATTACK_BEFORE": {
-    "limit": 3,
+    "limit": 0,
     "plusTypes": [148],
     "minusTypes": [],
     "baseParam": 1000,
@@ -792,7 +792,7 @@
     "plusAction": 0
   },
   "FUNCTION_GUTS": {
-    "limit": 3,
+    "limit": 0,
     "plusTypes": [149],
     "minusTypes": [],
     "baseParam": 1000,
@@ -805,7 +805,7 @@
     "plusTypes": [150],
     "minusTypes": [151],
     "baseParam": 1000,
-    "baseValue": 0,
+    "baseValue": 1000,
     "isRec": true,
     "plusAction": 0
   },
@@ -814,7 +814,7 @@
     "plusTypes": [152],
     "minusTypes": [153],
     "baseParam": 1000,
-    "baseValue": 0,
+    "baseValue": 1000,
     "isRec": true,
     "plusAction": 0
   },
@@ -822,7 +822,7 @@
     "limit": 3,
     "plusTypes": [154],
     "minusTypes": [],
-    "baseParam": 1000,
+    "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0
@@ -837,7 +837,7 @@
     "plusAction": 0
   },
   "CHANGE_COMMAND_CARD_TYPE": {
-    "limit": 3,
+    "limit": 0,
     "plusTypes": [156],
     "minusTypes": [],
     "baseParam": 1000,
@@ -846,7 +846,7 @@
     "plusAction": 0
   },
   "SPECIAL_INVINCIBLE": {
-    "limit": 3,
+    "limit": 0,
     "plusTypes": [157],
     "minusTypes": [],
     "baseParam": 1000,
