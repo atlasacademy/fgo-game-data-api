@@ -20,7 +20,7 @@
     "maxRate": [5000]
   },
   "atk": {
-    "limit": "lower",
+    "limit": "normal",
     "plusTypes": ["upAtk"],
     "minusTypes": ["downAtk"],
     "baseParam": 1000,
@@ -778,5 +778,180 @@
     "isRec": true,
     "plusAction": 0,
     "maxRate": [10000]
+  },
+  "damageSpecial": {
+    "limit": "upper",
+    "plusTypes": ["upDamageSpecial"],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
+  },
+  "functionAttack": {
+    "limit": "none",
+    "plusTypes": ["attackFunction"],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": [0]
+  },
+  "functionCommandcodeattack": {
+    "limit": "none",
+    "plusTypes": ["commandcodeattackFunction"],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": [0]
+  },
+  "donotNobleCondMismatch": {
+    "limit": "none",
+    "plusTypes": ["donotNobleCondMismatch"],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": [0]
+  },
+  "donotSelectCommandcard": {
+    "limit": "none",
+    "plusTypes": ["donotSelectCommandcard"],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": [0]
+  },
+  "donotReplace": {
+    "limit": "none",
+    "plusTypes": ["donotReplace"],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": [0]
+  },
+  "shortenUserEquipSkill": {
+    "limit": "none",
+    "plusTypes": ["shortenUserEquipSkill"],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": [0]
+  },
+  "tdTypeChange": {
+    "limit": "none",
+    "plusTypes": [
+      "tdTypeChange",
+      "tdTypeChangeArts",
+      "tdTypeChangeBuster",
+      "tdTypeChangeQuick"
+    ],
+    "minusTypes": [],
+    "baseParam": -1,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": [0]
+  },
+  "overwriteClassRelation": {
+    "limit": "none",
+    "plusTypes": ["overwriteClassRelation"],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": [0]
+  },
+  "functionCommandattackBefore": {
+    "limit": "none",
+    "plusTypes": ["commandattackBeforeFunction"],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": [0]
+  },
+  "functionGuts": {
+    "limit": "none",
+    "plusTypes": ["gutsFunction"],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": [0]
+  },
+  "criticalRateDamageTaken": {
+    "limit": "normal",
+    "plusTypes": ["upCriticalRateDamageTaken"],
+    "minusTypes": ["downCriticalRateDamageTaken"],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": [5000]
+  },
+  "criticalStarDamageTaken": {
+    "limit": "normal",
+    "plusTypes": ["upCriticalStarDamageTaken"],
+    "minusTypes": ["downCriticalStarDamageTaken"],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": [5000]
+  },
+  "skillRankChange": {
+    "limit": "normal",
+    "plusTypes": ["skillRankUp"],
+    "minusTypes": [],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": [0]
+  },
+  "avoidanceIndividuality": {
+    "limit": "normal",
+    "plusTypes": ["avoidanceIndividuality"],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": [0]
+  },
+  "changeCommandCardType": {
+    "limit": "none",
+    "plusTypes": ["changeCommandCardType"],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": [0]
+  },
+  "specialInvincible": {
+    "limit": "none",
+    "plusTypes": ["specialInvincible"],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": [0]
   }
 }
