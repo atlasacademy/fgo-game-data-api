@@ -1482,6 +1482,7 @@ class CondType(IntEnum):
     BATTLE_LINE_CONTINUE_LOSE_BELOW = 133
     BATTLE_GROUP_WIN_AVOVE = 134
     BATTLE_GROUP_LOSE_AVOVE = 135
+    SVT_LIMIT_CLASS_NUM = 136
 
 
 class NiceCondType(str, Enum):
@@ -1621,6 +1622,7 @@ class NiceCondType(str, Enum):
     battleLineContinueLoseBelow = "battleLineContinueLoseBelow"
     battleGroupWinAvove = "battleGroupWinAvove"
     battleGroupLoseAvove = "battleGroupLoseAvove"
+    svtLimitClassNum = "svtLimitClassNum"
 
 
 COND_TYPE_NAME: Dict[int, NiceCondType] = {
@@ -1760,6 +1762,7 @@ COND_TYPE_NAME: Dict[int, NiceCondType] = {
     133: NiceCondType.battleLineContinueLoseBelow,
     134: NiceCondType.battleGroupWinAvove,
     135: NiceCondType.battleGroupLoseAvove,
+    136: NiceCondType.svtLimitClassNum,
 }
 
 
