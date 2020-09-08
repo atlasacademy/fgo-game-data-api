@@ -99,8 +99,8 @@ test_cases_dict = {
         {601002},
     ),
     "np_search_hits_maxNp_numFunc": (
-        "NA/NP/search?hits=15&maxNpNpGain=50&numFunctions=4",
-        {601501},
+        "NA/NP/search?hits=10&maxNpNpGain=50&numFunctions=1",
+        {202401},
     ),
     "np_search_name": ("NA/NP/search?name=Mystic%20Eyes", {202901, 602301}),
     "np_search_individuality": (

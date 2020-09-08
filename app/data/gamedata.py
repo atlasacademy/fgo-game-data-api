@@ -1,5 +1,6 @@
 import time
-from typing import Any, Dict, List
+from collections import defaultdict
+from typing import Any, Dict
 
 import orjson
 
@@ -80,57 +81,32 @@ def update_gamedata() -> None:
             if is_servant(item["type"]) and item["collectionNo"] != 0
         }
 
-        # master["mstSvtServantName"] = {
-        #     item["name"]: item["id"]
-        #     for item in master["mstSvt"]
-        #     if is_servant(item["type"]) and item["collectionNo"] != 0
-        # }
-
         master["mstSvtEquipCollectionNo"] = {
             item["collectionNo"]: item["id"]
             for item in master["mstSvt"]
             if is_equip(item["type"]) and item["collectionNo"] != 0
         }
 
-        mstSvtExpId: Dict[int, List[int]] = {}
-        master["mstSvtExp"] = sorted(master["mstSvtExp"], key=lambda item: item["lv"])
-        for item in master["mstSvtExp"]:
-            if item["type"] in mstSvtExpId:
-                mstSvtExpId[item["type"]].append(item["curve"])
-            else:
-                mstSvtExpId[item["type"]] = [item["curve"]]
-        master["mstSvtExpId"] = mstSvtExpId
-
-        mstFriendshipId: Dict[int, List[int]] = {}
+        master["mstFriendshipId"] = defaultdict(list)
         master["mstFriendship"] = sorted(
             master["mstFriendship"], key=lambda item: item["rank"]
         )
         for item in master["mstFriendship"]:
             if item["friendship"] != -1:
-                if item["id"] in mstFriendshipId:
-                    mstFriendshipId[item["id"]].append(item["friendship"])
-                else:
-                    mstFriendshipId[item["id"]] = [item["friendship"]]
-        master["mstFriendshipId"] = mstFriendshipId
+                master["mstFriendshipId"][item["id"]].append(item["friendship"])
 
-        mstQuestPhaseId: Dict[int, Dict[int, Any]] = {}
+        master["mstQuestPhaseId"] = defaultdict(dict)
         for item in master["mstQuestPhase"]:
-            if item["questId"] in mstQuestPhaseId:
-                mstQuestPhaseId[item["questId"]][item["phase"]] = item
-            else:
-                mstQuestPhaseId[item["questId"]] = {item["phase"]: item}
-        master["mstQuestPhaseId"] = mstQuestPhaseId
+            master["mstQuestPhaseId"][item["questId"]][item["phase"]] = item
 
-        master["buffToFunc"] = {}
+
+        master["buffToFunc"] = defaultdict(set)
         for item in master["mstFunc"]:
             if item["funcType"] not in FUNC_VALS_NOT_BUFF:
                 for buff_id in item["vals"]:
-                    if buff_id in master["buffToFunc"]:
-                        master["buffToFunc"][buff_id].add(item["id"])
-                    else:
-                        master["buffToFunc"][buff_id] = {item["id"]}
+                    master["buffToFunc"][buff_id].add(item["id"])
 
-        for masters_item, func_reverse_stuff, func_reverse_check, lookup_id in (
+        for masters_table, func_reverse_stuff, func_reverse_check, result_id in (
             ("funcToSkill", "mstSkillLv", "mstSkillId", "skillId"),
             (
                 "funcToTd",
@@ -139,70 +115,56 @@ def update_gamedata() -> None:
                 "treaureDeviceId",
             ),
         ):
-            master[masters_item] = {}
+            master[masters_table] = defaultdict(set)
             for item in master[func_reverse_stuff]:
                 for func_id in item["funcId"]:
-                    if item[lookup_id] in master[func_reverse_check]:
-                        if func_id in master[masters_item]:
-                            master[masters_item][func_id].add(item[lookup_id])
-                        else:
-                            master[masters_item][func_id] = {item[lookup_id]}
+                    if item[result_id] in master[func_reverse_check]:
+                        master[masters_table][func_id].add(item[result_id])
 
-        master["passiveSkillToSvt"] = {}
+        master["passiveSkillToSvt"] = defaultdict(set)
         for item in master["mstSvt"]:
             for skill_id in item["classPassive"]:
-                if skill_id in master["passiveSkillToSvt"]:
-                    master["passiveSkillToSvt"][skill_id].add(item["id"])
-                else:
-                    master["passiveSkillToSvt"][skill_id] = {item["id"]}
+                master["passiveSkillToSvt"][skill_id].add(item["id"])
 
-        for svt_extra_stuff, lookup_id in (
-            ("mstSvtSkill", "skillId"),
-            ("mstSvtTreasureDevice", "treasureDeviceId"),
+        master["mstSvtExp"] = sorted(master["mstSvtExp"], key=lambda item: item["lv"])
+
+        for masters_table, source_table, lookup_id, result_id in (
+            ("mstSvtSkillSvtId", "mstSvtSkill", "svtId", "skillId"),
+            (
+                "mstSvtTreasureDeviceSvtId",
+                "mstSvtTreasureDevice",
+                "svtId",
+                "treasureDeviceId",
+            ),
+            ("mstSvtGroupId", "mstSvtGroup", "id", "svtId"),
+            ("mstSvtExpId", "mstSvtExp", "type", "curve"),
         ):
-            masters_item = f"{svt_extra_stuff}SvtId"
-            master[masters_item] = {}
-            for item in master[svt_extra_stuff]:
-                id_name = "svtId"
-                if item["svtId"] in master[masters_item]:
-                    master[masters_item][item[id_name]].append(item[lookup_id])
-                else:
-                    master[masters_item][item[id_name]] = [item[lookup_id]]
-
-        mstSvtGroupId: Dict[int, List[int]] = {}
-        for item in master["mstSvtGroup"]:
-            groupId = item["id"]
-            if groupId in mstSvtGroupId:
-                mstSvtGroupId[groupId].append(item["svtId"])
-            else:
-                mstSvtGroupId[groupId] = [item["svtId"]]
-        master["mstSvtGroupId"] = mstSvtGroupId
+            master[masters_table] = defaultdict(list)
+            for item in master[source_table]:
+                master[masters_table][item[lookup_id]].append(item[result_id])
 
         for extra_stuff in SKILL_STUFFS | TD_STUFFS | SVT_STUFFS | ID_LISTS:
-            masters_item = f"{extra_stuff}Id"
-            master[masters_item] = {}
+            masters_table = f"{extra_stuff}Id"
+            master[masters_table] = defaultdict(list)
+            if (
+                "Detail" in extra_stuff
+                or extra_stuff in {"mstCombineSkill", "mstCombineLimit"} | ID_LISTS
+            ):
+                lookup_id = "id"
+            elif extra_stuff in SKILL_STUFFS:
+                lookup_id = "skillId"
+            elif extra_stuff in SVT_STUFFS:
+                lookup_id = "svtId"
+            elif extra_stuff == "mstTreasureDeviceLv":
+                lookup_id = "treaureDeviceId"
+            elif extra_stuff == "mstSvtTreasureDevice":
+                lookup_id = "treasureDeviceId"
+            else:  # pragma: no cover
+                raise ValueError("Can't set id_name")
             for item in master[extra_stuff]:
-                if (
-                    "Detail" in extra_stuff
-                    or extra_stuff in {"mstCombineSkill", "mstCombineLimit"} | ID_LISTS
-                ):
-                    id_name = "id"
-                elif extra_stuff in SKILL_STUFFS:
-                    id_name = "skillId"
-                elif extra_stuff in SVT_STUFFS:
-                    id_name = "svtId"
-                elif extra_stuff == "mstTreasureDeviceLv":
-                    id_name = "treaureDeviceId"
-                elif extra_stuff == "mstSvtTreasureDevice":
-                    id_name = "treasureDeviceId"
-                else:  # pragma: no cover
-                    raise ValueError("Can't set id_name")
-                if item[id_name] in master[masters_item]:
-                    master[masters_item][item[id_name]].append(item)
-                else:
-                    master[masters_item][item[id_name]] = [item]
+                master[masters_table][item[lookup_id]].append(item)
 
-        bondEquip = {}
+        master["bondEquip"] = {}
         for item in master["mstSvt"]:
             if (
                 item["type"] == SvtType.SERVANT_EQUIP
@@ -218,24 +180,16 @@ def update_gamedata() -> None:
                         len(individualities) == 1
                         and individualities[0] in master["mstSvtId"]
                     ):
-                        bondEquip[individualities[0]] = item["id"]
-
-        master["bondEquip"] = bondEquip
+                        master["bondEquip"][individualities[0]] = item["id"]
 
         if region_name == Region.NA:
             with open(gamedata / "globalNewMstSubtitle.json", "rb") as fp:
                 globalNewMstSubtitle = orjson.loads(fp.read())
-            mstSubtitleId: Dict[int, Any] = {}
+            master["mstSubtitleId"] = defaultdict(list)
             for item in globalNewMstSubtitle:
                 svt = item["id"].split("_")[0]
                 if not svt.startswith("PLAIN"):
-                    svtId = int(svt)
-                    if svtId in mstSubtitleId:
-                        mstSubtitleId[svtId].append(item)
-                    else:
-                        mstSubtitleId[svtId] = [item]
-
-            master["mstSubtitleId"] = mstSubtitleId
+                    master["mstSubtitleId"][int(svt)].append(item)
 
         masters[region_name] = Master.parse_obj(master)
 
