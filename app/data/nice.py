@@ -787,12 +787,20 @@ def get_nice_servant(
 
     ascensionAddIndividuality = {
         "ascension": {
-            item.limitCount: get_traits_list(sorted(item.individuality))
+            item.limitCount: get_traits_list(
+                sorted(set(item.individuality + raw_data.mstSvt.individuality))
+            )
+            if item.individuality
+            else []
             for item in raw_data.mstSvtLimitAdd
             if item.limitCount not in costume_ids
         },
         "costume": {
-            costume_ids[item.limitCount]: get_traits_list(sorted(item.individuality))
+            costume_ids[item.limitCount]: get_traits_list(
+                sorted(set(item.individuality + raw_data.mstSvt.individuality))
+            )
+            if item.individuality
+            else []
             for item in raw_data.mstSvtLimitAdd
             if item.limitCount in costume_ids
         },

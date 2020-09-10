@@ -304,3 +304,37 @@ class TestServantSpecial:
         expected = {"id": 4101, "name": "aoeNP", "negative": True}
         assert response.status_code == 200
         assert response.json()["ckOpIndv"][0] == expected
+
+    def test_ascension_trait(self) -> None:
+        response = client.get("/nice/JP/servant/603700")
+        expected = {
+            "individuality": {
+                "ascension": {
+                    "0": [
+                        {"id": 2, "name": "genderFemale"},
+                        {"id": 105, "name": "classAssassin"},
+                        {"id": 200, "name": "attributeSky"},
+                        {"id": 301, "name": "alignmentChaotic"},
+                        {"id": 304, "name": "alignmentEvil"},
+                        {"id": 1000, "name": "basedOnServant"},
+                        {"id": 2000, "name": "divine"},
+                        {"id": 2001, "name": "humanoid"},
+                        {"id": 2008, "name": "weakToEnumaElish"},
+                        {"id": 2009, "name": "riding"},
+                        {"id": 2011, "name": "skyOrEarth"},
+                        {"id": 2040, "name": "divineOrDaemonOrUndead"},
+                        {"id": 2631, "name": "hominidaeServant"},
+                        {"id": 2667, "name": "childServant"},
+                        {"id": 5000, "name": "canBeInBattle"},
+                        {"id": 603700, "name": "unknown"},
+                    ],
+                    "1": [],
+                    "2": [],
+                    "3": [],
+                    "4": [],
+                },
+                "costume": {},
+            }
+        }
+        assert response.status_code == 200
+        assert response.json()["ascensionAdd"] == expected
