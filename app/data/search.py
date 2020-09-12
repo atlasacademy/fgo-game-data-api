@@ -387,25 +387,13 @@ def search_func(search_param: FuncSearchQueryParams, limit: int = 100) -> List[i
     if not search_param.hasSearchParams:
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
-    if not search_param.type:
-        func_types = set(FUNC_TYPE_NAME_REVERSE.values())
-    else:
-        func_types = {FUNC_TYPE_NAME_REVERSE[item] for item in search_param.type}
-
-    if not search_param.targetType:
-        target_types = set(FUNC_TARGETTYPE_NAME_REVERSE.values())
-    else:
-        target_types = {
-            FUNC_TARGETTYPE_NAME_REVERSE[item] for item in search_param.targetType
-        }
-
-    if not search_param.targetTeam:
-        apply_targets = set(FUNC_APPLYTARGET_NAME_REVERSE.values())
-    else:
-        apply_targets = {
-            FUNC_APPLYTARGET_NAME_REVERSE[item] for item in search_param.targetTeam
-        }
-
+    func_types = {FUNC_TYPE_NAME_REVERSE[item] for item in search_param.type}
+    target_types = {
+        FUNC_TARGETTYPE_NAME_REVERSE[item] for item in search_param.targetType
+    }
+    apply_targets = {
+        FUNC_APPLYTARGET_NAME_REVERSE[item] for item in search_param.targetTeam
+    }
     vals = reverse_traits(search_param.vals)
     tvals = reverse_traits(search_param.tvals)
     questTvals = reverse_traits(search_param.questTvals)
@@ -413,9 +401,18 @@ def search_func(search_param: FuncSearchQueryParams, limit: int = 100) -> List[i
     matches = [
         item
         for item in masters[search_param.region].mstFunc
-        if item.funcType in func_types
-        and item.targetType in target_types
-        and item.applyTarget in apply_targets
+        if (
+            (not search_param.type)
+            or (search_param.type and item.funcType in func_types)
+        )
+        and (
+            (not search_param.targetType)
+            or (search_param.targetType and item.targetType in target_types)
+        )
+        and (
+            (not search_param.targetTeam)
+            or (search_param.targetTeam and item.applyTarget in apply_targets)
+        )
         and vals.issubset(item.vals)
         and tvals.issubset(item.tvals)
         and questTvals.issubset(item.questTvals)

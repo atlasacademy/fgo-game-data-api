@@ -378,9 +378,9 @@ class FuncSearchQueryParams:
     region: Region
     hasSearchParams: bool = field(init=False)
     popupText: Optional[str] = None
-    type: List[NiceFuncType] = Query(None)
-    targetType: List[NiceFuncTargetType] = Query(None)
-    targetTeam: List[FuncApplyTarget] = Query(None)
+    type: List[NiceFuncType] = Query([])
+    targetType: List[NiceFuncTargetType] = Query([])
+    targetTeam: List[FuncApplyTarget] = Query([])
     vals: List[Union[Trait, int]] = Query([])
     tvals: List[Union[Trait, int]] = Query([])
     questTvals: List[Union[Trait, int]] = Query([])
