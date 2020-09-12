@@ -138,6 +138,7 @@ test_cases_dict = {
         {301, 456, 506},
     ),
     "buff_name": ("NA/buff/search?name=arts up", {101, 106, 107, 108, 446, 477, 722}),
+    "buff_buffGroup": ("NA/buff/search?buffGroup=500", {176, 177, 178, 905}),
     "func_type_targetType_targetTeam_vals": (
         "JP/function/search?type=addStateShort&targetType=ptAll&targetTeam=playerAndEnemy&vals=101",
         {115, 116, 117},

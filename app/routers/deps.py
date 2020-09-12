@@ -336,7 +336,8 @@ class BuffSearchQueryParams:
     region: Region
     hasSearchParams: bool = field(init=False)
     name: Optional[str] = None
-    type: List[NiceBuffType] = Query(None)
+    type: List[NiceBuffType] = Query([])
+    buffGroup: List[int] = Query([])
     vals: List[Union[Trait, int]] = Query([])
     tvals: List[Union[Trait, int]] = Query([])
     ckSelfIndv: List[Union[Trait, int]] = Query([])
@@ -347,6 +348,7 @@ class BuffSearchQueryParams:
             [
                 self.name,
                 self.type,
+                self.buffGroup,
                 self.vals,
                 self.tvals,
                 self.ckSelfIndv,
@@ -360,6 +362,7 @@ class BuffSearchQueryParams:
 
         - **name**: buff name, will search both buff name and buff detail.
         - **type**: buff type, one of NiceBuffType enum.
+        - **buffGroup**: buff group.
         - **vals**: an integer or a trait enum.
         - **tvals**: an integer or a trait enum.
         - **ckSelfIndv**: an integer or a trait enum.

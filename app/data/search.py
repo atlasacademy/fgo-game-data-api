@@ -349,11 +349,7 @@ def search_buff(search_param: BuffSearchQueryParams, limit: int = 100) -> List[i
     if not search_param.hasSearchParams:
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
-    if not search_param.type:
-        buff_types = set(BUFF_TYPE_NAME_REVERSE.values())
-    else:
-        buff_types = {BUFF_TYPE_NAME_REVERSE[item] for item in search_param.type}
-
+    buff_types = {BUFF_TYPE_NAME_REVERSE[item] for item in search_param.type}
     vals = reverse_traits(search_param.vals)
     tvals = reverse_traits(search_param.tvals)
     ckSelfIndv = reverse_traits(search_param.ckSelfIndv)
@@ -362,7 +358,11 @@ def search_buff(search_param: BuffSearchQueryParams, limit: int = 100) -> List[i
     matches = [
         item
         for item in masters[search_param.region].mstBuff
-        if item.type in buff_types
+        if ((not search_param.type) or (search_param.type and item.type in buff_types))
+        and (
+            (not search_param.buffGroup)
+            or (search_param.buffGroup and item.buffGroup in search_param.buffGroup)
+        )
         and vals.issubset(item.vals)
         and tvals.issubset(item.tvals)
         and ckSelfIndv.issubset(item.ckSelfIndv)

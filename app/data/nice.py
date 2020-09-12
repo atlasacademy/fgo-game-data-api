@@ -219,10 +219,10 @@ def parse_dataVals(
                         text = "Individuality"
                     else:
                         text = "aa" + str(i)
-                elif functype in (
+                elif functype in {
                     FuncType.FRIEND_POINT_UP,
                     FuncType.FRIEND_POINT_UP_DUPLICATE,
-                ):
+                }:
                     if i == 0:
                         text = "AddCount"
                 else:
@@ -238,17 +238,19 @@ def parse_dataVals(
                     if array2[0] == "DependFuncId1":
                         output["DependFuncId"] = int(remove_brackets(array2[1]))
                     elif array2[0] == "DependFuncVals1":
+                        # This assumes DependFuncId is parsed before.
+                        # If DW ever make it more complicated than this, consider
+                        # using "aa" + ... and parse it later
                         func_type = masters[region].mstFuncId[output["DependFuncId"]].funcType  # type: ignore
                         vals_value = parse_dataVals(array2[1], func_type, region)
                         output["DependFuncVals"] = vals_value  # type: ignore
-                    elif array2[0] in (
+                    elif array2[0] in {
                         "TargetList",
                         "TargetRarityList",
                         "AndCheckIndividualityList",
-                    ):
+                    }:
                         try:
-                            list_value = [int(i) for i in array2[1].split("/")]
-                            output[array2[0]] = list_value
+                            output[array2[0]] = [int(i) for i in array2[1].split("/")]
                         except ValueError:
                             raise HTTPException(status_code=500, detail=error_message)
                     else:
