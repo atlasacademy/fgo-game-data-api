@@ -374,21 +374,6 @@
         }
       ],
       "qp": 1500000
-    },
-    "4": {
-      "items": [
-        {
-          "item": {
-            "id": 7999,
-            "name": "聖杯",
-            "type": "tdLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7999.png",
-            "background": "gold"
-          },
-          "amount": 1
-        }
-      ],
-      "qp": 50000000
     }
   },
   "skillMaterials": {

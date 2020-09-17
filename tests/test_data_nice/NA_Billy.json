@@ -414,21 +414,6 @@
         }
       ],
       "qp": 900000
-    },
-    "4": {
-      "items": [
-        {
-          "item": {
-            "id": 7999,
-            "name": "Holy Grail",
-            "type": "tdLvUp",
-            "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7999.png",
-            "background": "gold"
-          },
-          "amount": 1
-        }
-      ],
-      "qp": 1000000
     }
   },
   "skillMaterials": {

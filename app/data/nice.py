@@ -810,6 +810,7 @@ def get_nice_servant(
 
     nice_data["ascensionAdd"] = {"individuality": ascensionAddIndividuality}
 
+    BAD_COMBINE_LIMIT = 4  # The material here doesn't mean anything
     nice_data["ascensionMaterials"] = {
         combineLimit.svtLimit: {
             "items": get_nice_item_amount(
@@ -818,6 +819,7 @@ def get_nice_servant(
             "qp": combineLimit.qp,
         }
         for combineLimit in raw_data.mstCombineLimit
+        if combineLimit.svtLimit != BAD_COMBINE_LIMIT
     }
 
     nice_data["skillMaterials"] = {
