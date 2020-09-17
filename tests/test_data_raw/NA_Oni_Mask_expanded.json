@@ -84,7 +84,7 @@
                 "expandedVals": [
                   {
                     "mstBuff": {
-                      "vals": [3004],
+                      "vals": [3004, 3006],
                       "tvals": [5000, 4003],
                       "ckSelfIndv": [4003],
                       "ckOpIndv": [],

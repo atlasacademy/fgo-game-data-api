@@ -31,7 +31,10 @@
           "type": "upCommandall",
           "buffGroup": 0,
           "script": {},
-          "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+          "vals": [
+            { "id": 3004, "name": "buffPositiveEffect" },
+            { "id": 3006, "name": "buffIncreaseDamage" }
+          ],
           "tvals": [
             { "id": 5000, "name": "canBeInBattle" },
             { "id": 4002, "name": "cardBuster" }
