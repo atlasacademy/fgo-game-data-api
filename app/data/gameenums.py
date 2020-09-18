@@ -1924,6 +1924,7 @@ class QuestType(IntEnum):
     FRIENDSHIP = 3
     EVENT = 5
     HEROBALLAD = 6
+    WAR_BOARD = 7
 
 
 class NiceQuestType(str, Enum):
@@ -1932,6 +1933,7 @@ class NiceQuestType(str, Enum):
     friendship = "friendship"
     event = "event"
     heroballad = "heroballad"
+    warBoard = "warBoard"
 
 
 QUEST_TYPE_NAME: Dict[int, NiceQuestType] = {
@@ -1940,6 +1942,7 @@ QUEST_TYPE_NAME: Dict[int, NiceQuestType] = {
     3: NiceQuestType.friendship,
     5: NiceQuestType.event,
     6: NiceQuestType.heroballad,
+    7: NiceQuestType.warBoard,
 }
 
 
