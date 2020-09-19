@@ -252,8 +252,8 @@ def get_servant_entity(
         subtitles = []
 
         for change in svt_entity.mstSvtChange:
-            voices += masters[region].mstSvtVoiceId[change.svtVoiceId]
-            subtitles += masters[region].mstSubtitleId[change.svtVoiceId]
+            voices += masters[region].mstSvtVoiceId.get(change.svtVoiceId, [])
+            subtitles += masters[region].mstSubtitleId.get(change.svtVoiceId, [])
 
         voices += masters[region].mstSvtVoiceId.get(servant_id, [])
         subtitles += masters[region].mstSubtitleId.get(servant_id, [])
@@ -265,8 +265,8 @@ def get_servant_entity(
             if voiceRelations := masters[region].mstSvtVoiceRelationId.get(svt_id):
                 for voiceRelation in voiceRelations:
                     relation_id = voiceRelation.relationSvtId
-                    voices += masters[region].mstSvtVoiceId[relation_id]
-                    subtitles += masters[region].mstSubtitleId[relation_id]
+                    voices += masters[region].mstSvtVoiceId.get(relation_id, [])
+                    subtitles += masters[region].mstSubtitleId.get(relation_id, [])
 
         svt_entity.mstSvtVoice = voices
         svt_entity.mstSubtitle = subtitles
