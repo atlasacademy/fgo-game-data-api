@@ -600,7 +600,6 @@ def get_nice_voice_line(
 def get_nice_voice_group(
     region: Region,
     voice: MstSvtVoice,
-    svt_id: int,
     costume_ids: Dict[int, int],
     subtitles: List[GlobalNewMstSubtitle],
 ) -> Dict[str, Any]:
@@ -610,7 +609,7 @@ def get_nice_voice_group(
     return {
         "type": VOICE_TYPE_NAME[voice.type],
         "voiceLines": [
-            get_nice_voice_line(region, item, svt_id, costume_ids, subtitle_ids)
+            get_nice_voice_line(region, item, voice.id, costume_ids, subtitle_ids)
             for item in voice.scriptJson
         ],
     }
@@ -909,10 +908,8 @@ def get_nice_servant(
             },
             "comments": [get_nice_comment(item) for item in raw_data.mstSvtComment],
             "voices": [
-                get_nice_voice_group(
-                    region, item, item_id, costume_ids, raw_data.mstSubtitle
-                )
-                for item in raw_data.mstSvtVoice
+                get_nice_voice_group(region, voice, costume_ids, raw_data.mstSubtitle)
+                for voice in raw_data.mstSvtVoice
             ],
         }
 

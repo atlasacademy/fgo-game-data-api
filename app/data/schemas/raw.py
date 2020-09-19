@@ -489,6 +489,29 @@ class MstSvtVoice(BaseModel):
     type: int
 
 
+class MstSvtChange(BaseModel):
+    beforeTreasureDeviceIds: List[int]  # [202100]
+    afterTreasureDeviceIds: List[int]  # [202101]
+    svtId: int  # 202100
+    priority: int  # 1
+    condType: int  # 36
+    condTargetId: int  # 2000306
+    condValue: int  # 4
+    name: str  # "Archer of Inferno"
+    ruby: str  # "Archer of Inferno"
+    battleName: str  # "Archer of Inferno"
+    svtVoiceId: int  # 202110
+    limitCount: int  # 2
+    flag: int  # 0
+    battleSvtId: int  # 202100
+
+
+class MstSvtVoiceRelation(BaseModel):
+    svtId: int  # 502500
+    relationSvtId: int  # 9010002
+    ascendOrder: int  # 0
+
+
 class MstSvtGroup(BaseModel):
     id: int
     svtId: int
@@ -626,6 +649,8 @@ class Master(BaseModel):
     # mstSvtComment: List[MstSvtComment]
     mstSvtCommentId: Dict[int, List[MstSvtComment]]
     mstSvtCostumeId: Dict[int, List[MstSvtCostume]]
+    mstSvtChangeId: Dict[int, List[MstSvtChange]]
+    mstSvtVoiceRelationId: Dict[int, List[MstSvtVoiceRelation]]
     # mstCommandCode: List[MstCommandCode]
     mstCommandCodeId: Dict[int, MstCommandCode]
     mstCommandCodeSkill: List[MstCommandCodeSkill]
@@ -659,7 +684,8 @@ class ServantEntity(BaseModelORJson):
     mstCombineLimit: List[MstCombineLimit]
     mstCombineCostume: List[MstCombineCostume]
     mstSvtLimitAdd: List[MstSvtLimitAdd]
-    mstSvtCostume: List[MstSvtCostume] = []
+    mstSvtChange: List[MstSvtChange]
+    mstSvtCostume: List[MstSvtCostume]
     mstSvtComment: List[MstSvtComment] = []
     mstSvtVoice: List[MstSvtVoice] = []
     mstSubtitle: List[GlobalNewMstSubtitle] = []

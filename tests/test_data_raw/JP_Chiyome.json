@@ -1277,5 +1277,23 @@
   ],
   "mstCombineCostume": [],
   "mstSvtLimitAdd": [],
+  "mstSvtChange": [
+    {
+      "beforeTreasureDeviceIds": [602900],
+      "afterTreasureDeviceIds": [602901],
+      "svtId": 602900,
+      "priority": 1,
+      "condType": 36,
+      "condTargetId": 2000309,
+      "condValue": 4,
+      "name": "アサシン・パライソ",
+      "ruby": "アサシン・パライソ",
+      "battleName": "アサシン・パライソ",
+      "svtVoiceId": 602910,
+      "limitCount": 0,
+      "flag": 0,
+      "battleSvtId": 602900
+    }
+  ],
   "mstSvtCostume": []
 }

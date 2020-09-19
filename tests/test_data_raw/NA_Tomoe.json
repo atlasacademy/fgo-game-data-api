@@ -1377,5 +1377,23 @@
   ],
   "mstCombineCostume": [],
   "mstSvtLimitAdd": [],
+  "mstSvtChange": [
+    {
+      "beforeTreasureDeviceIds": [202100],
+      "afterTreasureDeviceIds": [202101],
+      "svtId": 202100,
+      "priority": 1,
+      "condType": 36,
+      "condTargetId": 2000306,
+      "condValue": 4,
+      "name": "Archer of Inferno",
+      "ruby": "Archer of Inferno",
+      "battleName": "Archer of Inferno",
+      "svtVoiceId": 202110,
+      "limitCount": 2,
+      "flag": 0,
+      "battleSvtId": 202100
+    }
+  ],
   "mstSvtCostume": []
 }

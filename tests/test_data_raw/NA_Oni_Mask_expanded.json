@@ -262,5 +262,6 @@
   "mstCombineLimit": [],
   "mstCombineCostume": [],
   "mstSvtLimitAdd": [],
+  "mstSvtChange": [],
   "mstSvtCostume": []
 }

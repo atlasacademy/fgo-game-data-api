@@ -48,6 +48,8 @@ SVT_STUFFS = {
     "mstSvtLimitAdd",
     "mstSvtComment",
     "mstSvtCostume",
+    "mstSvtChange",
+    "mstSvtVoiceRelation",
 }
 SKILL_STUFFS = {"mstSkillDetail", "mstSvtSkill", "mstSkillLv"}
 TD_STUFFS = {"mstTreasureDeviceDetail", "mstSvtTreasureDevice", "mstTreasureDeviceLv"}

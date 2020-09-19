@@ -223,6 +223,8 @@ def get_servant_entity(
         mstCombineLimit=masters[region].mstCombineLimitId.get(servant_id, []),
         mstCombineCostume=masters[region].mstCombineCostumeId.get(servant_id, []),
         mstSvtLimitAdd=masters[region].mstSvtLimitAddId.get(servant_id, []),
+        mstSvtChange=masters[region].mstSvtChangeId.get(servant_id, []),
+        # needed costume to get the nice limits and costume ids
         mstSvtCostume=masters[region].mstSvtCostumeId.get(servant_id, []),
         mstSkill=[
             get_skill_entity_no_reverse(region, skill, expand)
@@ -244,8 +246,30 @@ def get_servant_entity(
 
     if lore:
         svt_entity.mstSvtComment = masters[region].mstSvtCommentId.get(servant_id, [])
-        svt_entity.mstSvtVoice = masters[region].mstSvtVoiceId.get(servant_id, [])
-        svt_entity.mstSubtitle = masters[region].mstSubtitleId.get(servant_id, [])
+
+        # Try to match order in the voice tab in game
+        voices = []
+        subtitles = []
+
+        for change in svt_entity.mstSvtChange:
+            voices += masters[region].mstSvtVoiceId[change.svtVoiceId]
+            subtitles += masters[region].mstSubtitleId[change.svtVoiceId]
+
+        voices += masters[region].mstSvtVoiceId.get(servant_id, [])
+        subtitles += masters[region].mstSubtitleId.get(servant_id, [])
+
+        # Moriarty deadheat summer lines use his hidden name svt_id
+        for svt_id in [change.svtVoiceId for change in svt_entity.mstSvtChange] + [
+            servant_id
+        ]:
+            if voiceRelations := masters[region].mstSvtVoiceRelationId.get(svt_id):
+                for voiceRelation in voiceRelations:
+                    relation_id = voiceRelation.relationSvtId
+                    voices += masters[region].mstSvtVoiceId[relation_id]
+                    subtitles += masters[region].mstSubtitleId[relation_id]
+
+        svt_entity.mstSvtVoice = voices
+        svt_entity.mstSubtitle = subtitles
 
     return svt_entity
 

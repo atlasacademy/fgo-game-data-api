@@ -1346,6 +1346,7 @@
           ],
           "mstCombineCostume": [],
           "mstSvtLimitAdd": [],
+          "mstSvtChange": [],
           "mstSvtCostume": []
         },
         {
@@ -2259,6 +2260,7 @@
               "voicePrefix": 0
             }
           ],
+          "mstSvtChange": [],
           "mstSvtCostume": []
         },
         {
@@ -3172,6 +3174,7 @@
               "voicePrefix": 0
             }
           ],
+          "mstSvtChange": [],
           "mstSvtCostume": []
         }
       ],
