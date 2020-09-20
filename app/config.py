@@ -1,4 +1,5 @@
 import logging
+from typing import Optional
 
 from pydantic import BaseSettings, DirectoryPath, HttpUrl, SecretStr, validator
 
@@ -16,6 +17,7 @@ class Settings(BaseSettings):
     na_gamedata: DirectoryPath
     jp_gamedata: DirectoryPath
     asset_url: HttpUrl
+    openapi_url: Optional[HttpUrl] = None
     export_all_nice: bool = False
     documentation_all_nice: bool = False
     lru_cache_size: int = 128

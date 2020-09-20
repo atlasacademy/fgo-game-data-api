@@ -1,5 +1,4 @@
-<!-- omit in toc -->
-# FGO game data API
+# FGO game data API <!-- omit in toc -->
 
 HTTP API for FGO game data. Transform the raw game data into something a bit more managable.
 
@@ -15,9 +14,11 @@ HTTP API for FGO game data. Transform the raw game data into something a bit mor
 ### Environment variables
 
 List of environment variables for the main app. All are required except noted:
+
 - `NA_GAMEDATA`: Required, path to NA gamedata's master folder
 - `JP_GAMEDATA`: Required, path to JP gamedata's master folder
 - `ASSET_URL`: Required, base URL for the game assets
+- `OPENAPI_URL`: Optional. Set the server URL in the openapi schema export.
 - `EXPORT_ALL_NICE`: Optional, default to `False`. If set to `True`, at start the app will generate nice data of all servant and CE and serve them at the `/export` endpoint. It's recommended to serve the files in the `/export` folder using nginx or equivalent webserver to lighten the load on the API server.
 - `DOCUMENTATION_ALL_NICE`: Optional, default to `False`. If set to `True`, there will be links to the exported all nice files in the documentation.
 - `LRU_CACHE_SIZE`: Optional, default to `128`. Cache size of the nice lru cache.
@@ -26,10 +27,12 @@ List of environment variables for the main app. All are required except noted:
 - `GITHUB_WEBHOOK_SLEEP`: Optional, default to `0`. If set, will delay the action above by `GITHUB_WEBHOOK_SLEEP` seconds.
 
 You can also make a .env file at the project root with the following entries instead of setting the environment variables:
+
 ```
 NA_GAMEDATA="/path/to/gamedata/master/NA"
 JP_GAMEDATA="/path/to/gamedata/master/JP"
 ASSET_URL="https://example.com/assets/"
+OPENAPI_URL="https://api.atlasacademy.io"
 EXPORT_ALL_NICE=False
 DOCUMENTATION_ALL_NICE=True
 LRU_CACHE_SIZE=128
@@ -43,12 +46,12 @@ List of optional enviroment variables for the Docker image can be found [here](h
 ### Run the API server
 
 Run at the project root to start the API server:
+
 ```
 uvicorn app.main:app --reload --log-level debug --reload-dir app
 ```
 
 Go to http://127.0.0.1:8000/docs or http://127.0.0.1:8000/redoc for the API documentation.
-
 
 ### Linting
 

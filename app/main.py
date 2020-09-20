@@ -99,6 +99,10 @@ app = FastAPI(
 )
 
 
+if settings.openapi_url:
+    app.servers = [{"url": settings.openapi_url}]
+
+
 app.add_middleware(CORSMiddleware, allow_origins=["*"])
 
 
