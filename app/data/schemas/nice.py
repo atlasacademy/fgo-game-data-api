@@ -421,6 +421,7 @@ class NiceServant(BaseModelORJson):
     atkMax: int
     hpBase: int
     hpMax: int
+    relateQuestIds: List[int]
     growthCurve: int
     atkGrowth: List[int]
     hpGrowth: List[int]

@@ -52,6 +52,7 @@
   "atkMax": 13596,
   "hpBase": 2745,
   "hpMax": 18720,
+  "relateQuestIds": [],
   "growthCurve": 5,
   "atkGrowth": [
     2101,
