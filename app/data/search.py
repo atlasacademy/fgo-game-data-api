@@ -23,7 +23,7 @@ from .enums import (
     FUNC_APPLYTARGET_NAME_REVERSE,
     FUNC_TARGETTYPE_NAME_REVERSE,
     FUNC_TYPE_NAME_REVERSE,
-    GENDER_NAME_REVERSE,
+    GENDER_TYPE_NAME_REVERSE,
     SKILL_TYPE_NAME_REVERSE,
     SVT_FLAG_NAME_REVERSE,
     SVT_TYPE_NAME_REVERSE,
@@ -116,7 +116,7 @@ def search_servant(
     svt_flag_ints = {SVT_FLAG_NAME_REVERSE[item] for item in search_param.flag}
     rarity_ints = set(search_param.rarity)
     class_ints = {CLASS_NAME_REVERSE[item] for item in search_param.className}
-    gender_ints = {GENDER_NAME_REVERSE[item] for item in search_param.gender}
+    gender_ints = {GENDER_TYPE_NAME_REVERSE[item] for item in search_param.gender}
     attribute_ints = {ATTRIBUTE_NAME_REVERSE[item] for item in search_param.attribute}
     trait_ints = reverse_traits(search_param.trait)
 

@@ -25,15 +25,61 @@ def out_intenum(input_dict: Dict[int, str], className: str) -> List[str]:
     return intenum_lines
 
 
-STR_NAME_OVERRIDE = {"addattack": "extra"}
+EXTRA_STR_NAME = {"NiceStatusRank": ["unknown"]}
+
+
+STR_NAME_OVERRIDE = {
+    "NiceCardType": {"addattack": "extra"},
+    "NiceGender": {"other": "unknown"},
+    "NiceStatusRank": {
+        "a": "A",
+        "aPlus": "A+",
+        "aPlus2": "A++",
+        "aMinus": "A-",
+        "aPlus3": "A+++",
+        "b": "B",
+        "bPlus": "B+",
+        "bPlus2": "B++",
+        "bMinus": "B-",
+        "bPlus3": "B+++",
+        "c": "C",
+        "cPlus": "C+",
+        "cPlus2": "C++",
+        "cMinus": "C-",
+        "cPlus3": "C+++",
+        "d": "D",
+        "dPlus": "D+",
+        "dPlus2": "D++",
+        "dMinus": "D-",
+        "dPlus3": "D+++",
+        "e": "E",
+        "ePlus": "E+",
+        "ePlus2": "E++",
+        "eMinus": "E-",
+        "ePlus3": "E+++",
+        "ex": "EX",
+        "question": "?",
+        "none": "None",
+        "unknown": "Unknown",
+    },
+}
+
+
+STR_NAME_COMMENT = {
+    "NiceBuffLimit": {
+        "upper": "  # type: ignore # str has upper and lower methods",
+        "lower": "  # type: ignore",
+    },
+}
 
 
 def out_strenum(input_dict: Dict[int, str], nice_class: str) -> List[str]:
     strenum_lines = [f"class {nice_class}(str, Enum):\n"]
-    for enumstr in input_dict.values():
+    for enumstr in list(input_dict.values()) + EXTRA_STR_NAME.get(nice_class, []):
         json_name = convert_name(enumstr)
-        str_name = STR_NAME_OVERRIDE.get(json_name, json_name)
-        strenum_lines.append(f'    {json_name} = "{str_name}"\n')
+        str_name = STR_NAME_OVERRIDE.get(nice_class, {}).get(json_name, json_name)
+        str_comment = STR_NAME_COMMENT.get(nice_class, {}).get(json_name, "")
+        strenum_lines.append(f'    {json_name} = "{str_name}"{str_comment}\n')
     return strenum_lines
 
 
@@ -65,11 +111,13 @@ def cs_enums_to_lines(
 
 
 ENUMS = [
+    ("Gender.Type", "GenderType", "NiceGender", "GENDER_TYPE_NAME"),
     ("SvtType.Type", "SvtType", "NiceSvtType", "SVT_TYPE_NAME"),
     ("FuncList.TYPE", "FuncType", "NiceFuncType", "FUNC_TYPE_NAME"),
     ("Target.TYPE", "FuncTargetType", "NiceFuncTargetType", "FUNC_TARGETTYPE_NAME"),
     ("BuffList.TYPE", "BuffType", "NiceBuffType", "BUFF_TYPE_NAME"),
     ("BuffList.ACTION", "BuffAction", "NiceBuffAction", "BUFF_ACTION_NAME"),
+    ("BuffList.LIMIT", "BuffLimit", "NiceBuffLimit", "BUFF_LIMIT_NAME"),
     ("DataVals.TYPE", "DataValsType", "NiceDataValsType", "DATA_VALS_TYPE_NAME"),
     (
         "ClassRelationOverwriteEntity",
@@ -89,6 +137,7 @@ ENUMS = [
         "NiceConsumeType",
         "QUEST_CONSUME_TYPE_NAME",
     ),
+    ("StatusRank.Kind", "StatusRank", "NiceStatusRank", "STATUS_RANK_NAME"),
 ]
 
 

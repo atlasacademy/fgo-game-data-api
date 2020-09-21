@@ -10,18 +10,18 @@ from ..data.enums import (
     ATTRIBUTE_NAME,
     CARD_TYPE_NAME,
     CLASS_NAME,
-    GENDER_NAME,
+    GENDER_TYPE_NAME,
     PLAYABLE_CLASS_LIST,
     SKILL_TYPE_NAME,
     SVT_FLAG_NAME,
     SVT_TYPE_NAME,
     Attribute,
     FuncApplyTarget,
-    Gender,
     NiceBuffType,
     NiceCardType,
     NiceFuncTargetType,
     NiceFuncType,
+    NiceGender,
     NiceSkillType,
     NiceSvtFlag,
     NiceSvtType,
@@ -70,7 +70,7 @@ class ServantSearchQueryParams:
     flag: List[NiceSvtFlag] = Query(list(SVT_FLAG_NAME.values()))
     rarity: List[int] = Query(list(range(6)), ge=0, le=5)
     className: List[SvtClass] = Query(PLAYABLE_CLASS_LIST)
-    gender: List[Gender] = Query(list(GENDER_NAME.values()))
+    gender: List[NiceGender] = Query(list(GENDER_TYPE_NAME.values()))
     attribute: List[Attribute] = Query(list(ATTRIBUTE_NAME.values()))
     trait: List[Union[Trait, int]] = Query([])
 
@@ -82,7 +82,7 @@ class ServantSearchQueryParams:
                 self.flag != list(SVT_FLAG_NAME.values()),
                 self.rarity != list(range(6)),
                 self.className != PLAYABLE_CLASS_LIST,
-                self.gender != list(GENDER_NAME.values()),
+                self.gender != list(GENDER_TYPE_NAME.values()),
                 self.attribute != list(ATTRIBUTE_NAME.values()),
                 self.trait != [],
             ]
@@ -119,7 +119,7 @@ class SvtSearchQueryParams:
     flag: List[NiceSvtFlag] = Query(list(SVT_FLAG_NAME.values()))
     rarity: List[int] = Query(list(range(6)), ge=0, le=5)
     className: List[SvtClass] = Query(list(CLASS_NAME.values()))
-    gender: List[Gender] = Query(list(GENDER_NAME.values()))
+    gender: List[NiceGender] = Query(list(GENDER_TYPE_NAME.values()))
     attribute: List[Attribute] = Query(list(ATTRIBUTE_NAME.values()))
     trait: List[Union[Trait, int]] = Query([])
 
@@ -131,7 +131,7 @@ class SvtSearchQueryParams:
                 self.flag != list(SVT_FLAG_NAME.values()),
                 self.rarity != list(range(6)),
                 self.className != list(CLASS_NAME.values()),
-                self.gender != list(GENDER_NAME.values()),
+                self.gender != list(GENDER_TYPE_NAME.values()),
                 self.attribute != list(ATTRIBUTE_NAME.values()),
                 self.trait != [],
             ]

@@ -6,6 +6,25 @@ from enum import Enum, IntEnum
 from typing import Dict
 
 
+class GenderType(IntEnum):
+    MALE = 1
+    FEMALE = 2
+    OTHER = 3
+
+
+class NiceGender(str, Enum):
+    male = "male"
+    female = "female"
+    other = "unknown"
+
+
+GENDER_TYPE_NAME: Dict[int, NiceGender] = {
+    1: NiceGender.male,
+    2: NiceGender.female,
+    3: NiceGender.other,
+}
+
+
 class SvtType(IntEnum):
     NORMAL = 1
     HEROINE = 2
@@ -1136,6 +1155,28 @@ BUFF_ACTION_NAME: Dict[int, NiceBuffAction] = {
 }
 
 
+class BuffLimit(IntEnum):
+    NONE = 0
+    UPPER = 1
+    LOWER = 2
+    NORMAL = 3
+
+
+class NiceBuffLimit(str, Enum):
+    none = "none"
+    upper = "upper"  # type: ignore # str has upper and lower methods
+    lower = "lower"  # type: ignore
+    normal = "normal"
+
+
+BUFF_LIMIT_NAME: Dict[int, NiceBuffLimit] = {
+    0: NiceBuffLimit.none,
+    1: NiceBuffLimit.upper,
+    2: NiceBuffLimit.lower,
+    3: NiceBuffLimit.normal,
+}
+
+
 class DataValsType(IntEnum):
     Rate = 0
     Turn = 1
@@ -1968,4 +2009,99 @@ QUEST_CONSUME_TYPE_NAME: Dict[int, NiceConsumeType] = {
     2: NiceConsumeType.rp,
     3: NiceConsumeType.item,
     4: NiceConsumeType.apAndItem,
+}
+
+
+class StatusRank(IntEnum):
+    A = 11
+    A_PLUS = 12
+    A_PLUS2 = 13
+    A_MINUS = 14
+    A_PLUS3 = 15
+    B = 21
+    B_PLUS = 22
+    B_PLUS2 = 23
+    B_MINUS = 24
+    B_PLUS3 = 25
+    C = 31
+    C_PLUS = 32
+    C_PLUS2 = 33
+    C_MINUS = 34
+    C_PLUS3 = 35
+    D = 41
+    D_PLUS = 42
+    D_PLUS2 = 43
+    D_MINUS = 44
+    D_PLUS3 = 45
+    E = 51
+    E_PLUS = 52
+    E_PLUS2 = 53
+    E_MINUS = 54
+    E_PLUS3 = 55
+    EX = 61
+    QUESTION = 98
+    NONE = 99
+
+
+class NiceStatusRank(str, Enum):
+    a = "A"
+    aPlus = "A+"
+    aPlus2 = "A++"
+    aMinus = "A-"
+    aPlus3 = "A+++"
+    b = "B"
+    bPlus = "B+"
+    bPlus2 = "B++"
+    bMinus = "B-"
+    bPlus3 = "B+++"
+    c = "C"
+    cPlus = "C+"
+    cPlus2 = "C++"
+    cMinus = "C-"
+    cPlus3 = "C+++"
+    d = "D"
+    dPlus = "D+"
+    dPlus2 = "D++"
+    dMinus = "D-"
+    dPlus3 = "D+++"
+    e = "E"
+    ePlus = "E+"
+    ePlus2 = "E++"
+    eMinus = "E-"
+    ePlus3 = "E+++"
+    ex = "EX"
+    question = "?"
+    none = "None"
+    unknown = "Unknown"
+
+
+STATUS_RANK_NAME: Dict[int, NiceStatusRank] = {
+    11: NiceStatusRank.a,
+    12: NiceStatusRank.aPlus,
+    13: NiceStatusRank.aPlus2,
+    14: NiceStatusRank.aMinus,
+    15: NiceStatusRank.aPlus3,
+    21: NiceStatusRank.b,
+    22: NiceStatusRank.bPlus,
+    23: NiceStatusRank.bPlus2,
+    24: NiceStatusRank.bMinus,
+    25: NiceStatusRank.bPlus3,
+    31: NiceStatusRank.c,
+    32: NiceStatusRank.cPlus,
+    33: NiceStatusRank.cPlus2,
+    34: NiceStatusRank.cMinus,
+    35: NiceStatusRank.cPlus3,
+    41: NiceStatusRank.d,
+    42: NiceStatusRank.dPlus,
+    43: NiceStatusRank.dPlus2,
+    44: NiceStatusRank.dMinus,
+    45: NiceStatusRank.dPlus3,
+    51: NiceStatusRank.e,
+    52: NiceStatusRank.ePlus,
+    53: NiceStatusRank.ePlus2,
+    54: NiceStatusRank.eMinus,
+    55: NiceStatusRank.ePlus3,
+    61: NiceStatusRank.ex,
+    98: NiceStatusRank.question,
+    99: NiceStatusRank.none,
 }

@@ -5,7 +5,6 @@ from pydantic import BaseModel, HttpUrl
 from ..enums import (
     Attribute,
     FuncApplyTarget,
-    Gender,
     NiceBuffType,
     NiceCardType,
     NiceClassRelationOverwriteType,
@@ -13,6 +12,7 @@ from ..enums import (
     NiceConsumeType,
     NiceFuncTargetType,
     NiceFuncType,
+    NiceGender,
     NiceItemBGType,
     NiceItemType,
     NiceQuestType,
@@ -409,7 +409,7 @@ class NiceServant(BaseModelORJson):
     cost: int
     lvMax: int
     extraAssets: ExtraAssets
-    gender: Gender
+    gender: NiceGender
     attribute: Attribute
     traits: List[NiceTrait]
     starAbsorb: int
