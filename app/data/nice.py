@@ -1,4 +1,5 @@
 import re
+from collections import defaultdict
 from functools import lru_cache
 from typing import Any, Dict, List, Optional, Union
 
@@ -305,8 +306,8 @@ def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> Dict[str, 
             region
         ].mstClassRelationOverwriteId.get(buffEntity.mstBuff.script["relationId"], [])
         relationId: Dict[str, Dict[SvtClass, Dict[SvtClass, Any]]] = {
-            "atkSide": {},
-            "defSide": {},
+            "atkSide": defaultdict(dict),
+            "defSide": defaultdict(dict),
         }
         for item in relationOverwrite:
             if item.atkSide == 1:
@@ -319,10 +320,7 @@ def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> Dict[str, 
                 "damageRate": item.damageRate,
                 "type": CLASS_OVERWRITE_NAME[item.type],
             }
-            if atkClass in relationId[side]:
-                relationId[side][atkClass][defClass] = relationDetail
-            else:
-                relationId[side][atkClass] = {defClass: relationDetail}
+            relationId[side][atkClass][defClass] = relationDetail
         script["relationId"] = relationId
 
     for script_item in ("ReleaseText", "DamageRelease"):
@@ -580,7 +578,7 @@ def get_nice_voice_line(
     first_voice_id = script.infos[0].id
     voice_line["subtitle"] = subtitle_ids.get(str(svt_id) + "_" + first_voice_id, "")
 
-    # Some voice lines have info starting at xxx1 or xxx2 and we want xxx0
+    # Some voice lines have the first info id ending with xxx1 or xxx2 and we want xxx0
     voice_id = first_voice_id.split("_")[1][:-1] + "0"
     if voice_id in masters[region].mstVoiceId:
         mstVoice = masters[region].mstVoiceId[voice_id]
@@ -756,15 +754,13 @@ def get_nice_servant(
     }
 
     lvMax = max([item.lvMax for item in raw_data.mstSvtLimit])
-    nice_data["lvMax"] = lvMax
-    if raw_data.mstSvt.type == SvtType.NORMAL:
-        lvMax = 100
     atkMax = raw_data.mstSvtLimit[0].atkMax
     atkBase = raw_data.mstSvtLimit[0].atkBase
     hpMax = raw_data.mstSvtLimit[0].hpMax
     hpBase = raw_data.mstSvtLimit[0].hpBase
     growthCurve = raw_data.mstSvt.expType
-    growthCurveValues = masters[region].mstSvtExpId[growthCurve][1 : lvMax + 1]
+    growthCurveMax = 101 if raw_data.mstSvt.type == SvtType.NORMAL else (lvMax + 1)
+    growthCurveValues = masters[region].mstSvtExpId[growthCurve][1:growthCurveMax]
     atkGrowth = [
         atkBase + (atkMax - atkBase) * curve // 1000 for curve in growthCurveValues
     ]
@@ -773,6 +769,7 @@ def get_nice_servant(
     ]
     nice_data.update(
         {
+            "lvMax": lvMax,
             "growthCurve": growthCurve,
             "atkMax": atkMax,
             "atkBase": atkBase,
