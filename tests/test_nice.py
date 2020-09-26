@@ -52,6 +52,7 @@ test_cases_dict = {
     "item_NA_id": ("NA/item/94000201", "NA_item_94000201"),
     "MC_NA_id": ("NA/MC/110", "NA_MC_LB"),
     "JP_CC_id": ("JP/CC/8400550", "JP_CC_8400550"),
+    "quest_JP_id": ("JP/quest/91103002", "JP_Suzuka_rank_up"),
     "quest_NA_id_phase": ("NA/quest/94020187/1", "NA_87th_floor"),
 }
 
@@ -89,10 +90,7 @@ cases_404 = [pytest.param(key, value, id=key) for key, value in cases_404_dict.i
 def test_404_nice(endpoint: str, item_id: str) -> None:
     response = client.get(f"/nice/JP/{endpoint}/{item_id}")
     assert response.status_code == 404
-    if endpoint == "quest":
-        assert response.json()["detail"] == "Not Found"
-    else:
-        assert response.json()["detail"][-9:] == "not found"
+    assert response.json()["detail"][-9:] == "not found"
 
 
 cases_datavals_dict = {

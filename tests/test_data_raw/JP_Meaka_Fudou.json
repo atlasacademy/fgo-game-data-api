@@ -31,6 +31,26 @@
     "openedAt": 1528880400,
     "closedAt": 1530071999
   },
+  "mstQuestRelease": [
+    {
+      "questId": 94025012,
+      "type": 12,
+      "targetId": 0,
+      "value": 0,
+      "openLimit": 0,
+      "closedMessageId": 0,
+      "imagePriority": 9000
+    },
+    {
+      "questId": 94025012,
+      "type": 24,
+      "targetId": 80107026,
+      "value": 0,
+      "openLimit": 0,
+      "closedMessageId": 0,
+      "imagePriority": 10000
+    }
+  ],
   "mstQuestPhase": {
     "classIds": [2, 7],
     "individuality": [2392, 94000075],

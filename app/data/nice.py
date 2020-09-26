@@ -53,6 +53,7 @@ from .raw import (
     get_command_code_entity,
     get_func_entity_no_reverse,
     get_mystic_code_entity,
+    get_quest_entity,
     get_quest_phase_entity,
     get_servant_entity,
     get_skill_entity_no_reverse,
@@ -88,9 +89,12 @@ from .schemas.raw import (
     FunctionEntityNoReverse,
     GlobalNewMstSubtitle,
     MstClassRelationOverwrite,
+    MstQuestRelease,
     MstSvtComment,
     MstSvtCostume,
     MstSvtVoice,
+    QuestEntity,
+    QuestPhaseEntity,
     ScriptJson,
     ScriptJsonCond,
     SkillEntityNoReverse,
@@ -1154,23 +1158,57 @@ def get_nice_command_code(region: Region, cc_id: int) -> NiceCommandCode:
     return NiceCommandCode.parse_obj(nice_data)
 
 
+def get_nice_quest_release(
+    region: Region, raw_quest_release: MstQuestRelease
+) -> Dict[str, Any]:
+    return {
+        "type": COND_TYPE_NAME[raw_quest_release.type],
+        "targetId": raw_quest_release.targetId,
+        "value": raw_quest_release.value,
+        "closedMessage": masters[region].mstClosedMessageId.get(
+            raw_quest_release.closedMessageId, ""
+        ),
+    }
+
+
+def get_nice_quest(
+    region: Region, raw_quest: Union[QuestEntity, QuestPhaseEntity]
+) -> Dict[str, Any]:
+    nice_data: Dict[str, Any] = {
+        "id": raw_quest.mstQuest.id,
+        "name": raw_quest.mstQuest.name,
+        "type": get_safe(QUEST_TYPE_NAME, raw_quest.mstQuest.type),
+        "consumeType": get_safe(
+            QUEST_CONSUME_TYPE_NAME, raw_quest.mstQuest.consumeType
+        ),
+        "consume": raw_quest.mstQuest.actConsume,
+        "spotId": raw_quest.mstQuest.spotId,
+        "releaseConditions": [
+            get_nice_quest_release(region, release)
+            for release in raw_quest.mstQuestRelease
+        ],
+        "noticeAt": raw_quest.mstQuest.noticeAt,
+        "openedAt": raw_quest.mstQuest.openedAt,
+        "closedAt": raw_quest.mstQuest.closedAt,
+    }
+    return nice_data
+
+
+def get_nice_quest_alone(region: Region, quest_id: int) -> Dict[str, Any]:
+    return get_nice_quest(region, get_quest_entity(region, quest_id))
+
+
 def get_nice_quest_phase(region: Region, quest_id: int, phase: int) -> Dict[str, Any]:
     raw_data = get_quest_phase_entity(region, quest_id, phase)
-    nice_data: Dict[str, Any] = {
-        "id": raw_data.mstQuest.id,
-        "phase": raw_data.mstQuestPhase.phase,
-        "name": raw_data.mstQuest.name,
-        "type": get_safe(QUEST_TYPE_NAME, raw_data.mstQuest.type),
-        "consumeType": get_safe(QUEST_CONSUME_TYPE_NAME, raw_data.mstQuest.consumeType),
-        "consume": raw_data.mstQuest.actConsume,
-        "spotId": raw_data.mstQuest.spotId,
-        "className": [CLASS_NAME[item] for item in raw_data.mstQuestPhase.classIds],
-        "individuality": get_traits_list(raw_data.mstQuestPhase.individuality),
-        "qp": raw_data.mstQuestPhase.qp,
-        "exp": raw_data.mstQuestPhase.playerExp,
-        "bond": raw_data.mstQuestPhase.friendshipExp,
-        "noticeAt": raw_data.mstQuest.noticeAt,
-        "openedAt": raw_data.mstQuest.openedAt,
-        "closedAt": raw_data.mstQuest.closedAt,
-    }
+    nice_data = get_nice_quest(region, raw_data)
+    nice_data.update(
+        {
+            "phase": raw_data.mstQuestPhase.phase,
+            "className": [CLASS_NAME[item] for item in raw_data.mstQuestPhase.classIds],
+            "individuality": get_traits_list(raw_data.mstQuestPhase.individuality),
+            "qp": raw_data.mstQuestPhase.qp,
+            "exp": raw_data.mstQuestPhase.playerExp,
+            "bond": raw_data.mstQuestPhase.friendshipExp,
+        }
+    )
     return nice_data

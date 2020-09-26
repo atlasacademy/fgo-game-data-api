@@ -1,6 +1,6 @@
 import time
 from collections import defaultdict
-from typing import Any, Dict
+from typing import Dict
 
 import orjson
 
@@ -28,7 +28,7 @@ MASTER_WITH_ID = {
     "mstIllustrator",
     "mstVoice",
 }
-ID_LISTS = {"mstSvtVoice", "mstClassRelationOverwrite"}
+ID_LISTS = {"mstSvtVoice", "mstClassRelationOverwrite", "mstQuestRelease"}
 MASTER_WITHOUT_ID = {
     "mstSvtExp",
     "mstFriendship",
@@ -38,6 +38,7 @@ MASTER_WITHOUT_ID = {
     "mstCommandCodeSkill",
     "mstCommandCodeComment",
     "mstSvtGroup",
+    "mstClosedMessage",
 }
 SVT_STUFFS = {
     "mstSvtCard",
@@ -101,7 +102,6 @@ def update_gamedata() -> None:
         for item in master["mstQuestPhase"]:
             master["mstQuestPhaseId"][item["questId"]][item["phase"]] = item
 
-
         master["buffToFunc"] = defaultdict(set)
         for item in master["mstFunc"]:
             if item["funcType"] not in FUNC_VALS_NOT_BUFF:
@@ -130,6 +130,10 @@ def update_gamedata() -> None:
 
         master["mstSvtExp"] = sorted(master["mstSvtExp"], key=lambda item: item["lv"])
 
+        master["mstClosedMessageId"] = {
+            item["id"]: item["message"] for item in master["mstClosedMessage"]
+        }
+
         for masters_table, source_table, lookup_id, result_id in (
             ("mstSvtSkillSvtId", "mstSvtSkill", "svtId", "skillId"),
             (
@@ -148,10 +152,11 @@ def update_gamedata() -> None:
         for extra_stuff in SKILL_STUFFS | TD_STUFFS | SVT_STUFFS | ID_LISTS:
             masters_table = f"{extra_stuff}Id"
             master[masters_table] = defaultdict(list)
-            if (
-                "Detail" in extra_stuff
-                or extra_stuff in {"mstCombineSkill", "mstCombineLimit"} | ID_LISTS
-            ):
+            if "Detail" in extra_stuff:
+                lookup_id = "id"
+            elif extra_stuff in {"mstQuestRelease"}:
+                lookup_id = "questId"
+            elif extra_stuff in {"mstCombineSkill", "mstCombineLimit"} | ID_LISTS:
                 lookup_id = "id"
             elif extra_stuff in SKILL_STUFFS:
                 lookup_id = "skillId"
@@ -162,7 +167,7 @@ def update_gamedata() -> None:
             elif extra_stuff == "mstSvtTreasureDevice":
                 lookup_id = "treasureDeviceId"
             else:  # pragma: no cover
-                raise ValueError("Can't set id_name")
+                raise ValueError("Can't set lookup_id")
             for item in master[extra_stuff]:
                 master[masters_table][item[lookup_id]].append(item)
 

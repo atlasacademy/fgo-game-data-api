@@ -61,7 +61,8 @@ test_cases_dict = {
     "item_JP": ("JP/item/7103", "JP_item_Lancer_Monument"),
     "MC_NA": ("JP/MC/20", "JP_MC_Plugsuit"),
     "CC_NA": ("NA/CC/8400110", "NA_CC_Fou"),
-    "quest_JP": ("JP/quest/94025012/1", "JP_Meaka_Fudou"),
+    "quest_NA": ("NA/quest/94026514", "NA_Artoria_rank_up_2"),
+    "quest_phase_JP": ("JP/quest/94025012/1", "JP_Meaka_Fudou"),
 }
 
 
@@ -98,10 +99,7 @@ cases_404 = [pytest.param(key, value, id=key) for key, value in cases_404_dict.i
 def test_404_raw(endpoint: str, item_id: str) -> None:
     response = client.get(f"/raw/JP/{endpoint}/{item_id}")
     assert response.status_code == 404
-    if endpoint == "quest":
-        assert response.json()["detail"] == "Not Found"
-    else:
-        assert response.json()["detail"][-9:] == "not found"
+    assert response.json()["detail"][-9:] == "not found"
 
 
 cases_immutable_dict = {

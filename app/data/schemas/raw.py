@@ -573,6 +573,21 @@ class MstQuest(BaseModel):
     closedAt: int  # 1591156799
 
 
+class MstQuestRelease(BaseModel):
+    questId: int  # 94026514
+    type: int  # 7
+    targetId: int  # 100100
+    value: int  # 4
+    openLimit: int  # 0
+    closedMessageId: int  # 2
+    imagePriority: int  # 3000
+
+
+class MstClosedMessage(BaseModel):
+    id: int
+    message: str
+
+
 class MstQuestPhase(BaseModel):
     classIds: List[int]  # [7],
     individuality: List[int]  # [2038, 2039, 94000046],
@@ -646,6 +661,8 @@ class Master(BaseModel):
     mstQuestId: Dict[int, MstQuest]
     # mstQuestPhase: List[MstQuestPhase]
     mstQuestPhaseId: Dict[int, Dict[int, MstQuestPhase]]
+    mstQuestReleaseId: Dict[int, List[MstQuestRelease]]
+    mstClosedMessageId: Dict[int, str]
     # mstSvtComment: List[MstSvtComment]
     mstSvtCommentId: Dict[int, List[MstSvtComment]]
     mstSvtCostumeId: Dict[int, List[MstSvtCostume]]
@@ -734,6 +751,10 @@ class BuffEntity(BuffEntityNoReverse):
     reverse: Optional[ReversedBuffType] = None
 
 
-class QuestPhaseEntity(BaseModelORJson):
+class QuestEntity(BaseModelORJson):
     mstQuest: MstQuest
+    mstQuestRelease: List[MstQuestRelease]
+
+
+class QuestPhaseEntity(QuestEntity):
     mstQuestPhase: MstQuestPhase

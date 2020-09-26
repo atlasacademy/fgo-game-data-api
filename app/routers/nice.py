@@ -13,6 +13,7 @@ from ..data.schemas.nice import (
     NiceEquip,
     NiceItem,
     NiceMysticCode,
+    NiceQuest,
     NiceQuestPhase,
     NiceServant,
     NiceSkillReverse,
@@ -554,7 +555,7 @@ async def get_item(region: Region, item_id: int) -> Dict[str, Any]:
 
 @router.get(
     "/{region}/quest/{quest_id}/{phase}",
-    summary="Get Quest data",
+    summary="Get Nice Quest Phase data",
     response_description="Quest Phase Entity",
     response_model=NiceQuestPhase,
     response_model_exclude_unset=True,
@@ -562,12 +563,30 @@ async def get_item(region: Region, item_id: int) -> Dict[str, Any]:
 )
 async def get_quest_phase(region: Region, quest_id: int, phase: int) -> Dict[str, Any]:
     """
-    Get the nice quest data from the given quest ID and phase number
+    Get the nice quest phase data from the given quest ID and phase number
     """
     if (
         quest_id in masters[region].mstQuestId
         and phase in masters[region].mstQuestPhaseId[quest_id]
     ):
         return nice.get_nice_quest_phase(region, quest_id, phase)
+    else:
+        raise HTTPException(status_code=404, detail="Quest Phase not found")
+
+
+@router.get(
+    "/{region}/quest/{quest_id}",
+    summary="Get Nice Quest data",
+    response_description="Quest Entity",
+    response_model=NiceQuest,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404, 500]),
+)
+async def get_quest(region: Region, quest_id: int) -> Dict[str, Any]:
+    """
+    Get the nice quest data from the given quest ID
+    """
+    if quest_id in masters[region].mstQuestId:
+        return nice.get_nice_quest_alone(region, quest_id)
     else:
         raise HTTPException(status_code=404, detail="Quest not found")

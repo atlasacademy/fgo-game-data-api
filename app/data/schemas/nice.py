@@ -505,19 +505,30 @@ class NiceBuffReverse(NiceBuff):
     reverse: Optional[NiceReversedBuffType] = None
 
 
-class NiceQuestPhase(BaseModelORJson):
+class NiceQuestRelease(BaseModelORJson):
+    type: NiceCondType
+    targetId: int
+    value: int
+    closedMessage: str
+
+
+class NiceQuest(BaseModelORJson):
     id: int
-    phase: int
     name: str
     type: Union[NiceQuestType, int]
     consumeType: Union[NiceConsumeType, int]
     consume: int
     spotId: int
+    releaseConditions: List[NiceQuestRelease]
+    noticeAt: int
+    openedAt: int
+    closedAt: int
+
+
+class NiceQuestPhase(NiceQuest):
+    phase: int
     className: List[SvtClass]
     individuality: List[NiceTrait]
     qp: int
     exp: int
     bond: int
-    noticeAt: int
-    openedAt: int
-    closedAt: int

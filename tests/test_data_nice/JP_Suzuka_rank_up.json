@@ -1,0 +1,37 @@
+{
+  "id": 91103002,
+  "name": "ミミ思う故にミミあり",
+  "type": "friendship",
+  "consumeType": "ap",
+  "consume": 20,
+  "spotId": 99003,
+  "releaseConditions": [
+    {
+      "type": "questClear",
+      "targetId": 1000011,
+      "value": 0,
+      "closedMessage": "{0}をクリアで開放"
+    },
+    {
+      "type": "questClear",
+      "targetId": 91103001,
+      "value": 0,
+      "closedMessage": ""
+    },
+    {
+      "type": "svtLimit",
+      "targetId": 103000,
+      "value": 2,
+      "closedMessage": "霊基再臨{0}段階目で開放"
+    },
+    {
+      "type": "svtFriendship",
+      "targetId": 103000,
+      "value": 5,
+      "closedMessage": "絆Lv.{0}で開放"
+    }
+  ],
+  "noticeAt": 1600074000,
+  "openedAt": 1600074000,
+  "closedAt": 1893423600
+}

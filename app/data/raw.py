@@ -10,6 +10,7 @@ from .schemas.raw import (
     FunctionEntity,
     FunctionEntityNoReverse,
     MysticCodeEntity,
+    QuestEntity,
     QuestPhaseEntity,
     ReversedBuff,
     ReversedBuffType,
@@ -314,10 +315,18 @@ def get_command_code_entity(
     return cc_entity
 
 
+def get_quest_entity(region: Region, quest_id: int) -> QuestEntity:
+    return QuestEntity(
+        mstQuest=masters[region].mstQuestId[quest_id],
+        mstQuestRelease=masters[region].mstQuestReleaseId.get(quest_id, []),
+    )
+
+
 def get_quest_phase_entity(
     region: Region, quest_id: int, phase: int
 ) -> QuestPhaseEntity:
     return QuestPhaseEntity(
         mstQuest=masters[region].mstQuestId[quest_id],
+        mstQuestRelease=masters[region].mstQuestReleaseId.get(quest_id, []),
         mstQuestPhase=masters[region].mstQuestPhaseId[quest_id][phase],
     )

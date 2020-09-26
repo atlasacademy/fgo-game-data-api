@@ -1,0 +1,54 @@
+{
+  "mstQuest": {
+    "afterActionVals": [],
+    "id": 94026514,
+    "name": "Rank Up Quest: Altria Pendragon",
+    "nameRuby": "",
+    "type": 5,
+    "consumeType": 1,
+    "actConsume": 23,
+    "chaldeaGateCategory": 1,
+    "spotId": 99001,
+    "giftId": 94012504,
+    "priority": 94026586,
+    "bannerType": 0,
+    "bannerId": 94002501,
+    "iconId": 0,
+    "charaIconId": 1001000,
+    "giftIconId": 0,
+    "forceOperation": 0,
+    "afterClear": 1,
+    "displayHours": 0,
+    "intervalHours": 0,
+    "chapterId": 0,
+    "chapterSubId": 0,
+    "chapterSubStr": "",
+    "recommendLv": "90",
+    "hasStartAction": 1,
+    "flag": 32,
+    "scriptQuestId": 0,
+    "noticeAt": 1594080000,
+    "openedAt": 1594080000,
+    "closedAt": 1893456000
+  },
+  "mstQuestRelease": [
+    {
+      "questId": 94026514,
+      "type": 7,
+      "targetId": 100100,
+      "value": 4,
+      "openLimit": 0,
+      "closedMessageId": 2,
+      "imagePriority": 3000
+    },
+    {
+      "questId": 94026514,
+      "type": 8,
+      "targetId": 100100,
+      "value": 0,
+      "openLimit": 0,
+      "closedMessageId": 0,
+      "imagePriority": 10000
+    }
+  ]
+}

@@ -1,11 +1,29 @@
 {
   "id": 94020187,
-  "phase": 1,
   "name": "87th Floor: The Clatter of Hooves",
   "type": "event",
   "consumeType": "ap",
   "consume": 1,
   "spotId": 820001,
+  "releaseConditions": [
+    {
+      "type": "questClear",
+      "targetId": 94020177,
+      "value": 0,
+      "closedMessage": ""
+    },
+    {
+      "type": "questClear",
+      "targetId": 94020186,
+      "value": 0,
+      "closedMessage": "87th Floor: The Clatter of Hooves"
+    },
+    { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+  ],
+  "noticeAt": 1580097600,
+  "openedAt": 1580097600,
+  "closedAt": 1580702399,
+  "phase": 1,
   "className": ["assassin"],
   "individuality": [
     { "id": 2038, "name": "fieldSunlight" },
@@ -13,8 +31,5 @@
   ],
   "qp": 6400,
   "exp": 15690,
-  "bond": 615,
-  "noticeAt": 1580097600,
-  "openedAt": 1580097600,
-  "closedAt": 1580702399
+  "bond": 615
 }

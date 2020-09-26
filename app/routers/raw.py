@@ -11,6 +11,7 @@ from ..data.schemas.raw import (
     FunctionEntity,
     ItemEntity,
     MysticCodeEntity,
+    QuestEntity,
     QuestPhaseEntity,
     ServantEntity,
     SkillEntity,
@@ -462,7 +463,7 @@ async def get_item(region: Region, item_id: int) -> Dict[str, Any]:
 
 @router.get(
     "/{region}/quest/{quest_id}/{phase}",
-    summary="Get Quest data",
+    summary="Get Quest Phase data",
     response_description="Quest Phase Entity",
     response_model=QuestPhaseEntity,
     response_model_exclude_unset=True,
@@ -470,13 +471,32 @@ async def get_item(region: Region, item_id: int) -> Dict[str, Any]:
 )
 async def get_quest_phase(region: Region, quest_id: int, phase: int) -> Response:
     """
-    Get the quest data from the given quest ID and phase number
+    Get the quest phase data from the given quest ID and phase number
     """
     if (
         quest_id in masters[region].mstQuestId
         and phase in masters[region].mstQuestPhaseId[quest_id]
     ):
         quest_entity = raw.get_quest_phase_entity(region, quest_id, phase)
+        return item_response(quest_entity)
+    else:
+        raise HTTPException(status_code=404, detail="Quest phase not found")
+
+
+@router.get(
+    "/{region}/quest/{quest_id}",
+    summary="Get Quest data",
+    response_description="Quest Entity",
+    response_model=QuestEntity,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+async def get_quest(region: Region, quest_id: int) -> Response:
+    """
+    Get the quest data from the given quest ID
+    """
+    if quest_id in masters[region].mstQuestId:
+        quest_entity = raw.get_quest_entity(region, quest_id)
         return item_response(quest_entity)
     else:
         raise HTTPException(status_code=404, detail="Quest not found")
