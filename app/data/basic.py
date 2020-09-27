@@ -37,7 +37,7 @@ from .schemas.basic import (
     BasicTdReverse,
 )
 from .schemas.nice import AssetURL
-from .translations import SVT_NAME_JP_EN
+from .translations import TRANSLATIONS
 from .utils import get_safe, get_traits_list
 
 
@@ -200,9 +200,7 @@ def get_basic_svt(
         basic_servant["face"] = AssetURL.face.format(**base_settings, i=0)
 
     if region == Region.JP and lang == Language.en:
-        basic_servant["name"] = SVT_NAME_JP_EN.get(
-            basic_servant["name"], basic_servant["name"]
-        )
+        basic_servant["name"] = get_safe(TRANSLATIONS, basic_servant["name"])
 
     return basic_servant
 

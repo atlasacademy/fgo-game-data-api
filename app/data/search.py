@@ -31,7 +31,8 @@ from .enums import (
     Trait,
 )
 from .gamedata import masters
-from .translations import SVT_NAME_JP_EN
+from .translations import TRANSLATIONS
+from .utils import get_safe
 
 
 INSUFFICIENT_QUERY = (
@@ -149,7 +150,7 @@ def search_servant(
             for item in matches
             if match_name(search_param.name, item.name)
             or match_name(search_param.name, item.ruby)
-            or match_name(search_param.name, SVT_NAME_JP_EN.get(item.name, item.name))
+            or match_name(search_param.name, get_safe(TRANSLATIONS, item.name))
         ]
 
     if len(matches) > limit:
@@ -181,6 +182,7 @@ def search_equip(search_param: EquipSearchQueryParams, limit: int = 100) -> List
             for item in matches
             if match_name(search_param.name, item.name)
             or match_name(search_param.name, item.ruby)
+            or match_name(search_param.name, get_safe(TRANSLATIONS, item.name))
         ]
 
     if len(matches) > limit:

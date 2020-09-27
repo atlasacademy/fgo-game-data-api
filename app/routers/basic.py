@@ -35,7 +35,7 @@ router = APIRouter()
 
 
 basic_find_servant_extra = """
-- **lang**: returns English servant names if querying JP data. Doesn't do anything if querying NA data.
+- **lang**: returns English names if querying JP data. Doesn't do anything if querying NA data.
 """
 
 
@@ -60,9 +60,8 @@ get_servant_description = """Get servant info from ID
 
 If the given ID is a servants's collectionNo, the corresponding servant data is returned.
 Otherwise, it will look up the actual ID field.
-
-- **lang**: returns English servant names if querying JP data. Doesn't do anything if querying NA data.
 """
+get_servant_description += basic_find_servant_extra
 pre_processed_data_links = """
 
 Preprocessed data:
@@ -98,7 +97,7 @@ async def get_servant(
 @router.get(
     "/{region}/equip/search",
     summary="Find and get CE data",
-    description=EquipSearchQueryParams.DESCRIPTION,
+    description=EquipSearchQueryParams.DESCRIPTION + basic_find_servant_extra,
     response_description="Basic Equip Entities",
     response_model=List[BasicEquip],
     response_model_exclude_unset=True,
@@ -106,9 +105,10 @@ async def get_servant(
 )
 async def find_equip(
     search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
+    lang: Optional[Language] = None,
 ) -> List[Dict[str, Any]]:
     matches = search.search_equip(search_param, limit=10000)
-    return [basic.get_basic_svt(search_param.region, item) for item in matches]
+    return [basic.get_basic_svt(search_param.region, item, lang) for item in matches]
 
 
 get_equip_description = """Get CE info from ID
@@ -116,6 +116,7 @@ get_equip_description = """Get CE info from ID
 If the given ID is a CE's collectionNo, the corresponding CE data is returned.
 Otherwise, it will look up the actual ID field.
 """
+get_equip_description += basic_find_servant_extra
 pre_processed_equip_links = """
 
 Preprocessed data:
@@ -136,11 +137,13 @@ if settings.documentation_all_nice:
     description=get_equip_description,
     responses=get_error_code([400, 403]),
 )
-async def get_equip(region: Region, item_id: int) -> Dict[str, Any]:
+async def get_equip(
+    region: Region, item_id: int, lang: Optional[Language] = None
+) -> Dict[str, Any]:
     if item_id in masters[region].mstSvtEquipCollectionNo:
         item_id = masters[region].mstSvtEquipCollectionNo[item_id]
     if item_id in masters[region].mstSvtEquipCollectionNo.values():
-        return basic.get_basic_svt(region, item_id)
+        return basic.get_basic_svt(region, item_id, lang)
     else:
         raise HTTPException(status_code=404, detail="Equip not found")
 

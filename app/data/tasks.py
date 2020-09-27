@@ -134,8 +134,15 @@ def generate_exports() -> None:  # pragma: no cover
                         ].mstSvtServantCollectionNo.values()
                     ]
                 )
+                all_basic_equip_en = sort_by_collection_no(
+                    [
+                        get_basic_svt(region, item_id, Language.en)
+                        for item_id in masters[region].mstSvtEquipCollectionNo.values()
+                    ]
+                )
 
                 dump_normal(region, "basic_servant_lang_en", all_basic_servant_en)
+                dump_normal(region, "basic_equip_lang_en", all_basic_equip_en)
 
             run_time = time.perf_counter() - start_time
             logger.info(f"Finished exporting {region} data in {run_time:.4f}s.")
