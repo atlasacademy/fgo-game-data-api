@@ -25,7 +25,10 @@ def out_intenum(input_dict: Dict[int, str], className: str) -> List[str]:
     return intenum_lines
 
 
-EXTRA_STR_NAME = {"NiceStatusRank": ["unknown"]}
+EXTRA_STR_NAME = {
+    "NiceStatusRank": {-1: "unknown"},
+    "NiceSvtFlag": {0: "normal", 63: "goetia"},
+}
 
 
 STR_NAME_OVERRIDE = {
@@ -75,7 +78,9 @@ STR_NAME_COMMENT = {
 
 def out_strenum(input_dict: Dict[int, str], nice_class: str) -> List[str]:
     strenum_lines = [f"class {nice_class}(str, Enum):\n"]
-    for enumstr in list(input_dict.values()) + EXTRA_STR_NAME.get(nice_class, []):
+    for enumstr in list(input_dict.values()) + list(
+        EXTRA_STR_NAME.get(nice_class, {}).values()
+    ):
         json_name = convert_name(enumstr)
         str_name = STR_NAME_OVERRIDE.get(nice_class, {}).get(json_name, json_name)
         str_comment = STR_NAME_COMMENT.get(nice_class, {}).get(json_name, "")
@@ -87,7 +92,9 @@ def out_enumdict(
     input_dict: Dict[int, str], nice_class: str, dict_name: str
 ) -> List[str]:
     strenumdict_lines = [f"{dict_name}: Dict[int, {nice_class}] = {{\n"]
-    for enumint, enumstr in input_dict.items():
+    for enumint, enumstr in list(input_dict.items()) + list(
+        EXTRA_STR_NAME.get(nice_class, {}).items()
+    ):
         json_name = convert_name(enumstr)
         strenumdict_lines.append(f"    {enumint}: {nice_class}.{json_name},\n")
     strenumdict_lines.append("}\n")
@@ -113,6 +120,7 @@ def cs_enums_to_lines(
 ENUMS = [
     ("Gender.Type", "GenderType", "NiceGender", "GENDER_TYPE_NAME"),
     ("SvtType.Type", "SvtType", "NiceSvtType", "SVT_TYPE_NAME"),
+    ("ServantEntity.FlagField", "SvtFlag", "NiceSvtFlag", "SVT_FLAG_NAME"),
     ("FuncList.TYPE", "FuncType", "NiceFuncType", "FUNC_TYPE_NAME"),
     ("Target.TYPE", "FuncTargetType", "NiceFuncTargetType", "FUNC_TARGETTYPE_NAME"),
     ("BuffList.TYPE", "BuffType", "NiceBuffType", "BUFF_TYPE_NAME"),

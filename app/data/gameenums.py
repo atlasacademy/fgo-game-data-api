@@ -68,6 +68,35 @@ SVT_TYPE_NAME: Dict[int, NiceSvtType] = {
 }
 
 
+class SvtFlag(IntEnum):
+    ONLY_USE_FOR_NPC = 2
+    SVT_EQUIP_FRIEND_SHIP = 4
+    IGNORE_COMBINE_LIMIT_SPECIAL = 8
+    SVT_EQUIP_EXP = 16
+    SVT_EQUIP_CHOCOLATE = 32
+
+
+class NiceSvtFlag(str, Enum):
+    onlyUseForNpc = "onlyUseForNpc"
+    svtEquipFriendShip = "svtEquipFriendShip"
+    ignoreCombineLimitSpecial = "ignoreCombineLimitSpecial"
+    svtEquipExp = "svtEquipExp"
+    svtEquipChocolate = "svtEquipChocolate"
+    normal = "normal"
+    goetia = "goetia"
+
+
+SVT_FLAG_NAME: Dict[int, NiceSvtFlag] = {
+    2: NiceSvtFlag.onlyUseForNpc,
+    4: NiceSvtFlag.svtEquipFriendShip,
+    8: NiceSvtFlag.ignoreCombineLimitSpecial,
+    16: NiceSvtFlag.svtEquipExp,
+    32: NiceSvtFlag.svtEquipChocolate,
+    0: NiceSvtFlag.normal,
+    63: NiceSvtFlag.goetia,
+}
+
+
 class FuncType(IntEnum):
     NONE = 0
     ADD_STATE = 1
@@ -2104,4 +2133,5 @@ STATUS_RANK_NAME: Dict[int, NiceStatusRank] = {
     61: NiceStatusRank.ex,
     98: NiceStatusRank.question,
     99: NiceStatusRank.none,
+    -1: NiceStatusRank.unknown,
 }

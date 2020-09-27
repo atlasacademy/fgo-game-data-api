@@ -1,4 +1,4 @@
-from enum import Enum, IntEnum
+from enum import Enum
 from typing import Dict
 
 from .gameenums import (
@@ -15,6 +15,7 @@ from .gameenums import (
     QUEST_CONSUME_TYPE_NAME,
     QUEST_TYPE_NAME,
     STATUS_RANK_NAME,
+    SVT_FLAG_NAME,
     SVT_TYPE_NAME,
     VOICE_COND_NAME,
     VOICE_TYPE_NAME,
@@ -33,6 +34,7 @@ from .gameenums import (
     NiceItemType,
     NiceQuestType,
     NiceStatusRank,
+    NiceSvtFlag,
     NiceSvtType,
     NiceSvtVoiceType,
     NiceVoiceCondType,
@@ -48,36 +50,6 @@ SVT_TYPE_NAME_REVERSE: Dict[NiceSvtType, int] = {v: k for k, v in SVT_TYPE_NAME.
 
 
 ### Servant Flag ###
-
-
-class SvtFlag(IntEnum):
-    ONLY_USE_FOR_NPC = 2
-    SVT_EQUIP_FRIEND_SHIP = 4
-    IGNORE_COMBINE_LIMIT_SPECIAL = 8
-    SVT_EQUIP_EXP = 16
-    SVT_EQUIP_CHOCOLATE = 32
-
-
-class NiceSvtFlag(str, Enum):
-    onlyUseForNpc = "onlyUseForNpc"
-    svtEquipFriendShip = "svtEquipFriendShip"
-    ignoreCombineLimitSpecial = "ignoreCombineLimitSpecial"
-    svtEquipExp = "svtEquipExp"
-    svtEquipChocolate = "svtEquipChocolate"
-    # Not in the code
-    normal = "normal"
-    goetia = "goetia"
-
-
-SVT_FLAG_NAME: Dict[int, NiceSvtFlag] = {
-    0: NiceSvtFlag.normal,
-    2: NiceSvtFlag.onlyUseForNpc,
-    4: NiceSvtFlag.svtEquipFriendShip,
-    8: NiceSvtFlag.ignoreCombineLimitSpecial,
-    16: NiceSvtFlag.svtEquipExp,
-    32: NiceSvtFlag.svtEquipChocolate,
-    63: NiceSvtFlag.goetia,
-}
 
 
 SVT_FLAG_NAME_REVERSE: Dict[NiceSvtFlag, int] = {v: k for k, v in SVT_FLAG_NAME.items()}
