@@ -259,6 +259,14 @@ def get_servant_entity(
         voices += masters[region].mstSvtVoiceId.get(servant_id, [])
         subtitles += masters[region].mstSubtitleId.get(servant_id, [])
 
+        for main_id, sub_id in (
+            ("JEKYLL_SVT_ID", "HYDE_SVT_ID"),
+            ("MASHU_SVT_ID1", "MASHU_SVT_ID2"),
+        ):
+            if servant_id == masters[region].mstConstantId[main_id]:
+                sub_svt_id = masters[region].mstConstantId[sub_id]
+                voices += masters[region].mstSvtVoiceId.get(sub_svt_id, [])
+
         # Moriarty deadheat summer lines use his hidden name svt_id
         for svt_id in [change.svtVoiceId for change in svt_entity.mstSvtChange] + [
             servant_id

@@ -6,6 +6,12 @@ from ..enums import SvtType
 from .base import BaseModelORJson
 
 
+class MstConstant(BaseModelORJson):
+    name: str  # "IS_IOS_EXAMINATION"
+    value: int  # 0
+    createdAt: int  # 946652400
+
+
 class MstBuff(BaseModel):
     vals: List[int]  # [3004],
     tvals: List[int]  # [5000, 4001],
@@ -609,6 +615,7 @@ class MysticCodeEntity(BaseModelORJson):
 
 
 class Master(BaseModel):
+    mstConstantId: Dict[str, int]
     mstBuff: List[MstBuff]
     mstFunc: List[MstFunc]
     mstSkill: List[MstSkill]

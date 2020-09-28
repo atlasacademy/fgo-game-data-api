@@ -39,6 +39,7 @@ MASTER_WITHOUT_ID = {
     "mstCommandCodeComment",
     "mstSvtGroup",
     "mstClosedMessage",
+    "mstConstant",
 }
 SVT_STUFFS = {
     "mstSvtCard",
@@ -130,9 +131,13 @@ def update_gamedata() -> None:
 
         master["mstSvtExp"] = sorted(master["mstSvtExp"], key=lambda item: item["lv"])
 
-        master["mstClosedMessageId"] = {
-            item["id"]: item["message"] for item in master["mstClosedMessage"]
-        }
+        for masters_table, source_table, lookup_id, result_id in (
+            ("mstClosedMessageId", "mstClosedMessage", "id", "message"),
+            ("mstConstantId", "mstConstant", "name", "value"),
+        ):
+            master[masters_table] = {
+                item[lookup_id]: item[result_id] for item in master[source_table]
+            }
 
         for masters_table, source_table, lookup_id, result_id in (
             ("mstSvtSkillSvtId", "mstSvtSkill", "svtId", "skillId"),
