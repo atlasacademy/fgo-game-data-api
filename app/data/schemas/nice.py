@@ -61,6 +61,7 @@ class AssetURL:
     }
     commandCode: str = "{base_url}/{region}/CommandCodes/c_{item_id}.png"
     commandGraph: str = "{base_url}/{region}/CommandGraph/{item_id}a.png"
+    audio: str = "{base_url}/{region}/Audio/{folder}/{id}.mp3"
 
 
 class NiceItem(BaseModelORJson):
@@ -362,6 +363,7 @@ class NiceVoiceLine(BaseModel):
     svtVoiceType: Optional[NiceSvtVoiceType] = None
     overwriteName: str
     id: List[str]
+    audioAssets: List[str]
     delay: List[int]
     face: List[int]
     form: List[int]

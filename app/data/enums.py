@@ -39,6 +39,7 @@ from .gameenums import (
     NiceSvtVoiceType,
     NiceVoiceCondType,
     SvtType,
+    SvtVoiceType,
     VoiceCondType,
 )
 
@@ -768,6 +769,7 @@ __all__ = [
     "VoiceCondType",
     "NiceVoiceCondType",
     "VOICE_COND_NAME",
+    "SvtVoiceType",
     "NiceSvtVoiceType",
     "VOICE_TYPE_NAME",
     "NiceQuestType",

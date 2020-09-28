@@ -1740,6 +1740,11 @@
             "svtVoiceType": "home",
             "overwriteName": "",
             "id": ["0_H010", "0_H011", "0_H012"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H010.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H011.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H012.mp3"
+            ],
             "delay": [0, 0, 0],
             "face": [1, 0, 1],
             "form": [0, 0, 0],
@@ -1762,6 +1767,11 @@
             "svtVoiceType": "home",
             "overwriteName": "",
             "id": ["0_H020", "0_H021", "0_H022"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H020.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H021.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H022.mp3"
+            ],
             "delay": [0, 0, 0],
             "face": [0, 5, 1],
             "form": [0, 0, 0],
@@ -1779,6 +1789,9 @@
             "svtVoiceType": "home",
             "overwriteName": "",
             "id": ["0_H030"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H030.mp3"
+            ],
             "delay": [0],
             "face": [5],
             "form": [0],
@@ -1794,6 +1807,10 @@
             "svtVoiceType": "home",
             "overwriteName": "",
             "id": ["0_H040", "0_H041"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H040.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H041.mp3"
+            ],
             "delay": [0, 0],
             "face": [0, 1],
             "form": [0, 0],
@@ -1809,6 +1826,10 @@
             "svtVoiceType": "home",
             "overwriteName": "",
             "id": ["0_H050", "0_H051"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H050.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H051.mp3"
+            ],
             "delay": [0, 0],
             "face": [5, 4],
             "form": [0, 0],
@@ -1824,6 +1845,11 @@
             "svtVoiceType": "home",
             "overwriteName": "",
             "id": ["0_H060", "0_H061", "0_H062"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H060.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H061.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H062.mp3"
+            ],
             "delay": [0, 0, 0],
             "face": [0, 0, 4],
             "form": [0, 0, 0],
@@ -1839,6 +1865,11 @@
             "svtVoiceType": "home",
             "overwriteName": "",
             "id": ["0_H070", "0_H071", "0_H072"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H070.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H071.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H072.mp3"
+            ],
             "delay": [0, 0, 0],
             "face": [5, 5, 5],
             "form": [0, 0, 0],
@@ -1854,6 +1885,12 @@
             "svtVoiceType": "home",
             "overwriteName": "",
             "id": ["0_H080", "0_H081", "0_H082", "0_H083"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H080.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H081.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H082.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H083.mp3"
+            ],
             "delay": [0, 0, 0, 0],
             "face": [0, 4, 5, 5],
             "form": [0, 0, 0, 0],
@@ -1869,6 +1906,12 @@
             "svtVoiceType": "home",
             "overwriteName": "",
             "id": ["0_H090", "0_H091", "0_H092", "0_H093"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H090.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H091.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H092.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H093.mp3"
+            ],
             "delay": [0, 0, 0, 0],
             "face": [0, 0, 4, 5],
             "form": [0, 0, 0, 0],
@@ -1891,6 +1934,12 @@
             "svtVoiceType": "home",
             "overwriteName": "",
             "id": ["0_H100", "0_H101", "0_H102", "0_H103"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H100.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H101.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H102.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H103.mp3"
+            ],
             "delay": [0, 0, 0, 0],
             "face": [1, 0, 4, 5],
             "form": [0, 0, 0, 0],
@@ -1913,6 +1962,12 @@
             "svtVoiceType": "home",
             "overwriteName": "",
             "id": ["0_H110", "0_H111", "0_H112", "0_H113"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H110.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H111.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H112.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H113.mp3"
+            ],
             "delay": [0, 0, 0, 0],
             "face": [5, 5, 5, 2],
             "form": [0, 0, 0, 0],
@@ -1935,6 +1990,12 @@
             "svtVoiceType": "home",
             "overwriteName": "",
             "id": ["0_H120", "0_H121", "0_H122", "0_H123"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H120.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H121.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H122.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H123.mp3"
+            ],
             "delay": [0, 0, 0, 0],
             "face": [0, 4, 1, 0],
             "form": [0, 0, 0, 0],
@@ -1957,6 +2018,13 @@
             "svtVoiceType": "home",
             "overwriteName": "",
             "id": ["0_H130", "0_H131", "0_H132", "0_H133", "0_H134"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H130.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H131.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H132.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H133.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H134.mp3"
+            ],
             "delay": [0, 0, 0, 0, 0],
             "face": [5, 5, 4, 5, 0],
             "form": [0, 0, 0, 0, 0],
@@ -1979,6 +2047,12 @@
             "svtVoiceType": "home",
             "overwriteName": "",
             "id": ["0_H140", "0_H141", "0_H142", "0_H143"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H140.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H141.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H142.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H143.mp3"
+            ],
             "delay": [0, 0, 0, 0],
             "face": [0, 1, 5, 0],
             "form": [0, 0, 0, 0],
@@ -2001,6 +2075,10 @@
             "svtVoiceType": "home",
             "overwriteName": "",
             "id": ["0_H150", "0_H151"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H150.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H151.mp3"
+            ],
             "delay": [0, 0],
             "face": [1, 0],
             "form": [0, 0],
@@ -2043,6 +2121,10 @@
             "svtVoiceType": "home",
             "overwriteName": "",
             "id": ["0_H160", "0_H161"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H160.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H161.mp3"
+            ],
             "delay": [0, 0],
             "face": [0, 1],
             "form": [0, 0],
@@ -2065,6 +2147,13 @@
             "svtVoiceType": "home",
             "overwriteName": "",
             "id": ["0_H170", "0_H171", "0_H172", "0_H173", "0_H174"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H170.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H171.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H172.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H173.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H174.mp3"
+            ],
             "delay": [0, 0, 0, 0, 0],
             "face": [5, 4, 4, 0, 5],
             "form": [0, 0, 0, 0, 0],
@@ -2087,6 +2176,9 @@
             "svtVoiceType": "home",
             "overwriteName": "",
             "id": ["0_H180"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H180.mp3"
+            ],
             "delay": [0],
             "face": [1],
             "form": [0],
@@ -2109,6 +2201,9 @@
             "svtVoiceType": "home",
             "overwriteName": "",
             "id": ["0_H190"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H190.mp3"
+            ],
             "delay": [0],
             "face": [5],
             "form": [0],
@@ -2136,6 +2231,9 @@
             "svtVoiceType": "groeth",
             "overwriteName": "",
             "id": ["0_G010"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_G010.mp3"
+            ],
             "delay": [0],
             "face": [1],
             "form": [0],
@@ -2158,6 +2256,9 @@
             "svtVoiceType": "groeth",
             "overwriteName": "",
             "id": ["0_G020"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_G020.mp3"
+            ],
             "delay": [0],
             "face": [2],
             "form": [0],
@@ -2180,6 +2281,10 @@
             "svtVoiceType": "groeth",
             "overwriteName": "",
             "id": ["0_G030", "0_G031"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_G030.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_G031.mp3"
+            ],
             "delay": [0, 0],
             "face": [0, 1],
             "form": [0, 0],
@@ -2202,6 +2307,10 @@
             "svtVoiceType": "groeth",
             "overwriteName": "",
             "id": ["0_G040", "0_G041"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_G040.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_G041.mp3"
+            ],
             "delay": [0, 0],
             "face": [2, 0],
             "form": [0, 0],
@@ -2224,6 +2333,11 @@
             "svtVoiceType": "groeth",
             "overwriteName": "",
             "id": ["0_G050", "0_G051", "0_G052"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_G050.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_G051.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_G052.mp3"
+            ],
             "delay": [0, 0, 0],
             "face": [0, 4, 5],
             "form": [0, 0, 0],
@@ -2251,6 +2365,12 @@
             "svtVoiceType": "firstGet",
             "overwriteName": "",
             "id": ["0_S010", "0_S011", "0_S012", "0_S013"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_S010.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_S011.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_S012.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_S013.mp3"
+            ],
             "delay": [0, 0, 0, 0],
             "face": [2, 2, 5, 1],
             "form": [0, 0, 0, 0],
@@ -2276,6 +2396,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "",
             "id": ["0_B010"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B010.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2291,6 +2414,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "",
             "id": ["0_B020"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B020.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2306,6 +2432,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "",
             "id": ["0_B030"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B030.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2321,6 +2450,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "",
             "id": ["0_B040"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B040.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2336,6 +2468,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "",
             "id": ["0_B080"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B080.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2351,6 +2486,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "",
             "id": ["0_B090"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B090.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2366,6 +2504,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "",
             "id": ["0_B100"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B100.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2381,6 +2522,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "",
             "id": ["0_B110"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B110.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2396,6 +2540,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "",
             "id": ["0_B120"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B120.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2411,6 +2558,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "",
             "id": ["0_B130"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B130.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2426,6 +2576,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "",
             "id": ["0_B140"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B140.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2441,6 +2594,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "",
             "id": ["0_B150"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B150.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2456,6 +2612,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "",
             "id": ["0_B160"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B160.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2471,6 +2630,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "",
             "id": ["0_B170"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B170.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2486,6 +2648,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "",
             "id": ["0_B180"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B180.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2501,6 +2666,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "",
             "id": ["0_B190"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B190.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2516,6 +2684,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "",
             "id": ["0_B200"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B200.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2531,6 +2702,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "",
             "id": ["0_B220"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B220.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2551,6 +2725,11 @@
             "svtVoiceType": "treasureDevice",
             "overwriteName": "",
             "id": ["0_B050", "0_B051", "0_B052"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/NoblePhantasm_1100200/0_B050.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/NoblePhantasm_1100200/0_B051.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/NoblePhantasm_1100200/0_B052.mp3"
+            ],
             "delay": [0, 4, 0],
             "face": [4, 4, 4],
             "form": [0, 0, 0],
@@ -2578,6 +2757,11 @@
             "svtVoiceType": "home",
             "overwriteName": "About Spiritron Dress Monte Cristo Selection",
             "id": ["11_H9000", "11_H9001", "11_H9002"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/11_H9000.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/11_H9001.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/11_H9002.mp3"
+            ],
             "delay": [0, 0, 0],
             "face": [5, 0, 6],
             "form": [0, 0, 0],
@@ -2598,6 +2782,9 @@
             "svtVoiceType": "groeth",
             "overwriteName": "Level Up Monte Cristo Selection",
             "id": ["11_G010"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/11_G010.mp3"
+            ],
             "delay": [0],
             "face": [1],
             "form": [0],
@@ -2620,6 +2807,10 @@
             "svtVoiceType": "groeth",
             "overwriteName": "Unlock Wardrobe Monte Cristo Selection",
             "id": ["11_G060", "11_G061"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/11_G060.mp3",
+              "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/11_G061.mp3"
+            ],
             "delay": [0, 0],
             "face": [6, 1],
             "form": [0, 0],
@@ -2647,6 +2838,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "Battle Start 1 Monte Cristo Selection",
             "id": ["11_B100"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B100.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2662,6 +2856,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "Battle Start 2 Monte Cristo Selection",
             "id": ["11_B110"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B110.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2677,6 +2874,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "Skill 1 Monte Cristo Selection",
             "id": ["11_B080"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B080.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2692,6 +2892,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "Skill 2 Monte Cristo Selection",
             "id": ["11_B090"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B090.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2707,6 +2910,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "Command Card 1 Monte Cristo Selection",
             "id": ["11_B180"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B180.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2722,6 +2928,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "Command Card 2 Monte Cristo Selection",
             "id": ["11_B190"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B190.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2737,6 +2946,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "Command Card 3 Monte Cristo Selection",
             "id": ["11_B200"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B200.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2752,6 +2964,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "Noble Phantasm Card Monte Cristo Selection",
             "id": ["11_B220"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B220.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2767,6 +2982,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "Attack 1 Monte Cristo Selection",
             "id": ["11_B010"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B010.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2782,6 +3000,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "Attack 2 Monte Cristo Selection",
             "id": ["11_B020"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B020.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2797,6 +3018,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "Attack 3 Monte Cristo Selection",
             "id": ["11_B030"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B030.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2812,6 +3036,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "Extra Attack Monte Cristo Selection",
             "id": ["11_B040"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B040.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2827,6 +3054,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "Damage 1 Monte Cristo Selection",
             "id": ["11_B150"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B150.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2842,6 +3072,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "Damage 2 Monte Cristo Selection",
             "id": ["11_B140"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B140.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2857,6 +3090,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "Incapacitated 1 Monte Cristo Selection",
             "id": ["11_B160"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B160.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2872,6 +3108,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "Incapacitated 2 Monte Cristo Selection",
             "id": ["11_B170"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B170.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2887,6 +3126,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "Victory 1 Monte Cristo Selection",
             "id": ["11_B120"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B120.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],
@@ -2902,6 +3144,9 @@
             "svtVoiceType": "battle",
             "overwriteName": "Victory 2 Monte Cristo Selection",
             "id": ["11_B130"],
+            "audioAssets": [
+              "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B130.mp3"
+            ],
             "delay": [0],
             "face": [0],
             "form": [0],

@@ -43,6 +43,7 @@ from .enums import (
     NiceStatusRank,
     SvtClass,
     SvtType,
+    SvtVoiceType,
     VoiceCondType,
 )
 from .gamedata import masters
@@ -525,6 +526,22 @@ def get_nice_costume(costume: MstSvtCostume) -> Dict[str, Union[str, int]]:
     }
 
 
+def get_voice_folder(voice_type: int) -> str:
+    if voice_type == SvtVoiceType.BATTLE:
+        return "Servants_"
+    elif voice_type == SvtVoiceType.TREASURE_DEVICE:
+        return "NoblePhantasm_"
+    else:
+        return "ChrVoice_"
+
+
+def get_voice_url(region: Region, svt_id: int, voice_type: int, voice_id: str) -> str:
+    folder = get_voice_folder(voice_type) + str(svt_id)
+    return AssetURL.audio.format(
+        base_url=settings.asset_url, region=region, folder=folder, id=voice_id
+    )
+
+
 def get_nice_voice_cond(
     region: Region, cond: ScriptJsonCond, costume_ids: Dict[int, int]
 ) -> Dict[str, Any]:
@@ -548,12 +565,16 @@ def get_nice_voice_line(
     region: Region,
     script: ScriptJson,
     svt_id: int,
+    voice_type: int,
     costume_ids: Dict[int, int],
     subtitle_ids: Dict[str, str],
 ) -> Dict[str, Any]:
     voice_line: Dict[str, Any] = {
         "overwriteName": nullable_to_string(script.overwriteName),
         "id": [item.id for item in script.infos],
+        "audioAssets": [
+            get_voice_url(region, svt_id, voice_type, item.id) for item in script.infos
+        ],
         "delay": [item.delay for item in script.infos],
         "face": [item.face for item in script.infos],
         "form": [item.form for item in script.infos],
@@ -595,8 +616,10 @@ def get_nice_voice_group(
     return {
         "type": VOICE_TYPE_NAME[voice.type],
         "voiceLines": [
-            get_nice_voice_line(region, item, voice.id, costume_ids, subtitle_ids)
-            for item in voice.scriptJson
+            get_nice_voice_line(
+                region, script, voice.id, voice.type, costume_ids, subtitle_ids
+            )
+            for script in voice.scriptJson
         ],
     }
 
