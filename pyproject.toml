@@ -7,7 +7,7 @@ authors = ["squaresmile <squaresmile@protonmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 fastapi = "^0"
-uvicorn = "^0"
+uvicorn = {extras = ["standard"], version = "^0.12"}
 python-dotenv = "^0"
 fuzzywuzzy = "^0"
 python-Levenshtein = "^0"
@@ -26,13 +26,13 @@ coverage = "^5.1"
 fuzzywuzzy-stubs = "^0.0.1"
 
 [tool.isort]
-line_length=88
-known_third_party="orjson"
-multi_line_output=3
-force_grid_wrap=0
-lines_after_imports=2
-combine_as_imports=true
-include_trailing_comma=true
+line_length = 88
+known_third_party = "orjson"
+multi_line_output = 3
+force_grid_wrap = 0
+lines_after_imports = 2
+combine_as_imports = true
+include_trailing_comma = true
 
 [tool.pylint.MASTER]
 extension-pkg-whitelist = "orjson,pydantic"
