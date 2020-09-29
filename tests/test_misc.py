@@ -49,11 +49,11 @@ def test_parse_datavals_fail_list_str(dataVals: str) -> None:
         parse_dataVals(dataVals, 1, Region.NA)
 
 
-def test_reverseDepth_fail() -> None:
-    with pytest.raises(TypeError):
-        print(ReverseDepth.function >= 1)  # type: ignore
+def test_reverseDepth_str_comparison() -> None:
+    assert ReverseDepth.function >= "aaaaa"
 
 
+# pylint: disable=no-value-for-parameter
 def test_lru_cache() -> None:
     get_nice_servant(Region.NA, 202900, Language.en)
     get_nice_servant(Region.NA, 202900, Language.en)

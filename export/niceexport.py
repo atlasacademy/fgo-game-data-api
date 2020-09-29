@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from typing import Any, Callable, Dict, List
+from typing import Any, Callable, Dict, List, NamedTuple
 
 from app.config import Settings
 from app.data.common import Region
@@ -207,50 +207,55 @@ def get_nice_buff_action(raw_data: Any) -> Any:
     return out_data
 
 
+class ExportParam(NamedTuple):
+    input: str
+    converter: Callable[[Any], Any]
+    output: str
+
+
 TO_EXPORT = [
-    {"input": "mstConstant", "converter": get_nice_constant, "output": "NiceConstant",},
-    {
-        "input": "mstClass",
-        "converter": get_nice_attackrate,
-        "output": "NiceClassAttackRate",
-    },
-    {"input": "mstCard", "converter": get_nice_card_data, "output": "NiceCard"},
-    {
-        "input": "mstAttriRelation",
-        "converter": get_nice_attri_relation,
-        "output": "NiceAttributeRelation",
-    },
-    {
-        "input": "mstClassRelation",
-        "converter": get_nice_class_relation,
-        "output": "NiceClassRelation",
-    },
-    {
-        "input": "mstBuff",
-        "converter": get_nice_buff_action,
-        "output": "NiceBuffList.ActionList",
-    },
+    ExportParam(
+        input="mstConstant", converter=get_nice_constant, output="NiceConstant"
+    ),
+    ExportParam(
+        input="mstClass", converter=get_nice_attackrate, output="NiceClassAttackRate"
+    ),
+    ExportParam(input="mstCard", converter=get_nice_card_data, output="NiceCard"),
+    ExportParam(
+        input="mstAttriRelation",
+        converter=get_nice_attri_relation,
+        output="NiceAttributeRelation",
+    ),
+    ExportParam(
+        input="mstClassRelation",
+        converter=get_nice_class_relation,
+        output="NiceClassRelation",
+    ),
+    ExportParam(
+        input="mstBuff",
+        converter=get_nice_buff_action,
+        output="NiceBuffList.ActionList",
+    ),
 ]
 
 
 def export_constant(region: Region, master_path: Path, export_path: Path) -> None:
     for item in TO_EXPORT:
-        print(f'Exporting {item["input"]} ...')
-        with open(master_path / f'{item["input"]}.json', "r", encoding="utf-8") as fp:
+        print(f"Exporting {item.input} ...")
+        with open(master_path / f"{item.input}.json", "r", encoding="utf-8") as fp:
             raw_data = json.load(fp)
-        converter: Callable = item["converter"]  # type: ignore
-        export_file = export_path / region.value / f'{item["output"]}.json'
+        export_file = export_path / region.value / f"{item.output}.json"
         with open(export_file, "w", encoding="utf-8") as fp:
-            json.dump(converter(raw_data), fp, ensure_ascii=False)
+            json.dump(item.converter(raw_data), fp, ensure_ascii=False)
 
 
 def export_nice_master_lvl(region: Region, master_path: Path, export_path: Path) -> Any:
     print("Exporting nice master level ...")
-    constant_path = export_path / region.value / f'{TO_EXPORT[0]["output"]}.json'
+    constant_path = export_path / region.value / f"{TO_EXPORT[0].output}.json"
     with open(constant_path, "r", encoding="utf-8") as fp:
         constant = json.load(fp)
     with open(master_path / "mstUserExp.json", "r", encoding="utf-8") as fp:
-        mstUserExp = json.load(fp)
+        mstUserExp: List[Dict[str, int]] = json.load(fp)
 
     def get_current_value(base: int, key: str, current: int) -> int:
         return base + sum([item[key] for item in mstUserExp[: current + 1]])
@@ -259,7 +264,7 @@ def export_nice_master_lvl(region: Region, master_path: Path, export_path: Path)
         if current == 0:
             return 0
         else:
-            return mstUserExp[current - 1]["exp"]  # type: ignore
+            return mstUserExp[current - 1]["exp"]
 
     nice_data = {
         lvl["lv"]: {

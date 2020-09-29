@@ -1,9 +1,13 @@
-from typing import Any, Dict, Iterable, List, Mapping, Union
+from typing import Any, Dict, Iterable, List, Mapping, TypeVar, Union
 
 from .enums import TRAIT_NAME, Trait
 
 
-def get_safe(input_dict: Mapping[Any, Any], key: Any) -> Any:
+VT = TypeVar("VT")
+LT = TypeVar("LT")
+
+
+def get_safe(input_dict: Mapping[Any, VT], key: LT) -> Union[VT, LT]:
     """
     A dict getter that returns the key if it's not found in the dict.
     The enums mapping is or will be incomplete eventually.

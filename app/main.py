@@ -1,8 +1,8 @@
 import inspect
 import time
-from typing import Any, Dict
+from typing import Any, Awaitable, Callable, Dict
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
@@ -107,7 +107,9 @@ app.add_middleware(CORSMiddleware, allow_origins=["*"])
 
 
 @app.middleware("http")
-async def add_process_time_header(request: Request, call_next):  # type: ignore
+async def add_process_time_header(
+    request: Request, call_next: Callable[..., Awaitable[Response]]
+) -> Response:
     start_time = time.perf_counter()
     response = await call_next(request)
     process_time = round((time.perf_counter() - start_time) * 1000, 2)

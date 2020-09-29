@@ -1,8 +1,5 @@
 from enum import Enum
-from typing import TypeVar
-
-
-T = TypeVar("T", bound="ReverseDepth")
+from typing import Union
 
 
 class Region(str, Enum):
@@ -35,7 +32,7 @@ class ReverseDepth(str, Enum):
         else:
             return 3
 
-    def __ge__(self: T, other: T) -> bool:  # type: ignore[override]
-        if other.__class__ is self.__class__:
+    def __ge__(self: "ReverseDepth", other: Union["ReverseDepth", str]) -> bool:
+        if isinstance(other, ReverseDepth):
             return self.order() >= other.order()
-        return NotImplemented
+        return str(self.value) >= other
