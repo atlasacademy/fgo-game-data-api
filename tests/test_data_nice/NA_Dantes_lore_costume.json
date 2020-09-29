@@ -1745,7 +1745,7 @@
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H011.mp3",
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H012.mp3"
             ],
-            "delay": [0, 0, 0],
+            "delay": [0.0, 0.1, 0.1],
             "face": [1, 0, 1],
             "form": [0, 0, 0],
             "text": ["", "", ""],
@@ -1772,7 +1772,7 @@
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H021.mp3",
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H022.mp3"
             ],
-            "delay": [0, 0, 0],
+            "delay": [0.0, 0.1, 0.1],
             "face": [0, 5, 1],
             "form": [0, 0, 0],
             "text": ["", "", ""],
@@ -1792,7 +1792,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H030.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [5],
             "form": [0],
             "text": [""],
@@ -1811,7 +1811,7 @@
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H040.mp3",
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H041.mp3"
             ],
-            "delay": [0, 0],
+            "delay": [0.0, 0.1],
             "face": [0, 1],
             "form": [0, 0],
             "text": ["", ""],
@@ -1830,7 +1830,7 @@
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H050.mp3",
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H051.mp3"
             ],
-            "delay": [0, 0],
+            "delay": [0.0, 0.1],
             "face": [5, 4],
             "form": [0, 0],
             "text": ["", ""],
@@ -1850,7 +1850,7 @@
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H061.mp3",
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H062.mp3"
             ],
-            "delay": [0, 0, 0],
+            "delay": [0.0, 0.1, 0.1],
             "face": [0, 0, 4],
             "form": [0, 0, 0],
             "text": ["", "", ""],
@@ -1870,7 +1870,7 @@
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H071.mp3",
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H072.mp3"
             ],
-            "delay": [0, 0, 0],
+            "delay": [0.0, 0.1, 0.1],
             "face": [5, 5, 5],
             "form": [0, 0, 0],
             "text": ["", "", ""],
@@ -1891,7 +1891,7 @@
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H082.mp3",
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H083.mp3"
             ],
-            "delay": [0, 0, 0, 0],
+            "delay": [0.0, 0.3, 0.1, 0.1],
             "face": [0, 4, 5, 5],
             "form": [0, 0, 0, 0],
             "text": ["", "", "", ""],
@@ -1912,7 +1912,7 @@
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H092.mp3",
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H093.mp3"
             ],
-            "delay": [0, 0, 0, 0],
+            "delay": [0.0, 0.1, 0.1, 0.1],
             "face": [0, 0, 4, 5],
             "form": [0, 0, 0, 0],
             "text": ["", "", "", ""],
@@ -1940,7 +1940,7 @@
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H102.mp3",
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H103.mp3"
             ],
-            "delay": [0, 0, 0, 0],
+            "delay": [0.0, 0.1, 0.1, 0.1],
             "face": [1, 0, 4, 5],
             "form": [0, 0, 0, 0],
             "text": ["", "", "", ""],
@@ -1968,7 +1968,7 @@
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H112.mp3",
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H113.mp3"
             ],
-            "delay": [0, 0, 0, 0],
+            "delay": [0.0, 0.1, 0.1, 0.1],
             "face": [5, 5, 5, 2],
             "form": [0, 0, 0, 0],
             "text": ["", "", "", ""],
@@ -1996,7 +1996,7 @@
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H122.mp3",
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H123.mp3"
             ],
-            "delay": [0, 0, 0, 0],
+            "delay": [0.0, 0.1, 0.1, 0.1],
             "face": [0, 4, 1, 0],
             "form": [0, 0, 0, 0],
             "text": ["", "", "", ""],
@@ -2025,7 +2025,7 @@
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H133.mp3",
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H134.mp3"
             ],
-            "delay": [0, 0, 0, 0, 0],
+            "delay": [0.0, 0.1, 0.3, 0.1, 0.1],
             "face": [5, 5, 4, 5, 0],
             "form": [0, 0, 0, 0, 0],
             "text": ["", "", "", "", ""],
@@ -2053,7 +2053,7 @@
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H142.mp3",
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H143.mp3"
             ],
-            "delay": [0, 0, 0, 0],
+            "delay": [0.0, 0.1, 0.1, 0.3],
             "face": [0, 1, 5, 0],
             "form": [0, 0, 0, 0],
             "text": ["", "", "", ""],
@@ -2079,7 +2079,7 @@
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H150.mp3",
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H151.mp3"
             ],
-            "delay": [0, 0],
+            "delay": [0.0, 0.3],
             "face": [1, 0],
             "form": [0, 0],
             "text": ["", ""],
@@ -2125,7 +2125,7 @@
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H160.mp3",
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H161.mp3"
             ],
-            "delay": [0, 0],
+            "delay": [0.0, 0.0],
             "face": [0, 1],
             "form": [0, 0],
             "text": ["", ""],
@@ -2154,7 +2154,7 @@
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H173.mp3",
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H174.mp3"
             ],
-            "delay": [0, 0, 0, 0, 0],
+            "delay": [0.0, 0.3, 0.1, 0.1, 0.1],
             "face": [5, 4, 4, 0, 5],
             "form": [0, 0, 0, 0, 0],
             "text": ["", "", "", "", ""],
@@ -2179,7 +2179,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H180.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [1],
             "form": [0],
             "text": [""],
@@ -2204,7 +2204,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_H190.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [5],
             "form": [0],
             "text": [""],
@@ -2234,7 +2234,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_G010.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [1],
             "form": [0],
             "text": [""],
@@ -2259,7 +2259,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_G020.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [2],
             "form": [0],
             "text": [""],
@@ -2285,7 +2285,7 @@
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_G030.mp3",
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_G031.mp3"
             ],
-            "delay": [0, 0],
+            "delay": [0.0, 0.1],
             "face": [0, 1],
             "form": [0, 0],
             "text": ["", ""],
@@ -2311,7 +2311,7 @@
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_G040.mp3",
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_G041.mp3"
             ],
-            "delay": [0, 0],
+            "delay": [0.0, 0.1],
             "face": [2, 0],
             "form": [0, 0],
             "text": ["", ""],
@@ -2338,7 +2338,7 @@
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_G051.mp3",
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_G052.mp3"
             ],
-            "delay": [0, 0, 0],
+            "delay": [0.0, 0.1, 0.1],
             "face": [0, 4, 5],
             "form": [0, 0, 0],
             "text": ["", "", ""],
@@ -2371,7 +2371,7 @@
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_S012.mp3",
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/0_S013.mp3"
             ],
-            "delay": [0, 0, 0, 0],
+            "delay": [0.0, 0.1, 0.1, 0.1],
             "face": [2, 2, 5, 1],
             "form": [0, 0, 0, 0],
             "text": [
@@ -2399,7 +2399,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B010.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2417,7 +2417,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B020.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2435,7 +2435,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B030.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2453,7 +2453,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B040.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2471,7 +2471,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B080.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2489,7 +2489,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B090.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2507,7 +2507,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B100.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2525,7 +2525,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B110.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2543,7 +2543,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B120.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2561,7 +2561,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B130.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2579,7 +2579,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B140.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2597,7 +2597,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B150.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2615,7 +2615,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B160.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2633,7 +2633,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B170.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2651,7 +2651,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B180.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2669,7 +2669,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B190.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2687,7 +2687,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B200.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2705,7 +2705,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/0_B220.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2730,7 +2730,7 @@
               "https://assets.atlasacademy.io/GameData/NA/Audio/NoblePhantasm_1100200/0_B051.mp3",
               "https://assets.atlasacademy.io/GameData/NA/Audio/NoblePhantasm_1100200/0_B052.mp3"
             ],
-            "delay": [0, 4, 0],
+            "delay": [0.0, 4.189323, 0.01662326],
             "face": [4, 4, 4],
             "form": [0, 0, 0],
             "text": ["", "", ""],
@@ -2762,7 +2762,7 @@
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/11_H9001.mp3",
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/11_H9002.mp3"
             ],
-            "delay": [0, 0, 0],
+            "delay": [0.0, 0.1, 0.3],
             "face": [5, 0, 6],
             "form": [0, 0, 0],
             "text": ["", "", ""],
@@ -2785,7 +2785,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/11_G010.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [1],
             "form": [0],
             "text": [""],
@@ -2811,7 +2811,7 @@
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/11_G060.mp3",
               "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_1100200/11_G061.mp3"
             ],
-            "delay": [0, 0],
+            "delay": [0.0, 0.3],
             "face": [6, 1],
             "form": [0, 0],
             "text": ["", ""],
@@ -2841,7 +2841,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B100.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2859,7 +2859,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B110.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2877,7 +2877,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B080.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2895,7 +2895,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B090.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2913,7 +2913,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B180.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2931,7 +2931,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B190.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2949,7 +2949,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B200.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2967,7 +2967,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B220.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -2985,7 +2985,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B010.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -3003,7 +3003,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B020.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -3021,7 +3021,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B030.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -3039,7 +3039,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B040.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -3057,7 +3057,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B150.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -3075,7 +3075,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B140.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -3093,7 +3093,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B160.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -3111,7 +3111,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B170.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -3129,7 +3129,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B120.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],
@@ -3147,7 +3147,7 @@
             "audioAssets": [
               "https://assets.atlasacademy.io/GameData/NA/Audio/Servants_1100200/11_B130.mp3"
             ],
-            "delay": [0],
+            "delay": [0.0],
             "face": [0],
             "form": [0],
             "text": [""],

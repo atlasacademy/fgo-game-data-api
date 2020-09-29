@@ -1,3 +1,4 @@
+from decimal import Decimal
 from typing import Any, Dict, List, Optional, Set
 
 from pydantic import BaseModel
@@ -471,7 +472,7 @@ class MstVoice(BaseModel):
 class ScriptJsonInfo(BaseModel):
     id: str  # "0_S010"
     face: int  # 0
-    delay: int  # 0.0
+    delay: Decimal  # 0.0
     text: Optional[str]  # "I ask of you, are you my Master?"
     form: int  # 0
 

@@ -1,3 +1,4 @@
+from decimal import Decimal
 from typing import Dict, List, Optional, Union
 
 from pydantic import BaseModel, HttpUrl
@@ -364,7 +365,7 @@ class NiceVoiceLine(BaseModel):
     overwriteName: str
     id: List[str]
     audioAssets: List[str]
-    delay: List[int]
+    delay: List[Decimal]
     face: List[int]
     form: List[int]
     text: List[str]
