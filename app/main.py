@@ -1,4 +1,3 @@
-import inspect
 import time
 from typing import Any, Awaitable, Callable, Dict
 
@@ -22,7 +21,7 @@ app_short_description = "Provide raw and nicely bundled FGO game data."
 
 app_more_description = """
 
-Available documentation styles: [Swagger UI](/docs), [Redoc](/redoc).
+Available documentation styles: [RapiDoc](/rapidoc), [Swagger UI](/docs), [Redoc](/redoc).
 
 To discuss more about the API, you can go to the [Atlas Academy Discord](https://discord.gg/TKJmuCR).
 Bug reports and feature requests are welcome.
@@ -93,7 +92,7 @@ tags_metadata = [
 app = FastAPI(
     title="FGO game data API",
     description=app_description,
-    version="5.9.1",
+    version="5.10.0",
     docs_url=None,
     openapi_tags=tags_metadata,
 )
@@ -134,7 +133,7 @@ app.include_router(
 
 @app.get("/", include_in_schema=False)
 async def root() -> RedirectResponse:
-    return RedirectResponse("/docs")
+    return RedirectResponse("/rapidoc")
 
 
 class RegionInfo(BaseModel):
@@ -192,12 +191,46 @@ def get_swagger_ui_html(
     }}
     main();
     </script>"""
-    return HTMLResponse(inspect.cleandoc(html))
+    return HTMLResponse(html)
 
 
 @app.get("/docs", include_in_schema=False)
 async def custom_swagger_ui_html() -> HTMLResponse:
     return get_swagger_ui_html(
+        openapi_url=str(app.openapi_url),
+        title=app.title,
+        description=app_short_description,
+    )
+
+
+def get_rapidoc_html(
+    openapi_url: str,
+    title: str,
+    description: str,
+    rapidoc_js_url: str = "https://unpkg.com/rapidoc/dist/rapidoc-min.js",
+) -> HTMLResponse:
+
+    html = f"""
+    <!DOCTYPE html>
+    <html lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{title}</title>
+    <meta name="description" content="{description}">
+    <script src="{rapidoc_js_url}"></script>
+    <rapi-doc
+        spec-url="{openapi_url}"
+        sort-endpoints-by=method
+        theme=dark
+        schema-expand-level=1
+        schema-description-expanded=true
+    ></rapi-doc>"""
+    return HTMLResponse(html)
+
+
+@app.get("/rapidoc", include_in_schema=False)
+async def rapidoc_html() -> HTMLResponse:
+    return get_rapidoc_html(
         openapi_url=str(app.openapi_url),
         title=app.title,
         description=app_short_description,

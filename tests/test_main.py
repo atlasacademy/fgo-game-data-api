@@ -17,7 +17,7 @@ class TestMain:
     def test_home_redirect(self) -> None:
         response = client.get("/", allow_redirects=False)
         assert response.status_code == 307
-        assert response.headers["Location"] == "/docs"
+        assert response.headers["Location"] == "/rapidoc"
 
     def test_openapi_gen(self) -> None:
         response = client.get(str(app.openapi_url))
@@ -29,6 +29,10 @@ class TestMain:
 
     def test_docs_gen(self) -> None:
         response = client.get("/docs")
+        assert response.status_code == 200
+
+    def test_rapidoc_gen(self) -> None:
+        response = client.get("/rapidoc")
         assert response.status_code == 200
 
     def test_JP_export_link(self) -> None:
