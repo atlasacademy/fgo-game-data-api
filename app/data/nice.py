@@ -797,26 +797,42 @@ def get_nice_servant(
 
     ascensionAddIndividuality = {
         "ascension": {
-            item.limitCount: get_traits_list(
-                sorted(set(item.individuality + raw_data.mstSvt.individuality))
+            limitAdd.limitCount: get_traits_list(
+                sorted(set(limitAdd.individuality + raw_data.mstSvt.individuality))
             )
-            if item.individuality
+            if limitAdd.individuality
             else []
-            for item in raw_data.mstSvtLimitAdd
-            if item.limitCount not in costume_ids
+            for limitAdd in raw_data.mstSvtLimitAdd
+            if limitAdd.limitCount not in costume_ids
         },
         "costume": {
-            costume_ids[item.limitCount]: get_traits_list(
-                sorted(set(item.individuality + raw_data.mstSvt.individuality))
+            costume_ids[limitAdd.limitCount]: get_traits_list(
+                sorted(set(limitAdd.individuality + raw_data.mstSvt.individuality))
             )
-            if item.individuality
+            if limitAdd.individuality
             else []
-            for item in raw_data.mstSvtLimitAdd
-            if item.limitCount in costume_ids
+            for limitAdd in raw_data.mstSvtLimitAdd
+            if limitAdd.limitCount in costume_ids
         },
     }
 
-    nice_data["ascensionAdd"] = {"individuality": ascensionAddIndividuality}
+    ascensionAddVoicePrefix = {
+        "ascension": {
+            limitAdd.limitCount: limitAdd.voicePrefix
+            for limitAdd in raw_data.mstSvtLimitAdd
+            if limitAdd.limitCount not in costume_ids
+        },
+        "costume": {
+            costume_ids[limitAdd.limitCount]: limitAdd.voicePrefix
+            for limitAdd in raw_data.mstSvtLimitAdd
+            if limitAdd.limitCount in costume_ids
+        },
+    }
+
+    nice_data["ascensionAdd"] = {
+        "individuality": ascensionAddIndividuality,
+        "voicePrefix": ascensionAddVoicePrefix,
+    }
 
     BAD_COMBINE_LIMIT = 4  # The material here doesn't mean anything
     nice_data["ascensionMaterials"] = {

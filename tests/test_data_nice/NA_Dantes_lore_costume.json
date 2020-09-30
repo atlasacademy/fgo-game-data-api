@@ -322,7 +322,8 @@
   ],
   "bondEquip": 9300830,
   "ascensionAdd": {
-    "individuality": { "ascension": {}, "costume": { "1100230": [] } }
+    "individuality": { "ascension": {}, "costume": { "1100230": [] } },
+    "voicePrefix": { "ascension": {}, "costume": { "1100230": 11 } }
   },
   "ascensionMaterials": {
     "0": {

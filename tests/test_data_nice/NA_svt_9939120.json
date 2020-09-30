@@ -247,7 +247,10 @@
   ],
   "bondGrowth": [],
   "bondEquip": 0,
-  "ascensionAdd": { "individuality": { "ascension": {}, "costume": {} } },
+  "ascensionAdd": {
+    "individuality": { "ascension": {}, "costume": {} },
+    "voicePrefix": { "ascension": {}, "costume": {} }
+  },
   "ascensionMaterials": {},
   "skillMaterials": {},
   "costumeMaterials": {},

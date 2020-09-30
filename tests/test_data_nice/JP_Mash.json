@@ -296,6 +296,10 @@
     "individuality": {
       "ascension": {},
       "costume": { "800130": [], "800140": [], "800150": [], "800160": [] }
+    },
+    "voicePrefix": {
+      "ascension": {},
+      "costume": { "800130": 11, "800140": 12, "800150": 12, "800160": 14 }
     }
   },
   "ascensionMaterials": {},

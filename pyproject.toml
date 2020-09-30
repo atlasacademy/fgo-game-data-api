@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fgo-game-data-api"
-version = "5.10.1"
+version = "5.11"
 description = "Provide raw and processed FGO game data"
 authors = ["squaresmile <squaresmile@protonmail.com>"]
 

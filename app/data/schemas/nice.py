@@ -1,7 +1,8 @@
 from decimal import Decimal
-from typing import Dict, List, Optional, Union
+from typing import Dict, Generic, List, Optional, TypeVar, Union
 
 from pydantic import BaseModel, HttpUrl
+from pydantic.generics import GenericModel
 
 from ..enums import (
     Attribute,
@@ -309,13 +310,17 @@ class ExtraAssets(ExtraCCAssets):
     equipFace: ExtraAssetsUrl
 
 
-class AscensionAddIndividuality(BaseModel):
-    ascension: Optional[Dict[int, List[NiceTrait]]] = None
-    costume: Optional[Dict[int, List[NiceTrait]]] = None
+AscensionAddData = TypeVar("AscensionAddData")
+
+
+class AscensionAddEntry(GenericModel, Generic[AscensionAddData]):
+    ascension: Dict[int, AscensionAddData]
+    costume: Dict[int, AscensionAddData]
 
 
 class AscensionAdd(BaseModel):
-    individuality: AscensionAddIndividuality
+    individuality: AscensionAddEntry[List[NiceTrait]]
+    voicePrefix: AscensionAddEntry[int]
 
 
 class NiceLoreComment(BaseModel):
