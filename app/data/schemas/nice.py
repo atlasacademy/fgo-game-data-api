@@ -453,7 +453,7 @@ class NiceServant(BaseModelORJson):
     bondGrowth: List[int]
     bondEquip: int
     ascensionAdd: AscensionAdd
-    servantChange: List[NiceServantChange]
+    svtChange: List[NiceServantChange]
     ascensionMaterials: Dict[int, NiceLvlUpMaterial]
     skillMaterials: Dict[int, NiceLvlUpMaterial]
     costumeMaterials: Dict[int, NiceLvlUpMaterial]

@@ -858,7 +858,7 @@ def get_nice_servant(
         "voicePrefix": ascensionAddVoicePrefix,
     }
 
-    nice_data["servantChange"] = [
+    nice_data["svtChange"] = [
         get_nice_servant_change(change) for change in raw_data.mstSvtChange
     ]
 
