@@ -1,11 +1,10 @@
 import json
 import time
-from pathlib import Path
 from typing import Any, Dict, Iterable, List, Union
 
 from git import Repo
 
-from ..config import Settings, logger
+from ..config import Settings, logger, project_root
 from ..routers.utils import list_string, list_string_exclude
 from .basic import get_basic_cc, get_basic_mc, get_basic_svt
 from .common import Language, Region
@@ -29,8 +28,7 @@ from .schemas.base import BaseModelORJson
 settings = Settings()
 
 
-file_path = Path(__file__).resolve()
-export_path = file_path.parents[2] / "export"
+export_path = project_root / "export"
 
 
 def dump_normal(region: Region, file_name: str, data: Any) -> None:  # pragma: no cover

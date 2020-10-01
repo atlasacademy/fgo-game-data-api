@@ -9,12 +9,13 @@ h11==0.10.0
 httptools==0.1.1; sys_platform != "win32" and sys_platform != "cygwin" and platform_python_implementation != "PyPy"
 orjson==3.4.0
 pydantic==1.6.1
-python-dotenv==0.13.0
+python-dotenv==0.14.0
 python-levenshtein==0.12.0
 pyyaml==5.3.1
 smmap==3.0.4
 starlette==0.13.6
-uvicorn==0.12.0
+toml==0.10.1
+uvicorn==0.12.1
 uvloop==0.14.0; sys_platform != "win32" and sys_platform != "cygwin" and platform_python_implementation != "PyPy"
 watchgod==0.6
 websockets==8.1

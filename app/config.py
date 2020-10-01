@@ -1,7 +1,11 @@
 import logging
+from pathlib import Path
 from typing import Optional
 
 from pydantic import BaseSettings, DirectoryPath, HttpUrl, SecretStr, validator
+
+
+project_root = Path(__file__).resolve().parents[1]
 
 
 uvicorn_logger = logging.getLogger("uvicorn.access")
