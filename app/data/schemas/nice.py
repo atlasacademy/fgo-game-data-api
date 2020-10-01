@@ -323,6 +323,21 @@ class AscensionAdd(BaseModel):
     voicePrefix: AscensionAddEntry[int]
 
 
+class NiceServantChange(BaseModel):
+    beforeTreasureDeviceIds: List[int]
+    afterTreasureDeviceIds: List[int]
+    svtId: int
+    priority: int
+    condType: NiceCondType
+    condTargetId: int
+    condValue: int
+    name: str
+    svtVoiceId: int
+    limitCount: int
+    flag: int
+    battleSvtId: int
+
+
 class NiceLoreComment(BaseModel):
     id: int
     priority: int
@@ -436,6 +451,7 @@ class NiceServant(BaseModelORJson):
     bondGrowth: List[int]
     bondEquip: int
     ascensionAdd: AscensionAdd
+    servantChange: List[NiceServantChange]
     ascensionMaterials: Dict[int, NiceLvlUpMaterial]
     skillMaterials: Dict[int, NiceLvlUpMaterial]
     costumeMaterials: Dict[int, NiceLvlUpMaterial]

@@ -410,6 +410,7 @@
             "individuality": { "ascension": {}, "costume": {} },
             "voicePrefix": { "ascension": {}, "costume": {} }
           },
+          "servantChange": [],
           "ascensionMaterials": {
             "0": {
               "items": [
