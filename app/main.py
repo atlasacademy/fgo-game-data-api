@@ -1,13 +1,14 @@
 import time
 from typing import Any, Awaitable, Callable, Dict
 
+import toml
 from fastapi import FastAPI, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
-from .config import Settings, logger
+from .config import Settings, logger, project_root
 from .data.common import Region
 from .data.tasks import repo_info
 from .routers import basic, nice, raw, secret
@@ -89,10 +90,13 @@ tags_metadata = [
 ]
 
 
+pyproject_toml = toml.load(project_root / "pyproject.toml")
+
+
 app = FastAPI(
     title="FGO game data API",
     description=app_description,
-    version="5.11.0",
+    version=pyproject_toml["tool"]["poetry"]["version"],
     docs_url=None,
     openapi_tags=tags_metadata,
 )

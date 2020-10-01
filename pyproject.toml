@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fgo-game-data-api"
-version = "5.11"
+version = "5.11.0"
 description = "Provide raw and processed FGO game data"
 authors = ["squaresmile <squaresmile@protonmail.com>"]
 
@@ -14,6 +14,7 @@ python-Levenshtein = "^0"
 orjson = "^3.0.1"
 aiofiles = "^0"
 gitpython = "^3.1.3"
+toml = "^0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.0"

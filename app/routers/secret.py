@@ -1,19 +1,16 @@
-from pathlib import Path
-
 from fastapi import APIRouter, BackgroundTasks, Response
 from git import Repo
 
-from ..config import Settings
+from ..config import Settings, project_root
 from ..data.tasks import pull_and_update, repo_info
 from .utils import pretty_print_response
 
 
-file_path = Path(__file__).resolve().parents[2]
 router = APIRouter()
 settings = Settings()
 
 
-repo = Repo(file_path)
+repo = Repo(project_root)
 latest_commit = repo.commit()
 app_info = {
     "hash": latest_commit.hexsha[:6],
@@ -22,7 +19,7 @@ app_info = {
 
 
 instance_info = dict(
-    **repo_info, app=app_info, **settings.dict(), file_path=str(file_path)
+    **repo_info, app=app_info, **settings.dict(), file_path=str(project_root)
 )
 instance_info = {
     k: str(v)
