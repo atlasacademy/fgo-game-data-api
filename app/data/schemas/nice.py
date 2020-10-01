@@ -394,6 +394,8 @@ class NiceVoiceLine(BaseModel):
 
 
 class NiceVoiceGroup(BaseModel):
+    svtId: int
+    voicePrefix: int
     type: NiceSvtVoiceType
     voiceLines: List[NiceVoiceLine]
 
