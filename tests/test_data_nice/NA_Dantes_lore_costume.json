@@ -1732,6 +1732,8 @@
     ],
     "voices": [
       {
+        "svtId": 1100200,
+        "voicePrefix": 0,
         "type": "home",
         "voiceLines": [
           {
@@ -2223,6 +2225,8 @@
         ]
       },
       {
+        "svtId": 1100200,
+        "voicePrefix": 0,
         "type": "groeth",
         "voiceLines": [
           {
@@ -2357,6 +2361,8 @@
         ]
       },
       {
+        "svtId": 1100200,
+        "voicePrefix": 0,
         "type": "firstGet",
         "voiceLines": [
           {
@@ -2388,6 +2394,8 @@
         ]
       },
       {
+        "svtId": 1100200,
+        "voicePrefix": 0,
         "type": "battle",
         "voiceLines": [
           {
@@ -2717,6 +2725,8 @@
         ]
       },
       {
+        "svtId": 1100200,
+        "voicePrefix": 0,
         "type": "treasureDevice",
         "voiceLines": [
           {
@@ -2749,6 +2759,8 @@
         ]
       },
       {
+        "svtId": 1100200,
+        "voicePrefix": 11,
         "type": "home",
         "voiceLines": [
           {
@@ -2774,6 +2786,8 @@
         ]
       },
       {
+        "svtId": 1100200,
+        "voicePrefix": 11,
         "type": "groeth",
         "voiceLines": [
           {
@@ -2830,6 +2844,8 @@
         ]
       },
       {
+        "svtId": 1100200,
+        "voicePrefix": 11,
         "type": "battle",
         "voiceLines": [
           {

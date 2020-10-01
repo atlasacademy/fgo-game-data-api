@@ -69,6 +69,9 @@ from .schemas.nice import (
     NiceServantChange,
     NiceSkillReverse,
     NiceTdReverse,
+    NiceVoiceCond,
+    NiceVoiceGroup,
+    NiceVoiceLine,
 )
 from .schemas.raw import (
     BuffEntityNoReverse,
@@ -563,19 +566,25 @@ def get_voice_url(region: Region, svt_id: int, voice_type: int, voice_id: str) -
 
 def get_nice_voice_cond(
     region: Region, cond: ScriptJsonCond, costume_ids: Dict[int, int]
-) -> Dict[str, Any]:
-    voice_cond = {
-        "condType": VOICE_COND_NAME[cond.condType],
-        "value": cond.value,
-        "eventId": cond.eventId,
-    }
+) -> NiceVoiceCond:
+    value = (
+        costume_ids[cond.value]
+        if cond.condType == VoiceCondType.COSTUME
+        else cond.value
+    )
 
-    if cond.condType == VoiceCondType.COSTUME:
-        voice_cond["value"] = costume_ids[cond.value]
-    if cond.condType == VoiceCondType.SVT_GROUP:
-        voice_cond["valueList"] = masters[region].mstSvtGroupId[cond.value]
-    else:
-        voice_cond["valueList"] = []
+    valueList = (
+        masters[region].mstSvtGroupId[cond.value]
+        if cond.condType == VoiceCondType.SVT_GROUP
+        else []
+    )
+
+    voice_cond = NiceVoiceCond(
+        condType=VOICE_COND_NAME[cond.condType],
+        eventId=cond.eventId,
+        value=value,
+        valueList=valueList,
+    )
 
     return voice_cond
 
@@ -587,38 +596,32 @@ def get_nice_voice_line(
     voice_type: int,
     costume_ids: Dict[int, int],
     subtitle_ids: Dict[str, str],
-) -> Dict[str, Any]:
-    voice_line: Dict[str, Any] = {
-        "overwriteName": nullable_to_string(script.overwriteName),
-        "id": [item.id for item in script.infos],
-        "audioAssets": [
+) -> NiceVoiceLine:
+    first_voice_id = script.infos[0].id
+
+    voice_line = NiceVoiceLine(
+        overwriteName=nullable_to_string(script.overwriteName),
+        id=[item.id for item in script.infos],
+        audioAssets=[
             get_voice_url(region, svt_id, voice_type, item.id) for item in script.infos
         ],
-        "delay": [item.delay for item in script.infos],
-        "face": [item.face for item in script.infos],
-        "form": [item.form for item in script.infos],
-        "text": [nullable_to_string(item.text) for item in script.infos],
-        "conds": [
-            get_nice_voice_cond(region, item, costume_ids) for item in script.conds
-        ],
-    }
-
-    first_voice_id = script.infos[0].id
-    voice_line["subtitle"] = subtitle_ids.get(str(svt_id) + "_" + first_voice_id, "")
+        delay=[item.delay for item in script.infos],
+        face=[item.face for item in script.infos],
+        form=[item.form for item in script.infos],
+        text=[nullable_to_string(item.text) for item in script.infos],
+        conds=[get_nice_voice_cond(region, item, costume_ids) for item in script.conds],
+        subtitle=subtitle_ids.get(str(svt_id) + "_" + first_voice_id, ""),
+    )
 
     # Some voice lines have the first info id ending with xxx1 or xxx2 and we want xxx0
     voice_id = first_voice_id.split("_")[1][:-1] + "0"
     if voice_id in masters[region].mstVoiceId:
         mstVoice = masters[region].mstVoiceId[voice_id]
-        voice_line.update(
-            {
-                "name": mstVoice.name,
-                "condType": COND_TYPE_NAME[mstVoice.condType],
-                "condValue": mstVoice.condValue,
-                "priority": mstVoice.priority,
-                "svtVoiceType": VOICE_TYPE_NAME[mstVoice.svtVoiceType],
-            }
-        )
+        voice_line.name = mstVoice.name
+        voice_line.condType = COND_TYPE_NAME[mstVoice.condType]
+        voice_line.condValue = mstVoice.condValue
+        voice_line.priority = mstVoice.priority
+        voice_line.svtVoiceType = VOICE_TYPE_NAME[mstVoice.svtVoiceType]
 
     return voice_line
 
@@ -628,19 +631,21 @@ def get_nice_voice_group(
     voice: MstSvtVoice,
     costume_ids: Dict[int, int],
     subtitles: List[GlobalNewMstSubtitle],
-) -> Dict[str, Any]:
+) -> NiceVoiceGroup:
 
     subtitle_ids = {item.id: item.serif for item in subtitles}
 
-    return {
-        "type": VOICE_TYPE_NAME[voice.type],
-        "voiceLines": [
+    return NiceVoiceGroup(
+        svtId=voice.id,
+        voicePrefix=voice.voicePrefix,
+        type=VOICE_TYPE_NAME[voice.type],
+        voiceLines=[
             get_nice_voice_line(
                 region, script, voice.id, voice.type, costume_ids, subtitle_ids
             )
             for script in voice.scriptJson
         ],
-    }
+    )
 
 
 @lru_cache(maxsize=settings.lru_cache_size)
