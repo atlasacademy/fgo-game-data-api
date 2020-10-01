@@ -338,3 +338,8 @@ class TestServantSpecial:
         }
         assert response.status_code == 200
         assert response.json()["ascensionAdd"]["individuality"] == expected
+
+    def test_servant_change(self) -> None:
+        response = client.get("/nice/NA/servant/184")
+        assert response.status_code == 200
+        assert response.json()["servantChange"][0]["name"] == "Archer of Inferno"

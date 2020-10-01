@@ -325,6 +325,7 @@
     "individuality": { "ascension": {}, "costume": { "1100230": [] } },
     "voicePrefix": { "ascension": {}, "costume": { "1100230": 11 } }
   },
+  "servantChange": [],
   "ascensionMaterials": {
     "0": {
       "items": [
