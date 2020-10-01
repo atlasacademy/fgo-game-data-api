@@ -66,6 +66,7 @@ from .schemas.nice import (
     NiceReversedSkillTd,
     NiceReversedSkillTdType,
     NiceServant,
+    NiceServantChange,
     NiceSkillReverse,
     NiceTdReverse,
 )
@@ -75,6 +76,7 @@ from .schemas.raw import (
     GlobalNewMstSubtitle,
     MstClassRelationOverwrite,
     MstQuestRelease,
+    MstSvtChange,
     MstSvtComment,
     MstSvtCostume,
     MstSvtVoice,
@@ -480,6 +482,23 @@ def get_nice_td(
     return nice_td
 
 
+def get_nice_servant_change(change: MstSvtChange) -> NiceServantChange:
+    return NiceServantChange(
+        beforeTreasureDeviceIds=change.beforeTreasureDeviceIds,
+        afterTreasureDeviceIds=change.afterTreasureDeviceIds,
+        svtId=change.svtId,
+        priority=change.priority,
+        condType=COND_TYPE_NAME[change.condType],
+        condTargetId=change.condTargetId,
+        condValue=change.condValue,
+        name=change.name,
+        svtVoiceId=change.svtVoiceId,
+        limitCount=change.limitCount,
+        flag=change.flag,
+        battleSvtId=change.battleSvtId,
+    )
+
+
 def get_nice_item(region: Region, item_id: int) -> Dict[str, Union[int, str]]:
     raw_data = masters[region].mstItemId[item_id]
     nice_item: Dict[str, Union[int, str]] = {
@@ -833,6 +852,10 @@ def get_nice_servant(
         "individuality": ascensionAddIndividuality,
         "voicePrefix": ascensionAddVoicePrefix,
     }
+
+    nice_data["servantChange"] = [
+        get_nice_servant_change(change) for change in raw_data.mstSvtChange
+    ]
 
     BAD_COMBINE_LIMIT = 4  # The material here doesn't mean anything
     nice_data["ascensionMaterials"] = {
