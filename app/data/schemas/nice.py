@@ -1,5 +1,5 @@
 from decimal import Decimal
-from typing import Dict, Generic, List, Optional, TypeVar, Union
+from typing import Dict, Generic, List, Optional, TypeVar
 
 from pydantic import BaseModel, HttpUrl
 from pydantic.generics import GenericModel
@@ -69,7 +69,7 @@ class AssetURL:
 class NiceItem(BaseModelORJson):
     id: int
     name: str
-    type: Union[NiceItemType, int]
+    type: NiceItemType
     icon: HttpUrl
     background: NiceItemBGType
 
@@ -186,7 +186,7 @@ class NiceBuff(BaseModelORJson):
     name: str
     detail: str
     icon: Optional[HttpUrl] = None
-    type: Union[NiceBuffType, int]
+    type: NiceBuffType
     buffGroup: int
     script: NiceBuffScript
     vals: List[NiceTrait]
@@ -198,9 +198,9 @@ class NiceBuff(BaseModelORJson):
 
 class NiceBaseFunction(BaseModelORJson):
     funcId: int
-    funcType: Union[NiceFuncType, int]
-    funcTargetType: Union[NiceFuncTargetType, int]
-    funcTargetTeam: Union[FuncApplyTarget, int]
+    funcType: NiceFuncType
+    funcTargetType: NiceFuncTargetType
+    funcTargetTeam: FuncApplyTarget
     funcPopupText: str
     funcPopupIcon: Optional[HttpUrl] = None
     functvals: List[NiceTrait]
@@ -541,8 +541,8 @@ class NiceQuestRelease(BaseModelORJson):
 class NiceQuest(BaseModelORJson):
     id: int
     name: str
-    type: Union[NiceQuestType, int]
-    consumeType: Union[NiceConsumeType, int]
+    type: NiceQuestType
+    consumeType: NiceConsumeType
     consume: int
     spotId: int
     releaseConditions: List[NiceQuestRelease]

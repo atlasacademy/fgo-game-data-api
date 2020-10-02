@@ -4,7 +4,7 @@ colorama==0.4.3; sys_platform == "win32"
 fastapi==0.61.1
 fuzzywuzzy==0.18.0
 gitdb==4.0.5
-gitpython==3.1.8
+gitpython==3.1.9
 h11==0.10.0
 httptools==0.1.1; sys_platform != "win32" and sys_platform != "cygwin" and platform_python_implementation != "PyPy"
 orjson==3.4.0

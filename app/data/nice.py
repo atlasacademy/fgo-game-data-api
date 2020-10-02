@@ -57,8 +57,13 @@ from .schemas.nice import (
     NiceBaseFunctionReverse,
     NiceBuffReverse,
     NiceCommandCode,
+    NiceCostume,
     NiceEquip,
+    NiceItem,
+    NiceItemAmount,
+    NiceLoreComment,
     NiceMysticCode,
+    NiceQuestRelease,
     NiceReversedBuff,
     NiceReversedBuffType,
     NiceReversedFunction,
@@ -279,7 +284,7 @@ def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> Dict[str, 
         "id": buffEntity.mstBuff.id,
         "name": buffEntity.mstBuff.name,
         "detail": buffEntity.mstBuff.detail,
-        "type": get_safe(BUFF_TYPE_NAME, buffEntity.mstBuff.type),
+        "type": BUFF_TYPE_NAME[buffEntity.mstBuff.type],
         "buffGroup": buffEntity.mstBuff.buffGroup,
         "vals": get_traits_list(buffEntity.mstBuff.vals),
         "tvals": get_traits_list(buffEntity.mstBuff.tvals),
@@ -334,9 +339,9 @@ def get_nice_base_function(
         "funcPopupText": function.mstFunc.popupText,
         "funcquestTvals": get_traits_list(function.mstFunc.questTvals),
         "functvals": get_traits_list(function.mstFunc.tvals),
-        "funcType": get_safe(FUNC_TYPE_NAME, function.mstFunc.funcType),
-        "funcTargetTeam": get_safe(FUNC_APPLYTARGET_NAME, function.mstFunc.applyTarget),
-        "funcTargetType": get_safe(FUNC_TARGETTYPE_NAME, function.mstFunc.targetType),
+        "funcType": FUNC_TYPE_NAME[function.mstFunc.funcType],
+        "funcTargetTeam": FUNC_APPLYTARGET_NAME[function.mstFunc.applyTarget],
+        "funcTargetType": FUNC_TARGETTYPE_NAME[function.mstFunc.targetType],
         "buffs": [
             get_nice_buff(buff, region) for buff in function.mstFunc.expandedVals
         ],
@@ -502,50 +507,42 @@ def get_nice_servant_change(change: MstSvtChange) -> NiceServantChange:
     )
 
 
-def get_nice_item(region: Region, item_id: int) -> Dict[str, Union[int, str]]:
+def get_nice_item(region: Region, item_id: int) -> NiceItem:
     raw_data = masters[region].mstItemId[item_id]
-    nice_item: Dict[str, Union[int, str]] = {
-        "id": item_id,
-        "name": raw_data.name,
-        "type": get_safe(ITEM_TYPE_NAME, raw_data.type),
-        "icon": AssetURL.items.format(
+    return NiceItem(
+        id=item_id,
+        name=raw_data.name,
+        type=ITEM_TYPE_NAME[raw_data.type],
+        icon=AssetURL.items.format(
             base_url=settings.asset_url, region=region, item_id=raw_data.imageId
         ),
-        "background": ITEM_BG_TYPE_NAME[raw_data.bgImageId],
-    }
-    return nice_item
+        background=ITEM_BG_TYPE_NAME[raw_data.bgImageId],
+    )
 
 
 def get_nice_item_amount(
     region: Region, item_list: List[int], amount_list: List[int]
-) -> List[Dict[str, Any]]:
+) -> List[NiceItemAmount]:
     return [
-        {"item": get_nice_item(region, item), "amount": amount}
+        NiceItemAmount(item=get_nice_item(region, item), amount=amount)
         for item, amount in zip(item_list, amount_list)
     ]
 
 
-def get_nice_comment(comment: MstSvtComment) -> Dict[str, Any]:
-    return {
-        "id": comment.id,
-        "priority": comment.priority,
-        "condMessage": comment.condMessage,
-        "comment": comment.comment,
-        "condType": COND_TYPE_NAME[comment.condType],
-        "condValues": comment.condValues,
-        "condValue2": comment.condValue2,
-    }
+def get_nice_comment(comment: MstSvtComment) -> NiceLoreComment:
+    return NiceLoreComment(
+        id=comment.id,
+        priority=comment.priority,
+        condMessage=comment.condMessage,
+        comment=comment.comment,
+        condType=COND_TYPE_NAME[comment.condType],
+        condValues=comment.condValues,
+        condValue2=comment.condValue2,
+    )
 
 
-def get_nice_costume(costume: MstSvtCostume) -> Dict[str, Union[str, int]]:
-    return {
-        "id": costume.id,
-        "costumeCollectionNo": costume.costumeCollectionNo,
-        "name": costume.name,
-        "shortName": costume.shortName,
-        "detail": costume.detail,
-        "priority": costume.priority,
-    }
+def get_nice_costume(costume: MstSvtCostume) -> NiceCostume:
+    return NiceCostume(**costume.dict())
 
 
 def get_voice_folder(voice_type: int) -> str:
@@ -1211,15 +1208,15 @@ def get_nice_command_code(region: Region, cc_id: int) -> NiceCommandCode:
 
 def get_nice_quest_release(
     region: Region, raw_quest_release: MstQuestRelease
-) -> Dict[str, Any]:
-    return {
-        "type": COND_TYPE_NAME[raw_quest_release.type],
-        "targetId": raw_quest_release.targetId,
-        "value": raw_quest_release.value,
-        "closedMessage": masters[region].mstClosedMessageId.get(
+) -> NiceQuestRelease:
+    return NiceQuestRelease(
+        type=COND_TYPE_NAME[raw_quest_release.type],
+        targetId=raw_quest_release.targetId,
+        value=raw_quest_release.value,
+        closedMessage=masters[region].mstClosedMessageId.get(
             raw_quest_release.closedMessageId, ""
         ),
-    }
+    )
 
 
 def get_nice_quest(
@@ -1228,10 +1225,8 @@ def get_nice_quest(
     nice_data: Dict[str, Any] = {
         "id": raw_quest.mstQuest.id,
         "name": raw_quest.mstQuest.name,
-        "type": get_safe(QUEST_TYPE_NAME, raw_quest.mstQuest.type),
-        "consumeType": get_safe(
-            QUEST_CONSUME_TYPE_NAME, raw_quest.mstQuest.consumeType
-        ),
+        "type": QUEST_TYPE_NAME[raw_quest.mstQuest.type],
+        "consumeType": QUEST_CONSUME_TYPE_NAME[raw_quest.mstQuest.consumeType],
         "consume": raw_quest.mstQuest.actConsume,
         "spotId": raw_quest.mstQuest.spotId,
         "releaseConditions": [
