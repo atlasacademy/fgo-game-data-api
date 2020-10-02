@@ -7,7 +7,7 @@ authors = ["squaresmile <squaresmile@protonmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 fastapi = "^0"
-uvicorn = {extras = ["standard"], version = "^0.12"}
+uvicorn = {extras = ["standard"], version = "^0"}
 python-dotenv = "^0"
 fuzzywuzzy = "^0"
 python-Levenshtein = "^0"
