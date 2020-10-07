@@ -1,4 +1,4 @@
-from typing import List, Optional, Union
+from typing import Optional, Union
 
 from pydantic import HttpUrl
 
@@ -19,10 +19,10 @@ class BasicBuff(BaseModelORJson):
     name: str
     icon: HttpUrl
     type: Union[NiceBuffType, int]
-    vals: List[NiceTrait]
-    tvals: List[NiceTrait]
-    ckSelfIndv: List[NiceTrait]
-    ckOpIndv: List[NiceTrait]
+    vals: list[NiceTrait]
+    tvals: list[NiceTrait]
+    ckSelfIndv: list[NiceTrait]
+    ckOpIndv: list[NiceTrait]
 
 
 class BasicFunction(BaseModelORJson):
@@ -30,10 +30,10 @@ class BasicFunction(BaseModelORJson):
     funcType: Union[NiceFuncType, int]
     funcTargetType: Union[NiceFuncTargetType, int]
     funcTargetTeam: Union[FuncApplyTarget, int]
-    functvals: List[NiceTrait]
-    funcquestTvals: List[NiceTrait]
-    traitVals: List[NiceTrait] = []
-    buffs: List[BasicBuff]
+    functvals: list[NiceTrait]
+    funcquestTvals: list[NiceTrait]
+    traitVals: list[NiceTrait] = []
+    buffs: list[BasicBuff]
 
 
 class BasicSkill(BaseModelORJson):
@@ -81,9 +81,9 @@ class BasicCommandCode(BaseModelORJson):
 
 
 class BasicReversedSkillTd(BaseModelORJson):
-    servant: List[BasicServant] = []
-    MC: List[BasicMysticCode] = []
-    CC: List[BasicCommandCode] = []
+    servant: list[BasicServant] = []
+    MC: list[BasicMysticCode] = []
+    CC: list[BasicCommandCode] = []
 
 
 class BasicReversedSkillTdType(BaseModelORJson):
@@ -99,8 +99,8 @@ class BasicTdReverse(BasicTd):
 
 
 class BasicReversedFunction(BaseModelORJson):
-    skill: List[BasicSkillReverse] = []
-    NP: List[BasicTdReverse] = []
+    skill: list[BasicSkillReverse] = []
+    NP: list[BasicTdReverse] = []
 
 
 class BasicReversedFunctionType(BaseModelORJson):
@@ -112,7 +112,7 @@ class BasicFunctionReverse(BasicFunction):
 
 
 class BasicReversedBuff(BaseModelORJson):
-    function: List[BasicFunctionReverse] = []
+    function: list[BasicFunctionReverse] = []
 
 
 class BasicReversedBuffType(BaseModelORJson):

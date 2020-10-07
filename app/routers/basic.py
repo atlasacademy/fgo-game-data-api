@@ -1,4 +1,4 @@
-from typing import Any, Dict, List, Optional
+from typing import Any, Optional
 
 from fastapi import APIRouter, Depends, HTTPException, Response
 
@@ -44,14 +44,14 @@ basic_find_servant_extra = """
     summary="Find and get servant data",
     description=ServantSearchQueryParams.DESCRIPTION + basic_find_servant_extra,
     response_description="Basic Servant Entities",
-    response_model=List[BasicServant],
+    response_model=list[BasicServant],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
 async def find_servant(
     search_param: ServantSearchQueryParams = Depends(ServantSearchQueryParams),
     lang: Optional[Language] = None,
-) -> List[Dict[str, Any]]:
+) -> list[dict[str, Any]]:
     matches = search.search_servant(search_param, limit=10000)
     return [basic.get_basic_svt(search_param.region, item, lang) for item in matches]
 
@@ -85,7 +85,7 @@ if settings.documentation_all_nice:
 )
 async def get_servant(
     region: Region, item_id: int, lang: Optional[Language] = None
-) -> Dict[str, Any]:
+) -> dict[str, Any]:
     if item_id in masters[region].mstSvtServantCollectionNo:
         item_id = masters[region].mstSvtServantCollectionNo[item_id]
     if item_id in masters[region].mstSvtServantCollectionNo.values():
@@ -99,14 +99,14 @@ async def get_servant(
     summary="Find and get CE data",
     description=EquipSearchQueryParams.DESCRIPTION + basic_find_servant_extra,
     response_description="Basic Equip Entities",
-    response_model=List[BasicEquip],
+    response_model=list[BasicEquip],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
 async def find_equip(
     search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
     lang: Optional[Language] = None,
-) -> List[Dict[str, Any]]:
+) -> list[dict[str, Any]]:
     matches = search.search_equip(search_param, limit=10000)
     return [basic.get_basic_svt(search_param.region, item, lang) for item in matches]
 
@@ -139,7 +139,7 @@ if settings.documentation_all_nice:
 )
 async def get_equip(
     region: Region, item_id: int, lang: Optional[Language] = None
-) -> Dict[str, Any]:
+) -> dict[str, Any]:
     if item_id in masters[region].mstSvtEquipCollectionNo:
         item_id = masters[region].mstSvtEquipCollectionNo[item_id]
     if item_id in masters[region].mstSvtEquipCollectionNo.values():
@@ -153,7 +153,7 @@ async def get_equip(
     summary="Find and get servant data",
     description=SvtSearchQueryParams.DESCRIPTION + basic_find_servant_extra,
     response_description="Basic Servant Entities",
-    response_model=List[BasicServant],
+    response_model=list[BasicServant],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
@@ -259,7 +259,7 @@ and return the reverse skill objects.
     summary="Find and get skill data",
     description=SkillSearchParams.DESCRIPTION + basic_skill_extra,
     response_description="Basic Skill Entities",
-    response_model=List[BasicSkillReverse],
+    response_model=list[BasicSkillReverse],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
@@ -309,7 +309,7 @@ and return the reversed servant objects.
     summary="Find and get NP data",
     description=TdSearchParams.DESCRIPTION + basic_td_extra,
     response_description="Basic NP Entities",
-    response_model=List[BasicTdReverse],
+    response_model=list[BasicTdReverse],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
@@ -359,7 +359,7 @@ and return the reversed skill objects.
     summary="Find and get function data",
     description=FuncSearchQueryParams.DESCRIPTION + function_reverse_lang_description,
     response_description="Function entity",
-    response_model=List[BasicFunctionReverse],
+    response_model=list[BasicFunctionReverse],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
@@ -415,7 +415,7 @@ and return the reversed function objects.
     summary="Find and get buff data",
     description=BuffSearchQueryParams.DESCRIPTION + buff_reverse_lang_description,
     response_description="Function entity",
-    response_model=List[BasicBuffReverse],
+    response_model=list[BasicBuffReverse],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )

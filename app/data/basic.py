@@ -1,4 +1,4 @@
-from typing import Any, Dict, Optional
+from typing import Any, Optional
 
 from ..config import Settings
 from .common import Language, Region, ReverseDepth
@@ -178,7 +178,7 @@ def get_basic_td(
 
 def get_basic_svt(
     region: Region, item_id: int, lang: Optional[Language] = None
-) -> Dict[str, Any]:
+) -> dict[str, Any]:
     mstSvt = masters[region].mstSvtId[item_id]
     basic_servant = {
         "id": item_id,

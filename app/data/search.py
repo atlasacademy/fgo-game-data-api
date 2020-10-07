@@ -1,4 +1,4 @@
-from typing import Iterable, List, Set, Union
+from typing import Iterable, Union
 
 from fastapi import HTTPException
 from fuzzywuzzy import fuzz, utils
@@ -41,7 +41,7 @@ INSUFFICIENT_QUERY = (
 TOO_MANY_RESULTS = "More than {} items found. Please narrow down the query."
 
 
-def reverse_traits(traits: Iterable[Union[Trait, int]]) -> Set[int]:
+def reverse_traits(traits: Iterable[Union[Trait, int]]) -> set[int]:
     return {TRAIT_NAME_REVERSE.get(item, item) for item in traits}  # type: ignore
 
 
@@ -109,7 +109,7 @@ def match_name(search_param: str, name: str) -> bool:
 def search_servant(
     search_param: Union[ServantSearchQueryParams, SvtSearchQueryParams],
     limit: int = 100,
-) -> List[int]:
+) -> list[int]:
     if not search_param.hasSearchParams:
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
@@ -159,7 +159,7 @@ def search_servant(
     return [item.id for item in matches]
 
 
-def search_equip(search_param: EquipSearchQueryParams, limit: int = 100) -> List[int]:
+def search_equip(search_param: EquipSearchQueryParams, limit: int = 100) -> list[int]:
     if not search_param.hasSearchParams:
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
@@ -194,9 +194,9 @@ def search_equip(search_param: EquipSearchQueryParams, limit: int = 100) -> List
 def search_skill_svt(
     region: Region,
     skill_id: int,
-    num: List[int],
-    priority: List[int],
-    strengthStatus: List[int],
+    num: list[int],
+    priority: list[int],
+    strengthStatus: list[int],
 ) -> bool:
     svt_skills = masters[region].mstSvtSkillId.get(skill_id, [])
     if svt_skills:
@@ -215,13 +215,13 @@ def search_skill_svt(
 
 
 def search_skill_lv(
-    region: Region, skill_id: int, lvl1coolDown: List[int], numFunctions: List[int],
+    region: Region, skill_id: int, lvl1coolDown: list[int], numFunctions: list[int],
 ) -> bool:
     skill_lv = masters[region].mstSkillLvId[skill_id][0]
     return skill_lv.chargeTurn in lvl1coolDown and len(skill_lv.funcId) in numFunctions
 
 
-def search_skill(search_param: SkillSearchParams, limit: int = 100) -> List[int]:
+def search_skill(search_param: SkillSearchParams, limit: int = 100) -> list[int]:
     if not search_param.hasSearchParams:
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
@@ -275,9 +275,9 @@ def search_skill(search_param: SkillSearchParams, limit: int = 100) -> List[int]
 def search_td_svt(
     region: Region,
     td_id: int,
-    card: Set[int],
-    hits: List[int],
-    strengthStatus: List[int],
+    card: set[int],
+    hits: list[int],
+    strengthStatus: list[int],
 ) -> bool:
     svt_td = masters[region].mstSvtTreasureDeviceId[td_id][0]
     return (
@@ -290,7 +290,7 @@ def search_td_svt(
 def search_td_lv(
     region: Region,
     td_id: int,
-    numFunctions: List[int],
+    numFunctions: list[int],
     minNpNpGain: int,
     maxNpNpGain: int,
 ) -> bool:
@@ -301,7 +301,7 @@ def search_td_lv(
     )
 
 
-def search_td(search_param: TdSearchParams, limit: int = 100) -> List[int]:
+def search_td(search_param: TdSearchParams, limit: int = 100) -> list[int]:
     if not search_param.hasSearchParams:
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
@@ -347,7 +347,7 @@ def search_td(search_param: TdSearchParams, limit: int = 100) -> List[int]:
     return [item.id for item in matches]
 
 
-def search_buff(search_param: BuffSearchQueryParams, limit: int = 100) -> List[int]:
+def search_buff(search_param: BuffSearchQueryParams, limit: int = 100) -> list[int]:
     if not search_param.hasSearchParams:
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
@@ -385,7 +385,7 @@ def search_buff(search_param: BuffSearchQueryParams, limit: int = 100) -> List[i
     return [item.id for item in matches]
 
 
-def search_func(search_param: FuncSearchQueryParams, limit: int = 100) -> List[int]:
+def search_func(search_param: FuncSearchQueryParams, limit: int = 100) -> list[int]:
     if not search_param.hasSearchParams:
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 

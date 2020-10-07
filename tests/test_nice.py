@@ -1,5 +1,3 @@
-from typing import Dict
-
 import pytest
 from fastapi.testclient import TestClient
 
@@ -153,7 +151,7 @@ cases_datavals = [
 
 @pytest.mark.parametrize("skill_id,function_index,parse_result", cases_datavals)
 def test_special_datavals(
-    skill_id: int, function_index: int, parse_result: Dict[str, int]
+    skill_id: int, function_index: int, parse_result: dict[str, int]
 ) -> None:
     response = client.get(f"/nice/JP/skill/{skill_id}")
     assert response.status_code == 200

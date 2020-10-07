@@ -1,5 +1,5 @@
 import json
-from typing import Any, Iterable, Set
+from typing import Any, Iterable
 
 from fastapi.responses import Response
 
@@ -23,7 +23,7 @@ def list_string(items: Iterable[BaseModelORJson]) -> str:
     )
 
 
-def list_string_exclude(items: Iterable[BaseModelORJson], exclude: Set[str]) -> str:
+def list_string_exclude(items: Iterable[BaseModelORJson], exclude: set[str]) -> str:
     all_items = ",".join(
         [
             item.json(exclude_unset=True, exclude_none=True, exclude=exclude)

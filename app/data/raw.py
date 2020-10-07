@@ -1,5 +1,3 @@
-from typing import Set
-
 from .common import Region, ReverseDepth
 from .enums import FUNC_VALS_NOT_BUFF
 from .gamedata import masters
@@ -26,23 +24,23 @@ from .schemas.raw import (
 )
 
 
-def buff_to_func(region: Region, buff_id: int) -> Set[int]:
+def buff_to_func(region: Region, buff_id: int) -> set[int]:
     return masters[region].buffToFunc.get(buff_id, set())
 
 
-def func_to_skillId(region: Region, func_id: int) -> Set[int]:
+def func_to_skillId(region: Region, func_id: int) -> set[int]:
     return masters[region].funcToSkill.get(func_id, set())
 
 
-def func_to_tdId(region: Region, func_id: int) -> Set[int]:
+def func_to_tdId(region: Region, func_id: int) -> set[int]:
     return masters[region].funcToTd.get(func_id, set())
 
 
-def passive_to_svtId(region: Region, skill_id: int) -> Set[int]:
+def passive_to_svtId(region: Region, skill_id: int) -> set[int]:
     return masters[region].passiveSkillToSvt.get(skill_id, set())
 
 
-def skill_to_MCId(region: Region, skill_id: int) -> Set[int]:
+def skill_to_MCId(region: Region, skill_id: int) -> set[int]:
     return {
         item.equipId
         for item in masters[region].mstEquipSkill
@@ -50,7 +48,7 @@ def skill_to_MCId(region: Region, skill_id: int) -> Set[int]:
     }
 
 
-def skill_to_CCId(region: Region, skill_id: int) -> Set[int]:
+def skill_to_CCId(region: Region, skill_id: int) -> set[int]:
     return {
         item.commandCodeId
         for item in masters[region].mstCommandCodeSkill

@@ -1,5 +1,3 @@
-from typing import Set
-
 import pytest
 from fastapi.testclient import TestClient
 from requests import Response
@@ -21,7 +19,7 @@ RAW_MAIN_ITEM = {
 }
 
 
-def get_item_list(response: Response, response_type: str, endpoint: str) -> Set[int]:
+def get_item_list(response: Response, response_type: str, endpoint: str) -> set[int]:
     item_type = endpoint.split("/")[1]
     if response_type == "raw":
         if item_type in RAW_MAIN_ITEM:
@@ -155,7 +153,7 @@ not_found_cases = [
 class TestSearch:
     @pytest.mark.parametrize("search_query,result", test_cases)
     def test_search(
-        self, search_query: str, result: Set[int], response_type: str
+        self, search_query: str, result: set[int], response_type: str
     ) -> None:
         response = client.get(f"/{response_type}/{search_query}")
         result_ids = get_item_list(response, response_type, search_query)

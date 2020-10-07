@@ -1,7 +1,7 @@
 import re
 from collections import defaultdict
 from functools import lru_cache
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Optional, Union
 
 import orjson
 from fastapi import HTTPException
@@ -132,7 +132,7 @@ def remove_brackets(val_string: str) -> str:
 
 def parse_dataVals(
     datavals: str, functype: int, region: Region
-) -> Dict[str, Union[int, str, List[int]]]:
+) -> dict[str, Union[int, str, list[int]]]:
     EVENT_FUNCTIONS = {
         FuncType.EVENT_POINT_UP,
         FuncType.EVENT_POINT_RATE_UP,
@@ -151,7 +151,7 @@ def parse_dataVals(
 
     error_message = f"Can't parse datavals: {datavals}"
 
-    output: Dict[str, Union[int, str, List[int]]] = {}
+    output: dict[str, Union[int, str, list[int]]] = {}
     if datavals != "[]":
         datavals = remove_brackets(datavals)
         array = re.split(r",\s*(?![^\[\]]*\])", datavals)
@@ -279,8 +279,8 @@ def parse_dataVals(
     return output
 
 
-def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> Dict[str, Any]:
-    buffInfo: Dict[str, Any] = {
+def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> dict[str, Any]:
+    buffInfo: dict[str, Any] = {
         "id": buffEntity.mstBuff.id,
         "name": buffEntity.mstBuff.name,
         "detail": buffEntity.mstBuff.detail,
@@ -301,10 +301,10 @@ def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> Dict[str, 
 
     script = {}
     if "relationId" in buffEntity.mstBuff.script:
-        relationOverwrite: List[MstClassRelationOverwrite] = masters[
+        relationOverwrite: list[MstClassRelationOverwrite] = masters[
             region
         ].mstClassRelationOverwriteId.get(buffEntity.mstBuff.script["relationId"], [])
-        relationId: Dict[str, Dict[SvtClass, Dict[SvtClass, Any]]] = {
+        relationId: dict[str, dict[SvtClass, dict[SvtClass, Any]]] = {
             "atkSide": defaultdict(dict),
             "defSide": defaultdict(dict),
         }
@@ -333,8 +333,8 @@ def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> Dict[str, 
 
 def get_nice_base_function(
     function: FunctionEntityNoReverse, region: Region
-) -> Dict[str, Any]:
-    functionInfo: Dict[str, Any] = {
+) -> dict[str, Any]:
+    functionInfo: dict[str, Any] = {
         "funcId": function.mstFunc.id,
         "funcPopupText": function.mstFunc.popupText,
         "funcquestTvals": get_traits_list(function.mstFunc.questTvals),
@@ -360,8 +360,8 @@ def get_nice_base_function(
 
 def get_nice_skill(
     skillEntity: SkillEntityNoReverse, svtId: int, region: Region
-) -> Dict[str, Any]:
-    nice_skill: Dict[str, Any] = {
+) -> dict[str, Any]:
+    nice_skill: dict[str, Any] = {
         "id": skillEntity.mstSkill.id,
         "name": skillEntity.mstSkill.name,
         "type": SKILL_TYPE_NAME[skillEntity.mstSkill.type],
@@ -425,8 +425,8 @@ def get_nice_skill(
 
 def get_nice_td(
     tdEntity: TdEntityNoReverse, svtId: int, region: Region
-) -> Dict[str, Any]:
-    nice_td: Dict[str, Any] = {
+) -> dict[str, Any]:
+    nice_td: dict[str, Any] = {
         "id": tdEntity.mstTreasureDevice.id,
         "name": tdEntity.mstTreasureDevice.name,
         "rank": tdEntity.mstTreasureDevice.rank,
@@ -521,8 +521,8 @@ def get_nice_item(region: Region, item_id: int) -> NiceItem:
 
 
 def get_nice_item_amount(
-    region: Region, item_list: List[int], amount_list: List[int]
-) -> List[NiceItemAmount]:
+    region: Region, item_list: list[int], amount_list: list[int]
+) -> list[NiceItemAmount]:
     return [
         NiceItemAmount(item=get_nice_item(region, item), amount=amount)
         for item, amount in zip(item_list, amount_list)
@@ -562,7 +562,7 @@ def get_voice_url(region: Region, svt_id: int, voice_type: int, voice_id: str) -
 
 
 def get_nice_voice_cond(
-    region: Region, cond: ScriptJsonCond, costume_ids: Dict[int, int]
+    region: Region, cond: ScriptJsonCond, costume_ids: dict[int, int]
 ) -> NiceVoiceCond:
     value = (
         costume_ids[cond.value]
@@ -591,8 +591,8 @@ def get_nice_voice_line(
     script: ScriptJson,
     svt_id: int,
     voice_type: int,
-    costume_ids: Dict[int, int],
-    subtitle_ids: Dict[str, str],
+    costume_ids: dict[int, int],
+    subtitle_ids: dict[str, str],
 ) -> NiceVoiceLine:
     first_voice_id = script.infos[0].id
 
@@ -626,8 +626,8 @@ def get_nice_voice_line(
 def get_nice_voice_group(
     region: Region,
     voice: MstSvtVoice,
-    costume_ids: Dict[int, int],
-    subtitles: List[GlobalNewMstSubtitle],
+    costume_ids: dict[int, int],
+    subtitles: list[GlobalNewMstSubtitle],
 ) -> NiceVoiceGroup:
 
     subtitle_ids = {item.id: item.serif for item in subtitles}
@@ -648,10 +648,10 @@ def get_nice_voice_group(
 @lru_cache(maxsize=settings.lru_cache_size)
 def get_nice_servant(
     region: Region, item_id: int, lang: Language, lore: bool = False
-) -> Dict[str, Any]:
+) -> dict[str, Any]:
     # Get expanded servant entity to get function and buff details
     raw_data = raw.get_servant_entity(region, item_id, expand=True, lore=lore)
-    nice_data: Dict[str, Any] = {
+    nice_data: dict[str, Any] = {
         "id": raw_data.mstSvt.id,
         "collectionNo": raw_data.mstSvt.collectionNo,
         "name": raw_data.mstSvt.name,
@@ -677,13 +677,13 @@ def get_nice_servant(
     if region == Region.JP and lang == Language.en:
         nice_data["name"] = get_safe(TRANSLATIONS, nice_data["name"])
 
-    charaGraph: Dict[str, Dict[int, str]] = {}
-    faces: Dict[str, Dict[int, str]] = {}
-    commands: Dict[str, Dict[int, str]] = {}
-    status: Dict[str, Dict[int, str]] = {}
-    charaFigure: Dict[str, Dict[int, str]] = {}
-    narrowFigure: Dict[str, Dict[int, str]] = {}
-    equipFace: Dict[str, Dict[int, str]] = {}
+    charaGraph: dict[str, dict[int, str]] = {}
+    faces: dict[str, dict[int, str]] = {}
+    commands: dict[str, dict[int, str]] = {}
+    status: dict[str, dict[int, str]] = {}
+    charaFigure: dict[str, dict[int, str]] = {}
+    narrowFigure: dict[str, dict[int, str]] = {}
+    equipFace: dict[str, dict[int, str]] = {}
 
     costume_limits = {item.id for item in raw_data.mstSvtCostume}
     costume_ids = {
@@ -911,14 +911,14 @@ def get_nice_servant(
 
     # Filter out dummy TDs that are used by enemy servants
     if raw_data.mstSvt.isServant():
-        actualTDs: List[TdEntityNoReverse] = [
+        actualTDs: list[TdEntityNoReverse] = [
             item
             for item in raw_data.mstTreasureDevice
             if item.mstSvtTreasureDevice[0].num == 1
         ]
         for actualTD in actualTDs:
             if "tdTypeChangeIDs" in actualTD.mstTreasureDevice.script:
-                tdTypeChangeIDs: List[int] = actualTD.mstTreasureDevice.script[
+                tdTypeChangeIDs: list[int] = actualTD.mstTreasureDevice.script[
                     "tdTypeChangeIDs"
                 ]
                 currentActualTDsIDs = {item.mstTreasureDevice.id for item in actualTDs}
@@ -1155,7 +1155,7 @@ def get_nice_td_alone(
 def get_nice_mystic_code(region: Region, mc_id: int) -> NiceMysticCode:
     raw_data = raw.get_mystic_code_entity(region, mc_id, expand=True)
     base_settings = {"base_url": settings.asset_url, "region": region}
-    nice_data: Dict[str, Any] = {
+    nice_data: dict[str, Any] = {
         "id": raw_data.mstEquip.id,
         "name": raw_data.mstEquip.name,
         "detail": raw_data.mstEquip.detail,
@@ -1186,7 +1186,7 @@ def get_nice_command_code(region: Region, cc_id: int) -> NiceCommandCode:
     raw_data = raw.get_command_code_entity(region, cc_id, expand=True)
 
     base_settings = {"base_url": settings.asset_url, "region": region, "item_id": cc_id}
-    nice_data: Dict[str, Any] = {
+    nice_data: dict[str, Any] = {
         "id": raw_data.mstCommandCode.id,
         "name": raw_data.mstCommandCode.name,
         "collectionNo": raw_data.mstCommandCode.collectionNo,
@@ -1221,8 +1221,8 @@ def get_nice_quest_release(
 
 def get_nice_quest(
     region: Region, raw_quest: Union[QuestEntity, QuestPhaseEntity]
-) -> Dict[str, Any]:
-    nice_data: Dict[str, Any] = {
+) -> dict[str, Any]:
+    nice_data: dict[str, Any] = {
         "id": raw_quest.mstQuest.id,
         "name": raw_quest.mstQuest.name,
         "type": QUEST_TYPE_NAME[raw_quest.mstQuest.type],
@@ -1240,11 +1240,11 @@ def get_nice_quest(
     return nice_data
 
 
-def get_nice_quest_alone(region: Region, quest_id: int) -> Dict[str, Any]:
+def get_nice_quest_alone(region: Region, quest_id: int) -> dict[str, Any]:
     return get_nice_quest(region, raw.get_quest_entity(region, quest_id))
 
 
-def get_nice_quest_phase(region: Region, quest_id: int, phase: int) -> Dict[str, Any]:
+def get_nice_quest_phase(region: Region, quest_id: int, phase: int) -> dict[str, Any]:
     raw_data = raw.get_quest_phase_entity(region, quest_id, phase)
     nice_data = get_nice_quest(region, raw_data)
     nice_data.update(

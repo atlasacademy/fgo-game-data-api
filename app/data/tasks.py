@@ -1,6 +1,6 @@
 import json
 import time
-from typing import Any, Dict, Iterable, List, Union
+from typing import Any, Iterable, Union
 
 from git import Repo
 
@@ -56,7 +56,7 @@ def dump(region: Region, file_name: str, data: Any) -> None:  # pragma: no cover
         dump_normal(region, file_name, data)
 
 
-def sort_by_collection_no(input_list: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+def sort_by_collection_no(input_list: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return sorted(input_list, key=lambda x: x["collectionNo"])
 
 
@@ -149,7 +149,7 @@ def generate_exports() -> None:  # pragma: no cover
 generate_exports()
 
 
-repo_info: Dict[str, Dict[str, Union[str, int]]] = {}
+repo_info: dict[str, dict[str, Union[str, int]]] = {}
 
 
 def update_repo_info() -> None:

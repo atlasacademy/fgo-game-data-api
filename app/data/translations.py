@@ -1,13 +1,12 @@
 import json
 from pathlib import Path
-from typing import Dict
 
 
 file_path = Path(__file__)
 MAPPING_PATH = file_path.parent / "mappings"
 
 
-TRANSLATIONS: Dict[str, str] = {}
+TRANSLATIONS: dict[str, str] = {}
 
 
 for translation_file in ("servant_names.json", "equip_names.json"):

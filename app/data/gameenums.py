@@ -3,7 +3,6 @@
 
 
 from enum import Enum, IntEnum
-from typing import Dict
 
 
 class GenderType(IntEnum):
@@ -18,7 +17,7 @@ class NiceGender(str, Enum):
     other = "unknown"
 
 
-GENDER_TYPE_NAME: Dict[int, NiceGender] = {
+GENDER_TYPE_NAME: dict[int, NiceGender] = {
     1: NiceGender.male,
     2: NiceGender.female,
     3: NiceGender.other,
@@ -53,7 +52,7 @@ class NiceSvtType(str, Enum):
     commandCode = "commandCode"
 
 
-SVT_TYPE_NAME: Dict[int, NiceSvtType] = {
+SVT_TYPE_NAME: dict[int, NiceSvtType] = {
     1: NiceSvtType.normal,
     2: NiceSvtType.heroine,
     3: NiceSvtType.combineMaterial,
@@ -86,7 +85,7 @@ class NiceSvtFlag(str, Enum):
     goetia = "goetia"
 
 
-SVT_FLAG_NAME: Dict[int, NiceSvtFlag] = {
+SVT_FLAG_NAME: dict[int, NiceSvtFlag] = {
     2: NiceSvtFlag.onlyUseForNpc,
     4: NiceSvtFlag.svtEquipFriendShip,
     8: NiceSvtFlag.ignoreCombineLimitSpecial,
@@ -271,7 +270,7 @@ class NiceFuncType(str, Enum):
     friendPointUpDuplicate = "friendPointUpDuplicate"
 
 
-FUNC_TYPE_NAME: Dict[int, NiceFuncType] = {
+FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     0: NiceFuncType.none,
     1: NiceFuncType.addState,
     2: NiceFuncType.subState,
@@ -417,7 +416,7 @@ class NiceFuncTargetType(str, Enum):
     commandTypeSelfTreasureDevice = "commandTypeSelfTreasureDevice"
 
 
-FUNC_TARGETTYPE_NAME: Dict[int, NiceFuncTargetType] = {
+FUNC_TARGETTYPE_NAME: dict[int, NiceFuncTargetType] = {
     0: NiceFuncTargetType.self,
     1: NiceFuncTargetType.ptOne,
     2: NiceFuncTargetType.ptAnother,
@@ -739,7 +738,7 @@ class NiceBuffType(str, Enum):
     specialInvincible = "specialInvincible"
 
 
-BUFF_TYPE_NAME: Dict[int, NiceBuffType] = {
+BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     0: NiceBuffType.none,
     1: NiceBuffType.upCommandatk,
     2: NiceBuffType.upStarweight,
@@ -1084,7 +1083,7 @@ class NiceBuffAction(str, Enum):
     specialInvincible = "specialInvincible"
 
 
-BUFF_ACTION_NAME: Dict[int, NiceBuffAction] = {
+BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     0: NiceBuffAction.none,
     1: NiceBuffAction.commandAtk,
     2: NiceBuffAction.commandDef,
@@ -1198,7 +1197,7 @@ class NiceBuffLimit(str, Enum):
     normal = "normal"
 
 
-BUFF_LIMIT_NAME: Dict[int, NiceBuffLimit] = {
+BUFF_LIMIT_NAME: dict[int, NiceBuffLimit] = {
     0: NiceBuffLimit.none,
     1: NiceBuffLimit.upper,
     2: NiceBuffLimit.lower,
@@ -1286,7 +1285,7 @@ class NiceClassRelationOverwriteType(str, Enum):
     overwriteLessThanTarget = "overwriteLessThanTarget"
 
 
-CLASS_OVERWRITE_NAME: Dict[int, NiceClassRelationOverwriteType] = {
+CLASS_OVERWRITE_NAME: dict[int, NiceClassRelationOverwriteType] = {
     0: NiceClassRelationOverwriteType.overwriteForce,
     1: NiceClassRelationOverwriteType.overwriteMoreThanTarget,
     2: NiceClassRelationOverwriteType.overwriteLessThanTarget,
@@ -1351,7 +1350,7 @@ class NiceItemType(str, Enum):
     dice = "dice"
 
 
-ITEM_TYPE_NAME: Dict[int, NiceItemType] = {
+ITEM_TYPE_NAME: dict[int, NiceItemType] = {
     1: NiceItemType.qp,
     2: NiceItemType.stone,
     3: NiceItemType.apRecover,
@@ -1403,7 +1402,7 @@ class NiceCardType(str, Enum):
     strength = "strength"
 
 
-CARD_TYPE_NAME: Dict[int, NiceCardType] = {
+CARD_TYPE_NAME: dict[int, NiceCardType] = {
     0: NiceCardType.none,
     1: NiceCardType.arts,
     2: NiceCardType.buster,
@@ -1695,7 +1694,7 @@ class NiceCondType(str, Enum):
     svtLimitClassNum = "svtLimitClassNum"
 
 
-COND_TYPE_NAME: Dict[int, NiceCondType] = {
+COND_TYPE_NAME: dict[int, NiceCondType] = {
     0: NiceCondType.none,
     1: NiceCondType.questClear,
     2: NiceCondType.itemGet,
@@ -1894,7 +1893,7 @@ class NiceVoiceCondType(str, Enum):
     levelUpLimitCountBelow = "levelUpLimitCountBelow"
 
 
-VOICE_COND_NAME: Dict[int, NiceVoiceCondType] = {
+VOICE_COND_NAME: dict[int, NiceVoiceCondType] = {
     1: NiceVoiceCondType.birthDay,
     2: NiceVoiceCondType.event,
     3: NiceVoiceCondType.friendship,
@@ -1966,7 +1965,7 @@ class NiceSvtVoiceType(str, Enum):
     sum = "sum"
 
 
-VOICE_TYPE_NAME: Dict[int, NiceSvtVoiceType] = {
+VOICE_TYPE_NAME: dict[int, NiceSvtVoiceType] = {
     1: NiceSvtVoiceType.home,
     2: NiceSvtVoiceType.groeth,
     3: NiceSvtVoiceType.firstGet,
@@ -2006,7 +2005,7 @@ class NiceQuestType(str, Enum):
     warBoard = "warBoard"
 
 
-QUEST_TYPE_NAME: Dict[int, NiceQuestType] = {
+QUEST_TYPE_NAME: dict[int, NiceQuestType] = {
     1: NiceQuestType.main,
     2: NiceQuestType.free,
     3: NiceQuestType.friendship,
@@ -2032,7 +2031,7 @@ class NiceConsumeType(str, Enum):
     apAndItem = "apAndItem"
 
 
-QUEST_CONSUME_TYPE_NAME: Dict[int, NiceConsumeType] = {
+QUEST_CONSUME_TYPE_NAME: dict[int, NiceConsumeType] = {
     0: NiceConsumeType.none,
     1: NiceConsumeType.ap,
     2: NiceConsumeType.rp,
@@ -2104,7 +2103,7 @@ class NiceStatusRank(str, Enum):
     unknown = "Unknown"
 
 
-STATUS_RANK_NAME: Dict[int, NiceStatusRank] = {
+STATUS_RANK_NAME: dict[int, NiceStatusRank] = {
     11: NiceStatusRank.a,
     12: NiceStatusRank.aPlus,
     13: NiceStatusRank.aPlus2,

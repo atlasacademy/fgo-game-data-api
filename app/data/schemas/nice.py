@@ -1,5 +1,5 @@
 from decimal import Decimal
-from typing import Dict, Generic, List, Optional, TypeVar
+from typing import Generic, Optional, TypeVar
 
 from pydantic import BaseModel, HttpUrl
 from pydantic.generics import GenericModel
@@ -32,7 +32,7 @@ from .common import MCAssets, NiceTrait
 
 
 class AssetURL:
-    charaGraph: Dict[int, str] = {
+    charaGraph: dict[int, str] = {
         1: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a@1.png",
         2: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a@2.png",
         3: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@1.png",
@@ -42,7 +42,7 @@ class AssetURL:
     status: str = "{base_url}/{region}/Servants/Status/{item_id}/status_servant_{i}.png"
     charaGraphDefault: str = "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a.png"
     charaFigure: str = "{base_url}/{region}/CharaFigure/{item_id}{i}/{item_id}{i}_merged.png"
-    narrowFigure: Dict[int, str] = {
+    narrowFigure: dict[int, str] = {
         1: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}@0.png",
         2: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}@1.png",
         3: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}@2.png",
@@ -56,7 +56,7 @@ class AssetURL:
     equipFace: str = "{base_url}/{region}/EquipFaces/f_{item_id}{i}.png"
     enemy: str = "{base_url}/{region}/Enemys/{item_id}{i}.png"
     mcitem: str = "{base_url}/{region}/Items/masterequip{item_id:05}.png"
-    mc: Dict[str, str] = {
+    mc: dict[str, str] = {
         "item": "{base_url}/{region}/Items/masterequip{item_id:05}.png",
         "masterFace": "{base_url}/{region}/MasterFace/equip{item_id:05}.png",
         "masterFigure": "{base_url}/{region}/MasterFigure/equip{item_id:05}.png",
@@ -80,7 +80,7 @@ class NiceItemAmount(BaseModel):
 
 
 class NiceLvlUpMaterial(BaseModel):
-    items: List[NiceItemAmount]
+    items: list[NiceItemAmount]
     qp: int
 
 
@@ -117,7 +117,7 @@ class BaseVals(BaseModel):
     EffectSummon: Optional[int] = None
     RatioHPRangeHigh: Optional[int] = None
     RatioHPRangeLow: Optional[int] = None
-    TargetList: Optional[List[int]] = None
+    TargetList: Optional[list[int]] = None
     OpponentOnly: Optional[int] = None
     StatusEffectId: Optional[int] = None
     EndBattle: Optional[int] = None
@@ -128,7 +128,7 @@ class BaseVals(BaseModel):
     SameBuffLimitNum: Optional[int] = None
     CheckDuplicate: Optional[int] = None
     OnFieldCount: Optional[int] = None
-    TargetRarityList: Optional[List[int]] = None
+    TargetRarityList: Optional[list[int]] = None
     DependFuncId: Optional[int] = None
     InvalidHide: Optional[int] = None
     OutEnemyNpcId: Optional[int] = None
@@ -139,7 +139,7 @@ class BaseVals(BaseModel):
     ChangeTDCommandType: Optional[int] = None
     ShiftNpcId: Optional[int] = None
     DisplayLastFuncInvalidType: Optional[int] = None
-    AndCheckIndividualityList: Optional[List[int]] = None
+    AndCheckIndividualityList: Optional[list[int]] = None
     WinBattleNotRelatedSurvivalStatus: Optional[int] = None
     ForceSelfInstantDeath: Optional[int] = None
     ChangeMaxBreakGauge: Optional[int] = None
@@ -171,8 +171,8 @@ class RelationOverwriteDetail(BaseModelORJson):
 
 
 class NiceBuffRelationOverwrite(BaseModelORJson):
-    atkSide: Dict[SvtClass, Dict[SvtClass, RelationOverwriteDetail]]
-    defSide: Dict[SvtClass, Dict[SvtClass, RelationOverwriteDetail]]
+    atkSide: dict[SvtClass, dict[SvtClass, RelationOverwriteDetail]]
+    defSide: dict[SvtClass, dict[SvtClass, RelationOverwriteDetail]]
 
 
 class NiceBuffScript(BaseModelORJson):
@@ -189,10 +189,10 @@ class NiceBuff(BaseModelORJson):
     type: NiceBuffType
     buffGroup: int
     script: NiceBuffScript
-    vals: List[NiceTrait]
-    tvals: List[NiceTrait]
-    ckSelfIndv: List[NiceTrait]
-    ckOpIndv: List[NiceTrait]
+    vals: list[NiceTrait]
+    tvals: list[NiceTrait]
+    ckSelfIndv: list[NiceTrait]
+    ckOpIndv: list[NiceTrait]
     maxRate: int
 
 
@@ -203,30 +203,30 @@ class NiceBaseFunction(BaseModelORJson):
     funcTargetTeam: FuncApplyTarget
     funcPopupText: str
     funcPopupIcon: Optional[HttpUrl] = None
-    functvals: List[NiceTrait]
-    funcquestTvals: List[NiceTrait]
-    traitVals: List[NiceTrait] = []
-    buffs: List[NiceBuff]
+    functvals: list[NiceTrait]
+    funcquestTvals: list[NiceTrait]
+    traitVals: list[NiceTrait] = []
+    buffs: list[NiceBuff]
 
 
 class NiceFunction(NiceBaseFunction):
-    svals: List[Vals]
-    svals2: Optional[List[Vals]] = None
-    svals3: Optional[List[Vals]] = None
-    svals4: Optional[List[Vals]] = None
-    svals5: Optional[List[Vals]] = None
-    followerVals: Optional[List[Vals]] = None
+    svals: list[Vals]
+    svals2: Optional[list[Vals]] = None
+    svals3: Optional[list[Vals]] = None
+    svals4: Optional[list[Vals]] = None
+    svals5: Optional[list[Vals]] = None
+    followerVals: Optional[list[Vals]] = None
 
 
 class NiceSkillScript(BaseModel):
-    NP_HIGHER: Optional[List[int]] = None
-    NP_LOWER: Optional[List[int]] = None
-    STAR_HIGHER: Optional[List[int]] = None
-    STAR_LOWER: Optional[List[int]] = None
-    HP_VAL_HIGHER: Optional[List[int]] = None
-    HP_VAL_LOWER: Optional[List[int]] = None
-    HP_PER_HIGHER: Optional[List[int]] = None
-    HP_PER_LOWER: Optional[List[int]] = None
+    NP_HIGHER: Optional[list[int]] = None
+    NP_LOWER: Optional[list[int]] = None
+    STAR_HIGHER: Optional[list[int]] = None
+    STAR_LOWER: Optional[list[int]] = None
+    HP_VAL_HIGHER: Optional[list[int]] = None
+    HP_VAL_LOWER: Optional[list[int]] = None
+    HP_PER_HIGHER: Optional[list[int]] = None
+    HP_PER_LOWER: Optional[list[int]] = None
 
 
 class NiceSkill(BaseModelORJson):
@@ -240,19 +240,19 @@ class NiceSkill(BaseModelORJson):
     condQuestId: int = -1
     condQuestPhase: int = -1
     icon: Optional[HttpUrl] = None
-    coolDown: List[int]
-    actIndividuality: List[NiceTrait]
+    coolDown: list[int]
+    actIndividuality: list[NiceTrait]
     script: NiceSkillScript
-    functions: List[NiceFunction]
+    functions: list[NiceFunction]
 
 
 class NpGain(BaseModel):
-    buster: List[int]
-    arts: List[int]
-    quick: List[int]
-    extra: List[int]
-    defence: List[int]
-    np: List[int]
+    buster: list[int]
+    arts: list[int]
+    quick: list[int]
+    extra: list[int]
+    defence: list[int]
+    np: list[int]
 
 
 class NiceTd(BaseModelORJson):
@@ -265,13 +265,13 @@ class NiceTd(BaseModelORJson):
     type: str
     detail: Optional[str] = None
     npGain: NpGain
-    npDistribution: List[int]
+    npDistribution: list[int]
     strengthStatus: int
     priority: int
     condQuestId: int
     condQuestPhase: int
-    individuality: List[NiceTrait]
-    functions: List[NiceFunction]
+    individuality: list[NiceTrait]
+    functions: list[NiceFunction]
 
 
 class ExtraMCAssets(BaseModel):
@@ -286,15 +286,15 @@ class NiceMysticCode(BaseModelORJson):
     detail: str
     maxLv: int
     extraAssets: ExtraMCAssets
-    skills: List[NiceSkill]
-    expRequired: List[int]
+    skills: list[NiceSkill]
+    expRequired: list[int]
 
 
 class ExtraAssetsUrl(BaseModel):
-    ascension: Optional[Dict[int, HttpUrl]] = None
-    costume: Optional[Dict[int, HttpUrl]] = None
-    equip: Optional[Dict[int, HttpUrl]] = None
-    cc: Optional[Dict[int, HttpUrl]] = None
+    ascension: Optional[dict[int, HttpUrl]] = None
+    costume: Optional[dict[int, HttpUrl]] = None
+    equip: Optional[dict[int, HttpUrl]] = None
+    cc: Optional[dict[int, HttpUrl]] = None
 
 
 class ExtraCCAssets(BaseModel):
@@ -314,18 +314,18 @@ AscensionAddData = TypeVar("AscensionAddData")
 
 
 class AscensionAddEntry(GenericModel, Generic[AscensionAddData]):
-    ascension: Dict[int, AscensionAddData]
-    costume: Dict[int, AscensionAddData]
+    ascension: dict[int, AscensionAddData]
+    costume: dict[int, AscensionAddData]
 
 
 class AscensionAdd(BaseModel):
-    individuality: AscensionAddEntry[List[NiceTrait]]
+    individuality: AscensionAddEntry[list[NiceTrait]]
     voicePrefix: AscensionAddEntry[int]
 
 
 class NiceServantChange(BaseModel):
-    beforeTreasureDeviceIds: List[int]
-    afterTreasureDeviceIds: List[int]
+    beforeTreasureDeviceIds: list[int]
+    afterTreasureDeviceIds: list[int]
     svtId: int
     priority: int
     condType: NiceCondType
@@ -344,7 +344,7 @@ class NiceLoreComment(BaseModel):
     condMessage: str
     comment: str
     condType: NiceCondType
-    condValues: Optional[List[int]]
+    condValues: Optional[list[int]]
     condValue2: int
 
 
@@ -372,7 +372,7 @@ class NiceCostume(BaseModel):
 class NiceVoiceCond(BaseModel):
     condType: NiceVoiceCondType
     value: int
-    valueList: List[int] = []
+    valueList: list[int] = []
     eventId: int
 
 
@@ -383,34 +383,34 @@ class NiceVoiceLine(BaseModel):
     priority: Optional[int] = None
     svtVoiceType: Optional[NiceSvtVoiceType] = None
     overwriteName: str
-    id: List[str]
-    audioAssets: List[str]
-    delay: List[Decimal]
-    face: List[int]
-    form: List[int]
-    text: List[str]
+    id: list[str]
+    audioAssets: list[str]
+    delay: list[Decimal]
+    face: list[int]
+    form: list[int]
+    text: list[str]
     subtitle: str
-    conds: List[NiceVoiceCond]
+    conds: list[NiceVoiceCond]
 
 
 class NiceVoiceGroup(BaseModel):
     svtId: int
     voicePrefix: int
     type: NiceSvtVoiceType
-    voiceLines: List[NiceVoiceLine]
+    voiceLines: list[NiceVoiceLine]
 
 
 class NiceLore(BaseModel):
     cv: str
     illustrator: str
     stats: Optional[NiceLoreStats] = None
-    costume: Dict[int, NiceCostume]
-    comments: List[NiceLoreComment]
-    voices: List[NiceVoiceGroup]
+    costume: dict[int, NiceCostume]
+    comments: list[NiceLoreComment]
+    voices: list[NiceVoiceGroup]
 
 
 class NiceServantScript(BaseModel):
-    SkillRankUp: Optional[Dict[int, List[int]]] = None
+    SkillRankUp: Optional[dict[int, list[int]]] = None
 
 
 class NiceCommandCode(BaseModelORJson):
@@ -419,7 +419,7 @@ class NiceCommandCode(BaseModelORJson):
     name: str
     rarity: int
     extraAssets: ExtraCCAssets
-    skills: List[NiceSkill]
+    skills: list[NiceSkill]
     comment: str
 
 
@@ -436,31 +436,31 @@ class NiceServant(BaseModelORJson):
     extraAssets: ExtraAssets
     gender: NiceGender
     attribute: Attribute
-    traits: List[NiceTrait]
+    traits: list[NiceTrait]
     starAbsorb: int
     starGen: int
     instantDeathChance: int
-    cards: List[NiceCardType]
-    hitsDistribution: Dict[NiceCardType, List[int]]
+    cards: list[NiceCardType]
+    hitsDistribution: dict[NiceCardType, list[int]]
     atkBase: int
     atkMax: int
     hpBase: int
     hpMax: int
-    relateQuestIds: List[int]
+    relateQuestIds: list[int]
     growthCurve: int
-    atkGrowth: List[int]
-    hpGrowth: List[int]
-    bondGrowth: List[int]
+    atkGrowth: list[int]
+    hpGrowth: list[int]
+    bondGrowth: list[int]
     bondEquip: int
     ascensionAdd: AscensionAdd
-    svtChange: List[NiceServantChange]
-    ascensionMaterials: Dict[int, NiceLvlUpMaterial]
-    skillMaterials: Dict[int, NiceLvlUpMaterial]
-    costumeMaterials: Dict[int, NiceLvlUpMaterial]
+    svtChange: list[NiceServantChange]
+    ascensionMaterials: dict[int, NiceLvlUpMaterial]
+    skillMaterials: dict[int, NiceLvlUpMaterial]
+    costumeMaterials: dict[int, NiceLvlUpMaterial]
     script: NiceServantScript
-    skills: List[NiceSkill]
-    classPassive: List[NiceSkill]
-    noblePhantasms: List[NiceTd]
+    skills: list[NiceSkill]
+    classPassive: list[NiceSkill]
+    noblePhantasms: list[NiceTd]
     profile: Optional[NiceLore] = None
 
 
@@ -479,16 +479,16 @@ class NiceEquip(BaseModelORJson):
     hpBase: int
     hpMax: int
     growthCurve: int
-    atkGrowth: List[int]
-    hpGrowth: List[int]
-    skills: List[NiceSkill]
+    atkGrowth: list[int]
+    hpGrowth: list[int]
+    skills: list[NiceSkill]
     profile: Optional[NiceLore] = None
 
 
 class NiceReversedSkillTd(BaseModelORJson):
-    servant: List[NiceServant] = []
-    MC: List[NiceMysticCode] = []
-    CC: List[NiceCommandCode] = []
+    servant: list[NiceServant] = []
+    MC: list[NiceMysticCode] = []
+    CC: list[NiceCommandCode] = []
 
 
 class NiceReversedSkillTdType(BaseModelORJson):
@@ -505,8 +505,8 @@ class NiceTdReverse(NiceTd):
 
 
 class NiceReversedFunction(BaseModelORJson):
-    skill: List[NiceSkillReverse] = []
-    NP: List[NiceTdReverse] = []
+    skill: list[NiceSkillReverse] = []
+    NP: list[NiceTdReverse] = []
 
 
 class NiceReversedFunctionType(BaseModelORJson):
@@ -519,7 +519,7 @@ class NiceBaseFunctionReverse(NiceBaseFunction):
 
 
 class NiceReversedBuff(BaseModelORJson):
-    function: List[NiceBaseFunctionReverse] = []
+    function: list[NiceBaseFunctionReverse] = []
 
 
 class NiceReversedBuffType(BaseModelORJson):
@@ -545,7 +545,7 @@ class NiceQuest(BaseModelORJson):
     consumeType: NiceConsumeType
     consume: int
     spotId: int
-    releaseConditions: List[NiceQuestRelease]
+    releaseConditions: list[NiceQuestRelease]
     noticeAt: int
     openedAt: int
     closedAt: int
@@ -553,8 +553,8 @@ class NiceQuest(BaseModelORJson):
 
 class NiceQuestPhase(NiceQuest):
     phase: int
-    className: List[SvtClass]
-    individuality: List[NiceTrait]
+    className: list[SvtClass]
+    individuality: list[NiceTrait]
     qp: int
     exp: int
     bond: int

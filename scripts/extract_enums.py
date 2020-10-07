@@ -1,5 +1,4 @@
 import argparse
-from typing import Dict, List
 
 
 def convert_name(name: str) -> str:
@@ -7,8 +6,8 @@ def convert_name(name: str) -> str:
     return "".join([words[0].lower()] + [w.title() for w in words[1:]])
 
 
-def enum_to_dict(cstype: List[str]) -> Dict[int, str]:
-    enum_dict: Dict[int, str] = {}
+def enum_to_dict(cstype: list[str]) -> dict[int, str]:
+    enum_dict: dict[int, str] = {}
     for item in cstype:
         item = item.split(";")[0]
         splitted = item.split(" = ")
@@ -18,7 +17,7 @@ def enum_to_dict(cstype: List[str]) -> Dict[int, str]:
     return {k: enum_dict[k] for k in sorted(enum_dict.keys())}
 
 
-def out_intenum(input_dict: Dict[int, str], className: str) -> List[str]:
+def out_intenum(input_dict: dict[int, str], className: str) -> list[str]:
     intenum_lines = [f"class {className}(IntEnum):\n"]
     for enumint, enumstr in input_dict.items():
         intenum_lines.append(f"    {enumstr} = {enumint}\n")
@@ -76,7 +75,7 @@ STR_NAME_COMMENT = {
 }
 
 
-def out_strenum(input_dict: Dict[int, str], nice_class: str) -> List[str]:
+def out_strenum(input_dict: dict[int, str], nice_class: str) -> list[str]:
     strenum_lines = [f"class {nice_class}(str, Enum):\n"]
     for enumstr in list(input_dict.values()) + list(
         EXTRA_STR_NAME.get(nice_class, {}).values()
@@ -89,9 +88,9 @@ def out_strenum(input_dict: Dict[int, str], nice_class: str) -> List[str]:
 
 
 def out_enumdict(
-    input_dict: Dict[int, str], nice_class: str, dict_name: str
-) -> List[str]:
-    strenumdict_lines = [f"{dict_name}: Dict[int, {nice_class}] = {{\n"]
+    input_dict: dict[int, str], nice_class: str, dict_name: str
+) -> list[str]:
+    strenumdict_lines = [f"{dict_name}: dict[int, {nice_class}] = {{\n"]
     for enumint, enumstr in list(input_dict.items()) + list(
         EXTRA_STR_NAME.get(nice_class, {}).items()
     ):
@@ -102,8 +101,8 @@ def out_enumdict(
 
 
 def cs_enums_to_lines(
-    cs_enums: List[str], raw_class: str, nice_class: str, dict_name: str
-) -> List[str]:
+    cs_enums: list[str], raw_class: str, nice_class: str, dict_name: str
+) -> list[str]:
     enum_dict = enum_to_dict(cs_enums)
     if raw_class == "DataValsType":
         return out_intenum(enum_dict, raw_class)
@@ -149,7 +148,7 @@ ENUMS = [
 ]
 
 
-cs_signatures: Dict[str, str] = {f"public enum {enum[0]}": enum[0] for enum in ENUMS}
+cs_signatures: dict[str, str] = {f"public enum {enum[0]}": enum[0] for enum in ENUMS}
 
 
 def main(dump_path: str, gameenums_path: str) -> None:
@@ -157,8 +156,8 @@ def main(dump_path: str, gameenums_path: str) -> None:
     with open(dump_path, "r", encoding="utf-8") as fp:
         lines = fp.readlines()
 
-    all_cs_enums: Dict[str, List[str]] = {}
-    enum_lines: List[str] = []
+    all_cs_enums: dict[str, list[str]] = {}
+    enum_lines: list[str] = []
     in_recording_signature = ""
     in_recording_mode = False
 
@@ -189,7 +188,6 @@ def main(dump_path: str, gameenums_path: str) -> None:
         "\n",
         "\n",
         "from enum import Enum, IntEnum\n",
-        "from typing import Dict\n",
         "\n",
         "\n",
     ]

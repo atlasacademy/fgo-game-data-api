@@ -1,4 +1,4 @@
-from typing import Any, Dict, Iterable, List, Mapping, TypeVar, Union
+from typing import Any, Iterable, Mapping, TypeVar, Union
 
 from .enums import TRAIT_NAME, Trait
 
@@ -15,7 +15,7 @@ def get_safe(input_dict: Mapping[Any, VT], key: LT) -> Union[VT, LT]:
     return input_dict.get(key, key)
 
 
-def get_traits_list(input_idv: Iterable[int]) -> List[Dict[str, Union[Trait, int]]]:
+def get_traits_list(input_idv: Iterable[int]) -> list[dict[str, Union[Trait, int]]]:
     return [
         {"id": item, "name": TRAIT_NAME.get(item, Trait.unknown)}
         if item >= 0

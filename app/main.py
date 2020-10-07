@@ -1,5 +1,5 @@
 import time
-from typing import Any, Awaitable, Callable, Dict
+from typing import Any, Awaitable, Callable
 
 import toml
 from fastapi import FastAPI, Request, Response
@@ -145,8 +145,8 @@ class RegionInfo(BaseModel):
     timestamp: int
 
 
-@app.get("/info", summary="Data version info", response_model=Dict[Region, RegionInfo])
-async def main_info() -> Dict[str, Any]:
+@app.get("/info", summary="Data version info", response_model=dict[Region, RegionInfo])
+async def main_info() -> dict[str, Any]:
     return repo_info
 
 

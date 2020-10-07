@@ -1,6 +1,5 @@
 import time
 from collections import defaultdict
-from typing import Dict
 
 import orjson
 
@@ -13,7 +12,7 @@ from .schemas.raw import Master, is_equip, is_servant
 settings = Settings()
 
 
-masters: Dict[Region, Master] = {}
+masters: dict[Region, Master] = {}
 MASTER_WITH_ID = {
     "mstSvt",
     "mstBuff",

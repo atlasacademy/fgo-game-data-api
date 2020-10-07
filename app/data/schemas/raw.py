@@ -1,5 +1,5 @@
 from decimal import Decimal
-from typing import Any, Dict, List, Optional, Set
+from typing import Any, Optional
 
 from pydantic import BaseModel
 
@@ -14,11 +14,11 @@ class MstConstant(BaseModelORJson):
 
 
 class MstBuff(BaseModel):
-    vals: List[int]  # [3004],
-    tvals: List[int]  # [5000, 4001],
-    ckSelfIndv: List[int]  # [4001],
-    ckOpIndv: List[int]  # [2005],
-    script: Dict[str, Any]  # {"HP_LOWER": 600, "motionName": "MOTION_2101"}
+    vals: list[int]  # [3004],
+    tvals: list[int]  # [5000, 4001],
+    ckSelfIndv: list[int]  # [4001],
+    ckOpIndv: list[int]  # [2005],
+    script: dict[str, Any]  # {"HP_LOWER": 600, "motionName": "MOTION_2101"}
     id: int  # 101,
     buffGroup: int  # 0,
     type: int  # 52,
@@ -33,11 +33,11 @@ class BuffEntityNoReverse(BaseModelORJson):
 
 
 class MstFunc(BaseModel):
-    vals: List[int]  # [208],
-    expandedVals: List[BuffEntityNoReverse] = []
-    tvals: List[int]  # [106],
-    questTvals: List[int]  # [94000015],
-    effectList: List[int]  # [332],
+    vals: list[int]  # [208],
+    expandedVals: list[BuffEntityNoReverse] = []
+    tvals: list[int]  # [106],
+    questTvals: list[int]  # [94000015],
+    effectList: list[int]  # [332],
     popupTextColor: int  # 2,
     id: int  # 657,
     cond: int  # 0,
@@ -53,9 +53,9 @@ class FunctionEntityNoReverse(BaseModelORJson):
 
 
 class MstSkill(BaseModel):
-    effectList: List[int]  # [323],
-    actIndividuality: List[int]  # [401900],
-    script: Dict[str, Any]
+    effectList: list[int]  # [323],
+    actIndividuality: list[int]  # [401900],
+    script: dict[str, Any]
     id: int  # 263350,
     type: int  # 1,
     name: str  # "Projection C",
@@ -95,19 +95,19 @@ class SkillLvScript(BaseModel):
     VoiceAssetName: Optional[str] = None
     aress: Optional[int] = None
     down: Optional[int] = None
-    followerVals: Optional[List[str]] = None
+    followerVals: Optional[list[str]] = None
     revivalUnder: Optional[int] = None
     revivalUp: Optional[int] = None
     up: Optional[int] = None
 
 
 class MstSkillLv(BaseModel):
-    funcId: List[int]  # [366, 216, 434],
-    expandedFuncId: List[FunctionEntityNoReverse] = []
-    svals: List[str]  # ["[1000,1,-1,3600]", "[1000,1,-1,200]", "[1000]"],
+    funcId: list[int]  # [366, 216, 434],
+    expandedFuncId: list[FunctionEntityNoReverse] = []
+    svals: list[str]  # ["[1000,1,-1,3600]", "[1000,1,-1,200]", "[1000]"],
     # script: SkillLvScript
     # Doesn't use the SkillLvScript model so it's easier to build the nice script object
-    script: Dict[str, Any]
+    script: dict[str, Any]
     skillId: int  # 440450,
     lv: int  # 4,
     chargeTurn: int  # 7,
@@ -117,14 +117,14 @@ class MstSkillLv(BaseModel):
 
 class SkillEntityNoReverse(BaseModelORJson):
     mstSkill: MstSkill
-    mstSkillDetail: List[MstSkillDetail]
-    mstSvtSkill: List[MstSvtSkill]
-    mstSkillLv: List[MstSkillLv]
+    mstSkillDetail: list[MstSkillDetail]
+    mstSvtSkill: list[MstSvtSkill]
+    mstSkillLv: list[MstSkillLv]
 
 
 class MstTreasureDevice(BaseModel):
-    individuality: List[int]  # [3000, 4001, 4007],
-    script: Dict[str, Any]  # {"limitSeqId_12": 800140, "randomWeights_3": [50, 50]},
+    individuality: list[int]  # [3000, 4001, 4007],
+    script: dict[str, Any]  # {"limitSeqId_12": 800140, "randomWeights_3": [50, 50]},
     id: int  # 500801,
     seqId: int  # 500800,
     name: str  # "Garden of Avalon",
@@ -142,7 +142,7 @@ class MstTreasureDeviceDetail(BaseModel):
 
 
 class MstSvtTreasureDevice(BaseModel):
-    damage: List[int]  # [5, 11, 17, 11, 23, 33],
+    damage: list[int]  # [5, 11, 17, 11, 23, 33],
     strengthStatus: int  # 1,
     svtId: int  # 400900,
     num: int  # 1,
@@ -159,13 +159,13 @@ class MstSvtTreasureDevice(BaseModel):
 
 
 class MstTreasureDeviceLv(BaseModel):
-    funcId: List[int]  # [13, 174, 432],
-    expandedFuncId: List[FunctionEntityNoReverse] = []
-    svals: List[str]  # ["[1000,6000]", "[1000,3,-1,100]", "[5000,3,-1]"],
-    svals2: List[str]  # ["[1000,6000]", "[1000,3,-1,150]", "[5000,3,-1]"],
-    svals3: List[str]  # ["[1000,6000]", "[1000,3,-1,200]", "[5000,3,-1]"],
-    svals4: List[str]  # ["[1000,6000]", "[1000,3,-1,250]", "[5000,3,-1]"],
-    svals5: List[str]  # ["[1000,6000]", "[1000,3,-1,300]", "[5000,3,-1]"],
+    funcId: list[int]  # [13, 174, 432],
+    expandedFuncId: list[FunctionEntityNoReverse] = []
+    svals: list[str]  # ["[1000,6000]", "[1000,3,-1,100]", "[5000,3,-1]"],
+    svals2: list[str]  # ["[1000,6000]", "[1000,3,-1,150]", "[5000,3,-1]"],
+    svals3: list[str]  # ["[1000,6000]", "[1000,3,-1,200]", "[5000,3,-1]"],
+    svals4: list[str]  # ["[1000,6000]", "[1000,3,-1,250]", "[5000,3,-1]"],
+    svals5: list[str]  # ["[1000,6000]", "[1000,3,-1,300]", "[5000,3,-1]"],
     treaureDeviceId: int  # 301102,
     lv: int  # 1,
     gaugeCount: int  # 1,
@@ -181,9 +181,9 @@ class MstTreasureDeviceLv(BaseModel):
 
 class TdEntityNoReverse(BaseModelORJson):
     mstTreasureDevice: MstTreasureDevice
-    mstTreasureDeviceDetail: List[MstTreasureDeviceDetail]
-    mstSvtTreasureDevice: List[MstSvtTreasureDevice]
-    mstTreasureDeviceLv: List[MstTreasureDeviceLv]
+    mstTreasureDeviceDetail: list[MstTreasureDeviceDetail]
+    mstSvtTreasureDevice: list[MstSvtTreasureDevice]
+    mstTreasureDeviceLv: list[MstTreasureDeviceLv]
 
 
 def is_servant(svt_type: int) -> bool:
@@ -199,12 +199,12 @@ def is_equip(svt_type: int) -> bool:
 
 
 class MstSvt(BaseModelORJson):
-    relateQuestIds: List[int]  # [91500701, 94004103, 94014414],
-    individuality: List[int]  # [5000, 500800],
-    classPassive: List[int]  # [83350, 80350, 320650],
-    expandedClassPassive: List[SkillEntityNoReverse] = []
-    cardIds: List[int]  # [3, 1, 1, 1, 2],
-    script: Dict[str, Any]  # { "cameraActionId: 80 },
+    relateQuestIds: list[int]  # [91500701, 94004103, 94014414],
+    individuality: list[int]  # [5000, 500800],
+    classPassive: list[int]  # [83350, 80350, 320650],
+    expandedClassPassive: list[SkillEntityNoReverse] = []
+    cardIds: list[int]  # [3, 1, 1, 1, 2],
+    script: dict[str, Any]  # { "cameraActionId: 80 },
     id: int  # 500800,
     baseSvtId: int  # 500800,
     name: str  # "Merlin",
@@ -245,12 +245,12 @@ class MstSvt(BaseModelORJson):
 
 
 class MstSvtCard(BaseModel):
-    normalDamage: List[int]  # [4, 9, 14, 19, 23, 31],
-    singleDamage: List[int]  # [4, 9, 14, 19, 23, 31],
-    trinityDamage: List[int]  # [4, 9, 14, 19, 23, 31],
-    unisonDamage: List[int]  # [4, 9, 14, 19, 23, 31],
-    grandDamage: List[int]  # [4, 9, 14, 19, 23, 31],
-    attackIndividuality: List[int]  # [3000],
+    normalDamage: list[int]  # [4, 9, 14, 19, 23, 31],
+    singleDamage: list[int]  # [4, 9, 14, 19, 23, 31],
+    trinityDamage: list[int]  # [4, 9, 14, 19, 23, 31],
+    unisonDamage: list[int]  # [4, 9, 14, 19, 23, 31],
+    grandDamage: list[int]  # [4, 9, 14, 19, 23, 31],
+    attackIndividuality: list[int]  # [3000],
     svtId: int  # 5009941050,
     cardId: int  # 5001,
     motion: int  # 50010,
@@ -285,7 +285,7 @@ class MstSvtLimit(BaseModel):
 
 
 class MstSvtComment(BaseModel):
-    condValues: Optional[List[int]]  # [1]
+    condValues: Optional[list[int]]  # [1]
     svtId: int  # 1000100
     id: int  # 2
     priority: int  # 0
@@ -315,24 +315,24 @@ class MstSvtExp(BaseModel):
 
 
 class MstCombineLimit(BaseModel):
-    itemIds: List[int]  # [7002]
-    itemNums: List[int]  # [4]
+    itemIds: list[int]  # [7002]
+    itemNums: list[int]  # [4]
     id: int  # 202100
     svtLimit: int  # 0
     qp: int  # 50000
 
 
 class MstCombineSkill(BaseModel):
-    itemIds: List[int]  # [6505, 6521]
-    itemNums: List[int]  # [16, 3]
+    itemIds: list[int]  # [6505, 6521]
+    itemNums: list[int]  # [16, 3]
     id: int  # 502300
     skillLv: int  # 7
     qp: int  # 5000000
 
 
 class MstCombineCostume(BaseModel):
-    itemIds: List[int]  # [6512, 6524, 6501, 6506]
-    itemNums: List[int]  # [10, 5, 5, 5]
+    itemIds: list[int]  # [6512, 6524, 6501, 6506]
+    itemNums: list[int]  # [10, 5, 5, 5]
     svtId: int  # 100100
     costumeId: int  # 11
     qp: int  # 3000000
@@ -395,13 +395,13 @@ class MstCommandCodeComment(BaseModel):
 
 class CommandCodeEntity(BaseModelORJson):
     mstCommandCode: MstCommandCode
-    mstSkill: List[SkillEntityNoReverse]
+    mstSkill: list[SkillEntityNoReverse]
     mstCommandCodeComment: MstCommandCodeComment
 
 
 class MstItem(BaseModel):
-    individuality: List[int]  # [],
-    script: Dict[str, Any]  # {},
+    individuality: list[int]  # [],
+    script: dict[str, Any]  # {},
     eventId: int  # 0,
     eventGroupId: int  # 0,
     id: int  # 6505,
@@ -425,8 +425,8 @@ class ItemEntity(BaseModel):
 
 
 class MstSvtLimitAdd(BaseModel):
-    individuality: List[int]  # [],
-    script: Dict[str, Any]  # {},
+    individuality: list[int]  # [],
+    script: dict[str, Any]  # {},
     svtId: int  # 102900,
     limitCount: int  # 11,
     battleCharaId: int  # 102930,
@@ -485,20 +485,20 @@ class ScriptJsonCond(BaseModel):
 
 class ScriptJson(BaseModel):
     overwriteName: Optional[str]
-    infos: List[ScriptJsonInfo]
-    conds: List[ScriptJsonCond]
+    infos: list[ScriptJsonInfo]
+    conds: list[ScriptJsonCond]
 
 
 class MstSvtVoice(BaseModel):
-    scriptJson: List[ScriptJson]
+    scriptJson: list[ScriptJson]
     id: int
     voicePrefix: int
     type: int
 
 
 class MstSvtChange(BaseModel):
-    beforeTreasureDeviceIds: List[int]  # [202100]
-    afterTreasureDeviceIds: List[int]  # [202101]
+    beforeTreasureDeviceIds: list[int]  # [202100]
+    afterTreasureDeviceIds: list[int]  # [202101]
     svtId: int  # 202100
     priority: int  # 1
     condType: int  # 36
@@ -530,8 +530,8 @@ class GlobalNewMstSubtitle(BaseModel):
 
 
 class MstFriendship(BaseModel):
-    itemIds: List[int] = []  # [1000]
-    itemNums: List[int] = []  # [1]
+    itemIds: list[int] = []  # [1000]
+    itemNums: list[int] = []  # [1]
     id: int  # 1001
     rank: int  # 12
     friendship: int  # 4700000
@@ -548,7 +548,7 @@ class MstClassRelationOverwrite(BaseModel):
 
 
 class MstQuest(BaseModel):
-    afterActionVals: List[str]  # []
+    afterActionVals: list[str]  # []
     id: int  # 94024618
     name: str  # "Automata Hunt - Pride Rank"
     nameRuby: str  # ""
@@ -596,9 +596,9 @@ class MstClosedMessage(BaseModel):
 
 
 class MstQuestPhase(BaseModel):
-    classIds: List[int]  # [7],
-    individuality: List[int]  # [2038, 2039, 94000046],
-    script: Dict[str, Any]  # {"resultBgmId": 61},
+    classIds: list[int]  # [7],
+    individuality: list[int]  # [2038, 2039, 94000046],
+    script: dict[str, Any]  # {"resultBgmId": 61},
     questId: int  # 94004502,
     phase: int  # 1,
     isNpcOnly: bool  # true,
@@ -611,115 +611,115 @@ class MstQuestPhase(BaseModel):
 
 class MysticCodeEntity(BaseModelORJson):
     mstEquip: MstEquip
-    mstSkill: List[SkillEntityNoReverse]
-    mstEquipExp: List[MstEquipExp]
+    mstSkill: list[SkillEntityNoReverse]
+    mstEquipExp: list[MstEquipExp]
 
 
 class Master(BaseModel):
-    mstConstantId: Dict[str, int]
-    mstBuff: List[MstBuff]
-    mstFunc: List[MstFunc]
-    mstSkill: List[MstSkill]
-    # mstSkillDetail: List[MstSkillDetail]
-    # mstSkillLv: List[MstSkillLv]
-    # mstItem: List[MstItem]
-    mstSvt: List[MstSvt]
-    # mstSvtCard: List[MstSvtCard]
-    # mstSvtSkill: List[MstSvtSkill]
-    # mstSvtLimit: List[MstSvtLimit]
-    # mstSvtExp: List[MstSvtExp]
-    # mstFriendship: List[MstFriendship]
-    # mstSvtTreasureDevice: List[MstSvtTreasureDevice]
-    # mstSvtLimitAdd: List[MstSvtLimitAdd]
-    # mstCombineSkill: List[MstCombineSkill]
-    # mstCombineLimit: List[MstCombineLimit]
-    mstTreasureDevice: List[MstTreasureDevice]
-    # mstTreasureDeviceDetail: List[MstTreasureDeviceDetail]
-    # mstTreasureDeviceLv: List[MstTreasureDeviceLv]
-    mstSvtId: Dict[int, MstSvt]
-    mstBuffId: Dict[int, MstBuff]
-    mstFuncId: Dict[int, MstFunc]
-    mstSkillId: Dict[int, MstSkill]
-    mstItemId: Dict[int, MstItem]
-    mstTreasureDeviceId: Dict[int, MstTreasureDevice]
-    mstSvtServantCollectionNo: Dict[int, int]
-    # mstSvtServantName: Dict[str, int]
-    mstSvtEquipCollectionNo: Dict[int, int]
-    mstSkillDetailId: Dict[int, List[MstSkillDetail]]
-    mstSvtSkillId: Dict[int, List[MstSvtSkill]]
-    mstSvtSkillSvtId: Dict[int, List[int]]
-    mstSkillLvId: Dict[int, List[MstSkillLv]]
-    mstTreasureDeviceDetailId: Dict[int, List[MstTreasureDeviceDetail]]
-    mstSvtTreasureDeviceId: Dict[int, List[MstSvtTreasureDevice]]
-    mstSvtTreasureDeviceSvtId: Dict[int, List[int]]
-    mstTreasureDeviceLvId: Dict[int, List[MstTreasureDeviceLv]]
-    mstCombineSkillId: Dict[int, List[MstCombineSkill]]
-    mstCombineLimitId: Dict[int, List[MstCombineLimit]]
-    mstCombineCostumeId: Dict[int, List[MstCombineCostume]]
-    mstSvtCardId: Dict[int, List[MstSvtCard]]
-    mstSvtLimitId: Dict[int, List[MstSvtLimit]]
-    mstSvtLimitAddId: Dict[int, List[MstSvtLimitAdd]]
-    mstSvtExpId: Dict[int, List[int]]
-    mstFriendshipId: Dict[int, List[int]]
-    # mstEquip: List[MstEquip]
-    mstEquipId: Dict[int, MstEquip]
-    mstEquipExp: List[MstEquipExp]
-    mstEquipSkill: List[MstEquipSkill]
-    # mstQuest: List[MstQuest]
-    mstQuestId: Dict[int, MstQuest]
-    # mstQuestPhase: List[MstQuestPhase]
-    mstQuestPhaseId: Dict[int, Dict[int, MstQuestPhase]]
-    mstQuestReleaseId: Dict[int, List[MstQuestRelease]]
-    mstClosedMessageId: Dict[int, str]
-    # mstSvtComment: List[MstSvtComment]
-    mstSvtCommentId: Dict[int, List[MstSvtComment]]
-    mstSvtCostumeId: Dict[int, List[MstSvtCostume]]
-    mstSvtChangeId: Dict[int, List[MstSvtChange]]
-    mstSvtVoiceRelationId: Dict[int, List[MstSvtVoiceRelation]]
-    # mstCommandCode: List[MstCommandCode]
-    mstCommandCodeId: Dict[int, MstCommandCode]
-    mstCommandCodeSkill: List[MstCommandCodeSkill]
-    mstCommandCodeComment: List[MstCommandCodeComment]
-    mstCvId: Dict[int, MstCv]
-    mstIllustratorId: Dict[int, MstIllustrator]
-    # mstSvtVoice: List[MstSvtVoice]
-    mstSvtVoiceId: Dict[int, List[MstSvtVoice]]
-    # mstVoice: List[MstVoice]
-    mstVoiceId: Dict[str, MstVoice]
-    # mstSvtGroup: List[MstSvtGroup]
-    mstSvtGroupId: Dict[int, List[int]]
-    # globalNewMstSubtitle: List[GlobalNewMstSubtitle] = []
-    mstSubtitleId: Dict[int, List[GlobalNewMstSubtitle]] = {}
-    # mstClassRelationOverwrite: List[MstClassRelationOverwrite]
-    mstClassRelationOverwriteId: Dict[int, List[MstClassRelationOverwrite]]
-    buffToFunc: Dict[int, Set[int]]
-    funcToSkill: Dict[int, Set[int]]
-    funcToTd: Dict[int, Set[int]]
-    passiveSkillToSvt: Dict[int, Set[int]]
-    bondEquip: Dict[int, int]
+    mstConstantId: dict[str, int]
+    mstBuff: list[MstBuff]
+    mstFunc: list[MstFunc]
+    mstSkill: list[MstSkill]
+    # mstSkillDetail: list[MstSkillDetail]
+    # mstSkillLv: list[MstSkillLv]
+    # mstItem: list[MstItem]
+    mstSvt: list[MstSvt]
+    # mstSvtCard: list[MstSvtCard]
+    # mstSvtSkill: list[MstSvtSkill]
+    # mstSvtLimit: list[MstSvtLimit]
+    # mstSvtExp: list[MstSvtExp]
+    # mstFriendship: list[MstFriendship]
+    # mstSvtTreasureDevice: list[MstSvtTreasureDevice]
+    # mstSvtLimitAdd: list[MstSvtLimitAdd]
+    # mstCombineSkill: list[MstCombineSkill]
+    # mstCombineLimit: list[MstCombineLimit]
+    mstTreasureDevice: list[MstTreasureDevice]
+    # mstTreasureDeviceDetail: list[MstTreasureDeviceDetail]
+    # mstTreasureDeviceLv: list[MstTreasureDeviceLv]
+    mstSvtId: dict[int, MstSvt]
+    mstBuffId: dict[int, MstBuff]
+    mstFuncId: dict[int, MstFunc]
+    mstSkillId: dict[int, MstSkill]
+    mstItemId: dict[int, MstItem]
+    mstTreasureDeviceId: dict[int, MstTreasureDevice]
+    mstSvtServantCollectionNo: dict[int, int]
+    # mstSvtServantName: dict[str, int]
+    mstSvtEquipCollectionNo: dict[int, int]
+    mstSkillDetailId: dict[int, list[MstSkillDetail]]
+    mstSvtSkillId: dict[int, list[MstSvtSkill]]
+    mstSvtSkillSvtId: dict[int, list[int]]
+    mstSkillLvId: dict[int, list[MstSkillLv]]
+    mstTreasureDeviceDetailId: dict[int, list[MstTreasureDeviceDetail]]
+    mstSvtTreasureDeviceId: dict[int, list[MstSvtTreasureDevice]]
+    mstSvtTreasureDeviceSvtId: dict[int, list[int]]
+    mstTreasureDeviceLvId: dict[int, list[MstTreasureDeviceLv]]
+    mstCombineSkillId: dict[int, list[MstCombineSkill]]
+    mstCombineLimitId: dict[int, list[MstCombineLimit]]
+    mstCombineCostumeId: dict[int, list[MstCombineCostume]]
+    mstSvtCardId: dict[int, list[MstSvtCard]]
+    mstSvtLimitId: dict[int, list[MstSvtLimit]]
+    mstSvtLimitAddId: dict[int, list[MstSvtLimitAdd]]
+    mstSvtExpId: dict[int, list[int]]
+    mstFriendshipId: dict[int, list[int]]
+    # mstEquip: list[MstEquip]
+    mstEquipId: dict[int, MstEquip]
+    mstEquipExp: list[MstEquipExp]
+    mstEquipSkill: list[MstEquipSkill]
+    # mstQuest: list[MstQuest]
+    mstQuestId: dict[int, MstQuest]
+    # mstQuestPhase: list[MstQuestPhase]
+    mstQuestPhaseId: dict[int, dict[int, MstQuestPhase]]
+    mstQuestReleaseId: dict[int, list[MstQuestRelease]]
+    mstClosedMessageId: dict[int, str]
+    # mstSvtComment: list[MstSvtComment]
+    mstSvtCommentId: dict[int, list[MstSvtComment]]
+    mstSvtCostumeId: dict[int, list[MstSvtCostume]]
+    mstSvtChangeId: dict[int, list[MstSvtChange]]
+    mstSvtVoiceRelationId: dict[int, list[MstSvtVoiceRelation]]
+    # mstCommandCode: list[MstCommandCode]
+    mstCommandCodeId: dict[int, MstCommandCode]
+    mstCommandCodeSkill: list[MstCommandCodeSkill]
+    mstCommandCodeComment: list[MstCommandCodeComment]
+    mstCvId: dict[int, MstCv]
+    mstIllustratorId: dict[int, MstIllustrator]
+    # mstSvtVoice: list[MstSvtVoice]
+    mstSvtVoiceId: dict[int, list[MstSvtVoice]]
+    # mstVoice: list[MstVoice]
+    mstVoiceId: dict[str, MstVoice]
+    # mstSvtGroup: list[MstSvtGroup]
+    mstSvtGroupId: dict[int, list[int]]
+    # globalNewMstSubtitle: list[GlobalNewMstSubtitle] = []
+    mstSubtitleId: dict[int, list[GlobalNewMstSubtitle]] = {}
+    # mstClassRelationOverwrite: list[MstClassRelationOverwrite]
+    mstClassRelationOverwriteId: dict[int, list[MstClassRelationOverwrite]]
+    buffToFunc: dict[int, set[int]]
+    funcToSkill: dict[int, set[int]]
+    funcToTd: dict[int, set[int]]
+    passiveSkillToSvt: dict[int, set[int]]
+    bondEquip: dict[int, int]
 
 
 class ServantEntity(BaseModelORJson):
     mstSvt: MstSvt
-    mstSkill: List[SkillEntityNoReverse]
-    mstTreasureDevice: List[TdEntityNoReverse]
-    mstSvtCard: List[MstSvtCard]
-    mstSvtLimit: List[MstSvtLimit]
-    mstCombineSkill: List[MstCombineSkill]
-    mstCombineLimit: List[MstCombineLimit]
-    mstCombineCostume: List[MstCombineCostume]
-    mstSvtLimitAdd: List[MstSvtLimitAdd]
-    mstSvtChange: List[MstSvtChange]
-    mstSvtCostume: List[MstSvtCostume]
-    mstSvtComment: List[MstSvtComment] = []
-    mstSvtVoice: List[MstSvtVoice] = []
-    mstSubtitle: List[GlobalNewMstSubtitle] = []
+    mstSkill: list[SkillEntityNoReverse]
+    mstTreasureDevice: list[TdEntityNoReverse]
+    mstSvtCard: list[MstSvtCard]
+    mstSvtLimit: list[MstSvtLimit]
+    mstCombineSkill: list[MstCombineSkill]
+    mstCombineLimit: list[MstCombineLimit]
+    mstCombineCostume: list[MstCombineCostume]
+    mstSvtLimitAdd: list[MstSvtLimitAdd]
+    mstSvtChange: list[MstSvtChange]
+    mstSvtCostume: list[MstSvtCostume]
+    mstSvtComment: list[MstSvtComment] = []
+    mstSvtVoice: list[MstSvtVoice] = []
+    mstSubtitle: list[GlobalNewMstSubtitle] = []
 
 
 class ReversedSkillTd(BaseModelORJson):
-    servant: List[ServantEntity] = []
-    MC: List[MysticCodeEntity] = []
-    CC: List[CommandCodeEntity] = []
+    servant: list[ServantEntity] = []
+    MC: list[MysticCodeEntity] = []
+    CC: list[CommandCodeEntity] = []
 
 
 class ReversedSkillTdType(BaseModelORJson):
@@ -735,8 +735,8 @@ class TdEntity(TdEntityNoReverse):
 
 
 class ReversedFunction(BaseModelORJson):
-    skill: List[SkillEntity] = []
-    NP: List[TdEntity] = []
+    skill: list[SkillEntity] = []
+    NP: list[TdEntity] = []
 
 
 class ReversedFunctionType(BaseModelORJson):
@@ -748,7 +748,7 @@ class FunctionEntity(FunctionEntityNoReverse):
 
 
 class ReversedBuff(BaseModelORJson):
-    function: List[FunctionEntity] = []
+    function: list[FunctionEntity] = []
 
 
 class ReversedBuffType(BaseModelORJson):
@@ -761,7 +761,7 @@ class BuffEntity(BuffEntityNoReverse):
 
 class QuestEntity(BaseModelORJson):
     mstQuest: MstQuest
-    mstQuestRelease: List[MstQuestRelease]
+    mstQuestRelease: list[MstQuestRelease]
 
 
 class QuestPhaseEntity(QuestEntity):

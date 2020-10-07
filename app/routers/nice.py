@@ -1,4 +1,4 @@
-from typing import Any, Dict, List
+from typing import Any
 
 from fastapi import APIRouter, Depends, HTTPException, Response
 
@@ -48,7 +48,7 @@ svt_lang_lore_description = """
     summary="Find and get servant data",
     description=ServantSearchQueryParams.DESCRIPTION + svt_lang_lore_description,
     response_description="Servant Entity",
-    response_model=List[NiceServant],
+    response_model=list[NiceServant],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403, 500]),
 )
@@ -118,7 +118,7 @@ equip_lore_description = """
     summary="Find and get CE data",
     description=EquipSearchQueryParams.DESCRIPTION + equip_lore_description,
     response_description="Equip Entity",
-    response_model=List[NiceEquip],
+    response_model=list[NiceEquip],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403, 500]),
 )
@@ -183,7 +183,7 @@ async def get_equip(
     summary="Find and get servant data",
     description=SvtSearchQueryParams.DESCRIPTION + svt_lang_lore_description,
     response_description="Nice Servant Entities",
-    response_model=List[NiceServant],
+    response_model=list[NiceServant],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403, 500]),
 )
@@ -295,7 +295,7 @@ and return the reverse skill objects.
     summary="Find and get skill data",
     description=SkillSearchParams.DESCRIPTION + nice_skill_extra,
     response_description="Nice Skill entities",
-    response_model=List[NiceSkillReverse],
+    response_model=list[NiceSkillReverse],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
@@ -354,7 +354,7 @@ and return the reversed servant objects.
     summary="Find and get NP data",
     description=TdSearchParams.DESCRIPTION + nice_td_extra,
     response_description="Nice NP Entities",
-    response_model=List[NiceTdReverse],
+    response_model=list[NiceTdReverse],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
@@ -414,7 +414,7 @@ and return the reversed skill objects.
     summary="Find and get function data",
     description=FuncSearchQueryParams.DESCRIPTION + function_reverse_lang_description,
     response_description="Function entity",
-    response_model=List[NiceBaseFunctionReverse],
+    response_model=list[NiceBaseFunctionReverse],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403, 500]),
 )
@@ -477,7 +477,7 @@ and return the reversed function objects.
     summary="Find and get buff data",
     description=BuffSearchQueryParams.DESCRIPTION + buff_reverse_lang_description,
     response_description="Function entity",
-    response_model=List[NiceBuffReverse],
+    response_model=list[NiceBuffReverse],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403, 500]),
 )
@@ -546,7 +546,7 @@ if settings.documentation_all_nice:
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-async def get_item(region: Region, item_id: int) -> Dict[str, Any]:
+async def get_item(region: Region, item_id: int) -> dict[str, Any]:
     if item_id in masters[region].mstItemId:
         return nice.get_nice_item(region, item_id)
     else:
@@ -561,7 +561,7 @@ async def get_item(region: Region, item_id: int) -> Dict[str, Any]:
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-async def get_quest_phase(region: Region, quest_id: int, phase: int) -> Dict[str, Any]:
+async def get_quest_phase(region: Region, quest_id: int, phase: int) -> dict[str, Any]:
     """
     Get the nice quest phase data from the given quest ID and phase number
     """
@@ -582,7 +582,7 @@ async def get_quest_phase(region: Region, quest_id: int, phase: int) -> Dict[str
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-async def get_quest(region: Region, quest_id: int) -> Dict[str, Any]:
+async def get_quest(region: Region, quest_id: int) -> dict[str, Any]:
     """
     Get the nice quest data from the given quest ID
     """

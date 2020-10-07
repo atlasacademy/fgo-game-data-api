@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from typing import Any, Callable, Dict, List, NamedTuple
+from typing import Any, Callable, NamedTuple
 
 from app.config import Settings
 from app.data.common import Region
@@ -135,7 +135,7 @@ def get_nice_attackrate(raw_data: Any) -> Any:
 
 
 def get_nice_card_data(raw_data: Any) -> Any:
-    out_data: Dict[str, Dict[int, Any]] = {}
+    out_data: dict[str, dict[int, Any]] = {}
     for item in raw_data:
         card_id = item["id"]
         card_index = item["num"]
@@ -152,7 +152,7 @@ def get_nice_card_data(raw_data: Any) -> Any:
 
 
 def get_nice_attri_relation(raw_data: Any) -> Any:
-    out_data: Dict[str, Dict[str, int]] = {}
+    out_data: dict[str, dict[str, int]] = {}
     for item in raw_data:
         atkAttri = ATTRIBUTE_NAME[item["atkAttri"]]
         defAttri = ATTRIBUTE_NAME[item["defAttri"]]
@@ -165,7 +165,7 @@ def get_nice_attri_relation(raw_data: Any) -> Any:
 
 
 def get_nice_class_relation(raw_data: Any) -> Any:
-    out_data: Dict[str, Dict[str, int]] = {}
+    out_data: dict[str, dict[str, int]] = {}
     for item in raw_data:
         atkAttri = CLASS_NAME.get(item["atkClass"])
         defAttri = CLASS_NAME.get(item["defClass"])
@@ -179,7 +179,7 @@ def get_nice_class_relation(raw_data: Any) -> Any:
 
 
 def get_nice_buff_action(raw_data: Any) -> Any:
-    def get_max_rate(bufftypelist: List[int]) -> List[int]:
+    def get_max_rate(bufftypelist: list[int]) -> list[int]:
         return list(
             {item["maxRate"] for item in raw_data if item["type"] in bufftypelist}
         )
@@ -255,7 +255,7 @@ def export_nice_master_lvl(region: Region, master_path: Path, export_path: Path)
     with open(constant_path, "r", encoding="utf-8") as fp:
         constant = json.load(fp)
     with open(master_path / "mstUserExp.json", "r", encoding="utf-8") as fp:
-        mstUserExp: List[Dict[str, int]] = json.load(fp)
+        mstUserExp: list[dict[str, int]] = json.load(fp)
 
     def get_current_value(base: int, key: str, current: int) -> int:
         return base + sum([item[key] for item in mstUserExp[: current + 1]])
