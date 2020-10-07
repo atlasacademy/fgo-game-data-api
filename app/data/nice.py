@@ -123,11 +123,7 @@ def nullable_to_string(nullable: Optional[str]) -> str:
 
 
 def remove_brackets(val_string: str) -> str:
-    if val_string[0] == "[":
-        val_string = val_string[1:]
-    if val_string[-1] == "]":
-        val_string = val_string[:-1]
-    return val_string
+    return val_string.removeprefix("[").removesuffix("]")
 
 
 def parse_dataVals(
@@ -383,16 +379,13 @@ def get_nice_skill(
     if skillEntity.mstSvtSkill:
         chosenSvt = [item for item in skillEntity.mstSvtSkill if item.svtId == svtId]
         if chosenSvt:
-            # Wait for 3.9 for PEP 584 to use |=
-            nice_skill.update(
-                {
-                    "strengthStatus": chosenSvt[0].strengthStatus,
-                    "num": chosenSvt[0].num,
-                    "priority": chosenSvt[0].priority,
-                    "condQuestId": chosenSvt[0].condQuestId,
-                    "condQuestPhase": chosenSvt[0].condQuestPhase,
-                }
-            )
+            nice_skill |= {
+                "strengthStatus": chosenSvt[0].strengthStatus,
+                "num": chosenSvt[0].num,
+                "priority": chosenSvt[0].priority,
+                "condQuestId": chosenSvt[0].condQuestId,
+                "condQuestPhase": chosenSvt[0].condQuestPhase,
+            }
 
     nice_skill["coolDown"] = [item.chargeTurn for item in skillEntity.mstSkillLv]
 
@@ -460,18 +453,16 @@ def get_nice_td(
             file_i = "np"
         else:
             file_i = "np" + str(imageId // 2)
-        nice_td.update(
-            {
-                "icon": AssetURL.commands.format(**base_settings_id, i=file_i),
-                "strengthStatus": chosenSvt[0].strengthStatus,
-                "num": chosenSvt[0].num,
-                "priority": chosenSvt[0].priority,
-                "condQuestId": chosenSvt[0].condQuestId,
-                "condQuestPhase": chosenSvt[0].condQuestPhase,
-                "card": CARD_TYPE_NAME[chosenSvt[0].cardId],
-                "npDistribution": chosenSvt[0].damage,
-            }
-        )
+        nice_td |= {
+            "icon": AssetURL.commands.format(**base_settings_id, i=file_i),
+            "strengthStatus": chosenSvt[0].strengthStatus,
+            "num": chosenSvt[0].num,
+            "priority": chosenSvt[0].priority,
+            "condQuestId": chosenSvt[0].condQuestId,
+            "condQuestPhase": chosenSvt[0].condQuestPhase,
+            "card": CARD_TYPE_NAME[chosenSvt[0].cardId],
+            "npDistribution": chosenSvt[0].damage,
+        }
 
     nice_td["functions"] = []
 
@@ -799,18 +790,16 @@ def get_nice_servant(
     hpGrowth = [
         hpBase + (hpMax - hpBase) * curve // 1000 for curve in growthCurveValues
     ]
-    nice_data.update(
-        {
-            "lvMax": lvMax,
-            "growthCurve": growthCurve,
-            "atkMax": atkMax,
-            "atkBase": atkBase,
-            "hpMax": hpMax,
-            "hpBase": hpBase,
-            "atkGrowth": atkGrowth,
-            "hpGrowth": hpGrowth,
-        }
-    )
+    nice_data |= {
+        "lvMax": lvMax,
+        "growthCurve": growthCurve,
+        "atkMax": atkMax,
+        "atkBase": atkBase,
+        "hpMax": hpMax,
+        "hpBase": hpBase,
+        "atkGrowth": atkGrowth,
+        "hpGrowth": hpGrowth,
+    }
 
     nice_data["hitsDistribution"] = {
         CARD_TYPE_NAME[item.cardId]: item.normalDamage for item in raw_data.mstSvtCard
@@ -1247,14 +1236,12 @@ def get_nice_quest_alone(region: Region, quest_id: int) -> dict[str, Any]:
 def get_nice_quest_phase(region: Region, quest_id: int, phase: int) -> dict[str, Any]:
     raw_data = raw.get_quest_phase_entity(region, quest_id, phase)
     nice_data = get_nice_quest(region, raw_data)
-    nice_data.update(
-        {
-            "phase": raw_data.mstQuestPhase.phase,
-            "className": [CLASS_NAME[item] for item in raw_data.mstQuestPhase.classIds],
-            "individuality": get_traits_list(raw_data.mstQuestPhase.individuality),
-            "qp": raw_data.mstQuestPhase.qp,
-            "exp": raw_data.mstQuestPhase.playerExp,
-            "bond": raw_data.mstQuestPhase.friendshipExp,
-        }
-    )
+    nice_data |= {
+        "phase": raw_data.mstQuestPhase.phase,
+        "className": [CLASS_NAME[item] for item in raw_data.mstQuestPhase.classIds],
+        "individuality": get_traits_list(raw_data.mstQuestPhase.individuality),
+        "qp": raw_data.mstQuestPhase.qp,
+        "exp": raw_data.mstQuestPhase.playerExp,
+        "bond": raw_data.mstQuestPhase.friendshipExp,
+    }
     return nice_data
