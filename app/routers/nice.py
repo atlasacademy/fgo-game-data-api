@@ -546,9 +546,9 @@ if settings.documentation_all_nice:
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-async def get_item(region: Region, item_id: int) -> Dict[str, Any]:
+async def get_item(region: Region, item_id: int) -> Response:
     if item_id in masters[region].mstItemId:
-        return nice.get_nice_item(region, item_id)
+        return item_response(nice.get_nice_item(region, item_id))
     else:
         raise HTTPException(status_code=404, detail="Item not found")
 

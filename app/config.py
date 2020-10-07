@@ -28,6 +28,10 @@ class Settings(BaseSettings):
     github_webhook_secret: SecretStr = SecretStr("")
     github_webhook_git_pull: bool = False
     github_webhook_sleep: int = 0
+    bloom_shard: int = 0
+    redis_host: Optional[str] = None
+    redis_port: int = 6379
+    redis_db: int = 0
 
     @validator("asset_url")
     def remove_last_slash(cls, value: str) -> str:

@@ -1,6 +1,6 @@
 # FGO game data API <!-- omit in toc -->
 
-HTTP API for FGO game data. Transform the raw game data into something a bit more managable.
+HTTP API for FGO game data. Transform the raw game data into something a bit more manageable.
 
 - [Environment variables](#environment-variables)
 - [Run the API server](#run-the-api-server)
@@ -25,6 +25,10 @@ List of environment variables for the main app. All are required except noted:
 - `GITHUB_WEBHOOK_SECRET`: Optional, default to `""`. If set, will add a webhook location at `/GITHUB_WEBHOOK_SECRET/update` that will pull and update the game data. If it's not set, the endpoint is not created.
 - `GITHUB_WEBHOOK_GIT_PULL`: Optional, default to `False`. If set, the app will do `git pull` on the gamedata repos when the webhook above is used.
 - `GITHUB_WEBHOOK_SLEEP`: Optional, default to `0`. If set, will delay the action above by `GITHUB_WEBHOOK_SLEEP` seconds.
+- `BLOOM_SHARD`: Optional, default to `0`. [Bloom](https://github.com/valeriansaliou/bloom) shard that is used for caching.
+- `REDIS_HOST`: Optional, default to `None`. Redis host for Bloom. If specified, will clear the Bloom cache when gamedata is updated.
+- `REDIS_PORT`: Optional, default to `6379`. Redis port for Bloom.
+- `REDIS_DB`: Optional, default to `0`. Redis DB for Bloom.
 
 You can also make a .env file at the project root with the following entries instead of setting the environment variables:
 
@@ -39,6 +43,10 @@ LRU_CACHE_SIZE=128
 GITHUB_WEBHOOK_SECRET="e81c7b97-9a57-4424-a887-149b4b5adf57"
 GITHUB_WEBHOOK_GIT_PULL=True
 GITHUB_WEBHOOK_SLEEP=0
+BLOOM_SHARD=0
+REDIS_HOST="localhost"
+REDIS_PORT=6379
+REDIS_DB=0
 ```
 
 List of optional enviroment variables for the Docker image can be found [here](https://github.com/tiangolo/uvicorn-gunicorn-docker#environment-variables).

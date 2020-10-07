@@ -2,6 +2,7 @@ import json
 import time
 from typing import Any, Dict, Iterable, List, Union
 
+import redis
 from git import Repo
 
 from ..config import Settings, logger, project_root
@@ -166,6 +167,21 @@ def update_repo_info() -> None:
 update_repo_info()
 
 
+def clear_bloom_redis_cache() -> None:
+    # If DEL doesn't work with the redis setup, consider calling bloom instead of redis.
+    # https://github.com/valeriansaliou/bloom#can-cache-be-programatically-expired
+    # The hash for bucket name "fgo_api" is "f3bbf7fa"
+    if settings.redis_host:
+        redis_server = redis.Redis(
+            settings.redis_host, port=settings.redis_port, db=settings.redis_db
+        )
+        for key in redis_server.scan_iter(f"bloom:{settings.bloom_shard}:c:*"):
+            redis_server.delete(key)
+
+
+clear_bloom_redis_cache()
+
+
 def pull_and_update() -> None:  # pragma: no cover
     logger.info(f"Sleeping {settings.github_webhook_sleep} seconds …")
     time.sleep(settings.github_webhook_sleep)
@@ -184,3 +200,4 @@ def pull_and_update() -> None:  # pragma: no cover
     get_nice_td_alone.cache_clear()
     generate_exports()
     update_repo_info()
+    clear_bloom_redis_cache()
