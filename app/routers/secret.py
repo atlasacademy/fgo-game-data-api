@@ -32,10 +32,16 @@ instance_info = {
 @router.post("/update", include_in_schema=False)  # pragma: no cover
 async def update_gamedata(background_tasks: BackgroundTasks) -> Response:
     background_tasks.add_task(pull_and_update)
-    response = dict(message="Game data is updated in the background", **instance_info)
-    return pretty_print_response(response)
+    response_data = dict(
+        message="Game data is being updated in the background", **instance_info
+    )
+    response = pretty_print_response(response_data)
+    response.headers["Bloom-Response-Ignore"] = "1"
+    return response
 
 
 @router.get("/info", include_in_schema=False)
 async def info() -> Response:
-    return pretty_print_response(instance_info)
+    response = pretty_print_response(instance_info)
+    response.headers["Bloom-Response-Ignore"] = "1"
+    return response

@@ -117,6 +117,7 @@ async def add_process_time_header(
     response = await call_next(request)
     process_time = round((time.perf_counter() - start_time) * 1000, 2)
     response.headers["Server-Timing"] = f"app;dur={process_time}"
+    response.headers["Bloom-Response-Buckets"] = "fgo-game-data-api"
     logger.debug(f"Processed in {process_time}ms.")
     return response
 
@@ -146,7 +147,8 @@ class RegionInfo(BaseModel):
 
 
 @app.get("/info", summary="Data version info", response_model=Dict[Region, RegionInfo])
-async def main_info() -> Dict[str, Any]:
+async def main_info(response: Response) -> Dict[str, Any]:
+    response.headers["Bloom-Response-Ignore"] = "1"
     return repo_info
 
 
