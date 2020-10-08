@@ -175,8 +175,11 @@ def clear_bloom_redis_cache() -> None:
         redis_server = redis.Redis(
             settings.redis_host, port=settings.redis_port, db=settings.redis_db
         )
+        key_count = 0
         for key in redis_server.scan_iter(f"bloom:{settings.bloom_shard}:c:*"):
             redis_server.delete(key)
+            key_count += 1
+        logger.info(f"Cleared {key_count} redis keys.")
 
 
 clear_bloom_redis_cache()
