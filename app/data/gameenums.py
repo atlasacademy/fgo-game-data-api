@@ -1272,6 +1272,7 @@ class DataValsType(IntEnum):
     IncludePassiveIndividuality = 62
     MotionChange = 63
     PopLabelDelay = 64
+    NoTargetNoAct = 65
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -1553,6 +1554,10 @@ class CondType(IntEnum):
     BATTLE_GROUP_WIN_AVOVE = 134
     BATTLE_GROUP_LOSE_AVOVE = 135
     SVT_LIMIT_CLASS_NUM = 136
+    OVER_TIME_LIMIT_RAID_ALIVE = 137
+    ON_TIME_LIMIT_RAID_DEAD = 138
+    ON_TIME_LIMIT_RAID_DEAD_NUM = 139
+    RAID_BATTLE_PROGRESS_ABOVE = 140
 
 
 class NiceCondType(str, Enum):
@@ -1693,6 +1698,10 @@ class NiceCondType(str, Enum):
     battleGroupWinAvove = "battleGroupWinAvove"
     battleGroupLoseAvove = "battleGroupLoseAvove"
     svtLimitClassNum = "svtLimitClassNum"
+    overTimeLimitRaidAlive = "overTimeLimitRaidAlive"
+    onTimeLimitRaidDead = "onTimeLimitRaidDead"
+    onTimeLimitRaidDeadNum = "onTimeLimitRaidDeadNum"
+    raidBattleProgressAbove = "raidBattleProgressAbove"
 
 
 COND_TYPE_NAME: Dict[int, NiceCondType] = {
@@ -1833,6 +1842,10 @@ COND_TYPE_NAME: Dict[int, NiceCondType] = {
     134: NiceCondType.battleGroupWinAvove,
     135: NiceCondType.battleGroupLoseAvove,
     136: NiceCondType.svtLimitClassNum,
+    137: NiceCondType.overTimeLimitRaidAlive,
+    138: NiceCondType.onTimeLimitRaidDead,
+    139: NiceCondType.onTimeLimitRaidDeadNum,
+    140: NiceCondType.raidBattleProgressAbove,
 }
 
 
