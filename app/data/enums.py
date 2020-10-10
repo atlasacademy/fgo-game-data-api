@@ -495,6 +495,7 @@ class Trait(str, Enum):
     buffSpecialInvincible = "buffSpecialInvincible"
     buffSkillRankUp = "buffSkillRankUp"
     buffSleep = "buffSleep"
+    nobunaga = "nobunaga"
 
 
 TRAIT_NAME: Dict[int, Trait] = {
@@ -602,6 +603,7 @@ TRAIT_NAME: Dict[int, Trait] = {
     2664: Trait.kingproteaProliferationNPDefense,
     2666: Trait.giant,
     2667: Trait.childServant,  # Summer Illya's 2nd skill
+    2721: Trait.nobunaga,  # Nobukatsu's skill
     # 2xxx: CQ or Story quests buff
     3000: Trait.normalAttack0,  # Normal attack, including NP
     3001: Trait.normalAttack1,  # Haven't figured out the difference between the 3

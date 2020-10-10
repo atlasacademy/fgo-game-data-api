@@ -4,7 +4,16 @@ All notable changes to the public API will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## Unreleased
+## Changes to be tagged
+
+## 5.12.1 - 2020-10-09
+
+### Added
+
+- Translations for Guda 5 servant names. New Nobukatsu buff name.
+- Enums from 2.20.0.
+
+### Changed
 
 - Replaced all enum|int union types from nice servant schema for enum type. There's no need for integer type now that the enums can be kept up to date.
 
