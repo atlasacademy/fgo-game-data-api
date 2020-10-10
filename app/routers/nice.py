@@ -59,10 +59,8 @@ async def find_servant(
 ) -> Response:
     matches = search.search_servant(search_param)
     return list_response(
-        [
-            nice.get_nice_servant_model(search_param.region, item, lang, lore)
-            for item in matches
-        ]
+        nice.get_nice_servant_model(search_param.region, item, lang, lore)
+        for item in matches
     )
 
 
@@ -129,10 +127,8 @@ async def find_equip(
 ) -> Response:
     matches = search.search_equip(search_param)
     return list_response(
-        [
-            nice.get_nice_equip_model(search_param.region, item, lang, lore)
-            for item in matches
-        ]
+        nice.get_nice_equip_model(search_param.region, item, lang, lore)
+        for item in matches
     )
 
 
@@ -193,11 +189,10 @@ async def find_svt(
     lore: bool = False,
 ) -> Response:
     matches = search.search_servant(search_param)
-    entity_list = [
+    return list_response(
         nice.get_nice_servant_model(search_param.region, item, lang, lore)
         for item in matches
-    ]
-    return list_response(entity_list)
+    )
 
 
 @router.get(
@@ -306,13 +301,12 @@ async def find_skill(
     reverseData: ReverseData = ReverseData.nice,
 ) -> Response:
     matches = search.search_skill(search_param)
-    entity_list = [
+    return list_response(
         nice.get_nice_skill_alone(
             search_param.region, item, lang, reverse, reverseData=reverseData
         )
         for item in matches
-    ]
-    return list_response(entity_list)
+    )
 
 
 @router.get(
@@ -365,13 +359,12 @@ async def find_td(
     reverseData: ReverseData = ReverseData.nice,
 ) -> Response:
     matches = search.search_td(search_param)
-    entity_list = [
+    return list_response(
         nice.get_nice_td_alone(
             search_param.region, item, lang, reverse, reverseData=reverseData
         )
         for item in matches
-    ]
-    return list_response(entity_list)
+    )
 
 
 @router.get(
@@ -426,13 +419,12 @@ async def find_function(
     reverseData: ReverseData = ReverseData.nice,
 ) -> Response:
     matches = search.search_func(search_param)
-    entity_list = [
+    return list_response(
         nice.get_nice_func_alone(
             search_param.region, item, lang, reverse, reverseDepth, reverseData
         )
         for item in matches
-    ]
-    return list_response(entity_list)
+    )
 
 
 @router.get(
@@ -489,13 +481,12 @@ async def find_buff(
     reverseData: ReverseData = ReverseData.nice,
 ) -> Response:
     matches = search.search_buff(search_param)
-    entity_list = [
+    return list_response(
         nice.get_nice_buff_alone(
             search_param.region, item, lang, reverse, reverseDepth, reverseData
         )
         for item in matches
-    ]
-    return list_response(entity_list)
+    )
 
 
 @router.get(

@@ -54,7 +54,7 @@ async def find_servant(
 ) -> Response:
     matches = search.search_servant(search_param, limit=10000)
     return list_response(
-        [basic.get_basic_servant(search_param.region, item, lang) for item in matches]
+        basic.get_basic_servant(search_param.region, item, lang) for item in matches
     )
 
 
@@ -111,7 +111,7 @@ async def find_equip(
 ) -> Response:
     matches = search.search_equip(search_param, limit=10000)
     return list_response(
-        [basic.get_basic_equip(search_param.region, item, lang) for item in matches]
+        basic.get_basic_equip(search_param.region, item, lang) for item in matches
     )
 
 
@@ -166,10 +166,9 @@ async def find_svt(
     lang: Optional[Language] = None,
 ) -> Response:
     matches = search.search_servant(search_param, limit=10000)
-    entity_list = [
+    return list_response(
         basic.get_basic_servant(search_param.region, item, lang) for item in matches
-    ]
-    return list_response(entity_list)
+    )
 
 
 @router.get(
@@ -273,11 +272,10 @@ async def find_skill(
     lang: Language = Depends(language_parameter),
 ) -> Response:
     matches = search.search_skill(search_param, limit=10000)
-    entity_list = [
+    return list_response(
         basic.get_basic_skill(search_param.region, item, lang, reverse)
         for item in matches
-    ]
-    return list_response(entity_list)
+    )
 
 
 @router.get(
@@ -323,10 +321,9 @@ async def find_td(
     lang: Language = Depends(language_parameter),
 ) -> Response:
     matches = search.search_td(search_param, limit=10000)
-    entity_list = [
+    return list_response(
         basic.get_basic_td(search_param.region, item, lang, reverse) for item in matches
-    ]
-    return list_response(entity_list)
+    )
 
 
 @router.get(
@@ -374,11 +371,10 @@ async def find_function(
     lang: Language = Depends(language_parameter),
 ) -> Response:
     matches = search.search_func(search_param, limit=10000)
-    entity_list = [
+    return list_response(
         basic.get_basic_function(search_param.region, item, lang, reverse, reverseDepth)
         for item in matches
-    ]
-    return list_response(entity_list)
+    )
 
 
 @router.get(
@@ -430,11 +426,10 @@ async def find_buff(
     lang: Language = Depends(language_parameter),
 ) -> Response:
     matches = search.search_buff(search_param, limit=10000)
-    entity_list = [
+    return list_response(
         basic.get_basic_buff(search_param.region, item, lang, reverse, reverseDepth)
         for item in matches
-    ]
-    return list_response(entity_list)
+    )
 
 
 @router.get(

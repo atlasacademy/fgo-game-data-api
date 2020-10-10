@@ -67,10 +67,10 @@ def get_basic_buff(
     )
     if reverse and reverseDepth >= ReverseDepth.function:
         buff_reverse = BasicReversedBuff(
-            function=[
+            function=(
                 get_basic_function(region, func_id, lang, reverse, reverseDepth)
                 for func_id in buff_to_func(region, buff_id)
-            ]
+            )
         )
         basic_buff.reverse = BasicReversedBuffType(basic=buff_reverse)
     return basic_buff
@@ -109,14 +109,14 @@ def get_basic_function(
 
     if reverse and reverseDepth >= ReverseDepth.skillNp:
         func_reverse = BasicReversedFunction(
-            skill=[
+            skill=(
                 get_basic_skill(region, skill_id, lang, reverse, reverseDepth)
                 for skill_id in func_to_skillId(region, func_id)
-            ],
-            NP=[
+            ),
+            NP=(
                 get_basic_td(region, td_id, lang, reverse, reverseDepth)
                 for td_id in func_to_tdId(region, func_id)
-            ],
+            ),
         )
         basic_func.reverse = BasicReversedFunctionType(basic=func_reverse)
 
@@ -144,12 +144,12 @@ def get_basic_skill(
         activeSkills = {item.svtId for item in mstSvtSkill}
         passiveSkills = passive_to_svtId(region, skill_id)
         skill_reverse = BasicReversedSkillTd(
-            servant=[
+            servant=(
                 get_basic_servant(region, item, lang=lang)
                 for item in activeSkills | passiveSkills
-            ],
-            MC=[get_basic_mc(region, item) for item in skill_to_MCId(region, skill_id)],
-            CC=[get_basic_cc(region, item) for item in skill_to_CCId(region, skill_id)],
+            ),
+            MC=(get_basic_mc(region, item) for item in skill_to_MCId(region, skill_id)),
+            CC=(get_basic_cc(region, item) for item in skill_to_CCId(region, skill_id)),
         )
         basic_skill.reverse = BasicReversedSkillTdType(basic=skill_reverse)
     return basic_skill
@@ -168,10 +168,10 @@ def get_basic_td(
     if reverse and reverseDepth >= ReverseDepth.servant:
         mstSvtTreasureDevice = masters[region].mstSvtTreasureDeviceId.get(td_id, [])
         td_reverse = BasicReversedSkillTd(
-            servant=[
+            servant=(
                 get_basic_servant(region, item.svtId, lang=lang)
                 for item in mstSvtTreasureDevice
-            ]
+            )
         )
         basic_td.reverse = BasicReversedSkillTdType(basic=td_reverse)
     return basic_td

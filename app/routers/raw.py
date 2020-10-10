@@ -56,11 +56,10 @@ async def find_servant(
     lore: bool = False,
 ) -> Response:
     matches = search.search_servant(search_param)
-    entity_list = [
+    return list_response(
         raw.get_servant_entity(search_param.region, item, expand, lore)
         for item in matches
-    ]
-    return list_response(entity_list)
+    )
 
 
 get_servant_description = """
@@ -107,11 +106,10 @@ async def find_equip(
     lore: bool = False,
 ) -> Response:
     matches = search.search_equip(search_param)
-    entity_list = [
+    return list_response(
         raw.get_servant_entity(search_param.region, item, expand, lore)
         for item in matches
-    ]
-    return list_response(entity_list)
+    )
 
 
 get_ce_description = """
@@ -158,11 +156,10 @@ async def find_svt(
     lore: bool = False,
 ) -> Response:
     matches = search.search_servant(search_param)
-    entity_list = [
+    return list_response(
         raw.get_servant_entity(search_param.region, item, expand, lore)
         for item in matches
-    ]
-    return list_response(entity_list)
+    )
 
 
 get_svt_description = """
@@ -260,11 +257,10 @@ async def find_skill(
     expand: bool = False,
 ) -> Response:
     matches = search.search_skill(search_param)
-    entity_list = [
+    return list_response(
         raw.get_skill_entity(search_param.region, item, reverse, expand=expand)
         for item in matches
-    ]
-    return list_response(entity_list)
+    )
 
 
 @router.get(
@@ -309,11 +305,10 @@ async def find_td(
     expand: bool = False,
 ) -> Response:
     matches = search.search_td(search_param)
-    entity_list = [
+    return list_response(
         raw.get_td_entity(search_param.region, item, reverse, expand=expand)
         for item in matches
-    ]
-    return list_response(entity_list)
+    )
 
 
 @router.get(
@@ -359,11 +354,10 @@ async def find_function(
     expand: bool = False,
 ) -> Response:
     matches = search.search_func(search_param)
-    entity_list = [
+    return list_response(
         raw.get_func_entity(search_param.region, item, reverse, reverseDepth, expand)
         for item in matches
-    ]
-    return list_response(entity_list)
+    )
 
 
 @router.get(
@@ -414,11 +408,10 @@ async def find_buff(
     reverseDepth: ReverseDepth = ReverseDepth.function,
 ) -> Response:
     matches = search.search_buff(search_param)
-    entity_list = [
+    return list_response(
         raw.get_buff_entity(search_param.region, item, reverse, reverseDepth)
         for item in matches
-    ]
-    return list_response(entity_list)
+    )
 
 
 @router.get(

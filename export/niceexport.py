@@ -258,7 +258,7 @@ def export_nice_master_lvl(region: Region, master_path: Path, export_path: Path)
         mstUserExp: List[Dict[str, int]] = json.load(fp)
 
     def get_current_value(base: int, key: str, current: int) -> int:
-        return base + sum([item[key] for item in mstUserExp[: current + 1]])
+        return base + sum(item[key] for item in mstUserExp[: current + 1])
 
     def get_total_exp(current: int) -> int:
         if current == 0:
