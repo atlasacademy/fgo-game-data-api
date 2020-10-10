@@ -1,13 +1,13 @@
 import json
 import time
-from typing import Any, Dict, Iterable, List, Union
+from typing import Any, Dict, Iterable, Union
 
 import redis
 from git import Repo
 
 from ..config import Settings, logger, project_root
 from ..routers.utils import list_string, list_string_exclude
-from .basic import get_basic_cc, get_basic_mc, get_basic_svt
+from .basic import get_basic_cc, get_basic_equip, get_basic_mc, get_basic_servant
 from .common import Language, Region
 from .enums import ALL_ENUMS, TRAIT_NAME
 from .gamedata import masters, region_path, update_gamedata
@@ -24,6 +24,7 @@ from .nice import (
     get_nice_td_alone,
 )
 from .schemas.base import BaseModelORJson
+from .utils import sort_by_collection_no
 
 
 settings = Settings()
@@ -57,10 +58,6 @@ def dump(region: Region, file_name: str, data: Any) -> None:  # pragma: no cover
         dump_normal(region, file_name, data)
 
 
-def sort_by_collection_no(input_list: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    return sorted(input_list, key=lambda x: x["collectionNo"])
-
-
 def generate_exports() -> None:  # pragma: no cover
     if settings.export_all_nice:
         for region in region_path:
@@ -87,13 +84,13 @@ def generate_exports() -> None:  # pragma: no cover
             ]
             all_basic_servant_data = sort_by_collection_no(
                 [
-                    get_basic_svt(region, item_id)
+                    get_basic_servant(region, item_id)
                     for item_id in masters[region].mstSvtServantCollectionNo.values()
                 ]
             )
             all_basic_equip_data = sort_by_collection_no(
                 [
-                    get_basic_svt(region, item_id)
+                    get_basic_equip(region, item_id)
                     for item_id in masters[region].mstSvtEquipCollectionNo.values()
                 ]
             )
@@ -127,7 +124,7 @@ def generate_exports() -> None:  # pragma: no cover
             if region == Region.JP:
                 all_basic_servant_en = sort_by_collection_no(
                     [
-                        get_basic_svt(region, item_id, Language.en)
+                        get_basic_servant(region, item_id, Language.en)
                         for item_id in masters[
                             region
                         ].mstSvtServantCollectionNo.values()
@@ -135,7 +132,7 @@ def generate_exports() -> None:  # pragma: no cover
                 )
                 all_basic_equip_en = sort_by_collection_no(
                     [
-                        get_basic_svt(region, item_id, Language.en)
+                        get_basic_equip(region, item_id, Language.en)
                         for item_id in masters[region].mstSvtEquipCollectionNo.values()
                     ]
                 )
@@ -167,7 +164,7 @@ def update_repo_info() -> None:
 update_repo_info()
 
 
-def clear_bloom_redis_cache() -> None:
+def clear_bloom_redis_cache() -> None:  # pragma: no cover
     # If DEL doesn't work with the redis setup, consider calling bloom instead of redis.
     # https://github.com/valeriansaliou/bloom#can-cache-be-programatically-expired
     # The hash for bucket name "fgo-game-data-api" is "92b89e16"

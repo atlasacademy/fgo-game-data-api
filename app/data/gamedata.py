@@ -93,7 +93,7 @@ def update_gamedata() -> None:
 
         master["mstFriendshipId"] = defaultdict(list)
         master["mstFriendship"] = sorted(
-            master["mstFriendship"], key=lambda item: item["rank"]
+            master["mstFriendship"], key=lambda item: item["rank"]  # type: ignore
         )
         for item in master["mstFriendship"]:
             if item["friendship"] != -1:
@@ -129,7 +129,7 @@ def update_gamedata() -> None:
             for skill_id in item["classPassive"]:
                 master["passiveSkillToSvt"][skill_id].add(item["id"])
 
-        master["mstSvtExp"] = sorted(master["mstSvtExp"], key=lambda item: item["lv"])
+        master["mstSvtExp"] = sorted(master["mstSvtExp"], key=lambda item: item["lv"])  # type: ignore
 
         for masters_table, source_table, lookup_id, result_id in (
             ("mstClosedMessageId", "mstClosedMessage", "id", "message"),

@@ -24,6 +24,7 @@ from .raw import (
 from .schemas.basic import (
     BasicBuffReverse,
     BasicCommandCode,
+    BasicEquip,
     BasicFunctionReverse,
     BasicMysticCode,
     BasicReversedBuff,
@@ -209,6 +210,12 @@ def get_basic_servant(
     region: Region, item_id: int, lang: Optional[Language] = None
 ) -> BasicServant:
     return BasicServant.parse_obj(get_basic_svt(region, item_id, lang))
+
+
+def get_basic_equip(
+    region: Region, item_id: int, lang: Optional[Language] = None
+) -> BasicEquip:
+    return BasicEquip.parse_obj(get_basic_svt(region, item_id, lang))
 
 
 def get_basic_mc(region: Region, mc_id: int) -> BasicMysticCode:

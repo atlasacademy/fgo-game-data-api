@@ -1,4 +1,4 @@
-from typing import Any, Dict, List, Optional
+from typing import List, Optional
 
 from fastapi import APIRouter, Depends, HTTPException, Response
 
@@ -51,9 +51,11 @@ basic_find_servant_extra = """
 async def find_servant(
     search_param: ServantSearchQueryParams = Depends(ServantSearchQueryParams),
     lang: Optional[Language] = None,
-) -> List[Dict[str, Any]]:
+) -> Response:
     matches = search.search_servant(search_param, limit=10000)
-    return [basic.get_basic_svt(search_param.region, item, lang) for item in matches]
+    return list_response(
+        [basic.get_basic_servant(search_param.region, item, lang) for item in matches]
+    )
 
 
 get_servant_description = """Get servant info from ID
@@ -85,11 +87,11 @@ if settings.documentation_all_nice:
 )
 async def get_servant(
     region: Region, item_id: int, lang: Optional[Language] = None
-) -> Dict[str, Any]:
+) -> Response:
     if item_id in masters[region].mstSvtServantCollectionNo:
         item_id = masters[region].mstSvtServantCollectionNo[item_id]
     if item_id in masters[region].mstSvtServantCollectionNo.values():
-        return basic.get_basic_svt(region, item_id, lang)
+        return item_response(basic.get_basic_servant(region, item_id, lang))
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
 
@@ -106,9 +108,11 @@ async def get_servant(
 async def find_equip(
     search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
     lang: Optional[Language] = None,
-) -> List[Dict[str, Any]]:
+) -> Response:
     matches = search.search_equip(search_param, limit=10000)
-    return [basic.get_basic_svt(search_param.region, item, lang) for item in matches]
+    return list_response(
+        [basic.get_basic_equip(search_param.region, item, lang) for item in matches]
+    )
 
 
 get_equip_description = """Get CE info from ID
@@ -139,11 +143,11 @@ if settings.documentation_all_nice:
 )
 async def get_equip(
     region: Region, item_id: int, lang: Optional[Language] = None
-) -> Dict[str, Any]:
+) -> Response:
     if item_id in masters[region].mstSvtEquipCollectionNo:
         item_id = masters[region].mstSvtEquipCollectionNo[item_id]
     if item_id in masters[region].mstSvtEquipCollectionNo.values():
-        return basic.get_basic_svt(region, item_id, lang)
+        return item_response(basic.get_basic_equip(region, item_id, lang))
     else:
         raise HTTPException(status_code=404, detail="Equip not found")
 

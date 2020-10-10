@@ -1,6 +1,7 @@
 from typing import Any, Dict, Iterable, List, Mapping, TypeVar, Union
 
 from .enums import TRAIT_NAME, Trait
+from .schemas.basic import BasicEquip, BasicServant
 
 
 VT = TypeVar("VT")
@@ -26,3 +27,9 @@ def get_traits_list(input_idv: Iterable[int]) -> List[Dict[str, Union[Trait, int
         }
         for item in input_idv
     ]
+
+
+def sort_by_collection_no(
+    input_list: List[Union[BasicServant, BasicEquip]]
+) -> List[Union[BasicServant, BasicEquip]]:
+    return sorted(input_list, key=lambda x: x.collectionNo)
