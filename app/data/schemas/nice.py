@@ -70,6 +70,7 @@ class NiceItem(BaseModelORJson):
     id: int
     name: str
     type: NiceItemType
+    detail: str
     icon: HttpUrl
     background: NiceItemBGType
 

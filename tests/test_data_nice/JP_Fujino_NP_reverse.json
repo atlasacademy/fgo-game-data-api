@@ -531,6 +531,7 @@
                     "id": 7002,
                     "name": "アーチャーピース",
                     "type": "tdLvUp",
+                    "detail": "【霊基再臨素材】\nアーチャークラスを象徴するピース",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7002.png",
                     "background": "silver"
                   },
@@ -546,6 +547,7 @@
                     "id": 7002,
                     "name": "アーチャーピース",
                     "type": "tdLvUp",
+                    "detail": "【霊基再臨素材】\nアーチャークラスを象徴するピース",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7002.png",
                     "background": "silver"
                   },
@@ -556,6 +558,7 @@
                     "id": 6516,
                     "name": "凶骨",
                     "type": "skillLvUp",
+                    "detail": "【スキル強化＆霊基再臨素材】\n呪いを纏った禍々しい骨",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6516.png",
                     "background": "bronze"
                   },
@@ -571,6 +574,7 @@
                     "id": 7102,
                     "name": "アーチャーモニュメント",
                     "type": "tdLvUp",
+                    "detail": "【霊基再臨素材】\nアーチャークラスを称えるモニュメント",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7102.png",
                     "background": "gold"
                   },
@@ -581,6 +585,7 @@
                     "id": 6505,
                     "name": "虚影の塵",
                     "type": "skillLvUp",
+                    "detail": "【スキル強化＆霊基再臨素材】\n虚ろな影が消える時に飛び散る塵",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
                     "background": "bronze"
                   },
@@ -591,6 +596,7 @@
                     "id": 6529,
                     "name": "呪獣胆石",
                     "type": "skillLvUp",
+                    "detail": "【スキル強化＆霊基再臨素材】\n呪われた獣の体内で呪いが醸成されてできた石。\n晴れることのない強烈な呪いを放ち続ける。",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6529.png",
                     "background": "gold"
                   },
@@ -606,6 +612,7 @@
                     "id": 7102,
                     "name": "アーチャーモニュメント",
                     "type": "tdLvUp",
+                    "detail": "【霊基再臨素材】\nアーチャークラスを称えるモニュメント",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7102.png",
                     "background": "gold"
                   },
@@ -616,6 +623,7 @@
                     "id": 6529,
                     "name": "呪獣胆石",
                     "type": "skillLvUp",
+                    "detail": "【スキル強化＆霊基再臨素材】\n呪われた獣の体内で呪いが醸成されてできた石。\n晴れることのない強烈な呪いを放ち続ける。",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6529.png",
                     "background": "gold"
                   },
@@ -626,6 +634,7 @@
                     "id": 6520,
                     "name": "血の涙石",
                     "type": "skillLvUp",
+                    "detail": "【スキル強化＆霊基再臨素材】\n巨大な目玉の怪物が息絶える瞬間に流す涙の結晶体。\n強烈な呪いが込められている。",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6520.png",
                     "background": "gold"
                   },
@@ -643,6 +652,7 @@
                     "id": 6002,
                     "name": "弓の輝石",
                     "type": "skillLvUp",
+                    "detail": "【スキル強化素材】\n弓兵の力が宿った光輝く石",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6002.png",
                     "background": "bronze"
                   },
@@ -658,6 +668,7 @@
                     "id": 6002,
                     "name": "弓の輝石",
                     "type": "skillLvUp",
+                    "detail": "【スキル強化素材】\n弓兵の力が宿った光輝く石",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6002.png",
                     "background": "bronze"
                   },
@@ -673,6 +684,7 @@
                     "id": 6102,
                     "name": "弓の魔石",
                     "type": "skillLvUp",
+                    "detail": "【スキル強化素材】\n弓兵の強い力が宿った魔法石",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6102.png",
                     "background": "silver"
                   },
@@ -688,6 +700,7 @@
                     "id": 6102,
                     "name": "弓の魔石",
                     "type": "skillLvUp",
+                    "detail": "【スキル強化素材】\n弓兵の強い力が宿った魔法石",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6102.png",
                     "background": "silver"
                   },
@@ -698,6 +711,7 @@
                     "id": 6505,
                     "name": "虚影の塵",
                     "type": "skillLvUp",
+                    "detail": "【スキル強化＆霊基再臨素材】\n虚ろな影が消える時に飛び散る塵",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
                     "background": "bronze"
                   },
@@ -713,6 +727,7 @@
                     "id": 6202,
                     "name": "弓の秘石",
                     "type": "skillLvUp",
+                    "detail": "【スキル強化素材】\n弓兵の強大な力が宿った宝石",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6202.png",
                     "background": "gold"
                   },
@@ -723,6 +738,7 @@
                     "id": 6505,
                     "name": "虚影の塵",
                     "type": "skillLvUp",
+                    "detail": "【スキル強化＆霊基再臨素材】\n虚ろな影が消える時に飛び散る塵",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
                     "background": "bronze"
                   },
@@ -738,6 +754,7 @@
                     "id": 6202,
                     "name": "弓の秘石",
                     "type": "skillLvUp",
+                    "detail": "【スキル強化素材】\n弓兵の強大な力が宿った宝石",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6202.png",
                     "background": "gold"
                   },
@@ -748,6 +765,7 @@
                     "id": 6516,
                     "name": "凶骨",
                     "type": "skillLvUp",
+                    "detail": "【スキル強化＆霊基再臨素材】\n呪いを纏った禍々しい骨",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6516.png",
                     "background": "bronze"
                   },
@@ -763,6 +781,7 @@
                     "id": 6516,
                     "name": "凶骨",
                     "type": "skillLvUp",
+                    "detail": "【スキル強化＆霊基再臨素材】\n呪いを纏った禍々しい骨",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6516.png",
                     "background": "bronze"
                   },
@@ -773,6 +792,7 @@
                     "id": 6533,
                     "name": "宵哭きの鉄杭",
                     "type": "skillLvUp",
+                    "detail": "【スキル強化＆霊基再臨素材】\n死した肉体が動きださないようにと躯に穿たれた杭。\n血を吸うことで錆びることなく艶やかさを増す。\n闇夜に潜むこの世ならざる者をも穿つことができる。",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6533.png",
                     "background": "bronze"
                   },
@@ -788,6 +808,7 @@
                     "id": 6533,
                     "name": "宵哭きの鉄杭",
                     "type": "skillLvUp",
+                    "detail": "【スキル強化＆霊基再臨素材】\n死した肉体が動きださないようにと躯に穿たれた杭。\n血を吸うことで錆びることなく艶やかさを増す。\n闇夜に潜むこの世ならざる者をも穿つことができる。",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6533.png",
                     "background": "bronze"
                   },
@@ -798,6 +819,7 @@
                     "id": 6530,
                     "name": "魔術髄液",
                     "type": "skillLvUp",
+                    "detail": "【スキル強化＆霊基再臨素材】\nただの人間を魔術師に仕立て上げる霊薬。\n脊髄に打ち込むことで僅かな刻の間\n疑似的な魔術回路を形成する。",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6530.png",
                     "background": "bronze"
                   },
@@ -813,6 +835,7 @@
                     "id": 6999,
                     "name": "伝承結晶",
                     "type": "skillLvUp",
+                    "detail": "【スキル強化＆霊基再臨素材】\n人類史とマナの奔流が交差する事で\n産み出される高純度の魔力結晶。\n物質化した英霊の素材とも言える。",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6999.png",
                     "background": "gold"
                   },

@@ -419,6 +419,7 @@
                     "id": 7003,
                     "name": "Lancer Piece",
                     "type": "tdLvUp",
+                    "detail": "\"Ascension Material\"\nA piece signifying the Lancer class.",
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7003.png",
                     "background": "silver"
                   },
@@ -434,6 +435,7 @@
                     "id": 7003,
                     "name": "Lancer Piece",
                     "type": "tdLvUp",
+                    "detail": "\"Ascension Material\"\nA piece signifying the Lancer class.",
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7003.png",
                     "background": "silver"
                   },
@@ -444,6 +446,7 @@
                     "id": 6501,
                     "name": "Phoenix Feather",
                     "type": "skillLvUp",
+                    "detail": "\"Skill Up & Ascension Material\"\nFeather from a sacred bird of the Orient.",
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6501.png",
                     "background": "silver"
                   },
@@ -459,6 +462,7 @@
                     "id": 7103,
                     "name": "Lancer Monument",
                     "type": "tdLvUp",
+                    "detail": "\"Ascension Material\"\nA monument in glory of the Lancer class.",
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7103.png",
                     "background": "gold"
                   },
@@ -469,6 +473,7 @@
                     "id": 6516,
                     "name": "Evil Bone",
                     "type": "skillLvUp",
+                    "detail": "\"Skill Up & Ascension Material\"\nOminous bones wielding curses.",
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6516.png",
                     "background": "bronze"
                   },
@@ -479,6 +484,7 @@
                     "id": 6507,
                     "name": "Claw of Chaos",
                     "type": "skillLvUp",
+                    "detail": "\"Skill Up & Ascension Material\"\nThose wounded by this claw become prisoners of chaos.",
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6507.png",
                     "background": "gold"
                   },
@@ -494,6 +500,7 @@
                     "id": 7103,
                     "name": "Lancer Monument",
                     "type": "tdLvUp",
+                    "detail": "\"Ascension Material\"\nA monument in glory of the Lancer class.",
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7103.png",
                     "background": "gold"
                   },
@@ -504,6 +511,7 @@
                     "id": 6507,
                     "name": "Claw of Chaos",
                     "type": "skillLvUp",
+                    "detail": "\"Skill Up & Ascension Material\"\nThose wounded by this claw become prisoners of chaos.",
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6507.png",
                     "background": "gold"
                   },
@@ -514,6 +522,7 @@
                     "id": 6505,
                     "name": "Void's Dust",
                     "type": "skillLvUp",
+                    "detail": "\"Skill Up & Ascension Material\"\nDust that disperses when hollow shadows disappear.",
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6505.png",
                     "background": "bronze"
                   },
@@ -531,6 +540,7 @@
                     "id": 6003,
                     "name": "Gem of Lancer",
                     "type": "skillLvUp",
+                    "detail": "\"Skill Up Material\"\nA bright stone glimmering with the power of a Lancer.",
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6003.png",
                     "background": "bronze"
                   },
@@ -546,6 +556,7 @@
                     "id": 6003,
                     "name": "Gem of Lancer",
                     "type": "skillLvUp",
+                    "detail": "\"Skill Up Material\"\nA bright stone glimmering with the power of a Lancer.",
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6003.png",
                     "background": "bronze"
                   },
@@ -561,6 +572,7 @@
                     "id": 6103,
                     "name": "Magic Gem of Lancer",
                     "type": "skillLvUp",
+                    "detail": "\"Skill Up Material\"\nA bright stone glimmering with the great power of a Lancer.",
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6103.png",
                     "background": "silver"
                   },
@@ -576,6 +588,7 @@
                     "id": 6103,
                     "name": "Magic Gem of Lancer",
                     "type": "skillLvUp",
+                    "detail": "\"Skill Up Material\"\nA bright stone glimmering with the great power of a Lancer.",
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6103.png",
                     "background": "silver"
                   },
@@ -586,6 +599,7 @@
                     "id": 6516,
                     "name": "Evil Bone",
                     "type": "skillLvUp",
+                    "detail": "\"Skill Up & Ascension Material\"\nOminous bones wielding curses.",
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6516.png",
                     "background": "bronze"
                   },
@@ -601,6 +615,7 @@
                     "id": 6203,
                     "name": "Secret Gem of Lancer",
                     "type": "skillLvUp",
+                    "detail": "\"Skill Up Material\"\nA bright stone glimmering with the immense power of a Lancer.",
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6203.png",
                     "background": "gold"
                   },
@@ -611,6 +626,7 @@
                     "id": 6516,
                     "name": "Evil Bone",
                     "type": "skillLvUp",
+                    "detail": "\"Skill Up & Ascension Material\"\nOminous bones wielding curses.",
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6516.png",
                     "background": "bronze"
                   },
@@ -626,6 +642,7 @@
                     "id": 6203,
                     "name": "Secret Gem of Lancer",
                     "type": "skillLvUp",
+                    "detail": "\"Skill Up Material\"\nA bright stone glimmering with the immense power of a Lancer.",
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6203.png",
                     "background": "gold"
                   },
@@ -636,6 +653,7 @@
                     "id": 6501,
                     "name": "Phoenix Feather",
                     "type": "skillLvUp",
+                    "detail": "\"Skill Up & Ascension Material\"\nFeather from a sacred bird of the Orient.",
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6501.png",
                     "background": "silver"
                   },
@@ -651,6 +669,7 @@
                     "id": 6501,
                     "name": "Phoenix Feather",
                     "type": "skillLvUp",
+                    "detail": "\"Skill Up & Ascension Material\"\nFeather from a sacred bird of the Orient.",
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6501.png",
                     "background": "silver"
                   },
@@ -661,6 +680,7 @@
                     "id": 6515,
                     "name": "Octuplet Crystals",
                     "type": "skillLvUp",
+                    "detail": "\"Skill Up & Ascension Material\"\nA multi-crystal created within a golem's body.",
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6515.png",
                     "background": "silver"
                   },
@@ -676,6 +696,7 @@
                     "id": 6515,
                     "name": "Octuplet Crystals",
                     "type": "skillLvUp",
+                    "detail": "\"Skill Up & Ascension Material\"\nA multi-crystal created within a golem's body.",
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6515.png",
                     "background": "silver"
                   },
@@ -686,6 +707,7 @@
                     "id": 6509,
                     "name": "Serpent Jewel",
                     "type": "skillLvUp",
+                    "detail": "\"Skill Up & Ascension Material\"\nA jewel as if you are being stared by serpent eyes.",
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6509.png",
                     "background": "silver"
                   },
@@ -701,6 +723,7 @@
                     "id": 6999,
                     "name": "Crystallized Lore",
                     "type": "skillLvUp",
+                    "detail": "\"Skill Up & Ascension Material\"\nA highly pure crystal of magic created\nwhen human history crosses a stream of Mana.\nIt can be said that it is the ingredient for materializing Heroic Spirits.",
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6999.png",
                     "background": "gold"
                   },

@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.13.0 - 2020-10-10
+
+### Added
+
+- `detail` in nice item.
+- Guda 5 CE name translations.
+
 ## 5.12.1 - 2020-10-09
 
 ### Added
