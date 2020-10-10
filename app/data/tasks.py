@@ -118,9 +118,6 @@ def generate_exports() -> None:  # pragma: no cover
                 "basic_command_code": all_basic_cc_data,
             }
 
-            for file_name, data in output_files.items():
-                dump(region, file_name, data)
-
             if region == Region.JP:
                 all_basic_servant_en = sort_by_collection_no(
                     [
@@ -136,9 +133,15 @@ def generate_exports() -> None:  # pragma: no cover
                         for item_id in masters[region].mstSvtEquipCollectionNo.values()
                     ]
                 )
+                output_files.update(
+                    {
+                        "basic_servant_lang_en": all_basic_servant_en,
+                        "basic_equip_lang_en": all_basic_equip_en,
+                    }
+                )
 
-                dump_normal(region, "basic_servant_lang_en", all_basic_servant_en)
-                dump_normal(region, "basic_equip_lang_en", all_basic_equip_en)
+            for file_name, data in output_files.items():
+                dump(region, file_name, data)
 
             run_time = time.perf_counter() - start_time
             logger.info(f"Finished exporting {region} data in {run_time:.4f}s.")
