@@ -206,7 +206,7 @@ def get_rapidoc_html(
     openapi_url: str,
     title: str,
     description: str,
-    rapidoc_js_url: str = "https://cdn.jsdelivr.net/npm/rapidoc/dist/rapidoc-min.min.js",
+    rapidoc_js_url: str = "https://cdn.jsdelivr.net/npm/rapidoc/dist/rapidoc-min.js",
 ) -> HTMLResponse:
 
     html = f"""

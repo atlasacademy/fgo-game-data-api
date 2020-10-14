@@ -6,11 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.15.0 - 2020-10-13
+
+### Added
+
+- `illustrator` to nice command code.
+
 ## 5.14.0 - 2020-10-13
 
 ### Added
 
-- `INDIVIDUALITIE` to buff script.
+- `INDIVIDUALITIE` to nice buff script.
 
 ### Fixed
 

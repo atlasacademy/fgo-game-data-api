@@ -3,6 +3,8 @@
 HTTP API for FGO game data. Transform the raw game data into something a bit more manageable.
 
 - [Environment variables](#environment-variables)
+  - [Required environment variables:](#required-environment-variables)
+  - [Optional environment variables:](#optional-environment-variables)
 - [Run the API server](#run-the-api-server)
 - [Linting](#linting)
 - [Formatting](#formatting)
@@ -15,20 +17,23 @@ HTTP API for FGO game data. Transform the raw game data into something a bit mor
 
 List of environment variables for the main app. All are required except noted:
 
-- `NA_GAMEDATA`: Required, path to NA gamedata's master folder
-- `JP_GAMEDATA`: Required, path to JP gamedata's master folder
-- `ASSET_URL`: Required, base URL for the game assets
-- `OPENAPI_URL`: Optional. Set the server URL in the openapi schema export.
-- `EXPORT_ALL_NICE`: Optional, default to `False`. If set to `True`, at start the app will generate nice data of all servant and CE and serve them at the `/export` endpoint. It's recommended to serve the files in the `/export` folder using nginx or equivalent webserver to lighten the load on the API server.
-- `DOCUMENTATION_ALL_NICE`: Optional, default to `False`. If set to `True`, there will be links to the exported all nice files in the documentation.
-- `LRU_CACHE_SIZE`: Optional, default to `128`. Cache size of the nice lru cache.
-- `GITHUB_WEBHOOK_SECRET`: Optional, default to `""`. If set, will add a webhook location at `/GITHUB_WEBHOOK_SECRET/update` that will pull and update the game data. If it's not set, the endpoint is not created.
-- `GITHUB_WEBHOOK_GIT_PULL`: Optional, default to `False`. If set, the app will do `git pull` on the gamedata repos when the webhook above is used.
-- `GITHUB_WEBHOOK_SLEEP`: Optional, default to `0`. If set, will delay the action above by `GITHUB_WEBHOOK_SLEEP` seconds.
-- `BLOOM_SHARD`: Optional, default to `0`. [Bloom](https://github.com/valeriansaliou/bloom) shard that is used for caching.
-- `REDIS_HOST`: Optional, default to `None`. Redis host for Bloom. If specified, will clear the Bloom cache when gamedata is updated.
-- `REDIS_PORT`: Optional, default to `6379`. Redis port for Bloom.
-- `REDIS_DB`: Optional, default to `0`. Redis DB for Bloom.
+#### Required environment variables:
+- `NA_GAMEDATA`: path to NA gamedata's master folder.
+- `JP_GAMEDATA`: path to JP gamedata's master folder.
+- `ASSET_URL`: base URL for the game assets.
+
+#### Optional environment variables:
+- `OPENAPI_URL`: default to `None`. Set the server URL in the openapi schema export.
+- `EXPORT_ALL_NICE`: default to `False`. If set to `True`, at start the app will generate nice data of all servant and CE and serve them at the `/export` endpoint. It's recommended to serve the files in the `/export` folder using nginx or equivalent webserver to lighten the load on the API server.
+- `DOCUMENTATION_ALL_NICE`: default to `False`. If set to `True`, there will be links to the exported all nice files in the documentation.
+- `LRU_CACHE_SIZE`: default to `128`. Cache size of the nice lru cache.
+- `GITHUB_WEBHOOK_SECRET`: default to `""`. If set, will add a webhook location at `/GITHUB_WEBHOOK_SECRET/update` that will pull and update the game data. If it's not set, the endpoint is not created.
+- `GITHUB_WEBHOOK_GIT_PULL`: default to `False`. If set, the app will do `git pull` on the gamedata repos when the webhook above is used.
+- `GITHUB_WEBHOOK_SLEEP`: default to `0`. If set, will delay the action above by `GITHUB_WEBHOOK_SLEEP` seconds.
+- `BLOOM_SHARD`: default to `0`. [Bloom](https://github.com/valeriansaliou/bloom) shard that is used for caching.
+- `REDIS_HOST`: default to `None`. Redis host for Bloom. If set, will clear the Bloom cache when gamedata is updated.
+- `REDIS_PORT`: default to `6379`. Redis port for Bloom.
+- `REDIS_DB`: default to `0`. Redis DB for Bloom.
 
 You can also make a .env file at the project root with the following entries instead of setting the environment variables:
 
@@ -86,7 +91,7 @@ prettier --write export/*/*UserLevel.json --print-width 50
 Use [poetry](https://python-poetry.org/docs/) to manage the dependencies. Run `poetry export` after adding a production dependency.
 
 ```
-poetry export -f requirements.txt -o requirements.txt --without-hashes
+poetry export -f requirements.txt -o requirements.txt
 ```
 
 ### Testing

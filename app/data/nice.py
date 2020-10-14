@@ -549,6 +549,20 @@ def get_nice_comment(comment: MstSvtComment) -> NiceLoreComment:
     )
 
 
+def get_illustrator_name(region: Region, illustratorId: int) -> str:
+    if illustratorId in masters[region].mstIllustratorId:
+        return masters[region].mstIllustratorId[illustratorId].name
+    else:
+        return ""
+
+
+def get_cv_name(region: Region, cvId: int) -> str:
+    if cvId in masters[region].mstCvId:
+        return masters[region].mstCvId[cvId].name
+    else:
+        return ""
+
+
 def get_nice_costume(costume: MstSvtCostume) -> NiceCostume:
     return NiceCostume(**costume.dict())
 
@@ -945,21 +959,9 @@ def get_nice_servant(
     ]
 
     if lore:
-        if raw_data.mstSvt.cvId in masters[region].mstCvId:
-            cv = masters[region].mstCvId[raw_data.mstSvt.cvId].name
-        else:
-            cv = ""
-
-        if raw_data.mstSvt.illustratorId in masters[region].mstIllustratorId:
-            illustrator = (
-                masters[region].mstIllustratorId[raw_data.mstSvt.illustratorId].name
-            )
-        else:
-            illustrator = ""
-
         nice_data["profile"] = {
-            "cv": cv,
-            "illustrator": illustrator,
+            "cv": get_cv_name(region, raw_data.mstSvt.cvId),
+            "illustrator": get_illustrator_name(region, raw_data.mstSvt.illustratorId),
             "costume": {
                 costume_ids[costume.id]: get_nice_costume(costume)
                 for costume in raw_data.mstSvtCostume
@@ -1136,8 +1138,8 @@ def get_nice_td_alone(
 ) -> NiceTdReverse:
     raw_data = raw.get_td_entity_no_reverse(region, td_id, expand=True)
 
-    svt_list = [item.svtId for item in raw_data.mstSvtTreasureDevice]
-    svtId = svt_list[0]  # Yes, all td_id has a svtTd entry
+    # Yes, all td_id has a svtTd entry
+    svtId = [item.svtId for item in raw_data.mstSvtTreasureDevice][0]
     nice_data = NiceTdReverse.parse_obj(get_nice_td(raw_data, svtId, region))
 
     if reverse and reverseDepth >= ReverseDepth.servant:
@@ -1163,12 +1165,12 @@ def get_nice_td_alone(
 def get_nice_mystic_code(region: Region, mc_id: int) -> NiceMysticCode:
     raw_data = raw.get_mystic_code_entity(region, mc_id, expand=True)
     base_settings = {"base_url": settings.asset_url, "region": region}
-    nice_data: Dict[str, Any] = {
-        "id": raw_data.mstEquip.id,
-        "name": raw_data.mstEquip.name,
-        "detail": raw_data.mstEquip.detail,
-        "maxLv": raw_data.mstEquip.maxLv,
-        "extraAssets": {
+    nice_mc = NiceMysticCode(
+        id=raw_data.mstEquip.id,
+        name=raw_data.mstEquip.name,
+        detail=raw_data.mstEquip.detail,
+        maxLv=raw_data.mstEquip.maxLv,
+        extraAssets={
             asset_category: {
                 "male": AssetURL.mc[asset_category].format(
                     **base_settings, item_id=raw_data.mstEquip.maleImageId,
@@ -1179,39 +1181,40 @@ def get_nice_mystic_code(region: Region, mc_id: int) -> NiceMysticCode:
             }
             for asset_category in ("item", "masterFace", "masterFigure")
         },
-    }
+        expRequired=(
+            exp.exp
+            for exp in sorted(raw_data.mstEquipExp, key=lambda x: x.lv)
+            if exp.exp != -1
+        ),
+        skills=(get_nice_skill(skill, mc_id, region) for skill in raw_data.mstSkill),
+    )
 
-    raw_exp = sorted(raw_data.mstEquipExp, key=lambda x: x.lv)
-    nice_data["expRequired"] = [exp.exp for exp in raw_exp if exp.exp != -1]
-
-    nice_data["skills"] = [
-        get_nice_skill(skill, mc_id, region) for skill in raw_data.mstSkill
-    ]
-    return NiceMysticCode.parse_obj(nice_data)
+    return nice_mc
 
 
 def get_nice_command_code(region: Region, cc_id: int) -> NiceCommandCode:
     raw_data = raw.get_command_code_entity(region, cc_id, expand=True)
 
     base_settings = {"base_url": settings.asset_url, "region": region, "item_id": cc_id}
-    nice_data: Dict[str, Any] = {
-        "id": raw_data.mstCommandCode.id,
-        "name": raw_data.mstCommandCode.name,
-        "collectionNo": raw_data.mstCommandCode.collectionNo,
-        "rarity": raw_data.mstCommandCode.rarity,
-        "comment": raw_data.mstCommandCodeComment.comment,
-        "extraAssets": {
+    nice_cc = NiceCommandCode(
+        id=raw_data.mstCommandCode.id,
+        name=raw_data.mstCommandCode.name,
+        collectionNo=raw_data.mstCommandCode.collectionNo,
+        rarity=raw_data.mstCommandCode.rarity,
+        extraAssets={
             "charaGraph": {
                 "cc": {cc_id: AssetURL.commandGraph.format(**base_settings)}
             },
             "faces": {"cc": {cc_id: AssetURL.commandCode.format(**base_settings)}},
         },
-    }
+        skills=(get_nice_skill(skill, cc_id, region) for skill in raw_data.mstSkill),
+        illustrator=get_illustrator_name(
+            region, raw_data.mstCommandCodeComment.illustratorId
+        ),
+        comment=raw_data.mstCommandCodeComment.comment,
+    )
 
-    nice_data["skills"] = [
-        get_nice_skill(skill, cc_id, region) for skill in raw_data.mstSkill
-    ]
-    return NiceCommandCode.parse_obj(nice_data)
+    return nice_cc
 
 
 def get_nice_quest_release(

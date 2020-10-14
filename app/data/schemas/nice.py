@@ -423,6 +423,7 @@ class NiceCommandCode(BaseModelORJson):
     rarity: int
     extraAssets: ExtraCCAssets
     skills: List[NiceSkill]
+    illustrator: str
     comment: str
 
 
