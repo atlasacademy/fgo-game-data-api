@@ -181,6 +181,7 @@ class NiceBuffScript(BaseModelORJson):
     relationId: Optional[NiceBuffRelationOverwrite] = None
     ReleaseText: Optional[str] = None
     DamageRelease: Optional[int] = None
+    INDIVIDUALITIE: Optional[NiceTrait] = None
 
 
 class NiceBuff(BaseModelORJson):

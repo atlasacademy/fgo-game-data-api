@@ -96,7 +96,7 @@ from .schemas.raw import (
     TdEntityNoReverse,
 )
 from .translations import TRANSLATIONS
-from .utils import get_safe, get_traits_list
+from .utils import get_nice_trait, get_safe, get_traits_list
 
 
 FORMATTING_BRACKETS = {"[g][o]": "", "[/o][/g]": "", " [{0}] ": " ", "[{0}]": ""}
@@ -299,7 +299,7 @@ def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> Dict[str, 
             base_url=settings.asset_url, region=region, item_id=iconId
         )
 
-    script = {}
+    script: Dict[str, Any] = {}
     if "relationId" in buffEntity.mstBuff.script:
         relationOverwrite: List[MstClassRelationOverwrite] = masters[
             region
@@ -325,6 +325,11 @@ def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> Dict[str, 
     for script_item in ("ReleaseText", "DamageRelease"):
         if script_item in buffEntity.mstBuff.script:
             script[script_item] = buffEntity.mstBuff.script[script_item]
+
+    if "INDIVIDUALITIE" in buffEntity.mstBuff.script:
+        script["INDIVIDUALITIE"] = get_nice_trait(
+            buffEntity.mstBuff.script["INDIVIDUALITIE"]
+        )
 
     buffInfo["script"] = script
 

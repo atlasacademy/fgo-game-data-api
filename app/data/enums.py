@@ -324,7 +324,7 @@ class Trait(str, Enum):
     classSaber = "classSaber"
     classLancer = "classLancer"
     classArcher = "classArcher"
-    classrider = "classrider"
+    classRider = "classRider"
     classCaster = "classCaster"
     classAssassin = "classAssassin"
     classBerserker = "classBerserker"
@@ -505,7 +505,7 @@ TRAIT_NAME: Dict[int, Trait] = {
     100: Trait.classSaber,
     101: Trait.classLancer,
     102: Trait.classArcher,
-    103: Trait.classrider,
+    103: Trait.classRider,
     104: Trait.classCaster,
     105: Trait.classAssassin,
     106: Trait.classBerserker,

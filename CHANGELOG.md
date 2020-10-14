@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.14.0 - 2020-10-13
+
+### Added
+
+- `INDIVIDUALITIE` to buff script.
+
+### Fixed
+
+- `classrider` trait enum to `classRider`.
+
 ## 5.13.0 - 2020-10-10
 
 ### Added

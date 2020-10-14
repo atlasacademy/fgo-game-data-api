@@ -1,7 +1,8 @@
-from typing import Any, Dict, Iterable, List, Mapping, TypeVar, Union
+from typing import Any, Iterable, List, Mapping, TypeVar, Union
 
 from .enums import TRAIT_NAME, Trait
 from .schemas.basic import BasicEquip, BasicServant
+from .schemas.common import NiceTrait
 
 
 VT = TypeVar("VT")
@@ -16,17 +17,21 @@ def get_safe(input_dict: Mapping[Any, VT], key: LT) -> Union[VT, LT]:
     return input_dict.get(key, key)
 
 
-def get_traits_list(input_idv: Iterable[int]) -> List[Dict[str, Union[Trait, int]]]:
-    return [
-        {"id": item, "name": TRAIT_NAME.get(item, Trait.unknown)}
-        if item >= 0
-        else {
-            "id": -item,
-            "name": TRAIT_NAME.get(-item, Trait.unknown),
-            "negative": True,
-        }
-        for item in input_idv
-    ]
+def get_nice_trait(individuality: int) -> NiceTrait:
+    if individuality >= 0:
+        return NiceTrait(
+            id=individuality, name=TRAIT_NAME.get(individuality, Trait.unknown)
+        )
+
+    return NiceTrait(
+        id=-individuality,
+        name=TRAIT_NAME.get(-individuality, Trait.unknown),
+        negative=True,
+    )
+
+
+def get_traits_list(input_idv: Iterable[int]) -> List[NiceTrait]:
+    return [get_nice_trait(individuality) for individuality in input_idv]
 
 
 def sort_by_collection_no(

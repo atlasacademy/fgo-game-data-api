@@ -122,18 +122,11 @@ async def add_process_time_header(
     return response
 
 
-app.include_router(
-    nice.router, prefix="/nice", tags=["nice"],
-)
+app.include_router(nice.router, prefix="/nice", tags=["nice"])
 
-app.include_router(
-    basic.router, prefix="/basic", tags=["basic"],
-)
+app.include_router(basic.router, prefix="/basic", tags=["basic"])
 
-
-app.include_router(
-    raw.router, prefix="/raw", tags=["raw"],
-)
+app.include_router(raw.router, prefix="/raw", tags=["raw"])
 
 
 @app.get("/", include_in_schema=False)
@@ -165,8 +158,8 @@ def get_swagger_ui_html(
     openapi_url: str,
     title: str,
     description: str,
-    swagger_js_url: str = "https://cdn.jsdelivr.net/npm/swagger-ui-dist@3/swagger-ui-bundle.js",
-    swagger_css_url: str = "https://cdn.jsdelivr.net/npm/swagger-ui-dist@3/swagger-ui.css",
+    swagger_js_url: str = "https://cdn.jsdelivr.net/npm/swagger-ui-dist/swagger-ui-bundle.js",
+    swagger_css_url: str = "https://cdn.jsdelivr.net/npm/swagger-ui-dist/swagger-ui.css",
 ) -> HTMLResponse:
 
     html = f"""
@@ -213,7 +206,7 @@ def get_rapidoc_html(
     openapi_url: str,
     title: str,
     description: str,
-    rapidoc_js_url: str = "https://unpkg.com/rapidoc/dist/rapidoc-min.js",
+    rapidoc_js_url: str = "https://cdn.jsdelivr.net/npm/rapidoc/dist/rapidoc-min.min.js",
 ) -> HTMLResponse:
 
     html = f"""

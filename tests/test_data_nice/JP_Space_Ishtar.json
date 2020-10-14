@@ -906,7 +906,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_361.png",
               "type": "tdTypeChange",
               "buffGroup": 0,
-              "script": {},
+              "script": {
+                "INDIVIDUALITIE": { "id": 1100900, "name": "unknown" }
+              },
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [],
               "ckSelfIndv": [],
@@ -944,7 +946,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_361.png",
               "type": "tdTypeChangeArts",
               "buffGroup": 0,
-              "script": {},
+              "script": {
+                "INDIVIDUALITIE": { "id": 1100900, "name": "unknown" }
+              },
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [],
               "ckSelfIndv": [],
@@ -1052,7 +1056,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_361.png",
               "type": "tdTypeChangeBuster",
               "buffGroup": 0,
-              "script": {},
+              "script": {
+                "INDIVIDUALITIE": { "id": 1100900, "name": "unknown" }
+              },
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [],
               "ckSelfIndv": [],
@@ -1160,7 +1166,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_361.png",
               "type": "tdTypeChangeQuick",
               "buffGroup": 0,
-              "script": {},
+              "script": {
+                "INDIVIDUALITIE": { "id": 1100900, "name": "unknown" }
+              },
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [],
               "ckSelfIndv": [],
