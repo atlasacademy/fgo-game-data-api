@@ -1,9 +1,10 @@
 import json
 import time
-from typing import Any, Dict, Iterable, Union
+from typing import Any, Dict, Iterable
 
 import redis
 from git import Repo
+from pydantic import BaseModel
 
 from ..config import Settings, logger, project_root
 from ..routers.utils import list_string, list_string_exclude
@@ -150,7 +151,12 @@ def generate_exports() -> None:  # pragma: no cover
 generate_exports()
 
 
-repo_info: Dict[str, Dict[str, Union[str, int]]] = {}
+class RepoInfo(BaseModel):
+    hash: str
+    timestamp: int
+
+
+repo_info: Dict[Region, RepoInfo] = {}
 
 
 def update_repo_info() -> None:
@@ -158,10 +164,10 @@ def update_repo_info() -> None:
         if (gamedata.parent / ".git").exists():
             repo = Repo(gamedata.parent)
             latest_commit = repo.commit()
-            repo_info[region] = {
-                "hash": latest_commit.hexsha[:6],
-                "timestamp": latest_commit.committed_date,
-            }
+            repo_info[region] = RepoInfo(
+                hash=latest_commit.hexsha[:6],
+                timestamp=latest_commit.committed_date,  # pyright: reportGeneralTypeIssues=false
+            )
 
 
 update_repo_info()
@@ -170,7 +176,6 @@ update_repo_info()
 def clear_bloom_redis_cache() -> None:  # pragma: no cover
     # If DEL doesn't work with the redis setup, consider calling bloom instead of redis.
     # https://github.com/valeriansaliou/bloom#can-cache-be-programatically-expired
-    # The hash for bucket name "fgo-game-data-api" is "92b89e16"
     if settings.redis_host:
         redis_server = redis.Redis(
             settings.redis_host, port=settings.redis_port, db=settings.redis_db

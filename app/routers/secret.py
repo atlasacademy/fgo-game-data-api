@@ -2,7 +2,7 @@ from fastapi import APIRouter, BackgroundTasks, Response
 from git import Repo
 
 from ..config import Settings, project_root
-from ..data.tasks import pull_and_update, repo_info
+from ..data.tasks import RepoInfo, pull_and_update, repo_info
 from .utils import pretty_print_response
 
 
@@ -12,21 +12,20 @@ settings = Settings()
 
 repo = Repo(project_root)
 latest_commit = repo.commit()
-app_info = {
-    "hash": latest_commit.hexsha[:6],
-    "timestamp": latest_commit.committed_date,
-}
-
-
-instance_info = dict(
-    **repo_info, app=app_info, **settings.dict(), file_path=str(project_root)
+app_info = RepoInfo(
+    hash=latest_commit.hexsha[:6],
+    timestamp=latest_commit.committed_date,  # pyright: reportGeneralTypeIssues=false
 )
-instance_info = {
-    k: str(v)
-    if k in ("file_path", "jp_gamedata", "na_gamedata", "github_webhook_secret")
-    else v
-    for k, v in instance_info.items()
+app_settings_str = {
+    k: str(v) if k in ("jp_gamedata", "na_gamedata", "github_webhook_secret") else v
+    for k, v in settings.dict().items()
 }
+instance_info = dict(
+    game_data={k: v.dict() for k, v in repo_info.items()},
+    app_version=app_info.dict(),
+    app_settings=app_settings_str,
+    file_path=str(project_root),
+)
 
 
 @router.post("/update", include_in_schema=False)  # pragma: no cover

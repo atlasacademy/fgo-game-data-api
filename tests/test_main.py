@@ -4,7 +4,6 @@ import pytest
 from fastapi.testclient import TestClient
 
 from app.config import Settings
-from app.data.common import Region
 from app.main import app
 
 
@@ -56,14 +55,13 @@ class TestMain:
         response = client.get(info_path)
         assert response.status_code == 200
         response_data = response.json()
-        assert response_data.pop(Region.NA)
-        assert response_data.pop(Region.JP)
-        assert response_data.pop("app")
-        expected_data = dict(**settings.dict(), file_path=str(file_path))
+        assert "game_data" in response_data
+        assert "app_version" in response_data
+        assert response_data["file_path"] == str(file_path)
         expected_data = {
             k: str(v)
-            if k in ("file_path", "jp_gamedata", "na_gamedata", "github_webhook_secret")
+            if k in ("jp_gamedata", "na_gamedata", "github_webhook_secret")
             else v
-            for k, v in expected_data.items()
+            for k, v in settings.dict().items()
         }
-        assert response_data == expected_data
+        assert response_data["app_settings"] == expected_data

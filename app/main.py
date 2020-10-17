@@ -1,16 +1,15 @@
 import time
-from typing import Any, Awaitable, Callable, Dict
+from typing import Awaitable, Callable, Dict
 
 import toml
 from fastapi import FastAPI, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel
 
 from .config import Settings, logger, project_root
 from .data.common import Region
-from .data.tasks import repo_info
+from .data.tasks import RepoInfo, repo_info
 from .routers import basic, nice, raw, secret
 
 
@@ -115,9 +114,15 @@ async def add_process_time_header(
 ) -> Response:
     start_time = time.perf_counter()
     response = await call_next(request)
+    response.headers["Bloom-Response-Buckets"] = "-".join(
+        [
+            pyproject_toml["tool"]["poetry"]["name"],
+            repo_info[Region.JP].hash,
+            repo_info[Region.NA].hash,
+        ]
+    )
     process_time = round((time.perf_counter() - start_time) * 1000, 2)
     response.headers["Server-Timing"] = f"app;dur={process_time}"
-    response.headers["Bloom-Response-Buckets"] = "fgo-game-data-api"
     logger.debug(f"Processed in {process_time}ms.")
     return response
 
@@ -134,13 +139,8 @@ async def root() -> RedirectResponse:
     return RedirectResponse("/rapidoc")
 
 
-class RegionInfo(BaseModel):
-    hash: str
-    timestamp: int
-
-
-@app.get("/info", summary="Data version info", response_model=Dict[Region, RegionInfo])
-async def main_info(response: Response) -> Dict[str, Any]:
+@app.get("/info", summary="Data version info", response_model=Dict[Region, RepoInfo])
+async def main_info(response: Response) -> Dict[Region, RepoInfo]:
     response.headers["Bloom-Response-Ignore"] = "1"
     return repo_info
 
