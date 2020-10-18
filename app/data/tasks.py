@@ -145,7 +145,7 @@ def generate_exports() -> None:  # pragma: no cover
                 dump(region, file_name, data)
 
             run_time = time.perf_counter() - start_time
-            logger.info(f"Finished exporting {region} data in {run_time:.4f}s.")
+            logger.info(f"Exported {region} data in {run_time:.4f}s.")
 
 
 generate_exports()
@@ -176,6 +176,7 @@ update_repo_info()
 def clear_bloom_redis_cache() -> None:  # pragma: no cover
     # If DEL doesn't work with the redis setup, consider calling bloom instead of redis.
     # https://github.com/valeriansaliou/bloom#can-cache-be-programatically-expired
+    # The hash for bucket name "fgo-game-data-api" is "92b89e16"
     if settings.redis_host:
         redis_server = redis.Redis(
             settings.redis_host, port=settings.redis_port, db=settings.redis_db
