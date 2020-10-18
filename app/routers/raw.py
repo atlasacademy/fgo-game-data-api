@@ -1,4 +1,4 @@
-from typing import Any, Dict, List
+from typing import List
 
 from fastapi import APIRouter, Depends, HTTPException, Response
 
@@ -444,12 +444,12 @@ async def get_buff(
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
-async def get_item(region: Region, item_id: int) -> Dict[str, Any]:
+async def get_item(region: Region, item_id: int) -> Response:
     """
     Get the item data from the given ID
     """
     if item_id in masters[region].mstItemId:
-        return {"mstItem": masters[region].mstItemId[item_id]}
+        return item_response(ItemEntity(mstItem=masters[region].mstItemId[item_id]))
     else:
         raise HTTPException(status_code=404, detail="Item not found")
 

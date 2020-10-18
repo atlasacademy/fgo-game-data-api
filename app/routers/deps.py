@@ -1,6 +1,6 @@
 import inspect
 from dataclasses import dataclass, field
-from typing import Any, ClassVar, Dict, List, Optional, Union
+from typing import Any, ClassVar, Dict, Iterable, List, Mapping, Optional, Type, Union
 
 from fastapi import Query
 from pydantic import BaseModel
@@ -34,7 +34,8 @@ class DetailMessage(BaseModel):
     detail: str
 
 
-ERROR_CODE: Dict[int, Any] = {
+ErrorDetailType = Dict[str, Union[Type[DetailMessage], str]]
+ERROR_CODE: Dict[int, ErrorDetailType] = {
     400: {"model": DetailMessage, "description": "Insufficient query"},
     403: {"model": DetailMessage, "description": "Response too big"},
     404: {"model": DetailMessage, "description": "Item not found"},
@@ -42,7 +43,9 @@ ERROR_CODE: Dict[int, Any] = {
 }
 
 
-def get_error_code(error_codes: List[int]) -> Dict[Union[str, int], Any]:
+def get_error_code(
+    error_codes: Union[Iterable[int], Mapping[int, Any]]
+) -> Dict[Union[int, str], ErrorDetailType]:
     return {k: v for k, v in ERROR_CODE.items() if k in error_codes}
 
 

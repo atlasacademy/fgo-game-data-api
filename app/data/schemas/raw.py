@@ -420,7 +420,7 @@ class MstItem(BaseModel):
     endedAt: int  # 1910908800
 
 
-class ItemEntity(BaseModel):
+class ItemEntity(BaseModelORJson):
     mstItem: MstItem
 
 
