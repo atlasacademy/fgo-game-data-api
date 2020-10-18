@@ -2,9 +2,18 @@ import argparse
 from typing import Dict, List
 
 
+PYTHON_NAME_JSON_NAME_OVERRIDE = {
+    "UPPER": "upper_",
+    "LOWER": "lower_",
+}
+
+
 def convert_name(name: str) -> str:
-    words = name.split("_")
-    return "".join([words[0].lower()] + [w.title() for w in words[1:]])
+    if name in PYTHON_NAME_JSON_NAME_OVERRIDE:
+        return PYTHON_NAME_JSON_NAME_OVERRIDE[name]
+    else:
+        words = name.split("_")
+        return "".join([words[0].lower()] + [w.title() for w in words[1:]])
 
 
 def enum_to_dict(cstype: List[str]) -> Dict[int, str]:
@@ -34,6 +43,7 @@ EXTRA_STR_NAME = {
 STR_NAME_OVERRIDE = {
     "NiceCardType": {"addattack": "extra"},
     "NiceGender": {"other": "unknown"},
+    "NiceBuffLimit": {"upper_": "upper", "lower_": "lower"},
     "NiceStatusRank": {
         "a": "A",
         "aPlus": "A+",
@@ -68,14 +78,6 @@ STR_NAME_OVERRIDE = {
 }
 
 
-STR_NAME_COMMENT = {
-    "NiceBuffLimit": {
-        "upper": "  # type: ignore # str has upper and lower methods",
-        "lower": "  # type: ignore",
-    },
-}
-
-
 def out_strenum(input_dict: Dict[int, str], nice_class: str) -> List[str]:
     strenum_lines = [f"class {nice_class}(str, Enum):\n"]
     for enumstr in list(input_dict.values()) + list(
@@ -83,8 +85,7 @@ def out_strenum(input_dict: Dict[int, str], nice_class: str) -> List[str]:
     ):
         json_name = convert_name(enumstr)
         str_name = STR_NAME_OVERRIDE.get(nice_class, {}).get(json_name, json_name)
-        str_comment = STR_NAME_COMMENT.get(nice_class, {}).get(json_name, "")
-        strenum_lines.append(f'    {json_name} = "{str_name}"{str_comment}\n')
+        strenum_lines.append(f'    {json_name} = "{str_name}"\n')
     return strenum_lines
 
 

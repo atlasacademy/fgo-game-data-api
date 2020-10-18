@@ -139,7 +139,10 @@ def get_nice_card_data(raw_data: Any) -> Any:
     for item in raw_data:
         card_id = item["id"]
         card_index = item["num"]
-        item["individuality"] = get_traits_list(item["individuality"])
+        item["individuality"] = [
+            trait.dict(exclude_unset=True)
+            for trait in get_traits_list(item["individuality"])
+        ]
         item.pop("id")
         item.pop("num")
         if card_id in CARD_TYPE_NAME:

@@ -1193,15 +1193,15 @@ class BuffLimit(IntEnum):
 
 class NiceBuffLimit(str, Enum):
     none = "none"
-    upper = "upper"  # type: ignore # str has upper and lower methods
-    lower = "lower"  # type: ignore
+    upper_ = "upper"
+    lower_ = "lower"
     normal = "normal"
 
 
 BUFF_LIMIT_NAME: Dict[int, NiceBuffLimit] = {
     0: NiceBuffLimit.none,
-    1: NiceBuffLimit.upper,
-    2: NiceBuffLimit.lower,
+    1: NiceBuffLimit.upper_,
+    2: NiceBuffLimit.lower_,
     3: NiceBuffLimit.normal,
 }
 

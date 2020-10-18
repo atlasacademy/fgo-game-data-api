@@ -757,7 +757,7 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": []
+    "maxRate": [0]
   },
   "donotActCommandtype": {
     "limit": "none",
@@ -767,7 +767,7 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": []
+    "maxRate": [0]
   },
   "damageEventPoint": {
     "limit": "upper",

@@ -145,7 +145,7 @@ def generate_exports() -> None:  # pragma: no cover
                 dump(region, file_name, data)
 
             run_time = time.perf_counter() - start_time
-            logger.info(f"Exported {region} data in {run_time:.4f}s.")
+            logger.info(f"Exported {region} data in {run_time:.2f}s.")
 
 
 generate_exports()
