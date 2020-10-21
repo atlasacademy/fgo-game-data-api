@@ -31,7 +31,7 @@ test_cases_dict = {
     ),
     "svt_JP_id": ("NA/svt/9401400", "NA_Gentle_affection"),
     "skill_NA": ("NA/skill/24550", "NA_skill_24550"),
-    "skill_NA_reverse": ("NA/skill/446550?reverse=True", "NA_skill_446550_reverse",),
+    "skill_NA_reverse": ("NA/skill/446550?reverse=True", "NA_skill_446550_reverse"),
     "skill_NA_expand": ("NA/skill/275551?expand=True", "NA_skill_275551_expand"),
     "skill_NA_reverse_expand": (
         "NA/skill/275551?expand=True&reverse=True",
@@ -46,8 +46,8 @@ test_cases_dict = {
         "NA_NP_301202_reverse_expand",
     ),
     "function_NA": ("NA/function/433", "NA_function_433"),
-    "function_NA_reverse": ("NA/function/203?reverse=True", "NA_function_203_reverse",),
-    "function_NA_expand": ("NA/function/205?expand=True", "NA_function_205_expand",),
+    "function_NA_reverse": ("NA/function/203?reverse=True", "NA_function_203_reverse"),
+    "function_NA_expand": ("NA/function/205?expand=True", "NA_function_205_expand"),
     "function_NA_expand_no_buff": (
         "NA/function/433?expand=True",
         "NA_function_433_expand",

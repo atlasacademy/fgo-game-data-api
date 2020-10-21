@@ -376,7 +376,7 @@ def get_nice_skill(
     iconId = skillEntity.mstSkill.iconId
     if iconId != 0:
         nice_skill["icon"] = AssetURL.skillIcon.format(
-            base_url=settings.asset_url, region=region, item_id=iconId,
+            base_url=settings.asset_url, region=region, item_id=iconId
         )
 
     if skillEntity.mstSkillDetail:
@@ -1173,10 +1173,10 @@ def get_nice_mystic_code(region: Region, mc_id: int) -> NiceMysticCode:
         extraAssets={
             asset_category: {
                 "male": AssetURL.mc[asset_category].format(
-                    **base_settings, item_id=raw_data.mstEquip.maleImageId,
+                    **base_settings, item_id=raw_data.mstEquip.maleImageId
                 ),
                 "female": AssetURL.mc[asset_category].format(
-                    **base_settings, item_id=raw_data.mstEquip.femaleImageId,
+                    **base_settings, item_id=raw_data.mstEquip.femaleImageId
                 ),
             }
             for asset_category in ("item", "masterFace", "masterFigure")

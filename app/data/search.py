@@ -218,7 +218,7 @@ def search_skill_svt(
 
 
 def search_skill_lv(
-    region: Region, skill_id: int, lvl1coolDown: List[int], numFunctions: List[int],
+    region: Region, skill_id: int, lvl1coolDown: List[int], numFunctions: List[int]
 ) -> bool:
     skill_lv = masters[region].mstSkillLvId[skill_id][0]
     return skill_lv.chargeTurn in lvl1coolDown and len(skill_lv.funcId) in numFunctions
@@ -256,9 +256,9 @@ def search_skill(search_param: SkillSearchParams, limit: int = 100) -> List[int]
         for item in masters[search_param.region].mstSkill
         if item.type in type_ints
         and search_skill_svt(
-            search_param.region, item.id, num, priority, strengthStatus,
+            search_param.region, item.id, num, priority, strengthStatus
         )
-        and search_skill_lv(search_param.region, item.id, lvl1coolDown, numFunctions,)
+        and search_skill_lv(search_param.region, item.id, lvl1coolDown, numFunctions)
     ]
 
     if search_param.name:

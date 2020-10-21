@@ -180,7 +180,7 @@ async def find_svt(
     responses=get_error_code([400, 403]),
 )
 async def get_svt(
-    region: Region, item_id: int, lang: Language = Depends(language_parameter),
+    region: Region, item_id: int, lang: Language = Depends(language_parameter)
 ) -> Response:
     """
     Get svt info from ID

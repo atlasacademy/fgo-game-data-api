@@ -32,38 +32,38 @@ from .common import MCAssets, NiceTrait
 
 
 class AssetURL:
-    charaGraph: Dict[int, str] = {
+    charaGraph = {
         1: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a@1.png",
         2: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a@2.png",
         3: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@1.png",
         4: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@2.png",
     }
-    commands: str = "{base_url}/{region}/Servants/Commands/{item_id}/card_servant_{i}.png"
-    status: str = "{base_url}/{region}/Servants/Status/{item_id}/status_servant_{i}.png"
-    charaGraphDefault: str = "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a.png"
-    charaFigure: str = "{base_url}/{region}/CharaFigure/{item_id}{i}/{item_id}{i}_merged.png"
-    narrowFigure: Dict[int, str] = {
+    commands = "{base_url}/{region}/Servants/Commands/{item_id}/card_servant_{i}.png"
+    status = "{base_url}/{region}/Servants/Status/{item_id}/status_servant_{i}.png"
+    charaGraphDefault = "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a.png"
+    charaFigure = "{base_url}/{region}/CharaFigure/{item_id}{i}/{item_id}{i}_merged.png"
+    narrowFigure = {
         1: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}@0.png",
         2: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}@1.png",
         3: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}@2.png",
         4: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}_2@0.png",
     }
-    narrowFigureDefault: str = "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}@0.png"
-    skillIcon: str = "{base_url}/{region}/SkillIcons/skill_{item_id:05}.png"
-    buffIcon: str = "{base_url}/{region}/BuffIcons/bufficon_{item_id}.png"
-    items: str = "{base_url}/{region}/Items/{item_id}.png"
-    face: str = "{base_url}/{region}/Faces/f_{item_id}{i}.png"
-    equipFace: str = "{base_url}/{region}/EquipFaces/f_{item_id}{i}.png"
-    enemy: str = "{base_url}/{region}/Enemys/{item_id}{i}.png"
-    mcitem: str = "{base_url}/{region}/Items/masterequip{item_id:05}.png"
-    mc: Dict[str, str] = {
+    narrowFigureDefault = "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}@0.png"
+    skillIcon = "{base_url}/{region}/SkillIcons/skill_{item_id:05}.png"
+    buffIcon = "{base_url}/{region}/BuffIcons/bufficon_{item_id}.png"
+    items = "{base_url}/{region}/Items/{item_id}.png"
+    face = "{base_url}/{region}/Faces/f_{item_id}{i}.png"
+    equipFace = "{base_url}/{region}/EquipFaces/f_{item_id}{i}.png"
+    enemy = "{base_url}/{region}/Enemys/{item_id}{i}.png"
+    mcitem = "{base_url}/{region}/Items/masterequip{item_id:05}.png"
+    mc = {
         "item": "{base_url}/{region}/Items/masterequip{item_id:05}.png",
         "masterFace": "{base_url}/{region}/MasterFace/equip{item_id:05}.png",
         "masterFigure": "{base_url}/{region}/MasterFigure/equip{item_id:05}.png",
     }
-    commandCode: str = "{base_url}/{region}/CommandCodes/c_{item_id}.png"
-    commandGraph: str = "{base_url}/{region}/CommandGraph/{item_id}a.png"
-    audio: str = "{base_url}/{region}/Audio/{folder}/{id}.mp3"
+    commandCode = "{base_url}/{region}/CommandCodes/c_{item_id}.png"
+    commandGraph = "{base_url}/{region}/CommandGraph/{item_id}a.png"
+    audio = "{base_url}/{region}/Audio/{folder}/{id}.mp3"
 
 
 class NiceItem(BaseModelORJson):

@@ -273,7 +273,7 @@ async def find_skill(
     responses=get_error_code([404]),
 )
 async def get_skill(
-    region: Region, item_id: int, reverse: bool = False, expand: bool = False,
+    region: Region, item_id: int, reverse: bool = False, expand: bool = False
 ) -> Response:
     if item_id in masters[region].mstSkillId:
         skill_entity = raw.get_skill_entity(region, item_id, reverse, expand=expand)
@@ -321,7 +321,7 @@ async def find_td(
     responses=get_error_code([404]),
 )
 async def get_td(
-    region: Region, item_id: int, reverse: bool = False, expand: bool = False,
+    region: Region, item_id: int, reverse: bool = False, expand: bool = False
 ) -> Response:
     if item_id in masters[region].mstTreasureDeviceId:
         td_entity = raw.get_td_entity(region, item_id, reverse, expand=expand)

@@ -135,7 +135,7 @@ def get_basic_skill(
         id=mstSkill.id,
         name=mstSkill.name,
         icon=AssetURL.skillIcon.format(
-            base_url=settings.asset_url, region=region, item_id=mstSkill.iconId,
+            base_url=settings.asset_url, region=region, item_id=mstSkill.iconId
         ),
     )
 
@@ -163,7 +163,7 @@ def get_basic_td(
     reverseDepth: ReverseDepth = ReverseDepth.servant,
 ) -> BasicTdReverse:
     mstTreasureDevice = masters[region].mstTreasureDeviceId[td_id]
-    basic_td = BasicTdReverse(id=mstTreasureDevice.id, name=mstTreasureDevice.name,)
+    basic_td = BasicTdReverse(id=mstTreasureDevice.id, name=mstTreasureDevice.name)
 
     if reverse and reverseDepth >= ReverseDepth.servant:
         mstSvtTreasureDevice = masters[region].mstSvtTreasureDeviceId.get(td_id, [])
@@ -223,10 +223,10 @@ def get_basic_mc(region: Region, mc_id: int) -> BasicMysticCode:
     base_settings = {"base_url": settings.asset_url, "region": region}
     item_assets = {
         "male": AssetURL.mc["item"].format(
-            **base_settings, item_id=mstEquip.maleImageId,
+            **base_settings, item_id=mstEquip.maleImageId
         ),
         "female": AssetURL.mc["item"].format(
-            **base_settings, item_id=mstEquip.femaleImageId,
+            **base_settings, item_id=mstEquip.femaleImageId
         ),
     }
 
