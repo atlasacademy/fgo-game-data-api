@@ -24,7 +24,6 @@ class Settings(BaseSettings):
     openapi_url: Optional[HttpUrl] = None
     export_all_nice: bool = False
     documentation_all_nice: bool = False
-    lru_cache_size: int = 128
     github_webhook_secret: SecretStr = SecretStr("")
     github_webhook_git_pull: bool = False
     github_webhook_sleep: int = 0

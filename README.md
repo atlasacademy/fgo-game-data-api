@@ -27,7 +27,6 @@ List of environment variables for the main app. All are required except noted:
 - `OPENAPI_URL`: default to `None`. Set the server URL in the openapi schema export.
 - `EXPORT_ALL_NICE`: default to `False`. If set to `True`, at start the app will generate nice data of all servant and CE and serve them at the `/export` endpoint. It's recommended to serve the files in the `/export` folder using nginx or equivalent webserver to lighten the load on the API server.
 - `DOCUMENTATION_ALL_NICE`: default to `False`. If set to `True`, there will be links to the exported all nice files in the documentation.
-- `LRU_CACHE_SIZE`: default to `128`. Cache size of the nice lru cache.
 - `GITHUB_WEBHOOK_SECRET`: default to `""`. If set, will add a webhook location at `/GITHUB_WEBHOOK_SECRET/update` that will pull and update the game data. If it's not set, the endpoint is not created.
 - `GITHUB_WEBHOOK_GIT_PULL`: default to `False`. If set, the app will do `git pull` on the gamedata repos when the webhook above is used.
 - `GITHUB_WEBHOOK_SLEEP`: default to `0`. If set, will delay the action above by `GITHUB_WEBHOOK_SLEEP` seconds.
@@ -45,7 +44,6 @@ ASSET_URL="https://example.com/assets/"
 OPENAPI_URL="https://api.atlasacademy.io"
 EXPORT_ALL_NICE=False
 DOCUMENTATION_ALL_NICE=True
-LRU_CACHE_SIZE=128
 GITHUB_WEBHOOK_SECRET="e81c7b97-9a57-4424-a887-149b4b5adf57"
 GITHUB_WEBHOOK_GIT_PULL=True
 GITHUB_WEBHOOK_SLEEP=0

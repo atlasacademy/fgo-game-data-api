@@ -1,6 +1,5 @@
 import re
 from collections import defaultdict
-from functools import lru_cache
 from typing import Any, Dict, List, Optional, Union
 
 import orjson
@@ -667,7 +666,6 @@ def get_nice_voice_group(
     )
 
 
-@lru_cache(maxsize=settings.lru_cache_size)
 def get_nice_servant(
     region: Region, item_id: int, lang: Language, lore: bool = False
 ) -> Dict[str, Any]:
@@ -998,7 +996,6 @@ def get_nice_equip_model(
     return NiceEquip.parse_obj(get_nice_servant(region, item_id, lang, lore))
 
 
-@lru_cache(maxsize=settings.lru_cache_size)
 def get_nice_buff_alone(
     region: Region,
     buff_id: int,
@@ -1029,7 +1026,6 @@ def get_nice_buff_alone(
     return nice_data
 
 
-@lru_cache(maxsize=settings.lru_cache_size)
 def get_nice_func_alone(
     region: Region,
     func_id: int,
@@ -1071,7 +1067,6 @@ def get_nice_func_alone(
     return nice_data
 
 
-@lru_cache(maxsize=settings.lru_cache_size)
 def get_nice_skill_alone(
     region: Region,
     skill_id: int,
@@ -1127,7 +1122,6 @@ def get_nice_skill_alone(
     return nice_data
 
 
-@lru_cache(maxsize=settings.lru_cache_size)
 def get_nice_td_alone(
     region: Region,
     td_id: int,

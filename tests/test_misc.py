@@ -6,7 +6,7 @@ from fastapi import HTTPException
 
 from app.data.common import Language, Region, ReverseDepth
 from app.data.enums import FuncType
-from app.data.nice import get_nice_servant, get_nice_servant_model, parse_dataVals
+from app.data.nice import get_nice_servant_model, parse_dataVals
 from app.data.schemas.basic import BasicEquip, BasicServant
 from app.data.utils import sort_by_collection_no
 from app.routers.utils import list_string_exclude
@@ -54,13 +54,6 @@ def test_parse_datavals_fail_list_str(dataVals: str) -> None:
 
 def test_reverseDepth_str_comparison() -> None:
     assert ReverseDepth.function >= "aaaaa"
-
-
-# pylint: disable=no-value-for-parameter
-def test_lru_cache() -> None:
-    get_nice_servant(Region.NA, 202900, Language.en)
-    get_nice_servant(Region.NA, 202900, Language.en)
-    assert get_nice_servant.cache_info().hits == 1
 
 
 def test_sort_by_collection_no() -> None:

@@ -13,16 +13,11 @@ from .common import Language, Region
 from .enums import ALL_ENUMS, TRAIT_NAME
 from .gamedata import masters, region_path, update_gamedata
 from .nice import (
-    get_nice_buff_alone,
     get_nice_command_code,
     get_nice_equip_model,
-    get_nice_func_alone,
     get_nice_item,
     get_nice_mystic_code,
-    get_nice_servant,
     get_nice_servant_model,
-    get_nice_skill_alone,
-    get_nice_td_alone,
 )
 from .schemas.base import BaseModelORJson
 from .utils import sort_by_collection_no
@@ -202,11 +197,6 @@ def pull_and_update() -> None:  # pragma: no cover
                     commit_hash = fetch_info.commit.hexsha[:6]
                     logger.info(f"Updated {fetch_info.ref} to {commit_hash}")
     update_gamedata()
-    get_nice_servant.cache_clear()
-    get_nice_buff_alone.cache_clear()
-    get_nice_func_alone.cache_clear()
-    get_nice_skill_alone.cache_clear()
-    get_nice_td_alone.cache_clear()
     generate_exports()
     update_repo_info()
     clear_bloom_redis_cache()
