@@ -173,4 +173,4 @@ class TestServantSpecial:
     def test_hyde_voice_id(self) -> None:
         response = client.get("/raw/NA/servant/600700?lore=true")
         assert response.status_code == 200
-        assert any([voice["id"] == 600710 for voice in response.json()["mstSvtVoice"]])
+        assert any(voice["id"] == 600710 for voice in response.json()["mstSvtVoice"])
