@@ -8,13 +8,13 @@ authors = ["squaresmile <squaresmile@protonmail.com>"]
 python = "^3.8"
 fastapi = "^0.61.1"
 uvicorn = {extras = ["standard"], version = "^0.12.2"}
-python-dotenv = "^0.14.0"
+python-dotenv = "^0.15.0"
 fuzzywuzzy = "^0.18.0"
 python-Levenshtein = "^0.12.0"
-orjson = "^3.4.1"
+orjson = "^3.4.3"
 aiofiles = "^0.6.0"
 GitPython = "^3.1.11"
-toml = "^0.10.1"
+toml = "^0.10.2"
 redis = "^3.5.3"
 
 [tool.poetry.dev-dependencies]
