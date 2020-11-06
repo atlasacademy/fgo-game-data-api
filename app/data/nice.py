@@ -814,11 +814,12 @@ def get_nice_servant(
     growthCurveMax = 101 if raw_data.mstSvt.type == SvtType.NORMAL else (lvMax + 1)
     growthCurveValues = masters[region].mstSvtExpId[growthCurve][1:growthCurveMax]
     atkGrowth = [
-        atkBase + (atkMax - atkBase) * curve // 1000 for curve in growthCurveValues
+        atkBase + (atkMax - atkBase) * exp.curve // 1000 for exp in growthCurveValues
     ]
     hpGrowth = [
-        hpBase + (hpMax - hpBase) * curve // 1000 for curve in growthCurveValues
+        hpBase + (hpMax - hpBase) * exp.curve // 1000 for exp in growthCurveValues
     ]
+    expGrowth = [exp.exp for exp in growthCurveValues]
     nice_data.update(
         {
             "lvMax": lvMax,
@@ -829,8 +830,16 @@ def get_nice_servant(
             "hpBase": hpBase,
             "atkGrowth": atkGrowth,
             "hpGrowth": hpGrowth,
+            "expGrowth": expGrowth,
         }
     )
+
+    nice_data["expFeed"] = [
+        combine.value
+        for combine in masters[region].mstCombineMaterialId[
+            raw_data.mstSvt.combineMaterialId
+        ][: growthCurveMax - 1]
+    ]
 
     nice_data["hitsDistribution"] = {
         CARD_TYPE_NAME[item.cardId]: item.normalDamage for item in raw_data.mstSvtCard

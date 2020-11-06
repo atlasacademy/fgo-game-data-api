@@ -28,7 +28,12 @@ MASTER_WITH_ID = {
     "mstIllustrator",
     "mstVoice",
 }
-ID_LISTS = {"mstSvtVoice", "mstClassRelationOverwrite", "mstQuestRelease"}
+ID_LISTS = {
+    "mstSvtVoice",
+    "mstClassRelationOverwrite",
+    "mstQuestRelease",
+    "mstCombineMaterial",
+}
 MASTER_WITHOUT_ID = {
     "mstSvtExp",
     "mstFriendship",
@@ -129,8 +134,6 @@ def update_gamedata() -> None:
             for skill_id in item["classPassive"]:
                 master["passiveSkillToSvt"][skill_id].add(item["id"])
 
-        master["mstSvtExp"] = sorted(master["mstSvtExp"], key=lambda item: item["lv"])  # type: ignore
-
         for masters_table, source_table, lookup_id, result_id in (
             ("mstClosedMessageId", "mstClosedMessage", "id", "message"),
             ("mstConstantId", "mstConstant", "name", "value"),
@@ -148,17 +151,23 @@ def update_gamedata() -> None:
                 "treasureDeviceId",
             ),
             ("mstSvtGroupId", "mstSvtGroup", "id", "svtId"),
-            ("mstSvtExpId", "mstSvtExp", "type", "curve"),
         ):
             master[masters_table] = defaultdict(list)
             for item in master[source_table]:
                 master[masters_table][item[lookup_id]].append(item[result_id])
 
-        for extra_stuff in SKILL_STUFFS | TD_STUFFS | SVT_STUFFS | ID_LISTS:
+        master["mstSvtExp"] = sorted(master["mstSvtExp"], key=lambda item: item["lv"])  # type: ignore
+        master["mstCombineMaterial"] = sorted(master["mstCombineMaterial"], key=lambda item: item["lv"])  # type: ignore
+
+        for extra_stuff in (
+            SKILL_STUFFS | TD_STUFFS | SVT_STUFFS | ID_LISTS | {"mstSvtExp"}
+        ):
             masters_table = f"{extra_stuff}Id"
             master[masters_table] = defaultdict(list)
             if "Detail" in extra_stuff:
                 lookup_id = "id"
+            elif extra_stuff == "mstSvtExp":
+                lookup_id = "type"
             elif extra_stuff in {"mstQuestRelease"}:
                 lookup_id = "questId"
             elif extra_stuff in {"mstCombineSkill", "mstCombineLimit"} | ID_LISTS:

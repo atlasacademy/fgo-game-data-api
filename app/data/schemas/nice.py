@@ -455,6 +455,8 @@ class NiceServant(BaseModelORJson):
     atkGrowth: List[int]
     hpGrowth: List[int]
     bondGrowth: List[int]
+    expGrowth: List[int]
+    expFeed: List[int]
     bondEquip: int
     ascensionAdd: AscensionAdd
     svtChange: List[NiceServantChange]
@@ -485,6 +487,8 @@ class NiceEquip(BaseModelORJson):
     growthCurve: int
     atkGrowth: List[int]
     hpGrowth: List[int]
+    expGrowth: List[int]
+    expFeed: List[int]
     skills: List[NiceSkill]
     profile: Optional[NiceLore] = None
 

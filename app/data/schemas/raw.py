@@ -338,6 +338,13 @@ class MstCombineCostume(BaseModel):
     qp: int  # 3000000
 
 
+class MstCombineMaterial(BaseModel):
+    id: int  # 1
+    lv: int  # 1
+    value: int  # 3000
+    createdAt: int  # 1893423600
+
+
 class MstEquip(BaseModel):
     id: int  # 20
     name: str  # "Mystic Code: Chaldea Combat Uniform"
@@ -656,10 +663,11 @@ class Master(BaseModel):
     mstCombineSkillId: Dict[int, List[MstCombineSkill]]
     mstCombineLimitId: Dict[int, List[MstCombineLimit]]
     mstCombineCostumeId: Dict[int, List[MstCombineCostume]]
+    mstCombineMaterialId: Dict[int, List[MstCombineMaterial]]
     mstSvtCardId: Dict[int, List[MstSvtCard]]
     mstSvtLimitId: Dict[int, List[MstSvtLimit]]
     mstSvtLimitAddId: Dict[int, List[MstSvtLimitAdd]]
-    mstSvtExpId: Dict[int, List[int]]
+    mstSvtExpId: Dict[int, List[MstSvtExp]]
     mstFriendshipId: Dict[int, List[int]]
     # mstEquip: List[MstEquip]
     mstEquipId: Dict[int, MstEquip]

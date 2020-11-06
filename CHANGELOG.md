@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.16.0 - 2020-11-06
+
+### Added
+
+- `expGrowth` and `expFeed` to nice servant and CE.
+
 ## 5.15.0 - 2020-10-13
 
 ### Added
