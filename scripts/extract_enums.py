@@ -5,6 +5,7 @@ from typing import Dict, List
 PYTHON_NAME_JSON_NAME_OVERRIDE = {
     "UPPER": "upper_",
     "LOWER": "lower_",
+    "SELF": "self_",
 }
 
 
@@ -44,6 +45,7 @@ STR_NAME_OVERRIDE = {
     "NiceCardType": {"addattack": "extra"},
     "NiceGender": {"other": "unknown"},
     "NiceBuffLimit": {"upper_": "upper", "lower_": "lower"},
+    "NiceFuncTargetType": {"self_": "self"},
     "NiceStatusRank": {
         "a": "A",
         "aPlus": "A+",

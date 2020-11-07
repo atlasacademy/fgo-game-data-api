@@ -389,7 +389,7 @@ class FuncTargetType(IntEnum):
 
 
 class NiceFuncTargetType(str, Enum):
-    self = "self"
+    self_ = "self"
     ptOne = "ptOne"
     ptAnother = "ptAnother"
     ptAll = "ptAll"
@@ -418,7 +418,7 @@ class NiceFuncTargetType(str, Enum):
 
 
 FUNC_TARGETTYPE_NAME: Dict[int, NiceFuncTargetType] = {
-    0: NiceFuncTargetType.self,
+    0: NiceFuncTargetType.self_,
     1: NiceFuncTargetType.ptOne,
     2: NiceFuncTargetType.ptAnother,
     3: NiceFuncTargetType.ptAll,

@@ -122,7 +122,7 @@ FUNC_TARGETTYPE_NAME_REVERSE: Dict[NiceFuncTargetType, int] = {
 ### Building enemy func signature ###
 
 TARGETTYPE_WITH_ENEMY_APPLYTARGET = (
-    NiceFuncTargetType.self,
+    NiceFuncTargetType.self_,
     NiceFuncTargetType.ptOne,
     NiceFuncTargetType.ptAnother,
     NiceFuncTargetType.ptAll,
