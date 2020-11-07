@@ -181,6 +181,8 @@ def get_basic_svt(
     region: Region, item_id: int, lang: Optional[Language] = None
 ) -> Dict[str, Any]:
     mstSvt = masters[region].mstSvtId[item_id]
+    mstSvtLimit = masters[region].mstSvtLimitId[item_id]
+
     basic_servant = {
         "id": item_id,
         "collectionNo": mstSvt.collectionNo,
@@ -188,6 +190,8 @@ def get_basic_svt(
         "name": mstSvt.name,
         "className": CLASS_NAME[mstSvt.classId],
         "rarity": masters[region].mstSvtLimitId[item_id][0].rarity,
+        "atkMax": mstSvtLimit[0].atkMax,
+        "hpMax": mstSvtLimit[0].hpMax,
     }
 
     base_settings = {

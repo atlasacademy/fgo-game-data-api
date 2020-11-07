@@ -216,12 +216,18 @@ def get_td_entity(
 def get_servant_entity(
     region: Region, servant_id: int, expand: bool = False, lore: bool = False
 ) -> ServantEntity:
+    mstSvt = masters[region].mstSvtId[servant_id]
+
     svt_entity = ServantEntity(
-        mstSvt=masters[region].mstSvtId[servant_id],
+        mstSvt=mstSvt,
         mstSvtCard=masters[region].mstSvtCardId.get(servant_id, []),
         mstSvtLimit=masters[region].mstSvtLimitId.get(servant_id, []),
-        mstCombineSkill=masters[region].mstCombineSkillId.get(servant_id, []),
-        mstCombineLimit=masters[region].mstCombineLimitId.get(servant_id, []),
+        mstCombineSkill=masters[region].mstCombineSkillId.get(
+            mstSvt.combineSkillId, []
+        ),
+        mstCombineLimit=masters[region].mstCombineLimitId.get(
+            mstSvt.combineLimitId, []
+        ),
         mstCombineCostume=masters[region].mstCombineCostumeId.get(servant_id, []),
         mstSvtLimitAdd=masters[region].mstSvtLimitAddId.get(servant_id, []),
         mstSvtChange=masters[region].mstSvtChangeId.get(servant_id, []),

@@ -12,6 +12,8 @@
           "type": "normal",
           "className": "lancer",
           "rarity": 4,
+          "atkMax": 8930,
+          "hpMax": 12750,
           "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_3011000.png"
         }
       ],

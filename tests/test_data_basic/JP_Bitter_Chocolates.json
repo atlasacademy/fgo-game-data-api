@@ -4,5 +4,7 @@
   "name": "ハートチョコ・ビタービタービター",
   "type": "servantEquip",
   "rarity": 4,
+  "atkMax": 0,
+  "hpMax": 0,
   "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_98053700.png"
 }

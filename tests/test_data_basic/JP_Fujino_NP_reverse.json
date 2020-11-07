@@ -11,6 +11,8 @@
           "type": "normal",
           "className": "archer",
           "rarity": 4,
+          "atkMax": 10299,
+          "hpMax": 11025,
           "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_2029000.png"
         }
       ]

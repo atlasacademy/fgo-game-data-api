@@ -82,6 +82,8 @@
           "type": "normal",
           "className": "saber",
           "rarity": 4,
+          "atkMax": 8181,
+          "hpMax": 14165,
           "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_1008000.png"
         }
       ]

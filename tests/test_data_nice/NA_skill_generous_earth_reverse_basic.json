@@ -35,6 +35,8 @@
           "type": "servantEquip",
           "className": "ALL",
           "rarity": 4,
+          "atkMax": 100,
+          "hpMax": 100,
           "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_93045500.png"
         }
       ],

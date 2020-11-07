@@ -112,6 +112,8 @@
                             "type": "normal",
                             "className": "caster",
                             "rarity": 5,
+                            "atkMax": 10546,
+                            "hpMax": 14406,
                             "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_5045000.png"
                           }
                         ]

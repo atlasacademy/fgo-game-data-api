@@ -63,6 +63,8 @@ def test_sort_by_collection_no() -> None:
         name="Tenacity",
         type="servantEquip",
         rarity=1,
+        atkMax=0,
+        hpMax=300,
         face="https://assets.atlasacademy.io/GameData/NA/Faces/f_94000100.png",
     )
     second_item = BasicServant(
@@ -72,6 +74,8 @@ def test_sort_by_collection_no() -> None:
         type="normal",
         className="saber",
         rarity=5,
+        atkMax=11221,
+        hpMax=15150,
         face="https://assets.atlasacademy.io/GameData/NA/Faces/f_1001000.png",
     )
     third_item = BasicServant(
@@ -81,6 +85,8 @@ def test_sort_by_collection_no() -> None:
         type="normal",
         className="archer",
         rarity=4,
+        atkMax=10299,
+        hpMax=11025,
         face="https://assets.atlasacademy.io/GameData/NA/Faces/f_2029000.png",
     )
     input_data: List[Union[BasicServant, BasicEquip]] = [

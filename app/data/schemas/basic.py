@@ -54,6 +54,8 @@ class BasicServant(BaseModelORJson):
     type: NiceSvtType
     className: SvtClass
     rarity: int
+    atkMax: int
+    hpMax: int
     face: HttpUrl
 
 
@@ -63,6 +65,8 @@ class BasicEquip(BaseModelORJson):
     name: str
     type: NiceSvtType
     rarity: int
+    atkMax: int
+    hpMax: int
     face: HttpUrl
 
 
