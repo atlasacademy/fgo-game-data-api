@@ -812,14 +812,16 @@ def get_nice_servant(
     hpBase = raw_data.mstSvtLimit[0].hpBase
     growthCurve = raw_data.mstSvt.expType
     growthCurveMax = 101 if raw_data.mstSvt.type == SvtType.NORMAL else (lvMax + 1)
-    growthCurveValues = masters[region].mstSvtExpId[growthCurve][1:growthCurveMax]
+    growthCurveValues = masters[region].mstSvtExpId[growthCurve]
     atkGrowth = [
-        atkBase + (atkMax - atkBase) * exp.curve // 1000 for exp in growthCurveValues
+        atkBase + (atkMax - atkBase) * exp.curve // 1000
+        for exp in growthCurveValues[1:growthCurveMax]
     ]
     hpGrowth = [
-        hpBase + (hpMax - hpBase) * exp.curve // 1000 for exp in growthCurveValues
+        hpBase + (hpMax - hpBase) * exp.curve // 1000
+        for exp in growthCurveValues[1:growthCurveMax]
     ]
-    expGrowth = [exp.exp for exp in growthCurveValues]
+    expGrowth = [exp.exp for exp in growthCurveValues[: growthCurveMax - 1]]
     nice_data.update(
         {
             "lvMax": lvMax,
