@@ -67,11 +67,11 @@ Go to http://127.0.0.1:8000/docs or http://127.0.0.1:8000/redoc for the API docu
 
 ### Linting
 
-[pylint](https://docs.pylint.org/en/latest/index.html) and [mypy](https://mypy.readthedocs.io/en/stable/) are used to lint the code. pylint's configuration is in [pyproject.toml](pyproject.toml#L37) and mypy's configuration is in [mypy.ini](mypy.ini).
+[pylint](https://docs.pylint.org/en/latest/index.html) and [mypy](https://mypy.readthedocs.io/en/stable/) are used to lint the code. pylint's configuration is in [pyproject.toml](pyproject.toml#L39) and mypy's configuration is in [mypy.ini](mypy.ini).
 
 ### Formatting
 
-[isort](https://pycqa.github.io/isort/) and [black](https://black.readthedocs.io/en/stable/) are used to format the code. isort's configuration is in [pyproject.toml](pyproject.toml#L37) and black uses default settings.
+[isort](https://pycqa.github.io/isort/) and [black](https://black.readthedocs.io/en/stable/) are used to format the code. isort's configuration is in [pyproject.toml](pyproject.toml#L30) and black uses default settings.
 
 ```
 isort app tests export scripts; black app tests export scripts
@@ -113,7 +113,7 @@ python scripts/extract_enums.py dump.cs_path app/data/gameenums.py
 
 #### [`update_ce_translation.py`](scripts/update_ce_translation.py)
 
-Update `equip_names.json` with new JP CEs and NA translations. `--jp-master` and `--na-master` arguments are not needed if environment variables `JP_GAMEDATA` and `NA_GAMEDATA` are set or added to the `.env` file.
+Update `equip_names.json` with new NA CEs translations. `--jp-master` and `--na-master` arguments are not needed if environment variables `JP_GAMEDATA` and `NA_GAMEDATA` are set or added to the `.env` file.
 
 ```
 python scripts/update_ce_translation.py --mapping app/data/mappings/equip_names.json --jp-master jp_master_path --na-master na_master_path

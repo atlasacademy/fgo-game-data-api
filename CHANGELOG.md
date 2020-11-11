@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+### Added
+
+- Enums from 2.22.0.
+
 ## 5.17.0 - 2020-11-07
 
 ### Added

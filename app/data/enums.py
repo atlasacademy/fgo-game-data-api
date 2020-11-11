@@ -82,6 +82,7 @@ FUNC_VALS_NOT_BUFF = {
     FuncType.SUB_STATE,
     FuncType.EVENT_DROP_UP,
     FuncType.GAIN_NP_BUFF_INDIVIDUAL_SUM,
+    FuncType.MOVE_STATE,
 }
 
 

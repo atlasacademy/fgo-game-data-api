@@ -182,6 +182,7 @@ class FuncType(IntEnum):
     DAMAGE_NP_INDIVIDUAL_SUM = 121
     DAMAGE_VALUE_SAFE = 122
     FRIEND_POINT_UP_DUPLICATE = 123
+    MOVE_STATE = 124
 
 
 class NiceFuncType(str, Enum):
@@ -269,6 +270,7 @@ class NiceFuncType(str, Enum):
     damageNpIndividualSum = "damageNpIndividualSum"
     damageValueSafe = "damageValueSafe"
     friendPointUpDuplicate = "friendPointUpDuplicate"
+    moveState = "moveState"
 
 
 FUNC_TYPE_NAME: Dict[int, NiceFuncType] = {
@@ -356,6 +358,7 @@ FUNC_TYPE_NAME: Dict[int, NiceFuncType] = {
     121: NiceFuncType.damageNpIndividualSum,
     122: NiceFuncType.damageValueSafe,
     123: NiceFuncType.friendPointUpDuplicate,
+    124: NiceFuncType.moveState,
 }
 
 
@@ -386,6 +389,7 @@ class FuncTargetType(IntEnum):
     PT_SELF_AFTER = 23
     PT_SELF_ANOTHER_LAST = 24
     COMMAND_TYPE_SELF_TREASURE_DEVICE = 25
+    FIELD_OTHER = 26
 
 
 class NiceFuncTargetType(str, Enum):
@@ -415,6 +419,7 @@ class NiceFuncTargetType(str, Enum):
     ptSelfAfter = "ptSelfAfter"
     ptSelfAnotherLast = "ptSelfAnotherLast"
     commandTypeSelfTreasureDevice = "commandTypeSelfTreasureDevice"
+    fieldOther = "fieldOther"
 
 
 FUNC_TARGETTYPE_NAME: Dict[int, NiceFuncTargetType] = {
@@ -444,6 +449,7 @@ FUNC_TARGETTYPE_NAME: Dict[int, NiceFuncTargetType] = {
     23: NiceFuncTargetType.ptSelfAfter,
     24: NiceFuncTargetType.ptSelfAnotherLast,
     25: NiceFuncTargetType.commandTypeSelfTreasureDevice,
+    26: NiceFuncTargetType.fieldOther,
 }
 
 
@@ -591,6 +597,7 @@ class BuffType(IntEnum):
     AVOIDANCE_INDIVIDUALITY = 155
     CHANGE_COMMAND_CARD_TYPE = 156
     SPECIAL_INVINCIBLE = 157
+    PREVENT_DEATH_BY_DAMAGE = 158
 
 
 class NiceBuffType(str, Enum):
@@ -737,6 +744,7 @@ class NiceBuffType(str, Enum):
     avoidanceIndividuality = "avoidanceIndividuality"
     changeCommandCardType = "changeCommandCardType"
     specialInvincible = "specialInvincible"
+    preventDeathByDamage = "preventDeathByDamage"
 
 
 BUFF_TYPE_NAME: Dict[int, NiceBuffType] = {
@@ -883,6 +891,7 @@ BUFF_TYPE_NAME: Dict[int, NiceBuffType] = {
     155: NiceBuffType.avoidanceIndividuality,
     156: NiceBuffType.changeCommandCardType,
     157: NiceBuffType.specialInvincible,
+    158: NiceBuffType.preventDeathByDamage,
 }
 
 
@@ -983,6 +992,7 @@ class BuffAction(IntEnum):
     AVOIDANCE_INDIVIDUALITY = 93
     CHANGE_COMMAND_CARD_TYPE = 94
     SPECIAL_INVINCIBLE = 95
+    PREVENT_DEATH_BY_DAMAGE = 96
 
 
 class NiceBuffAction(str, Enum):
@@ -1082,6 +1092,7 @@ class NiceBuffAction(str, Enum):
     avoidanceIndividuality = "avoidanceIndividuality"
     changeCommandCardType = "changeCommandCardType"
     specialInvincible = "specialInvincible"
+    preventDeathByDamage = "preventDeathByDamage"
 
 
 BUFF_ACTION_NAME: Dict[int, NiceBuffAction] = {
@@ -1181,6 +1192,7 @@ BUFF_ACTION_NAME: Dict[int, NiceBuffAction] = {
     93: NiceBuffAction.avoidanceIndividuality,
     94: NiceBuffAction.changeCommandCardType,
     95: NiceBuffAction.specialInvincible,
+    96: NiceBuffAction.preventDeathByDamage,
 }
 
 
@@ -1558,6 +1570,7 @@ class CondType(IntEnum):
     ON_TIME_LIMIT_RAID_DEAD = 138
     ON_TIME_LIMIT_RAID_DEAD_NUM = 139
     RAID_BATTLE_PROGRESS_ABOVE = 140
+    EVENT_MAP_VALUE_CONTAINS = 143
 
 
 class NiceCondType(str, Enum):
@@ -1702,6 +1715,7 @@ class NiceCondType(str, Enum):
     onTimeLimitRaidDead = "onTimeLimitRaidDead"
     onTimeLimitRaidDeadNum = "onTimeLimitRaidDeadNum"
     raidBattleProgressAbove = "raidBattleProgressAbove"
+    eventMapValueContains = "eventMapValueContains"
 
 
 COND_TYPE_NAME: Dict[int, NiceCondType] = {
@@ -1846,6 +1860,7 @@ COND_TYPE_NAME: Dict[int, NiceCondType] = {
     138: NiceCondType.onTimeLimitRaidDead,
     139: NiceCondType.onTimeLimitRaidDeadNum,
     140: NiceCondType.raidBattleProgressAbove,
+    143: NiceCondType.eventMapValueContains,
 }
 
 
