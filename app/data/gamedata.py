@@ -36,6 +36,7 @@ ID_LISTS = {
 }
 MASTER_WITHOUT_ID = {
     "mstSvtExp",
+    "mstSvtScript",
     "mstFriendship",
     "mstEquipExp",
     "mstEquipSkill",
@@ -103,6 +104,10 @@ def update_gamedata() -> None:
         for item in master["mstFriendship"]:
             if item["friendship"] != -1:
                 master["mstFriendshipId"][item["id"]].append(item["friendship"])
+
+        master["mstSvtScriptId"] = defaultdict(list)
+        for item in master["mstSvtScript"]:
+            master["mstSvtScriptId"][item["id"] // 10].append(item)
 
         master["mstQuestPhaseId"] = defaultdict(dict)
         for item in master["mstQuestPhase"]:

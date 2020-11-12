@@ -702,6 +702,9 @@ def get_nice_servant(
     commands: Dict[str, Dict[int, str]] = {}
     status: Dict[str, Dict[int, str]] = {}
     charaFigure: Dict[str, Dict[int, str]] = {}
+    charaFigureForm: Dict[int, Dict[str, Dict[int, str]]] = defaultdict(
+        lambda: defaultdict(dict)
+    )
     narrowFigure: Dict[str, Dict[int, str]] = {}
     equipFace: Dict[str, Dict[int, str]] = {}
 
@@ -744,6 +747,14 @@ def get_nice_servant(
             (i + 1): AssetURL.charaFigure.format(**base_settings_id, i=i)
             for i in range(3)
         }
+        for svtScript in raw_data.mstSvtScript:
+            script_form = svtScript.extendData.get("myroomForm", svtScript.form)
+            if script_form != 0:
+                charaFigureForm[script_form]["ascension"][
+                    svtScript.id % 10 + 1
+                ] = AssetURL.charaFigureForm.format(
+                    **base_settings, form_id=script_form, svtScript_id=svtScript.id
+                )
         narrowFigure["ascension"] = {
             i: AssetURL.narrowFigure[i].format(**base_settings_id) for i in range(1, 5)
         }
@@ -799,6 +810,7 @@ def get_nice_servant(
         "charaGraph": charaGraph,
         "faces": faces,
         "charaFigure": charaFigure,
+        "charaFigureForm": charaFigureForm,
         "narrowFigure": narrowFigure,
         "commands": commands,
         "status": status,

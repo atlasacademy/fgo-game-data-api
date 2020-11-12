@@ -295,6 +295,32 @@ class MstSvtComment(BaseModel):
     condValue2: int  # 0
 
 
+class MstSvtScriptExtendDataCond(BaseModel):
+    condType: int
+    value: int
+
+
+class MstSvtScriptExtendData(BaseModel):
+    faceSize: Optional[int] = None
+    combineResultMultipleForm: Optional[int] = None
+    myroomForm: Optional[int] = None
+    conds: Optional[List[MstSvtScriptExtendDataCond]] = None
+
+
+class MstSvtScript(BaseModel):
+    extendData: Dict[str, Any]
+    id: int  # 4037000
+    form: int  # 0
+    faceX: int  # 376
+    faceY: int  # 163
+    bgImageId: int  # 0
+    scale: int  # 1.0
+    offsetX: int  # -4
+    offsetY: int  # 102
+    offsetXMyroom: int  # 283
+    offsetYMyroom: int  # 119
+
+
 class MstCv(BaseModel):
     id: int  # 93
     name: str  # "Satoshi Hino"
@@ -685,6 +711,7 @@ class Master(BaseModel):
     mstSvtCostumeId: Dict[int, List[MstSvtCostume]]
     mstSvtChangeId: Dict[int, List[MstSvtChange]]
     mstSvtVoiceRelationId: Dict[int, List[MstSvtVoiceRelation]]
+    mstSvtScriptId: Dict[int, List[MstSvtScript]]
     # mstCommandCode: List[MstCommandCode]
     mstCommandCodeId: Dict[int, MstCommandCode]
     mstCommandCodeSkill: List[MstCommandCodeSkill]
@@ -720,6 +747,7 @@ class ServantEntity(BaseModelORJson):
     mstSvtLimitAdd: List[MstSvtLimitAdd]
     mstSvtChange: List[MstSvtChange]
     mstSvtCostume: List[MstSvtCostume]
+    mstSvtScript: List[MstSvtScript]
     mstSvtComment: List[MstSvtComment] = []
     mstSvtVoice: List[MstSvtVoice] = []
     mstSubtitle: List[GlobalNewMstSubtitle] = []

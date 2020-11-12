@@ -6008,5 +6008,46 @@
     }
   ],
   "mstSvtChange": [],
-  "mstSvtCostume": []
+  "mstSvtCostume": [],
+  "mstSvtScript": [
+    {
+      "extendData": {},
+      "id": 2029000,
+      "form": 0,
+      "faceX": 376,
+      "faceY": 160,
+      "bgImageId": 0,
+      "scale": 1,
+      "offsetX": -7,
+      "offsetY": 136,
+      "offsetXMyroom": 304,
+      "offsetYMyroom": 143
+    },
+    {
+      "extendData": {},
+      "id": 2029001,
+      "form": 0,
+      "faceX": 376,
+      "faceY": 160,
+      "bgImageId": 0,
+      "scale": 1,
+      "offsetX": -7,
+      "offsetY": 136,
+      "offsetXMyroom": 304,
+      "offsetYMyroom": 143
+    },
+    {
+      "extendData": {},
+      "id": 2029002,
+      "form": 0,
+      "faceX": 375,
+      "faceY": 160,
+      "bgImageId": 0,
+      "scale": 1,
+      "offsetX": -7,
+      "offsetY": 136,
+      "offsetXMyroom": 304,
+      "offsetYMyroom": 143
+    }
+  ]
 }

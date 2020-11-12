@@ -42,6 +42,7 @@ class AssetURL:
     status = "{base_url}/{region}/Servants/Status/{item_id}/status_servant_{i}.png"
     charaGraphDefault = "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a.png"
     charaFigure = "{base_url}/{region}/CharaFigure/{item_id}{i}/{item_id}{i}_merged.png"
+    charaFigureForm = "{base_url}/{region}/CharaFigure/Form/{form_id}/{svtScript_id}/{svtScript_id}_merged.png"
     narrowFigure = {
         1: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}@0.png",
         2: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}@1.png",
@@ -308,6 +309,7 @@ class ExtraCCAssets(BaseModel):
 class ExtraAssets(ExtraCCAssets):
     narrowFigure: ExtraAssetsUrl
     charaFigure: ExtraAssetsUrl
+    charaFigureForm: Dict[int, ExtraAssetsUrl]
     commands: ExtraAssetsUrl
     status: ExtraAssetsUrl
     equipFace: ExtraAssetsUrl

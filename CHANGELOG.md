@@ -6,9 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.18.0 - 2020-11-07
+
 ### Added
 
+- `charaFigureForm` to nice servant extra assets and `mstSvtScript` to raw servant for servants with multiple charaFigure forms.
 - Enums from 2.22.0.
+- New traits.
+- New servants English names from Nemo event.
+- `changeEffect` to raw ScriptJsonInfo.
 
 ## 5.17.0 - 2020-11-07
 

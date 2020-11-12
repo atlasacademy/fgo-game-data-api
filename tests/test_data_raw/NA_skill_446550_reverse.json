@@ -1347,7 +1347,48 @@
           "mstCombineCostume": [],
           "mstSvtLimitAdd": [],
           "mstSvtChange": [],
-          "mstSvtCostume": []
+          "mstSvtCostume": [],
+          "mstSvtScript": [
+            {
+              "extendData": {},
+              "id": 3032000,
+              "form": 0,
+              "faceX": 394,
+              "faceY": 145,
+              "bgImageId": 0,
+              "scale": 1,
+              "offsetX": -1,
+              "offsetY": 140,
+              "offsetXMyroom": 302,
+              "offsetYMyroom": 138
+            },
+            {
+              "extendData": {},
+              "id": 3032001,
+              "form": 0,
+              "faceX": 395,
+              "faceY": 144,
+              "bgImageId": 0,
+              "scale": 1,
+              "offsetX": -1,
+              "offsetY": 140,
+              "offsetXMyroom": 302,
+              "offsetYMyroom": 138
+            },
+            {
+              "extendData": {},
+              "id": 3032002,
+              "form": 0,
+              "faceX": 395,
+              "faceY": 145,
+              "bgImageId": 0,
+              "scale": 1,
+              "offsetX": -1,
+              "offsetY": 140,
+              "offsetXMyroom": 302,
+              "offsetYMyroom": 138
+            }
+          ]
         },
         {
           "mstSvt": {
@@ -2261,7 +2302,8 @@
             }
           ],
           "mstSvtChange": [],
-          "mstSvtCostume": []
+          "mstSvtCostume": [],
+          "mstSvtScript": []
         },
         {
           "mstSvt": {
@@ -3175,7 +3217,8 @@
             }
           ],
           "mstSvtChange": [],
-          "mstSvtCostume": []
+          "mstSvtCostume": [],
+          "mstSvtScript": []
         }
       ],
       "MC": [],

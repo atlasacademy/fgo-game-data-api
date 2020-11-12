@@ -1395,5 +1395,46 @@
       "battleSvtId": 202100
     }
   ],
-  "mstSvtCostume": []
+  "mstSvtCostume": [],
+  "mstSvtScript": [
+    {
+      "extendData": {},
+      "id": 2021000,
+      "form": 0,
+      "faceX": 382,
+      "faceY": 168,
+      "bgImageId": 0,
+      "scale": 1,
+      "offsetX": -18,
+      "offsetY": 140,
+      "offsetXMyroom": 302,
+      "offsetYMyroom": 136
+    },
+    {
+      "extendData": {},
+      "id": 2021001,
+      "form": 0,
+      "faceX": 384,
+      "faceY": 169,
+      "bgImageId": 0,
+      "scale": 1,
+      "offsetX": -18,
+      "offsetY": 140,
+      "offsetXMyroom": 302,
+      "offsetYMyroom": 136
+    },
+    {
+      "extendData": {},
+      "id": 2021002,
+      "form": 0,
+      "faceX": 384,
+      "faceY": 169,
+      "bgImageId": 0,
+      "scale": 1,
+      "offsetX": -18,
+      "offsetY": 140,
+      "offsetXMyroom": 302,
+      "offsetYMyroom": 136
+    }
+  ]
 }

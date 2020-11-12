@@ -233,6 +233,8 @@ def get_servant_entity(
         mstSvtChange=masters[region].mstSvtChangeId.get(servant_id, []),
         # needed costume to get the nice limits and costume ids
         mstSvtCostume=masters[region].mstSvtCostumeId.get(servant_id, []),
+        # needed this to get CharaFigure available forms
+        mstSvtScript=masters[region].mstSvtScriptId.get(servant_id, []),
         mstSkill=(
             get_skill_entity_no_reverse(region, skill, expand)
             for skill in masters[region].mstSvtSkillSvtId.get(servant_id, [])

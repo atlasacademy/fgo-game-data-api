@@ -2371,7 +2371,48 @@
           "mstCombineCostume": [],
           "mstSvtLimitAdd": [],
           "mstSvtChange": [],
-          "mstSvtCostume": []
+          "mstSvtCostume": [],
+          "mstSvtScript": [
+            {
+              "extendData": {},
+              "id": 3012000,
+              "form": 0,
+              "faceX": 399,
+              "faceY": 146,
+              "bgImageId": 0,
+              "scale": 1,
+              "offsetX": 0,
+              "offsetY": 146,
+              "offsetXMyroom": 306,
+              "offsetYMyroom": 153
+            },
+            {
+              "extendData": {},
+              "id": 3012001,
+              "form": 0,
+              "faceX": 399,
+              "faceY": 146,
+              "bgImageId": 0,
+              "scale": 1,
+              "offsetX": 0,
+              "offsetY": 146,
+              "offsetXMyroom": 306,
+              "offsetYMyroom": 153
+            },
+            {
+              "extendData": {},
+              "id": 3012002,
+              "form": 0,
+              "faceX": 399,
+              "faceY": 147,
+              "bgImageId": 0,
+              "scale": 1,
+              "offsetX": 0,
+              "offsetY": 146,
+              "offsetXMyroom": 306,
+              "offsetYMyroom": 153
+            }
+          ]
         }
       ]
     }

@@ -1730,7 +1730,48 @@
           "mstCombineCostume": [],
           "mstSvtLimitAdd": [],
           "mstSvtChange": [],
-          "mstSvtCostume": []
+          "mstSvtCostume": [],
+          "mstSvtScript": [
+            {
+              "extendData": {},
+              "id": 6024000,
+              "form": 0,
+              "faceX": 376,
+              "faceY": 129,
+              "bgImageId": 0,
+              "scale": 1,
+              "offsetX": -11,
+              "offsetY": 134,
+              "offsetXMyroom": 295,
+              "offsetYMyroom": 139
+            },
+            {
+              "extendData": {},
+              "id": 6024001,
+              "form": 0,
+              "faceX": 376,
+              "faceY": 129,
+              "bgImageId": 0,
+              "scale": 1,
+              "offsetX": -11,
+              "offsetY": 134,
+              "offsetXMyroom": 295,
+              "offsetYMyroom": 139
+            },
+            {
+              "extendData": {},
+              "id": 6024002,
+              "form": 0,
+              "faceX": 376,
+              "faceY": 129,
+              "bgImageId": 0,
+              "scale": 1,
+              "offsetX": -11,
+              "offsetY": 134,
+              "offsetXMyroom": 295,
+              "offsetYMyroom": 139
+            }
+          ]
         }
       ],
       "MC": [],

@@ -40,6 +40,7 @@
         "3": "https://assets.atlasacademy.io/GameData/NA/CharaFigure/2010002/2010002_merged.png"
       }
     },
+    "charaFigureForm": {},
     "commands": {
       "ascension": {
         "1": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/201000/card_servant_1.png",
