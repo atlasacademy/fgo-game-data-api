@@ -482,6 +482,7 @@ class ScriptJsonInfo(BaseModel):
     delay: Decimal  # 0.0
     text: Optional[str]  # "I ask of you, are you my Master?"
     form: int  # 0
+    changeEffect: int = 0  # 0
 
 
 class ScriptJsonCond(BaseModel):
