@@ -82,7 +82,6 @@ FUNC_VALS_NOT_BUFF = {
     FuncType.SUB_STATE,
     FuncType.EVENT_DROP_UP,
     FuncType.GAIN_NP_BUFF_INDIVIDUAL_SUM,
-    FuncType.MOVE_STATE,
 }
 
 
@@ -497,6 +496,8 @@ class Trait(str, Enum):
     buffSkillRankUp = "buffSkillRankUp"
     buffSleep = "buffSleep"
     nobunaga = "nobunaga"
+    fieldImaginarySpace = "fieldImaginarySpace"
+    existenceOutsideTheDomain = "existenceOutsideTheDomain"
 
 
 TRAIT_NAME: Dict[int, Trait] = {
@@ -605,6 +606,8 @@ TRAIT_NAME: Dict[int, Trait] = {
     2666: Trait.giant,
     2667: Trait.childServant,  # Summer Illya's 2nd skill
     2721: Trait.nobunaga,  # Nobukatsu's skill
+    2730: Trait.fieldImaginarySpace,
+    2731: Trait.existenceOutsideTheDomain,
     # 2xxx: CQ or Story quests buff
     3000: Trait.normalAttack0,  # Normal attack, including NP
     3001: Trait.normalAttack1,  # Haven't figured out the difference between the 3
