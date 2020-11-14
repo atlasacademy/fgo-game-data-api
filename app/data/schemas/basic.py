@@ -1,4 +1,4 @@
-from typing import List, Optional, Union
+from typing import List, Optional
 
 from pydantic import HttpUrl
 
@@ -18,7 +18,7 @@ class BasicBuff(BaseModelORJson):
     id: int
     name: str
     icon: HttpUrl
-    type: Union[NiceBuffType, int]
+    type: NiceBuffType
     vals: List[NiceTrait]
     tvals: List[NiceTrait]
     ckSelfIndv: List[NiceTrait]
@@ -27,9 +27,9 @@ class BasicBuff(BaseModelORJson):
 
 class BasicFunction(BaseModelORJson):
     funcId: int
-    funcType: Union[NiceFuncType, int]
-    funcTargetType: Union[NiceFuncTargetType, int]
-    funcTargetTeam: Union[FuncApplyTarget, int]
+    funcType: NiceFuncType
+    funcTargetType: NiceFuncTargetType
+    funcTargetTeam: FuncApplyTarget
     functvals: List[NiceTrait]
     funcquestTvals: List[NiceTrait]
     traitVals: List[NiceTrait] = []
