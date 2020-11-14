@@ -498,6 +498,8 @@ class Trait(str, Enum):
     nobunaga = "nobunaga"
     fieldImaginarySpace = "fieldImaginarySpace"
     existenceOutsideTheDomain = "existenceOutsideTheDomain"
+    curse = "curse"
+    fieldShoreOrImaginarySpace = "fieldShoreOrImaginarySpace"
 
 
 TRAIT_NAME: Dict[int, Trait] = {
@@ -606,8 +608,10 @@ TRAIT_NAME: Dict[int, Trait] = {
     2666: Trait.giant,
     2667: Trait.childServant,  # Summer Illya's 2nd skill
     2721: Trait.nobunaga,  # Nobukatsu's skill
+    2729: Trait.curse,  # Van Gogh passive
     2730: Trait.fieldImaginarySpace,
     2731: Trait.existenceOutsideTheDomain,
+    2732: Trait.fieldShoreOrImaginarySpace,  # Nemo's 3rd skill and bond CE
     # 2xxx: CQ or Story quests buff
     3000: Trait.normalAttack0,  # Normal attack, including NP
     3001: Trait.normalAttack1,  # Haven't figured out the difference between the 3

@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.18.1 - 2020-11-14
+
+### Added
+
+- Trait `curse` and `fieldShoreOrImaginarySpace`.
+- New NA CE names and JP Nemo event CE English names from Fandom.
+
 ## 5.18.0 - 2020-11-07
 
 ### Added
