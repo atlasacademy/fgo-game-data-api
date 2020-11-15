@@ -581,6 +581,34 @@ class MstClassRelationOverwrite(BaseModel):
     type: int  # 0
 
 
+class MstEvent(BaseModel):
+    script: List[Dict[str, str]]  # []
+    id: int  # 10083
+    baseEventId: int  # 0
+    type: int  # 20
+    openType: int  # 1
+    name: str  # "劇場版「Fate/stay night [Heaven's Feel]」公開記念キャンペーン"
+    shortName: str  # ""
+    detail: str  # "劇場版「Fate/stay night [Heaven's Feel]」公開記念キャンペーン"
+    noticeBannerId: int  # 0
+    bannerId: int  # 0
+    iconId: int  # 0
+    bannerPriority: int  # 0
+    openHours: int  # 0
+    intervalHours: int  # 0
+    noticeAt: int  # 1509116400
+    startedAt: int  # 1509116400
+    endedAt: int  # 1509721199
+    finishedAt: int  # 1509721199
+    materialOpenedAt: int  # 1751295600
+    linkType: int  # 1
+    linkBody: str  # "/summon/detail_summon_1.html"
+    deviceType: int  # 0
+    myroomBgId: int  # 0
+    myroomBgmId: int  # 0
+    createdAt: int  # 1435676400
+
+
 class MstQuest(BaseModel):
     afterActionVals: List[str]  # []
     id: int  # 94024618
@@ -700,6 +728,7 @@ class Master(BaseModel):
     mstEquipId: Dict[int, MstEquip]
     mstEquipExp: List[MstEquipExp]
     mstEquipSkill: List[MstEquipSkill]
+    mstEventId: Dict[int, MstEvent]
     # mstQuest: List[MstQuest]
     mstQuestId: Dict[int, MstQuest]
     # mstQuestPhase: List[MstQuestPhase]
@@ -803,3 +832,7 @@ class QuestEntity(BaseModelORJson):
 
 class QuestPhaseEntity(QuestEntity):
     mstQuestPhase: MstQuestPhase
+
+
+class EventEntity(BaseModelORJson):
+    mstEvent: MstEvent

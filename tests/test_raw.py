@@ -61,6 +61,7 @@ test_cases_dict = {
     "item_JP": ("JP/item/7103", "JP_item_Lancer_Monument"),
     "MC_NA": ("JP/MC/20", "JP_MC_Plugsuit"),
     "CC_NA": ("NA/CC/8400110", "NA_CC_Fou"),
+    "event_NA": ("NA/event/80090", "NA_KNK_rerun"),
     "quest_NA": ("NA/quest/94026514", "NA_Artoria_rank_up_2"),
     "quest_phase_JP": ("JP/quest/94025012/1", "JP_Meaka_Fudou"),
 }
@@ -87,6 +88,7 @@ cases_404_dict = {
     "item": "941234",
     "MC": "62537",
     "CC": "8400111",
+    "event": "12345",
     "quest": "1234567",
     "quest/94025012": "2",
 }

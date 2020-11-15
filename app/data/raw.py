@@ -7,6 +7,7 @@ from .schemas.raw import (
     BuffEntity,
     BuffEntityNoReverse,
     CommandCodeEntity,
+    EventEntity,
     FunctionEntity,
     FunctionEntityNoReverse,
     MysticCodeEntity,
@@ -323,6 +324,10 @@ def get_command_code_entity(
         ][0],
     )
     return cc_entity
+
+
+def get_event_entity(region: Region, event_id: int) -> EventEntity:
+    return EventEntity(mstEvent=masters[region].mstEventId[event_id])
 
 
 def get_quest_entity(region: Region, quest_id: int) -> QuestEntity:

@@ -8,6 +8,7 @@ from ..data.gamedata import masters
 from ..data.schemas.raw import (
     BuffEntity,
     CommandCodeEntity,
+    EventEntity,
     FunctionEntity,
     ItemEntity,
     MysticCodeEntity,
@@ -450,6 +451,24 @@ async def get_item(region: Region, item_id: int) -> Response:
     """
     if item_id in masters[region].mstItemId:
         return item_response(ItemEntity(mstItem=masters[region].mstItemId[item_id]))
+    else:
+        raise HTTPException(status_code=404, detail="Item not found")
+
+
+@router.get(
+    "/{region}/event/{event_id}",
+    summary="Get Event data",
+    response_description="Event Entity",
+    response_model=EventEntity,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+async def get_event(region: Region, event_id: int) -> Response:
+    """
+    Get the event data from the given event ID
+    """
+    if event_id in masters[region].mstEventId:
+        return item_response(raw.get_event_entity(region, event_id))
     else:
         raise HTTPException(status_code=404, detail="Item not found")
 

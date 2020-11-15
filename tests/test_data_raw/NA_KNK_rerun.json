@@ -1,0 +1,29 @@
+{
+  "mstEvent": {
+    "script": [],
+    "id": 80090,
+    "baseEventId": 0,
+    "type": 12,
+    "openType": 1,
+    "name": "Revival: the Garden of sinners/the Garden of Order",
+    "shortName": "",
+    "detail": "Revival: the Garden of sinners/the Garden of Order",
+    "noticeBannerId": 80111,
+    "bannerId": 80112,
+    "iconId": 80112,
+    "bannerPriority": 91000,
+    "openHours": 0,
+    "intervalHours": 0,
+    "noticeAt": 1581998400,
+    "startedAt": 1581998400,
+    "endedAt": 1583121599,
+    "finishedAt": 1583467199,
+    "materialOpenedAt": 1751328000,
+    "linkType": 1,
+    "linkBody": "/summon/detail_summon_1.html",
+    "deviceType": 0,
+    "myroomBgId": 0,
+    "myroomBgmId": 0,
+    "createdAt": 1435708800
+  }
+}

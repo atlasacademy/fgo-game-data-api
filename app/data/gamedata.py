@@ -27,6 +27,7 @@ MASTER_WITH_ID = {
     "mstCv",
     "mstIllustrator",
     "mstVoice",
+    "mstEvent",
 }
 ID_LISTS = {
     "mstSvtVoice",
