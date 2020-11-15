@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.19.0 - 2020-11-15
+
+### Added
+
+- raw, nice and basic `event` endpoints.
+
 ## 5.18.1 - 2020-11-14
 
 ### Added

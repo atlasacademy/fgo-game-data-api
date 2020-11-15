@@ -1,0 +1,16 @@
+{
+  "id": 80289,
+  "type": "eventQuest",
+  "name": "超古代新選組列伝 ぐだぐだ邪馬台国2020",
+  "shortName": "",
+  "detail": "超古代新選組列伝 ぐだぐだ邪馬台国2020",
+  "noticeBanner": "https://assets.atlasacademy.io/GameData/JP/Banner/event_war_80274",
+  "banner": "https://assets.atlasacademy.io/GameData/JP/Banner/event_war_80275",
+  "icon": "https://assets.atlasacademy.io/GameData/JP/Banner/banner_icon_80275",
+  "bannerPriority": 640000,
+  "noticeAt": 1602241200,
+  "startedAt": 1602241200,
+  "endedAt": 1603425599,
+  "finishedAt": 1604289599,
+  "materialOpenedAt": 1751295600
+}

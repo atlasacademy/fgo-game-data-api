@@ -11,6 +11,7 @@ from ..data.schemas.nice import (
     NiceBuffReverse,
     NiceCommandCode,
     NiceEquip,
+    NiceEvent,
     NiceItem,
     NiceMysticCode,
     NiceQuest,
@@ -538,10 +539,31 @@ if settings.documentation_all_nice:
     responses=get_error_code([404, 500]),
 )
 async def get_item(region: Region, item_id: int) -> Response:
+    """
+    Get the nice item data from the given item ID
+    """
     if item_id in masters[region].mstItemId:
         return item_response(nice.get_nice_item(region, item_id))
     else:
         raise HTTPException(status_code=404, detail="Item not found")
+
+
+@router.get(
+    "/{region}/event/{event_id}",
+    summary="Get Event data",
+    response_description="Nice Event Entity",
+    response_model=NiceEvent,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404, 500]),
+)
+async def get_event(region: Region, event_id: int) -> Response:
+    """
+    Get the nice event data from the given event ID
+    """
+    if event_id in masters[region].mstEventId:
+        return item_response(nice.get_nice_event(region, event_id))
+    else:
+        raise HTTPException(status_code=404, detail="Event not found")
 
 
 @router.get(

@@ -2197,3 +2197,81 @@ STATUS_RANK_NAME: Dict[int, NiceStatusRank] = {
     99: NiceStatusRank.none,
     -1: NiceStatusRank.unknown,
 }
+
+
+class EventType(IntEnum):
+    NONE = 0
+    RAID_BOSS = 1
+    PVP = 2
+    POINT = 3
+    LOGIN_BONUS = 4
+    COMBINE_CAMPAIGN = 5
+    SHOP = 6
+    QUEST_CAMPAIGN = 7
+    BANK = 8
+    SERIAL_CAMPAIGN = 9
+    LOGIN_CAMPAIGN = 10
+    LOGIN_CAMPAIGN_REPEAT = 11
+    EVENT_QUEST = 12
+    SVTEQUIP_COMBINE_CAMPAIGN = 13
+    TERMINAL_BANNER = 14
+    BOX_GACHA = 15
+    BOX_GACHA_POINT = 16
+    LOGIN_CAMPAIGN_STRICT = 17
+    TOTAL_LOGIN = 18
+    COMEBACK_CAMPAIGN = 19
+    LOCATION_CAMPAIGN = 20
+    WAR_BOARD = 22
+
+
+class NiceEventType(str, Enum):
+    """Event Type Enum"""
+
+    none = "none"
+    raidBoss = "raidBoss"
+    pvp = "pvp"
+    point = "point"
+    loginBonus = "loginBonus"
+    combineCampaign = "combineCampaign"
+    shop = "shop"
+    questCampaign = "questCampaign"
+    bank = "bank"
+    serialCampaign = "serialCampaign"
+    loginCampaign = "loginCampaign"
+    loginCampaignRepeat = "loginCampaignRepeat"
+    eventQuest = "eventQuest"
+    svtequipCombineCampaign = "svtequipCombineCampaign"
+    terminalBanner = "terminalBanner"
+    boxGacha = "boxGacha"
+    boxGachaPoint = "boxGachaPoint"
+    loginCampaignStrict = "loginCampaignStrict"
+    totalLogin = "totalLogin"
+    comebackCampaign = "comebackCampaign"
+    locationCampaign = "locationCampaign"
+    warBoard = "warBoard"
+
+
+EVENT_TYPE_NAME: Dict[int, NiceEventType] = {
+    0: NiceEventType.none,
+    1: NiceEventType.raidBoss,
+    2: NiceEventType.pvp,
+    3: NiceEventType.point,
+    4: NiceEventType.loginBonus,
+    5: NiceEventType.combineCampaign,
+    6: NiceEventType.shop,
+    7: NiceEventType.questCampaign,
+    8: NiceEventType.bank,
+    9: NiceEventType.serialCampaign,
+    10: NiceEventType.loginCampaign,
+    11: NiceEventType.loginCampaignRepeat,
+    12: NiceEventType.eventQuest,
+    13: NiceEventType.svtequipCombineCampaign,
+    14: NiceEventType.terminalBanner,
+    15: NiceEventType.boxGacha,
+    16: NiceEventType.boxGachaPoint,
+    17: NiceEventType.loginCampaignStrict,
+    18: NiceEventType.totalLogin,
+    19: NiceEventType.comebackCampaign,
+    20: NiceEventType.locationCampaign,
+    22: NiceEventType.warBoard,
+}

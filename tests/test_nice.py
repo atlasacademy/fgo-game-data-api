@@ -52,6 +52,7 @@ test_cases_dict = {
     "item_NA_id": ("NA/item/94000201", "NA_item_94000201"),
     "MC_NA_id": ("NA/MC/110", "NA_MC_LB"),
     "JP_CC_id": ("JP/CC/8400550", "JP_CC_8400550"),
+    "event_JP_id": ("JP/event/80289", "JP_Guda_5"),
     "quest_JP_id": ("JP/quest/91103002", "JP_Suzuka_rank_up"),
     "quest_NA_id_phase": ("NA/quest/94020187/1", "NA_87th_floor"),
 }
@@ -78,6 +79,7 @@ cases_404_dict = {
     "item": "941234",
     "MC": "62537",
     "CC": "8400631",
+    "event": "12313",
     "quest": "1234567",
     "quest/94025012": "2",
 }

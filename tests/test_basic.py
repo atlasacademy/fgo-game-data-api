@@ -28,6 +28,7 @@ test_cases_dict = {
     "buff_NA_reverse": ("NA/buff/267?reverse=True", "NA_buff_267_reverse"),
     "MC_NA_id": ("NA/MC/110", "NA_MC_LB"),
     "JP_CC_id": ("JP/CC/8400550", "JP_CC_8400550"),
+    "NA_event_id": ("NA/event/80119", "NA_event_Oniland"),
 }
 
 
@@ -51,6 +52,7 @@ cases_404_dict = {
     "buff": "765",
     "MC": "62537",
     "CC": "8400111",
+    "event": "2313",
 }
 
 

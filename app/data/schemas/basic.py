@@ -5,6 +5,7 @@ from pydantic import HttpUrl
 from ..enums import (
     FuncApplyTarget,
     NiceBuffType,
+    NiceEventType,
     NiceFuncTargetType,
     NiceFuncType,
     NiceSvtType,
@@ -125,3 +126,14 @@ class BasicReversedBuffType(BaseModelORJson):
 
 class BasicBuffReverse(BasicBuff):
     reverse: Optional[BasicReversedBuffType] = None
+
+
+class BasicEvent(BaseModelORJson):
+    id: int
+    type: NiceEventType
+    name: str
+    noticeAt: int
+    startedAt: int
+    endedAt: int
+    finishedAt: int
+    materialOpenedAt: int

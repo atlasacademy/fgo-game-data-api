@@ -23,6 +23,7 @@ from .enums import (
     CLASS_NAME,
     CLASS_OVERWRITE_NAME,
     COND_TYPE_NAME,
+    EVENT_TYPE_NAME,
     FUNC_APPLYTARGET_NAME,
     FUNC_TARGETTYPE_NAME,
     FUNC_TYPE_NAME,
@@ -58,6 +59,7 @@ from .schemas.nice import (
     NiceCommandCode,
     NiceCostume,
     NiceEquip,
+    NiceEvent,
     NiceItem,
     NiceItemAmount,
     NiceLoreComment,
@@ -1232,6 +1234,36 @@ def get_nice_command_code(region: Region, cc_id: int) -> NiceCommandCode:
     )
 
     return nice_cc
+
+
+def get_nice_event(region: Region, event_id: int) -> NiceEvent:
+    raw_data = raw.get_event_entity(region, event_id)
+
+    base_settings = {"base_url": settings.asset_url, "region": region}
+    nice_event = NiceEvent(
+        id=raw_data.mstEvent.id,
+        type=EVENT_TYPE_NAME[raw_data.mstEvent.type],
+        name=raw_data.mstEvent.name,
+        shortName=raw_data.mstEvent.shortName,
+        detail=raw_data.mstEvent.detail,
+        noticeBanner=AssetURL.banner.format(
+            **base_settings, banner=f"event_war_{raw_data.mstEvent.noticeBannerId}"
+        ),
+        banner=AssetURL.banner.format(
+            **base_settings, banner=f"event_war_{raw_data.mstEvent.bannerId}"
+        ),
+        icon=AssetURL.banner.format(
+            **base_settings, banner=f"banner_icon_{raw_data.mstEvent.iconId}"
+        ),
+        bannerPriority=raw_data.mstEvent.bannerPriority,
+        noticeAt=raw_data.mstEvent.noticeAt,
+        startedAt=raw_data.mstEvent.startedAt,
+        endedAt=raw_data.mstEvent.endedAt,
+        finishedAt=raw_data.mstEvent.finishedAt,
+        materialOpenedAt=raw_data.mstEvent.materialOpenedAt,
+    )
+
+    return nice_event
 
 
 def get_nice_quest_release(

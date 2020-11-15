@@ -10,6 +10,7 @@ from ..data.schemas.basic import (
     BasicBuffReverse,
     BasicCommandCode,
     BasicEquip,
+    BasicEvent,
     BasicFunctionReverse,
     BasicMysticCode,
     BasicServant,
@@ -454,3 +455,21 @@ async def get_buff(
         )
     else:
         raise HTTPException(status_code=404, detail="Buff not found")
+
+
+@router.get(
+    "/{region}/event/{event_id}",
+    summary="Get Event data",
+    response_description="Basic Event Entity",
+    response_model=BasicEvent,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404, 500]),
+)
+async def get_event(region: Region, event_id: int) -> Response:
+    """
+    Get the nice event data from the given event ID
+    """
+    if event_id in masters[region].mstEventId:
+        return item_response(basic.get_basic_event(region, event_id))
+    else:
+        raise HTTPException(status_code=404, detail="Event not found")

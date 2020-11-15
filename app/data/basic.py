@@ -5,6 +5,7 @@ from .common import Language, Region, ReverseDepth
 from .enums import (
     BUFF_TYPE_NAME,
     CLASS_NAME,
+    EVENT_TYPE_NAME,
     FUNC_APPLYTARGET_NAME,
     FUNC_TARGETTYPE_NAME,
     FUNC_TYPE_NAME,
@@ -25,6 +26,7 @@ from .schemas.basic import (
     BasicBuffReverse,
     BasicCommandCode,
     BasicEquip,
+    BasicEvent,
     BasicFunctionReverse,
     BasicMysticCode,
     BasicReversedBuff,
@@ -252,3 +254,20 @@ def get_basic_cc(region: Region, cc_id: int) -> BasicCommandCode:
     )
 
     return basic_cc
+
+
+def get_basic_event(region: Region, event_id: int) -> BasicEvent:
+    mstEvent = masters[region].mstEventId[event_id]
+
+    basic_event = BasicEvent(
+        id=mstEvent.id,
+        type=EVENT_TYPE_NAME[mstEvent.type],
+        name=mstEvent.name,
+        noticeAt=mstEvent.noticeAt,
+        startedAt=mstEvent.startedAt,
+        endedAt=mstEvent.endedAt,
+        finishedAt=mstEvent.finishedAt,
+        materialOpenedAt=mstEvent.materialOpenedAt,
+    )
+
+    return basic_event

@@ -233,6 +233,13 @@ ENUMS: List[Tuple[str, str, str, str, str]] = [
         "Status Rank Enum",
         "STATUS_RANK_NAME",
     ),
+    (
+        "GameEventType.TYPE",
+        "EventType",
+        "NiceEventType",
+        "Event Type Enum",
+        "EVENT_TYPE_NAME",
+    ),
 ]
 
 

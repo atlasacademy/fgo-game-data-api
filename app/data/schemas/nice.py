@@ -12,6 +12,7 @@ from ..enums import (
     NiceClassRelationOverwriteType,
     NiceCondType,
     NiceConsumeType,
+    NiceEventType,
     NiceFuncTargetType,
     NiceFuncType,
     NiceGender,
@@ -65,6 +66,7 @@ class AssetURL:
     commandCode = "{base_url}/{region}/CommandCodes/c_{item_id}.png"
     commandGraph = "{base_url}/{region}/CommandGraph/{item_id}a.png"
     audio = "{base_url}/{region}/Audio/{folder}/{id}.mp3"
+    banner = "{base_url}/{region}/Banner/{banner}"
 
 
 class NiceItem(BaseModelORJson):
@@ -539,6 +541,23 @@ class NiceReversedBuffType(BaseModelORJson):
 
 class NiceBuffReverse(NiceBuff):
     reverse: Optional[NiceReversedBuffType] = None
+
+
+class NiceEvent(BaseModelORJson):
+    id: int
+    type: NiceEventType
+    name: str
+    shortName: str
+    detail: str
+    noticeBanner: HttpUrl
+    banner: HttpUrl
+    icon: HttpUrl
+    bannerPriority: int
+    noticeAt: int
+    startedAt: int
+    endedAt: int
+    finishedAt: int
+    materialOpenedAt: int
 
 
 class NiceQuestRelease(BaseModelORJson):

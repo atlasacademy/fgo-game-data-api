@@ -8,6 +8,7 @@ from .gameenums import (
     CARD_TYPE_NAME,
     CLASS_OVERWRITE_NAME,
     COND_TYPE_NAME,
+    EVENT_TYPE_NAME,
     FUNC_TARGETTYPE_NAME,
     FUNC_TYPE_NAME,
     GENDER_TYPE_NAME,
@@ -28,6 +29,7 @@ from .gameenums import (
     NiceClassRelationOverwriteType,
     NiceCondType,
     NiceConsumeType,
+    NiceEventType,
     NiceFuncTargetType,
     NiceFuncType,
     NiceGender,
@@ -731,6 +733,7 @@ ALL_ENUMS = {
     "NiceSvtVoiceType": VOICE_TYPE_NAME,
     "NiceQuestType": QUEST_TYPE_NAME,
     "NiceConsumeType": QUEST_CONSUME_TYPE_NAME,
+    "NiceEventType": EVENT_TYPE_NAME,
     "Trait": TRAIT_NAME,
 }
 
@@ -794,6 +797,8 @@ __all__ = [
     "SvtVoiceType",
     "NiceSvtVoiceType",
     "VOICE_TYPE_NAME",
+    "NiceEventType",
+    "EVENT_TYPE_NAME",
     "NiceQuestType",
     "QUEST_TYPE_NAME",
     "NiceConsumeType",

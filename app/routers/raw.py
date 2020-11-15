@@ -470,7 +470,7 @@ async def get_event(region: Region, event_id: int) -> Response:
     if event_id in masters[region].mstEventId:
         return item_response(raw.get_event_entity(region, event_id))
     else:
-        raise HTTPException(status_code=404, detail="Item not found")
+        raise HTTPException(status_code=404, detail="Event not found")
 
 
 @router.get(
