@@ -66,7 +66,7 @@ class AssetURL:
     commandCode = "{base_url}/{region}/CommandCodes/c_{item_id}.png"
     commandGraph = "{base_url}/{region}/CommandGraph/{item_id}a.png"
     audio = "{base_url}/{region}/Audio/{folder}/{id}.mp3"
-    banner = "{base_url}/{region}/Banner/{banner}"
+    banner = "{base_url}/{region}/Banner/{banner}.png"
 
 
 class NiceItem(BaseModelORJson):
