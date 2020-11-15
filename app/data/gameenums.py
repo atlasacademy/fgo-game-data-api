@@ -13,6 +13,8 @@ class GenderType(IntEnum):
 
 
 class NiceGender(str, Enum):
+    """Gender Enum"""
+
     male = "male"
     female = "female"
     other = "unknown"
@@ -40,6 +42,8 @@ class SvtType(IntEnum):
 
 
 class NiceSvtType(str, Enum):
+    """Servant Type Enum"""
+
     normal = "normal"
     heroine = "heroine"
     combineMaterial = "combineMaterial"
@@ -77,6 +81,8 @@ class SvtFlag(IntEnum):
 
 
 class NiceSvtFlag(str, Enum):
+    """Servant Flag Enum"""
+
     onlyUseForNpc = "onlyUseForNpc"
     svtEquipFriendShip = "svtEquipFriendShip"
     ignoreCombineLimitSpecial = "ignoreCombineLimitSpecial"
@@ -186,6 +192,8 @@ class FuncType(IntEnum):
 
 
 class NiceFuncType(str, Enum):
+    """Function Type Enum"""
+
     none = "none"
     addState = "addState"
     subState = "subState"
@@ -393,6 +401,8 @@ class FuncTargetType(IntEnum):
 
 
 class NiceFuncTargetType(str, Enum):
+    """Function Target Type Enum"""
+
     self_ = "self"
     ptOne = "ptOne"
     ptAnother = "ptAnother"
@@ -601,6 +611,8 @@ class BuffType(IntEnum):
 
 
 class NiceBuffType(str, Enum):
+    """Buff Type Enum"""
+
     none = "none"
     upCommandatk = "upCommandatk"
     upStarweight = "upStarweight"
@@ -996,6 +1008,8 @@ class BuffAction(IntEnum):
 
 
 class NiceBuffAction(str, Enum):
+    """Buff Action Type Enum"""
+
     none = "none"
     commandAtk = "commandAtk"
     commandDef = "commandDef"
@@ -1204,6 +1218,8 @@ class BuffLimit(IntEnum):
 
 
 class NiceBuffLimit(str, Enum):
+    """Buff Limit Enum"""
+
     none = "none"
     upper_ = "upper"
     lower_ = "lower"
@@ -1294,6 +1310,8 @@ class ClassRelationOverwriteType(IntEnum):
 
 
 class NiceClassRelationOverwriteType(str, Enum):
+    """Class Relation Overwrite Type Enum"""
+
     overwriteForce = "overwriteForce"
     overwriteMoreThanTarget = "overwriteMoreThanTarget"
     overwriteLessThanTarget = "overwriteLessThanTarget"
@@ -1336,6 +1354,8 @@ class ItemType(IntEnum):
 
 
 class NiceItemType(str, Enum):
+    """Item Type Enum"""
+
     qp = "qp"
     stone = "stone"
     apRecover = "apRecover"
@@ -1406,6 +1426,8 @@ class CardType(IntEnum):
 
 
 class NiceCardType(str, Enum):
+    """Card Type Enum"""
+
     none = "none"
     arts = "arts"
     buster = "buster"
@@ -1574,6 +1596,8 @@ class CondType(IntEnum):
 
 
 class NiceCondType(str, Enum):
+    """Condition Type Enum"""
+
     none = "none"
     questClear = "questClear"
     itemGet = "itemGet"
@@ -1894,6 +1918,8 @@ class VoiceCondType(IntEnum):
 
 
 class NiceVoiceCondType(str, Enum):
+    """Voice Condition Type Enum"""
+
     birthDay = "birthDay"
     event = "event"
     friendship = "friendship"
@@ -1974,6 +2000,8 @@ class SvtVoiceType(IntEnum):
 
 
 class NiceSvtVoiceType(str, Enum):
+    """Servant Voice Type Enum"""
+
     home = "home"
     groeth = "groeth"
     firstGet = "firstGet"
@@ -2026,6 +2054,8 @@ class QuestType(IntEnum):
 
 
 class NiceQuestType(str, Enum):
+    """Quest Type Enum"""
+
     main = "main"
     free = "free"
     friendship = "friendship"
@@ -2053,6 +2083,8 @@ class QuestConsumeType(IntEnum):
 
 
 class NiceConsumeType(str, Enum):
+    """Consume Type Enum"""
+
     none = "none"
     ap = "ap"
     rp = "rp"
@@ -2101,6 +2133,8 @@ class StatusRank(IntEnum):
 
 
 class NiceStatusRank(str, Enum):
+    """Status Rank Enum"""
+
     a = "A"
     aPlus = "A+"
     aPlus2 = "A++"

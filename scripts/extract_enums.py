@@ -1,5 +1,5 @@
 import argparse
-from typing import Dict, List
+from typing import Dict, List, Tuple
 
 
 PYTHON_NAME_JSON_NAME_OVERRIDE = {
@@ -80,8 +80,14 @@ STR_NAME_OVERRIDE = {
 }
 
 
-def out_strenum(input_dict: Dict[int, str], nice_class: str) -> List[str]:
-    strenum_lines = [f"class {nice_class}(str, Enum):\n"]
+def out_strenum(
+    input_dict: Dict[int, str], nice_class: str, nice_class_title: str
+) -> List[str]:
+    strenum_lines = [
+        f"class {nice_class}(str, Enum):\n",
+        f'    """{nice_class_title}"""\n',
+        "\n",
+    ]
     for enumstr in list(input_dict.values()) + list(
         EXTRA_STR_NAME.get(nice_class, {}).values()
     ):
@@ -105,7 +111,11 @@ def out_enumdict(
 
 
 def cs_enums_to_lines(
-    cs_enums: List[str], raw_class: str, nice_class: str, dict_name: str
+    cs_enums: List[str],
+    raw_class: str,
+    nice_class: str,
+    nice_class_title: str,
+    dict_name: str,
 ) -> List[str]:
     enum_dict = enum_to_dict(cs_enums)
     if raw_class == "DataValsType":
@@ -114,41 +124,115 @@ def cs_enums_to_lines(
         return (
             out_intenum(enum_dict, raw_class)
             + ["\n"] * 2
-            + out_strenum(enum_dict, nice_class)
+            + out_strenum(enum_dict, nice_class, nice_class_title)
             + ["\n"] * 2
             + out_enumdict(enum_dict, nice_class, dict_name)
         )
 
 
-ENUMS = [
-    ("Gender.Type", "GenderType", "NiceGender", "GENDER_TYPE_NAME"),
-    ("SvtType.Type", "SvtType", "NiceSvtType", "SVT_TYPE_NAME"),
-    ("ServantEntity.FlagField", "SvtFlag", "NiceSvtFlag", "SVT_FLAG_NAME"),
-    ("FuncList.TYPE", "FuncType", "NiceFuncType", "FUNC_TYPE_NAME"),
-    ("Target.TYPE", "FuncTargetType", "NiceFuncTargetType", "FUNC_TARGETTYPE_NAME"),
-    ("BuffList.TYPE", "BuffType", "NiceBuffType", "BUFF_TYPE_NAME"),
-    ("BuffList.ACTION", "BuffAction", "NiceBuffAction", "BUFF_ACTION_NAME"),
-    ("BuffList.LIMIT", "BuffLimit", "NiceBuffLimit", "BUFF_LIMIT_NAME"),
-    ("DataVals.TYPE", "DataValsType", "NiceDataValsType", "DATA_VALS_TYPE_NAME"),
+ENUMS: List[Tuple[str, str, str, str, str]] = [
+    ("Gender.Type", "GenderType", "NiceGender", "Gender Enum", "GENDER_TYPE_NAME"),
+    ("SvtType.Type", "SvtType", "NiceSvtType", "Servant Type Enum", "SVT_TYPE_NAME"),
+    (
+        "ServantEntity.FlagField",
+        "SvtFlag",
+        "NiceSvtFlag",
+        "Servant Flag Enum",
+        "SVT_FLAG_NAME",
+    ),
+    (
+        "FuncList.TYPE",
+        "FuncType",
+        "NiceFuncType",
+        "Function Type Enum",
+        "FUNC_TYPE_NAME",
+    ),
+    (
+        "Target.TYPE",
+        "FuncTargetType",
+        "NiceFuncTargetType",
+        "Function Target Type Enum",
+        "FUNC_TARGETTYPE_NAME",
+    ),
+    ("BuffList.TYPE", "BuffType", "NiceBuffType", "Buff Type Enum", "BUFF_TYPE_NAME"),
+    (
+        "BuffList.ACTION",
+        "BuffAction",
+        "NiceBuffAction",
+        "Buff Action Type Enum",
+        "BUFF_ACTION_NAME",
+    ),
+    (
+        "BuffList.LIMIT",
+        "BuffLimit",
+        "NiceBuffLimit",
+        "Buff Limit Enum",
+        "BUFF_LIMIT_NAME",
+    ),
+    (
+        "DataVals.TYPE",
+        "DataValsType",
+        "NiceDataValsType",
+        "DataVals Enum",
+        "DATA_VALS_TYPE_NAME",
+    ),
     (
         "ClassRelationOverwriteEntity",
         "ClassRelationOverwriteType",
         "NiceClassRelationOverwriteType",
+        "Class Relation Overwrite Type Enum",
         "CLASS_OVERWRITE_NAME",
     ),
-    ("ItemType.Type", "ItemType", "NiceItemType", "ITEM_TYPE_NAME"),
-    ("BattleCommand.TYPE", "CardType", "NiceCardType", "CARD_TYPE_NAME"),
-    ("CondType.Kind", "CondType", "NiceCondType", "COND_TYPE_NAME"),
-    ("VoiceCondType.Type", "VoiceCondType", "NiceVoiceCondType", "VOICE_COND_NAME"),
-    ("SvtVoiceType.Type", "SvtVoiceType", "NiceSvtVoiceType", "VOICE_TYPE_NAME"),
-    ("QuestEntity.enType", "QuestType", "NiceQuestType", "QUEST_TYPE_NAME"),
+    ("ItemType.Type", "ItemType", "NiceItemType", "Item Type Enum", "ITEM_TYPE_NAME"),
+    (
+        "BattleCommand.TYPE",
+        "CardType",
+        "NiceCardType",
+        "Card Type Enum",
+        "CARD_TYPE_NAME",
+    ),
+    (
+        "CondType.Kind",
+        "CondType",
+        "NiceCondType",
+        "Condition Type Enum",
+        "COND_TYPE_NAME",
+    ),
+    (
+        "VoiceCondType.Type",
+        "VoiceCondType",
+        "NiceVoiceCondType",
+        "Voice Condition Type Enum",
+        "VOICE_COND_NAME",
+    ),
+    (
+        "SvtVoiceType.Type",
+        "SvtVoiceType",
+        "NiceSvtVoiceType",
+        "Servant Voice Type Enum",
+        "VOICE_TYPE_NAME",
+    ),
+    (
+        "QuestEntity.enType",
+        "QuestType",
+        "NiceQuestType",
+        "Quest Type Enum",
+        "QUEST_TYPE_NAME",
+    ),
     (
         "QuestEntity.ConsumeType",
         "QuestConsumeType",
         "NiceConsumeType",
+        "Consume Type Enum",
         "QUEST_CONSUME_TYPE_NAME",
     ),
-    ("StatusRank.Kind", "StatusRank", "NiceStatusRank", "STATUS_RANK_NAME"),
+    (
+        "StatusRank.Kind",
+        "StatusRank",
+        "NiceStatusRank",
+        "Status Rank Enum",
+        "STATUS_RANK_NAME",
+    ),
 ]
 
 
@@ -196,9 +280,9 @@ def main(dump_path: str, gameenums_path: str) -> None:
         "\n",
         "\n",
     ]
-    for cs_enum, raw_class, nice_class, dict_name in ENUMS:
+    for cs_enum, raw_class, nice_class, nice_class_title, dict_name in ENUMS:
         python_lines += cs_enums_to_lines(
-            all_cs_enums[cs_enum], raw_class, nice_class, dict_name
+            all_cs_enums[cs_enum], raw_class, nice_class, nice_class_title, dict_name
         )
         if cs_enum != ENUMS[-1][0]:
             python_lines += ["\n"] * 2

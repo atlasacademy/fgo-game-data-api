@@ -60,6 +60,8 @@ SVT_FLAG_NAME_REVERSE: Dict[NiceSvtFlag, int] = {v: k for k, v in SVT_FLAG_NAME.
 
 
 class NiceSkillType(str, Enum):
+    """Skill Type Enum"""
+
     active = "active"
     passive = "passive"
 
@@ -94,6 +96,8 @@ FUNC_TYPE_NAME_REVERSE: Dict[NiceFuncType, int] = {
 
 
 class FuncApplyTarget(str, Enum):
+    """Function Target Team Enum"""
+
     player = "player"
     enemy = "enemy"
     playerAndEnemy = "playerAndEnemy"
@@ -178,6 +182,8 @@ BUFF_TYPE_NAME_REVERSE: Dict[NiceBuffType, int] = {
 
 
 class NiceItemBGType(str, Enum):
+    """Item Background Type Enum"""
+
     zero = "zero"  # qp, friendpoint
     bronze = "bronze"
     silver = "silver"
@@ -214,6 +220,8 @@ GENDER_TYPE_NAME_REVERSE: Dict[NiceGender, int] = {
 
 
 class Attribute(str, Enum):
+    """Servant Attribute Enum"""
+
     human = "human"
     sky = "sky"
     earth = "earth"
@@ -237,6 +245,8 @@ ATTRIBUTE_NAME_REVERSE: Dict[Attribute, int] = {v: k for k, v in ATTRIBUTE_NAME.
 
 
 class SvtClass(str, Enum):
+    """Servant Class"""
+
     saber = "saber"
     archer = "archer"
     lancer = "lancer"
@@ -317,6 +327,8 @@ PLAYABLE_CLASS_LIST = [
 
 
 class Trait(str, Enum):
+    """Trait/Individuality Enum"""
+
     unknown = "unknown"
     genderMale = "genderMale"
     genderFemale = "genderFemale"

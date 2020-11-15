@@ -3,21 +3,29 @@ from typing import Union
 
 
 class Region(str, Enum):
+    """Region Enum"""
+
     NA = "NA"
     JP = "JP"
 
 
 class Language(str, Enum):
+    """Language Enum"""
+
     en = "en"
     jp = "jp"
 
 
 class ReverseData(str, Enum):
+    """Reverse Data Detail Level"""
+
     basic = "basic"
     nice = "nice"
 
 
 class ReverseDepth(str, Enum):
+    """Reverse Data Depth"""
+
     function = "function"
     skillNp = "skillNp"
     servant = "servant"
