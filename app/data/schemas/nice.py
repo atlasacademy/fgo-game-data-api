@@ -575,6 +575,7 @@ class NiceQuest(BaseModelORJson):
     consume: int
     spotId: int
     releaseConditions: List[NiceQuestRelease]
+    phases: List[int]
     noticeAt: int
     openedAt: int
     closedAt: int

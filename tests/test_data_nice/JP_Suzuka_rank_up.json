@@ -31,6 +31,7 @@
       "closedMessage": "絆Lv.{0}で開放"
     }
   ],
+  "phases": [1, 2, 3],
   "noticeAt": 1600074000,
   "openedAt": 1600074000,
   "closedAt": 1893423600

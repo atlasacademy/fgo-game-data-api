@@ -1280,7 +1280,7 @@ def get_nice_quest_release(
 
 
 def get_nice_quest(
-    region: Region, raw_quest: Union[QuestEntity, QuestPhaseEntity]
+    region: Region, quest_id: int, raw_quest: Union[QuestEntity, QuestPhaseEntity]
 ) -> Dict[str, Any]:
     nice_data: Dict[str, Any] = {
         "id": raw_quest.mstQuest.id,
@@ -1293,6 +1293,10 @@ def get_nice_quest(
             get_nice_quest_release(region, release)
             for release in raw_quest.mstQuestRelease
         ],
+        "phases": [
+            questPhase.phase
+            for questPhase in masters[region].mstQuestPhaseId[quest_id].values()
+        ],
         "noticeAt": raw_quest.mstQuest.noticeAt,
         "openedAt": raw_quest.mstQuest.openedAt,
         "closedAt": raw_quest.mstQuest.closedAt,
@@ -1301,12 +1305,12 @@ def get_nice_quest(
 
 
 def get_nice_quest_alone(region: Region, quest_id: int) -> Dict[str, Any]:
-    return get_nice_quest(region, raw.get_quest_entity(region, quest_id))
+    return get_nice_quest(region, quest_id, raw.get_quest_entity(region, quest_id))
 
 
 def get_nice_quest_phase(region: Region, quest_id: int, phase: int) -> Dict[str, Any]:
     raw_data = raw.get_quest_phase_entity(region, quest_id, phase)
-    nice_data = get_nice_quest(region, raw_data)
+    nice_data = get_nice_quest(region, quest_id, raw_data)
     nice_data.update(
         {
             "phase": raw_data.mstQuestPhase.phase,

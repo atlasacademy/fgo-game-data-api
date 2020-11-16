@@ -20,6 +20,7 @@
     },
     { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
   ],
+  "phases": [1],
   "noticeAt": 1580097600,
   "openedAt": 1580097600,
   "closedAt": 1580702399,
