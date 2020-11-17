@@ -237,13 +237,13 @@ def get_servant_entity(
         # needed this to get CharaFigure available forms
         mstSvtScript=masters[region].mstSvtScriptId.get(servant_id, []),
         mstSkill=(
-            get_skill_entity_no_reverse(region, skill, expand)
+            get_skill_entity_no_reverse(region, skill.skillId, expand)
             for skill in masters[region].mstSvtSkillSvtId.get(servant_id, [])
         ),
         mstTreasureDevice=(
-            get_td_entity_no_reverse(region, td, expand)
+            get_td_entity_no_reverse(region, td.treasureDeviceId, expand)
             for td in masters[region].mstSvtTreasureDeviceSvtId.get(servant_id, [])
-            if td != 100
+            if td.treasureDeviceId != 100
         ),
     )
 

@@ -594,7 +594,7 @@ def get_nice_voice_cond(
     )
 
     valueList = (
-        masters[region].mstSvtGroupId[cond.value]
+        [group.svtId for group in masters[region].mstSvtGroupId[cond.value]]
         if cond.condType == VoiceCondType.SVT_GROUP
         else []
     )

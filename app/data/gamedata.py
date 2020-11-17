@@ -148,47 +148,37 @@ def update_gamedata() -> None:
                 item[lookup_id]: item[result_id] for item in master[source_table]
             }
 
-        for masters_table, source_table, lookup_id, result_id in (
-            ("mstSvtSkillSvtId", "mstSvtSkill", "svtId", "skillId"),
-            (
-                "mstSvtTreasureDeviceSvtId",
-                "mstSvtTreasureDevice",
-                "svtId",
-                "treasureDeviceId",
-            ),
-            ("mstSvtGroupId", "mstSvtGroup", "id", "svtId"),
-        ):
-            master[masters_table] = defaultdict(list)
-            for item in master[source_table]:
-                master[masters_table][item[lookup_id]].append(item[result_id])
-
         master["mstSvtExp"] = sorted(master["mstSvtExp"], key=lambda item: item["lv"])  # type: ignore
         master["mstCombineMaterial"] = sorted(master["mstCombineMaterial"], key=lambda item: item["lv"])  # type: ignore
 
-        for extra_stuff in (
-            SKILL_STUFFS | TD_STUFFS | SVT_STUFFS | ID_LISTS | {"mstSvtExp"}
+        for masters_table, source_table, lookup_id in (
+            ("mstClassRelationOverwriteId", "mstClassRelationOverwrite", "id"),
+            ("mstCombineCostumeId", "mstCombineCostume", "svtId"),
+            ("mstCombineLimitId", "mstCombineLimit", "id"),
+            ("mstCombineMaterialId", "mstCombineMaterial", "id"),
+            ("mstCombineSkillId", "mstCombineSkill", "id"),
+            ("mstQuestReleaseId", "mstQuestRelease", "questId"),
+            ("mstSkillDetailId", "mstSkillDetail", "id"),
+            ("mstSkillLvId", "mstSkillLv", "skillId"),
+            ("mstSvtCardId", "mstSvtCard", "svtId"),
+            ("mstSvtChangeId", "mstSvtChange", "svtId"),
+            ("mstSvtCommentId", "mstSvtComment", "svtId"),
+            ("mstSvtCostumeId", "mstSvtCostume", "svtId"),
+            ("mstSvtExpId", "mstSvtExp", "type"),
+            ("mstSvtGroupId", "mstSvtGroup", "id"),
+            ("mstSvtLimitId", "mstSvtLimit", "svtId"),
+            ("mstSvtLimitAddId", "mstSvtLimitAdd", "svtId"),
+            ("mstSvtSkillId", "mstSvtSkill", "skillId"),
+            ("mstSvtSkillSvtId", "mstSvtSkill", "svtId"),
+            ("mstSvtTreasureDeviceId", "mstSvtTreasureDevice", "treasureDeviceId"),
+            ("mstSvtTreasureDeviceSvtId", "mstSvtTreasureDevice", "svtId"),
+            ("mstSvtVoiceId", "mstSvtVoice", "id"),
+            ("mstSvtVoiceRelationId", "mstSvtVoiceRelation", "svtId"),
+            ("mstTreasureDeviceDetailId", "mstTreasureDeviceDetail", "id"),
+            ("mstTreasureDeviceLvId", "mstTreasureDeviceLv", "treaureDeviceId"),
         ):
-            masters_table = f"{extra_stuff}Id"
             master[masters_table] = defaultdict(list)
-            if "Detail" in extra_stuff:
-                lookup_id = "id"
-            elif extra_stuff == "mstSvtExp":
-                lookup_id = "type"
-            elif extra_stuff in {"mstQuestRelease"}:
-                lookup_id = "questId"
-            elif extra_stuff in {"mstCombineSkill", "mstCombineLimit"} | ID_LISTS:
-                lookup_id = "id"
-            elif extra_stuff in SKILL_STUFFS:
-                lookup_id = "skillId"
-            elif extra_stuff in SVT_STUFFS:
-                lookup_id = "svtId"
-            elif extra_stuff == "mstTreasureDeviceLv":
-                lookup_id = "treaureDeviceId"
-            elif extra_stuff == "mstSvtTreasureDevice":
-                lookup_id = "treasureDeviceId"
-            else:  # pragma: no cover
-                raise ValueError("Can't set lookup_id")
-            for item in master[extra_stuff]:
+            for item in master[source_table]:
                 master[masters_table][item[lookup_id]].append(item)
 
         master["bondEquip"] = {}
@@ -198,8 +188,8 @@ def update_gamedata() -> None:
                 and item["id"] in master["mstSvtSkillSvtId"]
             ):
                 actIndividualities = set()
-                for skill_id in master["mstSvtSkillSvtId"][item["id"]]:
-                    mstSkill = master["mstSkillId"][skill_id]
+                for skill in master["mstSvtSkillSvtId"][item["id"]]:
+                    mstSkill = master["mstSkillId"][skill["skillId"]]
                     actIndividualities.add(tuple(mstSkill["actIndividuality"]))
                 if len(actIndividualities) == 1:
                     individualities = actIndividualities.pop()
