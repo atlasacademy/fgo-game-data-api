@@ -183,6 +183,7 @@ def update_gamedata() -> None:
             ("mstMapWarId", "mstMap", "warId"),
             ("mstSpotWarId", "mstSpot", "warId"),
             ("mstQuestSpotId", "mstQuest", "spotId"),
+            ("mstWarEventId", "mstWar", "eventId"),
         ):
             master[masters_table] = defaultdict(list)
             for item in master[source_table]:

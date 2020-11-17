@@ -1275,6 +1275,7 @@ def get_nice_event(region: Region, event_id: int) -> NiceEvent:
         endedAt=raw_data.mstEvent.endedAt,
         finishedAt=raw_data.mstEvent.finishedAt,
         materialOpenedAt=raw_data.mstEvent.materialOpenedAt,
+        warIds=[war.id for war in masters[region].mstWarEventId.get(event_id, [])],
     )
 
     return nice_event

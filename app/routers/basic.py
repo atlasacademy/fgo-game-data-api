@@ -16,6 +16,7 @@ from ..data.schemas.basic import (
     BasicServant,
     BasicSkillReverse,
     BasicTdReverse,
+    BasicWar,
 )
 from .deps import (
     BuffSearchQueryParams,
@@ -467,9 +468,27 @@ async def get_buff(
 )
 async def get_event(region: Region, event_id: int) -> Response:
     """
-    Get the nice event data from the given event ID
+    Get the basic event data from the given event ID
     """
     if event_id in masters[region].mstEventId:
         return item_response(basic.get_basic_event(region, event_id))
+    else:
+        raise HTTPException(status_code=404, detail="Event not found")
+
+
+@router.get(
+    "/{region}/war/{war_id}",
+    summary="Get War data",
+    response_description="Basic War Entity",
+    response_model=BasicWar,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404, 500]),
+)
+async def get_war(region: Region, war_id: int) -> Response:
+    """
+    Get the basic war data from the given event ID
+    """
+    if war_id in masters[region].mstWarId:
+        return item_response(basic.get_basic_war(region, war_id))
     else:
         raise HTTPException(status_code=404, detail="Event not found")

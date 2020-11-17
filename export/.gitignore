@@ -9,3 +9,5 @@ basic_equip*.json
 basic_servant*.json
 basic_mystic_code*.json
 basic_command_code*.json
+basic_event*.json
+basic_war*.json

@@ -6,10 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.20.0 - 2020-11-17
+
 ### Added
 
+- raw, nice, basic `war` endpoint.
+- Export `basic_event.json` and `basic_war.json`.
 - `phases` to nice quest.
-- raw, nice `war` endpoint.
+- List of war IDs to nice and basic event.
 
 ## 5.19.1 - 2020-11-15
 

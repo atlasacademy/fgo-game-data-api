@@ -561,6 +561,7 @@ class NiceEvent(BaseModelORJson):
     endedAt: int
     finishedAt: int
     materialOpenedAt: int
+    warIds: List[int]
 
 
 class NiceBgm(BaseModelORJson):

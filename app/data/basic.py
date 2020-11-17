@@ -38,6 +38,7 @@ from .schemas.basic import (
     BasicServant,
     BasicSkillReverse,
     BasicTdReverse,
+    BasicWar,
 )
 from .schemas.nice import AssetURL
 from .translations import TRANSLATIONS
@@ -268,6 +269,20 @@ def get_basic_event(region: Region, event_id: int) -> BasicEvent:
         endedAt=mstEvent.endedAt,
         finishedAt=mstEvent.finishedAt,
         materialOpenedAt=mstEvent.materialOpenedAt,
+        warIds=[war.id for war in masters[region].mstWarEventId.get(event_id, [])],
     )
 
     return basic_event
+
+
+def get_basic_war(region: Region, war_id: int) -> BasicWar:
+    mstWar = masters[region].mstWarId[war_id]
+
+    return BasicWar(
+        id=mstWar.id,
+        coordinates=mstWar.coordinates,
+        age=mstWar.age,
+        name=mstWar.name,
+        longName=mstWar.longName,
+        eventId=mstWar.eventId,
+    )

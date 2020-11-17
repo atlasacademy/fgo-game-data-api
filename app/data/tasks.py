@@ -8,7 +8,14 @@ from pydantic import BaseModel
 
 from ..config import Settings, logger, project_root
 from ..routers.utils import list_string, list_string_exclude
-from .basic import get_basic_cc, get_basic_equip, get_basic_mc, get_basic_servant
+from .basic import (
+    get_basic_cc,
+    get_basic_equip,
+    get_basic_event,
+    get_basic_mc,
+    get_basic_servant,
+    get_basic_war,
+)
 from .common import Language, Region
 from .enums import ALL_ENUMS, TRAIT_NAME
 from .gamedata import masters, region_path, update_gamedata
@@ -97,6 +104,13 @@ def generate_exports() -> None:  # pragma: no cover
                 get_basic_cc(region, item_id)
                 for item_id in masters[region].mstCommandCodeId
             ]
+            all_basic_event_data = [
+                get_basic_event(region, event_id)
+                for event_id in masters[region].mstEventId
+            ]
+            all_basic_war_data = [
+                get_basic_war(region, war_id) for war_id in masters[region].mstWarId
+            ]
 
             output_files = {
                 "nice_enums": ALL_ENUMS,
@@ -112,6 +126,8 @@ def generate_exports() -> None:  # pragma: no cover
                 "basic_equip": all_basic_equip_data,
                 "basic_mystic_code": all_basic_mc_data,
                 "basic_command_code": all_basic_cc_data,
+                "basic_event": all_basic_event_data,
+                "basic_war": all_basic_war_data,
             }
 
             if region == Region.JP:

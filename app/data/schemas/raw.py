@@ -808,6 +808,7 @@ class Master(BaseModel):
     mstBgmId: Dict[int, MstBgm]
     mstWarId: Dict[int, MstWar]
     mstMapWarId: Dict[int, List[MstMap]]
+    mstWarEventId: Dict[int, List[MstWar]]
     mstSpotWarId: Dict[int, List[MstSpot]]
     mstQuestSpotId: Dict[int, List[MstQuest]]
     mstEventId: Dict[int, MstEvent]

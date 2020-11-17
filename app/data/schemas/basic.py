@@ -137,3 +137,13 @@ class BasicEvent(BaseModelORJson):
     endedAt: int
     finishedAt: int
     materialOpenedAt: int
+    warIds: List[int]
+
+
+class BasicWar(BaseModelORJson):
+    id: int
+    coordinates: List[List[int]]
+    age: str
+    name: str
+    longName: str
+    eventId: int
