@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+### Added
+
+- `phases` to nice quest.
+- raw, nice `war` endpoint.
+
 ## 5.19.1 - 2020-11-15
 
 ### Fixed

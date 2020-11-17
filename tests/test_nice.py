@@ -53,6 +53,7 @@ test_cases_dict = {
     "MC_NA_id": ("NA/MC/110", "NA_MC_LB"),
     "JP_CC_id": ("JP/CC/8400550", "JP_CC_8400550"),
     "event_JP_id": ("JP/event/80289", "JP_Guda_5"),
+    "war_NA_id": ("NA/war/203", "NA_war_Shimousa"),
     "quest_JP_id": ("JP/quest/91103002", "JP_Suzuka_rank_up"),
     "quest_NA_id_phase": ("NA/quest/94020187/1", "NA_87th_floor"),
 }
@@ -80,6 +81,7 @@ cases_404_dict = {
     "MC": "62537",
     "CC": "8400631",
     "event": "12313",
+    "war": "98765",
     "quest": "1234567",
     "quest/94025012": "2",
 }
@@ -345,3 +347,11 @@ class TestServantSpecial:
         response = client.get("/nice/NA/servant/184")
         assert response.status_code == 200
         assert response.json()["svtChange"][0]["name"] == "Archer of Inferno"
+
+    def test_war_banner(self) -> None:
+        war_oniland = client.get("/nice/NA/war/9050")
+        assert war_oniland.status_code == 200
+        assert "event_war_" in war_oniland.json()["banner"]
+        war_interlude = client.get("/nice/NA/war/1003")
+        assert war_interlude.status_code == 200
+        assert "chaldea_category_" in war_interlude.json()["banner"]

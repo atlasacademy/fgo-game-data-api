@@ -36,8 +36,9 @@ def out_intenum(input_dict: Dict[int, str], className: str) -> List[str]:
 
 
 EXTRA_STR_NAME = {
-    "NiceStatusRank": {-1: "unknown"},
-    "NiceSvtFlag": {0: "normal", 63: "goetia"},
+    "NiceStatusRank": {-1: "UNKNOWN"},
+    "NiceSvtFlag": {0: "NORMAL", 63: "GOETIA"},
+    "NiceWarFlag": {34848: "SUMMER_CAMP", 49538: "UNRELEASED_STORY"},
 }
 
 
@@ -239,6 +240,20 @@ ENUMS: List[Tuple[str, str, str, str, str]] = [
         "NiceEventType",
         "Event Type Enum",
         "EVENT_TYPE_NAME",
+    ),
+    (
+        "WarEntity.Flag",
+        "WarEntityFlag",
+        "NiceWarFlag",
+        "War Flag Enum",
+        "WAR_FLAG_NAME",
+    ),
+    (
+        "WarEntity.StartType",
+        "WarEntityStartType",
+        "NiceWarStartType",
+        "War Start Type Enum",
+        "WAR_START_TYPE_NAME",
     ),
 ]
 

@@ -19,6 +19,7 @@ from ..data.schemas.nice import (
     NiceServant,
     NiceSkillReverse,
     NiceTdReverse,
+    NiceWar,
 )
 from .deps import (
     BuffSearchQueryParams,
@@ -564,6 +565,24 @@ async def get_event(region: Region, event_id: int) -> Response:
         return item_response(nice.get_nice_event(region, event_id))
     else:
         raise HTTPException(status_code=404, detail="Event not found")
+
+
+@router.get(
+    "/{region}/war/{war_id}",
+    summary="Get War data",
+    response_description="Nice War Entity",
+    response_model=NiceWar,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404, 500]),
+)
+async def get_war(region: Region, war_id: int) -> Response:
+    """
+    Get the nice war data from the given war ID
+    """
+    if war_id in masters[region].mstWarId:
+        return item_response(nice.get_nice_war(region, war_id))
+    else:
+        raise HTTPException(status_code=404, detail="War not found")
 
 
 @router.get(

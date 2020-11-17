@@ -581,6 +581,17 @@ class MstClassRelationOverwrite(BaseModel):
     type: int  # 0
 
 
+class MstBgm(BaseModel):
+    id: int  # 1
+    fileName: str  # "BGM_BATTLE_1"
+    name: str  # "集いし英雄\n～BATTLE 1～"
+    priority: int  # 1012
+    detail: str  # ""
+    flag: int  # 0
+    shopId: int  # 7000001
+    logoId: int  # 1
+
+
 class MstEvent(BaseModel):
     script: List[Dict[str, str]]  # []
     id: int  # 10083
@@ -794,9 +805,11 @@ class Master(BaseModel):
     mstEquipId: Dict[int, MstEquip]
     mstEquipExp: List[MstEquipExp]
     mstEquipSkill: List[MstEquipSkill]
+    mstBgmId: Dict[int, MstBgm]
     mstWarId: Dict[int, MstWar]
     mstMapWarId: Dict[int, List[MstMap]]
     mstSpotWarId: Dict[int, List[MstSpot]]
+    mstQuestSpotId: Dict[int, List[MstQuest]]
     mstEventId: Dict[int, MstEvent]
     # mstQuest: List[MstQuest]
     mstQuestId: Dict[int, MstQuest]

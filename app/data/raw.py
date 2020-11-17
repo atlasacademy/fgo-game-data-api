@@ -14,7 +14,6 @@ from .schemas.raw import (
     QuestEntity,
     QuestPhaseEntity,
     ReversedBuff,
-    WarEntity,
     ReversedBuffType,
     ReversedFunction,
     ReversedFunctionType,
@@ -25,6 +24,7 @@ from .schemas.raw import (
     SkillEntityNoReverse,
     TdEntity,
     TdEntityNoReverse,
+    WarEntity,
 )
 
 

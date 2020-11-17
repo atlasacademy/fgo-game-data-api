@@ -20,6 +20,7 @@ from .gameenums import (
     SVT_TYPE_NAME,
     VOICE_COND_NAME,
     VOICE_TYPE_NAME,
+    WAR_START_TYPE_NAME,
     BuffAction,
     FuncType,
     NiceBuffAction,
@@ -40,9 +41,11 @@ from .gameenums import (
     NiceSvtType,
     NiceSvtVoiceType,
     NiceVoiceCondType,
+    NiceWarStartType,
     SvtType,
     SvtVoiceType,
     VoiceCondType,
+    WarEntityFlag,
 )
 
 
@@ -803,4 +806,7 @@ __all__ = [
     "QUEST_TYPE_NAME",
     "NiceConsumeType",
     "QUEST_CONSUME_TYPE_NAME",
+    "NiceWarStartType",
+    "WAR_START_TYPE_NAME",
+    "WarEntityFlag",
 ]

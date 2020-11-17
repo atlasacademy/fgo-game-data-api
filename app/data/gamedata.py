@@ -31,6 +31,7 @@ MASTER_WITH_ID = {
     "mstWar",
     "mstMap",
     "mstSpot",
+    "mstBgm",
 }
 ID_LISTS = {
     "mstSvtVoice",
@@ -181,6 +182,7 @@ def update_gamedata() -> None:
             ("mstTreasureDeviceLvId", "mstTreasureDeviceLv", "treaureDeviceId"),
             ("mstMapWarId", "mstMap", "warId"),
             ("mstSpotWarId", "mstSpot", "warId"),
+            ("mstQuestSpotId", "mstQuest", "spotId"),
         ):
             master[masters_table] = defaultdict(list)
             for item in master[source_table]:

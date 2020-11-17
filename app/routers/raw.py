@@ -14,10 +14,10 @@ from ..data.schemas.raw import (
     MysticCodeEntity,
     QuestEntity,
     QuestPhaseEntity,
-    WarEntity,
     ServantEntity,
     SkillEntity,
     TdEntity,
+    WarEntity,
 )
 from .deps import (
     BuffSearchQueryParams,

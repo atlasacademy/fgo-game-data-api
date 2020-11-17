@@ -1,0 +1,992 @@
+{
+  "id": 203,
+  "coordinates": [[35, 140], []],
+  "age": "Kan'ei 16",
+  "name": "Pseudo-Parallel World",
+  "longName": "Pseudo-Parallel World\nThe Stage of Carnage, Shimousa",
+  "banner": "https://assets.atlasacademy.io/GameData/NA/Banner/questboard_cap203.png",
+  "headerImage": "https://assets.atlasacademy.io/GameData/NA/Banner/img_title_header_17.png",
+  "priority": 203,
+  "parentWarId": 0,
+  "materialParentWarId": 0,
+  "emptyMessage": "No Quest Available",
+  "bgm": {
+    "id": 197,
+    "name": "The Stage of Carnage:\nShimousa",
+    "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_MAP_32/BGM_MAP_32.mp3"
+  },
+  "scriptId": "0200030010",
+  "startType": "quest",
+  "targetId": 2000300,
+  "eventId": 0,
+  "lastQuestId": 2000316,
+  "maps": [
+    {
+      "id": 20301,
+      "mapImage": "https://assets.atlasacademy.io/GameData/NA/Terminal/MapImgs/img_questmap_020301/img_questmap_020301.png",
+      "mapImageW": 2048,
+      "mapImageH": 1434,
+      "headerImage": "https://assets.atlasacademy.io/GameData/NA/Banner/img_title_header_17.png",
+      "bgm": {
+        "id": 197,
+        "name": "The Stage of Carnage:\nShimousa",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_MAP_32/BGM_MAP_32.mp3"
+      }
+    },
+    {
+      "id": 20302,
+      "mapImage": "https://assets.atlasacademy.io/GameData/NA/Terminal/MapImgs/img_questmap_020302/img_questmap_020302.png",
+      "mapImageW": 2048,
+      "mapImageH": 1434,
+      "headerImage": "https://assets.atlasacademy.io/GameData/NA/Banner/img_title_header_17.png",
+      "bgm": {
+        "id": 197,
+        "name": "The Stage of Carnage:\nShimousa",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_MAP_32/BGM_MAP_32.mp3"
+      }
+    }
+  ],
+  "spots": [
+    {
+      "id": 20301,
+      "joinSpotIds": [],
+      "mapId": 20301,
+      "name": "Rice Field",
+      "image": "https://assets.atlasacademy.io/GameData/NA/Terminal/QuestMap/Capter0203/QMap_Cap0203_Atlas/spot_020301.png",
+      "x": 978,
+      "y": 697,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -7,
+      "questOfsX": 33,
+      "questOfsY": -55,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "quests": [
+        {
+          "id": 2000300,
+          "name": "Prelude",
+          "type": "main",
+          "consumeType": "ap",
+          "consume": 0,
+          "spotId": 20301,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000822,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1],
+          "noticeAt": 1570680000,
+          "openedAt": 1570680000,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 2000301,
+          "name": "Prima Cantica: Purgatorio (Beginning)",
+          "type": "main",
+          "consumeType": "ap",
+          "consume": 23,
+          "spotId": 20301,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 1000822,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2],
+          "noticeAt": 1570680000,
+          "openedAt": 1570680000,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93020301,
+          "name": "Rural Landscape",
+          "type": "free",
+          "consumeType": "ap",
+          "consume": 20,
+          "spotId": 20301,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000316,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2, 3],
+          "noticeAt": 1508018400,
+          "openedAt": 1508018400,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 20302,
+      "joinSpotIds": [],
+      "mapId": 20301,
+      "name": "Mid-Road",
+      "image": "https://assets.atlasacademy.io/GameData/NA/Terminal/QuestMap/Capter0203/QMap_Cap0203_Atlas/spot_020302.png",
+      "x": 948,
+      "y": 590,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -9,
+      "questOfsX": 32,
+      "questOfsY": -52,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "quests": [
+        {
+          "id": 2000302,
+          "name": "Prima Cantica: Purgatorio (Middle)",
+          "type": "main",
+          "consumeType": "ap",
+          "consume": 23,
+          "spotId": 20302,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000301,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2],
+          "noticeAt": 1570680000,
+          "openedAt": 1570680000,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 2000303,
+          "name": "Prima Cantica: Purgatorio (Ending)",
+          "type": "main",
+          "consumeType": "ap",
+          "consume": 24,
+          "spotId": 20302,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000302,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2, 3, 4],
+          "noticeAt": 1570680000,
+          "openedAt": 1570680000,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 20305,
+      "joinSpotIds": [],
+      "mapId": 20301,
+      "name": "Village",
+      "image": "https://assets.atlasacademy.io/GameData/NA/Terminal/QuestMap/Capter0203/QMap_Cap0203_Atlas/spot_020303.png",
+      "x": 922,
+      "y": 505,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -5,
+      "questOfsX": 33,
+      "questOfsY": -64,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "quests": [
+        {
+          "id": 93020302,
+          "name": "Desolate Settlement",
+          "type": "free",
+          "consumeType": "ap",
+          "consume": 21,
+          "spotId": 20305,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000316,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2, 3],
+          "noticeAt": 1508018400,
+          "openedAt": 1508018400,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 20306,
+      "joinSpotIds": [],
+      "mapId": 20301,
+      "name": "Monastery",
+      "image": "https://assets.atlasacademy.io/GameData/NA/Terminal/QuestMap/Capter0203/QMap_Cap0203_Atlas/spot_020304.png",
+      "x": 1156,
+      "y": 421,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -8,
+      "questOfsX": 32,
+      "questOfsY": -64,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "quests": [
+        {
+          "id": 2000304,
+          "name": "Seconda Cantica: Inferno (Beginning)",
+          "type": "main",
+          "consumeType": "ap",
+          "consume": 23,
+          "spotId": 20306,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000303,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2],
+          "noticeAt": 1570680000,
+          "openedAt": 1570680000,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 2000313,
+          "name": "Ultima Cantica: The Stage of Carnage, Onriedo (Beginning)",
+          "type": "main",
+          "consumeType": "ap",
+          "consume": 24,
+          "spotId": 20306,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000312,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2],
+          "noticeAt": 1570680000,
+          "openedAt": 1570680000,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93020303,
+          "name": "Senju Sengen",
+          "type": "free",
+          "consumeType": "ap",
+          "consume": 21,
+          "spotId": 20306,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000316,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2, 3],
+          "noticeAt": 1508018400,
+          "openedAt": 1508018400,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 20307,
+      "joinSpotIds": [],
+      "mapId": 20301,
+      "name": "Castle Town",
+      "image": "https://assets.atlasacademy.io/GameData/NA/Terminal/QuestMap/Capter0203/QMap_Cap0203_Atlas/spot_020305.png",
+      "x": 1460,
+      "y": 1056,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -4,
+      "questOfsX": 35,
+      "questOfsY": -65,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "quests": [
+        {
+          "id": 2000305,
+          "name": "Seconda Cantica: Inferno (Middle)",
+          "type": "main",
+          "consumeType": "ap",
+          "consume": 24,
+          "spotId": 20307,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000304,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2, 3, 4],
+          "noticeAt": 1570680000,
+          "openedAt": 1570680000,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 2000306,
+          "name": "Seconda Cantica: Inferno (Ending)",
+          "type": "main",
+          "consumeType": "ap",
+          "consume": 24,
+          "spotId": 20307,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000305,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2, 3, 4],
+          "noticeAt": 1570680000,
+          "openedAt": 1570680000,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 2000307,
+          "name": "Terza Cantica: Paraíso (Beginning)",
+          "type": "main",
+          "consumeType": "ap",
+          "consume": 23,
+          "spotId": 20307,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000306,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1],
+          "noticeAt": 1570680000,
+          "openedAt": 1570680000,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 2000316,
+          "name": "See You Again Someday, Flower at the Apex of Heaven",
+          "type": "main",
+          "consumeType": "ap",
+          "consume": 0,
+          "spotId": 20307,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000315,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2],
+          "noticeAt": 1570680000,
+          "openedAt": 1570680000,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93020304,
+          "name": "Rise and Fall",
+          "type": "free",
+          "consumeType": "ap",
+          "consume": 21,
+          "spotId": 20307,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000316,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2, 3],
+          "noticeAt": 1508018400,
+          "openedAt": 1508018400,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 20308,
+      "joinSpotIds": [],
+      "mapId": 20301,
+      "name": "Detour",
+      "image": "https://assets.atlasacademy.io/GameData/NA/Terminal/QuestMap/Capter0203/QMap_Cap0203_Atlas/spot_020302.png",
+      "x": 1302,
+      "y": 1099,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -9,
+      "questOfsX": 32,
+      "questOfsY": -52,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "quests": []
+    },
+    {
+      "id": 20309,
+      "joinSpotIds": [],
+      "mapId": 20301,
+      "name": "Battlefield",
+      "image": "https://assets.atlasacademy.io/GameData/NA/Terminal/QuestMap/Capter0203/QMap_Cap0203_Atlas/spot_020306.png",
+      "x": 1129,
+      "y": 1150,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -4,
+      "questOfsX": 33,
+      "questOfsY": -60,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "quests": [
+        {
+          "id": 93020305,
+          "name": "The Remains of Soldiers' Dreams",
+          "type": "free",
+          "consumeType": "ap",
+          "consume": 21,
+          "spotId": 20309,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000316,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2, 3],
+          "noticeAt": 1508018400,
+          "openedAt": 1508018400,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 20310,
+      "joinSpotIds": [],
+      "mapId": 20301,
+      "name": "Toke Castle",
+      "image": "https://assets.atlasacademy.io/GameData/NA/Terminal/QuestMap/Capter0203/QMap_Cap0203_Atlas/spot_020307.png",
+      "x": 1581,
+      "y": 947,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -6,
+      "questOfsX": 36,
+      "questOfsY": -96,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "quests": [
+        {
+          "id": 2000308,
+          "name": "Terza Cantica: Paraíso (Middle)",
+          "type": "main",
+          "consumeType": "ap",
+          "consume": 24,
+          "spotId": 20310,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000307,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2, 3],
+          "noticeAt": 1570680000,
+          "openedAt": 1570680000,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 2000309,
+          "name": "Terza Cantica: Paraíso (Ending)",
+          "type": "main",
+          "consumeType": "ap",
+          "consume": 24,
+          "spotId": 20310,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000308,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2, 3, 4],
+          "noticeAt": 1570680000,
+          "openedAt": 1570680000,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 20311,
+      "joinSpotIds": [],
+      "mapId": 20301,
+      "name": "Main Road",
+      "image": "https://assets.atlasacademy.io/GameData/NA/Terminal/QuestMap/Capter0203/QMap_Cap0203_Atlas/spot_020302.png",
+      "x": 1210,
+      "y": 870,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -9,
+      "questOfsX": 32,
+      "questOfsY": -52,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "quests": [
+        {
+          "id": 2000310,
+          "name": "Quarta Cantica: Kālasūtra Hell (Beginning)",
+          "type": "main",
+          "consumeType": "ap",
+          "consume": 25,
+          "spotId": 20311,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000309,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2, 3],
+          "noticeAt": 1570680000,
+          "openedAt": 1570680000,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 20312,
+      "joinSpotIds": [],
+      "mapId": 20301,
+      "name": "Mountain Trail",
+      "image": "https://assets.atlasacademy.io/GameData/NA/Terminal/QuestMap/Capter0203/QMap_Cap0203_Atlas/spot_020302.png",
+      "x": 1092,
+      "y": 336,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -9,
+      "questOfsX": 32,
+      "questOfsY": -52,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "quests": [
+        {
+          "id": 2000311,
+          "name": "Quarta Cantica: Kālasūtra Hell (Middle)",
+          "type": "main",
+          "consumeType": "ap",
+          "consume": 24,
+          "spotId": 20312,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000310,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2, 3],
+          "noticeAt": 1570680000,
+          "openedAt": 1570680000,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 2000312,
+          "name": "Quarta Cantica: Kālasūtra Hell (Ending)",
+          "type": "main",
+          "consumeType": "ap",
+          "consume": 25,
+          "spotId": 20312,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000311,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2, 3, 4],
+          "noticeAt": 1570680000,
+          "openedAt": 1570680000,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 20314,
+      "joinSpotIds": [],
+      "mapId": 20301,
+      "name": "Rear Mountain",
+      "image": "https://assets.atlasacademy.io/GameData/NA/Terminal/QuestMap/Capter0203/QMap_Cap0203_Atlas/spot_020308.png",
+      "x": 1035,
+      "y": 258,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -7,
+      "questOfsX": 32,
+      "questOfsY": -60,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "quests": [
+        {
+          "id": 91601901,
+          "name": "Piercing the Heart with a Blade",
+          "type": "friendship",
+          "consumeType": "ap",
+          "consume": 18,
+          "spotId": 20314,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000316,
+              "value": 0,
+              "closedMessage": "Unlock by completing Pseudo-Singularity III"
+            },
+            {
+              "type": "svtLimit",
+              "targetId": 601900,
+              "value": 3,
+              "closedMessage": "Unlock at Stage {0} Ascension"
+            },
+            {
+              "type": "svtGet",
+              "targetId": 601900,
+              "value": 0,
+              "closedMessage": ""
+            },
+            {
+              "type": "svtFriendship",
+              "targetId": 601900,
+              "value": 5,
+              "closedMessage": "Unlock at Bond Level {0}"
+            }
+          ],
+          "phases": [1, 2],
+          "noticeAt": 1509645600,
+          "openedAt": 1509645600,
+          "closedAt": 1893456000
+        },
+        {
+          "id": 93020307,
+          "name": "Nameless Sacred Mountain",
+          "type": "free",
+          "consumeType": "ap",
+          "consume": 21,
+          "spotId": 20314,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000316,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2, 3],
+          "noticeAt": 1508018400,
+          "openedAt": 1508018400,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 20315,
+      "joinSpotIds": [],
+      "mapId": 20302,
+      "name": "Castle of Onri-Edo",
+      "image": "https://assets.atlasacademy.io/GameData/NA/Terminal/QuestMap/Capter0203/QMap_Cap0203_Atlas/spot_020309.png",
+      "x": 1581,
+      "y": 947,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": 2,
+      "questOfsX": 36,
+      "questOfsY": -96,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "quests": [
+        {
+          "id": 2000315,
+          "name": "Ultima Cantica: The Stage of Carnage, Onriedo (Ending)",
+          "type": "main",
+          "consumeType": "ap",
+          "consume": 25,
+          "spotId": 20315,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000314,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2, 3, 4, 5],
+          "noticeAt": 1570680000,
+          "openedAt": 1570680000,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 20316,
+      "joinSpotIds": [],
+      "mapId": 20301,
+      "name": "Arakawa Field",
+      "image": "https://assets.atlasacademy.io/GameData/NA/Terminal/QuestMap/Capter0203/QMap_Cap0203_Atlas/spot_020310.png",
+      "x": 382,
+      "y": 662,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -3,
+      "questOfsX": 33,
+      "questOfsY": -64,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "quests": [
+        {
+          "id": 93020308,
+          "name": "Ancient Battlefield",
+          "type": "free",
+          "consumeType": "ap",
+          "consume": 21,
+          "spotId": 20316,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 93020302,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2, 3],
+          "noticeAt": 1508018400,
+          "openedAt": 1508018400,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 20317,
+      "joinSpotIds": [],
+      "mapId": 20302,
+      "name": "Castle Town",
+      "image": "https://assets.atlasacademy.io/GameData/NA/Terminal/QuestMap/Capter0203/QMap_Cap0203_Atlas/spot_020311.png",
+      "x": 1460,
+      "y": 1056,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -4,
+      "questOfsX": 35,
+      "questOfsY": -65,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "quests": [
+        {
+          "id": 2000314,
+          "name": "Ultima Cantica: The Stage of Carnage, Onriedo (Middle)",
+          "type": "main",
+          "consumeType": "ap",
+          "consume": 25,
+          "spotId": 20317,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000313,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2, 3, 4, 5, 6],
+          "noticeAt": 1570680000,
+          "openedAt": 1570680000,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 20318,
+      "joinSpotIds": [],
+      "mapId": 20302,
+      "name": "Monastery",
+      "image": "https://assets.atlasacademy.io/GameData/NA/Terminal/QuestMap/Capter0203/QMap_Cap0203_Atlas/spot_020312.png",
+      "x": 1156,
+      "y": 421,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -8,
+      "questOfsX": 32,
+      "questOfsY": -64,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "quests": []
+    },
+    {
+      "id": 20319,
+      "joinSpotIds": [],
+      "mapId": 20302,
+      "name": "Castle of Onri-Edo",
+      "image": "https://assets.atlasacademy.io/GameData/NA/Terminal/QuestMap/Capter0203/QMap_Cap0203_Atlas/spot_020313.png",
+      "x": 999999,
+      "y": 999999,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -6,
+      "questOfsX": 36,
+      "questOfsY": -96,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "quests": []
+    },
+    {
+      "id": 20320,
+      "joinSpotIds": [],
+      "mapId": 20301,
+      "name": "Toke Castle",
+      "image": "https://assets.atlasacademy.io/GameData/NA/Terminal/QuestMap/Capter0203/QMap_Cap0203_Atlas/spot_020307.png",
+      "x": 1581,
+      "y": 947,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": -6,
+      "questOfsX": 36,
+      "questOfsY": -96,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "quests": [
+        {
+          "id": 93020306,
+          "name": "Kifune Castle",
+          "type": "free",
+          "consumeType": "ap",
+          "consume": 21,
+          "spotId": 20320,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000316,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2, 3],
+          "noticeAt": 1508018400,
+          "openedAt": 1508018400,
+          "closedAt": 1893456000
+        }
+      ]
+    },
+    {
+      "id": 20321,
+      "joinSpotIds": [],
+      "mapId": 20301,
+      "name": "Countryside",
+      "image": "https://assets.atlasacademy.io/GameData/NA/Terminal/QuestMap/Capter0203/QMap_Cap0203_Atlas/spot_020301.png",
+      "x": 999999,
+      "y": 999999,
+      "imageOfsX": 0,
+      "imageOfsY": 0,
+      "nameOfsX": 0,
+      "nameOfsY": 0,
+      "questOfsX": 0,
+      "questOfsY": 0,
+      "nextOfsX": 0,
+      "nextOfsY": 0,
+      "closedMessage": "",
+      "quests": [
+        {
+          "id": 2000317,
+          "name": "ba5df22",
+          "type": "main",
+          "consumeType": "ap",
+          "consume": 999,
+          "spotId": 20321,
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 2000316,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1],
+          "noticeAt": 1570680000,
+          "openedAt": 1570680000,
+          "closedAt": 1893456000
+        }
+      ]
+    }
+  ]
+}

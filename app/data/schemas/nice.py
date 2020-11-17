@@ -25,6 +25,7 @@ from ..enums import (
     NiceSvtType,
     NiceSvtVoiceType,
     NiceVoiceCondType,
+    NiceWarStartType,
     SvtClass,
 )
 from .base import BaseModelORJson
@@ -67,6 +68,8 @@ class AssetURL:
     commandGraph = "{base_url}/{region}/CommandGraph/{item_id}a.png"
     audio = "{base_url}/{region}/Audio/{folder}/{id}.mp3"
     banner = "{base_url}/{region}/Banner/{banner}.png"
+    mapImg = "{base_url}/{region}/Terminal/MapImgs/img_questmap_{map_id:0>6}/img_questmap_{map_id:0>6}.png"
+    spotImg = "{base_url}/{region}/Terminal/QuestMap/Capter{war_asset_id:0>4}/QMap_Cap{war_asset_id:0>4}_Atlas/spot_{spot_id:0>6}.png"
 
 
 class NiceItem(BaseModelORJson):
@@ -560,6 +563,12 @@ class NiceEvent(BaseModelORJson):
     materialOpenedAt: int
 
 
+class NiceBgm(BaseModelORJson):
+    id: int
+    name: str
+    audioAsset: HttpUrl
+
+
 class NiceQuestRelease(BaseModelORJson):
     type: NiceCondType
     targetId: int
@@ -588,3 +597,54 @@ class NiceQuestPhase(NiceQuest):
     qp: int
     exp: int
     bond: int
+
+
+class NiceMap(BaseModel):
+    id: int
+    mapImage: HttpUrl
+    mapImageW: int
+    mapImageH: int
+    headerImage: HttpUrl
+    bgm: NiceBgm
+
+
+class NiceSpot(BaseModel):
+    id: int
+    joinSpotIds: List[int]
+    mapId: int
+    name: str
+    image: HttpUrl
+    x: int
+    y: int
+    imageOfsX: int
+    imageOfsY: int
+    nameOfsX: int
+    nameOfsY: int
+    questOfsX: int
+    questOfsY: int
+    nextOfsX: int
+    nextOfsY: int
+    closedMessage: str
+    quests: List[NiceQuest]
+
+
+class NiceWar(BaseModelORJson):
+    id: int
+    coordinates: List[List[int]]
+    age: str
+    name: str
+    longName: str
+    banner: HttpUrl
+    headerImage: HttpUrl
+    priority: int
+    parentWarId: int
+    materialParentWarId: int
+    emptyMessage: str
+    bgm: NiceBgm
+    scriptId: str
+    startType: NiceWarStartType
+    targetId: int
+    eventId: int
+    lastQuestId: int
+    maps: List[NiceMap]
+    spots: List[NiceSpot]

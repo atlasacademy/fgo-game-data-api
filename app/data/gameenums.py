@@ -2275,3 +2275,85 @@ EVENT_TYPE_NAME: Dict[int, NiceEventType] = {
     20: NiceEventType.locationCampaign,
     22: NiceEventType.warBoard,
 }
+
+
+class WarEntityFlag(IntEnum):
+    WITH_MAP = 2
+    SHOW_ON_MATERIAL = 4
+    FOLDER_SORT_PRIOR = 8
+    STORY_SHORTCUT = 16
+    IS_EVENT = 32
+    CLOSE_AFTER_CLEAR = 64
+    MAIN_SCENARIO = 128
+    IS_WAR_ICON_LEFT = 256
+    CLEARED_RETURN_TO_TITLE = 512
+    NO_CLEAR_MARK_WITH_CLEAR = 1024
+    NO_CLEAR_MARK_WITH_COMPLETE = 2048
+    NOT_ENTRY_BANNER_ACTIVE = 4096
+    SHOP = 8192
+    BLACK_MARK_WITH_CLEAR = 16384
+    DISP_FIRST_QUEST = 32768
+
+
+class NiceWarFlag(str, Enum):
+    """War Flag Enum"""
+
+    withMap = "withMap"
+    showOnMaterial = "showOnMaterial"
+    folderSortPrior = "folderSortPrior"
+    storyShortcut = "storyShortcut"
+    isEvent = "isEvent"
+    closeAfterClear = "closeAfterClear"
+    mainScenario = "mainScenario"
+    isWarIconLeft = "isWarIconLeft"
+    clearedReturnToTitle = "clearedReturnToTitle"
+    noClearMarkWithClear = "noClearMarkWithClear"
+    noClearMarkWithComplete = "noClearMarkWithComplete"
+    notEntryBannerActive = "notEntryBannerActive"
+    shop = "shop"
+    blackMarkWithClear = "blackMarkWithClear"
+    dispFirstQuest = "dispFirstQuest"
+    summerCamp = "summerCamp"
+    unreleasedStory = "unreleasedStory"
+
+
+WAR_FLAG_NAME: Dict[int, NiceWarFlag] = {
+    2: NiceWarFlag.withMap,
+    4: NiceWarFlag.showOnMaterial,
+    8: NiceWarFlag.folderSortPrior,
+    16: NiceWarFlag.storyShortcut,
+    32: NiceWarFlag.isEvent,
+    64: NiceWarFlag.closeAfterClear,
+    128: NiceWarFlag.mainScenario,
+    256: NiceWarFlag.isWarIconLeft,
+    512: NiceWarFlag.clearedReturnToTitle,
+    1024: NiceWarFlag.noClearMarkWithClear,
+    2048: NiceWarFlag.noClearMarkWithComplete,
+    4096: NiceWarFlag.notEntryBannerActive,
+    8192: NiceWarFlag.shop,
+    16384: NiceWarFlag.blackMarkWithClear,
+    32768: NiceWarFlag.dispFirstQuest,
+    34848: NiceWarFlag.summerCamp,
+    49538: NiceWarFlag.unreleasedStory,
+}
+
+
+class WarEntityStartType(IntEnum):
+    NONE = 0
+    SCRIPT = 1
+    QUEST = 2
+
+
+class NiceWarStartType(str, Enum):
+    """War Start Type Enum"""
+
+    none = "none"
+    script = "script"
+    quest = "quest"
+
+
+WAR_START_TYPE_NAME: Dict[int, NiceWarStartType] = {
+    0: NiceWarStartType.none,
+    1: NiceWarStartType.script,
+    2: NiceWarStartType.quest,
+}

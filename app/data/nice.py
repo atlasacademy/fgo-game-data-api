@@ -39,12 +39,14 @@ from .enums import (
     SVT_TYPE_NAME,
     VOICE_COND_NAME,
     VOICE_TYPE_NAME,
+    WAR_START_TYPE_NAME,
     FuncType,
     NiceStatusRank,
     SvtClass,
     SvtType,
     SvtVoiceType,
     VoiceCondType,
+    WarEntityFlag,
 )
 from .gamedata import masters
 from .schemas.basic import (
@@ -55,6 +57,7 @@ from .schemas.basic import (
 from .schemas.nice import (
     AssetURL,
     NiceBaseFunctionReverse,
+    NiceBgm,
     NiceBuffReverse,
     NiceCommandCode,
     NiceCostume,
@@ -63,6 +66,7 @@ from .schemas.nice import (
     NiceItem,
     NiceItemAmount,
     NiceLoreComment,
+    NiceMap,
     NiceMysticCode,
     NiceQuestRelease,
     NiceReversedBuff,
@@ -74,17 +78,21 @@ from .schemas.nice import (
     NiceServant,
     NiceServantChange,
     NiceSkillReverse,
+    NiceSpot,
     NiceTdReverse,
     NiceVoiceCond,
     NiceVoiceGroup,
     NiceVoiceLine,
+    NiceWar,
 )
 from .schemas.raw import (
     BuffEntityNoReverse,
     FunctionEntityNoReverse,
     GlobalNewMstSubtitle,
     MstClassRelationOverwrite,
+    MstMap,
     MstQuestRelease,
+    MstSpot,
     MstSvtChange,
     MstSvtComment,
     MstSvtCostume,
@@ -1266,6 +1274,20 @@ def get_nice_event(region: Region, event_id: int) -> NiceEvent:
     return nice_event
 
 
+def get_nice_bgm(region: Region, bgm_id: int) -> NiceBgm:
+    raw_bgm = masters[region].mstBgmId[bgm_id]
+    return NiceBgm(
+        id=raw_bgm.id,
+        name=raw_bgm.name,
+        audioAsset=AssetURL.audio.format(
+            base_url=settings.asset_url,
+            region=region,
+            folder=raw_bgm.fileName,
+            id=raw_bgm.fileName,
+        ),
+    )
+
+
 def get_nice_quest_release(
     region: Region, raw_quest_release: MstQuestRelease
 ) -> NiceQuestRelease:
@@ -1322,3 +1344,91 @@ def get_nice_quest_phase(region: Region, quest_id: int, phase: int) -> Dict[str,
         }
     )
     return nice_data
+
+
+def get_nice_map(region: Region, raw_map: MstMap) -> NiceMap:
+    base_settings = {"base_url": settings.asset_url, "region": region}
+    return NiceMap(
+        id=raw_map.id,
+        mapImage=AssetURL.mapImg.format(**base_settings, map_id=raw_map.mapImageId),
+        mapImageW=raw_map.mapImageW,
+        mapImageH=raw_map.mapImageH,
+        headerImage=AssetURL.banner.format(
+            **base_settings, banner=f"img_title_header_{raw_map.headerImageId}"
+        ),
+        bgm=get_nice_bgm(region, raw_map.bgmId),
+    )
+
+
+def get_nice_spot(region: Region, raw_spot: MstSpot, war_asset_id: int) -> NiceSpot:
+    return NiceSpot(
+        id=raw_spot.id,
+        joinSpotIds=raw_spot.joinSpotIds,
+        mapId=raw_spot.mapId,
+        name=raw_spot.name,
+        image=AssetURL.spotImg.format(
+            base_url=settings.asset_url,
+            region=region,
+            war_asset_id=war_asset_id,
+            spot_id=raw_spot.imageId,
+        ),
+        x=raw_spot.x,
+        y=raw_spot.y,
+        imageOfsX=raw_spot.imageOfsX,
+        imageOfsY=raw_spot.imageOfsY,
+        nameOfsX=raw_spot.nameOfsX,
+        nameOfsY=raw_spot.nameOfsY,
+        questOfsX=raw_spot.questOfsX,
+        questOfsY=raw_spot.questOfsY,
+        nextOfsX=raw_spot.nextOfsX,
+        nextOfsY=raw_spot.nextOfsY,
+        closedMessage=raw_spot.closedMessage,
+        quests=[
+            get_nice_quest_alone(region, quest.id)
+            for quest in masters[region].mstQuestSpotId.get(raw_spot.id, [])
+        ],
+    )
+
+
+def get_nice_war(region: Region, war_id: int) -> NiceWar:
+    raw_war = raw.get_war_entity(region, war_id)
+
+    base_settings = {"base_url": settings.asset_url, "region": region}
+    war_asset_id = (
+        raw_war.mstWar.assetId if raw_war.mstWar.assetId > 0 else raw_war.mstWar.id
+    )
+
+    if raw_war.mstWar.eventId in masters[region].mstEventId:
+        event = masters[region].mstEventId[raw_war.mstWar.eventId]
+        banner_file = f"event_war_{event.bannerId}"
+    elif raw_war.mstWar.flag & WarEntityFlag.MAIN_SCENARIO != 0:
+        banner_file = f"questboard_cap{raw_war.mstWar.bannerId:>03}"
+    else:
+        banner_file = f"chaldea_category_{raw_war.mstWar.bannerId}"
+
+    return NiceWar(
+        id=raw_war.mstWar.id,
+        coordinates=raw_war.mstWar.coordinates,
+        age=raw_war.mstWar.age,
+        name=raw_war.mstWar.name,
+        longName=raw_war.mstWar.longName,
+        banner=AssetURL.banner.format(**base_settings, banner=banner_file),
+        headerImage=AssetURL.banner.format(
+            **base_settings, banner=f"img_title_header_{raw_war.mstWar.headerImageId}"
+        ),
+        priority=raw_war.mstWar.priority,
+        parentWarId=raw_war.mstWar.parentWarId,
+        materialParentWarId=raw_war.mstWar.materialParentWarId,
+        emptyMessage=raw_war.mstWar.emptyMessage,
+        bgm=get_nice_bgm(region, raw_war.mstWar.bgmId),
+        scriptId=raw_war.mstWar.scriptId,
+        startType=WAR_START_TYPE_NAME[raw_war.mstWar.startType],
+        targetId=raw_war.mstWar.targetId,
+        eventId=raw_war.mstWar.eventId,
+        lastQuestId=raw_war.mstWar.lastQuestId,
+        maps=[get_nice_map(region, raw_map) for raw_map in raw_war.mstMap],
+        spots=[
+            get_nice_spot(region, raw_spot, war_asset_id)
+            for raw_spot in raw_war.mstSpot
+        ],
+    )
