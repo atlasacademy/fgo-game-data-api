@@ -566,7 +566,7 @@ class NiceEvent(BaseModelORJson):
 class NiceBgm(BaseModelORJson):
     id: int
     name: str
-    audioAsset: HttpUrl
+    audioAsset: Optional[HttpUrl] = None
 
 
 class NiceQuestRelease(BaseModelORJson):
@@ -601,10 +601,10 @@ class NiceQuestPhase(NiceQuest):
 
 class NiceMap(BaseModel):
     id: int
-    mapImage: HttpUrl
+    mapImage: Optional[HttpUrl] = None
     mapImageW: int
     mapImageH: int
-    headerImage: HttpUrl
+    headerImage: Optional[HttpUrl] = None
     bgm: NiceBgm
 
 
@@ -613,7 +613,7 @@ class NiceSpot(BaseModel):
     joinSpotIds: List[int]
     mapId: int
     name: str
-    image: HttpUrl
+    image: Optional[HttpUrl] = None
     x: int
     y: int
     imageOfsX: int
@@ -634,8 +634,8 @@ class NiceWar(BaseModelORJson):
     age: str
     name: str
     longName: str
-    banner: HttpUrl
-    headerImage: HttpUrl
+    banner: Optional[HttpUrl] = None
+    headerImage: Optional[HttpUrl] = None
     priority: int
     parentWarId: int
     materialParentWarId: int

@@ -1284,7 +1284,9 @@ def get_nice_bgm(region: Region, bgm_id: int) -> NiceBgm:
             region=region,
             folder=raw_bgm.fileName,
             id=raw_bgm.fileName,
-        ),
+        )
+        if raw_bgm.id != 0
+        else None,
     )
 
 
@@ -1350,12 +1352,16 @@ def get_nice_map(region: Region, raw_map: MstMap) -> NiceMap:
     base_settings = {"base_url": settings.asset_url, "region": region}
     return NiceMap(
         id=raw_map.id,
-        mapImage=AssetURL.mapImg.format(**base_settings, map_id=raw_map.mapImageId),
+        mapImage=AssetURL.mapImg.format(**base_settings, map_id=raw_map.mapImageId)
+        if raw_map.mapImageId != 0
+        else None,
         mapImageW=raw_map.mapImageW,
         mapImageH=raw_map.mapImageH,
         headerImage=AssetURL.banner.format(
             **base_settings, banner=f"img_title_header_{raw_map.headerImageId}"
-        ),
+        )
+        if raw_map.headerImageId != 0
+        else None,
         bgm=get_nice_bgm(region, raw_map.bgmId),
     )
 
@@ -1371,7 +1377,9 @@ def get_nice_spot(region: Region, raw_spot: MstSpot, war_asset_id: int) -> NiceS
             region=region,
             war_asset_id=war_asset_id,
             spot_id=raw_spot.imageId,
-        ),
+        )
+        if raw_spot.imageId != 0
+        else None,
         x=raw_spot.x,
         y=raw_spot.y,
         imageOfsX=raw_spot.imageOfsX,
@@ -1412,10 +1420,14 @@ def get_nice_war(region: Region, war_id: int) -> NiceWar:
         age=raw_war.mstWar.age,
         name=raw_war.mstWar.name,
         longName=raw_war.mstWar.longName,
-        banner=AssetURL.banner.format(**base_settings, banner=banner_file),
+        banner=AssetURL.banner.format(**base_settings, banner=banner_file)
+        if raw_war.mstWar.bannerId != 0
+        else None,
         headerImage=AssetURL.banner.format(
             **base_settings, banner=f"img_title_header_{raw_war.mstWar.headerImageId}"
-        ),
+        )
+        if raw_war.mstWar.headerImageId != 0
+        else None,
         priority=raw_war.mstWar.priority,
         parentWarId=raw_war.mstWar.parentWarId,
         materialParentWarId=raw_war.mstWar.materialParentWarId,
