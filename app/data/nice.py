@@ -1256,13 +1256,19 @@ def get_nice_event(region: Region, event_id: int) -> NiceEvent:
         detail=raw_data.mstEvent.detail,
         noticeBanner=AssetURL.banner.format(
             **base_settings, banner=f"event_war_{raw_data.mstEvent.noticeBannerId}"
-        ),
+        )
+        if raw_data.mstEvent.noticeBannerId != 0
+        else None,
         banner=AssetURL.banner.format(
             **base_settings, banner=f"event_war_{raw_data.mstEvent.bannerId}"
-        ),
+        )
+        if raw_data.mstEvent.bannerId != 0
+        else None,
         icon=AssetURL.banner.format(
             **base_settings, banner=f"banner_icon_{raw_data.mstEvent.iconId}"
-        ),
+        )
+        if raw_data.mstEvent.iconId != 0
+        else None,
         bannerPriority=raw_data.mstEvent.bannerPriority,
         noticeAt=raw_data.mstEvent.noticeAt,
         startedAt=raw_data.mstEvent.startedAt,

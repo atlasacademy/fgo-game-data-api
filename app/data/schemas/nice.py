@@ -552,9 +552,9 @@ class NiceEvent(BaseModelORJson):
     name: str
     shortName: str
     detail: str
-    noticeBanner: HttpUrl
-    banner: HttpUrl
-    icon: HttpUrl
+    noticeBanner: Optional[HttpUrl] = None
+    banner: Optional[HttpUrl] = None
+    icon: Optional[HttpUrl] = None
     bannerPriority: int
     noticeAt: int
     startedAt: int
