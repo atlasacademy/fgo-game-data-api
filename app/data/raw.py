@@ -14,6 +14,7 @@ from .schemas.raw import (
     QuestEntity,
     QuestPhaseEntity,
     ReversedBuff,
+    WarEntity,
     ReversedBuffType,
     ReversedFunction,
     ReversedFunctionType,
@@ -324,6 +325,14 @@ def get_command_code_entity(
         ][0],
     )
     return cc_entity
+
+
+def get_war_entity(region: Region, war_id: int) -> WarEntity:
+    return WarEntity(
+        mstWar=masters[region].mstWarId[war_id],
+        mstMap=masters[region].mstMapWarId.get(war_id, []),
+        mstSpot=masters[region].mstSpotWarId.get(war_id, []),
+    )
 
 
 def get_event_entity(region: Region, event_id: int) -> EventEntity:

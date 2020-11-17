@@ -14,6 +14,7 @@ from ..data.schemas.raw import (
     MysticCodeEntity,
     QuestEntity,
     QuestPhaseEntity,
+    WarEntity,
     ServantEntity,
     SkillEntity,
     TdEntity,
@@ -469,6 +470,24 @@ async def get_event(region: Region, event_id: int) -> Response:
     """
     if event_id in masters[region].mstEventId:
         return item_response(raw.get_event_entity(region, event_id))
+    else:
+        raise HTTPException(status_code=404, detail="Event not found")
+
+
+@router.get(
+    "/{region}/war/{war_id}",
+    summary="Get War data",
+    response_description="War Entity",
+    response_model=WarEntity,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+async def get_war(region: Region, war_id: int) -> Response:
+    """
+    Get the war data from the given war ID
+    """
+    if war_id in masters[region].mstWarId:
+        return item_response(raw.get_war_entity(region, war_id))
     else:
         raise HTTPException(status_code=404, detail="Event not found")
 

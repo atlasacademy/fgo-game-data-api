@@ -609,6 +609,72 @@ class MstEvent(BaseModel):
     createdAt: int  # 1435676400
 
 
+class MstWar(BaseModel):
+    coordinates: List[List[int]]
+    id: int  # 9046
+    age: str  # "-"
+    name: str  # "ルルハワ"
+    longName: str  # "永久常夏祭壇 ルルハワ"
+    bannerId: int  # 9046
+    mapImageId: int  # 9046
+    mapImageW: int  # 2048
+    mapImageH: int  # 2048
+    headerImageId: int  # 1000
+    priority: int  # 9046
+    parentWarId: int  # 0
+    materialParentWarId: int  # 0
+    flag: int  # 32
+    emptyMessage: str  # "クエストがありません"
+    bgmId: int  # 8
+    scriptId: str  # "NONE"
+    startType: int  # 0
+    targetId: int  # 0
+    eventId: int  # 80112
+    lastQuestId: int  # 0
+    assetId: int  # 0
+
+
+class MstMap(BaseModel):
+    script: Dict[str, Any]
+    id: int  # 100
+    warId: int  # 100
+    mapImageId: int  # 100
+    mapImageW: int  # 1920
+    mapImageH: int  # 1240
+    headerImageId: int  # 5
+    bgmId: int  # 7
+
+
+class MstSpot(BaseModel):
+    joinSpotIds: List[int]  # []
+    id: int  # 10001
+    warId: int  # 100
+    mapId: int  # 100
+    name: str  # "未確認座標Ｘ－Ａ"
+    imageId: int  # 10001
+    x: int  # 678
+    y: int  # 400
+    imageOfsX: int  # 0
+    imageOfsY: int  # 0
+    nameOfsX: int  # 0
+    nameOfsY: int  # 0
+    questOfsX: int  # 38
+    questOfsY: int  # -62
+    nextOfsX: int  # 0
+    nextOfsY: int  # 0
+    dispCondType1: int  # 1
+    dispTargetId1: int  # 0
+    dispTargetValue1: int  # 0
+    dispCondType2: int  # 1
+    dispTargetId2: int  # 0
+    dispTargetValue2: int  # 0
+    activeCondType: int  # 1
+    activeTargetId: int  # 0
+    activeTargetValue: int  # 0
+    closedMessage: str  # ""
+    flag: int  # 0
+
+
 class MstQuest(BaseModel):
     afterActionVals: List[str]  # []
     id: int  # 94024618
@@ -728,6 +794,9 @@ class Master(BaseModel):
     mstEquipId: Dict[int, MstEquip]
     mstEquipExp: List[MstEquipExp]
     mstEquipSkill: List[MstEquipSkill]
+    mstWarId: Dict[int, MstWar]
+    mstMapWarId: Dict[int, List[MstMap]]
+    mstSpotWarId: Dict[int, List[MstSpot]]
     mstEventId: Dict[int, MstEvent]
     # mstQuest: List[MstQuest]
     mstQuestId: Dict[int, MstQuest]
@@ -836,3 +905,9 @@ class QuestPhaseEntity(QuestEntity):
 
 class EventEntity(BaseModelORJson):
     mstEvent: MstEvent
+
+
+class WarEntity(BaseModelORJson):
+    mstWar: MstWar
+    mstMap: List[MstMap]
+    mstSpot: List[MstSpot]
