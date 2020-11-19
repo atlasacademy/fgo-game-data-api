@@ -35,6 +35,7 @@ Static files that can be used for damage calculation. Change `JP` to `NA` in the
 - [Constants](/export/JP/NiceConstant.json)
 - [Buff Action info](/export/JP/NiceBuffList.ActionList.json)
 - [Master Level info](/export/JP/NiceUserLevel.json)
+- [Palingenesis QP cost](/export/JP/NiceSvtGrailCost.json)
 
 Current API data version can be found [here](/info).
 
