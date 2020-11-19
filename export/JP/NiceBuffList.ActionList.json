@@ -953,5 +953,15 @@
     "isRec": true,
     "plusAction": 0,
     "maxRate": [0]
+  },
+  "preventDeathByDamage": {
+    "limit": "none",
+    "plusTypes": [],
+    "minusTypes": ["preventDeathByDamage"],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": [0]
   }
 }

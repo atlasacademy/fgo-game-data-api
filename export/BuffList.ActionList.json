@@ -853,5 +853,14 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0
+  },
+  "PREVENT_DEATH_BY_DAMAGE": {
+    "limit": 0,
+    "plusTypes": [],
+    "minusTypes": [158],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
   }
 }

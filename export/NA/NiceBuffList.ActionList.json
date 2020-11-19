@@ -777,7 +777,7 @@
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": []
+    "maxRate": [10000]
   },
   "damageSpecial": {
     "limit": "upper",
@@ -872,7 +872,7 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": []
+    "maxRate": [0]
   },
   "functionCommandattackBefore": {
     "limit": "none",
@@ -948,6 +948,16 @@
     "limit": "none",
     "plusTypes": ["specialInvincible"],
     "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
+  },
+  "preventDeathByDamage": {
+    "limit": "none",
+    "plusTypes": [],
+    "minusTypes": ["preventDeathByDamage"],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
