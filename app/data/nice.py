@@ -728,7 +728,11 @@ def get_nice_servant(
     base_settings = {"base_url": settings.asset_url, "region": region}
     base_settings_id = dict(item_id=item_id, **base_settings)
 
-    if raw_data.mstSvt.type == SvtType.ENEMY_COLLECTION_DETAIL:
+    if raw_data.mstSvt.type in (
+        SvtType.ENEMY_COLLECTION_DETAIL,
+        SvtType.COMBINE_MATERIAL,
+        SvtType.STATUS_UP,
+    ):
         charaGraph["ascension"] = {
             0: AssetURL.charaGraphDefault.format(**base_settings_id)
         }

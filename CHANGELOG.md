@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.21.0 - 2020-11-19
+
+### Added
+
+- Grail cost export in `NiceSvtGrailCost.json`.
+- CharaGraph and Face assets for exp and fou cards.
+
 ## 5.20.0 - 2020-11-17
 
 ### Added
