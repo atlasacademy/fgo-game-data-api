@@ -1,6 +1,7 @@
 import json
+from collections import defaultdict
 from pathlib import Path
-from typing import Any, Callable, Dict, List, NamedTuple
+from typing import Any, Callable, Dict, List, NamedTuple, Union
 
 from app.config import Settings
 from app.data.common import Region
@@ -11,6 +12,7 @@ from app.data.enums import (
     BUFF_TYPE_NAME,
     CARD_TYPE_NAME,
     CLASS_NAME,
+    ITEM_BG_TYPE_NAME,
     BuffAction,
 )
 from app.data.utils import get_traits_list
@@ -181,6 +183,32 @@ def get_nice_class_relation(raw_data: Any) -> Any:
     return out_data
 
 
+def get_nice_svt_exceed(raw_data: Any) -> Any:
+    def find_previous_exceed_qp(rarity: int, exceed: int) -> int:
+        previous_exceed = [
+            item
+            for item in raw_data
+            if item["rarity"] == rarity and item["exceedCount"] == exceed - 1
+        ][0]
+        previous_exceed_qp: int = previous_exceed["qp"]
+        return previous_exceed_qp
+
+    out_data: Dict[int, Dict[int, Dict[str, Union[int, str]]]] = defaultdict(
+        lambda: defaultdict(dict)
+    )
+    for svtExceed in raw_data:
+        if svtExceed["exceedCount"] != 0:
+            out_data[svtExceed["rarity"]][svtExceed["exceedCount"]] = {
+                "qp": find_previous_exceed_qp(
+                    svtExceed["rarity"], svtExceed["exceedCount"]
+                ),
+                "addLvMax": svtExceed["addLvMax"],
+                "frameType": ITEM_BG_TYPE_NAME[svtExceed["frameType"]],
+            }
+
+    return out_data
+
+
 def get_nice_buff_action(raw_data: Any) -> Any:
     def get_max_rate(bufftypelist: List[int]) -> List[int]:
         return list(
@@ -238,6 +266,11 @@ TO_EXPORT = [
         input="mstBuff",
         converter=get_nice_buff_action,
         output="NiceBuffList.ActionList",
+    ),
+    ExportParam(
+        input="mstSvtExceed",
+        converter=get_nice_svt_exceed,
+        output="NiceSvtGrailCost",
     ),
 ]
 
