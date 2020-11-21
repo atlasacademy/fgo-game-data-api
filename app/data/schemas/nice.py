@@ -1,7 +1,7 @@
 from decimal import Decimal
 from typing import Dict, Generic, List, Optional, TypeVar
 
-from pydantic import BaseModel, HttpUrl
+from pydantic import BaseModel, Field, HttpUrl
 from pydantic.generics import GenericModel
 
 from ..enums import (
@@ -191,40 +191,138 @@ class NiceBuffScript(BaseModelORJson):
 
 
 class NiceBuff(BaseModelORJson):
-    id: int
-    name: str
-    detail: str
-    icon: Optional[HttpUrl] = None
-    type: NiceBuffType
-    buffGroup: int
-    script: NiceBuffScript
-    vals: List[NiceTrait]
-    tvals: List[NiceTrait]
-    ckSelfIndv: List[NiceTrait]
-    ckOpIndv: List[NiceTrait]
-    maxRate: int
+    id: int = Field(..., title="Buff ID", description="Buff ID.")
+    name: str = Field(..., title="Buff name", description="Buff name.")
+    detail: str = Field(
+        ..., title="Buff detailed description", description="Buff detailed description."
+    )
+    icon: Optional[HttpUrl] = Field(
+        None, title="Buff icon URL", description="Buff icon URL."
+    )
+    type: NiceBuffType = Field(..., title="Buff type", description="Buff type.")
+    buffGroup: int = Field(
+        ...,
+        title="Buff group",
+        description="Buff group. "
+        "See https://github.com/atlasacademy/fgo-docs#unstackable-buffs "
+        "for how this field is used.",
+    )
+    script: NiceBuffScript = Field(
+        ...,
+        title="Buff script",
+        description="Random stuffs that get added to the buff entry. "
+        "See each field description for more details.",
+    )
+    vals: List[NiceTrait] = Field(
+        ...,
+        title="Buff individualities",
+        description="Buff traits/individualities. "
+        "For example, buff removal uses this field to target the buffs.",
+    )
+    tvals: List[NiceTrait] = Field(
+        ...,
+        title="Buff tvals",
+        description="Buff tvals: I'm quite sure this field is used for "
+        "visual purposes only and not gameplay.",
+    )
+    ckSelfIndv: List[NiceTrait] = Field(
+        ...,
+        title="Check self individualities",
+        description="Buff holder's required individuality for the buff's effect to apply.",
+    )
+    ckOpIndv: List[NiceTrait] = Field(
+        ...,
+        title="Check oponent individualities",
+        description="Target's required individuality for the buff's effect to apply.",
+    )
+    maxRate: int = Field(
+        ...,
+        title="Buff max rate",
+        description="Buff max rate. "
+        "See https://github.com/atlasacademy/fgo-docs#lower-and-upper-bounds-of-buffs "
+        "for how this field is used.",
+    )
 
 
 class NiceBaseFunction(BaseModelORJson):
-    funcId: int
-    funcType: NiceFuncType
-    funcTargetType: NiceFuncTargetType
-    funcTargetTeam: FuncApplyTarget
-    funcPopupText: str
-    funcPopupIcon: Optional[HttpUrl] = None
-    functvals: List[NiceTrait]
-    funcquestTvals: List[NiceTrait]
-    traitVals: List[NiceTrait] = []
-    buffs: List[NiceBuff]
+    funcId: int = Field(..., title="Function ID", description="Function ID")
+    funcType: NiceFuncType = Field(
+        ..., title="Function type", description="Function type"
+    )
+    funcTargetType: NiceFuncTargetType = Field(
+        ...,
+        title="Function target type",
+        description="Determines the number of targets and the pool of applicable targets.",
+    )
+    funcTargetTeam: FuncApplyTarget = Field(
+        ...,
+        title="Function target team",
+        description="Determines whether the function applies to only player's servants, "
+        "only quest enemies or both. "
+        "Note that this is independent of `funcTargetType`. "
+        "You need to look at both fields to check if the function applies.",
+    )
+    funcPopupText: str = Field(
+        ..., title="Function pop-up text", description="Function pop-up text"
+    )
+    funcPopupIcon: Optional[HttpUrl] = Field(
+        None, title="Function pop-up icon URL", description="Function pop-up icon URL."
+    )
+    functvals: List[NiceTrait] = Field(
+        ...,
+        title="Function tvals",
+        description="Function tvals: I'm quite sure this field is used for "
+        "visual purposes only and not gameplay.",
+    )
+    funcquestTvals: List[NiceTrait] = Field(
+        ...,
+        title="Function quest traits",
+        description="Function quest traits. "
+        "The current quest needs this traits for the function to works.",
+    )
+    traitVals: List[NiceTrait] = Field(
+        [],
+        title="Trait details",
+        description="Trait details for buff removal functions.",
+    )
+    buffs: List[NiceBuff] = Field(
+        ..., title="Buff details", description="Buff details for apply buff functions."
+    )
 
 
 class NiceFunction(NiceBaseFunction):
-    svals: List[Vals]
-    svals2: Optional[List[Vals]] = None
-    svals3: Optional[List[Vals]] = None
-    svals4: Optional[List[Vals]] = None
-    svals5: Optional[List[Vals]] = None
-    followerVals: Optional[List[Vals]] = None
+    svals: List[Vals] = Field(
+        ...,
+        title="Parameter values by skill level or NP level",
+        description="Parameter values by skill level or NP level",
+    )
+    svals2: Optional[List[Vals]] = Field(
+        None,
+        title="Parameter values for NP Overcharge level 2",
+        description="Parameter values for NP Overcharge level 2 by NP level",
+    )
+    svals3: Optional[List[Vals]] = Field(
+        None,
+        title="Parameter values for NP Overcharge level 3",
+        description="Parameter values for NP Overcharge level 3 by NP level",
+    )
+    svals4: Optional[List[Vals]] = Field(
+        None,
+        title="Parameter values for NP Overcharge level 4",
+        description="Parameter values for NP Overcharge level 4 by NP level",
+    )
+    svals5: Optional[List[Vals]] = Field(
+        None,
+        title="Parameter values for NP Overcharge level 5",
+        description="Parameter values for NP Overcharge level 5 by NP level",
+    )
+    followerVals: Optional[List[Vals]] = Field(
+        None,
+        title="Parameter values when used by a support servant",
+        description="Parameter values when used by a support servant. "
+        "If the function comes from a support servant, the values here will be "
+        "used if available, e.g. Chaldea Teatime.",
+    )
 
 
 class NiceSkillScript(BaseModel):
@@ -324,13 +422,27 @@ AscensionAddData = TypeVar("AscensionAddData")
 
 
 class AscensionAddEntry(GenericModel, Generic[AscensionAddData]):
-    ascension: Dict[int, AscensionAddData]
-    costume: Dict[int, AscensionAddData]
+    ascension: Dict[int, AscensionAddData] = Field(
+        ...,
+        title="Ascension changes",
+        description="Mapping <Ascension level, Ascension level data>.",
+    )
+    costume: Dict[int, AscensionAddData] = Field(
+        ..., title="Costume changes", description="Mapping <Costume ID, Costume data>."
+    )
 
 
 class AscensionAdd(BaseModel):
-    individuality: AscensionAddEntry[List[NiceTrait]]
-    voicePrefix: AscensionAddEntry[int]
+    individuality: AscensionAddEntry[List[NiceTrait]] = Field(
+        ...,
+        title="Individuality changes",
+        description="Some servants add or remove traits as they ascend.",
+    )
+    voicePrefix: AscensionAddEntry[int] = Field(
+        ...,
+        title="Voice prefix changes",
+        description="Some servants change voice lines as they ascennd.",
+    )
 
 
 class NiceServantChange(BaseModel):
@@ -380,27 +492,81 @@ class NiceCostume(BaseModel):
 
 
 class NiceVoiceCond(BaseModel):
-    condType: NiceVoiceCondType
-    value: int
-    valueList: List[int] = []
-    eventId: int
+    condType: NiceVoiceCondType = Field(
+        ..., title="Voice Cond Type", description="Voice Condition Type Enum"
+    )
+    value: int = Field(
+        ..., title="Voice Cond Value", description="Threshold value for the condtion."
+    )
+    valueList: List[int] = Field(
+        [],
+        title="Voice Cond Value List",
+        description="If the voice cond is `svtGroup`, "
+        "this list will hold the applicable servant IDs.",
+    )
+    eventId: int = Field(..., title="Event ID", description="Event ID.")
 
 
 class NiceVoiceLine(BaseModel):
-    name: Optional[str] = None
-    condType: Optional[NiceCondType] = None
-    condValue: Optional[int] = None
-    priority: Optional[int] = None
-    svtVoiceType: Optional[NiceSvtVoiceType] = None
-    overwriteName: str
-    id: List[str]
-    audioAssets: List[str]
-    delay: List[Decimal]
-    face: List[int]
-    form: List[int]
-    text: List[str]
-    subtitle: str
-    conds: List[NiceVoiceCond]
+    name: Optional[str] = Field(
+        None, title="Voice line default name", description="Voice line default name."
+    )
+    condType: Optional[NiceCondType] = Field(
+        None,
+        title="Voice line default condition type",
+        description="Voice line default condition type.",
+    )
+    condValue: Optional[int] = Field(
+        None,
+        title="Voice line default condition value",
+        description="Voice line default condition threshold value.",
+    )
+    priority: Optional[int] = Field(
+        None,
+        title="Voice line default priority",
+        description="Voice line default priority.",
+    )
+    svtVoiceType: Optional[NiceSvtVoiceType] = Field(
+        None, title="Voice line default type", description="Voice line default type."
+    )
+    overwriteName: str = Field(
+        ..., title="Voice line overwrite name", description="Voice line overwrite name."
+    )
+    id: List[str] = Field(..., title="Voice line IDs", description="Voice line IDs.")
+    audioAssets: List[str] = Field(
+        ..., title="Voice line mp3 URLs", description="Voice line mp3 URLs."
+    )
+    delay: List[Decimal] = Field(
+        ...,
+        title="Voice line delays",
+        description="Delays in seconds before playing the audio file.",
+    )
+    face: List[int] = Field(
+        ...,
+        title="Voice line faces",
+        description="CharaFigure faces to be used when playing the voice line.",
+    )
+    form: List[int] = Field(
+        ...,
+        title="Voice line forms",
+        description="CharaFigure forms to be used when playing the voice line.",
+    )
+    text: List[str] = Field(
+        ...,
+        title="Voice line texts",
+        description="Texts used for summoning subtitles. "
+        "Only summoning lines have data for this fields.",
+    )
+    subtitle: str = Field(
+        ...,
+        title="Voice line subtitles",
+        description="English subtitle for the voice line, only applicable to NA data.",
+    )
+    conds: List[NiceVoiceCond] = Field(
+        ...,
+        title="Voice line conditions",
+        description="Conditions to make the voice line available.",
+    )
 
 
 class NiceVoiceGroup(BaseModel):
@@ -420,7 +586,13 @@ class NiceLore(BaseModel):
 
 
 class NiceServantScript(BaseModel):
-    SkillRankUp: Optional[Dict[int, List[int]]] = None
+    SkillRankUp: Optional[Dict[int, List[int]]] = Field(
+        None,
+        title="SkillRankUp",
+        description="Mapping <Skill IDs, List[Skill IDs]>. "
+        "Summer Kiara 1st skill additional data. "
+        "The keys are the base skill IDs and the values are the rank-up skill IDs.",
+    )
 
 
 class NiceCommandCode(BaseModelORJson):
@@ -435,69 +607,221 @@ class NiceCommandCode(BaseModelORJson):
 
 
 class NiceServant(BaseModelORJson):
-    id: int
-    collectionNo: int
-    name: str
-    className: SvtClass
-    type: NiceSvtType
-    flag: NiceSvtFlag
-    rarity: int
-    cost: int
-    lvMax: int
-    extraAssets: ExtraAssets
-    gender: NiceGender
-    attribute: Attribute
-    traits: List[NiceTrait]
-    starAbsorb: int
-    starGen: int
-    instantDeathChance: int
-    cards: List[NiceCardType]
-    hitsDistribution: Dict[NiceCardType, List[int]]
-    atkBase: int
-    atkMax: int
-    hpBase: int
-    hpMax: int
-    relateQuestIds: List[int]
-    growthCurve: int
-    atkGrowth: List[int]
-    hpGrowth: List[int]
-    bondGrowth: List[int]
-    expGrowth: List[int]
-    expFeed: List[int]
-    bondEquip: int
-    ascensionAdd: AscensionAdd
-    svtChange: List[NiceServantChange]
-    ascensionMaterials: Dict[int, NiceLvlUpMaterial]
-    skillMaterials: Dict[int, NiceLvlUpMaterial]
-    costumeMaterials: Dict[int, NiceLvlUpMaterial]
-    script: NiceServantScript
-    skills: List[NiceSkill]
-    classPassive: List[NiceSkill]
-    noblePhantasms: List[NiceTd]
-    profile: Optional[NiceLore] = None
+    id: int = Field(
+        ...,
+        title="Servant ID",
+        description="svt's internal ID. "
+        'Note that this is different from the 1~300 IDs shown in "Spirit Origin List", '
+        "which is `.collectionNo`. "
+        "This ID is unique accross svt items (servants, CEs, EXPs, enemies, …)",
+    )
+    collectionNo: int = Field(
+        ...,
+        title="Collection No",
+        description='The ID number shown in "Spirit Origin List". '
+        "The community usually means this number when they talk about servant or CE IDs.",
+    )
+    name: str = Field(..., title="svt's name", description="svt's name")
+    className: SvtClass = Field(
+        ...,
+        title="svt's class",
+        description="svt's class. "
+        "Because enemies also use this model, you can see some non-playable classes "
+        "as possible values.",
+    )
+    type: NiceSvtType = Field(..., title="svt's type", description="svt's type.")
+    flag: NiceSvtFlag = Field(
+        ..., title="svt's flag", description="Some random flags given to the svt items."
+    )
+    rarity: int = Field(..., title="svt's rarity", description="svt's rarity.")
+    cost: int = Field(
+        ..., title="svt's cost", description="Cost to put the item in a party."
+    )
+    lvMax: int = Field(
+        ...,
+        title="svt's max level",
+        description="Max level of the item without grailing.",
+    )
+    extraAssets: ExtraAssets = Field(
+        ..., title="Image assets", description="Image assets."
+    )
+    gender: NiceGender = Field(..., title="svt's gender", description="svt's gender.")
+    attribute: Attribute = Field(
+        ..., title="svt's attribute", description="svt's attribute."
+    )
+    traits: List[NiceTrait] = Field(
+        ...,
+        title="List of traits",
+        description="List of individualities, or commonly refered to as traits.",
+    )
+    starAbsorb: int = Field(..., title="Star weight", description="Star weight.")
+    starGen: int = Field(..., title="Star rate", description="Star generation rate.")
+    instantDeathChance: int = Field(
+        ..., title="Instant death chance", description="Instant death chance."
+    )
+    cards: List[NiceCardType] = Field(..., title="Card deck", description="Card deck.")
+    hitsDistribution: Dict[NiceCardType, List[int]] = Field(
+        ...,
+        title="Hits distribution",
+        description="Mapping <Card type, Hits distribution>.",
+    )
+    atkBase: int = Field(..., title="Base ATK", description="Base ATK.")
+    atkMax: int = Field(..., title="Max ATK", description="Max ATK (without grailing).")
+    hpBase: int = Field(..., title="Base HP", description="Base HP.")
+    hpMax: int = Field(..., title="Max HP", description="Max HP (without grailing).")
+    relateQuestIds: List[int] = Field(
+        ...,
+        title="Related quest IDs",
+        description="IDs of related quests: rank-ups or interludes.",
+    )
+    growthCurve: int = Field(
+        ..., title="Growth curve type", description="Growth curve type"
+    )
+    atkGrowth: List[int] = Field(
+        ...,
+        title="ATK value per level",
+        description="ATK value per level, including grail levels.",
+    )
+    hpGrowth: List[int] = Field(
+        ...,
+        title="HP value per level",
+        description="HP value per level, including grail levels.",
+    )
+    bondGrowth: List[int] = Field(
+        ...,
+        title="Bond EXP needed per bond level",
+        description="Bond EXP needed per bond level",
+    )
+    expGrowth: List[int] = Field(
+        ...,
+        title="Accumulated EXP",
+        description="Total EXP needed per level. "
+        'Equivalent to the "Accumulated EXP" value when feeding CE into another CE.',
+    )
+    expFeed: List[int] = Field(
+        ...,
+        title="Base EXP",
+        description="Base EXP per level. "
+        'Will show up as "Base EXP" when feeding the item into something else.',
+    )
+    bondEquip: int = Field(
+        ..., title="Bond CE", description="Bond CE ID (not collectionNo)."
+    )
+    ascensionAdd: AscensionAdd = Field(
+        ...,
+        title="Ascension Add",
+        description="Attributes that change when servants ascend.",
+    )
+    svtChange: List[NiceServantChange] = Field(
+        ..., title="Servant Change", description="EOR servants' hidden name details."
+    )
+    ascensionMaterials: Dict[int, NiceLvlUpMaterial] = Field(
+        ...,
+        title="Ascension Materials",
+        description="Mapping <Ascension level, Materials to ascend servants>.",
+    )
+    skillMaterials: Dict[int, NiceLvlUpMaterial] = Field(
+        ...,
+        title="Skill Materials",
+        description="Mapping <Skill level, Materials to level up skills>.",
+    )
+    costumeMaterials: Dict[int, NiceLvlUpMaterial] = Field(
+        ...,
+        title="Costume Materials",
+        description="Mapping <Costume svt ID, Materials to unlock the costume>. "
+        "Costume details can be found in `.profile.costume`",
+    )
+    script: NiceServantScript = Field(
+        ...,
+        title="Servant Script",
+        description="Random stuffs that get added to the servant entry. "
+        "See each field description for more details.",
+    )
+    skills: List[NiceSkill] = Field(
+        ..., title="Skills", description="List of servant or CE skills."
+    )
+    classPassive: List[NiceSkill] = Field(
+        ..., title="Passive Skills", description="List of servant's passive skills."
+    )
+    noblePhantasms: List[NiceTd] = Field(
+        ..., title="Noble Phantasm", description="List of servant's noble phantasms."
+    )
+    profile: Optional[NiceLore] = Field(
+        None,
+        title="Profile Details",
+        description="Will be returned if `lore` query parameter is set to `true`",
+    )
 
 
 class NiceEquip(BaseModelORJson):
-    id: int
-    collectionNo: int
-    name: str
-    type: NiceSvtType
-    flag: NiceSvtFlag
-    rarity: int
-    cost: int
-    lvMax: int
-    extraAssets: ExtraAssets
-    atkBase: int
-    atkMax: int
-    hpBase: int
-    hpMax: int
-    growthCurve: int
-    atkGrowth: List[int]
-    hpGrowth: List[int]
-    expGrowth: List[int]
-    expFeed: List[int]
-    skills: List[NiceSkill]
-    profile: Optional[NiceLore] = None
+    id: int = Field(
+        ...,
+        title="Servant ID",
+        description="svt's internal ID. "
+        'Note that this is different from the 1~300 IDs shown in "Spirit Origin List", '
+        "which is `.collectionNo`. "
+        "This ID is unique accross svt items (servants, CEs, EXPs, enemies, …)",
+    )
+    collectionNo: int = Field(
+        ...,
+        title="Collection No",
+        description='The ID number shown in "Spirit Origin List". '
+        "The community usually means this number when they talk about servant or CE IDs.",
+    )
+    name: str = Field(..., title="svt's name", description="svt's name")
+    type: NiceSvtType = Field(..., title="svt's type", description="svt's type.")
+    flag: NiceSvtFlag = Field(
+        ..., title="svt's flag", description="Some random flags given to the svt items."
+    )
+    rarity: int = Field(..., title="svt's rarity", description="svt's rarity.")
+    cost: int = Field(
+        ..., title="svt's cost", description="Cost to put the item in a party."
+    )
+    lvMax: int = Field(
+        ...,
+        title="svt's max level",
+        description="Max level of the item without grailing.",
+    )
+    extraAssets: ExtraAssets = Field(
+        ..., title="Image assets", description="Image assets."
+    )
+    atkBase: int = Field(..., title="Base ATK", description="Base ATK.")
+    atkMax: int = Field(..., title="Max ATK", description="Max ATK (without grailing).")
+    hpBase: int = Field(..., title="Base HP", description="Base HP.")
+    hpMax: int = Field(..., title="Max HP", description="Max HP (without grailing).")
+    growthCurve: int = Field(
+        ..., title="Growth curve type", description="Growth curve type"
+    )
+    atkGrowth: List[int] = Field(
+        ...,
+        title="ATK value per level",
+        description="ATK value per level, including grail levels.",
+    )
+    hpGrowth: List[int] = Field(
+        ...,
+        title="HP value per level",
+        description="HP value per level, including grail levels.",
+    )
+    expGrowth: List[int] = Field(
+        ...,
+        title="Accumulated EXP",
+        description="Total EXP needed per level. "
+        'Equivalent to the "Accumulated EXP" value when feeding CE into another CE.',
+    )
+    expFeed: List[int] = Field(
+        ...,
+        title="Base EXP",
+        description="Base EXP per level. "
+        'Will show up as "Base EXP" when feeding the item into something else.',
+    )
+    skills: List[NiceSkill] = Field(
+        ..., title="Skills", description="List of servant or CE skills."
+    )
+    profile: Optional[NiceLore] = Field(
+        None,
+        title="Profile Details",
+        description="Will be returned if `lore` query parameter is set to `true`",
+    )
 
 
 class NiceReversedSkillTd(BaseModelORJson):
