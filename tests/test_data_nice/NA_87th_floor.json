@@ -5,6 +5,7 @@
   "consumeType": "ap",
   "consume": 1,
   "spotId": 820001,
+  "warId": 8200,
   "releaseConditions": [
     {
       "type": "questClear",

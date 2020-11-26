@@ -1324,6 +1324,7 @@ def get_nice_quest(
         "consumeType": QUEST_CONSUME_TYPE_NAME[raw_quest.mstQuest.consumeType],
         "consume": raw_quest.mstQuest.actConsume,
         "spotId": raw_quest.mstQuest.spotId,
+        "warId": masters[region].mstSpotId[raw_quest.mstQuest.spotId].warId,
         "releaseConditions": [
             get_nice_quest_release(region, release)
             for release in raw_quest.mstQuestRelease

@@ -908,6 +908,7 @@ class NiceQuest(BaseModelORJson):
     consumeType: NiceConsumeType
     consume: int
     spotId: int
+    warId: int
     releaseConditions: List[NiceQuestRelease]
     phases: List[int]
     noticeAt: int

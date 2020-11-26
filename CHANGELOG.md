@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.22.0 - 2020-11-26
+
+### Added
+
+- `warId` to nice quest and nice quest phase.
+
 ### Changed
 
 - LB3 servant and CE English names to use NA translation.
