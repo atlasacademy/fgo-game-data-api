@@ -103,8 +103,8 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2],
-          "noticeAt": 1570680000,
-          "openedAt": 1570680000,
+          "noticeAt": 1508018400,
+          "openedAt": 1508018400,
           "closedAt": 1893456000
         },
         {
@@ -165,8 +165,8 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2],
-          "noticeAt": 1570680000,
-          "openedAt": 1570680000,
+          "noticeAt": 1508018400,
+          "openedAt": 1508018400,
           "closedAt": 1893456000
         },
         {
@@ -186,8 +186,8 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3, 4],
-          "noticeAt": 1570680000,
-          "openedAt": 1570680000,
+          "noticeAt": 1508018400,
+          "openedAt": 1508018400,
           "closedAt": 1893456000
         }
       ]
@@ -268,8 +268,8 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2],
-          "noticeAt": 1570680000,
-          "openedAt": 1570680000,
+          "noticeAt": 1508018400,
+          "openedAt": 1508018400,
           "closedAt": 1893456000
         },
         {
@@ -289,8 +289,8 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2],
-          "noticeAt": 1570680000,
-          "openedAt": 1570680000,
+          "noticeAt": 1508018400,
+          "openedAt": 1508018400,
           "closedAt": 1893456000
         },
         {
@@ -351,8 +351,8 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3, 4],
-          "noticeAt": 1570680000,
-          "openedAt": 1570680000,
+          "noticeAt": 1508018400,
+          "openedAt": 1508018400,
           "closedAt": 1893456000
         },
         {
@@ -372,8 +372,8 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3, 4],
-          "noticeAt": 1570680000,
-          "openedAt": 1570680000,
+          "noticeAt": 1508018400,
+          "openedAt": 1508018400,
           "closedAt": 1893456000
         },
         {
@@ -393,8 +393,8 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1],
-          "noticeAt": 1570680000,
-          "openedAt": 1570680000,
+          "noticeAt": 1508018400,
+          "openedAt": 1508018400,
           "closedAt": 1893456000
         },
         {
@@ -536,8 +536,8 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
-          "noticeAt": 1570680000,
-          "openedAt": 1570680000,
+          "noticeAt": 1508018400,
+          "openedAt": 1508018400,
           "closedAt": 1893456000
         },
         {
@@ -557,8 +557,8 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3, 4],
-          "noticeAt": 1570680000,
-          "openedAt": 1570680000,
+          "noticeAt": 1508018400,
+          "openedAt": 1508018400,
           "closedAt": 1893456000
         }
       ]
@@ -598,8 +598,8 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
-          "noticeAt": 1570680000,
-          "openedAt": 1570680000,
+          "noticeAt": 1508018400,
+          "openedAt": 1508018400,
           "closedAt": 1893456000
         }
       ]
@@ -639,8 +639,8 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
-          "noticeAt": 1570680000,
-          "openedAt": 1570680000,
+          "noticeAt": 1508018400,
+          "openedAt": 1508018400,
           "closedAt": 1893456000
         },
         {
@@ -660,8 +660,8 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3, 4],
-          "noticeAt": 1570680000,
-          "openedAt": 1570680000,
+          "noticeAt": 1508018400,
+          "openedAt": 1508018400,
           "closedAt": 1893456000
         }
       ]
@@ -780,8 +780,8 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3, 4, 5],
-          "noticeAt": 1570680000,
-          "openedAt": 1570680000,
+          "noticeAt": 1508018400,
+          "openedAt": 1508018400,
           "closedAt": 1893456000
         }
       ]
@@ -862,8 +862,8 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3, 4, 5, 6],
-          "noticeAt": 1570680000,
-          "openedAt": 1570680000,
+          "noticeAt": 1508018400,
+          "openedAt": 1508018400,
           "closedAt": 1893456000
         }
       ]

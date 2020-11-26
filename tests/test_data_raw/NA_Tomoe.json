@@ -206,8 +206,8 @@
       "mstSkillDetail": [
         {
           "id": 414450,
-          "detail": "Apply C. Star Gather Rate [{0}] (3 turns) for yourself + Increase C. Star Drop Rate [{0}] (3 turns) for all allies",
-          "detailShort": "Apply C. Star Gather to yourself [{0}] (3 turns) + Increase C. Star Drop Rate for all allies [{0}] (3 turns)"
+          "detail": "Increase C. Star Gather Rate [{0}] (3 turns) for yourself + Increase C. Star Drop Rate [{0}] (3 turns) for all allies",
+          "detailShort": "Increase C. Star Gather Rate [{0}] (3 turns) for yourself + Increase C. Star Drop Rate [{0}] (3 turns) for all allies"
         }
       ],
       "mstSvtSkill": [

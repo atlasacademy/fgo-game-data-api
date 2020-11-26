@@ -22,13 +22,13 @@
       "type": "svtLimit",
       "targetId": 103000,
       "value": 2,
-      "closedMessage": "霊基再臨{0}段階目で開放"
+      "closedMessage": "霊基再臨2段階目＆絆Lv.5で開放"
     },
     {
       "type": "svtFriendship",
       "targetId": 103000,
       "value": 5,
-      "closedMessage": "絆Lv.{0}で開放"
+      "closedMessage": "霊基再臨2段階目＆絆Lv.5で開放"
     }
   ],
   "phases": [1, 2, 3],

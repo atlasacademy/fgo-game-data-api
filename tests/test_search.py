@@ -109,7 +109,7 @@ test_cases_dict = {
     ),
     "buff_type_tvals": (
         "NA/buff/search?type=upCommandall&tvals=cardQuick",
-        {100, 260, 499, 1084, 1094, 1246, 1273, 1301},
+        {100, 260, 499, 1084, 1094, 1246, 1273, 1301, 1413},
     ),
     "buff_type_vals": ("NA/buff/search?vals=buffCharm", {175, 213, 217, 926, 1315}),
     "buff_type_ckSelfIndv": ("NA/buff/search?ckSelfIndv=4002&ckSelfIndv=4003", {1162}),
