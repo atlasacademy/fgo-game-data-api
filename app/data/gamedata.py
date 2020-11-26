@@ -197,8 +197,9 @@ def update_gamedata() -> None:
             ):
                 actIndividualities = set()
                 for skill in master["mstSvtSkillSvtId"][item["id"]]:
-                    mstSkill = master["mstSkillId"][skill["skillId"]]
-                    actIndividualities.add(tuple(mstSkill["actIndividuality"]))
+                    mstSkill = master["mstSkillId"].get(skill["skillId"])
+                    if mstSkill:
+                        actIndividualities.add(tuple(mstSkill["actIndividuality"]))
                 if len(actIndividualities) == 1:
                     individualities = actIndividualities.pop()
                     if (

@@ -240,6 +240,7 @@ def get_servant_entity(
         mstSkill=(
             get_skill_entity_no_reverse(region, skill.skillId, expand)
             for skill in masters[region].mstSvtSkillSvtId.get(servant_id, [])
+            if skill.skillId in masters[region].mstSkillId
         ),
         mstTreasureDevice=(
             get_td_entity_no_reverse(region, td.treasureDeviceId, expand)

@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+### Changed
+
+- LB3 servant and CE English names to use NA translation.
+
+### Fixed
+
+- Failed to import NA data. There are entries from servant to skill IDs but there's no corresponding skill ID in the master skill table.
+
 ## 5.21.0 - 2020-11-19
 
 ### Added
