@@ -13,6 +13,7 @@ HTTP API for FGO game data. Transform the raw game data into something a bit mor
 - [Helper scripts](#helper-scripts)
   - [`extract_enums.py`](#extract_enumspy)
   - [`update_ce_translation.py`](#update_ce_translationpy)
+  - [`get_test_data.py`](#get_test_datapy)
 
 ### Environment variables
 
@@ -117,4 +118,12 @@ Update `equip_names.json` with new NA CEs translations. `--jp-master` and `--na-
 
 ```
 python scripts/update_ce_translation.py --mapping app/data/mappings/equip_names.json --jp-master jp_master_path --na-master na_master_path
+```
+
+#### [`get_test_data.py`](tests/get_test_data.py)
+
+Run this script when the master data changed to update the tests or when new tests are added.
+
+```
+python -m tests.get_test_data --raw --nice --basic
 ```

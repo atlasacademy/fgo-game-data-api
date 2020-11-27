@@ -1,3 +1,5 @@
+from typing import Dict, Tuple
+
 import pytest
 from fastapi.testclient import TestClient
 
@@ -9,7 +11,7 @@ from .utils import get_response_data
 client = TestClient(app)
 
 
-test_cases_dict = {
+test_cases_dict: Dict[str, Tuple[str, str]] = {
     "servant_NA_collectionNo": ("NA/servant/76", "NA_Mordred"),
     "servant_NA_id": ("NA/servant/100900", "NA_Mordred"),
     "servant_JP_collectionNo": ("JP/servant/256", "JP_Gareth"),
