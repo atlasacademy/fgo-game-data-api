@@ -185,11 +185,11 @@ def get_nice_class_relation(raw_data: Any) -> Any:
 
 def get_nice_svt_exceed(raw_data: Any) -> Any:
     def find_previous_exceed_qp(rarity: int, exceed: int) -> int:
-        previous_exceed = [
+        previous_exceed = next(
             item
             for item in raw_data
             if item["rarity"] == rarity and item["exceedCount"] == exceed - 1
-        ][0]
+        )
         previous_exceed_qp: int = previous_exceed["qp"]
         return previous_exceed_qp
 

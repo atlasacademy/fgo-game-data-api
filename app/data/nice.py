@@ -395,7 +395,9 @@ def get_nice_skill(
 
     # .mstSvtSkill returns the list of SvtSkill with the same skill_id
     if skillEntity.mstSvtSkill:
-        chosenSvt = [item for item in skillEntity.mstSvtSkill if item.svtId == svtId][0]
+        chosenSvt = next(
+            item for item in skillEntity.mstSvtSkill if item.svtId == svtId
+        )
         if chosenSvt:
             # Wait for 3.9 for PEP 584 to use |=
             nice_skill.update(
@@ -1170,7 +1172,7 @@ def get_nice_td_alone(
     raw_data = raw.get_td_entity_no_reverse(region, td_id, expand=True)
 
     # Yes, all td_id has a svtTd entry
-    svtId = [item.svtId for item in raw_data.mstSvtTreasureDevice][0]
+    svtId = next(item.svtId for item in raw_data.mstSvtTreasureDevice)
     nice_data = NiceTdReverse.parse_obj(get_nice_td(raw_data, svtId, region))
 
     if reverse and reverseDepth >= ReverseDepth.servant:
