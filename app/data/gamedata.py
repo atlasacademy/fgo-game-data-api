@@ -33,36 +33,34 @@ MASTER_WITH_ID = {
     "mstSpot",
     "mstBgm",
 }
-ID_LISTS = {
-    "mstSvtVoice",
-    "mstClassRelationOverwrite",
-    "mstQuestRelease",
-    "mstCombineMaterial",
-}
 MASTER_WITHOUT_ID = {
+    "mstEquipExp",
+    "mstEquipSkill",
+    "mstCommandCodeSkill",
+    "mstCommandCodeComment",
+    "mstClosedMessage",
+    "mstConstant",
+    "mstClassRelationOverwrite",
+    "mstQuestPhase",
+    "mstQuestRelease",
+}
+SVT_STUFFS = {
     "mstSvtExp",
     "mstSvtScript",
     "mstFriendship",
-    "mstEquipExp",
-    "mstEquipSkill",
-    "mstQuestPhase",
-    "mstCommandCodeSkill",
-    "mstCommandCodeComment",
     "mstSvtGroup",
-    "mstClosedMessage",
-    "mstConstant",
-}
-SVT_STUFFS = {
+    "mstSvtVoice",
     "mstSvtCard",
     "mstSvtLimit",
-    "mstCombineSkill",
-    "mstCombineLimit",
-    "mstCombineCostume",
     "mstSvtLimitAdd",
     "mstSvtComment",
     "mstSvtCostume",
     "mstSvtChange",
     "mstSvtVoiceRelation",
+    "mstCombineSkill",
+    "mstCombineLimit",
+    "mstCombineCostume",
+    "mstCombineMaterial",
 }
 SKILL_STUFFS = {"mstSkillDetail", "mstSvtSkill", "mstSkillLv"}
 TD_STUFFS = {"mstTreasureDeviceDetail", "mstSvtTreasureDevice", "mstTreasureDeviceLv"}
@@ -77,12 +75,7 @@ def update_gamedata() -> None:
         master = {}
 
         for entity in (
-            MASTER_WITH_ID
-            | MASTER_WITHOUT_ID
-            | SVT_STUFFS
-            | SKILL_STUFFS
-            | TD_STUFFS
-            | ID_LISTS
+            MASTER_WITH_ID | MASTER_WITHOUT_ID | SVT_STUFFS | SKILL_STUFFS | TD_STUFFS
         ):
             with open(gamedata / f"{entity}.json", "rb") as fp:
                 master[entity] = orjson.loads(fp.read())
@@ -184,6 +177,7 @@ def update_gamedata() -> None:
             ("mstSpotWarId", "mstSpot", "warId"),
             ("mstQuestSpotId", "mstQuest", "spotId"),
             ("mstWarEventId", "mstWar", "eventId"),
+            ("mstCommandCodeCommentId", "mstCommandCodeComment", "commandCodeId"),
         ):
             master[masters_table] = defaultdict(list)
             for item in master[source_table]:

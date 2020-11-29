@@ -319,11 +319,7 @@ def get_command_code_entity(
             for item in masters[region].mstCommandCodeSkill
             if item.commandCodeId == cc_id
         ),
-        mstCommandCodeComment=[
-            item
-            for item in masters[region].mstCommandCodeComment
-            if item.commandCodeId == cc_id
-        ][0],
+        mstCommandCodeComment=masters[region].mstCommandCodeCommentId[cc_id][0],
     )
     return cc_entity
 
