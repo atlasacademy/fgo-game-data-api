@@ -36,7 +36,7 @@ from .utils import item_response, list_response
 
 
 settings = Settings()
-router = APIRouter()
+router = APIRouter(prefix="/nice", tags=["nice"])
 
 
 svt_lang_lore_description = """

@@ -32,7 +32,7 @@ from .deps import (
 from .utils import item_response, list_response
 
 
-router = APIRouter()
+router = APIRouter(prefix="/raw", tags=["raw"])
 
 
 svt_expand_lore_description = """

@@ -122,11 +122,11 @@ async def add_process_time_header(
     return response
 
 
-app.include_router(nice.router, prefix="/nice", tags=["nice"])
+app.include_router(nice.router)
 
-app.include_router(basic.router, prefix="/basic", tags=["basic"])
+app.include_router(basic.router)
 
-app.include_router(raw.router, prefix="/raw", tags=["raw"])
+app.include_router(raw.router)
 
 
 @app.get("/", include_in_schema=False)
@@ -141,9 +141,7 @@ async def main_info(response: Response) -> Dict[Region, RepoInfo]:
 
 
 if settings.github_webhook_secret.get_secret_value() != "":  # pragma: no cover
-    app.include_router(
-        secret.router, prefix=f"/{settings.github_webhook_secret.get_secret_value()}"
-    )
+    app.include_router(secret.router)
 
 
 app.mount("/export", StaticFiles(directory="export"), name="export")

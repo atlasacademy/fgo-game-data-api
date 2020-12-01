@@ -6,8 +6,11 @@ from ..data.tasks import RepoInfo, pull_and_update, repo_info
 from .utils import pretty_print_response
 
 
-router = APIRouter()
 settings = Settings()
+router = APIRouter(
+    prefix=f"/{settings.github_webhook_secret.get_secret_value()}",
+    include_in_schema=False,
+)
 
 
 repo = Repo(project_root)
@@ -28,7 +31,7 @@ instance_info = dict(
 )
 
 
-@router.post("/update", include_in_schema=False)  # pragma: no cover
+@router.post("/update")  # pragma: no cover
 async def update_gamedata(background_tasks: BackgroundTasks) -> Response:
     background_tasks.add_task(pull_and_update)
     response_data = dict(
@@ -39,7 +42,7 @@ async def update_gamedata(background_tasks: BackgroundTasks) -> Response:
     return response
 
 
-@router.get("/info", include_in_schema=False)
+@router.get("/info")
 async def info() -> Response:
     response = pretty_print_response(instance_info)
     response.headers["Bloom-Response-Ignore"] = "1"

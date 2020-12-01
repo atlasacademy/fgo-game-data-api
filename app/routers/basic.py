@@ -33,7 +33,7 @@ from .utils import item_response, list_response
 
 
 settings = Settings()
-router = APIRouter()
+router = APIRouter(prefix="/basic", tags=["basic"])
 
 
 basic_find_servant_extra = """
