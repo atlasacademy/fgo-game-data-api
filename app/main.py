@@ -70,12 +70,17 @@ Pre-generated basic data that can be used for indexing purposes:
   - [NA CE](/export/NA/basic_equip.json)
   - [NA Command Code](/export/NA/basic_command_code.json)
   - [NA Mystic Code](/export/NA/basic_mystic_code.json)
+  - [NA War](/export/NA/basic_war.json)
+  - [NA Event](/export/NA/basic_event.json)
 - JP data:
   - [JP servant](/export/JP/basic_servant.json)
   - [JP servant with English names](/export/JP/basic_servant_lang_en.json)
   - [JP CE](/export/JP/basic_equip.json)
+  - [JP CE with English names](/export/JP/basic_equip_lang_en.json)
   - [JP Command Code](/export/JP/basic_command_code.json)
   - [JP Mystic Code](/export/JP/basic_mystic_code.json)
+  - [JP War](/export/JP/basic_war.json)
+  - [JP Event](/export/JP/basic_event.json)
 """
 
 app_description = app_short_description + app_more_description
