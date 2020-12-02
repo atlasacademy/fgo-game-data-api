@@ -11,7 +11,7 @@ uvicorn = {extras = ["standard"], version = "^0.12.2"}
 python-dotenv = "^0.15.0"
 fuzzywuzzy = "^0.18.0"
 python-Levenshtein = "^0.12.0"
-orjson = "^3.4.4"
+orjson = "^3.4.5"
 aiofiles = "^0.6.0"
 GitPython = "^3.1.11"
 toml = "^0.10.2"
@@ -57,7 +57,8 @@ too-many-lines,
 too-many-locals,
 too-many-nested-blocks,
 too-many-statements,
-wrong-import-order
+wrong-import-order,
+unsubscriptable-object
 '''
 
 [build-system]
