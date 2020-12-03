@@ -144,15 +144,19 @@ def get_basic_skill(
 
     if reverse and reverseDepth >= ReverseDepth.servant:
         mstSvtSkill = masters[region].mstSvtSkillId.get(skill_id, [])
-        activeSkills = {item.svtId for item in mstSvtSkill}
+        activeSkills = {svt_skill.svtId for svt_skill in mstSvtSkill}
         passiveSkills = passive_to_svtId(region, skill_id)
         skill_reverse = BasicReversedSkillTd(
             servant=(
-                get_basic_servant(region, item, lang=lang)
-                for item in activeSkills | passiveSkills
+                get_basic_servant(region, svt_id, lang=lang)
+                for svt_id in activeSkills | passiveSkills
             ),
-            MC=(get_basic_mc(region, item) for item in skill_to_MCId(region, skill_id)),
-            CC=(get_basic_cc(region, item) for item in skill_to_CCId(region, skill_id)),
+            MC=(
+                get_basic_mc(region, mc_id) for mc_id in skill_to_MCId(region, skill_id)
+            ),
+            CC=(
+                get_basic_cc(region, cc_id) for cc_id in skill_to_CCId(region, skill_id)
+            ),
         )
         basic_skill.reverse = BasicReversedSkillTdType(basic=skill_reverse)
     return basic_skill
@@ -172,8 +176,8 @@ def get_basic_td(
         mstSvtTreasureDevice = masters[region].mstSvtTreasureDeviceId.get(td_id, [])
         td_reverse = BasicReversedSkillTd(
             servant=(
-                get_basic_servant(region, item.svtId, lang=lang)
-                for item in mstSvtTreasureDevice
+                get_basic_servant(region, svt_td.svtId, lang=lang)
+                for svt_td in mstSvtTreasureDevice
             )
         )
         basic_td.reverse = BasicReversedSkillTdType(basic=td_reverse)

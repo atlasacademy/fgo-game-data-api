@@ -31,12 +31,12 @@ def get_item_list(response: Response, response_type: str, endpoint: str) -> Set[
         return {item[main_item]["id"] for item in response.json()}
     else:
         if item_type in ("servant", "equip", "buff", "svt", "skill", "NP"):
-            main_id = "id"
+            id_name = "id"
         elif item_type == "function":
-            main_id = "funcId"
+            id_name = "funcId"
         else:
             raise ValueError
-        return {item[main_id] for item in response.json()}
+        return {item[id_name] for item in response.json()}
 
 
 test_cases_dict = {

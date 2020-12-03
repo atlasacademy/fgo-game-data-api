@@ -67,42 +67,42 @@ def generate_exports() -> None:  # pragma: no cover
             start_time = time.perf_counter()
             logger.info(f"Exporting {region} data …")
             all_equip_data_lore = [
-                get_nice_equip_model(region, item_id, Language.jp, lore=True)
-                for item_id in masters[region].mstSvtEquipCollectionNo.values()
+                get_nice_equip_model(region, svt_id, Language.jp, lore=True)
+                for svt_id in masters[region].mstSvtEquipCollectionNo.values()
             ]
             all_servant_data_lore = [
-                get_nice_servant_model(region, item_id, Language.jp, lore=True)
-                for item_id in masters[region].mstSvtServantCollectionNo.values()
+                get_nice_servant_model(region, svt_id, Language.jp, lore=True)
+                for svt_id in masters[region].mstSvtServantCollectionNo.values()
             ]
             all_item_data = [
                 get_nice_item(region, item_id) for item_id in masters[region].mstItemId
             ]
             all_mc_data = [
-                get_nice_mystic_code(region, item_id)
-                for item_id in masters[region].mstEquipId
+                get_nice_mystic_code(region, mc_id)
+                for mc_id in masters[region].mstEquipId
             ]
             all_cc_data = [
-                get_nice_command_code(region, item_id)
-                for item_id in masters[region].mstCommandCodeId
+                get_nice_command_code(region, cc_id)
+                for cc_id in masters[region].mstCommandCodeId
             ]
             all_basic_servant_data = sort_by_collection_no(
                 [
-                    get_basic_servant(region, item_id)
-                    for item_id in masters[region].mstSvtServantCollectionNo.values()
+                    get_basic_servant(region, svt_id)
+                    for svt_id in masters[region].mstSvtServantCollectionNo.values()
                 ]
             )
             all_basic_equip_data = sort_by_collection_no(
                 [
-                    get_basic_equip(region, item_id)
-                    for item_id in masters[region].mstSvtEquipCollectionNo.values()
+                    get_basic_equip(region, svt_id)
+                    for svt_id in masters[region].mstSvtEquipCollectionNo.values()
                 ]
             )
             all_basic_mc_data = [
-                get_basic_mc(region, item_id) for item_id in masters[region].mstEquipId
+                get_basic_mc(region, mc_id) for mc_id in masters[region].mstEquipId
             ]
             all_basic_cc_data = [
-                get_basic_cc(region, item_id)
-                for item_id in masters[region].mstCommandCodeId
+                get_basic_cc(region, cc_id)
+                for cc_id in masters[region].mstCommandCodeId
             ]
             all_basic_event_data = [
                 get_basic_event(region, event_id)
@@ -133,16 +133,14 @@ def generate_exports() -> None:  # pragma: no cover
             if region == Region.JP:
                 all_basic_servant_en = sort_by_collection_no(
                     [
-                        get_basic_servant(region, item_id, Language.en)
-                        for item_id in masters[
-                            region
-                        ].mstSvtServantCollectionNo.values()
+                        get_basic_servant(region, svt_id, Language.en)
+                        for svt_id in masters[region].mstSvtServantCollectionNo.values()
                     ]
                 )
                 all_basic_equip_en = sort_by_collection_no(
                     [
-                        get_basic_equip(region, item_id, Language.en)
-                        for item_id in masters[region].mstSvtEquipCollectionNo.values()
+                        get_basic_equip(region, svt_id, Language.en)
+                        for svt_id in masters[region].mstSvtEquipCollectionNo.values()
                     ]
                 )
                 output_files.update(

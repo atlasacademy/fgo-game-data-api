@@ -84,38 +84,42 @@ def update_gamedata() -> None:
             master[f"{entity}Id"] = {item["id"]: item for item in master[entity]}
 
         master["mstSvtServantCollectionNo"] = {
-            item["collectionNo"]: item["id"]
-            for item in master["mstSvt"]
-            if is_servant(item["type"]) and item["collectionNo"] != 0
+            svt["collectionNo"]: svt["id"]
+            for svt in master["mstSvt"]
+            if is_servant(svt["type"]) and svt["collectionNo"] != 0
         }
 
         master["mstSvtEquipCollectionNo"] = {
-            item["collectionNo"]: item["id"]
-            for item in master["mstSvt"]
-            if is_equip(item["type"]) and item["collectionNo"] != 0
+            svt["collectionNo"]: svt["id"]
+            for svt in master["mstSvt"]
+            if is_equip(svt["type"]) and svt["collectionNo"] != 0
         }
 
         master["mstFriendshipId"] = defaultdict(list)
         master["mstFriendship"] = sorted(
             master["mstFriendship"], key=lambda item: item["rank"]  # type: ignore
         )
-        for item in master["mstFriendship"]:
-            if item["friendship"] != -1:
-                master["mstFriendshipId"][item["id"]].append(item["friendship"])
+        for friendship in master["mstFriendship"]:
+            if friendship["friendship"] != -1:
+                master["mstFriendshipId"][friendship["id"]].append(
+                    friendship["friendship"]
+                )
 
         master["mstSvtScriptId"] = defaultdict(list)
-        for item in master["mstSvtScript"]:
-            master["mstSvtScriptId"][item["id"] // 10].append(item)
+        for svt_script in master["mstSvtScript"]:
+            master["mstSvtScriptId"][svt_script["id"] // 10].append(svt_script)
 
         master["mstQuestPhaseId"] = defaultdict(dict)
-        for item in master["mstQuestPhase"]:
-            master["mstQuestPhaseId"][item["questId"]][item["phase"]] = item
+        for quest_phase in master["mstQuestPhase"]:
+            master["mstQuestPhaseId"][quest_phase["questId"]][
+                quest_phase["phase"]
+            ] = quest_phase
 
         master["buffToFunc"] = defaultdict(set)
-        for item in master["mstFunc"]:
-            if item["funcType"] not in FUNC_VALS_NOT_BUFF:
-                for buff_id in item["vals"]:
-                    master["buffToFunc"][buff_id].add(item["id"])
+        for func in master["mstFunc"]:
+            if func["funcType"] not in FUNC_VALS_NOT_BUFF:
+                for buff_id in func["vals"]:
+                    master["buffToFunc"][buff_id].add(func["id"])
 
         for masters_table, func_reverse_stuff, func_reverse_check, result_id in (
             ("funcToSkill", "mstSkillLv", "mstSkillId", "skillId"),
@@ -127,15 +131,15 @@ def update_gamedata() -> None:
             ),
         ):
             master[masters_table] = defaultdict(set)
-            for item in master[func_reverse_stuff]:
-                for func_id in item["funcId"]:
-                    if item[result_id] in master[func_reverse_check]:
-                        master[masters_table][func_id].add(item[result_id])
+            for skill_td_lv in master[func_reverse_stuff]:
+                for func_id in skill_td_lv["funcId"]:
+                    if skill_td_lv[result_id] in master[func_reverse_check]:
+                        master[masters_table][func_id].add(skill_td_lv[result_id])
 
         master["passiveSkillToSvt"] = defaultdict(set)
-        for item in master["mstSvt"]:
-            for skill_id in item["classPassive"]:
-                master["passiveSkillToSvt"][skill_id].add(item["id"])
+        for svt in master["mstSvt"]:
+            for skill_id in svt["classPassive"]:
+                master["passiveSkillToSvt"][skill_id].add(svt["id"])
 
         for masters_table, source_table, lookup_id, result_id in (
             ("mstClosedMessageId", "mstClosedMessage", "id", "message"),
@@ -184,13 +188,13 @@ def update_gamedata() -> None:
                 master[masters_table][item[lookup_id]].append(item)
 
         master["bondEquip"] = {}
-        for item in master["mstSvt"]:
+        for svt in master["mstSvt"]:
             if (
-                item["type"] == SvtType.SERVANT_EQUIP
-                and item["id"] in master["mstSvtSkillSvtId"]
+                svt["type"] == SvtType.SERVANT_EQUIP
+                and svt["id"] in master["mstSvtSkillSvtId"]
             ):
                 actIndividualities = set()
-                for skill in master["mstSvtSkillSvtId"][item["id"]]:
+                for skill in master["mstSvtSkillSvtId"][svt["id"]]:
                     mstSkill = master["mstSkillId"].get(skill["skillId"])
                     if mstSkill:
                         actIndividualities.add(tuple(mstSkill["actIndividuality"]))
@@ -200,16 +204,16 @@ def update_gamedata() -> None:
                         len(individualities) == 1
                         and individualities[0] in master["mstSvtId"]
                     ):
-                        master["bondEquip"][individualities[0]] = item["id"]
+                        master["bondEquip"][individualities[0]] = svt["id"]
 
         if region_name == Region.NA:
             with open(gamedata / "globalNewMstSubtitle.json", "rb") as fp:
                 globalNewMstSubtitle = orjson.loads(fp.read())
             master["mstSubtitleId"] = defaultdict(list)
-            for item in globalNewMstSubtitle:
-                svt = item["id"].split("_")[0]
+            for subtitle in globalNewMstSubtitle:
+                svt = subtitle["id"].split("_")[0]
                 if not svt.startswith("PLAIN"):
-                    master["mstSubtitleId"][int(svt)].append(item)
+                    master["mstSubtitleId"][int(svt)].append(subtitle)
 
         masters[region_name] = Master.parse_obj(master)
 

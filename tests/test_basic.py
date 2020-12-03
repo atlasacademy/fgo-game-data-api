@@ -1,4 +1,4 @@
-from typing import Dict, Tuple
+from typing import Dict, Set, Tuple
 
 import pytest
 from fastapi.testclient import TestClient
@@ -81,8 +81,8 @@ class TestBasicSpecial:
 
     def test_skill_reverse_passive(self) -> None:
         response = client.get("/basic/NA/skill/30650?reverse=True")
-        reverse_servants = {
-            item["id"] for item in response.json()["reverse"]["basic"]["servant"]
+        reverse_servants: Set[int] = {
+            servant["id"] for servant in response.json()["reverse"]["basic"]["servant"]
         }
         assert response.status_code == 200
         assert reverse_servants == {201200, 401800, 601000}

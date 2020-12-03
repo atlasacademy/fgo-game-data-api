@@ -317,16 +317,16 @@ def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> Dict[str, 
             "atkSide": defaultdict(dict),
             "defSide": defaultdict(dict),
         }
-        for item in relationOverwrite:
-            if item.atkSide == 1:
+        for relation in relationOverwrite:
+            if relation.atkSide == 1:
                 side = "atkSide"
             else:
                 side = "defSide"
-            atkClass = CLASS_NAME[item.atkClass]
-            defClass = CLASS_NAME[item.defClass]
+            atkClass = CLASS_NAME[relation.atkClass]
+            defClass = CLASS_NAME[relation.defClass]
             relationDetail = {
-                "damageRate": item.damageRate,
-                "type": CLASS_OVERWRITE_NAME[item.type],
+                "damageRate": relation.damageRate,
+                "type": CLASS_OVERWRITE_NAME[relation.type],
             }
             relationId[side][atkClass][defClass] = relationDetail
         script["relationId"] = relationId
@@ -396,7 +396,9 @@ def get_nice_skill(
     # .mstSvtSkill returns the list of SvtSkill with the same skill_id
     if skillEntity.mstSvtSkill:
         chosenSvt = next(
-            item for item in skillEntity.mstSvtSkill if item.svtId == svtId
+            svt_skill
+            for svt_skill in skillEntity.mstSvtSkill
+            if svt_skill.svtId == svtId
         )
         if chosenSvt:
             # Wait for 3.9 for PEP 584 to use |=
@@ -410,7 +412,9 @@ def get_nice_skill(
                 }
             )
 
-    nice_skill["coolDown"] = [item.chargeTurn for item in skillEntity.mstSkillLv]
+    nice_skill["coolDown"] = [
+        skill_lv.chargeTurn for skill_lv in skillEntity.mstSkillLv
+    ]
 
     nice_skill["script"] = {
         scriptKey: [skillLv.script[scriptKey] for skillLv in skillEntity.mstSkillLv]
@@ -422,17 +426,17 @@ def get_nice_skill(
         function = skillEntity.mstSkillLv[0].expandedFuncId[funci]
         functionInfo = get_nice_base_function(function, region)
         functionInfo["svals"] = [
-            parse_dataVals(item.svals[funci], function.mstFunc.funcType, region)
-            for item in skillEntity.mstSkillLv
+            parse_dataVals(skill_lv.svals[funci], function.mstFunc.funcType, region)
+            for skill_lv in skillEntity.mstSkillLv
         ]
         if "followerVals" in skillEntity.mstSkillLv[0].script:
             functionInfo["followerVals"] = [
                 parse_dataVals(
-                    item.script["followerVals"][funci],
+                    skill_lv.script["followerVals"][funci],
                     function.mstFunc.funcType,
                     region,
                 )
-                for item in skillEntity.mstSkillLv
+                for skill_lv in skillEntity.mstSkillLv
             ]
         nice_skill["functions"].append(functionInfo)
 
@@ -456,17 +460,17 @@ def get_nice_td(
         )
 
     nice_td["npGain"] = {
-        "buster": [item.tdPointB for item in tdEntity.mstTreasureDeviceLv],
-        "arts": [item.tdPointA for item in tdEntity.mstTreasureDeviceLv],
-        "quick": [item.tdPointQ for item in tdEntity.mstTreasureDeviceLv],
-        "extra": [item.tdPointEx for item in tdEntity.mstTreasureDeviceLv],
-        "np": [item.tdPoint for item in tdEntity.mstTreasureDeviceLv],
-        "defence": [item.tdPointDef for item in tdEntity.mstTreasureDeviceLv],
+        "buster": [td_lv.tdPointB for td_lv in tdEntity.mstTreasureDeviceLv],
+        "arts": [td_lv.tdPointA for td_lv in tdEntity.mstTreasureDeviceLv],
+        "quick": [td_lv.tdPointQ for td_lv in tdEntity.mstTreasureDeviceLv],
+        "extra": [td_lv.tdPointEx for td_lv in tdEntity.mstTreasureDeviceLv],
+        "np": [td_lv.tdPoint for td_lv in tdEntity.mstTreasureDeviceLv],
+        "defence": [td_lv.tdPointDef for td_lv in tdEntity.mstTreasureDeviceLv],
     }
 
-    chosenSvt = [item for item in tdEntity.mstSvtTreasureDevice if item.svtId == svtId][
-        0
-    ]
+    chosenSvt = next(
+        svt_td for svt_td in tdEntity.mstSvtTreasureDevice if svt_td.svtId == svtId
+    )
     if chosenSvt:
         imageId = chosenSvt.imageIndex
         base_settings_id = {
@@ -499,9 +503,9 @@ def get_nice_td(
         for sval in ["svals", "svals2", "svals3", "svals4", "svals5"]:
             functionInfo[sval] = [
                 parse_dataVals(
-                    getattr(item, sval)[funci], function.mstFunc.funcType, region
+                    getattr(mst_td, sval)[funci], function.mstFunc.funcType, region
                 )
-                for item in tdEntity.mstTreasureDeviceLv
+                for mst_td in tdEntity.mstTreasureDeviceLv
             ]
         nice_td["functions"].append(functionInfo)
 
@@ -543,8 +547,8 @@ def get_nice_item_amount(
     region: Region, item_list: List[int], amount_list: List[int]
 ) -> List[NiceItemAmount]:
     return [
-        NiceItemAmount(item=get_nice_item(region, item), amount=amount)
-        for item, amount in zip(item_list, amount_list)
+        NiceItemAmount(item=get_nice_item(region, item_id), amount=amount)
+        for item_id, amount in zip(item_list, amount_list)
     ]
 
 
@@ -597,13 +601,13 @@ def get_voice_url(region: Region, svt_id: int, voice_type: int, voice_id: str) -
 def get_nice_voice_cond(
     region: Region, cond: ScriptJsonCond, costume_ids: Dict[int, int]
 ) -> NiceVoiceCond:
-    value = (
+    cond_value = (
         costume_ids[cond.value]
         if cond.condType == VoiceCondType.COSTUME
         else cond.value
     )
 
-    valueList = (
+    cond_value_list = (
         [group.svtId for group in masters[region].mstSvtGroupId[cond.value]]
         if cond.condType == VoiceCondType.SVT_GROUP
         else []
@@ -612,8 +616,8 @@ def get_nice_voice_cond(
     voice_cond = NiceVoiceCond(
         condType=VOICE_COND_NAME[cond.condType],
         eventId=cond.eventId,
-        value=value,
-        valueList=valueList,
+        value=cond_value,
+        valueList=cond_value_list,
     )
 
     return voice_cond
@@ -631,15 +635,15 @@ def get_nice_voice_line(
 
     voice_line = NiceVoiceLine(
         overwriteName=nullable_to_string(script.overwriteName),
-        id=(item.id for item in script.infos),
+        id=(info.id for info in script.infos),
         audioAssets=(
-            get_voice_url(region, svt_id, voice_type, item.id) for item in script.infos
+            get_voice_url(region, svt_id, voice_type, info.id) for info in script.infos
         ),
-        delay=(item.delay for item in script.infos),
-        face=(item.face for item in script.infos),
-        form=(item.form for item in script.infos),
-        text=(nullable_to_string(item.text) for item in script.infos),
-        conds=(get_nice_voice_cond(region, item, costume_ids) for item in script.conds),
+        delay=(info.delay for info in script.infos),
+        face=(info.face for info in script.infos),
+        form=(info.form for info in script.infos),
+        text=(nullable_to_string(info.text) for info in script.infos),
+        conds=(get_nice_voice_cond(region, info, costume_ids) for info in script.conds),
         subtitle=subtitle_ids.get(str(svt_id) + "_" + first_voice_id, ""),
     )
 
@@ -663,7 +667,7 @@ def get_nice_voice_group(
     subtitles: List[GlobalNewMstSubtitle],
 ) -> NiceVoiceGroup:
 
-    subtitle_ids = {item.id: item.serif for item in subtitles}
+    subtitle_ids = {subtitle.id: subtitle.serif for subtitle in subtitles}
 
     return NiceVoiceGroup(
         svtId=voice.id,
@@ -679,10 +683,10 @@ def get_nice_voice_group(
 
 
 def get_nice_servant(
-    region: Region, item_id: int, lang: Language, lore: bool = False
+    region: Region, svt_id: int, lang: Language, lore: bool = False
 ) -> Dict[str, Any]:
     # Get expanded servant entity to get function and buff details
-    raw_data = raw.get_servant_entity(region, item_id, expand=True, lore=lore)
+    raw_data = raw.get_servant_entity(region, svt_id, expand=True, lore=lore)
     nice_data: Dict[str, Any] = {
         "id": raw_data.mstSvt.id,
         "collectionNo": raw_data.mstSvt.collectionNo,
@@ -698,11 +702,11 @@ def get_nice_servant(
         "traits": get_traits_list(sorted(raw_data.mstSvt.individuality)),
         "starAbsorb": raw_data.mstSvtLimit[0].criticalWeight,
         "rarity": raw_data.mstSvtLimit[0].rarity,
-        "cards": [CARD_TYPE_NAME[item] for item in raw_data.mstSvt.cardIds],
+        "cards": [CARD_TYPE_NAME[card_id] for card_id in raw_data.mstSvt.cardIds],
         "bondGrowth": masters[region].mstFriendshipId.get(
             raw_data.mstSvt.friendshipId, []
         ),
-        "bondEquip": masters[region].bondEquip.get(item_id, 0),
+        "bondEquip": masters[region].bondEquip.get(svt_id, 0),
         "relateQuestIds": raw_data.mstSvt.relateQuestIds,
     }
 
@@ -720,15 +724,15 @@ def get_nice_servant(
     narrowFigure: Dict[str, Dict[int, str]] = {}
     equipFace: Dict[str, Dict[int, str]] = {}
 
-    costume_limits = {item.id for item in raw_data.mstSvtCostume}
+    costume_limits = {svt_costume.id for svt_costume in raw_data.mstSvtCostume}
     costume_ids = {
-        item.limitCount: item.battleCharaId
-        for item in raw_data.mstSvtLimitAdd
-        if item.limitCount in costume_limits
+        svt_limit_add.limitCount: svt_limit_add.battleCharaId
+        for svt_limit_add in raw_data.mstSvtLimitAdd
+        if svt_limit_add.limitCount in costume_limits
     }
 
     base_settings = {"base_url": settings.asset_url, "region": region}
-    base_settings_id = dict(item_id=item_id, **base_settings)
+    base_settings_id = dict(item_id=svt_id, **base_settings)
 
     if raw_data.mstSvt.type in (
         SvtType.ENEMY_COLLECTION_DETAIL,
@@ -815,11 +819,11 @@ def get_nice_servant(
             }
     elif raw_data.mstSvt.isEquip():
         charaGraph["equip"] = {
-            item_id: AssetURL.charaGraphDefault.format(**base_settings_id)
+            svt_id: AssetURL.charaGraphDefault.format(**base_settings_id)
         }
-        faces["equip"] = {item_id: AssetURL.face.format(**base_settings_id, i=0)}
+        faces["equip"] = {svt_id: AssetURL.face.format(**base_settings_id, i=0)}
         equipFace["equip"] = {
-            item_id: AssetURL.equipFace.format(**base_settings_id, i=0)
+            svt_id: AssetURL.equipFace.format(**base_settings_id, i=0)
         }
 
     nice_data["extraAssets"] = {
@@ -833,7 +837,7 @@ def get_nice_servant(
         "equipFace": equipFace,
     }
 
-    lvMax = max(item.lvMax for item in raw_data.mstSvtLimit)
+    lvMax = max(svt_limit.lvMax for svt_limit in raw_data.mstSvtLimit)
     atkMax = raw_data.mstSvtLimit[0].atkMax
     atkBase = raw_data.mstSvtLimit[0].atkBase
     hpMax = raw_data.mstSvtLimit[0].hpMax
@@ -872,7 +876,8 @@ def get_nice_servant(
     ]
 
     nice_data["hitsDistribution"] = {
-        CARD_TYPE_NAME[item.cardId]: item.normalDamage for item in raw_data.mstSvtCard
+        CARD_TYPE_NAME[svt_card.cardId]: svt_card.normalDamage
+        for svt_card in raw_data.mstSvtCard
     }
 
     ascensionAddIndividuality = {
@@ -953,34 +958,34 @@ def get_nice_servant(
     script = {}
     if "SkillRankUp" in raw_data.mstSvt.script:
         script["SkillRankUp"] = {
-            item[0]: item[1:]
-            for item in orjson.loads(raw_data.mstSvt.script["SkillRankUp"])
+            rank_up_script[0]: rank_up_script[1:]
+            for rank_up_script in orjson.loads(raw_data.mstSvt.script["SkillRankUp"])
         }
 
     nice_data["script"] = script
 
     nice_data["skills"] = [
-        get_nice_skill(skill, item_id, region) for skill in raw_data.mstSkill
+        get_nice_skill(skill, svt_id, region) for skill in raw_data.mstSkill
     ]
 
     nice_data["classPassive"] = [
-        get_nice_skill(skill, item_id, region)
+        get_nice_skill(skill, svt_id, region)
         for skill in raw_data.mstSvt.expandedClassPassive
     ]
 
     # Filter out dummy TDs that are used by enemy servants
     if raw_data.mstSvt.isServant():
         actualTDs: List[TdEntityNoReverse] = [
-            item
-            for item in raw_data.mstTreasureDevice
-            if item.mstSvtTreasureDevice[0].num == 1
+            td
+            for td in raw_data.mstTreasureDevice
+            if td.mstSvtTreasureDevice[0].num == 1
         ]
         for actualTD in actualTDs:
             if "tdTypeChangeIDs" in actualTD.mstTreasureDevice.script:
                 tdTypeChangeIDs: List[int] = actualTD.mstTreasureDevice.script[
                     "tdTypeChangeIDs"
                 ]
-                currentActualTDsIDs = {item.mstTreasureDevice.id for item in actualTDs}
+                currentActualTDsIDs = {td.mstTreasureDevice.id for td in actualTDs}
                 for td in raw_data.mstTreasureDevice:
                     if (
                         td.mstTreasureDevice.id in tdTypeChangeIDs
@@ -991,7 +996,7 @@ def get_nice_servant(
         actualTDs = raw_data.mstTreasureDevice
 
     nice_data["noblePhantasms"] = [
-        get_nice_td(td, item_id, region)
+        get_nice_td(td, svt_id, region)
         for td in sorted(actualTDs, key=lambda x: x.mstTreasureDevice.id)
     ]
 
@@ -1003,7 +1008,9 @@ def get_nice_servant(
                 costume_ids[costume.id]: get_nice_costume(costume)
                 for costume in raw_data.mstSvtCostume
             },
-            "comments": [get_nice_comment(item) for item in raw_data.mstSvtComment],
+            "comments": [
+                get_nice_comment(svt_comment) for svt_comment in raw_data.mstSvtComment
+            ],
             "voices": [
                 get_nice_voice_group(region, voice, costume_ids, raw_data.mstSubtitle)
                 for voice in raw_data.mstSvtVoice
@@ -1116,7 +1123,7 @@ def get_nice_skill_alone(
 ) -> NiceSkillReverse:
     raw_data = raw.get_skill_entity_no_reverse(region, skill_id, expand=True)
 
-    svt_list = [item.svtId for item in raw_data.mstSvtSkill]
+    svt_list = [svt_skill.svtId for svt_skill in raw_data.mstSvtSkill]
     if svt_list:
         svtId = svt_list[0]
     else:
@@ -1124,37 +1131,37 @@ def get_nice_skill_alone(
     nice_data = NiceSkillReverse.parse_obj(get_nice_skill(raw_data, svtId, region))
 
     if reverse and reverseDepth >= ReverseDepth.servant:
-        activeSkills = {item.svtId for item in raw_data.mstSvtSkill}
+        activeSkills = {svt_skill.svtId for svt_skill in raw_data.mstSvtSkill}
         passiveSkills = raw.passive_to_svtId(region, skill_id)
         if reverseData == ReverseData.basic:
             basic_skill_reverse = BasicReversedSkillTd(
                 servant=(
-                    get_basic_servant(region, item, lang=lang)
-                    for item in activeSkills | passiveSkills
+                    get_basic_servant(region, svt_id, lang=lang)
+                    for svt_id in activeSkills | passiveSkills
                 ),
                 MC=(
-                    get_basic_mc(region, item)
-                    for item in raw.skill_to_MCId(region, skill_id)
+                    get_basic_mc(region, mc_id)
+                    for mc_id in raw.skill_to_MCId(region, skill_id)
                 ),
                 CC=(
-                    get_basic_cc(region, item)
-                    for item in raw.skill_to_CCId(region, skill_id)
+                    get_basic_cc(region, cc_id)
+                    for cc_id in raw.skill_to_CCId(region, skill_id)
                 ),
             )
             nice_data.reverse = NiceReversedSkillTdType(basic=basic_skill_reverse)
         else:
             skill_reverse = NiceReversedSkillTd(
                 servant=(
-                    get_nice_servant_model(region, item, lang=lang)
-                    for item in activeSkills | passiveSkills
+                    get_nice_servant_model(region, svt_id, lang=lang)
+                    for svt_id in activeSkills | passiveSkills
                 ),
                 MC=(
-                    get_nice_mystic_code(region, item)
-                    for item in raw.skill_to_MCId(region, skill_id)
+                    get_nice_mystic_code(region, mc_id)
+                    for mc_id in raw.skill_to_MCId(region, skill_id)
                 ),
                 CC=(
-                    get_nice_command_code(region, item)
-                    for item in raw.skill_to_CCId(region, skill_id)
+                    get_nice_command_code(region, cc_id)
+                    for cc_id in raw.skill_to_CCId(region, skill_id)
                 ),
             )
             nice_data.reverse = NiceReversedSkillTdType(nice=skill_reverse)
@@ -1172,23 +1179,23 @@ def get_nice_td_alone(
     raw_data = raw.get_td_entity_no_reverse(region, td_id, expand=True)
 
     # Yes, all td_id has a svtTd entry
-    svtId = next(item.svtId for item in raw_data.mstSvtTreasureDevice)
+    svtId = next(svt_id.svtId for svt_id in raw_data.mstSvtTreasureDevice)
     nice_data = NiceTdReverse.parse_obj(get_nice_td(raw_data, svtId, region))
 
     if reverse and reverseDepth >= ReverseDepth.servant:
         if reverseData == ReverseData.basic:
             basic_td_reverse = BasicReversedSkillTd(
                 servant=[
-                    get_basic_servant(region, item.svtId, lang=lang)
-                    for item in raw_data.mstSvtTreasureDevice
+                    get_basic_servant(region, svt_id.svtId, lang=lang)
+                    for svt_id in raw_data.mstSvtTreasureDevice
                 ]
             )
             nice_data.reverse = NiceReversedSkillTdType(basic=basic_td_reverse)
         else:
             td_reverse = NiceReversedSkillTd(
                 servant=[
-                    get_nice_servant_model(region, item.svtId, lang=lang)
-                    for item in raw_data.mstSvtTreasureDevice
+                    get_nice_servant_model(region, svt_id.svtId, lang=lang)
+                    for svt_id in raw_data.mstSvtTreasureDevice
                 ]
             )
             nice_data.reverse = NiceReversedSkillTdType(nice=td_reverse)
@@ -1352,7 +1359,9 @@ def get_nice_quest_phase(region: Region, quest_id: int, phase: int) -> Dict[str,
     nice_data.update(
         {
             "phase": raw_data.mstQuestPhase.phase,
-            "className": [CLASS_NAME[item] for item in raw_data.mstQuestPhase.classIds],
+            "className": [
+                CLASS_NAME[class_id] for class_id in raw_data.mstQuestPhase.classIds
+            ],
             "individuality": get_traits_list(raw_data.mstQuestPhase.individuality),
             "qp": raw_data.mstQuestPhase.qp,
             "exp": raw_data.mstQuestPhase.playerExp,

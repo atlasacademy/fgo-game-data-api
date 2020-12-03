@@ -139,8 +139,8 @@ class TestServantSpecial:
     def test_skill_reverse_passive(self) -> None:
         response = client.get("/raw/NA/skill/320650?reverse=True")
         reverse_servants = {
-            item["mstSvt"]["id"]
-            for item in response.json()["reverse"]["raw"]["servant"]
+            servant["mstSvt"]["id"]
+            for servant in response.json()["reverse"]["raw"]["servant"]
         }
         assert response.status_code == 200
         assert reverse_servants == {500800}
@@ -148,8 +148,7 @@ class TestServantSpecial:
     def test_skill_reverse_CC(self) -> None:
         response = client.get("/raw/JP/skill/991970?reverse=True")
         reverse_ccs = {
-            item["mstCommandCode"]["id"]
-            for item in response.json()["reverse"]["raw"]["CC"]
+            cc["mstCommandCode"]["id"] for cc in response.json()["reverse"]["raw"]["CC"]
         }
         assert response.status_code == 200
         assert reverse_ccs == {8400500}
@@ -172,8 +171,8 @@ class TestServantSpecial:
         response = client.get("/raw/NA/buff/101?reverse=True")
         assert response.status_code == 200
         assert {
-            item["mstFunc"]["funcType"]
-            for item in response.json()["reverse"]["raw"]["function"]
+            function["mstFunc"]["funcType"]
+            for function in response.json()["reverse"]["raw"]["function"]
         }.isdisjoint(FUNC_VALS_NOT_BUFF)
 
     def test_hyde_voice_id(self) -> None:

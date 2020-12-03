@@ -46,17 +46,17 @@ def passive_to_svtId(region: Region, skill_id: int) -> Set[int]:
 
 def skill_to_MCId(region: Region, skill_id: int) -> Set[int]:
     return {
-        item.equipId
-        for item in masters[region].mstEquipSkill
-        if item.skillId == skill_id
+        equip_skill.equipId
+        for equip_skill in masters[region].mstEquipSkill
+        if equip_skill.skillId == skill_id
     }
 
 
 def skill_to_CCId(region: Region, skill_id: int) -> Set[int]:
     return {
-        item.commandCodeId
-        for item in masters[region].mstCommandCodeSkill
-        if item.skillId == skill_id
+        cc_skill.commandCodeId
+        for cc_skill in masters[region].mstCommandCodeSkill
+        if cc_skill.skillId == skill_id
     }
 
 
@@ -75,8 +75,8 @@ def get_buff_entity(
     if reverse and reverseDepth >= ReverseDepth.function:
         buff_reverse = ReversedBuff(
             function=(
-                get_func_entity(region, item_id, reverse, reverseDepth)
-                for item_id in buff_to_func(region, buff_id)
+                get_func_entity(region, func_id, reverse, reverseDepth)
+                for func_id in buff_to_func(region, buff_id)
             )
         )
         buff_entity.reverse = ReversedBuffType(raw=buff_reverse)
@@ -109,12 +109,12 @@ def get_func_entity(
     if reverse and reverseDepth >= ReverseDepth.skillNp:
         func_reverse = ReversedFunction(
             skill=(
-                get_skill_entity(region, item_id, reverse, reverseDepth)
-                for item_id in func_to_skillId(region, func_id)
+                get_skill_entity(region, skill_id, reverse, reverseDepth)
+                for skill_id in func_to_skillId(region, func_id)
             ),
             NP=(
-                get_td_entity(region, item_id, reverse, reverseDepth)
-                for item_id in func_to_tdId(region, func_id)
+                get_td_entity(region, td_id, reverse, reverseDepth)
+                for td_id in func_to_tdId(region, func_id)
             ),
         )
         func_entity.reverse = ReversedFunctionType(raw=func_reverse)
@@ -153,20 +153,20 @@ def get_skill_entity(
     )
 
     if reverse and reverseDepth >= ReverseDepth.servant:
-        activeSkills = {item.svtId for item in skill_entity.mstSvtSkill}
+        activeSkills = {svt_skill.svtId for svt_skill in skill_entity.mstSvtSkill}
         passiveSkills = passive_to_svtId(region, skill_id)
         skill_reverse = ReversedSkillTd(
             servant=(
-                get_servant_entity(region, item)
-                for item in activeSkills | passiveSkills
+                get_servant_entity(region, svt_id)
+                for svt_id in activeSkills | passiveSkills
             ),
             MC=(
-                get_mystic_code_entity(region, item)
-                for item in skill_to_MCId(region, skill_id)
+                get_mystic_code_entity(region, mc_id)
+                for mc_id in skill_to_MCId(region, skill_id)
             ),
             CC=(
-                get_command_code_entity(region, item)
-                for item in skill_to_CCId(region, skill_id)
+                get_command_code_entity(region, cc_id)
+                for cc_id in skill_to_CCId(region, skill_id)
             ),
         )
         skill_entity.reverse = ReversedSkillTdType(raw=skill_reverse)
@@ -207,8 +207,8 @@ def get_td_entity(
     if reverse and reverseDepth >= ReverseDepth.servant:
         td_reverse = ReversedSkillTd(
             servant=(
-                get_servant_entity(region, item.svtId)
-                for item in td_entity.mstSvtTreasureDevice
+                get_servant_entity(region, svt_id.svtId)
+                for svt_id in td_entity.mstSvtTreasureDevice
             )
         )
         td_entity.reverse = ReversedSkillTdType(raw=td_reverse)
@@ -315,9 +315,9 @@ def get_command_code_entity(
     cc_entity = CommandCodeEntity(
         mstCommandCode=masters[region].mstCommandCodeId[cc_id],
         mstSkill=(
-            get_skill_entity_no_reverse(region, item.skillId, expand)
-            for item in masters[region].mstCommandCodeSkill
-            if item.commandCodeId == cc_id
+            get_skill_entity_no_reverse(region, cc_skill.skillId, expand)
+            for cc_skill in masters[region].mstCommandCodeSkill
+            if cc_skill.commandCodeId == cc_id
         ),
         mstCommandCodeComment=masters[region].mstCommandCodeCommentId[cc_id][0],
     )

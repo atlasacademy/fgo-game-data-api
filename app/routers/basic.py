@@ -56,7 +56,7 @@ async def find_servant(
 ) -> Response:
     matches = search.search_servant(search_param, limit=10000)
     return list_response(
-        basic.get_basic_servant(search_param.region, item, lang) for item in matches
+        basic.get_basic_servant(search_param.region, svt_id, lang) for svt_id in matches
     )
 
 
@@ -113,7 +113,7 @@ async def find_equip(
 ) -> Response:
     matches = search.search_equip(search_param, limit=10000)
     return list_response(
-        basic.get_basic_equip(search_param.region, item, lang) for item in matches
+        basic.get_basic_equip(search_param.region, svt_id, lang) for svt_id in matches
     )
 
 
@@ -169,7 +169,7 @@ async def find_svt(
 ) -> Response:
     matches = search.search_servant(search_param, limit=10000)
     return list_response(
-        basic.get_basic_servant(search_param.region, item, lang) for item in matches
+        basic.get_basic_servant(search_param.region, svt_id, lang) for svt_id in matches
     )
 
 
@@ -209,7 +209,7 @@ if settings.documentation_all_nice:
 
 
 @router.get(
-    "/{region}/MC/{item_id}",
+    "/{region}/MC/{mc_id}",
     summary="Get Mystic Code data",
     description=get_mc_description,
     response_description="Mystic Code entity",
@@ -217,9 +217,9 @@ if settings.documentation_all_nice:
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
-async def get_mystic_code(region: Region, item_id: int) -> Response:
-    if item_id in masters[region].mstEquipId:
-        return item_response(basic.get_basic_mc(region, item_id))
+async def get_mystic_code(region: Region, mc_id: int) -> Response:
+    if mc_id in masters[region].mstEquipId:
+        return item_response(basic.get_basic_mc(region, mc_id))
     else:
         raise HTTPException(status_code=404, detail="Mystic Code not found")
 
@@ -237,7 +237,7 @@ if settings.documentation_all_nice:
 
 
 @router.get(
-    "/{region}/CC/{item_id}",
+    "/{region}/CC/{cc_id}",
     summary="Get Command Code data",
     description=get_cc_description,
     response_description="Command Code entity",
@@ -245,9 +245,9 @@ if settings.documentation_all_nice:
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
-async def get_command_code(region: Region, item_id: int) -> Response:
-    if item_id in masters[region].mstCommandCodeId:
-        return item_response(basic.get_basic_cc(region, item_id))
+async def get_command_code(region: Region, cc_id: int) -> Response:
+    if cc_id in masters[region].mstCommandCodeId:
+        return item_response(basic.get_basic_cc(region, cc_id))
     else:
         raise HTTPException(status_code=404, detail="Command Code not found")
 
@@ -275,8 +275,8 @@ async def find_skill(
 ) -> Response:
     matches = search.search_skill(search_param, limit=10000)
     return list_response(
-        basic.get_basic_skill(search_param.region, item, lang, reverse)
-        for item in matches
+        basic.get_basic_skill(search_param.region, skill_id, lang, reverse)
+        for skill_id in matches
     )
 
 
@@ -324,7 +324,8 @@ async def find_td(
 ) -> Response:
     matches = search.search_td(search_param, limit=10000)
     return list_response(
-        basic.get_basic_td(search_param.region, item, lang, reverse) for item in matches
+        basic.get_basic_td(search_param.region, td_id, lang, reverse)
+        for td_id in matches
     )
 
 
@@ -374,8 +375,10 @@ async def find_function(
 ) -> Response:
     matches = search.search_func(search_param, limit=10000)
     return list_response(
-        basic.get_basic_function(search_param.region, item, lang, reverse, reverseDepth)
-        for item in matches
+        basic.get_basic_function(
+            search_param.region, func_id, lang, reverse, reverseDepth
+        )
+        for func_id in matches
     )
 
 
@@ -429,8 +432,8 @@ async def find_buff(
 ) -> Response:
     matches = search.search_buff(search_param, limit=10000)
     return list_response(
-        basic.get_basic_buff(search_param.region, item, lang, reverse, reverseDepth)
-        for item in matches
+        basic.get_basic_buff(search_param.region, buff_id, lang, reverse, reverseDepth)
+        for buff_id in matches
     )
 
 

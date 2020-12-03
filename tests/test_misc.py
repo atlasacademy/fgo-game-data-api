@@ -102,5 +102,5 @@ def test_list_exclude() -> None:
     test_data = get_nice_servant_model(Region.JP, 504500, Language.en)
     excluded_keys = {"profile"}
     json_data = list_string_exclude([test_data], exclude=excluded_keys)
-    for item in excluded_keys:
-        assert item not in orjson.loads(json_data)
+    for key in excluded_keys:
+        assert key not in orjson.loads(json_data)

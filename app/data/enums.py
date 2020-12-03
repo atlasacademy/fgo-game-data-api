@@ -165,10 +165,12 @@ TARGETTYPE_WITH_PLAYER_APPLYTARGET = (
 
 
 ENEMY_FUNC_TARGETING_PLAYER_TEAM = {
-    (item, FuncApplyTarget.player) for item in TARGETTYPE_WITH_PLAYER_APPLYTARGET
+    (target_type, FuncApplyTarget.player)
+    for target_type in TARGETTYPE_WITH_PLAYER_APPLYTARGET
 }
 ENEMY_FUNC_TARGETING_ENEMY_TEAM = {
-    (item, FuncApplyTarget.enemy) for item in TARGETTYPE_WITH_ENEMY_APPLYTARGET
+    (target_type, FuncApplyTarget.enemy)
+    for target_type in TARGETTYPE_WITH_ENEMY_APPLYTARGET
 }
 ENEMY_FUNC_SIGNATURE = (
     ENEMY_FUNC_TARGETING_PLAYER_TEAM | ENEMY_FUNC_TARGETING_ENEMY_TEAM

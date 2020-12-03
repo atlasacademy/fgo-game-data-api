@@ -116,80 +116,85 @@ def search_servant(
     if not search_param.hasSearchParams:
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
-    svt_type_ints = {SVT_TYPE_NAME_REVERSE[item] for item in search_param.type}
-    svt_flag_ints = {SVT_FLAG_NAME_REVERSE[item] for item in search_param.flag}
+    svt_type_ints = {SVT_TYPE_NAME_REVERSE[svt_type] for svt_type in search_param.type}
+    svt_flag_ints = {SVT_FLAG_NAME_REVERSE[svt_flag] for svt_flag in search_param.flag}
     rarity_ints = set(search_param.rarity)
-    class_ints = {CLASS_NAME_REVERSE[item] for item in search_param.className}
-    gender_ints = {GENDER_TYPE_NAME_REVERSE[item] for item in search_param.gender}
-    attribute_ints = {ATTRIBUTE_NAME_REVERSE[item] for item in search_param.attribute}
+    class_ints = {CLASS_NAME_REVERSE[svt_class] for svt_class in search_param.className}
+    gender_ints = {
+        GENDER_TYPE_NAME_REVERSE[svt_gender] for svt_gender in search_param.gender
+    }
+    attribute_ints = {
+        ATTRIBUTE_NAME_REVERSE[svt_attribute]
+        for svt_attribute in search_param.attribute
+    }
     trait_ints = reverse_traits(search_param.trait)
 
     matches = [
-        item
-        for item in masters[search_param.region].mstSvt
-        if item.type in svt_type_ints
-        and item.flag in svt_flag_ints
-        and item.collectionNo not in search_param.excludeCollectionNo
-        and item.classId in class_ints
-        and item.genderType in gender_ints
-        and item.attri in attribute_ints
+        svt
+        for svt in masters[search_param.region].mstSvt
+        if svt.type in svt_type_ints
+        and svt.flag in svt_flag_ints
+        and svt.collectionNo not in search_param.excludeCollectionNo
+        and svt.classId in class_ints
+        and svt.genderType in gender_ints
+        and svt.attri in attribute_ints
         and (
-            trait_ints.issubset(item.individuality)
+            trait_ints.issubset(svt.individuality)
             or any(
                 trait_ints.issubset(limit.individuality)
                 for limit in masters[search_param.region].mstSvtLimitAddId.get(
-                    item.id, []
+                    svt.id, []
                 )
             )
         )
-        and masters[search_param.region].mstSvtLimitId[item.id][0].rarity in rarity_ints
+        and masters[search_param.region].mstSvtLimitId[svt.id][0].rarity in rarity_ints
     ]
 
     if search_param.name:
         matches = [
-            item
-            for item in matches
-            if match_name(search_param.name, item.name)
-            or match_name(search_param.name, item.ruby)
-            or match_name(search_param.name, get_safe(TRANSLATIONS, item.name))
+            svt
+            for svt in matches
+            if match_name(search_param.name, svt.name)
+            or match_name(search_param.name, svt.ruby)
+            or match_name(search_param.name, get_safe(TRANSLATIONS, svt.name))
         ]
 
     if len(matches) > limit:
         raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
 
-    return [item.id for item in matches]
+    return [svt.id for svt in matches]
 
 
 def search_equip(search_param: EquipSearchQueryParams, limit: int = 100) -> List[int]:
     if not search_param.hasSearchParams:
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
-    svt_type = {SVT_TYPE_NAME_REVERSE[item] for item in search_param.type}
-    svt_flag_ints = {SVT_FLAG_NAME_REVERSE[item] for item in search_param.flag}
+    svt_type = {SVT_TYPE_NAME_REVERSE[svt_type] for svt_type in search_param.type}
+    svt_flag_ints = {SVT_FLAG_NAME_REVERSE[svt_flag] for svt_flag in search_param.flag}
     rarity = set(search_param.rarity)
 
     matches = [
-        item
-        for item in masters[search_param.region].mstSvt
-        if item.type in svt_type
-        and item.flag in svt_flag_ints
-        and item.collectionNo not in search_param.excludeCollectionNo
-        and masters[search_param.region].mstSvtLimitId[item.id][0].rarity in rarity
+        svt
+        for svt in masters[search_param.region].mstSvt
+        if svt.type in svt_type
+        and svt.flag in svt_flag_ints
+        and svt.collectionNo not in search_param.excludeCollectionNo
+        and masters[search_param.region].mstSvtLimitId[svt.id][0].rarity in rarity
     ]
 
     if search_param.name:
         matches = [
-            item
-            for item in matches
-            if match_name(search_param.name, item.name)
-            or match_name(search_param.name, item.ruby)
-            or match_name(search_param.name, get_safe(TRANSLATIONS, item.name))
+            svt
+            for svt in matches
+            if match_name(search_param.name, svt.name)
+            or match_name(search_param.name, svt.ruby)
+            or match_name(search_param.name, get_safe(TRANSLATIONS, svt.name))
         ]
 
     if len(matches) > limit:
         raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
 
-    return [item.id for item in matches]
+    return [svt.id for svt in matches]
 
 
 def search_skill_svt(
@@ -226,7 +231,9 @@ def search_skill(search_param: SkillSearchParams, limit: int = 100) -> List[int]
     if not search_param.hasSearchParams:
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
-    type_ints = {SKILL_TYPE_NAME_REVERSE[item] for item in search_param.type}
+    type_ints = {
+        SKILL_TYPE_NAME_REVERSE[skill_type] for skill_type in search_param.type
+    }
     num = search_param.num if search_param.num else SkillSearchParamsDefault.num
     priority = (
         search_param.priority
@@ -250,27 +257,27 @@ def search_skill(search_param: SkillSearchParams, limit: int = 100) -> List[int]
     )
 
     matches = [
-        item
-        for item in masters[search_param.region].mstSkill
-        if item.type in type_ints
+        skill
+        for skill in masters[search_param.region].mstSkill
+        if skill.type in type_ints
         and search_skill_svt(
-            search_param.region, item.id, num, priority, strengthStatus
+            search_param.region, skill.id, num, priority, strengthStatus
         )
-        and search_skill_lv(search_param.region, item.id, lvl1coolDown, numFunctions)
+        and search_skill_lv(search_param.region, skill.id, lvl1coolDown, numFunctions)
     ]
 
     if search_param.name:
         matches = [
-            item
-            for item in matches
-            if match_name(search_param.name, item.name)
-            or match_name(search_param.name, item.ruby)
+            skill
+            for skill in matches
+            if match_name(search_param.name, skill.name)
+            or match_name(search_param.name, skill.ruby)
         ]
 
     if len(matches) > limit:
         raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
 
-    return [item.id for item in matches]
+    return [skill.id for skill in matches]
 
 
 def search_td_svt(
@@ -306,7 +313,7 @@ def search_td(search_param: TdSearchParams, limit: int = 100) -> List[int]:
     if not search_param.hasSearchParams:
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
-    card_ints = {CARD_TYPE_NAME_REVERSE[item] for item in search_param.card}
+    card_ints = {CARD_TYPE_NAME_REVERSE[td_catd] for td_catd in search_param.card}
     individuality = reverse_traits(search_param.individuality)
     hits = search_param.hits if search_param.hits else TdSearchParamsDefault.hits
     strengthStatus = (
@@ -321,13 +328,13 @@ def search_td(search_param: TdSearchParams, limit: int = 100) -> List[int]:
     )
 
     matches = [
-        item
-        for item in masters[search_param.region].mstTreasureDevice
-        if individuality.issubset(item.individuality)
-        and search_td_svt(search_param.region, item.id, card_ints, hits, strengthStatus)
+        td
+        for td in masters[search_param.region].mstTreasureDevice
+        if individuality.issubset(td.individuality)
+        and search_td_svt(search_param.region, td.id, card_ints, hits, strengthStatus)
         and search_td_lv(
             search_param.region,
-            item.id,
+            td.id,
             numFunctions,
             search_param.minNpNpGain,
             search_param.maxNpNpGain,
@@ -336,99 +343,101 @@ def search_td(search_param: TdSearchParams, limit: int = 100) -> List[int]:
 
     if search_param.name:
         matches = [
-            item
-            for item in matches
-            if match_name(search_param.name, item.name)
-            or match_name(search_param.name, item.ruby)
+            td
+            for td in matches
+            if match_name(search_param.name, td.name)
+            or match_name(search_param.name, td.ruby)
         ]
 
     if len(matches) > limit:
         raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
 
-    return [item.id for item in matches]
+    return [td.id for td in matches]
 
 
 def search_buff(search_param: BuffSearchQueryParams, limit: int = 100) -> List[int]:
     if not search_param.hasSearchParams:
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
-    buff_types = {BUFF_TYPE_NAME_REVERSE[item] for item in search_param.type}
+    buff_types = {BUFF_TYPE_NAME_REVERSE[buff_type] for buff_type in search_param.type}
     vals = reverse_traits(search_param.vals)
     tvals = reverse_traits(search_param.tvals)
     ckSelfIndv = reverse_traits(search_param.ckSelfIndv)
     ckOpIndv = reverse_traits(search_param.ckOpIndv)
 
     matches = [
-        item
-        for item in masters[search_param.region].mstBuff
-        if ((not search_param.type) or (search_param.type and item.type in buff_types))
+        buff
+        for buff in masters[search_param.region].mstBuff
+        if ((not search_param.type) or (search_param.type and buff.type in buff_types))
         and (
             (not search_param.buffGroup)
-            or (search_param.buffGroup and item.buffGroup in search_param.buffGroup)
+            or (search_param.buffGroup and buff.buffGroup in search_param.buffGroup)
         )
-        and vals.issubset(item.vals)
-        and tvals.issubset(item.tvals)
-        and ckSelfIndv.issubset(item.ckSelfIndv)
-        and ckOpIndv.issubset(item.ckOpIndv)
+        and vals.issubset(buff.vals)
+        and tvals.issubset(buff.tvals)
+        and ckSelfIndv.issubset(buff.ckSelfIndv)
+        and ckOpIndv.issubset(buff.ckOpIndv)
     ]
 
     if search_param.name:
         matches = [
-            item
-            for item in matches
-            if match_name(search_param.name, item.name)
-            or match_name(search_param.name, item.detail)
+            buff
+            for buff in matches
+            if match_name(search_param.name, buff.name)
+            or match_name(search_param.name, buff.detail)
         ]
 
     if len(matches) > limit:
         raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
 
-    return [item.id for item in matches]
+    return [buff.id for buff in matches]
 
 
 def search_func(search_param: FuncSearchQueryParams, limit: int = 100) -> List[int]:
     if not search_param.hasSearchParams:
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
-    func_types = {FUNC_TYPE_NAME_REVERSE[item] for item in search_param.type}
+    func_types = {FUNC_TYPE_NAME_REVERSE[func_type] for func_type in search_param.type}
     target_types = {
-        FUNC_TARGETTYPE_NAME_REVERSE[item] for item in search_param.targetType
+        FUNC_TARGETTYPE_NAME_REVERSE[func_targettype]
+        for func_targettype in search_param.targetType
     }
     apply_targets = {
-        FUNC_APPLYTARGET_NAME_REVERSE[item] for item in search_param.targetTeam
+        FUNC_APPLYTARGET_NAME_REVERSE[func_applytarget]
+        for func_applytarget in search_param.targetTeam
     }
     vals = reverse_traits(search_param.vals)
     tvals = reverse_traits(search_param.tvals)
     questTvals = reverse_traits(search_param.questTvals)
 
     matches = [
-        item
-        for item in masters[search_param.region].mstFunc
+        func
+        for func in masters[search_param.region].mstFunc
         if (
             (not search_param.type)
-            or (search_param.type and item.funcType in func_types)
+            or (search_param.type and func.funcType in func_types)
         )
         and (
             (not search_param.targetType)
-            or (search_param.targetType and item.targetType in target_types)
+            or (search_param.targetType and func.targetType in target_types)
         )
         and (
             (not search_param.targetTeam)
-            or (search_param.targetTeam and item.applyTarget in apply_targets)
+            or (search_param.targetTeam and func.applyTarget in apply_targets)
         )
-        and vals.issubset(item.vals)
-        and tvals.issubset(item.tvals)
-        and questTvals.issubset(item.questTvals)
+        and vals.issubset(func.vals)
+        and tvals.issubset(func.tvals)
+        and questTvals.issubset(func.questTvals)
     ]
 
     if search_param.popupText:
         matches = [
-            item
-            for item in matches
-            if match_name(search_param.popupText, item.popupText)
+            func
+            for func in matches
+            if match_name(search_param.popupText, func.popupText)
         ]
 
     if len(matches) > limit:
         raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
 
-    return [item.id for item in matches]
+    return [func.id for func in matches]

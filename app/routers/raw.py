@@ -59,8 +59,8 @@ async def find_servant(
 ) -> Response:
     matches = search.search_servant(search_param)
     return list_response(
-        raw.get_servant_entity(search_param.region, item, expand, lore)
-        for item in matches
+        raw.get_servant_entity(search_param.region, svt_id, expand, lore)
+        for svt_id in matches
     )
 
 
@@ -109,8 +109,8 @@ async def find_equip(
 ) -> Response:
     matches = search.search_equip(search_param)
     return list_response(
-        raw.get_servant_entity(search_param.region, item, expand, lore)
-        for item in matches
+        raw.get_servant_entity(search_param.region, svt_id, expand, lore)
+        for svt_id in matches
     )
 
 
@@ -159,8 +159,8 @@ async def find_svt(
 ) -> Response:
     matches = search.search_servant(search_param)
     return list_response(
-        raw.get_servant_entity(search_param.region, item, expand, lore)
-        for item in matches
+        raw.get_servant_entity(search_param.region, svt_id, expand, lore)
+        for svt_id in matches
     )
 
 
@@ -260,8 +260,8 @@ async def find_skill(
 ) -> Response:
     matches = search.search_skill(search_param)
     return list_response(
-        raw.get_skill_entity(search_param.region, item, reverse, expand=expand)
-        for item in matches
+        raw.get_skill_entity(search_param.region, skill_id, reverse, expand=expand)
+        for skill_id in matches
     )
 
 
@@ -308,8 +308,8 @@ async def find_td(
 ) -> Response:
     matches = search.search_td(search_param)
     return list_response(
-        raw.get_td_entity(search_param.region, item, reverse, expand=expand)
-        for item in matches
+        raw.get_td_entity(search_param.region, td_id, reverse, expand=expand)
+        for td_id in matches
     )
 
 
@@ -357,8 +357,8 @@ async def find_function(
 ) -> Response:
     matches = search.search_func(search_param)
     return list_response(
-        raw.get_func_entity(search_param.region, item, reverse, reverseDepth, expand)
-        for item in matches
+        raw.get_func_entity(search_param.region, func_id, reverse, reverseDepth, expand)
+        for func_id in matches
     )
 
 
@@ -411,8 +411,8 @@ async def find_buff(
 ) -> Response:
     matches = search.search_buff(search_param)
     return list_response(
-        raw.get_buff_entity(search_param.region, item, reverse, reverseDepth)
-        for item in matches
+        raw.get_buff_entity(search_param.region, buff_id, reverse, reverseDepth)
+        for buff_id in matches
     )
 
 

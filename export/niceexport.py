@@ -122,46 +122,46 @@ CONSTANT_INCLUDE = {
 
 def get_nice_constant(raw_data: Any) -> Any:
     return {
-        item["name"]: item["value"]
-        for item in raw_data
-        if item["name"] in CONSTANT_INCLUDE
+        constant["name"]: constant["value"]
+        for constant in raw_data
+        if constant["name"] in CONSTANT_INCLUDE
     }
 
 
 def get_nice_attackrate(raw_data: Any) -> Any:
     return {
-        CLASS_NAME[item["id"]]: item["attackRate"]
-        for item in raw_data
-        if item["id"] in CLASS_NAME
+        CLASS_NAME[class_data["id"]]: class_data["attackRate"]
+        for class_data in raw_data
+        if class_data["id"] in CLASS_NAME
     }
 
 
 def get_nice_card_data(raw_data: Any) -> Any:
     out_data: Dict[str, Dict[int, Any]] = {}
-    for item in raw_data:
-        card_id = item["id"]
-        card_index = item["num"]
-        item["individuality"] = [
+    for card in raw_data:
+        card_id = card["id"]
+        card_index = card["num"]
+        card["individuality"] = [
             trait.dict(exclude_unset=True)
-            for trait in get_traits_list(item["individuality"])
+            for trait in get_traits_list(card["individuality"])
         ]
-        item.pop("id")
-        item.pop("num")
+        card.pop("id")
+        card.pop("num")
         if card_id in CARD_TYPE_NAME:
             card_name = CARD_TYPE_NAME[card_id]
             if card_name in out_data:
-                out_data[card_name][card_index] = item
+                out_data[card_name][card_index] = card
             else:
-                out_data[card_name] = {card_index: item}
+                out_data[card_name] = {card_index: card}
     return out_data
 
 
 def get_nice_attri_relation(raw_data: Any) -> Any:
     out_data: Dict[str, Dict[str, int]] = {}
-    for item in raw_data:
-        atkAttri = ATTRIBUTE_NAME[item["atkAttri"]]
-        defAttri = ATTRIBUTE_NAME[item["defAttri"]]
-        attackRate = item["attackRate"]
+    for attribute_relation in raw_data:
+        atkAttri = ATTRIBUTE_NAME[attribute_relation["atkAttri"]]
+        defAttri = ATTRIBUTE_NAME[attribute_relation["defAttri"]]
+        attackRate = attribute_relation["attackRate"]
         if atkAttri in out_data:
             out_data[atkAttri][defAttri] = attackRate
         else:
@@ -171,11 +171,11 @@ def get_nice_attri_relation(raw_data: Any) -> Any:
 
 def get_nice_class_relation(raw_data: Any) -> Any:
     out_data: Dict[str, Dict[str, int]] = {}
-    for item in raw_data:
-        atkAttri = CLASS_NAME.get(item["atkClass"])
-        defAttri = CLASS_NAME.get(item["defClass"])
+    for class_relation in raw_data:
+        atkAttri = CLASS_NAME.get(class_relation["atkClass"])
+        defAttri = CLASS_NAME.get(class_relation["defClass"])
         if atkAttri and defAttri:
-            attackRate = item["attackRate"]
+            attackRate = class_relation["attackRate"]
             if atkAttri in out_data:
                 out_data[atkAttri][defAttri] = attackRate
             else:
@@ -186,9 +186,10 @@ def get_nice_class_relation(raw_data: Any) -> Any:
 def get_nice_svt_exceed(raw_data: Any) -> Any:
     def find_previous_exceed_qp(rarity: int, exceed: int) -> int:
         previous_exceed = next(
-            item
-            for item in raw_data
-            if item["rarity"] == rarity and item["exceedCount"] == exceed - 1
+            svt_exceed
+            for svt_exceed in raw_data
+            if svt_exceed["rarity"] == rarity
+            and svt_exceed["exceedCount"] == exceed - 1
         )
         previous_exceed_qp: int = previous_exceed["qp"]
         return previous_exceed_qp
@@ -210,9 +211,9 @@ def get_nice_svt_exceed(raw_data: Any) -> Any:
 
 
 def get_nice_buff_action(raw_data: Any) -> Any:
-    def get_max_rate(bufftypelist: List[int]) -> List[int]:
+    def get_max_rate(buff_types: List[int]) -> List[int]:
         return list(
-            {item["maxRate"] for item in raw_data if item["type"] in bufftypelist}
+            {buff["maxRate"] for buff in raw_data if buff["type"] in buff_types}
         )
 
     with open(
@@ -222,8 +223,8 @@ def get_nice_buff_action(raw_data: Any) -> Any:
 
     out_data = {}
 
-    for item in data:
-        out_item = data[item]
+    for buff_action in data:
+        out_item = data[buff_action]
         out_item["limit"] = BUFF_LIMIT_NAME[out_item["limit"]]
         out_item["maxRate"] = get_max_rate(
             out_item["plusTypes"] + out_item["minusTypes"]
@@ -234,7 +235,7 @@ def get_nice_buff_action(raw_data: Any) -> Any:
         out_item["minusTypes"] = [
             BUFF_TYPE_NAME[bufft] for bufft in out_item["minusTypes"]
         ]
-        out_data[BUFF_ACTION_NAME[BuffAction[item].value]] = out_item
+        out_data[BUFF_ACTION_NAME[BuffAction[buff_action].value]] = out_item
     return out_data
 
 
@@ -276,13 +277,13 @@ TO_EXPORT = [
 
 
 def export_constant(region: Region, master_path: Path, export_path: Path) -> None:
-    for item in TO_EXPORT:
-        print(f"Exporting {item.input} ...")
-        with open(master_path / f"{item.input}.json", "r", encoding="utf-8") as fp:
+    for export in TO_EXPORT:
+        print(f"Exporting {export.input} ...")
+        with open(master_path / f"{export.input}.json", "r", encoding="utf-8") as fp:
             raw_data = json.load(fp)
-        export_file = export_path / region.value / f"{item.output}.json"
+        export_file = export_path / region.value / f"{export.output}.json"
         with open(export_file, "w", encoding="utf-8") as fp:
-            json.dump(item.converter(raw_data), fp, ensure_ascii=False)
+            json.dump(export.converter(raw_data), fp, ensure_ascii=False)
 
 
 def export_nice_master_lvl(region: Region, master_path: Path, export_path: Path) -> Any:
@@ -294,7 +295,7 @@ def export_nice_master_lvl(region: Region, master_path: Path, export_path: Path)
         mstUserExp: List[Dict[str, int]] = json.load(fp)
 
     def get_current_value(base: int, key: str, current: int) -> int:
-        return base + sum(item[key] for item in mstUserExp[: current + 1])
+        return base + sum(user_exp[key] for user_exp in mstUserExp[: current + 1])
 
     def get_total_exp(current: int) -> int:
         if current == 0:

@@ -34,14 +34,14 @@ def main(
         ce_translations: Dict[str, str] = json.load(fp)
 
     na_names: Dict[int, str] = {
-        item["collectionNo"]: item["name"]
-        for item in na_svt
-        if item["type"] == 6 and item["collectionNo"] != 0
+        svt["collectionNo"]: svt["name"]
+        for svt in na_svt
+        if svt["type"] == 6 and svt["collectionNo"] != 0
     }
     jp_names: Dict[int, str] = {
-        item["collectionNo"]: item["name"]
-        for item in jp_svt
-        if item["type"] == 6 and item["collectionNo"] != 0
+        svt["collectionNo"]: svt["name"]
+        for svt in jp_svt
+        if svt["type"] == 6 and svt["collectionNo"] != 0
     }
 
     updated_ce_translation = {
