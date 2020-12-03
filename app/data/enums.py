@@ -84,7 +84,7 @@ SKILL_TYPE_NAME_REVERSE: Dict[NiceSkillType, int] = {
 
 ### Function Type ###
 
-
+# The vals attribute of these func types are not buff IDs.
 FUNC_VALS_NOT_BUFF = {
     FuncType.SUB_STATE,
     FuncType.EVENT_DROP_UP,

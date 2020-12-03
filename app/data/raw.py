@@ -29,22 +29,27 @@ from .schemas.raw import (
 
 
 def buff_to_func(region: Region, buff_id: int) -> Set[int]:
+    """Returns a set of function ID that uses the given buff ID in vals"""
     return masters[region].buffToFunc.get(buff_id, set())
 
 
 def func_to_skillId(region: Region, func_id: int) -> Set[int]:
+    """Returns a set of skill ID that uses the given function ID"""
     return masters[region].funcToSkill.get(func_id, set())
 
 
 def func_to_tdId(region: Region, func_id: int) -> Set[int]:
+    """Returns a set of treasure device (NP) ID that uses the given function ID"""
     return masters[region].funcToTd.get(func_id, set())
 
 
 def passive_to_svtId(region: Region, skill_id: int) -> Set[int]:
+    """Returns a set of svt ID that has the given skill ID as passive"""
     return masters[region].passiveSkillToSvt.get(skill_id, set())
 
 
 def skill_to_MCId(region: Region, skill_id: int) -> Set[int]:
+    """Returns a set of Mystic Code ID that has the given skill ID"""
     return {
         equip_skill.equipId
         for equip_skill in masters[region].mstEquipSkill
@@ -53,6 +58,7 @@ def skill_to_MCId(region: Region, skill_id: int) -> Set[int]:
 
 
 def skill_to_CCId(region: Region, skill_id: int) -> Set[int]:
+    """Returns a set of Command Code ID that has the given skill ID"""
     return {
         cc_skill.commandCodeId
         for cc_skill in masters[region].mstCommandCodeSkill
