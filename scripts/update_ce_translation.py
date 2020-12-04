@@ -45,7 +45,7 @@ def main(
     }
 
     updated_ce_translation = {
-        jp_name: na_names.get(colNo, ce_translations.get(jp_name, ""))
+        jp_name: na_names.get(colNo, ce_translations.get(jp_name, jp_name))
         for colNo, jp_name in sorted(jp_names.items(), key=lambda x: x[0])
     }
 
