@@ -608,6 +608,7 @@ class BuffType(IntEnum):
     CHANGE_COMMAND_CARD_TYPE = 156
     SPECIAL_INVINCIBLE = 157
     PREVENT_DEATH_BY_DAMAGE = 158
+    COMMANDCODEATTACK_AFTER_FUNCTION = 159
 
 
 class NiceBuffType(str, Enum):
@@ -757,6 +758,7 @@ class NiceBuffType(str, Enum):
     changeCommandCardType = "changeCommandCardType"
     specialInvincible = "specialInvincible"
     preventDeathByDamage = "preventDeathByDamage"
+    commandcodeattackAfterFunction = "commandcodeattackAfterFunction"
 
 
 BUFF_TYPE_NAME: Dict[int, NiceBuffType] = {
@@ -904,6 +906,7 @@ BUFF_TYPE_NAME: Dict[int, NiceBuffType] = {
     156: NiceBuffType.changeCommandCardType,
     157: NiceBuffType.specialInvincible,
     158: NiceBuffType.preventDeathByDamage,
+    159: NiceBuffType.commandcodeattackAfterFunction,
 }
 
 
@@ -1005,6 +1008,7 @@ class BuffAction(IntEnum):
     CHANGE_COMMAND_CARD_TYPE = 94
     SPECIAL_INVINCIBLE = 95
     PREVENT_DEATH_BY_DAMAGE = 96
+    FUNCTION_COMMANDCODEATTACK_AFTER = 97
 
 
 class NiceBuffAction(str, Enum):
@@ -1107,6 +1111,7 @@ class NiceBuffAction(str, Enum):
     changeCommandCardType = "changeCommandCardType"
     specialInvincible = "specialInvincible"
     preventDeathByDamage = "preventDeathByDamage"
+    functionCommandcodeattackAfter = "functionCommandcodeattackAfter"
 
 
 BUFF_ACTION_NAME: Dict[int, NiceBuffAction] = {
@@ -1207,6 +1212,7 @@ BUFF_ACTION_NAME: Dict[int, NiceBuffAction] = {
     94: NiceBuffAction.changeCommandCardType,
     95: NiceBuffAction.specialInvincible,
     96: NiceBuffAction.preventDeathByDamage,
+    97: NiceBuffAction.functionCommandcodeattackAfter,
 }
 
 
@@ -1301,6 +1307,8 @@ class DataValsType(IntEnum):
     MotionChange = 63
     PopLabelDelay = 64
     NoTargetNoAct = 65
+    CardIndex = 66
+    CardIndividuality = 67
 
 
 class ClassRelationOverwriteType(IntEnum):
