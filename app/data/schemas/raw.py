@@ -838,6 +838,7 @@ class Master(BaseModel):
     mstVoiceId: Dict[str, MstVoice]
     # mstSvtGroup: List[MstSvtGroup]
     mstSvtGroupId: Dict[int, List[MstSvtGroup]]
+    mstSvtGroupSvtId: Dict[int, List[MstSvtGroup]]
     # globalNewMstSubtitle: List[GlobalNewMstSubtitle] = []
     mstSubtitleId: Dict[int, List[GlobalNewMstSubtitle]] = {}
     # mstClassRelationOverwrite: List[MstClassRelationOverwrite]

@@ -167,6 +167,7 @@ def update_gamedata() -> None:
             ("mstSvtCostumeId", "mstSvtCostume", "svtId"),
             ("mstSvtExpId", "mstSvtExp", "type"),
             ("mstSvtGroupId", "mstSvtGroup", "id"),
+            ("mstSvtGroupSvtId", "mstSvtGroup", "svtId"),
             ("mstSvtLimitId", "mstSvtLimit", "svtId"),
             ("mstSvtLimitAddId", "mstSvtLimitAdd", "svtId"),
             ("mstSvtSkillId", "mstSvtSkill", "skillId"),

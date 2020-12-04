@@ -1,4 +1,4 @@
-from typing import Set
+from typing import Dict, Set, Tuple
 
 import pytest
 from fastapi.testclient import TestClient
@@ -39,7 +39,7 @@ def get_item_list(response: Response, response_type: str, endpoint: str) -> Set[
         return {item[id_name] for item in response.json()}
 
 
-test_cases_dict = {
+test_cases_dict: Dict[str, Tuple[str, Set[int]]] = {
     "equip_name_NA_1": ("NA/equip/search?name=Kaleidoscope", {9400340}),
     "equip_name_NA_2": ("NA/equip/search?name=Banquet", {9302550, 9400290}),
     "equip_name_JP": ("JP/equip/search?name=カレイドスコープ", {9400340}),
@@ -78,6 +78,18 @@ test_cases_dict = {
     "servant_search_equip": (
         "NA/servant/search?name=Golden%20Sumo&type=servantEquip&className=ALL",
         {9401640},
+    ),
+    "servant_search_voice_cond_svt_id": (
+        "JP/servant/search?voiceCondSvt=202900&lang=en",
+        {102800, 404000, 602300},
+    ),
+    "servant_search_voice_cond_svt_collectionNo": (
+        "JP/servant/search?voiceCondSvt=200&lang=en",
+        {102800, 404000, 602300},
+    ),
+    "servant_search_voice_cond_svt_group": (
+        "JP/servant/search?voiceCondSvt=190&lang=en&className=archer",
+        {201200, 202900},
     ),
     "svt_search_enemy": (
         "JP/svt/search?lang=en&trait=2667&type=enemyCollection",

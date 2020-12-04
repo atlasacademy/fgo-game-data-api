@@ -75,6 +75,7 @@ class ServantSearchQueryParams:
     gender: List[NiceGender] = Query(list(GENDER_TYPE_NAME.values()))
     attribute: List[Attribute] = Query(list(ATTRIBUTE_NAME.values()))
     trait: List[Union[Trait, int]] = Query([])
+    voiceCondSvt: List[int] = Query([])
 
     def hasSearchParams(self) -> bool:
         return any(
@@ -87,6 +88,7 @@ class ServantSearchQueryParams:
                 self.gender != list(GENDER_TYPE_NAME.values()),
                 self.attribute != list(ATTRIBUTE_NAME.values()),
                 self.trait,
+                self.voiceCondSvt,
             ]
         )
 
@@ -105,6 +107,8 @@ class ServantSearchQueryParams:
         - **gender**: female, male or unknown.
         - **attribute**: human, sky, earth, star or beast.
         - **trait**: an integer or an item in the trait enum. See the traits detail in the Nice Servant response.
+        - **voiceCondValue**: servant collectionNo or servant ID. Will find the servants that
+        have voice lines directed to the given servants.
 
         At least one of name, type, rarity, className, gender, attribute and trait is required for the query.
         """
@@ -123,6 +127,7 @@ class SvtSearchQueryParams:
     gender: List[NiceGender] = Query(list(GENDER_TYPE_NAME.values()))
     attribute: List[Attribute] = Query(list(ATTRIBUTE_NAME.values()))
     trait: List[Union[Trait, int]] = Query([])
+    voiceCondSvt: List[int] = Query([])
 
     def hasSearchParams(self) -> bool:
         return any(
@@ -135,6 +140,7 @@ class SvtSearchQueryParams:
                 self.gender != list(GENDER_TYPE_NAME.values()),
                 self.attribute != list(ATTRIBUTE_NAME.values()),
                 self.trait,
+                self.voiceCondSvt,
             ]
         )
 
@@ -151,6 +157,8 @@ class SvtSearchQueryParams:
         - **gender**: female, male or unknown.
         - **attribute**: human, sky, earth, star or beast.
         - **trait**: an integer or an item in the trait enum. See the traits detail in the Nice Servant response.
+        - **voiceCondValue**: servant collectionNo or servant ID. Will find the servants that
+        have voice lines directed to the given servants.
 
         At least one of name, type, rarity, className, gender, attribute and trait is required for the query.
         """

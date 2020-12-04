@@ -29,8 +29,10 @@ from .enums import (
     SVT_TYPE_NAME_REVERSE,
     TRAIT_NAME_REVERSE,
     Trait,
+    VoiceCondType,
 )
 from .gamedata import masters
+from .schemas.raw import MstSvtVoice
 from .translations import TRANSLATIONS
 from .utils import get_safe
 
@@ -109,6 +111,22 @@ def match_name(search_param: str, name: str) -> bool:
         return fuzz.ratio(combined_2to1, combined_1to2) > NAME_MATCH_THRESHOLD
 
 
+def voice_contain_cond_value(
+    svt_voice: MstSvtVoice, cond_svt_value: Set[int], cond_group_value: Set[int]
+) -> bool:
+    for script in svt_voice.scriptJson:
+        for cond in script.conds:
+            if (
+                cond.condType == VoiceCondType.SVT_GET and cond.value in cond_svt_value
+            ) or (
+                cond.condType == VoiceCondType.SVT_GROUP
+                and cond.value in cond_group_value
+            ):
+                return True
+
+    return False
+
+
 def search_servant(
     search_param: Union[ServantSearchQueryParams, SvtSearchQueryParams],
     limit: int = 100,
@@ -149,6 +167,32 @@ def search_servant(
         )
         and masters[search_param.region].mstSvtLimitId[svt.id][0].rarity in rarity_ints
     ]
+
+    if search_param.voiceCondSvt:
+        converted_to_svt_id = {
+            masters[search_param.region].mstSvtServantCollectionNo.get(svt_id, svt_id)
+            for svt_id in search_param.voiceCondSvt
+        }
+        voice_cond_svt = {
+            svt_id
+            for svt_id in converted_to_svt_id
+            if svt_id in masters[search_param.region].mstSvtServantCollectionNo.values()
+        }
+        voice_cond_group = {
+            group.id
+            for svt_id in converted_to_svt_id
+            for group in masters[search_param.region].mstSvtGroupSvtId.get(svt_id, [])
+        }
+        matches = [
+            svt
+            for svt in matches
+            if any(
+                voice_contain_cond_value(svt_voice, voice_cond_svt, voice_cond_group)
+                for svt_voice in masters[search_param.region].mstSvtVoiceId.get(
+                    svt.id, []
+                )
+            )
+        ]
 
     if search_param.name:
         matches = [

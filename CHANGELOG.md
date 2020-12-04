@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.23.0 - 2020-12-04
+
+### Added
+
+- LB5.5 names and traits
+- `voiceCondSvt` option for servant search. Search for servants that have voice lines for the given servant IDs or collectionNos.
+
 ## 5.22.0 - 2020-11-26
 
 ### Added
