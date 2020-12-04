@@ -113,7 +113,7 @@ def search_servant(
     search_param: Union[ServantSearchQueryParams, SvtSearchQueryParams],
     limit: int = 100,
 ) -> List[int]:
-    if not search_param.hasSearchParams:
+    if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
     svt_type_ints = {SVT_TYPE_NAME_REVERSE[svt_type] for svt_type in search_param.type}
@@ -166,7 +166,7 @@ def search_servant(
 
 
 def search_equip(search_param: EquipSearchQueryParams, limit: int = 100) -> List[int]:
-    if not search_param.hasSearchParams:
+    if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
     svt_type = {SVT_TYPE_NAME_REVERSE[svt_type] for svt_type in search_param.type}
@@ -228,7 +228,7 @@ def search_skill_lv(
 
 
 def search_skill(search_param: SkillSearchParams, limit: int = 100) -> List[int]:
-    if not search_param.hasSearchParams:
+    if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
     type_ints = {
@@ -310,7 +310,7 @@ def search_td_lv(
 
 
 def search_td(search_param: TdSearchParams, limit: int = 100) -> List[int]:
-    if not search_param.hasSearchParams:
+    if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
     card_ints = {CARD_TYPE_NAME_REVERSE[td_catd] for td_catd in search_param.card}
@@ -356,7 +356,7 @@ def search_td(search_param: TdSearchParams, limit: int = 100) -> List[int]:
 
 
 def search_buff(search_param: BuffSearchQueryParams, limit: int = 100) -> List[int]:
-    if not search_param.hasSearchParams:
+    if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
     buff_types = {BUFF_TYPE_NAME_REVERSE[buff_type] for buff_type in search_param.type}
@@ -394,7 +394,7 @@ def search_buff(search_param: BuffSearchQueryParams, limit: int = 100) -> List[i
 
 
 def search_func(search_param: FuncSearchQueryParams, limit: int = 100) -> List[int]:
-    if not search_param.hasSearchParams:
+    if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
     func_types = {FUNC_TYPE_NAME_REVERSE[func_type] for func_type in search_param.type}

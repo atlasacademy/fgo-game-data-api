@@ -1,5 +1,5 @@
 import inspect
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Any, ClassVar, Dict, Iterable, List, Mapping, Optional, Type, Union
 
 from fastapi import Query
@@ -66,7 +66,6 @@ SERVANT_TYPE = [
 @dataclass
 class ServantSearchQueryParams:
     region: Region
-    hasSearchParams: bool = field(init=False)
     name: Optional[str] = None
     excludeCollectionNo: List[int] = Query([0])
     type: List[NiceSvtType] = Query(SERVANT_TYPE)
@@ -77,8 +76,8 @@ class ServantSearchQueryParams:
     attribute: List[Attribute] = Query(list(ATTRIBUTE_NAME.values()))
     trait: List[Union[Trait, int]] = Query([])
 
-    def __post_init__(self) -> None:
-        self.hasSearchParams = any(
+    def hasSearchParams(self) -> bool:
+        return any(
             [
                 self.name,
                 self.type != SERVANT_TYPE,
@@ -87,7 +86,7 @@ class ServantSearchQueryParams:
                 self.className != PLAYABLE_CLASS_LIST,
                 self.gender != list(GENDER_TYPE_NAME.values()),
                 self.attribute != list(ATTRIBUTE_NAME.values()),
-                self.trait != [],
+                self.trait,
             ]
         )
 
@@ -115,7 +114,6 @@ class ServantSearchQueryParams:
 @dataclass
 class SvtSearchQueryParams:
     region: Region
-    hasSearchParams: bool = field(init=False)
     name: Optional[str] = None
     excludeCollectionNo: List[int] = Query([-1])
     type: List[NiceSvtType] = Query(list(SVT_TYPE_NAME.values()))
@@ -126,8 +124,8 @@ class SvtSearchQueryParams:
     attribute: List[Attribute] = Query(list(ATTRIBUTE_NAME.values()))
     trait: List[Union[Trait, int]] = Query([])
 
-    def __post_init__(self) -> None:
-        self.hasSearchParams = any(
+    def hasSearchParams(self) -> bool:
+        return any(
             [
                 self.name,
                 self.type != list(SVT_TYPE_NAME.values()),
@@ -136,7 +134,7 @@ class SvtSearchQueryParams:
                 self.className != list(CLASS_NAME.values()),
                 self.gender != list(GENDER_TYPE_NAME.values()),
                 self.attribute != list(ATTRIBUTE_NAME.values()),
-                self.trait != [],
+                self.trait,
             ]
         )
 
@@ -162,15 +160,14 @@ class SvtSearchQueryParams:
 @dataclass
 class EquipSearchQueryParams:
     region: Region
-    hasSearchParams: bool = field(init=False)
     name: Optional[str] = None
     excludeCollectionNo: List[int] = Query([0])
     type: List[NiceSvtType] = Query([NiceSvtType.servantEquip])
     flag: List[NiceSvtFlag] = Query(list(SVT_FLAG_NAME.values()))
     rarity: List[int] = Query(list(range(1, 6)), ge=1, le=5)
 
-    def __post_init__(self) -> None:
-        self.hasSearchParams = any(
+    def hasSearchParams(self) -> bool:
+        return any(
             [
                 self.name,
                 self.type != [NiceSvtType.servantEquip],
@@ -206,7 +203,6 @@ class SkillSearchParamsDefault:
 @dataclass
 class SkillSearchParams:
     region: Region
-    hasSearchParams: bool = field(init=False)
     name: Optional[str] = None
     type: List[NiceSkillType] = Query(SkillSearchParamsDefault.type)
     num: List[int] = Query(
@@ -233,8 +229,8 @@ class SkillSearchParams:
         le=max(SkillSearchParamsDefault.numFunctions),
     )
 
-    def __post_init__(self) -> None:
-        self.hasSearchParams = any(
+    def hasSearchParams(self) -> bool:
+        return any(
             [
                 self.name,
                 self.type != SkillSearchParamsDefault.type,
@@ -275,7 +271,6 @@ class TdSearchParamsDefault:
 @dataclass
 class TdSearchParams:
     region: Region
-    hasSearchParams: bool = field(init=False)
     name: Optional[str] = None
     card: List[NiceCardType] = Query(TdSearchParamsDefault.card)
     individuality: List[Union[Trait, int]] = Query([])
@@ -303,8 +298,8 @@ class TdSearchParams:
         le=TdSearchParamsDefault.maxNpNpGain,
     )
 
-    def __post_init__(self) -> None:
-        self.hasSearchParams = any(
+    def hasSearchParams(self) -> bool:
+        return any(
             [
                 self.name,
                 self.card != TdSearchParamsDefault.card,
@@ -337,7 +332,6 @@ class TdSearchParams:
 @dataclass
 class BuffSearchQueryParams:
     region: Region
-    hasSearchParams: bool = field(init=False)
     name: Optional[str] = None
     type: List[NiceBuffType] = Query([])
     buffGroup: List[int] = Query([])
@@ -346,8 +340,8 @@ class BuffSearchQueryParams:
     ckSelfIndv: List[Union[Trait, int]] = Query([])
     ckOpIndv: List[Union[Trait, int]] = Query([])
 
-    def __post_init__(self) -> None:
-        self.hasSearchParams = any(
+    def hasSearchParams(self) -> bool:
+        return any(
             [
                 self.name,
                 self.type,
@@ -379,7 +373,6 @@ class BuffSearchQueryParams:
 @dataclass
 class FuncSearchQueryParams:
     region: Region
-    hasSearchParams: bool = field(init=False)
     popupText: Optional[str] = None
     type: List[NiceFuncType] = Query([])
     targetType: List[NiceFuncTargetType] = Query([])
@@ -388,8 +381,8 @@ class FuncSearchQueryParams:
     tvals: List[Union[Trait, int]] = Query([])
     questTvals: List[Union[Trait, int]] = Query([])
 
-    def __post_init__(self) -> None:
-        self.hasSearchParams = any(
+    def hasSearchParams(self) -> bool:
+        return any(
             [
                 self.popupText,
                 self.type,
