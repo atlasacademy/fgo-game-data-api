@@ -521,6 +521,7 @@ class Trait(str, Enum):
     fieldShoreOrImaginarySpace = "fieldShoreOrImaginarySpace"
     shutenOnField = "shutenOnField"
     shuten = "shuten"
+    genji = "genji"
 
 
 TRAIT_NAME: Dict[int, Trait] = {
@@ -635,6 +636,7 @@ TRAIT_NAME: Dict[int, Trait] = {
     2732: Trait.fieldShoreOrImaginarySpace,  # Nemo's 3rd skill and bond CE
     2733: Trait.shutenOnField,  # Ibaraki strengthened 2nd skill
     2734: Trait.shuten,  # Ibaraki strengthened 2nd skill
+    2735: Trait.genji,
     # 2xxx: CQ or Story quests buff
     3000: Trait.normalAttack0,  # Normal attack, including NP
     3001: Trait.normalAttack1,  # Haven't figured out the difference between the 3
