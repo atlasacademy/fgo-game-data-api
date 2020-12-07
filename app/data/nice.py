@@ -1017,7 +1017,7 @@ def get_nice_servant(
             ],
         }
 
-        if raw_data.mstSvt.isServant():
+        if raw_data.mstSvtLimit:
             nice_data["profile"]["stats"] = {
                 "strength": get_nice_status_rank(raw_data.mstSvtLimit[0].power),
                 "endurance": get_nice_status_rank(raw_data.mstSvtLimit[0].defense),
