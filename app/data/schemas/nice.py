@@ -273,8 +273,8 @@ class NiceBaseFunction(BaseModelORJson):
     functvals: List[NiceTrait] = Field(
         ...,
         title="Function tvals",
-        description="Function tvals: I'm quite sure this field is used for "
-        "visual purposes only and not gameplay.",
+        description="Function tvals: If available, function's targets or their buffs "
+        "need to satisfy the traits given here.",
     )
     funcquestTvals: List[NiceTrait] = Field(
         ...,
