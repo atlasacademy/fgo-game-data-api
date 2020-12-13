@@ -27,7 +27,21 @@ To discuss more about the API, you can go to the [Atlas Academy Discord](https:/
 Bug reports and feature requests are welcome.
 Source code of the API is available on [GitHub](https://github.com/atlasacademy/fgo-game-data-api).
 
-Static files that can be used for damage calculation. Change `JP` to `NA` in the URL if you are looking for NA constants. Mapping of the damage formula to the API can be found [here](https://github.com/atlasacademy/fgo-game-data-docs/tree/master/battle):
+Current API data version can be found [here](/info).
+
+### API Usage
+
+It's recommended to use the static export files or search with the `/basic` endpoints
+and fetch nice or raw data as needed.
+A big search with nice or raw data will take a while to respond.
+Feel free to contact me if you would like to see an export file that is not currently available.
+
+### Static Constants
+
+Here are the static files that can be used for damage calculation.
+Change `JP` to `NA` in the URL if you are looking for NA constants.
+Mapping of the damage formula to the API can be found
+[here](https://github.com/atlasacademy/fgo-game-data-docs/tree/master/battle):
 - [Attribute Affinity](/export/JP/NiceAttributeRelation.json)
 - [Class Attack Rate](/export/JP/NiceClassAttackRate.json)
 - [Class Affinity](/export/JP/NiceClassRelation.json)
@@ -36,14 +50,12 @@ Static files that can be used for damage calculation. Change `JP` to `NA` in the
 - [Buff Action info](/export/JP/NiceBuffList.ActionList.json)
 - [Master Level info](/export/JP/NiceUserLevel.json)
 - [Palingenesis QP cost](/export/JP/NiceSvtGrailCost.json)
-
-Current API data version can be found [here](/info).
-
-It's recommended to use the static export files or search with the `/basic` endpoints and fetch nice or raw data as needed.
-A big search with nice or raw data will take a while to respond. Feel free to contact me if you would like to see an
-export file that is not currently available.
 """
 export_links = """
+
+### Export files
+
+#### Nice data export files
 
 Pre-generated nice data that can be served instantly unlike querying the API:
 - Both regions (The data is the same for both of the NA and JP endpoints):
@@ -63,6 +75,8 @@ Pre-generated nice data that can be served instantly unlike querying the API:
   - [JP Material](/export/JP/nice_item.json)
   - [JP Mystic Code](/export/JP/nice_mystic_code.json)
   - [JP Item](/export/JP/nice_item.json)
+
+#### Basic data export files
 
 Pre-generated basic data that can be used for indexing purposes:
 - NA data:

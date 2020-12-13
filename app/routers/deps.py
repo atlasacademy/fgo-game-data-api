@@ -97,20 +97,21 @@ class ServantSearchQueryParams:
         Search and return the list of matched servant entities.
 
         - **name**: servant name. Searching JP data using English name works too.
-        - **excludeCollectionNo**: int, defaults to 0. Won't return records with the specified collectionNo.
+        - **excludeCollectionNo**: int, defaults to 0. Won't return records with the specified `collectionNo`.
         - **type**: servant type, defaults to `[normal, heroine, enemyCollectionDetail]`.
-        See the NiceSvtType enum for the options.
-        - **flag**: svt flag. See the NiceSvtFlag enum for the options.
+        See the `NiceSvtType` enum for the options.
+        - **flag**: svt flag. See the `NiceSvtFlag` enum for the options.
         - **rarity**: rarity of the servant.
-        - **className**: an item in the className enum, defaults to `PLAYABLE_CLASS_LIST`.
-        See the className detail in the Nice Servant response.
-        - **gender**: female, male or unknown.
-        - **attribute**: human, sky, earth, star or beast.
-        - **trait**: an integer or an item in the trait enum. See the traits detail in the Nice Servant response.
-        - **voiceCondValue**: servant collectionNo or servant ID. Will find the servants that
+        - **className**: an item in the `className` enum, defaults to `PLAYABLE_CLASS_LIST`.
+        See the `className` detail in the Nice Servant response.
+        - **gender**: `female`, `male` or `unknown`.
+        - **attribute**: `human`, `sky`, `earth`, `star` or `beast`.
+        - **trait**: an integer or an item in the `trait` enum. See the traits detail in the Nice Servant response.
+        - **voiceCondValue**: servant `collectionNo` or servant `ID`. Will find the servants that
         have voice lines directed to the given servants.
 
-        At least one of name, type, rarity, className, gender, attribute and trait is required for the query.
+        At least one of `name`, `type`, `rarity`, `className`, `gender`, `attribute`,
+        `trait` or `voiceCondSvt` is required for the query.
         """
     )
 
@@ -149,18 +150,19 @@ class SvtSearchQueryParams:
         Search and return the list of matched servant entities.
 
         - **name**: servant name. Searching JP data using English name works too.
-        - **excludeCollectionNo**: int. Won't return records with the specified collectionNo.
-        - **type**: servant type. See the NiceSvtType enum for the options.
-        - **flag**: svt flag. See the NiceSvtFlag enum for the options.
-        - **rarity**: rarity of the svt object.
-        - **className**: an item in the className enum. See the className detail in the Nice Servant response.
-        - **gender**: female, male or unknown.
-        - **attribute**: human, sky, earth, star or beast.
-        - **trait**: an integer or an item in the trait enum. See the traits detail in the Nice Servant response.
-        - **voiceCondValue**: servant collectionNo or servant ID. Will find the servants that
+        - **excludeCollectionNo**: int. Won't return records with the specified `collectionNo`.
+        - **type**: servant type. See the `NiceSvtType` enum for the options.
+        - **flag**: svt flag. See the `NiceSvtFlag` enum for the options.
+        - **rarity**: `rarity` of the svt object.
+        - **className**: an item in the `className` enum. See the `className` detail in the Nice Servant response.
+        - **gender**: `female`, `male` or `unknown`.
+        - **attribute**: `human`, `sky`, `earth`, `star` or `beast`.
+        - **trait**: an integer or an item in the `trait` enum. See the traits detail in the Nice Servant response.
+        - **voiceCondValue**: servant `collectionNo` or servant `ID`. Will find the servants that
         have voice lines directed to the given servants.
 
-        At least one of name, type, rarity, className, gender, attribute and trait is required for the query.
+        At least one of `name`, `type`, `rarity`, `className`, `gender`, `attribute`
+        `trait` or `voiceCondSvt` is required for the query.
         """
     )
 
@@ -189,12 +191,12 @@ class EquipSearchQueryParams:
         Search and return the list of matched equip entities.
 
         - **name**: in English if you are searching NA data and in Japanese if you are searching JP data.
-        - **excludeCollectionNo**: int, defaults to 0. Won't return records with the specified collectionNo.
-        - **type**: servant type, defaults to `[servantEquip]`. See the NiceSvtType for the options.
-        - **flag**: svt flag. See the NiceSvtFlag enum for the options.
-        - **rarity**: rarity of the CE.
+        - **excludeCollectionNo**: int, defaults to 0. Won't return records with the specified `collectionNo`.
+        - **type**: servant type, defaults to `[servantEquip]`. See the `NiceSvtType` for the options.
+        - **flag**: svt flag. See the `NiceSvtFlag` enum for the options.
+        - **rarity**: `rarity` of the CE.
 
-        At least one of name, type or rarity is required for the query.
+        At least one of `name`, `type`, `flag` or `rarity` is required for the query.
         """
     )
 

@@ -137,7 +137,7 @@ test_cases_dict: Dict[str, Tuple[str, Set[int]]] = {
     ),
     "func_tvals": (
         "JP/function/search?type=addStateShort&tvals=divine",
-        {965, 966, 967, 1165, 1166, 1167, 3802},
+        {965, 966, 967, 1165, 1166, 1167, 3802, 6372},
     ),
     "func_questTvals": (
         "JP/function/search?questTvals=94000046&targetType=ptFull",
