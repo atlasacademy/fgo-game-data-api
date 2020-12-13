@@ -131,6 +131,19 @@ def cs_enums_to_lines(
         )
 
 
+def cs_enum_to_ts(cs_enums: List[str], nice_class: str) -> List[str]:
+    enum_dict = enum_to_dict(cs_enums)
+    ts_enum_lines = [f"export enum {nice_class} {{\n"]
+    for enumstr in list(enum_dict.values()) + list(
+        EXTRA_STR_NAME.get(nice_class, {}).values()
+    ):
+        json_name = convert_name(enumstr)
+        str_name = STR_NAME_OVERRIDE.get(nice_class, {}).get(json_name, json_name)
+        ts_enum_lines.append(f'    {enumstr} = "{str_name}",\n')
+    ts_enum_lines.append("}\n")
+    return ts_enum_lines
+
+
 ENUMS: List[Tuple[str, str, str, str, str]] = [
     ("Gender.Type", "GenderType", "NiceGender", "Gender Enum", "GENDER_TYPE_NAME"),
     ("SvtType.Type", "SvtType", "NiceSvtType", "Servant Type Enum", "SVT_TYPE_NAME"),
@@ -261,7 +274,7 @@ ENUMS: List[Tuple[str, str, str, str, str]] = [
 cs_signatures: Dict[str, str] = {f"public enum {enum[0]}": enum[0] for enum in ENUMS}
 
 
-def main(dump_path: str, gameenums_path: str) -> None:
+def main(dump_path: str, gameenums_path: str, typescript_path: str = "") -> None:
     print(f"Reading {dump_path} ...")
     with open(dump_path, "r", encoding="utf-8") as fp:
         lines = fp.readlines()
@@ -313,6 +326,17 @@ def main(dump_path: str, gameenums_path: str) -> None:
     with open(gameenums_path, "w", encoding="utf-8", newline="") as fp:
         fp.writelines(python_lines)
 
+    if typescript_path:
+        ts_lines: List[str] = []
+        for cs_enum, _, nice_class, *_ in ENUMS:
+            ts_lines += cs_enum_to_ts(all_cs_enums[cs_enum], nice_class)
+            if cs_enum != ENUMS[-1][0]:
+                ts_lines.append("\n")
+
+        print(f"Writing {typescript_path} ...")
+        with open(typescript_path, "w", encoding="utf-8", newline="") as fp:
+            fp.writelines(ts_lines)
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
@@ -320,6 +344,14 @@ if __name__ == "__main__":
     )
     parser.add_argument("input", type=str, help="Path to the dump.cs file")
     parser.add_argument("output", type=str, help="Path to the gameenums.py file")
+    parser.add_argument(
+        "--typescript",
+        "-ts",
+        type=str,
+        help="Write a typescript enum file",
+        required=False,
+        default="",
+    )
     args = parser.parse_args()
 
-    main(args.input, args.output)
+    main(args.input, args.output, args.typescript)
