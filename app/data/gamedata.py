@@ -42,6 +42,7 @@ MASTER_WITHOUT_ID = {
     "mstConstant",
     "mstClassRelationOverwrite",
     "mstQuestPhase",
+    "mstStage",
     "mstQuestRelease",
 }
 SVT_STUFFS = {
@@ -114,6 +115,10 @@ def update_gamedata() -> None:
             master["mstQuestPhaseId"][quest_phase["questId"]][
                 quest_phase["phase"]
             ] = quest_phase
+
+        master["mstStageId"] = defaultdict(lambda: defaultdict(list))
+        for stage in master["mstStage"]:
+            master["mstStageId"][stage["questId"]][stage["questPhase"]].append(stage)
 
         master["buffToFunc"] = defaultdict(set)
         for func in master["mstFunc"]:

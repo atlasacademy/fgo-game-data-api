@@ -62,6 +62,39 @@
     "battleBgType": 0,
     "qp": 8900,
     "playerExp": 33815,
-    "friendshipExp": 865
-  }
+    "friendshipExp": 865,
+    "giftId": 0
+  },
+  "mstStage": [
+    {
+      "npcDeckIds": [94025034, 1000],
+      "script": {},
+      "questId": 94025012,
+      "questPhase": 1,
+      "wave": 1,
+      "enemyInfo": 1,
+      "bgmId": 264,
+      "startEffectId": 1
+    },
+    {
+      "npcDeckIds": [94025035, 1000],
+      "script": {},
+      "questId": 94025012,
+      "questPhase": 1,
+      "wave": 2,
+      "enemyInfo": 1,
+      "bgmId": 264,
+      "startEffectId": 1
+    },
+    {
+      "npcDeckIds": [94025036, 1000],
+      "script": {},
+      "questId": 94025012,
+      "questPhase": 1,
+      "wave": 3,
+      "enemyInfo": 1,
+      "bgmId": 57,
+      "startEffectId": 2
+    }
+  ]
 }

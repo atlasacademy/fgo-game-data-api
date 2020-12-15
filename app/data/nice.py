@@ -79,6 +79,7 @@ from .schemas.nice import (
     NiceServantChange,
     NiceSkillReverse,
     NiceSpot,
+    NiceStage,
     NiceTdReverse,
     NiceVoiceCond,
     NiceVoiceGroup,
@@ -93,6 +94,7 @@ from .schemas.raw import (
     MstMap,
     MstQuestRelease,
     MstSpot,
+    MstStage,
     MstSvtChange,
     MstSvtComment,
     MstSvtCostume,
@@ -1323,6 +1325,10 @@ def get_nice_quest_release(
     )
 
 
+def get_nice_stage(region: Region, raw_stage: MstStage) -> NiceStage:
+    return NiceStage(bgm=get_nice_bgm(region, raw_stage.bgmId))
+
+
 def get_nice_quest(
     region: Region, quest_id: int, raw_quest: Union[QuestEntity, QuestPhaseEntity]
 ) -> Dict[str, Any]:
@@ -1366,6 +1372,7 @@ def get_nice_quest_phase(region: Region, quest_id: int, phase: int) -> Dict[str,
             "qp": raw_data.mstQuestPhase.qp,
             "exp": raw_data.mstQuestPhase.playerExp,
             "bond": raw_data.mstQuestPhase.friendshipExp,
+            "stages": [get_nice_stage(region, stage) for stage in raw_data.mstStage],
         }
     )
     return nice_data

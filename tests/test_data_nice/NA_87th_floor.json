@@ -33,5 +33,21 @@
   ],
   "qp": 6400,
   "exp": 15690,
-  "bond": 615
+  "bond": 615,
+  "stages": [
+    {
+      "bgm": {
+        "id": 56,
+        "name": "outbreak\n-Alternative-",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_BATTLE_17/BGM_BATTLE_17.mp3"
+      }
+    },
+    {
+      "bgm": {
+        "id": 56,
+        "name": "outbreak\n-Alternative-",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_BATTLE_17/BGM_BATTLE_17.mp3"
+      }
+    }
+  ]
 }

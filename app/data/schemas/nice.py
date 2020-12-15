@@ -918,6 +918,10 @@ class NiceQuest(BaseModelORJson):
     closedAt: int
 
 
+class NiceStage(BaseModelORJson):
+    bgm: NiceBgm
+
+
 class NiceQuestPhase(NiceQuest):
     phase: int
     className: List[SvtClass]
@@ -925,6 +929,7 @@ class NiceQuestPhase(NiceQuest):
     qp: int
     exp: int
     bond: int
+    stages: List[NiceStage]
 
 
 class NiceMap(BaseModel):

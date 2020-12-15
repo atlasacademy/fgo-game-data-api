@@ -746,6 +746,18 @@ class MstQuestPhase(BaseModel):
     qp: int  # 1900,
     playerExp: int  # 550,
     friendshipExp: int  # 165
+    giftId: Optional[int] = None
+
+
+class MstStage(BaseModel):
+    npcDeckIds: List[int]  # [2, 1000]
+    script: Dict[str, Any]  # {}
+    questId: int  # 1000000
+    questPhase: int  # 1
+    wave: int  # 1
+    enemyInfo: int  # 1
+    bgmId: int  # 1
+    startEffectId: int  # 1
 
 
 class MysticCodeEntity(BaseModelORJson):
@@ -817,6 +829,7 @@ class Master(BaseModel):
     mstQuestId: Dict[int, MstQuest]
     # mstQuestPhase: List[MstQuestPhase]
     mstQuestPhaseId: Dict[int, Dict[int, MstQuestPhase]]
+    mstStageId: Dict[int, Dict[int, List[MstStage]]]
     mstQuestReleaseId: Dict[int, List[MstQuestRelease]]
     mstClosedMessageId: Dict[int, str]
     # mstSvtComment: List[MstSvtComment]
@@ -918,6 +931,7 @@ class QuestEntity(BaseModelORJson):
 
 class QuestPhaseEntity(QuestEntity):
     mstQuestPhase: MstQuestPhase
+    mstStage: List[MstStage]
 
 
 class EventEntity(BaseModelORJson):
