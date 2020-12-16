@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+- Added 2020 Santa servants English names
+
 ## 5.24.0 - 2020-12-14
 
 ### Added

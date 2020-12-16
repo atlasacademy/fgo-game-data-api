@@ -609,6 +609,7 @@ class BuffType(IntEnum):
     SPECIAL_INVINCIBLE = 157
     PREVENT_DEATH_BY_DAMAGE = 158
     COMMANDCODEATTACK_AFTER_FUNCTION = 159
+    ATTACK_BEFORE_FUNCTION = 160
 
 
 class NiceBuffType(str, Enum):
@@ -759,6 +760,7 @@ class NiceBuffType(str, Enum):
     specialInvincible = "specialInvincible"
     preventDeathByDamage = "preventDeathByDamage"
     commandcodeattackAfterFunction = "commandcodeattackAfterFunction"
+    attackBeforeFunction = "attackBeforeFunction"
 
 
 BUFF_TYPE_NAME: Dict[int, NiceBuffType] = {
@@ -907,6 +909,7 @@ BUFF_TYPE_NAME: Dict[int, NiceBuffType] = {
     157: NiceBuffType.specialInvincible,
     158: NiceBuffType.preventDeathByDamage,
     159: NiceBuffType.commandcodeattackAfterFunction,
+    160: NiceBuffType.attackBeforeFunction,
 }
 
 
@@ -1009,6 +1012,7 @@ class BuffAction(IntEnum):
     SPECIAL_INVINCIBLE = 95
     PREVENT_DEATH_BY_DAMAGE = 96
     FUNCTION_COMMANDCODEATTACK_AFTER = 97
+    FUNCTION_ATTACK_BEFORE = 98
 
 
 class NiceBuffAction(str, Enum):
@@ -1112,6 +1116,7 @@ class NiceBuffAction(str, Enum):
     specialInvincible = "specialInvincible"
     preventDeathByDamage = "preventDeathByDamage"
     functionCommandcodeattackAfter = "functionCommandcodeattackAfter"
+    functionAttackBefore = "functionAttackBefore"
 
 
 BUFF_ACTION_NAME: Dict[int, NiceBuffAction] = {
@@ -1213,6 +1218,7 @@ BUFF_ACTION_NAME: Dict[int, NiceBuffAction] = {
     95: NiceBuffAction.specialInvincible,
     96: NiceBuffAction.preventDeathByDamage,
     97: NiceBuffAction.functionCommandcodeattackAfter,
+    98: NiceBuffAction.functionAttackBefore,
 }
 
 
