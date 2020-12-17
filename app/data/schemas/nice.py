@@ -288,7 +288,11 @@ class NiceBaseFunction(BaseModelORJson):
         description="Trait details for buff removal functions.",
     )
     buffs: List[NiceBuff] = Field(
-        ..., title="Buff details", description="Buff details for apply buff functions."
+        ...,
+        title="Buff details",
+        description="Buff details for apply buff functions."
+        "Even though this is a list, it is safe to assume it only contains 1 buff if applicable"
+        "e.g. you can get the buff by buffs[0]. `buffs[0]` is also what the game hardcoded.",
     )
 
 

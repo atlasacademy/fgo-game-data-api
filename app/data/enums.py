@@ -428,7 +428,7 @@ class Trait(str, Enum):
     genderCaenisServant = "genderCaenisServant"
     hominidaeServant = "hominidaeServant"
     blessedByKur = "blessedByKur"
-    beastServant = "beastServant"
+    demonicBeastServant = "demonicBeastServant"
     canBeInBattle = "canBeInBattle"
     notBasedOnServant = "notBasedOnServant"
     livingHuman = "livingHuman"
@@ -624,7 +624,7 @@ TRAIT_NAME: Dict[int, Trait] = {
     2466: Trait.argonaut,
     2615: Trait.genderCaenisServant,  # Phantom's 2nd skill
     2631: Trait.hominidaeServant,  # used in TamaVitch's fight
-    2632: Trait.beastServant,  # used in TamaVitch's fight
+    2632: Trait.demonicBeastServant,  # used in TamaVitch's fight
     2654: Trait.livingHuman,  # Voyager's NP
     2664: Trait.kingproteaProliferationNPDefense,
     2666: Trait.giant,
