@@ -862,5 +862,23 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0
+  },
+  "FUNCTION_COMMANDCODEATTACK_AFTER": {
+    "limit": 0,
+    "plusTypes": [],
+    "minusTypes": [159],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_ATTACK_BEFORE": {
+    "limit": 0,
+    "plusTypes": [],
+    "minusTypes": [160],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
   }
 }

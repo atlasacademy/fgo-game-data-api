@@ -537,7 +537,7 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": []
+    "maxRate": [0]
   },
   "functionSelfturnend": {
     "limit": "none",
@@ -963,5 +963,25 @@
     "isRec": true,
     "plusAction": 0,
     "maxRate": [0]
+  },
+  "functionCommandcodeattackAfter": {
+    "limit": "none",
+    "plusTypes": [],
+    "minusTypes": ["commandcodeattackAfterFunction"],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": [0]
+  },
+  "functionAttackBefore": {
+    "limit": "none",
+    "plusTypes": [],
+    "minusTypes": ["attackBeforeFunction"],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
   }
 }

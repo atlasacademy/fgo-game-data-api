@@ -6,10 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.25.0 - 2020-12-18
+
 ### Added
 
 - 2.25.0 apk buff enum.
-- 2020 Santa servants English names.
+- 2020 Christmas servants and CEs English names.
 
 ### Changed
 

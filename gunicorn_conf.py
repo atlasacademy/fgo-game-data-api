@@ -10,8 +10,10 @@ reload = True
 load_dotenv(".env")
 reload_extra_files = []
 for gamedata in ("NA_GAMEDATA", "JP_GAMEDATA"):
-    for data in Path(os.getenv(gamedata)).resolve().iterdir():
-        reload_extra_files.append(str(data))
+    env_gamedata = os.getenv(gamedata)
+    if env_gamedata:
+        for data in Path(env_gamedata).resolve().iterdir():
+            reload_extra_files.append(str(data))
 
 
 # Base https://github.com/tiangolo/uvicorn-gunicorn-docker/blob/master/docker-images/gunicorn_conf.py
