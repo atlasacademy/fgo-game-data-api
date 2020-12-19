@@ -356,5 +356,5 @@ def get_quest_phase_entity(
         mstQuest=masters[region].mstQuestId[quest_id],
         mstQuestRelease=masters[region].mstQuestReleaseId.get(quest_id, []),
         mstQuestPhase=masters[region].mstQuestPhaseId[quest_id][phase],
-        mstStage=masters[region].mstStageId[quest_id][phase],
+        mstStage=masters[region].mstStageId.get(quest_id, {}).get(phase, []),
     )
