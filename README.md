@@ -3,8 +3,8 @@
 HTTP API for FGO game data. Transform the raw game data into something a bit more manageable.
 
 - [Environment variables](#environment-variables)
-  - [Required environment variables:](#required-environment-variables)
-  - [Optional environment variables:](#optional-environment-variables)
+  - [Required environment variables](#required-environment-variables)
+  - [Optional environment variables](#optional-environment-variables)
 - [Run the API server](#run-the-api-server)
 - [Linting](#linting)
 - [Formatting](#formatting)
@@ -19,12 +19,12 @@ HTTP API for FGO game data. Transform the raw game data into something a bit mor
 
 List of environment variables for the main app. All are required except noted:
 
-#### Required environment variables:
+#### Required environment variables
 - `NA_GAMEDATA`: path to NA gamedata's master folder.
 - `JP_GAMEDATA`: path to JP gamedata's master folder.
 - `ASSET_URL`: base URL for the game assets.
 
-#### Optional environment variables:
+#### Optional environment variables
 - `OPENAPI_URL`: default to `None`. Set the server URL in the openapi schema export.
 - `EXPORT_ALL_NICE`: default to `False`. If set to `True`, at start the app will generate nice data of all servant and CE and serve them at the `/export` endpoint. It's recommended to serve the files in the `/export` folder using nginx or equivalent webserver to lighten the load on the API server.
 - `DOCUMENTATION_ALL_NICE`: default to `False`. If set to `True`, there will be links to the exported all nice files in the documentation.
