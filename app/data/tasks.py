@@ -1,6 +1,6 @@
 import json
 import time
-from typing import Any, Dict, Iterable
+from typing import Any, Dict, Iterable, TypeVar
 
 import redis
 from git import Repo
@@ -27,7 +27,9 @@ from .nice import (
     get_nice_servant_model,
 )
 from .schemas.base import BaseModelORJson
-from .utils import sort_by_collection_no
+from .schemas.nice import NiceEquip, NiceServant
+from .translations import TRANSLATIONS
+from .utils import get_safe, sort_by_collection_no
 
 
 settings = Settings()
@@ -46,7 +48,12 @@ def dump_orjson(
     region: Region, file_name: str, data: Iterable[BaseModelORJson]
 ) -> None:  # pragma: no cover
     file_name = file_name + ".json"
-    if file_name in {"nice_servant.json", "nice_equip.json"}:
+    if file_name in {
+        "nice_servant.json",
+        "nice_equip.json",
+        "nice_servant_lang_en.json",
+        "nice_equip_lang_en.json",
+    }:
         with open(export_path / region.value / file_name, "w", encoding="utf-8") as fp:
             fp.write(list_string_exclude(data, exclude={"profile"}))
     else:
@@ -59,6 +66,15 @@ def dump(region: Region, file_name: str, data: Any) -> None:  # pragma: no cover
         dump_orjson(region, file_name, data)
     else:
         dump_normal(region, file_name, data)
+
+
+T = TypeVar("T", NiceServant, NiceEquip)
+
+
+def get_lang_en(svt: T) -> T:
+    lang_en_svt = svt.copy()
+    lang_en_svt.name = get_safe(TRANSLATIONS, svt.name)
+    return lang_en_svt
 
 
 def generate_exports() -> None:  # pragma: no cover
@@ -132,19 +148,23 @@ def generate_exports() -> None:  # pragma: no cover
 
             if region == Region.JP:
                 all_basic_servant_en = sort_by_collection_no(
-                    [
-                        get_basic_servant(region, svt_id, Language.en)
-                        for svt_id in masters[region].mstSvtServantCollectionNo.values()
-                    ]
+                    get_basic_servant(region, svt_id, Language.en)
+                    for svt_id in masters[region].mstSvtServantCollectionNo.values()
                 )
                 all_basic_equip_en = sort_by_collection_no(
-                    [
-                        get_basic_equip(region, svt_id, Language.en)
-                        for svt_id in masters[region].mstSvtEquipCollectionNo.values()
-                    ]
+                    get_basic_equip(region, svt_id, Language.en)
+                    for svt_id in masters[region].mstSvtEquipCollectionNo.values()
                 )
+                all_nice_servant_en = [
+                    get_lang_en(svt) for svt in all_servant_data_lore
+                ]
+                all_nice_equip_en = [get_lang_en(svt) for svt in all_equip_data_lore]
                 output_files.update(
                     {
+                        "nice_servant_lang_en": all_nice_servant_en,
+                        "nice_servant_lore_lang_en": all_nice_servant_en,
+                        "nice_equip_lang_en": all_nice_equip_en,
+                        "nice_equip_lore_lang_en": all_nice_equip_en,
                         "basic_servant_lang_en": all_basic_servant_en,
                         "basic_equip_lang_en": all_basic_equip_en,
                     }

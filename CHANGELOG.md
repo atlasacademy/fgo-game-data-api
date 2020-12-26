@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.26.0 - 2020-12-26
+
+### Added
+
+- Nice export files with English svt names.
+
+### Changed
+
+- `genderUnknownServant` trait enum to `feminineLookingServant`.
+
 ## 5.25.0 - 2020-12-18
 
 ### Added

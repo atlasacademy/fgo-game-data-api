@@ -34,6 +34,10 @@ Current API data version can be found [here](/info).
 It's recommended to use the static export files or search with the `/basic` endpoints
 and fetch nice or raw data as needed.
 A big search with nice or raw data will take a while to respond.
+
+There are many export files in the "Export files" section below.
+Make sure you check them out before querying the API.
+Chances are what you need is already there.
 Feel free to contact me if you would like to see an export file that is not currently available.
 
 ### Static Constants
@@ -70,7 +74,11 @@ Pre-generated nice data that can be served instantly unlike querying the API:
   - [NA Item](/export/NA/nice_item.json)
 - JP data:
   - [JP Servant](/export/JP/nice_servant.json), [JP Servant with lore](/export/JP/nice_servant_lore.json)
+  - [JP Servant with English names](/export/JP/nice_servant_lang_en.json),
+  [JP Servant with English names and lore](/export/JP/nice_servant_lore_lang_en.json)
   - [JP Craft Essence](/export/JP/nice_equip.json), [JP Craft Essence with lore](/export/JP/nice_equip_lore.json)
+  - [JP Craft Essence with English names](/export/JP/nice_equip_lang_en.json),
+  [JP Craft Essence with lore and English names](/export/JP/nice_equip_lore_lang_en.json)
   - [JP Command Code](/export/JP/nice_command_code.json)
   - [JP Material](/export/JP/nice_item.json)
   - [JP Mystic Code](/export/JP/nice_mystic_code.json)

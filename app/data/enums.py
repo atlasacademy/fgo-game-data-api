@@ -423,7 +423,7 @@ class Trait(str, Enum):
     king = "king"
     greekMythologyMales = "greekMythologyMales"
     illya = "illya"
-    genderUnknownServant = "genderUnknownServant"
+    feminineLookingServant = "feminineLookingServant"
     argonaut = "argonaut"
     genderCaenisServant = "genderCaenisServant"
     hominidaeServant = "hominidaeServant"
@@ -617,7 +617,7 @@ TRAIT_NAME: Dict[int, Trait] = {
     2114: Trait.greekMythologyMales,
     2121: Trait.fieldBurning,
     2355: Trait.illya,
-    2356: Trait.genderUnknownServant,  # Teach's 3rd skill
+    2356: Trait.feminineLookingServant,  # Teach's 3rd skill
     2386: Trait.kingproteaProliferation,
     2387: Trait.kingproteaGrowth,
     2392: Trait.fieldCity,

@@ -26,7 +26,7 @@ def list_string(items: Iterable[BaseModelORJson]) -> str:
     """
     return (
         "["
-        + ",".join([item.json(exclude_unset=True, exclude_none=True) for item in items])
+        + ",".join(item.json(exclude_unset=True, exclude_none=True) for item in items)
         + "]"
     )
 
@@ -37,10 +37,8 @@ def list_string_exclude(items: Iterable[BaseModelORJson], exclude: Set[str]) -> 
     Attributes given to exclude will be excluded from the output json string.
     """
     all_items = ",".join(
-        [
-            item.json(exclude_unset=True, exclude_none=True, exclude=exclude)
-            for item in items
-        ]
+        item.json(exclude_unset=True, exclude_none=True, exclude=exclude)
+        for item in items
     )
     return "[" + all_items + "]"
 
