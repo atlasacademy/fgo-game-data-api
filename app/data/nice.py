@@ -1290,7 +1290,7 @@ def get_nice_event(region: Region, event_id: int) -> NiceEvent:
         endedAt=raw_data.mstEvent.endedAt,
         finishedAt=raw_data.mstEvent.finishedAt,
         materialOpenedAt=raw_data.mstEvent.materialOpenedAt,
-        warIds=[war.id for war in masters[region].mstWarEventId.get(event_id, [])],
+        warIds=(war.id for war in masters[region].mstWarEventId.get(event_id, [])),
     )
 
     return nice_event
@@ -1421,10 +1421,10 @@ def get_nice_spot(region: Region, raw_spot: MstSpot, war_asset_id: int) -> NiceS
         nextOfsX=raw_spot.nextOfsX,
         nextOfsY=raw_spot.nextOfsY,
         closedMessage=raw_spot.closedMessage,
-        quests=[
+        quests=(
             get_nice_quest_alone(region, quest.id)
             for quest in masters[region].mstQuestSpotId.get(raw_spot.id, [])
-        ],
+        ),
     )
 
 
@@ -1468,9 +1468,9 @@ def get_nice_war(region: Region, war_id: int) -> NiceWar:
         targetId=raw_war.mstWar.targetId,
         eventId=raw_war.mstWar.eventId,
         lastQuestId=raw_war.mstWar.lastQuestId,
-        maps=[get_nice_map(region, raw_map) for raw_map in raw_war.mstMap],
-        spots=[
+        maps=(get_nice_map(region, raw_map) for raw_map in raw_war.mstMap),
+        spots=(
             get_nice_spot(region, raw_spot, war_asset_id)
             for raw_spot in raw_war.mstSpot
-        ],
+        ),
     )

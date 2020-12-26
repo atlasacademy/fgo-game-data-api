@@ -273,7 +273,7 @@ def get_basic_event(region: Region, event_id: int) -> BasicEvent:
         endedAt=mstEvent.endedAt,
         finishedAt=mstEvent.finishedAt,
         materialOpenedAt=mstEvent.materialOpenedAt,
-        warIds=[war.id for war in masters[region].mstWarEventId.get(event_id, [])],
+        warIds=(war.id for war in masters[region].mstWarEventId.get(event_id, [])),
     )
 
     return basic_event
