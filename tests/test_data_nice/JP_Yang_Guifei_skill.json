@@ -8,6 +8,8 @@
   "priority": 1,
   "condQuestId": 0,
   "condQuestPhase": 0,
+  "condLv": 0,
+  "condLimitCount": 1,
   "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00513.png",
   "coolDown": [9, 9, 9, 9, 9, 8, 8, 8, 8, 7],
   "actIndividuality": [],

@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.27.0 - 2020-12-27
+
+### Added
+
+- `condLv` and `condLimitCount` to nice skill.
+
 ## 5.26.0 - 2020-12-26
 
 ### Added

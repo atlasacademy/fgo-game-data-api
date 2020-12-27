@@ -352,6 +352,8 @@ class NiceSkill(BaseModelORJson):
     priority: int = -1
     condQuestId: int = -1
     condQuestPhase: int = -1
+    condLv: int = -1
+    condLimitCount: int = -1
     icon: Optional[HttpUrl] = None
     coolDown: List[int]
     actIndividuality: List[NiceTrait]

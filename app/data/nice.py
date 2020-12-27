@@ -411,6 +411,8 @@ def get_nice_skill(
                     "priority": chosenSvt.priority,
                     "condQuestId": chosenSvt.condQuestId,
                     "condQuestPhase": chosenSvt.condQuestPhase,
+                    "condLv": chosenSvt.condLv,
+                    "condLimitCount": chosenSvt.condLimitCount,
                 }
             )
 
