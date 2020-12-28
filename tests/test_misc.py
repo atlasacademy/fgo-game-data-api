@@ -8,6 +8,7 @@ from app.data.common import Language, Region, ReverseDepth
 from app.data.enums import FuncType
 from app.data.nice import get_nice_servant_model, parse_dataVals
 from app.data.schemas.basic import BasicEquip, BasicServant
+from app.data.tasks import get_lang_en
 from app.data.utils import sort_by_collection_no
 from app.routers.utils import list_string_exclude
 
@@ -104,3 +105,9 @@ def test_list_exclude() -> None:
     json_data = list_string_exclude([test_data], exclude=excluded_keys)
     for key in excluded_keys:
         assert key not in orjson.loads(json_data)
+
+
+def test_lang_en_export() -> None:
+    jp_nice_servant = get_nice_servant_model(Region.JP, 202900, Language.jp)
+    jp_nice_servant_with_en_name = get_lang_en(jp_nice_servant)
+    assert jp_nice_servant_with_en_name.name == "Asagami Fujino"
