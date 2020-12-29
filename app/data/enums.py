@@ -477,7 +477,7 @@ class Trait(str, Enum):
     buffMaxHpDownPercent = "buffMaxHpDownPercent"
     buffMaxHpUp = "buffMaxHpUp"
     buffMaxHpDown = "buffMaxHpDown"
-    buffStunLike = "buffStunLike"
+    buffImmobilize = "buffImmobilize"
     buffIncreasePoisonEffectiveness = "buffIncreasePoisonEffectiveness"
     buffPigify = "buffPigify"
     buffCurseEffectUp = "buffCurseEffectUp"
@@ -682,7 +682,7 @@ TRAIT_NAME: Dict[int, Trait] = {
     3042: Trait.buffMaxHpDownPercent,
     3043: Trait.buffMaxHpUp,
     3044: Trait.buffMaxHpDown,
-    3045: Trait.buffStunLike,  # Including Petrify, Bound, Pigify, Stun
+    3045: Trait.buffImmobilize,  # Including Petrify, Bound, Pigify, Stun
     3046: Trait.buffIncreasePoisonEffectiveness,
     3047: Trait.buffPigify,
     3048: Trait.buffCurseEffectUp,

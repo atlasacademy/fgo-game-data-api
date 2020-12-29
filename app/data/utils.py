@@ -3,6 +3,8 @@ from typing import Any, Iterable, List, Mapping, TypeVar, Union
 from .enums import TRAIT_NAME, Trait
 from .schemas.basic import BasicEquip, BasicServant
 from .schemas.common import NiceTrait
+from .schemas.nice import NiceEquip, NiceServant
+from .translations import TRANSLATIONS
 
 
 VT = TypeVar("VT")
@@ -37,10 +39,20 @@ def get_traits_list(input_idv: Iterable[int]) -> List[NiceTrait]:
     return [get_nice_trait(individuality) for individuality in input_idv]
 
 
-def sort_by_collection_no(
-    input_list: Iterable[Union[BasicServant, BasicEquip]]
-) -> List[Union[BasicServant, BasicEquip]]:
+T = TypeVar("T", BasicServant, BasicEquip, NiceServant, NiceEquip)
+
+
+def sort_by_collection_no(input_list: Iterable[T]) -> List[T]:
     """
     Return given list of basic svt objects sorted by their collectionNo attribute
     """
     return sorted(input_list, key=lambda x: x.collectionNo)
+
+
+def get_lang_en(svt: T) -> T:
+    """
+    Returns given svt Pydantic object with English name
+    """
+    lang_en_svt = svt.copy()
+    lang_en_svt.name = get_safe(TRANSLATIONS, svt.name)
+    return lang_en_svt

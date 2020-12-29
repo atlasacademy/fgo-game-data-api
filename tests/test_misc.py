@@ -1,5 +1,3 @@
-from typing import List, Union
-
 import orjson
 import pytest
 from fastapi import HTTPException
@@ -7,9 +5,8 @@ from fastapi import HTTPException
 from app.data.common import Language, Region, ReverseDepth
 from app.data.enums import FuncType
 from app.data.nice import get_nice_servant_model, parse_dataVals
-from app.data.schemas.basic import BasicEquip, BasicServant
-from app.data.tasks import get_lang_en
-from app.data.utils import sort_by_collection_no
+from app.data.schemas.basic import BasicServant
+from app.data.utils import get_lang_en, sort_by_collection_no
 from app.routers.utils import list_string_exclude
 
 
@@ -58,17 +55,7 @@ def test_reverseDepth_str_comparison() -> None:
 
 
 def test_sort_by_collection_no() -> None:
-    first_item = BasicEquip(
-        id=9400010,
-        collectionNo=1,
-        name="Tenacity",
-        type="servantEquip",
-        rarity=1,
-        atkMax=0,
-        hpMax=300,
-        face="https://assets.atlasacademy.io/GameData/NA/Faces/f_94000100.png",
-    )
-    second_item = BasicServant(
+    first_item = BasicServant(
         id=100100,
         collectionNo=2,
         name="Altria Pendragon",
@@ -79,7 +66,7 @@ def test_sort_by_collection_no() -> None:
         hpMax=15150,
         face="https://assets.atlasacademy.io/GameData/NA/Faces/f_1001000.png",
     )
-    third_item = BasicServant(
+    second_item = BasicServant(
         id=202900,
         collectionNo=200,
         name="Asagami Fujino",
@@ -90,13 +77,9 @@ def test_sort_by_collection_no() -> None:
         hpMax=11025,
         face="https://assets.atlasacademy.io/GameData/NA/Faces/f_2029000.png",
     )
-    input_data: List[Union[BasicServant, BasicEquip]] = [
-        second_item,
-        first_item,
-        third_item,
-    ]
+    input_data = [second_item, first_item]
     result = sort_by_collection_no(input_data)
-    assert result == [first_item, second_item, third_item]
+    assert result == [first_item, second_item]
 
 
 def test_list_exclude() -> None:

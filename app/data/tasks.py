@@ -1,6 +1,6 @@
 import json
 import time
-from typing import Any, Dict, Iterable, TypeVar
+from typing import Any, Dict, Iterable
 
 import redis
 from git import Repo
@@ -27,9 +27,7 @@ from .nice import (
     get_nice_servant_model,
 )
 from .schemas.base import BaseModelORJson
-from .schemas.nice import NiceEquip, NiceServant
-from .translations import TRANSLATIONS
-from .utils import get_safe, sort_by_collection_no
+from .utils import get_lang_en, sort_by_collection_no
 
 
 settings = Settings()
@@ -68,15 +66,6 @@ def dump(region: Region, file_name: str, data: Any) -> None:  # pragma: no cover
         dump_normal(region, file_name, data)
 
 
-T = TypeVar("T", NiceServant, NiceEquip)
-
-
-def get_lang_en(svt: T) -> T:
-    lang_en_svt = svt.copy()
-    lang_en_svt.name = get_safe(TRANSLATIONS, svt.name)
-    return lang_en_svt
-
-
 def generate_exports() -> None:  # pragma: no cover
     if settings.export_all_nice:
         for region in region_path:
@@ -102,16 +91,12 @@ def generate_exports() -> None:  # pragma: no cover
                 for cc_id in masters[region].mstCommandCodeId
             ]
             all_basic_servant_data = sort_by_collection_no(
-                [
-                    get_basic_servant(region, svt_id)
-                    for svt_id in masters[region].mstSvtServantCollectionNo.values()
-                ]
+                get_basic_servant(region, svt_id)
+                for svt_id in masters[region].mstSvtServantCollectionNo.values()
             )
             all_basic_equip_data = sort_by_collection_no(
-                [
-                    get_basic_equip(region, svt_id)
-                    for svt_id in masters[region].mstSvtEquipCollectionNo.values()
-                ]
+                get_basic_equip(region, svt_id)
+                for svt_id in masters[region].mstSvtEquipCollectionNo.values()
             )
             all_basic_mc_data = [
                 get_basic_mc(region, mc_id) for mc_id in masters[region].mstEquipId
