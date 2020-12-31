@@ -7,7 +7,7 @@ authors = ["squaresmile <squaresmile@protonmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 fastapi = "^0.63.0"
-uvicorn = {extras = ["standard"], version = "^0.13.2"}
+uvicorn = {extras = ["standard"], version = "^0.13.3"}
 python-dotenv = "^0.15.0"
 fuzzywuzzy = "^0.18.0"
 python-Levenshtein = "^0.12.0"
@@ -26,6 +26,7 @@ pytest-xdist = "^2.1.0"
 requests = "^2.25.1"
 coverage = "^5.3.1"
 fuzzywuzzy-stubs = "^0.0.1"
+isort = "^5.7.0"
 
 [tool.isort]
 line_length = 88
