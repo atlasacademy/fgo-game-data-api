@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.28.0 - 2020-12-31
+
+### Added
+
+- `individuality` to nice item.
+
 ## 5.27.1 - 2020-12-28
 
 ### Changed

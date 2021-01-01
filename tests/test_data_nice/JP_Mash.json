@@ -478,6 +478,7 @@
             "name": "英雄の証",
             "type": "skillLvUp",
             "detail": "【スキル強化＆霊基再臨素材】\n英雄と認められた証。\n多くの人々が持つが、\n自覚していないため忘れられる。",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6503.png",
             "background": "bronze"
           },
@@ -494,6 +495,7 @@
             "name": "竜の牙",
             "type": "skillLvUp",
             "detail": "【スキル強化＆霊基再臨素材】\n竜種の牙。竜牙兵はこの牙を使って作られる。",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6512.png",
             "background": "bronze"
           },
@@ -510,6 +512,7 @@
             "name": "世界樹の種",
             "type": "skillLvUp",
             "detail": "【スキル強化＆霊基再臨素材】\n世界を体現する巨木の種",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6502.png",
             "background": "silver"
           },
@@ -526,6 +529,7 @@
             "name": "八連双晶",
             "type": "skillLvUp",
             "detail": "【スキル強化＆霊基再臨素材】\nゴーレムの体内で造られる多結晶体",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6515.png",
             "background": "silver"
           },
@@ -542,6 +546,7 @@
             "name": "虚影の塵",
             "type": "skillLvUp",
             "detail": "【スキル強化＆霊基再臨素材】\n虚ろな影が消える時に飛び散る塵",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
             "background": "bronze"
           },
@@ -558,6 +563,7 @@
             "name": "無間の歯車",
             "type": "skillLvUp",
             "detail": "【スキル強化＆霊基再臨素材】\n永久機関の夢。\n一度回転しだすといつまでも回転し続ける歯車。",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6510.png",
             "background": "silver"
           },
@@ -574,6 +580,7 @@
             "name": "鳳凰の羽根",
             "type": "skillLvUp",
             "detail": "【スキル強化＆霊基再臨素材】\n東洋の霊鳥の羽根",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6501.png",
             "background": "silver"
           },
@@ -590,6 +597,7 @@
             "name": "竜の逆鱗",
             "type": "skillLvUp",
             "detail": "【スキル強化＆霊基再臨素材】\n竜種の顎の下に逆さについた鱗",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6506.png",
             "background": "gold"
           },
@@ -606,6 +614,7 @@
             "name": "伝承結晶",
             "type": "skillLvUp",
             "detail": "【スキル強化＆霊基再臨素材】\n人類史とマナの奔流が交差する事で\n産み出される高純度の魔力結晶。\n物質化した英霊の素材とも言える。",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6999.png",
             "background": "gold"
           },
@@ -624,6 +633,7 @@
             "name": "追憶の貝殻",
             "type": "skillLvUp",
             "detail": "【スキル強化＆霊基再臨素材】\n悠久の時を生きた貝の殻。\n殻口に耳を当てると、遥か太古の\n清らかな潮騒が聞こえてくる。",
+            "individuality": [{ "id": 10085, "name": "unknown" }],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6526.png",
             "background": "silver"
           },
@@ -635,6 +645,7 @@
             "name": "八連双晶",
             "type": "skillLvUp",
             "detail": "【スキル強化＆霊基再臨素材】\nゴーレムの体内で造られる多結晶体",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6515.png",
             "background": "silver"
           },
@@ -646,6 +657,7 @@
             "name": "大騎士勲章",
             "type": "skillLvUp",
             "detail": "【スキル強化＆霊基再臨素材】\n廉潔なる騎士の忠義と勲功を讃える勲章。",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6524.png",
             "background": "silver"
           },
@@ -657,6 +669,7 @@
             "name": "鳳凰の羽根",
             "type": "skillLvUp",
             "detail": "【スキル強化＆霊基再臨素材】\n東洋の霊鳥の羽根",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6501.png",
             "background": "silver"
           },
@@ -673,6 +686,7 @@
             "name": "追憶の貝殻",
             "type": "skillLvUp",
             "detail": "【スキル強化＆霊基再臨素材】\n悠久の時を生きた貝の殻。\n殻口に耳を当てると、遥か太古の\n清らかな潮騒が聞こえてくる。",
+            "individuality": [{ "id": 10085, "name": "unknown" }],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6526.png",
             "background": "silver"
           },
@@ -684,6 +698,7 @@
             "name": "大騎士勲章",
             "type": "skillLvUp",
             "detail": "【スキル強化＆霊基再臨素材】\n廉潔なる騎士の忠義と勲功を讃える勲章。",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6524.png",
             "background": "silver"
           },
@@ -695,6 +710,7 @@
             "name": "永遠結氷",
             "type": "skillLvUp",
             "detail": "【スキル強化＆霊基再臨素材】\n常温でも溶けることのない氷。\nどことなく花のように見えなくもないが、\n美しさを理解できない者にとっては\nただの氷でしかない。",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6535.png",
             "background": "silver"
           },
@@ -706,6 +722,7 @@
             "name": "オーロラ鋼",
             "type": "skillLvUp",
             "detail": "【スキル強化＆霊基再臨素材】\nオーロラのような揺蕩う耀きを放つ神聖な鋼。\n北欧神話のワルキューレたちは\nこの鋼で造られた鎧を身に纏い、\n天を駆けたと云われている。",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6536.png",
             "background": "silver"
           },

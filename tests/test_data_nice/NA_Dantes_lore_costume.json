@@ -545,6 +545,7 @@
             "name": "Evil Bone",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nOminous bones wielding curses.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6516.png",
             "background": "bronze"
           },
@@ -556,6 +557,7 @@
             "name": "Octuplet Crystals",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nA multi-crystal created within a golem's body.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6515.png",
             "background": "silver"
           },
@@ -572,6 +574,7 @@
             "name": "Serpent Jewel",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nA jewel as if you are being stared by serpent eyes.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6509.png",
             "background": "silver"
           },
@@ -583,6 +586,7 @@
             "name": "Forbidden Page",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nA page which nobody should ever read.\nUsually mixed in as the first or last page.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6511.png",
             "background": "silver"
           },
@@ -599,6 +603,7 @@
             "name": "Void's Dust",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nDust that disperses when hollow shadows disappear.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6505.png",
             "background": "bronze"
           },
@@ -610,6 +615,7 @@
             "name": "Eternal Gear",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nDream of an eternal machine.\nA gear that spins forever once it starts turning.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6510.png",
             "background": "silver"
           },
@@ -626,6 +632,7 @@
             "name": "Phoenix Feather",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nFeather from a sacred bird of the Orient.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6501.png",
             "background": "silver"
           },
@@ -637,6 +644,7 @@
             "name": "Heart of the Foreign God",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nThe heart of a savage demi-god.\nA god is a god, even if it's a fake.\nIts heartbeat emits many curses.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6517.png",
             "background": "gold"
           },
@@ -655,6 +663,7 @@
             "name": "Proof of Hero",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nProof that you've been acknowledged as a hero.\nMany possess it, but they aren't \nconscious of it so they forget.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6503.png",
             "background": "bronze"
           },
@@ -671,6 +680,7 @@
             "name": "Seed of Yggdrasil",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nA seed of a giant tree that symbolizes the world.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6502.png",
             "background": "silver"
           },
@@ -687,6 +697,7 @@
             "name": "Dragon Fang",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nThe fang of a dragon. Dragon Tooth Warriors are created using these fangs.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6512.png",
             "background": "bronze"
           },
@@ -703,6 +714,7 @@
             "name": "Ghost Lantern",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nLantern that uses souls as fuel to burn.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6508.png",
             "background": "silver"
           },
@@ -719,6 +731,7 @@
             "name": "Meteor Horseshoe",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nA tough horseshoe made of metal from a meteor.\nEven if the elements are the same, since it wasn't created on Earth, it has a special role.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6513.png",
             "background": "silver"
           },
@@ -735,6 +748,7 @@
             "name": "Homunculus Baby",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nThe body of a young homunculus before a soul is written into it.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6514.png",
             "background": "silver"
           },
@@ -751,6 +765,7 @@
             "name": "Claw of Chaos",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nThose wounded by this claw become prisoners of chaos.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6507.png",
             "background": "gold"
           },
@@ -767,6 +782,7 @@
             "name": "Dragon's Reverse Scale",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nA scale that grew upside-down under a dragon's chin.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6506.png",
             "background": "gold"
           },
@@ -783,6 +799,7 @@
             "name": "Crystallized Lore",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nA highly pure crystal of magic created\nwhen human history crosses a stream of Mana.\nIt can be said that it is the ingredient for materializing Heroic Spirits.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6999.png",
             "background": "gold"
           },
@@ -801,6 +818,7 @@
             "name": "Stake of Wailing Night",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nA stake driven into a corpse to prevent its reanimation.\nIt never rusts, and retains its luster by absorbing blood.\nIt can even pierce otherworldly beings that lurk in the dark of night.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6533.png",
             "background": "bronze"
           },
@@ -812,6 +830,7 @@
             "name": "Shell of Reminiscence",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nThe shell of a clam that has lived for an eternity.\nWhen you put your ear against the aperture, you can hear the sounds of pure waves from the distant past.",
+            "individuality": [{ "id": 10085, "name": "unknown" }],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6526.png",
             "background": "silver"
           },
@@ -823,6 +842,7 @@
             "name": "Tearstone of Blood",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nThe crystal of the tear shed by a giant eyeball-like creature when it dies.\nA strong curse is residing within this crystal.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6520.png",
             "background": "gold"
           },
@@ -834,6 +854,7 @@
             "name": "Cursed Beast Gallstone",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nA stone whose curse fermented in the innards of a hexed beast.\nIt continues to release a strong curse that will never fade.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6529.png",
             "background": "gold"
           },

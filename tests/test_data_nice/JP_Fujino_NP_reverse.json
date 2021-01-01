@@ -737,6 +737,7 @@
                     "name": "アーチャーピース",
                     "type": "tdLvUp",
                     "detail": "【霊基再臨素材】\nアーチャークラスを象徴するピース",
+                    "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7002.png",
                     "background": "silver"
                   },
@@ -753,6 +754,7 @@
                     "name": "アーチャーピース",
                     "type": "tdLvUp",
                     "detail": "【霊基再臨素材】\nアーチャークラスを象徴するピース",
+                    "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7002.png",
                     "background": "silver"
                   },
@@ -764,6 +766,7 @@
                     "name": "凶骨",
                     "type": "skillLvUp",
                     "detail": "【スキル強化＆霊基再臨素材】\n呪いを纏った禍々しい骨",
+                    "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6516.png",
                     "background": "bronze"
                   },
@@ -780,6 +783,7 @@
                     "name": "アーチャーモニュメント",
                     "type": "tdLvUp",
                     "detail": "【霊基再臨素材】\nアーチャークラスを称えるモニュメント",
+                    "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7102.png",
                     "background": "gold"
                   },
@@ -791,6 +795,7 @@
                     "name": "虚影の塵",
                     "type": "skillLvUp",
                     "detail": "【スキル強化＆霊基再臨素材】\n虚ろな影が消える時に飛び散る塵",
+                    "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
                     "background": "bronze"
                   },
@@ -802,6 +807,7 @@
                     "name": "呪獣胆石",
                     "type": "skillLvUp",
                     "detail": "【スキル強化＆霊基再臨素材】\n呪われた獣の体内で呪いが醸成されてできた石。\n晴れることのない強烈な呪いを放ち続ける。",
+                    "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6529.png",
                     "background": "gold"
                   },
@@ -818,6 +824,7 @@
                     "name": "アーチャーモニュメント",
                     "type": "tdLvUp",
                     "detail": "【霊基再臨素材】\nアーチャークラスを称えるモニュメント",
+                    "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7102.png",
                     "background": "gold"
                   },
@@ -829,6 +836,7 @@
                     "name": "呪獣胆石",
                     "type": "skillLvUp",
                     "detail": "【スキル強化＆霊基再臨素材】\n呪われた獣の体内で呪いが醸成されてできた石。\n晴れることのない強烈な呪いを放ち続ける。",
+                    "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6529.png",
                     "background": "gold"
                   },
@@ -840,6 +848,7 @@
                     "name": "血の涙石",
                     "type": "skillLvUp",
                     "detail": "【スキル強化＆霊基再臨素材】\n巨大な目玉の怪物が息絶える瞬間に流す涙の結晶体。\n強烈な呪いが込められている。",
+                    "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6520.png",
                     "background": "gold"
                   },
@@ -858,6 +867,7 @@
                     "name": "弓の輝石",
                     "type": "skillLvUp",
                     "detail": "【スキル強化素材】\n弓兵の力が宿った光輝く石",
+                    "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6002.png",
                     "background": "bronze"
                   },
@@ -874,6 +884,7 @@
                     "name": "弓の輝石",
                     "type": "skillLvUp",
                     "detail": "【スキル強化素材】\n弓兵の力が宿った光輝く石",
+                    "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6002.png",
                     "background": "bronze"
                   },
@@ -890,6 +901,7 @@
                     "name": "弓の魔石",
                     "type": "skillLvUp",
                     "detail": "【スキル強化素材】\n弓兵の強い力が宿った魔法石",
+                    "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6102.png",
                     "background": "silver"
                   },
@@ -906,6 +918,7 @@
                     "name": "弓の魔石",
                     "type": "skillLvUp",
                     "detail": "【スキル強化素材】\n弓兵の強い力が宿った魔法石",
+                    "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6102.png",
                     "background": "silver"
                   },
@@ -917,6 +930,7 @@
                     "name": "虚影の塵",
                     "type": "skillLvUp",
                     "detail": "【スキル強化＆霊基再臨素材】\n虚ろな影が消える時に飛び散る塵",
+                    "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
                     "background": "bronze"
                   },
@@ -933,6 +947,7 @@
                     "name": "弓の秘石",
                     "type": "skillLvUp",
                     "detail": "【スキル強化素材】\n弓兵の強大な力が宿った宝石",
+                    "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6202.png",
                     "background": "gold"
                   },
@@ -944,6 +959,7 @@
                     "name": "虚影の塵",
                     "type": "skillLvUp",
                     "detail": "【スキル強化＆霊基再臨素材】\n虚ろな影が消える時に飛び散る塵",
+                    "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
                     "background": "bronze"
                   },
@@ -960,6 +976,7 @@
                     "name": "弓の秘石",
                     "type": "skillLvUp",
                     "detail": "【スキル強化素材】\n弓兵の強大な力が宿った宝石",
+                    "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6202.png",
                     "background": "gold"
                   },
@@ -971,6 +988,7 @@
                     "name": "凶骨",
                     "type": "skillLvUp",
                     "detail": "【スキル強化＆霊基再臨素材】\n呪いを纏った禍々しい骨",
+                    "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6516.png",
                     "background": "bronze"
                   },
@@ -987,6 +1005,7 @@
                     "name": "凶骨",
                     "type": "skillLvUp",
                     "detail": "【スキル強化＆霊基再臨素材】\n呪いを纏った禍々しい骨",
+                    "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6516.png",
                     "background": "bronze"
                   },
@@ -998,6 +1017,7 @@
                     "name": "宵哭きの鉄杭",
                     "type": "skillLvUp",
                     "detail": "【スキル強化＆霊基再臨素材】\n死した肉体が動きださないようにと躯に穿たれた杭。\n血を吸うことで錆びることなく艶やかさを増す。\n闇夜に潜むこの世ならざる者をも穿つことができる。",
+                    "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6533.png",
                     "background": "bronze"
                   },
@@ -1014,6 +1034,7 @@
                     "name": "宵哭きの鉄杭",
                     "type": "skillLvUp",
                     "detail": "【スキル強化＆霊基再臨素材】\n死した肉体が動きださないようにと躯に穿たれた杭。\n血を吸うことで錆びることなく艶やかさを増す。\n闇夜に潜むこの世ならざる者をも穿つことができる。",
+                    "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6533.png",
                     "background": "bronze"
                   },
@@ -1025,6 +1046,7 @@
                     "name": "魔術髄液",
                     "type": "skillLvUp",
                     "detail": "【スキル強化＆霊基再臨素材】\nただの人間を魔術師に仕立て上げる霊薬。\n脊髄に打ち込むことで僅かな刻の間\n疑似的な魔術回路を形成する。",
+                    "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6530.png",
                     "background": "bronze"
                   },
@@ -1041,6 +1063,7 @@
                     "name": "伝承結晶",
                     "type": "skillLvUp",
                     "detail": "【スキル強化＆霊基再臨素材】\n人類史とマナの奔流が交差する事で\n産み出される高純度の魔力結晶。\n物質化した英霊の素材とも言える。",
+                    "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6999.png",
                     "background": "gold"
                   },

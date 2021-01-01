@@ -528,6 +528,7 @@
             "name": "Archer Piece",
             "type": "tdLvUp",
             "detail": "\"Ascension Material\"\nA piece signifying the Archer class.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7002.png",
             "background": "silver"
           },
@@ -544,6 +545,7 @@
             "name": "Archer Piece",
             "type": "tdLvUp",
             "detail": "\"Ascension Material\"\nA piece signifying the Archer class.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7002.png",
             "background": "silver"
           },
@@ -555,6 +557,7 @@
             "name": "Meteor Horseshoe",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nA tough horseshoe made of metal from a meteor.\nEven if the elements are the same, since it wasn't created on Earth, it has a special role.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6513.png",
             "background": "silver"
           },
@@ -571,6 +574,7 @@
             "name": "Archer Monument",
             "type": "tdLvUp",
             "detail": "\"Ascension Material\"\nA monument in glory of the Archer class.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7102.png",
             "background": "gold"
           },
@@ -582,6 +586,7 @@
             "name": "Evil Bone",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nOminous bones wielding curses.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6516.png",
             "background": "bronze"
           },
@@ -593,6 +598,7 @@
             "name": "Phoenix Feather",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nFeather from a sacred bird of the Orient.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6501.png",
             "background": "silver"
           },
@@ -609,6 +615,7 @@
             "name": "Archer Monument",
             "type": "tdLvUp",
             "detail": "\"Ascension Material\"\nA monument in glory of the Archer class.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/7102.png",
             "background": "gold"
           },
@@ -620,6 +627,7 @@
             "name": "Phoenix Feather",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nFeather from a sacred bird of the Orient.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6501.png",
             "background": "silver"
           },
@@ -631,6 +639,7 @@
             "name": "Claw of Chaos",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nThose wounded by this claw become prisoners of chaos.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6507.png",
             "background": "gold"
           },
@@ -649,6 +658,7 @@
             "name": "Gem of Archer",
             "type": "skillLvUp",
             "detail": "\"Skill Up Material\"\nA bright stone glimmering with the power of an Archer.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6002.png",
             "background": "bronze"
           },
@@ -665,6 +675,7 @@
             "name": "Gem of Archer",
             "type": "skillLvUp",
             "detail": "\"Skill Up Material\"\nA bright stone glimmering with the power of an Archer.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6002.png",
             "background": "bronze"
           },
@@ -681,6 +692,7 @@
             "name": "Magic Gem of Archer",
             "type": "skillLvUp",
             "detail": "\"Skill Up Material\"\nA bright stone glimmering with the great power of an Archer.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6102.png",
             "background": "silver"
           },
@@ -697,6 +709,7 @@
             "name": "Magic Gem of Archer",
             "type": "skillLvUp",
             "detail": "\"Skill Up Material\"\nA bright stone glimmering with the great power of an Archer.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6102.png",
             "background": "silver"
           },
@@ -708,6 +721,7 @@
             "name": "Evil Bone",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nOminous bones wielding curses.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6516.png",
             "background": "bronze"
           },
@@ -724,6 +738,7 @@
             "name": "Secret Gem of Archer",
             "type": "skillLvUp",
             "detail": "\"Skill Up Material\"\nA bright stone glimmering with the immense power of an Archer.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6202.png",
             "background": "gold"
           },
@@ -735,6 +750,7 @@
             "name": "Evil Bone",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nOminous bones wielding curses.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6516.png",
             "background": "bronze"
           },
@@ -751,6 +767,7 @@
             "name": "Secret Gem of Archer",
             "type": "skillLvUp",
             "detail": "\"Skill Up Material\"\nA bright stone glimmering with the immense power of an Archer.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6202.png",
             "background": "gold"
           },
@@ -762,6 +779,7 @@
             "name": "Meteor Horseshoe",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nA tough horseshoe made of metal from a meteor.\nEven if the elements are the same, since it wasn't created on Earth, it has a special role.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6513.png",
             "background": "silver"
           },
@@ -778,6 +796,7 @@
             "name": "Meteor Horseshoe",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nA tough horseshoe made of metal from a meteor.\nEven if the elements are the same, since it wasn't created on Earth, it has a special role.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6513.png",
             "background": "silver"
           },
@@ -789,6 +808,7 @@
             "name": "Void's Dust",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nDust that disperses when hollow shadows disappear.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6505.png",
             "background": "bronze"
           },
@@ -805,6 +825,7 @@
             "name": "Void's Dust",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nDust that disperses when hollow shadows disappear.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6505.png",
             "background": "bronze"
           },
@@ -816,6 +837,7 @@
             "name": "Tearstone of Blood",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nThe crystal of the tear shed by a giant eyeball-like creature when it dies.\nA strong curse is residing within this crystal.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6520.png",
             "background": "gold"
           },
@@ -832,6 +854,7 @@
             "name": "Crystallized Lore",
             "type": "skillLvUp",
             "detail": "\"Skill Up & Ascension Material\"\nA highly pure crystal of magic created\nwhen human history crosses a stream of Mana.\nIt can be said that it is the ingredient for materializing Heroic Spirits.",
+            "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6999.png",
             "background": "gold"
           },

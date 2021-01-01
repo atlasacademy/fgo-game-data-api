@@ -77,6 +77,7 @@ class NiceItem(BaseModelORJson):
     name: str
     type: NiceItemType
     detail: str
+    individuality: List[NiceTrait]
     icon: HttpUrl
     background: NiceItemBGType
 

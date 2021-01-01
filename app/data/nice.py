@@ -540,6 +540,7 @@ def get_nice_item(region: Region, item_id: int) -> NiceItem:
         name=raw_data.name,
         type=ITEM_TYPE_NAME[raw_data.type],
         detail=raw_data.detail,
+        individuality=get_traits_list(raw_data.individuality),
         icon=AssetURL.items.format(
             base_url=settings.asset_url, region=region, item_id=raw_data.imageId
         ),
