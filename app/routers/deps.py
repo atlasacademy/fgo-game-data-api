@@ -258,13 +258,16 @@ class SkillSearchParams:
 
         - **name**: in English if you are searching NA data and in Japanese if you are searching JP data.
         - **type**: `passive` or `active`.
-        - **num**: skill number on the servant: 1, 2 or 3.
-        - **priority**: visual display order. It is usually a better number for strengthening status.
-        - **strengthStatus**: strengthening status.
+        - **num**: skill number on the servant: 1, 2 or 3. [1]
+        - **priority**: visual display order. It is usually a better number for strengthening status. [1]
+        - **strengthStatus**: strengthening status. [1]
         - **lvl1coolDown**: Cooldown at level 1.
         - **numFunctions**: Number of functions in the skill.
 
         At least one of the parameter is required for the query.
+
+        [1] Notice that multiple servants can have the same skill, the search will look into all servants
+        with the skill and check if any servant satisfy the conditions.
         """
     )
 

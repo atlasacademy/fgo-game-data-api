@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.29.1 - 2020-01-02
+
+### Changed
+
+- Skill search: `num`, `priority` and `strengthStatus` will search all servants instead of only the first one.
+- Skill and NP search: Make sure that the level 1 skill or NP is used instead of relying on it being the first one.
+
 ## 5.29.0 - 2021-01-01
 
 ### Added

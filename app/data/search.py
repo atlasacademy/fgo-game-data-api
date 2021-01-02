@@ -250,11 +250,11 @@ def search_skill_svt(
 ) -> bool:
     svt_skills = masters[region].mstSvtSkillId.get(skill_id, [])
     if svt_skills:
-        svt_skill = svt_skills[0]
-        return (
+        return any(
             svt_skill.num in num
             and svt_skill.priority in priority
             and svt_skill.strengthStatus in strengthStatus
+            for svt_skill in svt_skills
         )
     else:
         return (
@@ -267,8 +267,14 @@ def search_skill_svt(
 def search_skill_lv(
     region: Region, skill_id: int, lvl1coolDown: List[int], numFunctions: List[int]
 ) -> bool:
-    skill_lv = masters[region].mstSkillLvId[skill_id][0]
-    return skill_lv.chargeTurn in lvl1coolDown and len(skill_lv.funcId) in numFunctions
+    skill_lv_1 = next(
+        skill_lv
+        for skill_lv in masters[region].mstSkillLvId[skill_id]
+        if skill_lv.lv == 1
+    )
+    return (
+        skill_lv_1.chargeTurn in lvl1coolDown and len(skill_lv_1.funcId) in numFunctions
+    )
 
 
 def search_skill(search_param: SkillSearchParams, limit: int = 100) -> List[int]:
@@ -331,11 +337,12 @@ def search_td_svt(
     hits: List[int],
     strengthStatus: List[int],
 ) -> bool:
-    svt_td = masters[region].mstSvtTreasureDeviceId[td_id][0]
-    return (
+    svt_tds = masters[region].mstSvtTreasureDeviceId[td_id]
+    return any(
         svt_td.cardId in card
         and len(svt_td.damage) in hits
         and svt_td.strengthStatus in strengthStatus
+        for svt_td in svt_tds
     )
 
 
@@ -346,10 +353,12 @@ def search_td_lv(
     minNpNpGain: int,
     maxNpNpGain: int,
 ) -> bool:
-    td_lv = masters[region].mstTreasureDeviceLvId[td_id][0]
+    td_lv_1 = next(
+        td_lv for td_lv in masters[region].mstTreasureDeviceLvId[td_id] if td_lv.lv == 1
+    )
     return (
-        len(td_lv.funcId) in numFunctions
-        and minNpNpGain <= td_lv.tdPoint <= maxNpNpGain
+        len(td_lv_1.funcId) in numFunctions
+        and minNpNpGain <= td_lv_1.tdPoint <= maxNpNpGain
     )
 
 
