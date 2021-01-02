@@ -21,6 +21,7 @@
     {
       "id": 980031,
       "name": "Purifying Recovery",
+      "ruby": "Purifying Recovery",
       "detail": "Restore HP & remove DEF Debuffs for one ally",
       "type": "active",
       "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png",
@@ -78,6 +79,7 @@
     {
       "id": 980032,
       "name": "Illusionary Buff",
+      "ruby": "Illusionary Buff",
       "detail": "Increase ATK (1 turn) & increase NP Strength (1 turn) for one ally",
       "type": "active",
       "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00300.png",
@@ -174,6 +176,7 @@
     {
       "id": 980033,
       "name": "Predictive Evasion",
+      "ruby": "Predictive Evasion",
       "detail": "Apply Evade to one ally (1 time, 3 turns)",
       "type": "active",
       "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00402.png",

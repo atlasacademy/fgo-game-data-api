@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.29.0 - 2021-01-01
+
+### Added
+
+- `ruby` to nice servant, skill and NP for ruby texts.
+
 ## 5.28.0 - 2020-12-31
 
 ### Added

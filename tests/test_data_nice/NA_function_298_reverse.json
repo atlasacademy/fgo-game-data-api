@@ -29,6 +29,7 @@
         {
           "id": 980023,
           "name": "Stepping Stone to Ultimate Victory",
+          "ruby": "Stepping Stone to Ultimate Victory",
           "detail": "Increase an ally's Critical Star drop rate (1 turn)",
           "type": "active",
           "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00604.png",

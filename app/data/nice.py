@@ -380,6 +380,7 @@ def get_nice_skill(
     nice_skill: Dict[str, Any] = {
         "id": skillEntity.mstSkill.id,
         "name": skillEntity.mstSkill.name,
+        "ruby": skillEntity.mstSkill.ruby,
         "type": SKILL_TYPE_NAME[skillEntity.mstSkill.type],
         "actIndividuality": get_traits_list(skillEntity.mstSkill.actIndividuality),
     }
@@ -453,6 +454,7 @@ def get_nice_td(
     nice_td: Dict[str, Any] = {
         "id": tdEntity.mstTreasureDevice.id,
         "name": tdEntity.mstTreasureDevice.name,
+        "ruby": tdEntity.mstTreasureDevice.ruby,
         "rank": tdEntity.mstTreasureDevice.rank,
         "type": tdEntity.mstTreasureDevice.typeText,
         "individuality": get_traits_list(tdEntity.mstTreasureDevice.individuality),
@@ -696,6 +698,7 @@ def get_nice_servant(
         "id": raw_data.mstSvt.id,
         "collectionNo": raw_data.mstSvt.collectionNo,
         "name": raw_data.mstSvt.name,
+        "ruby": raw_data.mstSvt.ruby,
         "gender": GENDER_TYPE_NAME[raw_data.mstSvt.genderType],
         "attribute": ATTRIBUTE_NAME[raw_data.mstSvt.attri],
         "className": CLASS_NAME[raw_data.mstSvt.classId],

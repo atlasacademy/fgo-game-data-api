@@ -347,6 +347,7 @@ class NiceSkill(BaseModelORJson):
     id: int
     num: int = -1
     name: str
+    ruby: str
     detail: Optional[str] = None
     type: NiceSkillType
     strengthStatus: int = -1
@@ -376,6 +377,7 @@ class NiceTd(BaseModelORJson):
     num: int
     card: NiceCardType
     name: str
+    ruby: str
     icon: Optional[HttpUrl] = None
     rank: str
     type: str
@@ -631,6 +633,9 @@ class NiceServant(BaseModelORJson):
         "The community usually means this number when they talk about servant or CE IDs.",
     )
     name: str = Field(..., title="svt's name", description="svt's name")
+    ruby: str = Field(
+        ..., title="svt's name ruby text", description="svt's name ruby text"
+    )
     className: SvtClass = Field(
         ...,
         title="svt's class",
