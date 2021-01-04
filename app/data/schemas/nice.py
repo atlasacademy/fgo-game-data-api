@@ -16,6 +16,7 @@ from ..enums import (
     NiceFuncTargetType,
     NiceFuncType,
     NiceGender,
+    NiceGiftType,
     NiceItemBGType,
     NiceItemType,
     NiceQuestType,
@@ -915,6 +916,14 @@ class NiceQuestRelease(BaseModelORJson):
     closedMessage: str
 
 
+class NiceGift(BaseModelORJson):
+    id: int
+    type: NiceGiftType
+    objectId: int
+    priority: int
+    num: int
+
+
 class NiceQuest(BaseModelORJson):
     id: int
     name: str
@@ -923,6 +932,7 @@ class NiceQuest(BaseModelORJson):
     consume: int
     spotId: int
     warId: int
+    gifts: List[NiceGift]
     releaseConditions: List[NiceQuestRelease]
     phases: List[int]
     noticeAt: int

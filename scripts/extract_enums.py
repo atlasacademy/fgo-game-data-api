@@ -198,6 +198,7 @@ ENUMS: List[Tuple[str, str, str, str, str]] = [
         "CLASS_OVERWRITE_NAME",
     ),
     ("ItemType.Type", "ItemType", "NiceItemType", "Item Type Enum", "ITEM_TYPE_NAME"),
+    ("Gift.Type", "GiftType", "NiceGiftType", "Gift Type Enum", "GIFT_TYPE_NAME"),
     (
         "BattleCommand.TYPE",
         "CardType",

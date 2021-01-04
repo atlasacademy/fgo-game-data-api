@@ -12,6 +12,7 @@ from .gameenums import (
     FUNC_TARGETTYPE_NAME,
     FUNC_TYPE_NAME,
     GENDER_TYPE_NAME,
+    GIFT_TYPE_NAME,
     ITEM_TYPE_NAME,
     QUEST_CONSUME_TYPE_NAME,
     QUEST_TYPE_NAME,
@@ -34,6 +35,7 @@ from .gameenums import (
     NiceFuncTargetType,
     NiceFuncType,
     NiceGender,
+    NiceGiftType,
     NiceItemType,
     NiceQuestType,
     NiceStatusRank,
@@ -817,4 +819,6 @@ __all__ = [
     "NiceWarStartType",
     "WAR_START_TYPE_NAME",
     "WarEntityFlag",
+    "GIFT_TYPE_NAME",
+    "NiceGiftType",
 ]

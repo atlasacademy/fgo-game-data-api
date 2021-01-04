@@ -1431,6 +1431,57 @@ ITEM_TYPE_NAME: Dict[int, NiceItemType] = {
 }
 
 
+class GiftType(IntEnum):
+    SERVANT = 1
+    ITEM = 2
+    FRIENDSHIP = 3
+    USER_EXP = 4
+    EQUIP = 5
+    EVENT_SVT_JOIN = 6
+    EVENT_SVT_GET = 7
+    QUEST_REWARD_ICON = 8
+    COSTUME_RELEASE = 9
+    COSTUME_GET = 10
+    COMMAND_CODE = 11
+    EVENT_POINT_BUFF = 12
+    EVENT_BOARD_GAME_TOKEN = 13
+
+
+class NiceGiftType(str, Enum):
+    """Gift Type Enum"""
+
+    servant = "servant"
+    item = "item"
+    friendship = "friendship"
+    userExp = "userExp"
+    equip = "equip"
+    eventSvtJoin = "eventSvtJoin"
+    eventSvtGet = "eventSvtGet"
+    questRewardIcon = "questRewardIcon"
+    costumeRelease = "costumeRelease"
+    costumeGet = "costumeGet"
+    commandCode = "commandCode"
+    eventPointBuff = "eventPointBuff"
+    eventBoardGameToken = "eventBoardGameToken"
+
+
+GIFT_TYPE_NAME: Dict[int, NiceGiftType] = {
+    1: NiceGiftType.servant,
+    2: NiceGiftType.item,
+    3: NiceGiftType.friendship,
+    4: NiceGiftType.userExp,
+    5: NiceGiftType.equip,
+    6: NiceGiftType.eventSvtJoin,
+    7: NiceGiftType.eventSvtGet,
+    8: NiceGiftType.questRewardIcon,
+    9: NiceGiftType.costumeRelease,
+    10: NiceGiftType.costumeGet,
+    11: NiceGiftType.commandCode,
+    12: NiceGiftType.eventPointBuff,
+    13: NiceGiftType.eventBoardGameToken,
+}
+
+
 class CardType(IntEnum):
     NONE = 0
     ARTS = 1

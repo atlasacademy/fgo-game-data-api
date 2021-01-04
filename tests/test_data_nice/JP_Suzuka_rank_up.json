@@ -6,6 +6,7 @@
   "consume": 20,
   "spotId": 99003,
   "warId": 1003,
+  "gifts": [],
   "releaseConditions": [
     {
       "type": "questClear",

@@ -44,6 +44,7 @@ MASTER_WITHOUT_ID = {
     "mstQuestPhase",
     "mstStage",
     "mstQuestRelease",
+    "mstGift",
 }
 SVT_STUFFS = {
     "mstSvtExp",
@@ -187,6 +188,7 @@ def update_gamedata() -> None:
             ("mstSpotWarId", "mstSpot", "warId"),
             ("mstQuestSpotId", "mstQuest", "spotId"),
             ("mstWarEventId", "mstWar", "eventId"),
+            ("mstGiftId", "mstGift", "id"),
             ("mstCommandCodeCommentId", "mstCommandCodeComment", "commandCodeId"),
         ):
             master[masters_table] = defaultdict(list)

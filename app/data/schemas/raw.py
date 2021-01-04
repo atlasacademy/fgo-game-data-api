@@ -581,6 +581,14 @@ class MstClassRelationOverwrite(BaseModel):
     type: int  # 0
 
 
+class MstGift(BaseModel):
+    id: int  # 94024900
+    type: int  # 6
+    objectId: int  # 403000
+    priority: int  # 0
+    num: int  # 1
+
+
 class MstBgm(BaseModel):
     id: int  # 1
     fileName: str  # "BGM_BATTLE_1"
@@ -792,6 +800,7 @@ class Master(BaseModel):
     mstFuncId: Dict[int, MstFunc]
     mstSkillId: Dict[int, MstSkill]
     mstItemId: Dict[int, MstItem]
+    mstGiftId: Dict[int, List[MstGift]]
     mstTreasureDeviceId: Dict[int, MstTreasureDevice]
     mstSvtServantCollectionNo: Dict[int, int]
     # mstSvtServantName: Dict[str, int]

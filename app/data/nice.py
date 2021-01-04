@@ -29,6 +29,7 @@ from .enums import (
     FUNC_TYPE_NAME,
     FUNC_VALS_NOT_BUFF,
     GENDER_TYPE_NAME,
+    GIFT_TYPE_NAME,
     ITEM_BG_TYPE_NAME,
     ITEM_TYPE_NAME,
     QUEST_CONSUME_TYPE_NAME,
@@ -63,6 +64,7 @@ from .schemas.nice import (
     NiceCostume,
     NiceEquip,
     NiceEvent,
+    NiceGift,
     NiceItem,
     NiceItemAmount,
     NiceLoreComment,
@@ -1318,6 +1320,20 @@ def get_nice_bgm(region: Region, bgm_id: int) -> NiceBgm:
     )
 
 
+def get_nice_gift(region: Region, gift_id: int) -> List[NiceGift]:
+    raw_gifts = masters[region].mstGiftId.get(gift_id, [])
+    return [
+        NiceGift(
+            id=raw_gift.id,
+            type=GIFT_TYPE_NAME[raw_gift.type],
+            objectId=raw_gift.objectId,
+            priority=raw_gift.priority,
+            num=raw_gift.num,
+        )
+        for raw_gift in raw_gifts
+    ]
+
+
 def get_nice_quest_release(
     region: Region, raw_quest_release: MstQuestRelease
 ) -> NiceQuestRelease:
@@ -1346,6 +1362,7 @@ def get_nice_quest(
         "consume": raw_quest.mstQuest.actConsume,
         "spotId": raw_quest.mstQuest.spotId,
         "warId": masters[region].mstSpotId[raw_quest.mstQuest.spotId].warId,
+        "gifts": get_nice_gift(region, raw_quest.mstQuest.giftId),
         "releaseConditions": [
             get_nice_quest_release(region, release)
             for release in raw_quest.mstQuestRelease

@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+### Added
+
+- Quest reward `gifts` to nice quest.
+
 ## 5.29.1 - 2020-01-02
 
 ### Changed

@@ -73,6 +73,15 @@
           "consume": 0,
           "spotId": 20301,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -95,6 +104,22 @@
           "consume": 23,
           "spotId": 20301,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 315300,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            },
+            {
+              "id": 315300,
+              "type": "item",
+              "objectId": 6532,
+              "priority": 0,
+              "num": 1
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -117,6 +142,15 @@
           "consume": 20,
           "spotId": 20301,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -159,6 +193,22 @@
           "consume": 23,
           "spotId": 20302,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 315301,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            },
+            {
+              "id": 315301,
+              "type": "item",
+              "objectId": 6532,
+              "priority": 0,
+              "num": 2
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -181,6 +231,22 @@
           "consume": 24,
           "spotId": 20302,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 315302,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            },
+            {
+              "id": 315302,
+              "type": "item",
+              "objectId": 6532,
+              "priority": 0,
+              "num": 3
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -223,6 +289,15 @@
           "consume": 21,
           "spotId": 20305,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -265,6 +340,22 @@
           "consume": 23,
           "spotId": 20306,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 315303,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            },
+            {
+              "id": 315303,
+              "type": "item",
+              "objectId": 6532,
+              "priority": 0,
+              "num": 2
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -287,6 +378,22 @@
           "consume": 24,
           "spotId": 20306,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 315312,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            },
+            {
+              "id": 315312,
+              "type": "item",
+              "objectId": 6532,
+              "priority": 0,
+              "num": 2
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -309,6 +416,15 @@
           "consume": 21,
           "spotId": 20306,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -351,6 +467,22 @@
           "consume": 24,
           "spotId": 20307,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 315304,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            },
+            {
+              "id": 315304,
+              "type": "item",
+              "objectId": 6508,
+              "priority": 0,
+              "num": 2
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -373,6 +505,22 @@
           "consume": 24,
           "spotId": 20307,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 315305,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            },
+            {
+              "id": 315305,
+              "type": "item",
+              "objectId": 6508,
+              "priority": 0,
+              "num": 2
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -395,6 +543,22 @@
           "consume": 23,
           "spotId": 20307,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 315306,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            },
+            {
+              "id": 315306,
+              "type": "item",
+              "objectId": 6508,
+              "priority": 0,
+              "num": 2
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -417,6 +581,15 @@
           "consume": 0,
           "spotId": 20307,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 20058,
+              "type": "item",
+              "objectId": 7999,
+              "priority": 0,
+              "num": 1
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -439,6 +612,15 @@
           "consume": 21,
           "spotId": 20307,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -500,6 +682,15 @@
           "consume": 21,
           "spotId": 20309,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -542,6 +733,22 @@
           "consume": 24,
           "spotId": 20310,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 315307,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            },
+            {
+              "id": 315307,
+              "type": "item",
+              "objectId": 6508,
+              "priority": 0,
+              "num": 2
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -564,6 +771,22 @@
           "consume": 24,
           "spotId": 20310,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 315308,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            },
+            {
+              "id": 315308,
+              "type": "item",
+              "objectId": 6531,
+              "priority": 0,
+              "num": 2
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -606,6 +829,22 @@
           "consume": 25,
           "spotId": 20311,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 315309,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            },
+            {
+              "id": 315309,
+              "type": "item",
+              "objectId": 6531,
+              "priority": 0,
+              "num": 2
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -648,6 +887,22 @@
           "consume": 24,
           "spotId": 20312,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 315310,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            },
+            {
+              "id": 315310,
+              "type": "item",
+              "objectId": 6531,
+              "priority": 0,
+              "num": 2
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -670,6 +925,22 @@
           "consume": 25,
           "spotId": 20312,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 315311,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            },
+            {
+              "id": 315311,
+              "type": "item",
+              "objectId": 6532,
+              "priority": 0,
+              "num": 3
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -712,6 +983,7 @@
           "consume": 18,
           "spotId": 20314,
           "warId": 203,
+          "gifts": [],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -751,6 +1023,15 @@
           "consume": 21,
           "spotId": 20314,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -793,6 +1074,22 @@
           "consume": 25,
           "spotId": 20315,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 315314,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            },
+            {
+              "id": 315314,
+              "type": "item",
+              "objectId": 6517,
+              "priority": 0,
+              "num": 5
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -835,6 +1132,15 @@
           "consume": 21,
           "spotId": 20316,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -877,6 +1183,22 @@
           "consume": 25,
           "spotId": 20317,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 315313,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            },
+            {
+              "id": 315313,
+              "type": "item",
+              "objectId": 6532,
+              "priority": 0,
+              "num": 5
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -957,6 +1279,15 @@
           "consume": 21,
           "spotId": 20320,
           "warId": 203,
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            }
+          ],
           "releaseConditions": [
             {
               "type": "questClear",
@@ -999,6 +1330,7 @@
           "consume": 999,
           "spotId": 20321,
           "warId": 203,
+          "gifts": [],
           "releaseConditions": [
             {
               "type": "questClear",

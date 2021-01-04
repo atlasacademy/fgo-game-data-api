@@ -6,6 +6,9 @@
   "consume": 1,
   "spotId": 820001,
   "warId": 8200,
+  "gifts": [
+    { "id": 25239, "type": "item", "objectId": 6520, "priority": 0, "num": 1 }
+  ],
   "releaseConditions": [
     {
       "type": "questClear",
