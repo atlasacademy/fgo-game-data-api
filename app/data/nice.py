@@ -32,8 +32,11 @@ from .enums import (
     GIFT_TYPE_NAME,
     ITEM_BG_TYPE_NAME,
     ITEM_TYPE_NAME,
+    PAY_TYPE_NAME,
+    PURCHASE_TYPE_NAME,
     QUEST_CONSUME_TYPE_NAME,
     QUEST_TYPE_NAME,
+    SHOP_TYPE_NAME,
     SKILL_TYPE_NAME,
     STATUS_RANK_NAME,
     SVT_FLAG_NAME,
@@ -43,6 +46,7 @@ from .enums import (
     WAR_START_TYPE_NAME,
     FuncType,
     NiceStatusRank,
+    PayType,
     SvtClass,
     SvtType,
     SvtVoiceType,
@@ -79,6 +83,7 @@ from .schemas.nice import (
     NiceReversedSkillTdType,
     NiceServant,
     NiceServantChange,
+    NiceShop,
     NiceSkillReverse,
     NiceSpot,
     NiceStage,
@@ -95,6 +100,7 @@ from .schemas.raw import (
     MstClassRelationOverwrite,
     MstMap,
     MstQuestRelease,
+    MstShop,
     MstSpot,
     MstStage,
     MstSvtChange,
@@ -1267,6 +1273,40 @@ def get_nice_command_code(region: Region, cc_id: int) -> NiceCommandCode:
     return nice_cc
 
 
+def get_nice_shop(region: Region, shop: MstShop) -> NiceShop:
+    if shop.payType == PayType.FRIEND_POINT:
+        shop_item_id = 4
+    elif shop.payType == PayType.MANA:
+        shop_item_id = 3
+    else:
+        shop_item_id = shop.itemIds[0]
+
+    return NiceShop(
+        id=shop.id,
+        baseShopId=shop.baseShopId,
+        shopType=SHOP_TYPE_NAME[shop.shopType],
+        eventId=shop.eventId,
+        slot=shop.slot,
+        priority=shop.priority,
+        name=shop.name,
+        detail=shop.detail,
+        infoMessage=shop.infoMessage,
+        warningMessage=shop.warningMessage,
+        payType=PAY_TYPE_NAME[shop.payType],
+        cost=NiceItemAmount(
+            item=get_nice_item(region, shop_item_id), amount=shop.prices[0]
+        ),
+        purchaseType=PURCHASE_TYPE_NAME[shop.purchaseType],
+        targetIds=shop.targetIds,
+        setNum=shop.setNum,
+        limitNum=shop.limitNum,
+        defaultLv=shop.defaultLv,
+        defaultLimitCount=shop.defaultLimitCount,
+        openedAt=shop.openedAt,
+        closedAt=shop.closedAt,
+    )
+
+
 def get_nice_event(region: Region, event_id: int) -> NiceEvent:
     raw_data = raw.get_event_entity(region, event_id)
 
@@ -1299,6 +1339,7 @@ def get_nice_event(region: Region, event_id: int) -> NiceEvent:
         finishedAt=raw_data.mstEvent.finishedAt,
         materialOpenedAt=raw_data.mstEvent.materialOpenedAt,
         warIds=(war.id for war in masters[region].mstWarEventId.get(event_id, [])),
+        shop=(get_nice_shop(region, shop) for shop in raw_data.mstShop),
     )
 
     return nice_event

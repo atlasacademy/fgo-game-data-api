@@ -6,9 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.30.0 - 2020-01-04
+
 ### Added
 
 - Quest reward `gifts` to nice quest.
+- Shop details to raw and nice event endpoints.
 
 ## 5.29.1 - 2020-01-02
 

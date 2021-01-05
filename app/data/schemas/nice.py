@@ -19,7 +19,10 @@ from ..enums import (
     NiceGiftType,
     NiceItemBGType,
     NiceItemType,
+    NicePayType,
+    NicePurchaseType,
     NiceQuestType,
+    NiceShopType,
     NiceSkillType,
     NiceStatusRank,
     NiceSvtFlag,
@@ -885,6 +888,33 @@ class NiceBuffReverse(NiceBuff):
     reverse: Optional[NiceReversedBuffType] = None
 
 
+class NiceShop(BaseModelORJson):
+    id: int
+    baseShopId: int
+    shopType: NiceShopType
+    eventId: int
+    slot: int = Field(..., title="Slot", description="Tab number in the shop")
+    priority: int = Field(..., title="Priority", description="Sort order in the shop")
+    name: str
+    detail: str
+    infoMessage: str
+    warningMessage: str
+    payType: NicePayType
+    cost: NiceItemAmount
+    purchaseType: NicePurchaseType
+    targetIds: List[int]
+    setNum: int = Field(
+        ..., title="Set Number", description="Number of items per buying unit"
+    )
+    limitNum: int = Field(
+        ..., title="Limit Number", description="Maximum number of buying units"
+    )
+    defaultLv: int
+    defaultLimitCount: int
+    openedAt: int
+    closedAt: int
+
+
 class NiceEvent(BaseModelORJson):
     id: int
     type: NiceEventType
@@ -901,6 +931,7 @@ class NiceEvent(BaseModelORJson):
     finishedAt: int
     materialOpenedAt: int
     warIds: List[int]
+    shop: List[NiceShop]
 
 
 class NiceBgm(BaseModelORJson):
