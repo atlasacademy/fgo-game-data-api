@@ -1482,6 +1482,168 @@ GIFT_TYPE_NAME: Dict[int, NiceGiftType] = {
 }
 
 
+class ShopType(IntEnum):
+    NONE = 0
+    EVENT_ITEM = 1
+    MANA = 2
+    RARE_PRI = 3
+    SVT_STORAGE = 4
+    SVT_EQUIP_STORAGE = 5
+    STONE_FRAGMENTS = 6
+    SVT_ANONYMOUS = 7
+    BGM = 8
+    LIMIT_MATERIAL = 9
+
+
+class NiceShopType(str, Enum):
+    """Shop Type Enum"""
+
+    none = "none"
+    eventItem = "eventItem"
+    mana = "mana"
+    rarePri = "rarePri"
+    svtStorage = "svtStorage"
+    svtEquipStorage = "svtEquipStorage"
+    stoneFragments = "stoneFragments"
+    svtAnonymous = "svtAnonymous"
+    bgm = "bgm"
+    limitMaterial = "limitMaterial"
+
+
+SHOP_TYPE_NAME: Dict[int, NiceShopType] = {
+    0: NiceShopType.none,
+    1: NiceShopType.eventItem,
+    2: NiceShopType.mana,
+    3: NiceShopType.rarePri,
+    4: NiceShopType.svtStorage,
+    5: NiceShopType.svtEquipStorage,
+    6: NiceShopType.stoneFragments,
+    7: NiceShopType.svtAnonymous,
+    8: NiceShopType.bgm,
+    9: NiceShopType.limitMaterial,
+}
+
+
+class PayType(IntEnum):
+    STONE = 1
+    QP = 2
+    FRIEND_POINT = 3
+    MANA = 4
+    TICKET = 5
+    EVENT_ITEM = 6
+    CHARGE_STONE = 7
+    STONE_FRAGMENTS = 8
+    ANONYMOUS = 9
+    RARE_PRI = 10
+    ITEM = 11
+
+
+class NicePayType(str, Enum):
+    """Pay Type Enum"""
+
+    stone = "stone"
+    qp = "qp"
+    friendPoint = "friendPoint"
+    mana = "mana"
+    ticket = "ticket"
+    eventItem = "eventItem"
+    chargeStone = "chargeStone"
+    stoneFragments = "stoneFragments"
+    anonymous = "anonymous"
+    rarePri = "rarePri"
+    item = "item"
+
+
+PAY_TYPE_NAME: Dict[int, NicePayType] = {
+    1: NicePayType.stone,
+    2: NicePayType.qp,
+    3: NicePayType.friendPoint,
+    4: NicePayType.mana,
+    5: NicePayType.ticket,
+    6: NicePayType.eventItem,
+    7: NicePayType.chargeStone,
+    8: NicePayType.stoneFragments,
+    9: NicePayType.anonymous,
+    10: NicePayType.rarePri,
+    11: NicePayType.item,
+}
+
+
+class PurchaseType(IntEnum):
+    NONE = 0
+    ITEM = 1
+    EQUIP = 2
+    FRIEND_GACHA = 3
+    SERVANT = 4
+    SET_ITEM = 5
+    QUEST = 6
+    EVENT_SHOP = 7
+    EVENT_SVT_GET = 8
+    MANA_SHOP = 9
+    STORAGE_SVT = 10
+    STORAGE_SVTEQUIP = 11
+    BGM = 12
+    COSTUME_RELEASE = 14
+    BGM_RELEASE = 15
+    LOTTERY_SHOP = 16
+    EVENT_FACTORY = 17
+    ITEM_AS_PRESENT = 18
+    COMMAND_CODE = 19
+    GIFT = 20
+    EVENT_SVT_JOIN = 21
+
+
+class NicePurchaseType(str, Enum):
+    """Purchase Type Enum"""
+
+    none = "none"
+    item = "item"
+    equip = "equip"
+    friendGacha = "friendGacha"
+    servant = "servant"
+    setItem = "setItem"
+    quest = "quest"
+    eventShop = "eventShop"
+    eventSvtGet = "eventSvtGet"
+    manaShop = "manaShop"
+    storageSvt = "storageSvt"
+    storageSvtequip = "storageSvtequip"
+    bgm = "bgm"
+    costumeRelease = "costumeRelease"
+    bgmRelease = "bgmRelease"
+    lotteryShop = "lotteryShop"
+    eventFactory = "eventFactory"
+    itemAsPresent = "itemAsPresent"
+    commandCode = "commandCode"
+    gift = "gift"
+    eventSvtJoin = "eventSvtJoin"
+
+
+PURCHASE_TYPE_NAME: Dict[int, NicePurchaseType] = {
+    0: NicePurchaseType.none,
+    1: NicePurchaseType.item,
+    2: NicePurchaseType.equip,
+    3: NicePurchaseType.friendGacha,
+    4: NicePurchaseType.servant,
+    5: NicePurchaseType.setItem,
+    6: NicePurchaseType.quest,
+    7: NicePurchaseType.eventShop,
+    8: NicePurchaseType.eventSvtGet,
+    9: NicePurchaseType.manaShop,
+    10: NicePurchaseType.storageSvt,
+    11: NicePurchaseType.storageSvtequip,
+    12: NicePurchaseType.bgm,
+    14: NicePurchaseType.costumeRelease,
+    15: NicePurchaseType.bgmRelease,
+    16: NicePurchaseType.lotteryShop,
+    17: NicePurchaseType.eventFactory,
+    18: NicePurchaseType.itemAsPresent,
+    19: NicePurchaseType.commandCode,
+    20: NicePurchaseType.gift,
+    21: NicePurchaseType.eventSvtJoin,
+}
+
+
 class CardType(IntEnum):
     NONE = 0
     ARTS = 1

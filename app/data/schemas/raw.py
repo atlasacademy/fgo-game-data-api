@@ -600,6 +600,34 @@ class MstBgm(BaseModel):
     logoId: int  # 1
 
 
+class MstShop(BaseModel):
+    itemIds: List[int]  # [94025003]
+    prices: List[int]  # [20]
+    targetIds: List[int]  # [7106]
+    script: Dict[Any, Any]  # {}
+    id: int  # 80107019
+    baseShopId: int  # 80107019
+    eventId: int  # 80107
+    slot: int  # 1
+    flag: int  # 0
+    priority: int  # 330
+    purchaseType: int  # 1
+    setNum: int  # 1
+    payType: int  # 6
+    shopType: int  # 1
+    limitNum: int  # 20
+    defaultLv: int  # 0
+    defaultLimitCount: int  # 0
+    name: str  # "アサシンモニュメント"
+    detail: str  # "【霊基再臨素材】へ交換"
+    infoMessage: str  # ""
+    warningMessage: str  # ""
+    imageId: int  # 0
+    bgImageId: int  # 80107
+    openedAt: int  # 1528880400
+    closedAt: int  # 1530676799
+
+
 class MstEvent(BaseModel):
     script: List[Dict[str, str]]  # []
     id: int  # 10083
@@ -801,6 +829,7 @@ class Master(BaseModel):
     mstSkillId: Dict[int, MstSkill]
     mstItemId: Dict[int, MstItem]
     mstGiftId: Dict[int, List[MstGift]]
+    mstShopEventId: Dict[int, List[MstShop]]
     mstTreasureDeviceId: Dict[int, MstTreasureDevice]
     mstSvtServantCollectionNo: Dict[int, int]
     # mstSvtServantName: Dict[str, int]
@@ -945,6 +974,7 @@ class QuestPhaseEntity(QuestEntity):
 
 class EventEntity(BaseModelORJson):
     mstEvent: MstEvent
+    mstShop: List[MstShop]
 
 
 class WarEntity(BaseModelORJson):

@@ -199,6 +199,15 @@ ENUMS: List[Tuple[str, str, str, str, str]] = [
     ),
     ("ItemType.Type", "ItemType", "NiceItemType", "Item Type Enum", "ITEM_TYPE_NAME"),
     ("Gift.Type", "GiftType", "NiceGiftType", "Gift Type Enum", "GIFT_TYPE_NAME"),
+    ("ShopType.Type", "ShopType", "NiceShopType", "Shop Type Enum", "SHOP_TYPE_NAME"),
+    ("PayType.Type", "PayType", "NicePayType", "Pay Type Enum", "PAY_TYPE_NAME"),
+    (
+        "Purchase.Type",
+        "PurchaseType",
+        "NicePurchaseType",
+        "Purchase Type Enum",
+        "PURCHASE_TYPE_NAME",
+    ),
     (
         "BattleCommand.TYPE",
         "CardType",

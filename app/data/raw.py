@@ -339,7 +339,10 @@ def get_war_entity(region: Region, war_id: int) -> WarEntity:
 
 
 def get_event_entity(region: Region, event_id: int) -> EventEntity:
-    return EventEntity(mstEvent=masters[region].mstEventId[event_id])
+    return EventEntity(
+        mstEvent=masters[region].mstEventId[event_id],
+        mstShop=masters[region].mstShopEventId.get(event_id, []),
+    )
 
 
 def get_quest_entity(region: Region, quest_id: int) -> QuestEntity:
