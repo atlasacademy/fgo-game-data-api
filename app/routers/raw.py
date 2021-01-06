@@ -505,7 +505,7 @@ async def get_quest_phase(region: Region, quest_id: int, phase: int) -> Response
     Get the quest phase data from the given quest ID and phase number
     """
     if (
-        quest_id in masters[region].mstQuestId
+        quest_id in masters[region].mstQuestPhaseId
         and phase in masters[region].mstQuestPhaseId[quest_id]
     ):
         quest_entity = raw.get_quest_phase_entity(region, quest_id, phase)

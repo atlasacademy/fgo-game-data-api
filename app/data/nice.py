@@ -74,6 +74,8 @@ from .schemas.nice import (
     NiceLoreComment,
     NiceMap,
     NiceMysticCode,
+    NiceQuest,
+    NiceQuestPhase,
     NiceQuestRelease,
     NiceReversedBuff,
     NiceReversedBuffType,
@@ -1419,11 +1421,13 @@ def get_nice_quest(
     return nice_data
 
 
-def get_nice_quest_alone(region: Region, quest_id: int) -> Dict[str, Any]:
-    return get_nice_quest(region, quest_id, raw.get_quest_entity(region, quest_id))
+def get_nice_quest_alone(region: Region, quest_id: int) -> NiceQuest:
+    return NiceQuest.parse_obj(
+        get_nice_quest(region, quest_id, raw.get_quest_entity(region, quest_id))
+    )
 
 
-def get_nice_quest_phase(region: Region, quest_id: int, phase: int) -> Dict[str, Any]:
+def get_nice_quest_phase(region: Region, quest_id: int, phase: int) -> NiceQuestPhase:
     raw_data = raw.get_quest_phase_entity(region, quest_id, phase)
     nice_data = get_nice_quest(region, quest_id, raw_data)
     nice_data.update(
@@ -1439,7 +1443,7 @@ def get_nice_quest_phase(region: Region, quest_id: int, phase: int) -> Dict[str,
             "stages": [get_nice_stage(region, stage) for stage in raw_data.mstStage],
         }
     )
-    return nice_data
+    return NiceQuestPhase.parse_obj(nice_data)
 
 
 def get_nice_map(region: Region, raw_map: MstMap) -> NiceMap:

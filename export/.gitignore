@@ -3,6 +3,10 @@ nice_servant*.json
 nice_item*.json
 nice_mystic_code*.json
 nice_command_code*.json
+nice_quest*.json
+nice_skill*.json
+nice_functions*.json
+nice_buff*.json
 nice_trait.json
 nice_enums.json
 basic_equip*.json

@@ -1,8 +1,12 @@
-from typing import Dict, Tuple
+from typing import Dict, Iterable, Tuple
 
 import pytest
 from fastapi.testclient import TestClient
 
+from app.data.common import Region
+from app.data.gamedata import masters
+from app.data.nice import get_nice_shop
+from app.data.schemas.raw import MstShop
 from app.main import app
 
 from .utils import get_response_data
@@ -355,3 +359,17 @@ class TestServantSpecial:
         war_interlude = client.get("/nice/NA/war/1003")
         assert war_interlude.status_code == 200
         assert "chaldea_category_" in war_interlude.json()["banner"]
+
+    def test_shop_itemIds_0(self) -> None:
+        def get_shop_by_id(shops: Iterable[MstShop], shop_id: int) -> MstShop:
+            return next(shop for shop in shops if shop.id == shop_id)
+
+        default_event_shop = masters[Region.NA].mstShopEventId[0]
+
+        fp_shop_item = get_nice_shop(Region.NA, get_shop_by_id(default_event_shop, 1))
+        assert fp_shop_item.cost.item.name == "Friend Point"
+
+        mp_shop_item = get_nice_shop(
+            Region.NA, get_shop_by_id(default_event_shop, 11000000)
+        )
+        assert mp_shop_item.cost.item.name == "Mana Prism"

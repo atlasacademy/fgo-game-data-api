@@ -1,4 +1,4 @@
-from typing import Any, Dict, List
+from typing import List
 
 from fastapi import APIRouter, Depends, HTTPException, Response
 
@@ -585,23 +585,26 @@ async def get_war(region: Region, war_id: int) -> Response:
         raise HTTPException(status_code=404, detail="War not found")
 
 
+get_quest_phase_description = (
+    "Get the nice quest phase data from the given quest ID and phase number"
+)
+
+
 @router.get(
     "/{region}/quest/{quest_id}/{phase}",
     summary="Get Nice Quest Phase data",
+    description=get_quest_phase_description,
     response_description="Quest Phase Entity",
     response_model=NiceQuestPhase,
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-async def get_quest_phase(region: Region, quest_id: int, phase: int) -> Dict[str, Any]:
-    """
-    Get the nice quest phase data from the given quest ID and phase number
-    """
+async def get_quest_phase(region: Region, quest_id: int, phase: int) -> Response:
     if (
-        quest_id in masters[region].mstQuestId
+        quest_id in masters[region].mstQuestPhaseId
         and phase in masters[region].mstQuestPhaseId[quest_id]
     ):
-        return nice.get_nice_quest_phase(region, quest_id, phase)
+        return item_response(nice.get_nice_quest_phase(region, quest_id, phase))
     else:
         raise HTTPException(status_code=404, detail="Quest Phase not found")
 
@@ -614,11 +617,11 @@ async def get_quest_phase(region: Region, quest_id: int, phase: int) -> Dict[str
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-async def get_quest(region: Region, quest_id: int) -> Dict[str, Any]:
+async def get_quest(region: Region, quest_id: int) -> Response:
     """
     Get the nice quest data from the given quest ID
     """
     if quest_id in masters[region].mstQuestId:
-        return nice.get_nice_quest_alone(region, quest_id)
+        return item_response(nice.get_nice_quest_alone(region, quest_id))
     else:
         raise HTTPException(status_code=404, detail="Quest not found")
