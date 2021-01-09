@@ -4,6 +4,7 @@
   "type": "event",
   "consumeType": "ap",
   "consume": 1,
+  "consumeItem": [],
   "spotId": 820001,
   "warId": 8200,
   "gifts": [

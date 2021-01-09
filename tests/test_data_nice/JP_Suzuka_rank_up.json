@@ -4,6 +4,7 @@
   "type": "friendship",
   "consumeType": "ap",
   "consume": 20,
+  "consumeItem": [],
   "spotId": 99003,
   "warId": 1003,
   "gifts": [],

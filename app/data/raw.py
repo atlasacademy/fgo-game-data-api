@@ -348,6 +348,7 @@ def get_event_entity(region: Region, event_id: int) -> EventEntity:
 def get_quest_entity(region: Region, quest_id: int) -> QuestEntity:
     return QuestEntity(
         mstQuest=masters[region].mstQuestId[quest_id],
+        mstQuestConsumeItem=masters[region].mstQuestConsumeItemId.get(quest_id, []),
         mstQuestRelease=masters[region].mstQuestReleaseId.get(quest_id, []),
     )
 
@@ -357,6 +358,7 @@ def get_quest_phase_entity(
 ) -> QuestPhaseEntity:
     return QuestPhaseEntity(
         mstQuest=masters[region].mstQuestId[quest_id],
+        mstQuestConsumeItem=masters[region].mstQuestConsumeItemId.get(quest_id, []),
         mstQuestRelease=masters[region].mstQuestReleaseId.get(quest_id, []),
         mstQuestPhase=masters[region].mstQuestPhaseId[quest_id][phase],
         mstStage=masters[region].mstStageId.get(quest_id, {}).get(phase, []),

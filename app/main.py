@@ -109,9 +109,9 @@ Pre-generated, trimmed-down, lightweight basic data that can be used for indexin
   - [JP Event](/export/JP/basic_event.json)
 """
 
-if settings.documentation_all_nice:
+if settings.documentation_all_nice:  # pragma: no cover
     app_description = app_short_description + export_links + app_more_description
-else:
+else:  # pragma: no cover
     app_description = app_short_description + app_more_description
 
 

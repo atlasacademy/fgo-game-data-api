@@ -961,6 +961,7 @@ class NiceQuest(BaseModelORJson):
     type: NiceQuestType
     consumeType: NiceConsumeType
     consume: int
+    consumeItem: List[NiceItemAmount]
     spotId: int
     warId: int
     gifts: List[NiceGift]

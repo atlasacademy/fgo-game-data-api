@@ -71,6 +71,7 @@
           "type": "main",
           "consumeType": "ap",
           "consume": 0,
+          "consumeItem": [],
           "spotId": 20301,
           "warId": 203,
           "gifts": [
@@ -102,6 +103,7 @@
           "type": "main",
           "consumeType": "ap",
           "consume": 23,
+          "consumeItem": [],
           "spotId": 20301,
           "warId": 203,
           "gifts": [
@@ -140,6 +142,7 @@
           "type": "free",
           "consumeType": "ap",
           "consume": 20,
+          "consumeItem": [],
           "spotId": 20301,
           "warId": 203,
           "gifts": [
@@ -191,6 +194,7 @@
           "type": "main",
           "consumeType": "ap",
           "consume": 23,
+          "consumeItem": [],
           "spotId": 20302,
           "warId": 203,
           "gifts": [
@@ -229,6 +233,7 @@
           "type": "main",
           "consumeType": "ap",
           "consume": 24,
+          "consumeItem": [],
           "spotId": 20302,
           "warId": 203,
           "gifts": [
@@ -287,6 +292,7 @@
           "type": "free",
           "consumeType": "ap",
           "consume": 21,
+          "consumeItem": [],
           "spotId": 20305,
           "warId": 203,
           "gifts": [
@@ -338,6 +344,7 @@
           "type": "main",
           "consumeType": "ap",
           "consume": 23,
+          "consumeItem": [],
           "spotId": 20306,
           "warId": 203,
           "gifts": [
@@ -376,6 +383,7 @@
           "type": "main",
           "consumeType": "ap",
           "consume": 24,
+          "consumeItem": [],
           "spotId": 20306,
           "warId": 203,
           "gifts": [
@@ -414,6 +422,7 @@
           "type": "free",
           "consumeType": "ap",
           "consume": 21,
+          "consumeItem": [],
           "spotId": 20306,
           "warId": 203,
           "gifts": [
@@ -465,6 +474,7 @@
           "type": "main",
           "consumeType": "ap",
           "consume": 24,
+          "consumeItem": [],
           "spotId": 20307,
           "warId": 203,
           "gifts": [
@@ -503,6 +513,7 @@
           "type": "main",
           "consumeType": "ap",
           "consume": 24,
+          "consumeItem": [],
           "spotId": 20307,
           "warId": 203,
           "gifts": [
@@ -541,6 +552,7 @@
           "type": "main",
           "consumeType": "ap",
           "consume": 23,
+          "consumeItem": [],
           "spotId": 20307,
           "warId": 203,
           "gifts": [
@@ -579,6 +591,7 @@
           "type": "main",
           "consumeType": "ap",
           "consume": 0,
+          "consumeItem": [],
           "spotId": 20307,
           "warId": 203,
           "gifts": [
@@ -610,6 +623,7 @@
           "type": "free",
           "consumeType": "ap",
           "consume": 21,
+          "consumeItem": [],
           "spotId": 20307,
           "warId": 203,
           "gifts": [
@@ -680,6 +694,7 @@
           "type": "free",
           "consumeType": "ap",
           "consume": 21,
+          "consumeItem": [],
           "spotId": 20309,
           "warId": 203,
           "gifts": [
@@ -731,6 +746,7 @@
           "type": "main",
           "consumeType": "ap",
           "consume": 24,
+          "consumeItem": [],
           "spotId": 20310,
           "warId": 203,
           "gifts": [
@@ -769,6 +785,7 @@
           "type": "main",
           "consumeType": "ap",
           "consume": 24,
+          "consumeItem": [],
           "spotId": 20310,
           "warId": 203,
           "gifts": [
@@ -827,6 +844,7 @@
           "type": "main",
           "consumeType": "ap",
           "consume": 25,
+          "consumeItem": [],
           "spotId": 20311,
           "warId": 203,
           "gifts": [
@@ -885,6 +903,7 @@
           "type": "main",
           "consumeType": "ap",
           "consume": 24,
+          "consumeItem": [],
           "spotId": 20312,
           "warId": 203,
           "gifts": [
@@ -923,6 +942,7 @@
           "type": "main",
           "consumeType": "ap",
           "consume": 25,
+          "consumeItem": [],
           "spotId": 20312,
           "warId": 203,
           "gifts": [
@@ -981,6 +1001,7 @@
           "type": "friendship",
           "consumeType": "ap",
           "consume": 18,
+          "consumeItem": [],
           "spotId": 20314,
           "warId": 203,
           "gifts": [],
@@ -1021,6 +1042,7 @@
           "type": "free",
           "consumeType": "ap",
           "consume": 21,
+          "consumeItem": [],
           "spotId": 20314,
           "warId": 203,
           "gifts": [
@@ -1072,6 +1094,7 @@
           "type": "main",
           "consumeType": "ap",
           "consume": 25,
+          "consumeItem": [],
           "spotId": 20315,
           "warId": 203,
           "gifts": [
@@ -1130,6 +1153,7 @@
           "type": "free",
           "consumeType": "ap",
           "consume": 21,
+          "consumeItem": [],
           "spotId": 20316,
           "warId": 203,
           "gifts": [
@@ -1181,6 +1205,7 @@
           "type": "main",
           "consumeType": "ap",
           "consume": 25,
+          "consumeItem": [],
           "spotId": 20317,
           "warId": 203,
           "gifts": [
@@ -1277,6 +1302,7 @@
           "type": "free",
           "consumeType": "ap",
           "consume": 21,
+          "consumeItem": [],
           "spotId": 20320,
           "warId": 203,
           "gifts": [
@@ -1328,6 +1354,7 @@
           "type": "main",
           "consumeType": "ap",
           "consume": 999,
+          "consumeItem": [],
           "spotId": 20321,
           "warId": 203,
           "gifts": [],

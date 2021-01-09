@@ -1,0 +1,39 @@
+{
+  "id": 94032412,
+  "name": "[Renovate Enma-tei] Restore the Spa Room (+50000 Satisfaction)",
+  "type": "event",
+  "consumeType": "item",
+  "consume": 0,
+  "consumeItem": [
+    {
+      "item": {
+        "id": 94032205,
+        "name": "Cypress Lumber",
+        "type": "eventItem",
+        "detail": "\"Event Item\"\nA piece of lumber made by processing cypress trees, acquired from \"Sparrow's Inn Daily Report - Records of the Enma-tei's Prosperity\". It's often used for a building's interior, furniture, cutting boards, and bath tubs because it exudes a sense of cleanliness.",
+        "individuality": [{ "id": 10360, "name": "unknown" }],
+        "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94032205.png",
+        "background": "silver"
+      },
+      "amount": 310
+    }
+  ],
+  "spotId": 905101,
+  "warId": 9051,
+  "gifts": [
+    { "id": 21603, "type": "item", "objectId": 6506, "priority": 0, "num": 3 }
+  ],
+  "releaseConditions": [
+    {
+      "type": "questClear",
+      "targetId": 94032217,
+      "value": 0,
+      "closedMessage": ""
+    },
+    { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+  ],
+  "phases": [1],
+  "noticeAt": 1609488000,
+  "openedAt": 1609488000,
+  "closedAt": 1610769599
+}

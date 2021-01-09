@@ -1402,6 +1402,13 @@ def get_nice_quest(
         "name": raw_quest.mstQuest.name,
         "type": QUEST_TYPE_NAME[raw_quest.mstQuest.type],
         "consumeType": QUEST_CONSUME_TYPE_NAME[raw_quest.mstQuest.consumeType],
+        "consumeItem": [
+            nice_item_amount
+            for consumeItem in raw_quest.mstQuestConsumeItem
+            for nice_item_amount in get_nice_item_amount(
+                region, consumeItem.itemIds, consumeItem.nums
+            )
+        ],
         "consume": raw_quest.mstQuest.actConsume,
         "spotId": raw_quest.mstQuest.spotId,
         "warId": masters[region].mstSpotId[raw_quest.mstQuest.spotId].warId,

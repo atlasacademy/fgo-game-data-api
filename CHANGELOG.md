@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.30.1 - 2020-01-09
+
+### Added
+
+- `consumeItem` to nice quest and `mstQuestConsumeItem` to raw quest for quests that cost items instad of APs.
+
 ## 5.30.0 - 2020-01-04
 
 ### Added

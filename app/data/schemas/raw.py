@@ -765,6 +765,12 @@ class MstQuestRelease(BaseModel):
     imagePriority: int  # 3000
 
 
+class MstQuestConsumeItem(BaseModel):
+    itemIds: List[int]  # [94032205, 94032206]
+    nums: List[int]  # [160, 220]
+    questId: int  # 94032410
+
+
 class MstClosedMessage(BaseModel):
     id: int
     message: str
@@ -865,6 +871,7 @@ class Master(BaseModel):
     mstEventId: Dict[int, MstEvent]
     # mstQuest: List[MstQuest]
     mstQuestId: Dict[int, MstQuest]
+    mstQuestConsumeItemId: Dict[int, List[MstQuestConsumeItem]]
     # mstQuestPhase: List[MstQuestPhase]
     mstQuestPhaseId: Dict[int, Dict[int, MstQuestPhase]]
     mstStageId: Dict[int, Dict[int, List[MstStage]]]
@@ -964,6 +971,7 @@ class BuffEntity(BuffEntityNoReverse):
 
 class QuestEntity(BaseModelORJson):
     mstQuest: MstQuest
+    mstQuestConsumeItem: List[MstQuestConsumeItem]
     mstQuestRelease: List[MstQuestRelease]
 
 
