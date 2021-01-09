@@ -21,24 +21,28 @@ app_short_description = "Provide raw and nicely bundled FGO game data."
 
 app_more_description = """
 
-Available documentation styles: [RapiDoc](/rapidoc), [Swagger UI](/docs), [Redoc](/redoc).
-
-To discuss more about the API, you can go to the [Atlas Academy Discord](https://discord.gg/TKJmuCR).
-Bug reports and feature requests are welcome.
-Source code of the API is available on [GitHub](https://github.com/atlasacademy/fgo-game-data-api).
-
-Current API data version can be found [here](/info).
-
 ### API Usage
 
 It's recommended to use the static export files or search with the `/basic` endpoints
 and fetch nice or raw data as needed.
 A big search with nice or raw data will take a while to respond.
 
-There are many export files in the "Export files" section below.
+There are many export files in the "Export files" section above.
 Make sure you check them out before querying the API.
 Chances are what you need is already there.
 Feel free to contact me if you would like to see an export file that is not currently available.
+
+### Miscellaneous info
+
+The current data version can be found [here](/info).
+
+API's changelog can be found [here](https://github.com/atlasacademy/fgo-game-data-api/blob/master/CHANGELOG.md).
+
+To discuss more about the API, you can go to the [Atlas Academy Discord](https://discord.gg/TKJmuCR).
+Bug reports and feature requests are welcome.
+Source code of the API is available on [GitHub](https://github.com/atlasacademy/fgo-game-data-api).
+
+Available documentation styles: [RapiDoc](/rapidoc), [Swagger UI](/docs), [Redoc](/redoc).
 
 ### Static Constants
 
@@ -57,14 +61,11 @@ Mapping of the damage formula to the API can be found
 """
 export_links = """
 
-### Export files
+### Static export files
 
-#### Nice data export files
+#### Full data export files
 
-Pre-generated nice data that can be served instantly unlike querying the API:
-- Both regions (The data is the same for both of the NA and JP endpoints):
-  - [All enums](/export/JP/nice_enums.json)
-  - [Trait mapping](/export/JP/nice_trait.json)
+Pre-generated full nice data that can be served instantly:
 - NA data:
   - [NA Servant](/export/NA/nice_servant.json), [NA Servant with lore](/export/NA/nice_servant_lore.json)
   - [NA Craft Essence](/export/NA/nice_equip.json), [NA Craft Essence with lore](/export/NA/nice_equip_lore.json)
@@ -83,10 +84,13 @@ Pre-generated nice data that can be served instantly unlike querying the API:
   - [JP Material](/export/JP/nice_item.json)
   - [JP Mystic Code](/export/JP/nice_mystic_code.json)
   - [JP Item](/export/JP/nice_item.json)
+- Both regions (The data is the same for both NA and JP endpoints):
+  - [All enums](/export/JP/nice_enums.json)
+  - [Trait mapping](/export/JP/nice_trait.json)
 
-#### Basic data export files
+#### Trimmed-down data export files
 
-Pre-generated basic data that can be used for indexing purposes:
+Pre-generated, trimmed-down, lightweight basic data that can be used for indexing purposes:
 - NA data:
   - [NA servant](/export/NA/basic_servant.json)
   - [NA CE](/export/NA/basic_equip.json)
@@ -105,9 +109,10 @@ Pre-generated basic data that can be used for indexing purposes:
   - [JP Event](/export/JP/basic_event.json)
 """
 
-app_description = app_short_description + app_more_description
 if settings.documentation_all_nice:
-    app_description += export_links
+    app_description = app_short_description + export_links + app_more_description
+else:
+    app_description = app_short_description + app_more_description
 
 
 tags_metadata = [
