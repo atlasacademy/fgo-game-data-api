@@ -17,6 +17,10 @@ from .basic import (
 )
 from .common import Language, Region, ReverseData, ReverseDepth
 from .enums import (
+    AI_ACT_NUM_NAME,
+    AI_ACT_TARGET_NAME,
+    AI_ACT_TYPE_NAME,
+    AI_COND_NAME,
     ATTRIBUTE_NAME,
     BUFF_TYPE_NAME,
     CARD_TYPE_NAME,
@@ -60,7 +64,11 @@ from .schemas.basic import (
     BasicReversedSkillTd,
 )
 from .schemas.nice import (
+    AiIdList,
     AssetURL,
+    NiceAi,
+    NiceAiAct,
+    NiceAiFull,
     NiceBaseFunctionReverse,
     NiceBgm,
     NiceBuffReverse,
@@ -99,6 +107,7 @@ from .schemas.raw import (
     BuffEntityNoReverse,
     FunctionEntityNoReverse,
     GlobalNewMstSubtitle,
+    MstAiAct,
     MstClassRelationOverwrite,
     MstMap,
     MstQuestRelease,
@@ -109,6 +118,7 @@ from .schemas.raw import (
     MstSvtComment,
     MstSvtCostume,
     MstSvtVoice,
+    OneAiEntity,
     QuestEntity,
     QuestPhaseEntity,
     ScriptJson,
@@ -384,6 +394,21 @@ def get_nice_base_function(
     return functionInfo
 
 
+def get_ai_id_from_skill(region: Region, skill_id: int) -> AiIdList:
+    return AiIdList(
+        svt=(
+            ai.id
+            for ai_act_id in masters[region].skillToAiAct.get(skill_id, set())
+            for ai in masters[region].aiActToAiSvt.get(ai_act_id, [])
+        ),
+        field=(
+            ai.id
+            for ai_act_id in masters[region].skillToAiAct.get(skill_id, set())
+            for ai in masters[region].aiActToAiField.get(ai_act_id, [])
+        ),
+    )
+
+
 def get_nice_skill(
     skillEntity: SkillEntityNoReverse, svtId: int, region: Region
 ) -> Dict[str, Any]:
@@ -426,6 +451,10 @@ def get_nice_skill(
                     "condLimitCount": chosenSvt.condLimitCount,
                 }
             )
+
+    aiIds = get_ai_id_from_skill(region, skillEntity.mstSkill.id)
+    if aiIds.svt or aiIds.field:
+        nice_skill["aiIds"] = aiIds
 
     nice_skill["coolDown"] = [
         skill_lv.chargeTurn for skill_lv in skillEntity.mstSkillLv
@@ -1548,4 +1577,58 @@ def get_nice_war(region: Region, war_id: int) -> NiceWar:
             get_nice_spot(region, raw_spot, war_asset_id)
             for raw_spot in raw_war.mstSpot
         ),
+    )
+
+
+def get_nice_ai_act(mstAiAct: MstAiAct) -> NiceAiAct:
+    nice_ai_act = NiceAiAct(
+        id=mstAiAct.id,
+        type=AI_ACT_TYPE_NAME[mstAiAct.type],
+        target=AI_ACT_TARGET_NAME[mstAiAct.target],
+        targetIndividuality=get_traits_list(mstAiAct.targetIndividuality),
+    )
+    if len(mstAiAct.skillVals) >= 2:
+        nice_ai_act.skillId = mstAiAct.skillVals[0]
+        nice_ai_act.skillLv = mstAiAct.skillVals[1]
+    return nice_ai_act
+
+
+def get_parent_ais(region: Region, ai_id: int, field: bool = False) -> AiIdList:
+    if field:
+        return AiIdList(
+            svt=[], field=(ai.id for ai in masters[region].parentAiField.get(ai_id, []))
+        )
+    else:
+        return AiIdList(
+            svt=(ai.id for ai in masters[region].parentAiSvt.get(ai_id, [])), field=[]
+        )
+
+
+def get_nice_ai(region: Region, one_ai: OneAiEntity, field: bool = False) -> NiceAi:
+    nice_ai = NiceAi(
+        id=one_ai.mstAi.id,
+        idx=one_ai.mstAi.idx,
+        actNum=AI_ACT_NUM_NAME[one_ai.mstAi.actNum],
+        priority=one_ai.mstAi.priority,
+        probability=one_ai.mstAi.probability,
+        cond=AI_COND_NAME[
+            one_ai.mstAi.cond if one_ai.mstAi.cond >= 0 else -one_ai.mstAi.cond
+        ],
+        condNegative=one_ai.mstAi.cond < 0,
+        vals=one_ai.mstAi.vals,
+        aiAct=get_nice_ai_act(one_ai.mstAiAct),
+        avals=one_ai.mstAi.avals,
+        parentAis=get_parent_ais(region, one_ai.mstAi.id, field),
+        infoText=one_ai.mstAi.infoText,
+    )
+    if one_ai.mstAi.timing:
+        nice_ai.timing = one_ai.mstAi.timing
+    return nice_ai
+
+
+def get_nice_ai_full(region: Region, ai_id: int, field: bool = False) -> NiceAiFull:
+    full_ai = raw.get_ai_entity(region, ai_id, field)
+    return NiceAiFull(
+        mainAis=(get_nice_ai(region, ai, field) for ai in full_ai.mainAis),
+        relatedAis=(get_nice_ai(region, ai, field) for ai in full_ai.relatedAis),
     )

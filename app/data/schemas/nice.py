@@ -7,6 +7,10 @@ from pydantic.generics import GenericModel
 from ..enums import (
     Attribute,
     FuncApplyTarget,
+    NiceAiActNum,
+    NiceAiActTarget,
+    NiceAiActType,
+    NiceAiCond,
     NiceBuffType,
     NiceCardType,
     NiceClassRelationOverwriteType,
@@ -347,6 +351,11 @@ class NiceSkillScript(BaseModel):
     HP_PER_LOWER: Optional[List[int]] = None
 
 
+class AiIdList(BaseModel):
+    svt: List[int]
+    field: List[int]
+
+
 class NiceSkill(BaseModelORJson):
     id: int
     num: int = -1
@@ -364,6 +373,7 @@ class NiceSkill(BaseModelORJson):
     coolDown: List[int]
     actIndividuality: List[NiceTrait]
     script: NiceSkillScript
+    aiIds: Optional[AiIdList] = None
     functions: List[NiceFunction]
 
 
@@ -1035,3 +1045,33 @@ class NiceWar(BaseModelORJson):
     lastQuestId: int
     maps: List[NiceMap]
     spots: List[NiceSpot]
+
+
+class NiceAiAct(BaseModelORJson):
+    id: int
+    type: NiceAiActType
+    target: NiceAiActTarget
+    targetIndividuality: List[NiceTrait]
+    skillId: Optional[int] = None
+    skillLv: Optional[int] = None
+
+
+class NiceAi(BaseModelORJson):
+    id: int
+    idx: int
+    actNum: NiceAiActNum
+    priority: int
+    probability: int
+    cond: NiceAiCond
+    condNegative: bool
+    vals: List[int]
+    aiAct: NiceAiAct
+    avals: List[int]
+    parentAis: AiIdList
+    infoText: str
+    timing: Optional[int] = None
+
+
+class NiceAiFull(BaseModelORJson):
+    mainAis: List[NiceAi]
+    relatedAis: List[NiceAi]

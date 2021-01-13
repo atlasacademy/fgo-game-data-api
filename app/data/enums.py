@@ -2,6 +2,10 @@ from enum import Enum
 from typing import Dict
 
 from .gameenums import (
+    AI_ACT_NUM_NAME,
+    AI_ACT_TARGET_NAME,
+    AI_ACT_TYPE_NAME,
+    AI_COND_NAME,
     BUFF_ACTION_NAME,
     BUFF_LIMIT_NAME,
     BUFF_TYPE_NAME,
@@ -27,6 +31,10 @@ from .gameenums import (
     WAR_START_TYPE_NAME,
     BuffAction,
     FuncType,
+    NiceAiActNum,
+    NiceAiActTarget,
+    NiceAiActType,
+    NiceAiCond,
     NiceBuffAction,
     NiceBuffLimit,
     NiceBuffType,
@@ -755,6 +763,15 @@ ALL_ENUMS = {
     "NiceConsumeType": QUEST_CONSUME_TYPE_NAME,
     "NiceEventType": EVENT_TYPE_NAME,
     "Trait": TRAIT_NAME,
+    "NiceWarStartType": WAR_START_TYPE_NAME,
+    "NiceGiftType": GIFT_TYPE_NAME,
+    "NicePayType": PAY_TYPE_NAME,
+    "NicePurchaseType": PURCHASE_TYPE_NAME,
+    "NiceShopType": SHOP_TYPE_NAME,
+    "NiceAiActType": AI_ACT_TYPE_NAME,
+    "NiceAiActTarget": AI_ACT_TARGET_NAME,
+    "NiceAiActNum": AI_ACT_NUM_NAME,
+    "NiceAiCond": AI_COND_NAME,
 }
 
 
@@ -835,4 +852,12 @@ __all__ = [
     "NicePurchaseType",
     "SHOP_TYPE_NAME",
     "NiceShopType",
+    "AI_ACT_TYPE_NAME",
+    "NiceAiActType",
+    "AI_ACT_TARGET_NAME",
+    "NiceAiActTarget",
+    "AI_ACT_NUM_NAME",
+    "NiceAiActNum",
+    "AI_COND_NAME",
+    "NiceAiCond",
 ]

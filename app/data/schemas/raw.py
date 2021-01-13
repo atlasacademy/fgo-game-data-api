@@ -932,6 +932,11 @@ class Master(BaseModel):
     mstAiId: Dict[int, List[MstAi]]
     mstAiFieldId: Dict[int, List[MstAi]]
     mstAiActId: Dict[int, MstAiAct]
+    skillToAiAct: Dict[int, Set[int]]
+    aiActToAiSvt: Dict[int, List[MstAi]]
+    aiActToAiField: Dict[int, List[MstAi]]
+    parentAiSvt: Dict[int, List[MstAi]]
+    parentAiField: Dict[int, List[MstAi]]
 
 
 class ServantEntity(BaseModelORJson):

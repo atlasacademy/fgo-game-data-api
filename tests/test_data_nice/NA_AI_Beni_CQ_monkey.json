@@ -1,0 +1,190 @@
+{
+  "mainAis": [
+    {
+      "id": 94032580,
+      "idx": 1,
+      "actNum": "reactionEnemyturnStart",
+      "priority": 100,
+      "probability": 100,
+      "cond": "checkPtIndividuality",
+      "condNegative": false,
+      "vals": [103700],
+      "aiAct": {
+        "id": 94032214,
+        "type": "skillId",
+        "target": "random",
+        "targetIndividuality": [{ "id": 103700, "name": "unknown" }],
+        "skillId": 962336,
+        "skillLv": 1
+      },
+      "avals": [94032581, 0],
+      "parentAis": {
+        "svt": [94032581, 94032582, 94032582, 94032582, 94032582],
+        "field": []
+      },
+      "infoText": ""
+    },
+    {
+      "id": 94032580,
+      "idx": 2,
+      "actNum": "reactionEnemyturnStart",
+      "priority": 1,
+      "probability": 100,
+      "cond": "checkPtIndividuality",
+      "condNegative": true,
+      "vals": [103700],
+      "aiAct": {
+        "id": 1,
+        "type": "none",
+        "target": "none",
+        "targetIndividuality": []
+      },
+      "avals": [94032581, 0],
+      "parentAis": {
+        "svt": [94032581, 94032582, 94032582, 94032582, 94032582],
+        "field": []
+      },
+      "infoText": ""
+    },
+    {
+      "id": 94032580,
+      "idx": 3,
+      "actNum": "anytime",
+      "priority": 1,
+      "probability": 100,
+      "cond": "none",
+      "condNegative": false,
+      "vals": [],
+      "aiAct": {
+        "id": 2,
+        "type": "changeThinking",
+        "target": "none",
+        "targetIndividuality": []
+      },
+      "avals": [94032581, 0],
+      "parentAis": {
+        "svt": [94032581, 94032582, 94032582, 94032582, 94032582],
+        "field": []
+      },
+      "infoText": ""
+    }
+  ],
+  "relatedAis": [
+    {
+      "id": 94032581,
+      "idx": 1,
+      "actNum": "anytime",
+      "priority": 1,
+      "probability": 100,
+      "cond": "none",
+      "condNegative": false,
+      "vals": [],
+      "aiAct": {
+        "id": 1002,
+        "type": "attack",
+        "target": "random",
+        "targetIndividuality": []
+      },
+      "avals": [94032580, 0],
+      "parentAis": { "svt": [94032580, 94032580, 94032580], "field": [] },
+      "infoText": ""
+    },
+    {
+      "id": 94032581,
+      "idx": 2,
+      "actNum": "anytime",
+      "priority": 100,
+      "probability": 100,
+      "cond": "actcountThisturn",
+      "condNegative": false,
+      "vals": [0],
+      "aiAct": {
+        "id": 2,
+        "type": "changeThinking",
+        "target": "none",
+        "targetIndividuality": []
+      },
+      "avals": [94032582, 0],
+      "parentAis": { "svt": [94032580, 94032580, 94032580], "field": [] },
+      "infoText": ""
+    },
+    {
+      "id": 94032582,
+      "idx": 1,
+      "actNum": "anytime",
+      "priority": 1,
+      "probability": 50,
+      "cond": "none",
+      "condNegative": false,
+      "vals": [],
+      "aiAct": {
+        "id": 1002,
+        "type": "attack",
+        "target": "random",
+        "targetIndividuality": []
+      },
+      "avals": [94032580, 0],
+      "parentAis": { "svt": [94032581], "field": [] },
+      "infoText": ""
+    },
+    {
+      "id": 94032582,
+      "idx": 2,
+      "actNum": "anytime",
+      "priority": 1,
+      "probability": 30,
+      "cond": "checkSelfBuff",
+      "condNegative": true,
+      "vals": [144],
+      "aiAct": {
+        "id": 94032213,
+        "type": "skillIdCheckbuff",
+        "target": "random",
+        "targetIndividuality": [],
+        "skillId": 962335,
+        "skillLv": 1
+      },
+      "avals": [94032580, 0],
+      "parentAis": { "svt": [94032581], "field": [] },
+      "infoText": ""
+    },
+    {
+      "id": 94032582,
+      "idx": 3,
+      "actNum": "anytime",
+      "priority": 1,
+      "probability": 20,
+      "cond": "checkSelfBuff",
+      "condNegative": true,
+      "vals": [142],
+      "aiAct": {
+        "id": 1005,
+        "type": "skill1",
+        "target": "random",
+        "targetIndividuality": []
+      },
+      "avals": [94032580, 0],
+      "parentAis": { "svt": [94032581], "field": [] },
+      "infoText": ""
+    },
+    {
+      "id": 94032582,
+      "idx": 4,
+      "actNum": "anytime",
+      "priority": 1,
+      "probability": 50,
+      "cond": "checkOpponentBuffIndividuality",
+      "condNegative": false,
+      "vals": [3060],
+      "aiAct": {
+        "id": 94032218,
+        "type": "skill2",
+        "target": "individualityActive",
+        "targetIndividuality": [{ "id": 3060, "name": "buffHpRecoveryPerTurn" }]
+      },
+      "avals": [94032580, 0],
+      "parentAis": { "svt": [94032581], "field": [] },
+      "infoText": ""
+    }
+  ]
+}

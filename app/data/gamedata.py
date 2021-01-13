@@ -160,6 +160,20 @@ def update_gamedata() -> None:
                 item[lookup_id]: item[result_id] for item in master[source_table]
             }
 
+        for masters_table, ai_table in (
+            ("parentAiSvt", "mstAi"),
+            ("parentAiField", "mstAiField"),
+        ):
+            master[masters_table] = defaultdict(list)
+            for ai in master[ai_table]:
+                if ai["avals"][0] != 0:
+                    master[masters_table][ai["avals"][0]].append(ai)
+
+        master["skillToAiAct"] = defaultdict(set)
+        for ai_act in master["mstAiAct"]:
+            if len(ai_act["skillVals"]) >= 2:
+                master["skillToAiAct"][ai_act["skillVals"][0]].add(ai_act["id"])
+
         master["mstSvtExp"] = sorted(master["mstSvtExp"], key=lambda item: item["lv"])  # type: ignore
         master["mstCombineMaterial"] = sorted(master["mstCombineMaterial"], key=lambda item: item["lv"])  # type: ignore
 
@@ -198,7 +212,9 @@ def update_gamedata() -> None:
             ("mstCommandCodeCommentId", "mstCommandCodeComment", "commandCodeId"),
             ("mstQuestConsumeItemId", "mstQuestConsumeItem", "questId"),
             ("mstAiId", "mstAi", "id"),
+            ("aiActToAiSvt", "mstAi", "aiActId"),
             ("mstAiFieldId", "mstAiField", "id"),
+            ("aiActToAiField", "mstAiField", "aiActId"),
         ):
             master[masters_table] = defaultdict(list)
             for item in master[source_table]:

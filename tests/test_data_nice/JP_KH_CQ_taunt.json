@@ -1,0 +1,69 @@
+{
+  "mainAis": [
+    {
+      "id": 90161870,
+      "idx": 1,
+      "actNum": "anytime",
+      "priority": 100,
+      "probability": 100,
+      "cond": "none",
+      "condNegative": false,
+      "vals": [],
+      "aiAct": {
+        "id": 94016184,
+        "type": "skillId",
+        "target": "none",
+        "targetIndividuality": [{ "id": 0, "name": "unknown" }],
+        "skillId": 961075,
+        "skillLv": 1
+      },
+      "avals": [0, 0],
+      "parentAis": { "svt": [], "field": [] },
+      "infoText": "見定める",
+      "timing": 5
+    },
+    {
+      "id": 90161870,
+      "idx": 2,
+      "actNum": "anytime",
+      "priority": 200,
+      "probability": 100,
+      "cond": "checkOpponentIndividuality",
+      "condNegative": false,
+      "vals": [602500],
+      "aiAct": {
+        "id": 94016185,
+        "type": "skillId",
+        "target": "hpLower",
+        "targetIndividuality": [],
+        "skillId": 961075,
+        "skillLv": 1
+      },
+      "avals": [0, 0],
+      "parentAis": { "svt": [], "field": [] },
+      "infoText": "見定める",
+      "timing": 5
+    },
+    {
+      "id": 90161870,
+      "idx": 3,
+      "actNum": "anytime",
+      "priority": 1,
+      "probability": 100,
+      "cond": "none",
+      "condNegative": false,
+      "vals": [],
+      "aiAct": {
+        "id": 1,
+        "type": "none",
+        "target": "none",
+        "targetIndividuality": []
+      },
+      "avals": [0, 0],
+      "parentAis": { "svt": [], "field": [] },
+      "infoText": "",
+      "timing": 5
+    }
+  ],
+  "relatedAis": []
+}

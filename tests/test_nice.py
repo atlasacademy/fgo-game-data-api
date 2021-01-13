@@ -61,6 +61,8 @@ test_cases_dict: Dict[str, Tuple[str, str]] = {
     "quest_JP_id": ("JP/quest/91103002", "JP_Suzuka_rank_up"),
     "quest_NA_id_phase": ("NA/quest/94020187/1", "NA_87th_floor"),
     "quest_NA_consume_item": ("NA/quest/94032412", "NA_Enma_tei_spa_room"),
+    "ai_beni_cq_monkey_NA": ("NA/ai/svt/94032580", "NA_AI_Beni_CQ_monkey"),
+    "kh_cq_JP": ("JP/ai/field/90161870", "JP_KH_CQ_taunt"),
 }
 
 
@@ -89,6 +91,8 @@ cases_404_dict = {
     "war": "98765",
     "quest": "1234567",
     "quest/94025012": "2",
+    "ai/svt": "54234",
+    "ai/field": "45234",
 }
 
 
@@ -374,3 +378,7 @@ class TestServantSpecial:
             Region.NA, get_shop_by_id(default_event_shop, 11000000)
         )
         assert mp_shop_item.cost.item.name == "Mana Prism"
+
+    def test_skill_ai_id(self) -> None:
+        nice_skill = client.get("/nice/NA/skill/962219").json()
+        assert nice_skill["aiIds"]["field"] == [94031791]
