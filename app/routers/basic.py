@@ -79,7 +79,7 @@ if settings.documentation_all_nice:
 
 
 @router.get(
-    "/{region}/servant/{item_id}",
+    "/{region}/servant/{servant_id}",
     summary="Get servant data",
     response_description="Basic Servant Entity",
     response_model=BasicServant,
@@ -88,12 +88,12 @@ if settings.documentation_all_nice:
     responses=get_error_code([400, 403]),
 )
 async def get_servant(
-    region: Region, item_id: int, lang: Optional[Language] = None
+    region: Region, servant_id: int, lang: Optional[Language] = None
 ) -> Response:
-    if item_id in masters[region].mstSvtServantCollectionNo:
-        item_id = masters[region].mstSvtServantCollectionNo[item_id]
-    if item_id in masters[region].mstSvtServantCollectionNo.values():
-        return item_response(basic.get_basic_servant(region, item_id, lang))
+    if servant_id in masters[region].mstSvtServantCollectionNo:
+        servant_id = masters[region].mstSvtServantCollectionNo[servant_id]
+    if servant_id in masters[region].mstSvtServantCollectionNo.values():
+        return item_response(basic.get_basic_servant(region, servant_id, lang))
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
 
@@ -135,7 +135,7 @@ if settings.documentation_all_nice:
 
 
 @router.get(
-    "/{region}/equip/{item_id}",
+    "/{region}/equip/{equip_id}",
     summary="Get CE data",
     response_description="Basic CE Entity",
     response_model=BasicEquip,
@@ -144,12 +144,12 @@ if settings.documentation_all_nice:
     responses=get_error_code([400, 403]),
 )
 async def get_equip(
-    region: Region, item_id: int, lang: Optional[Language] = None
+    region: Region, equip_id: int, lang: Optional[Language] = None
 ) -> Response:
-    if item_id in masters[region].mstSvtEquipCollectionNo:
-        item_id = masters[region].mstSvtEquipCollectionNo[item_id]
-    if item_id in masters[region].mstSvtEquipCollectionNo.values():
-        return item_response(basic.get_basic_equip(region, item_id, lang))
+    if equip_id in masters[region].mstSvtEquipCollectionNo:
+        equip_id = masters[region].mstSvtEquipCollectionNo[equip_id]
+    if equip_id in masters[region].mstSvtEquipCollectionNo.values():
+        return item_response(basic.get_basic_equip(region, equip_id, lang))
     else:
         raise HTTPException(status_code=404, detail="Equip not found")
 
@@ -174,7 +174,7 @@ async def find_svt(
 
 
 @router.get(
-    "/{region}/svt/{item_id}",
+    "/{region}/svt/{svt_id}",
     summary="Get svt data",
     response_description="Servant Entity",
     response_model=BasicServant,
@@ -182,7 +182,7 @@ async def find_svt(
     responses=get_error_code([400, 403]),
 )
 async def get_svt(
-    region: Region, item_id: int, lang: Language = Depends(language_parameter)
+    region: Region, svt_id: int, lang: Language = Depends(language_parameter)
 ) -> Response:
     """
     Get svt info from ID
@@ -190,8 +190,8 @@ async def get_svt(
     Only use actual IDs for lookup. Does not convert from collectionNo.
     The endpoint is not limited to servants or equips ids.
     """
-    if item_id in masters[region].mstSvtId:
-        return item_response(basic.get_basic_servant(region, item_id, lang))
+    if svt_id in masters[region].mstSvtId:
+        return item_response(basic.get_basic_servant(region, svt_id, lang))
     else:
         raise HTTPException(status_code=404, detail="Svt not found")
 
@@ -281,7 +281,7 @@ async def find_skill(
 
 
 @router.get(
-    "/{region}/skill/{item_id}",
+    "/{region}/skill/{skill_id}",
     summary="Get skill data",
     description="Get the skill data fro mthe given ID" + basic_skill_extra,
     response_description="Skill entity",
@@ -291,12 +291,12 @@ async def find_skill(
 )
 async def get_skill(
     region: Region,
-    item_id: int,
+    skill_id: int,
     reverse: bool = False,
     lang: Language = Depends(language_parameter),
 ) -> Response:
-    if item_id in masters[region].mstSkillId:
-        return item_response(basic.get_basic_skill(region, item_id, lang, reverse))
+    if skill_id in masters[region].mstSkillId:
+        return item_response(basic.get_basic_skill(region, skill_id, lang, reverse))
     else:
         raise HTTPException(status_code=404, detail="Skill not found")
 
@@ -330,7 +330,7 @@ async def find_td(
 
 
 @router.get(
-    "/{region}/NP/{item_id}",
+    "/{region}/NP/{np_id}",
     summary="Get NP data",
     description="Get the NP data from the given ID" + basic_td_extra,
     response_description="NP entity",
@@ -340,12 +340,12 @@ async def find_td(
 )
 async def get_td(
     region: Region,
-    item_id: int,
+    np_id: int,
     reverse: bool = False,
     lang: Language = Depends(language_parameter),
 ) -> Response:
-    if item_id in masters[region].mstTreasureDeviceId:
-        return item_response(basic.get_basic_td(region, item_id, lang, reverse))
+    if np_id in masters[region].mstTreasureDeviceId:
+        return item_response(basic.get_basic_td(region, np_id, lang, reverse))
     else:
         raise HTTPException(status_code=404, detail="NP not found")
 
@@ -383,7 +383,7 @@ async def find_function(
 
 
 @router.get(
-    "/{region}/function/{item_id}",
+    "/{region}/function/{func_id}",
     summary="Get function data",
     description="Get the function data from the given ID"
     + function_reverse_lang_description,
@@ -394,14 +394,14 @@ async def find_function(
 )
 async def get_function(
     region: Region,
-    item_id: int,
+    func_id: int,
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     lang: Language = Depends(language_parameter),
 ) -> Response:
-    if item_id in masters[region].mstFuncId:
+    if func_id in masters[region].mstFuncId:
         return item_response(
-            basic.get_basic_function(region, item_id, lang, reverse, reverseDepth)
+            basic.get_basic_function(region, func_id, lang, reverse, reverseDepth)
         )
     else:
         raise HTTPException(status_code=404, detail="Function not found")
@@ -438,7 +438,7 @@ async def find_buff(
 
 
 @router.get(
-    "/{region}/buff/{item_id}",
+    "/{region}/buff/{buff_id}",
     summary="Get buff data",
     description="Get the buff data from the given ID" + buff_reverse_lang_description,
     response_description="Buff Entity",
@@ -448,14 +448,14 @@ async def find_buff(
 )
 async def get_buff(
     region: Region,
-    item_id: int,
+    buff_id: int,
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
     lang: Language = Depends(language_parameter),
 ) -> Response:
-    if item_id in masters[region].mstBuffId:
+    if buff_id in masters[region].mstBuffId:
         return item_response(
-            basic.get_basic_buff(region, item_id, lang, reverse, reverseDepth)
+            basic.get_basic_buff(region, buff_id, lang, reverse, reverseDepth)
         )
     else:
         raise HTTPException(status_code=404, detail="Buff not found")

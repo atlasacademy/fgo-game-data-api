@@ -86,7 +86,7 @@ if settings.documentation_all_nice:
 
 
 @router.get(
-    "/{region}/servant/{item_id}",
+    "/{region}/servant/{servant_id}",
     summary="Get servant data",
     description=get_servant_description,
     response_description="Servant Entity",
@@ -96,14 +96,16 @@ if settings.documentation_all_nice:
 )
 async def get_servant(
     region: Region,
-    item_id: int,
+    servant_id: int,
     lang: Language = Depends(language_parameter),
     lore: bool = False,
 ) -> Response:
-    if item_id in masters[region].mstSvtServantCollectionNo:
-        item_id = masters[region].mstSvtServantCollectionNo[item_id]
-    if item_id in masters[region].mstSvtServantCollectionNo.values():
-        return item_response(nice.get_nice_servant_model(region, item_id, lang, lore))
+    if servant_id in masters[region].mstSvtServantCollectionNo:
+        servant_id = masters[region].mstSvtServantCollectionNo[servant_id]
+    if servant_id in masters[region].mstSvtServantCollectionNo.values():
+        return item_response(
+            nice.get_nice_servant_model(region, servant_id, lang, lore)
+        )
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
 
@@ -154,7 +156,7 @@ if settings.documentation_all_nice:
 
 
 @router.get(
-    "/{region}/equip/{item_id}",
+    "/{region}/equip/{equip_id}",
     summary="Get CE data",
     description=get_equip_description,
     response_description="CE Entity",
@@ -164,14 +166,14 @@ if settings.documentation_all_nice:
 )
 async def get_equip(
     region: Region,
-    item_id: int,
+    equip_id: int,
     lang: Language = Depends(language_parameter),
     lore: bool = False,
 ) -> Response:
-    if item_id in masters[region].mstSvtEquipCollectionNo:
-        item_id = masters[region].mstSvtEquipCollectionNo[item_id]
-    if item_id in masters[region].mstSvtEquipCollectionNo.values():
-        return item_response(nice.get_nice_equip_model(region, item_id, lang, lore))
+    if equip_id in masters[region].mstSvtEquipCollectionNo:
+        equip_id = masters[region].mstSvtEquipCollectionNo[equip_id]
+    if equip_id in masters[region].mstSvtEquipCollectionNo.values():
+        return item_response(nice.get_nice_equip_model(region, equip_id, lang, lore))
     else:
         raise HTTPException(status_code=404, detail="Equip not found")
 
@@ -198,7 +200,7 @@ async def find_svt(
 
 
 @router.get(
-    "/{region}/svt/{item_id}",
+    "/{region}/svt/{svt_id}",
     summary="Get svt data",
     response_description="Servant Entity",
     response_model=NiceServant,
@@ -207,7 +209,7 @@ async def find_svt(
 )
 async def get_svt(
     region: Region,
-    item_id: int,
+    svt_id: int,
     lang: Language = Depends(language_parameter),
     lore: bool = False,
 ) -> Response:
@@ -217,8 +219,8 @@ async def get_svt(
     Only use actual IDs for lookup. Does not convert from collectionNo.
     The endpoint is not limited to servants or equips ids.
     """
-    if item_id in masters[region].mstSvtId:
-        return item_response(nice.get_nice_servant_model(region, item_id, lang, lore))
+    if svt_id in masters[region].mstSvtId:
+        return item_response(nice.get_nice_servant_model(region, svt_id, lang, lore))
     else:
         raise HTTPException(status_code=404, detail="Svt not found")
 
@@ -312,7 +314,7 @@ async def find_skill(
 
 
 @router.get(
-    "/{region}/skill/{item_id}",
+    "/{region}/skill/{skill_id}",
     summary="Get skill data",
     description="Get the skill data from the given ID" + nice_skill_extra,
     response_description="Nice Skill entity",
@@ -322,15 +324,15 @@ async def find_skill(
 )
 async def get_skill(
     region: Region,
-    item_id: int,
+    skill_id: int,
     lang: Language = Depends(language_parameter),
     reverse: bool = False,
     reverseData: ReverseData = ReverseData.nice,
 ) -> Response:
-    if item_id in masters[region].mstSkillId:
+    if skill_id in masters[region].mstSkillId:
         return item_response(
             nice.get_nice_skill_alone(
-                region, item_id, lang, reverse, reverseData=reverseData
+                region, skill_id, lang, reverse, reverseData=reverseData
             )
         )
     else:
@@ -370,7 +372,7 @@ async def find_td(
 
 
 @router.get(
-    "/{region}/NP/{item_id}",
+    "/{region}/NP/{np_id}",
     summary="Get NP data",
     description="Get the NP data from the given ID" + nice_td_extra,
     response_description="Nice NP entity",
@@ -380,15 +382,15 @@ async def find_td(
 )
 async def get_td(
     region: Region,
-    item_id: int,
+    np_id: int,
     lang: Language = Depends(language_parameter),
     reverse: bool = False,
     reverseData: ReverseData = ReverseData.nice,
 ) -> Response:
-    if item_id in masters[region].mstTreasureDeviceId:
+    if np_id in masters[region].mstTreasureDeviceId:
         return item_response(
             nice.get_nice_td_alone(
-                region, item_id, lang, reverse, reverseData=reverseData
+                region, np_id, lang, reverse, reverseData=reverseData
             )
         )
     else:
@@ -430,7 +432,7 @@ async def find_function(
 
 
 @router.get(
-    "/{region}/function/{item_id}",
+    "/{region}/function/{func_id}",
     summary="Get function data",
     description="Get the function data from the given ID"
     + function_reverse_lang_description,
@@ -441,16 +443,16 @@ async def find_function(
 )
 async def get_function(
     region: Region,
-    item_id: int,
+    func_id: int,
     lang: Language = Depends(language_parameter),
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     reverseData: ReverseData = ReverseData.nice,
 ) -> Response:
-    if item_id in masters[region].mstFuncId:
+    if func_id in masters[region].mstFuncId:
         return item_response(
             nice.get_nice_func_alone(
-                region, item_id, lang, reverse, reverseDepth, reverseData
+                region, func_id, lang, reverse, reverseDepth, reverseData
             )
         )
     else:
@@ -492,7 +494,7 @@ async def find_buff(
 
 
 @router.get(
-    "/{region}/buff/{item_id}",
+    "/{region}/buff/{buff_id}",
     summary="Get buff data",
     description="Get the buff data from the given ID" + buff_reverse_lang_description,
     response_description="Buff Entity",
@@ -502,16 +504,16 @@ async def find_buff(
 )
 async def get_buff(
     region: Region,
-    item_id: int,
+    buff_id: int,
     lang: Language = Depends(language_parameter),
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
     reverseData: ReverseData = ReverseData.nice,
 ) -> Response:
-    if item_id in masters[region].mstBuffId:
+    if buff_id in masters[region].mstBuffId:
         return item_response(
             nice.get_nice_buff_alone(
-                region, item_id, lang, reverse, reverseDepth, reverseData
+                region, buff_id, lang, reverse, reverseDepth, reverseData
             )
         )
     else:
