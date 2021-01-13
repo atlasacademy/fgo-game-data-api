@@ -6,6 +6,7 @@ from ..data import raw, search
 from ..data.common import Region, ReverseDepth
 from ..data.gamedata import masters
 from ..data.schemas.raw import (
+    AiEntity,
     BuffEntity,
     CommandCodeEntity,
     EventEntity,
@@ -531,3 +532,41 @@ async def get_quest(region: Region, quest_id: int) -> Response:
         return item_response(quest_entity)
     else:
         raise HTTPException(status_code=404, detail="Quest not found")
+
+
+@router.get(
+    "/{region}/ai/field/{quest_id}",
+    summary="Get Field AI data",
+    response_description="AI Entity",
+    response_model=AiEntity,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+async def get_ai_field(region: Region, quest_id: int) -> Response:
+    """
+    Get the field AI data from the given quest ID
+    """
+    if quest_id in masters[region].mstAiFieldId:
+        ai_entity = raw.get_ai_entity(region, quest_id, field=True)
+        return item_response(ai_entity)
+    else:
+        raise HTTPException(status_code=404, detail="Field AI not found")
+
+
+@router.get(
+    "/{region}/ai/svt/{ai_id}",
+    summary="Get svt AI data",
+    response_description="AI Entity",
+    response_model=AiEntity,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+async def get_ai_enemy(region: Region, ai_id: int) -> Response:
+    """
+    Get the AI data from the given AI ID
+    """
+    if ai_id in masters[region].mstAiId:
+        ai_entity = raw.get_ai_entity(region, ai_id, field=False)
+        return item_response(ai_entity)
+    else:
+        raise HTTPException(status_code=404, detail="AI not found")

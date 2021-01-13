@@ -2593,3 +2593,527 @@ WAR_START_TYPE_NAME: Dict[int, NiceWarStartType] = {
     1: NiceWarStartType.script,
     2: NiceWarStartType.quest,
 }
+
+
+class AiCond(IntEnum):
+    NONE = 0
+    HP_HIGHER = 10
+    HP_LOWER = 11
+    ACTCOUNT = 20
+    ACTCOUNT_MULTIPLE = 21
+    TURN = 30
+    TURN_MULTIPLE = 31
+    BEFORE_ACT_ID = 40
+    BEFORE_ACT_TYPE = 41
+    BEFORE_NOT_ACT_ID = 42
+    BEFORE_NOT_ACT_TYPE = 43
+    CHECK_SELF_BUFF = 50
+    CHECK_SELF_INDIVIDUALITY = 51
+    CHECK_PT_BUFF = 52
+    CHECK_PT_INDIVIDUALITY = 53
+    CHECK_OPPONENT_BUFF = 55
+    CHECK_OPPONENT_INDIVIDUALITY = 56
+    CHECK_SELF_BUFF_INDIVIDUALITY = 57
+    CHECK_PT_BUFF_INDIVIDUALITY = 58
+    CHECK_OPPONENT_BUFF_INDIVIDUALITY = 59
+    CHECK_SELF_NPTURN = 60
+    CHECK_PT_LOWER_NPTURN = 61
+    CHECK_OPPONENT_HEIGHT_NPGAUGE = 62
+    ACTCOUNT_THISTURN = 63
+    CHECK_PT_HP_HIGHER = 64
+    CHECK_PT_HP_LOWER = 65
+    CHECK_SELF_NOT_BUFF_INDIVIDUALITY = 66
+    TURN_AND_ACTCOUNT_THISTURN = 67
+    FIELDTURN = 68
+    FIELDTURN_MULTIPLE = 69
+    CHECK_PT_LOWER_TDTURN = 70
+    RAID_HP_HIGHER = 71
+    RAID_HP_LOWER = 72
+    RAID_COUNT_HIGHER = 73
+    RAID_COUNT_LOWER = 74
+    RAID_COUNT_VALUE_HIGHER = 75
+    RAID_COUNT_VALUE_LOWER = 76
+    CHECK_SPACE = 77
+    TURN_HIGHER = 78
+    TURN_LOWER = 79
+    CHARACTOR_TURN_HIGHER = 80
+    CHARACTOR_TURN_LOWER = 81
+    COUNT_ALIVE_PT = 82
+    COUNT_ALIVE_OPPONENT = 83
+    COUNT_PT_REST_HIGHER = 84
+    COUNT_PT_REST_LOWER = 85
+    COUNT_OPPONENT_REST_HIGHER = 86
+    COUNT_OPPONENT_REST_LOWER = 87
+    COUNT_ITEM_HIGHER = 88
+    COUNT_ITEM_LOWER = 89
+    CHECK_SELF_BUFFCOUNT_INDIVIDUALITY = 90
+    CHECK_PT_BUFFCOUNT_INDIVIDUALITY = 91
+    CHECK_SELF_BUFF_ACTIVE = 92
+    CHECK_PT_BUFF_ACTIVE = 93
+    CHECK_OPPONENT_BUFF_ACTIVE = 94
+    COUNT_ENEMY_COMMAND_SPELL_HIGHER = 95
+    CHECK_PT_ALL_INDIVIDUALITY = 96
+    CHECK_OPPONENT_ALL_INDIVIDUALITY = 97
+    STAR_HIGHER = 98
+    STAR_LOWER = 99
+    CHECK_OPPONENT_HP_HIGHER = 100
+    CHECK_OPPONENT_HP_LOWER = 101
+    CHECK_TARGET_POSITION = 102
+    CHECK_SELF_BUFF_ACTIVE_AND_PASSIVE_INDIVIDUALITY = 103
+    CHECK_PT_BUFF_ACTIVE_AND_PASSIVE_INDIVIDUALITY = 104
+    CHECK_OPPONENT_BUFF_ACTIVE_AND_PASSIVE_INDIVIDUALITY = 105
+    CHECK_PT_ALL_BUFF = 106
+    CHECK_OPPONENT_ALL_BUFF = 107
+    CHECK_PT_ALL_BUFF_INDIVIDUALITY = 108
+    CHECK_OPPONENT_ALL_BUFF_INDIVIDUALITY = 109
+    COUNT_ALIVE_PT_ALL = 110
+    COUNT_ALIVE_OPPONENT_ALL = 111
+    CHECK_PT_ALL_BUFF_ACTIVE = 112
+    CHECK_OPPONENT_ALL_BUFF_ACTIVE = 113
+    COUNT_HIGHER_BUFF_INDIVIDUALITY_SUM_PT = 114
+    COUNT_HIGHER_BUFF_INDIVIDUALITY_SUM_PT_ALL = 115
+    COUNT_HIGHER_BUFF_INDIVIDUALITY_SUM_OPPONENT = 116
+    COUNT_HIGHER_BUFF_INDIVIDUALITY_SUM_OPPONENT_ALL = 117
+    COUNT_HIGHER_BUFF_INDIVIDUALITY_SUM_SELF = 118
+    COUNT_LOWER_BUFF_INDIVIDUALITY_SUM_PT = 119
+    COUNT_LOWER_BUFF_INDIVIDUALITY_SUM_PT_ALL = 120
+    COUNT_LOWER_BUFF_INDIVIDUALITY_SUM_OPPONENT = 121
+    COUNT_LOWER_BUFF_INDIVIDUALITY_SUM_OPPONENT_ALL = 122
+    COUNT_LOWER_BUFF_INDIVIDUALITY_SUM_SELF = 123
+    COUNT_EQUAL_BUFF_INDIVIDUALITY_SUM_PT = 124
+    COUNT_EQUAL_BUFF_INDIVIDUALITY_SUM_PT_ALL = 125
+    COUNT_EQUAL_BUFF_INDIVIDUALITY_SUM_OPPONENT = 126
+    COUNT_EQUAL_BUFF_INDIVIDUALITY_SUM_OPPONENT_ALL = 127
+    COUNT_EQUAL_BUFF_INDIVIDUALITY_SUM_SELF = 128
+    EXIST_INDIVIDUALITY_OPPONENT_FRONT = 129
+    EXIST_INDIVIDUALITY_OPPONENT_CENTER = 130
+    EXIST_INDIVIDUALITY_OPPONENT_BACK = 131
+    TOTAL_COUNT_HIGHER_INDIVIDUALITY_PT = 132
+    TOTAL_COUNT_HIGHER_INDIVIDUALITY_PT_ALL = 133
+    TOTAL_COUNT_HIGHER_INDIVIDUALITY_OPPONENT = 134
+    TOTAL_COUNT_HIGHER_INDIVIDUALITY_OPPONENT_ALL = 135
+    TOTAL_COUNT_HIGHER_INDIVIDUALITY_ALL_FIELD = 136
+    TOTAL_COUNT_LOWER_INDIVIDUALITY_PT = 137
+    TOTAL_COUNT_LOWER_INDIVIDUALITY_PT_ALL = 138
+    TOTAL_COUNT_LOWER_INDIVIDUALITY_OPPONENT = 139
+    TOTAL_COUNT_LOWER_INDIVIDUALITY_OPPONENT_ALL = 140
+    TOTAL_COUNT_LOWER_INDIVIDUALITY_ALL_FIELD = 141
+    TOTAL_COUNT_EQUAL_INDIVIDUALITY_PT = 142
+    TOTAL_COUNT_EQUAL_INDIVIDUALITY_PT_ALL = 143
+    TOTAL_COUNT_EQUAL_INDIVIDUALITY_OPPONENT = 144
+    TOTAL_COUNT_EQUAL_INDIVIDUALITY_OPPONENT_ALL = 145
+    TOTAL_COUNT_EQUAL_INDIVIDUALITY_ALL_FIELD = 146
+    PT_FRONT_DEAD_EQUAL = 147
+    PT_CENTER_DEAD_EQUAL = 148
+    PT_BACK_DEAD_EQUAL = 149
+
+
+class NiceAiCond(str, Enum):
+    """AI Cond Enum"""
+
+    none = "none"
+    hpHigher = "hpHigher"
+    hpLower = "hpLower"
+    actcount = "actcount"
+    actcountMultiple = "actcountMultiple"
+    turn = "turn"
+    turnMultiple = "turnMultiple"
+    beforeActId = "beforeActId"
+    beforeActType = "beforeActType"
+    beforeNotActId = "beforeNotActId"
+    beforeNotActType = "beforeNotActType"
+    checkSelfBuff = "checkSelfBuff"
+    checkSelfIndividuality = "checkSelfIndividuality"
+    checkPtBuff = "checkPtBuff"
+    checkPtIndividuality = "checkPtIndividuality"
+    checkOpponentBuff = "checkOpponentBuff"
+    checkOpponentIndividuality = "checkOpponentIndividuality"
+    checkSelfBuffIndividuality = "checkSelfBuffIndividuality"
+    checkPtBuffIndividuality = "checkPtBuffIndividuality"
+    checkOpponentBuffIndividuality = "checkOpponentBuffIndividuality"
+    checkSelfNpturn = "checkSelfNpturn"
+    checkPtLowerNpturn = "checkPtLowerNpturn"
+    checkOpponentHeightNpgauge = "checkOpponentHeightNpgauge"
+    actcountThisturn = "actcountThisturn"
+    checkPtHpHigher = "checkPtHpHigher"
+    checkPtHpLower = "checkPtHpLower"
+    checkSelfNotBuffIndividuality = "checkSelfNotBuffIndividuality"
+    turnAndActcountThisturn = "turnAndActcountThisturn"
+    fieldturn = "fieldturn"
+    fieldturnMultiple = "fieldturnMultiple"
+    checkPtLowerTdturn = "checkPtLowerTdturn"
+    raidHpHigher = "raidHpHigher"
+    raidHpLower = "raidHpLower"
+    raidCountHigher = "raidCountHigher"
+    raidCountLower = "raidCountLower"
+    raidCountValueHigher = "raidCountValueHigher"
+    raidCountValueLower = "raidCountValueLower"
+    checkSpace = "checkSpace"
+    turnHigher = "turnHigher"
+    turnLower = "turnLower"
+    charactorTurnHigher = "charactorTurnHigher"
+    charactorTurnLower = "charactorTurnLower"
+    countAlivePt = "countAlivePt"
+    countAliveOpponent = "countAliveOpponent"
+    countPtRestHigher = "countPtRestHigher"
+    countPtRestLower = "countPtRestLower"
+    countOpponentRestHigher = "countOpponentRestHigher"
+    countOpponentRestLower = "countOpponentRestLower"
+    countItemHigher = "countItemHigher"
+    countItemLower = "countItemLower"
+    checkSelfBuffcountIndividuality = "checkSelfBuffcountIndividuality"
+    checkPtBuffcountIndividuality = "checkPtBuffcountIndividuality"
+    checkSelfBuffActive = "checkSelfBuffActive"
+    checkPtBuffActive = "checkPtBuffActive"
+    checkOpponentBuffActive = "checkOpponentBuffActive"
+    countEnemyCommandSpellHigher = "countEnemyCommandSpellHigher"
+    checkPtAllIndividuality = "checkPtAllIndividuality"
+    checkOpponentAllIndividuality = "checkOpponentAllIndividuality"
+    starHigher = "starHigher"
+    starLower = "starLower"
+    checkOpponentHpHigher = "checkOpponentHpHigher"
+    checkOpponentHpLower = "checkOpponentHpLower"
+    checkTargetPosition = "checkTargetPosition"
+    checkSelfBuffActiveAndPassiveIndividuality = (
+        "checkSelfBuffActiveAndPassiveIndividuality"
+    )
+    checkPtBuffActiveAndPassiveIndividuality = (
+        "checkPtBuffActiveAndPassiveIndividuality"
+    )
+    checkOpponentBuffActiveAndPassiveIndividuality = (
+        "checkOpponentBuffActiveAndPassiveIndividuality"
+    )
+    checkPtAllBuff = "checkPtAllBuff"
+    checkOpponentAllBuff = "checkOpponentAllBuff"
+    checkPtAllBuffIndividuality = "checkPtAllBuffIndividuality"
+    checkOpponentAllBuffIndividuality = "checkOpponentAllBuffIndividuality"
+    countAlivePtAll = "countAlivePtAll"
+    countAliveOpponentAll = "countAliveOpponentAll"
+    checkPtAllBuffActive = "checkPtAllBuffActive"
+    checkOpponentAllBuffActive = "checkOpponentAllBuffActive"
+    countHigherBuffIndividualitySumPt = "countHigherBuffIndividualitySumPt"
+    countHigherBuffIndividualitySumPtAll = "countHigherBuffIndividualitySumPtAll"
+    countHigherBuffIndividualitySumOpponent = "countHigherBuffIndividualitySumOpponent"
+    countHigherBuffIndividualitySumOpponentAll = (
+        "countHigherBuffIndividualitySumOpponentAll"
+    )
+    countHigherBuffIndividualitySumSelf = "countHigherBuffIndividualitySumSelf"
+    countLowerBuffIndividualitySumPt = "countLowerBuffIndividualitySumPt"
+    countLowerBuffIndividualitySumPtAll = "countLowerBuffIndividualitySumPtAll"
+    countLowerBuffIndividualitySumOpponent = "countLowerBuffIndividualitySumOpponent"
+    countLowerBuffIndividualitySumOpponentAll = (
+        "countLowerBuffIndividualitySumOpponentAll"
+    )
+    countLowerBuffIndividualitySumSelf = "countLowerBuffIndividualitySumSelf"
+    countEqualBuffIndividualitySumPt = "countEqualBuffIndividualitySumPt"
+    countEqualBuffIndividualitySumPtAll = "countEqualBuffIndividualitySumPtAll"
+    countEqualBuffIndividualitySumOpponent = "countEqualBuffIndividualitySumOpponent"
+    countEqualBuffIndividualitySumOpponentAll = (
+        "countEqualBuffIndividualitySumOpponentAll"
+    )
+    countEqualBuffIndividualitySumSelf = "countEqualBuffIndividualitySumSelf"
+    existIndividualityOpponentFront = "existIndividualityOpponentFront"
+    existIndividualityOpponentCenter = "existIndividualityOpponentCenter"
+    existIndividualityOpponentBack = "existIndividualityOpponentBack"
+    totalCountHigherIndividualityPt = "totalCountHigherIndividualityPt"
+    totalCountHigherIndividualityPtAll = "totalCountHigherIndividualityPtAll"
+    totalCountHigherIndividualityOpponent = "totalCountHigherIndividualityOpponent"
+    totalCountHigherIndividualityOpponentAll = (
+        "totalCountHigherIndividualityOpponentAll"
+    )
+    totalCountHigherIndividualityAllField = "totalCountHigherIndividualityAllField"
+    totalCountLowerIndividualityPt = "totalCountLowerIndividualityPt"
+    totalCountLowerIndividualityPtAll = "totalCountLowerIndividualityPtAll"
+    totalCountLowerIndividualityOpponent = "totalCountLowerIndividualityOpponent"
+    totalCountLowerIndividualityOpponentAll = "totalCountLowerIndividualityOpponentAll"
+    totalCountLowerIndividualityAllField = "totalCountLowerIndividualityAllField"
+    totalCountEqualIndividualityPt = "totalCountEqualIndividualityPt"
+    totalCountEqualIndividualityPtAll = "totalCountEqualIndividualityPtAll"
+    totalCountEqualIndividualityOpponent = "totalCountEqualIndividualityOpponent"
+    totalCountEqualIndividualityOpponentAll = "totalCountEqualIndividualityOpponentAll"
+    totalCountEqualIndividualityAllField = "totalCountEqualIndividualityAllField"
+    ptFrontDeadEqual = "ptFrontDeadEqual"
+    ptCenterDeadEqual = "ptCenterDeadEqual"
+    ptBackDeadEqual = "ptBackDeadEqual"
+
+
+AI_COND_NAME: Dict[int, NiceAiCond] = {
+    0: NiceAiCond.none,
+    10: NiceAiCond.hpHigher,
+    11: NiceAiCond.hpLower,
+    20: NiceAiCond.actcount,
+    21: NiceAiCond.actcountMultiple,
+    30: NiceAiCond.turn,
+    31: NiceAiCond.turnMultiple,
+    40: NiceAiCond.beforeActId,
+    41: NiceAiCond.beforeActType,
+    42: NiceAiCond.beforeNotActId,
+    43: NiceAiCond.beforeNotActType,
+    50: NiceAiCond.checkSelfBuff,
+    51: NiceAiCond.checkSelfIndividuality,
+    52: NiceAiCond.checkPtBuff,
+    53: NiceAiCond.checkPtIndividuality,
+    55: NiceAiCond.checkOpponentBuff,
+    56: NiceAiCond.checkOpponentIndividuality,
+    57: NiceAiCond.checkSelfBuffIndividuality,
+    58: NiceAiCond.checkPtBuffIndividuality,
+    59: NiceAiCond.checkOpponentBuffIndividuality,
+    60: NiceAiCond.checkSelfNpturn,
+    61: NiceAiCond.checkPtLowerNpturn,
+    62: NiceAiCond.checkOpponentHeightNpgauge,
+    63: NiceAiCond.actcountThisturn,
+    64: NiceAiCond.checkPtHpHigher,
+    65: NiceAiCond.checkPtHpLower,
+    66: NiceAiCond.checkSelfNotBuffIndividuality,
+    67: NiceAiCond.turnAndActcountThisturn,
+    68: NiceAiCond.fieldturn,
+    69: NiceAiCond.fieldturnMultiple,
+    70: NiceAiCond.checkPtLowerTdturn,
+    71: NiceAiCond.raidHpHigher,
+    72: NiceAiCond.raidHpLower,
+    73: NiceAiCond.raidCountHigher,
+    74: NiceAiCond.raidCountLower,
+    75: NiceAiCond.raidCountValueHigher,
+    76: NiceAiCond.raidCountValueLower,
+    77: NiceAiCond.checkSpace,
+    78: NiceAiCond.turnHigher,
+    79: NiceAiCond.turnLower,
+    80: NiceAiCond.charactorTurnHigher,
+    81: NiceAiCond.charactorTurnLower,
+    82: NiceAiCond.countAlivePt,
+    83: NiceAiCond.countAliveOpponent,
+    84: NiceAiCond.countPtRestHigher,
+    85: NiceAiCond.countPtRestLower,
+    86: NiceAiCond.countOpponentRestHigher,
+    87: NiceAiCond.countOpponentRestLower,
+    88: NiceAiCond.countItemHigher,
+    89: NiceAiCond.countItemLower,
+    90: NiceAiCond.checkSelfBuffcountIndividuality,
+    91: NiceAiCond.checkPtBuffcountIndividuality,
+    92: NiceAiCond.checkSelfBuffActive,
+    93: NiceAiCond.checkPtBuffActive,
+    94: NiceAiCond.checkOpponentBuffActive,
+    95: NiceAiCond.countEnemyCommandSpellHigher,
+    96: NiceAiCond.checkPtAllIndividuality,
+    97: NiceAiCond.checkOpponentAllIndividuality,
+    98: NiceAiCond.starHigher,
+    99: NiceAiCond.starLower,
+    100: NiceAiCond.checkOpponentHpHigher,
+    101: NiceAiCond.checkOpponentHpLower,
+    102: NiceAiCond.checkTargetPosition,
+    103: NiceAiCond.checkSelfBuffActiveAndPassiveIndividuality,
+    104: NiceAiCond.checkPtBuffActiveAndPassiveIndividuality,
+    105: NiceAiCond.checkOpponentBuffActiveAndPassiveIndividuality,
+    106: NiceAiCond.checkPtAllBuff,
+    107: NiceAiCond.checkOpponentAllBuff,
+    108: NiceAiCond.checkPtAllBuffIndividuality,
+    109: NiceAiCond.checkOpponentAllBuffIndividuality,
+    110: NiceAiCond.countAlivePtAll,
+    111: NiceAiCond.countAliveOpponentAll,
+    112: NiceAiCond.checkPtAllBuffActive,
+    113: NiceAiCond.checkOpponentAllBuffActive,
+    114: NiceAiCond.countHigherBuffIndividualitySumPt,
+    115: NiceAiCond.countHigherBuffIndividualitySumPtAll,
+    116: NiceAiCond.countHigherBuffIndividualitySumOpponent,
+    117: NiceAiCond.countHigherBuffIndividualitySumOpponentAll,
+    118: NiceAiCond.countHigherBuffIndividualitySumSelf,
+    119: NiceAiCond.countLowerBuffIndividualitySumPt,
+    120: NiceAiCond.countLowerBuffIndividualitySumPtAll,
+    121: NiceAiCond.countLowerBuffIndividualitySumOpponent,
+    122: NiceAiCond.countLowerBuffIndividualitySumOpponentAll,
+    123: NiceAiCond.countLowerBuffIndividualitySumSelf,
+    124: NiceAiCond.countEqualBuffIndividualitySumPt,
+    125: NiceAiCond.countEqualBuffIndividualitySumPtAll,
+    126: NiceAiCond.countEqualBuffIndividualitySumOpponent,
+    127: NiceAiCond.countEqualBuffIndividualitySumOpponentAll,
+    128: NiceAiCond.countEqualBuffIndividualitySumSelf,
+    129: NiceAiCond.existIndividualityOpponentFront,
+    130: NiceAiCond.existIndividualityOpponentCenter,
+    131: NiceAiCond.existIndividualityOpponentBack,
+    132: NiceAiCond.totalCountHigherIndividualityPt,
+    133: NiceAiCond.totalCountHigherIndividualityPtAll,
+    134: NiceAiCond.totalCountHigherIndividualityOpponent,
+    135: NiceAiCond.totalCountHigherIndividualityOpponentAll,
+    136: NiceAiCond.totalCountHigherIndividualityAllField,
+    137: NiceAiCond.totalCountLowerIndividualityPt,
+    138: NiceAiCond.totalCountLowerIndividualityPtAll,
+    139: NiceAiCond.totalCountLowerIndividualityOpponent,
+    140: NiceAiCond.totalCountLowerIndividualityOpponentAll,
+    141: NiceAiCond.totalCountLowerIndividualityAllField,
+    142: NiceAiCond.totalCountEqualIndividualityPt,
+    143: NiceAiCond.totalCountEqualIndividualityPtAll,
+    144: NiceAiCond.totalCountEqualIndividualityOpponent,
+    145: NiceAiCond.totalCountEqualIndividualityOpponentAll,
+    146: NiceAiCond.totalCountEqualIndividualityAllField,
+    147: NiceAiCond.ptFrontDeadEqual,
+    148: NiceAiCond.ptCenterDeadEqual,
+    149: NiceAiCond.ptBackDeadEqual,
+}
+
+
+class AiActType(IntEnum):
+    NONE = 0
+    RANDOM = 1
+    ATTACK = 2
+    SKILL_RANDOM = 10
+    SKILL1 = 11
+    SKILL2 = 12
+    SKILL3 = 13
+    ATTACK_A = 14
+    ATTACK_B = 15
+    ATTACK_Q = 16
+    ATTACK_A_CRITICAL = 17
+    ATTACK_B_CRITICAL = 18
+    ATTACK_Q_CRITICAL = 19
+    ATTACK_CRITICAL = 30
+    SKILL_ID = 40
+    SKILL_ID_CHECKBUFF = 41
+    RESURRECTION = 42
+    PLAY_MOTION = 71
+    NOBLE_PHANTASM = 80
+    BATTLE_END = 90
+    LOSE_END = 91
+    CHANGE_THINKING = 99
+
+
+class NiceAiActType(str, Enum):
+    """AI Act Type Enum"""
+
+    none = "none"
+    random = "random"
+    attack = "attack"
+    skillRandom = "skillRandom"
+    skill1 = "skill1"
+    skill2 = "skill2"
+    skill3 = "skill3"
+    attackA = "attackA"
+    attackB = "attackB"
+    attackQ = "attackQ"
+    attackACritical = "attackACritical"
+    attackBCritical = "attackBCritical"
+    attackQCritical = "attackQCritical"
+    attackCritical = "attackCritical"
+    skillId = "skillId"
+    skillIdCheckbuff = "skillIdCheckbuff"
+    resurrection = "resurrection"
+    playMotion = "playMotion"
+    noblePhantasm = "noblePhantasm"
+    battleEnd = "battleEnd"
+    loseEnd = "loseEnd"
+    changeThinking = "changeThinking"
+
+
+AI_ACT_TYPE_NAME: Dict[int, NiceAiActType] = {
+    0: NiceAiActType.none,
+    1: NiceAiActType.random,
+    2: NiceAiActType.attack,
+    10: NiceAiActType.skillRandom,
+    11: NiceAiActType.skill1,
+    12: NiceAiActType.skill2,
+    13: NiceAiActType.skill3,
+    14: NiceAiActType.attackA,
+    15: NiceAiActType.attackB,
+    16: NiceAiActType.attackQ,
+    17: NiceAiActType.attackACritical,
+    18: NiceAiActType.attackBCritical,
+    19: NiceAiActType.attackQCritical,
+    30: NiceAiActType.attackCritical,
+    40: NiceAiActType.skillId,
+    41: NiceAiActType.skillIdCheckbuff,
+    42: NiceAiActType.resurrection,
+    71: NiceAiActType.playMotion,
+    80: NiceAiActType.noblePhantasm,
+    90: NiceAiActType.battleEnd,
+    91: NiceAiActType.loseEnd,
+    99: NiceAiActType.changeThinking,
+}
+
+
+class AiActTarget(IntEnum):
+    NONE = 0
+    RANDOM = 1
+    HP_HIGHER = 2
+    HP_LOWER = 3
+    NPTURN_LOWER = 10
+    NPGAUGE_HIGHER = 11
+    REVENGE = 12
+    INDIVIDUALITY_ACTIVE = 13
+    BUFF_ACTIVE = 14
+    FRONT = 15
+    CENTER = 16
+    BACK = 17
+
+
+class NiceAiActTarget(str, Enum):
+    """AI Act Target Enum"""
+
+    none = "none"
+    random = "random"
+    hpHigher = "hpHigher"
+    hpLower = "hpLower"
+    npturnLower = "npturnLower"
+    npgaugeHigher = "npgaugeHigher"
+    revenge = "revenge"
+    individualityActive = "individualityActive"
+    buffActive = "buffActive"
+    front = "front"
+    center_ = "center"
+    back = "back"
+
+
+AI_ACT_TARGET_NAME: Dict[int, NiceAiActTarget] = {
+    0: NiceAiActTarget.none,
+    1: NiceAiActTarget.random,
+    2: NiceAiActTarget.hpHigher,
+    3: NiceAiActTarget.hpLower,
+    10: NiceAiActTarget.npturnLower,
+    11: NiceAiActTarget.npgaugeHigher,
+    12: NiceAiActTarget.revenge,
+    13: NiceAiActTarget.individualityActive,
+    14: NiceAiActTarget.buffActive,
+    15: NiceAiActTarget.front,
+    16: NiceAiActTarget.center_,
+    17: NiceAiActTarget.back,
+}
+
+
+class AiActNum(IntEnum):
+    NOMAL = 0
+    ANYTIME = -1
+    REACTION_ENEMYTURN_START = -4
+    REACTION_ENEMYTURN_END = -5
+    REACTION_DEAD = -6
+    REACTION_PLAYERACTIONEND = -7
+    REACTION_WAVESTART = -8
+    MAXNP = -9
+    SHIFT_SARVANT_AFTER = -10
+    USENP_TARGET = -11
+
+
+class NiceAiActNum(str, Enum):
+    """AI Act Num Enum"""
+
+    nomal = "nomal"
+    anytime = "anytime"
+    reactionEnemyturnStart = "reactionEnemyturnStart"
+    reactionEnemyturnEnd = "reactionEnemyturnEnd"
+    reactionDead = "reactionDead"
+    reactionPlayeractionend = "reactionPlayeractionend"
+    reactionWavestart = "reactionWavestart"
+    maxnp = "maxnp"
+    shiftSarvantAfter = "shiftSarvantAfter"
+    usenpTarget = "usenpTarget"
+
+
+AI_ACT_NUM_NAME: Dict[int, NiceAiActNum] = {
+    0: NiceAiActNum.nomal,
+    -1: NiceAiActNum.anytime,
+    -4: NiceAiActNum.reactionEnemyturnStart,
+    -5: NiceAiActNum.reactionEnemyturnEnd,
+    -6: NiceAiActNum.reactionDead,
+    -7: NiceAiActNum.reactionPlayeractionend,
+    -8: NiceAiActNum.reactionWavestart,
+    -9: NiceAiActNum.maxnp,
+    -10: NiceAiActNum.shiftSarvantAfter,
+    -11: NiceAiActNum.usenpTarget,
+}

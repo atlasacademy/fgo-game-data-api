@@ -67,6 +67,8 @@ test_cases_dict: Dict[str, Tuple[str, str]] = {
     "war_JP": ("JP/war/201", "JP_war_Shimousa"),
     "quest_NA": ("NA/quest/94026514", "NA_Artoria_rank_up_2"),
     "quest_phase_JP": ("JP/quest/94025012/1", "JP_Meaka_Fudou"),
+    "ai_beni_cq_monkey_NA": ("NA/ai/svt/94032580", "NA_AI_Beni_CQ_monkey"),
+    "kh_cq_JP": ("JP/ai/field/90161870", "JP_KH_CQ_taunt"),
 }
 
 
@@ -95,6 +97,8 @@ cases_404_dict = {
     "war": "205",
     "quest": "1234567",
     "quest/94025012": "2",
+    "ai/svt": "2384287349",
+    "ai/field": "18738131",
 }
 
 

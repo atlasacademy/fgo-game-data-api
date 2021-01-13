@@ -6,6 +6,7 @@ PYTHON_NAME_JSON_NAME_OVERRIDE = {
     "UPPER": "upper_",
     "LOWER": "lower_",
     "SELF": "self_",
+    "CENTER": "center_",
 }
 
 
@@ -25,7 +26,7 @@ def enum_to_dict(cstype: List[str]) -> Dict[int, str]:
         i = int(splitted[1])
         enum_item = splitted[0].split()[-1].strip()
         enum_dict[i] = enum_item
-    return {k: enum_dict[k] for k in sorted(enum_dict.keys())}
+    return {k: enum_dict[k] for k in sorted(enum_dict.keys(), key=abs)}
 
 
 def out_intenum(input_dict: Dict[int, str], className: str) -> List[str]:
@@ -47,6 +48,7 @@ STR_NAME_OVERRIDE = {
     "NiceGender": {"other": "unknown"},
     "NiceBuffLimit": {"upper_": "upper", "lower_": "lower"},
     "NiceFuncTargetType": {"self_": "self"},
+    "NiceAiActTarget": {"center_": "center"},
     "NiceStatusRank": {
         "a": "A",
         "aPlus": "A+",
@@ -278,6 +280,22 @@ ENUMS: List[Tuple[str, str, str, str, str]] = [
         "War Start Type Enum",
         "WAR_START_TYPE_NAME",
     ),
+    ("Ai.COND", "AiCond", "NiceAiCond", "AI Cond Enum", "AI_COND_NAME"),
+    (
+        "AiAct.TYPE",
+        "AiActType",
+        "NiceAiActType",
+        "AI Act Type Enum",
+        "AI_ACT_TYPE_NAME",
+    ),
+    (
+        "AiAct.TARGET",
+        "AiActTarget",
+        "NiceAiActTarget",
+        "AI Act Target Enum",
+        "AI_ACT_TARGET_NAME",
+    ),
+    ("Ai.ACT_NUM", "AiActNum", "NiceAiActNum", "AI Act Num Enum", "AI_ACT_NUM_NAME"),
 ]
 
 

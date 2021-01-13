@@ -802,6 +802,29 @@ class MstStage(BaseModel):
     startEffectId: int  # 1
 
 
+class MstAi(BaseModel):
+    id: int
+    idx: int
+    actNum: int
+    priority: int
+    probability: int
+    cond: int
+    vals: List[int]
+    aiActId: int
+    avals: List[int]
+    infoText: str
+    timing: Optional[int] = None  # only in mstAiField
+
+
+class MstAiAct(BaseModel):
+    targetIndividuality: List[int]  # [0]
+    skillVals: List[int]  # [961075, 1]
+    id: int  # 94016184
+    type: int  # 40
+    target: int  # 0
+    createdAt: int  # 946652400
+
+
 class MysticCodeEntity(BaseModelORJson):
     mstEquip: MstEquip
     mstSkill: List[SkillEntityNoReverse]
@@ -906,6 +929,9 @@ class Master(BaseModel):
     funcToTd: Dict[int, Set[int]]
     passiveSkillToSvt: Dict[int, Set[int]]
     bondEquip: Dict[int, int]
+    mstAiId: Dict[int, List[MstAi]]
+    mstAiFieldId: Dict[int, List[MstAi]]
+    mstAiActId: Dict[int, MstAiAct]
 
 
 class ServantEntity(BaseModelORJson):
@@ -989,3 +1015,13 @@ class WarEntity(BaseModelORJson):
     mstWar: MstWar
     mstMap: List[MstMap]
     mstSpot: List[MstSpot]
+
+
+class OneAiEntity(BaseModelORJson):
+    mstAi: MstAi
+    mstAiAct: MstAiAct
+
+
+class AiEntity(BaseModelORJson):
+    mainAis: List[OneAiEntity]
+    relatedAis: List[OneAiEntity]

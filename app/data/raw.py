@@ -1,16 +1,19 @@
-from typing import Set
+from typing import List, Set
 
 from .common import Region, ReverseDepth
 from .enums import FUNC_VALS_NOT_BUFF
 from .gamedata import masters
 from .schemas.raw import (
+    AiEntity,
     BuffEntity,
     BuffEntityNoReverse,
     CommandCodeEntity,
     EventEntity,
     FunctionEntity,
     FunctionEntityNoReverse,
+    MstAi,
     MysticCodeEntity,
+    OneAiEntity,
     QuestEntity,
     QuestPhaseEntity,
     ReversedBuff,
@@ -362,4 +365,41 @@ def get_quest_phase_entity(
         mstQuestRelease=masters[region].mstQuestReleaseId.get(quest_id, []),
         mstQuestPhase=masters[region].mstQuestPhaseId[quest_id][phase],
         mstStage=masters[region].mstStageId.get(quest_id, {}).get(phase, []),
+    )
+
+
+def get_mst_ai(region: Region, ai_id: int, field: bool = False) -> List[MstAi]:
+    if field:
+        return masters[region].mstAiFieldId.get(ai_id, [])
+    else:
+        return masters[region].mstAiId.get(ai_id, [])
+
+
+def get_ai_entity(region: Region, ai_id: int, field: bool = False) -> AiEntity:
+    retreived_ais = {ai_id}
+
+    mainAis = get_mst_ai(region, ai_id, field)
+
+    to_be_retrieved_ais = {ai.avals[0] for ai in mainAis if ai.avals[0] > 0}
+    relatedAis: List[MstAi] = []
+    while to_be_retrieved_ais:
+        for related_ai_id in to_be_retrieved_ais:
+            relatedAis += get_mst_ai(region, related_ai_id, field)
+
+        retreived_ais |= to_be_retrieved_ais
+        to_be_retrieved_ais = {
+            ai.avals[0]
+            for ai in relatedAis
+            if ai.avals[0] > 0 and ai.avals[0] not in retreived_ais
+        }
+
+    return AiEntity(
+        mainAis=(
+            OneAiEntity(mstAi=ai, mstAiAct=masters[region].mstAiActId[ai.aiActId])
+            for ai in mainAis
+        ),
+        relatedAis=(
+            OneAiEntity(mstAi=ai, mstAiAct=masters[region].mstAiActId[ai.aiActId])
+            for ai in relatedAis
+        ),
     )
