@@ -23,6 +23,7 @@ from ..enums import (
     NiceGiftType,
     NiceItemBGType,
     NiceItemType,
+    NiceItemUse,
     NicePayType,
     NicePurchaseType,
     NiceQuestType,
@@ -84,6 +85,7 @@ class NiceItem(BaseModelORJson):
     id: int
     name: str
     type: NiceItemType
+    uses: List[NiceItemUse]
     detail: str
     individuality: List[NiceTrait]
     icon: HttpUrl

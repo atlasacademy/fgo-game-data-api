@@ -49,6 +49,7 @@ from .enums import (
     VOICE_TYPE_NAME,
     WAR_START_TYPE_NAME,
     FuncType,
+    NiceItemUse,
     NiceStatusRank,
     PayType,
     SvtClass,
@@ -574,12 +575,27 @@ def get_nice_servant_change(change: MstSvtChange) -> NiceServantChange:
     )
 
 
+def get_item_use(region: Region, item_id: int) -> List[NiceItemUse]:
+    item_uses: List[NiceItemUse] = []
+
+    for use_type, use_table in (
+        (NiceItemUse.skill, masters[region].mstCombineSkillItem),
+        (NiceItemUse.ascension, masters[region].mstCombineLimitItem),
+        (NiceItemUse.costume, masters[region].mstCombineCostumeItem),
+    ):
+        if item_id in use_table:
+            item_uses.append(use_type)
+
+    return item_uses
+
+
 def get_nice_item(region: Region, item_id: int) -> NiceItem:
     raw_data = masters[region].mstItemId[item_id]
     return NiceItem(
         id=item_id,
         name=raw_data.name,
         type=ITEM_TYPE_NAME[raw_data.type],
+        uses=get_item_use(region, item_id),
         detail=raw_data.detail,
         individuality=get_traits_list(raw_data.individuality),
         icon=AssetURL.items.format(

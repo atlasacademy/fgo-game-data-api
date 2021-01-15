@@ -78,6 +78,17 @@ SVT_TYPE_NAME_REVERSE: Dict[NiceSvtType, int] = {v: k for k, v in SVT_TYPE_NAME.
 SVT_FLAG_NAME_REVERSE: Dict[NiceSvtFlag, int] = {v: k for k, v in SVT_FLAG_NAME.items()}
 
 
+### Item Use Type ###
+
+
+class NiceItemUse(str, Enum):
+    """Item Use Enum"""
+
+    skill = "skill"
+    ascension = "ascension"
+    costume = "costume"
+
+
 ### Skill Type ###
 
 
@@ -860,4 +871,5 @@ __all__ = [
     "NiceAiActNum",
     "AI_COND_NAME",
     "NiceAiCond",
+    "NiceItemUse",
 ]

@@ -61,7 +61,19 @@ List of optional enviroment variables for the Docker image can be found [here](h
 Run at the project root to start the API server:
 
 ```
-uvicorn app.main:app --reload --log-level debug --reload-dir app
+> uvicorn app.main:app --reload --log-level debug --reload-dir app
+
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [16680] using watchgod
+INFO      fgoapi: Loading game data …
+INFO      fgoapi: Loaded game data in 15.14s.
+INFO:     Started server process [33312]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+DEBUG     fgoapi: Processed in 0.21ms.
+INFO:     127.0.0.1:56759 - "GET / HTTP/1.1" 307 Temporary Redirect
+DEBUG     fgoapi: Processed in 0.24ms.
+INFO:     127.0.0.1:56759 - "GET /rapidoc HTTP/1.1" 200 OK
 ```
 
 Go to http://127.0.0.1:8000/docs or http://127.0.0.1:8000/redoc for the API documentation.

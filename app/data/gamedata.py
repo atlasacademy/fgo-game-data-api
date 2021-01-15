@@ -152,6 +152,11 @@ def update_gamedata() -> None:
             for skill_id in svt["classPassive"]:
                 master["passiveSkillToSvt"][skill_id].add(svt["id"])
 
+        for combine in ("mstCombineSkill", "mstCombineLimit", "mstCombineCostume"):
+            master[f"{combine}Item"] = {
+                item_id for combine in master[combine] for item_id in combine["itemIds"]
+            }
+
         for masters_table, source_table, lookup_id, result_id in (
             ("mstClosedMessageId", "mstClosedMessage", "id", "message"),
             ("mstConstantId", "mstConstant", "name", "value"),

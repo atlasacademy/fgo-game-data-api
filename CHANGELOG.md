@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.32.0 - 2020-01-15
+
+### Added
+
+- `uses` to NiceItem that shows whether the item is used in skill enhancement, ascension or costume unlock.
+
 ## 5.31.0 - 2020-01-12
 
 ### Added
