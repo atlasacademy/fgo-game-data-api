@@ -1,3 +1,4 @@
+# pylint: disable=R0201
 from pathlib import Path
 
 import pytest

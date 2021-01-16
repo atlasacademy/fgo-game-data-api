@@ -1,3 +1,4 @@
+# pylint: disable=R0201,R0904
 from typing import Dict, Iterable, Tuple
 
 import pytest

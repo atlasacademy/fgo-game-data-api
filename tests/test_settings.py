@@ -1,3 +1,4 @@
+# pylint: disable=R0201
 from _pytest.monkeypatch import MonkeyPatch
 
 from app.config import Settings
