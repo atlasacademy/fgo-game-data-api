@@ -631,7 +631,7 @@ TRAIT_NAME: Dict[int, Trait] = {
     2010: Trait.arthur,
     2011: Trait.skyOrEarth,  # Tesla's NP
     2012: Trait.brynhildsBeloved,
-    2018: Trait.undeadOrDaemon,  # Amakusa bond Ce
+    2018: Trait.undeadOrDaemon,  # Amakusa bond CE
     2019: Trait.demonic,
     2037: Trait.skyOrEarthExceptPseudoAndDemi,  # Raikou's 3rd skill
     2038: Trait.fieldSunlight,
@@ -674,7 +674,7 @@ TRAIT_NAME: Dict[int, Trait] = {
     3006: Trait.buffIncreaseDamage,  # catch all damage: atk, np, powermod, ...
     3007: Trait.buffIncreaseDefence,  # catch all defence, including evade
     3008: Trait.buffDecreaseDamage,
-    3009: Trait.buffDecreaseDefence,  # including death resit down and card color resist down
+    3009: Trait.buffDecreaseDefence,  # including death resist down and card color resist down
     3010: Trait.buffMentalEffect,  # charm, terror, confusion
     3011: Trait.buffPoison,
     3012: Trait.buffCharm,
