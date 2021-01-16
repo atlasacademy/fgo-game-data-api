@@ -8,9 +8,9 @@ from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
 from .config import Settings, logger, project_root
-from .data.common import Region
-from .data.tasks import RepoInfo, repo_info
 from .routers import basic, nice, raw, secret
+from .schemas.common import Region
+from .tasks import RepoInfo, repo_info
 
 
 settings = Settings()

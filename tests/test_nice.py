@@ -3,11 +3,11 @@ from typing import Dict, Iterable, Tuple
 import pytest
 from fastapi.testclient import TestClient
 
-from app.data.common import Region
+from app.core.nice import get_nice_shop
 from app.data.gamedata import masters
-from app.data.nice import get_nice_shop
-from app.data.schemas.raw import MstShop
 from app.main import app
+from app.schemas.common import Region
+from app.schemas.raw import MstShop
 
 from .utils import get_response_data
 

@@ -1,28 +1,9 @@
 from typing import Any, Dict, Optional
 
 from ..config import Settings
-from .common import Language, Region, ReverseDepth
-from .enums import (
-    BUFF_TYPE_NAME,
-    CLASS_NAME,
-    EVENT_TYPE_NAME,
-    FUNC_APPLYTARGET_NAME,
-    FUNC_TARGETTYPE_NAME,
-    FUNC_TYPE_NAME,
-    FUNC_VALS_NOT_BUFF,
-    SVT_TYPE_NAME,
-    SvtType,
-)
-from .gamedata import masters
-from .raw import (
-    buff_to_func,
-    func_to_skillId,
-    func_to_tdId,
-    passive_to_svtId,
-    skill_to_CCId,
-    skill_to_MCId,
-)
-from .schemas.basic import (
+from ..data.gamedata import masters
+from ..data.translations import TRANSLATIONS
+from ..schemas.basic import (
     BasicBuffReverse,
     BasicCommandCode,
     BasicEquip,
@@ -40,8 +21,27 @@ from .schemas.basic import (
     BasicTdReverse,
     BasicWar,
 )
-from .schemas.nice import AssetURL
-from .translations import TRANSLATIONS
+from ..schemas.common import Language, Region, ReverseDepth
+from ..schemas.enums import (
+    BUFF_TYPE_NAME,
+    CLASS_NAME,
+    EVENT_TYPE_NAME,
+    FUNC_APPLYTARGET_NAME,
+    FUNC_TARGETTYPE_NAME,
+    FUNC_TYPE_NAME,
+    FUNC_VALS_NOT_BUFF,
+    SVT_TYPE_NAME,
+    SvtType,
+)
+from ..schemas.nice import AssetURL
+from .raw import (
+    buff_to_func,
+    func_to_skillId,
+    func_to_tdId,
+    passive_to_svtId,
+    skill_to_CCId,
+    skill_to_MCId,
+)
 from .utils import get_safe, get_traits_list
 
 

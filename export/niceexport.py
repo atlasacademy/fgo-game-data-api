@@ -4,8 +4,9 @@ from pathlib import Path
 from typing import Any, Callable, Dict, List, NamedTuple, Union
 
 from app.config import Settings
-from app.data.common import Region
-from app.data.enums import (
+from app.core.utils import get_traits_list
+from app.schemas.common import Region
+from app.schemas.enums import (
     ATTRIBUTE_NAME,
     BUFF_ACTION_NAME,
     BUFF_LIMIT_NAME,
@@ -15,7 +16,6 @@ from app.data.enums import (
     ITEM_BG_TYPE_NAME,
     BuffAction,
 )
-from app.data.utils import get_traits_list
 
 
 CONSTANT_INCLUDE = {

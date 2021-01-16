@@ -4,7 +4,10 @@ from typing import Dict, Generic, List, Optional, TypeVar
 from pydantic import BaseModel, Field, HttpUrl
 from pydantic.generics import GenericModel
 
-from ..enums import (
+from .base import BaseModelORJson
+from .basic import BasicReversedBuff, BasicReversedFunction, BasicReversedSkillTd
+from .common import MCAssets, NiceTrait
+from .enums import (
     Attribute,
     FuncApplyTarget,
     NiceAiActNum,
@@ -37,9 +40,6 @@ from ..enums import (
     NiceWarStartType,
     SvtClass,
 )
-from .base import BaseModelORJson
-from .basic import BasicReversedBuff, BasicReversedFunction, BasicReversedSkillTd
-from .common import MCAssets, NiceTrait
 
 
 class AssetURL:

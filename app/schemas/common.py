@@ -1,5 +1,9 @@
 from enum import Enum
-from typing import Union
+from typing import Optional, Union
+
+from pydantic import BaseModel, HttpUrl
+
+from .enums import Trait
 
 
 class Region(str, Enum):
@@ -44,3 +48,18 @@ class ReverseDepth(str, Enum):
         if isinstance(other, ReverseDepth):
             return self.order() >= other.order()
         return str(self.value) >= other
+
+
+class NiceTrait(BaseModel):
+    """Nice trait"""
+
+    id: int
+    name: Trait
+    negative: Optional[bool] = None
+
+
+class MCAssets(BaseModel):
+    """Mystic Code Assets"""
+
+    male: HttpUrl
+    female: HttpUrl

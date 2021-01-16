@@ -2,7 +2,9 @@ from typing import List, Optional
 
 from pydantic import HttpUrl
 
-from ..enums import (
+from .base import BaseModelORJson
+from .common import MCAssets, NiceTrait
+from .enums import (
     FuncApplyTarget,
     NiceBuffType,
     NiceEventType,
@@ -11,8 +13,6 @@ from ..enums import (
     NiceSvtType,
     SvtClass,
 )
-from .base import BaseModelORJson
-from .common import MCAssets, NiceTrait
 
 
 class BasicBuff(BaseModelORJson):

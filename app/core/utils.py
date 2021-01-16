@@ -1,10 +1,10 @@
 from typing import Any, Iterable, List, Mapping, TypeVar, Union
 
-from .enums import TRAIT_NAME, Trait
-from .schemas.basic import BasicEquip, BasicServant
-from .schemas.common import NiceTrait
-from .schemas.nice import NiceEquip, NiceServant
-from .translations import TRANSLATIONS
+from ..data.translations import TRANSLATIONS
+from ..schemas.basic import BasicEquip, BasicServant
+from ..schemas.common import NiceTrait
+from ..schemas.enums import TRAIT_NAME, Trait
+from ..schemas.nice import NiceEquip, NiceServant
 
 
 VT = TypeVar("VT")

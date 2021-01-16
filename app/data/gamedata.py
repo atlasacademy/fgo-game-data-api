@@ -5,9 +5,9 @@ from typing import Dict
 import orjson
 
 from ..config import Settings, logger
-from .common import Region
-from .enums import FUNC_VALS_NOT_BUFF, SvtType
-from .schemas.raw import Master, is_equip, is_servant
+from ..schemas.common import Region
+from ..schemas.enums import FUNC_VALS_NOT_BUFF, SvtType
+from ..schemas.raw import Master, is_equip, is_servant
 
 
 settings = Settings()

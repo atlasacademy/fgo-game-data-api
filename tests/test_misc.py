@@ -2,12 +2,12 @@ import orjson
 import pytest
 from fastapi import HTTPException
 
-from app.data.common import Language, Region, ReverseDepth
-from app.data.enums import FuncType
-from app.data.nice import get_nice_servant_model, parse_dataVals
-from app.data.schemas.basic import BasicServant
-from app.data.utils import get_lang_en, sort_by_collection_no
+from app.core.nice import get_nice_servant_model, parse_dataVals
+from app.core.utils import get_lang_en, sort_by_collection_no
 from app.routers.utils import list_string_exclude
+from app.schemas.basic import BasicServant
+from app.schemas.common import Language, Region, ReverseDepth
+from app.schemas.enums import FuncType
 
 
 def test_parse_dataVals_add_state_6_items() -> None:

@@ -2,10 +2,10 @@ from typing import List
 
 from fastapi import APIRouter, Depends, HTTPException, Response
 
-from ..data import raw, search
-from ..data.common import Region, ReverseDepth
+from ..core import raw, search
 from ..data.gamedata import masters
-from ..data.schemas.raw import (
+from ..schemas.common import Region, ReverseDepth
+from ..schemas.raw import (
     AiEntity,
     BuffEntity,
     CommandCodeEntity,
@@ -20,7 +20,7 @@ from ..data.schemas.raw import (
     TdEntity,
     WarEntity,
 )
-from .deps import (
+from ..schemas.search import (
     BuffSearchQueryParams,
     EquipSearchQueryParams,
     FuncSearchQueryParams,
@@ -28,9 +28,8 @@ from .deps import (
     SkillSearchParams,
     SvtSearchQueryParams,
     TdSearchParams,
-    get_error_code,
 )
-from .utils import item_response, list_response
+from .utils import get_error_code, item_response, list_response
 
 
 router = APIRouter(prefix="/raw", tags=["raw"])

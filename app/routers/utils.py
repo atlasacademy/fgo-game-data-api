@@ -1,12 +1,40 @@
 import json
-from typing import Any, Iterable, Set
+from typing import Any, Dict, Iterable, Mapping, Optional, Set, Type, Union
 
 from fastapi.responses import Response
+from pydantic import BaseModel
 
-from ..data.schemas.base import BaseModelORJson
+from ..schemas.base import BaseModelORJson
+from ..schemas.common import Language
 
 
 JSON_MIME = "application/json"
+
+
+class DetailMessage(BaseModel):
+    detail: str
+
+
+ErrorDetailType = Dict[str, Union[Type[DetailMessage], str]]
+ERROR_CODE: Dict[int, ErrorDetailType] = {
+    400: {"model": DetailMessage, "description": "Insufficient query"},
+    403: {"model": DetailMessage, "description": "Response too big"},
+    404: {"model": DetailMessage, "description": "Item not found"},
+    500: {"model": DetailMessage, "description": "Internal server error"},
+}
+
+
+def get_error_code(
+    error_codes: Union[Iterable[int], Mapping[int, Any]]
+) -> Dict[Union[int, str], ErrorDetailType]:
+    return {k: v for k, v in ERROR_CODE.items() if k in error_codes}
+
+
+def language_parameter(lang: Optional[Language] = None) -> Language:
+    if lang:
+        return lang
+    else:
+        return Language.jp
 
 
 def item_response(item: BaseModelORJson) -> Response:

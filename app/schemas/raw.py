@@ -3,8 +3,8 @@ from typing import Any, Dict, List, Optional, Set
 
 from pydantic import BaseModel
 
-from ..enums import SvtType
 from .base import BaseModelORJson
+from .enums import SvtType
 
 
 class MstConstant(BaseModelORJson):

@@ -1,12 +1,11 @@
 import inspect
 from dataclasses import dataclass
-from typing import Any, ClassVar, Dict, Iterable, List, Mapping, Optional, Type, Union
+from typing import ClassVar, List, Optional, Union
 
 from fastapi import Query
-from pydantic import BaseModel
 
-from ..data.common import Language, Region
-from ..data.enums import (
+from .common import Region
+from .enums import (
     ATTRIBUTE_NAME,
     CARD_TYPE_NAME,
     CLASS_NAME,
@@ -28,32 +27,6 @@ from ..data.enums import (
     SvtClass,
     Trait,
 )
-
-
-class DetailMessage(BaseModel):
-    detail: str
-
-
-ErrorDetailType = Dict[str, Union[Type[DetailMessage], str]]
-ERROR_CODE: Dict[int, ErrorDetailType] = {
-    400: {"model": DetailMessage, "description": "Insufficient query"},
-    403: {"model": DetailMessage, "description": "Response too big"},
-    404: {"model": DetailMessage, "description": "Item not found"},
-    500: {"model": DetailMessage, "description": "Internal server error"},
-}
-
-
-def get_error_code(
-    error_codes: Union[Iterable[int], Mapping[int, Any]]
-) -> Dict[Union[int, str], ErrorDetailType]:
-    return {k: v for k, v in ERROR_CODE.items() if k in error_codes}
-
-
-def language_parameter(lang: Optional[Language] = None) -> Language:
-    if lang:
-        return lang
-    else:
-        return Language.jp
 
 
 SERVANT_TYPE = [

@@ -6,17 +6,15 @@ import orjson
 from fastapi import HTTPException
 
 from ..config import Settings
-from . import raw
-from .basic import (
-    get_basic_cc,
-    get_basic_function,
-    get_basic_mc,
-    get_basic_servant,
-    get_basic_skill,
-    get_basic_td,
+from ..data.gamedata import masters
+from ..data.translations import TRANSLATIONS
+from ..schemas.basic import (
+    BasicReversedBuff,
+    BasicReversedFunction,
+    BasicReversedSkillTd,
 )
-from .common import Language, Region, ReverseData, ReverseDepth
-from .enums import (
+from ..schemas.common import Language, Region, ReverseData, ReverseDepth
+from ..schemas.enums import (
     AI_ACT_NUM_NAME,
     AI_ACT_TARGET_NAME,
     AI_ACT_TYPE_NAME,
@@ -58,13 +56,7 @@ from .enums import (
     VoiceCondType,
     WarEntityFlag,
 )
-from .gamedata import masters
-from .schemas.basic import (
-    BasicReversedBuff,
-    BasicReversedFunction,
-    BasicReversedSkillTd,
-)
-from .schemas.nice import (
+from ..schemas.nice import (
     AiIdList,
     AssetURL,
     NiceAi,
@@ -104,7 +96,7 @@ from .schemas.nice import (
     NiceVoiceLine,
     NiceWar,
 )
-from .schemas.raw import (
+from ..schemas.raw import (
     BuffEntityNoReverse,
     FunctionEntityNoReverse,
     GlobalNewMstSubtitle,
@@ -127,7 +119,15 @@ from .schemas.raw import (
     SkillEntityNoReverse,
     TdEntityNoReverse,
 )
-from .translations import TRANSLATIONS
+from . import raw
+from .basic import (
+    get_basic_cc,
+    get_basic_function,
+    get_basic_mc,
+    get_basic_servant,
+    get_basic_skill,
+    get_basic_td,
+)
 from .utils import get_nice_trait, get_safe, get_traits_list
 
 

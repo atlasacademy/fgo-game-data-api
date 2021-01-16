@@ -1,9 +1,9 @@
 from typing import List, Set
 
-from .common import Region, ReverseDepth
-from .enums import FUNC_VALS_NOT_BUFF
-from .gamedata import masters
-from .schemas.raw import (
+from ..data.gamedata import masters
+from ..schemas.common import Region, ReverseDepth
+from ..schemas.enums import FUNC_VALS_NOT_BUFF
+from ..schemas.raw import (
     AiEntity,
     BuffEntity,
     BuffEntityNoReverse,

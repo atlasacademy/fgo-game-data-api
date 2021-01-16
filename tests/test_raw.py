@@ -3,8 +3,8 @@ from typing import Dict, Tuple
 import pytest
 from fastapi.testclient import TestClient
 
-from app.data.enums import FUNC_VALS_NOT_BUFF
 from app.main import app
+from app.schemas.enums import FUNC_VALS_NOT_BUFF
 
 from .utils import get_response_data
 
