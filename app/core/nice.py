@@ -97,6 +97,7 @@ from ..schemas.nice import (
     NiceWar,
 )
 from ..schemas.raw import (
+    BAD_COMBINE_SVT_LIMIT,
     BuffEntityNoReverse,
     FunctionEntityNoReverse,
     GlobalNewMstSubtitle,
@@ -186,7 +187,7 @@ def parse_dataVals(
     output: Dict[str, Union[int, str, List[int]]] = {}
     if datavals != "[]":
         datavals = remove_brackets(datavals)
-        array = re.split(r",\s*(?![^\[\]]*\])", datavals)
+        array = re.split(r",\s*(?![^\[\]]*])", datavals)
         for i, arrayi in enumerate(array):
             text = ""
             value = -98765
@@ -265,7 +266,7 @@ def parse_dataVals(
                     elif i == 2:
                         text = "Target"
             except ValueError:
-                array2 = re.split(r":\s*(?![^\[\]]*\])", arrayi)
+                array2 = re.split(r":\s*(?![^\[\]]*])", arrayi)
                 if len(array2) > 1:
                     if array2[0] == "DependFuncId1":
                         output["DependFuncId"] = int(remove_brackets(array2[1]))
@@ -986,7 +987,6 @@ def get_nice_servant(
         get_nice_servant_change(change) for change in raw_data.mstSvtChange
     ]
 
-    BAD_COMBINE_LIMIT = 4  # The material here doesn't mean anything
     nice_data["ascensionMaterials"] = {
         combineLimit.svtLimit: {
             "items": get_nice_item_amount(
@@ -995,7 +995,7 @@ def get_nice_servant(
             "qp": combineLimit.qp,
         }
         for combineLimit in raw_data.mstCombineLimit
-        if combineLimit.svtLimit != BAD_COMBINE_LIMIT
+        if combineLimit.svtLimit != BAD_COMBINE_SVT_LIMIT
     }
 
     nice_data["skillMaterials"] = {

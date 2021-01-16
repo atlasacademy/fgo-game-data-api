@@ -340,6 +340,10 @@ class MstSvtExp(BaseModel):
     curve: int  # 141
 
 
+# The materials here doesn't mean anything, probably leftover from the old days
+BAD_COMBINE_SVT_LIMIT = 4
+
+
 class MstCombineLimit(BaseModel):
     itemIds: List[int]  # [7002]
     itemNums: List[int]  # [4]

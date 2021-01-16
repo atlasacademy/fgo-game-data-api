@@ -7,7 +7,7 @@ import orjson
 from ..config import Settings, logger
 from ..schemas.common import Region
 from ..schemas.enums import FUNC_VALS_NOT_BUFF, SvtType
-from ..schemas.raw import Master, is_equip, is_servant
+from ..schemas.raw import BAD_COMBINE_SVT_LIMIT, Master, is_equip, is_servant
 
 
 settings = Settings()
@@ -152,9 +152,13 @@ def update_gamedata() -> None:
             for skill_id in svt["classPassive"]:
                 master["passiveSkillToSvt"][skill_id].add(svt["id"])
 
-        for combine in ("mstCombineSkill", "mstCombineLimit", "mstCombineCostume"):
-            master[f"{combine}Item"] = {
-                item_id for combine in master[combine] for item_id in combine["itemIds"]
+        for mstCombine in ("mstCombineSkill", "mstCombineLimit", "mstCombineCostume"):
+            master[f"{mstCombine}Item"] = {
+                item_id
+                for combine in master[mstCombine]
+                for item_id in combine["itemIds"]
+                if mstCombine != "mstCombineLimit"
+                or combine["svtLimit"] != BAD_COMBINE_SVT_LIMIT
             }
 
         for masters_table, source_table, lookup_id, result_id in (
