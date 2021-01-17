@@ -36,7 +36,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
           "individuality": [{ "id": 10557, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
-          "background": "gold"
+          "background": "gold",
+          "priority": 94052652,
+          "dropPriority": 2002
         },
         "amount": 200
       },
@@ -70,7 +72,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
           "individuality": [{ "id": 10556, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
-          "background": "silver"
+          "background": "silver",
+          "priority": 94052651,
+          "dropPriority": 2001
         },
         "amount": 200
       },
@@ -104,7 +108,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
           "individuality": [{ "id": 10555, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
-          "background": "bronze"
+          "background": "bronze",
+          "priority": 94052650,
+          "dropPriority": 2000
         },
         "amount": 200
       },
@@ -138,7 +144,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
           "individuality": [{ "id": 10557, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
-          "background": "gold"
+          "background": "gold",
+          "priority": 94052652,
+          "dropPriority": 2002
         },
         "amount": 200
       },
@@ -172,7 +180,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
           "individuality": [{ "id": 10555, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
-          "background": "bronze"
+          "background": "bronze",
+          "priority": 94052650,
+          "dropPriority": 2000
         },
         "amount": 200
       },
@@ -206,7 +216,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
           "individuality": [{ "id": 10557, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
-          "background": "gold"
+          "background": "gold",
+          "priority": 94052652,
+          "dropPriority": 2002
         },
         "amount": 200
       },
@@ -240,7 +252,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
           "individuality": [{ "id": 10556, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
-          "background": "silver"
+          "background": "silver",
+          "priority": 94052651,
+          "dropPriority": 2001
         },
         "amount": 200
       },
@@ -274,7 +288,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
           "individuality": [{ "id": 10557, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
-          "background": "gold"
+          "background": "gold",
+          "priority": 94052652,
+          "dropPriority": 2002
         },
         "amount": 100
       },
@@ -308,7 +324,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
           "individuality": [{ "id": 10556, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
-          "background": "silver"
+          "background": "silver",
+          "priority": 94052651,
+          "dropPriority": 2001
         },
         "amount": 100
       },
@@ -342,7 +360,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
           "individuality": [{ "id": 10556, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
-          "background": "silver"
+          "background": "silver",
+          "priority": 94052651,
+          "dropPriority": 2001
         },
         "amount": 100
       },
@@ -376,7 +396,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
           "individuality": [{ "id": 10555, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
-          "background": "bronze"
+          "background": "bronze",
+          "priority": 94052650,
+          "dropPriority": 2000
         },
         "amount": 50
       },
@@ -410,7 +432,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
           "individuality": [{ "id": 10555, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
-          "background": "bronze"
+          "background": "bronze",
+          "priority": 94052650,
+          "dropPriority": 2000
         },
         "amount": 20
       },
@@ -444,7 +468,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
           "individuality": [{ "id": 10555, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
-          "background": "bronze"
+          "background": "bronze",
+          "priority": 94052650,
+          "dropPriority": 2000
         },
         "amount": 20
       },
@@ -478,7 +504,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
           "individuality": [{ "id": 10555, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
-          "background": "bronze"
+          "background": "bronze",
+          "priority": 94052650,
+          "dropPriority": 2000
         },
         "amount": 6
       },
@@ -512,7 +540,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
           "individuality": [{ "id": 10555, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
-          "background": "bronze"
+          "background": "bronze",
+          "priority": 94052650,
+          "dropPriority": 2000
         },
         "amount": 3
       },
@@ -546,7 +576,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
           "individuality": [{ "id": 10557, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
-          "background": "gold"
+          "background": "gold",
+          "priority": 94052652,
+          "dropPriority": 2002
         },
         "amount": 40
       },
@@ -580,7 +612,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
           "individuality": [{ "id": 10557, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
-          "background": "gold"
+          "background": "gold",
+          "priority": 94052652,
+          "dropPriority": 2002
         },
         "amount": 30
       },
@@ -614,7 +648,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
           "individuality": [{ "id": 10557, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
-          "background": "gold"
+          "background": "gold",
+          "priority": 94052652,
+          "dropPriority": 2002
         },
         "amount": 30
       },
@@ -648,7 +684,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
           "individuality": [{ "id": 10556, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
-          "background": "silver"
+          "background": "silver",
+          "priority": 94052651,
+          "dropPriority": 2001
         },
         "amount": 30
       },
@@ -682,7 +720,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
           "individuality": [{ "id": 10556, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
-          "background": "silver"
+          "background": "silver",
+          "priority": 94052651,
+          "dropPriority": 2001
         },
         "amount": 20
       },
@@ -716,7 +756,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
           "individuality": [{ "id": 10556, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
-          "background": "silver"
+          "background": "silver",
+          "priority": 94052651,
+          "dropPriority": 2001
         },
         "amount": 20
       },
@@ -750,7 +792,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
           "individuality": [{ "id": 10555, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
-          "background": "bronze"
+          "background": "bronze",
+          "priority": 94052650,
+          "dropPriority": 2000
         },
         "amount": 20
       },
@@ -784,7 +828,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
           "individuality": [{ "id": 10555, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
-          "background": "bronze"
+          "background": "bronze",
+          "priority": 94052650,
+          "dropPriority": 2000
         },
         "amount": 15
       },
@@ -818,7 +864,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
           "individuality": [{ "id": 10555, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
-          "background": "bronze"
+          "background": "bronze",
+          "priority": 94052650,
+          "dropPriority": 2000
         },
         "amount": 15
       },
@@ -852,7 +900,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
           "individuality": [{ "id": 10557, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
-          "background": "gold"
+          "background": "gold",
+          "priority": 94052652,
+          "dropPriority": 2002
         },
         "amount": 20
       },
@@ -886,7 +936,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
           "individuality": [{ "id": 10557, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
-          "background": "gold"
+          "background": "gold",
+          "priority": 94052652,
+          "dropPriority": 2002
         },
         "amount": 20
       },
@@ -920,7 +972,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
           "individuality": [{ "id": 10557, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
-          "background": "gold"
+          "background": "gold",
+          "priority": 94052652,
+          "dropPriority": 2002
         },
         "amount": 20
       },
@@ -954,7 +1008,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
           "individuality": [{ "id": 10556, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
-          "background": "silver"
+          "background": "silver",
+          "priority": 94052651,
+          "dropPriority": 2001
         },
         "amount": 20
       },
@@ -988,7 +1044,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
           "individuality": [{ "id": 10556, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
-          "background": "silver"
+          "background": "silver",
+          "priority": 94052651,
+          "dropPriority": 2001
         },
         "amount": 20
       },
@@ -1022,7 +1080,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
           "individuality": [{ "id": 10556, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
-          "background": "silver"
+          "background": "silver",
+          "priority": 94052651,
+          "dropPriority": 2001
         },
         "amount": 20
       },
@@ -1056,7 +1116,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
           "individuality": [{ "id": 10557, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
-          "background": "gold"
+          "background": "gold",
+          "priority": 94052652,
+          "dropPriority": 2002
         },
         "amount": 10
       },
@@ -1090,7 +1152,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
           "individuality": [{ "id": 10556, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
-          "background": "silver"
+          "background": "silver",
+          "priority": 94052651,
+          "dropPriority": 2001
         },
         "amount": 10
       },
@@ -1124,7 +1188,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
           "individuality": [{ "id": 10555, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
-          "background": "bronze"
+          "background": "bronze",
+          "priority": 94052650,
+          "dropPriority": 2000
         },
         "amount": 10
       },
@@ -1158,7 +1224,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、立派な丸太。\n建物の柱や矢板の材料として用いられる。",
           "individuality": [{ "id": 10559, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049105.png",
-          "background": "silver"
+          "background": "silver",
+          "priority": 94052654,
+          "dropPriority": 2004
         },
         "amount": 10
       },
@@ -1192,7 +1260,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、きめ細かい粘土。\n土器や埴輪の材料として用いられる。",
           "individuality": [{ "id": 10560, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049106.png",
-          "background": "silver"
+          "background": "silver",
+          "priority": 94052655,
+          "dropPriority": 2005
         },
         "amount": 10
       },
@@ -1226,7 +1296,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、茅の束。\n建物の屋根を葺くのに用いられる。",
           "individuality": [{ "id": 10558, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049104.png",
-          "background": "silver"
+          "background": "silver",
+          "priority": 94052653,
+          "dropPriority": 2003
         },
         "amount": 10
       },
@@ -1260,7 +1332,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、きめ細かい粘土。\n土器や埴輪の材料として用いられる。",
           "individuality": [{ "id": 10560, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049106.png",
-          "background": "silver"
+          "background": "silver",
+          "priority": 94052655,
+          "dropPriority": 2005
         },
         "amount": 10
       },
@@ -1294,7 +1368,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、茅の束。\n建物の屋根を葺くのに用いられる。",
           "individuality": [{ "id": 10558, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049104.png",
-          "background": "silver"
+          "background": "silver",
+          "priority": 94052653,
+          "dropPriority": 2003
         },
         "amount": 10
       },
@@ -1328,7 +1404,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、立派な丸太。\n建物の柱や矢板の材料として用いられる。",
           "individuality": [{ "id": 10559, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049105.png",
-          "background": "silver"
+          "background": "silver",
+          "priority": 94052654,
+          "dropPriority": 2004
         },
         "amount": 10
       },
@@ -1362,7 +1440,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
           "individuality": [{ "id": 10556, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
-          "background": "silver"
+          "background": "silver",
+          "priority": 94052651,
+          "dropPriority": 2001
         },
         "amount": 10
       },
@@ -1396,7 +1476,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
           "individuality": [{ "id": 10555, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
-          "background": "bronze"
+          "background": "bronze",
+          "priority": 94052650,
+          "dropPriority": 2000
         },
         "amount": 10
       },
@@ -1430,7 +1512,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
           "individuality": [{ "id": 10557, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
-          "background": "gold"
+          "background": "gold",
+          "priority": 94052652,
+          "dropPriority": 2002
         },
         "amount": 3
       },
@@ -1464,7 +1548,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、茅の束。\n建物の屋根を葺くのに用いられる。",
           "individuality": [{ "id": 10558, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049104.png",
-          "background": "silver"
+          "background": "silver",
+          "priority": 94052653,
+          "dropPriority": 2003
         },
         "amount": 50
       },
@@ -1498,7 +1584,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、立派な丸太。\n建物の柱や矢板の材料として用いられる。",
           "individuality": [{ "id": 10559, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049105.png",
-          "background": "silver"
+          "background": "silver",
+          "priority": 94052654,
+          "dropPriority": 2004
         },
         "amount": 50
       },
@@ -1532,7 +1620,9 @@
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、きめ細かい粘土。\n土器や埴輪の材料として用いられる。",
           "individuality": [{ "id": 10560, "name": "unknown" }],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049106.png",
-          "background": "silver"
+          "background": "silver",
+          "priority": 94052655,
+          "dropPriority": 2005
         },
         "amount": 50
       },

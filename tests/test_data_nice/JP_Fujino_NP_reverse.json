@@ -745,7 +745,9 @@
                     "detail": "【霊基再臨素材】\nアーチャークラスを象徴するピース",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7002.png",
-                    "background": "silver"
+                    "background": "silver",
+                    "priority": 301,
+                    "dropPriority": 5199
                   },
                   "amount": 4
                 }
@@ -763,7 +765,9 @@
                     "detail": "【霊基再臨素材】\nアーチャークラスを象徴するピース",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7002.png",
-                    "background": "silver"
+                    "background": "silver",
+                    "priority": 301,
+                    "dropPriority": 5199
                   },
                   "amount": 10
                 },
@@ -776,7 +780,9 @@
                     "detail": "【スキル強化＆霊基再臨素材】\n呪いを纏った禍々しい骨",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6516.png",
-                    "background": "bronze"
+                    "background": "bronze",
+                    "priority": 201,
+                    "dropPriority": 8101
                   },
                   "amount": 18
                 }
@@ -794,7 +800,9 @@
                     "detail": "【霊基再臨素材】\nアーチャークラスを称えるモニュメント",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7102.png",
-                    "background": "gold"
+                    "background": "gold",
+                    "priority": 308,
+                    "dropPriority": 5299
                   },
                   "amount": 4
                 },
@@ -807,7 +815,9 @@
                     "detail": "【スキル強化＆霊基再臨素材】\n虚ろな影が消える時に飛び散る塵",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
-                    "background": "bronze"
+                    "background": "bronze",
+                    "priority": 203,
+                    "dropPriority": 8201
                   },
                   "amount": 16
                 },
@@ -820,7 +830,9 @@
                     "detail": "【スキル強化＆霊基再臨素材】\n呪われた獣の体内で呪いが醸成されてできた石。\n晴れることのない強烈な呪いを放ち続ける。",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6529.png",
-                    "background": "gold"
+                    "background": "gold",
+                    "priority": 240,
+                    "dropPriority": 8504
                   },
                   "amount": 2
                 }
@@ -838,7 +850,9 @@
                     "detail": "【霊基再臨素材】\nアーチャークラスを称えるモニュメント",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7102.png",
-                    "background": "gold"
+                    "background": "gold",
+                    "priority": 308,
+                    "dropPriority": 5299
                   },
                   "amount": 10
                 },
@@ -851,7 +865,9 @@
                     "detail": "【スキル強化＆霊基再臨素材】\n呪われた獣の体内で呪いが醸成されてできた石。\n晴れることのない強烈な呪いを放ち続ける。",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6529.png",
-                    "background": "gold"
+                    "background": "gold",
+                    "priority": 240,
+                    "dropPriority": 8504
                   },
                   "amount": 4
                 },
@@ -864,7 +880,9 @@
                     "detail": "【スキル強化＆霊基再臨素材】\n巨大な目玉の怪物が息絶える瞬間に流す涙の結晶体。\n強烈な呪いが込められている。",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6520.png",
-                    "background": "gold"
+                    "background": "gold",
+                    "priority": 235,
+                    "dropPriority": 8402
                   },
                   "amount": 6
                 }
@@ -884,7 +902,9 @@
                     "detail": "【スキル強化素材】\n弓兵の力が宿った光輝く石",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6002.png",
-                    "background": "bronze"
+                    "background": "bronze",
+                    "priority": 101,
+                    "dropPriority": 6099
                   },
                   "amount": 4
                 }
@@ -902,7 +922,9 @@
                     "detail": "【スキル強化素材】\n弓兵の力が宿った光輝く石",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6002.png",
-                    "background": "bronze"
+                    "background": "bronze",
+                    "priority": 101,
+                    "dropPriority": 6099
                   },
                   "amount": 10
                 }
@@ -920,7 +942,9 @@
                     "detail": "【スキル強化素材】\n弓兵の強い力が宿った魔法石",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6102.png",
-                    "background": "silver"
+                    "background": "silver",
+                    "priority": 108,
+                    "dropPriority": 6199
                   },
                   "amount": 4
                 }
@@ -938,7 +962,9 @@
                     "detail": "【スキル強化素材】\n弓兵の強い力が宿った魔法石",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6102.png",
-                    "background": "silver"
+                    "background": "silver",
+                    "priority": 108,
+                    "dropPriority": 6199
                   },
                   "amount": 10
                 },
@@ -951,7 +977,9 @@
                     "detail": "【スキル強化＆霊基再臨素材】\n虚ろな影が消える時に飛び散る塵",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
-                    "background": "bronze"
+                    "background": "bronze",
+                    "priority": 203,
+                    "dropPriority": 8201
                   },
                   "amount": 8
                 }
@@ -969,7 +997,9 @@
                     "detail": "【スキル強化素材】\n弓兵の強大な力が宿った宝石",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6202.png",
-                    "background": "gold"
+                    "background": "gold",
+                    "priority": 115,
+                    "dropPriority": 6299
                   },
                   "amount": 4
                 },
@@ -982,7 +1012,9 @@
                     "detail": "【スキル強化＆霊基再臨素材】\n虚ろな影が消える時に飛び散る塵",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
-                    "background": "bronze"
+                    "background": "bronze",
+                    "priority": 203,
+                    "dropPriority": 8201
                   },
                   "amount": 16
                 }
@@ -1000,7 +1032,9 @@
                     "detail": "【スキル強化素材】\n弓兵の強大な力が宿った宝石",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6202.png",
-                    "background": "gold"
+                    "background": "gold",
+                    "priority": 115,
+                    "dropPriority": 6299
                   },
                   "amount": 10
                 },
@@ -1013,7 +1047,9 @@
                     "detail": "【スキル強化＆霊基再臨素材】\n呪いを纏った禍々しい骨",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6516.png",
-                    "background": "bronze"
+                    "background": "bronze",
+                    "priority": 201,
+                    "dropPriority": 8101
                   },
                   "amount": 12
                 }
@@ -1031,7 +1067,9 @@
                     "detail": "【スキル強化＆霊基再臨素材】\n呪いを纏った禍々しい骨",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6516.png",
-                    "background": "bronze"
+                    "background": "bronze",
+                    "priority": 201,
+                    "dropPriority": 8101
                   },
                   "amount": 24
                 },
@@ -1044,7 +1082,9 @@
                     "detail": "【スキル強化＆霊基再臨素材】\n死した肉体が動きださないようにと躯に穿たれた杭。\n血を吸うことで錆びることなく艶やかさを増す。\n闇夜に潜むこの世ならざる者をも穿つことができる。",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6533.png",
-                    "background": "bronze"
+                    "background": "bronze",
+                    "priority": 207,
+                    "dropPriority": 8104
                   },
                   "amount": 15
                 }
@@ -1062,7 +1102,9 @@
                     "detail": "【スキル強化＆霊基再臨素材】\n死した肉体が動きださないようにと躯に穿たれた杭。\n血を吸うことで錆びることなく艶やかさを増す。\n闇夜に潜むこの世ならざる者をも穿つことができる。",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6533.png",
-                    "background": "bronze"
+                    "background": "bronze",
+                    "priority": 207,
+                    "dropPriority": 8104
                   },
                   "amount": 45
                 },
@@ -1075,7 +1117,9 @@
                     "detail": "【スキル強化＆霊基再臨素材】\nただの人間を魔術師に仕立て上げる霊薬。\n脊髄に打ち込むことで僅かな刻の間\n疑似的な魔術回路を形成する。",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6530.png",
-                    "background": "bronze"
+                    "background": "bronze",
+                    "priority": 206,
+                    "dropPriority": 8103
                   },
                   "amount": 60
                 }
@@ -1093,7 +1137,9 @@
                     "detail": "【スキル強化＆霊基再臨素材】\n人類史とマナの奔流が交差する事で\n産み出される高純度の魔力結晶。\n物質化した英霊の素材とも言える。",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6999.png",
-                    "background": "gold"
+                    "background": "gold",
+                    "priority": 299,
+                    "dropPriority": 8900
                   },
                   "amount": 1
                 }

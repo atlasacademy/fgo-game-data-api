@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.34.0 - 2020-01-17
+
+### Added
+
+- `priority` and `dropPriority` to nice item.
+
 ## 5.33.0 - 2020-01-16
 
 ### Added

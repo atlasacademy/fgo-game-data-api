@@ -639,6 +639,8 @@ def get_nice_item(region: Region, item_id: int) -> NiceItem:
             base_url=settings.asset_url, region=region, item_id=raw_data.imageId
         ),
         background=ITEM_BG_TYPE_NAME[raw_data.bgImageId],
+        priority=raw_data.priority,
+        dropPriority=raw_data.dropPriority,
     )
 
 

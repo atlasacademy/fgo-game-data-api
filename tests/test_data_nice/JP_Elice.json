@@ -537,7 +537,9 @@
             "detail": "【霊基再臨素材】\n「『Fate/Requiem』盤上遊戯黙示録」\nで手に入れた、古ぼけた天体観測機器。\nそれは未知なる出会いの道標。",
             "individuality": [{ "id": 10529, "name": "unknown" }],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94047710.png",
-            "background": "gold"
+            "background": "gold",
+            "priority": 94047710,
+            "dropPriority": 2009
           },
           "amount": 1
         }
@@ -555,7 +557,9 @@
             "detail": "【霊基再臨素材】\n「『Fate/Requiem』盤上遊戯黙示録」\nで手に入れた、古ぼけた天体観測機器。\nそれは未知なる出会いの道標。",
             "individuality": [{ "id": 10529, "name": "unknown" }],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94047710.png",
-            "background": "gold"
+            "background": "gold",
+            "priority": 94047710,
+            "dropPriority": 2009
           },
           "amount": 1
         }
@@ -573,7 +577,9 @@
             "detail": "【霊基再臨素材】\n「『Fate/Requiem』盤上遊戯黙示録」\nで手に入れた、古ぼけた天体観測機器。\nそれは未知なる出会いの道標。",
             "individuality": [{ "id": 10529, "name": "unknown" }],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94047710.png",
-            "background": "gold"
+            "background": "gold",
+            "priority": 94047710,
+            "dropPriority": 2009
           },
           "amount": 1
         }
@@ -591,7 +597,9 @@
             "detail": "【霊基再臨素材】\n「『Fate/Requiem』盤上遊戯黙示録」\nで手に入れた、古ぼけた天体観測機器。\nそれは未知なる出会いの道標。",
             "individuality": [{ "id": 10529, "name": "unknown" }],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94047710.png",
-            "background": "gold"
+            "background": "gold",
+            "priority": 94047710,
+            "dropPriority": 2009
           },
           "amount": 1
         }
@@ -611,7 +619,9 @@
             "detail": "【スキル強化素材】\n槍兵の力が宿った光輝く石",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6003.png",
-            "background": "bronze"
+            "background": "bronze",
+            "priority": 102,
+            "dropPriority": 6098
           },
           "amount": 4
         }
@@ -629,7 +639,9 @@
             "detail": "【スキル強化素材】\n槍兵の力が宿った光輝く石",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6003.png",
-            "background": "bronze"
+            "background": "bronze",
+            "priority": 102,
+            "dropPriority": 6098
           },
           "amount": 10
         }
@@ -647,7 +659,9 @@
             "detail": "【スキル強化素材】\n槍兵の強い力が宿った魔法石",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6103.png",
-            "background": "silver"
+            "background": "silver",
+            "priority": 109,
+            "dropPriority": 6198
           },
           "amount": 4
         }
@@ -665,7 +679,9 @@
             "detail": "【スキル強化素材】\n槍兵の強い力が宿った魔法石",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6103.png",
-            "background": "silver"
+            "background": "silver",
+            "priority": 109,
+            "dropPriority": 6198
           },
           "amount": 10
         },
@@ -678,7 +694,9 @@
             "detail": "【スキル強化＆霊基再臨素材】\n呪いを纏った禍々しい骨",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6516.png",
-            "background": "bronze"
+            "background": "bronze",
+            "priority": 201,
+            "dropPriority": 8101
           },
           "amount": 12
         }
@@ -696,7 +714,9 @@
             "detail": "【スキル強化素材】\n槍兵の強大な力が宿った宝石",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6203.png",
-            "background": "gold"
+            "background": "gold",
+            "priority": 116,
+            "dropPriority": 6298
           },
           "amount": 4
         },
@@ -709,7 +729,9 @@
             "detail": "【スキル強化＆霊基再臨素材】\n呪いを纏った禍々しい骨",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6516.png",
-            "background": "bronze"
+            "background": "bronze",
+            "priority": 201,
+            "dropPriority": 8101
           },
           "amount": 24
         }
@@ -727,7 +749,9 @@
             "detail": "【スキル強化素材】\n槍兵の強大な力が宿った宝石",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6203.png",
-            "background": "gold"
+            "background": "gold",
+            "priority": 116,
+            "dropPriority": 6298
           },
           "amount": 10
         },
@@ -740,7 +764,9 @@
             "detail": "【スキル強化＆霊基再臨素材】\n魂を油にして燃えるランタン",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6508.png",
-            "background": "silver"
+            "background": "silver",
+            "priority": 210,
+            "dropPriority": 8300
           },
           "amount": 4
         }
@@ -758,7 +784,9 @@
             "detail": "【スキル強化＆霊基再臨素材】\n魂を油にして燃えるランタン",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6508.png",
-            "background": "silver"
+            "background": "silver",
+            "priority": 210,
+            "dropPriority": 8300
           },
           "amount": 8
         },
@@ -771,7 +799,9 @@
             "detail": "【スキル強化＆霊基再臨素材】\n死した肉体が動きださないようにと躯に穿たれた杭。\n血を吸うことで錆びることなく艶やかさを増す。\n闇夜に潜むこの世ならざる者をも穿つことができる。",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6533.png",
-            "background": "bronze"
+            "background": "bronze",
+            "priority": 207,
+            "dropPriority": 8104
           },
           "amount": 15
         }
@@ -789,7 +819,9 @@
             "detail": "【スキル強化＆霊基再臨素材】\n死した肉体が動きださないようにと躯に穿たれた杭。\n血を吸うことで錆びることなく艶やかさを増す。\n闇夜に潜むこの世ならざる者をも穿つことができる。",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6533.png",
-            "background": "bronze"
+            "background": "bronze",
+            "priority": 207,
+            "dropPriority": 8104
           },
           "amount": 45
         },
@@ -802,7 +834,9 @@
             "detail": "【スキル強化＆霊基再臨素材】\n数多の血、数多の罪、数多の穢れを啜り、\n災いを招き寄せる呪いを帯びた矢尻。",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6541.png",
-            "background": "silver"
+            "background": "silver",
+            "priority": 226,
+            "dropPriority": 8315
           },
           "amount": 20
         }
@@ -820,7 +854,9 @@
             "detail": "【スキル強化＆霊基再臨素材】\n人類史とマナの奔流が交差する事で\n産み出される高純度の魔力結晶。\n物質化した英霊の素材とも言える。",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6999.png",
-            "background": "gold"
+            "background": "gold",
+            "priority": 299,
+            "dropPriority": 8900
           },
           "amount": 1
         }

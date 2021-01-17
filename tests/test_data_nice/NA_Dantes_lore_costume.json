@@ -549,7 +549,9 @@
             "detail": "\"Skill Up & Ascension Material\"\nOminous bones wielding curses.",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6516.png",
-            "background": "bronze"
+            "background": "bronze",
+            "priority": 201,
+            "dropPriority": 8101
           },
           "amount": 10
         },
@@ -562,7 +564,9 @@
             "detail": "\"Skill Up & Ascension Material\"\nA multi-crystal created within a golem's body.",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6515.png",
-            "background": "silver"
+            "background": "silver",
+            "priority": 211,
+            "dropPriority": 8301
           },
           "amount": 10
         }
@@ -580,7 +584,9 @@
             "detail": "\"Skill Up & Ascension Material\"\nA jewel as if you are being stared by serpent eyes.",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6509.png",
-            "background": "silver"
+            "background": "silver",
+            "priority": 212,
+            "dropPriority": 8307
           },
           "amount": 10
         },
@@ -593,7 +599,9 @@
             "detail": "\"Skill Up & Ascension Material\"\nA page which nobody should ever read.\nUsually mixed in as the first or last page.",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6511.png",
-            "background": "silver"
+            "background": "silver",
+            "priority": 215,
+            "dropPriority": 8303
           },
           "amount": 10
         }
@@ -611,7 +619,9 @@
             "detail": "\"Skill Up & Ascension Material\"\nDust that disperses when hollow shadows disappear.",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6505.png",
-            "background": "bronze"
+            "background": "bronze",
+            "priority": 203,
+            "dropPriority": 8201
           },
           "amount": 10
         },
@@ -624,7 +634,9 @@
             "detail": "\"Skill Up & Ascension Material\"\nDream of an eternal machine.\nA gear that spins forever once it starts turning.",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6510.png",
-            "background": "silver"
+            "background": "silver",
+            "priority": 214,
+            "dropPriority": 8302
           },
           "amount": 10
         }
@@ -642,7 +654,9 @@
             "detail": "\"Skill Up & Ascension Material\"\nFeather from a sacred bird of the Orient.",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6501.png",
-            "background": "silver"
+            "background": "silver",
+            "priority": 213,
+            "dropPriority": 8306
           },
           "amount": 10
         },
@@ -655,7 +669,9 @@
             "detail": "\"Skill Up & Ascension Material\"\nThe heart of a savage demi-god.\nA god is a god, even if it's a fake.\nIts heartbeat emits many curses.",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6517.png",
-            "background": "gold"
+            "background": "gold",
+            "priority": 229,
+            "dropPriority": 8500
           },
           "amount": 10
         }
@@ -675,7 +691,9 @@
             "detail": "\"Skill Up & Ascension Material\"\nProof that you've been acknowledged as a hero.\nMany possess it, but they aren't \nconscious of it so they forget.",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6503.png",
-            "background": "bronze"
+            "background": "bronze",
+            "priority": 200,
+            "dropPriority": 8100
           },
           "amount": 10
         }
@@ -693,7 +711,9 @@
             "detail": "\"Skill Up & Ascension Material\"\nA seed of a giant tree that symbolizes the world.",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6502.png",
-            "background": "silver"
+            "background": "silver",
+            "priority": 209,
+            "dropPriority": 8203
           },
           "amount": 10
         }
@@ -711,7 +731,9 @@
             "detail": "\"Skill Up & Ascension Material\"\nThe fang of a dragon. Dragon Tooth Warriors are created using these fangs.",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6512.png",
-            "background": "bronze"
+            "background": "bronze",
+            "priority": 202,
+            "dropPriority": 8200
           },
           "amount": 12
         }
@@ -729,7 +751,9 @@
             "detail": "\"Skill Up & Ascension Material\"\nLantern that uses souls as fuel to burn.",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6508.png",
-            "background": "silver"
+            "background": "silver",
+            "priority": 210,
+            "dropPriority": 8300
           },
           "amount": 12
         }
@@ -747,7 +771,9 @@
             "detail": "\"Skill Up & Ascension Material\"\nA tough horseshoe made of metal from a meteor.\nEven if the elements are the same, since it wasn't created on Earth, it has a special role.",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6513.png",
-            "background": "silver"
+            "background": "silver",
+            "priority": 217,
+            "dropPriority": 8305
           },
           "amount": 12
         }
@@ -765,7 +791,9 @@
             "detail": "\"Skill Up & Ascension Material\"\nThe body of a young homunculus before a soul is written into it.",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6514.png",
-            "background": "silver"
+            "background": "silver",
+            "priority": 216,
+            "dropPriority": 8304
           },
           "amount": 15
         }
@@ -783,7 +811,9 @@
             "detail": "\"Skill Up & Ascension Material\"\nThose wounded by this claw become prisoners of chaos.",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6507.png",
-            "background": "gold"
+            "background": "gold",
+            "priority": 228,
+            "dropPriority": 8400
           },
           "amount": 15
         }
@@ -801,7 +831,9 @@
             "detail": "\"Skill Up & Ascension Material\"\nA scale that grew upside-down under a dragon's chin.",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6506.png",
-            "background": "gold"
+            "background": "gold",
+            "priority": 230,
+            "dropPriority": 8501
           },
           "amount": 15
         }
@@ -819,7 +851,9 @@
             "detail": "\"Skill Up & Ascension Material\"\nA highly pure crystal of magic created\nwhen human history crosses a stream of Mana.\nIt can be said that it is the ingredient for materializing Heroic Spirits.",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6999.png",
-            "background": "gold"
+            "background": "gold",
+            "priority": 299,
+            "dropPriority": 8900
           },
           "amount": 1
         }
@@ -839,7 +873,9 @@
             "detail": "\"Skill Up & Ascension Material\"\nA stake driven into a corpse to prevent its reanimation.\nIt never rusts, and retains its luster by absorbing blood.\nIt can even pierce otherworldly beings that lurk in the dark of night.",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6533.png",
-            "background": "bronze"
+            "background": "bronze",
+            "priority": 207,
+            "dropPriority": 8104
           },
           "amount": 10
         },
@@ -852,7 +888,9 @@
             "detail": "\"Skill Up & Ascension Material\"\nThe shell of a clam that has lived for an eternity.\nWhen you put your ear against the aperture, you can hear the sounds of pure waves from the distant past.",
             "individuality": [{ "id": 10085, "name": "unknown" }],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6526.png",
-            "background": "silver"
+            "background": "silver",
+            "priority": 220,
+            "dropPriority": 8308
           },
           "amount": 5
         },
@@ -865,7 +903,9 @@
             "detail": "\"Skill Up & Ascension Material\"\nThe crystal of the tear shed by a giant eyeball-like creature when it dies.\nA strong curse is residing within this crystal.",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6520.png",
-            "background": "gold"
+            "background": "gold",
+            "priority": 233,
+            "dropPriority": 8402
           },
           "amount": 5
         },
@@ -878,7 +918,9 @@
             "detail": "\"Skill Up & Ascension Material\"\nA stone whose curse fermented in the innards of a hexed beast.\nIt continues to release a strong curse that will never fade.",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6529.png",
-            "background": "gold"
+            "background": "gold",
+            "priority": 238,
+            "dropPriority": 8504
           },
           "amount": 5
         }

@@ -91,6 +91,8 @@ class NiceItem(BaseModelORJson):
     individuality: List[NiceTrait]
     icon: HttpUrl
     background: NiceItemBGType
+    priority: int
+    dropPriority: int
 
 
 class NiceItemAmount(BaseModel):
