@@ -24,6 +24,7 @@
       "funcPopupText": "NP吸収",
       "functvals": [],
       "funcquestTvals": [],
+      "funcGroup": [],
       "buffs": [],
       "svals": [
         {
@@ -86,6 +87,7 @@
       "funcPopupText": "チャージ吸収",
       "functvals": [],
       "funcquestTvals": [],
+      "funcGroup": [],
       "buffs": [],
       "svals": [
         {
@@ -149,6 +151,7 @@
       "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_504.png",
       "functvals": [],
       "funcquestTvals": [],
+      "funcGroup": [],
       "buffs": [
         {
           "id": 148,

@@ -35,6 +35,7 @@
       "funcPopupText": "なし",
       "functvals": [],
       "funcquestTvals": [],
+      "funcGroup": [],
       "buffs": [],
       "svals": [
         { "Rate": 1000, "Value": 6000 },
@@ -81,6 +82,7 @@
       "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_531.png",
       "functvals": [],
       "funcquestTvals": [],
+      "funcGroup": [],
       "buffs": [
         {
           "id": 230,
@@ -142,6 +144,7 @@
       "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_503.png",
       "functvals": [],
       "funcquestTvals": [],
+      "funcGroup": [],
       "buffs": [
         {
           "id": 127,
@@ -1128,6 +1131,7 @@
                   "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
                   "functvals": [],
                   "funcquestTvals": [],
+                  "funcGroup": [],
                   "buffs": [
                     {
                       "id": 102,
@@ -1172,6 +1176,7 @@
                   "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_351.png",
                   "functvals": [],
                   "funcquestTvals": [],
+                  "funcGroup": [],
                   "buffs": [
                     {
                       "id": 510,
@@ -1213,6 +1218,7 @@
                   "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_303.png",
                   "functvals": [],
                   "funcquestTvals": [],
+                  "funcGroup": [],
                   "buffs": [
                     {
                       "id": 140,
@@ -1250,6 +1256,7 @@
                   "funcPopupText": "チャージ増加",
                   "functvals": [],
                   "funcquestTvals": [],
+                  "funcGroup": [],
                   "buffs": [],
                   "svals": [
                     { "Rate": 600, "Value": 1 },
@@ -1293,6 +1300,7 @@
                   "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_309.png",
                   "functvals": [],
                   "funcquestTvals": [],
+                  "funcGroup": [],
                   "buffs": [
                     {
                       "id": 154,
@@ -1334,6 +1342,7 @@
                   "funcPopupText": "スター獲得",
                   "functvals": [],
                   "funcquestTvals": [],
+                  "funcGroup": [],
                   "buffs": [],
                   "svals": [
                     { "Rate": 1000, "Value": 5 },
@@ -1357,6 +1366,7 @@
                   "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
                   "functvals": [],
                   "funcquestTvals": [],
+                  "funcGroup": [],
                   "buffs": [
                     {
                       "id": 144,
@@ -1419,6 +1429,7 @@
                   "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_522.png",
                   "functvals": [],
                   "funcquestTvals": [],
+                  "funcGroup": [],
                   "buffs": [
                     {
                       "id": 202,
@@ -1460,6 +1471,7 @@
                   "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
                   "functvals": [],
                   "funcquestTvals": [],
+                  "funcGroup": [],
                   "buffs": [
                     {
                       "id": 149,
@@ -1502,6 +1514,7 @@
                   "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_304.png",
                   "functvals": [],
                   "funcquestTvals": [],
+                  "funcGroup": [],
                   "buffs": [
                     {
                       "id": 180,
@@ -1558,6 +1571,7 @@
                   "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_306.png",
                   "functvals": [],
                   "funcquestTvals": [],
+                  "funcGroup": [],
                   "buffs": [
                     {
                       "id": 162,
@@ -1611,6 +1625,7 @@
                   "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
                   "functvals": [],
                   "funcquestTvals": [],
+                  "funcGroup": [],
                   "buffs": [
                     {
                       "id": 142,
@@ -1666,6 +1681,7 @@
                   "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_313.png",
                   "functvals": [],
                   "funcquestTvals": [],
+                  "funcGroup": [],
                   "buffs": [
                     {
                       "id": 101,
@@ -1742,6 +1758,7 @@
                   "funcPopupText": "なし",
                   "functvals": [],
                   "funcquestTvals": [],
+                  "funcGroup": [],
                   "buffs": [],
                   "svals": [
                     { "Rate": 1000, "Value": 6000 },
@@ -1788,6 +1805,7 @@
                   "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_531.png",
                   "functvals": [],
                   "funcquestTvals": [],
+                  "funcGroup": [],
                   "buffs": [
                     {
                       "id": 230,
@@ -1851,6 +1869,7 @@
                   "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_503.png",
                   "functvals": [],
                   "funcquestTvals": [],
+                  "funcGroup": [],
                   "buffs": [
                     {
                       "id": 127,

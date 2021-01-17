@@ -470,6 +470,7 @@
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
           "functvals": [],
           "funcquestTvals": [],
+          "funcGroup": [],
           "buffs": [
             {
               "id": 102,
@@ -503,6 +504,7 @@
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_310.png",
           "functvals": [],
           "funcquestTvals": [],
+          "funcGroup": [],
           "buffs": [
             {
               "id": 138,
@@ -533,6 +535,7 @@
           "funcPopupText": "NP増加",
           "functvals": [],
           "funcquestTvals": [],
+          "funcGroup": [],
           "buffs": [],
           "svals": [{ "Rate": 1000, "Value": 3000 }]
         }
@@ -564,6 +567,25 @@
           "funcPopupText": "〔ナイト系〕〔ゲイザー系〕〔量産型系〕出現率アップ",
           "functvals": [],
           "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80073,
+              "baseFuncId": 0,
+              "nameTotal": "[ナイト系][ゲイザー系][量産型系]出現率アップ",
+              "name": "[ナイト系][ゲイザー系][量産型系]出現率アップ",
+              "priority": 7000,
+              "isDispValue": true
+            },
+            {
+              "eventId": 80118,
+              "baseFuncId": 0,
+              "nameTotal": "[ナイト系][ゲイザー系][量産型系]出現率アップ",
+              "name": "[ナイト系][ゲイザー系][量産型系]出現率アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1010.png",
+              "priority": 7000,
+              "isDispValue": true
+            }
+          ],
           "buffs": [],
           "svals": [
             { "Individuality": 1155, "EventId": 80118, "RateCount": 250 }
@@ -598,6 +620,7 @@
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
           "functvals": [],
           "funcquestTvals": [],
+          "funcGroup": [],
           "buffs": [
             {
               "id": 102,
@@ -631,6 +654,7 @@
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_310.png",
           "functvals": [],
           "funcquestTvals": [],
+          "funcGroup": [],
           "buffs": [
             {
               "id": 138,
@@ -661,6 +685,7 @@
           "funcPopupText": "NP増加",
           "functvals": [],
           "funcquestTvals": [],
+          "funcGroup": [],
           "buffs": [],
           "svals": [{ "Rate": 1000, "Value": 5000 }]
         }
@@ -692,6 +717,25 @@
           "funcPopupText": "〔ナイト系〕〔ゲイザー系〕〔量産型系〕出現率アップ",
           "functvals": [],
           "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80073,
+              "baseFuncId": 0,
+              "nameTotal": "[ナイト系][ゲイザー系][量産型系]出現率アップ",
+              "name": "[ナイト系][ゲイザー系][量産型系]出現率アップ",
+              "priority": 7000,
+              "isDispValue": true
+            },
+            {
+              "eventId": 80118,
+              "baseFuncId": 0,
+              "nameTotal": "[ナイト系][ゲイザー系][量産型系]出現率アップ",
+              "name": "[ナイト系][ゲイザー系][量産型系]出現率アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1010.png",
+              "priority": 7000,
+              "isDispValue": true
+            }
+          ],
           "buffs": [],
           "svals": [
             { "Individuality": 1155, "EventId": 80118, "RateCount": 1000 }

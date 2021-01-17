@@ -35,6 +35,7 @@
       "funcPopupText": "None",
       "functvals": [],
       "funcquestTvals": [],
+      "funcGroup": [],
       "buffs": [],
       "svals": [
         { "Rate": 1000, "Value": 3000, "Target": 2002, "Correction": 1500 },

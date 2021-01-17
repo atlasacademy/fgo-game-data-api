@@ -77,6 +77,7 @@ class AssetURL:
     commandGraph = "{base_url}/{region}/CommandGraph/{item_id}a.png"
     audio = "{base_url}/{region}/Audio/{folder}/{id}.mp3"
     banner = "{base_url}/{region}/Banner/{banner}.png"
+    eventUi = "{base_url}/{region}/EventUI/{event}.png"
     mapImg = "{base_url}/{region}/Terminal/MapImgs/img_questmap_{map_id:0>6}/img_questmap_{map_id:0>6}.png"
     spotImg = "{base_url}/{region}/Terminal/QuestMap/Capter{war_asset_id:0>4}/QMap_Cap{war_asset_id:0>4}_Atlas/spot_{spot_id:0>6}.png"
 
@@ -257,6 +258,16 @@ class NiceBuff(BaseModelORJson):
     )
 
 
+class NiceFuncGroup(BaseModelORJson):
+    eventId: int
+    baseFuncId: int
+    nameTotal: str
+    name: str
+    icon: Optional[HttpUrl] = None
+    priority: int
+    isDispValue: bool
+
+
 class NiceBaseFunction(BaseModelORJson):
     funcId: int = Field(..., title="Function ID", description="Function ID")
     funcType: NiceFuncType = Field(
@@ -293,15 +304,20 @@ class NiceBaseFunction(BaseModelORJson):
         description="Function quest traits. "
         "The current quest needs this traits for the function to works.",
     )
+    funcGroup: List[NiceFuncGroup] = Field(
+        ...,
+        title="Function group details",
+        description="Some more details for event drop up, bond point up functions",
+    )
     traitVals: List[NiceTrait] = Field(
         [],
         title="Trait details",
-        description="Trait details for buff removal functions.",
+        description="Trait details to be used by buff removal functions.",
     )
     buffs: List[NiceBuff] = Field(
         ...,
         title="Buff details",
-        description="Buff details for apply buff functions."
+        description="Buff details to be used by apply buff functions."
         "Even though this is a list, it is safe to assume it only contains 1 buff if applicable"
         "e.g. you can get the buff by buffs[0]. `buffs[0]` is also what the game hardcoded.",
     )

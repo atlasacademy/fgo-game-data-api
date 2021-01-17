@@ -49,6 +49,7 @@ test_cases_dict: Dict[str, Tuple[str, str]] = {
         "NA_NP_301202_reverse_expand",
     ),
     "function_NA": ("NA/function/433", "NA_function_433"),
+    "function_NA_2": ("NA/function/400", "NA_function_400"),
     "function_NA_reverse": ("NA/function/203?reverse=True", "NA_function_203_reverse"),
     "function_NA_expand": ("NA/function/205?expand=True", "NA_function_205_expand"),
     "function_NA_expand_no_buff": (

@@ -95,7 +95,10 @@ def get_buff_entity(
 def get_func_entity_no_reverse(
     region: Region, func_id: int, expand: bool = False
 ) -> FunctionEntityNoReverse:
-    func_entity = FunctionEntityNoReverse(mstFunc=masters[region].mstFuncId[func_id])
+    func_entity = FunctionEntityNoReverse(
+        mstFunc=masters[region].mstFuncId[func_id],
+        mstFuncGroup=masters[region].mstFuncGroupId.get(func_id, []),
+    )
     if expand and func_entity.mstFunc.funcType not in FUNC_VALS_NOT_BUFF:
         func_entity.mstFunc.expandedVals = [
             get_buff_entity_no_reverse(region, buff_id)

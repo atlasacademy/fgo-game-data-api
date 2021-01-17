@@ -110,7 +110,8 @@
                 "applyTarget": 3,
                 "popupIconId": 312,
                 "popupText": "Quick Up"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[1000,-1,-1,150,OnField:1]"],

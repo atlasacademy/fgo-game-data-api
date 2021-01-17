@@ -37,6 +37,7 @@
           "funcPopupText": "",
           "functvals": [],
           "funcquestTvals": [],
+          "funcGroup": [],
           "buffs": [],
           "svals": [
             { "Rate": 1000, "Value": 1000 },
@@ -59,6 +60,7 @@
           "funcPopupText": "Remove DEF Debuff",
           "functvals": [],
           "funcquestTvals": [],
+          "funcGroup": [],
           "traitVals": [{ "id": 3009, "name": "buffDecreaseDefence" }],
           "buffs": [],
           "svals": [
@@ -96,6 +98,7 @@
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_300.png",
           "functvals": [],
           "funcquestTvals": [],
+          "funcGroup": [],
           "buffs": [
             {
               "id": 126,
@@ -138,6 +141,7 @@
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_310.png",
           "functvals": [],
           "funcquestTvals": [],
+          "funcGroup": [],
           "buffs": [
             {
               "id": 138,
@@ -193,6 +197,7 @@
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_305.png",
           "functvals": [],
           "funcquestTvals": [],
+          "funcGroup": [],
           "buffs": [
             {
               "id": 151,

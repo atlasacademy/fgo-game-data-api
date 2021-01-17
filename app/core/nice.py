@@ -69,6 +69,7 @@ from ..schemas.nice import (
     NiceCostume,
     NiceEquip,
     NiceEvent,
+    NiceFuncGroup,
     NiceGift,
     NiceItem,
     NiceItemAmount,
@@ -103,6 +104,7 @@ from ..schemas.raw import (
     GlobalNewMstSubtitle,
     MstAiAct,
     MstClassRelationOverwrite,
+    MstFuncGroup,
     MstMap,
     MstQuestRelease,
     MstShop,
@@ -163,25 +165,28 @@ def remove_brackets(val_string: str) -> str:
     return val_string
 
 
+EVENT_DROP_FUNCTIONS = {
+    FuncType.EVENT_POINT_UP,
+    FuncType.EVENT_POINT_RATE_UP,
+    FuncType.EVENT_DROP_UP,
+    FuncType.EVENT_DROP_RATE_UP,
+}
+EVENT_FUNCTIONS = EVENT_DROP_FUNCTIONS | {
+    FuncType.ENEMY_ENCOUNT_COPY_RATE_UP,
+    FuncType.ENEMY_ENCOUNT_RATE_UP,
+}
+FRIEND_SUPPORT_FUNCTIONS = {
+    FuncType.SERVANT_FRIENDSHIP_UP,
+    FuncType.USER_EQUIP_EXP_UP,
+    FuncType.EXP_UP,
+    FuncType.QP_DROP_UP,
+    FuncType.QP_UP,
+}
+
+
 def parse_dataVals(
     datavals: str, functype: int, region: Region
 ) -> Dict[str, Union[int, str, List[int]]]:
-    EVENT_FUNCTIONS = {
-        FuncType.EVENT_POINT_UP,
-        FuncType.EVENT_POINT_RATE_UP,
-        FuncType.EVENT_DROP_UP,
-        FuncType.EVENT_DROP_RATE_UP,
-        FuncType.ENEMY_ENCOUNT_COPY_RATE_UP,
-        FuncType.ENEMY_ENCOUNT_RATE_UP,
-    }
-    FRIEND_SUPPORT_FUNCTIONS = {
-        FuncType.SERVANT_FRIENDSHIP_UP,
-        FuncType.USER_EQUIP_EXP_UP,
-        FuncType.EXP_UP,
-        FuncType.QP_DROP_UP,
-        FuncType.QP_UP,
-    }
-
     error_message = f"Can't parse datavals: {datavals}"
 
     output: Dict[str, Union[int, str, List[int]]] = {}
@@ -369,6 +374,33 @@ def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> Dict[str, 
     return buffInfo
 
 
+def get_func_group_icon(region: Region, funcType: int, iconId: int) -> Optional[str]:
+    if iconId == 0:
+        return None
+
+    base_settings = {"base_url": settings.asset_url, "region": region}
+    if funcType in EVENT_DROP_FUNCTIONS:
+        return AssetURL.items.format(**base_settings, item_id=iconId)
+    else:
+        return AssetURL.eventUi.format(
+            **base_settings, event=f"func_group_icon_{iconId}"
+        )
+
+
+def get_nice_func_group(
+    region: Region, funcGroup: MstFuncGroup, funcType: int
+) -> NiceFuncGroup:
+    return NiceFuncGroup(
+        eventId=funcGroup.eventId,
+        baseFuncId=funcGroup.baseFuncId,
+        nameTotal=funcGroup.nameTotal,
+        name=funcGroup.name,
+        icon=get_func_group_icon(region, funcType, funcGroup.iconId),
+        priority=funcGroup.priority,
+        isDispValue=funcGroup.isDispValue,
+    )
+
+
 def get_nice_base_function(
     function: FunctionEntityNoReverse, region: Region
 ) -> Dict[str, Any]:
@@ -380,6 +412,10 @@ def get_nice_base_function(
         "funcType": FUNC_TYPE_NAME[function.mstFunc.funcType],
         "funcTargetTeam": FUNC_APPLYTARGET_NAME[function.mstFunc.applyTarget],
         "funcTargetType": FUNC_TARGETTYPE_NAME[function.mstFunc.targetType],
+        "funcGroup": [
+            get_nice_func_group(region, func_group, function.mstFunc.funcType)
+            for func_group in function.mstFuncGroup
+        ],
         "buffs": [
             get_nice_buff(buff, region) for buff in function.mstFunc.expandedVals
         ],

@@ -30,7 +30,8 @@
             "applyTarget": 3,
             "popupIconId": 302,
             "popupText": "STR Up\nvs. Divine"
-          }
+          },
+          "mstFuncGroup": []
         },
         {
           "mstFunc": {
@@ -46,7 +47,8 @@
             "applyTarget": 3,
             "popupIconId": 302,
             "popupText": "STR Up\nvs. Divine"
-          }
+          },
+          "mstFuncGroup": []
         },
         {
           "mstFunc": {
@@ -62,7 +64,8 @@
             "applyTarget": 3,
             "popupIconId": 302,
             "popupText": "STR Up\nvs. Divine"
-          }
+          },
+          "mstFuncGroup": []
         }
       ]
     }

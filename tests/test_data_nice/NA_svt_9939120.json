@@ -399,6 +399,7 @@
           "funcPopupText": "None",
           "functvals": [],
           "funcquestTvals": [],
+          "funcGroup": [],
           "buffs": [],
           "svals": [
             { "Rate": 1000, "Value": 4000 },
@@ -445,6 +446,7 @@
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_504.png",
           "functvals": [],
           "funcquestTvals": [],
+          "funcGroup": [],
           "buffs": [
             {
               "id": 148,

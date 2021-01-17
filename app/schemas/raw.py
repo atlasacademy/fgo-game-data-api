@@ -48,8 +48,20 @@ class MstFunc(BaseModel):
     popupText: str  # "STR Up\nvs. Lancer"
 
 
+class MstFuncGroup(BaseModel):
+    funcId: int  # 97
+    eventId: int  # 80044
+    baseFuncId: int  # 0
+    nameTotal: str  # "{1}\nTotal Bond Bonus"
+    name: str  # "Increase Bond gained"
+    iconId: int  # 1009
+    priority: int  # 1
+    isDispValue: bool  # true
+
+
 class FunctionEntityNoReverse(BaseModelORJson):
     mstFunc: MstFunc
+    mstFuncGroup: List[MstFuncGroup]
 
 
 class MstSkill(BaseModel):
@@ -859,6 +871,7 @@ class Master(BaseModel):
     mstSvtId: Dict[int, MstSvt]
     mstBuffId: Dict[int, MstBuff]
     mstFuncId: Dict[int, MstFunc]
+    mstFuncGroupId: Dict[int, List[MstFuncGroup]]
     mstSkillId: Dict[int, MstSkill]
     mstItemId: Dict[int, MstItem]
     mstGiftId: Dict[int, List[MstGift]]

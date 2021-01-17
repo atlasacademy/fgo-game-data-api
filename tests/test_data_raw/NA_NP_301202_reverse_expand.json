@@ -55,7 +55,8 @@
             "applyTarget": 3,
             "popupIconId": 0,
             "popupText": "None"
-          }
+          },
+          "mstFuncGroup": []
         },
         {
           "mstFunc": {
@@ -89,7 +90,8 @@
             "applyTarget": 1,
             "popupIconId": 321,
             "popupText": "C. Star\nDrop Rate Up"
-          }
+          },
+          "mstFuncGroup": []
         },
         {
           "mstFunc": {
@@ -123,7 +125,8 @@
             "applyTarget": 2,
             "popupIconId": 327,
             "popupText": "Critical Rate\nUp"
-          }
+          },
+          "mstFuncGroup": []
         }
       ],
       "svals": ["[1000,8000,2012,1500]", "[1000,3,-1,500]", "[1000,3,-1,350]"],
@@ -161,7 +164,8 @@
             "applyTarget": 3,
             "popupIconId": 0,
             "popupText": "None"
-          }
+          },
+          "mstFuncGroup": []
         },
         {
           "mstFunc": {
@@ -195,7 +199,8 @@
             "applyTarget": 1,
             "popupIconId": 321,
             "popupText": "C. Star\nDrop Rate Up"
-          }
+          },
+          "mstFuncGroup": []
         },
         {
           "mstFunc": {
@@ -229,7 +234,8 @@
             "applyTarget": 2,
             "popupIconId": 327,
             "popupText": "Critical Rate\nUp"
-          }
+          },
+          "mstFuncGroup": []
         }
       ],
       "svals": ["[1000,10000,2012,1500]", "[1000,3,-1,500]", "[1000,3,-1,350]"],
@@ -283,7 +289,8 @@
             "applyTarget": 3,
             "popupIconId": 0,
             "popupText": "None"
-          }
+          },
+          "mstFuncGroup": []
         },
         {
           "mstFunc": {
@@ -317,7 +324,8 @@
             "applyTarget": 1,
             "popupIconId": 321,
             "popupText": "C. Star\nDrop Rate Up"
-          }
+          },
+          "mstFuncGroup": []
         },
         {
           "mstFunc": {
@@ -351,7 +359,8 @@
             "applyTarget": 2,
             "popupIconId": 327,
             "popupText": "Critical Rate\nUp"
-          }
+          },
+          "mstFuncGroup": []
         }
       ],
       "svals": ["[1000,11000,2012,1500]", "[1000,3,-1,500]", "[1000,3,-1,350]"],
@@ -405,7 +414,8 @@
             "applyTarget": 3,
             "popupIconId": 0,
             "popupText": "None"
-          }
+          },
+          "mstFuncGroup": []
         },
         {
           "mstFunc": {
@@ -439,7 +449,8 @@
             "applyTarget": 1,
             "popupIconId": 321,
             "popupText": "C. Star\nDrop Rate Up"
-          }
+          },
+          "mstFuncGroup": []
         },
         {
           "mstFunc": {
@@ -473,7 +484,8 @@
             "applyTarget": 2,
             "popupIconId": 327,
             "popupText": "Critical Rate\nUp"
-          }
+          },
+          "mstFuncGroup": []
         }
       ],
       "svals": ["[1000,11500,2012,1500]", "[1000,3,-1,500]", "[1000,3,-1,350]"],
@@ -527,7 +539,8 @@
             "applyTarget": 3,
             "popupIconId": 0,
             "popupText": "None"
-          }
+          },
+          "mstFuncGroup": []
         },
         {
           "mstFunc": {
@@ -561,7 +574,8 @@
             "applyTarget": 1,
             "popupIconId": 321,
             "popupText": "C. Star\nDrop Rate Up"
-          }
+          },
+          "mstFuncGroup": []
         },
         {
           "mstFunc": {
@@ -595,7 +609,8 @@
             "applyTarget": 2,
             "popupIconId": 327,
             "popupText": "Critical Rate\nUp"
-          }
+          },
+          "mstFuncGroup": []
         }
       ],
       "svals": ["[1000,12000,2012,1500]", "[1000,3,-1,500]", "[1000,3,-1,350]"],

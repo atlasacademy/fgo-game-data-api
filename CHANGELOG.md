@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.33.0 - 2020-01-16
+
+### Added
+
+- funcGroup to raw and nice functions. It will help with getting the function icons for bond up and event drop up functions
+
 ## 5.32.1 - 2020-01-16
 
 ### Added

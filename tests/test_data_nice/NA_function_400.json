@@ -7,6 +7,7 @@
   "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_306.png",
   "functvals": [],
   "funcquestTvals": [],
+  "funcGroup": [],
   "buffs": [
     {
       "id": 163,

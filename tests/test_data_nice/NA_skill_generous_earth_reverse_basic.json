@@ -24,6 +24,7 @@
       "funcPopupText": "None",
       "functvals": [],
       "funcquestTvals": [],
+      "funcGroup": [],
       "buffs": [],
       "svals": [{ "AddCount": 50 }]
     }

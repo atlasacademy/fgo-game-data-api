@@ -25,6 +25,7 @@
       "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_314.png",
       "functvals": [],
       "funcquestTvals": [],
+      "funcGroup": [],
       "buffs": [
         {
           "id": 102,
@@ -69,6 +70,7 @@
       "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_351.png",
       "functvals": [],
       "funcquestTvals": [],
+      "funcGroup": [],
       "buffs": [
         {
           "id": 510,
@@ -110,6 +112,7 @@
       "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_303.png",
       "functvals": [],
       "funcquestTvals": [],
+      "funcGroup": [],
       "buffs": [
         {
           "id": 140,
@@ -147,6 +150,7 @@
       "funcPopupText": "Charge Gain",
       "functvals": [],
       "funcquestTvals": [],
+      "funcGroup": [],
       "buffs": [],
       "svals": [
         { "Rate": 600, "Value": 1 },

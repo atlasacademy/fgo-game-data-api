@@ -50,6 +50,7 @@ MASTER_WITHOUT_ID = {
     "mstShop",
     "mstAi",
     "mstAiField",
+    "mstFuncGroup",
 }
 SVT_STUFFS = {
     "mstSvtExp",
@@ -224,6 +225,7 @@ def update_gamedata() -> None:
             ("aiActToAiSvt", "mstAi", "aiActId"),
             ("mstAiFieldId", "mstAiField", "id"),
             ("aiActToAiField", "mstAiField", "aiActId"),
+            ("mstFuncGroupId", "mstFuncGroup", "funcId"),
         ):
             master[masters_table] = defaultdict(list)
             for item in master[source_table]:

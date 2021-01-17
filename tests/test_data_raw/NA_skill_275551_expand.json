@@ -69,7 +69,8 @@
             "applyTarget": 1,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
-          }
+          },
+          "mstFuncGroup": []
         },
         {
           "mstFunc": {
@@ -103,7 +104,8 @@
             "applyTarget": 3,
             "popupIconId": 324,
             "popupText": "Critical Up"
-          }
+          },
+          "mstFuncGroup": []
         }
       ],
       "svals": ["[1000,1,-1,1000]", "[1000,1,-1,300]"],
@@ -149,7 +151,8 @@
             "applyTarget": 1,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
-          }
+          },
+          "mstFuncGroup": []
         },
         {
           "mstFunc": {
@@ -183,7 +186,8 @@
             "applyTarget": 3,
             "popupIconId": 324,
             "popupText": "Critical Up"
-          }
+          },
+          "mstFuncGroup": []
         }
       ],
       "svals": ["[1000,1,-1,1200]", "[1000,1,-1,320]"],
@@ -229,7 +233,8 @@
             "applyTarget": 1,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
-          }
+          },
+          "mstFuncGroup": []
         },
         {
           "mstFunc": {
@@ -263,7 +268,8 @@
             "applyTarget": 3,
             "popupIconId": 324,
             "popupText": "Critical Up"
-          }
+          },
+          "mstFuncGroup": []
         }
       ],
       "svals": ["[1000,1,-1,1400]", "[1000,1,-1,340]"],
@@ -309,7 +315,8 @@
             "applyTarget": 1,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
-          }
+          },
+          "mstFuncGroup": []
         },
         {
           "mstFunc": {
@@ -343,7 +350,8 @@
             "applyTarget": 3,
             "popupIconId": 324,
             "popupText": "Critical Up"
-          }
+          },
+          "mstFuncGroup": []
         }
       ],
       "svals": ["[1000,1,-1,1600]", "[1000,1,-1,360]"],
@@ -389,7 +397,8 @@
             "applyTarget": 1,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
-          }
+          },
+          "mstFuncGroup": []
         },
         {
           "mstFunc": {
@@ -423,7 +432,8 @@
             "applyTarget": 3,
             "popupIconId": 324,
             "popupText": "Critical Up"
-          }
+          },
+          "mstFuncGroup": []
         }
       ],
       "svals": ["[1000,1,-1,1800]", "[1000,1,-1,380]"],
@@ -469,7 +479,8 @@
             "applyTarget": 1,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
-          }
+          },
+          "mstFuncGroup": []
         },
         {
           "mstFunc": {
@@ -503,7 +514,8 @@
             "applyTarget": 3,
             "popupIconId": 324,
             "popupText": "Critical Up"
-          }
+          },
+          "mstFuncGroup": []
         }
       ],
       "svals": ["[1000,1,-1,2000]", "[1000,1,-1,400]"],
@@ -549,7 +561,8 @@
             "applyTarget": 1,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
-          }
+          },
+          "mstFuncGroup": []
         },
         {
           "mstFunc": {
@@ -583,7 +596,8 @@
             "applyTarget": 3,
             "popupIconId": 324,
             "popupText": "Critical Up"
-          }
+          },
+          "mstFuncGroup": []
         }
       ],
       "svals": ["[1000,1,-1,2200]", "[1000,1,-1,420]"],
@@ -629,7 +643,8 @@
             "applyTarget": 1,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
-          }
+          },
+          "mstFuncGroup": []
         },
         {
           "mstFunc": {
@@ -663,7 +678,8 @@
             "applyTarget": 3,
             "popupIconId": 324,
             "popupText": "Critical Up"
-          }
+          },
+          "mstFuncGroup": []
         }
       ],
       "svals": ["[1000,1,-1,2400]", "[1000,1,-1,440]"],
@@ -709,7 +725,8 @@
             "applyTarget": 1,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
-          }
+          },
+          "mstFuncGroup": []
         },
         {
           "mstFunc": {
@@ -743,7 +760,8 @@
             "applyTarget": 3,
             "popupIconId": 324,
             "popupText": "Critical Up"
-          }
+          },
+          "mstFuncGroup": []
         }
       ],
       "svals": ["[1000,1,-1,2600]", "[1000,1,-1,460]"],
@@ -789,7 +807,8 @@
             "applyTarget": 1,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
-          }
+          },
+          "mstFuncGroup": []
         },
         {
           "mstFunc": {
@@ -823,7 +842,8 @@
             "applyTarget": 3,
             "popupIconId": 324,
             "popupText": "Critical Up"
-          }
+          },
+          "mstFuncGroup": []
         }
       ],
       "svals": ["[1000,1,-1,3000]", "[1000,1,-1,500]"],

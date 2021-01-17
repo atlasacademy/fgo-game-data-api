@@ -61,7 +61,8 @@
                   "applyTarget": 3,
                   "popupIconId": 306,
                   "popupText": "Debuff Resist\nUp"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,125]"],
@@ -107,7 +108,8 @@
                   "applyTarget": 3,
                   "popupIconId": 306,
                   "popupText": "Debuff Resist\nUp"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,125]"],
@@ -153,7 +155,8 @@
                   "applyTarget": 3,
                   "popupIconId": 306,
                   "popupText": "Debuff Resist\nUp"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,125]"],
@@ -199,7 +202,8 @@
                   "applyTarget": 3,
                   "popupIconId": 306,
                   "popupText": "Debuff Resist\nUp"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,125]"],
@@ -245,7 +249,8 @@
                   "applyTarget": 3,
                   "popupIconId": 306,
                   "popupText": "Debuff Resist\nUp"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,125]"],
@@ -291,7 +296,8 @@
                   "applyTarget": 3,
                   "popupIconId": 306,
                   "popupText": "Debuff Resist\nUp"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,125]"],
@@ -337,7 +343,8 @@
                   "applyTarget": 3,
                   "popupIconId": 306,
                   "popupText": "Debuff Resist\nUp"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,125]"],
@@ -383,7 +390,8 @@
                   "applyTarget": 3,
                   "popupIconId": 306,
                   "popupText": "Debuff Resist\nUp"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,125]"],
@@ -429,7 +437,8 @@
                   "applyTarget": 3,
                   "popupIconId": 306,
                   "popupText": "Debuff Resist\nUp"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,125]"],
@@ -475,7 +484,8 @@
                   "applyTarget": 3,
                   "popupIconId": 306,
                   "popupText": "Debuff Resist\nUp"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,125]"],
@@ -545,7 +555,8 @@
                   "applyTarget": 3,
                   "popupIconId": 324,
                   "popupText": "Critical Up"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,110]"],
@@ -591,7 +602,8 @@
                   "applyTarget": 3,
                   "popupIconId": 324,
                   "popupText": "Critical Up"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,110]"],
@@ -637,7 +649,8 @@
                   "applyTarget": 3,
                   "popupIconId": 324,
                   "popupText": "Critical Up"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,110]"],
@@ -683,7 +696,8 @@
                   "applyTarget": 3,
                   "popupIconId": 324,
                   "popupText": "Critical Up"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,110]"],
@@ -729,7 +743,8 @@
                   "applyTarget": 3,
                   "popupIconId": 324,
                   "popupText": "Critical Up"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,110]"],
@@ -775,7 +790,8 @@
                   "applyTarget": 3,
                   "popupIconId": 324,
                   "popupText": "Critical Up"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,110]"],
@@ -821,7 +837,8 @@
                   "applyTarget": 3,
                   "popupIconId": 324,
                   "popupText": "Critical Up"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,110]"],
@@ -867,7 +884,8 @@
                   "applyTarget": 3,
                   "popupIconId": 324,
                   "popupText": "Critical Up"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,110]"],
@@ -913,7 +931,8 @@
                   "applyTarget": 3,
                   "popupIconId": 324,
                   "popupText": "Critical Up"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,110]"],
@@ -959,7 +978,8 @@
                   "applyTarget": 3,
                   "popupIconId": 324,
                   "popupText": "Critical Up"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,110]"],
@@ -1029,7 +1049,8 @@
                   "applyTarget": 3,
                   "popupIconId": 313,
                   "popupText": "Arts Up"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,80]"],
@@ -1075,7 +1096,8 @@
                   "applyTarget": 3,
                   "popupIconId": 313,
                   "popupText": "Arts Up"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,80]"],
@@ -1121,7 +1143,8 @@
                   "applyTarget": 3,
                   "popupIconId": 313,
                   "popupText": "Arts Up"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,80]"],
@@ -1167,7 +1190,8 @@
                   "applyTarget": 3,
                   "popupIconId": 313,
                   "popupText": "Arts Up"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,80]"],
@@ -1213,7 +1237,8 @@
                   "applyTarget": 3,
                   "popupIconId": 313,
                   "popupText": "Arts Up"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,80]"],
@@ -1259,7 +1284,8 @@
                   "applyTarget": 3,
                   "popupIconId": 313,
                   "popupText": "Arts Up"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,80]"],
@@ -1305,7 +1331,8 @@
                   "applyTarget": 3,
                   "popupIconId": 313,
                   "popupText": "Arts Up"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,80]"],
@@ -1351,7 +1378,8 @@
                   "applyTarget": 3,
                   "popupIconId": 313,
                   "popupText": "Arts Up"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,80]"],
@@ -1397,7 +1425,8 @@
                   "applyTarget": 3,
                   "popupIconId": 313,
                   "popupText": "Arts Up"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,80]"],
@@ -1443,7 +1472,8 @@
                   "applyTarget": 3,
                   "popupIconId": 313,
                   "popupText": "Arts Up"
-                }
+                },
+                "mstFuncGroup": []
               }
             ],
             "svals": ["[1000,-1,-1,80]"],
@@ -1563,7 +1593,8 @@
                 "applyTarget": 3,
                 "popupIconId": 314,
                 "popupText": "Buster Up"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -1597,7 +1628,8 @@
                 "applyTarget": 3,
                 "popupIconId": 351,
                 "popupText": "Ignore DEF"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -1631,7 +1663,8 @@
                 "applyTarget": 1,
                 "popupIconId": 303,
                 "popupText": "NP Gain Up"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -1648,7 +1681,8 @@
                 "applyTarget": 2,
                 "popupIconId": 0,
                 "popupText": "Charge Gain"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": [
@@ -1699,7 +1733,8 @@
                 "applyTarget": 3,
                 "popupIconId": 314,
                 "popupText": "Buster Up"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -1733,7 +1768,8 @@
                 "applyTarget": 3,
                 "popupIconId": 351,
                 "popupText": "Ignore DEF"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -1767,7 +1803,8 @@
                 "applyTarget": 1,
                 "popupIconId": 303,
                 "popupText": "NP Gain Up"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -1784,7 +1821,8 @@
                 "applyTarget": 2,
                 "popupIconId": 0,
                 "popupText": "Charge Gain"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": [
@@ -1835,7 +1873,8 @@
                 "applyTarget": 3,
                 "popupIconId": 314,
                 "popupText": "Buster Up"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -1869,7 +1908,8 @@
                 "applyTarget": 3,
                 "popupIconId": 351,
                 "popupText": "Ignore DEF"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -1903,7 +1943,8 @@
                 "applyTarget": 1,
                 "popupIconId": 303,
                 "popupText": "NP Gain Up"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -1920,7 +1961,8 @@
                 "applyTarget": 2,
                 "popupIconId": 0,
                 "popupText": "Charge Gain"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": [
@@ -1971,7 +2013,8 @@
                 "applyTarget": 3,
                 "popupIconId": 314,
                 "popupText": "Buster Up"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -2005,7 +2048,8 @@
                 "applyTarget": 3,
                 "popupIconId": 351,
                 "popupText": "Ignore DEF"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -2039,7 +2083,8 @@
                 "applyTarget": 1,
                 "popupIconId": 303,
                 "popupText": "NP Gain Up"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -2056,7 +2101,8 @@
                 "applyTarget": 2,
                 "popupIconId": 0,
                 "popupText": "Charge Gain"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": [
@@ -2107,7 +2153,8 @@
                 "applyTarget": 3,
                 "popupIconId": 314,
                 "popupText": "Buster Up"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -2141,7 +2188,8 @@
                 "applyTarget": 3,
                 "popupIconId": 351,
                 "popupText": "Ignore DEF"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -2175,7 +2223,8 @@
                 "applyTarget": 1,
                 "popupIconId": 303,
                 "popupText": "NP Gain Up"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -2192,7 +2241,8 @@
                 "applyTarget": 2,
                 "popupIconId": 0,
                 "popupText": "Charge Gain"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": [
@@ -2243,7 +2293,8 @@
                 "applyTarget": 3,
                 "popupIconId": 314,
                 "popupText": "Buster Up"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -2277,7 +2328,8 @@
                 "applyTarget": 3,
                 "popupIconId": 351,
                 "popupText": "Ignore DEF"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -2311,7 +2363,8 @@
                 "applyTarget": 1,
                 "popupIconId": 303,
                 "popupText": "NP Gain Up"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -2328,7 +2381,8 @@
                 "applyTarget": 2,
                 "popupIconId": 0,
                 "popupText": "Charge Gain"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": [
@@ -2379,7 +2433,8 @@
                 "applyTarget": 3,
                 "popupIconId": 314,
                 "popupText": "Buster Up"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -2413,7 +2468,8 @@
                 "applyTarget": 3,
                 "popupIconId": 351,
                 "popupText": "Ignore DEF"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -2447,7 +2503,8 @@
                 "applyTarget": 1,
                 "popupIconId": 303,
                 "popupText": "NP Gain Up"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -2464,7 +2521,8 @@
                 "applyTarget": 2,
                 "popupIconId": 0,
                 "popupText": "Charge Gain"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": [
@@ -2515,7 +2573,8 @@
                 "applyTarget": 3,
                 "popupIconId": 314,
                 "popupText": "Buster Up"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -2549,7 +2608,8 @@
                 "applyTarget": 3,
                 "popupIconId": 351,
                 "popupText": "Ignore DEF"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -2583,7 +2643,8 @@
                 "applyTarget": 1,
                 "popupIconId": 303,
                 "popupText": "NP Gain Up"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -2600,7 +2661,8 @@
                 "applyTarget": 2,
                 "popupIconId": 0,
                 "popupText": "Charge Gain"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": [
@@ -2651,7 +2713,8 @@
                 "applyTarget": 3,
                 "popupIconId": 314,
                 "popupText": "Buster Up"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -2685,7 +2748,8 @@
                 "applyTarget": 3,
                 "popupIconId": 351,
                 "popupText": "Ignore DEF"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -2719,7 +2783,8 @@
                 "applyTarget": 1,
                 "popupIconId": 303,
                 "popupText": "NP Gain Up"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -2736,7 +2801,8 @@
                 "applyTarget": 2,
                 "popupIconId": 0,
                 "popupText": "Charge Gain"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": [
@@ -2787,7 +2853,8 @@
                 "applyTarget": 3,
                 "popupIconId": 314,
                 "popupText": "Buster Up"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -2821,7 +2888,8 @@
                 "applyTarget": 3,
                 "popupIconId": 351,
                 "popupText": "Ignore DEF"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -2855,7 +2923,8 @@
                 "applyTarget": 1,
                 "popupIconId": 303,
                 "popupText": "NP Gain Up"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -2872,7 +2941,8 @@
                 "applyTarget": 2,
                 "popupIconId": 0,
                 "popupText": "Charge Gain"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": [
@@ -2961,7 +3031,8 @@
                 "applyTarget": 3,
                 "popupIconId": 309,
                 "popupText": "Sure Hit"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -2978,7 +3049,8 @@
                 "applyTarget": 1,
                 "popupIconId": 0,
                 "popupText": "C. Star Gain"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -3012,7 +3084,8 @@
                 "applyTarget": 2,
                 "popupIconId": 327,
                 "popupText": "Critical Rate\nUp"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[1000,3,-1]", "[1000,5]", "[1000,3,-1,100]"],
@@ -3058,7 +3131,8 @@
                 "applyTarget": 3,
                 "popupIconId": 309,
                 "popupText": "Sure Hit"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -3075,7 +3149,8 @@
                 "applyTarget": 1,
                 "popupIconId": 0,
                 "popupText": "C. Star Gain"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -3109,7 +3184,8 @@
                 "applyTarget": 2,
                 "popupIconId": 327,
                 "popupText": "Critical Rate\nUp"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[1000,3,-1]", "[1000,6]", "[1000,3,-1,100]"],
@@ -3155,7 +3231,8 @@
                 "applyTarget": 3,
                 "popupIconId": 309,
                 "popupText": "Sure Hit"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -3172,7 +3249,8 @@
                 "applyTarget": 1,
                 "popupIconId": 0,
                 "popupText": "C. Star Gain"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -3206,7 +3284,8 @@
                 "applyTarget": 2,
                 "popupIconId": 327,
                 "popupText": "Critical Rate\nUp"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[1000,3,-1]", "[1000,7]", "[1000,3,-1,100]"],
@@ -3252,7 +3331,8 @@
                 "applyTarget": 3,
                 "popupIconId": 309,
                 "popupText": "Sure Hit"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -3269,7 +3349,8 @@
                 "applyTarget": 1,
                 "popupIconId": 0,
                 "popupText": "C. Star Gain"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -3303,7 +3384,8 @@
                 "applyTarget": 2,
                 "popupIconId": 327,
                 "popupText": "Critical Rate\nUp"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[1000,3,-1]", "[1000,8]", "[1000,3,-1,100]"],
@@ -3349,7 +3431,8 @@
                 "applyTarget": 3,
                 "popupIconId": 309,
                 "popupText": "Sure Hit"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -3366,7 +3449,8 @@
                 "applyTarget": 1,
                 "popupIconId": 0,
                 "popupText": "C. Star Gain"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -3400,7 +3484,8 @@
                 "applyTarget": 2,
                 "popupIconId": 327,
                 "popupText": "Critical Rate\nUp"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[1000,3,-1]", "[1000,9]", "[1000,3,-1,100]"],
@@ -3446,7 +3531,8 @@
                 "applyTarget": 3,
                 "popupIconId": 309,
                 "popupText": "Sure Hit"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -3463,7 +3549,8 @@
                 "applyTarget": 1,
                 "popupIconId": 0,
                 "popupText": "C. Star Gain"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -3497,7 +3584,8 @@
                 "applyTarget": 2,
                 "popupIconId": 327,
                 "popupText": "Critical Rate\nUp"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[1000,3,-1]", "[1000,10]", "[1000,3,-1,100]"],
@@ -3543,7 +3631,8 @@
                 "applyTarget": 3,
                 "popupIconId": 309,
                 "popupText": "Sure Hit"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -3560,7 +3649,8 @@
                 "applyTarget": 1,
                 "popupIconId": 0,
                 "popupText": "C. Star Gain"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -3594,7 +3684,8 @@
                 "applyTarget": 2,
                 "popupIconId": 327,
                 "popupText": "Critical Rate\nUp"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[1000,3,-1]", "[1000,11]", "[1000,3,-1,100]"],
@@ -3640,7 +3731,8 @@
                 "applyTarget": 3,
                 "popupIconId": 309,
                 "popupText": "Sure Hit"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -3657,7 +3749,8 @@
                 "applyTarget": 1,
                 "popupIconId": 0,
                 "popupText": "C. Star Gain"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -3691,7 +3784,8 @@
                 "applyTarget": 2,
                 "popupIconId": 327,
                 "popupText": "Critical Rate\nUp"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[1000,3,-1]", "[1000,12]", "[1000,3,-1,100]"],
@@ -3737,7 +3831,8 @@
                 "applyTarget": 3,
                 "popupIconId": 309,
                 "popupText": "Sure Hit"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -3754,7 +3849,8 @@
                 "applyTarget": 1,
                 "popupIconId": 0,
                 "popupText": "C. Star Gain"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -3788,7 +3884,8 @@
                 "applyTarget": 2,
                 "popupIconId": 327,
                 "popupText": "Critical Rate\nUp"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[1000,3,-1]", "[1000,13]", "[1000,3,-1,100]"],
@@ -3834,7 +3931,8 @@
                 "applyTarget": 3,
                 "popupIconId": 309,
                 "popupText": "Sure Hit"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -3851,7 +3949,8 @@
                 "applyTarget": 1,
                 "popupIconId": 0,
                 "popupText": "C. Star Gain"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -3885,7 +3984,8 @@
                 "applyTarget": 2,
                 "popupIconId": 327,
                 "popupText": "Critical Rate\nUp"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[1000,3,-1]", "[1000,15]", "[1000,3,-1,100]"],
@@ -3969,7 +4069,8 @@
                 "applyTarget": 3,
                 "popupIconId": 522,
                 "popupText": "Max HP Minus"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -4003,7 +4104,8 @@
                 "applyTarget": 3,
                 "popupIconId": 301,
                 "popupText": "Damage Cut"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -4037,7 +4139,8 @@
                 "applyTarget": 3,
                 "popupIconId": 304,
                 "popupText": "Guts"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[5000,3,-1,2000]", "[1000,3,-1,1000]", "[1000,3,1,1]"],
@@ -4083,7 +4186,8 @@
                 "applyTarget": 3,
                 "popupIconId": 522,
                 "popupText": "Max HP Minus"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -4117,7 +4221,8 @@
                 "applyTarget": 3,
                 "popupIconId": 301,
                 "popupText": "Damage Cut"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -4151,7 +4256,8 @@
                 "applyTarget": 3,
                 "popupIconId": 304,
                 "popupText": "Guts"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[5000,3,-1,2000]", "[1000,3,-1,1100]", "[1000,3,1,1]"],
@@ -4197,7 +4303,8 @@
                 "applyTarget": 3,
                 "popupIconId": 522,
                 "popupText": "Max HP Minus"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -4231,7 +4338,8 @@
                 "applyTarget": 3,
                 "popupIconId": 301,
                 "popupText": "Damage Cut"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -4265,7 +4373,8 @@
                 "applyTarget": 3,
                 "popupIconId": 304,
                 "popupText": "Guts"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[5000,3,-1,2000]", "[1000,3,-1,1200]", "[1000,3,1,1]"],
@@ -4311,7 +4420,8 @@
                 "applyTarget": 3,
                 "popupIconId": 522,
                 "popupText": "Max HP Minus"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -4345,7 +4455,8 @@
                 "applyTarget": 3,
                 "popupIconId": 301,
                 "popupText": "Damage Cut"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -4379,7 +4490,8 @@
                 "applyTarget": 3,
                 "popupIconId": 304,
                 "popupText": "Guts"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[5000,3,-1,2000]", "[1000,3,-1,1300]", "[1000,3,1,1]"],
@@ -4425,7 +4537,8 @@
                 "applyTarget": 3,
                 "popupIconId": 522,
                 "popupText": "Max HP Minus"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -4459,7 +4572,8 @@
                 "applyTarget": 3,
                 "popupIconId": 301,
                 "popupText": "Damage Cut"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -4493,7 +4607,8 @@
                 "applyTarget": 3,
                 "popupIconId": 304,
                 "popupText": "Guts"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[5000,3,-1,2000]", "[1000,3,-1,1400]", "[1000,3,1,1]"],
@@ -4539,7 +4654,8 @@
                 "applyTarget": 3,
                 "popupIconId": 522,
                 "popupText": "Max HP Minus"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -4573,7 +4689,8 @@
                 "applyTarget": 3,
                 "popupIconId": 301,
                 "popupText": "Damage Cut"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -4607,7 +4724,8 @@
                 "applyTarget": 3,
                 "popupIconId": 304,
                 "popupText": "Guts"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[5000,3,-1,2000]", "[1000,3,-1,1500]", "[1000,3,1,1]"],
@@ -4653,7 +4771,8 @@
                 "applyTarget": 3,
                 "popupIconId": 522,
                 "popupText": "Max HP Minus"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -4687,7 +4806,8 @@
                 "applyTarget": 3,
                 "popupIconId": 301,
                 "popupText": "Damage Cut"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -4721,7 +4841,8 @@
                 "applyTarget": 3,
                 "popupIconId": 304,
                 "popupText": "Guts"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[5000,3,-1,2000]", "[1000,3,-1,1600]", "[1000,3,1,1]"],
@@ -4767,7 +4888,8 @@
                 "applyTarget": 3,
                 "popupIconId": 522,
                 "popupText": "Max HP Minus"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -4801,7 +4923,8 @@
                 "applyTarget": 3,
                 "popupIconId": 301,
                 "popupText": "Damage Cut"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -4835,7 +4958,8 @@
                 "applyTarget": 3,
                 "popupIconId": 304,
                 "popupText": "Guts"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[5000,3,-1,2000]", "[1000,3,-1,1700]", "[1000,3,1,1]"],
@@ -4881,7 +5005,8 @@
                 "applyTarget": 3,
                 "popupIconId": 522,
                 "popupText": "Max HP Minus"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -4915,7 +5040,8 @@
                 "applyTarget": 3,
                 "popupIconId": 301,
                 "popupText": "Damage Cut"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -4949,7 +5075,8 @@
                 "applyTarget": 3,
                 "popupIconId": 304,
                 "popupText": "Guts"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[5000,3,-1,2000]", "[1000,3,-1,1800]", "[1000,3,1,1]"],
@@ -4995,7 +5122,8 @@
                 "applyTarget": 3,
                 "popupIconId": 522,
                 "popupText": "Max HP Minus"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -5029,7 +5157,8 @@
                 "applyTarget": 3,
                 "popupIconId": 301,
                 "popupText": "Damage Cut"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -5063,7 +5192,8 @@
                 "applyTarget": 3,
                 "popupIconId": 304,
                 "popupText": "Guts"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[5000,3,-1,2000]", "[1000,3,-1,2000]", "[1000,3,1,1]"],
@@ -5140,7 +5270,8 @@
                 "applyTarget": 3,
                 "popupIconId": 0,
                 "popupText": "None"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -5174,7 +5305,8 @@
                 "applyTarget": 3,
                 "popupIconId": 531,
                 "popupText": "Nullify Buff"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -5208,7 +5340,8 @@
                 "applyTarget": 3,
                 "popupIconId": 503,
                 "popupText": "ATK Down"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[1000,6000]", "[1000,3,1]", "[1000,3,-1,100]"],
@@ -5246,7 +5379,8 @@
                 "applyTarget": 3,
                 "popupIconId": 0,
                 "popupText": "None"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -5280,7 +5414,8 @@
                 "applyTarget": 3,
                 "popupIconId": 531,
                 "popupText": "Nullify Buff"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -5314,7 +5449,8 @@
                 "applyTarget": 3,
                 "popupIconId": 503,
                 "popupText": "ATK Down"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[1000,8000]", "[1000,3,1]", "[1000,3,-1,100]"],
@@ -5352,7 +5488,8 @@
                 "applyTarget": 3,
                 "popupIconId": 0,
                 "popupText": "None"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -5386,7 +5523,8 @@
                 "applyTarget": 3,
                 "popupIconId": 531,
                 "popupText": "Nullify Buff"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -5420,7 +5558,8 @@
                 "applyTarget": 3,
                 "popupIconId": 503,
                 "popupText": "ATK Down"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[1000,9000]", "[1000,3,1]", "[1000,3,-1,100]"],
@@ -5458,7 +5597,8 @@
                 "applyTarget": 3,
                 "popupIconId": 0,
                 "popupText": "None"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -5492,7 +5632,8 @@
                 "applyTarget": 3,
                 "popupIconId": 531,
                 "popupText": "Nullify Buff"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -5526,7 +5667,8 @@
                 "applyTarget": 3,
                 "popupIconId": 503,
                 "popupText": "ATK Down"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[1000,9500]", "[1000,3,1]", "[1000,3,-1,100]"],
@@ -5564,7 +5706,8 @@
                 "applyTarget": 3,
                 "popupIconId": 0,
                 "popupText": "None"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -5598,7 +5741,8 @@
                 "applyTarget": 3,
                 "popupIconId": 531,
                 "popupText": "Nullify Buff"
-              }
+              },
+              "mstFuncGroup": []
             },
             {
               "mstFunc": {
@@ -5632,7 +5776,8 @@
                 "applyTarget": 3,
                 "popupIconId": 503,
                 "popupText": "ATK Down"
-              }
+              },
+              "mstFuncGroup": []
             }
           ],
           "svals": ["[1000,10000]", "[1000,3,1]", "[1000,3,-1,100]"],
