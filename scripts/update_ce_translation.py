@@ -17,14 +17,14 @@ def main(
     elif os.getenv("JP_GAMEDATA"):
         jp_path = Path(str(os.getenv("JP_GAMEDATA"))).resolve()
     else:
-        raise KeyError("JP_GAMEDATA not foound")
+        raise KeyError("JP_GAMEDATA not found")
 
     if na_master:
         na_path = Path(na_master).resolve()
     elif os.getenv("NA_GAMEDATA"):
         na_path = Path(str(os.getenv("NA_GAMEDATA"))).resolve()
     else:
-        raise KeyError("NA_GAMEDATA not foound")
+        raise KeyError("NA_GAMEDATA not found")
 
     with open(jp_path / "mstSvt.json", "r", encoding="utf-8") as fp:
         jp_svt = json.load(fp)
