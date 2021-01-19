@@ -434,15 +434,19 @@ def get_nice_base_function(
 
 def get_ai_id_from_skill(region: Region, skill_id: int) -> AiIdList:
     return AiIdList(
-        svt=(
-            ai.id
-            for ai_act_id in masters[region].skillToAiAct.get(skill_id, set())
-            for ai in masters[region].aiActToAiSvt.get(ai_act_id, [])
+        svt=sorted(
+            set(
+                ai.id
+                for ai_act_id in masters[region].skillToAiAct.get(skill_id, [])
+                for ai in masters[region].aiActToAiSvt.get(ai_act_id, [])
+            )
         ),
-        field=(
-            ai.id
-            for ai_act_id in masters[region].skillToAiAct.get(skill_id, set())
-            for ai in masters[region].aiActToAiField.get(ai_act_id, [])
+        field=sorted(
+            set(
+                ai.id
+                for ai_act_id in masters[region].skillToAiAct.get(skill_id, [])
+                for ai in masters[region].aiActToAiField.get(ai_act_id, [])
+            )
         ),
     )
 
@@ -1650,11 +1654,11 @@ def get_nice_ai_act(mstAiAct: MstAiAct) -> NiceAiAct:
 def get_parent_ais(region: Region, ai_id: int, field: bool = False) -> AiIdList:
     if field:
         return AiIdList(
-            svt=[], field=(ai.id for ai in masters[region].parentAiField.get(ai_id, []))
+            svt=[], field=sorted(masters[region].parentAiField.get(ai_id, []))
         )
     else:
         return AiIdList(
-            svt=(ai.id for ai in masters[region].parentAiSvt.get(ai_id, [])), field=[]
+            svt=sorted(masters[region].parentAiSvt.get(ai_id, [])), field=[]
         )
 
 

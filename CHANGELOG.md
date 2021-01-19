@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.34.1 - 2020-01-18
+### Changed
+- Dedupe and sort `aiIds` in nice skill and `parentAis` in nice AI.
+
 ## 5.34.0 - 2020-01-17
 ### Added
 - `priority` and `dropPriority` to nice item.

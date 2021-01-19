@@ -787,13 +787,17 @@ ALL_ENUMS = {
 
 
 __all__ = [
+    "ALL_ENUMS",
     "NiceSvtFlag",
     "SVT_FLAG_NAME",
     "SVT_FLAG_NAME_REVERSE",
+    "SVT_TYPE_NAME_REVERSE",
+    "NiceSkillType",
     "SKILL_TYPE_NAME",
     "SKILL_TYPE_NAME_REVERSE",
     "FUNC_VALS_NOT_BUFF",
     "FUNC_TYPE_NAME_REVERSE",
+    "FuncApplyTarget",
     "FUNC_APPLYTARGET_NAME",
     "FUNC_APPLYTARGET_NAME_REVERSE",
     "FUNC_TARGETTYPE_NAME_REVERSE",

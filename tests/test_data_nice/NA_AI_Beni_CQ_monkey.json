@@ -18,10 +18,7 @@
         "skillLv": 1
       },
       "avals": [94032581, 0],
-      "parentAis": {
-        "svt": [94032581, 94032582, 94032582, 94032582, 94032582],
-        "field": []
-      },
+      "parentAis": { "svt": [94032581, 94032582], "field": [] },
       "infoText": ""
     },
     {
@@ -40,10 +37,7 @@
         "targetIndividuality": []
       },
       "avals": [94032581, 0],
-      "parentAis": {
-        "svt": [94032581, 94032582, 94032582, 94032582, 94032582],
-        "field": []
-      },
+      "parentAis": { "svt": [94032581, 94032582], "field": [] },
       "infoText": ""
     },
     {
@@ -62,10 +56,7 @@
         "targetIndividuality": []
       },
       "avals": [94032581, 0],
-      "parentAis": {
-        "svt": [94032581, 94032582, 94032582, 94032582, 94032582],
-        "field": []
-      },
+      "parentAis": { "svt": [94032581, 94032582], "field": [] },
       "infoText": ""
     }
   ],
@@ -86,7 +77,7 @@
         "targetIndividuality": []
       },
       "avals": [94032580, 0],
-      "parentAis": { "svt": [94032580, 94032580, 94032580], "field": [] },
+      "parentAis": { "svt": [94032580], "field": [] },
       "infoText": ""
     },
     {
@@ -105,7 +96,7 @@
         "targetIndividuality": []
       },
       "avals": [94032582, 0],
-      "parentAis": { "svt": [94032580, 94032580, 94032580], "field": [] },
+      "parentAis": { "svt": [94032580], "field": [] },
       "infoText": ""
     },
     {

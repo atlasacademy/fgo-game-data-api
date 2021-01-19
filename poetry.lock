@@ -431,7 +431,7 @@ cli = ["click (>=5.0)"]
 
 [[package]]
 name = "python-levenshtein"
-version = "0.12.0"
+version = "0.12.1"
 description = "Python extension for computing string edit distances and similarities."
 category = "main"
 optional = false
@@ -603,7 +603,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "fa9fc419409bf98f29d2a7e60a528d5847f937cad26e2dab6a77e8d9b7d76e23"
+content-hash = "d30f929d1cc3a79a3fde7a84e6a616258d0323ded95cc99786e53807e71c0c9d"
 
 [metadata.files]
 aiofiles = [
@@ -884,7 +884,7 @@ python-dotenv = [
     {file = "python_dotenv-0.15.0-py2.py3-none-any.whl", hash = "sha256:0c8d1b80d1a1e91717ea7d526178e3882732420b03f08afea0406db6402e220e"},
 ]
 python-levenshtein = [
-    {file = "python-Levenshtein-0.12.0.tar.gz", hash = "sha256:033a11de5e3d19ea25c9302d11224e1a1898fe5abd23c61c7c360c25195e3eb1"},
+    {file = "python-Levenshtein-0.12.1.tar.gz", hash = "sha256:554e273a88060d177e7b3c1e6ea9158dde11563bfae8f7f661f73f47e5ff0911"},
 ]
 pyyaml = [
     {file = "PyYAML-5.3.1-cp27-cp27m-win32.whl", hash = "sha256:74809a57b329d6cc0fdccee6318f44b9b8649961fa73144a98735b0aaf029f1f"},

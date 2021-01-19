@@ -955,8 +955,8 @@ class Master(BaseModel):
     skillToAiAct: Dict[int, Set[int]]
     aiActToAiSvt: Dict[int, List[MstAi]]
     aiActToAiField: Dict[int, List[MstAi]]
-    parentAiSvt: Dict[int, List[MstAi]]
-    parentAiField: Dict[int, List[MstAi]]
+    parentAiSvt: Dict[int, Set[int]]
+    parentAiField: Dict[int, Set[int]]
 
 
 class ServantEntity(BaseModelORJson):

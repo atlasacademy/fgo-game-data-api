@@ -174,10 +174,10 @@ def update_gamedata() -> None:
             ("parentAiSvt", "mstAi"),
             ("parentAiField", "mstAiField"),
         ):
-            master[masters_table] = defaultdict(list)
+            master[masters_table] = defaultdict(set)
             for ai in master[ai_table]:
                 if ai["avals"][0] != 0:
-                    master[masters_table][ai["avals"][0]].append(ai)
+                    master[masters_table][ai["avals"][0]].add(ai["id"])
 
         master["skillToAiAct"] = defaultdict(set)
         for ai_act in master["mstAiAct"]:
