@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.34.2 - 2020-01-19
+### Added
+- `actNumInt` and `timingDescription` to nice AI.
+- Fallback value for `actNum` enum since the mapping is incomplete.
+- `AiType` enum.
+
+### Changed
+- Combined AI svt and field endpoints.
+
 ## 5.34.1 - 2020-01-18
 ### Changed
 - Dedupe and sort `aiIds` in nice skill and `parentAis` in nice AI.

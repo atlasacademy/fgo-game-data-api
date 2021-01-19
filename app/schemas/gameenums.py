@@ -3103,6 +3103,7 @@ class NiceAiActNum(str, Enum):
     maxnp = "maxnp"
     shiftSarvantAfter = "shiftSarvantAfter"
     usenpTarget = "usenpTarget"
+    unknown = "unknown"
 
 
 AI_ACT_NUM_NAME: Dict[int, NiceAiActNum] = {
@@ -3116,4 +3117,5 @@ AI_ACT_NUM_NAME: Dict[int, NiceAiActNum] = {
     -9: NiceAiActNum.maxnp,
     -10: NiceAiActNum.shiftSarvantAfter,
     -11: NiceAiActNum.usenpTarget,
+    -9999: NiceAiActNum.unknown,
 }

@@ -40,6 +40,7 @@ EXTRA_STR_NAME = {
     "NiceStatusRank": {-1: "UNKNOWN"},
     "NiceSvtFlag": {0: "NORMAL", 63: "GOETIA"},
     "NiceWarFlag": {34848: "SUMMER_CAMP", 49538: "UNRELEASED_STORY"},
+    "NiceAiActNum": {-9999: "UNKNOWN"},
 }
 
 

@@ -358,6 +358,44 @@ PLAYABLE_CLASS_LIST = [
 ]
 
 
+### AI Type ###
+
+
+class AiType(str, Enum):
+    """AI Type: where the AI is used"""
+
+    svt = "svt"
+    field = "field"
+
+
+### AI Timing ###
+
+
+class AiTiming(str, Enum):
+    """Field AI timing Enum"""
+
+    dead = "dead"
+    turnEnemyStart = "turnEnemyStart"
+    turnEnemyEnd = "turnEnemyEnd"
+    turnPlayerStart = "turnPlayerStart"
+    turnPlayerEnd = "turnPlayerEnd"
+    waveStart = "waveStart"
+    turnStart = "turnStart"
+    unknown = "unknown"
+
+
+AI_TIMING_NAME: Dict[int, AiTiming] = {
+    -6: AiTiming.dead,
+    -1: AiTiming.unknown,
+    1: AiTiming.waveStart,
+    2: AiTiming.turnStart,
+    3: AiTiming.turnPlayerStart,
+    4: AiTiming.turnPlayerEnd,
+    5: AiTiming.turnEnemyStart,
+    6: AiTiming.turnEnemyEnd,
+}
+
+
 ### Trait ###
 
 
@@ -783,6 +821,7 @@ ALL_ENUMS = {
     "NiceAiActTarget": AI_ACT_TARGET_NAME,
     "NiceAiActNum": AI_ACT_NUM_NAME,
     "NiceAiCond": AI_COND_NAME,
+    "AiTiming": AI_TIMING_NAME,
 }
 
 
@@ -876,4 +915,7 @@ __all__ = [
     "AI_COND_NAME",
     "NiceAiCond",
     "NiceItemUse",
+    "AiTiming",
+    "AI_TIMING_NAME",
+    "AiType",
 ]

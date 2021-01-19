@@ -19,6 +19,7 @@ from ..schemas.enums import (
     AI_ACT_TARGET_NAME,
     AI_ACT_TYPE_NAME,
     AI_COND_NAME,
+    AI_TIMING_NAME,
     ATTRIBUTE_NAME,
     BUFF_TYPE_NAME,
     CARD_TYPE_NAME,
@@ -46,7 +47,10 @@ from ..schemas.enums import (
     VOICE_COND_NAME,
     VOICE_TYPE_NAME,
     WAR_START_TYPE_NAME,
+    AiTiming,
+    AiType,
     FuncType,
+    NiceAiActNum,
     NiceItemUse,
     NiceStatusRank,
     PayType,
@@ -57,7 +61,6 @@ from ..schemas.enums import (
     WarEntityFlag,
 )
 from ..schemas.nice import (
-    AiIdList,
     AssetURL,
     NiceAi,
     NiceAiAct,
@@ -432,23 +435,23 @@ def get_nice_base_function(
     return functionInfo
 
 
-def get_ai_id_from_skill(region: Region, skill_id: int) -> AiIdList:
-    return AiIdList(
-        svt=sorted(
+def get_ai_id_from_skill(region: Region, skill_id: int) -> Dict[AiType, List[int]]:
+    return {
+        AiType.svt: sorted(
             set(
                 ai.id
                 for ai_act_id in masters[region].skillToAiAct.get(skill_id, [])
                 for ai in masters[region].aiActToAiSvt.get(ai_act_id, [])
             )
         ),
-        field=sorted(
+        AiType.field: sorted(
             set(
                 ai.id
                 for ai_act_id in masters[region].skillToAiAct.get(skill_id, [])
                 for ai in masters[region].aiActToAiField.get(ai_act_id, [])
             )
         ),
-    )
+    }
 
 
 def get_nice_skill(
@@ -495,7 +498,7 @@ def get_nice_skill(
             )
 
     aiIds = get_ai_id_from_skill(region, skillEntity.mstSkill.id)
-    if aiIds.svt or aiIds.field:
+    if aiIds[AiType.svt] or aiIds[AiType.field]:
         nice_skill["aiIds"] = aiIds
 
     nice_skill["coolDown"] = [
@@ -1651,22 +1654,27 @@ def get_nice_ai_act(mstAiAct: MstAiAct) -> NiceAiAct:
     return nice_ai_act
 
 
-def get_parent_ais(region: Region, ai_id: int, field: bool = False) -> AiIdList:
+def get_parent_ais(
+    region: Region, ai_id: int, field: bool = False
+) -> Dict[AiType, List[int]]:
     if field:
-        return AiIdList(
-            svt=[], field=sorted(masters[region].parentAiField.get(ai_id, []))
-        )
+        return {
+            AiType.svt: [],
+            AiType.field: sorted(masters[region].parentAiField.get(ai_id, [])),
+        }
     else:
-        return AiIdList(
-            svt=sorted(masters[region].parentAiSvt.get(ai_id, [])), field=[]
-        )
+        return {
+            AiType.svt: sorted(masters[region].parentAiSvt.get(ai_id, [])),
+            AiType.field: [],
+        }
 
 
 def get_nice_ai(region: Region, one_ai: OneAiEntity, field: bool = False) -> NiceAi:
     nice_ai = NiceAi(
         id=one_ai.mstAi.id,
         idx=one_ai.mstAi.idx,
-        actNum=AI_ACT_NUM_NAME[one_ai.mstAi.actNum],
+        actNumInt=one_ai.mstAi.actNum,
+        actNum=AI_ACT_NUM_NAME.get(one_ai.mstAi.actNum, NiceAiActNum.unknown),
         priority=one_ai.mstAi.priority,
         probability=one_ai.mstAi.probability,
         cond=AI_COND_NAME[
@@ -1681,6 +1689,9 @@ def get_nice_ai(region: Region, one_ai: OneAiEntity, field: bool = False) -> Nic
     )
     if one_ai.mstAi.timing:
         nice_ai.timing = one_ai.mstAi.timing
+        nice_ai.timingDescription = AI_TIMING_NAME.get(
+            one_ai.mstAi.timing, AiTiming.unknown
+        )
     return nice_ai
 
 

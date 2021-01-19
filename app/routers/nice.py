@@ -6,6 +6,7 @@ from ..config import Settings
 from ..core import nice, search
 from ..data.gamedata import masters
 from ..schemas.common import Language, Region, ReverseData, ReverseDepth
+from ..schemas.enums import AiType
 from ..schemas.nice import (
     NiceAiFull,
     NiceBaseFunctionReverse,
@@ -629,38 +630,22 @@ async def get_quest(region: Region, quest_id: int) -> Response:
 
 
 @router.get(
-    "/{region}/ai/field/{quest_id}",
-    summary="Get Field AI data",
+    "/{region}/ai/{ai_type}/{ai_id}",
+    summary="Get AI data",
     response_description="Nice AI Entity",
     response_model=NiceAiFull,
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
-async def get_ai_field(region: Region, quest_id: int) -> Response:
-    """
-    Get the nice field AI data from the given quest ID
-    """
-    if quest_id in masters[region].mstAiFieldId:
-        ai_entity = nice.get_nice_ai_full(region, quest_id, field=True)
-        return item_response(ai_entity)
-    else:
-        raise HTTPException(status_code=404, detail="Field AI not found")
-
-
-@router.get(
-    "/{region}/ai/svt/{ai_id}",
-    summary="Get svt AI data",
-    response_description="Nice AI Entity",
-    response_model=NiceAiFull,
-    response_model_exclude_unset=True,
-    responses=get_error_code([404]),
-)
-async def get_ai_enemy(region: Region, ai_id: int) -> Response:
+async def get_ai_field(region: Region, ai_type: AiType, ai_id: int) -> Response:
     """
     Get the nice AI data from the given AI ID
     """
-    if ai_id in masters[region].mstAiId:
+    if ai_type == AiType.svt and ai_id in masters[region].mstAiId:
         ai_entity = nice.get_nice_ai_full(region, ai_id, field=False)
+        return item_response(ai_entity)
+    elif ai_type == AiType.field and ai_id in masters[region].mstAiFieldId:
+        ai_entity = nice.get_nice_ai_full(region, ai_id, field=True)
         return item_response(ai_entity)
     else:
         raise HTTPException(status_code=404, detail="AI not found")

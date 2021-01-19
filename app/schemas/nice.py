@@ -8,6 +8,8 @@ from .base import BaseModelORJson
 from .basic import BasicReversedBuff, BasicReversedFunction, BasicReversedSkillTd
 from .common import MCAssets, NiceTrait
 from .enums import (
+    AiTiming,
+    AiType,
     Attribute,
     FuncApplyTarget,
     NiceAiActNum,
@@ -371,11 +373,6 @@ class NiceSkillScript(BaseModel):
     HP_PER_LOWER: Optional[List[int]] = None
 
 
-class AiIdList(BaseModel):
-    svt: List[int]
-    field: List[int]
-
-
 class NiceSkill(BaseModelORJson):
     id: int
     num: int = -1
@@ -393,7 +390,7 @@ class NiceSkill(BaseModelORJson):
     coolDown: List[int]
     actIndividuality: List[NiceTrait]
     script: NiceSkillScript
-    aiIds: Optional[AiIdList] = None
+    aiIds: Optional[Dict[AiType, List[int]]] = None
     functions: List[NiceFunction]
 
 
@@ -1079,6 +1076,7 @@ class NiceAiAct(BaseModelORJson):
 class NiceAi(BaseModelORJson):
     id: int
     idx: int
+    actNumInt: int
     actNum: NiceAiActNum
     priority: int
     probability: int
@@ -1087,9 +1085,10 @@ class NiceAi(BaseModelORJson):
     vals: List[int]
     aiAct: NiceAiAct
     avals: List[int]
-    parentAis: AiIdList
+    parentAis: Dict[AiType, List[int]]
     infoText: str
     timing: Optional[int] = None
+    timingDescription: Optional[AiTiming] = None
 
 
 class NiceAiFull(BaseModelORJson):

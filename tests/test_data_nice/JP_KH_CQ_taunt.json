@@ -3,6 +3,7 @@
     {
       "id": 90161870,
       "idx": 1,
+      "actNumInt": -1,
       "actNum": "anytime",
       "priority": 100,
       "probability": 100,
@@ -20,11 +21,13 @@
       "avals": [0, 0],
       "parentAis": { "svt": [], "field": [] },
       "infoText": "見定める",
-      "timing": 5
+      "timing": 5,
+      "timingDescription": "turnEnemyStart"
     },
     {
       "id": 90161870,
       "idx": 2,
+      "actNumInt": -1,
       "actNum": "anytime",
       "priority": 200,
       "probability": 100,
@@ -42,11 +45,13 @@
       "avals": [0, 0],
       "parentAis": { "svt": [], "field": [] },
       "infoText": "見定める",
-      "timing": 5
+      "timing": 5,
+      "timingDescription": "turnEnemyStart"
     },
     {
       "id": 90161870,
       "idx": 3,
+      "actNumInt": -1,
       "actNum": "anytime",
       "priority": 1,
       "probability": 100,
@@ -62,7 +67,8 @@
       "avals": [0, 0],
       "parentAis": { "svt": [], "field": [] },
       "infoText": "",
-      "timing": 5
+      "timing": 5,
+      "timingDescription": "turnEnemyStart"
     }
   ],
   "relatedAis": []

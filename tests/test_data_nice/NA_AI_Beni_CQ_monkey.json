@@ -3,6 +3,7 @@
     {
       "id": 94032580,
       "idx": 1,
+      "actNumInt": -4,
       "actNum": "reactionEnemyturnStart",
       "priority": 100,
       "probability": 100,
@@ -24,6 +25,7 @@
     {
       "id": 94032580,
       "idx": 2,
+      "actNumInt": -4,
       "actNum": "reactionEnemyturnStart",
       "priority": 1,
       "probability": 100,
@@ -43,6 +45,7 @@
     {
       "id": 94032580,
       "idx": 3,
+      "actNumInt": -1,
       "actNum": "anytime",
       "priority": 1,
       "probability": 100,
@@ -64,6 +67,7 @@
     {
       "id": 94032581,
       "idx": 1,
+      "actNumInt": -1,
       "actNum": "anytime",
       "priority": 1,
       "probability": 100,
@@ -83,6 +87,7 @@
     {
       "id": 94032581,
       "idx": 2,
+      "actNumInt": -1,
       "actNum": "anytime",
       "priority": 100,
       "probability": 100,
@@ -102,6 +107,7 @@
     {
       "id": 94032582,
       "idx": 1,
+      "actNumInt": -1,
       "actNum": "anytime",
       "priority": 1,
       "probability": 50,
@@ -121,6 +127,7 @@
     {
       "id": 94032582,
       "idx": 2,
+      "actNumInt": -1,
       "actNum": "anytime",
       "priority": 1,
       "probability": 30,
@@ -142,6 +149,7 @@
     {
       "id": 94032582,
       "idx": 3,
+      "actNumInt": -1,
       "actNum": "anytime",
       "priority": 1,
       "probability": 20,
@@ -161,6 +169,7 @@
     {
       "id": 94032582,
       "idx": 4,
+      "actNumInt": -1,
       "actNum": "anytime",
       "priority": 1,
       "probability": 50,
