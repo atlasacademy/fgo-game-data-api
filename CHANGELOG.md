@@ -5,6 +5,8 @@ All notable changes to the public API will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
+### Added
+- Detailed nice skill to nice AI Act.
 
 ## 5.34.2 - 2020-01-19
 ### Added

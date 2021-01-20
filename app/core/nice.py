@@ -1641,7 +1641,7 @@ def get_nice_war(region: Region, war_id: int) -> NiceWar:
     )
 
 
-def get_nice_ai_act(mstAiAct: MstAiAct) -> NiceAiAct:
+def get_nice_ai_act(region: Region, mstAiAct: MstAiAct) -> NiceAiAct:
     nice_ai_act = NiceAiAct(
         id=mstAiAct.id,
         type=AI_ACT_TYPE_NAME[mstAiAct.type],
@@ -1651,6 +1651,11 @@ def get_nice_ai_act(mstAiAct: MstAiAct) -> NiceAiAct:
     if len(mstAiAct.skillVals) >= 2:
         nice_ai_act.skillId = mstAiAct.skillVals[0]
         nice_ai_act.skillLv = mstAiAct.skillVals[1]
+        nice_ai_act.skill = get_nice_skill_alone(
+            region,
+            mstAiAct.skillVals[0],
+            Language.jp if region == Region.JP else Language.en,
+        )
     return nice_ai_act
 
 
@@ -1682,7 +1687,7 @@ def get_nice_ai(region: Region, one_ai: OneAiEntity, field: bool = False) -> Nic
         ],
         condNegative=one_ai.mstAi.cond < 0,
         vals=one_ai.mstAi.vals,
-        aiAct=get_nice_ai_act(one_ai.mstAiAct),
+        aiAct=get_nice_ai_act(region, one_ai.mstAiAct),
         avals=one_ai.mstAi.avals,
         parentAis=get_parent_ais(region, one_ai.mstAi.id, field),
         infoText=one_ai.mstAi.infoText,

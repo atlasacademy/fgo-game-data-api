@@ -1071,6 +1071,7 @@ class NiceAiAct(BaseModelORJson):
     targetIndividuality: List[NiceTrait]
     skillId: Optional[int] = None
     skillLv: Optional[int] = None
+    skill: Optional[NiceSkill] = None
 
 
 class NiceAi(BaseModelORJson):

@@ -16,7 +16,88 @@
         "target": "random",
         "targetIndividuality": [{ "id": 103700, "name": "unknown" }],
         "skillId": 962336,
-        "skillLv": 1
+        "skillLv": 1,
+        "skill": {
+          "id": 962336,
+          "name": "Report with Information Collected Through Glances",
+          "ruby": "-",
+          "type": "active",
+          "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png",
+          "coolDown": [0],
+          "actIndividuality": [],
+          "script": {},
+          "aiIds": { "svt": [94032580], "field": [] },
+          "functions": [
+            {
+              "funcId": 180,
+              "funcType": "addState",
+              "funcTargetType": "ptOne",
+              "funcTargetTeam": "playerAndEnemy",
+              "funcPopupText": "DEF Up",
+              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_301.png",
+              "functvals": [],
+              "funcquestTvals": [],
+              "funcGroup": [],
+              "buffs": [
+                {
+                  "id": 146,
+                  "name": "DEF Up",
+                  "detail": "Increase DEF",
+                  "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_301.png",
+                  "type": "upDefence",
+                  "buffGroup": 0,
+                  "script": {},
+                  "vals": [
+                    { "id": 3004, "name": "buffPositiveEffect" },
+                    { "id": 3007, "name": "buffIncreaseDefence" },
+                    { "id": 3040, "name": "buffDefenceUp" },
+                    {
+                      "id": 3058,
+                      "name": "buffIncreaseDefenceAgainstIndividuality"
+                    }
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "maxRate": 5000
+                }
+              ],
+              "svals": [{ "Rate": 1000, "Turn": 1, "Count": -1, "Value": 300 }]
+            },
+            {
+              "funcId": 204,
+              "funcType": "addStateShort",
+              "funcTargetType": "ptOne",
+              "funcTargetTeam": "playerAndEnemy",
+              "funcPopupText": "Critical Up",
+              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_324.png",
+              "functvals": [],
+              "funcquestTvals": [],
+              "funcGroup": [],
+              "buffs": [
+                {
+                  "id": 142,
+                  "name": "Critical Up",
+                  "detail": "Increase Critical Hit damage",
+                  "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_324.png",
+                  "type": "upCriticaldamage",
+                  "buffGroup": 0,
+                  "script": {},
+                  "vals": [
+                    { "id": 3004, "name": "buffPositiveEffect" },
+                    { "id": 3006, "name": "buffIncreaseDamage" },
+                    { "id": 3031, "name": "buffCritDamageUp" }
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "maxRate": 5000
+                }
+              ],
+              "svals": [{ "Rate": 1000, "Turn": 1, "Count": -1, "Value": 500 }]
+            }
+          ]
+        }
       },
       "avals": [94032581, 0],
       "parentAis": { "svt": [94032581, 94032582], "field": [] },
@@ -140,7 +221,84 @@
         "target": "random",
         "targetIndividuality": [],
         "skillId": 962335,
-        "skillLv": 1
+        "skillLv": 1,
+        "skill": {
+          "id": 962335,
+          "name": "King Monkey's Fist",
+          "ruby": "-",
+          "type": "active",
+          "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png",
+          "coolDown": [0],
+          "actIndividuality": [],
+          "script": {},
+          "aiIds": { "svt": [94032582, 94032592, 94032602], "field": [] },
+          "functions": [
+            {
+              "funcId": 216,
+              "funcType": "addStateShort",
+              "funcTargetType": "self",
+              "funcTargetTeam": "enemy",
+              "funcPopupText": "Critical Rate\nUp",
+              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_327.png",
+              "functvals": [],
+              "funcquestTvals": [],
+              "funcGroup": [],
+              "buffs": [
+                {
+                  "id": 144,
+                  "name": "Critical Hit Rate Up",
+                  "detail": "Increase Critical Hit rate",
+                  "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_327.png",
+                  "type": "upCriticalrate",
+                  "buffGroup": 0,
+                  "script": {},
+                  "vals": [
+                    { "id": 3004, "name": "buffPositiveEffect" },
+                    { "id": 3006, "name": "buffIncreaseDamage" },
+                    { "id": 3032, "name": "buffCritRateUp" }
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "maxRate": 5000
+                }
+              ],
+              "svals": [{ "Rate": 1000, "Turn": -1, "Count": 1, "Value": 300 }]
+            },
+            {
+              "funcId": 201,
+              "funcType": "addStateShort",
+              "funcTargetType": "self",
+              "funcTargetTeam": "playerAndEnemy",
+              "funcPopupText": "Critical Up",
+              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_324.png",
+              "functvals": [],
+              "funcquestTvals": [],
+              "funcGroup": [],
+              "buffs": [
+                {
+                  "id": 142,
+                  "name": "Critical Up",
+                  "detail": "Increase Critical Hit damage",
+                  "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_324.png",
+                  "type": "upCriticaldamage",
+                  "buffGroup": 0,
+                  "script": {},
+                  "vals": [
+                    { "id": 3004, "name": "buffPositiveEffect" },
+                    { "id": 3006, "name": "buffIncreaseDamage" },
+                    { "id": 3031, "name": "buffCritDamageUp" }
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "maxRate": 5000
+                }
+              ],
+              "svals": [{ "Rate": 1000, "Turn": -1, "Count": 1, "Value": 500 }]
+            }
+          ]
+        }
       },
       "avals": [94032580, 0],
       "parentAis": { "svt": [94032581], "field": [] },
