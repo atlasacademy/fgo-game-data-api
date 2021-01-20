@@ -256,7 +256,7 @@ class TestServantSpecial:
             "Rate": 1000,
             "Value": 3000,
             "Value2": 1000,
-            "Target": 0,
+            "Target": 1,
             "Correction": 200,
             "TargetList": [2004],
             "ParamAddMaxCount": 10,

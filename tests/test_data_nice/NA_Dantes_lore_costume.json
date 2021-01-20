@@ -787,7 +787,7 @@
             "id": 6514,
             "name": "Homunculus Baby",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension"],
+            "uses": ["skill", "ascension", "costume"],
             "detail": "\"Skill Up & Ascension Material\"\nThe body of a young homunculus before a soul is written into it.",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6514.png",
