@@ -137,6 +137,7 @@ def get_basic_skill(
     basic_skill = BasicSkillReverse(
         id=mstSkill.id,
         name=mstSkill.name,
+        ruby=mstSkill.ruby,
         icon=AssetURL.skillIcon.format(
             base_url=settings.asset_url, region=region, item_id=mstSkill.iconId
         ),
@@ -170,7 +171,11 @@ def get_basic_td(
     reverseDepth: ReverseDepth = ReverseDepth.servant,
 ) -> BasicTdReverse:
     mstTreasureDevice = masters[region].mstTreasureDeviceId[td_id]
-    basic_td = BasicTdReverse(id=mstTreasureDevice.id, name=mstTreasureDevice.name)
+    basic_td = BasicTdReverse(
+        id=mstTreasureDevice.id,
+        name=mstTreasureDevice.name,
+        ruby=mstTreasureDevice.ruby,
+    )
 
     if reverse and reverseDepth >= ReverseDepth.servant:
         mstSvtTreasureDevice = masters[region].mstSvtTreasureDeviceId.get(td_id, [])

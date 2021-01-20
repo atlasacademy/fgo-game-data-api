@@ -1,6 +1,7 @@
 {
   "id": 19450,
   "name": "Clairvoyance B",
+  "ruby": "Clairvoyance ",
   "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00604.png",
   "reverse": {
     "basic": {

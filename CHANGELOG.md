@@ -5,8 +5,13 @@ All notable changes to the public API will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
+
+## 5.35.0 - 2020-01-20
 ### Added
 - Detailed nice skill to nice AI Act.
+- ruby to basic skill and basic NP.
+- New 2.26.0 enums.
+- English translations Little Big Tengu servants and CEs.
 
 ## 5.34.2 - 2020-01-19
 ### Added

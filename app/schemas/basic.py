@@ -40,12 +40,14 @@ class BasicFunction(BaseModelORJson):
 class BasicSkill(BaseModelORJson):
     id: int
     name: str
+    ruby: str
     icon: Optional[HttpUrl] = None
 
 
 class BasicTd(BaseModelORJson):
     id: int
     name: str
+    ruby: str
 
 
 class BasicServant(BaseModelORJson):
