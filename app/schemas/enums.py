@@ -588,6 +588,7 @@ class Trait(str, Enum):
     shutenOnField = "shutenOnField"
     shuten = "shuten"
     genji = "genji"
+    vengeance = "vengeance"
 
 
 TRAIT_NAME: Dict[int, Trait] = {
@@ -703,6 +704,7 @@ TRAIT_NAME: Dict[int, Trait] = {
     2733: Trait.shutenOnField,  # Ibaraki strengthened 2nd skill
     2734: Trait.shuten,  # Ibaraki strengthened 2nd skill
     2735: Trait.genji,
+    2759: Trait.vengeance,  # Taira 2nd skill and NP
     # 2xxx: CQ or Story quests buff
     3000: Trait.normalAttack0,  # Normal attack, including NP
     3001: Trait.normalAttack1,  # Haven't figured out the difference between the 3
