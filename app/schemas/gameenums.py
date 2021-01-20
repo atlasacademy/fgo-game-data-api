@@ -1591,6 +1591,7 @@ class PurchaseType(IntEnum):
     COMMAND_CODE = 19
     GIFT = 20
     EVENT_SVT_JOIN = 21
+    ASSIST = 22
 
 
 class NicePurchaseType(str, Enum):
@@ -1617,6 +1618,7 @@ class NicePurchaseType(str, Enum):
     commandCode = "commandCode"
     gift = "gift"
     eventSvtJoin = "eventSvtJoin"
+    assist = "assist"
 
 
 PURCHASE_TYPE_NAME: Dict[int, NicePurchaseType] = {
@@ -1641,6 +1643,7 @@ PURCHASE_TYPE_NAME: Dict[int, NicePurchaseType] = {
     19: NicePurchaseType.commandCode,
     20: NicePurchaseType.gift,
     21: NicePurchaseType.eventSvtJoin,
+    22: NicePurchaseType.assist,
 }
 
 
