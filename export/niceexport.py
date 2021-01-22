@@ -239,6 +239,7 @@ def get_nice_buff_action(raw_data: Any) -> Any:
     return out_data
 
 
+# pylint: disable=inherit-non-class
 class ExportParam(NamedTuple):
     input: str
     converter: Callable[[Any], Any]

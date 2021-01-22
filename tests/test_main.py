@@ -49,7 +49,8 @@ class TestMain:
         assert response["JP"]["timestamp"] > 1594450000
 
     @pytest.mark.skipif(
-        settings.github_webhook_secret == "", reason="Secret path not set"
+        settings.github_webhook_secret.get_secret_value() == "",
+        reason="Secret path not set",
     )
     def test_secret_info(self) -> None:
         info_path = f"/{settings.github_webhook_secret.get_secret_value()}/info"

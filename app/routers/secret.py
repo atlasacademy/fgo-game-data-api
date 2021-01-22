@@ -8,7 +8,9 @@ from .utils import pretty_print_response
 
 settings = Settings()
 router = APIRouter(
-    prefix=f"/{settings.github_webhook_secret.get_secret_value()}",
+    prefix=f"/{settings.github_webhook_secret.get_secret_value()}"
+    if settings.github_webhook_secret.get_secret_value() != ""
+    else "",
     include_in_schema=False,
 )
 
