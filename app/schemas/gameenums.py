@@ -1619,6 +1619,7 @@ class NicePurchaseType(str, Enum):
     gift = "gift"
     eventSvtJoin = "eventSvtJoin"
     assist = "assist"
+    kiaraPunisherReset = "kiaraPunisherReset"
 
 
 PURCHASE_TYPE_NAME: Dict[int, NicePurchaseType] = {
@@ -1644,6 +1645,7 @@ PURCHASE_TYPE_NAME: Dict[int, NicePurchaseType] = {
     20: NicePurchaseType.gift,
     21: NicePurchaseType.eventSvtJoin,
     22: NicePurchaseType.assist,
+    13: NicePurchaseType.kiaraPunisherReset,
 }
 
 
