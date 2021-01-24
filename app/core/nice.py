@@ -139,6 +139,11 @@ from .utils import get_nice_trait, get_safe, get_traits_list
 
 FORMATTING_BRACKETS = {"[g][o]": "", "[/o][/g]": "", " [{0}] ": " ", "[{0}]": ""}
 
+MASH_SVT_ID = 800100
+MASH_VALENTINE_EQUIP = {
+    Region.NA: [9800700, 9806620],
+    Region.JP: [9800700, 9806620, 9807240],
+}
 
 settings = Settings()
 
@@ -790,6 +795,15 @@ def get_nice_voice_group(
     )
 
 
+def get_valentine_equip(region: Region, svt_id: int) -> List[int]:
+    if svt_id == MASH_SVT_ID:
+        return MASH_VALENTINE_EQUIP[region]
+    elif svt_id in masters[region].valentineEquip:
+        return [masters[region].valentineEquip[svt_id]]
+    else:
+        return []
+
+
 def get_nice_servant(
     region: Region, svt_id: int, lang: Language, lore: bool = False
 ) -> Dict[str, Any]:
@@ -816,6 +830,7 @@ def get_nice_servant(
             raw_data.mstSvt.friendshipId, []
         ),
         "bondEquip": masters[region].bondEquip.get(svt_id, 0),
+        "valentineEquip": get_valentine_equip(region, svt_id),
         "relateQuestIds": raw_data.mstSvt.relateQuestIds,
     }
 

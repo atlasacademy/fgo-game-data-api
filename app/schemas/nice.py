@@ -750,7 +750,12 @@ class NiceServant(BaseModelORJson):
         'Will show up as "Base EXP" when feeding the item into something else.',
     )
     bondEquip: int = Field(
-        ..., title="Bond CE", description="Bond CE ID (not collectionNo)."
+        0,
+        title="Bond CE",
+        description="Bond CE ID (not collectionNo). Defaults to 0 if the svt doesn't have a bond CE.",
+    )
+    valentineEquip: List[int] = Field(
+        [], title="Valentine CE", description="Valentine CE ID (not collectionNo)."
     )
     ascensionAdd: AscensionAdd = Field(
         ...,

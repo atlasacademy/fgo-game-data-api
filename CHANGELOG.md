@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.36.0 - 2020-01-23
+### Added
+- `valentineEquip` to nice servant.
+
 ## 5.35.1 - 2020-01-23
 ### Added
 - Added Kiara Punisher Reset purchase type. The purchase type is not defined in the game code.

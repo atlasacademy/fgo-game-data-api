@@ -6,7 +6,7 @@ import orjson
 
 from ..config import Settings, logger
 from ..schemas.common import Region
-from ..schemas.enums import FUNC_VALS_NOT_BUFF, SvtType
+from ..schemas.enums import FUNC_VALS_NOT_BUFF, SvtType, PurchaseType, CondType
 from ..schemas.raw import BAD_COMBINE_SVT_LIMIT, Master, is_equip, is_servant
 
 
@@ -48,6 +48,7 @@ MASTER_WITHOUT_ID = {
     "mstQuestRelease",
     "mstGift",
     "mstShop",
+    "mstShopRelease",
     "mstAi",
     "mstAiField",
     "mstFuncGroup",
@@ -72,6 +73,7 @@ SVT_STUFFS = {
 }
 SKILL_STUFFS = {"mstSkillDetail", "mstSvtSkill", "mstSkillLv"}
 TD_STUFFS = {"mstTreasureDeviceDetail", "mstSvtTreasureDevice", "mstTreasureDeviceLv"}
+LATEST_VALENTINE_EVENT = {Region.NA: 80089, Region.JP: 80276}
 region_path = {Region.NA: settings.na_gamedata, Region.JP: settings.jp_gamedata}
 
 
@@ -219,6 +221,7 @@ def update_gamedata() -> None:
             ("mstWarEventId", "mstWar", "eventId"),
             ("mstGiftId", "mstGift", "id"),
             ("mstShopEventId", "mstShop", "eventId"),
+            ("mstShopReleaseShopId", "mstShopRelease", "shopId"),
             ("mstCommandCodeCommentId", "mstCommandCodeComment", "commandCodeId"),
             ("mstQuestConsumeItemId", "mstQuestConsumeItem", "questId"),
             ("mstAiId", "mstAi", "id"),
@@ -249,6 +252,16 @@ def update_gamedata() -> None:
                         and individualities[0] in master["mstSvtId"]
                     ):
                         master["bondEquip"][individualities[0]] = svt["id"]
+
+        master["valentineEquip"] = {}
+        for shop in master["mstShopEventId"][LATEST_VALENTINE_EVENT[region_name]]:
+            if shop["purchaseType"] == PurchaseType.SERVANT:
+                for shopRelease in master["mstShopReleaseShopId"][shop["id"]]:
+                    if shopRelease["condType"] == CondType.SVT_GET:
+                        master["valentineEquip"][shopRelease["condValues"][0]] = shop[
+                            "targetIds"
+                        ][0]
+                        break
 
         if region_name == Region.NA:
             with open(gamedata / "globalNewMstSubtitle.json", "rb") as fp:

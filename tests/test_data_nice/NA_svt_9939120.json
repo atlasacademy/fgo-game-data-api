@@ -352,6 +352,7 @@
   ],
   "expFeed": [10],
   "bondEquip": 0,
+  "valentineEquip": [],
   "ascensionAdd": {
     "individuality": { "ascension": {}, "costume": {} },
     "voicePrefix": { "ascension": {}, "costume": {} }

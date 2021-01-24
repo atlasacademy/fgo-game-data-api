@@ -458,6 +458,7 @@
     9790
   ],
   "bondEquip": 0,
+  "valentineEquip": [9800700, 9806620, 9807240],
   "ascensionAdd": {
     "individuality": {
       "ascension": {},

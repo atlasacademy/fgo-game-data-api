@@ -622,6 +622,7 @@
             12990
           ],
           "bondEquip": 9300750,
+          "valentineEquip": [9805330],
           "ascensionAdd": {
             "individuality": { "ascension": {}, "costume": {} },
             "voicePrefix": { "ascension": {}, "costume": {} }
