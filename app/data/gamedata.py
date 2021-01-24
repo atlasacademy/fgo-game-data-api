@@ -253,14 +253,14 @@ def update_gamedata() -> None:
                     ):
                         master["bondEquip"][individualities[0]] = svt["id"]
 
-        master["valentineEquip"] = {}
+        master["valentineEquip"] = defaultdict(list)
         for shop in master["mstShopEventId"][LATEST_VALENTINE_EVENT[region_name]]:
             if shop["purchaseType"] == PurchaseType.SERVANT:
                 for shopRelease in master["mstShopReleaseShopId"][shop["id"]]:
                     if shopRelease["condType"] == CondType.SVT_GET:
-                        master["valentineEquip"][shopRelease["condValues"][0]] = shop[
-                            "targetIds"
-                        ][0]
+                        master["valentineEquip"][shopRelease["condValues"][0]].append(
+                            shop["targetIds"][0]
+                        )
                         break
 
         if region_name == Region.NA:

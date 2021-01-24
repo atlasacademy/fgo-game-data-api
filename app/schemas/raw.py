@@ -949,7 +949,7 @@ class Master(BaseModel):
     funcToTd: Dict[int, Set[int]]
     passiveSkillToSvt: Dict[int, Set[int]]
     bondEquip: Dict[int, int]
-    valentineEquip: Dict[int, int]
+    valentineEquip: Dict[int, List[int]]
     mstAiId: Dict[int, List[MstAi]]
     mstAiFieldId: Dict[int, List[MstAi]]
     mstAiActId: Dict[int, MstAiAct]

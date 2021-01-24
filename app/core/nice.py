@@ -798,10 +798,8 @@ def get_nice_voice_group(
 def get_valentine_equip(region: Region, svt_id: int) -> List[int]:
     if svt_id == MASH_SVT_ID:
         return MASH_VALENTINE_EQUIP[region]
-    elif svt_id in masters[region].valentineEquip:
-        return [masters[region].valentineEquip[svt_id]]
     else:
-        return []
+        return masters[region].valentineEquip.get(svt_id, [])
 
 
 def get_nice_servant(
