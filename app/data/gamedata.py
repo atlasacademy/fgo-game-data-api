@@ -6,7 +6,7 @@ import orjson
 
 from ..config import Settings, logger
 from ..schemas.common import Region
-from ..schemas.enums import FUNC_VALS_NOT_BUFF, SvtType, PurchaseType, CondType
+from ..schemas.enums import FUNC_VALS_NOT_BUFF, CondType, PurchaseType, SvtType
 from ..schemas.raw import BAD_COMBINE_SVT_LIMIT, Master, is_equip, is_servant
 
 
