@@ -4,6 +4,7 @@ from typing import Any, Dict, List, Optional, Union
 
 import orjson
 from fastapi import HTTPException
+from sqlalchemy.engine import Connection
 
 from ..config import Settings
 from ..data.gamedata import masters
@@ -803,10 +804,10 @@ def get_valentine_equip(region: Region, svt_id: int) -> List[int]:
 
 
 def get_nice_servant(
-    region: Region, svt_id: int, lang: Language, lore: bool = False
+    conn: Connection, region: Region, svt_id: int, lang: Language, lore: bool = False
 ) -> Dict[str, Any]:
     # Get expanded servant entity to get function and buff details
-    raw_data = raw.get_servant_entity(region, svt_id, expand=True, lore=lore)
+    raw_data = raw.get_servant_entity(conn, region, svt_id, expand=True, lore=lore)
     nice_data: Dict[str, Any] = {
         "id": raw_data.mstSvt.id,
         "collectionNo": raw_data.mstSvt.collectionNo,
@@ -1152,18 +1153,19 @@ def get_nice_servant(
 
 
 def get_nice_servant_model(
-    region: Region, item_id: int, lang: Language, lore: bool = False
+    conn: Connection, region: Region, item_id: int, lang: Language, lore: bool = False
 ) -> NiceServant:
-    return NiceServant.parse_obj(get_nice_servant(region, item_id, lang, lore))
+    return NiceServant.parse_obj(get_nice_servant(conn, region, item_id, lang, lore))
 
 
 def get_nice_equip_model(
-    region: Region, item_id: int, lang: Language, lore: bool = False
+    conn: Connection, region: Region, item_id: int, lang: Language, lore: bool = False
 ) -> NiceEquip:
-    return NiceEquip.parse_obj(get_nice_servant(region, item_id, lang, lore))
+    return NiceEquip.parse_obj(get_nice_servant(conn, region, item_id, lang, lore))
 
 
 def get_nice_buff_alone(
+    conn: Connection,
     region: Region,
     buff_id: int,
     lang: Language,
@@ -1185,7 +1187,9 @@ def get_nice_buff_alone(
         else:
             buff_reverse = NiceReversedBuff(
                 function=(
-                    get_nice_func_alone(region, func_id, lang, reverse, reverseDepth)
+                    get_nice_func_alone(
+                        conn, region, func_id, lang, reverse, reverseDepth
+                    )
                     for func_id in raw.buff_to_func(region, buff_id)
                 )
             )
@@ -1194,6 +1198,7 @@ def get_nice_buff_alone(
 
 
 def get_nice_func_alone(
+    conn: Connection,
     region: Region,
     func_id: int,
     lang: Language,
@@ -1222,11 +1227,13 @@ def get_nice_func_alone(
         else:
             func_reverse = NiceReversedFunction(
                 skill=(
-                    get_nice_skill_alone(region, skill_id, lang, reverse, reverseDepth)
+                    get_nice_skill_alone(
+                        conn, region, skill_id, lang, reverse, reverseDepth
+                    )
                     for skill_id in raw.func_to_skillId(region, func_id)
                 ),
                 NP=(
-                    get_nice_td_alone(region, td_id, lang, reverse, reverseDepth)
+                    get_nice_td_alone(conn, region, td_id, lang, reverse, reverseDepth)
                     for td_id in raw.func_to_tdId(region, func_id)
                 ),
             )
@@ -1235,6 +1242,7 @@ def get_nice_func_alone(
 
 
 def get_nice_skill_alone(
+    conn: Connection,
     region: Region,
     skill_id: int,
     lang: Language,
@@ -1242,7 +1250,7 @@ def get_nice_skill_alone(
     reverseDepth: ReverseDepth = ReverseDepth.servant,
     reverseData: ReverseData = ReverseData.nice,
 ) -> NiceSkillReverse:
-    raw_data = raw.get_skill_entity_no_reverse(region, skill_id, expand=True)
+    raw_data = raw.get_skill_entity_no_reverse(conn, region, skill_id, expand=True)
 
     svt_list = [svt_skill.svtId for svt_skill in raw_data.mstSvtSkill]
     if svt_list:
@@ -1273,15 +1281,15 @@ def get_nice_skill_alone(
         else:
             skill_reverse = NiceReversedSkillTd(
                 servant=(
-                    get_nice_servant_model(region, svt_id, lang=lang)
+                    get_nice_servant_model(conn, region, svt_id, lang=lang)
                     for svt_id in activeSkills | passiveSkills
                 ),
                 MC=(
-                    get_nice_mystic_code(region, mc_id)
+                    get_nice_mystic_code(conn, region, mc_id)
                     for mc_id in raw.skill_to_MCId(region, skill_id)
                 ),
                 CC=(
-                    get_nice_command_code(region, cc_id)
+                    get_nice_command_code(conn, region, cc_id)
                     for cc_id in raw.skill_to_CCId(region, skill_id)
                 ),
             )
@@ -1290,6 +1298,7 @@ def get_nice_skill_alone(
 
 
 def get_nice_td_alone(
+    conn: Connection,
     region: Region,
     td_id: int,
     lang: Language,
@@ -1315,7 +1324,7 @@ def get_nice_td_alone(
         else:
             td_reverse = NiceReversedSkillTd(
                 servant=[
-                    get_nice_servant_model(region, svt_id.svtId, lang=lang)
+                    get_nice_servant_model(conn, region, svt_id.svtId, lang=lang)
                     for svt_id in raw_data.mstSvtTreasureDevice
                 ]
             )
@@ -1323,8 +1332,10 @@ def get_nice_td_alone(
     return nice_data
 
 
-def get_nice_mystic_code(region: Region, mc_id: int) -> NiceMysticCode:
-    raw_data = raw.get_mystic_code_entity(region, mc_id, expand=True)
+def get_nice_mystic_code(
+    conn: Connection, region: Region, mc_id: int
+) -> NiceMysticCode:
+    raw_data = raw.get_mystic_code_entity(conn, region, mc_id, expand=True)
     base_settings = {"base_url": settings.asset_url, "region": region}
     nice_mc = NiceMysticCode(
         id=raw_data.mstEquip.id,
@@ -1353,8 +1364,10 @@ def get_nice_mystic_code(region: Region, mc_id: int) -> NiceMysticCode:
     return nice_mc
 
 
-def get_nice_command_code(region: Region, cc_id: int) -> NiceCommandCode:
-    raw_data = raw.get_command_code_entity(region, cc_id, expand=True)
+def get_nice_command_code(
+    conn: Connection, region: Region, cc_id: int
+) -> NiceCommandCode:
+    raw_data = raw.get_command_code_entity(conn, region, cc_id, expand=True)
 
     base_settings = {"base_url": settings.asset_url, "region": region, "item_id": cc_id}
     nice_cc = NiceCommandCode(
@@ -1654,7 +1667,7 @@ def get_nice_war(region: Region, war_id: int) -> NiceWar:
     )
 
 
-def get_nice_ai_act(region: Region, mstAiAct: MstAiAct) -> NiceAiAct:
+def get_nice_ai_act(conn: Connection, region: Region, mstAiAct: MstAiAct) -> NiceAiAct:
     nice_ai_act = NiceAiAct(
         id=mstAiAct.id,
         type=AI_ACT_TYPE_NAME[mstAiAct.type],
@@ -1665,6 +1678,7 @@ def get_nice_ai_act(region: Region, mstAiAct: MstAiAct) -> NiceAiAct:
         nice_ai_act.skillId = mstAiAct.skillVals[0]
         nice_ai_act.skillLv = mstAiAct.skillVals[1]
         nice_ai_act.skill = get_nice_skill_alone(
+            conn,
             region,
             mstAiAct.skillVals[0],
             Language.jp if region == Region.JP else Language.en,
@@ -1687,7 +1701,9 @@ def get_parent_ais(
         }
 
 
-def get_nice_ai(region: Region, one_ai: OneAiEntity, field: bool = False) -> NiceAi:
+def get_nice_ai(
+    conn: Connection, region: Region, one_ai: OneAiEntity, field: bool = False
+) -> NiceAi:
     nice_ai = NiceAi(
         id=one_ai.mstAi.id,
         idx=one_ai.mstAi.idx,
@@ -1700,7 +1716,7 @@ def get_nice_ai(region: Region, one_ai: OneAiEntity, field: bool = False) -> Nic
         ],
         condNegative=one_ai.mstAi.cond < 0,
         vals=one_ai.mstAi.vals,
-        aiAct=get_nice_ai_act(region, one_ai.mstAiAct),
+        aiAct=get_nice_ai_act(conn, region, one_ai.mstAiAct),
         avals=one_ai.mstAi.avals,
         parentAis=get_parent_ais(region, one_ai.mstAi.id, field),
         infoText=one_ai.mstAi.infoText,
@@ -1713,9 +1729,11 @@ def get_nice_ai(region: Region, one_ai: OneAiEntity, field: bool = False) -> Nic
     return nice_ai
 
 
-def get_nice_ai_full(region: Region, ai_id: int, field: bool = False) -> NiceAiFull:
+def get_nice_ai_full(
+    conn: Connection, region: Region, ai_id: int, field: bool = False
+) -> NiceAiFull:
     full_ai = raw.get_ai_entity(region, ai_id, field)
     return NiceAiFull(
-        mainAis=(get_nice_ai(region, ai, field) for ai in full_ai.mainAis),
-        relatedAis=(get_nice_ai(region, ai, field) for ai in full_ai.relatedAis),
+        mainAis=(get_nice_ai(conn, region, ai, field) for ai in full_ai.mainAis),
+        relatedAis=(get_nice_ai(conn, region, ai, field) for ai in full_ai.relatedAis),
     )

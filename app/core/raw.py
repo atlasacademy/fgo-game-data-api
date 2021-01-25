@@ -1,6 +1,10 @@
 from typing import List, Set
 
+from fastapi import HTTPException
+from sqlalchemy.engine import Connection
+
 from ..data.gamedata import masters
+from ..db.helpers import skill
 from ..schemas.common import Region, ReverseDepth
 from ..schemas.enums import FUNC_VALS_NOT_BUFF
 from ..schemas.raw import (
@@ -75,6 +79,7 @@ def get_buff_entity_no_reverse(region: Region, buff_id: int) -> BuffEntityNoReve
 
 
 def get_buff_entity(
+    conn: Connection,
     region: Region,
     buff_id: int,
     reverse: bool = False,
@@ -84,7 +89,7 @@ def get_buff_entity(
     if reverse and reverseDepth >= ReverseDepth.function:
         buff_reverse = ReversedBuff(
             function=(
-                get_func_entity(region, func_id, reverse, reverseDepth)
+                get_func_entity(conn, region, func_id, reverse, reverseDepth)
                 for func_id in buff_to_func(region, buff_id)
             )
         )
@@ -109,6 +114,7 @@ def get_func_entity_no_reverse(
 
 
 def get_func_entity(
+    conn: Connection,
     region: Region,
     func_id: int,
     reverse: bool = False,
@@ -121,11 +127,11 @@ def get_func_entity(
     if reverse and reverseDepth >= ReverseDepth.skillNp:
         func_reverse = ReversedFunction(
             skill=(
-                get_skill_entity(region, skill_id, reverse, reverseDepth)
+                get_skill_entity(conn, region, skill_id, reverse, reverseDepth)
                 for skill_id in func_to_skillId(region, func_id)
             ),
             NP=(
-                get_td_entity(region, td_id, reverse, reverseDepth)
+                get_td_entity(conn, region, td_id, reverse, reverseDepth)
                 for td_id in func_to_tdId(region, func_id)
             ),
         )
@@ -134,26 +140,31 @@ def get_func_entity(
 
 
 def get_skill_entity_no_reverse(
-    region: Region, skill_id: int, expand: bool = False
+    conn: Connection, region: Region, skill_id: int, expand: bool = False
 ) -> SkillEntityNoReverse:
-    skill_entity = SkillEntityNoReverse(
-        mstSkill=masters[region].mstSkillId[skill_id],
-        mstSkillDetail=masters[region].mstSkillDetailId.get(skill_id, []),
-        mstSvtSkill=masters[region].mstSvtSkillId.get(skill_id, []),
-        mstSkillLv=masters[region].mstSkillLvId.get(skill_id, []),
-    )
+    main_skill = skill.get_mstSkill(conn, skill_id)
+    if main_skill:
+        skill_entity = SkillEntityNoReverse(
+            mstSkill=main_skill,
+            mstSkillDetail=skill.get_mstSkillDetail(conn, skill_id),
+            mstSvtSkill=skill.get_mstSvtSkill(conn, skill_id=skill_id),
+            mstSkillLv=skill.get_mstSkillLv(conn, skill_id),
+        )
 
-    if expand:
-        for skillLv in skill_entity.mstSkillLv:
-            skillLv.expandedFuncId = [
-                get_func_entity_no_reverse(region, func_id, expand)
-                for func_id in skillLv.funcId
-                if func_id in masters[region].mstFuncId
-            ]
-    return skill_entity
+        if expand:
+            for skillLv in skill_entity.mstSkillLv:
+                skillLv.expandedFuncId = [
+                    get_func_entity_no_reverse(region, func_id, expand)
+                    for func_id in skillLv.funcId
+                    if func_id in masters[region].mstFuncId
+                ]
+        return skill_entity
+    else:
+        raise HTTPException(status_code=404, detail="Skill not found")
 
 
 def get_skill_entity(
+    conn: Connection,
     region: Region,
     skill_id: int,
     reverse: bool = False,
@@ -161,7 +172,7 @@ def get_skill_entity(
     expand: bool = False,
 ) -> SkillEntity:
     skill_entity = SkillEntity.parse_obj(
-        get_skill_entity_no_reverse(region, skill_id, expand)
+        get_skill_entity_no_reverse(conn, region, skill_id, expand)
     )
 
     if reverse and reverseDepth >= ReverseDepth.servant:
@@ -169,15 +180,15 @@ def get_skill_entity(
         passiveSkills = passive_to_svtId(region, skill_id)
         skill_reverse = ReversedSkillTd(
             servant=(
-                get_servant_entity(region, svt_id)
+                get_servant_entity(conn, region, svt_id)
                 for svt_id in activeSkills | passiveSkills
             ),
             MC=(
-                get_mystic_code_entity(region, mc_id)
+                get_mystic_code_entity(conn, region, mc_id)
                 for mc_id in skill_to_MCId(region, skill_id)
             ),
             CC=(
-                get_command_code_entity(region, cc_id)
+                get_command_code_entity(conn, region, cc_id)
                 for cc_id in skill_to_CCId(region, skill_id)
             ),
         )
@@ -208,6 +219,7 @@ def get_td_entity_no_reverse(
 
 
 def get_td_entity(
+    conn: Connection,
     region: Region,
     td_id: int,
     reverse: bool = False,
@@ -219,7 +231,7 @@ def get_td_entity(
     if reverse and reverseDepth >= ReverseDepth.servant:
         td_reverse = ReversedSkillTd(
             servant=(
-                get_servant_entity(region, svt_id.svtId)
+                get_servant_entity(conn, region, svt_id.svtId)
                 for svt_id in td_entity.mstSvtTreasureDevice
             )
         )
@@ -228,7 +240,11 @@ def get_td_entity(
 
 
 def get_servant_entity(
-    region: Region, servant_id: int, expand: bool = False, lore: bool = False
+    conn: Connection,
+    region: Region,
+    servant_id: int,
+    expand: bool = False,
+    lore: bool = False,
 ) -> ServantEntity:
     mstSvt = masters[region].mstSvtId[servant_id]
 
@@ -250,8 +266,8 @@ def get_servant_entity(
         # needed this to get CharaFigure available forms
         mstSvtScript=masters[region].mstSvtScriptId.get(servant_id, []),
         mstSkill=(
-            get_skill_entity_no_reverse(region, skill.skillId, expand)
-            for skill in masters[region].mstSvtSkillSvtId.get(servant_id, [])
+            get_skill_entity_no_reverse(conn, region, skill.skillId, expand)
+            for skill in skill.get_mstSvtSkill(conn, svt_id=servant_id)
             if skill.skillId in masters[region].mstSkillId
         ),
         mstTreasureDevice=(
@@ -263,7 +279,7 @@ def get_servant_entity(
 
     if expand:
         svt_entity.mstSvt.expandedClassPassive = [
-            get_skill_entity_no_reverse(region, passiveSkill, expand)
+            get_skill_entity_no_reverse(conn, region, passiveSkill, expand)
             for passiveSkill in svt_entity.mstSvt.classPassive
             if passiveSkill in masters[region].mstSkillId
         ]
@@ -307,12 +323,12 @@ def get_servant_entity(
 
 
 def get_mystic_code_entity(
-    region: Region, mc_id: int, expand: bool = False
+    conn: Connection, region: Region, mc_id: int, expand: bool = False
 ) -> MysticCodeEntity:
     mc_entity = MysticCodeEntity(
         mstEquip=masters[region].mstEquipId[mc_id],
         mstSkill=(
-            get_skill_entity_no_reverse(region, mc.skillId, expand)
+            get_skill_entity_no_reverse(conn, region, mc.skillId, expand)
             for mc in masters[region].mstEquipSkill
             if mc.equipId == mc_id
         ),
@@ -322,12 +338,12 @@ def get_mystic_code_entity(
 
 
 def get_command_code_entity(
-    region: Region, cc_id: int, expand: bool = False
+    conn: Connection, region: Region, cc_id: int, expand: bool = False
 ) -> CommandCodeEntity:
     cc_entity = CommandCodeEntity(
         mstCommandCode=masters[region].mstCommandCodeId[cc_id],
         mstSkill=(
-            get_skill_entity_no_reverse(region, cc_skill.skillId, expand)
+            get_skill_entity_no_reverse(conn, region, cc_skill.skillId, expand)
             for cc_skill in masters[region].mstCommandCodeSkill
             if cc_skill.commandCodeId == cc_id
         ),

@@ -5,6 +5,8 @@ from typing import Dict
 import orjson
 
 from ..config import Settings, logger
+from ..db.base import engines
+from ..models.raw import metadata, mstSkill, mstSkillDetail, mstSkillLv, mstSvtSkill
 from ..schemas.common import Region
 from ..schemas.enums import FUNC_VALS_NOT_BUFF, CondType, PurchaseType, SvtType
 from ..schemas.raw import BAD_COMBINE_SVT_LIMIT, Master, is_equip, is_servant
@@ -71,7 +73,7 @@ SVT_STUFFS = {
     "mstCombineCostume",
     "mstCombineMaterial",
 }
-SKILL_STUFFS = {"mstSkillDetail", "mstSvtSkill", "mstSkillLv"}
+SKILL_STUFFS = {"mstSvtSkill", "mstSkillLv"}
 TD_STUFFS = {"mstTreasureDeviceDetail", "mstSvtTreasureDevice", "mstTreasureDeviceLv"}
 LATEST_VALENTINE_EVENT = {Region.NA: 80089, Region.JP: 80276}
 region_path = {Region.NA: settings.na_gamedata, Region.JP: settings.jp_gamedata}
@@ -196,7 +198,6 @@ def update_gamedata() -> None:
             ("mstCombineMaterialId", "mstCombineMaterial", "id"),
             ("mstCombineSkillId", "mstCombineSkill", "id"),
             ("mstQuestReleaseId", "mstQuestRelease", "questId"),
-            ("mstSkillDetailId", "mstSkillDetail", "id"),
             ("mstSkillLvId", "mstSkillLv", "skillId"),
             ("mstSvtCardId", "mstSvtCard", "svtId"),
             ("mstSvtChangeId", "mstSvtChange", "svtId"),
@@ -242,9 +243,9 @@ def update_gamedata() -> None:
             ):
                 actIndividualities = set()
                 for skill in master["mstSvtSkillSvtId"][svt["id"]]:
-                    mstSkill = master["mstSkillId"].get(skill["skillId"])
-                    if mstSkill:
-                        actIndividualities.add(tuple(mstSkill["actIndividuality"]))
+                    mst_skill = master["mstSkillId"].get(skill["skillId"])
+                    if mst_skill:
+                        actIndividualities.add(tuple(mst_skill["actIndividuality"]))
                 if len(actIndividualities) == 1:
                     individualities = actIndividualities.pop()
                     if (
@@ -279,3 +280,24 @@ def update_gamedata() -> None:
 
 
 update_gamedata()
+
+
+def update_db() -> None:
+    logger.info("Loading game data into db …")
+    start_loading_time = time.perf_counter()
+    tables = [mstSkill, mstSkillDetail, mstSvtSkill, mstSkillLv]
+    for region_name, gamedata in region_path.items():
+        engine = engines[region_name]
+        metadata.drop_all(engine)
+        metadata.create_all(engine)
+        with engine.connect() as conn:
+            for table in tables:
+                with open(gamedata / f"{table.name}.json", encoding="utf-8") as fp:
+                    data = orjson.loads(fp.read())
+                conn.execute(table.insert(data))
+    db_loading_time = time.perf_counter() - start_loading_time
+    logger.info(f"Loaded game data into db in {db_loading_time:.2f}s.")
+
+
+if settings.write_postgres_data:
+    update_db()

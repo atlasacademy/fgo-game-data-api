@@ -1,6 +1,7 @@
 from typing import List
 
 from fastapi import APIRouter, Depends, HTTPException, Response
+from sqlalchemy.engine import Connection
 
 from ..config import Settings
 from ..core import nice, search
@@ -32,6 +33,7 @@ from ..schemas.search import (
     SvtSearchQueryParams,
     TdSearchParams,
 )
+from .deps import get_db
 from .utils import get_error_code, item_response, language_parameter, list_response
 
 
@@ -58,10 +60,11 @@ async def find_servant(
     search_param: ServantSearchQueryParams = Depends(ServantSearchQueryParams),
     lang: Language = Depends(language_parameter),
     lore: bool = False,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     matches = search.search_servant(search_param)
     return list_response(
-        nice.get_nice_servant_model(search_param.region, svt_id, lang, lore)
+        nice.get_nice_servant_model(conn, search_param.region, svt_id, lang, lore)
         for svt_id in matches
     )
 
@@ -99,12 +102,13 @@ async def get_servant(
     servant_id: int,
     lang: Language = Depends(language_parameter),
     lore: bool = False,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     if servant_id in masters[region].mstSvtServantCollectionNo:
         servant_id = masters[region].mstSvtServantCollectionNo[servant_id]
     if servant_id in masters[region].mstSvtServantCollectionNo.values():
         return item_response(
-            nice.get_nice_servant_model(region, servant_id, lang, lore)
+            nice.get_nice_servant_model(conn, region, servant_id, lang, lore)
         )
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
@@ -128,10 +132,11 @@ async def find_equip(
     search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
     lang: Language = Depends(language_parameter),
     lore: bool = False,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     matches = search.search_equip(search_param)
     return list_response(
-        nice.get_nice_equip_model(search_param.region, svt_id, lang, lore)
+        nice.get_nice_equip_model(conn, search_param.region, svt_id, lang, lore)
         for svt_id in matches
     )
 
@@ -169,11 +174,14 @@ async def get_equip(
     equip_id: int,
     lang: Language = Depends(language_parameter),
     lore: bool = False,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     if equip_id in masters[region].mstSvtEquipCollectionNo:
         equip_id = masters[region].mstSvtEquipCollectionNo[equip_id]
     if equip_id in masters[region].mstSvtEquipCollectionNo.values():
-        return item_response(nice.get_nice_equip_model(region, equip_id, lang, lore))
+        return item_response(
+            nice.get_nice_equip_model(conn, region, equip_id, lang, lore)
+        )
     else:
         raise HTTPException(status_code=404, detail="Equip not found")
 
@@ -191,10 +199,11 @@ async def find_svt(
     search_param: SvtSearchQueryParams = Depends(SvtSearchQueryParams),
     lang: Language = Depends(language_parameter),
     lore: bool = False,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     matches = search.search_servant(search_param)
     return list_response(
-        nice.get_nice_servant_model(search_param.region, svt_id, lang, lore)
+        nice.get_nice_servant_model(conn, search_param.region, svt_id, lang, lore)
         for svt_id in matches
     )
 
@@ -212,6 +221,7 @@ async def get_svt(
     svt_id: int,
     lang: Language = Depends(language_parameter),
     lore: bool = False,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     """
     Get svt info from ID
@@ -220,7 +230,9 @@ async def get_svt(
     The endpoint is not limited to servants or equips ids.
     """
     if svt_id in masters[region].mstSvtId:
-        return item_response(nice.get_nice_servant_model(region, svt_id, lang, lore))
+        return item_response(
+            nice.get_nice_servant_model(conn, region, svt_id, lang, lore)
+        )
     else:
         raise HTTPException(status_code=404, detail="Svt not found")
 
@@ -246,9 +258,13 @@ if settings.documentation_all_nice:
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-async def get_mystic_code(region: Region, mc_id: int) -> Response:
+async def get_mystic_code(
+    region: Region,
+    mc_id: int,
+    conn: Connection = Depends(get_db),
+) -> Response:
     if mc_id in masters[region].mstEquipId:
-        return item_response(nice.get_nice_mystic_code(region, mc_id))
+        return item_response(nice.get_nice_mystic_code(conn, region, mc_id))
     else:
         raise HTTPException(status_code=404, detail="Mystic Code not found")
 
@@ -274,9 +290,13 @@ if settings.documentation_all_nice:
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-async def get_command_code(region: Region, cc_id: int) -> Response:
+async def get_command_code(
+    region: Region,
+    cc_id: int,
+    conn: Connection = Depends(get_db),
+) -> Response:
     if cc_id in masters[region].mstCommandCodeId:
-        return item_response(nice.get_nice_command_code(region, cc_id))
+        return item_response(nice.get_nice_command_code(conn, region, cc_id))
     else:
         raise HTTPException(status_code=404, detail="Command Code not found")
 
@@ -303,11 +323,12 @@ async def find_skill(
     lang: Language = Depends(language_parameter),
     reverse: bool = False,
     reverseData: ReverseData = ReverseData.nice,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     matches = search.search_skill(search_param)
     return list_response(
         nice.get_nice_skill_alone(
-            search_param.region, skill_id, lang, reverse, reverseData=reverseData
+            conn, search_param.region, skill_id, lang, reverse, reverseData=reverseData
         )
         for skill_id in matches
     )
@@ -328,11 +349,12 @@ async def get_skill(
     lang: Language = Depends(language_parameter),
     reverse: bool = False,
     reverseData: ReverseData = ReverseData.nice,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     if skill_id in masters[region].mstSkillId:
         return item_response(
             nice.get_nice_skill_alone(
-                region, skill_id, lang, reverse, reverseData=reverseData
+                conn, region, skill_id, lang, reverse, reverseData=reverseData
             )
         )
     else:
@@ -361,11 +383,12 @@ async def find_td(
     lang: Language = Depends(language_parameter),
     reverse: bool = False,
     reverseData: ReverseData = ReverseData.nice,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     matches = search.search_td(search_param)
     return list_response(
         nice.get_nice_td_alone(
-            search_param.region, td_id, lang, reverse, reverseData=reverseData
+            conn, search_param.region, td_id, lang, reverse, reverseData=reverseData
         )
         for td_id in matches
     )
@@ -386,11 +409,12 @@ async def get_td(
     lang: Language = Depends(language_parameter),
     reverse: bool = False,
     reverseData: ReverseData = ReverseData.nice,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     if np_id in masters[region].mstTreasureDeviceId:
         return item_response(
             nice.get_nice_td_alone(
-                region, np_id, lang, reverse, reverseData=reverseData
+                conn, region, np_id, lang, reverse, reverseData=reverseData
             )
         )
     else:
@@ -421,11 +445,12 @@ async def find_function(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     reverseData: ReverseData = ReverseData.nice,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     matches = search.search_func(search_param)
     return list_response(
         nice.get_nice_func_alone(
-            search_param.region, func_id, lang, reverse, reverseDepth, reverseData
+            conn, search_param.region, func_id, lang, reverse, reverseDepth, reverseData
         )
         for func_id in matches
     )
@@ -448,11 +473,12 @@ async def get_function(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     reverseData: ReverseData = ReverseData.nice,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     if func_id in masters[region].mstFuncId:
         return item_response(
             nice.get_nice_func_alone(
-                region, func_id, lang, reverse, reverseDepth, reverseData
+                conn, region, func_id, lang, reverse, reverseDepth, reverseData
             )
         )
     else:
@@ -483,11 +509,12 @@ async def find_buff(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
     reverseData: ReverseData = ReverseData.nice,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     matches = search.search_buff(search_param)
     return list_response(
         nice.get_nice_buff_alone(
-            search_param.region, buff_id, lang, reverse, reverseDepth, reverseData
+            conn, search_param.region, buff_id, lang, reverse, reverseDepth, reverseData
         )
         for buff_id in matches
     )
@@ -509,11 +536,12 @@ async def get_buff(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
     reverseData: ReverseData = ReverseData.nice,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     if buff_id in masters[region].mstBuffId:
         return item_response(
             nice.get_nice_buff_alone(
-                region, buff_id, lang, reverse, reverseDepth, reverseData
+                conn, region, buff_id, lang, reverse, reverseDepth, reverseData
             )
         )
     else:
@@ -637,15 +665,20 @@ async def get_quest(region: Region, quest_id: int) -> Response:
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
-async def get_ai_field(region: Region, ai_type: AiType, ai_id: int) -> Response:
+async def get_ai_field(
+    region: Region,
+    ai_type: AiType,
+    ai_id: int,
+    conn: Connection = Depends(get_db),
+) -> Response:
     """
     Get the nice AI data from the given AI ID
     """
     if ai_type == AiType.svt and ai_id in masters[region].mstAiId:
-        ai_entity = nice.get_nice_ai_full(region, ai_id, field=False)
+        ai_entity = nice.get_nice_ai_full(conn, region, ai_id, field=False)
         return item_response(ai_entity)
     elif ai_type == AiType.field and ai_id in masters[region].mstAiFieldId:
-        ai_entity = nice.get_nice_ai_full(region, ai_id, field=True)
+        ai_entity = nice.get_nice_ai_full(conn, region, ai_id, field=True)
         return item_response(ai_entity)
     else:
         raise HTTPException(status_code=404, detail="AI not found")

@@ -23,7 +23,8 @@ from .core.nice import (
     get_nice_servant_model,
 )
 from .core.utils import get_lang_en, sort_by_collection_no
-from .data.gamedata import masters, region_path, update_gamedata
+from .data.gamedata import masters, region_path, update_db, update_gamedata
+from .db.base import engines
 from .routers.utils import list_string, list_string_exclude
 from .schemas.base import BaseModelORJson
 from .schemas.common import Language, Region
@@ -70,24 +71,25 @@ def generate_exports() -> None:  # pragma: no cover
     if settings.export_all_nice:
         for region in region_path:
             start_time = time.perf_counter()
+            conn = engines[region].connect()
             logger.info(f"Exporting {region} data …")
             all_equip_data_lore = [
-                get_nice_equip_model(region, svt_id, Language.jp, lore=True)
+                get_nice_equip_model(conn, region, svt_id, Language.jp, lore=True)
                 for svt_id in masters[region].mstSvtEquipCollectionNo.values()
             ]
             all_servant_data_lore = [
-                get_nice_servant_model(region, svt_id, Language.jp, lore=True)
+                get_nice_servant_model(conn, region, svt_id, Language.jp, lore=True)
                 for svt_id in masters[region].mstSvtServantCollectionNo.values()
             ]
             all_item_data = [
                 get_nice_item(region, item_id) for item_id in masters[region].mstItemId
             ]
             all_mc_data = [
-                get_nice_mystic_code(region, mc_id)
+                get_nice_mystic_code(conn, region, mc_id)
                 for mc_id in masters[region].mstEquipId
             ]
             all_cc_data = [
-                get_nice_command_code(region, cc_id)
+                get_nice_command_code(conn, region, cc_id)
                 for cc_id in masters[region].mstCommandCodeId
             ]
             all_basic_servant_data = sort_by_collection_no(
@@ -158,6 +160,8 @@ def generate_exports() -> None:  # pragma: no cover
             for file_name, data in output_files.items():
                 dump(region, file_name, data)
 
+            conn.close()
+
             run_time = time.perf_counter() - start_time
             logger.info(f"Exported {region} data in {run_time:.2f}s.")
 
@@ -216,6 +220,8 @@ def pull_and_update() -> None:  # pragma: no cover
                     commit_hash = fetch_info.commit.hexsha[:6]
                     logger.info(f"Updated {fetch_info.ref} to {commit_hash}")
     update_gamedata()
+    if settings.write_postgres_data:
+        update_db()
     generate_exports()
     update_repo_info()
     clear_bloom_redis_cache()

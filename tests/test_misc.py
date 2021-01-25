@@ -4,6 +4,7 @@ from fastapi import HTTPException
 
 from app.core.nice import get_nice_servant_model, parse_dataVals
 from app.core.utils import get_lang_en, sort_by_collection_no
+from app.db.base import engines
 from app.routers.utils import list_string_exclude
 from app.schemas.basic import BasicServant
 from app.schemas.common import Language, Region, ReverseDepth
@@ -83,14 +84,16 @@ def test_sort_by_collection_no() -> None:
 
 
 def test_list_exclude() -> None:
-    test_data = get_nice_servant_model(Region.JP, 504500, Language.en)
-    excluded_keys = {"profile"}
-    json_data = list_string_exclude([test_data], exclude=excluded_keys)
-    for key in excluded_keys:
-        assert key not in orjson.loads(json_data)
+    with engines[Region.JP].connect() as conn:
+        test_data = get_nice_servant_model(conn, Region.JP, 504500, Language.en)
+        excluded_keys = {"profile"}
+        json_data = list_string_exclude([test_data], exclude=excluded_keys)
+        for key in excluded_keys:
+            assert key not in orjson.loads(json_data)
 
 
 def test_lang_en_export() -> None:
-    jp_nice_servant = get_nice_servant_model(Region.JP, 202900, Language.jp)
-    jp_nice_servant_with_en_name = get_lang_en(jp_nice_servant)
-    assert jp_nice_servant_with_en_name.name == "Asagami Fujino"
+    with engines[Region.JP].connect() as conn:
+        jp_nice_servant = get_nice_servant_model(conn, Region.JP, 202900, Language.jp)
+        jp_nice_servant_with_en_name = get_lang_en(jp_nice_servant)
+        assert jp_nice_servant_with_en_name.name == "Asagami Fujino"

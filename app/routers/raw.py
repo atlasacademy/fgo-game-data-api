@@ -1,6 +1,7 @@
 from typing import List
 
 from fastapi import APIRouter, Depends, HTTPException, Response
+from sqlalchemy.engine import Connection
 
 from ..core import raw, search
 from ..data.gamedata import masters
@@ -30,6 +31,7 @@ from ..schemas.search import (
     SvtSearchQueryParams,
     TdSearchParams,
 )
+from .deps import get_db
 from .utils import get_error_code, item_response, list_response
 
 
@@ -57,10 +59,11 @@ async def find_servant(
     search_param: ServantSearchQueryParams = Depends(ServantSearchQueryParams),
     expand: bool = False,
     lore: bool = False,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     matches = search.search_servant(search_param)
     return list_response(
-        raw.get_servant_entity(search_param.region, svt_id, expand, lore)
+        raw.get_servant_entity(conn, search_param.region, svt_id, expand, lore)
         for svt_id in matches
     )
 
@@ -83,12 +86,16 @@ Otherwise, it will look up the actual ID field. As a result, it can return not s
     responses=get_error_code([404]),
 )
 async def get_servant(
-    region: Region, servant_id: int, expand: bool = False, lore: bool = False
+    region: Region,
+    servant_id: int,
+    expand: bool = False,
+    lore: bool = False,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     if servant_id in masters[region].mstSvtServantCollectionNo:
         servant_id = masters[region].mstSvtServantCollectionNo[servant_id]
     if servant_id in masters[region].mstSvtId:
-        servant_entity = raw.get_servant_entity(region, servant_id, expand, lore)
+        servant_entity = raw.get_servant_entity(conn, region, servant_id, expand, lore)
         return item_response(servant_entity)
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
@@ -107,10 +114,11 @@ async def find_equip(
     search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
     expand: bool = False,
     lore: bool = False,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     matches = search.search_equip(search_param)
     return list_response(
-        raw.get_servant_entity(search_param.region, svt_id, expand, lore)
+        raw.get_servant_entity(conn, search_param.region, svt_id, expand, lore)
         for svt_id in matches
     )
 
@@ -133,12 +141,16 @@ Otherwise, it will look up the actual ID field. As a result, it can return not C
     responses=get_error_code([404]),
 )
 async def get_equip(
-    region: Region, equip_id: int, expand: bool = False, lore: bool = False
+    region: Region,
+    equip_id: int,
+    expand: bool = False,
+    lore: bool = False,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     if equip_id in masters[region].mstSvtEquipCollectionNo:
         equip_id = masters[region].mstSvtEquipCollectionNo[equip_id]
     if equip_id in masters[region].mstSvtId:
-        servant_entity = raw.get_servant_entity(region, equip_id, expand, lore)
+        servant_entity = raw.get_servant_entity(conn, region, equip_id, expand, lore)
         return item_response(servant_entity)
     else:
         raise HTTPException(status_code=404, detail="Equip not found")
@@ -157,10 +169,11 @@ async def find_svt(
     search_param: SvtSearchQueryParams = Depends(SvtSearchQueryParams),
     expand: bool = False,
     lore: bool = False,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     matches = search.search_servant(search_param)
     return list_response(
-        raw.get_servant_entity(search_param.region, svt_id, expand, lore)
+        raw.get_servant_entity(conn, search_param.region, svt_id, expand, lore)
         for svt_id in matches
     )
 
@@ -182,10 +195,14 @@ Only uses actual ID for the lookup.
     responses=get_error_code([404]),
 )
 async def get_svt(
-    region: Region, svt_id: int, expand: bool = False, lore: bool = False
+    region: Region,
+    svt_id: int,
+    expand: bool = False,
+    lore: bool = False,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     if svt_id in masters[region].mstSvtId:
-        servant_entity = raw.get_servant_entity(region, svt_id, expand, lore)
+        servant_entity = raw.get_servant_entity(conn, region, svt_id, expand, lore)
         return item_response(servant_entity)
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
@@ -199,14 +216,19 @@ async def get_svt(
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
-async def get_mystic_code(region: Region, mc_id: int, expand: bool = False) -> Response:
+async def get_mystic_code(
+    region: Region,
+    mc_id: int,
+    expand: bool = False,
+    conn: Connection = Depends(get_db),
+) -> Response:
     """
     Get Mystic Code info from ID
 
     - **expand**: Expand the skills and functions.
     """
     if mc_id in masters[region].mstEquipId:
-        mc_entity = raw.get_mystic_code_entity(region, mc_id, expand)
+        mc_entity = raw.get_mystic_code_entity(conn, region, mc_id, expand)
         return item_response(mc_entity)
     else:
         raise HTTPException(status_code=404, detail="Mystic Code not found")
@@ -221,7 +243,10 @@ async def get_mystic_code(region: Region, mc_id: int, expand: bool = False) -> R
     responses=get_error_code([404]),
 )
 async def get_command_code(
-    region: Region, cc_id: int, expand: bool = False
+    region: Region,
+    cc_id: int,
+    expand: bool = False,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     """
     Get Command Code info from ID
@@ -229,7 +254,7 @@ async def get_command_code(
     - **expand**: Expand the skills and functions.
     """
     if cc_id in masters[region].mstCommandCodeId:
-        cc_entity = raw.get_command_code_entity(region, cc_id, expand)
+        cc_entity = raw.get_command_code_entity(conn, region, cc_id, expand)
         return item_response(cc_entity)
     else:
         raise HTTPException(status_code=404, detail="Command Code not found")
@@ -256,10 +281,13 @@ async def find_skill(
     search_param: SkillSearchParams = Depends(SkillSearchParams),
     reverse: bool = False,
     expand: bool = False,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     matches = search.search_skill(search_param)
     return list_response(
-        raw.get_skill_entity(search_param.region, skill_id, reverse, expand=expand)
+        raw.get_skill_entity(
+            conn, search_param.region, skill_id, reverse, expand=expand
+        )
         for skill_id in matches
     )
 
@@ -274,13 +302,14 @@ async def find_skill(
     responses=get_error_code([404]),
 )
 async def get_skill(
-    region: Region, skill_id: int, reverse: bool = False, expand: bool = False
+    region: Region,
+    skill_id: int,
+    reverse: bool = False,
+    expand: bool = False,
+    conn: Connection = Depends(get_db),
 ) -> Response:
-    if skill_id in masters[region].mstSkillId:
-        skill_entity = raw.get_skill_entity(region, skill_id, reverse, expand=expand)
-        return item_response(skill_entity)
-    else:
-        raise HTTPException(status_code=404, detail="Skill not found")
+    skill_entity = raw.get_skill_entity(conn, region, skill_id, reverse, expand=expand)
+    return item_response(skill_entity)
 
 
 raw_td_extra = """
@@ -304,10 +333,11 @@ async def find_td(
     search_param: TdSearchParams = Depends(TdSearchParams),
     reverse: bool = False,
     expand: bool = False,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     matches = search.search_td(search_param)
     return list_response(
-        raw.get_td_entity(search_param.region, td_id, reverse, expand=expand)
+        raw.get_td_entity(conn, search_param.region, td_id, reverse, expand=expand)
         for td_id in matches
     )
 
@@ -322,10 +352,14 @@ async def find_td(
     responses=get_error_code([404]),
 )
 async def get_td(
-    region: Region, np_id: int, reverse: bool = False, expand: bool = False
+    region: Region,
+    np_id: int,
+    reverse: bool = False,
+    expand: bool = False,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     if np_id in masters[region].mstTreasureDeviceId:
-        td_entity = raw.get_td_entity(region, np_id, reverse, expand=expand)
+        td_entity = raw.get_td_entity(conn, region, np_id, reverse, expand=expand)
         return item_response(td_entity)
     else:
         raise HTTPException(status_code=404, detail="NP not found")
@@ -353,10 +387,13 @@ async def find_function(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     expand: bool = False,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     matches = search.search_func(search_param)
     return list_response(
-        raw.get_func_entity(search_param.region, func_id, reverse, reverseDepth, expand)
+        raw.get_func_entity(
+            conn, search_param.region, func_id, reverse, reverseDepth, expand
+        )
         for func_id in matches
     )
 
@@ -377,10 +414,11 @@ async def get_function(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     expand: bool = False,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     if func_id in masters[region].mstFuncId:
         func_entity = raw.get_func_entity(
-            region, func_id, reverse, reverseDepth, expand
+            conn, region, func_id, reverse, reverseDepth, expand
         )
         return item_response(func_entity)
     else:
@@ -407,10 +445,11 @@ async def find_buff(
     search_param: BuffSearchQueryParams = Depends(BuffSearchQueryParams),
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     matches = search.search_buff(search_param)
     return list_response(
-        raw.get_buff_entity(search_param.region, buff_id, reverse, reverseDepth)
+        raw.get_buff_entity(conn, search_param.region, buff_id, reverse, reverseDepth)
         for buff_id in matches
     )
 
@@ -429,9 +468,10 @@ async def get_buff(
     buff_id: int,
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
+    conn: Connection = Depends(get_db),
 ) -> Response:
     if buff_id in masters[region].mstBuffId:
-        buff_entity = raw.get_buff_entity(region, buff_id, reverse, reverseDepth)
+        buff_entity = raw.get_buff_entity(conn, region, buff_id, reverse, reverseDepth)
         return item_response(buff_entity)
     else:
         raise HTTPException(status_code=404, detail="Buff not found")

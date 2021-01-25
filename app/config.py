@@ -2,7 +2,14 @@ import logging
 from pathlib import Path
 from typing import Optional
 
-from pydantic import BaseSettings, DirectoryPath, HttpUrl, SecretStr, validator
+from pydantic import (
+    BaseSettings,
+    DirectoryPath,
+    HttpUrl,
+    PostgresDsn,
+    SecretStr,
+    validator,
+)
 
 
 project_root = Path(__file__).resolve().parents[1]
@@ -20,6 +27,9 @@ logger.setLevel(uvicorn_logger.level)
 class Settings(BaseSettings):
     na_gamedata: DirectoryPath
     jp_gamedata: DirectoryPath
+    na_postgresdsn: PostgresDsn
+    jp_postgresdsn: PostgresDsn
+    write_postgres_data: bool = True
     asset_url: HttpUrl
     openapi_url: Optional[HttpUrl] = None
     export_all_nice: bool = False
