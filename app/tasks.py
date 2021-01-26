@@ -1,5 +1,6 @@
 import json
 import time
+from pathlib import Path
 from typing import Any, Dict, Iterable
 
 import redis
@@ -25,7 +26,7 @@ from .core.nice import (
 from .core.utils import get_lang_en, sort_by_collection_no
 from .data.gamedata import masters, region_path, update_db, update_gamedata
 from .db.base import engines
-from .routers.utils import list_string, list_string_exclude
+from .routers.utils import list_string
 from .schemas.base import BaseModelORJson
 from .schemas.common import Language, Region
 from .schemas.enums import ALL_ENUMS, TRAIT_NAME
@@ -37,27 +38,41 @@ settings = Settings()
 export_path = project_root / "export"
 
 
-def dump_normal(region: Region, file_name: str, data: Any) -> None:  # pragma: no cover
-    file_name = file_name + ".json"
-    with open(export_path / region.value / file_name, "w", encoding="utf-8") as fp:
+def dump_normal(
+    base_export_path: Path, file_name: str, data: Any
+) -> None:  # pragma: no cover
+    with open(base_export_path / f"{file_name}.json", "w", encoding="utf-8") as fp:
         json.dump(data, fp, ensure_ascii=False)
 
 
 def dump_orjson(
-    region: Region, file_name: str, data: Iterable[BaseModelORJson]
+    base_export_path: Path, file_name: str, data: Iterable[BaseModelORJson]
 ) -> None:  # pragma: no cover
-    file_name = file_name + ".json"
-    if file_name in {
-        "nice_servant.json",
-        "nice_equip.json",
-        "nice_servant_lang_en.json",
-        "nice_equip_lang_en.json",
-    }:
-        with open(export_path / region.value / file_name, "w", encoding="utf-8") as fp:
-            fp.write(list_string_exclude(data, exclude={"profile"}))
-    else:
-        with open(export_path / region.value / file_name, "w", encoding="utf-8") as fp:
-            fp.write(list_string(data))
+    with open(base_export_path / f"{file_name}.json", "w", encoding="utf-8") as fp:
+        fp.write(list_string(data))
+
+
+def dump_svt(
+    base_export_path: Path,
+    file_with_lore: str,
+    file_without_lore: str,
+    data: Iterable[BaseModelORJson],
+) -> None:  # pragma: no cover
+    export_with_lore = "["
+    export_without_lore = "["
+    for item in data:
+        export_with_lore += item.json(exclude_unset=True, exclude_none=True)
+        export_without_lore += item.json(
+            exclude_unset=True, exclude_none=True, exclude={"profile"}
+        )
+    export_with_lore += "]"
+    export_without_lore += "]"
+    with open(base_export_path / f"{file_with_lore}.json", "w", encoding="utf-8") as fp:
+        fp.write(export_with_lore)
+    with open(
+        base_export_path / f"{file_without_lore}.json", "w", encoding="utf-8"
+    ) as fp:
+        fp.write(export_without_lore)
 
 
 def generate_exports() -> None:  # pragma: no cover
@@ -113,10 +128,6 @@ def generate_exports() -> None:  # pragma: no cover
                 ("nice_trait", TRAIT_NAME, dump_normal),
                 ("nice_command_code", all_cc_data, dump_orjson),
                 ("nice_item", all_item_data, dump_orjson),
-                ("nice_servant", all_servant_data_lore, dump_orjson),
-                ("nice_servant_lore", all_servant_data_lore, dump_orjson),
-                ("nice_equip", all_equip_data_lore, dump_orjson),
-                ("nice_equip_lore", all_equip_data_lore, dump_orjson),
                 ("nice_mystic_code", all_mc_data, dump_orjson),
                 ("basic_servant", all_basic_servant_data, dump_orjson),
                 ("basic_equip", all_basic_equip_data, dump_orjson),
@@ -125,6 +136,21 @@ def generate_exports() -> None:  # pragma: no cover
                 ("basic_event", all_basic_event_data, dump_orjson),
                 ("basic_war", all_basic_war_data, dump_orjson),
             ]
+
+            base_export_path = export_path / region.value
+
+            dump_svt(
+                base_export_path,
+                "nice_servant_lore",
+                "nice_servant",
+                all_servant_data_lore,
+            )
+            dump_svt(
+                base_export_path,
+                "nice_equip_lore",
+                "nice_equip",
+                all_equip_data_lore,
+            )
 
             if region == Region.JP:
                 all_basic_servant_en = sort_by_collection_no(
@@ -140,16 +166,24 @@ def generate_exports() -> None:  # pragma: no cover
                 )
                 all_nice_equip_en = (get_lang_en(svt) for svt in all_equip_data_lore)
                 output_files += [
-                    ("nice_servant_lang_en", all_nice_servant_en, dump_orjson),
-                    ("nice_servant_lore_lang_en", all_nice_servant_en, dump_orjson),
-                    ("nice_equip_lang_en", all_nice_equip_en, dump_orjson),
-                    ("nice_equip_lore_lang_en", all_nice_equip_en, dump_orjson),
                     ("basic_servant_lang_en", all_basic_servant_en, dump_orjson),
                     ("basic_equip_lang_en", all_basic_equip_en, dump_orjson),
                 ]
+                dump_svt(
+                    base_export_path,
+                    "nice_servant_lore_lang_en",
+                    "nice_servant_lang_en",
+                    all_nice_servant_en,
+                )
+                dump_svt(
+                    base_export_path,
+                    "nice_equip_lore_lang_en",
+                    "nice_equip_lang_en",
+                    all_nice_equip_en,
+                )
 
             for file_name, data, dump in output_files:
-                dump(region, file_name, data)
+                dump(base_export_path, file_name, data)
 
             conn.close()
 
@@ -210,9 +244,9 @@ def pull_and_update() -> None:  # pragma: no cover
                 for fetch_info in repo.remotes[0].pull():
                     commit_hash = fetch_info.commit.hexsha[:6]
                     logger.info(f"Updated {fetch_info.ref} to {commit_hash}")
-    update_gamedata()
     if settings.write_postgres_data:
         update_db()
+    update_gamedata()
     generate_exports()
     update_repo_info()
     clear_bloom_redis_cache()

@@ -272,9 +272,6 @@ def update_gamedata() -> None:
     logger.info(f"Loaded game data in {data_loading_time:.2f}s.")
 
 
-update_gamedata()
-
-
 def update_db() -> None:  # pragma: no cover
     logger.info("Loading db …")
     start_loading_time = time.perf_counter()
@@ -293,3 +290,6 @@ def update_db() -> None:  # pragma: no cover
 
 if settings.write_postgres_data:  # pragma: no cover
     update_db()
+
+
+update_gamedata()
