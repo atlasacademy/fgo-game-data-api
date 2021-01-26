@@ -60,38 +60,31 @@ def dump_orjson(
             fp.write(list_string(data))
 
 
-def dump(region: Region, file_name: str, data: Any) -> None:  # pragma: no cover
-    if isinstance(data, list) and isinstance(data[0], BaseModelORJson):
-        dump_orjson(region, file_name, data)
-    else:
-        dump_normal(region, file_name, data)
-
-
 def generate_exports() -> None:  # pragma: no cover
     if settings.export_all_nice:
         for region in region_path:
             start_time = time.perf_counter()
             conn = engines[region].connect()
             logger.info(f"Exporting {region} data …")
-            all_equip_data_lore = [
+            all_equip_data_lore = (
                 get_nice_equip_model(conn, region, svt_id, Language.jp, lore=True)
                 for svt_id in masters[region].mstSvtEquipCollectionNo.values()
-            ]
-            all_servant_data_lore = [
+            )
+            all_servant_data_lore = (
                 get_nice_servant_model(conn, region, svt_id, Language.jp, lore=True)
                 for svt_id in masters[region].mstSvtServantCollectionNo.values()
-            ]
-            all_item_data = [
+            )
+            all_item_data = (
                 get_nice_item(region, item_id) for item_id in masters[region].mstItemId
-            ]
-            all_mc_data = [
+            )
+            all_mc_data = (
                 get_nice_mystic_code(conn, region, mc_id)
                 for mc_id in masters[region].mstEquipId
-            ]
-            all_cc_data = [
+            )
+            all_cc_data = (
                 get_nice_command_code(conn, region, cc_id)
                 for cc_id in masters[region].mstCommandCodeId
-            ]
+            )
             all_basic_servant_data = sort_by_collection_no(
                 get_basic_servant(region, svt_id)
                 for svt_id in masters[region].mstSvtServantCollectionNo.values()
@@ -100,38 +93,38 @@ def generate_exports() -> None:  # pragma: no cover
                 get_basic_equip(region, svt_id)
                 for svt_id in masters[region].mstSvtEquipCollectionNo.values()
             )
-            all_basic_mc_data = [
+            all_basic_mc_data = (
                 get_basic_mc(region, mc_id) for mc_id in masters[region].mstEquipId
-            ]
-            all_basic_cc_data = [
+            )
+            all_basic_cc_data = (
                 get_basic_cc(region, cc_id)
                 for cc_id in masters[region].mstCommandCodeId
-            ]
-            all_basic_event_data = [
+            )
+            all_basic_event_data = (
                 get_basic_event(region, event_id)
                 for event_id in masters[region].mstEventId
-            ]
-            all_basic_war_data = [
+            )
+            all_basic_war_data = (
                 get_basic_war(region, war_id) for war_id in masters[region].mstWarId
-            ]
+            )
 
-            output_files = {
-                "nice_enums": ALL_ENUMS,
-                "nice_trait": TRAIT_NAME,
-                "nice_command_code": all_cc_data,
-                "nice_item": all_item_data,
-                "nice_servant": all_servant_data_lore,
-                "nice_servant_lore": all_servant_data_lore,
-                "nice_equip": all_equip_data_lore,
-                "nice_equip_lore": all_equip_data_lore,
-                "nice_mystic_code": all_mc_data,
-                "basic_servant": all_basic_servant_data,
-                "basic_equip": all_basic_equip_data,
-                "basic_mystic_code": all_basic_mc_data,
-                "basic_command_code": all_basic_cc_data,
-                "basic_event": all_basic_event_data,
-                "basic_war": all_basic_war_data,
-            }
+            output_files = [
+                ("nice_enums", ALL_ENUMS, dump_normal),
+                ("nice_trait", TRAIT_NAME, dump_normal),
+                ("nice_command_code", all_cc_data, dump_orjson),
+                ("nice_item", all_item_data, dump_orjson),
+                ("nice_servant", all_servant_data_lore, dump_orjson),
+                ("nice_servant_lore", all_servant_data_lore, dump_orjson),
+                ("nice_equip", all_equip_data_lore, dump_orjson),
+                ("nice_equip_lore", all_equip_data_lore, dump_orjson),
+                ("nice_mystic_code", all_mc_data, dump_orjson),
+                ("basic_servant", all_basic_servant_data, dump_orjson),
+                ("basic_equip", all_basic_equip_data, dump_orjson),
+                ("basic_mystic_code", all_basic_mc_data, dump_orjson),
+                ("basic_command_code", all_basic_cc_data, dump_orjson),
+                ("basic_event", all_basic_event_data, dump_orjson),
+                ("basic_war", all_basic_war_data, dump_orjson),
+            ]
 
             if region == Region.JP:
                 all_basic_servant_en = sort_by_collection_no(
@@ -142,22 +135,20 @@ def generate_exports() -> None:  # pragma: no cover
                     get_basic_equip(region, svt_id, Language.en)
                     for svt_id in masters[region].mstSvtEquipCollectionNo.values()
                 )
-                all_nice_servant_en = [
+                all_nice_servant_en = (
                     get_lang_en(svt) for svt in all_servant_data_lore
-                ]
-                all_nice_equip_en = [get_lang_en(svt) for svt in all_equip_data_lore]
-                output_files.update(
-                    {
-                        "nice_servant_lang_en": all_nice_servant_en,
-                        "nice_servant_lore_lang_en": all_nice_servant_en,
-                        "nice_equip_lang_en": all_nice_equip_en,
-                        "nice_equip_lore_lang_en": all_nice_equip_en,
-                        "basic_servant_lang_en": all_basic_servant_en,
-                        "basic_equip_lang_en": all_basic_equip_en,
-                    }
                 )
+                all_nice_equip_en = (get_lang_en(svt) for svt in all_equip_data_lore)
+                output_files += [
+                    ("nice_servant_lang_en", all_nice_servant_en, dump_orjson),
+                    ("nice_servant_lore_lang_en", all_nice_servant_en, dump_orjson),
+                    ("nice_equip_lang_en", all_nice_equip_en, dump_orjson),
+                    ("nice_equip_lore_lang_en", all_nice_equip_en, dump_orjson),
+                    ("basic_servant_lang_en", all_basic_servant_en, dump_orjson),
+                    ("basic_equip_lang_en", all_basic_equip_en, dump_orjson),
+                ]
 
-            for file_name, data in output_files.items():
+            for file_name, data, dump in output_files:
                 dump(region, file_name, data)
 
             conn.close()
