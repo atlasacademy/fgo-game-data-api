@@ -62,7 +62,7 @@ async def find_servant(
     lore: bool = False,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    matches = search.search_servant(search_param)
+    matches = search.search_servant(conn, search_param)
     return list_response(
         nice.get_nice_servant_model(conn, search_param.region, svt_id, lang, lore)
         for svt_id in matches
@@ -201,7 +201,7 @@ async def find_svt(
     lore: bool = False,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    matches = search.search_servant(search_param)
+    matches = search.search_servant(conn, search_param)
     return list_response(
         nice.get_nice_servant_model(conn, search_param.region, svt_id, lang, lore)
         for svt_id in matches

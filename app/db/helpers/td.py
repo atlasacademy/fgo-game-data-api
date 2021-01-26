@@ -4,10 +4,10 @@ from sqlalchemy.engine import Connection
 from sqlalchemy.sql import select
 
 from ...models.raw import (
+    mstSvtTreasureDevice,
     mstTreasureDevice,
     mstTreasureDeviceDetail,
     mstTreasureDeviceLv,
-    mstSvtTreasureDevice,
 )
 
 

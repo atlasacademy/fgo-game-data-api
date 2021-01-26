@@ -1,6 +1,7 @@
 from typing import List, Optional
 
 from fastapi import APIRouter, Depends, HTTPException, Response
+from sqlalchemy.engine import Connection
 
 from ..config import Settings
 from ..core import basic, search
@@ -27,6 +28,7 @@ from ..schemas.search import (
     SvtSearchQueryParams,
     TdSearchParams,
 )
+from .deps import get_db
 from .utils import get_error_code, item_response, language_parameter, list_response
 
 
@@ -51,8 +53,9 @@ basic_find_servant_extra = """
 async def find_servant(
     search_param: ServantSearchQueryParams = Depends(ServantSearchQueryParams),
     lang: Optional[Language] = None,
+    conn: Connection = Depends(get_db),
 ) -> Response:
-    matches = search.search_servant(search_param, limit=10000)
+    matches = search.search_servant(conn, search_param, limit=10000)
     return list_response(
         basic.get_basic_servant(search_param.region, svt_id, lang) for svt_id in matches
     )
@@ -164,8 +167,9 @@ async def get_equip(
 async def find_svt(
     search_param: SvtSearchQueryParams = Depends(SvtSearchQueryParams),
     lang: Optional[Language] = None,
+    conn: Connection = Depends(get_db),
 ) -> Response:
-    matches = search.search_servant(search_param, limit=10000)
+    matches = search.search_servant(conn, search_param, limit=10000)
     return list_response(
         basic.get_basic_servant(search_param.region, svt_id, lang) for svt_id in matches
     )

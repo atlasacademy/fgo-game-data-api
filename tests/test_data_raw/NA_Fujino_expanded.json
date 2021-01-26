@@ -5213,9 +5213,9 @@
         "individuality": [3002, 4002, 4007],
         "script": {
           "limitSeqId_1": 202901,
+          "limitSeqId_2": 202901,
           "limitSeqId_3": 202902,
-          "limitSeqId_4": 202902,
-          "limitSeqId_2": 202901
+          "limitSeqId_4": 202902
         },
         "id": 202901,
         "seqId": 202900,

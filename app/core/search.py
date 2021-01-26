@@ -2,9 +2,11 @@ from typing import Iterable, List, Set, Union
 
 from fastapi import HTTPException
 from fuzzywuzzy import fuzz, utils
+from sqlalchemy.engine import Connection
 
 from ..data.gamedata import masters
 from ..data.translations import TRANSLATIONS
+from ..db.helpers.svt import get_related_voice_id
 from ..schemas.common import Region
 from ..schemas.enums import (
     ATTRIBUTE_NAME_REVERSE,
@@ -128,6 +130,7 @@ def voice_contain_cond_value(
 
 
 def search_servant(
+    conn: Connection,
     search_param: Union[ServantSearchQueryParams, SvtSearchQueryParams],
     limit: int = 100,
 ) -> List[int]:
@@ -183,16 +186,8 @@ def search_servant(
             for svt_id in converted_to_svt_id
             for group in masters[search_param.region].mstSvtGroupSvtId.get(svt_id, [])
         }
-        matches = [
-            svt
-            for svt in matches
-            if any(
-                voice_contain_cond_value(svt_voice, voice_cond_svt, voice_cond_group)
-                for svt_voice in masters[search_param.region].mstSvtVoiceId.get(
-                    svt.id, []
-                )
-            )
-        ]
+        voice_svt_id = get_related_voice_id(conn, voice_cond_svt, voice_cond_group)
+        matches = [svt for svt in matches if svt.id in voice_svt_id]
 
     if search_param.name:
         matches = [

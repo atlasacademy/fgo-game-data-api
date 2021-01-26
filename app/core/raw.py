@@ -4,7 +4,7 @@ from fastapi import HTTPException
 from sqlalchemy.engine import Connection
 
 from ..data.gamedata import masters
-from ..db.helpers import ai, skill, td
+from ..db.helpers import ai, skill, svt, td
 from ..schemas.common import Region, ReverseDepth
 from ..schemas.enums import FUNC_VALS_NOT_BUFF
 from ..schemas.raw import (
@@ -289,17 +289,17 @@ def get_servant_entity(
         ]
 
     if lore:
-        svt_entity.mstSvtComment = masters[region].mstSvtCommentId.get(servant_id, [])
+        svt_entity.mstSvtComment = svt.get_mstSvtComment(conn, servant_id)
 
         # Try to match order in the voice tab in game
         voices = []
         subtitles = []
 
         for change in svt_entity.mstSvtChange:
-            voices += masters[region].mstSvtVoiceId.get(change.svtVoiceId, [])
+            voices += svt.get_mstSvtVoice(conn, change.svtVoiceId)
             subtitles += masters[region].mstSubtitleId.get(change.svtVoiceId, [])
 
-        voices += masters[region].mstSvtVoiceId.get(servant_id, [])
+        voices += svt.get_mstSvtVoice(conn, servant_id)
         subtitles += masters[region].mstSubtitleId.get(servant_id, [])
 
         for main_id, sub_id in (
@@ -308,7 +308,7 @@ def get_servant_entity(
         ):
             if servant_id == masters[region].mstConstantId[main_id]:
                 sub_svt_id = masters[region].mstConstantId[sub_id]
-                voices += masters[region].mstSvtVoiceId.get(sub_svt_id, [])
+                voices += svt.get_mstSvtVoice(conn, sub_svt_id)
 
         # Moriarty deadheat summer lines use his hidden name svt_id
         for svt_id in [change.svtVoiceId for change in svt_entity.mstSvtChange] + [
@@ -317,7 +317,7 @@ def get_servant_entity(
             if voiceRelations := masters[region].mstSvtVoiceRelationId.get(svt_id):
                 for voiceRelation in voiceRelations:
                     relation_id = voiceRelation.relationSvtId
-                    voices += masters[region].mstSvtVoiceId.get(relation_id, [])
+                    voices += svt.get_mstSvtVoice(conn, relation_id)
                     subtitles += masters[region].mstSubtitleId.get(relation_id, [])
 
         svt_entity.mstSvtVoice = voices

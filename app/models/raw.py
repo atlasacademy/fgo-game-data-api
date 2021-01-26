@@ -184,6 +184,60 @@ mstTreasureDeviceLv = Table(
 )
 
 
+mstSvtVoice = Table(
+    "mstSvtVoice",
+    metadata,
+    Column("scriptJson", JSONB),
+    Column("id", Integer, index=True),
+    Column("voicePrefix", Integer),
+    Column("type", Integer),
+)
+
+
+mstSvtLimit = Table(
+    "mstSvtLimit",
+    metadata,
+    Column("weaponColor", Integer),
+    Column("svtId", Integer, index=True),
+    Column("limitCount", Integer),
+    Column("rarity", Integer),
+    Column("lvMax", Integer),
+    Column("weaponGroup", Integer),
+    Column("weaponScale", Integer),
+    Column("effectFolder", Integer),
+    Column("hpBase", Integer),
+    Column("hpMax", Integer),
+    Column("atkBase", Integer),
+    Column("atkMax", Integer),
+    Column("criticalWeight", Integer),
+    Column("power", Integer),
+    Column("defense", Integer),
+    Column("agility", Integer),
+    Column("magic", Integer),
+    Column("luck", Integer),
+    Column("treasureDevice", Integer),
+    Column("policy", Integer),
+    Column("personality", Integer),
+    Column("deity", Integer),
+    Column("stepProbability", Integer),
+    Column("strParam", String),
+)
+
+
+mstSvtComment = Table(
+    "mstSvtComment",
+    metadata,
+    Column("condValues", ARRAY(Integer), nullable=True),
+    Column("svtId", Integer, index=True),
+    Column("id", Integer),
+    Column("priority", Integer),
+    Column("condMessage", String),
+    Column("comment", String),
+    Column("condType", Integer),
+    Column("condValue2", Integer),
+)
+
+
 mstAi = Table(
     "mstAi",
     metadata,
@@ -239,6 +293,8 @@ TABLES_TO_BE_LOADED = [
     mstTreasureDeviceDetail,
     mstSvtTreasureDevice,
     mstTreasureDeviceLv,
+    mstSvtVoice,
+    mstSvtComment,
     mstAi,
     mstAiField,
     mstAiAct,
