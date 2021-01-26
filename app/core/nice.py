@@ -1732,7 +1732,7 @@ def get_nice_ai(
 def get_nice_ai_full(
     conn: Connection, region: Region, ai_id: int, field: bool = False
 ) -> NiceAiFull:
-    full_ai = raw.get_ai_entity(region, ai_id, field)
+    full_ai = raw.get_ai_entity(conn, ai_id, field)
     return NiceAiFull(
         mainAis=(get_nice_ai(conn, region, ai, field) for ai in full_ai.mainAis),
         relatedAis=(get_nice_ai(conn, region, ai, field) for ai in full_ai.relatedAis),

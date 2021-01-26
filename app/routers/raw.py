@@ -580,15 +580,12 @@ async def get_quest(region: Region, quest_id: int) -> Response:
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
-async def get_ai_field(region: Region, ai_type: AiType, ai_id: int) -> Response:
+async def get_ai_field(
+    ai_type: AiType, ai_id: int, conn: Connection = Depends(get_db)
+) -> Response:
     """
     Get the AI data from the given AI ID
     """
-    if ai_type == AiType.svt and ai_id in masters[region].mstAiId:
-        ai_entity = raw.get_ai_entity(region, ai_id, field=False)
-        return item_response(ai_entity)
-    elif ai_type == AiType.field and ai_id in masters[region].mstAiFieldId:
-        ai_entity = raw.get_ai_entity(region, ai_id, field=True)
-        return item_response(ai_entity)
-    else:
-        raise HTTPException(status_code=404, detail="AI not found")
+    field_flag = ai_type == AiType.field
+    ai_entity = raw.get_ai_entity(conn, ai_id, field=field_flag)
+    return item_response(ai_entity)

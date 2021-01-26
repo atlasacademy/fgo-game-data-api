@@ -351,14 +351,11 @@ async def get_skill(
     reverseData: ReverseData = ReverseData.nice,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    if skill_id in masters[region].mstSkillId:
-        return item_response(
-            nice.get_nice_skill_alone(
-                conn, region, skill_id, lang, reverse, reverseData=reverseData
-            )
+    return item_response(
+        nice.get_nice_skill_alone(
+            conn, region, skill_id, lang, reverse, reverseData=reverseData
         )
-    else:
-        raise HTTPException(status_code=404, detail="Skill not found")
+    )
 
 
 nice_td_extra = """
@@ -674,11 +671,6 @@ async def get_ai_field(
     """
     Get the nice AI data from the given AI ID
     """
-    if ai_type == AiType.svt and ai_id in masters[region].mstAiId:
-        ai_entity = nice.get_nice_ai_full(conn, region, ai_id, field=False)
-        return item_response(ai_entity)
-    elif ai_type == AiType.field and ai_id in masters[region].mstAiFieldId:
-        ai_entity = nice.get_nice_ai_full(conn, region, ai_id, field=True)
-        return item_response(ai_entity)
-    else:
-        raise HTTPException(status_code=404, detail="AI not found")
+    field_flag = ai_type == AiType.field
+    ai_entity = nice.get_nice_ai_full(conn, region, ai_id, field=field_flag)
+    return item_response(ai_entity)

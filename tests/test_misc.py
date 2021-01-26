@@ -5,6 +5,7 @@ from fastapi import HTTPException
 from app.core.nice import get_nice_servant_model, parse_dataVals
 from app.core.utils import get_lang_en, sort_by_collection_no
 from app.db.base import engines
+from app.db.helpers import skill
 from app.routers.utils import list_string_exclude
 from app.schemas.basic import BasicServant
 from app.schemas.common import Language, Region, ReverseDepth
@@ -97,3 +98,8 @@ def test_lang_en_export() -> None:
         jp_nice_servant = get_nice_servant_model(conn, Region.JP, 202900, Language.jp)
         jp_nice_servant_with_en_name = get_lang_en(jp_nice_servant)
         assert jp_nice_servant_with_en_name.name == "Asagami Fujino"
+
+
+def test_helpers_skill_get_mstSvtSkill() -> None:
+    with pytest.raises(ValueError), engines[Region.JP].connect() as conn:
+        skill.get_mstSvtSkill(conn)

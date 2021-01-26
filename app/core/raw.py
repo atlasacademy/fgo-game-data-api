@@ -4,7 +4,7 @@ from fastapi import HTTPException
 from sqlalchemy.engine import Connection
 
 from ..data.gamedata import masters
-from ..db.helpers import skill
+from ..db.helpers import ai, skill
 from ..schemas.common import Region, ReverseDepth
 from ..schemas.enums import FUNC_VALS_NOT_BUFF
 from ..schemas.raw import (
@@ -387,23 +387,33 @@ def get_quest_phase_entity(
     )
 
 
-def get_mst_ai(region: Region, ai_id: int, field: bool = False) -> List[MstAi]:
+def get_mst_ai(
+    conn: Connection, ai_id: int, field: bool = False, throw_error: bool = True
+) -> List[MstAi]:
     if field:
-        return masters[region].mstAiFieldId.get(ai_id, [])
+        mstAiFields = ai.get_mstAiField(conn, ai_id)
+        if mstAiFields or not throw_error:
+            return [MstAi.parse_obj(mst_ai) for mst_ai in mstAiFields]
+        else:
+            raise HTTPException(status_code=404, detail="AI not found")
     else:
-        return masters[region].mstAiId.get(ai_id, [])
+        mstAis = ai.get_mstAi(conn, ai_id)
+        if mstAis or not throw_error:
+            return [MstAi.parse_obj(mst_ai) for mst_ai in mstAis]
+        else:
+            raise HTTPException(status_code=404, detail="AI not found")
 
 
-def get_ai_entity(region: Region, ai_id: int, field: bool = False) -> AiEntity:
+def get_ai_entity(conn: Connection, ai_id: int, field: bool = False) -> AiEntity:
     retreived_ais = {ai_id}
 
-    mainAis = get_mst_ai(region, ai_id, field)
+    mainAis = get_mst_ai(conn, ai_id, field)
 
     to_be_retrieved_ais = {ai.avals[0] for ai in mainAis if ai.avals[0] > 0}
     relatedAis: List[MstAi] = []
     while to_be_retrieved_ais:
         for related_ai_id in to_be_retrieved_ais:
-            relatedAis += get_mst_ai(region, related_ai_id, field)
+            relatedAis += get_mst_ai(conn, related_ai_id, field, throw_error=False)
 
         retreived_ais |= to_be_retrieved_ais
         to_be_retrieved_ais = {
@@ -414,11 +424,13 @@ def get_ai_entity(region: Region, ai_id: int, field: bool = False) -> AiEntity:
 
     return AiEntity(
         mainAis=(
-            OneAiEntity(mstAi=ai, mstAiAct=masters[region].mstAiActId[ai.aiActId])
-            for ai in mainAis
+            OneAiEntity(mstAi=main_ai, mstAiAct=ai.get_mstAiAct(conn, main_ai.aiActId))
+            for main_ai in mainAis
         ),
         relatedAis=(
-            OneAiEntity(mstAi=ai, mstAiAct=masters[region].mstAiActId[ai.aiActId])
-            for ai in relatedAis
+            OneAiEntity(
+                mstAi=related_ai, mstAiAct=ai.get_mstAiAct(conn, related_ai.aiActId)
+            )
+            for related_ai in relatedAis
         ),
     )

@@ -6,7 +6,7 @@ import orjson
 
 from ..config import Settings, logger
 from ..db.base import engines
-from ..models.raw import metadata, mstSkill, mstSkillDetail, mstSkillLv, mstSvtSkill
+from ..models.raw import TABLES_TO_BE_LOADED, metadata
 from ..schemas.common import Region
 from ..schemas.enums import FUNC_VALS_NOT_BUFF, CondType, PurchaseType, SvtType
 from ..schemas.raw import BAD_COMBINE_SVT_LIMIT, Master, is_equip, is_servant
@@ -34,7 +34,6 @@ MASTER_WITH_ID = {
     "mstMap",
     "mstSpot",
     "mstBgm",
-    "mstAiAct",
 }
 MASTER_WITHOUT_ID = {
     "mstEquipExp",
@@ -54,6 +53,7 @@ MASTER_WITHOUT_ID = {
     "mstAi",
     "mstAiField",
     "mstFuncGroup",
+    "mstAiAct",
 }
 SVT_STUFFS = {
     "mstSvtExp",
@@ -225,9 +225,7 @@ def update_gamedata() -> None:
             ("mstShopReleaseShopId", "mstShopRelease", "shopId"),
             ("mstCommandCodeCommentId", "mstCommandCodeComment", "commandCodeId"),
             ("mstQuestConsumeItemId", "mstQuestConsumeItem", "questId"),
-            ("mstAiId", "mstAi", "id"),
             ("aiActToAiSvt", "mstAi", "aiActId"),
-            ("mstAiFieldId", "mstAiField", "id"),
             ("aiActToAiField", "mstAiField", "aiActId"),
             ("mstFuncGroupId", "mstFuncGroup", "funcId"),
         ):
@@ -282,22 +280,21 @@ def update_gamedata() -> None:
 update_gamedata()
 
 
-def update_db() -> None:
-    logger.info("Loading game data into db …")
+def update_db() -> None:  # pragma: no cover
+    logger.info("Loading db …")
     start_loading_time = time.perf_counter()
-    tables = [mstSkill, mstSkillDetail, mstSvtSkill, mstSkillLv]
     for region_name, gamedata in region_path.items():
         engine = engines[region_name]
         metadata.drop_all(engine)
         metadata.create_all(engine)
         with engine.connect() as conn:
-            for table in tables:
+            for table in TABLES_TO_BE_LOADED:
                 with open(gamedata / f"{table.name}.json", encoding="utf-8") as fp:
                     data = orjson.loads(fp.read())
                 conn.execute(table.insert(data))
     db_loading_time = time.perf_counter() - start_loading_time
-    logger.info(f"Loaded game data into db in {db_loading_time:.2f}s.")
+    logger.info(f"Loaded db in {db_loading_time:.2f}s.")
 
 
-if settings.write_postgres_data:
+if settings.write_postgres_data:  # pragma: no cover
     update_db()
