@@ -1,9 +1,11 @@
+from inspect import cleandoc
 from typing import List, Set
 
 from sqlalchemy.engine import Connection
 from sqlalchemy.sql import select, text
 
 from ...models.raw import mstSvtComment, mstSvtVoice
+from ...schemas.enums import VoiceCondType
 from ...schemas.raw import MstSvtComment, MstSvtVoice
 
 
@@ -34,27 +36,29 @@ def get_mstSvtVoice(conn: Connection, svt_id: int) -> List[MstSvtVoice]:
 def get_related_voice_id(
     conn: Connection, cond_svt_value: Set[int], cond_group_value: Set[int]
 ) -> Set[int]:
-    cond_svt_value_str = [str(i) for i in cond_svt_value]
-    cond_group_value_str = [str(i) for i in cond_group_value]
     stmt = text(
-        """
-        SELECT
-        DISTINCT "mstSvtVoice".id
-        FROM "mstSvtVoice",
-        jsonb_array_elements("mstSvtVoice"."scriptJson") scriptJsonExpanded,
-        jsonb_array_elements(scriptJsonExpanded->'conds') condsExpanded
-        WHERE
-        (condsExpanded->>'condType' = '4' AND condsExpanded->>'value' = ANY(:svtvalue))
-        OR
-        (condsExpanded->>'condType' = '5' AND condsExpanded->>'value' = ANY(:groupvalue))
-        """
+        cleandoc(
+            """
+            SELECT
+            DISTINCT "mstSvtVoice".id
+            FROM "mstSvtVoice",
+            jsonb_array_elements("mstSvtVoice"."scriptJson") scriptJsonExpanded,
+            jsonb_array_elements(scriptJsonExpanded->'conds') condsExpanded
+            WHERE
+            (condsExpanded->>'condType' = :svtCond AND condsExpanded->>'value' = ANY(:svtValue))
+            OR
+            (condsExpanded->>'condType' = :groupCond AND condsExpanded->>'value' = ANY(:groupValue))
+            """
+        )
     )
-    fetched: Set[int] = set(
+    fetched: Set[int] = {
         svt_id[0]
         for svt_id in conn.execute(
             stmt,
-            svtvalue=cond_svt_value_str,
-            groupvalue=cond_group_value_str,
+            svtCond=str(VoiceCondType.SVT_GET.value),
+            groupCond=str(VoiceCondType.SVT_GROUP.value),
+            svtValue=[str(i) for i in cond_svt_value],
+            groupValue=[str(i) for i in cond_group_value],
         ).fetchall()
-    )
+    }
     return fetched

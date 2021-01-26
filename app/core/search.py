@@ -22,9 +22,7 @@ from ..schemas.enums import (
     SVT_TYPE_NAME_REVERSE,
     TRAIT_NAME_REVERSE,
     Trait,
-    VoiceCondType,
 )
-from ..schemas.raw import MstSvtVoice
 from ..schemas.search import (
     BuffSearchQueryParams,
     EquipSearchQueryParams,
@@ -111,22 +109,6 @@ def match_name(search_param: str, name: str) -> bool:
         return fuzz.ratio(sorted_sect, combined_1to2) > NAME_MATCH_THRESHOLD
     else:
         return fuzz.ratio(combined_2to1, combined_1to2) > NAME_MATCH_THRESHOLD
-
-
-def voice_contain_cond_value(
-    svt_voice: MstSvtVoice, cond_svt_value: Set[int], cond_group_value: Set[int]
-) -> bool:
-    for script in svt_voice.scriptJson:
-        for cond in script.conds:
-            if (
-                cond.condType == VoiceCondType.SVT_GET and cond.value in cond_svt_value
-            ) or (
-                cond.condType == VoiceCondType.SVT_GROUP
-                and cond.value in cond_group_value
-            ):
-                return True
-
-    return False
 
 
 def search_servant(

@@ -1,7 +1,7 @@
 import json
 import time
 from pathlib import Path
-from typing import Any, Dict, Iterable
+from typing import Any, Dict, Iterable, Union
 
 import redis
 from git import Repo
@@ -23,13 +23,15 @@ from .core.nice import (
     get_nice_mystic_code,
     get_nice_servant_model,
 )
-from .core.utils import get_lang_en, sort_by_collection_no
+from .core.utils import get_safe, sort_by_collection_no
 from .data.gamedata import masters, region_path, update_db, update_gamedata
+from .data.translations import TRANSLATIONS
 from .db.base import engines
 from .routers.utils import list_string
 from .schemas.base import BaseModelORJson
 from .schemas.common import Language, Region
 from .schemas.enums import ALL_ENUMS, TRAIT_NAME
+from .schemas.nice import NiceEquip, NiceServant
 
 
 settings = Settings()
@@ -53,26 +55,51 @@ def dump_orjson(
 
 
 def dump_svt(
+    region: Region,
     base_export_path: Path,
-    file_with_lore: str,
-    file_without_lore: str,
-    data: Iterable[BaseModelORJson],
+    file_name: str,
+    data: Iterable[Union[NiceServant, NiceEquip]],
 ) -> None:  # pragma: no cover
     export_with_lore = "["
     export_without_lore = "["
+    export_with_lore_en = "["
+    export_without_lore_en = "["
+
     for item in data:
         export_with_lore += item.json(exclude_unset=True, exclude_none=True)
         export_without_lore += item.json(
             exclude_unset=True, exclude_none=True, exclude={"profile"}
         )
-    export_with_lore += "]"
-    export_without_lore += "]"
-    with open(base_export_path / f"{file_with_lore}.json", "w", encoding="utf-8") as fp:
+        export_with_lore += ","
+        export_without_lore += ","
+        if region == Region.JP:
+            item.name = get_safe(TRANSLATIONS, item.name)
+            export_with_lore_en += item.json(exclude_unset=True, exclude_none=True)
+            export_without_lore_en += item.json(
+                exclude_unset=True, exclude_none=True, exclude={"profile"}
+            )
+            export_with_lore_en += ","
+            export_without_lore_en += ","
+
+    export_with_lore = export_with_lore.rstrip(",") + "]"
+    export_without_lore = export_without_lore.rstrip(",") + "]"
+    export_with_lore_en = export_with_lore_en.rstrip(",") + "]"
+    export_without_lore_en = export_without_lore_en.rstrip(",") + "]"
+
+    with open(base_export_path / f"{file_name}_lore.json", "w", encoding="utf-8") as fp:
         fp.write(export_with_lore)
-    with open(
-        base_export_path / f"{file_without_lore}.json", "w", encoding="utf-8"
-    ) as fp:
+    with open(base_export_path / f"{file_name}.json", "w", encoding="utf-8") as fp:
         fp.write(export_without_lore)
+
+    if region == Region.JP:
+        with open(
+            base_export_path / f"{file_name}_lore_lang_en.json", "w", encoding="utf-8"
+        ) as fp:
+            fp.write(export_with_lore_en)
+        with open(
+            base_export_path / f"{file_name}_lang_en.json", "w", encoding="utf-8"
+        ) as fp:
+            fp.write(export_without_lore_en)
 
 
 def generate_exports() -> None:  # pragma: no cover
@@ -140,14 +167,14 @@ def generate_exports() -> None:  # pragma: no cover
             base_export_path = export_path / region.value
 
             dump_svt(
+                region,
                 base_export_path,
-                "nice_servant_lore",
                 "nice_servant",
                 all_servant_data_lore,
             )
             dump_svt(
+                region,
                 base_export_path,
-                "nice_equip_lore",
                 "nice_equip",
                 all_equip_data_lore,
             )
@@ -161,26 +188,10 @@ def generate_exports() -> None:  # pragma: no cover
                     get_basic_equip(region, svt_id, Language.en)
                     for svt_id in masters[region].mstSvtEquipCollectionNo.values()
                 )
-                all_nice_servant_en = (
-                    get_lang_en(svt) for svt in all_servant_data_lore
-                )
-                all_nice_equip_en = (get_lang_en(svt) for svt in all_equip_data_lore)
                 output_files += [
                     ("basic_servant_lang_en", all_basic_servant_en, dump_orjson),
                     ("basic_equip_lang_en", all_basic_equip_en, dump_orjson),
                 ]
-                dump_svt(
-                    base_export_path,
-                    "nice_servant_lore_lang_en",
-                    "nice_servant_lang_en",
-                    all_nice_servant_en,
-                )
-                dump_svt(
-                    base_export_path,
-                    "nice_equip_lore_lang_en",
-                    "nice_equip_lang_en",
-                    all_nice_equip_en,
-                )
 
             for file_name, data, dump in output_files:
                 dump(base_export_path, file_name, data)
