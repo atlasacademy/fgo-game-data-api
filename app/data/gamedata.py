@@ -74,7 +74,7 @@ SVT_STUFFS = {
     "mstCombineMaterial",
 }
 SKILL_STUFFS = {"mstSvtSkill", "mstSkillLv"}
-TD_STUFFS = {"mstTreasureDeviceDetail", "mstSvtTreasureDevice", "mstTreasureDeviceLv"}
+TD_STUFFS = {"mstSvtTreasureDevice", "mstTreasureDeviceLv"}
 LATEST_VALENTINE_EVENT = {Region.NA: 80089, Region.JP: 80276}
 region_path = {Region.NA: settings.na_gamedata, Region.JP: settings.jp_gamedata}
 
@@ -214,7 +214,6 @@ def update_gamedata() -> None:
             ("mstSvtTreasureDeviceSvtId", "mstSvtTreasureDevice", "svtId"),
             ("mstSvtVoiceId", "mstSvtVoice", "id"),
             ("mstSvtVoiceRelationId", "mstSvtVoiceRelation", "svtId"),
-            ("mstTreasureDeviceDetailId", "mstTreasureDeviceDetail", "id"),
             ("mstTreasureDeviceLvId", "mstTreasureDeviceLv", "treaureDeviceId"),
             ("mstMapWarId", "mstMap", "warId"),
             ("mstSpotWarId", "mstSpot", "warId"),

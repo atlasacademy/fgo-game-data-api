@@ -115,6 +115,75 @@ mstSkillLv = Table(
 )
 
 
+mstTreasureDevice = Table(
+    "mstTreasureDevice",
+    metadata,
+    Column("individuality", ARRAY(Integer)),
+    Column("script", JSONB),
+    Column("id", Integer, primary_key=True),
+    Column("seqId", Integer),
+    Column("name", String),
+    Column("ruby", String),
+    Column("rank", String),
+    Column("maxLv", Integer),
+    Column("typeText", String),
+    Column("attackAttri", Integer),
+    Column("effectFlag", Integer, nullable=True),
+)
+
+
+mstTreasureDeviceDetail = Table(
+    "mstTreasureDeviceDetail",
+    metadata,
+    Column("id", Integer, primary_key=True),
+    Column("detail", String),
+    Column("detailShort", String),
+)
+
+
+mstSvtTreasureDevice = Table(
+    "mstSvtTreasureDevice",
+    metadata,
+    Column("damage", ARRAY(Integer)),
+    Column("strengthStatus", Integer),
+    Column("svtId", Integer, index=True),
+    Column("num", Integer),
+    Column("priority", Integer),
+    Column("flag", Integer),
+    Column("imageIndex", Integer),
+    Column("treasureDeviceId", Integer, index=True),
+    Column("condQuestId", Integer),
+    Column("condQuestPhase", Integer),
+    Column("condLv", Integer),
+    Column("condFriendshipRank", Integer),
+    Column("motion", Integer),
+    Column("cardId", Integer),
+)
+
+
+mstTreasureDeviceLv = Table(
+    "mstTreasureDeviceLv",
+    metadata,
+    Column("funcId", ARRAY(Integer)),
+    Column("svals", ARRAY(String)),
+    Column("svals2", ARRAY(String)),
+    Column("svals3", ARRAY(String)),
+    Column("svals4", ARRAY(String)),
+    Column("svals5", ARRAY(String)),
+    Column("treaureDeviceId", Integer, index=True),
+    Column("lv", Integer),
+    Column("gaugeCount", Integer),
+    Column("detailId", Integer),
+    Column("tdPoint", Integer),
+    Column("tdPointQ", Integer),
+    Column("tdPointA", Integer),
+    Column("tdPointB", Integer),
+    Column("tdPointEx", Integer),
+    Column("tdPointDef", Integer),
+    Column("qp", Integer),
+)
+
+
 mstAi = Table(
     "mstAi",
     metadata,
@@ -166,6 +235,10 @@ TABLES_TO_BE_LOADED = [
     mstSkillDetail,
     mstSvtSkill,
     mstSkillLv,
+    mstTreasureDevice,
+    mstTreasureDeviceDetail,
+    mstSvtTreasureDevice,
+    mstTreasureDeviceLv,
     mstAi,
     mstAiField,
     mstAiAct,

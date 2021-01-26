@@ -5,7 +5,7 @@ from fastapi import HTTPException
 from app.core.nice import get_nice_servant_model, parse_dataVals
 from app.core.utils import get_lang_en, sort_by_collection_no
 from app.db.base import engines
-from app.db.helpers import skill
+from app.db.helpers import skill, td
 from app.routers.utils import list_string_exclude
 from app.schemas.basic import BasicServant
 from app.schemas.common import Language, Region, ReverseDepth
@@ -103,3 +103,8 @@ def test_lang_en_export() -> None:
 def test_helpers_skill_get_mstSvtSkill() -> None:
     with pytest.raises(ValueError), engines[Region.JP].connect() as conn:
         skill.get_mstSvtSkill(conn)
+
+
+def test_helpers_skill_get_mstSvtTreasureDevice() -> None:
+    with pytest.raises(ValueError), engines[Region.JP].connect() as conn:
+        td.get_mstSvtTreasureDevice(conn)

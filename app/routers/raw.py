@@ -358,11 +358,8 @@ async def get_td(
     expand: bool = False,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    if np_id in masters[region].mstTreasureDeviceId:
-        td_entity = raw.get_td_entity(conn, region, np_id, reverse, expand=expand)
-        return item_response(td_entity)
-    else:
-        raise HTTPException(status_code=404, detail="NP not found")
+    td_entity = raw.get_td_entity(conn, region, np_id, reverse, expand=expand)
+    return item_response(td_entity)
 
 
 function_reverse_expand_description = """

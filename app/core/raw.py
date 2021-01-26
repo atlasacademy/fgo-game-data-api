@@ -4,7 +4,7 @@ from fastapi import HTTPException
 from sqlalchemy.engine import Connection
 
 from ..data.gamedata import masters
-from ..db.helpers import ai, skill
+from ..db.helpers import ai, skill, td
 from ..schemas.common import Region, ReverseDepth
 from ..schemas.enums import FUNC_VALS_NOT_BUFF
 from ..schemas.raw import (
@@ -197,25 +197,27 @@ def get_skill_entity(
 
 
 def get_td_entity_no_reverse(
-    region: Region, td_id: int, expand: bool = False
+    conn: Connection, region: Region, td_id: int, expand: bool = False
 ) -> TdEntityNoReverse:
-    td_entity = TdEntityNoReverse(
-        mstTreasureDevice=masters[region].mstTreasureDeviceId[td_id],
-        mstTreasureDeviceDetail=masters[region].mstTreasureDeviceDetailId.get(
-            td_id, []
-        ),
-        mstSvtTreasureDevice=masters[region].mstSvtTreasureDeviceId.get(td_id, []),
-        mstTreasureDeviceLv=masters[region].mstTreasureDeviceLvId.get(td_id, []),
-    )
+    main_td = td.get_mstTreasureDevice(conn, td_id)
+    if main_td:
+        td_entity = TdEntityNoReverse(
+            mstTreasureDevice=main_td,
+            mstTreasureDeviceDetail=td.get_mstTreasureDeviceDetail(conn, td_id),
+            mstSvtTreasureDevice=td.get_mstSvtTreasureDevice(conn, td_id),
+            mstTreasureDeviceLv=td.get_mstTreasureDeviceLv(conn, td_id),
+        )
 
-    if expand:
-        for tdLv in td_entity.mstTreasureDeviceLv:
-            tdLv.expandedFuncId = [
-                get_func_entity_no_reverse(region, func_id, expand)
-                for func_id in tdLv.funcId
-                if func_id in masters[region].mstFuncId
-            ]
-    return td_entity
+        if expand:
+            for tdLv in td_entity.mstTreasureDeviceLv:
+                tdLv.expandedFuncId = [
+                    get_func_entity_no_reverse(region, func_id, expand)
+                    for func_id in tdLv.funcId
+                    if func_id in masters[region].mstFuncId
+                ]
+        return td_entity
+    else:
+        raise HTTPException(status_code=404, detail="NP not found")
 
 
 def get_td_entity(
@@ -226,7 +228,9 @@ def get_td_entity(
     reverseDepth: ReverseDepth = ReverseDepth.servant,
     expand: bool = False,
 ) -> TdEntity:
-    td_entity = TdEntity.parse_obj(get_td_entity_no_reverse(region, td_id, expand))
+    td_entity = TdEntity.parse_obj(
+        get_td_entity_no_reverse(conn, region, td_id, expand)
+    )
 
     if reverse and reverseDepth >= ReverseDepth.servant:
         td_reverse = ReversedSkillTd(
@@ -271,8 +275,8 @@ def get_servant_entity(
             if skill.skillId in masters[region].mstSkillId
         ),
         mstTreasureDevice=(
-            get_td_entity_no_reverse(region, td.treasureDeviceId, expand)
-            for td in masters[region].mstSvtTreasureDeviceSvtId.get(servant_id, [])
+            get_td_entity_no_reverse(conn, region, td.treasureDeviceId, expand)
+            for td in td.get_mstSvtTreasureDevice(conn, svt_id=servant_id)
             if td.treasureDeviceId != 100
         ),
     )

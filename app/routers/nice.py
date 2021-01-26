@@ -408,14 +408,11 @@ async def get_td(
     reverseData: ReverseData = ReverseData.nice,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    if np_id in masters[region].mstTreasureDeviceId:
-        return item_response(
-            nice.get_nice_td_alone(
-                conn, region, np_id, lang, reverse, reverseData=reverseData
-            )
+    return item_response(
+        nice.get_nice_td_alone(
+            conn, region, np_id, lang, reverse, reverseData=reverseData
         )
-    else:
-        raise HTTPException(status_code=404, detail="NP not found")
+    )
 
 
 function_reverse_lang_description = """

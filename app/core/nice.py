@@ -1306,7 +1306,7 @@ def get_nice_td_alone(
     reverseDepth: ReverseDepth = ReverseDepth.servant,
     reverseData: ReverseData = ReverseData.nice,
 ) -> NiceTdReverse:
-    raw_data = raw.get_td_entity_no_reverse(region, td_id, expand=True)
+    raw_data = raw.get_td_entity_no_reverse(conn, region, td_id, expand=True)
 
     # Yes, all td_id has a svtTd entry
     svtId = next(svt_id.svtId for svt_id in raw_data.mstSvtTreasureDevice)

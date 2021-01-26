@@ -20,7 +20,11 @@ def get_mstSkillDetail(conn: Connection, skill_id: int) -> List[Any]:
 
 
 def get_mstSkillLv(conn: Connection, skill_id: int) -> List[Any]:
-    mstSkillLv_stmt = select([mstSkillLv]).where(mstSkillLv.c.skillId == skill_id)
+    mstSkillLv_stmt = (
+        select([mstSkillLv])
+        .where(mstSkillLv.c.skillId == skill_id)
+        .order_by(mstSkillLv.c.lv)
+    )
     fetched: list[Any] = conn.execute(mstSkillLv_stmt).fetchall()
     return fetched
 
