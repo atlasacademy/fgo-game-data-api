@@ -1,57 +1,61 @@
 from inspect import cleandoc
-from typing import Any, List
+from typing import Any, Iterable, List
 
 from sqlalchemy.engine import Connection
-from sqlalchemy.sql import text
+from sqlalchemy.sql import func, literal_column, select, text
 
+from ...models.raw import mstQuest, mstQuestConsumeItem, mstQuestPhase, mstQuestRelease
 from ...schemas.raw import QuestEntity
+from .utils import sql_jsonb_agg
 
 
-def get_quest_entity(conn: Connection, quest_ids: List[int]) -> List[QuestEntity]:
-    stmt = text(
-        cleandoc(
-            """
-            SELECT
-            TO_JSONB("mstQuest") as "mstQuest",
-            TO_JSONB(ARRAY_REMOVE(ARRAY_AGG(DISTINCT "mstQuestConsumeItem"), NULL)) AS "mstQuestConsumeItem",
-            TO_JSONB(ARRAY_REMOVE(ARRAY_AGG(DISTINCT "mstQuestRelease"), NULL)) AS "mstQuestRelease",
-            JSONB_AGG(DISTINCT "mstQuestPhase"."phase") AS "phases"
-            FROM "mstQuest"
-            LEFT JOIN "mstQuestConsumeItem" ON "mstQuestConsumeItem"."questId"="mstQuest"."id"
-            LEFT JOIN "mstQuestRelease" ON "mstQuestRelease"."questId"="mstQuest"."id"
-            LEFT JOIN "mstQuestPhase" ON "mstQuestPhase"."questId"="mstQuest"."id"
-            WHERE "mstQuest"."id"=ANY(:questIds)
-            GROUP BY "mstQuest"."id"
-            """
-        )
+JOINED_QUEST_TABLES = (
+    mstQuest.join(
+        mstQuestConsumeItem,
+        mstQuestConsumeItem.c.questId == mstQuest.c.id,
+        isouter=True,
+    )
+    .join(
+        mstQuestRelease,
+        mstQuestRelease.c.questId == mstQuest.c.id,
+        isouter=True,
+    )
+    .join(
+        mstQuestPhase,
+        mstQuestPhase.c.questId == mstQuest.c.id,
+        isouter=True,
+    )
+)
+
+
+SELECT_QUEST_ENTITY = [
+    func.to_jsonb(literal_column('"mstQuest"')).label("mstQuest"),
+    sql_jsonb_agg(mstQuestConsumeItem),
+    sql_jsonb_agg(mstQuestRelease),
+    func.jsonb_agg(mstQuestPhase.c.phase.distinct()).label("phases"),
+]
+
+
+def get_quest_entity(conn: Connection, quest_ids: Iterable[int]) -> List[QuestEntity]:
+    stmt = (
+        select(SELECT_QUEST_ENTITY)
+        .select_from(JOINED_QUEST_TABLES)
+        .where(mstQuest.c.id.in_(quest_ids))
+        .group_by(mstQuest.c.id)
+    )
+    return [QuestEntity.parse_obj(quest) for quest in conn.execute(stmt).fetchall()]
+
+
+def get_quest_by_spot(conn: Connection, spot_ids: Iterable[int]) -> List[QuestEntity]:
+    stmt = (
+        select(SELECT_QUEST_ENTITY)
+        .select_from(JOINED_QUEST_TABLES)
+        .where(mstQuest.c.spotId.in_(spot_ids))
+        .group_by(mstQuest.c.id)
     )
     return [
         QuestEntity.parse_obj(quest)
-        for quest in conn.execute(stmt, questIds=quest_ids).fetchall()
-    ]
-
-
-def get_quest_by_spot(conn: Connection, spot_ids: List[int]) -> List[QuestEntity]:
-    stmt = text(
-        cleandoc(
-            """
-            SELECT
-            TO_JSONB("mstQuest") as "mstQuest",
-            TO_JSONB(ARRAY_REMOVE(ARRAY_AGG(DISTINCT "mstQuestConsumeItem"), NULL)) AS "mstQuestConsumeItem",
-            TO_JSONB(ARRAY_REMOVE(ARRAY_AGG(DISTINCT "mstQuestRelease"), NULL)) AS "mstQuestRelease",
-            JSONB_AGG(DISTINCT "mstQuestPhase"."phase") AS "phases"
-            FROM "mstQuest"
-            LEFT JOIN "mstQuestConsumeItem" ON "mstQuestConsumeItem"."questId"="mstQuest"."id"
-            LEFT JOIN "mstQuestRelease" ON "mstQuestRelease"."questId"="mstQuest"."id"
-            LEFT JOIN "mstQuestPhase" ON "mstQuestPhase"."questId"="mstQuest"."id"
-            WHERE "mstQuest"."spotId"=ANY(:spotIds)
-            GROUP BY "mstQuest"."id"
-            """
-        )
-    )
-    return [
-        QuestEntity.parse_obj(quest)
-        for quest in conn.execute(stmt, spotIds=spot_ids).fetchall()
+        for quest in conn.execute(stmt, spotIds=tuple(spot_ids)).fetchall()
     ]
 
 
