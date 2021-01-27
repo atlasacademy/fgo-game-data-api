@@ -1,12 +1,12 @@
 from inspect import cleandoc
-from typing import List, Set
+from typing import Iterable, List, Set
 
 from sqlalchemy.engine import Connection
 from sqlalchemy.sql import select, text
 
-from ...models.raw import mstSvtComment, mstSvtVoice
+from ...models.raw import mstSubtitle, mstSvtComment, mstSvtVoice
 from ...schemas.enums import VoiceCondType
-from ...schemas.raw import MstSvtComment, MstSvtVoice
+from ...schemas.raw import GlobalNewMstSubtitle, MstSvtComment, MstSvtVoice
 
 
 def get_mstSvtComment(conn: Connection, svt_id: int) -> List[MstSvtComment]:
@@ -21,15 +21,29 @@ def get_mstSvtComment(conn: Connection, svt_id: int) -> List[MstSvtComment]:
     ]
 
 
-def get_mstSvtVoice(conn: Connection, svt_id: int) -> List[MstSvtVoice]:
+def get_mstSvtVoice(conn: Connection, svt_ids: Iterable[int]) -> List[MstSvtVoice]:
     mstSvtVoice_stmt = (
         select([mstSvtVoice])
-        .where(mstSvtVoice.c.id == svt_id)
+        .where(mstSvtVoice.c.id.in_(svt_ids))
         .order_by(mstSvtVoice.c.id, mstSvtVoice.c.voicePrefix, mstSvtVoice.c.type)
     )
     return [
         MstSvtVoice.parse_obj(svt_voice)
         for svt_voice in conn.execute(mstSvtVoice_stmt).fetchall()
+    ]
+
+
+def get_mstSubtitle(
+    conn: Connection, svt_ids: Iterable[int]
+) -> List[GlobalNewMstSubtitle]:
+    mstSubtitle_stmt = (
+        select([mstSubtitle])
+        .where(mstSubtitle.c.svtId.in_(svt_ids))
+        .order_by(mstSubtitle.c.id)
+    )
+    return [
+        GlobalNewMstSubtitle.parse_obj(subtitle)
+        for subtitle in conn.execute(mstSubtitle_stmt).fetchall()
     ]
 
 
@@ -45,9 +59,9 @@ def get_related_voice_id(
             jsonb_array_elements("mstSvtVoice"."scriptJson") scriptJsonExpanded,
             jsonb_array_elements(scriptJsonExpanded->'conds') condsExpanded
             WHERE
-            (condsExpanded->>'condType' = :svtCond AND condsExpanded->>'value' = ANY(:svtValue))
+            (condsExpanded->>'condType' = :svtCond AND condsExpanded->>'value' IN :svtValue)
             OR
-            (condsExpanded->>'condType' = :groupCond AND condsExpanded->>'value' = ANY(:groupValue))
+            (condsExpanded->>'condType' = :groupCond AND condsExpanded->>'value' IN :groupValue)
             """
         )
     )
@@ -57,8 +71,8 @@ def get_related_voice_id(
             stmt,
             svtCond=str(VoiceCondType.SVT_GET.value),
             groupCond=str(VoiceCondType.SVT_GROUP.value),
-            svtValue=[str(i) for i in cond_svt_value],
-            groupValue=[str(i) for i in cond_group_value],
+            svtValue=tuple(str(i) for i in cond_svt_value),
+            groupValue=tuple(str(i) for i in cond_group_value),
         ).fetchall()
     }
     return fetched

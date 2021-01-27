@@ -292,23 +292,19 @@ def get_servant_entity(
         svt_entity.mstSvtComment = svt.get_mstSvtComment(conn, servant_id)
 
         # Try to match order in the voice tab in game
-        voices = []
-        subtitles = []
+        voice_ids = []
 
         for change in svt_entity.mstSvtChange:
-            voices += svt.get_mstSvtVoice(conn, change.svtVoiceId)
-            subtitles += masters[region].mstSubtitleId.get(change.svtVoiceId, [])
+            voice_ids.append(change.svtVoiceId)
 
-        voices += svt.get_mstSvtVoice(conn, servant_id)
-        subtitles += masters[region].mstSubtitleId.get(servant_id, [])
+        voice_ids.append(servant_id)
 
         for main_id, sub_id in (
             ("JEKYLL_SVT_ID", "HYDE_SVT_ID"),
             ("MASHU_SVT_ID1", "MASHU_SVT_ID2"),
         ):
             if servant_id == masters[region].mstConstantId[main_id]:
-                sub_svt_id = masters[region].mstConstantId[sub_id]
-                voices += svt.get_mstSvtVoice(conn, sub_svt_id)
+                voice_ids.append(masters[region].mstConstantId[sub_id])
 
         # Moriarty deadheat summer lines use his hidden name svt_id
         for svt_id in [change.svtVoiceId for change in svt_entity.mstSvtChange] + [
@@ -316,12 +312,16 @@ def get_servant_entity(
         ]:
             if voiceRelations := masters[region].mstSvtVoiceRelationId.get(svt_id):
                 for voiceRelation in voiceRelations:
-                    relation_id = voiceRelation.relationSvtId
-                    voices += svt.get_mstSvtVoice(conn, relation_id)
-                    subtitles += masters[region].mstSubtitleId.get(relation_id, [])
+                    voice_ids.append(voiceRelation.relationSvtId)
 
-        svt_entity.mstSvtVoice = voices
-        svt_entity.mstSubtitle = subtitles
+        order = {voice_id: i for i, voice_id in enumerate(voice_ids)}
+        mstSvtVoice = svt.get_mstSvtVoice(conn, voice_ids)
+        mstSubtitle = svt.get_mstSubtitle(conn, voice_ids)
+
+        svt_entity.mstSvtVoice = sorted(mstSvtVoice, key=lambda voice: order[voice.id])
+        svt_entity.mstSubtitle = sorted(
+            mstSubtitle, key=lambda sub: order[sub.get_svtId()]
+        )
 
     return svt_entity
 

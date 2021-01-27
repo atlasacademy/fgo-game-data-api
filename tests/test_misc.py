@@ -10,6 +10,11 @@ from app.routers.utils import list_string_exclude
 from app.schemas.basic import BasicServant
 from app.schemas.common import Language, Region, ReverseDepth
 from app.schemas.enums import FuncType
+from app.schemas.raw import get_subtitle_svtId
+
+
+def test_subtitle_svtId() -> None:
+    assert get_subtitle_svtId("PLAINDEMO_99100001") == -1
 
 
 def test_parse_dataVals_add_state_6_items() -> None:

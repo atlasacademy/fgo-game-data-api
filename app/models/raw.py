@@ -238,6 +238,15 @@ mstSvtComment = Table(
 )
 
 
+mstSubtitle = Table(
+    "mstSubtitle",
+    metadata,
+    Column("id", String),
+    Column("serif", String),
+    Column("svtId", Integer, index=True, nullable=True),
+)
+
+
 mstShop = Table(
     "mstShop",
     metadata,

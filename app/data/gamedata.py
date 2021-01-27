@@ -6,10 +6,16 @@ import orjson
 
 from ..config import Settings, logger
 from ..db.base import engines
-from ..models.raw import TABLES_TO_BE_LOADED, metadata
+from ..models.raw import TABLES_TO_BE_LOADED, metadata, mstSubtitle
 from ..schemas.common import Region
 from ..schemas.enums import FUNC_VALS_NOT_BUFF, CondType, PurchaseType, SvtType
-from ..schemas.raw import BAD_COMBINE_SVT_LIMIT, Master, is_equip, is_servant
+from ..schemas.raw import (
+    BAD_COMBINE_SVT_LIMIT,
+    Master,
+    get_subtitle_svtId,
+    is_equip,
+    is_servant,
+)
 
 
 settings = Settings()
@@ -240,15 +246,6 @@ def update_gamedata() -> None:
                         )
                         break
 
-        if region_name == Region.NA:
-            with open(gamedata / "globalNewMstSubtitle.json", "rb") as fp:
-                globalNewMstSubtitle = orjson.loads(fp.read())
-            master["mstSubtitleId"] = defaultdict(list)
-            for subtitle in globalNewMstSubtitle:
-                svt = subtitle["id"].split("_")[0]
-                if not svt.startswith("PLAIN"):
-                    master["mstSubtitleId"][int(svt)].append(subtitle)
-
         masters[region_name] = Master.parse_obj(master)
 
     data_loading_time = time.perf_counter() - start_loading_time
@@ -260,13 +257,23 @@ def update_db() -> None:  # pragma: no cover
     start_loading_time = time.perf_counter()
     for region_name, gamedata in region_path.items():
         engine = engines[region_name]
+
         metadata.drop_all(engine)
         metadata.create_all(engine)
+
         with engine.connect() as conn:
             for table in TABLES_TO_BE_LOADED:
-                with open(gamedata / f"{table.name}.json", encoding="utf-8") as fp:
+                with open(gamedata / f"{table.name}.json", "rb") as fp:
                     data = orjson.loads(fp.read())
                 conn.execute(table.insert(data))
+
+            if region_name == Region.NA:
+                with open(gamedata / "globalNewMstSubtitle.json", "rb") as fp:
+                    globalNewMstSubtitle = orjson.loads(fp.read())
+                for subtitle in globalNewMstSubtitle:
+                    subtitle["svtId"] = get_subtitle_svtId(subtitle["id"])
+                conn.execute(mstSubtitle.insert(globalNewMstSubtitle))
+
     db_loading_time = time.perf_counter() - start_loading_time
     logger.info(f"Loaded db in {db_loading_time:.2f}s.")
 

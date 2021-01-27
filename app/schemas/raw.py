@@ -574,9 +574,20 @@ class MstSvtGroup(BaseModel):
     svtId: int
 
 
+def get_subtitle_svtId(sub_id: str) -> int:
+    svt = sub_id.split("_")[0]
+    try:
+        return int(svt)
+    except ValueError:
+        return -1
+
+
 class GlobalNewMstSubtitle(BaseModel):
     id: str
     serif: str
+
+    def get_svtId(self) -> int:
+        return get_subtitle_svtId(self.id)
 
 
 class MstFriendship(BaseModel):
@@ -942,7 +953,7 @@ class Master(BaseModel):
     mstSvtGroupId: Dict[int, List[MstSvtGroup]]
     mstSvtGroupSvtId: Dict[int, List[MstSvtGroup]]
     # globalNewMstSubtitle: List[GlobalNewMstSubtitle] = []
-    mstSubtitleId: Dict[int, List[GlobalNewMstSubtitle]] = {}
+    # mstSubtitleId: Dict[int, List[GlobalNewMstSubtitle]] = {}
     # mstClassRelationOverwrite: List[MstClassRelationOverwrite]
     mstClassRelationOverwriteId: Dict[int, List[MstClassRelationOverwrite]]
     buffToFunc: Dict[int, Set[int]]
