@@ -6,6 +6,7 @@ from sqlalchemy.engine import Connection
 
 from ..data.gamedata import masters
 from ..data.translations import TRANSLATIONS
+from ..db.helpers.skill import get_skill_search
 from ..db.helpers.svt import get_related_voice_id
 from ..schemas.common import Region
 from ..schemas.enums import (
@@ -29,7 +30,6 @@ from ..schemas.search import (
     FuncSearchQueryParams,
     ServantSearchQueryParams,
     SkillSearchParams,
-    SkillSearchParamsDefault,
     SvtSearchQueryParams,
     TdSearchParams,
     TdSearchParamsDefault,
@@ -218,80 +218,25 @@ def search_equip(search_param: EquipSearchQueryParams, limit: int = 100) -> List
     return [svt.id for svt in matches]
 
 
-def search_skill_svt(
-    region: Region,
-    skill_id: int,
-    num: List[int],
-    priority: List[int],
-    strengthStatus: List[int],
-) -> bool:
-    svt_skills = masters[region].mstSvtSkillId.get(skill_id, [])
-    if svt_skills:
-        return any(
-            svt_skill.num in num
-            and svt_skill.priority in priority
-            and svt_skill.strengthStatus in strengthStatus
-            for svt_skill in svt_skills
-        )
-    else:
-        return (
-            num == SkillSearchParamsDefault.num
-            and priority == SkillSearchParamsDefault.priority
-            and strengthStatus == SkillSearchParamsDefault.strengthStatus
-        )
-
-
-def search_skill_lv(
-    region: Region, skill_id: int, lvl1coolDown: List[int], numFunctions: List[int]
-) -> bool:
-    skill_lv_1 = next(
-        skill_lv
-        for skill_lv in masters[region].mstSkillLvId[skill_id]
-        if skill_lv.lv == 1
-    )
-    return (
-        skill_lv_1.chargeTurn in lvl1coolDown and len(skill_lv_1.funcId) in numFunctions
-    )
-
-
-def search_skill(search_param: SkillSearchParams, limit: int = 100) -> List[int]:
+def search_skill(
+    conn: Connection, search_param: SkillSearchParams, limit: int = 100
+) -> List[int]:
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
     type_ints = {
         SKILL_TYPE_NAME_REVERSE[skill_type] for skill_type in search_param.type
     }
-    num = search_param.num if search_param.num else SkillSearchParamsDefault.num
-    priority = (
-        search_param.priority
-        if search_param.priority
-        else SkillSearchParamsDefault.priority
-    )
-    strengthStatus = (
-        search_param.strengthStatus
-        if search_param.strengthStatus
-        else SkillSearchParamsDefault.strengthStatus
-    )
-    lvl1coolDown = (
-        search_param.lvl1coolDown
-        if search_param.lvl1coolDown
-        else SkillSearchParamsDefault.lvl1coolDown
-    )
-    numFunctions = (
-        search_param.numFunctions
-        if search_param.numFunctions
-        else SkillSearchParamsDefault.numFunctions
-    )
 
-    matches = [
-        skill
-        for skill in masters[search_param.region].mstSkill
-        if skill.type in type_ints
-        and search_skill_svt(
-            search_param.region, skill.id, num, priority, strengthStatus
-        )
-        and search_skill_lv(search_param.region, skill.id, lvl1coolDown, numFunctions)
-    ]
+    matches = get_skill_search(
+        conn,
+        type_ints,
+        search_param.num,
+        search_param.priority,
+        search_param.strengthStatus,
+        search_param.lvl1coolDown,
+        search_param.numFunctions,
+    )
 
     if search_param.name:
         matches = [

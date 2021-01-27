@@ -274,8 +274,9 @@ async def find_skill(
     search_param: SkillSearchParams = Depends(SkillSearchParams),
     reverse: bool = False,
     lang: Language = Depends(language_parameter),
+    conn: Connection = Depends(get_db),
 ) -> Response:
-    matches = search.search_skill(search_param, limit=10000)
+    matches = search.search_skill(conn, search_param, limit=10000)
     return list_response(
         basic.get_basic_skill(search_param.region, skill_id, lang, reverse)
         for skill_id in matches

@@ -35,6 +35,7 @@ from ..schemas.enums import (
 )
 from ..schemas.nice import AssetURL
 from .raw import (
+    active_to_svtId,
     buff_to_func,
     func_to_skillId,
     func_to_tdId,
@@ -144,8 +145,7 @@ def get_basic_skill(
     )
 
     if reverse and reverseDepth >= ReverseDepth.servant:
-        mstSvtSkill = masters[region].mstSvtSkillId.get(skill_id, [])
-        activeSkills = {svt_skill.svtId for svt_skill in mstSvtSkill}
+        activeSkills = active_to_svtId(region, skill_id)
         passiveSkills = passive_to_svtId(region, skill_id)
         skill_reverse = BasicReversedSkillTd(
             servant=(

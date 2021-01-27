@@ -50,6 +50,11 @@ def func_to_tdId(region: Region, func_id: int) -> Set[int]:
     return masters[region].funcToTd.get(func_id, set())
 
 
+def active_to_svtId(region: Region, skill_id: int) -> Set[int]:
+    """Returns a set of svt ID that has the given skill ID as passive"""
+    return masters[region].activeSkillToSvt.get(skill_id, set())
+
+
 def passive_to_svtId(region: Region, skill_id: int) -> Set[int]:
     """Returns a set of svt ID that has the given skill ID as passive"""
     return masters[region].passiveSkillToSvt.get(skill_id, set())

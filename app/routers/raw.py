@@ -283,7 +283,7 @@ async def find_skill(
     expand: bool = False,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    matches = search.search_skill(search_param)
+    matches = search.search_skill(conn, search_param)
     return list_response(
         raw.get_skill_entity(
             conn, search_param.region, skill_id, reverse, expand=expand

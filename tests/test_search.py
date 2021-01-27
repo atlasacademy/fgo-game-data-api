@@ -102,6 +102,10 @@ test_cases_dict: Dict[str, Tuple[str, Set[int]]] = {
         {961472, 961475, 961620},
     ),
     "skill_search_strength": ("JP/skill/search?strengthStatus=2&type=active", {94349}),
+    "skill_search_num": (
+        "JP/skill/search?strengthStatus=99&type=active&numFunctions=5&num=3",
+        {292452},
+    ),
     "skill_search_priority": ("JP/skill/search?priority=5", {744450}),
     "skill_search_name": (
         "NA/skill/search?name=Mystic%20Eyes%20of%20Distortion%20EX&lvl1coolDown=7",

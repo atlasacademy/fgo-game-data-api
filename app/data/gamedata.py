@@ -147,6 +147,10 @@ def update_gamedata() -> None:
             for skill_id in svt["classPassive"]:
                 master["passiveSkillToSvt"][skill_id].add(svt["id"])
 
+        master["activeSkillToSvt"] = defaultdict(set)
+        for svt_skill in master["mstSvtSkill"]:
+            master["activeSkillToSvt"][svt_skill["skillId"]].add(svt_skill["svtId"])
+
         for mstCombine in ("mstCombineSkill", "mstCombineLimit", "mstCombineCostume"):
             master[f"{mstCombine}Item"] = {
                 item_id
@@ -187,7 +191,6 @@ def update_gamedata() -> None:
             ("mstCombineLimitId", "mstCombineLimit", "id"),
             ("mstCombineMaterialId", "mstCombineMaterial", "id"),
             ("mstCombineSkillId", "mstCombineSkill", "id"),
-            ("mstSkillLvId", "mstSkillLv", "skillId"),
             ("mstSvtCardId", "mstSvtCard", "svtId"),
             ("mstSvtChangeId", "mstSvtChange", "svtId"),
             ("mstSvtCostumeId", "mstSvtCostume", "svtId"),
@@ -196,7 +199,6 @@ def update_gamedata() -> None:
             ("mstSvtGroupSvtId", "mstSvtGroup", "svtId"),
             ("mstSvtLimitId", "mstSvtLimit", "svtId"),
             ("mstSvtLimitAddId", "mstSvtLimitAdd", "svtId"),
-            ("mstSvtSkillId", "mstSvtSkill", "skillId"),
             ("mstSvtSkillSvtId", "mstSvtSkill", "svtId"),
             ("mstSvtTreasureDeviceId", "mstSvtTreasureDevice", "treasureDeviceId"),
             ("mstSvtTreasureDeviceSvtId", "mstSvtTreasureDevice", "svtId"),

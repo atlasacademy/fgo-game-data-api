@@ -174,49 +174,22 @@ class EquipSearchQueryParams:
     )
 
 
-class SkillSearchParamsDefault:
-    type = list(SKILL_TYPE_NAME.values())
-    num: List[int] = [1, 2, 3]
-    priority: List[int] = list(range(1, 6))
-    strengthStatus: List[int] = list(range(0, 100))
-    lvl1coolDown: List[int] = list(range(-1, 100))
-    numFunctions: List[int] = list(range(1, 201))
-
-
 @dataclass
 class SkillSearchParams:
     region: Region
     name: Optional[str] = None
-    type: List[NiceSkillType] = Query(SkillSearchParamsDefault.type)
-    num: List[int] = Query(
-        None, ge=min(SkillSearchParamsDefault.num), le=max(SkillSearchParamsDefault.num)
-    )
-    priority: List[int] = Query(
-        None,
-        ge=min(SkillSearchParamsDefault.priority),
-        le=max(SkillSearchParamsDefault.priority),
-    )
-    strengthStatus: List[int] = Query(
-        None,
-        ge=min(SkillSearchParamsDefault.strengthStatus),
-        le=max(SkillSearchParamsDefault.strengthStatus),
-    )
-    lvl1coolDown: List[int] = Query(
-        None,
-        ge=min(SkillSearchParamsDefault.lvl1coolDown),
-        le=max(SkillSearchParamsDefault.lvl1coolDown),
-    )
-    numFunctions: List[int] = Query(
-        None,
-        ge=min(SkillSearchParamsDefault.numFunctions),
-        le=max(SkillSearchParamsDefault.numFunctions),
-    )
+    type: List[NiceSkillType] = Query(list(SKILL_TYPE_NAME.values()))
+    num: Optional[List[int]] = Query(None, ge=1, le=3)
+    priority: Optional[List[int]] = Query(None, ge=1, le=6)
+    strengthStatus: Optional[List[int]] = Query(None, ge=0, le=100)
+    lvl1coolDown: Optional[List[int]] = Query(None, ge=-1, le=100)
+    numFunctions: Optional[List[int]] = Query(None, ge=1, le=201)
 
     def hasSearchParams(self) -> bool:
         return any(
             [
                 self.name,
-                self.type != SkillSearchParamsDefault.type,
+                self.type != list(SKILL_TYPE_NAME.values()),
                 self.num,
                 self.priority,
                 self.strengthStatus,

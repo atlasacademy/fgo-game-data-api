@@ -325,7 +325,7 @@ async def find_skill(
     reverseData: ReverseData = ReverseData.nice,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    matches = search.search_skill(search_param)
+    matches = search.search_skill(conn, search_param)
     return list_response(
         nice.get_nice_skill_alone(
             conn, search_param.region, skill_id, lang, reverse, reverseData=reverseData
