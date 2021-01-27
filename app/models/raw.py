@@ -1,5 +1,5 @@
 import sqlalchemy
-from sqlalchemy import ARRAY, Boolean, Column, Integer, String, Table
+from sqlalchemy import ARRAY, BigInteger, Boolean, Column, Integer, String, Table
 from sqlalchemy.dialects.postgresql import JSONB
 
 
@@ -269,6 +269,97 @@ mstShop = Table(
 )
 
 
+mstQuest = Table(
+    "mstQuest",
+    metadata,
+    Column("beforeActionVals", ARRAY(String)),
+    Column("afterActionVals", ARRAY(String)),
+    Column("id", Integer, primary_key=True),
+    Column("name", String),
+    Column("nameRuby", String),
+    Column("type", Integer),
+    Column("consumeType", Integer),
+    Column("actConsume", Integer),
+    Column("chaldeaGateCategory", Integer),
+    Column("spotId", Integer, index=True),
+    Column("giftId", Integer),
+    Column("priority", Integer),
+    Column("bannerType", Integer),
+    Column("bannerId", Integer),
+    Column("iconId", Integer),
+    Column("charaIconId", Integer),
+    Column("giftIconId", Integer),
+    Column("forceOperation", Integer),
+    Column("afterClear", Integer),
+    Column("displayHours", Integer),
+    Column("intervalHours", Integer),
+    Column("chapterId", Integer),
+    Column("chapterSubId", Integer),
+    Column("chapterSubStr", String),
+    Column("recommendLv", String),
+    Column("hasStartAction", Integer),
+    Column("flag", BigInteger),
+    Column("scriptQuestId", Integer),
+    Column("noticeAt", Integer),
+    Column("openedAt", Integer),
+    Column("closedAt", Integer),
+)
+
+
+mstQuestRelease = Table(
+    "mstQuestRelease",
+    metadata,
+    Column("questId", Integer, index=True),
+    Column("type", Integer),
+    Column("targetId", Integer),
+    Column("value", BigInteger),
+    Column("openLimit", Integer),
+    Column("closedMessageId", Integer),
+    Column("imagePriority", Integer),
+)
+
+
+mstQuestConsumeItem = Table(
+    "mstQuestConsumeItem",
+    metadata,
+    Column("itemIds", ARRAY(Integer)),
+    Column("nums", ARRAY(Integer)),
+    Column("questId", Integer, primary_key=True),
+)
+
+
+mstQuestPhase = Table(
+    "mstQuestPhase",
+    metadata,
+    Column("classIds", ARRAY(Integer)),
+    Column("individuality", ARRAY(Integer)),
+    Column("script", JSONB),
+    Column("questId", Integer, index=True),
+    Column("phase", Integer, index=True),
+    Column("isNpcOnly", Boolean),
+    Column("battleBgId", Integer),
+    Column("battleBgType", Integer),
+    Column("qp", Integer),
+    Column("playerExp", Integer),
+    Column("friendshipExp", Integer),
+    Column("giftId", Integer, nullable=True),
+)
+
+
+mstStage = Table(
+    "mstStage",
+    metadata,
+    Column("npcDeckIds", ARRAY(Integer)),
+    Column("script", JSONB),
+    Column("questId", Integer),
+    Column("questPhase", Integer),
+    Column("wave", Integer),
+    Column("enemyInfo", Integer),
+    Column("bgmId", Integer),
+    Column("startEffectId", Integer),
+)
+
+
 mstAi = Table(
     "mstAi",
     metadata,
@@ -327,6 +418,11 @@ TABLES_TO_BE_LOADED = [
     mstSvtVoice,
     mstSvtComment,
     mstShop,
+    mstQuest,
+    mstQuestRelease,
+    mstQuestConsumeItem,
+    mstQuestPhase,
+    mstStage,
     mstAi,
     mstAiField,
     mstAiAct,

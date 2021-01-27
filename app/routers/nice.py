@@ -601,12 +601,14 @@ async def get_event(
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-async def get_war(region: Region, war_id: int) -> Response:
+async def get_war(
+    region: Region, war_id: int, conn: Connection = Depends(get_db)
+) -> Response:
     """
     Get the nice war data from the given war ID
     """
     if war_id in masters[region].mstWarId:
-        return item_response(nice.get_nice_war(region, war_id))
+        return item_response(nice.get_nice_war(conn, region, war_id))
     else:
         raise HTTPException(status_code=404, detail="War not found")
 
@@ -625,14 +627,10 @@ get_quest_phase_description = (
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-async def get_quest_phase(region: Region, quest_id: int, phase: int) -> Response:
-    if (
-        quest_id in masters[region].mstQuestPhaseId
-        and phase in masters[region].mstQuestPhaseId[quest_id]
-    ):
-        return item_response(nice.get_nice_quest_phase(region, quest_id, phase))
-    else:
-        raise HTTPException(status_code=404, detail="Quest Phase not found")
+async def get_quest_phase(
+    region: Region, quest_id: int, phase: int, conn: Connection = Depends(get_db)
+) -> Response:
+    return item_response(nice.get_nice_quest_phase(conn, region, quest_id, phase))
 
 
 @router.get(
@@ -643,14 +641,13 @@ async def get_quest_phase(region: Region, quest_id: int, phase: int) -> Response
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-async def get_quest(region: Region, quest_id: int) -> Response:
+async def get_quest(
+    region: Region, quest_id: int, conn: Connection = Depends(get_db)
+) -> Response:
     """
     Get the nice quest data from the given quest ID
     """
-    if quest_id in masters[region].mstQuestId:
-        return item_response(nice.get_nice_quest_alone(region, quest_id))
-    else:
-        raise HTTPException(status_code=404, detail="Quest not found")
+    return item_response(nice.get_nice_quest_alone(conn, region, quest_id))
 
 
 @router.get(

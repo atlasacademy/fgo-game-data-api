@@ -24,7 +24,6 @@ MASTER_WITH_ID = {
     "mstTreasureDevice",
     "mstItem",
     "mstEquip",
-    "mstQuest",
     "mstCommandCode",
     "mstCv",
     "mstIllustrator",
@@ -43,10 +42,7 @@ MASTER_WITHOUT_ID = {
     "mstClosedMessage",
     "mstConstant",
     "mstClassRelationOverwrite",
-    "mstQuestPhase",
-    "mstQuestConsumeItem",
     "mstStage",
-    "mstQuestRelease",
     "mstGift",
     "mstShop",
     "mstShopRelease",
@@ -119,16 +115,6 @@ def update_gamedata() -> None:
         for svt_script in master["mstSvtScript"]:
             master["mstSvtScriptId"][svt_script["id"] // 10].append(svt_script)
 
-        master["mstQuestPhaseId"] = defaultdict(dict)
-        for quest_phase in master["mstQuestPhase"]:
-            master["mstQuestPhaseId"][quest_phase["questId"]][
-                quest_phase["phase"]
-            ] = quest_phase
-
-        master["mstStageId"] = defaultdict(lambda: defaultdict(list))
-        for stage in master["mstStage"]:
-            master["mstStageId"][stage["questId"]][stage["questPhase"]].append(stage)
-
         master["buffToFunc"] = defaultdict(set)
         for func in master["mstFunc"]:
             if func["funcType"] not in FUNC_VALS_NOT_BUFF:
@@ -195,7 +181,6 @@ def update_gamedata() -> None:
             ("mstCombineLimitId", "mstCombineLimit", "id"),
             ("mstCombineMaterialId", "mstCombineMaterial", "id"),
             ("mstCombineSkillId", "mstCombineSkill", "id"),
-            ("mstQuestReleaseId", "mstQuestRelease", "questId"),
             ("mstSkillLvId", "mstSkillLv", "skillId"),
             ("mstSvtCardId", "mstSvtCard", "svtId"),
             ("mstSvtChangeId", "mstSvtChange", "svtId"),
@@ -213,13 +198,11 @@ def update_gamedata() -> None:
             ("mstTreasureDeviceLvId", "mstTreasureDeviceLv", "treaureDeviceId"),
             ("mstMapWarId", "mstMap", "warId"),
             ("mstSpotWarId", "mstSpot", "warId"),
-            ("mstQuestSpotId", "mstQuest", "spotId"),
             ("mstWarEventId", "mstWar", "eventId"),
             ("mstGiftId", "mstGift", "id"),
             ("mstShopEventId", "mstShop", "eventId"),
             ("mstShopReleaseShopId", "mstShopRelease", "shopId"),
             ("mstCommandCodeCommentId", "mstCommandCodeComment", "commandCodeId"),
-            ("mstQuestConsumeItemId", "mstQuestConsumeItem", "questId"),
             ("aiActToAiSvt", "mstAi", "aiActId"),
             ("aiActToAiField", "mstAiField", "aiActId"),
             ("mstFuncGroupId", "mstFuncGroup", "funcId"),

@@ -739,6 +739,7 @@ class MstSpot(BaseModel):
 
 
 class MstQuest(BaseModel):
+    beforeActionVals: List[str]
     afterActionVals: List[str]  # []
     id: int  # 94024618
     name: str  # "Automata Hunt - Pride Rank"
@@ -910,15 +911,15 @@ class Master(BaseModel):
     mstWarEventId: Dict[int, List[MstWar]]
     mstSpotWarId: Dict[int, List[MstSpot]]
     mstSpotId: Dict[int, MstSpot]
-    mstQuestSpotId: Dict[int, List[MstQuest]]
+    # mstQuestSpotId: Dict[int, List[MstQuest]]
     mstEventId: Dict[int, MstEvent]
     # mstQuest: List[MstQuest]
-    mstQuestId: Dict[int, MstQuest]
-    mstQuestConsumeItemId: Dict[int, List[MstQuestConsumeItem]]
+    # mstQuestId: Dict[int, MstQuest]
+    # mstQuestConsumeItemId: Dict[int, List[MstQuestConsumeItem]]
     # mstQuestPhase: List[MstQuestPhase]
-    mstQuestPhaseId: Dict[int, Dict[int, MstQuestPhase]]
-    mstStageId: Dict[int, Dict[int, List[MstStage]]]
-    mstQuestReleaseId: Dict[int, List[MstQuestRelease]]
+    # mstQuestPhaseId: Dict[int, Dict[int, MstQuestPhase]]
+    # mstStageId: Dict[int, Dict[int, List[MstStage]]]
+    # mstQuestReleaseId: Dict[int, List[MstQuestRelease]]
     mstClosedMessageId: Dict[int, str]
     # mstSvtComment: List[MstSvtComment]
     # mstSvtCommentId: Dict[int, List[MstSvtComment]]
@@ -1025,6 +1026,7 @@ class QuestEntity(BaseModelORJson):
     mstQuest: MstQuest
     mstQuestConsumeItem: List[MstQuestConsumeItem]
     mstQuestRelease: List[MstQuestRelease]
+    phases: List[int]
 
 
 class QuestPhaseEntity(QuestEntity):

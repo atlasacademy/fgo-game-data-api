@@ -1511,7 +1511,7 @@ def get_nice_stage(region: Region, raw_stage: MstStage) -> NiceStage:
 
 
 def get_nice_quest(
-    region: Region, quest_id: int, raw_quest: Union[QuestEntity, QuestPhaseEntity]
+    region: Region, raw_quest: Union[QuestEntity, QuestPhaseEntity]
 ) -> Dict[str, Any]:
     nice_data: Dict[str, Any] = {
         "id": raw_quest.mstQuest.id,
@@ -1533,10 +1533,7 @@ def get_nice_quest(
             get_nice_quest_release(region, release)
             for release in raw_quest.mstQuestRelease
         ],
-        "phases": [
-            questPhase.phase
-            for questPhase in masters[region].mstQuestPhaseId[quest_id].values()
-        ],
+        "phases": raw_quest.phases,
         "noticeAt": raw_quest.mstQuest.noticeAt,
         "openedAt": raw_quest.mstQuest.openedAt,
         "closedAt": raw_quest.mstQuest.closedAt,
@@ -1544,15 +1541,17 @@ def get_nice_quest(
     return nice_data
 
 
-def get_nice_quest_alone(region: Region, quest_id: int) -> NiceQuest:
+def get_nice_quest_alone(conn: Connection, region: Region, quest_id: int) -> NiceQuest:
     return NiceQuest.parse_obj(
-        get_nice_quest(region, quest_id, raw.get_quest_entity(region, quest_id))
+        get_nice_quest(region, raw.get_quest_entity(conn, quest_id))
     )
 
 
-def get_nice_quest_phase(region: Region, quest_id: int, phase: int) -> NiceQuestPhase:
-    raw_data = raw.get_quest_phase_entity(region, quest_id, phase)
-    nice_data = get_nice_quest(region, quest_id, raw_data)
+def get_nice_quest_phase(
+    conn: Connection, region: Region, quest_id: int, phase: int
+) -> NiceQuestPhase:
+    raw_data = raw.get_quest_phase_entity(conn, quest_id, phase)
+    nice_data = get_nice_quest(region, raw_data)
     nice_data.update(
         {
             "phase": raw_data.mstQuestPhase.phase,
@@ -1587,7 +1586,9 @@ def get_nice_map(region: Region, raw_map: MstMap) -> NiceMap:
     )
 
 
-def get_nice_spot(region: Region, raw_spot: MstSpot, war_asset_id: int) -> NiceSpot:
+def get_nice_spot(
+    conn: Connection, region: Region, raw_spot: MstSpot, war_asset_id: int
+) -> NiceSpot:
     return NiceSpot(
         id=raw_spot.id,
         joinSpotIds=raw_spot.joinSpotIds,
@@ -1613,13 +1614,13 @@ def get_nice_spot(region: Region, raw_spot: MstSpot, war_asset_id: int) -> NiceS
         nextOfsY=raw_spot.nextOfsY,
         closedMessage=raw_spot.closedMessage,
         quests=(
-            get_nice_quest_alone(region, quest.id)
-            for quest in masters[region].mstQuestSpotId.get(raw_spot.id, [])
+            NiceQuest.parse_obj(get_nice_quest(region, quest))
+            for quest in raw.get_quest_entity_by_spot_many(conn, [raw_spot.id])
         ),
     )
 
 
-def get_nice_war(region: Region, war_id: int) -> NiceWar:
+def get_nice_war(conn: Connection, region: Region, war_id: int) -> NiceWar:
     raw_war = raw.get_war_entity(region, war_id)
 
     base_settings = {"base_url": settings.asset_url, "region": region}
@@ -1661,7 +1662,7 @@ def get_nice_war(region: Region, war_id: int) -> NiceWar:
         lastQuestId=raw_war.mstWar.lastQuestId,
         maps=(get_nice_map(region, raw_map) for raw_map in raw_war.mstMap),
         spots=(
-            get_nice_spot(region, raw_spot, war_asset_id)
+            get_nice_spot(conn, region, raw_spot, war_asset_id)
             for raw_spot in raw_war.mstSpot
         ),
     )

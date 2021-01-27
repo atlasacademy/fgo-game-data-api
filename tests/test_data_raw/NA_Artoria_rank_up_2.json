@@ -1,5 +1,6 @@
 {
   "mstQuest": {
+    "beforeActionVals": [],
     "afterActionVals": [],
     "id": 94026514,
     "name": "Rank Up Quest: Altria Pendragon",
@@ -51,5 +52,6 @@
       "closedMessageId": 0,
       "imagePriority": 10000
     }
-  ]
+  ],
+  "phases": [1, 2, 3]
 }

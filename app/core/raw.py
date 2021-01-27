@@ -4,7 +4,7 @@ from fastapi import HTTPException
 from sqlalchemy.engine import Connection
 
 from ..data.gamedata import masters
-from ..db.helpers import ai, event, skill, svt, td
+from ..db.helpers import ai, event, quest, skill, svt, td
 from ..schemas.common import Region, ReverseDepth
 from ..schemas.enums import FUNC_VALS_NOT_BUFF
 from ..schemas.raw import (
@@ -371,24 +371,32 @@ def get_event_entity(conn: Connection, region: Region, event_id: int) -> EventEn
     )
 
 
-def get_quest_entity(region: Region, quest_id: int) -> QuestEntity:
-    return QuestEntity(
-        mstQuest=masters[region].mstQuestId[quest_id],
-        mstQuestConsumeItem=masters[region].mstQuestConsumeItemId.get(quest_id, []),
-        mstQuestRelease=masters[region].mstQuestReleaseId.get(quest_id, []),
-    )
+def get_quest_entity_many(conn: Connection, quest_id: List[int]) -> List[QuestEntity]:
+    quest_entities = quest.get_quest_entity(conn, quest_id)
+    if quest_entities:
+        return quest_entities
+    else:
+        raise HTTPException(status_code=404, detail="Quest not found")
+
+
+def get_quest_entity(conn: Connection, quest_id: int) -> QuestEntity:
+    return get_quest_entity_many(conn, [quest_id])[0]
+
+
+def get_quest_entity_by_spot_many(
+    conn: Connection, spot_ids: List[int]
+) -> List[QuestEntity]:
+    return quest.get_quest_by_spot(conn, spot_ids)
 
 
 def get_quest_phase_entity(
-    region: Region, quest_id: int, phase: int
+    conn: Connection, quest_id: int, phase: int
 ) -> QuestPhaseEntity:
-    return QuestPhaseEntity(
-        mstQuest=masters[region].mstQuestId[quest_id],
-        mstQuestConsumeItem=masters[region].mstQuestConsumeItemId.get(quest_id, []),
-        mstQuestRelease=masters[region].mstQuestReleaseId.get(quest_id, []),
-        mstQuestPhase=masters[region].mstQuestPhaseId[quest_id][phase],
-        mstStage=masters[region].mstStageId.get(quest_id, {}).get(phase, []),
-    )
+    quest_phase = quest.get_quest_phase_entity(conn, quest_id, phase)
+    if quest_phase:
+        return QuestPhaseEntity.parse_obj(quest_phase)
+    else:
+        raise HTTPException(status_code=404, detail="Quest phase not found")
 
 
 def get_mst_ai(

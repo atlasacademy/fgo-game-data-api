@@ -540,18 +540,16 @@ async def get_war(region: Region, war_id: int) -> Response:
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
-async def get_quest_phase(region: Region, quest_id: int, phase: int) -> Response:
+async def get_quest_phase(
+    quest_id: int,
+    phase: int,
+    conn: Connection = Depends(get_db),
+) -> Response:
     """
     Get the quest phase data from the given quest ID and phase number
     """
-    if (
-        quest_id in masters[region].mstQuestPhaseId
-        and phase in masters[region].mstQuestPhaseId[quest_id]
-    ):
-        quest_entity = raw.get_quest_phase_entity(region, quest_id, phase)
-        return item_response(quest_entity)
-    else:
-        raise HTTPException(status_code=404, detail="Quest phase not found")
+    quest_entity = raw.get_quest_phase_entity(conn, quest_id, phase)
+    return item_response(quest_entity)
 
 
 @router.get(
@@ -562,15 +560,15 @@ async def get_quest_phase(region: Region, quest_id: int, phase: int) -> Response
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
-async def get_quest(region: Region, quest_id: int) -> Response:
+async def get_quest(
+    quest_id: int,
+    conn: Connection = Depends(get_db),
+) -> Response:
     """
     Get the quest data from the given quest ID
     """
-    if quest_id in masters[region].mstQuestId:
-        quest_entity = raw.get_quest_entity(region, quest_id)
-        return item_response(quest_entity)
-    else:
-        raise HTTPException(status_code=404, detail="Quest not found")
+    quest_entity = raw.get_quest_entity(conn, quest_id)
+    return item_response(quest_entity)
 
 
 @router.get(

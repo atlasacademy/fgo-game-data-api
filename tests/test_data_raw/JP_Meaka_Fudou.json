@@ -1,5 +1,6 @@
 {
   "mstQuest": {
+    "beforeActionVals": [],
     "afterActionVals": [],
     "id": 94025012,
     "name": "探偵調査 目赤不動",
@@ -52,6 +53,7 @@
       "imagePriority": 10000
     }
   ],
+  "phases": [1],
   "mstQuestPhase": {
     "classIds": [2, 7],
     "individuality": [2392, 94000075],
