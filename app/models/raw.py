@@ -238,6 +238,37 @@ mstSvtComment = Table(
 )
 
 
+mstShop = Table(
+    "mstShop",
+    metadata,
+    Column("itemIds", ARRAY(Integer)),
+    Column("prices", ARRAY(Integer)),
+    Column("targetIds", ARRAY(Integer)),
+    Column("script", JSONB),
+    Column("id", Integer, primary_key=True),
+    Column("baseShopId", Integer),
+    Column("eventId", Integer, index=True),
+    Column("slot", Integer),
+    Column("flag", Integer),
+    Column("priority", Integer),
+    Column("purchaseType", Integer),
+    Column("setNum", Integer),
+    Column("payType", Integer),
+    Column("shopType", Integer),
+    Column("limitNum", Integer),
+    Column("defaultLv", Integer),
+    Column("defaultLimitCount", Integer),
+    Column("name", String),
+    Column("detail", String),
+    Column("infoMessage", String),
+    Column("warningMessage", String),
+    Column("imageId", Integer),
+    Column("bgImageId", Integer),
+    Column("openedAt", Integer),
+    Column("closedAt", Integer),
+)
+
+
 mstAi = Table(
     "mstAi",
     metadata,
@@ -295,6 +326,7 @@ TABLES_TO_BE_LOADED = [
     mstTreasureDeviceLv,
     mstSvtVoice,
     mstSvtComment,
+    mstShop,
     mstAi,
     mstAiField,
     mstAiAct,

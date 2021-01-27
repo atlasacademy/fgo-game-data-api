@@ -1425,8 +1425,8 @@ def get_nice_shop(region: Region, shop: MstShop) -> NiceShop:
     )
 
 
-def get_nice_event(region: Region, event_id: int) -> NiceEvent:
-    raw_data = raw.get_event_entity(region, event_id)
+def get_nice_event(conn: Connection, region: Region, event_id: int) -> NiceEvent:
+    raw_data = raw.get_event_entity(conn, region, event_id)
 
     base_settings = {"base_url": settings.asset_url, "region": region}
     nice_event = NiceEvent(

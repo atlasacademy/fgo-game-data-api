@@ -1,14 +1,14 @@
 # pylint: disable=R0201,R0904
-from typing import Dict, Iterable, Tuple
+from typing import Dict, Tuple
 
 import pytest
 from fastapi.testclient import TestClient
 
 from app.core.nice import get_nice_shop
-from app.data.gamedata import masters
+from app.db.base import engines
+from app.db.helpers import event
 from app.main import app
 from app.schemas.common import Region
-from app.schemas.raw import MstShop
 
 from .utils import get_response_data
 
@@ -367,18 +367,14 @@ class TestServantSpecial:
         assert "chaldea_category_" in war_interlude.json()["banner"]
 
     def test_shop_itemIds_0(self) -> None:
-        def get_shop_by_id(shops: Iterable[MstShop], shop_id: int) -> MstShop:
-            return next(shop for shop in shops if shop.id == shop_id)
+        with engines[Region.NA].connect() as conn:
+            fp_shop_item = get_nice_shop(Region.NA, event.get_mstShop_by_id(conn, 1))
+            assert fp_shop_item.cost.item.name == "Friend Point"
 
-        default_event_shop = masters[Region.NA].mstShopEventId[0]
-
-        fp_shop_item = get_nice_shop(Region.NA, get_shop_by_id(default_event_shop, 1))
-        assert fp_shop_item.cost.item.name == "Friend Point"
-
-        mp_shop_item = get_nice_shop(
-            Region.NA, get_shop_by_id(default_event_shop, 11000000)
-        )
-        assert mp_shop_item.cost.item.name == "Mana Prism"
+            mp_shop_item = get_nice_shop(
+                Region.NA, event.get_mstShop_by_id(conn, 11000000)
+            )
+            assert mp_shop_item.cost.item.name == "Mana Prism"
 
     def test_skill_ai_id(self) -> None:
         nice_skill = client.get("/nice/NA/skill/962219").json()

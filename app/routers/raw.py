@@ -500,12 +500,16 @@ async def get_item(region: Region, item_id: int) -> Response:
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
-async def get_event(region: Region, event_id: int) -> Response:
+async def get_event(
+    region: Region,
+    event_id: int,
+    conn: Connection = Depends(get_db),
+) -> Response:
     """
     Get the event data from the given event ID
     """
     if event_id in masters[region].mstEventId:
-        return item_response(raw.get_event_entity(region, event_id))
+        return item_response(raw.get_event_entity(conn, region, event_id))
     else:
         raise HTTPException(status_code=404, detail="Event not found")
 
