@@ -18,5 +18,5 @@ for translation_file in ("servant_names.json", "equip_names.json"):
 EXTRA_CHARAFIGURES: Dict[int, List[int]] = {}
 
 
-with open(MAPPING_PATH / "extra_charaFigure.json", "r", encoding="utf-8") as fp:
+with open(MAPPING_PATH / "extra_charafigure.json", "r", encoding="utf-8") as fp:
     EXTRA_CHARAFIGURES = {cf["svtId"]: cf["charaFigureIds"] for cf in json.load(fp)}
