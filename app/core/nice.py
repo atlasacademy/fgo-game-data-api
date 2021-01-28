@@ -950,12 +950,21 @@ def get_nice_servant(
         }
 
     if svt_id in EXTRA_CHARAFIGURES:
-        charaFigure["story"] = {
-            charaFigure_id: AssetURL.charaFigureId.format(
+        charaFigure["story"] = {}
+        for charaFigure_id in sorted(EXTRA_CHARAFIGURES[svt_id]):
+            charaFigure["story"][charaFigure_id] = AssetURL.charaFigureId.format(
                 **base_settings, charaFigure=charaFigure_id
             )
-            for charaFigure_id in sorted(EXTRA_CHARAFIGURES[svt_id])
-        }
+
+            svtScripts = masters[region].mstSvtScriptId.get(charaFigure_id // 10, [])
+            for svtScript in svtScripts:
+                script_form = svtScript.extendData.get("myroomForm", svtScript.form)
+                if script_form != 0:
+                    charaFigureForm[script_form]["story"][
+                        svtScript.id
+                    ] = AssetURL.charaFigureForm.format(
+                        **base_settings, form_id=script_form, svtScript_id=svtScript.id
+                    )
 
     nice_data["extraAssets"] = {
         "charaGraph": charaGraph,
