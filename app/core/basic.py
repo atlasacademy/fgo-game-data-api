@@ -1,8 +1,8 @@
 from typing import Any, Dict, Optional
 
 from ..config import Settings
+from ..data.custom_mappings import TRANSLATIONS
 from ..data.gamedata import masters
-from ..data.translations import TRANSLATIONS
 from ..schemas.basic import (
     BasicBuffReverse,
     BasicCommandCode,

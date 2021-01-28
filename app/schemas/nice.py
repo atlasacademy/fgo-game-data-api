@@ -55,6 +55,9 @@ class AssetURL:
     status = "{base_url}/{region}/Servants/Status/{item_id}/status_servant_{i}.png"
     charaGraphDefault = "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a.png"
     charaFigure = "{base_url}/{region}/CharaFigure/{item_id}{i}/{item_id}{i}_merged.png"
+    charaFigureId = (
+        "{base_url}/{region}/CharaFigure/{charaFigure}/{charaFigure}_merged.png"
+    )
     charaFigureForm = "{base_url}/{region}/CharaFigure/Form/{form_id}/{svtScript_id}/{svtScript_id}_merged.png"
     narrowFigure = {
         1: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}@0.png",
@@ -441,6 +444,7 @@ class NiceMysticCode(BaseModelORJson):
 
 class ExtraAssetsUrl(BaseModel):
     ascension: Optional[Dict[int, HttpUrl]] = None
+    story: Optional[Dict[int, HttpUrl]] = None
     costume: Optional[Dict[int, HttpUrl]] = None
     equip: Optional[Dict[int, HttpUrl]] = None
     cc: Optional[Dict[int, HttpUrl]] = None

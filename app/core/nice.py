@@ -7,8 +7,8 @@ from fastapi import HTTPException
 from sqlalchemy.engine import Connection
 
 from ..config import Settings
+from ..data.custom_mappings import EXTRA_CHARAFIGURES, TRANSLATIONS
 from ..data.gamedata import masters
-from ..data.translations import TRANSLATIONS
 from ..schemas.basic import (
     BasicReversedBuff,
     BasicReversedFunction,
@@ -947,6 +947,14 @@ def get_nice_servant(
         faces["equip"] = {svt_id: AssetURL.face.format(**base_settings_id, i=0)}
         equipFace["equip"] = {
             svt_id: AssetURL.equipFace.format(**base_settings_id, i=0)
+        }
+
+    if svt_id in EXTRA_CHARAFIGURES:
+        charaFigure["story"] = {
+            charaFigure_id: AssetURL.charaFigureId.format(
+                **base_settings, charaFigure=charaFigure_id
+            )
+            for charaFigure_id in sorted(EXTRA_CHARAFIGURES[svt_id])
         }
 
     nice_data["extraAssets"] = {

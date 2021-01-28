@@ -49,6 +49,12 @@
         "2": "https://assets.atlasacademy.io/GameData/NA/CharaFigure/11002001/11002001_merged.png",
         "3": "https://assets.atlasacademy.io/GameData/NA/CharaFigure/11002002/11002002_merged.png"
       },
+      "story": {
+        "98051000": "https://assets.atlasacademy.io/GameData/NA/CharaFigure/98051000/98051000_merged.png",
+        "1098154200": "https://assets.atlasacademy.io/GameData/NA/CharaFigure/1098154200/1098154200_merged.png",
+        "1098154210": "https://assets.atlasacademy.io/GameData/NA/CharaFigure/1098154210/1098154210_merged.png",
+        "1098155800": "https://assets.atlasacademy.io/GameData/NA/CharaFigure/1098155800/1098155800_merged.png"
+      },
       "costume": {
         "1100230": "https://assets.atlasacademy.io/GameData/NA/CharaFigure/11002300/11002300_merged.png"
       }

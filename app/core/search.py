@@ -4,8 +4,8 @@ from fastapi import HTTPException
 from fuzzywuzzy import fuzz, utils
 from sqlalchemy.engine import Connection
 
+from ..data.custom_mappings import TRANSLATIONS
 from ..data.gamedata import masters
-from ..data.translations import TRANSLATIONS
 from ..db.helpers.skill import get_skill_search
 from ..db.helpers.svt import get_related_voice_id
 from ..schemas.common import Region

@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.37.0 - 2020-01-27
+### Added
+- Story charaFigure to nice servant.
+
 ## 5.36.2 - 2020-01-26
 ### Added
 - `phases` to raw quest.

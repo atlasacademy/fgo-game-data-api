@@ -21,7 +21,12 @@
       }
     },
     "narrowFigure": {},
-    "charaFigure": {},
+    "charaFigure": {
+      "story": {
+        "98108300": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/98108300/98108300_merged.png",
+        "98108310": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/98108310/98108310_merged.png"
+      }
+    },
     "charaFigureForm": {},
     "commands": {},
     "status": {},

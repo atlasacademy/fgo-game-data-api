@@ -39,6 +39,9 @@
         "1": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/3043000/3043000_merged.png",
         "2": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/3043001/3043001_merged.png",
         "3": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/3043002/3043002_merged.png"
+      },
+      "story": {
+        "1098192500": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/1098192500/1098192500_merged.png"
       }
     },
     "charaFigureForm": {},

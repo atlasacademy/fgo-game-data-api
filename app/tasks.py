@@ -24,8 +24,8 @@ from .core.nice import (
     get_nice_servant_model,
 )
 from .core.utils import get_safe, sort_by_collection_no
+from .data.custom_mappings import TRANSLATIONS
 from .data.gamedata import masters, region_path, update_db, update_gamedata
-from .data.translations import TRANSLATIONS
 from .db.base import engines
 from .routers.utils import list_string
 from .schemas.base import BaseModelORJson

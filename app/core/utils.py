@@ -1,6 +1,6 @@
 from typing import Any, Iterable, List, Mapping, TypeVar, Union
 
-from ..data.translations import TRANSLATIONS
+from ..data.custom_mappings import TRANSLATIONS
 from ..schemas.basic import BasicEquip, BasicServant
 from ..schemas.common import NiceTrait
 from ..schemas.enums import TRAIT_NAME, Trait
