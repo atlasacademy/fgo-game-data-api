@@ -50,21 +50,20 @@ def get_mstSubtitle(
 def get_related_voice_id(
     conn: Connection, cond_svt_value: Set[int], cond_group_value: Set[int]
 ) -> Set[int]:
-    stmt = text(
-        cleandoc(
-            """
-            SELECT
-            DISTINCT "mstSvtVoice".id
-            FROM "mstSvtVoice",
-            jsonb_array_elements("mstSvtVoice"."scriptJson") scriptJsonExpanded,
-            jsonb_array_elements(scriptJsonExpanded->'conds') condsExpanded
-            WHERE
-            (condsExpanded->>'condType' = :svtCond AND condsExpanded->>'value' IN :svtValue)
-            OR
-            (condsExpanded->>'condType' = :groupCond AND condsExpanded->>'value' IN :groupValue)
-            """
-        )
+    text_stmt = cleandoc(
+        """
+        SELECT
+        DISTINCT "mstSvtVoice".id
+        FROM "mstSvtVoice",
+        jsonb_array_elements("mstSvtVoice"."scriptJson") scriptJsonExpanded,
+        jsonb_array_elements(scriptJsonExpanded->'conds') condsExpanded
+        WHERE
+        (condsExpanded->>'condType' = :svtCond AND condsExpanded->>'value' IN :svtValue)
+        """
     )
+    if cond_group_value:
+        text_stmt += "OR (condsExpanded->>'condType' = :groupCond AND condsExpanded->>'value' IN :groupValue)"
+    stmt = text(text_stmt)
     fetched: Set[int] = {
         svt_id[0]
         for svt_id in conn.execute(
