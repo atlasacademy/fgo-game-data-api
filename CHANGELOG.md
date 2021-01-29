@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.37.2 - 2020-01-28
+### Fixed
+- Mash should return the same skills but with different priorities now. Previously, nice Mash returned the same skills with the same priorities.
+
 ## 5.37.1 - 2020-01-27
 ### Added
 - Story charaFigure with forms.

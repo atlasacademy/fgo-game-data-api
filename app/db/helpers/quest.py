@@ -29,7 +29,7 @@ JOINED_QUEST_TABLES = (
 
 
 SELECT_QUEST_ENTITY = [
-    func.to_jsonb(literal_column('"mstQuest"')).label("mstQuest"),
+    func.to_jsonb(literal_column(f'"{mstQuest.name}"')).label(mstQuest.name),
     sql_jsonb_agg(mstQuestConsumeItem),
     sql_jsonb_agg(mstQuestRelease),
     func.jsonb_agg(mstQuestPhase.c.phase.distinct()).label("phases"),

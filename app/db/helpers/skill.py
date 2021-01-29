@@ -1,46 +1,74 @@
 from typing import Any, Iterable, List, Optional
 
 from sqlalchemy.engine import Connection
-from sqlalchemy.sql import and_, func, select
+from sqlalchemy.sql import and_, func, literal_column, select
 
 from ...models.raw import mstSkill, mstSkillDetail, mstSkillLv, mstSvtSkill
-from ...schemas.raw import MstSkill
+from ...schemas.raw import MstSkill, SkillEntityNoReverse
+from .utils import sql_jsonb_agg
 
 
-def get_mstSkill(conn: Connection, skill_id: int) -> Any:
-    mstSkill_stmt = select([mstSkill]).where(mstSkill.c.id == skill_id)
-    return conn.execute(mstSkill_stmt).fetchone()
-
-
-def get_mstSkillDetail(conn: Connection, skill_id: int) -> List[Any]:
-    mstSkillDetail_stmt = select([mstSkillDetail]).where(
-        mstSkillDetail.c.id == skill_id
+mstSkillLvJson = (
+    select(
+        [
+            mstSkillLv.c.skillId,
+            func.jsonb_agg(literal_column(f'"{mstSkillLv.name}" ORDER BY "lv"')).label(
+                mstSkillLv.name
+            ),
+        ]
     )
-    fetched: list[Any] = conn.execute(mstSkillDetail_stmt).fetchall()
-    return fetched
+    .group_by(mstSkillLv.c.skillId)
+    .cte()
+)
 
 
-def get_mstSkillLv(conn: Connection, skill_id: int) -> List[Any]:
-    mstSkillLv_stmt = (
-        select([mstSkillLv])
-        .where(mstSkillLv.c.skillId == skill_id)
-        .order_by(mstSkillLv.c.lv)
+JOINED_SKILL_TABLES = (
+    mstSkill.join(
+        mstSkillDetail,
+        mstSkillDetail.c.id == mstSkill.c.id,
+        isouter=True,
     )
-    fetched: list[Any] = conn.execute(mstSkillLv_stmt).fetchall()
-    return fetched
+    .join(
+        mstSvtSkill,
+        mstSvtSkill.c.skillId == mstSkill.c.id,
+        isouter=True,
+    )
+    .join(
+        mstSkillLvJson,
+        mstSkillLvJson.c.skillId == mstSkill.c.id,
+        isouter=True,
+    )
+)
 
 
-def get_mstSvtSkill(
-    conn: Connection, skill_id: Optional[int] = None, svt_id: Optional[int] = None
-) -> List[Any]:
-    if skill_id:
-        mstSvtSkill_stmt = select([mstSvtSkill]).where(
-            mstSvtSkill.c.skillId == skill_id
-        )
-    elif svt_id:
-        mstSvtSkill_stmt = select([mstSvtSkill]).where(mstSvtSkill.c.svtId == svt_id)
-    else:
-        raise ValueError("Must give at least one input for get_mstSvtSkill.")
+SELECT_SKILL_ENTITY = [
+    func.to_jsonb(literal_column(f'"{mstSkill.name}"')).label(mstSkill.name),
+    sql_jsonb_agg(mstSkillDetail),
+    sql_jsonb_agg(mstSvtSkill),
+    mstSkillLvJson.c.mstSkillLv,
+]
+
+
+def get_skillEntity(
+    conn: Connection, skill_ids: Iterable[int]
+) -> List[SkillEntityNoReverse]:
+    stmt = (
+        select(SELECT_SKILL_ENTITY)
+        .select_from(JOINED_SKILL_TABLES)
+        .where(mstSkill.c.id.in_(skill_ids))
+        .group_by(mstSkill.c.id, mstSkillLvJson.c.mstSkillLv)
+    )
+
+    skill_entities = (
+        SkillEntityNoReverse.parse_obj(skill) for skill in conn.execute(stmt).fetchall()
+    )
+    order = {skill_id: i for i, skill_id in enumerate(skill_ids)}
+
+    return sorted(skill_entities, key=lambda skill: order[skill.mstSkill.id])
+
+
+def get_mstSvtSkill(conn: Connection, svt_id: int) -> List[Any]:
+    mstSvtSkill_stmt = select([mstSvtSkill]).where(mstSvtSkill.c.svtId == svt_id)
     fetched: list[Any] = conn.execute(mstSvtSkill_stmt).fetchall()
     return fetched
 
