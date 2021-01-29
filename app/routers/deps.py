@@ -7,8 +7,5 @@ from ..schemas.common import Region
 
 
 def get_db(region: Region) -> Generator[Connection, None, None]:
-    connection = engines[region].connect()
-    try:
+    with engines[region].connect() as connection:
         yield connection
-    finally:
-        connection.close()
