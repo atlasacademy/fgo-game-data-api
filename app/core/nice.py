@@ -1,5 +1,6 @@
 import re
 from collections import defaultdict
+from copy import deepcopy
 from typing import Any, Dict, List, Optional, Union
 
 import orjson
@@ -462,7 +463,7 @@ def get_ai_id_from_skill(region: Region, skill_id: int) -> Dict[AiType, List[int
 
 def get_nice_skill(
     skillEntity: SkillEntityNoReverse, svtId: int, region: Region
-) -> Dict[str, Any]:
+) -> List[Dict[str, Any]]:
     nice_skill: Dict[str, Any] = {
         "id": skillEntity.mstSkill.id,
         "name": skillEntity.mstSkill.name,
@@ -481,27 +482,6 @@ def get_nice_skill(
         nice_skill["detail"] = strip_formatting_brackets(
             skillEntity.mstSkillDetail[0].detail
         )
-
-    # .mstSvtSkill returns the list of SvtSkill with the same skill_id
-    if skillEntity.mstSvtSkill:
-        chosenSvt = next(
-            svt_skill
-            for svt_skill in skillEntity.mstSvtSkill
-            if svt_skill.svtId == svtId
-        )
-        if chosenSvt:
-            # Wait for 3.9 for PEP 584 to use |=
-            nice_skill.update(
-                {
-                    "strengthStatus": chosenSvt.strengthStatus,
-                    "num": chosenSvt.num,
-                    "priority": chosenSvt.priority,
-                    "condQuestId": chosenSvt.condQuestId,
-                    "condQuestPhase": chosenSvt.condQuestPhase,
-                    "condLv": chosenSvt.condLv,
-                    "condLimitCount": chosenSvt.condLimitCount,
-                }
-            )
 
     aiIds = get_ai_id_from_skill(region, skillEntity.mstSkill.id)
     if aiIds[AiType.svt] or aiIds[AiType.field]:
@@ -535,7 +515,32 @@ def get_nice_skill(
             ]
         nice_skill["functions"].append(functionInfo)
 
-    return nice_skill
+    # .mstSvtSkill returns the list of SvtSkill with the same skill_id
+    if skillEntity.mstSvtSkill:
+        chosen_svts = [
+            svt_skill
+            for svt_skill in skillEntity.mstSvtSkill
+            if svt_skill.svtId == svtId
+        ]
+        if chosen_svts:
+            out_skills = []
+            for chosenSvt in chosen_svts:
+                out_skill = deepcopy(nice_skill)
+                out_skill.update(
+                    {
+                        "strengthStatus": chosenSvt.strengthStatus,
+                        "num": chosenSvt.num,
+                        "priority": chosenSvt.priority,
+                        "condQuestId": chosenSvt.condQuestId,
+                        "condQuestPhase": chosenSvt.condQuestPhase,
+                        "condLv": chosenSvt.condLv,
+                        "condLimitCount": chosenSvt.condLimitCount,
+                    }
+                )
+                out_skills.append(out_skill)
+            return out_skills
+
+    return [nice_skill]
 
 
 def get_nice_td(
@@ -1104,12 +1109,15 @@ def get_nice_servant(
     nice_data["script"] = script
 
     nice_data["skills"] = [
-        get_nice_skill(skill, svt_id, region) for skill in raw_data.mstSkill
+        skill
+        for skillEntity in raw_data.mstSkill
+        for skill in get_nice_skill(skillEntity, svt_id, region)
     ]
 
     nice_data["classPassive"] = [
-        get_nice_skill(skill, svt_id, region)
-        for skill in raw_data.mstSvt.expandedClassPassive
+        skill
+        for skillEntity in raw_data.mstSvt.expandedClassPassive
+        for skill in get_nice_skill(skillEntity, svt_id, region)
     ]
 
     # Filter out dummy TDs that are used by enemy servants
@@ -1274,7 +1282,7 @@ def get_nice_skill_alone(
         svtId = svt_list[0]
     else:
         svtId = 0
-    nice_data = NiceSkillReverse.parse_obj(get_nice_skill(raw_data, svtId, region))
+    nice_data = NiceSkillReverse.parse_obj(get_nice_skill(raw_data, svtId, region)[0])
 
     if reverse and reverseDepth >= ReverseDepth.servant:
         activeSkills = {svt_skill.svtId for svt_skill in raw_data.mstSvtSkill}
@@ -1375,7 +1383,11 @@ def get_nice_mystic_code(
             for exp in sorted(raw_data.mstEquipExp, key=lambda x: x.lv)
             if exp.exp != -1
         ),
-        skills=(get_nice_skill(skill, mc_id, region) for skill in raw_data.mstSkill),
+        skills=(
+            skill
+            for skillEntity in raw_data.mstSkill
+            for skill in get_nice_skill(skillEntity, mc_id, region)
+        ),
     )
 
     return nice_mc
@@ -1398,7 +1410,11 @@ def get_nice_command_code(
             },
             "faces": {"cc": {cc_id: AssetURL.commandCode.format(**base_settings)}},
         },
-        skills=(get_nice_skill(skill, cc_id, region) for skill in raw_data.mstSkill),
+        skills=(
+            skill
+            for skillEntity in raw_data.mstSkill
+            for skill in get_nice_skill(skillEntity, cc_id, region)
+        ),
         illustrator=get_illustrator_name(
             region, raw_data.mstCommandCodeComment.illustratorId
         ),

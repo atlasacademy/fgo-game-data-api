@@ -1411,285 +1411,6 @@
       ]
     },
     {
-      "id": 457000,
-      "num": 3,
-      "name": "悲壮なる奮起の盾",
-      "ruby": "ひそうなるふんきのたて",
-      "detail": "自身に無敵状態を付与(1ターン)＆ターゲット集中状態を付与(1ターン)＆HPを減らす【デメリット】",
-      "type": "active",
-      "strengthStatus": 0,
-      "priority": 2,
-      "condQuestId": 3000124,
-      "condQuestPhase": 3,
-      "condLv": 0,
-      "condLimitCount": 2,
-      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00403.png",
-      "coolDown": [9, 9, 9, 9, 9, 8, 8, 8, 8, 7],
-      "actIndividuality": [],
-      "script": {},
-      "functions": [
-        {
-          "funcId": 289,
-          "funcType": "addState",
-          "funcTargetType": "self",
-          "funcTargetTeam": "playerAndEnemy",
-          "funcPopupText": "無敵",
-          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_311.png",
-          "functvals": [],
-          "funcquestTvals": [],
-          "funcGroup": [],
-          "buffs": [
-            {
-              "id": 155,
-              "name": "無敵",
-              "detail": "必中を無視して、攻撃によるダメージを0にする",
-              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_311.png",
-              "type": "invincible",
-              "buffGroup": 400,
-              "script": {},
-              "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3018, "name": "buffEvadeAndInvincible" },
-                { "id": 3022, "name": "buffInvincible" },
-                { "id": 3007, "name": "buffIncreaseDefence" }
-              ],
-              "tvals": [],
-              "ckSelfIndv": [],
-              "ckOpIndv": [],
-              "maxRate": 0
-            }
-          ],
-          "svals": [
-            { "Rate": 1000, "Turn": 1, "Count": -1 },
-            { "Rate": 1000, "Turn": 1, "Count": -1 },
-            { "Rate": 1000, "Turn": 1, "Count": -1 },
-            { "Rate": 1000, "Turn": 1, "Count": -1 },
-            { "Rate": 1000, "Turn": 1, "Count": -1 },
-            { "Rate": 1000, "Turn": 1, "Count": -1 },
-            { "Rate": 1000, "Turn": 1, "Count": -1 },
-            { "Rate": 1000, "Turn": 1, "Count": -1 },
-            { "Rate": 1000, "Turn": 1, "Count": -1 },
-            { "Rate": 1000, "Turn": 1, "Count": -1 }
-          ]
-        },
-        {
-          "funcId": 358,
-          "funcType": "addState",
-          "funcTargetType": "self",
-          "funcTargetTeam": "player",
-          "funcPopupText": "タゲ集中アップ",
-          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
-          "functvals": [],
-          "funcquestTvals": [],
-          "funcGroup": [],
-          "buffs": [
-            {
-              "id": 181,
-              "name": "タゲ集中アップ",
-              "detail": "敵からの狙われやすさをアップ",
-              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
-              "type": "upHate",
-              "buffGroup": 700,
-              "script": {},
-              "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3023, "name": "buffTargetFocus" }
-              ],
-              "tvals": [],
-              "ckSelfIndv": [],
-              "ckOpIndv": [],
-              "maxRate": 50000
-            }
-          ],
-          "svals": [
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 }
-          ]
-        },
-        {
-          "funcId": 2195,
-          "funcType": "addState",
-          "funcTargetType": "self",
-          "funcTargetTeam": "enemy",
-          "funcPopupText": "タゲ集中アップ",
-          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
-          "functvals": [],
-          "funcquestTvals": [],
-          "funcGroup": [],
-          "buffs": [
-            {
-              "id": 487,
-              "name": "タゲ集中アップ",
-              "detail": "自身にターゲットを固定する",
-              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
-              "type": "upHate",
-              "buffGroup": 700,
-              "script": {},
-              "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3023, "name": "buffTargetFocus" }
-              ],
-              "tvals": [],
-              "ckSelfIndv": [],
-              "ckOpIndv": [],
-              "maxRate": 50000
-            }
-          ],
-          "svals": [
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 }
-          ]
-        },
-        {
-          "funcId": 709,
-          "funcType": "lossHpSafe",
-          "funcTargetType": "self",
-          "funcTargetTeam": "playerAndEnemy",
-          "funcPopupText": "HP減少",
-          "functvals": [],
-          "funcquestTvals": [],
-          "funcGroup": [],
-          "buffs": [],
-          "svals": [
-            { "Rate": 1000, "Value": 2500 },
-            { "Rate": 1000, "Value": 2300 },
-            { "Rate": 1000, "Value": 2100 },
-            { "Rate": 1000, "Value": 1900 },
-            { "Rate": 1000, "Value": 1700 },
-            { "Rate": 1000, "Value": 1500 },
-            { "Rate": 1000, "Value": 1300 },
-            { "Rate": 1000, "Value": 1100 },
-            { "Rate": 1000, "Value": 900 },
-            { "Rate": 1000, "Value": 500 }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 459550,
-      "num": 1,
-      "name": "バンカーボルト A",
-      "ruby": "ばんかーぼると",
-      "detail": "自身のBusterカード性能をアップ(1回・3ターン)＆Buster攻撃のクリティカル威力をアップ(1回・3ターン)",
-      "type": "active",
-      "strengthStatus": 1,
-      "priority": 3,
-      "condQuestId": 3000124,
-      "condQuestPhase": 3,
-      "condLv": 0,
-      "condLimitCount": 0,
-      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00306.png",
-      "coolDown": [6, 6, 6, 6, 6, 5, 5, 5, 5, 4],
-      "actIndividuality": [],
-      "script": {},
-      "functions": [
-        {
-          "funcId": 120,
-          "funcType": "addStateShort",
-          "funcTargetType": "self",
-          "funcTargetTeam": "playerAndEnemy",
-          "funcPopupText": "バスターアップ",
-          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
-          "functvals": [],
-          "funcquestTvals": [],
-          "funcGroup": [],
-          "buffs": [
-            {
-              "id": 102,
-              "name": "Busterアップ",
-              "detail": "Busterカードの性能をアップ",
-              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
-              "type": "upCommandall",
-              "buffGroup": 0,
-              "script": {},
-              "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" }
-              ],
-              "tvals": [
-                { "id": 5000, "name": "canBeInBattle" },
-                { "id": 4002, "name": "cardBuster" }
-              ],
-              "ckSelfIndv": [{ "id": 4002, "name": "cardBuster" }],
-              "ckOpIndv": [],
-              "maxRate": 5000
-            }
-          ],
-          "svals": [
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 300 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 320 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 340 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 360 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 380 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 400 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 420 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 440 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 460 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 500 }
-          ]
-        },
-        {
-          "funcId": 2231,
-          "funcType": "addStateShort",
-          "funcTargetType": "self",
-          "funcTargetTeam": "playerAndEnemy",
-          "funcPopupText": "クリティカル威力アップ〔Buster〕",
-          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
-          "functvals": [],
-          "funcquestTvals": [],
-          "funcGroup": [],
-          "buffs": [
-            {
-              "id": 952,
-              "name": "クリティカル威力アップ",
-              "detail": "Busterカードのクリティカル時のダメージをアップ",
-              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
-              "type": "upCriticaldamage",
-              "buffGroup": 0,
-              "script": {},
-              "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" },
-                { "id": 3031, "name": "buffCritDamageUp" }
-              ],
-              "tvals": [],
-              "ckSelfIndv": [{ "id": 4002, "name": "cardBuster" }],
-              "ckOpIndv": [],
-              "maxRate": 5000
-            }
-          ],
-          "svals": [
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 300 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 320 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 340 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 360 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 380 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 400 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 420 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 440 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 460 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 500 }
-          ]
-        }
-      ]
-    },
-    {
       "id": 460250,
       "num": 2,
       "name": "アマルガムゴート D",
@@ -1697,7 +1418,7 @@
       "detail": "自身にターゲット集中状態を付与(1ターン)＆NPを増やす",
       "type": "active",
       "strengthStatus": 0,
-      "priority": 2,
+      "priority": 3,
       "condQuestId": 3000124,
       "condQuestPhase": 3,
       "condLv": 0,
@@ -2011,6 +1732,177 @@
       ]
     },
     {
+      "id": 457000,
+      "num": 3,
+      "name": "悲壮なる奮起の盾",
+      "ruby": "ひそうなるふんきのたて",
+      "detail": "自身に無敵状態を付与(1ターン)＆ターゲット集中状態を付与(1ターン)＆HPを減らす【デメリット】",
+      "type": "active",
+      "strengthStatus": 0,
+      "priority": 3,
+      "condQuestId": 3000124,
+      "condQuestPhase": 3,
+      "condLv": 0,
+      "condLimitCount": 2,
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00403.png",
+      "coolDown": [9, 9, 9, 9, 9, 8, 8, 8, 8, 7],
+      "actIndividuality": [],
+      "script": {},
+      "functions": [
+        {
+          "funcId": 289,
+          "funcType": "addState",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "無敵",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_311.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [],
+          "buffs": [
+            {
+              "id": 155,
+              "name": "無敵",
+              "detail": "必中を無視して、攻撃によるダメージを0にする",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_311.png",
+              "type": "invincible",
+              "buffGroup": 400,
+              "script": {},
+              "vals": [
+                { "id": 3004, "name": "buffPositiveEffect" },
+                { "id": 3018, "name": "buffEvadeAndInvincible" },
+                { "id": 3022, "name": "buffInvincible" },
+                { "id": 3007, "name": "buffIncreaseDefence" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 0
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": 1, "Count": -1 },
+            { "Rate": 1000, "Turn": 1, "Count": -1 },
+            { "Rate": 1000, "Turn": 1, "Count": -1 },
+            { "Rate": 1000, "Turn": 1, "Count": -1 },
+            { "Rate": 1000, "Turn": 1, "Count": -1 },
+            { "Rate": 1000, "Turn": 1, "Count": -1 },
+            { "Rate": 1000, "Turn": 1, "Count": -1 },
+            { "Rate": 1000, "Turn": 1, "Count": -1 },
+            { "Rate": 1000, "Turn": 1, "Count": -1 },
+            { "Rate": 1000, "Turn": 1, "Count": -1 }
+          ]
+        },
+        {
+          "funcId": 358,
+          "funcType": "addState",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "タゲ集中アップ",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [],
+          "buffs": [
+            {
+              "id": 181,
+              "name": "タゲ集中アップ",
+              "detail": "敵からの狙われやすさをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
+              "type": "upHate",
+              "buffGroup": 700,
+              "script": {},
+              "vals": [
+                { "id": 3004, "name": "buffPositiveEffect" },
+                { "id": 3023, "name": "buffTargetFocus" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 50000
+            }
+          ],
+          "svals": [
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 }
+          ]
+        },
+        {
+          "funcId": 2195,
+          "funcType": "addState",
+          "funcTargetType": "self",
+          "funcTargetTeam": "enemy",
+          "funcPopupText": "タゲ集中アップ",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [],
+          "buffs": [
+            {
+              "id": 487,
+              "name": "タゲ集中アップ",
+              "detail": "自身にターゲットを固定する",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_323.png",
+              "type": "upHate",
+              "buffGroup": 700,
+              "script": {},
+              "vals": [
+                { "id": 3004, "name": "buffPositiveEffect" },
+                { "id": 3023, "name": "buffTargetFocus" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 50000
+            }
+          ],
+          "svals": [
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 },
+            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 3000 }
+          ]
+        },
+        {
+          "funcId": 709,
+          "funcType": "lossHpSafe",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "HP減少",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [],
+          "buffs": [],
+          "svals": [
+            { "Rate": 1000, "Value": 2500 },
+            { "Rate": 1000, "Value": 2300 },
+            { "Rate": 1000, "Value": 2100 },
+            { "Rate": 1000, "Value": 1900 },
+            { "Rate": 1000, "Value": 1700 },
+            { "Rate": 1000, "Value": 1500 },
+            { "Rate": 1000, "Value": 1300 },
+            { "Rate": 1000, "Value": 1100 },
+            { "Rate": 1000, "Value": 900 },
+            { "Rate": 1000, "Value": 500 }
+          ]
+        }
+      ]
+    },
+    {
       "id": 459550,
       "num": 1,
       "name": "バンカーボルト A",
@@ -2019,6 +1911,114 @@
       "type": "active",
       "strengthStatus": 1,
       "priority": 3,
+      "condQuestId": 3000124,
+      "condQuestPhase": 3,
+      "condLv": 0,
+      "condLimitCount": 0,
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00306.png",
+      "coolDown": [6, 6, 6, 6, 6, 5, 5, 5, 5, 4],
+      "actIndividuality": [],
+      "script": {},
+      "functions": [
+        {
+          "funcId": 120,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "バスターアップ",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [],
+          "buffs": [
+            {
+              "id": 102,
+              "name": "Busterアップ",
+              "detail": "Busterカードの性能をアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
+              "type": "upCommandall",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [
+                { "id": 3004, "name": "buffPositiveEffect" },
+                { "id": 3006, "name": "buffIncreaseDamage" }
+              ],
+              "tvals": [
+                { "id": 5000, "name": "canBeInBattle" },
+                { "id": 4002, "name": "cardBuster" }
+              ],
+              "ckSelfIndv": [{ "id": 4002, "name": "cardBuster" }],
+              "ckOpIndv": [],
+              "maxRate": 5000
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 300 },
+            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 320 },
+            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 340 },
+            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 360 },
+            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 380 },
+            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 400 },
+            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 420 },
+            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 440 },
+            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 460 },
+            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 500 }
+          ]
+        },
+        {
+          "funcId": 2231,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "クリティカル威力アップ〔Buster〕",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [],
+          "buffs": [
+            {
+              "id": 952,
+              "name": "クリティカル威力アップ",
+              "detail": "Busterカードのクリティカル時のダメージをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
+              "type": "upCriticaldamage",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [
+                { "id": 3004, "name": "buffPositiveEffect" },
+                { "id": 3006, "name": "buffIncreaseDamage" },
+                { "id": 3031, "name": "buffCritDamageUp" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [{ "id": 4002, "name": "cardBuster" }],
+              "ckOpIndv": [],
+              "maxRate": 5000
+            }
+          ],
+          "svals": [
+            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 300 },
+            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 320 },
+            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 340 },
+            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 360 },
+            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 380 },
+            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 400 },
+            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 420 },
+            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 440 },
+            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 460 },
+            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 500 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 459550,
+      "num": 1,
+      "name": "バンカーボルト A",
+      "ruby": "ばんかーぼると",
+      "detail": "自身のBusterカード性能をアップ(1回・3ターン)＆Buster攻撃のクリティカル威力をアップ(1回・3ターン)",
+      "type": "active",
+      "strengthStatus": 1,
+      "priority": 4,
       "condQuestId": 3000124,
       "condQuestPhase": 3,
       "condLv": 0,
@@ -2396,7 +2396,7 @@
       "detail": "自身のBusterカード性能をアップ▲(1回・3ターン)＆Buster攻撃のクリティカル威力をアップ▲(1回・3ターン)＆防御無視状態を付与(3ターン)▲",
       "type": "active",
       "strengthStatus": 99,
-      "priority": 5,
+      "priority": 6,
       "condQuestId": 3000607,
       "condQuestPhase": 4,
       "condLv": 0,

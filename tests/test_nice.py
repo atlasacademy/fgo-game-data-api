@@ -358,6 +358,11 @@ class TestServantSpecial:
         assert response.status_code == 200
         assert response.json()["svtChange"][0]["name"] == "Archer of Inferno"
 
+    def test_story_charaFigure_form(self) -> None:
+        response = client.get("/nice/JP/servant/126").json()
+        assert "story" in response["extraAssets"]["charaFigureForm"]["1"]
+        assert "story" in response["extraAssets"]["charaFigureForm"]["2"]
+
     def test_war_banner(self) -> None:
         war_oniland = client.get("/nice/NA/war/9050")
         assert war_oniland.status_code == 200
