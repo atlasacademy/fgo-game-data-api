@@ -76,7 +76,7 @@ SVT_STUFFS = {
 SKILL_STUFFS = {"mstSvtSkill", "mstSkillLv"}
 TD_STUFFS = {"mstSvtTreasureDevice", "mstTreasureDeviceLv"}
 LATEST_VALENTINE_EVENT = {Region.NA: 80089, Region.JP: 80276}
-region_path = {Region.NA: settings.na_gamedata, Region.JP: settings.jp_gamedata}
+region_path = {Region.JP: settings.jp_gamedata, Region.NA: settings.na_gamedata}
 
 
 def update_gamedata() -> None:
