@@ -158,17 +158,12 @@ def search_servant(
             masters[search_param.region].mstSvtServantCollectionNo.get(svt_id, svt_id)
             for svt_id in search_param.voiceCondSvt
         }
-        voice_cond_svt = {
-            svt_id
-            for svt_id in converted_to_svt_id
-            if svt_id in masters[search_param.region].mstSvtServantCollectionNo.values()
-        }
         voice_cond_group = {
             group.id
             for svt_id in converted_to_svt_id
             for group in masters[search_param.region].mstSvtGroupSvtId.get(svt_id, [])
         }
-        voice_svt_id = get_related_voice_id(conn, voice_cond_svt, voice_cond_group)
+        voice_svt_id = get_related_voice_id(conn, converted_to_svt_id, voice_cond_group)
         matches = [svt for svt in matches if svt.id in voice_svt_id]
 
     if search_param.name:
