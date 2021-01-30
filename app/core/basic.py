@@ -201,7 +201,7 @@ def get_basic_svt(
         "type": SVT_TYPE_NAME[mstSvt.type],
         "name": mstSvt.name,
         "className": CLASS_NAME[mstSvt.classId],
-        "rarity": masters[region].mstSvtLimitId[item_id][0].rarity,
+        "rarity": mstSvtLimit[0].rarity,
         "atkMax": mstSvtLimit[0].atkMax,
         "hpMax": mstSvtLimit[0].hpMax,
     }
