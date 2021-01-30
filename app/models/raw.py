@@ -1,6 +1,6 @@
 import sqlalchemy
-from sqlalchemy import ARRAY, BigInteger, Boolean, Column, Integer, String, Table
-from sqlalchemy.dialects.postgresql import JSONB
+from sqlalchemy import BigInteger, Boolean, Column, Integer, String, Table
+from sqlalchemy.dialects.postgresql import ARRAY, JSONB
 
 
 metadata = sqlalchemy.MetaData()

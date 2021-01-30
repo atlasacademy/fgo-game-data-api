@@ -335,7 +335,7 @@ async def find_td(
     expand: bool = False,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    matches = search.search_td(search_param)
+    matches = search.search_td(conn, search_param)
     return list_response(
         raw.get_td_entity(conn, search_param.region, td_id, reverse, expand=expand)
         for td_id in matches

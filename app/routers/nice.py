@@ -382,7 +382,7 @@ async def find_td(
     reverseData: ReverseData = ReverseData.nice,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    matches = search.search_td(search_param)
+    matches = search.search_td(conn, search_param)
     return list_response(
         nice.get_nice_td_alone(
             conn, search_param.region, td_id, lang, reverse, reverseData=reverseData

@@ -8,7 +8,7 @@ from ..data.custom_mappings import TRANSLATIONS
 from ..data.gamedata import masters
 from ..db.helpers.skill import get_skill_search
 from ..db.helpers.svt import get_related_voice_id
-from ..schemas.common import Region
+from ..db.helpers.td import get_td_search
 from ..schemas.enums import (
     ATTRIBUTE_NAME_REVERSE,
     BUFF_TYPE_NAME_REVERSE,
@@ -32,7 +32,6 @@ from ..schemas.search import (
     SkillSearchParams,
     SvtSearchQueryParams,
     TdSearchParams,
-    TdSearchParamsDefault,
 )
 from .utils import get_safe
 
@@ -219,9 +218,11 @@ def search_skill(
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
-    type_ints = {
-        SKILL_TYPE_NAME_REVERSE[skill_type] for skill_type in search_param.type
-    }
+    type_ints = (
+        {SKILL_TYPE_NAME_REVERSE[skill_type] for skill_type in search_param.type}
+        if search_param.type
+        else None
+    )
 
     matches = get_skill_search(
         conn,
@@ -247,69 +248,29 @@ def search_skill(
     return [skill.id for skill in matches]
 
 
-def search_td_svt(
-    region: Region,
-    td_id: int,
-    card: Set[int],
-    hits: List[int],
-    strengthStatus: List[int],
-) -> bool:
-    svt_tds = masters[region].mstSvtTreasureDeviceId[td_id]
-    return any(
-        svt_td.cardId in card
-        and len(svt_td.damage) in hits
-        and svt_td.strengthStatus in strengthStatus
-        for svt_td in svt_tds
-    )
-
-
-def search_td_lv(
-    region: Region,
-    td_id: int,
-    numFunctions: List[int],
-    minNpNpGain: int,
-    maxNpNpGain: int,
-) -> bool:
-    td_lv_1 = next(
-        td_lv for td_lv in masters[region].mstTreasureDeviceLvId[td_id] if td_lv.lv == 1
-    )
-    return (
-        len(td_lv_1.funcId) in numFunctions
-        and minNpNpGain <= td_lv_1.tdPoint <= maxNpNpGain
-    )
-
-
-def search_td(search_param: TdSearchParams, limit: int = 100) -> List[int]:
+def search_td(
+    conn: Connection, search_param: TdSearchParams, limit: int = 100
+) -> List[int]:
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
-    card_ints = {CARD_TYPE_NAME_REVERSE[td_catd] for td_catd in search_param.card}
+    card_ints = (
+        {CARD_TYPE_NAME_REVERSE[td_card] for td_card in search_param.card}
+        if search_param.card
+        else None
+    )
     individuality = reverse_traits(search_param.individuality)
-    hits = search_param.hits if search_param.hits else TdSearchParamsDefault.hits
-    strengthStatus = (
-        search_param.strengthStatus
-        if search_param.strengthStatus
-        else TdSearchParamsDefault.strengthStatus
-    )
-    numFunctions = (
-        search_param.numFunctions
-        if search_param.numFunctions
-        else TdSearchParamsDefault.numFunctions
-    )
 
-    matches = [
-        td
-        for td in masters[search_param.region].mstTreasureDevice
-        if individuality.issubset(td.individuality)
-        and search_td_svt(search_param.region, td.id, card_ints, hits, strengthStatus)
-        and search_td_lv(
-            search_param.region,
-            td.id,
-            numFunctions,
-            search_param.minNpNpGain,
-            search_param.maxNpNpGain,
-        )
-    ]
+    matches = get_td_search(
+        conn,
+        individuality,
+        card_ints,
+        search_param.hits,
+        search_param.strengthStatus,
+        search_param.numFunctions,
+        search_param.minNpNpGain,
+        search_param.maxNpNpGain,
+    )
 
     if search_param.name:
         matches = [

@@ -178,11 +178,11 @@ def get_basic_td(
     )
 
     if reverse and reverseDepth >= ReverseDepth.servant:
-        mstSvtTreasureDevice = masters[region].mstSvtTreasureDeviceId.get(td_id, [])
+        mstSvtTreasureDevice = masters[region].tdToSvt.get(td_id, set())
         td_reverse = BasicReversedSkillTd(
             servant=(
-                get_basic_servant(region, svt_td.svtId, lang=lang)
-                for svt_td in mstSvtTreasureDevice
+                get_basic_servant(region, svt_id, lang=lang)
+                for svt_id in mstSvtTreasureDevice
             )
         )
         basic_td.reverse = BasicReversedSkillTdType(basic=td_reverse)

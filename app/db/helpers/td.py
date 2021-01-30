@@ -1,7 +1,7 @@
 from typing import Any, Iterable, List, Optional
 
 from sqlalchemy.engine import Connection
-from sqlalchemy.sql import func, literal_column, select
+from sqlalchemy.sql import and_, func, literal_column, select
 
 from ...models.raw import (
     mstSvtTreasureDevice,
@@ -9,7 +9,7 @@ from ...models.raw import (
     mstTreasureDeviceDetail,
     mstTreasureDeviceLv,
 )
-from ...schemas.raw import TdEntityNoReverse
+from ...schemas.raw import MstTreasureDevice, TdEntityNoReverse
 from .utils import sql_jsonb_agg
 
 
@@ -71,41 +71,61 @@ def get_tdEntity(conn: Connection, td_ids: Iterable[int]) -> List[TdEntityNoReve
     return sorted(skill_entities, key=lambda td: order[td.mstTreasureDevice.id])
 
 
-def get_mstTreasureDevice(conn: Connection, td_id: int) -> Any:
-    mstSkill_stmt = select([mstTreasureDevice]).where(mstTreasureDevice.c.id == td_id)
-    return conn.execute(mstSkill_stmt).fetchone()
-
-
-def get_mstTreasureDeviceDetail(conn: Connection, td_id: int) -> List[Any]:
-    mstTreasureDeviceDetail_stmt = select([mstTreasureDeviceDetail]).where(
-        mstTreasureDeviceDetail.c.id == td_id
+def get_mstSvtTreasureDevice(conn: Connection, svt_id: int) -> List[Any]:
+    mstSvtTreasureDevice_stmt = select([mstSvtTreasureDevice]).where(
+        mstSvtTreasureDevice.c.svtId == svt_id
     )
-    fetched: list[Any] = conn.execute(mstTreasureDeviceDetail_stmt).fetchall()
-    return fetched
-
-
-def get_mstTreasureDeviceLv(conn: Connection, td_id: int) -> List[Any]:
-    mstTreasureDeviceLv_stmt = (
-        select([mstTreasureDeviceLv])
-        .where(mstTreasureDeviceLv.c.treaureDeviceId == td_id)
-        .order_by(mstTreasureDeviceLv.c.lv)
-    )
-    fetched: list[Any] = conn.execute(mstTreasureDeviceLv_stmt).fetchall()
-    return fetched
-
-
-def get_mstSvtTreasureDevice(
-    conn: Connection, td_id: Optional[int] = None, svt_id: Optional[int] = None
-) -> List[Any]:
-    if td_id:
-        mstSvtTreasureDevice_stmt = select([mstSvtTreasureDevice]).where(
-            mstSvtTreasureDevice.c.treasureDeviceId == td_id
-        )
-    elif svt_id:
-        mstSvtTreasureDevice_stmt = select([mstSvtTreasureDevice]).where(
-            mstSvtTreasureDevice.c.svtId == svt_id
-        )
-    else:
-        raise ValueError("Must give at least one input for get_mstSvtTreasureDevice.")
     fetched: list[Any] = conn.execute(mstSvtTreasureDevice_stmt).fetchall()
     return fetched
+
+
+def get_td_search(
+    conn: Connection,
+    individuality: Optional[Iterable[int]],
+    card: Optional[Iterable[int]],
+    hits: Optional[Iterable[int]],
+    strengthStatus: Optional[Iterable[int]],
+    numFunctions: Optional[Iterable[int]],
+    minNpNpGain: Optional[int],
+    maxNpNpGain: Optional[int],
+) -> List[MstTreasureDevice]:
+    where_clause = [mstTreasureDeviceLv.c.lv == 1]
+    if individuality:
+        where_clause.append(mstTreasureDevice.c.individuality.contains(individuality))
+    if card:
+        where_clause.append(mstSvtTreasureDevice.c.cardId.in_(card))
+    if hits:
+        where_clause.append(
+            func.array_length(mstSvtTreasureDevice.c.damage, 1).in_(hits)
+        )
+    if strengthStatus:
+        where_clause.append(mstSvtTreasureDevice.c.strengthStatus.in_(strengthStatus))
+    if numFunctions:
+        where_clause.append(
+            func.array_length(mstTreasureDeviceLv.c.funcId, 1).in_(numFunctions)
+        )
+    if minNpNpGain:
+        where_clause.append(mstTreasureDeviceLv.c.tdPoint >= minNpNpGain)
+    if maxNpNpGain:
+        where_clause.append(mstTreasureDeviceLv.c.tdPoint <= maxNpNpGain)
+
+    td_search_stmt = (
+        select([mstTreasureDevice])
+        .select_from(
+            mstTreasureDevice.join(
+                mstSvtTreasureDevice,
+                mstSvtTreasureDevice.c.treasureDeviceId == mstTreasureDevice.c.id,
+                isouter=True,
+            ).join(
+                mstTreasureDeviceLv,
+                mstTreasureDeviceLv.c.treaureDeviceId == mstTreasureDevice.c.id,
+                isouter=True,
+            )
+        )
+        .where(and_(*where_clause))
+    )
+
+    return [
+        MstTreasureDevice.parse_obj(td)
+        for td in conn.execute(td_search_stmt).fetchall()
+    ]

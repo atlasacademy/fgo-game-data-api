@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.37.3 - 2020-01-28
+### Fixed
+- Mash should return the same NP but with different priorities now. Previously, nice Mash returned the same NP 800105 with the same priority 105. Now there should be two 800105 NPs with priorities 105 and 106.
+
 ## 5.37.2 - 2020-01-28
 ### Fixed
 - Mash should return the same skills but with different priorities now. Previously, nice Mash returned the same skills with the same priorities.

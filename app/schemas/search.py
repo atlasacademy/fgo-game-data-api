@@ -7,11 +7,9 @@ from fastapi import Query
 from .common import Region
 from .enums import (
     ATTRIBUTE_NAME,
-    CARD_TYPE_NAME,
     CLASS_NAME,
     GENDER_TYPE_NAME,
     PLAYABLE_CLASS_LIST,
-    SKILL_TYPE_NAME,
     SVT_FLAG_NAME,
     SVT_TYPE_NAME,
     Attribute,
@@ -178,7 +176,7 @@ class EquipSearchQueryParams:
 class SkillSearchParams:
     region: Region
     name: Optional[str] = None
-    type: List[NiceSkillType] = Query(list(SKILL_TYPE_NAME.values()))
+    type: Optional[List[NiceSkillType]] = Query(None)
     num: Optional[List[int]] = Query(None, ge=1, le=3)
     priority: Optional[List[int]] = Query(None, ge=1, le=6)
     strengthStatus: Optional[List[int]] = Query(None, ge=0, le=100)
@@ -189,7 +187,7 @@ class SkillSearchParams:
         return any(
             [
                 self.name,
-                self.type != list(SKILL_TYPE_NAME.values()),
+                self.type,
                 self.num,
                 self.priority,
                 self.strengthStatus,
@@ -218,56 +216,29 @@ class SkillSearchParams:
     )
 
 
-class TdSearchParamsDefault:
-    card = list(CARD_TYPE_NAME.values())
-    hits: List[int] = list(range(1, 21))
-    strengthStatus: List[int] = [0, 1, 2]
-    numFunctions: List[int] = list(range(1, 21))
-    minNpNpGain: int = 0
-    maxNpNpGain: int = 300
-
-
 @dataclass
 class TdSearchParams:
     region: Region
     name: Optional[str] = None
-    card: List[NiceCardType] = Query(TdSearchParamsDefault.card)
+    card: Optional[List[NiceCardType]] = Query(None)
     individuality: List[Union[Trait, int]] = Query([])
-    hits: List[int] = Query(
-        None, ge=min(TdSearchParamsDefault.hits), le=max(TdSearchParamsDefault.hits)
-    )
-    strengthStatus: List[int] = Query(
-        None,
-        ge=min(TdSearchParamsDefault.strengthStatus),
-        le=max(TdSearchParamsDefault.strengthStatus),
-    )
-    numFunctions: List[int] = Query(
-        None,
-        ge=min(TdSearchParamsDefault.numFunctions),
-        le=max(TdSearchParamsDefault.numFunctions),
-    )
-    minNpNpGain: int = Query(
-        TdSearchParamsDefault.minNpNpGain,
-        ge=TdSearchParamsDefault.minNpNpGain,
-        le=TdSearchParamsDefault.maxNpNpGain,
-    )
-    maxNpNpGain: int = Query(
-        TdSearchParamsDefault.maxNpNpGain,
-        ge=TdSearchParamsDefault.minNpNpGain,
-        le=TdSearchParamsDefault.maxNpNpGain,
-    )
+    hits: Optional[List[int]] = Query(None, ge=1, le=20)
+    strengthStatus: Optional[List[int]] = Query(None, ge=0, le=2)
+    numFunctions: Optional[List[int]] = Query(None, ge=1, le=20)
+    minNpNpGain: Optional[int] = Query(None, ge=0, le=300)
+    maxNpNpGain: Optional[int] = Query(None, ge=0, le=300)
 
     def hasSearchParams(self) -> bool:
         return any(
             [
                 self.name,
-                self.card != TdSearchParamsDefault.card,
+                self.card,
                 self.individuality,
                 self.hits,
                 self.strengthStatus,
                 self.numFunctions,
-                self.minNpNpGain != TdSearchParamsDefault.minNpNpGain,
-                self.maxNpNpGain != TdSearchParamsDefault.maxNpNpGain,
+                self.minNpNpGain,
+                self.maxNpNpGain,
             ]
         )
 

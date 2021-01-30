@@ -324,8 +324,9 @@ async def find_td(
     search_param: TdSearchParams = Depends(TdSearchParams),
     reverse: bool = False,
     lang: Language = Depends(language_parameter),
+    conn: Connection = Depends(get_db),
 ) -> Response:
-    matches = search.search_td(search_param, limit=10000)
+    matches = search.search_td(conn, search_param, limit=10000)
     return list_response(
         basic.get_basic_td(search_param.region, td_id, lang, reverse)
         for td_id in matches
