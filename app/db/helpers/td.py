@@ -1,7 +1,7 @@
-from typing import Any, List, Optional
+from typing import Any, Iterable, List, Optional
 
 from sqlalchemy.engine import Connection
-from sqlalchemy.sql import select
+from sqlalchemy.sql import func, literal_column, select
 
 from ...models.raw import (
     mstSvtTreasureDevice,
@@ -9,6 +9,66 @@ from ...models.raw import (
     mstTreasureDeviceDetail,
     mstTreasureDeviceLv,
 )
+from ...schemas.raw import TdEntityNoReverse
+from .utils import sql_jsonb_agg
+
+
+def get_tdEntity(conn: Connection, td_ids: Iterable[int]) -> List[TdEntityNoReverse]:
+    mstTreasureDeviceLvJson = (
+        select(
+            [
+                mstTreasureDeviceLv.c.treaureDeviceId,
+                func.jsonb_agg(
+                    literal_column(f'"{mstTreasureDeviceLv.name}" ORDER BY "lv"')
+                ).label(mstTreasureDeviceLv.name),
+            ]
+        )
+        .where(mstTreasureDeviceLv.c.treaureDeviceId.in_(td_ids))
+        .group_by(mstTreasureDeviceLv.c.treaureDeviceId)
+        .cte()
+    )
+
+    JOINED_TD_TABLES = (
+        mstTreasureDevice.join(
+            mstTreasureDeviceDetail,
+            mstTreasureDeviceDetail.c.id == mstTreasureDevice.c.id,
+            isouter=True,
+        )
+        .join(
+            mstSvtTreasureDevice,
+            mstSvtTreasureDevice.c.treasureDeviceId == mstTreasureDevice.c.id,
+            isouter=True,
+        )
+        .join(
+            mstTreasureDeviceLvJson,
+            mstTreasureDeviceLvJson.c.treaureDeviceId == mstTreasureDevice.c.id,
+            isouter=True,
+        )
+    )
+
+    SELECT_TD_ENTITY = [
+        mstTreasureDevice.c.id.label("sqlalchemy"),
+        func.to_jsonb(literal_column(f'"{mstTreasureDevice.name}"')).label(
+            mstTreasureDevice.name
+        ),
+        sql_jsonb_agg(mstTreasureDeviceDetail),
+        sql_jsonb_agg(mstSvtTreasureDevice),
+        mstTreasureDeviceLvJson.c.mstTreasureDeviceLv,
+    ]
+
+    stmt = (
+        select(SELECT_TD_ENTITY)
+        .select_from(JOINED_TD_TABLES)
+        .where(mstTreasureDevice.c.id.in_(td_ids))
+        .group_by(mstTreasureDevice.c.id, mstTreasureDeviceLvJson.c.mstTreasureDeviceLv)
+    )
+
+    skill_entities = [
+        TdEntityNoReverse.parse_obj(skill) for skill in conn.execute(stmt).fetchall()
+    ]
+    order = {skill_id: i for i, skill_id in enumerate(td_ids)}
+
+    return sorted(skill_entities, key=lambda td: order[td.mstTreasureDevice.id])
 
 
 def get_mstTreasureDevice(conn: Connection, td_id: int) -> Any:

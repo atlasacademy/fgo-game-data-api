@@ -516,36 +516,33 @@ def get_nice_skill(
         nice_skill["functions"].append(functionInfo)
 
     # .mstSvtSkill returns the list of SvtSkill with the same skill_id
-    if skillEntity.mstSvtSkill:
-        chosen_svts = [
-            svt_skill
-            for svt_skill in skillEntity.mstSvtSkill
-            if svt_skill.svtId == svtId
-        ]
-        if chosen_svts:
-            out_skills = []
-            for chosenSvt in chosen_svts:
-                out_skill = deepcopy(nice_skill)
-                out_skill.update(
-                    {
-                        "strengthStatus": chosenSvt.strengthStatus,
-                        "num": chosenSvt.num,
-                        "priority": chosenSvt.priority,
-                        "condQuestId": chosenSvt.condQuestId,
-                        "condQuestPhase": chosenSvt.condQuestPhase,
-                        "condLv": chosenSvt.condLv,
-                        "condLimitCount": chosenSvt.condLimitCount,
-                    }
-                )
-                out_skills.append(out_skill)
-            return out_skills
+    chosen_svts = [
+        svt_skill for svt_skill in skillEntity.mstSvtSkill if svt_skill.svtId == svtId
+    ]
+    if chosen_svts:
+        out_skills = []
+        for chosenSvt in chosen_svts:
+            out_skill = deepcopy(nice_skill)
+            out_skill.update(
+                {
+                    "strengthStatus": chosenSvt.strengthStatus,
+                    "num": chosenSvt.num,
+                    "priority": chosenSvt.priority,
+                    "condQuestId": chosenSvt.condQuestId,
+                    "condQuestPhase": chosenSvt.condQuestPhase,
+                    "condLv": chosenSvt.condLv,
+                    "condLimitCount": chosenSvt.condLimitCount,
+                }
+            )
+            out_skills.append(out_skill)
+        return out_skills
 
     return [nice_skill]
 
 
 def get_nice_td(
     tdEntity: TdEntityNoReverse, svtId: int, region: Region
-) -> Dict[str, Any]:
+) -> List[Dict[str, Any]]:
     nice_td: Dict[str, Any] = {
         "id": tdEntity.mstTreasureDevice.id,
         "name": tdEntity.mstTreasureDevice.name,
@@ -569,33 +566,6 @@ def get_nice_td(
         "defence": [td_lv.tdPointDef for td_lv in tdEntity.mstTreasureDeviceLv],
     }
 
-    chosenSvt = next(
-        svt_td for svt_td in tdEntity.mstSvtTreasureDevice if svt_td.svtId == svtId
-    )
-    if chosenSvt:
-        imageId = chosenSvt.imageIndex
-        base_settings_id = {
-            "base_url": settings.asset_url,
-            "region": region,
-            "item_id": svtId,
-        }
-        if imageId < 2:
-            file_i = "np"
-        else:
-            file_i = "np" + str(imageId // 2)
-        nice_td.update(
-            {
-                "icon": AssetURL.commands.format(**base_settings_id, i=file_i),
-                "strengthStatus": chosenSvt.strengthStatus,
-                "num": chosenSvt.num,
-                "priority": chosenSvt.priority,
-                "condQuestId": chosenSvt.condQuestId,
-                "condQuestPhase": chosenSvt.condQuestPhase,
-                "card": CARD_TYPE_NAME[chosenSvt.cardId],
-                "npDistribution": chosenSvt.damage,
-            }
-        )
-
     nice_td["functions"] = []
 
     for funci, _ in enumerate(tdEntity.mstTreasureDeviceLv[0].funcId):
@@ -610,7 +580,39 @@ def get_nice_td(
             ]
         nice_td["functions"].append(functionInfo)
 
-    return nice_td
+    chosen_svts = [
+        svt_td for svt_td in tdEntity.mstSvtTreasureDevice if svt_td.svtId == svtId
+    ]
+    if chosen_svts:
+        out_tds = []
+        for chosen_svt in chosen_svts:
+            out_td = deepcopy(nice_td)
+            imageId = chosen_svt.imageIndex
+            base_settings_id = {
+                "base_url": settings.asset_url,
+                "region": region,
+                "item_id": svtId,
+            }
+            if imageId < 2:
+                file_i = "np"
+            else:
+                file_i = "np" + str(imageId // 2)
+            out_td.update(
+                {
+                    "icon": AssetURL.commands.format(**base_settings_id, i=file_i),
+                    "strengthStatus": chosen_svt.strengthStatus,
+                    "num": chosen_svt.num,
+                    "priority": chosen_svt.priority,
+                    "condQuestId": chosen_svt.condQuestId,
+                    "condQuestPhase": chosen_svt.condQuestPhase,
+                    "card": CARD_TYPE_NAME[chosen_svt.cardId],
+                    "npDistribution": chosen_svt.damage,
+                }
+            )
+            out_tds.append(out_td)
+        return out_tds
+
+    return [nice_td]
 
 
 def get_nice_servant_change(change: MstSvtChange) -> NiceServantChange:
@@ -1143,8 +1145,9 @@ def get_nice_servant(
         actualTDs = raw_data.mstTreasureDevice
 
     nice_data["noblePhantasms"] = [
-        get_nice_td(td, svt_id, region)
-        for td in sorted(actualTDs, key=lambda x: x.mstTreasureDevice.id)
+        td
+        for tdEntity in sorted(actualTDs, key=lambda x: x.mstTreasureDevice.id)
+        for td in get_nice_td(tdEntity, svt_id, region)
     ]
 
     if lore:
@@ -1335,7 +1338,7 @@ def get_nice_td_alone(
 
     # Yes, all td_id has a svtTd entry
     svtId = next(svt_id.svtId for svt_id in raw_data.mstSvtTreasureDevice)
-    nice_data = NiceTdReverse.parse_obj(get_nice_td(raw_data, svtId, region))
+    nice_data = NiceTdReverse.parse_obj(get_nice_td(raw_data, svtId, region)[0])
 
     if reverse and reverseDepth >= ReverseDepth.servant:
         if reverseData == ReverseData.basic:

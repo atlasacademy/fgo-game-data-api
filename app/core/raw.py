@@ -203,28 +203,30 @@ def get_skill_entity(
     return skill_entity
 
 
+def get_td_entity_no_reverse_many(
+    conn: Connection, region: Region, td_ids: Iterable[int], expand: bool = False
+) -> List[TdEntityNoReverse]:
+    if not td_ids:
+        return []
+    td_entities = td.get_tdEntity(conn, td_ids)
+    if td_entities:
+        if expand:
+            for td_entity in td_entities:
+                for tdLv in td_entity.mstTreasureDeviceLv:
+                    tdLv.expandedFuncId = [
+                        get_func_entity_no_reverse(region, func_id, expand)
+                        for func_id in tdLv.funcId
+                        if func_id in masters[region].mstFuncId
+                    ]
+        return td_entities
+    else:
+        raise HTTPException(status_code=404, detail="NP not found")
+
+
 def get_td_entity_no_reverse(
     conn: Connection, region: Region, td_id: int, expand: bool = False
 ) -> TdEntityNoReverse:
-    main_td = td.get_mstTreasureDevice(conn, td_id)
-    if main_td:
-        td_entity = TdEntityNoReverse(
-            mstTreasureDevice=main_td,
-            mstTreasureDeviceDetail=td.get_mstTreasureDeviceDetail(conn, td_id),
-            mstSvtTreasureDevice=td.get_mstSvtTreasureDevice(conn, td_id),
-            mstTreasureDeviceLv=td.get_mstTreasureDeviceLv(conn, td_id),
-        )
-
-        if expand:
-            for tdLv in td_entity.mstTreasureDeviceLv:
-                tdLv.expandedFuncId = [
-                    get_func_entity_no_reverse(region, func_id, expand)
-                    for func_id in tdLv.funcId
-                    if func_id in masters[region].mstFuncId
-                ]
-        return td_entity
-    else:
-        raise HTTPException(status_code=404, detail="NP not found")
+    return get_td_entity_no_reverse_many(conn, region, [td_id], expand)[0]
 
 
 def get_td_entity(
@@ -288,9 +290,16 @@ def get_servant_entity(
             )
         ),
         mstTreasureDevice=(
-            get_td_entity_no_reverse(conn, region, td.treasureDeviceId, expand)
-            for td in td.get_mstSvtTreasureDevice(conn, svt_id=servant_id)
-            if td.treasureDeviceId != 100
+            get_td_entity_no_reverse_many(
+                conn,
+                region,
+                [
+                    td.treasureDeviceId
+                    for td in td.get_mstSvtTreasureDevice(conn, svt_id=servant_id)
+                    if td.treasureDeviceId != 100
+                ],
+                expand,
+            )
         ),
     )
 
