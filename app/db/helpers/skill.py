@@ -8,50 +8,48 @@ from ...schemas.raw import MstSkill, SkillEntityNoReverse
 from .utils import sql_jsonb_agg
 
 
-mstSkillLvJson = (
-    select(
-        [
-            mstSkillLv.c.skillId,
-            func.jsonb_agg(literal_column(f'"{mstSkillLv.name}" ORDER BY "lv"')).label(
-                mstSkillLv.name
-            ),
-        ]
-    )
-    .group_by(mstSkillLv.c.skillId)
-    .cte()
-)
-
-
-JOINED_SKILL_TABLES = (
-    mstSkill.join(
-        mstSkillDetail,
-        mstSkillDetail.c.id == mstSkill.c.id,
-        isouter=True,
-    )
-    .join(
-        mstSvtSkill,
-        mstSvtSkill.c.skillId == mstSkill.c.id,
-        isouter=True,
-    )
-    .join(
-        mstSkillLvJson,
-        mstSkillLvJson.c.skillId == mstSkill.c.id,
-        isouter=True,
-    )
-)
-
-
-SELECT_SKILL_ENTITY = [
-    func.to_jsonb(literal_column(f'"{mstSkill.name}"')).label(mstSkill.name),
-    sql_jsonb_agg(mstSkillDetail),
-    sql_jsonb_agg(mstSvtSkill),
-    mstSkillLvJson.c.mstSkillLv,
-]
-
-
 def get_skillEntity(
     conn: Connection, skill_ids: Iterable[int]
 ) -> List[SkillEntityNoReverse]:
+    mstSkillLvJson = (
+        select(
+            [
+                mstSkillLv.c.skillId,
+                func.jsonb_agg(
+                    literal_column(f'"{mstSkillLv.name}" ORDER BY "lv"')
+                ).label(mstSkillLv.name),
+            ]
+        )
+        .where(mstSkillLv.c.skillId.in_(skill_ids))
+        .group_by(mstSkillLv.c.skillId)
+        .cte()
+    )
+
+    JOINED_SKILL_TABLES = (
+        mstSkill.join(
+            mstSkillDetail,
+            mstSkillDetail.c.id == mstSkill.c.id,
+            isouter=True,
+        )
+        .join(
+            mstSvtSkill,
+            mstSvtSkill.c.skillId == mstSkill.c.id,
+            isouter=True,
+        )
+        .join(
+            mstSkillLvJson,
+            mstSkillLvJson.c.skillId == mstSkill.c.id,
+            isouter=True,
+        )
+    )
+
+    SELECT_SKILL_ENTITY = [
+        func.to_jsonb(literal_column(f'"{mstSkill.name}"')).label(mstSkill.name),
+        sql_jsonb_agg(mstSkillDetail),
+        sql_jsonb_agg(mstSvtSkill),
+        mstSkillLvJson.c.mstSkillLv,
+    ]
+
     stmt = (
         select(SELECT_SKILL_ENTITY)
         .select_from(JOINED_SKILL_TABLES)
