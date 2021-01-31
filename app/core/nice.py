@@ -1560,7 +1560,7 @@ def get_nice_quest(
         ],
         "consume": raw_quest.mstQuest.actConsume,
         "spotId": raw_quest.mstQuest.spotId,
-        "warId": masters[region].mstSpotId[raw_quest.mstQuest.spotId].warId,
+        "warId": masters[region].spotToWarId[raw_quest.mstQuest.spotId],
         "gifts": get_nice_gift(region, raw_quest.mstQuest.giftId),
         "releaseConditions": [
             get_nice_quest_release(region, release)
@@ -1654,7 +1654,7 @@ def get_nice_spot(
 
 
 def get_nice_war(conn: Connection, region: Region, war_id: int) -> NiceWar:
-    raw_war = raw.get_war_entity(region, war_id)
+    raw_war = raw.get_war_entity(conn, region, war_id)
 
     base_settings = {"base_url": settings.asset_url, "region": region}
     war_asset_id = (

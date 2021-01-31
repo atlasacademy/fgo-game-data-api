@@ -896,8 +896,6 @@ class Master(BaseModel):
     mstWarId: Dict[int, MstWar]
     mstMapWarId: Dict[int, List[MstMap]]
     mstWarEventId: Dict[int, List[MstWar]]
-    mstSpotWarId: Dict[int, List[MstSpot]]
-    mstSpotId: Dict[int, MstSpot]
     mstEventId: Dict[int, MstEvent]
     mstClosedMessageId: Dict[int, str]
     mstSvtVoiceRelationId: Dict[int, List[MstSvtVoiceRelation]]
@@ -922,6 +920,7 @@ class Master(BaseModel):
     skillToAiAct: Dict[int, Set[int]]
     aiActToAiSvt: Dict[int, Set[int]]
     aiActToAiField: Dict[int, Set[int]]
+    spotToWarId: Dict[int, int]
     parentAiSvt: Dict[int, Set[int]]
     parentAiField: Dict[int, Set[int]]
 

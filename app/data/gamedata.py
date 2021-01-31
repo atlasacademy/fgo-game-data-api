@@ -196,6 +196,10 @@ def update_gamedata() -> None:
                 svtLimitAdd["individuality"]
             )
 
+        master["spotToWarId"] = {}
+        for spot in master["mstSpot"]:
+            master["spotToWarId"][spot["id"]] = spot["warId"]
+
         master["mstSvtExp"] = sorted(master["mstSvtExp"], key=lambda item: item["lv"])  # type: ignore
         master["mstCombineMaterial"] = sorted(master["mstCombineMaterial"], key=lambda item: item["lv"])  # type: ignore
 
@@ -208,7 +212,6 @@ def update_gamedata() -> None:
             ("mstSvtSkillSvtId", "mstSvtSkill", "svtId"),
             ("mstSvtVoiceRelationId", "mstSvtVoiceRelation", "svtId"),
             ("mstMapWarId", "mstMap", "warId"),
-            ("mstSpotWarId", "mstSpot", "warId"),
             ("mstWarEventId", "mstWar", "eventId"),
             ("mstGiftId", "mstGift", "id"),
             ("mstShopEventId", "mstShop", "eventId"),

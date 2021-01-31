@@ -444,6 +444,39 @@ mstShop = Table(
 )
 
 
+mstSpot = Table(
+    "mstSpot",
+    metadata,
+    Column("joinSpotIds", ARRAY(Integer)),
+    Column("id", Integer, index=True),
+    Column("warId", Integer, index=True),
+    Column("mapId", Integer),
+    Column("name", String),
+    Column("imageId", Integer),
+    Column("x", Integer),
+    Column("y", Integer),
+    Column("imageOfsX", Integer),
+    Column("imageOfsY", Integer),
+    Column("nameOfsX", Integer),
+    Column("nameOfsY", Integer),
+    Column("questOfsX", Integer),
+    Column("questOfsY", Integer),
+    Column("nextOfsX", Integer),
+    Column("nextOfsY", Integer),
+    Column("dispCondType1", Integer),
+    Column("dispTargetId1", Integer),
+    Column("dispTargetValue1", Integer),
+    Column("dispCondType2", Integer),
+    Column("dispTargetId2", Integer),
+    Column("dispTargetValue2", Integer),
+    Column("activeCondType", Integer),
+    Column("activeTargetId", Integer),
+    Column("activeTargetValue", Integer),
+    Column("closedMessage", String),
+    Column("flag", Integer),
+)
+
+
 mstQuest = Table(
     "mstQuest",
     metadata,
@@ -602,6 +635,7 @@ TABLES_TO_BE_LOADED = [
     mstSvtVoice,
     mstSvtComment,
     mstShop,
+    mstSpot,
     mstQuest,
     mstQuestRelease,
     mstQuestConsumeItem,

@@ -4,7 +4,7 @@ from fastapi import HTTPException
 from sqlalchemy.engine import Connection
 
 from ..data.gamedata import masters
-from ..db.helpers import ai, event, quest, skill, svt, td
+from ..db.helpers import ai, event, quest, skill, svt, td, war
 from ..schemas.common import Region, ReverseDepth
 from ..schemas.enums import FUNC_VALS_NOT_BUFF
 from ..schemas.raw import (
@@ -377,11 +377,11 @@ def get_command_code_entity(
     return cc_entity
 
 
-def get_war_entity(region: Region, war_id: int) -> WarEntity:
+def get_war_entity(conn: Connection, region: Region, war_id: int) -> WarEntity:
     return WarEntity(
         mstWar=masters[region].mstWarId[war_id],
         mstMap=masters[region].mstMapWarId.get(war_id, []),
-        mstSpot=masters[region].mstSpotWarId.get(war_id, []),
+        mstSpot=war.get_mstSpot(conn, war_id),
     )
 
 
