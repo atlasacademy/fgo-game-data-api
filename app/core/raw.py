@@ -259,23 +259,10 @@ def get_servant_entity(
     expand: bool = False,
     lore: bool = False,
 ) -> ServantEntity:
-    mstSvt = masters[region].mstSvtId[servant_id]
+    svt_entity_db = svt.get_servantEntity(conn, servant_id)
 
     svt_entity = ServantEntity(
-        mstSvt=mstSvt,
-        mstSvtCard=masters[region].mstSvtCardId.get(servant_id, []),
-        mstSvtLimit=masters[region].mstSvtLimitId.get(servant_id, []),
-        mstCombineSkill=masters[region].mstCombineSkillId.get(
-            mstSvt.combineSkillId, []
-        ),
-        mstCombineLimit=masters[region].mstCombineLimitId.get(
-            mstSvt.combineLimitId, []
-        ),
-        mstCombineCostume=masters[region].mstCombineCostumeId.get(servant_id, []),
-        mstSvtLimitAdd=masters[region].mstSvtLimitAddId.get(servant_id, []),
-        mstSvtChange=masters[region].mstSvtChangeId.get(servant_id, []),
-        # needed costume to get the nice limits and costume ids
-        mstSvtCostume=masters[region].mstSvtCostumeId.get(servant_id, []),
+        **svt_entity_db,
         # needed this to get CharaFigure available forms
         mstSvtScript=masters[region].mstSvtScriptId.get(servant_id, []),
         mstSkill=(

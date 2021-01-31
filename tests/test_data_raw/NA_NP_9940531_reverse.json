@@ -526,6 +526,7 @@
               "battleCharaLimitCount": 0,
               "battleCharaOffsetX": 0,
               "battleCharaOffsetY": 0,
+              "battleCharaOffsetZ": 0,
               "svtVoiceId": 9940530,
               "voicePrefix": 0
             },
@@ -539,6 +540,7 @@
               "battleCharaLimitCount": 1,
               "battleCharaOffsetX": 0,
               "battleCharaOffsetY": 0,
+              "battleCharaOffsetZ": 0,
               "svtVoiceId": 9940530,
               "voicePrefix": 0
             },
@@ -552,6 +554,7 @@
               "battleCharaLimitCount": 2,
               "battleCharaOffsetX": 0,
               "battleCharaOffsetY": 0,
+              "battleCharaOffsetZ": 0,
               "svtVoiceId": 9940530,
               "voicePrefix": 0
             },
@@ -565,6 +568,7 @@
               "battleCharaLimitCount": 3,
               "battleCharaOffsetX": 0,
               "battleCharaOffsetY": 0,
+              "battleCharaOffsetZ": 0,
               "svtVoiceId": 9940530,
               "voicePrefix": 0
             },
@@ -578,6 +582,7 @@
               "battleCharaLimitCount": 4,
               "battleCharaOffsetX": 0,
               "battleCharaOffsetY": 0,
+              "battleCharaOffsetZ": 0,
               "svtVoiceId": 9940530,
               "voicePrefix": 0
             }

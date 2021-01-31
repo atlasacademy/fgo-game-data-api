@@ -1,5 +1,5 @@
 import sqlalchemy
-from sqlalchemy import BigInteger, Boolean, Column, Integer, String, Table
+from sqlalchemy import BigInteger, Boolean, Column, Integer, Numeric, String, Table
 from sqlalchemy.dialects.postgresql import ARRAY, JSONB
 
 
@@ -184,6 +184,97 @@ mstTreasureDeviceLv = Table(
 )
 
 
+mstSvt = Table(
+    "mstSvt",
+    metadata,
+    Column("relateQuestIds", ARRAY(Integer)),
+    Column("individuality", ARRAY(Integer)),
+    Column("classPassive", ARRAY(Integer)),
+    Column("cardIds", ARRAY(Integer)),
+    Column("script", JSONB),
+    Column("id", Integer, primary_key=True),
+    Column("baseSvtId", Integer),
+    Column("name", String),
+    Column("ruby", String),
+    Column("battleName", String),
+    Column("classId", Integer),
+    Column("type", Integer),
+    Column("limitMax", Integer),
+    Column("rewardLv", Integer),
+    Column("friendshipId", Integer),
+    Column("maxFriendshipRank", Integer),
+    Column("genderType", Integer),
+    Column("attri", Integer),
+    Column("combineSkillId", Integer),
+    Column("combineLimitId", Integer),
+    Column("sellQp", Integer),
+    Column("sellMana", Integer),
+    Column("sellRarePri", Integer),
+    Column("expType", Integer),
+    Column("combineMaterialId", Integer),
+    Column("cost", Integer),
+    Column("battleSize", Integer),
+    Column("hpGaugeY", Integer),
+    Column("starRate", Integer),
+    Column("deathRate", Integer),
+    Column("attackAttri", Integer),
+    Column("illustratorId", Integer),
+    Column("cvId", Integer),
+    Column("collectionNo", Integer),
+    Column("materialStoryPriority", Integer),
+    Column("flag", Integer),
+)
+
+
+mstSvtCard = Table(
+    "mstSvtCard",
+    metadata,
+    Column("normalDamage", ARRAY(Integer)),
+    Column("singleDamage", ARRAY(Integer)),
+    Column("trinityDamage", ARRAY(Integer)),
+    Column("unisonDamage", ARRAY(Integer)),
+    Column("grandDamage", ARRAY(Integer)),
+    Column("attackIndividuality", ARRAY(Integer)),
+    Column("svtId", Integer, index=True),
+    Column("cardId", Integer),
+    Column("motion", Integer),
+    Column("attackType", Integer),
+)
+
+
+mstCombineLimit = Table(
+    "mstCombineLimit",
+    metadata,
+    Column("itemIds", ARRAY(Integer)),
+    Column("itemNums", ARRAY(Integer)),
+    Column("id", Integer, index=True),
+    Column("svtLimit", Integer),
+    Column("qp", Integer),
+)
+
+
+mstCombineSkill = Table(
+    "mstCombineSkill",
+    metadata,
+    Column("itemIds", ARRAY(Integer)),
+    Column("itemNums", ARRAY(Integer)),
+    Column("id", Integer, index=True),
+    Column("skillLv", Integer),
+    Column("qp", Integer),
+)
+
+
+mstCombineCostume = Table(
+    "mstCombineCostume",
+    metadata,
+    Column("itemIds", ARRAY(Integer)),
+    Column("itemNums", ARRAY(Integer)),
+    Column("svtId", Integer, index=True),
+    Column("costumeId", Integer),
+    Column("qp", Integer),
+)
+
+
 mstSvtVoice = Table(
     "mstSvtVoice",
     metadata,
@@ -221,6 +312,81 @@ mstSvtLimit = Table(
     Column("deity", Integer),
     Column("stepProbability", Integer),
     Column("strParam", String),
+)
+
+
+mstSvtLimitAdd = Table(
+    "mstSvtLimitAdd",
+    metadata,
+    Column("individuality", ARRAY(Integer)),
+    Column("script", JSONB),
+    Column("svtId", Integer, index=True),
+    Column("limitCount", Integer, index=True),
+    Column("battleCharaId", Integer),
+    Column("fileConvertLimitCount", Integer),
+    Column("battleCharaLimitCount", Integer),
+    Column("battleCharaOffsetX", Integer),
+    Column("battleCharaOffsetY", Integer),
+    Column("battleCharaOffsetZ", Integer),
+    Column("svtVoiceId", Integer),
+    Column("voicePrefix", Integer),
+)
+
+
+mstSvtChange = Table(
+    "mstSvtChange",
+    metadata,
+    Column("beforeTreasureDeviceIds", ARRAY(Integer)),
+    Column("afterTreasureDeviceIds", ARRAY(Integer)),
+    Column("svtId", Integer, index=True),
+    Column("priority", Integer),
+    Column("condType", Integer),
+    Column("condTargetId", Integer),
+    Column("condValue", Integer),
+    Column("name", String),
+    Column("ruby", String),
+    Column("battleName", String),
+    Column("svtVoiceId", Integer),
+    Column("limitCount", Integer),
+    Column("flag", Integer),
+    Column("battleSvtId", Integer),
+)
+
+
+mstSvtCostume = Table(
+    "mstSvtCostume",
+    metadata,
+    Column("svtId", Integer, index=True),
+    Column("id", Integer, index=True),
+    Column("groupIndex", Integer),
+    Column("name", String),
+    Column("shortName", String),
+    Column("detail", String),
+    Column("itemGetInfo", String),
+    Column("releaseInfo", String),
+    Column("costumeReleaseDetail", String),
+    Column("priority", Integer),
+    Column("flag", Integer),
+    Column("costumeCollectionNo", Integer),
+    Column("openedAt", Integer),
+    Column("endedAt", Integer),
+)
+
+
+mstSvtScript = Table(
+    "mstSvtScript",
+    metadata,
+    Column("extendData", JSONB),
+    Column("id", BigInteger, index=True),
+    Column("form", Integer),
+    Column("faceX", Integer),
+    Column("faceY", Integer),
+    Column("bgImageId", Integer),
+    Column("scale", Numeric),
+    Column("offsetX", Integer),
+    Column("offsetY", Integer),
+    Column("offsetXMyroom", Integer),
+    Column("offsetYMyroom", Integer),
 )
 
 
@@ -424,6 +590,15 @@ TABLES_TO_BE_LOADED = [
     mstTreasureDeviceDetail,
     mstSvtTreasureDevice,
     mstTreasureDeviceLv,
+    mstSvt,
+    mstSvtCard,
+    mstSvtLimit,
+    mstCombineLimit,
+    mstCombineSkill,
+    mstCombineCostume,
+    mstSvtLimitAdd,
+    mstSvtChange,
+    mstSvtCostume,
     mstSvtVoice,
     mstSvtComment,
     mstShop,

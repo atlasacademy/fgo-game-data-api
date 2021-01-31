@@ -326,7 +326,7 @@ class MstSvtScript(BaseModel):
     faceX: int  # 376
     faceY: int  # 163
     bgImageId: int  # 0
-    scale: int  # 1.0
+    scale: Decimal  # 1.0
     offsetX: int  # -4
     offsetY: int  # 102
     offsetXMyroom: int  # 283
@@ -483,6 +483,7 @@ class MstSvtLimitAdd(BaseModel):
     battleCharaLimitCount: int  # 2,
     battleCharaOffsetX: int  # 0,
     battleCharaOffsetY: int  # 0,
+    battleCharaOffsetZ: int
     svtVoiceId: int  # 102900,
     voicePrefix: int  # 11
 
@@ -900,14 +901,14 @@ class Master(BaseModel):
     # mstSvtTreasureDeviceId: Dict[int, List[MstSvtTreasureDevice]]
     # mstSvtTreasureDeviceSvtId: Dict[int, List[MstSvtTreasureDevice]]
     # mstTreasureDeviceLvId: Dict[int, List[MstTreasureDeviceLv]]
-    mstCombineSkillId: Dict[int, List[MstCombineSkill]]
-    mstCombineLimitId: Dict[int, List[MstCombineLimit]]
-    mstCombineCostumeId: Dict[int, List[MstCombineCostume]]
+    # mstCombineSkillId: Dict[int, List[MstCombineSkill]]
+    # mstCombineLimitId: Dict[int, List[MstCombineLimit]]
+    # mstCombineCostumeId: Dict[int, List[MstCombineCostume]]
     mstCombineMaterialId: Dict[int, List[MstCombineMaterial]]
     mstCombineSkillItem: Set[int]
     mstCombineLimitItem: Set[int]
     mstCombineCostumeItem: Set[int]
-    mstSvtCardId: Dict[int, List[MstSvtCard]]
+    # mstSvtCardId: Dict[int, List[MstSvtCard]]
     mstSvtLimitId: Dict[int, List[MstSvtLimit]]
     mstSvtLimitAddId: Dict[int, List[MstSvtLimitAdd]]
     mstSvtExpId: Dict[int, List[MstSvtExp]]
@@ -934,8 +935,8 @@ class Master(BaseModel):
     mstClosedMessageId: Dict[int, str]
     # mstSvtComment: List[MstSvtComment]
     # mstSvtCommentId: Dict[int, List[MstSvtComment]]
-    mstSvtCostumeId: Dict[int, List[MstSvtCostume]]
-    mstSvtChangeId: Dict[int, List[MstSvtChange]]
+    # mstSvtCostumeId: Dict[int, List[MstSvtCostume]]
+    # mstSvtChangeId: Dict[int, List[MstSvtChange]]
     mstSvtVoiceRelationId: Dict[int, List[MstSvtVoiceRelation]]
     mstSvtScriptId: Dict[int, List[MstSvtScript]]
     # mstCommandCode: List[MstCommandCode]

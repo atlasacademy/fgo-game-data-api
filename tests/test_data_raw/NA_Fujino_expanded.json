@@ -6096,6 +6096,7 @@
       "battleCharaLimitCount": 0,
       "battleCharaOffsetX": 0,
       "battleCharaOffsetY": 0,
+      "battleCharaOffsetZ": 0,
       "svtVoiceId": 202900,
       "voicePrefix": 0
     },
@@ -6109,6 +6110,7 @@
       "battleCharaLimitCount": 1,
       "battleCharaOffsetX": 0,
       "battleCharaOffsetY": 0,
+      "battleCharaOffsetZ": 0,
       "svtVoiceId": 202900,
       "voicePrefix": 0
     },
@@ -6122,6 +6124,7 @@
       "battleCharaLimitCount": 2,
       "battleCharaOffsetX": 0,
       "battleCharaOffsetY": 0,
+      "battleCharaOffsetZ": 0,
       "svtVoiceId": 202900,
       "voicePrefix": 0
     },
@@ -6135,6 +6138,7 @@
       "battleCharaLimitCount": 3,
       "battleCharaOffsetX": 0,
       "battleCharaOffsetY": 0,
+      "battleCharaOffsetZ": 0,
       "svtVoiceId": 202900,
       "voicePrefix": 0
     },
@@ -6148,6 +6152,7 @@
       "battleCharaLimitCount": 4,
       "battleCharaOffsetX": 0,
       "battleCharaOffsetY": 0,
+      "battleCharaOffsetZ": 0,
       "svtVoiceId": 202900,
       "voicePrefix": 0
     }
@@ -6162,7 +6167,7 @@
       "faceX": 376,
       "faceY": 160,
       "bgImageId": 0,
-      "scale": 1,
+      "scale": 1.0,
       "offsetX": -7,
       "offsetY": 136,
       "offsetXMyroom": 304,
@@ -6175,7 +6180,7 @@
       "faceX": 376,
       "faceY": 160,
       "bgImageId": 0,
-      "scale": 1,
+      "scale": 1.0,
       "offsetX": -7,
       "offsetY": 136,
       "offsetXMyroom": 304,
@@ -6188,7 +6193,7 @@
       "faceX": 375,
       "faceY": 160,
       "bgImageId": 0,
-      "scale": 1,
+      "scale": 1.0,
       "offsetX": -7,
       "offsetY": 136,
       "offsetXMyroom": 304,

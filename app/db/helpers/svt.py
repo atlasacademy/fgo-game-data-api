@@ -1,12 +1,127 @@
 from inspect import cleandoc
-from typing import Iterable, List, Set
+from typing import Any, Iterable, List, Set
 
+from sqlalchemy import Table
 from sqlalchemy.engine import Connection
-from sqlalchemy.sql import select, text
+from sqlalchemy.sql import func, literal_column, select, text
+from sqlalchemy.sql.selectable import CTE
 
-from ...models.raw import mstSubtitle, mstSvtComment, mstSvtVoice
+from ...models.raw import (
+    mstCombineCostume,
+    mstCombineLimit,
+    mstCombineSkill,
+    mstSubtitle,
+    mstSvt,
+    mstSvtCard,
+    mstSvtChange,
+    mstSvtComment,
+    mstSvtCostume,
+    mstSvtLimit,
+    mstSvtLimitAdd,
+    mstSvtVoice,
+)
 from ...schemas.enums import VoiceCondType
 from ...schemas.raw import GlobalNewMstSubtitle, MstSvtComment, MstSvtVoice
+from .utils import sql_jsonb_agg
+
+
+def sql_sorted_cte(table: Table, svt_id: int, svt_id_col: str, order_col: str) -> CTE:
+    return (
+        select(
+            [
+                table.c[svt_id_col],
+                func.jsonb_agg(
+                    literal_column(f'"{table.name}" ORDER BY "{order_col}"')
+                ).label(table.name),
+            ]
+        )
+        .where(table.c[svt_id_col] == svt_id)
+        .group_by(table.c[svt_id_col])
+        .cte()
+    )
+
+
+def coalesce_select(cte_table: CTE, orig_table: Table) -> Any:
+    return func.coalesce(
+        cte_table.c[orig_table.name], literal_column("'[]'::jsonb")
+    ).label(orig_table.name)
+
+
+def get_servantEntity(conn: Connection, svt_id: int) -> Any:
+    mstSvtCardJson = sql_sorted_cte(mstSvtCard, svt_id, "svtId", "cardId")
+    mstCombineSkillJson = sql_sorted_cte(mstCombineSkill, svt_id, "id", "skillLv")
+    mstCombineLimitJson = sql_sorted_cte(mstCombineLimit, svt_id, "id", "svtLimit")
+    mstSvtLimitAddJson = sql_sorted_cte(mstSvtLimitAdd, svt_id, "svtId", "limitCount")
+
+    JOINED_SVT_TABLES = (
+        mstSvt.join(
+            mstSvtCardJson,
+            mstSvtCardJson.c.svtId == mstSvt.c.id,
+            isouter=True,
+        )
+        .join(
+            mstSvtLimit,
+            mstSvtLimit.c.svtId == mstSvt.c.id,
+            isouter=True,
+        )
+        .join(
+            mstCombineSkillJson,
+            mstCombineSkillJson.c.id == mstSvt.c.combineSkillId,
+            isouter=True,
+        )
+        .join(
+            mstCombineLimitJson,
+            mstCombineLimitJson.c.id == mstSvt.c.combineLimitId,
+            isouter=True,
+        )
+        .join(
+            mstCombineCostume,
+            mstCombineCostume.c.svtId == mstSvt.c.id,
+            isouter=True,
+        )
+        .join(
+            mstSvtLimitAddJson,
+            mstSvtLimitAddJson.c.svtId == mstSvt.c.id,
+            isouter=True,
+        )
+        .join(
+            mstSvtChange,
+            mstSvtChange.c.svtId == mstSvt.c.id,
+            isouter=True,
+        )
+        .join(
+            mstSvtCostume,
+            mstSvtCostume.c.svtId == mstSvt.c.id,
+            isouter=True,
+        )
+    )
+
+    SELECT_SVT_ENTITY = [
+        func.to_jsonb(literal_column(f'"{mstSvt.name}"')).label(mstSvt.name),
+        coalesce_select(mstSvtCardJson, mstSvtCard),
+        sql_jsonb_agg(mstSvtLimit),
+        coalesce_select(mstCombineSkillJson, mstCombineSkill),
+        coalesce_select(mstCombineLimitJson, mstCombineLimit),
+        sql_jsonb_agg(mstCombineCostume),
+        coalesce_select(mstSvtLimitAddJson, mstSvtLimitAdd),
+        sql_jsonb_agg(mstSvtChange),
+        sql_jsonb_agg(mstSvtCostume),
+    ]
+
+    stmt = (
+        select(SELECT_SVT_ENTITY)
+        .select_from(JOINED_SVT_TABLES)
+        .where(mstSvt.c.id == svt_id)
+        .group_by(
+            mstSvt.c.id,
+            mstSvtCardJson.c.mstSvtCard,
+            mstCombineSkillJson.c.mstCombineSkill,
+            mstCombineLimitJson.c.mstCombineLimit,
+            mstSvtLimitAddJson.c.mstSvtLimitAdd,
+        )
+    )
+
+    return conn.execute(stmt).fetchone()
 
 
 def get_mstSvtComment(conn: Connection, svt_id: int) -> List[MstSvtComment]:
