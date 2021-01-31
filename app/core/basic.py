@@ -193,7 +193,7 @@ def get_basic_svt(
     region: Region, item_id: int, lang: Optional[Language] = None
 ) -> Dict[str, Any]:
     mstSvt = masters[region].mstSvtId[item_id]
-    mstSvtLimit = masters[region].mstSvtLimitId[item_id]
+    mstSvtLimit = masters[region].mstSvtLimitFirst[item_id]
 
     basic_servant = {
         "id": item_id,
@@ -201,9 +201,9 @@ def get_basic_svt(
         "type": SVT_TYPE_NAME[mstSvt.type],
         "name": mstSvt.name,
         "className": CLASS_NAME[mstSvt.classId],
-        "rarity": mstSvtLimit[0].rarity,
-        "atkMax": mstSvtLimit[0].atkMax,
-        "hpMax": mstSvtLimit[0].hpMax,
+        "rarity": mstSvtLimit.rarity,
+        "atkMax": mstSvtLimit.atkMax,
+        "hpMax": mstSvtLimit.hpMax,
     }
 
     base_settings = {

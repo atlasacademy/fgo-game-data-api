@@ -142,14 +142,13 @@ def search_servant(
         and svt.attri in attribute_ints
         and (
             trait_ints.issubset(svt.individuality)
-            or any(
-                trait_ints.issubset(limit.individuality)
-                for limit in masters[search_param.region].mstSvtLimitAddId.get(
+            or trait_ints.issubset(
+                masters[search_param.region].mstSvtLimitAddIndividutality.get(
                     svt.id, []
                 )
             )
         )
-        and masters[search_param.region].mstSvtLimitId[svt.id][0].rarity in rarity_ints
+        and masters[search_param.region].mstSvtLimitFirst[svt.id].rarity in rarity_ints
     ]
 
     if search_param.voiceCondSvt:
@@ -194,7 +193,7 @@ def search_equip(search_param: EquipSearchQueryParams, limit: int = 100) -> List
         if svt.type in svt_type
         and svt.flag in svt_flag_ints
         and svt.collectionNo not in search_param.excludeCollectionNo
-        and masters[search_param.region].mstSvtLimitId[svt.id][0].rarity in rarity
+        and masters[search_param.region].mstSvtLimitFirst[svt.id].rarity in rarity
     ]
 
     if search_param.name:

@@ -144,13 +144,15 @@ def update_gamedata() -> None:
             for skill_id in svt["classPassive"]:
                 master["passiveSkillToSvt"][skill_id].add(svt["id"])
 
-        master["activeSkillToSvt"] = defaultdict(set)
-        for svt_skill in master["mstSvtSkill"]:
-            master["activeSkillToSvt"][svt_skill["skillId"]].add(svt_skill["svtId"])
-
-        master["tdToSvt"] = defaultdict(set)
-        for svt_td in master["mstSvtTreasureDevice"]:
-            master["tdToSvt"][svt_td["treasureDeviceId"]].add(svt_td["svtId"])
+        for masters_table, source_table, lookup_id, result_id in (
+            ("activeSkillToSvt", "mstSvtSkill", "skillId", "svtId"),
+            ("tdToSvt", "mstSvtTreasureDevice", "treasureDeviceId", "svtId"),
+            ("aiActToAiSvt", "mstAi", "aiActId", "id"),
+            ("aiActToAiField", "mstAiField", "aiActId", "id"),
+        ):
+            master[masters_table] = defaultdict(set)
+            for item in master[source_table]:
+                master[masters_table][item[lookup_id]].add(item[result_id])
 
         for mstCombine in ("mstCombineSkill", "mstCombineLimit", "mstCombineCostume"):
             master[f"{mstCombine}Item"] = {
@@ -183,6 +185,17 @@ def update_gamedata() -> None:
             if len(ai_act["skillVals"]) >= 2:
                 master["skillToAiAct"][ai_act["skillVals"][0]].add(ai_act["id"])
 
+        master["mstSvtLimitFirst"] = {}
+        for svtLimit in master["mstSvtLimit"]:
+            if svtLimit["svtId"] not in master["mstSvtLimitFirst"]:
+                master["mstSvtLimitFirst"][svtLimit["svtId"]] = svtLimit
+
+        master["mstSvtLimitAddIndividutality"] = defaultdict(list)
+        for svtLimitAdd in master["mstSvtLimitAdd"]:
+            master["mstSvtLimitAddIndividutality"][svtLimitAdd["svtId"]].extend(
+                svtLimitAdd["individuality"]
+            )
+
         master["mstSvtExp"] = sorted(master["mstSvtExp"], key=lambda item: item["lv"])  # type: ignore
         master["mstCombineMaterial"] = sorted(master["mstCombineMaterial"], key=lambda item: item["lv"])  # type: ignore
 
@@ -192,8 +205,6 @@ def update_gamedata() -> None:
             ("mstSvtExpId", "mstSvtExp", "type"),
             ("mstSvtGroupId", "mstSvtGroup", "id"),
             ("mstSvtGroupSvtId", "mstSvtGroup", "svtId"),
-            ("mstSvtLimitId", "mstSvtLimit", "svtId"),
-            ("mstSvtLimitAddId", "mstSvtLimitAdd", "svtId"),
             ("mstSvtSkillSvtId", "mstSvtSkill", "svtId"),
             ("mstSvtVoiceRelationId", "mstSvtVoiceRelation", "svtId"),
             ("mstMapWarId", "mstMap", "warId"),
@@ -203,8 +214,6 @@ def update_gamedata() -> None:
             ("mstShopEventId", "mstShop", "eventId"),
             ("mstShopReleaseShopId", "mstShopRelease", "shopId"),
             ("mstCommandCodeCommentId", "mstCommandCodeComment", "commandCodeId"),
-            ("aiActToAiSvt", "mstAi", "aiActId"),
-            ("aiActToAiField", "mstAiField", "aiActId"),
             ("mstFuncGroupId", "mstFuncGroup", "funcId"),
         ):
             master[masters_table] = defaultdict(list)

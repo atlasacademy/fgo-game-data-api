@@ -446,16 +446,16 @@ def get_ai_id_from_skill(region: Region, skill_id: int) -> Dict[AiType, List[int
     return {
         AiType.svt: sorted(
             set(
-                ai.id
+                ai_id
                 for ai_act_id in masters[region].skillToAiAct.get(skill_id, [])
-                for ai in masters[region].aiActToAiSvt.get(ai_act_id, [])
+                for ai_id in masters[region].aiActToAiSvt.get(ai_act_id, [])
             )
         ),
         AiType.field: sorted(
             set(
-                ai.id
+                ai_id
                 for ai_act_id in masters[region].skillToAiAct.get(skill_id, [])
-                for ai in masters[region].aiActToAiField.get(ai_act_id, [])
+                for ai_id in masters[region].aiActToAiField.get(ai_act_id, [])
             )
         ),
     }
