@@ -19,6 +19,7 @@ RAW_MAIN_ITEM = {
     "buff": "mstBuff",
     "skill": "mstSkill",
     "NP": "mstTreasureDevice",
+    "item": "mstItem",
 }
 
 
@@ -31,7 +32,7 @@ def get_item_list(response: Response, response_type: str, endpoint: str) -> Set[
             raise ValueError
         return {item[main_item]["id"] for item in response.json()}
     else:
-        if item_type in ("servant", "equip", "buff", "svt", "skill", "NP"):
+        if item_type in ("servant", "equip", "buff", "svt", "skill", "NP", "item"):
             id_name = "id"
         elif item_type == "function":
             id_name = "funcId"
@@ -193,8 +194,36 @@ class TestSearch:
         assert response.status_code == 400
 
 
+nice_raw_test_cases_dict = {
+    "item_individuality": ("JP/item/search?individuality=10361", {94032206}),
+    "item_use_name_background": (
+        "NA/item/search?use=skill&name=Claw&background=gold",
+        {6507},
+    ),
+    "item_type": ("JP/item/search?type=chargeStone", {6}),
+}
+
+nice_raw_test_cases = [
+    pytest.param(*value, id=key) for key, value in nice_raw_test_cases_dict.items()
+]
+
+
 @pytest.mark.parametrize("response_type", ["nice", "raw"])
 class TestSearchNiceRaw:
+    @pytest.mark.parametrize("search_query,result", nice_raw_test_cases)
+    def test_search_nice_raw(
+        self, search_query: str, result: Set[int], response_type: str
+    ) -> None:
+        response = client.get(f"/{response_type}/{search_query}")
+        result_ids = get_item_list(response, response_type, search_query)
+        assert response.status_code == 200
+        assert result_ids == result
+
+    @pytest.mark.parametrize("endpoint", ["item"])
+    def test_empty_input(self, response_type: str, endpoint: str) -> None:
+        response = client.get(f"/{response_type}/NA/{endpoint}/search")
+        assert response.status_code == 400
+
     @pytest.mark.parametrize("endpoint", ["servant", "equip", "svt"])
     def test_too_many_results_svt(self, response_type: str, endpoint: str) -> None:
         response = client.get(f"/{response_type}/NA/{endpoint}/search?type=normal")

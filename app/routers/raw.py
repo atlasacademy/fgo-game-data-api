@@ -26,6 +26,7 @@ from ..schemas.search import (
     BuffSearchQueryParams,
     EquipSearchQueryParams,
     FuncSearchQueryParams,
+    ItemSearchQueryParams,
     ServantSearchQueryParams,
     SkillSearchParams,
     SvtSearchQueryParams,
@@ -474,6 +475,22 @@ async def get_buff(
         return item_response(buff_entity)
     else:
         raise HTTPException(status_code=404, detail="Buff not found")
+
+
+@router.get(
+    "/{region}/item/search",
+    summary="Find and get item data",
+    description=ItemSearchQueryParams.DESCRIPTION,
+    response_description="Item entity",
+    response_model=List[ItemEntity],
+    response_model_exclude_unset=True,
+    responses=get_error_code([400, 403]),
+)
+async def find_item(
+    search_param: ItemSearchQueryParams = Depends(ItemSearchQueryParams),
+) -> Response:
+    matches = search.search_item(search_param)
+    return list_response(ItemEntity(mstItem=mstItem) for mstItem in matches)
 
 
 @router.get(

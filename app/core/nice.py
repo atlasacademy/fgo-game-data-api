@@ -110,6 +110,7 @@ from ..schemas.raw import (
     MstAiAct,
     MstClassRelationOverwrite,
     MstFuncGroup,
+    MstItem,
     MstMap,
     MstQuestRelease,
     MstShop,
@@ -647,11 +648,15 @@ def get_item_use(region: Region, item_id: int) -> List[NiceItemUse]:
 
 def get_nice_item(region: Region, item_id: int) -> NiceItem:
     raw_data = masters[region].mstItemId[item_id]
+    return get_nice_item_from_raw(region, raw_data)
+
+
+def get_nice_item_from_raw(region: Region, raw_data: MstItem) -> NiceItem:
     return NiceItem(
-        id=item_id,
+        id=raw_data.id,
         name=raw_data.name,
         type=ITEM_TYPE_NAME[raw_data.type],
-        uses=get_item_use(region, item_id),
+        uses=get_item_use(region, raw_data.id),
         detail=raw_data.detail,
         individuality=get_traits_list(raw_data.individuality),
         icon=AssetURL.items.format(

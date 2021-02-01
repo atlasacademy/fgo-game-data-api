@@ -237,6 +237,15 @@ ITEM_BG_TYPE_NAME: Dict[int, NiceItemBGType] = {
 }
 
 
+ITEM_BG_TYPE_REVERSE = {v: k for k, v in ITEM_BG_TYPE_NAME.items()}
+
+
+### Item Type ###
+
+
+ITEM_TYPE_REVERSE = {v: k for k, v in ITEM_TYPE_NAME.items()}
+
+
 ### Card Type ###
 
 
@@ -941,6 +950,7 @@ __all__ = [
     "BUFF_LIMIT_NAME",
     "NiceItemBGType",
     "ITEM_BG_TYPE_NAME",
+    "ITEM_BG_TYPE_REVERSE",
     "CARD_TYPE_NAME_REVERSE",
     "NiceGender",
     "GENDER_TYPE_NAME",
@@ -974,6 +984,7 @@ __all__ = [
     "CLASS_OVERWRITE_NAME",
     "NiceItemType",
     "ITEM_TYPE_NAME",
+    "ITEM_TYPE_REVERSE",
     "NiceCardType",
     "CARD_TYPE_NAME",
     "CondType",

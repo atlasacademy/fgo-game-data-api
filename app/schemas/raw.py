@@ -876,6 +876,7 @@ class Master(BaseModel):
     mstFuncId: Dict[int, MstFunc]
     mstFuncGroupId: Dict[int, List[MstFuncGroup]]
     mstSkillId: Dict[int, MstSkill]
+    mstItem: List[MstItem]
     mstItemId: Dict[int, MstItem]
     mstGiftId: Dict[int, List[MstGift]]
     mstTreasureDeviceId: Dict[int, MstTreasureDevice]

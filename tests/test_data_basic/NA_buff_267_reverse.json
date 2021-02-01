@@ -17,8 +17,8 @@
           "funcTargetTeam": "player",
           "functvals": [],
           "funcquestTvals": [
-            { "id": 94000046, "name": "unknown" },
-            { "id": 94000045, "name": "unknown" }
+            { "id": 94000046, "name": "eventOnigashimaRaid" },
+            { "id": 94000045, "name": "eventOnigashima" }
           ],
           "traitVals": [],
           "buffs": [

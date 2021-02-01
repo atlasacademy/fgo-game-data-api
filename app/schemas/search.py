@@ -19,6 +19,9 @@ from .enums import (
     NiceFuncTargetType,
     NiceFuncType,
     NiceGender,
+    NiceItemBGType,
+    NiceItemType,
+    NiceItemUse,
     NiceSkillType,
     NiceSvtFlag,
     NiceSvtType,
@@ -336,6 +339,41 @@ class FuncSearchQueryParams:
         so the search might return vals with buffs that have the same ids.
         - **tvals**: an integer or a trait enum.
         - **questTvals**: integer.
+
+        At least one of the parameter is required for the query.
+        """
+    )
+
+
+@dataclass
+class ItemSearchQueryParams:
+    region: Region
+    name: Optional[str] = None
+    individuality: List[Union[Trait, int]] = Query([])
+    type: List[NiceItemType] = Query([])
+    background: List[NiceItemBGType] = Query([])
+    use: List[NiceItemUse] = Query([])
+
+    def hasSearchParams(self) -> bool:
+        return any(
+            [
+                self.name,
+                self.individuality,
+                self.type,
+                self.background,
+                self.use,
+            ]
+        )
+
+    DESCRIPTION: ClassVar[str] = inspect.cleandoc(
+        """
+        Search and return the list of matched items.
+
+        - **name**: in English if you are searching NA data and in Japanese if you are searching JP data.
+        - **individuality**: an integer or a trait enum.
+        - **type**: an item of NiceItemType.
+        - **background**: an item of `NiceItemBGType`.
+        - **use**: an item of `NiceItemUse`.
 
         At least one of the parameter is required for the query.
         """

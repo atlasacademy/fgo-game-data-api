@@ -18,16 +18,21 @@ from ..schemas.enums import (
     FUNC_TARGETTYPE_NAME_REVERSE,
     FUNC_TYPE_NAME_REVERSE,
     GENDER_TYPE_NAME_REVERSE,
+    ITEM_BG_TYPE_REVERSE,
+    ITEM_TYPE_REVERSE,
     SKILL_TYPE_NAME_REVERSE,
     SVT_FLAG_NAME_REVERSE,
     SVT_TYPE_NAME_REVERSE,
     TRAIT_NAME_REVERSE,
+    NiceItemUse,
     Trait,
 )
+from ..schemas.raw import MstItem
 from ..schemas.search import (
     BuffSearchQueryParams,
     EquipSearchQueryParams,
     FuncSearchQueryParams,
+    ItemSearchQueryParams,
     ServantSearchQueryParams,
     SkillSearchParams,
     SvtSearchQueryParams,
@@ -371,3 +376,36 @@ def search_func(search_param: FuncSearchQueryParams, limit: int = 100) -> List[i
         raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
 
     return [func.id for func in matches]
+
+
+def search_item(search_param: ItemSearchQueryParams) -> List[MstItem]:
+    if not search_param.hasSearchParams():
+        raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
+
+    individuality = reverse_traits(search_param.individuality)
+    item_type = [ITEM_TYPE_REVERSE[item_type] for item_type in search_param.type]
+    bg_type = [ITEM_BG_TYPE_REVERSE[bg_type] for bg_type in search_param.background]
+
+    matches = masters[search_param.region].mstItem
+
+    if individuality:
+        matches = [
+            item for item in matches if individuality.issubset(item.individuality)
+        ]
+    if item_type:
+        matches = [item for item in matches if item.type in item_type]
+    if bg_type:
+        matches = [item for item in matches if item.bgImageId in bg_type]
+
+    for item_use, lookup_table in (
+        (NiceItemUse.skill, masters[search_param.region].mstCombineSkillItem),
+        (NiceItemUse.ascension, masters[search_param.region].mstCombineLimitItem),
+        (NiceItemUse.costume, masters[search_param.region].mstCombineCostumeItem),
+    ):
+        if item_use in search_param.use:
+            matches = [item for item in matches if item.id in lookup_table]
+
+    if search_param.name:
+        matches = [item for item in matches if match_name(search_param.name, item.name)]
+
+    return matches
