@@ -591,6 +591,57 @@ class Trait(str, Enum):
     shuten = "shuten"
     genji = "genji"
     vengeance = "vengeance"
+    enemyGardenOfSinnersLivingCorpse = "enemyGardenOfSinnersLivingCorpse"
+    enemyGardenOfSinnersApartmentGhostAndSkeleton = (
+        "enemyGardenOfSinnersApartmentGhostAndSkeleton"
+    )
+    enemyGardenOfSinnersBaseModel = "enemyGardenOfSinnersBaseModel"
+    enemyGardenOfSinnersVengefulSpiritOfSevenPeople = (
+        "enemyGardenOfSinnersVengefulSpiritOfSevenPeople"
+    )
+    enemySaberEliWerebeastAndHomunculusAndKnight = (
+        "enemySaberEliWerebeastAndHomunculusAndKnight"
+    )
+    enemySaberEliSkeletonAndGhostAndLamia = "enemySaberEliSkeletonAndGhostAndLamia"
+    enemySaberEliBugAndGolem = "enemySaberEliBugAndGolem"
+    enemySeraphEater = "enemySeraphEater"
+    enemySeraphShapeshifter = "enemySeraphShapeshifter"
+    enemySeraphTypeI = "enemySeraphTypeI"
+    enemySeraphTypeSakura = "enemySeraphTypeSakura"
+    enemyHimejiCastleKnightAndGazerAndMassProduction = (
+        "enemyHimejiCastleKnightAndGazerAndMassProduction"
+    )
+    enemyHimejiCastleDronesAndHomunculusAndAutomata = (
+        "enemyHimejiCastleDronesAndHomunculusAndAutomata"
+    )
+    enemyHimejiCastleSkeletonAndScarecrow = "enemyHimejiCastleSkeletonAndScarecrow"
+    enemyGuda3MiniNobu = "enemyGuda3MiniNobu"
+    enemyDavinciTrueEnemy = "enemyDavinciTrueEnemy"
+    enemyDavinciFalseEnemy = "enemyDavinciFalseEnemy"
+    enemyCaseFilesRareEnemy = "enemyCaseFilesRareEnemy"
+    enemyLasVegasBonusEnemy = "enemyLasVegasBonusEnemy"
+    enemySummerCampRareEnemy = "enemySummerCampRareEnemy"
+    enemyLittleBigTenguEnemy = "enemyLittleBigTenguEnemy"
+    eventSaberWars = "eventSaberWars"
+    eventRashomon = "eventRashomon"
+    eventOnigashima = "eventOnigashima"
+    eventOnigashimaRaid = "eventOnigashimaRaid"
+    eventPrisma = "eventPrisma"
+    eventPrismaWorldEndMatch = "eventPrismaWorldEndMatch"
+    eventNeroFest2 = "eventNeroFest2"
+    eventGuda2 = "eventGuda2"
+    eventNeroFest3 = "eventNeroFest3"
+    eventSetsubun = "eventSetsubun"
+    eventApocrypha = "eventApocrypha"
+    eventBattleInNewYork1 = "eventBattleInNewYork1"
+    eventOniland = "eventOniland"
+    eventOoku = "eventOoku"
+    eventGuda4 = "eventGuda4"
+    eventLasVegas = "eventLasVegas"
+    eventBattleInNewYork2 = "eventBattleInNewYork2"
+    eventSaberWarsII = "eventSaberWarsII"
+    eventSummerCamp = "eventServantSummerCamp"
+    eventGuda5 = "eventGuda5"
 
 
 TRAIT_NAME: Dict[int, Trait] = {
@@ -655,9 +706,24 @@ TRAIT_NAME: Dict[int, Trait] = {
     1120: Trait.handOrDoor,
     1121: Trait.demonGodPillar,
     1122: Trait.shadowServant,
+    1128: Trait.enemyGardenOfSinnersLivingCorpse,
+    1129: Trait.enemyGardenOfSinnersApartmentGhostAndSkeleton,
+    1130: Trait.enemyGardenOfSinnersBaseModel,
+    1131: Trait.enemyGardenOfSinnersVengefulSpiritOfSevenPeople,
     1132: Trait.oni,
     1133: Trait.hand,
     1134: Trait.door,
+    1135: Trait.enemySaberEliWerebeastAndHomunculusAndKnight,
+    1136: Trait.enemySaberEliSkeletonAndGhostAndLamia,
+    1137: Trait.enemySaberEliBugAndGolem,
+    1138: Trait.enemySeraphEater,
+    1139: Trait.enemySeraphShapeshifter,
+    1140: Trait.enemySeraphTypeI,
+    1141: Trait.enemySeraphTypeSakura,
+    1155: Trait.enemyHimejiCastleKnightAndGazerAndMassProduction,
+    1156: Trait.enemyHimejiCastleDronesAndHomunculusAndAutomata,
+    1157: Trait.enemyHimejiCastleSkeletonAndScarecrow,
+    1171: Trait.enemyGuda3MiniNobu,
     1172: Trait.threatToHumanity,
     2000: Trait.divine,
     2001: Trait.humanoid,
@@ -674,6 +740,8 @@ TRAIT_NAME: Dict[int, Trait] = {
     2012: Trait.brynhildsBeloved,
     2018: Trait.undeadOrDaemon,  # Amakusa bond CE
     2019: Trait.demonic,
+    2023: Trait.enemyDavinciTrueEnemy,
+    2024: Trait.enemyDavinciFalseEnemy,
     2037: Trait.skyOrEarthExceptPseudoAndDemi,  # Raikou's 3rd skill
     2038: Trait.fieldSunlight,
     2039: Trait.fieldShore,
@@ -690,11 +758,14 @@ TRAIT_NAME: Dict[int, Trait] = {
     2386: Trait.kingproteaProliferation,
     2387: Trait.kingproteaGrowth,
     2392: Trait.fieldCity,
+    2403: Trait.enemyCaseFilesRareEnemy,
+    2469: Trait.enemyLasVegasBonusEnemy,
     2466: Trait.argonaut,
     2615: Trait.genderCaenisServant,  # Phantom's 2nd skill
     2631: Trait.hominidaeServant,  # used in TamaVitch's fight
     2632: Trait.demonicBeastServant,  # used in TamaVitch's fight
     2654: Trait.livingHuman,  # Voyager's NP
+    2663: Trait.enemySummerCampRareEnemy,
     2664: Trait.kingproteaProliferationNPDefense,
     2666: Trait.giant,
     2667: Trait.childServant,  # Summer Illya's 2nd skill
@@ -706,6 +777,7 @@ TRAIT_NAME: Dict[int, Trait] = {
     2733: Trait.shutenOnField,  # Ibaraki strengthened 2nd skill
     2734: Trait.shuten,  # Ibaraki strengthened 2nd skill
     2735: Trait.genji,
+    2749: Trait.enemyLittleBigTenguEnemy,
     2759: Trait.vengeance,  # Taira 2nd skill and NP
     # 2xxx: CQ or Story quests buff
     3000: Trait.normalAttack0,  # Normal attack, including NP
@@ -785,6 +857,26 @@ TRAIT_NAME: Dict[int, Trait] = {
     4101: Trait.aoeNP,
     5000: Trait.canBeInBattle,  # can be NPC, enemy or playable servant i.e. not CE
     5010: Trait.notBasedOnServant,
+    94000015: Trait.eventSaberWars,
+    94000037: Trait.eventRashomon,
+    94000045: Trait.eventOnigashima,
+    94000046: Trait.eventOnigashimaRaid,
+    94000047: Trait.eventPrisma,
+    94000048: Trait.eventPrismaWorldEndMatch,
+    94000049: Trait.eventNeroFest2,
+    94000057: Trait.eventGuda2,
+    94000066: Trait.eventNeroFest3,
+    94000071: Trait.eventSetsubun,
+    94000074: Trait.eventApocrypha,
+    94000077: Trait.eventBattleInNewYork1,
+    94000078: Trait.eventOniland,
+    94000086: Trait.eventOoku,
+    94000089: Trait.eventGuda4,
+    94000091: Trait.eventLasVegas,
+    94000092: Trait.eventBattleInNewYork2,
+    94000095: Trait.eventSaberWarsII,
+    94000107: Trait.eventSummerCamp,
+    94000108: Trait.eventGuda5,
 }
 
 
