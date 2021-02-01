@@ -65,6 +65,7 @@ test_cases_dict: Dict[str, Tuple[str, str]] = {
     "item_JP": ("JP/item/7103", "JP_item_Lancer_Monument"),
     "MC_NA": ("JP/MC/20", "JP_MC_Plugsuit"),
     "CC_NA": ("NA/CC/8400110", "NA_CC_Fou"),
+    "CC_NA_collectionNo": ("NA/CC/11", "NA_CC_Fou"),
     "event_NA": ("NA/event/80090", "NA_KNK_rerun"),
     "war_JP": ("JP/war/201", "JP_war_Shimousa"),
     "quest_NA": ("NA/quest/94026514", "NA_Artoria_rank_up_2"),

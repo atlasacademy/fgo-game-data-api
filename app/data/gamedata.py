@@ -104,6 +104,10 @@ def update_gamedata() -> None:
             if is_equip(svt["type"]) and svt["collectionNo"] != 0
         }
 
+        master["mstCCCollectionNo"] = {
+            cc["collectionNo"]: cc["id"] for cc in master["mstCommandCode"]
+        }
+
         master["mstFriendshipId"] = defaultdict(list)
         master["mstFriendship"] = sorted(
             master["mstFriendship"], key=lambda item: item["rank"]  # type: ignore

@@ -31,6 +31,7 @@ test_cases_dict: Dict[str, Tuple[str, str]] = {
     "buff_NA_reverse": ("NA/buff/267?reverse=True", "NA_buff_267_reverse"),
     "MC_NA_id": ("NA/MC/110", "NA_MC_LB"),
     "JP_CC_id": ("JP/CC/8400550", "JP_CC_8400550"),
+    "JP_CC_collectionNo": ("JP/CC/55", "JP_CC_8400550"),
     "NA_event_id": ("NA/event/80119", "NA_event_Oniland"),
     "JP_war_id": ("JP/war/201", "JP_war_Shinjuku"),
 }

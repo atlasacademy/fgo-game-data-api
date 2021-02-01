@@ -881,6 +881,7 @@ class Master(BaseModel):
     mstTreasureDeviceId: Dict[int, MstTreasureDevice]
     mstSvtServantCollectionNo: Dict[int, int]
     mstSvtEquipCollectionNo: Dict[int, int]
+    mstCCCollectionNo: Dict[int, int]
     mstCombineMaterialId: Dict[int, List[MstCombineMaterial]]
     mstCombineSkillItem: Set[int]
     mstCombineLimitItem: Set[int]

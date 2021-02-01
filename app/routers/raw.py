@@ -253,6 +253,8 @@ async def get_command_code(
 
     - **expand**: Expand the skills and functions.
     """
+    if cc_id in masters[region].mstCCCollectionNo:
+        cc_id = masters[region].mstCCCollectionNo[cc_id]
     if cc_id in masters[region].mstCommandCodeId:
         cc_entity = raw.get_command_code_entity(conn, region, cc_id, expand)
         return item_response(cc_entity)

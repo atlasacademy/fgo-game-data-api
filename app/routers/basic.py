@@ -253,6 +253,8 @@ async def get_command_code(
     cc_id: int,
     lang: Language = Depends(language_parameter),
 ) -> Response:
+    if cc_id in masters[region].mstCCCollectionNo:
+        cc_id = masters[region].mstCCCollectionNo[cc_id]
     if cc_id in masters[region].mstCommandCodeId:
         return item_response(basic.get_basic_cc(region, cc_id, lang))
     else:
