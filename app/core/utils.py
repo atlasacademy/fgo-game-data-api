@@ -1,10 +1,10 @@
 from typing import Any, Iterable, List, Mapping, TypeVar, Union
 
 from ..data.custom_mappings import TRANSLATIONS
-from ..schemas.basic import BasicEquip, BasicServant
+from ..schemas.basic import BasicCommandCode, BasicEquip, BasicServant
 from ..schemas.common import NiceTrait
 from ..schemas.enums import TRAIT_NAME, Trait
-from ..schemas.nice import NiceEquip, NiceServant
+from ..schemas.nice import NiceCommandCode, NiceEquip, NiceServant
 
 
 VT = TypeVar("VT")
@@ -39,7 +39,15 @@ def get_traits_list(input_idv: Iterable[int]) -> List[NiceTrait]:
     return [get_nice_trait(individuality) for individuality in input_idv]
 
 
-T = TypeVar("T", BasicServant, BasicEquip, NiceServant, NiceEquip)
+T = TypeVar(
+    "T",
+    BasicServant,
+    BasicEquip,
+    BasicCommandCode,
+    NiceServant,
+    NiceEquip,
+    NiceCommandCode,
+)
 
 
 def sort_by_collection_no(input_list: Iterable[T]) -> List[T]:

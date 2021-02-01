@@ -1298,7 +1298,7 @@ def get_nice_skill_alone(
                     for mc_id in raw.skill_to_MCId(region, skill_id)
                 ),
                 CC=(
-                    get_basic_cc(region, cc_id)
+                    get_basic_cc(region, cc_id, lang)
                     for cc_id in raw.skill_to_CCId(region, skill_id)
                 ),
             )
@@ -1314,7 +1314,7 @@ def get_nice_skill_alone(
                     for mc_id in raw.skill_to_MCId(region, skill_id)
                 ),
                 CC=(
-                    get_nice_command_code(conn, region, cc_id)
+                    get_nice_command_code(conn, region, cc_id, lang)
                     for cc_id in raw.skill_to_CCId(region, skill_id)
                 ),
             )
@@ -1394,14 +1394,16 @@ def get_nice_mystic_code(
 
 
 def get_nice_command_code(
-    conn: Connection, region: Region, cc_id: int
+    conn: Connection, region: Region, cc_id: int, lang: Language
 ) -> NiceCommandCode:
     raw_data = raw.get_command_code_entity(conn, region, cc_id, expand=True)
 
     base_settings = {"base_url": settings.asset_url, "region": region, "item_id": cc_id}
     nice_cc = NiceCommandCode(
         id=raw_data.mstCommandCode.id,
-        name=raw_data.mstCommandCode.name,
+        name=get_safe(TRANSLATIONS, raw_data.mstCommandCode.name)
+        if lang == Language.en
+        else raw_data.mstCommandCode.name,
         collectionNo=raw_data.mstCommandCode.collectionNo,
         rarity=raw_data.mstCommandCode.rarity,
         extraAssets={

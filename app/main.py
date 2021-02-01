@@ -80,7 +80,8 @@ Pre-generated full nice data that can be served instantly:
   - [JP Craft Essence](/export/JP/nice_equip.json), [JP Craft Essence with lore](/export/JP/nice_equip_lore.json)
   - [JP Craft Essence with English names](/export/JP/nice_equip_lang_en.json),
   [JP Craft Essence with lore and English names](/export/JP/nice_equip_lore_lang_en.json)
-  - [JP Command Code](/export/JP/nice_command_code.json)
+  - [JP Command Code](/export/JP/nice_command_code.json),
+  [JP Command Code with English names](/export/JP/nice_command_code_lang_en.json)
   - [JP Material](/export/JP/nice_item.json)
   - [JP Mystic Code](/export/JP/nice_mystic_code.json)
   - [JP Item](/export/JP/nice_item.json)
@@ -104,6 +105,7 @@ Pre-generated, trimmed-down, lightweight basic data that can be used for indexin
   - [JP CE](/export/JP/basic_equip.json)
   - [JP CE with English names](/export/JP/basic_equip_lang_en.json)
   - [JP Command Code](/export/JP/basic_command_code.json)
+  - [JP Command Code with English names](/export/JP/basic_command_code_lang_en.json)
   - [JP Mystic Code](/export/JP/basic_mystic_code.json)
   - [JP War](/export/JP/basic_war.json)
   - [JP Event](/export/JP/basic_event.json)

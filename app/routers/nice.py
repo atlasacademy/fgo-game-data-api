@@ -275,6 +275,7 @@ pre_processed_cc_links = """
 Preprocessed data:
 - [NA Command Code](/export/NA/nice_command_code.json)
 - [JP Command Code](/export/JP/nice_command_code.json)
+- [JP Command Code with English names](/export/JP/nice_command_code_lang_en.json)
 """
 
 if settings.documentation_all_nice:
@@ -293,10 +294,11 @@ if settings.documentation_all_nice:
 async def get_command_code(
     region: Region,
     cc_id: int,
+    lang: Language = Depends(language_parameter),
     conn: Connection = Depends(get_db),
 ) -> Response:
     if cc_id in masters[region].mstCommandCodeId:
-        return item_response(nice.get_nice_command_code(conn, region, cc_id))
+        return item_response(nice.get_nice_command_code(conn, region, cc_id, lang))
     else:
         raise HTTPException(status_code=404, detail="Command Code not found")
 

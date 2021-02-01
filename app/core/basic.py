@@ -156,7 +156,8 @@ def get_basic_skill(
                 get_basic_mc(region, mc_id) for mc_id in skill_to_MCId(region, skill_id)
             ),
             CC=(
-                get_basic_cc(region, cc_id) for cc_id in skill_to_CCId(region, skill_id)
+                get_basic_cc(region, cc_id, lang)
+                for cc_id in skill_to_CCId(region, skill_id)
             ),
         )
         basic_skill.reverse = BasicReversedSkillTdType(basic=skill_reverse)
@@ -251,14 +252,16 @@ def get_basic_mc(region: Region, mc_id: int) -> BasicMysticCode:
     return basic_mc
 
 
-def get_basic_cc(region: Region, cc_id: int) -> BasicCommandCode:
+def get_basic_cc(region: Region, cc_id: int, lang: Language) -> BasicCommandCode:
     mstCommandCode = masters[region].mstCommandCodeId[cc_id]
     base_settings = {"base_url": settings.asset_url, "region": region, "item_id": cc_id}
 
     basic_cc = BasicCommandCode(
         id=mstCommandCode.id,
         collectionNo=mstCommandCode.collectionNo,
-        name=mstCommandCode.name,
+        name=get_safe(TRANSLATIONS, mstCommandCode.name)
+        if lang == Language.en
+        else mstCommandCode.name,
         rarity=mstCommandCode.rarity,
         face=AssetURL.commandCode.format(**base_settings),
     )

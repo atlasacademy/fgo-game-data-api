@@ -135,7 +135,7 @@ python scripts/extract_enums.py dump.cs_path app/schemas/gameenums.py
 Update `equip_names.json` with new NA CEs translations. `--jp-master` and `--na-master` arguments are not needed if environment variables `JP_GAMEDATA` and `NA_GAMEDATA` are set or added to the `.env` file.
 
 ```
-python scripts/update_ce_translation.py --mapping app/data/mappings/equip_names.json --jp-master jp_master_path --na-master na_master_path
+python scripts/update_ce_translation.py --jp-master jp_master_path --na-master na_master_path
 ```
 
 #### [`get_test_data.py`](tests/get_test_data.py)

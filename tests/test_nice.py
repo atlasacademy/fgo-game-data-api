@@ -202,6 +202,11 @@ class TestServantSpecial:
         assert response.status_code == 200
         assert response.json()["name"] == "Hell's Kitchen"
 
+    def test_JP_CC_English_name(self) -> None:
+        response = client.get("/nice/JP/CC/8400240?lang=en")
+        assert response.status_code == 200
+        assert response.json()["name"] == "The Holy Night's Aurora"
+
     def test_empty_cv_illustrator_name(self) -> None:
         response = client.get("/nice/JP/svt/9941330?lore=true")
         assert response.status_code == 200

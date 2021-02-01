@@ -124,7 +124,7 @@ def generate_exports() -> None:  # pragma: no cover
                 for mc_id in masters[region].mstEquipId
             )
             all_cc_data = (
-                get_nice_command_code(conn, region, cc_id)
+                get_nice_command_code(conn, region, cc_id, Language.jp)
                 for cc_id in masters[region].mstCommandCodeId
             )
             all_basic_servant_data = sort_by_collection_no(
@@ -139,7 +139,7 @@ def generate_exports() -> None:  # pragma: no cover
                 get_basic_mc(region, mc_id) for mc_id in masters[region].mstEquipId
             )
             all_basic_cc_data = (
-                get_basic_cc(region, cc_id)
+                get_basic_cc(region, cc_id, Language.jp)
                 for cc_id in masters[region].mstCommandCodeId
             )
             all_basic_event_data = (
@@ -188,9 +188,19 @@ def generate_exports() -> None:  # pragma: no cover
                     get_basic_equip(region, svt_id, Language.en)
                     for svt_id in masters[region].mstSvtEquipCollectionNo.values()
                 )
+                all_basic_cc_en = sort_by_collection_no(
+                    get_basic_cc(region, cc_id, Language.en)
+                    for cc_id in masters[region].mstCommandCodeId
+                )
+                all_cc_data_en = (
+                    get_nice_command_code(conn, region, cc_id, Language.en)
+                    for cc_id in masters[region].mstCommandCodeId
+                )
                 output_files += [
                     ("basic_servant_lang_en", all_basic_servant_en, dump_orjson),
                     ("basic_equip_lang_en", all_basic_equip_en, dump_orjson),
+                    ("basic_command_code_lang_en", all_basic_cc_en, dump_orjson),
+                    ("nice_command_code_lang_en", all_cc_data_en, dump_orjson),
                 ]
 
             for file_name, data, dump in output_files:
