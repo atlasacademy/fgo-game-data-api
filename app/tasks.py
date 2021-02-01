@@ -120,7 +120,7 @@ def generate_exports() -> None:  # pragma: no cover
                 get_nice_item(region, item_id) for item_id in masters[region].mstItemId
             )
             all_mc_data = (
-                get_nice_mystic_code(conn, region, mc_id)
+                get_nice_mystic_code(conn, region, mc_id, Language.jp)
                 for mc_id in masters[region].mstEquipId
             )
             all_cc_data = (
