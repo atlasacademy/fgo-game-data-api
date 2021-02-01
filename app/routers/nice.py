@@ -261,10 +261,11 @@ if settings.documentation_all_nice:
 async def get_mystic_code(
     region: Region,
     mc_id: int,
+    lang: Language = Depends(language_parameter),
     conn: Connection = Depends(get_db),
 ) -> Response:
     if mc_id in masters[region].mstEquipId:
-        return item_response(nice.get_nice_mystic_code(conn, region, mc_id))
+        return item_response(nice.get_nice_mystic_code(conn, region, mc_id, lang))
     else:
         raise HTTPException(status_code=404, detail="Mystic Code not found")
 

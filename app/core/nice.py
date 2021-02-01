@@ -462,11 +462,13 @@ def get_ai_id_from_skill(region: Region, skill_id: int) -> Dict[AiType, List[int
 
 
 def get_nice_skill(
-    skillEntity: SkillEntityNoReverse, svtId: int, region: Region
+    skillEntity: SkillEntityNoReverse, svtId: int, region: Region, lang: Language
 ) -> List[Dict[str, Any]]:
     nice_skill: Dict[str, Any] = {
         "id": skillEntity.mstSkill.id,
-        "name": skillEntity.mstSkill.name,
+        "name": get_safe(TRANSLATIONS, skillEntity.mstSkill.name)
+        if lang == Language.en
+        else skillEntity.mstSkill.name,
         "ruby": skillEntity.mstSkill.ruby,
         "type": SKILL_TYPE_NAME[skillEntity.mstSkill.type],
         "actIndividuality": get_traits_list(skillEntity.mstSkill.actIndividuality),
@@ -1110,13 +1112,13 @@ def get_nice_servant(
     nice_data["skills"] = [
         skill
         for skillEntity in raw_data.mstSkill
-        for skill in get_nice_skill(skillEntity, svt_id, region)
+        for skill in get_nice_skill(skillEntity, svt_id, region, lang)
     ]
 
     nice_data["classPassive"] = [
         skill
         for skillEntity in raw_data.mstSvt.expandedClassPassive
-        for skill in get_nice_skill(skillEntity, svt_id, region)
+        for skill in get_nice_skill(skillEntity, svt_id, region, lang)
     ]
 
     # Filter out dummy TDs that are used by enemy servants
@@ -1282,7 +1284,9 @@ def get_nice_skill_alone(
         svtId = svt_list[0]
     else:
         svtId = 0
-    nice_data = NiceSkillReverse.parse_obj(get_nice_skill(raw_data, svtId, region)[0])
+    nice_data = NiceSkillReverse.parse_obj(
+        get_nice_skill(raw_data, svtId, region, lang)[0]
+    )
 
     if reverse and reverseDepth >= ReverseDepth.servant:
         activeSkills = {svt_skill.svtId for svt_skill in raw_data.mstSvtSkill}
@@ -1310,7 +1314,7 @@ def get_nice_skill_alone(
                     for svt_id in activeSkills | passiveSkills
                 ),
                 MC=(
-                    get_nice_mystic_code(conn, region, mc_id)
+                    get_nice_mystic_code(conn, region, mc_id, lang)
                     for mc_id in raw.skill_to_MCId(region, skill_id)
                 ),
                 CC=(
@@ -1358,7 +1362,7 @@ def get_nice_td_alone(
 
 
 def get_nice_mystic_code(
-    conn: Connection, region: Region, mc_id: int
+    conn: Connection, region: Region, mc_id: int, lang: Language
 ) -> NiceMysticCode:
     raw_data = raw.get_mystic_code_entity(conn, region, mc_id, expand=True)
     base_settings = {"base_url": settings.asset_url, "region": region}
@@ -1386,7 +1390,7 @@ def get_nice_mystic_code(
         skills=(
             skill
             for skillEntity in raw_data.mstSkill
-            for skill in get_nice_skill(skillEntity, mc_id, region)
+            for skill in get_nice_skill(skillEntity, mc_id, region, lang)
         ),
     )
 
@@ -1415,7 +1419,7 @@ def get_nice_command_code(
         skills=(
             skill
             for skillEntity in raw_data.mstSkill
-            for skill in get_nice_skill(skillEntity, cc_id, region)
+            for skill in get_nice_skill(skillEntity, cc_id, region, lang)
         ),
         illustrator=get_illustrator_name(
             region, raw_data.mstCommandCodeComment.illustratorId

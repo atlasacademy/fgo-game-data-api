@@ -137,7 +137,9 @@ def get_basic_skill(
     mstSkill = masters[region].mstSkillId[skill_id]
     basic_skill = BasicSkillReverse(
         id=mstSkill.id,
-        name=mstSkill.name,
+        name=get_safe(TRANSLATIONS, mstSkill.name)
+        if lang == Language.en
+        else mstSkill.name,
         ruby=mstSkill.ruby,
         icon=AssetURL.skillIcon.format(
             base_url=settings.asset_url, region=region, item_id=mstSkill.iconId

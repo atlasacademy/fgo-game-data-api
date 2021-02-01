@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.38.0 - 2020-01-31
+### Added
+- English name translations for JP CCs.
+- CC endpoints can take `collectionNo` besides CC IDs.
+- Added English name option for skill.
+
 ## 5.37.4 - 2020-01-30
 ### Added
 - `battleCharaOffsetZ` to raw servant's `mstSvtLimitAdd`.

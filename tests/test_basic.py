@@ -94,6 +94,11 @@ class TestBasicSpecial:
         assert response.status_code == 200
         assert response.json()["name"] == "Elice Utsumi"
 
+    def test_JP_skill_English_name(self) -> None:
+        response = client.get("/basic/JP/skill/991604?lang=en")
+        assert response.status_code == 200
+        assert response.json()["name"] == "Paradox Ace Killer"
+
     def test_JP_CC_English_name(self) -> None:
         response = client.get("/basic/JP/CC/8400240?lang=en")
         assert response.status_code == 200
