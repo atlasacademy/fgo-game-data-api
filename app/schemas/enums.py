@@ -630,7 +630,7 @@ class Trait(str, Enum):
     enemyCaseFilesRareEnemy = "enemyCaseFilesRareEnemy"
     enemyLasVegasBonusEnemy = "enemyLasVegasBonusEnemy"
     enemySummerCampRareEnemy = "enemySummerCampRareEnemy"
-    enemyLittleBigTenguEnemy = "enemyLittleBigTenguEnemy"
+    enemyLittleBigTenguTsuwamonoEnemy = "enemyLittleBigTenguTsuwamonoEnemy"
     eventSaberWars = "eventSaberWars"
     eventRashomon = "eventRashomon"
     eventOnigashima = "eventOnigashima"
@@ -649,7 +649,7 @@ class Trait(str, Enum):
     eventLasVegas = "eventLasVegas"
     eventBattleInNewYork2 = "eventBattleInNewYork2"
     eventSaberWarsII = "eventSaberWarsII"
-    eventSummerCamp = "eventServantSummerCamp"
+    eventSummerCamp = "eventSummerCamp"
     eventGuda5 = "eventGuda5"
 
 
@@ -786,7 +786,7 @@ TRAIT_NAME: Dict[int, Trait] = {
     2733: Trait.shutenOnField,  # Ibaraki strengthened 2nd skill
     2734: Trait.shuten,  # Ibaraki strengthened 2nd skill
     2735: Trait.genji,
-    2749: Trait.enemyLittleBigTenguEnemy,
+    2749: Trait.enemyLittleBigTenguTsuwamonoEnemy,
     2759: Trait.vengeance,  # Taira 2nd skill and NP
     # 2xxx: CQ or Story quests buff
     3000: Trait.normalAttack0,  # Normal attack, including NP
