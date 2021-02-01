@@ -1,4 +1,3 @@
-from inspect import cleandoc
 from typing import Any, Iterable, List, Set
 
 from sqlalchemy import Table
@@ -162,31 +161,53 @@ def get_mstSubtitle(
     ]
 
 
+def get_voice_cond_sql(condType: str, value: str) -> str:
+    """
+    Returns SQL statement with parameters. Example where output:
+
+    "mstSvtVoice"."scriptJson" @> '[{"conds":[{"condType": :condType, "value": :value}]}]'
+    """
+    cond_sql = '"mstSvtVoice"."scriptJson" @> \'[{"conds":[{"condType": '
+    cond_sql += f":{condType}"
+    cond_sql += ', "value": '
+    cond_sql += f":{value}"
+    cond_sql += "}]}]'"
+    return cond_sql
+
+
 def get_related_voice_id(
     conn: Connection, cond_svt_value: Set[int], cond_group_value: Set[int]
 ) -> Set[int]:
-    text_stmt = cleandoc(
-        """
-        SELECT
-        DISTINCT "mstSvtVoice".id
-        FROM "mstSvtVoice",
-        jsonb_array_elements("mstSvtVoice"."scriptJson") scriptJsonExpanded,
-        jsonb_array_elements(scriptJsonExpanded->'conds') condsExpanded
-        WHERE
-        (condsExpanded->>'condType' = :svtCond AND condsExpanded->>'value' IN :svtValue)
-        """
+    cond_svt_value_params = {
+        f"svtValue{i}": svt_value for i, svt_value in enumerate(cond_svt_value)
+    }
+    cond_group_value_params = {
+        f"groupValue{i}": svt_value for i, svt_value in enumerate(cond_group_value)
+    }
+
+    where_svt = " OR ".join(
+        get_voice_cond_sql("svtCond", svt_value_param)
+        for svt_value_param in cond_svt_value_params
     )
+
+    text_stmt = f'SELECT "mstSvtVoice".id FROM "mstSvtVoice" WHERE {where_svt}'
     if cond_group_value:
-        text_stmt += "OR (condsExpanded->>'condType' = :groupCond AND condsExpanded->>'value' IN :groupValue)"
+        where_group = " OR ".join(
+            get_voice_cond_sql("groupCond", group_value_param)
+            for group_value_param in cond_group_value_params
+        )
+        text_stmt += f" OR {where_group}"
+
     stmt = text(text_stmt)
+
     fetched: Set[int] = {
         svt_id[0]
         for svt_id in conn.execute(
             stmt,
-            svtCond=str(VoiceCondType.SVT_GET.value),
-            groupCond=str(VoiceCondType.SVT_GROUP.value),
-            svtValue=tuple(str(i) for i in cond_svt_value),
-            groupValue=tuple(str(i) for i in cond_group_value),
+            svtCond=VoiceCondType.SVT_GET.value,
+            groupCond=VoiceCondType.SVT_GROUP.value,
+            **cond_svt_value_params,
+            **cond_group_value_params,
         ).fetchall()
     }
     return fetched

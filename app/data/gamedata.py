@@ -3,6 +3,7 @@ from collections import defaultdict
 from typing import Dict
 
 import orjson
+from sqlalchemy.sql import text
 
 from ..config import Settings, logger
 from ..db.base import engines
@@ -283,6 +284,13 @@ def update_db() -> None:  # pragma: no cover
                 for subtitle in globalNewMstSubtitle:
                     subtitle["svtId"] = get_subtitle_svtId(subtitle["id"])
                 conn.execute(mstSubtitle.insert(globalNewMstSubtitle))
+
+            conn.execute(text('DROP INDEX IF EXISTS "mstSvtVoiceGIN"'))
+            conn.execute(
+                text(
+                    'CREATE INDEX "mstSvtVoiceGIN" ON "mstSvtVoice" USING gin("scriptJson" jsonb_path_ops);'
+                )
+            )
 
     db_loading_time = time.perf_counter() - start_loading_time
     logger.info(f"Loaded db in {db_loading_time:.2f}s.")
