@@ -7,11 +7,11 @@ from ..schemas.enums import TRAIT_NAME, Trait
 from ..schemas.nice import NiceCommandCode, NiceEquip, NiceServant
 
 
-ValueT = TypeVar("ValueT")
-LookupT = TypeVar("LookupT")
+TValue = TypeVar("TValue")
+TLookup = TypeVar("TLookup")
 
 
-def get_safe(input_dict: Mapping[Any, ValueT], key: LookupT) -> Union[ValueT, LookupT]:
+def get_safe(input_dict: Mapping[Any, TValue], key: TLookup) -> Union[TValue, TLookup]:
     """
     A dict getter that returns the lookup key if it's not found in the dict.
     """
@@ -39,8 +39,8 @@ def get_traits_list(input_idv: Iterable[int]) -> List[NiceTrait]:
     return [get_nice_trait(individuality) for individuality in input_idv]
 
 
-T = TypeVar(
-    "T",
+THasColNo = TypeVar(
+    "THasColNo",
     BasicServant,
     BasicEquip,
     BasicCommandCode,
@@ -50,14 +50,14 @@ T = TypeVar(
 )
 
 
-def sort_by_collection_no(input_list: Iterable[T]) -> List[T]:
+def sort_by_collection_no(input_list: Iterable[THasColNo]) -> List[THasColNo]:
     """
     Return given list of basic svt objects sorted by their collectionNo attribute
     """
     return sorted(input_list, key=lambda x: x.collectionNo)
 
 
-def get_lang_en(svt: T) -> T:
+def get_lang_en(svt: THasColNo) -> THasColNo:
     """
     Returns given svt Pydantic object with English name
     """
