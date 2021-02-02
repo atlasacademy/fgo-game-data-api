@@ -63,6 +63,7 @@ SVT_STUFFS = {
     "mstSvtScript",
     "mstFriendship",
     "mstSvtGroup",
+    "mstSvtComment",
     "mstSvtLimit",
     "mstSvtLimitAdd",
     "mstSvtVoiceRelation",
@@ -73,8 +74,14 @@ SVT_STUFFS = {
 }
 SKILL_STUFFS = {"mstSvtSkill", "mstSkillLv"}
 TD_STUFFS = {"mstSvtTreasureDevice", "mstTreasureDeviceLv"}
-LATEST_VALENTINE_EVENT = {Region.NA: 80089, Region.JP: 80276}
+VALENTINE_NAME = {Region.NA: "Valentine", Region.JP: "バレンタイン"}
+MASH_NAME = {Region.NA: "Mash", Region.JP: "マシュ"}
 region_path = {Region.JP: settings.jp_gamedata, Region.NA: settings.na_gamedata}
+
+
+def is_Mash_Valentine_equip(region: Region, comment: str) -> bool:
+    header = comment.split("\n")[0]
+    return VALENTINE_NAME[region] in header and MASH_NAME[region] in header
 
 
 def update_gamedata() -> None:
@@ -228,6 +235,8 @@ def update_gamedata() -> None:
             for item in master[source_table]:
                 master[masters_table][item[lookup_id]].append(item)
 
+        # Bond CE has servant's ID in skill's actIndividuality
+        # to bind the CE effect to the servant
         master["bondEquip"] = {}
         for svt in master["mstSvt"]:
             if (
@@ -248,7 +257,16 @@ def update_gamedata() -> None:
                         master["bondEquip"][individualities[0]] = svt["id"]
 
         master["valentineEquip"] = defaultdict(list)
-        for shop in master["mstShopEventId"][LATEST_VALENTINE_EVENT[region_name]]:
+        latest_valentine_event_id = max(
+            (
+                event
+                for event in master["mstEvent"]
+                if VALENTINE_NAME[region_name] in event["name"]
+            ),
+            key=lambda event: event["startedAt"],  # type: ignore
+        )["id"]
+        # Find Valentince CE's owner by looking at which servant unlock the shop entries
+        for shop in master["mstShopEventId"][latest_valentine_event_id]:
             if shop["purchaseType"] == PurchaseType.SERVANT:
                 for shopRelease in master["mstShopReleaseShopId"][shop["id"]]:
                     if shopRelease["condType"] == CondType.SVT_GET:
@@ -256,6 +274,11 @@ def update_gamedata() -> None:
                             shop["targetIds"][0]
                         )
                         break
+        master["valentineEquip"][master["mstConstantId"]["MASHU_SVT_ID1"]] = [
+            item["svtId"]
+            for item in master["mstSvtComment"]
+            if is_Mash_Valentine_equip(region_name, item["comment"])
+        ]
 
         masters[region_name] = Master.parse_obj(master)
 
