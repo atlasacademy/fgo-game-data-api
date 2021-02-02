@@ -7,11 +7,11 @@ from ..schemas.enums import TRAIT_NAME, Trait
 from ..schemas.nice import NiceCommandCode, NiceEquip, NiceServant
 
 
-VT = TypeVar("VT")
-LT = TypeVar("LT")
+ValueT = TypeVar("ValueT")
+LookupT = TypeVar("LookupT")
 
 
-def get_safe(input_dict: Mapping[Any, VT], key: LT) -> Union[VT, LT]:
+def get_safe(input_dict: Mapping[Any, ValueT], key: LookupT) -> Union[ValueT, LookupT]:
     """
     A dict getter that returns the lookup key if it's not found in the dict.
     """
