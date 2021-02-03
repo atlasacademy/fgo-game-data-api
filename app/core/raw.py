@@ -42,7 +42,7 @@ def buff_to_func(region: Region, buff_id: int) -> Set[int]:
 
 def func_to_skillId(region: Region, func_id: int) -> Set[int]:
     """Returns a set of skill ID that uses the given function ID"""
-    return masters[region].funcToSkill.get(func_id, set())
+    return set(sorted(masters[region].funcToSkill.get(func_id, set())))
 
 
 def func_to_tdId(region: Region, func_id: int) -> Set[int]:
