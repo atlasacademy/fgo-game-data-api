@@ -178,6 +178,7 @@ class BaseVals(BaseModel):
     NoTargetNoAct: Optional[int] = None
     CardIndex: Optional[int] = None
     CardIndividuality: Optional[int] = None
+    WarBoardTakeOverBuff: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
     Individuality: Optional[int] = None
     EventId: Optional[int] = None

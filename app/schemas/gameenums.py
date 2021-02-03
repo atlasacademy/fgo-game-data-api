@@ -1315,6 +1315,7 @@ class DataValsType(IntEnum):
     NoTargetNoAct = 65
     CardIndex = 66
     CardIndividuality = 67
+    WarBoardTakeOverBuff = 68
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -1493,6 +1494,7 @@ class ShopType(IntEnum):
     SVT_ANONYMOUS = 7
     BGM = 8
     LIMIT_MATERIAL = 9
+    GRAIL_FRAGMENTS = 10
 
 
 class NiceShopType(str, Enum):
@@ -1508,6 +1510,7 @@ class NiceShopType(str, Enum):
     svtAnonymous = "svtAnonymous"
     bgm = "bgm"
     limitMaterial = "limitMaterial"
+    grailFragments = "grailFragments"
 
 
 SHOP_TYPE_NAME: Dict[int, NiceShopType] = {
@@ -1521,6 +1524,7 @@ SHOP_TYPE_NAME: Dict[int, NiceShopType] = {
     7: NiceShopType.svtAnonymous,
     8: NiceShopType.bgm,
     9: NiceShopType.limitMaterial,
+    10: NiceShopType.grailFragments,
 }
 
 
@@ -1536,6 +1540,7 @@ class PayType(IntEnum):
     ANONYMOUS = 9
     RARE_PRI = 10
     ITEM = 11
+    GRAIL_FRAGMENTS = 12
 
 
 class NicePayType(str, Enum):
@@ -1552,6 +1557,7 @@ class NicePayType(str, Enum):
     anonymous = "anonymous"
     rarePri = "rarePri"
     item = "item"
+    grailFragments = "grailFragments"
 
 
 PAY_TYPE_NAME: Dict[int, NicePayType] = {
@@ -1566,6 +1572,7 @@ PAY_TYPE_NAME: Dict[int, NicePayType] = {
     9: NicePayType.anonymous,
     10: NicePayType.rarePri,
     11: NicePayType.item,
+    12: NicePayType.grailFragments,
 }
 
 
