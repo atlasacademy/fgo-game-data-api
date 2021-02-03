@@ -3,11 +3,13 @@ from collections import defaultdict
 from typing import Dict
 
 import orjson
+from sqlalchemy import Table
+from sqlalchemy.engine import Engine
 from sqlalchemy.sql import text
 
 from ..config import Settings, logger
 from ..db.base import engines
-from ..models.raw import TABLES_TO_BE_LOADED, metadata, mstSubtitle
+from ..models.raw import TABLES_TO_BE_LOADED, mstSubtitle
 from ..schemas.common import Region
 from ..schemas.enums import FUNC_VALS_NOT_BUFF, CondType, PurchaseType, SvtType
 from ..schemas.raw import (
@@ -286,19 +288,22 @@ def update_gamedata() -> None:
     logger.info(f"Loaded game data in {data_loading_time:.2f}s.")
 
 
+def recreate_table(engine: Engine, table: Table) -> None:
+    table.drop(engine, checkfirst=True)
+    table.create(engine, checkfirst=True)
+
+
 def update_db() -> None:  # pragma: no cover
     logger.info("Loading db …")
     start_loading_time = time.perf_counter()
     for region_name, gamedata in region_path.items():
         engine = engines[region_name]
 
-        metadata.drop_all(engine)
-        metadata.create_all(engine)
-
         with engine.connect() as conn:
             for table in TABLES_TO_BE_LOADED:
                 with open(gamedata / f"{table.name}.json", "rb") as fp:
                     data = orjson.loads(fp.read())
+                recreate_table(engine, table)
                 conn.execute(table.insert(data))
 
             if region_name == Region.NA:
@@ -306,6 +311,7 @@ def update_db() -> None:  # pragma: no cover
                     globalNewMstSubtitle = orjson.loads(fp.read())
                 for subtitle in globalNewMstSubtitle:
                     subtitle["svtId"] = get_subtitle_svtId(subtitle["id"])
+                recreate_table(engine, mstSubtitle)
                 conn.execute(mstSubtitle.insert(globalNewMstSubtitle))
 
             conn.execute(text('DROP INDEX IF EXISTS "mstSvtVoiceGIN"'))
