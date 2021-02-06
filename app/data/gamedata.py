@@ -3,22 +3,12 @@ from collections import defaultdict
 from typing import Dict
 
 import orjson
-from sqlalchemy import Table
-from sqlalchemy.engine import Engine
-from sqlalchemy.sql import text
+from pydantic import DirectoryPath
 
 from ..config import Settings, logger
-from ..db.base import engines
-from ..models.raw import TABLES_TO_BE_LOADED, mstSubtitle
 from ..schemas.common import Region
 from ..schemas.enums import FUNC_VALS_NOT_BUFF, CondType, PurchaseType, SvtType
-from ..schemas.raw import (
-    BAD_COMBINE_SVT_LIMIT,
-    Master,
-    get_subtitle_svtId,
-    is_equip,
-    is_servant,
-)
+from ..schemas.raw import BAD_COMBINE_SVT_LIMIT, Master, is_equip, is_servant
 
 
 settings = Settings()
@@ -78,7 +68,6 @@ SKILL_STUFFS = {"mstSvtSkill", "mstSkillLv"}
 TD_STUFFS = {"mstSvtTreasureDevice", "mstTreasureDeviceLv"}
 VALENTINE_NAME = {Region.NA: "Valentine", Region.JP: "バレンタイン"}
 MASH_NAME = {Region.NA: "Mash", Region.JP: "マシュ"}
-region_path = {Region.JP: settings.jp_gamedata, Region.NA: settings.na_gamedata}
 
 
 def is_Mash_Valentine_equip(region: Region, comment: str) -> bool:
@@ -86,7 +75,7 @@ def is_Mash_Valentine_equip(region: Region, comment: str) -> bool:
     return VALENTINE_NAME[region] in header and MASH_NAME[region] in header
 
 
-def update_gamedata() -> None:
+def update_masters(region_path: Dict[Region, DirectoryPath]) -> None:
     logger.info("Loading game data …")
     start_loading_time = time.perf_counter()
 
@@ -286,47 +275,3 @@ def update_gamedata() -> None:
 
     data_loading_time = time.perf_counter() - start_loading_time
     logger.info(f"Loaded game data in {data_loading_time:.2f}s.")
-
-
-def recreate_table(engine: Engine, table: Table) -> None:  # pragma: no cover
-    table.drop(engine, checkfirst=True)
-    table.create(engine, checkfirst=True)
-
-
-def update_db() -> None:  # pragma: no cover
-    logger.info("Loading db …")
-    start_loading_time = time.perf_counter()
-    for region_name, gamedata in region_path.items():
-        engine = engines[region_name]
-
-        with engine.connect() as conn:
-            for table in TABLES_TO_BE_LOADED:
-                with open(gamedata / f"{table.name}.json", "rb") as fp:
-                    data = orjson.loads(fp.read())
-                recreate_table(engine, table)
-                conn.execute(table.insert(data))
-
-            if region_name == Region.NA:
-                with open(gamedata / "globalNewMstSubtitle.json", "rb") as fp:
-                    globalNewMstSubtitle = orjson.loads(fp.read())
-                for subtitle in globalNewMstSubtitle:
-                    subtitle["svtId"] = get_subtitle_svtId(subtitle["id"])
-                recreate_table(engine, mstSubtitle)
-                conn.execute(mstSubtitle.insert(globalNewMstSubtitle))
-
-            conn.execute(text('DROP INDEX IF EXISTS "mstSvtVoiceGIN"'))
-            conn.execute(
-                text(
-                    'CREATE INDEX "mstSvtVoiceGIN" ON "mstSvtVoice" USING gin("scriptJson" jsonb_path_ops);'
-                )
-            )
-
-    db_loading_time = time.perf_counter() - start_loading_time
-    logger.info(f"Loaded db in {db_loading_time:.2f}s.")
-
-
-if settings.write_postgres_data:  # pragma: no cover
-    update_db()
-
-
-update_gamedata()

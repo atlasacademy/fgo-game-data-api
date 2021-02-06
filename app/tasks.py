@@ -5,7 +5,7 @@ from typing import Any, Dict, Iterable, Union
 
 import redis
 from git import Repo
-from pydantic import BaseModel
+from pydantic import BaseModel, DirectoryPath
 
 from .config import Settings, logger, project_root
 from .core.basic import (
@@ -25,8 +25,9 @@ from .core.nice import (
 )
 from .core.utils import get_safe, sort_by_collection_no
 from .data.custom_mappings import TRANSLATIONS
-from .data.gamedata import masters, region_path, update_db, update_gamedata
+from .data.gamedata import masters, update_masters
 from .db.base import engines
+from .db.load import update_db
 from .routers.utils import list_string
 from .schemas.base import BaseModelORJson
 from .schemas.common import Language, Region
@@ -35,6 +36,7 @@ from .schemas.nice import NiceEquip, NiceServant
 
 
 settings = Settings()
+REGION_PATHS = {Region.JP: settings.jp_gamedata, Region.NA: settings.na_gamedata}
 
 
 export_path = project_root / "export"
@@ -102,7 +104,9 @@ def dump_svt(
             fp.write(export_without_lore_en)
 
 
-def generate_exports() -> None:  # pragma: no cover
+def generate_exports(
+    region_path: Dict[Region, DirectoryPath]
+) -> None:  # pragma: no cover
     if settings.export_all_nice:
         for region in region_path:
             start_time = time.perf_counter()
@@ -212,9 +216,6 @@ def generate_exports() -> None:  # pragma: no cover
             logger.info(f"Exported {region} data in {run_time:.2f}s.")
 
 
-generate_exports()
-
-
 class RepoInfo(BaseModel):
     hash: str
     timestamp: int
@@ -223,7 +224,7 @@ class RepoInfo(BaseModel):
 repo_info: Dict[Region, RepoInfo] = {}
 
 
-def update_repo_info() -> None:
+def update_master_repo_info(region_path: Dict[Region, DirectoryPath]) -> None:
     for region, gamedata in region_path.items():
         if (gamedata.parent / ".git").exists():
             repo = Repo(gamedata.parent)
@@ -232,9 +233,6 @@ def update_repo_info() -> None:
                 hash=latest_commit.hexsha[:6],
                 timestamp=latest_commit.committed_date,  # pyright: reportGeneralTypeIssues=false
             )
-
-
-update_repo_info()
 
 
 def clear_bloom_redis_cache() -> None:  # pragma: no cover
@@ -252,10 +250,9 @@ def clear_bloom_redis_cache() -> None:  # pragma: no cover
         logger.info(f"Cleared {key_count} redis keys.")
 
 
-clear_bloom_redis_cache()
-
-
-def pull_and_update() -> None:  # pragma: no cover
+def pull_and_update(
+    region_path: Dict[Region, DirectoryPath]
+) -> None:  # pragma: no cover
     logger.info(f"Sleeping {settings.github_webhook_sleep} seconds …")
     time.sleep(settings.github_webhook_sleep)
     if settings.github_webhook_git_pull:
@@ -266,8 +263,8 @@ def pull_and_update() -> None:  # pragma: no cover
                     commit_hash = fetch_info.commit.hexsha[:6]
                     logger.info(f"Updated {fetch_info.ref} to {commit_hash}")
     if settings.write_postgres_data:
-        update_db()
-    update_gamedata()
-    generate_exports()
-    update_repo_info()
+        update_db(region_path)
+    update_masters(region_path)
+    generate_exports(region_path)
+    update_master_repo_info(region_path)
     clear_bloom_redis_cache()

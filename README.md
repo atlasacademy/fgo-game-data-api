@@ -6,6 +6,7 @@ HTTP API for FGO game data. Transform the raw game data into something a bit mor
   - [Required environment variables](#required-environment-variables)
   - [Optional environment variables](#optional-environment-variables)
 - [Run the API server](#run-the-api-server)
+- [Architecture](#architecture)
 - [Linting](#linting)
 - [Formatting](#formatting)
 - [Dependencies](#dependencies)
@@ -83,6 +84,18 @@ INFO:     127.0.0.1:56759 - "GET /rapidoc HTTP/1.1" 200 OK
 ```
 
 Go to http://127.0.0.1:8000/docs or http://127.0.0.1:8000/redoc for the API documentation.
+
+### Architecture
+
+- `main.py`: Main entrypoint of the application.
+- `routers/`: Routers to deal with incoming requests. The routers call functions from `core` to get the response data.
+- `core/`: Build response data. Get raw data from either the DB or the `masters` object in `data/gamedata`.
+- `data/`: Import master data and translations data into memory.
+  - `data/gamedatapy`: has the `masters` object that contains some master data as Pydantic objects. The `masters` object is used for frequently accessed master data.
+- `db/`: DB stuffs.
+  - `db/helpers/`: Functions to be used by `core` to get data from the DB.
+- `schemas/`: Response Pydantic models.
+- `models/`: SQLAlchemy Core Tables.
 
 ### [Linting](scripts/lint.ps1)
 

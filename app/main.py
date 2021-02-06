@@ -8,12 +8,32 @@ from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
 from .config import Settings, logger, project_root
+from .data.gamedata import update_masters
+from .db.load import update_db
 from .routers import basic, nice, raw, secret
 from .schemas.common import Region
-from .tasks import RepoInfo, repo_info
+from .tasks import (
+    REGION_PATHS,
+    RepoInfo,
+    clear_bloom_redis_cache,
+    generate_exports,
+    repo_info,
+    update_master_repo_info,
+)
 
 
 settings = Settings()
+
+if settings.write_postgres_data:  # pragma: no cover
+    update_db(REGION_PATHS)
+
+update_masters(REGION_PATHS)
+
+update_master_repo_info(REGION_PATHS)
+
+generate_exports(REGION_PATHS)
+
+clear_bloom_redis_cache()
 
 
 app_short_description = "Provide raw and nicely bundled FGO game data."
