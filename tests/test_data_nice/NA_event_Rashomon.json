@@ -1,0 +1,3984 @@
+{
+  "id": 80018,
+  "type": "eventQuest",
+  "name": "The Demonic Capital: Rashomon",
+  "shortName": "",
+  "detail": "The Demonic Capital: Rashomon",
+  "noticeBanner": "https://assets.atlasacademy.io/GameData/NA/Banner/event_war_80023.png",
+  "banner": "https://assets.atlasacademy.io/GameData/NA/Banner/event_war_80024.png",
+  "icon": "https://assets.atlasacademy.io/GameData/NA/Banner/banner_icon_80024.png",
+  "bannerPriority": 24000,
+  "noticeAt": 1526443200,
+  "startedAt": 1526443200,
+  "endedAt": 1527739199,
+  "finishedAt": 1528343999,
+  "materialOpenedAt": 1751328000,
+  "warIds": [8099],
+  "shop": [
+    {
+      "id": 8001800,
+      "baseShopId": 8001800,
+      "shopType": "eventItem",
+      "eventId": 80018,
+      "slot": 2,
+      "priority": 10,
+      "name": "The Wandering Tales of Shana-oh",
+      "detail": "Exchange for The Demonic Capital: Rashomon Event Limited ★5 Craft Essence",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94003702,
+          "name": "Oni Gourd",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
+          "individuality": [{ "id": 10061, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003702.png",
+          "background": "silver",
+          "priority": 94003702,
+          "dropPriority": 2002
+        },
+        "amount": 200
+      },
+      "purchaseType": "servant",
+      "targetIds": [9401460],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 1,
+      "defaultLimitCount": 0,
+      "openedAt": 1526443200,
+      "closedAt": 1528343999
+    },
+    {
+      "id": 8001801,
+      "baseShopId": 8001801,
+      "shopType": "eventItem",
+      "eventId": 80018,
+      "slot": 2,
+      "priority": 20,
+      "name": "The Wandering Tales of Shana-oh",
+      "detail": "Exchange for The Demonic Capital: Rashomon Event Limited ★5 Craft Essence",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94003702,
+          "name": "Oni Gourd",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
+          "individuality": [{ "id": 10061, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003702.png",
+          "background": "silver",
+          "priority": 94003702,
+          "dropPriority": 2002
+        },
+        "amount": 300
+      },
+      "purchaseType": "servant",
+      "targetIds": [9401460],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 1,
+      "defaultLimitCount": 0,
+      "openedAt": 1526443200,
+      "closedAt": 1528343999
+    },
+    {
+      "id": 8001802,
+      "baseShopId": 8001802,
+      "shopType": "eventItem",
+      "eventId": 80018,
+      "slot": 2,
+      "priority": 30,
+      "name": "The Wandering Tales of Shana-oh",
+      "detail": "Exchange for The Demonic Capital: Rashomon Event Limited ★5 Craft Essence",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94003702,
+          "name": "Oni Gourd",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
+          "individuality": [{ "id": 10061, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003702.png",
+          "background": "silver",
+          "priority": 94003702,
+          "dropPriority": 2002
+        },
+        "amount": 400
+      },
+      "purchaseType": "servant",
+      "targetIds": [9401460],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 1,
+      "defaultLimitCount": 0,
+      "openedAt": 1526443200,
+      "closedAt": 1528343999
+    },
+    {
+      "id": 8001803,
+      "baseShopId": 8001803,
+      "shopType": "eventItem",
+      "eventId": 80018,
+      "slot": 2,
+      "priority": 40,
+      "name": "The Wandering Tales of Shana-oh",
+      "detail": "Exchange for The Demonic Capital: Rashomon Event Limited ★5 Craft Essence",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94003702,
+          "name": "Oni Gourd",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
+          "individuality": [{ "id": 10061, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003702.png",
+          "background": "silver",
+          "priority": 94003702,
+          "dropPriority": 2002
+        },
+        "amount": 500
+      },
+      "purchaseType": "servant",
+      "targetIds": [9401460],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 1,
+      "defaultLimitCount": 0,
+      "openedAt": 1526443200,
+      "closedAt": 1528343999
+    },
+    {
+      "id": 8001804,
+      "baseShopId": 8001804,
+      "shopType": "eventItem",
+      "eventId": 80018,
+      "slot": 2,
+      "priority": 110,
+      "name": "Fire of Wisdom",
+      "detail": "Exchange for one ★3 ALL EXP card",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94003702,
+          "name": "Oni Gourd",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
+          "individuality": [{ "id": 10061, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003702.png",
+          "background": "silver",
+          "priority": 94003702,
+          "dropPriority": 2002
+        },
+        "amount": 5
+      },
+      "purchaseType": "servant",
+      "targetIds": [9770300],
+      "setNum": 1,
+      "limitNum": 100,
+      "defaultLv": 1,
+      "defaultLimitCount": 0,
+      "openedAt": 1526443200,
+      "closedAt": 1528343999
+    },
+    {
+      "id": 8001805,
+      "baseShopId": 8001805,
+      "shopType": "eventItem",
+      "eventId": 80018,
+      "slot": 2,
+      "priority": 100,
+      "name": "Blaze of Wisdom",
+      "detail": "Exchange for one ★4 ALL EXP card",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94003702,
+          "name": "Oni Gourd",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
+          "individuality": [{ "id": 10061, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003702.png",
+          "background": "silver",
+          "priority": 94003702,
+          "dropPriority": 2002
+        },
+        "amount": 10
+      },
+      "purchaseType": "servant",
+      "targetIds": [9770400],
+      "setNum": 1,
+      "limitNum": 100,
+      "defaultLv": 1,
+      "defaultLimitCount": 0,
+      "openedAt": 1526443200,
+      "closedAt": 1528343999
+    },
+    {
+      "id": 8001806,
+      "baseShopId": 8001806,
+      "shopType": "eventItem",
+      "eventId": 80018,
+      "slot": 2,
+      "priority": 120,
+      "name": "Hero Crystal: Star Fou",
+      "detail": "Exchange for one ★3 ALL HP Up card",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94003702,
+          "name": "Oni Gourd",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
+          "individuality": [{ "id": 10061, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003702.png",
+          "background": "silver",
+          "priority": 94003702,
+          "dropPriority": 2002
+        },
+        "amount": 30
+      },
+      "purchaseType": "servant",
+      "targetIds": [9570300],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 1,
+      "defaultLimitCount": 0,
+      "openedAt": 1526443200,
+      "closedAt": 1528343999
+    },
+    {
+      "id": 8001807,
+      "baseShopId": 8001807,
+      "shopType": "eventItem",
+      "eventId": 80018,
+      "slot": 2,
+      "priority": 130,
+      "name": "Hero Crystal: Sun Fou",
+      "detail": "Exchange for one ★3 ALL ATK Up card",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94003702,
+          "name": "Oni Gourd",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
+          "individuality": [{ "id": 10061, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003702.png",
+          "background": "silver",
+          "priority": 94003702,
+          "dropPriority": 2002
+        },
+        "amount": 30
+      },
+      "purchaseType": "servant",
+      "targetIds": [9670300],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 1,
+      "defaultLimitCount": 0,
+      "openedAt": 1526443200,
+      "closedAt": 1528343999
+    },
+    {
+      "id": 8001808,
+      "baseShopId": 8001808,
+      "shopType": "eventItem",
+      "eventId": 80018,
+      "slot": 2,
+      "priority": 210,
+      "name": "Heart of the Foreign God",
+      "detail": "Exchange for [Skill Up & Ascension Materials]",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94003702,
+          "name": "Oni Gourd",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
+          "individuality": [{ "id": 10061, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003702.png",
+          "background": "silver",
+          "priority": 94003702,
+          "dropPriority": 2002
+        },
+        "amount": 80
+      },
+      "purchaseType": "item",
+      "targetIds": [6517],
+      "setNum": 1,
+      "limitNum": 10,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1526443200,
+      "closedAt": 1528343999
+    },
+    {
+      "id": 8001809,
+      "baseShopId": 8001809,
+      "shopType": "eventItem",
+      "eventId": 80018,
+      "slot": 2,
+      "priority": 220,
+      "name": "Tearstone of Blood",
+      "detail": "Exchange for [Skill Up & Ascension Materials]",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94003702,
+          "name": "Oni Gourd",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
+          "individuality": [{ "id": 10061, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003702.png",
+          "background": "silver",
+          "priority": 94003702,
+          "dropPriority": 2002
+        },
+        "amount": 60
+      },
+      "purchaseType": "item",
+      "targetIds": [6520],
+      "setNum": 1,
+      "limitNum": 10,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1526443200,
+      "closedAt": 1528343999
+    },
+    {
+      "id": 8001810,
+      "baseShopId": 8001810,
+      "shopType": "eventItem",
+      "eventId": 80018,
+      "slot": 2,
+      "priority": 230,
+      "name": "Serpent Jewel",
+      "detail": "Exchange for [Skill Up & Ascension Materials]",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94003702,
+          "name": "Oni Gourd",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
+          "individuality": [{ "id": 10061, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003702.png",
+          "background": "silver",
+          "priority": 94003702,
+          "dropPriority": 2002
+        },
+        "amount": 40
+      },
+      "purchaseType": "item",
+      "targetIds": [6509],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1526443200,
+      "closedAt": 1528343999
+    },
+    {
+      "id": 8001811,
+      "baseShopId": 8001811,
+      "shopType": "eventItem",
+      "eventId": 80018,
+      "slot": 2,
+      "priority": 240,
+      "name": "Void's Dust",
+      "detail": "Exchange for [Skill Up & Ascension Materials]",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94003702,
+          "name": "Oni Gourd",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
+          "individuality": [{ "id": 10061, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003702.png",
+          "background": "silver",
+          "priority": 94003702,
+          "dropPriority": 2002
+        },
+        "amount": 30
+      },
+      "purchaseType": "item",
+      "targetIds": [6505],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1526443200,
+      "closedAt": 1528343999
+    },
+    {
+      "id": 8001812,
+      "baseShopId": 8001812,
+      "shopType": "eventItem",
+      "eventId": 80018,
+      "slot": 2,
+      "priority": 250,
+      "name": "Dragon Fang",
+      "detail": "Exchange for [Skill Up & Ascension Materials]",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94003702,
+          "name": "Oni Gourd",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
+          "individuality": [{ "id": 10061, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003702.png",
+          "background": "silver",
+          "priority": 94003702,
+          "dropPriority": 2002
+        },
+        "amount": 30
+      },
+      "purchaseType": "item",
+      "targetIds": [6512],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1526443200,
+      "closedAt": 1528343999
+    },
+    {
+      "id": 8001813,
+      "baseShopId": 8001813,
+      "shopType": "eventItem",
+      "eventId": 80018,
+      "slot": 2,
+      "priority": 340,
+      "name": "Rider Piece",
+      "detail": "Exchange for [Ascension Material]",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94003702,
+          "name": "Oni Gourd",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
+          "individuality": [{ "id": 10061, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003702.png",
+          "background": "silver",
+          "priority": 94003702,
+          "dropPriority": 2002
+        },
+        "amount": 30
+      },
+      "purchaseType": "item",
+      "targetIds": [7004],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1526443200,
+      "closedAt": 1528343999
+    },
+    {
+      "id": 8001814,
+      "baseShopId": 8001814,
+      "shopType": "eventItem",
+      "eventId": 80018,
+      "slot": 2,
+      "priority": 350,
+      "name": "Assassin Piece",
+      "detail": "Exchange for [Ascension Material]",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94003702,
+          "name": "Oni Gourd",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
+          "individuality": [{ "id": 10061, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003702.png",
+          "background": "silver",
+          "priority": 94003702,
+          "dropPriority": 2002
+        },
+        "amount": 30
+      },
+      "purchaseType": "item",
+      "targetIds": [7006],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1526443200,
+      "closedAt": 1528343999
+    },
+    {
+      "id": 8001815,
+      "baseShopId": 8001815,
+      "shopType": "eventItem",
+      "eventId": 80018,
+      "slot": 2,
+      "priority": 360,
+      "name": "Berserker Piece",
+      "detail": "Exchange for [Ascension Material]",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94003702,
+          "name": "Oni Gourd",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
+          "individuality": [{ "id": 10061, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003702.png",
+          "background": "silver",
+          "priority": 94003702,
+          "dropPriority": 2002
+        },
+        "amount": 30
+      },
+      "purchaseType": "item",
+      "targetIds": [7007],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1526443200,
+      "closedAt": 1528343999
+    },
+    {
+      "id": 8001816,
+      "baseShopId": 8001816,
+      "shopType": "eventItem",
+      "eventId": 80018,
+      "slot": 2,
+      "priority": 310,
+      "name": "Rider Monument",
+      "detail": "Exchange for [Ascension Material]",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94003702,
+          "name": "Oni Gourd",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
+          "individuality": [{ "id": 10061, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003702.png",
+          "background": "silver",
+          "priority": 94003702,
+          "dropPriority": 2002
+        },
+        "amount": 50
+      },
+      "purchaseType": "item",
+      "targetIds": [7104],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1526443200,
+      "closedAt": 1528343999
+    },
+    {
+      "id": 8001817,
+      "baseShopId": 8001817,
+      "shopType": "eventItem",
+      "eventId": 80018,
+      "slot": 2,
+      "priority": 320,
+      "name": "Assassin Monument",
+      "detail": "Exchange for [Ascension Material]",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94003702,
+          "name": "Oni Gourd",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
+          "individuality": [{ "id": 10061, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003702.png",
+          "background": "silver",
+          "priority": 94003702,
+          "dropPriority": 2002
+        },
+        "amount": 50
+      },
+      "purchaseType": "item",
+      "targetIds": [7106],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1526443200,
+      "closedAt": 1528343999
+    },
+    {
+      "id": 8001818,
+      "baseShopId": 8001818,
+      "shopType": "eventItem",
+      "eventId": 80018,
+      "slot": 2,
+      "priority": 330,
+      "name": "Berserker Monument",
+      "detail": "Exchange for [Ascension Material]",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94003702,
+          "name": "Oni Gourd",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
+          "individuality": [{ "id": 10061, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003702.png",
+          "background": "silver",
+          "priority": 94003702,
+          "dropPriority": 2002
+        },
+        "amount": 50
+      },
+      "purchaseType": "item",
+      "targetIds": [7107],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1526443200,
+      "closedAt": 1528343999
+    },
+    {
+      "id": 8001819,
+      "baseShopId": 8001819,
+      "shopType": "eventItem",
+      "eventId": 80018,
+      "slot": 2,
+      "priority": 510,
+      "name": "10,000QP",
+      "detail": "Exchange for 10,000 QP",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94003702,
+          "name": "Oni Gourd",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
+          "individuality": [{ "id": 10061, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003702.png",
+          "background": "silver",
+          "priority": 94003702,
+          "dropPriority": 2002
+        },
+        "amount": 3
+      },
+      "purchaseType": "item",
+      "targetIds": [1],
+      "setNum": 10000,
+      "limitNum": 0,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1526443200,
+      "closedAt": 1528343999
+    },
+    {
+      "id": 8001820,
+      "baseShopId": 8001820,
+      "shopType": "eventItem",
+      "eventId": 80018,
+      "slot": 2,
+      "priority": 410,
+      "name": "Mana Prism",
+      "detail": "Exchange for Mana Prism",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94003702,
+          "name": "Oni Gourd",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
+          "individuality": [{ "id": 10061, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003702.png",
+          "background": "silver",
+          "priority": 94003702,
+          "dropPriority": 2002
+        },
+        "amount": 2
+      },
+      "purchaseType": "item",
+      "targetIds": [3],
+      "setNum": 1,
+      "limitNum": 500,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1526443200,
+      "closedAt": 1528343999
+    },
+    {
+      "id": 8001821,
+      "baseShopId": 8001821,
+      "shopType": "eventItem",
+      "eventId": 80018,
+      "slot": 2,
+      "priority": 420,
+      "name": "60,000QP",
+      "detail": "Exchange for 60,000 QP",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94003701,
+          "name": "Golden Rice Ball",
+          "type": "rpAdd",
+          "uses": [],
+          "detail": "\"Event BP Recovery Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA golden rice ball fit for the truly golden one.\nCurry-flavored, but mild.\nWhen you eat it, it will make your waist light up, turn your brocade into bamboo grass, or even make your tuft look like a girl's, but only if made with Japanese rice...\nJust what type of rice is this?\nRecovers 8 BP during the Rashomon Raids.",
+          "individuality": [{ "id": 10062, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003701.png",
+          "background": "gold",
+          "priority": 94003701,
+          "dropPriority": 94003701
+        },
+        "amount": 1
+      },
+      "purchaseType": "item",
+      "targetIds": [1],
+      "setNum": 60000,
+      "limitNum": 0,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1527739200,
+      "closedAt": 1528343999
+    },
+    {
+      "id": 8001822,
+      "baseShopId": 8001822,
+      "shopType": "eventItem",
+      "eventId": 80018,
+      "slot": 2,
+      "priority": 430,
+      "name": "10,000QP",
+      "detail": "Exchange for 10,000 QP",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94003703,
+          "name": "Rice Ball of Power",
+          "type": "rpAdd",
+          "uses": [],
+          "detail": "\"Event BP Recovery Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA rice ball that represents the friendship with the animals of Mt. Ashigara.\nPower will pour out of your body with just one bite!\n\"I'm totally pumped with motivation!\"\nThat was the review of a Rider passing by.\nRecovers 2 BP during the Rashomon Raids.",
+          "individuality": [{ "id": 10060, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94003703.png",
+          "background": "silver",
+          "priority": 94003703,
+          "dropPriority": 94003703
+        },
+        "amount": 1
+      },
+      "purchaseType": "item",
+      "targetIds": [1],
+      "setNum": 10000,
+      "limitNum": 0,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1527739200,
+      "closedAt": 1528343999
+    }
+  ],
+  "rewards": [
+    {
+      "groupId": 0,
+      "point": 30000,
+      "gifts": [
+        {
+          "id": 94003725,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 500000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 830000,
+      "gifts": [
+        {
+          "id": 94003712,
+          "type": "item",
+          "objectId": 94003701,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 1630000,
+      "gifts": [
+        {
+          "id": 94003721,
+          "type": "item",
+          "objectId": 3,
+          "priority": 0,
+          "num": 10
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 2430000,
+      "gifts": [
+        {
+          "id": 94003715,
+          "type": "item",
+          "objectId": 6508,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 3230000,
+      "gifts": [
+        {
+          "id": 13000,
+          "type": "item",
+          "objectId": 101,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 4000000,
+      "gifts": [
+        {
+          "id": 94003713,
+          "type": "servant",
+          "objectId": 9401460,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 4800000,
+      "gifts": [
+        {
+          "id": 94003722,
+          "type": "item",
+          "objectId": 3,
+          "priority": 0,
+          "num": 20
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 5600000,
+      "gifts": [
+        {
+          "id": 94003716,
+          "type": "item",
+          "objectId": 6514,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 6400000,
+      "gifts": [
+        {
+          "id": 12000,
+          "type": "item",
+          "objectId": 100,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 7200000,
+      "gifts": [
+        {
+          "id": 94003725,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 500000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 8000000,
+      "gifts": [
+        {
+          "id": 94003711,
+          "type": "item",
+          "objectId": 94003703,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 9000000,
+      "gifts": [
+        {
+          "id": 94003714,
+          "type": "servant",
+          "objectId": 9401470,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 9720000,
+      "gifts": [
+        {
+          "id": 13000,
+          "type": "item",
+          "objectId": 101,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 10440000,
+      "gifts": [
+        {
+          "id": 94003721,
+          "type": "item",
+          "objectId": 3,
+          "priority": 0,
+          "num": 10
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 11160000,
+      "gifts": [
+        {
+          "id": 94003726,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 1000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 11880000,
+      "gifts": [
+        {
+          "id": 13000,
+          "type": "item",
+          "objectId": 101,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 12600000,
+      "gifts": [
+        { "id": 103, "type": "item", "objectId": 4001, "priority": 0, "num": 1 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 13320000,
+      "gifts": [
+        {
+          "id": 14000,
+          "type": "item",
+          "objectId": 102,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 14000000,
+      "gifts": [
+        {
+          "id": 94003725,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 500000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 14760000,
+      "gifts": [
+        {
+          "id": 94003715,
+          "type": "item",
+          "objectId": 6508,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 15480000,
+      "gifts": [
+        {
+          "id": 94003712,
+          "type": "item",
+          "objectId": 94003701,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 16200000,
+      "gifts": [
+        {
+          "id": 94003725,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 500000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 17000000,
+      "gifts": [
+        {
+          "id": 94003714,
+          "type": "servant",
+          "objectId": 9401470,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 17420000,
+      "gifts": [
+        {
+          "id": 94003721,
+          "type": "item",
+          "objectId": 3,
+          "priority": 0,
+          "num": 10
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 17840000,
+      "gifts": [
+        {
+          "id": 94003715,
+          "type": "item",
+          "objectId": 6508,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 18260000,
+      "gifts": [
+        {
+          "id": 14000,
+          "type": "item",
+          "objectId": 102,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 18680000,
+      "gifts": [
+        {
+          "id": 94003726,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 1000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 19000000,
+      "gifts": [
+        {
+          "id": 94003722,
+          "type": "item",
+          "objectId": 3,
+          "priority": 0,
+          "num": 20
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 19520000,
+      "gifts": [
+        {
+          "id": 94003716,
+          "type": "item",
+          "objectId": 6514,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 19940000,
+      "gifts": [
+        {
+          "id": 12000,
+          "type": "item",
+          "objectId": 100,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 20360000,
+      "gifts": [
+        {
+          "id": 94003725,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 500000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 20780000,
+      "gifts": [
+        {
+          "id": 94003715,
+          "type": "item",
+          "objectId": 6508,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 21200000,
+      "gifts": [
+        {
+          "id": 13000,
+          "type": "item",
+          "objectId": 101,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 21620000,
+      "gifts": [
+        {
+          "id": 94003721,
+          "type": "item",
+          "objectId": 3,
+          "priority": 0,
+          "num": 10
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 22000000,
+      "gifts": [
+        {
+          "id": 94003726,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 1000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 22460000,
+      "gifts": [
+        {
+          "id": 14000,
+          "type": "item",
+          "objectId": 102,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 22880000,
+      "gifts": [
+        {
+          "id": 94003722,
+          "type": "item",
+          "objectId": 3,
+          "priority": 0,
+          "num": 20
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 23300000,
+      "gifts": [
+        { "id": 103, "type": "item", "objectId": 4001, "priority": 0, "num": 1 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 23720000,
+      "gifts": [
+        {
+          "id": 94003725,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 500000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 24140000,
+      "gifts": [
+        {
+          "id": 94003715,
+          "type": "item",
+          "objectId": 6508,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 24560000,
+      "gifts": [
+        {
+          "id": 14000,
+          "type": "item",
+          "objectId": 102,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 25000000,
+      "gifts": [
+        {
+          "id": 94003711,
+          "type": "item",
+          "objectId": 94003703,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 25400000,
+      "gifts": [
+        {
+          "id": 94003725,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 500000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 25820000,
+      "gifts": [
+        {
+          "id": 94003711,
+          "type": "item",
+          "objectId": 94003703,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 26240000,
+      "gifts": [
+        {
+          "id": 94003721,
+          "type": "item",
+          "objectId": 3,
+          "priority": 0,
+          "num": 10
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 26660000,
+      "gifts": [
+        {
+          "id": 94003716,
+          "type": "item",
+          "objectId": 6514,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 27000000,
+      "gifts": [
+        {
+          "id": 94003726,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 1000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 27500000,
+      "gifts": [
+        {
+          "id": 94003715,
+          "type": "item",
+          "objectId": 6508,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 28000000,
+      "gifts": [
+        {
+          "id": 94003722,
+          "type": "item",
+          "objectId": 3,
+          "priority": 0,
+          "num": 20
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 28340000,
+      "gifts": [
+        {
+          "id": 94003716,
+          "type": "item",
+          "objectId": 6514,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 28760000,
+      "gifts": [
+        {
+          "id": 12000,
+          "type": "item",
+          "objectId": 100,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 29000000,
+      "gifts": [
+        {
+          "id": 94003725,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 500000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 29600000,
+      "gifts": [
+        {
+          "id": 94003716,
+          "type": "item",
+          "objectId": 6514,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 30000000,
+      "gifts": [
+        {
+          "id": 94003714,
+          "type": "servant",
+          "objectId": 9401470,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 30440000,
+      "gifts": [
+        {
+          "id": 94003715,
+          "type": "item",
+          "objectId": 6508,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 30880000,
+      "gifts": [
+        {
+          "id": 94003722,
+          "type": "item",
+          "objectId": 3,
+          "priority": 0,
+          "num": 20
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 31320000,
+      "gifts": [
+        {
+          "id": 94003726,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 1000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 31760000,
+      "gifts": [
+        {
+          "id": 94003716,
+          "type": "item",
+          "objectId": 6514,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 32200000,
+      "gifts": [
+        {
+          "id": 94003711,
+          "type": "item",
+          "objectId": 94003703,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 32640000,
+      "gifts": [
+        {
+          "id": 14000,
+          "type": "item",
+          "objectId": 102,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 33080000,
+      "gifts": [
+        {
+          "id": 94003715,
+          "type": "item",
+          "objectId": 6508,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 33520000,
+      "gifts": [
+        {
+          "id": 94003716,
+          "type": "item",
+          "objectId": 6514,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 33960000,
+      "gifts": [
+        {
+          "id": 94003715,
+          "type": "item",
+          "objectId": 6508,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 34400000,
+      "gifts": [
+        {
+          "id": 94003725,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 500000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 34840000,
+      "gifts": [
+        {
+          "id": 94003716,
+          "type": "item",
+          "objectId": 6514,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 35280000,
+      "gifts": [
+        {
+          "id": 94003726,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 1000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 35720000,
+      "gifts": [
+        {
+          "id": 94003723,
+          "type": "item",
+          "objectId": 3,
+          "priority": 0,
+          "num": 50
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 36160000,
+      "gifts": [
+        {
+          "id": 94003712,
+          "type": "item",
+          "objectId": 94003701,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 36600000,
+      "gifts": [
+        {
+          "id": 94003716,
+          "type": "item",
+          "objectId": 6514,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 37000000,
+      "gifts": [
+        {
+          "id": 94003715,
+          "type": "item",
+          "objectId": 6508,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 37480000,
+      "gifts": [
+        {
+          "id": 94003711,
+          "type": "item",
+          "objectId": 94003703,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 38000000,
+      "gifts": [
+        {
+          "id": 94003715,
+          "type": "item",
+          "objectId": 6508,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 38360000,
+      "gifts": [
+        {
+          "id": 94003718,
+          "type": "item",
+          "objectId": 6507,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 38800000,
+      "gifts": [
+        { "id": 103, "type": "item", "objectId": 4001, "priority": 0, "num": 1 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 39240000,
+      "gifts": [
+        {
+          "id": 94003715,
+          "type": "item",
+          "objectId": 6508,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 39680000,
+      "gifts": [
+        {
+          "id": 94003716,
+          "type": "item",
+          "objectId": 6514,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 40000000,
+      "gifts": [
+        {
+          "id": 12000,
+          "type": "item",
+          "objectId": 100,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 40560000,
+      "gifts": [
+        {
+          "id": 94003715,
+          "type": "item",
+          "objectId": 6508,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 41000000,
+      "gifts": [
+        {
+          "id": 94003726,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 1000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 41440000,
+      "gifts": [
+        {
+          "id": 94003716,
+          "type": "item",
+          "objectId": 6514,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 41880000,
+      "gifts": [
+        {
+          "id": 94003711,
+          "type": "item",
+          "objectId": 94003703,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 42320000,
+      "gifts": [
+        {
+          "id": 94003716,
+          "type": "item",
+          "objectId": 6514,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 42760000,
+      "gifts": [
+        {
+          "id": 94003711,
+          "type": "item",
+          "objectId": 94003703,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 43200000,
+      "gifts": [
+        {
+          "id": 94003725,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 500000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 43640000,
+      "gifts": [
+        {
+          "id": 94003715,
+          "type": "item",
+          "objectId": 6508,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 44000000,
+      "gifts": [
+        {
+          "id": 14000,
+          "type": "item",
+          "objectId": 102,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 44520000,
+      "gifts": [
+        {
+          "id": 94003716,
+          "type": "item",
+          "objectId": 6514,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 45000000,
+      "gifts": [
+        {
+          "id": 94003715,
+          "type": "item",
+          "objectId": 6508,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 45400000,
+      "gifts": [
+        {
+          "id": 94003711,
+          "type": "item",
+          "objectId": 94003703,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 45840000,
+      "gifts": [
+        {
+          "id": 94003727,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 2000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 46280000,
+      "gifts": [
+        {
+          "id": 94003716,
+          "type": "item",
+          "objectId": 6514,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 46720000,
+      "gifts": [
+        {
+          "id": 94003726,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 1000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 47160000,
+      "gifts": [
+        {
+          "id": 94003723,
+          "type": "item",
+          "objectId": 3,
+          "priority": 0,
+          "num": 50
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 47600000,
+      "gifts": [
+        {
+          "id": 94003715,
+          "type": "item",
+          "objectId": 6508,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 48000000,
+      "gifts": [
+        {
+          "id": 94003714,
+          "type": "servant",
+          "objectId": 9401470,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 48610000,
+      "gifts": [
+        {
+          "id": 94003711,
+          "type": "item",
+          "objectId": 94003703,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 49220000,
+      "gifts": [
+        {
+          "id": 94003716,
+          "type": "item",
+          "objectId": 6514,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 49830000,
+      "gifts": [
+        {
+          "id": 94003715,
+          "type": "item",
+          "objectId": 6508,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 50000000,
+      "gifts": [
+        {
+          "id": 14000,
+          "type": "item",
+          "objectId": 102,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 51050000,
+      "gifts": [
+        {
+          "id": 94003716,
+          "type": "item",
+          "objectId": 6514,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 51660000,
+      "gifts": [
+        {
+          "id": 94003726,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 1000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 52270000,
+      "gifts": [
+        {
+          "id": 94003715,
+          "type": "item",
+          "objectId": 6508,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 52880000,
+      "gifts": [
+        {
+          "id": 12000,
+          "type": "item",
+          "objectId": 100,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 53490000,
+      "gifts": [
+        {
+          "id": 94003727,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 2000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 54100000,
+      "gifts": [
+        {
+          "id": 94003715,
+          "type": "item",
+          "objectId": 6508,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 54710000,
+      "gifts": [
+        {
+          "id": 13000,
+          "type": "item",
+          "objectId": 101,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 55320000,
+      "gifts": [
+        {
+          "id": 94003716,
+          "type": "item",
+          "objectId": 6514,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 55930000,
+      "gifts": [
+        {
+          "id": 94003711,
+          "type": "item",
+          "objectId": 94003703,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 56540000,
+      "gifts": [
+        {
+          "id": 94003716,
+          "type": "item",
+          "objectId": 6514,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 57150000,
+      "gifts": [
+        {
+          "id": 94003726,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 1000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 57760000,
+      "gifts": [
+        {
+          "id": 94003718,
+          "type": "item",
+          "objectId": 6507,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 58370000,
+      "gifts": [
+        {
+          "id": 14000,
+          "type": "item",
+          "objectId": 102,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 58980000,
+      "gifts": [
+        {
+          "id": 94003716,
+          "type": "item",
+          "objectId": 6514,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 59590000,
+      "gifts": [
+        {
+          "id": 94003715,
+          "type": "item",
+          "objectId": 6508,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 60000000,
+      "gifts": [
+        {
+          "id": 94003711,
+          "type": "item",
+          "objectId": 94003703,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 60810000,
+      "gifts": [
+        {
+          "id": 94003727,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 2000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 61420000,
+      "gifts": [
+        {
+          "id": 94003711,
+          "type": "item",
+          "objectId": 94003703,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 62030000,
+      "gifts": [
+        {
+          "id": 94003727,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 2000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 62640000,
+      "gifts": [
+        {
+          "id": 94003716,
+          "type": "item",
+          "objectId": 6514,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 63250000,
+      "gifts": [
+        {
+          "id": 94003717,
+          "type": "item",
+          "objectId": 6506,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 63860000,
+      "gifts": [
+        {
+          "id": 94003718,
+          "type": "item",
+          "objectId": 6507,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 64470000,
+      "gifts": [
+        {
+          "id": 94003711,
+          "type": "item",
+          "objectId": 94003703,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 65080000,
+      "gifts": [
+        {
+          "id": 13000,
+          "type": "item",
+          "objectId": 101,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 65690000,
+      "gifts": [
+        {
+          "id": 94003728,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 5000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 66300000,
+      "gifts": [
+        {
+          "id": 94003719,
+          "type": "item",
+          "objectId": 6521,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 66910000,
+      "gifts": [
+        {
+          "id": 94003717,
+          "type": "item",
+          "objectId": 6506,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 67520000,
+      "gifts": [
+        {
+          "id": 12000,
+          "type": "item",
+          "objectId": 100,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 68130000,
+      "gifts": [
+        {
+          "id": 94003718,
+          "type": "item",
+          "objectId": 6507,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 68740000,
+      "gifts": [
+        {
+          "id": 94003717,
+          "type": "item",
+          "objectId": 6506,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 69350000,
+      "gifts": [
+        {
+          "id": 13000,
+          "type": "item",
+          "objectId": 101,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 70000000,
+      "gifts": [
+        {
+          "id": 94003717,
+          "type": "item",
+          "objectId": 6506,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 70570000,
+      "gifts": [
+        {
+          "id": 12000,
+          "type": "item",
+          "objectId": 100,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 71180000,
+      "gifts": [
+        {
+          "id": 94003720,
+          "type": "item",
+          "objectId": 6518,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 72000000,
+      "gifts": [
+        {
+          "id": 94003714,
+          "type": "servant",
+          "objectId": 9401470,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 73000000,
+      "gifts": [
+        {
+          "id": 14000,
+          "type": "item",
+          "objectId": 102,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 74160000,
+      "gifts": [
+        {
+          "id": 94003719,
+          "type": "item",
+          "objectId": 6521,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 75240000,
+      "gifts": [
+        {
+          "id": 94003718,
+          "type": "item",
+          "objectId": 6507,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 76320000,
+      "gifts": [
+        {
+          "id": 94003717,
+          "type": "item",
+          "objectId": 6506,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 77400000,
+      "gifts": [
+        { "id": 103, "type": "item", "objectId": 4001, "priority": 0, "num": 1 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 78400000,
+      "gifts": [
+        {
+          "id": 94003711,
+          "type": "item",
+          "objectId": 94003703,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 79200000,
+      "gifts": [
+        {
+          "id": 94003718,
+          "type": "item",
+          "objectId": 6507,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 80000000,
+      "gifts": [
+        {
+          "id": 94003717,
+          "type": "item",
+          "objectId": 6506,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 81720000,
+      "gifts": [
+        {
+          "id": 13000,
+          "type": "item",
+          "objectId": 101,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 82800000,
+      "gifts": [
+        {
+          "id": 94003718,
+          "type": "item",
+          "objectId": 6507,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 83880000,
+      "gifts": [
+        {
+          "id": 94003719,
+          "type": "item",
+          "objectId": 6521,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 84960000,
+      "gifts": [
+        {
+          "id": 94003717,
+          "type": "item",
+          "objectId": 6506,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 86040000,
+      "gifts": [
+        {
+          "id": 94003711,
+          "type": "item",
+          "objectId": 94003703,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 87120000,
+      "gifts": [
+        {
+          "id": 94003717,
+          "type": "item",
+          "objectId": 6506,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 88200000,
+      "gifts": [
+        {
+          "id": 14000,
+          "type": "item",
+          "objectId": 102,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 89000000,
+      "gifts": [
+        {
+          "id": 94003718,
+          "type": "item",
+          "objectId": 6507,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 90000000,
+      "gifts": [
+        {
+          "id": 94003719,
+          "type": "item",
+          "objectId": 6521,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 91440000,
+      "gifts": [
+        {
+          "id": 94003727,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 2000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 92520000,
+      "gifts": [
+        {
+          "id": 94003720,
+          "type": "item",
+          "objectId": 6518,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 93600000,
+      "gifts": [
+        {
+          "id": 94003728,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 5000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 94680000,
+      "gifts": [
+        {
+          "id": 94003717,
+          "type": "item",
+          "objectId": 6506,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 95760000,
+      "gifts": [
+        {
+          "id": 94003718,
+          "type": "item",
+          "objectId": 6507,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 96840000,
+      "gifts": [
+        {
+          "id": 94003717,
+          "type": "item",
+          "objectId": 6506,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 97920000,
+      "gifts": [
+        {
+          "id": 94003719,
+          "type": "item",
+          "objectId": 6521,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 99000000,
+      "gifts": [
+        {
+          "id": 13000,
+          "type": "item",
+          "objectId": 101,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 100000000,
+      "gifts": [
+        {
+          "id": 94003714,
+          "type": "servant",
+          "objectId": 9401470,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 102600000,
+      "gifts": [
+        {
+          "id": 94003718,
+          "type": "item",
+          "objectId": 6507,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 105200000,
+      "gifts": [
+        {
+          "id": 94003717,
+          "type": "item",
+          "objectId": 6506,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 107800000,
+      "gifts": [
+        {
+          "id": 12000,
+          "type": "item",
+          "objectId": 100,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 110000000,
+      "gifts": [
+        {
+          "id": 94003718,
+          "type": "item",
+          "objectId": 6507,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 113000000,
+      "gifts": [
+        {
+          "id": 94003717,
+          "type": "item",
+          "objectId": 6506,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 115600000,
+      "gifts": [
+        {
+          "id": 13000,
+          "type": "item",
+          "objectId": 101,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 118200000,
+      "gifts": [
+        {
+          "id": 94003719,
+          "type": "item",
+          "objectId": 6521,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 120000000,
+      "gifts": [
+        { "id": 103, "type": "item", "objectId": 4001, "priority": 0, "num": 1 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 123400000,
+      "gifts": [
+        {
+          "id": 94003717,
+          "type": "item",
+          "objectId": 6506,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 126000000,
+      "gifts": [
+        {
+          "id": 94003711,
+          "type": "item",
+          "objectId": 94003703,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 128600000,
+      "gifts": [
+        {
+          "id": 94003718,
+          "type": "item",
+          "objectId": 6507,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 130000000,
+      "gifts": [
+        {
+          "id": 94003720,
+          "type": "item",
+          "objectId": 6518,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 133000000,
+      "gifts": [
+        {
+          "id": 94003718,
+          "type": "item",
+          "objectId": 6507,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 136000000,
+      "gifts": [
+        {
+          "id": 94003723,
+          "type": "item",
+          "objectId": 3,
+          "priority": 0,
+          "num": 50
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 138000000,
+      "gifts": [
+        {
+          "id": 94003717,
+          "type": "item",
+          "objectId": 6506,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 140000000,
+      "gifts": [
+        {
+          "id": 12000,
+          "type": "item",
+          "objectId": 100,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 143000000,
+      "gifts": [
+        {
+          "id": 94003720,
+          "type": "item",
+          "objectId": 6518,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 146800000,
+      "gifts": [
+        {
+          "id": 94003718,
+          "type": "item",
+          "objectId": 6507,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 150000000,
+      "gifts": [
+        {
+          "id": 20041,
+          "type": "item",
+          "objectId": 6999,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 155000000,
+      "gifts": [
+        {
+          "id": 94003723,
+          "type": "item",
+          "objectId": 3,
+          "priority": 0,
+          "num": 50
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 160000000,
+      "gifts": [
+        {
+          "id": 94003728,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 5000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 162000000,
+      "gifts": [
+        {
+          "id": 94003718,
+          "type": "item",
+          "objectId": 6507,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 164000000,
+      "gifts": [
+        {
+          "id": 94003724,
+          "type": "item",
+          "objectId": 3,
+          "priority": 0,
+          "num": 100
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 166000000,
+      "gifts": [
+        {
+          "id": 94003720,
+          "type": "item",
+          "objectId": 6518,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 168000000,
+      "gifts": [
+        {
+          "id": 94003728,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 5000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 170000000,
+      "gifts": [
+        {
+          "id": 94003718,
+          "type": "item",
+          "objectId": 6507,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 172000000,
+      "gifts": [
+        {
+          "id": 94003719,
+          "type": "item",
+          "objectId": 6521,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 174000000,
+      "gifts": [
+        {
+          "id": 94003720,
+          "type": "item",
+          "objectId": 6518,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 176000000,
+      "gifts": [
+        {
+          "id": 94003728,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 5000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 178000000,
+      "gifts": [
+        {
+          "id": 94003724,
+          "type": "item",
+          "objectId": 3,
+          "priority": 0,
+          "num": 100
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 180000000,
+      "gifts": [
+        {
+          "id": 94003718,
+          "type": "item",
+          "objectId": 6507,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 182000000,
+      "gifts": [
+        {
+          "id": 94003719,
+          "type": "item",
+          "objectId": 6521,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 184000000,
+      "gifts": [
+        {
+          "id": 94003724,
+          "type": "item",
+          "objectId": 3,
+          "priority": 0,
+          "num": 100
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 186000000,
+      "gifts": [
+        {
+          "id": 94003720,
+          "type": "item",
+          "objectId": 6518,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 188000000,
+      "gifts": [
+        {
+          "id": 12000,
+          "type": "item",
+          "objectId": 100,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 190000000,
+      "gifts": [
+        {
+          "id": 94003717,
+          "type": "item",
+          "objectId": 6506,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 192000000,
+      "gifts": [
+        {
+          "id": 94003720,
+          "type": "item",
+          "objectId": 6518,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 194000000,
+      "gifts": [
+        {
+          "id": 94003717,
+          "type": "item",
+          "objectId": 6506,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 196000000,
+      "gifts": [
+        {
+          "id": 94003718,
+          "type": "item",
+          "objectId": 6507,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 198000000,
+      "gifts": [
+        {
+          "id": 94003717,
+          "type": "item",
+          "objectId": 6506,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 200000000,
+      "gifts": [
+        {
+          "id": 20041,
+          "type": "item",
+          "objectId": 6999,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 210000000,
+      "gifts": [
+        {
+          "id": 94003720,
+          "type": "item",
+          "objectId": 6518,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 220000000,
+      "gifts": [
+        {
+          "id": 94003719,
+          "type": "item",
+          "objectId": 6521,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 230000000,
+      "gifts": [
+        {
+          "id": 94003718,
+          "type": "item",
+          "objectId": 6507,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 240000000,
+      "gifts": [
+        {
+          "id": 94003717,
+          "type": "item",
+          "objectId": 6506,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 250000000,
+      "gifts": [
+        {
+          "id": 94003719,
+          "type": "item",
+          "objectId": 6521,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 260000000,
+      "gifts": [
+        {
+          "id": 94003717,
+          "type": "item",
+          "objectId": 6506,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 270000000,
+      "gifts": [
+        {
+          "id": 94003720,
+          "type": "item",
+          "objectId": 6518,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 280000000,
+      "gifts": [
+        {
+          "id": 94003718,
+          "type": "item",
+          "objectId": 6507,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 290000000,
+      "gifts": [
+        {
+          "id": 94003717,
+          "type": "item",
+          "objectId": 6506,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    },
+    {
+      "groupId": 0,
+      "point": 300000000,
+      "gifts": [
+        {
+          "id": 20041,
+          "type": "item",
+          "objectId": 6999,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
+    }
+  ]
+}

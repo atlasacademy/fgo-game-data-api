@@ -74,6 +74,7 @@ from ..schemas.nice import (
     NiceCostume,
     NiceEquip,
     NiceEvent,
+    NiceEventReward,
     NiceFuncGroup,
     NiceGift,
     NiceItem,
@@ -109,6 +110,7 @@ from ..schemas.raw import (
     GlobalNewMstSubtitle,
     MstAiAct,
     MstClassRelationOverwrite,
+    MstEventReward,
     MstFuncGroup,
     MstItem,
     MstMap,
@@ -1457,6 +1459,31 @@ def get_nice_shop(region: Region, shop: MstShop) -> NiceShop:
     )
 
 
+def get_bgImage_url(region: Region, bgImageId: int, event_id: int, prefix: str) -> str:
+    base_settings = {"base_url": settings.asset_url, "region": region}
+    return (
+        AssetURL.eventReward.format(**base_settings, fname=f"{prefix}{bgImageId}")
+        if bgImageId > 0
+        else AssetURL.eventReward.format(**base_settings, fname=f"{prefix}{event_id}00")
+    )
+
+
+def get_nice_reward(
+    region: Region, reward: MstEventReward, event_id: int
+) -> NiceEventReward:
+    return NiceEventReward(
+        groupId=reward.groupId,
+        point=reward.point,
+        gifts=get_nice_gift(region, reward.giftId),
+        bgImagePoint=get_bgImage_url(
+            region, reward.bgImageId, event_id, "event_rewardpoint_"
+        ),
+        bgImageGet=get_bgImage_url(
+            region, reward.bgImageId, event_id, "event_rewardget_"
+        ),
+    )
+
+
 def get_nice_event(conn: Connection, region: Region, event_id: int) -> NiceEvent:
     raw_data = raw.get_event_entity(conn, region, event_id)
 
@@ -1490,6 +1517,10 @@ def get_nice_event(conn: Connection, region: Region, event_id: int) -> NiceEvent
         materialOpenedAt=raw_data.mstEvent.materialOpenedAt,
         warIds=(war.id for war in masters[region].mstWarEventId.get(event_id, [])),
         shop=(get_nice_shop(region, shop) for shop in raw_data.mstShop),
+        rewards=(
+            get_nice_reward(region, reward, event_id)
+            for reward in raw_data.mstEventReward
+        ),
     )
 
     return nice_event

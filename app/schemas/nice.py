@@ -83,6 +83,7 @@ class AssetURL:
     audio = "{base_url}/{region}/Audio/{folder}/{id}.mp3"
     banner = "{base_url}/{region}/Banner/{banner}.png"
     eventUi = "{base_url}/{region}/EventUI/{event}.png"
+    eventReward = "{base_url}/{region}/EventReward/{fname}.png"
     mapImg = "{base_url}/{region}/Terminal/MapImgs/img_questmap_{map_id:0>6}/img_questmap_{map_id:0>6}.png"
     spotImg = "{base_url}/{region}/Terminal/QuestMap/Capter{war_asset_id:0>4}/QMap_Cap{war_asset_id:0>4}_Atlas/spot_{spot_id:0>6}.png"
 
@@ -952,6 +953,22 @@ class NiceShop(BaseModelORJson):
     closedAt: int
 
 
+class NiceGift(BaseModelORJson):
+    id: int
+    type: NiceGiftType
+    objectId: int
+    priority: int
+    num: int
+
+
+class NiceEventReward(BaseModelORJson):
+    groupId: int
+    point: int
+    gifts: List[NiceGift]
+    bgImagePoint: HttpUrl
+    bgImageGet: HttpUrl
+
+
 class NiceEvent(BaseModelORJson):
     id: int
     type: NiceEventType
@@ -969,6 +986,7 @@ class NiceEvent(BaseModelORJson):
     materialOpenedAt: int
     warIds: List[int]
     shop: List[NiceShop]
+    rewards: List[NiceEventReward]
 
 
 class NiceBgm(BaseModelORJson):
@@ -982,14 +1000,6 @@ class NiceQuestRelease(BaseModelORJson):
     targetId: int
     value: int
     closedMessage: str
-
-
-class NiceGift(BaseModelORJson):
-    id: int
-    type: NiceGiftType
-    objectId: int
-    priority: int
-    num: int
 
 
 class NiceQuest(BaseModelORJson):

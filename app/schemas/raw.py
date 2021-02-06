@@ -662,6 +662,16 @@ class MstShop(BaseModel):
     closedAt: int  # 1530676799
 
 
+class MstEventReward(BaseModel):
+    eventId: int  # 80305
+    groupId: int  # 0
+    point: int  # 300000
+    type: int  # 1
+    giftId: int  # 10084
+    bgImageId: int  # 8030502
+    presentMessageId: int  # 800410
+
+
 class MstEvent(BaseModel):
     script: List[Dict[str, str]]  # []
     id: int  # 10083
@@ -1003,6 +1013,7 @@ class QuestPhaseEntity(QuestEntity):
 class EventEntity(BaseModelORJson):
     mstEvent: MstEvent
     mstShop: List[MstShop]
+    mstEventReward: List[MstEventReward]
 
 
 class WarEntity(BaseModelORJson):

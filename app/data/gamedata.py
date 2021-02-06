@@ -288,7 +288,7 @@ def update_gamedata() -> None:
     logger.info(f"Loaded game data in {data_loading_time:.2f}s.")
 
 
-def recreate_table(engine: Engine, table: Table) -> None:
+def recreate_table(engine: Engine, table: Table) -> None:  # pragma: no cover
     table.drop(engine, checkfirst=True)
     table.create(engine, checkfirst=True)
 

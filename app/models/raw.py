@@ -444,6 +444,19 @@ mstShop = Table(
 )
 
 
+mstEventReward = Table(
+    "mstEventReward",
+    metadata,
+    Column("eventId", Integer, index=True),
+    Column("groupId", Integer),
+    Column("point", Integer),
+    Column("type", Integer),
+    Column("giftId", Integer),
+    Column("bgImageId", Integer),
+    Column("presentMessageId", Integer),
+)
+
+
 mstSpot = Table(
     "mstSpot",
     metadata,
@@ -635,6 +648,7 @@ TABLES_TO_BE_LOADED = [
     mstSvtVoice,
     mstSvtComment,
     mstShop,
+    mstEventReward,
     mstSpot,
     mstQuest,
     mstQuestRelease,
