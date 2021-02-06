@@ -5,7 +5,7 @@ from typing import Any, Dict, Iterable, Union
 
 import redis
 from git import Repo
-from pydantic import BaseModel, DirectoryPath
+from pydantic import DirectoryPath
 
 from .config import Settings, logger, project_root
 from .core.basic import (
@@ -30,7 +30,7 @@ from .db.base import engines
 from .db.load import update_db
 from .routers.utils import list_string
 from .schemas.base import BaseModelORJson
-from .schemas.common import Language, Region
+from .schemas.common import Language, Region, RepoInfo
 from .schemas.enums import ALL_ENUMS, TRAIT_NAME
 from .schemas.nice import NiceEquip, NiceServant
 
@@ -214,11 +214,6 @@ def generate_exports(
 
             run_time = time.perf_counter() - start_time
             logger.info(f"Exported {region} data in {run_time:.2f}s.")
-
-
-class RepoInfo(BaseModel):
-    hash: str
-    timestamp: int
 
 
 repo_info: Dict[Region, RepoInfo] = {}

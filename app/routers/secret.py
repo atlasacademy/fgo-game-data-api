@@ -2,7 +2,8 @@ from fastapi import APIRouter, BackgroundTasks, Response
 from git import Repo
 
 from ..config import Settings, project_root
-from ..tasks import RepoInfo, pull_and_update, repo_info
+from ..schemas.common import RepoInfo
+from ..tasks import pull_and_update, repo_info
 from .utils import pretty_print_response
 
 

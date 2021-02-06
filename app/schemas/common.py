@@ -6,6 +6,11 @@ from pydantic import BaseModel, HttpUrl
 from .enums import Trait
 
 
+class RepoInfo(BaseModel):
+    hash: str
+    timestamp: int
+
+
 class Region(str, Enum):
     """Region Enum"""
 

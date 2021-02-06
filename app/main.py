@@ -11,10 +11,9 @@ from .config import Settings, logger, project_root
 from .data.gamedata import update_masters
 from .db.load import update_db
 from .routers import basic, nice, raw, secret
-from .schemas.common import Region
+from .schemas.common import Region, RepoInfo
 from .tasks import (
     REGION_PATHS,
-    RepoInfo,
     clear_bloom_redis_cache,
     generate_exports,
     repo_info,
