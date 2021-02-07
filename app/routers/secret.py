@@ -3,7 +3,7 @@ from git import Repo
 
 from ..config import Settings, project_root
 from ..schemas.common import RepoInfo
-from ..tasks import pull_and_update, repo_info
+from ..tasks import REGION_PATHS, pull_and_update, repo_info
 from .utils import pretty_print_response
 
 
@@ -36,7 +36,7 @@ instance_info = dict(
 
 @router.post("/update")  # pragma: no cover
 async def update_gamedata(background_tasks: BackgroundTasks) -> Response:
-    background_tasks.add_task(pull_and_update)
+    background_tasks.add_task(pull_and_update, REGION_PATHS)
     response_data = dict(
         message="Game data is being updated in the background", **instance_info
     )

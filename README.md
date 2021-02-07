@@ -89,7 +89,7 @@ Go to http://127.0.0.1:8000/docs or http://127.0.0.1:8000/redoc for the API docu
 
 - `main.py`: Main entrypoint of the application.
 - `routers/`: Routers to deal with incoming requests. The routers call functions from `core` to get the response data.
-- `core/`: Build response data. Get raw data from either the DB or the `masters` object in `data/gamedata`.
+- `core/`: Build response data. Get raw data from either `db/helpers/` or the `masters` object in `data/gamedata`.
 - `data/`: Import master data and translations data into memory.
   - `data/gamedatapy`: has the `masters` object that contains some master data as Pydantic objects. The `masters` object is used for frequently accessed master data.
 - `db/`: DB stuffs.
