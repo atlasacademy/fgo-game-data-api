@@ -410,3 +410,8 @@ class TestServantSpecial:
         assert overWriteTDFileName["ascension"]["1"].endswith(
             "JP/Servants/Commands/604000/604010.png"
         )
+
+    def test_charaGraphName(self) -> None:
+        miyu = client.get("/nice/NA/servant/236").json()
+        for i, image_url in miyu["extraAssets"]["charaGraphName"]["ascension"].items():
+            assert image_url.endswith(f"NA/CharaGraph/504100/504100name@{i}.png")

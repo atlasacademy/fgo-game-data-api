@@ -838,6 +838,7 @@ def get_nice_servant(
         nice_data["name"] = get_safe(TRANSLATIONS, nice_data["name"])
 
     charaGraph: Dict[str, Dict[int, str]] = {}
+    charaGraphName: Dict[str, Dict[int, str]] = {}
     faces: Dict[str, Dict[int, str]] = {}
     commands: Dict[str, Dict[int, str]] = {}
     status: Dict[str, Dict[int, str]] = {}
@@ -902,6 +903,7 @@ def get_nice_servant(
         narrowFigure["ascension"] = {
             i: AssetURL.narrowFigure[i].format(**base_settings_id) for i in range(1, 5)
         }
+
         if costume_ids:
             charaGraph["costume"] = {
                 costume_id: AssetURL.charaGraphDefault.format(
@@ -941,6 +943,29 @@ def get_nice_servant(
                 costume_id: AssetURL.commands.format(**base_settings_id, i=limit)
                 for limit, costume_id in costume_ids.items()
             }
+
+        for svt_limit in raw_data.mstSvtLimit:
+            if svt_limit.strParam != "":
+                strParam = orjson.loads(svt_limit.strParam)
+                if "saintGraphImageId" in strParam:
+                    # image_id = strParam["saintGraphImageId"]
+                    # base_settings_name = dict(i=image_id, **base_settings)
+
+                    # if svt_limit.limitCount in costume_ids:
+                    #     if "costume" not in charaGraphName:
+                    #         charaGraphName["costume"] = {}
+                    #     costume_id = costume_ids[svt_limit.limitCount]
+                    #     charaGraphName["costume"][
+                    #         costume_id
+                    #     ] = AssetURL.charaGraphName.format(
+                    #         **base_settings_name, item_id=costume_id
+                    #     )
+                    if "ascension" not in charaGraphName:
+                        charaGraphName["ascension"] = {
+                            i: AssetURL.charaGraphName.format(**base_settings_id, i=i)
+                            for i in range(1, 5)
+                        }
+
     elif raw_data.mstSvt.isEquip():
         charaGraph["equip"] = {
             svt_id: AssetURL.charaGraphDefault.format(**base_settings_id)
@@ -969,6 +994,7 @@ def get_nice_servant(
 
     nice_data["extraAssets"] = {
         "charaGraph": charaGraph,
+        "charaGraphName": charaGraphName,
         "faces": faces,
         "charaFigure": charaFigure,
         "charaFigureForm": charaFigureForm,
