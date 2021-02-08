@@ -946,25 +946,31 @@ def get_nice_servant(
 
         for svt_limit in raw_data.mstSvtLimit:
             if svt_limit.strParam != "":
-                strParam = orjson.loads(svt_limit.strParam)
-                if "saintGraphImageId" in strParam:
-                    # image_id = strParam["saintGraphImageId"]
-                    # base_settings_name = dict(i=image_id, **base_settings)
+                try:
+                    strParam = orjson.loads(svt_limit.strParam)
+                    if "saintGraphImageId" in strParam:
+                        # image_id = strParam["saintGraphImageId"]
+                        # base_settings_name = dict(i=image_id, **base_settings)
 
-                    # if svt_limit.limitCount in costume_ids:
-                    #     if "costume" not in charaGraphName:
-                    #         charaGraphName["costume"] = {}
-                    #     costume_id = costume_ids[svt_limit.limitCount]
-                    #     charaGraphName["costume"][
-                    #         costume_id
-                    #     ] = AssetURL.charaGraphName.format(
-                    #         **base_settings_name, item_id=costume_id
-                    #     )
-                    if "ascension" not in charaGraphName:
-                        charaGraphName["ascension"] = {
-                            i: AssetURL.charaGraphName.format(**base_settings_id, i=i)
-                            for i in range(1, 5)
-                        }
+                        # if svt_limit.limitCount in costume_ids:
+                        #     if "costume" not in charaGraphName:
+                        #         charaGraphName["costume"] = {}
+                        #     costume_id = costume_ids[svt_limit.limitCount]
+                        #     charaGraphName["costume"][
+                        #         costume_id
+                        #     ] = AssetURL.charaGraphName.format(
+                        #         **base_settings_name, item_id=costume_id
+                        #     )
+                        if "ascension" not in charaGraphName:
+                            charaGraphName["ascension"] = {
+                                i: AssetURL.charaGraphName.format(
+                                    **base_settings_id, i=i
+                                )
+                                for i in range(1, 5)
+                            }
+                except orjson.JSONDecodeError:  # pragma: no cover
+                    # Hard to test this since none of the saintGraphImageId json is broken
+                    pass
 
     elif raw_data.mstSvt.isEquip():
         charaGraph["equip"] = {
