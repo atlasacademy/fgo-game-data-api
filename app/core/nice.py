@@ -1060,6 +1060,39 @@ def get_nice_servant(
         "voicePrefix": ascensionAddVoicePrefix,
     }
 
+    for overwriteField in [
+        "overWriteServantName",
+        "overWriteServantBattleName",
+        "overWriteTDName",
+        "overWriteTDRuby",
+        "overWriteTDFileName",
+    ]:
+        nice_data["ascensionAdd"][overwriteField] = {"ascension": {}, "costume": {}}
+        for limitAdd in raw_data.mstSvtLimitAdd:
+            if overwriteField in limitAdd.script:
+                add_category = (
+                    "costume" if limitAdd.limitCount in costume_ids else "ascension"
+                )
+                if overwriteField == "overWriteTDFileName":
+                    add_data = AssetURL.commandFile.format(
+                        **base_settings_id, file_name=limitAdd.script[overwriteField]
+                    )
+                elif (
+                    region == Region.JP
+                    and lang == Language.en
+                    and overwriteField
+                    in [
+                        "overWriteServantName",
+                        "overWriteServantBattleName",
+                    ]
+                ):
+                    add_data = get_safe(TRANSLATIONS, limitAdd.script[overwriteField])
+                else:
+                    add_data = limitAdd.script[overwriteField]
+                nice_data["ascensionAdd"][overwriteField][add_category][
+                    limitAdd.limitCount
+                ] = add_data
+
     nice_data["svtChange"] = [
         get_nice_servant_change(change) for change in raw_data.mstSvtChange
     ]

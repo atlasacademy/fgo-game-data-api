@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.41.0 - 2020-02-07
+### Added
+- `overWriteServantName`, `overWriteServantBattleName`, `overWriteTDName`, `overWriteTDRuby`, `overWriteTDFileName` in nice servant `ascensionAdd`.
+
 ## 5.40.0 - 2020-02-05
 ### Added
 - Event ladder rewards to event endpoints.

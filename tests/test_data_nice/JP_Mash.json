@@ -487,7 +487,12 @@
     "voicePrefix": {
       "ascension": {},
       "costume": { "800130": 11, "800140": 12, "800150": 12, "800160": 14 }
-    }
+    },
+    "overWriteServantName": { "ascension": {}, "costume": {} },
+    "overWriteServantBattleName": { "ascension": {}, "costume": {} },
+    "overWriteTDName": { "ascension": {}, "costume": {} },
+    "overWriteTDRuby": { "ascension": {}, "costume": {} },
+    "overWriteTDFileName": { "ascension": {}, "costume": {} }
   },
   "svtChange": [],
   "ascensionMaterials": {},

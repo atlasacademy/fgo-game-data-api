@@ -521,7 +521,12 @@
   "valentineEquip": [9805250],
   "ascensionAdd": {
     "individuality": { "ascension": {}, "costume": {} },
-    "voicePrefix": { "ascension": {}, "costume": {} }
+    "voicePrefix": { "ascension": {}, "costume": {} },
+    "overWriteServantName": { "ascension": {}, "costume": {} },
+    "overWriteServantBattleName": { "ascension": {}, "costume": {} },
+    "overWriteTDName": { "ascension": {}, "costume": {} },
+    "overWriteTDRuby": { "ascension": {}, "costume": {} },
+    "overWriteTDFileName": { "ascension": {}, "costume": {} }
   },
   "svtChange": [],
   "ascensionMaterials": {

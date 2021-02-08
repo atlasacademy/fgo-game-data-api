@@ -52,6 +52,7 @@ class AssetURL:
         4: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@2.png",
     }
     commands = "{base_url}/{region}/Servants/Commands/{item_id}/card_servant_{i}.png"
+    commandFile = "{base_url}/{region}/Servants/Commands/{item_id}/{file_name}.png"
     status = "{base_url}/{region}/Servants/Status/{item_id}/status_servant_{i}.png"
     charaGraphDefault = "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a.png"
     charaFigure = "{base_url}/{region}/CharaFigure/{item_id}{i}/{item_id}{i}_merged.png"
@@ -490,6 +491,17 @@ class AscensionAdd(BaseModel):
         ...,
         title="Voice prefix changes",
         description="Some servants change voice lines as they ascennd.",
+    )
+    overWriteServantName: AscensionAddEntry[str] = Field(
+        ..., title="Servant name changes"
+    )
+    overWriteServantBattleName: AscensionAddEntry[str] = Field(
+        ..., title="Servant battle name changes"
+    )
+    overWriteTDName: AscensionAddEntry[str] = Field(..., title="NP name changes")
+    overWriteTDRuby: AscensionAddEntry[str] = Field(..., title="NP ruby changes")
+    overWriteTDFileName: AscensionAddEntry[HttpUrl] = Field(
+        ..., title="NP image URL changes"
     )
 
 

@@ -396,3 +396,17 @@ class TestServantSpecial:
     def test_skill_ai_id(self) -> None:
         nice_skill = client.get("/nice/NA/skill/962219").json()
         assert nice_skill["aiIds"]["field"] == [94031791]
+
+    def test_overwrite_script(self) -> None:
+        summer_okita = client.get("/nice/JP/servant/267?lang=en").json()
+        ascensionAdd = summer_okita["ascensionAdd"]
+
+        overWriteServantName = ascensionAdd["overWriteServantName"]
+        overWriteTDName = ascensionAdd["overWriteTDName"]
+        overWriteTDFileName = ascensionAdd["overWriteTDFileName"]
+
+        assert overWriteServantName["ascension"]["1"] == "Okita J Souji"
+        assert overWriteTDName["ascension"]["1"] == "蒼穹三段突き"
+        assert overWriteTDFileName["ascension"]["1"].endswith(
+            "JP/Servants/Commands/604000/604010.png"
+        )
