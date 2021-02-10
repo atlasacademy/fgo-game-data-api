@@ -1367,6 +1367,7 @@ class ItemType(IntEnum):
     COMMAND_CARD_PRM_UP = 25
     DICE = 26
     CONTINUE_ITEM = 27
+    EUQIP_SKILL_USE_ITEM = 28
 
 
 class NiceItemType(str, Enum):
@@ -1399,6 +1400,7 @@ class NiceItemType(str, Enum):
     commandCardPrmUp = "commandCardPrmUp"
     dice = "dice"
     continueItem = "continueItem"
+    euqipSkillUseItem = "euqipSkillUseItem"
 
 
 ITEM_TYPE_NAME: Dict[int, NiceItemType] = {
@@ -1429,6 +1431,7 @@ ITEM_TYPE_NAME: Dict[int, NiceItemType] = {
     25: NiceItemType.commandCardPrmUp,
     26: NiceItemType.dice,
     27: NiceItemType.continueItem,
+    28: NiceItemType.euqipSkillUseItem,
 }
 
 
@@ -1837,6 +1840,10 @@ class CondType(IntEnum):
     SVT_EQUIP_RARITY_LEVEL_NUM = 141
     LATEST_MAIN_SCENARIO_WAR_CLEAR = 142
     EVENT_MAP_VALUE_CONTAINS = 143
+    RESET_BIRTH_DAY = 144
+    SHOP_FLAG_ON = 145
+    SHOP_FLAG_OFF = 146
+    PURCHASE_VALID_SHOP_GROUP = 147
 
 
 class NiceCondType(str, Enum):
@@ -1986,6 +1993,10 @@ class NiceCondType(str, Enum):
     svtEquipRarityLevelNum = "svtEquipRarityLevelNum"
     latestMainScenarioWarClear = "latestMainScenarioWarClear"
     eventMapValueContains = "eventMapValueContains"
+    resetBirthDay = "resetBirthDay"
+    shopFlagOn = "shopFlagOn"
+    shopFlagOff = "shopFlagOff"
+    purchaseValidShopGroup = "purchaseValidShopGroup"
 
 
 COND_TYPE_NAME: Dict[int, NiceCondType] = {
@@ -2133,6 +2144,10 @@ COND_TYPE_NAME: Dict[int, NiceCondType] = {
     141: NiceCondType.svtEquipRarityLevelNum,
     142: NiceCondType.latestMainScenarioWarClear,
     143: NiceCondType.eventMapValueContains,
+    144: NiceCondType.resetBirthDay,
+    145: NiceCondType.shopFlagOn,
+    146: NiceCondType.shopFlagOff,
+    147: NiceCondType.purchaseValidShopGroup,
 }
 
 
