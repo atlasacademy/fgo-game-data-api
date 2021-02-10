@@ -560,7 +560,16 @@
       "costume": { "1100930": 11 }
     },
     "overWriteServantName": { "ascension": {}, "costume": {} },
-    "overWriteServantBattleName": { "ascension": {}, "costume": {} },
+    "overWriteServantBattleName": {
+      "ascension": {
+        "0": "アシュタレト",
+        "1": "スペース・イシュタル",
+        "2": "スペース・イシュタル",
+        "3": "イシュタル・アシュタレト",
+        "4": "イシュタル・アシュタレト"
+      },
+      "costume": {}
+    },
     "overWriteTDName": { "ascension": {}, "costume": {} },
     "overWriteTDRuby": { "ascension": {}, "costume": {} },
     "overWriteTDFileName": { "ascension": {}, "costume": {} }
