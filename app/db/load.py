@@ -1,5 +1,5 @@
 import time
-from typing import Dict
+from typing import Any, Dict, List
 
 import orjson
 from pydantic import DirectoryPath
@@ -19,6 +19,20 @@ def recreate_table(engine: Engine, table: Table) -> None:  # pragma: no cover
     table.create(engine, checkfirst=True)
 
 
+def check_known_columns(
+    data: List[Dict[str, Any]], table: Table
+) -> bool:  # pragma: no cover
+    table_columns = {column.name for column in table.columns}
+    return set(data[0].keys()).issubset(table_columns)
+
+
+def remove_unknown_columns(
+    data: List[Dict[str, Any]], table: Table
+) -> List[Dict[str, Any]]:  # pragma: no cover
+    table_columns = {column.name for column in table.columns}
+    return [{k: v for k, v in item.items() if k in table_columns} for item in data]
+
+
 def update_db(region_path: Dict[Region, DirectoryPath]) -> None:  # pragma: no cover
     logger.info("Loading db …")
     start_loading_time = time.perf_counter()
@@ -33,7 +47,11 @@ def update_db(region_path: Dict[Region, DirectoryPath]) -> None:  # pragma: no c
                 table_json = master_folder / f"{table.name}.json"
                 if table_json.exists():
                     with open(table_json, "rb") as fp:
-                        data = orjson.loads(fp.read())
+                        data: List[Dict[str, Any]] = orjson.loads(fp.read())
+
+                    if len(data) > 0 and not check_known_columns(data, table):
+                        logger.warning(f"Found unknown columns in {table_json}")
+                        data = remove_unknown_columns(data, table)
                     conn.execute(table.insert(data))
                 else:
                     logger.warning(f"Can't find file {table_json}.")
