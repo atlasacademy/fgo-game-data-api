@@ -1043,6 +1043,8 @@ def get_nice_servant(
         ),
         "bondEquip": masters[region].bondEquip.get(svt_id, 0),
         "valentineEquip": masters[region].valentineEquip.get(svt_id, []),
+        "bondEquipOwner": masters[region].bondEquipOwner.get(svt_id),
+        "valentineEquipOwner": masters[region].valentineEquipOwner.get(svt_id),
         "relateQuestIds": raw_data.mstSvt.relateQuestIds,
     }
 

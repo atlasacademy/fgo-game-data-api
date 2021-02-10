@@ -6,9 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.43.0 - 2020-02-10
 ### Added
 - English names translations to nice and basic mystic codes.
 - `script` to basic buff.
+- `bondEquipOwner` and `valentineEquipOwner` to nice equip.
 
 ## 5.42.0 - 2020-02-08
 ### Added

@@ -759,6 +759,16 @@ class NiceServant(BaseModelORJson):
     valentineEquip: List[int] = Field(
         [], title="Valentine CE", description="Valentine CE ID (not collectionNo)."
     )
+    bondEquipOwner: Optional[int] = Field(
+        None,
+        title="Bond Servant ID",
+        description="Servant ID if this CE is a bond CE",
+    )
+    valentineEquipOwner: Optional[int] = Field(
+        None,
+        title="Valentine Servant ID",
+        description="Servant ID if this CE is a valentine CE",
+    )
     ascensionAdd: AscensionAdd = Field(
         ...,
         title="Ascension Add",
@@ -865,6 +875,16 @@ class NiceEquip(BaseModelORJson):
         title="Base EXP",
         description="Base EXP per level. "
         'Will show up as "Base EXP" when feeding the item into something else.',
+    )
+    bondEquipOwner: Optional[int] = Field(
+        None,
+        title="Bond Servant ID",
+        description="Servant ID if this CE is a bond CE",
+    )
+    valentineEquipOwner: Optional[int] = Field(
+        None,
+        title="Valentine Servant ID",
+        description="Servant ID if this CE is a valentine CE",
     )
     skills: List[NiceSkill] = Field(
         ..., title="Skills", description="List of servant or CE skills."

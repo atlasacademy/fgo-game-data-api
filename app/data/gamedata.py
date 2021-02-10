@@ -246,6 +246,9 @@ def update_masters(region_path: Dict[Region, DirectoryPath]) -> None:
                         and individualities[0] in master["mstSvtId"]
                     ):
                         master["bondEquip"][individualities[0]] = svt["id"]
+        master["bondEquipOwner"] = {
+            equip_id: svt_id for svt_id, equip_id in master["bondEquip"].items()
+        }
 
         master["valentineEquip"] = defaultdict(list)
         latest_valentine_event_id = max(
@@ -270,6 +273,11 @@ def update_masters(region_path: Dict[Region, DirectoryPath]) -> None:
             for item in master["mstSvtComment"]
             if is_Mash_Valentine_equip(region_name, item["comment"])
         ]
+        master["valentineEquipOwner"] = {
+            equip_id: svt_id
+            for svt_id, equip_ids in master["valentineEquip"].items()
+            for equip_id in equip_ids
+        }
 
         masters[region_name] = Master.parse_obj(master)
 

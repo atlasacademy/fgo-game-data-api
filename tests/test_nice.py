@@ -219,6 +219,16 @@ class TestServantSpecial:
         assert response.status_code == 200
         assert response.json()["name"] == "Royal Brand"
 
+    def test_CE_bond_owner(self) -> None:
+        for endpoint in ("equip", "svt"):
+            yu_bond_ce = client.get(f"/nice/NA/{endpoint}/9303460").json()
+            assert yu_bond_ce["bondEquipOwner"] == 603500
+
+    def test_CE_valentine_owner(self) -> None:
+        for endpoint in ("equip", "svt"):
+            yu_valentine_ce = client.get(f"/nice/NA/{endpoint}/9807110").json()
+            assert yu_valentine_ce["valentineEquipOwner"] == 603500
+
     def test_empty_cv_illustrator_name(self) -> None:
         response = client.get("/nice/JP/svt/9941330?lore=true")
         assert response.status_code == 200
