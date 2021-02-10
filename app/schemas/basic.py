@@ -3,7 +3,7 @@ from typing import List, Optional
 from pydantic import HttpUrl
 
 from .base import BaseModelORJson
-from .common import MCAssets, NiceTrait
+from .common import MCAssets, NiceBuffScript, NiceTrait
 from .enums import (
     FuncApplyTarget,
     NiceBuffType,
@@ -20,6 +20,7 @@ class BasicBuff(BaseModelORJson):
     name: str
     icon: HttpUrl
     type: NiceBuffType
+    script: NiceBuffScript
     vals: List[NiceTrait]
     tvals: List[NiceTrait]
     ckSelfIndv: List[NiceTrait]

@@ -1,9 +1,9 @@
 from enum import Enum
-from typing import Optional, Union
+from typing import Dict, Optional, Union
 
 from pydantic import BaseModel, HttpUrl
 
-from .enums import Trait
+from .enums import NiceClassRelationOverwriteType, SvtClass, Trait
 
 
 class RepoInfo(BaseModel):
@@ -68,3 +68,20 @@ class MCAssets(BaseModel):
 
     male: HttpUrl
     female: HttpUrl
+
+
+class RelationOverwriteDetail(BaseModel):
+    damageRate: int
+    type: NiceClassRelationOverwriteType
+
+
+class NiceBuffRelationOverwrite(BaseModel):
+    atkSide: Dict[SvtClass, Dict[SvtClass, RelationOverwriteDetail]]
+    defSide: Dict[SvtClass, Dict[SvtClass, RelationOverwriteDetail]]
+
+
+class NiceBuffScript(BaseModel):
+    relationId: Optional[NiceBuffRelationOverwrite] = None
+    ReleaseText: Optional[str] = None
+    DamageRelease: Optional[int] = None
+    INDIVIDUALITIE: Optional[NiceTrait] = None

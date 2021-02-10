@@ -26,7 +26,6 @@ from ..schemas.enums import (
     BUFF_TYPE_NAME,
     CARD_TYPE_NAME,
     CLASS_NAME,
-    CLASS_OVERWRITE_NAME,
     COND_TYPE_NAME,
     EVENT_TYPE_NAME,
     FUNC_APPLYTARGET_NAME,
@@ -56,7 +55,6 @@ from ..schemas.enums import (
     NiceItemUse,
     NiceStatusRank,
     PayType,
-    SvtClass,
     SvtType,
     SvtVoiceType,
     VoiceCondType,
@@ -111,7 +109,6 @@ from ..schemas.raw import (
     FunctionEntityNoReverse,
     GlobalNewMstSubtitle,
     MstAiAct,
-    MstClassRelationOverwrite,
     MstEventReward,
     MstFuncGroup,
     MstItem,
@@ -141,8 +138,9 @@ from .basic import (
     get_basic_servant,
     get_basic_skill,
     get_basic_td,
+    get_nice_buff_script,
 )
-from .utils import get_nice_trait, get_safe, get_traits_list
+from .utils import get_safe, get_traits_list
 
 
 FORMATTING_BRACKETS = {"[g][o]": "", "[/o][/g]": "", " [{0}] ": " ", "[{0}]": ""}
@@ -348,39 +346,7 @@ def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> Dict[str, 
             base_url=settings.asset_url, region=region, item_id=iconId
         )
 
-    script: Dict[str, Any] = {}
-    if "relationId" in buffEntity.mstBuff.script:
-        relationOverwrite: List[MstClassRelationOverwrite] = masters[
-            region
-        ].mstClassRelationOverwriteId.get(buffEntity.mstBuff.script["relationId"], [])
-        relationId: Dict[str, Dict[SvtClass, Dict[SvtClass, Any]]] = {
-            "atkSide": defaultdict(dict),
-            "defSide": defaultdict(dict),
-        }
-        for relation in relationOverwrite:
-            if relation.atkSide == 1:
-                side = "atkSide"
-            else:
-                side = "defSide"
-            atkClass = CLASS_NAME[relation.atkClass]
-            defClass = CLASS_NAME[relation.defClass]
-            relationDetail = {
-                "damageRate": relation.damageRate,
-                "type": CLASS_OVERWRITE_NAME[relation.type],
-            }
-            relationId[side][atkClass][defClass] = relationDetail
-        script["relationId"] = relationId
-
-    for script_item in ("ReleaseText", "DamageRelease"):
-        if script_item in buffEntity.mstBuff.script:
-            script[script_item] = buffEntity.mstBuff.script[script_item]
-
-    if "INDIVIDUALITIE" in buffEntity.mstBuff.script:
-        script["INDIVIDUALITIE"] = get_nice_trait(
-            buffEntity.mstBuff.script["INDIVIDUALITIE"]
-        )
-
-    buffInfo["script"] = script
+    buffInfo["script"] = get_nice_buff_script(region, buffEntity.mstBuff)
 
     return buffInfo
 

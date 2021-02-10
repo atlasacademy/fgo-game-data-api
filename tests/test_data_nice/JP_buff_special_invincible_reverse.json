@@ -33,6 +33,7 @@
                 "name": "対粛正防御",
                 "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_368.png",
                 "type": "specialInvincible",
+                "script": {},
                 "vals": [
                   { "id": 3004, "name": "buffPositiveEffect" },
                   { "id": 3064, "name": "buffSpecialInvincible" },
@@ -59,6 +60,7 @@
                 "name": "対粛正防御",
                 "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_368.png",
                 "type": "specialInvincible",
+                "script": {},
                 "vals": [
                   { "id": 3004, "name": "buffPositiveEffect" },
                   { "id": 3064, "name": "buffSpecialInvincible" },
@@ -85,6 +87,7 @@
                 "name": "対粛正防御",
                 "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_368.png",
                 "type": "specialInvincible",
+                "script": {},
                 "vals": [
                   { "id": 3004, "name": "buffPositiveEffect" },
                   { "id": 3064, "name": "buffSpecialInvincible" },

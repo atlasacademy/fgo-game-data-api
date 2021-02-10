@@ -8,7 +8,9 @@ from ...schemas.raw import MstEventReward, MstShop
 
 
 def get_mstShop(conn: Connection, event_id: int) -> List[MstShop]:
-    mstShop_stmt = select([mstShop]).where(mstShop.c.eventId == event_id)
+    mstShop_stmt = (
+        select([mstShop]).where(mstShop.c.eventId == event_id).order_by(mstShop.c.id)
+    )
     return [MstShop.parse_obj(shop) for shop in conn.execute(mstShop_stmt).fetchall()]
 
 

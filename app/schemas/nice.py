@@ -6,7 +6,7 @@ from pydantic.generics import GenericModel
 
 from .base import BaseModelORJson
 from .basic import BasicReversedBuff, BasicReversedFunction, BasicReversedSkillTd
-from .common import MCAssets, NiceTrait
+from .common import MCAssets, NiceBuffScript, NiceTrait
 from .enums import (
     AiTiming,
     AiType,
@@ -18,7 +18,6 @@ from .enums import (
     NiceAiCond,
     NiceBuffType,
     NiceCardType,
-    NiceClassRelationOverwriteType,
     NiceCondType,
     NiceConsumeType,
     NiceEventType,
@@ -196,23 +195,6 @@ class BaseVals(BaseModel):
 
 class Vals(BaseVals):
     DependFuncVals: Optional[BaseVals] = None
-
-
-class RelationOverwriteDetail(BaseModelORJson):
-    damageRate: int
-    type: NiceClassRelationOverwriteType
-
-
-class NiceBuffRelationOverwrite(BaseModelORJson):
-    atkSide: Dict[SvtClass, Dict[SvtClass, RelationOverwriteDetail]]
-    defSide: Dict[SvtClass, Dict[SvtClass, RelationOverwriteDetail]]
-
-
-class NiceBuffScript(BaseModelORJson):
-    relationId: Optional[NiceBuffRelationOverwrite] = None
-    ReleaseText: Optional[str] = None
-    DamageRelease: Optional[int] = None
-    INDIVIDUALITIE: Optional[NiceTrait] = None
 
 
 class NiceBuff(BaseModelORJson):

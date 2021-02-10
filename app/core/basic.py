@@ -1,4 +1,5 @@
-from typing import Any, Dict, Optional
+from collections import defaultdict
+from typing import Any, Dict, List, Optional
 
 from ..config import Settings
 from ..data.custom_mappings import TRANSLATIONS
@@ -21,19 +22,22 @@ from ..schemas.basic import (
     BasicTdReverse,
     BasicWar,
 )
-from ..schemas.common import Language, Region, ReverseDepth
+from ..schemas.common import Language, NiceBuffScript, Region, ReverseDepth
 from ..schemas.enums import (
     BUFF_TYPE_NAME,
     CLASS_NAME,
+    CLASS_OVERWRITE_NAME,
     EVENT_TYPE_NAME,
     FUNC_APPLYTARGET_NAME,
     FUNC_TARGETTYPE_NAME,
     FUNC_TYPE_NAME,
     FUNC_VALS_NOT_BUFF,
     SVT_TYPE_NAME,
+    SvtClass,
     SvtType,
 )
 from ..schemas.nice import AssetURL
+from ..schemas.raw import MstBuff, MstClassRelationOverwrite
 from .raw import (
     active_to_svtId,
     buff_to_func,
@@ -43,10 +47,41 @@ from .raw import (
     skill_to_CCId,
     skill_to_MCId,
 )
-from .utils import get_safe, get_traits_list
+from .utils import get_nice_trait, get_safe, get_traits_list
 
 
 settings = Settings()
+
+
+def get_nice_buff_script(region: Region, mstBuff: MstBuff) -> NiceBuffScript:
+    script: Dict[str, Any] = {}
+    if "relationId" in mstBuff.script:
+        relationOverwrite: List[MstClassRelationOverwrite] = masters[
+            region
+        ].mstClassRelationOverwriteId.get(mstBuff.script["relationId"], [])
+        relationId: Dict[str, Dict[SvtClass, Dict[SvtClass, Any]]] = {
+            "atkSide": defaultdict(dict),
+            "defSide": defaultdict(dict),
+        }
+        for relation in relationOverwrite:
+            side = "atkSide" if relation.atkSide == 1 else "defSide"
+            atkClass = CLASS_NAME[relation.atkClass]
+            defClass = CLASS_NAME[relation.defClass]
+            relationDetail = {
+                "damageRate": relation.damageRate,
+                "type": CLASS_OVERWRITE_NAME[relation.type],
+            }
+            relationId[side][atkClass][defClass] = relationDetail
+        script["relationId"] = relationId
+
+    for script_item in ("ReleaseText", "DamageRelease"):
+        if script_item in mstBuff.script:
+            script[script_item] = mstBuff.script[script_item]
+
+    if "INDIVIDUALITIE" in mstBuff.script:
+        script["INDIVIDUALITIE"] = get_nice_trait(mstBuff.script["INDIVIDUALITIE"])
+
+    return NiceBuffScript.parse_obj(script)
 
 
 def get_basic_buff(
@@ -64,6 +99,7 @@ def get_basic_buff(
             base_url=settings.asset_url, region=region, item_id=mstBuff.iconId
         ),
         type=BUFF_TYPE_NAME[mstBuff.type],
+        script=get_nice_buff_script(region, mstBuff),
         vals=get_traits_list(mstBuff.vals),
         tvals=get_traits_list(mstBuff.tvals),
         ckSelfIndv=get_traits_list(mstBuff.ckSelfIndv),
