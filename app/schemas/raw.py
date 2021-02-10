@@ -639,6 +639,9 @@ class MstShop(BaseModel):
     prices: List[int]  # [20]
     targetIds: List[int]  # [7106]
     script: Dict[Any, Any]  # {}
+    anotherPayType: Optional[int] = None
+    anotherItemIds: Optional[List[int]] = None
+    useAnotherPayCommonReleaseId: Optional[int] = None
     id: int  # 80107019
     baseShopId: int  # 80107019
     eventId: int  # 80107
