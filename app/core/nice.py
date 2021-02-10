@@ -15,7 +15,7 @@ from ..schemas.basic import (
     BasicReversedFunction,
     BasicReversedSkillTd,
 )
-from ..schemas.common import Language, Region, ReverseData, ReverseDepth
+from ..schemas.common import Language, NiceTrait, Region, ReverseData, ReverseDepth
 from ..schemas.enums import (
     AI_ACT_NUM_NAME,
     AI_ACT_TARGET_NAME,
@@ -63,7 +63,9 @@ from ..schemas.enums import (
     WarEntityFlag,
 )
 from ..schemas.nice import (
+    AscensionAdd,
     AssetURL,
+    ExtraAssets,
     NiceAi,
     NiceAiAct,
     NiceAiFull,
@@ -127,6 +129,7 @@ from ..schemas.raw import (
     QuestPhaseEntity,
     ScriptJson,
     ScriptJsonCond,
+    ServantEntity,
     SkillEntityNoReverse,
     TdEntityNoReverse,
 )
@@ -804,39 +807,9 @@ def get_nice_voice_group(
     )
 
 
-def get_nice_servant(
-    conn: Connection, region: Region, svt_id: int, lang: Language, lore: bool = False
-) -> Dict[str, Any]:
-    # Get expanded servant entity to get function and buff details
-    raw_data = raw.get_servant_entity(conn, region, svt_id, expand=True, lore=lore)
-    nice_data: Dict[str, Any] = {
-        "id": raw_data.mstSvt.id,
-        "collectionNo": raw_data.mstSvt.collectionNo,
-        "name": raw_data.mstSvt.name,
-        "ruby": raw_data.mstSvt.ruby,
-        "gender": GENDER_TYPE_NAME[raw_data.mstSvt.genderType],
-        "attribute": ATTRIBUTE_NAME[raw_data.mstSvt.attri],
-        "className": CLASS_NAME[raw_data.mstSvt.classId],
-        "type": SVT_TYPE_NAME[raw_data.mstSvt.type],
-        "flag": SVT_FLAG_NAME[raw_data.mstSvt.flag],
-        "cost": raw_data.mstSvt.cost,
-        "instantDeathChance": raw_data.mstSvt.deathRate,
-        "starGen": raw_data.mstSvt.starRate,
-        "traits": get_traits_list(sorted(raw_data.mstSvt.individuality)),
-        "starAbsorb": raw_data.mstSvtLimit[0].criticalWeight,
-        "rarity": raw_data.mstSvtLimit[0].rarity,
-        "cards": [CARD_TYPE_NAME[card_id] for card_id in raw_data.mstSvt.cardIds],
-        "bondGrowth": masters[region].mstFriendshipId.get(
-            raw_data.mstSvt.friendshipId, []
-        ),
-        "bondEquip": masters[region].bondEquip.get(svt_id, 0),
-        "valentineEquip": masters[region].valentineEquip.get(svt_id, []),
-        "relateQuestIds": raw_data.mstSvt.relateQuestIds,
-    }
-
-    if region == Region.JP and lang == Language.en:
-        nice_data["name"] = get_safe(TRANSLATIONS, nice_data["name"])
-
+def get_svt_extraAssets(
+    region: Region, svt_id: int, raw_data: ServantEntity, costume_ids: Dict[int, int]
+) -> ExtraAssets:
     charaGraph: Dict[str, Dict[int, str]] = {}
     charaGraphName: Dict[str, Dict[int, str]] = {}
     faces: Dict[str, Dict[int, str]] = {}
@@ -848,13 +821,6 @@ def get_nice_servant(
     )
     narrowFigure: Dict[str, Dict[int, str]] = {}
     equipFace: Dict[str, Dict[int, str]] = {}
-
-    costume_limits = {svt_costume.id for svt_costume in raw_data.mstSvtCostume}
-    costume_ids = {
-        svt_limit_add.limitCount: svt_limit_add.battleCharaId
-        for svt_limit_add in raw_data.mstSvtLimitAdd
-        if svt_limit_add.limitCount in costume_limits
-    }
 
     base_settings = {"base_url": settings.asset_url, "region": region}
     base_settings_id = dict(item_id=svt_id, **base_settings)
@@ -998,23 +964,141 @@ def get_nice_servant(
                         **base_settings, form_id=script_form, svtScript_id=svtScript.id
                     )
 
-    nice_data["extraAssets"] = {
-        "charaGraph": charaGraph,
-        "charaGraphName": charaGraphName,
-        "faces": faces,
-        "charaFigure": charaFigure,
-        "charaFigureForm": charaFigureForm,
-        "narrowFigure": narrowFigure,
-        "commands": commands,
-        "status": status,
-        "equipFace": equipFace,
+    return ExtraAssets.parse_obj(
+        {
+            "charaGraph": charaGraph,
+            "charaGraphName": charaGraphName,
+            "faces": faces,
+            "charaFigure": charaFigure,
+            "charaFigureForm": charaFigureForm,
+            "narrowFigure": narrowFigure,
+            "commands": commands,
+            "status": status,
+            "equipFace": equipFace,
+        }
+    )
+
+
+def get_nice_ascensionAdd(
+    region: Region, raw_data: ServantEntity, costume_ids: Dict[int, int], lang: Language
+) -> AscensionAdd:
+    OVERWRITE_FIELDS = [
+        "overWriteServantName",
+        "overWriteServantBattleName",
+        "overWriteTDName",
+        "overWriteTDRuby",
+        "overWriteTDFileName",
+    ]
+
+    ascensionAdd: Dict[str, Dict[str, Dict[int, Union[List[NiceTrait], int, str]]]] = {
+        ascensionAddField: {"ascension": {}, "costume": {}}
+        for ascensionAddField in OVERWRITE_FIELDS + ["individuality", "voicePrefix"]
     }
 
+    for limitAdd in raw_data.mstSvtLimitAdd:
+        if limitAdd.limitCount in costume_ids:
+            key_value = costume_ids[limitAdd.limitCount]
+            dict_to_add = "costume"
+        else:
+            key_value = limitAdd.limitCount
+            dict_to_add = "ascension"
+
+        ascensionAdd["individuality"][dict_to_add][key_value] = (
+            get_traits_list(
+                sorted(set(limitAdd.individuality + raw_data.mstSvt.individuality))
+            )
+            if limitAdd.individuality
+            else []
+        )
+
+        ascensionAdd["voicePrefix"][dict_to_add][key_value] = limitAdd.voicePrefix
+
+    for overwrite_field in OVERWRITE_FIELDS:
+        ascensionAdd[overwrite_field] = {"ascension": {}, "costume": {}}
+        for limitAdd in raw_data.mstSvtLimitAdd:
+            if overwrite_field in limitAdd.script:
+                add_category = (
+                    "costume" if limitAdd.limitCount in costume_ids else "ascension"
+                )
+
+                if overwrite_field == "overWriteTDFileName":
+                    add_data: str = AssetURL.commandFile.format(
+                        base_url=settings.asset_url,
+                        region=region,
+                        item_id=raw_data.mstSvt.id,
+                        file_name=limitAdd.script[overwrite_field],
+                    )
+                elif (
+                    region == Region.JP
+                    and lang == Language.en
+                    and overwrite_field
+                    in [
+                        "overWriteServantName",
+                        "overWriteServantBattleName",
+                    ]
+                ):
+                    add_data = get_safe(TRANSLATIONS, limitAdd.script[overwrite_field])
+                else:
+                    add_data = limitAdd.script[overwrite_field]
+
+                ascensionAdd[overwrite_field][add_category][
+                    limitAdd.limitCount
+                ] = add_data
+
+    return AscensionAdd.parse_obj(ascensionAdd)
+
+
+def get_nice_servant(
+    conn: Connection, region: Region, svt_id: int, lang: Language, lore: bool = False
+) -> Dict[str, Any]:
+    # Get expanded servant entity to get function and buff details
+    raw_data = raw.get_servant_entity(conn, region, svt_id, expand=True, lore=lore)
+    first_svt_limit = raw_data.mstSvtLimit[0]
+
+    nice_data: Dict[str, Any] = {
+        "id": raw_data.mstSvt.id,
+        "collectionNo": raw_data.mstSvt.collectionNo,
+        "name": raw_data.mstSvt.name,
+        "ruby": raw_data.mstSvt.ruby,
+        "gender": GENDER_TYPE_NAME[raw_data.mstSvt.genderType],
+        "attribute": ATTRIBUTE_NAME[raw_data.mstSvt.attri],
+        "className": CLASS_NAME[raw_data.mstSvt.classId],
+        "type": SVT_TYPE_NAME[raw_data.mstSvt.type],
+        "flag": SVT_FLAG_NAME[raw_data.mstSvt.flag],
+        "cost": raw_data.mstSvt.cost,
+        "instantDeathChance": raw_data.mstSvt.deathRate,
+        "starGen": raw_data.mstSvt.starRate,
+        "traits": get_traits_list(sorted(raw_data.mstSvt.individuality)),
+        "starAbsorb": first_svt_limit.criticalWeight,
+        "rarity": first_svt_limit.rarity,
+        "cards": [CARD_TYPE_NAME[card_id] for card_id in raw_data.mstSvt.cardIds],
+        "bondGrowth": masters[region].mstFriendshipId.get(
+            raw_data.mstSvt.friendshipId, []
+        ),
+        "bondEquip": masters[region].bondEquip.get(svt_id, 0),
+        "valentineEquip": masters[region].valentineEquip.get(svt_id, []),
+        "relateQuestIds": raw_data.mstSvt.relateQuestIds,
+    }
+
+    if region == Region.JP and lang == Language.en:
+        nice_data["name"] = get_safe(TRANSLATIONS, nice_data["name"])
+
+    costume_limits = {svt_costume.id for svt_costume in raw_data.mstSvtCostume}
+    costume_ids = {
+        svt_limit_add.limitCount: svt_limit_add.battleCharaId
+        for svt_limit_add in raw_data.mstSvtLimitAdd
+        if svt_limit_add.limitCount in costume_limits
+    }
+
+    nice_data["extraAssets"] = get_svt_extraAssets(
+        region, svt_id, raw_data, costume_ids
+    )
+
     lvMax = max(svt_limit.lvMax for svt_limit in raw_data.mstSvtLimit)
-    atkMax = raw_data.mstSvtLimit[0].atkMax
-    atkBase = raw_data.mstSvtLimit[0].atkBase
-    hpMax = raw_data.mstSvtLimit[0].hpMax
-    hpBase = raw_data.mstSvtLimit[0].hpBase
+    atkMax = first_svt_limit.atkMax
+    atkBase = first_svt_limit.atkBase
+    hpMax = first_svt_limit.hpMax
+    hpBase = first_svt_limit.hpBase
     growthCurve = raw_data.mstSvt.expType
     growthCurveMax = 101 if raw_data.mstSvt.type == SvtType.NORMAL else (lvMax + 1)
     growthCurveValues = masters[region].mstSvtExpId[growthCurve]
@@ -1053,77 +1137,9 @@ def get_nice_servant(
         for svt_card in raw_data.mstSvtCard
     }
 
-    ascensionAddIndividuality = {
-        "ascension": {
-            limitAdd.limitCount: get_traits_list(
-                sorted(set(limitAdd.individuality + raw_data.mstSvt.individuality))
-            )
-            if limitAdd.individuality
-            else []
-            for limitAdd in raw_data.mstSvtLimitAdd
-            if limitAdd.limitCount not in costume_ids
-        },
-        "costume": {
-            costume_ids[limitAdd.limitCount]: get_traits_list(
-                sorted(set(limitAdd.individuality + raw_data.mstSvt.individuality))
-            )
-            if limitAdd.individuality
-            else []
-            for limitAdd in raw_data.mstSvtLimitAdd
-            if limitAdd.limitCount in costume_ids
-        },
-    }
-
-    ascensionAddVoicePrefix = {
-        "ascension": {
-            limitAdd.limitCount: limitAdd.voicePrefix
-            for limitAdd in raw_data.mstSvtLimitAdd
-            if limitAdd.limitCount not in costume_ids
-        },
-        "costume": {
-            costume_ids[limitAdd.limitCount]: limitAdd.voicePrefix
-            for limitAdd in raw_data.mstSvtLimitAdd
-            if limitAdd.limitCount in costume_ids
-        },
-    }
-
-    nice_data["ascensionAdd"] = {
-        "individuality": ascensionAddIndividuality,
-        "voicePrefix": ascensionAddVoicePrefix,
-    }
-
-    for overwriteField in [
-        "overWriteServantName",
-        "overWriteServantBattleName",
-        "overWriteTDName",
-        "overWriteTDRuby",
-        "overWriteTDFileName",
-    ]:
-        nice_data["ascensionAdd"][overwriteField] = {"ascension": {}, "costume": {}}
-        for limitAdd in raw_data.mstSvtLimitAdd:
-            if overwriteField in limitAdd.script:
-                add_category = (
-                    "costume" if limitAdd.limitCount in costume_ids else "ascension"
-                )
-                if overwriteField == "overWriteTDFileName":
-                    add_data = AssetURL.commandFile.format(
-                        **base_settings_id, file_name=limitAdd.script[overwriteField]
-                    )
-                elif (
-                    region == Region.JP
-                    and lang == Language.en
-                    and overwriteField
-                    in [
-                        "overWriteServantName",
-                        "overWriteServantBattleName",
-                    ]
-                ):
-                    add_data = get_safe(TRANSLATIONS, limitAdd.script[overwriteField])
-                else:
-                    add_data = limitAdd.script[overwriteField]
-                nice_data["ascensionAdd"][overwriteField][add_category][
-                    limitAdd.limitCount
-                ] = add_data
+    nice_data["ascensionAdd"] = get_nice_ascensionAdd(
+        region, raw_data, costume_ids, lang
+    )
 
     nice_data["svtChange"] = [
         get_nice_servant_change(change) for change in raw_data.mstSvtChange
@@ -1160,14 +1176,12 @@ def get_nice_servant(
         for combineCostume in raw_data.mstCombineCostume
     }
 
-    script = {}
+    nice_data["script"] = {}
     if "SkillRankUp" in raw_data.mstSvt.script:
-        script["SkillRankUp"] = {
+        nice_data["script"]["SkillRankUp"] = {
             rank_up_script[0]: rank_up_script[1:]
             for rank_up_script in orjson.loads(raw_data.mstSvt.script["SkillRankUp"])
         }
-
-    nice_data["script"] = script
 
     nice_data["skills"] = [
         skill
@@ -1183,29 +1197,29 @@ def get_nice_servant(
 
     # Filter out dummy TDs that are used by enemy servants
     if raw_data.mstSvt.isServant():
-        actualTDs: List[TdEntityNoReverse] = [
+        playable_tds = [
             td
             for td in raw_data.mstTreasureDevice
             if td.mstSvtTreasureDevice[0].num == 1
         ]
-        for actualTD in actualTDs:
-            if "tdTypeChangeIDs" in actualTD.mstTreasureDevice.script:
-                tdTypeChangeIDs: List[int] = actualTD.mstTreasureDevice.script[
+        for playable_td in playable_tds:
+            if "tdTypeChangeIDs" in playable_td.mstTreasureDevice.script:
+                # Space Ishtar different NPs
+                tdTypeChangeIDs: List[int] = playable_td.mstTreasureDevice.script[
                     "tdTypeChangeIDs"
                 ]
-                currentActualTDsIDs = {td.mstTreasureDevice.id for td in actualTDs}
                 for td in raw_data.mstTreasureDevice:
                     if (
                         td.mstTreasureDevice.id in tdTypeChangeIDs
-                        and td.mstTreasureDevice.id not in currentActualTDsIDs
+                        and td not in playable_tds
                     ):
-                        actualTDs.append(td)
+                        playable_tds.append(td)
     else:
-        actualTDs = raw_data.mstTreasureDevice
+        playable_tds = raw_data.mstTreasureDevice
 
     nice_data["noblePhantasms"] = [
         td
-        for tdEntity in sorted(actualTDs, key=lambda x: x.mstTreasureDevice.id)
+        for tdEntity in sorted(playable_tds, key=lambda x: x.mstTreasureDevice.id)
         for td in get_nice_td(tdEntity, svt_id, region)
     ]
 
@@ -1224,17 +1238,15 @@ def get_nice_servant(
                 get_nice_voice_group(region, voice, costume_ids, raw_data.mstSubtitle)
                 for voice in raw_data.mstSvtVoice
             ],
+            "stats": {
+                "strength": get_nice_status_rank(first_svt_limit.power),
+                "endurance": get_nice_status_rank(first_svt_limit.defense),
+                "agility": get_nice_status_rank(first_svt_limit.agility),
+                "magic": get_nice_status_rank(first_svt_limit.magic),
+                "luck": get_nice_status_rank(first_svt_limit.luck),
+                "np": get_nice_status_rank(first_svt_limit.treasureDevice),
+            },
         }
-
-        if raw_data.mstSvtLimit:
-            nice_data["profile"]["stats"] = {
-                "strength": get_nice_status_rank(raw_data.mstSvtLimit[0].power),
-                "endurance": get_nice_status_rank(raw_data.mstSvtLimit[0].defense),
-                "agility": get_nice_status_rank(raw_data.mstSvtLimit[0].agility),
-                "magic": get_nice_status_rank(raw_data.mstSvtLimit[0].magic),
-                "luck": get_nice_status_rank(raw_data.mstSvtLimit[0].luck),
-                "np": get_nice_status_rank(raw_data.mstSvtLimit[0].treasureDevice),
-            }
 
     return nice_data
 
