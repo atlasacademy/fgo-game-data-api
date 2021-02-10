@@ -191,7 +191,8 @@ def get_basic_skill(
                 for svt_id in activeSkills | passiveSkills
             ),
             MC=(
-                get_basic_mc(region, mc_id) for mc_id in skill_to_MCId(region, skill_id)
+                get_basic_mc(region, mc_id, lang)
+                for mc_id in skill_to_MCId(region, skill_id)
             ),
             CC=(
                 get_basic_cc(region, cc_id, lang)
@@ -273,7 +274,7 @@ def get_basic_equip(
     return BasicEquip.parse_obj(get_basic_svt(region, item_id, lang))
 
 
-def get_basic_mc(region: Region, mc_id: int) -> BasicMysticCode:
+def get_basic_mc(region: Region, mc_id: int, lang: Language) -> BasicMysticCode:
     mstEquip = masters[region].mstEquipId[mc_id]
     base_settings = {"base_url": settings.asset_url, "region": region}
     item_assets = {
@@ -285,7 +286,13 @@ def get_basic_mc(region: Region, mc_id: int) -> BasicMysticCode:
         ),
     }
 
-    basic_mc = BasicMysticCode(id=mstEquip.id, name=mstEquip.name, item=item_assets)
+    basic_mc = BasicMysticCode(
+        id=mstEquip.id,
+        name=get_safe(TRANSLATIONS, mstEquip.name)
+        if lang == Language.en
+        else mstEquip.name,
+        item=item_assets,
+    )
 
     return basic_mc
 

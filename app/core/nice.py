@@ -1336,7 +1336,7 @@ def get_nice_skill_alone(
                     for svt_id in activeSkills | passiveSkills
                 ),
                 MC=(
-                    get_basic_mc(region, mc_id)
+                    get_basic_mc(region, mc_id, lang)
                     for mc_id in raw.skill_to_MCId(region, skill_id)
                 ),
                 CC=(
@@ -1406,7 +1406,9 @@ def get_nice_mystic_code(
     base_settings = {"base_url": settings.asset_url, "region": region}
     nice_mc = NiceMysticCode(
         id=raw_data.mstEquip.id,
-        name=raw_data.mstEquip.name,
+        name=get_safe(TRANSLATIONS, raw_data.mstEquip.name)
+        if lang == Language.en
+        else raw_data.mstEquip.name,
         detail=raw_data.mstEquip.detail,
         maxLv=raw_data.mstEquip.maxLv,
         extraAssets={

@@ -219,9 +219,11 @@ if settings.documentation_all_nice:
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
-async def get_mystic_code(region: Region, mc_id: int) -> Response:
+async def get_mystic_code(
+    region: Region, mc_id: int, lang: Language = Depends(language_parameter)
+) -> Response:
     if mc_id in masters[region].mstEquipId:
-        return item_response(basic.get_basic_mc(region, mc_id))
+        return item_response(basic.get_basic_mc(region, mc_id, lang))
     else:
         raise HTTPException(status_code=404, detail="Mystic Code not found")
 

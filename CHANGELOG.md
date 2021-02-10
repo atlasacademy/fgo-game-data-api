@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+### Added
+- English names translations to nice and basic mystic codes.
+- `script` to basic buff.
+
 ## 5.42.0 - 2020-02-08
 ### Added
 - `charaGraphName` to nice servant for Miyu, Avenger Nobu, Summer Okita and Jinako.

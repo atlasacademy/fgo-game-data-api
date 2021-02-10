@@ -140,7 +140,8 @@ def generate_exports(
                 for svt_id in masters[region].mstSvtEquipCollectionNo.values()
             )
             all_basic_mc_data = (
-                get_basic_mc(region, mc_id) for mc_id in masters[region].mstEquipId
+                get_basic_mc(region, mc_id, Language.jp)
+                for mc_id in masters[region].mstEquipId
             )
             all_basic_cc_data = (
                 get_basic_cc(region, cc_id, Language.jp)
@@ -185,11 +186,21 @@ def generate_exports(
                     get_nice_command_code(conn, region, cc_id, Language.en)
                     for cc_id in masters[region].mstCommandCodeId
                 )
+                all_basic_mc_en = (
+                    get_basic_mc(region, mc_id, Language.en)
+                    for mc_id in masters[region].mstEquipId
+                )
+                all_mc_data_en = (
+                    get_nice_mystic_code(conn, region, mc_id, Language.en)
+                    for mc_id in masters[region].mstEquipId
+                )
                 output_files = [
                     ("basic_servant_lang_en", all_basic_servant_en, dump_orjson),
                     ("basic_equip_lang_en", all_basic_equip_en, dump_orjson),
                     ("basic_command_code_lang_en", all_basic_cc_en, dump_orjson),
                     ("nice_command_code_lang_en", all_cc_data_en, dump_orjson),
+                    ("basic_mystic_code_lang_en", all_basic_mc_en, dump_orjson),
+                    ("nice_mystic_code_lang_en", all_mc_data_en, dump_orjson),
                 ] + output_files
 
             base_export_path = export_path / region.value

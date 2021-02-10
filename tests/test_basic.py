@@ -104,6 +104,11 @@ class TestBasicSpecial:
         assert response.status_code == 200
         assert response.json()["name"] == "The Holy Night's Aurora"
 
+    def test_JP_MC_English_name(self) -> None:
+        response = client.get("/basic/JP/MC/60?lang=en")
+        assert response.status_code == 200
+        assert response.json()["name"] == "Royal Brand"
+
     def test_buff_reverse_skillNp(self) -> None:
         response = client.get("/basic/NA/buff/203?reverse=True&reverseDepth=skillNp")
         assert response.status_code == 200

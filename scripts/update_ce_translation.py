@@ -26,6 +26,11 @@ def get_cc_names(mstCommandCode: Any) -> Dict[int, str]:
     return cc_names
 
 
+def get_mc_names(mstEquip: Any) -> Dict[int, str]:
+    mc_names: Dict[int, str] = {svt["id"]: svt["name"] for svt in mstEquip}
+    return mc_names
+
+
 def update_translation(
     mapping: str,
     jp_master: Path,
@@ -72,6 +77,13 @@ def main(jp_master: Path, na_master: Path) -> None:
         na_master,
         "mstCommandCode",
         get_cc_names,
+    )
+    update_translation(
+        "mc_names.json",
+        jp_master,
+        na_master,
+        "mstEquip",
+        get_mc_names,
     )
 
 
