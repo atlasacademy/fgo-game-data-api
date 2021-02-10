@@ -651,6 +651,7 @@ class Trait(str, Enum):
     eventSaberWarsII = "eventSaberWarsII"
     eventSummerCamp = "eventSummerCamp"
     eventGuda5 = "eventGuda5"
+    cursedBook = "cursedBook"
 
 
 TRAIT_NAME: Dict[int, Trait] = {
@@ -764,6 +765,7 @@ TRAIT_NAME: Dict[int, Trait] = {
     2121: Trait.fieldBurning,
     2355: Trait.illya,
     2356: Trait.feminineLookingServant,  # Teach's 3rd skill
+    2385: Trait.cursedBook,  # Murasaki Valentine
     2386: Trait.kingproteaProliferation,
     2387: Trait.kingproteaGrowth,
     2392: Trait.fieldCity,
