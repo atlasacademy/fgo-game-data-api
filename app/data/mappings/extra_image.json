@@ -17,7 +17,13 @@
   },
   {
     "svtId": 700100,
-    "imageIds": ["cut023_meg_All", "left_chara", "left_set", "right_chara", "right_set"]
+    "imageIds": [
+      "cut023_meg_All",
+      "left_chara",
+      "left_set",
+      "right_chara",
+      "right_set"
+    ]
   },
   {
     "svtId": 103400,

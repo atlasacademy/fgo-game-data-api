@@ -90,7 +90,8 @@
         "1100930": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/1100900/status_servant_11.png"
       }
     },
-    "equipFace": {}
+    "equipFace": {},
+    "image": { "story": {} }
   },
   "gender": "female",
   "attribute": "star",

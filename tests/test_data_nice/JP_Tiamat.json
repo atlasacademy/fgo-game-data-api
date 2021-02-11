@@ -31,7 +31,8 @@
     "charaFigureForm": {},
     "commands": {},
     "status": {},
-    "equipFace": {}
+    "equipFace": {},
+    "image": { "story": {} }
   },
   "gender": "female",
   "attribute": "beast",

@@ -60,7 +60,8 @@
         "3": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/304300/status_servant_3.png"
       }
     },
-    "equipFace": {}
+    "equipFace": {},
+    "image": { "story": {} }
   },
   "gender": "female",
   "attribute": "human",

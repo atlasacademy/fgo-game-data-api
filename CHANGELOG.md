@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.44.0 - 2020-02-11
+### Added
+- `image` to nice servant extra assets.
+
 ## 5.43.0 - 2020-02-10
 ### Added
 - English names translations to nice and basic mystic codes.

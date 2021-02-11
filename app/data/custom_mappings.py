@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Union
 
 
 file_path = Path(__file__)
@@ -22,6 +22,11 @@ for translation_file in TRANSLATION_FILES:
 
 EXTRA_CHARAFIGURES: Dict[int, List[int]] = {}
 
-
 with open(MAPPING_PATH / "extra_charafigure.json", "r", encoding="utf-8") as fp:
     EXTRA_CHARAFIGURES = {cf["svtId"]: cf["charaFigureIds"] for cf in json.load(fp)}
+
+
+EXTRA_IMAGES: Dict[int, List[Union[int, str]]] = {}
+
+with open(MAPPING_PATH / "extra_image.json", "r", encoding="utf-8") as fp:
+    EXTRA_IMAGES = {im["svtId"]: im["imageIds"] for im in json.load(fp)}

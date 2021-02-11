@@ -8,7 +8,7 @@ from fastapi import HTTPException
 from sqlalchemy.engine import Connection
 
 from ..config import Settings
-from ..data.custom_mappings import EXTRA_CHARAFIGURES, TRANSLATIONS
+from ..data.custom_mappings import EXTRA_CHARAFIGURES, EXTRA_IMAGES, TRANSLATIONS
 from ..data.gamedata import masters
 from ..schemas.basic import (
     BasicReversedBuff,
@@ -787,6 +787,7 @@ def get_svt_extraAssets(
     )
     narrowFigure: Dict[str, Dict[int, str]] = {}
     equipFace: Dict[str, Dict[int, str]] = {}
+    image: Dict[str, Dict[int, str]] = {}
 
     base_settings = {"base_url": settings.asset_url, "region": region}
     base_settings_id = dict(item_id=svt_id, **base_settings)
@@ -930,6 +931,11 @@ def get_svt_extraAssets(
                         **base_settings, form_id=script_form, svtScript_id=svtScript.id
                     )
 
+    image["story"] = {
+        i: AssetURL.image.format(**base_settings, image=image)
+        for i, image in enumerate(EXTRA_IMAGES.get(svt_id, []))
+    }
+
     return ExtraAssets.parse_obj(
         {
             "charaGraph": charaGraph,
@@ -941,6 +947,7 @@ def get_svt_extraAssets(
             "commands": commands,
             "status": status,
             "equipFace": equipFace,
+            "image": image,
         }
     )
 

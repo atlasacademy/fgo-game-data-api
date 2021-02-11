@@ -390,6 +390,12 @@ class TestServantSpecial:
         assert "story" in response["extraAssets"]["charaFigureForm"]["1"]
         assert "story" in response["extraAssets"]["charaFigureForm"]["2"]
 
+    def test_image_assets(self) -> None:
+        response = client.get("/nice/JP/servant/203200").json()
+        assert response["extraAssets"]["image"]["story"]["0"].endswith(
+            "Image/cut084_jnn/cut084_jnn.png"
+        )
+
     def test_war_banner(self) -> None:
         war_oniland = client.get("/nice/NA/war/9050")
         assert war_oniland.status_code == 200

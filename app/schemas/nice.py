@@ -66,6 +66,7 @@ class AssetURL:
         3: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}@2.png",
         4: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}_2@0.png",
     }
+    image = "{base_url}/{region}/Image/{image}/{image}.png"
     narrowFigureDefault = "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}@0.png"
     skillIcon = "{base_url}/{region}/SkillIcons/skill_{item_id:05}.png"
     buffIcon = "{base_url}/{region}/BuffIcons/bufficon_{item_id}.png"
@@ -449,6 +450,12 @@ class ExtraAssets(ExtraCCAssets):
     commands: ExtraAssetsUrl
     status: ExtraAssetsUrl
     equipFace: ExtraAssetsUrl
+    image: ExtraAssetsUrl = Field(
+        ...,
+        title="Story images",
+        description="Images that are used in the game scripts. Only the story field will be filled."
+        "Since the list comes from JP, the NA asset might not exist and returns 404.",
+    )
 
 
 AscensionAddData = TypeVar("AscensionAddData")

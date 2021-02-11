@@ -42,8 +42,6 @@ def update_db(region_path: Dict[Region, DirectoryPath]) -> None:  # pragma: no c
 
         with engine.connect() as conn:
             for table in TABLES_TO_BE_LOADED:
-                recreate_table(engine, table)
-
                 table_json = master_folder / f"{table.name}.json"
                 if table_json.exists():
                     with open(table_json, "rb") as fp:
@@ -52,8 +50,11 @@ def update_db(region_path: Dict[Region, DirectoryPath]) -> None:  # pragma: no c
                     if len(data) > 0 and not check_known_columns(data, table):
                         logger.warning(f"Found unknown columns in {table_json}")
                         data = remove_unknown_columns(data, table)
+
+                    recreate_table(engine, table)
                     conn.execute(table.insert(data))
                 else:
+                    recreate_table(engine, table)
                     logger.warning(f"Can't find file {table_json}.")
 
                 if table is mstSvtVoice:
@@ -65,15 +66,18 @@ def update_db(region_path: Dict[Region, DirectoryPath]) -> None:  # pragma: no c
                         )
                     )
 
-            recreate_table(engine, mstSubtitle)
             subtitle_json = master_folder / "globalNewMstSubtitle.json"
             if subtitle_json.exists():
                 with open(subtitle_json, "rb") as fp:
                     globalNewMstSubtitle = orjson.loads(fp.read())
+
                 for subtitle in globalNewMstSubtitle:
                     subtitle["svtId"] = get_subtitle_svtId(subtitle["id"])
+
+                recreate_table(engine, mstSubtitle)
                 conn.execute(mstSubtitle.insert(globalNewMstSubtitle))
             elif region == Region.NA:
+                recreate_table(engine, mstSubtitle)
                 logger.warning(f"Can't find file {subtitle_json}.")
 
     db_loading_time = time.perf_counter() - start_loading_time
