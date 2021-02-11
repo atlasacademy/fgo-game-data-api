@@ -1,23 +1,42 @@
-from typing import Any, List
+from typing import List
 
+from sqlalchemy import Table
 from sqlalchemy.engine import Connection
-from sqlalchemy.sql import select
+from sqlalchemy.sql import func, literal_column, select
 
 from ...models.raw import mstAi, mstAiAct, mstAiField
+from ...schemas.raw import AiEntity
 
 
-def get_mstAi(conn: Connection, ai_id: int) -> List[Any]:
-    mstAi_stmt = select([mstAi]).where(mstAi.c.id == ai_id)
-    fetched: list[Any] = conn.execute(mstAi_stmt).fetchall()
-    return fetched
+def get_ai_entity(conn: Connection, ai_table: Table, ai_id: int) -> List[AiEntity]:
+    JOINED_AI_TABLES = ai_table.join(
+        mstAiAct,
+        ai_table.c.aiActId == mstAiAct.c.id,
+        isouter=True,
+    )
+
+    SELECT_AI_ENTITY = [
+        ai_table.c.id,
+        ai_table.c.idx,
+        func.to_jsonb(literal_column(f'"{ai_table.name}"')).label("mstAi"),
+        func.to_jsonb(literal_column(f'"{mstAiAct.name}"')).label(mstAiAct.name),
+    ]
+
+    stmt = (
+        select(SELECT_AI_ENTITY)
+        .select_from(JOINED_AI_TABLES)
+        .where(ai_table.c.id == ai_id)
+        .order_by(ai_table.c.id, ai_table.c.idx)
+    )
+
+    return [
+        AiEntity.parse_obj(ai_entity) for ai_entity in conn.execute(stmt).fetchall()
+    ]
 
 
-def get_mstAiField(conn: Connection, ai_id: int) -> List[Any]:
-    mstAiField_stmt = select([mstAiField]).where(mstAiField.c.id == ai_id)
-    fetched: list[Any] = conn.execute(mstAiField_stmt).fetchall()
-    return fetched
+def get_svt_ai_entity(conn: Connection, ai_id: int) -> List[AiEntity]:
+    return get_ai_entity(conn, mstAi, ai_id)
 
 
-def get_mstAiAct(conn: Connection, ai_act_id: int) -> Any:
-    mstAiAct_stmt = select([mstAiAct]).where(mstAiAct.c.id == ai_act_id)
-    return conn.execute(mstAiAct_stmt).fetchone()
+def get_field_ai_entity(conn: Connection, ai_id: int) -> List[AiEntity]:
+    return get_ai_entity(conn, mstAiField, ai_id)

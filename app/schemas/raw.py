@@ -1027,11 +1027,11 @@ class WarEntity(BaseModelORJson):
     mstSpot: List[MstSpot]
 
 
-class OneAiEntity(BaseModelORJson):
+class AiEntity(BaseModelORJson):
     mstAi: MstAi
     mstAiAct: MstAiAct
 
 
-class AiEntity(BaseModelORJson):
-    mainAis: List[OneAiEntity]
-    relatedAis: List[OneAiEntity]
+class AiCollection(BaseModelORJson):
+    mainAis: List[AiEntity]
+    relatedAis: List[AiEntity]

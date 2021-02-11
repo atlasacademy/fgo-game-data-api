@@ -1135,6 +1135,6 @@ class NiceAi(BaseModelORJson):
     timingDescription: Optional[AiTiming] = None
 
 
-class NiceAiFull(BaseModelORJson):
+class NiceAiCollection(BaseModelORJson):
     mainAis: List[NiceAi]
     relatedAis: List[NiceAi]

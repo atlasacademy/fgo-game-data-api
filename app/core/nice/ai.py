@@ -15,9 +15,9 @@ from ...schemas.enums import (
     AiType,
     NiceAiActNum,
 )
-from ...schemas.nice import NiceAi, NiceAiAct, NiceAiFull
+from ...schemas.nice import NiceAi, NiceAiAct, NiceAiCollection
 from ...schemas.raw import AiEntity, MstAiAct
-from ..raw import get_ai_entity
+from ..raw import get_ai_collection
 from ..utils import get_traits_list
 from .skill import get_nice_skill_from_id
 
@@ -87,11 +87,11 @@ def get_nice_ai(
     return nice_ai
 
 
-def get_nice_ai_full(
+def get_nice_ai_collection(
     conn: Connection, region: Region, ai_id: int, field: bool = False
-) -> NiceAiFull:
-    full_ai = get_ai_entity(conn, ai_id, field)
-    return NiceAiFull(
+) -> NiceAiCollection:
+    full_ai = get_ai_collection(conn, ai_id, field)
+    return NiceAiCollection(
         mainAis=(get_nice_ai(conn, region, ai, field) for ai in full_ai.mainAis),
         relatedAis=(get_nice_ai(conn, region, ai, field) for ai in full_ai.relatedAis),
     )

@@ -8,7 +8,7 @@ from ..data.gamedata import masters
 from ..schemas.common import Region, ReverseDepth
 from ..schemas.enums import AiType
 from ..schemas.raw import (
-    AiEntity,
+    AiCollection,
     BuffEntity,
     CommandCodeEntity,
     EventEntity,
@@ -596,7 +596,7 @@ async def get_quest(
     "/{region}/ai/{ai_type}/{ai_id}",
     summary="Get AI data",
     response_description="AI Entity",
-    response_model=AiEntity,
+    response_model=AiCollection,
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
@@ -607,5 +607,5 @@ async def get_ai_field(
     Get the AI data from the given AI ID
     """
     field_flag = ai_type == AiType.field
-    ai_entity = raw.get_ai_entity(conn, ai_id, field=field_flag)
+    ai_entity = raw.get_ai_collection(conn, ai_id, field=field_flag)
     return item_response(ai_entity)

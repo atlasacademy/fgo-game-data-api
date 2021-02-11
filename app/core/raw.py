@@ -8,6 +8,7 @@ from ..db.helpers import ai, event, quest, skill, svt, td, war
 from ..schemas.common import Region, ReverseDepth
 from ..schemas.enums import FUNC_VALS_NOT_BUFF
 from ..schemas.raw import (
+    AiCollection,
     AiEntity,
     BuffEntity,
     BuffEntityNoReverse,
@@ -15,9 +16,7 @@ from ..schemas.raw import (
     EventEntity,
     FunctionEntity,
     FunctionEntityNoReverse,
-    MstAi,
     MysticCodeEntity,
-    OneAiEntity,
     QuestEntity,
     QuestPhaseEntity,
     ReversedBuff,
@@ -421,50 +420,44 @@ def get_quest_phase_entity(
         raise HTTPException(status_code=404, detail="Quest phase not found")
 
 
-def get_mst_ai(
+def get_ai_entities(
     conn: Connection, ai_id: int, field: bool = False, throw_error: bool = True
-) -> List[MstAi]:
+) -> List[AiEntity]:
     if field:
-        mstAiFields = ai.get_mstAiField(conn, ai_id)
-        if mstAiFields or not throw_error:
-            return [MstAi.parse_obj(mst_ai) for mst_ai in mstAiFields]
-        else:
-            raise HTTPException(status_code=404, detail="AI not found")
+        ais = ai.get_field_ai_entity(conn, ai_id)
     else:
-        mstAis = ai.get_mstAi(conn, ai_id)
-        if mstAis or not throw_error:
-            return [MstAi.parse_obj(mst_ai) for mst_ai in mstAis]
-        else:
-            raise HTTPException(status_code=404, detail="AI not found")
+        ais = ai.get_svt_ai_entity(conn, ai_id)
+
+    if ais or not throw_error:
+        return ais
+    else:
+        raise HTTPException(status_code=404, detail="AI not found")
 
 
-def get_ai_entity(conn: Connection, ai_id: int, field: bool = False) -> AiEntity:
+def get_ai_collection(
+    conn: Connection, ai_id: int, field: bool = False
+) -> AiCollection:
+    main_ais = get_ai_entities(conn, ai_id, field)
     retreived_ais = {ai_id}
 
-    mainAis = get_mst_ai(conn, ai_id, field)
-
-    to_be_retrieved_ais = {ai.avals[0] for ai in mainAis if ai.avals[0] > 0}
-    relatedAis: List[MstAi] = []
+    to_be_retrieved_ais = {
+        ai.mstAi.avals[0] for ai in main_ais if ai.mstAi.avals[0] > 0
+    }
+    related_ais: List[AiEntity] = []
     while to_be_retrieved_ais:
         for related_ai_id in to_be_retrieved_ais:
-            relatedAis += get_mst_ai(conn, related_ai_id, field, throw_error=False)
+            related_ais += get_ai_entities(
+                conn, related_ai_id, field, throw_error=False
+            )
 
         retreived_ais |= to_be_retrieved_ais
         to_be_retrieved_ais = {
-            ai.avals[0]
-            for ai in relatedAis
-            if ai.avals[0] > 0 and ai.avals[0] not in retreived_ais
+            ai.mstAi.avals[0]
+            for ai in related_ais
+            if ai.mstAi.avals[0] > 0 and ai.mstAi.avals[0] not in retreived_ais
         }
 
-    return AiEntity(
-        mainAis=(
-            OneAiEntity(mstAi=main_ai, mstAiAct=ai.get_mstAiAct(conn, main_ai.aiActId))
-            for main_ai in mainAis
-        ),
-        relatedAis=(
-            OneAiEntity(
-                mstAi=related_ai, mstAiAct=ai.get_mstAiAct(conn, related_ai.aiActId)
-            )
-            for related_ai in relatedAis
-        ),
+    return AiCollection(
+        mainAis=main_ais,
+        relatedAis=related_ais,
     )
