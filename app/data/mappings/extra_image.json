@@ -1,0 +1,58 @@
+[
+  {
+    "svtId": 203200,
+    "imageIds": ["cut084_jnn"]
+  },
+  {
+    "svtId": 1000100,
+    "imageIds": [1098126000]
+  },
+  {
+    "svtId": 700900,
+    "imageIds": ["back57100"]
+  },
+  {
+    "svtId": 403700,
+    "imageIds": ["chara_cut01"]
+  },
+  {
+    "svtId": 700100,
+    "imageIds": ["cut023_meg_All", "left_chara", "left_set", "right_chara", "right_set"]
+  },
+  {
+    "svtId": 103400,
+    "imageIds": ["cut085_miv"]
+  },
+  {
+    "svtId": 300400,
+    "imageIds": ["cut111_krn", "cut111_krn02"]
+  },
+  {
+    "svtId": 600800,
+    "imageIds": ["cut114_cle0", "cut114_cle1", "cut114_cle2", "cut114_cle3"]
+  },
+  {
+    "svtId": 602800,
+    "imageIds": ["cut115_ntc0"]
+  },
+  {
+    "svtId": 203900,
+    "imageIds": ["cut143_ncgs"]
+  },
+  {
+    "svtId": 2300300,
+    "imageIds": ["cut151_gns"]
+  },
+  {
+    "svtId": 1000900,
+    "imageIds": ["cut153_kpt_foot"]
+  },
+  {
+    "svtId": 304200,
+    "imageIds": ["cut194_rrsq"]
+  },
+  {
+    "svtId": 2500600,
+    "imageIds": ["cut241_gho"]
+  }
+]
