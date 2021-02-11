@@ -4,7 +4,7 @@ from typing import Dict, Tuple
 import pytest
 from fastapi.testclient import TestClient
 
-from app.core.nice import get_nice_shop
+from app.core.nice.event import get_nice_shop
 from app.db.base import engines
 from app.db.helpers import event
 from app.main import app

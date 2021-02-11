@@ -1,4 +1,4 @@
-from typing import Any, Iterable, List, Mapping, TypeVar, Union
+from typing import Any, Iterable, List, Mapping, Optional, TypeVar, Union
 
 from ..data.custom_mappings import TRANSLATIONS
 from ..schemas.basic import BasicCommandCode, BasicEquip, BasicServant
@@ -64,3 +64,19 @@ def get_lang_en(svt: THasColNo) -> THasColNo:
     lang_en_svt = svt.copy()
     lang_en_svt.name = get_safe(TRANSLATIONS, svt.name)
     return lang_en_svt
+
+
+FORMATTING_BRACKETS = {"[g][o]": "", "[/o][/g]": "", " [{0}] ": " ", "[{0}]": ""}
+
+
+def strip_formatting_brackets(detail_string: str) -> str:
+    for k, v in FORMATTING_BRACKETS.items():
+        detail_string = detail_string.replace(k, v)
+    return detail_string
+
+
+def nullable_to_string(nullable: Optional[str]) -> str:
+    if nullable is None:
+        return ""
+    else:
+        return nullable

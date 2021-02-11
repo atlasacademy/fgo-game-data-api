@@ -16,13 +16,10 @@ from .core.basic import (
     get_basic_servant,
     get_basic_war,
 )
-from .core.nice import (
-    get_nice_command_code,
-    get_nice_equip_model,
-    get_nice_item,
-    get_nice_mystic_code,
-    get_nice_servant_model,
-)
+from .core.nice.cc import get_nice_command_code
+from .core.nice.item import get_nice_item
+from .core.nice.mc import get_nice_mystic_code
+from .core.nice.nice import get_nice_equip_model, get_nice_servant_model
 from .core.utils import get_safe, sort_by_collection_no
 from .data.custom_mappings import TRANSLATIONS
 from .data.gamedata import masters, update_masters

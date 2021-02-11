@@ -2,7 +2,8 @@ import orjson
 import pytest
 from fastapi import HTTPException
 
-from app.core.nice import get_nice_servant_model, parse_dataVals
+from app.core.nice.func import parse_dataVals
+from app.core.nice.nice import get_nice_servant_model
 from app.core.utils import get_lang_en, sort_by_collection_no
 from app.db.base import engines
 from app.routers.utils import list_string_exclude

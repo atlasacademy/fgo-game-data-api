@@ -4,7 +4,8 @@ from fastapi import APIRouter, Depends, HTTPException, Response
 from sqlalchemy.engine import Connection
 
 from ..config import Settings
-from ..core import nice, search
+from ..core import search
+from ..core.nice import ai, cc, event, item, mc, nice, quest, war
 from ..data.gamedata import masters
 from ..schemas.common import Language, Region, ReverseData, ReverseDepth
 from ..schemas.enums import AiType
@@ -266,7 +267,7 @@ async def get_mystic_code(
     conn: Connection = Depends(get_db),
 ) -> Response:
     if mc_id in masters[region].mstEquipId:
-        return item_response(nice.get_nice_mystic_code(conn, region, mc_id, lang))
+        return item_response(mc.get_nice_mystic_code(conn, region, mc_id, lang))
     else:
         raise HTTPException(status_code=404, detail="Mystic Code not found")
 
@@ -302,7 +303,7 @@ async def get_command_code(
     if cc_id in masters[region].mstCCCollectionNo:
         cc_id = masters[region].mstCCCollectionNo[cc_id]
     if cc_id in masters[region].mstCommandCodeId:
-        return item_response(nice.get_nice_command_code(conn, region, cc_id, lang))
+        return item_response(cc.get_nice_command_code(conn, region, cc_id, lang))
     else:
         raise HTTPException(status_code=404, detail="Command Code not found")
 
@@ -333,7 +334,7 @@ async def find_skill(
 ) -> Response:
     matches = search.search_skill(conn, search_param)
     return list_response(
-        nice.get_nice_skill_alone(
+        nice.get_nice_skill_with_reverse(
             conn, search_param.region, skill_id, lang, reverse, reverseData=reverseData
         )
         for skill_id in matches
@@ -358,7 +359,7 @@ async def get_skill(
     conn: Connection = Depends(get_db),
 ) -> Response:
     return item_response(
-        nice.get_nice_skill_alone(
+        nice.get_nice_skill_with_reverse(
             conn, region, skill_id, lang, reverse, reverseData=reverseData
         )
     )
@@ -390,7 +391,7 @@ async def find_td(
 ) -> Response:
     matches = search.search_td(conn, search_param)
     return list_response(
-        nice.get_nice_td_alone(
+        nice.get_nice_td_with_reverse(
             conn, search_param.region, td_id, lang, reverse, reverseData=reverseData
         )
         for td_id in matches
@@ -415,7 +416,7 @@ async def get_td(
     conn: Connection = Depends(get_db),
 ) -> Response:
     return item_response(
-        nice.get_nice_td_alone(
+        nice.get_nice_td_with_reverse(
             conn, region, np_id, lang, reverse, reverseData=reverseData
         )
     )
@@ -449,7 +450,7 @@ async def find_function(
 ) -> Response:
     matches = search.search_func(search_param)
     return list_response(
-        nice.get_nice_func_alone(
+        nice.get_nice_func_with_reverse(
             conn, search_param.region, func_id, lang, reverse, reverseDepth, reverseData
         )
         for func_id in matches
@@ -477,7 +478,7 @@ async def get_function(
 ) -> Response:
     if func_id in masters[region].mstFuncId:
         return item_response(
-            nice.get_nice_func_alone(
+            nice.get_nice_func_with_reverse(
                 conn, region, func_id, lang, reverse, reverseDepth, reverseData
             )
         )
@@ -513,7 +514,7 @@ async def find_buff(
 ) -> Response:
     matches = search.search_buff(search_param)
     return list_response(
-        nice.get_nice_buff_alone(
+        nice.get_nice_buff_with_reverse(
             conn, search_param.region, buff_id, lang, reverse, reverseDepth, reverseData
         )
         for buff_id in matches
@@ -540,7 +541,7 @@ async def get_buff(
 ) -> Response:
     if buff_id in masters[region].mstBuffId:
         return item_response(
-            nice.get_nice_buff_alone(
+            nice.get_nice_buff_with_reverse(
                 conn, region, buff_id, lang, reverse, reverseDepth, reverseData
             )
         )
@@ -562,7 +563,7 @@ async def find_item(
 ) -> Response:
     matches = search.search_item(search_param)
     return list_response(
-        nice.get_nice_item_from_raw(search_param.region, mstItem) for mstItem in matches
+        item.get_nice_item_from_raw(search_param.region, mstItem) for mstItem in matches
     )
 
 
@@ -592,7 +593,7 @@ async def get_item(region: Region, item_id: int) -> Response:
     Get the nice item data from the given item ID
     """
     if item_id in masters[region].mstItemId:
-        return item_response(nice.get_nice_item(region, item_id))
+        return item_response(item.get_nice_item(region, item_id))
     else:
         raise HTTPException(status_code=404, detail="Item not found")
 
@@ -612,7 +613,7 @@ async def get_event(
     Get the nice event data from the given event ID
     """
     if event_id in masters[region].mstEventId:
-        return item_response(nice.get_nice_event(conn, region, event_id))
+        return item_response(event.get_nice_event(conn, region, event_id))
     else:
         raise HTTPException(status_code=404, detail="Event not found")
 
@@ -632,7 +633,7 @@ async def get_war(
     Get the nice war data from the given war ID
     """
     if war_id in masters[region].mstWarId:
-        return item_response(nice.get_nice_war(conn, region, war_id))
+        return item_response(war.get_nice_war(conn, region, war_id))
     else:
         raise HTTPException(status_code=404, detail="War not found")
 
@@ -654,7 +655,7 @@ get_quest_phase_description = (
 async def get_quest_phase(
     region: Region, quest_id: int, phase: int, conn: Connection = Depends(get_db)
 ) -> Response:
-    return item_response(nice.get_nice_quest_phase(conn, region, quest_id, phase))
+    return item_response(quest.get_nice_quest_phase(conn, region, quest_id, phase))
 
 
 @router.get(
@@ -671,7 +672,7 @@ async def get_quest(
     """
     Get the nice quest data from the given quest ID
     """
-    return item_response(nice.get_nice_quest_alone(conn, region, quest_id))
+    return item_response(quest.get_nice_quest_alone(conn, region, quest_id))
 
 
 @router.get(
@@ -692,5 +693,5 @@ async def get_ai_field(
     Get the nice AI data from the given AI ID
     """
     field_flag = ai_type == AiType.field
-    ai_entity = nice.get_nice_ai_full(conn, region, ai_id, field=field_flag)
+    ai_entity = ai.get_nice_ai_full(conn, region, ai_id, field=field_flag)
     return item_response(ai_entity)
