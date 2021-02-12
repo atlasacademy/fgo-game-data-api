@@ -1,70 +1,81 @@
 from collections import defaultdict
-from typing import Dict
+from typing import Dict, Union
 
 import orjson
+from pydantic import HttpUrl
+from pydantic.tools import parse_obj_as
 
 from ....config import Settings
 from ....data.custom_mappings import EXTRA_CHARAFIGURES, EXTRA_IMAGES
 from ....data.gamedata import masters
 from ....schemas.common import Region
 from ....schemas.enums import SvtType
-from ....schemas.nice import AssetURL, ExtraAssets
+from ....schemas.nice import AssetURL, ExtraAssets, ExtraAssetsUrl
 from ....schemas.raw import ServantEntity
 
 
 settings = Settings()
 
 
+def fmt_url(url_fmt: str, **kwargs: Union[int, str]) -> HttpUrl:
+    url: HttpUrl = parse_obj_as(HttpUrl, url_fmt.format(**kwargs))
+    return url
+
+
 def get_svt_extraAssets(
     region: Region, svt_id: int, raw_svt: ServantEntity, costume_ids: Dict[int, int]
 ) -> ExtraAssets:
-    charaGraph: Dict[str, Dict[int, str]] = {}
-    charaGraphName: Dict[str, Dict[int, str]] = {}
-    faces: Dict[str, Dict[int, str]] = {}
-    commands: Dict[str, Dict[int, str]] = {}
-    status: Dict[str, Dict[int, str]] = {}
-    charaFigure: Dict[str, Dict[int, str]] = {}
+    charaGraph = ExtraAssetsUrl()
+    charaGraphName = ExtraAssetsUrl()
+    faces = ExtraAssetsUrl()
+    commands = ExtraAssetsUrl()
+    status = ExtraAssetsUrl()
+    charaFigure = ExtraAssetsUrl()
     charaFigureForm: Dict[int, Dict[str, Dict[int, str]]] = defaultdict(
         lambda: defaultdict(dict)
     )
-    narrowFigure: Dict[str, Dict[int, str]] = {}
-    equipFace: Dict[str, Dict[int, str]] = {}
-    image: Dict[str, Dict[int, str]] = {}
+    narrowFigure = ExtraAssetsUrl()
+    equipFace = ExtraAssetsUrl()
+    image = ExtraAssetsUrl()
 
     base_settings = {"base_url": settings.asset_url, "region": region}
-    base_settings_id = dict(item_id=svt_id, **base_settings)
+    base_settings_id: Dict[str, Union[int, str]] = {
+        "base_url": settings.asset_url,
+        "region": region,
+        "item_id": svt_id,
+    }
 
     if raw_svt.mstSvt.type in (
         SvtType.ENEMY_COLLECTION_DETAIL,
         SvtType.COMBINE_MATERIAL,
         SvtType.STATUS_UP,
     ):
-        charaGraph["ascension"] = {
-            0: AssetURL.charaGraphDefault.format(**base_settings_id)
+        charaGraph.ascension = {
+            0: fmt_url(AssetURL.charaGraphDefault, **base_settings_id)
         }
-        faces["ascension"] = {0: AssetURL.face.format(**base_settings_id, i=0)}
+        faces.ascension = {0: fmt_url(AssetURL.face, **base_settings_id, i=0)}
     elif raw_svt.mstSvt.type in (SvtType.ENEMY, SvtType.ENEMY_COLLECTION):
-        faces["ascension"] = {
-            limit.limitCount: AssetURL.enemy.format(
-                **base_settings_id, i=limit.limitCount
+        faces.ascension = {
+            limit.limitCount: fmt_url(
+                AssetURL.enemy, **base_settings_id, i=limit.limitCount
             )
             for limit in raw_svt.mstSvtLimit
         }
     elif raw_svt.mstSvt.isServant():
-        charaGraph["ascension"] = {
-            i: AssetURL.charaGraph[i].format(**base_settings_id) for i in range(1, 5)
+        charaGraph.ascension = {
+            i: fmt_url(AssetURL.charaGraph[i], **base_settings_id) for i in range(1, 5)
         }
-        faces["ascension"] = {
-            (i + 1): AssetURL.face.format(**base_settings_id, i=i) for i in range(4)
+        faces.ascension = {
+            (i + 1): fmt_url(AssetURL.face, **base_settings_id, i=i) for i in range(4)
         }
-        commands["ascension"] = {
-            i: AssetURL.commands.format(**base_settings_id, i=i) for i in range(1, 4)
+        commands.ascension = {
+            i: fmt_url(AssetURL.commands, **base_settings_id, i=i) for i in range(1, 4)
         }
-        status["ascension"] = {
-            i: AssetURL.status.format(**base_settings_id, i=i) for i in range(1, 4)
+        status.ascension = {
+            i: fmt_url(AssetURL.status, **base_settings_id, i=i) for i in range(1, 4)
         }
-        charaFigure["ascension"] = {
-            (i + 1): AssetURL.charaFigure.format(**base_settings_id, i=i)
+        charaFigure.ascension = {
+            (i + 1): fmt_url(AssetURL.charaFigure, **base_settings_id, i=i)
             for i in range(3)
         }
         for svtScript in raw_svt.mstSvtScript:
@@ -75,47 +86,48 @@ def get_svt_extraAssets(
                 ] = AssetURL.charaFigureForm.format(
                     **base_settings, form_id=script_form, svtScript_id=svtScript.id
                 )
-        narrowFigure["ascension"] = {
-            i: AssetURL.narrowFigure[i].format(**base_settings_id) for i in range(1, 5)
+        narrowFigure.ascension = {
+            i: fmt_url(AssetURL.narrowFigure[i], **base_settings_id)
+            for i in range(1, 5)
         }
 
         if costume_ids:
-            charaGraph["costume"] = {
-                costume_id: AssetURL.charaGraphDefault.format(
-                    **base_settings, item_id=costume_id
+            charaGraph.costume = {
+                costume_id: fmt_url(
+                    AssetURL.charaGraphDefault, **base_settings, item_id=costume_id
                 )
                 for costume_id in costume_ids.values()
             }
-            faces["costume"] = {
-                costume_id: AssetURL.face.format(
-                    **base_settings, item_id=costume_id, i=0
+            faces.costume = {
+                costume_id: fmt_url(
+                    AssetURL.face, **base_settings, item_id=costume_id, i=0
                 )
                 for costume_id in costume_ids.values()
             }
-            charaFigure["costume"] = {
-                costume_id: AssetURL.charaFigure.format(
-                    **base_settings, item_id=costume_id, i=0
+            charaFigure.costume = {
+                costume_id: fmt_url(
+                    AssetURL.charaFigure, **base_settings, item_id=costume_id, i=0
                 )
                 for costume_id in costume_ids.values()
             }
-            charaGraph["costume"] = {
-                costume_id: AssetURL.charaGraphDefault.format(
-                    **base_settings, item_id=costume_id
+            charaGraph.costume = {
+                costume_id: fmt_url(
+                    AssetURL.charaGraphDefault, **base_settings, item_id=costume_id
                 )
                 for costume_id in costume_ids.values()
             }
-            narrowFigure["costume"] = {
-                costume_id: AssetURL.narrowFigureDefault.format(
-                    **base_settings, item_id=costume_id
+            narrowFigure.costume = {
+                costume_id: fmt_url(
+                    AssetURL.narrowFigureDefault, **base_settings, item_id=costume_id
                 )
                 for costume_id in costume_ids.values()
             }
-            status["costume"] = {
-                costume_id: AssetURL.status.format(**base_settings_id, i=limit)
+            status.costume = {
+                costume_id: fmt_url(AssetURL.status, **base_settings_id, i=limit)
                 for limit, costume_id in costume_ids.items()
             }
-            commands["costume"] = {
-                costume_id: AssetURL.commands.format(**base_settings_id, i=limit)
+            commands.costume = {
+                costume_id: fmt_url(AssetURL.commands, **base_settings_id, i=limit)
                 for limit, costume_id in costume_ids.items()
             }
 
@@ -136,10 +148,10 @@ def get_svt_extraAssets(
                         #     ] = AssetURL.charaGraphName.format(
                         #         **base_settings_name, item_id=costume_id
                         #     )
-                        if "ascension" not in charaGraphName:
-                            charaGraphName["ascension"] = {
-                                i: AssetURL.charaGraphName.format(
-                                    **base_settings_id, i=i
+                        if not charaGraphName.ascension:
+                            charaGraphName.ascension = {
+                                i: fmt_url(
+                                    AssetURL.charaGraphName, **base_settings_id, i=i
                                 )
                                 for i in range(1, 5)
                             }
@@ -148,19 +160,17 @@ def get_svt_extraAssets(
                     pass
 
     elif raw_svt.mstSvt.isEquip():
-        charaGraph["equip"] = {
-            svt_id: AssetURL.charaGraphDefault.format(**base_settings_id)
+        charaGraph.equip = {
+            svt_id: fmt_url(AssetURL.charaGraphDefault, **base_settings_id)
         }
-        faces["equip"] = {svt_id: AssetURL.face.format(**base_settings_id, i=0)}
-        equipFace["equip"] = {
-            svt_id: AssetURL.equipFace.format(**base_settings_id, i=0)
-        }
+        faces.equip = {svt_id: fmt_url(AssetURL.face, **base_settings_id, i=0)}
+        equipFace.equip = {svt_id: fmt_url(AssetURL.equipFace, **base_settings_id, i=0)}
 
     if svt_id in EXTRA_CHARAFIGURES:
-        charaFigure["story"] = {}
+        charaFigure.story = {}
         for charaFigure_id in sorted(EXTRA_CHARAFIGURES[svt_id]):
-            charaFigure["story"][charaFigure_id] = AssetURL.charaFigureId.format(
-                **base_settings, charaFigure=charaFigure_id
+            charaFigure.story[charaFigure_id] = fmt_url(
+                AssetURL.charaFigureId, **base_settings, charaFigure=charaFigure_id
             )
 
             svtScripts = masters[region].mstSvtScriptId.get(charaFigure_id // 10, [])
@@ -173,22 +183,22 @@ def get_svt_extraAssets(
                         **base_settings, form_id=script_form, svtScript_id=svtScript.id
                     )
 
-    image["story"] = {
-        i: AssetURL.image.format(**base_settings, image=image)
+    image.story = {
+        i: fmt_url(AssetURL.image, **base_settings, image=image)
         for i, image in enumerate(EXTRA_IMAGES.get(svt_id, []))
     }
 
-    return ExtraAssets.parse_obj(
-        {
-            "charaGraph": charaGraph,
-            "charaGraphName": charaGraphName,
-            "faces": faces,
-            "charaFigure": charaFigure,
-            "charaFigureForm": charaFigureForm,
-            "narrowFigure": narrowFigure,
-            "commands": commands,
-            "status": status,
-            "equipFace": equipFace,
-            "image": image,
-        }
+    return ExtraAssets(
+        charaGraph=charaGraph,
+        charaGraphName=charaGraphName,
+        faces=faces,
+        charaFigure=charaFigure,
+        charaFigureForm={
+            k: ExtraAssetsUrl.parse_obj(v) for k, v in charaFigureForm.items()
+        },
+        narrowFigure=narrowFigure,
+        commands=commands,
+        status=status,
+        equipFace=equipFace,
+        image=image,
     )
