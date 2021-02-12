@@ -1,7 +1,8 @@
 from typing import Any, Iterable, List, Optional
 
+from sqlalchemy.dialects.postgresql import aggregate_order_by
 from sqlalchemy.engine import Connection
-from sqlalchemy.sql import and_, func, literal_column, select, text
+from sqlalchemy.sql import and_, func, select, text
 
 from ...models.raw import (
     mstSvtTreasureDevice,
@@ -19,7 +20,9 @@ def get_tdEntity(conn: Connection, td_ids: Iterable[int]) -> List[TdEntityNoReve
             [
                 mstTreasureDeviceLv.c.treaureDeviceId,
                 func.jsonb_agg(
-                    literal_column(f'"{mstTreasureDeviceLv.name}" ORDER BY "lv"')
+                    aggregate_order_by(
+                        mstTreasureDeviceLv.table_valued(), mstTreasureDeviceLv.c.lv
+                    )
                 ).label(mstTreasureDeviceLv.name),
             ]
         )
@@ -29,28 +32,23 @@ def get_tdEntity(conn: Connection, td_ids: Iterable[int]) -> List[TdEntityNoReve
     )
 
     JOINED_TD_TABLES = (
-        mstTreasureDevice.join(
+        mstTreasureDevice.outerjoin(
             mstTreasureDeviceDetail,
             mstTreasureDeviceDetail.c.id == mstTreasureDevice.c.id,
-            isouter=True,
         )
-        .join(
+        .outerjoin(
             mstSvtTreasureDevice,
             mstSvtTreasureDevice.c.treasureDeviceId == mstTreasureDevice.c.id,
-            isouter=True,
         )
-        .join(
+        .outerjoin(
             mstTreasureDeviceLvJson,
             mstTreasureDeviceLvJson.c.treaureDeviceId == mstTreasureDevice.c.id,
-            isouter=True,
         )
     )
 
     SELECT_TD_ENTITY = [
         mstTreasureDevice.c.id.label("sqlalchemy"),
-        func.to_jsonb(literal_column(f'"{mstTreasureDevice.name}"')).label(
-            mstTreasureDevice.name
-        ),
+        func.to_jsonb(mstTreasureDevice.table_valued()).label(mstTreasureDevice.name),
         sql_jsonb_agg(mstTreasureDeviceDetail),
         sql_jsonb_agg(mstSvtTreasureDevice),
         mstTreasureDeviceLvJson.c.mstTreasureDeviceLv,
@@ -119,14 +117,12 @@ def get_td_search(
     td_search_stmt = (
         select([mstTreasureDevice])
         .select_from(
-            mstTreasureDevice.join(
+            mstTreasureDevice.outerjoin(
                 mstSvtTreasureDevice,
                 mstSvtTreasureDevice.c.treasureDeviceId == mstTreasureDevice.c.id,
-                isouter=True,
-            ).join(
+            ).outerjoin(
                 mstTreasureDeviceLv,
                 mstTreasureDeviceLv.c.treaureDeviceId == mstTreasureDevice.c.id,
-                isouter=True,
             )
         )
         .where(and_(*where_clause))

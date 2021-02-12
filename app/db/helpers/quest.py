@@ -1,35 +1,30 @@
-from inspect import cleandoc
 from typing import Any, Iterable, List
 
 from sqlalchemy.engine import Connection
-from sqlalchemy.sql import func, literal_column, select, text
+from sqlalchemy.sql import and_, func, select
 
-from ...models.raw import mstQuest, mstQuestConsumeItem, mstQuestPhase, mstQuestRelease
+from ...models.raw import (
+    mstQuest,
+    mstQuestConsumeItem,
+    mstQuestPhase,
+    mstQuestRelease,
+    mstStage,
+)
 from ...schemas.raw import QuestEntity
 from .utils import sql_jsonb_agg
 
 
 JOINED_QUEST_TABLES = (
-    mstQuest.join(
-        mstQuestConsumeItem,
-        mstQuestConsumeItem.c.questId == mstQuest.c.id,
-        isouter=True,
+    mstQuest.outerjoin(
+        mstQuestConsumeItem, mstQuestConsumeItem.c.questId == mstQuest.c.id
     )
-    .join(
-        mstQuestRelease,
-        mstQuestRelease.c.questId == mstQuest.c.id,
-        isouter=True,
-    )
-    .join(
-        mstQuestPhase,
-        mstQuestPhase.c.questId == mstQuest.c.id,
-        isouter=True,
-    )
+    .outerjoin(mstQuestRelease, mstQuestRelease.c.questId == mstQuest.c.id)
+    .outerjoin(mstQuestPhase, mstQuestPhase.c.questId == mstQuest.c.id)
 )
 
 
 SELECT_QUEST_ENTITY = [
-    func.to_jsonb(literal_column(f'"{mstQuest.name}"')).label(mstQuest.name),
+    func.to_jsonb(mstQuest.table_valued()).label(mstQuest.name),
     sql_jsonb_agg(mstQuestConsumeItem),
     sql_jsonb_agg(mstQuestRelease),
     func.jsonb_agg(mstQuestPhase.c.phase.distinct()).label("phases"),
@@ -60,29 +55,46 @@ def get_quest_by_spot(conn: Connection, spot_ids: Iterable[int]) -> List[QuestEn
 
 
 def get_quest_phase_entity(conn: Connection, quest_id: int, phase_id: int) -> Any:
-    stmt = text(
-        cleandoc(
-            """
-            SELECT
-            TO_JSONB("mstQuest") as "mstQuest",
-            TO_JSONB(ARRAY_REMOVE(ARRAY_AGG(DISTINCT "mstQuestConsumeItem"), NULL)) AS "mstQuestConsumeItem",
-            TO_JSONB(ARRAY_REMOVE(ARRAY_AGG(DISTINCT "mstQuestRelease"), NULL)) AS "mstQuestRelease",
-            JSONB_AGG(DISTINCT "allPhases"."phase") AS "phases",
-            TO_JSONB("mstQuestPhase") AS "mstQuestPhase",
-            TO_JSONB(ARRAY_REMOVE(ARRAY_AGG(DISTINCT "mstStage"), NULL)) AS "mstStage"
-            FROM "mstQuestPhase" AS "allPhases",
-            "mstQuest"
-            LEFT JOIN "mstQuestConsumeItem" ON "mstQuestConsumeItem"."questId"="mstQuest"."id"
-            LEFT JOIN "mstQuestRelease" ON "mstQuestRelease"."questId"="mstQuest"."id"
-            JOIN "mstQuestPhase" ON "mstQuestPhase"."questId"="mstQuest"."id"
-            LEFT JOIN "mstStage"
-            ON "mstStage"."questId"="mstQuest"."id"
-            AND  "mstStage"."questPhase"="mstQuestPhase"."phase"
-            WHERE "allPhases"."questId"=:questId
-            AND "mstQuest"."id"=:questId
-            AND "mstQuestPhase"."phase"=:phaseId
-            GROUP BY "mstQuest".*, "mstQuestPhase".*
-            """
+    all_phases_cte = (
+        select(
+            [
+                mstQuestPhase.c.questId,
+                func.jsonb_agg(mstQuestPhase.c.phase).label("phases"),
+            ]
+        )
+        .where(mstQuestPhase.c.questId == quest_id)
+        .group_by(mstQuestPhase.c.questId)
+        .cte()
+    )
+
+    joined_quest_phase_tables = JOINED_QUEST_TABLES.outerjoin(
+        all_phases_cte, mstQuest.c.id == all_phases_cte.c.questId
+    ).outerjoin(
+        mstStage,
+        and_(
+            mstQuest.c.id == mstStage.c.questId,
+            mstQuestPhase.c.phase == mstStage.c.questPhase,
+        ),
+    )
+
+    select_quest_phase = [
+        func.to_jsonb(mstQuest.table_valued()).label(mstQuest.name),
+        sql_jsonb_agg(mstQuestConsumeItem),
+        sql_jsonb_agg(mstQuestRelease),
+        all_phases_cte.c.phases,
+        func.to_jsonb(mstQuestPhase.table_valued()).label(mstQuestPhase.name),
+        sql_jsonb_agg(mstStage),
+    ]
+
+    sql_stmt = (
+        select(select_quest_phase)
+        .select_from(joined_quest_phase_tables)
+        .where(and_(mstQuest.c.id == quest_id, mstQuestPhase.c.phase == phase_id))
+        .group_by(
+            mstQuest.table_valued(),
+            mstQuestPhase.table_valued(),
+            all_phases_cte.c.phases,
         )
     )
-    return conn.execute(stmt, questId=quest_id, phaseId=phase_id).fetchone()
+
+    return conn.execute(sql_stmt).fetchone()

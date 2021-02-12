@@ -1,7 +1,8 @@
 from typing import Any, Iterable, List, Optional
 
+from sqlalchemy.dialects.postgresql import aggregate_order_by
 from sqlalchemy.engine import Connection
-from sqlalchemy.sql import and_, func, literal_column, select, text
+from sqlalchemy.sql import and_, func, select, text
 
 from ...models.raw import mstSkill, mstSkillDetail, mstSkillLv, mstSvtSkill
 from ...schemas.raw import MstSkill, SkillEntityNoReverse
@@ -16,7 +17,7 @@ def get_skillEntity(
             [
                 mstSkillLv.c.skillId,
                 func.jsonb_agg(
-                    literal_column(f'"{mstSkillLv.name}" ORDER BY "lv"')
+                    aggregate_order_by(mstSkillLv.table_valued(), mstSkillLv.c.lv)
                 ).label(mstSkillLv.name),
             ]
         )
@@ -26,25 +27,13 @@ def get_skillEntity(
     )
 
     JOINED_SKILL_TABLES = (
-        mstSkill.join(
-            mstSkillDetail,
-            mstSkillDetail.c.id == mstSkill.c.id,
-            isouter=True,
-        )
-        .join(
-            mstSvtSkill,
-            mstSvtSkill.c.skillId == mstSkill.c.id,
-            isouter=True,
-        )
-        .join(
-            mstSkillLvJson,
-            mstSkillLvJson.c.skillId == mstSkill.c.id,
-            isouter=True,
-        )
+        mstSkill.outerjoin(mstSkillDetail, mstSkillDetail.c.id == mstSkill.c.id)
+        .outerjoin(mstSvtSkill, mstSvtSkill.c.skillId == mstSkill.c.id)
+        .outerjoin(mstSkillLvJson, mstSkillLvJson.c.skillId == mstSkill.c.id)
     )
 
     SELECT_SKILL_ENTITY = [
-        func.to_jsonb(literal_column(f'"{mstSkill.name}"')).label(mstSkill.name),
+        func.to_jsonb(mstSkill.table_valued()).label(mstSkill.name),
         sql_jsonb_agg(mstSkillDetail),
         sql_jsonb_agg(mstSvtSkill),
         mstSkillLvJson.c.mstSkillLv,
@@ -101,9 +90,9 @@ def get_skill_search(
     skill_search_stmt = (
         select([mstSkill])
         .select_from(
-            mstSkill.join(
-                mstSvtSkill, mstSvtSkill.c.skillId == mstSkill.c.id, isouter=True
-            ).join(mstSkillLv, mstSkillLv.c.skillId == mstSkill.c.id, isouter=True)
+            mstSkill.outerjoin(
+                mstSvtSkill, mstSvtSkill.c.skillId == mstSkill.c.id
+            ).outerjoin(mstSkillLv, mstSkillLv.c.skillId == mstSkill.c.id)
         )
         .where(and_(*where_clause))
     )

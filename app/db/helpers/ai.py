@@ -2,24 +2,20 @@ from typing import List
 
 from sqlalchemy import Table
 from sqlalchemy.engine import Connection
-from sqlalchemy.sql import func, literal_column, select
+from sqlalchemy.sql import func, select
 
 from ...models.raw import mstAi, mstAiAct, mstAiField
 from ...schemas.raw import AiEntity
 
 
 def get_ai_entity(conn: Connection, ai_table: Table, ai_id: int) -> List[AiEntity]:
-    JOINED_AI_TABLES = ai_table.join(
-        mstAiAct,
-        ai_table.c.aiActId == mstAiAct.c.id,
-        isouter=True,
-    )
+    JOINED_AI_TABLES = ai_table.outerjoin(mstAiAct, ai_table.c.aiActId == mstAiAct.c.id)
 
     SELECT_AI_ENTITY = [
         ai_table.c.id,
         ai_table.c.idx,
-        func.to_jsonb(literal_column(f'"{ai_table.name}"')).label("mstAi"),
-        func.to_jsonb(literal_column(f'"{mstAiAct.name}"')).label(mstAiAct.name),
+        func.to_jsonb(ai_table.table_valued()).label("mstAi"),
+        func.to_jsonb(mstAiAct.table_valued()).label(mstAiAct.name),
     ]
 
     stmt = (
