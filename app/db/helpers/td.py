@@ -1,7 +1,7 @@
 from typing import Any, Iterable, List, Optional
 
 from sqlalchemy.engine import Connection
-from sqlalchemy.sql import and_, func, literal_column, select
+from sqlalchemy.sql import and_, func, literal_column, select, text
 
 from ...models.raw import (
     mstSvtTreasureDevice,
@@ -95,14 +95,21 @@ def get_td_search(
     if card:
         where_clause.append(mstSvtTreasureDevice.c.cardId.in_(card))
     if hits:
+        # where_clause.append(
+        #     func.array_length(mstSvtTreasureDevice.c.damage, 1).in_(hits)
+        # )
+        # Workaround for https://github.com/sqlalchemy/sqlalchemy/issues/5934
         where_clause.append(
-            func.array_length(mstSvtTreasureDevice.c.damage, 1).in_(hits)
+            text('array_length("mstSvtTreasureDevice"."damage", 1) IN :hits')
         )
     if strengthStatus:
         where_clause.append(mstSvtTreasureDevice.c.strengthStatus.in_(strengthStatus))
     if numFunctions:
+        # where_clause.append(
+        #     func.array_length(mstTreasureDeviceLv.c.funcId, 1).in_(numFunctions)
+        # )
         where_clause.append(
-            func.array_length(mstTreasureDeviceLv.c.funcId, 1).in_(numFunctions)
+            text('array_length("mstTreasureDeviceLv"."funcId", 1) IN :numFunctions')
         )
     if minNpNpGain:
         where_clause.append(mstTreasureDeviceLv.c.tdPoint >= minNpNpGain)
@@ -127,5 +134,9 @@ def get_td_search(
 
     return [
         MstTreasureDevice.parse_obj(td)
-        for td in conn.execute(td_search_stmt).fetchall()
+        for td in conn.execute(
+            td_search_stmt,
+            hits=tuple(hits) if hits else (),
+            numFunctions=tuple(numFunctions) if numFunctions else (),
+        ).fetchall()
     ]

@@ -1,7 +1,7 @@
 from typing import Any, Iterable, List, Optional
 
 from sqlalchemy.engine import Connection
-from sqlalchemy.sql import and_, func, literal_column, select
+from sqlalchemy.sql import and_, func, literal_column, select, text
 
 from ...models.raw import mstSkill, mstSkillDetail, mstSkillLv, mstSvtSkill
 from ...schemas.raw import MstSkill, SkillEntityNoReverse
@@ -92,7 +92,11 @@ def get_skill_search(
     if lvl1coolDown:
         where_clause.append(mstSkillLv.c.chargeTurn.in_(lvl1coolDown))
     if numFunctions:
-        where_clause.append(func.array_length(mstSkillLv.c.funcId, 1).in_(numFunctions))
+        # where_clause.append(func.array_length(mstSkillLv.c.funcId, 1).in_(numFunctions))
+        # Workaround for https://github.com/sqlalchemy/sqlalchemy/issues/5934
+        where_clause.append(
+            text('array_length("mstSkillLv"."funcId", 1) IN :numFunctions')
+        )
 
     skill_search_stmt = (
         select([mstSkill])
@@ -106,5 +110,7 @@ def get_skill_search(
 
     return [
         MstSkill.parse_obj(skill)
-        for skill in conn.execute(skill_search_stmt).fetchall()
+        for skill in conn.execute(
+            skill_search_stmt, numFunctions=tuple(numFunctions) if numFunctions else ()
+        ).fetchall()
     ]

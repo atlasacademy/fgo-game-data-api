@@ -52,7 +52,7 @@ def update_db(region_path: Dict[Region, DirectoryPath]) -> None:  # pragma: no c
                         data = remove_unknown_columns(data, table)
 
                     recreate_table(engine, table)
-                    conn.execute(table.insert(data))
+                    conn.execute(table.insert(), data)
                 else:
                     recreate_table(engine, table)
                     logger.warning(f"Can't find file {table_json}.")
@@ -75,7 +75,7 @@ def update_db(region_path: Dict[Region, DirectoryPath]) -> None:  # pragma: no c
                     subtitle["svtId"] = get_subtitle_svtId(subtitle["id"])
 
                 recreate_table(engine, mstSubtitle)
-                conn.execute(mstSubtitle.insert(globalNewMstSubtitle))
+                conn.execute(mstSubtitle.insert(), globalNewMstSubtitle)
             elif region == Region.NA:
                 recreate_table(engine, mstSubtitle)
                 logger.warning(f"Can't find file {subtitle_json}.")
