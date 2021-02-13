@@ -19,9 +19,15 @@ from ...models.raw import (
     mstSvtLimit,
     mstSvtLimitAdd,
     mstSvtVoice,
+    mstVoicePlayCond,
 )
 from ...schemas.enums import VoiceCondType
-from ...schemas.raw import GlobalNewMstSubtitle, MstSvtComment, MstSvtVoice
+from ...schemas.raw import (
+    GlobalNewMstSubtitle,
+    MstSvtComment,
+    MstSvtVoice,
+    MstVoicePlayCond,
+)
 from .utils import sql_jsonb_agg
 
 
@@ -117,6 +123,22 @@ def get_mstSvtVoice(conn: Connection, svt_ids: Iterable[int]) -> List[MstSvtVoic
     return [
         MstSvtVoice.parse_obj(svt_voice)
         for svt_voice in conn.execute(mstSvtVoice_stmt).fetchall()
+    ]
+
+
+def get_mstVoicePlayCond(
+    conn: Connection, svt_ids: Iterable[int]
+) -> List[MstVoicePlayCond]:
+    mstVoicePlayCond_stmt = (
+        select([mstVoicePlayCond])
+        .where(mstVoicePlayCond.c.svtId.in_(svt_ids))
+        .order_by(
+            mstVoicePlayCond.c.svtId, mstVoicePlayCond.c.voiceId, mstVoicePlayCond.c.idx
+        )
+    )
+    return [
+        MstVoicePlayCond.parse_obj(play_cond)
+        for play_cond in conn.execute(mstVoicePlayCond_stmt).fetchall()
     ]
 
 

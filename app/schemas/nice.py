@@ -558,6 +558,19 @@ class NiceVoiceCond(BaseModel):
     eventId: int = Field(..., title="Event ID", description="Event ID.")
 
 
+class NiceVoicePlayCond(BaseModel):
+    condGroup: int = Field(
+        ...,
+        title="Voice play condition group",
+        description="To play a voice line, at least one condition group needs to be statisfied."
+        "Within one condition group, all conditions need to be statisfied."
+        "i.e. (group_1_cond_1 AND group_1_cond_2) OR (group_2_cond_1)",
+    )
+    condType: NiceCondType = Field(..., title="Voice play condition type")
+    targetId: int = Field(..., title="Voice play condition target ID")
+    condValue: int = Field(..., title="Voice play condition target value")
+
+
 class NiceVoiceLine(BaseModel):
     name: Optional[str] = Field(
         None, title="Voice line default name", description="Voice line default name."
@@ -616,7 +629,14 @@ class NiceVoiceLine(BaseModel):
     conds: List[NiceVoiceCond] = Field(
         ...,
         title="Voice line conditions",
-        description="Conditions to make the voice line available.",
+        description="Conditions to unlock the voice line.",
+    )
+    playConds: List[NiceVoicePlayCond] = Field(
+        ...,
+        title="Voice line play conditions",
+        description="Conditions to play the voice line."
+        "For example, there are male and female versions of a bond 5 voice line."
+        "The voice line is unlocked at bond 5 but only one of the line is played in my room.",
     )
 
 

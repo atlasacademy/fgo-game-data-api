@@ -10,12 +10,19 @@ from ....schemas.enums import (
     SvtVoiceType,
     VoiceCondType,
 )
-from ....schemas.nice import AssetURL, NiceVoiceCond, NiceVoiceGroup, NiceVoiceLine
+from ....schemas.nice import (
+    AssetURL,
+    NiceVoiceCond,
+    NiceVoiceGroup,
+    NiceVoiceLine,
+    NiceVoicePlayCond,
+)
 from ....schemas.raw import (
-    GlobalNewMstSubtitle,
     MstSvtVoice,
+    MstVoicePlayCond,
     ScriptJson,
     ScriptJsonCond,
+    ServantEntity,
 )
 from ...utils import nullable_to_string
 
@@ -36,6 +43,15 @@ def get_voice_url(region: Region, svt_id: int, voice_type: int, voice_id: str) -
     folder = get_voice_folder(voice_type) + str(svt_id)
     return AssetURL.audio.format(
         base_url=settings.asset_url, region=region, folder=folder, id=voice_id
+    )
+
+
+def get_nice_play_cond(playCond: MstVoicePlayCond) -> NiceVoicePlayCond:
+    return NiceVoicePlayCond(
+        condGroup=playCond.condGroup,
+        condType=COND_TYPE_NAME[playCond.condType],
+        targetId=playCond.targetId,
+        condValue=playCond.condValues[0],
     )
 
 
@@ -68,11 +84,15 @@ def get_nice_voice_line(
     region: Region,
     script: ScriptJson,
     svt_id: int,
+    voice_prefix: int,
     voice_type: int,
     costume_ids: Dict[int, int],
     subtitle_ids: Dict[str, str],
+    play_conds: List[MstVoicePlayCond],
 ) -> NiceVoiceLine:
-    first_voice_id = script.infos[0].id
+    first_voice = script.infos[0]
+    # Some voice lines have the first info id ending with xxx1 or xxx2 and we want xxx0
+    voice_id = first_voice.id.split("_")[1][:-1] + "0"
 
     voice_line = NiceVoiceLine(
         overwriteName=nullable_to_string(script.overwriteName),
@@ -85,11 +105,16 @@ def get_nice_voice_line(
         form=(info.form for info in script.infos),
         text=(nullable_to_string(info.text) for info in script.infos),
         conds=(get_nice_voice_cond(region, info, costume_ids) for info in script.conds),
-        subtitle=subtitle_ids.get(str(svt_id) + "_" + first_voice_id, ""),
+        playConds=(
+            get_nice_play_cond(play_cond)
+            for play_cond in play_conds
+            if play_cond.svtId == svt_id
+            and play_cond.voiceId == voice_id
+            and (play_cond.voicePrefix == -1 or play_cond.voicePrefix == voice_prefix)
+        ),
+        subtitle=subtitle_ids.get(str(svt_id) + "_" + first_voice.id, ""),
     )
 
-    # Some voice lines have the first info id ending with xxx1 or xxx2 and we want xxx0
-    voice_id = first_voice_id.split("_")[1][:-1] + "0"
     if voice_id in masters[region].mstVoiceId:
         mstVoice = masters[region].mstVoiceId[voice_id]
         voice_line.name = mstVoice.name
@@ -105,19 +130,41 @@ def get_nice_voice_group(
     region: Region,
     voice: MstSvtVoice,
     costume_ids: Dict[int, int],
-    subtitles: List[GlobalNewMstSubtitle],
+    subtitle_ids: Dict[str, str],
+    play_conds: List[MstVoicePlayCond],
 ) -> NiceVoiceGroup:
-
-    subtitle_ids = {subtitle.id: subtitle.serif for subtitle in subtitles}
-
     return NiceVoiceGroup(
         svtId=voice.id,
         voicePrefix=voice.voicePrefix,
         type=VOICE_TYPE_NAME[voice.type],
         voiceLines=(
             get_nice_voice_line(
-                region, script, voice.id, voice.type, costume_ids, subtitle_ids
+                region,
+                script,
+                voice.id,
+                voice.voicePrefix,
+                voice.type,
+                costume_ids,
+                subtitle_ids,
+                play_conds,
             )
             for script in voice.scriptJson
         ),
     )
+
+
+def get_nice_voice(
+    region: Region, raw_svt: ServantEntity, costume_ids: Dict[int, int]
+) -> List[NiceVoiceGroup]:
+    subtitle_ids = {subtitle.id: subtitle.serif for subtitle in raw_svt.mstSubtitle}
+
+    return [
+        get_nice_voice_group(
+            region,
+            voice,
+            costume_ids,
+            subtitle_ids,
+            raw_svt.mstVoicePlayCond,
+        )
+        for voice in raw_svt.mstSvtVoice
+    ]

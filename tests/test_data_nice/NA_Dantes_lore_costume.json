@@ -2127,7 +2127,8 @@
                 "valueList": [],
                 "eventId": 0
               }
-            ]
+            ],
+            "playConds": []
           },
           {
             "name": "During an Event",
@@ -2149,7 +2150,8 @@
             "subtitle": "We'll be late to the party.\nHurry. Frenzy and mania are waiting.",
             "conds": [
               { "condType": "event", "value": 0, "valueList": [], "eventId": 0 }
-            ]
+            ],
+            "playConds": []
           },
           {
             "name": "Conversation 1",
@@ -2167,7 +2169,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Don't bore me, Master.",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Conversation 2",
@@ -2186,7 +2189,8 @@
             "form": [0, 0],
             "text": ["", ""],
             "subtitle": "Can you show me the path, just like the Abbé?",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Conversation 3",
@@ -2205,7 +2209,8 @@
             "form": [0, 0],
             "text": ["", ""],
             "subtitle": "I only have one mentor in life.\nAbbé Faria...",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Likes",
@@ -2225,7 +2230,8 @@
             "form": [0, 0, 0],
             "text": ["", "", ""],
             "subtitle": "What do I like?\nThat no longer holds any meaning for me.\nAll I have is determination filled with darkness.",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Dislikes",
@@ -2245,7 +2251,8 @@
             "form": [0, 0, 0],
             "text": ["", "", ""],
             "subtitle": "Of course I hate it!\nAah! The world! Everything!",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "About the Holy Grail",
@@ -2266,7 +2273,8 @@
             "form": [0, 0, 0, 0],
             "text": ["", "", "", ""],
             "subtitle": "The Holy Grail, a vessel of desire which fulfills wishes...\nI'm sure it's stuffed full.\nFull of human desires... of everything evil.",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Bond Level 1",
@@ -2294,7 +2302,8 @@
                 "valueList": [],
                 "eventId": 0
               }
-            ]
+            ],
+            "playConds": []
           },
           {
             "name": "Bond Level 2",
@@ -2322,7 +2331,8 @@
                 "valueList": [],
                 "eventId": 0
               }
-            ]
+            ],
+            "playConds": []
           },
           {
             "name": "Bond Level 3",
@@ -2350,7 +2360,8 @@
                 "valueList": [],
                 "eventId": 0
               }
-            ]
+            ],
+            "playConds": []
           },
           {
             "name": "Bond Level 4",
@@ -2378,7 +2389,8 @@
                 "valueList": [],
                 "eventId": 0
               }
-            ]
+            ],
+            "playConds": []
           },
           {
             "name": "Bond Level 5",
@@ -2407,7 +2419,8 @@
                 "valueList": [],
                 "eventId": 0
               }
-            ]
+            ],
+            "playConds": []
           },
           {
             "name": "Conversation 4",
@@ -2435,7 +2448,8 @@
                 "valueList": [],
                 "eventId": 0
               }
-            ]
+            ],
+            "playConds": []
           },
           {
             "name": "Conversation 5",
@@ -2484,7 +2498,8 @@
                 ],
                 "eventId": 0
               }
-            ]
+            ],
+            "playConds": []
           },
           {
             "name": "Conversation 6",
@@ -2510,7 +2525,8 @@
                 "valueList": [500500, 500700],
                 "eventId": 0
               }
-            ]
+            ],
+            "playConds": []
           },
           {
             "name": "Conversation 7",
@@ -2539,7 +2555,8 @@
                 "valueList": [],
                 "eventId": 0
               }
-            ]
+            ],
+            "playConds": []
           },
           {
             "name": "Conversation 8",
@@ -2564,7 +2581,8 @@
                 "valueList": [],
                 "eventId": 0
               }
-            ]
+            ],
+            "playConds": []
           },
           {
             "name": "Conversation 9",
@@ -2589,7 +2607,8 @@
                 "valueList": [900100, 900200],
                 "eventId": 0
               }
-            ]
+            ],
+            "playConds": []
           }
         ]
       },
@@ -2621,7 +2640,8 @@
                 "valueList": [],
                 "eventId": 0
               }
-            ]
+            ],
+            "playConds": []
           },
           {
             "name": "Ascension 2",
@@ -2646,7 +2666,8 @@
                 "valueList": [],
                 "eventId": 0
               }
-            ]
+            ],
+            "playConds": []
           },
           {
             "name": "Ascension 1",
@@ -2672,7 +2693,8 @@
                 "valueList": [],
                 "eventId": 0
               }
-            ]
+            ],
+            "playConds": []
           },
           {
             "name": "Ascension 3",
@@ -2698,7 +2720,8 @@
                 "valueList": [],
                 "eventId": 0
               }
-            ]
+            ],
+            "playConds": []
           },
           {
             "name": "Ascension 4",
@@ -2725,7 +2748,8 @@
                 "valueList": [],
                 "eventId": 0
               }
-            ]
+            ],
+            "playConds": []
           }
         ]
       },
@@ -2758,7 +2782,8 @@
               "[r]I am Extra Class, Avenger!"
             ],
             "subtitle": "You called me! The reincarnation of vengence itself?\nWell precisely, I am the grudge of darkness\nI am Extra Class, Avenger!",
-            "conds": []
+            "conds": [],
+            "playConds": []
           }
         ]
       },
@@ -2783,7 +2808,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Ooh!",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Attack 2",
@@ -2801,7 +2827,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Nnngh!",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Attack 3",
@@ -2819,7 +2846,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Hyah!",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Extra Attack",
@@ -2837,7 +2865,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Bwahahaha!",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Skill 1",
@@ -2855,7 +2884,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Hahahahaha!",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Skill 2",
@@ -2873,7 +2903,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "That should do it.",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Battle Start 1",
@@ -2891,7 +2922,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "You... What do I look like to you!",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Battle Start 2",
@@ -2909,7 +2941,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Have you ever seen Hell?",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Victory 1",
@@ -2927,7 +2960,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "...Fall into despair!\nThat itself is... Hell.",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Victory 2",
@@ -2945,7 +2979,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "I'll show no mercy.\nDie and rot away completely.",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Damage 2",
@@ -2963,7 +2998,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Ugh!",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Damage 1",
@@ -2981,7 +3017,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Aaaaugh!",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Incapacitated 1",
@@ -2999,7 +3036,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Haydée! \nI...",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Incapacitated 2",
@@ -3017,7 +3055,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Impossible, impossible...",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Command Card 1",
@@ -3035,7 +3074,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "That's cruel.",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Command Card 2",
@@ -3053,7 +3093,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Hahaha!",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Command Card 3",
@@ -3071,7 +3112,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "That's good.",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Noble Phantasm Card",
@@ -3089,7 +3131,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "I don't need mercy!",
-            "conds": []
+            "conds": [],
+            "playConds": []
           }
         ]
       },
@@ -3123,7 +3166,8 @@
                 "valueList": [],
                 "eventId": 0
               }
-            ]
+            ],
+            "playConds": []
           }
         ]
       },
@@ -3150,7 +3194,8 @@
             "form": [0, 0, 0],
             "text": ["", "", ""],
             "subtitle": "Appearances mean nothing.\nBut...\nHmph. If something like this inspires you, then I see no reason to put a stop to it.",
-            "conds": []
+            "conds": [],
+            "playConds": []
           }
         ]
       },
@@ -3182,7 +3227,8 @@
                 "valueList": [],
                 "eventId": 0
               }
-            ]
+            ],
+            "playConds": []
           },
           {
             "name": "Unlock Wardrobe",
@@ -3208,7 +3254,8 @@
                 "valueList": [],
                 "eventId": 0
               }
-            ]
+            ],
+            "playConds": []
           }
         ]
       },
@@ -3233,7 +3280,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "The sea, huh...?",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Battle Start 2",
@@ -3251,7 +3299,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Kuku...hahahahahaha!",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Skill 1",
@@ -3269,7 +3318,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Kukuku!",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Skill 2",
@@ -3287,7 +3337,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Amusing.",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Command Card 1",
@@ -3305,7 +3356,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Hahaha!",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Command Card 2",
@@ -3323,7 +3375,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Hmph.",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Command Card 3",
@@ -3341,7 +3394,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Boring.",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Noble Phantasm Card",
@@ -3359,7 +3413,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Shut up, shut up!",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Attack 1",
@@ -3377,7 +3432,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Fuh!",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Attack 2",
@@ -3395,7 +3451,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Hah!",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Attack 3",
@@ -3413,7 +3470,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Zei!",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Extra Attack",
@@ -3431,7 +3489,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Haha! Hahaha!",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Damage 1",
@@ -3449,7 +3508,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Hahahahahaha!",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Damage 2",
@@ -3467,7 +3527,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Hnnngh!",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Incapacitated 1",
@@ -3485,7 +3546,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "I will be there...soon...Haydée...",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Incapacitated 2",
@@ -3503,7 +3565,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Why you... WHY YOU!!!",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Victory 1",
@@ -3521,7 +3584,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Close your eyes. Sleep.",
-            "conds": []
+            "conds": [],
+            "playConds": []
           },
           {
             "name": "Victory 2",
@@ -3539,7 +3603,8 @@
             "form": [0],
             "text": [""],
             "subtitle": "Fall and rot away.",
-            "conds": []
+            "conds": [],
+            "playConds": []
           }
         ]
       }

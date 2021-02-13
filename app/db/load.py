@@ -57,15 +57,6 @@ def update_db(region_path: Dict[Region, DirectoryPath]) -> None:  # pragma: no c
                     recreate_table(engine, table)
                     logger.warning(f"Can't find file {table_json}.")
 
-                if table is mstSvtVoice:
-                    conn.execute(text('DROP INDEX IF EXISTS "mstSvtVoiceGIN"'))
-                    conn.execute(
-                        text(
-                            'CREATE INDEX "mstSvtVoiceGIN" ON "mstSvtVoice" '
-                            'USING gin("scriptJson" jsonb_path_ops)'
-                        )
-                    )
-
             subtitle_json = master_folder / "globalNewMstSubtitle.json"
             if subtitle_json.exists():
                 with open(subtitle_json, "rb") as fp:

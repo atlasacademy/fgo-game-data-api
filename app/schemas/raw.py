@@ -553,6 +553,17 @@ class MstSvtVoice(BaseModel):
     type: int
 
 
+class MstVoicePlayCond(BaseModel):
+    svtId: int
+    voicePrefix: int
+    voiceId: str
+    idx: int
+    condGroup: int
+    condType: int
+    targetId: int
+    condValues: List[int]
+
+
 class MstSvtChange(BaseModel):
     beforeTreasureDeviceIds: List[int]  # [202100]
     afterTreasureDeviceIds: List[int]  # [202101]
@@ -958,6 +969,7 @@ class ServantEntity(BaseModelORJson):
     mstSvtComment: List[MstSvtComment] = []
     mstSvtVoice: List[MstSvtVoice] = []
     mstSubtitle: List[GlobalNewMstSubtitle] = []
+    mstVoicePlayCond: List[MstVoicePlayCond] = []
 
 
 class ReversedSkillTd(BaseModelORJson):

@@ -34,7 +34,7 @@ from ..skill import get_nice_skill_with_svt
 from ..td import get_nice_td
 from .ascensionAdd import get_nice_ascensionAdd
 from .asset import get_svt_extraAssets
-from .voice import get_nice_voice_group
+from .voice import get_nice_voice
 
 
 settings = Settings()
@@ -270,10 +270,7 @@ def get_nice_servant(
             "comments": [
                 get_nice_comment(svt_comment) for svt_comment in raw_svt.mstSvtComment
             ],
-            "voices": [
-                get_nice_voice_group(region, voice, costume_ids, raw_svt.mstSubtitle)
-                for voice in raw_svt.mstSvtVoice
-            ],
+            "voices": get_nice_voice(region, raw_svt, costume_ids),
             "stats": {
                 "strength": get_nice_status_rank(first_svt_limit.power),
                 "endurance": get_nice_status_rank(first_svt_limit.defense),

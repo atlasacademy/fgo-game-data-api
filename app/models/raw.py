@@ -1,5 +1,14 @@
 import sqlalchemy
-from sqlalchemy import BigInteger, Boolean, Column, Integer, Numeric, String, Table
+from sqlalchemy import (
+    BigInteger,
+    Boolean,
+    Column,
+    Index,
+    Integer,
+    Numeric,
+    String,
+    Table,
+)
 from sqlalchemy.dialects.postgresql import ARRAY, JSONB
 
 
@@ -282,6 +291,25 @@ mstSvtVoice = Table(
     Column("id", Integer, index=True),
     Column("voicePrefix", Integer),
     Column("type", Integer),
+    Index(
+        "mstSvtVoiceGIN",
+        sqlalchemy.text('"scriptJson" jsonb_path_ops'),
+        postgresql_using="gin",
+    ),
+)
+
+
+mstVoicePlayCond = Table(
+    "mstVoicePlayCond",
+    metadata,
+    Column("svtId", Integer, index=True),
+    Column("voicePrefix", Integer),
+    Column("voiceId", String),
+    Column("idx", Integer),
+    Column("condGroup", Integer),
+    Column("condType", Integer),
+    Column("targetId", Integer),
+    Column("condValues", ARRAY(Integer)),
 )
 
 
@@ -649,6 +677,7 @@ TABLES_TO_BE_LOADED = [
     mstSvtChange,
     mstSvtCostume,
     mstSvtVoice,
+    mstVoicePlayCond,
     mstSvtComment,
     mstShop,
     mstEventReward,

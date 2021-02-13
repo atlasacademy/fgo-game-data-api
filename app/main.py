@@ -169,6 +169,8 @@ async def add_process_time_header(
     start_time = time.perf_counter()
     response = await call_next(request)
     response.headers["Bloom-Response-Buckets"] = "fgo-game-data-api"
+    if response.status_code != 200:
+        response.headers["Bloom-Response-Ignore"] = "1"
     process_time = round((time.perf_counter() - start_time) * 1000, 2)
     response.headers["Server-Timing"] = f"app;dur={process_time}"
     logger.debug(f"Processed in {process_time}ms.")

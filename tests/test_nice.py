@@ -265,6 +265,19 @@ class TestServantSpecial:
             "Target": 0,
         }
 
+    def test_voice_play_cond(self) -> None:
+        response = client.get("/nice/JP/servant/261?lore=true")
+        voice_line = response.json()["profile"]["voices"][0]["voiceLines"][4]
+        assert response.status_code == 200
+        assert voice_line["playConds"] == [
+            {
+                "condGroup": 1,
+                "condType": "playerGenderType",
+                "targetId": 1,
+                "condValue": 0,
+            }
+        ]
+
     def test_list_datavals_2_items(self) -> None:
         response = client.get("/nice/JP/NP/403401")
         assert response.status_code == 200

@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.45.0 - 2020-02-12
+### Added
+- `playConds` to raw and nice voice lines.
+
 ## 5.44.0 - 2020-02-11
 ### Added
 - `image` to nice servant extra assets.

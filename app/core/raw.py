@@ -323,8 +323,12 @@ def get_servant_entity(
         order = {voice_id: i for i, voice_id in enumerate(voice_ids)}
         mstSvtVoice = svt.get_mstSvtVoice(conn, voice_ids)
         mstSubtitle = svt.get_mstSubtitle(conn, voice_ids)
+        mstVoicePlayCond = svt.get_mstVoicePlayCond(conn, voice_ids)
 
         svt_entity.mstSvtVoice = sorted(mstSvtVoice, key=lambda voice: order[voice.id])
+        svt_entity.mstVoicePlayCond = sorted(
+            mstVoicePlayCond, key=lambda voice: order[voice.svtId]
+        )
         svt_entity.mstSubtitle = sorted(
             mstSubtitle, key=lambda sub: order[sub.get_svtId()]
         )
