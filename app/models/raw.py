@@ -492,7 +492,7 @@ mstSpot = Table(
     "mstSpot",
     metadata,
     Column("joinSpotIds", ARRAY(Integer)),
-    Column("id", Integer, index=True),
+    Column("id", Integer, primary_key=True),
     Column("warId", Integer, index=True),
     Column("mapId", Integer),
     Column("name", String),
@@ -658,16 +658,24 @@ mstAiAct = Table(
 )
 
 
-TABLES_TO_BE_LOADED = [
+TABLES_WITH_PK = [
     mstSkill,
+    mstTreasureDevice,
+    mstSvt,
+    mstShop,
+    mstSpot,
+    mstQuest,
+    mstAiAct,
+]
+
+
+TABLES_TO_BE_LOADED = [
     mstSkillDetail,
     mstSvtSkill,
     mstSkillLv,
-    mstTreasureDevice,
     mstTreasureDeviceDetail,
     mstSvtTreasureDevice,
     mstTreasureDeviceLv,
-    mstSvt,
     mstSvtCard,
     mstSvtLimit,
     mstCombineLimit,
@@ -679,15 +687,11 @@ TABLES_TO_BE_LOADED = [
     mstSvtVoice,
     mstVoicePlayCond,
     mstSvtComment,
-    mstShop,
     mstEventReward,
-    mstSpot,
-    mstQuest,
     mstQuestRelease,
     mstQuestConsumeItem,
     mstQuestPhase,
     mstStage,
     mstAi,
     mstAiField,
-    mstAiAct,
 ]

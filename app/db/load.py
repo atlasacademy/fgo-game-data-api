@@ -4,11 +4,11 @@ from typing import Any, Dict, List
 import orjson
 from pydantic import DirectoryPath
 from sqlalchemy import Table
+from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.engine import Engine
-from sqlalchemy.sql import text
 
 from ..config import logger
-from ..models.raw import TABLES_TO_BE_LOADED, mstSubtitle, mstSvtVoice
+from ..models.raw import TABLES_TO_BE_LOADED, TABLES_WITH_PK, mstSubtitle
 from ..schemas.common import Region
 from ..schemas.raw import get_subtitle_svtId
 from .base import engines
@@ -41,6 +41,24 @@ def update_db(region_path: Dict[Region, DirectoryPath]) -> None:  # pragma: no c
         engine = engines[region]
 
         with engine.connect() as conn:
+            for table in TABLES_WITH_PK:
+                table.create(engine, checkfirst=True)
+                table_json = master_folder / f"{table.name}.json"
+                if table_json.exists():
+                    with open(table_json, "rb") as fp:
+                        id_data: List[Dict[str, Any]] = orjson.loads(fp.read())
+
+                    insert_stmt = insert(table)
+                    do_update_stmt = insert_stmt.on_conflict_do_update(
+                        index_elements=[col for col in table.c if col.primary_key],
+                        set_={
+                            col: insert_stmt.excluded[col.name]
+                            for col in table.c
+                            if not col.primary_key
+                        },
+                    )
+                    conn.execute(do_update_stmt, id_data)
+
             for table in TABLES_TO_BE_LOADED:
                 table_json = master_folder / f"{table.name}.json"
                 if table_json.exists():
