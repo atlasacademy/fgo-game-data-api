@@ -10,6 +10,7 @@
           "collectionNo": 200,
           "name": "浅上藤乃",
           "type": "normal",
+          "flag": "normal",
           "className": "archer",
           "rarity": 4,
           "atkMax": 10299,

@@ -114,6 +114,7 @@
                             "collectionNo": 284,
                             "name": "Altria Caster",
                             "type": "normal",
+                            "flag": "normal",
                             "className": "caster",
                             "rarity": 5,
                             "atkMax": 10546,

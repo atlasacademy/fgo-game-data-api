@@ -3,8 +3,10 @@
   "collectionNo": 467,
   "name": "ハートチョコ・ビタービタービター",
   "type": "servantEquip",
+  "flag": "svtEquipChocolate",
   "rarity": 4,
   "atkMax": 0,
   "hpMax": 0,
-  "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_98053700.png"
+  "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_98053700.png",
+  "valentineEquipOwner": 302600
 }

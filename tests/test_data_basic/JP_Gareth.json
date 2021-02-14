@@ -3,6 +3,7 @@
   "collectionNo": 256,
   "name": "ガレス",
   "type": "normal",
+  "flag": "normal",
   "className": "lancer",
   "rarity": 2,
   "atkMax": 5413,

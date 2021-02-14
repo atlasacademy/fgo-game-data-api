@@ -32,6 +32,7 @@ from ..schemas.enums import (
     FUNC_TARGETTYPE_NAME,
     FUNC_TYPE_NAME,
     FUNC_VALS_NOT_BUFF,
+    SVT_FLAG_NAME,
     SVT_TYPE_NAME,
     SvtClass,
     SvtType,
@@ -230,26 +231,29 @@ def get_basic_td(
 
 
 def get_basic_svt(
-    region: Region, item_id: int, lang: Optional[Language] = None
+    region: Region, svt_id: int, lang: Optional[Language] = None
 ) -> Dict[str, Any]:
-    mstSvt = masters[region].mstSvtId[item_id]
-    mstSvtLimit = masters[region].mstSvtLimitFirst[item_id]
+    mstSvt = masters[region].mstSvtId[svt_id]
+    mstSvtLimit = masters[region].mstSvtLimitFirst[svt_id]
 
     basic_servant = {
-        "id": item_id,
+        "id": svt_id,
         "collectionNo": mstSvt.collectionNo,
         "type": SVT_TYPE_NAME[mstSvt.type],
+        "flag": SVT_FLAG_NAME[mstSvt.flag],
         "name": mstSvt.name,
         "className": CLASS_NAME[mstSvt.classId],
         "rarity": mstSvtLimit.rarity,
         "atkMax": mstSvtLimit.atkMax,
         "hpMax": mstSvtLimit.hpMax,
+        "bondEquipOwner": masters[region].bondEquipOwner.get(svt_id),
+        "valentineEquipOwner": masters[region].valentineEquipOwner.get(svt_id),
     }
 
     base_settings = {
         "base_url": settings.asset_url,
         "region": region,
-        "item_id": item_id,
+        "item_id": svt_id,
     }
     if mstSvt.type in (SvtType.ENEMY, SvtType.ENEMY_COLLECTION):
         basic_servant["face"] = AssetURL.enemy.format(**base_settings, i=1)

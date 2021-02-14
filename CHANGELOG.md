@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.46.0 - 2020-02-14
+### Added
+- Added `flag` to basic servant and `flag`, `bondEquipOwner`, `valentineEquipOwner` to basic equip.
+
 ## 5.45.0 - 2020-02-12
 ### Added
 - `playConds` to raw and nice voice lines.

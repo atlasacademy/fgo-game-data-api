@@ -82,6 +82,7 @@
           "collectionNo": 6,
           "name": "Siegfried",
           "type": "normal",
+          "flag": "normal",
           "className": "saber",
           "rarity": 4,
           "atkMax": 8181,

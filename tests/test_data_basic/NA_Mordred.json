@@ -3,6 +3,7 @@
   "collectionNo": 76,
   "name": "Mordred",
   "type": "normal",
+  "flag": "normal",
   "className": "saber",
   "rarity": 5,
   "atkMax": 11723,

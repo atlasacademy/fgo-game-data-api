@@ -11,6 +11,7 @@
           "collectionNo": 87,
           "name": "Fionn mac Cumhaill",
           "type": "normal",
+          "flag": "normal",
           "className": "lancer",
           "rarity": 4,
           "atkMax": 8930,

@@ -3,6 +3,7 @@
   "collectionNo": 208,
   "name": "Sieg",
   "type": "normal",
+  "flag": "ignoreCombineLimitSpecial",
   "className": "caster",
   "rarity": 4,
   "atkMax": 8394,

@@ -10,6 +10,7 @@ from .enums import (
     NiceEventType,
     NiceFuncTargetType,
     NiceFuncType,
+    NiceSvtFlag,
     NiceSvtType,
     SvtClass,
 )
@@ -56,6 +57,7 @@ class BasicServant(BaseModelORJson):
     collectionNo: int
     name: str
     type: NiceSvtType
+    flag: NiceSvtFlag
     className: SvtClass
     rarity: int
     atkMax: int
@@ -68,10 +70,13 @@ class BasicEquip(BaseModelORJson):
     collectionNo: int
     name: str
     type: NiceSvtType
+    flag: NiceSvtFlag
     rarity: int
     atkMax: int
     hpMax: int
     face: HttpUrl
+    bondEquipOwner: Optional[int]
+    valentineEquipOwner: Optional[int]
 
 
 class BasicMysticCode(BaseModelORJson):
