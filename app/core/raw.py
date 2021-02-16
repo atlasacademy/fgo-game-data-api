@@ -261,7 +261,7 @@ def get_servant_entity(
     svt_entity_db = svt.get_servantEntity(conn, servant_id)
 
     svt_entity = ServantEntity(
-        **svt_entity_db,
+        **svt_entity_db._mapping,  # pylint: disable=protected-access
         # needed this to get CharaFigure available forms
         mstSvtScript=masters[region].mstSvtScriptId.get(servant_id, []),
         mstSkill=(
@@ -419,7 +419,7 @@ def get_quest_phase_entity(
 ) -> QuestPhaseEntity:
     quest_phase = quest.get_quest_phase_entity(conn, quest_id, phase)
     if quest_phase:
-        return QuestPhaseEntity.parse_obj(quest_phase)
+        return quest_phase
     else:
         raise HTTPException(status_code=404, detail="Quest phase not found")
 

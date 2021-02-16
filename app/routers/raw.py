@@ -550,7 +550,7 @@ async def get_war(
     if war_id in masters[region].mstWarId:
         return item_response(raw.get_war_entity(conn, region, war_id))
     else:
-        raise HTTPException(status_code=404, detail="Event not found")
+        raise HTTPException(status_code=404, detail="War not found")
 
 
 @router.get(

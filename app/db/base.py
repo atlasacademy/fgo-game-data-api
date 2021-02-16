@@ -9,9 +9,9 @@ settings = Settings()
 
 engines = {
     Region.NA: sqlalchemy.create_engine(
-        settings.na_postgresdsn, pool_size=5, max_overflow=10
+        settings.na_postgresdsn, pool_size=5, max_overflow=10, future=True
     ),
     Region.JP: sqlalchemy.create_engine(
-        settings.jp_postgresdsn, pool_size=5, max_overflow=10
+        settings.jp_postgresdsn, pool_size=5, max_overflow=10, future=True
     ),
 }

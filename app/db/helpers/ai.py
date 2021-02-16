@@ -19,15 +19,13 @@ def get_ai_entity(conn: Connection, ai_table: Table, ai_id: int) -> List[AiEntit
     ]
 
     stmt = (
-        select(SELECT_AI_ENTITY)
+        select(*SELECT_AI_ENTITY)
         .select_from(JOINED_AI_TABLES)
         .where(ai_table.c.id == ai_id)
         .order_by(ai_table.c.id, ai_table.c.idx)
     )
 
-    return [
-        AiEntity.parse_obj(ai_entity) for ai_entity in conn.execute(stmt).fetchall()
-    ]
+    return [AiEntity.from_orm(ai_entity) for ai_entity in conn.execute(stmt).fetchall()]
 
 
 def get_svt_ai_entity(conn: Connection, ai_id: int) -> List[AiEntity]:

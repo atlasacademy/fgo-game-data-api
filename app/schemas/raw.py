@@ -76,6 +76,9 @@ class MstSkill(BaseModel):
     iconId: int  # 317,
     motion: int  # 101
 
+    class Config:
+        orm_mode = True
+
 
 class MstSkillDetail(BaseModel):
     id: int  # 429650,
@@ -133,6 +136,9 @@ class SkillEntityNoReverse(BaseModelORJson):
     mstSvtSkill: List[MstSvtSkill]
     mstSkillLv: List[MstSkillLv]
 
+    class Config:
+        orm_mode = True
+
 
 class MstTreasureDevice(BaseModel):
     individuality: List[int]  # [3000, 4001, 4007],
@@ -145,6 +151,9 @@ class MstTreasureDevice(BaseModel):
     maxLv: int  # 5,
     typeText: str  # "Anti-Personnel",
     attackAttri: int  # 1
+
+    class Config:
+        orm_mode = True
 
 
 class MstTreasureDeviceDetail(BaseModel):
@@ -168,6 +177,9 @@ class MstSvtTreasureDevice(BaseModel):
     condFriendshipRank: int  # 0,
     motion: int  # 50,
     cardId: int  # 3
+
+    class Config:
+        orm_mode = True
 
 
 class MstTreasureDeviceLv(BaseModel):
@@ -196,6 +208,9 @@ class TdEntityNoReverse(BaseModelORJson):
     mstTreasureDeviceDetail: List[MstTreasureDeviceDetail]
     mstSvtTreasureDevice: List[MstSvtTreasureDevice]
     mstTreasureDeviceLv: List[MstTreasureDeviceLv]
+
+    class Config:
+        orm_mode = True
 
 
 def is_servant(svt_type: int) -> bool:
@@ -311,6 +326,9 @@ class MstSvtComment(BaseModel):
     comment: str  # ""
     condType: int  # 9
     condValue2: int  # 0
+
+    class Config:
+        orm_mode = True
 
 
 class MstSvtScriptExtendDataCond(BaseModel):
@@ -552,6 +570,9 @@ class MstSvtVoice(BaseModel):
     voicePrefix: int
     type: int
 
+    class Config:
+        orm_mode = True
+
 
 class MstVoicePlayCond(BaseModel):
     svtId: int
@@ -562,6 +583,9 @@ class MstVoicePlayCond(BaseModel):
     condType: int
     targetId: int
     condValues: List[int]
+
+    class Config:
+        orm_mode = True
 
 
 class MstSvtChange(BaseModel):
@@ -603,6 +627,9 @@ def get_subtitle_svtId(sub_id: str) -> int:
 class GlobalNewMstSubtitle(BaseModel):
     id: str
     serif: str
+
+    class Config:
+        orm_mode = True
 
     def get_svtId(self) -> int:
         return get_subtitle_svtId(self.id)
@@ -675,6 +702,9 @@ class MstShop(BaseModel):
     openedAt: int  # 1528880400
     closedAt: int  # 1530676799
 
+    class Config:
+        orm_mode = True
+
 
 class MstEventReward(BaseModel):
     eventId: int  # 80305
@@ -684,6 +714,9 @@ class MstEventReward(BaseModel):
     giftId: int  # 10084
     bgImageId: int  # 8030502
     presentMessageId: int  # 800410
+
+    class Config:
+        orm_mode = True
 
 
 class MstEvent(BaseModel):
@@ -778,6 +811,9 @@ class MstSpot(BaseModel):
     activeTargetValue: int  # 0
     closedMessage: str  # ""
     flag: int  # 0
+
+    class Config:
+        orm_mode = True
 
 
 class MstQuest(BaseModel):
@@ -1021,6 +1057,9 @@ class QuestEntity(BaseModelORJson):
     mstQuestRelease: List[MstQuestRelease]
     phases: List[int]
 
+    class Config:
+        orm_mode = True
+
 
 class QuestPhaseEntity(QuestEntity):
     mstQuestPhase: MstQuestPhase
@@ -1042,6 +1081,9 @@ class WarEntity(BaseModelORJson):
 class AiEntity(BaseModelORJson):
     mstAi: MstAi
     mstAiAct: MstAiAct
+
+    class Config:
+        orm_mode = True
 
 
 class AiCollection(BaseModelORJson):

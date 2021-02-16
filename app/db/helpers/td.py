@@ -17,14 +17,12 @@ from .utils import sql_jsonb_agg
 def get_tdEntity(conn: Connection, td_ids: Iterable[int]) -> List[TdEntityNoReverse]:
     mstTreasureDeviceLvJson = (
         select(
-            [
-                mstTreasureDeviceLv.c.treaureDeviceId,
-                func.jsonb_agg(
-                    aggregate_order_by(
-                        mstTreasureDeviceLv.table_valued(), mstTreasureDeviceLv.c.lv
-                    )
-                ).label(mstTreasureDeviceLv.name),
-            ]
+            mstTreasureDeviceLv.c.treaureDeviceId,
+            func.jsonb_agg(
+                aggregate_order_by(
+                    mstTreasureDeviceLv.table_valued(), mstTreasureDeviceLv.c.lv
+                )
+            ).label(mstTreasureDeviceLv.name),
         )
         .where(mstTreasureDeviceLv.c.treaureDeviceId.in_(td_ids))
         .group_by(mstTreasureDeviceLv.c.treaureDeviceId)
@@ -55,14 +53,14 @@ def get_tdEntity(conn: Connection, td_ids: Iterable[int]) -> List[TdEntityNoReve
     ]
 
     stmt = (
-        select(SELECT_TD_ENTITY)
+        select(*SELECT_TD_ENTITY)
         .select_from(JOINED_TD_TABLES)
         .where(mstTreasureDevice.c.id.in_(td_ids))
         .group_by(mstTreasureDevice.c.id, mstTreasureDeviceLvJson.c.mstTreasureDeviceLv)
     )
 
     skill_entities = [
-        TdEntityNoReverse.parse_obj(skill) for skill in conn.execute(stmt).fetchall()
+        TdEntityNoReverse.from_orm(skill) for skill in conn.execute(stmt).fetchall()
     ]
     order = {skill_id: i for i, skill_id in enumerate(td_ids)}
 
@@ -70,7 +68,7 @@ def get_tdEntity(conn: Connection, td_ids: Iterable[int]) -> List[TdEntityNoReve
 
 
 def get_mstSvtTreasureDevice(conn: Connection, svt_id: int) -> List[Any]:
-    mstSvtTreasureDevice_stmt = select([mstSvtTreasureDevice]).where(
+    mstSvtTreasureDevice_stmt = select(mstSvtTreasureDevice).where(
         mstSvtTreasureDevice.c.svtId == svt_id
     )
     fetched: list[Any] = conn.execute(mstSvtTreasureDevice_stmt).fetchall()
@@ -108,7 +106,7 @@ def get_td_search(
         where_clause.append(mstTreasureDeviceLv.c.tdPoint <= maxNpNpGain)
 
     td_search_stmt = (
-        select([mstTreasureDevice])
+        select(mstTreasureDevice)
         .select_from(
             mstTreasureDevice.outerjoin(
                 mstSvtTreasureDevice,
@@ -122,6 +120,5 @@ def get_td_search(
     )
 
     return [
-        MstTreasureDevice.parse_obj(td)
-        for td in conn.execute(td_search_stmt).fetchall()
+        MstTreasureDevice.from_orm(td) for td in conn.execute(td_search_stmt).fetchall()
     ]

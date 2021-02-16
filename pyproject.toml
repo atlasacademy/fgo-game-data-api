@@ -28,7 +28,7 @@ requests = "^2.25.1"
 coverage = "^5.4"
 fuzzywuzzy-stubs = "^0.0.1"
 isort = "^5.7.0"
-sqlalchemy-stubs = "^0.4"
+sqlalchemy-stubs = {git = "https://github.com/squaresmile/sqlalchemy-stubs.git"}
 
 [tool.isort]
 line_length = 88

@@ -34,12 +34,10 @@ from .utils import sql_jsonb_agg
 def sql_sorted_cte(table: Table, svt_id: int, svt_id_col: str, order_col: str) -> CTE:
     return (
         select(
-            [
-                table.c[svt_id_col],
-                func.jsonb_agg(
-                    aggregate_order_by(table.table_valued(), table.c[order_col])
-                ).label(table.name),
-            ]
+            table.c[svt_id_col],
+            func.jsonb_agg(
+                aggregate_order_by(table.table_valued(), table.c[order_col])
+            ).label(table.name),
         )
         .where(table.c[svt_id_col] == svt_id)
         .group_by(table.c[svt_id_col])
@@ -87,7 +85,7 @@ def get_servantEntity(conn: Connection, svt_id: int) -> Any:
     ]
 
     stmt = (
-        select(SELECT_SVT_ENTITY)
+        select(*SELECT_SVT_ENTITY)
         .select_from(JOINED_SVT_TABLES)
         .where(mstSvt.c.id == svt_id)
         .group_by(
@@ -104,24 +102,24 @@ def get_servantEntity(conn: Connection, svt_id: int) -> Any:
 
 def get_mstSvtComment(conn: Connection, svt_id: int) -> List[MstSvtComment]:
     mstSvtComment_stmt = (
-        select([mstSvtComment])
+        select(mstSvtComment)
         .where(mstSvtComment.c.svtId == svt_id)
         .order_by(mstSvtComment.c.id)
     )
     return [
-        MstSvtComment.parse_obj(svt_comment)
+        MstSvtComment.from_orm(svt_comment)
         for svt_comment in conn.execute(mstSvtComment_stmt).fetchall()
     ]
 
 
 def get_mstSvtVoice(conn: Connection, svt_ids: Iterable[int]) -> List[MstSvtVoice]:
     mstSvtVoice_stmt = (
-        select([mstSvtVoice])
+        select(mstSvtVoice)
         .where(mstSvtVoice.c.id.in_(svt_ids))
         .order_by(mstSvtVoice.c.id, mstSvtVoice.c.voicePrefix, mstSvtVoice.c.type)
     )
     return [
-        MstSvtVoice.parse_obj(svt_voice)
+        MstSvtVoice.from_orm(svt_voice)
         for svt_voice in conn.execute(mstSvtVoice_stmt).fetchall()
     ]
 
@@ -130,14 +128,14 @@ def get_mstVoicePlayCond(
     conn: Connection, svt_ids: Iterable[int]
 ) -> List[MstVoicePlayCond]:
     mstVoicePlayCond_stmt = (
-        select([mstVoicePlayCond])
+        select(mstVoicePlayCond)
         .where(mstVoicePlayCond.c.svtId.in_(svt_ids))
         .order_by(
             mstVoicePlayCond.c.svtId, mstVoicePlayCond.c.voiceId, mstVoicePlayCond.c.idx
         )
     )
     return [
-        MstVoicePlayCond.parse_obj(play_cond)
+        MstVoicePlayCond.from_orm(play_cond)
         for play_cond in conn.execute(mstVoicePlayCond_stmt).fetchall()
     ]
 
@@ -146,12 +144,12 @@ def get_mstSubtitle(
     conn: Connection, svt_ids: Iterable[int]
 ) -> List[GlobalNewMstSubtitle]:
     mstSubtitle_stmt = (
-        select([mstSubtitle])
+        select(mstSubtitle)
         .where(mstSubtitle.c.svtId.in_(svt_ids))
         .order_by(mstSubtitle.c.id)
     )
     return [
-        GlobalNewMstSubtitle.parse_obj(subtitle)
+        GlobalNewMstSubtitle.from_orm(subtitle)
         for subtitle in conn.execute(mstSubtitle_stmt).fetchall()
     ]
 
@@ -180,7 +178,7 @@ def get_related_voice_id(
             for group_value in cond_group_value
         ]
 
-    stmt = select([mstSvtVoice.c.id]).where(or_(*where_clause))
+    stmt = select(mstSvtVoice.c.id).where(or_(*where_clause))
 
-    fetched: Set[int] = {svt_id[0] for svt_id in conn.execute(stmt).fetchall()}
+    fetched: Set[int] = {svt_voice.id for svt_voice in conn.execute(stmt).fetchall()}
     return fetched

@@ -14,12 +14,10 @@ def get_skillEntity(
 ) -> List[SkillEntityNoReverse]:
     mstSkillLvJson = (
         select(
-            [
-                mstSkillLv.c.skillId,
-                func.jsonb_agg(
-                    aggregate_order_by(mstSkillLv.table_valued(), mstSkillLv.c.lv)
-                ).label(mstSkillLv.name),
-            ]
+            mstSkillLv.c.skillId,
+            func.jsonb_agg(
+                aggregate_order_by(mstSkillLv.table_valued(), mstSkillLv.c.lv)
+            ).label(mstSkillLv.name),
         )
         .where(mstSkillLv.c.skillId.in_(skill_ids))
         .group_by(mstSkillLv.c.skillId)
@@ -40,14 +38,14 @@ def get_skillEntity(
     ]
 
     stmt = (
-        select(SELECT_SKILL_ENTITY)
+        select(*SELECT_SKILL_ENTITY)
         .select_from(JOINED_SKILL_TABLES)
         .where(mstSkill.c.id.in_(skill_ids))
         .group_by(mstSkill.c.id, mstSkillLvJson.c.mstSkillLv)
     )
 
     skill_entities = (
-        SkillEntityNoReverse.parse_obj(skill) for skill in conn.execute(stmt).fetchall()
+        SkillEntityNoReverse.from_orm(skill) for skill in conn.execute(stmt).fetchall()
     )
     order = {skill_id: i for i, skill_id in enumerate(skill_ids)}
 
@@ -55,7 +53,7 @@ def get_skillEntity(
 
 
 def get_mstSvtSkill(conn: Connection, svt_id: int) -> List[Any]:
-    mstSvtSkill_stmt = select([mstSvtSkill]).where(mstSvtSkill.c.svtId == svt_id)
+    mstSvtSkill_stmt = select(mstSvtSkill).where(mstSvtSkill.c.svtId == svt_id)
     fetched: list[Any] = conn.execute(mstSvtSkill_stmt).fetchall()
     return fetched
 
@@ -84,7 +82,7 @@ def get_skill_search(
         where_clause.append(func.array_length(mstSkillLv.c.funcId, 1).in_(numFunctions))
 
     skill_search_stmt = (
-        select([mstSkill])
+        select(mstSkill)
         .select_from(
             mstSkill.outerjoin(
                 mstSvtSkill, mstSvtSkill.c.skillId == mstSkill.c.id
@@ -94,6 +92,5 @@ def get_skill_search(
     )
 
     return [
-        MstSkill.parse_obj(skill)
-        for skill in conn.execute(skill_search_stmt).fetchall()
+        MstSkill.from_orm(skill) for skill in conn.execute(skill_search_stmt).fetchall()
     ]

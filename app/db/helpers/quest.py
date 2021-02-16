@@ -1,4 +1,4 @@
-from typing import Any, Iterable, List
+from typing import Iterable, List, Optional
 
 from sqlalchemy.engine import Connection
 from sqlalchemy.sql import and_, func, select
@@ -10,7 +10,7 @@ from ...models.raw import (
     mstQuestRelease,
     mstStage,
 )
-from ...schemas.raw import QuestEntity
+from ...schemas.raw import QuestEntity, QuestPhaseEntity
 from .utils import sql_jsonb_agg
 
 
@@ -33,34 +33,31 @@ SELECT_QUEST_ENTITY = [
 
 def get_quest_entity(conn: Connection, quest_ids: Iterable[int]) -> List[QuestEntity]:
     stmt = (
-        select(SELECT_QUEST_ENTITY)
+        select(*SELECT_QUEST_ENTITY)
         .select_from(JOINED_QUEST_TABLES)
         .where(mstQuest.c.id.in_(quest_ids))
         .group_by(mstQuest.c.id)
     )
-    return [QuestEntity.parse_obj(quest) for quest in conn.execute(stmt).fetchall()]
+    return [QuestEntity.from_orm(quest) for quest in conn.execute(stmt).fetchall()]
 
 
 def get_quest_by_spot(conn: Connection, spot_ids: Iterable[int]) -> List[QuestEntity]:
     stmt = (
-        select(SELECT_QUEST_ENTITY)
+        select(*SELECT_QUEST_ENTITY)
         .select_from(JOINED_QUEST_TABLES)
-        .where(mstQuest.c.spotId.in_(spot_ids))
+        .where(mstQuest.c.spotId.in_(tuple(spot_ids)))
         .group_by(mstQuest.c.id)
     )
-    return [
-        QuestEntity.parse_obj(quest)
-        for quest in conn.execute(stmt, spotIds=tuple(spot_ids)).fetchall()
-    ]
+    return [QuestEntity.from_orm(quest) for quest in conn.execute(stmt).fetchall()]
 
 
-def get_quest_phase_entity(conn: Connection, quest_id: int, phase_id: int) -> Any:
+def get_quest_phase_entity(
+    conn: Connection, quest_id: int, phase_id: int
+) -> Optional[QuestPhaseEntity]:
     all_phases_cte = (
         select(
-            [
-                mstQuestPhase.c.questId,
-                func.jsonb_agg(mstQuestPhase.c.phase).label("phases"),
-            ]
+            mstQuestPhase.c.questId,
+            func.jsonb_agg(mstQuestPhase.c.phase).label("phases"),
         )
         .where(mstQuestPhase.c.questId == quest_id)
         .group_by(mstQuestPhase.c.questId)
@@ -87,7 +84,7 @@ def get_quest_phase_entity(conn: Connection, quest_id: int, phase_id: int) -> An
     ]
 
     sql_stmt = (
-        select(select_quest_phase)
+        select(*select_quest_phase)
         .select_from(joined_quest_phase_tables)
         .where(and_(mstQuest.c.id == quest_id, mstQuestPhase.c.phase == phase_id))
         .group_by(
@@ -97,4 +94,8 @@ def get_quest_phase_entity(conn: Connection, quest_id: int, phase_id: int) -> An
         )
     )
 
-    return conn.execute(sql_stmt).fetchone()
+    quest_phase = conn.execute(sql_stmt).fetchone()
+    if quest_phase:
+        return QuestPhaseEntity.from_orm(quest_phase)
+
+    return None
