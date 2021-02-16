@@ -51,11 +51,7 @@ def update_db(region_path: Dict[Region, DirectoryPath]) -> None:  # pragma: no c
                     insert_stmt = insert(table)
                     do_update_stmt = insert_stmt.on_conflict_do_update(
                         index_elements=[col for col in table.c if col.primary_key],
-                        set_={
-                            col: insert_stmt.excluded[col.name]
-                            for col in table.c
-                            if not col.primary_key
-                        },
+                        set_=insert_stmt.excluded,
                     )
                     conn.execute(do_update_stmt, id_data)
 
