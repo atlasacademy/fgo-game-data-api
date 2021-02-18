@@ -1282,9 +1282,9 @@
                         { "id": 3010, "name": "buffMentalEffect" },
                         { "id": 3012, "name": "buffCharm" }
                       ],
-                      "tvals": [{ "id": 2191, "name": "unknown" }],
+                      "tvals": [{ "id": 2191, "name": "buffCharmFemale" }],
                       "ckSelfIndv": [],
-                      "ckOpIndv": [{ "id": 2191, "name": "unknown" }],
+                      "ckOpIndv": [{ "id": 2191, "name": "buffCharmFemale" }],
                       "maxRate": 5000
                     }
                   ],
@@ -1706,9 +1706,9 @@
                         { "id": 3010, "name": "buffMentalEffect" },
                         { "id": 3012, "name": "buffCharm" }
                       ],
-                      "tvals": [{ "id": 2191, "name": "unknown" }],
+                      "tvals": [{ "id": 2191, "name": "buffCharmFemale" }],
                       "ckSelfIndv": [],
-                      "ckOpIndv": [{ "id": 2191, "name": "unknown" }],
+                      "ckOpIndv": [{ "id": 2191, "name": "buffCharmFemale" }],
                       "maxRate": 5000
                     }
                   ],

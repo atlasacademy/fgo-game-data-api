@@ -652,6 +652,7 @@ class Trait(str, Enum):
     eventSummerCamp = "eventSummerCamp"
     eventGuda5 = "eventGuda5"
     cursedBook = "cursedBook"
+    buffCharmFemale = "buffCharmFemale"
 
 
 TRAIT_NAME: Dict[int, Trait] = {
@@ -763,6 +764,7 @@ TRAIT_NAME: Dict[int, Trait] = {
     2113: Trait.king,
     2114: Trait.greekMythologyMales,
     2121: Trait.fieldBurning,
+    2191: Trait.buffCharmFemale,  # Charm buffs that come from females; Fion 2nd skill
     2355: Trait.illya,
     2356: Trait.feminineLookingServant,  # Teach's 3rd skill
     2385: Trait.cursedBook,  # Murasaki Valentine
