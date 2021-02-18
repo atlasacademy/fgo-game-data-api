@@ -45,7 +45,7 @@ def get_quest_by_spot(conn: Connection, spot_ids: Iterable[int]) -> List[QuestEn
     stmt = (
         select(*SELECT_QUEST_ENTITY)
         .select_from(JOINED_QUEST_TABLES)
-        .where(mstQuest.c.spotId.in_(tuple(spot_ids)))
+        .where(mstQuest.c.spotId.in_(spot_ids))
         .group_by(mstQuest.c.id)
     )
     return [QuestEntity.from_orm(quest) for quest in conn.execute(stmt).fetchall()]
