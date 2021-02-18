@@ -1271,7 +1271,7 @@
                   "buffs": [
                     {
                       "id": 213,
-                      "name": "Charm Resist Down (Mental Debuff)",
+                      "name": "Mental Debuff Resist Down",
                       "detail": "Decrease Charm resistance from [Female]",
                       "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_506.png",
                       "type": "downTolerance",
@@ -1695,7 +1695,7 @@
                   "buffs": [
                     {
                       "id": 213,
-                      "name": "Charm Resist Down (Mental Debuff)",
+                      "name": "Mental Debuff Resist Down",
                       "detail": "Decrease Charm resistance from [Female]",
                       "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_506.png",
                       "type": "downTolerance",

@@ -133,7 +133,7 @@ test_cases_dict: Dict[str, Tuple[str, Set[int]]] = {
     "buff_type_ckSelfIndv": ("NA/buff/search?ckSelfIndv=4002&ckSelfIndv=4003", {1162}),
     "buff_type_ckOpIndv": (
         "NA/buff/search?ckOpIndv=4002&type=downDefencecommandall",
-        {301, 456, 506},
+        {301, 456, 506, 1524},
     ),
     "buff_name": ("NA/buff/search?name=Battlefront Guardian of GUDAGUDA", {1056}),
     "buff_buffGroup": ("NA/buff/search?buffGroup=800", {182, 1178, 1311}),
