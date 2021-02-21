@@ -1067,6 +1067,38 @@
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
+        },
+        {
+          "id": 93020309,
+          "name": "Trembling with Fear",
+          "type": "free",
+          "consumeType": "ap",
+          "consume": 21,
+          "consumeItem": [],
+          "spotId": 20314,
+          "warId": 203,
+          "gifts": [
+            {
+              "id": 101,
+              "type": "item",
+              "objectId": 2,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "releaseConditions": [
+            {
+              "type": "questClear",
+              "targetId": 93020307,
+              "value": 0,
+              "closedMessage": ""
+            },
+            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+          ],
+          "phases": [1, 2, 3],
+          "noticeAt": 1613534400,
+          "openedAt": 1613534400,
+          "closedAt": 1893456000
         }
       ]
     },

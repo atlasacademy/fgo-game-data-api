@@ -45,7 +45,7 @@ def get_tdEntity(conn: Connection, td_ids: Iterable[int]) -> List[TdEntityNoReve
     )
 
     SELECT_TD_ENTITY = [
-        mstTreasureDevice.c.id.label("sqlalchemy"),
+        mstTreasureDevice.c.id,
         func.to_jsonb(mstTreasureDevice.table_valued()).label(mstTreasureDevice.name),
         sql_jsonb_agg(mstTreasureDeviceDetail),
         sql_jsonb_agg(mstSvtTreasureDevice),

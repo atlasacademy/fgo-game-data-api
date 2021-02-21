@@ -29,6 +29,14 @@ def test_parse_dataVals_add_state_6_items() -> None:
     }
 
 
+def test_parse_dataVals_unknown_datavals(caplog: pytest.LogCaptureFixture) -> None:
+    parse_dataVals("[1000,3,3,300]", FuncType.SUB_STATE, Region.NA)
+    assert (
+        "Some datavals weren't parsed [1000,3,3,300] => {'Rate': 1000, 'Value': 3, 'Value2': 3}"
+        in caplog.text
+    )
+
+
 def test_parse_dataVals_class_drop_up_rate() -> None:
     result = parse_dataVals("[2,400,80017]", FuncType.CLASS_DROP_UP, Region.NA)
     result = {k: v for k, v in result.items() if "aa" not in k}

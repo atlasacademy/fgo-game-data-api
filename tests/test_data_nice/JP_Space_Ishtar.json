@@ -564,12 +564,10 @@
     "overWriteServantBattleName": {
       "ascension": {
         "0": "アシュタレト",
-        "1": "スペース・イシュタル",
-        "2": "スペース・イシュタル",
         "3": "イシュタル・アシュタレト",
         "4": "イシュタル・アシュタレト"
       },
-      "costume": {}
+      "costume": { "11": "アシュタレト・オリジン" }
     },
     "overWriteTDName": { "ascension": {}, "costume": {} },
     "overWriteTDRuby": { "ascension": {}, "costume": {} },

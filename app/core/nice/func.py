@@ -3,7 +3,7 @@ from typing import Any, Dict, List, Optional, Union
 
 from fastapi import HTTPException
 
-from ...config import Settings
+from ...config import Settings, logger
 from ...data.gamedata import masters
 from ...schemas.common import Region
 from ...schemas.enums import (
@@ -53,6 +53,13 @@ def parse_dataVals(
     datavals: str, functype: int, region: Region
 ) -> Dict[str, Union[int, str, List[int]]]:
     error_message = f"Can't parse datavals: {datavals}"
+    INITIAL_VALUE = -98765
+    # Prefix to be used for temporary keys that need further parsing.
+    # Some functions' datavals can't be parsed by themselves and need the first
+    # or second datavals to determine whether it's a rate % or an absolute value.
+    # See the "Further parsing" section.
+    # The prefix should be something unlikely to be a dataval key.
+    prefix = "aa"
 
     output: Dict[str, Union[int, str, List[int]]] = {}
     if datavals != "[]":
@@ -60,7 +67,7 @@ def parse_dataVals(
         array = re.split(r",\s*(?![^\[\]]*])", datavals)
         for i, arrayi in enumerate(array):
             text = ""
-            value = -98765
+            value = INITIAL_VALUE
             try:
                 value = int(arrayi)
                 if functype in {
@@ -104,12 +111,12 @@ def parse_dataVals(
                     elif i == 3:
                         text = "EventId"
                     else:
-                        text = "aa" + str(i)
+                        text = prefix + str(i)
                 elif functype == FuncType.CLASS_DROP_UP:
                     if i == 2:
                         text = "EventId"
                     else:
-                        text = "aa" + str(i)
+                        text = prefix + str(i)
                 elif functype == FuncType.ENEMY_PROB_DOWN:
                     if i == 0:
                         text = "Individuality"
@@ -121,7 +128,7 @@ def parse_dataVals(
                     if i == 2:
                         text = "Individuality"
                     else:
-                        text = "aa" + str(i)
+                        text = prefix + str(i)
                 elif functype in {
                     FuncType.FRIEND_POINT_UP,
                     FuncType.FRIEND_POINT_UP_DUPLICATE,
@@ -143,7 +150,7 @@ def parse_dataVals(
                     elif array2[0] == "DependFuncVals1":
                         # This assumes DependFuncId is parsed before.
                         # If DW ever make it more complicated than this, consider
-                        # using "aa" + ... and parse it later
+                        # using DUMMY_PREFIX + ... and parse it later
                         func_type = masters[region].mstFuncId[output["DependFuncId"]].funcType  # type: ignore
                         vals_value = parse_dataVals(array2[1], func_type, region)
                         output["DependFuncVals"] = vals_value  # type: ignore
@@ -168,16 +175,21 @@ def parse_dataVals(
             if text:
                 output[text] = value
 
+        if not any(key.startswith(prefix) for key in output):
+            if len(array) != len(output):
+                logger.warning(f"Some datavals weren't parsed [{datavals}] => {output}")
+
+    # Further parsing
     if functype in EVENT_FUNCTIONS:
-        if output["aa1"] == 1:
-            output["AddCount"] = output["aa2"]
-        elif output["aa1"] == 2:
-            output["RateCount"] = output["aa2"]
+        if output[f"{prefix}1"] == 1:
+            output["AddCount"] = output[f"{prefix}2"]
+        elif output[f"{prefix}1"] == 2:
+            output["RateCount"] = output[f"{prefix}2"]
     elif functype in {FuncType.CLASS_DROP_UP} | FRIEND_SUPPORT_FUNCTIONS:
-        if output["aa0"] == 1:
-            output["AddCount"] = output["aa1"]
-        elif output["aa0"] == 2:
-            output["RateCount"] = output["aa1"]
+        if output[f"{prefix}0"] == 1:
+            output["AddCount"] = output[f"{prefix}1"]
+        elif output[f"{prefix}0"] == 2:
+            output["RateCount"] = output[f"{prefix}1"]
 
     return output
 

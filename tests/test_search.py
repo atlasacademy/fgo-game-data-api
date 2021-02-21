@@ -120,7 +120,7 @@ test_cases_dict: Dict[str, Tuple[str, Set[int]]] = {
         "NA/NP/search?hits=10&maxNpNpGain=50&numFunctions=1",
         {202401},
     ),
-    "np_search_name": ("NA/NP/search?name=Mystic%20Eyes", {202901, 602301}),
+    "np_search_name": ("NA/NP/search?name=Mystic%20Eyes", {202901, 602301, 602302}),
     "np_search_individuality": (
         "JP/NP/search?individuality=aoeNP&hits=6&card=arts&strengthStatus=0",
         {504201},
