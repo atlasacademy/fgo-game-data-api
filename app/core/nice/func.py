@@ -23,11 +23,7 @@ settings = Settings()
 
 
 def remove_brackets(val_string: str) -> str:
-    if val_string[0] == "[":
-        val_string = val_string[1:]
-    if val_string[-1] == "]":
-        val_string = val_string[:-1]
-    return val_string
+    return val_string.removeprefix("[").removesuffix("]")
 
 
 EVENT_DROP_FUNCTIONS = {

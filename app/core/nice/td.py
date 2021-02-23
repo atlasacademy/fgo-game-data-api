@@ -69,17 +69,15 @@ def get_nice_td(
             file_i = "np"
         else:
             file_i = "np" + str(imageId // 2)
-        out_td.update(
-            {
-                "icon": AssetURL.commands.format(**base_settings_id, i=file_i),
-                "strengthStatus": chosen_svt.strengthStatus,
-                "num": chosen_svt.num,
-                "priority": chosen_svt.priority,
-                "condQuestId": chosen_svt.condQuestId,
-                "condQuestPhase": chosen_svt.condQuestPhase,
-                "card": CARD_TYPE_NAME[chosen_svt.cardId],
-                "npDistribution": chosen_svt.damage,
-            }
-        )
+        out_td |= {
+            "icon": AssetURL.commands.format(**base_settings_id, i=file_i),
+            "strengthStatus": chosen_svt.strengthStatus,
+            "num": chosen_svt.num,
+            "priority": chosen_svt.priority,
+            "condQuestId": chosen_svt.condQuestId,
+            "condQuestPhase": chosen_svt.condQuestPhase,
+            "card": CARD_TYPE_NAME[chosen_svt.cardId],
+            "npDistribution": chosen_svt.damage,
+        }
         out_tds.append(out_td)
     return out_tds

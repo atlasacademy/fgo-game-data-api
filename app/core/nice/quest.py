@@ -82,17 +82,15 @@ def get_nice_quest_phase(
 ) -> NiceQuestPhase:
     raw_quest = raw.get_quest_phase_entity(conn, quest_id, phase)
     nice_data = get_nice_quest(region, raw_quest)
-    nice_data.update(
-        {
-            "phase": raw_quest.mstQuestPhase.phase,
-            "className": [
-                CLASS_NAME[class_id] for class_id in raw_quest.mstQuestPhase.classIds
-            ],
-            "individuality": get_traits_list(raw_quest.mstQuestPhase.individuality),
-            "qp": raw_quest.mstQuestPhase.qp,
-            "exp": raw_quest.mstQuestPhase.playerExp,
-            "bond": raw_quest.mstQuestPhase.friendshipExp,
-            "stages": [get_nice_stage(region, stage) for stage in raw_quest.mstStage],
-        }
-    )
+    nice_data |= {
+        "phase": raw_quest.mstQuestPhase.phase,
+        "className": [
+            CLASS_NAME[class_id] for class_id in raw_quest.mstQuestPhase.classIds
+        ],
+        "individuality": get_traits_list(raw_quest.mstQuestPhase.individuality),
+        "qp": raw_quest.mstQuestPhase.qp,
+        "exp": raw_quest.mstQuestPhase.playerExp,
+        "bond": raw_quest.mstQuestPhase.friendshipExp,
+        "stages": [get_nice_stage(region, stage) for stage in raw_quest.mstStage],
+    }
     return NiceQuestPhase.parse_obj(nice_data)

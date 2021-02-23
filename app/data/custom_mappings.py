@@ -17,7 +17,7 @@ TRANSLATION_FILES = (
 
 for translation_file in TRANSLATION_FILES:
     with open(MAPPING_PATH / translation_file, "r", encoding="utf-8") as fp:
-        TRANSLATIONS.update(json.load(fp))
+        TRANSLATIONS |= json.load(fp)
 
 
 EXTRA_CHARAFIGURES: dict[int, list[int]] = {}

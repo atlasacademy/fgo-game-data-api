@@ -147,19 +147,17 @@ def get_nice_servant(
         for exp in growthCurveValues[1:growthCurveMax]
     ]
     expGrowth = [exp.exp for exp in growthCurveValues[: growthCurveMax - 1]]
-    nice_data.update(
-        {
-            "lvMax": lvMax,
-            "growthCurve": growthCurve,
-            "atkMax": atkMax,
-            "atkBase": atkBase,
-            "hpMax": hpMax,
-            "hpBase": hpBase,
-            "atkGrowth": atkGrowth,
-            "hpGrowth": hpGrowth,
-            "expGrowth": expGrowth,
-        }
-    )
+    nice_data |= {
+        "lvMax": lvMax,
+        "growthCurve": growthCurve,
+        "atkMax": atkMax,
+        "atkBase": atkBase,
+        "hpMax": hpMax,
+        "hpBase": hpBase,
+        "atkGrowth": atkGrowth,
+        "hpGrowth": hpGrowth,
+        "expGrowth": expGrowth,
+    }
 
     nice_data["expFeed"] = [
         combine.value

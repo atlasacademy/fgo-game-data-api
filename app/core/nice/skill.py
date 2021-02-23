@@ -101,17 +101,15 @@ def get_nice_skill_with_svt(
         out_skills = []
         for chosenSvt in chosen_svts:
             out_skill = deepcopy(nice_skill)
-            out_skill.update(
-                {
-                    "strengthStatus": chosenSvt.strengthStatus,
-                    "num": chosenSvt.num,
-                    "priority": chosenSvt.priority,
-                    "condQuestId": chosenSvt.condQuestId,
-                    "condQuestPhase": chosenSvt.condQuestPhase,
-                    "condLv": chosenSvt.condLv,
-                    "condLimitCount": chosenSvt.condLimitCount,
-                }
-            )
+            out_skill |= {
+                "strengthStatus": chosenSvt.strengthStatus,
+                "num": chosenSvt.num,
+                "priority": chosenSvt.priority,
+                "condQuestId": chosenSvt.condQuestId,
+                "condQuestPhase": chosenSvt.condQuestPhase,
+                "condLv": chosenSvt.condLv,
+                "condLimitCount": chosenSvt.condLimitCount,
+            }
             out_skills.append(out_skill)
         return out_skills
 
