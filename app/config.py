@@ -10,6 +10,7 @@ from pydantic import (
     SecretStr,
     validator,
 )
+from uvicorn.logging import DefaultFormatter
 
 
 project_root = Path(__file__).resolve().parents[1]
@@ -18,7 +19,7 @@ project_root = Path(__file__).resolve().parents[1]
 uvicorn_logger = logging.getLogger("uvicorn.access")
 logger = logging.getLogger("fgoapi")
 console_handler = logging.StreamHandler()
-console_handler.setFormatter(logging.Formatter("%(levelname)-9s %(name)s: %(message)s"))
+console_handler.setFormatter(DefaultFormatter("%(levelprefix)s %(name)s: %(message)s"))
 logger.addHandler(console_handler)
 logger.setLevel(uvicorn_logger.level)
 
