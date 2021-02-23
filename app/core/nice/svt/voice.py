@@ -1,5 +1,3 @@
-from typing import Dict, List
-
 from ....config import Settings
 from ....data.gamedata import masters
 from ....schemas.common import Region
@@ -56,7 +54,7 @@ def get_nice_play_cond(playCond: MstVoicePlayCond) -> NiceVoicePlayCond:
 
 
 def get_nice_voice_cond(
-    region: Region, cond: ScriptJsonCond, costume_ids: Dict[int, int]
+    region: Region, cond: ScriptJsonCond, costume_ids: dict[int, int]
 ) -> NiceVoiceCond:
     cond_value = (
         costume_ids[cond.value]
@@ -86,9 +84,9 @@ def get_nice_voice_line(
     svt_id: int,
     voice_prefix: int,
     voice_type: int,
-    costume_ids: Dict[int, int],
-    subtitle_ids: Dict[str, str],
-    play_conds: List[MstVoicePlayCond],
+    costume_ids: dict[int, int],
+    subtitle_ids: dict[str, str],
+    play_conds: list[MstVoicePlayCond],
 ) -> NiceVoiceLine:
     first_voice = script.infos[0]
     # Some voice lines have the first info id ending with xxx1 or xxx2 and we want xxx0
@@ -129,9 +127,9 @@ def get_nice_voice_line(
 def get_nice_voice_group(
     region: Region,
     voice: MstSvtVoice,
-    costume_ids: Dict[int, int],
-    subtitle_ids: Dict[str, str],
-    play_conds: List[MstVoicePlayCond],
+    costume_ids: dict[int, int],
+    subtitle_ids: dict[str, str],
+    play_conds: list[MstVoicePlayCond],
 ) -> NiceVoiceGroup:
     return NiceVoiceGroup(
         svtId=voice.id,
@@ -154,8 +152,8 @@ def get_nice_voice_group(
 
 
 def get_nice_voice(
-    region: Region, raw_svt: ServantEntity, costume_ids: Dict[int, int]
-) -> List[NiceVoiceGroup]:
+    region: Region, raw_svt: ServantEntity, costume_ids: dict[int, int]
+) -> list[NiceVoiceGroup]:
     subtitle_ids = {subtitle.id: subtitle.serif for subtitle in raw_svt.mstSubtitle}
 
     return [

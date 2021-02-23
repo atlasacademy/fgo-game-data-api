@@ -1,4 +1,4 @@
-from typing import Any, Dict, Iterable, List, Set
+from typing import Any, Iterable
 
 from sqlalchemy import Table
 from sqlalchemy.dialects.postgresql import JSONB, aggregate_order_by
@@ -100,7 +100,7 @@ def get_servantEntity(conn: Connection, svt_id: int) -> Any:
     return conn.execute(stmt).fetchone()
 
 
-def get_mstSvtComment(conn: Connection, svt_id: int) -> List[MstSvtComment]:
+def get_mstSvtComment(conn: Connection, svt_id: int) -> list[MstSvtComment]:
     mstSvtComment_stmt = (
         select(mstSvtComment)
         .where(mstSvtComment.c.svtId == svt_id)
@@ -112,7 +112,7 @@ def get_mstSvtComment(conn: Connection, svt_id: int) -> List[MstSvtComment]:
     ]
 
 
-def get_mstSvtVoice(conn: Connection, svt_ids: Iterable[int]) -> List[MstSvtVoice]:
+def get_mstSvtVoice(conn: Connection, svt_ids: Iterable[int]) -> list[MstSvtVoice]:
     mstSvtVoice_stmt = (
         select(mstSvtVoice)
         .where(mstSvtVoice.c.id.in_(svt_ids))
@@ -126,7 +126,7 @@ def get_mstSvtVoice(conn: Connection, svt_ids: Iterable[int]) -> List[MstSvtVoic
 
 def get_mstVoicePlayCond(
     conn: Connection, svt_ids: Iterable[int]
-) -> List[MstVoicePlayCond]:
+) -> list[MstVoicePlayCond]:
     mstVoicePlayCond_stmt = (
         select(mstVoicePlayCond)
         .where(mstVoicePlayCond.c.svtId.in_(svt_ids))
@@ -142,7 +142,7 @@ def get_mstVoicePlayCond(
 
 def get_mstSubtitle(
     conn: Connection, svt_ids: Iterable[int]
-) -> List[GlobalNewMstSubtitle]:
+) -> list[GlobalNewMstSubtitle]:
     mstSubtitle_stmt = (
         select(mstSubtitle)
         .where(mstSubtitle.c.svtId.in_(svt_ids))
@@ -156,13 +156,13 @@ def get_mstSubtitle(
 
 def voice_cond_pattern(
     condType: int, value: int
-) -> List[Dict[str, List[Dict[str, int]]]]:
+) -> list[dict[str, list[dict[str, int]]]]:
     return [{"conds": [{"condType": condType, "value": value}]}]
 
 
 def get_related_voice_id(
-    conn: Connection, cond_svt_value: Set[int], cond_group_value: Set[int]
-) -> Set[int]:
+    conn: Connection, cond_svt_value: set[int], cond_group_value: set[int]
+) -> set[int]:
     where_clause = [
         mstSvtVoice.c.scriptJson.contains(
             voice_cond_pattern(VoiceCondType.SVT_GET.value, svt_value)
@@ -180,5 +180,5 @@ def get_related_voice_id(
 
     stmt = select(mstSvtVoice.c.id).where(or_(*where_clause))
 
-    fetched: Set[int] = {svt_voice.id for svt_voice in conn.execute(stmt).fetchall()}
+    fetched: set[int] = {svt_voice.id for svt_voice in conn.execute(stmt).fetchall()}
     return fetched

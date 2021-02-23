@@ -1,4 +1,4 @@
-from typing import Iterable, List, Set, Union
+from typing import Iterable, Union
 
 from fastapi import HTTPException
 from fuzzywuzzy import fuzz, utils
@@ -47,7 +47,7 @@ INSUFFICIENT_QUERY = (
 TOO_MANY_RESULTS = "More than {} items found. Please narrow down the query."
 
 
-def reverse_traits(traits: Iterable[Union[Trait, int]]) -> Set[int]:
+def reverse_traits(traits: Iterable[Union[Trait, int]]) -> set[int]:
     return {
         TRAIT_NAME_REVERSE[trait] if isinstance(trait, Trait) else trait
         for trait in traits
@@ -119,7 +119,7 @@ def search_servant(
     conn: Connection,
     search_param: Union[ServantSearchQueryParams, SvtSearchQueryParams],
     limit: int = 100,
-) -> List[int]:
+) -> list[int]:
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
@@ -184,7 +184,7 @@ def search_servant(
     return [svt.id for svt in matches]
 
 
-def search_equip(search_param: EquipSearchQueryParams, limit: int = 100) -> List[int]:
+def search_equip(search_param: EquipSearchQueryParams, limit: int = 100) -> list[int]:
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
@@ -218,7 +218,7 @@ def search_equip(search_param: EquipSearchQueryParams, limit: int = 100) -> List
 
 def search_skill(
     conn: Connection, search_param: SkillSearchParams, limit: int = 100
-) -> List[int]:
+) -> list[int]:
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
@@ -254,7 +254,7 @@ def search_skill(
 
 def search_td(
     conn: Connection, search_param: TdSearchParams, limit: int = 100
-) -> List[int]:
+) -> list[int]:
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
@@ -290,7 +290,7 @@ def search_td(
     return [td.id for td in matches]
 
 
-def search_buff(search_param: BuffSearchQueryParams, limit: int = 100) -> List[int]:
+def search_buff(search_param: BuffSearchQueryParams, limit: int = 100) -> list[int]:
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
@@ -328,7 +328,7 @@ def search_buff(search_param: BuffSearchQueryParams, limit: int = 100) -> List[i
     return [buff.id for buff in matches]
 
 
-def search_func(search_param: FuncSearchQueryParams, limit: int = 100) -> List[int]:
+def search_func(search_param: FuncSearchQueryParams, limit: int = 100) -> list[int]:
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
@@ -378,7 +378,7 @@ def search_func(search_param: FuncSearchQueryParams, limit: int = 100) -> List[i
     return [func.id for func in matches]
 
 
-def search_item(search_param: ItemSearchQueryParams) -> List[MstItem]:
+def search_item(search_param: ItemSearchQueryParams) -> list[MstItem]:
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 

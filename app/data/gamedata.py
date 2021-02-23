@@ -1,6 +1,5 @@
 import time
 from collections import defaultdict
-from typing import Dict
 
 import orjson
 from pydantic import DirectoryPath
@@ -14,7 +13,7 @@ from ..schemas.raw import BAD_COMBINE_SVT_LIMIT, Master, is_equip, is_servant
 settings = Settings()
 
 
-masters: Dict[Region, Master] = {}
+masters: dict[Region, Master] = {}
 MASTER_WITH_ID = {
     "mstSvt",
     "mstBuff",
@@ -75,7 +74,7 @@ def is_Mash_Valentine_equip(region: Region, comment: str) -> bool:
     return VALENTINE_NAME[region] in header and MASH_NAME[region] in header
 
 
-def update_masters(region_path: Dict[Region, DirectoryPath]) -> None:
+def update_masters(region_path: dict[Region, DirectoryPath]) -> None:
     logger.info("Loading game data …")
     start_loading_time = time.perf_counter()
 

@@ -1,6 +1,4 @@
 # pylint: disable=R0201,R0904
-from typing import Dict, Tuple
-
 import pytest
 from fastapi.testclient import TestClient
 
@@ -16,7 +14,7 @@ from .utils import get_response_data
 client = TestClient(app)
 
 
-test_cases_dict: Dict[str, Tuple[str, str]] = {
+test_cases_dict: dict[str, tuple[str, str]] = {
     "servant_NA_collectionNo": ("NA/servant/105", "NA_Billy"),
     "servant_NA_id": ("NA/servant/201000", "NA_Billy"),
     "servant_NA_lore_costume": ("NA/servant/96?lore=True", "NA_Dantes_lore_costume"),
@@ -169,7 +167,7 @@ cases_datavals = [
 
 @pytest.mark.parametrize("skill_id,function_index,parse_result", cases_datavals)
 def test_special_datavals(
-    skill_id: int, function_index: int, parse_result: Dict[str, int]
+    skill_id: int, function_index: int, parse_result: dict[str, int]
 ) -> None:
     response = client.get(f"/nice/JP/skill/{skill_id}")
     assert response.status_code == 200

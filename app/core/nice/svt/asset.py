@@ -1,5 +1,5 @@
 from collections import defaultdict
-from typing import Dict, Union
+from typing import Union
 
 import orjson
 from pydantic import HttpUrl
@@ -23,7 +23,7 @@ def fmt_url(url_fmt: str, **kwargs: Union[int, str]) -> HttpUrl:
 
 
 def get_svt_extraAssets(
-    region: Region, svt_id: int, raw_svt: ServantEntity, costume_ids: Dict[int, int]
+    region: Region, svt_id: int, raw_svt: ServantEntity, costume_ids: dict[int, int]
 ) -> ExtraAssets:
     charaGraph = ExtraAssetsUrl()
     charaGraphName = ExtraAssetsUrl()
@@ -31,7 +31,7 @@ def get_svt_extraAssets(
     commands = ExtraAssetsUrl()
     status = ExtraAssetsUrl()
     charaFigure = ExtraAssetsUrl()
-    charaFigureForm: Dict[int, Dict[str, Dict[int, str]]] = defaultdict(
+    charaFigureForm: dict[int, dict[str, dict[int, str]]] = defaultdict(
         lambda: defaultdict(dict)
     )
     narrowFigure = ExtraAssetsUrl()
@@ -39,7 +39,7 @@ def get_svt_extraAssets(
     image = ExtraAssetsUrl()
 
     base_settings = {"base_url": settings.asset_url, "region": region}
-    base_settings_id: Dict[str, Union[int, str]] = {
+    base_settings_id: dict[str, Union[int, str]] = {
         "base_url": settings.asset_url,
         "region": region,
         "item_id": svt_id,

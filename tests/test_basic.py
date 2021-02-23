@@ -1,6 +1,4 @@
 # pylint: disable=R0201
-from typing import Dict, Set, Tuple
-
 import pytest
 from fastapi.testclient import TestClient
 
@@ -12,7 +10,7 @@ from .utils import get_response_data
 client = TestClient(app)
 
 
-test_cases_dict: Dict[str, Tuple[str, str]] = {
+test_cases_dict: dict[str, tuple[str, str]] = {
     "servant_NA_collectionNo": ("NA/servant/76", "NA_Mordred"),
     "servant_NA_id": ("NA/servant/100900", "NA_Mordred"),
     "servant_JP_collectionNo": ("JP/servant/256", "JP_Gareth"),
@@ -83,7 +81,7 @@ class TestBasicSpecial:
 
     def test_skill_reverse_passive(self) -> None:
         response = client.get("/basic/NA/skill/30650?reverse=True")
-        reverse_servants: Set[int] = {
+        reverse_servants: set[int] = {
             servant["id"] for servant in response.json()["reverse"]["basic"]["servant"]
         }
         assert response.status_code == 200

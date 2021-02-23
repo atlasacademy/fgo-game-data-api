@@ -1,5 +1,5 @@
 from decimal import Decimal
-from typing import Dict, Generic, List, Optional, TypeVar
+from typing import Generic, Optional, TypeVar
 
 from pydantic import BaseModel, Field, HttpUrl
 from pydantic.generics import GenericModel
@@ -94,9 +94,9 @@ class NiceItem(BaseModelORJson):
     id: int
     name: str
     type: NiceItemType
-    uses: List[NiceItemUse]
+    uses: list[NiceItemUse]
     detail: str
-    individuality: List[NiceTrait]
+    individuality: list[NiceTrait]
     icon: HttpUrl
     background: NiceItemBGType
     priority: int
@@ -109,7 +109,7 @@ class NiceItemAmount(BaseModel):
 
 
 class NiceLvlUpMaterial(BaseModel):
-    items: List[NiceItemAmount]
+    items: list[NiceItemAmount]
     qp: int
 
 
@@ -146,7 +146,7 @@ class BaseVals(BaseModel):
     EffectSummon: Optional[int] = None
     RatioHPRangeHigh: Optional[int] = None
     RatioHPRangeLow: Optional[int] = None
-    TargetList: Optional[List[int]] = None
+    TargetList: Optional[list[int]] = None
     OpponentOnly: Optional[int] = None
     StatusEffectId: Optional[int] = None
     EndBattle: Optional[int] = None
@@ -157,7 +157,7 @@ class BaseVals(BaseModel):
     SameBuffLimitNum: Optional[int] = None
     CheckDuplicate: Optional[int] = None
     OnFieldCount: Optional[int] = None
-    TargetRarityList: Optional[List[int]] = None
+    TargetRarityList: Optional[list[int]] = None
     DependFuncId: Optional[int] = None
     InvalidHide: Optional[int] = None
     OutEnemyNpcId: Optional[int] = None
@@ -168,7 +168,7 @@ class BaseVals(BaseModel):
     ChangeTDCommandType: Optional[int] = None
     ShiftNpcId: Optional[int] = None
     DisplayLastFuncInvalidType: Optional[int] = None
-    AndCheckIndividualityList: Optional[List[int]] = None
+    AndCheckIndividualityList: Optional[list[int]] = None
     WinBattleNotRelatedSurvivalStatus: Optional[int] = None
     ForceSelfInstantDeath: Optional[int] = None
     ChangeMaxBreakGauge: Optional[int] = None
@@ -221,24 +221,24 @@ class NiceBuff(BaseModelORJson):
         description="Random stuffs that get added to the buff entry. "
         "See each field description for more details.",
     )
-    vals: List[NiceTrait] = Field(
+    vals: list[NiceTrait] = Field(
         ...,
         title="Buff individualities",
         description="Buff traits/individualities. "
         "For example, buff removal uses this field to target the buffs.",
     )
-    tvals: List[NiceTrait] = Field(
+    tvals: list[NiceTrait] = Field(
         ...,
         title="Buff tvals",
         description="Buff tvals: I'm quite sure this field is used for "
         "visual purposes only and not gameplay.",
     )
-    ckSelfIndv: List[NiceTrait] = Field(
+    ckSelfIndv: list[NiceTrait] = Field(
         ...,
         title="Check self individualities",
         description="Buff holder's required individuality for the buff's effect to apply.",
     )
-    ckOpIndv: List[NiceTrait] = Field(
+    ckOpIndv: list[NiceTrait] = Field(
         ...,
         title="Check oponent individualities",
         description="Target's required individuality for the buff's effect to apply.",
@@ -286,29 +286,29 @@ class NiceBaseFunction(BaseModelORJson):
     funcPopupIcon: Optional[HttpUrl] = Field(
         None, title="Function pop-up icon URL", description="Function pop-up icon URL."
     )
-    functvals: List[NiceTrait] = Field(
+    functvals: list[NiceTrait] = Field(
         ...,
         title="Function tvals",
         description="Function tvals: If available, function's targets or their buffs "
         "need to satisfy the traits given here.",
     )
-    funcquestTvals: List[NiceTrait] = Field(
+    funcquestTvals: list[NiceTrait] = Field(
         ...,
         title="Function quest traits",
         description="Function quest traits. "
         "The current quest needs this traits for the function to works.",
     )
-    funcGroup: List[NiceFuncGroup] = Field(
+    funcGroup: list[NiceFuncGroup] = Field(
         ...,
         title="Function group details",
         description="Some more details for event drop up, bond point up functions",
     )
-    traitVals: List[NiceTrait] = Field(
+    traitVals: list[NiceTrait] = Field(
         [],
         title="Trait details",
         description="Trait details to be used by buff removal functions.",
     )
-    buffs: List[NiceBuff] = Field(
+    buffs: list[NiceBuff] = Field(
         ...,
         title="Buff details",
         description="Buff details to be used by apply buff functions."
@@ -318,32 +318,32 @@ class NiceBaseFunction(BaseModelORJson):
 
 
 class NiceFunction(NiceBaseFunction):
-    svals: List[Vals] = Field(
+    svals: list[Vals] = Field(
         ...,
         title="Parameter values by skill level or NP level",
         description="Parameter values by skill level or NP level",
     )
-    svals2: Optional[List[Vals]] = Field(
+    svals2: Optional[list[Vals]] = Field(
         None,
         title="Parameter values for NP Overcharge level 2",
         description="Parameter values for NP Overcharge level 2 by NP level",
     )
-    svals3: Optional[List[Vals]] = Field(
+    svals3: Optional[list[Vals]] = Field(
         None,
         title="Parameter values for NP Overcharge level 3",
         description="Parameter values for NP Overcharge level 3 by NP level",
     )
-    svals4: Optional[List[Vals]] = Field(
+    svals4: Optional[list[Vals]] = Field(
         None,
         title="Parameter values for NP Overcharge level 4",
         description="Parameter values for NP Overcharge level 4 by NP level",
     )
-    svals5: Optional[List[Vals]] = Field(
+    svals5: Optional[list[Vals]] = Field(
         None,
         title="Parameter values for NP Overcharge level 5",
         description="Parameter values for NP Overcharge level 5 by NP level",
     )
-    followerVals: Optional[List[Vals]] = Field(
+    followerVals: Optional[list[Vals]] = Field(
         None,
         title="Parameter values when used by a support servant",
         description="Parameter values when used by a support servant. "
@@ -353,14 +353,14 @@ class NiceFunction(NiceBaseFunction):
 
 
 class NiceSkillScript(BaseModel):
-    NP_HIGHER: Optional[List[int]] = None
-    NP_LOWER: Optional[List[int]] = None
-    STAR_HIGHER: Optional[List[int]] = None
-    STAR_LOWER: Optional[List[int]] = None
-    HP_VAL_HIGHER: Optional[List[int]] = None
-    HP_VAL_LOWER: Optional[List[int]] = None
-    HP_PER_HIGHER: Optional[List[int]] = None
-    HP_PER_LOWER: Optional[List[int]] = None
+    NP_HIGHER: Optional[list[int]] = None
+    NP_LOWER: Optional[list[int]] = None
+    STAR_HIGHER: Optional[list[int]] = None
+    STAR_LOWER: Optional[list[int]] = None
+    HP_VAL_HIGHER: Optional[list[int]] = None
+    HP_VAL_LOWER: Optional[list[int]] = None
+    HP_PER_HIGHER: Optional[list[int]] = None
+    HP_PER_LOWER: Optional[list[int]] = None
 
 
 class NiceSkill(BaseModelORJson):
@@ -377,20 +377,20 @@ class NiceSkill(BaseModelORJson):
     condLv: int = -1
     condLimitCount: int = -1
     icon: Optional[HttpUrl] = None
-    coolDown: List[int]
-    actIndividuality: List[NiceTrait]
+    coolDown: list[int]
+    actIndividuality: list[NiceTrait]
     script: NiceSkillScript
-    aiIds: Optional[Dict[AiType, List[int]]] = None
-    functions: List[NiceFunction]
+    aiIds: Optional[dict[AiType, list[int]]] = None
+    functions: list[NiceFunction]
 
 
 class NpGain(BaseModel):
-    buster: List[int]
-    arts: List[int]
-    quick: List[int]
-    extra: List[int]
-    defence: List[int]
-    np: List[int]
+    buster: list[int]
+    arts: list[int]
+    quick: list[int]
+    extra: list[int]
+    defence: list[int]
+    np: list[int]
 
 
 class NiceTd(BaseModelORJson):
@@ -404,13 +404,13 @@ class NiceTd(BaseModelORJson):
     type: str
     detail: Optional[str] = None
     npGain: NpGain
-    npDistribution: List[int]
+    npDistribution: list[int]
     strengthStatus: int
     priority: int
     condQuestId: int
     condQuestPhase: int
-    individuality: List[NiceTrait]
-    functions: List[NiceFunction]
+    individuality: list[NiceTrait]
+    functions: list[NiceFunction]
 
 
 class ExtraMCAssets(BaseModel):
@@ -425,16 +425,16 @@ class NiceMysticCode(BaseModelORJson):
     detail: str
     maxLv: int
     extraAssets: ExtraMCAssets
-    skills: List[NiceSkill]
-    expRequired: List[int]
+    skills: list[NiceSkill]
+    expRequired: list[int]
 
 
 class ExtraAssetsUrl(BaseModel):
-    ascension: Optional[Dict[int, HttpUrl]] = None
-    story: Optional[Dict[int, HttpUrl]] = None
-    costume: Optional[Dict[int, HttpUrl]] = None
-    equip: Optional[Dict[int, HttpUrl]] = None
-    cc: Optional[Dict[int, HttpUrl]] = None
+    ascension: Optional[dict[int, HttpUrl]] = None
+    story: Optional[dict[int, HttpUrl]] = None
+    costume: Optional[dict[int, HttpUrl]] = None
+    equip: Optional[dict[int, HttpUrl]] = None
+    cc: Optional[dict[int, HttpUrl]] = None
 
 
 class ExtraCCAssets(BaseModel):
@@ -446,7 +446,7 @@ class ExtraAssets(ExtraCCAssets):
     charaGraphName: ExtraAssetsUrl
     narrowFigure: ExtraAssetsUrl
     charaFigure: ExtraAssetsUrl
-    charaFigureForm: Dict[int, ExtraAssetsUrl]
+    charaFigureForm: dict[int, ExtraAssetsUrl]
     commands: ExtraAssetsUrl
     status: ExtraAssetsUrl
     equipFace: ExtraAssetsUrl
@@ -462,18 +462,18 @@ AscensionAddData = TypeVar("AscensionAddData")
 
 
 class AscensionAddEntry(GenericModel, Generic[AscensionAddData]):
-    ascension: Dict[int, AscensionAddData] = Field(
+    ascension: dict[int, AscensionAddData] = Field(
         ...,
         title="Ascension changes",
         description="Mapping <Ascension level, Ascension level data>.",
     )
-    costume: Dict[int, AscensionAddData] = Field(
+    costume: dict[int, AscensionAddData] = Field(
         ..., title="Costume changes", description="Mapping <Costume ID, Costume data>."
     )
 
 
 class AscensionAdd(BaseModel):
-    individuality: AscensionAddEntry[List[NiceTrait]] = Field(
+    individuality: AscensionAddEntry[list[NiceTrait]] = Field(
         ...,
         title="Individuality changes",
         description="Some servants add or remove traits as they ascend.",
@@ -497,8 +497,8 @@ class AscensionAdd(BaseModel):
 
 
 class NiceServantChange(BaseModel):
-    beforeTreasureDeviceIds: List[int]
-    afterTreasureDeviceIds: List[int]
+    beforeTreasureDeviceIds: list[int]
+    afterTreasureDeviceIds: list[int]
     svtId: int
     priority: int
     condType: NiceCondType
@@ -517,7 +517,7 @@ class NiceLoreComment(BaseModel):
     condMessage: str
     comment: str
     condType: NiceCondType
-    condValues: Optional[List[int]]
+    condValues: Optional[list[int]]
     condValue2: int
 
 
@@ -549,9 +549,9 @@ class NiceVoiceCond(BaseModel):
     value: int = Field(
         ..., title="Voice Cond Value", description="Threshold value for the condtion."
     )
-    valueList: List[int] = Field(
+    valueList: list[int] = Field(
         [],
-        title="Voice Cond Value List",
+        title="Voice Cond Value list",
         description="If the voice cond is `svtGroup`, "
         "this list will hold the applicable servant IDs.",
     )
@@ -596,26 +596,26 @@ class NiceVoiceLine(BaseModel):
     overwriteName: str = Field(
         ..., title="Voice line overwrite name", description="Voice line overwrite name."
     )
-    id: List[str] = Field(..., title="Voice line IDs", description="Voice line IDs.")
-    audioAssets: List[str] = Field(
+    id: list[str] = Field(..., title="Voice line IDs", description="Voice line IDs.")
+    audioAssets: list[str] = Field(
         ..., title="Voice line mp3 URLs", description="Voice line mp3 URLs."
     )
-    delay: List[Decimal] = Field(
+    delay: list[Decimal] = Field(
         ...,
         title="Voice line delays",
         description="Delays in seconds before playing the audio file.",
     )
-    face: List[int] = Field(
+    face: list[int] = Field(
         ...,
         title="Voice line faces",
         description="CharaFigure faces to be used when playing the voice line.",
     )
-    form: List[int] = Field(
+    form: list[int] = Field(
         ...,
         title="Voice line forms",
         description="CharaFigure forms to be used when playing the voice line.",
     )
-    text: List[str] = Field(
+    text: list[str] = Field(
         ...,
         title="Voice line texts",
         description="Texts used for summoning subtitles. "
@@ -626,12 +626,12 @@ class NiceVoiceLine(BaseModel):
         title="Voice line subtitles",
         description="English subtitle for the voice line, only applicable to NA data.",
     )
-    conds: List[NiceVoiceCond] = Field(
+    conds: list[NiceVoiceCond] = Field(
         ...,
         title="Voice line conditions",
         description="Conditions to unlock the voice line.",
     )
-    playConds: List[NiceVoicePlayCond] = Field(
+    playConds: list[NiceVoicePlayCond] = Field(
         ...,
         title="Voice line play conditions",
         description="Conditions to play the voice line."
@@ -644,23 +644,23 @@ class NiceVoiceGroup(BaseModel):
     svtId: int
     voicePrefix: int
     type: NiceSvtVoiceType
-    voiceLines: List[NiceVoiceLine]
+    voiceLines: list[NiceVoiceLine]
 
 
 class NiceLore(BaseModel):
     cv: str
     illustrator: str
     stats: Optional[NiceLoreStats] = None
-    costume: Dict[int, NiceCostume]
-    comments: List[NiceLoreComment]
-    voices: List[NiceVoiceGroup]
+    costume: dict[int, NiceCostume]
+    comments: list[NiceLoreComment]
+    voices: list[NiceVoiceGroup]
 
 
 class NiceServantScript(BaseModel):
-    SkillRankUp: Optional[Dict[int, List[int]]] = Field(
+    SkillRankUp: Optional[dict[int, list[int]]] = Field(
         None,
         title="SkillRankUp",
-        description="Mapping <Skill IDs, List[Skill IDs]>. "
+        description="Mapping <Skill IDs, list[Skill IDs]>. "
         "Summer Kiara 1st skill additional data. "
         "The keys are the base skill IDs and the values are the rank-up skill IDs.",
     )
@@ -672,7 +672,7 @@ class NiceCommandCode(BaseModelORJson):
     name: str
     rarity: int
     extraAssets: ExtraCCAssets
-    skills: List[NiceSkill]
+    skills: list[NiceSkill]
     illustrator: str
     comment: str
 
@@ -682,14 +682,14 @@ class NiceServant(BaseModelORJson):
         ...,
         title="Servant ID",
         description="svt's internal ID. "
-        'Note that this is different from the 1~300 IDs shown in "Spirit Origin List", '
+        'Note that this is different from the 1~300 IDs shown in "Spirit Origin list", '
         "which is `.collectionNo`. "
         "This ID is unique accross svt items (servants, CEs, EXPs, enemies, …)",
     )
     collectionNo: int = Field(
         ...,
         title="Collection No",
-        description='The ID number shown in "Spirit Origin List". '
+        description='The ID number shown in "Spirit Origin list". '
         "The community usually means this number when they talk about servant or CE IDs.",
     )
     name: str = Field(..., title="svt's name", description="svt's name")
@@ -723,18 +723,18 @@ class NiceServant(BaseModelORJson):
     attribute: Attribute = Field(
         ..., title="svt's attribute", description="svt's attribute."
     )
-    traits: List[NiceTrait] = Field(
+    traits: list[NiceTrait] = Field(
         ...,
-        title="List of traits",
-        description="List of individualities, or commonly refered to as traits.",
+        title="list of traits",
+        description="list of individualities, or commonly refered to as traits.",
     )
     starAbsorb: int = Field(..., title="Star weight", description="Star weight.")
     starGen: int = Field(..., title="Star rate", description="Star generation rate.")
     instantDeathChance: int = Field(
         ..., title="Instant death chance", description="Instant death chance."
     )
-    cards: List[NiceCardType] = Field(..., title="Card deck", description="Card deck.")
-    hitsDistribution: Dict[NiceCardType, List[int]] = Field(
+    cards: list[NiceCardType] = Field(..., title="Card deck", description="Card deck.")
+    hitsDistribution: dict[NiceCardType, list[int]] = Field(
         ...,
         title="Hits distribution",
         description="Mapping <Card type, Hits distribution>.",
@@ -743,7 +743,7 @@ class NiceServant(BaseModelORJson):
     atkMax: int = Field(..., title="Max ATK", description="Max ATK (without grailing).")
     hpBase: int = Field(..., title="Base HP", description="Base HP.")
     hpMax: int = Field(..., title="Max HP", description="Max HP (without grailing).")
-    relateQuestIds: List[int] = Field(
+    relateQuestIds: list[int] = Field(
         ...,
         title="Related quest IDs",
         description="IDs of related quests: rank-ups or interludes.",
@@ -751,28 +751,28 @@ class NiceServant(BaseModelORJson):
     growthCurve: int = Field(
         ..., title="Growth curve type", description="Growth curve type"
     )
-    atkGrowth: List[int] = Field(
+    atkGrowth: list[int] = Field(
         ...,
         title="ATK value per level",
         description="ATK value per level, including grail levels.",
     )
-    hpGrowth: List[int] = Field(
+    hpGrowth: list[int] = Field(
         ...,
         title="HP value per level",
         description="HP value per level, including grail levels.",
     )
-    bondGrowth: List[int] = Field(
+    bondGrowth: list[int] = Field(
         ...,
         title="Bond EXP needed per bond level",
         description="Bond EXP needed per bond level",
     )
-    expGrowth: List[int] = Field(
+    expGrowth: list[int] = Field(
         ...,
         title="Accumulated EXP",
         description="Total EXP needed per level. "
         'Equivalent to the "Accumulated EXP" value when feeding CE into another CE.',
     )
-    expFeed: List[int] = Field(
+    expFeed: list[int] = Field(
         ...,
         title="Base EXP",
         description="Base EXP per level. "
@@ -783,7 +783,7 @@ class NiceServant(BaseModelORJson):
         title="Bond CE",
         description="Bond CE ID (not collectionNo). Defaults to 0 if the svt doesn't have a bond CE.",
     )
-    valentineEquip: List[int] = Field(
+    valentineEquip: list[int] = Field(
         [], title="Valentine CE", description="Valentine CE ID (not collectionNo)."
     )
     bondEquipOwner: Optional[int] = Field(
@@ -801,20 +801,20 @@ class NiceServant(BaseModelORJson):
         title="Ascension Add",
         description="Attributes that change when servants ascend.",
     )
-    svtChange: List[NiceServantChange] = Field(
+    svtChange: list[NiceServantChange] = Field(
         ..., title="Servant Change", description="EOR servants' hidden name details."
     )
-    ascensionMaterials: Dict[int, NiceLvlUpMaterial] = Field(
+    ascensionMaterials: dict[int, NiceLvlUpMaterial] = Field(
         ...,
         title="Ascension Materials",
         description="Mapping <Ascension level, Materials to ascend servants>.",
     )
-    skillMaterials: Dict[int, NiceLvlUpMaterial] = Field(
+    skillMaterials: dict[int, NiceLvlUpMaterial] = Field(
         ...,
         title="Skill Materials",
         description="Mapping <Skill level, Materials to level up skills>.",
     )
-    costumeMaterials: Dict[int, NiceLvlUpMaterial] = Field(
+    costumeMaterials: dict[int, NiceLvlUpMaterial] = Field(
         ...,
         title="Costume Materials",
         description="Mapping <Costume svt ID, Materials to unlock the costume>. "
@@ -826,14 +826,14 @@ class NiceServant(BaseModelORJson):
         description="Random stuffs that get added to the servant entry. "
         "See each field description for more details.",
     )
-    skills: List[NiceSkill] = Field(
-        ..., title="Skills", description="List of servant or CE skills."
+    skills: list[NiceSkill] = Field(
+        ..., title="Skills", description="list of servant or CE skills."
     )
-    classPassive: List[NiceSkill] = Field(
-        ..., title="Passive Skills", description="List of servant's passive skills."
+    classPassive: list[NiceSkill] = Field(
+        ..., title="Passive Skills", description="list of servant's passive skills."
     )
-    noblePhantasms: List[NiceTd] = Field(
-        ..., title="Noble Phantasm", description="List of servant's noble phantasms."
+    noblePhantasms: list[NiceTd] = Field(
+        ..., title="Noble Phantasm", description="list of servant's noble phantasms."
     )
     profile: Optional[NiceLore] = Field(
         None,
@@ -847,14 +847,14 @@ class NiceEquip(BaseModelORJson):
         ...,
         title="Servant ID",
         description="svt's internal ID. "
-        'Note that this is different from the 1~300 IDs shown in "Spirit Origin List", '
+        'Note that this is different from the 1~300 IDs shown in "Spirit Origin list", '
         "which is `.collectionNo`. "
         "This ID is unique accross svt items (servants, CEs, EXPs, enemies, …)",
     )
     collectionNo: int = Field(
         ...,
         title="Collection No",
-        description='The ID number shown in "Spirit Origin List". '
+        description='The ID number shown in "Spirit Origin list". '
         "The community usually means this number when they talk about servant or CE IDs.",
     )
     name: str = Field(..., title="svt's name", description="svt's name")
@@ -881,23 +881,23 @@ class NiceEquip(BaseModelORJson):
     growthCurve: int = Field(
         ..., title="Growth curve type", description="Growth curve type"
     )
-    atkGrowth: List[int] = Field(
+    atkGrowth: list[int] = Field(
         ...,
         title="ATK value per level",
         description="ATK value per level, including grail levels.",
     )
-    hpGrowth: List[int] = Field(
+    hpGrowth: list[int] = Field(
         ...,
         title="HP value per level",
         description="HP value per level, including grail levels.",
     )
-    expGrowth: List[int] = Field(
+    expGrowth: list[int] = Field(
         ...,
         title="Accumulated EXP",
         description="Total EXP needed per level. "
         'Equivalent to the "Accumulated EXP" value when feeding CE into another CE.',
     )
-    expFeed: List[int] = Field(
+    expFeed: list[int] = Field(
         ...,
         title="Base EXP",
         description="Base EXP per level. "
@@ -913,8 +913,8 @@ class NiceEquip(BaseModelORJson):
         title="Valentine Servant ID",
         description="Servant ID if this CE is a valentine CE",
     )
-    skills: List[NiceSkill] = Field(
-        ..., title="Skills", description="List of servant or CE skills."
+    skills: list[NiceSkill] = Field(
+        ..., title="Skills", description="list of servant or CE skills."
     )
     profile: Optional[NiceLore] = Field(
         None,
@@ -924,9 +924,9 @@ class NiceEquip(BaseModelORJson):
 
 
 class NiceReversedSkillTd(BaseModelORJson):
-    servant: List[NiceServant] = []
-    MC: List[NiceMysticCode] = []
-    CC: List[NiceCommandCode] = []
+    servant: list[NiceServant] = []
+    MC: list[NiceMysticCode] = []
+    CC: list[NiceCommandCode] = []
 
 
 class NiceReversedSkillTdType(BaseModelORJson):
@@ -943,8 +943,8 @@ class NiceTdReverse(NiceTd):
 
 
 class NiceReversedFunction(BaseModelORJson):
-    skill: List[NiceSkillReverse] = []
-    NP: List[NiceTdReverse] = []
+    skill: list[NiceSkillReverse] = []
+    NP: list[NiceTdReverse] = []
 
 
 class NiceReversedFunctionType(BaseModelORJson):
@@ -957,7 +957,7 @@ class NiceBaseFunctionReverse(NiceBaseFunction):
 
 
 class NiceReversedBuff(BaseModelORJson):
-    function: List[NiceBaseFunctionReverse] = []
+    function: list[NiceBaseFunctionReverse] = []
 
 
 class NiceReversedBuffType(BaseModelORJson):
@@ -983,7 +983,7 @@ class NiceShop(BaseModelORJson):
     payType: NicePayType
     cost: NiceItemAmount
     purchaseType: NicePurchaseType
-    targetIds: List[int]
+    targetIds: list[int]
     setNum: int = Field(
         ..., title="Set Number", description="Number of items per buying unit"
     )
@@ -1007,7 +1007,7 @@ class NiceGift(BaseModelORJson):
 class NiceEventReward(BaseModelORJson):
     groupId: int
     point: int
-    gifts: List[NiceGift]
+    gifts: list[NiceGift]
     bgImagePoint: HttpUrl
     bgImageGet: HttpUrl
 
@@ -1027,9 +1027,9 @@ class NiceEvent(BaseModelORJson):
     endedAt: int
     finishedAt: int
     materialOpenedAt: int
-    warIds: List[int]
-    shop: List[NiceShop]
-    rewards: List[NiceEventReward]
+    warIds: list[int]
+    shop: list[NiceShop]
+    rewards: list[NiceEventReward]
 
 
 class NiceBgm(BaseModelORJson):
@@ -1051,12 +1051,12 @@ class NiceQuest(BaseModelORJson):
     type: NiceQuestType
     consumeType: NiceConsumeType
     consume: int
-    consumeItem: List[NiceItemAmount]
+    consumeItem: list[NiceItemAmount]
     spotId: int
     warId: int
-    gifts: List[NiceGift]
-    releaseConditions: List[NiceQuestRelease]
-    phases: List[int]
+    gifts: list[NiceGift]
+    releaseConditions: list[NiceQuestRelease]
+    phases: list[int]
     noticeAt: int
     openedAt: int
     closedAt: int
@@ -1068,12 +1068,12 @@ class NiceStage(BaseModelORJson):
 
 class NiceQuestPhase(NiceQuest):
     phase: int
-    className: List[SvtClass]
-    individuality: List[NiceTrait]
+    className: list[SvtClass]
+    individuality: list[NiceTrait]
     qp: int
     exp: int
     bond: int
-    stages: List[NiceStage]
+    stages: list[NiceStage]
 
 
 class NiceMap(BaseModel):
@@ -1087,7 +1087,7 @@ class NiceMap(BaseModel):
 
 class NiceSpot(BaseModel):
     id: int
-    joinSpotIds: List[int]
+    joinSpotIds: list[int]
     mapId: int
     name: str
     image: Optional[HttpUrl] = None
@@ -1102,12 +1102,12 @@ class NiceSpot(BaseModel):
     nextOfsX: int
     nextOfsY: int
     closedMessage: str
-    quests: List[NiceQuest]
+    quests: list[NiceQuest]
 
 
 class NiceWar(BaseModelORJson):
     id: int
-    coordinates: List[List[int]]
+    coordinates: list[list[int]]
     age: str
     name: str
     longName: str
@@ -1123,15 +1123,15 @@ class NiceWar(BaseModelORJson):
     targetId: int
     eventId: int
     lastQuestId: int
-    maps: List[NiceMap]
-    spots: List[NiceSpot]
+    maps: list[NiceMap]
+    spots: list[NiceSpot]
 
 
 class NiceAiAct(BaseModelORJson):
     id: int
     type: NiceAiActType
     target: NiceAiActTarget
-    targetIndividuality: List[NiceTrait]
+    targetIndividuality: list[NiceTrait]
     skillId: Optional[int] = None
     skillLv: Optional[int] = None
     skill: Optional[NiceSkill] = None
@@ -1146,15 +1146,15 @@ class NiceAi(BaseModelORJson):
     probability: int
     cond: NiceAiCond
     condNegative: bool
-    vals: List[int]
+    vals: list[int]
     aiAct: NiceAiAct
-    avals: List[int]
-    parentAis: Dict[AiType, List[int]]
+    avals: list[int]
+    parentAis: dict[AiType, list[int]]
     infoText: str
     timing: Optional[int] = None
     timingDescription: Optional[AiTiming] = None
 
 
 class NiceAiCollection(BaseModelORJson):
-    mainAis: List[NiceAi]
-    relatedAis: List[NiceAi]
+    mainAis: list[NiceAi]
+    relatedAis: list[NiceAi]

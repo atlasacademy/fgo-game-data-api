@@ -1,12 +1,10 @@
-from typing import List
-
 from ...data.gamedata import masters
 from ...schemas.common import Region
 from ...schemas.enums import GIFT_TYPE_NAME
 from ...schemas.nice import NiceGift
 
 
-def get_nice_gift(region: Region, gift_id: int) -> List[NiceGift]:
+def get_nice_gift(region: Region, gift_id: int) -> list[NiceGift]:
     raw_gifts = masters[region].mstGiftId.get(gift_id, [])
     return [
         NiceGift(

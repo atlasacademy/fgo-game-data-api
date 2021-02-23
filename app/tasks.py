@@ -1,7 +1,7 @@
 import json
 import time
 from pathlib import Path
-from typing import Any, Dict, Iterable, Union
+from typing import Any, Iterable, Union
 
 import redis
 from git import Repo
@@ -102,7 +102,7 @@ def dump_svt(
 
 
 def generate_exports(
-    region_path: Dict[Region, DirectoryPath]
+    region_path: dict[Region, DirectoryPath]
 ) -> None:  # pragma: no cover
     if settings.export_all_nice:
         for region in region_path:
@@ -224,10 +224,10 @@ def generate_exports(
             logger.info(f"Exported {region} data in {run_time:.2f}s.")
 
 
-repo_info: Dict[Region, RepoInfo] = {}
+repo_info: dict[Region, RepoInfo] = {}
 
 
-def update_master_repo_info(region_path: Dict[Region, DirectoryPath]) -> None:
+def update_master_repo_info(region_path: dict[Region, DirectoryPath]) -> None:
     for region, gamedata in region_path.items():
         if (gamedata.parent / ".git").exists():
             repo = Repo(gamedata.parent)
@@ -254,7 +254,7 @@ def clear_bloom_redis_cache() -> None:  # pragma: no cover
 
 
 def pull_and_update(
-    region_path: Dict[Region, DirectoryPath]
+    region_path: dict[Region, DirectoryPath]
 ) -> None:  # pragma: no cover
     logger.info(f"Sleeping {settings.github_webhook_sleep} seconds …")
     time.sleep(settings.github_webhook_sleep)

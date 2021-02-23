@@ -1,4 +1,4 @@
-from typing import Any, Dict, List
+from typing import Any
 
 import orjson
 from sqlalchemy.engine import Connection
@@ -86,12 +86,12 @@ def get_nice_costume(costume: MstSvtCostume) -> NiceCostume:
 
 def get_nice_servant(
     conn: Connection, region: Region, svt_id: int, lang: Language, lore: bool = False
-) -> Dict[str, Any]:
+) -> dict[str, Any]:
     # Get expanded servant entity to get function and buff details
     raw_svt = raw.get_servant_entity(conn, region, svt_id, expand=True, lore=lore)
     first_svt_limit = raw_svt.mstSvtLimit[0]
 
-    nice_data: Dict[str, Any] = {
+    nice_data: dict[str, Any] = {
         "id": raw_svt.mstSvt.id,
         "collectionNo": raw_svt.mstSvt.collectionNo,
         "name": raw_svt.mstSvt.name,
@@ -241,7 +241,7 @@ def get_nice_servant(
         for playable_td in playable_tds:
             if "tdTypeChangeIDs" in playable_td.mstTreasureDevice.script:
                 # Space Ishtar different NPs
-                tdTypeChangeIDs: List[int] = playable_td.mstTreasureDevice.script[
+                tdTypeChangeIDs: list[int] = playable_td.mstTreasureDevice.script[
                     "tdTypeChangeIDs"
                 ]
                 for td in raw_svt.mstTreasureDevice:

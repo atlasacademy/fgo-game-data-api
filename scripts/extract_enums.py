@@ -1,5 +1,4 @@
 import argparse
-from typing import Dict, List, Tuple
 
 
 PYTHON_NAME_JSON_NAME_OVERRIDE = {
@@ -18,8 +17,8 @@ def convert_name(name: str) -> str:
         return "".join([words[0].lower()] + [w.title() for w in words[1:]])
 
 
-def enum_to_dict(cstype: List[str]) -> Dict[int, str]:
-    enum_dict: Dict[int, str] = {}
+def enum_to_dict(cstype: list[str]) -> dict[int, str]:
+    enum_dict: dict[int, str] = {}
     for enum_item in cstype:
         enum_item = enum_item.split(";")[0]
         splitted = enum_item.split(" = ")
@@ -29,7 +28,7 @@ def enum_to_dict(cstype: List[str]) -> Dict[int, str]:
     return {k: enum_dict[k] for k in sorted(enum_dict.keys(), key=abs)}
 
 
-def out_intenum(input_dict: Dict[int, str], className: str) -> List[str]:
+def out_intenum(input_dict: dict[int, str], className: str) -> list[str]:
     intenum_lines = [f"class {className}(IntEnum):\n"]
     for enumint, enumstr in input_dict.items():
         intenum_lines.append(f"    {enumstr} = {enumint}\n")
@@ -86,8 +85,8 @@ STR_NAME_OVERRIDE = {
 
 
 def out_strenum(
-    input_dict: Dict[int, str], nice_class: str, nice_class_title: str
-) -> List[str]:
+    input_dict: dict[int, str], nice_class: str, nice_class_title: str
+) -> list[str]:
     strenum_lines = [
         f"class {nice_class}(str, Enum):\n",
         f'    """{nice_class_title}"""\n',
@@ -103,9 +102,9 @@ def out_strenum(
 
 
 def out_enumdict(
-    input_dict: Dict[int, str], nice_class: str, dict_name: str
-) -> List[str]:
-    strenumdict_lines = [f"{dict_name}: Dict[int, {nice_class}] = {{\n"]
+    input_dict: dict[int, str], nice_class: str, dict_name: str
+) -> list[str]:
+    strenumdict_lines = [f"{dict_name}: dict[int, {nice_class}] = {{\n"]
     for enumint, enumstr in list(input_dict.items()) + list(
         EXTRA_STR_NAME.get(nice_class, {}).items()
     ):
@@ -116,12 +115,12 @@ def out_enumdict(
 
 
 def cs_enums_to_lines(
-    cs_enums: List[str],
+    cs_enums: list[str],
     raw_class: str,
     nice_class: str,
     nice_class_title: str,
     dict_name: str,
-) -> List[str]:
+) -> list[str]:
     enum_dict = enum_to_dict(cs_enums)
     if raw_class == "DataValsType":
         return out_intenum(enum_dict, raw_class)
@@ -135,7 +134,7 @@ def cs_enums_to_lines(
         )
 
 
-def cs_enum_to_ts(cs_enums: List[str], nice_class: str) -> List[str]:
+def cs_enum_to_ts(cs_enums: list[str], nice_class: str) -> list[str]:
     enum_dict = enum_to_dict(cs_enums)
     ts_enum_lines = [f"export enum {nice_class} {{\n"]
     for enumstr in list(enum_dict.values()) + list(
@@ -148,7 +147,7 @@ def cs_enum_to_ts(cs_enums: List[str], nice_class: str) -> List[str]:
     return ts_enum_lines
 
 
-ENUMS: List[Tuple[str, str, str, str, str]] = [
+ENUMS: list[tuple[str, str, str, str, str]] = [
     ("Gender.Type", "GenderType", "NiceGender", "Gender Enum", "GENDER_TYPE_NAME"),
     ("SvtType.Type", "SvtType", "NiceSvtType", "Servant Type Enum", "SVT_TYPE_NAME"),
     (
@@ -301,7 +300,7 @@ ENUMS: List[Tuple[str, str, str, str, str]] = [
 ]
 
 
-cs_signatures: Dict[str, str] = {f"public enum {enum[0]}": enum[0] for enum in ENUMS}
+cs_signatures: dict[str, str] = {f"public enum {enum[0]}": enum[0] for enum in ENUMS}
 
 
 def main(dump_path: str, gameenums_path: str, typescript_path: str = "") -> None:
@@ -309,8 +308,8 @@ def main(dump_path: str, gameenums_path: str, typescript_path: str = "") -> None
     with open(dump_path, "r", encoding="utf-8") as fp:
         lines = fp.readlines()
 
-    all_cs_enums: Dict[str, List[str]] = {}
-    enum_lines: List[str] = []
+    all_cs_enums: dict[str, list[str]] = {}
+    enum_lines: list[str] = []
     in_recording_signature = ""
     in_recording_mode = False
 
@@ -341,7 +340,6 @@ def main(dump_path: str, gameenums_path: str, typescript_path: str = "") -> None
         "\n",
         "\n",
         "from enum import Enum, IntEnum\n",
-        "from typing import Dict\n",
         "\n",
         "\n",
     ]
@@ -357,7 +355,7 @@ def main(dump_path: str, gameenums_path: str, typescript_path: str = "") -> None
         fp.writelines(python_lines)
 
     if typescript_path:
-        ts_lines: List[str] = []
+        ts_lines: list[str] = []
         for cs_enum, _, nice_class, *_ in ENUMS:
             ts_lines += cs_enum_to_ts(all_cs_enums[cs_enum], nice_class)
             if cs_enum != ENUMS[-1][0]:

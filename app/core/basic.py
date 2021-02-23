@@ -1,5 +1,5 @@
 from collections import defaultdict
-from typing import Any, Dict, List, Optional
+from typing import Any, Optional
 
 from ..config import Settings
 from ..data.custom_mappings import TRANSLATIONS
@@ -55,12 +55,12 @@ settings = Settings()
 
 
 def get_nice_buff_script(region: Region, mstBuff: MstBuff) -> NiceBuffScript:
-    script: Dict[str, Any] = {}
+    script: dict[str, Any] = {}
     if "relationId" in mstBuff.script:
-        relationOverwrite: List[MstClassRelationOverwrite] = masters[
+        relationOverwrite: list[MstClassRelationOverwrite] = masters[
             region
         ].mstClassRelationOverwriteId.get(mstBuff.script["relationId"], [])
-        relationId: Dict[str, Dict[SvtClass, Dict[SvtClass, Any]]] = {
+        relationId: dict[str, dict[SvtClass, dict[SvtClass, Any]]] = {
             "atkSide": defaultdict(dict),
             "defSide": defaultdict(dict),
         }
@@ -232,7 +232,7 @@ def get_basic_td(
 
 def get_basic_svt(
     region: Region, svt_id: int, lang: Optional[Language] = None
-) -> Dict[str, Any]:
+) -> dict[str, Any]:
     mstSvt = masters[region].mstSvtId[svt_id]
     mstSvtLimit = masters[region].mstSvtLimitFirst[svt_id]
 

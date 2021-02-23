@@ -1,4 +1,4 @@
-from typing import Iterable, List, Set
+from typing import Iterable
 
 from fastapi import HTTPException
 from sqlalchemy.engine import Connection
@@ -34,32 +34,32 @@ from ..schemas.raw import (
 )
 
 
-def buff_to_func(region: Region, buff_id: int) -> Set[int]:
+def buff_to_func(region: Region, buff_id: int) -> set[int]:
     """Returns a set of function ID that uses the given buff ID in vals"""
     return masters[region].buffToFunc.get(buff_id, set())
 
 
-def func_to_skillId(region: Region, func_id: int) -> Set[int]:
+def func_to_skillId(region: Region, func_id: int) -> set[int]:
     """Returns a set of skill ID that uses the given function ID"""
     return set(sorted(masters[region].funcToSkill.get(func_id, set())))
 
 
-def func_to_tdId(region: Region, func_id: int) -> Set[int]:
+def func_to_tdId(region: Region, func_id: int) -> set[int]:
     """Returns a set of treasure device (NP) ID that uses the given function ID"""
     return masters[region].funcToTd.get(func_id, set())
 
 
-def active_to_svtId(region: Region, skill_id: int) -> Set[int]:
+def active_to_svtId(region: Region, skill_id: int) -> set[int]:
     """Returns a set of svt ID that has the given skill ID as passive"""
     return masters[region].activeSkillToSvt.get(skill_id, set())
 
 
-def passive_to_svtId(region: Region, skill_id: int) -> Set[int]:
+def passive_to_svtId(region: Region, skill_id: int) -> set[int]:
     """Returns a set of svt ID that has the given skill ID as passive"""
     return masters[region].passiveSkillToSvt.get(skill_id, set())
 
 
-def skill_to_MCId(region: Region, skill_id: int) -> Set[int]:
+def skill_to_MCId(region: Region, skill_id: int) -> set[int]:
     """Returns a set of Mystic Code ID that has the given skill ID"""
     return {
         equip_skill.equipId
@@ -68,7 +68,7 @@ def skill_to_MCId(region: Region, skill_id: int) -> Set[int]:
     }
 
 
-def skill_to_CCId(region: Region, skill_id: int) -> Set[int]:
+def skill_to_CCId(region: Region, skill_id: int) -> set[int]:
     """Returns a set of Command Code ID that has the given skill ID"""
     return {
         cc_skill.commandCodeId
@@ -145,7 +145,7 @@ def get_func_entity(
 
 def get_skill_entity_no_reverse_many(
     conn: Connection, region: Region, skill_ids: Iterable[int], expand: bool = False
-) -> List[SkillEntityNoReverse]:
+) -> list[SkillEntityNoReverse]:
     if not skill_ids:
         return []
     skill_entities = skill.get_skillEntity(conn, skill_ids)
@@ -204,7 +204,7 @@ def get_skill_entity(
 
 def get_td_entity_no_reverse_many(
     conn: Connection, region: Region, td_ids: Iterable[int], expand: bool = False
-) -> List[TdEntityNoReverse]:
+) -> list[TdEntityNoReverse]:
     if not td_ids:
         return []
     td_entities = td.get_tdEntity(conn, td_ids)
@@ -396,7 +396,7 @@ def get_event_entity(conn: Connection, region: Region, event_id: int) -> EventEn
     )
 
 
-def get_quest_entity_many(conn: Connection, quest_id: List[int]) -> List[QuestEntity]:
+def get_quest_entity_many(conn: Connection, quest_id: list[int]) -> list[QuestEntity]:
     quest_entities = quest.get_quest_entity(conn, quest_id)
     if quest_entities:
         return quest_entities
@@ -409,8 +409,8 @@ def get_quest_entity(conn: Connection, quest_id: int) -> QuestEntity:
 
 
 def get_quest_entity_by_spot_many(
-    conn: Connection, spot_ids: List[int]
-) -> List[QuestEntity]:
+    conn: Connection, spot_ids: list[int]
+) -> list[QuestEntity]:
     return quest.get_quest_by_spot(conn, spot_ids)
 
 
@@ -426,7 +426,7 @@ def get_quest_phase_entity(
 
 def get_ai_entities(
     conn: Connection, ai_id: int, field: bool = False, throw_error: bool = True
-) -> List[AiEntity]:
+) -> list[AiEntity]:
     if field:
         ais = ai.get_field_ai_entity(conn, ai_id)
     else:
@@ -447,7 +447,7 @@ def get_ai_collection(
     to_be_retrieved_ais = {
         ai.mstAi.avals[0] for ai in main_ais if ai.mstAi.avals[0] > 0
     }
-    related_ais: List[AiEntity] = []
+    related_ais: list[AiEntity] = []
     while to_be_retrieved_ais:
         for related_ai_id in to_be_retrieved_ais:
             related_ais += get_ai_entities(

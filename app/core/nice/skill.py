@@ -1,5 +1,5 @@
 from copy import deepcopy
-from typing import Any, Dict, List
+from typing import Any
 
 from sqlalchemy.engine import Connection
 
@@ -18,7 +18,7 @@ from .func import get_nice_base_function, parse_dataVals
 settings = Settings()
 
 
-def get_ai_id_from_skill(region: Region, skill_id: int) -> Dict[AiType, List[int]]:
+def get_ai_id_from_skill(region: Region, skill_id: int) -> dict[AiType, list[int]]:
     return {
         AiType.svt: sorted(
             set(
@@ -39,8 +39,8 @@ def get_ai_id_from_skill(region: Region, skill_id: int) -> Dict[AiType, List[int
 
 def get_nice_skill_with_svt(
     skillEntity: SkillEntityNoReverse, svtId: int, region: Region, lang: Language
-) -> List[Dict[str, Any]]:
-    nice_skill: Dict[str, Any] = {
+) -> list[dict[str, Any]]:
+    nice_skill: dict[str, Any] = {
         "id": skillEntity.mstSkill.id,
         "name": get_safe(TRANSLATIONS, skillEntity.mstSkill.name)
         if lang == Language.en

@@ -1,6 +1,6 @@
 import inspect
 from dataclasses import dataclass
-from typing import ClassVar, List, Optional, Union
+from typing import ClassVar, Optional, Union
 
 from fastapi import Query
 
@@ -41,15 +41,15 @@ SERVANT_TYPE = [
 class ServantSearchQueryParams:
     region: Region
     name: Optional[str] = None
-    excludeCollectionNo: List[int] = Query([0])
-    type: List[NiceSvtType] = Query(SERVANT_TYPE)
-    flag: List[NiceSvtFlag] = Query(list(SVT_FLAG_NAME.values()))
-    rarity: List[int] = Query(list(range(6)), ge=0, le=5)
-    className: List[SvtClass] = Query(PLAYABLE_CLASS_LIST)
-    gender: List[NiceGender] = Query(list(GENDER_TYPE_NAME.values()))
-    attribute: List[Attribute] = Query(list(ATTRIBUTE_NAME.values()))
-    trait: List[Union[Trait, int]] = Query([])
-    voiceCondSvt: List[int] = Query([])
+    excludeCollectionNo: list[int] = Query([0])
+    type: list[NiceSvtType] = Query(SERVANT_TYPE)
+    flag: list[NiceSvtFlag] = Query(list(SVT_FLAG_NAME.values()))
+    rarity: list[int] = Query(list(range(6)), ge=0, le=5)
+    className: list[SvtClass] = Query(PLAYABLE_CLASS_LIST)
+    gender: list[NiceGender] = Query(list(GENDER_TYPE_NAME.values()))
+    attribute: list[Attribute] = Query(list(ATTRIBUTE_NAME.values()))
+    trait: list[Union[Trait, int]] = Query([])
+    voiceCondSvt: list[int] = Query([])
 
     def hasSearchParams(self) -> bool:
         return any(
@@ -94,15 +94,15 @@ class ServantSearchQueryParams:
 class SvtSearchQueryParams:
     region: Region
     name: Optional[str] = None
-    excludeCollectionNo: List[int] = Query([-1])
-    type: List[NiceSvtType] = Query(list(SVT_TYPE_NAME.values()))
-    flag: List[NiceSvtFlag] = Query(list(SVT_FLAG_NAME.values()))
-    rarity: List[int] = Query(list(range(6)), ge=0, le=5)
-    className: List[SvtClass] = Query(list(CLASS_NAME.values()))
-    gender: List[NiceGender] = Query(list(GENDER_TYPE_NAME.values()))
-    attribute: List[Attribute] = Query(list(ATTRIBUTE_NAME.values()))
-    trait: List[Union[Trait, int]] = Query([])
-    voiceCondSvt: List[int] = Query([])
+    excludeCollectionNo: list[int] = Query([-1])
+    type: list[NiceSvtType] = Query(list(SVT_TYPE_NAME.values()))
+    flag: list[NiceSvtFlag] = Query(list(SVT_FLAG_NAME.values()))
+    rarity: list[int] = Query(list(range(6)), ge=0, le=5)
+    className: list[SvtClass] = Query(list(CLASS_NAME.values()))
+    gender: list[NiceGender] = Query(list(GENDER_TYPE_NAME.values()))
+    attribute: list[Attribute] = Query(list(ATTRIBUTE_NAME.values()))
+    trait: list[Union[Trait, int]] = Query([])
+    voiceCondSvt: list[int] = Query([])
 
     def hasSearchParams(self) -> bool:
         return any(
@@ -145,10 +145,10 @@ class SvtSearchQueryParams:
 class EquipSearchQueryParams:
     region: Region
     name: Optional[str] = None
-    excludeCollectionNo: List[int] = Query([0])
-    type: List[NiceSvtType] = Query([NiceSvtType.servantEquip])
-    flag: List[NiceSvtFlag] = Query(list(SVT_FLAG_NAME.values()))
-    rarity: List[int] = Query(list(range(1, 6)), ge=1, le=5)
+    excludeCollectionNo: list[int] = Query([0])
+    type: list[NiceSvtType] = Query([NiceSvtType.servantEquip])
+    flag: list[NiceSvtFlag] = Query(list(SVT_FLAG_NAME.values()))
+    rarity: list[int] = Query(list(range(1, 6)), ge=1, le=5)
 
     def hasSearchParams(self) -> bool:
         return any(
@@ -179,12 +179,12 @@ class EquipSearchQueryParams:
 class SkillSearchParams:
     region: Region
     name: Optional[str] = None
-    type: Optional[List[NiceSkillType]] = Query(None)
-    num: Optional[List[int]] = Query(None, ge=1, le=3)
-    priority: Optional[List[int]] = Query(None, ge=1, le=6)
-    strengthStatus: Optional[List[int]] = Query(None, ge=0, le=100)
-    lvl1coolDown: Optional[List[int]] = Query(None, ge=-1, le=100)
-    numFunctions: Optional[List[int]] = Query(None, ge=1, le=201)
+    type: Optional[list[NiceSkillType]] = Query(None)
+    num: Optional[list[int]] = Query(None, ge=1, le=3)
+    priority: Optional[list[int]] = Query(None, ge=1, le=6)
+    strengthStatus: Optional[list[int]] = Query(None, ge=0, le=100)
+    lvl1coolDown: Optional[list[int]] = Query(None, ge=-1, le=100)
+    numFunctions: Optional[list[int]] = Query(None, ge=1, le=201)
 
     def hasSearchParams(self) -> bool:
         return any(
@@ -223,11 +223,11 @@ class SkillSearchParams:
 class TdSearchParams:
     region: Region
     name: Optional[str] = None
-    card: Optional[List[NiceCardType]] = Query(None)
-    individuality: List[Union[Trait, int]] = Query([])
-    hits: Optional[List[int]] = Query(None, ge=1, le=20)
-    strengthStatus: Optional[List[int]] = Query(None, ge=0, le=2)
-    numFunctions: Optional[List[int]] = Query(None, ge=1, le=20)
+    card: Optional[list[NiceCardType]] = Query(None)
+    individuality: list[Union[Trait, int]] = Query([])
+    hits: Optional[list[int]] = Query(None, ge=1, le=20)
+    strengthStatus: Optional[list[int]] = Query(None, ge=0, le=2)
+    numFunctions: Optional[list[int]] = Query(None, ge=1, le=20)
     minNpNpGain: Optional[int] = Query(None, ge=0, le=300)
     maxNpNpGain: Optional[int] = Query(None, ge=0, le=300)
 
@@ -266,12 +266,12 @@ class TdSearchParams:
 class BuffSearchQueryParams:
     region: Region
     name: Optional[str] = None
-    type: List[NiceBuffType] = Query([])
-    buffGroup: List[int] = Query([])
-    vals: List[Union[Trait, int]] = Query([])
-    tvals: List[Union[Trait, int]] = Query([])
-    ckSelfIndv: List[Union[Trait, int]] = Query([])
-    ckOpIndv: List[Union[Trait, int]] = Query([])
+    type: list[NiceBuffType] = Query([])
+    buffGroup: list[int] = Query([])
+    vals: list[Union[Trait, int]] = Query([])
+    tvals: list[Union[Trait, int]] = Query([])
+    ckSelfIndv: list[Union[Trait, int]] = Query([])
+    ckOpIndv: list[Union[Trait, int]] = Query([])
 
     def hasSearchParams(self) -> bool:
         return any(
@@ -307,12 +307,12 @@ class BuffSearchQueryParams:
 class FuncSearchQueryParams:
     region: Region
     popupText: Optional[str] = None
-    type: List[NiceFuncType] = Query([])
-    targetType: List[NiceFuncTargetType] = Query([])
-    targetTeam: List[FuncApplyTarget] = Query([])
-    vals: List[Union[Trait, int]] = Query([])
-    tvals: List[Union[Trait, int]] = Query([])
-    questTvals: List[Union[Trait, int]] = Query([])
+    type: list[NiceFuncType] = Query([])
+    targetType: list[NiceFuncTargetType] = Query([])
+    targetTeam: list[FuncApplyTarget] = Query([])
+    vals: list[Union[Trait, int]] = Query([])
+    tvals: list[Union[Trait, int]] = Query([])
+    questTvals: list[Union[Trait, int]] = Query([])
 
     def hasSearchParams(self) -> bool:
         return any(
@@ -349,10 +349,10 @@ class FuncSearchQueryParams:
 class ItemSearchQueryParams:
     region: Region
     name: Optional[str] = None
-    individuality: List[Union[Trait, int]] = Query([])
-    type: List[NiceItemType] = Query([])
-    background: List[NiceItemBGType] = Query([])
-    use: List[NiceItemUse] = Query([])
+    individuality: list[Union[Trait, int]] = Query([])
+    type: list[NiceItemType] = Query([])
+    background: list[NiceItemBGType] = Query([])
+    use: list[NiceItemUse] = Query([])
 
     def hasSearchParams(self) -> bool:
         return any(

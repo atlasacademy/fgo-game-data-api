@@ -1,7 +1,7 @@
 import json
 from collections import defaultdict
 from pathlib import Path
-from typing import Any, Callable, Dict, List, NamedTuple, Union
+from typing import Any, Callable, NamedTuple, Union
 
 from app.config import Settings
 from app.core.utils import get_traits_list
@@ -137,7 +137,7 @@ def get_nice_attackrate(raw_data: Any) -> Any:
 
 
 def get_nice_card_data(raw_data: Any) -> Any:
-    out_data: Dict[str, Dict[int, Any]] = {}
+    out_data: dict[str, dict[int, Any]] = {}
     for card in raw_data:
         card_id = card["id"]
         card_index = card["num"]
@@ -157,7 +157,7 @@ def get_nice_card_data(raw_data: Any) -> Any:
 
 
 def get_nice_attri_relation(raw_data: Any) -> Any:
-    out_data: Dict[str, Dict[str, int]] = {}
+    out_data: dict[str, dict[str, int]] = {}
     for attribute_relation in raw_data:
         atkAttri = ATTRIBUTE_NAME[attribute_relation["atkAttri"]]
         defAttri = ATTRIBUTE_NAME[attribute_relation["defAttri"]]
@@ -170,7 +170,7 @@ def get_nice_attri_relation(raw_data: Any) -> Any:
 
 
 def get_nice_class_relation(raw_data: Any) -> Any:
-    out_data: Dict[str, Dict[str, int]] = {}
+    out_data: dict[str, dict[str, int]] = {}
     for class_relation in raw_data:
         atkAttri = CLASS_NAME.get(class_relation["atkClass"])
         defAttri = CLASS_NAME.get(class_relation["defClass"])
@@ -194,7 +194,7 @@ def get_nice_svt_exceed(raw_data: Any) -> Any:
         previous_exceed_qp: int = previous_exceed["qp"]
         return previous_exceed_qp
 
-    out_data: Dict[int, Dict[int, Dict[str, Union[int, str]]]] = defaultdict(
+    out_data: dict[int, dict[int, dict[str, Union[int, str]]]] = defaultdict(
         lambda: defaultdict(dict)
     )
     for svtExceed in raw_data:
@@ -211,7 +211,7 @@ def get_nice_svt_exceed(raw_data: Any) -> Any:
 
 
 def get_nice_buff_action(raw_data: Any) -> Any:
-    def get_max_rate(buff_types: List[int]) -> List[int]:
+    def get_max_rate(buff_types: list[int]) -> list[int]:
         return list(
             {buff["maxRate"] for buff in raw_data if buff["type"] in buff_types}
         )
@@ -293,7 +293,7 @@ def export_nice_master_lvl(region: Region, master_path: Path, export_path: Path)
     with open(constant_path, "r", encoding="utf-8") as fp:
         constant = json.load(fp)
     with open(master_path / "mstUserExp.json", "r", encoding="utf-8") as fp:
-        mstUserExp: List[Dict[str, int]] = json.load(fp)
+        mstUserExp: list[dict[str, int]] = json.load(fp)
 
     def get_current_value(base: int, key: str, current: int) -> int:
         return base + sum(user_exp[key] for user_exp in mstUserExp[: current + 1])

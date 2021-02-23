@@ -1,6 +1,4 @@
 # pylint: disable=R0201
-from typing import Dict, Tuple
-
 import pytest
 from fastapi.testclient import TestClient
 
@@ -16,7 +14,7 @@ DATA_FOLDER = "test_data_raw"
 client = TestClient(app)
 
 
-test_cases_dict: Dict[str, Tuple[str, str]] = {
+test_cases_dict: dict[str, tuple[str, str]] = {
     "servant_NA_collectionNo": ("NA/servant/184", "NA_Tomoe"),
     "servant_NA_id": ("NA/servant/202100", "NA_Tomoe"),
     "servant_NA_lore": ("NA/servant/156?lore=True", "NA_Moriarty_lore"),

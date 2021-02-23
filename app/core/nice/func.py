@@ -1,5 +1,5 @@
 import re
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Optional, Union
 
 from fastapi import HTTPException
 
@@ -51,7 +51,7 @@ FRIEND_SUPPORT_FUNCTIONS = {
 
 def parse_dataVals(
     datavals: str, functype: int, region: Region
-) -> Dict[str, Union[int, str, List[int]]]:
+) -> dict[str, Union[int, str, list[int]]]:
     error_message = f"Can't parse datavals: {datavals}"
     INITIAL_VALUE = -98765
     # Prefix to be used for temporary keys that need further parsing.
@@ -61,7 +61,7 @@ def parse_dataVals(
     # The prefix should be something unlikely to be a dataval key.
     prefix = "aa"
 
-    output: Dict[str, Union[int, str, List[int]]] = {}
+    output: dict[str, Union[int, str, list[int]]] = {}
     if datavals != "[]":
         datavals = remove_brackets(datavals)
         array = re.split(r",\s*(?![^\[\]]*])", datavals)
@@ -223,8 +223,8 @@ def get_nice_func_group(
 
 def get_nice_base_function(
     function: FunctionEntityNoReverse, region: Region
-) -> Dict[str, Any]:
-    functionInfo: Dict[str, Any] = {
+) -> dict[str, Any]:
+    functionInfo: dict[str, Any] = {
         "funcId": function.mstFunc.id,
         "funcPopupText": function.mstFunc.popupText,
         "funcquestTvals": get_traits_list(function.mstFunc.questTvals),

@@ -1,5 +1,5 @@
 import json
-from typing import Any, Dict, Iterable, Mapping, Optional, Set, Type, Union
+from typing import Any, Iterable, Mapping, Optional, Type, Union
 
 from fastapi.responses import Response
 from pydantic import BaseModel
@@ -15,8 +15,8 @@ class DetailMessage(BaseModel):
     detail: str
 
 
-ErrorDetailType = Dict[str, Union[Type[DetailMessage], str]]
-ERROR_CODE: Dict[int, ErrorDetailType] = {
+ErrorDetailType = dict[str, Union[Type[DetailMessage], str]]
+ERROR_CODE: dict[int, ErrorDetailType] = {
     400: {"model": DetailMessage, "description": "Insufficient query"},
     403: {"model": DetailMessage, "description": "Response too big"},
     404: {"model": DetailMessage, "description": "Item not found"},
@@ -26,7 +26,7 @@ ERROR_CODE: Dict[int, ErrorDetailType] = {
 
 def get_error_code(
     error_codes: Union[Iterable[int], Mapping[int, Any]]
-) -> Dict[Union[int, str], ErrorDetailType]:
+) -> dict[Union[int, str], ErrorDetailType]:
     return {k: v for k, v in ERROR_CODE.items() if k in error_codes}
 
 
@@ -59,7 +59,7 @@ def list_string(items: Iterable[BaseModelORJson]) -> str:
     )
 
 
-def list_string_exclude(items: Iterable[BaseModelORJson], exclude: Set[str]) -> str:
+def list_string_exclude(items: Iterable[BaseModelORJson], exclude: set[str]) -> str:
     """
     Convert input list of model objects to a json formatted string.
     Attributes given to exclude will be excluded from the output json string.

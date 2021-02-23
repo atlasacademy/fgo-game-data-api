@@ -1,4 +1,4 @@
-from typing import Any, Dict
+from typing import Any
 
 from ...config import Settings
 from ...schemas.common import Region
@@ -12,8 +12,8 @@ from ..utils import get_traits_list
 settings = Settings()
 
 
-def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> Dict[str, Any]:
-    buffInfo: Dict[str, Any] = {
+def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> dict[str, Any]:
+    buffInfo: dict[str, Any] = {
         "id": buffEntity.mstBuff.id,
         "name": buffEntity.mstBuff.name,
         "detail": buffEntity.mstBuff.detail,

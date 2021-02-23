@@ -1,5 +1,3 @@
-from typing import Dict, List
-
 from sqlalchemy.engine import Connection
 
 from ...config import Settings
@@ -46,7 +44,7 @@ def get_nice_ai_act(conn: Connection, region: Region, mstAiAct: MstAiAct) -> Nic
 
 def get_parent_ais(
     region: Region, ai_id: int, field: bool = False
-) -> Dict[AiType, List[int]]:
+) -> dict[AiType, list[int]]:
     if field:
         return {
             AiType.svt: [],

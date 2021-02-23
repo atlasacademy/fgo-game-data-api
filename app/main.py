@@ -1,5 +1,5 @@
 import time
-from typing import Awaitable, Callable, Dict
+from typing import Awaitable, Callable
 
 import toml
 from fastapi import FastAPI, Request, Response
@@ -189,8 +189,8 @@ async def root() -> RedirectResponse:
     return RedirectResponse("/rapidoc")
 
 
-@app.get("/info", summary="Data version info", response_model=Dict[Region, RepoInfo])
-async def main_info(response: Response) -> Dict[Region, RepoInfo]:
+@app.get("/info", summary="Data version info", response_model=dict[Region, RepoInfo])
+async def main_info(response: Response) -> dict[Region, RepoInfo]:
     response.headers["Bloom-Response-Ignore"] = "1"
     return repo_info
 

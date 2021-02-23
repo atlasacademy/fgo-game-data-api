@@ -1,5 +1,4 @@
 from enum import Enum
-from typing import Dict
 
 from .gameenums import (
     AI_ACT_NUM_NAME,
@@ -71,13 +70,13 @@ from .gameenums import (
 ### Servant Type ###
 
 
-SVT_TYPE_NAME_REVERSE: Dict[NiceSvtType, int] = {v: k for k, v in SVT_TYPE_NAME.items()}
+SVT_TYPE_NAME_REVERSE: dict[NiceSvtType, int] = {v: k for k, v in SVT_TYPE_NAME.items()}
 
 
 ### Servant Flag ###
 
 
-SVT_FLAG_NAME_REVERSE: Dict[NiceSvtFlag, int] = {v: k for k, v in SVT_FLAG_NAME.items()}
+SVT_FLAG_NAME_REVERSE: dict[NiceSvtFlag, int] = {v: k for k, v in SVT_FLAG_NAME.items()}
 
 
 ### Item Use Type ###
@@ -101,13 +100,13 @@ class NiceSkillType(str, Enum):
     passive = "passive"
 
 
-SKILL_TYPE_NAME: Dict[int, NiceSkillType] = {
+SKILL_TYPE_NAME: dict[int, NiceSkillType] = {
     1: NiceSkillType.active,
     2: NiceSkillType.passive,
 }
 
 
-SKILL_TYPE_NAME_REVERSE: Dict[NiceSkillType, int] = {
+SKILL_TYPE_NAME_REVERSE: dict[NiceSkillType, int] = {
     v: k for k, v in SKILL_TYPE_NAME.items()
 }
 
@@ -122,7 +121,7 @@ FUNC_VALS_NOT_BUFF = {
 }
 
 
-FUNC_TYPE_NAME_REVERSE: Dict[NiceFuncType, int] = {
+FUNC_TYPE_NAME_REVERSE: dict[NiceFuncType, int] = {
     v: k for k, v in FUNC_TYPE_NAME.items()
 }
 
@@ -138,14 +137,14 @@ class FuncApplyTarget(str, Enum):
     playerAndEnemy = "playerAndEnemy"
 
 
-FUNC_APPLYTARGET_NAME: Dict[int, FuncApplyTarget] = {
+FUNC_APPLYTARGET_NAME: dict[int, FuncApplyTarget] = {
     1: FuncApplyTarget.player,
     2: FuncApplyTarget.enemy,
     3: FuncApplyTarget.playerAndEnemy,
 }
 
 
-FUNC_APPLYTARGET_NAME_REVERSE: Dict[FuncApplyTarget, int] = {
+FUNC_APPLYTARGET_NAME_REVERSE: dict[FuncApplyTarget, int] = {
     v: k for k, v in FUNC_APPLYTARGET_NAME.items()
 }
 
@@ -153,7 +152,7 @@ FUNC_APPLYTARGET_NAME_REVERSE: Dict[FuncApplyTarget, int] = {
 ### Func Target Type ###
 
 
-FUNC_TARGETTYPE_NAME_REVERSE: Dict[NiceFuncTargetType, int] = {
+FUNC_TARGETTYPE_NAME_REVERSE: dict[NiceFuncTargetType, int] = {
     v: k for k, v in FUNC_TARGETTYPE_NAME.items()
 }
 
@@ -210,7 +209,7 @@ ENEMY_FUNC_SIGNATURE = (
 ### Buff Type ###
 
 
-BUFF_TYPE_NAME_REVERSE: Dict[NiceBuffType, int] = {
+BUFF_TYPE_NAME_REVERSE: dict[NiceBuffType, int] = {
     v: k for k, v in BUFF_TYPE_NAME.items()
 }
 
@@ -228,7 +227,7 @@ class NiceItemBGType(str, Enum):
     questClearQPReward = "questClearQPReward"
 
 
-ITEM_BG_TYPE_NAME: Dict[int, NiceItemBGType] = {
+ITEM_BG_TYPE_NAME: dict[int, NiceItemBGType] = {
     0: NiceItemBGType.zero,
     1: NiceItemBGType.bronze,
     2: NiceItemBGType.silver,
@@ -249,7 +248,7 @@ ITEM_TYPE_REVERSE = {v: k for k, v in ITEM_TYPE_NAME.items()}
 ### Card Type ###
 
 
-CARD_TYPE_NAME_REVERSE: Dict[NiceCardType, int] = {
+CARD_TYPE_NAME_REVERSE: dict[NiceCardType, int] = {
     v: k for k, v in CARD_TYPE_NAME.items()
 }
 
@@ -257,7 +256,7 @@ CARD_TYPE_NAME_REVERSE: Dict[NiceCardType, int] = {
 ### Gender ###
 
 
-GENDER_TYPE_NAME_REVERSE: Dict[NiceGender, int] = {
+GENDER_TYPE_NAME_REVERSE: dict[NiceGender, int] = {
     v: k for k, v in GENDER_TYPE_NAME.items()
 }
 
@@ -275,7 +274,7 @@ class Attribute(str, Enum):
     beast = "beast"
 
 
-ATTRIBUTE_NAME: Dict[int, Attribute] = {
+ATTRIBUTE_NAME: dict[int, Attribute] = {
     1: Attribute.human,
     2: Attribute.sky,
     3: Attribute.earth,
@@ -284,7 +283,7 @@ ATTRIBUTE_NAME: Dict[int, Attribute] = {
 }
 
 
-ATTRIBUTE_NAME_REVERSE: Dict[Attribute, int] = {v: k for k, v in ATTRIBUTE_NAME.items()}
+ATTRIBUTE_NAME_REVERSE: dict[Attribute, int] = {v: k for k, v in ATTRIBUTE_NAME.items()}
 
 
 ### Servant Class ###
@@ -320,7 +319,7 @@ class SvtClass(str, Enum):
     # ALLCLASS = "ALLCLASS"
 
 
-CLASS_NAME: Dict[int, SvtClass] = {
+CLASS_NAME: dict[int, SvtClass] = {
     1: SvtClass.saber,
     2: SvtClass.archer,
     3: SvtClass.lancer,
@@ -349,7 +348,7 @@ CLASS_NAME: Dict[int, SvtClass] = {
 }
 
 
-CLASS_NAME_REVERSE: Dict[SvtClass, int] = {v: k for k, v in CLASS_NAME.items()}
+CLASS_NAME_REVERSE: dict[SvtClass, int] = {v: k for k, v in CLASS_NAME.items()}
 
 
 PLAYABLE_CLASS_LIST = [
@@ -395,7 +394,7 @@ class AiTiming(str, Enum):
     unknown = "unknown"
 
 
-AI_TIMING_NAME: Dict[int, AiTiming] = {
+AI_TIMING_NAME: dict[int, AiTiming] = {
     -6: AiTiming.dead,
     -1: AiTiming.unknown,
     1: AiTiming.waveStart,
@@ -655,7 +654,7 @@ class Trait(str, Enum):
     buffCharmFemale = "buffCharmFemale"
 
 
-TRAIT_NAME: Dict[int, Trait] = {
+TRAIT_NAME: dict[int, Trait] = {
     1: Trait.genderMale,
     2: Trait.genderFemale,
     3: Trait.genderUnknown,
@@ -893,7 +892,7 @@ TRAIT_NAME: Dict[int, Trait] = {
 }
 
 
-TRAIT_NAME_REVERSE: Dict[Trait, int] = {v: k for k, v in TRAIT_NAME.items()}
+TRAIT_NAME_REVERSE: dict[Trait, int] = {v: k for k, v in TRAIT_NAME.items()}
 
 
 ALL_ENUMS = {

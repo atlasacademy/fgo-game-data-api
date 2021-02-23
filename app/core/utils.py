@@ -1,4 +1,4 @@
-from typing import Any, Iterable, List, Mapping, Optional, TypeVar, Union
+from typing import Any, Iterable, Mapping, Optional, TypeVar, Union
 
 from ..data.custom_mappings import TRANSLATIONS
 from ..schemas.basic import BasicCommandCode, BasicEquip, BasicServant
@@ -32,7 +32,7 @@ def get_nice_trait(individuality: int) -> NiceTrait:
     )
 
 
-def get_traits_list(input_idv: Iterable[int]) -> List[NiceTrait]:
+def get_traits_list(input_idv: Iterable[int]) -> list[NiceTrait]:
     """
     Return the corresponding list NiceTrait objects given the individuality list
     """
@@ -50,7 +50,7 @@ THasColNo = TypeVar(
 )
 
 
-def sort_by_collection_no(input_list: Iterable[THasColNo]) -> List[THasColNo]:
+def sort_by_collection_no(input_list: Iterable[THasColNo]) -> list[THasColNo]:
     """
     Return given list of basic svt objects sorted by their collectionNo attribute
     """

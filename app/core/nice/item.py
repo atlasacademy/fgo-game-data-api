@@ -1,5 +1,3 @@
-from typing import List
-
 from ...config import Settings
 from ...data.gamedata import masters
 from ...schemas.common import Region
@@ -12,8 +10,8 @@ from ..utils import get_traits_list
 settings = Settings()
 
 
-def get_item_use(region: Region, item_id: int) -> List[NiceItemUse]:
-    item_uses: List[NiceItemUse] = []
+def get_item_use(region: Region, item_id: int) -> list[NiceItemUse]:
+    item_uses: list[NiceItemUse] = []
 
     for use_type, use_table in (
         (NiceItemUse.skill, masters[region].mstCombineSkillItem),
@@ -49,8 +47,8 @@ def get_nice_item_from_raw(region: Region, raw_item: MstItem) -> NiceItem:
 
 
 def get_nice_item_amount(
-    region: Region, item_list: List[int], amount_list: List[int]
-) -> List[NiceItemAmount]:
+    region: Region, item_list: list[int], amount_list: list[int]
+) -> list[NiceItemAmount]:
     return [
         NiceItemAmount(item=get_nice_item(region, item_id), amount=amount)
         for item_id, amount in zip(item_list, amount_list)

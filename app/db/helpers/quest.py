@@ -1,4 +1,4 @@
-from typing import Iterable, List, Optional
+from typing import Iterable, Optional
 
 from sqlalchemy.engine import Connection
 from sqlalchemy.sql import and_, func, select
@@ -31,7 +31,7 @@ SELECT_QUEST_ENTITY = [
 ]
 
 
-def get_quest_entity(conn: Connection, quest_ids: Iterable[int]) -> List[QuestEntity]:
+def get_quest_entity(conn: Connection, quest_ids: Iterable[int]) -> list[QuestEntity]:
     stmt = (
         select(*SELECT_QUEST_ENTITY)
         .select_from(JOINED_QUEST_TABLES)
@@ -41,7 +41,7 @@ def get_quest_entity(conn: Connection, quest_ids: Iterable[int]) -> List[QuestEn
     return [QuestEntity.from_orm(quest) for quest in conn.execute(stmt).fetchall()]
 
 
-def get_quest_by_spot(conn: Connection, spot_ids: Iterable[int]) -> List[QuestEntity]:
+def get_quest_by_spot(conn: Connection, spot_ids: Iterable[int]) -> list[QuestEntity]:
     stmt = (
         select(*SELECT_QUEST_ENTITY)
         .select_from(JOINED_QUEST_TABLES)

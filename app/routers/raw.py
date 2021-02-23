@@ -1,5 +1,3 @@
-from typing import List
-
 from fastapi import APIRouter, Depends, HTTPException, Response
 from sqlalchemy.engine import Connection
 
@@ -52,7 +50,7 @@ Expand all other skills and functions as well.
     summary="Find and get servant data",
     description=ServantSearchQueryParams.DESCRIPTION + svt_expand_lore_description,
     response_description="Servant Entity",
-    response_model=List[ServantEntity],
+    response_model=list[ServantEntity],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
@@ -107,7 +105,7 @@ async def get_servant(
     summary="Find and get CE data",
     description=EquipSearchQueryParams.DESCRIPTION + svt_expand_lore_description,
     response_description="CE entity",
-    response_model=List[ServantEntity],
+    response_model=list[ServantEntity],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
@@ -162,7 +160,7 @@ async def get_equip(
     summary="Find and get servant data",
     description=SvtSearchQueryParams.DESCRIPTION + svt_expand_lore_description,
     response_description="Nice Servant Entities",
-    response_model=List[ServantEntity],
+    response_model=list[ServantEntity],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
@@ -276,7 +274,7 @@ from the function IDs in mstSkillLv.funcId.
     summary="Find and get skill data",
     description=SkillSearchParams.DESCRIPTION + raw_skill_extra,
     response_description="Basic Skill Entities",
-    response_model=List[SkillEntity],
+    response_model=list[SkillEntity],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
@@ -328,7 +326,7 @@ from the function IDs in mstTreasureDeviceLv.funcId.
     summary="Find and get NP data",
     description=TdSearchParams.DESCRIPTION + raw_td_extra,
     response_description="Nice NP Entities",
-    response_model=List[TdEntity],
+    response_model=list[TdEntity],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
@@ -378,7 +376,7 @@ and return the reversed skill objects.
     summary="Find and get function data",
     description=FuncSearchQueryParams.DESCRIPTION + function_reverse_expand_description,
     response_description="Function entity",
-    response_model=List[FunctionEntity],
+    response_model=list[FunctionEntity],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
@@ -437,7 +435,7 @@ and return the reversed function objects.
     summary="Find and get buff data",
     description=BuffSearchQueryParams.DESCRIPTION + buff_reverse_description,
     response_description="Function entity",
-    response_model=List[BuffEntity],
+    response_model=list[BuffEntity],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
@@ -482,7 +480,7 @@ async def get_buff(
     summary="Find and get item data",
     description=ItemSearchQueryParams.DESCRIPTION,
     response_description="Item entity",
-    response_model=List[ItemEntity],
+    response_model=list[ItemEntity],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )

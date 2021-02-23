@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import Optional
 
 from pydantic import HttpUrl
 
@@ -22,10 +22,10 @@ class BasicBuff(BaseModelORJson):
     icon: HttpUrl
     type: NiceBuffType
     script: NiceBuffScript
-    vals: List[NiceTrait]
-    tvals: List[NiceTrait]
-    ckSelfIndv: List[NiceTrait]
-    ckOpIndv: List[NiceTrait]
+    vals: list[NiceTrait]
+    tvals: list[NiceTrait]
+    ckSelfIndv: list[NiceTrait]
+    ckOpIndv: list[NiceTrait]
 
 
 class BasicFunction(BaseModelORJson):
@@ -33,10 +33,10 @@ class BasicFunction(BaseModelORJson):
     funcType: NiceFuncType
     funcTargetType: NiceFuncTargetType
     funcTargetTeam: FuncApplyTarget
-    functvals: List[NiceTrait]
-    funcquestTvals: List[NiceTrait]
-    traitVals: List[NiceTrait] = []
-    buffs: List[BasicBuff]
+    functvals: list[NiceTrait]
+    funcquestTvals: list[NiceTrait]
+    traitVals: list[NiceTrait] = []
+    buffs: list[BasicBuff]
 
 
 class BasicSkill(BaseModelORJson):
@@ -94,9 +94,9 @@ class BasicCommandCode(BaseModelORJson):
 
 
 class BasicReversedSkillTd(BaseModelORJson):
-    servant: List[BasicServant] = []
-    MC: List[BasicMysticCode] = []
-    CC: List[BasicCommandCode] = []
+    servant: list[BasicServant] = []
+    MC: list[BasicMysticCode] = []
+    CC: list[BasicCommandCode] = []
 
 
 class BasicReversedSkillTdType(BaseModelORJson):
@@ -112,8 +112,8 @@ class BasicTdReverse(BasicTd):
 
 
 class BasicReversedFunction(BaseModelORJson):
-    skill: List[BasicSkillReverse] = []
-    NP: List[BasicTdReverse] = []
+    skill: list[BasicSkillReverse] = []
+    NP: list[BasicTdReverse] = []
 
 
 class BasicReversedFunctionType(BaseModelORJson):
@@ -125,7 +125,7 @@ class BasicFunctionReverse(BasicFunction):
 
 
 class BasicReversedBuff(BaseModelORJson):
-    function: List[BasicFunctionReverse] = []
+    function: list[BasicFunctionReverse] = []
 
 
 class BasicReversedBuffType(BaseModelORJson):
@@ -145,12 +145,12 @@ class BasicEvent(BaseModelORJson):
     endedAt: int
     finishedAt: int
     materialOpenedAt: int
-    warIds: List[int]
+    warIds: list[int]
 
 
 class BasicWar(BaseModelORJson):
     id: int
-    coordinates: List[List[int]]
+    coordinates: list[list[int]]
     age: str
     name: str
     longName: str

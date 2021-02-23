@@ -2,7 +2,7 @@ import argparse
 import json
 import os
 from pathlib import Path
-from typing import Any, Callable, Dict
+from typing import Any, Callable
 
 from dotenv import load_dotenv
 
@@ -10,8 +10,8 @@ from dotenv import load_dotenv
 MAPPING_PATH = Path(__file__).resolve().parents[1] / "app" / "data" / "mappings"
 
 
-def get_ce_names(mstSvt: Any) -> Dict[int, str]:
-    ce_names: Dict[int, str] = {
+def get_ce_names(mstSvt: Any) -> dict[int, str]:
+    ce_names: dict[int, str] = {
         svt["collectionNo"]: svt["name"]
         for svt in mstSvt
         if svt["type"] == 6 and svt["collectionNo"] != 0
@@ -19,15 +19,15 @@ def get_ce_names(mstSvt: Any) -> Dict[int, str]:
     return ce_names
 
 
-def get_cc_names(mstCommandCode: Any) -> Dict[int, str]:
-    cc_names: Dict[int, str] = {
+def get_cc_names(mstCommandCode: Any) -> dict[int, str]:
+    cc_names: dict[int, str] = {
         svt["collectionNo"]: svt["name"] for svt in mstCommandCode
     }
     return cc_names
 
 
-def get_mc_names(mstEquip: Any) -> Dict[int, str]:
-    mc_names: Dict[int, str] = {svt["id"]: svt["name"] for svt in mstEquip}
+def get_mc_names(mstEquip: Any) -> dict[int, str]:
+    mc_names: dict[int, str] = {svt["id"]: svt["name"] for svt in mstEquip}
     return mc_names
 
 
@@ -36,7 +36,7 @@ def update_translation(
     jp_master: Path,
     na_master: Path,
     master_file: str,
-    extract_names: Callable[[Any], Dict[int, str]],
+    extract_names: Callable[[Any], dict[int, str]],
 ) -> None:
     with open(jp_master / f"{master_file}.json", "r", encoding="utf-8") as fp:
         jp_svt = json.load(fp)
@@ -46,7 +46,7 @@ def update_translation(
     mapping_path = MAPPING_PATH / mapping
     if mapping_path.exists():
         with open(mapping_path, "r", encoding="utf-8") as fp:
-            current_translations: Dict[str, str] = json.load(fp)
+            current_translations: dict[str, str] = json.load(fp)
     else:
         current_translations = {}
 

@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import Dict, Optional, Union
+from typing import Optional, Union
 
 from pydantic import BaseModel, HttpUrl
 
@@ -76,8 +76,8 @@ class RelationOverwriteDetail(BaseModel):
 
 
 class NiceBuffRelationOverwrite(BaseModel):
-    atkSide: Dict[SvtClass, Dict[SvtClass, RelationOverwriteDetail]]
-    defSide: Dict[SvtClass, Dict[SvtClass, RelationOverwriteDetail]]
+    atkSide: dict[SvtClass, dict[SvtClass, RelationOverwriteDetail]]
+    defSide: dict[SvtClass, dict[SvtClass, RelationOverwriteDetail]]
 
 
 class NiceBuffScript(BaseModel):

@@ -1,5 +1,3 @@
-from typing import List
-
 from fastapi import APIRouter, Depends, HTTPException, Response
 from sqlalchemy.engine import Connection
 
@@ -54,7 +52,7 @@ svt_lang_lore_description = """
     summary="Find and get servant data",
     description=ServantSearchQueryParams.DESCRIPTION + svt_lang_lore_description,
     response_description="Servant Entity",
-    response_model=List[NiceServant],
+    response_model=list[NiceServant],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403, 500]),
 )
@@ -126,7 +124,7 @@ equip_lore_description = """
     summary="Find and get CE data",
     description=EquipSearchQueryParams.DESCRIPTION + equip_lore_description,
     response_description="Equip Entity",
-    response_model=List[NiceEquip],
+    response_model=list[NiceEquip],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403, 500]),
 )
@@ -193,7 +191,7 @@ async def get_equip(
     summary="Find and get servant data",
     description=SvtSearchQueryParams.DESCRIPTION + svt_lang_lore_description,
     response_description="Nice Servant Entities",
-    response_model=List[NiceServant],
+    response_model=list[NiceServant],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403, 500]),
 )
@@ -321,7 +319,7 @@ and return the reverse skill objects.
     summary="Find and get skill data",
     description=SkillSearchParams.DESCRIPTION + nice_skill_extra,
     response_description="Nice Skill entities",
-    response_model=List[NiceSkillReverse],
+    response_model=list[NiceSkillReverse],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
@@ -378,7 +376,7 @@ and return the reversed servant objects.
     summary="Find and get NP data",
     description=TdSearchParams.DESCRIPTION + nice_td_extra,
     response_description="Nice NP Entities",
-    response_model=List[NiceTdReverse],
+    response_model=list[NiceTdReverse],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
@@ -436,7 +434,7 @@ and return the reversed skill objects.
     summary="Find and get function data",
     description=FuncSearchQueryParams.DESCRIPTION + function_reverse_lang_description,
     response_description="Function entity",
-    response_model=List[NiceBaseFunctionReverse],
+    response_model=list[NiceBaseFunctionReverse],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403, 500]),
 )
@@ -500,7 +498,7 @@ and return the reversed function objects.
     summary="Find and get buff data",
     description=BuffSearchQueryParams.DESCRIPTION + buff_reverse_lang_description,
     response_description="Function entity",
-    response_model=List[NiceBuffReverse],
+    response_model=list[NiceBuffReverse],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403, 500]),
 )
@@ -554,7 +552,7 @@ async def get_buff(
     summary="Find and get item data",
     description=ItemSearchQueryParams.DESCRIPTION,
     response_description="Item entity",
-    response_model=List[NiceItem],
+    response_model=list[NiceItem],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )

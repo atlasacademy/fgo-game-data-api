@@ -1,4 +1,4 @@
-from typing import Dict, List, Union
+from typing import Union
 
 from ....config import Settings
 from ....data.custom_mappings import TRANSLATIONS
@@ -12,7 +12,7 @@ settings = Settings()
 
 
 def get_nice_ascensionAdd(
-    region: Region, raw_svt: ServantEntity, costume_ids: Dict[int, int], lang: Language
+    region: Region, raw_svt: ServantEntity, costume_ids: dict[int, int], lang: Language
 ) -> AscensionAdd:
     OVERWRITE_FIELDS = [
         "overWriteServantName",
@@ -22,7 +22,7 @@ def get_nice_ascensionAdd(
         "overWriteTDFileName",
     ]
 
-    ascensionAdd: Dict[str, Dict[str, Dict[int, Union[List[NiceTrait], int, str]]]] = {
+    ascensionAdd: dict[str, dict[str, dict[int, Union[list[NiceTrait], int, str]]]] = {
         ascensionAddField: {"ascension": {}, "costume": {}}
         for ascensionAddField in OVERWRITE_FIELDS + ["individuality", "voicePrefix"]
     }

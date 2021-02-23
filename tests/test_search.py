@@ -1,6 +1,4 @@
 # pylint: disable=R0201
-from typing import Dict, Set, Tuple
-
 import pytest
 from fastapi.testclient import TestClient
 from requests import Response
@@ -23,7 +21,7 @@ RAW_MAIN_ITEM = {
 }
 
 
-def get_item_list(response: Response, response_type: str, endpoint: str) -> Set[int]:
+def get_item_list(response: Response, response_type: str, endpoint: str) -> set[int]:
     item_type = endpoint.split("/")[1]
     if response_type == "raw":
         if item_type in RAW_MAIN_ITEM:
@@ -41,7 +39,7 @@ def get_item_list(response: Response, response_type: str, endpoint: str) -> Set[
         return {item[id_name] for item in response.json()}
 
 
-test_cases_dict: Dict[str, Tuple[str, Set[int]]] = {
+test_cases_dict: dict[str, tuple[str, set[int]]] = {
     "equip_name_NA_1": ("NA/equip/search?name=Kaleidoscope", {9400340}),
     "equip_name_NA_2": ("NA/equip/search?name=Banquet", {9302550, 9400290}),
     "equip_name_JP": ("JP/equip/search?name=カレイドスコープ", {9400340}),
@@ -173,7 +171,7 @@ not_found_cases = [
 class TestSearch:
     @pytest.mark.parametrize("search_query,result", test_cases)
     def test_search(
-        self, search_query: str, result: Set[int], response_type: str
+        self, search_query: str, result: set[int], response_type: str
     ) -> None:
         response = client.get(f"/{response_type}/{search_query}")
         result_ids = get_item_list(response, response_type, search_query)
@@ -212,7 +210,7 @@ nice_raw_test_cases = [
 class TestSearchNiceRaw:
     @pytest.mark.parametrize("search_query,result", nice_raw_test_cases)
     def test_search_nice_raw(
-        self, search_query: str, result: Set[int], response_type: str
+        self, search_query: str, result: set[int], response_type: str
     ) -> None:
         response = client.get(f"/{response_type}/{search_query}")
         result_ids = get_item_list(response, response_type, search_query)

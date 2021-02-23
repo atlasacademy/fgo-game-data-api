@@ -1,4 +1,4 @@
-from typing import Any, Iterable, List, Optional
+from typing import Any, Iterable, Optional
 
 from sqlalchemy.dialects.postgresql import aggregate_order_by
 from sqlalchemy.engine import Connection
@@ -11,7 +11,7 @@ from .utils import sql_jsonb_agg
 
 def get_skillEntity(
     conn: Connection, skill_ids: Iterable[int]
-) -> List[SkillEntityNoReverse]:
+) -> list[SkillEntityNoReverse]:
     mstSkillLvJson = (
         select(
             mstSkillLv.c.skillId,
@@ -52,7 +52,7 @@ def get_skillEntity(
     return sorted(skill_entities, key=lambda skill: order[skill.mstSkill.id])
 
 
-def get_mstSvtSkill(conn: Connection, svt_id: int) -> List[Any]:
+def get_mstSvtSkill(conn: Connection, svt_id: int) -> list[Any]:
     mstSvtSkill_stmt = select(mstSvtSkill).where(mstSvtSkill.c.svtId == svt_id)
     fetched: list[Any] = conn.execute(mstSvtSkill_stmt).fetchall()
     return fetched
@@ -66,7 +66,7 @@ def get_skill_search(
     strengthStatus: Optional[Iterable[int]],
     lvl1coolDown: Optional[Iterable[int]],
     numFunctions: Optional[Iterable[int]],
-) -> List[MstSkill]:
+) -> list[MstSkill]:
     where_clause = [mstSkillLv.c.lv == 1]
     if skillType:
         where_clause.append(mstSkill.c.type.in_(skillType))

@@ -1,4 +1,4 @@
-from typing import Any, Dict, Union
+from typing import Any, Union
 
 from sqlalchemy.engine import Connection
 
@@ -42,8 +42,8 @@ def get_nice_stage(region: Region, raw_stage: MstStage) -> NiceStage:
 
 def get_nice_quest(
     region: Region, raw_quest: Union[QuestEntity, QuestPhaseEntity]
-) -> Dict[str, Any]:
-    nice_data: Dict[str, Any] = {
+) -> dict[str, Any]:
+    nice_data: dict[str, Any] = {
         "id": raw_quest.mstQuest.id,
         "name": raw_quest.mstQuest.name,
         "type": QUEST_TYPE_NAME[raw_quest.mstQuest.type],

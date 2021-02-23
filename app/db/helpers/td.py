@@ -1,4 +1,4 @@
-from typing import Any, Iterable, List, Optional
+from typing import Any, Iterable, Optional
 
 from sqlalchemy.dialects.postgresql import aggregate_order_by
 from sqlalchemy.engine import Connection
@@ -14,7 +14,7 @@ from ...schemas.raw import MstTreasureDevice, TdEntityNoReverse
 from .utils import sql_jsonb_agg
 
 
-def get_tdEntity(conn: Connection, td_ids: Iterable[int]) -> List[TdEntityNoReverse]:
+def get_tdEntity(conn: Connection, td_ids: Iterable[int]) -> list[TdEntityNoReverse]:
     mstTreasureDeviceLvJson = (
         select(
             mstTreasureDeviceLv.c.treaureDeviceId,
@@ -67,7 +67,7 @@ def get_tdEntity(conn: Connection, td_ids: Iterable[int]) -> List[TdEntityNoReve
     return sorted(skill_entities, key=lambda td: order[td.mstTreasureDevice.id])
 
 
-def get_mstSvtTreasureDevice(conn: Connection, svt_id: int) -> List[Any]:
+def get_mstSvtTreasureDevice(conn: Connection, svt_id: int) -> list[Any]:
     mstSvtTreasureDevice_stmt = select(mstSvtTreasureDevice).where(
         mstSvtTreasureDevice.c.svtId == svt_id
     )
@@ -84,7 +84,7 @@ def get_td_search(
     numFunctions: Optional[Iterable[int]],
     minNpNpGain: Optional[int],
     maxNpNpGain: Optional[int],
-) -> List[MstTreasureDevice]:
+) -> list[MstTreasureDevice]:
     where_clause = [mstTreasureDeviceLv.c.lv == 1]
     if individuality:
         where_clause.append(mstTreasureDevice.c.individuality.contains(individuality))

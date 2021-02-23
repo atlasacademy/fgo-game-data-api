@@ -1,5 +1,5 @@
 from copy import deepcopy
-from typing import Any, Dict, List
+from typing import Any
 
 from ...config import Settings
 from ...schemas.common import Region
@@ -15,8 +15,8 @@ settings = Settings()
 
 def get_nice_td(
     tdEntity: TdEntityNoReverse, svtId: int, region: Region
-) -> List[Dict[str, Any]]:
-    nice_td: Dict[str, Any] = {
+) -> list[dict[str, Any]]:
+    nice_td: dict[str, Any] = {
         "id": tdEntity.mstTreasureDevice.id,
         "name": tdEntity.mstTreasureDevice.name,
         "ruby": tdEntity.mstTreasureDevice.ruby,

@@ -1,5 +1,3 @@
-from typing import List
-
 from sqlalchemy.engine import Connection
 from sqlalchemy.sql import select
 
@@ -7,7 +5,7 @@ from ...models.raw import mstEventReward, mstShop
 from ...schemas.raw import MstEventReward, MstShop
 
 
-def get_mstShop(conn: Connection, event_id: int) -> List[MstShop]:
+def get_mstShop(conn: Connection, event_id: int) -> list[MstShop]:
     mstShop_stmt = (
         select(mstShop).where(mstShop.c.eventId == event_id).order_by(mstShop.c.id)
     )
@@ -19,7 +17,7 @@ def get_mstShop_by_id(conn: Connection, shop_id: int) -> MstShop:
     return MstShop.from_orm(conn.execute(mstShop_stmt).fetchone())
 
 
-def get_mstEventReward(conn: Connection, event_id: int) -> List[MstEventReward]:
+def get_mstEventReward(conn: Connection, event_id: int) -> list[MstEventReward]:
     mstEventReward_stmt = select(mstEventReward).where(
         mstEventReward.c.eventId == event_id
     )
