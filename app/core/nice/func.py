@@ -217,10 +217,17 @@ def get_nice_func_group(
     )
 
 
-def get_nice_base_function(
-    function: FunctionEntityNoReverse, region: Region
+def get_nice_function(
+    region: Region,
+    function: FunctionEntityNoReverse,
+    svals: Optional[list[str]] = None,
+    svals2: Optional[list[str]] = None,
+    svals3: Optional[list[str]] = None,
+    svals4: Optional[list[str]] = None,
+    svals5: Optional[list[str]] = None,
+    followerVals: Optional[list[str]] = None,
 ) -> dict[str, Any]:
-    functionInfo: dict[str, Any] = {
+    nice_func: dict[str, Any] = {
         "funcId": function.mstFunc.id,
         "funcPopupText": function.mstFunc.popupText,
         "funcquestTvals": get_traits_list(function.mstFunc.questTvals),
@@ -238,11 +245,26 @@ def get_nice_base_function(
     }
 
     if function.mstFunc.funcType in FUNC_VALS_NOT_BUFF:
-        functionInfo["traitVals"] = get_traits_list(function.mstFunc.vals)
+        nice_func["traitVals"] = get_traits_list(function.mstFunc.vals)
 
     funcPopupIconId = function.mstFunc.popupIconId
     if funcPopupIconId != 0:
-        functionInfo["funcPopupIcon"] = AssetURL.buffIcon.format(
+        nice_func["funcPopupIcon"] = AssetURL.buffIcon.format(
             base_url=settings.asset_url, region=region, item_id=funcPopupIconId
         )
-    return functionInfo
+
+    for field, argument in [
+        ("svals", svals),
+        ("svals2", svals2),
+        ("svals3", svals3),
+        ("svals4", svals4),
+        ("svals5", svals5),
+        ("followerVals", followerVals),
+    ]:
+        if argument:
+            nice_func[field] = [
+                parse_dataVals(sval, function.mstFunc.funcType, region)
+                for sval in argument
+            ]
+
+    return nice_func

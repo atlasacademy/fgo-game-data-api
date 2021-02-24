@@ -32,7 +32,7 @@ from ..basic import (
 )
 from .buff import get_nice_buff
 from .cc import get_nice_command_code
-from .func import get_nice_base_function
+from .func import get_nice_function
 from .mc import get_nice_mystic_code
 from .skill import get_nice_skill_from_raw
 from .svt.svt import get_nice_servant
@@ -97,9 +97,7 @@ def get_nice_func_with_reverse(
     reverseData: ReverseData = ReverseData.nice,
 ) -> NiceBaseFunctionReverse:
     raw_func = raw.get_func_entity_no_reverse(region, func_id, expand=True)
-    nice_func = NiceBaseFunctionReverse.parse_obj(
-        get_nice_base_function(raw_func, region)
-    )
+    nice_func = NiceBaseFunctionReverse.parse_obj(get_nice_function(region, raw_func))
 
     if reverse and reverseDepth >= ReverseDepth.skillNp:
         if reverseData == ReverseData.basic:

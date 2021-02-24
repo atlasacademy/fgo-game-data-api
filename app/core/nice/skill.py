@@ -12,7 +12,7 @@ from ...schemas.nice import AssetURL, NiceSkillReverse
 from ...schemas.raw import SkillEntityNoReverse
 from ..raw import get_skill_entity_no_reverse
 from ..utils import get_safe, get_traits_list, strip_formatting_brackets
-from .func import get_nice_base_function, parse_dataVals
+from .func import get_nice_function
 
 
 settings = Settings()
@@ -77,21 +77,23 @@ def get_nice_skill_with_svt(
     nice_skill["functions"] = []
     for funci, _ in enumerate(skillEntity.mstSkillLv[0].funcId):
         function = skillEntity.mstSkillLv[0].expandedFuncId[funci]
-        functionInfo = get_nice_base_function(function, region)
-        functionInfo["svals"] = [
-            parse_dataVals(skill_lv.svals[funci], function.mstFunc.funcType, region)
-            for skill_lv in skillEntity.mstSkillLv
-        ]
-        if "followerVals" in skillEntity.mstSkillLv[0].script:
-            functionInfo["followerVals"] = [
-                parse_dataVals(
-                    skill_lv.script["followerVals"][funci],
-                    function.mstFunc.funcType,
-                    region,
-                )
+        followerVals = (
+            [
+                skill_lv.script["followerVals"][funci]
                 for skill_lv in skillEntity.mstSkillLv
             ]
-        nice_skill["functions"].append(functionInfo)
+            if "followerVals" in skillEntity.mstSkillLv[0].script
+            else None
+        )
+
+        nice_func = get_nice_function(
+            region,
+            function,
+            svals=[skill_lv.svals[funci] for skill_lv in skillEntity.mstSkillLv],
+            followerVals=followerVals,
+        )
+
+        nice_skill["functions"].append(nice_func)
 
     # .mstSvtSkill returns the list of SvtSkill with the same skill_id
     chosen_svts = [

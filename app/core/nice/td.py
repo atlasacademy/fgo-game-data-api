@@ -7,7 +7,7 @@ from ...schemas.enums import CARD_TYPE_NAME
 from ...schemas.nice import AssetURL
 from ...schemas.raw import TdEntityNoReverse
 from ..utils import get_traits_list, strip_formatting_brackets
-from .func import get_nice_base_function, parse_dataVals
+from .func import get_nice_function
 
 
 settings = Settings()
@@ -42,16 +42,25 @@ def get_nice_td(
     nice_td["functions"] = []
 
     for funci, _ in enumerate(tdEntity.mstTreasureDeviceLv[0].funcId):
-        function = tdEntity.mstTreasureDeviceLv[0].expandedFuncId[funci]
-        functionInfo = get_nice_base_function(function, region)
-        for sval in ["svals", "svals2", "svals3", "svals4", "svals5"]:
-            functionInfo[sval] = [
-                parse_dataVals(
-                    getattr(mst_td, sval)[funci], function.mstFunc.funcType, region
-                )
-                for mst_td in tdEntity.mstTreasureDeviceLv
-            ]
-        nice_td["functions"].append(functionInfo)
+        nice_func = get_nice_function(
+            region,
+            tdEntity.mstTreasureDeviceLv[0].expandedFuncId[funci],
+            svals=[skill_lv.svals[funci] for skill_lv in tdEntity.mstTreasureDeviceLv],
+            svals2=[
+                skill_lv.svals2[funci] for skill_lv in tdEntity.mstTreasureDeviceLv
+            ],
+            svals3=[
+                skill_lv.svals3[funci] for skill_lv in tdEntity.mstTreasureDeviceLv
+            ],
+            svals4=[
+                skill_lv.svals4[funci] for skill_lv in tdEntity.mstTreasureDeviceLv
+            ],
+            svals5=[
+                skill_lv.svals5[funci] for skill_lv in tdEntity.mstTreasureDeviceLv
+            ],
+        )
+
+        nice_td["functions"].append(nice_func)
 
     chosen_svts = [
         svt_td for svt_td in tdEntity.mstSvtTreasureDevice if svt_td.svtId == svtId
