@@ -397,6 +397,7 @@ class FuncTargetType(IntEnum):
     PT_SELF_ANOTHER_LAST = 24
     COMMAND_TYPE_SELF_TREASURE_DEVICE = 25
     FIELD_OTHER = 26
+    ENEMY_ONE_NO_TARGET_NO_ACTION = 27
 
 
 class NiceFuncTargetType(str, Enum):
@@ -429,6 +430,7 @@ class NiceFuncTargetType(str, Enum):
     ptSelfAnotherLast = "ptSelfAnotherLast"
     commandTypeSelfTreasureDevice = "commandTypeSelfTreasureDevice"
     fieldOther = "fieldOther"
+    enemyOneNoTargetNoAction = "enemyOneNoTargetNoAction"
 
 
 FUNC_TARGETTYPE_NAME: dict[int, NiceFuncTargetType] = {
@@ -459,6 +461,7 @@ FUNC_TARGETTYPE_NAME: dict[int, NiceFuncTargetType] = {
     24: NiceFuncTargetType.ptSelfAnotherLast,
     25: NiceFuncTargetType.commandTypeSelfTreasureDevice,
     26: NiceFuncTargetType.fieldOther,
+    27: NiceFuncTargetType.enemyOneNoTargetNoAction,
 }
 
 
@@ -1843,6 +1846,11 @@ class CondType(IntEnum):
     SHOP_FLAG_ON = 145
     SHOP_FLAG_OFF = 146
     PURCHASE_VALID_SHOP_GROUP = 147
+    SVT_LEVEL_CLASS_NUM = 148
+    SVT_LEVEL_ID_NUM = 149
+    LIMIT_COUNT_IMAGE_EQUAL = 150
+    LIMIT_COUNT_IMAGE_ABOVE = 151
+    LIMIT_COUNT_IMAGE_BELOW = 152
 
 
 class NiceCondType(str, Enum):
@@ -1996,6 +2004,11 @@ class NiceCondType(str, Enum):
     shopFlagOn = "shopFlagOn"
     shopFlagOff = "shopFlagOff"
     purchaseValidShopGroup = "purchaseValidShopGroup"
+    svtLevelClassNum = "svtLevelClassNum"
+    svtLevelIdNum = "svtLevelIdNum"
+    limitCountImageEqual = "limitCountImageEqual"
+    limitCountImageAbove = "limitCountImageAbove"
+    limitCountImageBelow = "limitCountImageBelow"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2147,6 +2160,11 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     145: NiceCondType.shopFlagOn,
     146: NiceCondType.shopFlagOff,
     147: NiceCondType.purchaseValidShopGroup,
+    148: NiceCondType.svtLevelClassNum,
+    149: NiceCondType.svtLevelIdNum,
+    150: NiceCondType.limitCountImageEqual,
+    151: NiceCondType.limitCountImageAbove,
+    152: NiceCondType.limitCountImageBelow,
 }
 
 
