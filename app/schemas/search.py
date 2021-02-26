@@ -240,8 +240,8 @@ class TdSearchParams:
                 self.hits,
                 self.strengthStatus,
                 self.numFunctions,
-                self.minNpNpGain,
-                self.maxNpNpGain,
+                self.minNpNpGain is not None,
+                self.maxNpNpGain is not None,
             ]
         )
 
