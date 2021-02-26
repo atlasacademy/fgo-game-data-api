@@ -140,6 +140,10 @@ class SkillEntityNoReverse(BaseModelORJson):
         orm_mode = True
 
 
+# Dummy ID that is used when enemy servant does an extra attack instead of NP
+EXTRA_ATTACK_TD_ID = 100
+
+
 class MstTreasureDevice(BaseModel):
     individuality: list[int]  # [3000, 4001, 4007],
     script: dict[str, Any]  # {"limitSeqId_12": 800140, "randomWeights_3": [50, 50]},

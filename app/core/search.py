@@ -27,7 +27,7 @@ from ..schemas.enums import (
     NiceItemUse,
     Trait,
 )
-from ..schemas.raw import MstItem
+from ..schemas.raw import EXTRA_ATTACK_TD_ID, MstItem
 from ..schemas.search import (
     BuffSearchQueryParams,
     EquipSearchQueryParams,
@@ -290,7 +290,7 @@ def search_td(
             or match_name(search_param.name, td.ruby)
         ]
 
-    td_ids = sorted({td.id for td in matches})
+    td_ids = sorted({td.id for td in matches if td.id != EXTRA_ATTACK_TD_ID})
 
     if len(td_ids) > limit:
         raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))

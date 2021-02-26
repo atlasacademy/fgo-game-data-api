@@ -8,6 +8,7 @@ from ..db.helpers import ai, event, quest, skill, svt, td, war
 from ..schemas.common import Region, ReverseDepth
 from ..schemas.enums import FUNC_VALS_NOT_BUFF
 from ..schemas.raw import (
+    EXTRA_ATTACK_TD_ID,
     AiCollection,
     AiEntity,
     BuffEntity,
@@ -282,7 +283,7 @@ def get_servant_entity(
                 [
                     td.treasureDeviceId
                     for td in td.get_mstSvtTreasureDevice(conn, svt_id=servant_id)
-                    if td.treasureDeviceId != 100
+                    if td.treasureDeviceId != EXTRA_ATTACK_TD_ID
                 ],
                 expand,
             )
