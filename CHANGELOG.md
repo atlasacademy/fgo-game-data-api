@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.47.0 - 2020-02-25
+### Changed
+- Removed upper and lower bounds of all integer skill and NP search parameters.
+
 ## 5.46.0 - 2020-02-14
 ### Added
 - Added `flag` to basic servant and `flag`, `bondEquipOwner`, `valentineEquipOwner` to basic equip.

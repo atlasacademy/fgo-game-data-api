@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fgo-game-data-api"
-version = "5.46.0"
+version = "5.47.0"
 description = "Provide raw and processed FGO game data"
 authors = ["squaresmile <squaresmile@protonmail.com>"]
 
@@ -11,7 +11,7 @@ uvicorn = {extras = ["standard"], version = "^0.13.4"}
 python-dotenv = "^0.15.0"
 fuzzywuzzy = "^0.18.0"
 python-Levenshtein = "^0.12.2"
-orjson = "^3.4.8"
+orjson = "^3.5.0"
 aiofiles = "^0.6.0"
 GitPython = "^3.1.13"
 toml = "^0.10.2"

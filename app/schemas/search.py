@@ -180,11 +180,11 @@ class SkillSearchParams:
     region: Region
     name: Optional[str] = None
     type: Optional[list[NiceSkillType]] = Query(None)
-    num: Optional[list[int]] = Query(None, ge=1, le=3)
-    priority: Optional[list[int]] = Query(None, ge=1, le=6)
-    strengthStatus: Optional[list[int]] = Query(None, ge=0, le=100)
-    lvl1coolDown: Optional[list[int]] = Query(None, ge=-1, le=100)
-    numFunctions: Optional[list[int]] = Query(None, ge=1, le=201)
+    num: Optional[list[int]] = Query(None)
+    priority: Optional[list[int]] = Query(None)
+    strengthStatus: Optional[list[int]] = Query(None)
+    lvl1coolDown: Optional[list[int]] = Query(None)
+    numFunctions: Optional[list[int]] = Query(None)
 
     def hasSearchParams(self) -> bool:
         return any(
@@ -225,11 +225,11 @@ class TdSearchParams:
     name: Optional[str] = None
     card: Optional[list[NiceCardType]] = Query(None)
     individuality: list[Union[Trait, int]] = Query([])
-    hits: Optional[list[int]] = Query(None, ge=1, le=20)
-    strengthStatus: Optional[list[int]] = Query(None, ge=0, le=2)
-    numFunctions: Optional[list[int]] = Query(None, ge=1, le=20)
-    minNpNpGain: Optional[int] = Query(None, ge=0, le=300)
-    maxNpNpGain: Optional[int] = Query(None, ge=0, le=300)
+    hits: Optional[list[int]] = Query(None)
+    strengthStatus: Optional[list[int]] = Query(None)
+    numFunctions: Optional[list[int]] = Query(None)
+    minNpNpGain: Optional[int] = None
+    maxNpNpGain: Optional[int] = None
 
     def hasSearchParams(self) -> bool:
         return any(

@@ -178,10 +178,12 @@ def search_servant(
             or match_name(search_param.name, get_safe(TRANSLATIONS, svt.name))
         ]
 
-    if len(matches) > limit:
+    svt_ids = sorted({svt.id for svt in matches})
+
+    if len(svt_ids) > limit:
         raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
 
-    return [svt.id for svt in matches]
+    return svt_ids
 
 
 def search_equip(search_param: EquipSearchQueryParams, limit: int = 100) -> list[int]:
@@ -210,10 +212,12 @@ def search_equip(search_param: EquipSearchQueryParams, limit: int = 100) -> list
             or match_name(search_param.name, get_safe(TRANSLATIONS, svt.name))
         ]
 
-    if len(matches) > limit:
+    svt_ids = sorted({svt.id for svt in matches})
+
+    if len(svt_ids) > limit:
         raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
 
-    return [svt.id for svt in matches]
+    return svt_ids
 
 
 def search_skill(
@@ -246,10 +250,12 @@ def search_skill(
             or match_name(search_param.name, skill.ruby)
         ]
 
-    if len(matches) > limit:
+    skill_ids = sorted({skill.id for skill in matches})
+
+    if len(skill_ids) > limit:
         raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
 
-    return [skill.id for skill in matches]
+    return skill_ids
 
 
 def search_td(
@@ -284,10 +290,12 @@ def search_td(
             or match_name(search_param.name, td.ruby)
         ]
 
-    if len(matches) > limit:
+    td_ids = sorted({td.id for td in matches})
+
+    if len(td_ids) > limit:
         raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
 
-    return [td.id for td in matches]
+    return td_ids
 
 
 def search_buff(search_param: BuffSearchQueryParams, limit: int = 100) -> list[int]:
@@ -322,10 +330,12 @@ def search_buff(search_param: BuffSearchQueryParams, limit: int = 100) -> list[i
             or match_name(search_param.name, buff.detail)
         ]
 
-    if len(matches) > limit:
+    buff_ids = sorted({buff.id for buff in matches})
+
+    if len(buff_ids) > limit:
         raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
 
-    return [buff.id for buff in matches]
+    return buff_ids
 
 
 def search_func(search_param: FuncSearchQueryParams, limit: int = 100) -> list[int]:
@@ -372,10 +382,12 @@ def search_func(search_param: FuncSearchQueryParams, limit: int = 100) -> list[i
             if match_name(search_param.popupText, func.popupText)
         ]
 
-    if len(matches) > limit:
+    func_ids = sorted({func.id for func in matches})
+
+    if len(func_ids) > limit:
         raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
 
-    return [func.id for func in matches]
+    return func_ids
 
 
 def search_item(search_param: ItemSearchQueryParams) -> list[MstItem]:

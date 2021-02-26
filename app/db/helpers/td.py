@@ -85,6 +85,7 @@ def get_td_search(
     minNpNpGain: Optional[int],
     maxNpNpGain: Optional[int],
 ) -> list[MstTreasureDevice]:
+    print(hits)
     where_clause = [mstTreasureDeviceLv.c.lv == 1]
     if individuality:
         where_clause.append(mstTreasureDevice.c.individuality.contains(individuality))
