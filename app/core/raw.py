@@ -394,6 +394,7 @@ def get_event_entity(conn: Connection, region: Region, event_id: int) -> EventEn
         mstEvent=masters[region].mstEventId[event_id],
         mstShop=event.get_mstShop(conn, event_id),
         mstEventReward=event.get_mstEventReward(conn, event_id),
+        mstEventPointBuff=event.get_mstEventPointBuff(conn, event_id),
     )
 
 

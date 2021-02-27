@@ -1012,6 +1012,18 @@ class NiceEventReward(BaseModelORJson):
     bgImageGet: HttpUrl
 
 
+class NiceEventPointBuff(BaseModelORJson):
+    id: int
+    funcIds: list[int]
+    groupId: int
+    eventPoint: int
+    name: str
+    detail: str
+    icon: HttpUrl
+    background: NiceItemBGType
+    value: int
+
+
 class NiceEvent(BaseModelORJson):
     id: int
     type: NiceEventType
@@ -1030,6 +1042,7 @@ class NiceEvent(BaseModelORJson):
     warIds: list[int]
     shop: list[NiceShop]
     rewards: list[NiceEventReward]
+    pointBuffs: list[NiceEventPointBuff]
 
 
 class NiceBgm(BaseModelORJson):

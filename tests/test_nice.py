@@ -447,3 +447,22 @@ class TestServantSpecial:
         miyu = client.get("/nice/NA/servant/236").json()
         for i, image_url in miyu["extraAssets"]["charaGraphName"]["ascension"].items():
             assert image_url.endswith(f"NA/CharaGraph/504100/504100name@{i}.png")
+
+    def test_event_point_buff(self) -> None:
+        oniland_point_buff = client.get("/nice/NA/event/80119").json()["pointBuffs"][1]
+        oniland_point_buff.pop("detail")
+        assert oniland_point_buff["icon"].endswith("NA/Items/94030201.png")
+        oniland_point_buff.pop("icon")
+        assert oniland_point_buff == {
+            "id": 94030201,
+            "funcIds": [
+                2991,
+                2992,
+                2993,
+            ],
+            "groupId": 0,
+            "eventPoint": 350000,
+            "name": "Event Special Attack damage +40% (Total + 40%)",
+            "background": "gold",
+            "value": 1400,
+        }

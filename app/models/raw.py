@@ -488,6 +488,22 @@ mstEventReward = Table(
 )
 
 
+mstEventPointBuff = Table(
+    "mstEventPointBuff",
+    metadata,
+    Column("funcIds", ARRAY(Integer)),
+    Column("id", Integer),
+    Column("eventId", Integer, index=True),
+    Column("groupId", Integer),
+    Column("eventPoint", Integer),
+    Column("name", String),
+    Column("detail", String),
+    Column("imageId", Integer),
+    Column("bgImageId", Integer),
+    Column("value", Integer),
+)
+
+
 mstSpot = Table(
     "mstSpot",
     metadata,
@@ -688,6 +704,7 @@ TABLES_TO_BE_LOADED = [
     mstVoicePlayCond,
     mstSvtComment,
     mstEventReward,
+    mstEventPointBuff,
     mstQuestRelease,
     mstQuestConsumeItem,
     mstQuestPhase,

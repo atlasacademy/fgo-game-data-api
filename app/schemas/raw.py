@@ -723,6 +723,22 @@ class MstEventReward(BaseModel):
         orm_mode = True
 
 
+class MstEventPointBuff(BaseModel):
+    funcIds: list[int]
+    id: int
+    eventId: int
+    groupId: int
+    eventPoint: int
+    name: str
+    detail: str
+    imageId: int
+    bgImageId: int
+    value: int
+
+    class Config:
+        orm_mode = True
+
+
 class MstEvent(BaseModel):
     script: list[dict[str, str]]  # []
     id: int  # 10083
@@ -1074,6 +1090,7 @@ class EventEntity(BaseModelORJson):
     mstEvent: MstEvent
     mstShop: list[MstShop]
     mstEventReward: list[MstEventReward]
+    mstEventPointBuff: list[MstEventPointBuff]
 
 
 class WarEntity(BaseModelORJson):

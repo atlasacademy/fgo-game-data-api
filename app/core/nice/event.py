@@ -5,6 +5,7 @@ from ...data.gamedata import masters
 from ...schemas.common import Region
 from ...schemas.enums import (
     EVENT_TYPE_NAME,
+    ITEM_BG_TYPE_NAME,
     PAY_TYPE_NAME,
     PURCHASE_TYPE_NAME,
     SHOP_TYPE_NAME,
@@ -13,11 +14,12 @@ from ...schemas.enums import (
 from ...schemas.nice import (
     AssetURL,
     NiceEvent,
+    NiceEventPointBuff,
     NiceEventReward,
     NiceItemAmount,
     NiceShop,
 )
-from ...schemas.raw import MstEventReward, MstShop
+from ...schemas.raw import MstEventPointBuff, MstEventReward, MstShop
 from .. import raw
 from .gift import get_nice_gift
 from .item import get_nice_item
@@ -85,6 +87,26 @@ def get_nice_reward(
     )
 
 
+def get_nice_pointBuff(
+    region: Region, pointBuff: MstEventPointBuff
+) -> NiceEventPointBuff:
+    return NiceEventPointBuff.parse_obj(
+        {
+            "id": pointBuff.id,
+            "funcIds": pointBuff.funcIds,
+            "groupId": pointBuff.groupId,
+            "eventPoint": pointBuff.eventPoint,
+            "name": pointBuff.name,
+            "detail": pointBuff.detail,
+            "icon": AssetURL.items.format(
+                base_url=settings.asset_url, region=region, item_id=pointBuff.imageId
+            ),
+            "background": ITEM_BG_TYPE_NAME[pointBuff.bgImageId],
+            "value": pointBuff.value,
+        }
+    )
+
+
 def get_nice_event(conn: Connection, region: Region, event_id: int) -> NiceEvent:
     raw_event = raw.get_event_entity(conn, region, event_id)
 
@@ -121,6 +143,10 @@ def get_nice_event(conn: Connection, region: Region, event_id: int) -> NiceEvent
         rewards=(
             get_nice_reward(region, reward, event_id)
             for reward in raw_event.mstEventReward
+        ),
+        pointBuffs=(
+            get_nice_pointBuff(region, pointBuff)
+            for pointBuff in raw_event.mstEventPointBuff
         ),
     )
 

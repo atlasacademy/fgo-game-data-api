@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.48.0 - 2020-02-25
+### Added
+- Event Point Buff detail to raw and nice event for Oniland ladder.
+
 ## 5.47.0 - 2020-02-25
 ### Changed
 - Removed upper and lower bounds of all integer skill and NP search parameters.

@@ -3980,5 +3980,6 @@
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardpoint_8001800.png",
       "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
     }
-  ]
+  ],
+  "pointBuffs": []
 }
