@@ -96,7 +96,7 @@ mstSvtSkill = Table(
     "mstSvtSkill",
     metadata,
     Column("strengthStatus", Integer),
-    Column("skillNum", Integer, nullable=True),
+    Column("skillNum", Integer),
     Column("svtId", Integer, index=True),
     Column("num", Integer),
     Column("priority", Integer),
@@ -137,7 +137,7 @@ mstTreasureDevice = Table(
     Column("maxLv", Integer),
     Column("typeText", String),
     Column("attackAttri", Integer),
-    Column("effectFlag", Integer, nullable=True),
+    Column("effectFlag", Integer),
 )
 
 
@@ -421,7 +421,7 @@ mstSvtScript = Table(
 mstSvtComment = Table(
     "mstSvtComment",
     metadata,
-    Column("condValues", ARRAY(Integer), nullable=True),
+    Column("condValues", ARRAY(Integer)),
     Column("svtId", Integer, index=True),
     Column("id", Integer),
     Column("priority", Integer),
@@ -437,7 +437,7 @@ mstSubtitle = Table(
     metadata,
     Column("id", String),
     Column("serif", String),
-    Column("svtId", Integer, index=True, nullable=True),
+    Column("svtId", Integer, index=True),
 )
 
 
@@ -610,7 +610,7 @@ mstQuestPhase = Table(
     Column("qp", Integer),
     Column("playerExp", Integer),
     Column("friendshipExp", Integer),
-    Column("giftId", Integer, nullable=True),
+    Column("giftId", Integer),
 )
 
 

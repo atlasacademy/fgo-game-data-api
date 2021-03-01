@@ -13,19 +13,19 @@ fuzzywuzzy = "^0.18.0"
 python-Levenshtein = "^0.12.2"
 orjson = "^3.5.0"
 aiofiles = "^0.6.0"
-GitPython = "^3.1.13"
+GitPython = "^3.1.14"
 toml = "^0.10.2"
 redis = "^3.5.3"
 SQLAlchemy = {version = "1.4.0b3", extras = ["postgresql"]}
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.2"
-pylint = "^2.7.1"
+pylint = "^2.7.2"
 mypy = "^0.812"
 black = "^20.8b1"
 pytest-xdist = "^2.1.0"
 requests = "^2.25.1"
-coverage = "^5.4"
+coverage = "^5.5"
 fuzzywuzzy-stubs = "^0.0.1"
 isort = "^5.7.0"
 sqlalchemy-stubs = {git = "https://github.com/squaresmile/sqlalchemy-stubs.git"}
