@@ -438,7 +438,8 @@ class DetailMissionCondType(IntEnum):
     BATTLE_SVT_CLASS_IN_DECK = 18  # Filter by svt class
     SVT_GET_BATTLE = 19  # Embers are svt instead of items
     FRIEND_POINT_SUMMON = 21
-    BATTLE_SVT_ID_IN_DECK = 23  # Filter by svt ID
+    BATTLE_SVT_ID_IN_DECK_1 = 22  # Filter by svt ID
+    BATTLE_SVT_ID_IN_DECK_2 = 23
     QUEST_CLEAR_NUM_2 = 24  # Not sure what's the difference QUEST_CLEAR_NUM_1
     DICE_USE = 25  # Probably Fate/Requiem event
     SQUARE_ADVANCED = 26
@@ -970,6 +971,11 @@ ALL_ENUMS = {
     "NiceAiActNum": AI_ACT_NUM_NAME,
     "NiceAiCond": AI_COND_NAME,
     "AiTiming": AI_TIMING_NAME,
+    "NiceMissionType": MISSION_TYPE_NAME,
+    "NiceMissionRewardType": MISSION_REWARD_TYPE_NAME,
+    "NiceMissionProgressType": MISSION_PROGRESS_TYPE_NAME,
+    "NiceDetailMissionCondType": DETAIL_MISSION_COND_TYPE,
+    "NiceDetailMissionCondLinkType": DETAIL_MISSION_LINK_TYPE,
 }
 
 
