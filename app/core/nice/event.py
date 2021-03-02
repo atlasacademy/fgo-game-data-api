@@ -4,23 +4,40 @@ from ...config import Settings
 from ...data.gamedata import masters
 from ...schemas.common import Region
 from ...schemas.enums import (
+    COND_TYPE_NAME,
+    DETAIL_MISSION_LINK_TYPE,
     EVENT_TYPE_NAME,
     ITEM_BG_TYPE_NAME,
+    MISSION_PROGRESS_TYPE_NAME,
+    MISSION_REWARD_TYPE_NAME,
+    MISSION_TYPE_NAME,
     PAY_TYPE_NAME,
     PURCHASE_TYPE_NAME,
     SHOP_TYPE_NAME,
+    CondType,
     PayType,
 )
 from ...schemas.nice import (
     AssetURL,
     NiceEvent,
+    NiceEventMission,
+    NiceEventMissionCondition,
+    NiceEventMissionConditionDetail,
     NiceEventPointBuff,
     NiceEventReward,
     NiceItemAmount,
     NiceShop,
 )
-from ...schemas.raw import MstEventPointBuff, MstEventReward, MstShop
+from ...schemas.raw import (
+    MstEventMission,
+    MstEventMissionCondition,
+    MstEventMissionConditionDetail,
+    MstEventPointBuff,
+    MstEventReward,
+    MstShop,
+)
 from .. import raw
+from ..utils import get_traits_list
 from .gift import get_nice_gift
 from .item import get_nice_item
 
@@ -107,10 +124,99 @@ def get_nice_pointBuff(
     )
 
 
+def get_nice_mission_cond_detail(
+    cond_detail: MstEventMissionConditionDetail,
+) -> NiceEventMissionConditionDetail:
+    return NiceEventMissionConditionDetail(
+        id=cond_detail.id,
+        missionTargetId=cond_detail.missionTargetId,
+        missionCondType=cond_detail.missionCondType,
+        logicType=cond_detail.logicType,
+        targetIds=cond_detail.targetIds,
+        addTargetIds=cond_detail.addTargetIds,
+        targetQuestIndividualities=get_traits_list(
+            cond_detail.targetQuestIndividualities
+        ),
+        conditionLinkType=DETAIL_MISSION_LINK_TYPE[cond_detail.conditionLinkType],
+        targetEventIds=cond_detail.targetEventIds,
+    )
+
+
+def get_nice_mission_cond(
+    cond: MstEventMissionCondition, details: dict[int, MstEventMissionConditionDetail]
+) -> NiceEventMissionCondition:
+    nice_mission_cond = NiceEventMissionCondition(
+        id=cond.id,
+        missionProgressType=MISSION_PROGRESS_TYPE_NAME[cond.missionProgressType],
+        priority=cond.priority,
+        missionTargetId=cond.missionTargetId,
+        condGroup=cond.condGroup,
+        condType=COND_TYPE_NAME[cond.condType],
+        targetIds=cond.targetIds,
+        targetNum=cond.targetNum,
+        conditionMessage=cond.conditionMessage,
+        closedMessage=cond.closedMessage,
+        flag=cond.flag,
+    )
+    if (
+        cond.condType == CondType.MISSION_CONDITION_DETAIL
+        and cond.targetIds[0] in details
+    ):
+        nice_mission_cond.detail = get_nice_mission_cond_detail(
+            details[cond.targetIds[0]]
+        )
+    return nice_mission_cond
+
+
+def get_nice_mission(
+    region,
+    mission: MstEventMission,
+    conds: list[MstEventMissionCondition],
+    details: dict[int, MstEventMissionConditionDetail],
+) -> NiceEventMission:
+    return NiceEventMission(
+        id=mission.id,
+        flag=mission.flag,
+        type=MISSION_TYPE_NAME[mission.type],
+        missionTargetId=mission.missionTargetId,
+        dispNo=mission.dispNo,
+        name=mission.name,
+        detail=mission.detail,
+        startedAt=mission.startedAt,
+        endedAt=mission.endedAt,
+        closedAt=mission.closedAt,
+        rewardType=MISSION_REWARD_TYPE_NAME[mission.rewardType],
+        gifts=get_nice_gift(region, mission.giftId),
+        bannerGroup=mission.bannerGroup,
+        priority=mission.priority,
+        rewardRarity=mission.rewardRarity,
+        notfyPriority=mission.notfyPriority,
+        presentMessageId=mission.presentMessageId,
+        conds=(get_nice_mission_cond(cond, details) for cond in conds),
+    )
+
+
 def get_nice_event(conn: Connection, region: Region, event_id: int) -> NiceEvent:
     raw_event = raw.get_event_entity(conn, region, event_id)
 
     base_settings = {"base_url": settings.asset_url, "region": region}
+    mission_cond_details = {
+        detail.id: detail for detail in raw_event.mstEventMissionConditionDetail
+    }
+    missions = [
+        get_nice_mission(
+            region,
+            mission,
+            [
+                cond
+                for cond in raw_event.mstEventMissionCondition
+                if cond.missionId == mission.id
+            ],
+            mission_cond_details,
+        )
+        for mission in raw_event.mstEventMission
+    ]
+
     nice_event = NiceEvent(
         id=raw_event.mstEvent.id,
         type=EVENT_TYPE_NAME[raw_event.mstEvent.type],
@@ -148,6 +254,7 @@ def get_nice_event(conn: Connection, region: Region, event_id: int) -> NiceEvent
             get_nice_pointBuff(region, pointBuff)
             for pointBuff in raw_event.mstEventPointBuff
         ),
+        missions=missions,
     )
 
     return nice_event

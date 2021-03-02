@@ -50,6 +50,7 @@ def get_nice_play_cond(playCond: MstVoicePlayCond) -> NiceVoicePlayCond:
         condType=COND_TYPE_NAME[playCond.condType],
         targetId=playCond.targetId,
         condValue=playCond.condValues[0],
+        condValues=playCond.condValues,
     )
 
 

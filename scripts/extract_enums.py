@@ -6,6 +6,7 @@ PYTHON_NAME_JSON_NAME_OVERRIDE = {
     "LOWER": "lower_",
     "SELF": "self_",
     "CENTER": "center_",
+    "SET": "set_",
 }
 
 
@@ -47,9 +48,6 @@ EXTRA_STR_NAME = {
 STR_NAME_OVERRIDE = {
     "NiceCardType": {"addattack": "extra"},
     "NiceGender": {"other": "unknown"},
-    "NiceBuffLimit": {"upper_": "upper", "lower_": "lower"},
-    "NiceFuncTargetType": {"self_": "self"},
-    "NiceAiActTarget": {"center_": "center"},
     "NiceStatusRank": {
         "a": "A",
         "aPlus": "A+",
@@ -96,7 +94,11 @@ def out_strenum(
         EXTRA_STR_NAME.get(nice_class, {}).values()
     ):
         json_name = convert_name(enumstr)
-        str_name = STR_NAME_OVERRIDE.get(nice_class, {}).get(json_name, json_name)
+        str_name = (
+            STR_NAME_OVERRIDE.get(nice_class, {})
+            .get(json_name, json_name)
+            .removesuffix("_")
+        )
         strenum_lines.append(f'    {json_name} = "{str_name}"\n')
     return strenum_lines
 
@@ -141,7 +143,11 @@ def cs_enum_to_ts(cs_enums: list[str], nice_class: str) -> list[str]:
         EXTRA_STR_NAME.get(nice_class, {}).values()
     ):
         json_name = convert_name(enumstr)
-        str_name = STR_NAME_OVERRIDE.get(nice_class, {}).get(json_name, json_name)
+        str_name = (
+            STR_NAME_OVERRIDE.get(nice_class, {})
+            .get(json_name, json_name)
+            .removesuffix("_")
+        )
         ts_enum_lines.append(f'    {enumstr} = "{str_name}",\n')
     ts_enum_lines.append("}\n")
     return ts_enum_lines
@@ -297,6 +303,34 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "AI_ACT_TARGET_NAME",
     ),
     ("Ai.ACT_NUM", "AiActNum", "NiceAiActNum", "AI Act Num Enum", "AI_ACT_NUM_NAME"),
+    (
+        "MissionType.Type",
+        "MissionType",
+        "NiceMissionType",
+        "Mission Type Enum",
+        "MISSION_TYPE_NAME",
+    ),
+    (
+        "RewardType.Type",
+        "MissionRewardType",
+        "NiceMissionRewardType",
+        "Mission Reward Type Enum",
+        "MISSION_REWARD_TYPE_NAME",
+    ),
+    (
+        "MissionProgressType.Type",
+        "MissionProgressType",
+        "NiceMissionProgressType",
+        "Mission Progress Type Enum",
+        "MISSION_PROGRESS_TYPE_NAME",
+    ),
+    (
+        "EventMissionCondDetailEntity.MissionConditionLinkType",
+        "DetailMissionCondLinkType",
+        "NiceDetailMissionCondLinkType",
+        "Mission Condition Detail Condition Link Type Enum",
+        "DETAIL_MISSION_LINK_TYPE",
+    ),
 ]
 
 

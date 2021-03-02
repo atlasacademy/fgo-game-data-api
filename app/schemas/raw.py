@@ -739,6 +739,62 @@ class MstEventPointBuff(BaseModel):
         orm_mode = True
 
 
+class MstEventMission(BaseModel):
+    id: int
+    flag: int
+    type: int
+    missionTargetId: int
+    dispNo: int
+    name: str
+    detail: str
+    startedAt: int
+    endedAt: int
+    closedAt: int
+    rewardType: int
+    giftId: int
+    bannerGroup: int
+    priority: int
+    rewardRarity: int
+    notfyPriority: int
+    presentMessageId: int
+
+    class Config:
+        orm_mode = True
+
+
+class MstEventMissionCondition(BaseModel):
+    missionId: int
+    missionProgressType: int
+    priority: int
+    id: int
+    missionTargetId: int
+    condGroup: int
+    condType: int
+    targetIds: list[int]
+    targetNum: int
+    conditionMessage: str
+    closedMessage: str
+    flag: int
+
+    class Config:
+        orm_mode = True
+
+
+class MstEventMissionConditionDetail(BaseModel):
+    id: int
+    missionTargetId: int
+    missionCondType: int
+    logicType: int
+    targetIds: list[int]
+    addTargetIds: list[int]
+    targetQuestIndividualities: list[int]
+    conditionLinkType: int
+    targetEventIds: Optional[list[int]] = None
+
+    class Config:
+        orm_mode = True
+
+
 class MstEvent(BaseModel):
     script: list[dict[str, str]]  # []
     id: int  # 10083
@@ -765,6 +821,9 @@ class MstEvent(BaseModel):
     myroomBgId: int  # 0
     myroomBgmId: int  # 0
     createdAt: int  # 1435676400
+
+    class Config:
+        orm_mode = True
 
 
 class MstWar(BaseModel):
@@ -1091,6 +1150,9 @@ class EventEntity(BaseModelORJson):
     mstShop: list[MstShop]
     mstEventReward: list[MstEventReward]
     mstEventPointBuff: list[MstEventPointBuff]
+    mstEventMission: list[MstEventMission]
+    mstEventMissionCondition: list[MstEventMissionCondition]
+    mstEventMissionConditionDetail: list[MstEventMissionConditionDetail]
 
 
 class WarEntity(BaseModelORJson):

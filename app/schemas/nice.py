@@ -20,6 +20,7 @@ from .enums import (
     NiceCardType,
     NiceCondType,
     NiceConsumeType,
+    NiceDetailMissionCondLinkType,
     NiceEventType,
     NiceFuncTargetType,
     NiceFuncType,
@@ -28,6 +29,9 @@ from .enums import (
     NiceItemBGType,
     NiceItemType,
     NiceItemUse,
+    NiceMissionProgressType,
+    NiceMissionRewardType,
+    NiceMissionType,
     NicePayType,
     NicePurchaseType,
     NiceQuestType,
@@ -568,7 +572,13 @@ class NiceVoicePlayCond(BaseModel):
     )
     condType: NiceCondType = Field(..., title="Voice play condition type")
     targetId: int = Field(..., title="Voice play condition target ID")
-    condValue: int = Field(..., title="Voice play condition target value")
+    condValue: int = Field(
+        ...,
+        title="[DEPRECIATED, use condValues] Voice play condition target value."
+        "Use condValues since condValues in other places can have multiple values."
+        "This value is the first element of condValues.",
+    )
+    condValues: list[int] = Field(..., title="Voice play condition target values")
 
 
 class NiceVoiceLine(BaseModel):
@@ -1024,6 +1034,54 @@ class NiceEventPointBuff(BaseModelORJson):
     value: int
 
 
+class NiceEventMissionConditionDetail(BaseModelORJson):
+    id: int
+    missionTargetId: int
+    missionCondType: int
+    logicType: int
+    targetIds: list[int]
+    addTargetIds: list[int]
+    targetQuestIndividualities: list[NiceTrait]
+    conditionLinkType: NiceDetailMissionCondLinkType
+    targetEventIds: Optional[list[int]] = None
+
+
+class NiceEventMissionCondition(BaseModelORJson):
+    id: int
+    missionProgressType: NiceMissionProgressType
+    priority: int
+    missionTargetId: int
+    condGroup: int
+    condType: NiceCondType
+    targetIds: list[int]
+    targetNum: int
+    conditionMessage: str
+    closedMessage: str
+    flag: int
+    detail: Optional[NiceEventMissionConditionDetail] = None
+
+
+class NiceEventMission(BaseModelORJson):
+    id: int
+    flag: int
+    type: NiceMissionType
+    missionTargetId: int
+    dispNo: int
+    name: str
+    detail: str
+    startedAt: int
+    endedAt: int
+    closedAt: int
+    rewardType: NiceMissionRewardType
+    gifts: list[NiceGift]
+    bannerGroup: int
+    priority: int
+    rewardRarity: int
+    notfyPriority: int
+    presentMessageId: int
+    conds: list[NiceEventMissionCondition]
+
+
 class NiceEvent(BaseModelORJson):
     id: int
     type: NiceEventType
@@ -1043,6 +1101,7 @@ class NiceEvent(BaseModelORJson):
     shop: list[NiceShop]
     rewards: list[NiceEventReward]
     pointBuffs: list[NiceEventPointBuff]
+    missions: list[NiceEventMission]
 
 
 class NiceBgm(BaseModelORJson):

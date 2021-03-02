@@ -273,6 +273,7 @@ class TestServantSpecial:
                 "condType": "playerGenderType",
                 "targetId": 1,
                 "condValue": 0,
+                "condValues": [0],
             }
         ]
 

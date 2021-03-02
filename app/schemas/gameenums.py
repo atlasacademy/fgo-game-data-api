@@ -3163,3 +3163,144 @@ AI_ACT_NUM_NAME: dict[int, NiceAiActNum] = {
     -11: NiceAiActNum.usenpTarget,
     -9999: NiceAiActNum.unknown,
 }
+
+
+class MissionType(IntEnum):
+    NONE = 0
+    EVENT = 1
+    WEEKLY = 2
+    DAILY = 3
+    EXTRA = 4
+    LIMITED = 5
+    COMPLETE = 6
+
+
+class NiceMissionType(str, Enum):
+    """Mission Type Enum"""
+
+    none = "none"
+    event = "event"
+    weekly = "weekly"
+    daily = "daily"
+    extra = "extra"
+    limited = "limited"
+    complete = "complete"
+
+
+MISSION_TYPE_NAME: dict[int, NiceMissionType] = {
+    0: NiceMissionType.none,
+    1: NiceMissionType.event,
+    2: NiceMissionType.weekly,
+    3: NiceMissionType.daily,
+    4: NiceMissionType.extra,
+    5: NiceMissionType.limited,
+    6: NiceMissionType.complete,
+}
+
+
+class MissionRewardType(IntEnum):
+    GIFT = 1
+    EXTRA = 2
+    SET = 3
+
+
+class NiceMissionRewardType(str, Enum):
+    """Mission Reward Type Enum"""
+
+    gift = "gift"
+    extra = "extra"
+    set_ = "set"
+
+
+MISSION_REWARD_TYPE_NAME: dict[int, NiceMissionRewardType] = {
+    1: NiceMissionRewardType.gift,
+    2: NiceMissionRewardType.extra,
+    3: NiceMissionRewardType.set_,
+}
+
+
+class MissionProgressType(IntEnum):
+    NONE = 0
+    REGIST = 1
+    OPEN_CONDITION = 2
+    START = 3
+    CLEAR = 4
+    ACHIEVE = 5
+
+
+class NiceMissionProgressType(str, Enum):
+    """Mission Progress Type Enum"""
+
+    none = "none"
+    regist = "regist"
+    openCondition = "openCondition"
+    start = "start"
+    clear = "clear"
+    achieve = "achieve"
+
+
+MISSION_PROGRESS_TYPE_NAME: dict[int, NiceMissionProgressType] = {
+    0: NiceMissionProgressType.none,
+    1: NiceMissionProgressType.regist,
+    2: NiceMissionProgressType.openCondition,
+    3: NiceMissionProgressType.start,
+    4: NiceMissionProgressType.clear,
+    5: NiceMissionProgressType.achieve,
+}
+
+
+class DetailMissionCondType(IntEnum):
+    ENEMY_KILL_NUM = 1
+    ENEMY_INDIVIDUALITY_KILL_NUM = 2
+    ITEM_GET_TOTAL = 3
+    BATTLE_SVT_IN_DECK = 4
+    BATTLE_SVT_EQUIP_IN_DECK = 5
+    TARGET_QUEST_ENEMY_KILL_NUM = 6
+    TARGET_QUEST_ENEMY_INDIVIDUALITY_KILL_NUM = 7
+    TARGET_QUEST_ITEM_GET_TOTAL = 8
+
+
+class NiceDetailMissionCondType(str, Enum):
+    """Mission Condition Detail Condition Type Enum"""
+
+    enemyKillNum = "enemyKillNum"
+    enemyIndividualityKillNum = "enemyIndividualityKillNum"
+    itemGetTotal = "itemGetTotal"
+    battleSvtInDeck = "battleSvtInDeck"
+    battleSvtEquipInDeck = "battleSvtEquipInDeck"
+    targetQuestEnemyKillNum = "targetQuestEnemyKillNum"
+    targetQuestEnemyIndividualityKillNum = "targetQuestEnemyIndividualityKillNum"
+    targetQuestItemGetTotal = "targetQuestItemGetTotal"
+
+
+DETAIL_MISSION_COND_TYPE: dict[int, NiceDetailMissionCondType] = {
+    1: NiceDetailMissionCondType.enemyKillNum,
+    2: NiceDetailMissionCondType.enemyIndividualityKillNum,
+    3: NiceDetailMissionCondType.itemGetTotal,
+    4: NiceDetailMissionCondType.battleSvtInDeck,
+    5: NiceDetailMissionCondType.battleSvtEquipInDeck,
+    6: NiceDetailMissionCondType.targetQuestEnemyKillNum,
+    7: NiceDetailMissionCondType.targetQuestEnemyIndividualityKillNum,
+    8: NiceDetailMissionCondType.targetQuestItemGetTotal,
+}
+
+
+class DetailMissionCondLinkType(IntEnum):
+    EVENT_START = 1
+    MISSION_START = 2
+    MASTER＿MISSION_START = 3
+
+
+class NiceDetailMissionCondLinkType(str, Enum):
+    """Mission Condition Detail Condition Link Type Enum"""
+
+    eventStart = "eventStart"
+    missionStart = "missionStart"
+    master＿missionStart = "master＿missionStart"
+
+
+DETAIL_MISSION_LINK_TYPE: dict[int, NiceDetailMissionCondLinkType] = {
+    1: NiceDetailMissionCondLinkType.eventStart,
+    2: NiceDetailMissionCondLinkType.missionStart,
+    3: NiceDetailMissionCondLinkType.master＿missionStart,
+}

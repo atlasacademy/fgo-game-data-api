@@ -475,6 +475,37 @@ mstShop = Table(
 )
 
 
+mstEvent = Table(
+    "mstEvent",
+    metadata,
+    Column("script", JSONB),
+    Column("id", Integer, primary_key=True),
+    Column("baseEventId", Integer),
+    Column("type", Integer),
+    Column("openType", Integer),
+    Column("name", String),
+    Column("shortName", String),
+    Column("detail", String),
+    Column("noticeBannerId", Integer),
+    Column("bannerId", Integer),
+    Column("iconId", Integer),
+    Column("bannerPriority", Integer),
+    Column("openHours", Integer),
+    Column("intervalHours", Integer),
+    Column("noticeAt", Integer),
+    Column("startedAt", Integer),
+    Column("endedAt", Integer),
+    Column("finishedAt", Integer),
+    Column("materialOpenedAt", Integer),
+    Column("linkType", Integer),
+    Column("linkBody", String),
+    Column("deviceType", Integer),
+    Column("myroomBgId", Integer),
+    Column("myroomBgmId", Integer),
+    Column("createdAt", Integer),
+)
+
+
 mstEventReward = Table(
     "mstEventReward",
     metadata,
@@ -501,6 +532,62 @@ mstEventPointBuff = Table(
     Column("imageId", Integer),
     Column("bgImageId", Integer),
     Column("value", Integer),
+)
+
+
+mstEventMission = Table(
+    "mstEventMission",
+    metadata,
+    Column("id", Integer, primary_key=True),
+    Column("flag", Integer),
+    Column("type", Integer),
+    Column("missionTargetId", Integer, index=True),
+    Column("dispNo", Integer),
+    Column("notfyPriority", Integer),
+    Column("name", String),
+    Column("detail", String),
+    Column("startedAt", Integer),
+    Column("endedAt", Integer),
+    Column("closedAt", Integer),
+    Column("rewardType", Integer),
+    Column("presentMessageId", Integer),
+    Column("giftId", Integer),
+    Column("bannerGroup", Integer),
+    Column("priority", Integer),
+    Column("rewardRarity", Integer),
+)
+
+
+mstEventMissionCondition = Table(
+    "mstEventMissionCondition",
+    metadata,
+    Column("targetIds", ARRAY(Integer)),
+    Column("missionId", Integer, index=True),
+    Column("missionProgressType", Integer),
+    Column("priority", Integer),
+    Column("id", Integer),
+    Column("missionTargetId", Integer),
+    Column("condGroup", Integer),
+    Column("condType", Integer),
+    Column("targetNum", Integer),
+    Column("conditionMessage", String),
+    Column("closedMessage", String),
+    Column("flag", Integer),
+)
+
+
+mstEventMissionConditionDetail = Table(
+    "mstEventMissionConditionDetail",
+    metadata,
+    Column("targetIds", ARRAY(Integer)),
+    Column("addTargetIds", ARRAY(Integer)),
+    Column("targetQuestIndividualities", ARRAY(Integer)),
+    Column("targetEventIds", ARRAY(Integer)),
+    Column("id", Integer, primary_key=True),
+    Column("missionTargetId", Integer),
+    Column("missionCondType", Integer),
+    Column("logicType", Integer),
+    Column("conditionLinkType", Integer),
 )
 
 
@@ -682,6 +769,9 @@ TABLES_WITH_PK = [
     mstSpot,
     mstQuest,
     mstAiAct,
+    mstEvent,
+    mstEventMission,
+    mstEventMissionConditionDetail,
 ]
 
 
@@ -705,6 +795,7 @@ TABLES_TO_BE_LOADED = [
     mstSvtComment,
     mstEventReward,
     mstEventPointBuff,
+    mstEventMissionCondition,
     mstQuestRelease,
     mstQuestConsumeItem,
     mstQuestPhase,

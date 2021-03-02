@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.49.0 - 2020-03-01
+### Added
+- `condValues` to nice voice play to make it consistent with conditions in other places.
+- `missions` to raw and nice event.
+
 ## 5.48.0 - 2020-02-25
 ### Added
 - Event Point Buff detail to raw and nice event for Oniland ladder.

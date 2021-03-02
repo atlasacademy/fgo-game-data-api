@@ -6,7 +6,7 @@ from sqlalchemy.engine import Connection
 from ..data.gamedata import masters
 from ..db.helpers import ai, event, quest, skill, svt, td, war
 from ..schemas.common import Region, ReverseDepth
-from ..schemas.enums import FUNC_VALS_NOT_BUFF
+from ..schemas.enums import FUNC_VALS_NOT_BUFF, CondType
 from ..schemas.raw import (
     EXTRA_ATTACK_TD_ID,
     AiCollection,
@@ -390,12 +390,28 @@ def get_war_entity(conn: Connection, region: Region, war_id: int) -> WarEntity:
 
 
 def get_event_entity(conn: Connection, region: Region, event_id: int) -> EventEntity:
-    return EventEntity(
-        mstEvent=masters[region].mstEventId[event_id],
-        mstShop=event.get_mstShop(conn, event_id),
-        mstEventReward=event.get_mstEventReward(conn, event_id),
-        mstEventPointBuff=event.get_mstEventPointBuff(conn, event_id),
-    )
+    mstEvent = event.get_mstEvent(conn, event_id)
+    if mstEvent:
+        missions = event.get_mstEventMission(conn, event_id)
+        cond_ids = [mission.id for mission in missions]
+        conds = event.get_mstEventMissionCondition(conn, cond_ids)
+        cond_detail_ids = [
+            cond.targetIds[0]
+            for cond in conds
+            if cond.condType == CondType.MISSION_CONDITION_DETAIL
+        ]
+        cond_details = event.get_mstEventMissionConditionDetail(conn, cond_detail_ids)
+        return EventEntity(
+            mstEvent=masters[region].mstEventId[event_id],
+            mstShop=event.get_mstShop(conn, event_id),
+            mstEventReward=event.get_mstEventReward(conn, event_id),
+            mstEventPointBuff=event.get_mstEventPointBuff(conn, event_id),
+            mstEventMission=missions,
+            mstEventMissionCondition=conds,
+            mstEventMissionConditionDetail=cond_details,
+        )
+    else:
+        raise HTTPException(status_code=404, detail="Event not found")
 
 
 def get_quest_entity_many(conn: Connection, quest_id: list[int]) -> list[QuestEntity]:

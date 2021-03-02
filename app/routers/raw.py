@@ -525,10 +525,7 @@ async def get_event(
     """
     Get the event data from the given event ID
     """
-    if event_id in masters[region].mstEventId:
-        return item_response(raw.get_event_entity(conn, region, event_id))
-    else:
-        raise HTTPException(status_code=404, detail="Event not found")
+    return item_response(raw.get_event_entity(conn, region, event_id))
 
 
 @router.get(
