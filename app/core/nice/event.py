@@ -169,7 +169,7 @@ def get_nice_mission_cond(
 
 
 def get_nice_mission(
-    region,
+    region: Region,
     mission: MstEventMission,
     conds: list[MstEventMissionCondition],
     details: dict[int, MstEventMissionConditionDetail],

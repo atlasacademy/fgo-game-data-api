@@ -27,10 +27,14 @@ ERROR_CODE: dict[int, ErrorDetailType] = {
 def get_error_code(
     error_codes: Union[Iterable[int], Mapping[int, Any]]
 ) -> dict[Union[int, str], ErrorDetailType]:
+    """
+    Returns detailed Error Code objects to be used by fastapi documentation
+    """
     return {k: v for k, v in ERROR_CODE.items() if k in error_codes}
 
 
 def language_parameter(lang: Optional[Language] = None) -> Language:
+    """Dependency for the language parameter, defaults to Language.jp if none is supplied"""
     if lang:
         return lang
     else:

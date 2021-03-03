@@ -70,12 +70,14 @@ FORMATTING_BRACKETS = {"[g][o]": "", "[/o][/g]": "", " [{0}] ": " ", "[{0}]": ""
 
 
 def strip_formatting_brackets(detail_string: str) -> str:
+    """Remove formatting codes such as [g][o] from detail string"""
     for k, v in FORMATTING_BRACKETS.items():
         detail_string = detail_string.replace(k, v)
     return detail_string
 
 
 def nullable_to_string(nullable: Optional[str]) -> str:
+    """Returns an empty string is the input is None"""
     if nullable is None:
         return ""
     else:
