@@ -184,3 +184,7 @@ class TestServantSpecial:
         response = client.get("/raw/NA/servant/600700?lore=true")
         assert response.status_code == 200
         assert any(voice["id"] == 600710 for voice in response.json()["mstSvtVoice"])
+
+    def test_war_spots_from_multiple_maps(self) -> None:
+        response = client.get("/raw/NA/war/9033").json()
+        assert {spot["warId"] for spot in response["mstSpot"]} == {9033, 9034}

@@ -382,10 +382,11 @@ def get_command_code_entity(
 
 
 def get_war_entity(conn: Connection, region: Region, war_id: int) -> WarEntity:
+    maps = masters[region].mstMapWarId.get(war_id, [])
     return WarEntity(
         mstWar=masters[region].mstWarId[war_id],
-        mstMap=masters[region].mstMapWarId.get(war_id, []),
-        mstSpot=war.get_mstSpot(conn, war_id),
+        mstMap=maps,
+        mstSpot=war.get_mstSpot(conn, [event_map.id for event_map in maps]),
     )
 
 
