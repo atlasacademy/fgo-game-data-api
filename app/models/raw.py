@@ -701,6 +701,21 @@ mstQuestPhase = Table(
 )
 
 
+mstQuestPhaseDetail = Table(
+    "mstQuestPhaseDetail",
+    metadata,
+    Column("beforeActionVals", ARRAY(String)),
+    Column("afterActionVals", ARRAY(String)),
+    Column("boardMessage", JSONB),
+    Column("questId", Integer, index=True),
+    Column("phase", Integer, index=True),
+    Column("spotId", Integer),
+    Column("consumeType", Integer),
+    Column("actConsume", Integer),
+    Column("flag", BigInteger),
+)
+
+
 mstStage = Table(
     "mstStage",
     metadata,
@@ -799,6 +814,7 @@ TABLES_TO_BE_LOADED = [
     mstQuestRelease,
     mstQuestConsumeItem,
     mstQuestPhase,
+    mstQuestPhaseDetail,
     mstStage,
     mstAi,
     mstAiField,

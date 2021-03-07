@@ -7,6 +7,7 @@ from ...models.raw import (
     mstQuest,
     mstQuestConsumeItem,
     mstQuestPhase,
+    mstQuestPhaseDetail,
     mstQuestRelease,
     mstStage,
 )
@@ -64,14 +65,24 @@ def get_quest_phase_entity(
         .cte()
     )
 
-    joined_quest_phase_tables = JOINED_QUEST_TABLES.outerjoin(
-        all_phases_cte, mstQuest.c.id == all_phases_cte.c.questId
-    ).outerjoin(
-        mstStage,
-        and_(
-            mstQuest.c.id == mstStage.c.questId,
-            mstQuestPhase.c.phase == mstStage.c.questPhase,
-        ),
+    joined_quest_phase_tables = (
+        JOINED_QUEST_TABLES.outerjoin(
+            all_phases_cte, mstQuest.c.id == all_phases_cte.c.questId
+        )
+        .outerjoin(
+            mstQuestPhaseDetail,
+            and_(
+                mstQuest.c.id == mstQuestPhaseDetail.c.questId,
+                mstQuestPhase.c.phase == mstQuestPhaseDetail.c.phase,
+            ),
+        )
+        .outerjoin(
+            mstStage,
+            and_(
+                mstQuest.c.id == mstStage.c.questId,
+                mstQuestPhase.c.phase == mstStage.c.questPhase,
+            ),
+        )
     )
 
     select_quest_phase = [
@@ -80,6 +91,9 @@ def get_quest_phase_entity(
         sql_jsonb_agg(mstQuestRelease),
         all_phases_cte.c.phases,
         func.to_jsonb(mstQuestPhase.table_valued()).label(mstQuestPhase.name),
+        func.to_jsonb(mstQuestPhaseDetail.table_valued()).label(
+            mstQuestPhaseDetail.name
+        ),
         sql_jsonb_agg(mstStage),
     ]
 
@@ -90,6 +104,7 @@ def get_quest_phase_entity(
         .group_by(
             mstQuest.table_valued(),
             mstQuestPhase.table_valued(),
+            mstQuestPhaseDetail.table_valued(),
             all_phases_cte.c.phases,
         )
     )

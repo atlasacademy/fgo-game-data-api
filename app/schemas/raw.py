@@ -965,6 +965,18 @@ class MstQuestPhase(BaseModel):
     giftId: Optional[int] = None
 
 
+class MstQuestPhaseDetail(BaseModel):
+    beforeActionVals: list[str]
+    afterActionVals: list[str]
+    boardMessage: dict[str, Any]
+    questId: int
+    phase: int
+    spotId: int
+    consumeType: int
+    actConsume: int
+    flag: int
+
+
 class MstStage(BaseModel):
     npcDeckIds: list[int]  # [2, 1000]
     script: dict[str, Any]  # {}
@@ -1142,6 +1154,7 @@ class QuestEntity(BaseModelORJson):
 
 class QuestPhaseEntity(QuestEntity):
     mstQuestPhase: MstQuestPhase
+    mstQuestPhaseDetail: Optional[MstQuestPhaseDetail] = None
     mstStage: list[MstStage]
 
 

@@ -93,4 +93,12 @@ def get_nice_quest_phase(
         "bond": raw_quest.mstQuestPhase.friendshipExp,
         "stages": [get_nice_stage(region, stage) for stage in raw_quest.mstStage],
     }
+
+    if raw_quest.mstQuestPhaseDetail:
+        nice_data["spotId"] = raw_quest.mstQuestPhaseDetail.spotId
+        nice_data["consumeType"] = QUEST_CONSUME_TYPE_NAME[
+            raw_quest.mstQuestPhaseDetail.consumeType
+        ]
+        nice_data["consume"] = raw_quest.mstQuestPhaseDetail.actConsume
+
     return NiceQuestPhase.parse_obj(nice_data)
