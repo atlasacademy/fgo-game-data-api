@@ -40,6 +40,7 @@
   "bond": 615,
   "stages": [
     {
+      "wave": 1,
       "bgm": {
         "id": 56,
         "name": "outbreak\n-Alternative-",
@@ -47,6 +48,7 @@
       }
     },
     {
+      "wave": 2,
       "bgm": {
         "id": 56,
         "name": "outbreak\n-Alternative-",

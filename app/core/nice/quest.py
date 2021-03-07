@@ -37,7 +37,7 @@ def get_nice_quest_release(
 
 
 def get_nice_stage(region: Region, raw_stage: MstStage) -> NiceStage:
-    return NiceStage(bgm=get_nice_bgm(region, raw_stage.bgmId))
+    return NiceStage(wave=raw_stage.wave, bgm=get_nice_bgm(region, raw_stage.bgmId))
 
 
 def get_nice_quest(
@@ -91,7 +91,10 @@ def get_nice_quest_phase(
         "qp": raw_quest.mstQuestPhase.qp,
         "exp": raw_quest.mstQuestPhase.playerExp,
         "bond": raw_quest.mstQuestPhase.friendshipExp,
-        "stages": [get_nice_stage(region, stage) for stage in raw_quest.mstStage],
+        "stages": [
+            get_nice_stage(region, stage)
+            for stage in sorted(raw_quest.mstStage, key=lambda stage: stage.wave)
+        ],
     }
 
     if raw_quest.mstQuestPhaseDetail:

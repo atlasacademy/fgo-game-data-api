@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.50.0 - 2020-03-07
+### Added
+- `wave` number to nice stage.
+
 ## 5.49.0 - 2020-03-01
 ### Added
 - `condValues` to nice voice play to make it consistent with conditions in other places.

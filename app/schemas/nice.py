@@ -1135,6 +1135,7 @@ class NiceQuest(BaseModelORJson):
 
 
 class NiceStage(BaseModelORJson):
+    wave: int
     bgm: NiceBgm
 
 
