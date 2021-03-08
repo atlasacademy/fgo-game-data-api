@@ -32,6 +32,7 @@ from .gameenums import (
     SVT_TYPE_NAME,
     VOICE_COND_NAME,
     VOICE_TYPE_NAME,
+    WAR_OVERWRITE_TYPE_NAME,
     WAR_START_TYPE_NAME,
     BuffAction,
     CondType,
@@ -67,6 +68,7 @@ from .gameenums import (
     NiceSvtType,
     NiceSvtVoiceType,
     NiceVoiceCondType,
+    NiceWarOverwriteType,
     NiceWarStartType,
     PayType,
     PurchaseType,
@@ -74,6 +76,7 @@ from .gameenums import (
     SvtVoiceType,
     VoiceCondType,
     WarEntityFlag,
+    WarOverwriteType,
 )
 
 
@@ -962,6 +965,7 @@ ALL_ENUMS = {
     "NiceEventType": EVENT_TYPE_NAME,
     "Trait": TRAIT_NAME,
     "NiceWarStartType": WAR_START_TYPE_NAME,
+    "NiceWarOverwriteType": WAR_OVERWRITE_TYPE_NAME,
     "NiceGiftType": GIFT_TYPE_NAME,
     "NicePayType": PAY_TYPE_NAME,
     "NicePurchaseType": PURCHASE_TYPE_NAME,
@@ -1086,4 +1090,7 @@ __all__ = [
     "DETAIL_MISSION_COND_TYPE",
     "NiceDetailMissionCondLinkType",
     "DETAIL_MISSION_LINK_TYPE",
+    "WarOverwriteType",
+    "NiceWarOverwriteType",
+    "WAR_OVERWRITE_TYPE_NAME",
 ]

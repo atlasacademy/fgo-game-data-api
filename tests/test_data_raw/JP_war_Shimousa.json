@@ -587,5 +587,33 @@
       "closedMessage": "",
       "flag": 0
     }
+  ],
+  "mstWarAdd": [
+    {
+      "script": {},
+      "warId": 201,
+      "type": 2,
+      "priority": 1,
+      "overwriteId": 12000,
+      "overwriteStr": "",
+      "condType": 1,
+      "targetId": 3000008,
+      "value": 0,
+      "startedAt": 1522832400,
+      "endedAt": 1893423600
+    },
+    {
+      "script": {},
+      "warId": 201,
+      "type": 10,
+      "priority": 2,
+      "overwriteId": 12000,
+      "overwriteStr": "",
+      "condType": 1,
+      "targetId": 3000008,
+      "value": 0,
+      "startedAt": 1522832400,
+      "endedAt": 1893423600
+    }
   ]
 }

@@ -2639,6 +2639,54 @@ WAR_START_TYPE_NAME: dict[int, NiceWarStartType] = {
 }
 
 
+class WarOverwriteType(IntEnum):
+    BGM = 1
+    PARENT_WAR = 2
+    BANNER = 3
+    BG_IMAGE = 4
+    SVT_IMAGE = 5
+    FLAG = 6
+    BASE_MAP_ID = 7
+    NAME = 8
+    LONG_NAME = 9
+    MATERIAL_PARENT_WAR = 10
+    COORDINATES = 11
+    EFFECT_CHANGE_BLACK_MARK = 12
+
+
+class NiceWarOverwriteType(str, Enum):
+    """War Overwrite Type Enum"""
+
+    bgm = "bgm"
+    parentWar = "parentWar"
+    banner = "banner"
+    bgImage = "bgImage"
+    svtImage = "svtImage"
+    flag = "flag"
+    baseMapId = "baseMapId"
+    name_ = "name"
+    longName = "longName"
+    materialParentWar = "materialParentWar"
+    coordinates = "coordinates"
+    effectChangeBlackMark = "effectChangeBlackMark"
+
+
+WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
+    1: NiceWarOverwriteType.bgm,
+    2: NiceWarOverwriteType.parentWar,
+    3: NiceWarOverwriteType.banner,
+    4: NiceWarOverwriteType.bgImage,
+    5: NiceWarOverwriteType.svtImage,
+    6: NiceWarOverwriteType.flag,
+    7: NiceWarOverwriteType.baseMapId,
+    8: NiceWarOverwriteType.name_,
+    9: NiceWarOverwriteType.longName,
+    10: NiceWarOverwriteType.materialParentWar,
+    11: NiceWarOverwriteType.coordinates,
+    12: NiceWarOverwriteType.effectChangeBlackMark,
+}
+
+
 class AiCond(IntEnum):
     NONE = 0
     HP_HIGHER = 10

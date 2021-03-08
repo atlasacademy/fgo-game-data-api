@@ -7,6 +7,7 @@ PYTHON_NAME_JSON_NAME_OVERRIDE = {
     "SELF": "self_",
     "CENTER": "center_",
     "SET": "set_",
+    "NAME": "name_",
 }
 
 
@@ -287,6 +288,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "War Start Type Enum",
         "WAR_START_TYPE_NAME",
     ),
+    (
+        "WarAddEntity.WarOverwriteType",
+        "WarOverwriteType",
+        "NiceWarOverwriteType",
+        "War Overwrite Type Enum",
+        "WAR_OVERWRITE_TYPE_NAME",
+    ),
     ("Ai.COND", "AiCond", "NiceAiCond", "AI Cond Enum", "AI_COND_NAME"),
     (
         "AiAct.TYPE",
@@ -323,6 +331,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "NiceMissionProgressType",
         "Mission Progress Type Enum",
         "MISSION_PROGRESS_TYPE_NAME",
+    ),
+    (
+        "EventMissionCondDetailEntity.MissionCondType",
+        "DetailMissionCondType",
+        "NiceDetailMissionCondType",
+        "Mission Condition Detail Condition Type Enum",
+        "DETAIL_MISSION_COND_TYPE",
     ),
     (
         "EventMissionCondDetailEntity.MissionConditionLinkType",

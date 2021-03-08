@@ -1,11 +1,19 @@
+from typing import Optional
+
 from sqlalchemy.engine import Connection
 
 from ...config import Settings
 from ...data.gamedata import masters
 from ...schemas.common import Region
-from ...schemas.enums import WAR_START_TYPE_NAME, WarEntityFlag
-from ...schemas.nice import AssetURL, NiceMap, NiceQuest, NiceSpot, NiceWar
-from ...schemas.raw import MstMap, MstSpot
+from ...schemas.enums import (
+    COND_TYPE_NAME,
+    WAR_OVERWRITE_TYPE_NAME,
+    WAR_START_TYPE_NAME,
+    WarEntityFlag,
+    WarOverwriteType,
+)
+from ...schemas.nice import AssetURL, NiceMap, NiceQuest, NiceSpot, NiceWar, NiceWarAdd
+from ...schemas.raw import MstMap, MstSpot, MstWarAdd
 from .. import raw
 from .bgm import get_nice_bgm
 from .quest import get_nice_quest
@@ -29,6 +37,30 @@ def get_nice_map(region: Region, raw_map: MstMap) -> NiceMap:
         if raw_map.headerImageId != 0
         else None,
         bgm=get_nice_bgm(region, raw_map.bgmId),
+    )
+
+
+def get_nice_war_add(region: Region, war_add: MstWarAdd) -> NiceWarAdd:
+    base_settings = {"base_url": settings.asset_url, "region": region}
+    if war_add.type == WarOverwriteType.BANNER:
+        banner_url: Optional[str] = AssetURL.banner.format(
+            **base_settings, banner=f"questboard_cap{war_add.overwriteId:>03}"
+        )
+    else:
+        banner_url = None
+
+    return NiceWarAdd(
+        warId=war_add.warId,
+        type=WAR_OVERWRITE_TYPE_NAME[war_add.type],
+        priority=war_add.priority,
+        overwriteId=war_add.overwriteId,
+        overwriteStr=war_add.overwriteStr,
+        overwriteBanner=banner_url,
+        condType=COND_TYPE_NAME[war_add.condType],
+        targetId=war_add.targetId,
+        value=war_add.value,
+        startedAt=war_add.startedAt,
+        endedAt=war_add.endedAt,
     )
 
 
@@ -109,6 +141,7 @@ def get_nice_war(conn: Connection, region: Region, war_id: int) -> NiceWar:
         targetId=raw_war.mstWar.targetId,
         eventId=raw_war.mstWar.eventId,
         lastQuestId=raw_war.mstWar.lastQuestId,
+        warAdds=(get_nice_war_add(region, war_add) for war_add in raw_war.mstWarAdd),
         maps=(get_nice_map(region, raw_map) for raw_map in raw_war.mstMap),
         spots=(
             get_nice_spot(conn, region, raw_spot, war_asset_id)

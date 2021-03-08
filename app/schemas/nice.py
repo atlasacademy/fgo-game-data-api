@@ -42,6 +42,7 @@ from .enums import (
     NiceSvtType,
     NiceSvtVoiceType,
     NiceVoiceCondType,
+    NiceWarOverwriteType,
     NiceWarStartType,
     SvtClass,
 )
@@ -1178,6 +1179,20 @@ class NiceSpot(BaseModel):
     quests: list[NiceQuest]
 
 
+class NiceWarAdd(BaseModelORJson):
+    warId: int
+    type: NiceWarOverwriteType
+    priority: int
+    overwriteId: int
+    overwriteStr: str
+    overwriteBanner: Optional[HttpUrl] = None
+    condType: NiceCondType
+    targetId: int
+    value: int
+    startedAt: int
+    endedAt: int
+
+
 class NiceWar(BaseModelORJson):
     id: int
     coordinates: list[list[int]]
@@ -1196,6 +1211,7 @@ class NiceWar(BaseModelORJson):
     targetId: int
     eventId: int
     lastQuestId: int
+    warAdds: list[NiceWarAdd]
     maps: list[NiceMap]
     spots: list[NiceSpot]
 

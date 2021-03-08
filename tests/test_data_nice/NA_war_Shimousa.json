@@ -20,6 +20,69 @@
   "targetId": 2000300,
   "eventId": 0,
   "lastQuestId": 2000316,
+  "warAdds": [
+    {
+      "warId": 203,
+      "type": "parentWar",
+      "priority": 1,
+      "overwriteId": 12000,
+      "overwriteStr": "",
+      "condType": "questClear",
+      "targetId": 3000008,
+      "value": 0,
+      "startedAt": 1585281600,
+      "endedAt": 1893456000
+    },
+    {
+      "warId": 203,
+      "type": "banner",
+      "priority": 0,
+      "overwriteId": 20302,
+      "overwriteStr": "",
+      "overwriteBanner": "https://assets.atlasacademy.io/GameData/NA/Banner/questboard_cap20302.png",
+      "condType": "questClear",
+      "targetId": 2000300,
+      "value": 0,
+      "startedAt": 1570680000,
+      "endedAt": 1893456000
+    },
+    {
+      "warId": 203,
+      "type": "baseMapId",
+      "priority": 1,
+      "overwriteId": 20302,
+      "overwriteStr": "",
+      "condType": "questClearPhase",
+      "targetId": 2000313,
+      "value": 1,
+      "startedAt": 1570680000,
+      "endedAt": 1893456000
+    },
+    {
+      "warId": 203,
+      "type": "baseMapId",
+      "priority": 2,
+      "overwriteId": 20301,
+      "overwriteStr": "",
+      "condType": "questClear",
+      "targetId": 2000315,
+      "value": 0,
+      "startedAt": 1570680000,
+      "endedAt": 1893456000
+    },
+    {
+      "warId": 203,
+      "type": "materialParentWar",
+      "priority": 2,
+      "overwriteId": 12000,
+      "overwriteStr": "",
+      "condType": "questClear",
+      "targetId": 3000008,
+      "value": 0,
+      "startedAt": 1585281600,
+      "endedAt": 1893456000
+    }
+  ],
   "maps": [
     {
       "id": 20301,

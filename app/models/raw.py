@@ -624,6 +624,23 @@ mstSpot = Table(
 )
 
 
+mstWarAdd = Table(
+    "mstWarAdd",
+    metadata,
+    Column("script", JSONB),
+    Column("warId", Integer, index=True),
+    Column("type", Integer),
+    Column("priority", Integer),
+    Column("overwriteId", Integer),
+    Column("overwriteStr", String),
+    Column("condType", Integer),
+    Column("targetId", Integer),
+    Column("value", Integer),
+    Column("startedAt", Integer),
+    Column("endedAt", Integer),
+)
+
+
 mstQuest = Table(
     "mstQuest",
     metadata,
@@ -811,6 +828,7 @@ TABLES_TO_BE_LOADED = [
     mstEventReward,
     mstEventPointBuff,
     mstEventMissionCondition,
+    mstWarAdd,
     mstQuestRelease,
     mstQuestConsumeItem,
     mstQuestPhase,

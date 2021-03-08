@@ -387,6 +387,7 @@ def get_war_entity(conn: Connection, region: Region, war_id: int) -> WarEntity:
         mstWar=masters[region].mstWarId[war_id],
         mstMap=maps,
         mstSpot=war.get_mstSpot(conn, [event_map.id for event_map in maps]),
+        mstWarAdd=war.get_mstWarAdd(conn, [war_id]),
     )
 
 

@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.51.0 - 2020-03-07
+### Added
+- war add to raw and nice war.
+
 ## 5.50.0 - 2020-03-07
 ### Added
 - `wave` number to nice stage.

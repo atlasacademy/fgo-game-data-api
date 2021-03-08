@@ -32,8 +32,8 @@ def test_parse_dataVals_add_state_6_items() -> None:
 def test_parse_dataVals_unknown_datavals(caplog: pytest.LogCaptureFixture) -> None:
     parse_dataVals("[1000,3,3,300]", FuncType.SUB_STATE, Region.NA)
     assert (
-        "Some datavals weren't parsed [1000,3,3,300] => {'Rate': 1000, 'Value': 3, 'Value2': 3}"
-        in caplog.text
+        "Some datavals weren't parsed for func type 2: "
+        "[1000,3,3,300] => {'Rate': 1000, 'Value': 3, 'Value2': 3}" in caplog.text
     )
 
 

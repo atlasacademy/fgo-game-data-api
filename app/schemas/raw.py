@@ -851,6 +851,23 @@ class MstWar(BaseModel):
     assetId: int  # 0
 
 
+class MstWarAdd(BaseModel):
+    script: dict[str, Any]
+    warId: int
+    type: int
+    priority: int
+    overwriteId: int
+    overwriteStr: str
+    condType: int
+    targetId: int
+    value: int
+    startedAt: int
+    endedAt: int
+
+    class Config:
+        orm_mode = True
+
+
 class MstMap(BaseModel):
     script: dict[str, Any]
     id: int  # 100
@@ -1172,6 +1189,7 @@ class WarEntity(BaseModelORJson):
     mstWar: MstWar
     mstMap: list[MstMap]
     mstSpot: list[MstSpot]
+    mstWarAdd: list[MstWarAdd]
 
 
 class AiEntity(BaseModelORJson):
