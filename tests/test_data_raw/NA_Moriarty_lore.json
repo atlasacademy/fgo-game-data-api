@@ -1,6 +1,6 @@
 {
   "mstSvt": {
-    "relateQuestIds": [],
+    "relateQuestIds": [94034901],
     "individuality": [5000, 202300, 1, 102, 202, 301, 304, 1000, 2001, 2008],
     "classPassive": [34250, 20551],
     "cardIds": [3, 1, 1, 1, 2],
@@ -225,19 +225,6 @@
       "mstSvtSkill": [
         {
           "strengthStatus": 0,
-          "svtId": 202300,
-          "num": 2,
-          "priority": 1,
-          "skillId": 334552,
-          "condQuestId": 0,
-          "condQuestPhase": 0,
-          "condLv": 0,
-          "condLimitCount": 1,
-          "eventId": 0,
-          "flag": 0
-        },
-        {
-          "strengthStatus": 0,
           "svtId": 9939010,
           "num": 2,
           "priority": 1,
@@ -252,6 +239,19 @@
         {
           "strengthStatus": 0,
           "svtId": 9939020,
+          "num": 2,
+          "priority": 1,
+          "skillId": 334552,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 1,
+          "eventId": 0,
+          "flag": 0
+        },
+        {
+          "strengthStatus": 1,
+          "svtId": 202300,
           "num": 2,
           "priority": 1,
           "skillId": 334552,
@@ -589,13 +589,201 @@
           "priority": 0
         }
       ]
+    },
+    {
+      "mstSkill": {
+        "effectList": [],
+        "actIndividuality": [],
+        "script": {},
+        "id": 334553,
+        "type": 1,
+        "name": "End of the Spider's Web A+++",
+        "ruby": "End of the Spider's Web",
+        "maxLv": 10,
+        "iconId": 601,
+        "motion": 102
+      },
+      "mstSkillDetail": [
+        {
+          "id": 334553,
+          "detail": "[Usable only when there are 10 C. Stars or more] Increase NP Gauge [{0}] & NP Strength (3 turns) for yourself + Apply [Evil] to all allies excluding yourself (3 turns) [g][o]▲[/o][/g]",
+          "detailShort": "[Usable only when there are 10 C. Stars or more] Increase NP Gauge [{0}] & NP Strength (3 turns) for yourself + Apply [Evil] to all allies excluding yourself (3 turns) [g][o]▲[/o][/g]"
+        }
+      ],
+      "mstSvtSkill": [
+        {
+          "strengthStatus": 2,
+          "svtId": 202300,
+          "num": 2,
+          "priority": 2,
+          "skillId": 334553,
+          "condQuestId": 94034901,
+          "condQuestPhase": 3,
+          "condLv": 0,
+          "condLimitCount": 1,
+          "eventId": 0,
+          "flag": 0
+        }
+      ],
+      "mstSkillLv": [
+        {
+          "funcId": [461, 470, 248, 3424],
+          "svals": [
+            "[1000,3000]",
+            "[1000,1]",
+            "[1000,3,-1,200]",
+            "[1000,3,-1,304]"
+          ],
+          "script": { "STAR_HIGHER": 10 },
+          "skillId": 334553,
+          "lv": 1,
+          "chargeTurn": 8,
+          "skillDetailId": 334553,
+          "priority": 0
+        },
+        {
+          "funcId": [461, 470, 248, 3424],
+          "svals": [
+            "[1000,3200]",
+            "[1000,1]",
+            "[1000,3,-1,200]",
+            "[1000,3,-1,304]"
+          ],
+          "script": { "STAR_HIGHER": 10 },
+          "skillId": 334553,
+          "lv": 2,
+          "chargeTurn": 8,
+          "skillDetailId": 334553,
+          "priority": 0
+        },
+        {
+          "funcId": [461, 470, 248, 3424],
+          "svals": [
+            "[1000,3400]",
+            "[1000,1]",
+            "[1000,3,-1,200]",
+            "[1000,3,-1,304]"
+          ],
+          "script": { "STAR_HIGHER": 10 },
+          "skillId": 334553,
+          "lv": 3,
+          "chargeTurn": 8,
+          "skillDetailId": 334553,
+          "priority": 0
+        },
+        {
+          "funcId": [461, 470, 248, 3424],
+          "svals": [
+            "[1000,3600]",
+            "[1000,1]",
+            "[1000,3,-1,200]",
+            "[1000,3,-1,304]"
+          ],
+          "script": { "STAR_HIGHER": 10 },
+          "skillId": 334553,
+          "lv": 4,
+          "chargeTurn": 8,
+          "skillDetailId": 334553,
+          "priority": 0
+        },
+        {
+          "funcId": [461, 470, 248, 3424],
+          "svals": [
+            "[1000,3800]",
+            "[1000,1]",
+            "[1000,3,-1,200]",
+            "[1000,3,-1,304]"
+          ],
+          "script": { "STAR_HIGHER": 10 },
+          "skillId": 334553,
+          "lv": 5,
+          "chargeTurn": 8,
+          "skillDetailId": 334553,
+          "priority": 0
+        },
+        {
+          "funcId": [461, 470, 248, 3424],
+          "svals": [
+            "[1000,4000]",
+            "[1000,1]",
+            "[1000,3,-1,200]",
+            "[1000,3,-1,304]"
+          ],
+          "script": { "STAR_HIGHER": 10 },
+          "skillId": 334553,
+          "lv": 6,
+          "chargeTurn": 7,
+          "skillDetailId": 334553,
+          "priority": 0
+        },
+        {
+          "funcId": [461, 470, 248, 3424],
+          "svals": [
+            "[1000,4200]",
+            "[1000,1]",
+            "[1000,3,-1,200]",
+            "[1000,3,-1,304]"
+          ],
+          "script": { "STAR_HIGHER": 10 },
+          "skillId": 334553,
+          "lv": 7,
+          "chargeTurn": 7,
+          "skillDetailId": 334553,
+          "priority": 0
+        },
+        {
+          "funcId": [461, 470, 248, 3424],
+          "svals": [
+            "[1000,4400]",
+            "[1000,1]",
+            "[1000,3,-1,200]",
+            "[1000,3,-1,304]"
+          ],
+          "script": { "STAR_HIGHER": 10 },
+          "skillId": 334553,
+          "lv": 8,
+          "chargeTurn": 7,
+          "skillDetailId": 334553,
+          "priority": 0
+        },
+        {
+          "funcId": [461, 470, 248, 3424],
+          "svals": [
+            "[1000,4600]",
+            "[1000,1]",
+            "[1000,3,-1,200]",
+            "[1000,3,-1,304]"
+          ],
+          "script": { "STAR_HIGHER": 10 },
+          "skillId": 334553,
+          "lv": 9,
+          "chargeTurn": 7,
+          "skillDetailId": 334553,
+          "priority": 0
+        },
+        {
+          "funcId": [461, 470, 248, 3424],
+          "svals": [
+            "[1000,5000]",
+            "[1000,1]",
+            "[1000,3,-1,200]",
+            "[1000,3,-1,304]"
+          ],
+          "script": { "STAR_HIGHER": 10 },
+          "skillId": 334553,
+          "lv": 10,
+          "chargeTurn": 6,
+          "skillDetailId": 334553,
+          "priority": 0
+        }
+      ]
     }
   ],
   "mstTreasureDevice": [
     {
       "mstTreasureDevice": {
         "individuality": [3001, 4002, 4007],
-        "script": {},
+        "script": { "limitSeqId_11": 202301 },
         "id": 202300,
         "seqId": 202300,
         "name": "???",
@@ -731,7 +919,7 @@
     {
       "mstTreasureDevice": {
         "individuality": [3001, 4002, 4007],
-        "script": {},
+        "script": { "limitSeqId_11": 202301 },
         "id": 202301,
         "seqId": 202300,
         "name": "The Dynamics of an Asteroid",
@@ -1149,8 +1337,31 @@
       "qp": 10000000
     }
   ],
-  "mstCombineCostume": [],
-  "mstSvtLimitAdd": [],
+  "mstCombineCostume": [
+    {
+      "itemIds": [6533, 6535, 6520, 6531],
+      "itemNums": [10, 5, 5, 5],
+      "svtId": 202300,
+      "costumeId": 11,
+      "qp": 3000000
+    }
+  ],
+  "mstSvtLimitAdd": [
+    {
+      "individuality": [],
+      "script": {},
+      "svtId": 202300,
+      "limitCount": 11,
+      "battleCharaId": 202330,
+      "fileConvertLimitCount": 0,
+      "battleCharaLimitCount": 0,
+      "battleCharaOffsetX": 0,
+      "battleCharaOffsetY": 0,
+      "battleCharaOffsetZ": 0,
+      "svtVoiceId": 202300,
+      "voicePrefix": 11
+    }
+  ],
   "mstSvtChange": [
     {
       "beforeTreasureDeviceIds": [202300],
@@ -1169,7 +1380,23 @@
       "battleSvtId": 202300
     }
   ],
-  "mstSvtCostume": [],
+  "mstSvtCostume": [
+    {
+      "svtId": 202300,
+      "id": 11,
+      "name": "Grey Collar",
+      "shortName": "Grey Collar",
+      "detail": "A bartender's outfit with a butterfly motif. The Professor's fashion sense really shines through in this outfit.",
+      "itemGetInfo": "Exchange using Event Items",
+      "releaseInfo": "Unlocked at Final Ascension and MAX Level",
+      "costumeReleaseDetail": "Acquire the Wardrobe Key for Spiritron Dress \"Grey Collar\"",
+      "priority": 98,
+      "flag": 0,
+      "costumeCollectionNo": 17,
+      "openedAt": 1615176000,
+      "endedAt": 1893628799
+    }
+  ],
   "mstSvtScript": [
     {
       "extendData": {},
@@ -1656,6 +1883,712 @@
     {
       "scriptJson": [
         {
+          "overwriteName": "An Old Spider Spins Webs of Memory 1",
+          "infos": [
+            { "id": "0_I9010", "face": 1, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "0_I9011", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 2",
+          "infos": [
+            { "id": "0_I9020", "face": 6, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "0_I9021", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9022", "face": 4, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 3",
+          "infos": [
+            { "id": "0_I9030", "face": 3, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "0_I9031", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 18, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 4",
+          "infos": [
+            { "id": "0_I9040", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "0_I9041", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9042", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 18, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 5",
+          "infos": [
+            { "id": "0_I9050", "face": 2, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "0_I9051", "face": 4, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 18, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 6",
+          "infos": [
+            { "id": "0_I9060", "face": 3, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "0_I9061", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9062", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 7",
+          "infos": [
+            { "id": "0_I9070", "face": 3, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "0_I9071", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 8",
+          "infos": [
+            { "id": "0_I9080", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "0_I9081", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9082", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9083", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9084", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 9",
+          "infos": [
+            { "id": "0_I9090", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "0_I9091", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9092", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9093", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9094", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9095", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 10",
+          "infos": [
+            { "id": "0_I9100", "face": 1, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "0_I9101", "face": 3, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9102", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 11",
+          "infos": [
+            { "id": "0_I9110", "face": 1, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "0_I9111", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9112", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 12",
+          "infos": [
+            { "id": "0_I9120", "face": 4, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "0_I9121", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9122", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9123", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 13",
+          "infos": [
+            { "id": "0_I9130", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "0_I9131", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9132", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 14",
+          "infos": [
+            { "id": "0_I9410", "face": 2, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "0_I9411", "face": 6, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9412", "face": 6, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9413", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9414", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9415", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 15",
+          "infos": [
+            { "id": "0_I9500", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "0_I9501", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9502", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9503", "face": 6, "delay": 0.3, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 16",
+          "infos": [
+            { "id": "0_I9510", "face": 5, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "0_I9511", "face": 5, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9512", "face": 5, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9513", "face": 6, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9514", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9515", "face": 2, "delay": 0.3, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 17",
+          "infos": [
+            { "id": "0_I9520", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "0_I9521", "face": 5, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9522", "face": 5, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9523", "face": 3, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9524", "face": 5, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 18",
+          "infos": [
+            { "id": "0_I9530", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "0_I9531", "face": 3, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9532", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9533", "face": 5, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9534", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9535", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 19",
+          "infos": [
+            { "id": "0_I9540", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "0_I9541", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9542", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9543", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9544", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9545", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 20",
+          "infos": [
+            { "id": "0_I9550", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "0_I9551", "face": 5, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9552", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9553", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9554", "face": 5, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9555", "face": 5, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 21",
+          "infos": [
+            { "id": "0_I9560", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "0_I9561", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9562", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9563", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "0_I9564", "face": 5, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        }
+      ],
+      "id": 202310,
+      "voicePrefix": 0,
+      "type": 9
+    },
+    {
+      "scriptJson": [
+        {
+          "overwriteName": "About Spiritron Dress Grey Collar",
+          "infos": [
+            {
+              "id": "11_H9000",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0
+            },
+            {
+              "id": "11_H9001",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0
+            },
+            { "id": "11_H9002", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": []
+        }
+      ],
+      "id": 202310,
+      "voicePrefix": 11,
+      "type": 1
+    },
+    {
+      "scriptJson": [
+        {
+          "overwriteName": "Level Up Grey Collar",
+          "infos": [
+            { "id": "11_G010", "face": 1, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 8, "value": 0, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "Level Up Grey Collar",
+          "infos": [
+            { "id": "11_G9410", "face": 1, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 8, "value": 0, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "Unlock Wardrobe Grey Collar",
+          "infos": [
+            { "id": "11_G060", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_G061", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_G062", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_G063", "face": 2, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 23, "value": 11, "eventId": 0 }]
+        }
+      ],
+      "id": 202310,
+      "voicePrefix": 11,
+      "type": 2
+    },
+    {
+      "scriptJson": [
+        {
+          "overwriteName": "Battle Start 1 Grey Collar",
+          "infos": [
+            { "id": "11_B9100", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Battle Start 2 Grey Collar",
+          "infos": [
+            { "id": "11_B9110", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Skill 1 Grey Collar",
+          "infos": [
+            { "id": "11_B9080", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Skill 2 Grey Collar",
+          "infos": [
+            { "id": "11_B9090", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Command Card 1 Grey Collar",
+          "infos": [
+            { "id": "11_B9180", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Command Card 2 Grey Collar",
+          "infos": [
+            { "id": "11_B9190", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Command Card 3 Grey Collar",
+          "infos": [
+            { "id": "11_B9200", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Noble Phantasm Card Grey Collar",
+          "infos": [
+            { "id": "11_B9210", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Attack 1 Grey Collar",
+          "infos": [
+            { "id": "11_B9010", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Attack 2 Grey Collar",
+          "infos": [
+            { "id": "11_B9020", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Attack 3 Grey Collar",
+          "infos": [
+            { "id": "11_B9030", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Extra Attack Grey Collar",
+          "infos": [
+            { "id": "11_B9040", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Damage 1 Grey Collar",
+          "infos": [
+            { "id": "11_B9150", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Damage 2 Grey Collar",
+          "infos": [
+            { "id": "11_B9140", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Incapacitated 1 Grey Collar",
+          "infos": [
+            { "id": "11_B9160", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Incapacitated 2 Grey Collar",
+          "infos": [
+            { "id": "11_B9170", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Victory 1 Grey Collar",
+          "infos": [
+            { "id": "11_B9120", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Victory 2 Grey Collar",
+          "infos": [
+            { "id": "11_B9130", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        }
+      ],
+      "id": 202310,
+      "voicePrefix": 11,
+      "type": 6
+    },
+    {
+      "scriptJson": [
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 1",
+          "infos": [
+            { "id": "11_I010", "face": 1, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I011", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 2",
+          "infos": [
+            { "id": "11_I020", "face": 6, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I021", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I022", "face": 4, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 3",
+          "infos": [
+            { "id": "11_I030", "face": 3, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I031", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 18, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 4",
+          "infos": [
+            { "id": "11_I040", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I041", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I042", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 18, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 5",
+          "infos": [
+            { "id": "11_I050", "face": 2, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I051", "face": 4, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 18, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 6",
+          "infos": [
+            { "id": "11_I580", "face": 3, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I581", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I582", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 6",
+          "infos": [
+            { "id": "11_I060", "face": 3, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I061", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I062", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 7",
+          "infos": [
+            { "id": "11_I070", "face": 3, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I071", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 8",
+          "infos": [
+            { "id": "11_I080", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I081", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I082", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I083", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I084", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 9",
+          "infos": [
+            { "id": "11_I090", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I091", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I092", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I093", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I094", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I095", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 10",
+          "infos": [
+            { "id": "11_I100", "face": 1, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I101", "face": 3, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I102", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 11",
+          "infos": [
+            { "id": "11_I110", "face": 1, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I111", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I112", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 12",
+          "infos": [
+            { "id": "11_I120", "face": 4, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I121", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I122", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I123", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 13",
+          "infos": [
+            { "id": "11_I130", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I131", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I132", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 14",
+          "infos": [
+            { "id": "11_I410", "face": 2, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I411", "face": 6, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I412", "face": 6, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I413", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I414", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I415", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 15",
+          "infos": [
+            { "id": "11_I500", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I501", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I502", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I503", "face": 6, "delay": 0.3, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 16",
+          "infos": [
+            { "id": "11_I510", "face": 5, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I511", "face": 5, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I512", "face": 5, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I513", "face": 6, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I514", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I515", "face": 2, "delay": 0.3, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 17",
+          "infos": [
+            { "id": "11_I520", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I521", "face": 5, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I522", "face": 5, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I523", "face": 3, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I524", "face": 5, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 18",
+          "infos": [
+            { "id": "11_I530", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I531", "face": 3, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I532", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I533", "face": 5, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I534", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I535", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 19",
+          "infos": [
+            { "id": "11_I540", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I541", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I542", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I543", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I544", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I545", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 20",
+          "infos": [
+            { "id": "11_I550", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I551", "face": 5, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I552", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I553", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I554", "face": 5, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I555", "face": 5, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 21",
+          "infos": [
+            { "id": "11_I560", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I561", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I562", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I563", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I564", "face": 5, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        }
+      ],
+      "id": 202310,
+      "voicePrefix": 11,
+      "type": 9
+    },
+    {
+      "scriptJson": [
+        {
           "overwriteName": "Birthday (True Name Known)",
           "infos": [
             { "id": "0_H010", "face": 3, "delay": 0.0, "text": "", "form": 0 },
@@ -2042,6 +2975,454 @@
     {
       "scriptJson": [
         {
+          "overwriteName": "About Spiritron Dress Grey Collar",
+          "infos": [
+            {
+              "id": "11_H9000",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0
+            },
+            {
+              "id": "11_H9001",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0
+            },
+            { "id": "11_H9002", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": []
+        }
+      ],
+      "id": 202300,
+      "voicePrefix": 11,
+      "type": 1
+    },
+    {
+      "scriptJson": [
+        {
+          "overwriteName": "Level Up Grey Collar",
+          "infos": [
+            { "id": "11_G010", "face": 1, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 8, "value": 0, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "Unlock Wardrobe Grey Collar",
+          "infos": [
+            { "id": "11_G060", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_G061", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_G062", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_G063", "face": 2, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 23, "value": 11, "eventId": 0 }]
+        }
+      ],
+      "id": 202300,
+      "voicePrefix": 11,
+      "type": 2
+    },
+    {
+      "scriptJson": [
+        {
+          "overwriteName": "Battle Start 1 Grey Collar",
+          "infos": [
+            { "id": "11_B100", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Battle Start 2 Grey Collar",
+          "infos": [
+            { "id": "11_B110", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Skill 1 Grey Collar",
+          "infos": [
+            { "id": "11_B080", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Skill 2 Grey Collar",
+          "infos": [
+            { "id": "11_B090", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Command Card 1 Grey Collar",
+          "infos": [
+            { "id": "11_B180", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Command Card 2 Grey Collar",
+          "infos": [
+            { "id": "11_B190", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Command Card 3 Grey Collar",
+          "infos": [
+            { "id": "11_B200", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Noble Phantasm Card Grey Collar",
+          "infos": [
+            { "id": "11_B210", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Attack 1 Grey Collar",
+          "infos": [
+            { "id": "11_B010", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Attack 2 Grey Collar",
+          "infos": [
+            { "id": "11_B020", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Attack 3 Grey Collar",
+          "infos": [
+            { "id": "11_B030", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Extra Attack Grey Collar",
+          "infos": [
+            { "id": "11_B040", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Damage 1 Grey Collar",
+          "infos": [
+            { "id": "11_B150", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Damage 2 Grey Collar",
+          "infos": [
+            { "id": "11_B140", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Incapacitated 1 Grey Collar",
+          "infos": [
+            { "id": "11_B160", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Incapacitated 2 Grey Collar",
+          "infos": [
+            { "id": "11_B170", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Victory 1 Grey Collar",
+          "infos": [
+            { "id": "11_B120", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Victory 2 Grey Collar",
+          "infos": [
+            { "id": "11_B130", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+          ],
+          "conds": []
+        }
+      ],
+      "id": 202300,
+      "voicePrefix": 11,
+      "type": 6
+    },
+    {
+      "scriptJson": [
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 1",
+          "infos": [
+            { "id": "11_I010", "face": 1, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I011", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 2",
+          "infos": [
+            { "id": "11_I020", "face": 6, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I021", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I022", "face": 4, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 3",
+          "infos": [
+            { "id": "11_I030", "face": 3, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I031", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 18, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 4",
+          "infos": [
+            { "id": "11_I040", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I041", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I042", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 18, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 5",
+          "infos": [
+            { "id": "11_I050", "face": 2, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I051", "face": 4, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 18, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 6",
+          "infos": [
+            { "id": "11_I580", "face": 3, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I581", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I582", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 6",
+          "infos": [
+            { "id": "11_I060", "face": 3, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I061", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I062", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 7",
+          "infos": [
+            { "id": "11_I070", "face": 3, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I071", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 8",
+          "infos": [
+            { "id": "11_I080", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I081", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I082", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I083", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I084", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 9",
+          "infos": [
+            { "id": "11_I090", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I091", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I092", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I093", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I094", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I095", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 10",
+          "infos": [
+            { "id": "11_I100", "face": 1, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I101", "face": 3, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I102", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 11",
+          "infos": [
+            { "id": "11_I110", "face": 1, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I111", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I112", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 12",
+          "infos": [
+            { "id": "11_I120", "face": 4, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I121", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I122", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I123", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 13",
+          "infos": [
+            { "id": "11_I130", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I131", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I132", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 14",
+          "infos": [
+            { "id": "11_I410", "face": 2, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I411", "face": 6, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I412", "face": 6, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I413", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I414", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I415", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 15",
+          "infos": [
+            { "id": "11_I500", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I501", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I502", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I503", "face": 6, "delay": 0.3, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 16",
+          "infos": [
+            { "id": "11_I510", "face": 5, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I511", "face": 5, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I512", "face": 5, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I513", "face": 6, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I514", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I515", "face": 2, "delay": 0.3, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 17",
+          "infos": [
+            { "id": "11_I520", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I521", "face": 5, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I522", "face": 5, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I523", "face": 3, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I524", "face": 5, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 18",
+          "infos": [
+            { "id": "11_I530", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I531", "face": 3, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I532", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I533", "face": 5, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I534", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I535", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 19",
+          "infos": [
+            { "id": "11_I540", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I541", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I542", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I543", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I544", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I545", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 20",
+          "infos": [
+            { "id": "11_I550", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I551", "face": 5, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I552", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I553", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I554", "face": 5, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I555", "face": 5, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        },
+        {
+          "overwriteName": "An Old Spider Spins Webs of Memory 21",
+          "infos": [
+            { "id": "11_I560", "face": 0, "delay": 0.0, "text": "", "form": 0 },
+            { "id": "11_I561", "face": 1, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I562", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I563", "face": 0, "delay": 0.1, "text": "", "form": 0 },
+            { "id": "11_I564", "face": 5, "delay": 0.1, "text": "", "form": 0 }
+          ],
+          "conds": [
+            { "condType": 21, "value": 80237, "eventId": 0 },
+            { "condType": 19, "value": 80237, "eventId": 0 }
+          ]
+        }
+      ],
+      "id": 202300,
+      "voicePrefix": 11,
+      "type": 9
+    },
+    {
+      "scriptJson": [
+        {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 1",
           "infos": [
             { "id": "0_M610", "face": 0, "delay": 0.0, "text": "", "form": 0 }
@@ -2256,167 +3637,237 @@
       "serif": "Ah, you impress me. I cannot yet reveal my True Name, but I promise you that one day, I shall disclose it to you. I am a dishonest man, yes, but...well, that is the most I can think to say for now."
     },
     {
+      "id": "202310_0_I9010",
+      "serif": "Is business good? Quite good!\nGot that? So it's time to make a few exchanges!"
+    },
+    {
+      "id": "202310_0_I9020",
+      "serif": "Make your exchanges here!\nDid you find the materials you sought?\nNo? My sincerest apologies."
+    },
+    {
+      "id": "202310_0_I9030",
+      "serif": "Come to think of it, I'm probably the last person who would end up working an honest job.\nWell anyway, keep on making those exchanges."
+    },
+    {
+      "id": "202310_0_I9040",
+      "serif": "Shops of this nature tend to become intelligence swapping hotspots among villains. I suggest you keep an ear out while you gather your purchases.\nThen again, you're my only customer!"
+    },
+    {
+      "id": "202310_0_I9050",
+      "serif": "My back is, well...you know. Could you help me out? Thanks a lot, Master."
+    },
+    {
+      "id": "202310_0_I9060",
+      "serif": "Ah, so you've brought me this.\nVery good, very good.\nTime to change my profession to bartender."
+    },
+    {
+      "id": "202310_0_I9070",
+      "serif": "The shop's about to close up.\nBut there's still time to make a few last-minute exchanges. Do so while you can."
+    },
+    {
+      "id": "202310_0_I9080",
+      "serif": "These past few days were quite stimulating to me. Were they for you as well?\nEntertainment is one of the crowning glories for villains. \nWell, see you next year. Take good care of whoever is keeping the shop then. It will not be me!"
+    },
+    {
+      "id": "202310_0_I9090",
+      "serif": "Welcome.\nHeh heh heh. Calling me a pretty boy would be pushing it, and you will have to excuse my age. But there is no more refined gentleman than myself!\nAnyway, do you have business in my shop?\nHow about a plastered statue of Napoleon? At least one of my wares is sure to please."
+    },
+    {
+      "id": "202310_0_I9100",
+      "serif": "I'd like to open up my own shop when I retire.\nAh, but since I plan on being active for another half a century, that won't be for a while.\nAnyway, do you have business here?"
+    },
+    {
+      "id": "202310_0_I9110",
+      "serif": "Wonderful.\nWhat do you think of this Craft Essence?\nI feel no small sense of pride in knowing how well it suits my Master."
+    },
+    {
+      "id": "202310_0_I9120",
+      "serif": "Oh what a shame, the shop is closed.\nThe Red-Headed League has dissolved, and there will be no further business with Mister Garrideb.\nBut it's you and me we're talking about here; maybe we can sneak in an exchange."
+    },
+    {
+      "id": "202310_0_I9130",
+      "serif": "\"Auld Lang Syne\" is about to play to signal the shop's closing time. Did you get everything you'd wanted? If not, you had best hurry."
+    },
+    {
+      "id": "202310_0_I9410",
+      "serif": "Today is White Day, which means that all the effort you put in on Valentine's Day is finally going to pay off.\nMaybe try asking Nursery Rhyme to summon a marshmallow creature for you?\nAt any rate, it looks like this year's going to be another tumultuous one.\nBut don't worry.\nThat's why we Servants are here for you... To cut through the thorny path before you."
+    },
+    {
+      "id": "202310_0_I9500",
+      "serif": "Mystery invites further mystery. What goes around comes around, but the past is unchanging.\nCare for a drink from the glass you brought me?\nWould you care for whiskey? Gin? Or perhaps you just want oolong tea?"
+    },
+    {
+      "id": "202310_0_I9510",
+      "serif": "I'll show you that I can finish off ten steins before you can even finish your one drink.\nThe bet's off if either of us touch the others' glass.\nIf I can't beat you, I'll pay you a million yen. But I want a one stein head start.\n...What would you do if I proposed a bet like that?\nThe answer should be...\nStay tuned tomorrow!"
+    },
+    {
+      "id": "202310_0_I9520",
+      "serif": "Now that you've given me a glass, here's the answer from last time:\nWhat you should do is to hold on to your glass before you drink and just don't let go of it.\nHold it so that my stein won't cover up your glass.\nBut if I had a choice, I would just lose this bet graciously and simply raid the shop's vault later on.\nAfter all, I have a feeling that the vault's quite stocked from this bet of ours!"
+    },
+    {
+      "id": "202310_0_I9530",
+      "serif": "The fourth glass.\nIn Asian nations, the number four is believed to be unlucky because it sounds like the word for \"death,\" while the number thirteen is considered unlucky in the West.\nBut as such, evil villains like us quite embrace these numbers!\nHuh? You don't consider yourself a villain?\nAh yes, I've forgotten about that."
+    },
+    {
+      "id": "202310_0_I9540",
+      "serif": "Ah, your fifth glass? I'll take it.\nIf four's unlucky, then I guess five symbolizes stability.\nPerhaps it is evocative of the five elements, or the Chinese concept of wuxing, or the five phases. Ah, and Friday is the fifth day of the week. It is certainly everyone's favorite, yes? All the better if work ends early that day."
+    },
+    {
+      "id": "202310_0_I9550",
+      "serif": "We're finally at our sixth glass.\nSix, six, six... Three sixes are even unluckier than thirteen.\nIt's the number of the Beast.\nBut of course, the numbers four, thirteen, and six hundred sixty-six are all mere numbers, mathematically speaking.\nWell, humans do have a tendency to find beauty and terror in numbers.\nIf you are able to see past that, then maybe you'll be ready to call yourself a novice villain."
+    },
+    {
+      "id": "202310_0_I9560",
+      "serif": "Let me take that last glass from you.\nAnd here is your reward. Take it, now. Don't be shy.\nSeven is seen as a lucky number, the number of fortune. But behind good fortune lies misfortune.\nIf you find yourself having this lucky number, don't let your guard down. There are those among us villains who take advantage of those seeking its good fortune."
+    },
+    {
+      "id": "202310_0_I9580",
+      "serif": "Ah, so you've brought me this.\nVery good, very good.\nTime to change my profession to bartender."
+    },
+    {
       "id": "202310_0_S010",
       "serif": "Hahahaha!\nYou must be a peculiar Master to have summoned me!\nMy Class is Archer.\nFor now, I shall hold off on revealing my True Name!\nBut I am strong. That much I can guarantee!"
     },
     {
       "id": "202310_11_B050",
-      "serif": "u771Fu540Du5C01u9396。u7591u4F3Cu5B9Du5177u5C55u958B。\nu304Au4ED5u7F6Eu304Du306Eu6642u9593u3060u306D！\nu7D20u6674u3089u3057u3044、u4E16u754Cu306Fu7834u6EC5u306Bu6E80u3061u3066u3044u308B！\nu3075u306Fu306Fu306Fu306F！"
+      "serif": "[id 202310_11_B050]True Name sealed. Pseudo Noble Phantasm, release.\n[id 202310_11_B051]Time for your punishment!\n[id 202310_11_B052]Wonderful... The world is full of destruction!\n[id 202310_11_B053]Fwahahaha!"
     },
-    {
-      "id": "202310_11_B9010",
-      "serif": "u304Au304Bu308Fu308Au3069u3046u305E！"
-    },
-    {
-      "id": "202310_11_B9020",
-      "serif": "u304Au3064u307Eu307Fu3069u3046u305E！"
-    },
-    { "id": "202310_11_B9030", "serif": "u6CE5u9154u304Au65ADu308A！" },
+    { "id": "202310_11_B9010", "serif": "Have another!" },
+    { "id": "202310_11_B9020", "serif": "Have some snacks!" },
+    { "id": "202310_11_B9030", "serif": "I shan't tolerate drunkenness!" },
     {
       "id": "202310_11_B9040",
-      "serif": "u307Eu3060u307Eu3060u3044u3051u308Bu3088u306D、u3082u3046u4E00u676F！"
+      "serif": "I know you can keep going. One more glass!"
     },
-    { "id": "202310_11_B9080", "serif": "u30B7u30A7u30A4u30AF" },
-    { "id": "202310_11_B9090", "serif": "u30B9u30C6u30A2u30FC" },
+    { "id": "202310_11_B9080", "serif": "Shake." },
+    { "id": "202310_11_B9090", "serif": "Stir." },
     {
       "id": "202310_11_B9100",
-      "serif": "u4E00u676Fu3044u304Bu304Cu304Bu306A？　u8840u5857u308Cu30DEu30EAu30FCu306Au3069u304Au52E7u3081u3060u3088？"
+      "serif": "Care for a drink? I recommend a Bloody Mary."
     },
     {
       "id": "202310_11_B9110",
-      "serif": "u30D0u30FCu30C6u30F3u30C0u30FCu30FBu30E2u30EAu30A2u30FCu30C6u30A3。u73FEu5728u30A2u30EBu30D0u30A4u30C8u4E2D～！"
+      "serif": "Moriarty the bartender...part-time, anyway!"
     },
     {
       "id": "202310_11_B9120",
-      "serif": "u52DDu5229u3060u3088。u30DEu30B9u30BFu30FC。u3072u3068u307Eu305Au4E7Eu676Fu3068u3044u3053u3046u3058u3083u306Au3044u304B。"
+      "serif": "A victory, Master. Let us toast to it."
     },
     {
       "id": "202310_11_B9130",
-      "serif": "u30ABu30AFu30C6u30EBu306Fu8A08u7B97u306Eu5275u4F5Cu7269u3060。u6226u3044u3082u540Cu3058u3088u3046u306Au3082u306E、u3068u3044u3046u8A33u3060u306D。"
+      "serif": "Cocktails require a measure of calculation in their execution. Much like battle."
     },
-    { "id": "202310_11_B9140", "serif": "u304Au3063u3068！" },
-    {
-      "id": "202310_11_B9150",
-      "serif": "u3042u3044u305Fu305Fu305Fu305Fu305F！"
-    },
-    {
-      "id": "202310_11_B9160",
-      "serif": "u98F2u307Fu9003u3052……u304Au65ADu308A……"
-    },
-    {
-      "id": "202310_11_B9170",
-      "serif": "u30D0u30A6u30F3u30B5u30FCu3092……u96C7u3063u3066u304Au3051u3070……"
-    },
-    { "id": "202310_11_B9180", "serif": "u30B8u30F3" },
-    { "id": "202310_11_B9190", "serif": "u30A6u30A9u30C3u30AB" },
-    { "id": "202310_11_B9200", "serif": "u30ADu30CAu30FBu30EAu30EC" },
-    {
-      "id": "202310_11_B9210",
-      "serif": "u30F4u30A7u30B9u30D1u30FCu30FBu30DEu30C6u30A3u30FCu30CB。u3044u304Bu304Cu304Bu306A？"
-    },
+    { "id": "202310_11_B9140", "serif": "Whoa there!" },
+    { "id": "202310_11_B9150", "serif": "Ooouch!" },
+    { "id": "202310_11_B9160", "serif": "No drinking and...dashing..." },
+    { "id": "202310_11_B9170", "serif": "If I had only...hired a bouncer..." },
+    { "id": "202310_11_B9180", "serif": "Gin." },
+    { "id": "202310_11_B9190", "serif": "Vodka." },
+    { "id": "202310_11_B9200", "serif": "Kina Lillet." },
+    { "id": "202310_11_B9210", "serif": "Vesper Martini. Care for one?" },
     {
       "id": "202310_11_G010",
-      "serif": "u5F37u304Fu306Au308Bu306Eu306Fu3044u3044u3053u3068u3060。u3046u3080！"
+      "serif": "Getting stronger is a good thing. Mhmm!"
     },
     {
       "id": "202310_11_G060",
-      "serif": "u3068u3044u3046u8A33u3067、u4ECAu304Bu3089u79C1u306Fu6570u5B66u6559u6388u3067u306Fu306Au304F、\nu4E00u4ECBu306Eu30D0u30FCu30C6u30F3u30C0u30FCu3068u3044u3046u8A33u3060。\nu3075u3075u3093、u6642u7D66u306Fu3044u304Fu3089u304Bu306A？\nu3088u304Fu5206u304Bu3089u306Au3044u304C100u30C9u30EBu304Fu3089u3044u304Bu306Au30FC！"
+      "serif": "[id 202310_11_G060,202310_11_G061]For the moment, I am not a professor of mathematics, but a simple bartender.\n[id 202310_11_G062]Haha, so what's my wage?\n[id 202310_11_G063]I'm not sure, but maybe a hundred dollars an hour?"
     },
     {
       "id": "202310_11_G9410",
-      "serif": "u5F37u304Fu306Au308Bu306Eu306Fu3044u3044u3053u3068u3060。u3046u3080！"
+      "serif": "Getting stronger is a good thing. Mhmm!"
     },
     {
       "id": "202310_11_H9000",
-      "serif": "u3044u3084u3042、u6211u306Au304Cu3089u30D0u30FCu30C6u30F3u30C0u30FCu3068u306Fu826Fu3044u601Du3044u3064u304Du3060。\nu3042u308Bu3044u306Fu30A6u30A7u30A4u30BFu30FCu3067u3082u826Fu304Bu3063u305Fu304Bu3082u3057u308Cu306Au3044u304Cu306D。\nu307Bu3089、u30D6u30E9u30C3u30AFu30FBu30A6u30A3u30C9u30EFu30FCu30BAu306Eu30A6u30A7u30A4u30BFu30FCu3068u304B、u79C1u306Bu304Au4F3Cu5408u3044u3060u308Du3046？"
+      "serif": "Becoming a bartender was brilliant, if I do say so myself! A waiter wouldn't have been bad either! Don't you think I would've looked good as those waiters from the Black Widowers?"
     },
     {
       "id": "202310_11_I010",
-      "serif": "u3082u3046u304Bu308Au307Eu3059u304Bu30FC、u307Cu3061u307Cu3061u3067u3059u306Du30FC。\nu3068u3044u3046u8A33u3067u4EA4u63DBu306Eu304Au6642u9593u3055！"
+      "serif": "Is business good? Quite good!\nGot that? So it's time to make a few exchanges!"
     },
     {
       "id": "202310_11_I020",
-      "serif": "u306Fu3044u4EA4u63DBu3060u3088u30FC。\nu541Bu304Cu6C42u3081u308Bu7D20u6750u306Fu3042u3063u305Fu304Bu306A？\nu306Au3044？　u306Au3044u306Au3089、u3054u3081u3093u3088u30FC。"
+      "serif": "Make your exchanges here!\nDid you find the materials you sought?\nNo? My sincerest apologies."
     },
     {
       "id": "202310_11_I030",
-      "serif": "u3057u304Bu3057u5730u9053u306Bu50CDu304F、u3068u3044u3046u4F5Cu696Du304Bu3089u4E00u756Au7E01u304Cu306Au3055u305Du3046u306Au3093u3060u3051u3069u306D、u79C1u3063u3066u3070。\nu307E、u3068u308Au3042u3048u305Au4EA4u63DBu4EA4u63DB。"
+      "serif": "Come to think of it, I'm probably the last person who would end up working an honest job.\nWell anyway, keep on making those exchanges."
     },
     {
       "id": "202310_11_I040",
-      "serif": "u3053u306Eu624Bu306Eu5E97u304Cu60AAu515Au306Eu60C5u5831u4EA4u63DBu5834u306Bu306Au308Bu3053u3068u3082u3042u308B。\nu30A2u30A4u30C6u30E0u3060u3051u3067u306Au304F、u8033u3092u6F84u307Eu305Bu3066u304Au304Du305Fu307Eu3048。\nu307E、u5BA2u306Fu541Bu3057u304Bu3044u306Au3044u3093u3060u3051u3069u306D！"
+      "serif": "Shops of this nature tend to become intelligence swapping hotspots among villains. I suggest you keep an ear out while you gather your purchases.\nThen again, you're my only customer!"
     },
     {
       "id": "202310_11_I050",
-      "serif": "u8170u304Cu30A2u30ECu3067u30A2u30ECu306Au306Eu3067u624Bu4F1Du3063u3066u304Fu308Cu306Au3044？\nu3044u3084u30FC、u60AAu3044u306Du30DEu30B9u30BFu30FC。"
+      "serif": "My back is, well...you know. Could you help me out? Thanks a lot, Master."
     },
     {
       "id": "202310_11_I060",
-      "serif": "u304Au3063u3068、u3053u308Cu306Fu4F8Bu306Eu30A2u30ECu304B。\nu3044u3044u3068u3082u3044u3044u3068u3082。\nu30D0u30FCu30C6u30F3u30C0u30FCu306Bu30B8u30E7u30D6u30C1u30A7u30F3u30B8u3060。"
+      "serif": "Ah, so you've brought me this.\nVery good, very good.\nTime to change my profession to bartender."
     },
     {
       "id": "202310_11_I070",
-      "serif": "u305Du308Du305Du308Du3053u306Eu5E97u3082u7D42u308Fu308Au3060u306D。\nu3068u306Fu3044u3048、u307Eu3060u4EA4u63DBu306Fu53EFu80FDu306Au306Eu3067u4ECAu306Eu3046u3061u3060。"
+      "serif": "The shop's about to close up.\nBut there's still time to make a few last-minute exchanges. Do so while you can."
     },
     {
       "id": "202310_11_I080",
-      "serif": "u3053u306Eu6570u65E5u9593、u306Au304Bu306Au304Bu523Au6FC0u7684u3060u3063u305Fu3088。\nu541Bu306Fu697Du3057u3081u305Fu304Bu306A？\nu30A8u30F3u30BFu30FCu30C6u30A4u30E1u30F3u30C8u3053u305D、u30F4u30A3u30E9u30F3u306Eu82B1u9053。\nu305Du308Cu3067u306Fu307Eu305Fu6765u5E74。\nu79C1u4EE5u5916u306Eu8AB0u304Bu3092u3088u308Du3057u304Fu306Du30FC！"
+      "serif": "These past few days were quite stimulating to me. Were they for you as well?\nEntertainment is one of the crowning glories for villains. \nWell, see you next year. Take good care of whoever is keeping the shop then. It will not be me!"
     },
     {
       "id": "202310_11_I090",
-      "serif": "u3044u3089u3063u3057u3083u30FCu3044。\nu3075u3075u3075、u7F8Eu5C11u5E74u3068u547Cu3076u306Bu306Fu3044u3055u3055u304Bu30A2u30E9u30D5u30A3u30D5u3067u5931u793Cu3059u308Bu3088。\nu30C0u30F3u30C7u30A3u3055u306Au3089u8CA0u3051u306Au3044u304Cu30CD。\nu305Du308Cu306Fu3068u3082u304Bu304F、u79C1u306Eu5E97u306Bu4F55u304Bu7528u304Bu306A？\nu30CAu30DDu30ECu30AAu30F3u306Eu77F3u818Fu5F6Bu50CFu3068u304B、u3069u3046u304Bu306D？　\nu3069u308Cu304Bu4E00u3064u306Fu5927u5F53u305Fu308Au3055u306D。"
+      "serif": "Welcome.\nHeh heh heh. Calling me a pretty boy would be pushing it, and you will have to excuse my age. But there is no more refined gentleman than myself!\nAnyway, do you have business in my shop?\nHow about a plastered statue of Napoleon? At least one of my wares is sure to please."
     },
     {
       "id": "202310_11_I100",
-      "serif": "u5F15u9000u3057u305Fu3089u3053u306Eu624Bu306Eu5E97u3067u3082u958Bu304Du305Fu3044u3082u306Eu3060u306Du3047。\nu304Au3063u3068。u307Eu3060u534Au4E16u7D00u306Fu73FEu5F79u3060u304Cu30CD。\nu3055u3066、u4F55u304Bu7528u304Bu306A？"
+      "serif": "I'd like to open up my own shop when I retire.\nAh, but since I plan on being active for another half a century, that won't be for a while.\nAnyway, do you have business here?"
     },
     {
       "id": "202310_11_I110",
-      "serif": "u7D20u6674u3089u3057u3044。\nu3069u3046u304Bu306D、u3053u306Eu793Cu88C5u306F？\nu30DEu30B9u30BFu30FCu305Fu308Bu541Bu306Bu76F8u5FDCu3057u3044u3082u306Eu3060u3068u81EAu8CA0u3057u3066u3044u308Bu304Cu306D。"
+      "serif": "Wonderful.\nWhat do you think of this Craft Essence?\nI feel no small sense of pride in knowing how well it suits my Master."
     },
     {
       "id": "202310_11_I120",
-      "serif": "u304Au3084u6B8Bu5FF5。u5F53u5E97u306Fu9589u5E97u3055。\nu8D64u6BDBu9023u76DFu306Fu89E3u6563u3057、u30DFu30B9u30BFu30FCu30FBu30ACu30EAu30C7u30D6u306Bu7528u306Fu306Au3044u3068u3044u3046u8A33u3060。\nu3060u304Cu541Bu3068u306Eu4EF2u3060。\nu3053u3063u305Du308Au4EA4u63DBu306Fu3057u3066u3057u307Eu304Au3046u304B。"
+      "serif": "Oh what a shame, the shop is closed.\nThe Red-Headed League has dissolved, and there will be no further business with Mister Garrideb.\nBut it's you and me we're talking about here; maybe we can sneak in an exchange."
     },
     {
       "id": "202310_11_I130",
-      "serif": "u305Du308Du305Du308Du86CDu306Eu5149u304Cu6D41u308Cu308Bu9803u5408u3044u3060。\nu6301u3063u3066u884Cu304Fu3079u304Du3082u306Eu306Fu6301u3063u3066u884Cu3051u305Fu304Bu306A？\nu307Eu3060u306Au3089u304Au65E9u3081u306B。"
+      "serif": "\"Auld Lang Syne\" is about to play to signal the shop's closing time. Did you get everything you'd wanted? If not, you had best hurry."
     },
     {
       "id": "202310_11_I410",
-      "serif": "u4ECAu65E5u306Fu30DBu30EFu30A4u30C8u30C7u30FC。\nu3064u307Eu308A、u541Bu306Eu30D0u30ECu30F3u30BFu30A4u30F3u306Eu732Eu8EABu304Cu5831u308Fu308Cu308Bu3068u304Du304Cu6765u305F、u3068u3044u3046u8A33u3060。\nu305Bu3063u304Bu304Fu3060u3057u30CAu30FCu30B5u30EAu30FCu30E9u30A4u30E0u3042u305Fu308Au306Bu983Cu3093u3067、u30DEu30B7u30E5u30DEu30EDu30DEu30F3u3067u3082u53ECu559Au3057u3066u307Fu308Bu304Bu30CD？\nu4F55u306Fu3068u3082u3042u308C、u4ECAu5E74u3082u5927u5909u306Au5E74u306Bu306Au308Au305Du3046u3060。\nu3060u304Cu5B89u5FC3u3057u305Fu307Eu3048。\nu305Du306Eu305Fu3081u306Bu6211々u30B5u30FCu30F4u30A1u30F3u30C8u304C、u967Au3057u3044u8328u306Eu9053u3092u5207u308Au958Bu304Fu306Eu3060u304Bu3089u306D。"
+      "serif": "Today is White Day, which means that all the effort you put in on Valentine's Day is finally going to pay off.\nMaybe try asking Nursery Rhyme to summon a marshmallow creature for you?\nAt any rate, it looks like this year's going to be another tumultuous one.\nBut don't worry.\nThat's why we Servants are here for you... To cut through the thorny path before you."
     },
     {
       "id": "202310_11_I500",
-      "serif": "u8B0Eu306Fu8B0Eu3092u547Cu3073、u56E0u679Cu306Fu5DE1u308Bu304Cu904Eu53BBu306Fu4E0Du5909。\nu541Bu304Cu304Fu308Cu305Fu3053u306Eu30B0u30E9u30B9u3067u4E00u676F、u3044u304Bu304Cu304Bu306A？\nu30A6u30A3u30B9u30ADu30FC？　u30B8u30F3？　u305Du308Cu3068u3082……\nu30A6u30FCu30EDu30F3u8336？"
+      "serif": "Mystery invites further mystery. What goes around comes around, but the past is unchanging.\nCare for a drink from the glass you brought me?\nWould you care for whiskey? Gin? Or perhaps you just want oolong tea?"
     },
     {
       "id": "202310_11_I510",
-      "serif": "u541Bu304Cu3053u306Eu30B0u30E9u30B9u3067u4E00u676Fu98F2u3080u524Du306B、u79C1u306Fu30B8u30E7u30C3u30ADu3067u5341u676Fu98F2u3093u3067u307Fu305Bu3088u3046。\nu59A8u5BB3u3092u9632u3050u305Fu3081、u4E92u3044u306Eu30B0u30E9u30B9u306Bu89E6u308Cu305Fu3089u5931u683C。\nu3082u3057u98F2u3081u306Au304Bu3063u305Fu3089u767Eu4E07u5186。u305Fu3060u3057u4E00u676Fu3060u3051u5148u306Bu98F2u307Eu305Bu3066u6B32u3057u3044。\n……u306Au3093u3066u63D0u6848u3055u308Cu305Fu3089、u541Bu306Fu3069u3046u3059u308Bu304Bu306D？\nu7B54u3048u306F……\nu307Eu305Fu660Eu65E5！"
+      "serif": "I'll show you that I can finish off ten steins before you can even finish your one drink.\nThe bet's off if either of us touch the others' glass.\nIf I can't beat you, I'll pay you a million yen. But I want a one stein head start.\n...What would you do if I proposed a bet like that?\nThe answer should be...\nStay tuned tomorrow!"
     },
     {
       "id": "202310_11_I520",
-      "serif": "u3067u306Fu30B0u30E9u30B9u3092u3044u305Fu3060u3044u3066u524Du56DEu306Eu7B54u3048u3092。\nu541Bu304Cu3084u308Bu3079u304Du306F、u98F2u3080u524Du304Bu3089u30B0u30E9u30B9u3092u624Bu306Bu3057u3066u96E2u3055u306Au3044u3060u3051u3060。\nu30B0u30E9u30B9u306Eu4E0Au306Bu30B8u30E7u30C3u30ADu3092u304Bu3076u305Bu3089u308Cu306Au3044u3088u3046u306Bu306D。\nu307Eu3042u3082u3063u3068u3082、u79C1u306Au3089u5927u4EBAu3057u304Fu6557u5317u3057u3066、u5F8Cu3067u5E97u306Eu91D1u5EABu3092u6F01u3063u3066u307Fu308Bu3055。\nu3053u306Eu30AEu30E3u30F3u30D6u30EBu3067u5F97u305Fu53CEu5165u304C、u305Fu30FCu3093u307Eu308Au8A70u307Eu3063u3066u305Du3046u3060u304Bu3089u306D！"
+      "serif": "Now that you've given me a glass, here's the answer from last time:\nWhat you should do is to hold on to your glass before you drink and just don't let go of it.\nHold it so that my stein won't cover up your glass.\nBut if I had a choice, I would just lose this bet graciously and simply raid the shop's vault later on.\nAfter all, I have a feeling that the vault's quite stocked from this bet of ours!"
     },
     {
       "id": "202310_11_I530",
-      "serif": "u56DBu3064u76EEu306Eu30B0u30E9u30B9。\nu65E5u672Cu3067u3042u308Cu3070、u56DBu306Fu30C7u30B9、u3064u307Eu308Au6B7Bu306Bu901Au3058u3066u3044u3066u7E01u8D77u304Cu60AAu3044u306Eu3060u3063u3051u304B。\nu6D77u5916u3067u3042u308Cu3070u30B5u30FCu30C6u30A3u30FCu30F3、１３u306Eu7E01u8D77u304Cu60AAu3044u3068u3088u304Fu8A00u3046u306D。\nu3064u307Eu308A、u6211々u60AAu515Au306Bu3068u3063u3066u306Fu5927u6B53u8FCEu306Eu6570u5B57u3068u3044u3046u8A33u3055。\nu3048？　u81EAu5206u306Fu60AAu515Au3058u3083u306Au3044？　\nu304Au3063u3068u305Du3046u8A00u3048u3070u305Du3046u3060u3063u305F。"
+      "serif": "The fourth glass.\nIn Asian nations, the number four is believed to be unlucky because it sounds like the word for \"death,\" while the number thirteen is considered unlucky in the West.\nBut as such, evil villains like us quite embrace these numbers!\nHuh? You don't consider yourself a villain?\nAh yes, I've forgotten about that."
     },
     {
       "id": "202310_11_I540",
-      "serif": "u304Au3084、u4E94u3064u76EEu304Bu3044。u3044u305Fu3060u3053u3046。\n４u304Cu4E0Du5409u306Au3089、５u306Fu5B89u5B9Au304Bu306A？\nu4E94u5927u5143u7D20、u4E94u884Cu601Du60F3u3068u3044u3063u305Fu3088u3046u306Bu306D。\nu4E00u9031u9593u306Au3089u3070u91D1u66DCu65E5、u3068u3044u3046u8A33u3060。\nu3044u3044u3088u306D、u91D1u66DCu65E5。\nu4ED5u4E8Bu304Cu65E9u304Fu7D42u308Fu308Cu3070u306Au304Au3055u3089u3060。"
+      "serif": "Ah, your fifth glass? I'll take it.\nIf four's unlucky, then I guess five symbolizes stability.\nPerhaps it is evocative of the five elements, or the Chinese concept of wuxing, or the five phases. Ah, and Friday is the fifth day of the week. It is certainly everyone's favorite, yes? All the better if work ends early that day."
     },
     {
       "id": "202310_11_I550",
-      "serif": "u3044u3088u3044u3088u30B0u30E9u30B9u3082u516Du3064u76EEu3060。\nu516D、u516D、u516D……u516Du304Cu4E09u3064u63C3u3046u3068１３u3088u308Au4E0Du5409u306Bu601Du3048u308Bu306D。\nu7363u306Eu6570u5B57u3068u3044u3046u3084u3064u3060。\nu3082u3061u308Du3093４u3082１３u3082６６６u3082、u6570u5B66u7684u306Bu306Fu305Fu3060u306Eu6570u5B57u3067u3057u304Bu306Au3044。\nu3060u304C、u4EBAu306Fu6570u5B57u306Bu3059u3089u7F8Eu3068u6050u6016u3092u898Bu3044u3060u3059u3082u306E。\nu305Du3053u3092u7A81u304Fu3053u3068u304Cu3067u304Du308Bu306Au3089、u60AAu515Au521Du6BB5u3092u540Du4E57u3063u3066u3082u3044u3044u304Bu3082u306Du3047。"
+      "serif": "We're finally at our sixth glass.\nSix, six, six... Three sixes are even unluckier than thirteen.\nIt's the number of the Beast.\nBut of course, the numbers four, thirteen, and six hundred sixty-six are all mere numbers, mathematically speaking.\nWell, humans do have a tendency to find beauty and terror in numbers.\nIf you are able to see past that, then maybe you'll be ready to call yourself a novice villain."
     },
     {
       "id": "202310_11_I560",
-      "serif": "……u3068u3044u3046u8A33u3067u6700u5F8Cu306Eu30B0u30E9u30B9u3092u3044u305Fu3060u3053u3046。\nu305Du3057u3066u3053u3061u3089u304C、u305Du306Eu5831u916Cu3060。u9060u616Eu306Au304Fu53D7u3051u53D6u308Au305Fu307Eu3048。\n７u306Fu30E9u30C3u30ADu30FCu30BBu30D6u30F3、u5E78u904Bu306Eu6570u5B57u3068u547Cu3070u308Cu308Bu304C、u5E78u904Bu306Eu9670u306Bu306Fu4E0Du904Bu3082u3042u308B。\n７u304Cu541Bu306Eu624Bu5143u306Bu3042u308Bu306Au3089u3070、u7528u5FC3u3092u6020u3063u3066u306Fu306Au3089u306Au3044。\nu6211々u60AAu515Au306F、７u3092u6C42u3081u308Bu8005u3092u3053u305Du8A98u3046u306Eu3060u304Bu3089u306D。"
+      "serif": "Let me take that last glass from you.\nAnd here is your reward. Take it, now. Don't be shy.\nSeven is seen as a lucky number, the number of fortune. But behind good fortune lies misfortune.\nIf you find yourself having this lucky number, don't let your guard down. There are those among us villains who take advantage of those seeking its good fortune."
     },
     {
       "id": "202310_11_I580",
-      "serif": "u304Au3063u3068、u3053u308Cu306Fu4F8Bu306Eu30A2u30ECu304B。\nu3044u3044u3068u3082u3044u3044u3068u3082。\nu30D0u30FCu30C6u30F3u30C0u30FCu306Bu30B8u30E7u30D6u30C1u30A7u30F3u30B8u3060。"
+      "serif": "Ah, so you've brought me this.\nVery good, very good.\nTime to change my profession to bartender."
     },
     { "id": "202300_0_B010", "serif": "Oh, magical bullet!" },
     { "id": "202300_0_B020", "serif": "I shall inquire!" },
@@ -2547,160 +3998,139 @@
       "id": "202300_0_S010",
       "serif": "My name is James Moriarty!\nI am both a professor, and the head of an evil organization!\nFwahahahaha!\nNo need to worry. If you leave everything to me, taking over the world once or twice will be child's play!"
     },
-    {
-      "id": "202300_11_B010",
-      "serif": "u304Au304Bu308Fu308Au3069u3046u305E！"
-    },
-    {
-      "id": "202300_11_B020",
-      "serif": "u304Au3064u307Eu307Fu3069u3046u305E！"
-    },
-    { "id": "202300_11_B030", "serif": "u6CE5u9154u304Au65ADu308A！" },
+    { "id": "202300_11_B010", "serif": "Have another!" },
+    { "id": "202300_11_B020", "serif": "Have some snacks!" },
+    { "id": "202300_11_B030", "serif": "I shan't tolerate drunkenness!" },
     {
       "id": "202300_11_B040",
-      "serif": "u307Eu3060u307Eu3060u3044u3051u308Bu3088u306D、u3082u3046u4E00u676F！"
+      "serif": "I know you can keep going. One more glass!"
     },
     {
       "id": "202300_11_B050",
-      "serif": "u5B9Du5177u958Bu653E。\nu6211u304Cu6700u7D42u5F0F、u7D42u5C40u7684u72AFu7F6Au3092u3053u3053u306Bu8A3Cu660Eu3057u3088u3046。\nu30B6u30FBu30C0u30A4u30CAu30DFu30AFu30B9u30FBu30AAu30D6u30FBu30A2u30F3……u30A2u30B9u30C6u30EDu30A4u30C9！\nu7121u97F3"
+      "serif": "[id 202300_11_B050]Noble Phantasm, release.\n[id 202300_11_B051]My final problem, the ultimate crime, shall be proven here.\n[id 202300_11_B052]The Dynamics of an...Asteroid!"
     },
-    { "id": "202300_11_B080", "serif": "u30B7u30A7u30A4u30AF" },
-    { "id": "202300_11_B090", "serif": "u30B9u30C6u30A2u30FC" },
+    { "id": "202300_11_B080", "serif": "Shake." },
+    { "id": "202300_11_B090", "serif": "Stir." },
     {
       "id": "202300_11_B100",
-      "serif": "u4E00u676Fu3044u304Bu304Cu304Bu306A？　u8840u5857u308Cu30DEu30EAu30FCu306Au3069u304Au52E7u3081u3060u3088？"
+      "serif": "Care for a drink? I recommend a Bloody Mary."
     },
     {
       "id": "202300_11_B110",
-      "serif": "u30D0u30FCu30C6u30F3u30C0u30FCu30FBu30E2u30EAu30A2u30FCu30C6u30A3。u73FEu5728u30A2u30EBu30D0u30A4u30C8u4E2D～！"
+      "serif": "Moriarty the bartender...part-time, anyway!"
     },
     {
       "id": "202300_11_B120",
-      "serif": "u52DDu5229u3060u3088。u30DEu30B9u30BFu30FC。u3072u3068u307Eu305Au4E7Eu676Fu3068u3044u3053u3046u3058u3083u306Au3044u304B。"
+      "serif": "A victory, Master. Let us toast to it."
     },
     {
       "id": "202300_11_B130",
-      "serif": "u30ABu30AFu30C6u30EBu306Fu8A08u7B97u306Eu5275u4F5Cu7269u3060。u6226u3044u3082u540Cu3058u3088u3046u306Au3082u306E、u3068u3044u3046u8A33u3060u306D。"
+      "serif": "Cocktails require a measure of calculation in their execution. Much like battle."
     },
-    { "id": "202300_11_B140", "serif": "u304Au3063u3068！" },
-    {
-      "id": "202300_11_B150",
-      "serif": "u3042u3044u305Fu305Fu305Fu305Fu305F！"
-    },
-    {
-      "id": "202300_11_B160",
-      "serif": "u98F2u307Fu9003u3052……u304Au65ADu308A……"
-    },
-    {
-      "id": "202300_11_B170",
-      "serif": "u30D0u30A6u30F3u30B5u30FCu3092……u96C7u3063u3066u304Au3051u3070……"
-    },
-    { "id": "202300_11_B180", "serif": "u30B8u30F3" },
-    { "id": "202300_11_B190", "serif": "u30A6u30A9u30C3u30AB" },
-    { "id": "202300_11_B200", "serif": "u30ADu30CAu30FBu30EAu30EC" },
-    {
-      "id": "202300_11_B210",
-      "serif": "u30F4u30A7u30B9u30D1u30FCu30FBu30DEu30C6u30A3u30FCu30CB。u3044u304Bu304Cu304Bu306A？"
-    },
-    {
-      "id": "202300_11_G010",
-      "serif": "u304Au3063u3068、u6210u9577u3068u306F！"
-    },
+    { "id": "202300_11_B140", "serif": "Whoa there!" },
+    { "id": "202300_11_B150", "serif": "Ooouch!" },
+    { "id": "202300_11_B160", "serif": "No drinking and...dashing..." },
+    { "id": "202300_11_B170", "serif": "If I had only...hired a bouncer..." },
+    { "id": "202300_11_B180", "serif": "Gin." },
+    { "id": "202300_11_B190", "serif": "Vodka." },
+    { "id": "202300_11_B200", "serif": "Kina Lillet." },
+    { "id": "202300_11_B210", "serif": "Vesper Martini. Care for one?" },
+    { "id": "202300_11_G010", "serif": "Ah, to mature!" },
     {
       "id": "202300_11_G060",
-      "serif": "u3068u3044u3046u8A33u3067、u4ECAu304Bu3089u79C1u306Fu6570u5B66u6559u6388u3067u306Fu306Au304F、\nu4E00u4ECBu306Eu30D0u30FCu30C6u30F3u30C0u30FCu3068u3044u3046u8A33u3060。\nu3075u3075u3093、u6642u7D66u306Fu3044u304Fu3089u304Bu306A？\nu3088u304Fu5206u304Bu3089u306Au3044u304C100u30C9u30EBu304Fu3089u3044u304Bu306Au30FC！"
+      "serif": "[id 202300_11_G060,202300_11_G061]For the moment, I am not a professor of mathematics, but a simple bartender.\n[id 202300_11_G062]Haha, so what's my wage?\n[id 202300_11_G063]I'm not sure, but maybe a hundred dollars an hour?"
     },
     {
       "id": "202300_11_H9000",
-      "serif": "u3044u3084u3042、u6211u306Au304Cu3089u30D0u30FCu30C6u30F3u30C0u30FCu3068u306Fu826Fu3044u601Du3044u3064u304Du3060。\nu3042u308Bu3044u306Fu30A6u30A7u30A4u30BFu30FCu3067u3082u826Fu304Bu3063u305Fu304Bu3082u3057u308Cu306Au3044u304Cu306D。\nu307Bu3089、u30D6u30E9u30C3u30AFu30FBu30A6u30A3u30C9u30EFu30FCu30BAu306Eu30A6u30A7u30A4u30BFu30FCu3068u304B、u79C1u306Bu304Au4F3Cu5408u3044u3060u308Du3046？"
+      "serif": "Becoming a bartender was brilliant, if I do say so myself! A waiter wouldn't have been bad either! Don't you think I would've looked good as those waiters from the Black Widowers?"
     },
     {
       "id": "202300_11_I010",
-      "serif": "u3082u3046u304Bu308Au307Eu3059u304Bu30FC、u307Cu3061u307Cu3061u3067u3059u306Du30FC。\nu3068u3044u3046u8A33u3067u4EA4u63DBu306Eu304Au6642u9593u3055！"
+      "serif": "Is business good? Quite good!\nGot that? So it's time to make a few exchanges!"
     },
     {
       "id": "202300_11_I020",
-      "serif": "u306Fu3044u4EA4u63DBu3060u3088u30FC。\nu541Bu304Cu6C42u3081u308Bu7D20u6750u306Fu3042u3063u305Fu304Bu306A？\nu306Au3044？　u306Au3044u306Au3089、u3054u3081u3093u3088u30FC。"
+      "serif": "Make your exchanges here!\nDid you find the materials you sought?\nNo? My sincerest apologies."
     },
     {
       "id": "202300_11_I030",
-      "serif": "u3057u304Bu3057u5730u9053u306Bu50CDu304F、u3068u3044u3046u4F5Cu696Du304Bu3089u4E00u756Au7E01u304Cu306Au3055u305Du3046u306Au3093u3060u3051u3069u306D、u79C1u3063u3066u3070。\nu307E、u3068u308Au3042u3048u305Au4EA4u63DBu4EA4u63DB。"
+      "serif": "Come to think of it, I'm probably the last person who would end up working an honest job.\nWell anyway, keep on making those exchanges."
     },
     {
       "id": "202300_11_I040",
-      "serif": "u3053u306Eu624Bu306Eu5E97u304Cu60AAu515Au306Eu60C5u5831u4EA4u63DBu5834u306Bu306Au308Bu3053u3068u3082u3042u308B。\nu30A2u30A4u30C6u30E0u3060u3051u3067u306Au304F、u8033u3092u6F84u307Eu305Bu3066u304Au304Du305Fu307Eu3048。\nu307E、u5BA2u306Fu541Bu3057u304Bu3044u306Au3044u3093u3060u3051u3069u306D！"
+      "serif": "Shops of this nature tend to become intelligence swapping hotspots among villains. I suggest you keep an ear out while you gather your purchases.\nThen again, you're my only customer!"
     },
     {
       "id": "202300_11_I050",
-      "serif": "u8170u304Cu30A2u30ECu3067u30A2u30ECu306Au306Eu3067u624Bu4F1Du3063u3066u304Fu308Cu306Au3044？\nu3044u3084u30FC、u60AAu3044u306Du30DEu30B9u30BFu30FC。"
+      "serif": "My back is, well...you know. Could you help me out? Thanks a lot, Master."
     },
     {
       "id": "202300_11_I060",
-      "serif": "u304Au3063u3068、u3053u308Cu306Fu4F8Bu306Eu30A2u30ECu304B。\nu3044u3044u3068u3082u3044u3044u3068u3082。\nu30D0u30FCu30C6u30F3u30C0u30FCu306Bu30B8u30E7u30D6u30C1u30A7u30F3u30B8u3060。"
+      "serif": "Ah, so you've brought me this.\nVery good, very good.\nTime to change my profession to bartender."
     },
     {
       "id": "202300_11_I070",
-      "serif": "u305Du308Du305Du308Du3053u306Eu5E97u3082u7D42u308Fu308Au3060u306D。\nu3068u306Fu3044u3048、u307Eu3060u4EA4u63DBu306Fu53EFu80FDu306Au306Eu3067u4ECAu306Eu3046u3061u3060。"
+      "serif": "The shop's about to close up.\nBut there's still time to make a few last-minute exchanges. Do so while you can."
     },
     {
       "id": "202300_11_I080",
-      "serif": "u3053u306Eu6570u65E5u9593、u306Au304Bu306Au304Bu523Au6FC0u7684u3060u3063u305Fu3088。\nu541Bu306Fu697Du3057u3081u305Fu304Bu306A？\nu30A8u30F3u30BFu30FCu30C6u30A4u30E1u30F3u30C8u3053u305D、u30F4u30A3u30E9u30F3u306Eu82B1u9053。\nu305Du308Cu3067u306Fu307Eu305Fu6765u5E74。\nu79C1u4EE5u5916u306Eu8AB0u304Bu3092u3088u308Du3057u304Fu306Du30FC！"
+      "serif": "These past few days were quite stimulating to me. Were they for you as well?\nEntertainment is one of the crowning glories for villains. \nWell, see you next year. Take good care of whoever is keeping the shop then. It will not be me!"
     },
     {
       "id": "202300_11_I090",
-      "serif": "u3044u3089u3063u3057u3083u30FCu3044。\nu3075u3075u3075、u7F8Eu5C11u5E74u3068u547Cu3076u306Bu306Fu3044u3055u3055u304Bu30A2u30E9u30D5u30A3u30D5u3067u5931u793Cu3059u308Bu3088。\nu30C0u30F3u30C7u30A3u3055u306Au3089u8CA0u3051u306Au3044u304Cu30CD。\nu305Du308Cu306Fu3068u3082u304Bu304F、u79C1u306Eu5E97u306Bu4F55u304Bu7528u304Bu306A？\nu30CAu30DDu30ECu30AAu30F3u306Eu77F3u818Fu5F6Bu50CFu3068u304B、u3069u3046u304Bu306D？　\nu3069u308Cu304Bu4E00u3064u306Fu5927u5F53u305Fu308Au3055u306D。"
+      "serif": "Welcome.\nHeh heh heh. Calling me a pretty boy would be pushing it, and you will have to excuse my age. But there is no more refined gentleman than myself!\nAnyway, do you have business in my shop?\nHow about a plastered statue of Napoleon? At least one of my wares is sure to please."
     },
     {
       "id": "202300_11_I100",
-      "serif": "u5F15u9000u3057u305Fu3089u3053u306Eu624Bu306Eu5E97u3067u3082u958Bu304Du305Fu3044u3082u306Eu3060u306Du3047。\nu304Au3063u3068。u307Eu3060u534Au4E16u7D00u306Fu73FEu5F79u3060u304Cu30CD。\nu3055u3066、u4F55u304Bu7528u304Bu306A？"
+      "serif": "I'd like to open up my own shop when I retire.\nAh, but since I plan on being active for another half a century, that won't be for a while.\nAnyway, do you have business here?"
     },
     {
       "id": "202300_11_I110",
-      "serif": "u7D20u6674u3089u3057u3044。\nu3069u3046u304Bu306D、u3053u306Eu793Cu88C5u306F？\nu30DEu30B9u30BFu30FCu305Fu308Bu541Bu306Bu76F8u5FDCu3057u3044u3082u306Eu3060u3068u81EAu8CA0u3057u3066u3044u308Bu304Cu306D。"
+      "serif": "Wonderful.\nWhat do you think of this Craft Essence?\nI feel no small sense of pride in knowing how well it suits my Master."
     },
     {
       "id": "202300_11_I120",
-      "serif": "u304Au3084u6B8Bu5FF5。u5F53u5E97u306Fu9589u5E97u3055。\nu8D64u6BDBu9023u76DFu306Fu89E3u6563u3057、u30DFu30B9u30BFu30FCu30FBu30ACu30EAu30C7u30D6u306Bu7528u306Fu306Au3044u3068u3044u3046u8A33u3060。\nu3060u304Cu541Bu3068u306Eu4EF2u3060。\nu3053u3063u305Du308Au4EA4u63DBu306Fu3057u3066u3057u307Eu304Au3046u304B。"
+      "serif": "Oh what a shame, the shop is closed.\nThe Red-Headed League has dissolved, and there will be no further business with Mister Garrideb.\nBut it's you and me we're talking about here; maybe we can sneak in an exchange."
     },
     {
       "id": "202300_11_I130",
-      "serif": "u305Du308Du305Du308Du86CDu306Eu5149u304Cu6D41u308Cu308Bu9803u5408u3044u3060。\nu6301u3063u3066u884Cu304Fu3079u304Du3082u306Eu306Fu6301u3063u3066u884Cu3051u305Fu304Bu306A？\nu307Eu3060u306Au3089u304Au65E9u3081u306B。"
+      "serif": "\"Auld Lang Syne\" is about to play to signal the shop's closing time. Did you get everything you'd wanted? If not, you had best hurry."
     },
     {
       "id": "202300_11_I410",
-      "serif": "u4ECAu65E5u306Fu30DBu30EFu30A4u30C8u30C7u30FC。\nu3064u307Eu308A、u541Bu306Eu30D0u30ECu30F3u30BFu30A4u30F3u306Eu732Eu8EABu304Cu5831u308Fu308Cu308Bu3068u304Du304Cu6765u305F、u3068u3044u3046u8A33u3060。\nu305Bu3063u304Bu304Fu3060u3057u30CAu30FCu30B5u30EAu30FCu30E9u30A4u30E0u3042u305Fu308Au306Bu983Cu3093u3067、u30DEu30B7u30E5u30DEu30EDu30DEu30F3u3067u3082u53ECu559Au3057u3066u307Fu308Bu304Bu30CD？\nu4F55u306Fu3068u3082u3042u308C、u4ECAu5E74u3082u5927u5909u306Au5E74u306Bu306Au308Au305Du3046u3060。\nu3060u304Cu5B89u5FC3u3057u305Fu307Eu3048。\nu305Du306Eu305Fu3081u306Bu6211々u30B5u30FCu30F4u30A1u30F3u30C8u304C、u967Au3057u3044u8328u306Eu9053u3092u5207u308Au958Bu304Fu306Eu3060u304Bu3089u306D。"
+      "serif": "Today is White Day, which means that all the effort you put in on Valentine's Day is finally going to pay off.\nMaybe try asking Nursery Rhyme to summon a marshmallow creature for you?\nAt any rate, it looks like this year's going to be another tumultuous one.\nBut don't worry.\nThat's why we Servants are here for you... To cut through the thorny path before you."
     },
     {
       "id": "202300_11_I500",
-      "serif": "u8B0Eu306Fu8B0Eu3092u547Cu3073、u56E0u679Cu306Fu5DE1u308Bu304Cu904Eu53BBu306Fu4E0Du5909。\nu541Bu304Cu304Fu308Cu305Fu3053u306Eu30B0u30E9u30B9u3067u4E00u676F、u3044u304Bu304Cu304Bu306A？\nu30A6u30A3u30B9u30ADu30FC？　u30B8u30F3？　u305Du308Cu3068u3082……\nu30A6u30FCu30EDu30F3u8336？"
+      "serif": "Mystery invites further mystery. What goes around comes around, but the past is unchanging.\nCare for a drink from the glass you brought me?\nWould you care for whiskey? Gin? Or perhaps you just want oolong tea?"
     },
     {
       "id": "202300_11_I510",
-      "serif": "u541Bu304Cu3053u306Eu30B0u30E9u30B9u3067u4E00u676Fu98F2u3080u524Du306B、u79C1u306Fu30B8u30E7u30C3u30ADu3067u5341u676Fu98F2u3093u3067u307Fu305Bu3088u3046。\nu59A8u5BB3u3092u9632u3050u305Fu3081、u4E92u3044u306Eu30B0u30E9u30B9u306Bu89E6u308Cu305Fu3089u5931u683C。\nu3082u3057u98F2u3081u306Au304Bu3063u305Fu3089u767Eu4E07u5186。u305Fu3060u3057u4E00u676Fu3060u3051u5148u306Bu98F2u307Eu305Bu3066u6B32u3057u3044。\n……u306Au3093u3066u63D0u6848u3055u308Cu305Fu3089、u541Bu306Fu3069u3046u3059u308Bu304Bu306D？\nu7B54u3048u306F……\nu307Eu305Fu660Eu65E5！"
+      "serif": "I'll show you that I can finish off ten steins before you can even finish your one drink.\nThe bet's off if either of us touch the others' glass.\nIf I can't beat you, I'll pay you a million yen. But I want a one stein head start.\n...What would you do if I proposed a bet like that?\nThe answer should be...\nStay tuned tomorrow!"
     },
     {
       "id": "202300_11_I520",
-      "serif": "u3067u306Fu30B0u30E9u30B9u3092u3044u305Fu3060u3044u3066u524Du56DEu306Eu7B54u3048u3092。\nu541Bu304Cu3084u308Bu3079u304Du306F、u98F2u3080u524Du304Bu3089u30B0u30E9u30B9u3092u624Bu306Bu3057u3066u96E2u3055u306Au3044u3060u3051u3060。\nu30B0u30E9u30B9u306Eu4E0Au306Bu30B8u30E7u30C3u30ADu3092u304Bu3076u305Bu3089u308Cu306Au3044u3088u3046u306Bu306D。\nu307Eu3042u3082u3063u3068u3082、u79C1u306Au3089u5927u4EBAu3057u304Fu6557u5317u3057u3066、u5F8Cu3067u5E97u306Eu91D1u5EABu3092u6F01u3063u3066u307Fu308Bu3055。\nu3053u306Eu30AEu30E3u30F3u30D6u30EBu3067u5F97u305Fu53CEu5165u304C、u305Fu30FCu3093u307Eu308Au8A70u307Eu3063u3066u305Du3046u3060u304Bu3089u306D！"
+      "serif": "Now that you've given me a glass, here's the answer from last time:\nWhat you should do is to hold on to your glass before you drink and just don't let go of it.\nHold it so that my stein won't cover up your glass.\nBut if I had a choice, I would just lose this bet graciously and simply raid the shop's vault later on.\nAfter all, I have a feeling that the vault's quite stocked from this bet of ours!"
     },
     {
       "id": "202300_11_I530",
-      "serif": "u56DBu3064u76EEu306Eu30B0u30E9u30B9。\nu65E5u672Cu3067u3042u308Cu3070、u56DBu306Fu30C7u30B9、u3064u307Eu308Au6B7Bu306Bu901Au3058u3066u3044u3066u7E01u8D77u304Cu60AAu3044u306Eu3060u3063u3051u304B。\nu6D77u5916u3067u3042u308Cu3070u30B5u30FCu30C6u30A3u30FCu30F3、１３u306Eu7E01u8D77u304Cu60AAu3044u3068u3088u304Fu8A00u3046u306D。\nu3064u307Eu308A、u6211々u60AAu515Au306Bu3068u3063u3066u306Fu5927u6B53u8FCEu306Eu6570u5B57u3068u3044u3046u8A33u3055。\nu3048？　u81EAu5206u306Fu60AAu515Au3058u3083u306Au3044？　\nu304Au3063u3068u305Du3046u8A00u3048u3070u305Du3046u3060u3063u305F。"
+      "serif": "The fourth glass.\nIn Asian nations, the number four is believed to be unlucky because it sounds like the word for \"death,\" while the number thirteen is considered unlucky in the West.\nBut as such, evil villains like us quite embrace these numbers!\nHuh? You don't consider yourself a villain?\nAh yes, I've forgotten about that."
     },
     {
       "id": "202300_11_I540",
-      "serif": "u304Au3084、u4E94u3064u76EEu304Bu3044。u3044u305Fu3060u3053u3046。\n４u304Cu4E0Du5409u306Au3089、５u306Fu5B89u5B9Au304Bu306A？\nu4E94u5927u5143u7D20、u4E94u884Cu601Du60F3u3068u3044u3063u305Fu3088u3046u306Bu306D。\nu4E00u9031u9593u306Au3089u3070u91D1u66DCu65E5、u3068u3044u3046u8A33u3060。\nu3044u3044u3088u306D、u91D1u66DCu65E5。\nu4ED5u4E8Bu304Cu65E9u304Fu7D42u308Fu308Cu3070u306Au304Au3055u3089u3060。"
+      "serif": "Ah, your fifth glass? I'll take it.\nIf four's unlucky, then I guess five symbolizes stability.\nPerhaps it is evocative of the five elements, or the Chinese concept of wuxing, or the five phases. Ah, and Friday is the fifth day of the week. It is certainly everyone's favorite, yes? All the better if work ends early that day."
     },
     {
       "id": "202300_11_I550",
-      "serif": "u3044u3088u3044u3088u30B0u30E9u30B9u3082u516Du3064u76EEu3060。\nu516D、u516D、u516D……u516Du304Cu4E09u3064u63C3u3046u3068１３u3088u308Au4E0Du5409u306Bu601Du3048u308Bu306D。\nu7363u306Eu6570u5B57u3068u3044u3046u3084u3064u3060。\nu3082u3061u308Du3093４u3082１３u3082６６６u3082、u6570u5B66u7684u306Bu306Fu305Fu3060u306Eu6570u5B57u3067u3057u304Bu306Au3044。\nu3060u304C、u4EBAu306Fu6570u5B57u306Bu3059u3089u7F8Eu3068u6050u6016u3092u898Bu3044u3060u3059u3082u306E。\nu305Du3053u3092u7A81u304Fu3053u3068u304Cu3067u304Du308Bu306Au3089、u60AAu515Au521Du6BB5u3092u540Du4E57u3063u3066u3082u3044u3044u304Bu3082u306Du3047。"
+      "serif": "We're finally at our sixth glass.\nSix, six, six... Three sixes are even unluckier than thirteen.\nIt's the number of the Beast.\nBut of course, the numbers four, thirteen, and six hundred sixty-six are all mere numbers, mathematically speaking.\nWell, humans do have a tendency to find beauty and terror in numbers.\nIf you are able to see past that, then maybe you'll be ready to call yourself a novice villain."
     },
     {
       "id": "202300_11_I560",
-      "serif": "……u3068u3044u3046u8A33u3067u6700u5F8Cu306Eu30B0u30E9u30B9u3092u3044u305Fu3060u3053u3046。\nu305Du3057u3066u3053u3061u3089u304C、u305Du306Eu5831u916Cu3060。u9060u616Eu306Au304Fu53D7u3051u53D6u308Au305Fu307Eu3048。\n７u306Fu30E9u30C3u30ADu30FCu30BBu30D6u30F3、u5E78u904Bu306Eu6570u5B57u3068u547Cu3070u308Cu308Bu304C、u5E78u904Bu306Eu9670u306Bu306Fu4E0Du904Bu3082u3042u308B。\n７u304Cu541Bu306Eu624Bu5143u306Bu3042u308Bu306Au3089u3070、u7528u5FC3u3092u6020u3063u3066u306Fu306Au3089u306Au3044。\nu6211々u60AAu515Au306F、７u3092u6C42u3081u308Bu8005u3092u3053u305Du8A98u3046u306Eu3060u304Bu3089u306D。"
+      "serif": "Let me take that last glass from you.\nAnd here is your reward. Take it, now. Don't be shy.\nSeven is seen as a lucky number, the number of fortune. But behind good fortune lies misfortune.\nIf you find yourself having this lucky number, don't let your guard down. There are those among us villains who take advantage of those seeking its good fortune."
     },
     {
       "id": "202300_11_I580",
-      "serif": "u304Au3063u3068、u3053u308Cu306Fu4F8Bu306Eu30A2u30ECu304B。\nu3044u3044u3068u3082u3044u3044u3068u3082。\nu30D0u30FCu30C6u30F3u30C0u30FCu306Bu30B8u30E7u30D6u30C1u30A7u30F3u30B8u3060。"
+      "serif": "Ah, so you've brought me this.\nVery good, very good.\nTime to change my profession to bartender."
     },
     {
       "id": "9010001_0_M610",

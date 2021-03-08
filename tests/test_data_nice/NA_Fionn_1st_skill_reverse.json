@@ -2001,7 +2001,10 @@
                       "type": "avoidState",
                       "buffGroup": 0,
                       "script": {},
-                      "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+                      "vals": [
+                        { "id": 3004, "name": "buffPositiveEffect" },
+                        { "id": 3061, "name": "buffNegativeEffectImmunity" }
+                      ],
                       "tvals": [{ "id": 3010, "name": "buffMentalEffect" }],
                       "ckSelfIndv": [],
                       "ckOpIndv": [{ "id": 3010, "name": "buffMentalEffect" }],
@@ -2206,7 +2209,10 @@
                       "type": "avoidState",
                       "buffGroup": 0,
                       "script": {},
-                      "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+                      "vals": [
+                        { "id": 3004, "name": "buffPositiveEffect" },
+                        { "id": 3061, "name": "buffNegativeEffectImmunity" }
+                      ],
                       "tvals": [{ "id": 3010, "name": "buffMentalEffect" }],
                       "ckSelfIndv": [],
                       "ckOpIndv": [{ "id": 3010, "name": "buffMentalEffect" }],
