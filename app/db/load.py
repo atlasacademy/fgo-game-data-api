@@ -11,7 +11,7 @@ from ..config import logger
 from ..models.raw import TABLES_TO_BE_LOADED, TABLES_WITH_PK, mstSubtitle
 from ..schemas.common import Region
 from ..schemas.raw import get_subtitle_svtId
-from .base import engines
+from .engine import engines
 
 
 def recreate_table(conn: Connection, table: Table) -> None:  # pragma: no cover

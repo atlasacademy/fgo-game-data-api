@@ -3,7 +3,7 @@ import pytest
 from fastapi.testclient import TestClient
 
 from app.core.nice.event import get_nice_shop
-from app.db.base import engines
+from app.db.engine import engines
 from app.db.helpers import event
 from app.main import app
 from app.schemas.common import Region

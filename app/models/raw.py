@@ -11,8 +11,7 @@ from sqlalchemy import (
 )
 from sqlalchemy.dialects.postgresql import ARRAY, JSONB
 
-
-metadata = sqlalchemy.MetaData()
+from .base import metadata
 
 
 mstBuff = Table(

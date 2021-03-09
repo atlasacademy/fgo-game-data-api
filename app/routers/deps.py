@@ -2,7 +2,7 @@ from typing import Generator
 
 from sqlalchemy.engine import Connection
 
-from ..db.base import engines
+from ..db.engine import engines
 from ..schemas.common import Region
 
 

@@ -23,7 +23,7 @@ from .core.nice.nice import get_nice_equip_model, get_nice_servant_model
 from .core.utils import get_safe, sort_by_collection_no
 from .data.custom_mappings import TRANSLATIONS
 from .data.gamedata import masters, update_masters
-from .db.base import engines
+from .db.engine import engines
 from .db.load import update_db
 from .routers.utils import list_string
 from .schemas.base import BaseModelORJson
