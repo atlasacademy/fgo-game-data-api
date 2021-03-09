@@ -110,7 +110,7 @@ def get_nice_war(conn: Connection, region: Region, war_id: int) -> NiceWar:
         event = masters[region].mstEventId[raw_war.mstWar.eventId]
         banner_file = f"event_war_{event.bannerId}"
     elif raw_war.mstWar.flag & WarEntityFlag.MAIN_SCENARIO != 0:
-        if raw_war.mstWar.id < masters[region].mstConstantId["LAST_WAR_ID"]:
+        if raw_war.mstWar.id <= masters[region].mstConstantId["LAST_WAR_ID"]:
             banner_file = f"questboard_cap{raw_war.mstWar.bannerId:>03}"
         else:
             banner_file = "questboard_cap_closed"
