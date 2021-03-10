@@ -86,7 +86,7 @@ class UserSvt(BaseModelORJson):
     starRate: int
     individuality: list[int]
     classPassive: list[int]
-    addPassive: list[int]
+    addPassive: Optional[list[int]] = None
     aiId: int
     actPriority: int
     maxActNum: int

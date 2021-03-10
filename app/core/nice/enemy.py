@@ -106,9 +106,17 @@ def get_enemy_skills(svt: UserSvt, all_skills: MultipleNiceSkills) -> EnemySkill
 def get_enemy_passive(svt: UserSvt, all_skills: MultipleNiceSkills) -> EnemyPassive:
     return EnemyPassive(
         classPassive=[
-            all_skills[(skill_id, svt.svtId)] for skill_id in svt.classPassive
+            all_skills[(skill_id, svt.svtId)]
+            for skill_id in svt.classPassive
+            if (skill_id, svt.svtId) in all_skills
         ],
-        addPassive=[all_skills[(skill_id, svt.svtId)] for skill_id in svt.addPassive],
+        addPassive=[
+            all_skills[(skill_id, svt.svtId)]
+            for skill_id in svt.addPassive
+            if (skill_id, svt.svtId) in all_skills
+        ]
+        if svt.addPassive
+        else [],
     )
 
 
@@ -201,13 +209,13 @@ def get_quest_enemies(
     all_tds: set[tuple[int, int]] = set()
     for user_svt in quest_detail.userSvt:
         if user_svt.treasureDeviceId != 0:
-        all_tds.add((user_svt.treasureDeviceId, user_svt.svtId))
+            all_tds.add((user_svt.treasureDeviceId, user_svt.svtId))
         for skill_id in [
             user_svt.skillId1,
             user_svt.skillId2,
             user_svt.skillId3,
             *user_svt.classPassive,
-            *user_svt.addPassive,
+            *(user_svt.addPassive if user_svt.addPassive else []),
         ]:
             if skill_id != 0:
                 all_skills.add((skill_id, user_svt.svtId))
