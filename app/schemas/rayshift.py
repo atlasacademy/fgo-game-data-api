@@ -1,0 +1,139 @@
+from datetime import datetime
+from typing import Any, Optional
+
+from pydantic import Field
+
+from .base import BaseModelORJson
+
+
+class BaseRayshiftResponse(BaseModelORJson):
+    status: int
+    message: str
+    wait: Optional[int] = None
+
+
+class DropInfo(BaseModelORJson):
+    type: int
+    objectId: int
+    num: int
+    limitCount: int
+    lv: int
+    rarity: int
+    isRateUp: bool
+    originalNum: int
+
+
+class DeckSvt(BaseModelORJson):
+    uniqueId: int
+    name: str
+    roleType: int
+    dropInfos: list[DropInfo]
+    npcId: int
+    enemyScript: dict[str, Any]
+    infoScript: Optional[dict[str, Any]] = None
+    index: int
+    id: int
+    userSvtId: int
+    userSvtEquipIds: list[int]
+    isFollowerSvt: bool
+    npcFollowerSvtId: int
+
+
+class Deck(BaseModelORJson):
+    svts: list[DeckSvt]
+    followerType: int
+    stageId: int
+
+
+class RaidInfo(BaseModelORJson):
+    day: int
+    uniqueId: int
+    maxHp: int
+    totalDamage: int
+
+
+class SuperBossInfo(BaseModelORJson):
+    superBossId: int
+    uniqueId: int
+    maxHp: int
+    totalDamage: int
+
+
+class UserSvt(BaseModelORJson):
+    id: int
+    userId: int = Field(..., title="User ID", description="Unused fields for enemies")
+    svtId: int
+    lv: int
+    exp: int
+    atk: int
+    hp: int
+    adjustAtk: int
+    adjustHp: int
+    recover: int
+    chargeTurn: int
+    skillId1: int
+    skillId2: int
+    skillId3: int
+    skillLv1: int
+    skillLv2: int
+    skillLv3: int
+    treasureDeviceId: int
+    treasureDeviceLv: int
+    tdRate: int
+    tdAttackRate: int
+    deathRate: int
+    criticalRate: int
+    starRate: int
+    individuality: list[int]
+    classPassive: list[int]
+    addPassive: list[int]
+    aiId: int
+    actPriority: int
+    maxActNum: int
+    displayType: int
+    npcSvtType: int
+    passiveSkill: Optional[list[int]] = None
+    equipTargetId1: int
+    equipTargetIds: Optional[list[int]] = None
+    npcSvtClassId: int
+    overwriteSvtId: int
+    userCommandCodeIds: list[int]
+    commandCardParam: Optional[list[int]] = None
+    limitCount: int
+    imageLimitCount: int
+    dispLimitCount: int
+    commandCardLimitCount: int
+    iconLimitCount: int
+    portraitLimitCount: int
+    battleVoice: int
+    treasureDeviceLv1: int
+    exceedCount: int
+    status: int
+    createdAt: int
+
+
+class QuestDetail(BaseModelORJson):
+    battleId: int
+    addedTime: datetime
+    region: int
+    questId: int
+    questPhase: int
+    questSelect: int
+    eventId: int
+    battleType: int
+    enemyDeck: list[Deck]
+    transformDeck: Deck
+    callDeck: list[Deck]
+    shiftDeck: list[Deck]
+    raidInfo: list[RaidInfo]
+    startRaidInfo: list[RaidInfo]
+    superBossInfo: list[SuperBossInfo]
+    userSvt: list[UserSvt]
+
+
+class QuestResponse(BaseModelORJson):
+    questDetails: dict[int, QuestDetail]
+
+
+class QuestRayshiftResponse(BaseRayshiftResponse):
+    response: QuestResponse

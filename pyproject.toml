@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fgo-game-data-api"
-version = "5.51.0"
+version = "5.52.0"
 description = "Provide raw and processed FGO game data"
 authors = ["squaresmile <squaresmile@protonmail.com>"]
 
@@ -17,6 +17,7 @@ GitPython = "^3.1.14"
 toml = "^0.10.2"
 redis = "^3.5.3"
 SQLAlchemy = {version = "1.4.0b3", extras = ["postgresql"]}
+httpx = "^0.17.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.2"

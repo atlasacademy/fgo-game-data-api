@@ -62,6 +62,7 @@ test_cases_dict: dict[str, tuple[str, str]] = {
     "quest_JP_id": ("JP/quest/91103002", "JP_Suzuka_rank_up"),
     "quest_NA_id_phase": ("NA/quest/94020187/1", "NA_87th_floor"),
     "quest_NA_consume_item": ("NA/quest/94032412", "NA_Enma_tei_spa_room"),
+    "quest_NA_enemy": ("NA/quest/94034503/1", "NA_CCC_Detour_3"),
     "ai_beni_cq_monkey_NA": ("NA/ai/svt/94032580", "NA_AI_Beni_CQ_monkey"),
     "kh_cq_JP": ("JP/ai/field/90161870", "JP_KH_CQ_taunt"),
 }
@@ -467,3 +468,17 @@ class TestServantSpecial:
             "background": "gold",
             "value": 1400,
         }
+
+    def test_quest_phase_detail_override(self) -> None:
+        story_quest = client.get("nice/JP/quest/94034001/2").json()
+        assert story_quest["consume"] == 0
+
+    def test_latest_story_war_banner(self) -> None:
+        latest_story_war = client.get("nice/JP/war/308").json()
+        assert "questboard_cap_closed" in latest_story_war["banner"]
+
+    def test_enemy_script(self) -> None:
+        murasaki_valentine_cq = client.get("nice/NA/quest/94033599/1").json()
+        first_stage_enemies = murasaki_valentine_cq["stages"][0]["enemies"]
+        assert first_stage_enemies[0]["enemyScript"]["call"] == [4]
+        assert first_stage_enemies[4]["enemyScript"]["leader"] is True

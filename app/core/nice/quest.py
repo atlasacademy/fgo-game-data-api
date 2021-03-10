@@ -4,18 +4,26 @@ from sqlalchemy.engine import Connection
 
 from ...config import Settings
 from ...data.gamedata import masters
-from ...schemas.common import Region
+from ...rayshift.quest import get_quest_detail
+from ...schemas.common import Language, Region
 from ...schemas.enums import (
     CLASS_NAME,
     COND_TYPE_NAME,
     QUEST_CONSUME_TYPE_NAME,
     QUEST_TYPE_NAME,
 )
-from ...schemas.nice import NiceQuest, NiceQuestPhase, NiceQuestRelease, NiceStage
+from ...schemas.nice import (
+    NiceQuest,
+    NiceQuestPhase,
+    NiceQuestRelease,
+    NiceStage,
+    QuestEnemy,
+)
 from ...schemas.raw import MstQuestRelease, MstStage, QuestEntity, QuestPhaseEntity
 from .. import raw
 from ..utils import get_traits_list
 from .bgm import get_nice_bgm
+from .enemy import get_quest_enemies
 from .gift import get_nice_gift
 from .item import get_nice_item_amount
 
@@ -36,8 +44,12 @@ def get_nice_quest_release(
     )
 
 
-def get_nice_stage(region: Region, raw_stage: MstStage) -> NiceStage:
-    return NiceStage(wave=raw_stage.wave, bgm=get_nice_bgm(region, raw_stage.bgmId))
+def get_nice_stage(
+    region: Region, raw_stage: MstStage, enemies: list[QuestEnemy]
+) -> NiceStage:
+    return NiceStage(
+        wave=raw_stage.wave, bgm=get_nice_bgm(region, raw_stage.bgmId), enemies=enemies
+    )
 
 
 def get_nice_quest(
@@ -77,11 +89,24 @@ def get_nice_quest_alone(conn: Connection, region: Region, quest_id: int) -> Nic
     )
 
 
-def get_nice_quest_phase(
-    conn: Connection, region: Region, quest_id: int, phase: int
+async def get_nice_quest_phase(
+    conn: Connection,
+    region: Region,
+    quest_id: int,
+    phase: int,
+    lang: Language = Language.jp,
 ) -> NiceQuestPhase:
     raw_quest = raw.get_quest_phase_entity(conn, quest_id, phase)
     nice_data = get_nice_quest(region, raw_quest)
+
+    stages = sorted(raw_quest.mstStage, key=lambda stage: stage.wave)
+
+    quest_enemies: list[list[QuestEnemy]] = [[]] * len(raw_quest.mstStage)
+    if stages:
+        quest_detail = await get_quest_detail(conn, region, quest_id, phase)
+        if quest_detail:
+            quest_enemies = get_quest_enemies(conn, region, quest_detail, lang)
+
     nice_data |= {
         "phase": raw_quest.mstQuestPhase.phase,
         "className": [
@@ -92,8 +117,8 @@ def get_nice_quest_phase(
         "exp": raw_quest.mstQuestPhase.playerExp,
         "bond": raw_quest.mstQuestPhase.friendshipExp,
         "stages": [
-            get_nice_stage(region, stage)
-            for stage in sorted(raw_quest.mstStage, key=lambda stage: stage.wave)
+            get_nice_stage(region, stage, enemies)
+            for stage, enemies in zip(stages, quest_enemies)
         ],
     }
 

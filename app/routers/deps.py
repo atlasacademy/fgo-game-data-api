@@ -9,3 +9,8 @@ from ..schemas.common import Region
 def get_db(region: Region) -> Generator[Connection, None, None]:
     with engines[region].connect() as connection:
         yield connection
+
+
+def get_db_transaction(region: Region) -> Generator[Connection, None, None]:
+    with engines[region].begin() as connection:
+        yield connection

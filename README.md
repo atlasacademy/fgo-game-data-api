@@ -28,6 +28,8 @@ List of environment variables for the main app. All are required except noted:
 - `ASSET_URL`: base URL for the game assets.
 
 #### Optional environment variables
+- `RAYSHIFT_API_KEY`: default to `None`. Rayshift.io API key to pull quest data.
+- `RAYSHIFT_API_URL`: default to https://rayshift.io/api/v1/. Rayshift.io API URL.
 - `WRITE_POSTGRES_DATA`: default to `True`. Overwrite the data in PostgreSQL when importing.
 - `OPENAPI_URL`: default to `None`. Set the server URL in the openapi schema export.
 - `EXPORT_ALL_NICE`: default to `False`. If set to `True`, at start the app will generate nice data of all servant and CE and serve them at the `/export` endpoint. It's recommended to serve the files in the `/export` folder using nginx or equivalent webserver to lighten the load on the API server.
@@ -47,6 +49,7 @@ NA_GAMEDATA="/path/to/gamedata/master/NA"
 JP_GAMEDATA="/path/to/gamedata/master/JP"
 NA_POSTGRESDSN="postgresql://username:password@localhost:5432/fgoapiNA"
 JP_POSTGRESDSN="postgresql://username:password@localhost:5432/fgoapiJP"
+RAYSHIFT_API_KEY="eca334a9-3289-4ad7-9b92-1ec2bbc3fc19"
 WRITE_POSTGRES_DATA=True
 ASSET_URL="https://example.com/assets/"
 OPENAPI_URL="https://api.atlasacademy.io"

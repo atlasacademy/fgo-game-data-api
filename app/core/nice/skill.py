@@ -1,5 +1,5 @@
 from copy import deepcopy
-from typing import Any
+from typing import Any, Iterable
 
 from sqlalchemy.engine import Connection
 
@@ -8,9 +8,9 @@ from ...data.custom_mappings import TRANSLATIONS
 from ...data.gamedata import masters
 from ...schemas.common import Language, Region
 from ...schemas.enums import SKILL_TYPE_NAME, AiType
-from ...schemas.nice import AssetURL, NiceSkillReverse
+from ...schemas.nice import AssetURL, NiceSkill, NiceSkillReverse
 from ...schemas.raw import SkillEntityNoReverse
-from ..raw import get_skill_entity_no_reverse
+from ..raw import get_skill_entity_no_reverse, get_skill_entity_no_reverse_many
 from ..utils import get_safe, get_traits_list, strip_formatting_brackets
 from .func import get_nice_function
 
@@ -142,3 +142,39 @@ def get_nice_skill_from_id(
 ) -> NiceSkillReverse:
     raw_skill = get_skill_entity_no_reverse(conn, region, skill_id, expand=True)
     return get_nice_skill_from_raw(region, raw_skill, lang)
+
+
+MultipleNiceSkills = dict[tuple[int, int], NiceSkill]
+
+
+def get_multiple_nice_skills(
+    conn: Connection,
+    region: Region,
+    skill_svts: Iterable[tuple[int, int]],
+    lang: Language,
+) -> MultipleNiceSkills:
+    """Get multiple nice skills at once
+
+    Args:
+        `conn`: DB Connection
+        `region`: Region
+        `skill_svts`: List of skill id - svt id tuple pairs
+        `lang`: Language
+
+    Returns:
+        Mapping of skill id - svt id tuple to nice skill
+    """
+    raw_skills = {
+        skill.mstSkill.id: skill
+        for skill in get_skill_entity_no_reverse_many(
+            conn, region, [skill[0] for skill in skill_svts], expand=True
+        )
+    }
+    return {
+        skill_svt: NiceSkill.parse_obj(
+            get_nice_skill_with_svt(
+                raw_skills[skill_svt[0]], skill_svt[1], region, lang
+            )[0]
+        )
+        for skill_svt in skill_svts
+    }

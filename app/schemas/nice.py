@@ -5,7 +5,12 @@ from pydantic import BaseModel, Field, HttpUrl
 from pydantic.generics import GenericModel
 
 from .base import BaseModelORJson
-from .basic import BasicReversedBuff, BasicReversedFunction, BasicReversedSkillTd
+from .basic import (
+    BasicReversedBuff,
+    BasicReversedFunction,
+    BasicReversedSkillTd,
+    BasicServant,
+)
 from .common import MCAssets, NiceBuffScript, NiceTrait
 from .enums import (
     AiTiming,
@@ -1135,9 +1140,115 @@ class NiceQuest(BaseModelORJson):
     closedAt: int
 
 
+class EnemyScript(BaseModelORJson):
+    leader: Optional[bool]
+    call: Optional[list[int]]
+    shift: Optional[list[int]]
+
+
+class EnemySkill(BaseModelORJson):
+    skillId1: int
+    skillId2: int
+    skillId3: int
+    skill1: Optional[NiceSkill] = None
+    skill2: Optional[NiceSkill] = None
+    skill3: Optional[NiceSkill] = None
+    skillLv1: int
+    skillLv2: int
+    skillLv3: int
+
+
+class EnemyPassive(BaseModelORJson):
+    classPassive: list[NiceSkill]
+    addPassive: list[NiceSkill]
+
+
+class EnemyTd(BaseModelORJson):
+    noblePhantasm: NiceTd
+    noblePhantasmLv: int
+    noblePhantasmLv1: int
+
+
+class EnemyLimit(BaseModelORJson):
+    limitCount: int
+    imageLimitCount: int
+    dispLimitCount: int
+    commandCardLimitCount: int
+    iconLimitCount: int
+    portraitLimitCount: int
+    battleVoice: int
+    exceedCount: int
+
+
+class EnemyServerMod(BaseModelORJson):
+    tdRate: int = Field(
+        ...,
+        title="Attacking NP gain server mod",
+        description="`enemyServerMod` when attacking: "
+        "https://github.com/atlasacademy/fgo-game-data-docs/blob/master/battle/np.md#attacking-np",
+    )
+    tdAttackRate: int = Field(
+        ...,
+        title="Defending NP gain server mod",
+        description="`enemyServerMod` when defending: "
+        "https://github.com/atlasacademy/fgo-game-data-docs/blob/master/battle/np.md#defending-np",
+    )
+    starRate: int = Field(
+        ...,
+        title="Star drop rate server mod",
+        description="`serverRate` when attacking: "
+        "https://github.com/atlasacademy/fgo-game-data-docs/blob/master/battle/critstars.md",
+    )
+
+
+class EnemyAi(BaseModelORJson):
+    aiId: int
+    actPriority: int
+    maxActNum: int
+
+
+class EnemyMisc(BaseModelORJson):
+    displayType: int
+    npcSvtType: int
+    passiveSkill: Optional[list[int]] = None
+    equipTargetId1: int
+    equipTargetIds: Optional[list[int]] = None
+    npcSvtClassId: int
+    overwriteSvtId: int
+    userCommandCodeIds: list[int]
+    commandCardParam: Optional[list[int]] = None
+    status: int
+
+
+class QuestEnemy(BaseModelORJson):
+    id: int
+    name: str
+    svt: BasicServant
+    lv: int
+    exp: int
+    atk: int
+    hp: int
+    adjustAtk: int
+    adjustHp: int
+    deathRate: int
+    criticalRate: int
+    recover: int
+    chargeTurn: int
+    traits: list[NiceTrait]
+    skills: EnemySkill
+    classPassive: EnemyPassive
+    noblePhantasm: EnemyTd
+    serverMod: EnemyServerMod
+    ai: EnemyAi
+    enemyScript: EnemyScript
+    limit: EnemyLimit
+    misc: EnemyMisc
+
+
 class NiceStage(BaseModelORJson):
     wave: int
     bgm: NiceBgm
+    enemies: list[QuestEnemy] = []
 
 
 class NiceQuestPhase(NiceQuest):

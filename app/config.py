@@ -10,6 +10,7 @@ from pydantic import (
     SecretStr,
     validator,
 )
+from pydantic.tools import parse_obj_as
 from uvicorn.logging import DefaultFormatter
 
 
@@ -30,6 +31,8 @@ class Settings(BaseSettings):
     jp_gamedata: DirectoryPath
     na_postgresdsn: PostgresDsn
     jp_postgresdsn: PostgresDsn
+    rayshift_api_key: Optional[str] = None
+    rayshift_api_url: HttpUrl = parse_obj_as(HttpUrl, "https://rayshift.io/api/v1/")
     write_postgres_data: bool = True
     asset_url: HttpUrl
     openapi_url: Optional[HttpUrl] = None
@@ -43,7 +46,7 @@ class Settings(BaseSettings):
     redis_port: int = 6379
     redis_db: int = 0
 
-    @validator("asset_url")
+    @validator("asset_url", "rayshift_api_url")
     def remove_last_slash(cls, value: str) -> str:
         if value.endswith("/"):
             return value[:-1]

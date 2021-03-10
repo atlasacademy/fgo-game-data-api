@@ -45,7 +45,8 @@
         "id": 56,
         "name": "outbreak\n-Alternative-",
         "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_BATTLE_17/BGM_BATTLE_17.mp3"
-      }
+      },
+      "enemies": []
     },
     {
       "wave": 2,
@@ -53,7 +54,8 @@
         "id": 56,
         "name": "outbreak\n-Alternative-",
         "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_BATTLE_17/BGM_BATTLE_17.mp3"
-      }
+      },
+      "enemies": []
     }
   ]
 }

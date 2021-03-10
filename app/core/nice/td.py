@@ -1,11 +1,14 @@
 from copy import deepcopy
-from typing import Any
+from typing import Any, Iterable
+
+from sqlalchemy.engine import Connection
 
 from ...config import Settings
 from ...schemas.common import Region
 from ...schemas.enums import CARD_TYPE_NAME
-from ...schemas.nice import AssetURL
+from ...schemas.nice import AssetURL, NiceTd
 from ...schemas.raw import TdEntityNoReverse
+from ..raw import get_td_entity_no_reverse_many
 from ..utils import get_traits_list, strip_formatting_brackets
 from .func import get_nice_function
 
@@ -90,3 +93,33 @@ def get_nice_td(
         }
         out_tds.append(out_td)
     return out_tds
+
+
+MultipleNiceTds = dict[tuple[int, int], NiceTd]
+
+
+def get_multiple_nice_tds(
+    conn: Connection,
+    region: Region,
+    td_svts: Iterable[tuple[int, int]],
+) -> MultipleNiceTds:
+    """Get multiple nice NPs at once
+
+    Args:
+        `conn`: DB Connection
+        `region`: Region
+        `skill_svts`: List of skill id - NP id tuple pairs
+
+    Returns:
+        Mapping of skill id - svt id tuple to nice NP
+    """
+    raw_tds = {
+        td.mstTreasureDevice.id: td
+        for td in get_td_entity_no_reverse_many(
+            conn, region, [td_svt[0] for td_svt in td_svts], expand=True
+        )
+    }
+    return {
+        td_svt: NiceTd.parse_obj(get_nice_td(raw_tds[td_svt[0]], td_svt[1], region)[0])
+        for td_svt in td_svts
+    }

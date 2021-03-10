@@ -33,7 +33,7 @@ from ..schemas.search import (
     SvtSearchQueryParams,
     TdSearchParams,
 )
-from .deps import get_db
+from .deps import get_db, get_db_transaction
 from .utils import get_error_code, item_response, language_parameter, list_response
 
 
@@ -648,9 +648,15 @@ get_quest_phase_description = (
     responses=get_error_code([404, 500]),
 )
 async def get_quest_phase(
-    region: Region, quest_id: int, phase: int, conn: Connection = Depends(get_db)
+    region: Region,
+    quest_id: int,
+    phase: int,
+    conn: Connection = Depends(get_db_transaction),
+    lang: Language = Depends(language_parameter),
 ) -> Response:
-    return item_response(quest.get_nice_quest_phase(conn, region, quest_id, phase))
+    return item_response(
+        await quest.get_nice_quest_phase(conn, region, quest_id, phase, lang)
+    )
 
 
 @router.get(

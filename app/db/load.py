@@ -9,6 +9,7 @@ from sqlalchemy.engine import Connection
 
 from ..config import logger
 from ..models.raw import TABLES_TO_BE_LOADED, TABLES_WITH_PK, mstSubtitle
+from ..models.rayshift import rayshiftQuest
 from ..schemas.common import Region
 from ..schemas.raw import get_subtitle_svtId
 from .engine import engines
@@ -87,6 +88,9 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
         with engine.begin() as conn:
             recreate_table(conn, mstSubtitle)
             conn.execute(mstSubtitle.insert(), globalNewMstSubtitle)
+
+        with engine.begin() as conn:
+            rayshiftQuest.create(conn, checkfirst=True)
 
     db_loading_time = time.perf_counter() - start_loading_time
     logger.info(f"Loaded db in {db_loading_time:.2f}s.")
