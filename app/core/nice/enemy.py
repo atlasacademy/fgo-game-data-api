@@ -114,7 +114,8 @@ def get_enemy_passive(svt: UserSvt, all_skills: MultipleNiceSkills) -> EnemyPass
 
 def get_enemy_td(svt: UserSvt, all_nps: MultipleNiceTds) -> EnemyTd:
     return EnemyTd(
-        noblePhantasm=all_nps[(svt.treasureDeviceId, svt.svtId)],
+        noblePhantasmId=svt.treasureDeviceId,
+        noblePhantasm=all_nps.get((svt.treasureDeviceId, svt.svtId), None),
         noblePhantasmLv=svt.treasureDeviceLv,
         noblePhantasmLv1=svt.treasureDeviceLv1,
     )
@@ -199,6 +200,7 @@ def get_quest_enemies(
     all_skills: set[tuple[int, int]] = set()
     all_tds: set[tuple[int, int]] = set()
     for user_svt in quest_detail.userSvt:
+        if user_svt.treasureDeviceId != 0:
         all_tds.add((user_svt.treasureDeviceId, user_svt.svtId))
         for skill_id in [
             user_svt.skillId1,

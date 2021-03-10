@@ -48,7 +48,9 @@ def get_nice_stage(
     region: Region, raw_stage: MstStage, enemies: list[QuestEnemy]
 ) -> NiceStage:
     return NiceStage(
-        wave=raw_stage.wave, bgm=get_nice_bgm(region, raw_stage.bgmId), enemies=enemies
+        wave=raw_stage.wave,
+        bgm=get_nice_bgm(region, raw_stage.bgmId),
+        enemies=sorted(enemies, key=lambda enemy: enemy.id),
     )
 
 

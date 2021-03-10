@@ -1164,7 +1164,8 @@ class EnemyPassive(BaseModelORJson):
 
 
 class EnemyTd(BaseModelORJson):
-    noblePhantasm: NiceTd
+    noblePhantasmId: int
+    noblePhantasm: Optional[NiceTd] = None
     noblePhantasmLv: int
     noblePhantasmLv1: int
 
