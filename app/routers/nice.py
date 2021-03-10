@@ -683,10 +683,13 @@ async def get_ai_field(
     ai_type: AiType,
     ai_id: int,
     conn: Connection = Depends(get_db),
+    lang: Language = Depends(language_parameter),
 ) -> Response:
     """
     Get the nice AI data from the given AI ID
     """
     field_flag = ai_type == AiType.field
-    ai_entity = ai.get_nice_ai_collection(conn, region, ai_id, field=field_flag)
+    ai_entity = ai.get_nice_ai_collection(
+        conn, region, ai_id, field=field_flag, lang=lang
+    )
     return item_response(ai_entity)
