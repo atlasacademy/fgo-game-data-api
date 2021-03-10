@@ -226,8 +226,13 @@ def get_quest_enemies(
 
     out_enemies: list[list[QuestEnemy]] = []
     for enemy_deck in quest_detail.enemyDeck:
-        stage_enemies = enemy_deck.svts
+        stage_enemies: list[DeckSvt] = []
         for deck_svt in enemy_deck.svts:
+            if deck_svt.infoScript and "isAddition" in deck_svt.infoScript:
+                if deck_svt.infoScript["isAddition"] != 1:
+                    stage_enemies.append(deck_svt)
+            else:
+                stage_enemies.append(deck_svt)
             for more_svt_type in ("shift", "call"):
                 if more_svt_type in deck_svt.enemyScript:
                     stage_enemies += [
