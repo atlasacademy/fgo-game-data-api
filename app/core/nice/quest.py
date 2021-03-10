@@ -50,7 +50,7 @@ def get_nice_stage(
     return NiceStage(
         wave=raw_stage.wave,
         bgm=get_nice_bgm(region, raw_stage.bgmId),
-        enemies=sorted(enemies, key=lambda enemy: enemy.id),
+        enemies=enemies,
     )
 
 

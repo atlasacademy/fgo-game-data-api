@@ -481,4 +481,8 @@ class TestServantSpecial:
         murasaki_valentine_cq = client.get("nice/NA/quest/94033599/1").json()
         first_stage_enemies = murasaki_valentine_cq["stages"][0]["enemies"]
         assert first_stage_enemies[0]["enemyScript"]["call"] == [4]
-        assert first_stage_enemies[4]["enemyScript"]["leader"] is True
+        assert first_stage_enemies[5]["enemyScript"]["leader"] is True
+
+    def test_enemy_isAddition_skipped(self) -> None:
+        weakness_ear = client.get("/nice/NA/quest/94034116/1").json()
+        assert [len(stage["enemies"]) for stage in weakness_ear["stages"]] == [3, 3, 3]

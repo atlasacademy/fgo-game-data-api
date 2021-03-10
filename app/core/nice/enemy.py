@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 from sqlalchemy.engine import Connection
 
 from ...schemas.common import Language, Region
@@ -185,6 +187,10 @@ def get_quest_enemy(
     )
 
 
+def deck_svt_sort_key(deck_svt: DeckSvt) -> int:
+    return deck_svt.uniqueId
+
+
 def get_quest_enemies(
     conn: Connection,
     region: Region,
@@ -227,18 +233,29 @@ def get_quest_enemies(
     out_enemies: list[list[QuestEnemy]] = []
     for enemy_deck in quest_detail.enemyDeck:
         stage_enemies: list[DeckSvt] = []
-        for deck_svt in enemy_deck.svts:
+        # The following section is run to keep the order of stage_enemies similar to the raw data
+        # The important thing is to keep the order of enemyDeck enemies the same
+        more_enemies: dict[str, list[DeckSvt]] = defaultdict(list)
+        more_enemies_type = ("call", "shift")
+
+        # Enemy appearance order
+        sorted_enemy_deck = sorted(enemy_deck.svts, key=deck_svt_sort_key)
+
+        for deck_svt in sorted_enemy_deck:
             if deck_svt.infoScript and "isAddition" in deck_svt.infoScript:
-                if deck_svt.infoScript["isAddition"] != 1:
-                    stage_enemies.append(deck_svt)
-            else:
-                stage_enemies.append(deck_svt)
-            for more_svt_type in ("shift", "call"):
+                continue
+
+            stage_enemies.append(deck_svt)
+
+            for more_svt_type in more_enemies_type:
                 if more_svt_type in deck_svt.enemyScript:
-                    stage_enemies += [
+                    more_enemies[more_svt_type] += [
                         npc_id_deck[npc_id]
                         for npc_id in deck_svt.enemyScript[more_svt_type]
                     ]
+
+        for more_svt_type in more_enemies_type:
+            stage_enemies += sorted(more_enemies[more_svt_type], key=deck_svt_sort_key)
 
         stage_nice_enemies: list[QuestEnemy] = []
         for deck_svt in stage_enemies:
