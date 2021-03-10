@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Union
 
 import httpx
 from fastapi import HTTPException
@@ -24,8 +24,11 @@ REGION_ENUM = {Region.JP: 1, Region.NA: 2}
 async def get_quest_response(
     region: Region, quest_id: int, phase: int
 ) -> Optional[QuestResponse]:
+    if not settings.rayshift_api_key:  # pragma: no cover
+        return None
+
     async with httpx.AsyncClient() as client:
-        params = {
+        params: dict[str, Union[str, int]] = {
             "apiKey": settings.rayshift_api_key,
             "region": REGION_ENUM[region],
             "questId": quest_id,
