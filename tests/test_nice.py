@@ -1,17 +1,12 @@
 # pylint: disable=R0201,R0904
 import pytest
-from fastapi.testclient import TestClient
 
 from app.core.nice.event import get_nice_shop
 from app.db.engine import engines
 from app.db.helpers import event
-from app.main import app
 from app.schemas.common import Region
 
-from .utils import get_response_data
-
-
-client = TestClient(app)
+from .utils import get_response, get_response_data
 
 
 test_cases_dict: dict[str, tuple[str, str]] = {
@@ -71,9 +66,10 @@ test_cases_dict: dict[str, tuple[str, str]] = {
 test_cases = [pytest.param(*value, id=key) for key, value in test_cases_dict.items()]
 
 
+@pytest.mark.asyncio
 @pytest.mark.parametrize("query,result", test_cases)
-def test_nice(query: str, result: str) -> None:
-    response = client.get(f"/nice/{query}")
+async def test_nice(query: str, result: str) -> None:
+    response = await get_response(f"/nice/{query}")
     assert response.status_code == 200
     assert response.json() == get_response_data("test_data_nice", result)
 
@@ -101,9 +97,10 @@ cases_404_dict = {
 cases_404 = [pytest.param(key, value, id=key) for key, value in cases_404_dict.items()]
 
 
+@pytest.mark.asyncio
 @pytest.mark.parametrize("endpoint,item_id", cases_404)
-def test_404_nice(endpoint: str, item_id: str) -> None:
-    response = client.get(f"/nice/JP/{endpoint}/{item_id}")
+async def test_404_nice(endpoint: str, item_id: str) -> None:
+    response = await get_response(f"/nice/JP/{endpoint}/{item_id}")
     assert response.status_code == 404
     assert response.json()["detail"][-9:] == "not found"
 
@@ -166,83 +163,87 @@ cases_datavals = [
 ]
 
 
+@pytest.mark.asyncio
 @pytest.mark.parametrize("skill_id,function_index,parse_result", cases_datavals)
-def test_special_datavals(
+async def test_special_datavals(
     skill_id: int, function_index: int, parse_result: dict[str, int]
 ) -> None:
-    response = client.get(f"/nice/JP/skill/{skill_id}")
+    response = await get_response(f"/nice/JP/skill/{skill_id}")
     assert response.status_code == 200
     assert response.json()["functions"][function_index]["svals"][0] == parse_result
 
 
+@pytest.mark.asyncio
 class TestServantSpecial:
-    def test_NA_not_integer(self) -> None:
-        response = client.get("/nice/NA/servant/lkji")
+    async def test_NA_not_integer(self) -> None:
+        response = await get_response("/nice/NA/servant/lkji")
         assert response.status_code == 422
 
-    def test_JP_Emiya_all_nps(self) -> None:
-        response = client.get("/nice/JP/servant/11")
+    async def test_JP_Emiya_all_nps(self) -> None:
+        response = await get_response("/nice/JP/servant/11")
         nps = {np["id"] for np in response.json()["noblePhantasms"]}
         assert response.status_code == 200
         assert nps == {200101, 200102, 200198, 200197}
 
-    def test_skill_reverse_passive(self) -> None:
-        response = client.get("/nice/NA/skill/30650?reverse=True")
+    async def test_skill_reverse_passive(self) -> None:
+        response = await get_response("/nice/NA/skill/30650?reverse=True")
         reverse_servants = {
             servant["id"] for servant in response.json()["reverse"]["nice"]["servant"]
         }
         assert response.status_code == 200
         assert reverse_servants == {201200, 401800, 601000}
 
-    def test_JP_English_name(self) -> None:
-        response = client.get("/nice/JP/servant/304300?lang=en")
+    async def test_JP_English_name(self) -> None:
+        response = await get_response("/nice/JP/servant/304300?lang=en")
         assert response.status_code == 200
         assert response.json()["name"] == "Elice Utsumi"
 
-        response = client.get("/nice/JP/equip/1296?lang=en")
+        response = await get_response("/nice/JP/equip/1296?lang=en")
         assert response.status_code == 200
         assert response.json()["name"] == "Hell's Kitchen"
 
-    def test_JP_skill_English_name(self) -> None:
-        response = client.get("/nice/JP/skill/991604?lang=en")
+    async def test_JP_skill_English_name(self) -> None:
+        response = await get_response("/nice/JP/skill/991604?lang=en")
         assert response.status_code == 200
         assert response.json()["name"] == "Paradox Ace Killer"
 
-    def test_JP_CC_English_name(self) -> None:
-        response = client.get("/nice/JP/CC/8400240?lang=en")
+    async def test_JP_CC_English_name(self) -> None:
+        response = await get_response("/nice/JP/CC/8400240?lang=en")
         assert response.status_code == 200
         assert response.json()["name"] == "The Holy Night's Aurora"
 
-    def test_JP_MC_English_name(self) -> None:
-        response = client.get("/nice/JP/MC/60?lang=en")
+    async def test_JP_MC_English_name(self) -> None:
+        response = await get_response("/nice/JP/MC/60?lang=en")
         assert response.status_code == 200
         assert response.json()["name"] == "Royal Brand"
 
-    def test_CE_bond_owner(self) -> None:
+    async def test_CE_bond_owner(self) -> None:
         for endpoint in ("equip", "svt"):
-            yu_bond_ce = client.get(f"/nice/NA/{endpoint}/9303460").json()
-            assert yu_bond_ce["bondEquipOwner"] == 603500
+            yu_bond_ce = await get_response(f"/nice/NA/{endpoint}/9303460")
+            assert yu_bond_ce.json()["bondEquipOwner"] == 603500
 
-    def test_CE_valentine_owner(self) -> None:
+    async def test_CE_valentine_owner(self) -> None:
         for endpoint in ("equip", "svt"):
-            yu_valentine_ce = client.get(f"/nice/NA/{endpoint}/9807110").json()
-            assert yu_valentine_ce["valentineEquipOwner"] == 603500
+            yu_valentine_ce = await get_response(f"/nice/NA/{endpoint}/9807110")
+            assert yu_valentine_ce.json()["valentineEquipOwner"] == 603500
 
-    def test_empty_cv_illustrator_name(self) -> None:
-        response = client.get("/nice/JP/svt/9941330?lore=true")
+    async def test_empty_cv_illustrator_name(self) -> None:
+        response = await get_response("/nice/JP/svt/9941330?lore=true")
         assert response.status_code == 200
         assert response.json()["profile"]["cv"] == ""
         assert response.json()["profile"]["illustrator"] == ""
 
-    def test_buff_reverse_skillNp(self) -> None:
-        response = client.get("/nice/NA/buff/203?reverse=True&reverseDepth=skillNp")
+    async def test_buff_reverse_skillNp(self) -> None:
+        response = await get_response(
+            "/nice/NA/buff/203?reverse=True&reverseDepth=skillNp"
+        )
         assert response.status_code == 200
         assert response.json()["reverse"]["nice"]["function"][1]["reverse"]["nice"][
             "skill"
         ]
 
-    def test_function_reverse_servant(self) -> None:
-        response = client.get(
+    async def test_function_reverse_servant(self) -> None:
+        response = await get_response(
             "/nice/NA/function/3411?reverse=True&reverseDepth=servant"
         )
         assert response.status_code == 200
@@ -250,13 +251,13 @@ class TestServantSpecial:
             "servant"
         ]
 
-    def test_solomon_cvId(self) -> None:
-        response = client.get("/nice/JP/servant/83?lore=true")
+    async def test_solomon_cvId(self) -> None:
+        response = await get_response("/nice/JP/servant/83?lore=true")
         assert response.status_code == 200
         assert response.json()["profile"]["cv"] == ""
 
-    def test_datavals_default_case_target(self) -> None:
-        response = client.get("/nice/NA/NP/600701")
+    async def test_datavals_default_case_target(self) -> None:
+        response = await get_response("/nice/NA/NP/600701")
         assert response.status_code == 200
         assert response.json()["functions"][0]["svals"][0] == {
             "Rate": 5000,
@@ -264,8 +265,8 @@ class TestServantSpecial:
             "Target": 0,
         }
 
-    def test_voice_play_cond(self) -> None:
-        response = client.get("/nice/JP/servant/261?lore=true")
+    async def test_voice_play_cond(self) -> None:
+        response = await get_response("/nice/JP/servant/261?lore=true")
         voice_line = response.json()["profile"]["voices"][0]["voiceLines"][4]
         assert response.status_code == 200
         assert voice_line["playConds"] == [
@@ -278,8 +279,8 @@ class TestServantSpecial:
             }
         ]
 
-    def test_list_datavals_2_items(self) -> None:
-        response = client.get("/nice/JP/NP/403401")
+    async def test_list_datavals_2_items(self) -> None:
+        response = await get_response("/nice/JP/NP/403401")
         assert response.status_code == 200
         assert response.json()["functions"][0]["svals"][0] == {
             "Rate": 1000,
@@ -289,8 +290,8 @@ class TestServantSpecial:
             "TargetRarityList": [1, 2],
         }
 
-    def test_list_datavals_1_item(self) -> None:
-        response = client.get("/nice/JP/NP/304201")
+    async def test_list_datavals_1_item(self) -> None:
+        response = await get_response("/nice/JP/NP/304201")
         assert response.status_code == 200
         assert response.json()["functions"][0]["svals"][0] == {
             "Rate": 1000,
@@ -302,8 +303,8 @@ class TestServantSpecial:
             "ParamAddMaxCount": 10,
         }
 
-    def test_script_svt_SkillRankUp(self) -> None:
-        response = client.get("/nice/JP/servant/285")
+    async def test_script_svt_SkillRankUp(self) -> None:
+        response = await get_response("/nice/JP/servant/285")
         assert response.status_code == 200
         expected = {
             "767650": [],
@@ -312,20 +313,20 @@ class TestServantSpecial:
         }
         assert response.json()["script"]["SkillRankUp"] == expected
 
-    def test_script_STAR_HIGHER_Moriarty(self) -> None:
-        response = client.get("/nice/NA/skill/334552")
+    async def test_script_STAR_HIGHER_Moriarty(self) -> None:
+        response = await get_response("/nice/NA/skill/334552")
         assert response.status_code == 200
         assert response.json()["script"] == {
             "STAR_HIGHER": [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
         }
 
-    def test_script_followerVals_Be_Graceful(self) -> None:
-        response = client.get("/nice/NA/skill/991370")
+    async def test_script_followerVals_Be_Graceful(self) -> None:
+        response = await get_response("/nice/NA/skill/991370")
         assert response.status_code == 200
         assert response.json()["functions"][0]["followerVals"] == [{"RateCount": 150}]
 
-    def test_buff_script_relationId(self) -> None:
-        response = client.get("/nice/JP/buff/2585")
+    async def test_buff_script_relationId(self) -> None:
+        response = await get_response("/nice/JP/buff/2585")
         assert response.status_code == 200
         expected = {
             "atkSide": {
@@ -337,7 +338,7 @@ class TestServantSpecial:
         }
         assert response.json()["script"]["relationId"] == expected
 
-        response_2 = client.get("/nice/JP/buff/2576")
+        response_2 = await get_response("/nice/JP/buff/2576")
         assert response_2.status_code == 200
         expected_2 = {
             "atkSide": {},
@@ -350,19 +351,19 @@ class TestServantSpecial:
         }
         assert response_2.json()["script"]["relationId"] == expected_2
 
-    def test_buff_DamageRelease(self) -> None:
-        response = client.get("/nice/JP/buff/2935")
+    async def test_buff_DamageRelease(self) -> None:
+        response = await get_response("/nice/JP/buff/2935")
         assert response.status_code == 200
         assert response.json()["script"] == {"ReleaseText": "睡眠解除", "DamageRelease": 1}
 
-    def test_negative_trait(self) -> None:
-        response = client.get("/nice/JP/buff/2966")
+    async def test_negative_trait(self) -> None:
+        response = await get_response("/nice/JP/buff/2966")
         expected = {"id": 4101, "name": "aoeNP", "negative": True}
         assert response.status_code == 200
         assert response.json()["ckOpIndv"][0] == expected
 
-    def test_ascension_trait(self) -> None:
-        response = client.get("/nice/JP/servant/603700")
+    async def test_ascension_trait(self) -> None:
+        response = await get_response("/nice/JP/servant/603700")
         expected = {
             "ascension": {
                 "0": [
@@ -393,31 +394,31 @@ class TestServantSpecial:
         assert response.status_code == 200
         assert response.json()["ascensionAdd"]["individuality"] == expected
 
-    def test_servant_change(self) -> None:
-        response = client.get("/nice/NA/servant/184")
+    async def test_servant_change(self) -> None:
+        response = await get_response("/nice/NA/servant/184")
         assert response.status_code == 200
         assert response.json()["svtChange"][0]["name"] == "Archer of Inferno"
 
-    def test_story_charaFigure_form(self) -> None:
-        response = client.get("/nice/JP/servant/126").json()
+    async def test_story_charaFigure_form(self) -> None:
+        response = (await get_response("/nice/JP/servant/126")).json()
         assert "story" in response["extraAssets"]["charaFigureForm"]["1"]
         assert "story" in response["extraAssets"]["charaFigureForm"]["2"]
 
-    def test_image_assets(self) -> None:
-        response = client.get("/nice/JP/servant/203200").json()
-        assert response["extraAssets"]["image"]["story"]["0"].endswith(
+    async def test_image_assets(self) -> None:
+        response = await get_response("/nice/JP/servant/203200")
+        assert response.json()["extraAssets"]["image"]["story"]["0"].endswith(
             "Image/cut084_jnn/cut084_jnn.png"
         )
 
-    def test_war_banner(self) -> None:
-        war_oniland = client.get("/nice/NA/war/9050")
+    async def test_war_banner(self) -> None:
+        war_oniland = await get_response("/nice/NA/war/9050")
         assert war_oniland.status_code == 200
         assert "event_war_" in war_oniland.json()["banner"]
-        war_interlude = client.get("/nice/NA/war/1003")
+        war_interlude = await get_response("/nice/NA/war/1003")
         assert war_interlude.status_code == 200
         assert "chaldea_category_" in war_interlude.json()["banner"]
 
-    def test_shop_itemIds_0(self) -> None:
+    async def test_shop_itemIds_0(self) -> None:
         with engines[Region.NA].connect() as conn:
             fp_shop_item = get_nice_shop(Region.NA, event.get_mstShop_by_id(conn, 1))
             assert fp_shop_item.cost.item.name == "Friend Point"
@@ -427,13 +428,13 @@ class TestServantSpecial:
             )
             assert mp_shop_item.cost.item.name == "Mana Prism"
 
-    def test_skill_ai_id(self) -> None:
-        nice_skill = client.get("/nice/NA/skill/962219").json()
-        assert nice_skill["aiIds"]["field"] == [94031791]
+    async def test_skill_ai_id(self) -> None:
+        nice_skill = await get_response("/nice/NA/skill/962219")
+        assert nice_skill.json()["aiIds"]["field"] == [94031791]
 
-    def test_overwrite_script(self) -> None:
-        summer_okita = client.get("/nice/JP/servant/267?lang=en").json()
-        ascensionAdd = summer_okita["ascensionAdd"]
+    async def test_overwrite_script(self) -> None:
+        summer_okita = await get_response("/nice/JP/servant/267?lang=en")
+        ascensionAdd = summer_okita.json()["ascensionAdd"]
 
         overWriteServantName = ascensionAdd["overWriteServantName"]
         overWriteTDName = ascensionAdd["overWriteTDName"]
@@ -445,13 +446,16 @@ class TestServantSpecial:
             "JP/Servants/Commands/604000/604010.png"
         )
 
-    def test_charaGraphName(self) -> None:
-        miyu = client.get("/nice/NA/servant/236").json()
-        for i, image_url in miyu["extraAssets"]["charaGraphName"]["ascension"].items():
+    async def test_charaGraphName(self) -> None:
+        miyu = await get_response("/nice/NA/servant/236")
+        for i, image_url in miyu.json()["extraAssets"]["charaGraphName"][
+            "ascension"
+        ].items():
             assert image_url.endswith(f"NA/CharaGraph/504100/504100name@{i}.png")
 
-    def test_event_point_buff(self) -> None:
-        oniland_point_buff = client.get("/nice/NA/event/80119").json()["pointBuffs"][1]
+    async def test_event_point_buff(self) -> None:
+        oniland = await get_response("/nice/NA/event/80119")
+        oniland_point_buff = oniland.json()["pointBuffs"][1]
         oniland_point_buff.pop("detail")
         assert oniland_point_buff["icon"].endswith("NA/Items/94030201.png")
         oniland_point_buff.pop("icon")
@@ -469,20 +473,20 @@ class TestServantSpecial:
             "value": 1400,
         }
 
-    def test_quest_phase_detail_override(self) -> None:
-        story_quest = client.get("nice/JP/quest/94034001/2").json()
-        assert story_quest["consume"] == 0
+    async def test_quest_phase_detail_override(self) -> None:
+        story_quest = await get_response("nice/JP/quest/94034001/2")
+        assert story_quest.json()["consume"] == 0
 
-    def test_latest_story_war_banner(self) -> None:
-        latest_story_war = client.get("nice/JP/war/308").json()
-        assert "questboard_cap_closed" in latest_story_war["banner"]
+    async def test_latest_story_war_banner(self) -> None:
+        latest_story_war = await get_response("nice/JP/war/308")
+        assert "questboard_cap_closed" in latest_story_war.json()["banner"]
 
-    def test_enemy_script(self) -> None:
-        murasaki_valentine_cq = client.get("nice/NA/quest/94033599/1").json()
-        first_stage_enemies = murasaki_valentine_cq["stages"][0]["enemies"]
+    async def test_enemy_script(self) -> None:
+        murasaki_valentine_cq = await get_response("nice/NA/quest/94033599/1")
+        first_stage_enemies = murasaki_valentine_cq.json()["stages"][0]["enemies"]
         assert first_stage_enemies[0]["enemyScript"]["call"] == [4]
         assert first_stage_enemies[5]["enemyScript"]["leader"] is True
 
-    def test_enemy_isAddition_skipped(self) -> None:
-        weakness_ear = client.get("/nice/NA/quest/94034116/1").json()
+    async def test_enemy_isAddition_skipped(self) -> None:
+        weakness_ear = (await get_response("/nice/NA/quest/94034116/1")).json()
         assert [len(stage["enemies"]) for stage in weakness_ear["stages"]] == [3, 3, 3]

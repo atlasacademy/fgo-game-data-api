@@ -25,11 +25,11 @@ pylint = "^2.7.2"
 mypy = "^0.812"
 black = "^20.8b1"
 pytest-xdist = "^2.1.0"
-requests = "^2.25.1"
 coverage = "^5.5"
 fuzzywuzzy-stubs = "^0.0.1"
 isort = "^5.7.0"
 sqlalchemy-stubs = {git = "https://github.com/squaresmile/sqlalchemy-stubs.git"}
+pytest-asyncio = "^0.14.0"
 
 [tool.isort]
 line_length = 88

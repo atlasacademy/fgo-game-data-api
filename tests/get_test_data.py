@@ -1,27 +1,25 @@
 import argparse
+import asyncio
 
-from fastapi.testclient import TestClient
-
-from app.main import app
+import aiofiles
 
 from .test_basic import test_cases_dict as test_basic_data
 from .test_nice import test_cases_dict as test_nice_data
 from .test_raw import test_cases_dict as test_raw_data
-from .utils import parent_folder
+from .utils import get_response, parent_folder
 
 
-client = TestClient(app)
-
-
-def save_test_data(endpoint: str, query: str, folder: str, file_name: str) -> None:
+async def save_test_data(
+    endpoint: str, query: str, folder: str, file_name: str
+) -> None:
     uri = f"/{endpoint}/{query}"
     print("Getting " + uri)
-    data = client.get(uri).content
-    with open(parent_folder / folder / f"{file_name}.json", "wb") as fp:
-        fp.write(data)
+    data = await get_response(uri)
+    async with aiofiles.open(parent_folder / folder / f"{file_name}.json", "wb") as fp:
+        await fp.write(data.content)
 
 
-def main(
+async def main(
     get_raw: bool = False, get_nice: bool = False, get_basic: bool = False
 ) -> None:
     print("Saving test data ...")
@@ -35,7 +33,7 @@ def main(
     ):
         if to_download:
             for query, file_name in query_data.values():
-                save_test_data(endpoint, query, folder, file_name)
+                await save_test_data(endpoint, query, folder, file_name)
 
 
 if __name__ == "__main__":
@@ -64,4 +62,4 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    main(args.raw, args.nice, args.basic)
+    asyncio.run(main(args.raw, args.nice, args.basic))

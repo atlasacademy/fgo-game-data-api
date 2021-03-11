@@ -1,13 +1,7 @@
 # pylint: disable=R0201
 import pytest
-from fastapi.testclient import TestClient
 
-from app.main import app
-
-from .utils import get_response_data
-
-
-client = TestClient(app)
+from .utils import get_response, get_response_data
 
 
 test_cases_dict: dict[str, tuple[str, str]] = {
@@ -38,9 +32,10 @@ test_cases_dict: dict[str, tuple[str, str]] = {
 test_cases = [pytest.param(*value, id=key) for key, value in test_cases_dict.items()]
 
 
+@pytest.mark.asyncio
 @pytest.mark.parametrize("query,result", test_cases)
-def test_basic(query: str, result: str) -> None:
-    response = client.get(f"/basic/{query}")
+async def test_basic(query: str, result: str) -> None:
+    response = await get_response(f"/basic/{query}")
     assert response.status_code == 200
     assert response.json() == get_response_data("test_data_basic", result)
 
@@ -63,59 +58,63 @@ cases_404_dict = {
 cases_404 = [pytest.param(key, value, id=key) for key, value in cases_404_dict.items()]
 
 
+@pytest.mark.asyncio
 @pytest.mark.parametrize("endpoint,item_id", cases_404)
-def test_404_basic(endpoint: str, item_id: str) -> None:
-    response = client.get(f"/basic/JP/{endpoint}/{item_id}")
+async def test_404_basic(endpoint: str, item_id: str) -> None:
+    response = await get_response(f"/basic/JP/{endpoint}/{item_id}")
     assert response.status_code == 404
     assert response.json()["detail"][-9:] == "not found"
 
 
+@pytest.mark.asyncio
 class TestBasicSpecial:
-    def test_NA_not_integer(self) -> None:
-        response = client.get("/basic/NA/servant/lkji")
+    async def test_NA_not_integer(self) -> None:
+        response = await get_response("/basic/NA/servant/lkji")
         assert response.status_code == 422
 
-    def test_func_addState_no_buff(self) -> None:
-        response = client.get("/basic/JP/function/4086")
+    async def test_func_addState_no_buff(self) -> None:
+        response = await get_response("/basic/JP/function/4086")
         assert response.status_code == 200
 
-    def test_skill_reverse_passive(self) -> None:
-        response = client.get("/basic/NA/skill/30650?reverse=True")
+    async def test_skill_reverse_passive(self) -> None:
+        response = await get_response("/basic/NA/skill/30650?reverse=True")
         reverse_servants: set[int] = {
             servant["id"] for servant in response.json()["reverse"]["basic"]["servant"]
         }
         assert response.status_code == 200
         assert reverse_servants == {201200, 401800, 601000}
 
-    def test_JP_English_name(self) -> None:
-        response = client.get("/basic/JP/servant/304300?lang=en")
+    async def test_JP_English_name(self) -> None:
+        response = await get_response("/basic/JP/servant/304300?lang=en")
         assert response.status_code == 200
         assert response.json()["name"] == "Elice Utsumi"
 
-    def test_JP_skill_English_name(self) -> None:
-        response = client.get("/basic/JP/skill/991604?lang=en")
+    async def test_JP_skill_English_name(self) -> None:
+        response = await get_response("/basic/JP/skill/991604?lang=en")
         assert response.status_code == 200
         assert response.json()["name"] == "Paradox Ace Killer"
 
-    def test_JP_CC_English_name(self) -> None:
-        response = client.get("/basic/JP/CC/8400240?lang=en")
+    async def test_JP_CC_English_name(self) -> None:
+        response = await get_response("/basic/JP/CC/8400240?lang=en")
         assert response.status_code == 200
         assert response.json()["name"] == "The Holy Night's Aurora"
 
-    def test_JP_MC_English_name(self) -> None:
-        response = client.get("/basic/JP/MC/60?lang=en")
+    async def test_JP_MC_English_name(self) -> None:
+        response = await get_response("/basic/JP/MC/60?lang=en")
         assert response.status_code == 200
         assert response.json()["name"] == "Royal Brand"
 
-    def test_buff_reverse_skillNp(self) -> None:
-        response = client.get("/basic/NA/buff/203?reverse=True&reverseDepth=skillNp")
+    async def test_buff_reverse_skillNp(self) -> None:
+        response = await get_response(
+            "/basic/NA/buff/203?reverse=True&reverseDepth=skillNp"
+        )
         assert response.status_code == 200
         assert response.json()["reverse"]["basic"]["function"][1]["reverse"]["basic"][
             "skill"
         ]
 
-    def test_function_reverse_servant(self) -> None:
-        response = client.get(
+    async def test_function_reverse_servant(self) -> None:
+        response = await get_response(
             "/basic/NA/function/102?reverse=True&reverseDepth=servant"
         )
         assert response.status_code == 200

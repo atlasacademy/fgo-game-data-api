@@ -2,49 +2,52 @@
 from pathlib import Path
 
 import pytest
-from fastapi.testclient import TestClient
+from httpx import AsyncClient
 
 from app.config import Settings
 from app.main import app
 
+from .utils import get_response
 
-client = TestClient(app)
+
 file_path = Path(__file__).resolve().parents[1]
 settings = Settings()
 
 
+@pytest.mark.asyncio
 class TestMain:
-    def test_home_redirect(self) -> None:
-        response = client.get("/", allow_redirects=False)
+    async def test_home_redirect(self) -> None:
+        async with AsyncClient(app=app, base_url="http://test") as ac:
+            response = await ac.get("/", allow_redirects=False)
         assert response.status_code == 307
         assert response.headers["Location"] == "/rapidoc"
 
-    def test_openapi_gen(self) -> None:
-        response = client.get(str(app.openapi_url))
+    async def test_openapi_gen(self) -> None:
+        response = await get_response(str(app.openapi_url))
         assert response.status_code == 200
 
-    def test_openapi_gen_cache(self) -> None:
-        response = client.get(str(app.openapi_url))
+    async def test_openapi_gen_cache(self) -> None:
+        response = await get_response(str(app.openapi_url))
         assert response.status_code == 200
 
-    def test_docs_gen(self) -> None:
-        response = client.get("/docs")
+    async def test_docs_gen(self) -> None:
+        response = await get_response("/docs")
         assert response.status_code == 200
 
-    def test_rapidoc_gen(self) -> None:
-        response = client.get("/rapidoc")
+    async def test_rapidoc_gen(self) -> None:
+        response = await get_response("/rapidoc")
         assert response.status_code == 200
 
-    def test_JP_export_link(self) -> None:
-        response = client.get("/export/JP/NiceCard.json")
+    async def test_JP_export_link(self) -> None:
+        response = await get_response("/export/JP/NiceCard.json")
         assert response.status_code == 200
 
-    def test_NA_export_link(self) -> None:
-        response = client.get("/export/NA/NiceClassAttackRate.json")
+    async def test_NA_export_link(self) -> None:
+        response = await get_response("/export/NA/NiceClassAttackRate.json")
         assert response.status_code == 200
 
-    def test_info(self) -> None:
-        response = client.get("/info").json()
+    async def test_info(self) -> None:
+        response = (await get_response("/info")).json()
         assert len(response["NA"]["hash"]) == 6
         assert response["JP"]["timestamp"] > 1594450000
 
@@ -52,9 +55,9 @@ class TestMain:
         settings.github_webhook_secret.get_secret_value() == "",
         reason="Secret path not set",
     )
-    def test_secret_info(self) -> None:
+    async def test_secret_info(self) -> None:
         info_path = f"/{settings.github_webhook_secret.get_secret_value()}/info"
-        response = client.get(info_path)
+        response = await get_response(info_path)
         assert response.status_code == 200
         response_data = response.json()
         assert "game_data" in response_data

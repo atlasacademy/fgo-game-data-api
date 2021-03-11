@@ -1,17 +1,12 @@
 # pylint: disable=R0201
 import pytest
-from fastapi.testclient import TestClient
 
-from app.main import app
 from app.schemas.enums import FUNC_VALS_NOT_BUFF
 
-from .utils import get_response_data
+from .utils import get_response, get_response_data
 
 
 DATA_FOLDER = "test_data_raw"
-
-
-client = TestClient(app)
 
 
 test_cases_dict: dict[str, tuple[str, str]] = {
@@ -76,9 +71,10 @@ test_cases_dict: dict[str, tuple[str, str]] = {
 test_cases = [pytest.param(*value, id=key) for key, value in test_cases_dict.items()]
 
 
+@pytest.mark.asyncio
 @pytest.mark.parametrize("query,result", test_cases)
-def test_raw(query: str, result: str) -> None:
-    response = client.get(f"/raw/{query}")
+async def test_raw(query: str, result: str) -> None:
+    response = await get_response(f"/raw/{query}")
     assert response.status_code == 200
     assert response.json() == get_response_data(DATA_FOLDER, result)
 
@@ -106,9 +102,10 @@ cases_404_dict = {
 cases_404 = [pytest.param(key, value, id=key) for key, value in cases_404_dict.items()]
 
 
+@pytest.mark.asyncio
 @pytest.mark.parametrize("endpoint,item_id", cases_404)
-def test_404_raw(endpoint: str, item_id: str) -> None:
-    response = client.get(f"/raw/JP/{endpoint}/{item_id}")
+async def test_404_raw(endpoint: str, item_id: str) -> None:
+    response = await get_response(f"/raw/JP/{endpoint}/{item_id}")
     assert response.status_code == 404
     assert response.json()["detail"][-9:] == "not found"
 
@@ -127,22 +124,24 @@ cases_immutable = [
 
 
 # These are not really needed anymore since raw data uses the Pydantic objects instead of dicts now
+@pytest.mark.asyncio
 @pytest.mark.parametrize("endpoint,item_id,result", cases_immutable)
-def test_immutable_master(endpoint: str, item_id: str, result: str) -> None:
-    client.get(f"/raw/NA/{endpoint}/{item_id}")
-    client.get(f"/raw/NA/{endpoint}/{item_id}?expand=True")
-    response = client.get(f"/raw/NA/{endpoint}/{item_id}")
+async def test_immutable_master(endpoint: str, item_id: str, result: str) -> None:
+    await get_response(f"/raw/NA/{endpoint}/{item_id}")
+    await get_response(f"/raw/NA/{endpoint}/{item_id}?expand=True")
+    response = await get_response(f"/raw/NA/{endpoint}/{item_id}")
     assert response.status_code == 200
     assert response.json() == get_response_data(DATA_FOLDER, result)
 
 
+@pytest.mark.asyncio
 class TestServantSpecial:
-    def test_NA_not_integer(self) -> None:
-        response = client.get("/raw/NA/servant/asdf")
+    async def test_NA_not_integer(self) -> None:
+        response = await get_response("/raw/NA/servant/asdf")
         assert response.status_code == 422
 
-    def test_skill_reverse_passive(self) -> None:
-        response = client.get("/raw/NA/skill/320650?reverse=True")
+    async def test_skill_reverse_passive(self) -> None:
+        response = await get_response("/raw/NA/skill/320650?reverse=True")
         reverse_servants = {
             servant["mstSvt"]["id"]
             for servant in response.json()["reverse"]["raw"]["servant"]
@@ -150,41 +149,45 @@ class TestServantSpecial:
         assert response.status_code == 200
         assert reverse_servants == {500800}
 
-    def test_skill_reverse_CC(self) -> None:
-        response = client.get("/raw/JP/skill/991970?reverse=True")
+    async def test_skill_reverse_CC(self) -> None:
+        response = await get_response("/raw/JP/skill/991970?reverse=True")
         reverse_ccs = {
             cc["mstCommandCode"]["id"] for cc in response.json()["reverse"]["raw"]["CC"]
         }
         assert response.status_code == 200
         assert reverse_ccs == {8400500}
 
-    def test_buff_reverse_skillNp(self) -> None:
-        response = client.get("/raw/NA/buff/202?reverse=True&reverseDepth=skillNp")
+    async def test_buff_reverse_skillNp(self) -> None:
+        response = await get_response(
+            "/raw/NA/buff/202?reverse=True&reverseDepth=skillNp"
+        )
         assert response.status_code == 200
         assert response.json()["reverse"]["raw"]["function"][0]["reverse"]["raw"][
             "skill"
         ]
 
-    def test_function_reverse_servant(self) -> None:
-        response = client.get("/raw/NA/function/3410?reverse=True&reverseDepth=servant")
+    async def test_function_reverse_servant(self) -> None:
+        response = await get_response(
+            "/raw/NA/function/3410?reverse=True&reverseDepth=servant"
+        )
         assert response.status_code == 200
         assert response.json()["reverse"]["raw"]["skill"][0]["reverse"]["raw"][
             "servant"
         ]
 
-    def test_buff_reverse_function_vals_actual_buff(self) -> None:
-        response = client.get("/raw/NA/buff/101?reverse=True")
+    async def test_buff_reverse_function_vals_actual_buff(self) -> None:
+        response = await get_response("/raw/NA/buff/101?reverse=True")
         assert response.status_code == 200
         assert {
             function["mstFunc"]["funcType"]
             for function in response.json()["reverse"]["raw"]["function"]
         }.isdisjoint(FUNC_VALS_NOT_BUFF)
 
-    def test_hyde_voice_id(self) -> None:
-        response = client.get("/raw/NA/servant/600700?lore=true")
+    async def test_hyde_voice_id(self) -> None:
+        response = await get_response("/raw/NA/servant/600700?lore=true")
         assert response.status_code == 200
         assert any(voice["id"] == 600710 for voice in response.json()["mstSvtVoice"])
 
-    def test_war_spots_from_multiple_maps(self) -> None:
-        response = client.get("/raw/NA/war/9033").json()
-        assert {spot["warId"] for spot in response["mstSpot"]} == {9033, 9034}
+    async def test_war_spots_from_multiple_maps(self) -> None:
+        response = await get_response("/raw/NA/war/9033")
+        assert {spot["warId"] for spot in response.json()["mstSpot"]} == {9033, 9034}
