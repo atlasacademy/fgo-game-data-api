@@ -1251,9 +1251,15 @@ class QuestEnemy(BaseModelORJson):
     misc: EnemyMisc
 
 
+class FieldAi(BaseModelORJson):
+    day: int
+    id: int
+
+
 class NiceStage(BaseModelORJson):
     wave: int
     bgm: NiceBgm
+    fieldAis: list[FieldAi] = []
     enemies: list[QuestEnemy] = []
 
 

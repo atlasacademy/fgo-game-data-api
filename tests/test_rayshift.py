@@ -1,12 +1,13 @@
 # pylint: disable=R0201,R0904
 import asyncio
+
 import pytest
-from sqlalchemy.sql import delete, select, and_
+from sqlalchemy.sql import and_, delete, select
 
 from app.db.engine import engines
+from app.db.load import load_rayshift_quest_list
 from app.models.rayshift import rayshiftQuest
 from app.schemas.common import Region
-from app.db.load import load_rayshift_quest_list
 
 from .utils import get_response
 

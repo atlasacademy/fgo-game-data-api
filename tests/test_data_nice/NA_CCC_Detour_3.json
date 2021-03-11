@@ -47,6 +47,7 @@
         "name": "moon salto (II)\n-FGO-",
         "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_BATTLE_52/BGM_BATTLE_52.mp3"
       },
+      "fieldAis": [],
       "enemies": [
         {
           "id": 1,
@@ -344,6 +345,7 @@
         "name": "Stormfang\n-FATAL BATTLE 3-",
         "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_BATTLE_46/BGM_BATTLE_46.mp3"
       },
+      "fieldAis": [],
       "enemies": [
         {
           "id": 2,

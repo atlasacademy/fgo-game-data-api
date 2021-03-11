@@ -490,3 +490,10 @@ class TestServantSpecial:
     async def test_enemy_isAddition_skipped(self) -> None:
         weakness_ear = (await get_response("/nice/NA/quest/94034116/1")).json()
         assert [len(stage["enemies"]) for stage in weakness_ear["stages"]] == [3, 3, 3]
+
+    async def test_field_ai_stage(self) -> None:
+        tiamat_battle = await get_response("/nice/NA/quest/1000721/3")
+        assert tiamat_battle.json()["stages"][0]["fieldAis"][0] == {
+            "day": 0,
+            "id": 107050,
+        }
