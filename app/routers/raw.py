@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, Response
 from sqlalchemy.engine import Connection
 
+from ..config import Settings
 from ..core import raw, search
 from ..data.gamedata import masters
 from ..schemas.common import Region, ReverseDepth
@@ -34,6 +35,7 @@ from .deps import get_db
 from .utils import get_error_code, item_response, list_response
 
 
+settings = Settings()
 router = APIRouter(prefix="/raw", tags=["raw"])
 
 
@@ -543,7 +545,9 @@ async def get_war(
     Get the war data from the given war ID
     """
     if war_id in masters[region].mstWarId:
-        return item_response(raw.get_war_entity(conn, region, war_id))
+        war_response = item_response(raw.get_war_entity(conn, region, war_id))
+        war_response.headers["Bloom-Response-TTL"] = str(settings.quest_cache_length)
+        return war_response
     else:
         raise HTTPException(status_code=404, detail="War not found")
 
@@ -564,8 +568,9 @@ async def get_quest_phase(
     """
     Get the quest phase data from the given quest ID and phase number
     """
-    quest_entity = raw.get_quest_phase_entity(conn, quest_id, phase)
-    return item_response(quest_entity)
+    quest_response = item_response(raw.get_quest_phase_entity(conn, quest_id, phase))
+    quest_response.headers["Bloom-Response-TTL"] = str(settings.quest_cache_length)
+    return quest_response
 
 
 @router.get(
@@ -583,8 +588,9 @@ async def get_quest(
     """
     Get the quest data from the given quest ID
     """
-    quest_entity = raw.get_quest_entity(conn, quest_id)
-    return item_response(quest_entity)
+    quest_response = item_response(raw.get_quest_entity(conn, quest_id))
+    quest_response.headers["Bloom-Response-TTL"] = str(settings.quest_cache_length)
+    return quest_response
 
 
 @router.get(

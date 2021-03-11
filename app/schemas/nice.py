@@ -1135,6 +1135,11 @@ class NiceQuest(BaseModelORJson):
     gifts: list[NiceGift]
     releaseConditions: list[NiceQuestRelease]
     phases: list[int]
+    phasesWithEnemies: list[int] = Field(
+        [],
+        title="List of phases with enemies data from Rayshift",
+        description="List of phases with enemies data from Rayshift.",
+    )
     noticeAt: int
     openedAt: int
     closedAt: int

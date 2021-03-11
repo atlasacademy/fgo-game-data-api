@@ -54,6 +54,7 @@
     }
   ],
   "phases": [1],
+  "phasesWithEnemies": [],
   "mstQuestPhase": {
     "classIds": [2, 7],
     "individuality": [2392, 94000075],

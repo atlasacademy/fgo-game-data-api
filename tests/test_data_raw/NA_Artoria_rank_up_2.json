@@ -53,5 +53,6 @@
       "imagePriority": 10000
     }
   ],
-  "phases": [1, 2, 3]
+  "phases": [1, 2, 3],
+  "phasesWithEnemies": []
 }

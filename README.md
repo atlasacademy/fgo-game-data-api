@@ -14,6 +14,7 @@ HTTP API for FGO game data. Transform the raw game data into something a bit mor
 - [Helper scripts](#helper-scripts)
   - [`extract_enums.py`](#extract_enumspy)
   - [`update_ce_translation.py`](#update_ce_translationpy)
+  - [`load_rayshift_quest_list.py`](#load_rayshift_quest_listpy)
   - [`get_test_data.py`](#get_test_datapy)
 
 ### Environment variables
@@ -30,6 +31,7 @@ List of environment variables for the main app.
 - `ASSET_URL`: defaults to https://assets.atlasacademy.io/GameData/. Base URL for the game assets.
 - `RAYSHIFT_API_KEY`: default to `None`. Rayshift.io API key to pull quest data.
 - `RAYSHIFT_API_URL`: default to https://rayshift.io/api/v1/. Rayshift.io API URL.
+- `QUEST_CACHE_LENGTH`: default to `3600`. How long to cache the quest and war endpoints in seconds. Because the rayshift data is updated continously, web and quest endpoints have lower cache time.
 - `WRITE_POSTGRES_DATA`: default to `True`. Overwrite the data in PostgreSQL when importing.
 - `OPENAPI_URL`: default to `None`. Set the server URL in the openapi schema export.
 - `EXPORT_ALL_NICE`: default to `False`. If set to `True`, at start the app will generate nice data of all servant and CE and serve them at the `/export` endpoint. It's recommended to serve the files in the `/export` folder using nginx or equivalent webserver to lighten the load on the API server.
@@ -50,6 +52,7 @@ JP_GAMEDATA="/path/to/gamedata/master/JP"
 NA_POSTGRESDSN="postgresql://username:password@localhost:5432/fgoapiNA"
 JP_POSTGRESDSN="postgresql://username:password@localhost:5432/fgoapiJP"
 RAYSHIFT_API_KEY="eca334a9-3289-4ad7-9b92-1ec2bbc3fc19"
+QUEST_CACHE_LENGTH=3600
 WRITE_POSTGRES_DATA=True
 ASSET_URL="https://example.com/assets/"
 OPENAPI_URL="https://api.atlasacademy.io"
@@ -152,6 +155,14 @@ Update `equip_names.json` with new NA CEs translations. `--jp-master` and `--na-
 
 ```
 python scripts/update_ce_translation.py --jp-master jp_master_path --na-master na_master_path
+```
+
+#### [`load_rayshift_quest_list.py`](scripts/load_rayshift_quest_list.py)
+
+Update the `rayshiftQuest` tables with the list of available quests from Rayshift. This script should be run periodically to update the `rayshiftQuest` list.
+
+```
+python -m scripts.load_rayshift_quest_list
 ```
 
 #### [`get_test_data.py`](tests/get_test_data.py)

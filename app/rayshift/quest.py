@@ -10,6 +10,8 @@ from ..schemas.common import Region
 from ..schemas.rayshift import (
     BaseRayshiftResponse,
     QuestDetail,
+    QuestList,
+    QuestListRayshiftResponse,
     QuestRayshiftResponse,
     QuestResponse,
 )
@@ -61,3 +63,16 @@ async def get_quest_detail(
             return next(iter(quest_response.questDetails.values()))
 
         return None
+
+
+def get_all_quest_lists(region: Region) -> list[QuestList]:
+    if not settings.rayshift_api_key:  # pragma: no cover
+        return []
+
+    params: dict[str, Union[str, int]] = {
+        "apiKey": settings.rayshift_api_key,
+        "region": REGION_ENUM[region],
+    }
+    r = httpx.get(f"{QUEST_ENDPOINT}/list", params=params)
+
+    return QuestListRayshiftResponse.parse_raw(r.content).response.quests

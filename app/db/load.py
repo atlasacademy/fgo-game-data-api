@@ -10,9 +10,11 @@ from sqlalchemy.engine import Connection
 from ..config import logger
 from ..models.raw import TABLES_TO_BE_LOADED, TABLES_WITH_PK, mstSubtitle
 from ..models.rayshift import rayshiftQuest
+from ..rayshift.quest import get_all_quest_lists
 from ..schemas.common import Region
 from ..schemas.raw import get_subtitle_svtId
 from .engine import engines
+from .helpers.rayshift import insert_rayshift_quest_list
 
 
 def recreate_table(conn: Connection, table: Table) -> None:  # pragma: no cover
@@ -44,6 +46,7 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
         for table in TABLES_WITH_PK:
             table_json = master_folder / f"{table.name}.json"
             with engine.begin() as conn:
+                # TODO: Check the table schema if it's different and recreate the table if needed
                 table.create(conn, checkfirst=True)
                 if table_json.exists():
                     with open(table_json, "rb") as fp:
@@ -94,3 +97,18 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
 
     db_loading_time = time.perf_counter() - start_loading_time
     logger.info(f"Loaded db in {db_loading_time:.2f}s.")
+
+
+def load_rayshift_quest_list(region: Region) -> None:
+    print(f"Loading {region} rayshift data cache …")
+    start_loading_time = time.perf_counter()
+
+    quest_list = get_all_quest_lists(region)
+
+    print(f"Inserting {region} rayshift data cache into db …")
+    with engines[region].begin() as conn:
+        rayshiftQuest.create(conn, checkfirst=True)
+        insert_rayshift_quest_list(conn, quest_list)
+
+    rayshift_load_time = time.perf_counter() - start_loading_time
+    print(f"Loaded {region} rayshift {rayshift_load_time:.2f}s.")

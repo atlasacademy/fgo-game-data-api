@@ -11,6 +11,7 @@ from ...models.raw import (
     mstQuestRelease,
     mstStage,
 )
+from ...models.rayshift import rayshiftQuest
 from ...schemas.raw import QuestEntity, QuestPhaseEntity
 from .utils import sql_jsonb_agg
 
@@ -21,7 +22,13 @@ JOINED_QUEST_TABLES = (
     )
     .outerjoin(mstQuestRelease, mstQuestRelease.c.questId == mstQuest.c.id)
     .outerjoin(mstQuestPhase, mstQuestPhase.c.questId == mstQuest.c.id)
+    .outerjoin(rayshiftQuest, rayshiftQuest.c.questId == mstQuest.c.id)
 )
+
+
+phasesWithEnemies = func.to_jsonb(
+    func.array_remove(func.array_agg(rayshiftQuest.c.phase.distinct()), None)
+).label("phasesWithEnemies")
 
 
 SELECT_QUEST_ENTITY = [
@@ -29,6 +36,7 @@ SELECT_QUEST_ENTITY = [
     sql_jsonb_agg(mstQuestConsumeItem),
     sql_jsonb_agg(mstQuestRelease),
     func.jsonb_agg(mstQuestPhase.c.phase.distinct()).label("phases"),
+    phasesWithEnemies,
 ]
 
 
@@ -90,6 +98,7 @@ def get_quest_phase_entity(
         sql_jsonb_agg(mstQuestConsumeItem),
         sql_jsonb_agg(mstQuestRelease),
         all_phases_cte.c.phases,
+        phasesWithEnemies,
         func.to_jsonb(mstQuestPhase.table_valued()).label(mstQuestPhase.name),
         func.to_jsonb(mstQuestPhaseDetail.table_valued()).label(
             mstQuestPhaseDetail.name

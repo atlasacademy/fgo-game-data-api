@@ -156,6 +156,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1],
+          "phasesWithEnemies": [],
           "noticeAt": 1570680000,
           "openedAt": 1570680000,
           "closedAt": 1893456000
@@ -195,6 +196,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2],
+          "phasesWithEnemies": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -227,6 +229,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
+          "phasesWithEnemies": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -286,6 +289,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2],
+          "phasesWithEnemies": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -325,6 +329,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3, 4],
+          "phasesWithEnemies": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -377,6 +382,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
+          "phasesWithEnemies": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -436,6 +442,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2],
+          "phasesWithEnemies": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -475,6 +482,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2],
+          "phasesWithEnemies": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -507,6 +515,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
+          "phasesWithEnemies": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -566,6 +575,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3, 4],
+          "phasesWithEnemies": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -605,6 +615,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3, 4],
+          "phasesWithEnemies": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -644,6 +655,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1],
+          "phasesWithEnemies": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -676,6 +688,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2],
+          "phasesWithEnemies": [],
           "noticeAt": 1570680000,
           "openedAt": 1570680000,
           "closedAt": 1893456000
@@ -708,6 +721,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
+          "phasesWithEnemies": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -779,6 +793,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
+          "phasesWithEnemies": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -838,6 +853,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
+          "phasesWithEnemies": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -877,6 +893,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3, 4],
+          "phasesWithEnemies": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -936,6 +953,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
+          "phasesWithEnemies": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -995,6 +1013,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
+          "phasesWithEnemies": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1034,6 +1053,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3, 4],
+          "phasesWithEnemies": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1095,6 +1115,7 @@
             }
           ],
           "phases": [1, 2],
+          "phasesWithEnemies": [],
           "noticeAt": 1509645600,
           "openedAt": 1509645600,
           "closedAt": 1893456000
@@ -1127,6 +1148,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
+          "phasesWithEnemies": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1159,6 +1181,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
+          "phasesWithEnemies": [],
           "noticeAt": 1613534400,
           "openedAt": 1613534400,
           "closedAt": 1893456000
@@ -1218,6 +1241,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3, 4, 5],
+          "phasesWithEnemies": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1270,6 +1294,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
+          "phasesWithEnemies": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1329,6 +1354,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3, 4, 5, 6],
+          "phasesWithEnemies": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1419,6 +1445,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
+          "phasesWithEnemies": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1463,6 +1490,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1],
+          "phasesWithEnemies": [],
           "noticeAt": 1570680000,
           "openedAt": 1570680000,
           "closedAt": 1893456000

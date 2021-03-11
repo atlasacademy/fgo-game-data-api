@@ -33,6 +33,7 @@ class Settings(BaseSettings):
     jp_postgresdsn: PostgresDsn
     rayshift_api_key: Optional[str] = None
     rayshift_api_url: HttpUrl = parse_obj_as(HttpUrl, "https://rayshift.io/api/v1/")
+    quest_cache_length: int = 3600
     write_postgres_data: bool = True
     asset_url: HttpUrl = parse_obj_as(
         HttpUrl, "https://assets.atlasacademy.io/GameData/"

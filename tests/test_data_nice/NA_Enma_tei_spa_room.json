@@ -36,6 +36,7 @@
     { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
   ],
   "phases": [1],
+  "phasesWithEnemies": [],
   "noticeAt": 1609488000,
   "openedAt": 1609488000,
   "closedAt": 1610769599

@@ -10,5 +10,5 @@ rayshiftQuest = Table(
     Column("queryId", Integer, primary_key=True),
     Column("questId", Integer, index=True),
     Column("phase", Integer, index=True),
-    Column("questDetail", JSONB),
+    Column("questDetail", JSONB, nullable=True),
 )

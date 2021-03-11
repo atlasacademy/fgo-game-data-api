@@ -628,7 +628,9 @@ async def get_war(
     Get the nice war data from the given war ID
     """
     if war_id in masters[region].mstWarId:
-        return item_response(war.get_nice_war(conn, region, war_id))
+        war_response = item_response(war.get_nice_war(conn, region, war_id))
+        war_response.headers["Bloom-Response-TTL"] = str(settings.quest_cache_length)
+        return war_response
     else:
         raise HTTPException(status_code=404, detail="War not found")
 
@@ -654,9 +656,11 @@ async def get_quest_phase(
     conn: Connection = Depends(get_db_transaction),
     lang: Language = Depends(language_parameter),
 ) -> Response:
-    return item_response(
+    quest_response = item_response(
         await quest.get_nice_quest_phase(conn, region, quest_id, phase, lang)
     )
+    quest_response.headers["Bloom-Response-TTL"] = str(settings.quest_cache_length)
+    return quest_response
 
 
 @router.get(
@@ -673,7 +677,9 @@ async def get_quest(
     """
     Get the nice quest data from the given quest ID
     """
-    return item_response(quest.get_nice_quest_alone(conn, region, quest_id))
+    quest_response = item_response(quest.get_nice_quest_alone(conn, region, quest_id))
+    quest_response.headers["Bloom-Response-TTL"] = str(settings.quest_cache_length)
+    return quest_response
 
 
 @router.get(

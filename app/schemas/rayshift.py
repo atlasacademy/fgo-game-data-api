@@ -137,3 +137,20 @@ class QuestResponse(BaseModelORJson):
 
 class QuestRayshiftResponse(BaseRayshiftResponse):
     response: QuestResponse
+
+
+class QuestList(BaseModelORJson):
+    questId: int
+    questPhase: int
+    count: int
+    lastUpdated: datetime
+    queryIds: list[int]
+    region: int
+
+
+class QuestListResponse(BaseModelORJson):
+    quests: list[QuestList]
+
+
+class QuestListRayshiftResponse(BaseRayshiftResponse):
+    response: QuestListResponse
