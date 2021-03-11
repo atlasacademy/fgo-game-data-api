@@ -34,7 +34,9 @@ class Settings(BaseSettings):
     rayshift_api_key: Optional[str] = None
     rayshift_api_url: HttpUrl = parse_obj_as(HttpUrl, "https://rayshift.io/api/v1/")
     write_postgres_data: bool = True
-    asset_url: HttpUrl
+    asset_url: HttpUrl = parse_obj_as(
+        HttpUrl, "https://assets.atlasacademy.io/GameData/"
+    )
     openapi_url: Optional[HttpUrl] = None
     export_all_nice: bool = False
     documentation_all_nice: bool = False

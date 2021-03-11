@@ -21,5 +21,6 @@ def get_mstWarAdd(conn: Connection, war_ids: Iterable[int]) -> list[MstWarAdd]:
         .order_by(mstWarAdd.c.warId, mstWarAdd.c.type)
     )
     return [
-        MstWarAdd.from_orm(spot) for spot in conn.execute(mstWarAdd_stmt).fetchall()
+        MstWarAdd.from_orm(war_add)
+        for war_add in conn.execute(mstWarAdd_stmt).fetchall()
     ]

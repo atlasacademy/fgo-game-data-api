@@ -18,16 +18,16 @@ HTTP API for FGO game data. Transform the raw game data into something a bit mor
 
 ### Environment variables
 
-List of environment variables for the main app. All are required except noted:
+List of environment variables for the main app.
 
 #### Required environment variables
 - `NA_GAMEDATA`: path to NA gamedata's master folder.
 - `JP_GAMEDATA`: path to JP gamedata's master folder.
-- `NA_POSTGRESDSN`: DSN to PostgreSQL database for NA.
-- `JP_POSTGRESDSN`: DSN to PostgreSQL database for JP.
-- `ASSET_URL`: base URL for the game assets.
+- `NA_POSTGRESDSN`: PostgreSQL DSN to a database for NA.
+- `JP_POSTGRESDSN`: PostgreSQL DSN to a database for JP.
 
 #### Optional environment variables
+- `ASSET_URL`: defaults to https://assets.atlasacademy.io/GameData/. Base URL for the game assets.
 - `RAYSHIFT_API_KEY`: default to `None`. Rayshift.io API key to pull quest data.
 - `RAYSHIFT_API_URL`: default to https://rayshift.io/api/v1/. Rayshift.io API URL.
 - `WRITE_POSTGRES_DATA`: default to `True`. Overwrite the data in PostgreSQL when importing.
