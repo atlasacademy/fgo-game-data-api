@@ -261,6 +261,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "QUEST_CONSUME_TYPE_NAME",
     ),
     (
+        "QuestEntity.Flag",
+        "QuestFlag",
+        "NiceQuestFlag",
+        "Quest Flag Enum",
+        "Quest_FLAG_NAME",
+    ),
+    (
         "StatusRank.Kind",
         "StatusRank",
         "NiceStatusRank",

@@ -2381,6 +2381,180 @@ QUEST_CONSUME_TYPE_NAME: dict[int, NiceConsumeType] = {
 }
 
 
+class QuestFlag(IntEnum):
+    NONE = 1
+    NO_BATTLE = 2
+    RAID = 4
+    RAID_CONNECTION = 8
+    NO_CONTINUE = 16
+    NO_DISPLAY_REMAIN = 32
+    RAID_LAST_DAY = 64
+    CLOSED_HIDE_COST_ITEM = 128
+    CLOSED_HIDE_COST_NUM = 256
+    CLOSED_HIDE_PROGRESS = 512
+    CLOSED_HIDE_RECOMMEND_LV = 1024
+    CLOSED_HIDE_TREND_CLASS = 2048
+    CLOSED_HIDE_REWARD = 4096
+    NO_DISPLAY_CONSUME = 8192
+    SUPER_BOSS = 16384
+    NO_DISPLAY_MISSION_NOTIFY = 32768
+    HIDE_PROGRESS = 65536
+    DROP_FIRST_TIME_ONLY = 131072
+    CHAPTER_SUB_ID_JAPANESE_NUMERALS = 262144
+    SUPPORT_ONLY_FORCE_BATTLE = 524288
+    EVENT_DECK_NO_SUPPORT = 1048576
+    FATIGUE_BATTLE = 2097152
+    SUPPORT_SELECT_AFTER_SCRIPT = 4194304
+    BRANCH = 8388608
+    USER_EVENT_DECK = 16777216
+    NO_DISPLAY_RAID_REMAIN = 33554432
+    QUEST_MAX_DAMAGE_RECORD = 67108864
+    ENABLE_FOLLOW_QUEST = 134217728
+    SUPPORT_SVT_MULTIPLE_SET = 268435456
+    SUPPORT_ONLY_BATTLE = 536870912
+    ACT_CONSUME_BATTLE_WIN = 1073741824
+    VOTE = 2147483648
+    HIDE_MASTER = 4294967296
+    DISABLE_MASTER_SKILL = 8589934592
+    DISABLE_COMMAND_SPEEL = 17179869184
+    SUPPORT_SVT_EDITABLE_POSITION = 34359738368
+    BRANCH_SCENARIO = 68719476736
+    QUEST_KNOCKDOWN_RECORD = 137438953472
+    NOT_RETRIEVABLE = 274877906944
+    DISPLAY_LOOPMARK = 549755813888
+    BOOST_ITEM_CONSUME_BATTLE_WIN = 1099511627776
+    PLAY_SCENARIO_WITH_MAPSCREEN = 2199023255552
+    BATTLE_RETREAT_QUEST_CLEAR = 4398046511104
+    BATTLE_RESULT_LOSE_QUEST_CLEAR = 8796093022208
+    BRANCH_HAVING = 35184372088832
+    NO_DISPLAY_NEXT_ICON = 70368744177664
+    WINDOW_ONLY = 140737488355328
+    CHANGE_MASTERS = 281474976710656
+    NOT_DISPLAY_RESULT_GET_POINT = 562949953421312
+    FORCE_TO_NO_DROP = 1125899906842624
+    DISPLAY_CONSUME_ICON = 2251799813685248
+    HARVEST = 4503599627370496
+    RECONSTRUCTION = 9007199254740992
+    ENEMY_IMMEDIATE_APPEAR = 18014398509481984
+
+
+class NiceQuestFlag(str, Enum):
+    """Quest Flag Enum"""
+
+    none = "none"
+    noBattle = "noBattle"
+    raid = "raid"
+    raidConnection = "raidConnection"
+    noContinue = "noContinue"
+    noDisplayRemain = "noDisplayRemain"
+    raidLastDay = "raidLastDay"
+    closedHideCostItem = "closedHideCostItem"
+    closedHideCostNum = "closedHideCostNum"
+    closedHideProgress = "closedHideProgress"
+    closedHideRecommendLv = "closedHideRecommendLv"
+    closedHideTrendClass = "closedHideTrendClass"
+    closedHideReward = "closedHideReward"
+    noDisplayConsume = "noDisplayConsume"
+    superBoss = "superBoss"
+    noDisplayMissionNotify = "noDisplayMissionNotify"
+    hideProgress = "hideProgress"
+    dropFirstTimeOnly = "dropFirstTimeOnly"
+    chapterSubIdJapaneseNumerals = "chapterSubIdJapaneseNumerals"
+    supportOnlyForceBattle = "supportOnlyForceBattle"
+    eventDeckNoSupport = "eventDeckNoSupport"
+    fatigueBattle = "fatigueBattle"
+    supportSelectAfterScript = "supportSelectAfterScript"
+    branch = "branch"
+    userEventDeck = "userEventDeck"
+    noDisplayRaidRemain = "noDisplayRaidRemain"
+    questMaxDamageRecord = "questMaxDamageRecord"
+    enableFollowQuest = "enableFollowQuest"
+    supportSvtMultipleSet = "supportSvtMultipleSet"
+    supportOnlyBattle = "supportOnlyBattle"
+    actConsumeBattleWin = "actConsumeBattleWin"
+    vote = "vote"
+    hideMaster = "hideMaster"
+    disableMasterSkill = "disableMasterSkill"
+    disableCommandSpeel = "disableCommandSpeel"
+    supportSvtEditablePosition = "supportSvtEditablePosition"
+    branchScenario = "branchScenario"
+    questKnockdownRecord = "questKnockdownRecord"
+    notRetrievable = "notRetrievable"
+    displayLoopmark = "displayLoopmark"
+    boostItemConsumeBattleWin = "boostItemConsumeBattleWin"
+    playScenarioWithMapscreen = "playScenarioWithMapscreen"
+    battleRetreatQuestClear = "battleRetreatQuestClear"
+    battleResultLoseQuestClear = "battleResultLoseQuestClear"
+    branchHaving = "branchHaving"
+    noDisplayNextIcon = "noDisplayNextIcon"
+    windowOnly = "windowOnly"
+    changeMasters = "changeMasters"
+    notDisplayResultGetPoint = "notDisplayResultGetPoint"
+    forceToNoDrop = "forceToNoDrop"
+    displayConsumeIcon = "displayConsumeIcon"
+    harvest = "harvest"
+    reconstruction = "reconstruction"
+    enemyImmediateAppear = "enemyImmediateAppear"
+
+
+Quest_FLAG_NAME: dict[int, NiceQuestFlag] = {
+    1: NiceQuestFlag.none,
+    2: NiceQuestFlag.noBattle,
+    4: NiceQuestFlag.raid,
+    8: NiceQuestFlag.raidConnection,
+    16: NiceQuestFlag.noContinue,
+    32: NiceQuestFlag.noDisplayRemain,
+    64: NiceQuestFlag.raidLastDay,
+    128: NiceQuestFlag.closedHideCostItem,
+    256: NiceQuestFlag.closedHideCostNum,
+    512: NiceQuestFlag.closedHideProgress,
+    1024: NiceQuestFlag.closedHideRecommendLv,
+    2048: NiceQuestFlag.closedHideTrendClass,
+    4096: NiceQuestFlag.closedHideReward,
+    8192: NiceQuestFlag.noDisplayConsume,
+    16384: NiceQuestFlag.superBoss,
+    32768: NiceQuestFlag.noDisplayMissionNotify,
+    65536: NiceQuestFlag.hideProgress,
+    131072: NiceQuestFlag.dropFirstTimeOnly,
+    262144: NiceQuestFlag.chapterSubIdJapaneseNumerals,
+    524288: NiceQuestFlag.supportOnlyForceBattle,
+    1048576: NiceQuestFlag.eventDeckNoSupport,
+    2097152: NiceQuestFlag.fatigueBattle,
+    4194304: NiceQuestFlag.supportSelectAfterScript,
+    8388608: NiceQuestFlag.branch,
+    16777216: NiceQuestFlag.userEventDeck,
+    33554432: NiceQuestFlag.noDisplayRaidRemain,
+    67108864: NiceQuestFlag.questMaxDamageRecord,
+    134217728: NiceQuestFlag.enableFollowQuest,
+    268435456: NiceQuestFlag.supportSvtMultipleSet,
+    536870912: NiceQuestFlag.supportOnlyBattle,
+    1073741824: NiceQuestFlag.actConsumeBattleWin,
+    2147483648: NiceQuestFlag.vote,
+    4294967296: NiceQuestFlag.hideMaster,
+    8589934592: NiceQuestFlag.disableMasterSkill,
+    17179869184: NiceQuestFlag.disableCommandSpeel,
+    34359738368: NiceQuestFlag.supportSvtEditablePosition,
+    68719476736: NiceQuestFlag.branchScenario,
+    137438953472: NiceQuestFlag.questKnockdownRecord,
+    274877906944: NiceQuestFlag.notRetrievable,
+    549755813888: NiceQuestFlag.displayLoopmark,
+    1099511627776: NiceQuestFlag.boostItemConsumeBattleWin,
+    2199023255552: NiceQuestFlag.playScenarioWithMapscreen,
+    4398046511104: NiceQuestFlag.battleRetreatQuestClear,
+    8796093022208: NiceQuestFlag.battleResultLoseQuestClear,
+    35184372088832: NiceQuestFlag.branchHaving,
+    70368744177664: NiceQuestFlag.noDisplayNextIcon,
+    140737488355328: NiceQuestFlag.windowOnly,
+    281474976710656: NiceQuestFlag.changeMasters,
+    562949953421312: NiceQuestFlag.notDisplayResultGetPoint,
+    1125899906842624: NiceQuestFlag.forceToNoDrop,
+    2251799813685248: NiceQuestFlag.displayConsumeIcon,
+    4503599627370496: NiceQuestFlag.harvest,
+    9007199254740992: NiceQuestFlag.reconstruction,
+    18014398509481984: NiceQuestFlag.enemyImmediateAppear,
+}
+
+
 class StatusRank(IntEnum):
     A = 11
     A_PLUS = 12

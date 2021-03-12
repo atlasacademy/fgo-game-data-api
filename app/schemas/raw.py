@@ -1165,6 +1165,7 @@ class QuestEntity(BaseModelORJson):
     mstQuestRelease: list[MstQuestRelease]
     phases: list[int]
     phasesWithEnemies: list[int] = []
+    phasesNoBattle: list[int] = []
 
     class Config:
         orm_mode = True

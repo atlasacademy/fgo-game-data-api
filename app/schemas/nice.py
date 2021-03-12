@@ -1142,6 +1142,11 @@ class NiceQuest(BaseModelORJson):
         title="List of phases with enemies data from Rayshift",
         description="List of phases with enemies data from Rayshift.",
     )
+    phasesNoBattle: list[int] = Field(
+        [],
+        title="List of phases with no battle",
+        description="List of phases no battle (Story quest).",
+    )
     noticeAt: int
     openedAt: int
     closedAt: int

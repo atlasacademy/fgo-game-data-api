@@ -72,6 +72,7 @@ from .gameenums import (
     NiceWarStartType,
     PayType,
     PurchaseType,
+    QuestFlag,
     SvtType,
     SvtVoiceType,
     VoiceCondType,
@@ -1113,4 +1114,5 @@ __all__ = [
     "WAR_OVERWRITE_TYPE_NAME",
     "EnemyDeathType",
     "ENEMY_DEATH_TYPE_NAME",
+    "QuestFlag",
 ]

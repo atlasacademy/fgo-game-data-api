@@ -157,6 +157,7 @@
           ],
           "phases": [1],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [],
           "noticeAt": 1570680000,
           "openedAt": 1570680000,
           "closedAt": 1893456000
@@ -197,6 +198,7 @@
           ],
           "phases": [1, 2],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -230,6 +232,7 @@
           ],
           "phases": [1, 2, 3],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -290,6 +293,7 @@
           ],
           "phases": [1, 2],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [2],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -330,6 +334,7 @@
           ],
           "phases": [1, 2, 3, 4],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [3],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -383,6 +388,7 @@
           ],
           "phases": [1, 2, 3],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -443,6 +449,7 @@
           ],
           "phases": [1, 2],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [1],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -483,6 +490,7 @@
           ],
           "phases": [1, 2],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [1],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -516,6 +524,7 @@
           ],
           "phases": [1, 2, 3],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -576,6 +585,7 @@
           ],
           "phases": [1, 2, 3, 4],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [2],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -616,6 +626,7 @@
           ],
           "phases": [1, 2, 3, 4],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [1],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -656,6 +667,7 @@
           ],
           "phases": [1],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -689,6 +701,7 @@
           ],
           "phases": [1, 2],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [],
           "noticeAt": 1570680000,
           "openedAt": 1570680000,
           "closedAt": 1893456000
@@ -722,6 +735,7 @@
           ],
           "phases": [1, 2, 3],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -794,6 +808,7 @@
           ],
           "phases": [1, 2, 3],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -854,6 +869,7 @@
           ],
           "phases": [1, 2, 3],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -894,6 +910,7 @@
           ],
           "phases": [1, 2, 3, 4],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [1],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -954,6 +971,7 @@
           ],
           "phases": [1, 2, 3],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [1],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1014,6 +1032,7 @@
           ],
           "phases": [1, 2, 3],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1054,6 +1073,7 @@
           ],
           "phases": [1, 2, 3, 4],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [1, 4],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1116,6 +1136,7 @@
           ],
           "phases": [1, 2],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [],
           "noticeAt": 1509645600,
           "openedAt": 1509645600,
           "closedAt": 1893456000
@@ -1149,6 +1170,7 @@
           ],
           "phases": [1, 2, 3],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1182,6 +1204,7 @@
           ],
           "phases": [1, 2, 3],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [],
           "noticeAt": 1613534400,
           "openedAt": 1613534400,
           "closedAt": 1893456000
@@ -1242,6 +1265,7 @@
           ],
           "phases": [1, 2, 3, 4, 5],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [5],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1295,6 +1319,7 @@
           ],
           "phases": [1, 2, 3],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1355,6 +1380,7 @@
           ],
           "phases": [1, 2, 3, 4, 5, 6],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1446,6 +1472,7 @@
           ],
           "phases": [1, 2, 3],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1491,6 +1518,7 @@
           ],
           "phases": [1],
           "phasesWithEnemies": [],
+          "phasesNoBattle": [],
           "noticeAt": 1570680000,
           "openedAt": 1570680000,
           "closedAt": 1893456000

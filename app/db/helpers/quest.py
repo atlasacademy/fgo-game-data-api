@@ -1,7 +1,7 @@
 from typing import Iterable, Optional
 
 from sqlalchemy.engine import Connection
-from sqlalchemy.sql import and_, func, select
+from sqlalchemy.sql import and_, case, func, select
 
 from ...models.raw import (
     mstQuest,
@@ -12,6 +12,7 @@ from ...models.raw import (
     mstStage,
 )
 from ...models.rayshift import rayshiftQuest
+from ...schemas.enums import QuestFlag
 from ...schemas.raw import QuestEntity, QuestPhaseEntity
 from .utils import sql_jsonb_agg
 
@@ -26,9 +27,27 @@ JOINED_QUEST_TABLES = (
 )
 
 
+JOINED_QUEST_ENTITY_TABLES = JOINED_QUEST_TABLES.outerjoin(
+    mstQuestPhaseDetail, mstQuest.c.id == mstQuestPhaseDetail.c.questId
+)
+
+
 phasesWithEnemies = func.to_jsonb(
     func.array_remove(func.array_agg(rayshiftQuest.c.phase.distinct()), None)
 ).label("phasesWithEnemies")
+
+
+phasesNoBattle = func.array_remove(
+    func.array_agg(
+        case(
+            (
+                mstQuestPhaseDetail.c.flag.op("&")(QuestFlag.NO_BATTLE.value) != 0,  # type: ignore
+                mstQuestPhaseDetail.c.phase,
+            )
+        ).distinct()
+    ),
+    None,
+).label("phasesNoBattle")
 
 
 SELECT_QUEST_ENTITY = [
@@ -37,13 +56,14 @@ SELECT_QUEST_ENTITY = [
     sql_jsonb_agg(mstQuestRelease),
     func.jsonb_agg(mstQuestPhase.c.phase.distinct()).label("phases"),
     phasesWithEnemies,
+    phasesNoBattle,
 ]
 
 
 def get_quest_entity(conn: Connection, quest_ids: Iterable[int]) -> list[QuestEntity]:
     stmt = (
         select(*SELECT_QUEST_ENTITY)
-        .select_from(JOINED_QUEST_TABLES)
+        .select_from(JOINED_QUEST_ENTITY_TABLES)
         .where(mstQuest.c.id.in_(quest_ids))
         .group_by(mstQuest.c.id)
     )
@@ -53,7 +73,7 @@ def get_quest_entity(conn: Connection, quest_ids: Iterable[int]) -> list[QuestEn
 def get_quest_by_spot(conn: Connection, spot_ids: Iterable[int]) -> list[QuestEntity]:
     stmt = (
         select(*SELECT_QUEST_ENTITY)
-        .select_from(JOINED_QUEST_TABLES)
+        .select_from(JOINED_QUEST_ENTITY_TABLES)
         .where(mstQuest.c.spotId.in_(spot_ids))
         .group_by(mstQuest.c.id)
     )
