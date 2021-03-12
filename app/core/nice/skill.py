@@ -1,4 +1,5 @@
 from copy import deepcopy
+from dataclasses import dataclass
 from typing import Any, Iterable
 
 from sqlalchemy.engine import Connection
@@ -144,13 +145,21 @@ def get_nice_skill_from_id(
     return get_nice_skill_from_raw(region, raw_skill, lang)
 
 
-MultipleNiceSkills = dict[tuple[int, int], NiceSkill]
+@dataclass(eq=True, frozen=True)
+class SkillSvt:
+    """Required parameters to get a specific nice skill"""
+
+    skill_id: int
+    svt_id: int
+
+
+MultipleNiceSkills = dict[SkillSvt, NiceSkill]
 
 
 def get_multiple_nice_skills(
     conn: Connection,
     region: Region,
-    skill_svts: Iterable[tuple[int, int]],
+    skill_svts: Iterable[SkillSvt],
     lang: Language,
 ) -> MultipleNiceSkills:
     """Get multiple nice skills at once
@@ -167,13 +176,13 @@ def get_multiple_nice_skills(
     raw_skills = {
         skill.mstSkill.id: skill
         for skill in get_skill_entity_no_reverse_many(
-            conn, region, [skill[0] for skill in skill_svts], expand=True
+            conn, region, [skill.skill_id for skill in skill_svts], expand=True
         )
     }
     return {
         skill_svt: NiceSkill.parse_obj(
             get_nice_skill_with_svt(
-                raw_skills[skill_svt[0]], skill_svt[1], region, lang
+                raw_skills[skill_svt.skill_id], skill_svt.svt_id, region, lang
             )[0]
         )
         for skill_svt in skill_svts

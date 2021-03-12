@@ -1,6 +1,9 @@
 # pylint: disable=R0201,R0904
+import json
+
 import pytest
 
+from app.core.nice.enemy import get_enemy_script
 from app.core.nice.event import get_nice_shop
 from app.db.engine import engines
 from app.db.helpers import event
@@ -484,8 +487,16 @@ class TestServantSpecial:
     async def test_enemy_script(self) -> None:
         murasaki_valentine_cq = await get_response("nice/NA/quest/94033599/1")
         first_stage_enemies = murasaki_valentine_cq.json()["stages"][0]["enemies"]
-        assert first_stage_enemies[0]["enemyScript"]["call"] == [4]
+        assert first_stage_enemies[0]["enemyScript"]["call"] == [94033697]
         assert first_stage_enemies[5]["enemyScript"]["leader"] is True
+
+        test_script = {"kill": 3, "changeAttri": 2, "forceDropItem": 1}
+        parsed_script = get_enemy_script(test_script).json(exclude_unset=True)
+        assert json.loads(parsed_script) == {
+            "changeAttri": "sky",
+            "deathType": "effect",
+            "forceDropItem": True,
+        }
 
     async def test_enemy_isAddition_skipped(self) -> None:
         weakness_ear = (await get_response("/nice/NA/quest/94034116/1")).json()
@@ -497,3 +508,9 @@ class TestServantSpecial:
             "day": 0,
             "id": 107050,
         }
+
+    async def get_all_call_shift_enemies(self) -> None:
+        ccc_suzuka_1 = await get_response("/nice/NA/quest/94034017/1")
+        assert len(ccc_suzuka_1.json()["stages"][0]["enemies"]) == 2
+        ccc_suzuka_2 = await get_response("/nice/NA/quest/94034017/2")
+        assert len(ccc_suzuka_2.json()["stages"][0]["enemies"]) == 4

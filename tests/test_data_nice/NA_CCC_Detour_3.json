@@ -50,7 +50,10 @@
       "fieldAis": [],
       "enemies": [
         {
-          "id": 1,
+          "deck": "enemy",
+          "userSvtId": 1,
+          "uniqueId": 7,
+          "npcId": 94034210,
           "name": "Junk Code: Eater",
           "svt": {
             "id": 9935900,
@@ -348,7 +351,10 @@
       "fieldAis": [],
       "enemies": [
         {
-          "id": 2,
+          "deck": "enemy",
+          "userSvtId": 2,
+          "uniqueId": 8,
+          "npcId": 94034212,
           "name": "L",
           "svt": {
             "id": 102000,
@@ -973,7 +979,7 @@
           },
           "serverMod": { "tdRate": 1000, "tdAttackRate": 1000, "starRate": 0 },
           "ai": { "aiId": 94034350, "actPriority": 500, "maxActNum": 3 },
-          "enemyScript": {},
+          "enemyScript": { "appear": true },
           "limit": {
             "limitCount": 2,
             "imageLimitCount": 0,
@@ -995,7 +1001,10 @@
           }
         },
         {
-          "id": 3,
+          "deck": "enemy",
+          "userSvtId": 3,
+          "uniqueId": 9,
+          "npcId": 94034214,
           "name": "A. P. A.",
           "svt": {
             "id": 301900,
@@ -1543,7 +1552,7 @@
             "starRate": -50
           },
           "ai": { "aiId": 94034370, "actPriority": 1500, "maxActNum": 3 },
-          "enemyScript": { "shift": [6] },
+          "enemyScript": { "appear": true, "shift": [94034215] },
           "limit": {
             "limitCount": 2,
             "imageLimitCount": 0,
@@ -1565,7 +1574,10 @@
           }
         },
         {
-          "id": 4,
+          "deck": "enemy",
+          "userSvtId": 4,
+          "uniqueId": 10,
+          "npcId": 94034213,
           "name": "T",
           "svt": {
             "id": 200800,
@@ -2151,7 +2163,7 @@
           },
           "serverMod": { "tdRate": 1000, "tdAttackRate": 1000, "starRate": 50 },
           "ai": { "aiId": 94034360, "actPriority": 500, "maxActNum": 3 },
-          "enemyScript": {},
+          "enemyScript": { "appear": true },
           "limit": {
             "limitCount": 2,
             "imageLimitCount": 0,
@@ -2173,7 +2185,10 @@
           }
         },
         {
-          "id": 5,
+          "deck": "enemy",
+          "userSvtId": 5,
+          "uniqueId": 11,
+          "npcId": 94034211,
           "name": "B",
           "svt": {
             "id": 101200,
@@ -2715,7 +2730,10 @@
           }
         },
         {
-          "id": 6,
+          "deck": "shift",
+          "userSvtId": 6,
+          "uniqueId": 0,
+          "npcId": 94034215,
           "name": "A. P. A.",
           "svt": {
             "id": 301900,
@@ -3263,7 +3281,7 @@
             "starRate": -50
           },
           "ai": { "aiId": 94034380, "actPriority": 1500, "maxActNum": 3 },
-          "enemyScript": {},
+          "enemyScript": { "shiftClear": [] },
           "limit": {
             "limitCount": 2,
             "imageLimitCount": 0,

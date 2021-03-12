@@ -1,4 +1,5 @@
 from decimal import Decimal
+from enum import Enum
 from typing import Generic, Optional, TypeVar
 
 from pydantic import BaseModel, Field, HttpUrl
@@ -16,6 +17,7 @@ from .enums import (
     AiTiming,
     AiType,
     Attribute,
+    EnemyDeathType,
     FuncApplyTarget,
     NiceAiActNum,
     NiceAiActTarget,
@@ -1146,9 +1148,37 @@ class NiceQuest(BaseModelORJson):
 
 
 class EnemyScript(BaseModelORJson):
-    leader: Optional[bool]
-    call: Optional[list[int]]
-    shift: Optional[list[int]]
+    deathType: Optional[EnemyDeathType]
+    appear: Optional[bool]
+    noVoice: Optional[bool]
+    raid: Optional[int]
+    superBoss: Optional[int]
+    hpBarType: Optional[int]
+    leader: Optional[bool] = Field(None, title="Battle ends if servant is defeated")
+    scale: Optional[int]
+    svtVoiceId: Optional[int]
+    treasureDeviceVoiceId: Optional[str]
+    changeAttri: Optional[Attribute]
+    billBoardGroup: Optional[int]
+    multiTargetCore: Optional[bool]
+    multiTargetUp: Optional[bool]
+    multiTargetUnder: Optional[bool]
+    startPos: Optional[bool]
+    deadChangePos: Optional[int]
+    call: Optional[list[int]] = Field(None, title="Summon these NPC IDs")
+    shift: Optional[list[int]] = Field(None, title="Break bar switch to these NPC IDs")
+    shiftPosition: Optional[int]
+    shiftClear: list[NiceTrait] = Field(
+        None, title="Active buff traits to remove with break bar"
+    )
+    change: Optional[list[int]]
+    forceDropItem: Optional[bool]
+    entryIndex: Optional[int]  # Only used for Rashomon raids
+    treasureDeviceName: Optional[str]
+    treasureDeviceRuby: Optional[str]
+    npInfoEnable: Optional[bool]
+    npCharge: Optional[int]
+    NoSkipDead: Optional[bool]
 
 
 class EnemySkill(BaseModelORJson):
@@ -1226,8 +1256,17 @@ class EnemyMisc(BaseModelORJson):
     status: int
 
 
+class DeckType(str, Enum):
+    ENEMY = "enemy"
+    CALL = "call"
+    SHIFT = "shift"
+
+
 class QuestEnemy(BaseModelORJson):
-    id: int
+    deck: DeckType
+    userSvtId: int
+    uniqueId: int
+    npcId: int
     name: str
     svt: BasicServant
     lv: int

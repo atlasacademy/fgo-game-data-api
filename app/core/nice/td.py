@@ -1,4 +1,5 @@
 from copy import deepcopy
+from dataclasses import dataclass
 from typing import Any, Iterable
 
 from sqlalchemy.engine import Connection
@@ -95,13 +96,21 @@ def get_nice_td(
     return out_tds
 
 
-MultipleNiceTds = dict[tuple[int, int], NiceTd]
+@dataclass(eq=True, frozen=True)
+class TdSvt:
+    """Required parameters to get a specific nice NP"""
+
+    td_id: int
+    svt_id: int
+
+
+MultipleNiceTds = dict[TdSvt, NiceTd]
 
 
 def get_multiple_nice_tds(
     conn: Connection,
     region: Region,
-    td_svts: Iterable[tuple[int, int]],
+    td_svts: Iterable[TdSvt],
 ) -> MultipleNiceTds:
     """Get multiple nice NPs at once
 
@@ -116,10 +125,12 @@ def get_multiple_nice_tds(
     raw_tds = {
         td.mstTreasureDevice.id: td
         for td in get_td_entity_no_reverse_many(
-            conn, region, [td_svt[0] for td_svt in td_svts], expand=True
+            conn, region, [td_svt.td_id for td_svt in td_svts], expand=True
         )
     }
     return {
-        td_svt: NiceTd.parse_obj(get_nice_td(raw_tds[td_svt[0]], td_svt[1], region)[0])
+        td_svt: NiceTd.parse_obj(
+            get_nice_td(raw_tds[td_svt.td_id], td_svt.svt_id, region)[0]
+        )
         for td_svt in td_svts
     }

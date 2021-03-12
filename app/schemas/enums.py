@@ -419,6 +419,24 @@ AI_TIMING_NAME: dict[int, AiTiming] = {
 }
 
 
+### Enemy death type ###
+
+
+class EnemyDeathType(str, Enum):
+    ESCAPE = "escape"
+    STAND = "stand"
+    EFFECT = "effect"
+    WAIT = "wait"
+
+
+ENEMY_DEATH_TYPE_NAME: dict[int, EnemyDeathType] = {
+    1: EnemyDeathType.ESCAPE,
+    2: EnemyDeathType.STAND,
+    3: EnemyDeathType.EFFECT,
+    4: EnemyDeathType.WAIT,
+}
+
+
 ### Mission Cond Detail Type ###
 
 
@@ -1093,4 +1111,6 @@ __all__ = [
     "WarOverwriteType",
     "NiceWarOverwriteType",
     "WAR_OVERWRITE_TYPE_NAME",
+    "EnemyDeathType",
+    "ENEMY_DEATH_TYPE_NAME",
 ]
