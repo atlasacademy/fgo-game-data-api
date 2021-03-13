@@ -1104,6 +1104,30 @@ class NiceEventTower(BaseModelORJson):
     rewards: list[NiceEventTowerReward]
 
 
+class NiceEventLotteryBox(BaseModelORJson):
+    id: int
+    boxIndex: int
+    no: int
+    type: int
+    gifts: list[NiceGift]
+    maxNum: int
+    isRare: bool
+    priority: int
+    detail: str
+    icon: HttpUrl
+    banner: HttpUrl
+
+
+class NiceEventLottery(BaseModelORJson):
+    id: int
+    slot: int
+    payType: NicePayType
+    cost: NiceItemAmount
+    priority: int
+    limited: bool
+    boxes: list[NiceEventLotteryBox]
+
+
 class NiceEvent(BaseModelORJson):
     id: int
     type: NiceEventType
@@ -1125,6 +1149,7 @@ class NiceEvent(BaseModelORJson):
     pointBuffs: list[NiceEventPointBuff]
     missions: list[NiceEventMission]
     towers: list[NiceEventTower]
+    lotteries: list[NiceEventLottery]
 
 
 class NiceBgm(BaseModelORJson):

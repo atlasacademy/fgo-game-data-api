@@ -353,6 +353,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Mission Condition Detail Condition Link Type Enum",
         "DETAIL_MISSION_LINK_TYPE",
     ),
+    (
+        "BoxGachaEntity.Flag",
+        "BoxGachaFlag",
+        "NiceLotteryFlag",
+        "Event Lottery Flag",
+        "EVENT_LOTTERY_FLAG_NAME",
+    ),
 ]
 
 

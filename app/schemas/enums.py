@@ -13,6 +13,7 @@ from .gameenums import (
     COND_TYPE_NAME,
     DETAIL_MISSION_COND_TYPE,
     DETAIL_MISSION_LINK_TYPE,
+    EVENT_LOTTERY_FLAG_NAME,
     EVENT_TYPE_NAME,
     FUNC_TARGETTYPE_NAME,
     FUNC_TYPE_NAME,
@@ -34,6 +35,7 @@ from .gameenums import (
     VOICE_TYPE_NAME,
     WAR_OVERWRITE_TYPE_NAME,
     WAR_START_TYPE_NAME,
+    BoxGachaFlag,
     BuffAction,
     CondType,
     FuncType,
@@ -56,6 +58,7 @@ from .gameenums import (
     NiceGender,
     NiceGiftType,
     NiceItemType,
+    NiceLotteryFlag,
     NiceMissionProgressType,
     NiceMissionRewardType,
     NiceMissionType,
@@ -999,6 +1002,7 @@ ALL_ENUMS = {
     "NiceMissionProgressType": MISSION_PROGRESS_TYPE_NAME,
     "NiceDetailMissionCondType": DETAIL_MISSION_COND_TYPE,
     "NiceDetailMissionCondLinkType": DETAIL_MISSION_LINK_TYPE,
+    "NiceLotteryFlag": EVENT_LOTTERY_FLAG_NAME,
 }
 
 
@@ -1115,4 +1119,7 @@ __all__ = [
     "EnemyDeathType",
     "ENEMY_DEATH_TYPE_NAME",
     "QuestFlag",
+    "BoxGachaFlag",
+    "NiceLotteryFlag",
+    "EVENT_LOTTERY_FLAG_NAME",
 ]

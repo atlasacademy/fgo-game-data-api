@@ -403,16 +403,23 @@ def get_event_entity(conn: Connection, region: Region, event_id: int) -> EventEn
             if cond.condType == CondType.MISSION_CONDITION_DETAIL
         ]
         cond_details = event.get_mstEventMissionConditionDetail(conn, cond_detail_ids)
+        box_gachas = event.get_mstBoxGacha(conn, event_id)
+        box_gacha_base_ids = [
+            base_id for box_gacha in box_gachas for base_id in box_gacha.baseIds
+        ]
         return EventEntity(
             mstEvent=masters[region].mstEventId[event_id],
             mstShop=event.get_mstShop(conn, event_id),
             mstEventReward=event.get_mstEventReward(conn, event_id),
+            mstEventRewardSet=event.get_mstEventRewardSet(conn, event_id),
             mstEventPointBuff=event.get_mstEventPointBuff(conn, event_id),
             mstEventMission=missions,
             mstEventMissionCondition=conds,
             mstEventMissionConditionDetail=cond_details,
             mstEventTower=event.get_mstEventTower(conn, event_id),
             mstEventTowerReward=event.get_mstEventTowerReward(conn, event_id),
+            mstBoxGacha=box_gachas,
+            mstBoxGachaBase=event.get_mstBoxGachaBase(conn, box_gacha_base_ids),
         )
     else:
         raise HTTPException(status_code=404, detail="Event not found")

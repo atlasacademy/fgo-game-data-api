@@ -822,6 +822,55 @@ class MstEventTowerReward(BaseModel):
         orm_mode = True
 
 
+class MstBoxGacha(BaseModel):
+    baseIds: list[int]
+    pickupIds: Optional[list[int]] = None
+    talkIds: list[int]
+    script: Optional[dict[str, Any]] = None
+    id: int
+    eventId: int
+    slot: int
+    guideDisplayName: str
+    payType: int
+    payTargetId: int
+    payValue: int
+    detailUrl: str
+    priority: int
+    flag: int
+
+    class Config:
+        orm_mode = True
+
+
+class MstBoxGachaBase(BaseModel):
+    id: int
+    no: int
+    type: int
+    targetId: int
+    isRare: bool
+    iconId: int
+    bannerId: int
+    priority: int
+    maxNum: int
+    detail: str
+
+    class Config:
+        orm_mode = True
+
+
+class MstEventRewardSet(BaseModel):
+    rewardSetType: int
+    eventId: int
+    id: int
+    iconId: int
+    name: str
+    detail: str
+    bgImageId: int
+
+    class Config:
+        orm_mode = True
+
+
 class MstEvent(BaseModel):
     script: list[dict[str, str]]  # []
     id: int  # 10083
@@ -1208,12 +1257,15 @@ class EventEntity(BaseModelORJson):
     mstEvent: MstEvent
     mstShop: list[MstShop]
     mstEventReward: list[MstEventReward]
+    mstEventRewardSet: list[MstEventRewardSet]
     mstEventPointBuff: list[MstEventPointBuff]
     mstEventMission: list[MstEventMission]
     mstEventMissionCondition: list[MstEventMissionCondition]
     mstEventMissionConditionDetail: list[MstEventMissionConditionDetail]
     mstEventTower: list[MstEventTower]
     mstEventTowerReward: list[MstEventTowerReward]
+    mstBoxGacha: list[MstBoxGacha]
+    mstBoxGachaBase: list[MstBoxGachaBase]
 
 
 class WarEntity(BaseModelORJson):

@@ -617,6 +617,55 @@ mstEventTowerReward = Table(
 )
 
 
+mstBoxGacha = Table(
+    "mstBoxGacha",
+    metadata,
+    Column("baseIds", ARRAY(Integer)),
+    Column("pickupIds", ARRAY(Integer), nullable=True),
+    Column("talkIds", ARRAY(Integer)),
+    Column("script", JSONB),
+    Column("id", Integer),
+    Column("eventId", Integer, index=True),
+    Column("slot", Integer),
+    Column("guideDisplayName", String),
+    Column("payType", Integer),
+    Column("payTargetId", Integer),
+    Column("payValue", Integer),
+    Column("detailUrl", String),
+    Column("priority", Integer),
+    Column("flag", Integer),
+)
+
+
+mstBoxGachaBase = Table(
+    "mstBoxGachaBase",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("no", Integer),
+    Column("type", Integer),
+    Column("targetId", Integer),
+    Column("isRare", Boolean),
+    Column("iconId", Integer),
+    Column("bannerId", Integer),
+    Column("priority", Integer),
+    Column("maxNum", Integer),
+    Column("detail", String),
+)
+
+
+mstEventRewardSet = Table(
+    "mstEventRewardSet",
+    metadata,
+    Column("rewardSetType", Integer),
+    Column("eventId", Integer, index=True),
+    Column("id", Integer, index=True),
+    Column("iconId", Integer),
+    Column("name", String),
+    Column("detail", String),
+    Column("bgImageId", Integer),
+)
+
+
 mstSpot = Table(
     "mstSpot",
     metadata,
@@ -852,10 +901,13 @@ TABLES_TO_BE_LOADED = [
     mstVoicePlayCond,
     mstSvtComment,
     mstEventReward,
+    mstEventRewardSet,
     mstEventPointBuff,
     mstEventMissionCondition,
     mstEventTower,
     mstEventTowerReward,
+    mstBoxGacha,
+    mstBoxGachaBase,
     mstWarAdd,
     mstQuestRelease,
     mstQuestConsumeItem,

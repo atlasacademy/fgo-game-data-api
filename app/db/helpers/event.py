@@ -4,23 +4,29 @@ from sqlalchemy.engine import Connection
 from sqlalchemy.sql import select
 
 from ...models.raw import (
+    mstBoxGacha,
+    mstBoxGachaBase,
     mstEvent,
     mstEventMission,
     mstEventMissionCondition,
     mstEventMissionConditionDetail,
     mstEventPointBuff,
     mstEventReward,
+    mstEventRewardSet,
     mstEventTower,
     mstEventTowerReward,
     mstShop,
 )
 from ...schemas.raw import (
+    MstBoxGacha,
+    MstBoxGachaBase,
     MstEvent,
     MstEventMission,
     MstEventMissionCondition,
     MstEventMissionConditionDetail,
     MstEventPointBuff,
     MstEventReward,
+    MstEventRewardSet,
     MstEventTower,
     MstEventTowerReward,
     MstShop,
@@ -55,6 +61,16 @@ def get_mstEventReward(conn: Connection, event_id: int) -> list[MstEventReward]:
     return [
         MstEventReward.from_orm(reward)
         for reward in conn.execute(mstEventReward_stmt).fetchall()
+    ]
+
+
+def get_mstEventRewardSet(conn: Connection, event_id: int) -> list[MstEventRewardSet]:
+    mstEventRewardSet_stmt = select(mstEventRewardSet).where(
+        mstEventRewardSet.c.eventId == event_id
+    )
+    return [
+        MstEventRewardSet.from_orm(reward_set)
+        for reward_set in conn.execute(mstEventRewardSet_stmt).fetchall()
     ]
 
 
@@ -133,4 +149,30 @@ def get_mstEventTowerReward(
     return [
         MstEventTowerReward.from_orm(tower_reward)
         for tower_reward in conn.execute(mstEventTowerReward_stmt).fetchall()
+    ]
+
+
+def get_mstBoxGacha(conn: Connection, event_id: int) -> list[MstBoxGacha]:
+    mstBoxGacha_stmt = (
+        select(mstBoxGacha)
+        .where(mstBoxGacha.c.eventId == event_id)
+        .order_by(mstBoxGacha.c.id)
+    )
+    return [
+        MstBoxGacha.from_orm(box_gacha)
+        for box_gacha in conn.execute(mstBoxGacha_stmt).fetchall()
+    ]
+
+
+def get_mstBoxGachaBase(
+    conn: Connection, box_gacha_base_ids: Iterable[int]
+) -> list[MstBoxGachaBase]:
+    mstBoxGachaBase_stmt = (
+        select(mstBoxGachaBase)
+        .where(mstBoxGachaBase.c.id.in_(box_gacha_base_ids))
+        .order_by(mstBoxGachaBase.c.id, mstBoxGachaBase.c.no)
+    )
+    return [
+        MstBoxGachaBase.from_orm(box_gacha_base)
+        for box_gacha_base in conn.execute(mstBoxGachaBase_stmt).fetchall()
     ]

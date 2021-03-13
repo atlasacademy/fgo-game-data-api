@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## 5.53.0 - 2020-03-12
 ### Added
 - Tower info to raw and nice event.
+- Lottery info to raw and nice event.
 
 ## 5.52.0 - 2020-03-09
 ### Added

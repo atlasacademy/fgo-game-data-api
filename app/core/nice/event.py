@@ -14,12 +14,15 @@ from ...schemas.enums import (
     PAY_TYPE_NAME,
     PURCHASE_TYPE_NAME,
     SHOP_TYPE_NAME,
+    BoxGachaFlag,
     CondType,
     PayType,
 )
 from ...schemas.nice import (
     AssetURL,
     NiceEvent,
+    NiceEventLottery,
+    NiceEventLotteryBox,
     NiceEventMission,
     NiceEventMissionCondition,
     NiceEventMissionConditionDetail,
@@ -31,6 +34,8 @@ from ...schemas.nice import (
     NiceShop,
 )
 from ...schemas.raw import (
+    MstBoxGacha,
+    MstBoxGachaBase,
     MstEventMission,
     MstEventMissionCondition,
     MstEventMissionConditionDetail,
@@ -172,6 +177,34 @@ def get_nice_mission_cond(
     return nice_mission_cond
 
 
+def get_nice_mission(
+    region: Region,
+    mission: MstEventMission,
+    conds: list[MstEventMissionCondition],
+    details: dict[int, MstEventMissionConditionDetail],
+) -> NiceEventMission:
+    return NiceEventMission(
+        id=mission.id,
+        flag=mission.flag,
+        type=MISSION_TYPE_NAME[mission.type],
+        missionTargetId=mission.missionTargetId,
+        dispNo=mission.dispNo,
+        name=mission.name,
+        detail=mission.detail,
+        startedAt=mission.startedAt,
+        endedAt=mission.endedAt,
+        closedAt=mission.closedAt,
+        rewardType=MISSION_REWARD_TYPE_NAME[mission.rewardType],
+        gifts=get_nice_gift(region, mission.giftId),
+        bannerGroup=mission.bannerGroup,
+        priority=mission.priority,
+        rewardRarity=mission.rewardRarity,
+        notfyPriority=mission.notfyPriority,
+        presentMessageId=mission.presentMessageId,
+        conds=(get_nice_mission_cond(cond, details) for cond in conds),
+    )
+
+
 def get_nice_tower_rewards(
     region: Region, reward: MstEventTowerReward
 ) -> NiceEventTowerReward:
@@ -205,31 +238,50 @@ def get_nice_event_tower(
     )
 
 
-def get_nice_mission(
-    region: Region,
-    mission: MstEventMission,
-    conds: list[MstEventMissionCondition],
-    details: dict[int, MstEventMissionConditionDetail],
-) -> NiceEventMission:
-    return NiceEventMission(
-        id=mission.id,
-        flag=mission.flag,
-        type=MISSION_TYPE_NAME[mission.type],
-        missionTargetId=mission.missionTargetId,
-        dispNo=mission.dispNo,
-        name=mission.name,
-        detail=mission.detail,
-        startedAt=mission.startedAt,
-        endedAt=mission.endedAt,
-        closedAt=mission.closedAt,
-        rewardType=MISSION_REWARD_TYPE_NAME[mission.rewardType],
-        gifts=get_nice_gift(region, mission.giftId),
-        bannerGroup=mission.bannerGroup,
-        priority=mission.priority,
-        rewardRarity=mission.rewardRarity,
-        notfyPriority=mission.notfyPriority,
-        presentMessageId=mission.presentMessageId,
-        conds=(get_nice_mission_cond(cond, details) for cond in conds),
+def get_nice_lottery_box(
+    region: Region, box: MstBoxGachaBase, box_index: int
+) -> NiceEventLotteryBox:
+    base_settings = {"base_url": settings.asset_url, "region": region}
+    return NiceEventLotteryBox(
+        id=box.id,
+        boxIndex=box_index,
+        no=box.no,
+        type=box.type,
+        gifts=get_nice_gift(region, box.targetId),
+        maxNum=box.maxNum,
+        isRare=box.isRare,
+        priority=box.priority,
+        detail=box.detail,
+        icon=AssetURL.eventReward.format(
+            **base_settings,
+            fname=f"icon_event_{box.iconId}",
+        ),
+        banner=AssetURL.eventReward.format(
+            **base_settings,
+            fname=f"event_gachabanner_{box.bannerId}",
+        ),
+    )
+
+
+def get_nice_lottery(
+    region: Region, lottery: MstBoxGacha, boxes: list[MstBoxGachaBase]
+) -> NiceEventLottery:
+    nice_boxes: list[NiceEventLotteryBox] = []
+    for box_index, base_id in enumerate(lottery.baseIds):
+        for box in boxes:
+            if box.id == base_id:
+                nice_boxes.append(get_nice_lottery_box(region, box, box_index))
+
+    return NiceEventLottery(
+        id=lottery.id,
+        slot=lottery.slot,
+        payType=PAY_TYPE_NAME[lottery.payType],
+        cost=NiceItemAmount(
+            item=get_nice_item(region, lottery.payTargetId), amount=lottery.payValue
+        ),
+        priority=lottery.priority,
+        limited=lottery.flag == BoxGachaFlag.LIMIT_RESET,
+        boxes=nice_boxes,
     )
 
 
@@ -295,6 +347,10 @@ def get_nice_event(conn: Connection, region: Region, event_id: int) -> NiceEvent
         towers=(
             get_nice_event_tower(region, tower, raw_event.mstEventTowerReward)
             for tower in raw_event.mstEventTower
+        ),
+        lotteries=(
+            get_nice_lottery(region, lottery, raw_event.mstBoxGachaBase)
+            for lottery in raw_event.mstBoxGacha
         ),
     )
 

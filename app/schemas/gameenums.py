@@ -3526,3 +3526,21 @@ DETAIL_MISSION_LINK_TYPE: dict[int, NiceDetailMissionCondLinkType] = {
     2: NiceDetailMissionCondLinkType.missionStart,
     3: NiceDetailMissionCondLinkType.master＿missionStart,
 }
+
+
+class BoxGachaFlag(IntEnum):
+    NONE = 1
+    LIMIT_RESET = 2
+
+
+class NiceLotteryFlag(str, Enum):
+    """Event Lottery Flag"""
+
+    none = "none"
+    limitReset = "limitReset"
+
+
+EVENT_LOTTERY_FLAG_NAME: dict[int, NiceLotteryFlag] = {
+    1: NiceLotteryFlag.none,
+    2: NiceLotteryFlag.limitReset,
+}
