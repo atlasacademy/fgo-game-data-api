@@ -27,9 +27,9 @@ class DeckSvt(BaseModelORJson):
     uniqueId: int
     name: str
     roleType: int
-    dropInfos: list[DropInfo]
+    dropInfos: Optional[list[DropInfo]] = None
     npcId: int
-    enemyScript: dict[str, Any]
+    enemyScript: Optional[dict[str, Any]] = None
     infoScript: Optional[dict[str, Any]] = None
     index: int
     id: int
@@ -97,7 +97,7 @@ class UserSvt(BaseModelORJson):
     equipTargetIds: Optional[list[int]] = None
     npcSvtClassId: int
     overwriteSvtId: int
-    userCommandCodeIds: list[int]
+    userCommandCodeIds: Optional[list[int]] = None
     commandCardParam: Optional[list[int]] = None
     limitCount: int
     imageLimitCount: int

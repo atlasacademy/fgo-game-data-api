@@ -34,7 +34,7 @@ def get_enemy_misc(svt: UserSvt) -> EnemyMisc:
         equipTargetIds=svt.equipTargetIds,
         npcSvtClassId=svt.npcSvtClassId,
         overwriteSvtId=svt.overwriteSvtId,
-        userCommandCodeIds=svt.userCommandCodeIds,
+        userCommandCodeIds=svt.userCommandCodeIds if svt.userCommandCodeIds else [],
         commandCardParam=svt.commandCardParam,
         status=svt.status,
     )
@@ -210,7 +210,9 @@ def get_quest_enemy(
         noblePhantasm=get_enemy_td(user_svt, all_enemy_tds),
         serverMod=get_enemy_server_mod(user_svt),
         ai=get_enemy_ai(user_svt),
-        enemyScript=get_enemy_script(deck_svt.enemyScript),
+        enemyScript=get_enemy_script(
+            deck_svt.enemyScript if deck_svt.enemyScript else {}
+        ),
         limit=get_enemy_limit(user_svt),
         misc=get_enemy_misc(user_svt),
     )
@@ -227,7 +229,7 @@ def get_extra_decks(
         (DeckType.CHANGE, "change"),
     ):
         for enemy in deck_svts:
-            if deck_key in enemy.deck.enemyScript:
+            if enemy.deck.enemyScript and deck_key in enemy.deck.enemyScript:
                 for npc_id in enemy.deck.enemyScript[deck_key]:
                     deck_info = EnemyDeckInfo(deck_type, npc_id_map[deck_type][npc_id])
                     if deck_info not in extra_decks:
@@ -237,12 +239,13 @@ def get_extra_decks(
 
 
 def get_enemies_in_stage(
-    enemy_deck_svts: list[DeckSvt], npc_id_map: dict[DeckType, dict[int, DeckSvt]]
+    enemy_deck_svts: list[EnemyDeckInfo], npc_id_map: dict[DeckType, dict[int, DeckSvt]]
 ) -> list[EnemyDeckInfo]:
     stage_enemies = [
-        EnemyDeckInfo(DeckType.ENEMY, enemy)
-        for enemy in enemy_deck_svts
-        if not enemy.infoScript or "isAddition" not in enemy.infoScript
+        deck_info
+        for deck_info in enemy_deck_svts
+        if not deck_info.deck.infoScript
+        or "isAddition" not in deck_info.deck.infoScript
     ]
 
     # For faster added checks. A quest can have hundreds of enemies but only at most 5 break bars
@@ -306,8 +309,19 @@ def get_quest_enemies(
 
     out_enemies: list[list[QuestEnemy]] = []
     for enemy_deck in quest_detail.enemyDeck:
+        enemy_decks = [
+            EnemyDeckInfo(DeckType.ENEMY, enemy)
+            for enemy in enemy_deck.svts
+            if not enemy.infoScript or "isAddition" not in enemy.infoScript
+        ]
+        enemy_decks += [
+            EnemyDeckInfo(DeckType.TRANSFORM, enemy)
+            for enemy in quest_detail.transformDeck.svts
+            if not enemy.infoScript or "isAddition" not in enemy.infoScript
+        ]
+
         stage_nice_enemies: list[QuestEnemy] = []
-        for deck_svt_info in get_enemies_in_stage(enemy_deck.svts, npc_id_map):
+        for deck_svt_info in get_enemies_in_stage(enemy_decks, npc_id_map):
             nice_enemy = get_quest_enemy(
                 region=region,
                 deck_svt_info=deck_svt_info,
