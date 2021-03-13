@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fgo-game-data-api"
-version = "5.52.0"
+version = "5.53.0"
 description = "Provide raw and processed FGO game data"
 authors = ["squaresmile <squaresmile@protonmail.com>"]
 
@@ -45,7 +45,6 @@ extension-pkg-whitelist = "orjson,pydantic"
 
 [tool.pylint.'MESSAGES CONTROL']
 disable = '''
-bad-continuation,
 duplicate-code,
 invalid-name,
 line-too-long,

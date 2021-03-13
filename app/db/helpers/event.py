@@ -10,6 +10,8 @@ from ...models.raw import (
     mstEventMissionConditionDetail,
     mstEventPointBuff,
     mstEventReward,
+    mstEventTower,
+    mstEventTowerReward,
     mstShop,
 )
 from ...schemas.raw import (
@@ -19,6 +21,8 @@ from ...schemas.raw import (
     MstEventMissionConditionDetail,
     MstEventPointBuff,
     MstEventReward,
+    MstEventTower,
+    MstEventTowerReward,
     MstShop,
 )
 
@@ -103,4 +107,30 @@ def get_mstEventMissionConditionDetail(
     return [
         MstEventMissionConditionDetail.from_orm(condDetail)
         for condDetail in conn.execute(mstEventMissionConditionDetail_stmt).fetchall()
+    ]
+
+
+def get_mstEventTower(conn: Connection, event_id: int) -> list[MstEventTower]:
+    mstEventTower_stmt = (
+        select(mstEventTower)
+        .where(mstEventTower.c.eventId == event_id)
+        .order_by(mstEventTower.c.towerId)
+    )
+    return [
+        MstEventTower.from_orm(tower)
+        for tower in conn.execute(mstEventTower_stmt).fetchall()
+    ]
+
+
+def get_mstEventTowerReward(
+    conn: Connection, event_id: int
+) -> list[MstEventTowerReward]:
+    mstEventTowerReward_stmt = (
+        select(mstEventTowerReward)
+        .where(mstEventTowerReward.c.eventId == event_id)
+        .order_by(mstEventTowerReward.c.towerId, mstEventTowerReward.c.floor)
+    )
+    return [
+        MstEventTowerReward.from_orm(tower_reward)
+        for tower_reward in conn.execute(mstEventTowerReward_stmt).fetchall()
     ]

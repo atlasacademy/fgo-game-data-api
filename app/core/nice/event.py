@@ -25,6 +25,8 @@ from ...schemas.nice import (
     NiceEventMissionConditionDetail,
     NiceEventPointBuff,
     NiceEventReward,
+    NiceEventTower,
+    NiceEventTowerReward,
     NiceItemAmount,
     NiceShop,
 )
@@ -34,6 +36,8 @@ from ...schemas.raw import (
     MstEventMissionConditionDetail,
     MstEventPointBuff,
     MstEventReward,
+    MstEventTower,
+    MstEventTowerReward,
     MstShop,
 )
 from .. import raw
@@ -168,6 +172,39 @@ def get_nice_mission_cond(
     return nice_mission_cond
 
 
+def get_nice_tower_rewards(
+    region: Region, reward: MstEventTowerReward
+) -> NiceEventTowerReward:
+    base_settings = {"base_url": settings.asset_url, "region": region}
+    return NiceEventTowerReward(
+        floor=reward.floor,
+        gifts=get_nice_gift(region, reward.giftId),
+        boardMessage=reward.boardMessage,
+        rewardGet=AssetURL.eventReward.format(
+            **base_settings,
+            fname=f"event_tower_rewardget_{reward.boardImageId}",
+        ),
+        banner=AssetURL.eventReward.format(
+            **base_settings,
+            fname=f"event_towerbanner_{reward.boardImageId}",
+        ),
+    )
+
+
+def get_nice_event_tower(
+    region: Region, tower: MstEventTower, rewards: list[MstEventTowerReward]
+) -> NiceEventTower:
+    return NiceEventTower(
+        towerId=tower.towerId,
+        name=tower.name,
+        rewards=[
+            get_nice_tower_rewards(region, reward)
+            for reward in rewards
+            if reward.towerId == tower.towerId
+        ],
+    )
+
+
 def get_nice_mission(
     region: Region,
     mission: MstEventMission,
@@ -255,6 +292,10 @@ def get_nice_event(conn: Connection, region: Region, event_id: int) -> NiceEvent
             for pointBuff in raw_event.mstEventPointBuff
         ),
         missions=missions,
+        towers=(
+            get_nice_event_tower(region, tower, raw_event.mstEventTowerReward)
+            for tower in raw_event.mstEventTower
+        ),
     )
 
     return nice_event

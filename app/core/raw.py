@@ -411,6 +411,8 @@ def get_event_entity(conn: Connection, region: Region, event_id: int) -> EventEn
             mstEventMission=missions,
             mstEventMissionCondition=conds,
             mstEventMissionConditionDetail=cond_details,
+            mstEventTower=event.get_mstEventTower(conn, event_id),
+            mstEventTowerReward=event.get_mstEventTowerReward(conn, event_id),
         )
     else:
         raise HTTPException(status_code=404, detail="Event not found")

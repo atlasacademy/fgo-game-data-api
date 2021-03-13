@@ -1090,6 +1090,20 @@ class NiceEventMission(BaseModelORJson):
     conds: list[NiceEventMissionCondition]
 
 
+class NiceEventTowerReward(BaseModelORJson):
+    floor: int
+    gifts: list[NiceGift]
+    boardMessage: str
+    rewardGet: HttpUrl
+    banner: HttpUrl
+
+
+class NiceEventTower(BaseModelORJson):
+    towerId: int
+    name: str
+    rewards: list[NiceEventTowerReward]
+
+
 class NiceEvent(BaseModelORJson):
     id: int
     type: NiceEventType
@@ -1110,6 +1124,7 @@ class NiceEvent(BaseModelORJson):
     rewards: list[NiceEventReward]
     pointBuffs: list[NiceEventPointBuff]
     missions: list[NiceEventMission]
+    towers: list[NiceEventTower]
 
 
 class NiceBgm(BaseModelORJson):

@@ -1,0 +1,635 @@
+{
+  "id": 80088,
+  "type": "eventQuest",
+  "name": "The Tale of Setsubun: Oni Pagoda Festival",
+  "shortName": "",
+  "detail": "The Tale of Setsubun: Oni Pagoda Festival",
+  "noticeBanner": "https://assets.atlasacademy.io/GameData/NA/Banner/event_war_80107.png",
+  "banner": "https://assets.atlasacademy.io/GameData/NA/Banner/event_war_80108.png",
+  "icon": "https://assets.atlasacademy.io/GameData/NA/Banner/banner_icon_80108.png",
+  "bannerPriority": 80000,
+  "noticeAt": 1580097600,
+  "startedAt": 1580097600,
+  "endedAt": 1580702399,
+  "finishedAt": 1581307199,
+  "materialOpenedAt": 1751328000,
+  "warIds": [8200],
+  "shop": [],
+  "rewards": [],
+  "pointBuffs": [],
+  "missions": [],
+  "towers": [
+    {
+      "towerId": 1,
+      "name": "Oni Pagoda",
+      "rewards": [
+        {
+          "floor": 5,
+          "gifts": [
+            {
+              "id": 20505,
+              "type": "item",
+              "objectId": 6502,
+              "priority": 0,
+              "num": 5
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008802.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008802.png"
+        },
+        {
+          "floor": 10,
+          "gifts": [
+            {
+              "id": 25323,
+              "type": "item",
+              "objectId": 6528,
+              "priority": 0,
+              "num": 5
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008802.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008802.png"
+        },
+        {
+          "floor": 15,
+          "gifts": [
+            {
+              "id": 25344,
+              "type": "item",
+              "objectId": 6530,
+              "priority": 0,
+              "num": 5
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008802.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008802.png"
+        },
+        {
+          "floor": 20,
+          "gifts": [
+            {
+              "id": 21405,
+              "type": "item",
+              "objectId": 6507,
+              "priority": 0,
+              "num": 5
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008802.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008802.png"
+        },
+        {
+          "floor": 25,
+          "gifts": [
+            {
+              "id": 103,
+              "type": "item",
+              "objectId": 4001,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008802.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008802.png"
+        },
+        {
+          "floor": 30,
+          "gifts": [
+            {
+              "id": 40719,
+              "type": "servant",
+              "objectId": 9402860,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008801.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008801.png"
+        },
+        {
+          "floor": 35,
+          "gifts": [
+            {
+              "id": 20505,
+              "type": "item",
+              "objectId": 6502,
+              "priority": 0,
+              "num": 5
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008802.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008802.png"
+        },
+        {
+          "floor": 40,
+          "gifts": [
+            {
+              "id": 25323,
+              "type": "item",
+              "objectId": 6528,
+              "priority": 0,
+              "num": 5
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008802.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008802.png"
+        },
+        {
+          "floor": 45,
+          "gifts": [
+            {
+              "id": 25344,
+              "type": "item",
+              "objectId": 6530,
+              "priority": 0,
+              "num": 5
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008802.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008802.png"
+        },
+        {
+          "floor": 50,
+          "gifts": [
+            {
+              "id": 31043,
+              "type": "servant",
+              "objectId": 9570400,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008805.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008805.png"
+        },
+        {
+          "floor": 55,
+          "gifts": [
+            {
+              "id": 20505,
+              "type": "item",
+              "objectId": 6502,
+              "priority": 0,
+              "num": 5
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008802.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008802.png"
+        },
+        {
+          "floor": 60,
+          "gifts": [
+            {
+              "id": 40719,
+              "type": "servant",
+              "objectId": 9402860,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008801.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008801.png"
+        },
+        {
+          "floor": 65,
+          "gifts": [
+            {
+              "id": 25344,
+              "type": "item",
+              "objectId": 6530,
+              "priority": 0,
+              "num": 5
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008802.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008802.png"
+        },
+        {
+          "floor": 70,
+          "gifts": [
+            {
+              "id": 25355,
+              "type": "item",
+              "objectId": 6531,
+              "priority": 0,
+              "num": 5
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008802.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008802.png"
+        },
+        {
+          "floor": 75,
+          "gifts": [
+            {
+              "id": 103,
+              "type": "item",
+              "objectId": 4001,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008802.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008802.png"
+        },
+        {
+          "floor": 80,
+          "gifts": [
+            {
+              "id": 32043,
+              "type": "servant",
+              "objectId": 9670400,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008805.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008805.png"
+        },
+        {
+          "floor": 85,
+          "gifts": [
+            {
+              "id": 20505,
+              "type": "item",
+              "objectId": 6502,
+              "priority": 0,
+              "num": 5
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008802.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008802.png"
+        },
+        {
+          "floor": 90,
+          "gifts": [
+            {
+              "id": 31043,
+              "type": "servant",
+              "objectId": 9570400,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008805.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008805.png"
+        },
+        {
+          "floor": 95,
+          "gifts": [
+            {
+              "id": 25344,
+              "type": "item",
+              "objectId": 6530,
+              "priority": 0,
+              "num": 5
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008802.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008802.png"
+        },
+        {
+          "floor": 100,
+          "gifts": [
+            {
+              "id": 40719,
+              "type": "servant",
+              "objectId": 9402860,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008801.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008801.png"
+        }
+      ]
+    },
+    {
+      "towerId": 2,
+      "name": "Oni Pagoda (Mirage)",
+      "rewards": [
+        {
+          "floor": 5,
+          "gifts": [
+            {
+              "id": 25366,
+              "type": "item",
+              "objectId": 6532,
+              "priority": 0,
+              "num": 5
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008804.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008804.png"
+        },
+        {
+          "floor": 10,
+          "gifts": [
+            {
+              "id": 21605,
+              "type": "item",
+              "objectId": 6506,
+              "priority": 0,
+              "num": 5
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008804.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008804.png"
+        },
+        {
+          "floor": 15,
+          "gifts": [
+            {
+              "id": 20605,
+              "type": "item",
+              "objectId": 6508,
+              "priority": 0,
+              "num": 5
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008804.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008804.png"
+        },
+        {
+          "floor": 20,
+          "gifts": [
+            {
+              "id": 40719,
+              "type": "servant",
+              "objectId": 9402860,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008803.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008803.png"
+        },
+        {
+          "floor": 25,
+          "gifts": [
+            {
+              "id": 103,
+              "type": "item",
+              "objectId": 4001,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008804.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008804.png"
+        },
+        {
+          "floor": 30,
+          "gifts": [
+            {
+              "id": 32043,
+              "type": "servant",
+              "objectId": 9670400,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008806.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008806.png"
+        },
+        {
+          "floor": 35,
+          "gifts": [
+            {
+              "id": 25366,
+              "type": "item",
+              "objectId": 6532,
+              "priority": 0,
+              "num": 5
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008804.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008804.png"
+        },
+        {
+          "floor": 40,
+          "gifts": [
+            {
+              "id": 40719,
+              "type": "servant",
+              "objectId": 9402860,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008803.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008803.png"
+        },
+        {
+          "floor": 45,
+          "gifts": [
+            {
+              "id": 20605,
+              "type": "item",
+              "objectId": 6508,
+              "priority": 0,
+              "num": 5
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008804.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008804.png"
+        },
+        {
+          "floor": 50,
+          "gifts": [
+            {
+              "id": 21701,
+              "type": "item",
+              "objectId": 6999,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008803.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008803.png"
+        },
+        {
+          "floor": 55,
+          "gifts": [
+            {
+              "id": 25366,
+              "type": "item",
+              "objectId": 6532,
+              "priority": 0,
+              "num": 5
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008804.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008804.png"
+        },
+        {
+          "floor": 60,
+          "gifts": [
+            {
+              "id": 31043,
+              "type": "servant",
+              "objectId": 9570400,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008806.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008806.png"
+        },
+        {
+          "floor": 65,
+          "gifts": [
+            {
+              "id": 20605,
+              "type": "item",
+              "objectId": 6508,
+              "priority": 0,
+              "num": 5
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008804.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008804.png"
+        },
+        {
+          "floor": 70,
+          "gifts": [
+            {
+              "id": 32043,
+              "type": "servant",
+              "objectId": 9670400,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008806.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008806.png"
+        },
+        {
+          "floor": 75,
+          "gifts": [
+            {
+              "id": 21405,
+              "type": "item",
+              "objectId": 6507,
+              "priority": 0,
+              "num": 5
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008804.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008804.png"
+        },
+        {
+          "floor": 80,
+          "gifts": [
+            {
+              "id": 31043,
+              "type": "servant",
+              "objectId": 9570400,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008806.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008806.png"
+        },
+        {
+          "floor": 85,
+          "gifts": [
+            {
+              "id": 25355,
+              "type": "item",
+              "objectId": 6531,
+              "priority": 0,
+              "num": 5
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008804.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008804.png"
+        },
+        {
+          "floor": 90,
+          "gifts": [
+            {
+              "id": 32043,
+              "type": "servant",
+              "objectId": 9670400,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008806.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008806.png"
+        },
+        {
+          "floor": 95,
+          "gifts": [
+            {
+              "id": 21605,
+              "type": "item",
+              "objectId": 6506,
+              "priority": 0,
+              "num": 5
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008804.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008804.png"
+        },
+        {
+          "floor": 100,
+          "gifts": [
+            {
+              "id": 21701,
+              "type": "item",
+              "objectId": 6999,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
+          "rewardGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_tower_rewardget_8008803.png",
+          "banner": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_towerbanner_8008803.png"
+        }
+      ]
+    }
+  ]
+}

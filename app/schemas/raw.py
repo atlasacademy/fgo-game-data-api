@@ -795,6 +795,33 @@ class MstEventMissionConditionDetail(BaseModel):
         orm_mode = True
 
 
+class MstEventTower(BaseModel):
+    eventId: int
+    towerId: int
+    name: str
+    topFloor: Optional[int] = None
+    floorLabel: Optional[str] = None
+    openEffectId: Optional[int] = None
+    flag: Optional[int] = None
+
+    class Config:
+        orm_mode = True
+
+
+class MstEventTowerReward(BaseModel):
+    eventId: int
+    towerId: int
+    floor: int
+    giftId: int
+    iconId: int
+    presentMessageId: int
+    boardMessage: str
+    boardImageId: int
+
+    class Config:
+        orm_mode = True
+
+
 class MstEvent(BaseModel):
     script: list[dict[str, str]]  # []
     id: int  # 10083
@@ -1185,6 +1212,8 @@ class EventEntity(BaseModelORJson):
     mstEventMission: list[MstEventMission]
     mstEventMissionCondition: list[MstEventMissionCondition]
     mstEventMissionConditionDetail: list[MstEventMissionConditionDetail]
+    mstEventTower: list[MstEventTower]
+    mstEventTowerReward: list[MstEventTowerReward]
 
 
 class WarEntity(BaseModelORJson):

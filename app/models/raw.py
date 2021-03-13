@@ -590,6 +590,33 @@ mstEventMissionConditionDetail = Table(
 )
 
 
+mstEventTower = Table(
+    "mstEventTower",
+    metadata,
+    Column("eventId", Integer, index=True),
+    Column("towerId", Integer),
+    Column("name", String),
+    Column("topFloor", Integer),
+    Column("floorLabel", String),
+    Column("openEffectId", Integer),
+    Column("flag", Integer),
+)
+
+
+mstEventTowerReward = Table(
+    "mstEventTowerReward",
+    metadata,
+    Column("eventId", Integer, index=True),
+    Column("towerId", Integer),
+    Column("floor", Integer),
+    Column("giftId", Integer),
+    Column("iconId", Integer),
+    Column("presentMessageId", Integer),
+    Column("boardMessage", String),
+    Column("boardImageId", Integer),
+)
+
+
 mstSpot = Table(
     "mstSpot",
     metadata,
@@ -827,6 +854,8 @@ TABLES_TO_BE_LOADED = [
     mstEventReward,
     mstEventPointBuff,
     mstEventMissionCondition,
+    mstEventTower,
+    mstEventTowerReward,
     mstWarAdd,
     mstQuestRelease,
     mstQuestConsumeItem,

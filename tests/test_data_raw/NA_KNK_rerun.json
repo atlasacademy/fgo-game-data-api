@@ -6607,5 +6607,7 @@
       "targetQuestIndividualities": [],
       "conditionLinkType": 2
     }
-  ]
+  ],
+  "mstEventTower": [],
+  "mstEventTowerReward": []
 }
