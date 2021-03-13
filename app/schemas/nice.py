@@ -1280,6 +1280,7 @@ class DeckType(str, Enum):
     ENEMY = "enemy"
     CALL = "call"
     SHIFT = "shift"
+    CHANGE = "change"
 
 
 class QuestEnemy(BaseModelORJson):

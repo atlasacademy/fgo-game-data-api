@@ -216,20 +216,24 @@ def get_quest_enemy(
     )
 
 
-def get_call_shift_decks(
+def get_extra_decks(
     deck_svts: list[EnemyDeckInfo], npc_id_map: dict[DeckType, dict[int, DeckSvt]]
 ) -> list[EnemyDeckInfo]:
-    call_shift_decks: list[EnemyDeckInfo] = []
-    for deck_type, deck_key in ((DeckType.CALL, "call"), (DeckType.SHIFT, "shift")):
-        deck_type_decks: set[EnemyDeckInfo] = set()
+    extra_decks: list[EnemyDeckInfo] = []
+
+    for deck_type, deck_key in (
+        (DeckType.CALL, "call"),
+        (DeckType.SHIFT, "shift"),
+        (DeckType.CHANGE, "change"),
+    ):
         for enemy in deck_svts:
             if deck_key in enemy.deck.enemyScript:
-                deck_type_decks |= {
-                    EnemyDeckInfo(deck_type, npc_id_map[deck_type][npc_id])
-                    for npc_id in enemy.deck.enemyScript[deck_key]
-                }
-        call_shift_decks += list(deck_type_decks)
-    return call_shift_decks
+                for npc_id in enemy.deck.enemyScript[deck_key]:
+                    deck_info = EnemyDeckInfo(deck_type, npc_id_map[deck_type][npc_id])
+                    if deck_info not in extra_decks:
+                        extra_decks.append(deck_info)
+
+    return extra_decks
 
 
 def get_enemies_in_stage(
@@ -240,16 +244,18 @@ def get_enemies_in_stage(
         for enemy in enemy_deck_svts
         if not enemy.infoScript or "isAddition" not in enemy.infoScript
     ]
+
+    # For faster added checks. A quest can have hundreds of enemies but only at most 5 break bars
     added_npc_decks = set(stage_enemies)
 
-    to_be_added_decks = get_call_shift_decks(stage_enemies, npc_id_map)
+    to_be_added_decks = get_extra_decks(stage_enemies, npc_id_map)
 
     while to_be_added_decks:
         stage_enemies += to_be_added_decks
         added_npc_decks |= set(to_be_added_decks)
         to_be_added_decks = [
             deck
-            for deck in get_call_shift_decks(stage_enemies, npc_id_map)
+            for deck in get_extra_decks(stage_enemies, npc_id_map)
             if deck not in added_npc_decks
         ]
 
@@ -267,6 +273,7 @@ def get_quest_enemies(
         (quest_detail.enemyDeck, DeckType.ENEMY),
         (quest_detail.callDeck, DeckType.CALL),
         (quest_detail.shiftDeck, DeckType.SHIFT),
+        (quest_detail.shiftDeck, DeckType.CHANGE),
     ]
     for decks, deck_type in DECK_LIST:
         npc_id_map[deck_type] = {

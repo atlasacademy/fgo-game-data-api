@@ -515,3 +515,7 @@ class TestServantSpecial:
         assert len(ccc_suzuka_1.json()["stages"][0]["enemies"]) == 2
         ccc_suzuka_2 = await get_response("/nice/NA/quest/94034017/2")
         assert len(ccc_suzuka_2.json()["stages"][0]["enemies"]) == 4
+        db = await get_response("/nice/NA/quest/94034020/1")
+        assert [enemy["npcId"] for enemy in db.json()["stages"][0]["enemies"]] == list(
+            range(94034125, 94034133)
+        )
