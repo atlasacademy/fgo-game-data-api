@@ -1216,7 +1216,9 @@
       "closedAt": 1583467199
     }
   ],
+  "mstSetItem": [],
   "mstEventReward": [],
+  "mstEventRewardSet": [],
   "mstEventPointBuff": [],
   "mstEventMission": [
     {
@@ -6609,5 +6611,7 @@
     }
   ],
   "mstEventTower": [],
-  "mstEventTowerReward": []
+  "mstEventTowerReward": [],
+  "mstBoxGacha": [],
+  "mstBoxGachaBase": []
 }

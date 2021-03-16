@@ -4,9 +4,9 @@ from fastapi import HTTPException
 from sqlalchemy.engine import Connection
 
 from ..data.gamedata import masters
-from ..db.helpers import ai, event, quest, skill, svt, td, war
+from ..db.helpers import ai, event, item, quest, skill, svt, td, war
 from ..schemas.common import Region, ReverseDepth
-from ..schemas.enums import FUNC_VALS_NOT_BUFF, CondType
+from ..schemas.enums import FUNC_VALS_NOT_BUFF, CondType, PurchaseType
 from ..schemas.raw import (
     EXTRA_ATTACK_TD_ID,
     AiCollection,
@@ -403,13 +403,25 @@ def get_event_entity(conn: Connection, region: Region, event_id: int) -> EventEn
             if cond.condType == CondType.MISSION_CONDITION_DETAIL
         ]
         cond_details = event.get_mstEventMissionConditionDetail(conn, cond_detail_ids)
+
         box_gachas = event.get_mstBoxGacha(conn, event_id)
         box_gacha_base_ids = [
             base_id for box_gacha in box_gachas for base_id in box_gacha.baseIds
         ]
+
+        shops = event.get_mstShop(conn, event_id)
+        set_item_ids = [
+            set_id
+            for shop in shops
+            for set_id in shop.targetIds
+            if shop.purchaseType == PurchaseType.SET_ITEM
+        ]
+        set_items = item.get_mstSetItem(conn, set_item_ids)
+
         return EventEntity(
             mstEvent=masters[region].mstEventId[event_id],
-            mstShop=event.get_mstShop(conn, event_id),
+            mstShop=shops,
+            mstSetItem=set_items,
             mstEventReward=event.get_mstEventReward(conn, event_id),
             mstEventRewardSet=event.get_mstEventRewardSet(conn, event_id),
             mstEventPointBuff=event.get_mstEventPointBuff(conn, event_id),

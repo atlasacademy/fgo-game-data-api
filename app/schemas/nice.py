@@ -987,6 +987,13 @@ class NiceBuffReverse(NiceBuff):
     reverse: Optional[NiceReversedBuffType] = None
 
 
+class NiceItemSet(BaseModelORJson):
+    id: int
+    purchaseType: NicePurchaseType
+    targetId: int
+    setNum: int
+
+
 class NiceShop(BaseModelORJson):
     id: int
     baseShopId: int
@@ -998,10 +1005,19 @@ class NiceShop(BaseModelORJson):
     detail: str
     infoMessage: str
     warningMessage: str
-    payType: NicePayType
+    payType: NicePayType = Field(
+        ..., title="Payment Type", description="Type of items to be used as payment."
+    )
     cost: NiceItemAmount
-    purchaseType: NicePurchaseType
+    purchaseType: NicePurchaseType = Field(
+        ..., title="Reward Type", description="Type of items to be received."
+    )
     targetIds: list[int]
+    itemSet: list[NiceItemSet] = Field(
+        ...,
+        title="List if item in the item set",
+        description="If purchaseType is itemSet, this field will contain the item in the set.",
+    )
     setNum: int = Field(
         ..., title="Set Number", description="Number of items per buying unit"
     )

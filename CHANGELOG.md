@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.54.0 - 2020-03-15
+### Added
+- `itemSet` to event shop
+
 ## 5.53.0 - 2020-03-12
 ### Added
 - Tower info to raw and nice event.

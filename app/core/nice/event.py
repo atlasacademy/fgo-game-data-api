@@ -1,5 +1,7 @@
 from sqlalchemy.engine import Connection
 
+from ...schemas.gameenums import PurchaseType
+
 from ...config import Settings
 from ...data.gamedata import masters
 from ...schemas.common import Region
@@ -31,6 +33,7 @@ from ...schemas.nice import (
     NiceEventTower,
     NiceEventTowerReward,
     NiceItemAmount,
+    NiceItemSet,
     NiceShop,
 )
 from ...schemas.raw import (
@@ -43,6 +46,7 @@ from ...schemas.raw import (
     MstEventReward,
     MstEventTower,
     MstEventTowerReward,
+    MstSetItem,
     MstShop,
 )
 from .. import raw
@@ -54,13 +58,33 @@ from .item import get_nice_item
 settings = Settings()
 
 
-def get_nice_shop(region: Region, shop: MstShop) -> NiceShop:
+def get_nice_set_item(set_item: MstSetItem) -> NiceItemSet:
+    return NiceItemSet(
+        id=set_item.id,
+        purchaseType=PURCHASE_TYPE_NAME[set_item.purchaseType],
+        targetId=set_item.targetId,
+        setNum=set_item.setNum,
+    )
+
+
+def get_nice_shop(
+    region: Region, shop: MstShop, set_items: list[MstSetItem]
+) -> NiceShop:
     if shop.payType == PayType.FRIEND_POINT:
         shop_item_id = 4
     elif shop.payType == PayType.MANA:
         shop_item_id = 3
     else:
         shop_item_id = shop.itemIds[0]
+
+    if shop.purchaseType == PurchaseType.SET_ITEM:
+        shop_set_items = [
+            get_nice_set_item(set_item)
+            for set_item in set_items
+            if set_item.id in shop.targetIds
+        ]
+    else:
+        shop_set_items = []
 
     return NiceShop(
         id=shop.id,
@@ -79,6 +103,7 @@ def get_nice_shop(region: Region, shop: MstShop) -> NiceShop:
         ),
         purchaseType=PURCHASE_TYPE_NAME[shop.purchaseType],
         targetIds=shop.targetIds,
+        itemSet=shop_set_items,
         setNum=shop.setNum,
         limitNum=shop.limitNum,
         defaultLv=shop.defaultLv,
@@ -334,7 +359,10 @@ def get_nice_event(conn: Connection, region: Region, event_id: int) -> NiceEvent
         finishedAt=raw_event.mstEvent.finishedAt,
         materialOpenedAt=raw_event.mstEvent.materialOpenedAt,
         warIds=(war.id for war in masters[region].mstWarEventId.get(event_id, [])),
-        shop=(get_nice_shop(region, shop) for shop in raw_event.mstShop),
+        shop=(
+            get_nice_shop(region, shop, raw_event.mstSetItem)
+            for shop in raw_event.mstShop
+        ),
         rewards=(
             get_nice_reward(region, reward, event_id)
             for reward in raw_event.mstEventReward

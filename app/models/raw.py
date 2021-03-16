@@ -440,6 +440,17 @@ mstSubtitle = Table(
 )
 
 
+mstSetItem = Table(
+    "mstSetItem",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("purchaseType", Integer),
+    Column("targetId", Integer),
+    Column("setNum", Integer),
+    Column("createdAt", Integer),
+)
+
+
 mstShop = Table(
     "mstShop",
     metadata,
@@ -900,6 +911,7 @@ TABLES_TO_BE_LOADED = [
     mstSvtVoice,
     mstVoicePlayCond,
     mstSvtComment,
+    mstSetItem,
     mstEventReward,
     mstEventRewardSet,
     mstEventPointBuff,

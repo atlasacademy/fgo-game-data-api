@@ -497,6 +497,17 @@ class MstItem(BaseModel):
     endedAt: int  # 1910908800
 
 
+class MstSetItem(BaseModel):
+    id: int
+    purchaseType: int
+    targetId: int
+    setNum: int
+    createdAt: int
+
+    class Config:
+        orm_mode = True
+
+
 class ItemEntity(BaseModelORJson):
     mstItem: MstItem
 
@@ -1256,6 +1267,7 @@ class QuestPhaseEntity(QuestEntity):
 class EventEntity(BaseModelORJson):
     mstEvent: MstEvent
     mstShop: list[MstShop]
+    mstSetItem: list[MstSetItem]
     mstEventReward: list[MstEventReward]
     mstEventRewardSet: list[MstEventRewardSet]
     mstEventPointBuff: list[MstEventPointBuff]

@@ -425,11 +425,13 @@ class TestServantSpecial:
 
     async def test_shop_itemIds_0(self) -> None:
         with engines[Region.NA].connect() as conn:
-            fp_shop_item = get_nice_shop(Region.NA, event.get_mstShop_by_id(conn, 1))
+            fp_shop_item = get_nice_shop(
+                Region.NA, event.get_mstShop_by_id(conn, 1), []
+            )
             assert fp_shop_item.cost.item.name == "Friend Point"
 
             mp_shop_item = get_nice_shop(
-                Region.NA, event.get_mstShop_by_id(conn, 11000000)
+                Region.NA, event.get_mstShop_by_id(conn, 11000000), []
             )
             assert mp_shop_item.cost.item.name == "Mana Prism"
 
@@ -511,7 +513,7 @@ class TestServantSpecial:
             "id": 107050,
         }
 
-    async def get_all_call_shift_enemies(self) -> None:
+    async def test_get_all_call_shift_enemies(self) -> None:
         ccc_suzuka_1 = await get_response("/nice/NA/quest/94034017/1")
         assert len(ccc_suzuka_1.json()["stages"][0]["enemies"]) == 2
         ccc_suzuka_2 = await get_response("/nice/NA/quest/94034017/2")
@@ -520,3 +522,13 @@ class TestServantSpecial:
         assert [enemy["npcId"] for enemy in db.json()["stages"][0]["enemies"]] == list(
             range(94034125, 94034133)
         )
+
+    async def test_set_item(self) -> None:
+        valentine_2018 = await get_response("/nice/NA/event/80010")
+        tamamo_cat_shop = valentine_2018.json()["shop"][79]
+        assert tamamo_cat_shop["itemSet"][1] == {
+            "id": 8001089,
+            "purchaseType": "servant",
+            "targetId": 9804500,
+            "setNum": 1,
+        }
