@@ -6,7 +6,8 @@ from sqlalchemy.engine import Connection
 from ..data.gamedata import masters
 from ..db.helpers import ai, event, item, quest, skill, svt, td, war
 from ..schemas.common import Region, ReverseDepth
-from ..schemas.enums import FUNC_VALS_NOT_BUFF, CondType, PurchaseType
+from ..schemas.enums import FUNC_VALS_NOT_BUFF
+from ..schemas.gameenums import CondType, PurchaseType
 from ..schemas.raw import (
     EXTRA_ATTACK_TD_ID,
     AiCollection,

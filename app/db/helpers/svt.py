@@ -21,7 +21,7 @@ from ...models.raw import (
     mstSvtVoice,
     mstVoicePlayCond,
 )
-from ...schemas.enums import VoiceCondType
+from ...schemas.gameenums import VoiceCondType
 from ...schemas.raw import (
     GlobalNewMstSubtitle,
     MstSvtComment,

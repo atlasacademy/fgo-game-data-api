@@ -2,7 +2,7 @@ from typing import Any
 
 from ...config import Settings
 from ...schemas.common import Region
-from ...schemas.enums import BUFF_TYPE_NAME
+from ...schemas.gameenums import BUFF_TYPE_NAME
 from ...schemas.nice import AssetURL
 from ...schemas.raw import BuffEntityNoReverse
 from ..basic import get_nice_buff_script

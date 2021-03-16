@@ -8,25 +8,27 @@ from .common import Region
 from .enums import (
     ATTRIBUTE_NAME,
     CLASS_NAME,
-    GENDER_TYPE_NAME,
     PLAYABLE_CLASS_LIST,
-    SVT_FLAG_NAME,
-    SVT_TYPE_NAME,
     Attribute,
     FuncApplyTarget,
+    NiceItemBGType,
+    NiceItemUse,
+    NiceSkillType,
+    SvtClass,
+    Trait,
+)
+from .gameenums import (
+    GENDER_TYPE_NAME,
+    SVT_FLAG_NAME,
+    SVT_TYPE_NAME,
     NiceBuffType,
     NiceCardType,
     NiceFuncTargetType,
     NiceFuncType,
     NiceGender,
-    NiceItemBGType,
     NiceItemType,
-    NiceItemUse,
-    NiceSkillType,
     NiceSvtFlag,
     NiceSvtType,
-    SvtClass,
-    Trait,
 )
 
 

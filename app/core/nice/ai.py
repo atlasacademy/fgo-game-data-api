@@ -3,14 +3,12 @@ from sqlalchemy.engine import Connection
 from ...config import Settings
 from ...data.gamedata import masters
 from ...schemas.common import Language, Region
-from ...schemas.enums import (
+from ...schemas.enums import AI_TIMING_NAME, AiTiming, AiType
+from ...schemas.gameenums import (
     AI_ACT_NUM_NAME,
     AI_ACT_TARGET_NAME,
     AI_ACT_TYPE_NAME,
     AI_COND_NAME,
-    AI_TIMING_NAME,
-    AiTiming,
-    AiType,
     NiceAiActNum,
 )
 from ...schemas.nice import NiceAi, NiceAiAct, NiceAiCollection

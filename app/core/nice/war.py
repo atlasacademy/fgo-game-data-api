@@ -5,7 +5,7 @@ from sqlalchemy.engine import Connection
 from ...config import Settings
 from ...data.gamedata import masters
 from ...schemas.common import Region
-from ...schemas.enums import (
+from ...schemas.gameenums import (
     COND_TYPE_NAME,
     WAR_OVERWRITE_TYPE_NAME,
     WAR_START_TYPE_NAME,

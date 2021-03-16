@@ -9,7 +9,7 @@ from app.db.engine import engines
 from app.routers.utils import list_string_exclude
 from app.schemas.basic import BasicServant
 from app.schemas.common import Language, Region, ReverseDepth
-from app.schemas.enums import FuncType
+from app.schemas.gameenums import FuncType
 from app.schemas.raw import get_subtitle_svtId
 
 

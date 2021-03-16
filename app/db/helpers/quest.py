@@ -12,7 +12,7 @@ from ...models.raw import (
     mstStage,
 )
 from ...models.rayshift import rayshiftQuest
-from ...schemas.enums import QuestFlag
+from ...schemas.gameenums import QuestFlag
 from ...schemas.raw import QuestEntity, QuestPhaseEntity
 from .utils import sql_jsonb_agg
 

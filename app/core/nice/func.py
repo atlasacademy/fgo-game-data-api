@@ -6,13 +6,8 @@ from fastapi import HTTPException
 from ...config import Settings, logger
 from ...data.gamedata import masters
 from ...schemas.common import Region
-from ...schemas.enums import (
-    FUNC_APPLYTARGET_NAME,
-    FUNC_TARGETTYPE_NAME,
-    FUNC_TYPE_NAME,
-    FUNC_VALS_NOT_BUFF,
-    FuncType,
-)
+from ...schemas.enums import FUNC_APPLYTARGET_NAME, FUNC_VALS_NOT_BUFF
+from ...schemas.gameenums import FUNC_TARGETTYPE_NAME, FUNC_TYPE_NAME, FuncType
 from ...schemas.nice import AssetURL, NiceFuncGroup
 from ...schemas.raw import FunctionEntityNoReverse, MstFuncGroup
 from ..utils import get_traits_list

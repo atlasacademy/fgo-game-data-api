@@ -6,14 +6,12 @@ from typing import Any, Callable, NamedTuple, Union
 from app.config import Settings
 from app.core.utils import get_traits_list
 from app.schemas.common import Region
-from app.schemas.enums import (
-    ATTRIBUTE_NAME,
+from app.schemas.enums import ATTRIBUTE_NAME, CLASS_NAME, ITEM_BG_TYPE_NAME
+from app.schemas.gameenums import (
     BUFF_ACTION_NAME,
     BUFF_LIMIT_NAME,
     BUFF_TYPE_NAME,
     CARD_TYPE_NAME,
-    CLASS_NAME,
-    ITEM_BG_TYPE_NAME,
     BuffAction,
 )
 

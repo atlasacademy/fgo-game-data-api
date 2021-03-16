@@ -19,6 +19,12 @@ from .enums import (
     Attribute,
     EnemyDeathType,
     FuncApplyTarget,
+    NiceItemBGType,
+    NiceItemUse,
+    NiceSkillType,
+    SvtClass,
+)
+from .gameenums import (
     NiceAiActNum,
     NiceAiActTarget,
     NiceAiActType,
@@ -33,9 +39,7 @@ from .enums import (
     NiceFuncType,
     NiceGender,
     NiceGiftType,
-    NiceItemBGType,
     NiceItemType,
-    NiceItemUse,
     NiceMissionProgressType,
     NiceMissionRewardType,
     NiceMissionType,
@@ -43,7 +47,6 @@ from .enums import (
     NicePurchaseType,
     NiceQuestType,
     NiceShopType,
-    NiceSkillType,
     NiceStatusRank,
     NiceSvtFlag,
     NiceSvtType,
@@ -51,7 +54,6 @@ from .enums import (
     NiceVoiceCondType,
     NiceWarOverwriteType,
     NiceWarStartType,
-    SvtClass,
 )
 
 

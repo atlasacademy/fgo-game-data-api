@@ -7,10 +7,9 @@ from ....config import Settings
 from ....data.custom_mappings import TRANSLATIONS
 from ....data.gamedata import masters
 from ....schemas.common import Language, Region
-from ....schemas.enums import (
-    ATTRIBUTE_NAME,
+from ....schemas.enums import ATTRIBUTE_NAME, CLASS_NAME
+from ....schemas.gameenums import (
     CARD_TYPE_NAME,
-    CLASS_NAME,
     COND_TYPE_NAME,
     GENDER_TYPE_NAME,
     STATUS_RANK_NAME,

@@ -1,7 +1,8 @@
 from ...config import Settings
 from ...data.gamedata import masters
 from ...schemas.common import Region
-from ...schemas.enums import ITEM_BG_TYPE_NAME, ITEM_TYPE_NAME, NiceItemUse
+from ...schemas.enums import ITEM_BG_TYPE_NAME, NiceItemUse
+from ...schemas.gameenums import ITEM_TYPE_NAME
 from ...schemas.nice import AssetURL, NiceItem, NiceItemAmount
 from ...schemas.raw import MstItem
 from ..utils import get_traits_list

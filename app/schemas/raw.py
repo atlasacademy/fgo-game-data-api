@@ -4,7 +4,7 @@ from typing import Any, Optional
 from pydantic import BaseModel
 
 from .base import BaseModelORJson
-from .enums import SvtType
+from .gameenums import SvtType
 
 
 class MstConstant(BaseModelORJson):

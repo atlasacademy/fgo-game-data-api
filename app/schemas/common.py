@@ -3,7 +3,8 @@ from typing import Optional, Union
 
 from pydantic import BaseModel, HttpUrl
 
-from .enums import NiceClassRelationOverwriteType, SvtClass, Trait
+from .enums import SvtClass, Trait
+from .gameenums import NiceClassRelationOverwriteType
 
 
 class RepoInfo(BaseModel):

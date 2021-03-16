@@ -1,6 +1,6 @@
 from ...data.gamedata import masters
 from ...schemas.common import Region
-from ...schemas.enums import GIFT_TYPE_NAME
+from ...schemas.gameenums import GIFT_TYPE_NAME
 from ...schemas.nice import NiceGift
 
 

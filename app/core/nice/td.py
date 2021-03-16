@@ -6,7 +6,7 @@ from sqlalchemy.engine import Connection
 
 from ...config import Settings
 from ...schemas.common import Region
-from ...schemas.enums import CARD_TYPE_NAME
+from ...schemas.gameenums import CARD_TYPE_NAME
 from ...schemas.nice import AssetURL, NiceTd
 from ...schemas.raw import TdEntityNoReverse
 from ..raw import get_td_entity_no_reverse_many

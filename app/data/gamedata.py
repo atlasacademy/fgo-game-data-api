@@ -6,7 +6,8 @@ from pydantic import DirectoryPath
 
 from ..config import Settings, logger
 from ..schemas.common import Region
-from ..schemas.enums import FUNC_VALS_NOT_BUFF, CondType, PurchaseType, SvtType
+from ..schemas.enums import FUNC_VALS_NOT_BUFF
+from ..schemas.gameenums import CondType, PurchaseType, SvtType
 from ..schemas.raw import BAD_COMBINE_SVT_LIMIT, Master, is_equip, is_servant
 
 

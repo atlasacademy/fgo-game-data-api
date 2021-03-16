@@ -4,15 +4,14 @@ from pydantic import HttpUrl
 
 from .base import BaseModelORJson
 from .common import MCAssets, NiceBuffScript, NiceTrait
-from .enums import (
-    FuncApplyTarget,
+from .enums import FuncApplyTarget, SvtClass
+from .gameenums import (
     NiceBuffType,
     NiceEventType,
     NiceFuncTargetType,
     NiceFuncType,
     NiceSvtFlag,
     NiceSvtType,
-    SvtClass,
 )
 
 

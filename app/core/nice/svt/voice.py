@@ -1,7 +1,7 @@
 from ....config import Settings
 from ....data.gamedata import masters
 from ....schemas.common import Region
-from ....schemas.enums import (
+from ....schemas.gameenums import (
     COND_TYPE_NAME,
     VOICE_COND_NAME,
     VOICE_TYPE_NAME,

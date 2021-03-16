@@ -9,7 +9,7 @@ from ....config import Settings
 from ....data.custom_mappings import EXTRA_CHARAFIGURES, EXTRA_IMAGES
 from ....data.gamedata import masters
 from ....schemas.common import Region
-from ....schemas.enums import SvtType
+from ....schemas.gameenums import SvtType
 from ....schemas.nice import AssetURL, ExtraAssets, ExtraAssetsUrl
 from ....schemas.raw import ServantEntity
 

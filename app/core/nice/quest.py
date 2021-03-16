@@ -6,8 +6,8 @@ from ...config import Settings
 from ...data.gamedata import masters
 from ...rayshift.quest import get_quest_detail
 from ...schemas.common import Language, Region
-from ...schemas.enums import (
-    CLASS_NAME,
+from ...schemas.enums import CLASS_NAME
+from ...schemas.gameenums import (
     COND_TYPE_NAME,
     QUEST_CONSUME_TYPE_NAME,
     QUEST_TYPE_NAME,

@@ -24,17 +24,19 @@ from ..schemas.basic import (
 )
 from ..schemas.common import Language, NiceBuffScript, Region, ReverseDepth
 from ..schemas.enums import (
-    BUFF_TYPE_NAME,
     CLASS_NAME,
+    FUNC_APPLYTARGET_NAME,
+    FUNC_VALS_NOT_BUFF,
+    SvtClass,
+)
+from ..schemas.gameenums import (
+    BUFF_TYPE_NAME,
     CLASS_OVERWRITE_NAME,
     EVENT_TYPE_NAME,
-    FUNC_APPLYTARGET_NAME,
     FUNC_TARGETTYPE_NAME,
     FUNC_TYPE_NAME,
-    FUNC_VALS_NOT_BUFF,
     SVT_FLAG_NAME,
     SVT_TYPE_NAME,
-    SvtClass,
     SvtType,
 )
 from ..schemas.nice import AssetURL
