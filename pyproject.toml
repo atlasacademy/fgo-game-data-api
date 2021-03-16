@@ -16,8 +16,9 @@ aiofiles = "^0.6.0"
 GitPython = "^3.1.14"
 toml = "^0.10.2"
 redis = "^3.5.3"
-SQLAlchemy = {version = "1.4.0b3", extras = ["postgresql"]}
-httpx = "^0.17.0"
+sqlalchemy = "^1.4.0"
+psycopg2 = "^2.8.6"
+httpx = "^0.17.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.2"
@@ -29,6 +30,7 @@ coverage = "^5.5"
 fuzzywuzzy-stubs = "^0.0.1"
 isort = "^5.7.0"
 sqlalchemy-stubs = {git = "https://github.com/squaresmile/sqlalchemy-stubs.git"}
+sqlalchemy2-stubs = "^0.0.1a3"
 pytest-asyncio = "^0.14.0"
 
 [tool.isort]
