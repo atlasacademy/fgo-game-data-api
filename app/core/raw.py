@@ -261,6 +261,8 @@ def get_servant_entity(
     lore: bool = False,
 ) -> ServantEntity:
     svt_entity_db = svt.get_servantEntity(conn, servant_id)
+    if not svt_entity_db:
+        raise HTTPException(status_code=404, detail="Svt not found")
 
     svt_entity = ServantEntity(
         **svt_entity_db._mapping,  # pylint: disable=protected-access

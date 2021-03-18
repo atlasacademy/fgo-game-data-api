@@ -1,17 +1,17 @@
 import sqlalchemy
 
-from ..config import Settings
+from ..config import SecretSettings
 from ..schemas.common import Region
 
 
-settings = Settings()
+secrets = SecretSettings()
 
 
 engines = {
     Region.NA: sqlalchemy.create_engine(
-        settings.na_postgresdsn, pool_size=5, max_overflow=10, future=True
+        secrets.na_postgresdsn, pool_size=5, max_overflow=10, future=True
     ),
     Region.JP: sqlalchemy.create_engine(
-        settings.jp_postgresdsn, pool_size=5, max_overflow=10, future=True
+        secrets.jp_postgresdsn, pool_size=5, max_overflow=10, future=True
     ),
 }

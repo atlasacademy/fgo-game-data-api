@@ -229,12 +229,7 @@ async def get_svt(
     Only use actual IDs for lookup. Does not convert from collectionNo.
     The endpoint is not limited to servants or equips ids.
     """
-    if svt_id in masters[region].mstSvtId:
-        return item_response(
-            nice.get_nice_servant_model(conn, region, svt_id, lang, lore)
-        )
-    else:
-        raise HTTPException(status_code=404, detail="Svt not found")
+    return item_response(nice.get_nice_servant_model(conn, region, svt_id, lang, lore))
 
 
 get_mc_description = "Get nice Mystic Code info from ID"

@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
-from .config import Settings, logger, project_root
+from .config import SecretSettings, Settings, logger, project_root
 from .data.gamedata import update_masters
 from .db.load import update_db
 from .routers import basic, nice, raw, secret
@@ -22,6 +22,7 @@ from .tasks import (
 
 
 settings = Settings()
+secrets = SecretSettings()
 
 if settings.write_postgres_data:  # pragma: no cover
     update_db(REGION_PATHS)
@@ -195,7 +196,7 @@ async def main_info(response: Response) -> dict[Region, RepoInfo]:
     return repo_info
 
 
-if settings.github_webhook_secret.get_secret_value() != "":  # pragma: no cover
+if secrets.github_webhook_secret.get_secret_value() != "":  # pragma: no cover
     app.include_router(secret.router)
 
 

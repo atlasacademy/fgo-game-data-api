@@ -4,7 +4,7 @@ import httpx
 from fastapi import HTTPException
 from sqlalchemy.engine import Connection
 
-from ..config import Settings
+from ..config import SecretSettings, Settings
 from ..db.helpers.rayshift import get_rayshift_quest_db, insert_rayshift_quest_db
 from ..schemas.common import Region
 from ..schemas.rayshift import (
@@ -18,6 +18,7 @@ from ..schemas.rayshift import (
 
 
 settings = Settings()
+secrets = SecretSettings()
 
 QUEST_ENDPOINT = f"{settings.rayshift_api_url}/avalon-data-export/quests"
 REGION_ENUM = {Region.JP: 1, Region.NA: 2}
@@ -26,12 +27,12 @@ REGION_ENUM = {Region.JP: 1, Region.NA: 2}
 async def get_quest_response(
     region: Region, quest_id: int, phase: int
 ) -> Optional[QuestResponse]:
-    if not settings.rayshift_api_key:  # pragma: no cover
+    if secrets.rayshift_api_key.get_secret_value() == "":  # pragma: no cover
         return None
 
     async with httpx.AsyncClient() as client:
         params: dict[str, Union[str, int]] = {
-            "apiKey": settings.rayshift_api_key,
+            "apiKey": secrets.rayshift_api_key.get_secret_value(),
             "region": REGION_ENUM[region],
             "questId": quest_id,
             "questPhase": phase,
@@ -66,11 +67,11 @@ async def get_quest_detail(
 
 
 def get_all_quest_lists(region: Region) -> list[QuestList]:
-    if not settings.rayshift_api_key:  # pragma: no cover
+    if secrets.rayshift_api_key.get_secret_value() == "":  # pragma: no cover
         return []
 
     params: dict[str, Union[str, int]] = {
-        "apiKey": settings.rayshift_api_key,
+        "apiKey": secrets.rayshift_api_key.get_secret_value(),
         "region": REGION_ENUM[region],
     }
     r = httpx.get(f"{QUEST_ENDPOINT}/list", params=params)

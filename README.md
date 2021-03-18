@@ -5,6 +5,7 @@ HTTP API for FGO game data. Transform the raw game data into something a bit mor
 - [Environment variables](#environment-variables)
   - [Required environment variables](#required-environment-variables)
   - [Optional environment variables](#optional-environment-variables)
+  - [Secrets](#secrets)
 - [Run the API server](#run-the-api-server)
 - [Architecture](#architecture)
 - [Linting](#linting)
@@ -29,7 +30,7 @@ List of environment variables for the main app.
 
 #### Optional environment variables
 - `ASSET_URL`: defaults to https://assets.atlasacademy.io/GameData/. Base URL for the game assets.
-- `RAYSHIFT_API_KEY`: default to `None`. Rayshift.io API key to pull quest data.
+- `RAYSHIFT_API_KEY`: default to `""`. Rayshift.io API key to pull quest data.
 - `RAYSHIFT_API_URL`: default to https://rayshift.io/api/v1/. Rayshift.io API URL.
 - `QUEST_CACHE_LENGTH`: default to `3600`. How long to cache the quest and war endpoints in seconds. Because the rayshift data is updated continously, web and quest endpoints have lower cache time.
 - `WRITE_POSTGRES_DATA`: default to `True`. Overwrite the data in PostgreSQL when importing.
@@ -65,6 +66,20 @@ BLOOM_SHARD=0
 REDIS_HOST="localhost"
 REDIS_PORT=6379
 REDIS_DB=0
+```
+
+#### Secrets
+
+Secret variables can also be put in the `secrets` folder instead of being supplied as environment variable:
+```
+> cat .\secrets\JP_POSTGRESDSN
+postgresql://username:password@localhost:5432/fgoapiJP
+> cat .\secrets\NA_POSTGRESDSN
+postgresql://username:password@localhost:5432/fgoapiNA
+> cat .\secrets\RAYSHIFT_API_KEY
+eca334a9-3289-4ad7-9b92-1ec2bbc3fc19
+> cat .\secrets\GITHUB_WEBHOOK_SECRET
+e81c7b97-9a57-4424-a887-149b4b5adf57
 ```
 
 ### Run the API server

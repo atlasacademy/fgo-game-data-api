@@ -1,16 +1,19 @@
 from fastapi import APIRouter, BackgroundTasks, Response
 from git import Repo
 
-from ..config import Settings, project_root
+from ..config import SecretSettings, Settings, project_root
 from ..schemas.common import RepoInfo
 from ..tasks import REGION_PATHS, pull_and_update, repo_info
 from .utils import pretty_print_response
 
 
 settings = Settings()
+secrets = SecretSettings()
+
+
 router = APIRouter(
-    prefix=f"/{settings.github_webhook_secret.get_secret_value()}"
-    if settings.github_webhook_secret.get_secret_value() != ""
+    prefix=f"/{secrets.github_webhook_secret.get_secret_value()}"
+    if secrets.github_webhook_secret.get_secret_value() != ""
     else "",
     include_in_schema=False,
 )
@@ -23,11 +26,10 @@ app_info = RepoInfo(
     timestamp=latest_commit.committed_date,  # pyright: reportGeneralTypeIssues=false
 )
 app_settings_str = {
-    k: str(v) if k in ("jp_gamedata", "na_gamedata", "github_webhook_secret") else v
+    k: str(v) if k in ("jp_gamedata", "na_gamedata") else v
     for k, v in settings.dict().items()
 }
 instance_info = dict(
-    game_data={k: v.dict() for k, v in repo_info.items()},
     app_version=app_info.dict(),
     app_settings=app_settings_str,
     file_path=str(project_root),
@@ -38,7 +40,9 @@ instance_info = dict(
 async def update_gamedata(background_tasks: BackgroundTasks) -> Response:
     background_tasks.add_task(pull_and_update, REGION_PATHS)
     response_data = dict(
-        message="Game data is being updated in the background", **instance_info
+        message="Game data is being updated in the background",
+        game_data={k.value: v.dict() for k, v in repo_info.items()},
+        **instance_info,
     )
     response = pretty_print_response(response_data)
     response.headers["Bloom-Response-Ignore"] = "1"
@@ -47,6 +51,10 @@ async def update_gamedata(background_tasks: BackgroundTasks) -> Response:
 
 @router.get("/info")
 async def info() -> Response:
-    response = pretty_print_response(instance_info)
+    response_data = dict(
+        game_data={k.value: v.dict() for k, v in repo_info.items()},
+        **instance_info,
+    )
+    response = pretty_print_response(response_data)
     response.headers["Bloom-Response-Ignore"] = "1"
     return response

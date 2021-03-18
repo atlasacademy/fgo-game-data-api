@@ -29,9 +29,6 @@ logger.setLevel(uvicorn_logger.level)
 class Settings(BaseSettings):
     na_gamedata: DirectoryPath
     jp_gamedata: DirectoryPath
-    na_postgresdsn: PostgresDsn
-    jp_postgresdsn: PostgresDsn
-    rayshift_api_key: Optional[str] = None
     rayshift_api_url: HttpUrl = parse_obj_as(HttpUrl, "https://rayshift.io/api/v1/")
     quest_cache_length: int = 3600
     write_postgres_data: bool = True
@@ -41,7 +38,6 @@ class Settings(BaseSettings):
     openapi_url: Optional[HttpUrl] = None
     export_all_nice: bool = False
     documentation_all_nice: bool = False
-    github_webhook_secret: SecretStr = SecretStr("")
     github_webhook_git_pull: bool = False
     github_webhook_sleep: int = 0
     bloom_shard: int = 0
@@ -58,3 +54,14 @@ class Settings(BaseSettings):
 
     class Config:
         env_file = ".env"
+
+
+class SecretSettings(BaseSettings):
+    na_postgresdsn: PostgresDsn
+    jp_postgresdsn: PostgresDsn
+    rayshift_api_key: SecretStr = SecretStr("")
+    github_webhook_secret: SecretStr = SecretStr("")
+
+    class Config:
+        env_file = ".env"
+        secrets_dir = "secrets"

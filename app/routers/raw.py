@@ -202,11 +202,8 @@ async def get_svt(
     lore: bool = False,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    if svt_id in masters[region].mstSvtId:
-        servant_entity = raw.get_servant_entity(conn, region, svt_id, expand, lore)
-        return item_response(servant_entity)
-    else:
-        raise HTTPException(status_code=404, detail="Servant not found")
+    servant_entity = raw.get_servant_entity(conn, region, svt_id, expand, lore)
+    return item_response(servant_entity)
 
 
 @router.get(
