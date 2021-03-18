@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.54.1 - 2020-03-18
+### Added
+- `ApplySupportSvt` dataval
+
 ## 5.54.0 - 2020-03-15
 ### Added
 - `itemSet` to event shop

@@ -196,6 +196,8 @@ class BaseVals(BaseModel):
     CardIndex: Optional[int] = None
     CardIndividuality: Optional[int] = None
     WarBoardTakeOverBuff: Optional[int] = None
+    # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
+    ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
     Individuality: Optional[int] = None
     EventId: Optional[int] = None
