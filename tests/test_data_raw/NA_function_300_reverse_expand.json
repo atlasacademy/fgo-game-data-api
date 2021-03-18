@@ -40,6 +40,40 @@
             "effectList": [],
             "actIndividuality": [],
             "script": {},
+            "id": 962462,
+            "type": 1,
+            "name": "",
+            "ruby": "",
+            "maxLv": 1,
+            "iconId": 600,
+            "motion": 102
+          },
+          "mstSkillDetail": [],
+          "mstSvtSkill": [],
+          "mstSkillLv": [
+            {
+              "funcId": [3112, 150, 300, 204, 3461],
+              "svals": [
+                "[5000,-1,-1,2354,ShowState:-1,HideNoEffect:1]",
+                "[5000,-1,-1,500]",
+                "[5000,-1,-1,500]",
+                "[5000,-1,-1,500]",
+                "[5000,-1,3,1,SetPassiveFrame:1,ShowState:1,ProcPassive:1]"
+              ],
+              "script": {},
+              "skillId": 962462,
+              "lv": 1,
+              "chargeTurn": 8,
+              "skillDetailId": 1,
+              "priority": 220
+            }
+          ]
+        },
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
             "id": 42900,
             "type": 1,
             "name": "Incite EX",

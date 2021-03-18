@@ -602,7 +602,7 @@ typing-extensions = ">=3.7.4"
 type = "git"
 url = "https://github.com/squaresmile/sqlalchemy-stubs.git"
 reference = "master"
-resolved_reference = "10753142703fba693e656f8790666024b89a00dc"
+resolved_reference = "4efcacb4711a5920fcfbc62686785878bcd9a865"
 
 [[package]]
 name = "sqlalchemy2-stubs"

@@ -67,8 +67,6 @@ REDIS_PORT=6379
 REDIS_DB=0
 ```
 
-List of optional enviroment variables for the Docker image can be found [here](https://github.com/tiangolo/uvicorn-gunicorn-docker#environment-variables).
-
 ### Run the API server
 
 Run at the project root to start the API server:
