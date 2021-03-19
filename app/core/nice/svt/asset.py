@@ -4,10 +4,11 @@ from typing import Union
 import orjson
 from pydantic import HttpUrl
 from pydantic.tools import parse_obj_as
+from sqlalchemy.engine import Connection
 
 from ....config import Settings
 from ....data.custom_mappings import EXTRA_CHARAFIGURES, EXTRA_IMAGES
-from ....data.gamedata import masters
+from ....db.helpers import svt
 from ....schemas.common import Region
 from ....schemas.gameenums import SvtType
 from ....schemas.nice import AssetURL, ExtraAssets, ExtraAssetsUrl
@@ -23,7 +24,11 @@ def fmt_url(url_fmt: str, **kwargs: Union[int, str]) -> HttpUrl:
 
 
 def get_svt_extraAssets(
-    region: Region, svt_id: int, raw_svt: ServantEntity, costume_ids: dict[int, int]
+    conn: Connection,
+    region: Region,
+    svt_id: int,
+    raw_svt: ServantEntity,
+    costume_ids: dict[int, int],
 ) -> ExtraAssets:
     charaGraph = ExtraAssetsUrl()
     charaGraphName = ExtraAssetsUrl()
@@ -173,7 +178,7 @@ def get_svt_extraAssets(
                 AssetURL.charaFigureId, **base_settings, charaFigure=charaFigure_id
             )
 
-            svtScripts = masters[region].mstSvtScriptId.get(charaFigure_id // 10, [])
+            svtScripts = svt.get_svt_script(conn, charaFigure_id // 10)
             for svtScript in svtScripts:
                 script_form = svtScript.extendData.get("myroomForm", svtScript.form)
                 if script_form != 0:

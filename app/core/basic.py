@@ -41,15 +41,7 @@ from ..schemas.gameenums import (
 )
 from ..schemas.nice import AssetURL
 from ..schemas.raw import MstBuff, MstClassRelationOverwrite
-from .raw import (
-    active_to_svtId,
-    buff_to_func,
-    func_to_skillId,
-    func_to_tdId,
-    passive_to_svtId,
-    skill_to_CCId,
-    skill_to_MCId,
-)
+from . import reverse as reverse_ids
 from .utils import get_nice_trait, get_safe, get_traits_list
 
 
@@ -112,7 +104,7 @@ def get_basic_buff(
         buff_reverse = BasicReversedBuff(
             function=(
                 get_basic_function(region, func_id, lang, reverse, reverseDepth)
-                for func_id in buff_to_func(region, buff_id)
+                for func_id in reverse_ids.buff_to_func(region, buff_id)
             )
         )
         basic_buff.reverse = BasicReversedBuffType(basic=buff_reverse)
@@ -154,11 +146,11 @@ def get_basic_function(
         func_reverse = BasicReversedFunction(
             skill=(
                 get_basic_skill(region, skill_id, lang, reverse, reverseDepth)
-                for skill_id in func_to_skillId(region, func_id)
+                for skill_id in reverse_ids.func_to_skillId(region, func_id)
             ),
             NP=(
                 get_basic_td(region, td_id, lang, reverse, reverseDepth)
-                for td_id in func_to_tdId(region, func_id)
+                for td_id in reverse_ids.func_to_tdId(region, func_id)
             ),
         )
         basic_func.reverse = BasicReversedFunctionType(basic=func_reverse)
@@ -186,8 +178,8 @@ def get_basic_skill(
     )
 
     if reverse and reverseDepth >= ReverseDepth.servant:
-        activeSkills = active_to_svtId(region, skill_id)
-        passiveSkills = passive_to_svtId(region, skill_id)
+        activeSkills = reverse_ids.active_to_svtId(region, skill_id)
+        passiveSkills = reverse_ids.passive_to_svtId(region, skill_id)
         skill_reverse = BasicReversedSkillTd(
             servant=(
                 get_basic_servant(region, svt_id, lang=lang)
@@ -195,11 +187,11 @@ def get_basic_skill(
             ),
             MC=(
                 get_basic_mc(region, mc_id, lang)
-                for mc_id in skill_to_MCId(region, skill_id)
+                for mc_id in reverse_ids.skill_to_MCId(region, skill_id)
             ),
             CC=(
                 get_basic_cc(region, cc_id, lang)
-                for cc_id in skill_to_CCId(region, skill_id)
+                for cc_id in reverse_ids.skill_to_CCId(region, skill_id)
             ),
         )
         basic_skill.reverse = BasicReversedSkillTdType(basic=skill_reverse)

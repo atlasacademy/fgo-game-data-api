@@ -6,7 +6,6 @@ from ...schemas.common import Language, Region
 from ...schemas.nice import AssetURL, NiceCommandCode
 from .. import raw
 from ..utils import get_safe
-from .illustrator import get_illustrator_name
 from .skill import get_nice_skill_with_svt
 
 
@@ -37,9 +36,7 @@ def get_nice_command_code(
             for skillEntity in raw_cc.mstSkill
             for skill in get_nice_skill_with_svt(skillEntity, cc_id, region, lang)
         ),
-        illustrator=get_illustrator_name(
-            region, raw_cc.mstCommandCodeComment.illustratorId
-        ),
+        illustrator=raw_cc.mstIllustrator.name if raw_cc.mstIllustrator else "",
         comment=raw_cc.mstCommandCodeComment.comment,
     )
 

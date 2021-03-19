@@ -133,4 +133,5 @@ def get_multiple_nice_tds(
             get_nice_td(raw_tds[td_svt.td_id], td_svt.svt_id, region)[0]
         )
         for td_svt in td_svts
+        if td_svt.td_id in raw_tds
     }

@@ -24,22 +24,13 @@ MASTER_WITH_ID = {
     "mstItem",
     "mstEquip",
     "mstCommandCode",
-    "mstCv",
-    "mstIllustrator",
-    "mstVoice",
     "mstEvent",
     "mstWar",
-    "mstMap",
-    "mstSpot",
-    "mstBgm",
 }
 MASTER_WITHOUT_ID = {
-    "mstEquipExp",
     "mstEquipSkill",
     "mstCommandCodeSkill",
-    "mstCommandCodeComment",
     "mstClosedMessage",
-    "mstConstant",
     "mstClassRelationOverwrite",
     "mstStage",
     "mstGift",
@@ -51,18 +42,13 @@ MASTER_WITHOUT_ID = {
     "mstAiAct",
 }
 SVT_STUFFS = {
-    "mstSvtExp",
-    "mstSvtScript",
-    "mstFriendship",
     "mstSvtGroup",
     "mstSvtComment",
     "mstSvtLimit",
     "mstSvtLimitAdd",
-    "mstSvtVoiceRelation",
     "mstCombineSkill",
     "mstCombineLimit",
     "mstCombineCostume",
-    "mstCombineMaterial",
 }
 SKILL_STUFFS = {"mstSvtSkill", "mstSkillLv"}
 TD_STUFFS = {"mstSvtTreasureDevice", "mstTreasureDeviceLv"}
@@ -106,20 +92,6 @@ def update_masters(region_path: dict[Region, DirectoryPath]) -> None:
         master["mstCCCollectionNo"] = {
             cc["collectionNo"]: cc["id"] for cc in master["mstCommandCode"]
         }
-
-        master["mstFriendshipId"] = defaultdict(list)
-        master["mstFriendship"] = sorted(
-            master["mstFriendship"], key=lambda item: item["rank"]  # type: ignore
-        )
-        for friendship in master["mstFriendship"]:
-            if friendship["friendship"] != -1:
-                master["mstFriendshipId"][friendship["id"]].append(
-                    friendship["friendship"]
-                )
-
-        master["mstSvtScriptId"] = defaultdict(list)
-        for svt_script in master["mstSvtScript"]:
-            master["mstSvtScriptId"][svt_script["id"] // 10].append(svt_script)
 
         master["buffToFunc"] = defaultdict(set)
         for func in master["mstFunc"]:
@@ -166,14 +138,6 @@ def update_masters(region_path: dict[Region, DirectoryPath]) -> None:
                 or combine["svtLimit"] != BAD_COMBINE_SVT_LIMIT
             }
 
-        for masters_table, source_table, lookup_id, result_id in (
-            ("mstClosedMessageId", "mstClosedMessage", "id", "message"),
-            ("mstConstantId", "mstConstant", "name", "value"),
-        ):
-            master[masters_table] = {
-                item[lookup_id]: item[result_id] for item in master[source_table]
-            }
-
         for masters_table, ai_table in (
             ("parentAiSvt", "mstAi"),
             ("parentAiField", "mstAiField"),
@@ -199,27 +163,14 @@ def update_masters(region_path: dict[Region, DirectoryPath]) -> None:
                 svtLimitAdd["individuality"]
             )
 
-        master["spotToWarId"] = {}
-        for spot in master["mstSpot"]:
-            master["spotToWarId"][spot["id"]] = spot["warId"]
-
-        master["mstSvtExp"] = sorted(master["mstSvtExp"], key=lambda item: item["lv"])  # type: ignore
-        master["mstCombineMaterial"] = sorted(master["mstCombineMaterial"], key=lambda item: item["lv"])  # type: ignore
-
         for masters_table, source_table, lookup_id in (
             ("mstClassRelationOverwriteId", "mstClassRelationOverwrite", "id"),
-            ("mstCombineMaterialId", "mstCombineMaterial", "id"),
-            ("mstSvtExpId", "mstSvtExp", "type"),
-            ("mstSvtGroupId", "mstSvtGroup", "id"),
             ("mstSvtGroupSvtId", "mstSvtGroup", "svtId"),
             ("mstSvtSkillSvtId", "mstSvtSkill", "svtId"),
-            ("mstSvtVoiceRelationId", "mstSvtVoiceRelation", "svtId"),
-            ("mstMapWarId", "mstMap", "warId"),
             ("mstWarEventId", "mstWar", "eventId"),
             ("mstGiftId", "mstGift", "id"),
             ("mstShopEventId", "mstShop", "eventId"),
             ("mstShopReleaseShopId", "mstShopRelease", "shopId"),
-            ("mstCommandCodeCommentId", "mstCommandCodeComment", "commandCodeId"),
             ("mstFuncGroupId", "mstFuncGroup", "funcId"),
         ):
             master[masters_table] = defaultdict(list)
@@ -268,7 +219,9 @@ def update_masters(region_path: dict[Region, DirectoryPath]) -> None:
                             shop["targetIds"][0]
                         )
                         break
-        master["valentineEquip"][master["mstConstantId"]["MASHU_SVT_ID1"]] = [
+
+        MASHU_SVT_ID1 = 800100
+        master["valentineEquip"][MASHU_SVT_ID1] = [
             item["svtId"]
             for item in master["mstSvtComment"]
             if is_Mash_Valentine_equip(region_name, item["comment"])

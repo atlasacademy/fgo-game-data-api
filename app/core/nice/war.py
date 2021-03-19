@@ -3,7 +3,7 @@ from typing import Optional
 from sqlalchemy.engine import Connection
 
 from ...config import Settings
-from ...data.gamedata import masters
+from ...db.helpers import fetch
 from ...schemas.common import Region
 from ...schemas.gameenums import (
     COND_TYPE_NAME,
@@ -13,7 +13,7 @@ from ...schemas.gameenums import (
     WarOverwriteType,
 )
 from ...schemas.nice import AssetURL, NiceMap, NiceQuest, NiceSpot, NiceWar, NiceWarAdd
-from ...schemas.raw import MstMap, MstSpot, MstWarAdd
+from ...schemas.raw import MstBgm, MstConstant, MstMap, MstSpot, MstWarAdd, QuestEntity
 from .. import raw
 from .bgm import get_nice_bgm
 from .quest import get_nice_quest
@@ -22,8 +22,11 @@ from .quest import get_nice_quest
 settings = Settings()
 
 
-def get_nice_map(region: Region, raw_map: MstMap) -> NiceMap:
+def get_nice_map(region: Region, raw_map: MstMap, bgms: list[MstBgm]) -> NiceMap:
     base_settings = {"base_url": settings.asset_url, "region": region}
+
+    bgm = get_nice_bgm(region, next(bgm for bgm in bgms if bgm.id == raw_map.bgmId))
+
     return NiceMap(
         id=raw_map.id,
         mapImage=AssetURL.mapImg.format(**base_settings, map_id=raw_map.mapImageId)
@@ -36,7 +39,7 @@ def get_nice_map(region: Region, raw_map: MstMap) -> NiceMap:
         )
         if raw_map.headerImageId != 0
         else None,
-        bgm=get_nice_bgm(region, raw_map.bgmId),
+        bgm=bgm,
     )
 
 
@@ -65,7 +68,12 @@ def get_nice_war_add(region: Region, war_add: MstWarAdd) -> NiceWarAdd:
 
 
 def get_nice_spot(
-    conn: Connection, region: Region, raw_spot: MstSpot, war_asset_id: int
+    conn: Connection,
+    region: Region,
+    war_id: int,
+    raw_spot: MstSpot,
+    war_asset_id: int,
+    quests: list[QuestEntity],
 ) -> NiceSpot:
     return NiceSpot(
         id=raw_spot.id,
@@ -92,30 +100,35 @@ def get_nice_spot(
         nextOfsY=raw_spot.nextOfsY,
         closedMessage=raw_spot.closedMessage,
         quests=(
-            NiceQuest.parse_obj(get_nice_quest(region, quest))
-            for quest in raw.get_quest_entity_by_spot_many(conn, [raw_spot.id])
+            NiceQuest.parse_obj(get_nice_quest(conn, region, quest, war_id))
+            for quest in quests
+            if quest.mstQuest.spotId == raw_spot.id
         ),
     )
 
 
 def get_nice_war(conn: Connection, region: Region, war_id: int) -> NiceWar:
-    raw_war = raw.get_war_entity(conn, region, war_id)
+    raw_war = raw.get_war_entity(conn, war_id)
 
     base_settings = {"base_url": settings.asset_url, "region": region}
     war_asset_id = (
         raw_war.mstWar.assetId if raw_war.mstWar.assetId > 0 else raw_war.mstWar.id
     )
 
-    if raw_war.mstWar.eventId in masters[region].mstEventId:
-        event = masters[region].mstEventId[raw_war.mstWar.eventId]
-        banner_file = f"event_war_{event.bannerId}"
+    if raw_war.mstEvent:
+        banner_file = f"event_war_{raw_war.mstEvent.bannerId}"
     elif raw_war.mstWar.flag & WarEntityFlag.MAIN_SCENARIO != 0:
-        if raw_war.mstWar.id <= masters[region].mstConstantId["LAST_WAR_ID"]:
+        last_war_id = fetch.get_one(conn, MstConstant, "LAST_WAR_ID")
+        if last_war_id and raw_war.mstWar.id <= last_war_id.value:
             banner_file = f"questboard_cap{raw_war.mstWar.bannerId:>03}"
         else:
             banner_file = "questboard_cap_closed"
     else:
         banner_file = f"chaldea_category_{raw_war.mstWar.bannerId}"
+
+    bgm = get_nice_bgm(
+        region, next(bgm for bgm in raw_war.mstBgm if bgm.id == raw_war.mstWar.bgmId)
+    )
 
     return NiceWar(
         id=raw_war.mstWar.id,
@@ -135,16 +148,20 @@ def get_nice_war(conn: Connection, region: Region, war_id: int) -> NiceWar:
         parentWarId=raw_war.mstWar.parentWarId,
         materialParentWarId=raw_war.mstWar.materialParentWarId,
         emptyMessage=raw_war.mstWar.emptyMessage,
-        bgm=get_nice_bgm(region, raw_war.mstWar.bgmId),
+        bgm=bgm,
         scriptId=raw_war.mstWar.scriptId,
         startType=WAR_START_TYPE_NAME[raw_war.mstWar.startType],
         targetId=raw_war.mstWar.targetId,
         eventId=raw_war.mstWar.eventId,
         lastQuestId=raw_war.mstWar.lastQuestId,
         warAdds=(get_nice_war_add(region, war_add) for war_add in raw_war.mstWarAdd),
-        maps=(get_nice_map(region, raw_map) for raw_map in raw_war.mstMap),
+        maps=(
+            get_nice_map(region, raw_map, raw_war.mstBgm) for raw_map in raw_war.mstMap
+        ),
         spots=(
-            get_nice_spot(conn, region, raw_spot, war_asset_id)
+            get_nice_spot(
+                conn, region, war_id, raw_spot, war_asset_id, raw_war.mstQuest
+            )
             for raw_spot in raw_war.mstSpot
         ),
     )

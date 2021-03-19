@@ -14,6 +14,15 @@ from sqlalchemy.dialects.postgresql import ARRAY, JSONB
 from .base import metadata
 
 
+mstConstant = Table(
+    "mstConstant",
+    metadata,
+    Column("name", String, index=True),
+    Column("value", Integer),
+    Column("createdAt", Integer),
+)
+
+
 mstBuff = Table(
     "mstBuff",
     metadata,
@@ -30,6 +39,18 @@ mstBuff = Table(
     Column("iconId", Integer),
     Column("maxRate", Integer),
     Column("effectId", Integer),
+)
+
+
+mstClassRelationOverwrite = Table(
+    "mstClassRelationOverwrite",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("atkSide", Integer),
+    Column("atkClass", Integer),
+    Column("defClass", Integer),
+    Column("damageRate", Integer),
+    Column("type", Integer),
 )
 
 
@@ -283,6 +304,23 @@ mstCombineCostume = Table(
 )
 
 
+mstVoice = Table(
+    "mstVoice",
+    metadata,
+    Column("id", String, primary_key=True),
+    Column("priority", Integer),
+    Column("svtVoiceType", Integer),
+    Column("name", String),
+    Column("nameDefault", String),
+    Column("condType", Integer),
+    Column("condValue", Integer),
+    Column("voicePlayedValue", Integer),
+    Column("firstPlayPriority", Integer),
+    Column("closedType", Integer),
+    Column("flag", Integer),
+)
+
+
 mstSvtVoice = Table(
     "mstSvtVoice",
     metadata,
@@ -295,6 +333,23 @@ mstSvtVoice = Table(
         sqlalchemy.text('"scriptJson" jsonb_path_ops'),
         postgresql_using="gin",
     ),
+)
+
+
+mstSvtVoiceRelation = Table(
+    "mstSvtVoiceRelation",
+    metadata,
+    Column("svtId", Integer, index=True),
+    Column("relationSvtId", Integer),
+    Column("ascendOrder", Integer),
+)
+
+
+mstSvtGroup = Table(
+    "mstSvtGroup",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("svtId", Integer, index=True),
 )
 
 
@@ -400,6 +455,38 @@ mstSvtCostume = Table(
 )
 
 
+mstSvtExp = Table(
+    "mstSvtExp",
+    metadata,
+    Column("type", Integer, index=True),
+    Column("lv", Integer),
+    Column("exp", Integer),
+    Column("curve", Integer),
+)
+
+
+mstFriendship = Table(
+    "mstFriendship",
+    metadata,
+    Column("itemIds", ARRAY(Integer)),
+    Column("itemNums", ARRAY(Integer)),
+    Column("id", Integer, index=True),
+    Column("rank", Integer),
+    Column("friendship", Integer),
+    Column("qp", Integer),
+)
+
+
+mstCombineMaterial = Table(
+    "mstCombineMaterial",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("lv", Integer),
+    Column("value", Integer),
+    Column("createdAt", Integer),
+)
+
+
 mstSvtScript = Table(
     "mstSvtScript",
     metadata,
@@ -437,6 +524,132 @@ mstSubtitle = Table(
     Column("id", String),
     Column("serif", String),
     Column("svtId", Integer, index=True),
+)
+
+
+mstEquip = Table(
+    "mstEquip",
+    metadata,
+    Column("id", Integer, primary_key=True),
+    Column("name", String),
+    Column("detail", String),
+    Column("condUserLv", Integer),
+    Column("maxLv", Integer),
+    Column("maleImageId", Integer),
+    Column("femaleImageId", Integer),
+    Column("imageId", Integer),
+    Column("maleSpellId", Integer),
+    Column("femaleSpellId", Integer),
+)
+
+
+mstEquipExp = Table(
+    "mstEquipExp",
+    metadata,
+    Column("equipId", Integer, index=True),
+    Column("lv", Integer),
+    Column("exp", Integer),
+    Column("skillLv1", Integer),
+    Column("skillLv2", Integer),
+    Column("skillLv3", Integer),
+)
+
+
+mstEquipSkill = Table(
+    "mstEquipSkill",
+    metadata,
+    Column("equipId", Integer, index=True),
+    Column("num", Integer),
+    Column("skillId", Integer),
+    Column("condLv", Integer),
+)
+
+
+mstItem = Table(
+    "mstItem",
+    metadata,
+    Column("individuality", ARRAY(Integer)),
+    Column("script", JSONB),
+    Column("eventId", Integer),
+    Column("eventGroupId", Integer),
+    Column("id", Integer, primary_key=True),
+    Column("name", String),
+    Column("detail", String),
+    Column("imageId", Integer),
+    Column("bgImageId", Integer),
+    Column("type", Integer),
+    Column("unit", String),
+    Column("value", Integer),
+    Column("sellQp", Integer),
+    Column("isSell", Boolean),
+    Column("priority", Integer),
+    Column("dropPriority", Integer),
+    Column("startedAt", Integer),
+    Column("endedAt", Integer),
+)
+
+
+mstCommandCode = Table(
+    "mstCommandCode",
+    metadata,
+    Column("id", Integer, primary_key=True),
+    Column("collectionNo", Integer),
+    Column("name", String),
+    Column("ruby", String),
+    Column("rarity", Integer),
+    Column("sellQp", Integer),
+    Column("sellMana", Integer),
+    Column("sellRarePri", Integer),
+)
+
+
+mstCommandCodeSkill = Table(
+    "mstCommandCodeSkill",
+    metadata,
+    Column("commandCodeId", Integer, index=True),
+    Column("num", Integer),
+    Column("priority", Integer),
+    Column("skillId", Integer),
+    Column("startedAt", Integer),
+    Column("endedAt", Integer),
+)
+
+
+mstCommandCodeComment = Table(
+    "mstCommandCodeComment",
+    metadata,
+    Column("commandCodeId", Integer, index=True),
+    Column("comment", String),
+    Column("illustratorId", Integer),
+)
+
+
+mstCv = Table(
+    "mstCv",
+    metadata,
+    Column("id", Integer, primary_key=True),
+    Column("name", String),
+    Column("comment", String),
+)
+
+
+mstIllustrator = Table(
+    "mstIllustrator",
+    metadata,
+    Column("id", Integer, primary_key=True),
+    Column("name", String),
+    Column("comment", String),
+)
+
+
+mstGift = Table(
+    "mstGift",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("type", Integer),
+    Column("objectId", Integer),
+    Column("priority", Integer),
+    Column("num", Integer),
 )
 
 
@@ -677,6 +890,62 @@ mstEventRewardSet = Table(
 )
 
 
+mstBgm = Table(
+    "mstBgm",
+    metadata,
+    Column("id", Integer, primary_key=True),
+    Column("fileName", String),
+    Column("name", String),
+    Column("priority", Integer),
+    Column("detail", String),
+    Column("flag", Integer),
+    Column("shopId", Integer),
+    Column("logoId", Integer),
+)
+
+
+mstWar = Table(
+    "mstWar",
+    metadata,
+    Column("coordinates", JSONB),
+    Column("id", Integer, primary_key=True),
+    Column("age", String),
+    Column("name", String),
+    Column("longName", String),
+    Column("bannerId", Integer),
+    Column("mapImageId", Integer),
+    Column("mapImageW", Integer),
+    Column("mapImageH", Integer),
+    Column("headerImageId", Integer),
+    Column("priority", Integer),
+    Column("parentWarId", Integer),
+    Column("materialParentWarId", Integer),
+    Column("flag", Integer),
+    Column("emptyMessage", String),
+    Column("bgmId", Integer),
+    Column("scriptId", String),
+    Column("startType", Integer),
+    Column("targetId", BigInteger),
+    Column("eventId", Integer),
+    Column("lastQuestId", Integer),
+    Column("assetId", Integer),
+)
+
+
+mstMap = Table(
+    "mstMap",
+    metadata,
+    Column("script", JSONB),
+    Column("id", Integer, primary_key=True),
+    Column("warId", Integer),
+    Column("mapImageId", Integer),
+    Column("mapImageW", Integer),
+    Column("mapImageH", Integer),
+    Column("headerImageId", Integer),
+    Column("bgmId", Integer),
+)
+
+
 mstSpot = Table(
     "mstSpot",
     metadata,
@@ -774,6 +1043,14 @@ mstQuestRelease = Table(
     Column("openLimit", Integer),
     Column("closedMessageId", Integer),
     Column("imagePriority", Integer),
+)
+
+
+mstClosedMessage = Table(
+    "mstClosedMessage",
+    metadata,
+    Column("id", Integer, primary_key=True),
+    Column("message", String),
 )
 
 
@@ -880,12 +1157,24 @@ mstAiAct = Table(
 
 
 TABLES_WITH_PK = [
+    mstBuff,
+    mstFunc,
     mstSkill,
     mstTreasureDevice,
     mstSvt,
+    mstVoice,
+    mstEquip,
+    mstCommandCode,
+    mstCv,
+    mstIllustrator,
+    mstItem,
     mstShop,
+    mstBgm,
+    mstWar,
+    mstMap,
     mstSpot,
     mstQuest,
+    mstClosedMessage,
     mstAiAct,
     mstEvent,
     mstEventMission,
@@ -894,6 +1183,9 @@ TABLES_WITH_PK = [
 
 
 TABLES_TO_BE_LOADED = [
+    mstConstant,
+    mstClassRelationOverwrite,
+    mstFuncGroup,
     mstSkillDetail,
     mstSvtSkill,
     mstSkillLv,
@@ -909,8 +1201,19 @@ TABLES_TO_BE_LOADED = [
     mstSvtChange,
     mstSvtCostume,
     mstSvtVoice,
+    mstSvtVoiceRelation,
     mstVoicePlayCond,
     mstSvtComment,
+    mstSvtGroup,
+    mstSvtScript,
+    mstSvtExp,
+    mstFriendship,
+    mstCombineMaterial,
+    mstEquipExp,
+    mstEquipSkill,
+    mstCommandCodeSkill,
+    mstCommandCodeComment,
+    mstGift,
     mstSetItem,
     mstEventReward,
     mstEventRewardSet,

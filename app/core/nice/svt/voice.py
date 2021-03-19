@@ -1,5 +1,4 @@
 from ....config import Settings
-from ....data.gamedata import masters
 from ....schemas.common import Region
 from ....schemas.gameenums import (
     COND_TYPE_NAME,
@@ -16,7 +15,9 @@ from ....schemas.nice import (
     NiceVoicePlayCond,
 )
 from ....schemas.raw import (
+    MstSvtGroup,
     MstSvtVoice,
+    MstVoice,
     MstVoicePlayCond,
     ScriptJson,
     ScriptJsonCond,
@@ -55,7 +56,7 @@ def get_nice_play_cond(playCond: MstVoicePlayCond) -> NiceVoicePlayCond:
 
 
 def get_nice_voice_cond(
-    region: Region, cond: ScriptJsonCond, costume_ids: dict[int, int]
+    cond: ScriptJsonCond, costume_ids: dict[int, int], mstSvtGroups: list[MstSvtGroup]
 ) -> NiceVoiceCond:
     cond_value = (
         costume_ids[cond.value]
@@ -64,7 +65,7 @@ def get_nice_voice_cond(
     )
 
     cond_value_list = (
-        [group.svtId for group in masters[region].mstSvtGroupId[cond.value]]
+        [group.svtId for group in mstSvtGroups if group.id == cond.value]
         if cond.condType == VoiceCondType.SVT_GROUP
         else []
     )
@@ -88,10 +89,11 @@ def get_nice_voice_line(
     costume_ids: dict[int, int],
     subtitle_ids: dict[str, str],
     play_conds: list[MstVoicePlayCond],
+    mstVoices: dict[str, MstVoice],
+    mstSvtGroups: list[MstSvtGroup],
 ) -> NiceVoiceLine:
     first_voice = script.infos[0]
-    # Some voice lines have the first info id ending with xxx1 or xxx2 and we want xxx0
-    voice_id = first_voice.id.split("_")[1][:-1] + "0"
+    voice_id = first_voice.get_voice_id()
 
     voice_line = NiceVoiceLine(
         overwriteName=nullable_to_string(script.overwriteName),
@@ -103,7 +105,10 @@ def get_nice_voice_line(
         face=(info.face for info in script.infos),
         form=(info.form for info in script.infos),
         text=(nullable_to_string(info.text) for info in script.infos),
-        conds=(get_nice_voice_cond(region, info, costume_ids) for info in script.conds),
+        conds=(
+            get_nice_voice_cond(info, costume_ids, mstSvtGroups)
+            for info in script.conds
+        ),
         playConds=(
             get_nice_play_cond(play_cond)
             for play_cond in play_conds
@@ -114,8 +119,8 @@ def get_nice_voice_line(
         subtitle=subtitle_ids.get(str(svt_id) + "_" + first_voice.id, ""),
     )
 
-    if voice_id in masters[region].mstVoiceId:
-        mstVoice = masters[region].mstVoiceId[voice_id]
+    if voice_id in mstVoices:
+        mstVoice = mstVoices[voice_id]
         voice_line.name = mstVoice.name
         voice_line.condType = COND_TYPE_NAME[mstVoice.condType]
         voice_line.condValue = mstVoice.condValue
@@ -131,6 +136,8 @@ def get_nice_voice_group(
     costume_ids: dict[int, int],
     subtitle_ids: dict[str, str],
     play_conds: list[MstVoicePlayCond],
+    mstVoices: dict[str, MstVoice],
+    mstSvtGroups: list[MstSvtGroup],
 ) -> NiceVoiceGroup:
     return NiceVoiceGroup(
         svtId=voice.id,
@@ -146,6 +153,8 @@ def get_nice_voice_group(
                 costume_ids,
                 subtitle_ids,
                 play_conds,
+                mstVoices,
+                mstSvtGroups,
             )
             for script in voice.scriptJson
         ),
@@ -156,6 +165,7 @@ def get_nice_voice(
     region: Region, raw_svt: ServantEntity, costume_ids: dict[int, int]
 ) -> list[NiceVoiceGroup]:
     subtitle_ids = {subtitle.id: subtitle.serif for subtitle in raw_svt.mstSubtitle}
+    mstVoices = {voice.id: voice for voice in raw_svt.mstVoice}
 
     return [
         get_nice_voice_group(
@@ -164,6 +174,8 @@ def get_nice_voice(
             costume_ids,
             subtitle_ids,
             raw_svt.mstVoicePlayCond,
+            mstVoices,
+            raw_svt.mstSvtGroup,
         )
         for voice in raw_svt.mstSvtVoice
     ]

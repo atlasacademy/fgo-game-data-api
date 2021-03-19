@@ -27,7 +27,6 @@ from ....schemas.raw import (
 )
 from ... import raw
 from ...utils import get_safe, get_traits_list
-from ..illustrator import get_illustrator_name
 from ..item import get_nice_item_amount
 from ..skill import get_nice_skill_with_svt
 from ..td import get_nice_td
@@ -72,13 +71,6 @@ def get_nice_comment(comment: MstSvtComment) -> NiceLoreComment:
     )
 
 
-def get_cv_name(region: Region, cvId: int) -> str:
-    if cvId in masters[region].mstCvId:
-        return masters[region].mstCvId[cvId].name
-    else:
-        return ""
-
-
 def get_nice_costume(costume: MstSvtCostume) -> NiceCostume:
     return NiceCostume(**costume.dict())
 
@@ -107,9 +99,13 @@ def get_nice_servant(
         "starAbsorb": first_svt_limit.criticalWeight,
         "rarity": first_svt_limit.rarity,
         "cards": [CARD_TYPE_NAME[card_id] for card_id in raw_svt.mstSvt.cardIds],
-        "bondGrowth": masters[region].mstFriendshipId.get(
-            raw_svt.mstSvt.friendshipId, []
-        ),
+        "bondGrowth": [
+            friendship.friendship
+            for friendship in sorted(
+                raw_svt.mstFriendship, key=lambda friendship: friendship.rank
+            )
+            if friendship.friendship != -1
+        ],
         "bondEquip": masters[region].bondEquip.get(svt_id, 0),
         "valentineEquip": masters[region].valentineEquip.get(svt_id, []),
         "bondEquipOwner": masters[region].bondEquipOwner.get(svt_id),
@@ -127,16 +123,17 @@ def get_nice_servant(
         if svt_limit_add.limitCount in costume_limits
     }
 
-    nice_data["extraAssets"] = get_svt_extraAssets(region, svt_id, raw_svt, costume_ids)
+    nice_data["extraAssets"] = get_svt_extraAssets(
+        conn, region, svt_id, raw_svt, costume_ids
+    )
 
     lvMax = max(svt_limit.lvMax for svt_limit in raw_svt.mstSvtLimit)
     atkMax = first_svt_limit.atkMax
     atkBase = first_svt_limit.atkBase
     hpMax = first_svt_limit.hpMax
     hpBase = first_svt_limit.hpBase
-    growthCurve = raw_svt.mstSvt.expType
     growthCurveMax = 101 if raw_svt.mstSvt.type == SvtType.NORMAL else (lvMax + 1)
-    growthCurveValues = masters[region].mstSvtExpId[growthCurve]
+    growthCurveValues = sorted(raw_svt.mstSvtExp, key=lambda svtExp: svtExp.lv)
     atkGrowth = [
         atkBase + (atkMax - atkBase) * exp.curve // 1000
         for exp in growthCurveValues[1:growthCurveMax]
@@ -148,7 +145,7 @@ def get_nice_servant(
     expGrowth = [exp.exp for exp in growthCurveValues[: growthCurveMax - 1]]
     nice_data |= {
         "lvMax": lvMax,
-        "growthCurve": growthCurve,
+        "growthCurve": raw_svt.mstSvt.expType,
         "atkMax": atkMax,
         "atkBase": atkBase,
         "hpMax": hpMax,
@@ -159,10 +156,7 @@ def get_nice_servant(
     }
 
     nice_data["expFeed"] = [
-        combine.value
-        for combine in masters[region].mstCombineMaterialId[
-            raw_svt.mstSvt.combineMaterialId
-        ][: growthCurveMax - 1]
+        combine.value for combine in raw_svt.mstCombineMaterial[: growthCurveMax - 1]
     ]
 
     nice_data["hitsDistribution"] = {
@@ -258,8 +252,10 @@ def get_nice_servant(
 
     if lore:
         nice_data["profile"] = {
-            "cv": get_cv_name(region, raw_svt.mstSvt.cvId),
-            "illustrator": get_illustrator_name(region, raw_svt.mstSvt.illustratorId),
+            "cv": raw_svt.mstCv.name if raw_svt.mstCv else "",
+            "illustrator": raw_svt.mstIllustrator.name
+            if raw_svt.mstIllustrator
+            else "",
             "costume": {
                 costume_ids[costume.id]: get_nice_costume(costume)
                 for costume in raw_svt.mstSvtCostume

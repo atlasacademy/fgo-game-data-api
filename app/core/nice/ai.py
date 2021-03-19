@@ -1,9 +1,8 @@
 from sqlalchemy.engine import Connection
 
 from ...config import Settings
-from ...data.gamedata import masters
 from ...schemas.common import Language, Region
-from ...schemas.enums import AI_TIMING_NAME, AiTiming, AiType
+from ...schemas.enums import AI_TIMING_NAME, AiTiming
 from ...schemas.gameenums import (
     AI_ACT_NUM_NAME,
     AI_ACT_TARGET_NAME,
@@ -14,6 +13,7 @@ from ...schemas.gameenums import (
 from ...schemas.nice import NiceAi, NiceAiAct, NiceAiCollection
 from ...schemas.raw import AiEntity, MstAiAct
 from ..raw import get_ai_collection
+from ..reverse import get_parent_ais
 from ..utils import get_traits_list
 from .skill import get_nice_skill_from_id
 
@@ -37,21 +37,6 @@ def get_nice_ai_act(
             conn, region, mstAiAct.skillVals[0], lang
         )
     return nice_ai_act
-
-
-def get_parent_ais(
-    region: Region, ai_id: int, field: bool = False
-) -> dict[AiType, list[int]]:
-    if field:
-        return {
-            AiType.svt: [],
-            AiType.field: sorted(masters[region].parentAiField.get(ai_id, [])),
-        }
-    else:
-        return {
-            AiType.svt: sorted(masters[region].parentAiSvt.get(ai_id, [])),
-            AiType.field: [],
-        }
 
 
 def get_nice_ai(

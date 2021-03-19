@@ -1,9 +1,9 @@
-from typing import Any, Union
+from typing import Any, Optional, Union
 
 from sqlalchemy.engine import Connection
 
 from ...config import Settings
-from ...data.gamedata import masters
+from ...db.helpers import war
 from ...rayshift.quest import get_quest_detail
 from ...schemas.common import Language, Region
 from ...schemas.enums import CLASS_NAME
@@ -19,7 +19,14 @@ from ...schemas.nice import (
     NiceStage,
     QuestEnemy,
 )
-from ...schemas.raw import MstQuestRelease, MstStage, QuestEntity, QuestPhaseEntity
+from ...schemas.raw import (
+    MstBgm,
+    MstClosedMessage,
+    MstQuestRelease,
+    MstStage,
+    QuestEntity,
+    QuestPhaseEntity,
+)
 from .. import raw
 from ..utils import get_traits_list
 from .bgm import get_nice_bgm
@@ -32,32 +39,45 @@ settings = Settings()
 
 
 def get_nice_quest_release(
-    region: Region, raw_quest_release: MstQuestRelease
+    raw_quest_release: MstQuestRelease,
+    closed_messages: list[MstClosedMessage],
 ) -> NiceQuestRelease:
+    closed_message = next(
+        message
+        for message in closed_messages
+        if message.id == raw_quest_release.closedMessageId
+    )
     return NiceQuestRelease(
         type=COND_TYPE_NAME[raw_quest_release.type],
         targetId=raw_quest_release.targetId,
         value=raw_quest_release.value,
-        closedMessage=masters[region].mstClosedMessageId.get(
-            raw_quest_release.closedMessageId, ""
-        ),
+        closedMessage=closed_message.message if closed_message else "",
     )
 
 
 def get_nice_stage(
-    region: Region, raw_stage: MstStage, enemies: list[QuestEnemy]
+    region: Region, raw_stage: MstStage, enemies: list[QuestEnemy], bgms: list[MstBgm]
 ) -> NiceStage:
+    bgm = get_nice_bgm(region, next(bgm for bgm in bgms if bgm.id == raw_stage.bgmId))
     return NiceStage(
         wave=raw_stage.wave,
-        bgm=get_nice_bgm(region, raw_stage.bgmId),
+        bgm=bgm,
         fieldAis=raw_stage.script.get("aiFieldIds", []),
         enemies=enemies,
     )
 
 
 def get_nice_quest(
-    region: Region, raw_quest: Union[QuestEntity, QuestPhaseEntity]
+    conn: Connection,
+    region: Region,
+    raw_quest: Union[QuestEntity, QuestPhaseEntity],
+    war_id: Optional[int] = None,
 ) -> dict[str, Any]:
+    if war_id:
+        warId = war_id
+    else:
+        warId = war.get_war_from_spot(conn, raw_quest.mstQuest.spotId)
+
     nice_data: dict[str, Any] = {
         "id": raw_quest.mstQuest.id,
         "name": raw_quest.mstQuest.name,
@@ -72,10 +92,10 @@ def get_nice_quest(
         ],
         "consume": raw_quest.mstQuest.actConsume,
         "spotId": raw_quest.mstQuest.spotId,
-        "warId": masters[region].spotToWarId[raw_quest.mstQuest.spotId],
-        "gifts": get_nice_gift(region, raw_quest.mstQuest.giftId),
+        "warId": warId,
+        "gifts": [get_nice_gift(gift) for gift in raw_quest.mstGift],
         "releaseConditions": [
-            get_nice_quest_release(region, release)
+            get_nice_quest_release(release, raw_quest.mstClosedMessage)
             for release in raw_quest.mstQuestRelease
         ],
         "phases": raw_quest.phases,
@@ -90,7 +110,7 @@ def get_nice_quest(
 
 def get_nice_quest_alone(conn: Connection, region: Region, quest_id: int) -> NiceQuest:
     return NiceQuest.parse_obj(
-        get_nice_quest(region, raw.get_quest_entity(conn, quest_id))
+        get_nice_quest(conn, region, raw.get_quest_entity(conn, quest_id))
     )
 
 
@@ -102,7 +122,7 @@ async def get_nice_quest_phase(
     lang: Language = Language.jp,
 ) -> NiceQuestPhase:
     raw_quest = raw.get_quest_phase_entity(conn, quest_id, phase)
-    nice_data = get_nice_quest(region, raw_quest)
+    nice_data = get_nice_quest(conn, region, raw_quest)
 
     stages = sorted(raw_quest.mstStage, key=lambda stage: stage.wave)
 
@@ -122,13 +142,16 @@ async def get_nice_quest_phase(
         "exp": raw_quest.mstQuestPhase.playerExp,
         "bond": raw_quest.mstQuestPhase.friendshipExp,
         "stages": [
-            get_nice_stage(region, stage, enemies)
+            get_nice_stage(region, stage, enemies, raw_quest.mstBgm)
             for stage, enemies in zip(stages, quest_enemies)
         ],
     }
 
     if raw_quest.mstQuestPhaseDetail:
         nice_data["spotId"] = raw_quest.mstQuestPhaseDetail.spotId
+        nice_data["warId"] = war.get_war_from_spot(
+            conn, raw_quest.mstQuestPhaseDetail.spotId
+        )
         nice_data["consumeType"] = QUEST_CONSUME_TYPE_NAME[
             raw_quest.mstQuestPhaseDetail.consumeType
         ]

@@ -21,7 +21,7 @@ from ...schemas.nice import (
     NiceSkillReverse,
     NiceTdReverse,
 )
-from .. import raw
+from .. import raw, reverse as reverse_ids
 from ..basic import (
     get_basic_cc,
     get_basic_function,
@@ -70,7 +70,7 @@ def get_nice_buff_with_reverse(
             basic_buff_reverse = BasicReversedBuff(
                 function=(
                     get_basic_function(region, func_id, lang, reverse, reverseDepth)
-                    for func_id in raw.buff_to_func(region, buff_id)
+                    for func_id in reverse_ids.buff_to_func(region, buff_id)
                 )
             )
             nice_buff.reverse = NiceReversedBuffType(basic=basic_buff_reverse)
@@ -80,7 +80,7 @@ def get_nice_buff_with_reverse(
                     get_nice_func_with_reverse(
                         conn, region, func_id, lang, reverse, reverseDepth
                     )
-                    for func_id in raw.buff_to_func(region, buff_id)
+                    for func_id in reverse_ids.buff_to_func(region, buff_id)
                 )
             )
             nice_buff.reverse = NiceReversedBuffType(nice=buff_reverse)
@@ -104,11 +104,11 @@ def get_nice_func_with_reverse(
             basic_func_reverse = BasicReversedFunction(
                 skill=(
                     get_basic_skill(region, skill_id, lang, reverse, reverseDepth)
-                    for skill_id in raw.func_to_skillId(region, func_id)
+                    for skill_id in reverse_ids.func_to_skillId(region, func_id)
                 ),
                 NP=(
                     get_basic_td(region, td_id, lang, reverse, reverseDepth)
-                    for td_id in raw.func_to_tdId(region, func_id)
+                    for td_id in reverse_ids.func_to_tdId(region, func_id)
                 ),
             )
             nice_func.reverse = NiceReversedFunctionType(basic=basic_func_reverse)
@@ -118,13 +118,13 @@ def get_nice_func_with_reverse(
                     get_nice_skill_with_reverse(
                         conn, region, skill_id, lang, reverse, reverseDepth
                     )
-                    for skill_id in raw.func_to_skillId(region, func_id)
+                    for skill_id in reverse_ids.func_to_skillId(region, func_id)
                 ),
                 NP=(
                     get_nice_td_with_reverse(
                         conn, region, td_id, lang, reverse, reverseDepth
                     )
-                    for td_id in raw.func_to_tdId(region, func_id)
+                    for td_id in reverse_ids.func_to_tdId(region, func_id)
                 ),
             )
             nice_func.reverse = NiceReversedFunctionType(nice=func_reverse)
@@ -145,7 +145,7 @@ def get_nice_skill_with_reverse(
 
     if reverse and reverseDepth >= ReverseDepth.servant:
         activeSkills = {svt_skill.svtId for svt_skill in raw_skill.mstSvtSkill}
-        passiveSkills = raw.passive_to_svtId(region, skill_id)
+        passiveSkills = reverse_ids.passive_to_svtId(region, skill_id)
         if reverseData == ReverseData.basic:
             basic_skill_reverse = BasicReversedSkillTd(
                 servant=(
@@ -154,11 +154,11 @@ def get_nice_skill_with_reverse(
                 ),
                 MC=(
                     get_basic_mc(region, mc_id, lang)
-                    for mc_id in raw.skill_to_MCId(region, skill_id)
+                    for mc_id in reverse_ids.skill_to_MCId(region, skill_id)
                 ),
                 CC=(
                     get_basic_cc(region, cc_id, lang)
-                    for cc_id in raw.skill_to_CCId(region, skill_id)
+                    for cc_id in reverse_ids.skill_to_CCId(region, skill_id)
                 ),
             )
             nice_skill.reverse = NiceReversedSkillTdType(basic=basic_skill_reverse)
@@ -170,11 +170,11 @@ def get_nice_skill_with_reverse(
                 ),
                 MC=(
                     get_nice_mystic_code(conn, region, mc_id, lang)
-                    for mc_id in raw.skill_to_MCId(region, skill_id)
+                    for mc_id in reverse_ids.skill_to_MCId(region, skill_id)
                 ),
                 CC=(
                     get_nice_command_code(conn, region, cc_id, lang)
-                    for cc_id in raw.skill_to_CCId(region, skill_id)
+                    for cc_id in reverse_ids.skill_to_CCId(region, skill_id)
                 ),
             )
             nice_skill.reverse = NiceReversedSkillTdType(nice=skill_reverse)

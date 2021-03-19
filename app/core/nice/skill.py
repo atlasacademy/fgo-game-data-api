@@ -6,36 +6,17 @@ from sqlalchemy.engine import Connection
 
 from ...config import Settings
 from ...data.custom_mappings import TRANSLATIONS
-from ...data.gamedata import masters
 from ...schemas.common import Language, Region
 from ...schemas.enums import SKILL_TYPE_NAME, AiType
 from ...schemas.nice import AssetURL, NiceSkill, NiceSkillReverse
 from ...schemas.raw import SkillEntityNoReverse
 from ..raw import get_skill_entity_no_reverse, get_skill_entity_no_reverse_many
+from ..reverse import get_ai_id_from_skill
 from ..utils import get_safe, get_traits_list, strip_formatting_brackets
 from .func import get_nice_function
 
 
 settings = Settings()
-
-
-def get_ai_id_from_skill(region: Region, skill_id: int) -> dict[AiType, list[int]]:
-    return {
-        AiType.svt: sorted(
-            set(
-                ai_id
-                for ai_act_id in masters[region].skillToAiAct.get(skill_id, [])
-                for ai_id in masters[region].aiActToAiSvt.get(ai_act_id, [])
-            )
-        ),
-        AiType.field: sorted(
-            set(
-                ai_id
-                for ai_act_id in masters[region].skillToAiAct.get(skill_id, [])
-                for ai_id in masters[region].aiActToAiField.get(ai_act_id, [])
-            )
-        ),
-    }
 
 
 def get_nice_skill_with_svt(
@@ -186,4 +167,5 @@ def get_multiple_nice_skills(
             )[0]
         )
         for skill_svt in skill_svts
+        if skill_svt.skill_id in raw_skills
     }

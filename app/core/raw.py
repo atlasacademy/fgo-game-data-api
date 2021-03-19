@@ -4,10 +4,10 @@ from fastapi import HTTPException
 from sqlalchemy.engine import Connection
 
 from ..data.gamedata import masters
-from ..db.helpers import ai, event, item, quest, skill, svt, td, war
+from ..db.helpers import ai, event, fetch, item, quest, skill, svt, td
 from ..schemas.common import Region, ReverseDepth
 from ..schemas.enums import FUNC_VALS_NOT_BUFF
-from ..schemas.gameenums import CondType, PurchaseType
+from ..schemas.gameenums import CondType, PurchaseType, VoiceCondType
 from ..schemas.raw import (
     EXTRA_ATTACK_TD_ID,
     AiCollection,
@@ -18,6 +18,46 @@ from ..schemas.raw import (
     EventEntity,
     FunctionEntity,
     FunctionEntityNoReverse,
+    MstBgm,
+    MstBoxGacha,
+    MstCombineCostume,
+    MstCombineLimit,
+    MstCombineMaterial,
+    MstCombineSkill,
+    MstCommandCode,
+    MstCommandCodeComment,
+    MstCommandCodeSkill,
+    MstCv,
+    MstEquip,
+    MstEquipExp,
+    MstEquipSkill,
+    MstEvent,
+    MstEventMission,
+    MstEventMissionCondition,
+    MstEventMissionConditionDetail,
+    MstEventPointBuff,
+    MstEventReward,
+    MstEventRewardSet,
+    MstEventTower,
+    MstFriendship,
+    MstGift,
+    MstIllustrator,
+    MstMap,
+    MstShop,
+    MstSpot,
+    MstSvt,
+    MstSvtCard,
+    MstSvtChange,
+    MstSvtComment,
+    MstSvtCostume,
+    MstSvtExp,
+    MstSvtGroup,
+    MstSvtLimit,
+    MstSvtLimitAdd,
+    MstSvtVoiceRelation,
+    MstVoice,
+    MstWar,
+    MstWarAdd,
     MysticCodeEntity,
     QuestEntity,
     QuestPhaseEntity,
@@ -34,49 +74,7 @@ from ..schemas.raw import (
     TdEntityNoReverse,
     WarEntity,
 )
-
-
-def buff_to_func(region: Region, buff_id: int) -> set[int]:
-    """Returns a set of function ID that uses the given buff ID in vals"""
-    return masters[region].buffToFunc.get(buff_id, set())
-
-
-def func_to_skillId(region: Region, func_id: int) -> set[int]:
-    """Returns a set of skill ID that uses the given function ID"""
-    return set(sorted(masters[region].funcToSkill.get(func_id, set())))
-
-
-def func_to_tdId(region: Region, func_id: int) -> set[int]:
-    """Returns a set of treasure device (NP) ID that uses the given function ID"""
-    return masters[region].funcToTd.get(func_id, set())
-
-
-def active_to_svtId(region: Region, skill_id: int) -> set[int]:
-    """Returns a set of svt ID that has the given skill ID as passive"""
-    return masters[region].activeSkillToSvt.get(skill_id, set())
-
-
-def passive_to_svtId(region: Region, skill_id: int) -> set[int]:
-    """Returns a set of svt ID that has the given skill ID as passive"""
-    return masters[region].passiveSkillToSvt.get(skill_id, set())
-
-
-def skill_to_MCId(region: Region, skill_id: int) -> set[int]:
-    """Returns a set of Mystic Code ID that has the given skill ID"""
-    return {
-        equip_skill.equipId
-        for equip_skill in masters[region].mstEquipSkill
-        if equip_skill.skillId == skill_id
-    }
-
-
-def skill_to_CCId(region: Region, skill_id: int) -> set[int]:
-    """Returns a set of Command Code ID that has the given skill ID"""
-    return {
-        cc_skill.commandCodeId
-        for cc_skill in masters[region].mstCommandCodeSkill
-        if cc_skill.skillId == skill_id
-    }
+from . import reverse as reverse_ids
 
 
 def get_buff_entity_no_reverse(region: Region, buff_id: int) -> BuffEntityNoReverse:
@@ -96,7 +94,7 @@ def get_buff_entity(
         buff_reverse = ReversedBuff(
             function=(
                 get_func_entity(conn, region, func_id, reverse, reverseDepth)
-                for func_id in buff_to_func(region, buff_id)
+                for func_id in reverse_ids.buff_to_func(region, buff_id)
             )
         )
         buff_entity.reverse = ReversedBuffType(raw=buff_reverse)
@@ -134,11 +132,11 @@ def get_func_entity(
         func_reverse = ReversedFunction(
             skill=(
                 get_skill_entity(conn, region, skill_id, reverse, reverseDepth)
-                for skill_id in func_to_skillId(region, func_id)
+                for skill_id in reverse_ids.func_to_skillId(region, func_id)
             ),
             NP=(
                 get_td_entity(conn, region, td_id, reverse, reverseDepth)
-                for td_id in func_to_tdId(region, func_id)
+                for td_id in reverse_ids.func_to_tdId(region, func_id)
             ),
         )
         func_entity.reverse = ReversedFunctionType(raw=func_reverse)
@@ -185,7 +183,7 @@ def get_skill_entity(
 
     if reverse and reverseDepth >= ReverseDepth.servant:
         activeSkills = {svt_skill.svtId for svt_skill in skill_entity.mstSvtSkill}
-        passiveSkills = passive_to_svtId(region, skill_id)
+        passiveSkills = reverse_ids.passive_to_svtId(region, skill_id)
         skill_reverse = ReversedSkillTd(
             servant=(
                 get_servant_entity(conn, region, svt_id)
@@ -193,11 +191,11 @@ def get_skill_entity(
             ),
             MC=(
                 get_mystic_code_entity(conn, region, mc_id)
-                for mc_id in skill_to_MCId(region, skill_id)
+                for mc_id in reverse_ids.skill_to_MCId(region, skill_id)
             ),
             CC=(
                 get_command_code_entity(conn, region, cc_id)
-                for cc_id in skill_to_CCId(region, skill_id)
+                for cc_id in reverse_ids.skill_to_CCId(region, skill_id)
             ),
         )
         skill_entity.reverse = ReversedSkillTdType(raw=skill_reverse)
@@ -260,37 +258,56 @@ def get_servant_entity(
     expand: bool = False,
     lore: bool = False,
 ) -> ServantEntity:
-    svt_entity_db = svt.get_servantEntity(conn, servant_id)
-    if not svt_entity_db:
+    svt_db = fetch.get_one(conn, MstSvt, servant_id)
+    if not svt_db:
         raise HTTPException(status_code=404, detail="Svt not found")
 
+    mstSvtCard = fetch.get_all(conn, MstSvtCard, servant_id)
+    mstSvtLimit = fetch.get_all(conn, MstSvtLimit, servant_id)
+    mstCombineSkill = fetch.get_all(conn, MstCombineSkill, svt_db.combineSkillId)
+    mstCombineLimit = fetch.get_all(conn, MstCombineLimit, svt_db.combineLimitId)
+    mstCombineCostume = fetch.get_all(conn, MstCombineCostume, servant_id)
+    mstSvtLimitAdd = fetch.get_all(conn, MstSvtLimitAdd, servant_id)
+    mstSvtChange = fetch.get_all(conn, MstSvtChange, servant_id)
+    mstSvtCostume = fetch.get_all(conn, MstSvtCostume, servant_id)
+    mstSvtExp = fetch.get_all(conn, MstSvtExp, svt_db.expType)
+    mstFriendship = fetch.get_all(conn, MstFriendship, svt_db.friendshipId)
+    mstCombineMaterial = fetch.get_all(
+        conn, MstCombineMaterial, svt_db.combineMaterialId
+    )
+
+    mstSvtScript = svt.get_svt_script(conn, servant_id)
+
+    skill_ids = [
+        skill.skillId for skill in skill.get_mstSvtSkill(conn, svt_id=servant_id)
+    ]
+    mstSkill = get_skill_entity_no_reverse_many(conn, region, skill_ids, expand)
+
+    td_ids = [
+        td.treasureDeviceId
+        for td in td.get_mstSvtTreasureDevice(conn, svt_id=servant_id)
+        if td.treasureDeviceId != EXTRA_ATTACK_TD_ID
+    ]
+    mstTreasureDevice = get_td_entity_no_reverse_many(conn, region, td_ids, expand)
+
     svt_entity = ServantEntity(
-        **svt_entity_db._mapping,  # pylint: disable=protected-access
+        mstSvt=svt_db,
+        mstSvtCard=mstSvtCard,
+        mstSvtLimit=mstSvtLimit,
+        mstCombineSkill=mstCombineSkill,
+        mstCombineLimit=mstCombineLimit,
+        mstCombineCostume=mstCombineCostume,
+        mstCombineMaterial=mstCombineMaterial,
+        mstSvtLimitAdd=mstSvtLimitAdd,
+        mstSvtChange=mstSvtChange,
+        # needed costume to get the nice limits and costume ids
+        mstSvtCostume=mstSvtCostume,
         # needed this to get CharaFigure available forms
-        mstSvtScript=masters[region].mstSvtScriptId.get(servant_id, []),
-        mstSkill=(
-            get_skill_entity_no_reverse_many(
-                conn,
-                region,
-                [
-                    skill.skillId
-                    for skill in skill.get_mstSvtSkill(conn, svt_id=servant_id)
-                ],
-                expand,
-            )
-        ),
-        mstTreasureDevice=(
-            get_td_entity_no_reverse_many(
-                conn,
-                region,
-                [
-                    td.treasureDeviceId
-                    for td in td.get_mstSvtTreasureDevice(conn, svt_id=servant_id)
-                    if td.treasureDeviceId != EXTRA_ATTACK_TD_ID
-                ],
-                expand,
-            )
-        ),
+        mstSvtScript=mstSvtScript,
+        mstSvtExp=mstSvtExp,
+        mstFriendship=mstFriendship,
+        mstSkill=mstSkill,
+        mstTreasureDevice=mstTreasureDevice,
     )
 
     if expand:
@@ -299,7 +316,11 @@ def get_servant_entity(
         )
 
     if lore:
-        svt_entity.mstSvtComment = svt.get_mstSvtComment(conn, servant_id)
+        svt_entity.mstCv = fetch.get_one(conn, MstCv, svt_db.cvId)
+        svt_entity.mstIllustrator = fetch.get_one(
+            conn, MstIllustrator, svt_db.illustratorId
+        )
+        svt_entity.mstSvtComment = fetch.get_all(conn, MstSvtComment, servant_id)
 
         # Try to match order in the voice tab in game
         voice_ids = []
@@ -310,24 +331,43 @@ def get_servant_entity(
         voice_ids.append(servant_id)
 
         for main_id, sub_id in (
-            ("JEKYLL_SVT_ID", "HYDE_SVT_ID"),
-            ("MASHU_SVT_ID1", "MASHU_SVT_ID2"),
+            (600700, 600710),  # Jekyll/Hyde
+            (800100, 800101),  # Mash
         ):
-            if servant_id == masters[region].mstConstantId[main_id]:
-                voice_ids.append(masters[region].mstConstantId[sub_id])
+            if servant_id == main_id:
+                voice_ids.append(sub_id)
 
         # Moriarty deadheat summer lines use his hidden name svt_id
-        for svt_id in [change.svtVoiceId for change in svt_entity.mstSvtChange] + [
+        relation_svt_ids = [change.svtVoiceId for change in svt_entity.mstSvtChange] + [
             servant_id
-        ]:
-            if voiceRelations := masters[region].mstSvtVoiceRelationId.get(svt_id):
-                for voiceRelation in voiceRelations:
-                    voice_ids.append(voiceRelation.relationSvtId)
+        ]
+        voiceRelations = fetch.get_all_multiple(
+            conn, MstSvtVoiceRelation, relation_svt_ids
+        )
+        for voiceRelation in voiceRelations:
+            voice_ids.append(voiceRelation.relationSvtId)
 
         order = {voice_id: i for i, voice_id in enumerate(voice_ids)}
         mstSvtVoice = svt.get_mstSvtVoice(conn, voice_ids)
         mstSubtitle = svt.get_mstSubtitle(conn, voice_ids)
         mstVoicePlayCond = svt.get_mstVoicePlayCond(conn, voice_ids)
+
+        base_voice_ids = {
+            info.get_voice_id()
+            for svt_voice in mstSvtVoice
+            for script_json in svt_voice.scriptJson
+            for info in script_json.infos
+        }
+        svt_entity.mstVoice = fetch.get_all_multiple(conn, MstVoice, base_voice_ids)
+
+        group_ids = {
+            cond.value
+            for svt_voice in mstSvtVoice
+            for script_json in svt_voice.scriptJson
+            for cond in script_json.conds
+            if cond.condType == VoiceCondType.SVT_GROUP
+        }
+        svt_entity.mstSvtGroup = fetch.get_all_multiple(conn, MstSvtGroup, group_ids)
 
         svt_entity.mstSvtVoice = sorted(mstSvtVoice, key=lambda voice: order[voice.id])
         svt_entity.mstVoicePlayCond = sorted(
@@ -343,21 +383,17 @@ def get_servant_entity(
 def get_mystic_code_entity(
     conn: Connection, region: Region, mc_id: int, expand: bool = False
 ) -> MysticCodeEntity:
+    mc_db = fetch.get_one(conn, MstEquip, mc_id)
+    if not mc_db:
+        raise HTTPException(status_code=404, detail="Mystic Code not found")
+
+    skill_ids = [mc.skillId for mc in fetch.get_all(conn, MstEquipSkill, mc_id)]
+    mstSkill = get_skill_entity_no_reverse_many(conn, region, skill_ids, expand)
+
     mc_entity = MysticCodeEntity(
-        mstEquip=masters[region].mstEquipId[mc_id],
-        mstSkill=(
-            get_skill_entity_no_reverse_many(
-                conn,
-                region,
-                [
-                    mc.skillId
-                    for mc in masters[region].mstEquipSkill
-                    if mc.equipId == mc_id
-                ],
-                expand,
-            )
-        ),
-        mstEquipExp=(mc for mc in masters[region].mstEquipExp if mc.equipId == mc_id),
+        mstEquip=mc_db,
+        mstSkill=mstSkill,
+        mstEquipExp=fetch.get_all(conn, MstEquipExp, mc_id),
     )
     return mc_entity
 
@@ -365,79 +401,119 @@ def get_mystic_code_entity(
 def get_command_code_entity(
     conn: Connection, region: Region, cc_id: int, expand: bool = False
 ) -> CommandCodeEntity:
-    cc_entity = CommandCodeEntity(
-        mstCommandCode=masters[region].mstCommandCodeId[cc_id],
-        mstSkill=(
-            get_skill_entity_no_reverse_many(
-                conn,
-                region,
-                [
-                    cc_skill.skillId
-                    for cc_skill in masters[region].mstCommandCodeSkill
-                    if cc_skill.commandCodeId == cc_id
-                ],
-                expand,
-            )
-        ),
-        mstCommandCodeComment=masters[region].mstCommandCodeCommentId[cc_id][0],
+    cc_db = fetch.get_one(conn, MstCommandCode, cc_id)
+    if not cc_db:
+        raise HTTPException(status_code=404, detail="Command Code not found")
+
+    skill_ids = [
+        cc_skill.skillId for cc_skill in fetch.get_all(conn, MstCommandCodeSkill, cc_id)
+    ]
+    mstSkill = get_skill_entity_no_reverse_many(conn, region, skill_ids, expand)
+
+    mstCommandCodeComment = fetch.get_all(conn, MstCommandCodeComment, cc_id)[0]
+    mstIllustrator = fetch.get_one(
+        conn, MstIllustrator, mstCommandCodeComment.illustratorId
     )
-    return cc_entity
+
+    return CommandCodeEntity(
+        mstCommandCode=cc_db,
+        mstSkill=mstSkill,
+        mstCommandCodeComment=mstCommandCodeComment,
+        mstIllustrator=mstIllustrator,
+    )
 
 
-def get_war_entity(conn: Connection, region: Region, war_id: int) -> WarEntity:
-    maps = masters[region].mstMapWarId.get(war_id, [])
+def get_war_entity(conn: Connection, war_id: int) -> WarEntity:
+    war_db = fetch.get_one(conn, MstWar, war_id)
+    if not war_db:
+        raise HTTPException(status_code=404, detail="War not found")
+
+    maps = fetch.get_all(conn, MstMap, war_id)
+    map_ids = [event_map.id for event_map in maps]
+
+    spots = fetch.get_all_multiple(conn, MstSpot, map_ids)
+    spot_ids = [spot.id for spot in spots]
+
+    quests = quest.get_quest_by_spot(conn, spot_ids)
+
+    bgm_ids = [war_map.bgmId for war_map in maps] + [war_db.bgmId]
+    bgms = fetch.get_all_multiple(conn, MstBgm, bgm_ids)
+
     return WarEntity(
-        mstWar=masters[region].mstWarId[war_id],
+        mstWar=war_db,
+        mstEvent=fetch.get_one(conn, MstEvent, war_db.eventId),
+        mstWarAdd=fetch.get_all(conn, MstWarAdd, war_id),
         mstMap=maps,
-        mstSpot=war.get_mstSpot(conn, [event_map.id for event_map in maps]),
-        mstWarAdd=war.get_mstWarAdd(conn, [war_id]),
+        mstBgm=bgms,
+        mstSpot=spots,
+        mstQuest=quests,
     )
 
 
-def get_event_entity(conn: Connection, region: Region, event_id: int) -> EventEntity:
-    mstEvent = event.get_mstEvent(conn, event_id)
-    if mstEvent:
-        missions = event.get_mstEventMission(conn, event_id)
-        cond_ids = [mission.id for mission in missions]
-        conds = event.get_mstEventMissionCondition(conn, cond_ids)
-        cond_detail_ids = [
-            cond.targetIds[0]
-            for cond in conds
-            if cond.condType == CondType.MISSION_CONDITION_DETAIL
-        ]
-        cond_details = event.get_mstEventMissionConditionDetail(conn, cond_detail_ids)
-
-        box_gachas = event.get_mstBoxGacha(conn, event_id)
-        box_gacha_base_ids = [
-            base_id for box_gacha in box_gachas for base_id in box_gacha.baseIds
-        ]
-
-        shops = event.get_mstShop(conn, event_id)
-        set_item_ids = [
-            set_id
-            for shop in shops
-            for set_id in shop.targetIds
-            if shop.purchaseType == PurchaseType.SET_ITEM
-        ]
-        set_items = item.get_mstSetItem(conn, set_item_ids)
-
-        return EventEntity(
-            mstEvent=masters[region].mstEventId[event_id],
-            mstShop=shops,
-            mstSetItem=set_items,
-            mstEventReward=event.get_mstEventReward(conn, event_id),
-            mstEventRewardSet=event.get_mstEventRewardSet(conn, event_id),
-            mstEventPointBuff=event.get_mstEventPointBuff(conn, event_id),
-            mstEventMission=missions,
-            mstEventMissionCondition=conds,
-            mstEventMissionConditionDetail=cond_details,
-            mstEventTower=event.get_mstEventTower(conn, event_id),
-            mstEventTowerReward=event.get_mstEventTowerReward(conn, event_id),
-            mstBoxGacha=box_gachas,
-            mstBoxGachaBase=event.get_mstBoxGachaBase(conn, box_gacha_base_ids),
-        )
-    else:
+def get_event_entity(conn: Connection, event_id: int) -> EventEntity:
+    mstEvent = fetch.get_one(conn, MstEvent, event_id)
+    if not mstEvent:
         raise HTTPException(status_code=404, detail="Event not found")
+
+    missions = fetch.get_all(conn, MstEventMission, event_id)
+    mission_ids = [mission.id for mission in missions]
+
+    conds = fetch.get_all_multiple(conn, MstEventMissionCondition, mission_ids)
+    cond_detail_ids = [
+        cond.targetIds[0]
+        for cond in conds
+        if cond.condType == CondType.MISSION_CONDITION_DETAIL
+    ]
+
+    cond_details = fetch.get_all_multiple(
+        conn, MstEventMissionConditionDetail, cond_detail_ids
+    )
+
+    box_gachas = fetch.get_all(conn, MstBoxGacha, event_id)
+    box_gacha_base_ids = [
+        base_id for box_gacha in box_gachas for base_id in box_gacha.baseIds
+    ]
+
+    shops = fetch.get_all(conn, MstShop, event_id)
+    set_item_ids = [
+        set_id
+        for shop in shops
+        for set_id in shop.targetIds
+        if shop.purchaseType == PurchaseType.SET_ITEM
+    ]
+    set_items = item.get_mstSetItem(conn, set_item_ids)
+
+    rewards = fetch.get_all(conn, MstEventReward, event_id)
+
+    tower_rewards = event.get_mstEventTowerReward(conn, event_id)
+
+    gacha_bases = event.get_mstBoxGachaBase(conn, box_gacha_base_ids)
+
+    gift_ids = (
+        {reward.giftId for reward in rewards}
+        | {mission.giftId for mission in missions}
+        | {tower_reward.giftId for tower_reward in tower_rewards}
+        | {box.targetId for box in gacha_bases}
+    )
+    gifts = fetch.get_all_multiple(conn, MstGift, gift_ids)
+
+    return EventEntity(
+        mstEvent=mstEvent,
+        mstWar=event.get_event_wars(conn, event_id),
+        mstShop=shops,
+        mstGift=gifts,
+        mstSetItem=set_items,
+        mstEventReward=rewards,
+        mstEventRewardSet=fetch.get_all(conn, MstEventRewardSet, event_id),
+        mstEventPointBuff=fetch.get_all(conn, MstEventPointBuff, event_id),
+        mstEventMission=missions,
+        mstEventMissionCondition=conds,
+        mstEventMissionConditionDetail=cond_details,
+        mstEventTower=fetch.get_all(conn, MstEventTower, event_id),
+        mstEventTowerReward=tower_rewards,
+        mstBoxGacha=box_gachas,
+        mstBoxGachaBase=gacha_bases,
+    )
 
 
 def get_quest_entity_many(conn: Connection, quest_id: list[int]) -> list[QuestEntity]:
@@ -450,12 +526,6 @@ def get_quest_entity_many(conn: Connection, quest_id: list[int]) -> list[QuestEn
 
 def get_quest_entity(conn: Connection, quest_id: int) -> QuestEntity:
     return get_quest_entity_many(conn, [quest_id])[0]
-
-
-def get_quest_entity_by_spot_many(
-    conn: Connection, spot_ids: list[int]
-) -> list[QuestEntity]:
-    return quest.get_quest_by_spot(conn, spot_ids)
 
 
 def get_quest_phase_entity(

@@ -1,115 +1,25 @@
-from typing import Any, Iterable
+from typing import Iterable
 
-from sqlalchemy import Table
-from sqlalchemy.dialects.postgresql import JSONB, aggregate_order_by
 from sqlalchemy.engine import Connection
-from sqlalchemy.sql import cast, func, or_, select
-from sqlalchemy.sql.selectable import CTE
+from sqlalchemy.sql import or_, select
 
-from ...models.raw import (
-    mstCombineCostume,
-    mstCombineLimit,
-    mstCombineSkill,
-    mstSubtitle,
-    mstSvt,
-    mstSvtCard,
-    mstSvtChange,
-    mstSvtComment,
-    mstSvtCostume,
-    mstSvtLimit,
-    mstSvtLimitAdd,
-    mstSvtVoice,
-    mstVoicePlayCond,
-)
+from ...models.raw import mstSubtitle, mstSvtScript, mstSvtVoice, mstVoicePlayCond
 from ...schemas.gameenums import VoiceCondType
 from ...schemas.raw import (
     GlobalNewMstSubtitle,
-    MstSvtComment,
+    MstSvtScript,
     MstSvtVoice,
     MstVoicePlayCond,
 )
-from .utils import sql_jsonb_agg
 
 
-def sql_sorted_cte(table: Table, svt_id: int, svt_id_col: str, order_col: str) -> CTE:
-    return (
-        select(
-            table.c[svt_id_col],
-            func.jsonb_agg(
-                aggregate_order_by(table.table_valued(), table.c[order_col])
-            ).label(table.name),
-        )
-        .where(table.c[svt_id_col] == svt_id)
-        .group_by(table.c[svt_id_col])
-        .cte()
-    )
-
-
-def coalesce_select(cte_table: CTE, orig_table: Table) -> Any:
-    return func.coalesce(cte_table.c[orig_table.name], cast([], JSONB)).label(
-        orig_table.name
-    )
-
-
-def get_servantEntity(conn: Connection, svt_id: int) -> Any:
-    mstSvtCardJson = sql_sorted_cte(mstSvtCard, svt_id, "svtId", "cardId")
-    mstCombineSkillJson = sql_sorted_cte(mstCombineSkill, svt_id, "id", "skillLv")
-    mstCombineLimitJson = sql_sorted_cte(mstCombineLimit, svt_id, "id", "svtLimit")
-    mstSvtLimitAddJson = sql_sorted_cte(mstSvtLimitAdd, svt_id, "svtId", "limitCount")
-
-    JOINED_SVT_TABLES = (
-        mstSvt.outerjoin(mstSvtCardJson, mstSvtCardJson.c.svtId == mstSvt.c.id)
-        .outerjoin(mstSvtLimit, mstSvtLimit.c.svtId == mstSvt.c.id)
-        .outerjoin(
-            mstCombineSkillJson, mstCombineSkillJson.c.id == mstSvt.c.combineSkillId
-        )
-        .outerjoin(
-            mstCombineLimitJson, mstCombineLimitJson.c.id == mstSvt.c.combineLimitId
-        )
-        .outerjoin(mstCombineCostume, mstCombineCostume.c.svtId == mstSvt.c.id)
-        .outerjoin(mstSvtLimitAddJson, mstSvtLimitAddJson.c.svtId == mstSvt.c.id)
-        .outerjoin(mstSvtChange, mstSvtChange.c.svtId == mstSvt.c.id)
-        .outerjoin(mstSvtCostume, mstSvtCostume.c.svtId == mstSvt.c.id)
-    )
-
-    SELECT_SVT_ENTITY = [
-        func.to_jsonb(mstSvt.table_valued()).label(mstSvt.name),
-        coalesce_select(mstSvtCardJson, mstSvtCard),
-        sql_jsonb_agg(mstSvtLimit),
-        coalesce_select(mstCombineSkillJson, mstCombineSkill),
-        coalesce_select(mstCombineLimitJson, mstCombineLimit),
-        sql_jsonb_agg(mstCombineCostume),
-        coalesce_select(mstSvtLimitAddJson, mstSvtLimitAdd),
-        sql_jsonb_agg(mstSvtChange),
-        sql_jsonb_agg(mstSvtCostume),
-    ]
-
+def get_svt_script(conn: Connection, svt_id: int) -> list[MstSvtScript]:
     stmt = (
-        select(*SELECT_SVT_ENTITY)
-        .select_from(JOINED_SVT_TABLES)
-        .where(mstSvt.c.id == svt_id)
-        .group_by(
-            mstSvt.c.id,
-            mstSvtCardJson.c.mstSvtCard,
-            mstCombineSkillJson.c.mstCombineSkill,
-            mstCombineLimitJson.c.mstCombineLimit,
-            mstSvtLimitAddJson.c.mstSvtLimitAdd,
-        )
+        select(mstSvtScript)
+        .where(mstSvtScript.c.id / 10 == svt_id)
+        .order_by(mstSvtScript.c.form)
     )
-
-    return conn.execute(stmt).fetchone()
-
-
-def get_mstSvtComment(conn: Connection, svt_id: int) -> list[MstSvtComment]:
-    mstSvtComment_stmt = (
-        select(mstSvtComment)
-        .where(mstSvtComment.c.svtId == svt_id)
-        .order_by(mstSvtComment.c.id)
-    )
-    return [
-        MstSvtComment.from_orm(svt_comment)
-        for svt_comment in conn.execute(mstSvtComment_stmt).fetchall()
-    ]
+    return [MstSvtScript.from_orm(db_row) for db_row in conn.execute(stmt).fetchall()]
 
 
 def get_mstSvtVoice(conn: Connection, svt_ids: Iterable[int]) -> list[MstSvtVoice]:

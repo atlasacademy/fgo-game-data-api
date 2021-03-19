@@ -1,14 +1,13 @@
 from ...config import Settings
-from ...data.gamedata import masters
 from ...schemas.common import Region
 from ...schemas.nice import AssetURL, NiceBgm
+from ...schemas.raw import MstBgm
 
 
 settings = Settings()
 
 
-def get_nice_bgm(region: Region, bgm_id: int) -> NiceBgm:
-    raw_bgm = masters[region].mstBgmId[bgm_id]
+def get_nice_bgm(region: Region, raw_bgm: MstBgm) -> NiceBgm:
     return NiceBgm(
         id=raw_bgm.id,
         name=raw_bgm.name,

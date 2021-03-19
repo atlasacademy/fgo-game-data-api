@@ -53,6 +53,10 @@
       "imagePriority": 10000
     }
   ],
+  "mstClosedMessage": [{ "id": 0, "message": "" }],
+  "mstGift": [
+    { "id": 12000, "type": 2, "objectId": 100, "priority": 0, "num": 1 }
+  ],
   "phases": [1],
   "phasesWithEnemies": [],
   "mstQuestPhase": {
@@ -99,6 +103,28 @@
       "enemyInfo": 1,
       "bgmId": 57,
       "startEffectId": 2
+    }
+  ],
+  "mstBgm": [
+    {
+      "id": 57,
+      "fileName": "BGM_BATTLE_18",
+      "name": "wars\n～異聞～",
+      "priority": 1006002,
+      "detail": "",
+      "flag": 0,
+      "shopId": 7000057,
+      "logoId": 15
+    },
+    {
+      "id": 264,
+      "fileName": "BGM_BATTLE_81",
+      "name": "天を駆ける",
+      "priority": 1019002,
+      "detail": "",
+      "flag": 0,
+      "shopId": 7000264,
+      "logoId": 40
     }
   ]
 }

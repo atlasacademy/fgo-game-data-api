@@ -93,13 +93,9 @@ async def get_servant(
     lore: bool = False,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    if servant_id in masters[region].mstSvtServantCollectionNo:
-        servant_id = masters[region].mstSvtServantCollectionNo[servant_id]
-    if servant_id in masters[region].mstSvtId:
-        servant_entity = raw.get_servant_entity(conn, region, servant_id, expand, lore)
-        return item_response(servant_entity)
-    else:
-        raise HTTPException(status_code=404, detail="Servant not found")
+    servant_id = masters[region].mstSvtServantCollectionNo.get(servant_id, servant_id)
+    servant_entity = raw.get_servant_entity(conn, region, servant_id, expand, lore)
+    return item_response(servant_entity)
 
 
 @router.get(
@@ -148,13 +144,9 @@ async def get_equip(
     lore: bool = False,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    if equip_id in masters[region].mstSvtEquipCollectionNo:
-        equip_id = masters[region].mstSvtEquipCollectionNo[equip_id]
-    if equip_id in masters[region].mstSvtId:
-        servant_entity = raw.get_servant_entity(conn, region, equip_id, expand, lore)
-        return item_response(servant_entity)
-    else:
-        raise HTTPException(status_code=404, detail="Equip not found")
+    equip_id = masters[region].mstSvtEquipCollectionNo.get(equip_id, equip_id)
+    servant_entity = raw.get_servant_entity(conn, region, equip_id, expand, lore)
+    return item_response(servant_entity)
 
 
 @router.get(
@@ -225,11 +217,8 @@ async def get_mystic_code(
 
     - **expand**: Expand the skills and functions.
     """
-    if mc_id in masters[region].mstEquipId:
-        mc_entity = raw.get_mystic_code_entity(conn, region, mc_id, expand)
-        return item_response(mc_entity)
-    else:
-        raise HTTPException(status_code=404, detail="Mystic Code not found")
+    mc_entity = raw.get_mystic_code_entity(conn, region, mc_id, expand)
+    return item_response(mc_entity)
 
 
 @router.get(
@@ -251,13 +240,9 @@ async def get_command_code(
 
     - **expand**: Expand the skills and functions.
     """
-    if cc_id in masters[region].mstCCCollectionNo:
-        cc_id = masters[region].mstCCCollectionNo[cc_id]
-    if cc_id in masters[region].mstCommandCodeId:
-        cc_entity = raw.get_command_code_entity(conn, region, cc_id, expand)
-        return item_response(cc_entity)
-    else:
-        raise HTTPException(status_code=404, detail="Command Code not found")
+    cc_id = masters[region].mstCCCollectionNo.get(cc_id, cc_id)
+    cc_entity = raw.get_command_code_entity(conn, region, cc_id, expand)
+    return item_response(cc_entity)
 
 
 raw_skill_extra = """
@@ -516,15 +501,11 @@ async def get_item(region: Region, item_id: int) -> Response:
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
-async def get_event(
-    region: Region,
-    event_id: int,
-    conn: Connection = Depends(get_db),
-) -> Response:
+async def get_event(event_id: int, conn: Connection = Depends(get_db)) -> Response:
     """
     Get the event data from the given event ID
     """
-    return item_response(raw.get_event_entity(conn, region, event_id))
+    return item_response(raw.get_event_entity(conn, event_id))
 
 
 @router.get(
@@ -535,18 +516,13 @@ async def get_event(
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
-async def get_war(
-    region: Region, war_id: int, conn: Connection = Depends(get_db)
-) -> Response:
+async def get_war(war_id: int, conn: Connection = Depends(get_db)) -> Response:
     """
     Get the war data from the given war ID
     """
-    if war_id in masters[region].mstWarId:
-        war_response = item_response(raw.get_war_entity(conn, region, war_id))
-        war_response.headers["Bloom-Response-TTL"] = str(settings.quest_cache_length)
-        return war_response
-    else:
-        raise HTTPException(status_code=404, detail="War not found")
+    war_response = item_response(raw.get_war_entity(conn, war_id))
+    war_response.headers["Bloom-Response-TTL"] = str(settings.quest_cache_length)
+    return war_response
 
 
 @router.get(

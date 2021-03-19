@@ -1,7 +1,8 @@
+from collections import defaultdict
+
 from sqlalchemy.engine import Connection
 
 from ...config import Settings
-from ...data.gamedata import masters
 from ...schemas.common import Region
 from ...schemas.enums import ITEM_BG_TYPE_NAME
 from ...schemas.gameenums import (
@@ -31,6 +32,7 @@ from ...schemas.nice import (
     NiceEventReward,
     NiceEventTower,
     NiceEventTowerReward,
+    NiceGift,
     NiceItemAmount,
     NiceItemSet,
     NiceShop,
@@ -45,6 +47,7 @@ from ...schemas.raw import (
     MstEventReward,
     MstEventTower,
     MstEventTowerReward,
+    MstGift,
     MstSetItem,
     MstShop,
 )
@@ -55,6 +58,10 @@ from .item import get_nice_item
 
 
 settings = Settings()
+
+
+def get_nice_gifts(gift_id: int, gift_maps: dict[int, list[MstGift]]) -> list[NiceGift]:
+    return [get_nice_gift(gift) for gift in gift_maps[gift_id]]
 
 
 def get_nice_set_item(set_item: MstSetItem) -> NiceItemSet:
@@ -122,12 +129,15 @@ def get_bgImage_url(region: Region, bgImageId: int, event_id: int, prefix: str) 
 
 
 def get_nice_reward(
-    region: Region, reward: MstEventReward, event_id: int
+    region: Region,
+    reward: MstEventReward,
+    event_id: int,
+    gift_maps: dict[int, list[MstGift]],
 ) -> NiceEventReward:
     return NiceEventReward(
         groupId=reward.groupId,
         point=reward.point,
-        gifts=get_nice_gift(region, reward.giftId),
+        gifts=get_nice_gifts(reward.giftId, gift_maps),
         bgImagePoint=get_bgImage_url(
             region, reward.bgImageId, event_id, "event_rewardpoint_"
         ),
@@ -202,10 +212,10 @@ def get_nice_mission_cond(
 
 
 def get_nice_mission(
-    region: Region,
     mission: MstEventMission,
     conds: list[MstEventMissionCondition],
     details: dict[int, MstEventMissionConditionDetail],
+    gift_maps: dict[int, list[MstGift]],
 ) -> NiceEventMission:
     return NiceEventMission(
         id=mission.id,
@@ -219,7 +229,7 @@ def get_nice_mission(
         endedAt=mission.endedAt,
         closedAt=mission.closedAt,
         rewardType=MISSION_REWARD_TYPE_NAME[mission.rewardType],
-        gifts=get_nice_gift(region, mission.giftId),
+        gifts=get_nice_gifts(mission.giftId, gift_maps),
         bannerGroup=mission.bannerGroup,
         priority=mission.priority,
         rewardRarity=mission.rewardRarity,
@@ -230,12 +240,12 @@ def get_nice_mission(
 
 
 def get_nice_tower_rewards(
-    region: Region, reward: MstEventTowerReward
+    region: Region, reward: MstEventTowerReward, gift_maps: dict[int, list[MstGift]]
 ) -> NiceEventTowerReward:
     base_settings = {"base_url": settings.asset_url, "region": region}
     return NiceEventTowerReward(
         floor=reward.floor,
-        gifts=get_nice_gift(region, reward.giftId),
+        gifts=get_nice_gifts(reward.giftId, gift_maps),
         boardMessage=reward.boardMessage,
         rewardGet=AssetURL.eventReward.format(
             **base_settings,
@@ -249,13 +259,16 @@ def get_nice_tower_rewards(
 
 
 def get_nice_event_tower(
-    region: Region, tower: MstEventTower, rewards: list[MstEventTowerReward]
+    region: Region,
+    tower: MstEventTower,
+    rewards: list[MstEventTowerReward],
+    gift_maps: dict[int, list[MstGift]],
 ) -> NiceEventTower:
     return NiceEventTower(
         towerId=tower.towerId,
         name=tower.name,
         rewards=[
-            get_nice_tower_rewards(region, reward)
+            get_nice_tower_rewards(region, reward, gift_maps)
             for reward in rewards
             if reward.towerId == tower.towerId
         ],
@@ -263,7 +276,10 @@ def get_nice_event_tower(
 
 
 def get_nice_lottery_box(
-    region: Region, box: MstBoxGachaBase, box_index: int
+    region: Region,
+    box: MstBoxGachaBase,
+    box_index: int,
+    gift_maps: dict[int, list[MstGift]],
 ) -> NiceEventLotteryBox:
     base_settings = {"base_url": settings.asset_url, "region": region}
     return NiceEventLotteryBox(
@@ -271,7 +287,7 @@ def get_nice_lottery_box(
         boxIndex=box_index,
         no=box.no,
         type=box.type,
-        gifts=get_nice_gift(region, box.targetId),
+        gifts=get_nice_gifts(box.targetId, gift_maps),
         maxNum=box.maxNum,
         isRare=box.isRare,
         priority=box.priority,
@@ -288,13 +304,18 @@ def get_nice_lottery_box(
 
 
 def get_nice_lottery(
-    region: Region, lottery: MstBoxGacha, boxes: list[MstBoxGachaBase]
+    region: Region,
+    lottery: MstBoxGacha,
+    boxes: list[MstBoxGachaBase],
+    gift_maps: dict[int, list[MstGift]],
 ) -> NiceEventLottery:
     nice_boxes: list[NiceEventLotteryBox] = []
     for box_index, base_id in enumerate(lottery.baseIds):
         for box in boxes:
             if box.id == base_id:
-                nice_boxes.append(get_nice_lottery_box(region, box, box_index))
+                nice_boxes.append(
+                    get_nice_lottery_box(region, box, box_index, gift_maps)
+                )
 
     return NiceEventLottery(
         id=lottery.id,
@@ -310,15 +331,19 @@ def get_nice_lottery(
 
 
 def get_nice_event(conn: Connection, region: Region, event_id: int) -> NiceEvent:
-    raw_event = raw.get_event_entity(conn, region, event_id)
+    raw_event = raw.get_event_entity(conn, event_id)
 
     base_settings = {"base_url": settings.asset_url, "region": region}
+
+    gift_maps: dict[int, list[MstGift]] = defaultdict(list)
+    for gift in raw_event.mstGift:
+        gift_maps[gift.id].append(gift)
+
     mission_cond_details = {
         detail.id: detail for detail in raw_event.mstEventMissionConditionDetail
     }
     missions = [
         get_nice_mission(
-            region,
             mission,
             [
                 cond
@@ -326,6 +351,7 @@ def get_nice_event(conn: Connection, region: Region, event_id: int) -> NiceEvent
                 if cond.missionId == mission.id
             ],
             mission_cond_details,
+            gift_maps,
         )
         for mission in raw_event.mstEventMission
     ]
@@ -357,13 +383,13 @@ def get_nice_event(conn: Connection, region: Region, event_id: int) -> NiceEvent
         endedAt=raw_event.mstEvent.endedAt,
         finishedAt=raw_event.mstEvent.finishedAt,
         materialOpenedAt=raw_event.mstEvent.materialOpenedAt,
-        warIds=(war.id for war in masters[region].mstWarEventId.get(event_id, [])),
+        warIds=(war.id for war in raw_event.mstWar),
         shop=(
             get_nice_shop(region, shop, raw_event.mstSetItem)
             for shop in raw_event.mstShop
         ),
         rewards=(
-            get_nice_reward(region, reward, event_id)
+            get_nice_reward(region, reward, event_id, gift_maps)
             for reward in raw_event.mstEventReward
         ),
         pointBuffs=(
@@ -372,11 +398,13 @@ def get_nice_event(conn: Connection, region: Region, event_id: int) -> NiceEvent
         ),
         missions=missions,
         towers=(
-            get_nice_event_tower(region, tower, raw_event.mstEventTowerReward)
+            get_nice_event_tower(
+                region, tower, raw_event.mstEventTowerReward, gift_maps
+            )
             for tower in raw_event.mstEventTower
         ),
         lotteries=(
-            get_nice_lottery(region, lottery, raw_event.mstBoxGachaBase)
+            get_nice_lottery(region, lottery, raw_event.mstBoxGachaBase, gift_maps)
             for lottery in raw_event.mstBoxGacha
         ),
     )

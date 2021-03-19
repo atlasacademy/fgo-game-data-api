@@ -1,8 +1,6 @@
 from decimal import Decimal
 from typing import Any, Optional
 
-from pydantic import BaseModel
-
 from .base import BaseModelORJson
 from .gameenums import SvtType
 
@@ -13,7 +11,7 @@ class MstConstant(BaseModelORJson):
     createdAt: int  # 946652400
 
 
-class MstBuff(BaseModel):
+class MstBuff(BaseModelORJson):
     vals: list[int]  # [3004],
     tvals: list[int]  # [5000, 4001],
     ckSelfIndv: list[int]  # [4001],
@@ -32,7 +30,7 @@ class BuffEntityNoReverse(BaseModelORJson):
     mstBuff: MstBuff
 
 
-class MstFunc(BaseModel):
+class MstFunc(BaseModelORJson):
     vals: list[int]  # [208],
     expandedVals: list[BuffEntityNoReverse] = []
     tvals: list[int]  # [106],
@@ -48,7 +46,7 @@ class MstFunc(BaseModel):
     popupText: str  # "STR Up\nvs. Lancer"
 
 
-class MstFuncGroup(BaseModel):
+class MstFuncGroup(BaseModelORJson):
     funcId: int  # 97
     eventId: int  # 80044
     baseFuncId: int  # 0
@@ -64,7 +62,7 @@ class FunctionEntityNoReverse(BaseModelORJson):
     mstFuncGroup: list[MstFuncGroup]
 
 
-class MstSkill(BaseModel):
+class MstSkill(BaseModelORJson):
     effectList: list[int]  # [323],
     actIndividuality: list[int]  # [401900],
     script: dict[str, Any]
@@ -76,17 +74,14 @@ class MstSkill(BaseModel):
     iconId: int  # 317,
     motion: int  # 101
 
-    class Config:
-        orm_mode = True
 
-
-class MstSkillDetail(BaseModel):
+class MstSkillDetail(BaseModelORJson):
     id: int  # 429650,
     detail: str  # "Increase your Critical Strength",
     detailShort: str  # "Increase your Critical Strength"
 
 
-class MstSvtSkill(BaseModel):
+class MstSvtSkill(BaseModelORJson):
     strengthStatus: int  # 1,
     svtId: int  # 9400920,
     num: int  # 1,
@@ -100,7 +95,7 @@ class MstSvtSkill(BaseModel):
     flag: int  # 0
 
 
-class SkillLvScript(BaseModel):
+class SkillLvScript(BaseModelORJson):
     HP_PER_LOWER: Optional[int] = None
     HP_VAL_HIGHER: Optional[int] = None
     NP_HIGHER: Optional[int] = None
@@ -116,7 +111,7 @@ class SkillLvScript(BaseModel):
     up: Optional[int] = None
 
 
-class MstSkillLv(BaseModel):
+class MstSkillLv(BaseModelORJson):
     funcId: list[int]  # [366, 216, 434],
     expandedFuncId: list[FunctionEntityNoReverse] = []
     svals: list[str]  # ["[1000,1,-1,3600]", "[1000,1,-1,200]", "[1000]"],
@@ -136,15 +131,12 @@ class SkillEntityNoReverse(BaseModelORJson):
     mstSvtSkill: list[MstSvtSkill]
     mstSkillLv: list[MstSkillLv]
 
-    class Config:
-        orm_mode = True
-
 
 # Dummy ID that is used when enemy servant does an extra attack instead of NP
 EXTRA_ATTACK_TD_ID = 100
 
 
-class MstTreasureDevice(BaseModel):
+class MstTreasureDevice(BaseModelORJson):
     individuality: list[int]  # [3000, 4001, 4007],
     script: dict[str, Any]  # {"limitSeqId_12": 800140, "randomWeights_3": [50, 50]},
     id: int  # 500801,
@@ -156,17 +148,14 @@ class MstTreasureDevice(BaseModel):
     typeText: str  # "Anti-Personnel",
     attackAttri: int  # 1
 
-    class Config:
-        orm_mode = True
 
-
-class MstTreasureDeviceDetail(BaseModel):
+class MstTreasureDeviceDetail(BaseModelORJson):
     id: int  # 100101,
     detail: str  # "Deal heavy damage to all enemies [{0}] + restore your NP Gauge <effect increases with Overcharge>",
     detailShort: str  # "Deal heavy damage to all enemies [{0}] + restore your NP Gauge <effect increases with Overcharge>"
 
 
-class MstSvtTreasureDevice(BaseModel):
+class MstSvtTreasureDevice(BaseModelORJson):
     damage: list[int]  # [5, 11, 17, 11, 23, 33],
     strengthStatus: int  # 1,
     svtId: int  # 400900,
@@ -182,11 +171,8 @@ class MstSvtTreasureDevice(BaseModel):
     motion: int  # 50,
     cardId: int  # 3
 
-    class Config:
-        orm_mode = True
 
-
-class MstTreasureDeviceLv(BaseModel):
+class MstTreasureDeviceLv(BaseModelORJson):
     funcId: list[int]  # [13, 174, 432],
     expandedFuncId: list[FunctionEntityNoReverse] = []
     svals: list[str]  # ["[1000,6000]", "[1000,3,-1,100]", "[5000,3,-1]"],
@@ -212,9 +198,6 @@ class TdEntityNoReverse(BaseModelORJson):
     mstTreasureDeviceDetail: list[MstTreasureDeviceDetail]
     mstSvtTreasureDevice: list[MstSvtTreasureDevice]
     mstTreasureDeviceLv: list[MstTreasureDeviceLv]
-
-    class Config:
-        orm_mode = True
 
 
 def is_servant(svt_type: int) -> bool:
@@ -275,7 +258,7 @@ class MstSvt(BaseModelORJson):
         return is_equip(self.type)
 
 
-class MstSvtCard(BaseModel):
+class MstSvtCard(BaseModelORJson):
     normalDamage: list[int]  # [4, 9, 14, 19, 23, 31],
     singleDamage: list[int]  # [4, 9, 14, 19, 23, 31],
     trinityDamage: list[int]  # [4, 9, 14, 19, 23, 31],
@@ -288,13 +271,13 @@ class MstSvtCard(BaseModel):
     attackType: int  # 5001
 
 
-class BasicMstSvtLimit(BaseModel):
+class BasicMstSvtLimit(BaseModelORJson):
     rarity: int
     hpMax: int
     atkMax: int
 
 
-class MstSvtLimit(BaseModel):
+class MstSvtLimit(BaseModelORJson):
     weaponColor: int  # 16777215
     svtId: int  # 9403170
     limitCount: int  # 1
@@ -321,7 +304,7 @@ class MstSvtLimit(BaseModel):
     strParam: str  #  "{\"Attack_s1\":285}"
 
 
-class MstSvtComment(BaseModel):
+class MstSvtComment(BaseModelORJson):
     condValues: Optional[list[int]]  # [1]
     svtId: int  # 1000100
     id: int  # 2
@@ -331,23 +314,20 @@ class MstSvtComment(BaseModel):
     condType: int  # 9
     condValue2: int  # 0
 
-    class Config:
-        orm_mode = True
 
-
-class MstSvtScriptExtendDataCond(BaseModel):
+class MstSvtScriptExtendDataCond(BaseModelORJson):
     condType: int
     value: int
 
 
-class MstSvtScriptExtendData(BaseModel):
+class MstSvtScriptExtendData(BaseModelORJson):
     faceSize: Optional[int] = None
     combineResultMultipleForm: Optional[int] = None
     myroomForm: Optional[int] = None
     conds: Optional[list[MstSvtScriptExtendDataCond]] = None
 
 
-class MstSvtScript(BaseModel):
+class MstSvtScript(BaseModelORJson):
     extendData: dict[str, Any]
     id: int  # 4037000
     form: int  # 0
@@ -361,19 +341,19 @@ class MstSvtScript(BaseModel):
     offsetYMyroom: int  # 119
 
 
-class MstCv(BaseModel):
+class MstCv(BaseModelORJson):
     id: int  # 93
     name: str  # "Satoshi Hino"
     comment: str  # ""
 
 
-class MstIllustrator(BaseModel):
+class MstIllustrator(BaseModelORJson):
     id: int  # 2
     name: str  # "Takashi Takeuchi"
     comment: str  # ""
 
 
-class MstSvtExp(BaseModel):
+class MstSvtExp(BaseModelORJson):
     type: int  # 20,
     lv: int  # 15,
     exp: int  # 68000,
@@ -384,7 +364,7 @@ class MstSvtExp(BaseModel):
 BAD_COMBINE_SVT_LIMIT = 4
 
 
-class MstCombineLimit(BaseModel):
+class MstCombineLimit(BaseModelORJson):
     itemIds: list[int]  # [7002]
     itemNums: list[int]  # [4]
     id: int  # 202100
@@ -392,7 +372,7 @@ class MstCombineLimit(BaseModel):
     qp: int  # 50000
 
 
-class MstCombineSkill(BaseModel):
+class MstCombineSkill(BaseModelORJson):
     itemIds: list[int]  # [6505, 6521]
     itemNums: list[int]  # [16, 3]
     id: int  # 502300
@@ -400,7 +380,7 @@ class MstCombineSkill(BaseModel):
     qp: int  # 5000000
 
 
-class MstCombineCostume(BaseModel):
+class MstCombineCostume(BaseModelORJson):
     itemIds: list[int]  # [6512, 6524, 6501, 6506]
     itemNums: list[int]  # [10, 5, 5, 5]
     svtId: int  # 100100
@@ -408,14 +388,14 @@ class MstCombineCostume(BaseModel):
     qp: int  # 3000000
 
 
-class MstCombineMaterial(BaseModel):
+class MstCombineMaterial(BaseModelORJson):
     id: int  # 1
     lv: int  # 1
     value: int  # 3000
     createdAt: int  # 1893423600
 
 
-class MstEquip(BaseModel):
+class MstEquip(BaseModelORJson):
     id: int  # 20
     name: str  # "Mystic Code: Chaldea Combat Uniform"
     detail: str  # "Created by the tech team at the Chaldea Security Organization"
@@ -428,7 +408,7 @@ class MstEquip(BaseModel):
     femaleSpellId: int  # 2
 
 
-class MstEquipExp(BaseModel):
+class MstEquipExp(BaseModelORJson):
     equipId: int  # 160
     lv: int  # 5
     exp: int  # 1218000
@@ -437,14 +417,14 @@ class MstEquipExp(BaseModel):
     skillLv3: int  # 5
 
 
-class MstEquipSkill(BaseModel):
+class MstEquipSkill(BaseModelORJson):
     equipId: int  # 1
     num: int  # 1
     skillId: int  # 980001
     condLv: int  # 0
 
 
-class MstCommandCode(BaseModel):
+class MstCommandCode(BaseModelORJson):
     id: int  # 8400110
     collectionNo: int  # 11
     name: str  # "Lucky Beast"
@@ -455,7 +435,7 @@ class MstCommandCode(BaseModel):
     sellRarePri: int  # 0
 
 
-class MstCommandCodeSkill(BaseModel):
+class MstCommandCodeSkill(BaseModelORJson):
     commandCodeId: int  # 8400080
     num: int  # 1
     priority: int  # 1
@@ -464,7 +444,7 @@ class MstCommandCodeSkill(BaseModel):
     endedAt: int  # 1893456000
 
 
-class MstCommandCodeComment(BaseModel):
+class MstCommandCodeComment(BaseModelORJson):
     commandCodeId: int  # 8400040
     comment: str
     illustratorId: int  # 81
@@ -474,9 +454,10 @@ class CommandCodeEntity(BaseModelORJson):
     mstCommandCode: MstCommandCode
     mstSkill: list[SkillEntityNoReverse]
     mstCommandCodeComment: MstCommandCodeComment
+    mstIllustrator: Optional[MstIllustrator] = None
 
 
-class MstItem(BaseModel):
+class MstItem(BaseModelORJson):
     individuality: list[int]  # [],
     script: dict[str, Any]  # {},
     eventId: int  # 0,
@@ -497,22 +478,19 @@ class MstItem(BaseModel):
     endedAt: int  # 1910908800
 
 
-class MstSetItem(BaseModel):
+class MstSetItem(BaseModelORJson):
     id: int
     purchaseType: int
     targetId: int
     setNum: int
     createdAt: int
 
-    class Config:
-        orm_mode = True
-
 
 class ItemEntity(BaseModelORJson):
     mstItem: MstItem
 
 
-class MstSvtLimitAdd(BaseModel):
+class MstSvtLimitAdd(BaseModelORJson):
     individuality: list[int]  # [],
     script: dict[str, Any]  # {},
     svtId: int  # 102900,
@@ -527,7 +505,7 @@ class MstSvtLimitAdd(BaseModel):
     voicePrefix: int  # 11
 
 
-class MstSvtCostume(BaseModel):
+class MstSvtCostume(BaseModelORJson):
     svtId: int  # 702700,
     id: int  # 11,
     # groupIndex: int  # NA doesn't have this
@@ -544,7 +522,7 @@ class MstSvtCostume(BaseModel):
     endedAt: int  # 1893596399
 
 
-class MstVoice(BaseModel):
+class MstVoice(BaseModelORJson):
     id: str  # "A010",
     priority: int  # 2100,
     svtVoiceType: int  # 8,
@@ -558,7 +536,7 @@ class MstVoice(BaseModel):
     flag: int  # 0
 
 
-class ScriptJsonInfo(BaseModel):
+class ScriptJsonInfo(BaseModelORJson):
     id: str  # "0_S010"
     face: int  # 0
     delay: Decimal  # 0.0
@@ -566,30 +544,31 @@ class ScriptJsonInfo(BaseModel):
     form: int  # 0
     changeEffect: int = 0  # 0
 
+    def get_voice_id(self) -> str:
+        # Some voice lines have the first info id ending with xxx1 or xxx2 and we want xxx0
+        return self.id.split("_")[1][:-1] + "0"
 
-class ScriptJsonCond(BaseModel):
+
+class ScriptJsonCond(BaseModelORJson):
     condType: int  # 1
     value: int  # 0
     eventId: int  # 0
 
 
-class ScriptJson(BaseModel):
+class ScriptJson(BaseModelORJson):
     overwriteName: Optional[str]
     infos: list[ScriptJsonInfo]
     conds: list[ScriptJsonCond]
 
 
-class MstSvtVoice(BaseModel):
+class MstSvtVoice(BaseModelORJson):
     scriptJson: list[ScriptJson]
     id: int
     voicePrefix: int
     type: int
 
-    class Config:
-        orm_mode = True
 
-
-class MstVoicePlayCond(BaseModel):
+class MstVoicePlayCond(BaseModelORJson):
     svtId: int
     voicePrefix: int
     voiceId: str
@@ -599,11 +578,8 @@ class MstVoicePlayCond(BaseModel):
     targetId: int
     condValues: list[int]
 
-    class Config:
-        orm_mode = True
 
-
-class MstSvtChange(BaseModel):
+class MstSvtChange(BaseModelORJson):
     beforeTreasureDeviceIds: list[int]  # [202100]
     afterTreasureDeviceIds: list[int]  # [202101]
     svtId: int  # 202100
@@ -620,13 +596,13 @@ class MstSvtChange(BaseModel):
     battleSvtId: int  # 202100
 
 
-class MstSvtVoiceRelation(BaseModel):
+class MstSvtVoiceRelation(BaseModelORJson):
     svtId: int  # 502500
     relationSvtId: int  # 9010002
     ascendOrder: int  # 0
 
 
-class MstSvtGroup(BaseModel):
+class MstSvtGroup(BaseModelORJson):
     id: int
     svtId: int
 
@@ -639,18 +615,15 @@ def get_subtitle_svtId(sub_id: str) -> int:
         return -1
 
 
-class GlobalNewMstSubtitle(BaseModel):
+class GlobalNewMstSubtitle(BaseModelORJson):
     id: str
     serif: str
-
-    class Config:
-        orm_mode = True
 
     def get_svtId(self) -> int:
         return get_subtitle_svtId(self.id)
 
 
-class MstFriendship(BaseModel):
+class MstFriendship(BaseModelORJson):
     itemIds: list[int] = []  # [1000]
     itemNums: list[int] = []  # [1]
     id: int  # 1001
@@ -659,7 +632,7 @@ class MstFriendship(BaseModel):
     qp: int = -1  # 12000000
 
 
-class MstClassRelationOverwrite(BaseModel):
+class MstClassRelationOverwrite(BaseModelORJson):
     id: int  # 100
     atkSide: int  # 1
     atkClass: int  # 2
@@ -668,7 +641,7 @@ class MstClassRelationOverwrite(BaseModel):
     type: int  # 0
 
 
-class MstGift(BaseModel):
+class MstGift(BaseModelORJson):
     id: int  # 94024900
     type: int  # 6
     objectId: int  # 403000
@@ -676,7 +649,7 @@ class MstGift(BaseModel):
     num: int  # 1
 
 
-class MstBgm(BaseModel):
+class MstBgm(BaseModelORJson):
     id: int  # 1
     fileName: str  # "BGM_BATTLE_1"
     name: str  # "集いし英雄\n～BATTLE 1～"
@@ -687,7 +660,7 @@ class MstBgm(BaseModel):
     logoId: int  # 1
 
 
-class MstShop(BaseModel):
+class MstShop(BaseModelORJson):
     itemIds: list[int]  # [94025003]
     prices: list[int]  # [20]
     targetIds: list[int]  # [7106]
@@ -717,11 +690,8 @@ class MstShop(BaseModel):
     openedAt: int  # 1528880400
     closedAt: int  # 1530676799
 
-    class Config:
-        orm_mode = True
 
-
-class MstEventReward(BaseModel):
+class MstEventReward(BaseModelORJson):
     eventId: int  # 80305
     groupId: int  # 0
     point: int  # 300000
@@ -730,11 +700,8 @@ class MstEventReward(BaseModel):
     bgImageId: int  # 8030502
     presentMessageId: int  # 800410
 
-    class Config:
-        orm_mode = True
 
-
-class MstEventPointBuff(BaseModel):
+class MstEventPointBuff(BaseModelORJson):
     funcIds: list[int]
     id: int
     eventId: int
@@ -746,11 +713,8 @@ class MstEventPointBuff(BaseModel):
     bgImageId: int
     value: int
 
-    class Config:
-        orm_mode = True
 
-
-class MstEventMission(BaseModel):
+class MstEventMission(BaseModelORJson):
     id: int
     flag: int
     type: int
@@ -769,11 +733,8 @@ class MstEventMission(BaseModel):
     notfyPriority: int
     presentMessageId: int
 
-    class Config:
-        orm_mode = True
 
-
-class MstEventMissionCondition(BaseModel):
+class MstEventMissionCondition(BaseModelORJson):
     missionId: int
     missionProgressType: int
     priority: int
@@ -787,11 +748,8 @@ class MstEventMissionCondition(BaseModel):
     closedMessage: str
     flag: int
 
-    class Config:
-        orm_mode = True
 
-
-class MstEventMissionConditionDetail(BaseModel):
+class MstEventMissionConditionDetail(BaseModelORJson):
     id: int
     missionTargetId: int
     missionCondType: int
@@ -802,11 +760,8 @@ class MstEventMissionConditionDetail(BaseModel):
     conditionLinkType: int
     targetEventIds: Optional[list[int]] = None
 
-    class Config:
-        orm_mode = True
 
-
-class MstEventTower(BaseModel):
+class MstEventTower(BaseModelORJson):
     eventId: int
     towerId: int
     name: str
@@ -815,11 +770,8 @@ class MstEventTower(BaseModel):
     openEffectId: Optional[int] = None
     flag: Optional[int] = None
 
-    class Config:
-        orm_mode = True
 
-
-class MstEventTowerReward(BaseModel):
+class MstEventTowerReward(BaseModelORJson):
     eventId: int
     towerId: int
     floor: int
@@ -829,11 +781,8 @@ class MstEventTowerReward(BaseModel):
     boardMessage: str
     boardImageId: int
 
-    class Config:
-        orm_mode = True
 
-
-class MstBoxGacha(BaseModel):
+class MstBoxGacha(BaseModelORJson):
     baseIds: list[int]
     pickupIds: Optional[list[int]] = None
     talkIds: list[int]
@@ -849,11 +798,8 @@ class MstBoxGacha(BaseModel):
     priority: int
     flag: int
 
-    class Config:
-        orm_mode = True
 
-
-class MstBoxGachaBase(BaseModel):
+class MstBoxGachaBase(BaseModelORJson):
     id: int
     no: int
     type: int
@@ -865,11 +811,8 @@ class MstBoxGachaBase(BaseModel):
     maxNum: int
     detail: str
 
-    class Config:
-        orm_mode = True
 
-
-class MstEventRewardSet(BaseModel):
+class MstEventRewardSet(BaseModelORJson):
     rewardSetType: int
     eventId: int
     id: int
@@ -878,11 +821,8 @@ class MstEventRewardSet(BaseModel):
     detail: str
     bgImageId: int
 
-    class Config:
-        orm_mode = True
 
-
-class MstEvent(BaseModel):
+class MstEvent(BaseModelORJson):
     script: list[dict[str, str]]  # []
     id: int  # 10083
     baseEventId: int  # 0
@@ -909,12 +849,9 @@ class MstEvent(BaseModel):
     myroomBgmId: int  # 0
     createdAt: int  # 1435676400
 
-    class Config:
-        orm_mode = True
 
-
-class MstWar(BaseModel):
-    coordinates: list[list[int]]
+class MstWar(BaseModelORJson):
+    coordinates: list[list[Decimal]]
     id: int  # 9046
     age: str  # "-"
     name: str  # "ルルハワ"
@@ -938,7 +875,7 @@ class MstWar(BaseModel):
     assetId: int  # 0
 
 
-class MstWarAdd(BaseModel):
+class MstWarAdd(BaseModelORJson):
     script: dict[str, Any]
     warId: int
     type: int
@@ -951,11 +888,8 @@ class MstWarAdd(BaseModel):
     startedAt: int
     endedAt: int
 
-    class Config:
-        orm_mode = True
 
-
-class MstMap(BaseModel):
+class MstMap(BaseModelORJson):
     script: dict[str, Any]
     id: int  # 100
     warId: int  # 100
@@ -966,7 +900,7 @@ class MstMap(BaseModel):
     bgmId: int  # 7
 
 
-class MstSpot(BaseModel):
+class MstSpot(BaseModelORJson):
     joinSpotIds: list[int]  # []
     id: int  # 10001
     warId: int  # 100
@@ -995,11 +929,8 @@ class MstSpot(BaseModel):
     closedMessage: str  # ""
     flag: int  # 0
 
-    class Config:
-        orm_mode = True
 
-
-class MstQuest(BaseModel):
+class MstQuest(BaseModelORJson):
     beforeActionVals: list[str]
     afterActionVals: list[str]  # []
     id: int  # 94024618
@@ -1033,7 +964,7 @@ class MstQuest(BaseModel):
     closedAt: int  # 1591156799
 
 
-class MstQuestRelease(BaseModel):
+class MstQuestRelease(BaseModelORJson):
     questId: int  # 94026514
     type: int  # 7
     targetId: int  # 100100
@@ -1043,18 +974,18 @@ class MstQuestRelease(BaseModel):
     imagePriority: int  # 3000
 
 
-class MstQuestConsumeItem(BaseModel):
+class MstQuestConsumeItem(BaseModelORJson):
     itemIds: list[int]  # [94032205, 94032206]
     nums: list[int]  # [160, 220]
     questId: int  # 94032410
 
 
-class MstClosedMessage(BaseModel):
+class MstClosedMessage(BaseModelORJson):
     id: int
     message: str
 
 
-class MstQuestPhase(BaseModel):
+class MstQuestPhase(BaseModelORJson):
     classIds: list[int]  # [7],
     individuality: list[int]  # [2038, 2039, 94000046],
     script: dict[str, Any]  # {"resultBgmId": 61},
@@ -1069,7 +1000,7 @@ class MstQuestPhase(BaseModel):
     giftId: Optional[int] = None
 
 
-class MstQuestPhaseDetail(BaseModel):
+class MstQuestPhaseDetail(BaseModelORJson):
     beforeActionVals: list[str]
     afterActionVals: list[str]
     boardMessage: dict[str, Any]
@@ -1081,7 +1012,7 @@ class MstQuestPhaseDetail(BaseModel):
     flag: int
 
 
-class MstStage(BaseModel):
+class MstStage(BaseModelORJson):
     npcDeckIds: list[int]  # [2, 1000]
     script: dict[str, Any]  # {}
     questId: int  # 1000000
@@ -1092,7 +1023,7 @@ class MstStage(BaseModel):
     startEffectId: int  # 1
 
 
-class MstAi(BaseModel):
+class MstAi(BaseModelORJson):
     id: int
     idx: int
     actNum: int
@@ -1106,7 +1037,7 @@ class MstAi(BaseModel):
     timing: Optional[int] = None  # only in mstAiField
 
 
-class MstAiAct(BaseModel):
+class MstAiAct(BaseModelORJson):
     targetIndividuality: list[int]  # [0]
     skillVals: list[int]  # [961075, 1]
     id: int  # 94016184
@@ -1121,8 +1052,7 @@ class MysticCodeEntity(BaseModelORJson):
     mstEquipExp: list[MstEquipExp]
 
 
-class Master(BaseModel):
-    mstConstantId: dict[str, int]
+class Master(BaseModelORJson):
     mstBuff: list[MstBuff]
     mstFunc: list[MstFunc]
     mstSvt: list[MstSvt]
@@ -1138,32 +1068,18 @@ class Master(BaseModel):
     mstSvtServantCollectionNo: dict[int, int]
     mstSvtEquipCollectionNo: dict[int, int]
     mstCCCollectionNo: dict[int, int]
-    mstCombineMaterialId: dict[int, list[MstCombineMaterial]]
     mstCombineSkillItem: set[int]
     mstCombineLimitItem: set[int]
     mstCombineCostumeItem: set[int]
     mstSvtLimitFirst: dict[int, BasicMstSvtLimit]
     mstSvtLimitAddIndividutality: dict[int, list[int]]
-    mstSvtExpId: dict[int, list[MstSvtExp]]
-    mstFriendshipId: dict[int, list[int]]
     mstEquipId: dict[int, MstEquip]
-    mstEquipExp: list[MstEquipExp]
     mstEquipSkill: list[MstEquipSkill]
-    mstBgmId: dict[int, MstBgm]
     mstWarId: dict[int, MstWar]
-    mstMapWarId: dict[int, list[MstMap]]
     mstWarEventId: dict[int, list[MstWar]]
     mstEventId: dict[int, MstEvent]
-    mstClosedMessageId: dict[int, str]
-    mstSvtVoiceRelationId: dict[int, list[MstSvtVoiceRelation]]
-    mstSvtScriptId: dict[int, list[MstSvtScript]]
     mstCommandCodeId: dict[int, MstCommandCode]
     mstCommandCodeSkill: list[MstCommandCodeSkill]
-    mstCommandCodeCommentId: dict[int, list[MstCommandCodeComment]]
-    mstCvId: dict[int, MstCv]
-    mstIllustratorId: dict[int, MstIllustrator]
-    mstVoiceId: dict[str, MstVoice]
-    mstSvtGroupId: dict[int, list[MstSvtGroup]]
     mstSvtGroupSvtId: dict[int, list[MstSvtGroup]]
     mstClassRelationOverwriteId: dict[int, list[MstClassRelationOverwrite]]
     buffToFunc: dict[int, set[int]]
@@ -1179,7 +1095,6 @@ class Master(BaseModel):
     skillToAiAct: dict[int, set[int]]
     aiActToAiSvt: dict[int, set[int]]
     aiActToAiField: dict[int, set[int]]
-    spotToWarId: dict[int, int]
     parentAiSvt: dict[int, set[int]]
     parentAiField: dict[int, set[int]]
 
@@ -1193,12 +1108,19 @@ class ServantEntity(BaseModelORJson):
     mstCombineSkill: list[MstCombineSkill]
     mstCombineLimit: list[MstCombineLimit]
     mstCombineCostume: list[MstCombineCostume]
+    mstCombineMaterial: list[MstCombineMaterial]
     mstSvtLimitAdd: list[MstSvtLimitAdd]
     mstSvtChange: list[MstSvtChange]
     mstSvtCostume: list[MstSvtCostume]
     mstSvtScript: list[MstSvtScript]
+    mstCv: Optional[MstCv] = None
+    mstIllustrator: Optional[MstIllustrator] = None
+    mstSvtExp: list[MstSvtExp] = []
+    mstFriendship: list[MstFriendship] = []
     mstSvtComment: list[MstSvtComment] = []
     mstSvtVoice: list[MstSvtVoice] = []
+    mstVoice: list[MstVoice] = []
+    mstSvtGroup: list[MstSvtGroup] = []
     mstSubtitle: list[GlobalNewMstSubtitle] = []
     mstVoicePlayCond: list[MstVoicePlayCond] = []
 
@@ -1250,22 +1172,24 @@ class QuestEntity(BaseModelORJson):
     mstQuest: MstQuest
     mstQuestConsumeItem: list[MstQuestConsumeItem]
     mstQuestRelease: list[MstQuestRelease]
+    mstClosedMessage: list[MstClosedMessage]
+    mstGift: list[MstGift]
     phases: list[int]
     phasesWithEnemies: list[int] = []
     phasesNoBattle: list[int] = []
-
-    class Config:
-        orm_mode = True
 
 
 class QuestPhaseEntity(QuestEntity):
     mstQuestPhase: MstQuestPhase
     mstQuestPhaseDetail: Optional[MstQuestPhaseDetail] = None
     mstStage: list[MstStage]
+    mstBgm: list[MstBgm]
 
 
 class EventEntity(BaseModelORJson):
     mstEvent: MstEvent
+    mstWar: list[MstWar]
+    mstGift: list[MstGift]
     mstShop: list[MstShop]
     mstSetItem: list[MstSetItem]
     mstEventReward: list[MstEventReward]
@@ -1282,17 +1206,17 @@ class EventEntity(BaseModelORJson):
 
 class WarEntity(BaseModelORJson):
     mstWar: MstWar
-    mstMap: list[MstMap]
-    mstSpot: list[MstSpot]
+    mstEvent: Optional[MstEvent] = None
     mstWarAdd: list[MstWarAdd]
+    mstMap: list[MstMap]
+    mstBgm: list[MstBgm]
+    mstSpot: list[MstSpot]
+    mstQuest: list[QuestEntity]
 
 
 class AiEntity(BaseModelORJson):
     mstAi: MstAi
     mstAiAct: MstAiAct
-
-    class Config:
-        orm_mode = True
 
 
 class AiCollection(BaseModelORJson):

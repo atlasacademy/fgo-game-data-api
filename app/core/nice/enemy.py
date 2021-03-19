@@ -3,7 +3,6 @@ from typing import Any
 
 from sqlalchemy.engine import Connection
 
-from ...data.gamedata import masters
 from ...schemas.common import Language, Region
 from ...schemas.enums import ATTRIBUTE_NAME, ENEMY_DEATH_TYPE_NAME
 from ...schemas.nice import (
@@ -288,10 +287,7 @@ def get_quest_enemies(
     all_skill_ids: set[SkillSvt] = set()
     all_td_ids: set[TdSvt] = set()
     for user_svt in quest_detail.userSvt:
-        if (
-            user_svt.treasureDeviceId != 0
-            and user_svt.treasureDeviceId in masters[region].mstTreasureDeviceId
-        ):
+        if user_svt.treasureDeviceId != 0:
             all_td_ids.add(TdSvt(user_svt.treasureDeviceId, user_svt.svtId))
         for skill_id in [
             user_svt.skillId1,
@@ -300,7 +296,7 @@ def get_quest_enemies(
             *user_svt.classPassive,
             *(user_svt.addPassive if user_svt.addPassive else []),
         ]:
-            if skill_id != 0 and skill_id in masters[region].mstSkillId:
+            if skill_id != 0:
                 all_skill_ids.add(SkillSvt(skill_id, user_svt.svtId))
 
     # Get all skills and NPs data at once to avoid calling the DB a lot of times

@@ -4,6 +4,9 @@ from sqlalchemy.engine import Connection
 from sqlalchemy.sql import and_, case, func, select
 
 from ...models.raw import (
+    mstBgm,
+    mstClosedMessage,
+    mstGift,
     mstQuest,
     mstQuestConsumeItem,
     mstQuestPhase,
@@ -23,7 +26,11 @@ JOINED_QUEST_TABLES = (
     )
     .outerjoin(mstQuestRelease, mstQuestRelease.c.questId == mstQuest.c.id)
     .outerjoin(mstQuestPhase, mstQuestPhase.c.questId == mstQuest.c.id)
+    .outerjoin(
+        mstClosedMessage, mstClosedMessage.c.id == mstQuestRelease.c.closedMessageId
+    )
     .outerjoin(rayshiftQuest, rayshiftQuest.c.questId == mstQuest.c.id)
+    .outerjoin(mstGift, mstGift.c.id == mstQuest.c.giftId)
 )
 
 
@@ -54,6 +61,8 @@ SELECT_QUEST_ENTITY = [
     func.to_jsonb(mstQuest.table_valued()).label(mstQuest.name),
     sql_jsonb_agg(mstQuestConsumeItem),
     sql_jsonb_agg(mstQuestRelease),
+    sql_jsonb_agg(mstClosedMessage),
+    sql_jsonb_agg(mstGift),
     func.jsonb_agg(mstQuestPhase.c.phase.distinct()).label("phases"),
     phasesWithEnemies,
     phasesNoBattle,
@@ -111,12 +120,15 @@ def get_quest_phase_entity(
                 mstQuestPhase.c.phase == mstStage.c.questPhase,
             ),
         )
+        .outerjoin(mstBgm, mstBgm.c.id == mstStage.c.bgmId)
     )
 
     select_quest_phase = [
         func.to_jsonb(mstQuest.table_valued()).label(mstQuest.name),
         sql_jsonb_agg(mstQuestConsumeItem),
         sql_jsonb_agg(mstQuestRelease),
+        sql_jsonb_agg(mstClosedMessage),
+        sql_jsonb_agg(mstGift),
         all_phases_cte.c.phases,
         phasesWithEnemies,
         func.to_jsonb(mstQuestPhase.table_valued()).label(mstQuestPhase.name),
@@ -124,6 +136,7 @@ def get_quest_phase_entity(
             mstQuestPhaseDetail.name
         ),
         sql_jsonb_agg(mstStage),
+        sql_jsonb_agg(mstBgm),
     ]
 
     sql_stmt = (

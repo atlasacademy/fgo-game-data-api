@@ -1,6 +1,6 @@
 {
   "id": 203,
-  "coordinates": [[35, 140], []],
+  "coordinates": [[35.530136, 140.28941], []],
   "age": "Kan'ei 16",
   "name": "Pseudo-Parallel World",
   "longName": "Pseudo-Parallel World\nThe Stage of Carnage, Shimousa",
@@ -23,18 +23,6 @@
   "warAdds": [
     {
       "warId": 203,
-      "type": "parentWar",
-      "priority": 1,
-      "overwriteId": 12000,
-      "overwriteStr": "",
-      "condType": "questClear",
-      "targetId": 3000008,
-      "value": 0,
-      "startedAt": 1585281600,
-      "endedAt": 1893456000
-    },
-    {
-      "warId": 203,
       "type": "banner",
       "priority": 0,
       "overwriteId": 20302,
@@ -44,6 +32,18 @@
       "targetId": 2000300,
       "value": 0,
       "startedAt": 1570680000,
+      "endedAt": 1893456000
+    },
+    {
+      "warId": 203,
+      "type": "parentWar",
+      "priority": 1,
+      "overwriteId": 12000,
+      "overwriteStr": "",
+      "condType": "questClear",
+      "targetId": 3000008,
+      "value": 0,
+      "startedAt": 1585281600,
       "endedAt": 1893456000
     },
     {

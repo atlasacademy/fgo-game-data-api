@@ -1424,7 +1424,7 @@ class NiceWarAdd(BaseModelORJson):
 
 class NiceWar(BaseModelORJson):
     id: int
-    coordinates: list[list[int]]
+    coordinates: list[list[Decimal]]
     age: str
     name: str
     longName: str

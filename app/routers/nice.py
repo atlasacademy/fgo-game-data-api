@@ -104,14 +104,10 @@ async def get_servant(
     lore: bool = False,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    if servant_id in masters[region].mstSvtServantCollectionNo:
-        servant_id = masters[region].mstSvtServantCollectionNo[servant_id]
-    if servant_id in masters[region].mstSvtServantCollectionNo.values():
-        return item_response(
-            nice.get_nice_servant_model(conn, region, servant_id, lang, lore)
-        )
-    else:
-        raise HTTPException(status_code=404, detail="Servant not found")
+    servant_id = masters[region].mstSvtServantCollectionNo.get(servant_id, servant_id)
+    return item_response(
+        nice.get_nice_servant_model(conn, region, servant_id, lang, lore)
+    )
 
 
 equip_lore_description = """
@@ -176,14 +172,8 @@ async def get_equip(
     lore: bool = False,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    if equip_id in masters[region].mstSvtEquipCollectionNo:
-        equip_id = masters[region].mstSvtEquipCollectionNo[equip_id]
-    if equip_id in masters[region].mstSvtEquipCollectionNo.values():
-        return item_response(
-            nice.get_nice_equip_model(conn, region, equip_id, lang, lore)
-        )
-    else:
-        raise HTTPException(status_code=404, detail="Equip not found")
+    equip_id = masters[region].mstSvtEquipCollectionNo.get(equip_id, equip_id)
+    return item_response(nice.get_nice_equip_model(conn, region, equip_id, lang, lore))
 
 
 @router.get(
@@ -259,10 +249,7 @@ async def get_mystic_code(
     lang: Language = Depends(language_parameter),
     conn: Connection = Depends(get_db),
 ) -> Response:
-    if mc_id in masters[region].mstEquipId:
-        return item_response(mc.get_nice_mystic_code(conn, region, mc_id, lang))
-    else:
-        raise HTTPException(status_code=404, detail="Mystic Code not found")
+    return item_response(mc.get_nice_mystic_code(conn, region, mc_id, lang))
 
 
 get_cc_description = "Get nice Command Code info from ID"
@@ -293,12 +280,8 @@ async def get_command_code(
     lang: Language = Depends(language_parameter),
     conn: Connection = Depends(get_db),
 ) -> Response:
-    if cc_id in masters[region].mstCCCollectionNo:
-        cc_id = masters[region].mstCCCollectionNo[cc_id]
-    if cc_id in masters[region].mstCommandCodeId:
-        return item_response(cc.get_nice_command_code(conn, region, cc_id, lang))
-    else:
-        raise HTTPException(status_code=404, detail="Command Code not found")
+    cc_id = masters[region].mstCCCollectionNo.get(cc_id, cc_id)
+    return item_response(cc.get_nice_command_code(conn, region, cc_id, lang))
 
 
 nice_skill_extra = """
@@ -622,12 +605,9 @@ async def get_war(
     """
     Get the nice war data from the given war ID
     """
-    if war_id in masters[region].mstWarId:
-        war_response = item_response(war.get_nice_war(conn, region, war_id))
-        war_response.headers["Bloom-Response-TTL"] = str(settings.quest_cache_length)
-        return war_response
-    else:
-        raise HTTPException(status_code=404, detail="War not found")
+    war_response = item_response(war.get_nice_war(conn, region, war_id))
+    war_response.headers["Bloom-Response-TTL"] = str(settings.quest_cache_length)
+    return war_response
 
 
 get_quest_phase_description = (
