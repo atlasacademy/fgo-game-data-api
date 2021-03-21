@@ -1,12 +1,21 @@
-from typing import Iterable
+from typing import Any, Iterable, Optional
 
 from sqlalchemy.engine import Connection
-from sqlalchemy.sql import or_, select
+from sqlalchemy.sql import and_, or_, select
 
-from ...models.raw import mstSubtitle, mstSvtScript, mstSvtVoice, mstVoicePlayCond
+from ...models.raw import (
+    mstSubtitle,
+    mstSvt,
+    mstSvtLimit,
+    mstSvtLimitAdd,
+    mstSvtScript,
+    mstSvtVoice,
+    mstVoicePlayCond,
+)
 from ...schemas.gameenums import VoiceCondType
 from ...schemas.raw import (
     GlobalNewMstSubtitle,
+    MstSvt,
     MstSvtScript,
     MstSvtVoice,
     MstVoicePlayCond,
@@ -70,25 +79,69 @@ def voice_cond_pattern(
     return [{"conds": [{"condType": condType, "value": value}]}]
 
 
-def get_related_voice_id(
-    conn: Connection, cond_svt_value: set[int], cond_group_value: set[int]
-) -> set[int]:
-    where_clause = [
-        mstSvtVoice.c.scriptJson.contains(
-            voice_cond_pattern(VoiceCondType.SVT_GET.value, svt_value)
+def get_svt_search(
+    conn: Connection,
+    svt_type_ints: Optional[Iterable[int]] = None,
+    svt_flag_ints: Optional[Iterable[int]] = None,
+    excludeCollectionNo: Optional[Iterable[int]] = None,
+    class_ints: Optional[Iterable[int]] = None,
+    gender_ints: Optional[Iterable[int]] = None,
+    attribute_ints: Optional[Iterable[int]] = None,
+    trait_ints: Optional[Iterable[int]] = None,
+    rarity_ints: Optional[Iterable[int]] = None,
+    cond_svt_value: Optional[set[int]] = None,
+    cond_group_value: Optional[set[int]] = None,
+) -> list[MstSvt]:
+    where_clause: list[Any] = [True]
+    if svt_type_ints:
+        where_clause.append(mstSvt.c.type.in_(svt_type_ints))
+    if svt_flag_ints:
+        where_clause.append(mstSvt.c.flag.in_(svt_flag_ints))
+    if excludeCollectionNo:
+        where_clause.append(mstSvt.c.collectionNo.notin_(excludeCollectionNo))
+    if class_ints:
+        where_clause.append(mstSvt.c.classId.in_(class_ints))
+    if gender_ints:
+        where_clause.append(mstSvt.c.genderType.in_(gender_ints))
+    if attribute_ints:
+        where_clause.append(mstSvt.c.attri.in_(attribute_ints))
+    if trait_ints:
+        where_clause.append(
+            or_(
+                mstSvt.c.individuality.contains(trait_ints),
+                mstSvtLimitAdd.c.individuality.contains(trait_ints),
+            )
         )
-        for svt_value in cond_svt_value
-    ]
+    if rarity_ints:
+        where_clause.append(mstSvtLimit.c.rarity.in_(rarity_ints))
 
+    or_voice_clause = []
+    if cond_svt_value:
+        or_voice_clause += [
+            mstSvtVoice.c.scriptJson.contains(
+                voice_cond_pattern(VoiceCondType.SVT_GET.value, svt_value)
+            )
+            for svt_value in cond_svt_value
+        ]
     if cond_group_value:
-        where_clause += [
+        or_voice_clause += [
             mstSvtVoice.c.scriptJson.contains(
                 voice_cond_pattern(VoiceCondType.SVT_GROUP.value, group_value)
             )
             for group_value in cond_group_value
         ]
 
-    stmt = select(mstSvtVoice.c.id).where(or_(*where_clause))
+    if or_voice_clause:
+        where_clause.append(or_(*or_voice_clause))
 
-    fetched: set[int] = {svt_voice.id for svt_voice in conn.execute(stmt).fetchall()}
-    return fetched
+    joined_svt = (
+        mstSvt.outerjoin(mstSvtLimit, mstSvtLimit.c.svtId == mstSvt.c.id)
+        .outerjoin(mstSvtLimitAdd, mstSvtLimitAdd.c.svtId == mstSvt.c.id)
+        .outerjoin(mstSvtVoice, mstSvtVoice.c.id == mstSvt.c.id)
+    )
+
+    svt_search_stmt = (
+        select(mstSvt).distinct().select_from(joined_svt).where(and_(*where_clause))
+    )
+
+    return [MstSvt.from_orm(svt) for svt in conn.execute(svt_search_stmt).fetchall()]

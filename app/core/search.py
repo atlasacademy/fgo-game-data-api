@@ -6,8 +6,11 @@ from sqlalchemy.engine import Connection
 
 from ..data.custom_mappings import TRANSLATIONS
 from ..data.gamedata import masters
+from ..db.helpers.buff import get_buff_search
+from ..db.helpers.func import get_func_search
+from ..db.helpers.item import get_item_search
 from ..db.helpers.skill import get_skill_search
-from ..db.helpers.svt import get_related_voice_id
+from ..db.helpers.svt import get_svt_search
 from ..db.helpers.td import get_td_search
 from ..schemas.enums import (
     ATTRIBUTE_NAME_REVERSE,
@@ -27,7 +30,7 @@ from ..schemas.enums import (
     NiceItemUse,
     Trait,
 )
-from ..schemas.raw import EXTRA_ATTACK_TD_ID, MstItem
+from ..schemas.raw import MstBuff, MstFunc, MstItem, MstSkill, MstSvt, MstTreasureDevice
 from ..schemas.search import (
     BuffSearchQueryParams,
     EquipSearchQueryParams,
@@ -119,7 +122,7 @@ def search_servant(
     conn: Connection,
     search_param: Union[ServantSearchQueryParams, SvtSearchQueryParams],
     limit: int = 100,
-) -> list[int]:
+) -> list[MstSvt]:
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
@@ -135,39 +138,29 @@ def search_servant(
         for svt_attribute in search_param.attribute
     }
     trait_ints = reverse_traits(search_param.trait)
+    cond_svt_value = {
+        masters[search_param.region].mstSvtServantCollectionNo.get(svt_id, svt_id)
+        for svt_id in search_param.voiceCondSvt
+    }
+    voice_cond_group = {
+        group.id
+        for svt_id in cond_svt_value
+        for group in masters[search_param.region].mstSvtGroupSvtId.get(svt_id, [])
+    }
 
-    matches = [
-        svt
-        for svt in masters[search_param.region].mstSvt
-        if svt.type in svt_type_ints
-        and svt.flag in svt_flag_ints
-        and svt.collectionNo not in search_param.excludeCollectionNo
-        and svt.classId in class_ints
-        and svt.genderType in gender_ints
-        and svt.attri in attribute_ints
-        and (
-            trait_ints.issubset(svt.individuality)
-            or trait_ints.issubset(
-                masters[search_param.region].mstSvtLimitAddIndividutality.get(
-                    svt.id, []
-                )
-            )
-        )
-        and masters[search_param.region].mstSvtLimitFirst[svt.id].rarity in rarity_ints
-    ]
-
-    if search_param.voiceCondSvt:
-        converted_to_svt_id = {
-            masters[search_param.region].mstSvtServantCollectionNo.get(svt_id, svt_id)
-            for svt_id in search_param.voiceCondSvt
-        }
-        voice_cond_group = {
-            group.id
-            for svt_id in converted_to_svt_id
-            for group in masters[search_param.region].mstSvtGroupSvtId.get(svt_id, [])
-        }
-        voice_svt_id = get_related_voice_id(conn, converted_to_svt_id, voice_cond_group)
-        matches = [svt for svt in matches if svt.id in voice_svt_id]
+    matches = get_svt_search(
+        conn,
+        svt_type_ints=svt_type_ints,
+        svt_flag_ints=svt_flag_ints,
+        excludeCollectionNo=search_param.excludeCollectionNo,
+        class_ints=class_ints,
+        gender_ints=gender_ints,
+        attribute_ints=attribute_ints,
+        trait_ints=trait_ints,
+        rarity_ints=rarity_ints,
+        cond_svt_value=cond_svt_value,
+        cond_group_value=voice_cond_group,
+    )
 
     if search_param.name:
         matches = [
@@ -178,15 +171,15 @@ def search_servant(
             or match_name(search_param.name, get_safe(TRANSLATIONS, svt.name))
         ]
 
-    svt_ids = sorted({svt.id for svt in matches})
-
-    if len(svt_ids) > limit:
+    if len(matches) > limit:
         raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
 
-    return svt_ids
+    return sorted(matches, key=lambda svt: svt.id)
 
 
-def search_equip(search_param: EquipSearchQueryParams, limit: int = 100) -> list[int]:
+def search_equip(
+    conn: Connection, search_param: EquipSearchQueryParams, limit: int = 100
+) -> list[MstSvt]:
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
@@ -194,14 +187,13 @@ def search_equip(search_param: EquipSearchQueryParams, limit: int = 100) -> list
     svt_flag_ints = {SVT_FLAG_NAME_REVERSE[svt_flag] for svt_flag in search_param.flag}
     rarity = set(search_param.rarity)
 
-    matches = [
-        svt
-        for svt in masters[search_param.region].mstSvt
-        if svt.type in svt_type
-        and svt.flag in svt_flag_ints
-        and svt.collectionNo not in search_param.excludeCollectionNo
-        and masters[search_param.region].mstSvtLimitFirst[svt.id].rarity in rarity
-    ]
+    matches = get_svt_search(
+        conn,
+        svt_type_ints=svt_type,
+        svt_flag_ints=svt_flag_ints,
+        excludeCollectionNo=search_param.excludeCollectionNo,
+        rarity_ints=rarity,
+    )
 
     if search_param.name:
         matches = [
@@ -212,17 +204,15 @@ def search_equip(search_param: EquipSearchQueryParams, limit: int = 100) -> list
             or match_name(search_param.name, get_safe(TRANSLATIONS, svt.name))
         ]
 
-    svt_ids = sorted({svt.id for svt in matches})
-
-    if len(svt_ids) > limit:
+    if len(matches) > limit:
         raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
 
-    return svt_ids
+    return sorted(matches, key=lambda svt: svt.id)
 
 
 def search_skill(
     conn: Connection, search_param: SkillSearchParams, limit: int = 100
-) -> list[int]:
+) -> list[MstSkill]:
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
@@ -250,17 +240,15 @@ def search_skill(
             or match_name(search_param.name, skill.ruby)
         ]
 
-    skill_ids = sorted({skill.id for skill in matches})
-
-    if len(skill_ids) > limit:
+    if len(matches) > limit:
         raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
 
-    return skill_ids
+    return sorted(matches, key=lambda skill: skill.id)
 
 
 def search_td(
     conn: Connection, search_param: TdSearchParams, limit: int = 100
-) -> list[int]:
+) -> list[MstTreasureDevice]:
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
@@ -290,15 +278,15 @@ def search_td(
             or match_name(search_param.name, td.ruby)
         ]
 
-    td_ids = sorted({td.id for td in matches if td.id != EXTRA_ATTACK_TD_ID})
-
-    if len(td_ids) > limit:
+    if len(matches) > limit:
         raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
 
-    return td_ids
+    return sorted(matches, key=lambda td: td.id)
 
 
-def search_buff(search_param: BuffSearchQueryParams, limit: int = 100) -> list[int]:
+def search_buff(
+    conn: Connection, search_param: BuffSearchQueryParams, limit: int = 100
+) -> list[MstBuff]:
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
@@ -308,19 +296,9 @@ def search_buff(search_param: BuffSearchQueryParams, limit: int = 100) -> list[i
     ckSelfIndv = reverse_traits(search_param.ckSelfIndv)
     ckOpIndv = reverse_traits(search_param.ckOpIndv)
 
-    matches = [
-        buff
-        for buff in masters[search_param.region].mstBuff
-        if ((not search_param.type) or (search_param.type and buff.type in buff_types))
-        and (
-            (not search_param.buffGroup)
-            or (search_param.buffGroup and buff.buffGroup in search_param.buffGroup)
-        )
-        and vals.issubset(buff.vals)
-        and tvals.issubset(buff.tvals)
-        and ckSelfIndv.issubset(buff.ckSelfIndv)
-        and ckOpIndv.issubset(buff.ckOpIndv)
-    ]
+    matches = get_buff_search(
+        conn, buff_types, search_param.buffGroup, vals, tvals, ckSelfIndv, ckOpIndv
+    )
 
     if search_param.name:
         matches = [
@@ -330,15 +308,15 @@ def search_buff(search_param: BuffSearchQueryParams, limit: int = 100) -> list[i
             or match_name(search_param.name, buff.detail)
         ]
 
-    buff_ids = sorted({buff.id for buff in matches})
-
-    if len(buff_ids) > limit:
+    if len(matches) > limit:
         raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
 
-    return buff_ids
+    return sorted(matches, key=lambda buff: buff.id)
 
 
-def search_func(search_param: FuncSearchQueryParams, limit: int = 100) -> list[int]:
+def search_func(
+    conn: Connection, search_param: FuncSearchQueryParams, limit: int = 100
+) -> list[MstFunc]:
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
@@ -355,25 +333,15 @@ def search_func(search_param: FuncSearchQueryParams, limit: int = 100) -> list[i
     tvals = reverse_traits(search_param.tvals)
     questTvals = reverse_traits(search_param.questTvals)
 
-    matches = [
-        func
-        for func in masters[search_param.region].mstFunc
-        if (
-            (not search_param.type)
-            or (search_param.type and func.funcType in func_types)
-        )
-        and (
-            (not search_param.targetType)
-            or (search_param.targetType and func.targetType in target_types)
-        )
-        and (
-            (not search_param.targetTeam)
-            or (search_param.targetTeam and func.applyTarget in apply_targets)
-        )
-        and vals.issubset(func.vals)
-        and tvals.issubset(func.tvals)
-        and questTvals.issubset(func.questTvals)
-    ]
+    matches = get_func_search(
+        conn,
+        func_types,
+        target_types,
+        apply_targets,
+        vals,
+        tvals,
+        questTvals,
+    )
 
     if search_param.popupText:
         matches = [
@@ -382,15 +350,13 @@ def search_func(search_param: FuncSearchQueryParams, limit: int = 100) -> list[i
             if match_name(search_param.popupText, func.popupText)
         ]
 
-    func_ids = sorted({func.id for func in matches})
-
-    if len(func_ids) > limit:
+    if len(matches) > limit:
         raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
 
-    return func_ids
+    return sorted(matches, key=lambda func: func.id)
 
 
-def search_item(search_param: ItemSearchQueryParams) -> list[MstItem]:
+def search_item(conn: Connection, search_param: ItemSearchQueryParams) -> list[MstItem]:
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
@@ -398,26 +364,24 @@ def search_item(search_param: ItemSearchQueryParams) -> list[MstItem]:
     item_type = [ITEM_TYPE_REVERSE[item_type] for item_type in search_param.type]
     bg_type = [ITEM_BG_TYPE_REVERSE[bg_type] for bg_type in search_param.background]
 
-    matches = masters[search_param.region].mstItem
-
-    if individuality:
-        matches = [
-            item for item in matches if individuality.issubset(item.individuality)
-        ]
-    if item_type:
-        matches = [item for item in matches if item.type in item_type]
-    if bg_type:
-        matches = [item for item in matches if item.bgImageId in bg_type]
-
+    use_ids: set[int] = set()
     for item_use, lookup_table in (
         (NiceItemUse.skill, masters[search_param.region].mstCombineSkillItem),
         (NiceItemUse.ascension, masters[search_param.region].mstCombineLimitItem),
         (NiceItemUse.costume, masters[search_param.region].mstCombineCostumeItem),
     ):
         if item_use in search_param.use:
-            matches = [item for item in matches if item.id in lookup_table]
+            use_ids |= lookup_table
+
+    matches = get_item_search(
+        conn,
+        individuality,
+        item_type,
+        bg_type,
+        use_ids,
+    )
 
     if search_param.name:
         matches = [item for item in matches if match_name(search_param.name, item.name)]
 
-    return matches
+    return sorted(matches, key=lambda item: item.id)

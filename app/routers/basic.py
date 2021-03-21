@@ -57,7 +57,8 @@ async def find_servant(
 ) -> Response:
     matches = search.search_servant(conn, search_param, limit=10000)
     return list_response(
-        basic.get_basic_servant(search_param.region, svt_id, lang) for svt_id in matches
+        basic.get_basic_servant(search_param.region, mstSvt.id, lang, mstSvt)
+        for mstSvt in matches
     )
 
 
@@ -111,10 +112,12 @@ async def get_servant(
 async def find_equip(
     search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
     lang: Optional[Language] = None,
+    conn: Connection = Depends(get_db),
 ) -> Response:
-    matches = search.search_equip(search_param, limit=10000)
+    matches = search.search_equip(conn, search_param, limit=10000)
     return list_response(
-        basic.get_basic_equip(search_param.region, svt_id, lang) for svt_id in matches
+        basic.get_basic_equip(search_param.region, mstSvt.id, lang, mstSvt)
+        for mstSvt in matches
     )
 
 
@@ -171,7 +174,8 @@ async def find_svt(
 ) -> Response:
     matches = search.search_servant(conn, search_param, limit=10000)
     return list_response(
-        basic.get_basic_servant(search_param.region, svt_id, lang) for svt_id in matches
+        basic.get_basic_servant(search_param.region, mstSvt.id, lang, mstSvt)
+        for mstSvt in matches
     )
 
 
@@ -287,8 +291,10 @@ async def find_skill(
 ) -> Response:
     matches = search.search_skill(conn, search_param, limit=10000)
     return list_response(
-        basic.get_basic_skill(search_param.region, skill_id, lang, reverse)
-        for skill_id in matches
+        basic.get_basic_skill(
+            search_param.region, mstSkill.id, lang, reverse, mstSkill=mstSkill
+        )
+        for mstSkill in matches
     )
 
 
@@ -337,8 +343,10 @@ async def find_td(
 ) -> Response:
     matches = search.search_td(conn, search_param, limit=10000)
     return list_response(
-        basic.get_basic_td(search_param.region, td_id, lang, reverse)
-        for td_id in matches
+        basic.get_basic_td(
+            search_param.region, td.id, lang, reverse, mstTreasureDevice=td
+        )
+        for td in matches
     )
 
 
@@ -385,13 +393,14 @@ async def find_function(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     lang: Language = Depends(language_parameter),
+    conn: Connection = Depends(get_db),
 ) -> Response:
-    matches = search.search_func(search_param, limit=10000)
+    matches = search.search_func(conn, search_param, limit=10000)
     return list_response(
-        basic.get_basic_function(
-            search_param.region, func_id, lang, reverse, reverseDepth
+        basic.get_basic_function_from_raw(
+            search_param.region, mstFunc, lang, reverse, reverseDepth
         )
-        for func_id in matches
+        for mstFunc in matches
     )
 
 
@@ -442,11 +451,14 @@ async def find_buff(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
     lang: Language = Depends(language_parameter),
+    conn: Connection = Depends(get_db),
 ) -> Response:
-    matches = search.search_buff(search_param, limit=10000)
+    matches = search.search_buff(conn, search_param, limit=10000)
     return list_response(
-        basic.get_basic_buff(search_param.region, buff_id, lang, reverse, reverseDepth)
-        for buff_id in matches
+        basic.get_basic_buff_from_raw(
+            search_param.region, mstBuff, lang, reverse, reverseDepth
+        )
+        for mstBuff in matches
     )
 
 

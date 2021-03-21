@@ -10,6 +10,7 @@ from sqlalchemy import (
     Table,
 )
 from sqlalchemy.dialects.postgresql import ARRAY, JSONB
+from sqlalchemy.sql import func
 
 from .base import metadata
 
@@ -32,8 +33,8 @@ mstBuff = Table(
     Column("ckOpIndv", ARRAY(Integer)),
     Column("script", JSONB),
     Column("id", Integer, primary_key=True),
-    Column("buffGroup", Integer),
-    Column("type", Integer),
+    Column("buffGroup", Integer, index=True),
+    Column("type", Integer, index=True),
     Column("name", String),
     Column("detail", String),
     Column("iconId", Integer),
@@ -64,9 +65,9 @@ mstFunc = Table(
     Column("popupTextColor", Integer),
     Column("id", Integer, primary_key=True),
     Column("cond", Integer),
-    Column("funcType", Integer),
-    Column("targetType", Integer),
-    Column("applyTarget", Integer),
+    Column("funcType", Integer, index=True),
+    Column("targetType", Integer, index=True),
+    Column("applyTarget", Integer, index=True),
     Column("popupIconId", Integer),
     Column("popupText", String),
     Column("categoryId", Integer),
@@ -94,7 +95,7 @@ mstSkill = Table(
     Column("actIndividuality", ARRAY(Integer)),
     Column("script", JSONB),
     Column("id", Integer, primary_key=True),
-    Column("type", Integer),
+    Column("type", Integer, index=True),
     Column("name", String),
     Column("ruby", String),
     Column("maxLv", Integer),
@@ -115,11 +116,11 @@ mstSkillDetail = Table(
 mstSvtSkill = Table(
     "mstSvtSkill",
     metadata,
-    Column("strengthStatus", Integer),
+    Column("strengthStatus", Integer, index=True),
     Column("skillNum", Integer),
     Column("svtId", Integer, index=True),
-    Column("num", Integer),
-    Column("priority", Integer),
+    Column("num", Integer, index=True),
+    Column("priority", Integer, index=True),
     Column("skillId", Integer, index=True),
     Column("condQuestId", Integer),
     Column("condQuestPhase", Integer),
@@ -138,10 +139,13 @@ mstSkillLv = Table(
     Column("script", JSONB),
     Column("skillId", Integer, index=True),
     Column("lv", Integer),
-    Column("chargeTurn", Integer),
+    Column("chargeTurn", Integer, index=True),
     Column("skillDetailId", Integer),
     Column("priority", Integer),
 )
+
+
+Index("ix_mstSkillLv_funcId_length", func.array_length(mstSkillLv.c.funcId, 1))
 
 
 mstTreasureDevice = Table(
@@ -174,7 +178,7 @@ mstSvtTreasureDevice = Table(
     "mstSvtTreasureDevice",
     metadata,
     Column("damage", ARRAY(Integer)),
-    Column("strengthStatus", Integer),
+    Column("strengthStatus", Integer, index=True),
     Column("svtId", Integer, index=True),
     Column("num", Integer),
     Column("priority", Integer),
@@ -186,7 +190,12 @@ mstSvtTreasureDevice = Table(
     Column("condLv", Integer),
     Column("condFriendshipRank", Integer),
     Column("motion", Integer),
-    Column("cardId", Integer),
+    Column("cardId", Integer, index=True),
+)
+
+Index(
+    "ix_mstSvtTreasureDevice_damage_length",
+    func.array_length(mstSvtTreasureDevice.c.damage, 1),
 )
 
 
@@ -203,13 +212,19 @@ mstTreasureDeviceLv = Table(
     Column("lv", Integer),
     Column("gaugeCount", Integer),
     Column("detailId", Integer),
-    Column("tdPoint", Integer),
+    Column("tdPoint", Integer, index=True),
     Column("tdPointQ", Integer),
     Column("tdPointA", Integer),
     Column("tdPointB", Integer),
     Column("tdPointEx", Integer),
     Column("tdPointDef", Integer),
     Column("qp", Integer),
+)
+
+
+Index(
+    "ix_mstTreasureDeviceLv_funcId_length",
+    func.array_length(mstTreasureDeviceLv.c.funcId, 1),
 )
 
 
@@ -226,14 +241,14 @@ mstSvt = Table(
     Column("name", String),
     Column("ruby", String),
     Column("battleName", String),
-    Column("classId", Integer),
-    Column("type", Integer),
+    Column("classId", Integer, index=True),
+    Column("type", Integer, index=True),
     Column("limitMax", Integer),
     Column("rewardLv", Integer),
     Column("friendshipId", Integer),
     Column("maxFriendshipRank", Integer),
-    Column("genderType", Integer),
-    Column("attri", Integer),
+    Column("genderType", Integer, index=True),
+    Column("attri", Integer, index=True),
     Column("combineSkillId", Integer),
     Column("combineLimitId", Integer),
     Column("sellQp", Integer),
@@ -249,9 +264,9 @@ mstSvt = Table(
     Column("attackAttri", Integer),
     Column("illustratorId", Integer),
     Column("cvId", Integer),
-    Column("collectionNo", Integer),
+    Column("collectionNo", Integer, index=True),
     Column("materialStoryPriority", Integer),
-    Column("flag", Integer),
+    Column("flag", Integer, index=True),
 )
 
 
@@ -373,7 +388,7 @@ mstSvtLimit = Table(
     Column("weaponColor", Integer),
     Column("svtId", Integer, index=True),
     Column("limitCount", Integer),
-    Column("rarity", Integer),
+    Column("rarity", Integer, index=True),
     Column("lvMax", Integer),
     Column("weaponGroup", Integer),
     Column("weaponScale", Integer),
@@ -579,8 +594,8 @@ mstItem = Table(
     Column("name", String),
     Column("detail", String),
     Column("imageId", Integer),
-    Column("bgImageId", Integer),
-    Column("type", Integer),
+    Column("bgImageId", Integer, index=True),
+    Column("type", Integer, index=True),
     Column("unit", String),
     Column("value", Integer),
     Column("sellQp", Integer),

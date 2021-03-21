@@ -40,7 +40,14 @@ from ..schemas.gameenums import (
     SvtType,
 )
 from ..schemas.nice import AssetURL
-from ..schemas.raw import MstBuff, MstClassRelationOverwrite
+from ..schemas.raw import (
+    MstBuff,
+    MstClassRelationOverwrite,
+    MstFunc,
+    MstSkill,
+    MstSvt,
+    MstTreasureDevice,
+)
 from . import reverse as reverse_ids
 from .utils import get_nice_trait, get_safe, get_traits_list
 
@@ -79,14 +86,13 @@ def get_nice_buff_script(region: Region, mstBuff: MstBuff) -> NiceBuffScript:
     return NiceBuffScript.parse_obj(script)
 
 
-def get_basic_buff(
+def get_basic_buff_from_raw(
     region: Region,
-    buff_id: int,
+    mstBuff: MstBuff,
     lang: Language,
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
 ) -> BasicBuffReverse:
-    mstBuff = masters[region].mstBuffId[buff_id]
     basic_buff = BasicBuffReverse(
         id=mstBuff.id,
         name=mstBuff.name,
@@ -104,22 +110,31 @@ def get_basic_buff(
         buff_reverse = BasicReversedBuff(
             function=(
                 get_basic_function(region, func_id, lang, reverse, reverseDepth)
-                for func_id in reverse_ids.buff_to_func(region, buff_id)
+                for func_id in reverse_ids.buff_to_func(region, mstBuff.id)
             )
         )
         basic_buff.reverse = BasicReversedBuffType(basic=buff_reverse)
     return basic_buff
 
 
-def get_basic_function(
+def get_basic_buff(
     region: Region,
-    func_id: int,
+    buff_id: int,
+    lang: Language,
+    reverse: bool = False,
+    reverseDepth: ReverseDepth = ReverseDepth.function,
+) -> BasicBuffReverse:
+    mstBuff = masters[region].mstBuffId[buff_id]
+    return get_basic_buff_from_raw(region, mstBuff, lang, reverse, reverseDepth)
+
+
+def get_basic_function_from_raw(
+    region: Region,
+    mstFunc: MstFunc,
     lang: Language,
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
 ) -> BasicFunctionReverse:
-    mstFunc = masters[region].mstFuncId[func_id]
-
     traitVals = []
     buffs = []
     if mstFunc.funcType in FUNC_VALS_NOT_BUFF:
@@ -146,16 +161,27 @@ def get_basic_function(
         func_reverse = BasicReversedFunction(
             skill=(
                 get_basic_skill(region, skill_id, lang, reverse, reverseDepth)
-                for skill_id in reverse_ids.func_to_skillId(region, func_id)
+                for skill_id in reverse_ids.func_to_skillId(region, mstFunc.id)
             ),
             NP=(
                 get_basic_td(region, td_id, lang, reverse, reverseDepth)
-                for td_id in reverse_ids.func_to_tdId(region, func_id)
+                for td_id in reverse_ids.func_to_tdId(region, mstFunc.id)
             ),
         )
         basic_func.reverse = BasicReversedFunctionType(basic=func_reverse)
 
     return basic_func
+
+
+def get_basic_function(
+    region: Region,
+    func_id: int,
+    lang: Language,
+    reverse: bool = False,
+    reverseDepth: ReverseDepth = ReverseDepth.skillNp,
+) -> BasicFunctionReverse:
+    mstFunc = masters[region].mstFuncId[func_id]
+    return get_basic_function_from_raw(region, mstFunc, lang, reverse, reverseDepth)
 
 
 def get_basic_skill(
@@ -164,8 +190,10 @@ def get_basic_skill(
     lang: Language,
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.servant,
+    mstSkill: Optional[MstSkill] = None,
 ) -> BasicSkillReverse:
-    mstSkill = masters[region].mstSkillId[skill_id]
+    if not mstSkill:
+        mstSkill = masters[region].mstSkillId[skill_id]
     basic_skill = BasicSkillReverse(
         id=mstSkill.id,
         name=get_safe(TRANSLATIONS, mstSkill.name)
@@ -204,8 +232,10 @@ def get_basic_td(
     lang: Language,
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.servant,
+    mstTreasureDevice: Optional[MstTreasureDevice] = None,
 ) -> BasicTdReverse:
-    mstTreasureDevice = masters[region].mstTreasureDeviceId[td_id]
+    if not mstTreasureDevice:
+        mstTreasureDevice = masters[region].mstTreasureDeviceId[td_id]
     basic_td = BasicTdReverse(
         id=mstTreasureDevice.id,
         name=mstTreasureDevice.name,
@@ -225,9 +255,13 @@ def get_basic_td(
 
 
 def get_basic_svt(
-    region: Region, svt_id: int, lang: Optional[Language] = None
+    region: Region,
+    svt_id: int,
+    lang: Optional[Language] = None,
+    mstSvt: Optional[MstSvt] = None,
 ) -> dict[str, Any]:
-    mstSvt = masters[region].mstSvtId[svt_id]
+    if not mstSvt:
+        mstSvt = masters[region].mstSvtId[svt_id]
     mstSvtLimit = masters[region].mstSvtLimitFirst[svt_id]
 
     basic_servant = {
@@ -261,15 +295,21 @@ def get_basic_svt(
 
 
 def get_basic_servant(
-    region: Region, item_id: int, lang: Optional[Language] = None
+    region: Region,
+    item_id: int,
+    lang: Optional[Language] = None,
+    mstSvt: Optional[MstSvt] = None,
 ) -> BasicServant:
-    return BasicServant.parse_obj(get_basic_svt(region, item_id, lang))
+    return BasicServant.parse_obj(get_basic_svt(region, item_id, lang, mstSvt))
 
 
 def get_basic_equip(
-    region: Region, item_id: int, lang: Optional[Language] = None
+    region: Region,
+    item_id: int,
+    lang: Optional[Language] = None,
+    mstSvt: Optional[MstSvt] = None,
 ) -> BasicEquip:
-    return BasicEquip.parse_obj(get_basic_svt(region, item_id, lang))
+    return BasicEquip.parse_obj(get_basic_svt(region, item_id, lang, mstSvt))
 
 
 def get_basic_mc(region: Region, mc_id: int, lang: Language) -> BasicMysticCode:

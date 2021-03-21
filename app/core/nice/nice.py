@@ -1,3 +1,5 @@
+from typing import Optional
+
 from sqlalchemy.engine import Connection
 
 from ...config import Settings
@@ -21,6 +23,7 @@ from ...schemas.nice import (
     NiceSkillReverse,
     NiceTdReverse,
 )
+from ...schemas.raw import MstBuff, MstFunc
 from .. import raw, reverse as reverse_ids
 from ..basic import (
     get_basic_cc,
@@ -62,8 +65,9 @@ def get_nice_buff_with_reverse(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
     reverseData: ReverseData = ReverseData.nice,
+    mstBuff: Optional[MstBuff] = None,
 ) -> NiceBuffReverse:
-    raw_buff = raw.get_buff_entity_no_reverse(region, buff_id)
+    raw_buff = raw.get_buff_entity_no_reverse(region, buff_id, mstBuff)
     nice_buff = NiceBuffReverse.parse_obj(get_nice_buff(raw_buff, region))
     if reverse and reverseDepth >= ReverseDepth.function:
         if reverseData == ReverseData.basic:
@@ -95,8 +99,9 @@ def get_nice_func_with_reverse(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     reverseData: ReverseData = ReverseData.nice,
+    mstFunc: Optional[MstFunc] = None,
 ) -> NiceBaseFunctionReverse:
-    raw_func = raw.get_func_entity_no_reverse(region, func_id, expand=True)
+    raw_func = raw.get_func_entity_no_reverse(region, func_id, True, mstFunc)
     nice_func = NiceBaseFunctionReverse.parse_obj(get_nice_function(region, raw_func))
 
     if reverse and reverseDepth >= ReverseDepth.skillNp:

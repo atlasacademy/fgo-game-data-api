@@ -64,8 +64,10 @@ async def find_servant(
 ) -> Response:
     matches = search.search_servant(conn, search_param)
     return list_response(
-        raw.get_servant_entity(conn, search_param.region, svt_id, expand, lore)
-        for svt_id in matches
+        raw.get_servant_entity(
+            conn, search_param.region, mstSvt.id, expand, lore, mstSvt
+    )
+        for mstSvt in matches
     )
 
 
@@ -113,10 +115,12 @@ async def find_equip(
     lore: bool = False,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    matches = search.search_equip(search_param)
+    matches = search.search_equip(conn, search_param)
     return list_response(
-        raw.get_servant_entity(conn, search_param.region, svt_id, expand, lore)
-        for svt_id in matches
+        raw.get_servant_entity(
+            conn, search_param.region, mstSvt.id, expand, lore, mstSvt
+    )
+        for mstSvt in matches
     )
 
 
@@ -166,8 +170,10 @@ async def find_svt(
 ) -> Response:
     matches = search.search_servant(conn, search_param)
     return list_response(
-        raw.get_servant_entity(conn, search_param.region, svt_id, expand, lore)
-        for svt_id in matches
+        raw.get_servant_entity(
+            conn, search_param.region, mstSvt.id, expand, lore, mstSvt
+    )
+        for mstSvt in matches
     )
 
 
@@ -271,9 +277,9 @@ async def find_skill(
     matches = search.search_skill(conn, search_param)
     return list_response(
         raw.get_skill_entity(
-            conn, search_param.region, skill_id, reverse, expand=expand
+            conn, search_param.region, mstSkill.id, reverse, expand=expand
         )
-        for skill_id in matches
+        for mstSkill in matches
     )
 
 
@@ -322,8 +328,8 @@ async def find_td(
 ) -> Response:
     matches = search.search_td(conn, search_param)
     return list_response(
-        raw.get_td_entity(conn, search_param.region, td_id, reverse, expand=expand)
-        for td_id in matches
+        raw.get_td_entity(conn, search_param.region, td.id, reverse, expand=expand)
+        for td in matches
     )
 
 
@@ -371,12 +377,18 @@ async def find_function(
     expand: bool = False,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    matches = search.search_func(search_param)
+    matches = search.search_func(conn, search_param)
     return list_response(
         raw.get_func_entity(
-            conn, search_param.region, func_id, reverse, reverseDepth, expand
+            conn,
+            search_param.region,
+            mstFunc.id,
+            reverse,
+            reverseDepth,
+            expand,
+            mstFunc,
         )
-        for func_id in matches
+        for mstFunc in matches
     )
 
 
@@ -429,10 +441,12 @@ async def find_buff(
     reverseDepth: ReverseDepth = ReverseDepth.function,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    matches = search.search_buff(search_param)
+    matches = search.search_buff(conn, search_param)
     return list_response(
-        raw.get_buff_entity(conn, search_param.region, buff_id, reverse, reverseDepth)
-        for buff_id in matches
+        raw.get_buff_entity(
+            conn, search_param.region, mstBuff.id, reverse, reverseDepth, mstBuff
+        )
+        for mstBuff in matches
     )
 
 
@@ -470,8 +484,9 @@ async def get_buff(
 )
 async def find_item(
     search_param: ItemSearchQueryParams = Depends(ItemSearchQueryParams),
+    conn: Connection = Depends(get_db),
 ) -> Response:
-    matches = search.search_item(search_param)
+    matches = search.search_item(conn, search_param)
     return list_response(ItemEntity(mstItem=mstItem) for mstItem in matches)
 
 

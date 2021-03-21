@@ -1,4 +1,4 @@
-from typing import Iterable
+from typing import Iterable, Optional
 
 from fastapi import HTTPException
 from sqlalchemy.engine import Connection
@@ -20,6 +20,7 @@ from ..schemas.raw import (
     FunctionEntityNoReverse,
     MstBgm,
     MstBoxGacha,
+    MstBuff,
     MstCombineCostume,
     MstCombineLimit,
     MstCombineMaterial,
@@ -40,6 +41,7 @@ from ..schemas.raw import (
     MstEventRewardSet,
     MstEventTower,
     MstFriendship,
+    MstFunc,
     MstGift,
     MstIllustrator,
     MstMap,
@@ -77,8 +79,12 @@ from ..schemas.raw import (
 from . import reverse as reverse_ids
 
 
-def get_buff_entity_no_reverse(region: Region, buff_id: int) -> BuffEntityNoReverse:
-    buff_entity = BuffEntityNoReverse(mstBuff=masters[region].mstBuffId[buff_id])
+def get_buff_entity_no_reverse(
+    region: Region, buff_id: int, mstBuff: Optional[MstBuff] = None
+) -> BuffEntityNoReverse:
+    buff_entity = BuffEntityNoReverse(
+        mstBuff=mstBuff if mstBuff else masters[region].mstBuffId[buff_id]
+    )
     return buff_entity
 
 
@@ -88,8 +94,11 @@ def get_buff_entity(
     buff_id: int,
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
+    mstBuff: Optional[MstBuff] = None,
 ) -> BuffEntity:
-    buff_entity = BuffEntity.parse_obj(get_buff_entity_no_reverse(region, buff_id))
+    buff_entity = BuffEntity.parse_obj(
+        get_buff_entity_no_reverse(region, buff_id, mstBuff)
+    )
     if reverse and reverseDepth >= ReverseDepth.function:
         buff_reverse = ReversedBuff(
             function=(
@@ -102,10 +111,13 @@ def get_buff_entity(
 
 
 def get_func_entity_no_reverse(
-    region: Region, func_id: int, expand: bool = False
+    region: Region,
+    func_id: int,
+    expand: bool = False,
+    mstFunc: Optional[MstFunc] = None,
 ) -> FunctionEntityNoReverse:
     func_entity = FunctionEntityNoReverse(
-        mstFunc=masters[region].mstFuncId[func_id],
+        mstFunc=mstFunc if mstFunc else masters[region].mstFuncId[func_id],
         mstFuncGroup=masters[region].mstFuncGroupId.get(func_id, []),
     )
     if expand and func_entity.mstFunc.funcType not in FUNC_VALS_NOT_BUFF:
@@ -124,9 +136,10 @@ def get_func_entity(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     expand: bool = False,
+    mstFunc: Optional[MstFunc] = None,
 ) -> FunctionEntity:
     func_entity = FunctionEntity.parse_obj(
-        get_func_entity_no_reverse(region, func_id, expand)
+        get_func_entity_no_reverse(region, func_id, expand, mstFunc)
     )
     if reverse and reverseDepth >= ReverseDepth.skillNp:
         func_reverse = ReversedFunction(
@@ -257,8 +270,9 @@ def get_servant_entity(
     servant_id: int,
     expand: bool = False,
     lore: bool = False,
+    mstSvt: Optional[MstSvt] = None,
 ) -> ServantEntity:
-    svt_db = fetch.get_one(conn, MstSvt, servant_id)
+    svt_db = mstSvt if mstSvt else fetch.get_one(conn, MstSvt, servant_id)
     if not svt_db:
         raise HTTPException(status_code=404, detail="Svt not found")
 

@@ -6,8 +6,6 @@ from fastapi import Query
 
 from .common import Region
 from .enums import (
-    ATTRIBUTE_NAME,
-    CLASS_NAME,
     PLAYABLE_CLASS_LIST,
     Attribute,
     FuncApplyTarget,
@@ -18,9 +16,6 @@ from .enums import (
     Trait,
 )
 from .gameenums import (
-    GENDER_TYPE_NAME,
-    SVT_FLAG_NAME,
-    SVT_TYPE_NAME,
     NiceBuffType,
     NiceCardType,
     NiceFuncTargetType,
@@ -45,11 +40,11 @@ class ServantSearchQueryParams:
     name: Optional[str] = None
     excludeCollectionNo: list[int] = Query([0])
     type: list[NiceSvtType] = Query(SERVANT_TYPE)
-    flag: list[NiceSvtFlag] = Query(list(SVT_FLAG_NAME.values()))
-    rarity: list[int] = Query(list(range(6)), ge=0, le=5)
+    flag: list[NiceSvtFlag] = Query([])
+    rarity: list[int] = Query([])
     className: list[SvtClass] = Query(PLAYABLE_CLASS_LIST)
-    gender: list[NiceGender] = Query(list(GENDER_TYPE_NAME.values()))
-    attribute: list[Attribute] = Query(list(ATTRIBUTE_NAME.values()))
+    gender: list[NiceGender] = Query([])
+    attribute: list[Attribute] = Query([])
     trait: list[Union[Trait, int]] = Query([])
     voiceCondSvt: list[int] = Query([])
 
@@ -58,11 +53,11 @@ class ServantSearchQueryParams:
             [
                 self.name,
                 self.type != SERVANT_TYPE,
-                self.flag != list(SVT_FLAG_NAME.values()),
-                self.rarity != list(range(6)),
+                self.flag,
+                self.rarity,
                 self.className != PLAYABLE_CLASS_LIST,
-                self.gender != list(GENDER_TYPE_NAME.values()),
-                self.attribute != list(ATTRIBUTE_NAME.values()),
+                self.gender,
+                self.attribute,
                 self.trait,
                 self.voiceCondSvt,
             ]
@@ -96,13 +91,13 @@ class ServantSearchQueryParams:
 class SvtSearchQueryParams:
     region: Region
     name: Optional[str] = None
-    excludeCollectionNo: list[int] = Query([-1])
-    type: list[NiceSvtType] = Query(list(SVT_TYPE_NAME.values()))
-    flag: list[NiceSvtFlag] = Query(list(SVT_FLAG_NAME.values()))
-    rarity: list[int] = Query(list(range(6)), ge=0, le=5)
-    className: list[SvtClass] = Query(list(CLASS_NAME.values()))
-    gender: list[NiceGender] = Query(list(GENDER_TYPE_NAME.values()))
-    attribute: list[Attribute] = Query(list(ATTRIBUTE_NAME.values()))
+    excludeCollectionNo: list[int] = Query([])
+    type: list[NiceSvtType] = Query([])
+    flag: list[NiceSvtFlag] = Query([])
+    rarity: list[int] = Query([], ge=0, le=5)
+    className: list[SvtClass] = Query([])
+    gender: list[NiceGender] = Query([])
+    attribute: list[Attribute] = Query([])
     trait: list[Union[Trait, int]] = Query([])
     voiceCondSvt: list[int] = Query([])
 
@@ -110,12 +105,12 @@ class SvtSearchQueryParams:
         return any(
             [
                 self.name,
-                self.type != list(SVT_TYPE_NAME.values()),
-                self.flag != list(SVT_FLAG_NAME.values()),
-                self.rarity != list(range(6)),
-                self.className != list(CLASS_NAME.values()),
-                self.gender != list(GENDER_TYPE_NAME.values()),
-                self.attribute != list(ATTRIBUTE_NAME.values()),
+                self.type,
+                self.flag,
+                self.rarity,
+                self.className,
+                self.gender,
+                self.attribute,
                 self.trait,
                 self.voiceCondSvt,
             ]
@@ -149,16 +144,16 @@ class EquipSearchQueryParams:
     name: Optional[str] = None
     excludeCollectionNo: list[int] = Query([0])
     type: list[NiceSvtType] = Query([NiceSvtType.servantEquip])
-    flag: list[NiceSvtFlag] = Query(list(SVT_FLAG_NAME.values()))
-    rarity: list[int] = Query(list(range(1, 6)), ge=1, le=5)
+    flag: list[NiceSvtFlag] = Query([])
+    rarity: list[int] = Query([])
 
     def hasSearchParams(self) -> bool:
         return any(
             [
                 self.name,
                 self.type != [NiceSvtType.servantEquip],
-                self.flag != list(SVT_FLAG_NAME.values()),
-                self.rarity != list(range(1, 6)),
+                self.flag,
+                self.rarity,
             ]
         )
 

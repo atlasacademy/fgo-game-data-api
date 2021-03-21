@@ -83,6 +83,7 @@ def get_skill_search(
 
     skill_search_stmt = (
         select(mstSkill)
+        .distinct()
         .select_from(
             mstSkill.outerjoin(
                 mstSvtSkill, mstSvtSkill.c.skillId == mstSkill.c.id

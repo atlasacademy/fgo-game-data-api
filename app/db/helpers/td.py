@@ -107,6 +107,7 @@ def get_td_search(
 
     td_search_stmt = (
         select(mstTreasureDevice)
+        .distinct()
         .select_from(
             mstTreasureDevice.outerjoin(
                 mstSvtTreasureDevice,
