@@ -329,7 +329,7 @@ mstSvtVoice = Table(
     Column("voicePrefix", Integer),
     Column("type", Integer),
     Index(
-        "mstSvtVoiceGIN",
+        "ix_mstSvtVoice_GIN",
         sqlalchemy.text('"scriptJson" jsonb_path_ops'),
         postgresql_using="gin",
     ),
@@ -502,6 +502,9 @@ mstSvtScript = Table(
     Column("offsetXMyroom", Integer),
     Column("offsetYMyroom", Integer),
 )
+
+
+Index("ix_mstSvtScript_svtId", mstSvtScript.c.id / 10)
 
 
 mstSvtComment = Table(
