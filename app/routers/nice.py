@@ -64,8 +64,10 @@ async def find_servant(
 ) -> Response:
     matches = search.search_servant(conn, search_param)
     return list_response(
-        nice.get_nice_servant_model(conn, search_param.region, svt_id, lang, lore)
-        for svt_id in matches
+        nice.get_nice_servant_model(
+            conn, search_param.region, mstSvt.id, lang, lore, mstSvt
+        )
+        for mstSvt in matches
     )
 
 
@@ -130,10 +132,12 @@ async def find_equip(
     lore: bool = False,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    matches = search.search_equip(search_param)
+    matches = search.search_equip(conn, search_param)
     return list_response(
-        nice.get_nice_equip_model(conn, search_param.region, svt_id, lang, lore)
-        for svt_id in matches
+        nice.get_nice_equip_model(
+            conn, search_param.region, mstSvt.id, lang, lore, mstSvt
+        )
+        for mstSvt in matches
     )
 
 
@@ -193,8 +197,10 @@ async def find_svt(
 ) -> Response:
     matches = search.search_servant(conn, search_param)
     return list_response(
-        nice.get_nice_servant_model(conn, search_param.region, svt_id, lang, lore)
-        for svt_id in matches
+        nice.get_nice_servant_model(
+            conn, search_param.region, mstSvt.id, lang, lore, mstSvt
+        )
+        for mstSvt in matches
     )
 
 
@@ -311,9 +317,14 @@ async def find_skill(
     matches = search.search_skill(conn, search_param)
     return list_response(
         nice.get_nice_skill_with_reverse(
-            conn, search_param.region, skill_id, lang, reverse, reverseData=reverseData
+            conn,
+            search_param.region,
+            mstSkill.id,
+            lang,
+            reverse,
+            reverseData=reverseData,
         )
-        for skill_id in matches
+        for mstSkill in matches
     )
 
 
@@ -368,9 +379,9 @@ async def find_td(
     matches = search.search_td(conn, search_param)
     return list_response(
         nice.get_nice_td_with_reverse(
-            conn, search_param.region, td_id, lang, reverse, reverseData=reverseData
+            conn, search_param.region, td.id, lang, reverse, reverseData=reverseData
         )
-        for td_id in matches
+        for td in matches
     )
 
 
@@ -424,12 +435,19 @@ async def find_function(
     reverseData: ReverseData = ReverseData.nice,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    matches = search.search_func(search_param)
+    matches = search.search_func(conn, search_param)
     return list_response(
         nice.get_nice_func_with_reverse(
-            conn, search_param.region, func_id, lang, reverse, reverseDepth, reverseData
+            conn,
+            search_param.region,
+            mstFunc.id,
+            lang,
+            reverse,
+            reverseDepth,
+            reverseData,
+            mstFunc,
         )
-        for func_id in matches
+        for mstFunc in matches
     )
 
 
@@ -488,12 +506,19 @@ async def find_buff(
     reverseData: ReverseData = ReverseData.nice,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    matches = search.search_buff(search_param)
+    matches = search.search_buff(conn, search_param)
     return list_response(
         nice.get_nice_buff_with_reverse(
-            conn, search_param.region, buff_id, lang, reverse, reverseDepth, reverseData
+            conn,
+            search_param.region,
+            mstBuff.id,
+            lang,
+            reverse,
+            reverseDepth,
+            reverseData,
+            mstBuff,
         )
-        for buff_id in matches
+        for mstBuff in matches
     )
 
 
@@ -536,8 +561,9 @@ async def get_buff(
 )
 async def find_item(
     search_param: ItemSearchQueryParams = Depends(ItemSearchQueryParams),
+    conn: Connection = Depends(get_db),
 ) -> Response:
-    matches = search.search_item(search_param)
+    matches = search.search_item(conn, search_param)
     return list_response(
         item.get_nice_item_from_raw(search_param.region, mstItem) for mstItem in matches
     )

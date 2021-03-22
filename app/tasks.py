@@ -17,13 +17,14 @@ from .core.basic import (
     get_basic_war,
 )
 from .core.nice.cc import get_nice_command_code
-from .core.nice.item import get_nice_item
+from .core.nice.item import get_nice_item_from_raw
 from .core.nice.mc import get_nice_mystic_code
 from .core.nice.nice import get_nice_equip_model, get_nice_servant_model
 from .core.utils import get_safe, sort_by_collection_no
 from .data.custom_mappings import TRANSLATIONS
 from .data.gamedata import masters, update_masters
 from .db.engine import engines
+from .db.helpers.item import get_all_items
 from .db.load import update_db
 from .routers.utils import list_string
 from .schemas.base import BaseModelORJson
@@ -118,7 +119,8 @@ def generate_exports(
                 for svt_id in masters[region].mstSvtServantCollectionNo.values()
             )
             all_item_data = (
-                get_nice_item(region, item_id) for item_id in masters[region].mstItemId
+                get_nice_item_from_raw(region, raw_item)
+                for raw_item in get_all_items(conn)
             )
             all_mc_data = (
                 get_nice_mystic_code(conn, region, mc_id, Language.jp)

@@ -23,7 +23,7 @@ from ...schemas.nice import (
     NiceSkillReverse,
     NiceTdReverse,
 )
-from ...schemas.raw import MstBuff, MstFunc
+from ...schemas.raw import MstBuff, MstFunc, MstSvt
 from .. import raw, reverse as reverse_ids
 from ..basic import (
     get_basic_cc,
@@ -46,15 +46,29 @@ settings = Settings()
 
 
 def get_nice_servant_model(
-    conn: Connection, region: Region, item_id: int, lang: Language, lore: bool = False
+    conn: Connection,
+    region: Region,
+    item_id: int,
+    lang: Language,
+    lore: bool = False,
+    mstSvt: Optional[MstSvt] = None,
 ) -> NiceServant:
-    return NiceServant.parse_obj(get_nice_servant(conn, region, item_id, lang, lore))
+    return NiceServant.parse_obj(
+        get_nice_servant(conn, region, item_id, lang, lore, mstSvt)
+    )
 
 
 def get_nice_equip_model(
-    conn: Connection, region: Region, item_id: int, lang: Language, lore: bool = False
+    conn: Connection,
+    region: Region,
+    item_id: int,
+    lang: Language,
+    lore: bool = False,
+    mstSvt: Optional[MstSvt] = None,
 ) -> NiceEquip:
-    return NiceEquip.parse_obj(get_nice_servant(conn, region, item_id, lang, lore))
+    return NiceEquip.parse_obj(
+        get_nice_servant(conn, region, item_id, lang, lore, mstSvt)
+    )
 
 
 def get_nice_buff_with_reverse(

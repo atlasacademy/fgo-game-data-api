@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Optional
 
 import orjson
 from sqlalchemy.engine import Connection
@@ -21,6 +21,7 @@ from ....schemas.gameenums import (
 from ....schemas.nice import NiceCostume, NiceLoreComment, NiceServantChange
 from ....schemas.raw import (
     BAD_COMBINE_SVT_LIMIT,
+    MstSvt,
     MstSvtChange,
     MstSvtComment,
     MstSvtCostume,
@@ -76,10 +77,17 @@ def get_nice_costume(costume: MstSvtCostume) -> NiceCostume:
 
 
 def get_nice_servant(
-    conn: Connection, region: Region, svt_id: int, lang: Language, lore: bool = False
+    conn: Connection,
+    region: Region,
+    svt_id: int,
+    lang: Language,
+    lore: bool = False,
+    mstSvt: Optional[MstSvt] = None,
 ) -> dict[str, Any]:
     # Get expanded servant entity to get function and buff details
-    raw_svt = raw.get_servant_entity(conn, region, svt_id, expand=True, lore=lore)
+    raw_svt = raw.get_servant_entity(
+        conn, region, svt_id, expand=True, lore=lore, mstSvt=mstSvt
+    )
     first_svt_limit = raw_svt.mstSvtLimit[0]
 
     nice_data: dict[str, Any] = {

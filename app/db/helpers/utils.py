@@ -1,7 +1,6 @@
 from typing import Any
 
 from sqlalchemy import Table
-from sqlalchemy.dialects.postgresql import aggregate_order_by
 from sqlalchemy.sql import func
 
 

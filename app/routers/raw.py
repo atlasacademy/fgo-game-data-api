@@ -66,7 +66,7 @@ async def find_servant(
     return list_response(
         raw.get_servant_entity(
             conn, search_param.region, mstSvt.id, expand, lore, mstSvt
-    )
+        )
         for mstSvt in matches
     )
 
@@ -119,7 +119,7 @@ async def find_equip(
     return list_response(
         raw.get_servant_entity(
             conn, search_param.region, mstSvt.id, expand, lore, mstSvt
-    )
+        )
         for mstSvt in matches
     )
 
@@ -172,7 +172,7 @@ async def find_svt(
     return list_response(
         raw.get_servant_entity(
             conn, search_param.region, mstSvt.id, expand, lore, mstSvt
-    )
+        )
         for mstSvt in matches
     )
 

@@ -15,8 +15,4 @@ def get_war_from_spot(conn: Connection, spot_id: int) -> int:
         .where(mstSpot.c.id == spot_id)
     )
 
-    war = conn.execute(stmt).fetchone()
-    if war:
-        return int(war.id)
-    else:
-        return -1
+    return int(conn.execute(stmt).fetchone().id)

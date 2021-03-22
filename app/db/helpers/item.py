@@ -19,7 +19,7 @@ def get_mstSetItem(conn: Connection, set_item_ids: Iterable[int]) -> list[MstSet
     ]
 
 
-def get_all_items(conn: Connection) -> list[MstItem]:
+def get_all_items(conn: Connection) -> list[MstItem]:  # pragma: no cover
     all_item_stmt = select(mstItem).order_by(mstItem.c.id)
     return [MstItem.from_orm(item) for item in conn.execute(all_item_stmt).fetchall()]
 
