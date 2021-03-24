@@ -123,8 +123,11 @@ test_cases_dict: dict[str, tuple[str, set[int]]] = {
         "NA/buff/search?type=upCommandall&tvals=cardQuick",
         {100, 260, 499, 1084, 1094, 1246, 1273, 1301, 1413},
     ),
-    "buff_type_vals": ("NA/buff/search?vals=buffCharm", {175, 213, 217, 926, 1315}),
-    "buff_type_ckSelfIndv": ("NA/buff/search?ckSelfIndv=4002&ckSelfIndv=4003", {1162}),
+    "buff_type_vals": ("NA/buff/search?vals=buffCharm", {175, 926, 1315}),
+    "buff_type_ckSelfIndv": (
+        "NA/buff/search?ckSelfIndv=4002&ckSelfIndv=4003",
+        {1162, 1589},
+    ),
     "buff_type_ckOpIndv": (
         "NA/buff/search?ckOpIndv=4002&type=downDefencecommandall",
         {301, 456, 506, 1524},

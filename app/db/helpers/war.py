@@ -2,6 +2,7 @@ from sqlalchemy.engine import Connection
 from sqlalchemy.sql import select
 
 from ...models.raw import mstMap, mstSpot, mstWar
+from ...schemas.raw import MstWar
 
 
 def get_war_from_spot(conn: Connection, spot_id: int) -> int:
@@ -15,4 +16,4 @@ def get_war_from_spot(conn: Connection, spot_id: int) -> int:
         .where(mstSpot.c.id == spot_id)
     )
 
-    return int(conn.execute(stmt).fetchone().id)
+    return MstWar.from_orm(conn.execute(stmt).fetchone()).id

@@ -376,8 +376,8 @@ mstVoicePlayCond = Table(
     Column("voiceId", String),
     Column("idx", Integer),
     Column("condGroup", Integer),
-    Column("condType", Integer),
-    Column("targetId", Integer),
+    Column("condType", Integer, index=True),
+    Column("targetId", Integer, index=True),
     Column("condValues", ARRAY(Integer)),
 )
 
