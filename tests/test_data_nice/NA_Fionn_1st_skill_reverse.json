@@ -1271,7 +1271,7 @@
                   "buffs": [
                     {
                       "id": 213,
-                      "name": "Mental Debuff Resist Down",
+                      "name": "Charm Resist Down (Mental)",
                       "detail": "Decrease Charm resistance from [Female]",
                       "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_506.png",
                       "type": "downTolerance",
@@ -1279,8 +1279,7 @@
                       "script": {},
                       "vals": [
                         { "id": 3005, "name": "buffNegativeEffect" },
-                        { "id": 3010, "name": "buffMentalEffect" },
-                        { "id": 3012, "name": "buffCharm" }
+                        { "id": 3010, "name": "buffMentalEffect" }
                       ],
                       "tvals": [{ "id": 2191, "name": "buffCharmFemale" }],
                       "ckSelfIndv": [],
@@ -1695,7 +1694,7 @@
                   "buffs": [
                     {
                       "id": 213,
-                      "name": "Mental Debuff Resist Down",
+                      "name": "Charm Resist Down (Mental)",
                       "detail": "Decrease Charm resistance from [Female]",
                       "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_506.png",
                       "type": "downTolerance",
@@ -1703,8 +1702,7 @@
                       "script": {},
                       "vals": [
                         { "id": 3005, "name": "buffNegativeEffect" },
-                        { "id": 3010, "name": "buffMentalEffect" },
-                        { "id": 3012, "name": "buffCharm" }
+                        { "id": 3010, "name": "buffMentalEffect" }
                       ],
                       "tvals": [{ "id": 2191, "name": "buffCharmFemale" }],
                       "ckSelfIndv": [],

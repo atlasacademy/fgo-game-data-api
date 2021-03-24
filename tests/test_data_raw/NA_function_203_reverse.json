@@ -22,6 +22,46 @@
             "effectList": [],
             "actIndividuality": [],
             "script": {},
+            "id": 980058,
+            "type": 1,
+            "name": "Tenpou Reforms",
+            "ruby": "Tenpou Reforms",
+            "maxLv": 10,
+            "iconId": 603,
+            "motion": 102
+          },
+          "mstSkillDetail": [
+            {
+              "id": 980058,
+              "detail": "Gain a large amount of Critical Stars + Increase C. Star Drop Rate (1 turn) & increase Critical Strength (1 turn) & increase NP Strength (1 turn) for one ally",
+              "detailShort": "Gain a large amount of Critical Stars + Increase C. Star Drop Rate (1 turn) & increase Critical Strength (1 turn) & increase NP Strength (1 turn) for one ally"
+            }
+          ],
+          "mstSvtSkill": [],
+          "mstSkillLv": [
+            {
+              "funcId": [651, 673, 299, 203, 251],
+              "svals": [
+                "[5000,0]",
+                "[5000,50]",
+                "[5000,1,-1,300]",
+                "[5000,1,-1,300]",
+                "[5000,1,-1,300]"
+              ],
+              "script": {},
+              "skillId": 980058,
+              "lv": 1,
+              "chargeTurn": 99,
+              "skillDetailId": 980058,
+              "priority": 0
+            }
+          ]
+        },
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
             "id": 157352,
             "type": 1,
             "name": "Hero's Assistant C++",
@@ -564,6 +604,45 @@
             "effectList": [],
             "actIndividuality": [],
             "script": {},
+            "id": 980057,
+            "type": 1,
+            "name": "Buke Shohatto",
+            "ruby": "Buke Shohatto",
+            "maxLv": 10,
+            "iconId": 603,
+            "motion": 102
+          },
+          "mstSkillDetail": [
+            {
+              "id": 980057,
+              "detail": "Gain a large amount of Critical Stars + Increase C. Star Drop Rate (1 turn) & increase Critical Strength (1 turn) for one ally",
+              "detailShort": "Gain a large amount of Critical Stars + Increase C. Star Drop Rate (1 turn) & increase Critical Strength (1 turn) for one ally"
+            }
+          ],
+          "mstSvtSkill": [],
+          "mstSkillLv": [
+            {
+              "funcId": [651, 673, 299, 203],
+              "svals": [
+                "[5000,0]",
+                "[5000,50]",
+                "[5000,1,-1,300]",
+                "[5000,1,-1,300]"
+              ],
+              "script": {},
+              "skillId": 980057,
+              "lv": 1,
+              "chargeTurn": 99,
+              "skillDetailId": 980057,
+              "priority": 0
+            }
+          ]
+        },
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
             "id": 42650,
             "type": 1,
             "name": "Incite EX",
@@ -693,6 +772,89 @@
               "lv": 10,
               "chargeTurn": 5,
               "skillDetailId": 42650,
+              "priority": 0
+            }
+          ]
+        },
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
+            "id": 980059,
+            "type": 1,
+            "name": "Kansei Reforms",
+            "ruby": "Kansei Reforms",
+            "maxLv": 10,
+            "iconId": 603,
+            "motion": 102
+          },
+          "mstSkillDetail": [
+            {
+              "id": 980059,
+              "detail": "Gain a large amount of Critical Stars + Increase C. Star Drop Rate (1 turn) & increase Critical Strength (1 turn) & increase NP Strength (1 turn) & increase NP Gain (1 turn) for one ally",
+              "detailShort": "Gain a large amount of Critical Stars + Increase C. Star Drop Rate (1 turn) & increase Critical Strength (1 turn) & increase NP Strength (1 turn) & increase NP Gain (1 turn) for one ally"
+            }
+          ],
+          "mstSvtSkill": [],
+          "mstSkillLv": [
+            {
+              "funcId": [651, 673, 299, 203, 251, 684],
+              "svals": [
+                "[5000,0]",
+                "[5000,50]",
+                "[5000,1,-1,300]",
+                "[5000,1,-1,300]",
+                "[5000,1,-1,300]",
+                "[5000,1,-1,300]"
+              ],
+              "script": {},
+              "skillId": 980059,
+              "lv": 1,
+              "chargeTurn": 99,
+              "skillDetailId": 980059,
+              "priority": 0
+            }
+          ]
+        },
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
+            "id": 980060,
+            "type": 1,
+            "name": "Declaration of Restoration of Imperial Rule",
+            "ruby": "Declaration of Restoration of Imperial Rule",
+            "maxLv": 10,
+            "iconId": 603,
+            "motion": 102
+          },
+          "mstSkillDetail": [
+            {
+              "id": 980060,
+              "detail": "Gain a large amount of Critical Stars + Increase C. Star Drop Rate (1 turn) & increase Critical Strength (1 turn) & increase NP Strength (1 turn) & increase NP Gain (1 turn) & increase NP Gauge for one ally",
+              "detailShort": "Gain a large amount of Critical Stars + Increase C. Star Drop Rate (1 turn) & increase Critical Strength (1 turn) & increase NP Strength (1 turn) & increase NP Gain (1 turn) & increase NP Gauge for one ally"
+            }
+          ],
+          "mstSvtSkill": [],
+          "mstSkillLv": [
+            {
+              "funcId": [651, 673, 299, 203, 251, 684, 464],
+              "svals": [
+                "[5000,0]",
+                "[5000,50]",
+                "[5000,1,-1,300]",
+                "[5000,1,-1,300]",
+                "[5000,1,-1,300]",
+                "[5000,1,-1,300]",
+                "[5000,5000]"
+              ],
+              "script": {},
+              "skillId": 980060,
+              "lv": 1,
+              "chargeTurn": 99,
+              "skillDetailId": 980060,
               "priority": 0
             }
           ]
