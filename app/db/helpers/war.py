@@ -7,7 +7,7 @@ from ...schemas.raw import MstWar
 
 def get_war_from_spot(conn: Connection, spot_id: int) -> int:
     stmt = (
-        select(mstWar.c.id)
+        select(mstWar)
         .select_from(
             mstWar.outerjoin(mstMap, mstMap.c.warId == mstWar.c.id).outerjoin(
                 mstSpot, mstSpot.c.mapId == mstMap.c.id
