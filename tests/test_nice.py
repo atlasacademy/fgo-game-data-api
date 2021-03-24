@@ -532,3 +532,8 @@ class TestServantSpecial:
             "targetId": 9804500,
             "setNum": 1,
         }
+
+    async def test_enemy_change_class(self) -> None:
+        ooku_mirage_room = await get_response("/nice/NA/quest/94037503/1")
+        last_enemy = ooku_mirage_room.json()["stages"][2]["enemies"][2]
+        assert last_enemy["svt"]["className"] == "saber"

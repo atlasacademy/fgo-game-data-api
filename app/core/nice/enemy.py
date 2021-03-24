@@ -4,7 +4,7 @@ from typing import Any
 from sqlalchemy.engine import Connection
 
 from ...schemas.common import Language, Region
-from ...schemas.enums import ATTRIBUTE_NAME, ENEMY_DEATH_TYPE_NAME
+from ...schemas.enums import ATTRIBUTE_NAME, CLASS_NAME, ENEMY_DEATH_TYPE_NAME
 from ...schemas.nice import (
     DeckType,
     EnemyAi,
@@ -184,6 +184,9 @@ def get_quest_enemy(
     lang: Language = Language.jp,
 ) -> QuestEnemy:
     basic_svt = get_basic_servant(region, user_svt.svtId, lang)
+    if user_svt.npcSvtClassId != 0:
+        basic_svt.className = CLASS_NAME[user_svt.npcSvtClassId]
+
     deck_svt = deck_svt_info.deck
 
     return QuestEnemy(
