@@ -35,7 +35,11 @@ JOINED_QUEST_TABLES = (
 
 
 JOINED_QUEST_ENTITY_TABLES = JOINED_QUEST_TABLES.outerjoin(
-    mstQuestPhaseDetail, mstQuest.c.id == mstQuestPhaseDetail.c.questId
+    mstQuestPhaseDetail,
+    and_(
+        mstQuest.c.id == mstQuestPhaseDetail.c.questId,
+        mstQuestPhase.c.phase == mstQuestPhaseDetail.c.phase,
+    ),
 )
 
 
@@ -50,7 +54,14 @@ phasesNoBattle = func.array_remove(
             (
                 mstQuestPhaseDetail.c.flag.op("&")(QuestFlag.NO_BATTLE.value) != 0,  # type: ignore
                 mstQuestPhaseDetail.c.phase,
-            )
+            ),
+            (
+                and_(
+                    mstQuestPhaseDetail.c.flag.is_(None),
+                    mstQuest.c.flag.op("&")(QuestFlag.NO_BATTLE.value) != 0,
+                ),
+                mstQuestPhase.c.phase,
+            ),
         ).distinct()
     ),
     None,
