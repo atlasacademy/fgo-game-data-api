@@ -37,7 +37,10 @@ async def get_quest_response(
             "questId": quest_id,
             "questPhase": phase,
         }
-        r = await client.get(f"{QUEST_ENDPOINT}/get", params=params)
+        try:
+            r = await client.get(f"{QUEST_ENDPOINT}/get", params=params)
+        except httpx.RequestError:
+            return None
         if r.status_code == httpx.codes.OK:
             return QuestRayshiftResponse.parse_raw(r.content).response
         elif r.status_code == httpx.codes.TOO_MANY_REQUESTS:  # pragma: no cover
