@@ -8,7 +8,7 @@ authors = ["squaresmile <squaresmile@protonmail.com>"]
 python = "^3.9"
 fastapi = "^0.63.0"
 uvicorn = {extras = ["standard"], version = "^0.13.4"}
-python-dotenv = "^0.16.0"
+python-dotenv = "^0.17.0"
 fuzzywuzzy = "^0.18.0"
 python-Levenshtein = "^0.12.2"
 orjson = "^3.5.1"
@@ -16,12 +16,12 @@ aiofiles = "^0.6.0"
 GitPython = "^3.1.14"
 toml = "^0.10.2"
 redis = "^3.5.3"
-SQLAlchemy = "^1.4.4"
+SQLAlchemy = "^1.4.5"
 psycopg2 = "^2.8.6"
 httpx = "^0.17.1"
 
 [tool.poetry.dev-dependencies]
-pytest = "^6.2.2"
+pytest = "^6.2.3"
 pylint = "^2.7.4"
 mypy = "^0.812"
 black = "^20.8b1"

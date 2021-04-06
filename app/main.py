@@ -269,7 +269,10 @@ def get_rapidoc_html(
     <rapi-doc
         spec-url="{openapi_url}"
         sort-endpoints-by=method
+        render-style=view
         theme=dark
+        load-fonts=false
+        regular-font='"Fira Sans", Avenir, "Segoe UI", Arial, sans-serif'
         schema-expand-level=1
         schema-description-expanded=true
     ></rapi-doc>"""
