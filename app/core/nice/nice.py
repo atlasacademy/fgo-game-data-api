@@ -159,7 +159,7 @@ def get_nice_skill_with_reverse(
     reverseDepth: ReverseDepth = ReverseDepth.servant,
     reverseData: ReverseData = ReverseData.nice,
 ) -> NiceSkillReverse:
-    raw_skill = raw.get_skill_entity_no_reverse(conn, region, skill_id, expand=True)
+    raw_skill = raw.get_skill_entity_no_reverse(conn, skill_id, expand=True)
     nice_skill = get_nice_skill_from_raw(region, raw_skill, lang)
 
     if reverse and reverseDepth >= ReverseDepth.servant:
@@ -209,7 +209,7 @@ def get_nice_td_with_reverse(
     reverseDepth: ReverseDepth = ReverseDepth.servant,
     reverseData: ReverseData = ReverseData.nice,
 ) -> NiceTdReverse:
-    raw_td = raw.get_td_entity_no_reverse(conn, region, td_id, expand=True)
+    raw_td = raw.get_td_entity_no_reverse(conn, td_id, expand=True)
 
     # All td_id has a svtTd entry
     svt_id = next(svt_id.svtId for svt_id in raw_td.mstSvtTreasureDevice)

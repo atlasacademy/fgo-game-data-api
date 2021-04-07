@@ -86,7 +86,7 @@ def get_nice_servant(
 ) -> dict[str, Any]:
     # Get expanded servant entity to get function and buff details
     raw_svt = raw.get_servant_entity(
-        conn, region, svt_id, expand=True, lore=lore, mstSvt=mstSvt
+        conn, svt_id, expand=True, lore=lore, mstSvt=mstSvt
     )
     first_svt_limit = raw_svt.mstSvtLimit[0]
 

@@ -142,6 +142,7 @@ mstSkillLv = Table(
     Column("chargeTurn", Integer, index=True),
     Column("skillDetailId", Integer),
     Column("priority", Integer),
+    Column("expandedFuncId", JSONB),
 )
 
 
@@ -219,6 +220,7 @@ mstTreasureDeviceLv = Table(
     Column("tdPointEx", Integer),
     Column("tdPointDef", Integer),
     Column("qp", Integer),
+    Column("expandedFuncId", JSONB),
 )
 
 
@@ -1174,7 +1176,7 @@ mstAiAct = Table(
 )
 
 
-TABLES_WITH_PK = [
+TABLES_TO_BE_LOADED = [
     mstBuff,
     mstFunc,
     mstSkill,
@@ -1197,19 +1199,13 @@ TABLES_WITH_PK = [
     mstEvent,
     mstEventMission,
     mstEventMissionConditionDetail,
-]
-
-
-TABLES_TO_BE_LOADED = [
     mstConstant,
     mstClassRelationOverwrite,
     mstFuncGroup,
     mstSkillDetail,
     mstSvtSkill,
-    mstSkillLv,
     mstTreasureDeviceDetail,
     mstSvtTreasureDevice,
-    mstTreasureDeviceLv,
     mstSvtCard,
     mstSvtLimit,
     mstCombineLimit,

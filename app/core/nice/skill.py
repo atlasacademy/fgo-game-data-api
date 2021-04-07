@@ -58,24 +58,25 @@ def get_nice_skill_with_svt(
 
     nice_skill["functions"] = []
     for funci, _ in enumerate(skillEntity.mstSkillLv[0].funcId):
-        function = skillEntity.mstSkillLv[0].expandedFuncId[funci]
-        followerVals = (
-            [
-                skill_lv.script["followerVals"][funci]
-                for skill_lv in skillEntity.mstSkillLv
-            ]
-            if "followerVals" in skillEntity.mstSkillLv[0].script
-            else None
-        )
+        if skillEntity.mstSkillLv[0].expandedFuncId:
+            function = skillEntity.mstSkillLv[0].expandedFuncId[funci]
+            followerVals = (
+                [
+                    skill_lv.script["followerVals"][funci]
+                    for skill_lv in skillEntity.mstSkillLv
+                ]
+                if "followerVals" in skillEntity.mstSkillLv[0].script
+                else None
+            )
 
-        nice_func = get_nice_function(
-            region,
-            function,
-            svals=[skill_lv.svals[funci] for skill_lv in skillEntity.mstSkillLv],
-            followerVals=followerVals,
-        )
+            nice_func = get_nice_function(
+                region,
+                function,
+                svals=[skill_lv.svals[funci] for skill_lv in skillEntity.mstSkillLv],
+                followerVals=followerVals,
+            )
 
-        nice_skill["functions"].append(nice_func)
+            nice_skill["functions"].append(nice_func)
 
     # .mstSvtSkill returns the list of SvtSkill with the same skill_id
     chosen_svts = [
@@ -122,7 +123,7 @@ def get_nice_skill_from_id(
     skill_id: int,
     lang: Language,
 ) -> NiceSkillReverse:
-    raw_skill = get_skill_entity_no_reverse(conn, region, skill_id, expand=True)
+    raw_skill = get_skill_entity_no_reverse(conn, skill_id, expand=True)
     return get_nice_skill_from_raw(region, raw_skill, lang)
 
 
@@ -157,7 +158,7 @@ def get_multiple_nice_skills(
     raw_skills = {
         skill.mstSkill.id: skill
         for skill in get_skill_entity_no_reverse_many(
-            conn, region, [skill.skill_id for skill in skill_svts], expand=True
+            conn, [skill.skill_id for skill in skill_svts], expand=True
         )
     }
     return {

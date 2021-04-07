@@ -46,25 +46,28 @@ def get_nice_td(
     nice_td["functions"] = []
 
     for funci, _ in enumerate(tdEntity.mstTreasureDeviceLv[0].funcId):
-        nice_func = get_nice_function(
-            region,
-            tdEntity.mstTreasureDeviceLv[0].expandedFuncId[funci],
-            svals=[skill_lv.svals[funci] for skill_lv in tdEntity.mstTreasureDeviceLv],
-            svals2=[
-                skill_lv.svals2[funci] for skill_lv in tdEntity.mstTreasureDeviceLv
-            ],
-            svals3=[
-                skill_lv.svals3[funci] for skill_lv in tdEntity.mstTreasureDeviceLv
-            ],
-            svals4=[
-                skill_lv.svals4[funci] for skill_lv in tdEntity.mstTreasureDeviceLv
-            ],
-            svals5=[
-                skill_lv.svals5[funci] for skill_lv in tdEntity.mstTreasureDeviceLv
-            ],
-        )
+        if tdEntity.mstTreasureDeviceLv[0].expandedFuncId:
+            nice_func = get_nice_function(
+                region,
+                tdEntity.mstTreasureDeviceLv[0].expandedFuncId[funci],
+                svals=[
+                    skill_lv.svals[funci] for skill_lv in tdEntity.mstTreasureDeviceLv
+                ],
+                svals2=[
+                    skill_lv.svals2[funci] for skill_lv in tdEntity.mstTreasureDeviceLv
+                ],
+                svals3=[
+                    skill_lv.svals3[funci] for skill_lv in tdEntity.mstTreasureDeviceLv
+                ],
+                svals4=[
+                    skill_lv.svals4[funci] for skill_lv in tdEntity.mstTreasureDeviceLv
+                ],
+                svals5=[
+                    skill_lv.svals5[funci] for skill_lv in tdEntity.mstTreasureDeviceLv
+                ],
+            )
 
-        nice_td["functions"].append(nice_func)
+            nice_td["functions"].append(nice_func)
 
     chosen_svts = [
         svt_td for svt_td in tdEntity.mstSvtTreasureDevice if svt_td.svtId == svtId
@@ -125,7 +128,7 @@ def get_multiple_nice_tds(
     raw_tds = {
         td.mstTreasureDevice.id: td
         for td in get_td_entity_no_reverse_many(
-            conn, region, [td_svt.td_id for td_svt in td_svts], expand=True
+            conn, [td_svt.td_id for td_svt in td_svts], expand=True
         )
     }
     return {

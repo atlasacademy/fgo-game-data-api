@@ -113,7 +113,7 @@ class SkillLvScript(BaseModelORJson):
 
 class MstSkillLv(BaseModelORJson):
     funcId: list[int]  # [366, 216, 434],
-    expandedFuncId: list[FunctionEntityNoReverse] = []
+    expandedFuncId: Optional[list[FunctionEntityNoReverse]] = None
     svals: list[str]  # ["[1000,1,-1,3600]", "[1000,1,-1,200]", "[1000]"],
     # script: SkillLvScript
     # Doesn't use the SkillLvScript model so it's easier to build the nice script object
@@ -174,7 +174,7 @@ class MstSvtTreasureDevice(BaseModelORJson):
 
 class MstTreasureDeviceLv(BaseModelORJson):
     funcId: list[int]  # [13, 174, 432],
-    expandedFuncId: list[FunctionEntityNoReverse] = []
+    expandedFuncId: Optional[list[FunctionEntityNoReverse]] = None
     svals: list[str]  # ["[1000,6000]", "[1000,3,-1,100]", "[5000,3,-1]"],
     svals2: list[str]  # ["[1000,6000]", "[1000,3,-1,150]", "[5000,3,-1]"],
     svals3: list[str]  # ["[1000,6000]", "[1000,3,-1,200]", "[5000,3,-1]"],

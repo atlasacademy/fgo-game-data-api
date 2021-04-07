@@ -15,7 +15,7 @@ settings = Settings()
 def get_nice_mystic_code(
     conn: Connection, region: Region, mc_id: int, lang: Language
 ) -> NiceMysticCode:
-    raw_mc = raw.get_mystic_code_entity(conn, region, mc_id, expand=True)
+    raw_mc = raw.get_mystic_code_entity(conn, mc_id, expand=True)
     base_settings = {"base_url": settings.asset_url, "region": region}
     nice_mc = NiceMysticCode(
         id=raw_mc.mstEquip.id,

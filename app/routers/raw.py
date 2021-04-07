@@ -64,9 +64,7 @@ async def find_servant(
 ) -> Response:
     matches = search.search_servant(conn, search_param)
     return list_response(
-        raw.get_servant_entity(
-            conn, search_param.region, mstSvt.id, expand, lore, mstSvt
-        )
+        raw.get_servant_entity(conn, mstSvt.id, expand, lore, mstSvt)
         for mstSvt in matches
     )
 
@@ -96,7 +94,7 @@ async def get_servant(
     conn: Connection = Depends(get_db),
 ) -> Response:
     servant_id = masters[region].mstSvtServantCollectionNo.get(servant_id, servant_id)
-    servant_entity = raw.get_servant_entity(conn, region, servant_id, expand, lore)
+    servant_entity = raw.get_servant_entity(conn, servant_id, expand, lore)
     return item_response(servant_entity)
 
 
@@ -117,9 +115,7 @@ async def find_equip(
 ) -> Response:
     matches = search.search_equip(conn, search_param)
     return list_response(
-        raw.get_servant_entity(
-            conn, search_param.region, mstSvt.id, expand, lore, mstSvt
-        )
+        raw.get_servant_entity(conn, mstSvt.id, expand, lore, mstSvt)
         for mstSvt in matches
     )
 
@@ -149,7 +145,7 @@ async def get_equip(
     conn: Connection = Depends(get_db),
 ) -> Response:
     equip_id = masters[region].mstSvtEquipCollectionNo.get(equip_id, equip_id)
-    servant_entity = raw.get_servant_entity(conn, region, equip_id, expand, lore)
+    servant_entity = raw.get_servant_entity(conn, equip_id, expand, lore)
     return item_response(servant_entity)
 
 
@@ -170,9 +166,7 @@ async def find_svt(
 ) -> Response:
     matches = search.search_servant(conn, search_param)
     return list_response(
-        raw.get_servant_entity(
-            conn, search_param.region, mstSvt.id, expand, lore, mstSvt
-        )
+        raw.get_servant_entity(conn, mstSvt.id, expand, lore, mstSvt)
         for mstSvt in matches
     )
 
@@ -194,13 +188,12 @@ Only uses actual ID for the lookup.
     responses=get_error_code([404]),
 )
 async def get_svt(
-    region: Region,
     svt_id: int,
     expand: bool = False,
     lore: bool = False,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    servant_entity = raw.get_servant_entity(conn, region, svt_id, expand, lore)
+    servant_entity = raw.get_servant_entity(conn, svt_id, expand, lore)
     return item_response(servant_entity)
 
 
@@ -213,7 +206,6 @@ async def get_svt(
     responses=get_error_code([404]),
 )
 async def get_mystic_code(
-    region: Region,
     mc_id: int,
     expand: bool = False,
     conn: Connection = Depends(get_db),
@@ -223,7 +215,7 @@ async def get_mystic_code(
 
     - **expand**: Expand the skills and functions.
     """
-    mc_entity = raw.get_mystic_code_entity(conn, region, mc_id, expand)
+    mc_entity = raw.get_mystic_code_entity(conn, mc_id, expand)
     return item_response(mc_entity)
 
 
@@ -247,7 +239,7 @@ async def get_command_code(
     - **expand**: Expand the skills and functions.
     """
     cc_id = masters[region].mstCCCollectionNo.get(cc_id, cc_id)
-    cc_entity = raw.get_command_code_entity(conn, region, cc_id, expand)
+    cc_entity = raw.get_command_code_entity(conn, cc_id, expand)
     return item_response(cc_entity)
 
 
@@ -328,8 +320,7 @@ async def find_td(
 ) -> Response:
     matches = search.search_td(conn, search_param)
     return list_response(
-        raw.get_td_entity(conn, search_param.region, td.id, reverse, expand=expand)
-        for td in matches
+        raw.get_td_entity(conn, td.id, reverse, expand=expand) for td in matches
     )
 
 
@@ -343,13 +334,12 @@ async def find_td(
     responses=get_error_code([404]),
 )
 async def get_td(
-    region: Region,
     np_id: int,
     reverse: bool = False,
     expand: bool = False,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    td_entity = raw.get_td_entity(conn, region, np_id, reverse, expand=expand)
+    td_entity = raw.get_td_entity(conn, np_id, reverse, expand=expand)
     return item_response(td_entity)
 
 

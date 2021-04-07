@@ -15,7 +15,7 @@ settings = Settings()
 def get_nice_command_code(
     conn: Connection, region: Region, cc_id: int, lang: Language
 ) -> NiceCommandCode:
-    raw_cc = raw.get_command_code_entity(conn, region, cc_id, expand=True)
+    raw_cc = raw.get_command_code_entity(conn, cc_id, expand=True)
 
     base_settings = {"base_url": settings.asset_url, "region": region, "item_id": cc_id}
     nice_cc = NiceCommandCode(
