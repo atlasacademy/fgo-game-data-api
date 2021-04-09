@@ -102,6 +102,7 @@ class AssetURL:
     eventReward = "{base_url}/{region}/EventReward/{fname}.png"
     mapImg = "{base_url}/{region}/Terminal/MapImgs/img_questmap_{map_id:0>6}/img_questmap_{map_id:0>6}.png"
     spotImg = "{base_url}/{region}/Terminal/QuestMap/Capter{war_asset_id:0>4}/QMap_Cap{war_asset_id:0>4}_Atlas/spot_{spot_id:0>6}.png"
+    script = "{base_url}/{region}/Script/{script_path}.txt"
 
 
 class NiceItem(BaseModelORJson):
@@ -1030,6 +1031,8 @@ class NiceShop(BaseModelORJson):
     )
     defaultLv: int
     defaultLimitCount: int
+    scriptName: Optional[str] = None
+    script: Optional[HttpUrl] = None
     openedAt: int
     closedAt: int
 
@@ -1376,6 +1379,7 @@ class NiceQuestPhase(NiceQuest):
     qp: int
     exp: int
     bond: int
+    scripts: list[HttpUrl]
     stages: list[NiceStage]
 
 
@@ -1436,6 +1440,7 @@ class NiceWar(BaseModelORJson):
     emptyMessage: str
     bgm: NiceBgm
     scriptId: str
+    script: HttpUrl
     startType: NiceWarStartType
     targetId: int
     eventId: int

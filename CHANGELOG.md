@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.55.0 - 2020-04-08
+### Added
+- Script assets to nice quest phase, war and shop.
+
 ## 5.54.2 - 2020-03-23
 ### Added
 - `voiceCondSvt` will search in play conditions too.

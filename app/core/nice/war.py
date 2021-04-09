@@ -17,6 +17,7 @@ from ...schemas.raw import MstBgm, MstConstant, MstMap, MstSpot, MstWarAdd, Ques
 from .. import raw
 from .bgm import get_nice_bgm
 from .quest import get_nice_quest
+from .script import get_script_url
 
 
 settings = Settings()
@@ -150,6 +151,7 @@ def get_nice_war(conn: Connection, region: Region, war_id: int) -> NiceWar:
         emptyMessage=raw_war.mstWar.emptyMessage,
         bgm=bgm,
         scriptId=raw_war.mstWar.scriptId,
+        script=get_script_url(region, raw_war.mstWar.scriptId),
         startType=WAR_START_TYPE_NAME[raw_war.mstWar.startType],
         targetId=raw_war.mstWar.targetId,
         eventId=raw_war.mstWar.eventId,

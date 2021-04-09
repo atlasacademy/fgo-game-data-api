@@ -1,15 +1,16 @@
 import time
 from collections import defaultdict
-from typing import Any
+from typing import Any, Optional, Union
 
 import orjson
 from pydantic import DirectoryPath
 from sqlalchemy import Table
-from sqlalchemy.engine import Connection
+from sqlalchemy.engine import Connection, Engine
 
 from ..config import logger
 from ..models.raw import (
     TABLES_TO_BE_LOADED,
+    ScriptFileList,
     mstSkillLv,
     mstSubtitle,
     mstTreasureDeviceLv,
@@ -42,7 +43,9 @@ def remove_unknown_columns(
     return [{k: v for k, v in item.items() if k in table_columns} for item in data]
 
 
-def load_skill_td_lv(conn: Connection, master_folder: DirectoryPath) -> None:
+def load_skill_td_lv(
+    engine: Engine, master_folder: DirectoryPath
+) -> None:  # pragma: no cover
     with open(master_folder / "mstBuff.json", "rb") as fp:
         mstBuff = {buff["id"]: buff for buff in orjson.loads(fp.read())}
 
@@ -86,9 +89,6 @@ def load_skill_td_lv(conn: Connection, master_folder: DirectoryPath) -> None:
             if func_id in mstFunc
         ]
 
-    recreate_table(conn, mstSkillLv)
-    conn.execute(mstSkillLv.insert(), mstSkillLv_data)
-
     for treasureDeviceLv in mstTreasureDeviceLv_data:
         treasureDeviceLv["expandedFuncId"] = [
             get_func_entity(func_id)
@@ -96,15 +96,77 @@ def load_skill_td_lv(conn: Connection, master_folder: DirectoryPath) -> None:
             if func_id in mstFunc
         ]
 
-    recreate_table(conn, mstTreasureDeviceLv)
-    conn.execute(mstTreasureDeviceLv.insert(), mstTreasureDeviceLv_data)
+    with engine.begin() as conn:
+        recreate_table(conn, mstSkillLv)
+        conn.execute(mstSkillLv.insert(), mstSkillLv_data)
+
+        recreate_table(conn, mstTreasureDeviceLv)
+        conn.execute(mstTreasureDeviceLv.insert(), mstTreasureDeviceLv_data)
+
+
+def load_script_list(
+    engine: Engine, repo_folder: DirectoryPath
+) -> None:  # pragma: no cover
+    script_list_file = (
+        repo_folder
+        / "ScriptActionEncrypt"
+        / ScriptFileList.name
+        / f"{ScriptFileList.name}.txt"
+    )
+    db_data: list[dict[str, Union[int, str, None]]] = []
+
+    if script_list_file.exists():
+        with open(script_list_file, encoding="utf-8") as fp:
+            script_list = [line.strip() for line in fp.readlines()]
+
+        with open(repo_folder / "master" / "mstQuest.json", "rb") as bfp:
+            mstQuest = orjson.loads(bfp.read())
+
+        questId = {quest["id"] for quest in mstQuest}
+
+        scriptQuestId = {
+            quest["scriptQuestId"]: quest["id"]
+            for quest in mstQuest
+            if quest["scriptQuestId"] != 0
+        }
+
+        for script in script_list:
+            script_name = script.removesuffix(".txt")
+            quest_id: Optional[int] = None
+            phase: Optional[int] = None
+            sceneType: Optional[int] = None
+
+            if len(script) == 14 and script[0] in ("0", "9"):
+                script_int = int(script_name[:-2])
+
+                sceneType = int(script_name[-1])
+                phase = int(script_name[-2])
+
+                if script_int in scriptQuestId:
+                    quest_id = scriptQuestId[script_int]
+                elif script_int in questId:
+                    quest_id = script_int
+
+            db_data.append(
+                {
+                    "scriptFileName": script_name,
+                    "questId": quest_id,
+                    "phase": phase,
+                    "sceneType": sceneType,
+                }
+            )
+
+    with engine.begin() as conn:
+        recreate_table(conn, ScriptFileList)
+        conn.execute(ScriptFileList.insert(), db_data)
 
 
 def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no cover
     logger.info("Loading db …")
     start_loading_time = time.perf_counter()
 
-    for region, master_folder in region_path.items():
+    for region, repo_folder in region_path.items():
+        master_folder = repo_folder / "master"
         engine = engines[region]
 
         for table in TABLES_TO_BE_LOADED:
@@ -140,8 +202,9 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
             recreate_table(conn, mstSubtitle)
             conn.execute(mstSubtitle.insert(), globalNewMstSubtitle)
 
-        with engine.begin() as conn:
-            load_skill_td_lv(conn, master_folder)
+        load_skill_td_lv(engine, master_folder)
+
+        load_script_list(engine, repo_folder)
 
         with engine.begin() as conn:
             rayshiftQuest.create(conn, checkfirst=True)

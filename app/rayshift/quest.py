@@ -39,7 +39,7 @@ async def get_quest_response(
         }
         try:
             r = await client.get(f"{QUEST_ENDPOINT}/get", params=params)
-        except httpx.RequestError:
+        except httpx.RequestError:  # pragma: no cover
             return None
         if r.status_code == httpx.codes.OK:
             return QuestRayshiftResponse.parse_raw(r.content).response

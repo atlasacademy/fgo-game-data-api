@@ -4,6 +4,7 @@ from sqlalchemy.engine import Connection
 from sqlalchemy.sql import and_, case, func, select
 
 from ...models.raw import (
+    ScriptFileList,
     mstBgm,
     mstClosedMessage,
     mstGift,
@@ -132,6 +133,13 @@ def get_quest_phase_entity(
             ),
         )
         .outerjoin(mstBgm, mstBgm.c.id == mstStage.c.bgmId)
+        .outerjoin(
+            ScriptFileList,
+            and_(
+                ScriptFileList.c.questId == mstQuestPhase.c.questId,
+                ScriptFileList.c.phase == mstQuestPhase.c.phase,
+            ),
+        )
     )
 
     select_quest_phase = [
@@ -146,6 +154,9 @@ def get_quest_phase_entity(
         func.to_jsonb(mstQuestPhaseDetail.table_valued()).label(
             mstQuestPhaseDetail.name
         ),
+        func.array_remove(
+            func.array_agg(ScriptFileList.c.scriptFileName.distinct()), None
+        ).label("scripts"),
         sql_jsonb_agg(mstStage),
         sql_jsonb_agg(mstBgm),
     ]

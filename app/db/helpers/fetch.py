@@ -34,6 +34,7 @@ from ...models.raw import (
     mstIllustrator,
     mstMap,
     mstShop,
+    mstShopScript,
     mstSpot,
     mstSvt,
     mstSvtCard,
@@ -77,6 +78,7 @@ from ...schemas.raw import (
     MstIllustrator,
     MstMap,
     MstShop,
+    MstShopScript,
     MstSpot,
     MstSvt,
     MstSvtCard,
@@ -216,6 +218,7 @@ schema_table_fetch_all_multiple: dict[Type[BaseModelORJson], tuple[Table, Column
     ),
     MstBgm: (mstBgm, mstBgm.c.id, mstBgm.c.id),
     MstGift: (mstGift, mstGift.c.id, mstGift.c.id),
+    MstShopScript: (mstShopScript, mstShopScript.c.shopId, mstShopScript.c.shopId),
 }
 
 TFetchAllMultiple = TypeVar("TFetchAllMultiple", bound=BaseModelORJson)

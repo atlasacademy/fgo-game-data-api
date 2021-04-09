@@ -71,7 +71,7 @@ def update_masters(region_path: dict[Region, DirectoryPath]) -> None:
         for entity in (
             MASTER_WITH_ID | MASTER_WITHOUT_ID | SVT_STUFFS | SKILL_STUFFS | TD_STUFFS
         ):
-            with open(gamedata / f"{entity}.json", "rb") as fp:
+            with open(gamedata / "master" / f"{entity}.json", "rb") as fp:
                 master[entity] = orjson.loads(fp.read())
 
         for entity in MASTER_WITH_ID:

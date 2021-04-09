@@ -73,6 +73,7 @@
     "friendshipExp": 865,
     "giftId": 0
   },
+  "scripts": [],
   "mstStage": [
     {
       "npcDeckIds": [94025034, 1000],

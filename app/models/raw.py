@@ -718,6 +718,22 @@ mstShop = Table(
 )
 
 
+mstShopScript = Table(
+    "mstShopScript",
+    metadata,
+    Column("ignoreEventIds", ARRAY(Integer)),
+    Column("shopId", Integer, index=True),
+    Column("priority", Integer),
+    Column("name", String),
+    Column("scriptId", String),
+    Column("frequencyType", Integer),
+    Column("eventId", Integer),
+    Column("svtId", Integer),
+    Column("limitCount", Integer),
+    Column("materialFolderId", Integer),
+)
+
+
 mstEvent = Table(
     "mstEvent",
     metadata,
@@ -1176,6 +1192,16 @@ mstAiAct = Table(
 )
 
 
+ScriptFileList = Table(
+    "ScriptFileList",
+    metadata,
+    Column("scriptFileName", String),
+    Column("questId", Integer, index=True),
+    Column("phase", Integer, index=True),
+    Column("sceneType", Integer),
+)
+
+
 TABLES_TO_BE_LOADED = [
     mstBuff,
     mstFunc,
@@ -1189,6 +1215,7 @@ TABLES_TO_BE_LOADED = [
     mstIllustrator,
     mstItem,
     mstShop,
+    mstShopScript,
     mstBgm,
     mstWar,
     mstMap,

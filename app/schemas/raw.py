@@ -691,6 +691,19 @@ class MstShop(BaseModelORJson):
     closedAt: int  # 1530676799
 
 
+class MstShopScript(BaseModelORJson):
+    ignoreEventIds: list[int]
+    shopId: int
+    priority: int
+    name: str
+    scriptId: str
+    frequencyType: int
+    eventId: int
+    svtId: int
+    limitCount: Optional[int]
+    materialFolderId: int
+
+
 class MstEventReward(BaseModelORJson):
     eventId: int  # 80305
     groupId: int  # 0
@@ -1178,6 +1191,7 @@ class QuestEntity(BaseModelORJson):
 class QuestPhaseEntity(QuestEntity):
     mstQuestPhase: MstQuestPhase
     mstQuestPhaseDetail: Optional[MstQuestPhaseDetail] = None
+    scripts: list[str]
     mstStage: list[MstStage]
     mstBgm: list[MstBgm]
 
@@ -1187,6 +1201,7 @@ class EventEntity(BaseModelORJson):
     mstWar: list[MstWar]
     mstGift: list[MstGift]
     mstShop: list[MstShop]
+    mstShopScript: list[MstShopScript]
     mstSetItem: list[MstSetItem]
     mstEventReward: list[MstEventReward]
     mstEventRewardSet: list[MstEventRewardSet]

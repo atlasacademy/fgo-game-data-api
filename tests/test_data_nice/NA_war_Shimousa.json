@@ -16,6 +16,7 @@
     "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_MAP_32/BGM_MAP_32.mp3"
   },
   "scriptId": "0200030010",
+  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030010.txt",
   "startType": "quest",
   "targetId": 2000300,
   "eventId": 0,

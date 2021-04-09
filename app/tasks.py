@@ -231,8 +231,8 @@ repo_info: dict[Region, RepoInfo] = {}
 
 def update_master_repo_info(region_path: dict[Region, DirectoryPath]) -> None:
     for region, gamedata in region_path.items():
-        if (gamedata.parent / ".git").exists():
-            repo = Repo(gamedata.parent)
+        if (gamedata / ".git").exists():
+            repo = Repo(gamedata)
             latest_commit = repo.commit()
             repo_info[region] = RepoInfo(
                 hash=latest_commit.hexsha[:6],

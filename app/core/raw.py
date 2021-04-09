@@ -46,6 +46,7 @@ from ..schemas.raw import (
     MstIllustrator,
     MstMap,
     MstShop,
+    MstShopScript,
     MstSpot,
     MstSvt,
     MstSvtCard,
@@ -485,6 +486,9 @@ def get_event_entity(conn: Connection, event_id: int) -> EventEntity:
     ]
     set_items = item.get_mstSetItem(conn, set_item_ids)
 
+    shop_ids = [shop.id for shop in shops]
+    shop_scripts = fetch.get_all_multiple(conn, MstShopScript, shop_ids)
+
     rewards = fetch.get_all(conn, MstEventReward, event_id)
 
     tower_rewards = event.get_mstEventTowerReward(conn, event_id)
@@ -503,6 +507,7 @@ def get_event_entity(conn: Connection, event_id: int) -> EventEntity:
         mstEvent=mstEvent,
         mstWar=event.get_event_wars(conn, event_id),
         mstShop=shops,
+        mstShopScript=shop_scripts,
         mstGift=gifts,
         mstSetItem=set_items,
         mstEventReward=rewards,

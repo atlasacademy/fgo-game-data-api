@@ -426,12 +426,12 @@ class TestServantSpecial:
     async def test_shop_itemIds_0(self) -> None:
         with engines[Region.NA].connect() as conn:
             fp_shop_item = get_nice_shop(
-                Region.NA, event.get_mstShop_by_id(conn, 1), []
+                Region.NA, event.get_mstShop_by_id(conn, 1), [], {}
             )
             assert fp_shop_item.cost.item.name == "Friend Point"
 
             mp_shop_item = get_nice_shop(
-                Region.NA, event.get_mstShop_by_id(conn, 11000000), []
+                Region.NA, event.get_mstShop_by_id(conn, 11000000), [], {}
             )
             assert mp_shop_item.cost.item.name == "Mana Prism"
 
@@ -537,3 +537,14 @@ class TestServantSpecial:
         ooku_mirage_room = await get_response("/nice/NA/quest/94037503/1")
         last_enemy = ooku_mirage_room.json()["stages"][2]["enemies"][2]
         assert last_enemy["svt"]["className"] == "saber"
+
+    async def test_shop_script(self) -> None:
+        valentine_2020 = await get_response("/nice/NA/event/80233")
+        yu_mei_ren_shop = valentine_2020.json()["shop"][229]
+        assert yu_mei_ren_shop["scriptName"] == "Modern Return Sweets"
+        assert yu_mei_ren_shop["script"].endswith("Script/94/9403/9403353120.txt")
+
+    async def test_quest_script(self) -> None:
+        lb2_main_quest = (await get_response("/nice/NA/quest/3000202/3")).json()
+        assert lb2_main_quest["scripts"][0].endswith("Script/03/0300020230.txt")
+        assert lb2_main_quest["scripts"][1].endswith("Script/03/0300020231.txt")

@@ -40,6 +40,7 @@
   "qp": 6400,
   "exp": 15690,
   "bond": 615,
+  "scripts": [],
   "stages": [
     {
       "wave": 1,

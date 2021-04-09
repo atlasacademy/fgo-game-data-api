@@ -23,8 +23,8 @@ HTTP API for FGO game data. Transform the raw game data into something a bit mor
 List of environment variables for the main app.
 
 #### Required environment variables
-- `NA_GAMEDATA`: path to NA gamedata's master folder.
-- `JP_GAMEDATA`: path to JP gamedata's master folder.
+- `NA_GAMEDATA`: path to NA gamedata's folder that contains the `master` and `ScriptActionEncrypt` folders.
+- `JP_GAMEDATA`: path to JP gamedata's folder that contains the `master` and `ScriptActionEncrypt` folders.
 - `NA_POSTGRESDSN`: PostgreSQL DSN to a database for NA.
 - `JP_POSTGRESDSN`: PostgreSQL DSN to a database for JP.
 
@@ -48,8 +48,8 @@ List of environment variables for the main app.
 You can also make a .env file at the project root with the following entries instead of setting the environment variables:
 
 ```
-NA_GAMEDATA="/path/to/gamedata/master/NA"
-JP_GAMEDATA="/path/to/gamedata/master/JP"
+NA_GAMEDATA="/path/to/gamedata/NA"
+JP_GAMEDATA="/path/to/gamedata/JP"
 NA_POSTGRESDSN="postgresql://username:password@localhost:5432/fgoapiNA"
 JP_POSTGRESDSN="postgresql://username:password@localhost:5432/fgoapiJP"
 RAYSHIFT_API_KEY="eca334a9-3289-4ad7-9b92-1ec2bbc3fc19"

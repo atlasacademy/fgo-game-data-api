@@ -50,11 +50,13 @@ from ...schemas.raw import (
     MstGift,
     MstSetItem,
     MstShop,
+    MstShopScript,
 )
 from .. import raw
 from ..utils import get_traits_list
 from .gift import get_nice_gift
 from .item import get_nice_item
+from .script import get_script_url
 
 
 settings = Settings()
@@ -74,7 +76,10 @@ def get_nice_set_item(set_item: MstSetItem) -> NiceItemSet:
 
 
 def get_nice_shop(
-    region: Region, shop: MstShop, set_items: list[MstSetItem]
+    region: Region,
+    shop: MstShop,
+    set_items: list[MstSetItem],
+    shop_scripts: dict[int, MstShopScript],
 ) -> NiceShop:
     if shop.payType == PayType.FRIEND_POINT:
         shop_item_id = 4
@@ -92,7 +97,7 @@ def get_nice_shop(
     else:
         shop_set_items = []
 
-    return NiceShop(
+    nice_shop = NiceShop(
         id=shop.id,
         baseShopId=shop.baseShopId,
         shopType=SHOP_TYPE_NAME[shop.shopType],
@@ -117,6 +122,13 @@ def get_nice_shop(
         openedAt=shop.openedAt,
         closedAt=shop.closedAt,
     )
+
+    if shop.id in shop_scripts:
+        shop_script = shop_scripts[shop.id]
+        nice_shop.scriptName = shop_script.name
+        nice_shop.script = get_script_url(region, shop_script.scriptId)
+
+    return nice_shop
 
 
 def get_bgImage_url(region: Region, bgImageId: int, event_id: int, prefix: str) -> str:
@@ -335,6 +347,10 @@ def get_nice_event(conn: Connection, region: Region, event_id: int) -> NiceEvent
 
     base_settings = {"base_url": settings.asset_url, "region": region}
 
+    shop_scripts = {
+        shop_script.shopId: shop_script for shop_script in raw_event.mstShopScript
+    }
+
     gift_maps: dict[int, list[MstGift]] = defaultdict(list)
     for gift in raw_event.mstGift:
         gift_maps[gift.id].append(gift)
@@ -385,7 +401,7 @@ def get_nice_event(conn: Connection, region: Region, event_id: int) -> NiceEvent
         materialOpenedAt=raw_event.mstEvent.materialOpenedAt,
         warIds=(war.id for war in raw_event.mstWar),
         shop=(
-            get_nice_shop(region, shop, raw_event.mstSetItem)
+            get_nice_shop(region, shop, raw_event.mstSetItem, shop_scripts)
             for shop in raw_event.mstShop
         ),
         rewards=(
