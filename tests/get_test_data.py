@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import argparse
 import asyncio
 
@@ -20,7 +22,10 @@ async def save_test_data(
 
 
 async def main(
-    get_raw: bool = False, get_nice: bool = False, get_basic: bool = False
+    get_raw: bool = False,
+    get_nice: bool = False,
+    get_basic: bool = False,
+    test: str | None = None,
 ) -> None:
     print("Saving test data ...")
     if not any([get_raw, get_nice, get_basic]):
@@ -32,8 +37,12 @@ async def main(
         (get_basic, test_basic_data, "basic", "test_data_basic"),
     ):
         if to_download:
-            for query, file_name in query_data.values():
+            if test and test in query_data:
+                query, file_name = query_data[test]
                 await save_test_data(endpoint, query, folder, file_name)
+            else:
+                for query, file_name in query_data.values():
+                    await save_test_data(endpoint, query, folder, file_name)
 
 
 if __name__ == "__main__":
@@ -59,7 +68,15 @@ if __name__ == "__main__":
         default=False,
         help="Save basic test data",
     )
+    parser.add_argument(
+        "-t",
+        "--test",
+        type=str,
+        required=False,
+        default=None,
+        help="Specific test to save",
+    )
 
     args = parser.parse_args()
 
-    asyncio.run(main(args.raw, args.nice, args.basic))
+    asyncio.run(main(args.raw, args.nice, args.basic, args.test))
