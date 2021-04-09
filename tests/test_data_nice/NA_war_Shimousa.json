@@ -1135,7 +1135,7 @@
             }
           ],
           "phases": [1, 2],
-          "phasesWithEnemies": [],
+          "phasesWithEnemies": [1, 2],
           "phasesNoBattle": [],
           "noticeAt": 1509645600,
           "openedAt": 1509645600,
