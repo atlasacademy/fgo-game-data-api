@@ -10,6 +10,7 @@ from ...models.raw import (
     mstGift,
     mstQuest,
     mstQuestConsumeItem,
+    mstQuestMessage,
     mstQuestPhase,
     mstQuestPhaseDetail,
     mstQuestRelease,
@@ -126,6 +127,13 @@ def get_quest_phase_entity(
             ),
         )
         .outerjoin(
+            mstQuestMessage,
+            and_(
+                mstQuest.c.id == mstQuestMessage.c.questId,
+                mstQuestPhase.c.phase == mstQuestMessage.c.phase,
+            ),
+        )
+        .outerjoin(
             mstStage,
             and_(
                 mstQuest.c.id == mstStage.c.questId,
@@ -136,8 +144,8 @@ def get_quest_phase_entity(
         .outerjoin(
             ScriptFileList,
             and_(
-                ScriptFileList.c.questId == mstQuestPhase.c.questId,
-                ScriptFileList.c.phase == mstQuestPhase.c.phase,
+                mstQuest.c.id == ScriptFileList.c.questId,
+                mstQuestPhase.c.phase == ScriptFileList.c.phase,
             ),
         )
     )
@@ -154,6 +162,7 @@ def get_quest_phase_entity(
         func.to_jsonb(mstQuestPhaseDetail.table_valued()).label(
             mstQuestPhaseDetail.name
         ),
+        sql_jsonb_agg(mstQuestMessage),
         func.array_remove(
             func.array_agg(ScriptFileList.c.scriptFileName.distinct()), None
         ).label("scripts"),

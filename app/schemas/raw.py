@@ -1025,6 +1025,18 @@ class MstQuestPhaseDetail(BaseModelORJson):
     flag: int
 
 
+class MstQuestMessage(BaseModelORJson):
+    questId: int
+    phase: int
+    idx: int
+    message: str
+    condType: int
+    targetId: int
+    targetNum: int
+    frequencyType: int
+    displayType: int
+
+
 class MstStage(BaseModelORJson):
     npcDeckIds: list[int]  # [2, 1000]
     script: dict[str, Any]  # {}
@@ -1191,6 +1203,7 @@ class QuestEntity(BaseModelORJson):
 class QuestPhaseEntity(QuestEntity):
     mstQuestPhase: MstQuestPhase
     mstQuestPhaseDetail: Optional[MstQuestPhaseDetail] = None
+    mstQuestMessage: list[MstQuestMessage] = []
     scripts: list[str]
     mstStage: list[MstStage]
     mstBgm: list[MstBgm]

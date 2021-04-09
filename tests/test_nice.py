@@ -548,3 +548,8 @@ class TestServantSpecial:
         lb2_main_quest = (await get_response("/nice/NA/quest/3000202/3")).json()
         assert lb2_main_quest["scripts"][0].endswith("Script/03/0300020230.txt")
         assert lb2_main_quest["scripts"][1].endswith("Script/03/0300020231.txt")
+
+    async def test_quest_message(self) -> None:
+        babylonia_reflection_3 = await get_response("/nice/NA/quest/94042403/1")
+        idxs = [message["idx"] for message in babylonia_reflection_3.json()["messages"]]
+        assert idxs == [0, 1, 2, 3]

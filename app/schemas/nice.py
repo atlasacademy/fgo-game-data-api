@@ -1372,6 +1372,14 @@ class NiceStage(BaseModelORJson):
     enemies: list[QuestEnemy] = []
 
 
+class NiceQuestMessage(BaseModelORJson):
+    idx: int
+    message: str
+    condType: NiceCondType
+    targetId: int
+    targetNum: int
+
+
 class NiceQuestPhase(NiceQuest):
     phase: int
     className: list[SvtClass]
@@ -1380,6 +1388,7 @@ class NiceQuestPhase(NiceQuest):
     exp: int
     bond: int
     scripts: list[HttpUrl]
+    messages: list[NiceQuestMessage]
     stages: list[NiceStage]
 
 

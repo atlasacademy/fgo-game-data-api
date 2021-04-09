@@ -1069,6 +1069,21 @@ mstQuest = Table(
 )
 
 
+mstQuestMessage = Table(
+    "mstQuestMessage",
+    metadata,
+    Column("questId", Integer),
+    Column("phase", Integer),
+    Column("idx", Integer),
+    Column("message", String),
+    Column("condType", Integer),
+    Column("targetId", Integer),
+    Column("targetNum", Integer),
+    Column("frequencyType", Integer),
+    Column("displayType", Integer),
+)
+
+
 mstQuestRelease = Table(
     "mstQuestRelease",
     metadata,
@@ -1221,6 +1236,7 @@ TABLES_TO_BE_LOADED = [
     mstMap,
     mstSpot,
     mstQuest,
+    mstQuestMessage,
     mstClosedMessage,
     mstAiAct,
     mstEvent,

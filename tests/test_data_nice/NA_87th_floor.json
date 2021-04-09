@@ -41,6 +41,7 @@
   "exp": 15690,
   "bond": 615,
   "scripts": [],
+  "messages": [],
   "stages": [
     {
       "wave": 1,

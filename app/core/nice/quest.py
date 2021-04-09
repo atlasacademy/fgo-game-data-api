@@ -14,6 +14,7 @@ from ...schemas.gameenums import (
 )
 from ...schemas.nice import (
     NiceQuest,
+    NiceQuestMessage,
     NiceQuestPhase,
     NiceQuestRelease,
     NiceStage,
@@ -22,6 +23,7 @@ from ...schemas.nice import (
 from ...schemas.raw import (
     MstBgm,
     MstClosedMessage,
+    MstQuestMessage,
     MstQuestRelease,
     MstStage,
     QuestEntity,
@@ -53,6 +55,16 @@ def get_nice_quest_release(
         targetId=raw_quest_release.targetId,
         value=raw_quest_release.value,
         closedMessage=closed_message.message if closed_message else "",
+    )
+
+
+def get_nice_quest_message(message: MstQuestMessage) -> NiceQuestMessage:
+    return NiceQuestMessage(
+        idx=message.idx,
+        message=message.message,
+        condType=COND_TYPE_NAME[message.condType],
+        targetId=message.targetId,
+        targetNum=message.targetNum,
     )
 
 
@@ -144,6 +156,12 @@ async def get_nice_quest_phase(
         "bond": raw_quest.mstQuestPhase.friendshipExp,
         "scripts": [
             get_script_url(region, script) for script in sorted(raw_quest.scripts)
+        ],
+        "messages": [
+            get_nice_quest_message(message)
+            for message in sorted(
+                raw_quest.mstQuestMessage, key=lambda script: script.idx
+            )
         ],
         "stages": [
             get_nice_stage(region, stage, enemies, raw_quest.mstBgm)

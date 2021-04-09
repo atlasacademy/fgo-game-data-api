@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## 5.55.0 - 2020-04-08
 ### Added
 - Script assets to nice quest phase, war and shop.
+- Quest messages to nice quest phase
 
 ## 5.54.2 - 2020-03-23
 ### Added
