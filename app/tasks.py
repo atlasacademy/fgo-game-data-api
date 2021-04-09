@@ -262,8 +262,8 @@ def pull_and_update(
     time.sleep(settings.github_webhook_sleep)
     if settings.github_webhook_git_pull:
         for gamedata in region_path.values():
-            if (gamedata.parent / ".git").exists():
-                repo = Repo(gamedata.parent)
+            if (gamedata / ".git").exists():
+                repo = Repo(gamedata)
                 for fetch_info in repo.remotes[0].pull():
                     commit_hash = fetch_info.commit.hexsha[:6]
                     logger.info(f"Updated {fetch_info.ref} to {commit_hash}")
