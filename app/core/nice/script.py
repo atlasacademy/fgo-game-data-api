@@ -3,7 +3,7 @@ from pydantic.tools import parse_obj_as
 
 from ...config import Settings
 from ...schemas.common import Region
-from ...schemas.nice import AssetURL
+from ...schemas.nice import AssetURL, NiceQuestScript
 
 
 settings = Settings()
@@ -22,4 +22,12 @@ def get_script_url(region: Region, script_file_name: str) -> HttpUrl:
         base_url=settings.asset_url, region=region, script_path=script_path
     )
 
-    return parse_obj_as(HttpUrl, url)  # type: ignore
+    out_url: HttpUrl = parse_obj_as(HttpUrl, url)
+
+    return out_url
+
+
+def get_nice_quest_script(region: Region, script_file_name: str) -> NiceQuestScript:
+    return NiceQuestScript(
+        scriptId=script_file_name, script=get_script_url(region, script_file_name)
+    )

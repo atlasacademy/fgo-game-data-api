@@ -1032,6 +1032,7 @@ class NiceShop(BaseModelORJson):
     defaultLv: int
     defaultLimitCount: int
     scriptName: Optional[str] = None
+    scriptId: Optional[str] = None
     script: Optional[HttpUrl] = None
     openedAt: int
     closedAt: int
@@ -1380,6 +1381,11 @@ class NiceQuestMessage(BaseModelORJson):
     targetNum: int
 
 
+class NiceQuestScript(BaseModelORJson):
+    scriptId: str
+    script: HttpUrl
+
+
 class NiceQuestPhase(NiceQuest):
     phase: int
     className: list[SvtClass]
@@ -1387,7 +1393,7 @@ class NiceQuestPhase(NiceQuest):
     qp: int
     exp: int
     bond: int
-    scripts: list[HttpUrl]
+    scripts: list[NiceQuestScript]
     messages: list[NiceQuestMessage]
     stages: list[NiceStage]
 

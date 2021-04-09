@@ -35,7 +35,7 @@ from .bgm import get_nice_bgm
 from .enemy import get_quest_enemies
 from .gift import get_nice_gift
 from .item import get_nice_item_amount
-from .script import get_script_url
+from .script import get_nice_quest_script
 
 
 settings = Settings()
@@ -155,7 +155,8 @@ async def get_nice_quest_phase(
         "exp": raw_quest.mstQuestPhase.playerExp,
         "bond": raw_quest.mstQuestPhase.friendshipExp,
         "scripts": [
-            get_script_url(region, script) for script in sorted(raw_quest.scripts)
+            get_nice_quest_script(region, script)
+            for script in sorted(raw_quest.scripts)
         ],
         "messages": [
             get_nice_quest_message(message)

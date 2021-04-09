@@ -542,12 +542,12 @@ class TestServantSpecial:
         valentine_2020 = await get_response("/nice/NA/event/80233")
         yu_mei_ren_shop = valentine_2020.json()["shop"][229]
         assert yu_mei_ren_shop["scriptName"] == "Modern Return Sweets"
-        assert yu_mei_ren_shop["script"].endswith("Script/94/9403/9403353120.txt")
+        assert yu_mei_ren_shop["scriptId"] == "9403353120"
 
     async def test_quest_script(self) -> None:
-        lb2_main_quest = (await get_response("/nice/NA/quest/3000202/3")).json()
-        assert lb2_main_quest["scripts"][0].endswith("Script/03/0300020230.txt")
-        assert lb2_main_quest["scripts"][1].endswith("Script/03/0300020231.txt")
+        lb2_main_quest = await get_response("/nice/NA/quest/3000202/3")
+        scriptIds = [script["scriptId"] for script in lb2_main_quest.json()["scripts"]]
+        assert scriptIds == ["0300020230", "0300020231"]
 
     async def test_quest_message(self) -> None:
         babylonia_reflection_3 = await get_response("/nice/NA/quest/94042403/1")

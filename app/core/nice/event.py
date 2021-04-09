@@ -126,6 +126,7 @@ def get_nice_shop(
     if shop.id in shop_scripts:
         shop_script = shop_scripts[shop.id]
         nice_shop.scriptName = shop_script.name
+        nice_shop.scriptId = shop_script.scriptId
         nice_shop.script = get_script_url(region, shop_script.scriptId)
 
     return nice_shop
