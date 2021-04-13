@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.56.0 - 2020-04-12
+### Added
+- `attribute` to basic servant.
+
 ## 5.55.0 - 2020-04-08
 ### Added
 - Script assets to nice quest phase, war and shop.

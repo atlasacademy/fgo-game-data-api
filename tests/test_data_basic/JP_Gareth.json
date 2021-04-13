@@ -5,6 +5,7 @@
   "type": "normal",
   "flag": "normal",
   "className": "lancer",
+  "attribute": "earth",
   "rarity": 2,
   "atkMax": 5413,
   "hpMax": 9537,

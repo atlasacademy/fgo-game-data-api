@@ -553,10 +553,10 @@ def get_ai_entities(
     else:
         ais = ai.get_svt_ai_entity(conn, ai_id)
 
-    if ais or not throw_error:
-        return ais
-    else:
+    if not ais and throw_error:
         raise HTTPException(status_code=404, detail="AI not found")
+
+    return ais
 
 
 def get_ai_collection(

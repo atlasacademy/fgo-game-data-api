@@ -39,6 +39,7 @@
           "type": "servantEquip",
           "flag": "normal",
           "className": "ALL",
+          "attribute": "sky",
           "rarity": 4,
           "atkMax": 100,
           "hpMax": 100,

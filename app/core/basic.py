@@ -24,6 +24,7 @@ from ..schemas.basic import (
 )
 from ..schemas.common import Language, NiceBuffScript, Region, ReverseDepth
 from ..schemas.enums import (
+    ATTRIBUTE_NAME,
     CLASS_NAME,
     FUNC_APPLYTARGET_NAME,
     FUNC_VALS_NOT_BUFF,
@@ -271,6 +272,7 @@ def get_basic_svt(
         "flag": SVT_FLAG_NAME[mstSvt.flag],
         "name": mstSvt.name,
         "className": CLASS_NAME[mstSvt.classId],
+        "attribute": ATTRIBUTE_NAME[mstSvt.attri],
         "rarity": mstSvtLimit.rarity,
         "atkMax": mstSvtLimit.atkMax,
         "hpMax": mstSvtLimit.hpMax,

@@ -86,10 +86,8 @@ def get_nice_quest(
     raw_quest: Union[QuestEntity, QuestPhaseEntity],
     war_id: Optional[int] = None,
 ) -> dict[str, Any]:
-    if war_id:
-        warId = war_id
-    else:
-        warId = war.get_war_from_spot(conn, raw_quest.mstQuest.spotId)
+    if not war_id:
+        war_id = war.get_war_from_spot(conn, raw_quest.mstQuest.spotId)
 
     nice_data: dict[str, Any] = {
         "id": raw_quest.mstQuest.id,
@@ -105,7 +103,7 @@ def get_nice_quest(
         ],
         "consume": raw_quest.mstQuest.actConsume,
         "spotId": raw_quest.mstQuest.spotId,
-        "warId": warId,
+        "warId": war_id,
         "gifts": [get_nice_gift(gift) for gift in raw_quest.mstGift],
         "releaseConditions": [
             get_nice_quest_release(release, raw_quest.mstClosedMessage)

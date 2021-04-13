@@ -110,14 +110,14 @@ if __name__ == "__main__":
     if args.jp_master:
         jp_path = Path(args.jp_master).resolve()
     elif os.getenv("JP_GAMEDATA"):
-        jp_path = Path(str(os.getenv("JP_GAMEDATA"))).resolve()
+        jp_path = Path(str(os.getenv("JP_GAMEDATA"))).resolve() / "master"
     else:
         raise KeyError("JP_GAMEDATA not found")
 
     if args.na_master:
         na_path = Path(args.na_master).resolve()
     elif os.getenv("NA_GAMEDATA"):
-        na_path = Path(str(os.getenv("NA_GAMEDATA"))).resolve()
+        na_path = Path(str(os.getenv("NA_GAMEDATA"))).resolve() / "master"
     else:
         raise KeyError("NA_GAMEDATA not found")
 

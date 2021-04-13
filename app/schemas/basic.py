@@ -4,7 +4,7 @@ from pydantic import HttpUrl
 
 from .base import BaseModelORJson
 from .common import MCAssets, NiceBuffScript, NiceTrait
-from .enums import FuncApplyTarget, SvtClass
+from .enums import Attribute, FuncApplyTarget, SvtClass
 from .gameenums import (
     NiceBuffType,
     NiceEventType,
@@ -58,6 +58,7 @@ class BasicServant(BaseModelORJson):
     type: NiceSvtType
     flag: NiceSvtFlag
     className: SvtClass
+    attribute: Attribute
     rarity: int
     atkMax: int
     hpMax: int

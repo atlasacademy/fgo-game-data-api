@@ -116,6 +116,7 @@
                             "type": "normal",
                             "flag": "normal",
                             "className": "caster",
+                            "attribute": "star",
                             "rarity": 5,
                             "atkMax": 10546,
                             "hpMax": 14406,

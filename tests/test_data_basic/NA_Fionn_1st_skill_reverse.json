@@ -13,6 +13,7 @@
           "type": "normal",
           "flag": "normal",
           "className": "lancer",
+          "attribute": "sky",
           "rarity": 4,
           "atkMax": 8930,
           "hpMax": 12750,

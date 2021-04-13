@@ -84,6 +84,7 @@
           "type": "normal",
           "flag": "normal",
           "className": "saber",
+          "attribute": "earth",
           "rarity": 4,
           "atkMax": 8181,
           "hpMax": 14165,

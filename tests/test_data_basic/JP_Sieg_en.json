@@ -5,6 +5,7 @@
   "type": "normal",
   "flag": "ignoreCombineLimitSpecial",
   "className": "caster",
+  "attribute": "human",
   "rarity": 4,
   "atkMax": 8394,
   "hpMax": 11288,

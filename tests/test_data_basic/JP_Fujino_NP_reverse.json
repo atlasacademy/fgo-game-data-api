@@ -12,6 +12,7 @@
           "type": "normal",
           "flag": "normal",
           "className": "archer",
+          "attribute": "human",
           "rarity": 4,
           "atkMax": 10299,
           "hpMax": 11025,

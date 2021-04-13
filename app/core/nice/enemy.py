@@ -183,11 +183,13 @@ def get_quest_enemy(
     all_enemy_tds: MultipleNiceTds,
     lang: Language = Language.jp,
 ) -> QuestEnemy:
+    deck_svt = deck_svt_info.deck
     basic_svt = get_basic_servant(region, user_svt.svtId, lang)
+
     if user_svt.npcSvtClassId != 0:
         basic_svt.className = CLASS_NAME[user_svt.npcSvtClassId]
-
-    deck_svt = deck_svt_info.deck
+    if deck_svt.enemyScript and "changeAttri" in deck_svt.enemyScript:
+        basic_svt.attribute = ATTRIBUTE_NAME[deck_svt.enemyScript["changeAttri"]]
 
     return QuestEnemy(
         deck=deck_svt_info.deckType,
