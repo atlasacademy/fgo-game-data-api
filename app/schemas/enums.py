@@ -251,6 +251,7 @@ class Attribute(str, Enum):
     earth = "earth"
     star = "star"
     beast = "beast"
+    void = "void"
 
 
 ATTRIBUTE_NAME: dict[int, Attribute] = {
@@ -259,6 +260,7 @@ ATTRIBUTE_NAME: dict[int, Attribute] = {
     3: Attribute.earth,
     4: Attribute.star,
     5: Attribute.beast,
+    10: Attribute.void,
 }
 
 
