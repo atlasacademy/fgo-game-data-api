@@ -1,4 +1,5 @@
-from typing import Iterable, Optional, Type, TypeVar, Union
+# pylint: disable=unsubscriptable-object
+from typing import Any, Iterable, Optional, Type, TypeVar, Union
 
 from sqlalchemy import Column, Table
 from sqlalchemy.engine import Connection
@@ -96,7 +97,7 @@ from ...schemas.raw import (
 )
 
 
-schema_map_fetchone: dict[Type[BaseModelORJson], tuple[Table, Column]] = {  # type: ignore
+schema_map_fetchone: dict[Type[BaseModelORJson], tuple[Table, Column[Any]]] = {
     MstSvt: (mstSvt, mstSvt.c.id),
     MstCv: (mstCv, mstCv.c.id),
     MstIllustrator: (mstIllustrator, mstIllustrator.c.id),
@@ -122,7 +123,9 @@ def get_one(
     return None
 
 
-schema_table_fetch_all: dict[Type[BaseModelORJson], tuple[Table, Column, Column]] = {  # type: ignore
+schema_table_fetch_all: dict[
+    Type[BaseModelORJson], tuple[Table, Column[Any], Column[Any]]
+] = {
     MstSvtCard: (mstSvtCard, mstSvtCard.c.svtId, mstSvtCard.c.cardId),
     MstSvtLimit: (mstSvtLimit, mstSvtLimit.c.svtId, mstSvtLimit.c.limitCount),
     MstCombineSkill: (mstCombineSkill, mstCombineSkill.c.id, mstCombineSkill.c.skillLv),
@@ -197,7 +200,9 @@ def get_all(
     return [schema.from_orm(db_row) for db_row in conn.execute(stmt).fetchall()]
 
 
-schema_table_fetch_all_multiple: dict[Type[BaseModelORJson], tuple[Table, Column, Column]] = {  # type: ignore
+schema_table_fetch_all_multiple: dict[
+    Type[BaseModelORJson], tuple[Table, Column[Any], Column[Any]]
+] = {
     MstSpot: (mstSpot, mstSpot.c.mapId, mstSpot.c.id),
     MstVoice: (mstVoice, mstVoice.c.id, mstVoice.c.id),
     MstSvtGroup: (mstSvtGroup, mstSvtGroup.c.id, mstSvtGroup.c.svtId),

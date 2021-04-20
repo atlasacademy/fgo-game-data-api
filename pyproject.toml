@@ -11,12 +11,12 @@ uvicorn = {extras = ["standard"], version = "^0.13.4"}
 python-dotenv = "^0.17.0"
 fuzzywuzzy = "^0.18.0"
 python-Levenshtein = "^0.12.2"
-orjson = "^3.5.1"
+orjson = "^3.5.2"
 aiofiles = "^0.6.0"
 GitPython = "^3.1.14"
 toml = "^0.10.2"
 redis = "^3.5.3"
-SQLAlchemy = "^1.4.7"
+SQLAlchemy = "^1.4.9"
 psycopg2 = "^2.8.6"
 httpx = "^0.17.1"
 
@@ -31,7 +31,7 @@ fuzzywuzzy-stubs = "^0.0.1"
 isort = "^5.8.0"
 sqlalchemy-stubs = {git = "https://github.com/squaresmile/sqlalchemy-stubs.git"}
 sqlalchemy2-stubs = "^0.0.1-alpha.4"
-pytest-asyncio = "^0.14.0"
+pytest-asyncio = "^0.15.0"
 
 [tool.isort]
 line_length = 88

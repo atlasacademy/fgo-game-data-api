@@ -208,7 +208,7 @@ def update_masters(region_path: dict[Region, DirectoryPath]) -> None:
                 for event in master["mstEvent"]
                 if VALENTINE_NAME[region_name] in event["name"]
             ),
-            key=lambda event: event["startedAt"],  # type: ignore
+            key=lambda event: int(event["startedAt"]),
         )["id"]
         # Find Valentince CE's owner by looking at which servant unlock the shop entries
         for shop in master["mstShopEventId"][latest_valentine_event_id]:
