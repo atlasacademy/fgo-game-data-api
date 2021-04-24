@@ -211,6 +211,7 @@ mstTreasureDeviceLv = Table(
     Column("svals5", ARRAY(String)),
     Column("treaureDeviceId", Integer, index=True),
     Column("lv", Integer),
+    Column("script", JSONB),
     Column("gaugeCount", Integer),
     Column("detailId", Integer),
     Column("tdPoint", Integer, index=True),

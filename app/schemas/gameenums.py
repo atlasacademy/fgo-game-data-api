@@ -164,6 +164,7 @@ class FuncType(IntEnum):
     FORCE_ALL_BUFF_NOACT = 58
     BREAK_GAUGE_UP = 59
     BREAK_GAUGE_DOWN = 60
+    MOVE_TO_LAST_SUBMEMBER = 61
     EXP_UP = 101
     QP_UP = 102
     DROP_UP = 103
@@ -188,6 +189,7 @@ class FuncType(IntEnum):
     DAMAGE_VALUE_SAFE = 122
     FRIEND_POINT_UP_DUPLICATE = 123
     MOVE_STATE = 124
+    CHANGE_BGM_COSTUME = 125
 
 
 class NiceFuncType(str, Enum):
@@ -254,6 +256,7 @@ class NiceFuncType(str, Enum):
     forceAllBuffNoact = "forceAllBuffNoact"
     breakGaugeUp = "breakGaugeUp"
     breakGaugeDown = "breakGaugeDown"
+    moveToLastSubmember = "moveToLastSubmember"
     expUp = "expUp"
     qpUp = "qpUp"
     dropUp = "dropUp"
@@ -278,6 +281,7 @@ class NiceFuncType(str, Enum):
     damageValueSafe = "damageValueSafe"
     friendPointUpDuplicate = "friendPointUpDuplicate"
     moveState = "moveState"
+    changeBgmCostume = "changeBgmCostume"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -342,6 +346,7 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     58: NiceFuncType.forceAllBuffNoact,
     59: NiceFuncType.breakGaugeUp,
     60: NiceFuncType.breakGaugeDown,
+    61: NiceFuncType.moveToLastSubmember,
     101: NiceFuncType.expUp,
     102: NiceFuncType.qpUp,
     103: NiceFuncType.dropUp,
@@ -366,6 +371,7 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     122: NiceFuncType.damageValueSafe,
     123: NiceFuncType.friendPointUpDuplicate,
     124: NiceFuncType.moveState,
+    125: NiceFuncType.changeBgmCostume,
 }
 
 
@@ -1318,6 +1324,11 @@ class DataValsType(IntEnum):
     CardIndex = 66
     CardIndividuality = 67
     WarBoardTakeOverBuff = 68
+    ParamAddSelfIndividuality = 69
+    ParamAddOpIndividuality = 70
+    ParamAddFieldIndividuality = 71
+    ParamAddValue = 72
+    MultipleGainStar = 73
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -1500,6 +1511,7 @@ class ShopType(IntEnum):
     BGM = 8
     LIMIT_MATERIAL = 9
     GRAIL_FRAGMENTS = 10
+    SHOP04 = 11
 
 
 class NiceShopType(str, Enum):
@@ -1516,6 +1528,7 @@ class NiceShopType(str, Enum):
     bgm = "bgm"
     limitMaterial = "limitMaterial"
     grailFragments = "grailFragments"
+    shop04 = "shop04"
 
 
 SHOP_TYPE_NAME: dict[int, NiceShopType] = {
@@ -1530,6 +1543,7 @@ SHOP_TYPE_NAME: dict[int, NiceShopType] = {
     8: NiceShopType.bgm,
     9: NiceShopType.limitMaterial,
     10: NiceShopType.grailFragments,
+    11: NiceShopType.shop04,
 }
 
 
@@ -1546,6 +1560,7 @@ class PayType(IntEnum):
     RARE_PRI = 10
     ITEM = 11
     GRAIL_FRAGMENTS = 12
+    FREE = 13
 
 
 class NicePayType(str, Enum):
@@ -1563,6 +1578,7 @@ class NicePayType(str, Enum):
     rarePri = "rarePri"
     item = "item"
     grailFragments = "grailFragments"
+    free = "free"
 
 
 PAY_TYPE_NAME: dict[int, NicePayType] = {
@@ -1578,6 +1594,7 @@ PAY_TYPE_NAME: dict[int, NicePayType] = {
     10: NicePayType.rarePri,
     11: NicePayType.item,
     12: NicePayType.grailFragments,
+    13: NicePayType.free,
 }
 
 
@@ -2436,6 +2453,8 @@ class QuestFlag(IntEnum):
     HARVEST = 4503599627370496
     RECONSTRUCTION = 9007199254740992
     ENEMY_IMMEDIATE_APPEAR = 18014398509481984
+    NO_SUPPORT_LIST = 36028797018963968
+    LIVE = 72057594037927936
 
 
 class NiceQuestFlag(str, Enum):
@@ -2495,6 +2514,8 @@ class NiceQuestFlag(str, Enum):
     harvest = "harvest"
     reconstruction = "reconstruction"
     enemyImmediateAppear = "enemyImmediateAppear"
+    noSupportList = "noSupportList"
+    live = "live"
 
 
 Quest_FLAG_NAME: dict[int, NiceQuestFlag] = {
@@ -2552,6 +2573,8 @@ Quest_FLAG_NAME: dict[int, NiceQuestFlag] = {
     4503599627370496: NiceQuestFlag.harvest,
     9007199254740992: NiceQuestFlag.reconstruction,
     18014398509481984: NiceQuestFlag.enemyImmediateAppear,
+    36028797018963968: NiceQuestFlag.noSupportList,
+    72057594037927936: NiceQuestFlag.live,
 }
 
 
@@ -2676,6 +2699,7 @@ class EventType(IntEnum):
     COMEBACK_CAMPAIGN = 19
     LOCATION_CAMPAIGN = 20
     WAR_BOARD = 22
+    COMBINE_COSUTUME_ITEM = 23
 
 
 class NiceEventType(str, Enum):
@@ -2703,6 +2727,7 @@ class NiceEventType(str, Enum):
     comebackCampaign = "comebackCampaign"
     locationCampaign = "locationCampaign"
     warBoard = "warBoard"
+    combineCosutumeItem = "combineCosutumeItem"
 
 
 EVENT_TYPE_NAME: dict[int, NiceEventType] = {
@@ -2728,6 +2753,7 @@ EVENT_TYPE_NAME: dict[int, NiceEventType] = {
     19: NiceEventType.comebackCampaign,
     20: NiceEventType.locationCampaign,
     22: NiceEventType.warBoard,
+    23: NiceEventType.combineCosutumeItem,
 }
 
 
@@ -2826,6 +2852,7 @@ class WarOverwriteType(IntEnum):
     MATERIAL_PARENT_WAR = 10
     COORDINATES = 11
     EFFECT_CHANGE_BLACK_MARK = 12
+    QUEST_BOARD_SECTION_IMAGE = 13
 
 
 class NiceWarOverwriteType(str, Enum):
@@ -2843,6 +2870,7 @@ class NiceWarOverwriteType(str, Enum):
     materialParentWar = "materialParentWar"
     coordinates = "coordinates"
     effectChangeBlackMark = "effectChangeBlackMark"
+    questBoardSectionImage = "questBoardSectionImage"
 
 
 WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
@@ -2858,6 +2886,7 @@ WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
     10: NiceWarOverwriteType.materialParentWar,
     11: NiceWarOverwriteType.coordinates,
     12: NiceWarOverwriteType.effectChangeBlackMark,
+    13: NiceWarOverwriteType.questBoardSectionImage,
 }
 
 
@@ -2972,6 +3001,24 @@ class AiCond(IntEnum):
     PT_FRONT_DEAD_EQUAL = 147
     PT_CENTER_DEAD_EQUAL = 148
     PT_BACK_DEAD_EQUAL = 149
+    COUNT_HIGHER_INDIVIDUALITY_PT_FRONT = 150
+    COUNT_HIGHER_INDIVIDUALITY_PT_CENTER = 151
+    COUNT_HIGHER_INDIVIDUALITY_PT_BACK = 152
+    COUNT_HIGHER_INDIVIDUALITY_OPPONENT_FRONT = 153
+    COUNT_HIGHER_INDIVIDUALITY_OPPONENT_CENTER = 154
+    COUNT_HIGHER_INDIVIDUALITY_OPPONENT_BACK = 155
+    COUNT_LOWER_INDIVIDUALITY_PT_FRONT = 156
+    COUNT_LOWER_INDIVIDUALITY_PT_CENTER = 157
+    COUNT_LOWER_INDIVIDUALITY_PT_BACK = 158
+    COUNT_LOWER_INDIVIDUALITY_OPPONENT_FRONT = 159
+    COUNT_LOWER_INDIVIDUALITY_OPPONENT_CENTER = 160
+    COUNT_LOWER_INDIVIDUALITY_OPPONENT_BACK = 161
+    COUNT_EQUAL_INDIVIDUALITY_PT_FRONT = 162
+    COUNT_EQUAL_INDIVIDUALITY_PT_CENTER = 163
+    COUNT_EQUAL_INDIVIDUALITY_PT_BACK = 164
+    COUNT_EQUAL_INDIVIDUALITY_OPPONENT_FRONT = 165
+    COUNT_EQUAL_INDIVIDUALITY_OPPONENT_CENTER = 166
+    COUNT_EQUAL_INDIVIDUALITY_OPPONENT_BACK = 167
 
 
 class NiceAiCond(str, Enum):
@@ -3101,6 +3148,24 @@ class NiceAiCond(str, Enum):
     ptFrontDeadEqual = "ptFrontDeadEqual"
     ptCenterDeadEqual = "ptCenterDeadEqual"
     ptBackDeadEqual = "ptBackDeadEqual"
+    countHigherIndividualityPtFront = "countHigherIndividualityPtFront"
+    countHigherIndividualityPtCenter = "countHigherIndividualityPtCenter"
+    countHigherIndividualityPtBack = "countHigherIndividualityPtBack"
+    countHigherIndividualityOpponentFront = "countHigherIndividualityOpponentFront"
+    countHigherIndividualityOpponentCenter = "countHigherIndividualityOpponentCenter"
+    countHigherIndividualityOpponentBack = "countHigherIndividualityOpponentBack"
+    countLowerIndividualityPtFront = "countLowerIndividualityPtFront"
+    countLowerIndividualityPtCenter = "countLowerIndividualityPtCenter"
+    countLowerIndividualityPtBack = "countLowerIndividualityPtBack"
+    countLowerIndividualityOpponentFront = "countLowerIndividualityOpponentFront"
+    countLowerIndividualityOpponentCenter = "countLowerIndividualityOpponentCenter"
+    countLowerIndividualityOpponentBack = "countLowerIndividualityOpponentBack"
+    countEqualIndividualityPtFront = "countEqualIndividualityPtFront"
+    countEqualIndividualityPtCenter = "countEqualIndividualityPtCenter"
+    countEqualIndividualityPtBack = "countEqualIndividualityPtBack"
+    countEqualIndividualityOpponentFront = "countEqualIndividualityOpponentFront"
+    countEqualIndividualityOpponentCenter = "countEqualIndividualityOpponentCenter"
+    countEqualIndividualityOpponentBack = "countEqualIndividualityOpponentBack"
 
 
 AI_COND_NAME: dict[int, NiceAiCond] = {
@@ -3214,6 +3279,24 @@ AI_COND_NAME: dict[int, NiceAiCond] = {
     147: NiceAiCond.ptFrontDeadEqual,
     148: NiceAiCond.ptCenterDeadEqual,
     149: NiceAiCond.ptBackDeadEqual,
+    150: NiceAiCond.countHigherIndividualityPtFront,
+    151: NiceAiCond.countHigherIndividualityPtCenter,
+    152: NiceAiCond.countHigherIndividualityPtBack,
+    153: NiceAiCond.countHigherIndividualityOpponentFront,
+    154: NiceAiCond.countHigherIndividualityOpponentCenter,
+    155: NiceAiCond.countHigherIndividualityOpponentBack,
+    156: NiceAiCond.countLowerIndividualityPtFront,
+    157: NiceAiCond.countLowerIndividualityPtCenter,
+    158: NiceAiCond.countLowerIndividualityPtBack,
+    159: NiceAiCond.countLowerIndividualityOpponentFront,
+    160: NiceAiCond.countLowerIndividualityOpponentCenter,
+    161: NiceAiCond.countLowerIndividualityOpponentBack,
+    162: NiceAiCond.countEqualIndividualityPtFront,
+    163: NiceAiCond.countEqualIndividualityPtCenter,
+    164: NiceAiCond.countEqualIndividualityPtBack,
+    165: NiceAiCond.countEqualIndividualityOpponentFront,
+    166: NiceAiCond.countEqualIndividualityOpponentCenter,
+    167: NiceAiCond.countEqualIndividualityOpponentBack,
 }
 
 

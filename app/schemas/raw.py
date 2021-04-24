@@ -182,6 +182,7 @@ class MstTreasureDeviceLv(BaseModelORJson):
     svals5: list[str]  # ["[1000,6000]", "[1000,3,-1,300]", "[5000,3,-1]"],
     treaureDeviceId: int  # 301102,
     lv: int  # 1,
+    script: Optional[dict[str, Any]] = None
     gaugeCount: int  # 1,
     detailId: int  # 301102,
     tdPoint: int  # 55,

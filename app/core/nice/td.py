@@ -43,6 +43,15 @@ def get_nice_td(
         "defence": [td_lv.tdPointDef for td_lv in tdEntity.mstTreasureDeviceLv],
     }
 
+    if tdEntity.mstTreasureDeviceLv[0].script:
+        nice_td["script"] = {
+            scriptKey: [
+                tdLv.script[scriptKey] if tdLv.script else None
+                for tdLv in tdEntity.mstTreasureDeviceLv
+            ]
+            for scriptKey in tdEntity.mstTreasureDeviceLv[0].script
+        }
+
     nice_td["functions"] = []
 
     for funci, _ in enumerate(tdEntity.mstTreasureDeviceLv[0].funcId):

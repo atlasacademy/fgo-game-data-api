@@ -197,6 +197,11 @@ class BaseVals(BaseModel):
     CardIndex: Optional[int] = None
     CardIndividuality: Optional[int] = None
     WarBoardTakeOverBuff: Optional[int] = None
+    ParamAddSelfIndividuality: Optional[list[int]] = None
+    ParamAddOpIndividuality: Optional[list[int]] = None
+    ParamAddFieldIndividuality: Optional[list[int]] = None
+    ParamAddValue: Optional[int] = None
+    MultipleGainStar: Optional[int] = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
@@ -427,6 +432,7 @@ class NiceTd(BaseModelORJson):
     condQuestId: int
     condQuestPhase: int
     individuality: list[NiceTrait]
+    script: Optional[NiceSkillScript] = None
     functions: list[NiceFunction]
 
 

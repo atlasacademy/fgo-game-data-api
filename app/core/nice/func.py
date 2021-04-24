@@ -38,6 +38,14 @@ FRIEND_SUPPORT_FUNCTIONS = {
     FuncType.QP_DROP_UP,
     FuncType.QP_UP,
 }
+LIST_DATAVALS = {
+    "TargetList",
+    "TargetRarityList",
+    "AndCheckIndividualityList",
+    "ParamAddSelfIndividuality",
+    "ParamAddOpIndividuality",
+    "ParamAddFieldIndividuality",
+}
 
 
 def parse_dataVals(
@@ -145,11 +153,7 @@ def parse_dataVals(
                         func_type = masters[region].mstFuncId[output["DependFuncId"]].funcType  # type: ignore
                         vals_value = parse_dataVals(array2[1], func_type, region)
                         output["DependFuncVals"] = vals_value  # type: ignore
-                    elif array2[0] in {
-                        "TargetList",
-                        "TargetRarityList",
-                        "AndCheckIndividualityList",
-                    }:
+                    elif array2[0] in LIST_DATAVALS:
                         try:
                             output[array2[0]] = [int(i) for i in array2[1].split("/")]
                         except ValueError:
