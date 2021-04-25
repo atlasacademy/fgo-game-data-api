@@ -51,6 +51,8 @@ def get_nice_td(
             ]
             for scriptKey in tdEntity.mstTreasureDeviceLv[0].script
         }
+    else:
+        nice_td["script"] = {}
 
     nice_td["functions"] = []
 

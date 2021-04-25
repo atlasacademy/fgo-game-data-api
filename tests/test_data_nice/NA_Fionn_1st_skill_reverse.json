@@ -1867,6 +1867,7 @@
                 { "id": 4001, "name": "cardArts" },
                 { "id": 4007, "name": "cardNP" }
               ],
+              "script": {},
               "functions": [
                 {
                   "funcId": 13,
@@ -2075,6 +2076,7 @@
                 { "id": 4001, "name": "cardArts" },
                 { "id": 4007, "name": "cardNP" }
               ],
+              "script": {},
               "functions": [
                 {
                   "funcId": 13,

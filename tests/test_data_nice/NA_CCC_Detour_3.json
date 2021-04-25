@@ -201,6 +201,7 @@
                 { "id": 3000, "name": "normalAttack0" },
                 { "id": 4007, "name": "cardNP" }
               ],
+              "script": {},
               "functions": [
                 {
                   "funcId": 12,
@@ -930,6 +931,7 @@
               "condQuestId": 0,
               "condQuestPhase": 0,
               "individuality": [],
+              "script": {},
               "functions": [
                 {
                   "funcId": 12,
@@ -1500,6 +1502,7 @@
               "condQuestId": 0,
               "condQuestPhase": 0,
               "individuality": [],
+              "script": {},
               "functions": [
                 {
                   "funcId": 12,
@@ -2116,6 +2119,7 @@
               "condQuestId": 0,
               "condQuestPhase": 0,
               "individuality": [],
+              "script": {},
               "functions": [
                 {
                   "funcId": 12,
@@ -2662,6 +2666,7 @@
               "condQuestId": 0,
               "condQuestPhase": 0,
               "individuality": [],
+              "script": {},
               "functions": [
                 {
                   "funcId": 12,
@@ -3232,6 +3237,7 @@
               "condQuestId": 0,
               "condQuestPhase": 0,
               "individuality": [],
+              "script": {},
               "functions": [
                 {
                   "funcId": 12,

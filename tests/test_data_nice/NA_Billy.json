@@ -1330,6 +1330,7 @@
         { "id": 4003, "name": "cardQuick" },
         { "id": 4007, "name": "cardNP" }
       ],
+      "script": {},
       "functions": [
         {
           "funcId": 288,
@@ -1601,6 +1602,7 @@
         { "id": 4003, "name": "cardQuick" },
         { "id": 4007, "name": "cardNP" }
       ],
+      "script": {},
       "functions": [
         {
           "funcId": 288,

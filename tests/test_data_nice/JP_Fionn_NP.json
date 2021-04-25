@@ -27,6 +27,7 @@
     { "id": 4007, "name": "cardNP" },
     { "id": 4101, "name": "aoeNP" }
   ],
+  "script": {},
   "functions": [
     {
       "funcId": 13,

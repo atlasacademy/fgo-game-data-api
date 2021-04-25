@@ -26,6 +26,7 @@
     { "id": 4002, "name": "cardBuster" },
     { "id": 4007, "name": "cardNP" }
   ],
+  "script": {},
   "functions": [
     {
       "funcId": 12,
@@ -1803,6 +1804,7 @@
                 { "id": 4002, "name": "cardBuster" },
                 { "id": 4007, "name": "cardNP" }
               ],
+              "script": {},
               "functions": [
                 {
                   "funcId": 12,

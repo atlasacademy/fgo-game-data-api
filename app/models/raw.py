@@ -468,8 +468,10 @@ mstSvtCostume = Table(
     Column("priority", Integer),
     Column("flag", Integer),
     Column("costumeCollectionNo", Integer),
+    Column("iconId", Integer),
     Column("openedAt", Integer),
     Column("endedAt", Integer),
+    Column("script", String),
 )
 
 

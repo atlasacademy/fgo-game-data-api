@@ -398,6 +398,7 @@
         { "id": 3001, "name": "normalAttack1" },
         { "id": 4007, "name": "cardNP" }
       ],
+      "script": {},
       "functions": [
         {
           "funcId": 13,

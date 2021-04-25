@@ -432,7 +432,7 @@ class NiceTd(BaseModelORJson):
     condQuestId: int
     condQuestPhase: int
     individuality: list[NiceTrait]
-    script: Optional[NiceSkillScript] = None
+    script: NiceSkillScript
     functions: list[NiceFunction]
 
 
