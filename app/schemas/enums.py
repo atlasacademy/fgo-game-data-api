@@ -682,6 +682,9 @@ class Trait(str, Enum):
     eventGuda5 = "eventGuda5"
     cursedBook = "cursedBook"
     buffCharmFemale = "buffCharmFemale"
+    mechanical = "mechanical"
+    fae = "fae"
+    hasCostume = "hasCostume"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -765,6 +768,7 @@ TRAIT_NAME: dict[int, Trait] = {
     1157: Trait.enemyHimejiCastleSkeletonAndScarecrow,
     1171: Trait.enemyGuda3MiniNobu,
     1172: Trait.threatToHumanity,
+    1177: Trait.fae,
     2000: Trait.divine,
     2001: Trait.humanoid,
     2002: Trait.dragon,
@@ -821,6 +825,8 @@ TRAIT_NAME: dict[int, Trait] = {
     2735: Trait.genji,
     2749: Trait.enemyLittleBigTenguTsuwamonoEnemy,
     2759: Trait.vengeance,  # Taira 2nd skill and NP
+    2780: Trait.hasCostume,
+    2781: Trait.mechanical,
     # 2xxx: CQ or Story quests buff
     3000: Trait.normalAttack0,  # Normal attack, including NP
     3001: Trait.normalAttack1,  # Haven't figured out the difference between the 3

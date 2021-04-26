@@ -1019,7 +1019,7 @@ class NiceShop(BaseModelORJson):
     payType: NicePayType = Field(
         ..., title="Payment Type", description="Type of items to be used as payment."
     )
-    cost: NiceItemAmount
+    cost: Optional[NiceItemAmount]
     purchaseType: NicePurchaseType = Field(
         ..., title="Reward Type", description="Type of items to be received."
     )

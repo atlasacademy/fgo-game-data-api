@@ -109,7 +109,9 @@ def get_nice_shop(
         infoMessage=shop.infoMessage,
         warningMessage=shop.warningMessage,
         payType=PAY_TYPE_NAME[shop.payType],
-        cost=NiceItemAmount(
+        cost=None
+        if shop.payType == PayType.FREE
+        else NiceItemAmount(
             item=get_nice_item(region, shop_item_id), amount=shop.prices[0]
         ),
         purchaseType=PURCHASE_TYPE_NAME[shop.purchaseType],
