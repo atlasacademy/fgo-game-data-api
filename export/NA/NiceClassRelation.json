@@ -16,7 +16,8 @@
     "beastI": 1000,
     "moonCancer": 1000,
     "beastIIIR": 1000,
-    "foreigner": 1000
+    "foreigner": 1000,
+    "beastIIIL": 1000
   },
   "archer": {
     "saber": 2000,
@@ -35,7 +36,8 @@
     "beastI": 1000,
     "moonCancer": 1000,
     "beastIIIR": 1000,
-    "foreigner": 1000
+    "foreigner": 1000,
+    "beastIIIL": 1000
   },
   "lancer": {
     "saber": 500,
@@ -54,7 +56,8 @@
     "beastI": 1000,
     "moonCancer": 1000,
     "beastIIIR": 1000,
-    "foreigner": 1000
+    "foreigner": 1000,
+    "beastIIIL": 1000
   },
   "rider": {
     "saber": 1000,
@@ -73,7 +76,8 @@
     "beastI": 2000,
     "moonCancer": 1000,
     "beastIIIR": 1000,
-    "foreigner": 1000
+    "foreigner": 1000,
+    "beastIIIL": 1000
   },
   "caster": {
     "saber": 1000,
@@ -92,7 +96,8 @@
     "beastI": 2000,
     "moonCancer": 1000,
     "beastIIIR": 1000,
-    "foreigner": 1000
+    "foreigner": 1000,
+    "beastIIIL": 1000
   },
   "assassin": {
     "saber": 1000,
@@ -111,7 +116,8 @@
     "beastI": 2000,
     "moonCancer": 1000,
     "beastIIIR": 1000,
-    "foreigner": 1000
+    "foreigner": 1000,
+    "beastIIIL": 1000
   },
   "berserker": {
     "saber": 1500,
@@ -130,7 +136,8 @@
     "beastI": 1500,
     "moonCancer": 1500,
     "beastIIIR": 1000,
-    "foreigner": 500
+    "foreigner": 500,
+    "beastIIIL": 1000
   },
   "shielder": {
     "saber": 1000,
@@ -149,7 +156,8 @@
     "beastI": 1000,
     "moonCancer": 1000,
     "beastIIIR": 1000,
-    "foreigner": 1000
+    "foreigner": 1000,
+    "beastIIIL": 1000
   },
   "ruler": {
     "saber": 1000,
@@ -168,7 +176,8 @@
     "beastI": 1000,
     "moonCancer": 2000,
     "beastIIIR": 1000,
-    "foreigner": 1000
+    "foreigner": 1000,
+    "beastIIIL": 1000
   },
   "alterEgo": {
     "saber": 500,
@@ -187,7 +196,8 @@
     "beastI": 1000,
     "moonCancer": 1000,
     "beastIIIR": 1200,
-    "foreigner": 2000
+    "foreigner": 2000,
+    "beastIIIL": 1200
   },
   "avenger": {
     "saber": 1000,
@@ -206,7 +216,8 @@
     "beastI": 1000,
     "moonCancer": 500,
     "beastIIIR": 1000,
-    "foreigner": 1000
+    "foreigner": 1000,
+    "beastIIIL": 1000
   },
   "demonGodPillar": {
     "saber": 2000,
@@ -225,7 +236,8 @@
     "beastI": 1000,
     "moonCancer": 1000,
     "beastIIIR": 1000,
-    "foreigner": 1000
+    "foreigner": 1000,
+    "beastIIIL": 1000
   },
   "beastII": {
     "saber": 1000,
@@ -244,7 +256,8 @@
     "beastI": 1000,
     "moonCancer": 1000,
     "beastIIIR": 1000,
-    "foreigner": 1000
+    "foreigner": 1000,
+    "beastIIIL": 1000
   },
   "beastI": {
     "saber": 2000,
@@ -263,7 +276,8 @@
     "beastI": 1000,
     "moonCancer": 1000,
     "beastIIIR": 1000,
-    "foreigner": 1000
+    "foreigner": 1000,
+    "beastIIIL": 1000
   },
   "moonCancer": {
     "saber": 1000,
@@ -282,7 +296,8 @@
     "beastI": 1000,
     "moonCancer": 1000,
     "beastIIIR": 1200,
-    "foreigner": 1000
+    "foreigner": 1000,
+    "beastIIIL": 1000
   },
   "beastIIIR": {
     "saber": 1000,
@@ -301,7 +316,8 @@
     "beastI": 1000,
     "moonCancer": 1000,
     "beastIIIR": 1000,
-    "foreigner": 1000
+    "foreigner": 1000,
+    "beastIIIL": 1000
   },
   "foreigner": {
     "saber": 1000,
@@ -320,6 +336,27 @@
     "beastI": 1000,
     "moonCancer": 1000,
     "beastIIIR": 1000,
-    "foreigner": 2000
+    "foreigner": 2000,
+    "beastIIIL": 1200
+  },
+  "beastIIIL": {
+    "saber": 1000,
+    "archer": 1000,
+    "lancer": 1000,
+    "rider": 1000,
+    "caster": 1000,
+    "assassin": 1000,
+    "berserker": 1000,
+    "shielder": 1000,
+    "ruler": 1000,
+    "alterEgo": 1000,
+    "avenger": 1000,
+    "demonGodPillar": 1000,
+    "beastII": 1000,
+    "beastI": 1000,
+    "moonCancer": 1000,
+    "beastIIIR": 1000,
+    "foreigner": 1000,
+    "beastIIIL": 1000
   }
 }

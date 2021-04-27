@@ -87,7 +87,7 @@
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": []
+    "maxRate": [10000]
   },
   "selfdamage": {
     "limit": "upper",
@@ -97,7 +97,7 @@
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": []
+    "maxRate": [5000]
   },
   "criticalDamage": {
     "limit": "upper",
