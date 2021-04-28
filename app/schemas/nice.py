@@ -1368,7 +1368,8 @@ class QuestEnemy(BaseModelORJson):
 
 
 class FieldAi(BaseModelORJson):
-    day: int
+    raid: Optional[int] = None
+    day: Optional[int] = None
     id: int
 
 
