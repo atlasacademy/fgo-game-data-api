@@ -12,7 +12,7 @@ from .basic import (
     BasicReversedSkillTd,
     BasicServant,
 )
-from .common import MCAssets, NiceBuffScript, NiceTrait
+from .common import MCAssets, NiceBuffScript, NiceTrait, StageLink
 from .enums import (
     AiTiming,
     AiType,
@@ -1502,3 +1502,4 @@ class NiceAi(BaseModelORJson):
 class NiceAiCollection(BaseModelORJson):
     mainAis: list[NiceAi]
     relatedAis: list[NiceAi]
+    relatedQuests: list[StageLink]

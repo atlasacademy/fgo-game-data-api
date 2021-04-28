@@ -84,4 +84,5 @@ def get_nice_ai_collection(
         relatedAis=(
             get_nice_ai(conn, region, ai, field, lang) for ai in full_ai.relatedAis
         ),
+        relatedQuests=full_ai.relatedQuests,
     )

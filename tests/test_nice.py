@@ -549,6 +549,11 @@ class TestServantSpecial:
         assert yu_mei_ren_shop["scriptName"] == "Modern Return Sweets"
         assert yu_mei_ren_shop["scriptId"] == "9403353120"
 
+    async def test_shop_free(self) -> None:
+        waltz_colab = await get_response("/nice/JP/event/80319")
+        euryale_costume_shop = waltz_colab.json()["shop"][30]
+        assert euryale_costume_shop["cost"]["item"]["id"] == 0
+
     async def test_quest_script(self) -> None:
         lb2_main_quest = await get_response("/nice/NA/quest/3000202/3")
         scriptIds = [script["scriptId"] for script in lb2_main_quest.json()["scripts"]]

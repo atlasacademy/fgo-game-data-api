@@ -18,7 +18,7 @@ from ...models.raw import (
 )
 from ...models.rayshift import rayshiftQuest
 from ...schemas.gameenums import QuestFlag
-from ...schemas.raw import QuestEntity, QuestPhaseEntity
+from ...schemas.raw import QuestEntity, QuestPhaseEntity, StageLink
 from .utils import sql_jsonb_agg
 
 
@@ -187,3 +187,16 @@ def get_quest_phase_entity(
         return QuestPhaseEntity.from_orm(quest_phase)
 
     return None
+
+
+def get_quest_from_ai(conn: Connection, ai_id: int) -> list[StageLink]:
+    ai_script_pattern = {"aiFieldIds": [{"id": ai_id}]}
+    stmt = select(mstStage.c.questId, mstStage.c.questPhase, mstStage.c.wave).where(
+        mstStage.c.script.contains(ai_script_pattern)
+    )
+
+    stages = conn.execute(stmt).fetchall()
+    return [
+        StageLink(questId=stage.questId, phase=stage.questPhase, stage=stage.wave)
+        for stage in stages
+    ]

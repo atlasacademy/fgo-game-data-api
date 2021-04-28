@@ -86,3 +86,9 @@ class NiceBuffScript(BaseModel):
     ReleaseText: Optional[str] = None
     DamageRelease: Optional[int] = None
     INDIVIDUALITIE: Optional[NiceTrait] = None
+
+
+class StageLink(BaseModel):
+    questId: int
+    phase: int
+    stage: int

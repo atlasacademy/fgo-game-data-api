@@ -70,5 +70,6 @@
       }
     }
   ],
-  "relatedAis": []
+  "relatedAis": [],
+  "relatedQuests": [{ "questId": 94016145, "phase": 1, "stage": 1 }]
 }

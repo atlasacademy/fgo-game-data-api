@@ -2,6 +2,7 @@ from decimal import Decimal
 from typing import Any, Optional
 
 from .base import BaseModelORJson
+from .common import StageLink
 from .gameenums import SvtType
 
 
@@ -1249,3 +1250,4 @@ class AiEntity(BaseModelORJson):
 class AiCollection(BaseModelORJson):
     mainAis: list[AiEntity]
     relatedAis: list[AiEntity]
+    relatedQuests: list[StageLink]

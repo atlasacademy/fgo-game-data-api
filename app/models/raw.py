@@ -1161,6 +1161,11 @@ mstStage = Table(
     Column("enemyInfo", Integer),
     Column("bgmId", Integer),
     Column("startEffectId", Integer),
+    Index(
+        "ix_mstStage_script_GIN",
+        sqlalchemy.text('"script" jsonb_path_ops'),
+        postgresql_using="gin",
+    ),
 )
 
 

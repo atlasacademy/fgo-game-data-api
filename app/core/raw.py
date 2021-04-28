@@ -585,4 +585,5 @@ def get_ai_collection(
     return AiCollection(
         mainAis=main_ais,
         relatedAis=related_ais,
+        relatedQuests=quest.get_quest_from_ai(conn, ai_id) if field else [],
     )
