@@ -21,7 +21,8 @@
         "800130": "https://assets.atlasacademy.io/GameData/JP/CharaGraph/800130/800130a.png",
         "800140": "https://assets.atlasacademy.io/GameData/JP/CharaGraph/800140/800140a.png",
         "800150": "https://assets.atlasacademy.io/GameData/JP/CharaGraph/800150/800150a.png",
-        "800160": "https://assets.atlasacademy.io/GameData/JP/CharaGraph/800160/800160a.png"
+        "800160": "https://assets.atlasacademy.io/GameData/JP/CharaGraph/800160/800160a.png",
+        "800170": "https://assets.atlasacademy.io/GameData/JP/CharaGraph/800170/800170a.png"
       }
     },
     "faces": {
@@ -35,7 +36,8 @@
         "800130": "https://assets.atlasacademy.io/GameData/JP/Faces/f_8001300.png",
         "800140": "https://assets.atlasacademy.io/GameData/JP/Faces/f_8001400.png",
         "800150": "https://assets.atlasacademy.io/GameData/JP/Faces/f_8001500.png",
-        "800160": "https://assets.atlasacademy.io/GameData/JP/Faces/f_8001600.png"
+        "800160": "https://assets.atlasacademy.io/GameData/JP/Faces/f_8001600.png",
+        "800170": "https://assets.atlasacademy.io/GameData/JP/Faces/f_8001700.png"
       }
     },
     "charaGraphName": {},
@@ -50,7 +52,8 @@
         "800130": "https://assets.atlasacademy.io/GameData/JP/NarrowFigure/800130/800130@0.png",
         "800140": "https://assets.atlasacademy.io/GameData/JP/NarrowFigure/800140/800140@0.png",
         "800150": "https://assets.atlasacademy.io/GameData/JP/NarrowFigure/800150/800150@0.png",
-        "800160": "https://assets.atlasacademy.io/GameData/JP/NarrowFigure/800160/800160@0.png"
+        "800160": "https://assets.atlasacademy.io/GameData/JP/NarrowFigure/800160/800160@0.png",
+        "800170": "https://assets.atlasacademy.io/GameData/JP/NarrowFigure/800170/800170@0.png"
       }
     },
     "charaFigure": {
@@ -83,7 +86,8 @@
         "800130": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/8001300/8001300_merged.png",
         "800140": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/8001400/8001400_merged.png",
         "800150": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/8001500/8001500_merged.png",
-        "800160": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/8001600/8001600_merged.png"
+        "800160": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/8001600/8001600_merged.png",
+        "800170": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/8001700/8001700_merged.png"
       }
     },
     "charaFigureForm": {},
@@ -97,7 +101,8 @@
         "800130": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/800100/card_servant_11.png",
         "800140": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/800100/card_servant_12.png",
         "800150": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/800100/card_servant_13.png",
-        "800160": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/800100/card_servant_14.png"
+        "800160": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/800100/card_servant_14.png",
+        "800170": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/800100/card_servant_15.png"
       }
     },
     "status": {
@@ -110,7 +115,8 @@
         "800130": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/800100/status_servant_11.png",
         "800140": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/800100/status_servant_12.png",
         "800150": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/800100/status_servant_13.png",
-        "800160": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/800100/status_servant_14.png"
+        "800160": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/800100/status_servant_14.png",
+        "800170": "https://assets.atlasacademy.io/GameData/JP/Servants/Status/800100/status_servant_15.png"
       }
     },
     "equipFace": {},
@@ -131,6 +137,7 @@
     { "id": 2011, "name": "skyOrEarth" },
     { "id": 2631, "name": "hominidaeServant" },
     { "id": 2654, "name": "livingHuman" },
+    { "id": 2780, "name": "hasCostume" },
     { "id": 5000, "name": "canBeInBattle" },
     { "id": 800100, "name": "unknown" }
   ],
@@ -484,11 +491,23 @@
   "ascensionAdd": {
     "individuality": {
       "ascension": {},
-      "costume": { "800130": [], "800140": [], "800150": [], "800160": [] }
+      "costume": {
+        "800130": [],
+        "800140": [],
+        "800150": [],
+        "800160": [],
+        "800170": []
+      }
     },
     "voicePrefix": {
       "ascension": {},
-      "costume": { "800130": 11, "800140": 12, "800150": 12, "800160": 14 }
+      "costume": {
+        "800130": 11,
+        "800140": 12,
+        "800150": 12,
+        "800160": 14,
+        "800170": 15
+      }
     },
     "overWriteServantName": { "ascension": {}, "costume": {} },
     "overWriteServantBattleName": { "ascension": {}, "costume": {} },

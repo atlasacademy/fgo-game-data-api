@@ -188,7 +188,9 @@ def get_quest_enemy(
 
     if user_svt.npcSvtClassId != 0:
         basic_svt.className = CLASS_NAME[user_svt.npcSvtClassId]
-    if deck_svt.enemyScript and "changeAttri" in deck_svt.enemyScript:
+    if (
+        deck_svt.enemyScript and "changeAttri" in deck_svt.enemyScript
+    ):  # pragma: no cover
         basic_svt.attribute = ATTRIBUTE_NAME[deck_svt.enemyScript["changeAttri"]]
 
     return QuestEnemy(

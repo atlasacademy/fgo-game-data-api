@@ -325,6 +325,11 @@ class TestServantSpecial:
             "STAR_HIGHER": [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
         }
 
+    async def test_script_NP_Crane(self) -> None:
+        response = await get_response("/nice/JP/NP/504601")
+        assert response.status_code == 200
+        assert response.json()["script"] == {"STAR_HIGHER": [20, 20, 20, 20, 20]}
+
     async def test_script_followerVals_Be_Graceful(self) -> None:
         response = await get_response("/nice/NA/skill/991370")
         assert response.status_code == 200
