@@ -4,7 +4,7 @@ from sqlalchemy.engine import Connection
 
 from ...config import Settings
 from ...schemas.common import Region
-from ...schemas.enums import ITEM_BG_TYPE_NAME
+from ...schemas.enums import ITEM_BG_TYPE_NAME, NiceItemBGType
 from ...schemas.gameenums import (
     COND_TYPE_NAME,
     DETAIL_MISSION_LINK_TYPE,
@@ -17,6 +17,7 @@ from ...schemas.gameenums import (
     SHOP_TYPE_NAME,
     BoxGachaFlag,
     CondType,
+    NiceItemType,
     PayType,
     PurchaseType,
 )
@@ -33,6 +34,7 @@ from ...schemas.nice import (
     NiceEventTower,
     NiceEventTowerReward,
     NiceGift,
+    NiceItem,
     NiceItemAmount,
     NiceItemSet,
     NiceShop,
@@ -97,6 +99,29 @@ def get_nice_shop(
     else:
         shop_set_items = []
 
+    if shop.payType == PayType.FREE:
+        cost = NiceItemAmount(
+            item=NiceItem(
+                id=0,
+                name="",
+                type=NiceItemType.stone,
+                uses=[],
+                detail="",
+                individuality=[],
+                icon=AssetURL.items.format(
+                    base_url=settings.asset_url, region=region, item_id=0
+                ),
+                background=NiceItemBGType.zero,
+                priority=0,
+                dropPriority=0,
+            ),
+            amount=0,
+        )
+    else:
+        cost = NiceItemAmount(
+            item=get_nice_item(region, shop_item_id), amount=shop.prices[0]
+        )
+
     nice_shop = NiceShop(
         id=shop.id,
         baseShopId=shop.baseShopId,
@@ -109,11 +134,7 @@ def get_nice_shop(
         infoMessage=shop.infoMessage,
         warningMessage=shop.warningMessage,
         payType=PAY_TYPE_NAME[shop.payType],
-        cost=None
-        if shop.payType == PayType.FREE
-        else NiceItemAmount(
-            item=get_nice_item(region, shop_item_id), amount=shop.prices[0]
-        ),
+        cost=cost,
         purchaseType=PURCHASE_TYPE_NAME[shop.purchaseType],
         targetIds=shop.targetIds,
         itemSet=shop_set_items,
