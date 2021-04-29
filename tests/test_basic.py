@@ -26,6 +26,7 @@ test_cases_dict: dict[str, tuple[str, str]] = {
     "JP_CC_collectionNo": ("JP/CC/55", "JP_CC_8400550"),
     "NA_event_id": ("NA/event/80119", "NA_event_Oniland"),
     "JP_war_id": ("JP/war/201", "JP_war_Shinjuku"),
+    "NA_quest_id": ("NA/quest/91600701", "NA_Jekyll_Interlude"),
 }
 
 
@@ -52,6 +53,7 @@ cases_404_dict = {
     "CC": "8400111",
     "event": "2313",
     "war": "42312",
+    "quest": "2134123",
 }
 
 

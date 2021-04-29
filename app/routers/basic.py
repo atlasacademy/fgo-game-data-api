@@ -13,6 +13,7 @@ from ..schemas.basic import (
     BasicEvent,
     BasicFunctionReverse,
     BasicMysticCode,
+    BasicQuest,
     BasicServant,
     BasicSkillReverse,
     BasicTdReverse,
@@ -520,3 +521,19 @@ async def get_war(region: Region, war_id: int) -> Response:
         return item_response(basic.get_basic_war(region, war_id))
     else:
         raise HTTPException(status_code=404, detail="Event not found")
+
+
+@router.get(
+    "/{region}/quest/{quest_id}",
+    summary="Get Basic Quest data",
+    response_description="Basic Quest Entity",
+    response_model=BasicQuest,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404, 500]),
+)
+async def get_quest(quest_id: int, conn: Connection = Depends(get_db)) -> Response:
+    """
+    Get the basic quest data from the given quest ID
+    """
+    quest_response = item_response(basic.get_basic_quest(conn, quest_id))
+    return quest_response

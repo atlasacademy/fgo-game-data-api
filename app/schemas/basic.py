@@ -7,9 +7,11 @@ from .common import MCAssets, NiceBuffScript, NiceTrait
 from .enums import Attribute, FuncApplyTarget, SvtClass
 from .gameenums import (
     NiceBuffType,
+    NiceConsumeType,
     NiceEventType,
     NiceFuncTargetType,
     NiceFuncType,
+    NiceQuestType,
     NiceSvtFlag,
     NiceSvtType,
 )
@@ -155,3 +157,15 @@ class BasicWar(BaseModelORJson):
     name: str
     longName: str
     eventId: int
+
+
+class BasicQuest(BaseModelORJson):
+    id: int
+    name: str
+    type: NiceQuestType
+    consumeType: NiceConsumeType
+    consume: int
+    spotId: int
+    noticeAt: int
+    openedAt: int
+    closedAt: int

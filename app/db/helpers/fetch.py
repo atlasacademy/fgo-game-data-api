@@ -33,6 +33,7 @@ from ...models.raw import (
     mstGift,
     mstIllustrator,
     mstMap,
+    mstQuest,
     mstShop,
     mstShopScript,
     mstSpot,
@@ -77,6 +78,7 @@ from ...schemas.raw import (
     MstGift,
     MstIllustrator,
     MstMap,
+    MstQuest,
     MstShop,
     MstShopScript,
     MstSpot,
@@ -105,6 +107,7 @@ schema_map_fetchone: dict[Type[BaseModelORJson], tuple[Table, Column]] = {  # ty
     MstEquip: (mstEquip, mstEquip.c.id),
     MstEvent: (mstEvent, mstEvent.c.id),
     MstConstant: (mstConstant, mstConstant.c.name),
+    MstQuest: (mstQuest, mstQuest.c.id),
 }
 
 Tfetchone = TypeVar("Tfetchone", bound=BaseModelORJson)

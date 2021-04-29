@@ -1,9 +1,13 @@
 from collections import defaultdict
 from typing import Any, Optional
 
+from fastapi import HTTPException
+from sqlalchemy.engine import Connection
+
 from ..config import Settings
 from ..data.custom_mappings import TRANSLATIONS
 from ..data.gamedata import masters
+from ..db.helpers import fetch
 from ..schemas.basic import (
     BasicBuffReverse,
     BasicCommandCode,
@@ -11,6 +15,7 @@ from ..schemas.basic import (
     BasicEvent,
     BasicFunctionReverse,
     BasicMysticCode,
+    BasicQuest,
     BasicReversedBuff,
     BasicReversedBuffType,
     BasicReversedFunction,
@@ -36,6 +41,8 @@ from ..schemas.gameenums import (
     EVENT_TYPE_NAME,
     FUNC_TARGETTYPE_NAME,
     FUNC_TYPE_NAME,
+    QUEST_CONSUME_TYPE_NAME,
+    QUEST_TYPE_NAME,
     SVT_FLAG_NAME,
     SVT_TYPE_NAME,
     SvtType,
@@ -45,6 +52,7 @@ from ..schemas.raw import (
     MstBuff,
     MstClassRelationOverwrite,
     MstFunc,
+    MstQuest,
     MstSkill,
     MstSvt,
     MstTreasureDevice,
@@ -382,4 +390,22 @@ def get_basic_war(region: Region, war_id: int) -> BasicWar:
         name=mstWar.name,
         longName=mstWar.longName,
         eventId=mstWar.eventId,
+    )
+
+
+def get_basic_quest(conn: Connection, quest_id: int) -> BasicQuest:
+    mstQuest = fetch.get_one(conn, MstQuest, quest_id)
+    if not mstQuest:
+        raise HTTPException(status_code=404, detail="Quest not found")
+
+    return BasicQuest(
+        id=mstQuest.id,
+        name=mstQuest.name,
+        type=QUEST_TYPE_NAME[mstQuest.type],
+        consumeType=QUEST_CONSUME_TYPE_NAME[mstQuest.consumeType],
+        consume=mstQuest.actConsume,
+        spotId=mstQuest.spotId,
+        noticeAt=mstQuest.noticeAt,
+        openedAt=mstQuest.openedAt,
+        closedAt=mstQuest.closedAt,
     )
