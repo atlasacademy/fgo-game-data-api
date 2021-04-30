@@ -441,6 +441,19 @@
               "condLimitCount": 4,
               "eventId": 0,
               "flag": 0
+            },
+            {
+              "strengthStatus": 0,
+              "svtId": 9942010,
+              "num": 3,
+              "priority": 1,
+              "skillId": 231350,
+              "condQuestId": 94004103,
+              "condQuestPhase": 5,
+              "condLv": 0,
+              "condLimitCount": 4,
+              "eventId": 0,
+              "flag": 0
             }
           ],
           "mstSkillLv": [
