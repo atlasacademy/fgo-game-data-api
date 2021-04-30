@@ -131,9 +131,7 @@ def get_nice_servant(
         if svt_limit_add.limitCount in costume_limits
     }
 
-    nice_data["extraAssets"] = get_svt_extraAssets(
-        conn, region, svt_id, raw_svt, costume_ids
-    )
+    nice_data["extraAssets"] = get_svt_extraAssets(region, svt_id, raw_svt, costume_ids)
 
     lvMax = max(svt_limit.lvMax for svt_limit in raw_svt.mstSvtLimit)
     atkMax = first_svt_limit.atkMax

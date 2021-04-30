@@ -3,6 +3,7 @@ from typing import Iterable, Optional
 from fastapi import HTTPException
 from sqlalchemy.engine import Connection
 
+from ..data.custom_mappings import EXTRA_CHARAFIGURES
 from ..data.gamedata import masters
 from ..db.helpers import ai, event, fetch, item, quest, skill, svt, td
 from ..schemas.common import Region, ReverseDepth
@@ -279,7 +280,10 @@ def get_servant_entity(
         conn, MstCombineMaterial, svt_db.combineMaterialId
     )
 
-    mstSvtScript = svt.get_svt_script(conn, servant_id)
+    costume_chara_ids = [limit.battleCharaId for limit in mstSvtLimitAdd]
+    mstSvtScript = svt.get_svt_script(
+        conn, [servant_id] + costume_chara_ids + EXTRA_CHARAFIGURES.get(servant_id, [])
+    )
 
     skill_ids = [
         skill.skillId for skill in skill.get_mstSvtSkill(conn, svt_id=servant_id)

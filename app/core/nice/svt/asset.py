@@ -4,11 +4,9 @@ from typing import Union
 import orjson
 from pydantic import HttpUrl
 from pydantic.tools import parse_obj_as
-from sqlalchemy.engine import Connection
 
 from ....config import Settings
 from ....data.custom_mappings import EXTRA_CHARAFIGURES, EXTRA_IMAGES
-from ....db.helpers import svt
 from ....schemas.common import Region
 from ....schemas.gameenums import SvtType
 from ....schemas.nice import AssetURL, ExtraAssets, ExtraAssetsUrl
@@ -24,11 +22,7 @@ def fmt_url(url_fmt: str, **kwargs: Union[int, str]) -> HttpUrl:
 
 
 def get_svt_extraAssets(
-    conn: Connection,
-    region: Region,
-    svt_id: int,
-    raw_svt: ServantEntity,
-    costume_ids: dict[int, int],
+    region: Region, svt_id: int, raw_svt: ServantEntity, costume_ids: dict[int, int]
 ) -> ExtraAssets:
     charaGraph = ExtraAssetsUrl()
     charaGraphName = ExtraAssetsUrl()
@@ -83,14 +77,6 @@ def get_svt_extraAssets(
             (i + 1): fmt_url(AssetURL.charaFigure, **base_settings_id, i=i)
             for i in range(3)
         }
-        for svtScript in raw_svt.mstSvtScript:
-            script_form = svtScript.extendData.get("myroomForm", svtScript.form)
-            if script_form != 0:
-                charaFigureForm[script_form]["ascension"][
-                    svtScript.id % 10 + 1
-                ] = AssetURL.charaFigureForm.format(
-                    **base_settings, form_id=script_form, svtScript_id=svtScript.id
-                )
         narrowFigure.ascension = {
             i: fmt_url(AssetURL.narrowFigure[i], **base_settings_id)
             for i in range(1, 5)
@@ -161,7 +147,6 @@ def get_svt_extraAssets(
                                 for i in range(1, 5)
                             }
                 except orjson.JSONDecodeError:  # pragma: no cover
-                    # Hard to test this since none of the saintGraphImageId json is broken
                     pass
 
     elif raw_svt.mstSvt.isEquip():
@@ -173,20 +158,27 @@ def get_svt_extraAssets(
 
     if svt_id in EXTRA_CHARAFIGURES:
         charaFigure.story = {}
-        for charaFigure_id in sorted(EXTRA_CHARAFIGURES[svt_id]):
-            charaFigure.story[charaFigure_id] = fmt_url(
-                AssetURL.charaFigureId, **base_settings, charaFigure=charaFigure_id
+        extra_chara_ids = sorted(EXTRA_CHARAFIGURES[svt_id])
+        for battleCharaId in extra_chara_ids:
+            charaFigure.story[battleCharaId] = fmt_url(
+                AssetURL.charaFigureId, **base_settings, charaFigure=battleCharaId
             )
+    else:
+        extra_chara_ids = []
 
-            svtScripts = svt.get_svt_script(conn, charaFigure_id // 10)
-            for svtScript in svtScripts:
-                script_form = svtScript.extendData.get("myroomForm", svtScript.form)
-                if script_form != 0:
-                    charaFigureForm[script_form]["story"][
-                        svtScript.id
-                    ] = AssetURL.charaFigureForm.format(
-                        **base_settings, form_id=script_form, svtScript_id=svtScript.id
-                    )
+    for svtScript in raw_svt.mstSvtScript:
+        script_form = svtScript.extendData.get("myroomForm", svtScript.form)
+        if script_form != 0:
+            asset_url = AssetURL.charaFigureForm.format(
+                **base_settings, form_id=script_form, svtScript_id=svtScript.id
+            )
+            if svtScript.id // 10 == svt_id:
+                ascension_level = svtScript.id % 10 + 1
+                charaFigureForm[script_form]["ascension"][ascension_level] = asset_url
+            elif svtScript.id // 10 in costume_ids.values():
+                charaFigureForm[script_form]["costume"][svtScript.id // 10] = asset_url
+            elif svtScript.id in extra_chara_ids:  # pragma: no cover
+                charaFigureForm[script_form]["story"][svtScript.id] = asset_url
 
     image.story = {
         i: fmt_url(AssetURL.image, **base_settings, image=image)

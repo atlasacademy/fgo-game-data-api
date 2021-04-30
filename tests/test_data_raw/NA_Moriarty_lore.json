@@ -1538,6 +1538,19 @@
       "offsetY": 146,
       "offsetXMyroom": 318,
       "offsetYMyroom": 138
+    },
+    {
+      "extendData": {},
+      "id": 2023300,
+      "form": 0,
+      "faceX": 381,
+      "faceY": 131,
+      "bgImageId": 0,
+      "scale": 1.0,
+      "offsetX": -1,
+      "offsetY": 146,
+      "offsetXMyroom": 318,
+      "offsetYMyroom": 130
     }
   ],
   "mstCv": { "id": 65, "name": "Takaya Hashi", "comment": "" },

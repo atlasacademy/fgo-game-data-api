@@ -24,11 +24,11 @@ from ...schemas.raw import (
 )
 
 
-def get_svt_script(conn: Connection, svt_id: int) -> list[MstSvtScript]:
+def get_svt_script(conn: Connection, svt_ids: list[int]) -> list[MstSvtScript]:
     stmt = (
         select(mstSvtScript)
-        .where(mstSvtScript.c.id / 10 == svt_id)
-        .order_by(mstSvtScript.c.form)
+        .where((mstSvtScript.c.id / 10).in_(svt_ids))
+        .order_by(mstSvtScript.c.id, mstSvtScript.c.form)
     )
     return [MstSvtScript.from_orm(db_row) for db_row in conn.execute(stmt).fetchall()]
 

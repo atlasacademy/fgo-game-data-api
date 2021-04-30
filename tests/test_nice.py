@@ -409,10 +409,10 @@ class TestServantSpecial:
         assert response.status_code == 200
         assert response.json()["svtChange"][0]["name"] == "Archer of Inferno"
 
-    async def test_story_charaFigure_form(self) -> None:
+    async def test_costume_charaFigure_form(self) -> None:
         response = (await get_response("/nice/JP/servant/126")).json()
-        assert "story" in response["extraAssets"]["charaFigureForm"]["1"]
-        assert "story" in response["extraAssets"]["charaFigureForm"]["2"]
+        assert "costume" in response["extraAssets"]["charaFigureForm"]["1"]
+        assert "costume" in response["extraAssets"]["charaFigureForm"]["2"]
 
     async def test_image_assets(self) -> None:
         response = await get_response("/nice/JP/servant/203200")
