@@ -171,7 +171,7 @@ def parse_dataVals(
                 output[text] = value
 
         if not any(key.startswith(prefix) for key in output):
-            if len(array) != len(output):
+            if len(array) != len(output) and functype != FuncType.NONE:
                 logger.warning(
                     f"Some datavals weren't parsed for func type {functype}: [{datavals}] => {output}"
                 )
