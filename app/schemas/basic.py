@@ -166,6 +166,7 @@ class BasicQuest(BaseModelORJson):
     consumeType: NiceConsumeType
     consume: int
     spotId: int
+    warId: int
     noticeAt: int
     openedAt: int
     closedAt: int

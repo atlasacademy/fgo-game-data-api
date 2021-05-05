@@ -7,7 +7,7 @@ from sqlalchemy.engine import Connection
 from ..config import Settings
 from ..data.custom_mappings import TRANSLATIONS
 from ..data.gamedata import masters
-from ..db.helpers import fetch
+from ..db.helpers import fetch, war
 from ..schemas.basic import (
     BasicBuffReverse,
     BasicCommandCode,
@@ -405,6 +405,7 @@ def get_basic_quest(conn: Connection, quest_id: int) -> BasicQuest:
         consumeType=QUEST_CONSUME_TYPE_NAME[mstQuest.consumeType],
         consume=mstQuest.actConsume,
         spotId=mstQuest.spotId,
+        warId=war.get_war_from_spot(conn, mstQuest.spotId),
         noticeAt=mstQuest.noticeAt,
         openedAt=mstQuest.openedAt,
         closedAt=mstQuest.closedAt,
