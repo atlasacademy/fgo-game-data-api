@@ -840,7 +840,7 @@
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6529.png",
                     "background": "gold",
-                    "priority": 240,
+                    "priority": 242,
                     "dropPriority": 8504
                   },
                   "amount": 2
@@ -875,7 +875,7 @@
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6529.png",
                     "background": "gold",
-                    "priority": 240,
+                    "priority": 242,
                     "dropPriority": 8504
                   },
                   "amount": 4
@@ -890,7 +890,7 @@
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6520.png",
                     "background": "gold",
-                    "priority": 235,
+                    "priority": 237,
                     "dropPriority": 8402
                   },
                   "amount": 6
