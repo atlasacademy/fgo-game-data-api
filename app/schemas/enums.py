@@ -11,8 +11,6 @@ from .gameenums import (
     CARD_TYPE_NAME,
     CLASS_OVERWRITE_NAME,
     COND_TYPE_NAME,
-    DETAIL_MISSION_COND_TYPE,
-    DETAIL_MISSION_LINK_TYPE,
     EVENT_LOTTERY_FLAG_NAME,
     EVENT_TYPE_NAME,
     FUNC_TARGETTYPE_NAME,
@@ -436,6 +434,52 @@ class DetailMissionCondType(IntEnum):
     SQUARE_ADVANCED = 26
     MORE_FRIEND_FOLLOWER = 27  # 5th Anniversary missions
     MAIN_QUEST_DONE = 28  # 22M Download Campaign
+
+
+class NiceDetailMissionCondType(str, Enum):
+    """Mission Condition Detail Condition Type Enum"""
+
+    enemyKillNum = "enemyKillNum"
+    enemyIndividualityKillNum = "enemyIndividualityKillNum"
+    itemGetTotal = "itemGetTotal"
+    battleSvtInDeck = "battleSvtInDeck"
+    battleSvtEquipInDeck = "battleSvtEquipInDeck"
+    targetQuestEnemyKillNum = "targetQuestEnemyKillNum"
+    targetQuestEnemyIndividualityKillNum = "targetQuestEnemyIndividualityKillNum"
+    targetQuestItemGetTotal = "targetQuestItemGetTotal"
+
+
+DETAIL_MISSION_COND_TYPE: dict[int, NiceDetailMissionCondType] = {
+    1: NiceDetailMissionCondType.enemyKillNum,
+    2: NiceDetailMissionCondType.enemyIndividualityKillNum,
+    3: NiceDetailMissionCondType.itemGetTotal,
+    4: NiceDetailMissionCondType.battleSvtInDeck,
+    5: NiceDetailMissionCondType.battleSvtEquipInDeck,
+    6: NiceDetailMissionCondType.targetQuestEnemyKillNum,
+    7: NiceDetailMissionCondType.targetQuestEnemyIndividualityKillNum,
+    8: NiceDetailMissionCondType.targetQuestItemGetTotal,
+}
+
+
+class DetailMissionCondLinkType(IntEnum):
+    EVENT_START = 1
+    MISSION_START = 2
+    MASTER＿MISSION_START = 3
+
+
+class NiceDetailMissionCondLinkType(str, Enum):
+    """Mission Condition Detail Condition Link Type Enum"""
+
+    eventStart = "eventStart"
+    missionStart = "missionStart"
+    master＿missionStart = "master＿missionStart"
+
+
+DETAIL_MISSION_LINK_TYPE: dict[int, NiceDetailMissionCondLinkType] = {
+    1: NiceDetailMissionCondLinkType.eventStart,
+    2: NiceDetailMissionCondLinkType.missionStart,
+    3: NiceDetailMissionCondLinkType.master＿missionStart,
+}
 
 
 ### Trait ###

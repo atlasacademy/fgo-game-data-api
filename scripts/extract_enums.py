@@ -340,20 +340,6 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "MISSION_PROGRESS_TYPE_NAME",
     ),
     (
-        "EventMissionCondDetailEntity.MissionCondType",
-        "DetailMissionCondType",
-        "NiceDetailMissionCondType",
-        "Mission Condition Detail Condition Type Enum",
-        "DETAIL_MISSION_COND_TYPE",
-    ),
-    (
-        "EventMissionCondDetailEntity.MissionConditionLinkType",
-        "DetailMissionCondLinkType",
-        "NiceDetailMissionCondLinkType",
-        "Mission Condition Detail Condition Link Type Enum",
-        "DETAIL_MISSION_LINK_TYPE",
-    ),
-    (
         "BoxGachaEntity.Flag",
         "BoxGachaFlag",
         "NiceLotteryFlag",

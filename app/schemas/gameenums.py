@@ -1511,7 +1511,7 @@ class ShopType(IntEnum):
     BGM = 8
     LIMIT_MATERIAL = 9
     GRAIL_FRAGMENTS = 10
-    SHOP04 = 11
+    SVT_COSTUME = 11
 
 
 class NiceShopType(str, Enum):
@@ -1528,7 +1528,7 @@ class NiceShopType(str, Enum):
     bgm = "bgm"
     limitMaterial = "limitMaterial"
     grailFragments = "grailFragments"
-    shop04 = "shop04"
+    svtCostume = "svtCostume"
 
 
 SHOP_TYPE_NAME: dict[int, NiceShopType] = {
@@ -1543,7 +1543,7 @@ SHOP_TYPE_NAME: dict[int, NiceShopType] = {
     8: NiceShopType.bgm,
     9: NiceShopType.limitMaterial,
     10: NiceShopType.grailFragments,
-    11: NiceShopType.shop04,
+    11: NiceShopType.svtCostume,
 }
 
 
@@ -1868,6 +1868,7 @@ class CondType(IntEnum):
     LIMIT_COUNT_IMAGE_EQUAL = 150
     LIMIT_COUNT_IMAGE_ABOVE = 151
     LIMIT_COUNT_IMAGE_BELOW = 152
+    EVENT_TYPE_START_TIME_TO_END_DATE = 153
 
 
 class NiceCondType(str, Enum):
@@ -2026,6 +2027,7 @@ class NiceCondType(str, Enum):
     limitCountImageEqual = "limitCountImageEqual"
     limitCountImageAbove = "limitCountImageAbove"
     limitCountImageBelow = "limitCountImageBelow"
+    eventTypeStartTimeToEndDate = "eventTypeStartTimeToEndDate"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2182,6 +2184,7 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     150: NiceCondType.limitCountImageEqual,
     151: NiceCondType.limitCountImageAbove,
     152: NiceCondType.limitCountImageBelow,
+    153: NiceCondType.eventTypeStartTimeToEndDate,
 }
 
 
@@ -3019,6 +3022,9 @@ class AiCond(IntEnum):
     COUNT_EQUAL_INDIVIDUALITY_OPPONENT_FRONT = 165
     COUNT_EQUAL_INDIVIDUALITY_OPPONENT_CENTER = 166
     COUNT_EQUAL_INDIVIDUALITY_OPPONENT_BACK = 167
+    CHECK_PRECEDING_ENEMY = 168
+    COUNT_HIGHER_REMAIN_TURN = 169
+    COUNT_LOWER_REMAIN_TURN = 170
 
 
 class NiceAiCond(str, Enum):
@@ -3166,6 +3172,9 @@ class NiceAiCond(str, Enum):
     countEqualIndividualityOpponentFront = "countEqualIndividualityOpponentFront"
     countEqualIndividualityOpponentCenter = "countEqualIndividualityOpponentCenter"
     countEqualIndividualityOpponentBack = "countEqualIndividualityOpponentBack"
+    checkPrecedingEnemy = "checkPrecedingEnemy"
+    countHigherRemainTurn = "countHigherRemainTurn"
+    countLowerRemainTurn = "countLowerRemainTurn"
 
 
 AI_COND_NAME: dict[int, NiceAiCond] = {
@@ -3297,6 +3306,9 @@ AI_COND_NAME: dict[int, NiceAiCond] = {
     165: NiceAiCond.countEqualIndividualityOpponentFront,
     166: NiceAiCond.countEqualIndividualityOpponentCenter,
     167: NiceAiCond.countEqualIndividualityOpponentBack,
+    168: NiceAiCond.checkPrecedingEnemy,
+    169: NiceAiCond.countHigherRemainTurn,
+    170: NiceAiCond.countLowerRemainTurn,
 }
 
 
@@ -3551,63 +3563,6 @@ MISSION_PROGRESS_TYPE_NAME: dict[int, NiceMissionProgressType] = {
     3: NiceMissionProgressType.start,
     4: NiceMissionProgressType.clear,
     5: NiceMissionProgressType.achieve,
-}
-
-
-class DetailMissionCondType(IntEnum):
-    ENEMY_KILL_NUM = 1
-    ENEMY_INDIVIDUALITY_KILL_NUM = 2
-    ITEM_GET_TOTAL = 3
-    BATTLE_SVT_IN_DECK = 4
-    BATTLE_SVT_EQUIP_IN_DECK = 5
-    TARGET_QUEST_ENEMY_KILL_NUM = 6
-    TARGET_QUEST_ENEMY_INDIVIDUALITY_KILL_NUM = 7
-    TARGET_QUEST_ITEM_GET_TOTAL = 8
-
-
-class NiceDetailMissionCondType(str, Enum):
-    """Mission Condition Detail Condition Type Enum"""
-
-    enemyKillNum = "enemyKillNum"
-    enemyIndividualityKillNum = "enemyIndividualityKillNum"
-    itemGetTotal = "itemGetTotal"
-    battleSvtInDeck = "battleSvtInDeck"
-    battleSvtEquipInDeck = "battleSvtEquipInDeck"
-    targetQuestEnemyKillNum = "targetQuestEnemyKillNum"
-    targetQuestEnemyIndividualityKillNum = "targetQuestEnemyIndividualityKillNum"
-    targetQuestItemGetTotal = "targetQuestItemGetTotal"
-
-
-DETAIL_MISSION_COND_TYPE: dict[int, NiceDetailMissionCondType] = {
-    1: NiceDetailMissionCondType.enemyKillNum,
-    2: NiceDetailMissionCondType.enemyIndividualityKillNum,
-    3: NiceDetailMissionCondType.itemGetTotal,
-    4: NiceDetailMissionCondType.battleSvtInDeck,
-    5: NiceDetailMissionCondType.battleSvtEquipInDeck,
-    6: NiceDetailMissionCondType.targetQuestEnemyKillNum,
-    7: NiceDetailMissionCondType.targetQuestEnemyIndividualityKillNum,
-    8: NiceDetailMissionCondType.targetQuestItemGetTotal,
-}
-
-
-class DetailMissionCondLinkType(IntEnum):
-    EVENT_START = 1
-    MISSION_START = 2
-    MASTER＿MISSION_START = 3
-
-
-class NiceDetailMissionCondLinkType(str, Enum):
-    """Mission Condition Detail Condition Link Type Enum"""
-
-    eventStart = "eventStart"
-    missionStart = "missionStart"
-    master＿missionStart = "master＿missionStart"
-
-
-DETAIL_MISSION_LINK_TYPE: dict[int, NiceDetailMissionCondLinkType] = {
-    1: NiceDetailMissionCondLinkType.eventStart,
-    2: NiceDetailMissionCondLinkType.missionStart,
-    3: NiceDetailMissionCondLinkType.master＿missionStart,
 }
 
 
