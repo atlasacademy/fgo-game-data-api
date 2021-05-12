@@ -51,10 +51,14 @@ TOO_MANY_RESULTS = "More than {} items found. Please narrow down the query."
 
 
 def reverse_traits(traits: Iterable[Union[Trait, int]]) -> set[int]:
-    return {
-        TRAIT_NAME_REVERSE[trait] if isinstance(trait, Trait) else trait
-        for trait in traits
-    }
+    out_ints: set[int] = set()
+    for trait in traits:
+        if isinstance(trait, Trait):
+            if trait in TRAIT_NAME_REVERSE:
+                out_ints.add(TRAIT_NAME_REVERSE[trait])
+        else:
+            out_ints.add(trait)
+    return out_ints
 
 
 accent_from = "àáâäèéëíðñóöùúāēīŋōšαβḗḫ"

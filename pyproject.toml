@@ -6,7 +6,7 @@ authors = ["squaresmile <squaresmile@protonmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-fastapi = "^0.65.0"
+fastapi = "^0.65.1"
 uvicorn = {extras = ["standard"], version = "^0.13.4"}
 python-dotenv = "^0.17.1"
 fuzzywuzzy = "^0.18.0"
@@ -16,7 +16,7 @@ aiofiles = "^0.6.0"
 GitPython = "3.1.14"
 toml = "^0.10.2"
 redis = "^3.5.3"
-SQLAlchemy = "^1.4.14"
+SQLAlchemy = "^1.4.15"
 psycopg2 = "^2.8.6"
 httpx = "^0.18.1"
 
@@ -30,7 +30,7 @@ coverage = "^5.5"
 fuzzywuzzy-stubs = "^0.0.1"
 isort = "^5.8.0"
 sqlalchemy-stubs = {git = "https://github.com/squaresmile/sqlalchemy-stubs.git"}
-sqlalchemy2-stubs = "^0.0.1-alpha.11"
+sqlalchemy2-stubs = "^0.0.2-alpha.1"
 pytest-asyncio = "^0.15.1"
 
 [tool.isort]
