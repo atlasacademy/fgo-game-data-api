@@ -4,10 +4,9 @@ from sqlalchemy.engine import Connection
 
 from ...config import Settings
 from ...schemas.common import Region
-from ...schemas.enums import ITEM_BG_TYPE_NAME, NiceItemBGType
+from ...schemas.enums import DETAIL_MISSION_LINK_TYPE, ITEM_BG_TYPE_NAME, NiceItemBGType
 from ...schemas.gameenums import (
     COND_TYPE_NAME,
-    DETAIL_MISSION_LINK_TYPE,
     EVENT_TYPE_NAME,
     MISSION_PROGRESS_TYPE_NAME,
     MISSION_REWARD_TYPE_NAME,

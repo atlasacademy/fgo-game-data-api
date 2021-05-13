@@ -18,7 +18,8 @@ from ...models.raw import (
 )
 from ...models.rayshift import rayshiftQuest
 from ...schemas.gameenums import QuestFlag
-from ...schemas.raw import QuestEntity, QuestPhaseEntity, StageLink
+from ...schemas.raw import QuestEntity, QuestPhaseEntity
+from ...schemas.common import StageLink
 from .utils import sql_jsonb_agg
 
 
@@ -60,7 +61,7 @@ phasesNoBattle = func.array_remove(
             (
                 and_(
                     mstQuestPhaseDetail.c.flag.is_(None),
-                    mstQuest.c.flag.op("&")(QuestFlag.NO_BATTLE.value) != 0,
+                    mstQuest.c.flag.op("&")(QuestFlag.NO_BATTLE.value) != 0,  # type: ignore
                 ),
                 mstQuestPhase.c.phase,
             ),
@@ -76,7 +77,9 @@ SELECT_QUEST_ENTITY = [
     sql_jsonb_agg(mstQuestRelease),
     sql_jsonb_agg(mstClosedMessage),
     sql_jsonb_agg(mstGift),
-    func.jsonb_agg(mstQuestPhase.c.phase.distinct()).label("phases"),
+    func.to_jsonb(
+        func.array_remove(func.array_agg(mstQuestPhase.c.phase.distinct()), None)
+    ).label("phases"),
     phasesWithEnemies,
     phasesNoBattle,
 ]
