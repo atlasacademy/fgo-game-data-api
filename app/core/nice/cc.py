@@ -1,11 +1,10 @@
 from sqlalchemy.engine import Connection
 
 from ...config import Settings
-from ...data.custom_mappings import TRANSLATIONS
 from ...schemas.common import Language, Region
 from ...schemas.nice import AssetURL, NiceCommandCode
 from .. import raw
-from ..utils import get_safe
+from ..utils import get_translation
 from .skill import get_nice_skill_with_svt
 
 
@@ -20,9 +19,7 @@ def get_nice_command_code(
     base_settings = {"base_url": settings.asset_url, "region": region, "item_id": cc_id}
     nice_cc = NiceCommandCode(
         id=raw_cc.mstCommandCode.id,
-        name=get_safe(TRANSLATIONS, raw_cc.mstCommandCode.name)
-        if lang == Language.en
-        else raw_cc.mstCommandCode.name,
+        name=get_translation(lang, raw_cc.mstCommandCode.name),
         collectionNo=raw_cc.mstCommandCode.collectionNo,
         rarity=raw_cc.mstCommandCode.rarity,
         extraAssets={

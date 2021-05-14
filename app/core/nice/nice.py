@@ -213,7 +213,7 @@ def get_nice_td_with_reverse(
 
     # All td_id has a svtTd entry
     svt_id = next(svt_id.svtId for svt_id in raw_td.mstSvtTreasureDevice)
-    nice_td = NiceTdReverse.parse_obj(get_nice_td(raw_td, svt_id, region)[0])
+    nice_td = NiceTdReverse.parse_obj(get_nice_td(raw_td, svt_id, region, lang)[0])
 
     if reverse and reverseDepth >= ReverseDepth.servant:
         if reverseData == ReverseData.basic:

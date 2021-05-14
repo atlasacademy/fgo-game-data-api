@@ -5,14 +5,13 @@ from typing import Any, Iterable
 from sqlalchemy.engine import Connection
 
 from ...config import Settings
-from ...data.custom_mappings import TRANSLATIONS
 from ...schemas.common import Language, Region
 from ...schemas.enums import SKILL_TYPE_NAME, AiType
 from ...schemas.nice import AssetURL, NiceSkill, NiceSkillReverse
 from ...schemas.raw import SkillEntityNoReverse
 from ..raw import get_skill_entity_no_reverse, get_skill_entity_no_reverse_many
 from ..reverse import get_ai_id_from_skill
-from ..utils import get_safe, get_traits_list, strip_formatting_brackets
+from ..utils import get_traits_list, get_translation, strip_formatting_brackets
 from .func import get_nice_function
 
 
@@ -24,9 +23,7 @@ def get_nice_skill_with_svt(
 ) -> list[dict[str, Any]]:
     nice_skill: dict[str, Any] = {
         "id": skillEntity.mstSkill.id,
-        "name": get_safe(TRANSLATIONS, skillEntity.mstSkill.name)
-        if lang == Language.en
-        else skillEntity.mstSkill.name,
+        "name": get_translation(lang, skillEntity.mstSkill.name),
         "ruby": skillEntity.mstSkill.ruby,
         "type": SKILL_TYPE_NAME[skillEntity.mstSkill.type],
         "actIndividuality": get_traits_list(skillEntity.mstSkill.actIndividuality),

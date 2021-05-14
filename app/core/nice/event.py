@@ -3,7 +3,7 @@ from collections import defaultdict
 from sqlalchemy.engine import Connection
 
 from ...config import Settings
-from ...schemas.common import Region
+from ...schemas.common import Language, Region
 from ...schemas.enums import DETAIL_MISSION_LINK_TYPE, ITEM_BG_TYPE_NAME, NiceItemBGType
 from ...schemas.gameenums import (
     COND_TYPE_NAME,
@@ -56,7 +56,7 @@ from ...schemas.raw import (
     MstShopScript,
 )
 from .. import raw
-from ..utils import get_traits_list
+from ..utils import get_traits_list, get_translation
 from .gift import get_nice_gift
 from .item import get_nice_item
 from .script import get_script_url
@@ -381,7 +381,9 @@ def get_nice_lottery(
     )
 
 
-def get_nice_event(conn: Connection, region: Region, event_id: int) -> NiceEvent:
+def get_nice_event(
+    conn: Connection, region: Region, event_id: int, lang: Language
+) -> NiceEvent:
     raw_event = raw.get_event_entity(conn, event_id)
 
     base_settings = {"base_url": settings.asset_url, "region": region}
@@ -414,7 +416,7 @@ def get_nice_event(conn: Connection, region: Region, event_id: int) -> NiceEvent
     nice_event = NiceEvent(
         id=raw_event.mstEvent.id,
         type=EVENT_TYPE_NAME[raw_event.mstEvent.type],
-        name=raw_event.mstEvent.name,
+        name=get_translation(lang, raw_event.mstEvent.name),
         shortName=raw_event.mstEvent.shortName,
         detail=raw_event.mstEvent.detail,
         noticeBanner=AssetURL.banner.format(

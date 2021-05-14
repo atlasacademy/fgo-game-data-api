@@ -8,6 +8,23 @@ from dotenv import load_dotenv
 
 
 MAPPING_PATH = Path(__file__).resolve().parents[1] / "app" / "data" / "mappings"
+TRANSLATIONS: dict[str, str] = {}
+TRANSLATION_FILES = (
+    "skill_names",
+    "np_names",
+    "event_names",
+    "war_names",
+    "servant_names",
+    "equip_names",
+    "cc_names",
+    "mc_names",
+)
+
+for translation_file in TRANSLATION_FILES:
+    translation_path = MAPPING_PATH / f"{translation_file}.json"
+    if translation_path.exists():
+        with open(translation_path, "r", encoding="utf-8") as translation_fp:
+            TRANSLATIONS |= json.load(translation_fp)
 
 
 def get_ce_names(mstSvt: Any) -> dict[int, str]:
@@ -26,8 +43,13 @@ def get_cc_names(mstCommandCode: Any) -> dict[int, str]:
     return cc_names
 
 
-def get_mc_names(mstEquip: Any) -> dict[int, str]:
+def get_names(mstEquip: Any) -> dict[int, str]:
     mc_names: dict[int, str] = {svt["id"]: svt["name"] for svt in mstEquip}
+    return mc_names
+
+
+def get_war_names(mstEquip: Any) -> dict[int, str]:
+    mc_names: dict[int, str] = {svt["id"]: svt["longName"] for svt in mstEquip}
     return mc_names
 
 
@@ -43,7 +65,7 @@ def update_translation(
     with open(na_master / f"{master_file}.json", "r", encoding="utf-8") as fp:
         na_svt = json.load(fp)
 
-    mapping_path = MAPPING_PATH / mapping
+    mapping_path = MAPPING_PATH / f"{mapping}.json"
     if mapping_path.exists():
         with open(mapping_path, "r", encoding="utf-8") as fp:
             current_translations: dict[str, str] = json.load(fp)
@@ -54,7 +76,9 @@ def update_translation(
     jp_names = extract_names(jp_svt)
 
     updated_translation = {
-        jp_name: na_names.get(colNo, current_translations.get(jp_name, jp_name))
+        jp_name: na_names.get(
+            colNo, current_translations.get(jp_name, TRANSLATIONS.get(jp_name, jp_name))
+        )
         for colNo, jp_name in sorted(jp_names.items(), key=lambda x: x[0])
     }
 
@@ -64,27 +88,13 @@ def update_translation(
 
 
 def main(jp_master: Path, na_master: Path) -> None:
-    update_translation(
-        "equip_names.json",
-        jp_master,
-        na_master,
-        "mstSvt",
-        get_ce_names,
-    )
-    update_translation(
-        "cc_names.json",
-        jp_master,
-        na_master,
-        "mstCommandCode",
-        get_cc_names,
-    )
-    update_translation(
-        "mc_names.json",
-        jp_master,
-        na_master,
-        "mstEquip",
-        get_mc_names,
-    )
+    update_translation("equip_names", jp_master, na_master, "mstSvt", get_ce_names)
+    update_translation("cc_names", jp_master, na_master, "mstCommandCode", get_cc_names)
+    update_translation("mc_names", jp_master, na_master, "mstEquip", get_names)
+    update_translation("skill_names", jp_master, na_master, "mstSkill", get_names)
+    update_translation("np_names", jp_master, na_master, "mstTreasureDevice", get_names)
+    update_translation("event_names", jp_master, na_master, "mstEvent", get_names)
+    update_translation("war_names", jp_master, na_master, "mstWar", get_war_names)
 
 
 if __name__ == "__main__":

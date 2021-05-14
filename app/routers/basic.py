@@ -495,12 +495,14 @@ async def get_buff(
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-async def get_event(region: Region, event_id: int) -> Response:
+async def get_event(
+    region: Region, event_id: int, lang: Language = Depends(language_parameter)
+) -> Response:
     """
     Get the basic event data from the given event ID
     """
     if event_id in masters[region].mstEventId:
-        return item_response(basic.get_basic_event(region, event_id))
+        return item_response(basic.get_basic_event(region, event_id, lang))
     else:
         raise HTTPException(status_code=404, detail="Event not found")
 
@@ -513,12 +515,14 @@ async def get_event(region: Region, event_id: int) -> Response:
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-async def get_war(region: Region, war_id: int) -> Response:
+async def get_war(
+    region: Region, war_id: int, lang: Language = Depends(language_parameter)
+) -> Response:
     """
     Get the basic war data from the given event ID
     """
     if war_id in masters[region].mstWarId:
-        return item_response(basic.get_basic_war(region, war_id))
+        return item_response(basic.get_basic_war(region, war_id, lang))
     else:
         raise HTTPException(status_code=404, detail="Event not found")
 

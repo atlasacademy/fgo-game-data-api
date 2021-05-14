@@ -308,7 +308,7 @@ def get_quest_enemies(
 
     # Get all skills and NPs data at once to avoid calling the DB a lot of times
     all_skills = get_multiple_nice_skills(conn, region, all_skill_ids, lang)
-    all_tds = get_multiple_nice_tds(conn, region, all_td_ids)
+    all_tds = get_multiple_nice_tds(conn, region, all_td_ids, lang)
 
     out_enemies: list[list[QuestEnemy]] = []
     for enemy_deck in quest_detail.enemyDeck:

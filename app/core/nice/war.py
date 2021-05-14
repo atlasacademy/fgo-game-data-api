@@ -2,9 +2,11 @@ from typing import Optional
 
 from sqlalchemy.engine import Connection
 
+from app.core.utils import get_translation
+
 from ...config import Settings
 from ...db.helpers import fetch
-from ...schemas.common import Region
+from ...schemas.common import Language, Region
 from ...schemas.gameenums import (
     COND_TYPE_NAME,
     WAR_OVERWRITE_TYPE_NAME,
@@ -108,7 +110,9 @@ def get_nice_spot(
     )
 
 
-def get_nice_war(conn: Connection, region: Region, war_id: int) -> NiceWar:
+def get_nice_war(
+    conn: Connection, region: Region, war_id: int, lang: Language
+) -> NiceWar:
     raw_war = raw.get_war_entity(conn, war_id)
 
     base_settings = {"base_url": settings.asset_url, "region": region}
@@ -136,7 +140,7 @@ def get_nice_war(conn: Connection, region: Region, war_id: int) -> NiceWar:
         coordinates=raw_war.mstWar.coordinates,
         age=raw_war.mstWar.age,
         name=raw_war.mstWar.name,
-        longName=raw_war.mstWar.longName,
+        longName=get_translation(lang, raw_war.mstWar.longName),
         banner=AssetURL.banner.format(**base_settings, banner=banner_file)
         if raw_war.mstWar.bannerId != 0
         else None,

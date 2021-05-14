@@ -5,12 +5,12 @@ from typing import Any, Iterable
 from sqlalchemy.engine import Connection
 
 from ...config import Settings
-from ...schemas.common import Region
+from ...schemas.common import Language, Region
 from ...schemas.gameenums import CARD_TYPE_NAME
 from ...schemas.nice import AssetURL, NiceTd
 from ...schemas.raw import TdEntityNoReverse
 from ..raw import get_td_entity_no_reverse_many
-from ..utils import get_traits_list, strip_formatting_brackets
+from ..utils import get_traits_list, get_translation, strip_formatting_brackets
 from .func import get_nice_function
 
 
@@ -18,11 +18,11 @@ settings = Settings()
 
 
 def get_nice_td(
-    tdEntity: TdEntityNoReverse, svtId: int, region: Region
+    tdEntity: TdEntityNoReverse, svtId: int, region: Region, lang: Language
 ) -> list[dict[str, Any]]:
     nice_td: dict[str, Any] = {
         "id": tdEntity.mstTreasureDevice.id,
-        "name": tdEntity.mstTreasureDevice.name,
+        "name": get_translation(lang, tdEntity.mstTreasureDevice.name),
         "ruby": tdEntity.mstTreasureDevice.ruby,
         "rank": tdEntity.mstTreasureDevice.rank,
         "type": tdEntity.mstTreasureDevice.typeText,
@@ -122,9 +122,7 @@ MultipleNiceTds = dict[TdSvt, NiceTd]
 
 
 def get_multiple_nice_tds(
-    conn: Connection,
-    region: Region,
-    td_svts: Iterable[TdSvt],
+    conn: Connection, region: Region, td_svts: Iterable[TdSvt], lang: Language
 ) -> MultipleNiceTds:
     """Get multiple nice NPs at once
 
@@ -144,7 +142,7 @@ def get_multiple_nice_tds(
     }
     return {
         td_svt: NiceTd.parse_obj(
-            get_nice_td(raw_tds[td_svt.td_id], td_svt.svt_id, region)[0]
+            get_nice_td(raw_tds[td_svt.td_id], td_svt.svt_id, region, lang)[0]
         )
         for td_svt in td_svts
         if td_svt.td_id in raw_tds

@@ -147,11 +147,12 @@ def generate_exports(
                 for cc_id in masters[region].mstCommandCodeId
             )
             all_basic_event_data = (
-                get_basic_event(region, event_id)
+                get_basic_event(region, event_id, Language.jp)
                 for event_id in masters[region].mstEventId
             )
             all_basic_war_data = (
-                get_basic_war(region, war_id) for war_id in masters[region].mstWarId
+                get_basic_war(region, war_id, Language.jp)
+                for war_id in masters[region].mstWarId
             )
 
             output_files = [
@@ -193,9 +194,19 @@ def generate_exports(
                     get_nice_mystic_code(conn, region, mc_id, Language.en)
                     for mc_id in masters[region].mstEquipId
                 )
+                all_basic_event_data_en = (
+                    get_basic_event(region, event_id, Language.en)
+                    for event_id in masters[region].mstEventId
+                )
+                all_basic_war_data_en = (
+                    get_basic_war(region, war_id, Language.en)
+                    for war_id in masters[region].mstWarId
+                )
                 output_files = [
                     ("basic_servant_lang_en", all_basic_servant_en, dump_orjson),
                     ("basic_equip_lang_en", all_basic_equip_en, dump_orjson),
+                    ("basic_event_lang_en", all_basic_event_data_en, dump_orjson),
+                    ("basic_war_lang_en", all_basic_war_data_en, dump_orjson),
                     ("basic_command_code_lang_en", all_basic_cc_en, dump_orjson),
                     ("nice_command_code_lang_en", all_cc_data_en, dump_orjson),
                     ("basic_mystic_code_lang_en", all_basic_mc_en, dump_orjson),

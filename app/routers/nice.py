@@ -609,12 +609,15 @@ async def get_item(region: Region, item_id: int) -> Response:
     responses=get_error_code([404, 500]),
 )
 async def get_event(
-    region: Region, event_id: int, conn: Connection = Depends(get_db)
+    region: Region,
+    event_id: int,
+    lang: Language = Depends(language_parameter),
+    conn: Connection = Depends(get_db),
 ) -> Response:
     """
     Get the nice event data from the given event ID
     """
-    return item_response(event.get_nice_event(conn, region, event_id))
+    return item_response(event.get_nice_event(conn, region, event_id, lang))
 
 
 @router.get(
@@ -626,12 +629,15 @@ async def get_event(
     responses=get_error_code([404, 500]),
 )
 async def get_war(
-    region: Region, war_id: int, conn: Connection = Depends(get_db)
+    region: Region,
+    war_id: int,
+    lang: Language = Depends(language_parameter),
+    conn: Connection = Depends(get_db),
 ) -> Response:
     """
     Get the nice war data from the given war ID
     """
-    war_response = item_response(war.get_nice_war(conn, region, war_id))
+    war_response = item_response(war.get_nice_war(conn, region, war_id, lang))
     war_response.headers["Bloom-Response-TTL"] = str(settings.quest_cache_length)
     return war_response
 

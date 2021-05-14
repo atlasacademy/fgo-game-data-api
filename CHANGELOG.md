@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.60.0 - 2020-05-14
+### Added
+- skill, NP, event and war translations.
+- `basic_event_lang_en.json` and `basic_war_lang_en.json` JP export files.
+
 ## 5.59.0 - 2020-05-13
 
 ### Added

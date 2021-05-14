@@ -9,14 +9,18 @@ MAPPING_PATH = file_path.parent / "mappings"
 
 TRANSLATIONS: dict[str, str] = {}
 TRANSLATION_FILES = (
-    "servant_names.json",
-    "equip_names.json",
-    "cc_names.json",
-    "mc_names.json",
+    "skill_names",
+    "np_names",
+    "event_names",
+    "war_names",
+    "servant_names",
+    "equip_names",
+    "cc_names",
+    "mc_names",
 )
 
 for translation_file in TRANSLATION_FILES:
-    with open(MAPPING_PATH / translation_file, "r", encoding="utf-8") as fp:
+    with open(MAPPING_PATH / f"{translation_file}.json", "r", encoding="utf-8") as fp:
         TRANSLATIONS |= json.load(fp)
 
 

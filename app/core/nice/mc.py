@@ -1,11 +1,10 @@
 from sqlalchemy.engine import Connection
 
 from ...config import Settings
-from ...data.custom_mappings import TRANSLATIONS
 from ...schemas.common import Language, Region
 from ...schemas.nice import AssetURL, NiceMysticCode
 from .. import raw
-from ..utils import get_safe
+from ..utils import get_translation
 from .skill import get_nice_skill_with_svt
 
 
@@ -19,9 +18,7 @@ def get_nice_mystic_code(
     base_settings = {"base_url": settings.asset_url, "region": region}
     nice_mc = NiceMysticCode(
         id=raw_mc.mstEquip.id,
-        name=get_safe(TRANSLATIONS, raw_mc.mstEquip.name)
-        if lang == Language.en
-        else raw_mc.mstEquip.name,
+        name=get_translation(lang, raw_mc.mstEquip.name),
         detail=raw_mc.mstEquip.detail,
         maxLv=raw_mc.mstEquip.maxLv,
         extraAssets={

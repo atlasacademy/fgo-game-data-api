@@ -4,7 +4,6 @@ import orjson
 from sqlalchemy.engine import Connection
 
 from ....config import Settings
-from ....data.custom_mappings import TRANSLATIONS
 from ....data.gamedata import masters
 from ....schemas.common import Language, Region
 from ....schemas.enums import ATTRIBUTE_NAME, CLASS_NAME
@@ -27,7 +26,7 @@ from ....schemas.raw import (
     MstSvtCostume,
 )
 from ... import raw
-from ...utils import get_safe, get_traits_list
+from ...utils import get_traits_list, get_translation
 from ..item import get_nice_item_amount
 from ..skill import get_nice_skill_with_svt
 from ..td import get_nice_td
@@ -93,7 +92,7 @@ def get_nice_servant(
     nice_data: dict[str, Any] = {
         "id": raw_svt.mstSvt.id,
         "collectionNo": raw_svt.mstSvt.collectionNo,
-        "name": raw_svt.mstSvt.name,
+        "name": get_translation(lang, raw_svt.mstSvt.name),
         "ruby": raw_svt.mstSvt.ruby,
         "gender": GENDER_TYPE_NAME[raw_svt.mstSvt.genderType],
         "attribute": ATTRIBUTE_NAME[raw_svt.mstSvt.attri],
@@ -120,9 +119,6 @@ def get_nice_servant(
         "valentineEquipOwner": masters[region].valentineEquipOwner.get(svt_id),
         "relateQuestIds": raw_svt.mstSvt.relateQuestIds,
     }
-
-    if region == Region.JP and lang == Language.en:
-        nice_data["name"] = get_safe(TRANSLATIONS, nice_data["name"])
 
     costume_limits = {svt_costume.id for svt_costume in raw_svt.mstSvtCostume}
     costume_ids = {
@@ -253,7 +249,7 @@ def get_nice_servant(
     nice_data["noblePhantasms"] = [
         td
         for tdEntity in sorted(playable_tds, key=lambda x: x.mstTreasureDevice.id)
-        for td in get_nice_td(tdEntity, svt_id, region)
+        for td in get_nice_td(tdEntity, svt_id, region, lang)
     ]
 
     if lore:

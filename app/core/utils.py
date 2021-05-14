@@ -2,13 +2,20 @@ from typing import Any, Iterable, Mapping, Optional, TypeVar, Union
 
 from ..data.custom_mappings import TRANSLATIONS
 from ..schemas.basic import BasicCommandCode, BasicEquip, BasicServant
-from ..schemas.common import NiceTrait
+from ..schemas.common import Language, NiceTrait
 from ..schemas.enums import TRAIT_NAME, Trait
 from ..schemas.nice import NiceCommandCode, NiceEquip, NiceServant
 
 
 TValue = TypeVar("TValue")
 TLookup = TypeVar("TLookup")
+
+
+def get_translation(language: Language, string: str) -> str:
+    if language == Language.en:
+        return TRANSLATIONS.get(string, string)
+
+    return string
 
 
 def get_safe(input_dict: Mapping[Any, TValue], key: TLookup) -> Union[TValue, TLookup]:

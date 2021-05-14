@@ -58,7 +58,7 @@ from ..schemas.raw import (
     MstTreasureDevice,
 )
 from . import reverse as reverse_ids
-from .utils import get_nice_trait, get_safe, get_traits_list
+from .utils import get_nice_trait, get_safe, get_traits_list, get_translation
 
 
 settings = Settings()
@@ -205,9 +205,7 @@ def get_basic_skill(
         mstSkill = masters[region].mstSkillId[skill_id]
     basic_skill = BasicSkillReverse(
         id=mstSkill.id,
-        name=get_safe(TRANSLATIONS, mstSkill.name)
-        if lang == Language.en
-        else mstSkill.name,
+        name=get_translation(lang, mstSkill.name),
         ruby=mstSkill.ruby,
         icon=AssetURL.skillIcon.format(
             base_url=settings.asset_url, region=region, item_id=mstSkill.iconId
@@ -247,7 +245,7 @@ def get_basic_td(
         mstTreasureDevice = masters[region].mstTreasureDeviceId[td_id]
     basic_td = BasicTdReverse(
         id=mstTreasureDevice.id,
-        name=mstTreasureDevice.name,
+        name=get_translation(lang, mstTreasureDevice.name),
         ruby=mstTreasureDevice.ruby,
     )
 
@@ -336,9 +334,7 @@ def get_basic_mc(region: Region, mc_id: int, lang: Language) -> BasicMysticCode:
 
     basic_mc = BasicMysticCode(
         id=mstEquip.id,
-        name=get_safe(TRANSLATIONS, mstEquip.name)
-        if lang == Language.en
-        else mstEquip.name,
+        name=get_translation(lang, mstEquip.name),
         item=item_assets,
     )
 
@@ -352,9 +348,7 @@ def get_basic_cc(region: Region, cc_id: int, lang: Language) -> BasicCommandCode
     basic_cc = BasicCommandCode(
         id=mstCommandCode.id,
         collectionNo=mstCommandCode.collectionNo,
-        name=get_safe(TRANSLATIONS, mstCommandCode.name)
-        if lang == Language.en
-        else mstCommandCode.name,
+        name=get_translation(lang, mstCommandCode.name),
         rarity=mstCommandCode.rarity,
         face=AssetURL.commandCode.format(**base_settings),
     )
@@ -362,13 +356,13 @@ def get_basic_cc(region: Region, cc_id: int, lang: Language) -> BasicCommandCode
     return basic_cc
 
 
-def get_basic_event(region: Region, event_id: int) -> BasicEvent:
+def get_basic_event(region: Region, event_id: int, lang: Language) -> BasicEvent:
     mstEvent = masters[region].mstEventId[event_id]
 
     basic_event = BasicEvent(
         id=mstEvent.id,
         type=EVENT_TYPE_NAME[mstEvent.type],
-        name=mstEvent.name,
+        name=get_translation(lang, mstEvent.name),
         noticeAt=mstEvent.noticeAt,
         startedAt=mstEvent.startedAt,
         endedAt=mstEvent.endedAt,
@@ -380,7 +374,7 @@ def get_basic_event(region: Region, event_id: int) -> BasicEvent:
     return basic_event
 
 
-def get_basic_war(region: Region, war_id: int) -> BasicWar:
+def get_basic_war(region: Region, war_id: int, lang: Language) -> BasicWar:
     mstWar = masters[region].mstWarId[war_id]
 
     return BasicWar(
@@ -388,7 +382,7 @@ def get_basic_war(region: Region, war_id: int) -> BasicWar:
         coordinates=mstWar.coordinates,
         age=mstWar.age,
         name=mstWar.name,
-        longName=mstWar.longName,
+        longName=get_translation(lang, mstWar.longName),
         eventId=mstWar.eventId,
     )
 
