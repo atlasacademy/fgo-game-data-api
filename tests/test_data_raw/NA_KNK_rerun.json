@@ -1311,6 +1311,7 @@
   "mstEventReward": [],
   "mstEventRewardSet": [],
   "mstEventPointBuff": [],
+  "mstEventPointGroup": [],
   "mstEventMission": [
     {
       "id": 80090001,

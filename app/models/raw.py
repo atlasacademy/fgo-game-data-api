@@ -781,6 +781,16 @@ mstEventReward = Table(
 )
 
 
+mstEventPointGroup = Table(
+    "mstEventPointGroup",
+    metadata,
+    Column("eventId", Integer, index=True),
+    Column("groupId", Integer),
+    Column("name", String),
+    Column("iconId", Integer),
+)
+
+
 mstEventPointBuff = Table(
     "mstEventPointBuff",
     metadata,
@@ -1282,6 +1292,7 @@ TABLES_TO_BE_LOADED = [
     mstSetItem,
     mstEventReward,
     mstEventRewardSet,
+    mstEventPointGroup,
     mstEventPointBuff,
     mstEventMissionCondition,
     mstEventTower,

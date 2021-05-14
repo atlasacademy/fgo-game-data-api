@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.59.0 - 2020-05-13
+
+### Added
+- `pointGroups` to raw and nice event.
+
 ## 5.58.0 - 2020-04-29
 
 ### Added

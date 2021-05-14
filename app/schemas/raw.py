@@ -718,6 +718,13 @@ class MstEventReward(BaseModelORJson):
     presentMessageId: int  # 800410
 
 
+class MstEventPointGroup(BaseModelORJson):
+    eventId: int
+    groupId: int
+    name: str
+    iconId: int
+
+
 class MstEventPointBuff(BaseModelORJson):
     funcIds: list[int]
     id: int
@@ -1223,6 +1230,7 @@ class EventEntity(BaseModelORJson):
     mstEventReward: list[MstEventReward]
     mstEventRewardSet: list[MstEventRewardSet]
     mstEventPointBuff: list[MstEventPointBuff]
+    mstEventPointGroup: list[MstEventPointGroup]
     mstEventMission: list[MstEventMission]
     mstEventMissionCondition: list[MstEventMissionCondition]
     mstEventMissionConditionDetail: list[MstEventMissionConditionDetail]

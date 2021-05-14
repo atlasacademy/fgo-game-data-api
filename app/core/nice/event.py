@@ -29,6 +29,7 @@ from ...schemas.nice import (
     NiceEventMissionCondition,
     NiceEventMissionConditionDetail,
     NiceEventPointBuff,
+    NiceEventPointGroup,
     NiceEventReward,
     NiceEventTower,
     NiceEventTowerReward,
@@ -45,6 +46,7 @@ from ...schemas.raw import (
     MstEventMissionCondition,
     MstEventMissionConditionDetail,
     MstEventPointBuff,
+    MstEventPointGroup,
     MstEventReward,
     MstEventTower,
     MstEventTowerReward,
@@ -179,6 +181,20 @@ def get_nice_reward(
         bgImageGet=get_bgImage_url(
             region, reward.bgImageId, event_id, "event_rewardget_"
         ),
+    )
+
+
+def get_nice_pointGroup(
+    region: Region, pointGroup: MstEventPointGroup
+) -> NiceEventPointGroup:
+    return NiceEventPointGroup.parse_obj(
+        {
+            "groupId": pointGroup.groupId,
+            "name": pointGroup.name,
+            "icon": AssetURL.items.format(
+                base_url=settings.asset_url, region=region, item_id=pointGroup.iconId
+            ),
+        }
     )
 
 
@@ -430,6 +446,10 @@ def get_nice_event(conn: Connection, region: Region, event_id: int) -> NiceEvent
         rewards=(
             get_nice_reward(region, reward, event_id, gift_maps)
             for reward in raw_event.mstEventReward
+        ),
+        pointGroups=(
+            get_nice_pointGroup(region, pointGroup)
+            for pointGroup in raw_event.mstEventPointGroup
         ),
         pointBuffs=(
             get_nice_pointBuff(region, pointBuff)

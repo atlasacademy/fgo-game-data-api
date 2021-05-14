@@ -2,7 +2,7 @@ from typing import Iterable, Optional, Type, TypeVar, Union
 
 from sqlalchemy import Table
 from sqlalchemy.engine import Connection
-from sqlalchemy.sql import select, ColumnElement
+from sqlalchemy.sql import ColumnElement, select
 
 from app.schemas.base import BaseModelORJson
 
@@ -26,6 +26,7 @@ from ...models.raw import (
     mstEventMissionCondition,
     mstEventMissionConditionDetail,
     mstEventPointBuff,
+    mstEventPointGroup,
     mstEventReward,
     mstEventRewardSet,
     mstEventTower,
@@ -71,6 +72,7 @@ from ...schemas.raw import (
     MstEventMissionCondition,
     MstEventMissionConditionDetail,
     MstEventPointBuff,
+    MstEventPointGroup,
     MstEventReward,
     MstEventRewardSet,
     MstEventTower,
@@ -183,6 +185,11 @@ schema_table_fetch_all: dict[  # type:ignore
         mstEventPointBuff,
         mstEventPointBuff.c.eventId,
         mstEventPointBuff.c.id,
+    ),
+    MstEventPointGroup: (
+        mstEventPointGroup,
+        mstEventPointGroup.c.eventId,
+        mstEventPointGroup.c.groupId,
     ),
     MstEventTower: (mstEventTower, mstEventTower.c.eventId, mstEventTower.c.towerId),
     MstBoxGacha: (mstBoxGacha, mstBoxGacha.c.eventId, mstBoxGacha.c.id),
