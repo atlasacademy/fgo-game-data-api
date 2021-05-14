@@ -95,6 +95,7 @@
     { "id": 1000, "name": "basedOnServant" },
     { "id": 2001, "name": "humanoid" },
     { "id": 2008, "name": "weakToEnumaElish" },
+    { "id": 2631, "name": "hominidaeServant" },
     { "id": 5000, "name": "canBeInBattle" },
     { "id": 1100200, "name": "unknown" }
   ],
@@ -684,7 +685,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6517.png",
             "background": "gold",
-            "priority": 229,
+            "priority": 231,
             "dropPriority": 8500
           },
           "amount": 10
@@ -826,7 +827,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6507.png",
             "background": "gold",
-            "priority": 228,
+            "priority": 230,
             "dropPriority": 8400
           },
           "amount": 15
@@ -846,7 +847,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6506.png",
             "background": "gold",
-            "priority": 230,
+            "priority": 232,
             "dropPriority": 8501
           },
           "amount": 15
@@ -918,7 +919,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6520.png",
             "background": "gold",
-            "priority": 233,
+            "priority": 235,
             "dropPriority": 8402
           },
           "amount": 5
@@ -933,7 +934,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6529.png",
             "background": "gold",
-            "priority": 238,
+            "priority": 240,
             "dropPriority": 8504
           },
           "amount": 5

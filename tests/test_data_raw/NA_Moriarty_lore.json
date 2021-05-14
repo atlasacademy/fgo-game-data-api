@@ -1,7 +1,19 @@
 {
   "mstSvt": {
     "relateQuestIds": [94034901],
-    "individuality": [5000, 202300, 1, 102, 202, 301, 304, 1000, 2001, 2008],
+    "individuality": [
+      5000,
+      202300,
+      1,
+      102,
+      202,
+      301,
+      304,
+      1000,
+      2001,
+      2008,
+      2631
+    ],
     "classPassive": [34250, 20551],
     "cardIds": [3, 1, 1, 1, 2],
     "script": { "cameraActionId": 209 },

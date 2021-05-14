@@ -75,6 +75,7 @@
     { "id": 2001, "name": "humanoid" },
     { "id": 2008, "name": "weakToEnumaElish" },
     { "id": 2009, "name": "riding" },
+    { "id": 2631, "name": "hominidaeServant" },
     { "id": 5000, "name": "canBeInBattle" },
     { "id": 201000, "name": "unknown" }
   ],
@@ -679,7 +680,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6507.png",
             "background": "gold",
-            "priority": 228,
+            "priority": 230,
             "dropPriority": 8400
           },
           "amount": 5
@@ -916,7 +917,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6520.png",
             "background": "gold",
-            "priority": 233,
+            "priority": 235,
             "dropPriority": 8402
           },
           "amount": 10

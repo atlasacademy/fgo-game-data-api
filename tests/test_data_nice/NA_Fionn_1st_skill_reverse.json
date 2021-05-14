@@ -179,6 +179,7 @@
             { "id": 2011, "name": "skyOrEarth" },
             { "id": 2037, "name": "skyOrEarthExceptPseudoAndDemi" },
             { "id": 2040, "name": "divineOrDaemonOrUndead" },
+            { "id": 2631, "name": "hominidaeServant" },
             { "id": 5000, "name": "canBeInBattle" },
             { "id": 301100, "name": "unknown" }
           ],
@@ -733,7 +734,7 @@
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6507.png",
                     "background": "gold",
-                    "priority": 228,
+                    "priority": 230,
                     "dropPriority": 8400
                   },
                   "amount": 3
@@ -768,7 +769,7 @@
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6507.png",
                     "background": "gold",
-                    "priority": 228,
+                    "priority": 230,
                     "dropPriority": 8400
                   },
                   "amount": 5

@@ -872,7 +872,8 @@
               1000,
               2001,
               2008,
-              2113
+              2113,
+              2631
             ],
             "classPassive": [50150],
             "cardIds": [3, 3, 3, 1, 2],
@@ -907,7 +908,7 @@
             "cvId": 32,
             "collectionNo": 133,
             "materialStoryPriority": 1000,
-            "flag": 0
+            "flag": 8
           },
           "mstSkill": [
             {
