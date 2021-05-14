@@ -19,9 +19,9 @@ fuzzywuzzy==0.18.0 \
 gitdb==4.0.7; python_version >= "3.5" \
     --hash=sha256:6c4cc71933456991da20917998acbe6cf4fb41eeaab7d6d67fbc05ecd4c865b0 \
     --hash=sha256:96bf5c08b157a666fec41129e6d327235284cca4c81e92109260f353ba138005
-gitpython==3.1.16; python_version >= "3.5" \
-    --hash=sha256:37ac36cacf2e2be5e88f0810187c5833e71c1a2a8cf81588f5699d1b70183baa \
-    --hash=sha256:2bfcd25e6b81fe431fa3ab1f0975986cfddabf7870a323c183f3afbc9447c0c5
+gitpython==3.1.17; python_version >= "3.5" \
+    --hash=sha256:29fe82050709760081f588dd50ce83504feddbebdc4da6956d02351552b1c135 \
+    --hash=sha256:ee24bdc93dce357630764db659edaf6b8d664d4ff5447ccfeedd2dc5c253f41e
 greenlet==1.1.0; python_version >= "3" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" and python_version >= "3" \
     --hash=sha256:60848099b76467ef09b62b0f4512e7e6f0a2c977357a036de602b653667f5f4c \
     --hash=sha256:f42ad188466d946f1b3afc0a9e1a266ac8926461ee0786c06baac6bd71f8a6f3 \
