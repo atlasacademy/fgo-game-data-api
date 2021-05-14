@@ -75,12 +75,23 @@ def update_translation(
     na_names = extract_names(na_svt)
     jp_names = extract_names(jp_svt)
 
-    updated_translation = {
-        jp_name: na_names.get(
-            colNo, current_translations.get(jp_name, TRANSLATIONS.get(jp_name, jp_name))
-        )
-        for colNo, jp_name in sorted(jp_names.items(), key=lambda x: x[0])
-    }
+    if master_file == "mstWar":
+        with open(na_master / "mstConstant.json", "r", encoding="utf-8") as fp:
+            na_constant = {
+                constant["name"]: constant["value"] for constant in json.load(fp)
+            }
+
+        last_war_id = na_constant["LAST_WAR_ID"]
+        na_names.pop(last_war_id + 1)
+
+    updated_translation: dict[str, str] = {}
+    for colNo, jp_name in sorted(jp_names.items(), key=lambda x: x[0]):
+        if colNo in na_names:
+            updated_translation[jp_name] = na_names[colNo]
+        elif jp_name not in updated_translation:
+            updated_translation[jp_name] = current_translations.get(
+                jp_name, TRANSLATIONS.get(jp_name, jp_name)
+            )
 
     with open(mapping_path, "w", encoding="utf-8", newline="\n") as fp:
         json.dump(updated_translation, fp, indent=2, ensure_ascii=False)
