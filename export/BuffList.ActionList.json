@@ -856,8 +856,8 @@
   },
   "PREVENT_DEATH_BY_DAMAGE": {
     "limit": 0,
-    "plusTypes": [],
-    "minusTypes": [158],
+    "plusTypes": [158],
+    "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
@@ -865,8 +865,8 @@
   },
   "FUNCTION_COMMANDCODEATTACK_AFTER": {
     "limit": 0,
-    "plusTypes": [],
-    "minusTypes": [159],
+    "plusTypes": [159],
+    "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
@@ -874,8 +874,8 @@
   },
   "FUNCTION_ATTACK_BEFORE": {
     "limit": 0,
-    "plusTypes": [],
-    "minusTypes": [160],
+    "plusTypes": [160],
+    "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,

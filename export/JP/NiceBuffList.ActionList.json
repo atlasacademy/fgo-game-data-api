@@ -956,8 +956,8 @@
   },
   "preventDeathByDamage": {
     "limit": "none",
-    "plusTypes": [],
-    "minusTypes": ["preventDeathByDamage"],
+    "plusTypes": ["preventDeathByDamage"],
+    "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
@@ -966,8 +966,8 @@
   },
   "functionCommandcodeattackAfter": {
     "limit": "none",
-    "plusTypes": [],
-    "minusTypes": ["commandcodeattackAfterFunction"],
+    "plusTypes": ["commandcodeattackAfterFunction"],
+    "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
@@ -976,8 +976,8 @@
   },
   "functionAttackBefore": {
     "limit": "none",
-    "plusTypes": [],
-    "minusTypes": ["attackBeforeFunction"],
+    "plusTypes": ["attackBeforeFunction"],
+    "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
