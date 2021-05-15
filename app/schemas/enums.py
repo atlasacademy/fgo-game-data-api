@@ -293,6 +293,7 @@ class SvtClass(str, Enum):
     beastIIIL = "beastIIIL"
     beastUnknown = "beastUnknown"
     unknown = "unknown"
+    cccFinaleEmiyaAlter = "cccFinaleEmiyaAlter"
     # OTHER = "OTHER"
     ALL = "ALL"
     # EXTRA = "EXTRA"
@@ -312,7 +313,13 @@ CLASS_NAME: dict[int, SvtClass] = {
     10: SvtClass.alterEgo,
     11: SvtClass.avenger,
     12: SvtClass.demonGodPillar,
+    # 13
+    # 14
+    # 15
+    # 16
     17: SvtClass.grandCaster,
+    # 18
+    # 19
     20: SvtClass.beastII,
     21: SvtClass.ushiChaosTide,
     22: SvtClass.beastI,
@@ -322,6 +329,12 @@ CLASS_NAME: dict[int, SvtClass] = {
     26: SvtClass.beastIIIL,
     27: SvtClass.beastUnknown,  # LB 5.2 beast
     97: SvtClass.unknown,
+    # 98
+    # 99
+    # 100
+    # 107
+    124: SvtClass.cccFinaleEmiyaAlter,
+    # 125
     # 1000: SvtClass.OTHER,
     1001: SvtClass.ALL,
     # 1002: SvtClass.EXTRA,
