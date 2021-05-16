@@ -297,7 +297,7 @@ class SvtClass(str, Enum):
     # OTHER = "OTHER"
     ALL = "ALL"
     # EXTRA = "EXTRA"
-    # ALLCLASS = "ALLCLASS"
+    # MIX = "MIX"
 
 
 CLASS_NAME: dict[int, SvtClass] = {
@@ -336,9 +336,10 @@ CLASS_NAME: dict[int, SvtClass] = {
     124: SvtClass.cccFinaleEmiyaAlter,
     # 125
     # 1000: SvtClass.OTHER,
+    # For Support List
     1001: SvtClass.ALL,
     # 1002: SvtClass.EXTRA,
-    # 1003: SvtClass.ALLCLASS,
+    # 1003: SvtClass.MIX,
 }
 
 
@@ -437,6 +438,7 @@ class DetailMissionCondType(IntEnum):
     DEFEAT_ENEMY_CLASS = 14
     DEFEAT_SERVANT_CLASS = 15
     DEFEAT_ENEMY_NOT_SERVANT_CLASS = 16
+    BATTLE_SVT_INDIVIDUALITY_IN_DECK = 17  # Clear one quest with servant having trait
     BATTLE_SVT_CLASS_IN_DECK = 18  # Filter by svt class
     SVT_GET_BATTLE = 19  # Embers are svt instead of items
     FRIEND_POINT_SUMMON = 21
@@ -447,6 +449,7 @@ class DetailMissionCondType(IntEnum):
     SQUARE_ADVANCED = 26
     MORE_FRIEND_FOLLOWER = 27  # 5th Anniversary missions
     MAIN_QUEST_DONE = 28  # 22M Download Campaign
+    QUEST_CLEAR_NUM_INCLUDING_GRAILFRONT = 31
 
 
 class NiceDetailMissionCondType(str, Enum):
