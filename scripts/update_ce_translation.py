@@ -106,6 +106,7 @@ def main(jp_master: Path, na_master: Path) -> None:
     update_translation("np_names", jp_master, na_master, "mstTreasureDevice", get_names)
     update_translation("event_names", jp_master, na_master, "mstEvent", get_names)
     update_translation("war_names", jp_master, na_master, "mstWar", get_war_names)
+    update_translation("item_names", jp_master, na_master, "mstItem", get_names)
 
 
 if __name__ == "__main__":

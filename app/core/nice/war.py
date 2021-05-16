@@ -77,6 +77,7 @@ def get_nice_spot(
     raw_spot: MstSpot,
     war_asset_id: int,
     quests: list[QuestEntity],
+    lang: Language,
 ) -> NiceSpot:
     return NiceSpot(
         id=raw_spot.id,
@@ -103,7 +104,7 @@ def get_nice_spot(
         nextOfsY=raw_spot.nextOfsY,
         closedMessage=raw_spot.closedMessage,
         quests=(
-            NiceQuest.parse_obj(get_nice_quest(conn, region, quest, war_id))
+            NiceQuest.parse_obj(get_nice_quest(conn, region, quest, lang, war_id))
             for quest in quests
             if quest.mstQuest.spotId == raw_spot.id
         ),
@@ -166,7 +167,7 @@ def get_nice_war(
         ),
         spots=(
             get_nice_spot(
-                conn, region, war_id, raw_spot, war_asset_id, raw_war.mstQuest
+                conn, region, war_id, raw_spot, war_asset_id, raw_war.mstQuest, lang
             )
             for raw_spot in raw_war.mstSpot
         ),

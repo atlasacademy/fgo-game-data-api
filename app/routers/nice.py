@@ -561,11 +561,13 @@ async def get_buff(
 )
 async def find_item(
     search_param: ItemSearchQueryParams = Depends(ItemSearchQueryParams),
+    lang: Language = Depends(language_parameter),
     conn: Connection = Depends(get_db),
 ) -> Response:
     matches = search.search_item(conn, search_param)
     return list_response(
-        item.get_nice_item_from_raw(search_param.region, mstItem) for mstItem in matches
+        item.get_nice_item_from_raw(search_param.region, mstItem, lang)
+        for mstItem in matches
     )
 
 
@@ -590,12 +592,14 @@ if settings.documentation_all_nice:
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-async def get_item(region: Region, item_id: int) -> Response:
+async def get_item(
+    region: Region, item_id: int, lang: Language = Depends(language_parameter)
+) -> Response:
     """
     Get the nice item data from the given item ID
     """
     if item_id in masters[region].mstItemId:
-        return item_response(item.get_nice_item(region, item_id))
+        return item_response(item.get_nice_item(region, item_id, lang))
     else:
         raise HTTPException(status_code=404, detail="Item not found")
 
@@ -679,12 +683,17 @@ async def get_quest_phase(
     responses=get_error_code([404, 500]),
 )
 async def get_quest(
-    region: Region, quest_id: int, conn: Connection = Depends(get_db)
+    region: Region,
+    quest_id: int,
+    lang: Language = Depends(language_parameter),
+    conn: Connection = Depends(get_db),
 ) -> Response:
     """
     Get the nice quest data from the given quest ID
     """
-    quest_response = item_response(quest.get_nice_quest_alone(conn, region, quest_id))
+    quest_response = item_response(
+        quest.get_nice_quest_alone(conn, region, quest_id, lang)
+    )
     quest_response.headers["Bloom-Response-TTL"] = str(settings.quest_cache_length)
     return quest_response
 

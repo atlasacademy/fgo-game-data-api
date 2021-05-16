@@ -84,6 +84,7 @@ def get_nice_quest(
     conn: Connection,
     region: Region,
     raw_quest: Union[QuestEntity, QuestPhaseEntity],
+    lang: Language,
     war_id: Optional[int] = None,
 ) -> dict[str, Any]:
     if not war_id:
@@ -98,7 +99,7 @@ def get_nice_quest(
             nice_item_amount
             for consumeItem in raw_quest.mstQuestConsumeItem
             for nice_item_amount in get_nice_item_amount(
-                region, consumeItem.itemIds, consumeItem.nums
+                region, consumeItem.itemIds, consumeItem.nums, lang
             )
         ],
         "consume": raw_quest.mstQuest.actConsume,
@@ -119,10 +120,11 @@ def get_nice_quest(
     return nice_data
 
 
-def get_nice_quest_alone(conn: Connection, region: Region, quest_id: int) -> NiceQuest:
-    return NiceQuest.parse_obj(
-        get_nice_quest(conn, region, raw.get_quest_entity(conn, quest_id))
-    )
+def get_nice_quest_alone(
+    conn: Connection, region: Region, quest_id: int, lang: Language
+) -> NiceQuest:
+    raw_quest = raw.get_quest_entity(conn, quest_id)
+    return NiceQuest.parse_obj(get_nice_quest(conn, region, raw_quest, lang))
 
 
 async def get_nice_quest_phase(
@@ -133,7 +135,7 @@ async def get_nice_quest_phase(
     lang: Language = Language.jp,
 ) -> NiceQuestPhase:
     raw_quest = raw.get_quest_phase_entity(conn, quest_id, phase)
-    nice_data = get_nice_quest(conn, region, raw_quest)
+    nice_data = get_nice_quest(conn, region, raw_quest, lang)
 
     stages = sorted(raw_quest.mstStage, key=lambda stage: stage.wave)
 

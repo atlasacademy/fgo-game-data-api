@@ -119,7 +119,7 @@ def generate_exports(
                 for svt_id in masters[region].mstSvtServantCollectionNo.values()
             )
             all_item_data = (
-                get_nice_item_from_raw(region, raw_item)
+                get_nice_item_from_raw(region, raw_item, Language.jp)
                 for raw_item in get_all_items(conn)
             )
             all_mc_data = (
@@ -186,6 +186,10 @@ def generate_exports(
                     get_nice_command_code(conn, region, cc_id, Language.en)
                     for cc_id in masters[region].mstCommandCodeId
                 )
+                all_item_data_en = (
+                    get_nice_item_from_raw(region, raw_item, Language.en)
+                    for raw_item in get_all_items(conn)
+                )
                 all_basic_mc_en = (
                     get_basic_mc(region, mc_id, Language.en)
                     for mc_id in masters[region].mstEquipId
@@ -209,6 +213,7 @@ def generate_exports(
                     ("basic_war_lang_en", all_basic_war_data_en, dump_orjson),
                     ("basic_command_code_lang_en", all_basic_cc_en, dump_orjson),
                     ("nice_command_code_lang_en", all_cc_data_en, dump_orjson),
+                    ("nice_item_lang_en", all_item_data_en, dump_orjson),
                     ("basic_mystic_code_lang_en", all_basic_mc_en, dump_orjson),
                     ("nice_mystic_code_lang_en", all_mc_data_en, dump_orjson),
                 ] + output_files

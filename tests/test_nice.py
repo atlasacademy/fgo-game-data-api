@@ -7,7 +7,7 @@ from app.core.nice.enemy import get_enemy_script
 from app.core.nice.event import get_nice_shop
 from app.db.engine import engines
 from app.db.helpers import event
-from app.schemas.common import Region
+from app.schemas.common import Language, Region
 
 from .utils import get_response, get_response_data
 
@@ -431,12 +431,12 @@ class TestServantSpecial:
     async def test_shop_itemIds_0(self) -> None:
         with engines[Region.NA].connect() as conn:
             fp_shop_item = get_nice_shop(
-                Region.NA, event.get_mstShop_by_id(conn, 1), [], {}
+                Region.NA, event.get_mstShop_by_id(conn, 1), [], {}, Language.jp
             )
             assert fp_shop_item.cost.item.name == "Friend Point"
 
             mp_shop_item = get_nice_shop(
-                Region.NA, event.get_mstShop_by_id(conn, 11000000), [], {}
+                Region.NA, event.get_mstShop_by_id(conn, 11000000), [], {}, Language.jp
             )
             assert mp_shop_item.cost.item.name == "Mana Prism"
 

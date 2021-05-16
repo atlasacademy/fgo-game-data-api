@@ -83,6 +83,7 @@ def get_nice_shop(
     shop: MstShop,
     set_items: list[MstSetItem],
     shop_scripts: dict[int, MstShopScript],
+    lang: Language,
 ) -> NiceShop:
     if shop.payType == PayType.FRIEND_POINT:
         shop_item_id = 4
@@ -120,7 +121,7 @@ def get_nice_shop(
         )
     else:
         cost = NiceItemAmount(
-            item=get_nice_item(region, shop_item_id), amount=shop.prices[0]
+            item=get_nice_item(region, shop_item_id, lang), amount=shop.prices[0]
         )
 
     nice_shop = NiceShop(
@@ -359,6 +360,7 @@ def get_nice_lottery(
     lottery: MstBoxGacha,
     boxes: list[MstBoxGachaBase],
     gift_maps: dict[int, list[MstGift]],
+    lang: Language,
 ) -> NiceEventLottery:
     nice_boxes: list[NiceEventLotteryBox] = []
     for box_index, base_id in enumerate(lottery.baseIds):
@@ -373,7 +375,8 @@ def get_nice_lottery(
         slot=lottery.slot,
         payType=PAY_TYPE_NAME[lottery.payType],
         cost=NiceItemAmount(
-            item=get_nice_item(region, lottery.payTargetId), amount=lottery.payValue
+            item=get_nice_item(region, lottery.payTargetId, lang),
+            amount=lottery.payValue,
         ),
         priority=lottery.priority,
         limited=lottery.flag == BoxGachaFlag.LIMIT_RESET,
@@ -442,7 +445,7 @@ def get_nice_event(
         materialOpenedAt=raw_event.mstEvent.materialOpenedAt,
         warIds=(war.id for war in raw_event.mstWar),
         shop=(
-            get_nice_shop(region, shop, raw_event.mstSetItem, shop_scripts)
+            get_nice_shop(region, shop, raw_event.mstSetItem, shop_scripts, lang)
             for shop in raw_event.mstShop
         ),
         rewards=(
@@ -465,7 +468,9 @@ def get_nice_event(
             for tower in raw_event.mstEventTower
         ),
         lotteries=(
-            get_nice_lottery(region, lottery, raw_event.mstBoxGachaBase, gift_maps)
+            get_nice_lottery(
+                region, lottery, raw_event.mstBoxGachaBase, gift_maps, lang
+            )
             for lottery in raw_event.mstBoxGacha
         ),
     )

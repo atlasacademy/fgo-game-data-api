@@ -13,6 +13,7 @@ TRANSLATION_FILES = (
     "np_names",
     "event_names",
     "war_names",
+    "item_names",
     "servant_names",
     "equip_names",
     "cc_names",
