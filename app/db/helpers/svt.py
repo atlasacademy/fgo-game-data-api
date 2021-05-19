@@ -10,7 +10,9 @@ from ...models.raw import (
     mstSvt,
     mstSvtLimit,
     mstSvtLimitAdd,
+    mstIllustrator,
     mstSvtScript,
+    mstCv,
     mstSvtVoice,
     mstVoicePlayCond,
 )
@@ -93,6 +95,8 @@ def get_svt_search(
     rarity_ints: Optional[Iterable[int]] = None,
     cond_svt_value: Optional[set[int]] = None,
     cond_group_value: Optional[set[int]] = None,
+    illustrator: Optional[str] = None,
+    voiceActor: Optional[str] = None,
 ) -> list[MstSvt]:
     from_clause: Union[Join, Table] = mstSvt
     where_clause: list[Union[ClauseElement, bool]] = [True]
@@ -124,6 +128,14 @@ def get_svt_search(
             mstSvtLimit, mstSvtLimit.c.svtId == mstSvt.c.id
         )
         where_clause.append(mstSvtLimit.c.rarity.in_(rarity_ints))
+    if illustrator:
+        from_clause = from_clause.outerjoin(
+            mstIllustrator, mstIllustrator.c.id == mstSvt.c.illustratorId
+        )
+        where_clause.append(mstIllustrator.c.name == illustrator)
+    if voiceActor:
+        from_clause = from_clause.outerjoin(mstCv, mstCv.c.id == mstSvt.c.cvId)
+        where_clause.append(mstCv.c.name == voiceActor)
 
     if cond_svt_value or cond_group_value:
         from_clause = from_clause.outerjoin(

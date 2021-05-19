@@ -651,7 +651,7 @@ mstCv = Table(
     "mstCv",
     metadata,
     Column("id", Integer, primary_key=True),
-    Column("name", String),
+    Column("name", String, index=True),
     Column("comment", String),
 )
 
@@ -660,7 +660,7 @@ mstIllustrator = Table(
     "mstIllustrator",
     metadata,
     Column("id", Integer, primary_key=True),
-    Column("name", String),
+    Column("name", String, index=True),
     Column("comment", String),
 )
 

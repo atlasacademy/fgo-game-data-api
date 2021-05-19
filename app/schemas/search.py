@@ -38,6 +38,8 @@ SERVANT_TYPE = [
 class ServantSearchQueryParams:
     region: Region
     name: Optional[str] = None
+    illustrator: Optional[str] = None
+    voiceActor: Optional[str] = None
     excludeCollectionNo: list[int] = Query([0])
     type: list[NiceSvtType] = Query(SERVANT_TYPE)
     flag: list[NiceSvtFlag] = Query([])
@@ -52,6 +54,8 @@ class ServantSearchQueryParams:
         return any(
             [
                 self.name,
+                self.illustrator,
+                self.voiceActor,
                 self.type != SERVANT_TYPE,
                 self.flag,
                 self.rarity,
@@ -91,6 +95,8 @@ class ServantSearchQueryParams:
 class SvtSearchQueryParams:
     region: Region
     name: Optional[str] = None
+    illustrator: Optional[str] = None
+    voiceActor: Optional[str] = None
     excludeCollectionNo: list[int] = Query([])
     type: list[NiceSvtType] = Query([])
     flag: list[NiceSvtFlag] = Query([])
@@ -105,6 +111,8 @@ class SvtSearchQueryParams:
         return any(
             [
                 self.name,
+                self.illustrator,
+                self.voiceActor,
                 self.type,
                 self.flag,
                 self.rarity,
@@ -142,6 +150,7 @@ class SvtSearchQueryParams:
 class EquipSearchQueryParams:
     region: Region
     name: Optional[str] = None
+    illustrator: Optional[str] = None
     excludeCollectionNo: list[int] = Query([0])
     type: list[NiceSvtType] = Query([NiceSvtType.servantEquip])
     flag: list[NiceSvtFlag] = Query([])
@@ -151,6 +160,7 @@ class EquipSearchQueryParams:
         return any(
             [
                 self.name,
+                self.illustrator,
                 self.type != [NiceSvtType.servantEquip],
                 self.flag,
                 self.rarity,

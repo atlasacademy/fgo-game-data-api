@@ -164,6 +164,8 @@ def search_servant(
         rarity_ints=rarity_ints,
         cond_svt_value=cond_svt_value,
         cond_group_value=voice_cond_group,
+        illustrator=search_param.illustrator,
+        voiceActor=search_param.voiceActor,
     )
 
     if search_param.name:
@@ -197,6 +199,7 @@ def search_equip(
         svt_flag_ints=svt_flag_ints,
         excludeCollectionNo=search_param.excludeCollectionNo,
         rarity_ints=rarity,
+        illustrator=search_param.illustrator,
     )
 
     if search_param.name:
