@@ -165,7 +165,7 @@ def search_servant(
         cond_svt_value=cond_svt_value,
         cond_group_value=voice_cond_group,
         illustrator=search_param.illustrator,
-        voiceActor=search_param.voiceActor,
+        cv=search_param.cv,
     )
 
     if search_param.name:

@@ -6,13 +6,13 @@ from sqlalchemy.sql import Join, and_, or_, select
 from sqlalchemy.sql.elements import ClauseElement
 
 from ...models.raw import (
+    mstCv,
+    mstIllustrator,
     mstSubtitle,
     mstSvt,
     mstSvtLimit,
     mstSvtLimitAdd,
-    mstIllustrator,
     mstSvtScript,
-    mstCv,
     mstSvtVoice,
     mstVoicePlayCond,
 )
@@ -96,7 +96,7 @@ def get_svt_search(
     cond_svt_value: Optional[set[int]] = None,
     cond_group_value: Optional[set[int]] = None,
     illustrator: Optional[str] = None,
-    voiceActor: Optional[str] = None,
+    cv: Optional[str] = None,
 ) -> list[MstSvt]:
     from_clause: Union[Join, Table] = mstSvt
     where_clause: list[Union[ClauseElement, bool]] = [True]
@@ -133,9 +133,9 @@ def get_svt_search(
             mstIllustrator, mstIllustrator.c.id == mstSvt.c.illustratorId
         )
         where_clause.append(mstIllustrator.c.name == illustrator)
-    if voiceActor:
+    if cv:
         from_clause = from_clause.outerjoin(mstCv, mstCv.c.id == mstSvt.c.cvId)
-        where_clause.append(mstCv.c.name == voiceActor)
+        where_clause.append(mstCv.c.name == cv)
 
     if cond_svt_value or cond_group_value:
         from_clause = from_clause.outerjoin(

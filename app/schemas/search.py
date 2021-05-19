@@ -39,7 +39,7 @@ class ServantSearchQueryParams:
     region: Region
     name: Optional[str] = None
     illustrator: Optional[str] = None
-    voiceActor: Optional[str] = None
+    cv: Optional[str] = None
     excludeCollectionNo: list[int] = Query([0])
     type: list[NiceSvtType] = Query(SERVANT_TYPE)
     flag: list[NiceSvtFlag] = Query([])
@@ -55,7 +55,7 @@ class ServantSearchQueryParams:
             [
                 self.name,
                 self.illustrator,
-                self.voiceActor,
+                self.cv,
                 self.type != SERVANT_TYPE,
                 self.flag,
                 self.rarity,
@@ -96,7 +96,7 @@ class SvtSearchQueryParams:
     region: Region
     name: Optional[str] = None
     illustrator: Optional[str] = None
-    voiceActor: Optional[str] = None
+    cv: Optional[str] = None
     excludeCollectionNo: list[int] = Query([])
     type: list[NiceSvtType] = Query([])
     flag: list[NiceSvtFlag] = Query([])
@@ -112,7 +112,7 @@ class SvtSearchQueryParams:
             [
                 self.name,
                 self.illustrator,
-                self.voiceActor,
+                self.cv,
                 self.type,
                 self.flag,
                 self.rarity,
@@ -129,6 +129,8 @@ class SvtSearchQueryParams:
         Search and return the list of matched servant entities.
 
         - **name**: servant name. Searching JP data using English name works too.
+        - **illustrator**: Illustrator name. Exact match required.
+        - **cv**: Voice actor name. Exact match required.
         - **excludeCollectionNo**: int. Won't return records with the specified `collectionNo`.
         - **type**: servant type. See the `NiceSvtType` enum for the options.
         - **flag**: svt flag. See the `NiceSvtFlag` enum for the options.
@@ -172,6 +174,7 @@ class EquipSearchQueryParams:
         Search and return the list of matched equip entities.
 
         - **name**: in English if you are searching NA data and in Japanese if you are searching JP data.
+        - **illustrator**: Illustrator name. Exact match required.
         - **excludeCollectionNo**: int, defaults to 0. Won't return records with the specified `collectionNo`.
         - **type**: servant type, defaults to `[servantEquip]`. See the `NiceSvtType` for the options.
         - **flag**: svt flag. See the `NiceSvtFlag` enum for the options.

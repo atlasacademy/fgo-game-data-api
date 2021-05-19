@@ -232,7 +232,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
-          "phasesWithEnemies": [3],
+          "phasesWithEnemies": [1, 2, 3],
           "phasesNoBattle": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
@@ -388,7 +388,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
-          "phasesWithEnemies": [],
+          "phasesWithEnemies": [1, 2, 3],
           "phasesNoBattle": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
@@ -524,7 +524,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
-          "phasesWithEnemies": [],
+          "phasesWithEnemies": [1, 2, 3],
           "phasesNoBattle": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
@@ -735,7 +735,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
-          "phasesWithEnemies": [],
+          "phasesWithEnemies": [3],
           "phasesNoBattle": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
@@ -808,7 +808,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
-          "phasesWithEnemies": [],
+          "phasesWithEnemies": [1, 2, 3],
           "phasesNoBattle": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
@@ -1170,7 +1170,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
-          "phasesWithEnemies": [],
+          "phasesWithEnemies": [1, 2, 3],
           "phasesNoBattle": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
@@ -1319,7 +1319,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
-          "phasesWithEnemies": [],
+          "phasesWithEnemies": [1, 2, 3],
           "phasesNoBattle": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
@@ -1472,7 +1472,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
-          "phasesWithEnemies": [],
+          "phasesWithEnemies": [1, 2, 3],
           "phasesNoBattle": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
