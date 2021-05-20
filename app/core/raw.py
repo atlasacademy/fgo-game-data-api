@@ -59,6 +59,7 @@ from ..schemas.raw import (
     MstSvtGroup,
     MstSvtLimit,
     MstSvtLimitAdd,
+    MstSvtPassiveSkill,
     MstSvtVoiceRelation,
     MstVoice,
     MstWar,
@@ -280,6 +281,7 @@ def get_servant_entity(
     mstCombineMaterial = fetch.get_all(
         conn, MstCombineMaterial, svt_db.combineMaterialId
     )
+    mstSvtPassiveSkill = fetch.get_all(conn, MstSvtPassiveSkill, servant_id)
 
     costume_chara_ids = [limit.battleCharaId for limit in mstSvtLimitAdd]
     mstSvtScript = svt.get_svt_script(
@@ -308,6 +310,7 @@ def get_servant_entity(
         mstCombineMaterial=mstCombineMaterial,
         mstSvtLimitAdd=mstSvtLimitAdd,
         mstSvtChange=mstSvtChange,
+        mstSvtPassiveSkill=mstSvtPassiveSkill,
         # needed costume to get the nice limits and costume ids
         mstSvtCostume=mstSvtCostume,
         # needed this to get CharaFigure available forms
@@ -321,6 +324,9 @@ def get_servant_entity(
     if expand:
         svt_entity.mstSvt.expandedClassPassive = get_skill_entity_no_reverse_many(
             conn, svt_entity.mstSvt.classPassive, expand
+        )
+        svt_entity.expandedExtraPassive = get_skill_entity_no_reverse_many(
+            conn, [skill.skillId for skill in mstSvtPassiveSkill], expand
         )
 
     if lore:

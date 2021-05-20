@@ -4,7 +4,13 @@ from sqlalchemy.dialects.postgresql import aggregate_order_by
 from sqlalchemy.engine import Connection
 from sqlalchemy.sql import and_, func, select
 
-from ...models.raw import mstSkill, mstSkillDetail, mstSkillLv, mstSvtSkill
+from ...models.raw import (
+    mstSkill,
+    mstSkillDetail,
+    mstSkillLv,
+    mstSvtPassiveSkill,
+    mstSvtSkill,
+)
 from ...schemas.raw import MstSkill, SkillEntityNoReverse
 from .utils import sql_jsonb_agg
 
@@ -28,6 +34,7 @@ def get_skillEntity(
         mstSkill.outerjoin(mstSkillDetail, mstSkillDetail.c.id == mstSkill.c.id)
         .outerjoin(mstSvtSkill, mstSvtSkill.c.skillId == mstSkill.c.id)
         .outerjoin(mstSkillLvJson, mstSkillLvJson.c.skillId == mstSkill.c.id)
+        .outerjoin(mstSvtPassiveSkill, mstSvtPassiveSkill.c.skillId == mstSkill.c.id)
     )
 
     SELECT_SKILL_ENTITY = [
@@ -35,6 +42,7 @@ def get_skillEntity(
         sql_jsonb_agg(mstSkillDetail),
         sql_jsonb_agg(mstSvtSkill),
         mstSkillLvJson.c.mstSkillLv,
+        sql_jsonb_agg(mstSvtPassiveSkill),
     ]
 
     stmt = (

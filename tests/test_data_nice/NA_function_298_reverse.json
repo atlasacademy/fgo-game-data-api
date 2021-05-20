@@ -37,6 +37,7 @@
           "coolDown": [12, 12, 12, 12, 12, 11, 11, 11, 11, 10],
           "actIndividuality": [],
           "script": {},
+          "extraPassive": [],
           "functions": [
             {
               "funcId": 298,

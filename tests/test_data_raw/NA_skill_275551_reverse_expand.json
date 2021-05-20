@@ -855,6 +855,7 @@
       "priority": 0
     }
   ],
+  "mstSvtPassiveSkill": [],
   "reverse": {
     "raw": {
       "servant": [
@@ -1047,7 +1048,8 @@
                   "skillDetailId": 275551,
                   "priority": 0
                 }
-              ]
+              ],
+              "mstSvtPassiveSkill": []
             },
             {
               "mstSkill": {
@@ -1185,7 +1187,8 @@
                   "skillDetailId": 276550,
                   "priority": 0
                 }
-              ]
+              ],
+              "mstSvtPassiveSkill": []
             },
             {
               "mstSkill": {
@@ -1323,7 +1326,8 @@
                   "skillDetailId": 277350,
                   "priority": 0
                 }
-              ]
+              ],
+              "mstSvtPassiveSkill": []
             }
           ],
           "mstTreasureDevice": [
@@ -1893,6 +1897,113 @@
               "offsetY": 134,
               "offsetXMyroom": 295,
               "offsetYMyroom": 139
+            }
+          ],
+          "mstSvtPassiveSkill": [
+            {
+              "svtId": 602400,
+              "num": 10,
+              "priority": 1,
+              "skillId": 960502,
+              "condQuestId": 1000722,
+              "condQuestPhase": 1,
+              "condLv": 0,
+              "condLimitCount": 0,
+              "condFriendshipRank": 5,
+              "eventId": 80038,
+              "flag": 0,
+              "startedAt": 1482415200,
+              "endedAt": 1893456000
+            },
+            {
+              "svtId": 602400,
+              "num": 10,
+              "priority": 2,
+              "skillId": 960503,
+              "condQuestId": 1000722,
+              "condQuestPhase": 1,
+              "condLv": 0,
+              "condLimitCount": 0,
+              "condFriendshipRank": 6,
+              "eventId": 80038,
+              "flag": 0,
+              "startedAt": 1482415200,
+              "endedAt": 1893456000
+            },
+            {
+              "svtId": 602400,
+              "num": 10,
+              "priority": 3,
+              "skillId": 960504,
+              "condQuestId": 1000722,
+              "condQuestPhase": 1,
+              "condLv": 0,
+              "condLimitCount": 0,
+              "condFriendshipRank": 7,
+              "eventId": 80038,
+              "flag": 0,
+              "startedAt": 1482415200,
+              "endedAt": 1893456000
+            },
+            {
+              "svtId": 602400,
+              "num": 10,
+              "priority": 4,
+              "skillId": 960505,
+              "condQuestId": 1000722,
+              "condQuestPhase": 1,
+              "condLv": 0,
+              "condLimitCount": 0,
+              "condFriendshipRank": 8,
+              "eventId": 80038,
+              "flag": 0,
+              "startedAt": 1482415200,
+              "endedAt": 1893456000
+            },
+            {
+              "svtId": 602400,
+              "num": 10,
+              "priority": 5,
+              "skillId": 960506,
+              "condQuestId": 1000722,
+              "condQuestPhase": 1,
+              "condLv": 0,
+              "condLimitCount": 0,
+              "condFriendshipRank": 9,
+              "eventId": 80038,
+              "flag": 0,
+              "startedAt": 1482415200,
+              "endedAt": 1893456000
+            },
+            {
+              "svtId": 602400,
+              "num": 10,
+              "priority": 6,
+              "skillId": 960507,
+              "condQuestId": 1000722,
+              "condQuestPhase": 1,
+              "condLv": 0,
+              "condLimitCount": 0,
+              "condFriendshipRank": 10,
+              "eventId": 80038,
+              "flag": 0,
+              "startedAt": 1482415200,
+              "endedAt": 1893456000
+            },
+            {
+              "svtId": 602400,
+              "num": 12,
+              "priority": 1,
+              "skillId": 960837,
+              "condQuestId": 1000822,
+              "condQuestPhase": 1,
+              "condLv": 0,
+              "condLimitCount": 0,
+              "condFriendshipRank": 0,
+              "eventId": 80059,
+              "flag": 0,
+              "startedAt": 1498759200,
+              "endedAt": 1893456000
             }
           ],
           "mstSvtExp": [

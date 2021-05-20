@@ -7,8 +7,8 @@ from sqlalchemy.engine import Connection
 from ...config import Settings
 from ...schemas.common import Language, Region
 from ...schemas.enums import SKILL_TYPE_NAME, AiType
-from ...schemas.nice import AssetURL, NiceSkill, NiceSkillReverse
-from ...schemas.raw import SkillEntityNoReverse
+from ...schemas.nice import AssetURL, ExtraPassive, NiceSkill, NiceSkillReverse
+from ...schemas.raw import MstSvtPassiveSkill, SkillEntityNoReverse
 from ..raw import get_skill_entity_no_reverse, get_skill_entity_no_reverse_many
 from ..reverse import get_ai_id_from_skill
 from ..utils import get_traits_list, get_translation, strip_formatting_brackets
@@ -16,6 +16,22 @@ from .func import get_nice_function
 
 
 settings = Settings()
+
+
+def get_extra_passive(svt_passive: MstSvtPassiveSkill) -> ExtraPassive:
+    return ExtraPassive(
+        num=svt_passive.num,
+        priority=svt_passive.priority,
+        condQuestId=svt_passive.condQuestId,
+        condQuestPhase=svt_passive.condQuestPhase,
+        condLv=svt_passive.condLv,
+        condLimitCount=svt_passive.condLimitCount,
+        condFriendshipRank=svt_passive.condFriendshipRank,
+        eventId=svt_passive.eventId,
+        flag=svt_passive.flag,
+        startedAt=svt_passive.startedAt,
+        endedAt=svt_passive.endedAt,
+    )
 
 
 def get_nice_skill_with_svt(
@@ -27,6 +43,11 @@ def get_nice_skill_with_svt(
         "ruby": skillEntity.mstSkill.ruby,
         "type": SKILL_TYPE_NAME[skillEntity.mstSkill.type],
         "actIndividuality": get_traits_list(skillEntity.mstSkill.actIndividuality),
+        "extraPassive": [
+            get_extra_passive(svt_skill)
+            for svt_skill in skillEntity.mstSvtPassiveSkill
+            if svt_skill.svtId == svtId
+        ],
     }
 
     iconId = skillEntity.mstSkill.iconId

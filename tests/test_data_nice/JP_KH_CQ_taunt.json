@@ -26,6 +26,7 @@
           "coolDown": [8],
           "actIndividuality": [],
           "script": {},
+          "extraPassive": [],
           "aiIds": { "svt": [], "field": [90161870] },
           "functions": [
             {
@@ -94,6 +95,7 @@
           "coolDown": [8],
           "actIndividuality": [],
           "script": {},
+          "extraPassive": [],
           "aiIds": { "svt": [], "field": [90161870] },
           "functions": [
             {

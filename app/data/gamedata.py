@@ -40,6 +40,7 @@ MASTER_WITHOUT_ID = {
     "mstAiField",
     "mstFuncGroup",
     "mstAiAct",
+    "mstSvtPassiveSkill",
 }
 SVT_STUFFS = {
     "mstSvtGroup",
@@ -118,6 +119,10 @@ def update_masters(region_path: dict[Region, DirectoryPath]) -> None:
         for svt in master["mstSvt"]:
             for skill_id in svt["classPassive"]:
                 master["passiveSkillToSvt"][skill_id].add(svt["id"])
+
+        master["extraPassiveSkillToSvt"] = defaultdict(set)
+        for skill in master["mstSvtPassiveSkill"]:
+            master["extraPassiveSkillToSvt"][skill["skillId"]].add(skill["svtId"])
 
         for masters_table, source_table, lookup_id, result_id in (
             ("activeSkillToSvt", "mstSvtSkill", "skillId", "svtId"),

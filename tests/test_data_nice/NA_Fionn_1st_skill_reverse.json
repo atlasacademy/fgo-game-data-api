@@ -15,6 +15,7 @@
   "coolDown": [8, 8, 8, 8, 8, 7, 7, 7, 7, 6],
   "actIndividuality": [],
   "script": {},
+  "extraPassive": [],
   "functions": [
     {
       "funcId": 296,
@@ -1084,6 +1085,7 @@
               "coolDown": [8, 8, 8, 8, 8, 7, 7, 7, 7, 6],
               "actIndividuality": [],
               "script": {},
+              "extraPassive": [],
               "functions": [
                 {
                   "funcId": 296,
@@ -1186,6 +1188,7 @@
               "coolDown": [12, 12, 12, 12, 12, 11, 11, 11, 11, 10],
               "actIndividuality": [],
               "script": {},
+              "extraPassive": [],
               "functions": [
                 {
                   "funcId": 686,
@@ -1334,6 +1337,7 @@
               "coolDown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5],
               "actIndividuality": [],
               "script": {},
+              "extraPassive": [],
               "functions": [
                 {
                   "funcId": 110,
@@ -1399,6 +1403,7 @@
               "coolDown": [8, 8, 8, 8, 8, 7, 7, 7, 7, 6],
               "actIndividuality": [],
               "script": {},
+              "extraPassive": [],
               "functions": [
                 {
                   "funcId": 302,
@@ -1563,6 +1568,7 @@
               "coolDown": [9, 9, 9, 9, 9, 8, 8, 8, 8, 7],
               "actIndividuality": [],
               "script": {},
+              "extraPassive": [],
               "functions": [
                 {
                   "funcId": 686,
@@ -1752,6 +1758,7 @@
               "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
               "actIndividuality": [],
               "script": {},
+              "extraPassive": [],
               "functions": [
                 {
                   "funcId": 388,
@@ -1806,6 +1813,7 @@
               "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
               "actIndividuality": [],
               "script": {},
+              "extraPassive": [],
               "functions": [
                 {
                   "funcId": 265,
@@ -1848,6 +1856,554 @@
                     { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 125 },
                     { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 125 },
                     { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 125 }
+                  ]
+                }
+              ]
+            }
+          ],
+          "extraPassive": [
+            {
+              "id": 960502,
+              "name": "Power of Bonds E",
+              "ruby": "Power of Bonds",
+              "detail": "Increase your ATK Strength by 20% in \"Final Singularity: The Grand Temple of Time Solomon\"",
+              "type": "passive",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_01001.png",
+              "coolDown": [0],
+              "actIndividuality": [],
+              "script": {},
+              "extraPassive": [
+                {
+                  "num": 10,
+                  "priority": 1,
+                  "condQuestId": 1000722,
+                  "condQuestPhase": 1,
+                  "condLv": 0,
+                  "condLimitCount": 0,
+                  "condFriendshipRank": 5,
+                  "eventId": 80038,
+                  "flag": 0,
+                  "startedAt": 1482415200,
+                  "endedAt": 1893456000
+                }
+              ],
+              "functions": [
+                {
+                  "funcId": 1230,
+                  "funcType": "addStateShort",
+                  "funcTargetType": "self",
+                  "funcTargetTeam": "player",
+                  "funcPopupText": "Strength Up",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_1005.png",
+                  "functvals": [],
+                  "funcquestTvals": [{ "id": 94000052, "name": "unknown" }],
+                  "funcGroup": [
+                    {
+                      "eventId": 80038,
+                      "baseFuncId": 0,
+                      "nameTotal": "{1}\nTotal ATK Strength Up",
+                      "name": "Increase ATK strength",
+                      "icon": "https://assets.atlasacademy.io/GameData/NA/EventUI/func_group_icon_1005.png",
+                      "priority": 1,
+                      "isDispValue": true
+                    }
+                  ],
+                  "buffs": [
+                    {
+                      "id": 364,
+                      "name": "Strength Up [Bond]",
+                      "detail": "Increase ATK strength by 20%",
+                      "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_1005.png",
+                      "type": "upDamage",
+                      "buffGroup": 0,
+                      "script": {},
+                      "vals": [
+                        { "id": 3004, "name": "buffPositiveEffect" },
+                        { "id": 3006, "name": "buffIncreaseDamage" }
+                      ],
+                      "tvals": [],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [],
+                      "maxRate": 10000
+                    }
+                  ],
+                  "svals": [
+                    {
+                      "Rate": 1000,
+                      "Turn": -1,
+                      "Count": -1,
+                      "Value": 200,
+                      "ShowState": 1
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 960503,
+              "name": "Power of Bonds D",
+              "ruby": "Power of Bonds",
+              "detail": "Increase your ATK Strength by 40% in \"Final Singularity: The Grand Temple of Time Solomon\"",
+              "type": "passive",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_01001.png",
+              "coolDown": [0],
+              "actIndividuality": [],
+              "script": {},
+              "extraPassive": [
+                {
+                  "num": 10,
+                  "priority": 2,
+                  "condQuestId": 1000722,
+                  "condQuestPhase": 1,
+                  "condLv": 0,
+                  "condLimitCount": 0,
+                  "condFriendshipRank": 6,
+                  "eventId": 80038,
+                  "flag": 0,
+                  "startedAt": 1482415200,
+                  "endedAt": 1893456000
+                }
+              ],
+              "functions": [
+                {
+                  "funcId": 1234,
+                  "funcType": "addStateShort",
+                  "funcTargetType": "self",
+                  "funcTargetTeam": "player",
+                  "funcPopupText": "Strength Up",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_1005.png",
+                  "functvals": [],
+                  "funcquestTvals": [{ "id": 94000052, "name": "unknown" }],
+                  "funcGroup": [
+                    {
+                      "eventId": 80038,
+                      "baseFuncId": 0,
+                      "nameTotal": "{1}\nTotal ATK Strength Up",
+                      "name": "Increase ATK strength",
+                      "icon": "https://assets.atlasacademy.io/GameData/NA/EventUI/func_group_icon_1005.png",
+                      "priority": 1,
+                      "isDispValue": true
+                    }
+                  ],
+                  "buffs": [
+                    {
+                      "id": 365,
+                      "name": "Strength Up [Bond]",
+                      "detail": "Increase ATK strength by 40%",
+                      "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_1005.png",
+                      "type": "upDamage",
+                      "buffGroup": 0,
+                      "script": {},
+                      "vals": [
+                        { "id": 3004, "name": "buffPositiveEffect" },
+                        { "id": 3006, "name": "buffIncreaseDamage" }
+                      ],
+                      "tvals": [],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [],
+                      "maxRate": 10000
+                    }
+                  ],
+                  "svals": [
+                    {
+                      "Rate": 1000,
+                      "Turn": -1,
+                      "Count": -1,
+                      "Value": 400,
+                      "ShowState": 1
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 960504,
+              "name": "Power of Bonds C",
+              "ruby": "Power of Bonds",
+              "detail": "Increase your ATK Strength by 60% in \"Final Singularity: The Grand Temple of Time Solomon\"",
+              "type": "passive",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_01001.png",
+              "coolDown": [0],
+              "actIndividuality": [],
+              "script": {},
+              "extraPassive": [
+                {
+                  "num": 10,
+                  "priority": 3,
+                  "condQuestId": 1000722,
+                  "condQuestPhase": 1,
+                  "condLv": 0,
+                  "condLimitCount": 0,
+                  "condFriendshipRank": 7,
+                  "eventId": 80038,
+                  "flag": 0,
+                  "startedAt": 1482415200,
+                  "endedAt": 1893456000
+                }
+              ],
+              "functions": [
+                {
+                  "funcId": 1235,
+                  "funcType": "addStateShort",
+                  "funcTargetType": "self",
+                  "funcTargetTeam": "player",
+                  "funcPopupText": "Strength Up",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_1005.png",
+                  "functvals": [],
+                  "funcquestTvals": [{ "id": 94000052, "name": "unknown" }],
+                  "funcGroup": [
+                    {
+                      "eventId": 80038,
+                      "baseFuncId": 0,
+                      "nameTotal": "{1}\nTotal ATK Strength Up",
+                      "name": "Increase ATK strength",
+                      "icon": "https://assets.atlasacademy.io/GameData/NA/EventUI/func_group_icon_1005.png",
+                      "priority": 1,
+                      "isDispValue": true
+                    }
+                  ],
+                  "buffs": [
+                    {
+                      "id": 366,
+                      "name": "Strength Up [Bond]",
+                      "detail": "Increase ATK strength by 60%",
+                      "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_1005.png",
+                      "type": "upDamage",
+                      "buffGroup": 0,
+                      "script": {},
+                      "vals": [
+                        { "id": 3004, "name": "buffPositiveEffect" },
+                        { "id": 3006, "name": "buffIncreaseDamage" }
+                      ],
+                      "tvals": [],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [],
+                      "maxRate": 10000
+                    }
+                  ],
+                  "svals": [
+                    {
+                      "Rate": 1000,
+                      "Turn": -1,
+                      "Count": -1,
+                      "Value": 600,
+                      "ShowState": 1
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 960505,
+              "name": "Power of Bonds B",
+              "ruby": "Power of Bonds",
+              "detail": "Increase your ATK Strength by 75% in \"Final Singularity: The Grand Temple of Time Solomon\"",
+              "type": "passive",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_01002.png",
+              "coolDown": [0],
+              "actIndividuality": [],
+              "script": {},
+              "extraPassive": [
+                {
+                  "num": 10,
+                  "priority": 4,
+                  "condQuestId": 1000722,
+                  "condQuestPhase": 1,
+                  "condLv": 0,
+                  "condLimitCount": 0,
+                  "condFriendshipRank": 8,
+                  "eventId": 80038,
+                  "flag": 0,
+                  "startedAt": 1482415200,
+                  "endedAt": 1893456000
+                }
+              ],
+              "functions": [
+                {
+                  "funcId": 1252,
+                  "funcType": "addStateShort",
+                  "funcTargetType": "self",
+                  "funcTargetTeam": "player",
+                  "funcPopupText": "Strength Up",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_1006.png",
+                  "functvals": [],
+                  "funcquestTvals": [{ "id": 94000052, "name": "unknown" }],
+                  "funcGroup": [
+                    {
+                      "eventId": 80038,
+                      "baseFuncId": 0,
+                      "nameTotal": "{1}\nTotal ATK Strength Up",
+                      "name": "Increase ATK strength",
+                      "icon": "https://assets.atlasacademy.io/GameData/NA/EventUI/func_group_icon_1006.png",
+                      "priority": 1,
+                      "isDispValue": true
+                    }
+                  ],
+                  "buffs": [
+                    {
+                      "id": 380,
+                      "name": "Strength Up [Bond]",
+                      "detail": "Increase ATK strength by 75%",
+                      "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_1006.png",
+                      "type": "upDamage",
+                      "buffGroup": 0,
+                      "script": {},
+                      "vals": [
+                        { "id": 3004, "name": "buffPositiveEffect" },
+                        { "id": 3006, "name": "buffIncreaseDamage" }
+                      ],
+                      "tvals": [],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [],
+                      "maxRate": 10000
+                    }
+                  ],
+                  "svals": [
+                    {
+                      "Rate": 1000,
+                      "Turn": -1,
+                      "Count": -1,
+                      "Value": 750,
+                      "ShowState": 1
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 960506,
+              "name": "Power of Bonds A",
+              "ruby": "Power of Bonds",
+              "detail": "Increase your ATK Strength by 90% in \"Final Singularity: The Grand Temple of Time Solomon\"",
+              "type": "passive",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_01002.png",
+              "coolDown": [0],
+              "actIndividuality": [],
+              "script": {},
+              "extraPassive": [
+                {
+                  "num": 10,
+                  "priority": 5,
+                  "condQuestId": 1000722,
+                  "condQuestPhase": 1,
+                  "condLv": 0,
+                  "condLimitCount": 0,
+                  "condFriendshipRank": 9,
+                  "eventId": 80038,
+                  "flag": 0,
+                  "startedAt": 1482415200,
+                  "endedAt": 1893456000
+                }
+              ],
+              "functions": [
+                {
+                  "funcId": 1253,
+                  "funcType": "addStateShort",
+                  "funcTargetType": "self",
+                  "funcTargetTeam": "player",
+                  "funcPopupText": "Strength Up",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_1006.png",
+                  "functvals": [],
+                  "funcquestTvals": [{ "id": 94000052, "name": "unknown" }],
+                  "funcGroup": [
+                    {
+                      "eventId": 80038,
+                      "baseFuncId": 0,
+                      "nameTotal": "{1}\nTotal ATK Strength Up",
+                      "name": "Increase ATK strength",
+                      "icon": "https://assets.atlasacademy.io/GameData/NA/EventUI/func_group_icon_1006.png",
+                      "priority": 1,
+                      "isDispValue": true
+                    }
+                  ],
+                  "buffs": [
+                    {
+                      "id": 381,
+                      "name": "Strength Up [Bond]",
+                      "detail": "Increase ATK strength by 90%",
+                      "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_1006.png",
+                      "type": "upDamage",
+                      "buffGroup": 0,
+                      "script": {},
+                      "vals": [
+                        { "id": 3004, "name": "buffPositiveEffect" },
+                        { "id": 3006, "name": "buffIncreaseDamage" }
+                      ],
+                      "tvals": [],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [],
+                      "maxRate": 10000
+                    }
+                  ],
+                  "svals": [
+                    {
+                      "Rate": 1000,
+                      "Turn": -1,
+                      "Count": -1,
+                      "Value": 900,
+                      "ShowState": 1
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 960507,
+              "name": "Power of Bonds EX",
+              "ruby": "Power of Bonds",
+              "detail": "Increase your ATK Strength by 100% in \"Final Singularity: The Grand Temple of Time Solomon\"",
+              "type": "passive",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_01003.png",
+              "coolDown": [0],
+              "actIndividuality": [],
+              "script": {},
+              "extraPassive": [
+                {
+                  "num": 10,
+                  "priority": 6,
+                  "condQuestId": 1000722,
+                  "condQuestPhase": 1,
+                  "condLv": 0,
+                  "condLimitCount": 0,
+                  "condFriendshipRank": 10,
+                  "eventId": 80038,
+                  "flag": 0,
+                  "startedAt": 1482415200,
+                  "endedAt": 1893456000
+                }
+              ],
+              "functions": [
+                {
+                  "funcId": 1254,
+                  "funcType": "addStateShort",
+                  "funcTargetType": "self",
+                  "funcTargetTeam": "player",
+                  "funcPopupText": "Strength Up",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_1007.png",
+                  "functvals": [],
+                  "funcquestTvals": [{ "id": 94000052, "name": "unknown" }],
+                  "funcGroup": [
+                    {
+                      "eventId": 80038,
+                      "baseFuncId": 0,
+                      "nameTotal": "{1}\nTotal ATK Strength Up",
+                      "name": "Increase ATK strength",
+                      "icon": "https://assets.atlasacademy.io/GameData/NA/EventUI/func_group_icon_1007.png",
+                      "priority": 1,
+                      "isDispValue": true
+                    }
+                  ],
+                  "buffs": [
+                    {
+                      "id": 382,
+                      "name": "Strength Up [Bond]",
+                      "detail": "Increase ATK strength by 100%",
+                      "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_1007.png",
+                      "type": "upDamage",
+                      "buffGroup": 0,
+                      "script": {},
+                      "vals": [
+                        { "id": 3004, "name": "buffPositiveEffect" },
+                        { "id": 3006, "name": "buffIncreaseDamage" }
+                      ],
+                      "tvals": [],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [],
+                      "maxRate": 10000
+                    }
+                  ],
+                  "svals": [
+                    {
+                      "Rate": 1000,
+                      "Turn": -1,
+                      "Count": -1,
+                      "Value": 1000,
+                      "ShowState": 1
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 961154,
+              "name": "Serious Match",
+              "ruby": "Serious Match",
+              "detail": "Bond gained upon clearing \"Pseudo-Singularity III: The Stage of Carnage, Shimousa\" main quests increased by 100%",
+              "type": "passive",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00205.png",
+              "coolDown": [0],
+              "actIndividuality": [],
+              "script": {},
+              "extraPassive": [
+                {
+                  "num": 13,
+                  "priority": 1,
+                  "condQuestId": 1000822,
+                  "condQuestPhase": 1,
+                  "condLv": 0,
+                  "condLimitCount": 0,
+                  "condFriendshipRank": 0,
+                  "eventId": 80072,
+                  "flag": 0,
+                  "startedAt": 1508018400,
+                  "endedAt": 1893456000
+                }
+              ],
+              "functions": [
+                {
+                  "funcId": 97,
+                  "funcType": "servantFriendshipUp",
+                  "funcTargetType": "self",
+                  "funcTargetTeam": "playerAndEnemy",
+                  "funcPopupText": "None",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "funcGroup": [
+                    {
+                      "eventId": 80044,
+                      "baseFuncId": 0,
+                      "nameTotal": "{1}\nTotal Bond Bonus",
+                      "name": "Increase Bond gained",
+                      "icon": "https://assets.atlasacademy.io/GameData/NA/EventUI/func_group_icon_1009.png",
+                      "priority": 1,
+                      "isDispValue": true
+                    },
+                    {
+                      "eventId": 80059,
+                      "baseFuncId": 0,
+                      "nameTotal": "{1}\nTotal Bond Bonus",
+                      "name": "Increase Bond gained",
+                      "icon": "https://assets.atlasacademy.io/GameData/NA/EventUI/func_group_icon_1009.png",
+                      "priority": 1,
+                      "isDispValue": true
+                    },
+                    {
+                      "eventId": 80072,
+                      "baseFuncId": 0,
+                      "nameTotal": "{1}\nTotal Bond Bonus",
+                      "name": "Increase Bond gained",
+                      "icon": "https://assets.atlasacademy.io/GameData/NA/EventUI/func_group_icon_1009.png",
+                      "priority": 1,
+                      "isDispValue": true
+                    },
+                    {
+                      "eventId": 80077,
+                      "baseFuncId": 0,
+                      "nameTotal": "Total Bond Bonus for\n{1}",
+                      "name": "Increase Bond gained",
+                      "icon": "https://assets.atlasacademy.io/GameData/NA/EventUI/func_group_icon_1009.png",
+                      "priority": 1,
+                      "isDispValue": true
+                    }
+                  ],
+                  "buffs": [],
+                  "svals": [
+                    {
+                      "Target": 1,
+                      "Individuality": 0,
+                      "EventId": 80072,
+                      "RateCount": 1000
+                    }
                   ]
                 }
               ]

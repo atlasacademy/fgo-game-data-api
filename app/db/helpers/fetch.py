@@ -47,6 +47,7 @@ from ...models.raw import (
     mstSvtGroup,
     mstSvtLimit,
     mstSvtLimitAdd,
+    mstSvtPassiveSkill,
     mstSvtVoiceRelation,
     mstVoice,
     mstWar,
@@ -93,6 +94,7 @@ from ...schemas.raw import (
     MstSvtGroup,
     MstSvtLimit,
     MstSvtLimitAdd,
+    MstSvtPassiveSkill,
     MstSvtVoiceRelation,
     MstVoice,
     MstWar,
@@ -197,6 +199,11 @@ schema_table_fetch_all: dict[  # type:ignore
         mstCombineMaterial,
         mstCombineMaterial.c.id,
         mstCombineMaterial.c.lv,
+    ),
+    MstSvtPassiveSkill: (
+        mstSvtPassiveSkill,
+        mstSvtPassiveSkill.c.svtId,
+        mstSvtPassiveSkill.c.skillId,
     ),
 }
 

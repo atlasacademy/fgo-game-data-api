@@ -693,6 +693,7 @@
           "mstSvtChange": [],
           "mstSvtCostume": [],
           "mstSvtScript": [],
+          "mstSvtPassiveSkill": [],
           "mstSvtExp": [
             { "type": 4, "lv": 0, "exp": 0, "curve": 0 },
             { "type": 4, "lv": 1, "exp": 100, "curve": 0 },

@@ -860,6 +860,7 @@
       "coolDown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5],
       "actIndividuality": [],
       "script": {},
+      "extraPassive": [],
       "functions": [
         {
           "funcId": 181,
@@ -927,6 +928,7 @@
       "coolDown": [9, 9, 9, 9, 9, 8, 8, 8, 8, 7],
       "actIndividuality": [],
       "script": {},
+      "extraPassive": [],
       "functions": [
         {
           "funcId": 290,
@@ -1037,6 +1039,7 @@
       "coolDown": [8, 8, 8, 8, 8, 7, 7, 7, 7, 6],
       "actIndividuality": [],
       "script": {},
+      "extraPassive": [],
       "functions": [
         {
           "funcId": 358,
@@ -1203,6 +1206,7 @@
       "coolDown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5],
       "actIndividuality": [],
       "script": {},
+      "extraPassive": [],
       "functions": [
         {
           "funcId": 181,
@@ -1313,6 +1317,7 @@
       "coolDown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5],
       "actIndividuality": [],
       "script": {},
+      "extraPassive": [],
       "functions": [
         {
           "funcId": 358,
@@ -1463,6 +1468,7 @@
       "coolDown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5],
       "actIndividuality": [],
       "script": {},
+      "extraPassive": [],
       "functions": [
         {
           "funcId": 358,
@@ -1613,6 +1619,7 @@
       "coolDown": [9, 9, 9, 9, 9, 8, 8, 8, 8, 7],
       "actIndividuality": [],
       "script": {},
+      "extraPassive": [],
       "functions": [
         {
           "funcId": 289,
@@ -1784,6 +1791,7 @@
       "coolDown": [9, 9, 9, 9, 9, 8, 8, 8, 8, 7],
       "actIndividuality": [],
       "script": {},
+      "extraPassive": [],
       "functions": [
         {
           "funcId": 289,
@@ -1955,6 +1963,7 @@
       "coolDown": [6, 6, 6, 6, 6, 5, 5, 5, 5, 4],
       "actIndividuality": [],
       "script": {},
+      "extraPassive": [],
       "functions": [
         {
           "funcId": 120,
@@ -2063,6 +2072,7 @@
       "coolDown": [6, 6, 6, 6, 6, 5, 5, 5, 5, 4],
       "actIndividuality": [],
       "script": {},
+      "extraPassive": [],
       "functions": [
         {
           "funcId": 120,
@@ -2171,6 +2181,7 @@
       "coolDown": [6, 6, 6, 6, 6, 5, 5, 5, 5, 4],
       "actIndividuality": [],
       "script": {},
+      "extraPassive": [],
       "functions": [
         {
           "funcId": 120,
@@ -2441,6 +2452,7 @@
       "coolDown": [6, 6, 6, 6, 6, 5, 5, 5, 5, 4],
       "actIndividuality": [],
       "script": {},
+      "extraPassive": [],
       "functions": [
         {
           "funcId": 120,
@@ -2706,6 +2718,7 @@
       "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       "actIndividuality": [],
       "script": {},
+      "extraPassive": [],
       "functions": [
         {
           "funcId": 388,
@@ -2758,6 +2771,7 @@
       "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       "actIndividuality": [],
       "script": {},
+      "extraPassive": [],
       "functions": [
         {
           "funcId": 100,
@@ -2802,6 +2816,1501 @@
             { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 60 },
             { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 60 },
             { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 60 }
+          ]
+        }
+      ]
+    }
+  ],
+  "extraPassive": [
+    {
+      "id": 940145,
+      "name": "ぐだぐだ家老パワー A",
+      "ruby": "ぐだぐだかろうぱわー",
+      "detail": "自身の『復刻:ぐだぐだファイナル本能寺2019 ライト版』における攻撃の威力を50%アップ ＋ 味方全体＜控え含む＞の『復刻:ぐだぐだファイナル本能寺2019 ライト版』のクエストクリア時に得られる絆を5%アップ(サポート時は無効)【『復刻:ぐだぐだファイナル本能寺2019 ライト版』イベント期間限定】",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00301.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 16,
+          "priority": 125,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 80286,
+          "flag": 0,
+          "startedAt": 1588496400,
+          "endedAt": 1589687999
+        }
+      ],
+      "functions": [
+        {
+          "funcId": 5409,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "ぐだぐだ家老パワー",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+          "functvals": [],
+          "funcquestTvals": [{ "id": 94000104, "name": "unknown" }],
+          "funcGroup": [
+            {
+              "eventId": 80286,
+              "baseFuncId": 5404,
+              "nameTotal": "{1} \n攻撃の威力アップ合計",
+              "name": "攻撃の威力アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_302.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [
+            {
+              "id": 2846,
+              "name": "ぐだぐだ家老パワー",
+              "detail": "『復刻:ぐだぐだファイナル本能寺2019 ライト版』において与えるダメージをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+              "type": "upDamage",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 10000
+            }
+          ],
+          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 500 }]
+        },
+        {
+          "funcId": 5415,
+          "funcType": "servantFriendshipUp",
+          "funcTargetType": "ptFull",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80286,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n得られる自身の絆ボーナス合計",
+              "name": "得られる自身の絆アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1023.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            {
+              "ApplySupportSvt": 0,
+              "Individuality": 0,
+              "EventId": 80286,
+              "RateCount": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 940147,
+      "name": "フェア・ゲーマー A",
+      "ruby": "ふぇあ・げーまー",
+      "detail": "自身の「『Fate/Requiem』盤上遊戯黙示録」における攻撃の威力を50%アップ ＋ 味方全体＜控え含む＞の「『Fate/Requiem』盤上遊戯黙示録」のクエストクリア時に得られる絆を5%アップ(サポート時は無効)【「『Fate/Requiem』盤上遊戯黙示録」イベント期間限定】",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00301.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 15,
+          "priority": 124,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 80285,
+          "flag": 0,
+          "startedAt": 1590404400,
+          "endedAt": 1591588799
+        }
+      ],
+      "functions": [
+        {
+          "funcId": 5375,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "フェア・ゲーマー",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+          "functvals": [],
+          "funcquestTvals": [{ "id": 94000103, "name": "unknown" }],
+          "funcGroup": [
+            {
+              "eventId": 80285,
+              "baseFuncId": 5373,
+              "nameTotal": "{1} \n攻撃の威力アップ合計",
+              "name": "攻撃の威力アップ合計",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_302.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [
+            {
+              "id": 2825,
+              "name": "フェア・ゲーマー",
+              "detail": "「『Fate/Requiem』盤上遊戯黙示録」において与えるダメージをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+              "type": "upDamage",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 10000
+            }
+          ],
+          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 500 }]
+        },
+        {
+          "funcId": 5476,
+          "funcType": "servantFriendshipUp",
+          "funcTargetType": "ptFull",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80285,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n得られる自身の絆ボーナス合計",
+              "name": "得られる自身の絆アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1023.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            {
+              "ApplySupportSvt": 0,
+              "Individuality": 0,
+              "EventId": 80285,
+              "RateCount": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 940151,
+      "name": "迷宮濶歩 A",
+      "ruby": "めいきゅうかっぽ",
+      "detail": "自身の『復刻:徳川廻天迷宮 大奥』における攻撃の威力を50%アップ ＋ 味方全体＜控え含む＞の『復刻:徳川廻天迷宮 大奥』のクエストクリア時に得られる絆を5%アップ(サポート時は無効)【『復刻:徳川廻天迷宮 大奥』イベント期間限定】",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00301.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 16,
+          "priority": 128,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 80290,
+          "flag": 0,
+          "startedAt": 1595408400,
+          "endedAt": 1596599999
+        }
+      ],
+      "functions": [
+        {
+          "funcId": 5486,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "迷宮濶歩",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+          "functvals": [],
+          "funcquestTvals": [{ "id": 94000105, "name": "unknown" }],
+          "funcGroup": [
+            {
+              "eventId": 80290,
+              "baseFuncId": 0,
+              "nameTotal": "{1} \n攻撃の威力アップ合計",
+              "name": "攻撃の威力アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_302.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [
+            {
+              "id": 2878,
+              "name": "迷宮濶歩",
+              "detail": "『復刻:徳川廻天迷宮 大奥』において与えるダメージをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+              "type": "upDamage",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 10000
+            }
+          ],
+          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 500 }]
+        },
+        {
+          "funcId": 5488,
+          "funcType": "servantFriendshipUp",
+          "funcTargetType": "ptFull",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80290,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n得られる自身の絆ボーナス合計",
+              "name": "得られる自身の絆アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1023.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            {
+              "ApplySupportSvt": 0,
+              "Individuality": 0,
+              "EventId": 80290,
+              "RateCount": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 940155,
+      "name": "水着剣豪の心得 A",
+      "ruby": "みずぎけんごうのこころえ",
+      "detail": "自身の『復刻:見参！ ラスベガス御前試合～水着剣豪七色勝負！ ライト版』において、攻撃の威力を50%アップ ＋ 味方全体＜控え含む＞の『復刻:見参！ ラスベガス御前試合～水着剣豪七色勝負！ ライト版』のクエストクリア時に得られる絆を5%アップ(サポート時は無効)【『復刻:見参！ ラスベガス御前試合～水着剣豪七色勝負！ ライト版』イベント期間限定】",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00301.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 16,
+          "priority": 127,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 80291,
+          "flag": 0,
+          "startedAt": 1591606800,
+          "endedAt": 1593403199
+        }
+      ],
+      "functions": [
+        {
+          "funcId": 5502,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "水着剣豪の心得",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+          "functvals": [],
+          "funcquestTvals": [{ "id": 94000106, "name": "unknown" }],
+          "funcGroup": [
+            {
+              "eventId": 80291,
+              "baseFuncId": 5497,
+              "nameTotal": "{1} \n攻撃の威力アップ合計",
+              "name": "攻撃の威力アップ合計",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_302.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [
+            {
+              "id": 2886,
+              "name": "水着剣豪の心得",
+              "detail": "『復刻:見参！ ラスベガス御前試合～水着剣豪七色勝負！ ライト版』において与えるダメージをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+              "type": "upDamage",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 10000
+            }
+          ],
+          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 500 }]
+        },
+        {
+          "funcId": 5504,
+          "funcType": "servantFriendshipUp",
+          "funcTargetType": "ptFull",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80291,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n得られる自身の絆ボーナス合計",
+              "name": "得られる自身の絆アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1023.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            {
+              "ApplySupportSvt": 0,
+              "Individuality": 0,
+              "EventId": 80291,
+              "RateCount": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 940159,
+      "name": "サバキャンパー A",
+      "ruby": "さばきゃんぱー",
+      "detail": "自身の『サーヴァント・サマーキャンプ！ ～カルデア・スリラーナイト～』における攻撃の威力を50%アップ ＋ 味方全体＜控え含む＞の『サーヴァント・サマーキャンプ！ ～カルデア・スリラーナイト～』のクエストクリア時に得られる絆を5%アップ(サポート時は無効)【『サーヴァント・サマーキャンプ！ ～カルデア・スリラーナイト～』イベント期間限定】",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00301.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 16,
+          "priority": 130,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 80294,
+          "flag": 0,
+          "startedAt": 1597654800,
+          "endedAt": 1599451199
+        }
+      ],
+      "functions": [
+        {
+          "funcId": 5589,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "サバキャンパー",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+          "functvals": [],
+          "funcquestTvals": [{ "id": 94000107, "name": "eventSummerCamp" }],
+          "funcGroup": [
+            {
+              "eventId": 80294,
+              "baseFuncId": 5587,
+              "nameTotal": "{1} \n攻撃の威力アップ合計",
+              "name": "攻撃の威力アップ合計",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_302.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [
+            {
+              "id": 2914,
+              "name": "サバキャンパー",
+              "detail": "『サーヴァント・サマーキャンプ！ ～カルデア・スリラーナイト～』において与えるダメージをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+              "type": "upDamage",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 10000
+            }
+          ],
+          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 500 }]
+        },
+        {
+          "funcId": 5592,
+          "funcType": "servantFriendshipUp",
+          "funcTargetType": "ptFull",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80294,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n得られる自身の絆ボーナス合計",
+              "name": "得られる自身の絆アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1023.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            {
+              "ApplySupportSvt": 0,
+              "Individuality": 0,
+              "EventId": 80294,
+              "RateCount": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 940164,
+      "name": "邪馬台パワー！ A（粘土）",
+      "ruby": "やまたいぱわー！",
+      "detail": "寝かせた粘土のドロップ獲得数を1個増やす ＋ 自身の『超古代新選組列伝 ぐだぐだ邪馬台国2020』における攻撃の威力を50%アップ ＋ 味方全体＜控え含む＞の『超古代新選組列伝 ぐだぐだ邪馬台国2020』のクエストクリア時に得られる絆を5%アップ(サポート時は無効)【『超古代新選組列伝 ぐだぐだ邪馬台国2020』イベント期間限定】",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00200.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 16,
+          "priority": 133,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 80289,
+          "flag": 0,
+          "startedAt": 1602241200,
+          "endedAt": 1603425599
+        }
+      ],
+      "functions": [
+        {
+          "funcId": 5759,
+          "funcType": "eventDropUp",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80289,
+              "baseFuncId": 0,
+              "nameTotal": "{0}\n獲得数ボーナス合計",
+              "name": "{0}獲得数アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049106.png",
+              "priority": 1000,
+              "isDispValue": true
+            }
+          ],
+          "traitVals": [],
+          "buffs": [],
+          "svals": [{ "Individuality": 10560, "EventId": 80289, "AddCount": 1 }]
+        },
+        {
+          "funcId": 5833,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "邪馬台パワー！",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+          "functvals": [],
+          "funcquestTvals": [{ "id": 94000108, "name": "eventGuda5" }],
+          "funcGroup": [
+            {
+              "eventId": 80289,
+              "baseFuncId": 5760,
+              "nameTotal": "{1} \n攻撃の威力アップ合計",
+              "name": "攻撃の威力アップ合計",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_302.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [
+            {
+              "id": 3001,
+              "name": "邪馬台パワー！",
+              "detail": "『超古代新選組列伝 ぐだぐだ邪馬台国2020』において与えるダメージをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+              "type": "upDamage",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 10000
+            }
+          ],
+          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 500 }]
+        },
+        {
+          "funcId": 5762,
+          "funcType": "servantFriendshipUp",
+          "funcTargetType": "ptFull",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80289,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n得られる自身の絆ボーナス合計",
+              "name": "得られる自身の絆アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1023.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            {
+              "ApplySupportSvt": 0,
+              "Individuality": 0,
+              "EventId": 80289,
+              "RateCount": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 940168,
+      "name": "特訓サポーター B",
+      "ruby": "とっくんさぽーたー",
+      "detail": "自身の『影の国の舞闘会 ～ネコとバニーと聖杯戦争～』のフリークエストにおける攻撃の威力を40%アップ【『影の国の舞闘会 ～ネコとバニーと聖杯戦争～』イベント期間限定】",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00301.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 16,
+          "priority": 131,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 80301,
+          "flag": 0,
+          "startedAt": 1600419600,
+          "endedAt": 1601611199
+        }
+      ],
+      "functions": [
+        {
+          "funcId": 5787,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "特訓サポーター",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+          "functvals": [],
+          "funcquestTvals": [{ "id": 94000109, "name": "unknown" }],
+          "funcGroup": [
+            {
+              "eventId": 80301,
+              "baseFuncId": 5785,
+              "nameTotal": "{1} \n攻撃の威力アップ合計",
+              "name": "攻撃の威力アップ合計",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_302.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [
+            {
+              "id": 2988,
+              "name": "特訓サポーター",
+              "detail": "『影の国の舞闘会 ～ネコとバニーと聖杯戦争～』において与えるダメージをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+              "type": "upDamage",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 10000
+            }
+          ],
+          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 400 }]
+        }
+      ]
+    },
+    {
+      "id": 940169,
+      "name": "特訓サポーター C",
+      "ruby": "とっくんさぽーたー",
+      "detail": "自身の『影の国の舞闘会 ～ネコとバニーと聖杯戦争～』のフリークエストにおける攻撃の威力を30%アップ【『影の国の舞闘会 ～ネコとバニーと聖杯戦争～』イベント期間限定】",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00301.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 16,
+          "priority": 132,
+          "condQuestId": 1000624,
+          "condQuestPhase": 1,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 80301,
+          "flag": 0,
+          "startedAt": 1600419600,
+          "endedAt": 1601611199
+        }
+      ],
+      "functions": [
+        {
+          "funcId": 5787,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "特訓サポーター",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+          "functvals": [],
+          "funcquestTvals": [{ "id": 94000109, "name": "unknown" }],
+          "funcGroup": [
+            {
+              "eventId": 80301,
+              "baseFuncId": 5785,
+              "nameTotal": "{1} \n攻撃の威力アップ合計",
+              "name": "攻撃の威力アップ合計",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_302.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [
+            {
+              "id": 2988,
+              "name": "特訓サポーター",
+              "detail": "『影の国の舞闘会 ～ネコとバニーと聖杯戦争～』において与えるダメージをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+              "type": "upDamage",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 10000
+            }
+          ],
+          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 300 }]
+        }
+      ]
+    },
+    {
+      "id": 940180,
+      "name": "イマジナリ・エクスプローラー A（ヒレ）",
+      "ruby": "いまじなり・えくすぷろーらー",
+      "detail": "眩いヒレのドロップ獲得数を1個増やす ＋ 自身の『虚数大海戦イマジナリ・スクランブル ～ノーチラス浮上せよ～』における攻撃の威力を50%アップ ＋ 味方全体＜控え含む＞の『虚数大海戦イマジナリ・スクランブル ～ノーチラス浮上せよ～』のクエストクリア時に得られる絆を5%アップ(サポート時は無効)【『虚数大海戦イマジナリ・スクランブル ～ノーチラス浮上せよ～』イベント期間限定】",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00200.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 16,
+          "priority": 135,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 80305,
+          "flag": 0,
+          "startedAt": 1605094200,
+          "endedAt": 1606276799
+        }
+      ],
+      "functions": [
+        {
+          "funcId": 5853,
+          "funcType": "eventDropUp",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80305,
+              "baseFuncId": 0,
+              "nameTotal": "{0}\n獲得数ボーナス合計",
+              "name": "{0}獲得数アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94053405.png",
+              "priority": 1000,
+              "isDispValue": true
+            }
+          ],
+          "traitVals": [],
+          "buffs": [],
+          "svals": [{ "Individuality": 10570, "EventId": 80305, "AddCount": 1 }]
+        },
+        {
+          "funcId": 5995,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "イマジナリ・エクスプローラー",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+          "functvals": [],
+          "funcquestTvals": [
+            { "id": 94000113, "name": "unknown" },
+            { "id": 94000111, "name": "unknown" }
+          ],
+          "funcGroup": [
+            {
+              "eventId": 80305,
+              "baseFuncId": 5855,
+              "nameTotal": "{1} \n攻撃の威力アップ合計",
+              "name": "攻撃の威力アップ合計",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_302.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [
+            {
+              "id": 3047,
+              "name": "イマジナリ・エクスプローラー",
+              "detail": "『虚数大海戦イマジナリ・スクランブル ～ノーチラス浮上せよ～』において与えるダメージをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+              "type": "upDamage",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 10000
+            }
+          ],
+          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 500 }]
+        },
+        {
+          "funcId": 5859,
+          "funcType": "servantFriendshipUp",
+          "funcTargetType": "ptFull",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80305,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n得られる自身の絆ボーナス合計",
+              "name": "得られる自身の絆アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1023.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            {
+              "ApplySupportSvt": 0,
+              "Individuality": 0,
+              "EventId": 80305,
+              "RateCount": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 940184,
+      "name": "クリスマス・サバイバー B",
+      "ruby": "くりすます・さばいばー",
+      "detail": "自身の『復刻:クリスマス2019 ナイチンゲールのクリスマス・キャロル ライト版』における攻撃の威力を30%アップ ＋ 味方全体＜控え含む＞の『復刻:クリスマス2019 ナイチンゲールのクリスマス・キャロル ライト版』のクエストクリア時に得られる絆を5%アップ(サポート時は無効)【『復刻:クリスマス2019 ナイチンゲールのクリスマス・キャロル ライト版』イベント期間限定】",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00301.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 16,
+          "priority": 134,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 80303,
+          "flag": 0,
+          "startedAt": 1603443600,
+          "endedAt": 1604462399
+        }
+      ],
+      "functions": [
+        {
+          "funcId": 5895,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "クリスマス・サバイバー",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+          "functvals": [],
+          "funcquestTvals": [{ "id": 94000110, "name": "unknown" }],
+          "funcGroup": [
+            {
+              "eventId": 80303,
+              "baseFuncId": 0,
+              "nameTotal": "{1} \n攻撃の威力アップ合計",
+              "name": "攻撃の威力アップ合計",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_302.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [
+            {
+              "id": 3019,
+              "name": "クリスマス・サバイバー",
+              "detail": "『復刻:クリスマス2019 ナイチンゲールのクリスマス・キャロル ライト版』において与えるダメージをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+              "type": "upDamage",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 10000
+            }
+          ],
+          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 300 }]
+        },
+        {
+          "funcId": 5901,
+          "funcType": "servantFriendshipUp",
+          "funcTargetType": "ptFull",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80303,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n得られる自身の絆ボーナス合計",
+              "name": "得られる自身の絆アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1023.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            {
+              "ApplySupportSvt": 0,
+              "Individuality": 0,
+              "EventId": 80303,
+              "RateCount": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 940191,
+      "name": "スパーリング・キャロルB",
+      "ruby": "すぱーりんぐ・きゃろる",
+      "detail": "自身の『栄光のサンタクロース・ロード ～封じられたクリスマスプレゼント～』における攻撃の威力を30%アップ ＋ 味方全体＜控え含む＞の『栄光のサンタクロース・ロード ～封じられたクリスマスプレゼント～』のクエストクリア時に得られる絆を5%アップ(サポート時は無効)【『栄光のサンタクロース・ロード ～封じられたクリスマスプレゼント～』イベント期間限定】",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00301.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 16,
+          "priority": 136,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 80306,
+          "flag": 0,
+          "startedAt": 1608109200,
+          "endedAt": 1609300799
+        }
+      ],
+      "functions": [
+        {
+          "funcId": 6418,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "スパーリング・キャロル",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+          "functvals": [],
+          "funcquestTvals": [{ "id": 94000112, "name": "unknown" }],
+          "funcGroup": [
+            {
+              "eventId": 80306,
+              "baseFuncId": 0,
+              "nameTotal": "{1} \n攻撃の威力アップ合計",
+              "name": "攻撃の威力アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_302.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [
+            {
+              "id": 3278,
+              "name": "スパーリング・キャロル",
+              "detail": "『栄光のサンタクロース・ロード ～封じられたクリスマスプレゼント～』において与えるダメージをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+              "type": "upDamage",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 10000
+            }
+          ],
+          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 300 }]
+        },
+        {
+          "funcId": 6420,
+          "funcType": "servantFriendshipUp",
+          "funcTargetType": "ptFull",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80306,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n得られる自身の絆ボーナス合計",
+              "name": "得られる自身の絆アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1023.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            {
+              "ApplySupportSvt": 0,
+              "Individuality": 0,
+              "EventId": 80306,
+              "RateCount": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 940203,
+      "name": "アイドルの輝き A",
+      "ruby": "あいどるのかがやき",
+      "detail": "アイドリウムポイントのドロップ獲得量を20%増やす ＋ 味方全体＜控え含む＞の『輝け！ グレイルライブ！！ ～鶴のアイドル恩返し～』のクエストクリア時に得られる絆を5%アップ(サポート時は無効)【『輝け！ グレイルライブ！！ ～鶴のアイドル恩返し～』イベント期間限定】",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00200.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 16,
+          "priority": 144,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 80319,
+          "flag": 0,
+          "startedAt": 1619436600,
+          "endedAt": 1620619199
+        }
+      ],
+      "functions": [
+        {
+          "funcId": 6735,
+          "funcType": "eventPointUp",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80319,
+              "baseFuncId": 0,
+              "nameTotal": "{0}\n獲得量ボーナス合計",
+              "name": "{0}獲得量アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94057904.png",
+              "priority": 6000,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            { "Individuality": 10635, "EventId": 80319, "RateCount": 200 }
+          ]
+        },
+        {
+          "funcId": 6734,
+          "funcType": "eventPointUp",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80319,
+              "baseFuncId": 0,
+              "nameTotal": "{0}\n獲得量ボーナス合計",
+              "name": "{0}獲得量アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94057905.png",
+              "priority": 5000,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            { "Individuality": 10636, "EventId": 80319, "RateCount": 200 }
+          ]
+        },
+        {
+          "funcId": 6736,
+          "funcType": "eventPointUp",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80319,
+              "baseFuncId": 0,
+              "nameTotal": "{0}\n獲得量ボーナス合計",
+              "name": "{0}獲得量アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94057906.png",
+              "priority": 4000,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            { "Individuality": 10637, "EventId": 80319, "RateCount": 200 }
+          ]
+        },
+        {
+          "funcId": 7023,
+          "funcType": "servantFriendshipUp",
+          "funcTargetType": "ptFull",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80319,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n得られる自身の絆ボーナス合計",
+              "name": "得られる自身の絆アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1023.png",
+              "priority": 100,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            {
+              "ApplySupportSvt": 0,
+              "Individuality": 0,
+              "EventId": 80319,
+              "RateCount": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 940208,
+      "name": "サバキャンパー A",
+      "ruby": "さばきゃんぱー",
+      "detail": "自身の『復刻:サーヴァント・サマーキャンプ！ ライト版』における攻撃の威力を50%アップ ＋ 味方全体＜控え含む＞の『復刻:サーヴァント・サマーキャンプ！ ライト版』のクエストクリア時に得られる絆を5%アップ(サポート時は無効)【『復刻:サーヴァント・サマーキャンプ！ ライト版』イベント期間限定】",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00301.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 16,
+          "priority": 148,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 80326,
+          "flag": 0,
+          "startedAt": 1621414800,
+          "endedAt": 1623211199
+        }
+      ],
+      "functions": [
+        {
+          "funcId": 7103,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "サバキャンパー",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+          "functvals": [],
+          "funcquestTvals": [{ "id": 94000120, "name": "unknown" }],
+          "funcGroup": [
+            {
+              "eventId": 80326,
+              "baseFuncId": 5587,
+              "nameTotal": "{1} \n攻撃の威力アップ合計",
+              "name": "攻撃の威力アップ合計",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_302.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [
+            {
+              "id": 3577,
+              "name": "サバキャンパー",
+              "detail": "『復刻:サーヴァント・サマーキャンプ！ ライト版』において与えるダメージをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+              "type": "upDamage",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 10000
+            }
+          ],
+          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 500 }]
+        },
+        {
+          "funcId": 7106,
+          "funcType": "servantFriendshipUp",
+          "funcTargetType": "ptFull",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80326,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n得られる自身の絆ボーナス合計",
+              "name": "得られる自身の絆アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1023.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            {
+              "ApplySupportSvt": 0,
+              "Individuality": 0,
+              "EventId": 80326,
+              "RateCount": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 960507,
+      "name": "絆の力 EX",
+      "ruby": "きずなのちから",
+      "detail": "自身の『終局特異点 冠位時間神殿 ソロモン』における攻撃の威力を100%アップ",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_01003.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 10,
+          "priority": 1,
+          "condQuestId": 1000722,
+          "condQuestPhase": 1,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 5,
+          "eventId": 80038,
+          "flag": 0,
+          "startedAt": 1482382800,
+          "endedAt": 1893423600
+        }
+      ],
+      "functions": [
+        {
+          "funcId": 1254,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "威力アップ",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_1007.png",
+          "functvals": [],
+          "funcquestTvals": [{ "id": 94000052, "name": "unknown" }],
+          "funcGroup": [
+            {
+              "eventId": 80038,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n攻撃の威力アップ合計",
+              "name": "攻撃の威力アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1007.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [
+            {
+              "id": 382,
+              "name": "威力アップ〔絆〕",
+              "detail": "攻撃の威力を100%アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_1007.png",
+              "type": "upDamage",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [
+                { "id": 3004, "name": "buffPositiveEffect" },
+                { "id": 3006, "name": "buffIncreaseDamage" }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 10000
+            }
+          ],
+          "svals": [
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 1000,
+              "ShowState": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 962095,
+      "name": "星見の旅路",
+      "ruby": "ほしみのたびじ",
+      "detail": "第二部のメインクエストクリア時に味方全体＜控え含む＞の絆獲得量を20%アップ(サポート時は無効)",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00205.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 9,
+          "priority": 1,
+          "condQuestId": 3000124,
+          "condQuestPhase": 3,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 0,
+          "flag": 0,
+          "startedAt": 1542963600,
+          "endedAt": 1893423600
+        }
+      ],
+      "functions": [
+        {
+          "funcId": 3028,
+          "funcType": "servantFriendshipUp",
+          "funcTargetType": "ptFull",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [{ "id": 94000081, "name": "unknown" }],
+          "funcGroup": [
+            {
+              "eventId": 0,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n得られる全体の絆ボーナス合計",
+              "name": "得られる全体の絆アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1023.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            { "ApplySupportSvt": 0, "Individuality": 0, "RateCount": 200 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 962096,
+      "name": "星見の旅路",
+      "ruby": "ほしみのたびじ",
+      "detail": "第二部のメインクエストクリア時に味方全体＜控え含む＞の絆獲得量を20%アップ(サポート時は無効)",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00205.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 9,
+          "priority": 2,
+          "condQuestId": 3000125,
+          "condQuestPhase": 4,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 0,
+          "flag": 0,
+          "startedAt": 1542963600,
+          "endedAt": 1893423600
+        }
+      ],
+      "functions": [
+        {
+          "funcId": 3029,
+          "funcType": "servantFriendshipUp",
+          "funcTargetType": "ptFull",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [{ "id": 94000081, "name": "unknown" }],
+          "funcGroup": [
+            {
+              "eventId": 0,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n得られる全体の絆ボーナス合計",
+              "name": "得られる全体の絆アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1023.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            { "ApplySupportSvt": 0, "Individuality": 0, "RateCount": 200 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 962097,
+      "name": "星見の旅路",
+      "ruby": "ほしみのたびじ",
+      "detail": "第二部のメインクエストクリア時に味方全体＜控え含む＞の絆獲得量を20%アップ(サポート時は無効)",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00205.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 9,
+          "priority": 3,
+          "condQuestId": 3000218,
+          "condQuestPhase": 3,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 0,
+          "flag": 0,
+          "startedAt": 1543323600,
+          "endedAt": 1893423600
+        }
+      ],
+      "functions": [
+        {
+          "funcId": 3023,
+          "funcType": "servantFriendshipUp",
+          "funcTargetType": "ptFull",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [{ "id": 94000081, "name": "unknown" }],
+          "funcGroup": [
+            {
+              "eventId": 0,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n得られる全体の絆ボーナス合計",
+              "name": "得られる全体の絆アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1023.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            { "ApplySupportSvt": 0, "Individuality": 0, "RateCount": 200 }
           ]
         }
       ]

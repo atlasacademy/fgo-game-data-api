@@ -28,6 +28,7 @@
       "coolDown": [12, 12, 12, 12, 12, 11, 11, 11, 11, 10],
       "actIndividuality": [],
       "script": {},
+      "extraPassive": [],
       "functions": [
         {
           "funcId": 442,
@@ -88,6 +89,7 @@
       "coolDown": [15, 15, 15, 15, 15, 14, 14, 14, 14, 13],
       "actIndividuality": [],
       "script": {},
+      "extraPassive": [],
       "functions": [
         {
           "funcId": 150,
@@ -187,6 +189,7 @@
       "coolDown": [12, 12, 12, 12, 12, 11, 11, 11, 11, 10],
       "actIndividuality": [],
       "script": {},
+      "extraPassive": [],
       "functions": [
         {
           "funcId": 284,

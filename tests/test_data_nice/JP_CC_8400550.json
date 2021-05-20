@@ -26,6 +26,7 @@
       "coolDown": [3],
       "actIndividuality": [],
       "script": {},
+      "extraPassive": [],
       "functions": [
         {
           "funcId": 3897,

@@ -128,3 +128,12 @@ class TestBasicSpecial:
         response = await get_response("basic/JP/NP/100102?lang=en")
         assert response.status_code == 200
         assert response.json()["name"] == "Excalibur"
+
+    async def test_reverse_extra_passive(self) -> None:
+        response = await get_response(
+            "basic/JP/skill/940142?reverse=true&reverseData=basic&lang=en"
+        )
+        reverse_svt_ids = [
+            svt["id"] for svt in response.json()["reverse"]["basic"]["servant"]
+        ]
+        assert reverse_svt_ids == [303800, 1100700]

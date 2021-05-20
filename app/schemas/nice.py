@@ -374,6 +374,20 @@ class NiceFunction(NiceBaseFunction):
     )
 
 
+class ExtraPassive(BaseModel):
+    num: int
+    priority: int
+    condQuestId: int
+    condQuestPhase: int
+    condLv: int
+    condLimitCount: int
+    condFriendshipRank: int
+    eventId: int
+    flag: int
+    startedAt: int
+    endedAt: int
+
+
 class NiceSkillScript(BaseModel):
     NP_HIGHER: Optional[list[int]] = None
     NP_LOWER: Optional[list[int]] = None
@@ -402,6 +416,7 @@ class NiceSkill(BaseModelORJson):
     coolDown: list[int]
     actIndividuality: list[NiceTrait]
     script: NiceSkillScript
+    extraPassive: list[ExtraPassive]
     aiIds: Optional[dict[AiType, list[int]]] = None
     functions: list[NiceFunction]
 
@@ -865,13 +880,18 @@ class NiceServant(BaseModelORJson):
         "See each field description for more details.",
     )
     skills: list[NiceSkill] = Field(
-        ..., title="Skills", description="list of servant or CE skills."
+        ..., title="Skills", description="List of servant or CE skills."
     )
     classPassive: list[NiceSkill] = Field(
         ..., title="Passive Skills", description="list of servant's passive skills."
     )
+    extraPassive: list[NiceSkill] = Field(
+        ...,
+        title="Event Passive Skills",
+        description="List of servant's extra event passive skills, (bond bonus, damage bonus, etc).",
+    )
     noblePhantasms: list[NiceTd] = Field(
-        ..., title="Noble Phantasm", description="list of servant's noble phantasms."
+        ..., title="Noble Phantasm", description="List of servant's noble phantasms."
     )
     profile: Optional[NiceLore] = Field(
         None,

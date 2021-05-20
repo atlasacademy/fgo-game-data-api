@@ -462,6 +462,7 @@
       "coolDown": [0],
       "actIndividuality": [],
       "script": {},
+      "extraPassive": [],
       "functions": [
         {
           "funcId": 119,
@@ -560,6 +561,7 @@
       "coolDown": [0],
       "actIndividuality": [],
       "script": {},
+      "extraPassive": [],
       "functions": [
         {
           "funcId": 1951,
@@ -612,6 +614,7 @@
       "coolDown": [0],
       "actIndividuality": [],
       "script": {},
+      "extraPassive": [],
       "functions": [
         {
           "funcId": 119,
@@ -710,6 +713,7 @@
       "coolDown": [0],
       "actIndividuality": [],
       "script": {},
+      "extraPassive": [],
       "functions": [
         {
           "funcId": 1951,

@@ -131,6 +131,26 @@ mstSvtSkill = Table(
 )
 
 
+mstSvtPassiveSkill = Table(
+    "mstSvtPassiveSkill",
+    metadata,
+    Column("svtId", Integer, index=True),
+    Column("num", Integer),
+    Column("priority", Integer),
+    Column("skillId", Integer, index=True),
+    Column("condQuestId", Integer),
+    Column("condQuestPhase", Integer),
+    Column("condLv", Integer),
+    Column("condLimitCount", Integer),
+    Column("condFriendshipRank", Integer),
+    Column("eventId", Integer),
+    Column("flag", Integer),
+    Column("commonReleaseId", Integer),
+    Column("startedAt", Integer),
+    Column("endedAt", Integer),
+)
+
+
 mstSkillLv = Table(
     "mstSkillLv",
     metadata,
@@ -1265,6 +1285,7 @@ TABLES_TO_BE_LOADED = [
     mstFuncGroup,
     mstSkillDetail,
     mstSvtSkill,
+    mstSvtPassiveSkill,
     mstTreasureDeviceDetail,
     mstSvtTreasureDevice,
     mstSvtCard,

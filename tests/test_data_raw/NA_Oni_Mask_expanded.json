@@ -122,7 +122,8 @@
           "skillDetailId": 990610,
           "priority": 0
         }
-      ]
+      ],
+      "mstSvtPassiveSkill": []
     }
   ],
   "mstTreasureDevice": [],
@@ -368,6 +369,8 @@
   "mstSvtChange": [],
   "mstSvtCostume": [],
   "mstSvtScript": [],
+  "mstSvtPassiveSkill": [],
+  "expandedExtraPassive": [],
   "mstSvtExp": [
     { "type": 19, "lv": 0, "exp": 0, "curve": 0 },
     { "type": 19, "lv": 1, "exp": 100, "curve": 0 },

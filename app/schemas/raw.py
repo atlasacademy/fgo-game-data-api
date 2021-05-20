@@ -96,6 +96,23 @@ class MstSvtSkill(BaseModelORJson):
     flag: int  # 0
 
 
+class MstSvtPassiveSkill(BaseModelORJson):
+    svtId: int
+    num: int
+    priority: int
+    skillId: int
+    condQuestId: int
+    condQuestPhase: int
+    condLv: int
+    condLimitCount: int
+    condFriendshipRank: int
+    eventId: int
+    flag: int
+    commonReleaseId: Optional[int] = None
+    startedAt: int
+    endedAt: int
+
+
 class SkillLvScript(BaseModelORJson):
     HP_PER_LOWER: Optional[int] = None
     HP_VAL_HIGHER: Optional[int] = None
@@ -131,6 +148,7 @@ class SkillEntityNoReverse(BaseModelORJson):
     mstSkillDetail: list[MstSkillDetail]
     mstSvtSkill: list[MstSvtSkill]
     mstSkillLv: list[MstSkillLv]
+    mstSvtPassiveSkill: list[MstSvtPassiveSkill]
 
 
 # Dummy ID that is used when enemy servant does an extra attack instead of NP
@@ -1119,6 +1137,7 @@ class Master(BaseModelORJson):
     funcToTd: dict[int, set[int]]
     activeSkillToSvt: dict[int, set[int]]
     passiveSkillToSvt: dict[int, set[int]]
+    extraPassiveSkillToSvt: dict[int, set[int]]
     bondEquip: dict[int, int]
     bondEquipOwner: dict[int, int]
     valentineEquip: dict[int, list[int]]
@@ -1145,6 +1164,8 @@ class ServantEntity(BaseModelORJson):
     mstSvtChange: list[MstSvtChange]
     mstSvtCostume: list[MstSvtCostume]
     mstSvtScript: list[MstSvtScript]
+    mstSvtPassiveSkill: list[MstSvtPassiveSkill]
+    expandedExtraPassive: list[SkillEntityNoReverse] = []
     mstCv: Optional[MstCv] = None
     mstIllustrator: Optional[MstIllustrator] = None
     mstSvtExp: list[MstSvtExp] = []

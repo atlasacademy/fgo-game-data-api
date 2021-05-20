@@ -212,7 +212,8 @@
           "skillDetailId": 333650,
           "priority": 0
         }
-      ]
+      ],
+      "mstSvtPassiveSkill": []
     },
     {
       "mstSkill": {
@@ -436,7 +437,8 @@
           "skillDetailId": 334552,
           "priority": 0
         }
-      ]
+      ],
+      "mstSvtPassiveSkill": []
     },
     {
       "mstSkill": {
@@ -600,7 +602,8 @@
           "skillDetailId": 335550,
           "priority": 0
         }
-      ]
+      ],
+      "mstSvtPassiveSkill": []
     },
     {
       "mstSkill": {
@@ -788,7 +791,8 @@
           "skillDetailId": 334553,
           "priority": 0
         }
-      ]
+      ],
+      "mstSvtPassiveSkill": []
     }
   ],
   "mstTreasureDevice": [
@@ -1563,6 +1567,143 @@
       "offsetY": 146,
       "offsetXMyroom": 318,
       "offsetYMyroom": 130
+    }
+  ],
+  "mstSvtPassiveSkill": [
+    {
+      "svtId": 202300,
+      "num": 15,
+      "priority": 1,
+      "skillId": 940110,
+      "condQuestId": 0,
+      "condQuestPhase": 0,
+      "condLv": 0,
+      "condLimitCount": 0,
+      "condFriendshipRank": 0,
+      "eventId": 80244,
+      "flag": 0,
+      "startedAt": 1619755200,
+      "endedAt": 1620964799
+    },
+    {
+      "svtId": 202300,
+      "num": 10,
+      "priority": 1,
+      "skillId": 960502,
+      "condQuestId": 1000722,
+      "condQuestPhase": 1,
+      "condLv": 0,
+      "condLimitCount": 0,
+      "condFriendshipRank": 5,
+      "eventId": 80038,
+      "flag": 0,
+      "startedAt": 1482415200,
+      "endedAt": 1893456000
+    },
+    {
+      "svtId": 202300,
+      "num": 10,
+      "priority": 2,
+      "skillId": 960503,
+      "condQuestId": 1000722,
+      "condQuestPhase": 1,
+      "condLv": 0,
+      "condLimitCount": 0,
+      "condFriendshipRank": 6,
+      "eventId": 80038,
+      "flag": 0,
+      "startedAt": 1482415200,
+      "endedAt": 1893456000
+    },
+    {
+      "svtId": 202300,
+      "num": 10,
+      "priority": 3,
+      "skillId": 960504,
+      "condQuestId": 1000722,
+      "condQuestPhase": 1,
+      "condLv": 0,
+      "condLimitCount": 0,
+      "condFriendshipRank": 7,
+      "eventId": 80038,
+      "flag": 0,
+      "startedAt": 1482415200,
+      "endedAt": 1893456000
+    },
+    {
+      "svtId": 202300,
+      "num": 10,
+      "priority": 4,
+      "skillId": 960505,
+      "condQuestId": 1000722,
+      "condQuestPhase": 1,
+      "condLv": 0,
+      "condLimitCount": 0,
+      "condFriendshipRank": 8,
+      "eventId": 80038,
+      "flag": 0,
+      "startedAt": 1482415200,
+      "endedAt": 1893456000
+    },
+    {
+      "svtId": 202300,
+      "num": 10,
+      "priority": 5,
+      "skillId": 960506,
+      "condQuestId": 1000722,
+      "condQuestPhase": 1,
+      "condLv": 0,
+      "condLimitCount": 0,
+      "condFriendshipRank": 9,
+      "eventId": 80038,
+      "flag": 0,
+      "startedAt": 1482415200,
+      "endedAt": 1893456000
+    },
+    {
+      "svtId": 202300,
+      "num": 10,
+      "priority": 6,
+      "skillId": 960507,
+      "condQuestId": 1000722,
+      "condQuestPhase": 1,
+      "condLv": 0,
+      "condLimitCount": 0,
+      "condFriendshipRank": 10,
+      "eventId": 80038,
+      "flag": 0,
+      "startedAt": 1482415200,
+      "endedAt": 1893456000
+    },
+    {
+      "svtId": 202300,
+      "num": 11,
+      "priority": 1,
+      "skillId": 960557,
+      "condQuestId": 1000822,
+      "condQuestPhase": 1,
+      "condLv": 0,
+      "condLimitCount": 0,
+      "condFriendshipRank": 0,
+      "eventId": 80044,
+      "flag": 0,
+      "startedAt": 1487944800,
+      "endedAt": 1893456000
+    },
+    {
+      "svtId": 202300,
+      "num": 13,
+      "priority": 1,
+      "skillId": 961154,
+      "condQuestId": 1000822,
+      "condQuestPhase": 1,
+      "condLv": 0,
+      "condLimitCount": 0,
+      "condFriendshipRank": 0,
+      "eventId": 80072,
+      "flag": 0,
+      "startedAt": 1508018400,
+      "endedAt": 1893456000
     }
   ],
   "mstCv": { "id": 65, "name": "Takaya Hashi", "comment": "" },
