@@ -1,6 +1,6 @@
 from copy import deepcopy
 from dataclasses import dataclass
-from typing import Any, Iterable
+from typing import Any, Iterable, Optional
 
 from sqlalchemy.engine import Connection
 
@@ -35,7 +35,11 @@ def get_extra_passive(svt_passive: MstSvtPassiveSkill) -> ExtraPassive:
 
 
 def get_nice_skill_with_svt(
-    skillEntity: SkillEntityNoReverse, svtId: int, region: Region, lang: Language
+    skillEntity: SkillEntityNoReverse,
+    svtId: int,
+    region: Region,
+    lang: Language,
+    mstSvtPassiveSkills: Optional[list[MstSvtPassiveSkill]] = None,
 ) -> list[dict[str, Any]]:
     nice_skill: dict[str, Any] = {
         "id": skillEntity.mstSkill.id,
@@ -43,12 +47,16 @@ def get_nice_skill_with_svt(
         "ruby": skillEntity.mstSkill.ruby,
         "type": SKILL_TYPE_NAME[skillEntity.mstSkill.type],
         "actIndividuality": get_traits_list(skillEntity.mstSkill.actIndividuality),
-        "extraPassive": [
-            get_extra_passive(svt_skill)
-            for svt_skill in skillEntity.mstSvtPassiveSkill
-            if svt_skill.svtId == svtId
-        ],
     }
+
+    if mstSvtPassiveSkills:
+        nice_skill["extraPassive"] = [
+            get_extra_passive(svt_skill)
+            for svt_skill in mstSvtPassiveSkills
+            if svt_skill.skillId == skillEntity.mstSkill.id
+        ]
+    else:
+        nice_skill["extraPassive"] = []
 
     iconId = skillEntity.mstSkill.iconId
     if iconId != 0:

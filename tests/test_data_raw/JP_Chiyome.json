@@ -188,8 +188,7 @@
           "skillDetailId": 422350,
           "priority": 50
         }
-      ],
-      "mstSvtPassiveSkill": []
+      ]
     },
     {
       "mstSkill": {
@@ -327,8 +326,7 @@
           "skillDetailId": 416450,
           "priority": 0
         }
-      ],
-      "mstSvtPassiveSkill": []
+      ]
     },
     {
       "mstSkill": {
@@ -466,8 +464,7 @@
           "skillDetailId": 417550,
           "priority": 0
         }
-      ],
-      "mstSvtPassiveSkill": []
+      ]
     }
   ],
   "mstTreasureDevice": [

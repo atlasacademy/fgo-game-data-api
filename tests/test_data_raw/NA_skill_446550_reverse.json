@@ -161,7 +161,6 @@
       "priority": 1000
     }
   ],
-  "mstSvtPassiveSkill": [],
   "reverse": {
     "raw": {
       "servant": [
@@ -433,8 +432,7 @@
                   "skillDetailId": 446550,
                   "priority": 1000
                 }
-              ],
-              "mstSvtPassiveSkill": []
+              ]
             },
             {
               "mstSkill": {
@@ -598,8 +596,7 @@
                   "skillDetailId": 447551,
                   "priority": 0
                 }
-              ],
-              "mstSvtPassiveSkill": []
+              ]
             },
             {
               "mstSkill": {
@@ -823,8 +820,7 @@
                   "skillDetailId": 433650,
                   "priority": 220
                 }
-              ],
-              "mstSvtPassiveSkill": []
+              ]
             }
           ],
           "mstTreasureDevice": [
@@ -2135,8 +2131,7 @@
                   "skillDetailId": 446550,
                   "priority": 1000
                 }
-              ],
-              "mstSvtPassiveSkill": []
+              ]
             },
             {
               "mstSkill": {
@@ -2300,8 +2295,7 @@
                   "skillDetailId": 447551,
                   "priority": 0
                 }
-              ],
-              "mstSvtPassiveSkill": []
+              ]
             },
             {
               "mstSkill": {
@@ -2525,8 +2519,7 @@
                   "skillDetailId": 433650,
                   "priority": 220
                 }
-              ],
-              "mstSvtPassiveSkill": []
+              ]
             }
           ],
           "mstTreasureDevice": [],
@@ -3395,8 +3388,7 @@
                   "skillDetailId": 446550,
                   "priority": 1000
                 }
-              ],
-              "mstSvtPassiveSkill": []
+              ]
             },
             {
               "mstSkill": {
@@ -3560,8 +3552,7 @@
                   "skillDetailId": 447551,
                   "priority": 0
                 }
-              ],
-              "mstSvtPassiveSkill": []
+              ]
             },
             {
               "mstSkill": {
@@ -3785,8 +3776,7 @@
                   "skillDetailId": 433650,
                   "priority": 220
                 }
-              ],
-              "mstSvtPassiveSkill": []
+              ]
             }
           ],
           "mstTreasureDevice": [],

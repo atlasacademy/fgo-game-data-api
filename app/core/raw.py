@@ -322,12 +322,20 @@ def get_servant_entity(
     )
 
     if expand:
-        svt_entity.mstSvt.expandedClassPassive = get_skill_entity_no_reverse_many(
-            conn, svt_entity.mstSvt.classPassive, expand
-        )
-        svt_entity.expandedExtraPassive = get_skill_entity_no_reverse_many(
-            conn, [skill.skillId for skill in mstSvtPassiveSkill], expand
-        )
+        extra_passive_ids = {skill.skillId for skill in mstSvtPassiveSkill}
+        expand_skill_ids = set(svt_entity.mstSvt.classPassive) | extra_passive_ids
+        expand_skills = {
+            skill.mstSkill.id: skill
+            for skill in get_skill_entity_no_reverse_many(
+                conn, expand_skill_ids, expand
+            )
+        }
+        svt_entity.mstSvt.expandedClassPassive = [
+            expand_skills[skill_id] for skill_id in svt_entity.mstSvt.classPassive
+        ]
+        svt_entity.expandedExtraPassive = [
+            expand_skills[skill.skillId] for skill in mstSvtPassiveSkill
+        ]
 
     if lore:
         svt_entity.mstCv = fetch.get_one(conn, MstCv, svt_db.cvId)

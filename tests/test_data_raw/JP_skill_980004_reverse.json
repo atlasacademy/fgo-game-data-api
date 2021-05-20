@@ -121,7 +121,6 @@
       "priority": 0
     }
   ],
-  "mstSvtPassiveSkill": [],
   "reverse": {
     "raw": {
       "servant": [],
@@ -262,8 +261,7 @@
                   "skillDetailId": 980004,
                   "priority": 0
                 }
-              ],
-              "mstSvtPassiveSkill": []
+              ]
             },
             {
               "mstSkill": {
@@ -387,8 +385,7 @@
                   "skillDetailId": 980005,
                   "priority": 50
                 }
-              ],
-              "mstSvtPassiveSkill": []
+              ]
             },
             {
               "mstSkill": {
@@ -512,8 +509,7 @@
                   "skillDetailId": 980006,
                   "priority": 0
                 }
-              ],
-              "mstSvtPassiveSkill": []
+              ]
             }
           ],
           "mstEquipExp": [

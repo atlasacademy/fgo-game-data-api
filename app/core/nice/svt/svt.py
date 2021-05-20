@@ -233,7 +233,9 @@ def get_nice_servant(
     nice_data["extraPassive"] = [
         skill
         for skillEntity in raw_svt.expandedExtraPassive
-        for skill in get_nice_skill_with_svt(skillEntity, svt_id, region, lang)
+        for skill in get_nice_skill_with_svt(
+            skillEntity, svt_id, region, lang, raw_svt.mstSvtPassiveSkill
+        )
     ]
 
     # Filter out dummy TDs that are used by enemy servants

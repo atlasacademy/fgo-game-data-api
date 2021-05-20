@@ -148,7 +148,6 @@ class SkillEntityNoReverse(BaseModelORJson):
     mstSkillDetail: list[MstSkillDetail]
     mstSvtSkill: list[MstSvtSkill]
     mstSkillLv: list[MstSkillLv]
-    mstSvtPassiveSkill: list[MstSvtPassiveSkill]
 
 
 # Dummy ID that is used when enemy servant does an extra attack instead of NP

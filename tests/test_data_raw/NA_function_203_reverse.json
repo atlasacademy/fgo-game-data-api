@@ -55,8 +55,7 @@
               "skillDetailId": 980058,
               "priority": 0
             }
-          ],
-          "mstSvtPassiveSkill": []
+          ]
         },
         {
           "mstSkill": {
@@ -244,8 +243,7 @@
               "skillDetailId": 157352,
               "priority": 0
             }
-          ],
-          "mstSvtPassiveSkill": []
+          ]
         },
         {
           "mstSkill": {
@@ -383,8 +381,7 @@
               "skillDetailId": 431450,
               "priority": 0
             }
-          ],
-          "mstSvtPassiveSkill": []
+          ]
         },
         {
           "mstSkill": {
@@ -572,8 +569,7 @@
               "skillDetailId": 42900,
               "priority": 0
             }
-          ],
-          "mstSvtPassiveSkill": []
+          ]
         },
         {
           "mstSkill": {
@@ -601,8 +597,7 @@
               "skillDetailId": 1,
               "priority": 0
             }
-          ],
-          "mstSvtPassiveSkill": []
+          ]
         },
         {
           "mstSkill": {
@@ -641,8 +636,7 @@
               "skillDetailId": 980057,
               "priority": 0
             }
-          ],
-          "mstSvtPassiveSkill": []
+          ]
         },
         {
           "mstSkill": {
@@ -780,8 +774,7 @@
               "skillDetailId": 42650,
               "priority": 0
             }
-          ],
-          "mstSvtPassiveSkill": []
+          ]
         },
         {
           "mstSkill": {
@@ -822,8 +815,7 @@
               "skillDetailId": 980059,
               "priority": 0
             }
-          ],
-          "mstSvtPassiveSkill": []
+          ]
         },
         {
           "mstSkill": {
@@ -865,8 +857,7 @@
               "skillDetailId": 980060,
               "priority": 0
             }
-          ],
-          "mstSvtPassiveSkill": []
+          ]
         }
       ],
       "NP": []

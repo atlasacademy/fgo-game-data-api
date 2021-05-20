@@ -24,9 +24,9 @@ from .core.utils import get_safe, sort_by_collection_no
 from .data.custom_mappings import TRANSLATIONS
 from .data.gamedata import masters, update_masters
 from .db.engine import engines
-from .db.helpers.item import get_all_items
-from .db.helpers.illustrator import get_all_illustrators
 from .db.helpers.cv import get_all_cvs
+from .db.helpers.illustrator import get_all_illustrators
+from .db.helpers.item import get_all_items
 from .db.load import update_db
 from .routers.utils import list_string
 from .schemas.base import BaseModelORJson
