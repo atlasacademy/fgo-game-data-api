@@ -123,3 +123,8 @@ class TestBasicSpecial:
         assert response.json()["reverse"]["basic"]["skill"][0]["reverse"]["basic"][
             "servant"
         ]
+
+    async def test_translation_override(self) -> None:
+        response = await get_response("basic/JP/NP/100102?lang=en")
+        assert response.status_code == 200
+        assert response.json()["name"] == "Excalibur"

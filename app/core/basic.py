@@ -245,7 +245,9 @@ def get_basic_td(
         mstTreasureDevice = masters[region].mstTreasureDeviceId[td_id]
     basic_td = BasicTdReverse(
         id=mstTreasureDevice.id,
-        name=get_translation(lang, mstTreasureDevice.name),
+        name=get_translation(
+            lang, mstTreasureDevice.name, "np_names", str(mstTreasureDevice.id)
+        ),
         ruby=mstTreasureDevice.ruby,
     )
 

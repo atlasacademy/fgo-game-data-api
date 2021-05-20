@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from typing import Union
+from typing import Literal, Union
 
 
 file_path = Path(__file__)
@@ -23,6 +23,20 @@ TRANSLATION_FILES = (
 for translation_file in TRANSLATION_FILES:
     with open(MAPPING_PATH / f"{translation_file}.json", "r", encoding="utf-8") as fp:
         TRANSLATIONS |= json.load(fp)
+
+TRANSLATION_FILE_NAMES = Union[
+    Literal["skill_names"],
+    Literal["np_names"],
+    Literal["event_names"],
+    Literal["war_names"],
+    Literal["item_names"],
+    Literal["servant_names"],
+    Literal["equip_names"],
+    Literal["cc_names"],
+    Literal["mc_names"],
+]
+with open(MAPPING_PATH / "translation_override.json", "r", encoding="utf-8") as fp:
+    TRANSLATION_OVERRIDE: dict[TRANSLATION_FILE_NAMES, dict[str, str]] = json.load(fp)
 
 
 EXTRA_CHARAFIGURES: dict[int, list[int]] = {}

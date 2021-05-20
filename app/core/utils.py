@@ -1,6 +1,10 @@
 from typing import Any, Iterable, Mapping, Optional, TypeVar, Union
 
-from ..data.custom_mappings import TRANSLATIONS
+from ..data.custom_mappings import (
+    TRANSLATION_FILE_NAMES,
+    TRANSLATION_OVERRIDE,
+    TRANSLATIONS,
+)
 from ..schemas.basic import BasicCommandCode, BasicEquip, BasicServant
 from ..schemas.common import Language, NiceTrait
 from ..schemas.enums import TRAIT_NAME, Trait
@@ -11,8 +15,20 @@ TValue = TypeVar("TValue")
 TLookup = TypeVar("TLookup")
 
 
-def get_translation(language: Language, string: str) -> str:
+def get_translation(
+    language: Language,
+    string: str,
+    override_file: Optional[TRANSLATION_FILE_NAMES] = None,
+    override_id: Optional[str] = None,
+) -> str:
     if language == Language.en:
+        if (
+            override_file
+            and override_id
+            and override_id in TRANSLATION_OVERRIDE[override_file]
+        ):
+            return TRANSLATION_OVERRIDE[override_file][override_id]
+
         return TRANSLATIONS.get(string, string)
 
     return string

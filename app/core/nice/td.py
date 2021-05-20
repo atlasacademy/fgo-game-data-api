@@ -22,7 +22,12 @@ def get_nice_td(
 ) -> list[dict[str, Any]]:
     nice_td: dict[str, Any] = {
         "id": tdEntity.mstTreasureDevice.id,
-        "name": get_translation(lang, tdEntity.mstTreasureDevice.name),
+        "name": get_translation(
+            lang,
+            tdEntity.mstTreasureDevice.name,
+            "np_names",
+            str(tdEntity.mstTreasureDevice.id),
+        ),
         "ruby": tdEntity.mstTreasureDevice.ruby,
         "rank": tdEntity.mstTreasureDevice.rank,
         "type": tdEntity.mstTreasureDevice.typeText,
