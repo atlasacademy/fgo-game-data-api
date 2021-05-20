@@ -9,6 +9,8 @@ nice_functions*.json
 nice_buff*.json
 nice_trait.json
 nice_enums.json
+nice_illustrator.json
+nice_cv.json
 basic_equip*.json
 basic_servant*.json
 basic_mystic_code*.json

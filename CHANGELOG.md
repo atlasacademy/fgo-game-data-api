@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.61.0 - 2020-05-19
+### Added
+- Added extra passive to raw and nice servant.
+- Added `cardDetail` to nice servant.
+- `nice_illustrator.json` and `nice_cv.json` exports.
+
+### Changed
+- Better description for `normalAttack` enums.
+
 ## 5.60.0 - 2020-05-14
 ### Added
 - skill, NP, event and war translations.

@@ -93,6 +93,8 @@ Pre-generated full nice data that can be served instantly:
   - [NA Material](/export/NA/nice_item.json)
   - [NA Mystic Code](/export/NA/nice_mystic_code.json)
   - [NA Item](/export/NA/nice_item.json)
+  - [NA Illustrator](/export/NA/nice_illustrator.json)
+  - [NA Voice Actor](/export/NA/nice_cv.json)
 - JP data:
   - [JP Servant](/export/JP/nice_servant.json), [JP Servant with lore](/export/JP/nice_servant_lore.json)
   - [JP Servant with English names](/export/JP/nice_servant_lang_en.json),
@@ -105,6 +107,8 @@ Pre-generated full nice data that can be served instantly:
   - [JP Material](/export/JP/nice_item.json)
   - [JP Mystic Code](/export/JP/nice_mystic_code.json)
   - [JP Item](/export/JP/nice_item.json)
+  - [JP Illustrator](/export/JP/nice_illustrator.json)
+  - [JP Voice Actor](/export/NA/nice_cv.json)
 - Both regions (The data is the same for both NA and JP endpoints):
   - [All enums](/export/JP/nice_enums.json)
   - [Trait mapping](/export/JP/nice_trait.json)

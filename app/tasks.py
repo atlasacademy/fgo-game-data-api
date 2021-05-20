@@ -25,6 +25,8 @@ from .data.custom_mappings import TRANSLATIONS
 from .data.gamedata import masters, update_masters
 from .db.engine import engines
 from .db.helpers.item import get_all_items
+from .db.helpers.illustrator import get_all_illustrators
+from .db.helpers.cv import get_all_cvs
 from .db.load import update_db
 from .routers.utils import list_string
 from .schemas.base import BaseModelORJson
@@ -122,6 +124,8 @@ def generate_exports(
                 get_nice_item_from_raw(region, raw_item, Language.jp)
                 for raw_item in get_all_items(conn)
             )
+            all_illustrator_data = get_all_illustrators(conn)
+            all_cv_data = get_all_cvs(conn)
             all_mc_data = (
                 get_nice_mystic_code(conn, region, mc_id, Language.jp)
                 for mc_id in masters[region].mstEquipId
@@ -167,6 +171,8 @@ def generate_exports(
                 ("nice_command_code", all_cc_data, dump_orjson),
                 ("nice_item", all_item_data, dump_orjson),
                 ("nice_mystic_code", all_mc_data, dump_orjson),
+                ("nice_illustrator", all_illustrator_data, dump_orjson),
+                ("nice_cv", all_cv_data, dump_orjson),
             ]
 
             if region == Region.JP:
