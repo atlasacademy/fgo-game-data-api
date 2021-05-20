@@ -151,6 +151,16 @@
     "quick": [25, 75],
     "extra": [12, 25, 63]
   },
+  "cardDetails": {
+    "arts": { "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }] },
+    "buster": {
+      "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }]
+    },
+    "quick": {
+      "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }]
+    },
+    "extra": { "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }] }
+  },
   "atkBase": 1261,
   "atkMax": 6791,
   "hpBase": 1854,
@@ -2822,7 +2832,7 @@
       "condQuestId": 0,
       "condQuestPhase": 0,
       "individuality": [
-        { "id": 3002, "name": "normalAttack2" },
+        { "id": 3002, "name": "normalAttackMagical" },
         { "id": 4001, "name": "cardArts" },
         { "id": 4007, "name": "cardNP" }
       ],
@@ -2853,7 +2863,7 @@
       "condQuestId": 1000008,
       "condQuestPhase": 4,
       "individuality": [
-        { "id": 3002, "name": "normalAttack2" },
+        { "id": 3002, "name": "normalAttackMagical" },
         { "id": 4001, "name": "cardArts" },
         { "id": 4007, "name": "cardNP" }
       ],
@@ -3021,7 +3031,7 @@
       "condQuestId": 1000631,
       "condQuestPhase": 3,
       "individuality": [
-        { "id": 3002, "name": "normalAttack2" },
+        { "id": 3002, "name": "normalAttackMagical" },
         { "id": 4001, "name": "cardArts" },
         { "id": 4007, "name": "cardNP" }
       ],
@@ -3255,7 +3265,7 @@
       "condQuestId": 3000124,
       "condQuestPhase": 3,
       "individuality": [
-        { "id": 3002, "name": "normalAttack2" },
+        { "id": 3002, "name": "normalAttackMagical" },
         { "id": 4001, "name": "cardArts" },
         { "id": 4007, "name": "cardNP" }
       ],
@@ -3423,7 +3433,7 @@
       "condQuestId": 3000124,
       "condQuestPhase": 3,
       "individuality": [
-        { "id": 3002, "name": "normalAttack2" },
+        { "id": 3002, "name": "normalAttackMagical" },
         { "id": 4001, "name": "cardArts" },
         { "id": 4007, "name": "cardNP" }
       ],

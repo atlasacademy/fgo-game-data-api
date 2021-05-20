@@ -119,6 +119,20 @@
     "quick": [10, 20, 30, 40],
     "extra": [6, 13, 20, 26, 35]
   },
+  "cardDetails": {
+    "arts": {
+      "attackIndividuality": [{ "id": 3002, "name": "normalAttackMagical" }]
+    },
+    "buster": {
+      "attackIndividuality": [{ "id": 3002, "name": "normalAttackMagical" }]
+    },
+    "quick": {
+      "attackIndividuality": [{ "id": 3002, "name": "normalAttackMagical" }]
+    },
+    "extra": {
+      "attackIndividuality": [{ "id": 3002, "name": "normalAttackMagical" }]
+    }
+  },
   "atkBase": 1949,
   "atkMax": 12612,
   "hpBase": 1912,
@@ -2228,7 +2242,7 @@
       "condQuestId": 0,
       "condQuestPhase": 0,
       "individuality": [
-        { "id": 3002, "name": "normalAttack2" },
+        { "id": 3002, "name": "normalAttackMagical" },
         { "id": 4001, "name": "cardArts" },
         { "id": 4007, "name": "cardNP" },
         { "id": 4101, "name": "aoeNP" }
@@ -2441,7 +2455,7 @@
       "condQuestId": 0,
       "condQuestPhase": 0,
       "individuality": [
-        { "id": 3002, "name": "normalAttack2" },
+        { "id": 3002, "name": "normalAttackMagical" },
         { "id": 4002, "name": "cardBuster" },
         { "id": 4007, "name": "cardNP" },
         { "id": 4101, "name": "aoeNP" }
@@ -2654,7 +2668,7 @@
       "condQuestId": 0,
       "condQuestPhase": 0,
       "individuality": [
-        { "id": 3002, "name": "normalAttack2" },
+        { "id": 3002, "name": "normalAttackMagical" },
         { "id": 4003, "name": "cardQuick" },
         { "id": 4007, "name": "cardNP" },
         { "id": 4101, "name": "aoeNP" }

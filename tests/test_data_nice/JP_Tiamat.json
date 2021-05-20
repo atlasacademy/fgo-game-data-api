@@ -57,6 +57,16 @@
     "quick": [100],
     "extra": [100]
   },
+  "cardDetails": {
+    "arts": { "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }] },
+    "buster": {
+      "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }]
+    },
+    "quick": {
+      "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }]
+    },
+    "extra": { "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }] }
+  },
   "atkBase": 2101,
   "atkMax": 13596,
   "hpBase": 2745,

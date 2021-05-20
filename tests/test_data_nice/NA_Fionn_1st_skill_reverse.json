@@ -193,6 +193,20 @@
             "quick": [33, 67],
             "extra": [27, 18, 9, 46]
           },
+          "cardDetails": {
+            "arts": {
+              "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }]
+            },
+            "buster": {
+              "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }]
+            },
+            "quick": {
+              "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }]
+            },
+            "extra": {
+              "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }]
+            }
+          },
           "atkBase": 1488,
           "atkMax": 8930,
           "hpBase": 2040,
@@ -1864,7 +1878,7 @@
               "condQuestId": 0,
               "condQuestPhase": 0,
               "individuality": [
-                { "id": 3000, "name": "normalAttack0" },
+                { "id": 3000, "name": "normalAttack" },
                 { "id": 4001, "name": "cardArts" },
                 { "id": 4007, "name": "cardNP" }
               ],
@@ -2073,7 +2087,7 @@
               "condQuestId": 91301101,
               "condQuestPhase": 2,
               "individuality": [
-                { "id": 3000, "name": "normalAttack0" },
+                { "id": 3000, "name": "normalAttack" },
                 { "id": 4001, "name": "cardArts" },
                 { "id": 4007, "name": "cardNP" }
               ],

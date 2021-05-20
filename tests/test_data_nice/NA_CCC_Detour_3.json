@@ -198,7 +198,7 @@
               "condQuestId": 0,
               "condQuestPhase": 0,
               "individuality": [
-                { "id": 3000, "name": "normalAttack0" },
+                { "id": 3000, "name": "normalAttack" },
                 { "id": 4007, "name": "cardNP" }
               ],
               "script": {},

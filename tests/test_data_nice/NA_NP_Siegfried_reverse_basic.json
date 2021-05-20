@@ -22,7 +22,7 @@
   "condQuestId": 0,
   "condQuestPhase": 0,
   "individuality": [
-    { "id": 3002, "name": "normalAttack2" },
+    { "id": 3002, "name": "normalAttackMagical" },
     { "id": 4002, "name": "cardBuster" },
     { "id": 4007, "name": "cardNP" }
   ],

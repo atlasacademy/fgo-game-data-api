@@ -39,6 +39,14 @@
   "instantDeathChance": 1000,
   "cards": ["quick", "quick", "quick", "quick", "quick"],
   "hitsDistribution": { "weak": [100], "strength": [100] },
+  "cardDetails": {
+    "weak": {
+      "attackIndividuality": [{ "id": 3001, "name": "normalAttackProjectile" }]
+    },
+    "strength": {
+      "attackIndividuality": [{ "id": 3001, "name": "normalAttackProjectile" }]
+    }
+  },
   "atkBase": 792,
   "atkMax": 9367,
   "hpBase": 6480,
@@ -395,7 +403,7 @@
       "condQuestId": 0,
       "condQuestPhase": 0,
       "individuality": [
-        { "id": 3001, "name": "normalAttack1" },
+        { "id": 3001, "name": "normalAttackProjectile" },
         { "id": 4007, "name": "cardNP" }
       ],
       "script": {},

@@ -481,6 +481,10 @@ class ExtraAssets(ExtraCCAssets):
     )
 
 
+class NiceCardDetail(BaseModel):
+    attackIndividuality: list[NiceTrait]
+
+
 AscensionAddData = TypeVar("AscensionAddData")
 
 
@@ -767,6 +771,11 @@ class NiceServant(BaseModelORJson):
         ...,
         title="Hits distribution",
         description="Mapping <Card type, Hits distribution>.",
+    )
+    cardDetails: dict[NiceCardType, NiceCardDetail] = Field(
+        ...,
+        title="Card detail",
+        description="Mapping <Card type, Card detail>, containing attack traits.",
     )
     atkBase: int = Field(..., title="Base ATK", description="Base ATK.")
     atkMax: int = Field(..., title="Max ATK", description="Max ATK (without grailing).")

@@ -32,6 +32,7 @@ from ..skill import get_nice_skill_with_svt
 from ..td import get_nice_td
 from .ascensionAdd import get_nice_ascensionAdd
 from .asset import get_svt_extraAssets
+from .card import get_nice_card
 from .voice import get_nice_voice
 
 
@@ -163,6 +164,11 @@ def get_nice_servant(
 
     nice_data["hitsDistribution"] = {
         CARD_TYPE_NAME[svt_card.cardId]: svt_card.normalDamage
+        for svt_card in raw_svt.mstSvtCard
+    }
+
+    nice_data["cardDetails"] = {
+        CARD_TYPE_NAME[svt_card.cardId]: get_nice_card(svt_card)
         for svt_card in raw_svt.mstSvtCard
     }
 
