@@ -366,6 +366,10 @@ class TestServantSpecial:
         assert response.status_code == 200
         assert response.json()["script"] == {"ReleaseText": "睡眠解除", "DamageRelease": 1}
 
+    async def test_buff_checkIndvType(self) -> None:
+        response = await get_response("/nice/JP/buff/1831")
+        assert response.json()["script"] == {"checkIndvType": 1}
+
     async def test_negative_trait(self) -> None:
         response = await get_response("/nice/JP/buff/2966")
         expected = {"id": 4101, "name": "aoeNP", "negative": True}

@@ -1365,7 +1365,7 @@
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_306.png",
               "type": "upTolerance",
               "buffGroup": 0,
-              "script": {},
+              "script": { "checkIndvType": 1 },
               "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
               "tvals": [
                 { "id": 1002, "name": "undead" },

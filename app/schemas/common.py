@@ -82,6 +82,7 @@ class NiceBuffRelationOverwrite(BaseModel):
 
 
 class NiceBuffScript(BaseModel):
+    checkIndvType: Optional[int] = None
     relationId: Optional[NiceBuffRelationOverwrite] = None
     ReleaseText: Optional[str] = None
     DamageRelease: Optional[int] = None
