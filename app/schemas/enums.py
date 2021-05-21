@@ -661,9 +661,9 @@ class Trait(str, Enum):
     buffHpRecoveryPerTurn = "buffHpRecoveryPerTurn"
     buffNegativeEffectImmunity = "buffNegativeEffectImmunity"
     buffNegativeEffectAtTurnEnd = "buffNegativeEffectAtTurnEnd"
-    normalAttack = "normalAttack"
-    normalAttackProjectile = "normalAttackProjectile"
-    normalAttackMagical = "normalAttackMagical"
+    attackPhysical = "attackPhysical"
+    attackProjectile = "attackProjectile"
+    attackMagical = "attackMagical"
     criticalHit = "criticalHit"
     playerCards = "playerCards"
     cardNP = "cardNP"
@@ -890,9 +890,9 @@ TRAIT_NAME: dict[int, Trait] = {
     2780: Trait.hasCostume,
     2781: Trait.mechanical,
     # 2xxx: CQ or Story quests buff
-    3000: Trait.normalAttack,  # Normal attack, including NP
-    3001: Trait.normalAttackProjectile,
-    3002: Trait.normalAttackMagical,
+    3000: Trait.attackPhysical,  # Normal attack, including NP
+    3001: Trait.attackProjectile,
+    3002: Trait.attackMagical,
     3004: Trait.buffPositiveEffect,
     3005: Trait.buffNegativeEffect,  # mutually exclusive with 3004
     3006: Trait.buffIncreaseDamage,  # catch all damage: atk, np, powermod, ...

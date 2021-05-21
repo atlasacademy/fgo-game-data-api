@@ -92,6 +92,12 @@ def get_nice_buff_script(region: Region, mstBuff: MstBuff) -> NiceBuffScript:
     if "INDIVIDUALITIE" in mstBuff.script:
         script["INDIVIDUALITIE"] = get_nice_trait(mstBuff.script["INDIVIDUALITIE"])
 
+    if "CheckOpponentBuffTypes" in mstBuff.script:
+        script["CheckOpponentBuffTypes"] = [
+            BUFF_TYPE_NAME[int(buffType)]
+            for buffType in mstBuff.script["CheckOpponentBuffTypes"].split(",")
+        ]
+
     return NiceBuffScript.parse_obj(script)
 
 

@@ -22,7 +22,7 @@
   "condQuestId": 0,
   "condQuestPhase": 0,
   "individuality": [
-    { "id": 3002, "name": "normalAttackMagical" },
+    { "id": 3002, "name": "attackMagical" },
     { "id": 4002, "name": "cardBuster" },
     { "id": 4007, "name": "cardNP" }
   ],
@@ -295,24 +295,16 @@
           },
           "cardDetails": {
             "arts": {
-              "attackIndividuality": [
-                { "id": 3002, "name": "normalAttackMagical" }
-              ]
+              "attackIndividuality": [{ "id": 3002, "name": "attackMagical" }]
             },
             "buster": {
-              "attackIndividuality": [
-                { "id": 3002, "name": "normalAttackMagical" }
-              ]
+              "attackIndividuality": [{ "id": 3002, "name": "attackMagical" }]
             },
             "quick": {
-              "attackIndividuality": [
-                { "id": 3002, "name": "normalAttackMagical" }
-              ]
+              "attackIndividuality": [{ "id": 3002, "name": "attackMagical" }]
             },
             "extra": {
-              "attackIndividuality": [
-                { "id": 3002, "name": "normalAttackMagical" }
-              ]
+              "attackIndividuality": [{ "id": 3002, "name": "attackMagical" }]
             }
           },
           "atkBase": 1716,
@@ -2874,7 +2866,7 @@
               "condQuestId": 0,
               "condQuestPhase": 0,
               "individuality": [
-                { "id": 3002, "name": "normalAttackMagical" },
+                { "id": 3002, "name": "attackMagical" },
                 { "id": 4002, "name": "cardBuster" },
                 { "id": 4007, "name": "cardNP" }
               ],

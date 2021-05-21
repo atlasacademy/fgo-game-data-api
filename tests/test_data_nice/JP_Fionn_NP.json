@@ -22,7 +22,7 @@
   "condQuestId": 0,
   "condQuestPhase": 0,
   "individuality": [
-    { "id": 3000, "name": "normalAttack" },
+    { "id": 3000, "name": "attackPhysical" },
     { "id": 4001, "name": "cardArts" },
     { "id": 4007, "name": "cardNP" },
     { "id": 4101, "name": "aoeNP" }

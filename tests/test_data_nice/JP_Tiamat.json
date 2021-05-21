@@ -58,14 +58,18 @@
     "extra": [100]
   },
   "cardDetails": {
-    "arts": { "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }] },
+    "arts": {
+      "attackIndividuality": [{ "id": 3000, "name": "attackPhysical" }]
+    },
     "buster": {
-      "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }]
+      "attackIndividuality": [{ "id": 3000, "name": "attackPhysical" }]
     },
     "quick": {
-      "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }]
+      "attackIndividuality": [{ "id": 3000, "name": "attackPhysical" }]
     },
-    "extra": { "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }] }
+    "extra": {
+      "attackIndividuality": [{ "id": 3000, "name": "attackPhysical" }]
+    }
   },
   "atkBase": 2101,
   "atkMax": 13596,

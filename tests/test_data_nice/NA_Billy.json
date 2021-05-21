@@ -91,16 +91,16 @@
   },
   "cardDetails": {
     "arts": {
-      "attackIndividuality": [{ "id": 3001, "name": "normalAttackProjectile" }]
+      "attackIndividuality": [{ "id": 3001, "name": "attackProjectile" }]
     },
     "buster": {
-      "attackIndividuality": [{ "id": 3001, "name": "normalAttackProjectile" }]
+      "attackIndividuality": [{ "id": 3001, "name": "attackProjectile" }]
     },
     "quick": {
-      "attackIndividuality": [{ "id": 3001, "name": "normalAttackProjectile" }]
+      "attackIndividuality": [{ "id": 3001, "name": "attackProjectile" }]
     },
     "extra": {
-      "attackIndividuality": [{ "id": 3001, "name": "normalAttackProjectile" }]
+      "attackIndividuality": [{ "id": 3001, "name": "attackProjectile" }]
     }
   },
   "atkBase": 1279,
@@ -1894,7 +1894,7 @@
       "condQuestId": 0,
       "condQuestPhase": 0,
       "individuality": [
-        { "id": 3001, "name": "normalAttackProjectile" },
+        { "id": 3001, "name": "attackProjectile" },
         { "id": 4003, "name": "cardQuick" },
         { "id": 4007, "name": "cardNP" }
       ],
@@ -2166,7 +2166,7 @@
       "condQuestId": 94012501,
       "condQuestPhase": 3,
       "individuality": [
-        { "id": 3001, "name": "normalAttackProjectile" },
+        { "id": 3001, "name": "attackProjectile" },
         { "id": 4003, "name": "cardQuick" },
         { "id": 4007, "name": "cardNP" }
       ],

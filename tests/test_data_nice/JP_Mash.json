@@ -152,14 +152,18 @@
     "extra": [12, 25, 63]
   },
   "cardDetails": {
-    "arts": { "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }] },
+    "arts": {
+      "attackIndividuality": [{ "id": 3000, "name": "attackPhysical" }]
+    },
     "buster": {
-      "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }]
+      "attackIndividuality": [{ "id": 3000, "name": "attackPhysical" }]
     },
     "quick": {
-      "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }]
+      "attackIndividuality": [{ "id": 3000, "name": "attackPhysical" }]
     },
-    "extra": { "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }] }
+    "extra": {
+      "attackIndividuality": [{ "id": 3000, "name": "attackPhysical" }]
+    }
   },
   "atkBase": 1261,
   "atkMax": 6791,
@@ -4341,7 +4345,7 @@
       "condQuestId": 0,
       "condQuestPhase": 0,
       "individuality": [
-        { "id": 3002, "name": "normalAttackMagical" },
+        { "id": 3002, "name": "attackMagical" },
         { "id": 4001, "name": "cardArts" },
         { "id": 4007, "name": "cardNP" }
       ],
@@ -4372,7 +4376,7 @@
       "condQuestId": 1000008,
       "condQuestPhase": 4,
       "individuality": [
-        { "id": 3002, "name": "normalAttackMagical" },
+        { "id": 3002, "name": "attackMagical" },
         { "id": 4001, "name": "cardArts" },
         { "id": 4007, "name": "cardNP" }
       ],
@@ -4540,7 +4544,7 @@
       "condQuestId": 1000631,
       "condQuestPhase": 3,
       "individuality": [
-        { "id": 3002, "name": "normalAttackMagical" },
+        { "id": 3002, "name": "attackMagical" },
         { "id": 4001, "name": "cardArts" },
         { "id": 4007, "name": "cardNP" }
       ],
@@ -4774,7 +4778,7 @@
       "condQuestId": 3000124,
       "condQuestPhase": 3,
       "individuality": [
-        { "id": 3002, "name": "normalAttackMagical" },
+        { "id": 3002, "name": "attackMagical" },
         { "id": 4001, "name": "cardArts" },
         { "id": 4007, "name": "cardNP" }
       ],
@@ -4942,7 +4946,7 @@
       "condQuestId": 3000124,
       "condQuestPhase": 3,
       "individuality": [
-        { "id": 3002, "name": "normalAttackMagical" },
+        { "id": 3002, "name": "attackMagical" },
         { "id": 4001, "name": "cardArts" },
         { "id": 4007, "name": "cardNP" }
       ],

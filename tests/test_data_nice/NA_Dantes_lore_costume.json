@@ -110,14 +110,18 @@
     "extra": [5, 11, 5, 17, 62]
   },
   "cardDetails": {
-    "arts": { "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }] },
+    "arts": {
+      "attackIndividuality": [{ "id": 3000, "name": "attackPhysical" }]
+    },
     "buster": {
-      "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }]
+      "attackIndividuality": [{ "id": 3000, "name": "attackPhysical" }]
     },
     "quick": {
-      "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }]
+      "attackIndividuality": [{ "id": 3000, "name": "attackPhysical" }]
     },
-    "extra": { "attackIndividuality": [{ "id": 3000, "name": "normalAttack" }] }
+    "extra": {
+      "attackIndividuality": [{ "id": 3000, "name": "attackPhysical" }]
+    }
   },
   "atkBase": 1953,
   "atkMax": 12641,
@@ -2119,7 +2123,7 @@
       "condQuestId": 0,
       "condQuestPhase": 0,
       "individuality": [
-        { "id": 3000, "name": "normalAttack" },
+        { "id": 3000, "name": "attackPhysical" },
         { "id": 4003, "name": "cardQuick" },
         { "id": 4007, "name": "cardNP" }
       ],
@@ -2327,7 +2331,7 @@
       "condQuestId": 94026512,
       "condQuestPhase": 3,
       "individuality": [
-        { "id": 3000, "name": "normalAttack" },
+        { "id": 3000, "name": "attackPhysical" },
         { "id": 4003, "name": "cardQuick" },
         { "id": 4007, "name": "cardNP" }
       ],

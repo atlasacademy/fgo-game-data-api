@@ -4,7 +4,7 @@ from typing import Optional, Union
 from pydantic import BaseModel, HttpUrl
 
 from .enums import SvtClass, Trait
-from .gameenums import NiceClassRelationOverwriteType
+from .gameenums import NiceBuffType, NiceClassRelationOverwriteType
 
 
 class RepoInfo(BaseModel):
@@ -83,6 +83,7 @@ class NiceBuffRelationOverwrite(BaseModel):
 
 class NiceBuffScript(BaseModel):
     checkIndvType: Optional[int] = None
+    CheckOpponentBuffTypes: Optional[list[NiceBuffType]] = None
     relationId: Optional[NiceBuffRelationOverwrite] = None
     ReleaseText: Optional[str] = None
     DamageRelease: Optional[int] = None

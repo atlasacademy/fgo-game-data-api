@@ -41,10 +41,10 @@
   "hitsDistribution": { "weak": [100], "strength": [100] },
   "cardDetails": {
     "weak": {
-      "attackIndividuality": [{ "id": 3001, "name": "normalAttackProjectile" }]
+      "attackIndividuality": [{ "id": 3001, "name": "attackProjectile" }]
     },
     "strength": {
-      "attackIndividuality": [{ "id": 3001, "name": "normalAttackProjectile" }]
+      "attackIndividuality": [{ "id": 3001, "name": "attackProjectile" }]
     }
   },
   "atkBase": 792,
@@ -404,7 +404,7 @@
       "condQuestId": 0,
       "condQuestPhase": 0,
       "individuality": [
-        { "id": 3001, "name": "normalAttackProjectile" },
+        { "id": 3001, "name": "attackProjectile" },
         { "id": 4007, "name": "cardNP" }
       ],
       "script": {},

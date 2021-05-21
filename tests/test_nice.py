@@ -370,6 +370,16 @@ class TestServantSpecial:
         response = await get_response("/nice/JP/buff/1831")
         assert response.json()["script"] == {"checkIndvType": 1}
 
+    async def test_buff_CheckOpponentBuffTypes(self) -> None:
+        response = await get_response("/nice/JP/buff/3313")
+        assert response.json()["script"] == {
+            "CheckOpponentBuffTypes": [
+                "avoidance",
+                "invincible",
+                "avoidanceIndividuality",
+            ]
+        }
+
     async def test_negative_trait(self) -> None:
         response = await get_response("/nice/JP/buff/2966")
         expected = {"id": 4101, "name": "aoeNP", "negative": True}
