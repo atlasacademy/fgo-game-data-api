@@ -87,8 +87,10 @@ export_links = """
 
 Pre-generated full nice data that can be served instantly:
 - NA data:
-  - [NA Servant](/export/NA/nice_servant.json), [NA Servant with lore](/export/NA/nice_servant_lore.json)
-  - [NA Craft Essence](/export/NA/nice_equip.json), [NA Craft Essence with lore](/export/NA/nice_equip_lore.json)
+  - [NA Servant](/export/NA/nice_servant.json)
+  - [NA Servant with lore](/export/NA/nice_servant_lore.json)
+  - [NA Craft Essence](/export/NA/nice_equip.json)
+  - [NA Craft Essence with lore](/export/NA/nice_equip_lore.json)
   - [NA Command Code](/export/NA/nice_command_code.json)
   - [NA Material](/export/NA/nice_item.json)
   - [NA Mystic Code](/export/NA/nice_mystic_code.json)
@@ -96,17 +98,20 @@ Pre-generated full nice data that can be served instantly:
   - [NA Illustrator](/export/NA/nice_illustrator.json)
   - [NA Voice Actor](/export/NA/nice_cv.json)
 - JP data:
-  - [JP Servant](/export/JP/nice_servant.json), [JP Servant with lore](/export/JP/nice_servant_lore.json)
-  - [JP Servant with English names](/export/JP/nice_servant_lang_en.json),
+  - [JP Servant](/export/JP/nice_servant.json),
+  [JP Servant with English names](/export/JP/nice_servant_lang_en.json)
+  - [JP Servant with lore](/export/JP/nice_servant_lore.json),
   [JP Servant with English names and lore](/export/JP/nice_servant_lore_lang_en.json)
-  - [JP Craft Essence](/export/JP/nice_equip.json), [JP Craft Essence with lore](/export/JP/nice_equip_lore.json)
-  - [JP Craft Essence with English names](/export/JP/nice_equip_lang_en.json),
+  - [JP Craft Essence](/export/JP/nice_equip.json),
+  [JP Craft Essence with English names](/export/JP/nice_equip_lang_en.json)
+  - [JP Craft Essence with lore](/export/JP/nice_equip_lore.json),
   [JP Craft Essence with lore and English names](/export/JP/nice_equip_lore_lang_en.json)
   - [JP Command Code](/export/JP/nice_command_code.json),
   [JP Command Code with English names](/export/JP/nice_command_code_lang_en.json)
-  - [JP Material](/export/JP/nice_item.json)
-  - [JP Mystic Code](/export/JP/nice_mystic_code.json)
-  - [JP Item](/export/JP/nice_item.json)
+  - [JP Material](/export/JP/nice_item.json),
+  [JP Material with English names](/export/JP/nice_item_lang_en.json)
+  - [JP Mystic Code](/export/JP/nice_mystic_code.json),
+  [JP Mystic Code with English names](/export/JP/nice_mystic_code_lang_en.json)
   - [JP Illustrator](/export/JP/nice_illustrator.json)
   - [JP Voice Actor](/export/NA/nice_cv.json)
 - Both regions (The data is the same for both NA and JP endpoints):
@@ -124,15 +129,18 @@ Pre-generated, trimmed-down, lightweight basic data that can be used for indexin
   - [NA War](/export/NA/basic_war.json)
   - [NA Event](/export/NA/basic_event.json)
 - JP data:
-  - [JP servant](/export/JP/basic_servant.json)
-  - [JP servant with English names](/export/JP/basic_servant_lang_en.json)
-  - [JP CE](/export/JP/basic_equip.json)
-  - [JP CE with English names](/export/JP/basic_equip_lang_en.json)
-  - [JP Command Code](/export/JP/basic_command_code.json)
-  - [JP Command Code with English names](/export/JP/basic_command_code_lang_en.json)
-  - [JP Mystic Code](/export/JP/basic_mystic_code.json)
-  - [JP War](/export/JP/basic_war.json)
-  - [JP Event](/export/JP/basic_event.json)
+  - [JP servant](/export/JP/basic_servant.json),
+  [JP servant with English names](/export/JP/basic_servant_lang_en.json)
+  - [JP CE](/export/JP/basic_equip.json),
+  [JP CE with English names](/export/JP/basic_equip_lang_en.json)
+  - [JP Command Code](/export/JP/basic_command_code.json),
+  [JP Command Code with English names](/export/JP/basic_command_code_lang_en.json)
+  - [JP Mystic Code](/export/JP/basic_mystic_code.json),
+  [JP Mystic Code with English names](/export/JP/basic_mystic_code_lang_en.json)
+  - [JP War](/export/JP/basic_war.json),
+  [JP War with English names](/export/JP/basic_war_lang_en.json)
+  - [JP Event](/export/JP/basic_event.json),
+  [JP Event with English name](/export/JP/basic_event_lang_en.json)
 """
 
 if settings.documentation_all_nice:  # pragma: no cover
