@@ -5,8 +5,6 @@ from enum import IntEnum
 from pathlib import Path
 from typing import Any, Callable
 
-from dotenv import load_dotenv
-
 
 MAPPING_PATH = Path(__file__).resolve().parents[1] / "app" / "data" / "mappings"
 TRANSLATIONS: dict[str, str] = {}
@@ -178,7 +176,12 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args()
-    load_dotenv()
+    try:
+        from dotenv import load_dotenv
+
+        load_dotenv()
+    except ImportError:
+        print("Can't find dotenv package.")
 
     if args.jp_master:
         jp_path = Path(args.jp_master).resolve()
