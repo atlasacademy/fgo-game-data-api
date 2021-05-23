@@ -9,6 +9,7 @@ from ..schemas.basic import BasicCommandCode, BasicEquip, BasicServant
 from ..schemas.common import Language, NiceTrait
 from ..schemas.enums import TRAIT_NAME, Trait
 from ..schemas.nice import NiceCommandCode, NiceEquip, NiceServant
+from ..schemas.raw import MstTreasureDevice
 
 
 TValue = TypeVar("TValue")
@@ -41,6 +42,19 @@ def get_translation(
         return TRANSLATIONS.get(string, string)
 
     return string
+
+
+def get_np_name(td: MstTreasureDevice, language: Language) -> str:
+    if language == Language.en:
+        to_translate = td.ruby if td.ruby not in ("", "-") else td.name
+        translation = get_translation(language, to_translate, "np_names", str(td.id))
+
+        if to_translate == translation:
+            return td.name
+
+        return translation
+
+    return td.name
 
 
 def get_safe(input_dict: Mapping[Any, TValue], key: TLookup) -> Union[TValue, TLookup]:

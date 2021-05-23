@@ -83,6 +83,14 @@ def get_names(mstEquip: Any) -> dict[int, str]:
     return mc_names
 
 
+def get_np_names(mstTreasureDevice: Any) -> dict[int, str]:
+    mc_names: dict[int, str] = {
+        td["id"]: td["ruby"] if td["ruby"] not in ("", "-") else td["name"]
+        for td in mstTreasureDevice
+    }
+    return mc_names
+
+
 def get_war_names(mstEquip: Any) -> dict[int, str]:
     mc_names: dict[int, str] = {svt["id"]: svt["longName"] for svt in mstEquip}
     return mc_names
@@ -130,6 +138,9 @@ def update_translation(
         last_war_id = na_constant["LAST_WAR_ID"]
         na_names.pop(last_war_id + 1)
 
+    if master_file == "mstTreasureDevice":
+        na_names = get_names(na_svt)
+
     updated_translation: dict[str, str] = {}
     for colNo, jp_name in sorted(jp_names.items(), key=lambda x: x[0]):
         if jp_name in ENTITY_TRANSLATIONS and mapping == "entity_names":
@@ -151,7 +162,9 @@ def main(jp_master: Path, na_master: Path) -> None:
     update_translation("cc_names", jp_master, na_master, "mstCommandCode", get_cc_names)
     update_translation("mc_names", jp_master, na_master, "mstEquip", get_names)
     update_translation("skill_names", jp_master, na_master, "mstSkill", get_names)
-    update_translation("np_names", jp_master, na_master, "mstTreasureDevice", get_names)
+    update_translation(
+        "np_names", jp_master, na_master, "mstTreasureDevice", get_np_names
+    )
     update_translation("event_names", jp_master, na_master, "mstEvent", get_names)
     update_translation("war_names", jp_master, na_master, "mstWar", get_war_names)
     update_translation("item_names", jp_master, na_master, "mstItem", get_names)

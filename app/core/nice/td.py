@@ -10,7 +10,7 @@ from ...schemas.gameenums import CARD_TYPE_NAME
 from ...schemas.nice import AssetURL, NiceTd
 from ...schemas.raw import TdEntityNoReverse
 from ..raw import get_td_entity_no_reverse_many
-from ..utils import get_traits_list, get_translation, strip_formatting_brackets
+from ..utils import get_np_name, get_traits_list, strip_formatting_brackets
 from .func import get_nice_function
 
 
@@ -22,12 +22,7 @@ def get_nice_td(
 ) -> list[dict[str, Any]]:
     nice_td: dict[str, Any] = {
         "id": tdEntity.mstTreasureDevice.id,
-        "name": get_translation(
-            lang,
-            tdEntity.mstTreasureDevice.name,
-            "np_names",
-            str(tdEntity.mstTreasureDevice.id),
-        ),
+        "name": get_np_name(tdEntity.mstTreasureDevice, lang),
         "ruby": tdEntity.mstTreasureDevice.ruby,
         "rank": tdEntity.mstTreasureDevice.rank,
         "type": tdEntity.mstTreasureDevice.typeText,

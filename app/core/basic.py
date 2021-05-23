@@ -58,7 +58,13 @@ from ..schemas.raw import (
     MstTreasureDevice,
 )
 from . import reverse as reverse_ids
-from .utils import get_nice_trait, get_safe, get_traits_list, get_translation
+from .utils import (
+    get_nice_trait,
+    get_np_name,
+    get_safe,
+    get_traits_list,
+    get_translation,
+)
 
 
 settings = Settings()
@@ -251,9 +257,7 @@ def get_basic_td(
         mstTreasureDevice = masters[region].mstTreasureDeviceId[td_id]
     basic_td = BasicTdReverse(
         id=mstTreasureDevice.id,
-        name=get_translation(
-            lang, mstTreasureDevice.name, "np_names", str(mstTreasureDevice.id)
-        ),
+        name=get_np_name(mstTreasureDevice, lang),
         ruby=mstTreasureDevice.ruby,
     )
 
