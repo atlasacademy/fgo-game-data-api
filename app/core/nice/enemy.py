@@ -19,7 +19,7 @@ from ...schemas.nice import (
 )
 from ...schemas.rayshift import Deck, DeckSvt, QuestDetail, UserSvt
 from ..basic import get_basic_servant
-from ..utils import get_traits_list
+from ..utils import get_traits_list, get_translation
 from .skill import MultipleNiceSkills, SkillSvt, get_multiple_nice_skills
 from .td import MultipleNiceTds, TdSvt, get_multiple_nice_tds
 
@@ -198,7 +198,7 @@ def get_quest_enemy(
         userSvtId=user_svt.id,
         uniqueId=deck_svt.uniqueId,
         npcId=deck_svt.npcId,
-        name=deck_svt.name,
+        name=get_translation(lang, deck_svt.name, "entity_names"),
         svt=basic_svt,
         lv=user_svt.lv,
         exp=user_svt.exp,

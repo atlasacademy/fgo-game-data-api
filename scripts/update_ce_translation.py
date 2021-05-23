@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+from enum import IntEnum
 from pathlib import Path
 from typing import Any, Callable
 
@@ -9,29 +10,65 @@ from dotenv import load_dotenv
 
 MAPPING_PATH = Path(__file__).resolve().parents[1] / "app" / "data" / "mappings"
 TRANSLATIONS: dict[str, str] = {}
+ENTITY_TRANSLATIONS: dict[str, str] = {}
 TRANSLATION_FILES = (
     "skill_names",
     "np_names",
     "event_names",
     "war_names",
+    "entity_names",
     "servant_names",
     "equip_names",
     "cc_names",
     "mc_names",
 )
+DONT_USE_NA_TRANSLATION = {
+    "1000万DL突破キャンペーン",
+    "「1300万DL突破キャンペーン」開催記念",
+    "1500万DL突破キャンペーン",
+    "1800万DL突破キャンペーン",
+}
+
+
+class SvtType(IntEnum):
+    NORMAL = 1
+    HEROINE = 2
+    COMBINE_MATERIAL = 3
+    ENEMY = 4
+    ENEMY_COLLECTION = 5
+    SERVANT_EQUIP = 6
+    STATUS_UP = 7
+    SVT_EQUIP_MATERIAL = 8
+    ENEMY_COLLECTION_DETAIL = 9
+    ALL = 10
+    COMMAND_CODE = 11
+
 
 for translation_file in TRANSLATION_FILES:
     translation_path = MAPPING_PATH / f"{translation_file}.json"
     if translation_path.exists():
         with open(translation_path, "r", encoding="utf-8") as translation_fp:
-            TRANSLATIONS |= json.load(translation_fp)
+            translation_data = json.load(translation_fp)
+            TRANSLATIONS |= translation_data
+            if translation_file == "servant_names":
+                ENTITY_TRANSLATIONS |= translation_data
+
+
+def is_servant(svt: Any) -> bool:
+    return bool(
+        svt["type"]
+        in {SvtType.NORMAL, SvtType.HEROINE, SvtType.ENEMY_COLLECTION_DETAIL}
+        and svt["collectionNo"] != 0
+    )
+
+
+def is_ce(svt: Any) -> bool:
+    return bool(svt["type"] == SvtType.SERVANT_EQUIP and svt["collectionNo"] != 0)
 
 
 def get_ce_names(mstSvt: Any) -> dict[int, str]:
     ce_names: dict[int, str] = {
-        svt["collectionNo"]: svt["name"]
-        for svt in mstSvt
-        if svt["type"] == 6 and svt["collectionNo"] != 0
+        svt["collectionNo"]: svt["name"] for svt in mstSvt if is_ce(svt)
     }
     return ce_names
 
@@ -51,6 +88,17 @@ def get_names(mstEquip: Any) -> dict[int, str]:
 def get_war_names(mstEquip: Any) -> dict[int, str]:
     mc_names: dict[int, str] = {svt["id"]: svt["longName"] for svt in mstEquip}
     return mc_names
+
+
+def is_not_svt_or_ce(svt: Any) -> bool:
+    return not is_servant(svt) and not is_ce(svt)
+
+
+def get_entity_names(mstSvt: Any) -> dict[int, str]:
+    entity_names: dict[int, str] = {
+        svt["id"]: svt["name"] for svt in mstSvt if is_not_svt_or_ce(svt)
+    }
+    return entity_names
 
 
 def update_translation(
@@ -86,7 +134,9 @@ def update_translation(
 
     updated_translation: dict[str, str] = {}
     for colNo, jp_name in sorted(jp_names.items(), key=lambda x: x[0]):
-        if colNo in na_names:
+        if jp_name in ENTITY_TRANSLATIONS and mapping == "entity_names":
+            continue
+        if colNo in na_names and jp_name not in DONT_USE_NA_TRANSLATION:
             updated_translation[jp_name] = na_names[colNo]
         elif jp_name not in updated_translation:
             updated_translation[jp_name] = current_translations.get(
@@ -107,6 +157,7 @@ def main(jp_master: Path, na_master: Path) -> None:
     update_translation("event_names", jp_master, na_master, "mstEvent", get_names)
     update_translation("war_names", jp_master, na_master, "mstWar", get_war_names)
     update_translation("item_names", jp_master, na_master, "mstItem", get_names)
+    update_translation("entity_names", jp_master, na_master, "mstSvt", get_entity_names)
 
 
 if __name__ == "__main__":
