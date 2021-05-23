@@ -452,31 +452,6 @@ class DetailMissionCondType(IntEnum):
     QUEST_CLEAR_NUM_INCLUDING_GRAILFRONT = 31
 
 
-class NiceDetailMissionCondType(str, Enum):
-    """Mission Condition Detail Condition Type Enum"""
-
-    enemyKillNum = "enemyKillNum"
-    enemyIndividualityKillNum = "enemyIndividualityKillNum"
-    itemGetTotal = "itemGetTotal"
-    battleSvtInDeck = "battleSvtInDeck"
-    battleSvtEquipInDeck = "battleSvtEquipInDeck"
-    targetQuestEnemyKillNum = "targetQuestEnemyKillNum"
-    targetQuestEnemyIndividualityKillNum = "targetQuestEnemyIndividualityKillNum"
-    targetQuestItemGetTotal = "targetQuestItemGetTotal"
-
-
-DETAIL_MISSION_COND_TYPE: dict[int, NiceDetailMissionCondType] = {
-    1: NiceDetailMissionCondType.enemyKillNum,
-    2: NiceDetailMissionCondType.enemyIndividualityKillNum,
-    3: NiceDetailMissionCondType.itemGetTotal,
-    4: NiceDetailMissionCondType.battleSvtInDeck,
-    5: NiceDetailMissionCondType.battleSvtEquipInDeck,
-    6: NiceDetailMissionCondType.targetQuestEnemyKillNum,
-    7: NiceDetailMissionCondType.targetQuestEnemyIndividualityKillNum,
-    8: NiceDetailMissionCondType.targetQuestItemGetTotal,
-}
-
-
 class DetailMissionCondLinkType(IntEnum):
     EVENT_START = 1
     MISSION_START = 2
@@ -1032,7 +1007,6 @@ ALL_ENUMS = {
     "NiceMissionType": MISSION_TYPE_NAME,
     "NiceMissionRewardType": MISSION_REWARD_TYPE_NAME,
     "NiceMissionProgressType": MISSION_PROGRESS_TYPE_NAME,
-    "NiceDetailMissionCondType": DETAIL_MISSION_COND_TYPE,
     "NiceDetailMissionCondLinkType": DETAIL_MISSION_LINK_TYPE,
     "NiceLotteryFlag": EVENT_LOTTERY_FLAG_NAME,
 }
