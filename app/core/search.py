@@ -4,7 +4,6 @@ from fastapi import HTTPException
 from fuzzywuzzy import fuzz, utils
 from sqlalchemy.engine import Connection
 
-from ..data.custom_mappings import TRANSLATIONS
 from ..data.gamedata import masters
 from ..db.helpers.buff import get_buff_search
 from ..db.helpers.func import get_func_search
@@ -12,6 +11,7 @@ from ..db.helpers.item import get_item_search
 from ..db.helpers.skill import get_skill_search
 from ..db.helpers.svt import get_svt_search
 from ..db.helpers.td import get_td_search
+from ..schemas.common import Language
 from ..schemas.enums import (
     ATTRIBUTE_NAME_REVERSE,
     BUFF_TYPE_NAME_REVERSE,
@@ -41,7 +41,7 @@ from ..schemas.search import (
     SvtSearchQueryParams,
     TdSearchParams,
 )
-from .utils import get_safe
+from .utils import get_np_name, get_translation
 
 
 INSUFFICIENT_QUERY = (
@@ -174,7 +174,7 @@ def search_servant(
             for svt in matches
             if match_name(search_param.name, svt.name)
             or match_name(search_param.name, svt.ruby)
-            or match_name(search_param.name, get_safe(TRANSLATIONS, svt.name))
+            or match_name(search_param.name, get_translation(Language.en, svt.name))
         ]
 
     if len(matches) > limit:
@@ -208,7 +208,7 @@ def search_equip(
             for svt in matches
             if match_name(search_param.name, svt.name)
             or match_name(search_param.name, svt.ruby)
-            or match_name(search_param.name, get_safe(TRANSLATIONS, svt.name))
+            or match_name(search_param.name, get_translation(Language.en, svt.name))
         ]
 
     if len(matches) > limit:
@@ -245,6 +245,7 @@ def search_skill(
             for skill in matches
             if match_name(search_param.name, skill.name)
             or match_name(search_param.name, skill.ruby)
+            or match_name(search_param.name, get_translation(Language.en, skill.name))
         ]
 
     if len(matches) > limit:
@@ -283,6 +284,7 @@ def search_td(
             for td in matches
             if match_name(search_param.name, td.name)
             or match_name(search_param.name, td.ruby)
+            or match_name(search_param.name, get_np_name(td, Language.en))
         ]
 
     if len(matches) > limit:

@@ -16,7 +16,8 @@ TValue = TypeVar("TValue")
 TLookup = TypeVar("TLookup")
 
 
-full_width_lookup = {chr(0xFF21 + i): chr(65 + i) for i in range(26)}
+full_width_uppercase_lookup = {chr(0xFF21 + i): chr(65 + i) for i in range(26)}
+half_width_uppercase_lookup = {chr(65 + i) for i in range(26)}
 
 
 def get_translation(
@@ -33,11 +34,13 @@ def get_translation(
         ):
             return TRANSLATION_OVERRIDE[override_file][override_id]
 
-        if override_file == "entity_names" and string[-1] in full_width_lookup:
-            if string[:-1] in TRANSLATIONS:
-                return f"{TRANSLATIONS[string[:-1]]} {full_width_lookup[string[-1]]}"
-            else:
-                return string
+        if override_file == "entity_names" and string[:-1] in TRANSLATIONS:
+            translated_string = TRANSLATIONS[string[:-1]]
+            if string[-1] in full_width_uppercase_lookup:
+                corresponding_half_width = full_width_uppercase_lookup[string[-1]]
+                return f"{translated_string} {corresponding_half_width}"
+            elif string[-1] in half_width_uppercase_lookup and string[-2] != "":
+                return f"{translated_string} {string[-1]}"
 
         return TRANSLATIONS.get(string, string)
 
