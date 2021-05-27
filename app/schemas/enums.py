@@ -722,6 +722,8 @@ class Trait(str, Enum):
     mechanical = "mechanical"
     fae = "fae"
     hasCostume = "hasCostume"
+    weakPointsRevealed = "weakPointsRevealed"
+    chenGongNpBlock = "chenGongNpBlock"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -844,6 +846,7 @@ TRAIT_NAME: dict[int, Trait] = {
     2403: Trait.enemyCaseFilesRareEnemy,
     2469: Trait.enemyLasVegasBonusEnemy,
     2466: Trait.argonaut,
+    2467: Trait.weakPointsRevealed,  # Paris 1st skill
     2615: Trait.genderCaenisServant,  # Phantom's 2nd skill
     2631: Trait.hominidaeServant,  # used in TamaVitch's fight
     2632: Trait.demonicBeastServant,  # used in TamaVitch's fight
@@ -928,6 +931,7 @@ TRAIT_NAME: dict[int, Trait] = {
     3064: Trait.buffSpecialInvincible,
     3065: Trait.buffSkillRankUp,
     3066: Trait.buffSleep,
+    3068: Trait.chenGongNpBlock,
     # 6016: No detail
     # 6021: No detail
     # 6022: No detail

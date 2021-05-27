@@ -30,7 +30,7 @@ def get_translation(
         if (
             override_file
             and override_id
-            and override_id in TRANSLATION_OVERRIDE[override_file]
+            and override_id in TRANSLATION_OVERRIDE.get(override_file, {})
         ):
             return TRANSLATION_OVERRIDE[override_file][override_id]
 
