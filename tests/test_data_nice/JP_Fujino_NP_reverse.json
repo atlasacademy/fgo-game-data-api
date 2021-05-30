@@ -17,7 +17,7 @@
     "np": [59, 59, 59, 59, 59]
   },
   "npDistribution": [16, 33, 51],
-  "strengthStatus": 0,
+  "strengthStatus": 1,
   "priority": 101,
   "condQuestId": 0,
   "condQuestPhase": 0,
@@ -311,7 +311,7 @@
           "atkMax": 10299,
           "hpBase": 1764,
           "hpMax": 11025,
-          "relateQuestIds": [],
+          "relateQuestIds": [94059780],
           "growthCurve": 9,
           "atkGrowth": [
             1716,
@@ -2861,7 +2861,7 @@
                 "np": [59, 59, 59, 59, 59]
               },
               "npDistribution": [16, 33, 51],
-              "strengthStatus": 0,
+              "strengthStatus": 1,
               "priority": 101,
               "condQuestId": 0,
               "condQuestPhase": 0,
@@ -2916,6 +2916,339 @@
                     { "Rate": 1000, "Value": 9000 },
                     { "Rate": 1000, "Value": 9500 },
                     { "Rate": 1000, "Value": 10000 }
+                  ]
+                },
+                {
+                  "funcId": 778,
+                  "funcType": "addState",
+                  "funcTargetType": "enemy",
+                  "funcTargetTeam": "playerAndEnemy",
+                  "funcPopupText": "強化無効",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_531.png",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "funcGroup": [],
+                  "buffs": [
+                    {
+                      "id": 230,
+                      "name": "強化無効",
+                      "detail": "強化を受けなくなる",
+                      "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_531.png",
+                      "type": "avoidState",
+                      "buffGroup": 1000,
+                      "script": {},
+                      "vals": [{ "id": 3005, "name": "buffNegativeEffect" }],
+                      "tvals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [
+                        { "id": 3004, "name": "buffPositiveEffect" }
+                      ],
+                      "maxRate": 0
+                    }
+                  ],
+                  "svals": [
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 }
+                  ],
+                  "svals2": [
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 }
+                  ],
+                  "svals3": [
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 }
+                  ],
+                  "svals4": [
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 }
+                  ],
+                  "svals5": [
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 },
+                    { "Rate": 1000, "Turn": 3, "Count": 1 }
+                  ]
+                },
+                {
+                  "funcId": 170,
+                  "funcType": "addState",
+                  "funcTargetType": "enemy",
+                  "funcTargetTeam": "playerAndEnemy",
+                  "funcPopupText": "攻撃力ダウン",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_503.png",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "funcGroup": [],
+                  "buffs": [
+                    {
+                      "id": 127,
+                      "name": "攻撃力ダウン",
+                      "detail": "攻撃力をダウン",
+                      "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_503.png",
+                      "type": "downAtk",
+                      "buffGroup": 0,
+                      "script": {},
+                      "vals": [
+                        { "id": 3005, "name": "buffNegativeEffect" },
+                        { "id": 3008, "name": "buffDecreaseDamage" },
+                        { "id": 3033, "name": "buffAtkDown" }
+                      ],
+                      "tvals": [],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [],
+                      "maxRate": 5000
+                    }
+                  ],
+                  "svals": [
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 }
+                  ],
+                  "svals2": [
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 150 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 150 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 150 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 150 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 150 }
+                  ],
+                  "svals3": [
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+                  ],
+                  "svals4": [
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 }
+                  ],
+                  "svals5": [
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
+                    { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": 202902,
+              "num": 1,
+              "card": "buster",
+              "name": "唯識・歪曲の魔眼",
+              "ruby": "ゆいしき・わいきょくのまがん",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/202900/card_servant_np.png",
+              "rank": "EX",
+              "type": "対界宝具",
+              "detail": "敵単体に超強力な〔超巨大〕特攻攻撃▲<オーバーチャージで特攻威力アップ>▲＆強化無効状態を付与(1回・3ターン)＆攻撃力をダウン(3ターン)<オーバーチャージで効果アップ>",
+              "npGain": {
+                "buster": [59, 59, 59, 59, 59],
+                "arts": [59, 59, 59, 59, 59],
+                "quick": [59, 59, 59, 59, 59],
+                "extra": [59, 59, 59, 59, 59],
+                "defence": [300, 300, 300, 300, 300],
+                "np": [59, 59, 59, 59, 59]
+              },
+              "npDistribution": [16, 33, 51],
+              "strengthStatus": 2,
+              "priority": 102,
+              "condQuestId": 94059780,
+              "condQuestPhase": 3,
+              "individuality": [
+                { "id": 3002, "name": "attackMagical" },
+                { "id": 4002, "name": "cardBuster" },
+                { "id": 4007, "name": "cardNP" }
+              ],
+              "script": {},
+              "functions": [
+                {
+                  "funcId": 16,
+                  "funcType": "damageNpIndividual",
+                  "funcTargetType": "enemy",
+                  "funcTargetTeam": "playerAndEnemy",
+                  "funcPopupText": "なし",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "funcGroup": [],
+                  "buffs": [],
+                  "svals": [
+                    {
+                      "Rate": 1000,
+                      "Value": 8000,
+                      "Target": 2076,
+                      "Correction": 1500
+                    },
+                    {
+                      "Rate": 1000,
+                      "Value": 10000,
+                      "Target": 2076,
+                      "Correction": 1500
+                    },
+                    {
+                      "Rate": 1000,
+                      "Value": 11000,
+                      "Target": 2076,
+                      "Correction": 1500
+                    },
+                    {
+                      "Rate": 1000,
+                      "Value": 11500,
+                      "Target": 2076,
+                      "Correction": 1500
+                    },
+                    {
+                      "Rate": 1000,
+                      "Value": 12000,
+                      "Target": 2076,
+                      "Correction": 1500
+                    }
+                  ],
+                  "svals2": [
+                    {
+                      "Rate": 1000,
+                      "Value": 8000,
+                      "Target": 2076,
+                      "Correction": 1625
+                    },
+                    {
+                      "Rate": 1000,
+                      "Value": 10000,
+                      "Target": 2076,
+                      "Correction": 1625
+                    },
+                    {
+                      "Rate": 1000,
+                      "Value": 11000,
+                      "Target": 2076,
+                      "Correction": 1625
+                    },
+                    {
+                      "Rate": 1000,
+                      "Value": 11500,
+                      "Target": 2076,
+                      "Correction": 1625
+                    },
+                    {
+                      "Rate": 1000,
+                      "Value": 12000,
+                      "Target": 2076,
+                      "Correction": 1625
+                    }
+                  ],
+                  "svals3": [
+                    {
+                      "Rate": 1000,
+                      "Value": 8000,
+                      "Target": 2076,
+                      "Correction": 1750
+                    },
+                    {
+                      "Rate": 1000,
+                      "Value": 10000,
+                      "Target": 2076,
+                      "Correction": 1750
+                    },
+                    {
+                      "Rate": 1000,
+                      "Value": 11000,
+                      "Target": 2076,
+                      "Correction": 1750
+                    },
+                    {
+                      "Rate": 1000,
+                      "Value": 11500,
+                      "Target": 2076,
+                      "Correction": 1750
+                    },
+                    {
+                      "Rate": 1000,
+                      "Value": 12000,
+                      "Target": 2076,
+                      "Correction": 1750
+                    }
+                  ],
+                  "svals4": [
+                    {
+                      "Rate": 1000,
+                      "Value": 8000,
+                      "Target": 2076,
+                      "Correction": 1875
+                    },
+                    {
+                      "Rate": 1000,
+                      "Value": 10000,
+                      "Target": 2076,
+                      "Correction": 1875
+                    },
+                    {
+                      "Rate": 1000,
+                      "Value": 11000,
+                      "Target": 2076,
+                      "Correction": 1875
+                    },
+                    {
+                      "Rate": 1000,
+                      "Value": 11500,
+                      "Target": 2076,
+                      "Correction": 1875
+                    },
+                    {
+                      "Rate": 1000,
+                      "Value": 12000,
+                      "Target": 2076,
+                      "Correction": 1875
+                    }
+                  ],
+                  "svals5": [
+                    {
+                      "Rate": 1000,
+                      "Value": 8000,
+                      "Target": 2076,
+                      "Correction": 2000
+                    },
+                    {
+                      "Rate": 1000,
+                      "Value": 10000,
+                      "Target": 2076,
+                      "Correction": 2000
+                    },
+                    {
+                      "Rate": 1000,
+                      "Value": 11000,
+                      "Target": 2076,
+                      "Correction": 2000
+                    },
+                    {
+                      "Rate": 1000,
+                      "Value": 11500,
+                      "Target": 2076,
+                      "Correction": 2000
+                    },
+                    {
+                      "Rate": 1000,
+                      "Value": 12000,
+                      "Target": 2076,
+                      "Correction": 2000
+                    }
                   ]
                 },
                 {

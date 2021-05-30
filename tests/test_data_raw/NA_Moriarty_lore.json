@@ -4624,7 +4624,7 @@
     },
     {
       "id": "H010",
-      "priority": 8190,
+      "priority": 7960,
       "svtVoiceType": 1,
       "name": "Birthday",
       "nameDefault": "???",
@@ -4637,7 +4637,7 @@
     },
     {
       "id": "H020",
-      "priority": 8260,
+      "priority": 7980,
       "svtVoiceType": 1,
       "name": "During an Event",
       "nameDefault": "???",
@@ -4689,7 +4689,7 @@
     },
     {
       "id": "H060",
-      "priority": 8290,
+      "priority": 8090,
       "svtVoiceType": 1,
       "name": "Likes",
       "nameDefault": "Unlocks through My Room conversations",
@@ -4702,7 +4702,7 @@
     },
     {
       "id": "H070",
-      "priority": 8280,
+      "priority": 8060,
       "svtVoiceType": 1,
       "name": "Dislikes",
       "nameDefault": "Unlocks through My Room conversations",
@@ -4715,7 +4715,7 @@
     },
     {
       "id": "H080",
-      "priority": 8270,
+      "priority": 8020,
       "svtVoiceType": 1,
       "name": "About the Holy Grail",
       "nameDefault": "Unlocks through My Room conversations",
@@ -4845,7 +4845,7 @@
     },
     {
       "id": "H9000",
-      "priority": 8265,
+      "priority": 7990,
       "svtVoiceType": 1,
       "name": "About Spiritron Dress",
       "nameDefault": "Unlocks through My Room conversations after Wardrobe Unlocked",
@@ -5586,7 +5586,7 @@
     },
     {
       "id": "S010",
-      "priority": 8090,
+      "priority": 7920,
       "svtVoiceType": 3,
       "name": "Summon",
       "nameDefault": "Unlocks when summoned ",
