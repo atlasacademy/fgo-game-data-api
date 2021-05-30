@@ -162,11 +162,15 @@ def update_masters(region_path: dict[Region, DirectoryPath]) -> None:
             if svtLimit["svtId"] not in master["mstSvtLimitFirst"]:
                 master["mstSvtLimitFirst"][svtLimit["svtId"]] = svtLimit
 
-        master["mstSvtLimitAddIndividutality"] = defaultdict(list)
+        master["mstSvtLimitOverwriteName"] = {}
         for svtLimitAdd in master["mstSvtLimitAdd"]:
-            master["mstSvtLimitAddIndividutality"][svtLimitAdd["svtId"]].extend(
-                svtLimitAdd["individuality"]
-            )
+            if (
+                svtLimitAdd["limitCount"] == 0
+                and "overWriteServantName" in svtLimitAdd["script"]
+            ):
+                master["mstSvtLimitOverwriteName"][svtLimitAdd["svtId"]] = svtLimitAdd[
+                    "script"
+                ]["overWriteServantName"]
 
         for masters_table, source_table, lookup_id in (
             ("mstClassRelationOverwriteId", "mstClassRelationOverwrite", "id"),

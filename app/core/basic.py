@@ -288,7 +288,7 @@ def get_basic_svt(
         "collectionNo": mstSvt.collectionNo,
         "type": SVT_TYPE_NAME[mstSvt.type],
         "flag": SVT_FLAG_NAME[mstSvt.flag],
-        "name": mstSvt.name,
+        "name": masters[region].mstSvtLimitOverwriteName.get(svt_id, mstSvt.name),
         "className": CLASS_NAME[mstSvt.classId],
         "attribute": ATTRIBUTE_NAME[mstSvt.attri],
         "rarity": mstSvtLimit.rarity,
