@@ -88,6 +88,8 @@ def get_enemy_script(enemyScript: dict[str, Any]) -> EnemyScript:
         "call",
         "shift",
         "change",
+        "skillShift",
+        "missionTargetSkillShift",
     ]
     for script_key in as_is_script_keys:
         if script_key in enemyScript:
@@ -233,6 +235,8 @@ def get_extra_decks(
         (DeckType.CALL, "call"),
         (DeckType.SHIFT, "shift"),
         (DeckType.CHANGE, "change"),
+        (DeckType.SKILL_SHIFT, "skillShift"),
+        (DeckType.MISSION_TARGET_SKILL_SHIFT, "missionTargetSkillShift"),
     ):
         for enemy in deck_svts:
             if enemy.deck.enemyScript and deck_key in enemy.deck.enemyScript:
@@ -283,6 +287,8 @@ def get_quest_enemies(
         (quest_detail.callDeck, DeckType.CALL),
         (quest_detail.shiftDeck, DeckType.SHIFT),
         (quest_detail.shiftDeck, DeckType.CHANGE),
+        (quest_detail.shiftDeck, DeckType.SKILL_SHIFT),
+        (quest_detail.shiftDeck, DeckType.MISSION_TARGET_SKILL_SHIFT),
     ]
     for decks, deck_type in DECK_LIST:
         npc_id_map[deck_type] = {

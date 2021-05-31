@@ -1282,6 +1282,8 @@ class EnemyScript(BaseModelORJson):
     shiftClear: list[NiceTrait] = Field(
         None, title="Active buff traits to remove with break bar"
     )
+    skillShift: Optional[list[int]]
+    missionTargetSkillShift: Optional[list[int]]
     change: Optional[list[int]]
     forceDropItem: Optional[bool]
     entryIndex: Optional[int]  # Only used for Rashomon raids
@@ -1373,6 +1375,8 @@ class DeckType(str, Enum):
     SHIFT = "shift"
     CHANGE = "change"
     TRANSFORM = "transform"
+    SKILL_SHIFT = "skillShift"
+    MISSION_TARGET_SKILL_SHIFT = "missionTargetSkillShift"
 
 
 class QuestEnemy(BaseModelORJson):
