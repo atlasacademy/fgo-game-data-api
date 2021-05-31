@@ -4,7 +4,6 @@ from fastapi import HTTPException
 from sqlalchemy.engine import Connection
 
 from ..data.custom_mappings import EXTRA_CHARAFIGURES
-from ..data.gamedata import masters
 from ..db.helpers import ai, event, fetch, item, quest, skill, svt, td
 from ..schemas.common import Region, ReverseDepth
 from ..schemas.enums import FUNC_VALS_NOT_BUFF
@@ -19,6 +18,7 @@ from ..schemas.raw import (
     EventEntity,
     FunctionEntity,
     FunctionEntityNoReverse,
+    ItemEntity,
     MstBgm,
     MstBoxGacha,
     MstBuff,
@@ -44,8 +44,10 @@ from ..schemas.raw import (
     MstEventTower,
     MstFriendship,
     MstFunc,
+    MstFuncGroup,
     MstGift,
     MstIllustrator,
+    MstItem,
     MstMap,
     MstShop,
     MstShopScript,
@@ -84,12 +86,13 @@ from . import reverse as reverse_ids
 
 
 def get_buff_entity_no_reverse(
-    region: Region, buff_id: int, mstBuff: Optional[MstBuff] = None
+    conn: Connection, buff_id: int, mstBuff: Optional[MstBuff] = None
 ) -> BuffEntityNoReverse:
-    buff_entity = BuffEntityNoReverse(
-        mstBuff=mstBuff if mstBuff else masters[region].mstBuffId[buff_id]
-    )
-    return buff_entity
+    if not mstBuff:
+        mstBuff = fetch.get_one(conn, MstBuff, buff_id)
+    if not mstBuff:
+        raise HTTPException(status_code=404, detail="Buff not found")
+    return BuffEntityNoReverse(mstBuff=mstBuff)
 
 
 def get_buff_entity(
@@ -101,7 +104,7 @@ def get_buff_entity(
     mstBuff: Optional[MstBuff] = None,
 ) -> BuffEntity:
     buff_entity = BuffEntity.parse_obj(
-        get_buff_entity_no_reverse(region, buff_id, mstBuff)
+        get_buff_entity_no_reverse(conn, buff_id, mstBuff)
     )
     if reverse and reverseDepth >= ReverseDepth.function:
         buff_reverse = ReversedBuff(
@@ -115,21 +118,25 @@ def get_buff_entity(
 
 
 def get_func_entity_no_reverse(
-    region: Region,
+    conn: Connection,
     func_id: int,
     expand: bool = False,
     mstFunc: Optional[MstFunc] = None,
 ) -> FunctionEntityNoReverse:
+    if not mstFunc:
+        mstFunc = fetch.get_one(conn, MstFunc, func_id)
+    if not mstFunc:
+        raise HTTPException(status_code=404, detail="Function not found")
     func_entity = FunctionEntityNoReverse(
-        mstFunc=mstFunc if mstFunc else masters[region].mstFuncId[func_id],
-        mstFuncGroup=masters[region].mstFuncGroupId.get(func_id, []),
+        mstFunc=mstFunc,
+        mstFuncGroup=fetch.get_all(conn, MstFuncGroup, func_id),
     )
     if expand and func_entity.mstFunc.funcType not in FUNC_VALS_NOT_BUFF:
-        func_entity.mstFunc.expandedVals = [
-            get_buff_entity_no_reverse(region, buff_id)
-            for buff_id in func_entity.mstFunc.vals
-            if buff_id in masters[region].mstBuffId
-        ]
+        func_entity.mstFunc.expandedVals = []
+        for buff_id in func_entity.mstFunc.vals:
+            buff_entity = get_buff_entity_no_reverse(conn, buff_id)
+            if buff_entity:
+                func_entity.mstFunc.expandedVals.append(buff_entity)
     return func_entity
 
 
@@ -143,7 +150,7 @@ def get_func_entity(
     mstFunc: Optional[MstFunc] = None,
 ) -> FunctionEntity:
     func_entity = FunctionEntity.parse_obj(
-        get_func_entity_no_reverse(region, func_id, expand, mstFunc)
+        get_func_entity_no_reverse(conn, func_id, expand, mstFunc)
     )
     if reverse and reverseDepth >= ReverseDepth.skillNp:
         func_reverse = ReversedFunction(
@@ -443,6 +450,24 @@ def get_command_code_entity(
         mstCommandCodeComment=mstCommandCodeComment,
         mstIllustrator=mstIllustrator,
     )
+
+
+def get_multiple_items(conn: Connection, item_ids: list[int]) -> list[MstItem]:
+    items = fetch.get_all_multiple(conn, MstItem, item_ids)
+    item_map = {item.id: item for item in items}
+    out_list: list[MstItem] = []
+    for item_id in item_ids:
+        if item_id in item_map:
+            out_list.append(item_map[item_id])
+    return out_list
+
+
+def get_item_entity(conn: Connection, item_id: int) -> ItemEntity:
+    mstItem = fetch.get_one(conn, MstItem, item_id)
+    if not mstItem:
+        raise HTTPException(status_code=404, detail="Item not found")
+
+    return ItemEntity(mstItem=mstItem)
 
 
 def get_war_entity(conn: Connection, war_id: int) -> WarEntity:

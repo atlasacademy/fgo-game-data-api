@@ -31,7 +31,7 @@ def get_translation(
             override_file
             and override_id
             and override_id in TRANSLATION_OVERRIDE.get(override_file, {})
-        ):
+        ):  # pragma: no cover
             return TRANSLATION_OVERRIDE[override_file][override_id]
 
         if override_file == "entity_names" and string[:-1] in TRANSLATIONS:

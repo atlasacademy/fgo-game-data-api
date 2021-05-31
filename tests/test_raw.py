@@ -53,6 +53,7 @@ test_cases_dict: dict[str, tuple[str, str]] = {
         "NA/function/300?expand=True&reverse=True",
         "NA_function_300_reverse_expand",
     ),
+    "function_JP_unknown_buff_id": ("JP/function/4085", "JP_function_4085"),
     "buff_NA": ("NA/buff/200", "NA_buff_200"),
     "buff_NA_reverse": ("NA/buff/190?reverse=True", "NA_buff_190_reverse"),
     "item_JP": ("JP/item/7103", "JP_item_Lancer_Monument"),

@@ -99,7 +99,7 @@ def get_nice_quest(
             nice_item_amount
             for consumeItem in raw_quest.mstQuestConsumeItem
             for nice_item_amount in get_nice_item_amount(
-                region, consumeItem.itemIds, consumeItem.nums, lang
+                conn, region, consumeItem.itemIds, consumeItem.nums, lang
             )
         ],
         "consume": raw_quest.mstQuest.actConsume,

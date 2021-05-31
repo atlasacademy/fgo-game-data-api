@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, Response
+from fastapi import APIRouter, Depends, Response
 from sqlalchemy.engine import Connection
 
 from ..config import Settings
@@ -400,13 +400,10 @@ async def get_function(
     expand: bool = False,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    if func_id in masters[region].mstFuncId:
-        func_entity = raw.get_func_entity(
-            conn, region, func_id, reverse, reverseDepth, expand
-        )
-        return item_response(func_entity)
-    else:
-        raise HTTPException(status_code=404, detail="Function not found")
+    func_entity = raw.get_func_entity(
+        conn, region, func_id, reverse, reverseDepth, expand
+    )
+    return item_response(func_entity)
 
 
 buff_reverse_description = """
@@ -456,11 +453,8 @@ async def get_buff(
     reverseDepth: ReverseDepth = ReverseDepth.function,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    if buff_id in masters[region].mstBuffId:
-        buff_entity = raw.get_buff_entity(conn, region, buff_id, reverse, reverseDepth)
-        return item_response(buff_entity)
-    else:
-        raise HTTPException(status_code=404, detail="Buff not found")
+    buff_entity = raw.get_buff_entity(conn, region, buff_id, reverse, reverseDepth)
+    return item_response(buff_entity)
 
 
 @router.get(
@@ -488,14 +482,11 @@ async def find_item(
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
-async def get_item(region: Region, item_id: int) -> Response:
+async def get_item(item_id: int, conn: Connection = Depends(get_db)) -> Response:
     """
     Get the item data from the given ID
     """
-    if item_id in masters[region].mstItemId:
-        return item_response(ItemEntity(mstItem=masters[region].mstItemId[item_id]))
-    else:
-        raise HTTPException(status_code=404, detail="Item not found")
+    return item_response(raw.get_item_entity(conn, item_id))
 
 
 @router.get(

@@ -183,7 +183,7 @@ def get_nice_servant(
     nice_data["ascensionMaterials"] = {
         combineLimit.svtLimit: {
             "items": get_nice_item_amount(
-                region, combineLimit.itemIds, combineLimit.itemNums, lang
+                conn, region, combineLimit.itemIds, combineLimit.itemNums, lang
             ),
             "qp": combineLimit.qp,
         }
@@ -194,7 +194,7 @@ def get_nice_servant(
     nice_data["skillMaterials"] = {
         combineSkill.skillLv: {
             "items": get_nice_item_amount(
-                region, combineSkill.itemIds, combineSkill.itemNums, lang
+                conn, region, combineSkill.itemIds, combineSkill.itemNums, lang
             ),
             "qp": combineSkill.qp,
         }
@@ -204,7 +204,7 @@ def get_nice_servant(
     nice_data["costumeMaterials"] = {
         costume_ids[combineCostume.costumeId]: {
             "items": get_nice_item_amount(
-                region, combineCostume.itemIds, combineCostume.itemNums, lang
+                conn, region, combineCostume.itemIds, combineCostume.itemNums, lang
             ),
             "qp": combineCostume.qp,
         }

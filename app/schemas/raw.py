@@ -1111,7 +1111,6 @@ class Master(BaseModelORJson):
     mstFuncId: dict[int, MstFunc]
     mstFuncGroupId: dict[int, list[MstFuncGroup]]
     mstSkillId: dict[int, MstSkill]
-    mstItemId: dict[int, MstItem]
     mstGiftId: dict[int, list[MstGift]]
     mstTreasureDeviceId: dict[int, MstTreasureDevice]
     mstSvtServantCollectionNo: dict[int, int]

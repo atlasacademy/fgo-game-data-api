@@ -445,12 +445,17 @@ class TestServantSpecial:
     async def test_shop_itemIds_0(self) -> None:
         with engines[Region.NA].connect() as conn:
             fp_shop_item = get_nice_shop(
-                Region.NA, event.get_mstShop_by_id(conn, 1), [], {}, Language.jp
+                conn, Region.NA, event.get_mstShop_by_id(conn, 1), [], {}, Language.jp
             )
             assert fp_shop_item.cost.item.name == "Friend Point"
 
             mp_shop_item = get_nice_shop(
-                Region.NA, event.get_mstShop_by_id(conn, 11000000), [], {}, Language.jp
+                conn,
+                Region.NA,
+                event.get_mstShop_by_id(conn, 11000000),
+                [],
+                {},
+                Language.jp,
             )
             assert mp_shop_item.cost.item.name == "Mana Prism"
 
@@ -502,6 +507,13 @@ class TestServantSpecial:
     async def test_quest_phase_detail_override(self) -> None:
         story_quest = await get_response("nice/JP/quest/94034001/2")
         assert story_quest.json()["consume"] == 0
+
+    async def test_quest_enemy_name_translation(self) -> None:
+        LB3_quest_JP = (await get_response("nice/JP/quest/3000305/2?lang=en")).json()
+        assert LB3_quest_JP["stages"][0]["enemies"][0]["name"] == "Krichat' A"
+        assert LB3_quest_JP["stages"][1]["enemies"][2]["name"] == "Krichat' C"
+        heroine_x = (await get_response("nice/JP/quest/94014409/3?lang=en")).json()
+        assert heroine_x["stages"][1]["enemies"][0]["name"] == "Heroine X"
 
     async def test_latest_story_war_banner(self) -> None:
         latest_story_war = await get_response("nice/JP/war/308")

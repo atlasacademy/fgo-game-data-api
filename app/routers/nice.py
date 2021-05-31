@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, Response
+from fastapi import APIRouter, Depends, Response
 from sqlalchemy.engine import Connection
 
 from ..config import Settings
@@ -470,14 +470,11 @@ async def get_function(
     reverseData: ReverseData = ReverseData.nice,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    if func_id in masters[region].mstFuncId:
-        return item_response(
-            nice.get_nice_func_with_reverse(
-                conn, region, func_id, lang, reverse, reverseDepth, reverseData
-            )
+    return item_response(
+        nice.get_nice_func_with_reverse(
+            conn, region, func_id, lang, reverse, reverseDepth, reverseData
         )
-    else:
-        raise HTTPException(status_code=404, detail="Function not found")
+    )
 
 
 buff_reverse_lang_description = """
@@ -540,14 +537,11 @@ async def get_buff(
     reverseData: ReverseData = ReverseData.nice,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    if buff_id in masters[region].mstBuffId:
-        return item_response(
-            nice.get_nice_buff_with_reverse(
-                conn, region, buff_id, lang, reverse, reverseDepth, reverseData
-            )
+    return item_response(
+        nice.get_nice_buff_with_reverse(
+            conn, region, buff_id, lang, reverse, reverseDepth, reverseData
         )
-    else:
-        raise HTTPException(status_code=404, detail="Buff not found")
+    )
 
 
 @router.get(
@@ -593,15 +587,15 @@ if settings.documentation_all_nice:
     responses=get_error_code([404, 500]),
 )
 async def get_item(
-    region: Region, item_id: int, lang: Language = Depends(language_parameter)
+    region: Region,
+    item_id: int,
+    lang: Language = Depends(language_parameter),
+    conn: Connection = Depends(get_db),
 ) -> Response:
     """
     Get the nice item data from the given item ID
     """
-    if item_id in masters[region].mstItemId:
-        return item_response(item.get_nice_item(region, item_id, lang))
-    else:
-        raise HTTPException(status_code=404, detail="Item not found")
+    return item_response(item.get_nice_item(conn, region, item_id, lang))
 
 
 @router.get(

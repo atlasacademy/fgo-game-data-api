@@ -81,7 +81,7 @@ def get_nice_buff_with_reverse(
     reverseData: ReverseData = ReverseData.nice,
     mstBuff: Optional[MstBuff] = None,
 ) -> NiceBuffReverse:
-    raw_buff = raw.get_buff_entity_no_reverse(region, buff_id, mstBuff)
+    raw_buff = raw.get_buff_entity_no_reverse(conn, buff_id, mstBuff)
     nice_buff = NiceBuffReverse.parse_obj(get_nice_buff(raw_buff, region))
     if reverse and reverseDepth >= ReverseDepth.function:
         if reverseData == ReverseData.basic:
@@ -115,7 +115,7 @@ def get_nice_func_with_reverse(
     reverseData: ReverseData = ReverseData.nice,
     mstFunc: Optional[MstFunc] = None,
 ) -> NiceBaseFunctionReverse:
-    raw_func = raw.get_func_entity_no_reverse(region, func_id, True, mstFunc)
+    raw_func = raw.get_func_entity_no_reverse(conn, func_id, True, mstFunc)
     nice_func = NiceBaseFunctionReverse.parse_obj(get_nice_function(region, raw_func))
 
     if reverse and reverseDepth >= ReverseDepth.skillNp:

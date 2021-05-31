@@ -1,3 +1,5 @@
+from sqlalchemy.engine import Connection
+
 from ...config import Settings
 from ...data.gamedata import masters
 from ...schemas.common import Language, Region
@@ -5,6 +7,7 @@ from ...schemas.enums import ITEM_BG_TYPE_NAME, NiceItemUse
 from ...schemas.gameenums import ITEM_TYPE_NAME
 from ...schemas.nice import AssetURL, NiceItem, NiceItemAmount
 from ...schemas.raw import MstItem
+from ..raw import get_item_entity, get_multiple_items
 from ..utils import get_traits_list, get_translation
 
 
@@ -25,8 +28,10 @@ def get_item_use(region: Region, item_id: int) -> list[NiceItemUse]:
     return item_uses
 
 
-def get_nice_item(region: Region, item_id: int, lang: Language) -> NiceItem:
-    raw_item = masters[region].mstItemId[item_id]
+def get_nice_item(
+    conn: Connection, region: Region, item_id: int, lang: Language
+) -> NiceItem:
+    raw_item = get_item_entity(conn, item_id).mstItem
     return get_nice_item_from_raw(region, raw_item, lang)
 
 
@@ -50,9 +55,13 @@ def get_nice_item_from_raw(
 
 
 def get_nice_item_amount(
-    region: Region, item_list: list[int], amount_list: list[int], lang: Language
+    conn: Connection,
+    region: Region,
+    item_list: list[int],
+    amount_list: list[int],
+    lang: Language,
 ) -> list[NiceItemAmount]:
     return [
-        NiceItemAmount(item=get_nice_item(region, item_id, lang), amount=amount)
-        for item_id, amount in zip(item_list, amount_list)
+        NiceItemAmount(item=get_nice_item_from_raw(region, item, lang), amount=amount)
+        for item, amount in zip(get_multiple_items(conn, item_list), amount_list)
     ]

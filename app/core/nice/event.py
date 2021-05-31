@@ -79,6 +79,7 @@ def get_nice_set_item(set_item: MstSetItem) -> NiceItemSet:
 
 
 def get_nice_shop(
+    conn: Connection,
     region: Region,
     shop: MstShop,
     set_items: list[MstSetItem],
@@ -121,7 +122,7 @@ def get_nice_shop(
         )
     else:
         cost = NiceItemAmount(
-            item=get_nice_item(region, shop_item_id, lang), amount=shop.prices[0]
+            item=get_nice_item(conn, region, shop_item_id, lang), amount=shop.prices[0]
         )
 
     nice_shop = NiceShop(
@@ -356,6 +357,7 @@ def get_nice_lottery_box(
 
 
 def get_nice_lottery(
+    conn: Connection,
     region: Region,
     lottery: MstBoxGacha,
     boxes: list[MstBoxGachaBase],
@@ -375,7 +377,7 @@ def get_nice_lottery(
         slot=lottery.slot,
         payType=PAY_TYPE_NAME[lottery.payType],
         cost=NiceItemAmount(
-            item=get_nice_item(region, lottery.payTargetId, lang),
+            item=get_nice_item(conn, region, lottery.payTargetId, lang),
             amount=lottery.payValue,
         ),
         priority=lottery.priority,
@@ -445,7 +447,7 @@ def get_nice_event(
         materialOpenedAt=raw_event.mstEvent.materialOpenedAt,
         warIds=(war.id for war in raw_event.mstWar),
         shop=(
-            get_nice_shop(region, shop, raw_event.mstSetItem, shop_scripts, lang)
+            get_nice_shop(conn, region, shop, raw_event.mstSetItem, shop_scripts, lang)
             for shop in raw_event.mstShop
         ),
         rewards=(
@@ -469,7 +471,7 @@ def get_nice_event(
         ),
         lotteries=(
             get_nice_lottery(
-                region, lottery, raw_event.mstBoxGachaBase, gift_maps, lang
+                conn, region, lottery, raw_event.mstBoxGachaBase, gift_maps, lang
             )
             for lottery in raw_event.mstBoxGacha
         ),

@@ -21,7 +21,6 @@ MASTER_WITH_ID = {
     "mstFunc",
     "mstSkill",
     "mstTreasureDevice",
-    "mstItem",
     "mstEquip",
     "mstCommandCode",
     "mstEvent",

@@ -9,6 +9,7 @@ from app.schemas.base import BaseModelORJson
 from ...models.raw import (
     mstBgm,
     mstBoxGacha,
+    mstBuff,
     mstCombineCostume,
     mstCombineLimit,
     mstCombineMaterial,
@@ -31,8 +32,11 @@ from ...models.raw import (
     mstEventRewardSet,
     mstEventTower,
     mstFriendship,
+    mstFunc,
+    mstFuncGroup,
     mstGift,
     mstIllustrator,
+    mstItem,
     mstMap,
     mstQuest,
     mstShop,
@@ -56,6 +60,7 @@ from ...models.raw import (
 from ...schemas.raw import (
     MstBgm,
     MstBoxGacha,
+    MstBuff,
     MstCombineCostume,
     MstCombineLimit,
     MstCombineMaterial,
@@ -78,8 +83,11 @@ from ...schemas.raw import (
     MstEventRewardSet,
     MstEventTower,
     MstFriendship,
+    MstFunc,
+    MstFuncGroup,
     MstGift,
     MstIllustrator,
+    MstItem,
     MstMap,
     MstQuest,
     MstShop,
@@ -114,6 +122,9 @@ schema_map_fetchone: dict[  # type:ignore
     MstEvent: (mstEvent, mstEvent.c.id),
     MstConstant: (mstConstant, mstConstant.c.name),
     MstQuest: (mstQuest, mstQuest.c.id),
+    MstBuff: (mstBuff, mstBuff.c.id),
+    MstFunc: (mstFunc, mstFunc.c.id),
+    MstItem: (mstItem, mstItem.c.id),
 }
 
 Tfetchone = TypeVar("Tfetchone", bound=BaseModelORJson)
@@ -205,6 +216,7 @@ schema_table_fetch_all: dict[  # type:ignore
         mstSvtPassiveSkill.c.svtId,
         mstSvtPassiveSkill.c.skillId,
     ),
+    MstFuncGroup: (mstFuncGroup, mstFuncGroup.c.funcId, mstFuncGroup.c.eventId),
 }
 
 TFetchAll = TypeVar("TFetchAll", bound=BaseModelORJson)
@@ -242,6 +254,7 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
     MstBgm: (mstBgm, mstBgm.c.id, mstBgm.c.id),
     MstGift: (mstGift, mstGift.c.id, mstGift.c.id),
     MstShopScript: (mstShopScript, mstShopScript.c.shopId, mstShopScript.c.shopId),
+    MstItem: (mstItem, mstItem.c.id, mstItem.c.id),
 }
 
 TFetchAllMultiple = TypeVar("TFetchAllMultiple", bound=BaseModelORJson)
