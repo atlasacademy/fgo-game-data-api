@@ -27,6 +27,7 @@ List of environment variables for the main app.
 - `JP_GAMEDATA`: path to JP gamedata's folder that contains the `master` and `ScriptActionEncrypt` folders.
 - `NA_POSTGRESDSN`: PostgreSQL DSN to a database for NA.
 - `JP_POSTGRESDSN`: PostgreSQL DSN to a database for JP.
+- `REDISDSN`: Redis DSN to a Redis server for caching.
 
 #### Optional environment variables
 - `ASSET_URL`: defaults to https://assets.atlasacademy.io/GameData/. Base URL for the game assets.
@@ -41,9 +42,7 @@ List of environment variables for the main app.
 - `GITHUB_WEBHOOK_GIT_PULL`: default to `False`. If set, the app will do `git pull` on the gamedata repos when the webhook above is used.
 - `GITHUB_WEBHOOK_SLEEP`: default to `0`. If set, will delay the action above by `GITHUB_WEBHOOK_SLEEP` seconds.
 - `BLOOM_SHARD`: default to `0`. [Bloom](https://github.com/valeriansaliou/bloom) shard that is used for caching.
-- `REDIS_HOST`: default to `None`. Redis host for Bloom. If set, will clear the Bloom cache when gamedata is updated.
-- `REDIS_PORT`: default to `6379`. Redis port for Bloom.
-- `REDIS_DB`: default to `0`. Redis DB for Bloom.
+- `REDIS_PREFIX`: default to `fgoapi`. Prefix for redis keys.
 
 You can also make a .env file at the project root with the following entries instead of setting the environment variables:
 
@@ -52,6 +51,7 @@ NA_GAMEDATA="/path/to/gamedata/NA"
 JP_GAMEDATA="/path/to/gamedata/JP"
 NA_POSTGRESDSN="postgresql://username:password@localhost:5432/fgoapiNA"
 JP_POSTGRESDSN="postgresql://username:password@localhost:5432/fgoapiJP"
+REDISDSN="redis://localhost:6379/0"
 RAYSHIFT_API_KEY="eca334a9-3289-4ad7-9b92-1ec2bbc3fc19"
 QUEST_CACHE_LENGTH=3600
 WRITE_POSTGRES_DATA=True
@@ -63,9 +63,7 @@ GITHUB_WEBHOOK_SECRET="e81c7b97-9a57-4424-a887-149b4b5adf57"
 GITHUB_WEBHOOK_GIT_PULL=True
 GITHUB_WEBHOOK_SLEEP=0
 BLOOM_SHARD=0
-REDIS_HOST="localhost"
-REDIS_PORT=6379
-REDIS_DB=0
+REDIS_PREFIX="fgoapi
 ```
 
 #### Secrets
@@ -80,6 +78,8 @@ postgresql://username:password@localhost:5432/fgoapiNA
 eca334a9-3289-4ad7-9b92-1ec2bbc3fc19
 > cat .\secrets\GITHUB_WEBHOOK_SECRET
 e81c7b97-9a57-4424-a887-149b4b5adf57
+> cat .\secrets\REDISDSN
+redis://localhost
 ```
 
 ### Run the API server

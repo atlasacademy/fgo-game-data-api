@@ -1,13 +1,14 @@
+import asyncio
 import json
 import time
 from pathlib import Path
 from typing import Any, Iterable, Union
 
-import redis
+from aioredis import Redis
 from git import Repo
 from pydantic import DirectoryPath
 
-from .config import Settings, logger, project_root
+from .config import SecretSettings, Settings, logger, project_root
 from .core.basic import (
     get_basic_cc,
     get_basic_equip,
@@ -36,6 +37,7 @@ from .schemas.nice import NiceEquip, NiceServant
 
 
 settings = Settings()
+secrets = SecretSettings()
 REGION_PATHS = {Region.JP: settings.jp_gamedata, Region.NA: settings.na_gamedata}
 
 
@@ -262,26 +264,23 @@ def update_master_repo_info(region_path: dict[Region, DirectoryPath]) -> None:
             )
 
 
-def clear_bloom_redis_cache() -> None:  # pragma: no cover
+async def clear_bloom_redis_cache(redis: Redis) -> None:  # pragma: no cover
     # If DEL doesn't work with the redis setup, consider calling bloom instead of redis.
     # https://github.com/valeriansaliou/bloom#can-cache-be-programatically-expired
     # The hash for bucket name "fgo-game-data-api" is "92b89e16"
-    if settings.redis_host:
-        redis_server = redis.Redis(
-            settings.redis_host, port=settings.redis_port, db=settings.redis_db
-        )
+    if settings.bloom_shard is not None:
         key_count = 0
-        for key in redis_server.scan_iter(f"bloom:{settings.bloom_shard}:c:*"):
-            redis_server.delete(key)
+        async for key in redis.iscan(match=f"bloom:{settings.bloom_shard}:c:*"):
+            await redis.delete(key)
             key_count += 1
-        logger.info(f"Cleared {key_count} redis keys.")
+        logger.info(f"Cleared {key_count} bloom redis keys.")
 
 
-def pull_and_update(
-    region_path: dict[Region, DirectoryPath]
+async def pull_and_update(
+    redis: Redis, region_path: dict[Region, DirectoryPath]
 ) -> None:  # pragma: no cover
     logger.info(f"Sleeping {settings.github_webhook_sleep} seconds …")
-    time.sleep(settings.github_webhook_sleep)
+    await asyncio.sleep(settings.github_webhook_sleep)
     if settings.github_webhook_git_pull:
         for gamedata in region_path.values():
             if (gamedata / ".git").exists():
@@ -294,4 +293,4 @@ def pull_and_update(
     update_masters(region_path)
     generate_exports(region_path)
     update_master_repo_info(region_path)
-    clear_bloom_redis_cache()
+    await clear_bloom_redis_cache(redis)

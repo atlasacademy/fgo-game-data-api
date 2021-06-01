@@ -1,11 +1,10 @@
 import json
-from typing import Any, Iterable, Mapping, Optional, Type, Union
+from typing import Any, Iterable, Mapping, Type, Union
 
 from fastapi.responses import Response
 from pydantic import BaseModel
 
 from ..schemas.base import BaseModelORJson
-from ..schemas.common import Language
 
 
 JSON_MIME = "application/json"
@@ -31,14 +30,6 @@ def get_error_code(
     Returns detailed Error Code objects to be used by fastapi documentation
     """
     return {k: v for k, v in ERROR_CODE.items() if k in error_codes}
-
-
-def language_parameter(lang: Optional[Language] = None) -> Language:
-    """Dependency for the language parameter, defaults to Language.jp if none is supplied"""
-    if lang:
-        return lang
-    else:
-        return Language.jp
 
 
 def item_response(item: BaseModelORJson) -> Response:

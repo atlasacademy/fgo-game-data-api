@@ -7,6 +7,7 @@ from pydantic import (
     DirectoryPath,
     HttpUrl,
     PostgresDsn,
+    RedisDsn,
     SecretStr,
     validator,
 )
@@ -40,10 +41,8 @@ class Settings(BaseSettings):
     documentation_all_nice: bool = False
     github_webhook_git_pull: bool = False
     github_webhook_sleep: int = 0
-    bloom_shard: int = 0
-    redis_host: Optional[str] = None
-    redis_port: int = 6379
-    redis_db: int = 0
+    bloom_shard: Optional[int] = None
+    redis_prefix: str = "fgoapi"
 
     @validator("asset_url", "rayshift_api_url")
     def remove_last_slash(cls, value: str) -> str:
@@ -61,6 +60,7 @@ class SecretSettings(BaseSettings):
     jp_postgresdsn: PostgresDsn
     rayshift_api_key: SecretStr = SecretStr("")
     github_webhook_secret: SecretStr = SecretStr("")
+    redisdsn: RedisDsn
 
     class Config:
         env_file = ".env"
