@@ -42,6 +42,7 @@
   "強化時 消費QP 75%DOWN": "Consume 75% Less QP When Enhancing",
   "特定サーヴァント強化『大成功&極大成功』率2倍！\t": "Certain Servants Super & Great Success x2\t",
   "謎のアイドルX〔オルタ〕獲得経験値2倍！": "Mysterious Idol X (Alter) 2X EXP!",
+  "特定サーヴァントサポート時 獲得FP2倍！": "Certain Support Servants FP x2!",
   "消費AP 50%DOWN": "AP Cost 1/2",
   "獲得FP2倍キャンペーン": "2X Friend Point Campaign",
   "消費AP 75%DOWN": "AP Cost 1/4",
@@ -56,7 +57,6 @@
   "獲得FP2倍": "2X FP",
   "特定サーヴァント獲得FP2倍！": "Certain Servants FP x2!",
   "獲得FP2倍！": "2X FP!",
-  "特定サーヴァントサポート時 獲得FP2倍！": "Certain Support Servants FP x2!",
   "消費AP 0": "AP Consumption 0",
   "マシュサポート時 獲得FP2倍！": "Mash FP x2!",
   "初回クリアまで 消費AP 50%DOWN": "AP Cost 1/2 Until First Clear",
@@ -227,5 +227,6 @@
   "霊衣開放チケット": "Spiritron Dress Ticket",
   "聖杯戦線 ～僕のスーパー・キャメロット2021～": "Holy Grail Front ~My Super Camelot 2021~",
   "復刻:サーヴァント・サマーキャンプ！ \n～カルデア・スリラーナイト～ ライト版": "復刻:サーヴァント・サマーキャンプ！ \n～カルデア・スリラーナイト～ ライト版",
-  "「劇場版 Fate/Grand Order -神聖円卓領域キャメロット- Paladin; Agateram」公開記念 本編冒頭シーン": "「劇場版 Fate/Grand Order -神聖円卓領域キャメロット- Paladin; Agateram」公開記念 本編冒頭シーン"
+  "「劇場版 Fate/Grand Order -神聖円卓領域キャメロット- Paladin; Agateram」公開記念 本編冒頭シーン": "「劇場版 Fate/Grand Order -神聖円卓領域キャメロット- Paladin; Agateram」公開記念 本編冒頭シーン",
+  "「Fate/Grand Carnival 1st Season」Blu-ray&DVD発売記念クエスト": "「Fate/Grand Carnival 1st Season」Blu-ray&DVD発売記念クエスト"
 }
