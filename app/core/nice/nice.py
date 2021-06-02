@@ -98,19 +98,20 @@ async def get_nice_buff_with_reverse(
             nice_buff.reverse = NiceReversedBuffType(basic=basic_buff_reverse)
         else:
             buff_reverse = NiceReversedBuff(
-                function=(
-                    get_nice_func_with_reverse(
-                        conn, region, func_id, lang, reverse, reverseDepth
+                function=[
+                    await get_nice_func_with_reverse(
+                        conn, redis, region, func_id, lang, reverse, reverseDepth
                     )
                     for func_id in reverse_ids.buff_to_func(region, buff_id)
-                )
+                ]
             )
             nice_buff.reverse = NiceReversedBuffType(nice=buff_reverse)
     return nice_buff
 
 
-def get_nice_func_with_reverse(
+async def get_nice_func_with_reverse(
     conn: Connection,
+    redis: Redis,
     region: Region,
     func_id: int,
     lang: Language,
@@ -125,14 +126,18 @@ def get_nice_func_with_reverse(
     if reverse and reverseDepth >= ReverseDepth.skillNp:
         if reverseData == ReverseData.basic:
             basic_func_reverse = BasicReversedFunction(
-                skill=(
-                    get_basic_skill(region, skill_id, lang, reverse, reverseDepth)
+                skill=[
+                    await get_basic_skill(
+                        redis, region, skill_id, lang, reverse, reverseDepth
+                    )
                     for skill_id in reverse_ids.func_to_skillId(region, func_id)
-                ),
-                NP=(
-                    get_basic_td(region, td_id, lang, reverse, reverseDepth)
+                ],
+                NP=[
+                    await get_basic_td(
+                        redis, region, td_id, lang, reverse, reverseDepth
+                    )
                     for td_id in reverse_ids.func_to_tdId(region, func_id)
-                ),
+                ],
             )
             nice_func.reverse = NiceReversedFunctionType(basic=basic_func_reverse)
         else:

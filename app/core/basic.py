@@ -192,14 +192,16 @@ async def get_basic_function_from_raw(
 
     if reverse and reverseDepth >= ReverseDepth.skillNp:
         func_reverse = BasicReversedFunction(
-            skill=(
-                get_basic_skill(region, skill_id, lang, reverse, reverseDepth)
+            skill=[
+                await get_basic_skill(
+                    redis, region, skill_id, lang, reverse, reverseDepth
+                )
                 for skill_id in reverse_ids.func_to_skillId(region, mstFunc.id)
-            ),
-            NP=(
-                get_basic_td(region, td_id, lang, reverse, reverseDepth)
+            ],
+            NP=[
+                await get_basic_td(redis, region, td_id, lang, reverse, reverseDepth)
                 for td_id in reverse_ids.func_to_tdId(region, mstFunc.id)
-            ),
+            ],
         )
         basic_func.reverse = BasicReversedFunctionType(basic=func_reverse)
 
@@ -222,7 +224,8 @@ async def get_basic_function(
     )
 
 
-def get_basic_skill(
+async def get_basic_skill(
+    redis: Redis,
     region: Region,
     skill_id: int,
     lang: Language,
@@ -231,7 +234,9 @@ def get_basic_skill(
     mstSkill: Optional[MstSkill] = None,
 ) -> BasicSkillReverse:
     if not mstSkill:
-        mstSkill = masters[region].mstSkillId[skill_id]
+        mstSkill = await pydantic_object.fetch_id(redis, region, MstSkill, skill_id)
+    if not mstSkill:
+        raise HTTPException(status_code=404, detail="Skill not found")
     basic_skill = BasicSkillReverse(
         id=mstSkill.id,
         name=get_translation(lang, mstSkill.name),
@@ -262,7 +267,8 @@ def get_basic_skill(
     return basic_skill
 
 
-def get_basic_td(
+async def get_basic_td(
+    redis: Redis,
     region: Region,
     td_id: int,
     lang: Language,
@@ -271,7 +277,11 @@ def get_basic_td(
     mstTreasureDevice: Optional[MstTreasureDevice] = None,
 ) -> BasicTdReverse:
     if not mstTreasureDevice:
-        mstTreasureDevice = masters[region].mstTreasureDeviceId[td_id]
+        mstTreasureDevice = await pydantic_object.fetch_id(
+            redis, region, MstTreasureDevice, td_id
+        )
+    if not mstTreasureDevice:
+        raise HTTPException(status_code=404, detail="NP not found")
     basic_td = BasicTdReverse(
         id=mstTreasureDevice.id,
         name=get_np_name(mstTreasureDevice, lang),

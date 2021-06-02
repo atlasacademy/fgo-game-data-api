@@ -435,20 +435,24 @@ async def find_function(
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     reverseData: ReverseData = ReverseData.nice,
     conn: Connection = Depends(get_db),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     matches = search.search_func(conn, search_param)
     return list_response(
-        nice.get_nice_func_with_reverse(
-            conn,
-            search_param.region,
-            mstFunc.id,
-            lang,
-            reverse,
-            reverseDepth,
-            reverseData,
-            mstFunc,
-        )
-        for mstFunc in matches
+        [
+            await nice.get_nice_func_with_reverse(
+                conn,
+                redis,
+                search_param.region,
+                mstFunc.id,
+                lang,
+                reverse,
+                reverseDepth,
+                reverseData,
+                mstFunc,
+            )
+            for mstFunc in matches
+        ]
     )
 
 
@@ -470,10 +474,11 @@ async def get_function(
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     reverseData: ReverseData = ReverseData.nice,
     conn: Connection = Depends(get_db),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     return item_response(
-        nice.get_nice_func_with_reverse(
-            conn, region, func_id, lang, reverse, reverseDepth, reverseData
+        await nice.get_nice_func_with_reverse(
+            conn, redis, region, func_id, lang, reverse, reverseDepth, reverseData
         )
     )
 

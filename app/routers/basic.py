@@ -290,13 +290,21 @@ async def find_skill(
     reverse: bool = False,
     lang: Language = Depends(language_parameter),
     conn: Connection = Depends(get_db),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     matches = search.search_skill(conn, search_param, limit=10000)
     return list_response(
-        basic.get_basic_skill(
-            search_param.region, mstSkill.id, lang, reverse, mstSkill=mstSkill
-        )
-        for mstSkill in matches
+        [
+            await basic.get_basic_skill(
+                redis,
+                search_param.region,
+                mstSkill.id,
+                lang,
+                reverse,
+                mstSkill=mstSkill,
+            )
+            for mstSkill in matches
+        ]
     )
 
 
@@ -314,11 +322,11 @@ async def get_skill(
     skill_id: int,
     reverse: bool = False,
     lang: Language = Depends(language_parameter),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
-    if skill_id in masters[region].mstSkillId:
-        return item_response(basic.get_basic_skill(region, skill_id, lang, reverse))
-    else:
-        raise HTTPException(status_code=404, detail="Skill not found")
+    return item_response(
+        await basic.get_basic_skill(redis, region, skill_id, lang, reverse)
+    )
 
 
 basic_td_extra = """
@@ -342,13 +350,16 @@ async def find_td(
     reverse: bool = False,
     lang: Language = Depends(language_parameter),
     conn: Connection = Depends(get_db),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     matches = search.search_td(conn, search_param, limit=10000)
     return list_response(
-        basic.get_basic_td(
-            search_param.region, td.id, lang, reverse, mstTreasureDevice=td
-        )
-        for td in matches
+        [
+            await basic.get_basic_td(
+                redis, search_param.region, td.id, lang, reverse, mstTreasureDevice=td
+            )
+            for td in matches
+        ]
     )
 
 
@@ -366,11 +377,9 @@ async def get_td(
     np_id: int,
     reverse: bool = False,
     lang: Language = Depends(language_parameter),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
-    if np_id in masters[region].mstTreasureDeviceId:
-        return item_response(basic.get_basic_td(region, np_id, lang, reverse))
-    else:
-        raise HTTPException(status_code=404, detail="NP not found")
+    return item_response(await basic.get_basic_td(redis, region, np_id, lang, reverse))
 
 
 function_reverse_lang_description = """
