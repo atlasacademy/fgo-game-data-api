@@ -17,7 +17,6 @@ settings = Settings()
 masters: dict[Region, Master] = {}
 MASTER_WITH_ID = {
     "mstSvt",
-    "mstBuff",
     "mstFunc",
     "mstSkill",
     "mstTreasureDevice",

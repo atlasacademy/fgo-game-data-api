@@ -32,6 +32,7 @@ isort = "^5.8.0"
 sqlalchemy-stubs = {git = "https://github.com/squaresmile/sqlalchemy-stubs.git"}
 sqlalchemy2-stubs = "^0.0.2-alpha.1"
 pytest-asyncio = "^0.15.1"
+asgi-lifespan = "^1.0.1"
 
 [tool.isort]
 line_length = 88

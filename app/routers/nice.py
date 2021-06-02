@@ -1,3 +1,4 @@
+from aioredis import Redis
 from fastapi import APIRouter, Depends, Response
 from sqlalchemy.engine import Connection
 
@@ -33,7 +34,7 @@ from ..schemas.search import (
     SvtSearchQueryParams,
     TdSearchParams,
 )
-from .deps import get_db, get_db_transaction, language_parameter
+from .deps import get_db, get_db_transaction, get_redis, language_parameter
 from .utils import get_error_code, item_response, list_response
 
 
@@ -502,20 +503,24 @@ async def find_buff(
     reverseDepth: ReverseDepth = ReverseDepth.function,
     reverseData: ReverseData = ReverseData.nice,
     conn: Connection = Depends(get_db),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     matches = search.search_buff(conn, search_param)
     return list_response(
-        nice.get_nice_buff_with_reverse(
-            conn,
-            search_param.region,
-            mstBuff.id,
-            lang,
-            reverse,
-            reverseDepth,
-            reverseData,
-            mstBuff,
-        )
-        for mstBuff in matches
+        [
+            await nice.get_nice_buff_with_reverse(
+                conn,
+                redis,
+                search_param.region,
+                mstBuff.id,
+                lang,
+                reverse,
+                reverseDepth,
+                reverseData,
+                mstBuff,
+            )
+            for mstBuff in matches
+        ]
     )
 
 
@@ -536,10 +541,11 @@ async def get_buff(
     reverseDepth: ReverseDepth = ReverseDepth.function,
     reverseData: ReverseData = ReverseData.nice,
     conn: Connection = Depends(get_db),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     return item_response(
-        nice.get_nice_buff_with_reverse(
-            conn, region, buff_id, lang, reverse, reverseDepth, reverseData
+        await nice.get_nice_buff_with_reverse(
+            conn, redis, region, buff_id, lang, reverse, reverseDepth, reverseData
         )
     )
 

@@ -1,5 +1,6 @@
 from typing import Optional
 
+from aioredis import Redis
 from fastapi import APIRouter, Depends, HTTPException, Response
 from sqlalchemy.engine import Connection
 
@@ -29,7 +30,7 @@ from ..schemas.search import (
     SvtSearchQueryParams,
     TdSearchParams,
 )
-from .deps import get_db, language_parameter
+from .deps import get_db, get_redis, language_parameter
 from .utils import get_error_code, item_response, list_response
 
 
@@ -395,13 +396,16 @@ async def find_function(
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     lang: Language = Depends(language_parameter),
     conn: Connection = Depends(get_db),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     matches = search.search_func(conn, search_param, limit=10000)
     return list_response(
-        basic.get_basic_function_from_raw(
-            search_param.region, mstFunc, lang, reverse, reverseDepth
-        )
-        for mstFunc in matches
+        [
+            await basic.get_basic_function_from_raw(
+                redis, search_param.region, mstFunc, lang, reverse, reverseDepth
+            )
+            for mstFunc in matches
+        ]
     )
 
 
@@ -421,13 +425,13 @@ async def get_function(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     lang: Language = Depends(language_parameter),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
-    if func_id in masters[region].mstFuncId:
-        return item_response(
-            basic.get_basic_function(region, func_id, lang, reverse, reverseDepth)
+    return item_response(
+        await basic.get_basic_function(
+            redis, region, func_id, lang, reverse, reverseDepth
         )
-    else:
-        raise HTTPException(status_code=404, detail="Function not found")
+    )
 
 
 buff_reverse_lang_description = """
@@ -453,13 +457,16 @@ async def find_buff(
     reverseDepth: ReverseDepth = ReverseDepth.function,
     lang: Language = Depends(language_parameter),
     conn: Connection = Depends(get_db),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     matches = search.search_buff(conn, search_param, limit=10000)
     return list_response(
-        basic.get_basic_buff_from_raw(
-            search_param.region, mstBuff, lang, reverse, reverseDepth
-        )
-        for mstBuff in matches
+        [
+            await basic.get_basic_buff_from_raw(
+                redis, search_param.region, mstBuff, lang, reverse, reverseDepth
+            )
+            for mstBuff in matches
+        ]
     )
 
 
@@ -478,13 +485,11 @@ async def get_buff(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
     lang: Language = Depends(language_parameter),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
-    if buff_id in masters[region].mstBuffId:
-        return item_response(
-            basic.get_basic_buff(region, buff_id, lang, reverse, reverseDepth)
-        )
-    else:
-        raise HTTPException(status_code=404, detail="Buff not found")
+    return item_response(
+        await basic.get_basic_buff(redis, region, buff_id, lang, reverse, reverseDepth)
+    )
 
 
 @router.get(

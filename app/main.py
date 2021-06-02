@@ -9,30 +9,13 @@ from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
 from .config import SecretSettings, Settings, logger, project_root
-from .data.gamedata import update_masters
-from .db.load import update_db
 from .routers import basic, nice, raw, secret
 from .schemas.common import Region, RepoInfo
-from .tasks import (
-    REGION_PATHS,
-    clear_bloom_redis_cache,
-    generate_exports,
-    repo_info,
-    update_master_repo_info,
-)
+from .tasks import REGION_PATHS, load_and_export, repo_info
 
 
 settings = Settings()
 secrets = SecretSettings()
-
-if settings.write_postgres_data:  # pragma: no cover
-    update_db(REGION_PATHS)
-
-update_masters(REGION_PATHS)
-
-update_master_repo_info(REGION_PATHS)
-
-generate_exports(REGION_PATHS)
 
 
 app_short_description = "Provide raw and nicely bundled FGO game data."
@@ -192,8 +175,8 @@ async def add_process_time_header(
 @app.on_event("startup")
 async def startup() -> None:
     redis = await aioredis.create_redis_pool(secrets.redisdsn)
-    await clear_bloom_redis_cache(redis)
     app.state.redis = redis
+    await load_and_export(redis, REGION_PATHS)
 
 
 @app.on_event("shutdown")

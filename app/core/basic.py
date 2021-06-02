@@ -1,6 +1,7 @@
 from collections import defaultdict
 from typing import Any, Optional
 
+from aioredis import Redis
 from fastapi import HTTPException
 from sqlalchemy.engine import Connection
 
@@ -8,6 +9,7 @@ from ..config import Settings
 from ..data.custom_mappings import TRANSLATIONS
 from ..data.gamedata import masters
 from ..db.helpers import fetch, war
+from ..redis.helpers import pydantic_object
 from ..schemas.basic import (
     BasicBuffReverse,
     BasicCommandCode,
@@ -107,7 +109,8 @@ def get_nice_buff_script(region: Region, mstBuff: MstBuff) -> NiceBuffScript:
     return NiceBuffScript.parse_obj(script)
 
 
-def get_basic_buff_from_raw(
+async def get_basic_buff_from_raw(
+    redis: Redis,
     region: Region,
     mstBuff: MstBuff,
     lang: Language,
@@ -129,27 +132,35 @@ def get_basic_buff_from_raw(
     )
     if reverse and reverseDepth >= ReverseDepth.function:
         buff_reverse = BasicReversedBuff(
-            function=(
-                get_basic_function(region, func_id, lang, reverse, reverseDepth)
+            function=[
+                await get_basic_function(
+                    redis, region, func_id, lang, reverse, reverseDepth
+                )
                 for func_id in reverse_ids.buff_to_func(region, mstBuff.id)
-            )
+            ]
         )
         basic_buff.reverse = BasicReversedBuffType(basic=buff_reverse)
     return basic_buff
 
 
-def get_basic_buff(
+async def get_basic_buff(
+    redis: Redis,
     region: Region,
     buff_id: int,
     lang: Language,
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
 ) -> BasicBuffReverse:
-    mstBuff = masters[region].mstBuffId[buff_id]
-    return get_basic_buff_from_raw(region, mstBuff, lang, reverse, reverseDepth)
+    mstBuff = await pydantic_object.fetch_id(redis, region, MstBuff, buff_id)
+    if not mstBuff:
+        raise HTTPException(status_code=404, detail="Buff not found")
+    return await get_basic_buff_from_raw(
+        redis, region, mstBuff, lang, reverse, reverseDepth
+    )
 
 
-def get_basic_function_from_raw(
+async def get_basic_function_from_raw(
+    redis: Redis,
     region: Region,
     mstFunc: MstFunc,
     lang: Language,
@@ -161,11 +172,12 @@ def get_basic_function_from_raw(
     if mstFunc.funcType in FUNC_VALS_NOT_BUFF:
         traitVals = get_traits_list(mstFunc.vals)
     else:
-        buffs = [
-            get_basic_buff(region, buff_id, lang)
-            for buff_id in mstFunc.vals
-            if buff_id in masters[region].mstBuffId
-        ]
+        for buff_id in mstFunc.vals:
+            mstBuff = await pydantic_object.fetch_id(redis, region, MstBuff, buff_id)
+            if mstBuff:
+                buffs.append(
+                    await get_basic_buff_from_raw(redis, region, mstBuff, lang)
+                )
 
     basic_func = BasicFunctionReverse(
         funcId=mstFunc.id,
@@ -194,15 +206,20 @@ def get_basic_function_from_raw(
     return basic_func
 
 
-def get_basic_function(
+async def get_basic_function(
+    redis: Redis,
     region: Region,
     func_id: int,
     lang: Language,
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
 ) -> BasicFunctionReverse:
-    mstFunc = masters[region].mstFuncId[func_id]
-    return get_basic_function_from_raw(region, mstFunc, lang, reverse, reverseDepth)
+    mstFunc = await pydantic_object.fetch_id(redis, region, MstFunc, func_id)
+    if not mstFunc:
+        raise HTTPException(status_code=404, detail="Function not found")
+    return await get_basic_function_from_raw(
+        redis, region, mstFunc, lang, reverse, reverseDepth
+    )
 
 
 def get_basic_skill(

@@ -134,9 +134,11 @@ def get_func_entity_no_reverse(
     if expand and func_entity.mstFunc.funcType not in FUNC_VALS_NOT_BUFF:
         func_entity.mstFunc.expandedVals = []
         for buff_id in func_entity.mstFunc.vals:
-            buff_entity = get_buff_entity_no_reverse(conn, buff_id)
-            if buff_entity:
-                func_entity.mstFunc.expandedVals.append(buff_entity)
+            mstBuff = fetch.get_one(conn, MstBuff, buff_id)
+            if mstBuff:
+                func_entity.mstFunc.expandedVals.append(
+                    get_buff_entity_no_reverse(conn, buff_id, mstBuff)
+                )
     return func_entity
 
 

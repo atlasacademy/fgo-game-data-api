@@ -1,5 +1,6 @@
 from typing import Optional
 
+from aioredis import Redis
 from sqlalchemy.engine import Connection
 
 from ...config import Settings
@@ -71,8 +72,9 @@ def get_nice_equip_model(
     )
 
 
-def get_nice_buff_with_reverse(
+async def get_nice_buff_with_reverse(
     conn: Connection,
+    redis: Redis,
     region: Region,
     buff_id: int,
     lang: Language,
@@ -86,10 +88,12 @@ def get_nice_buff_with_reverse(
     if reverse and reverseDepth >= ReverseDepth.function:
         if reverseData == ReverseData.basic:
             basic_buff_reverse = BasicReversedBuff(
-                function=(
-                    get_basic_function(region, func_id, lang, reverse, reverseDepth)
+                function=[
+                    await get_basic_function(
+                        redis, region, func_id, lang, reverse, reverseDepth
+                    )
                     for func_id in reverse_ids.buff_to_func(region, buff_id)
-                )
+                ]
             )
             nice_buff.reverse = NiceReversedBuffType(basic=basic_buff_reverse)
         else:

@@ -1,8 +1,6 @@
 # pylint: disable=R0201
 import pytest
-from httpx import Response
-
-from .utils import get_response
+from httpx import AsyncClient, Response
 
 
 RAW_MAIN_ITEM = {
@@ -173,24 +171,32 @@ not_found_cases = [
 class TestSearch:
     @pytest.mark.parametrize("search_query,result", test_cases)
     async def test_search(
-        self, search_query: str, result: set[int], response_type: str
+        self,
+        client: AsyncClient,
+        search_query: str,
+        result: set[int],
+        response_type: str,
     ) -> None:
-        response = await get_response(f"/{response_type}/{search_query}")
+        response = await client.get(f"/{response_type}/{search_query}")
         result_ids = get_item_list(response, response_type, search_query)
         assert response.status_code == 200
         assert result_ids == result
 
     @pytest.mark.parametrize("query", not_found_cases)
-    async def test_not_found_any(self, response_type: str, query: str) -> None:
-        response = await get_response(f"/{response_type}/{query}")
+    async def test_not_found_any(
+        self, client: AsyncClient, response_type: str, query: str
+    ) -> None:
+        response = await client.get(f"/{response_type}/{query}")
         assert response.status_code == 200
         assert response.text == "[]"
 
     @pytest.mark.parametrize(
         "endpoint", ["servant", "equip", "svt", "skill", "NP", "buff", "function"]
     )
-    async def test_empty_input(self, response_type: str, endpoint: str) -> None:
-        response = await get_response(f"/{response_type}/NA/{endpoint}/search")
+    async def test_empty_input(
+        self, client: AsyncClient, response_type: str, endpoint: str
+    ) -> None:
+        response = await client.get(f"/{response_type}/NA/{endpoint}/search")
         assert response.status_code == 400
 
 
@@ -213,43 +219,57 @@ nice_raw_test_cases = [
 class TestSearchNiceRaw:
     @pytest.mark.parametrize("search_query,result", nice_raw_test_cases)
     async def test_search_nice_raw(
-        self, search_query: str, result: set[int], response_type: str
+        self,
+        client: AsyncClient,
+        search_query: str,
+        result: set[int],
+        response_type: str,
     ) -> None:
-        response = await get_response(f"/{response_type}/{search_query}")
+        response = await client.get(f"/{response_type}/{search_query}")
         result_ids = get_item_list(response, response_type, search_query)
         assert response.status_code == 200
         assert result_ids == result
 
     @pytest.mark.parametrize("endpoint", ["item"])
-    async def test_empty_input(self, response_type: str, endpoint: str) -> None:
-        response = await get_response(f"/{response_type}/NA/{endpoint}/search")
+    async def test_empty_input(
+        self, client: AsyncClient, response_type: str, endpoint: str
+    ) -> None:
+        response = await client.get(f"/{response_type}/NA/{endpoint}/search")
         assert response.status_code == 400
 
     @pytest.mark.parametrize("endpoint", ["servant", "equip", "svt"])
     async def test_too_many_results_svt(
-        self, response_type: str, endpoint: str
+        self, client: AsyncClient, response_type: str, endpoint: str
     ) -> None:
-        response = await get_response(
+        response = await client.get(
             f"/{response_type}/NA/{endpoint}/search?type=normal"
         )
         assert response.status_code == 403
 
-    async def test_too_many_results_buff(self, response_type: str) -> None:
-        response = await get_response(
+    async def test_too_many_results_buff(
+        self, client: AsyncClient, response_type: str
+    ) -> None:
+        response = await client.get(
             f"/{response_type}/JP/buff/search?vals=buffPositiveEffect"
         )
         assert response.status_code == 403
 
-    async def test_too_many_results_function(self, response_type: str) -> None:
-        response = await get_response(
+    async def test_too_many_results_function(
+        self, client: AsyncClient, response_type: str
+    ) -> None:
+        response = await client.get(
             f"/{response_type}/JP/function/search?type=addState"
         )
         assert response.status_code == 403
 
-    async def test_too_many_results_skill(self, response_type: str) -> None:
-        response = await get_response(f"/{response_type}/JP/skill/search?type=passive")
+    async def test_too_many_results_skill(
+        self, client: AsyncClient, response_type: str
+    ) -> None:
+        response = await client.get(f"/{response_type}/JP/skill/search?type=passive")
         assert response.status_code == 403
 
-    async def test_too_many_results_np(self, response_type: str) -> None:
-        response = await get_response(f"/{response_type}/NA/NP/search?minNpNpGain=40")
+    async def test_too_many_results_np(
+        self, client: AsyncClient, response_type: str
+    ) -> None:
+        response = await client.get(f"/{response_type}/NA/NP/search?minNpNpGain=40")
         assert response.status_code == 403

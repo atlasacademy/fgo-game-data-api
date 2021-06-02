@@ -29,6 +29,7 @@ from .db.helpers.cv import get_all_cvs
 from .db.helpers.illustrator import get_all_illustrators
 from .db.helpers.item import get_all_items
 from .db.load import update_db
+from .redis.load import load_redis_data
 from .routers.utils import list_string
 from .schemas.base import BaseModelORJson
 from .schemas.common import Language, Region, RepoInfo
@@ -276,6 +277,18 @@ async def clear_bloom_redis_cache(redis: Redis) -> None:  # pragma: no cover
         logger.info(f"Cleared {key_count} bloom redis keys.")
 
 
+async def load_and_export(
+    redis: Redis, region_path: dict[Region, DirectoryPath]
+) -> None:  # pragma: no cover
+    if settings.write_postgres_data:
+        update_db(region_path)
+        await load_redis_data(redis, region_path)
+    update_masters(region_path)
+    generate_exports(region_path)
+    update_master_repo_info(region_path)
+    await clear_bloom_redis_cache(redis)
+
+
 async def pull_and_update(
     redis: Redis, region_path: dict[Region, DirectoryPath]
 ) -> None:  # pragma: no cover
@@ -288,9 +301,4 @@ async def pull_and_update(
                 for fetch_info in repo.remotes[0].pull():
                     commit_hash = fetch_info.commit.hexsha[:6]
                     logger.info(f"Updated {fetch_info.ref} to {commit_hash}")
-    if settings.write_postgres_data:
-        update_db(region_path)
-    update_masters(region_path)
-    generate_exports(region_path)
-    update_master_repo_info(region_path)
-    await clear_bloom_redis_cache(redis)
+    await load_and_export(redis, region_path)
