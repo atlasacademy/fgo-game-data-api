@@ -1,5 +1,6 @@
 from typing import Any, Optional, Union
 
+from aioredis import Redis
 from sqlalchemy.engine import Connection
 
 from ...config import Settings
@@ -129,6 +130,7 @@ def get_nice_quest_alone(
 
 async def get_nice_quest_phase(
     conn: Connection,
+    redis: Redis,
     region: Region,
     quest_id: int,
     phase: int,
@@ -143,7 +145,9 @@ async def get_nice_quest_phase(
     if stages:
         quest_detail = await get_quest_detail(conn, region, quest_id, phase)
         if quest_detail:
-            quest_enemies = get_quest_enemies(conn, region, quest_detail, lang)
+            quest_enemies = await get_quest_enemies(
+                conn, redis, region, quest_detail, lang
+            )
 
     nice_data |= {
         "phase": raw_quest.mstQuestPhase.phase,

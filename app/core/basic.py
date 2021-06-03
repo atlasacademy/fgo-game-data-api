@@ -252,10 +252,10 @@ async def get_basic_skill(
         activeSkills = reverse_ids.active_to_svtId(region, skill_id)
         passiveSkills = reverse_ids.passive_to_svtId(region, skill_id)
         skill_reverse = BasicReversedSkillTd(
-            servant=(
-                get_basic_servant(region, svt_id, lang=lang)
+            servant=[
+                await get_basic_servant(redis, region, svt_id, lang=lang)
                 for svt_id in activeSkills | passiveSkills
-            ),
+            ],
             MC=(
                 get_basic_mc(region, mc_id, lang)
                 for mc_id in reverse_ids.skill_to_MCId(region, skill_id)
@@ -293,23 +293,27 @@ async def get_basic_td(
     if reverse and reverseDepth >= ReverseDepth.servant:
         mstSvtTreasureDevice = masters[region].tdToSvt.get(td_id, set())
         td_reverse = BasicReversedSkillTd(
-            servant=(
-                get_basic_servant(region, svt_id, lang=lang)
+            servant=[
+                await get_basic_servant(redis, region, svt_id, lang=lang)
                 for svt_id in mstSvtTreasureDevice
-            )
+            ]
         )
         basic_td.reverse = BasicReversedSkillTdType(basic=td_reverse)
     return basic_td
 
 
-def get_basic_svt(
+async def get_basic_svt(
+    redis: Redis,
     region: Region,
     svt_id: int,
     lang: Optional[Language] = None,
     mstSvt: Optional[MstSvt] = None,
 ) -> dict[str, Any]:
     if not mstSvt:
-        mstSvt = masters[region].mstSvtId[svt_id]
+        mstSvt = await pydantic_object.fetch_id(redis, region, MstSvt, svt_id)
+    if not mstSvt:
+        raise HTTPException(status_code=404, detail="Svt not found")
+
     mstSvtLimit = masters[region].mstSvtLimitFirst[svt_id]
 
     basic_servant = {
@@ -343,22 +347,28 @@ def get_basic_svt(
     return basic_servant
 
 
-def get_basic_servant(
+async def get_basic_servant(
+    redis: Redis,
     region: Region,
     item_id: int,
     lang: Optional[Language] = None,
     mstSvt: Optional[MstSvt] = None,
 ) -> BasicServant:
-    return BasicServant.parse_obj(get_basic_svt(region, item_id, lang, mstSvt))
+    return BasicServant.parse_obj(
+        await get_basic_svt(redis, region, item_id, lang, mstSvt)
+    )
 
 
-def get_basic_equip(
+async def get_basic_equip(
+    redis: Redis,
     region: Region,
     item_id: int,
     lang: Optional[Language] = None,
     mstSvt: Optional[MstSvt] = None,
 ) -> BasicEquip:
-    return BasicEquip.parse_obj(get_basic_svt(region, item_id, lang, mstSvt))
+    return BasicEquip.parse_obj(
+        await get_basic_svt(redis, region, item_id, lang, mstSvt)
+    )
 
 
 def get_basic_mc(region: Region, mc_id: int, lang: Language) -> BasicMysticCode:

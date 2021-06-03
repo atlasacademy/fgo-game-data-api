@@ -314,18 +314,22 @@ async def find_skill(
     reverse: bool = False,
     reverseData: ReverseData = ReverseData.nice,
     conn: Connection = Depends(get_db),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     matches = search.search_skill(conn, search_param)
     return list_response(
-        nice.get_nice_skill_with_reverse(
-            conn,
-            search_param.region,
-            mstSkill.id,
-            lang,
-            reverse,
-            reverseData=reverseData,
-        )
-        for mstSkill in matches
+        [
+            await nice.get_nice_skill_with_reverse(
+                conn,
+                redis,
+                search_param.region,
+                mstSkill.id,
+                lang,
+                reverse,
+                reverseData=reverseData,
+            )
+            for mstSkill in matches
+        ]
     )
 
 
@@ -345,10 +349,11 @@ async def get_skill(
     reverse: bool = False,
     reverseData: ReverseData = ReverseData.nice,
     conn: Connection = Depends(get_db),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     return item_response(
-        nice.get_nice_skill_with_reverse(
-            conn, region, skill_id, lang, reverse, reverseData=reverseData
+        await nice.get_nice_skill_with_reverse(
+            conn, redis, region, skill_id, lang, reverse, reverseData=reverseData
         )
     )
 
@@ -376,13 +381,22 @@ async def find_td(
     reverse: bool = False,
     reverseData: ReverseData = ReverseData.nice,
     conn: Connection = Depends(get_db),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     matches = search.search_td(conn, search_param)
     return list_response(
-        nice.get_nice_td_with_reverse(
-            conn, search_param.region, td.id, lang, reverse, reverseData=reverseData
-        )
-        for td in matches
+        [
+            await nice.get_nice_td_with_reverse(
+                conn,
+                redis,
+                search_param.region,
+                td.id,
+                lang,
+                reverse,
+                reverseData=reverseData,
+            )
+            for td in matches
+        ]
     )
 
 
@@ -402,10 +416,11 @@ async def get_td(
     reverse: bool = False,
     reverseData: ReverseData = ReverseData.nice,
     conn: Connection = Depends(get_db),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     return item_response(
-        nice.get_nice_td_with_reverse(
-            conn, region, np_id, lang, reverse, reverseData=reverseData
+        await nice.get_nice_td_with_reverse(
+            conn, redis, region, np_id, lang, reverse, reverseData=reverseData
         )
     )
 
@@ -670,10 +685,11 @@ async def get_quest_phase(
     quest_id: int,
     phase: int,
     conn: Connection = Depends(get_db_transaction),
+    redis: Redis = Depends(get_redis),
     lang: Language = Depends(language_parameter),
 ) -> Response:
     quest_response = item_response(
-        await quest.get_nice_quest_phase(conn, region, quest_id, phase, lang)
+        await quest.get_nice_quest_phase(conn, redis, region, quest_id, phase, lang)
     )
     quest_response.headers["Bloom-Response-TTL"] = str(settings.quest_cache_length)
     return quest_response

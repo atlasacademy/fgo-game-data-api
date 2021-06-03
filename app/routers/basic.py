@@ -56,11 +56,16 @@ async def find_servant(
     search_param: ServantSearchQueryParams = Depends(ServantSearchQueryParams),
     lang: Optional[Language] = None,
     conn: Connection = Depends(get_db),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     matches = search.search_servant(conn, search_param, limit=10000)
     return list_response(
-        basic.get_basic_servant(search_param.region, mstSvt.id, lang, mstSvt)
-        for mstSvt in matches
+        [
+            await basic.get_basic_servant(
+                redis, search_param.region, mstSvt.id, lang, mstSvt
+            )
+            for mstSvt in matches
+        ]
     )
 
 
@@ -92,12 +97,17 @@ if settings.documentation_all_nice:
     responses=get_error_code([400, 403]),
 )
 async def get_servant(
-    region: Region, servant_id: int, lang: Optional[Language] = None
+    region: Region,
+    servant_id: int,
+    lang: Optional[Language] = None,
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     if servant_id in masters[region].mstSvtServantCollectionNo:
         servant_id = masters[region].mstSvtServantCollectionNo[servant_id]
     if servant_id in masters[region].mstSvtServantCollectionNo.values():
-        return item_response(basic.get_basic_servant(region, servant_id, lang))
+        return item_response(
+            await basic.get_basic_servant(redis, region, servant_id, lang)
+        )
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
 
@@ -115,11 +125,16 @@ async def find_equip(
     search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
     lang: Optional[Language] = None,
     conn: Connection = Depends(get_db),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     matches = search.search_equip(conn, search_param, limit=10000)
     return list_response(
-        basic.get_basic_equip(search_param.region, mstSvt.id, lang, mstSvt)
-        for mstSvt in matches
+        [
+            await basic.get_basic_equip(
+                redis, search_param.region, mstSvt.id, lang, mstSvt
+            )
+            for mstSvt in matches
+        ]
     )
 
 
@@ -150,12 +165,15 @@ if settings.documentation_all_nice:
     responses=get_error_code([400, 403]),
 )
 async def get_equip(
-    region: Region, equip_id: int, lang: Optional[Language] = None
+    region: Region,
+    equip_id: int,
+    lang: Optional[Language] = None,
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     if equip_id in masters[region].mstSvtEquipCollectionNo:
         equip_id = masters[region].mstSvtEquipCollectionNo[equip_id]
     if equip_id in masters[region].mstSvtEquipCollectionNo.values():
-        return item_response(basic.get_basic_equip(region, equip_id, lang))
+        return item_response(await basic.get_basic_equip(redis, region, equip_id, lang))
     else:
         raise HTTPException(status_code=404, detail="Equip not found")
 
@@ -173,11 +191,16 @@ async def find_svt(
     search_param: SvtSearchQueryParams = Depends(SvtSearchQueryParams),
     lang: Optional[Language] = None,
     conn: Connection = Depends(get_db),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     matches = search.search_servant(conn, search_param, limit=10000)
     return list_response(
-        basic.get_basic_servant(search_param.region, mstSvt.id, lang, mstSvt)
-        for mstSvt in matches
+        [
+            await basic.get_basic_servant(
+                redis, search_param.region, mstSvt.id, lang, mstSvt
+            )
+            for mstSvt in matches
+        ]
     )
 
 
@@ -190,7 +213,10 @@ async def find_svt(
     responses=get_error_code([400, 403]),
 )
 async def get_svt(
-    region: Region, svt_id: int, lang: Language = Depends(language_parameter)
+    region: Region,
+    svt_id: int,
+    lang: Language = Depends(language_parameter),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     """
     Get svt info from ID
@@ -198,10 +224,7 @@ async def get_svt(
     Only use actual IDs for lookup. Does not convert from collectionNo.
     The endpoint is not limited to servants or equips ids.
     """
-    if svt_id in masters[region].mstSvtId:
-        return item_response(basic.get_basic_servant(region, svt_id, lang))
-    else:
-        raise HTTPException(status_code=404, detail="Svt not found")
+    return item_response(await basic.get_basic_servant(redis, region, svt_id, lang))
 
 
 get_mc_description = "Get basic Mystic Code info from ID"

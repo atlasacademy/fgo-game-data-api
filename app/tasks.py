@@ -107,8 +107,8 @@ def dump_svt(
             fp.write(export_without_lore_en)
 
 
-def generate_exports(
-    region_path: dict[Region, DirectoryPath]
+async def generate_exports(
+    redis: Redis, region_path: dict[Region, DirectoryPath]
 ) -> None:  # pragma: no cover
     if settings.export_all_nice:
         for region in region_path:
@@ -138,12 +138,16 @@ def generate_exports(
                 for cc_id in masters[region].mstCommandCodeId
             )
             all_basic_servant_data = sort_by_collection_no(
-                get_basic_servant(region, svt_id)
-                for svt_id in masters[region].mstSvtServantCollectionNo.values()
+                [
+                    await get_basic_servant(redis, region, svt_id)
+                    for svt_id in masters[region].mstSvtServantCollectionNo.values()
+                ]
             )
             all_basic_equip_data = sort_by_collection_no(
-                get_basic_equip(region, svt_id)
-                for svt_id in masters[region].mstSvtEquipCollectionNo.values()
+                [
+                    await get_basic_equip(redis, region, svt_id)
+                    for svt_id in masters[region].mstSvtEquipCollectionNo.values()
+                ]
             )
             all_basic_mc_data = (
                 get_basic_mc(region, mc_id, Language.jp)
@@ -174,12 +178,16 @@ def generate_exports(
 
             if region == Region.JP:
                 all_basic_servant_en = sort_by_collection_no(
-                    get_basic_servant(region, svt_id, Language.en)
-                    for svt_id in masters[region].mstSvtServantCollectionNo.values()
+                    [
+                        await get_basic_servant(redis, region, svt_id, Language.en)
+                        for svt_id in masters[region].mstSvtServantCollectionNo.values()
+                    ]
                 )
                 all_basic_equip_en = sort_by_collection_no(
-                    get_basic_equip(region, svt_id, Language.en)
-                    for svt_id in masters[region].mstSvtEquipCollectionNo.values()
+                    [
+                        await get_basic_equip(redis, region, svt_id, Language.en)
+                        for svt_id in masters[region].mstSvtEquipCollectionNo.values()
+                    ]
                 )
                 all_basic_cc_en = sort_by_collection_no(
                     get_basic_cc(region, cc_id, Language.en)
@@ -275,7 +283,7 @@ async def load_and_export(
         update_db(region_path)
         await load_redis_data(redis, region_path)
     update_masters(region_path)
-    generate_exports(region_path)
+    await generate_exports(redis, region_path)
     update_master_repo_info(region_path)
     await clear_bloom_redis_cache(redis)
 

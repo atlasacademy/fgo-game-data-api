@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from typing import Any
 
+from aioredis import Redis
 from sqlalchemy.engine import Connection
 
 from ...schemas.common import Language, Region
@@ -177,7 +178,8 @@ class EnemyDeckInfo:
         return hash((self.deckType, self.deck.id))
 
 
-def get_quest_enemy(
+async def get_quest_enemy(
+    redis: Redis,
     region: Region,
     deck_svt_info: EnemyDeckInfo,
     user_svt: UserSvt,
@@ -186,7 +188,7 @@ def get_quest_enemy(
     lang: Language = Language.jp,
 ) -> QuestEnemy:
     deck_svt = deck_svt_info.deck
-    basic_svt = get_basic_servant(region, user_svt.svtId, lang)
+    basic_svt = await get_basic_servant(redis, region, user_svt.svtId, lang)
 
     if user_svt.npcSvtClassId != 0:
         basic_svt.className = CLASS_NAME[user_svt.npcSvtClassId]
@@ -275,8 +277,9 @@ def get_enemies_in_stage(
     return stage_enemies
 
 
-def get_quest_enemies(
+async def get_quest_enemies(
     conn: Connection,
+    redis: Redis,
     region: Region,
     quest_detail: QuestDetail,
     lang: Language = Language.jp,
@@ -331,7 +334,8 @@ def get_quest_enemies(
 
         stage_nice_enemies: list[QuestEnemy] = []
         for deck_svt_info in get_enemies_in_stage(enemy_decks, npc_id_map):
-            nice_enemy = get_quest_enemy(
+            nice_enemy = await get_quest_enemy(
+                redis=redis,
                 region=region,
                 deck_svt_info=deck_svt_info,
                 user_svt=user_svt_id[deck_svt_info.deck.userSvtId],
