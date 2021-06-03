@@ -30,7 +30,14 @@ from ..schemas.enums import (
     NiceItemUse,
     Trait,
 )
-from ..schemas.raw import MstBuff, MstFunc, MstItem, MstSkill, MstSvt, MstTreasureDevice
+from ..schemas.raw import (
+    FunctionEntityNoReverse,
+    MstBuff,
+    MstItem,
+    MstSkill,
+    MstSvt,
+    MstTreasureDevice,
+)
 from ..schemas.search import (
     BuffSearchQueryParams,
     EquipSearchQueryParams,
@@ -325,7 +332,7 @@ def search_buff(
 
 def search_func(
     conn: Connection, search_param: FuncSearchQueryParams, limit: int = 100
-) -> list[MstFunc]:
+) -> list[FunctionEntityNoReverse]:
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
@@ -356,13 +363,13 @@ def search_func(
         matches = [
             func
             for func in matches
-            if match_name(search_param.popupText, func.popupText)
+            if match_name(search_param.popupText, func.mstFunc.popupText)
         ]
 
     if len(matches) > limit:
         raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
 
-    return sorted(matches, key=lambda func: func.id)
+    return sorted(matches, key=lambda func: func.mstFunc.id)
 
 
 def search_item(conn: Connection, search_param: ItemSearchQueryParams) -> list[MstItem]:

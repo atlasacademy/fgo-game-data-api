@@ -4,9 +4,8 @@ from fastapi import HTTPException
 from sqlalchemy.engine import Connection
 
 from ..data.custom_mappings import EXTRA_CHARAFIGURES
-from ..db.helpers import ai, event, fetch, item, quest, skill, svt, td
+from ..db.helpers import ai, event, fetch, func, item, quest, skill, svt, td
 from ..schemas.common import Region, ReverseDepth
-from ..schemas.enums import FUNC_VALS_NOT_BUFF
 from ..schemas.gameenums import CondType, PurchaseType, VoiceCondType
 from ..schemas.raw import (
     EXTRA_ATTACK_TD_ID,
@@ -43,8 +42,6 @@ from ..schemas.raw import (
     MstEventRewardSet,
     MstEventTower,
     MstFriendship,
-    MstFunc,
-    MstFuncGroup,
     MstGift,
     MstIllustrator,
     MstItem,
@@ -109,8 +106,15 @@ def get_buff_entity(
     if reverse and reverseDepth >= ReverseDepth.function:
         buff_reverse = ReversedBuff(
             function=(
-                get_func_entity(conn, region, func_id, reverse, reverseDepth)
-                for func_id in reverse_ids.buff_to_func(region, buff_id)
+                get_func_entity(
+                    conn,
+                    region,
+                    func_entity.mstFunc.id,
+                    reverse,
+                    reverseDepth,
+                    func_entity=func_entity,
+                )
+                for func_entity in func.get_func_from_buff(conn, buff_id)
             )
         )
         buff_entity.reverse = ReversedBuffType(raw=buff_reverse)
@@ -121,24 +125,14 @@ def get_func_entity_no_reverse(
     conn: Connection,
     func_id: int,
     expand: bool = False,
-    mstFunc: Optional[MstFunc] = None,
+    func_entity: Optional[FunctionEntityNoReverse] = None,
 ) -> FunctionEntityNoReverse:
-    if not mstFunc:
-        mstFunc = fetch.get_one(conn, MstFunc, func_id)
-    if not mstFunc:
+    if not func_entity:
+        func_entity = func.get_func_id(conn, func_id)
+    if not func_entity:
         raise HTTPException(status_code=404, detail="Function not found")
-    func_entity = FunctionEntityNoReverse(
-        mstFunc=mstFunc,
-        mstFuncGroup=fetch.get_all(conn, MstFuncGroup, func_id),
-    )
-    if expand and func_entity.mstFunc.funcType not in FUNC_VALS_NOT_BUFF:
+    if not expand:
         func_entity.mstFunc.expandedVals = []
-        for buff_id in func_entity.mstFunc.vals:
-            mstBuff = fetch.get_one(conn, MstBuff, buff_id)
-            if mstBuff:
-                func_entity.mstFunc.expandedVals.append(
-                    get_buff_entity_no_reverse(conn, buff_id, mstBuff)
-                )
     return func_entity
 
 
@@ -149,10 +143,10 @@ def get_func_entity(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     expand: bool = False,
-    mstFunc: Optional[MstFunc] = None,
+    func_entity: Optional[FunctionEntityNoReverse] = None,
 ) -> FunctionEntity:
     func_entity = FunctionEntity.parse_obj(
-        get_func_entity_no_reverse(conn, func_id, expand, mstFunc)
+        get_func_entity_no_reverse(conn, func_id, expand, func_entity)
     )
     if reverse and reverseDepth >= ReverseDepth.skillNp:
         func_reverse = ReversedFunction(

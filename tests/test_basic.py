@@ -112,7 +112,7 @@ class TestBasicSpecial:
             "/basic/NA/buff/203?reverse=True&reverseDepth=skillNp"
         )
         assert response.status_code == 200
-        assert response.json()["reverse"]["basic"]["function"][1]["reverse"]["basic"][
+        assert response.json()["reverse"]["basic"]["function"][2]["reverse"]["basic"][
             "skill"
         ]
 

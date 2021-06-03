@@ -11,6 +11,7 @@ from ..config import logger
 from ..models.raw import (
     TABLES_TO_BE_LOADED,
     ScriptFileList,
+    mstFunc,
     mstSkillLv,
     mstSubtitle,
     mstTreasureDeviceLv,
@@ -50,7 +51,7 @@ def load_skill_td_lv(
         mstBuff = {buff["id"]: buff for buff in orjson.loads(fp.read())}
 
     with open(master_folder / "mstFunc.json", "rb") as fp:
-        mstFunc = {func["id"]: func for func in orjson.loads(fp.read())}
+        mstFunc_data = {func["id"]: func for func in orjson.loads(fp.read())}
 
     mstFuncGroup = defaultdict(list)
     with open(master_folder / "mstFuncGroup.json", "rb") as fp:
@@ -65,7 +66,7 @@ def load_skill_td_lv(
 
     def get_func_entity(func_id: int) -> dict[Any, Any]:
         func_entity = {
-            "mstFunc": mstFunc[func_id],
+            "mstFunc": mstFunc_data[func_id],
             "mstFuncGroup": mstFuncGroup.get(func_id, []),
         }
 
@@ -82,19 +83,33 @@ def load_skill_td_lv(
 
         return func_entity
 
+    func_entity_data = [
+        get_func_entity(func_id) for func_id in sorted(mstFunc_data.keys())
+    ]
+    func_entity_map = {
+        func_entity["mstFunc"]["id"]: func_entity for func_entity in func_entity_data
+    }
+
     for skillLv in mstSkillLv_data:
-        skillLv["expandedFuncId"] = [
-            get_func_entity(func_id)
-            for func_id in skillLv["funcId"]
-            if func_id in mstFunc
-        ]
+        skillLv["expandedFuncId"] = []
+        for func_id in skillLv["funcId"]:
+            if func_id in func_entity_map:
+                skillLv["expandedFuncId"].append(func_entity_map[func_id])
 
     for treasureDeviceLv in mstTreasureDeviceLv_data:
-        treasureDeviceLv["expandedFuncId"] = [
-            get_func_entity(func_id)
-            for func_id in treasureDeviceLv["funcId"]
-            if func_id in mstFunc
-        ]
+        treasureDeviceLv["expandedFuncId"] = []
+        for func_id in treasureDeviceLv["funcId"]:
+            if func_id in func_entity_map:
+                treasureDeviceLv["expandedFuncId"].append(func_entity_map[func_id])
+
+    mstFunc_db_data = [
+        dict(
+            **func_entity["mstFunc"],
+            mstFunc=func_entity["mstFunc"],
+            mstFuncGroup=func_entity["mstFuncGroup"],
+        )
+        for func_entity in func_entity_data
+    ]
 
     with engine.begin() as conn:
         recreate_table(conn, mstSkillLv)
@@ -102,6 +117,9 @@ def load_skill_td_lv(
 
         recreate_table(conn, mstTreasureDeviceLv)
         conn.execute(mstTreasureDeviceLv.insert(), mstTreasureDeviceLv_data)
+
+        recreate_table(conn, mstFunc)
+        conn.execute(mstFunc.insert(), mstFunc_db_data)
 
 
 def load_script_list(

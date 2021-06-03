@@ -372,13 +372,13 @@ async def find_function(
         raw.get_func_entity(
             conn,
             search_param.region,
-            mstFunc.id,
+            func_entity.mstFunc.id,
             reverse,
             reverseDepth,
             expand,
-            mstFunc,
+            func_entity,
         )
-        for mstFunc in matches
+        for func_entity in matches
     )
 
 

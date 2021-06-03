@@ -247,7 +247,7 @@ class TestServantSpecial:
             "/nice/NA/buff/203?reverse=True&reverseDepth=skillNp"
         )
         assert response.status_code == 200
-        assert response.json()["reverse"]["nice"]["function"][1]["reverse"]["nice"][
+        assert response.json()["reverse"]["nice"]["function"][2]["reverse"]["nice"][
             "skill"
         ]
 

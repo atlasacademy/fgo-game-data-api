@@ -411,9 +411,15 @@ async def find_function(
     return list_response(
         [
             await basic.get_basic_function_from_raw(
-                redis, search_param.region, mstFunc, lang, reverse, reverseDepth
+                conn,
+                redis,
+                search_param.region,
+                func_entity.mstFunc,
+                lang,
+                reverse,
+                reverseDepth,
             )
-            for mstFunc in matches
+            for func_entity in matches
         ]
     )
 
@@ -434,11 +440,12 @@ async def get_function(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     lang: Language = Depends(language_parameter),
+    conn: Connection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
     return item_response(
         await basic.get_basic_function(
-            redis, region, func_id, lang, reverse, reverseDepth
+            conn, redis, region, func_id, lang, reverse, reverseDepth
         )
     )
 
@@ -472,7 +479,7 @@ async def find_buff(
     return list_response(
         [
             await basic.get_basic_buff_from_raw(
-                redis, search_param.region, mstBuff, lang, reverse, reverseDepth
+                conn, redis, search_param.region, mstBuff, lang, reverse, reverseDepth
             )
             for mstBuff in matches
         ]
@@ -494,10 +501,13 @@ async def get_buff(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
     lang: Language = Depends(language_parameter),
+    conn: Connection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
     return item_response(
-        await basic.get_basic_buff(redis, region, buff_id, lang, reverse, reverseDepth)
+        await basic.get_basic_buff(
+            conn, redis, region, buff_id, lang, reverse, reverseDepth
+        )
     )
 
 

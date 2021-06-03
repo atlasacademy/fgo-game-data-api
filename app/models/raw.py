@@ -59,6 +59,7 @@ mstFunc = Table(
     "mstFunc",
     metadata,
     Column("vals", ARRAY(Integer)),
+    Column("expandedVals", JSONB),
     Column("tvals", ARRAY(Integer)),
     Column("questTvals", ARRAY(Integer)),
     Column("effectList", ARRAY(Integer)),
@@ -71,7 +72,12 @@ mstFunc = Table(
     Column("popupIconId", Integer),
     Column("popupText", String),
     Column("categoryId", Integer),
+    Column("mstFunc", JSONB),
+    Column("mstFuncGroup", JSONB),
 )
+
+
+Index("ix_mstFunc_vals", mstFunc.c.vals[1])
 
 
 mstFuncGroup = Table(
@@ -1257,7 +1263,6 @@ ScriptFileList = Table(
 
 TABLES_TO_BE_LOADED = [
     mstBuff,
-    mstFunc,
     mstSkill,
     mstTreasureDevice,
     mstSvt,

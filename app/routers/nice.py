@@ -444,14 +444,14 @@ async def find_function(
                 conn,
                 redis,
                 search_param.region,
-                mstFunc.id,
+                func_entity.mstFunc.id,
                 lang,
                 reverse,
                 reverseDepth,
                 reverseData,
-                mstFunc,
+                func_entity,
             )
-            for mstFunc in matches
+            for func_entity in matches
         ]
     )
 

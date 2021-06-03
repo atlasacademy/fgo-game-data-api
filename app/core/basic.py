@@ -8,7 +8,7 @@ from sqlalchemy.engine import Connection
 from ..config import Settings
 from ..data.custom_mappings import TRANSLATIONS
 from ..data.gamedata import masters
-from ..db.helpers import fetch, war
+from ..db.helpers import fetch, func, war
 from ..redis.helpers import pydantic_object
 from ..schemas.basic import (
     BasicBuffReverse,
@@ -112,6 +112,7 @@ def get_nice_buff_script(region: Region, mstBuff: MstBuff) -> NiceBuffScript:
 
 
 async def get_basic_buff_from_raw(
+    conn: Connection,
     redis: Redis,
     region: Region,
     mstBuff: MstBuff,
@@ -135,10 +136,16 @@ async def get_basic_buff_from_raw(
     if reverse and reverseDepth >= ReverseDepth.function:
         buff_reverse = BasicReversedBuff(
             function=[
-                await get_basic_function(
-                    redis, region, func_id, lang, reverse, reverseDepth
+                await get_basic_function_from_raw(
+                    conn,
+                    redis,
+                    region,
+                    func_entity.mstFunc,
+                    lang,
+                    reverse,
+                    reverseDepth,
                 )
-                for func_id in reverse_ids.buff_to_func(region, mstBuff.id)
+                for func_entity in func.get_func_from_buff(conn, mstBuff.id)
             ]
         )
         basic_buff.reverse = BasicReversedBuffType(basic=buff_reverse)
@@ -146,6 +153,7 @@ async def get_basic_buff_from_raw(
 
 
 async def get_basic_buff(
+    conn: Connection,
     redis: Redis,
     region: Region,
     buff_id: int,
@@ -153,15 +161,16 @@ async def get_basic_buff(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
 ) -> BasicBuffReverse:
-    mstBuff = await pydantic_object.fetch_id(redis, region, MstBuff, buff_id)
+    mstBuff = fetch.get_one(conn, MstBuff, buff_id)
     if not mstBuff:
         raise HTTPException(status_code=404, detail="Buff not found")
     return await get_basic_buff_from_raw(
-        redis, region, mstBuff, lang, reverse, reverseDepth
+        conn, redis, region, mstBuff, lang, reverse, reverseDepth
     )
 
 
 async def get_basic_function_from_raw(
+    conn: Connection,
     redis: Redis,
     region: Region,
     mstFunc: MstFunc,
@@ -170,16 +179,8 @@ async def get_basic_function_from_raw(
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
 ) -> BasicFunctionReverse:
     traitVals = []
-    buffs = []
     if mstFunc.funcType in FUNC_VALS_NOT_BUFF:
         traitVals = get_traits_list(mstFunc.vals)
-    else:
-        for buff_id in mstFunc.vals:
-            mstBuff = await pydantic_object.fetch_id(redis, region, MstBuff, buff_id)
-            if mstBuff:
-                buffs.append(
-                    await get_basic_buff_from_raw(redis, region, mstBuff, lang)
-                )
 
     basic_func = BasicFunctionReverse(
         funcId=mstFunc.id,
@@ -189,7 +190,10 @@ async def get_basic_function_from_raw(
         funcquestTvals=get_traits_list(mstFunc.questTvals),
         functvals=get_traits_list(mstFunc.tvals),
         traitVals=traitVals,
-        buffs=buffs,
+        buffs=[
+            await get_basic_buff_from_raw(conn, redis, region, buff.mstBuff, lang)
+            for buff in mstFunc.expandedVals
+        ],
     )
 
     if reverse and reverseDepth >= ReverseDepth.skillNp:
@@ -211,6 +215,7 @@ async def get_basic_function_from_raw(
 
 
 async def get_basic_function(
+    conn: Connection,
     redis: Redis,
     region: Region,
     func_id: int,
@@ -218,11 +223,11 @@ async def get_basic_function(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
 ) -> BasicFunctionReverse:
-    mstFunc = await pydantic_object.fetch_id(redis, region, MstFunc, func_id)
-    if not mstFunc:
+    func_entity = func.get_func_id(conn, func_id)
+    if not func_entity:
         raise HTTPException(status_code=404, detail="Function not found")
     return await get_basic_function_from_raw(
-        redis, region, mstFunc, lang, reverse, reverseDepth
+        conn, redis, region, func_entity.mstFunc, lang, reverse, reverseDepth
     )
 
 

@@ -19,23 +19,7 @@
         {
           "mstFunc": {
             "vals": [190],
-            "tvals": [],
-            "questTvals": [],
-            "effectList": [332],
-            "popupTextColor": 2,
-            "id": 520,
-            "cond": 0,
-            "funcType": 16,
-            "targetType": 0,
-            "applyTarget": 3,
-            "popupIconId": 302,
-            "popupText": "STR Up\nvs. Divine"
-          },
-          "mstFuncGroup": []
-        },
-        {
-          "mstFunc": {
-            "vals": [190],
+            "expandedVals": [],
             "tvals": [],
             "questTvals": [],
             "effectList": [330],
@@ -53,11 +37,30 @@
         {
           "mstFunc": {
             "vals": [190],
+            "expandedVals": [],
             "tvals": [],
             "questTvals": [],
             "effectList": [331],
             "popupTextColor": 2,
             "id": 519,
+            "cond": 0,
+            "funcType": 16,
+            "targetType": 0,
+            "applyTarget": 3,
+            "popupIconId": 302,
+            "popupText": "STR Up\nvs. Divine"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [190],
+            "expandedVals": [],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [332],
+            "popupTextColor": 2,
+            "id": 520,
             "cond": 0,
             "funcType": 16,
             "targetType": 0,

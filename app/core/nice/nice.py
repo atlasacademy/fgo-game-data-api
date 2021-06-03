@@ -4,6 +4,7 @@ from aioredis import Redis
 from sqlalchemy.engine import Connection
 
 from ...config import Settings
+from ...db.helpers.func import get_func_from_buff
 from ...schemas.basic import (
     BasicReversedBuff,
     BasicReversedFunction,
@@ -24,11 +25,11 @@ from ...schemas.nice import (
     NiceSkillReverse,
     NiceTdReverse,
 )
-from ...schemas.raw import MstBuff, MstFunc, MstSvt
+from ...schemas.raw import FunctionEntityNoReverse, MstBuff, MstSvt
 from .. import raw, reverse as reverse_ids
 from ..basic import (
     get_basic_cc,
-    get_basic_function,
+    get_basic_function_from_raw,
     get_basic_mc,
     get_basic_servant,
     get_basic_skill,
@@ -89,10 +90,16 @@ async def get_nice_buff_with_reverse(
         if reverseData == ReverseData.basic:
             basic_buff_reverse = BasicReversedBuff(
                 function=[
-                    await get_basic_function(
-                        redis, region, func_id, lang, reverse, reverseDepth
+                    await get_basic_function_from_raw(
+                        conn,
+                        redis,
+                        region,
+                        func_entity.mstFunc,
+                        lang,
+                        reverse,
+                        reverseDepth,
                     )
-                    for func_id in reverse_ids.buff_to_func(region, buff_id)
+                    for func_entity in get_func_from_buff(conn, buff_id)
                 ]
             )
             nice_buff.reverse = NiceReversedBuffType(basic=basic_buff_reverse)
@@ -100,9 +107,16 @@ async def get_nice_buff_with_reverse(
             buff_reverse = NiceReversedBuff(
                 function=[
                     await get_nice_func_with_reverse(
-                        conn, redis, region, func_id, lang, reverse, reverseDepth
+                        conn,
+                        redis,
+                        region,
+                        func_entity.mstFunc.id,
+                        lang,
+                        reverse,
+                        reverseDepth,
+                        func_entity=func_entity,
                     )
-                    for func_id in reverse_ids.buff_to_func(region, buff_id)
+                    for func_entity in get_func_from_buff(conn, buff_id)
                 ]
             )
             nice_buff.reverse = NiceReversedBuffType(nice=buff_reverse)
@@ -118,9 +132,9 @@ async def get_nice_func_with_reverse(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     reverseData: ReverseData = ReverseData.nice,
-    mstFunc: Optional[MstFunc] = None,
+    func_entity: Optional[FunctionEntityNoReverse] = None,
 ) -> NiceBaseFunctionReverse:
-    raw_func = raw.get_func_entity_no_reverse(conn, func_id, True, mstFunc)
+    raw_func = raw.get_func_entity_no_reverse(conn, func_id, True, func_entity)
     nice_func = NiceBaseFunctionReverse.parse_obj(get_nice_function(region, raw_func))
 
     if reverse and reverseDepth >= ReverseDepth.skillNp:
