@@ -110,7 +110,7 @@ from ...schemas.raw import (
 )
 
 
-schema_map_fetchone: dict[  # type:ignore
+schema_map_fetch_one: dict[  # type:ignore
     Type[BaseModelORJson], tuple[Table, ColumnElement]
 ] = {
     MstSvt: (mstSvt, mstSvt.c.id),
@@ -127,13 +127,13 @@ schema_map_fetchone: dict[  # type:ignore
     MstItem: (mstItem, mstItem.c.id),
 }
 
-Tfetchone = TypeVar("Tfetchone", bound=BaseModelORJson)
+TFetchOne = TypeVar("TFetchOne", bound=BaseModelORJson)
 
 
 def get_one(
-    conn: Connection, schema: Type[Tfetchone], where_id: Union[int, str]
-) -> Optional[Tfetchone]:
-    table, where_col = schema_map_fetchone[schema]
+    conn: Connection, schema: Type[TFetchOne], where_id: Union[int, str]
+) -> Optional[TFetchOne]:
+    table, where_col = schema_map_fetch_one[schema]
     stmt = select(table).where(where_col == where_id)
     entity_db = conn.execute(stmt).fetchone()
     if entity_db:
@@ -268,3 +268,23 @@ def get_all_multiple(
     table, where_col, order_col = schema_table_fetch_all_multiple[schema]
     stmt = select(table).where(where_col.in_(where_ids)).order_by(order_col)
     return [schema.from_orm(db_row) for db_row in conn.execute(stmt).fetchall()]
+
+
+schema_map_fetch_everything: dict[  # type:ignore
+    Type[BaseModelORJson], tuple[Table, ColumnElement]
+] = {
+    MstWar: (mstWar, mstWar.c.id),
+    MstEvent: (mstEvent, mstEvent.c.id),
+}
+
+TFetchEverything = TypeVar("TFetchEverything", bound=BaseModelORJson)
+
+
+def get_everything(
+    conn: Connection, schema: Type[TFetchEverything]
+) -> list[TFetchEverything]:
+    table, order_col = schema_map_fetch_everything[schema]
+    stmt = select(table).order_by(order_col)
+    entities_db = conn.execute(stmt).fetchall()
+
+    return [schema.from_orm(entity) for entity in entities_db]

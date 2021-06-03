@@ -53,11 +53,13 @@ from ..schemas.nice import AssetURL
 from ..schemas.raw import (
     MstBuff,
     MstClassRelationOverwrite,
+    MstEvent,
     MstFunc,
     MstQuest,
     MstSkill,
     MstSvt,
     MstTreasureDevice,
+    MstWar,
 )
 from . import reverse as reverse_ids
 from .utils import (
@@ -395,9 +397,9 @@ def get_basic_cc(region: Region, cc_id: int, lang: Language) -> BasicCommandCode
     return basic_cc
 
 
-def get_basic_event(region: Region, event_id: int, lang: Language) -> BasicEvent:
-    mstEvent = masters[region].mstEventId[event_id]
-
+def get_basic_event_from_raw(
+    region: Region, mstEvent: MstEvent, lang: Language
+) -> BasicEvent:
     basic_event = BasicEvent(
         id=mstEvent.id,
         type=EVENT_TYPE_NAME[mstEvent.type],
@@ -407,15 +409,32 @@ def get_basic_event(region: Region, event_id: int, lang: Language) -> BasicEvent
         endedAt=mstEvent.endedAt,
         finishedAt=mstEvent.finishedAt,
         materialOpenedAt=mstEvent.materialOpenedAt,
-        warIds=(war.id for war in masters[region].mstWarEventId.get(event_id, [])),
+        warIds=(war.id for war in masters[region].mstWarEventId.get(mstEvent.id, [])),
     )
 
     return basic_event
 
 
-def get_basic_war(region: Region, war_id: int, lang: Language) -> BasicWar:
-    mstWar = masters[region].mstWarId[war_id]
+def get_basic_event(
+    conn: Connection, region: Region, event_id: int, lang: Language
+) -> BasicEvent:
+    mstEvent = fetch.get_one(conn, MstEvent, event_id)
+    if not mstEvent:
+        raise HTTPException(status_code=404, detail="Event not found")
 
+    return get_basic_event_from_raw(region, mstEvent, lang)
+
+
+def get_all_basic_events(
+    conn: Connection, region: Region, lang: Language
+) -> list[BasicEvent]:
+    all_mstEvent = fetch.get_everything(conn, MstEvent)
+    return [
+        get_basic_event_from_raw(region, mstEvent, lang) for mstEvent in all_mstEvent
+    ]
+
+
+def get_basic_war_from_raw(mstWar: MstWar, lang: Language) -> BasicWar:
     return BasicWar(
         id=mstWar.id,
         coordinates=mstWar.coordinates,
@@ -424,6 +443,18 @@ def get_basic_war(region: Region, war_id: int, lang: Language) -> BasicWar:
         longName=get_translation(lang, mstWar.longName),
         eventId=mstWar.eventId,
     )
+
+
+def get_basic_war(conn: Connection, war_id: int, lang: Language) -> BasicWar:
+    mstWar = fetch.get_one(conn, MstWar, war_id)
+    if not mstWar:
+        raise HTTPException(status_code=404, detail="War not found")
+    return get_basic_war_from_raw(mstWar, lang)
+
+
+def get_all_basic_wars(conn: Connection, lang: Language) -> list[BasicWar]:
+    all_mstWar = fetch.get_everything(conn, MstWar)
+    return [get_basic_war_from_raw(mstWar, lang) for mstWar in all_mstWar]
 
 
 def get_basic_quest(conn: Connection, quest_id: int) -> BasicQuest:

@@ -510,15 +510,15 @@ async def get_buff(
     responses=get_error_code([404, 500]),
 )
 async def get_event(
-    region: Region, event_id: int, lang: Language = Depends(language_parameter)
+    region: Region,
+    event_id: int,
+    lang: Language = Depends(language_parameter),
+    conn: Connection = Depends(get_db),
 ) -> Response:
     """
     Get the basic event data from the given event ID
     """
-    if event_id in masters[region].mstEventId:
-        return item_response(basic.get_basic_event(region, event_id, lang))
-    else:
-        raise HTTPException(status_code=404, detail="Event not found")
+    return item_response(basic.get_basic_event(conn, region, event_id, lang))
 
 
 @router.get(
@@ -530,15 +530,14 @@ async def get_event(
     responses=get_error_code([404, 500]),
 )
 async def get_war(
-    region: Region, war_id: int, lang: Language = Depends(language_parameter)
+    war_id: int,
+    lang: Language = Depends(language_parameter),
+    conn: Connection = Depends(get_db),
 ) -> Response:
     """
     Get the basic war data from the given event ID
     """
-    if war_id in masters[region].mstWarId:
-        return item_response(basic.get_basic_war(region, war_id, lang))
-    else:
-        raise HTTPException(status_code=404, detail="Event not found")
+    return item_response(basic.get_basic_war(conn, war_id, lang))
 
 
 @router.get(

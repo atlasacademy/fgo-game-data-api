@@ -10,12 +10,12 @@ from pydantic import DirectoryPath
 
 from .config import SecretSettings, Settings, logger, project_root
 from .core.basic import (
+    get_all_basic_events,
+    get_all_basic_wars,
     get_basic_cc,
     get_basic_equip,
-    get_basic_event,
     get_basic_mc,
     get_basic_servant,
-    get_basic_war,
 )
 from .core.nice.cc import get_nice_command_code
 from .core.nice.item import get_nice_item_from_raw
@@ -153,14 +153,8 @@ def generate_exports(
                 get_basic_cc(region, cc_id, Language.jp)
                 for cc_id in masters[region].mstCommandCodeId
             )
-            all_basic_event_data = (
-                get_basic_event(region, event_id, Language.jp)
-                for event_id in masters[region].mstEventId
-            )
-            all_basic_war_data = (
-                get_basic_war(region, war_id, Language.jp)
-                for war_id in masters[region].mstWarId
-            )
+            all_basic_event_data = get_all_basic_events(conn, region, Language.jp)
+            all_basic_war_data = get_all_basic_wars(conn, Language.jp)
 
             output_files = [
                 ("basic_servant", all_basic_servant_data, dump_orjson),
@@ -207,14 +201,11 @@ def generate_exports(
                     get_nice_mystic_code(conn, region, mc_id, Language.en)
                     for mc_id in masters[region].mstEquipId
                 )
-                all_basic_event_data_en = (
-                    get_basic_event(region, event_id, Language.en)
-                    for event_id in masters[region].mstEventId
+                all_basic_event_data_en = get_all_basic_events(
+                    conn, region, Language.en
                 )
-                all_basic_war_data_en = (
-                    get_basic_war(region, war_id, Language.en)
-                    for war_id in masters[region].mstWarId
-                )
+                all_basic_war_data_en = get_all_basic_wars(conn, Language.en)
+
                 output_files = [
                     ("basic_servant_lang_en", all_basic_servant_en, dump_orjson),
                     ("basic_equip_lang_en", all_basic_equip_en, dump_orjson),
