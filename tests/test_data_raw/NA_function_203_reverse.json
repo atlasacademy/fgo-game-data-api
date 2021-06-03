@@ -21,6 +21,41 @@
           "mstSkill": {
             "effectList": [],
             "actIndividuality": [],
+            "script": {
+              "cutInId": 90001,
+              "cutInVoices": "ChrVoice_7100400:0_E150:1",
+              "cutInPrefabInfo": "e:7100460:7100460",
+              "cutInMessageMode": 3,
+              "cutInCamPlayerAll": 1,
+              "cutInPrefabOffsets": "0:-771:4"
+            },
+            "id": 962656,
+            "type": 1,
+            "name": "Okay, let's kill them. \"Twist of Love\"",
+            "ruby": "-",
+            "maxLv": 1,
+            "iconId": 600,
+            "motion": 1003
+          },
+          "mstSkillDetail": [],
+          "mstSvtSkill": [],
+          "mstSkillLv": [
+            {
+              "funcId": [284, 203],
+              "svals": ["[1000,-1,3]", "[1000,3,-1,500]"],
+              "script": {},
+              "skillId": 962656,
+              "lv": 1,
+              "chargeTurn": 0,
+              "skillDetailId": 1,
+              "priority": 0
+            }
+          ]
+        },
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
             "script": {},
             "id": 980058,
             "type": 1,
@@ -379,6 +414,34 @@
               "lv": 10,
               "chargeTurn": 5,
               "skillDetailId": 431450,
+              "priority": 0
+            }
+          ]
+        },
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
+            "id": 962704,
+            "type": 1,
+            "name": "Pepe's Backing \"Twist of Love\"",
+            "ruby": "-",
+            "maxLv": 1,
+            "iconId": 600,
+            "motion": 102
+          },
+          "mstSkillDetail": [],
+          "mstSvtSkill": [],
+          "mstSkillLv": [
+            {
+              "funcId": [284, 203],
+              "svals": ["[1000,-1,3]", "[1000,3,-1,500]"],
+              "script": {},
+              "skillId": 962704,
+              "lv": 1,
+              "chargeTurn": 0,
+              "skillDetailId": 1,
               "priority": 0
             }
           ]

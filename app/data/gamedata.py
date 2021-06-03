@@ -31,12 +31,10 @@ MASTER_WITHOUT_ID = {
     "mstClosedMessage",
     "mstClassRelationOverwrite",
     "mstStage",
-    "mstGift",
     "mstShop",
     "mstShopRelease",
     "mstAi",
     "mstAiField",
-    "mstFuncGroup",
     "mstAiAct",
     "mstSvtPassiveSkill",
 }
@@ -175,10 +173,8 @@ def update_masters(region_path: dict[Region, DirectoryPath]) -> None:
             ("mstSvtGroupSvtId", "mstSvtGroup", "svtId"),
             ("mstSvtSkillSvtId", "mstSvtSkill", "svtId"),
             ("mstWarEventId", "mstWar", "eventId"),
-            ("mstGiftId", "mstGift", "id"),
             ("mstShopEventId", "mstShop", "eventId"),
             ("mstShopReleaseShopId", "mstShopRelease", "shopId"),
-            ("mstFuncGroupId", "mstFuncGroup", "funcId"),
         ):
             master[masters_table] = defaultdict(list)
             for item in master[source_table]:

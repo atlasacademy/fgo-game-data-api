@@ -1107,8 +1107,6 @@ class MysticCodeEntity(BaseModelORJson):
 
 class Master(BaseModelORJson):
     mstFuncId: dict[int, MstFunc]
-    mstFuncGroupId: dict[int, list[MstFuncGroup]]
-    mstGiftId: dict[int, list[MstGift]]
     mstSvtServantCollectionNo: dict[int, int]
     mstSvtEquipCollectionNo: dict[int, int]
     mstCCCollectionNo: dict[int, int]

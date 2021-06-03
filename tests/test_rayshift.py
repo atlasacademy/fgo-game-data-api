@@ -1,6 +1,4 @@
 # pylint: disable=R0201,R0904
-import asyncio
-
 import pytest
 from httpx import AsyncClient
 from sqlalchemy.sql import and_, delete, select
@@ -30,7 +28,8 @@ async def test_rayshift_uncached_quest(client: AsyncClient) -> None:
         assert conn.execute(select_stmt).fetchone()
 
 
-def test_rayshift_quest_list(client: AsyncClient) -> None:
+@pytest.mark.asyncio
+async def test_rayshift_quest_list(client: AsyncClient) -> None:
     test_quest_id = 1000000
     select_stmt = select(rayshiftQuest).where(rayshiftQuest.c.questId == test_quest_id)
 
@@ -46,7 +45,7 @@ def test_rayshift_quest_list(client: AsyncClient) -> None:
     with engines[Region.NA].connect() as conn:
         assert conn.execute(select_stmt).fetchone() is not None
 
-    asyncio.run(client.get(f"/nice/NA/quest/{test_quest_id}/1"))
+    await client.get(f"/nice/NA/quest/{test_quest_id}/1")
 
     with engines[Region.NA].connect() as conn:
         inserted_rayshift_cache = select(rayshiftQuest).where(
