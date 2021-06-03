@@ -132,7 +132,7 @@ def load_script_list(
 
         for script in script_list:
             script_name = script.removesuffix(".txt")
-            quest_id: Optional[int] = None
+            quest_ids: list[Optional[int]] = []
             phase: Optional[int] = None
             sceneType: Optional[int] = None
 
@@ -143,18 +143,22 @@ def load_script_list(
                 phase = int(script_name[-2])
 
                 if script_int in scriptQuestId:
-                    quest_id = scriptQuestId[script_int]
-                elif script_int in questId:
-                    quest_id = script_int
+                    quest_ids.append(scriptQuestId[script_int])
+                if script_int in questId:
+                    quest_ids.append(script_int)
 
-            db_data.append(
-                {
-                    "scriptFileName": script_name,
-                    "questId": quest_id,
-                    "phase": phase,
-                    "sceneType": sceneType,
-                }
-            )
+            if not quest_ids:
+                quest_ids.append(None)
+
+            for quest_id in quest_ids:
+                db_data.append(
+                    {
+                        "scriptFileName": script_name,
+                        "questId": quest_id,
+                        "phase": phase,
+                        "sceneType": sceneType,
+                    }
+                )
 
     with engine.begin() as conn:
         recreate_table(conn, ScriptFileList)

@@ -111,9 +111,9 @@ def get_nice_quest(
             get_nice_quest_release(release, raw_quest.mstClosedMessage)
             for release in raw_quest.mstQuestRelease
         ],
-        "phases": raw_quest.phases,
-        "phasesWithEnemies": raw_quest.phasesWithEnemies,
-        "phasesNoBattle": raw_quest.phasesNoBattle,
+        "phases": sorted(raw_quest.phases),
+        "phasesWithEnemies": sorted(raw_quest.phasesWithEnemies),
+        "phasesNoBattle": sorted(raw_quest.phasesNoBattle),
         "noticeAt": raw_quest.mstQuest.noticeAt,
         "openedAt": raw_quest.mstQuest.openedAt,
         "closedAt": raw_quest.mstQuest.closedAt,

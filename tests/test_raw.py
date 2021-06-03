@@ -197,3 +197,7 @@ class TestServantSpecial:
     async def test_war_spots_from_multiple_maps(self, client: AsyncClient) -> None:
         response = await client.get("/raw/NA/war/9033")
         assert {spot["warId"] for spot in response.json()["mstSpot"]} == {9033, 9034}
+
+    async def test_scripts_first_run(self, client: AsyncClient) -> None:
+        response = await client.get("/raw/JP/quest/94035033/2")
+        assert response.json()["scripts"] == ["9403503320"]
