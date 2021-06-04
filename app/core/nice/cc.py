@@ -1,8 +1,12 @@
+from typing import Optional
+
 from sqlalchemy.engine import Connection
 
 from ...config import Settings
+from ...db.helpers import fetch
 from ...schemas.common import Language, Region
 from ...schemas.nice import AssetURL, NiceCommandCode
+from ...schemas.raw import MstCommandCode
 from .. import raw
 from ..utils import get_translation
 from .skill import get_nice_skill_with_svt
@@ -12,9 +16,13 @@ settings = Settings()
 
 
 def get_nice_command_code(
-    conn: Connection, region: Region, cc_id: int, lang: Language
+    conn: Connection,
+    region: Region,
+    cc_id: int,
+    lang: Language,
+    mstCc: Optional[MstCommandCode] = None,
 ) -> NiceCommandCode:
-    raw_cc = raw.get_command_code_entity(conn, cc_id, expand=True)
+    raw_cc = raw.get_command_code_entity(conn, cc_id, True, mstCc)
 
     base_settings = {"base_url": settings.asset_url, "region": region, "item_id": cc_id}
     nice_cc = NiceCommandCode(
@@ -38,3 +46,12 @@ def get_nice_command_code(
     )
 
     return nice_cc
+
+
+def get_all_nice_cc(
+    conn: Connection, region: Region, lang: Language
+) -> list[NiceCommandCode]:
+    mstCcs = fetch.get_everything(conn, MstCommandCode)
+    return [
+        get_nice_command_code(conn, region, mstCc.id, lang, mstCc) for mstCc in mstCcs
+    ]

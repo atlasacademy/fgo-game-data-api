@@ -412,9 +412,12 @@ def get_servant_entity(
 
 
 def get_mystic_code_entity(
-    conn: Connection, mc_id: int, expand: bool = False
+    conn: Connection,
+    mc_id: int,
+    expand: bool = False,
+    mstEquip: Optional[MstEquip] = None,
 ) -> MysticCodeEntity:
-    mc_db = fetch.get_one(conn, MstEquip, mc_id)
+    mc_db = mstEquip if mstEquip else fetch.get_one(conn, MstEquip, mc_id)
     if not mc_db:
         raise HTTPException(status_code=404, detail="Mystic Code not found")
 
@@ -430,9 +433,12 @@ def get_mystic_code_entity(
 
 
 def get_command_code_entity(
-    conn: Connection, cc_id: int, expand: bool = False
+    conn: Connection,
+    cc_id: int,
+    expand: bool = False,
+    mstCc: Optional[MstCommandCode] = None,
 ) -> CommandCodeEntity:
-    cc_db = fetch.get_one(conn, MstCommandCode, cc_id)
+    cc_db = mstCc if mstCc else fetch.get_one(conn, MstCommandCode, cc_id)
     if not cc_db:
         raise HTTPException(status_code=404, detail="Command Code not found")
 

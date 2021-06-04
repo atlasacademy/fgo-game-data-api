@@ -275,6 +275,8 @@ schema_map_fetch_everything: dict[  # type:ignore
 ] = {
     MstWar: (mstWar, mstWar.c.id),
     MstEvent: (mstEvent, mstEvent.c.id),
+    MstCommandCode: (mstCommandCode, mstCommandCode.c.id),
+    MstEquip: (mstEquip, mstEquip.c.id),
 }
 
 TFetchEverything = TypeVar("TFetchEverything", bound=BaseModelORJson)

@@ -249,12 +249,12 @@ if settings.documentation_all_nice:
     responses=get_error_code([400, 403]),
 )
 async def get_mystic_code(
-    region: Region, mc_id: int, lang: Language = Depends(language_parameter)
+    region: Region,
+    mc_id: int,
+    lang: Language = Depends(language_parameter),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
-    if mc_id in masters[region].mstEquipId:
-        return item_response(basic.get_basic_mc(region, mc_id, lang))
-    else:
-        raise HTTPException(status_code=404, detail="Mystic Code not found")
+    return item_response(await basic.get_basic_mc(redis, region, mc_id, lang))
 
 
 get_cc_description = "Get basic Command Code info from ID"
@@ -283,13 +283,11 @@ async def get_command_code(
     region: Region,
     cc_id: int,
     lang: Language = Depends(language_parameter),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     if cc_id in masters[region].mstCCCollectionNo:
         cc_id = masters[region].mstCCCollectionNo[cc_id]
-    if cc_id in masters[region].mstCommandCodeId:
-        return item_response(basic.get_basic_cc(region, cc_id, lang))
-    else:
-        raise HTTPException(status_code=404, detail="Command Code not found")
+    return item_response(await basic.get_basic_cc(redis, region, cc_id, lang))
 
 
 basic_skill_extra = """

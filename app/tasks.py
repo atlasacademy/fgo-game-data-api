@@ -10,16 +10,16 @@ from pydantic import DirectoryPath
 
 from .config import SecretSettings, Settings, logger, project_root
 from .core.basic import (
+    get_all_basic_cc,
     get_all_basic_events,
+    get_all_basic_mc,
     get_all_basic_wars,
-    get_basic_cc,
     get_basic_equip,
-    get_basic_mc,
     get_basic_servant,
 )
-from .core.nice.cc import get_nice_command_code
+from .core.nice.cc import get_all_nice_cc
 from .core.nice.item import get_nice_item_from_raw
-from .core.nice.mc import get_nice_mystic_code
+from .core.nice.mc import get_all_nice_mc
 from .core.nice.nice import get_nice_equip_model, get_nice_servant_model
 from .core.utils import get_safe, sort_by_collection_no
 from .data.custom_mappings import TRANSLATIONS
@@ -129,14 +129,8 @@ async def generate_exports(
             )
             all_illustrator_data = get_all_illustrators(conn)
             all_cv_data = get_all_cvs(conn)
-            all_mc_data = (
-                get_nice_mystic_code(conn, region, mc_id, Language.jp)
-                for mc_id in masters[region].mstEquipId
-            )
-            all_cc_data = (
-                get_nice_command_code(conn, region, cc_id, Language.jp)
-                for cc_id in masters[region].mstCommandCodeId
-            )
+            all_mc_data = get_all_nice_mc(conn, region, Language.jp)
+            all_cc_data = get_all_nice_cc(conn, region, Language.jp)
             all_basic_servant_data = sort_by_collection_no(
                 [
                     await get_basic_servant(redis, region, svt_id)
@@ -149,13 +143,9 @@ async def generate_exports(
                     for svt_id in masters[region].mstSvtEquipCollectionNo.values()
                 ]
             )
-            all_basic_mc_data = (
-                get_basic_mc(region, mc_id, Language.jp)
-                for mc_id in masters[region].mstEquipId
-            )
-            all_basic_cc_data = (
-                get_basic_cc(region, cc_id, Language.jp)
-                for cc_id in masters[region].mstCommandCodeId
+            all_basic_mc_data = get_all_basic_mc(conn, region, Language.jp)
+            all_basic_cc_data = sort_by_collection_no(
+                get_all_basic_cc(conn, region, Language.jp)
             )
             all_basic_event_data = get_all_basic_events(conn, region, Language.jp)
             all_basic_war_data = get_all_basic_wars(conn, Language.jp)
@@ -190,25 +180,15 @@ async def generate_exports(
                     ]
                 )
                 all_basic_cc_en = sort_by_collection_no(
-                    get_basic_cc(region, cc_id, Language.en)
-                    for cc_id in masters[region].mstCommandCodeId
+                    get_all_basic_cc(conn, region, Language.en)
                 )
-                all_cc_data_en = (
-                    get_nice_command_code(conn, region, cc_id, Language.en)
-                    for cc_id in masters[region].mstCommandCodeId
-                )
+                all_cc_data_en = get_all_nice_cc(conn, region, Language.en)
                 all_item_data_en = (
                     get_nice_item_from_raw(region, raw_item, Language.en)
                     for raw_item in get_all_items(conn)
                 )
-                all_basic_mc_en = (
-                    get_basic_mc(region, mc_id, Language.en)
-                    for mc_id in masters[region].mstEquipId
-                )
-                all_mc_data_en = (
-                    get_nice_mystic_code(conn, region, mc_id, Language.en)
-                    for mc_id in masters[region].mstEquipId
-                )
+                all_basic_mc_en = get_all_basic_mc(conn, region, Language.en)
+                all_mc_data_en = get_all_nice_mc(conn, region, Language.en)
                 all_basic_event_data_en = get_all_basic_events(
                     conn, region, Language.en
                 )

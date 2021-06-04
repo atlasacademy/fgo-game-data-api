@@ -181,14 +181,14 @@ async def get_nice_skill_with_reverse(
                     await get_basic_servant(redis, region, svt_id, lang=lang)
                     for svt_id in activeSkills | passiveSkills
                 ],
-                MC=(
-                    get_basic_mc(region, mc_id, lang)
+                MC=[
+                    await get_basic_mc(redis, region, mc_id, lang)
                     for mc_id in reverse_ids.skill_to_MCId(region, skill_id)
-                ),
-                CC=(
-                    get_basic_cc(region, cc_id, lang)
+                ],
+                CC=[
+                    await get_basic_cc(redis, region, cc_id, lang)
                     for cc_id in reverse_ids.skill_to_CCId(region, skill_id)
-                ),
+                ],
             )
             nice_skill.reverse = NiceReversedSkillTdType(basic=basic_skill_reverse)
         else:

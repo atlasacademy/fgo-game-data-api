@@ -1,8 +1,12 @@
+from typing import Optional
+
 from sqlalchemy.engine import Connection
 
 from ...config import Settings
+from ...db.helpers import fetch
 from ...schemas.common import Language, Region
 from ...schemas.nice import AssetURL, NiceMysticCode
+from ...schemas.raw import MstEquip
 from .. import raw
 from ..utils import get_translation
 from .skill import get_nice_skill_with_svt
@@ -12,9 +16,13 @@ settings = Settings()
 
 
 def get_nice_mystic_code(
-    conn: Connection, region: Region, mc_id: int, lang: Language
+    conn: Connection,
+    region: Region,
+    mc_id: int,
+    lang: Language,
+    mstCc: Optional[MstEquip] = None,
 ) -> NiceMysticCode:
-    raw_mc = raw.get_mystic_code_entity(conn, mc_id, expand=True)
+    raw_mc = raw.get_mystic_code_entity(conn, mc_id, True, mstCc)
     base_settings = {"base_url": settings.asset_url, "region": region}
     nice_mc = NiceMysticCode(
         id=raw_mc.mstEquip.id,
@@ -45,3 +53,13 @@ def get_nice_mystic_code(
     )
 
     return nice_mc
+
+
+def get_all_nice_mc(
+    conn: Connection, region: Region, lang: Language
+) -> list[NiceMysticCode]:
+    mstEquips = fetch.get_everything(conn, MstEquip)
+    return [
+        get_nice_mystic_code(conn, region, mstEquip.id, lang, mstEquip)
+        for mstEquip in mstEquips
+    ]

@@ -20,7 +20,6 @@ MASTER_WITH_ID = {
     "mstFunc",
     "mstSkill",
     "mstTreasureDevice",
-    "mstEquip",
     "mstCommandCode",
     "mstEvent",
     "mstWar",

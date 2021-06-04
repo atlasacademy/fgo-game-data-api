@@ -53,6 +53,8 @@ from ..schemas.nice import AssetURL
 from ..schemas.raw import (
     MstBuff,
     MstClassRelationOverwrite,
+    MstCommandCode,
+    MstEquip,
     MstEvent,
     MstFunc,
     MstQuest,
@@ -256,14 +258,14 @@ async def get_basic_skill(
                 await get_basic_servant(redis, region, svt_id, lang=lang)
                 for svt_id in activeSkills | passiveSkills
             ],
-            MC=(
-                get_basic_mc(region, mc_id, lang)
+            MC=[
+                await get_basic_mc(redis, region, mc_id, lang)
                 for mc_id in reverse_ids.skill_to_MCId(region, skill_id)
-            ),
-            CC=(
-                get_basic_cc(region, cc_id, lang)
+            ],
+            CC=[
+                await get_basic_cc(redis, region, cc_id, lang)
                 for cc_id in reverse_ids.skill_to_CCId(region, skill_id)
-            ),
+            ],
         )
         basic_skill.reverse = BasicReversedSkillTdType(basic=skill_reverse)
     return basic_skill
@@ -371,8 +373,9 @@ async def get_basic_equip(
     )
 
 
-def get_basic_mc(region: Region, mc_id: int, lang: Language) -> BasicMysticCode:
-    mstEquip = masters[region].mstEquipId[mc_id]
+def get_basic_mc_from_raw(
+    region: Region, mstEquip: MstEquip, lang: Language
+) -> BasicMysticCode:
     base_settings = {"base_url": settings.asset_url, "region": region}
     item_assets = {
         "male": AssetURL.mc["item"].format(
@@ -392,9 +395,31 @@ def get_basic_mc(region: Region, mc_id: int, lang: Language) -> BasicMysticCode:
     return basic_mc
 
 
-def get_basic_cc(region: Region, cc_id: int, lang: Language) -> BasicCommandCode:
-    mstCommandCode = masters[region].mstCommandCodeId[cc_id]
-    base_settings = {"base_url": settings.asset_url, "region": region, "item_id": cc_id}
+async def get_basic_mc(
+    redis: Redis, region: Region, mc_id: int, lang: Language
+) -> BasicMysticCode:
+    mstEquip = await pydantic_object.fetch_id(redis, region, MstEquip, mc_id)
+    if not mstEquip:
+        raise HTTPException(status_code=404, detail="Mystic Code not found")
+
+    return get_basic_mc_from_raw(region, mstEquip, lang)
+
+
+def get_all_basic_mc(
+    conn: Connection, region: Region, lang: Language
+) -> list[BasicMysticCode]:
+    mstEquips = fetch.get_everything(conn, MstEquip)
+    return [get_basic_mc_from_raw(region, mstEquip, lang) for mstEquip in mstEquips]
+
+
+def get_basic_cc_from_raw(
+    region: Region, mstCommandCode: MstCommandCode, lang: Language
+) -> BasicCommandCode:
+    base_settings = {
+        "base_url": settings.asset_url,
+        "region": region,
+        "item_id": mstCommandCode.id,
+    }
 
     basic_cc = BasicCommandCode(
         id=mstCommandCode.id,
@@ -405,6 +430,25 @@ def get_basic_cc(region: Region, cc_id: int, lang: Language) -> BasicCommandCode
     )
 
     return basic_cc
+
+
+async def get_basic_cc(
+    redis: Redis, region: Region, cc_id: int, lang: Language
+) -> BasicCommandCode:
+    mstCommandCode = await pydantic_object.fetch_id(
+        redis, region, MstCommandCode, cc_id
+    )
+    if not mstCommandCode:
+        raise HTTPException(status_code=404, detail="Command Code not found")
+
+    return get_basic_cc_from_raw(region, mstCommandCode, lang)
+
+
+def get_all_basic_cc(
+    conn: Connection, region: Region, lang: Language
+) -> list[BasicCommandCode]:
+    mstCcs = fetch.get_everything(conn, MstCommandCode)
+    return [get_basic_cc_from_raw(region, mstCcs, lang) for mstCcs in mstCcs]
 
 
 def get_basic_event_from_raw(
