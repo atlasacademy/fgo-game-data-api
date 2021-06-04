@@ -18,32 +18,39 @@ def test_subtitle_svtId() -> None:
 
 
 def test_parse_dataVals_add_state_6_items() -> None:
-    result = parse_dataVals("[1000,3,3,300,1000,10]", FuncType.ADD_STATE, Region.NA)
-    assert result == {
-        "Rate": 1000,
-        "Turn": 3,
-        "Count": 3,
-        "Value": 300,
-        "UseRate": 1000,
-        "Value2": 10,
-    }
+    with engines[Region.NA].connect() as conn:
+        result = parse_dataVals(
+            conn, "[1000,3,3,300,1000,10]", FuncType.ADD_STATE, Region.NA
+        )
+        assert result == {
+            "Rate": 1000,
+            "Turn": 3,
+            "Count": 3,
+            "Value": 300,
+            "UseRate": 1000,
+            "Value2": 10,
+        }
 
 
 def test_parse_dataVals_unknown_datavals(caplog: pytest.LogCaptureFixture) -> None:
-    parse_dataVals("[1000,3,3,300]", FuncType.SUB_STATE, Region.NA)
-    assert (
-        "Some datavals weren't parsed for func type 2: "
-        "[1000,3,3,300] => {'Rate': 1000, 'Value': 3, 'Value2': 3}" in caplog.text
-    )
+    with engines[Region.NA].connect() as conn:
+        parse_dataVals(conn, "[1000,3,3,300]", FuncType.SUB_STATE, Region.NA)
+        assert (
+            "Some datavals weren't parsed for func type 2: "
+            "[1000,3,3,300] => {'Rate': 1000, 'Value': 3, 'Value2': 3}" in caplog.text
+        )
 
 
 def test_parse_dataVals_class_drop_up_rate() -> None:
-    result = parse_dataVals("[2,400,80017]", FuncType.CLASS_DROP_UP, Region.NA)
-    result = {k: v for k, v in result.items() if "aa" not in k}
-    assert result == {
-        "EventId": 80017,
-        "RateCount": 400,
-    }
+    with engines[Region.NA].connect() as conn:
+        result = parse_dataVals(
+            conn, "[2,400,80017]", FuncType.CLASS_DROP_UP, Region.NA
+        )
+        result = {k: v for k, v in result.items() if "aa" not in k}
+        assert result == {
+            "EventId": 80017,
+            "RateCount": 400,
+        }
 
 
 cases_datavals_fail_dict = {
@@ -61,8 +68,8 @@ cases_datavals_fail = [
 
 @pytest.mark.parametrize("dataVals", cases_datavals_fail)
 def test_parse_datavals_fail_list_str(dataVals: str) -> None:
-    with pytest.raises(HTTPException):
-        parse_dataVals(dataVals, 1, Region.NA)
+    with pytest.raises(HTTPException), engines[Region.NA].connect() as conn:
+        parse_dataVals(conn, dataVals, 1, Region.NA)
 
 
 def test_reverseDepth_str_comparison() -> None:

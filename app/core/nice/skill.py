@@ -35,6 +35,7 @@ def get_extra_passive(svt_passive: MstSvtPassiveSkill) -> ExtraPassive:
 
 
 def get_nice_skill_with_svt(
+    conn: Connection,
     skillEntity: SkillEntityNoReverse,
     svtId: int,
     region: Region,
@@ -96,6 +97,7 @@ def get_nice_skill_with_svt(
             )
 
             nice_func = get_nice_function(
+                conn,
                 region,
                 function,
                 svals=[skill_lv.svals[funci] for skill_lv in skillEntity.mstSkillLv],
@@ -128,7 +130,7 @@ def get_nice_skill_with_svt(
 
 
 def get_nice_skill_from_raw(
-    region: Region, raw_skill: SkillEntityNoReverse, lang: Language
+    conn: Connection, region: Region, raw_skill: SkillEntityNoReverse, lang: Language
 ) -> NiceSkillReverse:
     svt_list = [svt_skill.svtId for svt_skill in raw_skill.mstSvtSkill]
     if svt_list:
@@ -137,7 +139,7 @@ def get_nice_skill_from_raw(
         svt_id = 0
 
     nice_skill = NiceSkillReverse.parse_obj(
-        get_nice_skill_with_svt(raw_skill, svt_id, region, lang)[0]
+        get_nice_skill_with_svt(conn, raw_skill, svt_id, region, lang)[0]
     )
 
     return nice_skill
@@ -150,7 +152,7 @@ def get_nice_skill_from_id(
     lang: Language,
 ) -> NiceSkillReverse:
     raw_skill = get_skill_entity_no_reverse(conn, skill_id, expand=True)
-    return get_nice_skill_from_raw(region, raw_skill, lang)
+    return get_nice_skill_from_raw(conn, region, raw_skill, lang)
 
 
 @dataclass(eq=True, frozen=True)
@@ -190,7 +192,7 @@ def get_multiple_nice_skills(
     return {
         skill_svt: NiceSkill.parse_obj(
             get_nice_skill_with_svt(
-                raw_skills[skill_svt.skill_id], skill_svt.svt_id, region, lang
+                conn, raw_skills[skill_svt.skill_id], skill_svt.svt_id, region, lang
             )[0]
         )
         for skill_svt in skill_svts

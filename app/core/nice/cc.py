@@ -39,7 +39,7 @@ def get_nice_command_code(
         skills=(
             skill
             for skillEntity in raw_cc.mstSkill
-            for skill in get_nice_skill_with_svt(skillEntity, cc_id, region, lang)
+            for skill in get_nice_skill_with_svt(conn, skillEntity, cc_id, region, lang)
         ),
         illustrator=raw_cc.mstIllustrator.name if raw_cc.mstIllustrator else "",
         comment=raw_cc.mstCommandCodeComment.comment,

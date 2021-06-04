@@ -18,7 +18,11 @@ settings = Settings()
 
 
 def get_nice_td(
-    tdEntity: TdEntityNoReverse, svtId: int, region: Region, lang: Language
+    conn: Connection,
+    tdEntity: TdEntityNoReverse,
+    svtId: int,
+    region: Region,
+    lang: Language,
 ) -> list[dict[str, Any]]:
     nice_td: dict[str, Any] = {
         "id": tdEntity.mstTreasureDevice.id,
@@ -59,6 +63,7 @@ def get_nice_td(
     for funci, _ in enumerate(tdEntity.mstTreasureDeviceLv[0].funcId):
         if tdEntity.mstTreasureDeviceLv[0].expandedFuncId:
             nice_func = get_nice_function(
+                conn,
                 region,
                 tdEntity.mstTreasureDeviceLv[0].expandedFuncId[funci],
                 svals=[
@@ -142,7 +147,7 @@ def get_multiple_nice_tds(
     }
     return {
         td_svt: NiceTd.parse_obj(
-            get_nice_td(raw_tds[td_svt.td_id], td_svt.svt_id, region, lang)[0]
+            get_nice_td(conn, raw_tds[td_svt.td_id], td_svt.svt_id, region, lang)[0]
         )
         for td_svt in td_svts
         if td_svt.td_id in raw_tds

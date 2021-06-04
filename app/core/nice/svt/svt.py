@@ -221,20 +221,20 @@ def get_nice_servant(
     nice_data["skills"] = [
         skill
         for skillEntity in raw_svt.mstSkill
-        for skill in get_nice_skill_with_svt(skillEntity, svt_id, region, lang)
+        for skill in get_nice_skill_with_svt(conn, skillEntity, svt_id, region, lang)
     ]
 
     nice_data["classPassive"] = [
         skill
         for skillEntity in raw_svt.mstSvt.expandedClassPassive
-        for skill in get_nice_skill_with_svt(skillEntity, svt_id, region, lang)
+        for skill in get_nice_skill_with_svt(conn, skillEntity, svt_id, region, lang)
     ]
 
     nice_data["extraPassive"] = [
         skill
         for skillEntity in raw_svt.expandedExtraPassive
         for skill in get_nice_skill_with_svt(
-            skillEntity, svt_id, region, lang, raw_svt.mstSvtPassiveSkill
+            conn, skillEntity, svt_id, region, lang, raw_svt.mstSvtPassiveSkill
         )
     ]
 
@@ -263,7 +263,7 @@ def get_nice_servant(
     nice_data["noblePhantasms"] = [
         td
         for tdEntity in sorted(playable_tds, key=lambda x: x.mstTreasureDevice.id)
-        for td in get_nice_td(tdEntity, svt_id, region, lang)
+        for td in get_nice_td(conn, tdEntity, svt_id, region, lang)
     ]
 
     if lore:

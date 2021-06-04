@@ -48,7 +48,7 @@ def get_nice_mystic_code(
         skills=(
             skill
             for skillEntity in raw_mc.mstSkill
-            for skill in get_nice_skill_with_svt(skillEntity, mc_id, region, lang)
+            for skill in get_nice_skill_with_svt(conn, skillEntity, mc_id, region, lang)
         ),
     )
 

@@ -121,7 +121,9 @@ async def get_nice_func_with_reverse(
     mstFunc: Optional[MstFunc] = None,
 ) -> NiceBaseFunctionReverse:
     raw_func = raw.get_func_entity_no_reverse(conn, func_id, True, mstFunc)
-    nice_func = NiceBaseFunctionReverse.parse_obj(get_nice_function(region, raw_func))
+    nice_func = NiceBaseFunctionReverse.parse_obj(
+        get_nice_function(conn, region, raw_func)
+    )
 
     if reverse and reverseDepth >= ReverseDepth.skillNp:
         if reverseData == ReverseData.basic:
@@ -170,7 +172,7 @@ async def get_nice_skill_with_reverse(
     reverseData: ReverseData = ReverseData.nice,
 ) -> NiceSkillReverse:
     raw_skill = raw.get_skill_entity_no_reverse(conn, skill_id, expand=True)
-    nice_skill = get_nice_skill_from_raw(region, raw_skill, lang)
+    nice_skill = get_nice_skill_from_raw(conn, region, raw_skill, lang)
 
     if reverse and reverseDepth >= ReverseDepth.servant:
         activeSkills = {svt_skill.svtId for svt_skill in raw_skill.mstSvtSkill}
@@ -224,7 +226,9 @@ async def get_nice_td_with_reverse(
 
     # All td_id has a svtTd entry
     svt_id = next(svt_id.svtId for svt_id in raw_td.mstSvtTreasureDevice)
-    nice_td = NiceTdReverse.parse_obj(get_nice_td(raw_td, svt_id, region, lang)[0])
+    nice_td = NiceTdReverse.parse_obj(
+        get_nice_td(conn, raw_td, svt_id, region, lang)[0]
+    )
 
     if reverse and reverseDepth >= ReverseDepth.servant:
         if reverseData == ReverseData.basic:
