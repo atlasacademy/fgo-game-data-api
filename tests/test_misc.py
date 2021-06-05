@@ -58,6 +58,7 @@ cases_datavals_fail_dict = {
     "test_dataVals_fail_str_dataVals_str_value": "[HideMiss:123/abc]",
     "test_dataVals_fail_list_str": "[TargetList:123/abc]",
     "test_dataVals_fail_str_not_a_list": "[TargetList:abc]",
+    "test_unknown_function_dependFunc": "[5000,DependFuncId1:[9999],DependFuncVals1:[0,5000,Value2:250]]",
 }
 
 

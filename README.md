@@ -35,6 +35,7 @@ List of environment variables for the main app.
 - `RAYSHIFT_API_URL`: default to https://rayshift.io/api/v1/. Rayshift.io API URL.
 - `QUEST_CACHE_LENGTH`: default to `3600`. How long to cache the quest and war endpoints in seconds. Because the rayshift data is updated continously, web and quest endpoints have lower cache time.
 - `WRITE_POSTGRES_DATA`: default to `True`. Overwrite the data in PostgreSQL when importing.
+- `WRITE_REDIS_DATA`: default to `True`. Overwrite the data in Redis when importing.
 - `OPENAPI_URL`: default to `None`. Set the server URL in the openapi schema export.
 - `EXPORT_ALL_NICE`: default to `False`. If set to `True`, at start the app will generate nice data of all servant and CE and serve them at the `/export` endpoint. It's recommended to serve the files in the `/export` folder using nginx or equivalent webserver to lighten the load on the API server.
 - `DOCUMENTATION_ALL_NICE`: default to `False`. If set to `True`, there will be links to the exported all nice files in the documentation.
@@ -55,6 +56,7 @@ REDISDSN="redis://localhost:6379/0"
 RAYSHIFT_API_KEY="eca334a9-3289-4ad7-9b92-1ec2bbc3fc19"
 QUEST_CACHE_LENGTH=3600
 WRITE_POSTGRES_DATA=True
+WRITE_REDIS_DATA=True
 ASSET_URL="https://example.com/assets/"
 OPENAPI_URL="https://api.atlasacademy.io"
 EXPORT_ALL_NICE=False

@@ -50,7 +50,7 @@ def get_nice_command_code(
 
 def get_all_nice_cc(
     conn: Connection, region: Region, lang: Language
-) -> list[NiceCommandCode]:
+) -> list[NiceCommandCode]:  # pragma: no cover
     mstCcs = fetch.get_everything(conn, MstCommandCode)
     return [
         get_nice_command_code(conn, region, mstCc.id, lang, mstCc) for mstCc in mstCcs

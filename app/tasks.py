@@ -261,6 +261,7 @@ async def load_and_export(
 ) -> None:  # pragma: no cover
     if settings.write_postgres_data:
         update_db(region_path)
+    if settings.write_redis_data:
         await load_redis_data(redis, region_path)
     update_masters(region_path)
     await generate_exports(redis, region_path)

@@ -284,7 +284,7 @@ TFetchEverything = TypeVar("TFetchEverything", bound=BaseModelORJson)
 
 def get_everything(
     conn: Connection, schema: Type[TFetchEverything]
-) -> list[TFetchEverything]:
+) -> list[TFetchEverything]:  # pragma: no cover
     table, order_col = schema_map_fetch_everything[schema]
     stmt = select(table).order_by(order_col)
     entities_db = conn.execute(stmt).fetchall()

@@ -407,7 +407,7 @@ async def get_basic_mc(
 
 def get_all_basic_mc(
     conn: Connection, region: Region, lang: Language
-) -> list[BasicMysticCode]:
+) -> list[BasicMysticCode]:  # pragma: no cover
     mstEquips = fetch.get_everything(conn, MstEquip)
     return [get_basic_mc_from_raw(region, mstEquip, lang) for mstEquip in mstEquips]
 
@@ -446,7 +446,7 @@ async def get_basic_cc(
 
 def get_all_basic_cc(
     conn: Connection, region: Region, lang: Language
-) -> list[BasicCommandCode]:
+) -> list[BasicCommandCode]:  # pragma: no cover
     mstCcs = fetch.get_everything(conn, MstCommandCode)
     return [get_basic_cc_from_raw(region, mstCcs, lang) for mstCcs in mstCcs]
 
@@ -481,7 +481,7 @@ def get_basic_event(
 
 def get_all_basic_events(
     conn: Connection, region: Region, lang: Language
-) -> list[BasicEvent]:
+) -> list[BasicEvent]:  # pragma: no cover
     all_mstEvent = fetch.get_everything(conn, MstEvent)
     return [
         get_basic_event_from_raw(region, mstEvent, lang) for mstEvent in all_mstEvent
@@ -506,7 +506,9 @@ def get_basic_war(conn: Connection, war_id: int, lang: Language) -> BasicWar:
     return get_basic_war_from_raw(mstWar, lang)
 
 
-def get_all_basic_wars(conn: Connection, lang: Language) -> list[BasicWar]:
+def get_all_basic_wars(
+    conn: Connection, lang: Language
+) -> list[BasicWar]:  # pragma: no cover
     all_mstWar = fetch.get_everything(conn, MstWar)
     return [get_basic_war_from_raw(mstWar, lang) for mstWar in all_mstWar]
 

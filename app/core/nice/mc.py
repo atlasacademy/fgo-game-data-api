@@ -57,7 +57,7 @@ def get_nice_mystic_code(
 
 def get_all_nice_mc(
     conn: Connection, region: Region, lang: Language
-) -> list[NiceMysticCode]:
+) -> list[NiceMysticCode]:  # pragma: no cover
     mstEquips = fetch.get_everything(conn, MstEquip)
     return [
         get_nice_mystic_code(conn, region, mstEquip.id, lang, mstEquip)
