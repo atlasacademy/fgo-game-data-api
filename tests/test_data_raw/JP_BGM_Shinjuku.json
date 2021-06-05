@@ -1,0 +1,68 @@
+{
+  "mstBgm": {
+    "id": 138,
+    "fileName": "BGM_MAP_23",
+    "name": "悪性隔絶魔境：\n新宿",
+    "priority": 12001,
+    "detail": "",
+    "flag": 0,
+    "shopId": 7000138,
+    "logoId": 23
+  },
+  "mstBgmRelease": [
+    {
+      "targetIds": [1000822],
+      "vals": [0],
+      "bgmId": 138,
+      "id": 1,
+      "priority": 10000,
+      "type": 1,
+      "condGroup": 1,
+      "closedMessageId": 110
+    },
+    {
+      "targetIds": [2000118],
+      "vals": [0],
+      "bgmId": 138,
+      "id": 2,
+      "priority": 9000,
+      "type": 1,
+      "condGroup": 1,
+      "closedMessageId": 112
+    }
+  ],
+  "mstClosedMessage": [
+    { "id": 110, "message": "？？？" },
+    { "id": 112, "message": "亜種特異点Ⅰクリアで開放可能" }
+  ],
+  "mstShop": {
+    "itemIds": [7106],
+    "prices": [20],
+    "targetIds": [0],
+    "script": {},
+    "anotherPayType": 0,
+    "anotherItemIds": [],
+    "useAnotherPayCommonReleaseId": 0,
+    "id": 7000138,
+    "baseShopId": 7000138,
+    "eventId": 0,
+    "slot": 0,
+    "flag": 0,
+    "priority": 66,
+    "purchaseType": 12,
+    "setNum": 1,
+    "payType": 11,
+    "shopType": 8,
+    "limitNum": 1,
+    "defaultLv": 0,
+    "defaultLimitCount": 0,
+    "name": "悪性隔絶魔境：新宿",
+    "detail": "アサシンモニュメントを20個消費して\n悪性隔絶魔境：新宿を開放",
+    "infoMessage": "",
+    "warningMessage": "",
+    "imageId": 0,
+    "bgImageId": 0,
+    "openedAt": 1521968400,
+    "closedAt": 1901199599
+  }
+}

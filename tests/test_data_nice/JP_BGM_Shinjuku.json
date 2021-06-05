@@ -1,0 +1,66 @@
+{
+  "id": 138,
+  "name": "Quarantined Territory of Malice:\nShinjuku",
+  "audioAsset": "https://assets.atlasacademy.io/GameData/JP/Audio/BGM_MAP_23/BGM_MAP_23.mp3",
+  "priority": 12001,
+  "detail": "",
+  "notReleased": false,
+  "shop": {
+    "id": 7000138,
+    "baseShopId": 7000138,
+    "shopType": "bgm",
+    "eventId": 0,
+    "slot": 0,
+    "priority": 66,
+    "name": "悪性隔絶魔境：新宿",
+    "detail": "アサシンモニュメントを20個消費して\n悪性隔絶魔境：新宿を開放",
+    "infoMessage": "",
+    "warningMessage": "",
+    "payType": "item",
+    "cost": {
+      "item": {
+        "id": 7106,
+        "name": "Assassin Monument",
+        "type": "tdLvUp",
+        "uses": ["ascension"],
+        "detail": "【霊基再臨素材】\nアサシンクラスを称えるモニュメント",
+        "individuality": [],
+        "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7106.png",
+        "background": "gold",
+        "priority": 312,
+        "dropPriority": 5295
+      },
+      "amount": 20
+    },
+    "purchaseType": "bgm",
+    "targetIds": [0],
+    "itemSet": [],
+    "setNum": 1,
+    "limitNum": 1,
+    "defaultLv": 0,
+    "defaultLimitCount": 0,
+    "openedAt": 1521968400,
+    "closedAt": 1901199599
+  },
+  "logo": "https://assets.atlasacademy.io/GameData/JP/MyRoomSound/soundlogo_023.png",
+  "releaseConditions": [
+    {
+      "id": 1,
+      "type": "questClear",
+      "condGroup": 1,
+      "targetIds": [1000822],
+      "vals": [0],
+      "priority": 10000,
+      "closedMessage": "？？？"
+    },
+    {
+      "id": 2,
+      "type": "questClear",
+      "condGroup": 1,
+      "targetIds": [2000118],
+      "vals": [0],
+      "priority": 9000,
+      "closedMessage": "亜種特異点Ⅰクリアで開放可能"
+    }
+  ]
+}

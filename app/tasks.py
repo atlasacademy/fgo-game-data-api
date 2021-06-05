@@ -17,6 +17,7 @@ from .core.basic import (
     get_basic_equip,
     get_basic_servant,
 )
+from .core.nice.bgm import get_all_nice_bgm_entities
 from .core.nice.cc import get_all_nice_cc
 from .core.nice.item import get_nice_item_from_raw
 from .core.nice.mc import get_all_nice_mc
@@ -131,6 +132,7 @@ async def generate_exports(
             all_cv_data = get_all_cvs(conn)
             all_mc_data = get_all_nice_mc(conn, region, Language.jp)
             all_cc_data = get_all_nice_cc(conn, region, Language.jp)
+            all_bgm_data = get_all_nice_bgm_entities(conn, region, Language.jp)
             all_basic_servant_data = sort_by_collection_no(
                 [
                     await get_basic_servant(redis, region, svt_id)
@@ -162,6 +164,7 @@ async def generate_exports(
                 ("nice_command_code", all_cc_data, dump_orjson),
                 ("nice_item", all_item_data, dump_orjson),
                 ("nice_mystic_code", all_mc_data, dump_orjson),
+                ("nice_bgm", all_bgm_data, dump_orjson),
                 ("nice_illustrator", all_illustrator_data, dump_orjson),
                 ("nice_cv", all_cv_data, dump_orjson),
             ]
@@ -193,6 +196,7 @@ async def generate_exports(
                     conn, region, Language.en
                 )
                 all_basic_war_data_en = get_all_basic_wars(conn, Language.en)
+                all_bgm_data_en = get_all_nice_bgm_entities(conn, region, Language.en)
 
                 output_files = [
                     ("basic_servant_lang_en", all_basic_servant_en, dump_orjson),
@@ -204,6 +208,7 @@ async def generate_exports(
                     ("nice_item_lang_en", all_item_data_en, dump_orjson),
                     ("basic_mystic_code_lang_en", all_basic_mc_en, dump_orjson),
                     ("nice_mystic_code_lang_en", all_mc_data_en, dump_orjson),
+                    ("nice_bgm_lang_en", all_bgm_data_en, dump_orjson),
                 ] + output_files
 
             base_export_path = export_path / region.value

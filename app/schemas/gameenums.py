@@ -3582,3 +3582,18 @@ EVENT_LOTTERY_FLAG_NAME: dict[int, NiceLotteryFlag] = {
     1: NiceLotteryFlag.none,
     2: NiceLotteryFlag.limitReset,
 }
+
+
+class BgmFlag(IntEnum):
+    IS_NOT_RELEASE = 1
+
+
+class NiceBgmFlag(str, Enum):
+    """Bgm Flag"""
+
+    isNotRelease = "isNotRelease"
+
+
+BGM_FLAG_NAME: dict[int, NiceBgmFlag] = {
+    1: NiceBgmFlag.isNotRelease,
+}

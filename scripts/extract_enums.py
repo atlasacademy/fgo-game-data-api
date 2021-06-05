@@ -346,6 +346,7 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Event Lottery Flag",
         "EVENT_LOTTERY_FLAG_NAME",
     ),
+    ("BgmEntity.Flag", "BgmFlag", "NiceBgmFlag", "Bgm Flag", "BGM_FLAG_NAME"),
 ]
 
 

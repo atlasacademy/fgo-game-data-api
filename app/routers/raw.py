@@ -8,6 +8,7 @@ from ..schemas.common import Region, ReverseDepth
 from ..schemas.enums import AiType
 from ..schemas.raw import (
     AiCollection,
+    BgmEntity,
     BuffEntity,
     CommandCodeEntity,
     EventEntity,
@@ -579,3 +580,18 @@ async def get_ai_field(
     field_flag = ai_type == AiType.field
     ai_entity = raw.get_ai_collection(conn, ai_id, field=field_flag)
     return item_response(ai_entity)
+
+
+@router.get(
+    "/{region}/bgm/{bgm_id}",
+    summary="Get BGM data",
+    response_description="BGM Entity",
+    response_model=BgmEntity,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+async def get_bgm(bgm_id: int, conn: Connection = Depends(get_db)) -> Response:
+    """
+    Get the BGM data from the given BGM ID
+    """
+    return item_response(raw.get_bgm_entity(conn, bgm_id))

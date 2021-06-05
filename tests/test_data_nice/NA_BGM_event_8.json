@@ -1,0 +1,10 @@
+{
+  "id": 35,
+  "name": "0",
+  "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_EVENT_8/BGM_EVENT_8.mp3",
+  "priority": 0,
+  "detail": "",
+  "notReleased": true,
+  "logo": "https://assets.atlasacademy.io/GameData/NA/MyRoomSound/soundlogo_001.png",
+  "releaseConditions": []
+}

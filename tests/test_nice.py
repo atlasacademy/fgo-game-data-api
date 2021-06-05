@@ -66,6 +66,8 @@ test_cases_dict: dict[str, tuple[str, str]] = {
     "quest_NA_enemy": ("NA/quest/94034503/1", "NA_CCC_Detour_3"),
     "ai_beni_cq_monkey_NA": ("NA/ai/svt/94032580", "NA_AI_Beni_CQ_monkey"),
     "kh_cq_JP": ("JP/ai/field/90161870", "JP_KH_CQ_taunt"),
+    "bgm_NA_with_shop": ("JP/bgm/138?lang=en", "JP_BGM_Shinjuku"),
+    "bgm_NA_without_shop": ("NA/bgm/35", "NA_BGM_event_8"),
 }
 
 
@@ -97,6 +99,7 @@ cases_404_dict = {
     "quest/94025012": "2",
     "ai/svt": "54234",
     "ai/field": "45234",
+    "bgm": "31234",
 }
 
 

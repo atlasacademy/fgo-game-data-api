@@ -11,6 +11,7 @@ MAPPING_PATH = Path(__file__).resolve().parents[1] / "app" / "data" / "mappings"
 TRANSLATIONS: dict[str, str] = {}
 ENTITY_TRANSLATIONS: dict[str, str] = {}
 TRANSLATION_FILES = (
+    "bgm_names",
     "skill_names",
     "np_names",
     "event_names",
@@ -190,6 +191,7 @@ def main(jp_master: Path, na_master: Path) -> None:
     update_translation("war_names", jp_master, na_master, "mstWar", get_war_names)
     update_translation("item_names", jp_master, na_master, "mstItem", get_names)
     update_translation("entity_names", jp_master, na_master, "mstSvt", get_entity_names)
+    update_translation("bgm_names", jp_master, na_master, "mstBgm", get_names)
 
 
 if __name__ == "__main__":

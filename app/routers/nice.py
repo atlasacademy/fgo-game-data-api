@@ -4,13 +4,14 @@ from sqlalchemy.engine import Connection
 
 from ..config import Settings
 from ..core import search
-from ..core.nice import ai, cc, event, item, mc, nice, quest, war
+from ..core.nice import ai, bgm, cc, event, item, mc, nice, quest, war
 from ..data.gamedata import masters
 from ..schemas.common import Language, Region, ReverseData, ReverseDepth
 from ..schemas.enums import AiType
 from ..schemas.nice import (
     NiceAiCollection,
     NiceBaseFunctionReverse,
+    NiceBgmEntity,
     NiceBuffReverse,
     NiceCommandCode,
     NiceEquip,
@@ -742,3 +743,23 @@ async def get_ai_field(
         conn, region, ai_id, field=field_flag, lang=lang
     )
     return item_response(ai_entity)
+
+
+@router.get(
+    "/{region}/bgm/{bgm_id}",
+    summary="Get Nice BGM data",
+    response_description="BGM Entity",
+    response_model=NiceBgmEntity,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+async def get_bgm(
+    region: Region,
+    bgm_id: int,
+    conn: Connection = Depends(get_db),
+    lang: Language = Depends(language_parameter),
+) -> Response:
+    """
+    Get the BGM data from the given BGM ID
+    """
+    return item_response(bgm.get_nice_bgm_entity(conn, region, bgm_id, lang))

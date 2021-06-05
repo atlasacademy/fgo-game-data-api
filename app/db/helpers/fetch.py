@@ -8,8 +8,10 @@ from app.schemas.base import BaseModelORJson
 
 from ...models.raw import (
     mstBgm,
+    mstBgmRelease,
     mstBoxGacha,
     mstBuff,
+    mstClosedMessage,
     mstCombineCostume,
     mstCombineLimit,
     mstCombineMaterial,
@@ -59,8 +61,10 @@ from ...models.raw import (
 )
 from ...schemas.raw import (
     MstBgm,
+    MstBgmRelease,
     MstBoxGacha,
     MstBuff,
+    MstClosedMessage,
     MstCombineCostume,
     MstCombineLimit,
     MstCombineMaterial,
@@ -125,6 +129,8 @@ schema_map_fetch_one: dict[  # type:ignore
     MstBuff: (mstBuff, mstBuff.c.id),
     MstFunc: (mstFunc, mstFunc.c.id),
     MstItem: (mstItem, mstItem.c.id),
+    MstBgm: (mstBgm, mstBgm.c.id),
+    MstShop: (mstShop, mstShop.c.id),
 }
 
 TFetchOne = TypeVar("TFetchOne", bound=BaseModelORJson)
@@ -217,6 +223,7 @@ schema_table_fetch_all: dict[  # type:ignore
         mstSvtPassiveSkill.c.skillId,
     ),
     MstFuncGroup: (mstFuncGroup, mstFuncGroup.c.funcId, mstFuncGroup.c.eventId),
+    MstBgmRelease: (mstBgmRelease, mstBgmRelease.c.bgmId, mstBgmRelease.c.id),
 }
 
 TFetchAll = TypeVar("TFetchAll", bound=BaseModelORJson)
@@ -255,6 +262,8 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
     MstGift: (mstGift, mstGift.c.id, mstGift.c.id),
     MstShopScript: (mstShopScript, mstShopScript.c.shopId, mstShopScript.c.shopId),
     MstItem: (mstItem, mstItem.c.id, mstItem.c.id),
+    MstClosedMessage: (mstClosedMessage, mstClosedMessage.c.id, mstClosedMessage.c.id),
+    MstShop: (mstShop, mstShop.c.id, mstShop.c.id),
 }
 
 TFetchAllMultiple = TypeVar("TFetchAllMultiple", bound=BaseModelORJson)
@@ -277,6 +286,8 @@ schema_map_fetch_everything: dict[  # type:ignore
     MstEvent: (mstEvent, mstEvent.c.id),
     MstCommandCode: (mstCommandCode, mstCommandCode.c.id),
     MstEquip: (mstEquip, mstEquip.c.id),
+    MstBgm: (mstBgm, mstBgm.c.id),
+    MstBgmRelease: (mstBgmRelease, mstBgmRelease.c.bgmId),
 }
 
 TFetchEverything = TypeVar("TFetchEverything", bound=BaseModelORJson)

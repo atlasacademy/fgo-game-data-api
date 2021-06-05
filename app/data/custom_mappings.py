@@ -9,6 +9,7 @@ MAPPING_PATH = file_path.parent / "mappings"
 
 TRANSLATIONS: dict[str, str] = {}
 TRANSLATION_FILES = (
+    "bgm_names",
     "skill_names",
     "np_names",
     "event_names",
@@ -27,6 +28,7 @@ for translation_file in TRANSLATION_FILES:
         TRANSLATIONS |= json.load(fp)
 
 TRANSLATION_FILE_NAMES = Union[
+    Literal["bgm_names"],
     Literal["skill_names"],
     Literal["np_names"],
     Literal["event_names"],

@@ -1,0 +1,14 @@
+{
+  "mstBgm": {
+    "id": 33,
+    "fileName": "BGM_BATTLE_10",
+    "name": "0",
+    "priority": 0,
+    "detail": "",
+    "flag": 1,
+    "shopId": 7000033,
+    "logoId": 1
+  },
+  "mstBgmRelease": [],
+  "mstClosedMessage": []
+}

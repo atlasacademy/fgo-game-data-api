@@ -7,11 +7,12 @@ from ..data.custom_mappings import EXTRA_CHARAFIGURES
 from ..db.helpers import ai, event, fetch, item, quest, skill, svt, td
 from ..schemas.common import Region, ReverseDepth
 from ..schemas.enums import FUNC_VALS_NOT_BUFF
-from ..schemas.gameenums import CondType, PurchaseType, VoiceCondType
+from ..schemas.gameenums import BgmFlag, CondType, PurchaseType, VoiceCondType
 from ..schemas.raw import (
     EXTRA_ATTACK_TD_ID,
     AiCollection,
     AiEntity,
+    BgmEntity,
     BuffEntity,
     BuffEntityNoReverse,
     CommandCodeEntity,
@@ -20,8 +21,10 @@ from ..schemas.raw import (
     FunctionEntityNoReverse,
     ItemEntity,
     MstBgm,
+    MstBgmRelease,
     MstBoxGacha,
     MstBuff,
+    MstClosedMessage,
     MstCombineCostume,
     MstCombineLimit,
     MstCombineMaterial,
@@ -640,3 +643,65 @@ def get_ai_collection(
         relatedAis=related_ais,
         relatedQuests=quest.get_quest_from_ai(conn, ai_id) if field else [],
     )
+
+
+def get_bgm_entity(conn: Connection, bgm_id: int) -> BgmEntity:
+    mstBgm = fetch.get_one(conn, MstBgm, bgm_id)
+    if not mstBgm:
+        raise HTTPException(status_code=404, detail="BGM not found")
+
+    mstBgmRelease = fetch.get_all(conn, MstBgmRelease, bgm_id)
+    mstClosedMessage = fetch.get_all_multiple(
+        conn, MstClosedMessage, [release.closedMessageId for release in mstBgmRelease]
+    )
+
+    bgm_entity = BgmEntity(
+        mstBgm=mstBgm, mstBgmRelease=mstBgmRelease, mstClosedMessage=mstClosedMessage
+    )
+
+    if mstBgm.flag != BgmFlag.IS_NOT_RELEASE:
+        bgm_entity.mstShop = fetch.get_one(conn, MstShop, mstBgm.shopId)
+
+    return bgm_entity
+
+
+def get_all_bgm_entities(conn: Connection) -> list[BgmEntity]:  # pragma: no cover
+    mstBgms = fetch.get_everything(conn, MstBgm)
+
+    mstBgmReleases = fetch.get_everything(conn, MstBgmRelease)
+    mstClosedMessages = fetch.get_all_multiple(
+        conn, MstClosedMessage, [release.closedMessageId for release in mstBgmReleases]
+    )
+
+    mstShops = fetch.get_all_multiple(
+        conn,
+        MstShop,
+        [mstBgm.shopId for mstBgm in mstBgms if mstBgm.flag != BgmFlag.IS_NOT_RELEASE],
+    )
+    mstShop_map = {mstShop.id: mstShop for mstShop in mstShops}
+
+    out_entities: list[BgmEntity] = []
+    for mstBgm in mstBgms:
+        mstBgmRelease = [
+            mstBgmRelease
+            for mstBgmRelease in mstBgmReleases
+            if mstBgmRelease.bgmId == mstBgm.id
+        ]
+        closed_message_ids = [release.closedMessageId for release in mstBgmRelease]
+        mstClosedMessage = [
+            mstClosedMessage
+            for mstClosedMessage in mstClosedMessages
+            if mstClosedMessage.id in closed_message_ids
+        ]
+        bgm_entity = BgmEntity(
+            mstBgm=mstBgm,
+            mstBgmRelease=mstBgmRelease,
+            mstClosedMessage=mstClosedMessage,
+        )
+
+        if mstBgm.flag != BgmFlag.IS_NOT_RELEASE:
+            bgm_entity.mstShop = mstShop_map.get(mstBgm.shopId, None)
+
+        out_entities.append(bgm_entity)
+
+    return out_entities

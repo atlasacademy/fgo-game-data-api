@@ -681,6 +681,17 @@ class MstBgm(BaseModelORJson):
     logoId: int  # 1
 
 
+class MstBgmRelease(BaseModelORJson):
+    targetIds: list[int]
+    vals: list[int]
+    bgmId: int
+    id: int
+    priority: int
+    type: int
+    condGroup: int
+    closedMessageId: int
+
+
 class MstShop(BaseModelORJson):
     itemIds: list[int]  # [94025003]
     prices: list[int]  # [20]
@@ -1267,3 +1278,10 @@ class AiCollection(BaseModelORJson):
     mainAis: list[AiEntity]
     relatedAis: list[AiEntity]
     relatedQuests: list[StageLink]
+
+
+class BgmEntity(BaseModelORJson):
+    mstBgm: MstBgm
+    mstBgmRelease: list[MstBgmRelease]
+    mstClosedMessage: list[MstClosedMessage]
+    mstShop: Optional[MstShop]

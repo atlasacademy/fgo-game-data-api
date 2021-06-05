@@ -103,6 +103,7 @@ class AssetURL:
     mapImg = "{base_url}/{region}/Terminal/MapImgs/img_questmap_{map_id:0>6}/img_questmap_{map_id:0>6}.png"
     spotImg = "{base_url}/{region}/Terminal/QuestMap/Capter{war_asset_id:0>4}/QMap_Cap{war_asset_id:0>4}_Atlas/spot_{spot_id:0>6}.png"
     script = "{base_url}/{region}/Script/{script_path}.txt"
+    bgmLogo = "{base_url}/{region}/MyRoomSound/soundlogo_{logo_id:0>3}.png"
 
 
 class NiceItem(BaseModelORJson):
@@ -1544,3 +1545,30 @@ class NiceAiCollection(BaseModelORJson):
     mainAis: list[NiceAi]
     relatedAis: list[NiceAi]
     relatedQuests: list[StageLink]
+
+
+class NiceBgmRelease(BaseModelORJson):
+    id: int
+    type: NiceCondType
+    condGroup: int = Field(
+        ...,
+        title="Condition Group",
+        description="To play the BGM, at least one condition group needs to be statisfied."
+        "Within one condition group, all conditions need to be statisfied.",
+    )
+    targetIds: list[int]
+    vals: list[int]
+    priority: int
+    closedMessage: str
+
+
+class NiceBgmEntity(BaseModelORJson):
+    id: int
+    name: str
+    audioAsset: Optional[HttpUrl] = None
+    priority: int
+    detail: str
+    notReleased: bool
+    shop: Optional[NiceShop]
+    logo: HttpUrl
+    releaseConditions: list[NiceBgmRelease]

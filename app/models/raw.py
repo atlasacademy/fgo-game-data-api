@@ -973,6 +973,20 @@ mstBgm = Table(
 )
 
 
+mstBgmRelease = Table(
+    "mstBgmRelease",
+    metadata,
+    Column("targetIds", ARRAY(Integer)),
+    Column("vals", ARRAY(Integer)),
+    Column("bgmId", Integer, index=True),
+    Column("id", Integer, index=True),
+    Column("priority", Integer),
+    Column("type", Integer),
+    Column("condGroup", Integer),
+    Column("closedMessageId", Integer),
+)
+
+
 mstWar = Table(
     "mstWar",
     metadata,
@@ -1270,6 +1284,7 @@ TABLES_TO_BE_LOADED = [
     mstShop,
     mstShopScript,
     mstBgm,
+    mstBgmRelease,
     mstWar,
     mstMap,
     mstSpot,
