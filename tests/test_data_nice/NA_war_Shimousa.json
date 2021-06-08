@@ -13,6 +13,8 @@
   "bgm": {
     "id": 197,
     "name": "The Stage of Carnage:\nShimousa",
+    "fileName": "BGM_MAP_32",
+    "notReleased": false,
     "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_MAP_32/BGM_MAP_32.mp3"
   },
   "scriptId": "0200030010",
@@ -94,6 +96,8 @@
       "bgm": {
         "id": 197,
         "name": "The Stage of Carnage:\nShimousa",
+        "fileName": "BGM_MAP_32",
+        "notReleased": false,
         "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_MAP_32/BGM_MAP_32.mp3"
       }
     },
@@ -106,6 +110,8 @@
       "bgm": {
         "id": 197,
         "name": "The Stage of Carnage:\nShimousa",
+        "fileName": "BGM_MAP_32",
+        "notReleased": false,
         "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_MAP_32/BGM_MAP_32.mp3"
       }
     }

@@ -1222,6 +1222,8 @@ class NiceEvent(BaseModelORJson):
 class NiceBgm(BaseModelORJson):
     id: int
     name: str
+    fileName: str
+    notReleased: bool
     audioAsset: Optional[HttpUrl] = None
 
 
@@ -1565,6 +1567,7 @@ class NiceBgmRelease(BaseModelORJson):
 class NiceBgmEntity(BaseModelORJson):
     id: int
     name: str
+    fileName: str
     audioAsset: Optional[HttpUrl] = None
     priority: int
     detail: str

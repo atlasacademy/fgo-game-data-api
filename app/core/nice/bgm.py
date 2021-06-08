@@ -23,7 +23,7 @@ def get_bgm_url(region: Region, raw_bgm: MstBgm) -> Optional[str]:
             folder=raw_bgm.fileName,
             id=raw_bgm.fileName,
         )
-        if raw_bgm.id != 0
+        if raw_bgm.fileName != ""
         else None
     )
 
@@ -32,6 +32,8 @@ def get_nice_bgm(region: Region, raw_bgm: MstBgm) -> NiceBgm:
     return NiceBgm(
         id=raw_bgm.id,
         name=raw_bgm.name,
+        fileName=raw_bgm.fileName,
+        notReleased=raw_bgm.flag == BgmFlag.IS_NOT_RELEASE,
         audioAsset=get_bgm_url(region, raw_bgm),
     )
 
@@ -61,6 +63,7 @@ def get_nice_bgm_entity_from_raw(
     nice_bgm = NiceBgmEntity(
         id=bgm_entity.mstBgm.id,
         name=get_translation(lang, bgm_entity.mstBgm.name),
+        fileName=bgm_entity.mstBgm.fileName,
         audioAsset=get_bgm_url(region, bgm_entity.mstBgm),
         priority=bgm_entity.mstBgm.priority,
         detail=bgm_entity.mstBgm.detail,

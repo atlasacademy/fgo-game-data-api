@@ -48,6 +48,8 @@
       "bgm": {
         "id": 56,
         "name": "outbreak\n-Alternative-",
+        "fileName": "BGM_BATTLE_17",
+        "notReleased": false,
         "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_BATTLE_17/BGM_BATTLE_17.mp3"
       },
       "fieldAis": [],
@@ -58,6 +60,8 @@
       "bgm": {
         "id": 56,
         "name": "outbreak\n-Alternative-",
+        "fileName": "BGM_BATTLE_17",
+        "notReleased": false,
         "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_BATTLE_17/BGM_BATTLE_17.mp3"
       },
       "fieldAis": [],

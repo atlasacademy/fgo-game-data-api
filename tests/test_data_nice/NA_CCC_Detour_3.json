@@ -48,6 +48,8 @@
       "bgm": {
         "id": 152,
         "name": "moon salto (II)\n-FGO-",
+        "fileName": "BGM_BATTLE_52",
+        "notReleased": false,
         "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_BATTLE_52/BGM_BATTLE_52.mp3"
       },
       "fieldAis": [],
@@ -352,6 +354,8 @@
       "bgm": {
         "id": 139,
         "name": "Stormfang\n-FATAL BATTLE 3-",
+        "fileName": "BGM_BATTLE_46",
+        "notReleased": false,
         "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_BATTLE_46/BGM_BATTLE_46.mp3"
       },
       "fieldAis": [],
