@@ -1,6 +1,7 @@
 import json
+from enum import Enum
 from pathlib import Path
-from typing import Literal, Union
+from typing import Union
 
 
 file_path = Path(__file__)
@@ -8,45 +9,33 @@ MAPPING_PATH = file_path.parent / "mappings"
 
 
 TRANSLATIONS: dict[str, str] = {}
-TRANSLATION_FILES = (
-    "voice_names",
-    "overwrite_voice_names",
-    "bgm_names",
-    "skill_names",
-    "np_names",
-    "event_names",
-    "war_names",
-    "item_names",
-    "entity_names",
-    "enemy_names",
-    "servant_names",
-    "equip_names",
-    "cc_names",
-    "mc_names",
-)
 
-for translation_file in TRANSLATION_FILES:
-    with open(MAPPING_PATH / f"{translation_file}.json", "r", encoding="utf-8") as fp:
+
+class Translation(str, Enum):
+    VOICE = "voice_names"
+    OVERWRITE_VOICE = "overwrite_voice_names"
+    BGM = "bgm_names"
+    SKILL = "skill_names"
+    NP = "np_names"
+    EVENT = "event_names"
+    WAR = "war_names"
+    ITEM = "item_names"
+    ENTITY = "entity_names"
+    ENEMY = "enemy_names"
+    SERVANT = "servant_names"
+    EQUIP = "equip_names"
+    CC = "cc_names"
+    MC = "mc_names"
+
+
+for translation_file in Translation.__members__.values():
+    with open(
+        MAPPING_PATH / f"{translation_file.value}.json", "r", encoding="utf-8"
+    ) as fp:
         TRANSLATIONS |= json.load(fp)
 
-TRANSLATION_FILE_NAMES = Union[
-    Literal["voice_names"],
-    Literal["overwrite_voice_names"],
-    Literal["bgm_names"],
-    Literal["skill_names"],
-    Literal["np_names"],
-    Literal["event_names"],
-    Literal["war_names"],
-    Literal["item_names"],
-    Literal["entity_names"],
-    Literal["enemy_names"],
-    Literal["servant_names"],
-    Literal["equip_names"],
-    Literal["cc_names"],
-    Literal["mc_names"],
-]
 with open(MAPPING_PATH / "translation_override.json", "r", encoding="utf-8") as fp:
-    TRANSLATION_OVERRIDE: dict[TRANSLATION_FILE_NAMES, dict[str, str]] = json.load(fp)
+    TRANSLATION_OVERRIDE: dict[Translation, dict[str, str]] = json.load(fp)
 
 
 EXTRA_CHARAFIGURES: dict[int, list[int]] = {}

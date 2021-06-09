@@ -1,11 +1,7 @@
 import re
 from typing import Any, Iterable, Literal, Mapping, Optional, TypeVar, Union
 
-from ..data.custom_mappings import (
-    TRANSLATION_FILE_NAMES,
-    TRANSLATION_OVERRIDE,
-    TRANSLATIONS,
-)
+from ..data.custom_mappings import TRANSLATION_OVERRIDE, TRANSLATIONS, Translation
 from ..schemas.basic import BasicCommandCode, BasicEquip, BasicServant
 from ..schemas.common import Language, NiceTrait
 from ..schemas.enums import TRAIT_NAME, Trait
@@ -24,7 +20,7 @@ half_width_uppercase_lookup = {chr(65 + i) for i in range(26)}
 def get_translation(
     language: Language,
     string: str,
-    override_file: Optional[TRANSLATION_FILE_NAMES] = None,
+    override_file: Optional[Translation] = None,
     override_id: Optional[str] = None,
 ) -> str:
     if language == Language.en:
@@ -35,7 +31,7 @@ def get_translation(
         ):  # pragma: no cover
             return TRANSLATION_OVERRIDE[override_file][override_id]
 
-        if override_file == "entity_names" and string[:-1] in TRANSLATIONS:
+        if override_file == Translation.ENEMY and string[:-1] in TRANSLATIONS:
             translated_string = TRANSLATIONS[string[:-1]]
             if string[-1] in full_width_uppercase_lookup:
                 corresponding_half_width = full_width_uppercase_lookup[string[-1]]
@@ -51,7 +47,9 @@ def get_translation(
 def get_np_name(td: MstTreasureDevice, language: Language) -> str:
     if language == Language.en:
         to_translate = td.ruby if td.ruby not in ("", "-") else td.name
-        translation = get_translation(language, to_translate, "np_names", str(td.id))
+        translation = get_translation(
+            language, to_translate, Translation.NP, str(td.id)
+        )
 
         if to_translate == translation:
             return td.name
@@ -67,7 +65,9 @@ VOICE_NAME_REGEX = re.compile(r"^(.*?)(\d+)$", re.DOTALL)
 def get_voice_name(
     voice_name: str,
     language: Language,
-    override_file: Union[Literal["voice_names"], Literal["overwrite_voice_names"]],
+    override_file: Union[
+        Literal[Translation.VOICE], Literal[Translation.OVERWRITE_VOICE]
+    ],
 ) -> str:
     if language == Language.en:
         if match := VOICE_NAME_REGEX.match(voice_name):

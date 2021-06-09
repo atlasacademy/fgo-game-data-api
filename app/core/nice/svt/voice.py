@@ -1,4 +1,5 @@
 from ....config import Settings
+from ....data.custom_mappings import Translation
 from ....schemas.common import Language, Region
 from ....schemas.gameenums import (
     COND_TYPE_NAME,
@@ -98,7 +99,7 @@ def get_nice_voice_line(
 
     voice_line = NiceVoiceLine(
         overwriteName=get_voice_name(
-            nullable_to_string(script.overwriteName), lang, "overwrite_voice_names"
+            nullable_to_string(script.overwriteName), lang, Translation.OVERWRITE_VOICE
         ),
         id=(info.id for info in script.infos),
         audioAssets=(
@@ -124,7 +125,7 @@ def get_nice_voice_line(
 
     if voice_id in mstVoices:
         mstVoice = mstVoices[voice_id]
-        voice_line.name = get_voice_name(mstVoice.name, lang, "voice_names")
+        voice_line.name = get_voice_name(mstVoice.name, lang, Translation.VOICE)
         voice_line.condType = COND_TYPE_NAME[mstVoice.condType]
         voice_line.condValue = mstVoice.condValue
         voice_line.priority = mstVoice.priority

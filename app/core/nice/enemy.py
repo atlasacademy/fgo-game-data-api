@@ -4,6 +4,7 @@ from typing import Any
 from aioredis import Redis
 from sqlalchemy.engine import Connection
 
+from ...data.custom_mappings import Translation
 from ...schemas.common import Language, Region
 from ...schemas.enums import ATTRIBUTE_NAME, CLASS_NAME, ENEMY_DEATH_TYPE_NAME
 from ...schemas.nice import (
@@ -202,7 +203,7 @@ async def get_quest_enemy(
         userSvtId=user_svt.id,
         uniqueId=deck_svt.uniqueId,
         npcId=deck_svt.npcId,
-        name=get_translation(lang, deck_svt.name, "entity_names"),
+        name=get_translation(lang, deck_svt.name, Translation.ENEMY),
         svt=basic_svt,
         lv=user_svt.lv,
         exp=user_svt.exp,
