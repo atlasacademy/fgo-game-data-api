@@ -181,6 +181,9 @@ def update_translation(
 
     updated_translation: dict[str, str] = {}
     for colNo, jp_name in sorted(jp_names.items(), key=lambda x: x[0]):
+        if jp_name == "":
+            continue
+
         if jp_name in ENTITY_TRANSLATIONS and mapping == "entity_names":
             continue
 
@@ -204,7 +207,7 @@ def update_translation(
                 updated_translation[jp_name] = na_name
                 continue
 
-        if colNo in na_names and jp_name not in DONT_USE_NA_TRANSLATION:
+        if colNo in na_names and na_names[colNo] != "" and jp_name not in DONT_USE_NA_TRANSLATION:  # type: ignore
             updated_translation[jp_name] = na_names[colNo]  # type: ignore
         elif jp_name not in updated_translation:
             updated_translation[jp_name] = current_translations.get(

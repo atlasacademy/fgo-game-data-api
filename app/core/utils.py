@@ -23,6 +23,9 @@ def get_translation(
     override_file: Optional[Translation] = None,
     override_id: Optional[str] = None,
 ) -> str:
+    if string == "":
+        return ""
+
     if language == Language.en:
         if (
             override_file
