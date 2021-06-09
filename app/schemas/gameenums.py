@@ -190,6 +190,8 @@ class FuncType(IntEnum):
     FRIEND_POINT_UP_DUPLICATE = 123
     MOVE_STATE = 124
     CHANGE_BGM_COSTUME = 125
+    FUNC_126 = 126
+    FUNC_127 = 127
 
 
 class NiceFuncType(str, Enum):
@@ -282,6 +284,8 @@ class NiceFuncType(str, Enum):
     friendPointUpDuplicate = "friendPointUpDuplicate"
     moveState = "moveState"
     changeBgmCostume = "changeBgmCostume"
+    func126 = "func126"
+    func127 = "func127"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -372,6 +376,8 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     123: NiceFuncType.friendPointUpDuplicate,
     124: NiceFuncType.moveState,
     125: NiceFuncType.changeBgmCostume,
+    126: NiceFuncType.func126,
+    127: NiceFuncType.func127,
 }
 
 
@@ -618,6 +624,7 @@ class BuffType(IntEnum):
     PREVENT_DEATH_BY_DAMAGE = 158
     COMMANDCODEATTACK_AFTER_FUNCTION = 159
     ATTACK_BEFORE_FUNCTION = 160
+    DONOT_SKILL_SELECT = 161
 
 
 class NiceBuffType(str, Enum):
@@ -769,6 +776,7 @@ class NiceBuffType(str, Enum):
     preventDeathByDamage = "preventDeathByDamage"
     commandcodeattackAfterFunction = "commandcodeattackAfterFunction"
     attackBeforeFunction = "attackBeforeFunction"
+    donotSkillSelect = "donotSkillSelect"
 
 
 BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
@@ -918,6 +926,7 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     158: NiceBuffType.preventDeathByDamage,
     159: NiceBuffType.commandcodeattackAfterFunction,
     160: NiceBuffType.attackBeforeFunction,
+    161: NiceBuffType.donotSkillSelect,
 }
 
 
@@ -1021,6 +1030,7 @@ class BuffAction(IntEnum):
     PREVENT_DEATH_BY_DAMAGE = 96
     FUNCTION_COMMANDCODEATTACK_AFTER = 97
     FUNCTION_ATTACK_BEFORE = 98
+    DONOT_SKILL_SELECT = 99
 
 
 class NiceBuffAction(str, Enum):
@@ -1125,6 +1135,7 @@ class NiceBuffAction(str, Enum):
     preventDeathByDamage = "preventDeathByDamage"
     functionCommandcodeattackAfter = "functionCommandcodeattackAfter"
     functionAttackBefore = "functionAttackBefore"
+    donotSkillSelect = "donotSkillSelect"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1227,6 +1238,7 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     96: NiceBuffAction.preventDeathByDamage,
     97: NiceBuffAction.functionCommandcodeattackAfter,
     98: NiceBuffAction.functionAttackBefore,
+    99: NiceBuffAction.donotSkillSelect,
 }
 
 
@@ -1329,6 +1341,8 @@ class DataValsType(IntEnum):
     ParamAddFieldIndividuality = 71
     ParamAddValue = 72
     MultipleGainStar = 73
+    NoCheckIndividualityIfNotUnit = 74
+    ForcedEffectSpeedOne = 75
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -3025,6 +3039,9 @@ class AiCond(IntEnum):
     CHECK_PRECEDING_ENEMY = 168
     COUNT_HIGHER_REMAIN_TURN = 169
     COUNT_LOWER_REMAIN_TURN = 170
+    COUNT_HIGHER_AI_171 = 171
+    COUNT_LOWER_AI_172 = 172
+    COUNT_EQUAL_AI_173 = 173
 
 
 class NiceAiCond(str, Enum):
@@ -3175,6 +3192,9 @@ class NiceAiCond(str, Enum):
     checkPrecedingEnemy = "checkPrecedingEnemy"
     countHigherRemainTurn = "countHigherRemainTurn"
     countLowerRemainTurn = "countLowerRemainTurn"
+    countHigherAi171 = "countHigherAi171"
+    countLowerAi172 = "countLowerAi172"
+    countEqualAi173 = "countEqualAi173"
 
 
 AI_COND_NAME: dict[int, NiceAiCond] = {
@@ -3309,6 +3329,9 @@ AI_COND_NAME: dict[int, NiceAiCond] = {
     168: NiceAiCond.checkPrecedingEnemy,
     169: NiceAiCond.countHigherRemainTurn,
     170: NiceAiCond.countLowerRemainTurn,
+    171: NiceAiCond.countHigherAi171,
+    172: NiceAiCond.countLowerAi172,
+    173: NiceAiCond.countEqualAi173,
 }
 
 
