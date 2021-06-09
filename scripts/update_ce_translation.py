@@ -4,13 +4,15 @@ import os
 import re
 from enum import IntEnum
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any, Callable, Union
 
 
 MAPPING_PATH = Path(__file__).resolve().parents[1] / "app" / "data" / "mappings"
 TRANSLATIONS: dict[str, str] = {}
 ENTITY_TRANSLATIONS: dict[str, str] = {}
 TRANSLATION_FILES = (
+    "voice_names",
+    "overwrite_voice_names",
     "bgm_names",
     "skill_names",
     "np_names",
@@ -23,6 +25,9 @@ TRANSLATION_FILES = (
     "mc_names",
 )
 LOGIN_ITEM_REGEX = re.compile(r"(\d+)月交換券\((\d+)\)")
+VOICE_NAME_REGEX = re.compile(r"^(.*?)(\d+)$", re.DOTALL)
+NEW_YEAR_LINE_REGEX = re.compile(r"^謹賀新年(.*)$")
+MASTER_MISSION_REGEX = re.compile(r"^マスターミッション\s(\d+)年(\d+)月 ")
 ENGLISH_MONTHS = {
     1: "JAN",
     2: "FEB",
@@ -82,35 +87,26 @@ def is_ce(svt: Any) -> bool:
 
 
 def get_ce_names(mstSvt: Any) -> dict[int, str]:
-    ce_names: dict[int, str] = {
-        svt["collectionNo"]: svt["name"] for svt in mstSvt if is_ce(svt)
-    }
-    return ce_names
+    return {svt["collectionNo"]: svt["name"] for svt in mstSvt if is_ce(svt)}
 
 
 def get_cc_names(mstCommandCode: Any) -> dict[int, str]:
-    cc_names: dict[int, str] = {
-        svt["collectionNo"]: svt["name"] for svt in mstCommandCode
-    }
-    return cc_names
+    return {svt["collectionNo"]: svt["name"] for svt in mstCommandCode}
 
 
 def get_names(mstEquip: Any) -> dict[int, str]:
-    mc_names: dict[int, str] = {svt["id"]: svt["name"] for svt in mstEquip}
-    return mc_names
+    return {svt["id"]: svt["name"] for svt in mstEquip}
 
 
 def get_np_names(mstTreasureDevice: Any) -> dict[int, str]:
-    mc_names: dict[int, str] = {
+    return {
         td["id"]: td["ruby"] if td["ruby"] not in ("", "-") else td["name"]
         for td in mstTreasureDevice
     }
-    return mc_names
 
 
 def get_war_names(mstEquip: Any) -> dict[int, str]:
-    mc_names: dict[int, str] = {svt["id"]: svt["longName"] for svt in mstEquip}
-    return mc_names
+    return {svt["id"]: svt["longName"] for svt in mstEquip}
 
 
 def is_not_svt_or_ce(svt: Any) -> bool:
@@ -118,10 +114,33 @@ def is_not_svt_or_ce(svt: Any) -> bool:
 
 
 def get_entity_names(mstSvt: Any) -> dict[int, str]:
-    entity_names: dict[int, str] = {
-        svt["id"]: svt["name"] for svt in mstSvt if is_not_svt_or_ce(svt)
-    }
-    return entity_names
+    return {svt["id"]: svt["name"] for svt in mstSvt if is_not_svt_or_ce(svt)}
+
+
+def get_voice_names(mstVoice: Any) -> dict[str, str]:
+    out_dict = {}
+    for voice in mstVoice:
+        if match := VOICE_NAME_REGEX.match(voice["name"]):
+            out_dict[voice["id"]] = match.group(1)
+        else:
+            out_dict[voice["id"]] = voice["name"]
+    return out_dict
+
+
+def get_svt_voice_names(mstSvtVoice: Any) -> dict[str, str]:
+    out_dict = {}
+    for voice in mstSvtVoice:
+        for script in voice["scriptJson"]:
+            first_script_id = script["infos"][0]["id"]
+            script_id = f'{voice["id"]}_{voice["voicePrefix"]}_{voice["type"]}_{first_script_id}'
+            overwriteName = (
+                script["overwriteName"] if script["overwriteName"] is not None else ""
+            )
+            if match := VOICE_NAME_REGEX.match(overwriteName):
+                out_dict[script_id] = match.group(1)
+            else:
+                out_dict[script_id] = overwriteName
+    return out_dict
 
 
 def update_translation(
@@ -129,7 +148,9 @@ def update_translation(
     jp_master: Path,
     na_master: Path,
     master_file: str,
-    extract_names: Callable[[Any], dict[int, str]],
+    extract_names: Union[
+        Callable[[Any], dict[int, str]], Callable[[Any], dict[str, str]]
+    ],
 ) -> None:
     with open(jp_master / f"{master_file}.json", "r", encoding="utf-8") as fp:
         jp_svt = json.load(fp)
@@ -162,13 +183,29 @@ def update_translation(
     for colNo, jp_name in sorted(jp_names.items(), key=lambda x: x[0]):
         if jp_name in ENTITY_TRANSLATIONS and mapping == "entity_names":
             continue
+
         if mapping == "item_names" and (match := LOGIN_ITEM_REGEX.match(jp_name)):
             month, year = match.groups()
             na_name = f"Exchange Ticket ({ENGLISH_MONTHS[int(month)]} {year})"
             updated_translation[jp_name] = na_name
             continue
+
+        if mapping == "voice_names":
+            if ny_match := NEW_YEAR_LINE_REGEX.match(jp_name):
+                year = ny_match.group(1)
+                na_name = f"Happy New Year {year}"
+                updated_translation[jp_name] = na_name
+                continue
+
+        if mapping == "overwrite_voice_names":
+            if mm_match := MASTER_MISSION_REGEX.match(jp_name):
+                year, month = mm_match.groups()
+                na_name = f"Master Mission, {ENGLISH_MONTHS[int(month)]} {year} "
+                updated_translation[jp_name] = na_name
+                continue
+
         if colNo in na_names and jp_name not in DONT_USE_NA_TRANSLATION:
-            updated_translation[jp_name] = na_names[colNo]
+            updated_translation[jp_name] = na_names[colNo]  # type: ignore
         elif jp_name not in updated_translation:
             updated_translation[jp_name] = current_translations.get(
                 jp_name, TRANSLATIONS.get(jp_name, jp_name)
@@ -192,6 +229,14 @@ def main(jp_master: Path, na_master: Path) -> None:
     update_translation("item_names", jp_master, na_master, "mstItem", get_names)
     update_translation("entity_names", jp_master, na_master, "mstSvt", get_entity_names)
     update_translation("bgm_names", jp_master, na_master, "mstBgm", get_names)
+    update_translation("voice_names", jp_master, na_master, "mstVoice", get_voice_names)
+    update_translation(
+        "overwrite_voice_names",
+        jp_master,
+        na_master,
+        "mstSvtVoice",
+        get_svt_voice_names,
+    )
 
 
 if __name__ == "__main__":

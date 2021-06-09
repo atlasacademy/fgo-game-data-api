@@ -1,5 +1,5 @@
 from ....config import Settings
-from ....schemas.common import Region
+from ....schemas.common import Language, Region
 from ....schemas.gameenums import (
     COND_TYPE_NAME,
     VOICE_COND_NAME,
@@ -23,7 +23,7 @@ from ....schemas.raw import (
     ScriptJsonCond,
     ServantEntity,
 )
-from ...utils import nullable_to_string
+from ...utils import get_voice_name, nullable_to_string
 
 
 settings = Settings()
@@ -91,12 +91,15 @@ def get_nice_voice_line(
     play_conds: list[MstVoicePlayCond],
     mstVoices: dict[str, MstVoice],
     mstSvtGroups: list[MstSvtGroup],
+    lang: Language,
 ) -> NiceVoiceLine:
     first_voice = script.infos[0]
     voice_id = first_voice.get_voice_id()
 
     voice_line = NiceVoiceLine(
-        overwriteName=nullable_to_string(script.overwriteName),
+        overwriteName=get_voice_name(
+            nullable_to_string(script.overwriteName), lang, "overwrite_voice_names"
+        ),
         id=(info.id for info in script.infos),
         audioAssets=(
             get_voice_url(region, svt_id, voice_type, info.id) for info in script.infos
@@ -121,7 +124,7 @@ def get_nice_voice_line(
 
     if voice_id in mstVoices:
         mstVoice = mstVoices[voice_id]
-        voice_line.name = mstVoice.name
+        voice_line.name = get_voice_name(mstVoice.name, lang, "voice_names")
         voice_line.condType = COND_TYPE_NAME[mstVoice.condType]
         voice_line.condValue = mstVoice.condValue
         voice_line.priority = mstVoice.priority
@@ -138,6 +141,7 @@ def get_nice_voice_group(
     play_conds: list[MstVoicePlayCond],
     mstVoices: dict[str, MstVoice],
     mstSvtGroups: list[MstSvtGroup],
+    lang: Language,
 ) -> NiceVoiceGroup:
     return NiceVoiceGroup(
         svtId=voice.id,
@@ -155,6 +159,7 @@ def get_nice_voice_group(
                 play_conds,
                 mstVoices,
                 mstSvtGroups,
+                lang,
             )
             for script in voice.scriptJson
         ),
@@ -162,7 +167,7 @@ def get_nice_voice_group(
 
 
 def get_nice_voice(
-    region: Region, raw_svt: ServantEntity, costume_ids: dict[int, int]
+    region: Region, raw_svt: ServantEntity, costume_ids: dict[int, int], lang: Language
 ) -> list[NiceVoiceGroup]:
     subtitle_ids = {subtitle.id: subtitle.serif for subtitle in raw_svt.mstSubtitle}
     mstVoices = {voice.id: voice for voice in raw_svt.mstVoice}
@@ -176,6 +181,7 @@ def get_nice_voice(
             raw_svt.mstVoicePlayCond,
             mstVoices,
             raw_svt.mstSvtGroup,
+            lang,
         )
         for voice in raw_svt.mstSvtVoice
     ]

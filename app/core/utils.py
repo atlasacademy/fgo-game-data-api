@@ -1,4 +1,5 @@
-from typing import Any, Iterable, Mapping, Optional, TypeVar, Union
+import re
+from typing import Any, Iterable, Literal, Mapping, Optional, TypeVar, Union
 
 from ..data.custom_mappings import (
     TRANSLATION_FILE_NAMES,
@@ -58,6 +59,25 @@ def get_np_name(td: MstTreasureDevice, language: Language) -> str:
         return translation
 
     return td.name
+
+
+VOICE_NAME_REGEX = re.compile(r"^(.*?)(\d+)$", re.DOTALL)
+
+
+def get_voice_name(
+    voice_name: str,
+    language: Language,
+    override_file: Union[Literal["voice_names"], Literal["overwrite_voice_names"]],
+) -> str:
+    if language == Language.en:
+        if match := VOICE_NAME_REGEX.match(voice_name):
+            name, number = match.groups()
+            translated_name = get_translation(language, name, override_file)
+            return f"{translated_name}{number}"
+        else:
+            return get_translation(language, voice_name, override_file)
+
+    return voice_name
 
 
 def get_safe(input_dict: Mapping[Any, TValue], key: TLookup) -> Union[TValue, TLookup]:

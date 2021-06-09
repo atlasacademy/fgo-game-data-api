@@ -279,7 +279,7 @@ def get_nice_servant(
             "comments": [
                 get_nice_comment(svt_comment) for svt_comment in raw_svt.mstSvtComment
             ],
-            "voices": get_nice_voice(region, raw_svt, costume_ids),
+            "voices": get_nice_voice(region, raw_svt, costume_ids, lang),
             "stats": {
                 "strength": get_nice_status_rank(first_svt_limit.power),
                 "endurance": get_nice_status_rank(first_svt_limit.defense),

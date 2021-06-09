@@ -4,7 +4,7 @@ from fastapi import HTTPException
 
 from app.core.nice.func import parse_dataVals
 from app.core.nice.nice import get_nice_servant_model
-from app.core.utils import get_lang_en, sort_by_collection_no
+from app.core.utils import get_lang_en, sort_by_collection_no, get_voice_name
 from app.db.engine import engines
 from app.routers.utils import list_string_exclude
 from app.schemas.basic import BasicServant
@@ -123,3 +123,11 @@ def test_lang_en_export() -> None:
         jp_nice_servant = get_nice_servant_model(conn, Region.JP, 202900, Language.jp)
         jp_nice_servant_with_en_name = get_lang_en(jp_nice_servant)
         assert jp_nice_servant_with_en_name.name == "Asagami Fujino"
+
+
+def test_voice_lang_en() -> None:
+    assert (
+        get_voice_name("レベルアップ エスタブリッシュメント", Language.en, "overwrite_voice_names")
+        == "Level Up Establishment"
+    )
+    assert get_voice_name("エクストラアタック 2", Language.en, "voice_names") == "Extra Attack 2"
