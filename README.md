@@ -120,11 +120,11 @@ Go to http://127.0.0.1:8000/docs or http://127.0.0.1:8000/redoc for the API docu
 
 ### [Linting](scripts/lint.ps1)
 
-[pylint](https://docs.pylint.org/en/latest/index.html) and [mypy](https://mypy.readthedocs.io/en/stable/) are used to lint the code. pylint's configuration is in [pyproject.toml](pyproject.toml#L39) and mypy's configuration is in [mypy.ini](mypy.ini).
+[pylint](https://docs.pylint.org/en/latest/index.html) and [mypy](https://mypy.readthedocs.io/en/stable/) are used to lint the code. pylint's configuration and mypy's configuration are in [pyproject.toml](pyproject.toml).
 
 ### [Formatting](scripts/format.ps1)
 
-[isort](https://pycqa.github.io/isort/) and [black](https://black.readthedocs.io/en/stable/) are used to format the code. isort's configuration is in [pyproject.toml](pyproject.toml#L30) and black uses default settings.
+[isort](https://pycqa.github.io/isort/) and [black](https://black.readthedocs.io/en/stable/) are used to format the code. isort's configuration is in [pyproject.toml](pyproject.toml) and black uses default settings.
 
 ```
 isort app tests export scripts; black app tests export scripts
