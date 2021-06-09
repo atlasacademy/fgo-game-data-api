@@ -12,6 +12,7 @@ from app.schemas.gameenums import (
     BUFF_LIMIT_NAME,
     BUFF_TYPE_NAME,
     CARD_TYPE_NAME,
+    GIFT_TYPE_NAME,
     BuffAction,
 )
 
@@ -123,6 +124,16 @@ def get_nice_constant(raw_data: Any) -> Any:
         constant["name"]: constant["value"]
         for constant in raw_data
         if constant["name"] in CONSTANT_INCLUDE
+    }
+
+
+def get_nice_gift(raw_gift: Any) -> dict[Any, Any]:
+    return {
+        "id": raw_gift["id"],
+        "type": GIFT_TYPE_NAME[raw_gift["type"]],
+        "objectId": raw_gift["objectId"],
+        "priority": raw_gift["priority"],
+        "num": raw_gift["num"],
     }
 
 
@@ -294,6 +305,10 @@ def export_nice_master_lvl(region: Region, master_path: Path, export_path: Path)
         constant = json.load(fp)
     with open(master_path / "master" / "mstUserExp.json", "r", encoding="utf-8") as fp:
         mstUserExp: list[dict[str, int]] = json.load(fp)
+    with open(master_path / "master" / "mstGift.json", "r", encoding="utf-8") as fp:
+        mstGiftId: dict[int, dict[str, int]] = {
+            gift["id"]: gift for gift in json.load(fp)
+        }
 
     def get_current_value(base: int, key: str, current: int) -> int:
         return base + sum(user_exp[key] for user_exp in mstUserExp[: current + 1])
@@ -312,6 +327,9 @@ def export_nice_master_lvl(region: Region, master_path: Path, export_path: Path)
             "maxFriend": get_current_value(
                 constant["FRIEND_NUM"], "addFriendMax", lvli
             ),
+            "gift": get_nice_gift(mstGiftId[lvl["giftId"]])
+            if lvl["giftId"] != 0
+            else None,
         }
         for lvli, lvl in enumerate(mstUserExp)
     }

@@ -72,15 +72,15 @@ REDIS_PREFIX="fgoapi
 
 Secret variables can also be put in the `secrets` folder instead of being supplied as environment variable:
 ```
-> cat .\secrets\JP_POSTGRESDSN
+> cat .\secrets\jp_postgresdsn
 postgresql://username:password@localhost:5432/fgoapiJP
-> cat .\secrets\NA_POSTGRESDSN
+> cat .\secrets\na_postgresdsn
 postgresql://username:password@localhost:5432/fgoapiNA
-> cat .\secrets\RAYSHIFT_API_KEY
+> cat .\secrets\rayshift_api_key
 eca334a9-3289-4ad7-9b92-1ec2bbc3fc19
-> cat .\secrets\GITHUB_WEBHOOK_SECRET
+> cat .\secrets\github_webhook_secret
 e81c7b97-9a57-4424-a887-149b4b5adf57
-> cat .\secrets\REDISDSN
+> cat .\secrets\redisdsn
 redis://localhost
 ```
 
