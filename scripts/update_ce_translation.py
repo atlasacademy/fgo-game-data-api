@@ -42,12 +42,12 @@ ENGLISH_MONTHS = {
     11: "NOV",
     12: "DEC",
 }
-DONT_USE_NA_TRANSLATION = {
-    "1000万DL突破キャンペーン",
-    "「1300万DL突破キャンペーン」開催記念",
-    "1500万DL突破キャンペーン",
-    "1800万DL突破キャンペーン",
-}
+overwrite_na_path = MAPPING_PATH / "overwrite_na_translations.json"
+if overwrite_na_path.exists():
+    with open(overwrite_na_path, "r", encoding="utf-8") as overwrote_fp:
+        DONT_USE_NA_TRANSLATION = set(json.load(overwrote_fp))
+else:
+    DONT_USE_NA_TRANSLATION = set()
 
 
 class SvtType(IntEnum):

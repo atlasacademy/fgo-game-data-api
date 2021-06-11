@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.63.0 - 2020-06-10
+### Added
+- `fileName` and `notReleased` to quest's bgms.
+- translations for voice names.
+
 ## 5.62.0 - 2020-06-04
 ### Added
 - raw and nice bgm endpoints.
