@@ -3,7 +3,6 @@ from typing import Optional
 from sqlalchemy.engine import Connection
 
 from ...config import Settings
-from ...db.helpers import fetch
 from ...schemas.common import Language, Region
 from ...schemas.nice import AssetURL, NiceMysticCode
 from ...schemas.raw import MstEquip
@@ -55,10 +54,9 @@ def get_nice_mystic_code(
     return nice_mc
 
 
-def get_all_nice_mc(
-    conn: Connection, region: Region, lang: Language
+def get_all_nice_mcs(
+    conn: Connection, region: Region, lang: Language, mstEquips: list[MstEquip]
 ) -> list[NiceMysticCode]:  # pragma: no cover
-    mstEquips = fetch.get_everything(conn, MstEquip)
     return [
         get_nice_mystic_code(conn, region, mstEquip.id, lang, mstEquip)
         for mstEquip in mstEquips

@@ -65,3 +65,9 @@ def get_nice_item_amount(
         NiceItemAmount(item=get_nice_item_from_raw(region, item, lang), amount=amount)
         for item, amount in zip(get_multiple_items(conn, item_list), amount_list)
     ]
+
+
+def get_all_nice_items(
+    region: Region, lang: Language, mstItems: list[MstItem]
+) -> list[NiceItem]:  # pragma: no cover
+    return [get_nice_item_from_raw(region, raw_item, lang) for raw_item in mstItems]

@@ -24,7 +24,7 @@ from ...schemas.nice import (
     NiceSkillReverse,
     NiceTdReverse,
 )
-from ...schemas.raw import MstBuff, MstFunc, MstSvt
+from ...schemas.raw import MstBuff, MstFunc, MstSvt, ServantEntity
 from .. import raw, reverse as reverse_ids
 from ..basic import (
     get_basic_cc,
@@ -53,10 +53,27 @@ def get_nice_servant_model(
     lang: Language,
     lore: bool = False,
     mstSvt: Optional[MstSvt] = None,
+    raw_svt: Optional[ServantEntity] = None,
 ) -> NiceServant:
     return NiceServant.parse_obj(
-        get_nice_servant(conn, region, item_id, lang, lore, mstSvt)
+        get_nice_servant(conn, region, item_id, lang, lore, mstSvt, raw_svt)
     )
+
+
+def get_all_nice_servants_lore(
+    conn: Connection, region: Region, lang: Language, raw_svts: list[ServantEntity]
+) -> list[NiceServant]:  # pragma: no cover
+    return [
+        get_nice_servant_model(
+            conn,
+            region,
+            raw_svt.mstSvt.id,
+            lang,
+            lore=True,
+            raw_svt=raw_svt,
+        )
+        for raw_svt in raw_svts
+    ]
 
 
 def get_nice_equip_model(
@@ -66,10 +83,22 @@ def get_nice_equip_model(
     lang: Language,
     lore: bool = False,
     mstSvt: Optional[MstSvt] = None,
+    raw_svt: Optional[ServantEntity] = None,
 ) -> NiceEquip:
     return NiceEquip.parse_obj(
-        get_nice_servant(conn, region, item_id, lang, lore, mstSvt)
+        get_nice_servant(conn, region, item_id, lang, lore, mstSvt, raw_svt)
     )
+
+
+def get_all_nice_equips_lore(
+    conn: Connection, region: Region, lang: Language, raw_svts: list[ServantEntity]
+) -> list[NiceEquip]:  # pragma: no cover
+    return [
+        get_nice_equip_model(
+            conn, region, raw_svt.mstSvt.id, lang, lore=True, raw_svt=raw_svt
+        )
+        for raw_svt in raw_svts
+    ]
 
 
 async def get_nice_buff_with_reverse(

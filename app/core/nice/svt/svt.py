@@ -24,6 +24,7 @@ from ....schemas.raw import (
     MstSvtChange,
     MstSvtComment,
     MstSvtCostume,
+    ServantEntity,
 )
 from ... import raw
 from ...utils import get_traits_list, get_translation
@@ -83,11 +84,13 @@ def get_nice_servant(
     lang: Language,
     lore: bool = False,
     mstSvt: Optional[MstSvt] = None,
+    raw_svt: Optional[ServantEntity] = None,
 ) -> dict[str, Any]:
     # Get expanded servant entity to get function and buff details
-    raw_svt = raw.get_servant_entity(
-        conn, svt_id, expand=True, lore=lore, mstSvt=mstSvt
-    )
+    if not raw_svt:
+        raw_svt = raw.get_servant_entity(
+            conn, svt_id, expand=True, lore=lore, mstSvt=mstSvt
+        )
     first_svt_limit = raw_svt.mstSvtLimit[0]
 
     nice_data: dict[str, Any] = {

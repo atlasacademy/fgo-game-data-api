@@ -16,7 +16,8 @@ from ...models.raw import (
     mstSvtVoice,
     mstVoicePlayCond,
 )
-from ...schemas.gameenums import CondType, VoiceCondType
+from ...schemas.enums import SERVANT_TYPES
+from ...schemas.gameenums import CondType, SvtType, VoiceCondType
 from ...schemas.raw import (
     GlobalNewMstSubtitle,
     MstSvt,
@@ -24,6 +25,20 @@ from ...schemas.raw import (
     MstSvtVoice,
     MstVoicePlayCond,
 )
+
+
+def get_all_servants(conn: Connection) -> list[MstSvt]:  # pragma: no cover
+    stmt = select(mstSvt).where(
+        and_(mstSvt.c.collectionNo != 0, mstSvt.c.type.in_(SERVANT_TYPES))
+    )
+    return [MstSvt.from_orm(svt) for svt in conn.execute(stmt).fetchall()]
+
+
+def get_all_equips(conn: Connection) -> list[MstSvt]:  # pragma: no cover
+    stmt = select(mstSvt).where(
+        and_(mstSvt.c.collectionNo != 0, mstSvt.c.type == SvtType.SERVANT_EQUIP)
+    )
+    return [MstSvt.from_orm(svt) for svt in conn.execute(stmt).fetchall()]
 
 
 def get_svt_script(conn: Connection, svt_ids: list[int]) -> list[MstSvtScript]:

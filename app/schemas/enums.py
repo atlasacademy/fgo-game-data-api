@@ -41,10 +41,24 @@ from .gameenums import (
     NiceGender,
     NiceSvtFlag,
     NiceSvtType,
+    SvtType,
 )
 
 
 ### Servant Type ###
+
+
+SERVANT_TYPES = [
+    SvtType.NORMAL,
+    SvtType.HEROINE,
+    SvtType.ENEMY_COLLECTION_DETAIL,
+]
+
+NICE_SERVANT_TYPES = [
+    NiceSvtType.normal,
+    NiceSvtType.heroine,
+    NiceSvtType.enemyCollectionDetail,
+]
 
 
 SVT_TYPE_NAME_REVERSE: dict[NiceSvtType, int] = {v: k for k, v in SVT_TYPE_NAME.items()}

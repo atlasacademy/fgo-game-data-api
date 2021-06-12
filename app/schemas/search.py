@@ -6,6 +6,7 @@ from fastapi import Query
 
 from .common import Region
 from .enums import (
+    NICE_SERVANT_TYPES,
     PLAYABLE_CLASS_LIST,
     Attribute,
     FuncApplyTarget,
@@ -27,13 +28,6 @@ from .gameenums import (
 )
 
 
-SERVANT_TYPE = [
-    NiceSvtType.normal,
-    NiceSvtType.heroine,
-    NiceSvtType.enemyCollectionDetail,
-]
-
-
 @dataclass
 class ServantSearchQueryParams:
     region: Region
@@ -41,7 +35,7 @@ class ServantSearchQueryParams:
     illustrator: Optional[str] = None
     cv: Optional[str] = None
     excludeCollectionNo: list[int] = Query([0])
-    type: list[NiceSvtType] = Query(SERVANT_TYPE)
+    type: list[NiceSvtType] = Query(NICE_SERVANT_TYPES)
     flag: list[NiceSvtFlag] = Query([])
     rarity: list[int] = Query([])
     className: list[SvtClass] = Query(PLAYABLE_CLASS_LIST)
@@ -56,7 +50,7 @@ class ServantSearchQueryParams:
                 self.name,
                 self.illustrator,
                 self.cv,
-                self.type != SERVANT_TYPE,
+                self.type != NICE_SERVANT_TYPES,
                 self.flag,
                 self.rarity,
                 self.className != PLAYABLE_CLASS_LIST,

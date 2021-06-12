@@ -3,6 +3,7 @@ from typing import Any, Optional
 
 from .base import BaseModelORJson
 from .common import StageLink
+from .enums import SERVANT_TYPES
 from .gameenums import SvtType
 
 
@@ -220,11 +221,7 @@ class TdEntityNoReverse(BaseModelORJson):
 
 
 def is_servant(svt_type: int) -> bool:
-    return svt_type in {
-        SvtType.NORMAL,
-        SvtType.HEROINE,
-        SvtType.ENEMY_COLLECTION_DETAIL,
-    }
+    return svt_type in SERVANT_TYPES
 
 
 def is_equip(svt_type: int) -> bool:

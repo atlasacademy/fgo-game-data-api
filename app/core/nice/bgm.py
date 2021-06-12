@@ -7,7 +7,7 @@ from ...schemas.common import Language, Region
 from ...schemas.gameenums import COND_TYPE_NAME, BgmFlag
 from ...schemas.nice import AssetURL, NiceBgm, NiceBgmEntity, NiceBgmRelease
 from ...schemas.raw import BgmEntity, MstBgm, MstBgmRelease, MstClosedMessage
-from ..raw import get_all_bgm_entities, get_bgm_entity
+from ..raw import get_bgm_entity
 from ..utils import get_translation
 from .event import get_nice_shop
 
@@ -95,11 +95,10 @@ def get_nice_bgm_entity(
     return get_nice_bgm_entity_from_raw(conn, region, bgm_entity, lang)
 
 
-def get_all_nice_bgm_entities(
-    conn: Connection, region: Region, lang: Language
+def get_all_nice_bgms(
+    conn: Connection, region: Region, lang: Language, bgms: list[BgmEntity]
 ) -> list[NiceBgmEntity]:  # pragma: no cover
-    all_bgm_entities = get_all_bgm_entities(conn)
     return [
         get_nice_bgm_entity_from_raw(conn, region, bgm_entity, lang)
-        for bgm_entity in all_bgm_entities
+        for bgm_entity in bgms
     ]

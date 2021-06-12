@@ -7,27 +7,28 @@ from typing import Any, Iterable, Union
 from aioredis import Redis
 from git import Repo
 from pydantic import DirectoryPath
+from sqlalchemy.engine import Connection
 
 from .config import SecretSettings, Settings, logger, project_root
 from .core.basic import (
-    get_all_basic_cc,
+    get_all_basic_ccs,
+    get_all_basic_equips,
     get_all_basic_events,
-    get_all_basic_mc,
+    get_all_basic_mcs,
+    get_all_basic_servants,
     get_all_basic_wars,
-    get_basic_equip,
-    get_basic_servant,
 )
-from .core.nice.bgm import get_all_nice_bgm_entities
-from .core.nice.cc import get_all_nice_cc
-from .core.nice.item import get_nice_item_from_raw
-from .core.nice.mc import get_all_nice_mc
-from .core.nice.nice import get_nice_equip_model, get_nice_servant_model
-from .core.utils import get_translation, sort_by_collection_no
-from .data.gamedata import masters, update_masters
+from .core.nice.bgm import get_all_nice_bgms
+from .core.nice.cc import get_all_nice_ccs
+from .core.nice.item import get_all_nice_items
+from .core.nice.mc import get_all_nice_mcs
+from .core.nice.nice import get_all_nice_equips_lore, get_all_nice_servants_lore
+from .core.raw import get_all_bgm_entities, get_all_raw_svts_lore
+from .core.utils import sort_by_collection_no
+from .data.gamedata import update_masters
 from .db.engine import engines
-from .db.helpers.cv import get_all_cvs
-from .db.helpers.illustrator import get_all_illustrators
-from .db.helpers.item import get_all_items
+from .db.helpers import fetch
+from .db.helpers.svt import get_all_equips, get_all_servants
 from .db.load import update_db
 from .redis.load import load_redis_data
 from .routers.utils import list_string
@@ -35,6 +36,16 @@ from .schemas.base import BaseModelORJson
 from .schemas.common import Language, Region, RepoInfo
 from .schemas.enums import ALL_ENUMS, TRAIT_NAME
 from .schemas.nice import NiceEquip, NiceServant
+from .schemas.raw import (
+    MstCommandCode,
+    MstCv,
+    MstEquip,
+    MstEvent,
+    MstIllustrator,
+    MstItem,
+    MstSvt,
+    MstWar,
+)
 
 
 settings = Settings()
@@ -59,16 +70,14 @@ def dump_orjson(
         fp.write(list_string(data))
 
 
-def dump_svt(
-    region: Region,
+def dump_svt_raw(
     base_export_path: Path,
     file_name: str,
     data: Iterable[Union[NiceServant, NiceEquip]],
+    lang_en_export: bool,
 ) -> None:  # pragma: no cover
     export_with_lore = "["
     export_without_lore = "["
-    export_with_lore_en = "["
-    export_without_lore_en = "["
 
     for item in data:
         export_with_lore += item.json(exclude_unset=True, exclude_none=True)
@@ -77,34 +86,54 @@ def dump_svt(
         )
         export_with_lore += ","
         export_without_lore += ","
-        if region == Region.JP:
-            item.name = get_translation(Language.en, item.name)
-            export_with_lore_en += item.json(exclude_unset=True, exclude_none=True)
-            export_without_lore_en += item.json(
-                exclude_unset=True, exclude_none=True, exclude={"profile"}
-            )
-            export_with_lore_en += ","
-            export_without_lore_en += ","
 
-    export_with_lore = export_with_lore.rstrip(",") + "]"
-    export_without_lore = export_without_lore.rstrip(",") + "]"
-    export_with_lore_en = export_with_lore_en.rstrip(",") + "]"
-    export_without_lore_en = export_without_lore_en.rstrip(",") + "]"
+    export_with_lore = export_with_lore.removesuffix(",") + "]"
+    export_without_lore = export_without_lore.removesuffix(",") + "]"
 
-    with open(base_export_path / f"{file_name}_lore.json", "w", encoding="utf-8") as fp:
+    out_name = file_name
+    out_lore_name = f"{file_name}_lore"
+    if lang_en_export:
+        out_name += "_lang_en"
+        out_lore_name += "_lang_en"
+
+    with open(base_export_path / f"{out_name}.json", "w", encoding="utf-8") as fp:
         fp.write(export_with_lore)
-    with open(base_export_path / f"{file_name}.json", "w", encoding="utf-8") as fp:
+    with open(base_export_path / f"{out_lore_name}.json", "w", encoding="utf-8") as fp:
         fp.write(export_without_lore)
 
-    if region == Region.JP:
-        with open(
-            base_export_path / f"{file_name}_lore_lang_en.json", "w", encoding="utf-8"
-        ) as fp:
-            fp.write(export_with_lore_en)
-        with open(
-            base_export_path / f"{file_name}_lang_en.json", "w", encoding="utf-8"
-        ) as fp:
-            fp.write(export_without_lore_en)
+
+def dump_svt(
+    conn: Connection,
+    region: Region,
+    base_export_path: Path,
+    file_name: str,
+    svts: list[MstSvt],
+) -> None:  # pragma: no cover
+    raw_svts = get_all_raw_svts_lore(conn, svts)
+
+    all_nice_svts = get_all_nice_servants_lore(conn, region, Language.jp, raw_svts)
+    dump_svt_raw(base_export_path, file_name, all_nice_svts, lang_en_export=False)
+
+    if region == "JP":
+        all_nice_svts = get_all_nice_servants_lore(conn, region, Language.en, raw_svts)
+        dump_svt_raw(base_export_path, file_name, all_nice_svts, lang_en_export=True)
+
+
+def dump_equip(
+    conn: Connection,
+    region: Region,
+    base_export_path: Path,
+    file_name: str,
+    svts: list[MstSvt],
+) -> None:  # pragma: no cover
+    raw_svts = get_all_raw_svts_lore(conn, svts)
+
+    all_nice_equips = get_all_nice_equips_lore(conn, region, Language.jp, raw_svts)
+    dump_svt_raw(base_export_path, file_name, all_nice_equips, lang_en_export=False)
+
+    if region == "JP":
+        all_nice_equips = get_all_nice_equips_lore(conn, region, Language.en, raw_svts)
+        dump_svt_raw(base_export_path, file_name, all_nice_equips, lang_en_export=True)
 
 
 async def generate_exports(
@@ -115,41 +144,36 @@ async def generate_exports(
             start_time = time.perf_counter()
             conn = engines[region].connect()
             logger.info(f"Exporting {region} data …")
-            all_equip_data_lore = (
-                get_nice_equip_model(conn, region, svt_id, Language.jp, lore=True)
-                for svt_id in masters[region].mstSvtEquipCollectionNo.values()
-            )
-            all_servant_data_lore = (
-                get_nice_servant_model(conn, region, svt_id, Language.jp, lore=True)
-                for svt_id in masters[region].mstSvtServantCollectionNo.values()
-            )
-            all_item_data = (
-                get_nice_item_from_raw(region, raw_item, Language.jp)
-                for raw_item in get_all_items(conn)
-            )
-            all_illustrator_data = get_all_illustrators(conn)
-            all_cv_data = get_all_cvs(conn)
-            all_mc_data = get_all_nice_mc(conn, region, Language.jp)
-            all_cc_data = get_all_nice_cc(conn, region, Language.jp)
-            all_bgm_data = get_all_nice_bgm_entities(conn, region, Language.jp)
+
+            all_servants = get_all_servants(conn)
+            all_equips = get_all_equips(conn)
+            bgms = get_all_bgm_entities(conn)
+
+            mstItems = fetch.get_everything(conn, MstItem)
+            mstIllustrators = fetch.get_everything(conn, MstIllustrator)
+            mstCvs = fetch.get_everything(conn, MstCv)
+            mstEvents = fetch.get_everything(conn, MstEvent)
+            mstWars = fetch.get_everything(conn, MstWar)
+            mstEquips = fetch.get_everything(conn, MstEquip)
+            mstCcs = fetch.get_everything(conn, MstCommandCode)
+
+            all_item_data = get_all_nice_items(region, Language.jp, mstItems)
+            all_mc_data = get_all_nice_mcs(conn, region, Language.jp, mstEquips)
+            all_cc_data = get_all_nice_ccs(conn, region, Language.jp, mstCcs)
+            all_bgm_data = get_all_nice_bgms(conn, region, Language.jp, bgms)
+
             all_basic_servant_data = sort_by_collection_no(
-                [
-                    await get_basic_servant(redis, region, svt_id)
-                    for svt_id in masters[region].mstSvtServantCollectionNo.values()
-                ]
+                await get_all_basic_servants(redis, region, Language.jp, all_servants)
             )
             all_basic_equip_data = sort_by_collection_no(
-                [
-                    await get_basic_equip(redis, region, svt_id)
-                    for svt_id in masters[region].mstSvtEquipCollectionNo.values()
-                ]
+                await get_all_basic_equips(redis, region, Language.jp, all_equips)
             )
-            all_basic_mc_data = get_all_basic_mc(conn, region, Language.jp)
+            all_basic_mc_data = get_all_basic_mcs(region, Language.jp, mstEquips)
             all_basic_cc_data = sort_by_collection_no(
-                get_all_basic_cc(conn, region, Language.jp)
+                get_all_basic_ccs(region, Language.jp, mstCcs)
             )
-            all_basic_event_data = get_all_basic_events(conn, region, Language.jp)
-            all_basic_war_data = get_all_basic_wars(conn, Language.jp)
+            all_basic_event_data = get_all_basic_events(region, Language.jp, mstEvents)
+            all_basic_war_data = get_all_basic_wars(Language.jp, mstWars)
 
             output_files = [
                 ("basic_servant", all_basic_servant_data, dump_orjson),
@@ -164,44 +188,38 @@ async def generate_exports(
                 ("nice_item", all_item_data, dump_orjson),
                 ("nice_mystic_code", all_mc_data, dump_orjson),
                 ("nice_bgm", all_bgm_data, dump_orjson),
-                ("nice_illustrator", all_illustrator_data, dump_orjson),
-                ("nice_cv", all_cv_data, dump_orjson),
+                ("nice_illustrator", mstIllustrators, dump_orjson),
+                ("nice_cv", mstCvs, dump_orjson),
             ]
 
             if region == Region.JP:
+                all_item_data_en = get_all_nice_items(region, Language.en, mstItems)
+                all_bgm_data_en = get_all_nice_bgms(conn, region, Language.en, bgms)
+                all_cc_data_en = get_all_nice_ccs(conn, region, Language.en, mstCcs)
+                all_mc_data_en = get_all_nice_mcs(conn, region, Language.en, mstEquips)
+
                 all_basic_servant_en = sort_by_collection_no(
-                    [
-                        await get_basic_servant(redis, region, svt_id, lang=Language.en)
-                        for svt_id in masters[region].mstSvtServantCollectionNo.values()
-                    ]
+                    await get_all_basic_servants(
+                        redis, region, Language.en, all_servants
+                    )
                 )
                 all_basic_equip_en = sort_by_collection_no(
-                    [
-                        await get_basic_equip(redis, region, svt_id, Language.en)
-                        for svt_id in masters[region].mstSvtEquipCollectionNo.values()
-                    ]
+                    await get_all_basic_equips(redis, region, Language.en, all_equips)
                 )
                 all_basic_cc_en = sort_by_collection_no(
-                    get_all_basic_cc(conn, region, Language.en)
+                    get_all_basic_ccs(region, Language.en, mstCcs)
                 )
-                all_cc_data_en = get_all_nice_cc(conn, region, Language.en)
-                all_item_data_en = (
-                    get_nice_item_from_raw(region, raw_item, Language.en)
-                    for raw_item in get_all_items(conn)
+                all_basic_mc_en = get_all_basic_mcs(region, Language.en, mstEquips)
+                all_basic_event_en = get_all_basic_events(
+                    region, Language.en, mstEvents
                 )
-                all_basic_mc_en = get_all_basic_mc(conn, region, Language.en)
-                all_mc_data_en = get_all_nice_mc(conn, region, Language.en)
-                all_basic_event_data_en = get_all_basic_events(
-                    conn, region, Language.en
-                )
-                all_basic_war_data_en = get_all_basic_wars(conn, Language.en)
-                all_bgm_data_en = get_all_nice_bgm_entities(conn, region, Language.en)
+                all_basic_war_en = get_all_basic_wars(Language.en, mstWars)
 
                 output_files = [
                     ("basic_servant_lang_en", all_basic_servant_en, dump_orjson),
                     ("basic_equip_lang_en", all_basic_equip_en, dump_orjson),
-                    ("basic_event_lang_en", all_basic_event_data_en, dump_orjson),
-                    ("basic_war_lang_en", all_basic_war_data_en, dump_orjson),
+                    ("basic_event_lang_en", all_basic_event_en, dump_orjson),
+                    ("basic_war_lang_en", all_basic_war_en, dump_orjson),
                     ("basic_command_code_lang_en", all_basic_cc_en, dump_orjson),
                     ("nice_command_code_lang_en", all_cc_data_en, dump_orjson),
                     ("nice_item_lang_en", all_item_data_en, dump_orjson),
@@ -215,18 +233,8 @@ async def generate_exports(
             for file_name, data, dump in output_files:
                 dump(base_export_path, file_name, data)
 
-            dump_svt(
-                region,
-                base_export_path,
-                "nice_servant",
-                all_servant_data_lore,
-            )
-            dump_svt(
-                region,
-                base_export_path,
-                "nice_equip",
-                all_equip_data_lore,
-            )
+            dump_svt(conn, region, base_export_path, "nice_servant", all_servants)
+            dump_equip(conn, region, base_export_path, "nice_equip", all_equips)
 
             conn.close()
 

@@ -3,7 +3,6 @@ from typing import Optional
 from sqlalchemy.engine import Connection
 
 from ...config import Settings
-from ...db.helpers import fetch
 from ...schemas.common import Language, Region
 from ...schemas.nice import AssetURL, NiceCommandCode
 from ...schemas.raw import MstCommandCode
@@ -48,10 +47,13 @@ def get_nice_command_code(
     return nice_cc
 
 
-def get_all_nice_cc(
-    conn: Connection, region: Region, lang: Language
+def get_all_nice_ccs(
+    conn: Connection,
+    region: Region,
+    lang: Language,
+    mstCCommandCodes: list[MstCommandCode],
 ) -> list[NiceCommandCode]:  # pragma: no cover
-    mstCcs = fetch.get_everything(conn, MstCommandCode)
     return [
-        get_nice_command_code(conn, region, mstCc.id, lang, mstCc) for mstCc in mstCcs
+        get_nice_command_code(conn, region, mstCc.id, lang, mstCc)
+        for mstCc in mstCCommandCodes
     ]
