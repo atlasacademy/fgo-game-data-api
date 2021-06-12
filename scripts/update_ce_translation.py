@@ -178,6 +178,19 @@ def update_translation(
 
     if master_file == "mstTreasureDevice":
         na_names = get_names(na_svt)
+        with open(na_master / "mstSvtLimitAdd.json", "r", encoding="utf-8") as fp:
+            for limit_add in json.load(fp):
+                if "overWriteTDName" in limit_add["script"]:
+                    td_id = limit_add["svtId"] * 100 + limit_add["limitCount"]
+                    na_names[td_id] = limit_add["script"]["overWriteTDName"]
+        with open(jp_master / "mstSvtLimitAdd.json", "r", encoding="utf-8") as fp:
+            for limit_add in json.load(fp):
+                if "overWriteTDName" in limit_add["script"]:
+                    td_name = limit_add["script"]["overWriteTDName"]
+                    td_id = limit_add["svtId"] * 100 + limit_add["limitCount"]
+                    jp_names[td_id] = limit_add["script"].get(
+                        "overWriteTDRuby", td_name
+                    )
 
     updated_translation: dict[str, str] = {}
     for colNo, jp_name in sorted(jp_names.items(), key=lambda x: x[0]):

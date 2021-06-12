@@ -6,7 +6,6 @@ from fastapi import HTTPException
 from sqlalchemy.engine import Connection
 
 from ..config import Settings
-from ..data.custom_mappings import TRANSLATIONS
 from ..data.gamedata import masters
 from ..db.helpers import fetch, war
 from ..redis.helpers import pydantic_object
@@ -64,13 +63,7 @@ from ..schemas.raw import (
     MstWar,
 )
 from . import reverse as reverse_ids
-from .utils import (
-    get_nice_trait,
-    get_np_name,
-    get_safe,
-    get_traits_list,
-    get_translation,
-)
+from .utils import get_nice_trait, get_np_name, get_traits_list, get_translation
 
 
 settings = Settings()
@@ -288,7 +281,7 @@ async def get_basic_td(
         raise HTTPException(status_code=404, detail="NP not found")
     basic_td = BasicTdReverse(
         id=mstTreasureDevice.id,
-        name=get_np_name(mstTreasureDevice, lang),
+        name=get_np_name(mstTreasureDevice.name, mstTreasureDevice.ruby, lang),
         ruby=mstTreasureDevice.ruby,
     )
 
@@ -314,12 +307,13 @@ async def get_basic_svt(
 ) -> dict[str, Any]:
     if not mstSvt:
         mstSvt = await pydantic_object.fetch_id(redis, region, MstSvt, svt_id)
-    if not mstSvt:
-        raise HTTPException(status_code=404, detail="Svt not found")
 
     mstSvtLimit = await pydantic_object.fetch_mstSvtLimit(
         redis, region, svt_id, svt_limit
     )
+
+    if not mstSvt or not mstSvtLimit:
+        raise HTTPException(status_code=404, detail="Svt not found")
 
     basic_servant = {
         "id": svt_id,
@@ -346,8 +340,8 @@ async def get_basic_svt(
     else:
         basic_servant["face"] = AssetURL.face.format(**base_settings, i=0)
 
-    if region == Region.JP and lang == Language.en:
-        basic_servant["name"] = get_safe(TRANSLATIONS, basic_servant["name"])
+    if region == Region.JP and lang is not None:
+        basic_servant["name"] = get_translation(lang, mstSvt.name)
 
     return basic_servant
 

@@ -26,7 +26,9 @@ def get_nice_td(
 ) -> list[dict[str, Any]]:
     nice_td: dict[str, Any] = {
         "id": tdEntity.mstTreasureDevice.id,
-        "name": get_np_name(tdEntity.mstTreasureDevice, lang),
+        "name": get_np_name(
+            tdEntity.mstTreasureDevice.name, tdEntity.mstTreasureDevice.ruby, lang
+        ),
         "ruby": tdEntity.mstTreasureDevice.ruby,
         "rank": tdEntity.mstTreasureDevice.rank,
         "type": tdEntity.mstTreasureDevice.typeText,

@@ -1,11 +1,10 @@
 from typing import Union
 
 from ....config import Settings
-from ....data.custom_mappings import TRANSLATIONS
 from ....schemas.common import Language, NiceTrait, Region
 from ....schemas.nice import AscensionAdd, AssetURL
 from ....schemas.raw import ServantEntity
-from ...utils import get_safe, get_traits_list
+from ...utils import get_traits_list, get_translation, get_np_name
 
 
 settings = Settings()
@@ -52,26 +51,27 @@ def get_nice_ascensionAdd(
                 add_category = (
                     "costume" if limitAdd.limitCount in costume_ids else "ascension"
                 )
+                add_data = limitAdd.script[overwrite_field]
 
                 if overwrite_field == "overWriteTDFileName":
-                    add_data: str = AssetURL.commandFile.format(
+                    add_data = AssetURL.commandFile.format(
                         base_url=settings.asset_url,
                         region=region,
                         item_id=raw_svt.mstSvt.id,
-                        file_name=limitAdd.script[overwrite_field],
+                        file_name=add_data,
                     )
-                elif (
-                    region == Region.JP
-                    and lang == Language.en
-                    and overwrite_field
-                    in [
+                elif region == Region.JP:
+                    if overwrite_field in (
                         "overWriteServantName",
                         "overWriteServantBattleName",
-                    ]
-                ):
-                    add_data = get_safe(TRANSLATIONS, limitAdd.script[overwrite_field])
-                else:
-                    add_data = limitAdd.script[overwrite_field]
+                    ):
+                        add_data = get_translation(lang, add_data)
+                    elif overwrite_field == "overWriteTDName":
+                        add_data = get_np_name(
+                            add_data,
+                            limitAdd.script.get("overWriteTDRuby", add_data),
+                            lang,
+                        )
 
                 ascensionAdd[overwrite_field][add_category][
                     limitAdd.limitCount

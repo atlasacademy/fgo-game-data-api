@@ -6,7 +6,6 @@ from ..schemas.basic import BasicCommandCode, BasicEquip, BasicServant
 from ..schemas.common import Language, NiceTrait
 from ..schemas.enums import TRAIT_NAME, Trait
 from ..schemas.nice import NiceCommandCode, NiceEquip, NiceServant
-from ..schemas.raw import MstTreasureDevice
 
 
 TValue = TypeVar("TValue")
@@ -26,40 +25,38 @@ def get_translation(
     if string == "":
         return ""
 
-    if language == Language.en:
-        if (
-            override_file
-            and override_id
-            and override_id in TRANSLATION_OVERRIDE.get(override_file, {})
-        ):  # pragma: no cover
-            return TRANSLATION_OVERRIDE[override_file][override_id]
+    if language == Language.jp:
+        return string
 
-        if override_file == Translation.ENEMY and string[:-1] in TRANSLATIONS:
-            translated_string = TRANSLATIONS[string[:-1]]
-            if string[-1] in full_width_uppercase_lookup:
-                corresponding_half_width = full_width_uppercase_lookup[string[-1]]
-                return f"{translated_string} {corresponding_half_width}"
-            elif string[-1] in half_width_uppercase_lookup and string[-2] != "":
-                return f"{translated_string} {string[-1]}"
+    if (
+        override_file
+        and override_id
+        and override_id in TRANSLATION_OVERRIDE.get(override_file, {})
+    ):  # pragma: no cover
+        return TRANSLATION_OVERRIDE[override_file][override_id]
 
-        return TRANSLATIONS.get(string, string)
+    if override_file == Translation.ENEMY and string[:-1] in TRANSLATIONS:
+        translated_string = TRANSLATIONS[string[:-1]]
+        if string[-1] in full_width_uppercase_lookup:
+            corresponding_half_width = full_width_uppercase_lookup[string[-1]]
+            return f"{translated_string} {corresponding_half_width}"
+        elif string[-1] in half_width_uppercase_lookup and string[-2] != "":
+            return f"{translated_string} {string[-1]}"
 
-    return string
+    return TRANSLATIONS.get(string, string)
 
 
-def get_np_name(td: MstTreasureDevice, language: Language) -> str:
-    if language == Language.en:
-        to_translate = td.ruby if td.ruby not in ("", "-") else td.name
-        translation = get_translation(
-            language, to_translate, Translation.NP, str(td.id)
-        )
+def get_np_name(td_name: str, td_ruby: str, language: Language) -> str:
+    if language == Language.jp:
+        return td_name
 
-        if to_translate == translation:
-            return td.name
+    to_translate = td_ruby if td_ruby not in ("", "-") else td_name
+    translation = get_translation(language, to_translate)
 
-        return translation
+    if to_translate == translation:
+        return td_name
 
-    return td.name
+    return translation
 
 
 VOICE_NAME_REGEX = re.compile(r"^(.*?)(\d+)$", re.DOTALL)
@@ -134,7 +131,7 @@ def get_lang_en(svt: THasColNo) -> THasColNo:
     Returns given svt Pydantic object with English name
     """
     lang_en_svt = svt.copy()
-    lang_en_svt.name = get_safe(TRANSLATIONS, svt.name)
+    lang_en_svt.name = get_translation(Language.en, svt.name)
     return lang_en_svt
 
 

@@ -284,7 +284,7 @@ def search_td(
             for td in matches
             if match_name(search_param.name, td.name)
             or match_name(search_param.name, td.ruby)
-            or match_name(search_param.name, get_np_name(td, Language.en))
+            or match_name(search_param.name, get_np_name(td.name, td.ruby, Language.en))
         ]
 
     if len(matches) > limit:
