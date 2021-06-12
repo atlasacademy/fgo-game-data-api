@@ -22,8 +22,7 @@ from .core.nice.cc import get_all_nice_cc
 from .core.nice.item import get_nice_item_from_raw
 from .core.nice.mc import get_all_nice_mc
 from .core.nice.nice import get_nice_equip_model, get_nice_servant_model
-from .core.utils import get_safe, sort_by_collection_no
-from .data.custom_mappings import TRANSLATIONS
+from .core.utils import get_translation, sort_by_collection_no
 from .data.gamedata import masters, update_masters
 from .db.engine import engines
 from .db.helpers.cv import get_all_cvs
@@ -79,7 +78,7 @@ def dump_svt(
         export_with_lore += ","
         export_without_lore += ","
         if region == Region.JP:
-            item.name = get_safe(TRANSLATIONS, item.name)
+            item.name = get_translation(Language.en, item.name)
             export_with_lore_en += item.json(exclude_unset=True, exclude_none=True)
             export_without_lore_en += item.json(
                 exclude_unset=True, exclude_none=True, exclude={"profile"}

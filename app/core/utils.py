@@ -1,5 +1,5 @@
 import re
-from typing import Any, Iterable, Literal, Mapping, Optional, TypeVar, Union
+from typing import Iterable, Literal, Optional, TypeVar, Union
 
 from ..data.custom_mappings import TRANSLATION_OVERRIDE, TRANSLATIONS, Translation
 from ..schemas.basic import BasicCommandCode, BasicEquip, BasicServant
@@ -78,13 +78,6 @@ def get_voice_name(
             return get_translation(language, voice_name, override_file)
 
     return voice_name
-
-
-def get_safe(input_dict: Mapping[Any, TValue], key: TLookup) -> Union[TValue, TLookup]:
-    """
-    A dict getter that returns the lookup key if it's not found in the dict.
-    """
-    return input_dict.get(key, key)
 
 
 def get_nice_trait(individuality: int) -> NiceTrait:

@@ -16,10 +16,10 @@ from ..models.raw import (
     mstTreasureDeviceLv,
 )
 from ..models.rayshift import rayshiftQuest
-from ..rayshift.quest import get_all_quest_lists
 from ..schemas.common import Region
 from ..schemas.enums import FUNC_VALS_NOT_BUFF
 from ..schemas.raw import get_subtitle_svtId
+from ..schemas.rayshift import QuestList
 from .engine import engines
 from .helpers.rayshift import insert_rayshift_quest_list
 
@@ -217,11 +217,9 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
     logger.info(f"Loaded db in {db_loading_time:.2f}s.")
 
 
-def load_rayshift_quest_list(region: Region) -> None:
+def load_rayshift_quest_list(region: Region, quest_list: list[QuestList]) -> None:
     print(f"Loading {region} rayshift data cache …")
     start_loading_time = time.perf_counter()
-
-    quest_list = get_all_quest_lists(region)
 
     print(f"Inserting {region} rayshift data cache into db …")
     with engines[region].begin() as conn:

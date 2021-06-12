@@ -4,7 +4,7 @@ from ....config import Settings
 from ....schemas.common import Language, NiceTrait, Region
 from ....schemas.nice import AscensionAdd, AssetURL
 from ....schemas.raw import ServantEntity
-from ...utils import get_traits_list, get_translation, get_np_name
+from ...utils import get_np_name, get_traits_list, get_translation
 
 
 settings = Settings()
