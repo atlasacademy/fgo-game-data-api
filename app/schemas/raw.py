@@ -1123,7 +1123,6 @@ class Master(BaseModelORJson):
     mstCombineSkillItem: set[int]
     mstCombineLimitItem: set[int]
     mstCombineCostumeItem: set[int]
-    mstSvtLimitFirst: dict[int, BasicMstSvtLimit]
     mstSvtLimitOverwriteName: dict[int, str]
     mstEquipSkill: list[MstEquipSkill]
     mstWarEventId: dict[int, list[MstWar]]

@@ -308,6 +308,7 @@ async def get_basic_svt(
     redis: Redis,
     region: Region,
     svt_id: int,
+    svt_limit: int = 1,
     lang: Optional[Language] = None,
     mstSvt: Optional[MstSvt] = None,
 ) -> dict[str, Any]:
@@ -316,7 +317,9 @@ async def get_basic_svt(
     if not mstSvt:
         raise HTTPException(status_code=404, detail="Svt not found")
 
-    mstSvtLimit = masters[region].mstSvtLimitFirst[svt_id]
+    mstSvtLimit = await pydantic_object.fetch_mstSvtLimit(
+        redis, region, svt_id, svt_limit
+    )
 
     basic_servant = {
         "id": svt_id,
@@ -353,11 +356,12 @@ async def get_basic_servant(
     redis: Redis,
     region: Region,
     item_id: int,
+    svt_limit: int = 1,
     lang: Optional[Language] = None,
     mstSvt: Optional[MstSvt] = None,
 ) -> BasicServant:
     return BasicServant.parse_obj(
-        await get_basic_svt(redis, region, item_id, lang, mstSvt)
+        await get_basic_svt(redis, region, item_id, svt_limit, lang, mstSvt)
     )
 
 
@@ -369,7 +373,7 @@ async def get_basic_equip(
     mstSvt: Optional[MstSvt] = None,
 ) -> BasicEquip:
     return BasicEquip.parse_obj(
-        await get_basic_svt(redis, region, item_id, lang, mstSvt)
+        await get_basic_svt(redis, region, item_id, lang=lang, mstSvt=mstSvt)
     )
 
 

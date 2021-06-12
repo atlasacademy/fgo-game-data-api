@@ -40,7 +40,6 @@ MASTER_WITHOUT_ID = {
 SVT_STUFFS = {
     "mstSvtGroup",
     "mstSvtComment",
-    "mstSvtLimit",
     "mstSvtLimitAdd",
     "mstCombineSkill",
     "mstCombineLimit",
@@ -151,11 +150,6 @@ def update_masters(region_path: dict[Region, DirectoryPath]) -> None:
         for ai_act in master["mstAiAct"]:
             if len(ai_act["skillVals"]) >= 2:
                 master["skillToAiAct"][ai_act["skillVals"][0]].add(ai_act["id"])
-
-        master["mstSvtLimitFirst"] = {}
-        for svtLimit in master["mstSvtLimit"]:
-            if svtLimit["svtId"] not in master["mstSvtLimitFirst"]:
-                master["mstSvtLimitFirst"][svtLimit["svtId"]] = svtLimit
 
         master["mstSvtLimitOverwriteName"] = {}
         for svtLimitAdd in master["mstSvtLimitAdd"]:

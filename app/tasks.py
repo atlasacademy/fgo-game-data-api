@@ -172,7 +172,7 @@ async def generate_exports(
             if region == Region.JP:
                 all_basic_servant_en = sort_by_collection_no(
                     [
-                        await get_basic_servant(redis, region, svt_id, Language.en)
+                        await get_basic_servant(redis, region, svt_id, lang=Language.en)
                         for svt_id in masters[region].mstSvtServantCollectionNo.values()
                     ]
                 )

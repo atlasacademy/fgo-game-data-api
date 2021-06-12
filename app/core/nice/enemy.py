@@ -189,7 +189,9 @@ async def get_quest_enemy(
     lang: Language = Language.jp,
 ) -> QuestEnemy:
     deck_svt = deck_svt_info.deck
-    basic_svt = await get_basic_servant(redis, region, user_svt.svtId, lang)
+    basic_svt = await get_basic_servant(
+        redis, region, user_svt.svtId, user_svt.limitCount, lang
+    )
 
     if user_svt.npcSvtClassId != 0:
         basic_svt.className = CLASS_NAME[user_svt.npcSvtClassId]

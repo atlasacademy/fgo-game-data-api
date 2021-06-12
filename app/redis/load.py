@@ -29,6 +29,22 @@ async def load_pydantic_object(
                 await redis.hmset_dict(redis_key, redis_data)
 
 
+async def load_mstSvtLimit(
+    redis: Redis, region_path: dict[Region, DirectoryPath], redis_prefix: str
+) -> None:
+    for region, master_folder in region_path.items():
+        mstSvtLimit_json = master_folder / "master" / "mstSvtLimit.json"
+        if mstSvtLimit_json.exists():
+            with open(mstSvtLimit_json, "rb") as fp:
+                mstSvtLimit_data: list[dict[str, Any]] = orjson.loads(fp.read())
+            redis_data = {
+                f'{item["svtId"]}:{item["limitCount"]}': orjson.dumps(item)
+                for item in mstSvtLimit_data
+            }
+            redis_key = f"{redis_prefix}:{region.name}:mstSvtlimit"
+            await redis.hmset_dict(redis_key, redis_data)
+
+
 async def load_redis_data(
     redis: Redis, region_path: dict[Region, DirectoryPath]
 ) -> None:
@@ -38,6 +54,7 @@ async def load_redis_data(
     redis_prefix = f"{settings.redis_prefix}:data"
 
     await load_pydantic_object(redis, region_path, redis_prefix)
+    await load_mstSvtLimit(redis, region_path, redis_prefix)
 
     redis_loading_time = time.perf_counter() - start_loading_time
     logger.info(f"Loaded redis in {redis_loading_time:.2f}s.")

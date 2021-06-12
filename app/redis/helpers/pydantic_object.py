@@ -12,6 +12,7 @@ from ...schemas.raw import (
     MstFunc,
     MstSkill,
     MstSvt,
+    MstSvtLimit,
     MstTreasureDevice,
 )
 
@@ -41,5 +42,17 @@ async def fetch_id(
 
     if item_redis:
         return schema.parse_raw(item_redis)
+
+    return None
+
+
+async def fetch_mstSvtLimit(
+    redis: Redis, region: Region, svt_id: int, svt_limit: int = 1
+) -> Optional[MstSvtLimit]:
+    redis_key = f"{settings.redis_prefix}:data:{region.name}:mstSvtlimit"
+    mstSvtLimit = await redis.hget(redis_key, f"{svt_id}:{svt_limit}")
+
+    if mstSvtLimit:
+        return MstSvtLimit.parse_raw(mstSvtLimit)
 
     return None

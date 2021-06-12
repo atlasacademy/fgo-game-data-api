@@ -62,7 +62,7 @@ async def find_servant(
     return list_response(
         [
             await basic.get_basic_servant(
-                redis, search_param.region, mstSvt.id, lang, mstSvt
+                redis, search_param.region, mstSvt.id, 1, lang, mstSvt
             )
             for mstSvt in matches
         ]
@@ -106,7 +106,7 @@ async def get_servant(
         servant_id = masters[region].mstSvtServantCollectionNo[servant_id]
     if servant_id in masters[region].mstSvtServantCollectionNo.values():
         return item_response(
-            await basic.get_basic_servant(redis, region, servant_id, lang)
+            await basic.get_basic_servant(redis, region, servant_id, lang=lang)
         )
     else:
         raise HTTPException(status_code=404, detail="Servant not found")
@@ -197,7 +197,7 @@ async def find_svt(
     return list_response(
         [
             await basic.get_basic_servant(
-                redis, search_param.region, mstSvt.id, lang, mstSvt
+                redis, search_param.region, mstSvt.id, 1, lang, mstSvt
             )
             for mstSvt in matches
         ]
@@ -224,7 +224,9 @@ async def get_svt(
     Only use actual IDs for lookup. Does not convert from collectionNo.
     The endpoint is not limited to servants or equips ids.
     """
-    return item_response(await basic.get_basic_servant(redis, region, svt_id, lang))
+    return item_response(
+        await basic.get_basic_servant(redis, region, svt_id, lang=lang)
+    )
 
 
 get_mc_description = "Get basic Mystic Code info from ID"
