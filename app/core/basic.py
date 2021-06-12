@@ -315,12 +315,13 @@ async def get_basic_svt(
     if not mstSvt or not mstSvtLimit:
         raise HTTPException(status_code=404, detail="Svt not found")
 
+    servant_name = masters[region].mstSvtLimitOverwriteName.get(svt_id, mstSvt.name)
     basic_servant = {
         "id": svt_id,
         "collectionNo": mstSvt.collectionNo,
         "type": SVT_TYPE_NAME[mstSvt.type],
         "flag": SVT_FLAG_NAME[mstSvt.flag],
-        "name": masters[region].mstSvtLimitOverwriteName.get(svt_id, mstSvt.name),
+        "name": servant_name,
         "className": CLASS_NAME[mstSvt.classId],
         "attribute": ATTRIBUTE_NAME[mstSvt.attri],
         "rarity": mstSvtLimit.rarity,
@@ -341,7 +342,7 @@ async def get_basic_svt(
         basic_servant["face"] = AssetURL.face.format(**base_settings, i=0)
 
     if region == Region.JP and lang is not None:
-        basic_servant["name"] = get_translation(lang, mstSvt.name)
+        basic_servant["name"] = get_translation(lang, servant_name)
 
     return basic_servant
 

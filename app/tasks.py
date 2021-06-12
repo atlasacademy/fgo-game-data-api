@@ -2,7 +2,7 @@ import asyncio
 import json
 import time
 from pathlib import Path
-from typing import Any, Iterable, Union
+from typing import Any, Callable, Iterable, Union
 
 from aioredis import Redis
 from git import Repo
@@ -45,6 +45,7 @@ from .schemas.raw import (
     MstItem,
     MstSvt,
     MstWar,
+    ServantEntity,
 )
 
 
@@ -96,9 +97,9 @@ def dump_svt_raw(
         out_name += "_lang_en"
         out_lore_name += "_lang_en"
 
-    with open(base_export_path / f"{out_name}.json", "w", encoding="utf-8") as fp:
-        fp.write(export_with_lore)
     with open(base_export_path / f"{out_lore_name}.json", "w", encoding="utf-8") as fp:
+        fp.write(export_with_lore)
+    with open(base_export_path / f"{out_name}.json", "w", encoding="utf-8") as fp:
         fp.write(export_without_lore)
 
 
@@ -108,32 +109,19 @@ def dump_svt(
     base_export_path: Path,
     file_name: str,
     svts: list[MstSvt],
+    get_nice_svt: Callable[
+        [Connection, Region, Language, list[ServantEntity]],
+        Iterable[Union[NiceServant, NiceEquip]],
+    ],
 ) -> None:  # pragma: no cover
     raw_svts = get_all_raw_svts_lore(conn, svts)
 
-    all_nice_svts = get_all_nice_servants_lore(conn, region, Language.jp, raw_svts)
+    all_nice_svts = get_nice_svt(conn, region, Language.jp, raw_svts)
     dump_svt_raw(base_export_path, file_name, all_nice_svts, lang_en_export=False)
 
     if region == "JP":
-        all_nice_svts = get_all_nice_servants_lore(conn, region, Language.en, raw_svts)
+        all_nice_svts = get_nice_svt(conn, region, Language.en, raw_svts)
         dump_svt_raw(base_export_path, file_name, all_nice_svts, lang_en_export=True)
-
-
-def dump_equip(
-    conn: Connection,
-    region: Region,
-    base_export_path: Path,
-    file_name: str,
-    svts: list[MstSvt],
-) -> None:  # pragma: no cover
-    raw_svts = get_all_raw_svts_lore(conn, svts)
-
-    all_nice_equips = get_all_nice_equips_lore(conn, region, Language.jp, raw_svts)
-    dump_svt_raw(base_export_path, file_name, all_nice_equips, lang_en_export=False)
-
-    if region == "JP":
-        all_nice_equips = get_all_nice_equips_lore(conn, region, Language.en, raw_svts)
-        dump_svt_raw(base_export_path, file_name, all_nice_equips, lang_en_export=True)
 
 
 async def generate_exports(
@@ -233,8 +221,22 @@ async def generate_exports(
             for file_name, data, dump in output_files:
                 dump(base_export_path, file_name, data)
 
-            dump_svt(conn, region, base_export_path, "nice_servant", all_servants)
-            dump_equip(conn, region, base_export_path, "nice_equip", all_equips)
+            dump_svt(
+                conn,
+                region,
+                base_export_path,
+                "nice_servant",
+                all_servants,
+                get_all_nice_servants_lore,
+            )
+            dump_svt(
+                conn,
+                region,
+                base_export_path,
+                "nice_equip",
+                all_equips,
+                get_all_nice_equips_lore,
+            )
 
             conn.close()
 
