@@ -724,6 +724,9 @@ class Trait(str, Enum):
     hasCostume = "hasCostume"
     weakPointsRevealed = "weakPointsRevealed"
     chenGongNpBlock = "chenGongNpBlock"
+    knightsOfTheRound = "knightsOfTheRound"
+    divineSpirit = "divineSpirit"
+    buffNullifyBuff = "buffNullifyBuff"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -867,6 +870,8 @@ TRAIT_NAME: dict[int, Trait] = {
     2759: Trait.vengeance,  # Taira 2nd skill and NP
     2780: Trait.hasCostume,
     2781: Trait.mechanical,
+    2795: Trait.knightsOfTheRound,
+    2797: Trait.divineSpirit,
     # 2xxx: CQ or Story quests buff
     3000: Trait.attackPhysical,  # Normal attack, including NP
     3001: Trait.attackProjectile,
@@ -932,6 +937,7 @@ TRAIT_NAME: dict[int, Trait] = {
     3065: Trait.buffSkillRankUp,
     3066: Trait.buffSleep,
     3068: Trait.chenGongNpBlock,
+    3070: Trait.buffNullifyBuff,
     # 6016: No detail
     # 6021: No detail
     # 6022: No detail

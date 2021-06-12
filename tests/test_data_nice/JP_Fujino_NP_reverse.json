@@ -93,7 +93,10 @@
           "type": "avoidState",
           "buffGroup": 1000,
           "script": {},
-          "vals": [{ "id": 3005, "name": "buffNegativeEffect" }],
+          "vals": [
+            { "id": 3005, "name": "buffNegativeEffect" },
+            { "id": 3070, "name": "buffNullifyBuff" }
+          ],
           "tvals": [{ "id": 3004, "name": "buffPositiveEffect" }],
           "ckSelfIndv": [],
           "ckOpIndv": [{ "id": 3004, "name": "buffPositiveEffect" }],
@@ -2937,7 +2940,10 @@
                       "type": "avoidState",
                       "buffGroup": 1000,
                       "script": {},
-                      "vals": [{ "id": 3005, "name": "buffNegativeEffect" }],
+                      "vals": [
+                        { "id": 3005, "name": "buffNegativeEffect" },
+                        { "id": 3070, "name": "buffNullifyBuff" }
+                      ],
                       "tvals": [{ "id": 3004, "name": "buffPositiveEffect" }],
                       "ckSelfIndv": [],
                       "ckOpIndv": [
@@ -3270,7 +3276,10 @@
                       "type": "avoidState",
                       "buffGroup": 1000,
                       "script": {},
-                      "vals": [{ "id": 3005, "name": "buffNegativeEffect" }],
+                      "vals": [
+                        { "id": 3005, "name": "buffNegativeEffect" },
+                        { "id": 3070, "name": "buffNullifyBuff" }
+                      ],
                       "tvals": [{ "id": 3004, "name": "buffPositiveEffect" }],
                       "ckSelfIndv": [],
                       "ckOpIndv": [

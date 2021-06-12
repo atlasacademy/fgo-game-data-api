@@ -138,6 +138,7 @@
     { "id": 2631, "name": "hominidaeServant" },
     { "id": 2654, "name": "livingHuman" },
     { "id": 2780, "name": "hasCostume" },
+    { "id": 2795, "name": "knightsOfTheRound" },
     { "id": 5000, "name": "canBeInBattle" },
     { "id": 800100, "name": "unknown" }
   ],
