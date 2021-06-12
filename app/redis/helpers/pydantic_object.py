@@ -47,12 +47,18 @@ async def fetch_id(
 
 
 async def fetch_mstSvtLimit(
-    redis: Redis, region: Region, svt_id: int, svt_limit: int = 1
+    redis: Redis, region: Region, svt_id: int, svt_limit: Optional[int] = None
 ) -> Optional[MstSvtLimit]:
     redis_key = f"{settings.redis_prefix}:data:{region.name}:mstSvtlimit"
-    mstSvtLimit = await redis.hget(redis_key, f"{svt_id}:{svt_limit}")
 
-    if mstSvtLimit:
-        return MstSvtLimit.parse_raw(mstSvtLimit)
+    if svt_limit is not None:
+        mstSvtLimit = await redis.hget(redis_key, f"{svt_id}:{svt_limit}")
+        if mstSvtLimit:
+            return MstSvtLimit.parse_raw(mstSvtLimit)
+
+    for i in range(100):
+        mstSvtLimit = await redis.hget(redis_key, f"{svt_id}:{i}")
+        if mstSvtLimit:
+            return MstSvtLimit.parse_raw(mstSvtLimit)
 
     return None

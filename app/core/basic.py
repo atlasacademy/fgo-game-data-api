@@ -301,7 +301,7 @@ async def get_basic_svt(
     redis: Redis,
     region: Region,
     svt_id: int,
-    svt_limit: int = 1,
+    svt_limit: Optional[int] = None,
     lang: Optional[Language] = None,
     mstSvt: Optional[MstSvt] = None,
 ) -> dict[str, Any]:
@@ -350,7 +350,7 @@ async def get_basic_servant(
     redis: Redis,
     region: Region,
     item_id: int,
-    svt_limit: int = 1,
+    svt_limit: Optional[int] = None,
     lang: Optional[Language] = None,
     mstSvt: Optional[MstSvt] = None,
 ) -> BasicServant:
