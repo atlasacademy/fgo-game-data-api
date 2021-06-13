@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Generator, Optional
 
 from sqlalchemy.engine.base import Connection
 
@@ -97,8 +97,8 @@ def get_nice_bgm_entity(
 
 def get_all_nice_bgms(
     conn: Connection, region: Region, lang: Language, bgms: list[BgmEntity]
-) -> list[NiceBgmEntity]:  # pragma: no cover
-    return [
+) -> Generator[NiceBgmEntity, None, None]:  # pragma: no cover
+    return (
         get_nice_bgm_entity_from_raw(conn, region, bgm_entity, lang)
         for bgm_entity in bgms
-    ]
+    )

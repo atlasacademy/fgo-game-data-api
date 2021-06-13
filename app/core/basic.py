@@ -1,5 +1,5 @@
 from collections import defaultdict
-from typing import Any, Optional
+from typing import Any, Generator, Iterable, Optional
 
 from aioredis import Redis
 from fastapi import HTTPException
@@ -422,9 +422,9 @@ async def get_basic_mc(
 
 
 def get_all_basic_mcs(
-    region: Region, lang: Language, mstEquips: list[MstEquip]
-) -> list[BasicMysticCode]:  # pragma: no cover
-    return [get_basic_mc_from_raw(region, mstEquip, lang) for mstEquip in mstEquips]
+    region: Region, lang: Language, mstEquips: Iterable[MstEquip]
+) -> Generator[BasicMysticCode, None, None]:  # pragma: no cover
+    return (get_basic_mc_from_raw(region, mstEquip, lang) for mstEquip in mstEquips)
 
 
 def get_basic_cc_from_raw(
@@ -462,9 +462,9 @@ async def get_basic_cc(
 def get_all_basic_ccs(
     region: Region,
     lang: Language,
-    mstCommandCodes: list[MstCommandCode],
-) -> list[BasicCommandCode]:  # pragma: no cover
-    return [get_basic_cc_from_raw(region, mstCcs, lang) for mstCcs in mstCommandCodes]
+    mstCommandCodes: Iterable[MstCommandCode],
+) -> Generator[BasicCommandCode, None, None]:  # pragma: no cover
+    return (get_basic_cc_from_raw(region, mstCcs, lang) for mstCcs in mstCommandCodes)
 
 
 def get_basic_event_from_raw(
@@ -496,9 +496,9 @@ def get_basic_event(
 
 
 def get_all_basic_events(
-    region: Region, lang: Language, mstEvents: list[MstEvent]
-) -> list[BasicEvent]:  # pragma: no cover
-    return [get_basic_event_from_raw(region, mstEvent, lang) for mstEvent in mstEvents]
+    region: Region, lang: Language, mstEvents: Iterable[MstEvent]
+) -> Generator[BasicEvent, None, None]:  # pragma: no cover
+    return (get_basic_event_from_raw(region, mstEvent, lang) for mstEvent in mstEvents)
 
 
 def get_basic_war_from_raw(mstWar: MstWar, lang: Language) -> BasicWar:
@@ -520,9 +520,9 @@ def get_basic_war(conn: Connection, war_id: int, lang: Language) -> BasicWar:
 
 
 def get_all_basic_wars(
-    lang: Language, mstWars: list[MstWar]
-) -> list[BasicWar]:  # pragma: no cover
-    return [get_basic_war_from_raw(mstWar, lang) for mstWar in mstWars]
+    lang: Language, mstWars: Iterable[MstWar]
+) -> Generator[BasicWar, None, None]:  # pragma: no cover
+    return (get_basic_war_from_raw(mstWar, lang) for mstWar in mstWars)
 
 
 def get_basic_quest(conn: Connection, quest_id: int) -> BasicQuest:

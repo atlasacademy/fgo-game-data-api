@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Generator, Optional
 
 from sqlalchemy.engine import Connection
 
@@ -52,8 +52,8 @@ def get_all_nice_ccs(
     region: Region,
     lang: Language,
     mstCCommandCodes: list[MstCommandCode],
-) -> list[NiceCommandCode]:  # pragma: no cover
-    return [
+) -> Generator[NiceCommandCode, None, None]:  # pragma: no cover
+    return (
         get_nice_command_code(conn, region, mstCc.id, lang, mstCc)
         for mstCc in mstCCommandCodes
-    ]
+    )

@@ -89,8 +89,10 @@ class TestBasicSpecial:
 
     async def test_JP_English_name(self, client: AsyncClient) -> None:
         response = await client.get("/basic/JP/servant/304300?lang=en")
-        assert response.status_code == 200
         assert response.json()["name"] == "Elice Utsumi"
+
+        response = await client.get("/basic/JP/servant/311?lang=en")
+        assert response.json()["name"] == "Fairy Knight Tristan"
 
     async def test_JP_skill_English_name(self, client: AsyncClient) -> None:
         response = await client.get("/basic/JP/skill/991604?lang=en")

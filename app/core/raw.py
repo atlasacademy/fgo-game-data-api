@@ -1,4 +1,4 @@
-from typing import Iterable, Optional
+from typing import Generator, Iterable, Optional
 
 from fastapi import HTTPException
 from sqlalchemy.engine import Connection
@@ -416,11 +416,11 @@ def get_servant_entity(
 
 def get_all_raw_svts_lore(
     conn: Connection, svts: list[MstSvt]
-) -> list[ServantEntity]:  # pragma: no cover
-    return [
+) -> Generator[ServantEntity, None, None]:  # pragma: no cover
+    return (
         get_servant_entity(conn, svt.id, expand=True, lore=True, mstSvt=svt)
         for svt in svts
-    ]
+    )
 
 
 def get_mystic_code_entity(

@@ -2,12 +2,14 @@ import asyncio
 import json
 import time
 from pathlib import Path
-from typing import Any, Callable, Iterable, Union
+from typing import Any, Iterable
 
 from aioredis import Redis
 from git import Repo
 from pydantic import DirectoryPath
 from sqlalchemy.engine import Connection
+
+from app.schemas.gameenums import SvtType
 
 from .config import SecretSettings, Settings, logger, project_root
 from .core.basic import (
@@ -22,7 +24,7 @@ from .core.nice.bgm import get_all_nice_bgms
 from .core.nice.cc import get_all_nice_ccs
 from .core.nice.item import get_all_nice_items
 from .core.nice.mc import get_all_nice_mcs
-from .core.nice.nice import get_all_nice_equips_lore, get_all_nice_servants_lore
+from .core.nice.nice import get_nice_equip_model, get_nice_servant_model
 from .core.raw import get_all_bgm_entities, get_all_raw_svts_lore
 from .core.utils import sort_by_collection_no
 from .data.gamedata import update_masters
@@ -35,7 +37,6 @@ from .routers.utils import list_string
 from .schemas.base import BaseModelORJson
 from .schemas.common import Language, Region, RepoInfo
 from .schemas.enums import ALL_ENUMS, TRAIT_NAME
-from .schemas.nice import NiceEquip, NiceServant
 from .schemas.raw import (
     MstCommandCode,
     MstCv,
@@ -45,7 +46,6 @@ from .schemas.raw import (
     MstItem,
     MstSvt,
     MstWar,
-    ServantEntity,
 )
 
 
@@ -71,57 +71,77 @@ def dump_orjson(
         fp.write(list_string(data))
 
 
-def dump_svt_raw(
-    base_export_path: Path,
-    file_name: str,
-    data: Iterable[Union[NiceServant, NiceEquip]],
-    lang_en_export: bool,
-) -> None:  # pragma: no cover
-    export_with_lore = "["
-    export_without_lore = "["
-
-    for item in data:
-        export_with_lore += item.json(exclude_unset=True, exclude_none=True)
-        export_without_lore += item.json(
-            exclude_unset=True, exclude_none=True, exclude={"profile"}
-        )
-        export_with_lore += ","
-        export_without_lore += ","
-
-    export_with_lore = export_with_lore.removesuffix(",") + "]"
-    export_without_lore = export_without_lore.removesuffix(",") + "]"
-
-    out_name = file_name
-    out_lore_name = f"{file_name}_lore"
-    if lang_en_export:
-        out_name += "_lang_en"
-        out_lore_name += "_lang_en"
-
-    with open(base_export_path / f"{out_lore_name}.json", "w", encoding="utf-8") as fp:
-        fp.write(export_with_lore)
-    with open(base_export_path / f"{out_name}.json", "w", encoding="utf-8") as fp:
-        fp.write(export_without_lore)
-
-
 def dump_svt(
     conn: Connection,
     region: Region,
     base_export_path: Path,
     file_name: str,
     svts: list[MstSvt],
-    get_nice_svt: Callable[
-        [Connection, Region, Language, list[ServantEntity]],
-        Iterable[Union[NiceServant, NiceEquip]],
-    ],
 ) -> None:  # pragma: no cover
+    file_name = "nice_equip" if svts[0].type == SvtType.SERVANT_EQUIP else "nice_equip"
+
+    export_with_lore = "["
+    export_without_lore = "["
+    export_with_lore_en = "["
+    export_without_lore_en = "["
+
     raw_svts = get_all_raw_svts_lore(conn, svts)
+    for raw_svt in raw_svts:
+        nice_params = {
+            "conn": conn,
+            "region": region,
+            "item_id": raw_svt.mstSvt.id,
+            "lang": Language.jp,
+            "lore": True,
+            "raw_svt": raw_svt,
+        }
+        if raw_svt.mstSvt.type == SvtType.SERVANT_EQUIP:
+            nice_svt = get_nice_equip_model(**nice_params)  # type: ignore
+        else:
+            nice_svt = get_nice_servant_model(**nice_params)  # type: ignore
+        export_with_lore += nice_svt.json(exclude_unset=True, exclude_none=True)
+        export_without_lore += nice_svt.json(
+            exclude_unset=True, exclude_none=True, exclude={"profile"}
+        )
+        export_with_lore += ","
+        export_without_lore += ","
 
-    all_nice_svts = get_nice_svt(conn, region, Language.jp, raw_svts)
-    dump_svt_raw(base_export_path, file_name, all_nice_svts, lang_en_export=False)
+        if region == Region.JP:
+            nice_params["lang"] = Language.en
+            if raw_svt.mstSvt.type == SvtType.SERVANT_EQUIP:
+                nice_svt_en = get_nice_equip_model(**nice_params)  # type: ignore
+            else:
+                nice_svt_en = get_nice_servant_model(**nice_params)  # type: ignore
+            export_with_lore_en += nice_svt_en.json(
+                exclude_unset=True, exclude_none=True
+            )
+            export_without_lore_en += nice_svt_en.json(
+                exclude_unset=True, exclude_none=True, exclude={"profile"}
+            )
+            export_with_lore_en += ","
+            export_without_lore_en += ","
 
-    if region == "JP":
-        all_nice_svts = get_nice_svt(conn, region, Language.en, raw_svts)
-        dump_svt_raw(base_export_path, file_name, all_nice_svts, lang_en_export=True)
+    export_with_lore = export_with_lore.removesuffix(",") + "]"
+    export_without_lore = export_without_lore.removesuffix(",") + "]"
+    export_with_lore_en = export_with_lore_en.removesuffix(",") + "]"
+    export_without_lore_en = export_without_lore_en.removesuffix(",") + "]"
+
+    out_name = base_export_path / f"{file_name}.json"
+    out_lore_name = base_export_path / f"{file_name}_lore.json"
+
+    with open(out_lore_name, "w", encoding="utf-8") as fp:
+        fp.write(export_with_lore)
+    with open(out_name, "w", encoding="utf-8") as fp:
+        fp.write(export_without_lore)
+
+    if region == Region.JP:
+        out_name_en = base_export_path / f"{file_name}_lang_en.json"
+        out_lore_name_en = base_export_path / f"{file_name}_lore_lang_en.json"
+
+        with open(out_lore_name_en, "w", encoding="utf-8") as fp:
+            fp.write(export_with_lore_en)
+        with open(out_name_en, "w", encoding="utf-8") as fp:
+            fp.write(export_without_lore_en)
 
 
 async def generate_exports(
@@ -227,7 +247,6 @@ async def generate_exports(
                 base_export_path,
                 "nice_servant",
                 all_servants,
-                get_all_nice_servants_lore,
             )
             dump_svt(
                 conn,
@@ -235,7 +254,6 @@ async def generate_exports(
                 base_export_path,
                 "nice_equip",
                 all_equips,
-                get_all_nice_equips_lore,
             )
 
             conn.close()

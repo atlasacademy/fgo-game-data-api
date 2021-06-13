@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Generator, Optional
 
 from sqlalchemy.engine import Connection
 
@@ -56,8 +56,8 @@ def get_nice_mystic_code(
 
 def get_all_nice_mcs(
     conn: Connection, region: Region, lang: Language, mstEquips: list[MstEquip]
-) -> list[NiceMysticCode]:  # pragma: no cover
-    return [
+) -> Generator[NiceMysticCode, None, None]:  # pragma: no cover
+    return (
         get_nice_mystic_code(conn, region, mstEquip.id, lang, mstEquip)
         for mstEquip in mstEquips
-    ]
+    )

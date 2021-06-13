@@ -1,3 +1,5 @@
+from typing import Generator, Iterable
+
 from sqlalchemy.engine import Connection
 
 from ...config import Settings
@@ -68,6 +70,6 @@ def get_nice_item_amount(
 
 
 def get_all_nice_items(
-    region: Region, lang: Language, mstItems: list[MstItem]
-) -> list[NiceItem]:  # pragma: no cover
-    return [get_nice_item_from_raw(region, raw_item, lang) for raw_item in mstItems]
+    region: Region, lang: Language, mstItems: Iterable[MstItem]
+) -> Generator[NiceItem, None, None]:  # pragma: no cover
+    return (get_nice_item_from_raw(region, raw_item, lang) for raw_item in mstItems)
