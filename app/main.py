@@ -96,7 +96,7 @@ Pre-generated full nice data that can be served instantly:
   - [JP Mystic Code](/export/JP/nice_mystic_code.json),
   [JP Mystic Code with English names](/export/JP/nice_mystic_code_lang_en.json)
   - [JP Illustrator](/export/JP/nice_illustrator.json)
-  - [JP Voice Actor](/export/NA/nice_cv.json)
+  - [JP Voice Actor](/export/JP/nice_cv.json)
   - [JP BGM](/export/JP/nice_bgm.json),
   [JP BGM](/export/JP/nice_bgm_lang_en.json)
 - Both regions (The data is the same for both NA and JP endpoints):
