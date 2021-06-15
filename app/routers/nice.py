@@ -5,7 +5,8 @@ from sqlalchemy.engine import Connection
 from ..config import Settings
 from ..core import search
 from ..core.nice import ai, bgm, cc, event, item, mc, nice, quest, war
-from ..data.gamedata import masters
+from ..db.helpers.cc import get_cc_id
+from ..db.helpers.svt import get_ce_id, get_svt_id
 from ..schemas.common import Language, Region, ReverseData, ReverseDepth
 from ..schemas.enums import AiType
 from ..schemas.nice import (
@@ -108,7 +109,7 @@ async def get_servant(
     lore: bool = False,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    servant_id = masters[region].mstSvtServantCollectionNo.get(servant_id, servant_id)
+    servant_id = get_svt_id(conn, servant_id)
     return item_response(
         nice.get_nice_servant_model(conn, region, servant_id, lang, lore)
     )
@@ -178,7 +179,7 @@ async def get_equip(
     lore: bool = False,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    equip_id = masters[region].mstSvtEquipCollectionNo.get(equip_id, equip_id)
+    equip_id = get_ce_id(conn, equip_id)
     return item_response(nice.get_nice_equip_model(conn, region, equip_id, lang, lore))
 
 
@@ -288,7 +289,7 @@ async def get_command_code(
     lang: Language = Depends(language_parameter),
     conn: Connection = Depends(get_db),
 ) -> Response:
-    cc_id = masters[region].mstCCCollectionNo.get(cc_id, cc_id)
+    cc_id = get_cc_id(conn, cc_id)
     return item_response(cc.get_nice_command_code(conn, region, cc_id, lang))
 
 

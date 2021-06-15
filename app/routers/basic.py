@@ -1,12 +1,13 @@
 from typing import Optional
 
 from aioredis import Redis
-from fastapi import APIRouter, Depends, HTTPException, Response
+from fastapi import APIRouter, Depends, Response
 from sqlalchemy.engine import Connection
 
 from ..config import Settings
 from ..core import basic, search
-from ..data.gamedata import masters
+from ..db.helpers.cc import get_cc_id
+from ..db.helpers.svt import get_ce_id, get_svt_id
 from ..schemas.basic import (
     BasicBuffReverse,
     BasicCommandCode,
@@ -100,16 +101,13 @@ async def get_servant(
     region: Region,
     servant_id: int,
     lang: Optional[Language] = None,
+    conn: Connection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    if servant_id in masters[region].mstSvtServantCollectionNo:
-        servant_id = masters[region].mstSvtServantCollectionNo[servant_id]
-    if servant_id in masters[region].mstSvtServantCollectionNo.values():
-        return item_response(
-            await basic.get_basic_servant(redis, region, servant_id, lang=lang)
-        )
-    else:
-        raise HTTPException(status_code=404, detail="Servant not found")
+    servant_id = get_svt_id(conn, servant_id)
+    return item_response(
+        await basic.get_basic_servant(redis, region, servant_id, lang=lang)
+    )
 
 
 @router.get(
@@ -168,14 +166,11 @@ async def get_equip(
     region: Region,
     equip_id: int,
     lang: Optional[Language] = None,
+    conn: Connection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    if equip_id in masters[region].mstSvtEquipCollectionNo:
-        equip_id = masters[region].mstSvtEquipCollectionNo[equip_id]
-    if equip_id in masters[region].mstSvtEquipCollectionNo.values():
-        return item_response(await basic.get_basic_equip(redis, region, equip_id, lang))
-    else:
-        raise HTTPException(status_code=404, detail="Equip not found")
+    equip_id = get_ce_id(conn, equip_id)
+    return item_response(await basic.get_basic_equip(redis, region, equip_id, lang))
 
 
 @router.get(
@@ -285,10 +280,10 @@ async def get_command_code(
     region: Region,
     cc_id: int,
     lang: Language = Depends(language_parameter),
+    conn: Connection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    if cc_id in masters[region].mstCCCollectionNo:
-        cc_id = masters[region].mstCCCollectionNo[cc_id]
+    cc_id = get_cc_id(conn, cc_id)
     return item_response(await basic.get_basic_cc(redis, region, cc_id, lang))
 
 

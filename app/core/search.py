@@ -9,7 +9,7 @@ from ..db.helpers.buff import get_buff_search
 from ..db.helpers.func import get_func_search
 from ..db.helpers.item import get_item_search
 from ..db.helpers.skill import get_skill_search
-from ..db.helpers.svt import get_svt_search
+from ..db.helpers.svt import get_svt_groups, get_svt_ids, get_svt_search
 from ..db.helpers.td import get_td_search
 from ..schemas.common import Language
 from ..schemas.enums import (
@@ -142,15 +142,13 @@ def search_servant(
         for svt_attribute in search_param.attribute
     }
     trait_ints = reverse_traits(search_param.trait)
-    cond_svt_value = {
-        masters[search_param.region].mstSvtServantCollectionNo.get(svt_id, svt_id)
-        for svt_id in search_param.voiceCondSvt
-    }
-    voice_cond_group = {
-        group.id
-        for svt_id in cond_svt_value
-        for group in masters[search_param.region].mstSvtGroupSvtId.get(svt_id, [])
-    }
+
+    if search_param.voiceCondSvt:
+        cond_svt_value = get_svt_ids(conn, search_param.voiceCondSvt)
+        voice_cond_group = get_svt_groups(conn, cond_svt_value)
+    else:
+        cond_svt_value = set()
+        voice_cond_group = set()
 
     matches = get_svt_search(
         conn,

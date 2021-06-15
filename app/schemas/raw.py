@@ -1114,9 +1114,6 @@ class MysticCodeEntity(BaseModelORJson):
 
 
 class Master(BaseModelORJson):
-    mstSvtServantCollectionNo: dict[int, int]
-    mstSvtEquipCollectionNo: dict[int, int]
-    mstCCCollectionNo: dict[int, int]
     mstCombineSkillItem: set[int]
     mstCombineLimitItem: set[int]
     mstCombineCostumeItem: set[int]
@@ -1124,7 +1121,6 @@ class Master(BaseModelORJson):
     mstEquipSkill: list[MstEquipSkill]
     mstWarEventId: dict[int, list[MstWar]]
     mstCommandCodeSkill: list[MstCommandCodeSkill]
-    mstSvtGroupSvtId: dict[int, list[MstSvtGroup]]
     mstClassRelationOverwriteId: dict[int, list[MstClassRelationOverwrite]]
     buffToFunc: dict[int, set[int]]
     funcToSkill: dict[int, set[int]]

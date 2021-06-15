@@ -8,7 +8,7 @@ from ..config import Settings, logger
 from ..schemas.common import Region
 from ..schemas.enums import FUNC_VALS_NOT_BUFF
 from ..schemas.gameenums import CondType, PurchaseType, SvtType
-from ..schemas.raw import BAD_COMBINE_SVT_LIMIT, Master, is_equip, is_servant
+from ..schemas.raw import BAD_COMBINE_SVT_LIMIT, Master
 
 
 settings = Settings()
@@ -20,7 +20,6 @@ MASTER_WITH_ID = {
     "mstFunc",
     "mstSkill",
     "mstTreasureDevice",
-    "mstCommandCode",
     "mstEvent",
     "mstWar",
 }
@@ -38,7 +37,6 @@ MASTER_WITHOUT_ID = {
     "mstSvtPassiveSkill",
 }
 SVT_STUFFS = {
-    "mstSvtGroup",
     "mstSvtComment",
     "mstSvtLimitAdd",
     "mstCombineSkill",
@@ -71,22 +69,6 @@ def update_masters(region_path: dict[Region, DirectoryPath]) -> None:
 
         for entity in MASTER_WITH_ID:
             master[f"{entity}Id"] = {item["id"]: item for item in master[entity]}
-
-        master["mstSvtServantCollectionNo"] = {
-            svt["collectionNo"]: svt["id"]
-            for svt in master["mstSvt"]
-            if is_servant(svt["type"]) and svt["collectionNo"] != 0
-        }
-
-        master["mstSvtEquipCollectionNo"] = {
-            svt["collectionNo"]: svt["id"]
-            for svt in master["mstSvt"]
-            if is_equip(svt["type"]) and svt["collectionNo"] != 0
-        }
-
-        master["mstCCCollectionNo"] = {
-            cc["collectionNo"]: cc["id"] for cc in master["mstCommandCode"]
-        }
 
         master["buffToFunc"] = defaultdict(set)
         for func in master["mstFunc"]:
@@ -163,7 +145,6 @@ def update_masters(region_path: dict[Region, DirectoryPath]) -> None:
 
         for masters_table, source_table, lookup_id in (
             ("mstClassRelationOverwriteId", "mstClassRelationOverwrite", "id"),
-            ("mstSvtGroupSvtId", "mstSvtGroup", "svtId"),
             ("mstSvtSkillSvtId", "mstSvtSkill", "svtId"),
             ("mstWarEventId", "mstWar", "eventId"),
             ("mstShopEventId", "mstShop", "eventId"),

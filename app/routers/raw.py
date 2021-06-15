@@ -3,7 +3,8 @@ from sqlalchemy.engine import Connection
 
 from ..config import Settings
 from ..core import raw, search
-from ..data.gamedata import masters
+from ..db.helpers.cc import get_cc_id
+from ..db.helpers.svt import get_ce_id, get_svt_id
 from ..schemas.common import Region, ReverseDepth
 from ..schemas.enums import AiType
 from ..schemas.raw import (
@@ -88,13 +89,12 @@ Otherwise, it will look up the actual ID field. As a result, it can return not s
     responses=get_error_code([404]),
 )
 async def get_servant(
-    region: Region,
     servant_id: int,
     expand: bool = False,
     lore: bool = False,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    servant_id = masters[region].mstSvtServantCollectionNo.get(servant_id, servant_id)
+    servant_id = get_svt_id(conn, servant_id)
     servant_entity = raw.get_servant_entity(conn, servant_id, expand, lore)
     return item_response(servant_entity)
 
@@ -139,13 +139,12 @@ Otherwise, it will look up the actual ID field. As a result, it can return not C
     responses=get_error_code([404]),
 )
 async def get_equip(
-    region: Region,
     equip_id: int,
     expand: bool = False,
     lore: bool = False,
     conn: Connection = Depends(get_db),
 ) -> Response:
-    equip_id = masters[region].mstSvtEquipCollectionNo.get(equip_id, equip_id)
+    equip_id = get_ce_id(conn, equip_id)
     servant_entity = raw.get_servant_entity(conn, equip_id, expand, lore)
     return item_response(servant_entity)
 
@@ -229,17 +228,14 @@ async def get_mystic_code(
     responses=get_error_code([404]),
 )
 async def get_command_code(
-    region: Region,
-    cc_id: int,
-    expand: bool = False,
-    conn: Connection = Depends(get_db),
+    cc_id: int, expand: bool = False, conn: Connection = Depends(get_db)
 ) -> Response:
     """
     Get Command Code info from ID
 
     - **expand**: Expand the skills and functions.
     """
-    cc_id = masters[region].mstCCCollectionNo.get(cc_id, cc_id)
+    cc_id = get_cc_id(conn, cc_id)
     cc_entity = raw.get_command_code_entity(conn, cc_id, expand)
     return item_response(cc_entity)
 

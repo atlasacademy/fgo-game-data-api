@@ -10,6 +10,7 @@ from ...models.raw import (
     mstIllustrator,
     mstSubtitle,
     mstSvt,
+    mstSvtGroup,
     mstSvtLimit,
     mstSvtLimitAdd,
     mstSvtScript,
@@ -39,6 +40,38 @@ def get_all_equips(conn: Connection) -> list[MstSvt]:  # pragma: no cover
         and_(mstSvt.c.collectionNo != 0, mstSvt.c.type == SvtType.SERVANT_EQUIP)
     )
     return [MstSvt.from_orm(svt) for svt in conn.execute(stmt).fetchall()]
+
+
+def get_svt_id(conn: Connection, col_no: int) -> int:
+    stmt = select(mstSvt.c.id).where(
+        and_(
+            mstSvt.c.collectionNo == col_no,
+            mstSvt.c.collectionNo != 0,
+            or_(
+                mstSvt.c.type == SvtType.HEROINE,
+                mstSvt.c.type == SvtType.NORMAL,
+                mstSvt.c.type == SvtType.ENEMY_COLLECTION_DETAIL,
+            ),
+        )
+    )
+    mstSvt_db = conn.execute(stmt).fetchone()
+    if mstSvt_db:
+        return mstSvt_db.id
+    return col_no
+
+
+def get_ce_id(conn: Connection, col_no: int) -> int:
+    stmt = select(mstSvt.c.id).where(
+        and_(
+            mstSvt.c.collectionNo == col_no,
+            mstSvt.c.collectionNo != 0,
+            mstSvt.c.type == SvtType.SERVANT_EQUIP,
+        )
+    )
+    mstSvt_db = conn.execute(stmt).fetchone()
+    if mstSvt_db:
+        return mstSvt_db.id
+    return col_no
 
 
 def get_svt_script(conn: Connection, svt_ids: list[int]) -> list[MstSvtScript]:
@@ -90,6 +123,18 @@ def get_mstSubtitle(
         GlobalNewMstSubtitle.from_orm(subtitle)
         for subtitle in conn.execute(mstSubtitle_stmt).fetchall()
     ]
+
+
+def get_svt_ids(conn: Connection, svt_colNos: Iterable[int]) -> set[int]:
+    stmt = select(mstSvt.c.id).where(
+        or_(mstSvt.c.collectionNo.in_(svt_colNos), mstSvt.c.id.in_(svt_colNos))
+    )
+    return {int(mstSvt.id) for mstSvt in conn.execute(stmt).fetchall()}
+
+
+def get_svt_groups(conn: Connection, svt_ids: Iterable[int]) -> set[int]:
+    stmt = select(mstSvtGroup.c.id).where(mstSvtGroup.c.svtId.in_(svt_ids))
+    return {int(group_id.id) for group_id in conn.execute(stmt).fetchall()}
 
 
 def voice_cond_pattern(
