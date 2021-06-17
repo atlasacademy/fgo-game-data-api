@@ -100,6 +100,7 @@ cases_404_dict = {
     "ai/svt": "54234",
     "ai/field": "45234",
     "bgm": "31234",
+    "mm": "41232",
 }
 
 
@@ -510,6 +511,12 @@ class TestServantSpecial:
             "background": "gold",
             "value": 1400,
         }
+
+    async def test_master_mission(self, client: AsyncClient) -> None:
+        response = await client.get("/nice/NA/mm/10001")
+        assert response.status_code == 200
+        data = response.json()
+        assert len(data["missions"]) > 0
 
     async def test_quest_phase_detail_override(self, client: AsyncClient) -> None:
         story_quest = await client.get("nice/JP/quest/94034001/2")

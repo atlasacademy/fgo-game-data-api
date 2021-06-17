@@ -15,6 +15,7 @@ from ..schemas.raw import (
     EventEntity,
     FunctionEntity,
     ItemEntity,
+    MasterMissionEntity,
     MysticCodeEntity,
     QuestEntity,
     QuestPhaseEntity,
@@ -484,6 +485,23 @@ async def get_item(item_id: int, conn: Connection = Depends(get_db)) -> Response
     Get the item data from the given ID
     """
     return item_response(raw.get_item_entity(conn, item_id))
+
+
+@router.get(
+    "/{region}/mm/{master_mission_id}",
+    summary="Get Master Mission data",
+    response_description="Master Mission Entity",
+    response_model=MasterMissionEntity,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+async def get_mm(
+    master_mission_id: int, conn: Connection = Depends(get_db)
+) -> Response:
+    """
+    Get the master mission data from the given master mission ID
+    """
+    return item_response(raw.get_master_mission_entity(conn, master_mission_id))
 
 
 @router.get(

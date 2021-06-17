@@ -77,6 +77,7 @@ Pre-generated full nice data that can be served instantly:
   - [NA Material](/export/NA/nice_item.json)
   - [NA Mystic Code](/export/NA/nice_mystic_code.json)
   - [NA Item](/export/NA/nice_item.json)
+  - [NA Master Mission](/export/NA/nice_master_mission.json)
   - [NA Illustrator](/export/NA/nice_illustrator.json)
   - [NA Voice Actor](/export/NA/nice_cv.json)
   - [NA BGM](/export/NA/nice_bgm.json)
@@ -91,10 +92,11 @@ Pre-generated full nice data that can be served instantly:
   [JP Craft Essence with lore and English names](/export/JP/nice_equip_lore_lang_en.json)
   - [JP Command Code](/export/JP/nice_command_code.json),
   [JP Command Code with English names](/export/JP/nice_command_code_lang_en.json)
-  - [JP Material](/export/JP/nice_item.json),
-  [JP Material with English names](/export/JP/nice_item_lang_en.json)
   - [JP Mystic Code](/export/JP/nice_mystic_code.json),
   [JP Mystic Code with English names](/export/JP/nice_mystic_code_lang_en.json)
+  - [JP Material](/export/JP/nice_item.json),
+  [JP Material with English names](/export/JP/nice_item_lang_en.json)
+  - [JP Master Mission](/export/JP/nice_master_mission.json)
   - [JP Illustrator](/export/JP/nice_illustrator.json)
   - [JP Voice Actor](/export/JP/nice_cv.json)
   - [JP BGM](/export/JP/nice_bgm.json),

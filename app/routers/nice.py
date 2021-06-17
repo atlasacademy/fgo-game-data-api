@@ -4,7 +4,7 @@ from sqlalchemy.engine import Connection
 
 from ..config import Settings
 from ..core import search
-from ..core.nice import ai, bgm, cc, event, item, mc, nice, quest, war
+from ..core.nice import ai, bgm, cc, event, item, mc, mm, nice, quest, war
 from ..db.helpers.cc import get_cc_id
 from ..db.helpers.svt import get_ce_id, get_svt_id
 from ..schemas.common import Language, Region, ReverseData, ReverseDepth
@@ -18,6 +18,7 @@ from ..schemas.nice import (
     NiceEquip,
     NiceEvent,
     NiceItem,
+    NiceMasterMission,
     NiceMysticCode,
     NiceQuest,
     NiceQuestPhase,
@@ -624,6 +625,23 @@ async def get_item(
     Get the nice item data from the given item ID
     """
     return item_response(item.get_nice_item(conn, region, item_id, lang))
+
+
+@router.get(
+    "/{region}/mm/{master_mission_id}",
+    summary="Get Master Mission data",
+    response_description="Master Mission Entity",
+    response_model=NiceMasterMission,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+async def get_mm(
+    master_mission_id: int, conn: Connection = Depends(get_db)
+) -> Response:
+    """
+    Get the master mission data from the given master mission ID
+    """
+    return item_response(mm.get_nice_master_mission(conn, master_mission_id))
 
 
 @router.get(

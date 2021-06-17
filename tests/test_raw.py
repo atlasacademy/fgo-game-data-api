@@ -101,6 +101,7 @@ cases_404_dict = {
     "ai/svt": "2384287349",
     "ai/field": "18738131",
     "bgm": "319028",
+    "mm": "312341",
 }
 
 
@@ -204,3 +205,10 @@ class TestServantSpecial:
     async def test_scripts_first_run(self, client: AsyncClient) -> None:
         response = await client.get("/raw/JP/quest/94035033/2")
         assert response.json()["scripts"] == ["9403503320"]
+
+    async def test_master_mission(self, client: AsyncClient) -> None:
+        response = await client.get("/raw/NA/mm/10001")
+        assert response.status_code == 200
+        data = response.json()
+        assert data.get("mstMasterMission") is not None
+        assert len(data["mstEventMission"]) > 0

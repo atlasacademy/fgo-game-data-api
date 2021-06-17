@@ -763,6 +763,16 @@ class MstEventPointBuff(BaseModelORJson):
     value: int
 
 
+class MstMasterMission(BaseModelORJson):
+    id: int
+    priority: int
+    startedAt: int
+    endedAt: int
+    closedAt: int
+    imageId: int
+    name: str
+
+
 class MstEventMission(BaseModelORJson):
     id: int
     flag: int
@@ -1259,6 +1269,14 @@ class WarEntity(BaseModelORJson):
     mstBgm: list[MstBgm]
     mstSpot: list[MstSpot]
     mstQuest: list[QuestEntity]
+
+
+class MasterMissionEntity(BaseModelORJson):
+    mstMasterMission: MstMasterMission
+    mstEventMission: list[MstEventMission]
+    mstEventMissionCondition: list[MstEventMissionCondition]
+    mstEventMissionConditionDetail: list[MstEventMissionConditionDetail]
+    mstGift: list[MstGift]
 
 
 class AiEntity(BaseModelORJson):

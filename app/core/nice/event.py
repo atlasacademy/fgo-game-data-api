@@ -292,6 +292,27 @@ def get_nice_mission(
     )
 
 
+def get_nice_missions(
+    mstEventMission: list[MstEventMission],
+    mstEventMissionCondition: list[MstEventMissionCondition],
+    mstEventMissionConditionDetail: list[MstEventMissionConditionDetail],
+    gift_maps: dict[int, list[MstGift]],
+) -> list[NiceEventMission]:
+    mission_cond_details = {
+        detail.id: detail for detail in mstEventMissionConditionDetail
+    }
+    missions = [
+        get_nice_mission(
+            mission,
+            [cond for cond in mstEventMissionCondition if cond.missionId == mission.id],
+            mission_cond_details,
+            gift_maps,
+        )
+        for mission in mstEventMission
+    ]
+    return missions
+
+
 def get_nice_tower_rewards(
     region: Region, reward: MstEventTowerReward, gift_maps: dict[int, list[MstGift]]
 ) -> NiceEventTowerReward:
@@ -401,22 +422,12 @@ def get_nice_event(
     for gift in raw_event.mstGift:
         gift_maps[gift.id].append(gift)
 
-    mission_cond_details = {
-        detail.id: detail for detail in raw_event.mstEventMissionConditionDetail
-    }
-    missions = [
-        get_nice_mission(
-            mission,
-            [
-                cond
-                for cond in raw_event.mstEventMissionCondition
-                if cond.missionId == mission.id
-            ],
-            mission_cond_details,
-            gift_maps,
-        )
-        for mission in raw_event.mstEventMission
-    ]
+    missions = get_nice_missions(
+        raw_event.mstEventMission,
+        raw_event.mstEventMissionCondition,
+        raw_event.mstEventMissionConditionDetail,
+        gift_maps,
+    )
 
     nice_event = NiceEvent(
         id=raw_event.mstEvent.id,

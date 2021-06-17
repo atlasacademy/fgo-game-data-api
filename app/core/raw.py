@@ -20,6 +20,7 @@ from ..schemas.raw import (
     FunctionEntity,
     FunctionEntityNoReverse,
     ItemEntity,
+    MasterMissionEntity,
     MstBgm,
     MstBgmRelease,
     MstBoxGacha,
@@ -52,6 +53,7 @@ from ..schemas.raw import (
     MstIllustrator,
     MstItem,
     MstMap,
+    MstMasterMission,
     MstShop,
     MstShopScript,
     MstSpot,
@@ -514,6 +516,40 @@ def get_war_entity(conn: Connection, war_id: int) -> WarEntity:
         mstBgm=bgms,
         mstSpot=spots,
         mstQuest=quests,
+    )
+
+
+def get_master_mission_entity(
+    conn: Connection, mm_id: int, mstMasterMission: Optional[MstMasterMission] = None
+) -> MasterMissionEntity:
+    if not mstMasterMission:
+        mstMasterMission = fetch.get_one(conn, MstMasterMission, mm_id)
+    if not mstMasterMission:
+        raise HTTPException(status_code=404, detail="Master missions not found")
+
+    missions = fetch.get_all(conn, MstEventMission, mm_id)
+    mission_ids = [mission.id for mission in missions]
+
+    conds = fetch.get_all_multiple(conn, MstEventMissionCondition, mission_ids)
+    cond_detail_ids = [
+        cond.targetIds[0]
+        for cond in conds
+        if cond.condType == CondType.MISSION_CONDITION_DETAIL
+    ]
+
+    cond_details = fetch.get_all_multiple(
+        conn, MstEventMissionConditionDetail, cond_detail_ids
+    )
+
+    gift_ids = {mission.giftId for mission in missions}
+    gifts = fetch.get_all_multiple(conn, MstGift, gift_ids)
+
+    return MasterMissionEntity(
+        mstMasterMission=mstMasterMission,
+        mstEventMission=missions,
+        mstEventMissionCondition=conds,
+        mstEventMissionConditionDetail=cond_details,
+        mstGift=gifts,
     )
 
 

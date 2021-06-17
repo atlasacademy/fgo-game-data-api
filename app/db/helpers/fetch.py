@@ -40,6 +40,7 @@ from ...models.raw import (
     mstIllustrator,
     mstItem,
     mstMap,
+    mstMasterMission,
     mstQuest,
     mstShop,
     mstShopScript,
@@ -93,6 +94,7 @@ from ...schemas.raw import (
     MstIllustrator,
     MstItem,
     MstMap,
+    MstMasterMission,
     MstQuest,
     MstShop,
     MstShopScript,
@@ -131,6 +133,7 @@ schema_map_fetch_one: dict[  # type:ignore
     MstItem: (mstItem, mstItem.c.id),
     MstBgm: (mstBgm, mstBgm.c.id),
     MstShop: (mstShop, mstShop.c.id),
+    MstMasterMission: (mstMasterMission, mstMasterMission.c.id),
 }
 
 TFetchOne = TypeVar("TFetchOne", bound=BaseModelORJson)
@@ -291,6 +294,7 @@ schema_map_fetch_everything: dict[  # type:ignore
     MstItem: (mstItem, mstItem.c.id),
     MstIllustrator: (mstIllustrator, mstIllustrator.c.id),
     MstCv: (mstCv, mstCv.c.id),
+    MstMasterMission: (mstMasterMission, mstMasterMission.c.id),
 }
 
 TFetchEverything = TypeVar("TFetchEverything", bound=BaseModelORJson)

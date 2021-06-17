@@ -827,6 +827,19 @@ mstEventPointBuff = Table(
 )
 
 
+mstMasterMission = Table(
+    "mstMasterMission",
+    metadata,
+    Column("id", Integer),
+    Column("priority", Integer),
+    Column("startedAt", Integer),
+    Column("endedAt", Integer),
+    Column("closedAt", Integer),
+    Column("imageId", Integer),
+    Column("name", String),
+)
+
+
 mstEventMission = Table(
     "mstEventMission",
     metadata,
@@ -1326,6 +1339,7 @@ TABLES_TO_BE_LOADED = [
     mstCommandCodeComment,
     mstGift,
     mstSetItem,
+    mstMasterMission,
     mstEventReward,
     mstEventRewardSet,
     mstEventPointGroup,

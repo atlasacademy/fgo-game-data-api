@@ -24,6 +24,7 @@ from .core.nice.bgm import get_all_nice_bgms
 from .core.nice.cc import get_all_nice_ccs
 from .core.nice.item import get_all_nice_items
 from .core.nice.mc import get_all_nice_mcs
+from .core.nice.mm import get_all_nice_mms
 from .core.nice.nice import get_nice_equip_model, get_nice_servant_model
 from .core.raw import get_all_bgm_entities, get_all_raw_svts_lore
 from .core.utils import sort_by_collection_no
@@ -44,6 +45,7 @@ from .schemas.raw import (
     MstEvent,
     MstIllustrator,
     MstItem,
+    MstMasterMission,
     MstSvt,
     MstWar,
 )
@@ -164,11 +166,13 @@ async def generate_exports(
             mstWars = fetch.get_everything(conn, MstWar)
             mstEquips = fetch.get_everything(conn, MstEquip)
             mstCcs = fetch.get_everything(conn, MstCommandCode)
+            mstMasterMissions = fetch.get_everything(conn, MstMasterMission)
 
             all_item_data = get_all_nice_items(region, Language.jp, mstItems)
             all_mc_data = get_all_nice_mcs(conn, region, Language.jp, mstEquips)
             all_cc_data = get_all_nice_ccs(conn, region, Language.jp, mstCcs)
             all_bgm_data = get_all_nice_bgms(conn, region, Language.jp, bgms)
+            all_mm_data = get_all_nice_mms(conn, mstMasterMissions)
 
             all_basic_servant_data = sort_by_collection_no(
                 await get_all_basic_servants(redis, region, Language.jp, all_servants)
@@ -195,6 +199,7 @@ async def generate_exports(
                 ("nice_command_code", all_cc_data, dump_orjson),
                 ("nice_item", all_item_data, dump_orjson),
                 ("nice_mystic_code", all_mc_data, dump_orjson),
+                ("nice_master_mission", all_mm_data, dump_orjson),
                 ("nice_bgm", all_bgm_data, dump_orjson),
                 ("nice_illustrator", mstIllustrators, dump_orjson),
                 ("nice_cv", mstCvs, dump_orjson),

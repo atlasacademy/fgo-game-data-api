@@ -1221,6 +1221,14 @@ class NiceEvent(BaseModelORJson):
     lotteries: list[NiceEventLottery]
 
 
+class NiceMasterMission(BaseModelORJson):
+    id: int
+    startedAt: int
+    endedAt: int
+    closedAt: int
+    missions: list[NiceEventMission]
+
+
 class NiceBgm(BaseModelORJson):
     id: int
     name: str
