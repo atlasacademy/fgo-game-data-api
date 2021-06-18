@@ -6,7 +6,7 @@ from sqlalchemy.engine import Connection
 from ..data.custom_mappings import EXTRA_CHARAFIGURES
 from ..db.helpers import ai, event, fetch, item, quest, skill, svt, td
 from ..schemas.common import Region, ReverseDepth
-from ..schemas.enums import FUNC_VALS_NOT_BUFF
+from ..schemas.enums import FUNC_VALS_NOT_BUFF, DetailMissionCondType
 from ..schemas.gameenums import BgmFlag, CondType, PurchaseType, VoiceCondType
 from ..schemas.raw import (
     EXTRA_ATTACK_TD_ID,
@@ -54,6 +54,7 @@ from ..schemas.raw import (
     MstItem,
     MstMap,
     MstMasterMission,
+    MstQuest,
     MstShop,
     MstShopScript,
     MstSpot,
@@ -544,12 +545,26 @@ def get_master_mission_entity(
     gift_ids = {mission.giftId for mission in missions}
     gifts = fetch.get_all_multiple(conn, MstGift, gift_ids)
 
+    quest_ids: set[int] = set()
+    for cond in conds:
+        if cond.condType in (CondType.QUEST_CLEAR, CondType.QUEST_CLEAR_NUM):
+            quest_ids |= set(cond.targetIds)
+    for cond_detail in cond_details:
+        if cond_detail.missionCondType in (
+            DetailMissionCondType.QUEST_CLEAR_NUM_1,
+            DetailMissionCondType.QUEST_CLEAR_NUM_2,
+        ):
+            quest_ids |= set(cond_detail.targetIds)
+
+    quests = fetch.get_all_multiple(conn, MstQuest, quest_ids)
+
     return MasterMissionEntity(
         mstMasterMission=mstMasterMission,
         mstEventMission=missions,
         mstEventMissionCondition=conds,
         mstEventMissionConditionDetail=cond_details,
         mstGift=gifts,
+        mstQuest=quests,
     )
 
 

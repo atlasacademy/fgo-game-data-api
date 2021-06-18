@@ -3,13 +3,16 @@ from typing import Optional
 
 from sqlalchemy.engine import Connection
 
+from ...core.basic import get_basic_quest_from_raw
 from ...schemas.nice import NiceMasterMission
 from ...schemas.raw import MasterMissionEntity, MstGift, MstMasterMission
 from .. import raw
 from .event import get_nice_missions
 
 
-def get_nice_master_mission_from_raw(raw_mm: MasterMissionEntity) -> NiceMasterMission:
+def get_nice_master_mission_from_raw(
+    conn: Connection, raw_mm: MasterMissionEntity
+) -> NiceMasterMission:
     gift_maps: dict[int, list[MstGift]] = defaultdict(list)
     for gift in raw_mm.mstGift:
         gift_maps[gift.id].append(gift)
@@ -26,6 +29,9 @@ def get_nice_master_mission_from_raw(raw_mm: MasterMissionEntity) -> NiceMasterM
         endedAt=raw_mm.mstMasterMission.endedAt,
         closedAt=raw_mm.mstMasterMission.closedAt,
         missions=missions,
+        quests=[
+            get_basic_quest_from_raw(conn, mstQuest) for mstQuest in raw_mm.mstQuest
+        ],
     )
 
 
@@ -33,7 +39,7 @@ def get_nice_master_mission(
     conn: Connection, mm_id: int, mstMasterMission: Optional[MstMasterMission] = None
 ) -> NiceMasterMission:
     raw_mm = raw.get_master_mission_entity(conn, mm_id, mstMasterMission)
-    return get_nice_master_mission_from_raw(raw_mm)
+    return get_nice_master_mission_from_raw(conn, raw_mm)
 
 
 def get_all_nice_mms(

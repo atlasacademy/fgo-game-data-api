@@ -1277,6 +1277,7 @@ class MasterMissionEntity(BaseModelORJson):
     mstEventMissionCondition: list[MstEventMissionCondition]
     mstEventMissionConditionDetail: list[MstEventMissionConditionDetail]
     mstGift: list[MstGift]
+    mstQuest: list[MstQuest]
 
 
 class AiEntity(BaseModelORJson):

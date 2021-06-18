@@ -525,11 +525,7 @@ def get_all_basic_wars(
     return (get_basic_war_from_raw(mstWar, lang) for mstWar in mstWars)
 
 
-def get_basic_quest(conn: Connection, quest_id: int) -> BasicQuest:
-    mstQuest = fetch.get_one(conn, MstQuest, quest_id)
-    if not mstQuest:
-        raise HTTPException(status_code=404, detail="Quest not found")
-
+def get_basic_quest_from_raw(conn: Connection, mstQuest: MstQuest) -> BasicQuest:
     return BasicQuest(
         id=mstQuest.id,
         name=mstQuest.name,
@@ -542,3 +538,11 @@ def get_basic_quest(conn: Connection, quest_id: int) -> BasicQuest:
         openedAt=mstQuest.openedAt,
         closedAt=mstQuest.closedAt,
     )
+
+
+def get_basic_quest(conn: Connection, quest_id: int) -> BasicQuest:
+    mstQuest = fetch.get_one(conn, MstQuest, quest_id)
+    if not mstQuest:
+        raise HTTPException(status_code=404, detail="Quest not found")
+
+    return get_basic_quest_from_raw(conn, mstQuest)

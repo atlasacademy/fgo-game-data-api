@@ -7,6 +7,7 @@ from pydantic.generics import GenericModel
 
 from .base import BaseModelORJson
 from .basic import (
+    BasicQuest,
     BasicReversedBuff,
     BasicReversedFunction,
     BasicReversedSkillTd,
@@ -1227,6 +1228,7 @@ class NiceMasterMission(BaseModelORJson):
     endedAt: int
     closedAt: int
     missions: list[NiceEventMission]
+    quests: list[BasicQuest]
 
 
 class NiceBgm(BaseModelORJson):

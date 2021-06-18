@@ -148,9 +148,9 @@ httptools==0.2.0 \
     --hash=sha256:fd3b8905e21431ad306eeaf56644a68fdd621bf8f3097eff54d0f6bdf7262065 \
     --hash=sha256:200fc1cdf733a9ff554c0bb97a4047785cfaad9875307d6087001db3eb2b417f \
     --hash=sha256:94505026be56652d7a530ab03d89474dc6021019d6b8682281977163b3471ea0
-httpx==0.18.1; python_version >= "3.6" \
-    --hash=sha256:ad2e3db847be736edc4b272c4d5788790a7e5789ef132fc6b5fef8aeb9e9f6e0 \
-    --hash=sha256:0a2651dd2b9d7662c70d12ada5c290abcf57373b9633515fe4baa9f62566086f
+httpx==0.18.2; python_version >= "3.6" \
+    --hash=sha256:979afafecb7d22a1d10340bafb403cf2cb75aff214426ff206521fc79d26408c \
+    --hash=sha256:9f99c15d33642d38bce8405df088c1c4cfd940284b4290cacbfb02e64f4877c6
 idna==3.2; python_version >= "3.6" and python_full_version >= "3.6.2" \
     --hash=sha256:14475042e284991034cb48e06f6851428fb14c4dc953acd9be9a5e95c7b6dd7a \
     --hash=sha256:467fbad99067910785144ce333826c71fb0e63a425657295239737f7ecd125f3

@@ -17,7 +17,7 @@ GitPython = "^3.1.17"
 toml = "^0.10.2"
 SQLAlchemy = "^1.4.18"
 psycopg2 = "^2.9.1"
-httpx = "^0.18.1"
+httpx = "^0.18.2"
 aioredis = "^1.3.1"
 
 [tool.poetry.dev-dependencies]
@@ -33,9 +33,9 @@ sqlalchemy-stubs = {git = "https://github.com/squaresmile/sqlalchemy-stubs.git"}
 sqlalchemy2-stubs = "^0.0.2-alpha.2"
 pytest-asyncio = "^0.15.1"
 asgi-lifespan = "^1.0.1"
-types-toml = "^0.1.2"
-types-aiofiles = "^0.1.4"
-types-orjson = "^0.1.0"
+types-toml = "^0.1.3"
+types-aiofiles = "^0.1.5"
+types-orjson = "^0.1.1"
 
 [tool.isort]
 line_length = 88
