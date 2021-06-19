@@ -2,7 +2,9 @@
 import pytest
 from httpx import AsyncClient
 
+from app.core.raw import get_quest_ids_in_conds
 from app.schemas.enums import FUNC_VALS_NOT_BUFF
+from app.schemas.raw import MstEventMissionCondition, MstEventMissionConditionDetail
 
 from .utils import get_response_data
 
@@ -212,3 +214,29 @@ class TestServantSpecial:
         data = response.json()
         assert data.get("mstMasterMission") is not None
         assert len(data["mstEventMission"]) > 0
+
+
+def test_get_quest_id_from_conds() -> None:
+    conds = [
+        MstEventMissionCondition.parse_obj(item)
+        for item in get_response_data("test_data_master", "mstEventMissionCondition")
+    ]
+    cond_details = [
+        MstEventMissionConditionDetail.parse_obj(item)
+        for item in get_response_data(
+            "test_data_master", "mstEventMissionConditionDetail"
+        )
+    ]
+    assert get_quest_ids_in_conds(conds, cond_details) == {
+        93030306,
+        94002213,
+        94002214,
+        94002215,
+        93000613,
+        93000107,
+        93020207,
+        93000208,
+        93020210,
+        93020306,
+        94002109,
+    }

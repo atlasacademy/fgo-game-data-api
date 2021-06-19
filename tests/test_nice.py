@@ -480,7 +480,10 @@ class TestServantSpecial:
         overWriteTDFileName = ascensionAdd["overWriteTDFileName"]
 
         assert overWriteServantName["ascension"]["1"] == "Okita J Souji"
-        assert overWriteTDName["ascension"]["1"] == "蒼穹三段突き"
+        assert (
+            overWriteTDName["ascension"]["1"]
+            == "Lightless Light that Sparkles at Daybreak"
+        )
         assert overWriteTDFileName["ascension"]["1"].endswith(
             "JP/Servants/Commands/604000/604010.png"
         )

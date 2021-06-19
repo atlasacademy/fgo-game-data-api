@@ -8,19 +8,49 @@ from ...models.raw import (
     mstBgm,
     mstClosedMessage,
     mstGift,
+    mstMap,
     mstQuest,
     mstQuestConsumeItem,
     mstQuestMessage,
     mstQuestPhase,
     mstQuestPhaseDetail,
     mstQuestRelease,
+    mstSpot,
     mstStage,
+    mstWar,
 )
 from ...models.rayshift import rayshiftQuest
 from ...schemas.common import StageLink
 from ...schemas.gameenums import QuestFlag
-from ...schemas.raw import QuestEntity, QuestPhaseEntity
+from ...schemas.raw import MstQuestWithWar, QuestEntity, QuestPhaseEntity
 from .utils import sql_jsonb_agg
+
+
+QUEST_WITH_WAR_SELECT = select(mstQuest, mstWar.c.id.label("warId")).select_from(
+    mstQuest.join(mstSpot, mstSpot.c.id == mstQuest.c.spotId)
+    .join(mstMap, mstMap.c.id == mstSpot.c.mapId)
+    .join(mstWar, mstWar.c.id == mstMap.c.warId)
+)
+
+
+def get_one_quest_with_war(
+    conn: Connection, quest_id: int
+) -> Optional[MstQuestWithWar]:
+    stmt = QUEST_WITH_WAR_SELECT.where(mstQuest.c.id == quest_id)
+
+    mstQuestWar = conn.execute(stmt).fetchone()
+    if mstQuestWar:
+        return MstQuestWithWar.from_orm(mstQuestWar)
+
+    return None
+
+
+def get_many_quests_with_war(
+    conn: Connection, quest_ids: Iterable[int]
+) -> list[MstQuestWithWar]:
+    stmt = QUEST_WITH_WAR_SELECT.where(mstQuest.c.id.in_(quest_ids))
+
+    return [MstQuestWithWar.from_orm(quest) for quest in conn.execute(stmt).fetchall()]
 
 
 JOINED_QUEST_TABLES = (

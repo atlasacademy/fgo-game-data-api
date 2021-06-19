@@ -54,7 +54,6 @@ from ..schemas.raw import (
     MstItem,
     MstMap,
     MstMasterMission,
-    MstQuest,
     MstShop,
     MstShopScript,
     MstSpot,
@@ -520,6 +519,23 @@ def get_war_entity(conn: Connection, war_id: int) -> WarEntity:
     )
 
 
+def get_quest_ids_in_conds(
+    conds: list[MstEventMissionCondition],
+    cond_details: list[MstEventMissionConditionDetail],
+) -> set[int]:
+    quest_ids: set[int] = set()
+    for cond in conds:
+        if cond.condType in (CondType.QUEST_CLEAR, CondType.QUEST_CLEAR_NUM):
+            quest_ids |= set(cond.targetIds)
+    for cond_detail in cond_details:
+        if cond_detail.missionCondType in (
+            DetailMissionCondType.QUEST_CLEAR_NUM_1,
+            DetailMissionCondType.QUEST_CLEAR_NUM_2,
+        ):
+            quest_ids |= set(cond_detail.targetIds)
+    return quest_ids
+
+
 def get_master_mission_entity(
     conn: Connection, mm_id: int, mstMasterMission: Optional[MstMasterMission] = None
 ) -> MasterMissionEntity:
@@ -545,18 +561,8 @@ def get_master_mission_entity(
     gift_ids = {mission.giftId for mission in missions}
     gifts = fetch.get_all_multiple(conn, MstGift, gift_ids)
 
-    quest_ids: set[int] = set()
-    for cond in conds:
-        if cond.condType in (CondType.QUEST_CLEAR, CondType.QUEST_CLEAR_NUM):
-            quest_ids |= set(cond.targetIds)
-    for cond_detail in cond_details:
-        if cond_detail.missionCondType in (
-            DetailMissionCondType.QUEST_CLEAR_NUM_1,
-            DetailMissionCondType.QUEST_CLEAR_NUM_2,
-        ):
-            quest_ids |= set(cond_detail.targetIds)
-
-    quests = fetch.get_all_multiple(conn, MstQuest, quest_ids)
+    quest_ids = get_quest_ids_in_conds(conds, cond_details)
+    quests = quest.get_many_quests_with_war(conn, quest_ids)
 
     return MasterMissionEntity(
         mstMasterMission=mstMasterMission,

@@ -1,0 +1,20 @@
+[
+  {
+    "targetIds": [
+      93000107,
+      93000208,
+      93000613,
+      93020207,
+      93020210,
+      93020306,
+      93030306
+    ],
+    "addTargetIds": [],
+    "targetQuestIndividualities": [],
+    "id": 10089,
+    "missionTargetId": 200072,
+    "missionCondType": 24,
+    "logicType": 1,
+    "conditionLinkType": 3
+  }
+]

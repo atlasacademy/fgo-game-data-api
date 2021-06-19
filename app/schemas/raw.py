@@ -1023,6 +1023,10 @@ class MstQuest(BaseModelORJson):
     closedAt: int  # 1591156799
 
 
+class MstQuestWithWar(MstQuest):
+    warId: int
+
+
 class MstQuestRelease(BaseModelORJson):
     questId: int  # 94026514
     type: int  # 7
@@ -1277,7 +1281,7 @@ class MasterMissionEntity(BaseModelORJson):
     mstEventMissionCondition: list[MstEventMissionCondition]
     mstEventMissionConditionDetail: list[MstEventMissionConditionDetail]
     mstGift: list[MstGift]
-    mstQuest: list[MstQuest]
+    mstQuest: list[MstQuestWithWar]
 
 
 class AiEntity(BaseModelORJson):

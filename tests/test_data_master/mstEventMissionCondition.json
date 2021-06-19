@@ -1,0 +1,16 @@
+[
+  {
+    "targetIds": [94002213, 94002214, 94002215, 94002109],
+    "missionId": 77,
+    "missionProgressType": 4,
+    "priority": 0,
+    "id": 153,
+    "missionTargetId": 80011,
+    "condGroup": 1,
+    "condType": 25,
+    "targetNum": 10,
+    "conditionMessage": "Clear any room on the 5th floor 10 times",
+    "closedMessage": "",
+    "flag": 0
+  }
+]

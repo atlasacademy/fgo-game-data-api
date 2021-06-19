@@ -1,4 +1,6 @@
 # pylint: disable=R0201
+from dataclasses import dataclass
+
 import pytest
 from httpx import AsyncClient
 
@@ -42,27 +44,41 @@ async def test_basic(client: AsyncClient, query: str, result: str) -> None:
     assert response.json() == get_response_data("test_data_basic", result)
 
 
-cases_404_dict = {
-    "servant": "500",
-    "equip": "3001",
-    "svt": "10098",
-    "skill": "25689",
-    "NP": "900205",
-    "function": "9000",
-    "buff": "765",
-    "MC": "62537",
-    "CC": "8400111",
-    "event": "2313",
-    "war": "42312",
-    "quest": "2134123",
-}
+@dataclass
+class Case404:
+    endpoint: str
+    id_: str
+
+    def __str__(self) -> str:
+        return f"{self.endpoint}_{self.id_}"
 
 
-cases_404 = [pytest.param(key, value, id=key) for key, value in cases_404_dict.items()]
+cases_404 = [
+    Case404("servant", "0"),
+    Case404("servant", "500"),
+    Case404("equip", "0"),
+    Case404("equip", "3001"),
+    Case404("svt", "10098"),
+    Case404("skill", "25689"),
+    Case404("NP", "900205"),
+    Case404("function", "9000"),
+    Case404("buff", "765"),
+    Case404("MC", "62537"),
+    Case404("CC", "8400111"),
+    Case404("event", "2313"),
+    Case404("war", "42312"),
+    Case404("quest", "2134123"),
+]
+
+
+pytest_cases_404 = [
+    pytest.param(test_case.endpoint, test_case.id_, id=str(test_case))
+    for test_case in cases_404
+]
 
 
 @pytest.mark.asyncio
-@pytest.mark.parametrize("endpoint,item_id", cases_404)
+@pytest.mark.parametrize("endpoint,item_id", pytest_cases_404)
 async def test_404_basic(client: AsyncClient, endpoint: str, item_id: str) -> None:
     response = await client.get(f"/basic/JP/{endpoint}/{item_id}")
     assert response.status_code == 404

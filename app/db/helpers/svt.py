@@ -43,10 +43,11 @@ def get_all_equips(conn: Connection) -> list[MstSvt]:  # pragma: no cover
 
 
 def get_svt_id(conn: Connection, col_no: int) -> int:
+    if col_no == 0:
+        return 0
     stmt = select(mstSvt.c.id).where(
         and_(
             mstSvt.c.collectionNo == col_no,
-            mstSvt.c.collectionNo != 0,
             or_(
                 mstSvt.c.type == SvtType.HEROINE,
                 mstSvt.c.type == SvtType.NORMAL,
@@ -56,21 +57,19 @@ def get_svt_id(conn: Connection, col_no: int) -> int:
     )
     mstSvt_db = conn.execute(stmt).fetchone()
     if mstSvt_db:
-        return mstSvt_db.id
+        return int(mstSvt_db.id)
     return col_no
 
 
 def get_ce_id(conn: Connection, col_no: int) -> int:
+    if col_no == 0:
+        return 0
     stmt = select(mstSvt.c.id).where(
-        and_(
-            mstSvt.c.collectionNo == col_no,
-            mstSvt.c.collectionNo != 0,
-            mstSvt.c.type == SvtType.SERVANT_EQUIP,
-        )
+        and_(mstSvt.c.collectionNo == col_no, mstSvt.c.type == SvtType.SERVANT_EQUIP)
     )
     mstSvt_db = conn.execute(stmt).fetchone()
     if mstSvt_db:
-        return mstSvt_db.id
+        return int(mstSvt_db.id)
     return col_no
 
 

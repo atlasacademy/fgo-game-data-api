@@ -7,7 +7,7 @@ from sqlalchemy.engine import Connection
 
 from ..config import Settings
 from ..data.gamedata import masters
-from ..db.helpers import fetch, war
+from ..db.helpers import fetch, quest
 from ..redis.helpers import pydantic_object
 from ..schemas.basic import (
     BasicBuffReverse,
@@ -56,7 +56,7 @@ from ..schemas.raw import (
     MstEquip,
     MstEvent,
     MstFunc,
-    MstQuest,
+    MstQuestWithWar,
     MstSkill,
     MstSvt,
     MstTreasureDevice,
@@ -525,7 +525,7 @@ def get_all_basic_wars(
     return (get_basic_war_from_raw(mstWar, lang) for mstWar in mstWars)
 
 
-def get_basic_quest_from_raw(conn: Connection, mstQuest: MstQuest) -> BasicQuest:
+def get_basic_quest_from_raw(mstQuest: MstQuestWithWar) -> BasicQuest:
     return BasicQuest(
         id=mstQuest.id,
         name=mstQuest.name,
@@ -533,7 +533,7 @@ def get_basic_quest_from_raw(conn: Connection, mstQuest: MstQuest) -> BasicQuest
         consumeType=QUEST_CONSUME_TYPE_NAME[mstQuest.consumeType],
         consume=mstQuest.actConsume,
         spotId=mstQuest.spotId,
-        warId=war.get_war_from_spot(conn, mstQuest.spotId),
+        warId=mstQuest.warId,
         noticeAt=mstQuest.noticeAt,
         openedAt=mstQuest.openedAt,
         closedAt=mstQuest.closedAt,
@@ -541,8 +541,8 @@ def get_basic_quest_from_raw(conn: Connection, mstQuest: MstQuest) -> BasicQuest
 
 
 def get_basic_quest(conn: Connection, quest_id: int) -> BasicQuest:
-    mstQuest = fetch.get_one(conn, MstQuest, quest_id)
+    mstQuest = quest.get_one_quest_with_war(conn, quest_id)
     if not mstQuest:
         raise HTTPException(status_code=404, detail="Quest not found")
 
-    return get_basic_quest_from_raw(conn, mstQuest)
+    return get_basic_quest_from_raw(mstQuest)
