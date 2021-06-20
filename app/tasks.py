@@ -80,8 +80,6 @@ def dump_svt(
     file_name: str,
     svts: list[MstSvt],
 ) -> None:  # pragma: no cover
-    file_name = "nice_equip" if svts[0].type == SvtType.SERVANT_EQUIP else "nice_equip"
-
     export_with_lore = "["
     export_without_lore = "["
     export_with_lore_en = "["
@@ -246,20 +244,8 @@ async def generate_exports(
             for file_name, data, dump in output_files:
                 dump(base_export_path, file_name, data)
 
-            dump_svt(
-                conn,
-                region,
-                base_export_path,
-                "nice_servant",
-                all_servants,
-            )
-            dump_svt(
-                conn,
-                region,
-                base_export_path,
-                "nice_equip",
-                all_equips,
-            )
+            dump_svt(conn, region, base_export_path, "nice_servant", all_servants)
+            dump_svt(conn, region, base_export_path, "nice_equip", all_equips)
 
             conn.close()
 
