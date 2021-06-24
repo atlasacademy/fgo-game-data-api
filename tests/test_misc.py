@@ -4,7 +4,7 @@ from fastapi import HTTPException
 
 from app.core.nice.func import parse_dataVals
 from app.core.nice.nice import get_nice_servant_model
-from app.core.utils import get_lang_en, get_voice_name, sort_by_collection_no
+from app.core.utils import get_voice_name, sort_by_collection_no
 from app.data.custom_mappings import Translation
 from app.db.engine import engines
 from app.routers.utils import list_string_exclude
@@ -117,13 +117,6 @@ def test_list_exclude() -> None:
         json_data = list_string_exclude([test_data], exclude=excluded_keys)
         for key in excluded_keys:
             assert key not in orjson.loads(json_data)
-
-
-def test_lang_en_export() -> None:
-    with engines[Region.JP].connect() as conn:
-        jp_nice_servant = get_nice_servant_model(conn, Region.JP, 202900, Language.jp)
-        jp_nice_servant_with_en_name = get_lang_en(jp_nice_servant)
-        assert jp_nice_servant_with_en_name.name == "Asagami Fujino"
 
 
 def test_voice_lang_en() -> None:

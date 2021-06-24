@@ -741,6 +741,7 @@ class Trait(str, Enum):
     knightsOfTheRound = "knightsOfTheRound"
     divineSpirit = "divineSpirit"
     buffNullifyBuff = "buffNullifyBuff"
+    enemyGudaMiniNobu = "enemyGudaMiniNobu"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -854,6 +855,7 @@ TRAIT_NAME: dict[int, Trait] = {
     2114: Trait.greekMythologyMales,
     2121: Trait.fieldBurning,
     2191: Trait.buffCharmFemale,  # Charm buffs that come from females; Fion 2nd skill
+    2221: Trait.enemyGudaMiniNobu,
     2355: Trait.illya,
     2356: Trait.feminineLookingServant,  # Teach's 3rd skill
     2385: Trait.cursedBook,  # Murasaki Valentine

@@ -119,15 +119,6 @@ def sort_by_collection_no(input_list: Iterable[THasColNo]) -> list[THasColNo]:
     return sorted(input_list, key=lambda x: x.collectionNo)
 
 
-def get_lang_en(svt: THasColNo) -> THasColNo:
-    """
-    Returns given svt Pydantic object with English name
-    """
-    lang_en_svt = svt.copy()
-    lang_en_svt.name = get_translation(Language.en, svt.name)
-    return lang_en_svt
-
-
 FORMATTING_BRACKETS = {"[g][o]": "", "[/o][/g]": "", " [{0}] ": " ", "[{0}]": ""}
 
 
