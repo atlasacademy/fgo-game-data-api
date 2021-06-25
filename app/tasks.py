@@ -9,8 +9,6 @@ from git import Repo
 from pydantic import DirectoryPath
 from sqlalchemy.engine import Connection
 
-from app.schemas.gameenums import SvtType
-
 from .config import SecretSettings, Settings, logger, project_root
 from .core.basic import (
     get_all_basic_ccs,
@@ -28,16 +26,18 @@ from .core.nice.mm import get_all_nice_mms
 from .core.nice.nice import get_nice_equip_model, get_nice_servant_model
 from .core.raw import get_all_bgm_entities, get_all_raw_svts_lore
 from .core.utils import sort_by_collection_no
+from .data.extra import get_extra_svt_data
 from .data.gamedata import update_masters
 from .db.engine import engines
 from .db.helpers import fetch
 from .db.helpers.svt import get_all_equips, get_all_servants
-from .db.load import update_db
-from .redis.load import load_redis_data
+from .db.load import load_svt_extra_db, update_db
+from .redis.load import load_redis_data, load_svt_extra_redis
 from .routers.utils import list_string
 from .schemas.base import BaseModelORJson
 from .schemas.common import Language, Region, RepoInfo
 from .schemas.enums import ALL_ENUMS, TRAIT_NAME
+from .schemas.gameenums import SvtType
 from .schemas.raw import (
     MstCommandCode,
     MstCv,
@@ -279,6 +279,18 @@ async def clear_bloom_redis_cache(redis: Redis) -> None:  # pragma: no cover
         logger.info(f"Cleared {key_count} bloom redis keys.")
 
 
+async def load_svt_extra(
+    redis: Redis, region_path: dict[Region, DirectoryPath]
+) -> None:  # pragma: no cover
+    for region, gamedata_path in region_path.items():
+        svtExtras = get_extra_svt_data(region, gamedata_path)
+        if settings.write_postgres_data:
+            load_svt_extra_db(engines[region], svtExtras)
+        if settings.write_redis_data:
+            await load_svt_extra_redis(redis, region, svtExtras)
+    logger.info("Finished loading extra data")
+
+
 async def load_and_export(
     redis: Redis, region_path: dict[Region, DirectoryPath]
 ) -> None:  # pragma: no cover
@@ -286,6 +298,8 @@ async def load_and_export(
         update_db(region_path)
     if settings.write_redis_data:
         await load_redis_data(redis, region_path)
+    if settings.write_postgres_data or settings.write_redis_data:
+        await load_svt_extra(redis, region_path)
     update_masters(region_path)
     await generate_exports(redis, region_path)
     update_master_repo_info(region_path)

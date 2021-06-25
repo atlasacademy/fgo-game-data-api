@@ -51,6 +51,7 @@ from ...models.raw import (
     mstSvtComment,
     mstSvtCostume,
     mstSvtExp,
+    mstSvtExtra,
     mstSvtGroup,
     mstSvtLimit,
     mstSvtLimitAdd,
@@ -105,6 +106,7 @@ from ...schemas.raw import (
     MstSvtComment,
     MstSvtCostume,
     MstSvtExp,
+    MstSvtExtra,
     MstSvtGroup,
     MstSvtLimit,
     MstSvtLimitAdd,
@@ -134,6 +136,7 @@ schema_map_fetch_one: dict[  # type:ignore
     MstBgm: (mstBgm, mstBgm.c.id),
     MstShop: (mstShop, mstShop.c.id),
     MstMasterMission: (mstMasterMission, mstMasterMission.c.id),
+    MstSvtExtra: (mstSvtExtra, mstSvtExtra.c.svtId),
 }
 
 TFetchOne = TypeVar("TFetchOne", bound=BaseModelORJson)

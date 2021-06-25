@@ -220,14 +220,6 @@ class TdEntityNoReverse(BaseModelORJson):
     mstTreasureDeviceLv: list[MstTreasureDeviceLv]
 
 
-def is_servant(svt_type: int) -> bool:
-    return svt_type in SERVANT_TYPES
-
-
-def is_equip(svt_type: int) -> bool:
-    return svt_type == SvtType.SERVANT_EQUIP
-
-
 class MstSvt(BaseModelORJson):
     relateQuestIds: list[int]  # [91500701, 94004103, 94014414],
     individuality: list[int]  # [5000, 500800],
@@ -268,10 +260,19 @@ class MstSvt(BaseModelORJson):
     flag: int
 
     def isServant(self) -> bool:
-        return is_servant(self.type)
+        return self.type in SERVANT_TYPES
 
     def isEquip(self) -> bool:
-        return is_equip(self.type)
+        return self.type == SvtType.SERVANT_EQUIP
+
+
+class MstSvtExtra(BaseModelORJson):
+    svtId: int
+    zeroLimitOverwriteName: Optional[str] = None
+    bondEquip: int
+    bondEquipOwner: Optional[int] = None
+    valentineEquip: list[int]
+    valentineEquipOwner: Optional[int] = None
 
 
 class MstSvtCard(BaseModelORJson):
@@ -733,6 +734,17 @@ class MstShopScript(BaseModelORJson):
     materialFolderId: int
 
 
+class MstShopRelease(BaseModelORJson):
+    condValues: list[int]
+    shopId: int
+    condType: int
+    condNum: int
+    priority: int
+    isClosedDisp: bool
+    closedMessage: str
+    closedItemName: str
+
+
 class MstEventReward(BaseModelORJson):
     eventId: int  # 80305
     groupId: int  # 0
@@ -1131,7 +1143,6 @@ class Master(BaseModelORJson):
     mstCombineSkillItem: set[int]
     mstCombineLimitItem: set[int]
     mstCombineCostumeItem: set[int]
-    mstSvtLimitOverwriteName: dict[int, str]
     mstEquipSkill: list[MstEquipSkill]
     mstWarEventId: dict[int, list[MstWar]]
     mstCommandCodeSkill: list[MstCommandCodeSkill]
@@ -1142,10 +1153,6 @@ class Master(BaseModelORJson):
     activeSkillToSvt: dict[int, set[int]]
     passiveSkillToSvt: dict[int, set[int]]
     extraPassiveSkillToSvt: dict[int, set[int]]
-    bondEquip: dict[int, int]
-    bondEquipOwner: dict[int, int]
-    valentineEquip: dict[int, list[int]]
-    valentineEquipOwner: dict[int, int]
     tdToSvt: dict[int, set[int]]
     skillToAiAct: dict[int, set[int]]
     aiActToAiSvt: dict[int, set[int]]
@@ -1174,6 +1181,7 @@ class ServantEntity(BaseModelORJson):
     mstIllustrator: Optional[MstIllustrator] = None
     mstSvtExp: list[MstSvtExp] = []
     mstFriendship: list[MstFriendship] = []
+    mstSvtExtra: Optional[MstSvtExtra] = None
     mstSvtComment: list[MstSvtComment] = []
     mstSvtVoice: list[MstSvtVoice] = []
     mstVoice: list[MstVoice] = []

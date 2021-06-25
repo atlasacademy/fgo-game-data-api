@@ -293,6 +293,18 @@ mstSvt = Table(
 )
 
 
+mstSvtExtra = Table(
+    "mstSvtExtra",
+    metadata,
+    Column("svtId", Integer, primary_key=True),
+    Column("zeroLimitOverwriteName", String),
+    Column("bondEquip", Integer),
+    Column("bondEquipOwner", Integer),
+    Column("valentineEquip", ARRAY(Integer)),
+    Column("valentineEquipOwner", Integer),
+)
+
+
 mstSvtCard = Table(
     "mstSvtCard",
     metadata,

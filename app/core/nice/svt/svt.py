@@ -4,7 +4,6 @@ import orjson
 from sqlalchemy.engine import Connection
 
 from ....config import Settings
-from ....data.gamedata import masters
 from ....schemas.common import Language, Region
 from ....schemas.enums import ATTRIBUTE_NAME, CLASS_NAME
 from ....schemas.gameenums import (
@@ -117,10 +116,17 @@ def get_nice_servant(
             )
             if friendship.friendship != -1
         ],
-        "bondEquip": masters[region].bondEquip.get(svt_id, 0),
-        "valentineEquip": masters[region].valentineEquip.get(svt_id, []),
-        "bondEquipOwner": masters[region].bondEquipOwner.get(svt_id),
-        "valentineEquipOwner": masters[region].valentineEquipOwner.get(svt_id),
+        # "bondEquip": masters[region].bondEquip.get(svt_id, 0),
+        "bondEquip": raw_svt.mstSvtExtra.bondEquip if raw_svt.mstSvtExtra else 0,
+        "valentineEquip": raw_svt.mstSvtExtra.valentineEquip
+        if raw_svt.mstSvtExtra
+        else [],
+        "bondEquipOwner": raw_svt.mstSvtExtra.bondEquipOwner
+        if raw_svt.mstSvtExtra
+        else None,
+        "valentineEquipOwner": raw_svt.mstSvtExtra.valentineEquipOwner
+        if raw_svt.mstSvtExtra
+        else None,
         "relateQuestIds": raw_svt.mstSvt.relateQuestIds,
     }
 

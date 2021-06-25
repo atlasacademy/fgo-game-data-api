@@ -63,6 +63,7 @@ from ..schemas.raw import (
     MstSvtComment,
     MstSvtCostume,
     MstSvtExp,
+    MstSvtExtra,
     MstSvtGroup,
     MstSvtLimit,
     MstSvtLimitAdd,
@@ -296,6 +297,7 @@ def get_servant_entity(
         conn, MstCombineMaterial, svt_db.combineMaterialId
     )
     mstSvtPassiveSkill = fetch.get_all(conn, MstSvtPassiveSkill, servant_id)
+    mstSvtExtra = fetch.get_one(conn, MstSvtExtra, servant_id)
 
     costume_chara_ids = [limit.battleCharaId for limit in mstSvtLimitAdd]
     mstSvtScript = svt.get_svt_script(
@@ -333,6 +335,7 @@ def get_servant_entity(
         mstFriendship=mstFriendship,
         mstSkill=mstSkill,
         mstTreasureDevice=mstTreasureDevice,
+        mstSvtExtra=mstSvtExtra,
     )
 
     if expand:

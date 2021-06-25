@@ -13,12 +13,13 @@ from ..models.raw import (
     ScriptFileList,
     mstSkillLv,
     mstSubtitle,
+    mstSvtExtra,
     mstTreasureDeviceLv,
 )
 from ..models.rayshift import rayshiftQuest
 from ..schemas.common import Region
 from ..schemas.enums import FUNC_VALS_NOT_BUFF
-from ..schemas.raw import get_subtitle_svtId
+from ..schemas.raw import MstSvtExtra, get_subtitle_svtId
 from ..schemas.rayshift import QuestList
 from .engine import engines
 from .helpers.rayshift import insert_rayshift_quest_list
@@ -163,6 +164,15 @@ def load_script_list(
     with engine.begin() as conn:
         recreate_table(conn, ScriptFileList)
         conn.execute(ScriptFileList.insert(), db_data)
+
+
+def load_svt_extra_db(
+    engine: Engine, svtExtras: list[MstSvtExtra]
+) -> None:  # pragma: no cover
+    svtExtra_db_data = [svtExtra.dict() for svtExtra in svtExtras]
+    with engine.begin() as conn:
+        recreate_table(conn, mstSvtExtra)
+        conn.execute(mstSvtExtra.insert(), svtExtra_db_data)
 
 
 def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no cover

@@ -473,5 +473,11 @@
     { "type": 19, "lv": 99, "exp": 16665000, "curve": 1240 },
     { "type": 19, "lv": 100, "exp": 17170000, "curve": 1253 }
   ],
-  "mstFriendship": []
+  "mstFriendship": [],
+  "mstSvtExtra": {
+    "svtId": 9301260,
+    "bondEquip": 0,
+    "bondEquipOwner": 601900,
+    "valentineEquip": []
+  }
 }

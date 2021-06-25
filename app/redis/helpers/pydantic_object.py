@@ -12,6 +12,7 @@ from ...schemas.raw import (
     MstFunc,
     MstSkill,
     MstSvt,
+    MstSvtExtra,
     MstSvtLimit,
     MstTreasureDevice,
 )
@@ -28,6 +29,7 @@ pydantic_obj_redis_table: dict[Type[BaseModelORJson], tuple[str, str]] = {
     MstTreasureDevice: ("mstTreasureDevice", "id"),
     MstEquip: ("mstEquip", "id"),
     MstCommandCode: ("mstCommandCode", "id"),
+    MstSvtExtra: ("mstSvtExtra", "svtId"),
 }
 
 RedisPydantic = TypeVar("RedisPydantic", bound=BaseModelORJson)

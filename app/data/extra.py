@@ -1,0 +1,149 @@
+from collections import defaultdict
+from typing import Type, TypeVar
+
+import orjson
+from pydantic.types import DirectoryPath
+
+from ..schemas.base import BaseModelORJson
+from ..schemas.common import Region
+from ..schemas.gameenums import CondType, PurchaseType, SvtType
+from ..schemas.raw import (
+    MstEvent,
+    MstShop,
+    MstShopRelease,
+    MstSkill,
+    MstSvt,
+    MstSvtComment,
+    MstSvtExtra,
+    MstSvtLimitAdd,
+    MstSvtSkill,
+)
+
+
+PydanticModel = TypeVar("PydanticModel", bound=BaseModelORJson)
+
+
+MODEL_FILE_NAME: dict[Type[BaseModelORJson], str] = {
+    MstEvent: "mstEvent",
+    MstShop: "mstShop",
+    MstSkill: "mstSkill",
+    MstSvt: "mstSvt",
+    MstSvtLimitAdd: "mstSvtLimitAdd",
+    MstSvtComment: "mstSvtComment",
+    MstSvtExtra: "mstSvtExtra",
+    MstSvtSkill: "mstSvtSkill",
+    MstShopRelease: "mstShopRelease",
+}
+VALENTINE_NAME = {Region.NA: "Valentine", Region.JP: "バレンタイン"}
+MASHU_SVT_ID1 = 800100
+MASH_NAME = {Region.NA: "Mash", Region.JP: "マシュ"}
+
+
+def is_Mash_Valentine_equip(region: Region, comment: str) -> bool:
+    header = comment.split("\n")[0]
+    return VALENTINE_NAME[region] in header and MASH_NAME[region] in header
+
+
+def load_master_data(
+    gamedata_path: DirectoryPath, model: Type[PydanticModel]
+) -> list[PydanticModel]:
+    file_name = MODEL_FILE_NAME[model]
+    with open(gamedata_path / "master" / f"{file_name}.json", "rb") as fp:
+        data = orjson.loads(fp.read())
+    return [model.parse_obj(item) for item in data]
+
+
+def get_extra_svt_data(
+    region: Region, gamedata_path: DirectoryPath
+) -> list[MstSvtExtra]:
+    mstSvts = load_master_data(gamedata_path, MstSvt)
+    mstSvtLimitAdds = load_master_data(gamedata_path, MstSvtLimitAdd)
+    mstSkills = load_master_data(gamedata_path, MstSkill)
+    mstSvtSkills = load_master_data(gamedata_path, MstSvtSkill)
+    mstEvents = load_master_data(gamedata_path, MstEvent)
+    mstShops = load_master_data(gamedata_path, MstShop)
+    mstShopReleases = load_master_data(gamedata_path, MstShopRelease)
+    mstSvtComments = load_master_data(gamedata_path, MstSvtComment)
+
+    mstSkillId = {mstSkill.id: mstSkill for mstSkill in mstSkills}
+    mstSvtId = {mstSvt.id: mstSvt for mstSvt in mstSvts}
+
+    mstSvtSkillSvtId: dict[int, list[MstSvtSkill]] = defaultdict(list)
+    for svtSkill in mstSvtSkills:
+        mstSvtSkillSvtId[svtSkill.svtId].append(svtSkill)
+    mstShopReleaseShopId: dict[int, list[MstShopRelease]] = defaultdict(list)
+    for shopRelease in mstShopReleases:
+        mstShopReleaseShopId[shopRelease.shopId].append(shopRelease)
+
+    # Bond CE has servant's ID in skill's actIndividuality
+    # to bind the CE effect to the servant
+    bondEquip: dict[int, int] = {}
+    for mstSvt in mstSvts:
+        if mstSvt.type == SvtType.SERVANT_EQUIP and mstSvt.id in mstSvtSkillSvtId:
+            actIndividualities = set()
+            for svtSkill in mstSvtSkillSvtId[mstSvt.id]:
+                mstSkill = mstSkillId.get(svtSkill.skillId)
+                if mstSkill:
+                    actIndividualities.add(tuple(mstSkill.actIndividuality))
+            if len(actIndividualities) == 1:
+                individualities = actIndividualities.pop()
+                if len(individualities) == 1 and individualities[0] in mstSvtId:
+                    bondEquip[individualities[0]] = mstSvt.id
+
+    bondEquipOwner = {equip_id: svt_id for svt_id, equip_id in bondEquip.items()}
+
+    valentineEquip: dict[int, list[int]] = defaultdict(list)
+    latest_valentine_event_id = max(
+        (event for event in mstEvents if VALENTINE_NAME[region] in event.name),
+        key=lambda event: int(event.startedAt),
+    ).id
+    # Find Valentince CE's owner by looking at which servant unlock the shop entries
+    for mstShop in mstShops:
+        if (
+            mstShop.eventId == latest_valentine_event_id
+            and mstShop.purchaseType == PurchaseType.SERVANT
+        ):
+            for shopRelease in mstShopReleaseShopId[mstShop.id]:
+                if shopRelease.condType == CondType.SVT_GET:
+                    valentineEquip[shopRelease.condValues[0]].append(
+                        mstShop.targetIds[0]
+                    )
+                    break
+
+    valentineEquip[MASHU_SVT_ID1] = [
+        item.svtId
+        for item in mstSvtComments
+        if is_Mash_Valentine_equip(region, item.comment)
+    ]
+    valentineEquipOwner = {
+        equip_id: svt_id
+        for svt_id, equip_ids in valentineEquip.items()
+        for equip_id in equip_ids
+    }
+
+    zeroLimitOverwriteName: dict[int, str] = {}
+    for limitAdd in mstSvtLimitAdds:
+        if limitAdd.limitCount == 0 and "overWriteServantName" in limitAdd.script:
+            zeroLimitOverwriteName[limitAdd.svtId] = limitAdd.script[
+                "overWriteServantName"
+            ]
+
+    all_svt_ids = (
+        bondEquip.keys()
+        | bondEquipOwner.keys()
+        | valentineEquip.keys()
+        | valentineEquipOwner.keys()
+        | zeroLimitOverwriteName.keys()
+    )
+
+    return [
+        MstSvtExtra(
+            svtId=svt_id,
+            zeroLimitOverwriteName=zeroLimitOverwriteName.get(svt_id),
+            bondEquip=bondEquip.get(svt_id, 0),
+            bondEquipOwner=bondEquipOwner.get(svt_id),
+            valentineEquip=valentineEquip.get(svt_id, []),
+            valentineEquipOwner=valentineEquipOwner.get(svt_id),
+        )
+        for svt_id in sorted(all_svt_ids)
+    ]

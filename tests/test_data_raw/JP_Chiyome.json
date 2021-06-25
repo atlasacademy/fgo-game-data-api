@@ -2457,5 +2457,10 @@
       "friendship": -1,
       "qp": 18000000
     }
-  ]
+  ],
+  "mstSvtExtra": {
+    "svtId": 602900,
+    "bondEquip": 9302470,
+    "valentineEquip": [9806470]
+  }
 }

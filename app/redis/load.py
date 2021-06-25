@@ -7,10 +7,12 @@ from pydantic import DirectoryPath
 
 from ..config import Settings, logger
 from ..schemas.common import Region
+from ..schemas.raw import MstSvtExtra
 from .helpers.pydantic_object import pydantic_obj_redis_table
 
 
 settings = Settings()
+REDIS_DATA_PREFIX = f"{settings.redis_prefix}:data"
 
 
 async def load_pydantic_object(
@@ -27,6 +29,14 @@ async def load_pydantic_object(
                 }
                 redis_key = f"{redis_prefix}:{region.name}:{master_file}"
                 await redis.hmset_dict(redis_key, redis_data)
+
+
+async def load_svt_extra_redis(
+    redis: Redis, region: Region, svtExtras: list[MstSvtExtra]
+) -> None:
+    redis_key = f"{REDIS_DATA_PREFIX}:{region.name}:mstSvtExtra"
+    svtExtra_redis_data = {svtExtra.svtId: svtExtra.json() for svtExtra in svtExtras}
+    await redis.hmset_dict(redis_key, svtExtra_redis_data)
 
 
 async def load_mstSvtLimit(
@@ -51,10 +61,8 @@ async def load_redis_data(
     logger.info("Loading redis …")
     start_loading_time = time.perf_counter()
 
-    redis_prefix = f"{settings.redis_prefix}:data"
-
-    await load_pydantic_object(redis, region_path, redis_prefix)
-    await load_mstSvtLimit(redis, region_path, redis_prefix)
+    await load_pydantic_object(redis, region_path, REDIS_DATA_PREFIX)
+    await load_mstSvtLimit(redis, region_path, REDIS_DATA_PREFIX)
 
     redis_loading_time = time.perf_counter() - start_loading_time
     logger.info(f"Loaded redis in {redis_loading_time:.2f}s.")

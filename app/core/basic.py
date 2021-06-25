@@ -59,6 +59,7 @@ from ..schemas.raw import (
     MstQuestWithWar,
     MstSkill,
     MstSvt,
+    MstSvtExtra,
     MstTreasureDevice,
     MstWar,
 )
@@ -315,21 +316,26 @@ async def get_basic_svt(
     if not mstSvt or not mstSvtLimit:
         raise HTTPException(status_code=404, detail="Svt not found")
 
-    servant_name = masters[region].mstSvtLimitOverwriteName.get(svt_id, mstSvt.name)
+    svtExtra = await pydantic_object.fetch_id(redis, region, MstSvtExtra, svt_id)
+
     basic_servant = {
         "id": svt_id,
         "collectionNo": mstSvt.collectionNo,
         "type": SVT_TYPE_NAME[mstSvt.type],
         "flag": SVT_FLAG_NAME[mstSvt.flag],
-        "name": servant_name,
+        "name": mstSvt.name,
         "className": CLASS_NAME[mstSvt.classId],
         "attribute": ATTRIBUTE_NAME[mstSvt.attri],
         "rarity": mstSvtLimit.rarity,
         "atkMax": mstSvtLimit.atkMax,
         "hpMax": mstSvtLimit.hpMax,
-        "bondEquipOwner": masters[region].bondEquipOwner.get(svt_id),
-        "valentineEquipOwner": masters[region].valentineEquipOwner.get(svt_id),
     }
+
+    if svtExtra:
+        basic_servant["bondEquipOwner"] = svtExtra.bondEquipOwner
+        basic_servant["valentineEquipOwner"] = svtExtra.valentineEquipOwner
+        if svtExtra.zeroLimitOverwriteName is not None:
+            basic_servant["name"] = svtExtra.zeroLimitOverwriteName
 
     base_settings = {
         "base_url": settings.asset_url,
@@ -342,7 +348,7 @@ async def get_basic_svt(
         basic_servant["face"] = AssetURL.face.format(**base_settings, i=0)
 
     if region == Region.JP and lang is not None:
-        basic_servant["name"] = get_translation(lang, servant_name)
+        basic_servant["name"] = get_translation(lang, str(basic_servant["name"]))
 
     return basic_servant
 

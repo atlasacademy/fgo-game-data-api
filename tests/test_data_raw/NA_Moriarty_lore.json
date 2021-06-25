@@ -1937,6 +1937,11 @@
       "qp": 18000000
     }
   ],
+  "mstSvtExtra": {
+    "svtId": 202300,
+    "bondEquip": 9301600,
+    "valentineEquip": [9806190]
+  },
   "mstSvtComment": [
     {
       "condValues": [0],
