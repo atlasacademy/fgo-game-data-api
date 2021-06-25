@@ -654,7 +654,7 @@ class Trait(str, Enum):
     attackProjectile = "attackProjectile"
     attackMagical = "attackMagical"
     criticalHit = "criticalHit"
-    playerCards = "playerCards"
+    faceCard = "faceCard"
     cardNP = "cardNP"
     kingproteaGrowth = "kingproteaGrowth"
     kingproteaProliferation = "kingproteaProliferation"
@@ -963,7 +963,7 @@ TRAIT_NAME: dict[int, Trait] = {
     4003: Trait.cardQuick,
     4004: Trait.cardExtra,
     4007: Trait.cardNP,
-    4008: Trait.playerCards,  # Normal Buster, Arts, Quick, Extra Attack
+    4008: Trait.faceCard,  # Normal Buster, Arts, Quick, Extra Attack
     4100: Trait.criticalHit,
     4101: Trait.aoeNP,
     5000: Trait.canBeInBattle,  # can be NPC, enemy or playable servant i.e. not CE

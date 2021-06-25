@@ -187,6 +187,45 @@ async def test_special_datavals(
 
 
 @pytest.mark.asyncio
+async def test_datavals_default_case_target(client: AsyncClient) -> None:
+    response = await client.get("/nice/NA/NP/600701")
+    assert response.status_code == 200
+    assert response.json()["functions"][0]["svals"][0] == {
+        "Rate": 5000,
+        "Value": 600710,
+        "Target": 0,
+    }
+
+
+@pytest.mark.asyncio
+async def test_list_datavals_2_items(client: AsyncClient) -> None:
+    response = await client.get("/nice/JP/NP/403401")
+    assert response.status_code == 200
+    assert response.json()["functions"][0]["svals"][0] == {
+        "Rate": 1000,
+        "Value": 6000,
+        "Target": 0,
+        "Correction": 1500,
+        "TargetRarityList": [1, 2],
+    }
+
+
+@pytest.mark.asyncio
+async def test_list_datavals_1_item(client: AsyncClient) -> None:
+    response = await client.get("/nice/JP/NP/304201")
+    assert response.status_code == 200
+    assert response.json()["functions"][0]["svals"][0] == {
+        "Rate": 1000,
+        "Value": 3000,
+        "Value2": 1000,
+        "Target": 1,
+        "Correction": 200,
+        "TargetList": [2004],
+        "ParamAddMaxCount": 10,
+    }
+
+
+@pytest.mark.asyncio
 class TestServantSpecial:
     async def test_NA_not_integer(self, client: AsyncClient) -> None:
         response = await client.get("/nice/NA/servant/lkji")
@@ -269,15 +308,6 @@ class TestServantSpecial:
         assert response.status_code == 200
         assert response.json()["profile"]["cv"] == ""
 
-    async def test_datavals_default_case_target(self, client: AsyncClient) -> None:
-        response = await client.get("/nice/NA/NP/600701")
-        assert response.status_code == 200
-        assert response.json()["functions"][0]["svals"][0] == {
-            "Rate": 5000,
-            "Value": 600710,
-            "Target": 0,
-        }
-
     async def test_voice_play_cond(self, client: AsyncClient) -> None:
         response = await client.get("/nice/JP/servant/261?lore=true")
         voice_line = response.json()["profile"]["voices"][0]["voiceLines"][4]
@@ -291,30 +321,6 @@ class TestServantSpecial:
                 "condValues": [0],
             }
         ]
-
-    async def test_list_datavals_2_items(self, client: AsyncClient) -> None:
-        response = await client.get("/nice/JP/NP/403401")
-        assert response.status_code == 200
-        assert response.json()["functions"][0]["svals"][0] == {
-            "Rate": 1000,
-            "Value": 6000,
-            "Target": 0,
-            "Correction": 1500,
-            "TargetRarityList": [1, 2],
-        }
-
-    async def test_list_datavals_1_item(self, client: AsyncClient) -> None:
-        response = await client.get("/nice/JP/NP/304201")
-        assert response.status_code == 200
-        assert response.json()["functions"][0]["svals"][0] == {
-            "Rate": 1000,
-            "Value": 3000,
-            "Value2": 1000,
-            "Target": 1,
-            "Correction": 200,
-            "TargetList": [2004],
-            "ParamAddMaxCount": 10,
-        }
 
     async def test_script_svt_SkillRankUp(self, client: AsyncClient) -> None:
         response = await client.get("/nice/JP/servant/285")
