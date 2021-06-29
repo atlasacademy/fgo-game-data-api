@@ -326,7 +326,7 @@ async def get_quest_enemies(
     for enemy_deck in quest_detail.enemyDeck:
         enemy_decks = [
             EnemyDeckInfo(DeckType.ENEMY, enemy)
-            for enemy in enemy_deck.svts
+            for enemy in sorted(enemy_deck.svts, key=lambda enemy: enemy.id)
             if not enemy.infoScript or "isAddition" not in enemy.infoScript
         ]
         enemy_decks += [
