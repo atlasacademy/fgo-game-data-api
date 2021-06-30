@@ -665,6 +665,12 @@ def get_quest_phase_entity(
 ) -> QuestPhaseEntity:
     quest_phase = quest.get_quest_phase_entity(conn, quest_id, phase)
     if quest_phase:
+        stage_remaps = quest.get_stage_remap(conn, quest_id, phase)
+        if stage_remaps:
+            remapped_stages = quest.get_remapped_stages(conn, stage_remaps)
+            bgms = quest.get_bgm_from_stage(conn, remapped_stages)
+            quest_phase.mstStage = remapped_stages
+            quest_phase.mstBgm = bgms
         return quest_phase
     else:
         raise HTTPException(status_code=404, detail="Quest phase not found")

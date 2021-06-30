@@ -1110,6 +1110,15 @@ class MstStage(BaseModelORJson):
     startEffectId: int  # 1
 
 
+class MstStageRemap(BaseModelORJson):
+    questId: int
+    questPhase: int
+    wave: int
+    remapQuestId: int
+    remapPhase: int
+    remapWave: int
+
+
 class MstAi(BaseModelORJson):
     id: int
     idx: int

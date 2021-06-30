@@ -1224,9 +1224,9 @@ mstStage = Table(
     metadata,
     Column("npcDeckIds", ARRAY(Integer)),
     Column("script", JSONB),
-    Column("questId", Integer),
-    Column("questPhase", Integer),
-    Column("wave", Integer),
+    Column("questId", Integer, index=True),
+    Column("questPhase", Integer, index=True),
+    Column("wave", Integer, index=True),
     Column("enemyInfo", Integer),
     Column("bgmId", Integer),
     Column("startEffectId", Integer),
@@ -1235,6 +1235,18 @@ mstStage = Table(
         sqlalchemy.text('"script" jsonb_path_ops'),
         postgresql_using="gin",
     ),
+)
+
+
+mstStageRemap = Table(
+    "mstStageRemap",
+    metadata,
+    Column("questId", Integer, index=True),
+    Column("questPhase", Integer, index=True),
+    Column("wave", Integer, index=True),
+    Column("remapQuestId", Integer),
+    Column("remapPhase", Integer),
+    Column("remapWave", Integer),
 )
 
 
@@ -1367,6 +1379,7 @@ TABLES_TO_BE_LOADED = [
     mstQuestPhase,
     mstQuestPhaseDetail,
     mstStage,
+    mstStageRemap,
     mstAi,
     mstAiField,
 ]

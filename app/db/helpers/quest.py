@@ -1,7 +1,7 @@
 from typing import Iterable, Optional
 
 from sqlalchemy.engine import Connection
-from sqlalchemy.sql import and_, case, func, select
+from sqlalchemy.sql import and_, case, func, or_, select
 
 from ...models.raw import (
     ScriptFileList,
@@ -17,12 +17,20 @@ from ...models.raw import (
     mstQuestRelease,
     mstSpot,
     mstStage,
+    mstStageRemap,
     mstWar,
 )
 from ...models.rayshift import rayshiftQuest
 from ...schemas.common import StageLink
 from ...schemas.gameenums import QuestFlag
-from ...schemas.raw import MstQuestWithWar, QuestEntity, QuestPhaseEntity
+from ...schemas.raw import (
+    MstBgm,
+    MstQuestWithWar,
+    MstStage,
+    MstStageRemap,
+    QuestEntity,
+    QuestPhaseEntity,
+)
 from .utils import sql_jsonb_agg
 
 
@@ -220,6 +228,39 @@ def get_quest_phase_entity(
         return QuestPhaseEntity.from_orm(quest_phase)
 
     return None
+
+
+def get_stage_remap(
+    conn: Connection, quest_id: int, phase_id: int
+) -> list[MstStageRemap]:
+    stmt = select(mstStageRemap).where(
+        and_(
+            mstStageRemap.c.questId == quest_id, mstStageRemap.c.questPhase == phase_id
+        )
+    )
+    stage_remaps = conn.execute(stmt).fetchall()
+    return [MstStageRemap.from_orm(stage_remap) for stage_remap in stage_remaps]
+
+
+def get_remapped_stages(
+    conn: Connection, stage_remaps: Iterable[MstStageRemap]
+) -> list[MstStage]:
+    remapped_conditions = [
+        and_(
+            mstStage.c.questId == stage_remap.remapQuestId,
+            mstStage.c.questPhase == stage_remap.remapPhase,
+            mstStage.c.wave == stage_remap.remapWave,
+        )
+        for stage_remap in stage_remaps
+    ]
+    stmt = select(mstStage).where(or_(*remapped_conditions))
+    return [MstStage.from_orm(stage) for stage in conn.execute(stmt).fetchall()]
+
+
+def get_bgm_from_stage(conn: Connection, stages: Iterable[MstStage]) -> list[MstBgm]:
+    bgm_ids = [stage.bgmId for stage in stages]
+    stmt = select(mstBgm).where(mstBgm.c.id.in_(bgm_ids))
+    return [MstBgm.from_orm(bgm) for bgm in conn.execute(stmt).fetchall()]
 
 
 def get_quest_from_ai(conn: Connection, ai_id: int) -> list[StageLink]:
