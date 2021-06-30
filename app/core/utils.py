@@ -1,4 +1,5 @@
 import re
+import string
 from typing import Iterable, Literal, Optional, TypeVar, Union
 
 from ..data.custom_mappings import TRANSLATION_OVERRIDE, TRANSLATIONS, Translation
@@ -13,20 +14,20 @@ TLookup = TypeVar("TLookup")
 
 
 full_width_uppercase_lookup = {chr(0xFF21 + i): chr(65 + i) for i in range(26)}
-half_width_uppercase_lookup = {chr(65 + i) for i in range(26)}
+half_width_uppercase_lookup = set(string.ascii_uppercase)
 
 
 def get_translation(
     language: Language,
-    string: str,
+    text: str,
     override_file: Optional[Translation] = None,
     override_id: Optional[str] = None,
 ) -> str:
-    if string == "":
+    if text == "":
         return ""
 
     if language == Language.jp:
-        return string
+        return text
 
     if (
         override_file
@@ -35,15 +36,15 @@ def get_translation(
     ):  # pragma: no cover
         return TRANSLATION_OVERRIDE[override_file][override_id]
 
-    if override_file == Translation.ENEMY and string[:-1] in TRANSLATIONS:
-        translated_string = TRANSLATIONS[string[:-1]]
-        if string[-1] in full_width_uppercase_lookup:
-            corresponding_half_width = full_width_uppercase_lookup[string[-1]]
+    if override_file == Translation.ENEMY and text[:-1] in TRANSLATIONS:
+        translated_string = TRANSLATIONS[text[:-1]]
+        if text[-1] in full_width_uppercase_lookup:
+            corresponding_half_width = full_width_uppercase_lookup[text[-1]]
             return f"{translated_string} {corresponding_half_width}"
-        elif string[-1] in half_width_uppercase_lookup and string[-2] != "":
-            return f"{translated_string} {string[-1]}"
+        elif text[-1] in half_width_uppercase_lookup and text[-2] != "":
+            return f"{translated_string} {text[-1]}"
 
-    return TRANSLATIONS.get(string, string)
+    return TRANSLATIONS.get(text, text)
 
 
 def get_np_name(td_name: str, td_ruby: str, language: Language) -> str:

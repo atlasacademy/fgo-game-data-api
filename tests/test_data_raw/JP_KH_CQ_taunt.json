@@ -15,8 +15,8 @@
         "timing": 5
       },
       "mstAiAct": {
-        "targetIndividuality": [0],
-        "skillVals": [961075, 1],
+        "targetIndividuality": [],
+        "skillVals": [966256, 1],
         "id": 94016184,
         "type": 40,
         "target": 0,
