@@ -4,6 +4,7 @@ import time
 from pathlib import Path
 from typing import Any, Iterable
 
+import aioredis
 from aioredis import Redis
 from git import Repo
 from pydantic import DirectoryPath
@@ -307,7 +308,7 @@ async def load_and_export(
 
 
 async def pull_and_update(
-    redis: Redis, region_path: dict[Region, DirectoryPath]
+    region_path: dict[Region, DirectoryPath]
 ) -> None:  # pragma: no cover
     logger.info(f"Sleeping {settings.github_webhook_sleep} seconds …")
     await asyncio.sleep(settings.github_webhook_sleep)
@@ -318,4 +319,7 @@ async def pull_and_update(
                 for fetch_info in repo.remotes[0].pull():
                     commit_hash = fetch_info.commit.hexsha[:6]
                     logger.info(f"Updated {fetch_info.ref} to {commit_hash}")
+    redis = await aioredis.create_redis_pool(secrets.redisdsn)
     await load_and_export(redis, region_path)
+    redis.close()
+    await redis.wait_closed()
