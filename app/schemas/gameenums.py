@@ -1883,6 +1883,8 @@ class CondType(IntEnum):
     LIMIT_COUNT_IMAGE_ABOVE = 151
     LIMIT_COUNT_IMAGE_BELOW = 152
     EVENT_TYPE_START_TIME_TO_END_DATE = 153
+    EXIST_BOX_GACHA_SCRIPT_REPLACE_GIFT_ID = 154
+    NOT_EXIST_BOX_GACHA_SCRIPT_REPLACE_GIFT_ID = 155
 
 
 class NiceCondType(str, Enum):
@@ -2042,6 +2044,8 @@ class NiceCondType(str, Enum):
     limitCountImageAbove = "limitCountImageAbove"
     limitCountImageBelow = "limitCountImageBelow"
     eventTypeStartTimeToEndDate = "eventTypeStartTimeToEndDate"
+    existBoxGachaScriptReplaceGiftId = "existBoxGachaScriptReplaceGiftId"
+    notExistBoxGachaScriptReplaceGiftId = "notExistBoxGachaScriptReplaceGiftId"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2199,6 +2203,8 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     151: NiceCondType.limitCountImageAbove,
     152: NiceCondType.limitCountImageBelow,
     153: NiceCondType.eventTypeStartTimeToEndDate,
+    154: NiceCondType.existBoxGachaScriptReplaceGiftId,
+    155: NiceCondType.notExistBoxGachaScriptReplaceGiftId,
 }
 
 

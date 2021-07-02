@@ -212,7 +212,7 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
     ("ShopType.Type", "ShopType", "NiceShopType", "Shop Type Enum", "SHOP_TYPE_NAME"),
     ("PayType.Type", "PayType", "NicePayType", "Pay Type Enum", "PAY_TYPE_NAME"),
     (
-        "Purchase.Type",
+        "GamePurchase.Type",
         "PurchaseType",
         "NicePurchaseType",
         "Purchase Type Enum",
