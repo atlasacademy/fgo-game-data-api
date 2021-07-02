@@ -19,7 +19,6 @@ MASTER_WITH_ID = {
     "mstFunc",
     "mstSkill",
     "mstTreasureDevice",
-    "mstWar",
 }
 MASTER_WITHOUT_ID = {
     "mstEquipSkill",
@@ -121,8 +120,6 @@ def update_masters(region_path: dict[Region, DirectoryPath]) -> None:
 
         for masters_table, source_table, lookup_id in (
             ("mstClassRelationOverwriteId", "mstClassRelationOverwrite", "id"),
-            ("mstSvtSkillSvtId", "mstSvtSkill", "svtId"),
-            ("mstWarEventId", "mstWar", "eventId"),
         ):
             master[masters_table] = defaultdict(list)
             for item in master[source_table]:

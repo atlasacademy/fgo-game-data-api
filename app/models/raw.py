@@ -797,6 +797,7 @@ mstEvent = Table(
     Column("myroomBgId", Integer),
     Column("myroomBgmId", Integer),
     Column("createdAt", Integer),
+    Column("warIds", ARRAY(Integer)),
 )
 
 
@@ -1307,8 +1308,6 @@ ScriptFileList = Table(
 
 
 TABLES_TO_BE_LOADED = [
-    mstBuff,
-    mstFunc,
     mstSkill,
     mstTreasureDevice,
     mstSvt,
@@ -1329,12 +1328,10 @@ TABLES_TO_BE_LOADED = [
     mstQuestMessage,
     mstClosedMessage,
     mstAiAct,
-    mstEvent,
     mstEventMission,
     mstEventMissionConditionDetail,
     mstConstant,
     mstClassRelationOverwrite,
-    mstFuncGroup,
     mstSkillDetail,
     mstSvtSkill,
     mstSvtPassiveSkill,

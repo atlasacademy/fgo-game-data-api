@@ -183,7 +183,7 @@ async def generate_exports(
             all_basic_cc_data = sort_by_collection_no(
                 get_all_basic_ccs(region, Language.jp, mstCcs)
             )
-            all_basic_event_data = get_all_basic_events(region, Language.jp, mstEvents)
+            all_basic_event_data = get_all_basic_events(Language.jp, mstEvents)
             all_basic_war_data = get_all_basic_wars(Language.jp, mstWars)
 
             output_files = [
@@ -222,9 +222,7 @@ async def generate_exports(
                     get_all_basic_ccs(region, Language.en, mstCcs)
                 )
                 all_basic_mc_en = get_all_basic_mcs(region, Language.en, mstEquips)
-                all_basic_event_en = get_all_basic_events(
-                    region, Language.en, mstEvents
-                )
+                all_basic_event_en = get_all_basic_events(Language.en, mstEvents)
                 all_basic_war_en = get_all_basic_wars(Language.en, mstWars)
 
                 output_files = [
@@ -283,13 +281,18 @@ async def clear_bloom_redis_cache(redis: Redis) -> None:  # pragma: no cover
 async def load_svt_extra(
     redis: Redis, region_path: dict[Region, DirectoryPath]
 ) -> None:  # pragma: no cover
+    logger.info("Loading extra svt data …")
+    start_loading_time = time.perf_counter()
+
     for region, gamedata_path in region_path.items():
         svtExtras = get_extra_svt_data(region, gamedata_path)
         if settings.write_postgres_data:
             load_svt_extra_db(engines[region], svtExtras)
         if settings.write_redis_data:
             await load_svt_extra_redis(redis, region, svtExtras)
-    logger.info("Finished loading extra data")
+
+    extra_loading_time = time.perf_counter() - start_loading_time
+    logger.info(f"Loaded extra svt data in {extra_loading_time:.2f}s.")
 
 
 async def load_and_export(

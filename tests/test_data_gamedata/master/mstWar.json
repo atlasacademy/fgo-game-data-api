@@ -1,0 +1,26 @@
+[
+  {
+    "coordinates": [[], [32.030006, 133.3504]],
+    "id": 9050,
+    "age": "-",
+    "name": "Northern Amusement Park Oni♡land",
+    "longName": "Northern Amusement Park Oni♡land",
+    "bannerId": 9050,
+    "mapImageId": 9050,
+    "mapImageW": 2048,
+    "mapImageH": 2048,
+    "headerImageId": 0,
+    "priority": 9050,
+    "parentWarId": 0,
+    "materialParentWarId": 0,
+    "flag": 2080,
+    "emptyMessage": "No Quest Available",
+    "bgmId": 0,
+    "scriptId": "NONE",
+    "startType": 0,
+    "targetId": 0,
+    "eventId": 80119,
+    "lastQuestId": 0,
+    "assetId": 0
+  }
+]

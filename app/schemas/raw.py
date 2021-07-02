@@ -919,6 +919,7 @@ class MstEvent(BaseModelORJson):
     myroomBgId: int  # 0
     myroomBgmId: int  # 0
     createdAt: int  # 1435676400
+    warIds: list[int] = []
 
 
 class MstWar(BaseModelORJson):
@@ -1149,12 +1150,13 @@ class MysticCodeEntity(BaseModelORJson):
 
 
 class Master(BaseModelORJson):
+    # TODO: Add uses to MstItem in db
     mstCombineSkillItem: set[int]
     mstCombineLimitItem: set[int]
     mstCombineCostumeItem: set[int]
     mstEquipSkill: list[MstEquipSkill]
-    mstWarEventId: dict[int, list[MstWar]]
     mstCommandCodeSkill: list[MstCommandCodeSkill]
+    # TODO: Add MstClassRelationOverwrite to MstBuff/MstBuff's script?
     mstClassRelationOverwriteId: dict[int, list[MstClassRelationOverwrite]]
     buffToFunc: dict[int, set[int]]
     funcToSkill: dict[int, set[int]]

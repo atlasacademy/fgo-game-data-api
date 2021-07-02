@@ -8,9 +8,14 @@ from sqlalchemy import Table
 from sqlalchemy.engine import Connection, Engine
 
 from ..config import logger
+from ..data.event import get_event_with_warIds
 from ..models.raw import (
     TABLES_TO_BE_LOADED,
     ScriptFileList,
+    mstBuff,
+    mstEvent,
+    mstFunc,
+    mstFuncGroup,
     mstSkillLv,
     mstSubtitle,
     mstSvtExtra,
@@ -48,15 +53,18 @@ def load_skill_td_lv(
     engine: Engine, master_folder: DirectoryPath
 ) -> None:  # pragma: no cover
     with open(master_folder / "mstBuff.json", "rb") as fp:
-        mstBuff = {buff["id"]: buff for buff in orjson.loads(fp.read())}
+        mstBuff_data = orjson.loads(fp.read())
+        mstBuffId = {buff["id"]: buff for buff in mstBuff_data}
 
     with open(master_folder / "mstFunc.json", "rb") as fp:
-        mstFunc = {func["id"]: func for func in orjson.loads(fp.read())}
+        mstFunc_data = orjson.loads(fp.read())
+        mstFuncId = {func["id"]: func for func in mstFunc_data}
 
-    mstFuncGroup = defaultdict(list)
+    mstFuncGroupId = defaultdict(list)
     with open(master_folder / "mstFuncGroup.json", "rb") as fp:
-        for funcGroup in orjson.loads(fp.read()):
-            mstFuncGroup[funcGroup["funcId"]].append(funcGroup)
+        mstFuncGroup_data = orjson.loads(fp.read())
+        for funcGroup in mstFuncGroup_data:
+            mstFuncGroupId[funcGroup["funcId"]].append(funcGroup)
 
     with open(master_folder / "mstSkillLv.json", "rb") as fp:
         mstSkillLv_data = orjson.loads(fp.read())
@@ -66,17 +74,17 @@ def load_skill_td_lv(
 
     def get_func_entity(func_id: int) -> dict[Any, Any]:
         func_entity = {
-            "mstFunc": mstFunc[func_id],
-            "mstFuncGroup": mstFuncGroup.get(func_id, []),
+            "mstFunc": mstFuncId[func_id],
+            "mstFuncGroup": mstFuncGroupId.get(func_id, []),
         }
 
         if (
             func_entity["mstFunc"]["funcType"] not in FUNC_VALS_NOT_BUFF
             and func_entity["mstFunc"]["vals"]
-            and func_entity["mstFunc"]["vals"][0] in mstBuff
+            and func_entity["mstFunc"]["vals"][0] in mstBuffId
         ):
             func_entity["mstFunc"]["expandedVals"] = [
-                {"mstBuff": mstBuff[func_entity["mstFunc"]["vals"][0]]}
+                {"mstBuff": mstBuffId[func_entity["mstFunc"]["vals"][0]]}
             ]
         else:
             func_entity["mstFunc"]["expandedVals"] = []
@@ -87,22 +95,41 @@ def load_skill_td_lv(
         skillLv["expandedFuncId"] = [
             get_func_entity(func_id)
             for func_id in skillLv["funcId"]
-            if func_id in mstFunc
+            if func_id in mstFuncId
         ]
 
     for treasureDeviceLv in mstTreasureDeviceLv_data:
         treasureDeviceLv["expandedFuncId"] = [
             get_func_entity(func_id)
             for func_id in treasureDeviceLv["funcId"]
-            if func_id in mstFunc
+            if func_id in mstFuncId
         ]
 
     with engine.begin() as conn:
+        recreate_table(conn, mstBuff)
+        conn.execute(mstBuff.insert(), mstBuff_data)
+
+        recreate_table(conn, mstFunc)
+        conn.execute(mstFunc.insert(), mstFunc_data)
+
+        recreate_table(conn, mstFuncGroup)
+        conn.execute(mstFuncGroup.insert(), mstFuncGroup_data)
+
         recreate_table(conn, mstSkillLv)
         conn.execute(mstSkillLv.insert(), mstSkillLv_data)
 
         recreate_table(conn, mstTreasureDeviceLv)
         conn.execute(mstTreasureDeviceLv.insert(), mstTreasureDeviceLv_data)
+
+
+def load_event(
+    engine: Engine, gamedata_path: DirectoryPath
+) -> None:  # pragma: no cover
+    mstEvents = get_event_with_warIds(gamedata_path)
+    mstEvent_db_data = [svtExtra.dict() for svtExtra in mstEvents]
+    with engine.begin() as conn:
+        recreate_table(conn, mstEvent)
+        conn.execute(mstEvent.insert(), mstEvent_db_data)
 
 
 def load_script_list(
@@ -166,6 +193,26 @@ def load_script_list(
         conn.execute(ScriptFileList.insert(), db_data)
 
 
+def load_subtitle(
+    engine: Engine, region: Region, master_folder: DirectoryPath
+) -> None:  # pragma: no cover
+    subtitle_json = master_folder / "globalNewMstSubtitle.json"
+    if subtitle_json.exists():
+        with open(subtitle_json, "rb") as fp:
+            globalNewMstSubtitle = orjson.loads(fp.read())
+
+        for subtitle in globalNewMstSubtitle:
+            subtitle["svtId"] = get_subtitle_svtId(subtitle["id"])
+    else:
+        if region == Region.NA:
+            logger.warning(f"Can't find file {subtitle_json}.")
+        globalNewMstSubtitle = []
+
+    with engine.begin() as conn:
+        recreate_table(conn, mstSubtitle)
+        conn.execute(mstSubtitle.insert(), globalNewMstSubtitle)
+
+
 def load_svt_extra_db(
     engine: Engine, svtExtras: list[MstSvtExtra]
 ) -> None:  # pragma: no cover
@@ -193,30 +240,19 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
                     logger.warning(f"Found unknown columns in {table_json}")
                     data = remove_unknown_columns(data, table)
             else:
-                logger.warning(f"Can't find file {table_json}.")
+                if not (region == Region.NA and table.name == "mstStageRemap"):
+                    logger.warning(f"Can't find file {table_json}.")
                 data = []
 
             with engine.begin() as conn:
                 recreate_table(conn, table)
                 conn.execute(table.insert(), data)
 
-        subtitle_json = master_folder / "globalNewMstSubtitle.json"
-        if subtitle_json.exists():
-            with open(subtitle_json, "rb") as fp:
-                globalNewMstSubtitle = orjson.loads(fp.read())
-
-            for subtitle in globalNewMstSubtitle:
-                subtitle["svtId"] = get_subtitle_svtId(subtitle["id"])
-        else:
-            if region == Region.NA:
-                logger.warning(f"Can't find file {subtitle_json}.")
-            globalNewMstSubtitle = []
-
-        with engine.begin() as conn:
-            recreate_table(conn, mstSubtitle)
-            conn.execute(mstSubtitle.insert(), globalNewMstSubtitle)
+        load_subtitle(engine, region, master_folder)
 
         load_skill_td_lv(engine, master_folder)
+
+        load_event(engine, repo_folder)
 
         load_script_list(engine, repo_folder)
 

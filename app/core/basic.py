@@ -473,9 +473,7 @@ def get_all_basic_ccs(
     return (get_basic_cc_from_raw(region, mstCcs, lang) for mstCcs in mstCommandCodes)
 
 
-def get_basic_event_from_raw(
-    region: Region, mstEvent: MstEvent, lang: Language
-) -> BasicEvent:
+def get_basic_event_from_raw(mstEvent: MstEvent, lang: Language) -> BasicEvent:
     basic_event = BasicEvent(
         id=mstEvent.id,
         type=EVENT_TYPE_NAME[mstEvent.type],
@@ -485,26 +483,24 @@ def get_basic_event_from_raw(
         endedAt=mstEvent.endedAt,
         finishedAt=mstEvent.finishedAt,
         materialOpenedAt=mstEvent.materialOpenedAt,
-        warIds=(war.id for war in masters[region].mstWarEventId.get(mstEvent.id, [])),
+        warIds=mstEvent.warIds,
     )
 
     return basic_event
 
 
-def get_basic_event(
-    conn: Connection, region: Region, event_id: int, lang: Language
-) -> BasicEvent:
+def get_basic_event(conn: Connection, event_id: int, lang: Language) -> BasicEvent:
     mstEvent = fetch.get_one(conn, MstEvent, event_id)
     if not mstEvent:
         raise HTTPException(status_code=404, detail="Event not found")
 
-    return get_basic_event_from_raw(region, mstEvent, lang)
+    return get_basic_event_from_raw(mstEvent, lang)
 
 
 def get_all_basic_events(
-    region: Region, lang: Language, mstEvents: Iterable[MstEvent]
+    lang: Language, mstEvents: Iterable[MstEvent]
 ) -> Generator[BasicEvent, None, None]:  # pragma: no cover
-    return (get_basic_event_from_raw(region, mstEvent, lang) for mstEvent in mstEvents)
+    return (get_basic_event_from_raw(mstEvent, lang) for mstEvent in mstEvents)
 
 
 def get_basic_war_from_raw(mstWar: MstWar, lang: Language) -> BasicWar:

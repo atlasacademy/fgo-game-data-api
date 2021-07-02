@@ -5,6 +5,7 @@ import orjson
 
 
 parent_folder = Path(__file__).parent
+test_gamedata = parent_folder / "test_data_gamedata"
 
 
 def get_response_data(folder: str, file_name: str) -> Any:

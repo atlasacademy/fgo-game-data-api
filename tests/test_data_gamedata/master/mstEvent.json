@@ -1,0 +1,29 @@
+[
+  {
+    "script": [],
+    "id": 80119,
+    "baseEventId": 0,
+    "type": 12,
+    "openType": 1,
+    "name": "The Land of Mystique, Oniland! \nThe Great Oni and the Kamuy's Gold",
+    "shortName": "",
+    "detail": "The Land of Mystique, Oniland! \nThe Great Oni and the Kamuy's Gold",
+    "noticeBannerId": 80163,
+    "bannerId": 80164,
+    "iconId": 80164,
+    "bannerPriority": 170000,
+    "openHours": 0,
+    "intervalHours": 0,
+    "noticeAt": 1603080000,
+    "startedAt": 1603080000,
+    "endedAt": 1604289599,
+    "finishedAt": 1604894399,
+    "materialOpenedAt": 1751328000,
+    "linkType": 1,
+    "linkBody": "/summon/detail_summon_1.html",
+    "deviceType": 0,
+    "myroomBgId": 0,
+    "myroomBgmId": 0,
+    "createdAt": 1435708800
+  }
+]

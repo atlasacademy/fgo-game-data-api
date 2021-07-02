@@ -24,7 +24,8 @@
     "deviceType": 0,
     "myroomBgId": 0,
     "myroomBgmId": 0,
-    "createdAt": 1435708800
+    "createdAt": 1435708800,
+    "warIds": [9031]
   },
   "mstWar": [
     {

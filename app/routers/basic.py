@@ -528,7 +528,6 @@ async def get_buff(
     responses=get_error_code([404, 500]),
 )
 async def get_event(
-    region: Region,
     event_id: int,
     lang: Language = Depends(language_parameter),
     conn: Connection = Depends(get_db),
@@ -536,7 +535,7 @@ async def get_event(
     """
     Get the basic event data from the given event ID
     """
-    return item_response(basic.get_basic_event(conn, region, event_id, lang))
+    return item_response(basic.get_basic_event(conn, event_id, lang))
 
 
 @router.get(
