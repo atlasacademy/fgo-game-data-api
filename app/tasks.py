@@ -32,7 +32,8 @@ from .data.gamedata import update_masters
 from .db.engine import engines
 from .db.helpers import fetch
 from .db.helpers.svt import get_all_equips, get_all_servants
-from .db.load import load_svt_extra_db, update_db
+from .db.load import load_pydantic_to_db, update_db
+from .models.raw import mstSvtExtra
 from .redis.load import load_redis_data, load_svt_extra_redis
 from .routers.utils import list_string
 from .schemas.base import BaseModelORJson
@@ -287,7 +288,7 @@ async def load_svt_extra(
     for region, gamedata_path in region_path.items():
         svtExtras = get_extra_svt_data(region, gamedata_path)
         if settings.write_postgres_data:
-            load_svt_extra_db(engines[region], svtExtras)
+            load_pydantic_to_db(engines[region], svtExtras, mstSvtExtra)
         if settings.write_redis_data:
             await load_svt_extra_redis(redis, region, svtExtras)
 

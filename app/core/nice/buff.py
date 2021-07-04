@@ -32,6 +32,6 @@ def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> dict[str, 
             base_url=settings.asset_url, region=region, item_id=iconId
         )
 
-    buffInfo["script"] = get_nice_buff_script(region, buffEntity.mstBuff)
+    buffInfo["script"] = get_nice_buff_script(buffEntity.mstBuff)
 
     return buffInfo

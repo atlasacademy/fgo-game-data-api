@@ -1,6 +1,6 @@
 import time
 from collections import defaultdict
-from typing import Any, Optional, Union
+from typing import Any, Optional, Sequence, Union
 
 import orjson
 from pydantic import DirectoryPath
@@ -8,6 +8,7 @@ from sqlalchemy import Table
 from sqlalchemy.engine import Connection, Engine
 
 from ..config import logger
+from ..data.buff import get_buff_with_classrelation
 from ..data.event import get_event_with_warIds
 from ..models.raw import (
     TABLES_TO_BE_LOADED,
@@ -18,13 +19,13 @@ from ..models.raw import (
     mstFuncGroup,
     mstSkillLv,
     mstSubtitle,
-    mstSvtExtra,
     mstTreasureDeviceLv,
 )
 from ..models.rayshift import rayshiftQuest
+from ..schemas.base import BaseModelORJson
 from ..schemas.common import Region
 from ..schemas.enums import FUNC_VALS_NOT_BUFF
-from ..schemas.raw import MstSvtExtra, get_subtitle_svtId
+from ..schemas.raw import get_subtitle_svtId
 from ..schemas.rayshift import QuestList
 from .engine import engines
 from .helpers.rayshift import insert_rayshift_quest_list
@@ -33,6 +34,11 @@ from .helpers.rayshift import insert_rayshift_quest_list
 def recreate_table(conn: Connection, table: Table) -> None:  # pragma: no cover
     table.drop(conn, checkfirst=True)
     table.create(conn, checkfirst=True)
+
+
+def insert_db(conn: Connection, table: Table, db_data: Any) -> None:  # pragma: no cover
+    recreate_table(conn, table)
+    conn.execute(table.insert(), db_data)
 
 
 def check_known_columns(
@@ -50,11 +56,12 @@ def remove_unknown_columns(
 
 
 def load_skill_td_lv(
-    engine: Engine, master_folder: DirectoryPath
+    engine: Engine, gamedata_path: DirectoryPath
 ) -> None:  # pragma: no cover
-    with open(master_folder / "mstBuff.json", "rb") as fp:
-        mstBuff_data = orjson.loads(fp.read())
-        mstBuffId = {buff["id"]: buff for buff in mstBuff_data}
+    master_folder = gamedata_path / "master"
+
+    mstBuff_data = get_buff_with_classrelation(gamedata_path)
+    mstBuffId = {buff.id: buff for buff in mstBuff_data}
 
     with open(master_folder / "mstFunc.json", "rb") as fp:
         mstFunc_data = orjson.loads(fp.read())
@@ -84,7 +91,7 @@ def load_skill_td_lv(
             and func_entity["mstFunc"]["vals"][0] in mstBuffId
         ):
             func_entity["mstFunc"]["expandedVals"] = [
-                {"mstBuff": mstBuffId[func_entity["mstFunc"]["vals"][0]]}
+                {"mstBuff": mstBuffId[func_entity["mstFunc"]["vals"][0]].dict()}
             ]
         else:
             func_entity["mstFunc"]["expandedVals"] = []
@@ -105,21 +112,13 @@ def load_skill_td_lv(
             if func_id in mstFuncId
         ]
 
+    load_pydantic_to_db(engine, mstBuff_data, mstBuff)
+
     with engine.begin() as conn:
-        recreate_table(conn, mstBuff)
-        conn.execute(mstBuff.insert(), mstBuff_data)
-
-        recreate_table(conn, mstFunc)
-        conn.execute(mstFunc.insert(), mstFunc_data)
-
-        recreate_table(conn, mstFuncGroup)
-        conn.execute(mstFuncGroup.insert(), mstFuncGroup_data)
-
-        recreate_table(conn, mstSkillLv)
-        conn.execute(mstSkillLv.insert(), mstSkillLv_data)
-
-        recreate_table(conn, mstTreasureDeviceLv)
-        conn.execute(mstTreasureDeviceLv.insert(), mstTreasureDeviceLv_data)
+        insert_db(conn, mstFunc, mstFunc_data)
+        insert_db(conn, mstFuncGroup, mstFuncGroup_data)
+        insert_db(conn, mstSkillLv, mstSkillLv_data)
+        insert_db(conn, mstTreasureDeviceLv, mstTreasureDeviceLv_data)
 
 
 def load_event(
@@ -128,8 +127,7 @@ def load_event(
     mstEvents = get_event_with_warIds(gamedata_path)
     mstEvent_db_data = [svtExtra.dict() for svtExtra in mstEvents]
     with engine.begin() as conn:
-        recreate_table(conn, mstEvent)
-        conn.execute(mstEvent.insert(), mstEvent_db_data)
+        insert_db(conn, mstEvent, mstEvent_db_data)
 
 
 def load_script_list(
@@ -189,8 +187,7 @@ def load_script_list(
                 )
 
     with engine.begin() as conn:
-        recreate_table(conn, ScriptFileList)
-        conn.execute(ScriptFileList.insert(), db_data)
+        insert_db(conn, ScriptFileList, db_data)
 
 
 def load_subtitle(
@@ -209,17 +206,15 @@ def load_subtitle(
         globalNewMstSubtitle = []
 
     with engine.begin() as conn:
-        recreate_table(conn, mstSubtitle)
-        conn.execute(mstSubtitle.insert(), globalNewMstSubtitle)
+        insert_db(conn, mstSubtitle, globalNewMstSubtitle)
 
 
-def load_svt_extra_db(
-    engine: Engine, svtExtras: list[MstSvtExtra]
+def load_pydantic_to_db(
+    engine: Engine, pydantic_data: Sequence[BaseModelORJson], db_table: Table
 ) -> None:  # pragma: no cover
-    svtExtra_db_data = [svtExtra.dict() for svtExtra in svtExtras]
+    db_data = [item.dict() for item in pydantic_data]
     with engine.begin() as conn:
-        recreate_table(conn, mstSvtExtra)
-        conn.execute(mstSvtExtra.insert(), svtExtra_db_data)
+        insert_db(conn, db_table, db_data)
 
 
 def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no cover
@@ -245,12 +240,11 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
                 data = []
 
             with engine.begin() as conn:
-                recreate_table(conn, table)
-                conn.execute(table.insert(), data)
+                insert_db(conn, table, data)
 
         load_subtitle(engine, region, master_folder)
 
-        load_skill_td_lv(engine, master_folder)
+        load_skill_td_lv(engine, repo_folder)
 
         load_event(engine, repo_folder)
 

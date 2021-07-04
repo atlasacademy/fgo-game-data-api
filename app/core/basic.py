@@ -70,12 +70,13 @@ from .utils import get_nice_trait, get_np_name, get_traits_list, get_translation
 settings = Settings()
 
 
-def get_nice_buff_script(region: Region, mstBuff: MstBuff) -> NiceBuffScript:
+def get_nice_buff_script(mstBuff: MstBuff) -> NiceBuffScript:
     script: dict[str, Any] = {}
-    if "relationId" in mstBuff.script:
-        relationOverwrite: list[MstClassRelationOverwrite] = masters[
-            region
-        ].mstClassRelationOverwriteId.get(mstBuff.script["relationId"], [])
+    if "relationOverwrite" in mstBuff.script:
+        relationOverwrite = [
+            MstClassRelationOverwrite.parse_obj(overwrite)
+            for overwrite in mstBuff.script["relationOverwrite"]
+        ]
         relationId: dict[str, dict[SvtClass, dict[SvtClass, Any]]] = {
             "atkSide": defaultdict(dict),
             "defSide": defaultdict(dict),
@@ -122,7 +123,7 @@ async def get_basic_buff_from_raw(
             base_url=settings.asset_url, region=region, item_id=mstBuff.iconId
         ),
         type=BUFF_TYPE_NAME[mstBuff.type],
-        script=get_nice_buff_script(region, mstBuff),
+        script=get_nice_buff_script(mstBuff),
         vals=get_traits_list(mstBuff.vals),
         tvals=get_traits_list(mstBuff.tvals),
         ckSelfIndv=get_traits_list(mstBuff.ckSelfIndv),

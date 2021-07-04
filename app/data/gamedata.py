@@ -23,7 +23,6 @@ MASTER_WITH_ID = {
 MASTER_WITHOUT_ID = {
     "mstEquipSkill",
     "mstCommandCodeSkill",
-    "mstClassRelationOverwrite",
     "mstStage",
     "mstAi",
     "mstAiField",
@@ -117,13 +116,6 @@ def update_masters(region_path: dict[Region, DirectoryPath]) -> None:
         for ai_act in master["mstAiAct"]:
             if len(ai_act["skillVals"]) >= 2:
                 master["skillToAiAct"][ai_act["skillVals"][0]].add(ai_act["id"])
-
-        for masters_table, source_table, lookup_id in (
-            ("mstClassRelationOverwriteId", "mstClassRelationOverwrite", "id"),
-        ):
-            master[masters_table] = defaultdict(list)
-            for item in master[source_table]:
-                master[masters_table][item[lookup_id]].append(item)
 
         masters[region_name] = Master.parse_obj(master)
 

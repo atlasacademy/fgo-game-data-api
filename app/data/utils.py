@@ -5,6 +5,8 @@ from pydantic.types import DirectoryPath
 
 from ..schemas.base import BaseModelORJson
 from ..schemas.raw import (
+    MstBuff,
+    MstClassRelationOverwrite,
     MstEvent,
     MstEventMissionCondition,
     MstEventMissionConditionDetail,
@@ -36,6 +38,8 @@ MODEL_FILE_NAME: dict[Type[BaseModelORJson], str] = {
     MstWar: "mstWar",
     MstEventMissionCondition: "mstEventMissionCondition",
     MstEventMissionConditionDetail: "mstEventMissionConditionDetail",
+    MstBuff: "mstBuff",
+    MstClassRelationOverwrite: "mstClassRelationOverwrite",
 }
 
 

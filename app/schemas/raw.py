@@ -1156,8 +1156,6 @@ class Master(BaseModelORJson):
     mstCombineCostumeItem: set[int]
     mstEquipSkill: list[MstEquipSkill]
     mstCommandCodeSkill: list[MstCommandCodeSkill]
-    # TODO: Add MstClassRelationOverwrite to MstBuff/MstBuff's script?
-    mstClassRelationOverwriteId: dict[int, list[MstClassRelationOverwrite]]
     buffToFunc: dict[int, set[int]]
     funcToSkill: dict[int, set[int]]
     funcToTd: dict[int, set[int]]
