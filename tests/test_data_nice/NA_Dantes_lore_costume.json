@@ -3207,7 +3207,7 @@
             "face": [1],
             "form": [0],
             "text": [""],
-            "subtitle": "Bwahaha!",
+            "subtitle": "[id 1100200_0_G010]Bwahaha!",
             "conds": [
               {
                 "condType": "levelUp",
@@ -3794,7 +3794,7 @@
             "face": [1],
             "form": [0],
             "text": [""],
-            "subtitle": "Fuhaha!",
+            "subtitle": "[id 1100200_11_G010]Bwahaha!",
             "conds": [
               {
                 "condType": "levelUp",

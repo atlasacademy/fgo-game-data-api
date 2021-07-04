@@ -5620,7 +5620,7 @@
     { "id": "202310_0_B210", "serif": "Then, the Joker." },
     {
       "id": "202310_0_G010",
-      "serif": "Getting stronger is a good thing. Mhmm!"
+      "serif": "[id 202310_0_G010]Getting stronger is a good thing. Mhmm!"
     },
     {
       "id": "202310_0_G020",
@@ -5640,7 +5640,7 @@
     },
     {
       "id": "202310_0_G9010",
-      "serif": "Getting stronger is a good thing. Mhmm!"
+      "serif": "[id 202310_0_G9010]Getting stronger is a good thing. Mhmm!"
     },
     {
       "id": "202310_0_H010",
@@ -5819,7 +5819,7 @@
     { "id": "202310_11_B9210", "serif": "Vesper Martini. Care for one?" },
     {
       "id": "202310_11_G010",
-      "serif": "Getting stronger is a good thing. Mhmm!"
+      "serif": "[id 202310_11_G010]Getting stronger is a good thing. Mhmm!"
     },
     {
       "id": "202310_11_G060",
@@ -5827,7 +5827,7 @@
     },
     {
       "id": "202310_11_G9410",
-      "serif": "Getting stronger is a good thing. Mhmm!"
+      "serif": "[id 202310_11_G9410]Getting stronger is a good thing. Mhmm!"
     },
     {
       "id": "202310_11_H9000",
@@ -5964,7 +5964,7 @@
     { "id": "202300_0_B190", "serif": "Queen..." },
     { "id": "202300_0_B200", "serif": "King..." },
     { "id": "202300_0_B210", "serif": "Then, the Joker." },
-    { "id": "202300_0_G010", "serif": "Ah, to mature!" },
+    { "id": "202300_0_G010", "serif": "[id 202300_0_G010]Ah, to mature!" },
     {
       "id": "202300_0_G020",
       "serif": "[id 202300_0_G020]Fwahahahaha, Ascension is good. [id 202300_0_G021]Very good. It gets the blood pumping!"
@@ -6087,7 +6087,7 @@
     { "id": "202300_11_B190", "serif": "Vodka." },
     { "id": "202300_11_B200", "serif": "Kina Lillet." },
     { "id": "202300_11_B210", "serif": "Vesper Martini. Care for one?" },
-    { "id": "202300_11_G010", "serif": "Ah, to mature!" },
+    { "id": "202300_11_G010", "serif": "[id 202300_11_G010]Ah, to mature!" },
     {
       "id": "202300_11_G060",
       "serif": "[id 202300_11_G060,202300_11_G061]For the moment, I am not a professor of mathematics, but a simple bartender.\n[id 202300_11_G062]Haha, so what's my wage?\n[id 202300_11_G063]I'm not sure, but maybe a hundred dollars an hour?"
