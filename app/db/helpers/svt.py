@@ -2,7 +2,7 @@ from typing import Iterable, Optional, Union
 
 from sqlalchemy import Table
 from sqlalchemy.engine import Connection
-from sqlalchemy.sql import Join, and_, or_, select
+from sqlalchemy.sql import Join, and_, not_, or_, select
 from sqlalchemy.sql.elements import ClauseElement
 
 from ...models.raw import (
@@ -151,6 +151,7 @@ def get_svt_search(
     gender_ints: Optional[Iterable[int]] = None,
     attribute_ints: Optional[Iterable[int]] = None,
     trait_ints: Optional[Iterable[int]] = None,
+    not_trait_ints: Optional[Iterable[int]] = None,
     rarity_ints: Optional[Iterable[int]] = None,
     cond_svt_value: Optional[set[int]] = None,
     cond_group_value: Optional[set[int]] = None,
@@ -172,16 +173,22 @@ def get_svt_search(
         where_clause.append(mstSvt.c.genderType.in_(gender_ints))
     if attribute_ints:
         where_clause.append(mstSvt.c.attri.in_(attribute_ints))
-    if trait_ints:
+    if trait_ints or not_trait_ints:
         from_clause = from_clause.outerjoin(
             mstSvtLimitAdd, mstSvtLimitAdd.c.svtId == mstSvt.c.id
         )
+    if trait_ints:
         where_clause.append(
             or_(
                 mstSvt.c.individuality.contains(trait_ints),
                 mstSvtLimitAdd.c.individuality.contains(trait_ints),
             )
         )
+    if not_trait_ints:
+        where_clause += [
+            not_(mstSvt.c.individuality.contains(not_trait_ints)),
+            not_(mstSvtLimitAdd.c.individuality.contains(not_trait_ints)),
+        ]
     if rarity_ints:
         from_clause = from_clause.outerjoin(
             mstSvtLimit, mstSvtLimit.c.svtId == mstSvt.c.id

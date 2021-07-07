@@ -142,6 +142,7 @@ def search_servant(
         for svt_attribute in search_param.attribute
     }
     trait_ints = reverse_traits(search_param.trait)
+    not_trait_ints = reverse_traits(search_param.notTrait)
 
     if search_param.voiceCondSvt:
         cond_svt_value = get_svt_ids(conn, search_param.voiceCondSvt)
@@ -159,6 +160,7 @@ def search_servant(
         gender_ints=gender_ints,
         attribute_ints=attribute_ints,
         trait_ints=trait_ints,
+        not_trait_ints=not_trait_ints,
         rarity_ints=rarity_ints,
         cond_svt_value=cond_svt_value,
         cond_group_value=voice_cond_group,

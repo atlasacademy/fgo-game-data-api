@@ -42,6 +42,7 @@ class ServantSearchQueryParams:
     gender: list[NiceGender] = Query([])
     attribute: list[Attribute] = Query([])
     trait: list[Union[Trait, int]] = Query([])
+    notTrait: list[Union[Trait, int]] = Query([])
     voiceCondSvt: list[int] = Query([])
 
     def hasSearchParams(self) -> bool:
@@ -57,6 +58,7 @@ class ServantSearchQueryParams:
                 self.gender,
                 self.attribute,
                 self.trait,
+                self.notTrait,
                 self.voiceCondSvt,
             ]
         )
@@ -76,6 +78,8 @@ class ServantSearchQueryParams:
         - **gender**: `female`, `male` or `unknown`.
         - **attribute**: `human`, `sky`, `earth`, `star` or `beast`.
         - **trait**: an integer or an item in the `trait` enum. See the traits detail in the Nice Servant response.
+        - **notTrait**: an integer or an item in the `trait` enum. The result entities won't have any of the traits
+        in the list.
         - **voiceCondValue**: servant `collectionNo` or servant `ID`. Will find the servants that
         have voice lines directed to the given servants.
 
@@ -99,6 +103,7 @@ class SvtSearchQueryParams:
     gender: list[NiceGender] = Query([])
     attribute: list[Attribute] = Query([])
     trait: list[Union[Trait, int]] = Query([])
+    notTrait: list[Union[Trait, int]] = Query([])
     voiceCondSvt: list[int] = Query([])
 
     def hasSearchParams(self) -> bool:
@@ -114,6 +119,7 @@ class SvtSearchQueryParams:
                 self.gender,
                 self.attribute,
                 self.trait,
+                self.notTrait,
                 self.voiceCondSvt,
             ]
         )
@@ -133,6 +139,8 @@ class SvtSearchQueryParams:
         - **gender**: `female`, `male` or `unknown`.
         - **attribute**: `human`, `sky`, `earth`, `star` or `beast`.
         - **trait**: an integer or an item in the `trait` enum. See the traits detail in the Nice Servant response.
+        - **notTrait**: an integer or an item in the `trait` enum. The result entities won't have any of the traits
+        in the list.
         - **voiceCondValue**: servant `collectionNo` or servant `ID`. Will find the servants that
         have voice lines directed to the given servants.
 
