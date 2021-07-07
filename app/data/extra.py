@@ -88,15 +88,18 @@ def get_extra_svt_data(
             for shop_release in mstShopReleaseShopId[shop.id]:
                 if shop_release.condType == CondType.SVT_GET:
                     svt_id = shop_release.condValues[0]
-                    valentineEquip[svt_id].append(shop.targetIds[0])
+                    equip_id = shop.targetIds[0]
+
+                    valentineEquip[svt_id].append(equip_id)
+
                     shop_script = mstShopScriptId[shop.id]
-                    valentineScript[svt_id].append(
-                        NiceValentineScript(
-                            scriptName=shop_script.name,
-                            scriptId=shop_script.scriptId,
-                            script=get_script_url(region, shop_script.scriptId),
-                        )
+                    nice_val_script = NiceValentineScript(
+                        scriptName=shop_script.name,
+                        scriptId=shop_script.scriptId,
+                        script=get_script_url(region, shop_script.scriptId),
                     )
+                    valentineScript[svt_id].append(nice_val_script)
+                    valentineScript[equip_id].append(nice_val_script)
                     break
 
     valentineEquip[MASHU_SVT_ID1] = [
@@ -121,6 +124,7 @@ def get_extra_svt_data(
         bondEquip.keys()
         | bondEquipOwner.keys()
         | valentineEquip.keys()
+        | valentineScript.keys()
         | valentineEquipOwner.keys()
         | zeroLimitOverwriteName.keys()
     )
