@@ -540,6 +540,13 @@
   ],
   "bondEquip": 9304650,
   "valentineEquip": [9807750],
+  "valentineScript": [
+    {
+      "scriptId": "9403356070",
+      "script": "https://assets.atlasacademy.io/GameData/JP/Script/94/9403/9403356070.txt",
+      "scriptName": "ふつうの友チョコ"
+    }
+  ],
   "ascensionAdd": {
     "individuality": { "ascension": {}, "costume": {} },
     "voicePrefix": { "ascension": {}, "costume": {} },

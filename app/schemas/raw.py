@@ -2,7 +2,7 @@ from decimal import Decimal
 from typing import Any, Optional
 
 from .base import BaseModelORJson
-from .common import StageLink
+from .common import NiceValentineScript, StageLink
 from .enums import SERVANT_TYPES
 from .gameenums import SvtType
 
@@ -272,6 +272,7 @@ class MstSvtExtra(BaseModelORJson):
     bondEquip: int
     bondEquipOwner: Optional[int] = None
     valentineEquip: list[int]
+    valentineScript: list[NiceValentineScript]
     valentineEquipOwner: Optional[int] = None
 
 

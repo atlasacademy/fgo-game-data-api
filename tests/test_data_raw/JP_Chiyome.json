@@ -2461,6 +2461,13 @@
   "mstSvtExtra": {
     "svtId": 602900,
     "bondEquip": 9302470,
-    "valentineEquip": [9806470]
+    "valentineEquip": [9806470],
+    "valentineScript": [
+      {
+        "scriptId": "9403352800",
+        "script": "https://assets.atlasacademy.io/GameData/JP/Script/94/9403/9403352800.txt",
+        "scriptName": "洋風ぜんざい"
+      }
+    ]
   }
 }

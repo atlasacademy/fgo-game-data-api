@@ -2888,7 +2888,14 @@
           "mstSvtExtra": {
             "svtId": 301200,
             "bondEquip": 9300720,
-            "valentineEquip": [9802500]
+            "valentineEquip": [9802500],
+            "valentineScript": [
+              {
+                "scriptId": "9403351050",
+                "script": "https://assets.atlasacademy.io/GameData/NA/Script/94/9403/9403351050.txt",
+                "scriptName": "Wisdom of Ice"
+              }
+            ]
           }
         }
       ]

@@ -3,6 +3,7 @@ from typing import Optional, Union
 
 from pydantic import BaseModel, HttpUrl
 
+from .base import BaseModelORJson
 from .enums import SvtClass, Trait
 from .gameenums import NiceBuffType, NiceClassRelationOverwriteType
 
@@ -89,6 +90,15 @@ class NiceBuffScript(BaseModel):
     DamageRelease: Optional[int] = None
     INDIVIDUALITIE: Optional[NiceTrait] = None
     HP_LOWER: Optional[int] = None
+
+
+class NiceQuestScript(BaseModelORJson):
+    scriptId: str
+    script: HttpUrl
+
+
+class NiceValentineScript(NiceQuestScript):
+    scriptName: str
 
 
 class StageLink(BaseModel):

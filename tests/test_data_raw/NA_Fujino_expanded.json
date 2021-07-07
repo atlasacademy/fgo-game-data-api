@@ -7454,6 +7454,13 @@
   "mstSvtExtra": {
     "svtId": 202900,
     "bondEquip": 9302680,
-    "valentineEquip": [9806800]
+    "valentineEquip": [9806800],
+    "valentineScript": [
+      {
+        "scriptId": "9403353110",
+        "script": "https://assets.atlasacademy.io/GameData/NA/Script/94/9403/9403353110.txt",
+        "scriptName": "Rainy Bridge"
+      }
+    ]
   }
 }

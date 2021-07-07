@@ -2238,7 +2238,14 @@
           "mstSvtExtra": {
             "svtId": 602400,
             "bondEquip": 9301420,
-            "valentineEquip": [9805840]
+            "valentineEquip": [9805840],
+            "valentineScript": [
+              {
+                "scriptId": "9403351650",
+                "script": "https://assets.atlasacademy.io/GameData/NA/Script/94/9403/9403351650.txt",
+                "scriptName": "Bitter Tasting Summer"
+              }
+            ]
           }
         }
       ],

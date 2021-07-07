@@ -567,6 +567,13 @@
   ],
   "bondEquip": 9304390,
   "valentineEquip": [9807550],
+  "valentineScript": [
+    {
+      "scriptId": "9403355300",
+      "script": "https://assets.atlasacademy.io/GameData/JP/Script/94/9403/9403355300.txt",
+      "scriptName": "スペースジオラマチョコ"
+    }
+  ],
   "ascensionAdd": {
     "individuality": {
       "ascension": { "0": [], "1": [], "2": [], "3": [], "4": [] },

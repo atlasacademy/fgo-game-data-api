@@ -478,6 +478,7 @@
     "svtId": 9301260,
     "bondEquip": 0,
     "bondEquipOwner": 601900,
-    "valentineEquip": []
+    "valentineEquip": [],
+    "valentineScript": []
   }
 }

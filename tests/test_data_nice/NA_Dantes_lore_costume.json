@@ -556,6 +556,13 @@
   ],
   "bondEquip": 9300830,
   "valentineEquip": [9806110],
+  "valentineScript": [
+    {
+      "scriptId": "9403351470",
+      "script": "https://assets.atlasacademy.io/GameData/NA/Script/94/9403/9403351470.txt",
+      "scriptName": "Freshly Brewed Coffee"
+    }
+  ],
   "ascensionAdd": {
     "individuality": { "ascension": {}, "costume": { "1100230": [] } },
     "voicePrefix": { "ascension": {}, "costume": { "1100230": 11 } },

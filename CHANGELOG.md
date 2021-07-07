@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.65.0 - 2020-07-06
+### Added
+- `valentineScript` to nice servant and CE.
+
 ## 5.64.0 - 2020-06-17
 ### Added
 - Master mission endpoint.

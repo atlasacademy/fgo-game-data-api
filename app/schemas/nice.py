@@ -13,7 +13,14 @@ from .basic import (
     BasicReversedSkillTd,
     BasicServant,
 )
-from .common import MCAssets, NiceBuffScript, NiceTrait, StageLink
+from .common import (
+    MCAssets,
+    NiceBuffScript,
+    NiceQuestScript,
+    NiceTrait,
+    NiceValentineScript,
+    StageLink,
+)
 from .enums import (
     AiTiming,
     AiType,
@@ -843,6 +850,11 @@ class NiceServant(BaseModelORJson):
     valentineEquip: list[int] = Field(
         [], title="Valentine CE", description="Valentine CE ID (not collectionNo)."
     )
+    valentineScript: list[NiceValentineScript] = Field(
+        [],
+        title="Valentine Script",
+        description="Index matched with the `valentineEquip` field.",
+    )
     bondEquipOwner: Optional[int] = Field(
         None,
         title="Bond Servant ID",
@@ -974,6 +986,9 @@ class NiceEquip(BaseModelORJson):
         None,
         title="Valentine Servant ID",
         description="Servant ID if this CE is a valentine CE",
+    )
+    valentineScript: list[NiceValentineScript] = Field(
+        [], title="Valentine Script", description="Array of length 1"
     )
     skills: list[NiceSkill] = Field(
         ..., title="Skills", description="list of servant or CE skills."
@@ -1441,11 +1456,6 @@ class NiceQuestMessage(BaseModelORJson):
     condType: NiceCondType
     targetId: int
     targetNum: int
-
-
-class NiceQuestScript(BaseModelORJson):
-    scriptId: str
-    script: HttpUrl
 
 
 class NiceQuestPhase(NiceQuest):

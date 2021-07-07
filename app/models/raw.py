@@ -301,6 +301,7 @@ mstSvtExtra = Table(
     Column("bondEquip", Integer),
     Column("bondEquipOwner", Integer),
     Column("valentineEquip", ARRAY(Integer)),
+    Column("valentineScript", JSONB),
     Column("valentineEquipOwner", Integer),
 )
 

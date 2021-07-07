@@ -1898,6 +1898,13 @@
   "mstSvtExtra": {
     "svtId": 202100,
     "bondEquip": 9302460,
-    "valentineEquip": [9806480]
+    "valentineEquip": [9806480],
+    "valentineScript": [
+      {
+        "scriptId": "9403352790",
+        "script": "https://assets.atlasacademy.io/GameData/NA/Script/94/9403/9403352790.txt",
+        "scriptName": "Sweet Chestnut Chocolate"
+      }
+    ]
   }
 }

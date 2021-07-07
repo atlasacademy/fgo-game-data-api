@@ -117,18 +117,21 @@ def get_nice_servant(
             if friendship.friendship != -1
         ],
         # "bondEquip": masters[region].bondEquip.get(svt_id, 0),
-        "bondEquip": raw_svt.mstSvtExtra.bondEquip if raw_svt.mstSvtExtra else 0,
-        "valentineEquip": raw_svt.mstSvtExtra.valentineEquip
-        if raw_svt.mstSvtExtra
-        else [],
-        "bondEquipOwner": raw_svt.mstSvtExtra.bondEquipOwner
-        if raw_svt.mstSvtExtra
-        else None,
-        "valentineEquipOwner": raw_svt.mstSvtExtra.valentineEquipOwner
-        if raw_svt.mstSvtExtra
-        else None,
         "relateQuestIds": raw_svt.mstSvt.relateQuestIds,
     }
+
+    if raw_svt.mstSvtExtra:
+        nice_data["bondEquip"] = raw_svt.mstSvtExtra.bondEquip
+        nice_data["valentineEquip"] = raw_svt.mstSvtExtra.valentineEquip
+        nice_data["valentineScript"] = raw_svt.mstSvtExtra.valentineScript
+        nice_data["bondEquipOwner"] = raw_svt.mstSvtExtra.bondEquipOwner
+        nice_data["valentineEquipOwner"] = raw_svt.mstSvtExtra.valentineEquipOwner
+    else:
+        nice_data["bondEquip"] = 0
+        nice_data["valentineEquip"] = []
+        nice_data["valentineScript"] = []
+        nice_data["bondEquipOwner"] = None
+        nice_data["valentineEquipOwner"] = None
 
     costume_limits = {svt_costume.id for svt_costume in raw_svt.mstSvtCostume}
     costume_ids = {

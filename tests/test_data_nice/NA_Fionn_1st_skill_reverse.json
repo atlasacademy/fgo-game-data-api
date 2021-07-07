@@ -641,6 +641,13 @@
           ],
           "bondEquip": 9300750,
           "valentineEquip": [9805330],
+          "valentineScript": [
+            {
+              "scriptId": "9403351460",
+              "script": "https://assets.atlasacademy.io/GameData/NA/Script/94/9403/9403351460.txt",
+              "scriptName": "DHA"
+            }
+          ],
           "ascensionAdd": {
             "individuality": { "ascension": {}, "costume": {} },
             "voicePrefix": { "ascension": {}, "costume": {} },
