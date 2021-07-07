@@ -186,8 +186,8 @@ def get_svt_search(
         )
     if not_trait_ints:
         where_clause += [
-            not_(mstSvt.c.individuality.contains(not_trait_ints)),
-            not_(mstSvtLimitAdd.c.individuality.contains(not_trait_ints)),
+            not_(mstSvt.c.individuality.overlap(not_trait_ints)),
+            not_(mstSvtLimitAdd.c.individuality.overlap(not_trait_ints)),
         ]
     if rarity_ints:
         from_clause = from_clause.outerjoin(
