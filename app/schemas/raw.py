@@ -494,6 +494,9 @@ class MstItem(BaseModelORJson):
     dropPriority: int  # 8201,
     startedAt: int  # 946684800,
     endedAt: int  # 1910908800
+    useSkill: bool = False
+    useAscension: bool = False
+    useCostume: bool = False
 
 
 class MstSetItem(BaseModelORJson):
@@ -1151,10 +1154,6 @@ class MysticCodeEntity(BaseModelORJson):
 
 
 class Master(BaseModelORJson):
-    # TODO: Add uses to MstItem in db
-    mstCombineSkillItem: set[int]
-    mstCombineLimitItem: set[int]
-    mstCombineCostumeItem: set[int]
     mstEquipSkill: list[MstEquipSkill]
     mstCommandCodeSkill: list[MstCommandCodeSkill]
     buffToFunc: dict[int, set[int]]

@@ -4,6 +4,7 @@ from sqlalchemy.engine import Connection
 from sqlalchemy.sql import and_, select
 
 from ...models.raw import mstItem, mstSetItem
+from ...schemas.enums import NiceItemUse
 from ...schemas.raw import MstItem, MstSetItem
 
 
@@ -24,7 +25,7 @@ def get_item_search(
     individuality: Optional[Iterable[int]],
     item_type: Optional[Iterable[int]],
     bg_type: Optional[Iterable[int]],
-    use_ids: Optional[Iterable[int]],
+    uses: Optional[Iterable[NiceItemUse]],
 ) -> list[MstItem]:
     where_clause: list[Any] = [True]
     if individuality:
@@ -33,8 +34,13 @@ def get_item_search(
         where_clause.append(mstItem.c.type.in_(item_type))
     if bg_type:
         where_clause.append(mstItem.c.bgImageId.in_(bg_type))
-    if use_ids:
-        where_clause.append(mstItem.c.id.in_(use_ids))
+    if uses:
+        if NiceItemUse.skill in uses:
+            where_clause.append(mstItem.c.useSkill.is_(True))
+        if NiceItemUse.ascension in uses:
+            where_clause.append(mstItem.c.useAscension.is_(True))
+        if NiceItemUse.costume in uses:
+            where_clause.append(mstItem.c.useCostume.is_(True))
 
     item_search_stmt = select(mstItem).distinct().where(and_(*where_clause))
 

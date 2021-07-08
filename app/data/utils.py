@@ -1,15 +1,19 @@
 from typing import Type, TypeVar
 
 import orjson
-from pydantic.types import DirectoryPath
+from pydantic import DirectoryPath
 
 from ..schemas.base import BaseModelORJson
 from ..schemas.raw import (
     MstBuff,
     MstClassRelationOverwrite,
+    MstCombineCostume,
+    MstCombineLimit,
+    MstCombineSkill,
     MstEvent,
     MstEventMissionCondition,
     MstEventMissionConditionDetail,
+    MstItem,
     MstShop,
     MstShopRelease,
     MstShopScript,
@@ -42,6 +46,10 @@ MODEL_FILE_NAME: dict[Type[BaseModelORJson], str] = {
     MstEventMissionConditionDetail: "mstEventMissionConditionDetail",
     MstBuff: "mstBuff",
     MstClassRelationOverwrite: "mstClassRelationOverwrite",
+    MstItem: "mstItem",
+    MstCombineSkill: "mstCombineSkill",
+    MstCombineLimit: "mstCombineLimit",
+    MstCombineCostume: "mstCombineCostume",
 }
 
 

@@ -3,7 +3,6 @@ from typing import Generator, Iterable
 from sqlalchemy.engine import Connection
 
 from ...config import Settings
-from ...data.gamedata import masters
 from ...schemas.common import Language, Region
 from ...schemas.enums import ITEM_BG_TYPE_NAME, NiceItemUse
 from ...schemas.gameenums import ITEM_TYPE_NAME
@@ -16,15 +15,15 @@ from ..utils import get_traits_list, get_translation
 settings = Settings()
 
 
-def get_item_use(region: Region, item_id: int) -> list[NiceItemUse]:
+def get_item_use(item: MstItem) -> list[NiceItemUse]:
     item_uses: list[NiceItemUse] = []
 
-    for use_type, use_table in (
-        (NiceItemUse.skill, masters[region].mstCombineSkillItem),
-        (NiceItemUse.ascension, masters[region].mstCombineLimitItem),
-        (NiceItemUse.costume, masters[region].mstCombineCostumeItem),
+    for use_type, use_variable in (
+        (NiceItemUse.skill, item.useSkill),
+        (NiceItemUse.ascension, item.useAscension),
+        (NiceItemUse.costume, item.useCostume),
     ):
-        if item_id in use_table:
+        if use_variable:
             item_uses.append(use_type)
 
     return item_uses
@@ -44,7 +43,7 @@ def get_nice_item_from_raw(
         id=raw_item.id,
         name=get_translation(lang, raw_item.name),
         type=ITEM_TYPE_NAME[raw_item.type],
-        uses=get_item_use(region, raw_item.id),
+        uses=get_item_use(raw_item),
         detail=raw_item.detail,
         individuality=get_traits_list(raw_item.individuality),
         icon=AssetURL.items.format(

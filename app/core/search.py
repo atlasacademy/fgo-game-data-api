@@ -4,7 +4,6 @@ from fastapi import HTTPException
 from fuzzywuzzy import fuzz, utils
 from sqlalchemy.engine import Connection
 
-from ..data.gamedata import masters
 from ..db.helpers.buff import get_buff_search
 from ..db.helpers.func import get_func_search
 from ..db.helpers.item import get_item_search
@@ -27,7 +26,6 @@ from ..schemas.enums import (
     SVT_FLAG_NAME_REVERSE,
     SVT_TYPE_NAME_REVERSE,
     TRAIT_NAME_REVERSE,
-    NiceItemUse,
     Trait,
 )
 from ..schemas.raw import MstBuff, MstFunc, MstItem, MstSkill, MstSvt, MstTreasureDevice
@@ -373,21 +371,12 @@ def search_item(conn: Connection, search_param: ItemSearchQueryParams) -> list[M
     item_type = [ITEM_TYPE_REVERSE[item_type] for item_type in search_param.type]
     bg_type = [ITEM_BG_TYPE_REVERSE[bg_type] for bg_type in search_param.background]
 
-    use_ids: set[int] = set()
-    for item_use, lookup_table in (
-        (NiceItemUse.skill, masters[search_param.region].mstCombineSkillItem),
-        (NiceItemUse.ascension, masters[search_param.region].mstCombineLimitItem),
-        (NiceItemUse.costume, masters[search_param.region].mstCombineCostumeItem),
-    ):
-        if item_use in search_param.use:
-            use_ids |= lookup_table
-
     matches = get_item_search(
         conn,
         individuality,
         item_type,
         bg_type,
-        use_ids,
+        search_param.use,
     )
 
     if search_param.name:

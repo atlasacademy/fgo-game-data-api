@@ -207,7 +207,7 @@ class TestSearch:
 nice_raw_test_cases_dict = {
     "item_individuality": ("JP/item/search?individuality=10361", {94032206}),
     "item_use_name_background": (
-        "NA/item/search?use=skill&name=Claw&background=gold",
+        "NA/item/search?use=skill&use=ascension&use=costume&name=Claw&background=gold",
         {6507},
     ),
     "item_type": ("JP/item/search?type=chargeStone", {6}),

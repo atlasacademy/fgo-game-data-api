@@ -10,6 +10,7 @@ from sqlalchemy.engine import Connection, Engine
 from ..config import logger
 from ..data.buff import get_buff_with_classrelation
 from ..data.event import get_event_with_warIds
+from ..data.item import get_item_with_use
 from ..models.raw import (
     TABLES_TO_BE_LOADED,
     ScriptFileList,
@@ -17,6 +18,7 @@ from ..models.raw import (
     mstEvent,
     mstFunc,
     mstFuncGroup,
+    mstItem,
     mstSkillLv,
     mstSubtitle,
     mstTreasureDeviceLv,
@@ -128,6 +130,13 @@ def load_event(
     mstEvent_db_data = [svtExtra.dict() for svtExtra in mstEvents]
     with engine.begin() as conn:
         insert_db(conn, mstEvent, mstEvent_db_data)
+
+
+def load_item(engine: Engine, gamedata_path: DirectoryPath) -> None:  # pragma: no cover
+    mstItems = get_item_with_use(gamedata_path)
+    mstItem_db_data = [item.dict() for item in mstItems]
+    with engine.begin() as conn:
+        insert_db(conn, mstItem, mstItem_db_data)
 
 
 def load_script_list(
@@ -247,6 +256,8 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
         load_skill_td_lv(engine, repo_folder)
 
         load_event(engine, repo_folder)
+
+        load_item(engine, repo_folder)
 
         load_script_list(engine, repo_folder)
 

@@ -642,6 +642,9 @@ mstItem = Table(
     Column("dropPriority", Integer),
     Column("startedAt", Integer),
     Column("endedAt", Integer),
+    Column("useSkill", Boolean),
+    Column("useAscension", Boolean),
+    Column("useCostume", Boolean),
 )
 
 
@@ -1317,7 +1320,6 @@ TABLES_TO_BE_LOADED = [
     mstCommandCode,
     mstCv,
     mstIllustrator,
-    mstItem,
     mstShop,
     mstShopScript,
     mstBgm,

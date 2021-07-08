@@ -7,7 +7,7 @@ from pydantic import DirectoryPath
 from ..config import Settings, logger
 from ..schemas.common import Region
 from ..schemas.enums import FUNC_VALS_NOT_BUFF
-from ..schemas.raw import BAD_COMBINE_SVT_LIMIT, Master
+from ..schemas.raw import Master
 
 
 settings = Settings()
@@ -29,11 +29,6 @@ MASTER_WITHOUT_ID = {
     "mstAiAct",
     "mstSvtPassiveSkill",
 }
-SVT_STUFFS = {
-    "mstCombineSkill",
-    "mstCombineLimit",
-    "mstCombineCostume",
-}
 SKILL_STUFFS = {"mstSvtSkill", "mstSkillLv"}
 TD_STUFFS = {"mstSvtTreasureDevice", "mstTreasureDeviceLv"}
 
@@ -45,9 +40,7 @@ def update_masters(region_path: dict[Region, DirectoryPath]) -> None:
     for region_name, gamedata in region_path.items():
         master = {}
 
-        for entity in (
-            MASTER_WITH_ID | MASTER_WITHOUT_ID | SVT_STUFFS | SKILL_STUFFS | TD_STUFFS
-        ):
+        for entity in MASTER_WITH_ID | MASTER_WITHOUT_ID | SKILL_STUFFS | TD_STUFFS:
             with open(gamedata / "master" / f"{entity}.json", "rb") as fp:
                 master[entity] = orjson.loads(fp.read())
 
@@ -93,15 +86,6 @@ def update_masters(region_path: dict[Region, DirectoryPath]) -> None:
             master[masters_table] = defaultdict(set)
             for item in master[source_table]:
                 master[masters_table][item[lookup_id]].add(item[result_id])
-
-        for mstCombine in ("mstCombineSkill", "mstCombineLimit", "mstCombineCostume"):
-            master[f"{mstCombine}Item"] = {
-                item_id
-                for combine in master[mstCombine]
-                for item_id in combine["itemIds"]
-                if mstCombine != "mstCombineLimit"
-                or combine["svtLimit"] != BAD_COMBINE_SVT_LIMIT
-            }
 
         for masters_table, ai_table in (
             ("parentAiSvt", "mstAi"),

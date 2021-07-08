@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-from pydantic.types import DirectoryPath
+from pydantic import DirectoryPath
 
 from ..core.nice.script import get_script_url
 from ..schemas.common import NiceValentineScript, Region
