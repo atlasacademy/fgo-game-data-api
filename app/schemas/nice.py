@@ -213,6 +213,8 @@ class BaseVals(BaseModel):
     MultipleGainStar: Optional[int] = None
     NoCheckIndividualityIfNotUnit: Optional[int] = None
     ForcedEffectSpeedOne: Optional[int] = None
+    SetLimitCount: Optional[int] = None
+    CheckEnemyFieldSpace: Optional[int] = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo

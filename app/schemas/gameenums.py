@@ -410,6 +410,8 @@ class FuncTargetType(IntEnum):
     COMMAND_TYPE_SELF_TREASURE_DEVICE = 25
     FIELD_OTHER = 26
     ENEMY_ONE_NO_TARGET_NO_ACTION = 27
+    PT_ONE_HP_LOWEST_VALUE = 28
+    PT_ONE_HP_LOWEST_RATE = 29
 
 
 class NiceFuncTargetType(str, Enum):
@@ -443,6 +445,8 @@ class NiceFuncTargetType(str, Enum):
     commandTypeSelfTreasureDevice = "commandTypeSelfTreasureDevice"
     fieldOther = "fieldOther"
     enemyOneNoTargetNoAction = "enemyOneNoTargetNoAction"
+    ptOneHpLowestValue = "ptOneHpLowestValue"
+    ptOneHpLowestRate = "ptOneHpLowestRate"
 
 
 FUNC_TARGETTYPE_NAME: dict[int, NiceFuncTargetType] = {
@@ -474,6 +478,8 @@ FUNC_TARGETTYPE_NAME: dict[int, NiceFuncTargetType] = {
     25: NiceFuncTargetType.commandTypeSelfTreasureDevice,
     26: NiceFuncTargetType.fieldOther,
     27: NiceFuncTargetType.enemyOneNoTargetNoAction,
+    28: NiceFuncTargetType.ptOneHpLowestValue,
+    29: NiceFuncTargetType.ptOneHpLowestRate,
 }
 
 
@@ -625,6 +631,7 @@ class BuffType(IntEnum):
     COMMANDCODEATTACK_AFTER_FUNCTION = 159
     ATTACK_BEFORE_FUNCTION = 160
     DONOT_SKILL_SELECT = 161
+    INVISIBLE_BATTLE_CHARA = 163
 
 
 class NiceBuffType(str, Enum):
@@ -777,6 +784,7 @@ class NiceBuffType(str, Enum):
     commandcodeattackAfterFunction = "commandcodeattackAfterFunction"
     attackBeforeFunction = "attackBeforeFunction"
     donotSkillSelect = "donotSkillSelect"
+    invisibleBattleChara = "invisibleBattleChara"
 
 
 BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
@@ -927,6 +935,7 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     159: NiceBuffType.commandcodeattackAfterFunction,
     160: NiceBuffType.attackBeforeFunction,
     161: NiceBuffType.donotSkillSelect,
+    163: NiceBuffType.invisibleBattleChara,
 }
 
 
@@ -1343,6 +1352,8 @@ class DataValsType(IntEnum):
     MultipleGainStar = 73
     NoCheckIndividualityIfNotUnit = 74
     ForcedEffectSpeedOne = 75
+    SetLimitCount = 76
+    CheckEnemyFieldSpace = 77
 
 
 class ClassRelationOverwriteType(IntEnum):
