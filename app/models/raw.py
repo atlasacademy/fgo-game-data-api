@@ -303,6 +303,7 @@ mstSvtExtra = Table(
     Column("valentineEquip", ARRAY(Integer)),
     Column("valentineScript", JSONB),
     Column("valentineEquipOwner", Integer),
+    Column("costumeLimitSvtIdMap", JSONB),
 )
 
 

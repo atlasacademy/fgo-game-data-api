@@ -274,6 +274,7 @@ class MstSvtExtra(BaseModelORJson):
     valentineEquip: list[int]
     valentineScript: list[NiceValentineScript]
     valentineEquipOwner: Optional[int] = None
+    costumeLimitSvtIdMap: dict[int, int] = {}
 
 
 class MstSvtCard(BaseModelORJson):

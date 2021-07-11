@@ -479,6 +479,7 @@
     "bondEquip": 0,
     "bondEquipOwner": 601900,
     "valentineEquip": [],
-    "valentineScript": []
+    "valentineScript": [],
+    "costumeLimitSvtIdMap": {}
   }
 }

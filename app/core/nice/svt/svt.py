@@ -126,19 +126,14 @@ def get_nice_servant(
         nice_data["valentineScript"] = raw_svt.mstSvtExtra.valentineScript
         nice_data["bondEquipOwner"] = raw_svt.mstSvtExtra.bondEquipOwner
         nice_data["valentineEquipOwner"] = raw_svt.mstSvtExtra.valentineEquipOwner
+        costume_ids = raw_svt.mstSvtExtra.costumeLimitSvtIdMap
     else:
         nice_data["bondEquip"] = 0
         nice_data["valentineEquip"] = []
         nice_data["valentineScript"] = []
         nice_data["bondEquipOwner"] = None
         nice_data["valentineEquipOwner"] = None
-
-    costume_limits = {svt_costume.id for svt_costume in raw_svt.mstSvtCostume}
-    costume_ids = {
-        svt_limit_add.limitCount: svt_limit_add.battleCharaId
-        for svt_limit_add in raw_svt.mstSvtLimitAdd
-        if svt_limit_add.limitCount in costume_limits
-    }
+        costume_ids = {}
 
     nice_data["extraAssets"] = get_svt_extraAssets(region, svt_id, raw_svt, costume_ids)
 

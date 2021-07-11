@@ -74,7 +74,7 @@
         "rarity": 4,
         "atkMax": 9398,
         "hpMax": 11521,
-        "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_2001000.png"
+        "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_2001300.png"
       },
       "releaseConditions": [],
       "lv": 80,
@@ -1880,7 +1880,7 @@
         "rarity": 4,
         "atkMax": 10098,
         "hpMax": 10914,
-        "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_2042000.png"
+        "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_2042002.png"
       },
       "releaseConditions": [
         { "type": "forceFalse", "targetId": 0, "value": 0 }
@@ -5367,7 +5367,7 @@
         "rarity": 4,
         "atkMax": 9112,
         "hpMax": 12625,
-        "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_1036000.png"
+        "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_1036300.png"
       },
       "releaseConditions": [],
       "lv": 80,

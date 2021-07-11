@@ -2245,7 +2245,8 @@
                 "script": "https://assets.atlasacademy.io/GameData/NA/Script/94/9403/9403351650.txt",
                 "scriptName": "Bitter Tasting Summer"
               }
-            ]
+            ],
+            "costumeLimitSvtIdMap": {}
           }
         }
       ],

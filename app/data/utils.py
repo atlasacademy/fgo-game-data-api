@@ -20,6 +20,7 @@ from ..schemas.raw import (
     MstSkill,
     MstSvt,
     MstSvtComment,
+    MstSvtCostume,
     MstSvtExtra,
     MstSvtLimitAdd,
     MstSvtSkill,
@@ -50,6 +51,7 @@ MODEL_FILE_NAME: dict[Type[BaseModelORJson], str] = {
     MstCombineSkill: "mstCombineSkill",
     MstCombineLimit: "mstCombineLimit",
     MstCombineCostume: "mstCombineCostume",
+    MstSvtCostume: "mstSvtCostume",
 }
 
 

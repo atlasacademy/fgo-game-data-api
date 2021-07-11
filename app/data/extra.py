@@ -13,6 +13,7 @@ from ..schemas.raw import (
     MstSkill,
     MstSvt,
     MstSvtComment,
+    MstSvtCostume,
     MstSvtExtra,
     MstSvtLimitAdd,
     MstSvtSkill,
@@ -42,6 +43,7 @@ def get_extra_svt_data(
     mstShopScripts = load_master_data(gamedata_path, MstShopScript)
     mstShopReleases = load_master_data(gamedata_path, MstShopRelease)
     mstSvtComments = load_master_data(gamedata_path, MstSvtComment)
+    mstSvtCostumes = load_master_data(gamedata_path, MstSvtCostume)
 
     mstSkillId = {mstSkill.id: mstSkill for mstSkill in mstSkills}
     mstSvtId = {mstSvt.id: mstSvt for mstSvt in mstSvts}
@@ -53,6 +55,10 @@ def get_extra_svt_data(
     mstShopReleaseShopId: dict[int, list[MstShopRelease]] = defaultdict(list)
     for shop_release in mstShopReleases:
         mstShopReleaseShopId[shop_release.shopId].append(shop_release)
+
+    mstSvtCostumeId: dict[int, set[int]] = defaultdict(set)
+    for costume in mstSvtCostumes:
+        mstSvtCostumeId[costume.svtId].add(costume.id)
 
     # Bond CE has servant's ID in skill's actIndividuality
     # to bind the CE effect to the servant
@@ -114,11 +120,14 @@ def get_extra_svt_data(
     }
 
     zeroLimitOverwriteName: dict[int, str] = {}
+    svtCostumeIds: dict[int, dict[int, int]] = defaultdict(dict)
     for limitAdd in mstSvtLimitAdds:
         if limitAdd.limitCount == 0 and "overWriteServantName" in limitAdd.script:
             zeroLimitOverwriteName[limitAdd.svtId] = limitAdd.script[
                 "overWriteServantName"
             ]
+        if limitAdd.limitCount in mstSvtCostumeId.get(limitAdd.svtId, set()):
+            svtCostumeIds[limitAdd.svtId][limitAdd.limitCount] = limitAdd.battleCharaId
 
     all_svt_ids = (
         bondEquip.keys()
@@ -127,6 +136,7 @@ def get_extra_svt_data(
         | valentineScript.keys()
         | valentineEquipOwner.keys()
         | zeroLimitOverwriteName.keys()
+        | svtCostumeIds.keys()
     )
 
     return [
@@ -138,6 +148,7 @@ def get_extra_svt_data(
             valentineEquip=valentineEquip.get(svt_id, []),
             valentineScript=valentineScript.get(svt_id, []),
             valentineEquipOwner=valentineEquipOwner.get(svt_id),
+            costumeLimitSvtIdMap=svtCostumeIds.get(svt_id, {}),
         )
         for svt_id in sorted(all_svt_ids)
     ]

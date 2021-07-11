@@ -1932,7 +1932,8 @@
         "script": "https://assets.atlasacademy.io/GameData/NA/Script/94/9403/9403352500.txt",
         "scriptName": "Evil Doctrine"
       }
-    ]
+    ],
+    "costumeLimitSvtIdMap": { "11": 202330 }
   },
   "mstSvtComment": [
     {

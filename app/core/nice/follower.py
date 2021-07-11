@@ -111,12 +111,19 @@ async def get_nice_support_servant(
     all_equips: dict[int, NiceEquip],
     lang: Language,
 ) -> SupportServant:
+    npcScript = get_nice_follower_script(npcFollower.npcScript)
+    npcLimit = (
+        npcScript.dispLimitCount
+        if npcScript.dispLimitCount
+        else npcSvtFollower.limitCount
+    )
+
     return SupportServant(
         id=npcFollower.id,
         priority=npcFollower.priority,
         name=npcSvtFollower.name,
         svt=await get_basic_servant(
-            redis, region, npcSvtFollower.svtId, npcSvtFollower.limitCount, lang
+            redis, region, npcSvtFollower.svtId, npcLimit, lang
         ),
         releaseConditions=[
             get_nice_follower_release(release) for release in npcFollowerRelease
@@ -128,7 +135,7 @@ async def get_nice_support_servant(
         skills=get_nice_follower_skills(npcSvtFollower, all_skills),
         noblePhantasm=get_nice_follower_td(npcSvtFollower, all_tds),
         equips=[get_nice_follower_equip(equip, all_equips) for equip in npcSvtEquip],
-        script=get_nice_follower_script(npcFollower.npcScript),
+        script=npcScript,
         limit=get_nice_follower_limit(npcSvtFollower),
         misc=get_nice_follower_misc(npcFollower, npcSvtFollower),
     )
