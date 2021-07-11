@@ -1477,7 +1477,6 @@ class SupportServantTd(BaseModelORJson):
 class SupportServantMisc(BaseModelORJson):
     followerFlag: int
     svtFollowerFlag: int
-    dispLimitCount: Optional[int] = None
 
 
 class SupportServantEquip(BaseModelORJson):
