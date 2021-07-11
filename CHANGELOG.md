@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.66.0 - 2020-07-06
+### Added
+- Support servant to nice quest phase
+
 ## 5.65.0 - 2020-07-06
 ### Added
 - `valentineScript` to nice servant and CE.

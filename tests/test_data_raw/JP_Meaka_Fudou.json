@@ -128,5 +128,9 @@
       "shopId": 7000264,
       "logoId": 40
     }
-  ]
+  ],
+  "npcFollower": [],
+  "npcFollowerRelease": [],
+  "npcSvtFollower": [],
+  "npcSvtEquip": []
 }

@@ -1255,6 +1255,68 @@ mstStageRemap = Table(
 )
 
 
+npcFollower = Table(
+    "npcFollower",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("questId", Integer, index=True),
+    Column("questPhase", Integer, index=True),
+    Column("priority", Integer),
+    Column("leaderSvtId", Integer),
+    Column("svtEquipIds", ARRAY(Integer)),
+    Column("flag", Integer),
+    Column("npcScript", String),
+    Column("createdAt", Integer),
+)
+
+
+npcFollowerRelease = Table(
+    "npcFollowerRelease",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("questId", Integer, index=True),
+    Column("questPhase", Integer, index=True),
+    Column("condType", Integer),
+    Column("condTargetId", Integer),
+    Column("condValue", Integer),
+    Column("createdAt", Integer),
+)
+
+
+npcSvtFollower = Table(
+    "npcSvtFollower",
+    metadata,
+    Column("id", Integer, primary_key=True),
+    Column("svtId", Integer),
+    Column("name", String),
+    Column("lv", Integer),
+    Column("limitCount", Integer),
+    Column("hp", Integer),
+    Column("atk", Integer),
+    Column("individuality", String),
+    Column("treasureDeviceId", Integer),
+    Column("treasureDeviceLv", Integer),
+    Column("skillId1", Integer),
+    Column("skillId2", Integer),
+    Column("skillId3", Integer),
+    Column("skillLv1", Integer),
+    Column("skillLv2", Integer),
+    Column("skillLv3", Integer),
+    Column("flag", Integer),
+    Column("createdAt", Integer),
+)
+
+
+npcSvtEquip = Table(
+    "npcSvtEquip",
+    metadata,
+    Column("id", Integer, primary_key=True),
+    Column("svtId", Integer),
+    Column("lv", Integer),
+    Column("limitCount", Integer),
+)
+
+
 mstAi = Table(
     "mstAi",
     metadata,
@@ -1380,6 +1442,10 @@ TABLES_TO_BE_LOADED = [
     mstQuestPhaseDetail,
     mstStage,
     mstStageRemap,
+    npcFollower,
+    npcFollowerRelease,
+    npcSvtFollower,
+    npcSvtEquip,
     mstAi,
     mstAiField,
 ]

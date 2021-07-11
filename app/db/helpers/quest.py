@@ -19,6 +19,10 @@ from ...models.raw import (
     mstStage,
     mstStageRemap,
     mstWar,
+    npcFollower,
+    npcFollowerRelease,
+    npcSvtEquip,
+    npcSvtFollower,
 )
 from ...models.rayshift import rayshiftQuest
 from ...schemas.common import StageLink
@@ -181,6 +185,22 @@ def get_quest_phase_entity(
                 mstQuestPhase.c.phase == mstStage.c.questPhase,
             ),
         )
+        .outerjoin(
+            npcFollower,
+            and_(
+                mstQuest.c.id == npcFollower.c.questId,
+                mstQuestPhase.c.phase == npcFollower.c.questPhase,
+            ),
+        )
+        .outerjoin(
+            npcFollowerRelease,
+            and_(
+                mstQuest.c.id == npcFollowerRelease.c.questId,
+                mstQuestPhase.c.phase == npcFollowerRelease.c.questPhase,
+            ),
+        )
+        .outerjoin(npcSvtFollower, npcFollower.c.leaderSvtId == npcSvtFollower.c.id)
+        .outerjoin(npcSvtEquip, npcFollower.c.svtEquipIds[1] == npcSvtEquip.c.id)
         .outerjoin(mstBgm, mstBgm.c.id == mstStage.c.bgmId)
         .outerjoin(
             ScriptFileList,
@@ -208,6 +228,10 @@ def get_quest_phase_entity(
             func.array_agg(ScriptFileList.c.scriptFileName.distinct()), None
         ).label("scripts"),
         sql_jsonb_agg(mstStage),
+        sql_jsonb_agg(npcFollower),
+        sql_jsonb_agg(npcFollowerRelease),
+        sql_jsonb_agg(npcSvtFollower),
+        sql_jsonb_agg(npcSvtEquip),
         sql_jsonb_agg(mstBgm),
     ]
 

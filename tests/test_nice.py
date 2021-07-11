@@ -65,6 +65,7 @@ test_cases_dict: dict[str, tuple[str, str]] = {
     "quest_NA_consume_item": ("NA/quest/94032412", "NA_Enma_tei_spa_room"),
     "quest_NA_enemy": ("NA/quest/94034503/1", "NA_CCC_Detour_3"),
     "quest_JP_remapped": ("JP/quest/94060012/1", "JP_remapped_quest"),
+    "quest_JP_support_servant": ("JP/quest/94051406/1", "JP_support_servant"),
     "ai_beni_cq_monkey_NA": ("NA/ai/svt/94032580", "NA_AI_Beni_CQ_monkey"),
     "kh_cq_JP": ("JP/ai/field/90161870", "JP_KH_CQ_taunt"),
     "bgm_NA_with_shop": ("JP/bgm/138?lang=en", "JP_BGM_Shinjuku"),

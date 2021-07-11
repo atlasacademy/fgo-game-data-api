@@ -1458,6 +1458,56 @@ class NiceQuestMessage(BaseModelORJson):
     targetNum: int
 
 
+class SupportServantRelease(BaseModelORJson):
+    type: NiceCondType
+    targetId: int
+    value: int
+
+
+class SupportServantLimit(BaseModelORJson):
+    limitCount: int
+
+
+class SupportServantTd(BaseModelORJson):
+    noblePhantasmId: int
+    noblePhantasm: Optional[NiceTd] = None
+    noblePhantasmLv: int
+
+
+class SupportServantMisc(BaseModelORJson):
+    followerFlag: int
+    svtFollowerFlag: int
+    dispLimitCount: Optional[int] = None
+
+
+class SupportServantEquip(BaseModelORJson):
+    equip: NiceEquip
+    lv: int
+    limitCount: int
+
+
+class SupportServantScript(BaseModelORJson):
+    dispLimitCount: Optional[int] = None
+
+
+class SupportServant(BaseModelORJson):
+    id: int
+    priority: int
+    name: str
+    svt: BasicServant
+    releaseConditions: list[SupportServantRelease]
+    lv: int
+    atk: int
+    hp: int
+    traits: list[NiceTrait]
+    skills: EnemySkill
+    noblePhantasm: SupportServantTd
+    equips: list[SupportServantEquip]
+    script: SupportServantScript
+    limit: SupportServantLimit
+    misc: SupportServantMisc
+
+
 class NiceQuestPhase(NiceQuest):
     phase: int
     className: list[SvtClass]
@@ -1467,6 +1517,7 @@ class NiceQuestPhase(NiceQuest):
     bond: int
     scripts: list[NiceQuestScript]
     messages: list[NiceQuestMessage]
+    supportServants: list[SupportServant]
     stages: list[NiceStage]
 
 

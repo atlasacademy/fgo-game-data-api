@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fgo-game-data-api"
-version = "5.65.0"
+version = "5.66.0"
 description = "Provide raw and processed FGO game data"
 authors = ["squaresmile <squaresmile@protonmail.com>"]
 
@@ -11,7 +11,7 @@ uvicorn = {extras = ["standard"], version = "^0.14.0"}
 python-dotenv = "^0.18.0"
 fuzzywuzzy = "^0.18.0"
 python-Levenshtein = "^0.12.2"
-orjson = "^3.5.4"
+orjson = "^3.6.0"
 aiofiles = "^0.7.0"
 GitPython = "^3.1.18"
 toml = "^0.10.2"
@@ -28,7 +28,7 @@ black = "^21.6b0"
 pytest-xdist = "^2.3.0"
 coverage = "^5.5"
 fuzzywuzzy-stubs = "^0.0.1"
-isort = "^5.9.1"
+isort = "^5.9.2"
 sqlalchemy-stubs = {git = "https://github.com/squaresmile/sqlalchemy-stubs.git"}
 sqlalchemy2-stubs = "^0.0.2-alpha.4"
 pytest-asyncio = "^0.15.1"

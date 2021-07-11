@@ -42,6 +42,7 @@
   "bond": 915,
   "scripts": [],
   "messages": [],
+  "supportServants": [],
   "stages": [
     {
       "wave": 1,

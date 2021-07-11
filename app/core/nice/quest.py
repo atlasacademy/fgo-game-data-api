@@ -20,6 +20,7 @@ from ...schemas.nice import (
     NiceQuestRelease,
     NiceStage,
     QuestEnemy,
+    SupportServant,
 )
 from ...schemas.raw import (
     MstBgm,
@@ -34,6 +35,7 @@ from .. import raw
 from ..utils import get_traits_list
 from .bgm import get_nice_bgm
 from .enemy import get_quest_enemies
+from .follower import get_nice_support_servants
 from .gift import get_nice_gift
 from .item import get_nice_item_amount
 from .script import get_nice_quest_script
@@ -149,6 +151,19 @@ async def get_nice_quest_phase(
                 conn, redis, region, quest_detail, lang
             )
 
+    support_servants: list[SupportServant] = []
+    if raw_quest.npcFollower:
+        support_servants = await get_nice_support_servants(
+            conn,
+            redis,
+            region,
+            raw_quest.npcFollower,
+            raw_quest.npcFollowerRelease,
+            raw_quest.npcSvtFollower,
+            raw_quest.npcSvtEquip,
+            lang,
+        )
+
     nice_data |= {
         "phase": raw_quest.mstQuestPhase.phase,
         "className": [
@@ -168,6 +183,7 @@ async def get_nice_quest_phase(
                 raw_quest.mstQuestMessage, key=lambda script: script.idx
             )
         ],
+        "supportServants": support_servants,
         "stages": [
             get_nice_stage(region, stage, enemies, raw_quest.mstBgm)
             for stage, enemies in zip(stages, quest_enemies)

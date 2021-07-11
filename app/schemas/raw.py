@@ -1124,6 +1124,56 @@ class MstStageRemap(BaseModelORJson):
     remapWave: int
 
 
+class NpcFollower(BaseModelORJson):
+    id: int
+    questId: int
+    questPhase: int
+    priority: int
+    leaderSvtId: int
+    svtEquipIds: list[int]
+    flag: int
+    npcScript: str
+    createdAt: int
+
+
+class NpcFollowerRelease(BaseModelORJson):
+    id: int
+    questId: int
+    questPhase: int
+    condType: int
+    condTargetId: int
+    condValue: int
+    createdAt: int
+
+
+class NpcSvtFollower(BaseModelORJson):
+    id: int
+    svtId: int
+    name: str
+    lv: int
+    limitCount: int
+    hp: int
+    atk: int
+    individuality: str
+    treasureDeviceId: int
+    treasureDeviceLv: int
+    skillId1: int
+    skillId2: int
+    skillId3: int
+    skillLv1: int
+    skillLv2: int
+    skillLv3: int
+    flag: int
+    createdAt: int
+
+
+class NpcSvtEquip(BaseModelORJson):
+    id: int
+    svtId: int
+    lv: int
+    limitCount: int
+
+
 class MstAi(BaseModelORJson):
     id: int
     idx: int
@@ -1260,6 +1310,10 @@ class QuestPhaseEntity(QuestEntity):
     scripts: list[str]
     mstStage: list[MstStage]
     mstBgm: list[MstBgm]
+    npcFollower: list[NpcFollower]
+    npcFollowerRelease: list[NpcFollowerRelease]
+    npcSvtFollower: list[NpcSvtFollower]
+    npcSvtEquip: list[NpcSvtEquip]
 
 
 class EventEntity(BaseModelORJson):
