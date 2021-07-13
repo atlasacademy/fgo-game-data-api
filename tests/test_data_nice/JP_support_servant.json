@@ -39,6 +39,7 @@
   "qp": 2900,
   "exp": 1385,
   "bond": 265,
+  "battleBgId": 63010,
   "scripts": [
     {
       "scriptId": "9405140610",

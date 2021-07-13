@@ -173,6 +173,7 @@ async def get_nice_quest_phase(
         "qp": raw_quest.mstQuestPhase.qp,
         "exp": raw_quest.mstQuestPhase.playerExp,
         "bond": raw_quest.mstQuestPhase.friendshipExp,
+        "battleBgId": raw_quest.mstQuestPhase.battleBgId,
         "scripts": [
             get_nice_quest_script(region, script)
             for script in sorted(raw_quest.scripts)

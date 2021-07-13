@@ -35,6 +35,7 @@
   "qp": 4400,
   "exp": 5690,
   "bond": 415,
+  "battleBgId": 81001,
   "scripts": [],
   "messages": [],
   "supportServants": [],

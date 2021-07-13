@@ -2,8 +2,8 @@ from pydantic import HttpUrl
 from pydantic.tools import parse_obj_as
 
 from ...config import Settings
-from ...schemas.common import Region
-from ...schemas.nice import AssetURL, NiceQuestScript
+from ...schemas.common import NiceQuestScript, Region
+from ...schemas.nice import AssetURL
 
 
 settings = Settings()

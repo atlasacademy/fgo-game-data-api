@@ -1514,6 +1514,7 @@ class NiceQuestPhase(NiceQuest):
     qp: int
     exp: int
     bond: int
+    battleBgId: int
     scripts: list[NiceQuestScript]
     messages: list[NiceQuestMessage]
     supportServants: list[SupportServant]
