@@ -25,7 +25,7 @@ class DropInfo(BaseModelORJson):
 
 class DeckSvt(BaseModelORJson):
     uniqueId: int
-    name: str
+    name: Optional[str]
     roleType: int
     dropInfos: Optional[list[DropInfo]] = None
     npcId: int

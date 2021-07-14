@@ -21,7 +21,7 @@ from ...schemas.nice import (
 )
 from ...schemas.rayshift import Deck, DeckSvt, QuestDetail, UserSvt
 from ..basic import get_basic_servant
-from ..utils import get_traits_list, get_translation
+from ..utils import get_traits_list, get_translation, nullable_to_string
 from .skill import MultipleNiceSkills, SkillSvt, get_multiple_nice_skills
 from .td import MultipleNiceTds, TdSvt, get_multiple_nice_tds
 
@@ -205,7 +205,9 @@ async def get_quest_enemy(
         userSvtId=user_svt.id,
         uniqueId=deck_svt.uniqueId,
         npcId=deck_svt.npcId,
-        name=get_translation(lang, deck_svt.name, Translation.ENEMY),
+        name=get_translation(
+            lang, nullable_to_string(deck_svt.name), Translation.ENEMY
+        ),
         svt=basic_svt,
         lv=user_svt.lv,
         exp=user_svt.exp,
