@@ -84,6 +84,7 @@ class MstSkillDetail(BaseModelORJson):
 
 
 class MstSvtSkill(BaseModelORJson):
+    script: Optional[dict[str, Any]] = None
     strengthStatus: int  # 1,
     svtId: int  # 9400920,
     num: int  # 1,

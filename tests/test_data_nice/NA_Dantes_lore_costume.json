@@ -1559,6 +1559,135 @@
   ],
   "extraPassive": [
     {
+      "id": 940117,
+      "name": "Doujin A",
+      "ruby": "Doujin",
+      "detail": "Increase Doujin Motivation & Doujin Technique & Doujin Imagination amount per drop by 30% & increase Bond gained when completing quests by 20% [Event Only]",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00200.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 15,
+          "priority": 1,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 80251,
+          "flag": 0,
+          "startedAt": 1626062400,
+          "endedAt": 1627531199
+        }
+      ],
+      "functions": [
+        {
+          "funcId": 3712,
+          "funcType": "eventPointUp",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "None",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80251,
+              "baseFuncId": 0,
+              "nameTotal": "{0}\nTotal Bonus Amount",
+              "name": "{0} acquired",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94027504.png",
+              "priority": 9000,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            { "Individuality": 10441, "EventId": 80251, "RateCount": 300 }
+          ]
+        },
+        {
+          "funcId": 3713,
+          "funcType": "eventPointUp",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "None",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80251,
+              "baseFuncId": 0,
+              "nameTotal": "{0}\nTotal Bonus Amount",
+              "name": "{0} acquired",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94027505.png",
+              "priority": 8000,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            { "Individuality": 10442, "EventId": 80251, "RateCount": 300 }
+          ]
+        },
+        {
+          "funcId": 3714,
+          "funcType": "eventPointUp",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "None",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80251,
+              "baseFuncId": 0,
+              "nameTotal": "{0}\nTotal Bonus Amount",
+              "name": "{0} acquired",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94027506.png",
+              "priority": 7000,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            { "Individuality": 10443, "EventId": 80251, "RateCount": 300 }
+          ]
+        },
+        {
+          "funcId": 3843,
+          "funcType": "servantFriendshipUp",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "None",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80251,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\nTotal Bond Bonus",
+              "name": "Increase Bond gained",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/EventUI/func_group_icon_1009.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            {
+              "Target": 1,
+              "Individuality": 0,
+              "EventId": 80251,
+              "RateCount": 200
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": 960502,
       "name": "Power of Bonds E",
       "ruby": "Power of Bonds",

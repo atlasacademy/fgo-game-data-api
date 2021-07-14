@@ -116,6 +116,7 @@ mstSkillDetail = Table(
 mstSvtSkill = Table(
     "mstSvtSkill",
     metadata,
+    Column("script", JSONB),
     Column("strengthStatus", Integer, index=True),
     Column("skillNum", Integer),
     Column("svtId", Integer, index=True),
