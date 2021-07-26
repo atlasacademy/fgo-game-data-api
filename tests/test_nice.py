@@ -167,6 +167,11 @@ cases_datavals_dict = {
         1,
         {"Rate": 1000, "Value": 0, "Value2": 1},
     ),
+    "test_fkl_transform_": (
+        888550,
+        0,
+        {"Rate": 5000, "Value": 304800, "Target": 0, "SetLimitCount": 3},
+    ),
 }
 
 

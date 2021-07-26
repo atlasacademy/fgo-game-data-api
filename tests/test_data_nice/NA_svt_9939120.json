@@ -371,7 +371,8 @@
     "overWriteServantBattleName": { "ascension": {}, "costume": {} },
     "overWriteTDName": { "ascension": {}, "costume": {} },
     "overWriteTDRuby": { "ascension": {}, "costume": {} },
-    "overWriteTDFileName": { "ascension": {}, "costume": {} }
+    "overWriteTDFileName": { "ascension": {}, "costume": {} },
+    "lvMax": { "ascension": { "1": 100 }, "costume": {} }
   },
   "svtChange": [],
   "ascensionMaterials": {},

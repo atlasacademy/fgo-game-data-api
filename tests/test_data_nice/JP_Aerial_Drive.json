@@ -445,6 +445,19 @@
     15990
   ],
   "valentineScript": [],
+  "ascensionAdd": {
+    "individuality": { "ascension": {}, "costume": {} },
+    "voicePrefix": { "ascension": {}, "costume": {} },
+    "overWriteServantName": { "ascension": {}, "costume": {} },
+    "overWriteServantBattleName": { "ascension": {}, "costume": {} },
+    "overWriteTDName": { "ascension": {}, "costume": {} },
+    "overWriteTDRuby": { "ascension": {}, "costume": {} },
+    "overWriteTDFileName": { "ascension": {}, "costume": {} },
+    "lvMax": {
+      "ascension": { "0": 20, "1": 40, "2": 60, "3": 80, "4": 100 },
+      "costume": {}
+    }
+  },
   "skills": [
     {
       "id": 991087,

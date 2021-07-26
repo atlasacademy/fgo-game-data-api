@@ -23,8 +23,12 @@ def get_nice_ascensionAdd(
 
     ascensionAdd: dict[str, dict[str, dict[int, Union[list[NiceTrait], int, str]]]] = {
         ascensionAddField: {"ascension": {}, "costume": {}}
-        for ascensionAddField in OVERWRITE_FIELDS + ["individuality", "voicePrefix"]
+        for ascensionAddField in OVERWRITE_FIELDS
+        + ["individuality", "voicePrefix", "lvMax"]
     }
+
+    for limit in raw_svt.mstSvtLimit:
+        ascensionAdd["lvMax"]["ascension"][limit.limitCount] = limit.lvMax
 
     for limitAdd in raw_svt.mstSvtLimitAdd:
         if limitAdd.limitCount in costume_ids:

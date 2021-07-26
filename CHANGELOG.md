@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.67.0 - 2020-07-06
+### Added
+- `lvMax` to nice servant's `ascensionAdd` and `ascensionAdd` to nice CE.
+
 ## 5.66.0 - 2020-07-06
 ### Added
 - Support servant to nice quest phase

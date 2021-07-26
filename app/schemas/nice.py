@@ -549,6 +549,7 @@ class AscensionAdd(BaseModel):
     overWriteTDFileName: AscensionAddEntry[HttpUrl] = Field(
         ..., title="NP image URL changes"
     )
+    lvMax: AscensionAddEntry[int] = Field(..., title="Max level")
 
 
 class NiceServantChange(BaseModel):
@@ -991,6 +992,11 @@ class NiceEquip(BaseModelORJson):
     )
     valentineScript: list[NiceValentineScript] = Field(
         [], title="Valentine Script", description="Array of length 1"
+    )
+    ascensionAdd: AscensionAdd = Field(
+        ...,
+        title="Ascension Add",
+        description="Attributes that change when servants ascend.",
     )
     skills: list[NiceSkill] = Field(
         ..., title="Skills", description="list of servant or CE skills."

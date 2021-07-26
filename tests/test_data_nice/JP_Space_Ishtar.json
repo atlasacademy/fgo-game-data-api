@@ -594,7 +594,11 @@
     },
     "overWriteTDName": { "ascension": {}, "costume": {} },
     "overWriteTDRuby": { "ascension": {}, "costume": {} },
-    "overWriteTDFileName": { "ascension": {}, "costume": {} }
+    "overWriteTDFileName": { "ascension": {}, "costume": {} },
+    "lvMax": {
+      "ascension": { "0": 50, "1": 60, "2": 70, "3": 80, "4": 90 },
+      "costume": {}
+    }
   },
   "svtChange": [],
   "ascensionMaterials": {
