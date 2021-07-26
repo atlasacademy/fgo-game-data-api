@@ -91,10 +91,13 @@ def get_nice_follower_misc(
 
 def get_nice_follower_script(npcScript: str) -> SupportServantScript:
     script = SupportServantScript()
-    parsed = orjson.loads(npcScript)
+    try:
+        parsed = orjson.loads(npcScript)
 
-    if "dispLimitCount" in parsed:
-        script.dispLimitCount = int(parsed["dispLimitCount"])
+        if "dispLimitCount" in parsed:
+            script.dispLimitCount = int(parsed["dispLimitCount"])
+    except orjson.JSONDecodeError:  # pragma: no cover
+        pass
 
     return script
 
