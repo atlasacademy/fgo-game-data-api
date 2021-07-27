@@ -50,7 +50,7 @@ LIST_DATAVALS = {
 
 
 def parse_dataVals(
-    conn: Connection, datavals: str, functype: int, region: Region
+    conn: Connection, datavals: str, functype: int
 ) -> dict[str, Union[int, str, list[int]]]:
     error_message = f"Can't parse datavals: {datavals}"
     INITIAL_VALUE = -98765
@@ -165,7 +165,7 @@ def parse_dataVals(
                         if not dependMstFunc:
                             raise HTTPException(status_code=500, detail=error_message)
                         vals_value = parse_dataVals(
-                            conn, array2[1], dependMstFunc.funcType, region
+                            conn, array2[1], dependMstFunc.funcType
                         )
                         output["DependFuncVals"] = vals_value  # type: ignore
                     elif array2[0] in LIST_DATAVALS:
@@ -280,7 +280,7 @@ def get_nice_function(
     ]:
         if argument:
             nice_func[field] = [
-                parse_dataVals(conn, sval, function.mstFunc.funcType, region)
+                parse_dataVals(conn, sval, function.mstFunc.funcType)
                 for sval in argument
             ]
 
