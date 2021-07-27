@@ -1,11 +1,11 @@
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import select
 
 from ...models.raw import mstMap, mstSpot, mstWar
 from ...schemas.raw import MstWar
 
 
-def get_war_from_spot(conn: Connection, spot_id: int) -> int:
+async def get_war_from_spot(conn: AsyncConnection, spot_id: int) -> int:
     stmt = (
         select(mstWar)
         .select_from(
@@ -16,4 +16,4 @@ def get_war_from_spot(conn: Connection, spot_id: int) -> int:
         .where(mstSpot.c.id == spot_id)
     )
 
-    return MstWar.from_orm(conn.execute(stmt).fetchone()).id
+    return MstWar.from_orm((await conn.execute(stmt)).fetchone()).id

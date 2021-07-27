@@ -2,7 +2,7 @@ from copy import deepcopy
 from dataclasses import dataclass
 from typing import Any, Iterable
 
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
 from ...schemas.common import Language, Region
@@ -17,8 +17,8 @@ from .func import get_nice_function
 settings = Settings()
 
 
-def get_nice_td(
-    conn: Connection,
+async def get_nice_td(
+    conn: AsyncConnection,
     tdEntity: TdEntityNoReverse,
     svtId: int,
     region: Region,
@@ -64,7 +64,7 @@ def get_nice_td(
 
     for funci, _ in enumerate(tdEntity.mstTreasureDeviceLv[0].funcId):
         if tdEntity.mstTreasureDeviceLv[0].expandedFuncId:
-            nice_func = get_nice_function(
+            nice_func = await get_nice_function(
                 conn,
                 region,
                 tdEntity.mstTreasureDeviceLv[0].expandedFuncId[funci],
@@ -128,8 +128,8 @@ class TdSvt:
 MultipleNiceTds = dict[TdSvt, NiceTd]
 
 
-def get_multiple_nice_tds(
-    conn: Connection, region: Region, td_svts: Iterable[TdSvt], lang: Language
+async def get_multiple_nice_tds(
+    conn: AsyncConnection, region: Region, td_svts: Iterable[TdSvt], lang: Language
 ) -> MultipleNiceTds:
     """Get multiple nice NPs at once
 
@@ -143,13 +143,17 @@ def get_multiple_nice_tds(
     """
     raw_tds = {
         td.mstTreasureDevice.id: td
-        for td in get_td_entity_no_reverse_many(
+        for td in await get_td_entity_no_reverse_many(
             conn, [td_svt.td_id for td_svt in td_svts], expand=True
         )
     }
     return {
         td_svt: NiceTd.parse_obj(
-            get_nice_td(conn, raw_tds[td_svt.td_id], td_svt.svt_id, region, lang)[0]
+            (
+                await get_nice_td(
+                    conn, raw_tds[td_svt.td_id], td_svt.svt_id, region, lang
+                )
+            )[0]
         )
         for td_svt in td_svts
         if td_svt.td_id in raw_tds

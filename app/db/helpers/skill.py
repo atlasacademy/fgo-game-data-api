@@ -1,7 +1,7 @@
 from typing import Any, Iterable, Optional
 
 from sqlalchemy.dialects.postgresql import aggregate_order_by
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import and_, func, select
 
 from ...models.raw import mstSkill, mstSkillDetail, mstSkillLv, mstSvtSkill
@@ -9,8 +9,8 @@ from ...schemas.raw import MstSkill, SkillEntityNoReverse
 from .utils import sql_jsonb_agg
 
 
-def get_skillEntity(
-    conn: Connection, skill_ids: Iterable[int]
+async def get_skillEntity(
+    conn: AsyncConnection, skill_ids: Iterable[int]
 ) -> list[SkillEntityNoReverse]:
     mstSkillLvJson = (
         select(
@@ -44,22 +44,23 @@ def get_skillEntity(
         .group_by(mstSkill.c.id, mstSkillLvJson.c.mstSkillLv)
     )
 
-    skill_entities = (
-        SkillEntityNoReverse.from_orm(skill) for skill in conn.execute(stmt).fetchall()
-    )
+    skill_entities = [
+        SkillEntityNoReverse.from_orm(skill)
+        for skill in (await conn.execute(stmt)).fetchall()
+    ]
     order = {skill_id: i for i, skill_id in enumerate(skill_ids)}
 
     return sorted(skill_entities, key=lambda skill: order[skill.mstSkill.id])
 
 
-def get_mstSvtSkill(conn: Connection, svt_id: int) -> list[Any]:
+async def get_mstSvtSkill(conn: AsyncConnection, svt_id: int) -> list[Any]:
     mstSvtSkill_stmt = select(mstSvtSkill).where(mstSvtSkill.c.svtId == svt_id)
-    fetched: list[Any] = conn.execute(mstSvtSkill_stmt).fetchall()
+    fetched: list[Any] = (await conn.execute(mstSvtSkill_stmt)).fetchall()
     return fetched
 
 
-def get_skill_search(
-    conn: Connection,
+async def get_skill_search(
+    conn: AsyncConnection,
     skillType: Optional[Iterable[int]],
     num: Optional[Iterable[int]],
     priority: Optional[Iterable[int]],
@@ -93,5 +94,6 @@ def get_skill_search(
     )
 
     return [
-        MstSkill.from_orm(skill) for skill in conn.execute(skill_search_stmt).fetchall()
+        MstSkill.from_orm(skill)
+        for skill in (await conn.execute(skill_search_stmt)).fetchall()
     ]

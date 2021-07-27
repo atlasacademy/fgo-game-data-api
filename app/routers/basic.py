@@ -2,7 +2,7 @@ from typing import Optional
 
 from aioredis import Redis
 from fastapi import APIRouter, Depends, Response
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..config import Settings
 from ..core import basic, search
@@ -56,10 +56,10 @@ basic_find_servant_extra = """
 async def find_servant(
     search_param: ServantSearchQueryParams = Depends(ServantSearchQueryParams),
     lang: Optional[Language] = None,
-    conn: Connection = Depends(get_db),
+    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    matches = search.search_servant(conn, search_param, limit=10000)
+    matches = await search.search_servant(conn, search_param, limit=10000)
     return list_response(
         [
             await basic.get_basic_servant(
@@ -101,10 +101,10 @@ async def get_servant(
     region: Region,
     servant_id: int,
     lang: Optional[Language] = None,
-    conn: Connection = Depends(get_db),
+    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    servant_id = get_svt_id(conn, servant_id)
+    servant_id = await get_svt_id(conn, servant_id)
     return item_response(
         await basic.get_basic_servant(redis, region, servant_id, lang=lang)
     )
@@ -122,10 +122,10 @@ async def get_servant(
 async def find_equip(
     search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
     lang: Optional[Language] = None,
-    conn: Connection = Depends(get_db),
+    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    matches = search.search_equip(conn, search_param, limit=10000)
+    matches = await search.search_equip(conn, search_param, limit=10000)
     return list_response(
         [
             await basic.get_basic_equip(
@@ -166,10 +166,10 @@ async def get_equip(
     region: Region,
     equip_id: int,
     lang: Optional[Language] = None,
-    conn: Connection = Depends(get_db),
+    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    equip_id = get_ce_id(conn, equip_id)
+    equip_id = await get_ce_id(conn, equip_id)
     return item_response(await basic.get_basic_equip(redis, region, equip_id, lang))
 
 
@@ -185,10 +185,10 @@ async def get_equip(
 async def find_svt(
     search_param: SvtSearchQueryParams = Depends(SvtSearchQueryParams),
     lang: Optional[Language] = None,
-    conn: Connection = Depends(get_db),
+    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    matches = search.search_servant(conn, search_param, limit=10000)
+    matches = await search.search_servant(conn, search_param, limit=10000)
     return list_response(
         [
             await basic.get_basic_servant(
@@ -280,10 +280,10 @@ async def get_command_code(
     region: Region,
     cc_id: int,
     lang: Language = Depends(language_parameter),
-    conn: Connection = Depends(get_db),
+    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    cc_id = get_cc_id(conn, cc_id)
+    cc_id = await get_cc_id(conn, cc_id)
     return item_response(await basic.get_basic_cc(redis, region, cc_id, lang))
 
 
@@ -307,10 +307,10 @@ async def find_skill(
     search_param: SkillSearchParams = Depends(SkillSearchParams),
     reverse: bool = False,
     lang: Language = Depends(language_parameter),
-    conn: Connection = Depends(get_db),
+    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    matches = search.search_skill(conn, search_param, limit=10000)
+    matches = await search.search_skill(conn, search_param, limit=10000)
     return list_response(
         [
             await basic.get_basic_skill(
@@ -367,10 +367,10 @@ async def find_td(
     search_param: TdSearchParams = Depends(TdSearchParams),
     reverse: bool = False,
     lang: Language = Depends(language_parameter),
-    conn: Connection = Depends(get_db),
+    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    matches = search.search_td(conn, search_param, limit=10000)
+    matches = await search.search_td(conn, search_param, limit=10000)
     return list_response(
         [
             await basic.get_basic_td(
@@ -422,10 +422,10 @@ async def find_function(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     lang: Language = Depends(language_parameter),
-    conn: Connection = Depends(get_db),
+    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    matches = search.search_func(conn, search_param, limit=10000)
+    matches = await search.search_func(conn, search_param, limit=10000)
     return list_response(
         [
             await basic.get_basic_function_from_raw(
@@ -483,10 +483,10 @@ async def find_buff(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
     lang: Language = Depends(language_parameter),
-    conn: Connection = Depends(get_db),
+    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    matches = search.search_buff(conn, search_param, limit=10000)
+    matches = await search.search_buff(conn, search_param, limit=10000)
     return list_response(
         [
             await basic.get_basic_buff_from_raw(
@@ -530,12 +530,12 @@ async def get_buff(
 async def get_event(
     event_id: int,
     lang: Language = Depends(language_parameter),
-    conn: Connection = Depends(get_db),
+    conn: AsyncConnection = Depends(get_db),
 ) -> Response:
     """
     Get the basic event data from the given event ID
     """
-    return item_response(basic.get_basic_event(conn, event_id, lang))
+    return item_response(await basic.get_basic_event(conn, event_id, lang))
 
 
 @router.get(
@@ -549,12 +549,12 @@ async def get_event(
 async def get_war(
     war_id: int,
     lang: Language = Depends(language_parameter),
-    conn: Connection = Depends(get_db),
+    conn: AsyncConnection = Depends(get_db),
 ) -> Response:
     """
     Get the basic war data from the given event ID
     """
-    return item_response(basic.get_basic_war(conn, war_id, lang))
+    return item_response(await basic.get_basic_war(conn, war_id, lang))
 
 
 @router.get(
@@ -565,9 +565,9 @@ async def get_war(
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-async def get_quest(quest_id: int, conn: Connection = Depends(get_db)) -> Response:
+async def get_quest(quest_id: int, conn: AsyncConnection = Depends(get_db)) -> Response:
     """
     Get the basic quest data from the given quest ID
     """
-    quest_response = item_response(basic.get_basic_quest(conn, quest_id))
+    quest_response = item_response(await basic.get_basic_quest(conn, quest_id))
     return quest_response

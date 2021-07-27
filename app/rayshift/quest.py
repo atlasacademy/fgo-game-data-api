@@ -2,7 +2,7 @@ from typing import Optional, Union
 
 import httpx
 from fastapi import HTTPException
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..config import SecretSettings, Settings
 from ..db.helpers.rayshift import get_rayshift_quest_db, insert_rayshift_quest_db
@@ -55,15 +55,17 @@ async def get_quest_response(
 
 
 async def get_quest_detail(
-    conn: Connection, region: Region, quest_id: int, phase: int
+    conn: AsyncConnection, region: Region, quest_id: int, phase: int
 ) -> Optional[QuestDetail]:
-    db_quest_detail = get_rayshift_quest_db(conn, quest_id, phase)
+    db_quest_detail = await get_rayshift_quest_db(conn, quest_id, phase)
     if db_quest_detail:
         return db_quest_detail
     else:
         quest_response = await get_quest_response(region, quest_id, phase)
         if quest_response:
-            insert_rayshift_quest_db(conn, quest_id, phase, quest_response.questDetails)
+            await insert_rayshift_quest_db(
+                conn, quest_id, phase, quest_response.questDetails
+            )
             return next(iter(quest_response.questDetails.values()))
 
         return None

@@ -1,10 +1,8 @@
 from typing import Iterable, Optional, Type, TypeVar, Union
 
 from sqlalchemy import Table
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import ColumnElement, select
-
-from app.schemas.base import BaseModelORJson
 
 from ...models.raw import (
     mstBgm,
@@ -61,6 +59,7 @@ from ...models.raw import (
     mstWar,
     mstWarAdd,
 )
+from ...schemas.base import BaseModelORJson
 from ...schemas.raw import (
     MstBgm,
     MstBgmRelease,
@@ -142,12 +141,12 @@ schema_map_fetch_one: dict[  # type:ignore
 TFetchOne = TypeVar("TFetchOne", bound=BaseModelORJson)
 
 
-def get_one(
-    conn: Connection, schema: Type[TFetchOne], where_id: Union[int, str]
+async def get_one(
+    conn: AsyncConnection, schema: Type[TFetchOne], where_id: Union[int, str]
 ) -> Optional[TFetchOne]:
     table, where_col = schema_map_fetch_one[schema]
     stmt = select(table).where(where_col == where_id)
-    entity_db = conn.execute(stmt).fetchone()
+    entity_db = (await conn.execute(stmt)).fetchone()
     if entity_db:
         return schema.from_orm(entity_db)
 
@@ -235,12 +234,13 @@ schema_table_fetch_all: dict[  # type:ignore
 TFetchAll = TypeVar("TFetchAll", bound=BaseModelORJson)
 
 
-def get_all(
-    conn: Connection, schema: Type[TFetchAll], where_id: int
+async def get_all(
+    conn: AsyncConnection, schema: Type[TFetchAll], where_id: int
 ) -> list[TFetchAll]:
     table, where_col, order_col = schema_table_fetch_all[schema]
     stmt = select(table).where(where_col == where_id).order_by(order_col)
-    return [schema.from_orm(db_row) for db_row in conn.execute(stmt).fetchall()]
+    result = await conn.execute(stmt)
+    return [schema.from_orm(db_row) for db_row in result.fetchall()]
 
 
 schema_table_fetch_all_multiple: dict[  # type:ignore
@@ -276,14 +276,15 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
 TFetchAllMultiple = TypeVar("TFetchAllMultiple", bound=BaseModelORJson)
 
 
-def get_all_multiple(
-    conn: Connection,
+async def get_all_multiple(
+    conn: AsyncConnection,
     schema: Type[TFetchAllMultiple],
     where_ids: Iterable[Union[int, str]],
 ) -> list[TFetchAllMultiple]:
     table, where_col, order_col = schema_table_fetch_all_multiple[schema]
     stmt = select(table).where(where_col.in_(where_ids)).order_by(order_col)
-    return [schema.from_orm(db_row) for db_row in conn.execute(stmt).fetchall()]
+    result = await conn.execute(stmt)
+    return [schema.from_orm(db_row) for db_row in result.fetchall()]
 
 
 schema_map_fetch_everything: dict[  # type:ignore
@@ -304,11 +305,11 @@ schema_map_fetch_everything: dict[  # type:ignore
 TFetchEverything = TypeVar("TFetchEverything", bound=BaseModelORJson)
 
 
-def get_everything(
-    conn: Connection, schema: Type[TFetchEverything]
+async def get_everything(
+    conn: AsyncConnection, schema: Type[TFetchEverything]
 ) -> list[TFetchEverything]:  # pragma: no cover
     table, order_col = schema_map_fetch_everything[schema]
     stmt = select(table).order_by(order_col)
-    entities_db = conn.execute(stmt).fetchall()
+    entities_db = (await conn.execute(stmt)).fetchall()
 
     return [schema.from_orm(entity) for entity in entities_db]

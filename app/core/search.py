@@ -2,7 +2,7 @@ from typing import Iterable, Union
 
 from fastapi import HTTPException
 from fuzzywuzzy import fuzz, utils
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..db.helpers.buff import get_buff_search
 from ..db.helpers.func import get_func_search
@@ -120,8 +120,8 @@ def match_name(search_param: str, name: str) -> bool:
         return fuzz.ratio(combined_2to1, combined_1to2) > NAME_MATCH_THRESHOLD
 
 
-def search_servant(
-    conn: Connection,
+async def search_servant(
+    conn: AsyncConnection,
     search_param: Union[ServantSearchQueryParams, SvtSearchQueryParams],
     limit: int = 100,
 ) -> list[MstSvt]:
@@ -143,13 +143,13 @@ def search_servant(
     not_trait_ints = reverse_traits(search_param.notTrait)
 
     if search_param.voiceCondSvt:
-        cond_svt_value = get_svt_ids(conn, search_param.voiceCondSvt)
-        voice_cond_group = get_svt_groups(conn, cond_svt_value)
+        cond_svt_value = await get_svt_ids(conn, search_param.voiceCondSvt)
+        voice_cond_group = await get_svt_groups(conn, cond_svt_value)
     else:
         cond_svt_value = set()
         voice_cond_group = set()
 
-    matches = get_svt_search(
+    matches = await get_svt_search(
         conn,
         svt_type_ints=svt_type_ints,
         svt_flag_ints=svt_flag_ints,
@@ -181,8 +181,8 @@ def search_servant(
     return sorted(matches, key=lambda svt: svt.id)
 
 
-def search_equip(
-    conn: Connection, search_param: EquipSearchQueryParams, limit: int = 100
+async def search_equip(
+    conn: AsyncConnection, search_param: EquipSearchQueryParams, limit: int = 100
 ) -> list[MstSvt]:
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
@@ -191,7 +191,7 @@ def search_equip(
     svt_flag_ints = {SVT_FLAG_NAME_REVERSE[svt_flag] for svt_flag in search_param.flag}
     rarity = set(search_param.rarity)
 
-    matches = get_svt_search(
+    matches = await get_svt_search(
         conn,
         svt_type_ints=svt_type,
         svt_flag_ints=svt_flag_ints,
@@ -215,8 +215,8 @@ def search_equip(
     return sorted(matches, key=lambda svt: svt.id)
 
 
-def search_skill(
-    conn: Connection, search_param: SkillSearchParams, limit: int = 100
+async def search_skill(
+    conn: AsyncConnection, search_param: SkillSearchParams, limit: int = 100
 ) -> list[MstSkill]:
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
@@ -227,7 +227,7 @@ def search_skill(
         else None
     )
 
-    matches = get_skill_search(
+    matches = await get_skill_search(
         conn,
         type_ints,
         search_param.num,
@@ -252,8 +252,8 @@ def search_skill(
     return sorted(matches, key=lambda skill: skill.id)
 
 
-def search_td(
-    conn: Connection, search_param: TdSearchParams, limit: int = 100
+async def search_td(
+    conn: AsyncConnection, search_param: TdSearchParams, limit: int = 100
 ) -> list[MstTreasureDevice]:
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
@@ -265,7 +265,7 @@ def search_td(
     )
     individuality = reverse_traits(search_param.individuality)
 
-    matches = get_td_search(
+    matches = await get_td_search(
         conn,
         individuality,
         card_ints,
@@ -291,8 +291,8 @@ def search_td(
     return sorted(matches, key=lambda td: td.id)
 
 
-def search_buff(
-    conn: Connection, search_param: BuffSearchQueryParams, limit: int = 100
+async def search_buff(
+    conn: AsyncConnection, search_param: BuffSearchQueryParams, limit: int = 100
 ) -> list[MstBuff]:
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
@@ -303,7 +303,7 @@ def search_buff(
     ckSelfIndv = reverse_traits(search_param.ckSelfIndv)
     ckOpIndv = reverse_traits(search_param.ckOpIndv)
 
-    matches = get_buff_search(
+    matches = await get_buff_search(
         conn, buff_types, search_param.buffGroup, vals, tvals, ckSelfIndv, ckOpIndv
     )
 
@@ -321,8 +321,8 @@ def search_buff(
     return sorted(matches, key=lambda buff: buff.id)
 
 
-def search_func(
-    conn: Connection, search_param: FuncSearchQueryParams, limit: int = 100
+async def search_func(
+    conn: AsyncConnection, search_param: FuncSearchQueryParams, limit: int = 100
 ) -> list[MstFunc]:
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
@@ -340,7 +340,7 @@ def search_func(
     tvals = reverse_traits(search_param.tvals)
     questTvals = reverse_traits(search_param.questTvals)
 
-    matches = get_func_search(
+    matches = await get_func_search(
         conn,
         func_types,
         target_types,
@@ -363,7 +363,9 @@ def search_func(
     return sorted(matches, key=lambda func: func.id)
 
 
-def search_item(conn: Connection, search_param: ItemSearchQueryParams) -> list[MstItem]:
+async def search_item(
+    conn: AsyncConnection, search_param: ItemSearchQueryParams
+) -> list[MstItem]:
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
 
@@ -371,7 +373,7 @@ def search_item(conn: Connection, search_param: ItemSearchQueryParams) -> list[M
     item_type = [ITEM_TYPE_REVERSE[item_type] for item_type in search_param.type]
     bg_type = [ITEM_BG_TYPE_REVERSE[bg_type] for bg_type in search_param.background]
 
-    matches = get_item_search(
+    matches = await get_item_search(
         conn,
         individuality,
         item_type,

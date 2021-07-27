@@ -2,7 +2,7 @@ from copy import deepcopy
 from dataclasses import dataclass
 from typing import Any, Iterable, Optional
 
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
 from ...schemas.common import Language, Region
@@ -34,8 +34,8 @@ def get_extra_passive(svt_passive: MstSvtPassiveSkill) -> ExtraPassive:
     )
 
 
-def get_nice_skill_with_svt(
-    conn: Connection,
+async def get_nice_skill_with_svt(
+    conn: AsyncConnection,
     skillEntity: SkillEntityNoReverse,
     svtId: int,
     region: Region,
@@ -96,7 +96,7 @@ def get_nice_skill_with_svt(
                 else None
             )
 
-            nice_func = get_nice_function(
+            nice_func = await get_nice_function(
                 conn,
                 region,
                 function,
@@ -129,8 +129,11 @@ def get_nice_skill_with_svt(
     return [nice_skill]
 
 
-def get_nice_skill_from_raw(
-    conn: Connection, region: Region, raw_skill: SkillEntityNoReverse, lang: Language
+async def get_nice_skill_from_raw(
+    conn: AsyncConnection,
+    region: Region,
+    raw_skill: SkillEntityNoReverse,
+    lang: Language,
 ) -> NiceSkillReverse:
     svt_list = [svt_skill.svtId for svt_skill in raw_skill.mstSvtSkill]
     if svt_list:
@@ -139,20 +142,20 @@ def get_nice_skill_from_raw(
         svt_id = 0
 
     nice_skill = NiceSkillReverse.parse_obj(
-        get_nice_skill_with_svt(conn, raw_skill, svt_id, region, lang)[0]
+        (await get_nice_skill_with_svt(conn, raw_skill, svt_id, region, lang))[0]
     )
 
     return nice_skill
 
 
-def get_nice_skill_from_id(
-    conn: Connection,
+async def get_nice_skill_from_id(
+    conn: AsyncConnection,
     region: Region,
     skill_id: int,
     lang: Language,
 ) -> NiceSkillReverse:
-    raw_skill = get_skill_entity_no_reverse(conn, skill_id, expand=True)
-    return get_nice_skill_from_raw(conn, region, raw_skill, lang)
+    raw_skill = await get_skill_entity_no_reverse(conn, skill_id, expand=True)
+    return await get_nice_skill_from_raw(conn, region, raw_skill, lang)
 
 
 @dataclass(eq=True, frozen=True)
@@ -166,8 +169,8 @@ class SkillSvt:
 MultipleNiceSkills = dict[SkillSvt, NiceSkill]
 
 
-def get_multiple_nice_skills(
-    conn: Connection,
+async def get_multiple_nice_skills(
+    conn: AsyncConnection,
     region: Region,
     skill_svts: Iterable[SkillSvt],
     lang: Language,
@@ -185,14 +188,16 @@ def get_multiple_nice_skills(
     """
     raw_skills = {
         skill.mstSkill.id: skill
-        for skill in get_skill_entity_no_reverse_many(
+        for skill in await get_skill_entity_no_reverse_many(
             conn, [skill.skill_id for skill in skill_svts], expand=True
         )
     }
     return {
         skill_svt: NiceSkill.parse_obj(
-            get_nice_skill_with_svt(
-                conn, raw_skills[skill_svt.skill_id], skill_svt.svt_id, region, lang
+            (
+                await get_nice_skill_with_svt(
+                    conn, raw_skills[skill_svt.skill_id], skill_svt.svt_id, region, lang
+                )
             )[0]
         )
         for skill_svt in skill_svts

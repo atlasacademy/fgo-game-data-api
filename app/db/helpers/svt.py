@@ -1,7 +1,7 @@
 from typing import Iterable, Optional, Union
 
 from sqlalchemy import Table
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import Join, and_, not_, or_, select
 from sqlalchemy.sql.elements import ClauseElement
 
@@ -28,21 +28,21 @@ from ...schemas.raw import (
 )
 
 
-def get_all_servants(conn: Connection) -> list[MstSvt]:  # pragma: no cover
+async def get_all_servants(conn: AsyncConnection) -> list[MstSvt]:  # pragma: no cover
     stmt = select(mstSvt).where(
         and_(mstSvt.c.collectionNo != 0, mstSvt.c.type.in_(SERVANT_TYPES))
     )
-    return [MstSvt.from_orm(svt) for svt in conn.execute(stmt).fetchall()]
+    return [MstSvt.from_orm(svt) for svt in (await conn.execute(stmt)).fetchall()]
 
 
-def get_all_equips(conn: Connection) -> list[MstSvt]:  # pragma: no cover
+async def get_all_equips(conn: AsyncConnection) -> list[MstSvt]:  # pragma: no cover
     stmt = select(mstSvt).where(
         and_(mstSvt.c.collectionNo != 0, mstSvt.c.type == SvtType.SERVANT_EQUIP)
     )
-    return [MstSvt.from_orm(svt) for svt in conn.execute(stmt).fetchall()]
+    return [MstSvt.from_orm(svt) for svt in (await conn.execute(stmt)).fetchall()]
 
 
-def get_svt_id(conn: Connection, col_no: int) -> int:
+async def get_svt_id(conn: AsyncConnection, col_no: int) -> int:
     if col_no == 0:
         return 0
     stmt = select(mstSvt.c.id).where(
@@ -55,34 +55,41 @@ def get_svt_id(conn: Connection, col_no: int) -> int:
             ),
         )
     )
-    mstSvt_db = conn.execute(stmt).fetchone()
+    mstSvt_db = (await conn.execute(stmt)).fetchone()
     if mstSvt_db:
         return int(mstSvt_db.id)
     return col_no
 
 
-def get_ce_id(conn: Connection, col_no: int) -> int:
+async def get_ce_id(conn: AsyncConnection, col_no: int) -> int:
     if col_no == 0:
         return 0
     stmt = select(mstSvt.c.id).where(
         and_(mstSvt.c.collectionNo == col_no, mstSvt.c.type == SvtType.SERVANT_EQUIP)
     )
-    mstSvt_db = conn.execute(stmt).fetchone()
+    mstSvt_db = (await conn.execute(stmt)).fetchone()
     if mstSvt_db:
         return int(mstSvt_db.id)
     return col_no
 
 
-def get_svt_script(conn: Connection, svt_ids: list[int]) -> list[MstSvtScript]:
+async def get_svt_script(
+    conn: AsyncConnection, svt_ids: list[int]
+) -> list[MstSvtScript]:
     stmt = (
         select(mstSvtScript)
         .where((mstSvtScript.c.id / 10).in_(svt_ids))
         .order_by(mstSvtScript.c.id, mstSvtScript.c.form)
     )
-    return [MstSvtScript.from_orm(db_row) for db_row in conn.execute(stmt).fetchall()]
+    return [
+        MstSvtScript.from_orm(db_row)
+        for db_row in (await conn.execute(stmt)).fetchall()
+    ]
 
 
-def get_mstSvtVoice(conn: Connection, svt_ids: Iterable[int]) -> list[MstSvtVoice]:
+async def get_mstSvtVoice(
+    conn: AsyncConnection, svt_ids: Iterable[int]
+) -> list[MstSvtVoice]:
     mstSvtVoice_stmt = (
         select(mstSvtVoice)
         .where(mstSvtVoice.c.id.in_(svt_ids))
@@ -90,12 +97,12 @@ def get_mstSvtVoice(conn: Connection, svt_ids: Iterable[int]) -> list[MstSvtVoic
     )
     return [
         MstSvtVoice.from_orm(svt_voice)
-        for svt_voice in conn.execute(mstSvtVoice_stmt).fetchall()
+        for svt_voice in (await conn.execute(mstSvtVoice_stmt)).fetchall()
     ]
 
 
-def get_mstVoicePlayCond(
-    conn: Connection, svt_ids: Iterable[int]
+async def get_mstVoicePlayCond(
+    conn: AsyncConnection, svt_ids: Iterable[int]
 ) -> list[MstVoicePlayCond]:
     mstVoicePlayCond_stmt = (
         select(mstVoicePlayCond)
@@ -106,12 +113,12 @@ def get_mstVoicePlayCond(
     )
     return [
         MstVoicePlayCond.from_orm(play_cond)
-        for play_cond in conn.execute(mstVoicePlayCond_stmt).fetchall()
+        for play_cond in (await conn.execute(mstVoicePlayCond_stmt)).fetchall()
     ]
 
 
-def get_mstSubtitle(
-    conn: Connection, svt_ids: Iterable[int]
+async def get_mstSubtitle(
+    conn: AsyncConnection, svt_ids: Iterable[int]
 ) -> list[GlobalNewMstSubtitle]:
     mstSubtitle_stmt = (
         select(mstSubtitle)
@@ -120,20 +127,20 @@ def get_mstSubtitle(
     )
     return [
         GlobalNewMstSubtitle.from_orm(subtitle)
-        for subtitle in conn.execute(mstSubtitle_stmt).fetchall()
+        for subtitle in (await conn.execute(mstSubtitle_stmt)).fetchall()
     ]
 
 
-def get_svt_ids(conn: Connection, svt_colNos: Iterable[int]) -> set[int]:
+async def get_svt_ids(conn: AsyncConnection, svt_colNos: Iterable[int]) -> set[int]:
     stmt = select(mstSvt.c.id).where(
         or_(mstSvt.c.collectionNo.in_(svt_colNos), mstSvt.c.id.in_(svt_colNos))
     )
-    return {int(mstSvt.id) for mstSvt in conn.execute(stmt).fetchall()}
+    return {int(mstSvt.id) for mstSvt in (await conn.execute(stmt)).fetchall()}
 
 
-def get_svt_groups(conn: Connection, svt_ids: Iterable[int]) -> set[int]:
+async def get_svt_groups(conn: AsyncConnection, svt_ids: Iterable[int]) -> set[int]:
     stmt = select(mstSvtGroup.c.id).where(mstSvtGroup.c.svtId.in_(svt_ids))
-    return {int(group_id.id) for group_id in conn.execute(stmt).fetchall()}
+    return {int(group_id.id) for group_id in (await conn.execute(stmt)).fetchall()}
 
 
 def voice_cond_pattern(
@@ -142,8 +149,8 @@ def voice_cond_pattern(
     return [{"conds": [{"condType": condType, "value": value}]}]
 
 
-def get_svt_search(
-    conn: Connection,
+async def get_svt_search(
+    conn: AsyncConnection,
     svt_type_ints: Optional[Iterable[int]] = None,
     svt_flag_ints: Optional[Iterable[int]] = None,
     excludeCollectionNo: Optional[Iterable[int]] = None,
@@ -245,4 +252,6 @@ def get_svt_search(
         select(mstSvt).distinct().select_from(from_clause).where(and_(*where_clause))
     )
 
-    return [MstSvt.from_orm(svt) for svt in conn.execute(svt_search_stmt).fetchall()]
+    return [
+        MstSvt.from_orm(svt) for svt in (await conn.execute(svt_search_stmt)).fetchall()
+    ]

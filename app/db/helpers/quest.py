@@ -1,6 +1,6 @@
 from typing import Iterable, Optional
 
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import and_, case, func, or_, select
 
 from ...models.raw import (
@@ -45,24 +45,27 @@ QUEST_WITH_WAR_SELECT = select(mstQuest, mstWar.c.id.label("warId")).select_from
 )
 
 
-def get_one_quest_with_war(
-    conn: Connection, quest_id: int
+async def get_one_quest_with_war(
+    conn: AsyncConnection, quest_id: int
 ) -> Optional[MstQuestWithWar]:
     stmt = QUEST_WITH_WAR_SELECT.where(mstQuest.c.id == quest_id)
 
-    mstQuestWar = conn.execute(stmt).fetchone()
+    mstQuestWar = (await conn.execute(stmt)).fetchone()
     if mstQuestWar:
         return MstQuestWithWar.from_orm(mstQuestWar)
 
     return None
 
 
-def get_many_quests_with_war(
-    conn: Connection, quest_ids: Iterable[int]
+async def get_many_quests_with_war(
+    conn: AsyncConnection, quest_ids: Iterable[int]
 ) -> list[MstQuestWithWar]:
     stmt = QUEST_WITH_WAR_SELECT.where(mstQuest.c.id.in_(quest_ids))
 
-    return [MstQuestWithWar.from_orm(quest) for quest in conn.execute(stmt).fetchall()]
+    return [
+        MstQuestWithWar.from_orm(quest)
+        for quest in (await conn.execute(stmt)).fetchall()
+    ]
 
 
 JOINED_QUEST_TABLES = (
@@ -127,28 +130,36 @@ SELECT_QUEST_ENTITY = [
 ]
 
 
-def get_quest_entity(conn: Connection, quest_ids: Iterable[int]) -> list[QuestEntity]:
+async def get_quest_entity(
+    conn: AsyncConnection, quest_ids: Iterable[int]
+) -> list[QuestEntity]:
     stmt = (
         select(*SELECT_QUEST_ENTITY)
         .select_from(JOINED_QUEST_ENTITY_TABLES)
         .where(mstQuest.c.id.in_(quest_ids))
         .group_by(mstQuest.c.id)
     )
-    return [QuestEntity.from_orm(quest) for quest in conn.execute(stmt).fetchall()]
+    return [
+        QuestEntity.from_orm(quest) for quest in (await conn.execute(stmt)).fetchall()
+    ]
 
 
-def get_quest_by_spot(conn: Connection, spot_ids: Iterable[int]) -> list[QuestEntity]:
+async def get_quest_by_spot(
+    conn: AsyncConnection, spot_ids: Iterable[int]
+) -> list[QuestEntity]:
     stmt = (
         select(*SELECT_QUEST_ENTITY)
         .select_from(JOINED_QUEST_ENTITY_TABLES)
         .where(mstQuest.c.spotId.in_(spot_ids))
         .group_by(mstQuest.c.id)
     )
-    return [QuestEntity.from_orm(quest) for quest in conn.execute(stmt).fetchall()]
+    return [
+        QuestEntity.from_orm(quest) for quest in (await conn.execute(stmt)).fetchall()
+    ]
 
 
-def get_quest_phase_entity(
-    conn: Connection, quest_id: int, phase_id: int
+async def get_quest_phase_entity(
+    conn: AsyncConnection, quest_id: int, phase_id: int
 ) -> Optional[QuestPhaseEntity]:
     all_phases_cte = (
         select(
@@ -247,27 +258,27 @@ def get_quest_phase_entity(
         )
     )
 
-    quest_phase = conn.execute(sql_stmt).fetchone()
+    quest_phase = (await conn.execute(sql_stmt)).fetchone()
     if quest_phase:
         return QuestPhaseEntity.from_orm(quest_phase)
 
     return None
 
 
-def get_stage_remap(
-    conn: Connection, quest_id: int, phase_id: int
+async def get_stage_remap(
+    conn: AsyncConnection, quest_id: int, phase_id: int
 ) -> list[MstStageRemap]:
     stmt = select(mstStageRemap).where(
         and_(
             mstStageRemap.c.questId == quest_id, mstStageRemap.c.questPhase == phase_id
         )
     )
-    stage_remaps = conn.execute(stmt).fetchall()
+    stage_remaps = (await conn.execute(stmt)).fetchall()
     return [MstStageRemap.from_orm(stage_remap) for stage_remap in stage_remaps]
 
 
-def get_remapped_stages(
-    conn: Connection, stage_remaps: Iterable[MstStageRemap]
+async def get_remapped_stages(
+    conn: AsyncConnection, stage_remaps: Iterable[MstStageRemap]
 ) -> list[MstStage]:
     remapped_conditions = [
         and_(
@@ -278,22 +289,24 @@ def get_remapped_stages(
         for stage_remap in stage_remaps
     ]
     stmt = select(mstStage).where(or_(*remapped_conditions))
-    return [MstStage.from_orm(stage) for stage in conn.execute(stmt).fetchall()]
+    return [MstStage.from_orm(stage) for stage in (await conn.execute(stmt)).fetchall()]
 
 
-def get_bgm_from_stage(conn: Connection, stages: Iterable[MstStage]) -> list[MstBgm]:
+async def get_bgm_from_stage(
+    conn: AsyncConnection, stages: Iterable[MstStage]
+) -> list[MstBgm]:
     bgm_ids = [stage.bgmId for stage in stages]
     stmt = select(mstBgm).where(mstBgm.c.id.in_(bgm_ids))
-    return [MstBgm.from_orm(bgm) for bgm in conn.execute(stmt).fetchall()]
+    return [MstBgm.from_orm(bgm) for bgm in (await conn.execute(stmt)).fetchall()]
 
 
-def get_quest_from_ai(conn: Connection, ai_id: int) -> list[StageLink]:
+async def get_quest_from_ai(conn: AsyncConnection, ai_id: int) -> list[StageLink]:
     ai_script_pattern = {"aiFieldIds": [{"id": ai_id}]}
     stmt = select(mstStage.c.questId, mstStage.c.questPhase, mstStage.c.wave).where(
         mstStage.c.script.contains(ai_script_pattern)
     )
 
-    stages = conn.execute(stmt).fetchall()
+    stages = (await conn.execute(stmt)).fetchall()
     return [
         StageLink(questId=stage.questId, phase=stage.questPhase, stage=stage.wave)
         for stage in stages

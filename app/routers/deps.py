@@ -1,14 +1,13 @@
-from typing import Generator, Optional
+from typing import AsyncGenerator, Optional
 
 from aioredis import Redis
 from fastapi import Request
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection, AsyncEngine
 
-from ..db.engine import engines
 from ..schemas.common import Language, Region
 
 
-def language_parameter(lang: Optional[Language] = None) -> Language:
+async def language_parameter(lang: Optional[Language] = None) -> Language:
     """Dependency for the language parameter, defaults to Language.jp if none is supplied"""
     if lang:
         return lang
@@ -16,16 +15,27 @@ def language_parameter(lang: Optional[Language] = None) -> Language:
         return Language.jp
 
 
-def get_db(region: Region) -> Generator[Connection, None, None]:
-    with engines[region].connect() as connection:
+async def get_db(
+    request: Request, region: Region
+) -> AsyncGenerator[AsyncConnection, None]:
+    async with request.app.state.async_engines[region].connect() as connection:
         yield connection
 
 
-def get_db_transaction(region: Region) -> Generator[Connection, None, None]:
-    with engines[region].begin() as connection:
+async def get_db_transaction(
+    request: Request, region: Region
+) -> AsyncGenerator[AsyncConnection, None]:
+    async with request.app.state.async_engines[region].begin() as connection:
         yield connection
 
 
-def get_redis(request: Request) -> Redis:
+async def get_redis(request: Request) -> Redis:
     redis: Redis = request.app.state.redis
     return redis
+
+
+def get_async_engines(
+    request: Request,
+) -> dict[Region, AsyncEngine]:  # pragma: no cover
+    async_engines: dict[Region, AsyncEngine] = request.app.state.async_engines
+    return async_engines

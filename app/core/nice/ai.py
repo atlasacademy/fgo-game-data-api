@@ -1,4 +1,4 @@
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
 from ...schemas.common import Language, Region
@@ -21,8 +21,11 @@ from .skill import get_nice_skill_from_id
 settings = Settings()
 
 
-def get_nice_ai_act(
-    conn: Connection, region: Region, mstAiAct: MstAiAct, lang: Language = Language.jp
+async def get_nice_ai_act(
+    conn: AsyncConnection,
+    region: Region,
+    mstAiAct: MstAiAct,
+    lang: Language = Language.jp,
 ) -> NiceAiAct:
     nice_ai_act = NiceAiAct(
         id=mstAiAct.id,
@@ -33,14 +36,14 @@ def get_nice_ai_act(
     if len(mstAiAct.skillVals) >= 2:
         nice_ai_act.skillId = mstAiAct.skillVals[0]
         nice_ai_act.skillLv = mstAiAct.skillVals[1]
-        nice_ai_act.skill = get_nice_skill_from_id(
+        nice_ai_act.skill = await get_nice_skill_from_id(
             conn, region, mstAiAct.skillVals[0], lang
         )
     return nice_ai_act
 
 
-def get_nice_ai(
-    conn: Connection,
+async def get_nice_ai(
+    conn: AsyncConnection,
     region: Region,
     one_ai: AiEntity,
     field: bool = False,
@@ -58,7 +61,7 @@ def get_nice_ai(
         ],
         condNegative=one_ai.mstAi.cond < 0,
         vals=one_ai.mstAi.vals,
-        aiAct=get_nice_ai_act(conn, region, one_ai.mstAiAct, lang),
+        aiAct=await get_nice_ai_act(conn, region, one_ai.mstAiAct, lang),
         avals=one_ai.mstAi.avals,
         parentAis=get_parent_ais(region, one_ai.mstAi.id, field),
         infoText=one_ai.mstAi.infoText,
@@ -71,18 +74,21 @@ def get_nice_ai(
     return nice_ai
 
 
-def get_nice_ai_collection(
-    conn: Connection,
+async def get_nice_ai_collection(
+    conn: AsyncConnection,
     region: Region,
     ai_id: int,
     field: bool = False,
     lang: Language = Language.jp,
 ) -> NiceAiCollection:
-    full_ai = get_ai_collection(conn, ai_id, field)
+    full_ai = await get_ai_collection(conn, ai_id, field)
     return NiceAiCollection(
-        mainAis=(get_nice_ai(conn, region, ai, field, lang) for ai in full_ai.mainAis),
-        relatedAis=(
-            get_nice_ai(conn, region, ai, field, lang) for ai in full_ai.relatedAis
-        ),
+        mainAis=[
+            await get_nice_ai(conn, region, ai, field, lang) for ai in full_ai.mainAis
+        ],
+        relatedAis=[
+            await get_nice_ai(conn, region, ai, field, lang)
+            for ai in full_ai.relatedAis
+        ],
         relatedQuests=full_ai.relatedQuests,
     )

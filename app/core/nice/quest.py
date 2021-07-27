@@ -1,7 +1,7 @@
 from typing import Any, Optional, Union
 
 from aioredis import Redis
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
 from ...db.helpers import war
@@ -83,15 +83,15 @@ def get_nice_stage(
     )
 
 
-def get_nice_quest(
-    conn: Connection,
+async def get_nice_quest(
+    conn: AsyncConnection,
     region: Region,
     raw_quest: Union[QuestEntity, QuestPhaseEntity],
     lang: Language,
     war_id: Optional[int] = None,
 ) -> dict[str, Any]:
     if not war_id:
-        war_id = war.get_war_from_spot(conn, raw_quest.mstQuest.spotId)
+        war_id = await war.get_war_from_spot(conn, raw_quest.mstQuest.spotId)
 
     nice_data: dict[str, Any] = {
         "id": raw_quest.mstQuest.id,
@@ -101,7 +101,7 @@ def get_nice_quest(
         "consumeItem": [
             nice_item_amount
             for consumeItem in raw_quest.mstQuestConsumeItem
-            for nice_item_amount in get_nice_item_amount(
+            for nice_item_amount in await get_nice_item_amount(
                 conn, region, consumeItem.itemIds, consumeItem.nums, lang
             )
         ],
@@ -123,23 +123,23 @@ def get_nice_quest(
     return nice_data
 
 
-def get_nice_quest_alone(
-    conn: Connection, region: Region, quest_id: int, lang: Language
+async def get_nice_quest_alone(
+    conn: AsyncConnection, region: Region, quest_id: int, lang: Language
 ) -> NiceQuest:
-    raw_quest = raw.get_quest_entity(conn, quest_id)
-    return NiceQuest.parse_obj(get_nice_quest(conn, region, raw_quest, lang))
+    raw_quest = await raw.get_quest_entity(conn, quest_id)
+    return NiceQuest.parse_obj(await get_nice_quest(conn, region, raw_quest, lang))
 
 
 async def get_nice_quest_phase(
-    conn: Connection,
+    conn: AsyncConnection,
     redis: Redis,
     region: Region,
     quest_id: int,
     phase: int,
     lang: Language = Language.jp,
 ) -> NiceQuestPhase:
-    raw_quest = raw.get_quest_phase_entity(conn, quest_id, phase)
-    nice_data = get_nice_quest(conn, region, raw_quest, lang)
+    raw_quest = await raw.get_quest_phase_entity(conn, quest_id, phase)
+    nice_data = await get_nice_quest(conn, region, raw_quest, lang)
 
     stages = sorted(raw_quest.mstStage, key=lambda stage: stage.wave)
 
@@ -193,7 +193,7 @@ async def get_nice_quest_phase(
 
     if raw_quest.mstQuestPhaseDetail:
         nice_data["spotId"] = raw_quest.mstQuestPhaseDetail.spotId
-        nice_data["warId"] = war.get_war_from_spot(
+        nice_data["warId"] = await war.get_war_from_spot(
             conn, raw_quest.mstQuestPhaseDetail.spotId
         )
         nice_data["consumeType"] = QUEST_CONSUME_TYPE_NAME[

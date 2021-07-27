@@ -7,6 +7,7 @@ import pytest
 from aioredis import Redis
 from asgi_lifespan import LifespanManager
 from httpx import AsyncClient
+from sqlalchemy.ext.asyncio import AsyncConnection, create_async_engine
 
 from app.config import SecretSettings
 from app.main import app
@@ -31,6 +32,19 @@ async def client() -> AsyncGenerator[AsyncClient, None]:
     async with LifespanManager(app):
         async with AsyncClient(app=app, base_url="http://test") as ac:
             yield ac
+
+
+@pytest.fixture(scope="session")
+async def na_db_conn() -> AsyncGenerator[AsyncConnection, None]:
+    engine = create_async_engine(
+        secrets.na_postgresdsn.replace("postgresql", "postgresql+asyncpg")
+    )
+    connection = await engine.connect()
+    try:
+        yield connection
+    finally:
+        await connection.close()
+        await engine.dispose()
 
 
 @pytest.fixture(scope="session")

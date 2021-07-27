@@ -1,57 +1,60 @@
 import orjson
 import pytest
 from fastapi import HTTPException
+from sqlalchemy.ext.asyncio import AsyncConnection
 
 from app.core.nice.func import parse_dataVals
-from app.core.nice.nice import get_nice_servant_model
 from app.core.utils import get_voice_name, sort_by_collection_no
 from app.data.custom_mappings import Translation
-from app.db.engine import engines
 from app.routers.utils import list_string_exclude
 from app.schemas.basic import BasicServant
-from app.schemas.common import Language, Region, ReverseDepth
+from app.schemas.common import Language, ReverseDepth
 from app.schemas.gameenums import FuncType
+from app.schemas.nice import NiceServant
 from app.schemas.raw import get_subtitle_svtId
+
+from .utils import get_response_data
 
 
 def test_subtitle_svtId() -> None:
     assert get_subtitle_svtId("PLAINDEMO_99100001") == -1
+    assert get_subtitle_svtId("9934820_0_B160") == 9934820
 
 
-def test_parse_dataVals_add_state_6_items() -> None:
-    with engines[Region.NA].connect() as conn:
-        result = parse_dataVals(
-            conn, "[1000,3,3,300,1000,10]", FuncType.ADD_STATE, Region.NA
-        )
-        assert result == {
-            "Rate": 1000,
-            "Turn": 3,
-            "Count": 3,
-            "Value": 300,
-            "UseRate": 1000,
-            "Value2": 10,
-        }
+@pytest.mark.asyncio
+async def test_parse_dataVals_add_state_6_items(na_db_conn: AsyncConnection) -> None:
+    result = await parse_dataVals(
+        na_db_conn, "[1000,3,3,300,1000,10]", FuncType.ADD_STATE
+    )
+    assert result == {
+        "Rate": 1000,
+        "Turn": 3,
+        "Count": 3,
+        "Value": 300,
+        "UseRate": 1000,
+        "Value2": 10,
+    }
 
 
-def test_parse_dataVals_unknown_datavals(caplog: pytest.LogCaptureFixture) -> None:
-    with engines[Region.NA].connect() as conn:
-        parse_dataVals(conn, "[1000,3,3,300]", FuncType.SUB_STATE, Region.NA)
-        assert (
-            "Some datavals weren't parsed for func type 2: "
-            "[1000,3,3,300] => {'Rate': 1000, 'Value': 3, 'Value2': 3}" in caplog.text
-        )
+@pytest.mark.asyncio
+async def test_parse_dataVals_unknown_datavals(
+    caplog: pytest.LogCaptureFixture, na_db_conn: AsyncConnection
+) -> None:
+    await parse_dataVals(na_db_conn, "[1000,3,3,300]", FuncType.SUB_STATE)
+    assert (
+        "Some datavals weren't parsed for func type 2: "
+        "[1000,3,3,300] => {'Rate': 1000, 'Value': 3, 'Value2': 3}" in caplog.text
+    )
 
 
-def test_parse_dataVals_class_drop_up_rate() -> None:
-    with engines[Region.NA].connect() as conn:
-        result = parse_dataVals(
-            conn, "[2,400,80017]", FuncType.CLASS_DROP_UP, Region.NA
-        )
-        result = {k: v for k, v in result.items() if "aa" not in k}
-        assert result == {
-            "EventId": 80017,
-            "RateCount": 400,
-        }
+@pytest.mark.asyncio
+async def test_parse_dataVals_class_drop_up_rate(na_db_conn: AsyncConnection) -> None:
+    result = await parse_dataVals(na_db_conn, "[2,400,80017]", FuncType.CLASS_DROP_UP)
+    result = {k: v for k, v in result.items() if "aa" not in k}
+    assert result == {
+        "EventId": 80017,
+        "RateCount": 400,
+    }
 
 
 cases_datavals_fail_dict = {
@@ -68,10 +71,13 @@ cases_datavals_fail = [
 ]
 
 
+@pytest.mark.asyncio
 @pytest.mark.parametrize("dataVals", cases_datavals_fail)
-def test_parse_datavals_fail_list_str(dataVals: str) -> None:
-    with pytest.raises(HTTPException), engines[Region.NA].connect() as conn:
-        parse_dataVals(conn, dataVals, 1, Region.NA)
+async def test_parse_datavals_fail_list_str(
+    dataVals: str, na_db_conn: AsyncConnection
+) -> None:
+    with pytest.raises(HTTPException):
+        await parse_dataVals(na_db_conn, dataVals, 1)
 
 
 def test_reverseDepth_str_comparison() -> None:
@@ -111,12 +117,13 @@ def test_sort_by_collection_no() -> None:
 
 
 def test_list_exclude() -> None:
-    with engines[Region.JP].connect() as conn:
-        test_data = get_nice_servant_model(conn, Region.JP, 504500, Language.en)
-        excluded_keys = {"profile"}
-        json_data = list_string_exclude([test_data], exclude=excluded_keys)
-        for key in excluded_keys:
-            assert key not in orjson.loads(json_data)
+    test_data = NiceServant.parse_obj(
+        get_response_data("test_data_nice", "NA_Dantes_lore_costume")
+    )
+    excluded_keys = {"profile"}
+    json_data = list_string_exclude([test_data], exclude=excluded_keys)
+    for key in excluded_keys:
+        assert key not in orjson.loads(json_data)
 
 
 def test_voice_lang_en() -> None:

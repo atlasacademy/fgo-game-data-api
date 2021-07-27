@@ -1,9 +1,11 @@
-from fastapi import APIRouter, BackgroundTasks, Response
+from fastapi import APIRouter, BackgroundTasks, Depends, Response
 from git import Repo
+from sqlalchemy.ext.asyncio import AsyncEngine
 
 from ..config import SecretSettings, Settings, project_root
-from ..schemas.common import RepoInfo
+from ..schemas.common import Region, RepoInfo
 from ..tasks import REGION_PATHS, pull_and_update, repo_info
+from .deps import get_async_engines
 from .utils import pretty_print_response
 
 
@@ -37,8 +39,11 @@ instance_info = dict(
 
 
 @router.post("/update")  # pragma: no cover
-async def update_gamedata(background_tasks: BackgroundTasks) -> Response:
-    background_tasks.add_task(pull_and_update, REGION_PATHS)
+async def update_gamedata(
+    background_tasks: BackgroundTasks,
+    async_engines: dict[Region, AsyncEngine] = Depends(get_async_engines),
+) -> Response:
+    background_tasks.add_task(pull_and_update, REGION_PATHS, async_engines)
     response_data = dict(
         message="Game data is being updated in the background",
         game_data={k.value: v.dict() for k, v in repo_info.items()},

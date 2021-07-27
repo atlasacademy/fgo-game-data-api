@@ -2,7 +2,7 @@ import re
 from typing import Any, Optional, Union
 
 from fastapi import HTTPException
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings, logger
 from ...db.helpers import fetch
@@ -49,8 +49,8 @@ LIST_DATAVALS = {
 }
 
 
-def parse_dataVals(
-    conn: Connection, datavals: str, functype: int
+async def parse_dataVals(
+    conn: AsyncConnection, datavals: str, functype: int
 ) -> dict[str, Union[int, str, list[int]]]:
     error_message = f"Can't parse datavals: {datavals}"
     INITIAL_VALUE = -98765
@@ -161,10 +161,10 @@ def parse_dataVals(
                         # This assumes DependFuncId is parsed before.
                         # If DW ever make it more complicated than this, consider
                         # using DUMMY_PREFIX + ... and parse it later
-                        dependMstFunc = fetch.get_one(conn, MstFunc, int(output["DependFuncId"]))  # type: ignore
+                        dependMstFunc = await fetch.get_one(conn, MstFunc, int(output["DependFuncId"]))  # type: ignore
                         if not dependMstFunc:
                             raise HTTPException(status_code=500, detail=error_message)
-                        vals_value = parse_dataVals(
+                        vals_value = await parse_dataVals(
                             conn, array2[1], dependMstFunc.funcType
                         )
                         output["DependFuncVals"] = vals_value  # type: ignore
@@ -233,8 +233,8 @@ def get_nice_func_group(
     )
 
 
-def get_nice_function(
-    conn: Connection,
+async def get_nice_function(
+    conn: AsyncConnection,
     region: Region,
     function: FunctionEntityNoReverse,
     svals: Optional[list[str]] = None,
@@ -280,7 +280,7 @@ def get_nice_function(
     ]:
         if argument:
             nice_func[field] = [
-                parse_dataVals(conn, sval, function.mstFunc.funcType)
+                await parse_dataVals(conn, sval, function.mstFunc.funcType)
                 for sval in argument
             ]
 

@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from typing import Any
 
 from aioredis import Redis
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...data.custom_mappings import Translation
 from ...schemas.common import Language, Region
@@ -283,7 +283,7 @@ def get_enemies_in_stage(
 
 
 async def get_quest_enemies(
-    conn: Connection,
+    conn: AsyncConnection,
     redis: Redis,
     region: Region,
     quest_detail: QuestDetail,
@@ -321,8 +321,8 @@ async def get_quest_enemies(
                 all_skill_ids.add(SkillSvt(skill_id, user_svt.svtId))
 
     # Get all skills and NPs data at once to avoid calling the DB a lot of times
-    all_skills = get_multiple_nice_skills(conn, region, all_skill_ids, lang)
-    all_tds = get_multiple_nice_tds(conn, region, all_td_ids, lang)
+    all_skills = await get_multiple_nice_skills(conn, region, all_skill_ids, lang)
+    all_tds = await get_multiple_nice_tds(conn, region, all_td_ids, lang)
 
     out_enemies: list[list[QuestEnemy]] = []
     for enemy_deck in quest_detail.enemyDeck:

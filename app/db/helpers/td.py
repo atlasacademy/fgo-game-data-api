@@ -1,7 +1,7 @@
 from typing import Any, Iterable, Optional
 
 from sqlalchemy.dialects.postgresql import aggregate_order_by
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import and_, func, select
 
 from ...models.raw import (
@@ -14,7 +14,9 @@ from ...schemas.raw import MstTreasureDevice, TdEntityNoReverse
 from .utils import sql_jsonb_agg
 
 
-def get_tdEntity(conn: Connection, td_ids: Iterable[int]) -> list[TdEntityNoReverse]:
+async def get_tdEntity(
+    conn: AsyncConnection, td_ids: Iterable[int]
+) -> list[TdEntityNoReverse]:
     mstTreasureDeviceLvJson = (
         select(
             mstTreasureDeviceLv.c.treaureDeviceId,
@@ -60,23 +62,24 @@ def get_tdEntity(conn: Connection, td_ids: Iterable[int]) -> list[TdEntityNoReve
     )
 
     skill_entities = [
-        TdEntityNoReverse.from_orm(skill) for skill in conn.execute(stmt).fetchall()
+        TdEntityNoReverse.from_orm(skill)
+        for skill in (await conn.execute(stmt)).fetchall()
     ]
     order = {skill_id: i for i, skill_id in enumerate(td_ids)}
 
     return sorted(skill_entities, key=lambda td: order[td.mstTreasureDevice.id])
 
 
-def get_mstSvtTreasureDevice(conn: Connection, svt_id: int) -> list[Any]:
+async def get_mstSvtTreasureDevice(conn: AsyncConnection, svt_id: int) -> list[Any]:
     mstSvtTreasureDevice_stmt = select(mstSvtTreasureDevice).where(
         mstSvtTreasureDevice.c.svtId == svt_id
     )
-    fetched: list[Any] = conn.execute(mstSvtTreasureDevice_stmt).fetchall()
+    fetched: list[Any] = (await conn.execute(mstSvtTreasureDevice_stmt)).fetchall()
     return fetched
 
 
-def get_td_search(
-    conn: Connection,
+async def get_td_search(
+    conn: AsyncConnection,
     individuality: Optional[Iterable[int]],
     card: Optional[Iterable[int]],
     hits: Optional[Iterable[int]],
@@ -121,5 +124,6 @@ def get_td_search(
     )
 
     return [
-        MstTreasureDevice.from_orm(td) for td in conn.execute(td_search_stmt).fetchall()
+        MstTreasureDevice.from_orm(td)
+        for td in (await conn.execute(td_search_stmt)).fetchall()
     ]

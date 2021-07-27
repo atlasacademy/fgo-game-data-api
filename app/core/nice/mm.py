@@ -1,7 +1,7 @@
 from collections import defaultdict
 from typing import Optional
 
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...core.basic import get_basic_quest_from_raw
 from ...schemas.nice import NiceMasterMission
@@ -31,14 +31,16 @@ def get_nice_master_mission_from_raw(raw_mm: MasterMissionEntity) -> NiceMasterM
     )
 
 
-def get_nice_master_mission(
-    conn: Connection, mm_id: int, mstMasterMission: Optional[MstMasterMission] = None
+async def get_nice_master_mission(
+    conn: AsyncConnection,
+    mm_id: int,
+    mstMasterMission: Optional[MstMasterMission] = None,
 ) -> NiceMasterMission:
-    raw_mm = raw.get_master_mission_entity(conn, mm_id, mstMasterMission)
+    raw_mm = await raw.get_master_mission_entity(conn, mm_id, mstMasterMission)
     return get_nice_master_mission_from_raw(raw_mm)
 
 
-def get_all_nice_mms(
-    conn: Connection, mstMasterMissions: list[MstMasterMission]
+async def get_all_nice_mms(
+    conn: AsyncConnection, mstMasterMissions: list[MstMasterMission]
 ) -> list[NiceMasterMission]:  # pragma: no cover
-    return [get_nice_master_mission(conn, mm.id, mm) for mm in mstMasterMissions]
+    return [await get_nice_master_mission(conn, mm.id, mm) for mm in mstMasterMissions]

@@ -1,6 +1,6 @@
 from typing import Any, Iterable, Optional
 
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import and_, select
 
 from ...models.raw import mstItem, mstSetItem
@@ -8,7 +8,9 @@ from ...schemas.enums import NiceItemUse
 from ...schemas.raw import MstItem, MstSetItem
 
 
-def get_mstSetItem(conn: Connection, set_item_ids: Iterable[int]) -> list[MstSetItem]:
+async def get_mstSetItem(
+    conn: AsyncConnection, set_item_ids: Iterable[int]
+) -> list[MstSetItem]:
     mstSetItem_stmt = (
         select(mstSetItem)
         .where(mstSetItem.c.id.in_(set_item_ids))
@@ -16,12 +18,12 @@ def get_mstSetItem(conn: Connection, set_item_ids: Iterable[int]) -> list[MstSet
     )
     return [
         MstSetItem.from_orm(set_item)
-        for set_item in conn.execute(mstSetItem_stmt).fetchall()
+        for set_item in (await conn.execute(mstSetItem_stmt)).fetchall()
     ]
 
 
-def get_item_search(
-    conn: Connection,
+async def get_item_search(
+    conn: AsyncConnection,
     individuality: Optional[Iterable[int]],
     item_type: Optional[Iterable[int]],
     bg_type: Optional[Iterable[int]],
@@ -45,5 +47,6 @@ def get_item_search(
     item_search_stmt = select(mstItem).distinct().where(and_(*where_clause))
 
     return [
-        MstItem.from_orm(item) for item in conn.execute(item_search_stmt).fetchall()
+        MstItem.from_orm(item)
+        for item in (await conn.execute(item_search_stmt)).fetchall()
     ]

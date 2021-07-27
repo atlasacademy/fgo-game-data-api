@@ -1,6 +1,6 @@
-from typing import Generator, Optional
+from typing import Optional
 
-from sqlalchemy.engine.base import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
 from ...schemas.common import Language, Region
@@ -57,8 +57,8 @@ def get_nice_bgm_release(
     )
 
 
-def get_nice_bgm_entity_from_raw(
-    conn: Connection, region: Region, bgm_entity: BgmEntity, lang: Language
+async def get_nice_bgm_entity_from_raw(
+    conn: AsyncConnection, region: Region, bgm_entity: BgmEntity, lang: Language
 ) -> NiceBgmEntity:
     nice_bgm = NiceBgmEntity(
         id=bgm_entity.mstBgm.id,
@@ -83,22 +83,24 @@ def get_nice_bgm_entity_from_raw(
         bgm_entity.mstBgm.flag != BgmFlag.IS_NOT_RELEASE
         and bgm_entity.mstShop is not None
     ):
-        nice_bgm.shop = get_nice_shop(conn, region, bgm_entity.mstShop, [], {}, lang)
+        nice_bgm.shop = await get_nice_shop(
+            conn, region, bgm_entity.mstShop, [], {}, lang
+        )
 
     return nice_bgm
 
 
-def get_nice_bgm_entity(
-    conn: Connection, region: Region, bgm_id: int, lang: Language
+async def get_nice_bgm_entity(
+    conn: AsyncConnection, region: Region, bgm_id: int, lang: Language
 ) -> NiceBgmEntity:
-    bgm_entity = get_bgm_entity(conn, bgm_id)
-    return get_nice_bgm_entity_from_raw(conn, region, bgm_entity, lang)
+    bgm_entity = await get_bgm_entity(conn, bgm_id)
+    return await get_nice_bgm_entity_from_raw(conn, region, bgm_entity, lang)
 
 
-def get_all_nice_bgms(
-    conn: Connection, region: Region, lang: Language, bgms: list[BgmEntity]
-) -> Generator[NiceBgmEntity, None, None]:  # pragma: no cover
-    return (
-        get_nice_bgm_entity_from_raw(conn, region, bgm_entity, lang)
+async def get_all_nice_bgms(
+    conn: AsyncConnection, region: Region, lang: Language, bgms: list[BgmEntity]
+) -> list[NiceBgmEntity]:  # pragma: no cover
+    return [
+        await get_nice_bgm_entity_from_raw(conn, region, bgm_entity, lang)
         for bgm_entity in bgms
-    )
+    ]

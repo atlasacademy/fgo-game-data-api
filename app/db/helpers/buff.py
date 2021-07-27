@@ -1,14 +1,14 @@
 from typing import Any, Iterable, Optional
 
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import and_, select
 
 from ...models.raw import mstBuff
 from ...schemas.raw import MstBuff
 
 
-def get_buff_search(
-    conn: Connection,
+async def get_buff_search(
+    conn: AsyncConnection,
     buff_types: Optional[Iterable[int]],
     buffGroup: Optional[Iterable[int]],
     vals: Optional[Iterable[int]],
@@ -33,5 +33,6 @@ def get_buff_search(
     func_search_stmt = select(mstBuff).distinct().where(and_(*where_clause))
 
     return [
-        MstBuff.from_orm(buff) for buff in conn.execute(func_search_stmt).fetchall()
+        MstBuff.from_orm(buff)
+        for buff in (await conn.execute(func_search_stmt)).fetchall()
     ]

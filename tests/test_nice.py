@@ -3,10 +3,10 @@ import json
 
 import pytest
 from httpx import AsyncClient
+from sqlalchemy.ext.asyncio.engine import AsyncConnection
 
 from app.core.nice.enemy import get_enemy_script
 from app.core.nice.event import get_nice_shop
-from app.db.engine import engines
 from app.db.helpers import event
 from app.schemas.common import Language, Region
 
@@ -463,23 +463,6 @@ class TestServantSpecial:
         assert war_interlude.status_code == 200
         assert "chaldea_category_" in war_interlude.json()["banner"]
 
-    async def test_shop_itemIds_0(self) -> None:
-        with engines[Region.NA].connect() as conn:
-            fp_shop_item = get_nice_shop(
-                conn, Region.NA, event.get_mstShop_by_id(conn, 1), [], {}, Language.jp
-            )
-            assert fp_shop_item.cost.item.name == "Friend Point"
-
-            mp_shop_item = get_nice_shop(
-                conn,
-                Region.NA,
-                event.get_mstShop_by_id(conn, 11000000),
-                [],
-                {},
-                Language.jp,
-            )
-            assert mp_shop_item.cost.item.name == "Mana Prism"
-
     async def test_skill_ai_id(self, client: AsyncClient) -> None:
         nice_skill = await client.get("/nice/NA/skill/962219")
         assert nice_skill.json()["aiIds"]["field"] == [94031791]
@@ -619,3 +602,26 @@ class TestServantSpecial:
         babylonia_reflection_3 = await client.get("/nice/NA/quest/94042403/1")
         idxs = [message["idx"] for message in babylonia_reflection_3.json()["messages"]]
         assert idxs == [0, 1, 2, 3]
+
+
+@pytest.mark.asyncio
+async def test_shop_itemIds_0(na_db_conn: AsyncConnection) -> None:
+    fp_shop_item = await get_nice_shop(
+        na_db_conn,
+        Region.NA,
+        await event.get_mstShop_by_id(na_db_conn, 1),
+        [],
+        {},
+        Language.jp,
+    )
+    assert fp_shop_item.cost.item.name == "Friend Point"
+
+    mp_shop_item = await get_nice_shop(
+        na_db_conn,
+        Region.NA,
+        await event.get_mstShop_by_id(na_db_conn, 11000000),
+        [],
+        {},
+        Language.jp,
+    )
+    assert mp_shop_item.cost.item.name == "Mana Prism"

@@ -2,14 +2,15 @@ from typing import Optional
 
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import and_, select
 
 from ...models.rayshift import rayshiftQuest
 from ...schemas.rayshift import QuestDetail, QuestList
 
 
-def get_rayshift_quest_db(
-    conn: Connection, quest_id: int, phase: int
+async def get_rayshift_quest_db(
+    conn: AsyncConnection, quest_id: int, phase: int
 ) -> Optional[QuestDetail]:
     stmt = select(rayshiftQuest.c.questDetail).where(
         and_(
@@ -18,15 +19,18 @@ def get_rayshift_quest_db(
             rayshiftQuest.c.questDetail.isnot(None),
         )
     )
-    rayshift_quest = conn.execute(stmt).fetchone()
+    rayshift_quest = (await conn.execute(stmt)).fetchone()
     if rayshift_quest and rayshift_quest.questDetail:
         return QuestDetail.parse_obj(rayshift_quest.questDetail)
 
     return None
 
 
-def insert_rayshift_quest_db(
-    conn: Connection, quest_id: int, phase: int, quest_details: dict[int, QuestDetail]
+async def insert_rayshift_quest_db(
+    conn: AsyncConnection,
+    quest_id: int,
+    phase: int,
+    quest_details: dict[int, QuestDetail],
 ) -> None:
     insert_stmt = insert(rayshiftQuest)
     do_update_stmt = insert_stmt.on_conflict_do_update(
@@ -45,7 +49,7 @@ def insert_rayshift_quest_db(
                 "questDetail": quest_detail_dict,
             }
         )
-    conn.execute(do_update_stmt, data)
+    await conn.execute(do_update_stmt, data)
 
 
 def insert_rayshift_quest_list(conn: Connection, quest_list: list[QuestList]) -> None:

@@ -1,6 +1,6 @@
-from typing import Generator, Iterable
+from typing import Iterable
 
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
 from ...schemas.common import Language, Region
@@ -29,10 +29,10 @@ def get_item_use(item: MstItem) -> list[NiceItemUse]:
     return item_uses
 
 
-def get_nice_item(
-    conn: Connection, region: Region, item_id: int, lang: Language
+async def get_nice_item(
+    conn: AsyncConnection, region: Region, item_id: int, lang: Language
 ) -> NiceItem:
-    raw_item = get_item_entity(conn, item_id).mstItem
+    raw_item = (await get_item_entity(conn, item_id)).mstItem
     return get_nice_item_from_raw(region, raw_item, lang)
 
 
@@ -55,8 +55,8 @@ def get_nice_item_from_raw(
     )
 
 
-def get_nice_item_amount(
-    conn: Connection,
+async def get_nice_item_amount(
+    conn: AsyncConnection,
     region: Region,
     item_list: list[int],
     amount_list: list[int],
@@ -64,11 +64,11 @@ def get_nice_item_amount(
 ) -> list[NiceItemAmount]:
     return [
         NiceItemAmount(item=get_nice_item_from_raw(region, item, lang), amount=amount)
-        for item, amount in zip(get_multiple_items(conn, item_list), amount_list)
+        for item, amount in zip(await get_multiple_items(conn, item_list), amount_list)
     ]
 
 
 def get_all_nice_items(
     region: Region, lang: Language, mstItems: Iterable[MstItem]
-) -> Generator[NiceItem, None, None]:  # pragma: no cover
-    return (get_nice_item_from_raw(region, raw_item, lang) for raw_item in mstItems)
+) -> list[NiceItem]:  # pragma: no cover
+    return [get_nice_item_from_raw(region, raw_item, lang) for raw_item in mstItems]

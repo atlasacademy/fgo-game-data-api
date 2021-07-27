@@ -1,6 +1,6 @@
 import orjson
 from aioredis import Redis
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...core.basic import get_basic_servant
 from ...core.utils import get_nice_trait
@@ -145,7 +145,7 @@ async def get_nice_support_servant(
 
 
 async def get_nice_support_servants(
-    conn: Connection,
+    conn: AsyncConnection,
     redis: Redis,
     region: Region,
     npcFollower: list[NpcFollower],
@@ -167,12 +167,12 @@ async def get_nice_support_servants(
             if skill_id != 0:
                 all_skill_ids.add(SkillSvt(skill_id, npcSvt.svtId))
 
-    all_skills = get_multiple_nice_skills(conn, region, all_skill_ids, lang)
-    all_tds = get_multiple_nice_tds(conn, region, all_td_ids, lang)
+    all_skills = await get_multiple_nice_skills(conn, region, all_skill_ids, lang)
+    all_tds = await get_multiple_nice_tds(conn, region, all_td_ids, lang)
 
     all_equip_ids = {equip.svtId for equip in npcSvtEquip}
     all_equips = {
-        equip_id: get_nice_equip_model(conn, region, equip_id, lang, lore=False)
+        equip_id: await get_nice_equip_model(conn, region, equip_id, lang, lore=False)
         for equip_id in all_equip_ids
     }
 

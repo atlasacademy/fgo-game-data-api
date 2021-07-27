@@ -1,14 +1,14 @@
 from typing import Any, Iterable, Optional
 
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import and_, select
 
 from ...models.raw import mstFunc
 from ...schemas.raw import MstFunc
 
 
-def get_func_search(
-    conn: Connection,
+async def get_func_search(
+    conn: AsyncConnection,
     func_types: Optional[Iterable[int]],
     target_types: Optional[Iterable[int]],
     apply_targets: Optional[Iterable[int]],
@@ -33,5 +33,6 @@ def get_func_search(
     func_search_stmt = select(mstFunc).distinct().where(and_(*where_clause))
 
     return [
-        MstFunc.from_orm(func) for func in conn.execute(func_search_stmt).fetchall()
+        MstFunc.from_orm(func)
+        for func in (await conn.execute(func_search_stmt)).fetchall()
     ]

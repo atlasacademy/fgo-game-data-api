@@ -3,7 +3,7 @@ from typing import Any, Generator, Iterable, Optional
 
 from aioredis import Redis
 from fastapi import HTTPException
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..config import Settings
 from ..data.gamedata import masters
@@ -500,8 +500,10 @@ def get_basic_event_from_raw(mstEvent: MstEvent, lang: Language) -> BasicEvent:
     return basic_event
 
 
-def get_basic_event(conn: Connection, event_id: int, lang: Language) -> BasicEvent:
-    mstEvent = fetch.get_one(conn, MstEvent, event_id)
+async def get_basic_event(
+    conn: AsyncConnection, event_id: int, lang: Language
+) -> BasicEvent:
+    mstEvent = await fetch.get_one(conn, MstEvent, event_id)
     if not mstEvent:
         raise HTTPException(status_code=404, detail="Event not found")
 
@@ -525,8 +527,8 @@ def get_basic_war_from_raw(mstWar: MstWar, lang: Language) -> BasicWar:
     )
 
 
-def get_basic_war(conn: Connection, war_id: int, lang: Language) -> BasicWar:
-    mstWar = fetch.get_one(conn, MstWar, war_id)
+async def get_basic_war(conn: AsyncConnection, war_id: int, lang: Language) -> BasicWar:
+    mstWar = await fetch.get_one(conn, MstWar, war_id)
     if not mstWar:
         raise HTTPException(status_code=404, detail="War not found")
     return get_basic_war_from_raw(mstWar, lang)
@@ -553,8 +555,8 @@ def get_basic_quest_from_raw(mstQuest: MstQuestWithWar) -> BasicQuest:
     )
 
 
-def get_basic_quest(conn: Connection, quest_id: int) -> BasicQuest:
-    mstQuest = quest.get_one_quest_with_war(conn, quest_id)
+async def get_basic_quest(conn: AsyncConnection, quest_id: int) -> BasicQuest:
+    mstQuest = await quest.get_one_quest_with_war(conn, quest_id)
     if not mstQuest:
         raise HTTPException(status_code=404, detail="Quest not found")
 

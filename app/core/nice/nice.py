@@ -1,7 +1,7 @@
 from typing import Optional
 
 from aioredis import Redis
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
 from ...schemas.basic import (
@@ -46,8 +46,8 @@ from .td import get_nice_td
 settings = Settings()
 
 
-def get_nice_servant_model(
-    conn: Connection,
+async def get_nice_servant_model(
+    conn: AsyncConnection,
     region: Region,
     item_id: int,
     lang: Language,
@@ -56,12 +56,12 @@ def get_nice_servant_model(
     raw_svt: Optional[ServantEntity] = None,
 ) -> NiceServant:
     return NiceServant.parse_obj(
-        get_nice_servant(conn, region, item_id, lang, lore, mstSvt, raw_svt)
+        await get_nice_servant(conn, region, item_id, lang, lore, mstSvt, raw_svt)
     )
 
 
-def get_nice_equip_model(
-    conn: Connection,
+async def get_nice_equip_model(
+    conn: AsyncConnection,
     region: Region,
     item_id: int,
     lang: Language,
@@ -70,12 +70,12 @@ def get_nice_equip_model(
     raw_svt: Optional[ServantEntity] = None,
 ) -> NiceEquip:
     return NiceEquip.parse_obj(
-        get_nice_servant(conn, region, item_id, lang, lore, mstSvt, raw_svt)
+        await get_nice_servant(conn, region, item_id, lang, lore, mstSvt, raw_svt)
     )
 
 
 async def get_nice_buff_with_reverse(
-    conn: Connection,
+    conn: AsyncConnection,
     redis: Redis,
     region: Region,
     buff_id: int,
@@ -85,7 +85,7 @@ async def get_nice_buff_with_reverse(
     reverseData: ReverseData = ReverseData.nice,
     mstBuff: Optional[MstBuff] = None,
 ) -> NiceBuffReverse:
-    raw_buff = raw.get_buff_entity_no_reverse(conn, buff_id, mstBuff)
+    raw_buff = await raw.get_buff_entity_no_reverse(conn, buff_id, mstBuff)
     nice_buff = NiceBuffReverse.parse_obj(get_nice_buff(raw_buff, region))
     if reverse and reverseDepth >= ReverseDepth.function:
         if reverseData == ReverseData.basic:
@@ -112,7 +112,7 @@ async def get_nice_buff_with_reverse(
 
 
 async def get_nice_func_with_reverse(
-    conn: Connection,
+    conn: AsyncConnection,
     redis: Redis,
     region: Region,
     func_id: int,
@@ -122,9 +122,9 @@ async def get_nice_func_with_reverse(
     reverseData: ReverseData = ReverseData.nice,
     mstFunc: Optional[MstFunc] = None,
 ) -> NiceBaseFunctionReverse:
-    raw_func = raw.get_func_entity_no_reverse(conn, func_id, True, mstFunc)
+    raw_func = await raw.get_func_entity_no_reverse(conn, func_id, True, mstFunc)
     nice_func = NiceBaseFunctionReverse.parse_obj(
-        get_nice_function(conn, region, raw_func)
+        await get_nice_function(conn, region, raw_func)
     )
 
     if reverse and reverseDepth >= ReverseDepth.skillNp:
@@ -164,7 +164,7 @@ async def get_nice_func_with_reverse(
 
 
 async def get_nice_skill_with_reverse(
-    conn: Connection,
+    conn: AsyncConnection,
     redis: Redis,
     region: Region,
     skill_id: int,
@@ -173,8 +173,8 @@ async def get_nice_skill_with_reverse(
     reverseDepth: ReverseDepth = ReverseDepth.servant,
     reverseData: ReverseData = ReverseData.nice,
 ) -> NiceSkillReverse:
-    raw_skill = raw.get_skill_entity_no_reverse(conn, skill_id, expand=True)
-    nice_skill = get_nice_skill_from_raw(conn, region, raw_skill, lang)
+    raw_skill = await raw.get_skill_entity_no_reverse(conn, skill_id, expand=True)
+    nice_skill = await get_nice_skill_from_raw(conn, region, raw_skill, lang)
 
     if reverse and reverseDepth >= ReverseDepth.servant:
         activeSkills = {svt_skill.svtId for svt_skill in raw_skill.mstSvtSkill}
@@ -197,25 +197,25 @@ async def get_nice_skill_with_reverse(
             nice_skill.reverse = NiceReversedSkillTdType(basic=basic_skill_reverse)
         else:
             skill_reverse = NiceReversedSkillTd(
-                servant=(
-                    get_nice_servant_model(conn, region, svt_id, lang=lang)
+                servant=[
+                    await get_nice_servant_model(conn, region, svt_id, lang=lang)
                     for svt_id in activeSkills | passiveSkills
-                ),
-                MC=(
-                    get_nice_mystic_code(conn, region, mc_id, lang)
+                ],
+                MC=[
+                    await get_nice_mystic_code(conn, region, mc_id, lang)
                     for mc_id in reverse_ids.skill_to_MCId(region, skill_id)
-                ),
-                CC=(
-                    get_nice_command_code(conn, region, cc_id, lang)
+                ],
+                CC=[
+                    await get_nice_command_code(conn, region, cc_id, lang)
                     for cc_id in reverse_ids.skill_to_CCId(region, skill_id)
-                ),
+                ],
             )
             nice_skill.reverse = NiceReversedSkillTdType(nice=skill_reverse)
     return nice_skill
 
 
 async def get_nice_td_with_reverse(
-    conn: Connection,
+    conn: AsyncConnection,
     redis: Redis,
     region: Region,
     td_id: int,
@@ -224,12 +224,12 @@ async def get_nice_td_with_reverse(
     reverseDepth: ReverseDepth = ReverseDepth.servant,
     reverseData: ReverseData = ReverseData.nice,
 ) -> NiceTdReverse:
-    raw_td = raw.get_td_entity_no_reverse(conn, td_id, expand=True)
+    raw_td = await raw.get_td_entity_no_reverse(conn, td_id, expand=True)
 
     # All td_id has a svtTd entry
     svt_id = next(svt_id.svtId for svt_id in raw_td.mstSvtTreasureDevice)
     nice_td = NiceTdReverse.parse_obj(
-        get_nice_td(conn, raw_td, svt_id, region, lang)[0]
+        (await get_nice_td(conn, raw_td, svt_id, region, lang))[0]
     )
 
     if reverse and reverseDepth >= ReverseDepth.servant:
@@ -244,7 +244,7 @@ async def get_nice_td_with_reverse(
         else:
             td_reverse = NiceReversedSkillTd(
                 servant=[
-                    get_nice_servant_model(conn, region, svt_id.svtId, lang=lang)
+                    await get_nice_servant_model(conn, region, svt_id.svtId, lang=lang)
                     for svt_id in raw_td.mstSvtTreasureDevice
                 ]
             )

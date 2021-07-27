@@ -7,6 +7,7 @@ from fastapi import FastAPI, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
+from sqlalchemy.ext.asyncio import create_async_engine
 
 from .config import SecretSettings, Settings, logger, project_root
 from .routers import basic, nice, raw, secret
@@ -181,13 +182,24 @@ async def add_process_time_header(
 async def startup() -> None:
     redis = await aioredis.create_redis_pool(secrets.redisdsn)
     app.state.redis = redis
-    await load_and_export(redis, REGION_PATHS)
+    async_engines = {
+        Region.NA: create_async_engine(
+            secrets.na_postgresdsn.replace("postgresql", "postgresql+asyncpg")
+        ),
+        Region.JP: create_async_engine(
+            secrets.jp_postgresdsn.replace("postgresql", "postgresql+asyncpg")
+        ),
+    }
+    app.state.async_engines = async_engines
+    await load_and_export(redis, REGION_PATHS, async_engines)
 
 
 @app.on_event("shutdown")
 async def shutdown() -> None:
     app.state.redis.close()
     await app.state.redis.wait_closed()
+    for engine in app.state.async_engines.values():
+        await engine.dispose()
 
 
 app.include_router(nice.router)

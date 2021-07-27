@@ -1,6 +1,6 @@
-from typing import Generator, Optional
+from typing import Optional
 
-from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
 from ...schemas.common import Language, Region
@@ -14,14 +14,14 @@ from .skill import get_nice_skill_with_svt
 settings = Settings()
 
 
-def get_nice_command_code(
-    conn: Connection,
+async def get_nice_command_code(
+    conn: AsyncConnection,
     region: Region,
     cc_id: int,
     lang: Language,
     mstCc: Optional[MstCommandCode] = None,
 ) -> NiceCommandCode:
-    raw_cc = raw.get_command_code_entity(conn, cc_id, True, mstCc)
+    raw_cc = await raw.get_command_code_entity(conn, cc_id, True, mstCc)
 
     base_settings = {"base_url": settings.asset_url, "region": region, "item_id": cc_id}
     nice_cc = NiceCommandCode(
@@ -35,11 +35,13 @@ def get_nice_command_code(
             },
             "faces": {"cc": {cc_id: AssetURL.commandCode.format(**base_settings)}},
         },
-        skills=(
+        skills=[
             skill
             for skillEntity in raw_cc.mstSkill
-            for skill in get_nice_skill_with_svt(conn, skillEntity, cc_id, region, lang)
-        ),
+            for skill in await get_nice_skill_with_svt(
+                conn, skillEntity, cc_id, region, lang
+            )
+        ],
         illustrator=raw_cc.mstIllustrator.name if raw_cc.mstIllustrator else "",
         comment=raw_cc.mstCommandCodeComment.comment,
     )
@@ -47,13 +49,13 @@ def get_nice_command_code(
     return nice_cc
 
 
-def get_all_nice_ccs(
-    conn: Connection,
+async def get_all_nice_ccs(
+    conn: AsyncConnection,
     region: Region,
     lang: Language,
     mstCCommandCodes: list[MstCommandCode],
-) -> Generator[NiceCommandCode, None, None]:  # pragma: no cover
-    return (
-        get_nice_command_code(conn, region, mstCc.id, lang, mstCc)
+) -> list[NiceCommandCode]:  # pragma: no cover
+    return [
+        await get_nice_command_code(conn, region, mstCc.id, lang, mstCc)
         for mstCc in mstCCommandCodes
-    )
+    ]
