@@ -307,7 +307,9 @@ class SvtClass(str, Enum):
     beastIIIL = "beastIIIL"
     beastUnknown = "beastUnknown"
     unknown = "unknown"
+    agarthaPenth = "agarthaPenth"
     cccFinaleEmiyaAlter = "cccFinaleEmiyaAlter"
+    salemAbby = "salemAbby"
     # OTHER = "OTHER"
     ALL = "ALL"
     # EXTRA = "EXTRA"
@@ -346,9 +348,9 @@ CLASS_NAME: dict[int, SvtClass] = {
     # 98
     # 99
     # 100
-    # 107
+    107: SvtClass.agarthaPenth,
     124: SvtClass.cccFinaleEmiyaAlter,
-    # 125
+    125: SvtClass.salemAbby,
     # 1000: SvtClass.OTHER,
     # For Support List
     1001: SvtClass.ALL,
