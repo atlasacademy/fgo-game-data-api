@@ -63,5 +63,6 @@
   ],
   "phases": [1, 2, 3],
   "phasesWithEnemies": [],
-  "phasesNoBattle": []
+  "phasesNoBattle": [],
+  "allScripts": []
 }

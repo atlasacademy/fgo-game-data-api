@@ -691,7 +691,21 @@
       ],
       "phases": [1],
       "phasesWithEnemies": [],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": [
+        {
+          "scriptFileName": "0200010110",
+          "questId": 2000101,
+          "phase": 1,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200010111",
+          "questId": 2000101,
+          "phase": 1,
+          "sceneType": 1
+        }
+      ]
     },
     {
       "mstQuest": {
@@ -757,7 +771,21 @@
       ],
       "phases": [1],
       "phasesWithEnemies": [],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": [
+        {
+          "scriptFileName": "0200010210",
+          "questId": 2000102,
+          "phase": 1,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200010211",
+          "questId": 2000102,
+          "phase": 1,
+          "sceneType": 1
+        }
+      ]
     },
     {
       "mstQuest": {
@@ -821,7 +849,21 @@
       ],
       "phases": [1],
       "phasesWithEnemies": [],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": [
+        {
+          "scriptFileName": "0200010310",
+          "questId": 2000103,
+          "phase": 1,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200010311",
+          "questId": 2000103,
+          "phase": 1,
+          "sceneType": 1
+        }
+      ]
     },
     {
       "mstQuest": {
@@ -876,7 +918,27 @@
       ],
       "phases": [1, 2],
       "phasesWithEnemies": [],
-      "phasesNoBattle": [1]
+      "phasesNoBattle": [1],
+      "allScripts": [
+        {
+          "scriptFileName": "0200010410",
+          "questId": 2000104,
+          "phase": 1,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200010420",
+          "questId": 2000104,
+          "phase": 2,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200010421",
+          "questId": 2000104,
+          "phase": 2,
+          "sceneType": 1
+        }
+      ]
     },
     {
       "mstQuest": {
@@ -931,7 +993,21 @@
       ],
       "phases": [1],
       "phasesWithEnemies": [],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": [
+        {
+          "scriptFileName": "0200010510",
+          "questId": 2000105,
+          "phase": 1,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200010511",
+          "questId": 2000105,
+          "phase": 1,
+          "sceneType": 1
+        }
+      ]
     },
     {
       "mstQuest": {
@@ -986,7 +1062,27 @@
       ],
       "phases": [1, 2],
       "phasesWithEnemies": [],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": [
+        {
+          "scriptFileName": "0200010610",
+          "questId": 2000106,
+          "phase": 1,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200010620",
+          "questId": 2000106,
+          "phase": 2,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200010621",
+          "questId": 2000106,
+          "phase": 2,
+          "sceneType": 1
+        }
+      ]
     },
     {
       "mstQuest": {
@@ -1050,7 +1146,21 @@
       ],
       "phases": [1],
       "phasesWithEnemies": [],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": [
+        {
+          "scriptFileName": "0200010710",
+          "questId": 2000107,
+          "phase": 1,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200010711",
+          "questId": 2000107,
+          "phase": 1,
+          "sceneType": 1
+        }
+      ]
     },
     {
       "mstQuest": {
@@ -1105,7 +1215,27 @@
       ],
       "phases": [1, 2],
       "phasesWithEnemies": [],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": [
+        {
+          "scriptFileName": "0200010810",
+          "questId": 2000108,
+          "phase": 1,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200010820",
+          "questId": 2000108,
+          "phase": 2,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200010821",
+          "questId": 2000108,
+          "phase": 2,
+          "sceneType": 1
+        }
+      ]
     },
     {
       "mstQuest": {
@@ -1160,7 +1290,27 @@
       ],
       "phases": [1, 2],
       "phasesWithEnemies": [],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": [
+        {
+          "scriptFileName": "0200010910",
+          "questId": 2000109,
+          "phase": 1,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200010920",
+          "questId": 2000109,
+          "phase": 2,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200010921",
+          "questId": 2000109,
+          "phase": 2,
+          "sceneType": 1
+        }
+      ]
     },
     {
       "mstQuest": {
@@ -1215,7 +1365,27 @@
       ],
       "phases": [1, 2],
       "phasesWithEnemies": [],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": [
+        {
+          "scriptFileName": "0200011010",
+          "questId": 2000110,
+          "phase": 1,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200011020",
+          "questId": 2000110,
+          "phase": 2,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200011021",
+          "questId": 2000110,
+          "phase": 2,
+          "sceneType": 1
+        }
+      ]
     },
     {
       "mstQuest": {
@@ -1279,7 +1449,21 @@
       ],
       "phases": [1],
       "phasesWithEnemies": [],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": [
+        {
+          "scriptFileName": "0200011110",
+          "questId": 2000111,
+          "phase": 1,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200011111",
+          "questId": 2000111,
+          "phase": 1,
+          "sceneType": 1
+        }
+      ]
     },
     {
       "mstQuest": {
@@ -1334,7 +1518,33 @@
       ],
       "phases": [1, 2, 3],
       "phasesWithEnemies": [],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": [
+        {
+          "scriptFileName": "0200011210",
+          "questId": 2000112,
+          "phase": 1,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200011220",
+          "questId": 2000112,
+          "phase": 2,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200011230",
+          "questId": 2000112,
+          "phase": 3,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200011231",
+          "questId": 2000112,
+          "phase": 3,
+          "sceneType": 1
+        }
+      ]
     },
     {
       "mstQuest": {
@@ -1389,7 +1599,21 @@
       ],
       "phases": [1],
       "phasesWithEnemies": [],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": [
+        {
+          "scriptFileName": "0200011310",
+          "questId": 2000113,
+          "phase": 1,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200011311",
+          "questId": 2000113,
+          "phase": 1,
+          "sceneType": 1
+        }
+      ]
     },
     {
       "mstQuest": {
@@ -1444,7 +1668,21 @@
       ],
       "phases": [1],
       "phasesWithEnemies": [],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": [
+        {
+          "scriptFileName": "0200011410",
+          "questId": 2000114,
+          "phase": 1,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200011411",
+          "questId": 2000114,
+          "phase": 1,
+          "sceneType": 1
+        }
+      ]
     },
     {
       "mstQuest": {
@@ -1514,7 +1752,21 @@
       ],
       "phases": [1],
       "phasesWithEnemies": [],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": [
+        {
+          "scriptFileName": "0200011510",
+          "questId": 2000115,
+          "phase": 1,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200011511",
+          "questId": 2000115,
+          "phase": 1,
+          "sceneType": 1
+        }
+      ]
     },
     {
       "mstQuest": {
@@ -1569,7 +1821,39 @@
       ],
       "phases": [1, 2, 3, 4],
       "phasesWithEnemies": [4],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": [
+        {
+          "scriptFileName": "0200011610",
+          "questId": 2000116,
+          "phase": 1,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200011620",
+          "questId": 2000116,
+          "phase": 2,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200011630",
+          "questId": 2000116,
+          "phase": 3,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200011640",
+          "questId": 2000116,
+          "phase": 4,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200011641",
+          "questId": 2000116,
+          "phase": 4,
+          "sceneType": 1
+        }
+      ]
     },
     {
       "mstQuest": {
@@ -1624,7 +1908,27 @@
       ],
       "phases": [1, 2],
       "phasesWithEnemies": [],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": [
+        {
+          "scriptFileName": "0200011710",
+          "questId": 2000117,
+          "phase": 1,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200011720",
+          "questId": 2000117,
+          "phase": 2,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200011721",
+          "questId": 2000117,
+          "phase": 2,
+          "sceneType": 1
+        }
+      ]
     },
     {
       "mstQuest": {
@@ -1679,7 +1983,21 @@
       ],
       "phases": [1],
       "phasesWithEnemies": [],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": [
+        {
+          "scriptFileName": "0200011810",
+          "questId": 2000118,
+          "phase": 1,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0200011811",
+          "questId": 2000118,
+          "phase": 1,
+          "sceneType": 1
+        }
+      ]
     },
     {
       "mstQuest": {
@@ -1764,7 +2082,45 @@
       "mstGift": [],
       "phases": [1, 2, 3],
       "phasesWithEnemies": [],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": [
+        {
+          "scriptFileName": "9160260110",
+          "questId": 91602601,
+          "phase": 1,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "9160260111",
+          "questId": 91602601,
+          "phase": 1,
+          "sceneType": 1
+        },
+        {
+          "scriptFileName": "9160260120",
+          "questId": 91602601,
+          "phase": 2,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "9160260121",
+          "questId": 91602601,
+          "phase": 2,
+          "sceneType": 1
+        },
+        {
+          "scriptFileName": "9160260130",
+          "questId": 91602601,
+          "phase": 3,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "9160260131",
+          "questId": 91602601,
+          "phase": 3,
+          "sceneType": 1
+        }
+      ]
     },
     {
       "mstQuest": {
@@ -1818,7 +2174,8 @@
       ],
       "phases": [1, 2, 3],
       "phasesWithEnemies": [],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": []
     },
     {
       "mstQuest": {
@@ -1872,7 +2229,8 @@
       ],
       "phases": [1, 2, 3],
       "phasesWithEnemies": [2],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": []
     },
     {
       "mstQuest": {
@@ -1926,7 +2284,8 @@
       ],
       "phases": [1, 2, 3],
       "phasesWithEnemies": [],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": []
     },
     {
       "mstQuest": {
@@ -1989,7 +2348,8 @@
       ],
       "phases": [1, 2, 3],
       "phasesWithEnemies": [],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": []
     },
     {
       "mstQuest": {
@@ -2052,7 +2412,8 @@
       ],
       "phases": [1, 2, 3],
       "phasesWithEnemies": [1],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": []
     },
     {
       "mstQuest": {
@@ -2106,7 +2467,8 @@
       ],
       "phases": [1, 2, 3],
       "phasesWithEnemies": [2, 3],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": []
     },
     {
       "mstQuest": {
@@ -2160,7 +2522,8 @@
       ],
       "phases": [1, 2, 3],
       "phasesWithEnemies": [1, 2, 3],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": []
     },
     {
       "mstQuest": {
@@ -2214,7 +2577,8 @@
       ],
       "phases": [1, 2, 3],
       "phasesWithEnemies": [1, 2, 3],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": []
     },
     {
       "mstQuest": {
@@ -2268,7 +2632,8 @@
       ],
       "phases": [1, 2, 3],
       "phasesWithEnemies": [1, 2],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": []
     },
     {
       "mstQuest": {
@@ -2322,7 +2687,8 @@
       ],
       "phases": [1, 2, 3],
       "phasesWithEnemies": [1, 3],
-      "phasesNoBattle": []
+      "phasesNoBattle": [],
+      "allScripts": []
     }
   ]
 }

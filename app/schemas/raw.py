@@ -1294,6 +1294,13 @@ class BuffEntity(BuffEntityNoReverse):
     reverse: Optional[ReversedBuffType] = None
 
 
+class ScriptFile(BaseModelORJson):
+    scriptFileName: str
+    questId: int
+    phase: int
+    sceneType: int
+
+
 class QuestEntity(BaseModelORJson):
     mstQuest: MstQuest
     mstQuestConsumeItem: list[MstQuestConsumeItem]
@@ -1303,6 +1310,7 @@ class QuestEntity(BaseModelORJson):
     phases: list[int]
     phasesWithEnemies: list[int] = []
     phasesNoBattle: list[int] = []
+    allScripts: list[ScriptFile]
 
 
 class QuestPhaseEntity(QuestEntity):

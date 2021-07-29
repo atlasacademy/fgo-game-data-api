@@ -37,6 +37,39 @@
   "phases": [1, 2, 3],
   "phasesWithEnemies": [1, 2, 3],
   "phasesNoBattle": [],
+  "phaseScripts": [
+    {
+      "phase": 1,
+      "scripts": [
+        {
+          "scriptId": "9110300210",
+          "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9110300210.txt"
+        }
+      ]
+    },
+    {
+      "phase": 2,
+      "scripts": [
+        {
+          "scriptId": "9110300220",
+          "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9110300220.txt"
+        }
+      ]
+    },
+    {
+      "phase": 3,
+      "scripts": [
+        {
+          "scriptId": "9110300230",
+          "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9110300230.txt"
+        },
+        {
+          "scriptId": "9110300231",
+          "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9110300231.txt"
+        }
+      ]
+    }
+  ],
   "noticeAt": 1600074000,
   "openedAt": 1600074000,
   "closedAt": 1893423600

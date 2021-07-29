@@ -1,3 +1,4 @@
+from collections import defaultdict
 from typing import Any, Optional, Union
 
 from aioredis import Redis
@@ -6,7 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 from ...config import Settings
 from ...db.helpers import war
 from ...rayshift.quest import get_quest_detail
-from ...schemas.common import Language, Region
+from ...schemas.common import Language, NiceQuestScript, Region
 from ...schemas.enums import CLASS_NAME
 from ...schemas.gameenums import (
     COND_TYPE_NAME,
@@ -17,6 +18,7 @@ from ...schemas.nice import (
     NiceQuest,
     NiceQuestMessage,
     NiceQuestPhase,
+    NiceQuestPhaseScript,
     NiceQuestRelease,
     NiceStage,
     QuestEnemy,
@@ -30,6 +32,7 @@ from ...schemas.raw import (
     MstStage,
     QuestEntity,
     QuestPhaseEntity,
+    ScriptFile,
 )
 from .. import raw
 from ..utils import get_traits_list
@@ -83,6 +86,21 @@ def get_nice_stage(
     )
 
 
+def get_nice_all_scripts(
+    region: Region, scripts: list[ScriptFile]
+) -> list[NiceQuestPhaseScript]:
+    phase_scripts: dict[int, list[NiceQuestScript]] = defaultdict(list)
+    for script in sorted(scripts, key=lambda s: s.scriptFileName):
+        phase_scripts[script.phase].append(
+            get_nice_quest_script(region, script.scriptFileName)
+        )
+
+    return [
+        NiceQuestPhaseScript(phase=phase, scripts=phase_scripts[phase])
+        for phase in sorted(phase_scripts)
+    ]
+
+
 async def get_nice_quest(
     conn: AsyncConnection,
     region: Region,
@@ -116,6 +134,7 @@ async def get_nice_quest(
         "phases": sorted(raw_quest.phases),
         "phasesWithEnemies": sorted(raw_quest.phasesWithEnemies),
         "phasesNoBattle": sorted(raw_quest.phasesNoBattle),
+        "phaseScripts": get_nice_all_scripts(region, raw_quest.allScripts),
         "noticeAt": raw_quest.mstQuest.noticeAt,
         "openedAt": raw_quest.mstQuest.openedAt,
         "closedAt": raw_quest.mstQuest.closedAt,

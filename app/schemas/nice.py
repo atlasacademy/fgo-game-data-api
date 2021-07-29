@@ -1269,6 +1269,11 @@ class NiceQuestRelease(BaseModelORJson):
     closedMessage: str
 
 
+class NiceQuestPhaseScript(BaseModelORJson):
+    phase: int
+    scripts: list[NiceQuestScript]
+
+
 class NiceQuest(BaseModelORJson):
     id: int
     name: str
@@ -1291,6 +1296,7 @@ class NiceQuest(BaseModelORJson):
         title="List of phases with no battle",
         description="List of phases no battle (Story quest).",
     )
+    phaseScripts: list[NiceQuestPhaseScript]
     noticeAt: int
     openedAt: int
     closedAt: int

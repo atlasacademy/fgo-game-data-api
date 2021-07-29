@@ -88,7 +88,7 @@ JOINED_QUEST_ENTITY_TABLES = JOINED_QUEST_TABLES.outerjoin(
         mstQuest.c.id == mstQuestPhaseDetail.c.questId,
         mstQuestPhase.c.phase == mstQuestPhaseDetail.c.phase,
     ),
-)
+).outerjoin(ScriptFileList, mstQuest.c.id == ScriptFileList.c.questId)
 
 
 phasesWithEnemies = func.to_jsonb(
@@ -127,6 +127,7 @@ SELECT_QUEST_ENTITY = [
     ).label("phases"),
     phasesWithEnemies,
     phasesNoBattle,
+    sql_jsonb_agg(ScriptFileList).label("allScripts"),
 ]
 
 
@@ -169,6 +170,10 @@ async def get_quest_phase_entity(
         .where(mstQuestPhase.c.questId == quest_id)
         .group_by(mstQuestPhase.c.questId)
         .cte()
+    )
+
+    all_scripts_cte = (
+        select(ScriptFileList.c).where(ScriptFileList.c.questId == quest_id).cte()
     )
 
     joined_quest_phase_tables = (
@@ -220,6 +225,7 @@ async def get_quest_phase_entity(
                 mstQuestPhase.c.phase == ScriptFileList.c.phase,
             ),
         )
+        .outerjoin(all_scripts_cte, mstQuest.c.id == all_scripts_cte.c.questId)
     )
 
     select_quest_phase = [
@@ -238,6 +244,12 @@ async def get_quest_phase_entity(
         func.array_remove(
             func.array_agg(ScriptFileList.c.scriptFileName.distinct()), None
         ).label("scripts"),
+        func.to_jsonb(
+            func.array_remove(
+                func.array_agg(all_scripts_cte.table_valued().distinct()),
+                None,
+            )
+        ).label("allScripts"),
         sql_jsonb_agg(mstStage),
         sql_jsonb_agg(npcFollower),
         sql_jsonb_agg(npcFollowerRelease),

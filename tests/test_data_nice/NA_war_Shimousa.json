@@ -165,6 +165,17 @@
           "phases": [1],
           "phasesWithEnemies": [],
           "phasesNoBattle": [1],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0200030010",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030010.txt"
+                }
+              ]
+            }
+          ],
           "noticeAt": 1570680000,
           "openedAt": 1570680000,
           "closedAt": 1893456000
@@ -206,6 +217,34 @@
           "phases": [1, 2],
           "phasesWithEnemies": [],
           "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0200030110",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030110.txt"
+                },
+                {
+                  "scriptId": "0200030111",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030111.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0200030120",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030120.txt"
+                },
+                {
+                  "scriptId": "0200030121",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030121.txt"
+                }
+              ]
+            }
+          ],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -240,6 +279,7 @@
           "phases": [1, 2, 3],
           "phasesWithEnemies": [1, 2, 3],
           "phasesNoBattle": [],
+          "phaseScripts": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -301,6 +341,30 @@
           "phases": [1, 2],
           "phasesWithEnemies": [],
           "phasesNoBattle": [2],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0200030210",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030210.txt"
+                },
+                {
+                  "scriptId": "0200030211",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030211.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0200030220",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030220.txt"
+                }
+              ]
+            }
+          ],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -342,6 +406,56 @@
           "phases": [1, 2, 3, 4],
           "phasesWithEnemies": [],
           "phasesNoBattle": [3],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0200030310",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030310.txt"
+                },
+                {
+                  "scriptId": "0200030311",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030311.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0200030320",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030320.txt"
+                },
+                {
+                  "scriptId": "0200030321",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030321.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0200030330",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030330.txt"
+                }
+              ]
+            },
+            {
+              "phase": 4,
+              "scripts": [
+                {
+                  "scriptId": "0200030340",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030340.txt"
+                },
+                {
+                  "scriptId": "0200030341",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030341.txt"
+                }
+              ]
+            }
+          ],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -396,6 +510,7 @@
           "phases": [1, 2, 3],
           "phasesWithEnemies": [1, 2, 3],
           "phasesNoBattle": [],
+          "phaseScripts": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -457,6 +572,30 @@
           "phases": [1, 2],
           "phasesWithEnemies": [],
           "phasesNoBattle": [1],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0200030410",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030410.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0200030420",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030420.txt"
+                },
+                {
+                  "scriptId": "0200030421",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030421.txt"
+                }
+              ]
+            }
+          ],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -498,6 +637,30 @@
           "phases": [1, 2],
           "phasesWithEnemies": [],
           "phasesNoBattle": [1],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0200031310",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031310.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0200031320",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031320.txt"
+                },
+                {
+                  "scriptId": "0200031321",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031321.txt"
+                }
+              ]
+            }
+          ],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -532,6 +695,7 @@
           "phases": [1, 2, 3],
           "phasesWithEnemies": [1, 2, 3],
           "phasesNoBattle": [],
+          "phaseScripts": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -593,6 +757,52 @@
           "phases": [1, 2, 3, 4],
           "phasesWithEnemies": [],
           "phasesNoBattle": [2],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0200030510",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030510.txt"
+                },
+                {
+                  "scriptId": "0200030511",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030511.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0200030520",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030520.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0200030530",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030530.txt"
+                }
+              ]
+            },
+            {
+              "phase": 4,
+              "scripts": [
+                {
+                  "scriptId": "0200030540",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030540.txt"
+                },
+                {
+                  "scriptId": "0200030541",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030541.txt"
+                }
+              ]
+            }
+          ],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -634,6 +844,52 @@
           "phases": [1, 2, 3, 4],
           "phasesWithEnemies": [],
           "phasesNoBattle": [1],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0200030610",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030610.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0200030620",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030620.txt"
+                },
+                {
+                  "scriptId": "0200030621",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030621.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0200030630",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030630.txt"
+                }
+              ]
+            },
+            {
+              "phase": 4,
+              "scripts": [
+                {
+                  "scriptId": "0200030640",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030640.txt"
+                },
+                {
+                  "scriptId": "0200030641",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030641.txt"
+                }
+              ]
+            }
+          ],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -675,6 +931,21 @@
           "phases": [1],
           "phasesWithEnemies": [],
           "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0200030710",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030710.txt"
+                },
+                {
+                  "scriptId": "0200030711",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030711.txt"
+                }
+              ]
+            }
+          ],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -709,6 +980,26 @@
           "phases": [1, 2],
           "phasesWithEnemies": [],
           "phasesNoBattle": [1, 2],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0200031610",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031610.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0200031620",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031620.txt"
+                }
+              ]
+            }
+          ],
           "noticeAt": 1570680000,
           "openedAt": 1570680000,
           "closedAt": 1893456000
@@ -743,6 +1034,7 @@
           "phases": [1, 2, 3],
           "phasesWithEnemies": [3],
           "phasesNoBattle": [],
+          "phaseScripts": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -816,6 +1108,7 @@
           "phases": [1, 2, 3],
           "phasesWithEnemies": [1, 2, 3],
           "phasesNoBattle": [],
+          "phaseScripts": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -877,6 +1170,43 @@
           "phases": [1, 2, 3],
           "phasesWithEnemies": [],
           "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0200030810",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030810.txt"
+                },
+                {
+                  "scriptId": "0200030811",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030811.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0200030820",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030820.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0200030830",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030830.txt"
+                },
+                {
+                  "scriptId": "0200030831",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030831.txt"
+                }
+              ]
+            }
+          ],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -918,6 +1248,52 @@
           "phases": [1, 2, 3, 4],
           "phasesWithEnemies": [],
           "phasesNoBattle": [1],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0200030910",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030910.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0200030920",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030920.txt"
+                },
+                {
+                  "scriptId": "0200030921",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030921.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0200030930",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030930.txt"
+                }
+              ]
+            },
+            {
+              "phase": 4,
+              "scripts": [
+                {
+                  "scriptId": "0200030940",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030940.txt"
+                },
+                {
+                  "scriptId": "0200030941",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200030941.txt"
+                }
+              ]
+            }
+          ],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -979,6 +1355,39 @@
           "phases": [1, 2, 3],
           "phasesWithEnemies": [],
           "phasesNoBattle": [1],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0200031010",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031010.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0200031020",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031020.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0200031030",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031030.txt"
+                },
+                {
+                  "scriptId": "0200031031",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031031.txt"
+                }
+              ]
+            }
+          ],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1040,6 +1449,43 @@
           "phases": [1, 2, 3],
           "phasesWithEnemies": [],
           "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0200031110",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031110.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0200031120",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031120.txt"
+                },
+                {
+                  "scriptId": "0200031121",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031121.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0200031130",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031130.txt"
+                },
+                {
+                  "scriptId": "0200031131",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031131.txt"
+                }
+              ]
+            }
+          ],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1081,6 +1527,48 @@
           "phases": [1, 2, 3, 4],
           "phasesWithEnemies": [],
           "phasesNoBattle": [1, 4],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0200031210",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031210.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0200031220",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031220.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0200031230",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031230.txt"
+                },
+                {
+                  "scriptId": "0200031231",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031231.txt"
+                }
+              ]
+            },
+            {
+              "phase": 4,
+              "scripts": [
+                {
+                  "scriptId": "0200031240",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031240.txt"
+                }
+              ]
+            }
+          ],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1144,6 +1632,30 @@
           "phases": [1, 2],
           "phasesWithEnemies": [1, 2],
           "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "9160190110",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/91/9160190110.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "9160190120",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/91/9160190120.txt"
+                },
+                {
+                  "scriptId": "9160190121",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/91/9160190121.txt"
+                }
+              ]
+            }
+          ],
           "noticeAt": 1509645600,
           "openedAt": 1509645600,
           "closedAt": 1893456000
@@ -1178,6 +1690,7 @@
           "phases": [1, 2, 3],
           "phasesWithEnemies": [1, 2, 3],
           "phasesNoBattle": [],
+          "phaseScripts": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1212,6 +1725,7 @@
           "phases": [1, 2, 3],
           "phasesWithEnemies": [1, 2, 3],
           "phasesNoBattle": [],
+          "phaseScripts": [],
           "noticeAt": 1613534400,
           "openedAt": 1613534400,
           "closedAt": 1893456000
@@ -1273,6 +1787,65 @@
           "phases": [1, 2, 3, 4, 5],
           "phasesWithEnemies": [],
           "phasesNoBattle": [5],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0200031510",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031510.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0200031520",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031520.txt"
+                },
+                {
+                  "scriptId": "0200031521",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031521.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0200031530",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031530.txt"
+                },
+                {
+                  "scriptId": "0200031531",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031531.txt"
+                }
+              ]
+            },
+            {
+              "phase": 4,
+              "scripts": [
+                {
+                  "scriptId": "0200031540",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031540.txt"
+                },
+                {
+                  "scriptId": "0200031541",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031541.txt"
+                }
+              ]
+            },
+            {
+              "phase": 5,
+              "scripts": [
+                {
+                  "scriptId": "0200031550",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031550.txt"
+                }
+              ]
+            }
+          ],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1327,6 +1900,7 @@
           "phases": [1, 2, 3],
           "phasesWithEnemies": [1, 2, 3],
           "phasesNoBattle": [],
+          "phaseScripts": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1388,6 +1962,82 @@
           "phases": [1, 2, 3, 4, 5, 6],
           "phasesWithEnemies": [],
           "phasesNoBattle": [],
+          "phaseScripts": [
+            {
+              "phase": 1,
+              "scripts": [
+                {
+                  "scriptId": "0200031410",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031410.txt"
+                },
+                {
+                  "scriptId": "0200031411",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031411.txt"
+                }
+              ]
+            },
+            {
+              "phase": 2,
+              "scripts": [
+                {
+                  "scriptId": "0200031420",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031420.txt"
+                },
+                {
+                  "scriptId": "0200031421",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031421.txt"
+                }
+              ]
+            },
+            {
+              "phase": 3,
+              "scripts": [
+                {
+                  "scriptId": "0200031430",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031430.txt"
+                },
+                {
+                  "scriptId": "0200031431",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031431.txt"
+                }
+              ]
+            },
+            {
+              "phase": 4,
+              "scripts": [
+                {
+                  "scriptId": "0200031440",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031440.txt"
+                },
+                {
+                  "scriptId": "0200031441",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031441.txt"
+                }
+              ]
+            },
+            {
+              "phase": 5,
+              "scripts": [
+                {
+                  "scriptId": "0200031450",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031450.txt"
+                }
+              ]
+            },
+            {
+              "phase": 6,
+              "scripts": [
+                {
+                  "scriptId": "0200031460",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031460.txt"
+                },
+                {
+                  "scriptId": "0200031461",
+                  "script": "https://assets.atlasacademy.io/GameData/NA/Script/02/0200031461.txt"
+                }
+              ]
+            }
+          ],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1480,6 +2130,7 @@
           "phases": [1, 2, 3],
           "phasesWithEnemies": [1, 2, 3],
           "phasesNoBattle": [],
+          "phaseScripts": [],
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1526,6 +2177,7 @@
           "phases": [1],
           "phasesWithEnemies": [],
           "phasesNoBattle": [1],
+          "phaseScripts": [],
           "noticeAt": 1570680000,
           "openedAt": 1570680000,
           "closedAt": 1893456000

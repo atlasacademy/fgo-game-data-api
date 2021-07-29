@@ -38,6 +38,7 @@
   "phases": [1],
   "phasesWithEnemies": [],
   "phasesNoBattle": [1],
+  "phaseScripts": [],
   "noticeAt": 1609488000,
   "openedAt": 1609488000,
   "closedAt": 1610769599
