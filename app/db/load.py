@@ -249,16 +249,22 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
                 data = []
 
             with engine.begin() as conn:
+                logger.info(f"Updating {table.name} …")
                 insert_db(conn, table, data)
 
+        logger.info("Updating subtitle …")
         load_subtitle(engine, region, master_folder)
 
+        logger.info("Updating parsed skill and td …")
         load_skill_td_lv(engine, repo_folder)
 
+        logger.info("Updating event …")
         load_event(engine, repo_folder)
 
+        logger.info("Updating item …")
         load_item(engine, repo_folder)
 
+        logger.info("Updating script list …")
         load_script_list(engine, repo_folder)
 
         with engine.begin() as conn:
