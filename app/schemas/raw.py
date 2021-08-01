@@ -1250,6 +1250,7 @@ class Master(BaseModelORJson):
     activeSkillToSvt: dict[int, set[int]]
     passiveSkillToSvt: dict[int, set[int]]
     extraPassiveSkillToSvt: dict[int, set[int]]
+    appendPassiveSkillToSvt: dict[int, set[int]]
     tdToSvt: dict[int, set[int]]
     skillToAiAct: dict[int, set[int]]
     aiActToAiSvt: dict[int, set[int]]

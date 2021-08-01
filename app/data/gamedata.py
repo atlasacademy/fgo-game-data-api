@@ -28,6 +28,7 @@ MASTER_WITHOUT_ID = {
     "mstAiField",
     "mstAiAct",
     "mstSvtPassiveSkill",
+    "mstSvtAppendPassiveSkill",
 }
 SKILL_STUFFS = {"mstSvtSkill", "mstSkillLv"}
 TD_STUFFS = {"mstSvtTreasureDevice", "mstTreasureDeviceLv"}
@@ -41,8 +42,10 @@ def update_masters(region_path: dict[Region, DirectoryPath]) -> None:
         master = {}
 
         for entity in MASTER_WITH_ID | MASTER_WITHOUT_ID | SKILL_STUFFS | TD_STUFFS:
-            with open(gamedata / "master" / f"{entity}.json", "rb") as fp:
-                master[entity] = orjson.loads(fp.read())
+            master_path = gamedata / "master" / f"{entity}.json"
+            if master_path.exists():
+                with open(master_path, "rb") as fp:
+                    master[entity] = orjson.loads(fp.read())
 
         for entity in MASTER_WITH_ID:
             master[f"{entity}Id"] = {item["id"]: item for item in master[entity]}
@@ -76,6 +79,13 @@ def update_masters(region_path: dict[Region, DirectoryPath]) -> None:
         master["extraPassiveSkillToSvt"] = defaultdict(set)
         for skill in master["mstSvtPassiveSkill"]:
             master["extraPassiveSkillToSvt"][skill["skillId"]].add(skill["svtId"])
+
+        if region_name == Region.JP:
+            master["appendPassiveSkillToSvt"] = defaultdict(set)
+            for skill in master["mstSvtAppendPassiveSkill"]:
+                master["appendPassiveSkillToSvt"][skill["skillId"]].add(skill["svtId"])
+        else:
+            master["appendPassiveSkillToSvt"] = {}
 
         for masters_table, source_table, lookup_id, result_id in (
             ("activeSkillToSvt", "mstSvtSkill", "skillId", "svtId"),

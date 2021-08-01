@@ -26,8 +26,9 @@ def active_to_svtId(region: Region, skill_id: int) -> set[int]:
 def passive_to_svtId(region: Region, skill_id: int) -> set[int]:
     """Returns a set of svt ID that has the given skill ID as passive"""
     class_passives = masters[region].passiveSkillToSvt.get(skill_id, set())
-    extra_massives = masters[region].extraPassiveSkillToSvt.get(skill_id, set())
-    return class_passives | extra_massives
+    extra_passives = masters[region].extraPassiveSkillToSvt.get(skill_id, set())
+    append_passives = masters[region].appendPassiveSkillToSvt.get(skill_id, set())
+    return class_passives | extra_passives | append_passives
 
 
 def skill_to_MCId(region: Region, skill_id: int) -> set[int]:
