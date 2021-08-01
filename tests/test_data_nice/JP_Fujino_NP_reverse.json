@@ -1184,6 +1184,263 @@
               "qp": 10000000
             }
           },
+          "appendSkillMaterials": {
+            "1": {
+              "items": [
+                {
+                  "item": {
+                    "id": 6002,
+                    "name": "弓の輝石",
+                    "type": "skillLvUp",
+                    "uses": ["skill"],
+                    "detail": "【スキル強化素材】\n弓兵の力が宿った光輝く石",
+                    "individuality": [],
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6002.png",
+                    "background": "bronze",
+                    "priority": 101,
+                    "dropPriority": 6099
+                  },
+                  "amount": 4
+                }
+              ],
+              "qp": 100000
+            },
+            "2": {
+              "items": [
+                {
+                  "item": {
+                    "id": 6002,
+                    "name": "弓の輝石",
+                    "type": "skillLvUp",
+                    "uses": ["skill"],
+                    "detail": "【スキル強化素材】\n弓兵の力が宿った光輝く石",
+                    "individuality": [],
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6002.png",
+                    "background": "bronze",
+                    "priority": 101,
+                    "dropPriority": 6099
+                  },
+                  "amount": 10
+                }
+              ],
+              "qp": 200000
+            },
+            "3": {
+              "items": [
+                {
+                  "item": {
+                    "id": 6102,
+                    "name": "弓の魔石",
+                    "type": "skillLvUp",
+                    "uses": ["skill"],
+                    "detail": "【スキル強化素材】\n弓兵の強い力が宿った魔法石",
+                    "individuality": [],
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6102.png",
+                    "background": "silver",
+                    "priority": 108,
+                    "dropPriority": 6199
+                  },
+                  "amount": 4
+                }
+              ],
+              "qp": 600000
+            },
+            "4": {
+              "items": [
+                {
+                  "item": {
+                    "id": 6102,
+                    "name": "弓の魔石",
+                    "type": "skillLvUp",
+                    "uses": ["skill"],
+                    "detail": "【スキル強化素材】\n弓兵の強い力が宿った魔法石",
+                    "individuality": [],
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6102.png",
+                    "background": "silver",
+                    "priority": 108,
+                    "dropPriority": 6199
+                  },
+                  "amount": 10
+                },
+                {
+                  "item": {
+                    "id": 6529,
+                    "name": "呪獣胆石",
+                    "type": "skillLvUp",
+                    "uses": ["skill", "ascension", "costume"],
+                    "detail": "【スキル強化＆霊基再臨素材】\n呪われた獣の体内で呪いが醸成されてできた石。\n晴れることのない強烈な呪いを放ち続ける。",
+                    "individuality": [],
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6529.png",
+                    "background": "gold",
+                    "priority": 242,
+                    "dropPriority": 8504
+                  },
+                  "amount": 2
+                }
+              ],
+              "qp": 800000
+            },
+            "5": {
+              "items": [
+                {
+                  "item": {
+                    "id": 6202,
+                    "name": "弓の秘石",
+                    "type": "skillLvUp",
+                    "uses": ["skill"],
+                    "detail": "【スキル強化素材】\n弓兵の強大な力が宿った宝石",
+                    "individuality": [],
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6202.png",
+                    "background": "gold",
+                    "priority": 115,
+                    "dropPriority": 6299
+                  },
+                  "amount": 4
+                },
+                {
+                  "item": {
+                    "id": 6529,
+                    "name": "呪獣胆石",
+                    "type": "skillLvUp",
+                    "uses": ["skill", "ascension", "costume"],
+                    "detail": "【スキル強化＆霊基再臨素材】\n呪われた獣の体内で呪いが醸成されてできた石。\n晴れることのない強烈な呪いを放ち続ける。",
+                    "individuality": [],
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6529.png",
+                    "background": "gold",
+                    "priority": 242,
+                    "dropPriority": 8504
+                  },
+                  "amount": 4
+                }
+              ],
+              "qp": 2000000
+            },
+            "6": {
+              "items": [
+                {
+                  "item": {
+                    "id": 6202,
+                    "name": "弓の秘石",
+                    "type": "skillLvUp",
+                    "uses": ["skill"],
+                    "detail": "【スキル強化素材】\n弓兵の強大な力が宿った宝石",
+                    "individuality": [],
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6202.png",
+                    "background": "gold",
+                    "priority": 115,
+                    "dropPriority": 6299
+                  },
+                  "amount": 10
+                },
+                {
+                  "item": {
+                    "id": 6520,
+                    "name": "血の涙石",
+                    "type": "skillLvUp",
+                    "uses": ["skill", "ascension", "costume"],
+                    "detail": "【スキル強化＆霊基再臨素材】\n巨大な目玉の怪物が息絶える瞬間に流す涙の結晶体。\n強烈な呪いが込められている。",
+                    "individuality": [],
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6520.png",
+                    "background": "gold",
+                    "priority": 237,
+                    "dropPriority": 8402
+                  },
+                  "amount": 3
+                }
+              ],
+              "qp": 2500000
+            },
+            "7": {
+              "items": [
+                {
+                  "item": {
+                    "id": 6520,
+                    "name": "血の涙石",
+                    "type": "skillLvUp",
+                    "uses": ["skill", "ascension", "costume"],
+                    "detail": "【スキル強化＆霊基再臨素材】\n巨大な目玉の怪物が息絶える瞬間に流す涙の結晶体。\n強烈な呪いが込められている。",
+                    "individuality": [],
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6520.png",
+                    "background": "gold",
+                    "priority": 237,
+                    "dropPriority": 8402
+                  },
+                  "amount": 5
+                },
+                {
+                  "item": {
+                    "id": 6541,
+                    "name": "禍罪の矢尻",
+                    "type": "skillLvUp",
+                    "uses": ["skill", "ascension", "costume"],
+                    "detail": "【スキル強化＆霊基再臨素材】\n数多の血、数多の罪、数多の穢れを啜り、\n災いを招き寄せる呪いを帯びた矢尻。",
+                    "individuality": [],
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6541.png",
+                    "background": "silver",
+                    "priority": 227,
+                    "dropPriority": 8315
+                  },
+                  "amount": 5
+                }
+              ],
+              "qp": 5000000
+            },
+            "8": {
+              "items": [
+                {
+                  "item": {
+                    "id": 6541,
+                    "name": "禍罪の矢尻",
+                    "type": "skillLvUp",
+                    "uses": ["skill", "ascension", "costume"],
+                    "detail": "【スキル強化＆霊基再臨素材】\n数多の血、数多の罪、数多の穢れを啜り、\n災いを招き寄せる呪いを帯びた矢尻。",
+                    "individuality": [],
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6541.png",
+                    "background": "silver",
+                    "priority": 227,
+                    "dropPriority": 8315
+                  },
+                  "amount": 15
+                },
+                {
+                  "item": {
+                    "id": 6550,
+                    "name": "夢幻の鱗粉",
+                    "type": "skillLvUp",
+                    "uses": ["skill"],
+                    "detail": "【スキル強化＆霊基再臨素材】\n 妖精の羽根から舞い散る鱗粉。\n 様々な『魔法の粉』の原料になる。",
+                    "individuality": [],
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6550.png",
+                    "background": "silver",
+                    "priority": 231,
+                    "dropPriority": 8319
+                  },
+                  "amount": 20
+                }
+              ],
+              "qp": 6000000
+            },
+            "9": {
+              "items": [
+                {
+                  "item": {
+                    "id": 6999,
+                    "name": "伝承結晶",
+                    "type": "skillLvUp",
+                    "uses": ["skill"],
+                    "detail": "【スキル強化＆霊基再臨素材】\n人類史とマナの奔流が交差する事で\n産み出される高純度の魔力結晶。\n物質化した英霊の素材とも言える。",
+                    "individuality": [],
+                    "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6999.png",
+                    "background": "gold",
+                    "priority": 299,
+                    "dropPriority": 8900
+                  },
+                  "amount": 1
+                }
+              ],
+              "qp": 10000000
+            }
+          },
           "costumeMaterials": {},
           "coin": {
             "summonNum": 50,
@@ -3009,8 +3266,7 @@
                   },
                   "amount": 120
                 }
-              ],
-              "levelUpMaterials": {}
+              ]
             },
             {
               "num": 101,
@@ -3068,8 +3324,7 @@
                   },
                   "amount": 120
                 }
-              ],
-              "levelUpMaterials": {}
+              ]
             },
             {
               "num": 102,
@@ -3207,8 +3462,7 @@
                   },
                   "amount": 120
                 }
-              ],
-              "levelUpMaterials": {}
+              ]
             }
           ],
           "noblePhantasms": [

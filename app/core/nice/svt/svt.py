@@ -203,6 +203,13 @@ async def get_nice_servant(
         for combineS in raw_svt.mstCombineSkill
     }
 
+    nice_data["appendSkillMaterials"] = {
+        combineA.skillLv: await get_nice_item_amount_qp(
+            conn, region, combineA.itemIds, combineA.itemNums, combineA.qp, lang
+        )
+        for combineA in raw_svt.mstCombineAppendPassiveSkill
+    }
+
     nice_data["costumeMaterials"] = {
         costume_ids[combineC.costumeId]: await get_nice_item_amount_qp(
             conn, region, combineC.itemIds, combineC.itemNums, combineC.qp, lang

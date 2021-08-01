@@ -719,6 +719,188 @@
       "qp": 5000000
     }
   },
+  "appendSkillMaterials": {
+    "1": {
+      "items": [
+        {
+          "item": {
+            "id": 6503,
+            "name": "英雄の証",
+            "type": "skillLvUp",
+            "uses": ["skill", "ascension", "costume"],
+            "detail": "【スキル強化＆霊基再臨素材】\n英雄と認められた証。\n多くの人々が持つが、\n自覚していないため忘れられる。",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6503.png",
+            "background": "bronze",
+            "priority": 200,
+            "dropPriority": 8100
+          },
+          "amount": 5
+        }
+      ],
+      "qp": 50000
+    },
+    "2": {
+      "items": [
+        {
+          "item": {
+            "id": 6512,
+            "name": "竜の牙",
+            "type": "skillLvUp",
+            "uses": ["skill", "ascension", "costume"],
+            "detail": "【スキル強化＆霊基再臨素材】\n竜種の牙。竜牙兵はこの牙を使って作られる。",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6512.png",
+            "background": "bronze",
+            "priority": 202,
+            "dropPriority": 8200
+          },
+          "amount": 5
+        }
+      ],
+      "qp": 100000
+    },
+    "3": {
+      "items": [
+        {
+          "item": {
+            "id": 6502,
+            "name": "世界樹の種",
+            "type": "skillLvUp",
+            "uses": ["skill", "ascension", "costume"],
+            "detail": "【スキル強化＆霊基再臨素材】\n世界を体現する巨木の種",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6502.png",
+            "background": "silver",
+            "priority": 210,
+            "dropPriority": 8203
+          },
+          "amount": 5
+        }
+      ],
+      "qp": 300000
+    },
+    "4": {
+      "items": [
+        {
+          "item": {
+            "id": 6515,
+            "name": "八連双晶",
+            "type": "skillLvUp",
+            "uses": ["skill", "ascension", "costume"],
+            "detail": "【スキル強化＆霊基再臨素材】\nゴーレムの体内で造られる多結晶体",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6515.png",
+            "background": "silver",
+            "priority": 212,
+            "dropPriority": 8301
+          },
+          "amount": 5
+        }
+      ],
+      "qp": 400000
+    },
+    "5": {
+      "items": [
+        {
+          "item": {
+            "id": 6524,
+            "name": "大騎士勲章",
+            "type": "skillLvUp",
+            "uses": ["skill", "ascension", "costume"],
+            "detail": "【スキル強化＆霊基再臨素材】\n廉潔なる騎士の忠義と勲功を讃える勲章。",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6524.png",
+            "background": "silver",
+            "priority": 220,
+            "dropPriority": 8309
+          },
+          "amount": 5
+        }
+      ],
+      "qp": 1000000
+    },
+    "6": {
+      "items": [
+        {
+          "item": {
+            "id": 6528,
+            "name": "原初の産毛",
+            "type": "skillLvUp",
+            "uses": ["skill", "ascension", "costume"],
+            "detail": "【スキル強化＆霊基再臨素材】\n猛々しく燃え盛る炎のような獣の毛。\nその神々しさから、魔除けの御守として珍重される。",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6528.png",
+            "background": "gold",
+            "priority": 241,
+            "dropPriority": 8405
+          },
+          "amount": 5
+        }
+      ],
+      "qp": 1250000
+    },
+    "7": {
+      "items": [
+        {
+          "item": {
+            "id": 6518,
+            "name": "精霊根",
+            "type": "skillLvUp",
+            "uses": ["skill", "ascension", "costume"],
+            "detail": "【スキル強化＆霊基再臨素材】\n土の精霊の宿った根。\nこの根を石像に植え付けると、\nたちまち生きているかのように動き始めると云う。",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6518.png",
+            "background": "gold",
+            "priority": 235,
+            "dropPriority": 8502
+          },
+          "amount": 5
+        }
+      ],
+      "qp": 2500000
+    },
+    "8": {
+      "items": [
+        {
+          "item": {
+            "id": 6525,
+            "name": "智慧のスカラベ",
+            "type": "skillLvUp",
+            "uses": ["skill", "ascension", "costume"],
+            "detail": "【スキル強化＆霊基再臨素材】\n再生と復活の象徴たる聖なる虫の飾り物。\n難題を解きし真に聡しき者にのみ与えられる。",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6525.png",
+            "background": "gold",
+            "priority": 240,
+            "dropPriority": 8503
+          },
+          "amount": 5
+        }
+      ],
+      "qp": 3000000
+    },
+    "9": {
+      "items": [
+        {
+          "item": {
+            "id": 6999,
+            "name": "伝承結晶",
+            "type": "skillLvUp",
+            "uses": ["skill"],
+            "detail": "【スキル強化＆霊基再臨素材】\n人類史とマナの奔流が交差する事で\n産み出される高純度の魔力結晶。\n物質化した英霊の素材とも言える。",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6999.png",
+            "background": "gold",
+            "priority": 299,
+            "dropPriority": 8900
+          },
+          "amount": 1
+        }
+      ],
+      "qp": 5000000
+    }
+  },
   "costumeMaterials": {
     "800130": {
       "items": [
@@ -4480,8 +4662,7 @@
           },
           "amount": 120
         }
-      ],
-      "levelUpMaterials": {}
+      ]
     },
     {
       "num": 101,
@@ -4539,8 +4720,7 @@
           },
           "amount": 120
         }
-      ],
-      "levelUpMaterials": {}
+      ]
     },
     {
       "num": 102,
@@ -4704,8 +4884,7 @@
           },
           "amount": 120
         }
-      ],
-      "levelUpMaterials": {}
+      ]
     }
   ],
   "noblePhantasms": [

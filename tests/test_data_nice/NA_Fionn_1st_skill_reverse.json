@@ -1076,6 +1076,7 @@
               "qp": 10000000
             }
           },
+          "appendSkillMaterials": {},
           "costumeMaterials": {},
           "script": {},
           "skills": [

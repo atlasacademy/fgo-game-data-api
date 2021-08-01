@@ -575,7 +575,6 @@ class NiceServantAppendPassiveSkill(BaseModel):
     priority: int
     skill: NiceSkill
     unlockMaterials: list[NiceItemAmount]
-    levelUpMaterials: dict[int, NiceLvlUpMaterial]
 
 
 class NiceServantCoin(BaseModel):
@@ -901,6 +900,11 @@ class NiceServant(BaseModelORJson):
         ...,
         title="Skill Materials",
         description="Mapping <Skill level, Materials to level up skills>.",
+    )
+    appendSkillMaterials: dict[int, NiceLvlUpMaterial] = Field(
+        ...,
+        title="Append Skill Materials",
+        description="Mapping <Append Skill level, Materials to level up append skills>.",
     )
     costumeMaterials: dict[int, NiceLvlUpMaterial] = Field(
         ...,

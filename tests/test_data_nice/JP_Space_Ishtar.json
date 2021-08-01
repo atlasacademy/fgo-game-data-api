@@ -925,6 +925,188 @@
       "qp": 20000000
     }
   },
+  "appendSkillMaterials": {
+    "1": {
+      "items": [
+        {
+          "item": {
+            "id": 6515,
+            "name": "八連双晶",
+            "type": "skillLvUp",
+            "uses": ["skill", "ascension", "costume"],
+            "detail": "【スキル強化＆霊基再臨素材】\nゴーレムの体内で造られる多結晶体",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6515.png",
+            "background": "silver",
+            "priority": 212,
+            "dropPriority": 8301
+          },
+          "amount": 10
+        }
+      ],
+      "qp": 200000
+    },
+    "2": {
+      "items": [
+        {
+          "item": {
+            "id": 6509,
+            "name": "蛇の宝玉",
+            "type": "skillLvUp",
+            "uses": ["skill", "ascension", "costume"],
+            "detail": "【スキル強化＆霊基再臨素材】\n蛇の瞳に睨まれているかのような宝玉",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6509.png",
+            "background": "silver",
+            "priority": 213,
+            "dropPriority": 8307
+          },
+          "amount": 10
+        }
+      ],
+      "qp": 400000
+    },
+    "3": {
+      "items": [
+        {
+          "item": {
+            "id": 6521,
+            "name": "黒獣脂",
+            "type": "skillLvUp",
+            "uses": ["skill", "ascension", "costume"],
+            "detail": "【スキル強化＆霊基再臨素材】\n魂を喰らう獣の体表から採れるドロドロとした脂。\n蒸留により精製を幾度も繰り返すことで、\n上質の魔術資源となる。",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6521.png",
+            "background": "gold",
+            "priority": 238,
+            "dropPriority": 8403
+          },
+          "amount": 12
+        }
+      ],
+      "qp": 1200000
+    },
+    "4": {
+      "items": [
+        {
+          "item": {
+            "id": 6528,
+            "name": "原初の産毛",
+            "type": "skillLvUp",
+            "uses": ["skill", "ascension", "costume"],
+            "detail": "【スキル強化＆霊基再臨素材】\n猛々しく燃え盛る炎のような獣の毛。\nその神々しさから、魔除けの御守として珍重される。",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6528.png",
+            "background": "gold",
+            "priority": 241,
+            "dropPriority": 8405
+          },
+          "amount": 12
+        }
+      ],
+      "qp": 1600000
+    },
+    "5": {
+      "items": [
+        {
+          "item": {
+            "id": 6537,
+            "name": "巨人の指輪",
+            "type": "skillLvUp",
+            "uses": ["skill", "ascension", "costume"],
+            "detail": "【スキル強化＆霊基再臨素材】\nヒトが身に着けることは\nおよそ叶わない巨大な指輪。\n伝説と幻想と神秘に彩られたその造形は\n古き時代の栄光を偲ばせる。",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6537.png",
+            "background": "silver",
+            "priority": 224,
+            "dropPriority": 8312
+          },
+          "amount": 12
+        }
+      ],
+      "qp": 4000000
+    },
+    "6": {
+      "items": [
+        {
+          "item": {
+            "id": 6539,
+            "name": "暁光炉心",
+            "type": "skillLvUp",
+            "uses": ["skill", "ascension", "costume"],
+            "detail": "【スキル強化＆霊基再臨素材】\n明け方の太陽のように眩く輝く動力炉。\n仙道を基にした技術が使われており、\n現代科学や近代魔術では解明できない謎を\n多く秘めている。",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6539.png",
+            "background": "gold",
+            "priority": 244,
+            "dropPriority": 8406
+          },
+          "amount": 15
+        }
+      ],
+      "qp": 5000000
+    },
+    "7": {
+      "items": [
+        {
+          "item": {
+            "id": 6541,
+            "name": "禍罪の矢尻",
+            "type": "skillLvUp",
+            "uses": ["skill", "ascension", "costume"],
+            "detail": "【スキル強化＆霊基再臨素材】\n数多の血、数多の罪、数多の穢れを啜り、\n災いを招き寄せる呪いを帯びた矢尻。",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6541.png",
+            "background": "silver",
+            "priority": 227,
+            "dropPriority": 8315
+          },
+          "amount": 15
+        }
+      ],
+      "qp": 10000000
+    },
+    "8": {
+      "items": [
+        {
+          "item": {
+            "id": 6544,
+            "name": "煌星のカケラ",
+            "type": "skillLvUp",
+            "uses": ["skill", "ascension", "costume"],
+            "detail": "【スキル強化＆霊基再臨素材】\n夜空にきらめく星がそのまま落ちて\nきたかのような形をした不思議な鉱石。",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6544.png",
+            "background": "gold",
+            "priority": 247,
+            "dropPriority": 8508
+          },
+          "amount": 15
+        }
+      ],
+      "qp": 12000000
+    },
+    "9": {
+      "items": [
+        {
+          "item": {
+            "id": 6999,
+            "name": "伝承結晶",
+            "type": "skillLvUp",
+            "uses": ["skill"],
+            "detail": "【スキル強化＆霊基再臨素材】\n人類史とマナの奔流が交差する事で\n産み出される高純度の魔力結晶。\n物質化した英霊の素材とも言える。",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6999.png",
+            "background": "gold",
+            "priority": 299,
+            "dropPriority": 8900
+          },
+          "amount": 1
+        }
+      ],
+      "qp": 20000000
+    }
+  },
   "costumeMaterials": {
     "1100930": {
       "items": [
@@ -3398,8 +3580,7 @@
           },
           "amount": 120
         }
-      ],
-      "levelUpMaterials": {}
+      ]
     },
     {
       "num": 101,
@@ -3457,8 +3638,7 @@
           },
           "amount": 120
         }
-      ],
-      "levelUpMaterials": {}
+      ]
     },
     {
       "num": 102,
@@ -3596,8 +3776,7 @@
           },
           "amount": 120
         }
-      ],
-      "levelUpMaterials": {}
+      ]
     }
   ],
   "noblePhantasms": [

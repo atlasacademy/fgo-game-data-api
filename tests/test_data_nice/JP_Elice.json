@@ -900,6 +900,263 @@
       "qp": 10000000
     }
   },
+  "appendSkillMaterials": {
+    "1": {
+      "items": [
+        {
+          "item": {
+            "id": 6003,
+            "name": "槍の輝石",
+            "type": "skillLvUp",
+            "uses": ["skill"],
+            "detail": "【スキル強化素材】\n槍兵の力が宿った光輝く石",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6003.png",
+            "background": "bronze",
+            "priority": 102,
+            "dropPriority": 6098
+          },
+          "amount": 4
+        }
+      ],
+      "qp": 100000
+    },
+    "2": {
+      "items": [
+        {
+          "item": {
+            "id": 6003,
+            "name": "槍の輝石",
+            "type": "skillLvUp",
+            "uses": ["skill"],
+            "detail": "【スキル強化素材】\n槍兵の力が宿った光輝く石",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6003.png",
+            "background": "bronze",
+            "priority": 102,
+            "dropPriority": 6098
+          },
+          "amount": 10
+        }
+      ],
+      "qp": 200000
+    },
+    "3": {
+      "items": [
+        {
+          "item": {
+            "id": 6103,
+            "name": "槍の魔石",
+            "type": "skillLvUp",
+            "uses": ["skill"],
+            "detail": "【スキル強化素材】\n槍兵の強い力が宿った魔法石",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6103.png",
+            "background": "silver",
+            "priority": 109,
+            "dropPriority": 6198
+          },
+          "amount": 4
+        }
+      ],
+      "qp": 600000
+    },
+    "4": {
+      "items": [
+        {
+          "item": {
+            "id": 6103,
+            "name": "槍の魔石",
+            "type": "skillLvUp",
+            "uses": ["skill"],
+            "detail": "【スキル強化素材】\n槍兵の強い力が宿った魔法石",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6103.png",
+            "background": "silver",
+            "priority": 109,
+            "dropPriority": 6198
+          },
+          "amount": 10
+        },
+        {
+          "item": {
+            "id": 6505,
+            "name": "虚影の塵",
+            "type": "skillLvUp",
+            "uses": ["skill", "ascension", "costume"],
+            "detail": "【スキル強化＆霊基再臨素材】\n虚ろな影が消える時に飛び散る塵",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
+            "background": "bronze",
+            "priority": 203,
+            "dropPriority": 8201
+          },
+          "amount": 8
+        }
+      ],
+      "qp": 800000
+    },
+    "5": {
+      "items": [
+        {
+          "item": {
+            "id": 6203,
+            "name": "槍の秘石",
+            "type": "skillLvUp",
+            "uses": ["skill"],
+            "detail": "【スキル強化素材】\n槍兵の強大な力が宿った宝石",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6203.png",
+            "background": "gold",
+            "priority": 116,
+            "dropPriority": 6298
+          },
+          "amount": 4
+        },
+        {
+          "item": {
+            "id": 6505,
+            "name": "虚影の塵",
+            "type": "skillLvUp",
+            "uses": ["skill", "ascension", "costume"],
+            "detail": "【スキル強化＆霊基再臨素材】\n虚ろな影が消える時に飛び散る塵",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
+            "background": "bronze",
+            "priority": 203,
+            "dropPriority": 8201
+          },
+          "amount": 16
+        }
+      ],
+      "qp": 2000000
+    },
+    "6": {
+      "items": [
+        {
+          "item": {
+            "id": 6203,
+            "name": "槍の秘石",
+            "type": "skillLvUp",
+            "uses": ["skill"],
+            "detail": "【スキル強化素材】\n槍兵の強大な力が宿った宝石",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6203.png",
+            "background": "gold",
+            "priority": 116,
+            "dropPriority": 6298
+          },
+          "amount": 10
+        },
+        {
+          "item": {
+            "id": 6523,
+            "name": "封魔のランプ",
+            "type": "skillLvUp",
+            "uses": ["skill", "ascension", "costume"],
+            "detail": "【スキル強化＆霊基再臨素材】\n強大な魔力を持つ精霊が\n封じこめられているという妖艶なランプ。",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6523.png",
+            "background": "gold",
+            "priority": 239,
+            "dropPriority": 8404
+          },
+          "amount": 3
+        }
+      ],
+      "qp": 2500000
+    },
+    "7": {
+      "items": [
+        {
+          "item": {
+            "id": 6523,
+            "name": "封魔のランプ",
+            "type": "skillLvUp",
+            "uses": ["skill", "ascension", "costume"],
+            "detail": "【スキル強化＆霊基再臨素材】\n強大な魔力を持つ精霊が\n封じこめられているという妖艶なランプ。",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6523.png",
+            "background": "gold",
+            "priority": 239,
+            "dropPriority": 8404
+          },
+          "amount": 5
+        },
+        {
+          "item": {
+            "id": 6532,
+            "name": "枯淡勾玉",
+            "type": "skillLvUp",
+            "uses": ["skill", "ascension", "costume"],
+            "detail": "【スキル強化＆霊基再臨素材】\n淡く朧げな生気を宿した勾玉。\n勾玉は月の姿を象ったとも、胎児の姿を象ったとも、\n魂の姿を象ったとも云われているが\nその用途は謎に包まれている。",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6532.png",
+            "background": "silver",
+            "priority": 222,
+            "dropPriority": 8310
+          },
+          "amount": 5
+        }
+      ],
+      "qp": 5000000
+    },
+    "8": {
+      "items": [
+        {
+          "item": {
+            "id": 6532,
+            "name": "枯淡勾玉",
+            "type": "skillLvUp",
+            "uses": ["skill", "ascension", "costume"],
+            "detail": "【スキル強化＆霊基再臨素材】\n淡く朧げな生気を宿した勾玉。\n勾玉は月の姿を象ったとも、胎児の姿を象ったとも、\n魂の姿を象ったとも云われているが\nその用途は謎に包まれている。",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6532.png",
+            "background": "silver",
+            "priority": 222,
+            "dropPriority": 8310
+          },
+          "amount": 15
+        },
+        {
+          "item": {
+            "id": 6544,
+            "name": "煌星のカケラ",
+            "type": "skillLvUp",
+            "uses": ["skill", "ascension", "costume"],
+            "detail": "【スキル強化＆霊基再臨素材】\n夜空にきらめく星がそのまま落ちて\nきたかのような形をした不思議な鉱石。",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6544.png",
+            "background": "gold",
+            "priority": 247,
+            "dropPriority": 8508
+          },
+          "amount": 8
+        }
+      ],
+      "qp": 6000000
+    },
+    "9": {
+      "items": [
+        {
+          "item": {
+            "id": 6999,
+            "name": "伝承結晶",
+            "type": "skillLvUp",
+            "uses": ["skill"],
+            "detail": "【スキル強化＆霊基再臨素材】\n人類史とマナの奔流が交差する事で\n産み出される高純度の魔力結晶。\n物質化した英霊の素材とも言える。",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6999.png",
+            "background": "gold",
+            "priority": 299,
+            "dropPriority": 8900
+          },
+          "amount": 1
+        }
+      ],
+      "qp": 10000000
+    }
+  },
   "costumeMaterials": {},
   "coin": {
     "summonNum": 0,
@@ -2621,8 +2878,7 @@
           },
           "amount": 120
         }
-      ],
-      "levelUpMaterials": {}
+      ]
     },
     {
       "num": 101,
@@ -2680,8 +2936,7 @@
           },
           "amount": 120
         }
-      ],
-      "levelUpMaterials": {}
+      ]
     },
     {
       "num": 102,
@@ -2819,8 +3074,7 @@
           },
           "amount": 120
         }
-      ],
-      "levelUpMaterials": {}
+      ]
     }
   ],
   "noblePhantasms": [
