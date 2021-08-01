@@ -3,7 +3,7 @@
     "1": {
       "individuality": [
         { "id": 4001, "name": "cardArts" },
-        { "id": 4008, "name": "playerCards" }
+        { "id": 4008, "name": "faceCard" }
       ],
       "adjustAtk": 1000,
       "adjustTdGauge": 3000,
@@ -15,7 +15,7 @@
     "2": {
       "individuality": [
         { "id": 4001, "name": "cardArts" },
-        { "id": 4008, "name": "playerCards" }
+        { "id": 4008, "name": "faceCard" }
       ],
       "adjustAtk": 1200,
       "adjustTdGauge": 4500,
@@ -27,7 +27,7 @@
     "3": {
       "individuality": [
         { "id": 4001, "name": "cardArts" },
-        { "id": 4008, "name": "playerCards" }
+        { "id": 4008, "name": "faceCard" }
       ],
       "adjustAtk": 1400,
       "adjustTdGauge": 6000,
@@ -41,7 +41,7 @@
     "1": {
       "individuality": [
         { "id": 4002, "name": "cardBuster" },
-        { "id": 4008, "name": "playerCards" }
+        { "id": 4008, "name": "faceCard" }
       ],
       "adjustAtk": 1500,
       "adjustTdGauge": 0,
@@ -53,7 +53,7 @@
     "2": {
       "individuality": [
         { "id": 4002, "name": "cardBuster" },
-        { "id": 4008, "name": "playerCards" }
+        { "id": 4008, "name": "faceCard" }
       ],
       "adjustAtk": 1800,
       "adjustTdGauge": 0,
@@ -65,7 +65,7 @@
     "3": {
       "individuality": [
         { "id": 4002, "name": "cardBuster" },
-        { "id": 4008, "name": "playerCards" }
+        { "id": 4008, "name": "faceCard" }
       ],
       "adjustAtk": 2100,
       "adjustTdGauge": 0,
@@ -79,7 +79,7 @@
     "1": {
       "individuality": [
         { "id": 4003, "name": "cardQuick" },
-        { "id": 4008, "name": "playerCards" }
+        { "id": 4008, "name": "faceCard" }
       ],
       "adjustAtk": 800,
       "adjustTdGauge": 1000,
@@ -91,7 +91,7 @@
     "2": {
       "individuality": [
         { "id": 4003, "name": "cardQuick" },
-        { "id": 4008, "name": "playerCards" }
+        { "id": 4008, "name": "faceCard" }
       ],
       "adjustAtk": 960,
       "adjustTdGauge": 1500,
@@ -103,7 +103,7 @@
     "3": {
       "individuality": [
         { "id": 4003, "name": "cardQuick" },
-        { "id": 4008, "name": "playerCards" }
+        { "id": 4008, "name": "faceCard" }
       ],
       "adjustAtk": 1120,
       "adjustTdGauge": 2000,
@@ -117,7 +117,7 @@
     "4": {
       "individuality": [
         { "id": 4004, "name": "cardExtra" },
-        { "id": 4008, "name": "playerCards" }
+        { "id": 4008, "name": "faceCard" }
       ],
       "adjustAtk": 1000,
       "adjustTdGauge": 1000,

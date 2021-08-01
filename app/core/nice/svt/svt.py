@@ -143,7 +143,7 @@ async def get_nice_servant(
     atkBase = first_svt_limit.atkBase
     hpMax = first_svt_limit.hpMax
     hpBase = first_svt_limit.hpBase
-    growthCurveMax = 101 if raw_svt.mstSvt.type == SvtType.NORMAL else (lvMax + 1)
+    growthCurveMax = 121 if raw_svt.mstSvt.type == SvtType.NORMAL else (lvMax + 1)
     growthCurveValues = sorted(raw_svt.mstSvtExp, key=lambda svtExp: svtExp.lv)
     atkGrowth = [
         atkBase + (atkMax - atkBase) * exp.curve // 1000
