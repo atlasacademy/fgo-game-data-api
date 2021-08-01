@@ -901,6 +901,21 @@
     }
   },
   "costumeMaterials": {},
+  "coin": {
+    "summonNum": 0,
+    "item": {
+      "id": 30430001,
+      "name": "サーヴァントコイン",
+      "type": "svtCoin",
+      "uses": [],
+      "detail": "【サーヴァント強化素材】\nサーヴァントの霊基のカケラ。",
+      "individuality": [],
+      "icon": "https://assets.atlasacademy.io/GameData/JP/Items/304300.png",
+      "background": "silver",
+      "priority": 57,
+      "dropPriority": 1003
+    }
+  },
   "script": {},
   "skills": [
     {
@@ -2465,6 +2480,347 @@
           ]
         }
       ]
+    }
+  ],
+  "appendPassive": [
+    {
+      "num": 100,
+      "priority": 1,
+      "skill": {
+        "id": 3001000,
+        "name": "追撃技巧向上",
+        "ruby": "",
+        "detail": "自身のExtra Attackカードの性能を30%アップする",
+        "type": "passive",
+        "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00301.png",
+        "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "actIndividuality": [],
+        "script": {},
+        "extraPassive": [],
+        "functions": [
+          {
+            "funcId": 30003,
+            "funcType": "addStateShort",
+            "funcTargetType": "self",
+            "funcTargetTeam": "playerAndEnemy",
+            "funcPopupText": "Extra Attackアップ",
+            "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+            "functvals": [],
+            "funcquestTvals": [],
+            "funcGroup": [],
+            "buffs": [
+              {
+                "id": 30001,
+                "name": "Extra Attackアップ",
+                "detail": "Extra Attackカードの性能をアップ",
+                "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+                "type": "upCommandall",
+                "buffGroup": 0,
+                "script": {},
+                "vals": [
+                  { "id": 3004, "name": "buffPositiveEffect" },
+                  { "id": 3006, "name": "buffIncreaseDamage" }
+                ],
+                "tvals": [
+                  { "id": 5000, "name": "canBeInBattle" },
+                  { "id": 4004, "name": "cardExtra" }
+                ],
+                "ckSelfIndv": [{ "id": 4004, "name": "cardExtra" }],
+                "ckOpIndv": [],
+                "maxRate": 5000
+              }
+            ],
+            "svals": [
+              {
+                "Rate": 1000,
+                "Turn": -1,
+                "Count": -1,
+                "Value": 300,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Turn": -1,
+                "Count": -1,
+                "Value": 320,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Turn": -1,
+                "Count": -1,
+                "Value": 340,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Turn": -1,
+                "Count": -1,
+                "Value": 360,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Turn": -1,
+                "Count": -1,
+                "Value": 380,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Turn": -1,
+                "Count": -1,
+                "Value": 400,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Turn": -1,
+                "Count": -1,
+                "Value": 420,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Turn": -1,
+                "Count": -1,
+                "Value": 440,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Turn": -1,
+                "Count": -1,
+                "Value": 460,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Turn": -1,
+                "Count": -1,
+                "Value": 500,
+                "ShowState": -1
+              }
+            ]
+          }
+        ]
+      },
+      "unlockMaterials": [
+        {
+          "item": {
+            "id": 30430001,
+            "name": "サーヴァントコイン",
+            "type": "svtCoin",
+            "uses": [],
+            "detail": "【サーヴァント強化素材】\nサーヴァントの霊基のカケラ。",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/304300.png",
+            "background": "silver",
+            "priority": 57,
+            "dropPriority": 1003
+          },
+          "amount": 120
+        }
+      ],
+      "levelUpMaterials": {}
+    },
+    {
+      "num": 101,
+      "priority": 1,
+      "skill": {
+        "id": 3002000,
+        "name": "魔力装填",
+        "ruby": "",
+        "detail": "自身のNPを10%チャージした状態でバトルを開始する",
+        "type": "passive",
+        "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00601.png",
+        "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "actIndividuality": [],
+        "script": {},
+        "extraPassive": [],
+        "functions": [
+          {
+            "funcId": 30005,
+            "funcType": "gainNp",
+            "funcTargetType": "self",
+            "funcTargetTeam": "player",
+            "funcPopupText": "NP増加",
+            "functvals": [],
+            "funcquestTvals": [],
+            "funcGroup": [],
+            "buffs": [],
+            "svals": [
+              { "Rate": 1000, "Value": 1000, "ShowState": -1 },
+              { "Rate": 1000, "Value": 1100, "ShowState": -1 },
+              { "Rate": 1000, "Value": 1200, "ShowState": -1 },
+              { "Rate": 1000, "Value": 1300, "ShowState": -1 },
+              { "Rate": 1000, "Value": 1400, "ShowState": -1 },
+              { "Rate": 1000, "Value": 1500, "ShowState": -1 },
+              { "Rate": 1000, "Value": 1600, "ShowState": -1 },
+              { "Rate": 1000, "Value": 1700, "ShowState": -1 },
+              { "Rate": 1000, "Value": 1800, "ShowState": -1 },
+              { "Rate": 1000, "Value": 2000, "ShowState": -1 }
+            ]
+          }
+        ]
+      },
+      "unlockMaterials": [
+        {
+          "item": {
+            "id": 30430001,
+            "name": "サーヴァントコイン",
+            "type": "svtCoin",
+            "uses": [],
+            "detail": "【サーヴァント強化素材】\nサーヴァントの霊基のカケラ。",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/304300.png",
+            "background": "silver",
+            "priority": 57,
+            "dropPriority": 1003
+          },
+          "amount": 120
+        }
+      ],
+      "levelUpMaterials": {}
+    },
+    {
+      "num": 102,
+      "priority": 1,
+      "skill": {
+        "id": 3005000,
+        "name": "対ランサー攻撃適性",
+        "ruby": "",
+        "detail": "自身の〔ランサー〕クラスに対する攻撃力を20%アップする",
+        "type": "passive",
+        "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00300.png",
+        "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "actIndividuality": [],
+        "script": {},
+        "extraPassive": [],
+        "functions": [
+          {
+            "funcId": 30018,
+            "funcType": "addStateShort",
+            "funcTargetType": "self",
+            "funcTargetTeam": "playerAndEnemy",
+            "funcPopupText": "攻撃力アップ〔対ランサー〕",
+            "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_300.png",
+            "functvals": [],
+            "funcquestTvals": [],
+            "funcGroup": [],
+            "buffs": [
+              {
+                "id": 30005,
+                "name": "攻撃力アップ〔対ランサー〕",
+                "detail": "〔ランサー〕クラスに対する攻撃力をアップ",
+                "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_300.png",
+                "type": "upAtk",
+                "buffGroup": 0,
+                "script": {},
+                "vals": [
+                  { "id": 3004, "name": "buffPositiveEffect" },
+                  { "id": 3006, "name": "buffIncreaseDamage" },
+                  { "id": 3027, "name": "buffAtkUp" }
+                ],
+                "tvals": [{ "id": 101, "name": "classLancer" }],
+                "ckSelfIndv": [],
+                "ckOpIndv": [{ "id": 101, "name": "classLancer" }],
+                "maxRate": 5000
+              }
+            ],
+            "svals": [
+              {
+                "Rate": 1000,
+                "Turn": -1,
+                "Count": -1,
+                "Value": 200,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Turn": -1,
+                "Count": -1,
+                "Value": 210,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Turn": -1,
+                "Count": -1,
+                "Value": 220,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Turn": -1,
+                "Count": -1,
+                "Value": 230,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Turn": -1,
+                "Count": -1,
+                "Value": 240,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Turn": -1,
+                "Count": -1,
+                "Value": 250,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Turn": -1,
+                "Count": -1,
+                "Value": 260,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Turn": -1,
+                "Count": -1,
+                "Value": 270,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Turn": -1,
+                "Count": -1,
+                "Value": 280,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Turn": -1,
+                "Count": -1,
+                "Value": 300,
+                "ShowState": -1
+              }
+            ]
+          }
+        ]
+      },
+      "unlockMaterials": [
+        {
+          "item": {
+            "id": 30430001,
+            "name": "サーヴァントコイン",
+            "type": "svtCoin",
+            "uses": [],
+            "detail": "【サーヴァント強化素材】\nサーヴァントの霊基のカケラ。",
+            "individuality": [],
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/304300.png",
+            "background": "silver",
+            "priority": 57,
+            "dropPriority": 1003
+          },
+          "amount": 120
+        }
+      ],
+      "levelUpMaterials": {}
     }
   ],
   "noblePhantasms": [

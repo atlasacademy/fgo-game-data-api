@@ -570,6 +570,19 @@ class NiceServantChange(BaseModel):
     battleSvtId: int
 
 
+class NiceServantAppendPassiveSkill(BaseModel):
+    num: int
+    priority: int
+    skill: NiceSkill
+    unlockMaterials: list[NiceItemAmount]
+    levelUpMaterials: dict[int, NiceLvlUpMaterial]
+
+
+class NiceServantCoin(BaseModel):
+    summonNum: int
+    item: NiceItem
+
+
 class NiceLoreComment(BaseModel):
     id: int
     priority: int
@@ -895,6 +908,7 @@ class NiceServant(BaseModelORJson):
         description="Mapping <Costume svt ID, Materials to unlock the costume>. "
         "Costume details can be found in `.profile.costume`",
     )
+    coin: Optional[NiceServantCoin] = Field(None, title="Servant Coin")
     script: NiceServantScript = Field(
         ...,
         title="Servant Script",
@@ -911,6 +925,11 @@ class NiceServant(BaseModelORJson):
         ...,
         title="Event Passive Skills",
         description="List of servant's extra event passive skills, (bond bonus, damage bonus, etc).",
+    )
+    appendPassive: list[NiceServantAppendPassiveSkill] = Field(
+        ...,
+        title="Append Passive skills",
+        description="List of skills that can be added to servant and the number of materials required.",
     )
     noblePhantasms: list[NiceTd] = Field(
         ..., title="Noble Phantasm", description="List of servant's noble phantasms."

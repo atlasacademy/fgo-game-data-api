@@ -1692,6 +1692,101 @@
       ]
     },
     {
+      "id": 940121,
+      "name": "Swordbeauty's Knowledge B",
+      "ruby": "Swordbeauty's Knowledge",
+      "detail": "Increase your ATK Strength by 30% in \"All In! Las Vegas Championship Match - Seven Duels of Swordbeauties!\" & increase Bond gained when completing quests by 20% [Event Only]",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00301.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 16,
+          "priority": 1,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 80254,
+          "flag": 0,
+          "startedAt": 1627531200,
+          "endedAt": 1629345599
+        }
+      ],
+      "functions": [
+        {
+          "funcId": 3900,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "Swordbeauty's Knowledge",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_302.png",
+          "functvals": [],
+          "funcquestTvals": [{ "id": 94000091, "name": "eventLasVegas" }],
+          "funcGroup": [
+            {
+              "eventId": 80254,
+              "baseFuncId": 3898,
+              "nameTotal": "{1}\nTotal ATK Strength Up",
+              "name": "Total ATK Strength Up",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/EventUI/func_group_icon_302.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [
+            {
+              "id": 1743,
+              "name": "Swordbeauty's Knowledge",
+              "detail": "Increase damage dealt in \"All In! Las Vegas Championship Match - Seven Duels of Swordbeauties!\"",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_302.png",
+              "type": "upDamage",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 10000
+            }
+          ],
+          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 300 }]
+        },
+        {
+          "funcId": 3904,
+          "funcType": "servantFriendshipUp",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "None",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80254,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\nTotal Bond Bonus",
+              "name": "Increase Bond gained",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/EventUI/func_group_icon_1009.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            {
+              "Target": 1,
+              "Individuality": 0,
+              "EventId": 80254,
+              "RateCount": 200
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": 960502,
       "name": "Power of Bonds E",
       "ruby": "Power of Bonds",
@@ -2238,6 +2333,7 @@
       ]
     }
   ],
+  "appendPassive": [],
   "noblePhantasms": [
     {
       "id": 1100201,
@@ -3078,7 +3174,7 @@
             "name": "Bond Level 4",
             "condType": "svtFriendship",
             "condValue": 4,
-            "priority": 8770,
+            "priority": 8769,
             "svtVoiceType": "home",
             "overwriteName": "",
             "id": ["0_H120", "0_H121", "0_H122", "0_H123"],
@@ -3107,7 +3203,7 @@
             "name": "Bond Level 5",
             "condType": "svtFriendship",
             "condValue": 5,
-            "priority": 8764,
+            "priority": 8762,
             "svtVoiceType": "home",
             "overwriteName": "",
             "id": ["0_H130", "0_H131", "0_H132", "0_H133", "0_H134"],

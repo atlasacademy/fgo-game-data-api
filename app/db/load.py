@@ -231,6 +231,7 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
     start_loading_time = time.perf_counter()
 
     for region, repo_folder in region_path.items():
+        logger.info(f"Updating {region} tables …")
         master_folder = repo_folder / "master"
         engine = engines[region]
 
@@ -244,7 +245,18 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
                     logger.warning(f"Found unknown columns in {table_json}")
                     data = remove_unknown_columns(data, table)
             else:
-                if not (region == Region.NA and table.name == "mstStageRemap"):
+                if not (
+                    region == Region.NA
+                    and table.name
+                    in {
+                        "mstStageRemap",
+                        "mstSvtAdd",
+                        "mstSvtAppendPassiveSkill",
+                        "mstSvtAppendPassiveSkillUnlock",
+                        "mstCombineAppendPassiveSkill",
+                        "mstSvtCoin",
+                    }
+                ):
                     logger.warning(f"Can't find file {table_json}.")
                 data = []
 

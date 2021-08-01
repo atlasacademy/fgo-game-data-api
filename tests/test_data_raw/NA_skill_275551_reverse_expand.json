@@ -1913,6 +1913,21 @@
             },
             {
               "svtId": 602400,
+              "num": 16,
+              "priority": 1,
+              "skillId": 940121,
+              "condQuestId": 0,
+              "condQuestPhase": 0,
+              "condLv": 0,
+              "condLimitCount": 0,
+              "condFriendshipRank": 0,
+              "eventId": 80254,
+              "flag": 0,
+              "startedAt": 1627531200,
+              "endedAt": 1629345599
+            },
+            {
+              "svtId": 602400,
               "num": 10,
               "priority": 1,
               "skillId": 960502,
@@ -2017,6 +2032,9 @@
               "endedAt": 1893456000
             }
           ],
+          "mstSvtAppendPassiveSkill": [],
+          "mstSvtAppendPassiveSkillUnlock": [],
+          "mstCombineAppendPassiveSkill": [],
           "mstSvtExp": [
             { "type": 4, "lv": 0, "exp": 0, "curve": 0 },
             { "type": 4, "lv": 1, "exp": 100, "curve": 0 },

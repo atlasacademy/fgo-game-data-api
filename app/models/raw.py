@@ -585,6 +585,55 @@ mstSubtitle = Table(
 )
 
 
+mstSvtAdd = Table(
+    "mstSvtAdd",
+    metadata,
+    Column("svtId", Integer, index=True),
+    Column("script", JSONB),
+)
+
+
+mstSvtAppendPassiveSkill = Table(
+    "mstSvtAppendPassiveSkill",
+    metadata,
+    Column("svtId", Integer, index=True),
+    Column("num", Integer),
+    Column("priority", Integer),
+    Column("skillId", Integer),
+)
+
+
+mstSvtAppendPassiveSkillUnlock = Table(
+    "mstSvtAppendPassiveSkillUnlock",
+    metadata,
+    Column("svtId", Integer, index=True),
+    Column("num", Integer),
+    Column("itemIds", ARRAY(Integer)),
+    Column("itemNums", ARRAY(Integer)),
+)
+
+
+mstCombineAppendPassiveSkill = Table(
+    "mstCombineAppendPassiveSkill",
+    metadata,
+    Column("svtId", Integer, index=True),
+    Column("num", Integer, index=True),
+    Column("skillLv", Integer),
+    Column("qp", Integer),
+    Column("itemIds", ARRAY(Integer)),
+    Column("itemNums", ARRAY(Integer)),
+)
+
+
+mstSvtCoin = Table(
+    "mstSvtCoin",
+    metadata,
+    Column("svtId", Integer, index=True),
+    Column("summonNum", Integer),
+    Column("itemId", Integer),
+)
+
+
 mstEquip = Table(
     "mstEquip",
     metadata,
@@ -1288,6 +1337,8 @@ npcFollowerRelease = Table(
 npcSvtFollower = Table(
     "npcSvtFollower",
     metadata,
+    Column("appendPassiveSkillIds", ARRAY(Integer)),
+    Column("appendPassiveSkillLvs", ARRAY(Integer)),
     Column("id", Integer, primary_key=True),
     Column("svtId", Integer),
     Column("name", String),
@@ -1421,6 +1472,11 @@ TABLES_TO_BE_LOADED = [
     mstSvtExp,
     mstFriendship,
     mstCombineMaterial,
+    mstSvtAdd,
+    mstSvtAppendPassiveSkill,
+    mstSvtAppendPassiveSkillUnlock,
+    mstCombineAppendPassiveSkill,
+    mstSvtCoin,
     mstEquipExp,
     mstEquipSkill,
     mstCommandCodeSkill,

@@ -1629,6 +1629,9 @@
               "endedAt": 1893456000
             }
           ],
+          "mstSvtAppendPassiveSkill": [],
+          "mstSvtAppendPassiveSkillUnlock": [],
+          "mstCombineAppendPassiveSkill": [],
           "mstSvtExp": [
             { "type": 30, "lv": 0, "exp": 0, "curve": 0 },
             { "type": 30, "lv": 1, "exp": 100, "curve": 0 },
@@ -2899,6 +2902,9 @@
           "mstSvtCostume": [],
           "mstSvtScript": [],
           "mstSvtPassiveSkill": [],
+          "mstSvtAppendPassiveSkill": [],
+          "mstSvtAppendPassiveSkillUnlock": [],
+          "mstCombineAppendPassiveSkill": [],
           "mstSvtExp": [
             { "type": 30, "lv": 0, "exp": 0, "curve": 0 },
             { "type": 30, "lv": 1, "exp": 100, "curve": 0 },
@@ -4156,6 +4162,9 @@
           "mstSvtCostume": [],
           "mstSvtScript": [],
           "mstSvtPassiveSkill": [],
+          "mstSvtAppendPassiveSkill": [],
+          "mstSvtAppendPassiveSkillUnlock": [],
+          "mstCombineAppendPassiveSkill": [],
           "mstSvtExp": [
             { "type": 30, "lv": 0, "exp": 0, "curve": 0 },
             { "type": 30, "lv": 1, "exp": 100, "curve": 0 },

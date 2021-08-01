@@ -6,7 +6,7 @@ from ...config import Settings
 from ...schemas.common import Language, Region
 from ...schemas.enums import ITEM_BG_TYPE_NAME, NiceItemUse
 from ...schemas.gameenums import ITEM_TYPE_NAME
-from ...schemas.nice import AssetURL, NiceItem, NiceItemAmount
+from ...schemas.nice import AssetURL, NiceItem, NiceItemAmount, NiceLvlUpMaterial
 from ...schemas.raw import MstItem
 from ..raw import get_item_entity, get_multiple_items
 from ..utils import get_traits_list, get_translation
@@ -66,6 +66,20 @@ async def get_nice_item_amount(
         NiceItemAmount(item=get_nice_item_from_raw(region, item, lang), amount=amount)
         for item, amount in zip(await get_multiple_items(conn, item_list), amount_list)
     ]
+
+
+async def get_nice_item_amount_qp(
+    conn: AsyncConnection,
+    region: Region,
+    item_list: list[int],
+    amount_list: list[int],
+    qp: int,
+    lang: Language,
+) -> NiceLvlUpMaterial:
+    return NiceLvlUpMaterial(
+        items=await get_nice_item_amount(conn, region, item_list, amount_list, lang),
+        qp=qp,
+    )
 
 
 def get_all_nice_items(

@@ -7218,6 +7218,10 @@
       ]
     }
   ],
+  "mstSvtAppendPassiveSkill": [],
+  "expandedAppendPassive": [],
+  "mstSvtAppendPassiveSkillUnlock": [],
+  "mstCombineAppendPassiveSkill": [],
   "mstSvtExp": [
     { "type": 9, "lv": 0, "exp": 0, "curve": 0 },
     { "type": 9, "lv": 1, "exp": 100, "curve": 0 },

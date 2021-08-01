@@ -26,6 +26,7 @@ from ..schemas.raw import (
     MstBoxGacha,
     MstBuff,
     MstClosedMessage,
+    MstCombineAppendPassiveSkill,
     MstCombineCostume,
     MstCombineLimit,
     MstCombineMaterial,
@@ -58,8 +59,11 @@ from ..schemas.raw import (
     MstShopScript,
     MstSpot,
     MstSvt,
+    MstSvtAppendPassiveSkill,
+    MstSvtAppendPassiveSkillUnlock,
     MstSvtCard,
     MstSvtChange,
+    MstSvtCoin,
     MstSvtComment,
     MstSvtCostume,
     MstSvtExp,
@@ -298,6 +302,16 @@ async def get_servant_entity(
     )
     mstSvtPassiveSkill = await fetch.get_all(conn, MstSvtPassiveSkill, servant_id)
     mstSvtExtra = await fetch.get_one(conn, MstSvtExtra, servant_id)
+    mstSvtAppendPassiveSkill = await fetch.get_all(
+        conn, MstSvtAppendPassiveSkill, servant_id
+    )
+    mstSvtAppendPassiveSkillUnlock = await fetch.get_all(
+        conn, MstSvtAppendPassiveSkillUnlock, servant_id
+    )
+    mstCombineAppendPassiveSkill = await fetch.get_all(
+        conn, MstCombineAppendPassiveSkill, servant_id
+    )
+    mstSvtCoin = await fetch.get_one(conn, MstSvtCoin, servant_id)
 
     costume_chara_ids = [limit.battleCharaId for limit in mstSvtLimitAdd]
     mstSvtScript = await svt.get_svt_script(
@@ -327,6 +341,10 @@ async def get_servant_entity(
         mstSvtLimitAdd=mstSvtLimitAdd,
         mstSvtChange=mstSvtChange,
         mstSvtPassiveSkill=mstSvtPassiveSkill,
+        mstSvtAppendPassiveSkill=mstSvtAppendPassiveSkill,
+        mstSvtAppendPassiveSkillUnlock=mstSvtAppendPassiveSkillUnlock,
+        mstCombineAppendPassiveSkill=mstCombineAppendPassiveSkill,
+        mstSvtCoin=mstSvtCoin,
         # needed costume to get the nice limits and costume ids
         mstSvtCostume=mstSvtCostume,
         # needed this to get CharaFigure available forms
@@ -340,7 +358,10 @@ async def get_servant_entity(
 
     if expand:
         extra_passive_ids = {skill.skillId for skill in mstSvtPassiveSkill}
-        expand_skill_ids = set(svt_entity.mstSvt.classPassive) | extra_passive_ids
+        append_passive_ids = {skill.skillId for skill in mstSvtAppendPassiveSkill}
+        expand_skill_ids = (
+            set(svt_entity.mstSvt.classPassive) | extra_passive_ids | append_passive_ids
+        )
         expand_skills = {
             skill.mstSkill.id: skill
             for skill in await get_skill_entity_no_reverse_many(
@@ -352,6 +373,9 @@ async def get_servant_entity(
         ]
         svt_entity.expandedExtraPassive = [
             expand_skills[skill.skillId] for skill in mstSvtPassiveSkill
+        ]
+        svt_entity.expandedAppendPassive = [
+            expand_skills[skill.skillId] for skill in mstSvtAppendPassiveSkill
         ]
 
     if lore:

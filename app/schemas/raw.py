@@ -152,6 +152,40 @@ class SkillEntityNoReverse(BaseModelORJson):
     mstSkillLv: list[MstSkillLv]
 
 
+class MstSvtAppendPassiveSkill(BaseModelORJson):
+    svtId: int
+    num: int
+    priority: int
+    skillId: int
+
+
+class MstSvtAppendPassiveSkillUnlock(BaseModelORJson):
+    svtId: int
+    num: int
+    itemIds: list[int]
+    itemNums: list[int]
+
+
+class MstCombineAppendPassiveSkill(BaseModelORJson):
+    svtId: int
+    num: int
+    skillLv: int
+    qp: int
+    itemIds: list[int]
+    itemNums: list[int]
+
+
+class MstSvtCoin(BaseModelORJson):
+    svtId: int
+    summonNum: int
+    itemId: int
+
+
+class MstSvtAdd(BaseModelORJson):
+    svtId: int
+    script: dict[str, Any]
+
+
 # Dummy ID that is used when enemy servant does an extra attack instead of NP
 EXTRA_ATTACK_TD_ID = 100
 
@@ -1149,6 +1183,8 @@ class NpcFollowerRelease(BaseModelORJson):
 
 
 class NpcSvtFollower(BaseModelORJson):
+    appendPassiveSkillIds: list[int] = []
+    appendPassiveSkillLvs: list[int] = []
     id: int
     svtId: int
     name: str
@@ -1238,6 +1274,11 @@ class ServantEntity(BaseModelORJson):
     mstSvtScript: list[MstSvtScript]
     mstSvtPassiveSkill: list[MstSvtPassiveSkill]
     expandedExtraPassive: list[SkillEntityNoReverse] = []
+    mstSvtAppendPassiveSkill: list[MstSvtAppendPassiveSkill]
+    expandedAppendPassive: list[SkillEntityNoReverse] = []
+    mstSvtAppendPassiveSkillUnlock: list[MstSvtAppendPassiveSkillUnlock]
+    mstCombineAppendPassiveSkill: list[MstCombineAppendPassiveSkill]
+    mstSvtCoin: Optional[MstSvtCoin] = None
     mstCv: Optional[MstCv] = None
     mstIllustrator: Optional[MstIllustrator] = None
     mstSvtExp: list[MstSvtExp] = []

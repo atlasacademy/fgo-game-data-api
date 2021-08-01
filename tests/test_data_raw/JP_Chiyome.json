@@ -1971,7 +1971,27 @@
     { "id": 4, "lv": 97, "value": 12960, "createdAt": 946652400 },
     { "id": 4, "lv": 98, "value": 12970, "createdAt": 946652400 },
     { "id": 4, "lv": 99, "value": 12980, "createdAt": 946652400 },
-    { "id": 4, "lv": 100, "value": 12990, "createdAt": 946652400 }
+    { "id": 4, "lv": 100, "value": 12990, "createdAt": 946652400 },
+    { "id": 4, "lv": 101, "value": 13000, "createdAt": 946652400 },
+    { "id": 4, "lv": 102, "value": 13010, "createdAt": 946652400 },
+    { "id": 4, "lv": 103, "value": 13020, "createdAt": 946652400 },
+    { "id": 4, "lv": 104, "value": 13030, "createdAt": 946652400 },
+    { "id": 4, "lv": 105, "value": 13040, "createdAt": 946652400 },
+    { "id": 4, "lv": 106, "value": 13050, "createdAt": 946652400 },
+    { "id": 4, "lv": 107, "value": 13060, "createdAt": 946652400 },
+    { "id": 4, "lv": 108, "value": 13070, "createdAt": 946652400 },
+    { "id": 4, "lv": 109, "value": 13080, "createdAt": 946652400 },
+    { "id": 4, "lv": 110, "value": 13090, "createdAt": 946652400 },
+    { "id": 4, "lv": 111, "value": 13100, "createdAt": 946652400 },
+    { "id": 4, "lv": 112, "value": 13110, "createdAt": 946652400 },
+    { "id": 4, "lv": 113, "value": 13120, "createdAt": 946652400 },
+    { "id": 4, "lv": 114, "value": 13130, "createdAt": 946652400 },
+    { "id": 4, "lv": 115, "value": 13140, "createdAt": 946652400 },
+    { "id": 4, "lv": 116, "value": 13150, "createdAt": 946652400 },
+    { "id": 4, "lv": 117, "value": 13160, "createdAt": 946652400 },
+    { "id": 4, "lv": 118, "value": 13170, "createdAt": 946652400 },
+    { "id": 4, "lv": 119, "value": 13171, "createdAt": 946652400 },
+    { "id": 4, "lv": 120, "value": 13172, "createdAt": 946652400 }
   ],
   "mstSvtLimitAdd": [],
   "mstSvtChange": [
@@ -2228,6 +2248,91 @@
       "endedAt": 1893423600
     }
   ],
+  "mstSvtAppendPassiveSkill": [
+    { "svtId": 602900, "num": 100, "priority": 1, "skillId": 3001000 },
+    { "svtId": 602900, "num": 101, "priority": 1, "skillId": 3002000 },
+    { "svtId": 602900, "num": 102, "priority": 1, "skillId": 3013000 }
+  ],
+  "mstSvtAppendPassiveSkillUnlock": [
+    { "svtId": 602900, "num": 100, "itemIds": [60290001], "itemNums": [120] },
+    { "svtId": 602900, "num": 101, "itemIds": [60290001], "itemNums": [120] },
+    { "svtId": 602900, "num": 102, "itemIds": [60290001], "itemNums": [120] }
+  ],
+  "mstCombineAppendPassiveSkill": [
+    {
+      "svtId": 602900,
+      "num": 0,
+      "skillLv": 1,
+      "qp": 100000,
+      "itemIds": [6006],
+      "itemNums": [4]
+    },
+    {
+      "svtId": 602900,
+      "num": 0,
+      "skillLv": 2,
+      "qp": 200000,
+      "itemIds": [6006],
+      "itemNums": [10]
+    },
+    {
+      "svtId": 602900,
+      "num": 0,
+      "skillLv": 3,
+      "qp": 600000,
+      "itemIds": [6106],
+      "itemNums": [4]
+    },
+    {
+      "svtId": 602900,
+      "num": 0,
+      "skillLv": 4,
+      "qp": 800000,
+      "itemIds": [6106, 6512],
+      "itemNums": [10, 10]
+    },
+    {
+      "svtId": 602900,
+      "num": 0,
+      "skillLv": 5,
+      "qp": 2000000,
+      "itemIds": [6206, 6512],
+      "itemNums": [4, 20]
+    },
+    {
+      "svtId": 602900,
+      "num": 0,
+      "skillLv": 6,
+      "qp": 2500000,
+      "itemIds": [6206, 6506],
+      "itemNums": [10, 2]
+    },
+    {
+      "svtId": 602900,
+      "num": 0,
+      "skillLv": 7,
+      "qp": 5000000,
+      "itemIds": [6506, 6531],
+      "itemNums": [4, 2]
+    },
+    {
+      "svtId": 602900,
+      "num": 0,
+      "skillLv": 8,
+      "qp": 6000000,
+      "itemIds": [6531, 6540],
+      "itemNums": [6, 8]
+    },
+    {
+      "svtId": 602900,
+      "num": 0,
+      "skillLv": 9,
+      "qp": 10000000,
+      "itemIds": [6999],
+      "itemNums": [1]
+    }
+  ],
+  "mstSvtCoin": { "svtId": 602900, "summonNum": 30, "itemId": 60290001 },
   "mstSvtExp": [
     { "type": 4, "lv": 0, "exp": 0, "curve": 0 },
     { "type": 4, "lv": 1, "exp": 100, "curve": 0 },
@@ -2329,7 +2434,27 @@
     { "type": 4, "lv": 97, "exp": 17596500, "curve": 1215 },
     { "type": 4, "lv": 98, "exp": 18855000, "curve": 1227 },
     { "type": 4, "lv": 99, "exp": 20311500, "curve": 1240 },
-    { "type": 4, "lv": 100, "exp": 21988000, "curve": 1253 }
+    { "type": 4, "lv": 100, "exp": 40623000, "curve": 1253 },
+    { "type": 4, "lv": 101, "exp": 60934500, "curve": 1265 },
+    { "type": 4, "lv": 102, "exp": 81246000, "curve": 1278 },
+    { "type": 4, "lv": 103, "exp": 101557500, "curve": 1291 },
+    { "type": 4, "lv": 104, "exp": 121869000, "curve": 1303 },
+    { "type": 4, "lv": 105, "exp": 142180500, "curve": 1316 },
+    { "type": 4, "lv": 106, "exp": 162492000, "curve": 1329 },
+    { "type": 4, "lv": 107, "exp": 182803500, "curve": 1341 },
+    { "type": 4, "lv": 108, "exp": 203115000, "curve": 1354 },
+    { "type": 4, "lv": 109, "exp": 223426500, "curve": 1367 },
+    { "type": 4, "lv": 110, "exp": 243738000, "curve": 1379 },
+    { "type": 4, "lv": 111, "exp": 264049500, "curve": 1392 },
+    { "type": 4, "lv": 112, "exp": 284361000, "curve": 1405 },
+    { "type": 4, "lv": 113, "exp": 304672500, "curve": 1417 },
+    { "type": 4, "lv": 114, "exp": 324984000, "curve": 1430 },
+    { "type": 4, "lv": 115, "exp": 345295500, "curve": 1443 },
+    { "type": 4, "lv": 116, "exp": 365607000, "curve": 1455 },
+    { "type": 4, "lv": 117, "exp": 385918500, "curve": 1468 },
+    { "type": 4, "lv": 118, "exp": 406230000, "curve": 1481 },
+    { "type": 4, "lv": 119, "exp": 426541500, "curve": 1493 },
+    { "type": 4, "lv": 120, "exp": 426541500, "curve": 1506 }
   ],
   "mstFriendship": [
     {
