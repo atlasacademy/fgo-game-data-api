@@ -215,6 +215,9 @@ class BaseVals(BaseModel):
     ForcedEffectSpeedOne: Optional[int] = None
     SetLimitCount: Optional[int] = None
     CheckEnemyFieldSpace: Optional[int] = None
+    TriggeredFuncPosition: Optional[int] = None
+    DamageCount: Optional[int] = None
+    DamageRates: Optional[list[int]] = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo

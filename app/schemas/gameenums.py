@@ -1354,6 +1354,9 @@ class DataValsType(IntEnum):
     ForcedEffectSpeedOne = 75
     SetLimitCount = 76
     CheckEnemyFieldSpace = 77
+    TriggeredFuncPosition = 78
+    DamageCount = 79
+    DamageRates = 80
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -1406,6 +1409,7 @@ class ItemType(IntEnum):
     DICE = 26
     CONTINUE_ITEM = 27
     EUQIP_SKILL_USE_ITEM = 28
+    SVT_COIN = 29
 
 
 class NiceItemType(str, Enum):
@@ -1439,6 +1443,7 @@ class NiceItemType(str, Enum):
     dice = "dice"
     continueItem = "continueItem"
     euqipSkillUseItem = "euqipSkillUseItem"
+    svtCoin = "svtCoin"
 
 
 ITEM_TYPE_NAME: dict[int, NiceItemType] = {
@@ -1470,6 +1475,7 @@ ITEM_TYPE_NAME: dict[int, NiceItemType] = {
     26: NiceItemType.dice,
     27: NiceItemType.continueItem,
     28: NiceItemType.euqipSkillUseItem,
+    29: NiceItemType.svtCoin,
 }
 
 
