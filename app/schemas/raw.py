@@ -1183,8 +1183,8 @@ class NpcFollowerRelease(BaseModelORJson):
 
 
 class NpcSvtFollower(BaseModelORJson):
-    appendPassiveSkillIds: list[int] = []
-    appendPassiveSkillLvs: list[int] = []
+    appendPassiveSkillIds: Optional[list[int]] = None
+    appendPassiveSkillLvs: Optional[list[int]] = None
     id: int
     svtId: int
     name: str
