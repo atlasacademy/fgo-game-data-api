@@ -1263,7 +1263,7 @@
       "uses": [],
       "detail": "【サーヴァント強化素材】\nサーヴァントの霊基のカケラ。",
       "individuality": [],
-      "icon": "https://assets.atlasacademy.io/GameData/JP/Items/1100900.png",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/Coins/1100900.png",
       "background": "silver",
       "priority": 57,
       "dropPriority": 1003
@@ -3653,7 +3653,7 @@
             "uses": [],
             "detail": "【サーヴァント強化素材】\nサーヴァントの霊基のカケラ。",
             "individuality": [],
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/1100900.png",
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Coins/1100900.png",
             "background": "silver",
             "priority": 57,
             "dropPriority": 1003
@@ -3711,7 +3711,7 @@
             "uses": [],
             "detail": "【サーヴァント強化素材】\nサーヴァントの霊基のカケラ。",
             "individuality": [],
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/1100900.png",
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Coins/1100900.png",
             "background": "silver",
             "priority": 57,
             "dropPriority": 1003
@@ -3849,7 +3849,7 @@
             "uses": [],
             "detail": "【サーヴァント強化素材】\nサーヴァントの霊基のカケラ。",
             "individuality": [],
-            "icon": "https://assets.atlasacademy.io/GameData/JP/Items/1100900.png",
+            "icon": "https://assets.atlasacademy.io/GameData/JP/Coins/1100900.png",
             "background": "silver",
             "priority": 57,
             "dropPriority": 1003

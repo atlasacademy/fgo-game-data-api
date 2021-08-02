@@ -5,7 +5,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 from ...config import Settings
 from ...schemas.common import Language, Region
 from ...schemas.enums import ITEM_BG_TYPE_NAME, NiceItemUse
-from ...schemas.gameenums import ITEM_TYPE_NAME
+from ...schemas.gameenums import ITEM_TYPE_NAME, ItemType
 from ...schemas.nice import AssetURL, NiceItem, NiceItemAmount, NiceLvlUpMaterial
 from ...schemas.raw import MstItem
 from ..raw import get_item_entity, get_multiple_items
@@ -39,6 +39,16 @@ async def get_nice_item(
 def get_nice_item_from_raw(
     region: Region, raw_item: MstItem, lang: Language
 ) -> NiceItem:
+    url_format_params = {
+        "base_url": settings.asset_url,
+        "region": region,
+        "item_id": raw_item.imageId,
+    }
+    if raw_item.type == ItemType.SVT_COIN:
+        icon_url = AssetURL.coins.format(**url_format_params)
+    else:
+        icon_url = AssetURL.items.format(**url_format_params)
+
     return NiceItem(
         id=raw_item.id,
         name=get_translation(lang, raw_item.name),
@@ -46,9 +56,7 @@ def get_nice_item_from_raw(
         uses=get_item_use(raw_item),
         detail=raw_item.detail,
         individuality=get_traits_list(raw_item.individuality),
-        icon=AssetURL.items.format(
-            base_url=settings.asset_url, region=region, item_id=raw_item.imageId
-        ),
+        icon=icon_url,
         background=ITEM_BG_TYPE_NAME[raw_item.bgImageId],
         priority=raw_item.priority,
         dropPriority=raw_item.dropPriority,

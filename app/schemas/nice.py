@@ -93,6 +93,7 @@ class AssetURL:
     skillIcon = "{base_url}/{region}/SkillIcons/skill_{item_id:05}.png"
     buffIcon = "{base_url}/{region}/BuffIcons/bufficon_{item_id}.png"
     items = "{base_url}/{region}/Items/{item_id}.png"
+    coins = "{base_url}/{region}/Coins/{item_id}.png"
     face = "{base_url}/{region}/Faces/f_{item_id}{i}.png"
     equipFace = "{base_url}/{region}/EquipFaces/f_{item_id}{i}.png"
     enemy = "{base_url}/{region}/Enemys/{item_id}{i}.png"
