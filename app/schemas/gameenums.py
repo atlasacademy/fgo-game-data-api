@@ -192,6 +192,7 @@ class FuncType(IntEnum):
     CHANGE_BGM_COSTUME = 125
     FUNC_126 = 126
     FUNC_127 = 127
+    UPDATE_ENTRY_POSITIONS = 128
 
 
 class NiceFuncType(str, Enum):
@@ -286,6 +287,7 @@ class NiceFuncType(str, Enum):
     changeBgmCostume = "changeBgmCostume"
     func126 = "func126"
     func127 = "func127"
+    updateEntryPositions = "updateEntryPositions"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -378,6 +380,7 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     125: NiceFuncType.changeBgmCostume,
     126: NiceFuncType.func126,
     127: NiceFuncType.func127,
+    128: NiceFuncType.updateEntryPositions,
 }
 
 
@@ -631,6 +634,7 @@ class BuffType(IntEnum):
     COMMANDCODEATTACK_AFTER_FUNCTION = 159
     ATTACK_BEFORE_FUNCTION = 160
     DONOT_SKILL_SELECT = 161
+    BUFF_RATE = 162
     INVISIBLE_BATTLE_CHARA = 163
 
 
@@ -784,6 +788,7 @@ class NiceBuffType(str, Enum):
     commandcodeattackAfterFunction = "commandcodeattackAfterFunction"
     attackBeforeFunction = "attackBeforeFunction"
     donotSkillSelect = "donotSkillSelect"
+    buffRate = "buffRate"
     invisibleBattleChara = "invisibleBattleChara"
 
 
@@ -935,6 +940,7 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     159: NiceBuffType.commandcodeattackAfterFunction,
     160: NiceBuffType.attackBeforeFunction,
     161: NiceBuffType.donotSkillSelect,
+    162: NiceBuffType.buffRate,
     163: NiceBuffType.invisibleBattleChara,
 }
 
@@ -1040,6 +1046,7 @@ class BuffAction(IntEnum):
     FUNCTION_COMMANDCODEATTACK_AFTER = 97
     FUNCTION_ATTACK_BEFORE = 98
     DONOT_SKILL_SELECT = 99
+    BUFF_RATE = 100
 
 
 class NiceBuffAction(str, Enum):
@@ -1145,6 +1152,7 @@ class NiceBuffAction(str, Enum):
     functionCommandcodeattackAfter = "functionCommandcodeattackAfter"
     functionAttackBefore = "functionAttackBefore"
     donotSkillSelect = "donotSkillSelect"
+    buffRate = "buffRate"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1248,6 +1256,7 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     97: NiceBuffAction.functionCommandcodeattackAfter,
     98: NiceBuffAction.functionAttackBefore,
     99: NiceBuffAction.donotSkillSelect,
+    100: NiceBuffAction.buffRate,
 }
 
 
@@ -1357,6 +1366,8 @@ class DataValsType(IntEnum):
     TriggeredFuncPosition = 78
     DamageCount = 79
     DamageRates = 80
+    OnPositions = 81
+    OffPositions = 82
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -2813,6 +2824,8 @@ class WarEntityFlag(IntEnum):
     SHOP = 8192
     BLACK_MARK_WITH_CLEAR = 16384
     DISP_FIRST_QUEST = 32768
+    EFFECT_DISAPPEAR_BANNER = 65536
+    WHITE_MARK_WITH_CLEAR = 131072
 
 
 class NiceWarFlag(str, Enum):
@@ -2833,6 +2846,8 @@ class NiceWarFlag(str, Enum):
     shop = "shop"
     blackMarkWithClear = "blackMarkWithClear"
     dispFirstQuest = "dispFirstQuest"
+    effectDisappearBanner = "effectDisappearBanner"
+    whiteMarkWithClear = "whiteMarkWithClear"
     summerCamp = "summerCamp"
     unreleasedStory = "unreleasedStory"
 
@@ -2853,6 +2868,8 @@ WAR_FLAG_NAME: dict[int, NiceWarFlag] = {
     8192: NiceWarFlag.shop,
     16384: NiceWarFlag.blackMarkWithClear,
     32768: NiceWarFlag.dispFirstQuest,
+    65536: NiceWarFlag.effectDisappearBanner,
+    131072: NiceWarFlag.whiteMarkWithClear,
     34848: NiceWarFlag.summerCamp,
     49538: NiceWarFlag.unreleasedStory,
 }

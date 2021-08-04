@@ -219,6 +219,8 @@ class BaseVals(BaseModel):
     TriggeredFuncPosition: Optional[int] = None
     DamageCount: Optional[int] = None
     DamageRates: Optional[list[int]] = None
+    OnPositions: Optional[list[int]] = None
+    OffPositions: Optional[list[int]] = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo

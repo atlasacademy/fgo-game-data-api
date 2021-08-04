@@ -47,6 +47,8 @@ LIST_DATAVALS = {
     "ParamAddOpIndividuality",
     "ParamAddFieldIndividuality",
     "DamageRates",
+    "OnPositions",
+    "OffPositions",
 }
 
 
