@@ -3643,3 +3643,39 @@ class NiceBgmFlag(str, Enum):
 BGM_FLAG_NAME: dict[int, NiceBgmFlag] = {
     1: NiceBgmFlag.isNotRelease,
 }
+
+
+class SvtFrameType(IntEnum):
+    BLACK = 0
+    BRONZE = 1
+    SILVER = 2
+    GOLD = 3
+    FRAME_0801 = 4
+    FRAME_0802 = 5
+    FRAME_0803 = 6
+    FRAME_0804 = 7
+
+
+class NiceSvtFrameType(str, Enum):
+    """Servant Frame Type"""
+
+    black = "black"
+    bronze = "bronze"
+    silver = "silver"
+    gold = "gold"
+    frame0801 = "frame0801"
+    frame0802 = "frame0802"
+    frame0803 = "frame0803"
+    frame0804 = "frame0804"
+
+
+SERVANT_FRAME_TYPE_NAME: dict[int, NiceSvtFrameType] = {
+    0: NiceSvtFrameType.black,
+    1: NiceSvtFrameType.bronze,
+    2: NiceSvtFrameType.silver,
+    3: NiceSvtFrameType.gold,
+    4: NiceSvtFrameType.frame0801,
+    5: NiceSvtFrameType.frame0802,
+    6: NiceSvtFrameType.frame0803,
+    7: NiceSvtFrameType.frame0804,
+}

@@ -347,6 +347,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "EVENT_LOTTERY_FLAG_NAME",
     ),
     ("BgmEntity.Flag", "BgmFlag", "NiceBgmFlag", "Bgm Flag", "BGM_FLAG_NAME"),
+    (
+        "ServantExceedEntity.FRAMETYPE",
+        "SvtFrameType",
+        "NiceSvtFrameType",
+        "Servant Frame Type",
+        "SERVANT_FRAME_TYPE_NAME",
+    ),
 ]
 
 

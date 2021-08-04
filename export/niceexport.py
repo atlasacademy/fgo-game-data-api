@@ -6,13 +6,14 @@ from typing import Any, Callable, NamedTuple, Union
 from app.config import Settings
 from app.core.utils import get_traits_list
 from app.schemas.common import Region
-from app.schemas.enums import ATTRIBUTE_NAME, CLASS_NAME, ITEM_BG_TYPE_NAME
+from app.schemas.enums import ATTRIBUTE_NAME, CLASS_NAME
 from app.schemas.gameenums import (
     BUFF_ACTION_NAME,
     BUFF_LIMIT_NAME,
     BUFF_TYPE_NAME,
     CARD_TYPE_NAME,
     GIFT_TYPE_NAME,
+    SERVANT_FRAME_TYPE_NAME,
     BuffAction,
 )
 
@@ -213,7 +214,7 @@ def get_nice_svt_exceed(raw_data: Any) -> Any:
                     svtExceed["rarity"], svtExceed["exceedCount"]
                 ),
                 "addLvMax": svtExceed["addLvMax"],
-                "frameType": ITEM_BG_TYPE_NAME[svtExceed["frameType"]],
+                "frameType": SERVANT_FRAME_TYPE_NAME[svtExceed["frameType"]],
             }
 
     return out_data

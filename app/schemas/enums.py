@@ -215,7 +215,6 @@ class NiceItemBGType(str, Enum):
     bronze = "bronze"
     silver = "silver"
     gold = "gold"
-    ex = "ex"
     questClearQPReward = "questClearQPReward"
 
 
@@ -225,7 +224,6 @@ ITEM_BG_TYPE_NAME: dict[int, NiceItemBGType] = {
     2: NiceItemBGType.silver,
     3: NiceItemBGType.gold,
     4: NiceItemBGType.questClearQPReward,
-    6: NiceItemBGType.ex,
 }
 
 
