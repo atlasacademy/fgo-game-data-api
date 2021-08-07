@@ -1487,7 +1487,7 @@
                     "id": 6550,
                     "name": "夢幻の鱗粉",
                     "type": "skillLvUp",
-                    "uses": ["skill"],
+                    "uses": ["skill", "ascension", "costume"],
                     "detail": "【スキル強化＆霊基再臨素材】\n 妖精の羽根から舞い散る鱗粉。\n 様々な『魔法の粉』の原料になる。",
                     "individuality": [],
                     "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6550.png",

@@ -336,7 +336,7 @@
     11400,
     11518
   ],
-  "bondGrowth": [1000, 2000, 3000, 4000, 5000],
+  "bondGrowth": [1000, 2000, 3000, 4000, 5000, 267500, 557500, 858000],
   "expGrowth": [
     0,
     100,
@@ -4367,6 +4367,90 @@
       ]
     },
     {
+      "id": 960837,
+      "name": "女傑の威風",
+      "ruby": "じょけつのいふう",
+      "detail": "『亜種特異点Ⅱ 伝承地底世界 アガルタ』のメインクエストクリア時に得られる自身の絆を100%増やす",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00205.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 12,
+          "priority": 1,
+          "condQuestId": 3001009,
+          "condQuestPhase": 1,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 80059,
+          "flag": 0,
+          "startedAt": 1498726800,
+          "endedAt": 1893423600
+        }
+      ],
+      "functions": [
+        {
+          "funcId": 97,
+          "funcType": "servantFriendshipUp",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80044,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n得られる自身の絆ボーナス合計",
+              "name": "得られる自身の絆アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1009.png",
+              "priority": 1,
+              "isDispValue": true
+            },
+            {
+              "eventId": 80059,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n得られる自身の絆ボーナス合計",
+              "name": "得られる自身の絆アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1009.png",
+              "priority": 1,
+              "isDispValue": true
+            },
+            {
+              "eventId": 80072,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n得られる自身の絆ボーナス合計",
+              "name": "得られる自身の絆アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1009.png",
+              "priority": 1,
+              "isDispValue": true
+            },
+            {
+              "eventId": 80077,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n得られる自身の絆ボーナス合計",
+              "name": "得られる自身の絆アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1009.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            {
+              "Target": 1,
+              "Individuality": 0,
+              "EventId": 80059,
+              "RateCount": 1000
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": 962095,
       "name": "星見の旅路",
       "ruby": "ほしみのたびじ",
@@ -4768,6 +4852,7 @@
                   { "id": 115, "name": "classMoonCancer" },
                   { "id": 109, "name": "classAlterEgo" },
                   { "id": 117, "name": "classForeigner" },
+                  { "id": 120, "name": "unknown" },
                   { "id": 111, "name": "classDemonGodPillar" },
                   { "id": 113, "name": "classBeastI" },
                   { "id": 114, "name": "classBeastII" },
@@ -4783,6 +4868,7 @@
                   { "id": 115, "name": "classMoonCancer" },
                   { "id": 109, "name": "classAlterEgo" },
                   { "id": 117, "name": "classForeigner" },
+                  { "id": 120, "name": "unknown" },
                   { "id": 111, "name": "classDemonGodPillar" },
                   { "id": 113, "name": "classBeastI" },
                   { "id": 114, "name": "classBeastII" },

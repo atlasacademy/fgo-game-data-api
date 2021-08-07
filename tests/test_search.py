@@ -41,7 +41,18 @@ test_cases_dict: dict[str, tuple[str, set[int]]] = {
     "servant_Artoria": ("JP/servant/search?name=Artoria&className=caster", {504500}),
     "servant_name_NA": (
         "NA/servant/search?name=Pendragon",
-        {100100, 100200, 100300, 102900, 202600, 301900, 302000, 402200, 402700},
+        {
+            100100,
+            100200,
+            100300,
+            102900,
+            202600,
+            301900,
+            302000,
+            402200,
+            402700,
+            900900,
+        },
     ),
     "servant_name_rarity_class": (
         "NA/servant/search?name=Pendragon&rarity=5&className=saber",

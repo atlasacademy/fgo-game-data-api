@@ -477,8 +477,7 @@ class TestServantSpecial:
 
         assert overWriteServantName["ascension"]["1"] == "Okita J Souji"
         assert (
-            overWriteTDName["ascension"]["1"]
-            == "Lightless Light that Sparkles at Daybreak"
+            overWriteTDName["ascension"]["1"] == "The Mumyou's Light Radiates at Dawn"
         )
         assert overWriteTDFileName["ascension"]["1"].endswith(
             "JP/Servants/Commands/604000/604010.png"
