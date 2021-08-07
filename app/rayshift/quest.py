@@ -1,3 +1,4 @@
+import time
 from typing import Optional, Union
 
 import httpx
@@ -63,12 +64,29 @@ async def get_quest_detail(
     else:
         quest_response = await get_quest_response(region, quest_id, phase)
         if quest_response:
-            await insert_rayshift_quest_db(
-                conn, quest_id, phase, quest_response.questDetails
-            )
+            await insert_rayshift_quest_db(conn, quest_response.questDetails)
             return next(iter(quest_response.questDetails.values()))
 
         return None
+
+
+def get_multiple_quests(region: Region, query_ids: list[int]) -> dict[int, QuestDetail]:
+    if secrets.rayshift_api_key.get_secret_value() == "":  # pragma: no cover
+        return {}
+
+    params: dict[str, Union[str, int, list[int]]] = {
+        "apiKey": secrets.rayshift_api_key.get_secret_value(),
+        "region": REGION_ENUM[region],
+        "ids": query_ids,
+    }
+    r = httpx.get(f"{QUEST_ENDPOINT}/get", params=params)
+    if r.status_code == httpx.codes.TOO_MANY_REQUESTS:  # pragma: no cover
+        sleep_time = r.json().get("wait", 10)
+        print(f"Sleeping {sleep_time} seconds for RayShift API")
+        time.sleep(sleep_time)
+        r = httpx.get(f"{QUEST_ENDPOINT}/get", params=params)
+
+    return QuestRayshiftResponse.parse_raw(r.content).response.questDetails
 
 
 def get_all_quest_lists(region: Region) -> list[QuestList]:

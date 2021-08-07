@@ -215,7 +215,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2],
-          "phasesWithEnemies": [],
+          "phasesWithEnemies": [2],
           "phasesNoBattle": [],
           "phaseScripts": [
             {
@@ -339,7 +339,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2],
-          "phasesWithEnemies": [],
+          "phasesWithEnemies": [1],
           "phasesNoBattle": [2],
           "phaseScripts": [
             {
@@ -404,7 +404,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3, 4],
-          "phasesWithEnemies": [],
+          "phasesWithEnemies": [1, 2, 4],
           "phasesNoBattle": [3],
           "phaseScripts": [
             {
@@ -570,7 +570,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2],
-          "phasesWithEnemies": [],
+          "phasesWithEnemies": [2],
           "phasesNoBattle": [1],
           "phaseScripts": [
             {
@@ -1032,7 +1032,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3],
-          "phasesWithEnemies": [3],
+          "phasesWithEnemies": [1, 2, 3],
           "phasesNoBattle": [],
           "phaseScripts": [],
           "noticeAt": 1508018400,
@@ -1246,7 +1246,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3, 4],
-          "phasesWithEnemies": [],
+          "phasesWithEnemies": [4],
           "phasesNoBattle": [1],
           "phaseScripts": [
             {
@@ -1525,7 +1525,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3, 4],
-          "phasesWithEnemies": [],
+          "phasesWithEnemies": [3],
           "phasesNoBattle": [1, 4],
           "phaseScripts": [
             {
@@ -1785,7 +1785,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3, 4, 5],
-          "phasesWithEnemies": [],
+          "phasesWithEnemies": [2],
           "phasesNoBattle": [5],
           "phaseScripts": [
             {
@@ -1960,7 +1960,7 @@
             { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
           ],
           "phases": [1, 2, 3, 4, 5, 6],
-          "phasesWithEnemies": [],
+          "phasesWithEnemies": [4],
           "phasesNoBattle": [],
           "phaseScripts": [
             {

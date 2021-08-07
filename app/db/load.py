@@ -28,9 +28,13 @@ from ..schemas.base import BaseModelORJson
 from ..schemas.common import Region
 from ..schemas.enums import FUNC_VALS_NOT_BUFF
 from ..schemas.raw import get_subtitle_svtId
-from ..schemas.rayshift import QuestList
+from ..schemas.rayshift import QuestDetail, QuestList
 from .engine import engines
-from .helpers.rayshift import insert_rayshift_quest_list
+from .helpers.rayshift import (
+    fetch_missing_quest_ids,
+    insert_rayshift_quest_db_sync,
+    insert_rayshift_quest_list,
+)
 
 
 def recreate_table(conn: Connection, table: Table) -> None:  # pragma: no cover
@@ -287,13 +291,19 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
 
 
 def load_rayshift_quest_list(region: Region, quest_list: list[QuestList]) -> None:
-    print(f"Loading {region} rayshift data cache …")
-    start_loading_time = time.perf_counter()
-
-    print(f"Inserting {region} rayshift data cache into db …")
     with engines[region].begin() as conn:
         rayshiftQuest.create(conn, checkfirst=True)
         insert_rayshift_quest_list(conn, quest_list)
 
-    rayshift_load_time = time.perf_counter() - start_loading_time
-    print(f"Loaded {region} rayshift {rayshift_load_time:.2f}s.")
+
+def get_missing_query_ids(region: Region) -> list[int]:
+    with engines[region].connect() as conn:
+        query_ids = fetch_missing_quest_ids(conn)
+    return query_ids
+
+
+def load_rayshift_quest_details(
+    region: Region, quest_details: dict[int, QuestDetail]
+) -> None:
+    with engines[region].begin() as conn:
+        insert_rayshift_quest_db_sync(conn, quest_details)

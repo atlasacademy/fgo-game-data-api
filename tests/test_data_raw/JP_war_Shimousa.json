@@ -690,7 +690,7 @@
         { "id": 315100, "type": 2, "objectId": 6530, "priority": 0, "num": 1 }
       ],
       "phases": [1],
-      "phasesWithEnemies": [],
+      "phasesWithEnemies": [1],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -770,7 +770,7 @@
         { "id": 315101, "type": 2, "objectId": 6530, "priority": 0, "num": 1 }
       ],
       "phases": [1],
-      "phasesWithEnemies": [],
+      "phasesWithEnemies": [1],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -848,7 +848,7 @@
         { "id": 315102, "type": 2, "objectId": 6507, "priority": 0, "num": 2 }
       ],
       "phases": [1],
-      "phasesWithEnemies": [],
+      "phasesWithEnemies": [1],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -917,7 +917,7 @@
         { "id": 315103, "type": 2, "objectId": 6530, "priority": 0, "num": 1 }
       ],
       "phases": [1, 2],
-      "phasesWithEnemies": [],
+      "phasesWithEnemies": [2],
       "phasesNoBattle": [1],
       "allScripts": [
         {
@@ -992,7 +992,7 @@
         { "id": 315104, "type": 2, "objectId": 6530, "priority": 0, "num": 1 }
       ],
       "phases": [1],
-      "phasesWithEnemies": [],
+      "phasesWithEnemies": [1],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1061,7 +1061,7 @@
         { "id": 315105, "type": 2, "objectId": 6507, "priority": 0, "num": 2 }
       ],
       "phases": [1, 2],
-      "phasesWithEnemies": [],
+      "phasesWithEnemies": [1, 2],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1145,7 +1145,7 @@
         { "id": 315106, "type": 2, "objectId": 6510, "priority": 0, "num": 2 }
       ],
       "phases": [1],
-      "phasesWithEnemies": [],
+      "phasesWithEnemies": [1],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1214,7 +1214,7 @@
         { "id": 315107, "type": 2, "objectId": 6510, "priority": 0, "num": 2 }
       ],
       "phases": [1, 2],
-      "phasesWithEnemies": [],
+      "phasesWithEnemies": [1, 2],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1289,7 +1289,7 @@
         { "id": 315108, "type": 2, "objectId": 6530, "priority": 0, "num": 2 }
       ],
       "phases": [1, 2],
-      "phasesWithEnemies": [],
+      "phasesWithEnemies": [1, 2],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1364,7 +1364,7 @@
         { "id": 315109, "type": 2, "objectId": 6530, "priority": 0, "num": 2 }
       ],
       "phases": [1, 2],
-      "phasesWithEnemies": [],
+      "phasesWithEnemies": [1, 2],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1448,7 +1448,7 @@
         { "id": 315110, "type": 2, "objectId": 6530, "priority": 0, "num": 2 }
       ],
       "phases": [1],
-      "phasesWithEnemies": [],
+      "phasesWithEnemies": [1],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1517,7 +1517,7 @@
         { "id": 315111, "type": 2, "objectId": 6530, "priority": 0, "num": 3 }
       ],
       "phases": [1, 2, 3],
-      "phasesWithEnemies": [],
+      "phasesWithEnemies": [1, 2, 3],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1598,7 +1598,7 @@
         { "id": 315112, "type": 2, "objectId": 6507, "priority": 0, "num": 2 }
       ],
       "phases": [1],
-      "phasesWithEnemies": [],
+      "phasesWithEnemies": [1],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1667,7 +1667,7 @@
         { "id": 315113, "type": 2, "objectId": 6507, "priority": 0, "num": 2 }
       ],
       "phases": [1],
-      "phasesWithEnemies": [],
+      "phasesWithEnemies": [1],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1751,7 +1751,7 @@
         { "id": 315114, "type": 2, "objectId": 6530, "priority": 0, "num": 3 }
       ],
       "phases": [1],
-      "phasesWithEnemies": [],
+      "phasesWithEnemies": [1],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1820,7 +1820,7 @@
         { "id": 315115, "type": 2, "objectId": 6518, "priority": 0, "num": 3 }
       ],
       "phases": [1, 2, 3, 4],
-      "phasesWithEnemies": [4],
+      "phasesWithEnemies": [1, 2, 3, 4],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1907,7 +1907,7 @@
         { "id": 315116, "type": 2, "objectId": 6511, "priority": 0, "num": 3 }
       ],
       "phases": [1, 2],
-      "phasesWithEnemies": [],
+      "phasesWithEnemies": [1, 2],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1982,7 +1982,7 @@
         { "id": 315117, "type": 2, "objectId": 7999, "priority": 0, "num": 1 }
       ],
       "phases": [1],
-      "phasesWithEnemies": [],
+      "phasesWithEnemies": [1],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -2173,7 +2173,7 @@
         { "id": 101, "type": 2, "objectId": 2, "priority": 0, "num": 1 }
       ],
       "phases": [1, 2, 3],
-      "phasesWithEnemies": [],
+      "phasesWithEnemies": [1, 2, 3],
       "phasesNoBattle": [],
       "allScripts": []
     },
@@ -2228,7 +2228,7 @@
         { "id": 101, "type": 2, "objectId": 2, "priority": 0, "num": 1 }
       ],
       "phases": [1, 2, 3],
-      "phasesWithEnemies": [2],
+      "phasesWithEnemies": [1, 2, 3],
       "phasesNoBattle": [],
       "allScripts": []
     },
@@ -2283,7 +2283,7 @@
         { "id": 101, "type": 2, "objectId": 2, "priority": 0, "num": 1 }
       ],
       "phases": [1, 2, 3],
-      "phasesWithEnemies": [],
+      "phasesWithEnemies": [1, 2, 3],
       "phasesNoBattle": [],
       "allScripts": []
     },
@@ -2347,7 +2347,7 @@
         { "id": 101, "type": 2, "objectId": 2, "priority": 0, "num": 1 }
       ],
       "phases": [1, 2, 3],
-      "phasesWithEnemies": [],
+      "phasesWithEnemies": [1, 2, 3],
       "phasesNoBattle": [],
       "allScripts": []
     },
@@ -2411,7 +2411,7 @@
         { "id": 101, "type": 2, "objectId": 2, "priority": 0, "num": 1 }
       ],
       "phases": [1, 2, 3],
-      "phasesWithEnemies": [1],
+      "phasesWithEnemies": [1, 2],
       "phasesNoBattle": [],
       "allScripts": []
     },
@@ -2466,7 +2466,7 @@
         { "id": 101, "type": 2, "objectId": 2, "priority": 0, "num": 1 }
       ],
       "phases": [1, 2, 3],
-      "phasesWithEnemies": [2, 3],
+      "phasesWithEnemies": [1, 2, 3],
       "phasesNoBattle": [],
       "allScripts": []
     },
