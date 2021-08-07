@@ -44,6 +44,11 @@ def test_rayshift_missing_ids() -> None:
     assert len(query_ids) >= 0
 
 
+def test_get_rayshift_query_ids() -> None:
+    assert get_multiple_quests(Region.NA, []) == {}
+    assert 157425 in get_multiple_quests(Region.NA, [157425])
+
+
 def test_load_rayshift_quest_details() -> None:
     query_ids = [157425, 157429]
     quest_details = get_multiple_quests(Region.NA, query_ids)

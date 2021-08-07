@@ -22,15 +22,18 @@ def main() -> None:
         query_ids = get_missing_query_ids(region)
         print(f"Loading {len(query_ids)} query IDs")
 
-        QUERY_IDS_PER_REQUEST = 25
-        for i in range(0, len(query_ids), QUERY_IDS_PER_REQUEST):
-            request_query_ids = query_ids[i : i + QUERY_IDS_PER_REQUEST]
-            quest_details = get_multiple_quests(region, request_query_ids)
-            load_rayshift_quest_details(region, quest_details)
-            print(f"Loaded {i + QUERY_IDS_PER_REQUEST} query IDs")
+        if query_ids:
+            QUERY_IDS_PER_REQUEST = 25
+            for i in range(0, len(query_ids), QUERY_IDS_PER_REQUEST):
+                request_query_ids = query_ids[i : i + QUERY_IDS_PER_REQUEST]
+                quest_details = get_multiple_quests(region, request_query_ids)
+                load_rayshift_quest_details(region, quest_details)
+                print(
+                    f"Loaded {min(i + QUERY_IDS_PER_REQUEST, len(query_ids))} query IDs"
+                )
 
         rayshift_load_time = time.perf_counter() - start_loading_time
-        print(f"Loaded {region} rayshift {rayshift_load_time:.2f}s.")
+        print(f"Loaded {region} rayshift in {rayshift_load_time:.2f}s.")
 
 
 if __name__ == "__main__":

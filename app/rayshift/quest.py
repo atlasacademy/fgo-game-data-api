@@ -77,8 +77,14 @@ def get_multiple_quests(region: Region, query_ids: list[int]) -> dict[int, Quest
     params: dict[str, Union[str, int, list[int]]] = {
         "apiKey": secrets.rayshift_api_key.get_secret_value(),
         "region": REGION_ENUM[region],
-        "ids": query_ids,
     }
+    if len(query_ids) == 0:
+        return {}
+    elif len(query_ids) == 1:
+        params["id"] = query_ids[0]
+    else:
+        params["ids"] = query_ids
+
     r = httpx.get(f"{QUEST_ENDPOINT}/get", params=params)
     if r.status_code == httpx.codes.TOO_MANY_REQUESTS:  # pragma: no cover
         sleep_time = r.json().get("wait", 10)
