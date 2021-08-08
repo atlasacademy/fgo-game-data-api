@@ -17,6 +17,7 @@ from ..schemas.basic import (
     BasicFunctionReverse,
     BasicMysticCode,
     BasicQuest,
+    BasicQuestPhase,
     BasicReversedBuff,
     BasicReversedBuffType,
     BasicReversedFunction,
@@ -56,6 +57,7 @@ from ..schemas.raw import (
     MstEquip,
     MstEvent,
     MstFunc,
+    MstQuestWithPhase,
     MstQuestWithWar,
     MstSkill,
     MstSvt,
@@ -549,6 +551,7 @@ def get_basic_quest_from_raw(mstQuest: MstQuestWithWar) -> BasicQuest:
         consume=mstQuest.actConsume,
         spotId=mstQuest.spotId,
         warId=mstQuest.warId,
+        warLongName=mstQuest.warLongName,
         noticeAt=mstQuest.noticeAt,
         openedAt=mstQuest.openedAt,
         closedAt=mstQuest.closedAt,
@@ -561,3 +564,35 @@ async def get_basic_quest(conn: AsyncConnection, quest_id: int) -> BasicQuest:
         raise HTTPException(status_code=404, detail="Quest not found")
 
     return get_basic_quest_from_raw(mstQuest)
+
+
+def get_basic_quest_phase_from_raw(mstQuestPhase: MstQuestWithPhase) -> BasicQuestPhase:
+    return BasicQuestPhase(
+        id=mstQuestPhase.id,
+        name=mstQuestPhase.name,
+        type=QUEST_TYPE_NAME[mstQuestPhase.type],
+        consumeType=QUEST_CONSUME_TYPE_NAME[mstQuestPhase.consumeType],
+        consume=mstQuestPhase.actConsume,
+        spotId=mstQuestPhase.spotId,
+        warId=mstQuestPhase.warId,
+        warLongName=mstQuestPhase.warLongName,
+        noticeAt=mstQuestPhase.noticeAt,
+        openedAt=mstQuestPhase.openedAt,
+        closedAt=mstQuestPhase.closedAt,
+        phase=mstQuestPhase.phase,
+        individuality=get_traits_list(mstQuestPhase.individuality),
+        qp=mstQuestPhase.qp,
+        exp=mstQuestPhase.playerExp,
+        bond=mstQuestPhase.playerExp,
+        battleBgId=mstQuestPhase.battleBgId,
+    )
+
+
+async def get_basic_quest_phase(
+    conn: AsyncConnection, quest_id: int, phase: int
+) -> BasicQuestPhase:
+    mstQuestPhase = await quest.get_one_quest_with_phase(conn, quest_id, phase)
+    if not mstQuestPhase:
+        raise HTTPException(status_code=404, detail="Quest Phase not found")
+
+    return get_basic_quest_phase_from_raw(mstQuestPhase)

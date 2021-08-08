@@ -29,6 +29,7 @@ from ...schemas.common import StageLink
 from ...schemas.gameenums import QuestFlag
 from ...schemas.raw import (
     MstBgm,
+    MstQuestWithPhase,
     MstQuestWithWar,
     MstStage,
     MstStageRemap,
@@ -38,7 +39,9 @@ from ...schemas.raw import (
 from .utils import sql_jsonb_agg
 
 
-QUEST_WITH_WAR_SELECT = select(mstQuest, mstWar.c.id.label("warId")).select_from(
+QUEST_WITH_WAR_SELECT = select(
+    mstQuest, mstWar.c.id.label("warId"), mstWar.c.longName.label("warLongName")
+).select_from(
     mstQuest.join(mstSpot, mstSpot.c.id == mstQuest.c.spotId)
     .join(mstMap, mstMap.c.id == mstSpot.c.mapId)
     .join(mstWar, mstWar.c.id == mstMap.c.warId)
@@ -66,6 +69,43 @@ async def get_many_quests_with_war(
         MstQuestWithWar.from_orm(quest)
         for quest in (await conn.execute(stmt)).fetchall()
     ]
+
+
+async def get_one_quest_with_phase(
+    conn: AsyncConnection, quest_id: int, phase_id: int
+) -> Optional[MstQuestWithPhase]:
+    stmt = (
+        select(
+            mstQuest,
+            mstWar.c.id.label("warId"),
+            mstWar.c.longName.label("warLongName"),
+            mstQuestPhase.c.classIds,
+            mstQuestPhase.c.individuality,
+            mstQuestPhase.c.script,
+            mstQuestPhase.c.questId,
+            mstQuestPhase.c.phase,
+            mstQuestPhase.c.isNpcOnly,
+            mstQuestPhase.c.battleBgId,
+            mstQuestPhase.c.battleBgType,
+            mstQuestPhase.c.qp,
+            mstQuestPhase.c.playerExp,
+            mstQuestPhase.c.friendshipExp,
+            mstQuestPhase.c.giftId.label("phaseGiftId"),
+        )
+        .select_from(
+            mstQuest.join(mstSpot, mstSpot.c.id == mstQuest.c.spotId)
+            .join(mstMap, mstMap.c.id == mstSpot.c.mapId)
+            .join(mstWar, mstWar.c.id == mstMap.c.warId)
+            .join(mstQuestPhase, mstQuestPhase.c.questId == mstQuest.c.id)
+        )
+        .where(and_(mstQuest.c.id == quest_id, mstQuestPhase.c.phase == phase_id))
+    )
+
+    mstQuestWithPhase = (await conn.execute(stmt)).fetchone()
+    if mstQuestWithPhase:
+        return MstQuestWithPhase.from_orm(mstQuestWithPhase)
+
+    return None
 
 
 JOINED_QUEST_TABLES = (

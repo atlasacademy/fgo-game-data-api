@@ -1,0 +1,19 @@
+{
+  "id": 2000301,
+  "name": "Prima Cantica: Purgatorio (Beginning)",
+  "type": "main",
+  "consumeType": "ap",
+  "consume": 23,
+  "spotId": 20301,
+  "warId": 203,
+  "warLongName": "Pseudo-Parallel World\nThe Stage of Carnage, Shimousa",
+  "noticeAt": 1508018400,
+  "openedAt": 1508018400,
+  "closedAt": 1893456000,
+  "phase": 1,
+  "individuality": [],
+  "qp": 162000,
+  "exp": 54670,
+  "bond": 54670,
+  "battleBgId": 30000
+}

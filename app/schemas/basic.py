@@ -167,6 +167,16 @@ class BasicQuest(BaseModelORJson):
     consume: int
     spotId: int
     warId: int
+    warLongName: str
     noticeAt: int
     openedAt: int
     closedAt: int
+
+
+class BasicQuestPhase(BasicQuest):
+    phase: int
+    individuality: list[NiceTrait]
+    qp: int
+    exp: int
+    bond: int
+    battleBgId: int

@@ -5,9 +5,9 @@ from sqlalchemy.sql import and_, delete, select
 
 from app.db.engine import engines
 from app.db.load import (
-    load_rayshift_quest_list,
     get_missing_query_ids,
     load_rayshift_quest_details,
+    load_rayshift_quest_list,
 )
 from app.models.rayshift import rayshiftQuest
 from app.rayshift.quest import get_all_quest_lists, get_multiple_quests

@@ -30,6 +30,7 @@ test_cases_dict: dict[str, tuple[str, str]] = {
     "NA_event_id": ("NA/event/80119", "NA_event_Oniland"),
     "JP_war_id": ("JP/war/201", "JP_war_Shinjuku"),
     "NA_quest_id": ("NA/quest/91600701", "NA_Jekyll_Interlude"),
+    "JP_quest_phase": ("NA/quest/2000301/1", "NA_Shimousa_quest"),
 }
 
 
@@ -68,6 +69,7 @@ cases_404 = [
     Case404("event", "2313"),
     Case404("war", "42312"),
     Case404("quest", "2134123"),
+    Case404("quest", "123412334/2"),
 ]
 
 

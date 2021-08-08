@@ -1078,6 +1078,22 @@ class MstQuest(BaseModelORJson):
 
 class MstQuestWithWar(MstQuest):
     warId: int
+    warLongName: str
+
+
+class MstQuestWithPhase(MstQuestWithWar):
+    classIds: list[int]  # [7],
+    individuality: list[int]  # [2038, 2039, 94000046],
+    script: dict[str, Any]  # {"resultBgmId": 61},
+    questId: int  # 94004502,
+    phase: int  # 1,
+    isNpcOnly: bool  # true,
+    battleBgId: int  # 13400,
+    battleBgType: int  # 0,
+    qp: int  # 1900,
+    playerExp: int  # 550,
+    friendshipExp: int  # 165
+    phaseGiftId: Optional[int] = None
 
 
 class MstQuestRelease(BaseModelORJson):

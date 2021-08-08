@@ -16,6 +16,7 @@ from ..schemas.basic import (
     BasicFunctionReverse,
     BasicMysticCode,
     BasicQuest,
+    BasicQuestPhase,
     BasicServant,
     BasicSkillReverse,
     BasicTdReverse,
@@ -555,6 +556,26 @@ async def get_war(
     Get the basic war data from the given event ID
     """
     return item_response(await basic.get_basic_war(conn, war_id, lang))
+
+
+@router.get(
+    "/{region}/quest/{quest_id}/{phase}",
+    summary="Get Basic Quest Phase data",
+    response_description="Basic Quest Phase Entity",
+    response_model=BasicQuestPhase,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404, 500]),
+)
+async def get_quest_phase(
+    quest_id: int, phase: int, conn: AsyncConnection = Depends(get_db)
+) -> Response:
+    """
+    Get the basic quest phase data from the given quest ID and phase number
+    """
+    quest_response = item_response(
+        await basic.get_basic_quest_phase(conn, quest_id, phase)
+    )
+    return quest_response
 
 
 @router.get(
