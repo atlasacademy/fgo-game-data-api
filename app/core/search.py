@@ -7,6 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 from ..db.helpers.buff import get_buff_search
 from ..db.helpers.func import get_func_search
 from ..db.helpers.item import get_item_search
+from ..db.helpers.quest import get_quest_phase_search
 from ..db.helpers.skill import get_skill_search
 from ..db.helpers.svt import get_svt_groups, get_svt_ids, get_svt_search
 from ..db.helpers.td import get_td_search
@@ -22,18 +23,28 @@ from ..schemas.enums import (
     GENDER_TYPE_NAME_REVERSE,
     ITEM_BG_TYPE_REVERSE,
     ITEM_TYPE_REVERSE,
+    QUEST_TYPE_REVERSE,
     SKILL_TYPE_NAME_REVERSE,
     SVT_FLAG_NAME_REVERSE,
     SVT_TYPE_NAME_REVERSE,
     TRAIT_NAME_REVERSE,
     Trait,
 )
-from ..schemas.raw import MstBuff, MstFunc, MstItem, MstSkill, MstSvt, MstTreasureDevice
+from ..schemas.raw import (
+    MstBuff,
+    MstFunc,
+    MstItem,
+    MstQuestWithPhase,
+    MstSkill,
+    MstSvt,
+    MstTreasureDevice,
+)
 from ..schemas.search import (
     BuffSearchQueryParams,
     EquipSearchQueryParams,
     FuncSearchQueryParams,
     ItemSearchQueryParams,
+    QuestSearchQueryParams,
     ServantSearchQueryParams,
     SkillSearchParams,
     SvtSearchQueryParams,
@@ -385,3 +396,30 @@ async def search_item(
         matches = [item for item in matches if match_name(search_param.name, item.name)]
 
     return sorted(matches, key=lambda item: item.id)
+
+
+async def search_quest(
+    conn: AsyncConnection, search_param: QuestSearchQueryParams
+) -> list[MstQuestWithPhase]:
+    if not search_param.hasSearchParams():
+        raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
+
+    matches = await get_quest_phase_search(
+        conn,
+        name=search_param.name,
+        spot_name=search_param.spotName,
+        war_id=search_param.warId,
+        quest_type={QUEST_TYPE_REVERSE[quest_type] for quest_type in search_param.type},
+        field_individuality=reverse_traits(search_param.fieldIndividuality),
+        battle_bg_id=search_param.battleBgId,
+        bgm_id=search_param.bgmId,
+        field_ai_id=search_param.fieldAiId,
+        enemy_svt_id=search_param.enemySvtId,
+        enemy_svt_ai_id=search_param.enemySvtAiId,
+        enemy_trait=reverse_traits(search_param.enemyTrait),
+        enemy_class={
+            CLASS_NAME_REVERSE[svt_class] for svt_class in search_param.enemyClassName
+        },
+    )
+
+    return sorted(matches, key=lambda quest: (quest.id, quest.phase))

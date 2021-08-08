@@ -215,6 +215,65 @@ class TestSearch:
         assert response.status_code == 400
 
 
+basic_quest_search_test_cases_dict = {
+    "quest_enemy_trait": (
+        "NA/quest/phase/search?enemyTrait=304&warId=204",
+        {(2000411, 2), (2000411, 4)},
+    ),
+    "quest_enemy_svt_ai_id": (
+        "NA/quest/phase/search?enemySvtAiId=94040209",
+        {(94040108, 4)},
+    ),
+    "quest_enemy_svt_id": (
+        "NA/quest/phase/search?enemySvtId=402800&warId=9999",
+        {(94040525, 1)},
+    ),
+    "quest_field_ai_id": ("JP/quest/phase/search?fieldAiId=90161870", {(94016145, 1)}),
+    "quest_bgm_id": ("NA/quest/phase/search?bgmId=101", {(94008501, 1)}),
+    "quest_battle_bg_id": (
+        "NA/quest/phase/search?battleBgId=29000&warId=8208",
+        {(94020906, 1)},
+    ),
+    "quest_field_trait_name": (
+        "NA/quest/phase/search?warId=204&fieldIndividuality=fieldForest&name=Third",
+        {(2000404, 6)},
+    ),
+    "quest_spot_name": (
+        "NA/quest/phase/search?spotName=Rice Field&fieldIndividuality=2038",
+        {(2000300, 1)},
+    ),
+    "quest_class_name": (
+        "NA/quest/phase/search?enemyClassName=cccFinaleEmiyaAlter",
+        {(94034019, 2)},
+    ),
+    "quest_type": (
+        "JP/quest/phase/search?type=free&spotName=ディーヴァール",
+        {(93030506, 1), (93030506, 2), (93030506, 3)},
+    ),
+}
+basic_quest_phase_test_cases = [
+    pytest.param(*value, id=key)
+    for key, value in basic_quest_search_test_cases_dict.items()
+]
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("search_query,result", basic_quest_phase_test_cases)
+async def test_search_basic_quest_phase(
+    client: AsyncClient, search_query: str, result: set[tuple[int, int]]
+) -> None:
+    response = await client.get(f"/basic/{search_query}")
+    result_ids = {(int(quest["id"]), int(quest["phase"])) for quest in response.json()}
+    assert response.status_code == 200
+    assert result_ids == result
+
+
+@pytest.mark.asyncio
+async def test_search_basic_quest_phase_empty(client: AsyncClient) -> None:
+    response = await client.get("/basic/NA/quest/phase/search")
+    assert response.status_code == 400
+
+
 nice_raw_test_cases_dict = {
     "item_individuality": ("JP/item/search?individuality=10361", {94032206}),
     "item_use_name_background": (

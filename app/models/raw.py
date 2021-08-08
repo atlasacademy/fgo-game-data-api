@@ -1,4 +1,3 @@
-import sqlalchemy
 from sqlalchemy import (
     BigInteger,
     Boolean,
@@ -8,6 +7,7 @@ from sqlalchemy import (
     Numeric,
     String,
     Table,
+    text,
 )
 from sqlalchemy.dialects.postgresql import ARRAY, JSONB
 from sqlalchemy.sql import func
@@ -383,7 +383,7 @@ mstSvtVoice = Table(
     Column("type", Integer),
     Index(
         "ix_mstSvtVoice_GIN",
-        sqlalchemy.text('"scriptJson" jsonb_path_ops'),
+        text('"scriptJson" jsonb_path_ops'),
         postgresql_using="gin",
     ),
 )
@@ -1117,7 +1117,7 @@ mstSpot = Table(
     Column("id", Integer, primary_key=True),
     Column("warId", Integer, index=True),
     Column("mapId", Integer),
-    Column("name", String),
+    Column("name", String, index=True),
     Column("imageId", Integer),
     Column("x", Integer),
     Column("y", Integer),
@@ -1166,9 +1166,9 @@ mstQuest = Table(
     Column("beforeActionVals", ARRAY(String)),
     Column("afterActionVals", ARRAY(String)),
     Column("id", Integer, primary_key=True),
-    Column("name", String),
+    Column("name", String, index=True),
     Column("nameRuby", String),
-    Column("type", Integer),
+    Column("type", Integer, index=True),
     Column("consumeType", Integer),
     Column("actConsume", Integer),
     Column("chaldeaGateCategory", Integer),
@@ -1246,12 +1246,12 @@ mstQuestPhase = Table(
     "mstQuestPhase",
     metadata,
     Column("classIds", ARRAY(Integer)),
-    Column("individuality", ARRAY(Integer)),
+    Column("individuality", ARRAY(Integer), index=True),
     Column("script", JSONB),
     Column("questId", Integer, index=True),
     Column("phase", Integer, index=True),
     Column("isNpcOnly", Boolean),
-    Column("battleBgId", Integer),
+    Column("battleBgId", Integer, index=True),
     Column("battleBgType", Integer),
     Column("qp", Integer),
     Column("playerExp", Integer),
@@ -1284,11 +1284,11 @@ mstStage = Table(
     Column("questPhase", Integer, index=True),
     Column("wave", Integer, index=True),
     Column("enemyInfo", Integer),
-    Column("bgmId", Integer),
+    Column("bgmId", Integer, index=True),
     Column("startEffectId", Integer),
     Index(
         "ix_mstStage_script_GIN",
-        sqlalchemy.text('"script" jsonb_path_ops'),
+        text('"script" jsonb_path_ops'),
         postgresql_using="gin",
     ),
 )

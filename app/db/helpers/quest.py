@@ -1,7 +1,9 @@
-from typing import Iterable, Optional
+from typing import Iterable, Optional, Union
 
+from sqlalchemy import Table
 from sqlalchemy.ext.asyncio import AsyncConnection
-from sqlalchemy.sql import and_, case, func, or_, select
+from sqlalchemy.sql import Join, and_, case, func, or_, select
+from sqlalchemy.sql.elements import ClauseElement
 
 from ...models.raw import (
     ScriptFileList,
@@ -71,34 +73,36 @@ async def get_many_quests_with_war(
     ]
 
 
+MSTQUEST_WITH_PHASE_SELECT = select(
+    mstQuest,
+    mstWar.c.id.label("warId"),
+    mstWar.c.longName.label("warLongName"),
+    mstQuestPhase.c.classIds,
+    mstQuestPhase.c.individuality,
+    mstQuestPhase.c.script,
+    mstQuestPhase.c.questId,
+    mstQuestPhase.c.phase,
+    mstQuestPhase.c.isNpcOnly,
+    mstQuestPhase.c.battleBgId,
+    mstQuestPhase.c.battleBgType,
+    mstQuestPhase.c.qp,
+    mstQuestPhase.c.playerExp,
+    mstQuestPhase.c.friendshipExp,
+    mstQuestPhase.c.giftId.label("phaseGiftId"),
+)
+MSTQUEST_WITH_PHASE_FROM = (
+    mstQuest.join(mstSpot, mstSpot.c.id == mstQuest.c.spotId)
+    .join(mstMap, mstMap.c.id == mstSpot.c.mapId)
+    .join(mstWar, mstWar.c.id == mstMap.c.warId)
+    .join(mstQuestPhase, mstQuestPhase.c.questId == mstQuest.c.id)
+)
+
+
 async def get_one_quest_with_phase(
     conn: AsyncConnection, quest_id: int, phase_id: int
 ) -> Optional[MstQuestWithPhase]:
-    stmt = (
-        select(
-            mstQuest,
-            mstWar.c.id.label("warId"),
-            mstWar.c.longName.label("warLongName"),
-            mstQuestPhase.c.classIds,
-            mstQuestPhase.c.individuality,
-            mstQuestPhase.c.script,
-            mstQuestPhase.c.questId,
-            mstQuestPhase.c.phase,
-            mstQuestPhase.c.isNpcOnly,
-            mstQuestPhase.c.battleBgId,
-            mstQuestPhase.c.battleBgType,
-            mstQuestPhase.c.qp,
-            mstQuestPhase.c.playerExp,
-            mstQuestPhase.c.friendshipExp,
-            mstQuestPhase.c.giftId.label("phaseGiftId"),
-        )
-        .select_from(
-            mstQuest.join(mstSpot, mstSpot.c.id == mstQuest.c.spotId)
-            .join(mstMap, mstMap.c.id == mstSpot.c.mapId)
-            .join(mstWar, mstWar.c.id == mstMap.c.warId)
-            .join(mstQuestPhase, mstQuestPhase.c.questId == mstQuest.c.id)
-        )
-        .where(and_(mstQuest.c.id == quest_id, mstQuestPhase.c.phase == phase_id))
+    stmt = MSTQUEST_WITH_PHASE_SELECT.select_from(MSTQUEST_WITH_PHASE_FROM).where(
+        and_(mstQuest.c.id == quest_id, mstQuestPhase.c.phase == phase_id)
     )
 
     mstQuestWithPhase = (await conn.execute(stmt)).fetchone()
@@ -106,6 +110,95 @@ async def get_one_quest_with_phase(
         return MstQuestWithPhase.from_orm(mstQuestWithPhase)
 
     return None
+
+
+async def get_quest_phase_search(
+    conn: AsyncConnection,
+    name: Optional[str] = None,
+    spot_name: Optional[str] = None,
+    war_id: Optional[int] = None,
+    quest_type: Optional[Iterable[int]] = None,
+    field_individuality: Optional[Iterable[int]] = None,
+    battle_bg_id: Optional[int] = None,
+    bgm_id: Optional[int] = None,
+    field_ai_id: Optional[int] = None,
+    enemy_svt_id: Optional[int] = None,
+    enemy_svt_ai_id: Optional[int] = None,
+    enemy_trait: Optional[Iterable[int]] = None,
+    enemy_class: Optional[Iterable[int]] = None,
+) -> list[MstQuestWithPhase]:
+    from_clause: Union[Join, Table] = MSTQUEST_WITH_PHASE_FROM
+    if bgm_id or field_ai_id:
+        from_clause = from_clause.join(
+            mstStage,
+            and_(
+                mstQuest.c.id == mstStage.c.questId,
+                mstQuestPhase.c.phase == mstStage.c.questPhase,
+            ),
+        )
+    if enemy_svt_id or enemy_svt_ai_id or enemy_trait or enemy_class:
+        from_clause = from_clause.outerjoin(
+            rayshiftQuest,
+            and_(
+                mstQuest.c.id == rayshiftQuest.c.questId,
+                mstQuestPhase.c.phase == rayshiftQuest.c.phase,
+            ),
+        )
+
+    where_clause: list[Union[ClauseElement, bool]] = [True]
+    if name:
+        where_clause.append(mstQuest.c.name.ilike(f"%{name}%"))
+    if spot_name:
+        # TODO: Merge with mstQuestPhaseDetail
+        where_clause.append(mstSpot.c.name.ilike(f"%{spot_name}%"))
+    if war_id:
+        where_clause.append(mstWar.c.id == war_id)
+    if quest_type:
+        where_clause.append(mstQuest.c.type.in_(quest_type))
+    if field_individuality:
+        where_clause.append(mstQuestPhase.c.individuality.contains(field_individuality))
+    if battle_bg_id:
+        where_clause.append(mstQuestPhase.c.battleBgId == battle_bg_id)
+    if bgm_id:
+        where_clause.append(mstStage.c.bgmId == bgm_id)
+    if field_ai_id:
+        where_clause.append(
+            mstStage.c.script.contains({"aiFieldIds": [{"id": field_ai_id}]})
+        )
+    if enemy_svt_ai_id:
+        where_clause.append(
+            rayshiftQuest.c.questDetail.contains(
+                {"userSvt": [{"aiId": enemy_svt_ai_id}]}
+            )
+        )
+    if enemy_trait:
+        for trait in enemy_trait:
+            where_clause.append(
+                rayshiftQuest.c.questDetail.contains(
+                    {"userSvt": [{"individuality": [trait]}]}
+                )
+            )
+    if enemy_svt_id:
+        where_clause.append(
+            rayshiftQuest.c.questDetail.contains({"userSvt": [{"svtId": enemy_svt_id}]})
+        )
+    if enemy_class:
+        for class_id in enemy_class:
+            # TODO: Merge with mstSvt to get base class
+            where_clause.append(
+                rayshiftQuest.c.questDetail.contains(
+                    {"userSvt": [{"npcSvtClassId": class_id}]}
+                )
+            )
+
+    quest_search_stmt = MSTQUEST_WITH_PHASE_SELECT.select_from(from_clause).where(
+        and_(*where_clause)
+    )
+
+    return [
+        MstQuestWithPhase.from_orm(quest)
+        for quest in (await conn.execute(quest_search_stmt)).fetchall()
+    ]
 
 
 JOINED_QUEST_TABLES = (

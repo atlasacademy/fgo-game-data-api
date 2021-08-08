@@ -39,6 +39,7 @@ from .gameenums import (
     NiceFuncTargetType,
     NiceFuncType,
     NiceGender,
+    NiceQuestType,
     NiceSvtFlag,
     NiceSvtType,
     SvtType,
@@ -249,6 +250,14 @@ CARD_TYPE_NAME_REVERSE: dict[NiceCardType, int] = {
 
 GENDER_TYPE_NAME_REVERSE: dict[NiceGender, int] = {
     v: k for k, v in GENDER_TYPE_NAME.items()
+}
+
+
+### Quest Type ###
+
+
+QUEST_TYPE_REVERSE: dict[NiceQuestType, int] = {
+    v: k for k, v in QUEST_TYPE_NAME.items()
 }
 
 

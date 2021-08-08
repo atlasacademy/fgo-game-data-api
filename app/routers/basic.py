@@ -27,6 +27,7 @@ from ..schemas.search import (
     BuffSearchQueryParams,
     EquipSearchQueryParams,
     FuncSearchQueryParams,
+    QuestSearchQueryParams,
     ServantSearchQueryParams,
     SkillSearchParams,
     SvtSearchQueryParams,
@@ -556,6 +557,25 @@ async def get_war(
     Get the basic war data from the given event ID
     """
     return item_response(await basic.get_basic_war(conn, war_id, lang))
+
+
+@router.get(
+    "/{region}/quest/phase/search",
+    summary="Find and get quest phase data",
+    description=QuestSearchQueryParams.DESCRIPTION,
+    response_description="Basic Quest Phase Entities",
+    response_model=list[BasicQuestPhase],
+    response_model_exclude_unset=True,
+    responses=get_error_code([400, 403]),
+)
+async def find_quest_phase(
+    search_param: QuestSearchQueryParams = Depends(QuestSearchQueryParams),
+    conn: AsyncConnection = Depends(get_db),
+) -> Response:
+    matches = await search.search_quest(conn, search_param)
+    return list_response(
+        [basic.get_basic_quest_phase_from_raw(quest) for quest in matches]
+    )
 
 
 @router.get(

@@ -23,6 +23,7 @@ from .gameenums import (
     NiceFuncType,
     NiceGender,
     NiceItemType,
+    NiceQuestType,
     NiceSvtFlag,
     NiceSvtType,
 )
@@ -386,6 +387,62 @@ class ItemSearchQueryParams:
         - **type**: an item of NiceItemType.
         - **background**: an item of `NiceItemBGType`.
         - **use**: an item of `NiceItemUse`.
+
+        At least one of the parameter is required for the query.
+        """
+    )
+
+
+@dataclass
+class QuestSearchQueryParams:
+    region: Region
+    name: Optional[str] = None
+    spotName: Optional[str] = None
+    warId: Optional[int] = None
+    type: list[NiceQuestType] = Query([])
+    fieldIndividuality: list[Union[Trait, int]] = Query([])
+    battleBgId: Optional[int] = None
+    bgmId: Optional[int] = None
+    fieldAiId: Optional[int] = None
+    enemySvtId: Optional[int] = None
+    enemySvtAiId: Optional[int] = None
+    enemyTrait: list[Union[Trait, int]] = Query([])
+    enemyClassName: list[SvtClass] = Query([])
+
+    def hasSearchParams(self) -> bool:
+        return any(
+            [
+                self.name,
+                self.spotName,
+                self.warId,
+                self.type,
+                self.fieldIndividuality,
+                self.battleBgId,
+                self.bgmId,
+                self.enemySvtAiId,
+                self.enemySvtId,
+                self.fieldAiId,
+                self.enemyTrait,
+                self.enemyClassName,
+            ]
+        )
+
+    DESCRIPTION: ClassVar[str] = inspect.cleandoc(
+        """
+        Search and return the list of matched items.
+
+        - **name**: in English if you are searching NA data and in Japanese if you are searching JP data.
+        - **spotName**: name of quests's spot.
+        - **warId**: War ID.
+        - **type**: Quest Type Enum.
+        - **fieldIndividuality**: Trait Enum or an Integer.
+        - **battleBgId**: Battle BG ID.
+        - **bgmId**: BGM ID.
+        - **fieldAiId**: Field AI ID.
+        - **enemySvtId**: Enemy's svt ID (Note that this is not `collectionNo`). Some quests use 99xxxxx svt ID instead of the playable svt ID.
+        - **enemySvtAiId**: Enemy's servant AI ID.
+        - **enemyTrait**: Enemy's Trait. Trait Enum or an Integer.
+        - **enemyClassName**: Enemy's Class Name Enum.
 
         At least one of the parameter is required for the query.
         """
