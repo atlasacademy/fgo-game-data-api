@@ -1312,6 +1312,7 @@ class NiceQuest(BaseModelORJson):
     consumeItem: list[NiceItemAmount]
     spotId: int
     warId: int
+    warLongName: str
     gifts: list[NiceGift]
     releaseConditions: list[NiceQuestRelease]
     phases: list[int]

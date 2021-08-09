@@ -7,6 +7,7 @@
   "consumeItem": [],
   "spotId": 909109,
   "warId": 9091,
+  "warLongName": "納涼夢幻冥峰　パラダイスレイク",
   "gifts": [
     { "id": 101, "type": "item", "objectId": 2, "priority": 0, "num": 1 }
   ],

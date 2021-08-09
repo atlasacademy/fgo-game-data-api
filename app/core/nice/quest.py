@@ -30,6 +30,7 @@ from ...schemas.raw import (
     MstQuestMessage,
     MstQuestRelease,
     MstStage,
+    MstWar,
     QuestEntity,
     QuestPhaseEntity,
     ScriptFile,
@@ -106,10 +107,10 @@ async def get_nice_quest(
     region: Region,
     raw_quest: Union[QuestEntity, QuestPhaseEntity],
     lang: Language,
-    war_id: Optional[int] = None,
+    mstWar: Optional[MstWar] = None,
 ) -> dict[str, Any]:
-    if not war_id:
-        war_id = await war.get_war_from_spot(conn, raw_quest.mstQuest.spotId)
+    if not mstWar:
+        mstWar = await war.get_war_from_spot(conn, raw_quest.mstQuest.spotId)
 
     nice_data: dict[str, Any] = {
         "id": raw_quest.mstQuest.id,
@@ -125,7 +126,8 @@ async def get_nice_quest(
         ],
         "consume": raw_quest.mstQuest.actConsume,
         "spotId": raw_quest.mstQuest.spotId,
-        "warId": war_id,
+        "warId": mstWar.id,
+        "warLongName": mstWar.longName,
         "gifts": [get_nice_gift(gift) for gift in raw_quest.mstGift],
         "releaseConditions": [
             get_nice_quest_release(release, raw_quest.mstClosedMessage)
@@ -212,9 +214,11 @@ async def get_nice_quest_phase(
 
     if raw_quest.mstQuestPhaseDetail:
         nice_data["spotId"] = raw_quest.mstQuestPhaseDetail.spotId
-        nice_data["warId"] = await war.get_war_from_spot(
+        detail_mstWar = await war.get_war_from_spot(
             conn, raw_quest.mstQuestPhaseDetail.spotId
         )
+        nice_data["warId"] = detail_mstWar.id
+        nice_data["warLongName"] = detail_mstWar.longName
         nice_data["consumeType"] = QUEST_CONSUME_TYPE_NAME[
             raw_quest.mstQuestPhaseDetail.consumeType
         ]

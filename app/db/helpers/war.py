@@ -5,7 +5,7 @@ from ...models.raw import mstMap, mstSpot, mstWar
 from ...schemas.raw import MstWar
 
 
-async def get_war_from_spot(conn: AsyncConnection, spot_id: int) -> int:
+async def get_war_from_spot(conn: AsyncConnection, spot_id: int) -> MstWar:
     stmt = (
         select(mstWar)
         .select_from(
@@ -16,4 +16,4 @@ async def get_war_from_spot(conn: AsyncConnection, spot_id: int) -> int:
         .where(mstSpot.c.id == spot_id)
     )
 
-    return MstWar.from_orm((await conn.execute(stmt)).fetchone()).id
+    return MstWar.from_orm((await conn.execute(stmt)).fetchone())

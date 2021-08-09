@@ -23,6 +23,7 @@
   ],
   "spotId": 905101,
   "warId": 9051,
+  "warLongName": "Miyama Onsen Grand Shrine and Restaurant, Enma-tei ",
   "gifts": [
     { "id": 21603, "type": "item", "objectId": 6506, "priority": 0, "num": 3 }
   ],

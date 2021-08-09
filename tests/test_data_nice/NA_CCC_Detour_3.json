@@ -7,6 +7,7 @@
   "consumeItem": [],
   "spotId": 905332,
   "warId": 9053,
+  "warLongName": "Abyssal Cyber Paradise, SE.RA.PH",
   "gifts": [
     { "id": 25375, "type": "item", "objectId": 6533, "priority": 0, "num": 3 }
   ],

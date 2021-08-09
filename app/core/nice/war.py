@@ -15,7 +15,15 @@ from ...schemas.gameenums import (
     WarOverwriteType,
 )
 from ...schemas.nice import AssetURL, NiceMap, NiceQuest, NiceSpot, NiceWar, NiceWarAdd
-from ...schemas.raw import MstBgm, MstConstant, MstMap, MstSpot, MstWarAdd, QuestEntity
+from ...schemas.raw import (
+    MstBgm,
+    MstConstant,
+    MstMap,
+    MstSpot,
+    MstWar,
+    MstWarAdd,
+    QuestEntity,
+)
 from .. import raw
 from .bgm import get_nice_bgm
 from .quest import get_nice_quest
@@ -73,7 +81,7 @@ def get_nice_war_add(region: Region, war_add: MstWarAdd) -> NiceWarAdd:
 async def get_nice_spot(
     conn: AsyncConnection,
     region: Region,
-    war_id: int,
+    mstWar: MstWar,
     raw_spot: MstSpot,
     war_asset_id: int,
     quests: list[QuestEntity],
@@ -104,7 +112,7 @@ async def get_nice_spot(
         nextOfsY=raw_spot.nextOfsY,
         closedMessage=raw_spot.closedMessage,
         quests=[
-            NiceQuest.parse_obj(await get_nice_quest(conn, region, quest, lang, war_id))
+            NiceQuest.parse_obj(await get_nice_quest(conn, region, quest, lang, mstWar))
             for quest in quests
             if quest.mstQuest.spotId == raw_spot.id
         ],
@@ -167,7 +175,13 @@ async def get_nice_war(
         ),
         spots=[
             await get_nice_spot(
-                conn, region, war_id, raw_spot, war_asset_id, raw_war.mstQuest, lang
+                conn,
+                region,
+                raw_war.mstWar,
+                raw_spot,
+                war_asset_id,
+                raw_war.mstQuest,
+                lang,
             )
             for raw_spot in raw_war.mstSpot
         ],
