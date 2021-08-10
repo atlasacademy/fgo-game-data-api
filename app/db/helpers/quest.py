@@ -204,12 +204,11 @@ async def get_quest_phase_search(
             )
         )
     if enemy_trait:
-        for trait in enemy_trait:
-            where_clause.append(
-                rayshiftQuest.c.questDetail.contains(
-                    {"userSvt": [{"individuality": [trait]}]}
-                )
+        where_clause.append(
+            rayshiftQuest.c.questDetail.contains(
+                {"userSvt": [{"individuality": list(enemy_trait)}]}
             )
+        )
     if enemy_svt_id:
         where_clause.append(
             rayshiftQuest.c.questDetail.contains({"userSvt": [{"svtId": enemy_svt_id}]})
