@@ -10,38 +10,38 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 - Basic quest phase search.
 
-## 5.68.0 - 2020-07-06
+## 5.68.0 - 2021-07-06
 ### Added
 - script info from all phases to raw and nice quest.
 
-## 5.67.0 - 2020-07-06
+## 5.67.0 - 2021-07-06
 ### Added
 - `lvMax` to nice servant's `ascensionAdd` and `ascensionAdd` to nice CE.
 
-## 5.66.0 - 2020-07-06
+## 5.66.0 - 2021-07-06
 ### Added
 - Support servant to nice quest phase
 
-## 5.65.0 - 2020-07-06
+## 5.65.0 - 2021-07-06
 ### Added
 - `valentineScript` to nice servant and CE.
 - `notTrait` to svt search.
 
-## 5.64.0 - 2020-06-17
+## 5.64.0 - 2021-06-17
 ### Added
 - Master mission endpoint.
 
-## 5.63.0 - 2020-06-10
+## 5.63.0 - 2021-06-10
 ### Added
 - `fileName` and `notReleased` to quest's bgms.
 - translations for voice names.
 
-## 5.62.0 - 2020-06-04
+## 5.62.0 - 2021-06-04
 ### Added
 - raw and nice bgm endpoints.
 - nice bgm export files.
 
-## 5.61.0 - 2020-05-19
+## 5.61.0 - 2021-05-19
 ### Added
 - Added extra passive to raw and nice servant.
 - Added `cardDetail` to nice servant.
@@ -50,168 +50,168 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 - Better description for `normalAttack` enums.
 
-## 5.60.0 - 2020-05-14
+## 5.60.0 - 2021-05-14
 ### Added
 - skill, NP, event and war translations.
 - `basic_event_lang_en.json` and `basic_war_lang_en.json` JP export files.
 
-## 5.59.0 - 2020-05-13
+## 5.59.0 - 2021-05-13
 
 ### Added
 - `pointGroups` to raw and nice event.
 
-## 5.58.0 - 2020-04-29
+## 5.58.0 - 2021-04-29
 
 ### Added
 - basic quest endpoint.
 
-## 5.57.0 - 2020-04-27
+## 5.57.0 - 2021-04-27
 
 ### Added
 - `relatedQuests` to Field AI for the stages with the AI.
 
-## 5.56.0 - 2020-04-12
+## 5.56.0 - 2021-04-12
 ### Added
 - `attribute` to basic servant.
 
-## 5.55.0 - 2020-04-08
+## 5.55.0 - 2021-04-08
 ### Added
 - Script assets to nice quest phase, war and shop.
 - Quest messages to nice quest phase
 
-## 5.54.2 - 2020-03-23
+## 5.54.2 - 2021-03-23
 ### Added
 - `voiceCondSvt` will search in play conditions too.
 
-## 5.54.1 - 2020-03-18
+## 5.54.1 - 2021-03-18
 ### Added
 - `ApplySupportSvt` dataval
 
-## 5.54.0 - 2020-03-15
+## 5.54.0 - 2021-03-15
 ### Added
 - `itemSet` to event shop
 
-## 5.53.0 - 2020-03-12
+## 5.53.0 - 2021-03-12
 ### Added
 - Tower info to raw and nice event.
 - Lottery info to raw and nice event.
 
-## 5.52.0 - 2020-03-09
+## 5.52.0 - 2021-03-09
 ### Added
 - Quest enemy data from Rayshift to nice quest phase.
 - `phasesWithEnemies` and `phasesNoBattle` to raw and nice quest.
 - `fieldAis` to nice stage.
 
-## 5.51.0 - 2020-03-07
+## 5.51.0 - 2021-03-07
 ### Added
 - war add to raw and nice war.
 
-## 5.50.0 - 2020-03-07
+## 5.50.0 - 2021-03-07
 ### Added
 - `wave` number to nice stage.
 
-## 5.49.0 - 2020-03-01
+## 5.49.0 - 2021-03-01
 ### Added
 - `condValues` to nice voice play to make it consistent with conditions in other places.
 - `missions` to raw and nice event.
 
-## 5.48.0 - 2020-02-25
+## 5.48.0 - 2021-02-25
 ### Added
 - Event Point Buff detail to raw and nice event for Oniland ladder.
 
-## 5.47.0 - 2020-02-25
+## 5.47.0 - 2021-02-25
 ### Changed
 - Removed upper and lower bounds of all integer skill and NP search parameters.
 - NP search won't return NP 100.
 
-## 5.46.0 - 2020-02-14
+## 5.46.0 - 2021-02-14
 ### Added
 - Added `flag` to basic servant and `flag`, `bondEquipOwner`, `valentineEquipOwner` to basic equip.
 
-## 5.45.0 - 2020-02-12
+## 5.45.0 - 2021-02-12
 ### Added
 - `playConds` to raw and nice voice lines.
 
-## 5.44.0 - 2020-02-11
+## 5.44.0 - 2021-02-11
 ### Added
 - `image` to nice servant extra assets.
 
-## 5.43.0 - 2020-02-10
+## 5.43.0 - 2021-02-10
 ### Added
 - English names translations to nice and basic mystic codes.
 - `script` to basic buff.
 - `bondEquipOwner` and `valentineEquipOwner` to nice equip.
 
-## 5.42.0 - 2020-02-08
+## 5.42.0 - 2021-02-08
 ### Added
 - `charaGraphName` to nice servant for Miyu, Avenger Nobu, Summer Okita and Jinako.
 
-## 5.41.0 - 2020-02-07
+## 5.41.0 - 2021-02-07
 ### Added
 - `overWriteServantName`, `overWriteServantBattleName`, `overWriteTDName`, `overWriteTDRuby`, `overWriteTDFileName` in nice servant `ascensionAdd`.
 
-## 5.40.0 - 2020-02-05
+## 5.40.0 - 2021-02-05
 ### Added
 - Event ladder rewards to event endpoints.
 
-## 5.39.0 - 2020-02-01
+## 5.39.0 - 2021-02-01
 ### Added
 - raw and nice item search.
 
-## 5.38.0 - 2020-01-31
+## 5.38.0 - 2021-01-31
 ### Added
 - English name translations for JP CCs.
 - CC endpoints can take `collectionNo` besides CC IDs.
 - Added English name option for skill.
 
-## 5.37.4 - 2020-01-30
+## 5.37.4 - 2021-01-30
 ### Added
 - `battleCharaOffsetZ` to raw servant's `mstSvtLimitAdd`.
 
 ### Changed
 - `scale` in raw servant's `mstSvtScript` to have decimal type instead of integer.
 
-## 5.37.3 - 2020-01-28
+## 5.37.3 - 2021-01-28
 ### Fixed
 - Mash should return the same NP but with different priorities now. Previously, nice Mash returned the same NP 800105 with the same priority 105. Now there should be two 800105 NPs with priorities 105 and 106.
 
-## 5.37.2 - 2020-01-28
+## 5.37.2 - 2021-01-28
 ### Fixed
 - Mash should return the same skills but with different priorities now. Previously, nice Mash returned the same skills with the same priorities.
 
-## 5.37.1 - 2020-01-27
+## 5.37.1 - 2021-01-27
 ### Added
 - Story charaFigure with forms.
 
-## 5.37.0 - 2020-01-27
+## 5.37.0 - 2021-01-27
 ### Added
 - Story charaFigure to nice servant.
 
-## 5.36.2 - 2020-01-26
+## 5.36.2 - 2021-01-26
 ### Added
 - `phases` to raw quest.
 - `beforeActionVals` to `mstQuest`.
 
-## 5.36.1 - 2020-01-23
+## 5.36.1 - 2021-01-23
 ### Fixed
 - Some servants should have multiple Valentine CEs.
 
-## 5.36.0 - 2020-01-23
+## 5.36.0 - 2021-01-23
 ### Added
 - `valentineEquip` to nice servant.
 
-## 5.35.1 - 2020-01-23
+## 5.35.1 - 2021-01-23
 ### Added
 - Added Kiara Punisher Reset purchase type. The purchase type is not defined in the game code.
 
-## 5.35.0 - 2020-01-20
+## 5.35.0 - 2021-01-20
 ### Added
 - Detailed nice skill to nice AI Act.
 - ruby to basic skill and basic NP.
 - New 2.26.0 enums.
 - English translations Little Big Tengu servants and CEs.
 
-## 5.34.2 - 2020-01-19
+## 5.34.2 - 2021-01-19
 ### Added
 - `actNumInt` and `timingDescription` to nice AI.
 - Fallback value for `actNum` enum since the mapping is incomplete.
@@ -220,41 +220,41 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Changed
 - Combined AI svt and field endpoints.
 
-## 5.34.1 - 2020-01-18
+## 5.34.1 - 2021-01-18
 ### Changed
 - Dedupe and sort `aiIds` in nice skill and `parentAis` in nice AI.
 
-## 5.34.0 - 2020-01-17
+## 5.34.0 - 2021-01-17
 ### Added
 - `priority` and `dropPriority` to nice item.
 
-## 5.33.0 - 2020-01-16
+## 5.33.0 - 2021-01-16
 ### Added
 - funcGroup to raw and nice functions. It will help with getting the function icons for bond up and event drop up functions
 
-## 5.32.1 - 2020-01-16
+## 5.32.1 - 2021-01-16
 ### Added
 - Fixed Holy Grail item having `ascension` use.
 
-## 5.32.0 - 2020-01-15
+## 5.32.0 - 2021-01-15
 ### Added
 - `uses` to NiceItem that shows whether the item is used in skill enhancement, ascension or costume unlock.
 
-## 5.31.0 - 2020-01-12
+## 5.31.0 - 2021-01-12
 ### Added
 - raw and nice `ai` endpoints.
 - `aiIds` to applicable nice skills.
 
-## 5.30.1 - 2020-01-09
+## 5.30.1 - 2021-01-09
 ### Added
 - `consumeItem` to nice quest and `mstQuestConsumeItem` to raw quest for quests that cost items instad of APs.
 
-## 5.30.0 - 2020-01-04
+## 5.30.0 - 2021-01-04
 ### Added
 - Quest reward `gifts` to nice quest.
 - Shop details to raw and nice event endpoints.
 
-## 5.29.1 - 2020-01-02
+## 5.29.1 - 2021-01-02
 ### Changed
 - Skill search: `num`, `priority` and `strengthStatus` will search all servants instead of only the first one.
 - Skill and NP search: Make sure that the level 1 skill or NP is used instead of relying on it being the first one.
