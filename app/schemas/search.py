@@ -398,7 +398,7 @@ class QuestSearchQueryParams:
     region: Region
     name: Optional[str] = None
     spotName: Optional[str] = None
-    warId: Optional[int] = None
+    warId: list[int] = Query([])
     type: list[NiceQuestType] = Query([])
     fieldIndividuality: list[Union[Trait, int]] = Query([])
     battleBgId: Optional[int] = None

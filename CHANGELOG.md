@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.69.0 - 2021-08-10
+### Added
+- Basic quest phase search.
+
 ## 5.68.0 - 2020-07-06
 ### Added
 - script info from all phases to raw and nice quest.

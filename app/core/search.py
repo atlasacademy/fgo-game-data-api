@@ -408,7 +408,7 @@ async def search_quest(
         conn,
         name=search_param.name,
         spot_name=search_param.spotName,
-        war_id=search_param.warId,
+        war_ids=search_param.warId,
         quest_type={QUEST_TYPE_REVERSE[quest_type] for quest_type in search_param.type},
         field_individuality=reverse_traits(search_param.fieldIndividuality),
         battle_bg_id=search_param.battleBgId,

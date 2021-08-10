@@ -2,7 +2,7 @@ from typing import Iterable, Optional, Union
 
 from sqlalchemy import Table
 from sqlalchemy.ext.asyncio import AsyncConnection
-from sqlalchemy.sql import Join, and_, case, func, or_, select
+from sqlalchemy.sql import Join, and_, case, func, literal_column, or_, select
 from sqlalchemy.sql.elements import ClauseElement
 
 from ...models.raw import (
@@ -20,6 +20,7 @@ from ...models.raw import (
     mstSpot,
     mstStage,
     mstStageRemap,
+    mstSvt,
     mstWar,
     npcFollower,
     npcFollowerRelease,
@@ -116,7 +117,7 @@ async def get_quest_phase_search(
     conn: AsyncConnection,
     name: Optional[str] = None,
     spot_name: Optional[str] = None,
-    war_id: Optional[int] = None,
+    war_ids: Optional[Iterable[int]] = None,
     quest_type: Optional[Iterable[int]] = None,
     field_individuality: Optional[Iterable[int]] = None,
     battle_bg_id: Optional[int] = None,
@@ -149,10 +150,41 @@ async def get_quest_phase_search(
     if name:
         where_clause.append(mstQuest.c.name.ilike(f"%{name}%"))
     if spot_name:
-        # TODO: Merge with mstQuestPhaseDetail
-        where_clause.append(mstSpot.c.name.ilike(f"%{spot_name}%"))
-    if war_id:
-        where_clause.append(mstWar.c.id == war_id)
+        overwrite_spot_names = (
+            select(
+                mstQuestPhaseDetail.c.questId,
+                mstQuestPhaseDetail.c.phase,
+                mstQuestPhaseDetail.c.spotId.label("overwriteSpotId"),
+                mstSpot.c.name.label("overwriteSpotName"),
+            )
+            .select_from(
+                mstQuestPhaseDetail.join(
+                    mstSpot, mstQuestPhaseDetail.c.spotId == mstSpot.c.id
+                )
+            )
+            .cte()
+        )
+        from_clause = from_clause.outerjoin(
+            overwrite_spot_names,
+            and_(
+                mstQuest.c.id == overwrite_spot_names.c.questId,
+                mstQuestPhase.c.phase == overwrite_spot_names.c.phase,
+            ),
+        )
+        where_clause.append(
+            or_(
+                and_(
+                    overwrite_spot_names.c.overwriteSpotName.is_(None),
+                    mstSpot.c.name.ilike(f"%{spot_name}%"),
+                ),
+                and_(
+                    overwrite_spot_names.c.overwriteSpotName.is_not(None),
+                    overwrite_spot_names.c.overwriteSpotName.ilike(f"%{spot_name}%"),
+                ),
+            )
+        )
+    if war_ids:
+        where_clause.append(mstWar.c.id.in_(war_ids))
     if quest_type:
         where_clause.append(mstQuest.c.type.in_(quest_type))
     if field_individuality:
@@ -183,16 +215,52 @@ async def get_quest_phase_search(
             rayshiftQuest.c.questDetail.contains({"userSvt": [{"svtId": enemy_svt_id}]})
         )
     if enemy_class:
+        rayshift_svt_ids = select(
+            rayshiftQuest.c.questId,
+            rayshiftQuest.c.phase,
+            literal_column(
+                "(jsonb_path_query(\"questDetail\", '$.userSvt[*] ? (@.npcSvtClassId == 0).svtId')->0)::int"
+            ).label("rayshift_svt_id"),
+        ).cte()
+        deduped_svt_ids = (
+            select(
+                rayshift_svt_ids.c.questId,
+                rayshift_svt_ids.c.phase,
+                rayshift_svt_ids.c.rayshift_svt_id,
+            )
+            .group_by(
+                rayshift_svt_ids.c.questId,
+                rayshift_svt_ids.c.phase,
+                rayshift_svt_ids.c.rayshift_svt_id,
+            )
+            .cte()
+        )
+        merged_class_ids = (
+            select(deduped_svt_ids.c.questId, deduped_svt_ids.c.phase, mstSvt.c.classId)
+            .join(mstSvt, mstSvt.c.id == deduped_svt_ids.c.rayshift_svt_id)
+            .cte()
+        )
+        from_clause = from_clause.outerjoin(
+            merged_class_ids,
+            and_(
+                mstQuest.c.id == merged_class_ids.c.questId,
+                mstQuestPhase.c.phase == merged_class_ids.c.phase,
+            ),
+        )
         for class_id in enemy_class:
-            # TODO: Merge with mstSvt to get base class
             where_clause.append(
-                rayshiftQuest.c.questDetail.contains(
-                    {"userSvt": [{"npcSvtClassId": class_id}]}
+                or_(
+                    rayshiftQuest.c.questDetail.contains(
+                        {"userSvt": [{"npcSvtClassId": class_id}]}
+                    ),
+                    merged_class_ids.c.classId == class_id,
                 )
             )
 
-    quest_search_stmt = MSTQUEST_WITH_PHASE_SELECT.select_from(from_clause).where(
-        and_(*where_clause)
+    quest_search_stmt = (
+        MSTQUEST_WITH_PHASE_SELECT.distinct()
+        .select_from(from_clause)
+        .where(and_(*where_clause))
     )
 
     return [

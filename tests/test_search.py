@@ -242,13 +242,21 @@ basic_quest_search_test_cases_dict = {
         "NA/quest/phase/search?spotName=Rice Field&fieldIndividuality=2038",
         {(2000300, 1)},
     ),
-    "quest_class_name": (
+    "quest_class_name_overwrite": (
         "NA/quest/phase/search?enemyClassName=cccFinaleEmiyaAlter",
         {(94034019, 2)},
+    ),
+    "quest_class_name_mstSvt": (
+        "NA/quest/phase/search?warId=201&enemyClassName=assassin&type=main",
+        {(2000112, 3)},
     ),
     "quest_type": (
         "JP/quest/phase/search?type=free&spotName=ディーヴァール",
         {(93030506, 1), (93030506, 2), (93030506, 3)},
+    ),
+    "quest_overwrite_spot": (
+        "NA/quest/phase/search?spotName=Southern Town&type=main",
+        {(3000412, 4), (3000412, 5)},
     ),
 }
 basic_quest_phase_test_cases = [
