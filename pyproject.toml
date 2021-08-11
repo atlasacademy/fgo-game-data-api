@@ -19,7 +19,7 @@ SQLAlchemy = "^1.4.22"
 psycopg2 = "^2.9.1"
 httpx = "^0.18.2"
 aioredis = "^1.3.1"
-asyncpg = "^0.23.0"
+asyncpg = "^0.24.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.4"
@@ -34,8 +34,8 @@ sqlalchemy-stubs = { git = "https://github.com/squaresmile/sqlalchemy-stubs.git"
 sqlalchemy2-stubs = "^0.0.2-alpha.8"
 pytest-asyncio = "^0.15.1"
 asgi-lifespan = "^1.0.1"
-types-toml = "^0.1.3"
-types-aiofiles = "^0.1.7"
+types-toml = "^0.1.5"
+types-aiofiles = "^0.1.9"
 
 [tool.isort]
 line_length = 88
