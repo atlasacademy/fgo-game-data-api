@@ -43,6 +43,7 @@ test_cases_dict: dict[str, tuple[str, str]] = {
         "NA_function_300_reverse_basic",
     ),
     "buff_NA_id": ("NA/buff/300", "NA_buff_300"),
+    "buff_JP_buff_rate": ("JP/buff/3711", "NA_buff_3711"),
     "buff_NA_reverse": ("NA/buff/267?reverse=True", "NA_buff_267_reverse"),
     "buff_JP_reverse_basic": (
         "JP/buff/search?type=specialInvincible&reverse=true&reverseData=basic&reverseDepth=servant&lang=en",

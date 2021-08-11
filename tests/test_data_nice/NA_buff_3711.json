@@ -1,0 +1,20 @@
+{
+  "id": 3711,
+  "name": "宝具威力アップブースト",
+  "detail": "宝具威力アップ状態の効果量を一時的に増大させる<重複不可>",
+  "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_370.png",
+  "type": "buffRate",
+  "buffGroup": 370,
+  "script": {
+    "UpBuffRateBuffIndiv": [{ "id": 3030, "name": "buffNpDamageUp" }]
+  },
+  "vals": [
+    { "id": 3004, "name": "buffPositiveEffect" },
+    { "id": 3006, "name": "buffIncreaseDamage" },
+    { "id": 3071, "name": "unknown" }
+  ],
+  "tvals": [],
+  "ckSelfIndv": [],
+  "ckOpIndv": [],
+  "maxRate": 5000
+}

@@ -101,6 +101,12 @@ def get_nice_buff_script(mstBuff: MstBuff) -> NiceBuffScript:
     if "INDIVIDUALITIE" in mstBuff.script:
         script["INDIVIDUALITIE"] = get_nice_trait(mstBuff.script["INDIVIDUALITIE"])
 
+    if "UpBuffRateBuffIndiv" in mstBuff.script:
+        script["UpBuffRateBuffIndiv"] = get_traits_list(
+            int(trait_id)
+            for trait_id in mstBuff.script["UpBuffRateBuffIndiv"].split(",")
+        )
+
     if "CheckOpponentBuffTypes" in mstBuff.script:
         script["CheckOpponentBuffTypes"] = [
             BUFF_TYPE_NAME[int(buffType)]
