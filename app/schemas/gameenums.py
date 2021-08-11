@@ -1368,6 +1368,8 @@ class DataValsType(IntEnum):
     DamageRates = 80
     OnPositions = 81
     OffPositions = 82
+    TargetIndiv = 83
+    IncludeIgnoreIndividuality = 84
 
 
 class ClassRelationOverwriteType(IntEnum):
