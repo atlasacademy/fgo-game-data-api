@@ -460,7 +460,7 @@ class TestServantSpecial:
         response = await client.get("/nice/JP/servant/316")
         assert response.json()["extraAssets"]["charaGraphEx"]["ascension"][
             "4"
-        ].endswith("JP/CharaGraph/2800100/2800100b@2.png")
+        ].endswith("JP/CharaGraph/CharaGraphEx/2800100/2800100b@2.png")
 
     async def test_skillAdd(self, client: AsyncClient) -> None:
         response = await client.get("/nice/JP/skill/900250")

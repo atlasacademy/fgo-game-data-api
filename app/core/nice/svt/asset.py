@@ -154,7 +154,7 @@ def get_svt_extraAssets(
             if "additionExpandImage" in raw_svt.mstSvtAdd.script:
                 for i in raw_svt.mstSvtAdd.script["additionExpandImage"]:
                     charaGraphEx.ascension = {
-                        i + 1: fmt_url(AssetURL.charaGraph[i + 1], **base_settings_id)
+                        i + 1: fmt_url(AssetURL.charaGraphEx[i + 1], **base_settings_id)
                     }
 
     elif raw_svt.mstSvt.isEquip():
