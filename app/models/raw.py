@@ -24,6 +24,18 @@ mstConstant = Table(
 )
 
 
+mstCommonRelease = Table(
+    "mstCommonRelease",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("priority", Integer),
+    Column("condGroup", Integer),
+    Column("condType", Integer),
+    Column("condId", Integer),
+    Column("condNum", Integer),
+)
+
+
 mstBuff = Table(
     "mstBuff",
     metadata,
@@ -168,6 +180,17 @@ mstSkillLv = Table(
 
 
 Index("ix_mstSkillLv_funcId_length", func.array_length(mstSkillLv.c.funcId, 1))
+
+
+mstSkillAdd = Table(
+    "mstSkillAdd",
+    metadata,
+    Column("skillId", Integer, index=True),
+    Column("priority", Integer),
+    Column("commonReleaseId", Integer, index=True),
+    Column("name", String),
+    Column("ruby", String),
+)
 
 
 mstTreasureDevice = Table(
@@ -1427,6 +1450,7 @@ ScriptFileList = Table(
 
 
 TABLES_TO_BE_LOADED = [
+    mstCommonRelease,
     mstSkill,
     mstTreasureDevice,
     mstSvt,
@@ -1453,6 +1477,7 @@ TABLES_TO_BE_LOADED = [
     mstSkillDetail,
     mstSvtSkill,
     mstSvtPassiveSkill,
+    mstSkillAdd,
     mstTreasureDeviceDetail,
     mstSvtTreasureDevice,
     mstSvtCard,

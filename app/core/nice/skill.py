@@ -7,11 +7,23 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 from ...config import Settings
 from ...schemas.common import Language, Region
 from ...schemas.enums import SKILL_TYPE_NAME, AiType
-from ...schemas.nice import AssetURL, ExtraPassive, NiceSkill, NiceSkillReverse
-from ...schemas.raw import MstSvtPassiveSkill, SkillEntityNoReverse
+from ...schemas.nice import (
+    AssetURL,
+    ExtraPassive,
+    NiceSkill,
+    NiceSkillAdd,
+    NiceSkillReverse,
+)
+from ...schemas.raw import (
+    MstCommonRelease,
+    MstSkillAdd,
+    MstSvtPassiveSkill,
+    SkillEntityNoReverse,
+)
 from ..raw import get_skill_entity_no_reverse, get_skill_entity_no_reverse_many
 from ..reverse import get_ai_id_from_skill
 from ..utils import get_traits_list, get_translation, strip_formatting_brackets
+from .common_release import get_nice_common_release
 from .func import get_nice_function
 
 
@@ -34,6 +46,24 @@ def get_extra_passive(svt_passive: MstSvtPassiveSkill) -> ExtraPassive:
     )
 
 
+def get_nice_skill_add(
+    skill_adds: list[MstSkillAdd], releases: list[MstCommonRelease], lang: Language
+) -> list[NiceSkillAdd]:
+    return [
+        NiceSkillAdd(
+            priority=skill_add.priority,
+            releaseConditions=[
+                get_nice_common_release(release)
+                for release in releases
+                if release.id == skill_add.commonReleaseId
+            ],
+            name=get_translation(lang, skill_add.name),
+            ruby=skill_add.ruby,
+        )
+        for skill_add in skill_adds
+    ]
+
+
 async def get_nice_skill_with_svt(
     conn: AsyncConnection,
     skillEntity: SkillEntityNoReverse,
@@ -48,6 +78,9 @@ async def get_nice_skill_with_svt(
         "ruby": skillEntity.mstSkill.ruby,
         "type": SKILL_TYPE_NAME[skillEntity.mstSkill.type],
         "actIndividuality": get_traits_list(skillEntity.mstSkill.actIndividuality),
+        "skillAdd": get_nice_skill_add(
+            skillEntity.mstSkillAdd, skillEntity.mstCommonRelease, lang
+        ),
     }
 
     if mstSvtPassiveSkills:

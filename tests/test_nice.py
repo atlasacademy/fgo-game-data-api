@@ -456,6 +456,32 @@ class TestServantSpecial:
             "Image/cut084_jnn/cut084_jnn.png"
         )
 
+    async def test_charaGraphEx(self, client: AsyncClient) -> None:
+        response = await client.get("/nice/JP/servant/316")
+        assert response.json()["extraAssets"]["charaGraphEx"]["ascension"][
+            "4"
+        ].endswith("JP/CharaGraph/2800100/2800100b@2.png")
+
+    async def test_skillAdd(self, client: AsyncClient) -> None:
+        response = await client.get("/nice/JP/skill/900250")
+        assert response.json()["skillAdd"] == [
+            {
+                "priority": 0,
+                "releaseConditions": [
+                    {
+                        "id": 40061904,
+                        "priority": 0,
+                        "condGroup": 0,
+                        "condType": "questClear",
+                        "condId": 3001009,
+                        "condNum": 0,
+                    }
+                ],
+                "name": "対人理 D",
+                "ruby": "たいじんり",
+            }
+        ]
+
     async def test_war_banner(self, client: AsyncClient) -> None:
         war_oniland = await client.get("/nice/NA/war/9050")
         assert war_oniland.status_code == 200

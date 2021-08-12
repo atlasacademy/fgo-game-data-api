@@ -27,6 +27,7 @@
           "actIndividuality": [],
           "script": {},
           "extraPassive": [],
+          "skillAdd": [],
           "aiIds": { "svt": [], "field": [90161870] },
           "functions": [
             {
@@ -96,6 +97,7 @@
           "actIndividuality": [],
           "script": {},
           "extraPassive": [],
+          "skillAdd": [],
           "aiIds": { "svt": [], "field": [90161870] },
           "functions": [
             {

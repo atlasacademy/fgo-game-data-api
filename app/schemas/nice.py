@@ -247,6 +247,15 @@ class Vals(BaseVals):
     DependFuncVals: Optional[BaseVals] = None
 
 
+class NiceCommonRelease(BaseModelORJson):
+    id: int
+    priority: int
+    condGroup: int
+    condType: NiceCondType
+    condId: int
+    condNum: int
+
+
 class NiceBuff(BaseModelORJson):
     id: int = Field(..., title="Buff ID", description="Buff ID.")
     name: str = Field(..., title="Buff name", description="Buff name.")
@@ -426,6 +435,13 @@ class NiceSkillScript(BaseModel):
     HP_PER_LOWER: Optional[list[int]] = None
 
 
+class NiceSkillAdd(BaseModelORJson):
+    priority: int
+    releaseConditions: list[NiceCommonRelease]
+    name: str
+    ruby: str
+
+
 class NiceSkill(BaseModelORJson):
     id: int
     num: int = -1
@@ -444,6 +460,7 @@ class NiceSkill(BaseModelORJson):
     actIndividuality: list[NiceTrait]
     script: NiceSkillScript
     extraPassive: list[ExtraPassive]
+    skillAdd: list[NiceSkillAdd]
     aiIds: Optional[dict[AiType, list[int]]] = None
     functions: list[NiceFunction]
 

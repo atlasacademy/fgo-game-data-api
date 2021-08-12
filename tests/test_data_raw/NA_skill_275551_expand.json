@@ -33,6 +33,8 @@
       "flag": 0
     }
   ],
+  "mstSkillAdd": [],
+  "mstCommonRelease": [],
   "mstSkillLv": [
     {
       "funcId": [358, 200],

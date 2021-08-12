@@ -33,6 +33,8 @@
         }
       ],
       "mstSvtSkill": [],
+      "mstSkillAdd": [],
+      "mstCommonRelease": [],
       "mstSkillLv": [
         {
           "funcId": [152],
@@ -157,6 +159,8 @@
         }
       ],
       "mstSvtSkill": [],
+      "mstSkillAdd": [],
+      "mstCommonRelease": [],
       "mstSkillLv": [
         {
           "funcId": [353],
@@ -281,6 +285,8 @@
         }
       ],
       "mstSvtSkill": [],
+      "mstSkillAdd": [],
+      "mstCommonRelease": [],
       "mstSkillLv": [
         {
           "funcId": [531],

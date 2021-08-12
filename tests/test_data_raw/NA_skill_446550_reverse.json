@@ -59,6 +59,8 @@
       "flag": 0
     }
   ],
+  "mstSkillAdd": [],
+  "mstCommonRelease": [],
   "mstSkillLv": [
     {
       "funcId": [627, 1168, 2086, 289],
@@ -281,6 +283,8 @@
                   "flag": 0
                 }
               ],
+              "mstSkillAdd": [],
+              "mstCommonRelease": [],
               "mstSkillLv": [
                 {
                   "funcId": [627, 1168, 2086, 289],
@@ -495,6 +499,8 @@
                   "flag": 0
                 }
               ],
+              "mstSkillAdd": [],
+              "mstCommonRelease": [],
               "mstSkillLv": [
                 {
                   "funcId": [120, 461, 470],
@@ -659,6 +665,8 @@
                   "flag": 0
                 }
               ],
+              "mstSkillAdd": [],
+              "mstCommonRelease": [],
               "mstSkillLv": [
                 {
                   "funcId": [2065, 182, 340, 472, 592],
@@ -1996,6 +2004,8 @@
                   "flag": 0
                 }
               ],
+              "mstSkillAdd": [],
+              "mstCommonRelease": [],
               "mstSkillLv": [
                 {
                   "funcId": [627, 1168, 2086, 289],
@@ -2210,6 +2220,8 @@
                   "flag": 0
                 }
               ],
+              "mstSkillAdd": [],
+              "mstCommonRelease": [],
               "mstSkillLv": [
                 {
                   "funcId": [120, 461, 470],
@@ -2374,6 +2386,8 @@
                   "flag": 0
                 }
               ],
+              "mstSkillAdd": [],
+              "mstCommonRelease": [],
               "mstSkillLv": [
                 {
                   "funcId": [2065, 182, 340, 472, 592],
@@ -3256,6 +3270,8 @@
                   "flag": 0
                 }
               ],
+              "mstSkillAdd": [],
+              "mstCommonRelease": [],
               "mstSkillLv": [
                 {
                   "funcId": [627, 1168, 2086, 289],
@@ -3470,6 +3486,8 @@
                   "flag": 0
                 }
               ],
+              "mstSkillAdd": [],
+              "mstCommonRelease": [],
               "mstSkillLv": [
                 {
                   "funcId": [120, 461, 470],
@@ -3634,6 +3652,8 @@
                   "flag": 0
                 }
               ],
+              "mstSkillAdd": [],
+              "mstCommonRelease": [],
               "mstSkillLv": [
                 {
                   "funcId": [2065, 182, 340, 472, 592],

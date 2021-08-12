@@ -237,6 +237,7 @@
                 "4": "https://assets.atlasacademy.io/GameData/JP/Faces/f_2029003.png"
               }
             },
+            "charaGraphEx": {},
             "charaGraphName": {},
             "narrowFigure": {
               "ascension": {
@@ -1557,6 +1558,7 @@
               "actIndividuality": [],
               "script": {},
               "extraPassive": [],
+              "skillAdd": [],
               "functions": [
                 {
                   "funcId": 119,
@@ -1727,6 +1729,7 @@
               "actIndividuality": [],
               "script": {},
               "extraPassive": [],
+              "skillAdd": [],
               "functions": [
                 {
                   "funcId": 288,
@@ -1857,6 +1860,7 @@
               "actIndividuality": [],
               "script": {},
               "extraPassive": [],
+              "skillAdd": [],
               "functions": [
                 {
                   "funcId": 595,
@@ -2000,6 +2004,7 @@
               "actIndividuality": [],
               "script": {},
               "extraPassive": [],
+              "skillAdd": [],
               "functions": [
                 {
                   "funcId": 388,
@@ -2055,6 +2060,7 @@
               "actIndividuality": [],
               "script": {},
               "extraPassive": [],
+              "skillAdd": [],
               "functions": [
                 {
                   "funcId": 199,
@@ -2112,6 +2118,7 @@
               "actIndividuality": [],
               "script": {},
               "extraPassive": [],
+              "skillAdd": [],
               "functions": [
                 {
                   "funcId": 109,
@@ -2187,6 +2194,7 @@
                   "endedAt": 1596599999
                 }
               ],
+              "skillAdd": [],
               "functions": [
                 {
                   "funcId": 5486,
@@ -2255,6 +2263,7 @@
                   "endedAt": 1601611199
                 }
               ],
+              "skillAdd": [],
               "functions": [
                 {
                   "funcId": 5787,
@@ -2323,6 +2332,7 @@
                   "endedAt": 1614139199
                 }
               ],
+              "skillAdd": [],
               "functions": [
                 {
                   "funcId": 6545,
@@ -2420,6 +2430,7 @@
                   "endedAt": 1623211199
                 }
               ],
+              "skillAdd": [],
               "functions": [
                 {
                   "funcId": 7103,
@@ -2517,6 +2528,7 @@
                   "endedAt": 1893423600
                 }
               ],
+              "skillAdd": [],
               "functions": [
                 {
                   "funcId": 1230,
@@ -2594,6 +2606,7 @@
                   "endedAt": 1893423600
                 }
               ],
+              "skillAdd": [],
               "functions": [
                 {
                   "funcId": 1234,
@@ -2671,6 +2684,7 @@
                   "endedAt": 1893423600
                 }
               ],
+              "skillAdd": [],
               "functions": [
                 {
                   "funcId": 1235,
@@ -2748,6 +2762,7 @@
                   "endedAt": 1893423600
                 }
               ],
+              "skillAdd": [],
               "functions": [
                 {
                   "funcId": 1252,
@@ -2825,6 +2840,7 @@
                   "endedAt": 1893423600
                 }
               ],
+              "skillAdd": [],
               "functions": [
                 {
                   "funcId": 1253,
@@ -2902,6 +2918,7 @@
                   "endedAt": 1893423600
                 }
               ],
+              "skillAdd": [],
               "functions": [
                 {
                   "funcId": 1254,
@@ -2979,6 +2996,7 @@
                   "endedAt": 1893423600
                 }
               ],
+              "skillAdd": [],
               "functions": [
                 {
                   "funcId": 97,
@@ -3063,6 +3081,7 @@
                   "endedAt": 1893423600
                 }
               ],
+              "skillAdd": [],
               "functions": [
                 {
                   "funcId": 97,
@@ -3147,6 +3166,7 @@
                   "endedAt": 1893423600
                 }
               ],
+              "skillAdd": [],
               "functions": [
                 {
                   "funcId": 97,
@@ -3222,6 +3242,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 30003,
@@ -3362,6 +3383,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 30005,
@@ -3420,6 +3442,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 30030,

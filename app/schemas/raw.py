@@ -13,6 +13,15 @@ class MstConstant(BaseModelORJson):
     createdAt: int  # 946652400
 
 
+class MstCommonRelease(BaseModelORJson):
+    id: int
+    priority: int
+    condGroup: int
+    condType: int
+    condId: int
+    condNum: int
+
+
 class MstBuff(BaseModelORJson):
     vals: list[int]  # [3004],
     tvals: list[int]  # [5000, 4001],
@@ -145,10 +154,20 @@ class MstSkillLv(BaseModelORJson):
     priority: int  # 0
 
 
+class MstSkillAdd(BaseModelORJson):
+    skillId: int
+    priority: int
+    commonReleaseId: int
+    name: str
+    ruby: str
+
+
 class SkillEntityNoReverse(BaseModelORJson):
     mstSkill: MstSkill
     mstSkillDetail: list[MstSkillDetail]
     mstSvtSkill: list[MstSvtSkill]
+    mstSkillAdd: list[MstSkillAdd]
+    mstCommonRelease: list[MstCommonRelease]
     mstSkillLv: list[MstSkillLv]
 
 

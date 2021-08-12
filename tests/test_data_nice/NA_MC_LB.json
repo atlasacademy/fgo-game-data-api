@@ -29,6 +29,7 @@
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 442,
@@ -90,6 +91,7 @@
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 150,
@@ -190,6 +192,7 @@
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 284,

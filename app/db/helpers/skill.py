@@ -4,7 +4,14 @@ from sqlalchemy.dialects.postgresql import aggregate_order_by
 from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import and_, func, select
 
-from ...models.raw import mstSkill, mstSkillDetail, mstSkillLv, mstSvtSkill
+from ...models.raw import (
+    mstCommonRelease,
+    mstSkill,
+    mstSkillAdd,
+    mstSkillDetail,
+    mstSkillLv,
+    mstSvtSkill,
+)
 from ...schemas.raw import MstSkill, SkillEntityNoReverse
 from .utils import sql_jsonb_agg
 
@@ -27,6 +34,10 @@ async def get_skillEntity(
     JOINED_SKILL_TABLES = (
         mstSkill.outerjoin(mstSkillDetail, mstSkillDetail.c.id == mstSkill.c.id)
         .outerjoin(mstSvtSkill, mstSvtSkill.c.skillId == mstSkill.c.id)
+        .outerjoin(mstSkillAdd, mstSkillAdd.c.skillId == mstSkill.c.id)
+        .outerjoin(
+            mstCommonRelease, mstSkillAdd.c.commonReleaseId == mstCommonRelease.c.id
+        )
         .outerjoin(mstSkillLvJson, mstSkillLvJson.c.skillId == mstSkill.c.id)
     )
 
@@ -34,6 +45,8 @@ async def get_skillEntity(
         func.to_jsonb(mstSkill.table_valued()).label(mstSkill.name),
         sql_jsonb_agg(mstSkillDetail),
         sql_jsonb_agg(mstSvtSkill),
+        sql_jsonb_agg(mstSkillAdd),
+        sql_jsonb_agg(mstCommonRelease),
         mstSkillLvJson.c.mstSkillLv,
     ]
 

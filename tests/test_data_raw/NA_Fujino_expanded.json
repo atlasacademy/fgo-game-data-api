@@ -25,6 +25,8 @@
           }
         ],
         "mstSvtSkill": [],
+        "mstSkillAdd": [],
+        "mstCommonRelease": [],
         "mstSkillLv": [
           {
             "funcId": [388],
@@ -519,6 +521,8 @@
           }
         ],
         "mstSvtSkill": [],
+        "mstSkillAdd": [],
+        "mstCommonRelease": [],
         "mstSkillLv": [
           {
             "funcId": [199],
@@ -1013,6 +1017,8 @@
           }
         ],
         "mstSvtSkill": [],
+        "mstSkillAdd": [],
+        "mstCommonRelease": [],
         "mstSkillLv": [
           {
             "funcId": [109],
@@ -1557,6 +1563,8 @@
           "flag": 0
         }
       ],
+      "mstSkillAdd": [],
+      "mstCommonRelease": [],
       "mstSkillLv": [
         {
           "funcId": [119, 1588, 337, 470],
@@ -2995,6 +3003,8 @@
           "flag": 0
         }
       ],
+      "mstSkillAdd": [],
+      "mstCommonRelease": [],
       "mstSkillLv": [
         {
           "funcId": [288, 476, 215],
@@ -4033,6 +4043,8 @@
           "flag": 0
         }
       ],
+      "mstSkillAdd": [],
+      "mstCommonRelease": [],
       "mstSkillLv": [
         {
           "funcId": [595, 276, 292],
@@ -6461,6 +6473,8 @@
         }
       ],
       "mstSvtSkill": [],
+      "mstSkillAdd": [],
+      "mstCommonRelease": [],
       "mstSkillLv": [
         {
           "funcId": [1230],
@@ -6543,6 +6557,8 @@
         }
       ],
       "mstSvtSkill": [],
+      "mstSkillAdd": [],
+      "mstCommonRelease": [],
       "mstSkillLv": [
         {
           "funcId": [1234],
@@ -6625,6 +6641,8 @@
         }
       ],
       "mstSvtSkill": [],
+      "mstSkillAdd": [],
+      "mstCommonRelease": [],
       "mstSkillLv": [
         {
           "funcId": [1235],
@@ -6707,6 +6725,8 @@
         }
       ],
       "mstSvtSkill": [],
+      "mstSkillAdd": [],
+      "mstCommonRelease": [],
       "mstSkillLv": [
         {
           "funcId": [1252],
@@ -6789,6 +6809,8 @@
         }
       ],
       "mstSvtSkill": [],
+      "mstSkillAdd": [],
+      "mstCommonRelease": [],
       "mstSkillLv": [
         {
           "funcId": [1253],
@@ -6871,6 +6893,8 @@
         }
       ],
       "mstSvtSkill": [],
+      "mstSkillAdd": [],
+      "mstCommonRelease": [],
       "mstSkillLv": [
         {
           "funcId": [1254],
@@ -6953,6 +6977,8 @@
         }
       ],
       "mstSvtSkill": [],
+      "mstSkillAdd": [],
+      "mstCommonRelease": [],
       "mstSkillLv": [
         {
           "funcId": [97],
@@ -7048,6 +7074,8 @@
         }
       ],
       "mstSvtSkill": [],
+      "mstSkillAdd": [],
+      "mstCommonRelease": [],
       "mstSkillLv": [
         {
           "funcId": [97],
@@ -7143,6 +7171,8 @@
         }
       ],
       "mstSvtSkill": [],
+      "mstSkillAdd": [],
+      "mstCommonRelease": [],
       "mstSkillLv": [
         {
           "funcId": [97],

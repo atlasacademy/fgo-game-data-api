@@ -38,6 +38,7 @@
           "actIndividuality": [],
           "script": {},
           "extraPassive": [],
+          "skillAdd": [],
           "functions": [
             {
               "funcId": 298,

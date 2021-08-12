@@ -120,6 +120,7 @@
           "actIndividuality": [],
           "script": {},
           "extraPassive": [],
+          "skillAdd": [],
           "functions": [
             {
               "funcId": 283,
@@ -232,6 +233,7 @@
           "actIndividuality": [],
           "script": {},
           "extraPassive": [],
+          "skillAdd": [],
           "functions": [
             {
               "funcId": 296,
@@ -378,6 +380,7 @@
           "actIndividuality": [],
           "script": {},
           "extraPassive": [],
+          "skillAdd": [],
           "functions": [
             {
               "funcId": 102,
@@ -954,6 +957,7 @@
                   "9404580": "https://assets.atlasacademy.io/GameData/JP/Faces/f_94045800.png"
                 }
               },
+              "charaGraphEx": {},
               "charaGraphName": {},
               "narrowFigure": {},
               "charaFigure": {},
@@ -1413,6 +1417,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 336,
@@ -1534,6 +1539,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 5590,
@@ -1597,6 +1603,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 336,
@@ -1718,6 +1725,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 5590,
@@ -1781,6 +1789,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 7104,
@@ -1842,6 +1851,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 7104,
@@ -1957,6 +1967,7 @@
           "actIndividuality": [],
           "script": {},
           "extraPassive": [],
+          "skillAdd": [],
           "functions": [
             {
               "funcId": 101,
@@ -2148,6 +2159,7 @@
           "actIndividuality": [],
           "script": {},
           "extraPassive": [],
+          "skillAdd": [],
           "functions": [
             {
               "funcId": 289,
@@ -2318,6 +2330,7 @@
           "actIndividuality": [],
           "script": {},
           "extraPassive": [],
+          "skillAdd": [],
           "functions": [
             {
               "funcId": 460,
@@ -2831,6 +2844,7 @@
                   "9404580": "https://assets.atlasacademy.io/GameData/JP/Faces/f_94045800.png"
                 }
               },
+              "charaGraphEx": {},
               "charaGraphName": {},
               "narrowFigure": {},
               "charaFigure": {},
@@ -3290,6 +3304,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 336,
@@ -3411,6 +3426,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 5590,
@@ -3474,6 +3490,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 336,
@@ -3595,6 +3612,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 5590,
@@ -3658,6 +3676,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 7104,
@@ -3719,6 +3738,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 7104,
@@ -3816,6 +3836,7 @@
           "actIndividuality": [],
           "script": {},
           "extraPassive": [],
+          "skillAdd": [],
           "functions": [
             {
               "funcId": 362,
@@ -3921,6 +3942,7 @@
           "actIndividuality": [],
           "script": {},
           "extraPassive": [],
+          "skillAdd": [],
           "functions": [
             {
               "funcId": 417,
@@ -4068,6 +4090,7 @@
           "actIndividuality": [],
           "script": {},
           "extraPassive": [],
+          "skillAdd": [],
           "functions": [
             {
               "funcId": 325,
@@ -4467,6 +4490,7 @@
                   "9404580": "https://assets.atlasacademy.io/GameData/JP/Faces/f_94045800.png"
                 }
               },
+              "charaGraphEx": {},
               "charaGraphName": {},
               "narrowFigure": {},
               "charaFigure": {},
@@ -4926,6 +4950,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 336,
@@ -5047,6 +5072,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 5590,
@@ -5110,6 +5136,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 336,
@@ -5231,6 +5258,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 5590,
@@ -5294,6 +5322,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 7104,
@@ -5355,6 +5384,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 7104,
@@ -5452,6 +5482,7 @@
           "actIndividuality": [],
           "script": {},
           "extraPassive": [],
+          "skillAdd": [],
           "functions": [
             {
               "funcId": 289,
@@ -5560,6 +5591,7 @@
           "actIndividuality": [],
           "script": {},
           "extraPassive": [],
+          "skillAdd": [],
           "functions": [
             {
               "funcId": 463,
@@ -5666,6 +5698,7 @@
           "actIndividuality": [],
           "script": {},
           "extraPassive": [],
+          "skillAdd": [],
           "functions": [
             {
               "funcId": 116,
@@ -6253,6 +6286,7 @@
                   "9404580": "https://assets.atlasacademy.io/GameData/JP/Faces/f_94045800.png"
                 }
               },
+              "charaGraphEx": {},
               "charaGraphName": {},
               "narrowFigure": {},
               "charaFigure": {},
@@ -6712,6 +6746,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 336,
@@ -6833,6 +6868,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 5590,
@@ -6896,6 +6932,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 336,
@@ -7017,6 +7054,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 5590,
@@ -7080,6 +7118,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 7104,
@@ -7141,6 +7180,7 @@
                 "actIndividuality": [],
                 "script": {},
                 "extraPassive": [],
+                "skillAdd": [],
                 "functions": [
                   {
                     "funcId": 7104,

@@ -18,6 +18,7 @@
         "9402750": "https://assets.atlasacademy.io/GameData/JP/Faces/f_94027500.png"
       }
     },
+    "charaGraphEx": {},
     "charaGraphName": {},
     "narrowFigure": {},
     "charaFigure": {},
@@ -477,6 +478,7 @@
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 119,
@@ -576,6 +578,7 @@
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 1951,
@@ -629,6 +632,7 @@
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 119,
@@ -728,6 +732,7 @@
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 1951,

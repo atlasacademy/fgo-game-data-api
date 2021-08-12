@@ -32,6 +32,7 @@
         "1100930": "https://assets.atlasacademy.io/GameData/JP/Faces/f_11009300.png"
       }
     },
+    "charaGraphEx": {},
     "charaGraphName": {},
     "narrowFigure": {
       "ascension": {
@@ -1289,6 +1290,7 @@
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 146,
@@ -1438,6 +1440,7 @@
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 248,
@@ -1920,6 +1923,7 @@
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 460,
@@ -2117,6 +2121,7 @@
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 388,
@@ -2170,6 +2175,7 @@
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 199,
@@ -2227,6 +2233,7 @@
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 265,
@@ -2323,6 +2330,7 @@
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 726,
@@ -2415,6 +2423,7 @@
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 199,
@@ -2472,6 +2481,7 @@
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 324,
@@ -2541,6 +2551,7 @@
           "endedAt": 1601611199
         }
       ],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 5787,
@@ -2607,6 +2618,7 @@
           "endedAt": 1603425599
         }
       ],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 5758,
@@ -2725,6 +2737,7 @@
           "endedAt": 1614139199
         }
       ],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 6545,
@@ -2820,6 +2833,7 @@
           "endedAt": 1893423600
         }
       ],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 1230,
@@ -2897,6 +2911,7 @@
           "endedAt": 1893423600
         }
       ],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 1234,
@@ -2974,6 +2989,7 @@
           "endedAt": 1893423600
         }
       ],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 1235,
@@ -3051,6 +3067,7 @@
           "endedAt": 1893423600
         }
       ],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 1252,
@@ -3128,6 +3145,7 @@
           "endedAt": 1893423600
         }
       ],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 1253,
@@ -3205,6 +3223,7 @@
           "endedAt": 1893423600
         }
       ],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 1254,
@@ -3282,6 +3301,7 @@
           "endedAt": 1893423600
         }
       ],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 97,
@@ -3366,6 +3386,7 @@
           "endedAt": 1893423600
         }
       ],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 97,
@@ -3450,6 +3471,7 @@
           "endedAt": 1611115199
         }
       ],
+      "skillAdd": [],
       "functions": [
         {
           "funcId": 6359,
@@ -3536,6 +3558,7 @@
         "actIndividuality": [],
         "script": {},
         "extraPassive": [],
+        "skillAdd": [],
         "functions": [
           {
             "funcId": 30003,
@@ -3676,6 +3699,7 @@
         "actIndividuality": [],
         "script": {},
         "extraPassive": [],
+        "skillAdd": [],
         "functions": [
           {
             "funcId": 30005,
@@ -3734,6 +3758,7 @@
         "actIndividuality": [],
         "script": {},
         "extraPassive": [],
+        "skillAdd": [],
         "functions": [
           {
             "funcId": 30015,
