@@ -25,6 +25,7 @@ def get_svt_extraAssets(
     region: Region, svt_id: int, raw_svt: ServantEntity, costume_ids: dict[int, int]
 ) -> ExtraAssets:
     charaGraph = ExtraAssetsUrl()
+    charaGraphEx = ExtraAssetsUrl()
     charaGraphName = ExtraAssetsUrl()
     faces = ExtraAssetsUrl()
     commands = ExtraAssetsUrl()
@@ -149,6 +150,13 @@ def get_svt_extraAssets(
                 except orjson.JSONDecodeError:  # pragma: no cover
                     pass
 
+        if raw_svt.mstSvtAdd:
+            if "additionExpandImage" in raw_svt.mstSvtAdd.script:
+                for i in raw_svt.mstSvtAdd.script["additionExpandImage"]:
+                    charaGraphEx.ascension = {
+                        i + 1: fmt_url(AssetURL.charaGraph[i + 1], **base_settings_id)
+                    }
+
     elif raw_svt.mstSvt.isEquip():
         charaGraph.equip = {
             svt_id: fmt_url(AssetURL.charaGraphDefault, **base_settings_id)
@@ -187,6 +195,7 @@ def get_svt_extraAssets(
 
     return ExtraAssets(
         charaGraph=charaGraph,
+        charaGraphEx=charaGraphEx,
         charaGraphName=charaGraphName,
         faces=faces,
         charaFigure=charaFigure,

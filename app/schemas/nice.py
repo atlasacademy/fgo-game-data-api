@@ -72,6 +72,12 @@ class AssetURL:
         3: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@1.png",
         4: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@2.png",
     }
+    charaGraphEx = {
+        1: "{base_url}/{region}/CharaGraph/CharaGraphEx/{item_id}/{item_id}a@1.png",
+        2: "{base_url}/{region}/CharaGraph/CharaGraphEx/{item_id}/{item_id}a@2.png",
+        3: "{base_url}/{region}/CharaGraph/CharaGraphEx/{item_id}/{item_id}b@1.png",
+        4: "{base_url}/{region}/CharaGraph/CharaGraphEx/{item_id}/{item_id}b@2.png",
+    }
     commands = "{base_url}/{region}/Servants/Commands/{item_id}/card_servant_{i}.png"
     commandFile = "{base_url}/{region}/Servants/Commands/{item_id}/{file_name}.png"
     status = "{base_url}/{region}/Servants/Status/{item_id}/status_servant_{i}.png"
@@ -502,6 +508,7 @@ class ExtraCCAssets(BaseModel):
 
 
 class ExtraAssets(ExtraCCAssets):
+    charaGraphEx: ExtraAssetsUrl
     charaGraphName: ExtraAssetsUrl
     narrowFigure: ExtraAssetsUrl
     charaFigure: ExtraAssetsUrl

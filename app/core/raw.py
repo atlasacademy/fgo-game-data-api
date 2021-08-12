@@ -59,6 +59,7 @@ from ..schemas.raw import (
     MstShopScript,
     MstSpot,
     MstSvt,
+    MstSvtAdd,
     MstSvtAppendPassiveSkill,
     MstSvtAppendPassiveSkillUnlock,
     MstSvtCard,
@@ -312,6 +313,7 @@ async def get_servant_entity(
         conn, MstCombineAppendPassiveSkill, servant_id
     )
     mstSvtCoin = await fetch.get_one(conn, MstSvtCoin, servant_id)
+    mstSvtAdd = await fetch.get_one(conn, MstSvtAdd, servant_id)
 
     costume_chara_ids = [limit.battleCharaId for limit in mstSvtLimitAdd]
     mstSvtScript = await svt.get_svt_script(
@@ -345,6 +347,7 @@ async def get_servant_entity(
         mstSvtAppendPassiveSkillUnlock=mstSvtAppendPassiveSkillUnlock,
         mstCombineAppendPassiveSkill=mstCombineAppendPassiveSkill,
         mstSvtCoin=mstSvtCoin,
+        mstSvtAdd=mstSvtAdd,
         # needed costume to get the nice limits and costume ids
         mstSvtCostume=mstSvtCostume,
         # needed this to get CharaFigure available forms

@@ -1289,6 +1289,7 @@ class ServantEntity(BaseModelORJson):
     mstSvtChange: list[MstSvtChange]
     mstSvtCostume: list[MstSvtCostume]
     mstSvtScript: list[MstSvtScript]
+    mstSvtAdd: Optional[MstSvtAdd] = None
     mstSvtPassiveSkill: list[MstSvtPassiveSkill]
     expandedExtraPassive: list[SkillEntityNoReverse] = []
     mstSvtAppendPassiveSkill: list[MstSvtAppendPassiveSkill]
