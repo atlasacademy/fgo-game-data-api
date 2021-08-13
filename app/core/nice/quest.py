@@ -36,7 +36,7 @@ from ...schemas.raw import (
     ScriptFile,
 )
 from .. import raw
-from ..utils import get_traits_list
+from ..utils import get_traits_list, get_translation
 from .bgm import get_nice_bgm
 from .enemy import get_quest_enemies
 from .follower import get_nice_support_servants
@@ -218,7 +218,7 @@ async def get_nice_quest_phase(
             conn, raw_quest.mstQuestPhaseDetail.spotId
         )
         nice_data["warId"] = detail_mstWar.id
-        nice_data["warLongName"] = detail_mstWar.longName
+        nice_data["warLongName"] = get_translation(lang, detail_mstWar.longName)
         nice_data["consumeType"] = QUEST_CONSUME_TYPE_NAME[
             raw_quest.mstQuestPhaseDetail.consumeType
         ]
