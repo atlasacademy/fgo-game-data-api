@@ -4162,13 +4162,7 @@
           "condGroup": 1,
           "condType": "questClearNum",
           "targetIds": [
-            94003710,
-            94003711,
-            94003712,
-            94003740,
-            94003741,
-            94003742,
-            94003770
+            94003710, 94003711, 94003712, 94003740, 94003741, 94003742, 94003770
           ],
           "targetNum": 1,
           "conditionMessage": "Clear Day 1 quests once\n(By 5-18 16:59 PDT)",
@@ -4206,13 +4200,7 @@
           "condGroup": 1,
           "condType": "questClearNum",
           "targetIds": [
-            94003710,
-            94003711,
-            94003712,
-            94003740,
-            94003741,
-            94003742,
-            94003770
+            94003710, 94003711, 94003712, 94003740, 94003741, 94003742, 94003770
           ],
           "targetNum": 3,
           "conditionMessage": "Clear Day 1 quests 3 times\n(By 5-18 16:59 PDT)",
@@ -4250,13 +4238,7 @@
           "condGroup": 1,
           "condType": "questClearNum",
           "targetIds": [
-            94003710,
-            94003711,
-            94003712,
-            94003740,
-            94003741,
-            94003742,
-            94003770
+            94003710, 94003711, 94003712, 94003740, 94003741, 94003742, 94003770
           ],
           "targetNum": 5,
           "conditionMessage": "Clear Day 1 quests 5 times\n(By 5-18 16:59 PDT)",
@@ -4582,13 +4564,7 @@
           "condGroup": 1,
           "condType": "questClearNum",
           "targetIds": [
-            94003713,
-            94003714,
-            94003715,
-            94003743,
-            94003744,
-            94003745,
-            94003771
+            94003713, 94003714, 94003715, 94003743, 94003744, 94003745, 94003771
           ],
           "targetNum": 1,
           "conditionMessage": "Clear Day 2 quests once\n(By 5-20 16:59 PDT)",
@@ -4639,13 +4615,7 @@
           "condGroup": 1,
           "condType": "questClearNum",
           "targetIds": [
-            94003713,
-            94003714,
-            94003715,
-            94003743,
-            94003744,
-            94003745,
-            94003771
+            94003713, 94003714, 94003715, 94003743, 94003744, 94003745, 94003771
           ],
           "targetNum": 3,
           "conditionMessage": "Clear Day 2 quests 3 times\n(By 5-20 16:59 PDT)",
@@ -4696,13 +4666,7 @@
           "condGroup": 1,
           "condType": "questClearNum",
           "targetIds": [
-            94003713,
-            94003714,
-            94003715,
-            94003743,
-            94003744,
-            94003745,
-            94003771
+            94003713, 94003714, 94003715, 94003743, 94003744, 94003745, 94003771
           ],
           "targetNum": 5,
           "conditionMessage": "Clear Day 2 quests 5 times\n(By 5-20 16:59 PDT)",
@@ -5077,13 +5041,7 @@
           "condGroup": 1,
           "condType": "questClearNum",
           "targetIds": [
-            94003716,
-            94003717,
-            94003718,
-            94003746,
-            94003747,
-            94003748,
-            94003772
+            94003716, 94003717, 94003718, 94003746, 94003747, 94003748, 94003772
           ],
           "targetNum": 1,
           "conditionMessage": "Clear Day 3 quests once\n(By 5-22 16:59 PDT)",
@@ -5134,13 +5092,7 @@
           "condGroup": 1,
           "condType": "questClearNum",
           "targetIds": [
-            94003716,
-            94003717,
-            94003718,
-            94003746,
-            94003747,
-            94003748,
-            94003772
+            94003716, 94003717, 94003718, 94003746, 94003747, 94003748, 94003772
           ],
           "targetNum": 3,
           "conditionMessage": "Clear Day 3 quests 3 times\n(By 5-22 16:59 PDT)",
@@ -5191,13 +5143,7 @@
           "condGroup": 1,
           "condType": "questClearNum",
           "targetIds": [
-            94003716,
-            94003717,
-            94003718,
-            94003746,
-            94003747,
-            94003748,
-            94003772
+            94003716, 94003717, 94003718, 94003746, 94003747, 94003748, 94003772
           ],
           "targetNum": 5,
           "conditionMessage": "Clear Day 3 quests 5 times\n(By 5-22 16:59 PDT)",
@@ -5627,13 +5573,7 @@
           "condGroup": 1,
           "condType": "questClearNum",
           "targetIds": [
-            94003719,
-            94003720,
-            94003721,
-            94003749,
-            94003750,
-            94003751,
-            94003773
+            94003719, 94003720, 94003721, 94003749, 94003750, 94003751, 94003773
           ],
           "targetNum": 1,
           "conditionMessage": "Clear Day 4 quests once\n(By 5-23 16:59 PDT)",
@@ -5684,13 +5624,7 @@
           "condGroup": 1,
           "condType": "questClearNum",
           "targetIds": [
-            94003719,
-            94003720,
-            94003721,
-            94003749,
-            94003750,
-            94003751,
-            94003773
+            94003719, 94003720, 94003721, 94003749, 94003750, 94003751, 94003773
           ],
           "targetNum": 3,
           "conditionMessage": "Clear Day 4 quests 3 times\n(By 5-23 16:59 PDT)",
@@ -5741,13 +5675,7 @@
           "condGroup": 1,
           "condType": "questClearNum",
           "targetIds": [
-            94003719,
-            94003720,
-            94003721,
-            94003749,
-            94003750,
-            94003751,
-            94003773
+            94003719, 94003720, 94003721, 94003749, 94003750, 94003751, 94003773
           ],
           "targetNum": 5,
           "conditionMessage": "Clear Day 4 quests 5 times\n(By 5-23 16:59 PDT)",
@@ -6232,13 +6160,7 @@
           "condGroup": 1,
           "condType": "questClearNum",
           "targetIds": [
-            94003722,
-            94003723,
-            94003724,
-            94003752,
-            94003753,
-            94003754,
-            94003774
+            94003722, 94003723, 94003724, 94003752, 94003753, 94003754, 94003774
           ],
           "targetNum": 1,
           "conditionMessage": "Clear Day 5 quests once\n(By 5-24 16:59 PDT)",
@@ -6289,13 +6211,7 @@
           "condGroup": 1,
           "condType": "questClearNum",
           "targetIds": [
-            94003722,
-            94003723,
-            94003724,
-            94003752,
-            94003753,
-            94003754,
-            94003774
+            94003722, 94003723, 94003724, 94003752, 94003753, 94003754, 94003774
           ],
           "targetNum": 3,
           "conditionMessage": "Clear Day 5 quests 3 times\n(By 5-24 16:59 PDT)",
@@ -6346,13 +6262,7 @@
           "condGroup": 1,
           "condType": "questClearNum",
           "targetIds": [
-            94003722,
-            94003723,
-            94003724,
-            94003752,
-            94003753,
-            94003754,
-            94003774
+            94003722, 94003723, 94003724, 94003752, 94003753, 94003754, 94003774
           ],
           "targetNum": 5,
           "conditionMessage": "Clear Day 5 quests 5 times\n(By 5-24 16:59 PDT)",
@@ -6837,13 +6747,7 @@
           "condGroup": 1,
           "condType": "questClearNum",
           "targetIds": [
-            94003725,
-            94003726,
-            94003727,
-            94003755,
-            94003756,
-            94003757,
-            94003775
+            94003725, 94003726, 94003727, 94003755, 94003756, 94003757, 94003775
           ],
           "targetNum": 1,
           "conditionMessage": "Clear Day 6 quests once\n(By 5-25 16:59 PDT)",
@@ -6894,13 +6798,7 @@
           "condGroup": 1,
           "condType": "questClearNum",
           "targetIds": [
-            94003725,
-            94003726,
-            94003727,
-            94003755,
-            94003756,
-            94003757,
-            94003775
+            94003725, 94003726, 94003727, 94003755, 94003756, 94003757, 94003775
           ],
           "targetNum": 3,
           "conditionMessage": "Clear Day 6 quests 3 times\n(By 5-25 16:59 PDT)",
@@ -6951,13 +6849,7 @@
           "condGroup": 1,
           "condType": "questClearNum",
           "targetIds": [
-            94003725,
-            94003726,
-            94003727,
-            94003755,
-            94003756,
-            94003757,
-            94003775
+            94003725, 94003726, 94003727, 94003755, 94003756, 94003757, 94003775
           ],
           "targetNum": 5,
           "conditionMessage": "Clear Day 6 quests 5 times\n(By 5-25 16:59 PDT)",
@@ -7552,13 +7444,7 @@
           "condGroup": 1,
           "condType": "questClearNum",
           "targetIds": [
-            94003728,
-            94003729,
-            94003730,
-            94003758,
-            94003759,
-            94003760,
-            94003776
+            94003728, 94003729, 94003730, 94003758, 94003759, 94003760, 94003776
           ],
           "targetNum": 1,
           "conditionMessage": "Clear Final Day quests once\n(By 5-30 20:59 PDT)",
@@ -7609,13 +7495,7 @@
           "condGroup": 1,
           "condType": "questClearNum",
           "targetIds": [
-            94003728,
-            94003729,
-            94003730,
-            94003758,
-            94003759,
-            94003760,
-            94003776
+            94003728, 94003729, 94003730, 94003758, 94003759, 94003760, 94003776
           ],
           "targetNum": 3,
           "conditionMessage": "Clear Final Day quests 3 times\n(By 5-30 20:59 PDT)",
@@ -7666,13 +7546,7 @@
           "condGroup": 1,
           "condType": "questClearNum",
           "targetIds": [
-            94003728,
-            94003729,
-            94003730,
-            94003758,
-            94003759,
-            94003760,
-            94003776
+            94003728, 94003729, 94003730, 94003758, 94003759, 94003760, 94003776
           ],
           "targetNum": 5,
           "conditionMessage": "Clear Final Day quests 5 times\n(By 5-30 20:59 PDT)",
