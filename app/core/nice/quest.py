@@ -127,7 +127,7 @@ async def get_nice_quest(
         "consume": raw_quest.mstQuest.actConsume,
         "spotId": raw_quest.mstQuest.spotId,
         "warId": mstWar.id,
-        "warLongName": mstWar.longName,
+        "warLongName": get_translation(lang, mstWar.longName),
         "gifts": [get_nice_gift(gift) for gift in raw_quest.mstGift],
         "releaseConditions": [
             get_nice_quest_release(release, raw_quest.mstClosedMessage)
