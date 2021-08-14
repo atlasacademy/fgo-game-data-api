@@ -530,6 +530,7 @@ class Trait(str, Enum):
     classForeigner = "classForeigner"
     classBeastIIIL = "classBeastIIIL"
     classBeastUnknown = "classBeastUnknown"
+    classPretender = "classPretender"
     attributeSky = "attributeSky"
     attributeEarth = "attributeEarth"
     attributeHuman = "attributeHuman"
@@ -781,6 +782,7 @@ TRAIT_NAME: dict[int, Trait] = {
     117: Trait.classForeigner,
     118: Trait.classBeastIIIL,
     119: Trait.classBeastUnknown,
+    120: Trait.classPretender,
     200: Trait.attributeSky,
     201: Trait.attributeEarth,
     202: Trait.attributeHuman,
