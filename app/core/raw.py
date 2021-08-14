@@ -74,6 +74,7 @@ from ..schemas.raw import (
     MstSvtLimit,
     MstSvtLimitAdd,
     MstSvtPassiveSkill,
+    MstSvtScript,
     MstSvtVoiceRelation,
     MstVoice,
     MstWar,
@@ -276,6 +277,15 @@ async def get_td_entity(
         )
         td_entity.reverse = ReversedSkillTdType(raw=td_reverse)
     return td_entity
+
+
+async def get_svt_scripts(
+    conn: AsyncConnection, ids: Iterable[int]
+) -> list[MstSvtScript]:
+    if not ids:
+        return []
+
+    return await fetch.get_all_multiple(conn, MstSvtScript, ids)
 
 
 async def get_servant_entity(

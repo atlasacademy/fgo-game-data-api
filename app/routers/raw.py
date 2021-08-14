@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, Response
+from fastapi import APIRouter, Depends, Query, Response
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..config import Settings
@@ -16,6 +16,7 @@ from ..schemas.raw import (
     FunctionEntity,
     ItemEntity,
     MasterMissionEntity,
+    MstSvtScript,
     MysticCodeEntity,
     QuestEntity,
     QuestPhaseEntity,
@@ -202,6 +203,20 @@ async def get_svt(
 ) -> Response:
     servant_entity = await raw.get_servant_entity(conn, svt_id, expand, lore)
     return item_response(servant_entity)
+
+
+@router.get(
+    "/{region}/svtScript",
+    summary="Get servant script data",
+    response_description="Servant Scipt Entity",
+    response_model=list[MstSvtScript],
+    response_model_exclude_unset=True,
+)
+async def get_svt_scripts(
+    charaId: list[int] = Query([]), conn: AsyncConnection = Depends(get_db)
+) -> Response:
+    servant_entity = await raw.get_svt_scripts(conn, charaId)
+    return list_response(servant_entity)
 
 
 @router.get(

@@ -1,0 +1,28 @@
+[
+  {
+    "extendData": { "faceSize": 336 },
+    "id": 10010001,
+    "form": 0,
+    "faceX": 336,
+    "faceY": 96,
+    "bgImageId": 0,
+    "scale": 1.0,
+    "offsetX": -9,
+    "offsetY": 173,
+    "offsetXMyroom": 299,
+    "offsetYMyroom": 168
+  },
+  {
+    "extendData": { "faceSize": 512 },
+    "id": 10010002,
+    "form": 0,
+    "faceX": 256,
+    "faceY": 0,
+    "bgImageId": 0,
+    "scale": 1.0,
+    "offsetX": 0,
+    "offsetY": 155,
+    "offsetXMyroom": 301,
+    "offsetYMyroom": 156
+  }
+]

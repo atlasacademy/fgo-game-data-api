@@ -60,6 +60,7 @@ from ...models.raw import (
     mstSvtLimit,
     mstSvtLimitAdd,
     mstSvtPassiveSkill,
+    mstSvtScript,
     mstSvtVoiceRelation,
     mstVoice,
     mstWar,
@@ -122,6 +123,7 @@ from ...schemas.raw import (
     MstSvtLimit,
     MstSvtLimitAdd,
     MstSvtPassiveSkill,
+    MstSvtScript,
     MstSvtVoiceRelation,
     MstVoice,
     MstWar,
@@ -305,6 +307,7 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
     MstClosedMessage: (mstClosedMessage, mstClosedMessage.c.id, mstClosedMessage.c.id),
     MstShop: (mstShop, mstShop.c.id, mstShop.c.id),
     MstQuest: (mstQuest, mstQuest.c.id, mstQuest.c.id),
+    MstSvtScript: (mstSvtScript, mstSvtScript.c.id, mstSvtScript.c.id),
 }
 
 TFetchAllMultiple = TypeVar("TFetchAllMultiple", bound=BaseModelORJson)

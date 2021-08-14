@@ -23,6 +23,7 @@ test_cases_dict: dict[str, tuple[str, str]] = {
     ),
     "servant_JP_collectionNo": ("JP/servant/185", "JP_Chiyome"),
     "servant_JP_id": ("JP/servant/602900", "JP_Chiyome"),
+    "svtScript_JP": ("JP/svtScript?charaId=10010001&charaId=10010002", "JP_svtScripts"),
     "equip_NA_collectionNo": ("NA/equip/184", "NA_Gentle_affection"),
     "equip_NA_id": ("NA/equip/9401400", "NA_Gentle_affection"),
     "equip_NA_collectionNo_expanded": (
@@ -159,6 +160,11 @@ class TestServantSpecial:
         }
         assert response.status_code == 200
         assert reverse_servants == {500800}
+
+    async def test_no_svtScript(self, client: AsyncClient) -> None:
+        response = await client.get("/raw/JP/svtScript")
+        assert response.status_code == 200
+        assert response.json() == []
 
     async def test_skill_reverse_CC(self, client: AsyncClient) -> None:
         response = await client.get("/raw/JP/skill/991970?reverse=True")
