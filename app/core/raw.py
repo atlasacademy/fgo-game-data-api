@@ -70,6 +70,7 @@ from ..schemas.raw import (
     MstSvtExp,
     MstSvtExtra,
     MstSvtGroup,
+    MstSvtIndividuality,
     MstSvtLimit,
     MstSvtLimitAdd,
     MstSvtPassiveSkill,
@@ -288,6 +289,7 @@ async def get_servant_entity(
     if not svt_db:
         raise HTTPException(status_code=404, detail="Svt not found")
 
+    mstSvtIndividuality = await fetch.get_all(conn, MstSvtIndividuality, servant_id)
     mstSvtCard = await fetch.get_all(conn, MstSvtCard, servant_id)
     mstSvtLimit = await fetch.get_all(conn, MstSvtLimit, servant_id)
     mstCombineSkill = await fetch.get_all(conn, MstCombineSkill, svt_db.combineSkillId)
@@ -334,6 +336,7 @@ async def get_servant_entity(
 
     svt_entity = ServantEntity(
         mstSvt=svt_db,
+        mstSvtIndividuality=mstSvtIndividuality,
         mstSvtCard=mstSvtCard,
         mstSvtLimit=mstSvtLimit,
         mstCombineSkill=mstCombineSkill,

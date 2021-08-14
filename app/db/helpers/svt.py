@@ -11,6 +11,7 @@ from ...models.raw import (
     mstSubtitle,
     mstSvt,
     mstSvtGroup,
+    mstSvtIndividuality,
     mstSvtLimit,
     mstSvtLimitAdd,
     mstSvtScript,
@@ -183,22 +184,21 @@ async def get_svt_search(
     if trait_ints or not_trait_ints:
         from_clause = from_clause.outerjoin(
             mstSvtLimitAdd, mstSvtLimitAdd.c.svtId == mstSvt.c.id
-        )
+        ).outerjoin(mstSvtIndividuality, mstSvtIndividuality.c.svtId == mstSvt.c.id)
     if trait_ints:
         where_clause.append(
-            or_(
-                mstSvt.c.individuality.contains(trait_ints),
-                mstSvtLimitAdd.c.individuality.contains(trait_ints),
-            )
+            mstSvt.c.individuality.op("||")(mstSvtLimitAdd.c.individuality)
+            .op("||")(mstSvtIndividuality.c.individuality)
+            .contains(trait_ints)
         )
     if not_trait_ints:
-        where_clause += [
-            not_(mstSvt.c.individuality.overlap(not_trait_ints)),
-            or_(
-                not_(mstSvtLimitAdd.c.individuality.overlap(not_trait_ints)),
-                mstSvtLimitAdd.c.individuality.is_(None),
-            ),
-        ]
+        where_clause.append(
+            not_(
+                mstSvt.c.individuality.op("||")(mstSvtLimitAdd.c.individuality)
+                .op("||")(mstSvtIndividuality.c.individuality)
+                .overlap(not_trait_ints)
+            )
+        )
     if rarity_ints:
         from_clause = from_clause.outerjoin(
             mstSvtLimit, mstSvtLimit.c.svtId == mstSvt.c.id

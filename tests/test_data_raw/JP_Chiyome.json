@@ -1580,6 +1580,26 @@
       ]
     }
   ],
+  "mstSvtIndividuality": [
+    {
+      "individuality": [2600, 2601, 2603],
+      "svtId": 602900,
+      "idx": 8027301,
+      "limitCount": -1,
+      "condType": 0,
+      "condId": 0,
+      "condNum": 0
+    },
+    {
+      "individuality": [2771, 2772],
+      "svtId": 602900,
+      "idx": 8031801,
+      "limitCount": -1,
+      "condType": 0,
+      "condId": 0,
+      "condNum": 0
+    }
+  ],
   "mstSvtCard": [
     {
       "normalDamage": [33, 67],

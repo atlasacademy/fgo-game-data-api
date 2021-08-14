@@ -317,6 +317,19 @@ mstSvt = Table(
 )
 
 
+mstSvtIndividuality = Table(
+    "mstSvtIndividuality",
+    metadata,
+    Column("individuality", ARRAY(Integer)),
+    Column("svtId", Integer, index=True),
+    Column("idx", Integer, index=True),
+    Column("limitCount", Integer),
+    Column("condType", Integer),
+    Column("condId", Integer),
+    Column("condNum", Integer),
+)
+
+
 mstSvtExtra = Table(
     "mstSvtExtra",
     metadata,
@@ -1480,6 +1493,7 @@ TABLES_TO_BE_LOADED = [
     mstSkillAdd,
     mstTreasureDeviceDetail,
     mstSvtTreasureDevice,
+    mstSvtIndividuality,
     mstSvtCard,
     mstSvtLimit,
     mstCombineLimit,

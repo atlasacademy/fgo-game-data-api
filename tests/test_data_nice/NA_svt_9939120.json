@@ -99,6 +99,7 @@
     "overWriteTDFileName": { "ascension": {}, "costume": {} },
     "lvMax": { "ascension": { "1": 100 }, "costume": {} }
   },
+  "traitAdd": [],
   "svtChange": [],
   "ascensionMaterials": {},
   "skillMaterials": {},

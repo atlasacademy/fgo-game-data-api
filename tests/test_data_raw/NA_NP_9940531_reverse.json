@@ -317,6 +317,7 @@
               ]
             }
           ],
+          "mstSvtIndividuality": [],
           "mstSvtCard": [
             {
               "normalDamage": [33, 67],

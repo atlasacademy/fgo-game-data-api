@@ -1063,6 +1063,14 @@
       ]
     }
   ],
+  "mstSvtIndividuality": [
+    {
+      "individuality": [2068, 2069, 2072],
+      "svtId": 202300,
+      "idx": 1,
+      "limitCount": -1
+    }
+  ],
   "mstSvtCard": [
     {
       "normalDamage": [10, 20, 30, 40],

@@ -611,6 +611,15 @@ class NiceServantCoin(BaseModel):
     item: NiceItem
 
 
+class NiceServantTrait(BaseModel):
+    idx: int
+    trait: list[NiceTrait]
+    limitCount: int
+    condType: Optional[NiceCondType] = None
+    condId: Optional[int] = None
+    condNum: Optional[int] = None
+
+
 class NiceLoreComment(BaseModel):
     id: int
     priority: int
@@ -916,6 +925,11 @@ class NiceServant(BaseModelORJson):
         ...,
         title="Ascension Add",
         description="Attributes that change when servants ascend.",
+    )
+    traitAdd: list[NiceServantTrait] = Field(
+        ...,
+        title="Extra Conditional Individuality",
+        description="Traits used for event bonus or in special quests.",
     )
     svtChange: list[NiceServantChange] = Field(
         ..., title="Servant Change", description="EOR servants' hidden name details."

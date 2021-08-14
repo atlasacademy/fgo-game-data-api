@@ -1056,6 +1056,7 @@
               ]
             }
           ],
+          "mstSvtIndividuality": [],
           "mstSvtCard": [
             {
               "normalDamage": [4, 9, 14, 19, 23, 31],
@@ -2527,6 +2528,7 @@
             }
           ],
           "mstTreasureDevice": [],
+          "mstSvtIndividuality": [],
           "mstSvtCard": [
             {
               "normalDamage": [4, 9, 14, 19, 23, 31],
@@ -3780,6 +3782,7 @@
             }
           ],
           "mstTreasureDevice": [],
+          "mstSvtIndividuality": [],
           "mstSvtCard": [
             {
               "normalDamage": [4, 9, 14, 19, 23, 31],

@@ -183,6 +183,19 @@
       "costume": {}
     }
   },
+  "traitAdd": [
+    {
+      "idx": 1,
+      "trait": [
+        { "id": 2068, "name": "unknown" },
+        { "id": 2069, "name": "unknown" },
+        { "id": 2070, "name": "unknown" },
+        { "id": 2071, "name": "unknown" },
+        { "id": 2072, "name": "unknown" }
+      ],
+      "limitCount": -1
+    }
+  ],
   "svtChange": [],
   "ascensionMaterials": {
     "0": {

@@ -56,6 +56,7 @@ from ...models.raw import (
     mstSvtExp,
     mstSvtExtra,
     mstSvtGroup,
+    mstSvtIndividuality,
     mstSvtLimit,
     mstSvtLimitAdd,
     mstSvtPassiveSkill,
@@ -117,6 +118,7 @@ from ...schemas.raw import (
     MstSvtExp,
     MstSvtExtra,
     MstSvtGroup,
+    MstSvtIndividuality,
     MstSvtLimit,
     MstSvtLimitAdd,
     MstSvtPassiveSkill,
@@ -256,6 +258,11 @@ schema_table_fetch_all: dict[  # type:ignore
     ),
     MstFuncGroup: (mstFuncGroup, mstFuncGroup.c.funcId, mstFuncGroup.c.eventId),
     MstBgmRelease: (mstBgmRelease, mstBgmRelease.c.bgmId, mstBgmRelease.c.id),
+    MstSvtIndividuality: (
+        mstSvtIndividuality,
+        mstSvtIndividuality.c.svtId,
+        mstSvtIndividuality.c.idx,
+    ),
 }
 
 TFetchAll = TypeVar("TFetchAll", bound=BaseModelORJson)

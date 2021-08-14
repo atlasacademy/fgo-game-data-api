@@ -320,6 +320,16 @@ class MstSvt(BaseModelORJson):
         return self.type == SvtType.SERVANT_EQUIP
 
 
+class MstSvtIndividuality(BaseModelORJson):
+    individuality: list[int]
+    svtId: int
+    idx: int
+    limitCount: int
+    condType: Optional[int] = None
+    condId: Optional[int] = None
+    condNum: Optional[int] = None
+
+
 class MstSvtExtra(BaseModelORJson):
     svtId: int
     zeroLimitOverwriteName: Optional[str] = None
@@ -1298,6 +1308,7 @@ class ServantEntity(BaseModelORJson):
     mstSvt: MstSvt
     mstSkill: list[SkillEntityNoReverse]
     mstTreasureDevice: list[TdEntityNoReverse]
+    mstSvtIndividuality: list[MstSvtIndividuality]
     mstSvtCard: list[MstSvtCard]
     mstSvtLimit: list[MstSvtLimit]
     mstCombineSkill: list[MstCombineSkill]

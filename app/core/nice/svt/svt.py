@@ -34,6 +34,7 @@ from .append_passive import get_nice_svt_append_passives
 from .ascensionAdd import get_nice_ascensionAdd
 from .asset import get_svt_extraAssets
 from .card import get_nice_card
+from .individuality import get_nice_svt_trait
 from .voice import get_nice_voice
 
 
@@ -116,6 +117,10 @@ async def get_nice_servant(
                 raw_svt.mstFriendship, key=lambda friendship: friendship.rank
             )
             if friendship.friendship != -1
+        ],
+        "traitAdd": [
+            get_nice_svt_trait(svt_individuality)
+            for svt_individuality in raw_svt.mstSvtIndividuality
         ],
         # "bondEquip": masters[region].bondEquip.get(svt_id, 0),
         "relateQuestIds": raw_svt.mstSvt.relateQuestIds,

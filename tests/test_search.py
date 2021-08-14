@@ -100,6 +100,10 @@ test_cases_dict: dict[str, tuple[str, set[int]]] = {
         "NA/servant/search?notTrait=weakToEnumaElish&notTrait=genderMale&className=archer",
         {202200, 202900},
     ),
+    "servant_search_conditional_trait": (
+        "JP/servant/search?trait=1177&trait=104",
+        {504500},
+    ),
     "svt_search_enemy": (
         "JP/svt/search?lang=en&trait=2667&type=enemyCollection",
         {9940530, 9941040, 9941050, 9942530},

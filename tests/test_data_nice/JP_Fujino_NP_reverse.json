@@ -412,6 +412,30 @@
               "costume": {}
             }
           },
+          "traitAdd": [
+            {
+              "idx": 8027301,
+              "trait": [
+                { "id": 2601, "name": "unknown" },
+                { "id": 2603, "name": "unknown" }
+              ],
+              "limitCount": -1,
+              "condType": "none",
+              "condId": 0,
+              "condNum": 0
+            },
+            {
+              "idx": 8031801,
+              "trait": [
+                { "id": 2770, "name": "unknown" },
+                { "id": 2772, "name": "unknown" }
+              ],
+              "limitCount": -1,
+              "condType": "none",
+              "condId": 0,
+              "condNum": 0
+            }
+          ],
           "svtChange": [],
           "ascensionMaterials": {
             "0": {
