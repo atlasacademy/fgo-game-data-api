@@ -81,7 +81,11 @@
         "1098169600": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/1098169600/1098169600_merged.png",
         "1098197800": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/1098197800/1098197800_merged.png",
         "1098197810": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/1098197810/1098197810_merged.png",
-        "1098199300": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/1098199300/1098199300_merged.png"
+        "1098199300": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/1098199300/1098199300_merged.png",
+        "1098230700": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/1098230700/1098230700_merged.png",
+        "1098230710": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/1098230710/1098230710_merged.png",
+        "1098231500": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/1098231500/1098231500_merged.png",
+        "1098231510": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/1098231510/1098231510_merged.png"
       },
       "costume": {
         "800130": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/8001300/8001300_merged.png",
@@ -4640,7 +4644,7 @@
                   { "id": 115, "name": "classMoonCancer" },
                   { "id": 109, "name": "classAlterEgo" },
                   { "id": 117, "name": "classForeigner" },
-                  { "id": 120, "name": "unknown" },
+                  { "id": 120, "name": "classPretender" },
                   { "id": 111, "name": "classDemonGodPillar" },
                   { "id": 113, "name": "classBeastI" },
                   { "id": 114, "name": "classBeastII" },
@@ -4656,7 +4660,7 @@
                   { "id": 115, "name": "classMoonCancer" },
                   { "id": 109, "name": "classAlterEgo" },
                   { "id": 117, "name": "classForeigner" },
-                  { "id": 120, "name": "unknown" },
+                  { "id": 120, "name": "classPretender" },
                   { "id": 111, "name": "classDemonGodPillar" },
                   { "id": 113, "name": "classBeastI" },
                   { "id": 114, "name": "classBeastII" },

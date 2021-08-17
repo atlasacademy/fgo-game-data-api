@@ -183,7 +183,8 @@ def load_script_list(
 
                 if script_int in scriptQuestId:
                     quest_ids.append(scriptQuestId[script_int])
-                elif script_int in questId:
+
+                if script_int in questId and script_int not in scriptQuestId.values():
                     quest_ids.append(script_int)
 
             if not quest_ids:
