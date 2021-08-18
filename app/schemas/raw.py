@@ -3,7 +3,7 @@ from typing import Any, Optional
 
 from .base import BaseModelORJson
 from .common import NiceValentineScript, StageLink
-from .enums import SERVANT_TYPES
+from .enums import SERVANT_TYPES, AiType
 from .gameenums import SvtType
 
 
@@ -169,6 +169,7 @@ class SkillEntityNoReverse(BaseModelORJson):
     mstSkillAdd: list[MstSkillAdd]
     mstCommonRelease: list[MstCommonRelease]
     mstSkillLv: list[MstSkillLv]
+    aiIds: Optional[dict[AiType, list[int]]] = None
 
 
 class MstSvtAppendPassiveSkill(BaseModelORJson):
@@ -1287,21 +1288,9 @@ class MysticCodeEntity(BaseModelORJson):
 
 
 class Master(BaseModelORJson):
-    mstEquipSkill: list[MstEquipSkill]
-    mstCommandCodeSkill: list[MstCommandCodeSkill]
-    buffToFunc: dict[int, set[int]]
-    funcToSkill: dict[int, set[int]]
-    funcToTd: dict[int, set[int]]
-    activeSkillToSvt: dict[int, set[int]]
-    passiveSkillToSvt: dict[int, set[int]]
-    extraPassiveSkillToSvt: dict[int, set[int]]
-    appendPassiveSkillToSvt: dict[int, set[int]]
-    tdToSvt: dict[int, set[int]]
     skillToAiAct: dict[int, set[int]]
     aiActToAiSvt: dict[int, set[int]]
     aiActToAiField: dict[int, set[int]]
-    parentAiSvt: dict[int, set[int]]
-    parentAiField: dict[int, set[int]]
 
 
 class ServantEntity(BaseModelORJson):
@@ -1457,6 +1446,7 @@ class MasterMissionEntity(BaseModelORJson):
 class AiEntity(BaseModelORJson):
     mstAi: MstAi
     mstAiAct: MstAiAct
+    parentAis: dict[AiType, list[int]]
 
 
 class AiCollection(BaseModelORJson):

@@ -29,7 +29,6 @@ from .core.nice.nice import get_nice_equip_model, get_nice_servant_model
 from .core.raw import get_all_bgm_entities, get_all_raw_svts_lore
 from .core.utils import sort_by_collection_no
 from .data.extra import get_extra_svt_data
-from .data.gamedata import update_masters
 from .db.engine import engines
 from .db.helpers import fetch
 from .db.helpers.svt import get_all_equips, get_all_servants
@@ -320,7 +319,6 @@ async def load_and_export(
         await load_redis_data(redis, region_path)
     if settings.write_postgres_data or settings.write_redis_data:
         await load_svt_extra(redis, region_path)
-    update_masters(region_path)
     await generate_exports(redis, region_path, async_engines)
     update_master_repo_info(region_path)
     await clear_bloom_redis_cache(redis)

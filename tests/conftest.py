@@ -29,7 +29,7 @@ def event_loop() -> Generator[AbstractEventLoop, None, None]:
 
 @pytest.fixture(scope="session")
 async def client() -> AsyncGenerator[AsyncClient, None]:
-    async with LifespanManager(app, startup_timeout=10):
+    async with LifespanManager(app, startup_timeout=30):
         async with AsyncClient(app=app, base_url="http://test") as ac:
             yield ac
 

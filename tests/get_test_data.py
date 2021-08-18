@@ -35,7 +35,7 @@ async def main(
     if not any([get_raw, get_nice, get_basic]):
         get_raw = get_nice = get_basic = True
 
-    async with LifespanManager(app, startup_timeout=10), AsyncClient(
+    async with LifespanManager(app, startup_timeout=30), AsyncClient(
         app=app, base_url="http://test"
     ) as ac:
         for to_download, query_data, endpoint, folder in (

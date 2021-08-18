@@ -40,42 +40,6 @@
             "effectList": [],
             "actIndividuality": [],
             "script": {},
-            "id": 962462,
-            "type": 1,
-            "name": "",
-            "ruby": "",
-            "maxLv": 1,
-            "iconId": 600,
-            "motion": 102
-          },
-          "mstSkillDetail": [],
-          "mstSvtSkill": [],
-          "mstSkillAdd": [],
-          "mstCommonRelease": [],
-          "mstSkillLv": [
-            {
-              "funcId": [3112, 150, 300, 204, 3461],
-              "svals": [
-                "[5000,-1,-1,2354,ShowState:-1,HideNoEffect:1]",
-                "[5000,-1,-1,500]",
-                "[5000,-1,-1,500]",
-                "[5000,-1,-1,500]",
-                "[5000,-1,3,1,SetPassiveFrame:1,ShowState:1,ProcPassive:1]"
-              ],
-              "script": {},
-              "skillId": 962462,
-              "lv": 1,
-              "chargeTurn": 8,
-              "skillDetailId": 1,
-              "priority": 220
-            }
-          ]
-        },
-        {
-          "mstSkill": {
-            "effectList": [],
-            "actIndividuality": [],
-            "script": {},
             "id": 42900,
             "type": 1,
             "name": "Incite EX",
@@ -266,6 +230,146 @@
             "effectList": [],
             "actIndividuality": [],
             "script": {},
+            "id": 191551,
+            "type": 1,
+            "name": "Concept Improvement A+",
+            "ruby": "Concept Improvement",
+            "maxLv": 10,
+            "iconId": 313,
+            "motion": 102
+          },
+          "mstSkillDetail": [
+            {
+              "id": 191551,
+              "detail": "Increase Overcharge level by 2 when using Noble Phantasm (1 turn) & increase C. Star Drop Rate [{0}] (1 turn) for one ally",
+              "detailShort": "Increase Overcharge level by 2 when using Noble Phantasm (1 turn) & increase C. Star Drop Rate [{0}] (1 turn) for one ally"
+            }
+          ],
+          "mstSvtSkill": [
+            {
+              "strengthStatus": 0,
+              "svtId": 502500,
+              "num": 3,
+              "priority": 1,
+              "skillId": 191551,
+              "condQuestId": 91502501,
+              "condQuestPhase": 1,
+              "condLv": 0,
+              "condLimitCount": 3,
+              "eventId": 0,
+              "flag": 0
+            }
+          ],
+          "mstSkillAdd": [],
+          "mstCommonRelease": [],
+          "mstSkillLv": [
+            {
+              "funcId": [757, 300, 219],
+              "svals": ["[1000,1,-1,2]", "[1000,1,-1,100]", "[1000,1,-1,100]"],
+              "script": {},
+              "skillId": 191551,
+              "lv": 1,
+              "chargeTurn": 8,
+              "skillDetailId": 191551,
+              "priority": 0
+            },
+            {
+              "funcId": [757, 300, 219],
+              "svals": ["[1000,1,-1,2]", "[1000,1,-1,120]", "[1000,1,-1,100]"],
+              "script": {},
+              "skillId": 191551,
+              "lv": 2,
+              "chargeTurn": 8,
+              "skillDetailId": 191551,
+              "priority": 0
+            },
+            {
+              "funcId": [757, 300, 219],
+              "svals": ["[1000,1,-1,2]", "[1000,1,-1,140]", "[1000,1,-1,100]"],
+              "script": {},
+              "skillId": 191551,
+              "lv": 3,
+              "chargeTurn": 8,
+              "skillDetailId": 191551,
+              "priority": 0
+            },
+            {
+              "funcId": [757, 300, 219],
+              "svals": ["[1000,1,-1,2]", "[1000,1,-1,160]", "[1000,1,-1,100]"],
+              "script": {},
+              "skillId": 191551,
+              "lv": 4,
+              "chargeTurn": 8,
+              "skillDetailId": 191551,
+              "priority": 0
+            },
+            {
+              "funcId": [757, 300, 219],
+              "svals": ["[1000,1,-1,2]", "[1000,1,-1,180]", "[1000,1,-1,100]"],
+              "script": {},
+              "skillId": 191551,
+              "lv": 5,
+              "chargeTurn": 8,
+              "skillDetailId": 191551,
+              "priority": 0
+            },
+            {
+              "funcId": [757, 300, 219],
+              "svals": ["[1000,1,-1,2]", "[1000,1,-1,200]", "[1000,1,-1,100]"],
+              "script": {},
+              "skillId": 191551,
+              "lv": 6,
+              "chargeTurn": 7,
+              "skillDetailId": 191551,
+              "priority": 0
+            },
+            {
+              "funcId": [757, 300, 219],
+              "svals": ["[1000,1,-1,2]", "[1000,1,-1,220]", "[1000,1,-1,100]"],
+              "script": {},
+              "skillId": 191551,
+              "lv": 7,
+              "chargeTurn": 7,
+              "skillDetailId": 191551,
+              "priority": 0
+            },
+            {
+              "funcId": [757, 300, 219],
+              "svals": ["[1000,1,-1,2]", "[1000,1,-1,240]", "[1000,1,-1,100]"],
+              "script": {},
+              "skillId": 191551,
+              "lv": 8,
+              "chargeTurn": 7,
+              "skillDetailId": 191551,
+              "priority": 0
+            },
+            {
+              "funcId": [757, 300, 219],
+              "svals": ["[1000,1,-1,2]", "[1000,1,-1,260]", "[1000,1,-1,100]"],
+              "script": {},
+              "skillId": 191551,
+              "lv": 9,
+              "chargeTurn": 7,
+              "skillDetailId": 191551,
+              "priority": 0
+            },
+            {
+              "funcId": [757, 300, 219],
+              "svals": ["[1000,1,-1,2]", "[1000,1,-1,300]", "[1000,1,-1,100]"],
+              "script": {},
+              "skillId": 191551,
+              "lv": 10,
+              "chargeTurn": 6,
+              "skillDetailId": 191551,
+              "priority": 0
+            }
+          ]
+        },
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
             "id": 231350,
             "type": 1,
             "name": "King's Men C",
@@ -410,299 +514,6 @@
               "lv": 10,
               "chargeTurn": 6,
               "skillDetailId": 231350,
-              "priority": 0
-            }
-          ]
-        },
-        {
-          "mstSkill": {
-            "effectList": [],
-            "actIndividuality": [],
-            "script": {},
-            "id": 494550,
-            "type": 1,
-            "name": "Crystallized Wisdom A",
-            "ruby": "Crystallized Wisdom",
-            "maxLv": 10,
-            "iconId": 604,
-            "motion": 102
-          },
-          "mstSkillDetail": [
-            {
-              "id": 494550,
-              "detail": "Increase Critical Star drop rate [{0}] (1 turn) & apply Debuff Immune (1 turn) for a single ally",
-              "detailShort": "Increase Critical Star drop rate [{0}] (1 turn) & apply Debuff Immune (1 turn) for a single ally"
-            }
-          ],
-          "mstSvtSkill": [
-            {
-              "strengthStatus": 0,
-              "svtId": 103300,
-              "num": 3,
-              "priority": 1,
-              "skillId": 494550,
-              "condQuestId": 0,
-              "condQuestPhase": 0,
-              "condLv": 0,
-              "condLimitCount": 3,
-              "eventId": 0,
-              "flag": 0
-            },
-            {
-              "strengthStatus": 0,
-              "svtId": 9941180,
-              "num": 3,
-              "priority": 1,
-              "skillId": 494550,
-              "condQuestId": 0,
-              "condQuestPhase": 0,
-              "condLv": 0,
-              "condLimitCount": 3,
-              "eventId": 0,
-              "flag": 0
-            }
-          ],
-          "mstSkillAdd": [],
-          "mstCommonRelease": [],
-          "mstSkillLv": [
-            {
-              "funcId": [300, 219, 628],
-              "svals": ["[1000,1,-1,500]", "[1000,1,-1,300]", "[1000,1,-1]"],
-              "script": {},
-              "skillId": 494550,
-              "lv": 1,
-              "chargeTurn": 7,
-              "skillDetailId": 494550,
-              "priority": 0
-            },
-            {
-              "funcId": [300, 219, 628],
-              "svals": ["[1000,1,-1,550]", "[1000,1,-1,300]", "[1000,1,-1]"],
-              "script": {},
-              "skillId": 494550,
-              "lv": 2,
-              "chargeTurn": 7,
-              "skillDetailId": 494550,
-              "priority": 0
-            },
-            {
-              "funcId": [300, 219, 628],
-              "svals": ["[1000,1,-1,600]", "[1000,1,-1,300]", "[1000,1,-1]"],
-              "script": {},
-              "skillId": 494550,
-              "lv": 3,
-              "chargeTurn": 7,
-              "skillDetailId": 494550,
-              "priority": 0
-            },
-            {
-              "funcId": [300, 219, 628],
-              "svals": ["[1000,1,-1,650]", "[1000,1,-1,300]", "[1000,1,-1]"],
-              "script": {},
-              "skillId": 494550,
-              "lv": 4,
-              "chargeTurn": 7,
-              "skillDetailId": 494550,
-              "priority": 0
-            },
-            {
-              "funcId": [300, 219, 628],
-              "svals": ["[1000,1,-1,700]", "[1000,1,-1,300]", "[1000,1,-1]"],
-              "script": {},
-              "skillId": 494550,
-              "lv": 5,
-              "chargeTurn": 7,
-              "skillDetailId": 494550,
-              "priority": 0
-            },
-            {
-              "funcId": [300, 219, 628],
-              "svals": ["[1000,1,-1,750]", "[1000,1,-1,300]", "[1000,1,-1]"],
-              "script": {},
-              "skillId": 494550,
-              "lv": 6,
-              "chargeTurn": 6,
-              "skillDetailId": 494550,
-              "priority": 0
-            },
-            {
-              "funcId": [300, 219, 628],
-              "svals": ["[1000,1,-1,800]", "[1000,1,-1,300]", "[1000,1,-1]"],
-              "script": {},
-              "skillId": 494550,
-              "lv": 7,
-              "chargeTurn": 6,
-              "skillDetailId": 494550,
-              "priority": 0
-            },
-            {
-              "funcId": [300, 219, 628],
-              "svals": ["[1000,1,-1,850]", "[1000,1,-1,300]", "[1000,1,-1]"],
-              "script": {},
-              "skillId": 494550,
-              "lv": 8,
-              "chargeTurn": 6,
-              "skillDetailId": 494550,
-              "priority": 0
-            },
-            {
-              "funcId": [300, 219, 628],
-              "svals": ["[1000,1,-1,900]", "[1000,1,-1,300]", "[1000,1,-1]"],
-              "script": {},
-              "skillId": 494550,
-              "lv": 9,
-              "chargeTurn": 6,
-              "skillDetailId": 494550,
-              "priority": 0
-            },
-            {
-              "funcId": [300, 219, 628],
-              "svals": ["[1000,1,-1,1000]", "[1000,1,-1,300]", "[1000,1,-1]"],
-              "script": {},
-              "skillId": 494550,
-              "lv": 10,
-              "chargeTurn": 5,
-              "skillDetailId": 494550,
-              "priority": 0
-            }
-          ]
-        },
-        {
-          "mstSkill": {
-            "effectList": [],
-            "actIndividuality": [],
-            "script": {},
-            "id": 191551,
-            "type": 1,
-            "name": "Concept Improvement A+",
-            "ruby": "Concept Improvement",
-            "maxLv": 10,
-            "iconId": 313,
-            "motion": 102
-          },
-          "mstSkillDetail": [
-            {
-              "id": 191551,
-              "detail": "Increase Overcharge level by 2 when using Noble Phantasm (1 turn) & increase C. Star Drop Rate [{0}] (1 turn) for one ally",
-              "detailShort": "Increase Overcharge level by 2 when using Noble Phantasm (1 turn) & increase C. Star Drop Rate [{0}] (1 turn) for one ally"
-            }
-          ],
-          "mstSvtSkill": [
-            {
-              "strengthStatus": 0,
-              "svtId": 502500,
-              "num": 3,
-              "priority": 1,
-              "skillId": 191551,
-              "condQuestId": 91502501,
-              "condQuestPhase": 1,
-              "condLv": 0,
-              "condLimitCount": 3,
-              "eventId": 0,
-              "flag": 0
-            }
-          ],
-          "mstSkillAdd": [],
-          "mstCommonRelease": [],
-          "mstSkillLv": [
-            {
-              "funcId": [757, 300, 219],
-              "svals": ["[1000,1,-1,2]", "[1000,1,-1,100]", "[1000,1,-1,100]"],
-              "script": {},
-              "skillId": 191551,
-              "lv": 1,
-              "chargeTurn": 8,
-              "skillDetailId": 191551,
-              "priority": 0
-            },
-            {
-              "funcId": [757, 300, 219],
-              "svals": ["[1000,1,-1,2]", "[1000,1,-1,120]", "[1000,1,-1,100]"],
-              "script": {},
-              "skillId": 191551,
-              "lv": 2,
-              "chargeTurn": 8,
-              "skillDetailId": 191551,
-              "priority": 0
-            },
-            {
-              "funcId": [757, 300, 219],
-              "svals": ["[1000,1,-1,2]", "[1000,1,-1,140]", "[1000,1,-1,100]"],
-              "script": {},
-              "skillId": 191551,
-              "lv": 3,
-              "chargeTurn": 8,
-              "skillDetailId": 191551,
-              "priority": 0
-            },
-            {
-              "funcId": [757, 300, 219],
-              "svals": ["[1000,1,-1,2]", "[1000,1,-1,160]", "[1000,1,-1,100]"],
-              "script": {},
-              "skillId": 191551,
-              "lv": 4,
-              "chargeTurn": 8,
-              "skillDetailId": 191551,
-              "priority": 0
-            },
-            {
-              "funcId": [757, 300, 219],
-              "svals": ["[1000,1,-1,2]", "[1000,1,-1,180]", "[1000,1,-1,100]"],
-              "script": {},
-              "skillId": 191551,
-              "lv": 5,
-              "chargeTurn": 8,
-              "skillDetailId": 191551,
-              "priority": 0
-            },
-            {
-              "funcId": [757, 300, 219],
-              "svals": ["[1000,1,-1,2]", "[1000,1,-1,200]", "[1000,1,-1,100]"],
-              "script": {},
-              "skillId": 191551,
-              "lv": 6,
-              "chargeTurn": 7,
-              "skillDetailId": 191551,
-              "priority": 0
-            },
-            {
-              "funcId": [757, 300, 219],
-              "svals": ["[1000,1,-1,2]", "[1000,1,-1,220]", "[1000,1,-1,100]"],
-              "script": {},
-              "skillId": 191551,
-              "lv": 7,
-              "chargeTurn": 7,
-              "skillDetailId": 191551,
-              "priority": 0
-            },
-            {
-              "funcId": [757, 300, 219],
-              "svals": ["[1000,1,-1,2]", "[1000,1,-1,240]", "[1000,1,-1,100]"],
-              "script": {},
-              "skillId": 191551,
-              "lv": 8,
-              "chargeTurn": 7,
-              "skillDetailId": 191551,
-              "priority": 0
-            },
-            {
-              "funcId": [757, 300, 219],
-              "svals": ["[1000,1,-1,2]", "[1000,1,-1,260]", "[1000,1,-1,100]"],
-              "script": {},
-              "skillId": 191551,
-              "lv": 9,
-              "chargeTurn": 7,
-              "skillDetailId": 191551,
-              "priority": 0
-            },
-            {
-              "funcId": [757, 300, 219],
-              "svals": ["[1000,1,-1,2]", "[1000,1,-1,300]", "[1000,1,-1,100]"],
-              "script": {},
-              "skillId": 191551,
-              "lv": 10,
-              "chargeTurn": 6,
-              "skillDetailId": 191551,
               "priority": 0
             }
           ]
@@ -1096,6 +907,196 @@
               "priority": 0
             }
           ]
+        },
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
+            "id": 494550,
+            "type": 1,
+            "name": "Crystallized Wisdom A",
+            "ruby": "Crystallized Wisdom",
+            "maxLv": 10,
+            "iconId": 604,
+            "motion": 102
+          },
+          "mstSkillDetail": [
+            {
+              "id": 494550,
+              "detail": "Increase Critical Star drop rate [{0}] (1 turn) & apply Debuff Immune (1 turn) for a single ally",
+              "detailShort": "Increase Critical Star drop rate [{0}] (1 turn) & apply Debuff Immune (1 turn) for a single ally"
+            }
+          ],
+          "mstSvtSkill": [
+            {
+              "strengthStatus": 0,
+              "svtId": 103300,
+              "num": 3,
+              "priority": 1,
+              "skillId": 494550,
+              "condQuestId": 0,
+              "condQuestPhase": 0,
+              "condLv": 0,
+              "condLimitCount": 3,
+              "eventId": 0,
+              "flag": 0
+            },
+            {
+              "strengthStatus": 0,
+              "svtId": 9941180,
+              "num": 3,
+              "priority": 1,
+              "skillId": 494550,
+              "condQuestId": 0,
+              "condQuestPhase": 0,
+              "condLv": 0,
+              "condLimitCount": 3,
+              "eventId": 0,
+              "flag": 0
+            }
+          ],
+          "mstSkillAdd": [],
+          "mstCommonRelease": [],
+          "mstSkillLv": [
+            {
+              "funcId": [300, 219, 628],
+              "svals": ["[1000,1,-1,500]", "[1000,1,-1,300]", "[1000,1,-1]"],
+              "script": {},
+              "skillId": 494550,
+              "lv": 1,
+              "chargeTurn": 7,
+              "skillDetailId": 494550,
+              "priority": 0
+            },
+            {
+              "funcId": [300, 219, 628],
+              "svals": ["[1000,1,-1,550]", "[1000,1,-1,300]", "[1000,1,-1]"],
+              "script": {},
+              "skillId": 494550,
+              "lv": 2,
+              "chargeTurn": 7,
+              "skillDetailId": 494550,
+              "priority": 0
+            },
+            {
+              "funcId": [300, 219, 628],
+              "svals": ["[1000,1,-1,600]", "[1000,1,-1,300]", "[1000,1,-1]"],
+              "script": {},
+              "skillId": 494550,
+              "lv": 3,
+              "chargeTurn": 7,
+              "skillDetailId": 494550,
+              "priority": 0
+            },
+            {
+              "funcId": [300, 219, 628],
+              "svals": ["[1000,1,-1,650]", "[1000,1,-1,300]", "[1000,1,-1]"],
+              "script": {},
+              "skillId": 494550,
+              "lv": 4,
+              "chargeTurn": 7,
+              "skillDetailId": 494550,
+              "priority": 0
+            },
+            {
+              "funcId": [300, 219, 628],
+              "svals": ["[1000,1,-1,700]", "[1000,1,-1,300]", "[1000,1,-1]"],
+              "script": {},
+              "skillId": 494550,
+              "lv": 5,
+              "chargeTurn": 7,
+              "skillDetailId": 494550,
+              "priority": 0
+            },
+            {
+              "funcId": [300, 219, 628],
+              "svals": ["[1000,1,-1,750]", "[1000,1,-1,300]", "[1000,1,-1]"],
+              "script": {},
+              "skillId": 494550,
+              "lv": 6,
+              "chargeTurn": 6,
+              "skillDetailId": 494550,
+              "priority": 0
+            },
+            {
+              "funcId": [300, 219, 628],
+              "svals": ["[1000,1,-1,800]", "[1000,1,-1,300]", "[1000,1,-1]"],
+              "script": {},
+              "skillId": 494550,
+              "lv": 7,
+              "chargeTurn": 6,
+              "skillDetailId": 494550,
+              "priority": 0
+            },
+            {
+              "funcId": [300, 219, 628],
+              "svals": ["[1000,1,-1,850]", "[1000,1,-1,300]", "[1000,1,-1]"],
+              "script": {},
+              "skillId": 494550,
+              "lv": 8,
+              "chargeTurn": 6,
+              "skillDetailId": 494550,
+              "priority": 0
+            },
+            {
+              "funcId": [300, 219, 628],
+              "svals": ["[1000,1,-1,900]", "[1000,1,-1,300]", "[1000,1,-1]"],
+              "script": {},
+              "skillId": 494550,
+              "lv": 9,
+              "chargeTurn": 6,
+              "skillDetailId": 494550,
+              "priority": 0
+            },
+            {
+              "funcId": [300, 219, 628],
+              "svals": ["[1000,1,-1,1000]", "[1000,1,-1,300]", "[1000,1,-1]"],
+              "script": {},
+              "skillId": 494550,
+              "lv": 10,
+              "chargeTurn": 5,
+              "skillDetailId": 494550,
+              "priority": 0
+            }
+          ]
+        },
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
+            "id": 962462,
+            "type": 1,
+            "name": "",
+            "ruby": "",
+            "maxLv": 1,
+            "iconId": 600,
+            "motion": 102
+          },
+          "mstSkillDetail": [],
+          "mstSvtSkill": [],
+          "mstSkillAdd": [],
+          "mstCommonRelease": [],
+          "mstSkillLv": [
+            {
+              "funcId": [3112, 150, 300, 204, 3461],
+              "svals": [
+                "[5000,-1,-1,2354,ShowState:-1,HideNoEffect:1]",
+                "[5000,-1,-1,500]",
+                "[5000,-1,-1,500]",
+                "[5000,-1,-1,500]",
+                "[5000,-1,3,1,SetPassiveFrame:1,ShowState:1,ProcPassive:1]"
+              ],
+              "script": {},
+              "skillId": 962462,
+              "lv": 1,
+              "chargeTurn": 8,
+              "skillDetailId": 1,
+              "priority": 220
+            }
+          ],
+          "aiIds": { "svt": [], "field": [802150, 802151] }
         }
       ],
       "NP": []

@@ -103,6 +103,30 @@
                 "skill": [],
                 "NP": [
                   {
+                    "id": 504501,
+                    "name": "Around Caliburn",
+                    "ruby": "アラウンド・カリバーン",
+                    "reverse": {
+                      "basic": {
+                        "servant": [
+                          {
+                            "id": 504500,
+                            "collectionNo": 284,
+                            "name": "Altria Caster",
+                            "type": "normal",
+                            "flag": "normal",
+                            "className": "caster",
+                            "attribute": "star",
+                            "rarity": 5,
+                            "atkMax": 10546,
+                            "hpMax": 14406,
+                            "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_5045000.png"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
                     "id": 9943081,
                     "name": "Around Caliburn",
                     "ruby": "アラウンド・カリバーン",
@@ -169,30 +193,6 @@
                             "atkMax": 10546,
                             "hpMax": 14406,
                             "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_99430900.png"
-                          }
-                        ]
-                      }
-                    }
-                  },
-                  {
-                    "id": 504501,
-                    "name": "Around Caliburn",
-                    "ruby": "アラウンド・カリバーン",
-                    "reverse": {
-                      "basic": {
-                        "servant": [
-                          {
-                            "id": 504500,
-                            "collectionNo": 284,
-                            "name": "Altria Caster",
-                            "type": "normal",
-                            "flag": "normal",
-                            "className": "caster",
-                            "attribute": "star",
-                            "rarity": 5,
-                            "atkMax": 10546,
-                            "hpMax": 14406,
-                            "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_5045000.png"
                           }
                         ]
                       }

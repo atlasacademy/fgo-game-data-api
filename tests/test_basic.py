@@ -131,10 +131,14 @@ class TestBasicSpecial:
         response = await client.get(
             "/basic/NA/buff/203?reverse=True&reverseDepth=skillNp"
         )
+        f_with_skill = next(
+            func
+            for func in response.json()["reverse"]["basic"]["function"]
+            if func["funcId"] == 641
+        )
+
         assert response.status_code == 200
-        assert response.json()["reverse"]["basic"]["function"][1]["reverse"]["basic"][
-            "skill"
-        ]
+        assert f_with_skill["reverse"]["basic"]["skill"]
 
     async def test_function_reverse_servant(self, client: AsyncClient) -> None:
         response = await client.get(

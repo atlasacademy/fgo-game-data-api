@@ -28,34 +28,22 @@
     "basic": {
       "skill": [
         {
-          "id": 962462,
-          "name": "",
-          "ruby": "",
-          "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png"
-        },
-        {
           "id": 42900,
           "name": "Incite EX",
           "ruby": "Incite ",
           "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00303.png"
         },
         {
-          "id": 231350,
-          "name": "King's Men C",
-          "ruby": "King's Men",
-          "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00601.png"
-        },
-        {
-          "id": 494550,
-          "name": "Crystallized Wisdom A",
-          "ruby": "Crystallized Wisdom",
-          "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00604.png"
-        },
-        {
           "id": 191551,
           "name": "Concept Improvement A+",
           "ruby": "Concept Improvement",
           "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00313.png"
+        },
+        {
+          "id": 231350,
+          "name": "King's Men C",
+          "ruby": "King's Men",
+          "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00601.png"
         },
         {
           "id": 391550,
@@ -68,6 +56,18 @@
           "name": "Coaching A+",
           "ruby": "Coaching",
           "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00609.png"
+        },
+        {
+          "id": 494550,
+          "name": "Crystallized Wisdom A",
+          "ruby": "Crystallized Wisdom",
+          "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00604.png"
+        },
+        {
+          "id": 962462,
+          "name": "",
+          "ruby": "",
+          "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png"
         }
       ],
       "NP": []

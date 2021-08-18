@@ -6,9 +6,9 @@ from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..config import Settings
-from ..data.gamedata import masters
 from ..db.helpers import fetch, quest
 from ..redis.helpers import pydantic_object
+from ..redis.helpers.reverse import RedisReverse, get_reverse_ids
 from ..schemas.basic import (
     BasicBuffReverse,
     BasicCommandCode,
@@ -65,7 +65,6 @@ from ..schemas.raw import (
     MstTreasureDevice,
     MstWar,
 )
-from . import reverse as reverse_ids
 from .utils import get_nice_trait, get_np_name, get_traits_list, get_translation
 
 
@@ -138,12 +137,15 @@ async def get_basic_buff_from_raw(
         ckOpIndv=get_traits_list(mstBuff.ckOpIndv),
     )
     if reverse and reverseDepth >= ReverseDepth.function:
+        func_ids = await get_reverse_ids(
+            redis, region, RedisReverse.BUFF_TO_FUNC, mstBuff.id
+        )
         buff_reverse = BasicReversedBuff(
             function=[
                 await get_basic_function(
                     redis, region, func_id, lang, reverse, reverseDepth
                 )
-                for func_id in reverse_ids.buff_to_func(region, mstBuff.id)
+                for func_id in func_ids
             ]
         )
         basic_buff.reverse = BasicReversedBuffType(basic=buff_reverse)
@@ -198,16 +200,22 @@ async def get_basic_function_from_raw(
     )
 
     if reverse and reverseDepth >= ReverseDepth.skillNp:
+        skill_ids = await get_reverse_ids(
+            redis, region, RedisReverse.FUNC_TO_SKILL, mstFunc.id
+        )
+        td_ids = await get_reverse_ids(
+            redis, region, RedisReverse.FUNC_TO_TD, mstFunc.id
+        )
         func_reverse = BasicReversedFunction(
             skill=[
                 await get_basic_skill(
                     redis, region, skill_id, lang, reverse, reverseDepth
                 )
-                for skill_id in reverse_ids.func_to_skillId(region, mstFunc.id)
+                for skill_id in skill_ids
             ],
             NP=[
                 await get_basic_td(redis, region, td_id, lang, reverse, reverseDepth)
-                for td_id in reverse_ids.func_to_tdId(region, mstFunc.id)
+                for td_id in td_ids
             ],
         )
         basic_func.reverse = BasicReversedFunctionType(basic=func_reverse)
@@ -254,21 +262,30 @@ async def get_basic_skill(
     )
 
     if reverse and reverseDepth >= ReverseDepth.servant:
-        activeSkills = reverse_ids.active_to_svtId(region, skill_id)
-        passiveSkills = reverse_ids.passive_to_svtId(region, skill_id)
+        activeSkills = set(
+            await get_reverse_ids(
+                redis, region, RedisReverse.ACTIVE_SKILL_TO_SVT, skill_id
+            )
+        )
+        passiveSkills = set(
+            await get_reverse_ids(
+                redis, region, RedisReverse.PASSIVE_SKILL_TO_SVT, skill_id
+            )
+        )
+        mc_ids = await get_reverse_ids(
+            redis, region, RedisReverse.SKILL_TO_MC, skill_id
+        )
+        cc_ids = await get_reverse_ids(
+            redis, region, RedisReverse.SKILL_TO_CC, skill_id
+        )
+
         skill_reverse = BasicReversedSkillTd(
             servant=[
                 await get_basic_servant(redis, region, svt_id, lang=lang)
-                for svt_id in activeSkills | passiveSkills
+                for svt_id in sorted(activeSkills | passiveSkills)
             ],
-            MC=[
-                await get_basic_mc(redis, region, mc_id, lang)
-                for mc_id in reverse_ids.skill_to_MCId(region, skill_id)
-            ],
-            CC=[
-                await get_basic_cc(redis, region, cc_id, lang)
-                for cc_id in reverse_ids.skill_to_CCId(region, skill_id)
-            ],
+            MC=[await get_basic_mc(redis, region, mc_id, lang) for mc_id in mc_ids],
+            CC=[await get_basic_cc(redis, region, cc_id, lang) for cc_id in cc_ids],
         )
         basic_skill.reverse = BasicReversedSkillTdType(basic=skill_reverse)
     return basic_skill
@@ -296,11 +313,11 @@ async def get_basic_td(
     )
 
     if reverse and reverseDepth >= ReverseDepth.servant:
-        mstSvtTreasureDevice = masters[region].tdToSvt.get(td_id, set())
+        svt_ids = await get_reverse_ids(redis, region, RedisReverse.TD_TO_SVT, td_id)
         td_reverse = BasicReversedSkillTd(
             servant=[
                 await get_basic_servant(redis, region, svt_id, lang=lang)
-                for svt_id in mstSvtTreasureDevice
+                for svt_id in svt_ids
             ]
         )
         basic_td.reverse = BasicReversedSkillTdType(basic=td_reverse)

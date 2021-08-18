@@ -4,6 +4,7 @@ from aioredis import Redis
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
+from ...redis.helpers.reverse import RedisReverse, get_reverse_ids
 from ...schemas.basic import (
     BasicReversedBuff,
     BasicReversedFunction,
@@ -25,7 +26,7 @@ from ...schemas.nice import (
     NiceTdReverse,
 )
 from ...schemas.raw import MstBuff, MstFunc, MstSvt, ServantEntity
-from .. import raw, reverse as reverse_ids
+from .. import raw
 from ..basic import (
     get_basic_cc,
     get_basic_function,
@@ -88,13 +89,16 @@ async def get_nice_buff_with_reverse(
     raw_buff = await raw.get_buff_entity_no_reverse(conn, buff_id, mstBuff)
     nice_buff = NiceBuffReverse.parse_obj(get_nice_buff(raw_buff, region))
     if reverse and reverseDepth >= ReverseDepth.function:
+        func_ids = await get_reverse_ids(
+            redis, region, RedisReverse.BUFF_TO_FUNC, buff_id
+        )
         if reverseData == ReverseData.basic:
             basic_buff_reverse = BasicReversedBuff(
                 function=[
                     await get_basic_function(
                         redis, region, func_id, lang, reverse, reverseDepth
                     )
-                    for func_id in reverse_ids.buff_to_func(region, buff_id)
+                    for func_id in func_ids
                 ]
             )
             nice_buff.reverse = NiceReversedBuffType(basic=basic_buff_reverse)
@@ -104,7 +108,7 @@ async def get_nice_buff_with_reverse(
                     await get_nice_func_with_reverse(
                         conn, redis, region, func_id, lang, reverse, reverseDepth
                     )
-                    for func_id in reverse_ids.buff_to_func(region, buff_id)
+                    for func_id in func_ids
                 ]
             )
             nice_buff.reverse = NiceReversedBuffType(nice=buff_reverse)
@@ -128,19 +132,23 @@ async def get_nice_func_with_reverse(
     )
 
     if reverse and reverseDepth >= ReverseDepth.skillNp:
+        skill_ids = await get_reverse_ids(
+            redis, region, RedisReverse.FUNC_TO_SKILL, func_id
+        )
+        td_ids = await get_reverse_ids(redis, region, RedisReverse.FUNC_TO_TD, func_id)
         if reverseData == ReverseData.basic:
             basic_func_reverse = BasicReversedFunction(
                 skill=[
                     await get_basic_skill(
                         redis, region, skill_id, lang, reverse, reverseDepth
                     )
-                    for skill_id in reverse_ids.func_to_skillId(region, func_id)
+                    for skill_id in skill_ids
                 ],
                 NP=[
                     await get_basic_td(
                         redis, region, td_id, lang, reverse, reverseDepth
                     )
-                    for td_id in reverse_ids.func_to_tdId(region, func_id)
+                    for td_id in td_ids
                 ],
             )
             nice_func.reverse = NiceReversedFunctionType(basic=basic_func_reverse)
@@ -150,13 +158,13 @@ async def get_nice_func_with_reverse(
                     await get_nice_skill_with_reverse(
                         conn, redis, region, skill_id, lang, reverse, reverseDepth
                     )
-                    for skill_id in reverse_ids.func_to_skillId(region, func_id)
+                    for skill_id in skill_ids
                 ],
                 NP=[
                     await get_nice_td_with_reverse(
                         conn, redis, region, td_id, lang, reverse, reverseDepth
                     )
-                    for td_id in reverse_ids.func_to_tdId(region, func_id)
+                    for td_id in td_ids
                 ],
             )
             nice_func.reverse = NiceReversedFunctionType(nice=func_reverse)
@@ -178,36 +186,42 @@ async def get_nice_skill_with_reverse(
 
     if reverse and reverseDepth >= ReverseDepth.servant:
         activeSkills = {svt_skill.svtId for svt_skill in raw_skill.mstSvtSkill}
-        passiveSkills = reverse_ids.passive_to_svtId(region, skill_id)
+
+        passiveSkills = set(
+            await get_reverse_ids(
+                redis, region, RedisReverse.PASSIVE_SKILL_TO_SVT, skill_id
+            )
+        )
+        mc_ids = await get_reverse_ids(
+            redis, region, RedisReverse.SKILL_TO_MC, skill_id
+        )
+        cc_ids = await get_reverse_ids(
+            redis, region, RedisReverse.SKILL_TO_CC, skill_id
+        )
+
         if reverseData == ReverseData.basic:
             basic_skill_reverse = BasicReversedSkillTd(
                 servant=[
                     await get_basic_servant(redis, region, svt_id, lang=lang)
-                    for svt_id in activeSkills | passiveSkills
+                    for svt_id in sorted(activeSkills | passiveSkills)
                 ],
-                MC=[
-                    await get_basic_mc(redis, region, mc_id, lang)
-                    for mc_id in reverse_ids.skill_to_MCId(region, skill_id)
-                ],
-                CC=[
-                    await get_basic_cc(redis, region, cc_id, lang)
-                    for cc_id in reverse_ids.skill_to_CCId(region, skill_id)
-                ],
+                MC=[await get_basic_mc(redis, region, mc_id, lang) for mc_id in mc_ids],
+                CC=[await get_basic_cc(redis, region, cc_id, lang) for cc_id in cc_ids],
             )
             nice_skill.reverse = NiceReversedSkillTdType(basic=basic_skill_reverse)
         else:
             skill_reverse = NiceReversedSkillTd(
                 servant=[
                     await get_nice_servant_model(conn, region, svt_id, lang=lang)
-                    for svt_id in activeSkills | passiveSkills
+                    for svt_id in sorted(activeSkills | passiveSkills)
                 ],
                 MC=[
                     await get_nice_mystic_code(conn, region, mc_id, lang)
-                    for mc_id in reverse_ids.skill_to_MCId(region, skill_id)
+                    for mc_id in mc_ids
                 ],
                 CC=[
                     await get_nice_command_code(conn, region, cc_id, lang)
-                    for cc_id in reverse_ids.skill_to_CCId(region, skill_id)
+                    for cc_id in cc_ids
                 ],
             )
             nice_skill.reverse = NiceReversedSkillTdType(nice=skill_reverse)

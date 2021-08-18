@@ -2,15 +2,15 @@ from typing import Any, Iterable, Optional
 
 from sqlalchemy.dialects.postgresql import aggregate_order_by
 from sqlalchemy.ext.asyncio import AsyncConnection
-from sqlalchemy.sql import and_, func, select, literal_column
+from sqlalchemy.sql import and_, func, literal_column, select
 
 from ...models.raw import (
+    mstAi,
+    mstAiAct,
+    mstAiField,
     mstCommonRelease,
     mstSkill,
     mstSkillAdd,
-    mstAi,
-    mstAiField,
-    mstAiAct,
     mstSkillDetail,
     mstSkillLv,
     mstSvtSkill,

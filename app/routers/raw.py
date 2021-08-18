@@ -1,3 +1,4 @@
+from aioredis import Redis
 from fastapi import APIRouter, Depends, Query, Response
 from sqlalchemy.ext.asyncio import AsyncConnection
 
@@ -35,7 +36,7 @@ from ..schemas.search import (
     SvtSearchQueryParams,
     TdSearchParams,
 )
-from .deps import get_db
+from .deps import get_db, get_redis
 from .utils import get_error_code, item_response, list_response
 
 
@@ -284,12 +285,13 @@ async def find_skill(
     reverse: bool = False,
     expand: bool = False,
     conn: AsyncConnection = Depends(get_db),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     matches = await search.search_skill(conn, search_param)
     return list_response(
         [
             await raw.get_skill_entity(
-                conn, search_param.region, mstSkill.id, reverse, expand=expand
+                conn, redis, search_param.region, mstSkill.id, reverse, expand=expand
             )
             for mstSkill in matches
         ]
@@ -311,9 +313,10 @@ async def get_skill(
     reverse: bool = False,
     expand: bool = False,
     conn: AsyncConnection = Depends(get_db),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     skill_entity = await raw.get_skill_entity(
-        conn, region, skill_id, reverse, expand=expand
+        conn, redis, region, skill_id, reverse, expand=expand
     )
     return item_response(skill_entity)
 
@@ -389,12 +392,14 @@ async def find_function(
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     expand: bool = False,
     conn: AsyncConnection = Depends(get_db),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     matches = await search.search_func(conn, search_param)
     return list_response(
         [
             await raw.get_func_entity(
                 conn,
+                redis,
                 search_param.region,
                 mstFunc.id,
                 reverse,
@@ -424,9 +429,10 @@ async def get_function(
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     expand: bool = False,
     conn: AsyncConnection = Depends(get_db),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     func_entity = await raw.get_func_entity(
-        conn, region, func_id, reverse, reverseDepth, expand
+        conn, redis, region, func_id, reverse, reverseDepth, expand
     )
     return item_response(func_entity)
 
@@ -452,12 +458,19 @@ async def find_buff(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
     conn: AsyncConnection = Depends(get_db),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     matches = await search.search_buff(conn, search_param)
     return list_response(
         [
             await raw.get_buff_entity(
-                conn, search_param.region, mstBuff.id, reverse, reverseDepth, mstBuff
+                conn,
+                redis,
+                search_param.region,
+                mstBuff.id,
+                reverse,
+                reverseDepth,
+                mstBuff,
             )
             for mstBuff in matches
         ]
@@ -479,9 +492,10 @@ async def get_buff(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
     conn: AsyncConnection = Depends(get_db),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
     buff_entity = await raw.get_buff_entity(
-        conn, region, buff_id, reverse, reverseDepth
+        conn, redis, region, buff_id, reverse, reverseDepth
     )
     return item_response(buff_entity)
 

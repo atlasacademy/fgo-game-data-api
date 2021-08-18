@@ -1,10 +1,12 @@
 from typing import Iterable, Optional
 
+from aioredis import Redis
 from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..data.custom_mappings import EXTRA_CHARAFIGURES
 from ..db.helpers import ai, event, fetch, item, quest, skill, svt, td
+from ..redis.helpers.reverse import RedisReverse, get_reverse_ids
 from ..schemas.common import Region, ReverseDepth
 from ..schemas.enums import FUNC_VALS_NOT_BUFF, DetailMissionCondType
 from ..schemas.gameenums import BgmFlag, CondType, PurchaseType, VoiceCondType
@@ -95,7 +97,6 @@ from ..schemas.raw import (
     TdEntityNoReverse,
     WarEntity,
 )
-from . import reverse as reverse_ids
 
 
 async def get_buff_entity_no_reverse(
@@ -110,6 +111,7 @@ async def get_buff_entity_no_reverse(
 
 async def get_buff_entity(
     conn: AsyncConnection,
+    redis: Redis,
     region: Region,
     buff_id: int,
     reverse: bool = False,
@@ -120,10 +122,15 @@ async def get_buff_entity(
         await get_buff_entity_no_reverse(conn, buff_id, mstBuff)
     )
     if reverse and reverseDepth >= ReverseDepth.function:
+        func_ids = await get_reverse_ids(
+            redis, region, RedisReverse.BUFF_TO_FUNC, buff_id
+        )
         buff_reverse = ReversedBuff(
             function=[
-                await get_func_entity(conn, region, func_id, reverse, reverseDepth)
-                for func_id in reverse_ids.buff_to_func(region, buff_id)
+                await get_func_entity(
+                    conn, redis, region, func_id, reverse, reverseDepth
+                )
+                for func_id in func_ids
             ]
         )
         buff_entity.reverse = ReversedBuffType(raw=buff_reverse)
@@ -157,6 +164,7 @@ async def get_func_entity_no_reverse(
 
 async def get_func_entity(
     conn: AsyncConnection,
+    redis: Redis,
     region: Region,
     func_id: int,
     reverse: bool = False,
@@ -168,14 +176,20 @@ async def get_func_entity(
         await get_func_entity_no_reverse(conn, func_id, expand, mstFunc)
     )
     if reverse and reverseDepth >= ReverseDepth.skillNp:
+        skill_ids = await get_reverse_ids(
+            redis, region, RedisReverse.FUNC_TO_SKILL, func_id
+        )
+        td_ids = await get_reverse_ids(redis, region, RedisReverse.FUNC_TO_TD, func_id)
         func_reverse = ReversedFunction(
             skill=[
-                await get_skill_entity(conn, region, skill_id, reverse, reverseDepth)
-                for skill_id in reverse_ids.func_to_skillId(region, func_id)
+                await get_skill_entity(
+                    conn, redis, region, skill_id, reverse, reverseDepth
+                )
+                for skill_id in skill_ids
             ],
             NP=[
                 await get_td_entity(conn, td_id, reverse, reverseDepth)
-                for td_id in reverse_ids.func_to_tdId(region, func_id)
+                for td_id in td_ids
             ],
         )
         func_entity.reverse = ReversedFunctionType(raw=func_reverse)
@@ -206,6 +220,7 @@ async def get_skill_entity_no_reverse(
 
 async def get_skill_entity(
     conn: AsyncConnection,
+    redis: Redis,
     region: Region,
     skill_id: int,
     reverse: bool = False,
@@ -218,20 +233,26 @@ async def get_skill_entity(
 
     if reverse and reverseDepth >= ReverseDepth.servant:
         activeSkills = {svt_skill.svtId for svt_skill in skill_entity.mstSvtSkill}
-        passiveSkills = reverse_ids.passive_to_svtId(region, skill_id)
+
+        passiveSkills = set(
+            await get_reverse_ids(
+                redis, region, RedisReverse.PASSIVE_SKILL_TO_SVT, skill_id
+            )
+        )
+        mc_ids = await get_reverse_ids(
+            redis, region, RedisReverse.SKILL_TO_MC, skill_id
+        )
+        cc_ids = await get_reverse_ids(
+            redis, region, RedisReverse.SKILL_TO_CC, skill_id
+        )
+
         skill_reverse = ReversedSkillTd(
             servant=[
                 await get_servant_entity(conn, svt_id)
-                for svt_id in activeSkills | passiveSkills
+                for svt_id in sorted(activeSkills | passiveSkills)
             ],
-            MC=[
-                await get_mystic_code_entity(conn, mc_id)
-                for mc_id in reverse_ids.skill_to_MCId(region, skill_id)
-            ],
-            CC=[
-                await get_command_code_entity(conn, cc_id)
-                for cc_id in reverse_ids.skill_to_CCId(region, skill_id)
-            ],
+            MC=[await get_mystic_code_entity(conn, mc_id) for mc_id in mc_ids],
+            CC=[await get_command_code_entity(conn, cc_id) for cc_id in cc_ids],
         )
         skill_entity.reverse = ReversedSkillTdType(raw=skill_reverse)
     return skill_entity
