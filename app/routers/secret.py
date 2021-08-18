@@ -1,11 +1,13 @@
+from aioredis import Redis
 from fastapi import APIRouter, BackgroundTasks, Depends, Response
 from git import Repo
 from sqlalchemy.ext.asyncio import AsyncEngine
 
 from ..config import SecretSettings, Settings, project_root
+from ..core.info import get_all_repo_info
 from ..schemas.common import Region, RepoInfo
-from ..tasks import REGION_PATHS, pull_and_update, repo_info
-from .deps import get_async_engines
+from ..tasks import REGION_PATHS, pull_and_update
+from .deps import get_async_engines, get_redis
 from .utils import pretty_print_response
 
 
@@ -42,11 +44,13 @@ instance_info = dict(
 async def update_gamedata(
     background_tasks: BackgroundTasks,
     async_engines: dict[Region, AsyncEngine] = Depends(get_async_engines),
+    redis: Redis = Depends(get_redis),
 ) -> Response:
-    background_tasks.add_task(pull_and_update, REGION_PATHS, async_engines)
+    background_tasks.add_task(pull_and_update, REGION_PATHS, async_engines, redis)
+    all_repo_info = await get_all_repo_info(redis)
     response_data = dict(
         message="Game data is being updated in the background",
-        game_data={k.value: v.dict() for k, v in repo_info.items()},
+        game_data={k.value: v.dict() for k, v in all_repo_info.items()},
         **instance_info,
     )
     response = pretty_print_response(response_data)
@@ -55,9 +59,10 @@ async def update_gamedata(
 
 
 @router.get("/info")
-async def info() -> Response:
+async def info(redis: Redis = Depends(get_redis)) -> Response:
+    all_repo_info = await get_all_repo_info(redis)
     response_data = dict(
-        game_data={k.value: v.dict() for k, v in repo_info.items()},
+        game_data={k.value: v.dict() for k, v in all_repo_info.items()},
         **instance_info,
     )
     response = pretty_print_response(response_data)

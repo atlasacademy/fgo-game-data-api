@@ -8,7 +8,7 @@ from .enums import SvtClass, Trait
 from .gameenums import NiceBuffType, NiceClassRelationOverwriteType
 
 
-class RepoInfo(BaseModel):
+class RepoInfo(BaseModelORJson):
     hash: str
     timestamp: int
 

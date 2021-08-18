@@ -5,7 +5,6 @@ from pathlib import Path
 from typing import Any, Iterable
 
 import aiofiles
-import aioredis
 from aioredis import Redis
 from git import Repo
 from pydantic import DirectoryPath
@@ -34,6 +33,7 @@ from .db.helpers import fetch
 from .db.helpers.svt import get_all_equips, get_all_servants
 from .db.load import load_pydantic_to_db, update_db
 from .models.raw import mstSvtExtra
+from .redis.helpers.repo_version import set_repo_version
 from .redis.load import load_redis_data, load_svt_extra_redis
 from .routers.utils import list_string
 from .schemas.base import BaseModelORJson
@@ -265,18 +265,18 @@ async def generate_exports(
             logger.info(f"Exported {region} data in {run_time:.2f}s.")
 
 
-repo_info: dict[Region, RepoInfo] = {}
-
-
-def update_master_repo_info(region_path: dict[Region, DirectoryPath]) -> None:
+async def update_master_repo_info(
+    redis: Redis, region_path: dict[Region, DirectoryPath]
+) -> None:
     for region, gamedata in region_path.items():
         if (gamedata / ".git").exists():
             repo = Repo(gamedata)
             latest_commit = repo.commit()
-            repo_info[region] = RepoInfo(
+            repo_info = RepoInfo(
                 hash=latest_commit.hexsha[:6],
                 timestamp=latest_commit.committed_date,  # pyright: reportGeneralTypeIssues=false
             )
+            await set_repo_version(redis, region, repo_info)
 
 
 async def clear_bloom_redis_cache(redis: Redis) -> None:  # pragma: no cover
@@ -320,12 +320,14 @@ async def load_and_export(
     if settings.write_postgres_data or settings.write_redis_data:
         await load_svt_extra(redis, region_path)
     await generate_exports(redis, region_path, async_engines)
-    update_master_repo_info(region_path)
+    await update_master_repo_info(redis, region_path)
     await clear_bloom_redis_cache(redis)
 
 
 async def pull_and_update(
-    region_path: dict[Region, DirectoryPath], async_engines: dict[Region, AsyncEngine]
+    region_path: dict[Region, DirectoryPath],
+    async_engines: dict[Region, AsyncEngine],
+    redis: Redis,
 ) -> None:  # pragma: no cover
     logger.info(f"Sleeping {settings.github_webhook_sleep} seconds …")
     await asyncio.sleep(settings.github_webhook_sleep)
@@ -336,7 +338,4 @@ async def pull_and_update(
                 for fetch_info in repo.remotes[0].pull():
                     commit_hash = fetch_info.commit.hexsha[:6]
                     logger.info(f"Updated {fetch_info.ref} to {commit_hash}")
-    redis = await aioredis.create_redis_pool(secrets.redisdsn)
     await load_and_export(redis, region_path, async_engines)
-    redis.close()
-    await redis.wait_closed()

@@ -4,16 +4,20 @@ from typing import Awaitable, Callable
 
 import aioredis
 import toml
-from fastapi import FastAPI, Request, Response
+from aioredis import Redis
+from fastapi import Depends, FastAPI, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy.ext.asyncio import create_async_engine
 
+from app.core.info import get_all_repo_info
+
 from .config import SecretSettings, Settings, logger, project_root
 from .routers import basic, nice, raw, secret
+from .routers.deps import get_redis
 from .schemas.common import Region, RepoInfo
-from .tasks import REGION_PATHS, load_and_export, repo_info
+from .tasks import REGION_PATHS, load_and_export
 
 
 settings = Settings()
@@ -218,9 +222,11 @@ async def root() -> RedirectResponse:
 
 
 @app.get("/info", summary="Data version info", response_model=dict[Region, RepoInfo])
-async def main_info(response: Response) -> dict[Region, RepoInfo]:
+async def main_info(
+    response: Response, redis: Redis = Depends(get_redis)
+) -> dict[Region, RepoInfo]:
     response.headers["Bloom-Response-Ignore"] = "1"
-    return repo_info
+    return await get_all_repo_info(redis)
 
 
 if secrets.github_webhook_secret.get_secret_value() != "":  # pragma: no cover
