@@ -20,7 +20,8 @@
         "type": 40,
         "target": 1,
         "createdAt": 946684800
-      }
+      },
+      "parentAis": { "svt": [94032581, 94032582], "field": [] }
     },
     {
       "mstAi": {
@@ -42,7 +43,8 @@
         "type": 0,
         "target": 0,
         "createdAt": 946684800
-      }
+      },
+      "parentAis": { "svt": [94032581, 94032582], "field": [] }
     },
     {
       "mstAi": {
@@ -64,7 +66,8 @@
         "type": 99,
         "target": 0,
         "createdAt": 946684800
-      }
+      },
+      "parentAis": { "svt": [94032581, 94032582], "field": [] }
     }
   ],
   "relatedAis": [
@@ -88,7 +91,8 @@
         "type": 2,
         "target": 1,
         "createdAt": 946684800
-      }
+      },
+      "parentAis": { "svt": [94032580], "field": [] }
     },
     {
       "mstAi": {
@@ -110,7 +114,8 @@
         "type": 99,
         "target": 0,
         "createdAt": 946684800
-      }
+      },
+      "parentAis": { "svt": [94032580], "field": [] }
     },
     {
       "mstAi": {
@@ -132,7 +137,8 @@
         "type": 2,
         "target": 1,
         "createdAt": 946684800
-      }
+      },
+      "parentAis": { "svt": [94032581], "field": [] }
     },
     {
       "mstAi": {
@@ -154,7 +160,8 @@
         "type": 41,
         "target": 1,
         "createdAt": 946684800
-      }
+      },
+      "parentAis": { "svt": [94032581], "field": [] }
     },
     {
       "mstAi": {
@@ -176,7 +183,8 @@
         "type": 11,
         "target": 1,
         "createdAt": 946684800
-      }
+      },
+      "parentAis": { "svt": [94032581], "field": [] }
     },
     {
       "mstAi": {
@@ -198,7 +206,8 @@
         "type": 12,
         "target": 13,
         "createdAt": 946684800
-      }
+      },
+      "parentAis": { "svt": [94032581], "field": [] }
     }
   ],
   "relatedQuests": []

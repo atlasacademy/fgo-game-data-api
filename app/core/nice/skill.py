@@ -6,7 +6,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
 from ...schemas.common import Language, Region
-from ...schemas.enums import SKILL_TYPE_NAME, AiType
+from ...schemas.enums import SKILL_TYPE_NAME
 from ...schemas.nice import (
     AssetURL,
     ExtraPassive,
@@ -21,7 +21,6 @@ from ...schemas.raw import (
     SkillEntityNoReverse,
 )
 from ..raw import get_skill_entity_no_reverse, get_skill_entity_no_reverse_many
-from ..reverse import get_ai_id_from_skill
 from ..utils import get_traits_list, get_translation, strip_formatting_brackets
 from .common_release import get_nice_common_release
 from .func import get_nice_function
@@ -103,9 +102,7 @@ async def get_nice_skill_with_svt(
             skillEntity.mstSkillDetail[0].detail
         )
 
-    aiIds = get_ai_id_from_skill(region, skillEntity.mstSkill.id)
-    if aiIds[AiType.svt] or aiIds[AiType.field]:
-        nice_skill["aiIds"] = aiIds
+    nice_skill["aiIds"] = skillEntity.aiIds
 
     nice_skill["coolDown"] = [
         skill_lv.chargeTurn for skill_lv in skillEntity.mstSkillLv

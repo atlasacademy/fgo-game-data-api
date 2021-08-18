@@ -1421,6 +1421,7 @@ mstAi = Table(
     Column("infoText", String),
 )
 
+Index("ix_mstAi_avals_first", mstAi.c.avals[1])
 
 mstAiField = Table(
     "mstAiField",
@@ -1439,6 +1440,8 @@ mstAiField = Table(
     Column("timing", Integer),
 )
 
+Index("ix_mstAiField_avals_first", mstAiField.c.avals[1])
+
 
 mstAiAct = Table(
     "mstAiAct",
@@ -1450,6 +1453,8 @@ mstAiAct = Table(
     Column("target", Integer),
     Column("createdAt", Integer),
 )
+
+Index("ix_mstAiAct_skillVals", mstAiAct.c.skillVals[1])
 
 
 ScriptFileList = Table(

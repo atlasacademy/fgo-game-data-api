@@ -13,7 +13,6 @@ from ...schemas.gameenums import (
 from ...schemas.nice import NiceAi, NiceAiAct, NiceAiCollection
 from ...schemas.raw import AiEntity, MstAiAct
 from ..raw import get_ai_collection
-from ..reverse import get_parent_ais
 from ..utils import get_traits_list
 from .skill import get_nice_skill_from_id
 
@@ -46,7 +45,6 @@ async def get_nice_ai(
     conn: AsyncConnection,
     region: Region,
     one_ai: AiEntity,
-    field: bool = False,
     lang: Language = Language.jp,
 ) -> NiceAi:
     nice_ai = NiceAi(
@@ -63,7 +61,7 @@ async def get_nice_ai(
         vals=one_ai.mstAi.vals,
         aiAct=await get_nice_ai_act(conn, region, one_ai.mstAiAct, lang),
         avals=one_ai.mstAi.avals,
-        parentAis=get_parent_ais(region, one_ai.mstAi.id, field),
+        parentAis=one_ai.parentAis,
         infoText=one_ai.mstAi.infoText,
     )
     if one_ai.mstAi.timing:
@@ -83,12 +81,9 @@ async def get_nice_ai_collection(
 ) -> NiceAiCollection:
     full_ai = await get_ai_collection(conn, ai_id, field)
     return NiceAiCollection(
-        mainAis=[
-            await get_nice_ai(conn, region, ai, field, lang) for ai in full_ai.mainAis
-        ],
+        mainAis=[await get_nice_ai(conn, region, ai, lang) for ai in full_ai.mainAis],
         relatedAis=[
-            await get_nice_ai(conn, region, ai, field, lang)
-            for ai in full_ai.relatedAis
+            await get_nice_ai(conn, region, ai, lang) for ai in full_ai.relatedAis
         ],
         relatedQuests=full_ai.relatedQuests,
     )

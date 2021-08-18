@@ -2,12 +2,15 @@ from typing import Any, Iterable, Optional
 
 from sqlalchemy.dialects.postgresql import aggregate_order_by
 from sqlalchemy.ext.asyncio import AsyncConnection
-from sqlalchemy.sql import and_, func, select
+from sqlalchemy.sql import and_, func, select, literal_column
 
 from ...models.raw import (
     mstCommonRelease,
     mstSkill,
     mstSkillAdd,
+    mstAi,
+    mstAiField,
+    mstAiAct,
     mstSkillDetail,
     mstSkillLv,
     mstSvtSkill,
@@ -31,6 +34,33 @@ async def get_skillEntity(
         .cte()
     )
 
+    skill_id_col = literal_column('"mstAiAct"."skillVals"[1]')
+    aiIds = (
+        select(
+            skill_id_col.label("skillId"),
+            func.jsonb_build_object(
+                "svt",
+                func.coalesce(
+                    func.array_remove(func.array_agg(mstAi.c.id.distinct()), None),
+                    [],
+                ),
+                "field",
+                func.coalesce(
+                    func.array_remove(func.array_agg(mstAiField.c.id.distinct()), None),
+                    [],
+                ),
+            ).label("aiIds"),
+        )
+        .select_from(
+            mstAiAct.outerjoin(mstAi, mstAi.c.aiActId == mstAiAct.c.id).outerjoin(
+                mstAiField, mstAiField.c.aiActId == mstAiAct.c.id
+            )
+        )
+        .where(skill_id_col.in_(skill_ids))
+        .group_by(skill_id_col)
+        .cte()
+    )
+
     JOINED_SKILL_TABLES = (
         mstSkill.outerjoin(mstSkillDetail, mstSkillDetail.c.id == mstSkill.c.id)
         .outerjoin(mstSvtSkill, mstSvtSkill.c.skillId == mstSkill.c.id)
@@ -39,6 +69,7 @@ async def get_skillEntity(
             mstCommonRelease, mstSkillAdd.c.commonReleaseId == mstCommonRelease.c.id
         )
         .outerjoin(mstSkillLvJson, mstSkillLvJson.c.skillId == mstSkill.c.id)
+        .outerjoin(aiIds, aiIds.c.skillId == mstSkill.c.id)
     )
 
     SELECT_SKILL_ENTITY = [
@@ -48,13 +79,14 @@ async def get_skillEntity(
         sql_jsonb_agg(mstSkillAdd),
         sql_jsonb_agg(mstCommonRelease),
         mstSkillLvJson.c.mstSkillLv,
+        aiIds.c.aiIds,
     ]
 
     stmt = (
         select(*SELECT_SKILL_ENTITY)
         .select_from(JOINED_SKILL_TABLES)
         .where(mstSkill.c.id.in_(skill_ids))
-        .group_by(mstSkill.c.id, mstSkillLvJson.c.mstSkillLv)
+        .group_by(mstSkill.c.id, mstSkillLvJson.c.mstSkillLv, aiIds.c.aiIds)
     )
 
     skill_entities = [

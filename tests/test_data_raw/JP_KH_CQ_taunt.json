@@ -21,7 +21,8 @@
         "type": 40,
         "target": 0,
         "createdAt": 946652400
-      }
+      },
+      "parentAis": { "svt": [], "field": [] }
     },
     {
       "mstAi": {
@@ -44,7 +45,8 @@
         "type": 40,
         "target": 3,
         "createdAt": 946652400
-      }
+      },
+      "parentAis": { "svt": [], "field": [] }
     },
     {
       "mstAi": {
@@ -67,7 +69,8 @@
         "type": 0,
         "target": 0,
         "createdAt": 946652400
-      }
+      },
+      "parentAis": { "svt": [], "field": [] }
     }
   ],
   "relatedAis": [],

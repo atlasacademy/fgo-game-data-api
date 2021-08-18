@@ -1,3 +1,4 @@
+import logging
 import time
 from typing import Awaitable, Callable
 
@@ -184,10 +185,12 @@ async def startup() -> None:
     app.state.redis = redis
     async_engines = {
         Region.NA: create_async_engine(
-            secrets.na_postgresdsn.replace("postgresql", "postgresql+asyncpg")
+            secrets.na_postgresdsn.replace("postgresql", "postgresql+asyncpg"),
+            echo=logger.isEnabledFor(logging.DEBUG),
         ),
         Region.JP: create_async_engine(
-            secrets.jp_postgresdsn.replace("postgresql", "postgresql+asyncpg")
+            secrets.jp_postgresdsn.replace("postgresql", "postgresql+asyncpg"),
+            echo=logger.isEnabledFor(logging.DEBUG),
         ),
     }
     app.state.async_engines = async_engines

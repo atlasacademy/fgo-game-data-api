@@ -1,7 +1,8 @@
-from sqlalchemy import Table
+from sqlalchemy import Integer, Table
+from sqlalchemy.dialects.postgresql import ARRAY
 from sqlalchemy.exc import DBAPIError
 from sqlalchemy.ext.asyncio import AsyncConnection
-from sqlalchemy.sql import func, select
+from sqlalchemy.sql import cast, func, select
 
 from ...models.raw import mstAi, mstAiAct, mstAiField
 from ...schemas.raw import AiEntity
@@ -10,6 +11,23 @@ from ...schemas.raw import AiEntity
 async def get_ai_entity(
     conn: AsyncConnection, ai_table: Table, ai_id: int
 ) -> list[AiEntity]:
+    parent_ai = (
+        select(
+            func.jsonb_build_object(
+                "svt" if ai_table is mstAi else "field",
+                func.coalesce(
+                    func.array_remove(func.array_agg(ai_table.c.id.distinct()), None),
+                    [],
+                ),
+                "field" if ai_table is mstAi else "svt",
+                cast([], ARRAY(Integer)),  # type: ignore
+            )
+        )
+        .select_from(ai_table)
+        .where(ai_table.c.avals[1] == ai_id)
+        .scalar_subquery()
+    )
+
     JOINED_AI_TABLES = ai_table.outerjoin(mstAiAct, ai_table.c.aiActId == mstAiAct.c.id)
 
     SELECT_AI_ENTITY = [
@@ -17,6 +35,7 @@ async def get_ai_entity(
         ai_table.c.idx,
         func.to_jsonb(ai_table.table_valued()).label("mstAi"),
         func.to_jsonb(mstAiAct.table_valued()).label(mstAiAct.name),
+        parent_ai.label("parentAis"),
     ]
 
     stmt = (
