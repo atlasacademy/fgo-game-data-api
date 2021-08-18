@@ -99,12 +99,19 @@ class UserSvt(BaseModelORJson):
     overwriteSvtId: int
     userCommandCodeIds: Optional[list[int]] = None
     commandCardParam: Optional[list[int]] = None
+    afterLimitCount: Optional[int] = None
+    afterIconLimitCount: Optional[int] = None
+    appendPassiveSkillIds: Optional[list[int]] = None
+    appendPassiveSkillLvs: Optional[list[int]] = None
     limitCount: int
     imageLimitCount: int
     dispLimitCount: int
     commandCardLimitCount: int
     iconLimitCount: int
     portraitLimitCount: int
+    randomLimitCount: Optional[int] = None
+    randomLimitCountSupport: Optional[int] = None
+    limitCountSupport: Optional[int] = None
     battleVoice: int
     treasureDeviceLv1: int
     exceedCount: int
