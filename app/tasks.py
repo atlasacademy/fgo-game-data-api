@@ -319,9 +319,9 @@ async def load_and_export(
         await load_redis_data(redis, region_path)
     if settings.write_postgres_data or settings.write_redis_data:
         await load_svt_extra(redis, region_path)
-    await generate_exports(redis, region_path, async_engines)
     await update_master_repo_info(redis, region_path)
     await clear_bloom_redis_cache(redis)
+    await generate_exports(redis, region_path, async_engines)
 
 
 async def pull_and_update(
