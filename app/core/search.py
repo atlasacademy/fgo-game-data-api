@@ -8,6 +8,7 @@ from ..db.helpers.buff import get_buff_search
 from ..db.helpers.func import get_func_search
 from ..db.helpers.item import get_item_search
 from ..db.helpers.quest import get_quest_phase_search
+from ..db.helpers.script import get_script_search
 from ..db.helpers.skill import get_skill_search
 from ..db.helpers.svt import get_svt_groups, get_svt_ids, get_svt_search
 from ..db.helpers.td import get_td_search
@@ -38,6 +39,7 @@ from ..schemas.raw import (
     MstSkill,
     MstSvt,
     MstTreasureDevice,
+    ScriptSearchResult,
 )
 from ..schemas.search import (
     BuffSearchQueryParams,
@@ -45,6 +47,7 @@ from ..schemas.search import (
     FuncSearchQueryParams,
     ItemSearchQueryParams,
     QuestSearchQueryParams,
+    ScriptSearchQueryParams,
     ServantSearchQueryParams,
     SkillSearchParams,
     SvtSearchQueryParams,
@@ -423,3 +426,9 @@ async def search_quest(
     )
 
     return sorted(matches, key=lambda quest: (quest.id, quest.phase))
+
+
+async def search_script(
+    conn: AsyncConnection, search_param: ScriptSearchQueryParams
+) -> list[ScriptSearchResult]:
+    return await get_script_search(conn, search_param.query)

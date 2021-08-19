@@ -5,6 +5,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 from ..config import Settings
 from ..core import search
 from ..core.nice import ai, bgm, cc, event, item, mc, mm, nice, quest, war
+from ..core.nice.script import get_nice_script_search_result
 from ..db.helpers.cc import get_cc_id
 from ..db.helpers.svt import get_ce_id, get_svt_id
 from ..schemas.common import Language, Region, ReverseData, ReverseDepth
@@ -22,6 +23,7 @@ from ..schemas.nice import (
     NiceMysticCode,
     NiceQuest,
     NiceQuestPhase,
+    NiceScriptSearchResult,
     NiceServant,
     NiceSkillReverse,
     NiceTdReverse,
@@ -32,6 +34,7 @@ from ..schemas.search import (
     EquipSearchQueryParams,
     FuncSearchQueryParams,
     ItemSearchQueryParams,
+    ScriptSearchQueryParams,
     ServantSearchQueryParams,
     SkillSearchParams,
     SvtSearchQueryParams,
@@ -747,6 +750,24 @@ async def get_quest(
     )
     quest_response.headers["Bloom-Response-TTL"] = str(settings.quest_cache_length)
     return quest_response
+
+
+@router.get(
+    "/{region}/script/search",
+    summary="Find and get script data",
+    description=ScriptSearchQueryParams.DESCRIPTION,
+    response_description="Script Search Result",
+    response_model=list[NiceScriptSearchResult],
+    response_model_exclude_unset=True,
+)
+async def find_script(
+    search_param: ScriptSearchQueryParams = Depends(ScriptSearchQueryParams),
+    conn: AsyncConnection = Depends(get_db),
+) -> Response:
+    matches = await search.search_script(conn, search_param)
+    return list_response(
+        get_nice_script_search_result(search_param.region, match) for match in matches
+    )
 
 
 @router.get(

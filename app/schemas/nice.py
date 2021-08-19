@@ -1605,6 +1605,13 @@ class NiceQuestPhase(NiceQuest):
     stages: list[NiceStage]
 
 
+class NiceScriptSearchResult(BaseModelORJson):
+    scriptId: str
+    script: HttpUrl
+    score: float
+    snippets: list[str]
+
+
 class NiceMap(BaseModel):
     id: int
     mapImage: Optional[HttpUrl] = None

@@ -4,6 +4,7 @@ from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from app.core.nice.func import parse_dataVals
+from app.core.nice.script import get_script_path, get_script_text_only
 from app.core.utils import get_voice_name, sort_by_collection_no
 from app.data.custom_mappings import Translation
 from app.routers.utils import list_string_exclude
@@ -13,7 +14,7 @@ from app.schemas.gameenums import FuncType
 from app.schemas.nice import NiceServant
 from app.schemas.raw import get_subtitle_svtId
 
-from .utils import get_response_data
+from .utils import get_response_data, get_text_data
 
 
 def test_subtitle_svtId() -> None:
@@ -135,3 +136,13 @@ def test_voice_lang_en() -> None:
         get_voice_name("エクストラアタック 2", Language.en, Translation.VOICE)
         == "Extra Attack 2"
     )
+
+
+def test_get_script_path() -> None:
+    assert get_script_path("WarEpilogue108.txt") == "01/WarEpilogue108.txt"
+
+
+def test_parse_script() -> None:
+    test_script = get_text_data("test_data_misc", "test_script")
+    output = "Jeanne! Jeanne I was careless... I never expected to be forced to acknowledge her like this...! Jeanne Alter"
+    assert get_script_text_only(test_script) == output

@@ -1,0 +1,9 @@
+？1：Jeanne!
+
+[charaFace A 4]
+＠A：Jeanne
+I was careless... I never expected to be forced to acknowledge her like this...!
+[k]
+
+＠Jeanne Alter
+[page]

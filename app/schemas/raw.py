@@ -1379,6 +1379,12 @@ class ScriptFile(BaseModelORJson):
     sceneType: int
 
 
+class ScriptSearchResult(BaseModelORJson):
+    scriptId: str
+    score: float
+    snippets: list[str]
+
+
 class QuestEntity(BaseModelORJson):
     mstQuest: MstQuest
     mstQuestConsumeItem: list[MstQuestConsumeItem]

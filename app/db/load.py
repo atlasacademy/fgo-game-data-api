@@ -8,6 +8,7 @@ from sqlalchemy import Table
 from sqlalchemy.engine import Connection, Engine
 
 from ..config import logger
+from ..core.nice.script import get_script_path, get_script_text_only
 from ..data.buff import get_buff_with_classrelation
 from ..data.event import get_event_with_warIds
 from ..data.item import get_item_with_use
@@ -170,6 +171,15 @@ def load_script_list(
         }
 
         for script in script_list:
+            script_path = repo_folder / "ScriptActionEncrypt" / get_script_path(script)
+            if script_path.exists():
+                with open(script_path, "r", encoding="utf-8") as fp:
+                    script_data = fp.read()
+                    script_text = get_script_text_only(script_data)
+            else:
+                script_data = ""
+                script_text = ""
+
             script_name = script.removesuffix(".txt")
             quest_ids: list[Optional[int]] = []
             phase: Optional[int] = None
@@ -197,6 +207,8 @@ def load_script_list(
                         "questId": quest_id,
                         "phase": phase,
                         "sceneType": sceneType,
+                        "rawScript": script_data,
+                        "textScript": script_text,
                     }
                 )
 

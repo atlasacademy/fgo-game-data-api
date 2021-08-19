@@ -21,6 +21,7 @@ from ..schemas.raw import (
     MysticCodeEntity,
     QuestEntity,
     QuestPhaseEntity,
+    ScriptSearchResult,
     ServantEntity,
     SkillEntity,
     TdEntity,
@@ -31,6 +32,7 @@ from ..schemas.search import (
     EquipSearchQueryParams,
     FuncSearchQueryParams,
     ItemSearchQueryParams,
+    ScriptSearchQueryParams,
     ServantSearchQueryParams,
     SkillSearchParams,
     SvtSearchQueryParams,
@@ -160,7 +162,7 @@ async def get_equip(
     "/{region}/svt/search",
     summary="Find and get servant data",
     description=SvtSearchQueryParams.DESCRIPTION + svt_expand_lore_description,
-    response_description="Nice Servant Entities",
+    response_description="Raw Servant Entities",
     response_model=list[ServantEntity],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
@@ -275,7 +277,7 @@ from the function IDs in mstSkillLv.funcId.
     "/{region}/skill/search",
     summary="Find and get skill data",
     description=SkillSearchParams.DESCRIPTION + raw_skill_extra,
-    response_description="Basic Skill Entities",
+    response_description="Raw Skill Entities",
     response_model=list[SkillEntity],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
@@ -333,7 +335,7 @@ from the function IDs in mstTreasureDeviceLv.funcId.
     "/{region}/NP/search",
     summary="Find and get NP data",
     description=TdSearchParams.DESCRIPTION + raw_td_extra,
-    response_description="Nice NP Entities",
+    response_description="Raw NP Entities",
     response_model=list[TdEntity],
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
@@ -622,6 +624,22 @@ async def get_quest(
     quest_response = item_response(await raw.get_quest_entity(conn, quest_id))
     quest_response.headers["Bloom-Response-TTL"] = str(settings.quest_cache_length)
     return quest_response
+
+
+@router.get(
+    "/{region}/script/search",
+    summary="Find and get script data",
+    description=ScriptSearchQueryParams.DESCRIPTION,
+    response_description="Script Search Result",
+    response_model=list[ScriptSearchResult],
+    response_model_exclude_unset=True,
+)
+async def find_script(
+    search_param: ScriptSearchQueryParams = Depends(ScriptSearchQueryParams),
+    conn: AsyncConnection = Depends(get_db),
+) -> Response:
+    matches = await search.search_script(conn, search_param)
+    return list_response(matches)
 
 
 @router.get(

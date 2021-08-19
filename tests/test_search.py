@@ -17,6 +17,8 @@ RAW_MAIN_ITEM = {
 
 def get_item_list(response: Response, response_type: str, endpoint: str) -> set[int]:
     item_type = endpoint.split("/")[1]
+    if item_type == "script":
+        return {item["scriptId"] for item in response.json()}
     if response_type == "raw":
         if item_type in RAW_MAIN_ITEM:
             main_item = RAW_MAIN_ITEM[item_type]
@@ -293,6 +295,7 @@ nice_raw_test_cases_dict = {
         {6507},
     ),
     "item_type": ("JP/item/search?type=chargeStone", {6}),
+    "script_search": ("JP/script/search?query=存在したでしょう", {"0300051410"}),
 }
 
 nice_raw_test_cases = [

@@ -447,3 +447,17 @@ class QuestSearchQueryParams:
         At least one of the parameter is required for the query.
         """
     )
+
+
+@dataclass
+class ScriptSearchQueryParams:
+    region: Region
+    query: str
+
+    DESCRIPTION: ClassVar[str] = inspect.cleandoc(
+        """
+        Search and return the list of matching scripts.
+
+        - **query**: search query https://groonga.org/docs/reference/grn_expr/query_syntax.html.
+        """
+    )

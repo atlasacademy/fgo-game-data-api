@@ -9,7 +9,7 @@ from sqlalchemy import (
     Table,
     text,
 )
-from sqlalchemy.dialects.postgresql import ARRAY, JSONB
+from sqlalchemy.dialects.postgresql import ARRAY, JSONB, TEXT
 from sqlalchemy.sql import func
 
 from .base import metadata
@@ -1460,12 +1460,17 @@ Index("ix_mstAiAct_skillVals", mstAiAct.c.skillVals[1])
 ScriptFileList = Table(
     "ScriptFileList",
     metadata,
-    Column("scriptFileName", String),
+    Column("scriptFileName", String, index=True),
     Column("questId", Integer, index=True),
     Column("phase", Integer, index=True),
     Column("sceneType", Integer),
+    Column("rawScript", TEXT),
+    Column("textScript", TEXT),
 )
 
+Index(
+    "ix_ScriptFileList_text", ScriptFileList.c.textScript, postgresql_using="pgroonga"
+)
 
 TABLES_TO_BE_LOADED = [
     mstCommonRelease,
