@@ -25,7 +25,7 @@ from .core.nice.item import get_all_nice_items
 from .core.nice.mc import get_all_nice_mcs
 from .core.nice.mm import get_all_nice_mms
 from .core.nice.nice import get_nice_equip_model, get_nice_servant_model
-from .core.raw import get_all_bgm_entities, get_all_raw_svts_lore
+from .core.raw import get_all_bgm_entities, get_servant_entity
 from .core.utils import sort_by_collection_no
 from .data.extra import get_extra_svt_data
 from .db.engine import engines
@@ -86,13 +86,18 @@ async def dump_svt(
     file_name: str,
     svts: list[MstSvt],
 ) -> None:  # pragma: no cover
-    export_with_lore = "["
-    export_without_lore = "["
-    export_with_lore_en = "["
-    export_without_lore_en = "["
+    with_lore: list[str] = []
+    without_lore: list[str] = []
+    with_lore_en: list[str] = []
+    without_lore_en: list[str] = []
 
-    raw_svts = await get_all_raw_svts_lore(conn, svts)
-    for raw_svt in raw_svts:
+    export_params = {"exclude_unset": True, "exclude_none": True}
+
+    for svt in svts:
+        raw_svt = await get_servant_entity(
+            conn, svt.id, expand=True, lore=True, mstSvt=svt
+        )
+
         nice_params = {
             "conn": conn,
             "region": region,
@@ -105,12 +110,8 @@ async def dump_svt(
             nice_svt = await get_nice_equip_model(**nice_params)  # type: ignore
         else:
             nice_svt = await get_nice_servant_model(**nice_params)  # type: ignore
-        export_with_lore += nice_svt.json(exclude_unset=True, exclude_none=True)
-        export_without_lore += nice_svt.json(
-            exclude_unset=True, exclude_none=True, exclude={"profile"}
-        )
-        export_with_lore += ","
-        export_without_lore += ","
+        with_lore.append(nice_svt.json(**export_params))  # type: ignore
+        without_lore.append(nice_svt.json(exclude={"profile"}, **export_params))  # type: ignore
 
         if region == Region.JP:
             nice_params["lang"] = Language.en
@@ -118,36 +119,25 @@ async def dump_svt(
                 nice_svt_en = await get_nice_equip_model(**nice_params)  # type: ignore
             else:
                 nice_svt_en = await get_nice_servant_model(**nice_params)  # type: ignore
-            export_with_lore_en += nice_svt_en.json(
-                exclude_unset=True, exclude_none=True
-            )
-            export_without_lore_en += nice_svt_en.json(
-                exclude_unset=True, exclude_none=True, exclude={"profile"}
-            )
-            export_with_lore_en += ","
-            export_without_lore_en += ","
-
-    export_with_lore = export_with_lore.removesuffix(",") + "]"
-    export_without_lore = export_without_lore.removesuffix(",") + "]"
-    export_with_lore_en = export_with_lore_en.removesuffix(",") + "]"
-    export_without_lore_en = export_without_lore_en.removesuffix(",") + "]"
+            with_lore_en.append(nice_svt_en.json(**export_params))  # type: ignore
+            without_lore_en.append(nice_svt_en.json(exclude={"profile"}, **export_params))  # type: ignore
 
     out_name = base_export_path / f"{file_name}.json"
     out_lore_name = base_export_path / f"{file_name}_lore.json"
 
     async with aiofiles.open(out_lore_name, "w", encoding="utf-8") as fp:
-        await fp.write(export_with_lore)
+        await fp.write("[" + ",".join(with_lore) + "]")
     async with aiofiles.open(out_name, "w", encoding="utf-8") as fp:
-        await fp.write(export_without_lore)
+        await fp.write("[" + ",".join(without_lore) + "]")
 
     if region == Region.JP:
         out_name_en = base_export_path / f"{file_name}_lang_en.json"
         out_lore_name_en = base_export_path / f"{file_name}_lore_lang_en.json"
 
         async with aiofiles.open(out_lore_name_en, "w", encoding="utf-8") as fp:
-            await fp.write(export_with_lore_en)
+            await fp.write("[" + ",".join(with_lore_en) + "]")
         async with aiofiles.open(out_name_en, "w", encoding="utf-8") as fp:
-            await fp.write(export_without_lore_en)
+            await fp.write("[" + ",".join(without_lore_en) + "]")
 
 
 async def generate_exports(

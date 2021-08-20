@@ -484,15 +484,6 @@ async def get_servant_entity(
     return svt_entity
 
 
-async def get_all_raw_svts_lore(
-    conn: AsyncConnection, svts: list[MstSvt]
-) -> list[ServantEntity]:  # pragma: no cover
-    return [
-        await get_servant_entity(conn, svt.id, expand=True, lore=True, mstSvt=svt)
-        for svt in svts
-    ]
-
-
 async def get_mystic_code_entity(
     conn: AsyncConnection,
     mc_id: int,
