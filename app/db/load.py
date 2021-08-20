@@ -1,3 +1,4 @@
+import hashlib
 import time
 from collections import defaultdict
 from typing import Any, Optional, Sequence, Union
@@ -176,9 +177,11 @@ def load_script_list(
                 with open(script_path, "r", encoding="utf-8") as fp:
                     script_data = fp.read()
                     script_text = get_script_text_only(script_data)
+                    script_sha1 = hashlib.sha1(script_text.encode("utf-8")).hexdigest()
             else:
                 script_data = ""
                 script_text = ""
+                script_sha1 = ""
 
             script_name = script.removesuffix(".txt")
             quest_ids: list[Optional[int]] = []
@@ -207,6 +210,7 @@ def load_script_list(
                         "questId": quest_id,
                         "phase": phase,
                         "sceneType": sceneType,
+                        "rawScriptSHA1": script_sha1,
                         "rawScript": script_data,
                         "textScript": script_text,
                     }

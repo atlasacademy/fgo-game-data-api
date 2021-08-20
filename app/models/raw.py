@@ -1464,6 +1464,7 @@ ScriptFileList = Table(
     Column("questId", Integer, index=True),
     Column("phase", Integer, index=True),
     Column("sceneType", Integer),
+    Column("rawScriptSHA1", String),
     Column("rawScript", TEXT),
     Column("textScript", TEXT),
 )

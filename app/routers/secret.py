@@ -46,7 +46,6 @@ async def update_gamedata(
     async_engines: dict[Region, AsyncEngine] = Depends(get_async_engines),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    background_tasks.add_task(pull_and_update, REGION_PATHS, async_engines, redis)
     all_repo_info = await get_all_repo_info(redis)
     response_data = dict(
         message="Game data is being updated in the background",
@@ -55,6 +54,7 @@ async def update_gamedata(
     )
     response = pretty_print_response(response_data)
     response.headers["Bloom-Response-Ignore"] = "1"
+    background_tasks.add_task(pull_and_update, REGION_PATHS, async_engines, redis)
     return response
 
 
