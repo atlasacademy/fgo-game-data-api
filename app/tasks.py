@@ -65,7 +65,7 @@ async def dump_normal(
     base_export_path: Path, file_name: str, data: Any
 ) -> None:  # pragma: no cover
     async with aiofiles.open(base_export_path / f"{file_name}.json", "wb") as fp:
-        await fp.write(orjson.dumps(data))
+        await fp.write(orjson.dumps(data, option=orjson.OPT_NON_STR_KEYS))
 
 
 async def dump_orjson(
