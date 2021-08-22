@@ -1,6 +1,6 @@
-import json
 from typing import Any, Iterable, Mapping, Type, Union
 
+import orjson
 from fastapi.responses import Response
 from pydantic import BaseModel
 
@@ -80,5 +80,5 @@ def pretty_print_response(data: Any) -> Response:
     Convert data to a Starlette Response object with pretty printed json data.
     """
     return Response(
-        json.dumps(data, indent=2, ensure_ascii=False), media_type=JSON_MIME
+        orjson.dumps(data, option=orjson.OPT_INDENT_2), media_type=JSON_MIME
     )

@@ -308,7 +308,7 @@ phasesNoBattle = func.array_remove(
     func.array_agg(
         case(
             (
-                mstQuestPhaseDetail.c.flag.op("&")(QuestFlag.NO_BATTLE.value) != 0,  # type: ignore
+                mstQuestPhaseDetail.c.flag.op("&")(QuestFlag.NO_BATTLE.value) != 0,
                 mstQuestPhaseDetail.c.phase,
             ),
             (

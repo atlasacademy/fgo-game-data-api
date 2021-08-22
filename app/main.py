@@ -11,9 +11,8 @@ from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy.ext.asyncio import create_async_engine
 
-from app.core.info import get_all_repo_info
-
 from .config import SecretSettings, Settings, logger, project_root
+from .core.info import get_all_repo_info
 from .routers import basic, nice, raw, secret
 from .routers.deps import get_redis
 from .schemas.common import Region, RepoInfo

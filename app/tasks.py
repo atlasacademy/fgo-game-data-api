@@ -1,10 +1,10 @@
 import asyncio
-import json
 import time
 from pathlib import Path
 from typing import Any, Iterable
 
 import aiofiles
+import orjson
 from aioredis import Redis
 from git import Repo
 from pydantic import DirectoryPath
@@ -64,10 +64,8 @@ export_path = project_root / "export"
 async def dump_normal(
     base_export_path: Path, file_name: str, data: Any
 ) -> None:  # pragma: no cover
-    async with aiofiles.open(
-        base_export_path / f"{file_name}.json", "w", encoding="utf-8"
-    ) as fp:
-        await fp.write(json.dumps(data, ensure_ascii=False))
+    async with aiofiles.open(base_export_path / f"{file_name}.json", "wb") as fp:
+        await fp.write(orjson.dumps(data))
 
 
 async def dump_orjson(

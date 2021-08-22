@@ -2,8 +2,6 @@ from typing import Optional
 
 from sqlalchemy.ext.asyncio import AsyncConnection
 
-from app.core.utils import get_translation
-
 from ...config import Settings
 from ...db.helpers import fetch
 from ...schemas.common import Language, Region
@@ -25,6 +23,7 @@ from ...schemas.raw import (
     QuestEntity,
 )
 from .. import raw
+from ..utils import get_translation
 from .bgm import get_nice_bgm
 from .quest import get_nice_quest
 from .script import get_script_url

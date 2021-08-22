@@ -2411,7 +2411,7 @@
         { "id": 101, "type": 2, "objectId": 2, "priority": 0, "num": 1 }
       ],
       "phases": [1, 2, 3],
-      "phasesWithEnemies": [1, 2],
+      "phasesWithEnemies": [1, 2, 3],
       "phasesNoBattle": [],
       "allScripts": []
     },
@@ -2631,7 +2631,7 @@
         { "id": 101, "type": 2, "objectId": 2, "priority": 0, "num": 1 }
       ],
       "phases": [1, 2, 3],
-      "phasesWithEnemies": [1, 2],
+      "phasesWithEnemies": [1, 2, 3],
       "phasesNoBattle": [],
       "allScripts": []
     },
@@ -2686,7 +2686,7 @@
         { "id": 101, "type": 2, "objectId": 2, "priority": 0, "num": 1 }
       ],
       "phases": [1, 2, 3],
-      "phasesWithEnemies": [1, 3],
+      "phasesWithEnemies": [1, 2, 3],
       "phasesNoBattle": [],
       "allScripts": []
     }
