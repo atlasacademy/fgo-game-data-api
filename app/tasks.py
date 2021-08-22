@@ -166,7 +166,7 @@ async def generate_exports(
             all_mc_data = await get_all_nice_mcs(conn, region, Language.jp, mstEquips)
             all_cc_data = await get_all_nice_ccs(conn, region, Language.jp, mstCcs)
             all_bgm_data = await get_all_nice_bgms(conn, region, Language.jp, bgms)
-            all_mm_data = await get_all_nice_mms(conn, mstMasterMissions)
+            all_mm_data = await get_all_nice_mms(conn, mstMasterMissions, Language.jp)
 
             all_basic_servant_data = sort_by_collection_no(
                 await get_all_basic_servants(redis, region, Language.jp, all_servants)

@@ -565,10 +565,10 @@ def get_all_basic_wars(
     return (get_basic_war_from_raw(mstWar, lang) for mstWar in mstWars)
 
 
-def get_basic_quest_from_raw(mstQuest: MstQuestWithWar) -> BasicQuest:
+def get_basic_quest_from_raw(mstQuest: MstQuestWithWar, lang: Language) -> BasicQuest:
     return BasicQuest(
         id=mstQuest.id,
-        name=mstQuest.name,
+        name=get_translation(lang, mstQuest.name),
         type=QUEST_TYPE_NAME[mstQuest.type],
         consumeType=QUEST_CONSUME_TYPE_NAME[mstQuest.consumeType],
         consume=mstQuest.actConsume,
@@ -581,18 +581,22 @@ def get_basic_quest_from_raw(mstQuest: MstQuestWithWar) -> BasicQuest:
     )
 
 
-async def get_basic_quest(conn: AsyncConnection, quest_id: int) -> BasicQuest:
+async def get_basic_quest(
+    conn: AsyncConnection, quest_id: int, lang: Language
+) -> BasicQuest:
     mstQuest = await quest.get_one_quest_with_war(conn, quest_id)
     if not mstQuest:
         raise HTTPException(status_code=404, detail="Quest not found")
 
-    return get_basic_quest_from_raw(mstQuest)
+    return get_basic_quest_from_raw(mstQuest, lang)
 
 
-def get_basic_quest_phase_from_raw(mstQuestPhase: MstQuestWithPhase) -> BasicQuestPhase:
+def get_basic_quest_phase_from_raw(
+    mstQuestPhase: MstQuestWithPhase, lang: Language
+) -> BasicQuestPhase:
     return BasicQuestPhase(
         id=mstQuestPhase.id,
-        name=mstQuestPhase.name,
+        name=get_translation(lang, mstQuestPhase.name),
         type=QUEST_TYPE_NAME[mstQuestPhase.type],
         consumeType=QUEST_CONSUME_TYPE_NAME[mstQuestPhase.consumeType],
         consume=mstQuestPhase.actConsume,
@@ -612,10 +616,10 @@ def get_basic_quest_phase_from_raw(mstQuestPhase: MstQuestWithPhase) -> BasicQue
 
 
 async def get_basic_quest_phase(
-    conn: AsyncConnection, quest_id: int, phase: int
+    conn: AsyncConnection, quest_id: int, phase: int, lang: Language
 ) -> BasicQuestPhase:
     mstQuestPhase = await quest.get_one_quest_with_phase(conn, quest_id, phase)
     if not mstQuestPhase:
         raise HTTPException(status_code=404, detail="Quest Phase not found")
 
-    return get_basic_quest_phase_from_raw(mstQuestPhase)
+    return get_basic_quest_phase_from_raw(mstQuestPhase, lang)

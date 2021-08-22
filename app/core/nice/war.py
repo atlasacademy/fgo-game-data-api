@@ -90,7 +90,7 @@ async def get_nice_spot(
         id=raw_spot.id,
         joinSpotIds=raw_spot.joinSpotIds,
         mapId=raw_spot.mapId,
-        name=raw_spot.name,
+        name=get_translation(lang, raw_spot.name),
         image=AssetURL.spotImg.format(
             base_url=settings.asset_url,
             region=region,

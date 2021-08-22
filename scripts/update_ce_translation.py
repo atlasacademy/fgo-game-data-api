@@ -19,6 +19,8 @@ TRANSLATION_FILES = (
     "event_names",
     "war_names",
     "entity_names",
+    "quest_names",
+    "spot_names",
     "servant_names",
     "equip_names",
     "cc_names",
@@ -192,6 +194,12 @@ def update_translation(
                         "overWriteTDRuby", td_name
                     )
 
+    if master_file == "mstSkill":
+        with open(jp_master / "mstSkillAdd.json", "r", encoding="utf-8") as fp:
+            for skill_add in json.load(fp):
+                skill_id = skill_add["skillId"] * 10 + skill_add["priority"]
+                jp_names[skill_id] = skill_add["name"]
+
     updated_translation: dict[str, str] = {}
     for colNo, jp_name in sorted(jp_names.items(), key=lambda x: x[0]):
         if jp_name == "":
@@ -227,6 +235,10 @@ def update_translation(
                 jp_name, TRANSLATIONS.get(jp_name, jp_name)
             )
 
+    if master_file == "mstSkill":
+        with open(MAPPING_PATH / "skill_names.json", "r", encoding="utf-8") as fp:
+            updated_translation = json.load(fp) | updated_translation
+
     with open(mapping_path, "w", encoding="utf-8", newline="\n") as fp:
         json.dump(updated_translation, fp, indent=2, ensure_ascii=False)
         fp.write("\n")
@@ -246,6 +258,8 @@ def main(jp_master: Path, na_master: Path) -> None:
     update_translation("entity_names", jp_master, na_master, "mstSvt", get_entity_names)
     update_translation("bgm_names", jp_master, na_master, "mstBgm", get_names)
     update_translation("voice_names", jp_master, na_master, "mstVoice", get_voice_names)
+    update_translation("quest_names", jp_master, na_master, "mstQuest", get_names)
+    update_translation("spot_names", jp_master, na_master, "mstSpot", get_names)
     update_translation(
         "overwrite_voice_names",
         jp_master,

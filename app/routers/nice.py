@@ -649,12 +649,16 @@ async def get_item(
     responses=get_error_code([404]),
 )
 async def get_mm(
-    master_mission_id: int, conn: AsyncConnection = Depends(get_db)
+    master_mission_id: int,
+    conn: AsyncConnection = Depends(get_db),
+    lang: Language = Depends(language_parameter),
 ) -> Response:
     """
     Get the master mission data from the given master mission ID
     """
-    return item_response(await mm.get_nice_master_mission(conn, master_mission_id))
+    return item_response(
+        await mm.get_nice_master_mission(conn, master_mission_id, lang)
+    )
 
 
 @router.get(

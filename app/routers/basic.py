@@ -571,10 +571,11 @@ async def get_war(
 async def find_quest_phase(
     search_param: QuestSearchQueryParams = Depends(QuestSearchQueryParams),
     conn: AsyncConnection = Depends(get_db),
+    lang: Language = Depends(language_parameter),
 ) -> Response:
     matches = await search.search_quest(conn, search_param)
     return list_response(
-        [basic.get_basic_quest_phase_from_raw(quest) for quest in matches]
+        [basic.get_basic_quest_phase_from_raw(quest, lang) for quest in matches]
     )
 
 
@@ -587,13 +588,16 @@ async def find_quest_phase(
     responses=get_error_code([404, 500]),
 )
 async def get_quest_phase(
-    quest_id: int, phase: int, conn: AsyncConnection = Depends(get_db)
+    quest_id: int,
+    phase: int,
+    conn: AsyncConnection = Depends(get_db),
+    lang: Language = Depends(language_parameter),
 ) -> Response:
     """
     Get the basic quest phase data from the given quest ID and phase number
     """
     quest_response = item_response(
-        await basic.get_basic_quest_phase(conn, quest_id, phase)
+        await basic.get_basic_quest_phase(conn, quest_id, phase, lang)
     )
     return quest_response
 
@@ -606,9 +610,13 @@ async def get_quest_phase(
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-async def get_quest(quest_id: int, conn: AsyncConnection = Depends(get_db)) -> Response:
+async def get_quest(
+    quest_id: int,
+    conn: AsyncConnection = Depends(get_db),
+    lang: Language = Depends(language_parameter),
+) -> Response:
     """
     Get the basic quest data from the given quest ID
     """
-    quest_response = item_response(await basic.get_basic_quest(conn, quest_id))
+    quest_response = item_response(await basic.get_basic_quest(conn, quest_id, lang))
     return quest_response
