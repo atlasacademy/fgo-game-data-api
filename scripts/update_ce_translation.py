@@ -76,6 +76,23 @@ for translation_file in TRANSLATION_FILES:
                 ENTITY_TRANSLATIONS |= translation_data
 
 
+def update_enemy_translation() -> None:
+    translations: dict[str, str] = {}
+    for translation_f in TRANSLATION_FILES:
+        translation_p = MAPPING_PATH / f"{translation_f}.json"
+        if translation_p.exists():
+            with open(translation_p, "r", encoding="utf-8") as fp:
+                translations |= json.load(fp)
+
+    with open(MAPPING_PATH / "enemy_names.json", "r", encoding="utf-8") as fp:
+        enemies = json.load(fp)
+
+    translated = {k: translations.get(k, v) for k, v in enemies.items()}
+
+    with open(MAPPING_PATH / "enemy_names.json", "w", encoding="utf-8") as fp:
+        json.dump(translated, fp, indent=2, ensure_ascii=False)
+
+
 def is_servant(svt: Any) -> bool:
     return bool(
         svt["type"]
@@ -267,6 +284,7 @@ def main(jp_master: Path, na_master: Path) -> None:
         "mstSvtVoice",
         get_svt_voice_names,
     )
+    update_enemy_translation()
 
 
 if __name__ == "__main__":

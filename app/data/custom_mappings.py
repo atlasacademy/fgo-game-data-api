@@ -13,6 +13,7 @@ TRANSLATIONS: dict[str, str] = {}
 
 
 class Translation(str, Enum):
+    ENEMY = "enemy_names"
     VOICE = "voice_names"
     OVERWRITE_VOICE = "overwrite_voice_names"
     BGM = "bgm_names"
@@ -24,7 +25,6 @@ class Translation(str, Enum):
     ENTITY = "entity_names"
     QUEST = "quest_names"
     SPOT = "spot_names"
-    ENEMY = "enemy_names"
     SERVANT = "servant_names"
     EQUIP = "equip_names"
     CC = "cc_names"
