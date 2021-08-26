@@ -1,6 +1,7 @@
 from typing import Iterable, Optional, Union
 
 from sqlalchemy import Table
+from sqlalchemy.dialects.postgresql import array_agg
 from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import Join, and_, case, func, literal_column, or_, select
 from sqlalchemy.sql.elements import ClauseElement
@@ -300,12 +301,12 @@ JOINED_QUEST_ENTITY_TABLES = JOINED_QUEST_TABLES.outerjoin(
 
 
 phasesWithEnemies = func.to_jsonb(
-    func.array_remove(func.array_agg(rayshiftQuest.c.phase.distinct()), None)
+    func.array_remove(array_agg(rayshiftQuest.c.phase.distinct()), None)
 ).label("phasesWithEnemies")
 
 
 phasesNoBattle = func.array_remove(
-    func.array_agg(
+    array_agg(
         case(
             (
                 mstQuestPhaseDetail.c.flag.op("&")(QuestFlag.NO_BATTLE.value) != 0,
@@ -331,15 +332,12 @@ SELECT_QUEST_ENTITY = [
     sql_jsonb_agg(mstClosedMessage),
     sql_jsonb_agg(mstGift),
     func.to_jsonb(
-        func.array_remove(func.array_agg(mstQuestPhase.c.phase.distinct()), None)
+        func.array_remove(array_agg(mstQuestPhase.c.phase.distinct()), None)
     ).label("phases"),
     phasesWithEnemies,
     phasesNoBattle,
     func.to_jsonb(
-        func.array_remove(
-            func.array_agg(scripts_cte.table_valued().distinct()),
-            None,
-        )
+        func.array_remove(array_agg(scripts_cte.table_valued().distinct()), None)
     ).label("allScripts"),
 ]
 
@@ -462,12 +460,11 @@ async def get_quest_phase_entity(
         ),
         sql_jsonb_agg(mstQuestMessage),
         func.array_remove(
-            func.array_agg(ScriptFileList.c.scriptFileName.distinct()), None
+            array_agg(ScriptFileList.c.scriptFileName.distinct()), None
         ).label("scripts"),
         func.to_jsonb(
             func.array_remove(
-                func.array_agg(all_scripts_cte.table_valued().distinct()),
-                None,
+                array_agg(all_scripts_cte.table_valued().distinct()), None
             )
         ).label("allScripts"),
         sql_jsonb_agg(mstStage),

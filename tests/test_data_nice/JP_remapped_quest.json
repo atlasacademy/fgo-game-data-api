@@ -1861,7 +1861,7 @@
               "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/102700/card_servant_np.png",
               "rank": "－",
               "type": "対人魔剣",
-              "detail": "敵単体に超強力な防御力無視攻撃＆防御力を大ダウン(3ターン)<オーバーチャージで効果UP>",
+              "detail": "敵単体に超強力な防御力無視攻撃＆防御力を大ダウン(3ターン)<オーバーチャージで効果アップ>",
               "npGain": {
                 "buster": [109, 109, 109, 109, 109],
                 "arts": [109, 109, 109, 109, 109],

@@ -1,5 +1,5 @@
 from sqlalchemy import Integer, Table
-from sqlalchemy.dialects.postgresql import ARRAY
+from sqlalchemy.dialects.postgresql import ARRAY, array, array_agg
 from sqlalchemy.exc import DBAPIError
 from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import cast, func, select
@@ -16,11 +16,11 @@ async def get_ai_entity(
             func.jsonb_build_object(
                 "svt" if ai_table is mstAi else "field",
                 func.coalesce(
-                    func.array_remove(func.array_agg(ai_table.c.id.distinct()), None),
+                    func.array_remove(array_agg(ai_table.c.id.distinct()), None),
                     [],
                 ),
                 "field" if ai_table is mstAi else "svt",
-                cast([], ARRAY(Integer)),  # type: ignore
+                cast(array([]), ARRAY(Integer)),
             )
         )
         .select_from(ai_table)

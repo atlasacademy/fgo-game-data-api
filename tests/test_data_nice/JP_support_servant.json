@@ -797,7 +797,7 @@
           "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/200100/card_servant_np.png",
           "rank": "E～A",
           "type": "？？？？",
-          "detail": "敵全体に強力な防御力無視攻撃▲＆攻撃力をダウン(3ターン)<オーバーチャージで効果UP>",
+          "detail": "敵全体に強力な防御力無視攻撃▲＆攻撃力をダウン(3ターン)<オーバーチャージで効果アップ>",
           "npGain": {
             "buster": [51, 51, 51, 51, 51],
             "arts": [51, 51, 51, 51, 51],

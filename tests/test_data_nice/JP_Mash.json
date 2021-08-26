@@ -4806,7 +4806,7 @@
       "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/800100/card_servant_np.png",
       "rank": "D",
       "type": "対人宝具",
-      "detail": "味方全体の防御力をアップ(3ターン)<オーバーチャージで効果UP>＆被ダメージカット状態を付与(3ターン)",
+      "detail": "味方全体の防御力をアップ(3ターン)<オーバーチャージで効果アップ>＆被ダメージカット状態を付与(3ターン)",
       "npGain": {
         "buster": [84, 84, 84, 84, 84],
         "arts": [84, 84, 84, 84, 84],
@@ -4974,7 +4974,7 @@
       "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/800100/card_servant_np1.png",
       "rank": "B+++",
       "type": "対悪宝具",
-      "detail": "味方全体の防御力をアップ(3ターン)<オーバーチャージで効果UP>＆被ダメージカット状態を付与(3ターン)＋自身を除く味方全体の攻撃力をアップ(3ターン)",
+      "detail": "味方全体の防御力をアップ(3ターン)<オーバーチャージで効果アップ>＆被ダメージカット状態を付与(3ターン)＋自身を除く味方全体の攻撃力をアップ(3ターン)",
       "npGain": {
         "buster": [84, 84, 84, 84, 84],
         "arts": [84, 84, 84, 84, 84],
@@ -5208,7 +5208,7 @@
       "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/800100/card_servant_np2.png",
       "rank": "D",
       "type": "対人宝具",
-      "detail": "味方全体の防御力をアップ(3ターン)<オーバーチャージで効果UP>＆被ダメージカット状態を付与(3回・5ターン)",
+      "detail": "味方全体の防御力をアップ(3ターン)<オーバーチャージで効果アップ>＆被ダメージカット状態を付与(3回・5ターン)",
       "npGain": {
         "buster": [84, 84, 84, 84, 84],
         "arts": [84, 84, 84, 84, 84],
@@ -5376,7 +5376,7 @@
       "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/800100/card_servant_np2.png",
       "rank": "D",
       "type": "対人宝具",
-      "detail": "味方全体の防御力をアップ(3ターン)<オーバーチャージで効果UP>＆被ダメージカット状態を付与(3回・5ターン)",
+      "detail": "味方全体の防御力をアップ(3ターン)<オーバーチャージで効果アップ>＆被ダメージカット状態を付与(3回・5ターン)",
       "npGain": {
         "buster": [84, 84, 84, 84, 84],
         "arts": [84, 84, 84, 84, 84],

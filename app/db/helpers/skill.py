@@ -1,6 +1,6 @@
 from typing import Any, Iterable, Optional
 
-from sqlalchemy.dialects.postgresql import aggregate_order_by
+from sqlalchemy.dialects.postgresql import aggregate_order_by, array_agg
 from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import and_, func, literal_column, select
 
@@ -41,12 +41,12 @@ async def get_skillEntity(
             func.jsonb_build_object(
                 "svt",
                 func.coalesce(
-                    func.array_remove(func.array_agg(mstAi.c.id.distinct()), None),
+                    func.array_remove(array_agg(mstAi.c.id.distinct()), None),
                     [],
                 ),
                 "field",
                 func.coalesce(
-                    func.array_remove(func.array_agg(mstAiField.c.id.distinct()), None),
+                    func.array_remove(array_agg(mstAiField.c.id.distinct()), None),
                     [],
                 ),
             ).label("aiIds"),
