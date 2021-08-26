@@ -162,3 +162,7 @@ class TestBasicSpecial:
             svt["id"] for svt in response.json()["reverse"]["basic"]["servant"]
         ]
         assert reverse_svt_ids == [303800, 1100700]
+
+    async def test_enemy_changelog(self, client: AsyncClient) -> None:
+        response = await client.get("basic/NA/quest/phase/latestEnemyData")
+        assert response.status_code == 200

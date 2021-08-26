@@ -623,3 +623,12 @@ async def get_basic_quest_phase(
         raise HTTPException(status_code=404, detail="Quest Phase not found")
 
     return get_basic_quest_phase_from_raw(mstQuestPhase, lang)
+
+
+async def get_basic_quest_latest_with_enemies(
+    conn: AsyncConnection, lang: Language
+) -> list[BasicQuestPhase]:
+    raw_phases = await quest.get_latest_quest_with_enemies(conn)
+    return [
+        get_basic_quest_phase_from_raw(quest_phase, lang) for quest_phase in raw_phases
+    ]

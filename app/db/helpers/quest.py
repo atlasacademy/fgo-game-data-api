@@ -114,6 +114,32 @@ async def get_one_quest_with_phase(
     return None
 
 
+async def get_latest_quest_with_enemies(
+    conn: AsyncConnection, limit_result: int = 50
+) -> list[MstQuestWithPhase]:
+    min_query_id = func.min(rayshiftQuest.c.queryId).label("min_queryId")
+    latest_rayshifts = (
+        select(rayshiftQuest.c.questId, rayshiftQuest.c.phase, min_query_id)
+        .group_by(rayshiftQuest.c.questId, rayshiftQuest.c.phase)
+        .order_by(min_query_id.desc())
+        .limit(limit_result)
+        .cte()
+    )
+    stmt = MSTQUEST_WITH_PHASE_SELECT.select_from(
+        MSTQUEST_WITH_PHASE_FROM.join(
+            latest_rayshifts,
+            and_(
+                mstQuestPhase.c.questId == latest_rayshifts.c.questId,
+                mstQuestPhase.c.phase == latest_rayshifts.c.phase,
+            ),
+        )
+    ).order_by(latest_rayshifts.c.min_queryId.desc())
+
+    rows = (await conn.execute(stmt)).fetchall()
+
+    return [MstQuestWithPhase.from_orm(row) for row in rows]
+
+
 async def get_quest_phase_search(
     conn: AsyncConnection,
     name: Optional[str] = None,

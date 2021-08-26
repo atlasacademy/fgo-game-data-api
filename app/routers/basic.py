@@ -560,6 +560,24 @@ async def get_war(
 
 
 @router.get(
+    "/{region}/quest/phase/latestEnemyData",
+    summary="Get latest quests with enemy data",
+    response_description="Basic Quest Phase Entities",
+    response_model=list[BasicQuestPhase],
+    response_model_exclude_unset=True,
+)
+async def get_latest_quest_phase_with_enemies(
+    conn: AsyncConnection = Depends(get_db),
+    lang: Language = Depends(language_parameter),
+) -> Response:
+    response = list_response(
+        await basic.get_basic_quest_latest_with_enemies(conn, lang)
+    )
+    response.headers["Bloom-Response-TTL"] = str(settings.quest_cache_length)
+    return response
+
+
+@router.get(
     "/{region}/quest/phase/search",
     summary="Find and get quest phase data",
     description=QuestSearchQueryParams.DESCRIPTION,
