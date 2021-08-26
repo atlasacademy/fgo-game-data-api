@@ -276,8 +276,8 @@
             "[1000,3000]",
             "[1000,1]",
             "[1000,3,-1,200]",
-            "[1000,10]",
-            "[1000,1,-1,200]"
+            "[5000,10]",
+            "[5000,1,-1,200]"
           ],
           "script": { "STAR_HIGHER": 10 },
           "skillId": 334552,
@@ -292,8 +292,8 @@
             "[1000,3200]",
             "[1000,1]",
             "[1000,3,-1,200]",
-            "[1000,10]",
-            "[1000,1,-1,200]"
+            "[5000,10]",
+            "[5000,1,-1,200]"
           ],
           "script": { "STAR_HIGHER": 10 },
           "skillId": 334552,
@@ -308,8 +308,8 @@
             "[1000,3400]",
             "[1000,1]",
             "[1000,3,-1,200]",
-            "[1000,10]",
-            "[1000,1,-1,200]"
+            "[5000,10]",
+            "[5000,1,-1,200]"
           ],
           "script": { "STAR_HIGHER": 10 },
           "skillId": 334552,
@@ -324,8 +324,8 @@
             "[1000,3600]",
             "[1000,1]",
             "[1000,3,-1,200]",
-            "[1000,10]",
-            "[1000,1,-1,200]"
+            "[5000,10]",
+            "[5000,1,-1,200]"
           ],
           "script": { "STAR_HIGHER": 10 },
           "skillId": 334552,
@@ -340,8 +340,8 @@
             "[1000,3800]",
             "[1000,1]",
             "[1000,3,-1,200]",
-            "[1000,10]",
-            "[1000,1,-1,200]"
+            "[5000,10]",
+            "[5000,1,-1,200]"
           ],
           "script": { "STAR_HIGHER": 10 },
           "skillId": 334552,
@@ -356,8 +356,8 @@
             "[1000,4000]",
             "[1000,1]",
             "[1000,3,-1,200]",
-            "[1000,10]",
-            "[1000,1,-1,200]"
+            "[5000,10]",
+            "[5000,1,-1,200]"
           ],
           "script": { "STAR_HIGHER": 10 },
           "skillId": 334552,
@@ -372,8 +372,8 @@
             "[1000,4200]",
             "[1000,1]",
             "[1000,3,-1,200]",
-            "[1000,10]",
-            "[1000,1,-1,200]"
+            "[5000,10]",
+            "[5000,1,-1,200]"
           ],
           "script": { "STAR_HIGHER": 10 },
           "skillId": 334552,
@@ -388,8 +388,8 @@
             "[1000,4400]",
             "[1000,1]",
             "[1000,3,-1,200]",
-            "[1000,10]",
-            "[1000,1,-1,200]"
+            "[5000,10]",
+            "[5000,1,-1,200]"
           ],
           "script": { "STAR_HIGHER": 10 },
           "skillId": 334552,
@@ -404,8 +404,8 @@
             "[1000,4600]",
             "[1000,1]",
             "[1000,3,-1,200]",
-            "[1000,10]",
-            "[1000,1,-1,200]"
+            "[5000,10]",
+            "[5000,1,-1,200]"
           ],
           "script": { "STAR_HIGHER": 10 },
           "skillId": 334552,
@@ -420,8 +420,8 @@
             "[1000,5000]",
             "[1000,1]",
             "[1000,3,-1,200]",
-            "[1000,10]",
-            "[1000,1,-1,200]"
+            "[5000,10]",
+            "[5000,1,-1,200]"
           ],
           "script": { "STAR_HIGHER": 10 },
           "skillId": 334552,
@@ -620,7 +620,7 @@
       ],
       "mstSvtSkill": [
         {
-          "strengthStatus": 2,
+          "strengthStatus": 99,
           "svtId": 202300,
           "num": 2,
           "priority": 2,
@@ -801,7 +801,8 @@
         "rank": "？",
         "maxLv": 5,
         "typeText": "Anti-Army",
-        "attackAttri": 1
+        "attackAttri": 1,
+        "effectFlag": 2
       },
       "mstTreasureDeviceDetail": [
         {
@@ -937,7 +938,8 @@
         "rank": "A+",
         "maxLv": 5,
         "typeText": "Anti-Army",
-        "attackAttri": 1
+        "attackAttri": 1,
+        "effectFlag": 2
       },
       "mstTreasureDeviceDetail": [
         {
@@ -1504,6 +1506,7 @@
     {
       "svtId": 202300,
       "id": 11,
+      "groupIndex": 0,
       "name": "Grey Collar",
       "shortName": "Grey Collar",
       "detail": "A bartender's outfit with a butterfly motif. The Professor's fashion sense really shines through in this outfit.",
@@ -2011,7 +2014,7 @@
       "id": 7,
       "priority": 0,
       "condMessage": "",
-      "comment": "It will be revealed when you complete a certain quest.",
+      "comment": "",
       "condType": 1,
       "condValue2": 0
     }
@@ -2022,109 +2025,326 @@
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_H010", "face": 2, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H011", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_H012", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_H010",
+              "face": 2,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H011",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H012",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 1, "value": 0, "eventId": 0 }]
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_H020", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H021", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_H020",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H021",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 2, "value": 0, "eventId": 0 }]
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_H030", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_H030",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_H040", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H041", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_H040",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H041",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_H050", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H051", "face": 3, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_H052", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_H050",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H051",
+              "face": 3,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H052",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_H060", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H061", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_H062", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_H060",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H061",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H062",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_H070", "face": 4, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H071", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_H072", "face": 1, "delay": 0.3, "text": "", "form": 0 }
+            {
+              "id": "0_H070",
+              "face": 4,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H071",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H072",
+              "face": 1,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_H080", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H081", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_H082", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_H080",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H081",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H082",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_H090", "face": 1, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_H090",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 3, "value": 1, "eventId": 0 }]
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_H100", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_H100",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 3, "value": 2, "eventId": 0 }]
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_H110", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H111", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_H110",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H111",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 3, "value": 3, "eventId": 0 }]
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_H120", "face": 4, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H121", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_H120",
+              "face": 4,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H121",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 3, "value": 4, "eventId": 0 }]
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_H130", "face": 1, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H131", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_H132", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_H133", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_H134", "face": 4, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_H130",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H131",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H132",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H133",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H134",
+              "face": 4,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 3, "value": 5, "eventId": 0 }]
         }
@@ -2138,49 +2358,140 @@
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_G010", "face": 1, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_G010",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 8, "value": 0, "eventId": 0 }]
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_G9010", "face": 1, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_G9010",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 8, "value": 0, "eventId": 0 }]
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_G030", "face": 1, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_G031", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_G032", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_G030",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G031",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G032",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 9, "value": 1, "eventId": 0 }]
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_G020", "face": 3, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_G021", "face": 4, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_G020",
+              "face": 3,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G021",
+              "face": 4,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 10, "value": 0, "eventId": 0 }]
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_G040", "face": 4, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_G041", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_G042", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_G040",
+              "face": 4,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G041",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G042",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 9, "value": 3, "eventId": 0 }]
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_G050", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_G051", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_G052", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_G050",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G051",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G052",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 11, "value": 0, "eventId": 0 }]
         }
@@ -2199,35 +2510,40 @@
               "face": 1,
               "delay": 0.0,
               "text": "Hahahaha!",
-              "form": 0
+              "form": 0,
+              "changeEffect": 0
             },
             {
               "id": "0_S011",
               "face": 1,
               "delay": 0.1,
               "text": "[r]\nYou must be a peculiar Master to have summoned me!",
-              "form": 0
+              "form": 0,
+              "changeEffect": 0
             },
             {
               "id": "0_S012",
               "face": 0,
               "delay": 0.1,
               "text": "[r]\nMy Class is Archer.[r]\nFor now, I shall hold off on revealing my True Name!",
-              "form": 0
+              "form": 0,
+              "changeEffect": 0
             },
             {
               "id": "0_S013",
               "face": 2,
               "delay": 0.1,
               "text": "[r]\nBut I am strong.",
-              "form": 0
+              "form": 0,
+              "changeEffect": 0
             },
             {
               "id": "0_S014",
               "face": 2,
               "delay": 0.1,
               "text": " That much I can guarantee!",
-              "form": 0
+              "form": 0,
+              "changeEffect": 0
             }
           ],
           "conds": []
@@ -2242,126 +2558,252 @@
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_B010", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B010",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_B020", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B020",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_B030", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B030",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_B040", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B040",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_B080", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B080",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_B090", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B090",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_B100", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B100",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_B110", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B110",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_B120", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B120",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_B130", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B130",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_B140", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B140",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_B150", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B150",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_B160", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B160",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_B170", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B170",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_B180", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B180",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_B190", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B190",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_B200", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B200",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "",
           "infos": [
-            { "id": "0_B210", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B210",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         }
@@ -2374,10 +2816,34 @@
       "scriptJson": [
         {
           "infos": [
-            { "id": "0_B050", "face": 4, "delay": 0.0, "form": 0 },
-            { "id": "0_B051", "face": 4, "delay": 5.178597, "form": 0 },
-            { "id": "0_B052", "face": 4, "delay": 8.233999, "form": 0 },
-            { "id": "0_B053", "face": 4, "delay": 0.0, "form": 0 }
+            {
+              "id": "0_B050",
+              "face": 4,
+              "delay": 0.0,
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_B051",
+              "face": 4,
+              "delay": 5.178597,
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_B052",
+              "face": 4,
+              "delay": 8.233999,
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_B053",
+              "face": 4,
+              "delay": 0.0,
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 0, "eventId": 0 }]
         }
@@ -2391,25 +2857,74 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 1",
           "infos": [
-            { "id": "0_I9010", "face": 1, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_I9011", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_I9010",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9011",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 2",
           "infos": [
-            { "id": "0_I9020", "face": 6, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_I9021", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9022", "face": 4, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_I9020",
+              "face": 6,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9021",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9022",
+              "face": 4,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 3",
           "infos": [
-            { "id": "0_I9030", "face": 3, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_I9031", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_I9030",
+              "face": 3,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9031",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 18, "value": 80237, "eventId": 0 },
@@ -2419,9 +2934,30 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 4",
           "infos": [
-            { "id": "0_I9040", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_I9041", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9042", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_I9040",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9041",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9042",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 18, "value": 80237, "eventId": 0 },
@@ -2431,8 +2967,22 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 5",
           "infos": [
-            { "id": "0_I9050", "face": 2, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_I9051", "face": 4, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_I9050",
+              "face": 2,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9051",
+              "face": 4,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 18, "value": 80237, "eventId": 0 },
@@ -2442,58 +2992,212 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 6",
           "infos": [
-            { "id": "0_I9060", "face": 3, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_I9061", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9062", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_I9060",
+              "face": 3,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9061",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9062",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 7",
           "infos": [
-            { "id": "0_I9070", "face": 3, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_I9071", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_I9070",
+              "face": 3,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9071",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 8",
           "infos": [
-            { "id": "0_I9080", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_I9081", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9082", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9083", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9084", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_I9080",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9081",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9082",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9083",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9084",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 9",
           "infos": [
-            { "id": "0_I9090", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_I9091", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9092", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9093", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9094", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9095", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_I9090",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9091",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9092",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9093",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9094",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9095",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 10",
           "infos": [
-            { "id": "0_I9100", "face": 1, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_I9101", "face": 3, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9102", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_I9100",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9101",
+              "face": 3,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9102",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 11",
           "infos": [
-            { "id": "0_I9110", "face": 1, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_I9111", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9112", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_I9110",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9111",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9112",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -2503,41 +3207,160 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 12",
           "infos": [
-            { "id": "0_I9120", "face": 4, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_I9121", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9122", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9123", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_I9120",
+              "face": 4,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9121",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9122",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9123",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 13",
           "infos": [
-            { "id": "0_I9130", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_I9131", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9132", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_I9130",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9131",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9132",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 14",
           "infos": [
-            { "id": "0_I9410", "face": 2, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_I9411", "face": 6, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9412", "face": 6, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9413", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9414", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9415", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_I9410",
+              "face": 2,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9411",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9412",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9413",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9414",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9415",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 15",
           "infos": [
-            { "id": "0_I9500", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_I9501", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9502", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9503", "face": 6, "delay": 0.3, "text": "", "form": 0 }
+            {
+              "id": "0_I9500",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9501",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9502",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9503",
+              "face": 6,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -2547,12 +3370,54 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 16",
           "infos": [
-            { "id": "0_I9510", "face": 5, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_I9511", "face": 5, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9512", "face": 5, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9513", "face": 6, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9514", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9515", "face": 2, "delay": 0.3, "text": "", "form": 0 }
+            {
+              "id": "0_I9510",
+              "face": 5,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9511",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9512",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9513",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9514",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9515",
+              "face": 2,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -2562,11 +3427,46 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 17",
           "infos": [
-            { "id": "0_I9520", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_I9521", "face": 5, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9522", "face": 5, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9523", "face": 3, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9524", "face": 5, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_I9520",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9521",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9522",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9523",
+              "face": 3,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9524",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -2576,12 +3476,54 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 18",
           "infos": [
-            { "id": "0_I9530", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_I9531", "face": 3, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9532", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9533", "face": 5, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9534", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9535", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_I9530",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9531",
+              "face": 3,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9532",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9533",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9534",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9535",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -2591,12 +3533,54 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 19",
           "infos": [
-            { "id": "0_I9540", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_I9541", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9542", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9543", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9544", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9545", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_I9540",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9541",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9542",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9543",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9544",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9545",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -2606,12 +3590,54 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 20",
           "infos": [
-            { "id": "0_I9550", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_I9551", "face": 5, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9552", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9553", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9554", "face": 5, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9555", "face": 5, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_I9550",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9551",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9552",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9553",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9554",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9555",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -2621,11 +3647,46 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 21",
           "infos": [
-            { "id": "0_I9560", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_I9561", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9562", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9563", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_I9564", "face": 5, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_I9560",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9561",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9562",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9563",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I9564",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -2647,16 +3708,25 @@
               "face": 1,
               "delay": 0.0,
               "text": "",
-              "form": 0
+              "form": 0,
+              "changeEffect": 0
             },
             {
               "id": "11_H9001",
               "face": 0,
               "delay": 0.1,
               "text": "",
-              "form": 0
+              "form": 0,
+              "changeEffect": 0
             },
-            { "id": "11_H9002", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_H9002",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         }
@@ -2670,24 +3740,66 @@
         {
           "overwriteName": "Level Up Grey Collar",
           "infos": [
-            { "id": "11_G010", "face": 1, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_G010",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 8, "value": 0, "eventId": 0 }]
         },
         {
           "overwriteName": "Level Up Grey Collar",
           "infos": [
-            { "id": "11_G9410", "face": 1, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_G9410",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 8, "value": 0, "eventId": 0 }]
         },
         {
           "overwriteName": "Unlock Wardrobe Grey Collar",
           "infos": [
-            { "id": "11_G060", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_G061", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_G062", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_G063", "face": 2, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_G060",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_G061",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_G062",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_G063",
+              "face": 2,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 23, "value": 11, "eventId": 0 }]
         }
@@ -2701,126 +3813,252 @@
         {
           "overwriteName": "Battle Start 1 Grey Collar",
           "infos": [
-            { "id": "11_B9100", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B9100",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Battle Start 2 Grey Collar",
           "infos": [
-            { "id": "11_B9110", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B9110",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Skill 1 Grey Collar",
           "infos": [
-            { "id": "11_B9080", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B9080",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Skill 2 Grey Collar",
           "infos": [
-            { "id": "11_B9090", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B9090",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Command Card 1 Grey Collar",
           "infos": [
-            { "id": "11_B9180", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B9180",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Command Card 2 Grey Collar",
           "infos": [
-            { "id": "11_B9190", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B9190",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Command Card 3 Grey Collar",
           "infos": [
-            { "id": "11_B9200", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B9200",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Noble Phantasm Card Grey Collar",
           "infos": [
-            { "id": "11_B9210", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B9210",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Attack 1 Grey Collar",
           "infos": [
-            { "id": "11_B9010", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B9010",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Attack 2 Grey Collar",
           "infos": [
-            { "id": "11_B9020", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B9020",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Attack 3 Grey Collar",
           "infos": [
-            { "id": "11_B9030", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B9030",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Extra Attack Grey Collar",
           "infos": [
-            { "id": "11_B9040", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B9040",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Damage 1 Grey Collar",
           "infos": [
-            { "id": "11_B9150", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B9150",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Damage 2 Grey Collar",
           "infos": [
-            { "id": "11_B9140", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B9140",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Incapacitated 1 Grey Collar",
           "infos": [
-            { "id": "11_B9160", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B9160",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Incapacitated 2 Grey Collar",
           "infos": [
-            { "id": "11_B9170", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B9170",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Victory 1 Grey Collar",
           "infos": [
-            { "id": "11_B9120", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B9120",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Victory 2 Grey Collar",
           "infos": [
-            { "id": "11_B9130", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B9130",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         }
@@ -2834,25 +4072,74 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 1",
           "infos": [
-            { "id": "11_I010", "face": 1, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I011", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I010",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I011",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 2",
           "infos": [
-            { "id": "11_I020", "face": 6, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I021", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I022", "face": 4, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I020",
+              "face": 6,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I021",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I022",
+              "face": 4,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 3",
           "infos": [
-            { "id": "11_I030", "face": 3, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I031", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I030",
+              "face": 3,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I031",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 18, "value": 80237, "eventId": 0 },
@@ -2862,9 +4149,30 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 4",
           "infos": [
-            { "id": "11_I040", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I041", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I042", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I040",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I041",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I042",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 18, "value": 80237, "eventId": 0 },
@@ -2874,8 +4182,22 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 5",
           "infos": [
-            { "id": "11_I050", "face": 2, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I051", "face": 4, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I050",
+              "face": 2,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I051",
+              "face": 4,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 18, "value": 80237, "eventId": 0 },
@@ -2885,9 +4207,30 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 6",
           "infos": [
-            { "id": "11_I580", "face": 3, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I581", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I582", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I580",
+              "face": 3,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I581",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I582",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -2897,58 +4240,212 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 6",
           "infos": [
-            { "id": "11_I060", "face": 3, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I061", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I062", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I060",
+              "face": 3,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I061",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I062",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 7",
           "infos": [
-            { "id": "11_I070", "face": 3, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I071", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I070",
+              "face": 3,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I071",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 8",
           "infos": [
-            { "id": "11_I080", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I081", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I082", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I083", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I084", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I080",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I081",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I082",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I083",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I084",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 9",
           "infos": [
-            { "id": "11_I090", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I091", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I092", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I093", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I094", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I095", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I090",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I091",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I092",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I093",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I094",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I095",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 10",
           "infos": [
-            { "id": "11_I100", "face": 1, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I101", "face": 3, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I102", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I100",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I101",
+              "face": 3,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I102",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 11",
           "infos": [
-            { "id": "11_I110", "face": 1, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I111", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I112", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I110",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I111",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I112",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -2958,41 +4455,160 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 12",
           "infos": [
-            { "id": "11_I120", "face": 4, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I121", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I122", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I123", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I120",
+              "face": 4,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I121",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I122",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I123",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 13",
           "infos": [
-            { "id": "11_I130", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I131", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I132", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I130",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I131",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I132",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 14",
           "infos": [
-            { "id": "11_I410", "face": 2, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I411", "face": 6, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I412", "face": 6, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I413", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I414", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I415", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I410",
+              "face": 2,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I411",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I412",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I413",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I414",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I415",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 15",
           "infos": [
-            { "id": "11_I500", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I501", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I502", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I503", "face": 6, "delay": 0.3, "text": "", "form": 0 }
+            {
+              "id": "11_I500",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I501",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I502",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I503",
+              "face": 6,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -3002,12 +4618,54 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 16",
           "infos": [
-            { "id": "11_I510", "face": 5, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I511", "face": 5, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I512", "face": 5, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I513", "face": 6, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I514", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I515", "face": 2, "delay": 0.3, "text": "", "form": 0 }
+            {
+              "id": "11_I510",
+              "face": 5,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I511",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I512",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I513",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I514",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I515",
+              "face": 2,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -3017,11 +4675,46 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 17",
           "infos": [
-            { "id": "11_I520", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I521", "face": 5, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I522", "face": 5, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I523", "face": 3, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I524", "face": 5, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I520",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I521",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I522",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I523",
+              "face": 3,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I524",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -3031,12 +4724,54 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 18",
           "infos": [
-            { "id": "11_I530", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I531", "face": 3, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I532", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I533", "face": 5, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I534", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I535", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I530",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I531",
+              "face": 3,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I532",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I533",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I534",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I535",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -3046,12 +4781,54 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 19",
           "infos": [
-            { "id": "11_I540", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I541", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I542", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I543", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I544", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I545", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I540",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I541",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I542",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I543",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I544",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I545",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -3061,12 +4838,54 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 20",
           "infos": [
-            { "id": "11_I550", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I551", "face": 5, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I552", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I553", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I554", "face": 5, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I555", "face": 5, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I550",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I551",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I552",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I553",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I554",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I555",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -3076,11 +4895,46 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 21",
           "infos": [
-            { "id": "11_I560", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I561", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I562", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I563", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I564", "face": 5, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I560",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I561",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I562",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I563",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I564",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -3097,138 +4951,390 @@
         {
           "overwriteName": "Birthday (True Name Known)",
           "infos": [
-            { "id": "0_H010", "face": 3, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H011", "face": 2, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_H010",
+              "face": 3,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H011",
+              "face": 2,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 1, "value": 0, "eventId": 0 }]
         },
         {
           "overwriteName": "During an Event (True Name Known)",
           "infos": [
-            { "id": "0_H020", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H021", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_H020",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H021",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 2, "value": 0, "eventId": 0 }]
         },
         {
           "overwriteName": "Conversation 1 (True Name Known)",
           "infos": [
-            { "id": "0_H030", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_H030",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Conversation 2 (True Name Known)",
           "infos": [
-            { "id": "0_H040", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H041", "face": 2, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_H040",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H041",
+              "face": 2,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Conversation 3 (True Name Known)",
           "infos": [
-            { "id": "0_H050", "face": 1, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H051", "face": 2, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_H052", "face": 4, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_H050",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H051",
+              "face": 2,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H052",
+              "face": 4,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Likes (True Name Known)",
           "infos": [
-            { "id": "0_H060", "face": 1, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H061", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_H060",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H061",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Dislikes (True Name Known)",
           "infos": [
-            { "id": "0_H070", "face": 2, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H071", "face": 2, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_H070",
+              "face": 2,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H071",
+              "face": 2,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "About the Holy Grail (True Name Known)",
           "infos": [
-            { "id": "0_H080", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H081", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_H080",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H081",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Bond Level 1 (True Name Known)",
           "infos": [
-            { "id": "0_H090", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_H090",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 3, "value": 1, "eventId": 0 }]
         },
         {
           "overwriteName": "Bond Level 2 (True Name Known)",
           "infos": [
-            { "id": "0_H100", "face": 1, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_H100",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 3, "value": 2, "eventId": 0 }]
         },
         {
           "overwriteName": "Bond Level 3 (True Name Known)",
           "infos": [
-            { "id": "0_H110", "face": 1, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H111", "face": 3, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_H110",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H111",
+              "face": 3,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 3, "value": 3, "eventId": 0 }]
         },
         {
           "overwriteName": "Bond Level 4 (True Name Known)",
           "infos": [
-            { "id": "0_H120", "face": 4, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H121", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_H122", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_H120",
+              "face": 4,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H121",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H122",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 3, "value": 4, "eventId": 0 }]
         },
         {
           "overwriteName": "Bond Level 5 (True Name Known)",
           "infos": [
-            { "id": "0_H130", "face": 1, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H131", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_H132", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_H130",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H131",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H132",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 3, "value": 5, "eventId": 0 }]
         },
         {
           "overwriteName": "Conversation 4 (True Name Known)",
           "infos": [
-            { "id": "0_H140", "face": 3, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H141", "face": 0, "delay": 0.3, "text": "", "form": 0 }
+            {
+              "id": "0_H140",
+              "face": 3,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H141",
+              "face": 0,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 4, "value": 1100500, "eventId": 0 }]
         },
         {
           "overwriteName": "Conversation 5 (True Name Known)",
           "infos": [
-            { "id": "0_H150", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H151", "face": 2, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_H152", "face": 4, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_H150",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H151",
+              "face": 2,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H152",
+              "face": 4,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 4, "value": 1100200, "eventId": 0 }]
         },
         {
           "overwriteName": "Conversation 6 (True Name Known)",
           "infos": [
-            { "id": "0_H160", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H161", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_H162", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_H160",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H161",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H162",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 4, "value": 600700, "eventId": 0 }]
         },
         {
           "overwriteName": "Conversation 7 (True Name Known)",
           "infos": [
-            { "id": "0_H170", "face": 2, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_H171", "face": 2, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_H170",
+              "face": 2,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H171",
+              "face": 2,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 4, "value": 900500, "eventId": 0 }]
         }
@@ -3242,43 +5348,134 @@
         {
           "overwriteName": "Level up (True Name Known)",
           "infos": [
-            { "id": "0_G010", "face": 3, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_G010",
+              "face": 3,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 8, "value": 0, "eventId": 0 }]
         },
         {
           "overwriteName": "Ascension 2 (True Name Known)",
           "infos": [
-            { "id": "0_G020", "face": 1, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_G021", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_G020",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G021",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 10, "value": 0, "eventId": 0 }]
         },
         {
           "overwriteName": "Ascension 1 (True Name Known)",
           "infos": [
-            { "id": "0_G030", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_G031", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_G032", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_G033", "face": 4, "delay": 0.3, "text": "", "form": 0 }
+            {
+              "id": "0_G030",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G031",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G032",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G033",
+              "face": 4,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 9, "value": 1, "eventId": 0 }]
         },
         {
           "overwriteName": "Ascension 3 (True Name Known)",
           "infos": [
-            { "id": "0_G040", "face": 1, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_G041", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_G042", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_G040",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G041",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G042",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 9, "value": 3, "eventId": 0 }]
         },
         {
           "overwriteName": "Ascension 4 (True Name Known)",
           "infos": [
-            { "id": "0_G050", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_G051", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "0_G052", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "0_G050",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G051",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G052",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 11, "value": 0, "eventId": 0 }]
         }
@@ -3297,28 +5494,32 @@
               "face": 0,
               "delay": 0.0,
               "text": "My name is James Moriarty!",
-              "form": 0
+              "form": 0,
+              "changeEffect": 0
             },
             {
               "id": "0_S011",
               "face": 0,
               "delay": 0.1,
               "text": "[r]\nI am both a professor, and the head of an evil organization!",
-              "form": 0
+              "form": 0,
+              "changeEffect": 0
             },
             {
               "id": "0_S012",
               "face": 1,
               "delay": 0.1,
               "text": "[r]\nFwahahahaha!",
-              "form": 0
+              "form": 0,
+              "changeEffect": 0
             },
             {
               "id": "0_S013",
               "face": 2,
               "delay": 0.1,
               "text": "[r]\nNo need to worry. If you leave everything to me, taking over the world once or twice will be child's play!",
-              "form": 0
+              "form": 0,
+              "changeEffect": 0
             }
           ],
           "conds": []
@@ -3333,126 +5534,252 @@
         {
           "overwriteName": "Attack 1 (True Name Known)",
           "infos": [
-            { "id": "0_B010", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B010",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Attack 2 (True Name Known)",
           "infos": [
-            { "id": "0_B020", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B020",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Attack 3 (True Name Known)",
           "infos": [
-            { "id": "0_B030", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B030",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Extra Attack (True Name Known)",
           "infos": [
-            { "id": "0_B040", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B040",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Skill 1 (True Name Known)",
           "infos": [
-            { "id": "0_B080", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B080",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Skill 2 (True Name Known)",
           "infos": [
-            { "id": "0_B090", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B090",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Battle Start 1 (True Name Known)",
           "infos": [
-            { "id": "0_B100", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B100",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Battle Start 2 (True Name Known)",
           "infos": [
-            { "id": "0_B110", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B110",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Victory 1 (True Name Known)",
           "infos": [
-            { "id": "0_B120", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B120",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Victory 2 (True Name Known)",
           "infos": [
-            { "id": "0_B130", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B130",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Damage 2 (True Name Known)",
           "infos": [
-            { "id": "0_B140", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B140",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Damage 1 (True Name Known)",
           "infos": [
-            { "id": "0_B150", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B150",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Incapacitated 1 (True Name Known)",
           "infos": [
-            { "id": "0_B160", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B160",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Incapacitated 2 (True Name Known)",
           "infos": [
-            { "id": "0_B170", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B170",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Command Card 1 (True Name Known)",
           "infos": [
-            { "id": "0_B180", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B180",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Command Card 2 (True Name Known)",
           "infos": [
-            { "id": "0_B190", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B190",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Command Card 3 (True Name Known)",
           "infos": [
-            { "id": "0_B200", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B200",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Noble Phantasm Card (True Name Known)",
           "infos": [
-            { "id": "0_B210", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_B210",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         }
@@ -3466,10 +5793,34 @@
         {
           "overwriteName": "Noble Phantasm (True Name Known)",
           "infos": [
-            { "id": "0_B050", "face": 4, "delay": 0.0, "form": 0 },
-            { "id": "0_B051", "face": 4, "delay": 5.178597, "form": 0 },
-            { "id": "0_B052", "face": 4, "delay": 8.233999, "form": 0 },
-            { "id": "0_B053", "face": 4, "delay": 0.0, "form": 0 }
+            {
+              "id": "0_B050",
+              "face": 4,
+              "delay": 0.0,
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_B051",
+              "face": 4,
+              "delay": 5.178597,
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_B052",
+              "face": 4,
+              "delay": 8.233999,
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_B053",
+              "face": 4,
+              "delay": 0.0,
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 0, "eventId": 0 }]
         }
@@ -3488,16 +5839,25 @@
               "face": 1,
               "delay": 0.0,
               "text": "",
-              "form": 0
+              "form": 0,
+              "changeEffect": 0
             },
             {
               "id": "11_H9001",
               "face": 0,
               "delay": 0.1,
               "text": "",
-              "form": 0
+              "form": 0,
+              "changeEffect": 0
             },
-            { "id": "11_H9002", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_H9002",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         }
@@ -3511,17 +5871,52 @@
         {
           "overwriteName": "Level Up Grey Collar",
           "infos": [
-            { "id": "11_G010", "face": 1, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_G010",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 8, "value": 0, "eventId": 0 }]
         },
         {
           "overwriteName": "Unlock Wardrobe Grey Collar",
           "infos": [
-            { "id": "11_G060", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_G061", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_G062", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_G063", "face": 2, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_G060",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_G061",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_G062",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_G063",
+              "face": 2,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 23, "value": 11, "eventId": 0 }]
         }
@@ -3535,126 +5930,252 @@
         {
           "overwriteName": "Battle Start 1 Grey Collar",
           "infos": [
-            { "id": "11_B100", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B100",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Battle Start 2 Grey Collar",
           "infos": [
-            { "id": "11_B110", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B110",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Skill 1 Grey Collar",
           "infos": [
-            { "id": "11_B080", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B080",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Skill 2 Grey Collar",
           "infos": [
-            { "id": "11_B090", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B090",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Command Card 1 Grey Collar",
           "infos": [
-            { "id": "11_B180", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B180",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Command Card 2 Grey Collar",
           "infos": [
-            { "id": "11_B190", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B190",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Command Card 3 Grey Collar",
           "infos": [
-            { "id": "11_B200", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B200",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Noble Phantasm Card Grey Collar",
           "infos": [
-            { "id": "11_B210", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B210",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Attack 1 Grey Collar",
           "infos": [
-            { "id": "11_B010", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B010",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Attack 2 Grey Collar",
           "infos": [
-            { "id": "11_B020", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B020",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Attack 3 Grey Collar",
           "infos": [
-            { "id": "11_B030", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B030",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Extra Attack Grey Collar",
           "infos": [
-            { "id": "11_B040", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B040",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Damage 1 Grey Collar",
           "infos": [
-            { "id": "11_B150", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B150",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Damage 2 Grey Collar",
           "infos": [
-            { "id": "11_B140", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B140",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Incapacitated 1 Grey Collar",
           "infos": [
-            { "id": "11_B160", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B160",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Incapacitated 2 Grey Collar",
           "infos": [
-            { "id": "11_B170", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B170",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Victory 1 Grey Collar",
           "infos": [
-            { "id": "11_B120", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B120",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         },
         {
           "overwriteName": "Victory 2 Grey Collar",
           "infos": [
-            { "id": "11_B130", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "11_B130",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": []
         }
@@ -3668,25 +6189,74 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 1",
           "infos": [
-            { "id": "11_I010", "face": 1, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I011", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I010",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I011",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 2",
           "infos": [
-            { "id": "11_I020", "face": 6, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I021", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I022", "face": 4, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I020",
+              "face": 6,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I021",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I022",
+              "face": 4,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 3",
           "infos": [
-            { "id": "11_I030", "face": 3, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I031", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I030",
+              "face": 3,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I031",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 18, "value": 80237, "eventId": 0 },
@@ -3696,9 +6266,30 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 4",
           "infos": [
-            { "id": "11_I040", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I041", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I042", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I040",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I041",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I042",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 18, "value": 80237, "eventId": 0 },
@@ -3708,8 +6299,22 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 5",
           "infos": [
-            { "id": "11_I050", "face": 2, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I051", "face": 4, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I050",
+              "face": 2,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I051",
+              "face": 4,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 18, "value": 80237, "eventId": 0 },
@@ -3719,9 +6324,30 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 6",
           "infos": [
-            { "id": "11_I580", "face": 3, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I581", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I582", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I580",
+              "face": 3,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I581",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I582",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -3731,58 +6357,212 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 6",
           "infos": [
-            { "id": "11_I060", "face": 3, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I061", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I062", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I060",
+              "face": 3,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I061",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I062",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 7",
           "infos": [
-            { "id": "11_I070", "face": 3, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I071", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I070",
+              "face": 3,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I071",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 8",
           "infos": [
-            { "id": "11_I080", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I081", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I082", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I083", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I084", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I080",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I081",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I082",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I083",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I084",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 9",
           "infos": [
-            { "id": "11_I090", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I091", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I092", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I093", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I094", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I095", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I090",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I091",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I092",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I093",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I094",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I095",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 10",
           "infos": [
-            { "id": "11_I100", "face": 1, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I101", "face": 3, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I102", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I100",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I101",
+              "face": 3,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I102",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 11",
           "infos": [
-            { "id": "11_I110", "face": 1, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I111", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I112", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I110",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I111",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I112",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -3792,41 +6572,160 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 12",
           "infos": [
-            { "id": "11_I120", "face": 4, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I121", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I122", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I123", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I120",
+              "face": 4,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I121",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I122",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I123",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 13",
           "infos": [
-            { "id": "11_I130", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I131", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I132", "face": 0, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I130",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I131",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I132",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 14",
           "infos": [
-            { "id": "11_I410", "face": 2, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I411", "face": 6, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I412", "face": 6, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I413", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I414", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I415", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I410",
+              "face": 2,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I411",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I412",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I413",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I414",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I415",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 14, "value": 80237, "eventId": 0 }]
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 15",
           "infos": [
-            { "id": "11_I500", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I501", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I502", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I503", "face": 6, "delay": 0.3, "text": "", "form": 0 }
+            {
+              "id": "11_I500",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I501",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I502",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I503",
+              "face": 6,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -3836,12 +6735,54 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 16",
           "infos": [
-            { "id": "11_I510", "face": 5, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I511", "face": 5, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I512", "face": 5, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I513", "face": 6, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I514", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I515", "face": 2, "delay": 0.3, "text": "", "form": 0 }
+            {
+              "id": "11_I510",
+              "face": 5,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I511",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I512",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I513",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I514",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I515",
+              "face": 2,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -3851,11 +6792,46 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 17",
           "infos": [
-            { "id": "11_I520", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I521", "face": 5, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I522", "face": 5, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I523", "face": 3, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I524", "face": 5, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I520",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I521",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I522",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I523",
+              "face": 3,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I524",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -3865,12 +6841,54 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 18",
           "infos": [
-            { "id": "11_I530", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I531", "face": 3, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I532", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I533", "face": 5, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I534", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I535", "face": 1, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I530",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I531",
+              "face": 3,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I532",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I533",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I534",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I535",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -3880,12 +6898,54 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 19",
           "infos": [
-            { "id": "11_I540", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I541", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I542", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I543", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I544", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I545", "face": 6, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I540",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I541",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I542",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I543",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I544",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I545",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -3895,12 +6955,54 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 20",
           "infos": [
-            { "id": "11_I550", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I551", "face": 5, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I552", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I553", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I554", "face": 5, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I555", "face": 5, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I550",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I551",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I552",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I553",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I554",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I555",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -3910,11 +7012,46 @@
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 21",
           "infos": [
-            { "id": "11_I560", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "11_I561", "face": 1, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I562", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I563", "face": 0, "delay": 0.1, "text": "", "form": 0 },
-            { "id": "11_I564", "face": 5, "delay": 0.1, "text": "", "form": 0 }
+            {
+              "id": "11_I560",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I561",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I562",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I563",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "11_I564",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [
             { "condType": 21, "value": 80237, "eventId": 0 },
@@ -3931,109 +7068,326 @@
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 1",
           "infos": [
-            { "id": "0_M610", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_M610",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80108, "eventId": 0 }]
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 2",
           "infos": [
-            { "id": "0_M620", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_M620",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80108, "eventId": 0 }]
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 3",
           "infos": [
-            { "id": "0_M630", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_M630",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80108, "eventId": 0 }]
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 4",
           "infos": [
-            { "id": "0_M640", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_M640",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80109, "eventId": 0 }]
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 5",
           "infos": [
-            { "id": "0_M650", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_M650",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80109, "eventId": 0 }]
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 6",
           "infos": [
-            { "id": "0_M660", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_M660",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80109, "eventId": 0 }]
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 7",
           "infos": [
-            { "id": "0_M670", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_M671", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_M672", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_M670",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_M671",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_M672",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80108, "eventId": 0 }]
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 8",
           "infos": [
-            { "id": "0_M680", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_M681", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_M682", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_M680",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_M681",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_M682",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80108, "eventId": 0 }]
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 9",
           "infos": [
-            { "id": "0_M690", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_M691", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_M692", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_M693", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_M690",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_M691",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_M692",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_M693",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80108, "eventId": 0 }]
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 10",
           "infos": [
-            { "id": "0_M700", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_M701", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_M700",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_M701",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80109, "eventId": 0 }]
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 11",
           "infos": [
-            { "id": "0_M710", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_M711", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_M712", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_M713", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_M714", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_M710",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_M711",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_M712",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_M713",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_M714",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80109, "eventId": 0 }]
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 12",
           "infos": [
-            { "id": "0_M720", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_M721", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_M722", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_M723", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_M724", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_M720",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_M721",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_M722",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_M723",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_M724",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80109, "eventId": 0 }]
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 13",
           "infos": [
-            { "id": "0_M730", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_M731", "face": 0, "delay": 0.0, "text": "", "form": 0 },
-            { "id": "0_M732", "face": 0, "delay": 0.0, "text": "", "form": 0 }
+            {
+              "id": "0_M730",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_M731",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_M732",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
           ],
           "conds": [{ "condType": 13, "value": 80109, "eventId": 0 }]
         }

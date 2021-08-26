@@ -221,6 +221,7 @@ class MstTreasureDevice(BaseModelORJson):
     maxLv: int  # 5,
     typeText: str  # "Anti-Personnel",
     attackAttri: int  # 1
+    effectFlag: int
 
 
 class MstTreasureDeviceDetail(BaseModelORJson):
@@ -595,7 +596,7 @@ class MstSvtLimitAdd(BaseModelORJson):
 class MstSvtCostume(BaseModelORJson):
     svtId: int  # 702700,
     id: int  # 11,
-    # groupIndex: int  # NA doesn't have this
+    groupIndex: int
     name: str  # "簡易霊衣：アマゾネスCEOセット",
     shortName: str  # "アマゾネスCEOセット",
     detail: str  # "霊基接触の影響か、この霊衣で\n戦闘すると言動に謎の変化が見られる",
@@ -631,7 +632,7 @@ class ScriptJsonInfo(BaseModelORJson):
     delay: Decimal  # 0.0
     text: Optional[str]  # "I ask of you, are you my Master?"
     form: int  # 0
-    changeEffect: int = 0  # 0
+    changeEffect: int  # 0
 
     def get_voice_id(self) -> str:
         # Some voice lines have the first info id ending with xxx1 or xxx2 and we want xxx0
@@ -800,7 +801,7 @@ class MstShopScript(BaseModelORJson):
     frequencyType: int
     eventId: int
     svtId: int
-    limitCount: Optional[int]
+    limitCount: int
     materialFolderId: int
 
 
@@ -899,17 +900,17 @@ class MstEventMissionConditionDetail(BaseModelORJson):
     addTargetIds: list[int]
     targetQuestIndividualities: list[int]
     conditionLinkType: int
-    targetEventIds: Optional[list[int]] = None
+    targetEventIds: list[int]
 
 
 class MstEventTower(BaseModelORJson):
     eventId: int
     towerId: int
     name: str
-    topFloor: Optional[int] = None
-    floorLabel: Optional[str] = None
-    openEffectId: Optional[int] = None
-    flag: Optional[int] = None
+    topFloor: int
+    floorLabel: str
+    openEffectId: int
+    flag: int
 
 
 class MstEventTowerReward(BaseModelORJson):
@@ -925,7 +926,7 @@ class MstEventTowerReward(BaseModelORJson):
 
 class MstBoxGacha(BaseModelORJson):
     baseIds: list[int]
-    pickupIds: Optional[list[int]] = None
+    pickupIds: Optional[list[int]]
     talkIds: list[int]
     script: Optional[dict[str, Any]] = None
     id: int
@@ -1159,7 +1160,7 @@ class MstQuestPhase(BaseModelORJson):
     qp: int  # 1900,
     playerExp: int  # 550,
     friendshipExp: int  # 165
-    giftId: Optional[int] = None
+    giftId: int
 
 
 class MstQuestPhaseDetail(BaseModelORJson):

@@ -57,7 +57,7 @@
           ],
           "mstSvtSkill": [
             {
-              "strengthStatus": 2,
+              "strengthStatus": 99,
               "svtId": 101300,
               "num": 3,
               "priority": 2,
@@ -730,7 +730,7 @@
           ],
           "mstSvtSkill": [
             {
-              "strengthStatus": 2,
+              "strengthStatus": 99,
               "svtId": 402700,
               "num": 2,
               "priority": 2,

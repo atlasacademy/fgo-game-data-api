@@ -9,7 +9,8 @@
     "rank": "B+",
     "maxLv": 5,
     "typeText": "Anti-Personnel",
-    "attackAttri": 1
+    "attackAttri": 1,
+    "effectFlag": 2
   },
   "mstTreasureDeviceDetail": [
     {
@@ -1215,7 +1216,7 @@
               ],
               "mstSvtSkill": [
                 {
-                  "strengthStatus": 2,
+                  "strengthStatus": 99,
                   "svtId": 301200,
                   "num": 3,
                   "priority": 2,
@@ -1396,7 +1397,8 @@
                 "rank": "B",
                 "maxLv": 5,
                 "typeText": "Anti-Personnel",
-                "attackAttri": 1
+                "attackAttri": 1,
+                "effectFlag": 2
               },
               "mstTreasureDeviceDetail": [
                 {
@@ -1632,7 +1634,8 @@
                 "rank": "B",
                 "maxLv": 5,
                 "typeText": "Anti-Personnel",
-                "attackAttri": 1
+                "attackAttri": 1,
+                "effectFlag": 2
               },
               "mstTreasureDeviceDetail": [
                 {
@@ -1868,7 +1871,8 @@
                 "rank": "B+",
                 "maxLv": 5,
                 "typeText": "Anti-Personnel",
-                "attackAttri": 1
+                "attackAttri": 1,
+                "effectFlag": 2
               },
               "mstTreasureDeviceDetail": [
                 {

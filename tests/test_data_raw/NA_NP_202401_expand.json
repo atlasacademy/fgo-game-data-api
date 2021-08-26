@@ -9,7 +9,8 @@
     "rank": "E～A",
     "maxLv": 5,
     "typeText": "Anti-Army",
-    "attackAttri": 1
+    "attackAttri": 1,
+    "effectFlag": 1
   },
   "mstTreasureDeviceDetail": [
     {

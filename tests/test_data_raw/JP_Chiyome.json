@@ -476,7 +476,8 @@
         "rank": "？",
         "maxLv": 5,
         "typeText": "？？？",
-        "attackAttri": 1
+        "attackAttri": 1,
+        "effectFlag": 2
       },
       "mstTreasureDeviceDetail": [
         {
@@ -742,7 +743,8 @@
         "rank": "C",
         "maxLv": 5,
         "typeText": "対人宝具",
-        "attackAttri": 1
+        "attackAttri": 1,
+        "effectFlag": 2
       },
       "mstTreasureDeviceDetail": [
         {
@@ -1008,7 +1010,8 @@
         "rank": "？",
         "maxLv": 5,
         "typeText": "？？？",
-        "attackAttri": 1
+        "attackAttri": 1,
+        "effectFlag": 2
       },
       "mstTreasureDeviceDetail": [
         {
@@ -1299,7 +1302,8 @@
         "rank": "C+",
         "maxLv": 5,
         "typeText": "対人宝具",
-        "attackAttri": 1
+        "attackAttri": 1,
+        "effectFlag": 2
       },
       "mstTreasureDeviceDetail": [
         {

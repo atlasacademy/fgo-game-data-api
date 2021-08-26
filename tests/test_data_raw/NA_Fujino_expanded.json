@@ -5236,7 +5236,8 @@
         "rank": "EX",
         "maxLv": 5,
         "typeText": "Anti-World",
-        "attackAttri": 1
+        "attackAttri": 1,
+        "effectFlag": 2
       },
       "mstTreasureDeviceDetail": [
         {

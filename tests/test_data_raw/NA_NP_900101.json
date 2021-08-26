@@ -9,7 +9,8 @@
     "rank": "A-",
     "maxLv": 5,
     "typeText": "Barrier",
-    "attackAttri": 1
+    "attackAttri": 1,
+    "effectFlag": 0
   },
   "mstTreasureDeviceDetail": [
     {
