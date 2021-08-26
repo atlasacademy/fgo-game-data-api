@@ -1353,6 +1353,9 @@ class NiceQuest(BaseModelORJson):
     spotId: int
     warId: int
     warLongName: str
+    chapterId: int
+    chapterSubId: int
+    chapterSubStr: str
     gifts: list[NiceGift]
     releaseConditions: list[NiceQuestRelease]
     phases: list[int]

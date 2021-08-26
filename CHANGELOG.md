@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.71.0 - 2021-08-26
+### Added
+- script search.
+- new rayshift data endpoint.
+- chapter info to quest endpoint.
+
 ## 5.70.0 - 2021-08-14
 ### Added
 - raw `svtScript` endpoint.

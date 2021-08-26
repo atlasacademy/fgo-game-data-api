@@ -8,6 +8,9 @@
   "spotId": 836401,
   "warId": 8364,
   "warLongName": "復刻:Grandネロ祭 ～2021 Early Summer～",
+  "chapterId": 0,
+  "chapterSubId": 0,
+  "chapterSubStr": "",
   "gifts": [
     { "id": 13000, "type": "item", "objectId": 101, "priority": 0, "num": 1 }
   ],

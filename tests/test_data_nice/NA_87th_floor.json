@@ -8,6 +8,9 @@
   "spotId": 820001,
   "warId": 8200,
   "warLongName": "The Tale of Setsubun: Oni Pagoda Festival",
+  "chapterId": 0,
+  "chapterSubId": 0,
+  "chapterSubStr": "",
   "gifts": [
     { "id": 25239, "type": "item", "objectId": 6520, "priority": 0, "num": 1 }
   ],

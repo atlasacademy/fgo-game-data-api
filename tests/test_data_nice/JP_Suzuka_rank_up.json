@@ -8,6 +8,9 @@
   "spotId": 99003,
   "warId": 1003,
   "warLongName": "幕間の物語",
+  "chapterId": 1,
+  "chapterSubId": 2,
+  "chapterSubStr": "",
   "gifts": [],
   "releaseConditions": [
     {
