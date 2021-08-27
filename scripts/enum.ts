@@ -503,6 +503,7 @@ export enum NiceDataValsType {
     OffPositions = "offpositions",
     TargetIndiv = "targetindiv",
     IncludeIgnoreIndividuality = "includeignoreindividuality",
+    EvenIfWinDie = "evenifwindie",
 }
 
 export enum NiceClassRelationOverwriteType {

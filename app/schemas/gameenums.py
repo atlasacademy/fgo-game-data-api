@@ -1370,6 +1370,7 @@ class DataValsType(IntEnum):
     OffPositions = 82
     TargetIndiv = 83
     IncludeIgnoreIndividuality = 84
+    EvenIfWinDie = 85
 
 
 class ClassRelationOverwriteType(IntEnum):
