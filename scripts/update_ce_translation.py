@@ -89,8 +89,11 @@ def update_enemy_translation() -> None:
 
     translated = {k: translations.get(k, v) for k, v in enemies.items()}
 
-    with open(MAPPING_PATH / "enemy_names.json", "w", encoding="utf-8") as fp:
+    with open(
+        MAPPING_PATH / "enemy_names.json", "w", encoding="utf-8", newline="\n"
+    ) as fp:
         json.dump(translated, fp, indent=2, ensure_ascii=False)
+        fp.write("\n")
 
 
 def is_servant(svt: Any) -> bool:
