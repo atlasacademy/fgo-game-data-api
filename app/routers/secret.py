@@ -1,6 +1,6 @@
 from aioredis import Redis
 from fastapi import APIRouter, BackgroundTasks, Depends, Response
-from git import Repo
+from git import Repo  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncEngine
 
 from ..config import SecretSettings, Settings, project_root

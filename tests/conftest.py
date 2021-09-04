@@ -2,7 +2,6 @@ import asyncio
 from asyncio.events import AbstractEventLoop
 from typing import AsyncGenerator, Generator
 
-import aioredis
 import pytest
 from aioredis import Redis
 from asgi_lifespan import LifespanManager
@@ -49,7 +48,7 @@ async def na_db_conn() -> AsyncGenerator[AsyncConnection, None]:
 
 @pytest.fixture(scope="session")
 async def redis() -> AsyncGenerator[Redis, None]:
-    redis_client = await aioredis.create_redis(secrets.redisdsn)
+    redis_client = await Redis.from_url(secrets.redisdsn)
     try:
         yield redis_client
     finally:

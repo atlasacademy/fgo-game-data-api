@@ -55,7 +55,7 @@ async def insert_rayshift_quest_db(
     conn: AsyncConnection, quest_details: dict[int, QuestDetail]
 ) -> None:
     data = get_insert_rayshift_quest_data(quest_details)
-    await conn.execute(do_update_quest_stmt, data)  # type: ignore
+    await conn.execute(do_update_quest_stmt, data)
 
 
 def insert_rayshift_quest_db_sync(

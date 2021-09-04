@@ -2,7 +2,6 @@ import logging
 import time
 from typing import Awaitable, Callable
 
-import aioredis
 import toml
 from aioredis import Redis
 from fastapi import Depends, FastAPI, Request, Response
@@ -184,7 +183,7 @@ async def add_process_time_header(
 
 @app.on_event("startup")
 async def startup() -> None:
-    redis = await aioredis.create_redis_pool(secrets.redisdsn)
+    redis = await Redis.from_url(secrets.redisdsn)
     app.state.redis = redis
     async_engines = {
         Region.NA: create_async_engine(
@@ -202,8 +201,6 @@ async def startup() -> None:
 
 @app.on_event("shutdown")
 async def shutdown() -> None:
-    app.state.redis.close()
-    await app.state.redis.wait_closed()
     for engine in app.state.async_engines.values():
         await engine.dispose()
 

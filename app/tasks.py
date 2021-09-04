@@ -1,12 +1,12 @@
 import asyncio
 import time
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any, Iterable, Union
 
 import aiofiles
 import orjson
 from aioredis import Redis
-from git import Repo
+from git import Repo  # type: ignore
 from pydantic import DirectoryPath
 from sqlalchemy.ext.asyncio import AsyncConnection, AsyncEngine
 
@@ -40,6 +40,7 @@ from .schemas.base import BaseModelORJson
 from .schemas.common import Language, Region, RepoInfo
 from .schemas.enums import ALL_ENUMS, TRAIT_NAME
 from .schemas.gameenums import SvtType
+from .schemas.nice import NiceEquip, NiceServant
 from .schemas.raw import (
     MstCommandCode,
     MstCv,
@@ -50,6 +51,7 @@ from .schemas.raw import (
     MstMasterMission,
     MstSvt,
     MstWar,
+    ServantEntity,
 )
 
 
@@ -77,6 +79,33 @@ async def dump_orjson(
         await fp.write(list_string(data))
 
 
+async def get_nice_svt(
+    conn: AsyncConnection,
+    region: Region,
+    lang: Language,
+    lore: bool,
+    raw_svt: ServantEntity,
+) -> Union[NiceServant, NiceEquip]:  # pragma: no cover
+    if raw_svt.mstSvt.type == SvtType.SERVANT_EQUIP:
+        return await get_nice_equip_model(
+            conn=conn,
+            region=region,
+            item_id=raw_svt.mstSvt.id,
+            lang=lang,
+            lore=True,
+            raw_svt=raw_svt,
+        )
+    else:
+        return await get_nice_servant_model(
+            conn=conn,
+            region=region,
+            item_id=raw_svt.mstSvt.id,
+            lang=lang,
+            lore=lore,
+            raw_svt=raw_svt,
+        )
+
+
 async def dump_svt(
     conn: AsyncConnection,
     region: Region,
@@ -89,36 +118,25 @@ async def dump_svt(
     with_lore_en: list[str] = []
     without_lore_en: list[str] = []
 
-    export_params = {"exclude_unset": True, "exclude_none": True}
-
     for svt in svts:
         raw_svt = await get_servant_entity(
             conn, svt.id, expand=True, lore=True, mstSvt=svt
         )
 
-        nice_params = {
-            "conn": conn,
-            "region": region,
-            "item_id": raw_svt.mstSvt.id,
-            "lang": Language.jp,
-            "lore": True,
-            "raw_svt": raw_svt,
-        }
-        if raw_svt.mstSvt.type == SvtType.SERVANT_EQUIP:
-            nice_svt = await get_nice_equip_model(**nice_params)  # type: ignore
-        else:
-            nice_svt = await get_nice_servant_model(**nice_params)  # type: ignore
-        with_lore.append(nice_svt.json(**export_params))  # type: ignore
-        without_lore.append(nice_svt.json(exclude={"profile"}, **export_params))  # type: ignore
+        nice_svt = await get_nice_svt(conn, region, Language.jp, True, raw_svt)
+        with_lore.append(nice_svt.json(exclude_unset=True, exclude_none=True))
+        without_lore.append(
+            nice_svt.json(exclude={"profile"}, exclude_unset=True, exclude_none=True)
+        )
 
         if region == Region.JP:
-            nice_params["lang"] = Language.en
-            if raw_svt.mstSvt.type == SvtType.SERVANT_EQUIP:
-                nice_svt_en = await get_nice_equip_model(**nice_params)  # type: ignore
-            else:
-                nice_svt_en = await get_nice_servant_model(**nice_params)  # type: ignore
-            with_lore_en.append(nice_svt_en.json(**export_params))  # type: ignore
-            without_lore_en.append(nice_svt_en.json(exclude={"profile"}, **export_params))  # type: ignore
+            nice_svt_en = await get_nice_svt(conn, region, Language.en, True, raw_svt)
+            with_lore_en.append(nice_svt_en.json(exclude_unset=True, exclude_none=True))
+            without_lore_en.append(
+                nice_svt_en.json(
+                    exclude={"profile"}, exclude_unset=True, exclude_none=True
+                )
+            )
 
     out_name = base_export_path / f"{file_name}.json"
     out_lore_name = base_export_path / f"{file_name}_lore.json"
@@ -273,7 +291,7 @@ async def clear_bloom_redis_cache(redis: Redis) -> None:  # pragma: no cover
     # The hash for bucket name "fgo-game-data-api" is "92b89e16"
     if settings.bloom_shard is not None:
         key_count = 0
-        async for key in redis.iscan(match=f"bloom:{settings.bloom_shard}:c:*"):
+        async for key in redis.scan_iter(match=f"bloom:{settings.bloom_shard}:c:*"):
             await redis.delete(key)
             key_count += 1
         logger.info(f"Cleared {key_count} bloom redis keys.")

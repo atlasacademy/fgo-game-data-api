@@ -12,7 +12,7 @@ from pydantic import (
     validator,
 )
 from pydantic.tools import parse_obj_as
-from uvicorn.logging import DefaultFormatter
+from uvicorn.logging import DefaultFormatter  # type: ignore
 
 
 project_root = Path(__file__).resolve().parents[1]

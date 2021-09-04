@@ -42,16 +42,18 @@ async def load_pydantic_object(
                 }
                 redis_key = f"{redis_prefix}:{region.name}:{master_file}"
                 await redis.delete(redis_key)
-                await redis.hmset_dict(redis_key, redis_data)
+                await redis.hset(redis_key, mapping=redis_data)
 
 
 async def load_svt_extra_redis(
     redis: Redis, region: Region, svtExtras: list[MstSvtExtra]
 ) -> None:
     redis_key = f"{REDIS_DATA_PREFIX}:{region.name}:mstSvtExtra"
-    svtExtra_redis_data = {svtExtra.svtId: svtExtra.json() for svtExtra in svtExtras}
+    svtExtra_redis_data = {
+        str(svtExtra.svtId): svtExtra.json() for svtExtra in svtExtras
+    }
     await redis.delete(redis_key)
-    await redis.hmset_dict(redis_key, svtExtra_redis_data)
+    await redis.hset(redis_key, mapping=svtExtra_redis_data)
 
 
 async def load_mstBuff(
@@ -60,9 +62,9 @@ async def load_mstBuff(
     for region, repo_folder in region_path.items():
         redis_key = f"{redis_prefix}:{region.name}:mstBuff"
         mstBuff_data = get_buff_with_classrelation(repo_folder)
-        mstBuff_redis = {mstBuff.id: mstBuff.json() for mstBuff in mstBuff_data}
+        mstBuff_redis = {str(mstBuff.id): mstBuff.json() for mstBuff in mstBuff_data}
         await redis.delete(redis_key)
-        await redis.hmset_dict(redis_key, mstBuff_redis)
+        await redis.hset(redis_key, mapping=mstBuff_redis)
 
 
 async def load_mstSvtLimit(
@@ -79,7 +81,7 @@ async def load_mstSvtLimit(
             }
             redis_key = f"{redis_prefix}:{region.name}:mstSvtlimit"
             await redis.delete(redis_key)
-            await redis.hmset_dict(redis_key, redis_data)
+            await redis.hset(redis_key, mapping=redis_data)
 
 
 @dataclass
@@ -106,10 +108,10 @@ async def load_reverse_data(
     for region, gamedata_path in region_path.items():
         for data in reverse_data_detail:
             reverse_data = data.dataFunc(gamedata_path)
-            redis_data = {k: orjson.dumps(v) for k, v in reverse_data.items()}
+            redis_data = {str(k): orjson.dumps(v) for k, v in reverse_data.items()}
             redis_key = f"{redis_prefix}:{region.name}:{data.key.name}"
             await redis.delete(redis_key)
-            await redis.hmset_dict(redis_key, redis_data)
+            await redis.hset(redis_key, mapping=redis_data)
 
 
 async def load_redis_data(
