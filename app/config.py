@@ -44,6 +44,7 @@ class Settings(BaseSettings):
     github_webhook_sleep: int = 0
     bloom_shard: Optional[int] = None
     redis_prefix: str = "fgoapi"
+    rate_limit_per_5_sec: int = 100
 
     @validator("asset_url", "rayshift_api_url")
     def remove_last_slash(cls, value: str) -> str:

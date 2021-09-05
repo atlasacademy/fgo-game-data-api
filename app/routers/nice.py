@@ -1,5 +1,6 @@
 from aioredis import Redis
 from fastapi import APIRouter, Depends, Response
+from fastapi_limiter.depends import RateLimiter  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..config import Settings
@@ -46,7 +47,13 @@ from .utils import get_error_code, item_response, list_response
 
 
 settings = Settings()
-router = APIRouter(prefix="/nice", tags=["nice"])
+router = APIRouter(
+    prefix="/nice",
+    tags=["nice"],
+    dependencies=[
+        Depends(RateLimiter(times=settings.rate_limit_per_5_sec * 5, seconds=5))
+    ],
+)
 
 
 svt_lang_lore_description = """

@@ -1,13 +1,15 @@
 import logging
 import time
+from math import ceil
 from typing import Awaitable, Callable
 
 import toml
 from aioredis import Redis
-from fastapi import Depends, FastAPI, Request, Response
+from fastapi import Depends, FastAPI, HTTPException, Request, Response, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
+from fastapi_limiter import FastAPILimiter  # type: ignore
 from sqlalchemy.ext.asyncio import create_async_engine
 
 from .config import SecretSettings, Settings, logger, project_root
@@ -141,9 +143,15 @@ else:  # pragma: no cover
 
 
 tags_metadata = [
-    {"name": "nice", "description": "Nicely bundled data"},
+    {
+        "name": "nice",
+        "description": f"Nicely human-readable bundled data. Rate Limit: {settings.rate_limit_per_5_sec} request / 5 seconds",
+    },
     {"name": "basic", "description": "Minimal nice data for indexing"},
-    {"name": "raw", "description": "Raw game data"},
+    {
+        "name": "raw",
+        "description": f"Raw game data. Rate Limit: {settings.rate_limit_per_5_sec} request / 5 seconds",
+    },
 ]
 
 
@@ -181,18 +189,42 @@ async def add_process_time_header(
     return response
 
 
+async def limiter_callback(
+    request: Request,
+    response: Response,  # pylint: disable=unused-argument
+    pexpire: int,
+) -> None:  # pragma: no cover
+    expire = ceil(pexpire / 1000)
+    homepage = request.url.netloc
+
+    raise HTTPException(
+        status.HTTP_429_TOO_MANY_REQUESTS,
+        f"Too Many Requests. Please check the documentation at {homepage} for the export files."
+        " The export files might contain what you need so you don't need to call many small requests."
+        " Retry after {expire} seconds.",
+        headers={"Retry-After": str(expire)},
+    )
+
+
 @app.on_event("startup")
 async def startup() -> None:
     redis = await Redis.from_url(secrets.redisdsn)
+    await FastAPILimiter.init(
+        redis, prefix=settings.redis_prefix, callback=limiter_callback
+    )
     app.state.redis = redis
     async_engines = {
         Region.NA: create_async_engine(
             secrets.na_postgresdsn.replace("postgresql", "postgresql+asyncpg"),
             echo=logger.isEnabledFor(logging.DEBUG),
+            pool_size=3,
+            max_overflow=30,
         ),
         Region.JP: create_async_engine(
             secrets.jp_postgresdsn.replace("postgresql", "postgresql+asyncpg"),
             echo=logger.isEnabledFor(logging.DEBUG),
+            pool_size=3,
+            max_overflow=30,
         ),
     }
     app.state.async_engines = async_engines

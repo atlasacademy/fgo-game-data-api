@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 ### Added
+- rate limit to nice and raw endpoint
 - raw and nice script endpoints
 
 ## 5.71.0 - 2021-08-26
