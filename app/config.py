@@ -42,7 +42,7 @@ class Settings(BaseSettings):
     documentation_all_nice: bool = False
     github_webhook_git_pull: bool = False
     github_webhook_sleep: int = 0
-    bloom_shard: Optional[int] = None
+    clear_redis_cache: bool = True
     redis_prefix: str = "fgoapi"
     rate_limit_per_5_sec: int = 100
 

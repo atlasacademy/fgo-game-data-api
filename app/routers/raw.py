@@ -1,5 +1,6 @@
 from aioredis import Redis
 from fastapi import APIRouter, Depends, Query, Response
+from fastapi_cache.decorator import cache
 from fastapi_limiter.depends import RateLimiter  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection
 
@@ -71,6 +72,7 @@ Expand all other skills and functions as well.
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
+@cache()  # type: ignore
 async def find_servant(
     search_param: ServantSearchQueryParams = Depends(ServantSearchQueryParams),
     expand: bool = False,
@@ -103,6 +105,7 @@ Otherwise, it will look up the actual ID field. As a result, it can return not s
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
+@cache()  # type: ignore
 async def get_servant(
     servant_id: int,
     expand: bool = False,
@@ -123,6 +126,7 @@ async def get_servant(
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
+@cache()  # type: ignore
 async def find_equip(
     search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
     expand: bool = False,
@@ -155,6 +159,7 @@ Otherwise, it will look up the actual ID field. As a result, it can return not C
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
+@cache()  # type: ignore
 async def get_equip(
     equip_id: int,
     expand: bool = False,
@@ -175,6 +180,7 @@ async def get_equip(
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
+@cache()  # type: ignore
 async def find_svt(
     search_param: SvtSearchQueryParams = Depends(SvtSearchQueryParams),
     expand: bool = False,
@@ -206,6 +212,7 @@ Only uses actual ID for the lookup.
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
+@cache()  # type: ignore
 async def get_svt(
     svt_id: int,
     expand: bool = False,
@@ -223,6 +230,7 @@ async def get_svt(
     response_model=list[MstSvtScript],
     response_model_exclude_unset=True,
 )
+@cache()  # type: ignore
 async def get_svt_scripts(
     charaId: list[int] = Query([]), conn: AsyncConnection = Depends(get_db)
 ) -> Response:
@@ -238,6 +246,7 @@ async def get_svt_scripts(
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
+@cache()  # type: ignore
 async def get_mystic_code(
     mc_id: int,
     expand: bool = False,
@@ -260,6 +269,7 @@ async def get_mystic_code(
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
+@cache()  # type: ignore
 async def get_command_code(
     cc_id: int, expand: bool = False, conn: AsyncConnection = Depends(get_db)
 ) -> Response:
@@ -290,6 +300,7 @@ from the function IDs in mstSkillLv.funcId.
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
+@cache()  # type: ignore
 async def find_skill(
     search_param: SkillSearchParams = Depends(SkillSearchParams),
     reverse: bool = False,
@@ -317,6 +328,7 @@ async def find_skill(
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
+@cache()  # type: ignore
 async def get_skill(
     region: Region,
     skill_id: int,
@@ -348,6 +360,7 @@ from the function IDs in mstTreasureDeviceLv.funcId.
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
+@cache()  # type: ignore
 async def find_td(
     search_param: TdSearchParams = Depends(TdSearchParams),
     reverse: bool = False,
@@ -369,6 +382,7 @@ async def find_td(
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
+@cache()  # type: ignore
 async def get_td(
     np_id: int,
     reverse: bool = False,
@@ -396,6 +410,7 @@ and return the reversed skill objects.
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
+@cache()  # type: ignore
 async def find_function(
     search_param: FuncSearchQueryParams = Depends(FuncSearchQueryParams),
     reverse: bool = False,
@@ -432,6 +447,7 @@ async def find_function(
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
+@cache()  # type: ignore
 async def get_function(
     region: Region,
     func_id: int,
@@ -463,6 +479,7 @@ and return the reversed function objects.
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
+@cache()  # type: ignore
 async def find_buff(
     search_param: BuffSearchQueryParams = Depends(BuffSearchQueryParams),
     reverse: bool = False,
@@ -496,6 +513,7 @@ async def find_buff(
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
+@cache()  # type: ignore
 async def get_buff(
     region: Region,
     buff_id: int,
@@ -519,6 +537,7 @@ async def get_buff(
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
+@cache()  # type: ignore
 async def find_item(
     search_param: ItemSearchQueryParams = Depends(ItemSearchQueryParams),
     conn: AsyncConnection = Depends(get_db),
@@ -535,6 +554,7 @@ async def find_item(
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
+@cache()  # type: ignore
 async def get_item(item_id: int, conn: AsyncConnection = Depends(get_db)) -> Response:
     """
     Get the item data from the given ID
@@ -550,6 +570,7 @@ async def get_item(item_id: int, conn: AsyncConnection = Depends(get_db)) -> Res
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
+@cache()  # type: ignore
 async def get_mm(
     master_mission_id: int, conn: AsyncConnection = Depends(get_db)
 ) -> Response:
@@ -567,6 +588,7 @@ async def get_mm(
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
+@cache()  # type: ignore
 async def get_event(event_id: int, conn: AsyncConnection = Depends(get_db)) -> Response:
     """
     Get the event data from the given event ID
@@ -582,12 +604,12 @@ async def get_event(event_id: int, conn: AsyncConnection = Depends(get_db)) -> R
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
+@cache(expire=settings.quest_cache_length)  # type: ignore
 async def get_war(war_id: int, conn: AsyncConnection = Depends(get_db)) -> Response:
     """
     Get the war data from the given war ID
     """
     war_response = item_response(await raw.get_war_entity(conn, war_id))
-    war_response.headers["Bloom-Response-TTL"] = str(settings.quest_cache_length)
     return war_response
 
 
@@ -599,6 +621,7 @@ async def get_war(war_id: int, conn: AsyncConnection = Depends(get_db)) -> Respo
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
+@cache(expire=settings.quest_cache_length)  # type: ignore
 async def get_quest_phase(
     quest_id: int,
     phase: int,
@@ -610,7 +633,6 @@ async def get_quest_phase(
     quest_response = item_response(
         await raw.get_quest_phase_entity(conn, quest_id, phase)
     )
-    quest_response.headers["Bloom-Response-TTL"] = str(settings.quest_cache_length)
     return quest_response
 
 
@@ -622,6 +644,7 @@ async def get_quest_phase(
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
+@cache(expire=settings.quest_cache_length)  # type: ignore
 async def get_quest(
     quest_id: int,
     conn: AsyncConnection = Depends(get_db),
@@ -630,7 +653,6 @@ async def get_quest(
     Get the quest data from the given quest ID
     """
     quest_response = item_response(await raw.get_quest_entity(conn, quest_id))
-    quest_response.headers["Bloom-Response-TTL"] = str(settings.quest_cache_length)
     return quest_response
 
 
@@ -642,6 +664,7 @@ async def get_quest(
     response_model=list[ScriptSearchResult],
     response_model_exclude_unset=True,
 )
+@cache()  # type: ignore
 async def find_script(
     search_param: ScriptSearchQueryParams = Depends(ScriptSearchQueryParams),
     conn: AsyncConnection = Depends(get_db),
@@ -658,6 +681,7 @@ async def find_script(
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
+@cache()  # type: ignore
 async def get_script(
     script_id: str, conn: AsyncConnection = Depends(get_db)
 ) -> Response:
@@ -676,6 +700,7 @@ async def get_script(
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
+@cache()  # type: ignore
 async def get_ai_field(
     ai_type: AiType, ai_id: int, conn: AsyncConnection = Depends(get_db)
 ) -> Response:
@@ -695,6 +720,7 @@ async def get_ai_field(
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
+@cache()  # type: ignore
 async def get_bgm(bgm_id: int, conn: AsyncConnection = Depends(get_db)) -> Response:
     """
     Get the BGM data from the given BGM ID

@@ -286,15 +286,11 @@ async def update_master_repo_info(
 
 
 async def clear_bloom_redis_cache(redis: Redis) -> None:  # pragma: no cover
-    # If DEL doesn't work with the redis setup, consider calling bloom instead of redis.
-    # https://github.com/valeriansaliou/bloom#can-cache-be-programatically-expired
-    # The hash for bucket name "fgo-game-data-api" is "92b89e16"
-    if settings.bloom_shard is not None:
-        key_count = 0
-        async for key in redis.scan_iter(match=f"bloom:{settings.bloom_shard}:c:*"):
-            await redis.delete(key)
-            key_count += 1
-        logger.info(f"Cleared {key_count} bloom redis keys.")
+    key_count = 0
+    async for key in redis.scan_iter(match=f"{settings.redis_prefix}:cache*"):
+        await redis.delete(key)
+        key_count += 1
+    logger.info(f"Cleared {key_count} cache redis keys.")
 
 
 async def load_svt_extra(
@@ -326,7 +322,8 @@ async def load_and_export(
     if settings.write_postgres_data or settings.write_redis_data:
         await load_svt_extra(redis, region_path)
     await update_master_repo_info(redis, region_path)
-    await clear_bloom_redis_cache(redis)
+    if settings.clear_redis_cache:
+        await clear_bloom_redis_cache(redis)
     await generate_exports(redis, region_path, async_engines)
 
 

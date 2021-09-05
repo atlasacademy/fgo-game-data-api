@@ -1,14 +1,19 @@
+import hashlib
 import logging
 import time
 from math import ceil
-from typing import Awaitable, Callable
+from typing import Any, Awaitable, Callable, Optional
 
+import orjson
 import toml
 from aioredis import Redis
 from fastapi import Depends, FastAPI, HTTPException, Request, Response, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
+from fastapi_cache import FastAPICache
+from fastapi_cache.backends.redis import RedisBackend
+from fastapi_cache.coder import PickleCoder
 from fastapi_limiter import FastAPILimiter  # type: ignore
 from sqlalchemy.ext.asyncio import create_async_engine
 
@@ -180,9 +185,6 @@ async def add_process_time_header(
 ) -> Response:
     start_time = time.perf_counter()
     response = await call_next(request)
-    response.headers["Bloom-Response-Buckets"] = "fgo-game-data-api"
-    if response.status_code != 200:
-        response.headers["Bloom-Response-Ignore"] = "1"
     process_time = round((time.perf_counter() - start_time) * 1000, 2)
     response.headers["Server-Timing"] = f"app;dur={process_time}"
     logger.debug(f"Processed in {process_time}ms.")
@@ -206,28 +208,53 @@ async def limiter_callback(
     )
 
 
+def custom_key_builder(
+    func: Callable[..., Any],
+    namespace: str,
+    args: tuple[Any, ...],
+    kwargs: dict[str, Any],
+    request: Optional[Request] = None,  # pylint: disable=unused-argument
+    response: Optional[Response] = None,  # pylint: disable=unused-argument
+) -> str:
+    prefix = FastAPICache.get_prefix()
+    static_kwargs = {k: v for k, v in kwargs.items() if k not in {"conn", "redis"}}
+
+    raw_key = f"{func.__module__}:{func.__name__}:{args}:{orjson.dumps(static_kwargs).decode('utf-8')}"
+    cache_key = hashlib.sha1(raw_key.encode("utf-8")).hexdigest()
+
+    return f"{prefix}:{namespace}:{cache_key}"
+
+
 @app.on_event("startup")
 async def startup() -> None:
     redis = await Redis.from_url(secrets.redisdsn)
     await FastAPILimiter.init(
-        redis, prefix=settings.redis_prefix, callback=limiter_callback
+        redis, prefix=f"{settings.redis_prefix}:limiter", callback=limiter_callback
+    )
+    FastAPICache.init(
+        RedisBackend(redis),
+        prefix=f"{settings.redis_prefix}:cache",
+        key_builder=custom_key_builder,
+        coder=PickleCoder,  # pyright: reportGeneralTypeIssues=false
     )
     app.state.redis = redis
+
     async_engines = {
         Region.NA: create_async_engine(
             secrets.na_postgresdsn.replace("postgresql", "postgresql+asyncpg"),
             echo=logger.isEnabledFor(logging.DEBUG),
             pool_size=3,
-            max_overflow=30,
+            max_overflow=10,
         ),
         Region.JP: create_async_engine(
             secrets.jp_postgresdsn.replace("postgresql", "postgresql+asyncpg"),
             echo=logger.isEnabledFor(logging.DEBUG),
             pool_size=3,
-            max_overflow=30,
+            max_overflow=10,
         ),
     }
     app.state.async_engines = async_engines
+
     await load_and_export(redis, REGION_PATHS, async_engines)
 
 
@@ -250,10 +277,7 @@ async def root() -> RedirectResponse:
 
 
 @app.get("/info", summary="Data version info", response_model=dict[Region, RepoInfo])
-async def main_info(
-    response: Response, redis: Redis = Depends(get_redis)
-) -> dict[Region, RepoInfo]:
-    response.headers["Bloom-Response-Ignore"] = "1"
+async def main_info(redis: Redis = Depends(get_redis)) -> dict[Region, RepoInfo]:
     return await get_all_repo_info(redis)
 
 

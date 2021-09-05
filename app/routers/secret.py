@@ -53,7 +53,7 @@ async def update_gamedata(
         **instance_info,
     )
     response = pretty_print_response(response_data)
-    response.headers["Bloom-Response-Ignore"] = "1"
+    print(response)
     background_tasks.add_task(pull_and_update, REGION_PATHS, async_engines, redis)
     return response
 
@@ -66,5 +66,4 @@ async def info(redis: Redis = Depends(get_redis)) -> Response:
         **instance_info,
     )
     response = pretty_print_response(response_data)
-    response.headers["Bloom-Response-Ignore"] = "1"
     return response
