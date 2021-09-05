@@ -172,7 +172,11 @@ def load_script_list(
         }
 
         for script in script_list:
-            script_path = repo_folder / "ScriptActionEncrypt" / get_script_path(script)
+            script_path = (
+                repo_folder
+                / "ScriptActionEncrypt"
+                / f"{get_script_path(script.removesuffix('.txt'))}.txt"
+            )
             if script_path.exists():
                 with open(script_path, "r", encoding="utf-8") as fp:
                     script_data = fp.read()
