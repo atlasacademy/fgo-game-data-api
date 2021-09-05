@@ -163,6 +163,7 @@
       "priority": 1000
     }
   ],
+  "aiIds": { "svt": [94040947, 94040957], "field": [] },
   "reverse": {
     "raw": {
       "servant": [
@@ -423,7 +424,8 @@
                   "skillDetailId": 446550,
                   "priority": 1000
                 }
-              ]
+              ],
+              "aiIds": { "svt": [94040947, 94040957], "field": [] }
             },
             {
               "mstSkill": {
@@ -2133,7 +2135,8 @@
                   "skillDetailId": 446550,
                   "priority": 1000
                 }
-              ]
+              ],
+              "aiIds": { "svt": [94040947, 94040957], "field": [] }
             },
             {
               "mstSkill": {
@@ -3387,7 +3390,8 @@
                   "skillDetailId": 446550,
                   "priority": 1000
                 }
-              ]
+              ],
+              "aiIds": { "svt": [94040947, 94040957], "field": [] }
             },
             {
               "mstSkill": {

@@ -827,7 +827,7 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": []
+    "maxRate": [0]
   },
   "donotReplace": {
     "limit": "none",
@@ -837,7 +837,7 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": []
+    "maxRate": [0]
   },
   "shortenUserEquipSkill": {
     "limit": "none",
@@ -847,7 +847,7 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": []
+    "maxRate": [0]
   },
   "tdTypeChange": {
     "limit": "none",
