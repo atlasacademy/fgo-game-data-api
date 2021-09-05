@@ -21,6 +21,7 @@ from ..schemas.raw import (
     MysticCodeEntity,
     QuestEntity,
     QuestPhaseEntity,
+    ScriptEntity,
     ScriptSearchResult,
     ServantEntity,
     SkillEntity,
@@ -640,6 +641,24 @@ async def find_script(
 ) -> Response:
     matches = await search.search_script(conn, search_param)
     return list_response(matches)
+
+
+@router.get(
+    "/{region}/script/{script_id}",
+    summary="Get Script data",
+    response_description="Script Entity",
+    response_model=ScriptEntity,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+async def get_script(
+    script_id: str, conn: AsyncConnection = Depends(get_db)
+) -> Response:
+    """
+    Get the script data from the given script ID
+    """
+    quest_response = item_response(await raw.get_script_entity(conn, script_id))
+    return quest_response
 
 
 @router.get(

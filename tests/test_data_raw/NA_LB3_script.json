@@ -1,0 +1,87 @@
+{
+  "scriptId": "0300030510",
+  "scriptSizeBytes": 17287,
+  "quests": [
+    {
+      "mstQuest": {
+        "beforeActionVals": [],
+        "afterActionVals": [],
+        "id": 3000305,
+        "name": "The Third Lostbelt",
+        "nameRuby": "",
+        "type": 1,
+        "consumeType": 1,
+        "actConsume": 23,
+        "chaldeaGateCategory": 0,
+        "spotId": 30312,
+        "giftId": 320300,
+        "priority": 900293,
+        "bannerType": 33,
+        "bannerId": 0,
+        "iconId": 0,
+        "charaIconId": 0,
+        "giftIconId": 0,
+        "forceOperation": 0,
+        "afterClear": 1,
+        "displayHours": 0,
+        "intervalHours": 0,
+        "chapterId": 304,
+        "chapterSubId": 1,
+        "chapterSubStr": "",
+        "recommendLv": "74",
+        "hasStartAction": 1,
+        "flag": 0,
+        "scriptQuestId": 0,
+        "noticeAt": 1606363200,
+        "openedAt": 1606363200,
+        "closedAt": 1893456000
+      },
+      "mstQuestConsumeItem": [],
+      "mstQuestRelease": [
+        {
+          "questId": 3000305,
+          "type": 1,
+          "targetId": 3000304,
+          "value": 0,
+          "openLimit": 0,
+          "closedMessageId": 0,
+          "imagePriority": 10000
+        }
+      ],
+      "mstClosedMessage": [{ "id": 0, "message": "" }],
+      "mstGift": [
+        { "id": 320300, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
+        { "id": 320300, "type": 2, "objectId": 6538, "priority": 0, "num": 1 }
+      ],
+      "phases": [1, 2],
+      "phasesWithEnemies": [1, 2],
+      "phasesNoBattle": [],
+      "allScripts": [
+        {
+          "scriptFileName": "0300030510",
+          "questId": 3000305,
+          "phase": 1,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0300030511",
+          "questId": 3000305,
+          "phase": 1,
+          "sceneType": 1
+        },
+        {
+          "scriptFileName": "0300030520",
+          "questId": 3000305,
+          "phase": 2,
+          "sceneType": 0
+        },
+        {
+          "scriptFileName": "0300030521",
+          "questId": 3000305,
+          "phase": 2,
+          "sceneType": 1
+        }
+      ]
+    }
+  ]
+}

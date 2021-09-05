@@ -1,0 +1,105 @@
+{
+  "scriptId": "9402750110",
+  "scriptSizeBytes": 41353,
+  "script": "https://assets.atlasacademy.io/GameData/NA/Script/94/9402/9402750110.txt",
+  "quests": [
+    {
+      "id": 94027501,
+      "name": "To the Heavenly Island!",
+      "type": "main",
+      "consumeType": "ap",
+      "consume": 0,
+      "consumeItem": [],
+      "spotId": 904600,
+      "warId": 9046,
+      "warLongName": "Eternal Tropical Summer Altar, Luluhawa",
+      "chapterId": 0,
+      "chapterSubId": 0,
+      "chapterSubStr": "",
+      "gifts": [
+        {
+          "id": 94027562,
+          "type": "eventSvtJoin",
+          "objectId": 703100,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "releaseConditions": [
+        {
+          "type": "questClear",
+          "targetId": 1000011,
+          "value": 0,
+          "closedMessage": ""
+        },
+        { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+      ],
+      "phases": [1],
+      "phasesWithEnemies": [],
+      "phasesNoBattle": [1],
+      "phaseScripts": [
+        {
+          "phase": 1,
+          "scripts": [
+            {
+              "scriptId": "9402750110",
+              "script": "https://assets.atlasacademy.io/GameData/NA/Script/94/9402/9402750110.txt"
+            }
+          ]
+        }
+      ],
+      "noticeAt": 1596427200,
+      "openedAt": 1596427200,
+      "closedAt": 1598155199
+    },
+    {
+      "id": 94039101,
+      "name": "To the Heavenly Island!",
+      "type": "main",
+      "consumeType": "ap",
+      "consume": 0,
+      "consumeItem": [],
+      "spotId": 906900,
+      "warId": 9069,
+      "warLongName": "Eternal Tropical Summer Altar, Luluhawa",
+      "chapterId": 0,
+      "chapterSubId": 0,
+      "chapterSubStr": "",
+      "gifts": [
+        {
+          "id": 94039161,
+          "type": "eventSvtJoin",
+          "objectId": 703100,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "releaseConditions": [
+        {
+          "type": "questClear",
+          "targetId": 1000011,
+          "value": 0,
+          "closedMessage": ""
+        },
+        { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+      ],
+      "phases": [1],
+      "phasesWithEnemies": [],
+      "phasesNoBattle": [1],
+      "phaseScripts": [
+        {
+          "phase": 1,
+          "scripts": [
+            {
+              "scriptId": "9402750110",
+              "script": "https://assets.atlasacademy.io/GameData/NA/Script/94/9402/9402750110.txt"
+            }
+          ]
+        }
+      ],
+      "noticeAt": 1626062400,
+      "openedAt": 1626062400,
+      "closedAt": 1627531199
+    }
+  ]
+}

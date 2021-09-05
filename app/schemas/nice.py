@@ -1609,6 +1609,13 @@ class NiceQuestPhase(NiceQuest):
     stages: list[NiceStage]
 
 
+class NiceScript(BaseModelORJson):
+    scriptId: str
+    scriptSizeBytes: int
+    script: HttpUrl
+    quests: list[NiceQuest]
+
+
 class NiceScriptSearchResult(BaseModelORJson):
     scriptId: str
     script: HttpUrl

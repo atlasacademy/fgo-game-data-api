@@ -73,6 +73,7 @@ test_cases_dict: dict[str, tuple[str, str]] = {
     "kh_cq_JP": ("JP/ai/field/90161870", "JP_KH_CQ_taunt"),
     "bgm_JP_with_shop": ("JP/bgm/138?lang=en", "JP_BGM_Shinjuku"),
     "bgm_NA_without_shop": ("NA/bgm/33", "NA_BGM_battle_10"),
+    "script_NA": ("NA/script/0300030510", "NA_LB3_script"),
 }
 
 
@@ -106,6 +107,7 @@ cases_404_dict = {
     "ai/field": "18738131",
     "bgm": "319028",
     "mm": "312341",
+    "script": "faSdanosd",
 }
 
 

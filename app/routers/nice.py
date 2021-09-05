@@ -4,7 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..config import Settings
 from ..core import search
-from ..core.nice import ai, bgm, cc, event, item, mc, mm, nice, quest, war
+from ..core.nice import ai, bgm, cc, event, item, mc, mm, nice, quest, script, war
 from ..core.nice.script import get_nice_script_search_result
 from ..db.helpers.cc import get_cc_id
 from ..db.helpers.svt import get_ce_id, get_svt_id
@@ -23,6 +23,7 @@ from ..schemas.nice import (
     NiceMysticCode,
     NiceQuest,
     NiceQuestPhase,
+    NiceScript,
     NiceScriptSearchResult,
     NiceServant,
     NiceSkillReverse,
@@ -772,6 +773,29 @@ async def find_script(
     return list_response(
         get_nice_script_search_result(search_param.region, match) for match in matches
     )
+
+
+@router.get(
+    "/{region}/script/{script_id}",
+    summary="Get Script data",
+    response_description="Nice Script Entity",
+    response_model=NiceScript,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+async def get_script(
+    region: Region,
+    script_id: str,
+    conn: AsyncConnection = Depends(get_db),
+    lang: Language = Depends(language_parameter),
+) -> Response:
+    """
+    Get the nice script data from the given script ID
+    """
+    quest_response = item_response(
+        await script.get_nice_script(conn, region, script_id, lang)
+    )
+    return quest_response
 
 
 @router.get(

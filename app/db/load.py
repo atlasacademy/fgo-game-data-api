@@ -9,10 +9,10 @@ from sqlalchemy import Table
 from sqlalchemy.engine import Connection, Engine
 
 from ..config import logger
-from ..core.nice.script import get_script_path, get_script_text_only
 from ..data.buff import get_buff_with_classrelation
 from ..data.event import get_event_with_warIds
 from ..data.item import get_item_with_use
+from ..data.script import get_script_path, get_script_text_only
 from ..models.raw import (
     TABLES_TO_BE_LOADED,
     ScriptFileList,

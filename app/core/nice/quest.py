@@ -37,15 +37,21 @@ from ...schemas.raw import (
 )
 from .. import raw
 from ..utils import get_traits_list, get_translation
+from .base_script import get_script_url
 from .bgm import get_nice_bgm
 from .enemy import get_quest_enemies
 from .follower import get_nice_support_servants
 from .gift import get_nice_gift
 from .item import get_nice_item_amount
-from .script import get_nice_quest_script
 
 
 settings = Settings()
+
+
+def get_nice_quest_script(region: Region, script_file_name: str) -> NiceQuestScript:
+    return NiceQuestScript(
+        scriptId=script_file_name, script=get_script_url(region, script_file_name)
+    )
 
 
 def get_nice_quest_release(

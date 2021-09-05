@@ -5,6 +5,8 @@ All notable changes to the public API will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
+### Added
+- raw and nice script endpoints
 
 ## 5.71.0 - 2021-08-26
 ### Added

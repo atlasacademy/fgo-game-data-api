@@ -1411,6 +1411,12 @@ class QuestPhaseEntity(QuestEntity):
     npcSvtEquip: list[NpcSvtEquip]
 
 
+class ScriptEntity(BaseModelORJson):
+    scriptId: str
+    scriptSizeBytes: int
+    quests: list[QuestEntity]
+
+
 class EventEntity(BaseModelORJson):
     mstEvent: MstEvent
     mstWar: list[MstWar]

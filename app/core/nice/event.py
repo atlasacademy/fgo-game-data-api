@@ -57,9 +57,9 @@ from ...schemas.raw import (
 )
 from .. import raw
 from ..utils import get_traits_list, get_translation
+from .base_script import get_script_url
 from .gift import get_nice_gift
 from .item import get_nice_item
-from .script import get_script_url
 
 
 settings = Settings()

@@ -2,7 +2,7 @@ from collections import defaultdict
 
 from pydantic import DirectoryPath
 
-from ..core.nice.script import get_script_url
+from ..core.nice.base_script import get_script_url
 from ..schemas.common import NiceValentineScript, Region
 from ..schemas.gameenums import CondType, PurchaseType, SvtType
 from ..schemas.raw import (

@@ -4,9 +4,9 @@ from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from app.core.nice.func import parse_dataVals
-from app.core.nice.script import get_script_path, get_script_text_only
 from app.core.utils import get_voice_name, sort_by_collection_no
 from app.data.custom_mappings import Translation
+from app.data.script import get_script_path, get_script_text_only
 from app.routers.utils import list_string_exclude
 from app.schemas.basic import BasicServant
 from app.schemas.common import Language, ReverseDepth
@@ -139,7 +139,7 @@ def test_voice_lang_en() -> None:
 
 
 def test_get_script_path() -> None:
-    assert get_script_path("WarEpilogue108.txt") == "01/WarEpilogue108.txt"
+    assert get_script_path("WarEpilogue108") == "01/WarEpilogue108"
 
 
 def test_parse_script() -> None:

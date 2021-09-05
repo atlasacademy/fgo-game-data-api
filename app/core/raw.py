@@ -5,7 +5,7 @@ from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..data.custom_mappings import EXTRA_CHARAFIGURES
-from ..db.helpers import ai, event, fetch, item, quest, skill, svt, td
+from ..db.helpers import ai, event, fetch, item, quest, script, skill, svt, td
 from ..redis.helpers.reverse import RedisReverse, get_reverse_ids
 from ..schemas.common import Region, ReverseDepth
 from ..schemas.enums import FUNC_VALS_NOT_BUFF, DetailMissionCondType
@@ -90,6 +90,7 @@ from ..schemas.raw import (
     ReversedFunctionType,
     ReversedSkillTd,
     ReversedSkillTdType,
+    ScriptEntity,
     ServantEntity,
     SkillEntity,
     SkillEntityNoReverse,
@@ -737,6 +738,14 @@ async def get_quest_phase_entity(
         return quest_phase
     else:
         raise HTTPException(status_code=404, detail="Quest phase not found")
+
+
+async def get_script_entity(conn: AsyncConnection, script_id: str) -> ScriptEntity:
+    raw_script = await script.get_script(conn, script_id)
+    if not raw_script:
+        raise HTTPException(status_code=404, detail="Script not found")
+
+    return raw_script
 
 
 async def get_ai_entities(

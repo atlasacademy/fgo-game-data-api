@@ -24,9 +24,9 @@ from ...schemas.raw import (
 )
 from .. import raw
 from ..utils import get_translation
+from .base_script import get_script_url
 from .bgm import get_nice_bgm
 from .quest import get_nice_quest
-from .script import get_script_url
 
 
 settings = Settings()
