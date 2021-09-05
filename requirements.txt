@@ -39,9 +39,7 @@ click==8.0.1; python_version >= "3.6" \
 colorama==0.4.4; python_version >= "3.6" and python_full_version < "3.0.0" and sys_platform == "win32" and platform_system == "Windows" or sys_platform == "win32" and python_full_version >= "3.5.0" and platform_system == "Windows" and python_version >= "3.6" \
     --hash=sha256:9f47eda37229f68eee03b24b9748937c7dc3868f906e8ba69fbcbdd3bc5dc3e2 \
     --hash=sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b
-fastapi-limiter==0.1.4; python_version >= "3.7" and python_version < "4.0" \
-    --hash=sha256:50e85960de165f87a801ea742b94c7fc43ff2567d790da2892ad2cbc3c41fa58 \
-    --hash=sha256:fc0ab9fd3313782fdf21dcabe63de84413b546c13c66b3a14c4c8742f97ee81c
+fastapi-limiter @ git+https://github.com/long2ice/fastapi-limiter.git@master ; python_version >= "3.7" and python_version < "4.0"
 fastapi==0.68.1; python_version >= "3.6" \
     --hash=sha256:94d2820906c36b9b8303796fb7271337ec89c74223229e3cfcf056b5a7d59e23 \
     --hash=sha256:644bb815bae326575c4b2842469fb83053a4b974b82fa792ff9283d17fbbd99d

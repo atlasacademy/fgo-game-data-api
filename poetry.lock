@@ -223,15 +223,22 @@ test = ["pytest (>=6.2.4,<7.0.0)", "pytest-cov (>=2.12.0,<3.0.0)", "pytest-async
 
 [[package]]
 name = "fastapi-limiter"
-version = "0.1.4"
+version = "0.1.5"
 description = "A request rate limiter for fastapi"
 category = "main"
 optional = false
-python-versions = ">=3.7,<4.0"
+python-versions = "^3.7"
+develop = false
 
 [package.dependencies]
-aioredis = "*"
+aioredis = "^2.0"
 fastapi = "*"
+
+[package.source]
+type = "git"
+url = "https://github.com/long2ice/fastapi-limiter.git"
+reference = "master"
+resolved_reference = "c6c49aab335c0db1d5c5acfbee098d25fe54bfbc"
 
 [[package]]
 name = "fuzzywuzzy"
@@ -812,7 +819,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "1450c00ece56bd97e99a2e114d2762c99b7c1b3cac8438a2c812bff924bff4a9"
+content-hash = "098349b8bf6176b1464f266310c0f2e90ba312c2fbc88ee56aa5d4f379ca9354"
 
 [metadata.files]
 aiofiles = [
@@ -948,10 +955,7 @@ fastapi = [
     {file = "fastapi-0.68.1-py3-none-any.whl", hash = "sha256:94d2820906c36b9b8303796fb7271337ec89c74223229e3cfcf056b5a7d59e23"},
     {file = "fastapi-0.68.1.tar.gz", hash = "sha256:644bb815bae326575c4b2842469fb83053a4b974b82fa792ff9283d17fbbd99d"},
 ]
-fastapi-limiter = [
-    {file = "fastapi-limiter-0.1.4.tar.gz", hash = "sha256:50e85960de165f87a801ea742b94c7fc43ff2567d790da2892ad2cbc3c41fa58"},
-    {file = "fastapi_limiter-0.1.4-py3-none-any.whl", hash = "sha256:fc0ab9fd3313782fdf21dcabe63de84413b546c13c66b3a14c4c8742f97ee81c"},
-]
+fastapi-limiter = []
 fuzzywuzzy = [
     {file = "fuzzywuzzy-0.18.0-py2.py3-none-any.whl", hash = "sha256:928244b28db720d1e0ee7587acf660ea49d7e4c632569cad4f1cd7e68a5f0993"},
     {file = "fuzzywuzzy-0.18.0.tar.gz", hash = "sha256:45016e92264780e58972dca1b3d939ac864b78437422beecebb3095f8efd00e8"},
