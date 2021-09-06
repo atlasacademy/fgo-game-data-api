@@ -1,3 +1,5 @@
+from typing import Any
+
 from aioredis import Redis
 from fastapi import APIRouter, BackgroundTasks, Depends, Response
 from git import Repo  # type: ignore
@@ -40,30 +42,28 @@ instance_info = dict(
 )
 
 
+async def get_secret_info(redis: Redis) -> dict[str, Any]:
+    all_repo_info = await get_all_repo_info(redis)
+    response_data = dict(
+        game_data={k.value: v.dict() for k, v in all_repo_info.items()},
+        **instance_info,
+    )
+    return response_data
+
+
 @router.post("/update")  # pragma: no cover
 async def update_gamedata(
     background_tasks: BackgroundTasks,
     async_engines: dict[Region, AsyncEngine] = Depends(get_async_engines),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    all_repo_info = await get_all_repo_info(redis)
-    response_data = dict(
-        message="Game data is being updated in the background",
-        game_data={k.value: v.dict() for k, v in all_repo_info.items()},
-        **instance_info,
-    )
-    response = pretty_print_response(response_data)
-    print(response)
     background_tasks.add_task(pull_and_update, REGION_PATHS, async_engines, redis)
-    return response
+    response_data = await get_secret_info(redis)
+    response_data["message"] = "Game data is being updated in the background"
+    return pretty_print_response(response_data)
 
 
 @router.get("/info")
 async def info(redis: Redis = Depends(get_redis)) -> Response:
-    all_repo_info = await get_all_repo_info(redis)
-    response_data = dict(
-        game_data={k.value: v.dict() for k, v in all_repo_info.items()},
-        **instance_info,
-    )
-    response = pretty_print_response(response_data)
-    return response
+    response_data = await get_secret_info(redis)
+    return pretty_print_response(response_data)

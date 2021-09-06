@@ -6,6 +6,7 @@ from typing import Any, Iterable, Union
 import aiofiles
 import orjson
 from aioredis import Redis
+from fastapi.concurrency import run_in_threadpool
 from git import Repo  # type: ignore
 from pydantic import DirectoryPath
 from sqlalchemy.ext.asyncio import AsyncConnection, AsyncEngine
@@ -327,13 +328,7 @@ async def load_and_export(
     await generate_exports(redis, region_path, async_engines)
 
 
-async def pull_and_update(
-    region_path: dict[Region, DirectoryPath],
-    async_engines: dict[Region, AsyncEngine],
-    redis: Redis,
-) -> None:  # pragma: no cover
-    logger.info(f"Sleeping {settings.github_webhook_sleep} seconds …")
-    await asyncio.sleep(settings.github_webhook_sleep)
+def update_data_repo(region_path: dict[Region, DirectoryPath]) -> None:
     if settings.github_webhook_git_pull:
         for gamedata in region_path.values():
             if (gamedata / ".git").exists():
@@ -341,4 +336,14 @@ async def pull_and_update(
                 for fetch_info in repo.remotes[0].pull():
                     commit_hash = fetch_info.commit.hexsha[:6]
                     logger.info(f"Updated {fetch_info.ref} to {commit_hash}")
+
+
+async def pull_and_update(
+    region_path: dict[Region, DirectoryPath],
+    async_engines: dict[Region, AsyncEngine],
+    redis: Redis,
+) -> None:  # pragma: no cover
+    logger.info(f"Sleeping {settings.github_webhook_sleep} seconds …")
+    await asyncio.sleep(settings.github_webhook_sleep)
+    await run_in_threadpool(lambda: update_data_repo(region_path))
     await load_and_export(redis, region_path, async_engines)
