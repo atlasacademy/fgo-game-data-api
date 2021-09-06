@@ -42,7 +42,6 @@ colorama==0.4.4; python_version >= "3.7" and python_full_version < "3.0.0" and s
 fastapi-cache2==0.1.6; python_version >= "3.7" and python_version < "4.0" \
     --hash=sha256:537ab5e45551897131b203d1956505a585a8d62dfce9bf97c28dcbd3a6a3fd2a \
     --hash=sha256:a2cba152dac335ae06a47230d7c1074fd9a4fa16e9d6006db8b9d6dd1124f29e
-fastapi-limiter @ git+https://github.com/long2ice/fastapi-limiter.git@master ; python_version >= "3.7" and python_version < "4.0"
 fastapi==0.68.1; python_version >= "3.6" \
     --hash=sha256:94d2820906c36b9b8303796fb7271337ec89c74223229e3cfcf056b5a7d59e23 \
     --hash=sha256:644bb815bae326575c4b2842469fb83053a4b974b82fa792ff9283d17fbbd99d
