@@ -63,7 +63,7 @@ async def get_quest_detail(
         return db_quest_detail
     else:
         quest_response = await get_quest_response(region, quest_id, phase)
-        if quest_response:
+        if quest_response and quest_response.questDetails:
             await insert_rayshift_quest_db(conn, quest_response.questDetails)
             return next(iter(quest_response.questDetails.values()))
 

@@ -42,9 +42,12 @@ def get_nice_bgm_release(
     raw_release: MstBgmRelease, closed_messages: list[MstClosedMessage]
 ) -> NiceBgmRelease:
     closed_message = next(
-        message
-        for message in closed_messages
-        if message.id == raw_release.closedMessageId
+        (
+            message
+            for message in closed_messages
+            if message.id == raw_release.closedMessageId
+        ),
+        None,
     )
     return NiceBgmRelease(
         id=raw_release.id,
@@ -53,7 +56,7 @@ def get_nice_bgm_release(
         targetIds=raw_release.targetIds,
         vals=raw_release.vals,
         priority=raw_release.priority,
-        closedMessage=closed_message.message,
+        closedMessage=closed_message.message if closed_message else "",
     )
 
 
