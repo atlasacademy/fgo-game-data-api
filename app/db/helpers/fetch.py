@@ -328,6 +328,8 @@ async def get_all_multiple(
     schema: Type[TFetchAllMultiple],
     where_ids: Iterable[Union[int, str]],
 ) -> list[TFetchAllMultiple]:
+    if not where_ids:
+        return []
     table, where_col, order_col = schema_table_fetch_all_multiple[schema]
     stmt = select(table).where(where_col.in_(where_ids)).order_by(order_col)
     result = await conn.execute(stmt)

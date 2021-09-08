@@ -42,7 +42,7 @@ from .bgm import get_nice_bgm
 from .enemy import get_quest_enemies
 from .follower import get_nice_support_servants
 from .gift import get_nice_gift
-from .item import get_nice_item_amount
+from .item import get_nice_item_amount_db
 
 
 settings = Settings()
@@ -123,7 +123,7 @@ async def get_nice_quest(
         "consumeItem": [
             nice_item_amount
             for consumeItem in raw_quest.mstQuestConsumeItem
-            for nice_item_amount in await get_nice_item_amount(
+            for nice_item_amount in await get_nice_item_amount_db(
                 conn, region, consumeItem.itemIds, consumeItem.nums, lang
             )
         ],

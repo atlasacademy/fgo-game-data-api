@@ -1340,6 +1340,7 @@ class ServantEntity(BaseModelORJson):
     expandedAppendPassive: list[SkillEntityNoReverse] = []
     mstSvtAppendPassiveSkillUnlock: list[MstSvtAppendPassiveSkillUnlock]
     mstCombineAppendPassiveSkill: list[MstCombineAppendPassiveSkill]
+    mstItem: list[MstItem]
     mstSvtCoin: Optional[MstSvtCoin] = None
     mstCv: Optional[MstCv] = None
     mstIllustrator: Optional[MstIllustrator] = None

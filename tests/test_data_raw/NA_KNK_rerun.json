@@ -6307,5 +6307,7 @@
   "mstEventTower": [],
   "mstEventTowerReward": [],
   "mstBoxGacha": [],
-  "mstBoxGachaBase": []
+  "mstBoxGachaBase": [],
+  "mstTreasureBox": [],
+  "mstTreasureBoxGift": []
 }

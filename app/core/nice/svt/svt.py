@@ -27,7 +27,7 @@ from ....schemas.raw import (
 )
 from ... import raw
 from ...utils import get_traits_list, get_translation
-from ..item import get_nice_item, get_nice_item_amount_qp
+from ..item import get_nice_item_amount_qp, get_nice_item_from_raw
 from ..skill import get_nice_skill_with_svt
 from ..td import get_nice_td
 from .append_passive import get_nice_svt_append_passives
@@ -194,39 +194,43 @@ async def get_nice_servant(
         get_nice_servant_change(change) for change in raw_svt.mstSvtChange
     ]
 
+    item_map = {
+        item.id: get_nice_item_from_raw(region, item, lang) for item in raw_svt.mstItem
+    }
+
     nice_data["ascensionMaterials"] = {
-        combineL.svtLimit: await get_nice_item_amount_qp(
-            conn, region, combineL.itemIds, combineL.itemNums, combineL.qp, lang
+        combine.svtLimit: get_nice_item_amount_qp(
+            combine.itemIds, combine.itemNums, combine.qp, item_map
         )
-        for combineL in raw_svt.mstCombineLimit
-        if combineL.svtLimit != BAD_COMBINE_SVT_LIMIT
+        for combine in raw_svt.mstCombineLimit
+        if combine.svtLimit != BAD_COMBINE_SVT_LIMIT
     }
 
     nice_data["skillMaterials"] = {
-        combineS.skillLv: await get_nice_item_amount_qp(
-            conn, region, combineS.itemIds, combineS.itemNums, combineS.qp, lang
+        combine.skillLv: get_nice_item_amount_qp(
+            combine.itemIds, combine.itemNums, combine.qp, item_map
         )
-        for combineS in raw_svt.mstCombineSkill
+        for combine in raw_svt.mstCombineSkill
     }
 
     nice_data["appendSkillMaterials"] = {
-        combineA.skillLv: await get_nice_item_amount_qp(
-            conn, region, combineA.itemIds, combineA.itemNums, combineA.qp, lang
+        combine.skillLv: get_nice_item_amount_qp(
+            combine.itemIds, combine.itemNums, combine.qp, item_map
         )
-        for combineA in raw_svt.mstCombineAppendPassiveSkill
+        for combine in raw_svt.mstCombineAppendPassiveSkill
     }
 
     nice_data["costumeMaterials"] = {
-        costume_ids[combineC.costumeId]: await get_nice_item_amount_qp(
-            conn, region, combineC.itemIds, combineC.itemNums, combineC.qp, lang
+        costume_ids[combine.costumeId]: get_nice_item_amount_qp(
+            combine.itemIds, combine.itemNums, combine.qp, item_map
         )
-        for combineC in raw_svt.mstCombineCostume
+        for combine in raw_svt.mstCombineCostume
     }
 
     if raw_svt.mstSvtCoin:
         nice_data["coin"] = {
             "summonNum": raw_svt.mstSvtCoin.summonNum,
-            "item": await get_nice_item(conn, region, raw_svt.mstSvtCoin.itemId, lang),
+            "item": item_map[raw_svt.mstSvtCoin.itemId],
         }
 
     nice_data["script"] = {}
@@ -261,7 +265,7 @@ async def get_nice_servant(
     ]
 
     nice_data["appendPassive"] = await get_nice_svt_append_passives(
-        conn, region, raw_svt, lang
+        conn, region, raw_svt, item_map, lang
     )
 
     # Filter out dummy TDs that are used by enemy servants

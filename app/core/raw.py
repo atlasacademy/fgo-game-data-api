@@ -368,6 +368,14 @@ async def get_servant_entity(
     ]
     mstTreasureDevice = await get_td_entity_no_reverse_many(conn, td_ids, expand)
 
+    item_ids: set[int] = set()
+    for combine in mstCombineLimit + mstCombineSkill + mstCombineAppendPassiveSkill + mstCombineCostume + mstSvtAppendPassiveSkillUnlock:  # type: ignore
+        item_ids.update(combine.itemIds)
+    if mstSvtCoin is not None:
+        item_ids.add(mstSvtCoin.itemId)
+
+    mstItem = await get_multiple_items(conn, item_ids)
+
     svt_entity = ServantEntity(
         mstSvt=svt_db,
         mstSvtIndividuality=mstSvtIndividuality,
@@ -394,6 +402,7 @@ async def get_servant_entity(
         mstSkill=mstSkill,
         mstTreasureDevice=mstTreasureDevice,
         mstSvtExtra=mstSvtExtra,
+        mstItem=mstItem,
     )
 
     if expand:
@@ -538,7 +547,7 @@ async def get_command_code_entity(
 
 
 async def get_multiple_items(
-    conn: AsyncConnection, item_ids: list[int]
+    conn: AsyncConnection, item_ids: Iterable[int]
 ) -> list[MstItem]:
     items = await fetch.get_all_multiple(conn, MstItem, item_ids)
     item_map = {item.id: item for item in items}

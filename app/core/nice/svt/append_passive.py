@@ -1,7 +1,7 @@
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ....schemas.common import Language, Region
-from ....schemas.nice import NiceServantAppendPassiveSkill
+from ....schemas.nice import NiceItem, NiceServantAppendPassiveSkill
 from ....schemas.raw import (
     MstSvtAppendPassiveSkill,
     MstSvtAppendPassiveSkillUnlock,
@@ -19,18 +19,14 @@ async def get_nice_append_passive(
     svt_append: MstSvtAppendPassiveSkill,
     append_skill: SkillEntityNoReverse,
     unlock: MstSvtAppendPassiveSkillUnlock,
+    item_map: dict[int, NiceItem],
     lang: Language,
 ) -> NiceServantAppendPassiveSkill:
     nice_skill = (
         await get_nice_skill_with_svt(conn, append_skill, svt_id, region, lang)
     )[0]
-    nice_unlock = await get_nice_item_amount(
-        conn,
-        region,
-        unlock.itemIds,
-        unlock.itemNums,
-        lang,
-    )
+    items = [item_map[item_id] for item_id in unlock.itemIds]
+    nice_unlock = get_nice_item_amount(items, unlock.itemNums)
     return NiceServantAppendPassiveSkill(
         num=svt_append.num,
         priority=svt_append.priority,
@@ -43,6 +39,7 @@ async def get_nice_svt_append_passives(
     conn: AsyncConnection,
     region: Region,
     svt: ServantEntity,
+    item_map: dict[int, NiceItem],
     lang: Language,
 ) -> list[NiceServantAppendPassiveSkill]:
     append_passives: list[NiceServantAppendPassiveSkill] = []
@@ -58,7 +55,7 @@ async def get_nice_svt_append_passives(
             if unlock.num == skill.num
         )
         append_passive = await get_nice_append_passive(
-            conn, region, svt.mstSvt.id, skill, raw_skill, unlock, lang
+            conn, region, svt.mstSvt.id, skill, raw_skill, unlock, item_map, lang
         )
         append_passives.append(append_passive)
 

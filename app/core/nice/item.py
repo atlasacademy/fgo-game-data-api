@@ -63,31 +63,34 @@ def get_nice_item_from_raw(
     )
 
 
-async def get_nice_item_amount(
+def get_nice_item_amount(
+    items: Iterable[NiceItem], amounts: Iterable[int]
+) -> list[NiceItemAmount]:
+    return [
+        NiceItemAmount(item=item, amount=amount) for item, amount in zip(items, amounts)
+    ]
+
+
+async def get_nice_item_amount_db(
     conn: AsyncConnection,
     region: Region,
     item_list: list[int],
     amount_list: list[int],
     lang: Language,
 ) -> list[NiceItemAmount]:
-    return [
-        NiceItemAmount(item=get_nice_item_from_raw(region, item, lang), amount=amount)
-        for item, amount in zip(await get_multiple_items(conn, item_list), amount_list)
-    ]
+    mstItems = await get_multiple_items(conn, item_list)
+    nice_items = [get_nice_item_from_raw(region, mstItem, lang) for mstItem in mstItems]
+    return get_nice_item_amount(nice_items, amount_list)
 
 
-async def get_nice_item_amount_qp(
-    conn: AsyncConnection,
-    region: Region,
+def get_nice_item_amount_qp(
     item_list: list[int],
     amount_list: list[int],
     qp: int,
-    lang: Language,
+    item_map: dict[int, NiceItem],
 ) -> NiceLvlUpMaterial:
-    return NiceLvlUpMaterial(
-        items=await get_nice_item_amount(conn, region, item_list, amount_list, lang),
-        qp=qp,
-    )
+    items = [item_map[item_id] for item_id in item_list]
+    return NiceLvlUpMaterial(items=get_nice_item_amount(items, amount_list), qp=qp)
 
 
 def get_all_nice_items(
