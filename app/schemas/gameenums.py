@@ -2347,7 +2347,8 @@ class SvtVoiceType(IntEnum):
     GUIDE = 15
     EVENT_DAILY_POINT = 16
     TDDAMAGE = 17
-    SUM = 18
+    TREASURE_BOX = 18
+    SUM = 19
 
 
 class NiceSvtVoiceType(str, Enum):
@@ -2370,6 +2371,7 @@ class NiceSvtVoiceType(str, Enum):
     guide = "guide"
     eventDailyPoint = "eventDailyPoint"
     tddamage = "tddamage"
+    treasureBox = "treasureBox"
     sum = "sum"
 
 
@@ -2391,7 +2393,8 @@ VOICE_TYPE_NAME: dict[int, NiceSvtVoiceType] = {
     15: NiceSvtVoiceType.guide,
     16: NiceSvtVoiceType.eventDailyPoint,
     17: NiceSvtVoiceType.tddamage,
-    18: NiceSvtVoiceType.sum,
+    18: NiceSvtVoiceType.treasureBox,
+    19: NiceSvtVoiceType.sum,
 }
 
 
@@ -2754,6 +2757,7 @@ class EventType(IntEnum):
     LOCATION_CAMPAIGN = 20
     WAR_BOARD = 22
     COMBINE_COSUTUME_ITEM = 23
+    TREASURE_BOX = 24
 
 
 class NiceEventType(str, Enum):
@@ -2782,6 +2786,7 @@ class NiceEventType(str, Enum):
     locationCampaign = "locationCampaign"
     warBoard = "warBoard"
     combineCosutumeItem = "combineCosutumeItem"
+    treasureBox = "treasureBox"
 
 
 EVENT_TYPE_NAME: dict[int, NiceEventType] = {
@@ -2808,6 +2813,7 @@ EVENT_TYPE_NAME: dict[int, NiceEventType] = {
     20: NiceEventType.locationCampaign,
     22: NiceEventType.warBoard,
     23: NiceEventType.combineCosutumeItem,
+    24: NiceEventType.treasureBox,
 }
 
 
@@ -3085,6 +3091,7 @@ class AiCond(IntEnum):
     COUNT_HIGHER_AI_171 = 171
     COUNT_LOWER_AI_172 = 172
     COUNT_EQUAL_AI_173 = 173
+    CHECK_AI_174 = 174
 
 
 class NiceAiCond(str, Enum):
@@ -3238,6 +3245,7 @@ class NiceAiCond(str, Enum):
     countHigherAi171 = "countHigherAi171"
     countLowerAi172 = "countLowerAi172"
     countEqualAi173 = "countEqualAi173"
+    checkAi174 = "checkAi174"
 
 
 AI_COND_NAME: dict[int, NiceAiCond] = {
@@ -3375,6 +3383,7 @@ AI_COND_NAME: dict[int, NiceAiCond] = {
     171: NiceAiCond.countHigherAi171,
     172: NiceAiCond.countLowerAi172,
     173: NiceAiCond.countEqualAi173,
+    174: NiceAiCond.checkAi174,
 }
 
 

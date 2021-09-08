@@ -93,12 +93,12 @@ class NiceBuffScript(BaseModel):
     HP_LOWER: Optional[int] = None
 
 
-class NiceQuestScript(BaseModelORJson):
+class ScriptLink(BaseModelORJson):
     scriptId: str
     script: HttpUrl
 
 
-class NiceValentineScript(NiceQuestScript):
+class NiceValentineScript(ScriptLink):
     scriptName: str
 
 

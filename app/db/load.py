@@ -281,6 +281,8 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
                         "mstCombineAppendPassiveSkill",
                         "mstSvtCoin",
                         "mstSkillAdd",
+                        "mstTreasureBox",
+                        "mstTreasureBoxGift",
                     }
                 ):
                     logger.warning(f"Can't find file {table_json}.")

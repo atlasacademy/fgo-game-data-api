@@ -16,9 +16,9 @@ from .basic import (
 from .common import (
     MCAssets,
     NiceBuffScript,
-    NiceQuestScript,
     NiceTrait,
     NiceValentineScript,
+    ScriptLink,
     StageLink,
 )
 from .enums import (
@@ -582,6 +582,8 @@ class AscensionAdd(BaseModel):
     overWriteTDFileName: AscensionAddEntry[HttpUrl] = Field(
         ..., title="NP image URL changes"
     )
+    overWriteTDRank: AscensionAddEntry[str] = Field(..., title="NP rank changes")
+    overWriteTDTypeText: AscensionAddEntry[str] = Field(..., title="NP type changes")
     lvMax: AscensionAddEntry[int] = Field(..., title="Max level")
 
 
@@ -711,6 +713,9 @@ class NiceVoiceLine(BaseModel):
     )
     overwriteName: str = Field(
         ..., title="Voice line overwrite name", description="Voice line overwrite name."
+    )
+    summonScript: Optional[ScriptLink] = Field(
+        None, title="Script to be played when summoning"
     )
     id: list[str] = Field(..., title="Voice line IDs", description="Voice line IDs.")
     audioAssets: list[str] = Field(
@@ -1290,6 +1295,27 @@ class NiceEventLottery(BaseModelORJson):
     boxes: list[NiceEventLotteryBox]
 
 
+class NiceEventTreasureBoxGift(BaseModelORJson):
+    id: int
+    idx: int
+    gifts: list[NiceGift]
+    probability: int
+    collateralLowerLimit: int
+    collateralUpperLimit: int
+
+
+class NiceEventTreasureBox(BaseModelORJson):
+    slot: int
+    id: int
+    idx: int
+    # iconId: int
+    treasureBoxGift: list[NiceEventTreasureBoxGift]
+    maxDrawNumOnce: int
+    # commonConsumeId: int
+    # extraGiftId: NiceGift
+    # presentMessageId: int
+
+
 class NiceEvent(BaseModelORJson):
     id: int
     type: NiceEventType
@@ -1313,6 +1339,7 @@ class NiceEvent(BaseModelORJson):
     missions: list[NiceEventMission]
     towers: list[NiceEventTower]
     lotteries: list[NiceEventLottery]
+    treasureBoxes: list[NiceEventTreasureBox]
 
 
 class NiceMasterMission(BaseModelORJson):
@@ -1341,7 +1368,7 @@ class NiceQuestRelease(BaseModelORJson):
 
 class NiceQuestPhaseScript(BaseModelORJson):
     phase: int
-    scripts: list[NiceQuestScript]
+    scripts: list[ScriptLink]
 
 
 class NiceQuest(BaseModelORJson):
@@ -1603,7 +1630,7 @@ class NiceQuestPhase(NiceQuest):
     exp: int
     bond: int
     battleBgId: int
-    scripts: list[NiceQuestScript]
+    scripts: list[ScriptLink]
     messages: list[NiceQuestMessage]
     supportServants: list[SupportServant]
     stages: list[NiceStage]

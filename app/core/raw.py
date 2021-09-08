@@ -78,6 +78,8 @@ from ..schemas.raw import (
     MstSvtPassiveSkill,
     MstSvtScript,
     MstSvtVoiceRelation,
+    MstTreasureBox,
+    MstTreasureBoxGift,
     MstVoice,
     MstWar,
     MstWarAdd,
@@ -681,11 +683,17 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
 
     gacha_bases = await event.get_mstBoxGachaBase(conn, box_gacha_base_ids)
 
+    treasure_boxes = await fetch.get_all(conn, MstTreasureBox, event_id)
+    box_gift_ids = {box.treasureBoxGiftId for box in treasure_boxes}
+    box_gifts = await fetch.get_all_multiple(conn, MstTreasureBoxGift, box_gift_ids)
+
     gift_ids = (
         {reward.giftId for reward in rewards}
         | {mission.giftId for mission in missions}
         | {tower_reward.giftId for tower_reward in tower_rewards}
         | {box.targetId for box in gacha_bases}
+        | {box.extraGiftId for box in treasure_boxes}
+        | {treasure_box_gift.giftId for treasure_box_gift in box_gifts}
     )
     gifts = await fetch.get_all_multiple(conn, MstGift, gift_ids)
 
@@ -707,6 +715,8 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         mstEventTowerReward=tower_rewards,
         mstBoxGacha=box_gachas,
         mstBoxGachaBase=gacha_bases,
+        mstTreasureBox=treasure_boxes,
+        mstTreasureBoxGift=box_gifts,
     )
 
 

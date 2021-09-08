@@ -646,7 +646,9 @@ class ScriptJsonCond(BaseModelORJson):
 
 
 class ScriptJson(BaseModelORJson):
+    summonScript: Optional[str]
     overwriteName: Optional[str]
+    overwritePriority: Optional[int]
     infos: list[ScriptJsonInfo]
     conds: list[ScriptJsonCond]
 
@@ -962,6 +964,28 @@ class MstEventRewardSet(BaseModelORJson):
     name: str
     detail: str
     bgImageId: int
+
+
+class MstTreasureBox(BaseModelORJson):
+    id: int
+    eventId: int
+    slot: int
+    idx: int
+    iconId: int
+    treasureBoxGiftId: int
+    maxDrawNumOnce: int
+    commonConsumeId: int
+    extraGiftId: int
+    presentMessageId: int
+
+
+class MstTreasureBoxGift(BaseModelORJson):
+    id: int
+    idx: int
+    giftId: int
+    probability: int
+    collateralLowerLimit: int
+    collateralUpperLimit: int
 
 
 class MstEvent(BaseModelORJson):
@@ -1435,6 +1459,8 @@ class EventEntity(BaseModelORJson):
     mstEventTowerReward: list[MstEventTowerReward]
     mstBoxGacha: list[MstBoxGacha]
     mstBoxGachaBase: list[MstBoxGachaBase]
+    mstTreasureBox: list[MstTreasureBox]
+    mstTreasureBoxGift: list[MstTreasureBoxGift]
 
 
 class WarEntity(BaseModelORJson):

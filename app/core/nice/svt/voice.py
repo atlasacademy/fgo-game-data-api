@@ -25,6 +25,7 @@ from ....schemas.raw import (
     ServantEntity,
 )
 from ...utils import get_voice_name, nullable_to_string
+from ..base_script import get_nice_script_link
 
 
 settings = Settings()
@@ -122,6 +123,9 @@ def get_nice_voice_line(
         ),
         subtitle=subtitle_ids.get(str(svt_id) + "_" + first_voice.id, ""),
     )
+
+    if script.summonScript is not None:
+        voice_line.summonScript = get_nice_script_link(region, script.summonScript)
 
     if voice_id in mstVoices:
         mstVoice = mstVoices[voice_id]

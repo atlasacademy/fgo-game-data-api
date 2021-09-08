@@ -33,6 +33,8 @@ from ...schemas.nice import (
     NiceEventReward,
     NiceEventTower,
     NiceEventTowerReward,
+    NiceEventTreasureBox,
+    NiceEventTreasureBoxGift,
     NiceGift,
     NiceItem,
     NiceItemAmount,
@@ -54,6 +56,8 @@ from ...schemas.raw import (
     MstSetItem,
     MstShop,
     MstShopScript,
+    MstTreasureBox,
+    MstTreasureBoxGift,
 )
 from .. import raw
 from ..utils import get_traits_list, get_translation
@@ -408,6 +412,37 @@ async def get_nice_lottery(
     )
 
 
+def get_nice_treasure_box_gift(
+    box_gift: MstTreasureBoxGift, gift_maps: dict[int, list[MstGift]]
+) -> NiceEventTreasureBoxGift:
+    return NiceEventTreasureBoxGift(
+        id=box_gift.id,
+        idx=box_gift.idx,
+        gifts=get_nice_gifts(box_gift.giftId, gift_maps),
+        probability=box_gift.probability,
+        collateralLowerLimit=box_gift.collateralLowerLimit,
+        collateralUpperLimit=box_gift.collateralUpperLimit,
+    )
+
+
+def get_nice_treasure_box(
+    treasure_box: MstTreasureBox,
+    box_gifts: list[MstTreasureBoxGift],
+    gift_maps: dict[int, list[MstGift]],
+) -> NiceEventTreasureBox:
+    return NiceEventTreasureBox(
+        slot=treasure_box.slot,
+        id=treasure_box.id,
+        idx=treasure_box.idx,
+        treasureBoxGift=[
+            get_nice_treasure_box_gift(box_gift, gift_maps)
+            for box_gift in box_gifts
+            if box_gift.id == treasure_box.treasureBoxGiftId
+        ],
+        maxDrawNumOnce=treasure_box.maxDrawNumOnce,
+    )
+
+
 async def get_nice_event(
     conn: AsyncConnection, region: Region, event_id: int, lang: Language
 ) -> NiceEvent:
@@ -488,6 +523,10 @@ async def get_nice_event(
                 conn, region, lottery, raw_event.mstBoxGachaBase, gift_maps, lang
             )
             for lottery in raw_event.mstBoxGacha
+        ],
+        treasureBoxes=[
+            get_nice_treasure_box(box, raw_event.mstTreasureBoxGift, gift_maps)
+            for box in raw_event.mstTreasureBox
         ],
     )
 

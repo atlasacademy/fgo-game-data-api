@@ -7,7 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 from ...config import Settings
 from ...db.helpers import war
 from ...rayshift.quest import get_quest_detail
-from ...schemas.common import Language, NiceQuestScript, Region
+from ...schemas.common import Language, Region, ScriptLink
 from ...schemas.enums import CLASS_NAME
 from ...schemas.gameenums import (
     COND_TYPE_NAME,
@@ -37,7 +37,7 @@ from ...schemas.raw import (
 )
 from .. import raw
 from ..utils import get_traits_list, get_translation
-from .base_script import get_script_url
+from .base_script import get_nice_script_link
 from .bgm import get_nice_bgm
 from .enemy import get_quest_enemies
 from .follower import get_nice_support_servants
@@ -46,12 +46,6 @@ from .item import get_nice_item_amount
 
 
 settings = Settings()
-
-
-def get_nice_quest_script(region: Region, script_file_name: str) -> NiceQuestScript:
-    return NiceQuestScript(
-        scriptId=script_file_name, script=get_script_url(region, script_file_name)
-    )
 
 
 def get_nice_quest_release(
@@ -99,10 +93,10 @@ def get_nice_stage(
 def get_nice_all_scripts(
     region: Region, scripts: list[ScriptFile]
 ) -> list[NiceQuestPhaseScript]:
-    phase_scripts: dict[int, list[NiceQuestScript]] = defaultdict(list)
+    phase_scripts: dict[int, list[ScriptLink]] = defaultdict(list)
     for script in sorted(scripts, key=lambda s: s.scriptFileName):
         phase_scripts[script.phase].append(
-            get_nice_quest_script(region, script.scriptFileName)
+            get_nice_script_link(region, script.scriptFileName)
         )
 
     return [
@@ -208,8 +202,7 @@ async def get_nice_quest_phase(
         "bond": raw_quest.mstQuestPhase.friendshipExp,
         "battleBgId": raw_quest.mstQuestPhase.battleBgId,
         "scripts": [
-            get_nice_quest_script(region, script)
-            for script in sorted(raw_quest.scripts)
+            get_nice_script_link(region, script) for script in sorted(raw_quest.scripts)
         ],
         "messages": [
             get_nice_quest_message(message)

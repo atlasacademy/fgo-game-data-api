@@ -62,6 +62,8 @@ from ...models.raw import (
     mstSvtPassiveSkill,
     mstSvtScript,
     mstSvtVoiceRelation,
+    mstTreasureBox,
+    mstTreasureBoxGift,
     mstVoice,
     mstWar,
     mstWarAdd,
@@ -125,6 +127,8 @@ from ...schemas.raw import (
     MstSvtPassiveSkill,
     MstSvtScript,
     MstSvtVoiceRelation,
+    MstTreasureBox,
+    MstTreasureBoxGift,
     MstVoice,
     MstWar,
     MstWarAdd,
@@ -265,6 +269,7 @@ schema_table_fetch_all: dict[  # type:ignore
         mstSvtIndividuality.c.svtId,
         mstSvtIndividuality.c.idx,
     ),
+    MstTreasureBox: (mstTreasureBox, mstTreasureBox.c.eventId, mstTreasureBox.c.id),
 }
 
 TFetchAll = TypeVar("TFetchAll", bound=BaseModelORJson)
@@ -308,6 +313,11 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
     MstShop: (mstShop, mstShop.c.id, mstShop.c.id),
     MstQuest: (mstQuest, mstQuest.c.id, mstQuest.c.id),
     MstSvtScript: (mstSvtScript, mstSvtScript.c.id, mstSvtScript.c.id),
+    MstTreasureBoxGift: (
+        mstTreasureBoxGift,
+        mstTreasureBoxGift.c.id,
+        mstTreasureBoxGift.c.id,
+    ),
 }
 
 TFetchAllMultiple = TypeVar("TFetchAllMultiple", bound=BaseModelORJson)

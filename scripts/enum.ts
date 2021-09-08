@@ -834,6 +834,7 @@ export enum NiceSvtVoiceType {
     GUIDE = "guide",
     EVENT_DAILY_POINT = "eventDailyPoint",
     TDDAMAGE = "tddamage",
+    TREASURE_BOX = "treasureBox",
     SUM = "sum",
 }
 
@@ -969,6 +970,7 @@ export enum NiceEventType {
     LOCATION_CAMPAIGN = "locationCampaign",
     WAR_BOARD = "warBoard",
     COMBINE_COSUTUME_ITEM = "combineCosutumeItem",
+    TREASURE_BOX = "treasureBox",
 }
 
 export enum NiceWarFlag {
@@ -1150,6 +1152,7 @@ export enum NiceAiCond {
     COUNT_HIGHER_AI_171 = "countHigherAi171",
     COUNT_LOWER_AI_172 = "countLowerAi172",
     COUNT_EQUAL_AI_173 = "countEqualAi173",
+    CHECK_AI_174 = "checkAi174",
 }
 
 export enum NiceAiActType {

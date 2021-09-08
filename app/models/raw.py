@@ -1027,6 +1027,34 @@ mstEventTowerReward = Table(
 )
 
 
+mstTreasureBox = Table(
+    "mstTreasureBox",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("eventId", Integer, index=True),
+    Column("slot", Integer),
+    Column("idx", Integer),
+    Column("iconId", Integer),
+    Column("treasureBoxGiftId", Integer, index=True),
+    Column("maxDrawNumOnce", Integer),
+    Column("commonConsumeId", Integer),
+    Column("extraGiftId", Integer),
+    Column("presentMessageId", Integer),
+)
+
+
+mstTreasureBoxGift = Table(
+    "mstTreasureBoxGift",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("idx", Integer),
+    Column("giftId", Integer, index=True),
+    Column("probability", Integer),
+    Column("collateralLowerLimit", Integer),
+    Column("collateralUpperLimit", Integer),
+)
+
+
 mstBoxGacha = Table(
     "mstBoxGacha",
     metadata,
@@ -1541,6 +1569,8 @@ TABLES_TO_BE_LOADED = [
     mstEventMissionCondition,
     mstEventTower,
     mstEventTowerReward,
+    mstTreasureBox,
+    mstTreasureBoxGift,
     mstBoxGacha,
     mstBoxGachaBase,
     mstWarAdd,

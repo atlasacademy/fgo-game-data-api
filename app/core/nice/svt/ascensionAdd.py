@@ -19,6 +19,8 @@ def get_nice_ascensionAdd(
         "overWriteTDName",
         "overWriteTDRuby",
         "overWriteTDFileName",
+        "overWriteTDRank",
+        "overWriteTDTypeText",
     ]
 
     ascensionAdd: dict[str, dict[str, dict[int, Union[list[NiceTrait], int, str]]]] = {
