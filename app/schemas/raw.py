@@ -977,15 +977,12 @@ class MstTreasureBox(BaseModelORJson):
     maxDrawNumOnce: int
     commonConsumeId: int
     extraGiftId: int
-    presentMessageId: int
 
 
 class MstTreasureBoxGift(BaseModelORJson):
     id: int
     idx: int
     giftId: int
-    probability: int
-    collateralLowerLimit: int
     collateralUpperLimit: int
 
 

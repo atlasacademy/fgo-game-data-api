@@ -328,7 +328,9 @@ async def load_and_export(
     await generate_exports(redis, region_path, async_engines)
 
 
-def update_data_repo(region_path: dict[Region, DirectoryPath]) -> None:
+def update_data_repo(
+    region_path: dict[Region, DirectoryPath]
+) -> None:  # pragma: no cover
     if settings.github_webhook_git_pull:
         for gamedata in region_path.values():
             if (gamedata / ".git").exists():

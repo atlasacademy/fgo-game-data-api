@@ -1299,8 +1299,6 @@ class NiceEventTreasureBoxGift(BaseModelORJson):
     id: int
     idx: int
     gifts: list[NiceGift]
-    probability: int
-    collateralLowerLimit: int
     collateralUpperLimit: int
 
 
@@ -1308,12 +1306,10 @@ class NiceEventTreasureBox(BaseModelORJson):
     slot: int
     id: int
     idx: int
-    # iconId: int
     treasureBoxGifts: list[NiceEventTreasureBoxGift]
     maxDrawNumOnce: int
-    # commonConsumeId: int
-    # extraGiftId: NiceGift
-    # presentMessageId: int
+    extraGifts: list[NiceGift]
+    commonConsumeItem: NiceItem
 
 
 class NiceEvent(BaseModelORJson):

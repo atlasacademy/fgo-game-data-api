@@ -1040,7 +1040,6 @@ mstTreasureBox = Table(
     Column("maxDrawNumOnce", Integer),
     Column("commonConsumeId", Integer),
     Column("extraGiftId", Integer),
-    Column("presentMessageId", Integer),
 )
 
 
@@ -1050,8 +1049,6 @@ mstTreasureBoxGift = Table(
     Column("id", Integer, index=True),
     Column("idx", Integer),
     Column("giftId", Integer, index=True),
-    Column("probability", Integer),
-    Column("collateralLowerLimit", Integer),
     Column("collateralUpperLimit", Integer),
 )
 
