@@ -67,7 +67,7 @@ async def find_servant(
     return list_response(
         [
             await basic.get_basic_servant(
-                redis, search_param.region, mstSvt.id, 1, lang, mstSvt
+                redis, search_param.region, mstSvt.id, 0, lang, mstSvt
             )
             for mstSvt in matches
         ]
@@ -200,7 +200,7 @@ async def find_svt(
     return list_response(
         [
             await basic.get_basic_servant(
-                redis, search_param.region, mstSvt.id, 1, lang, mstSvt
+                redis, search_param.region, mstSvt.id, 0, lang, mstSvt
             )
             for mstSvt in matches
         ]

@@ -370,7 +370,7 @@ async def get_basic_svt(
     }
     if mstSvt.type in (SvtType.ENEMY, SvtType.ENEMY_COLLECTION):
         basic_servant["face"] = AssetURL.enemy.format(**base_settings, i=1)
-    elif svt_limit is not None:
+    elif svt_limit is not None and mstSvt.type != SvtType.SERVANT_EQUIP:
         if svtExtra and svt_limit in svtExtra.costumeLimitSvtIdMap:
             basic_servant["face"] = AssetURL.face.format(
                 base_url=settings.asset_url,

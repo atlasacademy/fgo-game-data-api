@@ -150,12 +150,12 @@ else:  # pragma: no cover
 tags_metadata = [
     {
         "name": "nice",
-        "description": f"Nicely human-readable bundled data. Rate Limit: {settings.rate_limit_per_5_sec} request / 5 seconds",
+        "description": f"Nicely human-readable bundled data. Rate Limit: {settings.rate_limit_per_5_sec} requests / 5 seconds",
     },
     {"name": "basic", "description": "Minimal nice data for indexing"},
     {
         "name": "raw",
-        "description": f"Raw game data. Rate Limit: {settings.rate_limit_per_5_sec} request / 5 seconds",
+        "description": f"Raw game data. Rate Limit: {settings.rate_limit_per_5_sec} requests / 5 seconds",
     },
 ]
 

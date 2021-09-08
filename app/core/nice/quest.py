@@ -141,7 +141,9 @@ async def get_nice_quest(
         "releaseConditions": [
             get_nice_quest_release(release, raw_quest.mstClosedMessage)
             for release in raw_quest.mstQuestRelease
-        ],
+        ]
+        if raw_quest.mstClosedMessage
+        else [],
         "phases": sorted(raw_quest.phases),
         "phasesWithEnemies": sorted(raw_quest.phasesWithEnemies),
         "phasesNoBattle": sorted(raw_quest.phasesNoBattle),
