@@ -88,6 +88,8 @@
     "overWriteTDName": { "ascension": {}, "costume": {} },
     "overWriteTDRuby": { "ascension": {}, "costume": {} },
     "overWriteTDFileName": { "ascension": {}, "costume": {} },
+    "overWriteTDRank": { "ascension": {}, "costume": {} },
+    "overWriteTDTypeText": { "ascension": {}, "costume": {} },
     "lvMax": {
       "ascension": { "0": 20, "1": 40, "2": 60, "3": 80, "4": 100 },
       "costume": {}
