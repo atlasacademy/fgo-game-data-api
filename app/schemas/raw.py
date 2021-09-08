@@ -391,6 +391,7 @@ class MstSvtLimit(BaseModelORJson):
 
 class MstSvtComment(BaseModelORJson):
     condValues: Optional[list[int]]  # [1]
+    script: Optional[dict[str, Any]] = None
     svtId: int  # 1000100
     id: int  # 2
     priority: int  # 0

@@ -602,6 +602,7 @@ mstSvtComment = Table(
     "mstSvtComment",
     metadata,
     Column("condValues", ARRAY(Integer)),
+    Column("script", JSONB),
     Column("svtId", Integer, index=True),
     Column("id", Integer),
     Column("priority", Integer),
