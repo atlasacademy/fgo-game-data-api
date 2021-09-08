@@ -1460,6 +1460,7 @@ class EventEntity(BaseModelORJson):
     mstBoxGachaBase: list[MstBoxGachaBase]
     mstTreasureBox: list[MstTreasureBox]
     mstTreasureBoxGift: list[MstTreasureBoxGift]
+    mstItem: list[MstItem]
 
 
 class WarEntity(BaseModelORJson):
@@ -1498,3 +1499,4 @@ class BgmEntity(BaseModelORJson):
     mstBgmRelease: list[MstBgmRelease]
     mstClosedMessage: list[MstClosedMessage]
     mstShop: Optional[MstShop]
+    mstItem: Optional[MstItem]

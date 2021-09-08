@@ -3,6 +3,7 @@ from collections import defaultdict
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
+from ...data.shop import get_shop_cost_item_id
 from ...schemas.common import Language, Region
 from ...schemas.enums import DETAIL_MISSION_LINK_TYPE, ITEM_BG_TYPE_NAME, NiceItemBGType
 from ...schemas.gameenums import (
@@ -63,7 +64,7 @@ from .. import raw
 from ..utils import get_traits_list, get_translation
 from .base_script import get_script_url
 from .gift import get_nice_gift
-from .item import get_nice_item
+from .item import get_nice_item_from_raw
 
 
 settings = Settings()
@@ -82,20 +83,14 @@ def get_nice_set_item(set_item: MstSetItem) -> NiceItemSet:
     )
 
 
-async def get_nice_shop(
-    conn: AsyncConnection,
+def get_nice_shop(
     region: Region,
     shop: MstShop,
     set_items: list[MstSetItem],
     shop_scripts: dict[int, MstShopScript],
-    lang: Language,
+    item_map: dict[int, NiceItem],
 ) -> NiceShop:
-    if shop.payType == PayType.FRIEND_POINT:
-        shop_item_id = 4
-    elif shop.payType == PayType.MANA:
-        shop_item_id = 3
-    else:
-        shop_item_id = shop.itemIds[0]
+    shop_item_id = get_shop_cost_item_id(shop)
 
     if shop.purchaseType == PurchaseType.SET_ITEM:
         shop_set_items = [
@@ -125,10 +120,7 @@ async def get_nice_shop(
             amount=0,
         )
     else:
-        cost = NiceItemAmount(
-            item=await get_nice_item(conn, region, shop_item_id, lang),
-            amount=shop.prices[0],
-        )
+        cost = NiceItemAmount(item=item_map[shop_item_id], amount=shop.prices[0])
 
     nice_shop = NiceShop(
         id=shop.id,
@@ -382,13 +374,12 @@ def get_nice_lottery_box(
     )
 
 
-async def get_nice_lottery(
-    conn: AsyncConnection,
+def get_nice_lottery(
     region: Region,
     lottery: MstBoxGacha,
     boxes: list[MstBoxGachaBase],
     gift_maps: dict[int, list[MstGift]],
-    lang: Language,
+    item_map: dict[int, NiceItem],
 ) -> NiceEventLottery:
     nice_boxes: list[NiceEventLotteryBox] = []
     for box_index, base_id in enumerate(lottery.baseIds):
@@ -403,7 +394,7 @@ async def get_nice_lottery(
         slot=lottery.slot,
         payType=PAY_TYPE_NAME[lottery.payType],
         cost=NiceItemAmount(
-            item=await get_nice_item(conn, region, lottery.payTargetId, lang),
+            item=item_map[lottery.payTargetId],
             amount=lottery.payValue,
         ),
         priority=lottery.priority,
@@ -463,6 +454,11 @@ async def get_nice_event(
     for gift in raw_event.mstGift:
         gift_maps[gift.id].append(gift)
 
+    item_map = {
+        item.id: get_nice_item_from_raw(region, item, lang)
+        for item in raw_event.mstItem
+    }
+
     missions = get_nice_missions(
         raw_event.mstEventMission,
         raw_event.mstEventMissionCondition,
@@ -499,9 +495,7 @@ async def get_nice_event(
         materialOpenedAt=raw_event.mstEvent.materialOpenedAt,
         warIds=(war.id for war in raw_event.mstWar),
         shop=[
-            await get_nice_shop(
-                conn, region, shop, raw_event.mstSetItem, shop_scripts, lang
-            )
+            get_nice_shop(region, shop, raw_event.mstSetItem, shop_scripts, item_map)
             for shop in raw_event.mstShop
         ],
         rewards=(
@@ -524,8 +518,8 @@ async def get_nice_event(
             for tower in raw_event.mstEventTower
         ),
         lotteries=[
-            await get_nice_lottery(
-                conn, region, lottery, raw_event.mstBoxGachaBase, gift_maps, lang
+            get_nice_lottery(
+                region, lottery, raw_event.mstBoxGachaBase, gift_maps, item_map
             )
             for lottery in raw_event.mstBoxGacha
         ],

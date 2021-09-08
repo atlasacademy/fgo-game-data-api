@@ -10,6 +10,7 @@ from ...schemas.raw import BgmEntity, MstBgm, MstBgmRelease, MstClosedMessage
 from ..raw import get_bgm_entity
 from ..utils import get_translation
 from .event import get_nice_shop
+from .item import get_nice_item_from_raw
 
 
 settings = Settings()
@@ -60,8 +61,8 @@ def get_nice_bgm_release(
     )
 
 
-async def get_nice_bgm_entity_from_raw(
-    conn: AsyncConnection, region: Region, bgm_entity: BgmEntity, lang: Language
+def get_nice_bgm_entity_from_raw(
+    region: Region, bgm_entity: BgmEntity, lang: Language
 ) -> NiceBgmEntity:
     nice_bgm = NiceBgmEntity(
         id=bgm_entity.mstBgm.id,
@@ -85,10 +86,14 @@ async def get_nice_bgm_entity_from_raw(
     if (
         bgm_entity.mstBgm.flag != BgmFlag.IS_NOT_RELEASE
         and bgm_entity.mstShop is not None
+        and bgm_entity.mstItem is not None
     ):
-        nice_bgm.shop = await get_nice_shop(
-            conn, region, bgm_entity.mstShop, [], {}, lang
-        )
+        item_map = {
+            bgm_entity.mstItem.id: get_nice_item_from_raw(
+                region, bgm_entity.mstItem, lang
+            )
+        }
+        nice_bgm.shop = get_nice_shop(region, bgm_entity.mstShop, [], {}, item_map)
 
     return nice_bgm
 
@@ -97,13 +102,12 @@ async def get_nice_bgm_entity(
     conn: AsyncConnection, region: Region, bgm_id: int, lang: Language
 ) -> NiceBgmEntity:
     bgm_entity = await get_bgm_entity(conn, bgm_id)
-    return await get_nice_bgm_entity_from_raw(conn, region, bgm_entity, lang)
+    return get_nice_bgm_entity_from_raw(region, bgm_entity, lang)
 
 
 async def get_all_nice_bgms(
-    conn: AsyncConnection, region: Region, lang: Language, bgms: list[BgmEntity]
+    region: Region, lang: Language, bgms: list[BgmEntity]
 ) -> list[NiceBgmEntity]:  # pragma: no cover
     return [
-        await get_nice_bgm_entity_from_raw(conn, region, bgm_entity, lang)
-        for bgm_entity in bgms
+        get_nice_bgm_entity_from_raw(region, bgm_entity, lang) for bgm_entity in bgms
     ]

@@ -184,7 +184,7 @@ async def generate_exports(
             all_item_data = get_all_nice_items(region, Language.jp, mstItems)
             all_mc_data = await get_all_nice_mcs(conn, region, Language.jp, mstEquips)
             all_cc_data = await get_all_nice_ccs(conn, region, Language.jp, mstCcs)
-            all_bgm_data = await get_all_nice_bgms(conn, region, Language.jp, bgms)
+            all_bgm_data = get_all_nice_bgms(region, Language.jp, bgms)
             all_mm_data = await get_all_nice_mms(conn, mstMasterMissions, Language.jp)
 
             all_basic_servant_data = sort_by_collection_no(
@@ -220,9 +220,7 @@ async def generate_exports(
 
             if region == Region.JP:
                 all_item_data_en = get_all_nice_items(region, Language.en, mstItems)
-                all_bgm_data_en = await get_all_nice_bgms(
-                    conn, region, Language.en, bgms
-                )
+                all_bgm_data_en = get_all_nice_bgms(region, Language.en, bgms)
                 all_cc_data_en = await get_all_nice_ccs(
                     conn, region, Language.en, mstCcs
                 )

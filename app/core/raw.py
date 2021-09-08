@@ -5,6 +5,7 @@ from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..data.custom_mappings import EXTRA_CHARAFIGURES
+from ..data.shop import get_shop_cost_item_id
 from ..db.helpers import ai, event, fetch, item, quest, script, skill, svt, td
 from ..redis.helpers.reverse import RedisReverse, get_reverse_ids
 from ..schemas.common import Region, ReverseDepth
@@ -706,6 +707,13 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
     )
     gifts = await fetch.get_all_multiple(conn, MstGift, gift_ids)
 
+    item_ids = (
+        {get_shop_cost_item_id(shop) for shop in shops}
+        | {lottery.payTargetId for lottery in box_gachas}
+        | {treasure_box.commonConsumeId for treasure_box in treasure_boxes}
+    )
+    mstItem = await get_multiple_items(conn, item_ids)
+
     return EventEntity(
         mstEvent=mstEvent,
         mstWar=await event.get_event_wars(conn, event_id),
@@ -726,6 +734,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         mstBoxGachaBase=gacha_bases,
         mstTreasureBox=treasure_boxes,
         mstTreasureBoxGift=box_gifts,
+        mstItem=mstItem,
     )
 
 
@@ -826,7 +835,12 @@ async def get_bgm_entity(conn: AsyncConnection, bgm_id: int) -> BgmEntity:
     )
 
     if mstBgm.flag != BgmFlag.IS_NOT_RELEASE:
-        bgm_entity.mstShop = await fetch.get_one(conn, MstShop, mstBgm.shopId)
+        mstShop = await fetch.get_one(conn, MstShop, mstBgm.shopId)
+        if mstShop:
+            bgm_entity.mstShop = mstShop
+            bgm_entity.mstItem = await fetch.get_one(
+                conn, MstItem, get_shop_cost_item_id(mstShop)
+            )
 
     return bgm_entity
 
@@ -848,6 +862,10 @@ async def get_all_bgm_entities(
     )
     mstShop_map = {mstShop.id: mstShop for mstShop in mstShops}
 
+    item_ids = {get_shop_cost_item_id(shop) for shop in mstShops}
+    mstItems = await get_multiple_items(conn, item_ids)
+    mstItem_map = {mstItem.id: mstItem for mstItem in mstItems}
+
     out_entities: list[BgmEntity] = []
     for mstBgm in mstBgms:
         mstBgmRelease = [
@@ -868,7 +886,10 @@ async def get_all_bgm_entities(
         )
 
         if mstBgm.flag != BgmFlag.IS_NOT_RELEASE:
-            bgm_entity.mstShop = mstShop_map.get(mstBgm.shopId, None)
+            mstShop = mstShop_map.get(mstBgm.shopId)
+            if mstShop:
+                bgm_entity.mstShop = mstShop
+                bgm_entity.mstItem = mstItem_map.get(get_shop_cost_item_id(mstShop))
 
         out_entities.append(bgm_entity)
 

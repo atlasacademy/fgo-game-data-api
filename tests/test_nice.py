@@ -6,9 +6,8 @@ from httpx import AsyncClient
 from sqlalchemy.ext.asyncio.engine import AsyncConnection
 
 from app.core.nice.enemy import get_enemy_script
-from app.core.nice.event import get_nice_shop
+from app.data.shop import get_shop_cost_item_id
 from app.db.helpers import event
-from app.schemas.common import Language, Region
 
 from .utils import get_response_data
 
@@ -638,22 +637,7 @@ class TestServantSpecial:
 
 @pytest.mark.asyncio
 async def test_shop_itemIds_0(na_db_conn: AsyncConnection) -> None:
-    fp_shop_item = await get_nice_shop(
-        na_db_conn,
-        Region.NA,
-        await event.get_mstShop_by_id(na_db_conn, 1),
-        [],
-        {},
-        Language.jp,
+    assert get_shop_cost_item_id(await event.get_mstShop_by_id(na_db_conn, 1)) == 4
+    assert (
+        get_shop_cost_item_id(await event.get_mstShop_by_id(na_db_conn, 11000000)) == 3
     )
-    assert fp_shop_item.cost.item.name == "Friend Point"
-
-    mp_shop_item = await get_nice_shop(
-        na_db_conn,
-        Region.NA,
-        await event.get_mstShop_by_id(na_db_conn, 11000000),
-        [],
-        {},
-        Language.jp,
-    )
-    assert mp_shop_item.cost.item.name == "Mana Prism"

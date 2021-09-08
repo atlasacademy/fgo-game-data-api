@@ -64,5 +64,28 @@
     "bgImageId": 0,
     "openedAt": 1521968400,
     "closedAt": 1901199599
+  },
+  "mstItem": {
+    "individuality": [],
+    "script": {},
+    "eventId": 0,
+    "eventGroupId": 0,
+    "id": 7106,
+    "name": "アサシンモニュメント",
+    "detail": "【霊基再臨素材】\nアサシンクラスを称えるモニュメント",
+    "imageId": 7106,
+    "bgImageId": 3,
+    "type": 12,
+    "unit": "",
+    "value": 0,
+    "sellQp": 2500,
+    "isSell": true,
+    "priority": 312,
+    "dropPriority": 5295,
+    "startedAt": 946652400,
+    "endedAt": 1910876400,
+    "useSkill": false,
+    "useAscension": true,
+    "useCostume": false
   }
 }
