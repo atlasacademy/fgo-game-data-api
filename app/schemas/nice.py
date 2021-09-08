@@ -1309,7 +1309,7 @@ class NiceEventTreasureBox(BaseModelORJson):
     id: int
     idx: int
     # iconId: int
-    treasureBoxGift: list[NiceEventTreasureBoxGift]
+    treasureBoxGifts: list[NiceEventTreasureBoxGift]
     maxDrawNumOnce: int
     # commonConsumeId: int
     # extraGiftId: NiceGift
