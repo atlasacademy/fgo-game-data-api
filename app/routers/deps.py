@@ -19,6 +19,7 @@ async def get_db(
     request: Request, region: Region
 ) -> AsyncGenerator[AsyncConnection, None]:
     async with request.app.state.async_engines[region].connect() as connection:
+        connection.info["region"] = region
         yield connection
 
 
@@ -26,6 +27,7 @@ async def get_db_transaction(
     request: Request, region: Region
 ) -> AsyncGenerator[AsyncConnection, None]:
     async with request.app.state.async_engines[region].begin() as connection:
+        connection.info["region"] = region
         yield connection
 
 

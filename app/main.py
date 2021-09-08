@@ -218,7 +218,8 @@ def custom_key_builder(
 ) -> str:
     prefix = FastAPICache.get_prefix()
     static_kwargs = {k: v for k, v in kwargs.items() if k not in {"conn", "redis"}}
-
+    if "region" not in kwargs and "conn" in kwargs and "region" in kwargs["conn"].info:
+        static_kwargs["region"] = kwargs["conn"].info["region"]
     raw_key = f"{func.__module__}:{func.__name__}:{args}:{orjson.dumps(static_kwargs).decode('utf-8')}"
     cache_key = hashlib.sha1(raw_key.encode("utf-8")).hexdigest()
 
