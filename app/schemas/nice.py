@@ -40,6 +40,7 @@ from .gameenums import (
     NiceAiCond,
     NiceBuffType,
     NiceCardType,
+    NiceCommonConsumeType,
     NiceCondType,
     NiceConsumeType,
     NiceEventType,
@@ -1295,6 +1296,14 @@ class NiceEventLottery(BaseModelORJson):
     boxes: list[NiceEventLotteryBox]
 
 
+class NiceCommonConsume(BaseModelORJson):
+    id: int
+    priority: int
+    type: NiceCommonConsumeType
+    objectId: int
+    num: int
+
+
 class NiceEventTreasureBoxGift(BaseModelORJson):
     id: int
     idx: int
@@ -1309,7 +1318,7 @@ class NiceEventTreasureBox(BaseModelORJson):
     treasureBoxGifts: list[NiceEventTreasureBoxGift]
     maxDrawNumOnce: int
     extraGifts: list[NiceGift]
-    commonConsumeItem: NiceItem
+    commonConsume: NiceCommonConsume
 
 
 class NiceEvent(BaseModelORJson):

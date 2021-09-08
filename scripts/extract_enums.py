@@ -354,6 +354,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Servant Frame Type",
         "SERVANT_FRAME_TYPE_NAME",
     ),
+    (
+        "CommonConsumeEntity.CommonConsumeType",
+        "CommonConsumeType",
+        "NiceCommonConsumeType",
+        "Common Consume Type",
+        "COMMON_CONSUME_TYPE_NAME",
+    ),
 ]
 
 

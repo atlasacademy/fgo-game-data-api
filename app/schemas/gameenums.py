@@ -3708,3 +3708,18 @@ SERVANT_FRAME_TYPE_NAME: dict[int, NiceSvtFrameType] = {
     6: NiceSvtFrameType.frame0803,
     7: NiceSvtFrameType.frame0804,
 }
+
+
+class CommonConsumeType(IntEnum):
+    ITEM = 1
+
+
+class NiceCommonConsumeType(str, Enum):
+    """Common Consume Type"""
+
+    item = "item"
+
+
+COMMON_CONSUME_TYPE_NAME: dict[int, NiceCommonConsumeType] = {
+    1: NiceCommonConsumeType.item,
+}

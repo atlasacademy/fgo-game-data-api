@@ -7,6 +7,7 @@ from ...data.shop import get_shop_cost_item_id
 from ...schemas.common import Language, Region
 from ...schemas.enums import DETAIL_MISSION_LINK_TYPE, ITEM_BG_TYPE_NAME, NiceItemBGType
 from ...schemas.gameenums import (
+    COMMON_CONSUME_TYPE_NAME,
     COND_TYPE_NAME,
     EVENT_TYPE_NAME,
     MISSION_PROGRESS_TYPE_NAME,
@@ -23,6 +24,7 @@ from ...schemas.gameenums import (
 )
 from ...schemas.nice import (
     AssetURL,
+    NiceCommonConsume,
     NiceEvent,
     NiceEventLottery,
     NiceEventLotteryBox,
@@ -45,6 +47,7 @@ from ...schemas.nice import (
 from ...schemas.raw import (
     MstBoxGacha,
     MstBoxGachaBase,
+    MstCommonConsume,
     MstEventMission,
     MstEventMissionCondition,
     MstEventMissionConditionDetail,
@@ -72,6 +75,16 @@ settings = Settings()
 
 def get_nice_gifts(gift_id: int, gift_maps: dict[int, list[MstGift]]) -> list[NiceGift]:
     return [get_nice_gift(gift) for gift in gift_maps[gift_id]]
+
+
+def get_nice_common_consume(common_consume: MstCommonConsume) -> NiceCommonConsume:
+    return NiceCommonConsume(
+        id=common_consume.id,
+        priority=common_consume.priority,
+        type=COMMON_CONSUME_TYPE_NAME[common_consume.type],
+        objectId=common_consume.objectId,
+        num=common_consume.num,
+    )
 
 
 def get_nice_set_item(set_item: MstSetItem) -> NiceItemSet:
@@ -414,13 +427,11 @@ def get_nice_treasure_box_gift(
     )
 
 
-async def get_nice_treasure_box(
-    conn: AsyncConnection,
-    region: Region,
+def get_nice_treasure_box(
     treasure_box: MstTreasureBox,
     box_gifts: list[MstTreasureBoxGift],
     gift_maps: dict[int, list[MstGift]],
-    lang: Language,
+    common_consumes: dict[int, MstCommonConsume],
 ) -> NiceEventTreasureBox:
     return NiceEventTreasureBox(
         slot=treasure_box.slot,
@@ -433,8 +444,8 @@ async def get_nice_treasure_box(
         ],
         maxDrawNumOnce=treasure_box.maxDrawNumOnce,
         extraGifts=get_nice_gifts(treasure_box.extraGiftId, gift_maps),
-        commonConsumeItem=await get_nice_item(
-            conn, region, treasure_box.commonConsumeId, lang
+        commonConsume=get_nice_common_consume(
+            common_consumes[treasure_box.commonConsumeId]
         ),
     )
 
@@ -458,6 +469,8 @@ async def get_nice_event(
         item.id: get_nice_item_from_raw(region, item, lang)
         for item in raw_event.mstItem
     }
+
+    common_consumes = {consume.id: consume for consume in raw_event.mstCommonConsume}
 
     missions = get_nice_missions(
         raw_event.mstEventMission,
@@ -524,8 +537,8 @@ async def get_nice_event(
             for lottery in raw_event.mstBoxGacha
         ],
         treasureBoxes=[
-            await get_nice_treasure_box(
-                conn, region, box, raw_event.mstTreasureBoxGift, gift_maps, lang
+            get_nice_treasure_box(
+                box, raw_event.mstTreasureBoxGift, gift_maps, common_consumes
             )
             for box in raw_event.mstTreasureBox
         ],

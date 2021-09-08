@@ -18,6 +18,7 @@ from ...models.raw import (
     mstCommandCode,
     mstCommandCodeComment,
     mstCommandCodeSkill,
+    mstCommonConsume,
     mstConstant,
     mstCv,
     mstEquip,
@@ -83,6 +84,7 @@ from ...schemas.raw import (
     MstCommandCode,
     MstCommandCodeComment,
     MstCommandCodeSkill,
+    MstCommonConsume,
     MstConstant,
     MstCv,
     MstEquip,
@@ -318,6 +320,7 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
         mstTreasureBoxGift.c.id,
         mstTreasureBoxGift.c.id,
     ),
+    MstCommonConsume: (mstCommonConsume, mstCommonConsume.c.id, mstCommonConsume.c.id),
 }
 
 TFetchAllMultiple = TypeVar("TFetchAllMultiple", bound=BaseModelORJson)

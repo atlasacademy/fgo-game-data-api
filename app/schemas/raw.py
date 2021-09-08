@@ -986,6 +986,14 @@ class MstTreasureBoxGift(BaseModelORJson):
     collateralUpperLimit: int
 
 
+class MstCommonConsume(BaseModelORJson):
+    id: int
+    priority: int
+    type: int
+    objectId: int
+    num: int
+
+
 class MstEvent(BaseModelORJson):
     script: list[dict[str, str]]  # []
     id: int  # 10083
@@ -1461,6 +1469,7 @@ class EventEntity(BaseModelORJson):
     mstTreasureBox: list[MstTreasureBox]
     mstTreasureBoxGift: list[MstTreasureBoxGift]
     mstItem: list[MstItem]
+    mstCommonConsume: list[MstCommonConsume]
 
 
 class WarEntity(BaseModelORJson):

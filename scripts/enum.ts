@@ -1253,3 +1253,7 @@ export enum NiceSvtFrameType {
     FRAME_0803 = "frame0803",
     FRAME_0804 = "frame0804",
 }
+
+export enum NiceCommonConsumeType {
+    ITEM = "item",
+}

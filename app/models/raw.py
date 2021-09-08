@@ -1053,6 +1053,17 @@ mstTreasureBoxGift = Table(
 )
 
 
+mstCommonConsume = Table(
+    "mstCommonConsume",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("priority", Integer),
+    Column("type", Integer),
+    Column("objectId", Integer),
+    Column("num", Integer),
+)
+
+
 mstBoxGacha = Table(
     "mstBoxGacha",
     metadata,
@@ -1569,6 +1580,7 @@ TABLES_TO_BE_LOADED = [
     mstEventTowerReward,
     mstTreasureBox,
     mstTreasureBoxGift,
+    mstCommonConsume,
     mstBoxGacha,
     mstBoxGachaBase,
     mstWarAdd,

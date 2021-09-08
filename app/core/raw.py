@@ -37,6 +37,7 @@ from ..schemas.raw import (
     MstCommandCode,
     MstCommandCodeComment,
     MstCommandCodeSkill,
+    MstCommonConsume,
     MstCv,
     MstEquip,
     MstEquipExp,
@@ -697,6 +698,9 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
     box_gift_ids = {box.treasureBoxGiftId for box in treasure_boxes}
     box_gifts = await fetch.get_all_multiple(conn, MstTreasureBoxGift, box_gift_ids)
 
+    consume_ids = {box.commonConsumeId for box in treasure_boxes}
+    common_consumes = await fetch.get_all_multiple(conn, MstCommonConsume, consume_ids)
+
     gift_ids = (
         {reward.giftId for reward in rewards}
         | {mission.giftId for mission in missions}
@@ -707,11 +711,9 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
     )
     gifts = await fetch.get_all_multiple(conn, MstGift, gift_ids)
 
-    item_ids = (
-        {get_shop_cost_item_id(shop) for shop in shops}
-        | {lottery.payTargetId for lottery in box_gachas}
-        | {treasure_box.commonConsumeId for treasure_box in treasure_boxes}
-    )
+    item_ids = {get_shop_cost_item_id(shop) for shop in shops} | {
+        lottery.payTargetId for lottery in box_gachas
+    }
     mstItem = await get_multiple_items(conn, item_ids)
 
     return EventEntity(
@@ -735,6 +737,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         mstTreasureBox=treasure_boxes,
         mstTreasureBoxGift=box_gifts,
         mstItem=mstItem,
+        mstCommonConsume=common_consumes,
     )
 
 
