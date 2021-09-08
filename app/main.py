@@ -235,6 +235,7 @@ async def startup() -> None:
     FastAPICache.init(
         RedisBackend(redis),
         prefix=f"{settings.redis_prefix}:cache",
+        expire=60 * 60 * 24 * 7,
         key_builder=custom_key_builder,
         coder=PickleCoder,  # pyright: reportGeneralTypeIssues=false
     )

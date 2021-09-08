@@ -605,7 +605,7 @@ async def get_latest_quest_phase_with_enemies(
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
-@cache()  # type: ignore
+@cache(expire=settings.quest_cache_length)  # type: ignore
 async def find_quest_phase(
     search_param: QuestSearchQueryParams = Depends(QuestSearchQueryParams),
     conn: AsyncConnection = Depends(get_db),
