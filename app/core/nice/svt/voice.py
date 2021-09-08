@@ -124,7 +124,7 @@ def get_nice_voice_line(
         subtitle=subtitle_ids.get(str(svt_id) + "_" + first_voice.id, ""),
     )
 
-    if script.summonScript is not None:
+    if script.summonScript is not None and script.summonScript != "":
         voice_line.summonScript = get_nice_script_link(region, script.summonScript)
 
     if voice_id in mstVoices:
