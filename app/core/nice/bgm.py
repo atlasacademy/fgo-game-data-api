@@ -105,7 +105,7 @@ async def get_nice_bgm_entity(
     return get_nice_bgm_entity_from_raw(region, bgm_entity, lang)
 
 
-async def get_all_nice_bgms(
+def get_all_nice_bgms(
     region: Region, lang: Language, bgms: list[BgmEntity]
 ) -> list[NiceBgmEntity]:  # pragma: no cover
     return [
