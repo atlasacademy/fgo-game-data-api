@@ -1,6 +1,7 @@
 from typing import Iterable, Optional, Union
 
 from sqlalchemy import Table
+from sqlalchemy.exc import DBAPIError
 from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import Join, and_, not_, or_, select
 from sqlalchemy.sql.elements import ClauseElement
@@ -56,7 +57,12 @@ async def get_svt_id(conn: AsyncConnection, col_no: int) -> int:
             ),
         )
     )
-    mstSvt_db = (await conn.execute(stmt)).fetchone()
+
+    try:
+        mstSvt_db = (await conn.execute(stmt)).fetchone()
+    except DBAPIError:
+        return col_no
+
     if mstSvt_db:
         return int(mstSvt_db.id)
     return col_no
@@ -68,7 +74,12 @@ async def get_ce_id(conn: AsyncConnection, col_no: int) -> int:
     stmt = select(mstSvt.c.id).where(
         and_(mstSvt.c.collectionNo == col_no, mstSvt.c.type == SvtType.SERVANT_EQUIP)
     )
-    mstSvt_db = (await conn.execute(stmt)).fetchone()
+
+    try:
+        mstSvt_db = (await conn.execute(stmt)).fetchone()
+    except DBAPIError:
+        return col_no
+
     if mstSvt_db:
         return int(mstSvt_db.id)
     return col_no

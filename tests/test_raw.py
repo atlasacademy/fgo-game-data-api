@@ -122,6 +122,44 @@ async def test_404_raw(client: AsyncClient, endpoint: str, item_id: str) -> None
     assert response.json()["detail"][-9:] == "not found"
 
 
+cases_overflow_dict = {
+    "servant": "112345678910111213",
+    "equip": "112345678910111213",
+    "svt": "112345678910111213",
+    "skill": "112345678910111213",
+    "NP": "112345678910111213",
+    "function": "112345678910111213",
+    "buff": "12312312312312312323123",
+    "item": "112345678910111213",
+    "MC": "112345678910111213",
+    "CC": "112345678910111213",
+    "event": "112345678910111213",
+    "war": "112345678910111213",
+    "quest": "112345678910111213",
+    "quest/112345678910111213": "1",
+    "quest/94025012": "112345678910111213",
+    "ai/svt": "112345678910111213",
+    "ai/field": "112345678910111213",
+    "bgm": "112345678910111213",
+    "mm": "112345678910111213",
+}
+
+
+cases_overflow = [
+    pytest.param(key, value, id=key) for key, value in cases_overflow_dict.items()
+]
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("endpoint,item_id", cases_overflow)
+async def test_int_overflow_raw(
+    client: AsyncClient, endpoint: str, item_id: str
+) -> None:
+    response = await client.get(f"/raw/JP/{endpoint}/{item_id}")
+    assert response.status_code == 404
+    assert response.json()["detail"][-9:] == "not found"
+
+
 cases_immutable_dict = {
     "servant": ("184", "NA_Tomoe"),
     "skill": ("24550", "NA_skill_24550"),

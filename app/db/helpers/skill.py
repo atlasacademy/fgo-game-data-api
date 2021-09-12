@@ -1,6 +1,7 @@
 from typing import Any, Iterable, Optional
 
 from sqlalchemy.dialects.postgresql import aggregate_order_by, array_agg
+from sqlalchemy.exc import DBAPIError
 from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import and_, func, literal_column, select
 
@@ -89,11 +90,14 @@ async def get_skillEntity(
         .group_by(mstSkill.c.id, mstSkillLvJson.c.mstSkillLv, aiIds.c.aiIds)
     )
 
-    skill_entities = [
-        SkillEntityNoReverse.from_orm(skill)
-        for skill in (await conn.execute(stmt)).fetchall()
-    ]
-    order = {skill_id: i for i, skill_id in enumerate(skill_ids)}
+    try:
+        skill_entities = [
+            SkillEntityNoReverse.from_orm(skill)
+            for skill in (await conn.execute(stmt)).fetchall()
+        ]
+        order = {skill_id: i for i, skill_id in enumerate(skill_ids)}
+    except DBAPIError:
+        return []
 
     return sorted(skill_entities, key=lambda skill: order[skill.mstSkill.id])
 

@@ -1,6 +1,7 @@
 from typing import Any, Iterable, Optional
 
 from sqlalchemy.dialects.postgresql import aggregate_order_by
+from sqlalchemy.exc import DBAPIError
 from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import and_, func, select
 
@@ -61,13 +62,17 @@ async def get_tdEntity(
         .group_by(mstTreasureDevice.c.id, mstTreasureDeviceLvJson.c.mstTreasureDeviceLv)
     )
 
-    skill_entities = [
-        TdEntityNoReverse.from_orm(skill)
-        for skill in (await conn.execute(stmt)).fetchall()
-    ]
-    order = {skill_id: i for i, skill_id in enumerate(td_ids)}
+    try:
+        td_entities = [
+            TdEntityNoReverse.from_orm(td)
+            for td in (await conn.execute(stmt)).fetchall()
+        ]
+    except DBAPIError:
+        return []
 
-    return sorted(skill_entities, key=lambda td: order[td.mstTreasureDevice.id])
+    order = {td_id: i for i, td_id in enumerate(td_ids)}
+
+    return sorted(td_entities, key=lambda td: order[td.mstTreasureDevice.id])
 
 
 async def get_mstSvtTreasureDevice(conn: AsyncConnection, svt_id: int) -> list[Any]:

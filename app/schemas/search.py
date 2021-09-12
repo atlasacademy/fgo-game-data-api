@@ -32,9 +32,9 @@ from .gameenums import (
 @dataclass
 class ServantSearchQueryParams:
     region: Region
-    name: Optional[str] = None
-    illustrator: Optional[str] = None
-    cv: Optional[str] = None
+    name: Optional[str] = Query(None, max_length=999)
+    illustrator: Optional[str] = Query(None, max_length=999)
+    cv: Optional[str] = Query(None, max_length=999)
     excludeCollectionNo: list[int] = Query([0])
     type: list[NiceSvtType] = Query(NICE_SERVANT_TYPES)
     flag: list[NiceSvtFlag] = Query([])
@@ -93,9 +93,9 @@ class ServantSearchQueryParams:
 @dataclass
 class SvtSearchQueryParams:
     region: Region
-    name: Optional[str] = None
-    illustrator: Optional[str] = None
-    cv: Optional[str] = None
+    name: Optional[str] = Query(None, max_length=999)
+    illustrator: Optional[str] = Query(None, max_length=999)
+    cv: Optional[str] = Query(None, max_length=999)
     excludeCollectionNo: list[int] = Query([])
     type: list[NiceSvtType] = Query([])
     flag: list[NiceSvtFlag] = Query([])
@@ -154,8 +154,8 @@ class SvtSearchQueryParams:
 @dataclass
 class EquipSearchQueryParams:
     region: Region
-    name: Optional[str] = None
-    illustrator: Optional[str] = None
+    name: Optional[str] = Query(None, max_length=999)
+    illustrator: Optional[str] = Query(None, max_length=999)
     excludeCollectionNo: list[int] = Query([0])
     type: list[NiceSvtType] = Query([NiceSvtType.servantEquip])
     flag: list[NiceSvtFlag] = Query([])
@@ -191,7 +191,7 @@ class EquipSearchQueryParams:
 @dataclass
 class SkillSearchParams:
     region: Region
-    name: Optional[str] = None
+    name: Optional[str] = Query(None, max_length=999)
     type: Optional[list[NiceSkillType]] = Query(None)
     num: Optional[list[int]] = Query(None)
     priority: Optional[list[int]] = Query(None)
@@ -235,7 +235,7 @@ class SkillSearchParams:
 @dataclass
 class TdSearchParams:
     region: Region
-    name: Optional[str] = None
+    name: Optional[str] = Query(None, max_length=999)
     card: Optional[list[NiceCardType]] = Query(None)
     individuality: list[Union[Trait, int]] = Query([])
     hits: Optional[list[int]] = Query(None)
@@ -278,7 +278,7 @@ class TdSearchParams:
 @dataclass
 class BuffSearchQueryParams:
     region: Region
-    name: Optional[str] = None
+    name: Optional[str] = Query(None, max_length=999)
     type: list[NiceBuffType] = Query([])
     buffGroup: list[int] = Query([])
     vals: list[Union[Trait, int]] = Query([])
@@ -319,7 +319,7 @@ class BuffSearchQueryParams:
 @dataclass
 class FuncSearchQueryParams:
     region: Region
-    popupText: Optional[str] = None
+    popupText: Optional[str] = Query(None, max_length=999)
     type: list[NiceFuncType] = Query([])
     targetType: list[NiceFuncTargetType] = Query([])
     targetTeam: list[FuncApplyTarget] = Query([])
@@ -361,7 +361,7 @@ class FuncSearchQueryParams:
 @dataclass
 class ItemSearchQueryParams:
     region: Region
-    name: Optional[str] = None
+    name: Optional[str] = Query(None, max_length=999)
     individuality: list[Union[Trait, int]] = Query([])
     type: list[NiceItemType] = Query([])
     background: list[NiceItemBGType] = Query([])
@@ -396,7 +396,7 @@ class ItemSearchQueryParams:
 @dataclass
 class QuestSearchQueryParams:
     region: Region
-    name: Optional[str] = None
+    name: Optional[str] = Query(None, max_length=999)
     spotName: Optional[str] = None
     warId: list[int] = Query([])
     type: list[NiceQuestType] = Query([])
@@ -452,12 +452,13 @@ class QuestSearchQueryParams:
 @dataclass
 class ScriptSearchQueryParams:
     region: Region
-    query: str
+    query: str = Query(..., max_length=999)
 
     DESCRIPTION: ClassVar[str] = inspect.cleandoc(
         """
         Search and return the list of matching scripts.
 
         - **query**: search query https://groonga.org/docs/reference/grn_expr/query_syntax.html.
+        (Queries starting with `column:` are not supported).
         """
     )

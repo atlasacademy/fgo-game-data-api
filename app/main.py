@@ -1,4 +1,5 @@
 import hashlib
+import json
 import logging
 import time
 from math import ceil
@@ -220,7 +221,13 @@ def custom_key_builder(
     static_kwargs = {k: v for k, v in kwargs.items() if k not in {"conn", "redis"}}
     if "region" not in kwargs and "conn" in kwargs and "region" in kwargs["conn"].info:
         static_kwargs["region"] = kwargs["conn"].info["region"]
-    raw_key = f"{func.__module__}:{func.__name__}:{args}:{orjson.dumps(static_kwargs).decode('utf-8')}"
+
+    try:
+        kwargs_dump = orjson.dumps(static_kwargs).decode("utf-8")
+    except TypeError:  # orjson can't dump 64+ bit int
+        kwargs_dump = json.dumps(static_kwargs)
+
+    raw_key = f"{func.__module__}:{func.__name__}:{args}:{kwargs_dump}"
     cache_key = hashlib.sha1(raw_key.encode("utf-8")).hexdigest()
 
     return f"{prefix}:{namespace}:{cache_key}"

@@ -1,6 +1,7 @@
 from typing import Iterable, Optional, Type, TypeVar, Union
 
 from sqlalchemy import Table
+from sqlalchemy.exc import DBAPIError
 from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import ColumnElement, select
 
@@ -168,7 +169,11 @@ async def get_one(
 ) -> Optional[TFetchOne]:
     table, where_col = schema_map_fetch_one[schema]
     stmt = select(table).where(where_col == where_id)
-    entity_db = (await conn.execute(stmt)).fetchone()
+    try:
+        entity_db = (await conn.execute(stmt)).fetchone()
+    except DBAPIError:
+        return None
+
     if entity_db:
         return schema.from_orm(entity_db)
 

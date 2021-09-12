@@ -2,6 +2,7 @@ from typing import Iterable, Optional, Union
 
 from sqlalchemy import Table
 from sqlalchemy.dialects.postgresql import array_agg
+from sqlalchemy.exc import DBAPIError
 from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import Join, and_, case, func, literal_column, or_, select
 from sqlalchemy.sql.elements import ClauseElement
@@ -377,9 +378,14 @@ async def get_quest_entity(
         .where(mstQuest.c.id.in_(quest_ids))
         .group_by(mstQuest.c.id)
     )
-    return [
-        QuestEntity.from_orm(quest) for quest in (await conn.execute(stmt)).fetchall()
-    ]
+
+    try:
+        return [
+            QuestEntity.from_orm(quest)
+            for quest in (await conn.execute(stmt)).fetchall()
+        ]
+    except DBAPIError:
+        return []
 
 
 async def get_quest_by_spot(
@@ -513,9 +519,12 @@ async def get_quest_phase_entity(
         )
     )
 
-    quest_phase = (await conn.execute(sql_stmt)).fetchone()
-    if quest_phase:
-        return QuestPhaseEntity.from_orm(quest_phase)
+    try:
+        quest_phase = (await conn.execute(sql_stmt)).fetchone()
+        if quest_phase:
+            return QuestPhaseEntity.from_orm(quest_phase)
+    except DBAPIError:
+        pass
 
     return None
 
