@@ -7,6 +7,7 @@ from typing import Any, Awaitable, Callable, Optional
 
 import orjson
 import toml
+import uvicorn  # type: ignore
 from aioredis import Redis
 from fastapi import Depends, FastAPI, HTTPException, Request, Response, status
 from fastapi.middleware.cors import CORSMiddleware
@@ -16,7 +17,7 @@ from fastapi_cache import FastAPICache
 from fastapi_cache.backends.redis import RedisBackend
 from fastapi_cache.coder import PickleCoder
 from fastapi_limiter import FastAPILimiter  # type: ignore
-from sqlalchemy.ext.asyncio import create_async_engine
+from sqlalchemy.ext.asyncio import AsyncConnection, create_async_engine
 
 from .config import SecretSettings, Settings, logger, project_root
 from .core.info import get_all_repo_info
@@ -222,12 +223,20 @@ def custom_key_builder(
     if "region" not in kwargs and "conn" in kwargs and "region" in kwargs["conn"].info:
         static_kwargs["region"] = kwargs["conn"].info["region"]
 
+    static_args = [
+        arg
+        for arg in args
+        if not isinstance(arg, AsyncConnection) and not isinstance(arg, Redis)
+    ]
+
     try:
+        args_dump = orjson.dumps(static_args).decode("utf-8")
         kwargs_dump = orjson.dumps(static_kwargs).decode("utf-8")
     except TypeError:  # orjson can't dump 64+ bit int
+        args_dump = json.dumps(static_args)
         kwargs_dump = json.dumps(static_kwargs)
 
-    raw_key = f"{func.__module__}:{func.__name__}:{args}:{kwargs_dump}"
+    raw_key = f"{func.__module__}:{func.__name__}:{args_dump}:{kwargs_dump}"
     cache_key = hashlib.sha1(raw_key.encode("utf-8")).hexdigest()
 
     return f"{prefix}:{namespace}:{cache_key}"

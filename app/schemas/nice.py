@@ -561,31 +561,48 @@ class AscensionAddEntry(GenericModel, Generic[AscensionAddData]):
     )
 
 
+# AscensionAddEntry[list[NiceTrait]] can't be pickled
+class AscensionAddEntryTrait(BaseModel):
+    ascension: dict[int, list[NiceTrait]] = Field(
+        ...,
+        title="Ascension changes",
+        description="Mapping <Ascension level, Ascension level data>.",
+    )
+    costume: dict[int, list[NiceTrait]] = Field(
+        ..., title="Costume changes", description="Mapping <Costume ID, Costume data>."
+    )
+
+
+AscensionAddEntryInt = AscensionAddEntry[int]
+AscensionAddEntryStr = AscensionAddEntry[str]
+AscensionAddEntryHttpUrl = AscensionAddEntry[HttpUrl]
+
+
 class AscensionAdd(BaseModel):
-    individuality: AscensionAddEntry[list[NiceTrait]] = Field(
+    individuality: AscensionAddEntryTrait = Field(
         ...,
         title="Individuality changes",
         description="Some servants add or remove traits as they ascend.",
     )
-    voicePrefix: AscensionAddEntry[int] = Field(
+    voicePrefix: AscensionAddEntryInt = Field(
         ...,
         title="Voice prefix changes",
         description="Some servants change voice lines as they ascennd.",
     )
-    overWriteServantName: AscensionAddEntry[str] = Field(
+    overWriteServantName: AscensionAddEntryStr = Field(
         ..., title="Servant name changes"
     )
-    overWriteServantBattleName: AscensionAddEntry[str] = Field(
+    overWriteServantBattleName: AscensionAddEntryStr = Field(
         ..., title="Servant battle name changes"
     )
-    overWriteTDName: AscensionAddEntry[str] = Field(..., title="NP name changes")
-    overWriteTDRuby: AscensionAddEntry[str] = Field(..., title="NP ruby changes")
-    overWriteTDFileName: AscensionAddEntry[HttpUrl] = Field(
+    overWriteTDName: AscensionAddEntryStr = Field(..., title="NP name changes")
+    overWriteTDRuby: AscensionAddEntryStr = Field(..., title="NP ruby changes")
+    overWriteTDFileName: AscensionAddEntryHttpUrl = Field(
         ..., title="NP image URL changes"
     )
-    overWriteTDRank: AscensionAddEntry[str] = Field(..., title="NP rank changes")
-    overWriteTDTypeText: AscensionAddEntry[str] = Field(..., title="NP type changes")
-    lvMax: AscensionAddEntry[int] = Field(..., title="Max level")
+    overWriteTDRank: AscensionAddEntryStr = Field(..., title="NP rank changes")
+    overWriteTDTypeText: AscensionAddEntryStr = Field(..., title="NP type changes")
+    lvMax: AscensionAddEntryInt = Field(..., title="Max level")
 
 
 class NiceServantChange(BaseModel):

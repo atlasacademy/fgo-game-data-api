@@ -1,12 +1,15 @@
 from collections import defaultdict
+from dataclasses import dataclass
 from typing import Any, Optional, Union
 
 from aioredis import Redis
+from fastapi_cache.decorator import cache
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
 from ...db.helpers import war
 from ...rayshift.quest import get_quest_detail
+from ...redis.helpers.quest import get_stages_cache, set_stages_cache
 from ...schemas.common import Language, Region, ScriptLink
 from ...schemas.enums import CLASS_NAME
 from ...schemas.gameenums import (
@@ -157,26 +160,23 @@ async def get_nice_quest_alone(
     return NiceQuest.parse_obj(await get_nice_quest(conn, region, raw_quest, lang))
 
 
-async def get_nice_quest_phase(
+@dataclass
+class DBQuestPhase:
+    raw: QuestPhaseEntity
+    nice: NiceQuestPhase
+
+
+@cache()  # type: ignore
+async def get_nice_quest_phase_no_rayshift(
     conn: AsyncConnection,
     redis: Redis,
     region: Region,
     quest_id: int,
     phase: int,
     lang: Language = Language.jp,
-) -> NiceQuestPhase:
+) -> DBQuestPhase:
     raw_quest = await raw.get_quest_phase_entity(conn, quest_id, phase)
     nice_data = await get_nice_quest(conn, region, raw_quest, lang)
-
-    stages = sorted(raw_quest.mstStage, key=lambda stage: stage.wave)
-
-    quest_enemies: list[list[QuestEnemy]] = [[]] * len(raw_quest.mstStage)
-    if stages:
-        quest_detail = await get_quest_detail(conn, region, quest_id, phase)
-        if quest_detail:
-            quest_enemies = await get_quest_enemies(
-                conn, redis, region, quest_detail, lang
-            )
 
     support_servants: list[SupportServant] = []
     if raw_quest.npcFollower:
@@ -211,10 +211,7 @@ async def get_nice_quest_phase(
             )
         ],
         "supportServants": support_servants,
-        "stages": [
-            get_nice_stage(region, stage, enemies, raw_quest.mstBgm)
-            for stage, enemies in zip(stages, quest_enemies)
-        ],
+        "stages": [],
     }
 
     if raw_quest.mstQuestPhaseDetail:
@@ -229,4 +226,46 @@ async def get_nice_quest_phase(
         ]
         nice_data["consume"] = raw_quest.mstQuestPhaseDetail.actConsume
 
-    return NiceQuestPhase.parse_obj(nice_data)
+    return DBQuestPhase(raw_quest, NiceQuestPhase.parse_obj(nice_data))
+
+
+async def get_nice_quest_phase(
+    conn: AsyncConnection,
+    redis: Redis,
+    region: Region,
+    quest_id: int,
+    phase: int,
+    lang: Language = Language.jp,
+) -> NiceQuestPhase:
+    db_data: DBQuestPhase = await get_nice_quest_phase_no_rayshift(
+        conn, redis, region, quest_id, phase, lang
+    )
+
+    nice_stages = await get_stages_cache(redis, region, quest_id, phase, lang)
+
+    if nice_stages:
+        db_data.nice.stages = nice_stages
+        return db_data.nice
+
+    stages = sorted(db_data.raw.mstStage, key=lambda stage: stage.wave)
+    save_stages_cache = True
+
+    quest_enemies: list[list[QuestEnemy]] = [[]] * len(db_data.raw.mstStage)
+    if stages:
+        quest_detail = await get_quest_detail(conn, region, quest_id, phase)
+        if quest_detail:
+            quest_enemies = await get_quest_enemies(
+                conn, redis, region, quest_detail, lang
+            )
+        else:
+            save_stages_cache = False
+
+    new_nice_stages = [
+        get_nice_stage(region, stage, enemies, db_data.raw.mstBgm)
+        for stage, enemies in zip(stages, quest_enemies)
+    ]
+    db_data.nice.stages = new_nice_stages
+    if save_stages_cache:
+        await set_stages_cache(redis, new_nice_stages, region, quest_id, phase, lang)
+
+    return db_data.nice

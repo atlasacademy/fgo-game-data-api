@@ -746,7 +746,6 @@ get_quest_phase_description = (
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-@cache(expire=settings.quest_cache_length)  # type: ignore
 async def get_quest_phase(
     region: Region,
     quest_id: int,
