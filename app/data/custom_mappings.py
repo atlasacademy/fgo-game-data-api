@@ -25,6 +25,8 @@ class Translation(str, Enum):
     ENTITY = "entity_names"
     QUEST = "quest_names"
     SPOT = "spot_names"
+    ILLUSTRATOR = "illustrator_names"
+    CV = "cv_names"
     SERVANT = "servant_names"
     EQUIP = "equip_names"
     CC = "cc_names"
@@ -38,6 +40,14 @@ for translation_file in Translation.__members__.values():
 with open(MAPPING_PATH / "translation_override.json", "rb") as fp:
     TRANSLATION_OVERRIDE: dict[Translation, dict[str, str]] = orjson.loads(fp.read())
 
+
+ILLUSTRATOR_EN_TO_JP: dict[str, str] = {}
+with open(MAPPING_PATH / f"{Translation.ILLUSTRATOR.value}.json", "rb") as fp:
+    ILLUSTRATOR_EN_TO_JP = {v: k for k, v in orjson.loads(fp.read()).items() if k != v}
+
+CV_EN_TO_JP: dict[str, str] = {}
+with open(MAPPING_PATH / f"{Translation.CV.value}.json", "rb") as fp:
+    CV_EN_TO_JP = {v: k for k, v in orjson.loads(fp.read()).items() if k != v}
 
 EXTRA_CHARAFIGURES: dict[int, list[int]] = {}
 

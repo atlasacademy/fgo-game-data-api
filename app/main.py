@@ -111,7 +111,9 @@ Pre-generated full nice data that can be served instantly:
   [JP Material with English names](/export/JP/nice_item_lang_en.json)
   - [JP Master Mission](/export/JP/nice_master_mission.json)
   - [JP Illustrator](/export/JP/nice_illustrator.json)
+  [JP Illustrator with English names](/export/JP/nice_illustrator_lang_en.json)
   - [JP Voice Actor](/export/JP/nice_cv.json)
+  [JP Voice Actor with English names](/export/JP/nice_cv_lang_en.json)
   - [JP BGM](/export/JP/nice_bgm.json),
   [JP BGM](/export/JP/nice_bgm_lang_en.json)
 - Both regions (The data is the same for both NA and JP endpoints):

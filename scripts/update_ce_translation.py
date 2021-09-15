@@ -21,6 +21,8 @@ TRANSLATION_FILES = (
     "entity_names",
     "quest_names",
     "spot_names",
+    "illustrator_names",
+    "cv_names",
     "servant_names",
     "equip_names",
     "cc_names",
@@ -280,6 +282,10 @@ def main(jp_master: Path, na_master: Path) -> None:
     update_translation("voice_names", jp_master, na_master, "mstVoice", get_voice_names)
     update_translation("quest_names", jp_master, na_master, "mstQuest", get_names)
     update_translation("spot_names", jp_master, na_master, "mstSpot", get_names)
+    update_translation(
+        "illustrator_names", jp_master, na_master, "mstIllustrator", get_names
+    )
+    update_translation("cv_names", jp_master, na_master, "mstCv", get_names)
     update_translation(
         "overwrite_voice_names",
         jp_master,

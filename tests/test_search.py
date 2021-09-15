@@ -111,6 +111,10 @@ test_cases_dict: dict[str, tuple[str, set[int]]] = {
         {9940530, 9941040, 9941050, 9942530},
     ),
     "svt_search_flag": ("NA/svt/search?flag=svtEquipFriendShip&name=crown", {9300010}),
+    "svt_search_en_illustrator_cv": (
+        "JP/servant/search?cv=Mamiko Noto&illustrator=Takashi Takeuchi",
+        {202900},
+    ),
     "servant_search_va": ("JP/svt/search?cv=伊瀬茉莉也", {304400, 603500}),
     "equip_search_illustrator": ("NA/svt/search?illustrator=Cogecha", {9403840}),
     "skill_search_type_coolDown_numFunc": (

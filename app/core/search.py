@@ -1,9 +1,10 @@
-from typing import Iterable, Union
+from typing import Iterable, Optional, Union
 
 from fastapi import HTTPException
 from fuzzywuzzy import fuzz, utils
 from sqlalchemy.ext.asyncio import AsyncConnection
 
+from ..data.custom_mappings import CV_EN_TO_JP, ILLUSTRATOR_EN_TO_JP
 from ..db.helpers.buff import get_buff_search
 from ..db.helpers.func import get_func_search
 from ..db.helpers.item import get_item_search
@@ -12,7 +13,7 @@ from ..db.helpers.script import get_script_search
 from ..db.helpers.skill import get_skill_search
 from ..db.helpers.svt import get_svt_groups, get_svt_ids, get_svt_search
 from ..db.helpers.td import get_td_search
-from ..schemas.common import Language
+from ..schemas.common import Language, Region
 from ..schemas.enums import (
     ATTRIBUTE_NAME_REVERSE,
     BUFF_TYPE_NAME_REVERSE,
@@ -163,6 +164,18 @@ async def search_servant(
         cond_svt_value = set()
         voice_cond_group = set()
 
+    if search_param.illustrator is not None and search_param.region == Region.JP:
+        illustrator: Optional[str] = ILLUSTRATOR_EN_TO_JP.get(
+            search_param.illustrator, search_param.illustrator
+        )
+    else:
+        illustrator = search_param.illustrator
+
+    if search_param.cv is not None and search_param.region == Region.JP:
+        cv: Optional[str] = CV_EN_TO_JP.get(search_param.cv, search_param.cv)
+    else:
+        cv = search_param.cv
+
     matches = await get_svt_search(
         conn,
         svt_type_ints=svt_type_ints,
@@ -176,8 +189,8 @@ async def search_servant(
         rarity_ints=rarity_ints,
         cond_svt_value=cond_svt_value,
         cond_group_value=voice_cond_group,
-        illustrator=search_param.illustrator,
-        cv=search_param.cv,
+        illustrator=illustrator,
+        cv=cv,
     )
 
     if search_param.name:

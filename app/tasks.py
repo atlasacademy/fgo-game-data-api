@@ -27,7 +27,7 @@ from .core.nice.mc import get_all_nice_mcs
 from .core.nice.mm import get_all_nice_mms
 from .core.nice.nice import get_nice_equip_model, get_nice_servant_model
 from .core.raw import get_all_bgm_entities, get_servant_entity
-from .core.utils import sort_by_collection_no
+from .core.utils import get_translation, sort_by_collection_no
 from .data.extra import get_extra_svt_data
 from .db.engine import engines
 from .db.helpers import fetch
@@ -243,6 +243,20 @@ async def generate_exports(
                 all_basic_event_en = get_all_basic_events(Language.en, mstEvents)
                 all_basic_war_en = get_all_basic_wars(Language.en, mstWars)
 
+                mstIllustrators_en: list[MstIllustrator] = []
+                for illustrator in mstIllustrators:
+                    illustrator_en = illustrator.copy()
+                    illustrator_en.name = get_translation(
+                        Language.en, illustrator_en.name
+                    )
+                    mstIllustrators_en.append(illustrator_en)
+
+                mstCvs_en: list[MstCv] = []
+                for cv in mstCvs:
+                    cv_en = cv.copy()
+                    cv_en.name = get_translation(Language.en, cv_en.name)
+                    mstCvs_en.append(cv_en)
+
                 output_files = [
                     ("basic_servant_lang_en", all_basic_servant_en, dump_orjson),
                     ("basic_equip_lang_en", all_basic_equip_en, dump_orjson),
@@ -254,6 +268,8 @@ async def generate_exports(
                     ("basic_mystic_code_lang_en", all_basic_mc_en, dump_orjson),
                     ("nice_mystic_code_lang_en", all_mc_data_en, dump_orjson),
                     ("nice_bgm_lang_en", all_bgm_data_en, dump_orjson),
+                    ("nice_illustrator_lang_en", mstIllustrators_en, dump_orjson),
+                    ("nice_cv_lang_en", mstCvs_en, dump_orjson),
                 ] + output_files
 
             base_export_path = export_path / region.value

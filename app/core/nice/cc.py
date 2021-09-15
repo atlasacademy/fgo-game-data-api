@@ -42,7 +42,9 @@ async def get_nice_command_code(
                 conn, skillEntity, cc_id, region, lang
             )
         ],
-        illustrator=raw_cc.mstIllustrator.name if raw_cc.mstIllustrator else "",
+        illustrator=get_translation(
+            lang, raw_cc.mstIllustrator.name if raw_cc.mstIllustrator else ""
+        ),
         comment=raw_cc.mstCommandCodeComment.comment,
     )
 

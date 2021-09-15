@@ -298,10 +298,10 @@ async def get_nice_servant(
 
     if lore:
         nice_data["profile"] = {
-            "cv": raw_svt.mstCv.name if raw_svt.mstCv else "",
-            "illustrator": raw_svt.mstIllustrator.name
-            if raw_svt.mstIllustrator
-            else "",
+            "cv": get_translation(lang, raw_svt.mstCv.name if raw_svt.mstCv else ""),
+            "illustrator": get_translation(
+                lang, raw_svt.mstIllustrator.name if raw_svt.mstIllustrator else ""
+            ),
             "costume": {
                 costume_ids[costume.id]: get_nice_costume(costume)
                 for costume in raw_svt.mstSvtCostume
