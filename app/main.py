@@ -389,3 +389,9 @@ async def rapidoc_html() -> HTMLResponse:
         title=app.title,
         description=app_short_description,
     )
+
+
+if __name__ == "__main__":  # pragma: no cover
+    uvicorn.run(
+        "app.main:app", host="127.0.0.1", port=8000, reload=True, log_level="debug"
+    )
