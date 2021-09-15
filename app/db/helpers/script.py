@@ -20,8 +20,11 @@ async def get_script(conn: AsyncConnection, script_id: str) -> Optional[ScriptEn
     if len(rows) == 0:
         return None
 
-    quest_ids: list[int] = [row.questId for row in rows]
-    quests = await get_quest_entity(conn, quest_ids)
+    quest_ids: list[int] = [row.questId for row in rows if row.questId != -1]
+    if quest_ids:
+        quests = await get_quest_entity(conn, quest_ids)
+    else:
+        quests = []
 
     return ScriptEntity(
         scriptId=script_id, scriptSizeBytes=rows[0].scriptSizeBytes, quests=quests

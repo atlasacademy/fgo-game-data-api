@@ -7,6 +7,7 @@ import orjson
 from pydantic import DirectoryPath
 from sqlalchemy import Table
 from sqlalchemy.engine import Connection, Engine
+from sqlalchemy.sql import text
 
 from ..config import logger
 from ..data.buff import get_buff_with_classrelation
@@ -163,20 +164,21 @@ def load_script_list(
         with open(repo_folder / "master" / "mstQuest.json", "rb") as bfp:
             mstQuest = orjson.loads(bfp.read())
 
-        questId = {quest["id"] for quest in mstQuest}
+        all_quest_ids = {quest["id"]: quest for quest in mstQuest}
 
-        scriptQuestId = {
-            quest["scriptQuestId"]: quest["id"]
-            for quest in mstQuest
-            if quest["scriptQuestId"] != 0
-        }
+        overwrite_script_quest_id: dict[int, list[int]] = defaultdict(list)
+        for quest in mstQuest:
+            if quest["scriptQuestId"] != 0:
+                overwrite_script_quest_id[quest["scriptQuestId"]].append(quest["id"])
 
         for script in script_list:
+            script_name = script.removesuffix(".txt")
             script_path = (
                 repo_folder
                 / "ScriptActionEncrypt"
-                / f"{get_script_path(script.removesuffix('.txt'))}.txt"
+                / f"{get_script_path(script_name)}.txt"
             )
+
             if script_path.exists():
                 with open(script_path, "r", encoding="utf-8") as fp:
                     script_data = fp.read()
@@ -187,25 +189,27 @@ def load_script_list(
                 script_text = ""
                 script_sha1 = ""
 
-            script_name = script.removesuffix(".txt")
-            quest_ids: list[Optional[int]] = []
+            quest_ids: list[int] = []
             phase: Optional[int] = None
-            sceneType: Optional[int] = None
+            scene_type: Optional[int] = None
 
             if len(script) == 14 and script[0] in ("0", "9"):
-                script_int = int(script_name[:-2])
+                inferred_quest_id = int(script_name[:-2])
 
-                sceneType = int(script_name[-1])
+                scene_type = int(script_name[-1])
                 phase = int(script_name[-2])
 
-                if script_int in scriptQuestId:
-                    quest_ids.append(scriptQuestId[script_int])
+                if inferred_quest_id in overwrite_script_quest_id:
+                    quest_ids.extend(overwrite_script_quest_id[inferred_quest_id])
 
-                if script_int in questId and script_int not in scriptQuestId.values():
-                    quest_ids.append(script_int)
+                if (
+                    inferred_quest_id in all_quest_ids
+                    and all_quest_ids[inferred_quest_id]["scriptQuestId"] == 0
+                ):
+                    quest_ids.append(inferred_quest_id)
 
             if not quest_ids:
-                quest_ids.append(None)
+                quest_ids.append(-1)
 
             for quest_id in quest_ids:
                 db_data.append(
@@ -213,12 +217,18 @@ def load_script_list(
                         "scriptFileName": script_name,
                         "questId": quest_id,
                         "phase": phase,
-                        "sceneType": sceneType,
+                        "sceneType": scene_type,
                         "rawScriptSHA1": script_sha1,
                         "rawScript": script_data,
                         "textScript": script_text,
                     }
                 )
+
+    with engine.begin() as conn:
+        stmt = text("select extname from pg_extension;")
+        rows = conn.execute(stmt).fetchall()
+        if "pgroonga" not in (row.extname for row in rows):
+            conn.execute(text("create extension pgroonga;"))
 
     with engine.begin() as conn:
         insert_db(conn, ScriptFileList, db_data)
