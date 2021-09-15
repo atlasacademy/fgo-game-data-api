@@ -59,7 +59,7 @@
         {
           "deck": "enemy",
           "userSvtId": 1,
-          "uniqueId": 7,
+          "uniqueId": 6,
           "npcId": 94016111,
           "name": "ノブ選組Ａ",
           "svt": {
@@ -322,7 +322,7 @@
         {
           "deck": "enemy",
           "userSvtId": 2,
-          "uniqueId": 8,
+          "uniqueId": 7,
           "npcId": 94016111,
           "name": "ノブ選組Ｂ",
           "svt": {
@@ -598,7 +598,7 @@
         {
           "deck": "enemy",
           "userSvtId": 3,
-          "uniqueId": 9,
+          "uniqueId": 8,
           "npcId": 94016111,
           "name": "ノブ選組Ａ",
           "svt": {
@@ -861,7 +861,7 @@
         {
           "deck": "enemy",
           "userSvtId": 1,
-          "uniqueId": 10,
+          "uniqueId": 9,
           "npcId": 94016111,
           "name": "ノブ選組Ｂ",
           "svt": {
@@ -1124,7 +1124,7 @@
         {
           "deck": "enemy",
           "userSvtId": 3,
-          "uniqueId": 11,
+          "uniqueId": 10,
           "npcId": 94016111,
           "name": "ノブ選組Ｃ",
           "svt": {
@@ -1400,7 +1400,7 @@
         {
           "deck": "enemy",
           "userSvtId": 4,
-          "uniqueId": 12,
+          "uniqueId": 11,
           "npcId": 94016125,
           "name": "水着審査再希望！",
           "svt": {
@@ -2027,7 +2027,7 @@
         {
           "deck": "enemy",
           "userSvtId": 5,
-          "uniqueId": 13,
+          "uniqueId": 12,
           "npcId": 94016126,
           "name": "たくあん歳三",
           "svt": {
