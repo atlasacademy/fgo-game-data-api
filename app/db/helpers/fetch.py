@@ -229,7 +229,7 @@ schema_table_fetch_all: dict[  # type:ignore
     MstCombineAppendPassiveSkill: (
         mstCombineAppendPassiveSkill,
         mstCombineAppendPassiveSkill.c.svtId,
-        mstCombineAppendPassiveSkill.c.num,
+        mstCombineAppendPassiveSkill.c.skillLv,
     ),
     MstMap: (mstMap, mstMap.c.warId, mstMap.c.id),
     MstWarAdd: (mstWarAdd, mstWarAdd.c.warId, mstWarAdd.c.priority),

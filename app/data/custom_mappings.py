@@ -49,15 +49,17 @@ CV_EN_TO_JP: dict[str, str] = {}
 with open(MAPPING_PATH / f"{Translation.CV.value}.json", "rb") as fp:
     CV_EN_TO_JP = {v: k for k, v in orjson.loads(fp.read()).items() if k != v}
 
+
 EXTRA_CHARAFIGURES: dict[int, list[int]] = {}
 
 with open(MAPPING_PATH / "extra_charafigure.json", "rb") as fp:
     EXTRA_CHARAFIGURES = {
-        cf["svtId"]: cf["charaFigureIds"] for cf in orjson.loads(fp.read())
+        cf["svtId"]: sorted(cf["charaFigureIds"]) for cf in orjson.loads(fp.read())
     }
-
 
 EXTRA_IMAGES: dict[int, list[Union[int, str]]] = {}
 
 with open(MAPPING_PATH / "extra_image.json", "rb") as fp:
-    EXTRA_IMAGES = {im["svtId"]: im["imageIds"] for im in orjson.loads(fp.read())}
+    EXTRA_IMAGES = {
+        im["svtId"]: sorted(im["imageIds"]) for im in orjson.loads(fp.read())
+    }
