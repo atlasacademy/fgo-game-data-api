@@ -119,7 +119,7 @@ def get_nice_voice_line(
             for play_cond in play_conds
             if play_cond.svtId == svt_id
             and play_cond.voiceId == voice_id
-            and (play_cond.voicePrefix == -1 or play_cond.voicePrefix == voice_prefix)
+            and play_cond.voicePrefix in (-1, voice_prefix)
         ),
         subtitle=subtitle_ids.get(str(svt_id) + "_" + first_voice.id, ""),
     )

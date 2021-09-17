@@ -16,6 +16,10 @@ def main() -> None:
 
         quest_list = get_all_quest_lists(region)
 
+        if not quest_list:
+            print(f"No quest list found for {region}")
+            continue
+
         print(f"Inserting {region} rayshift data cache into db …")
         load_rayshift_quest_list(region, quest_list)
 

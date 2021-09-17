@@ -7,7 +7,7 @@ authors = ["squaresmile <squaresmile@protonmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 fastapi = "^0.68.1"
-uvicorn = { extras = ["standard"], version = "^0.14.0" }
+uvicorn = {extras = ["standard"], version = "^0.15.0"}
 python-dotenv = "^0.19.0"
 fuzzywuzzy = "^0.18.0"
 python-Levenshtein = "^0.12.2"
@@ -27,9 +27,9 @@ setproctitle = "^1.2.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
-pylint = "^2.10.2"
+pylint = "^2.11.1"
 mypy = "^0.910"
-black = "^21.8b0"
+black = "^21.9b0"
 pytest-xdist = "^2.3.0"
 coverage = "^5.5"
 fuzzywuzzy-stubs = "^0.0.1"

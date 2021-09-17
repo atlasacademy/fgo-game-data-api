@@ -104,5 +104,7 @@ def get_all_quest_lists(region: Region) -> list[QuestList]:
         "region": REGION_ENUM[region],
     }
     r = httpx.get(f"{QUEST_ENDPOINT}/list", params=params)
+    if r.status_code != httpx.codes.OK:  # pragma: no cover
+        return []
 
     return QuestListRayshiftResponse.parse_raw(r.content).response.quests
