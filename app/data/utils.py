@@ -33,8 +33,10 @@ from ..schemas.raw import (
     MstSvtPassiveSkill,
     MstSvtSkill,
     MstSvtTreasureDevice,
+    MstSvtVoice,
     MstTreasureDevice,
     MstTreasureDeviceLv,
+    MstVoice,
     MstWar,
 )
 
@@ -76,6 +78,8 @@ MODEL_FILE_NAME: dict[Type[BaseModelORJson], str] = {
     MstTreasureDevice: "mstTreasureDevice",
     MstTreasureDeviceLv: "mstTreasureDeviceLv",
     MstSvtTreasureDevice: "mstSvtTreasureDevice",
+    MstSvtVoice: "mstSvtVoice",
+    MstVoice: "mstVoice",
 }
 
 

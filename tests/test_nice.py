@@ -1,15 +1,18 @@
 # pylint: disable=R0201,R0904
-import json
-
+import orjson
 import pytest
 from httpx import AsyncClient
 from sqlalchemy.ext.asyncio.engine import AsyncConnection
 
 from app.core.nice.enemy import get_enemy_script
+from app.core.nice.svt.voice import get_nice_voice_line
 from app.data.shop import get_shop_cost_item_id
+from app.data.utils import load_master_data
 from app.db.helpers import event
+from app.schemas.common import Language, Region
+from app.schemas.raw import MstSvtVoice, MstVoice
 
-from .utils import get_response_data
+from .utils import get_response_data, test_gamedata
 
 
 test_cases_dict: dict[str, tuple[str, str]] = {
@@ -59,6 +62,7 @@ test_cases_dict: dict[str, tuple[str, str]] = {
     "event_rerward_NA": ("NA/event/80018", "NA_event_Rashomon"),
     "event_tower_JP": ("NA/event/80088", "NA_event_Setsubun"),
     "event_lottery_NA": ("NA/event/80087", "NA_event_Da_Vinci_rerun"),
+    "event_treasureBox_JP": ("JP/event/80331", "JP_Summer_Adventure"),
     "war_NA_id": ("NA/war/203", "NA_war_Shimousa"),
     "quest_JP_id": ("JP/quest/91103002", "JP_Suzuka_rank_up"),
     "quest_NA_id_phase": ("NA/quest/94020187/1", "NA_87th_floor"),
@@ -72,6 +76,7 @@ test_cases_dict: dict[str, tuple[str, str]] = {
     "bgm_NA_with_shop": ("JP/bgm/138?lang=en", "JP_BGM_Shinjuku"),
     "bgm_NA_without_shop": ("NA/bgm/35", "NA_BGM_event_8"),
     "script_NA_2_quests": ("NA/script/9402750110", "NA_Summerfes_script"),
+    "script_JP_no_quest": ("NA/script/WarEpilogue108", "JP_WarEpilogue108"),
 }
 
 
@@ -572,7 +577,7 @@ class TestServantSpecial:
 
         test_script = {"kill": 3, "changeAttri": 2, "forceDropItem": 1}
         parsed_script = get_enemy_script(test_script).json(exclude_unset=True)
-        assert json.loads(parsed_script) == {
+        assert orjson.loads(parsed_script) == {
             "changeAttri": "sky",
             "deathType": "effect",
             "forceDropItem": True,
@@ -642,3 +647,26 @@ async def test_shop_itemIds_0(na_db_conn: AsyncConnection) -> None:
     assert (
         get_shop_cost_item_id(await event.get_mstShop_by_id(na_db_conn, 11000000)) == 3
     )
+
+
+def test_nice_voice_summon_script() -> None:
+    raw_voice = load_master_data(test_gamedata, MstVoice)
+    mstVoices = {voice.id: voice for voice in raw_voice}
+
+    raw_svt_voice = load_master_data(test_gamedata, MstSvtVoice)[0]
+    nice_voice = get_nice_voice_line(
+        Region.JP,
+        raw_svt_voice.scriptJson[0],
+        raw_svt_voice.id,
+        raw_svt_voice.voicePrefix,
+        raw_svt_voice.type,
+        {},
+        {},
+        [],
+        mstVoices,
+        [],
+        Language.jp,
+    )
+
+    expected = get_response_data("test_data_nice", "svt_voice_summon_script")
+    assert orjson.loads(nice_voice.json()) == expected

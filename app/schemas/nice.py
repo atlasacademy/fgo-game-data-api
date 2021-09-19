@@ -707,7 +707,7 @@ class NiceVoicePlayCond(BaseModel):
     condValues: list[int] = Field(..., title="Voice play condition target values")
 
 
-class NiceVoiceLine(BaseModel):
+class NiceVoiceLine(BaseModelORJson):
     name: Optional[str] = Field(
         None, title="Voice line default name", description="Voice line default name."
     )

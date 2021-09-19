@@ -1,0 +1,4979 @@
+{
+  "id": 80331,
+  "type": "eventQuest",
+  "name": "カルデア・サマーアドベンチャー！ \n～夢追う少年と夢見る少女～",
+  "shortName": "",
+  "detail": "カルデア・サマーアドベンチャー！ \n～夢追う少年と夢見る少女～",
+  "noticeBanner": "https://assets.atlasacademy.io/GameData/JP/Banner/event_war_80319.png",
+  "banner": "https://assets.atlasacademy.io/GameData/JP/Banner/event_war_80320.png",
+  "icon": "https://assets.atlasacademy.io/GameData/JP/Banner/banner_icon_80320.png",
+  "bannerPriority": 815500,
+  "noticeAt": 1631102400,
+  "startedAt": 1631102400,
+  "endedAt": 1632887999,
+  "finishedAt": 1633492799,
+  "materialOpenedAt": 1751295600,
+  "warIds": [9119],
+  "shop": [
+    {
+      "id": 80331001,
+      "baseShopId": 80331001,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 310,
+      "name": "シンク・ディーパー",
+      "detail": "カルデア・サマーアドベンチャー！限定\n★5概念礼装へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 200
+      },
+      "purchaseType": "servant",
+      "targetIds": [9405310],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 2,
+      "defaultLv": 1,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331002,
+      "baseShopId": 80331002,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 320,
+      "name": "シンク・ディーパー",
+      "detail": "カルデア・サマーアドベンチャー！限定\n★5概念礼装へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060402,
+          "name": "海賊ジョッキ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、使い込まれたビールジョッキ。\n海賊の粗雑さがうかがい知れるボロボロさ。",
+          "individuality": [{ "id": 10648, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060402.png",
+          "background": "silver",
+          "priority": 94060402,
+          "dropPriority": 2002
+        },
+        "amount": 200
+      },
+      "purchaseType": "servant",
+      "targetIds": [9405310],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 1,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331003,
+      "baseShopId": 80331003,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 330,
+      "name": "シンク・ディーパー",
+      "detail": "カルデア・サマーアドベンチャー！限定\n★5概念礼装へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060401,
+          "name": "海賊バンダナ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、ありふれたバンダナ。\n海賊の手下はだいたいこれを巻いている気がする。",
+          "individuality": [{ "id": 10647, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060401.png",
+          "background": "bronze",
+          "priority": 94060401,
+          "dropPriority": 2001
+        },
+        "amount": 200
+      },
+      "purchaseType": "servant",
+      "targetIds": [9405310],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 1,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331004,
+      "baseShopId": 80331004,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 10,
+      "name": "霊衣「フィアレス・ダイバー」開放権",
+      "detail": "アキレウス霊衣\n「フィアレス・ダイバー」開放権へ交換",
+      "infoMessage": "霊衣「フィアレス・ダイバー」開放権を獲得できます。",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 200
+      },
+      "purchaseType": "costumeRelease",
+      "targetIds": [40290011],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 1,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331005,
+      "baseShopId": 80331005,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 20,
+      "name": "霊衣「サマー・スポーツウェア」開放権",
+      "detail": "マンドリカルド霊衣\n「サマー・スポーツウェア」開放権へ交換",
+      "infoMessage": "霊衣「サマー・スポーツウェア」開放権を獲得できます。",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060402,
+          "name": "海賊ジョッキ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、使い込まれたビールジョッキ。\n海賊の粗雑さがうかがい知れるボロボロさ。",
+          "individuality": [{ "id": 10648, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060402.png",
+          "background": "silver",
+          "priority": 94060402,
+          "dropPriority": 2002
+        },
+        "amount": 200
+      },
+      "purchaseType": "costumeRelease",
+      "targetIds": [40390011],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 1,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331006,
+      "baseShopId": 80331006,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 30,
+      "name": "霊衣「盛夏の紳士」開放権",
+      "detail": "エドワード・ティーチ霊衣\n「盛夏の紳士」開放権へ交換",
+      "infoMessage": "霊衣「盛夏の紳士」開放権を獲得できます。",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060401,
+          "name": "海賊バンダナ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、ありふれたバンダナ。\n海賊の手下はだいたいこれを巻いている気がする。",
+          "individuality": [{ "id": 10647, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060401.png",
+          "background": "bronze",
+          "priority": 94060401,
+          "dropPriority": 2001
+        },
+        "amount": 200
+      },
+      "purchaseType": "costumeRelease",
+      "targetIds": [40080011],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 1,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331007,
+      "baseShopId": 80331007,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 40,
+      "name": "サーヴァントコイン(レオナルド・ダ・ヴィンチ（ルーラー）)",
+      "detail": "サーヴァントコイン10個へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 20
+      },
+      "purchaseType": "item",
+      "targetIds": [90120001],
+      "itemSet": [],
+      "setNum": 10,
+      "limitNum": 10,
+      "defaultLv": 1,
+      "defaultLimitCount": 0,
+      "openedAt": 1631610000,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331008,
+      "baseShopId": 80331008,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 50,
+      "name": "サーヴァントコイン(レオナルド・ダ・ヴィンチ（ルーラー）)",
+      "detail": "サーヴァントコイン10個へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060402,
+          "name": "海賊ジョッキ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、使い込まれたビールジョッキ。\n海賊の粗雑さがうかがい知れるボロボロさ。",
+          "individuality": [{ "id": 10648, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060402.png",
+          "background": "silver",
+          "priority": 94060402,
+          "dropPriority": 2002
+        },
+        "amount": 20
+      },
+      "purchaseType": "item",
+      "targetIds": [90120001],
+      "itemSet": [],
+      "setNum": 10,
+      "limitNum": 10,
+      "defaultLv": 1,
+      "defaultLimitCount": 0,
+      "openedAt": 1631610000,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331009,
+      "baseShopId": 80331009,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 60,
+      "name": "サーヴァントコイン(レオナルド・ダ・ヴィンチ（ルーラー）)",
+      "detail": "サーヴァントコイン10個へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060401,
+          "name": "海賊バンダナ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、ありふれたバンダナ。\n海賊の手下はだいたいこれを巻いている気がする。",
+          "individuality": [{ "id": 10647, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060401.png",
+          "background": "bronze",
+          "priority": 94060401,
+          "dropPriority": 2001
+        },
+        "amount": 20
+      },
+      "purchaseType": "item",
+      "targetIds": [90120001],
+      "itemSet": [],
+      "setNum": 10,
+      "limitNum": 10,
+      "defaultLv": 1,
+      "defaultLimitCount": 0,
+      "openedAt": 1631610000,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331010,
+      "baseShopId": 80331010,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 460,
+      "name": "伝承結晶",
+      "detail": "【スキル強化素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 400
+      },
+      "purchaseType": "item",
+      "targetIds": [6999],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331011,
+      "baseShopId": 80331011,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 340,
+      "name": "コード・リムーバー",
+      "detail": "【コマンドコードスロット削除アイテム】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 100
+      },
+      "purchaseType": "item",
+      "targetIds": [5003],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331012,
+      "baseShopId": 80331012,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 350,
+      "name": "コード・リムーバー",
+      "detail": "【コマンドコードスロット削除アイテム】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060402,
+          "name": "海賊ジョッキ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、使い込まれたビールジョッキ。\n海賊の粗雑さがうかがい知れるボロボロさ。",
+          "individuality": [{ "id": 10648, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060402.png",
+          "background": "silver",
+          "priority": 94060402,
+          "dropPriority": 2002
+        },
+        "amount": 100
+      },
+      "purchaseType": "item",
+      "targetIds": [5003],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331013,
+      "baseShopId": 80331013,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 360,
+      "name": "コード・リムーバー",
+      "detail": "【コマンドコードスロット削除アイテム】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060401,
+          "name": "海賊バンダナ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、ありふれたバンダナ。\n海賊の手下はだいたいこれを巻いている気がする。",
+          "individuality": [{ "id": 10647, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060401.png",
+          "background": "bronze",
+          "priority": 94060401,
+          "dropPriority": 2001
+        },
+        "amount": 100
+      },
+      "purchaseType": "item",
+      "targetIds": [5003],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331014,
+      "baseShopId": 80331014,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 370,
+      "name": "英霊結晶・星のフォウくん",
+      "detail": "★3ALLのHPアップカード1枚へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060401,
+          "name": "海賊バンダナ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、ありふれたバンダナ。\n海賊の手下はだいたいこれを巻いている気がする。",
+          "individuality": [{ "id": 10647, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060401.png",
+          "background": "bronze",
+          "priority": 94060401,
+          "dropPriority": 2001
+        },
+        "amount": 20
+      },
+      "purchaseType": "servant",
+      "targetIds": [9570300],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 1,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331015,
+      "baseShopId": 80331015,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 380,
+      "name": "英霊結晶・太陽のフォウくん",
+      "detail": "★3ALLのATKアップカード1枚へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060401,
+          "name": "海賊バンダナ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、ありふれたバンダナ。\n海賊の手下はだいたいこれを巻いている気がする。",
+          "individuality": [{ "id": 10647, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060401.png",
+          "background": "bronze",
+          "priority": 94060401,
+          "dropPriority": 2001
+        },
+        "amount": 20
+      },
+      "purchaseType": "servant",
+      "targetIds": [9670300],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 1,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331016,
+      "baseShopId": 80331016,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 390,
+      "name": "叡智の業火",
+      "detail": "★5ALLの経験値カード1枚へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060401,
+          "name": "海賊バンダナ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、ありふれたバンダナ。\n海賊の手下はだいたいこれを巻いている気がする。",
+          "individuality": [{ "id": 10647, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060401.png",
+          "background": "bronze",
+          "priority": 94060401,
+          "dropPriority": 2001
+        },
+        "amount": 10
+      },
+      "purchaseType": "servant",
+      "targetIds": [9770500],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 50,
+      "defaultLv": 1,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331017,
+      "baseShopId": 80331017,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 400,
+      "name": "叡智の猛火",
+      "detail": "★4ALLの経験値カード1枚へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060401,
+          "name": "海賊バンダナ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、ありふれたバンダナ。\n海賊の手下はだいたいこれを巻いている気がする。",
+          "individuality": [{ "id": 10647, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060401.png",
+          "background": "bronze",
+          "priority": 94060401,
+          "dropPriority": 2001
+        },
+        "amount": 6
+      },
+      "purchaseType": "servant",
+      "targetIds": [9770400],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 100,
+      "defaultLv": 1,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331018,
+      "baseShopId": 80331018,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 410,
+      "name": "叡智の大火",
+      "detail": "★3ALLの経験値カード1枚へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060401,
+          "name": "海賊バンダナ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、ありふれたバンダナ。\n海賊の手下はだいたいこれを巻いている気がする。",
+          "individuality": [{ "id": 10647, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060401.png",
+          "background": "bronze",
+          "priority": 94060401,
+          "dropPriority": 2001
+        },
+        "amount": 3
+      },
+      "purchaseType": "servant",
+      "targetIds": [9770300],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 100,
+      "defaultLv": 1,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331019,
+      "baseShopId": 80331019,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 420,
+      "name": "蛮神の心臓",
+      "detail": "【スキル強化＆霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 30
+      },
+      "purchaseType": "item",
+      "targetIds": [6517],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 10,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331020,
+      "baseShopId": 80331020,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 430,
+      "name": "暁光炉心",
+      "detail": "【スキル強化＆霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 20
+      },
+      "purchaseType": "item",
+      "targetIds": [6539],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331021,
+      "baseShopId": 80331021,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 440,
+      "name": "封魔のランプ",
+      "detail": "【スキル強化＆霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 20
+      },
+      "purchaseType": "item",
+      "targetIds": [6523],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331022,
+      "baseShopId": 80331022,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 450,
+      "name": "枯淡勾玉",
+      "detail": "【スキル強化＆霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 15
+      },
+      "purchaseType": "item",
+      "targetIds": [6532],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331023,
+      "baseShopId": 80331023,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 470,
+      "name": "戦馬の幼角",
+      "detail": "【スキル強化＆霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060402,
+          "name": "海賊ジョッキ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、使い込まれたビールジョッキ。\n海賊の粗雑さがうかがい知れるボロボロさ。",
+          "individuality": [{ "id": 10648, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060402.png",
+          "background": "silver",
+          "priority": 94060402,
+          "dropPriority": 2002
+        },
+        "amount": 20
+      },
+      "purchaseType": "item",
+      "targetIds": [6519],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331024,
+      "baseShopId": 80331024,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 480,
+      "name": "永遠結氷",
+      "detail": "【スキル強化＆霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060402,
+          "name": "海賊ジョッキ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、使い込まれたビールジョッキ。\n海賊の粗雑さがうかがい知れるボロボロさ。",
+          "individuality": [{ "id": 10648, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060402.png",
+          "background": "silver",
+          "priority": 94060402,
+          "dropPriority": 2002
+        },
+        "amount": 15
+      },
+      "purchaseType": "item",
+      "targetIds": [6535],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331025,
+      "baseShopId": 80331025,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 490,
+      "name": "ホムンクルスベビー",
+      "detail": "【スキル強化＆霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060402,
+          "name": "海賊ジョッキ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、使い込まれたビールジョッキ。\n海賊の粗雑さがうかがい知れるボロボロさ。",
+          "individuality": [{ "id": 10648, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060402.png",
+          "background": "silver",
+          "priority": 94060402,
+          "dropPriority": 2002
+        },
+        "amount": 15
+      },
+      "purchaseType": "item",
+      "targetIds": [6514],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331026,
+      "baseShopId": 80331026,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 500,
+      "name": "無間の歯車",
+      "detail": "【スキル強化＆霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060402,
+          "name": "海賊ジョッキ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、使い込まれたビールジョッキ。\n海賊の粗雑さがうかがい知れるボロボロさ。",
+          "individuality": [{ "id": 10648, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060402.png",
+          "background": "silver",
+          "priority": 94060402,
+          "dropPriority": 2002
+        },
+        "amount": 15
+      },
+      "purchaseType": "item",
+      "targetIds": [6510],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331027,
+      "baseShopId": 80331027,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 510,
+      "name": "追憶の貝殻",
+      "detail": "【スキル強化＆霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060401,
+          "name": "海賊バンダナ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、ありふれたバンダナ。\n海賊の手下はだいたいこれを巻いている気がする。",
+          "individuality": [{ "id": 10647, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060401.png",
+          "background": "bronze",
+          "priority": 94060401,
+          "dropPriority": 2001
+        },
+        "amount": 15
+      },
+      "purchaseType": "item",
+      "targetIds": [6526],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331028,
+      "baseShopId": 80331028,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 520,
+      "name": "世界樹の種",
+      "detail": "【スキル強化＆霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060401,
+          "name": "海賊バンダナ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、ありふれたバンダナ。\n海賊の手下はだいたいこれを巻いている気がする。",
+          "individuality": [{ "id": 10647, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060401.png",
+          "background": "bronze",
+          "priority": 94060401,
+          "dropPriority": 2001
+        },
+        "amount": 15
+      },
+      "purchaseType": "item",
+      "targetIds": [6502],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331029,
+      "baseShopId": 80331029,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 530,
+      "name": "赦免の小鐘",
+      "detail": "【スキル強化＆霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060401,
+          "name": "海賊バンダナ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、ありふれたバンダナ。\n海賊の手下はだいたいこれを巻いている気がする。",
+          "individuality": [{ "id": 10647, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060401.png",
+          "background": "bronze",
+          "priority": 94060401,
+          "dropPriority": 2001
+        },
+        "amount": 10
+      },
+      "purchaseType": "item",
+      "targetIds": [6549],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 30,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331030,
+      "baseShopId": 80331030,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 540,
+      "name": "愚者の鎖",
+      "detail": "【スキル強化＆霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060401,
+          "name": "海賊バンダナ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、ありふれたバンダナ。\n海賊の手下はだいたいこれを巻いている気がする。",
+          "individuality": [{ "id": 10647, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060401.png",
+          "background": "bronze",
+          "priority": 94060401,
+          "dropPriority": 2001
+        },
+        "amount": 10
+      },
+      "purchaseType": "item",
+      "targetIds": [6522],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 30,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331031,
+      "baseShopId": 80331031,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 550,
+      "name": "セイバーモニュメント",
+      "detail": "【霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 20
+      },
+      "purchaseType": "item",
+      "targetIds": [7101],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331032,
+      "baseShopId": 80331032,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 560,
+      "name": "アーチャーモニュメント",
+      "detail": "【霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 20
+      },
+      "purchaseType": "item",
+      "targetIds": [7102],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331033,
+      "baseShopId": 80331033,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 570,
+      "name": "ランサーモニュメント",
+      "detail": "【霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 20
+      },
+      "purchaseType": "item",
+      "targetIds": [7103],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331034,
+      "baseShopId": 80331034,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 580,
+      "name": "ライダーモニュメント",
+      "detail": "【霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 20
+      },
+      "purchaseType": "item",
+      "targetIds": [7104],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331035,
+      "baseShopId": 80331035,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 590,
+      "name": "キャスターモニュメント",
+      "detail": "【霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 20
+      },
+      "purchaseType": "item",
+      "targetIds": [7105],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331036,
+      "baseShopId": 80331036,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 600,
+      "name": "アサシンモニュメント",
+      "detail": "【霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 20
+      },
+      "purchaseType": "item",
+      "targetIds": [7106],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331037,
+      "baseShopId": 80331037,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 610,
+      "name": "バーサーカーモニュメント",
+      "detail": "【霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 20
+      },
+      "purchaseType": "item",
+      "targetIds": [7107],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331038,
+      "baseShopId": 80331038,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 620,
+      "name": "セイバーピース",
+      "detail": "【霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060402,
+          "name": "海賊ジョッキ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、使い込まれたビールジョッキ。\n海賊の粗雑さがうかがい知れるボロボロさ。",
+          "individuality": [{ "id": 10648, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060402.png",
+          "background": "silver",
+          "priority": 94060402,
+          "dropPriority": 2002
+        },
+        "amount": 20
+      },
+      "purchaseType": "item",
+      "targetIds": [7001],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331039,
+      "baseShopId": 80331039,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 110,
+      "name": "秘密の地図〔廃墟の財宝〕",
+      "detail": "秘密の地図〔廃墟の財宝〕へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060401,
+          "name": "海賊バンダナ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、ありふれたバンダナ。\n海賊の手下はだいたいこれを巻いている気がする。",
+          "individuality": [{ "id": 10647, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060401.png",
+          "background": "bronze",
+          "priority": 94060401,
+          "dropPriority": 2001
+        },
+        "amount": 10
+      },
+      "purchaseType": "item",
+      "targetIds": [94060404],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1632887999
+    },
+    {
+      "id": 80331040,
+      "baseShopId": 80331040,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 120,
+      "name": "秘密の地図〔ほら穴の財宝〕",
+      "detail": "秘密の地図〔ほら穴の財宝〕へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060402,
+          "name": "海賊ジョッキ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、使い込まれたビールジョッキ。\n海賊の粗雑さがうかがい知れるボロボロさ。",
+          "individuality": [{ "id": 10648, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060402.png",
+          "background": "silver",
+          "priority": 94060402,
+          "dropPriority": 2002
+        },
+        "amount": 20
+      },
+      "purchaseType": "item",
+      "targetIds": [94060410],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1632887999
+    },
+    {
+      "id": 80331041,
+      "baseShopId": 80331041,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 130,
+      "name": "秘密の地図〔ドクロ島の財宝〕",
+      "detail": "秘密の地図〔ドクロ島の財宝〕へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 20
+      },
+      "purchaseType": "item",
+      "targetIds": [94060411],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1632887999
+    },
+    {
+      "id": 80331042,
+      "baseShopId": 80331042,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 140,
+      "name": "秘密の地図〔サカズキ島の財宝〕",
+      "detail": "秘密の地図〔サカズキ島の財宝〕へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060401,
+          "name": "海賊バンダナ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、ありふれたバンダナ。\n海賊の手下はだいたいこれを巻いている気がする。",
+          "individuality": [{ "id": 10647, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060401.png",
+          "background": "bronze",
+          "priority": 94060401,
+          "dropPriority": 2001
+        },
+        "amount": 30
+      },
+      "purchaseType": "item",
+      "targetIds": [94060412],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1632887999
+    },
+    {
+      "id": 80331043,
+      "baseShopId": 80331043,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 150,
+      "name": "秘密の地図〔トクガワ島の財宝〕",
+      "detail": "秘密の地図〔トクガワ島の財宝〕へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060402,
+          "name": "海賊ジョッキ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、使い込まれたビールジョッキ。\n海賊の粗雑さがうかがい知れるボロボロさ。",
+          "individuality": [{ "id": 10648, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060402.png",
+          "background": "silver",
+          "priority": 94060402,
+          "dropPriority": 2002
+        },
+        "amount": 30
+      },
+      "purchaseType": "item",
+      "targetIds": [94060413],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1632887999
+    },
+    {
+      "id": 80331044,
+      "baseShopId": 80331044,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 160,
+      "name": "秘密の地図〔ミズウミ島の財宝〕",
+      "detail": "秘密の地図〔ミズウミ島の財宝〕へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 30
+      },
+      "purchaseType": "item",
+      "targetIds": [94060414],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1632887999
+    },
+    {
+      "id": 80331045,
+      "baseShopId": 80331045,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 170,
+      "name": "秘密の地図〔スリスリ島の財宝〕",
+      "detail": "秘密の地図〔スリスリ島の財宝〕へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060401,
+          "name": "海賊バンダナ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、ありふれたバンダナ。\n海賊の手下はだいたいこれを巻いている気がする。",
+          "individuality": [{ "id": 10647, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060401.png",
+          "background": "bronze",
+          "priority": 94060401,
+          "dropPriority": 2001
+        },
+        "amount": 40
+      },
+      "purchaseType": "item",
+      "targetIds": [94060415],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1632887999
+    },
+    {
+      "id": 80331046,
+      "baseShopId": 80331046,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 180,
+      "name": "秘密の地図〔海底城の財宝〕",
+      "detail": "秘密の地図〔海底城の財宝〕へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060402,
+          "name": "海賊ジョッキ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、使い込まれたビールジョッキ。\n海賊の粗雑さがうかがい知れるボロボロさ。",
+          "individuality": [{ "id": 10648, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060402.png",
+          "background": "silver",
+          "priority": 94060402,
+          "dropPriority": 2002
+        },
+        "amount": 40
+      },
+      "purchaseType": "item",
+      "targetIds": [94060416],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1632887999
+    },
+    {
+      "id": 80331047,
+      "baseShopId": 80331047,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 190,
+      "name": "秘密の地図〔海蛇の巣の財宝〕",
+      "detail": "秘密の地図〔海蛇の巣の財宝〕へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 40
+      },
+      "purchaseType": "item",
+      "targetIds": [94060417],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1632887999
+    },
+    {
+      "id": 80331048,
+      "baseShopId": 80331048,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 200,
+      "name": "秘密の地図〔グツグツ島の財宝〕",
+      "detail": "秘密の地図〔グツグツ島の財宝〕へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060401,
+          "name": "海賊バンダナ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、ありふれたバンダナ。\n海賊の手下はだいたいこれを巻いている気がする。",
+          "individuality": [{ "id": 10647, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060401.png",
+          "background": "bronze",
+          "priority": 94060401,
+          "dropPriority": 2001
+        },
+        "amount": 50
+      },
+      "purchaseType": "item",
+      "targetIds": [94060418],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1632887999
+    },
+    {
+      "id": 80331049,
+      "baseShopId": 80331049,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 210,
+      "name": "秘密の地図〔滝つぼの財宝〕",
+      "detail": "秘密の地図〔滝つぼの財宝〕へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060402,
+          "name": "海賊ジョッキ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、使い込まれたビールジョッキ。\n海賊の粗雑さがうかがい知れるボロボロさ。",
+          "individuality": [{ "id": 10648, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060402.png",
+          "background": "silver",
+          "priority": 94060402,
+          "dropPriority": 2002
+        },
+        "amount": 50
+      },
+      "purchaseType": "item",
+      "targetIds": [94060419],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1632887999
+    },
+    {
+      "id": 80331050,
+      "baseShopId": 80331050,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 220,
+      "name": "秘密の地図〔雲の上の財宝〕",
+      "detail": "秘密の地図〔雲の上の財宝〕へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 50
+      },
+      "purchaseType": "item",
+      "targetIds": [94060420],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1632887999
+    },
+    {
+      "id": 80331051,
+      "baseShopId": 80331051,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 230,
+      "name": "秘密の地図〔大海原の財宝〕",
+      "detail": "秘密の地図〔大海原の財宝〕へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060401,
+          "name": "海賊バンダナ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、ありふれたバンダナ。\n海賊の手下はだいたいこれを巻いている気がする。",
+          "individuality": [{ "id": 10647, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060401.png",
+          "background": "bronze",
+          "priority": 94060401,
+          "dropPriority": 2001
+        },
+        "amount": 60
+      },
+      "purchaseType": "item",
+      "targetIds": [94060421],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1632887999
+    },
+    {
+      "id": 80331052,
+      "baseShopId": 80331052,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 240,
+      "name": "秘密の地図〔幽霊船の財宝〕",
+      "detail": "秘密の地図〔幽霊船の財宝〕へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060402,
+          "name": "海賊ジョッキ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、使い込まれたビールジョッキ。\n海賊の粗雑さがうかがい知れるボロボロさ。",
+          "individuality": [{ "id": 10648, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060402.png",
+          "background": "silver",
+          "priority": 94060402,
+          "dropPriority": 2002
+        },
+        "amount": 60
+      },
+      "purchaseType": "item",
+      "targetIds": [94060422],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1632887999
+    },
+    {
+      "id": 80331053,
+      "baseShopId": 80331053,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 250,
+      "name": "秘密の地図〔果ての財宝〕",
+      "detail": "秘密の地図〔果ての財宝〕へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 60
+      },
+      "purchaseType": "item",
+      "targetIds": [94060423],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1632887999
+    },
+    {
+      "id": 80331054,
+      "baseShopId": 80331054,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 260,
+      "name": "秘密の地図〔北の財宝〕",
+      "detail": "秘密の地図〔北の財宝〕へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060402,
+          "name": "海賊ジョッキ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、使い込まれたビールジョッキ。\n海賊の粗雑さがうかがい知れるボロボロさ。",
+          "individuality": [{ "id": 10648, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060402.png",
+          "background": "silver",
+          "priority": 94060402,
+          "dropPriority": 2002
+        },
+        "amount": 80
+      },
+      "purchaseType": "item",
+      "targetIds": [94060424],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1632887999
+    },
+    {
+      "id": 80331055,
+      "baseShopId": 80331055,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 270,
+      "name": "秘密の地図〔南の財宝〕",
+      "detail": "秘密の地図〔南の財宝〕へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 80
+      },
+      "purchaseType": "item",
+      "targetIds": [94060425],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1632887999
+    },
+    {
+      "id": 80331056,
+      "baseShopId": 80331056,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 280,
+      "name": "秘密の地図〔東の財宝〕",
+      "detail": "秘密の地図〔東の財宝〕へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060402,
+          "name": "海賊ジョッキ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、使い込まれたビールジョッキ。\n海賊の粗雑さがうかがい知れるボロボロさ。",
+          "individuality": [{ "id": 10648, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060402.png",
+          "background": "silver",
+          "priority": 94060402,
+          "dropPriority": 2002
+        },
+        "amount": 80
+      },
+      "purchaseType": "item",
+      "targetIds": [94060426],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1632887999
+    },
+    {
+      "id": 80331057,
+      "baseShopId": 80331057,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 290,
+      "name": "秘密の地図〔西の財宝〕",
+      "detail": "秘密の地図〔西の財宝〕へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060401,
+          "name": "海賊バンダナ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、ありふれたバンダナ。\n海賊の手下はだいたいこれを巻いている気がする。",
+          "individuality": [{ "id": 10647, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060401.png",
+          "background": "bronze",
+          "priority": 94060401,
+          "dropPriority": 2001
+        },
+        "amount": 80
+      },
+      "purchaseType": "item",
+      "targetIds": [94060427],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1632887999
+    },
+    {
+      "id": 80331058,
+      "baseShopId": 80331058,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 300,
+      "name": "秘密の地図〔最後の財宝〕",
+      "detail": "秘密の地図〔最後の財宝〕へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 100
+      },
+      "purchaseType": "item",
+      "targetIds": [94060428],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 1,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1632887999
+    },
+    {
+      "id": 80331059,
+      "baseShopId": 80331059,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 630,
+      "name": "アーチャーピース",
+      "detail": "【霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060402,
+          "name": "海賊ジョッキ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、使い込まれたビールジョッキ。\n海賊の粗雑さがうかがい知れるボロボロさ。",
+          "individuality": [{ "id": 10648, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060402.png",
+          "background": "silver",
+          "priority": 94060402,
+          "dropPriority": 2002
+        },
+        "amount": 20
+      },
+      "purchaseType": "item",
+      "targetIds": [7002],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331060,
+      "baseShopId": 80331060,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 640,
+      "name": "ランサーピース",
+      "detail": "【霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060402,
+          "name": "海賊ジョッキ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、使い込まれたビールジョッキ。\n海賊の粗雑さがうかがい知れるボロボロさ。",
+          "individuality": [{ "id": 10648, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060402.png",
+          "background": "silver",
+          "priority": 94060402,
+          "dropPriority": 2002
+        },
+        "amount": 20
+      },
+      "purchaseType": "item",
+      "targetIds": [7003],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331061,
+      "baseShopId": 80331061,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 650,
+      "name": "ライダーピース",
+      "detail": "【霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060402,
+          "name": "海賊ジョッキ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、使い込まれたビールジョッキ。\n海賊の粗雑さがうかがい知れるボロボロさ。",
+          "individuality": [{ "id": 10648, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060402.png",
+          "background": "silver",
+          "priority": 94060402,
+          "dropPriority": 2002
+        },
+        "amount": 20
+      },
+      "purchaseType": "item",
+      "targetIds": [7004],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331062,
+      "baseShopId": 80331062,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 660,
+      "name": "キャスターピース",
+      "detail": "【霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060402,
+          "name": "海賊ジョッキ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、使い込まれたビールジョッキ。\n海賊の粗雑さがうかがい知れるボロボロさ。",
+          "individuality": [{ "id": 10648, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060402.png",
+          "background": "silver",
+          "priority": 94060402,
+          "dropPriority": 2002
+        },
+        "amount": 20
+      },
+      "purchaseType": "item",
+      "targetIds": [7005],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331063,
+      "baseShopId": 80331063,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 670,
+      "name": "アサシンピース",
+      "detail": "【霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060402,
+          "name": "海賊ジョッキ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、使い込まれたビールジョッキ。\n海賊の粗雑さがうかがい知れるボロボロさ。",
+          "individuality": [{ "id": 10648, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060402.png",
+          "background": "silver",
+          "priority": 94060402,
+          "dropPriority": 2002
+        },
+        "amount": 20
+      },
+      "purchaseType": "item",
+      "targetIds": [7006],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331064,
+      "baseShopId": 80331064,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 680,
+      "name": "バーサーカーピース",
+      "detail": "【霊基再臨素材】へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060402,
+          "name": "海賊ジョッキ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、使い込まれたビールジョッキ。\n海賊の粗雑さがうかがい知れるボロボロさ。",
+          "individuality": [{ "id": 10648, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060402.png",
+          "background": "silver",
+          "priority": 94060402,
+          "dropPriority": 2002
+        },
+        "amount": 20
+      },
+      "purchaseType": "item",
+      "targetIds": [7007],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 20,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331065,
+      "baseShopId": 80331065,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 690,
+      "name": "海賊サーベル",
+      "detail": "カルデア・サマーアドベンチャー！限定アイテム\n「海賊サーベル」へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060402,
+          "name": "海賊ジョッキ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、使い込まれたビールジョッキ。\n海賊の粗雑さがうかがい知れるボロボロさ。",
+          "individuality": [{ "id": 10648, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060402.png",
+          "background": "silver",
+          "priority": 94060402,
+          "dropPriority": 2002
+        },
+        "amount": 10
+      },
+      "purchaseType": "item",
+      "targetIds": [94060403],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 0,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331066,
+      "baseShopId": 80331066,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 700,
+      "name": "海賊ジョッキ",
+      "detail": "カルデア・サマーアドベンチャー！限定アイテム\n「海賊ジョッキ」へ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060401,
+          "name": "海賊バンダナ",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、ありふれたバンダナ。\n海賊の手下はだいたいこれを巻いている気がする。",
+          "individuality": [{ "id": 10647, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060401.png",
+          "background": "bronze",
+          "priority": 94060401,
+          "dropPriority": 2001
+        },
+        "amount": 10
+      },
+      "purchaseType": "item",
+      "targetIds": [94060402],
+      "itemSet": [],
+      "setNum": 1,
+      "limitNum": 0,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    },
+    {
+      "id": 80331067,
+      "baseShopId": 80331067,
+      "shopType": "eventItem",
+      "eventId": 80331,
+      "slot": 2,
+      "priority": 710,
+      "name": "10,000 QP",
+      "detail": "QPへ交換",
+      "infoMessage": "",
+      "warningMessage": "",
+      "payType": "eventItem",
+      "cost": {
+        "item": {
+          "id": 94060403,
+          "name": "海賊サーベル",
+          "type": "eventItem",
+          "uses": [],
+          "detail": "【イベント収集アイテム】\n『カルデア・サマーアドベンチャー！』\nで手に入れた、煌びやかなサーベル。\n海賊の船長が腰に携えていそう。",
+          "individuality": [{ "id": 10649, "name": "unknown" }],
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94060403.png",
+          "background": "gold",
+          "priority": 94060403,
+          "dropPriority": 2003
+        },
+        "amount": 2
+      },
+      "purchaseType": "item",
+      "targetIds": [1],
+      "itemSet": [],
+      "setNum": 10000,
+      "limitNum": 0,
+      "defaultLv": 0,
+      "defaultLimitCount": 0,
+      "openedAt": 1631091600,
+      "closedAt": 1633492799
+    }
+  ],
+  "rewards": [
+    {
+      "groupId": 0,
+      "point": 300,
+      "gifts": [
+        {
+          "id": 30063,
+          "type": "servant",
+          "objectId": 9770400,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 600,
+      "gifts": [
+        {
+          "id": 10064,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 500000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 1000,
+      "gifts": [
+        {
+          "id": 14000,
+          "type": "item",
+          "objectId": 102,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 1500,
+      "gifts": [
+        {
+          "id": 25475,
+          "type": "item",
+          "objectId": 6538,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 2000,
+      "gifts": [
+        {
+          "id": 10074,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 1000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 2400,
+      "gifts": [
+        { "id": 309, "type": "item", "objectId": 3, "priority": 0, "num": 10 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 2900,
+      "gifts": [
+        {
+          "id": 21303,
+          "type": "item",
+          "objectId": 6501,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 3500,
+      "gifts": [
+        {
+          "id": 10064,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 500000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 4000,
+      "gifts": [
+        {
+          "id": 94060459,
+          "type": "item",
+          "objectId": 94060409,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033101.png"
+    },
+    {
+      "groupId": 0,
+      "point": 4300,
+      "gifts": [
+        {
+          "id": 80314004,
+          "type": "item",
+          "objectId": 90120001,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 4800,
+      "gifts": [
+        {
+          "id": 14000,
+          "type": "item",
+          "objectId": 102,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 5400,
+      "gifts": [
+        {
+          "id": 10078,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 2000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 5900,
+      "gifts": [
+        {
+          "id": 30063,
+          "type": "servant",
+          "objectId": 9770400,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 6500,
+      "gifts": [
+        {
+          "id": 13000,
+          "type": "item",
+          "objectId": 101,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 7000,
+      "gifts": [
+        {
+          "id": 94060459,
+          "type": "item",
+          "objectId": 94060409,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033101.png"
+    },
+    {
+      "groupId": 0,
+      "point": 7600,
+      "gifts": [
+        { "id": 319, "type": "item", "objectId": 3, "priority": 0, "num": 20 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 8100,
+      "gifts": [
+        {
+          "id": 25475,
+          "type": "item",
+          "objectId": 6538,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 8700,
+      "gifts": [
+        {
+          "id": 10064,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 500000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 9300,
+      "gifts": [
+        {
+          "id": 21303,
+          "type": "item",
+          "objectId": 6501,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 10000,
+      "gifts": [
+        {
+          "id": 41526,
+          "type": "servant",
+          "objectId": 9405300,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033101.png"
+    },
+    {
+      "groupId": 0,
+      "point": 10500,
+      "gifts": [
+        {
+          "id": 30063,
+          "type": "servant",
+          "objectId": 9770400,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 11000,
+      "gifts": [
+        {
+          "id": 94060459,
+          "type": "item",
+          "objectId": 94060409,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033101.png"
+    },
+    {
+      "groupId": 0,
+      "point": 11400,
+      "gifts": [
+        {
+          "id": 10078,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 2000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 11800,
+      "gifts": [
+        { "id": 309, "type": "item", "objectId": 3, "priority": 0, "num": 10 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 12400,
+      "gifts": [
+        {
+          "id": 80314004,
+          "type": "item",
+          "objectId": 90120001,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 13000,
+      "gifts": [
+        {
+          "id": 25520,
+          "type": "item",
+          "objectId": 6542,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 13300,
+      "gifts": [
+        {
+          "id": 10080,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 3000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 13600,
+      "gifts": [
+        {
+          "id": 14000,
+          "type": "item",
+          "objectId": 102,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 14000,
+      "gifts": [
+        {
+          "id": 30064,
+          "type": "servant",
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 14500,
+      "gifts": [
+        {
+          "id": 80314004,
+          "type": "item",
+          "objectId": 90120001,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 15000,
+      "gifts": [
+        {
+          "id": 94060459,
+          "type": "item",
+          "objectId": 94060409,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033101.png"
+    },
+    {
+      "groupId": 0,
+      "point": 15600,
+      "gifts": [
+        {
+          "id": 30063,
+          "type": "servant",
+          "objectId": 9770400,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 16000,
+      "gifts": [
+        {
+          "id": 10064,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 500000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 16500,
+      "gifts": [
+        {
+          "id": 25475,
+          "type": "item",
+          "objectId": 6538,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 17200,
+      "gifts": [
+        {
+          "id": 30063,
+          "type": "servant",
+          "objectId": 9770400,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 17800,
+      "gifts": [
+        {
+          "id": 10078,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 2000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 18300,
+      "gifts": [
+        {
+          "id": 80314004,
+          "type": "item",
+          "objectId": 90120001,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 18800,
+      "gifts": [
+        {
+          "id": 12000,
+          "type": "item",
+          "objectId": 100,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 19400,
+      "gifts": [
+        {
+          "id": 10086,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 6000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 20000,
+      "gifts": [
+        {
+          "id": 41526,
+          "type": "servant",
+          "objectId": 9405300,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033101.png"
+    },
+    {
+      "groupId": 0,
+      "point": 20500,
+      "gifts": [
+        {
+          "id": 21303,
+          "type": "item",
+          "objectId": 6501,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 21100,
+      "gifts": [
+        {
+          "id": 10074,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 1000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 21600,
+      "gifts": [
+        {
+          "id": 25475,
+          "type": "item",
+          "objectId": 6538,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 22100,
+      "gifts": [
+        { "id": 322, "type": "item", "objectId": 3, "priority": 0, "num": 50 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 22600,
+      "gifts": [
+        {
+          "id": 80314004,
+          "type": "item",
+          "objectId": 90120001,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 23100,
+      "gifts": [
+        {
+          "id": 30064,
+          "type": "servant",
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 23600,
+      "gifts": [
+        {
+          "id": 14000,
+          "type": "item",
+          "objectId": 102,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 24100,
+      "gifts": [
+        {
+          "id": 10078,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 2000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 24600,
+      "gifts": [
+        { "id": 319, "type": "item", "objectId": 3, "priority": 0, "num": 20 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 25000,
+      "gifts": [
+        {
+          "id": 25440,
+          "type": "item",
+          "objectId": 5001,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033101.png"
+    },
+    {
+      "groupId": 0,
+      "point": 25700,
+      "gifts": [
+        {
+          "id": 30063,
+          "type": "servant",
+          "objectId": 9770400,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 26400,
+      "gifts": [
+        {
+          "id": 13000,
+          "type": "item",
+          "objectId": 101,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 27000,
+      "gifts": [
+        {
+          "id": 10080,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 3000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 27700,
+      "gifts": [
+        {
+          "id": 30063,
+          "type": "servant",
+          "objectId": 9770400,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 28300,
+      "gifts": [
+        {
+          "id": 80314004,
+          "type": "item",
+          "objectId": 90120001,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 29000,
+      "gifts": [
+        { "id": 322, "type": "item", "objectId": 3, "priority": 0, "num": 50 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 29600,
+      "gifts": [
+        {
+          "id": 21303,
+          "type": "item",
+          "objectId": 6501,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 30000,
+      "gifts": [
+        {
+          "id": 41526,
+          "type": "servant",
+          "objectId": 9405300,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033101.png"
+    },
+    {
+      "groupId": 0,
+      "point": 30700,
+      "gifts": [
+        {
+          "id": 10074,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 1000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 31400,
+      "gifts": [
+        {
+          "id": 80314004,
+          "type": "item",
+          "objectId": 90120001,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 32000,
+      "gifts": [
+        {
+          "id": 14000,
+          "type": "item",
+          "objectId": 102,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 32500,
+      "gifts": [
+        {
+          "id": 25520,
+          "type": "item",
+          "objectId": 6542,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 33000,
+      "gifts": [
+        { "id": 319, "type": "item", "objectId": 3, "priority": 0, "num": 20 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 33500,
+      "gifts": [
+        {
+          "id": 10078,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 2000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 34000,
+      "gifts": [
+        { "id": 319, "type": "item", "objectId": 3, "priority": 0, "num": 20 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 34500,
+      "gifts": [
+        {
+          "id": 30064,
+          "type": "servant",
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 35000,
+      "gifts": [
+        {
+          "id": 25429,
+          "type": "item",
+          "objectId": 5000,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033101.png"
+    },
+    {
+      "groupId": 0,
+      "point": 35700,
+      "gifts": [
+        {
+          "id": 10086,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 6000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 36400,
+      "gifts": [
+        {
+          "id": 25475,
+          "type": "item",
+          "objectId": 6538,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 37000,
+      "gifts": [
+        {
+          "id": 12000,
+          "type": "item",
+          "objectId": 100,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 37500,
+      "gifts": [
+        {
+          "id": 25451,
+          "type": "item",
+          "objectId": 5002,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033101.png"
+    },
+    {
+      "groupId": 0,
+      "point": 38100,
+      "gifts": [
+        {
+          "id": 30063,
+          "type": "servant",
+          "objectId": 9770400,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 38700,
+      "gifts": [
+        { "id": 327, "type": "item", "objectId": 3, "priority": 0, "num": 100 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 39500,
+      "gifts": [
+        {
+          "id": 10074,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 1000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 40000,
+      "gifts": [
+        {
+          "id": 41527,
+          "type": "servant",
+          "objectId": 9405310,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033101.png"
+    },
+    {
+      "groupId": 0,
+      "point": 40800,
+      "gifts": [
+        {
+          "id": 21303,
+          "type": "item",
+          "objectId": 6501,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 41400,
+      "gifts": [
+        {
+          "id": 14000,
+          "type": "item",
+          "objectId": 102,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 42000,
+      "gifts": [
+        {
+          "id": 10078,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 2000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 42700,
+      "gifts": [
+        {
+          "id": 13000,
+          "type": "item",
+          "objectId": 101,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 43500,
+      "gifts": [
+        {
+          "id": 80314004,
+          "type": "item",
+          "objectId": 90120001,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 43900,
+      "gifts": [
+        {
+          "id": 30064,
+          "type": "servant",
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 44500,
+      "gifts": [
+        {
+          "id": 10086,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 6000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 45000,
+      "gifts": [
+        {
+          "id": 21701,
+          "type": "item",
+          "objectId": 6999,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033101.png"
+    },
+    {
+      "groupId": 0,
+      "point": 45600,
+      "gifts": [
+        {
+          "id": 14000,
+          "type": "item",
+          "objectId": 102,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 46000,
+      "gifts": [
+        {
+          "id": 25520,
+          "type": "item",
+          "objectId": 6542,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 46700,
+      "gifts": [
+        {
+          "id": 10078,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 2000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 47300,
+      "gifts": [
+        {
+          "id": 25475,
+          "type": "item",
+          "objectId": 6538,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 48000,
+      "gifts": [
+        {
+          "id": 80314004,
+          "type": "item",
+          "objectId": 90120001,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 48600,
+      "gifts": [
+        {
+          "id": 12000,
+          "type": "item",
+          "objectId": 100,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 49200,
+      "gifts": [
+        { "id": 319, "type": "item", "objectId": 3, "priority": 0, "num": 20 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 50000,
+      "gifts": [
+        {
+          "id": 41526,
+          "type": "servant",
+          "objectId": 9405300,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033101.png"
+    },
+    {
+      "groupId": 0,
+      "point": 50600,
+      "gifts": [
+        { "id": 322, "type": "item", "objectId": 3, "priority": 0, "num": 50 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 51100,
+      "gifts": [
+        {
+          "id": 10086,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 6000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 51600,
+      "gifts": [
+        {
+          "id": 25520,
+          "type": "item",
+          "objectId": 6542,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 52100,
+      "gifts": [
+        {
+          "id": 21303,
+          "type": "item",
+          "objectId": 6501,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 52700,
+      "gifts": [
+        {
+          "id": 14000,
+          "type": "item",
+          "objectId": 102,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033104.png"
+    },
+    {
+      "groupId": 0,
+      "point": 53300,
+      "gifts": [
+        { "id": 319, "type": "item", "objectId": 3, "priority": 0, "num": 20 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 53900,
+      "gifts": [
+        {
+          "id": 10078,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 2000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 54500,
+      "gifts": [
+        {
+          "id": 25475,
+          "type": "item",
+          "objectId": 6538,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 55000,
+      "gifts": [
+        {
+          "id": 31043,
+          "type": "servant",
+          "objectId": 9570400,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033101.png"
+    },
+    {
+      "groupId": 0,
+      "point": 55600,
+      "gifts": [
+        {
+          "id": 80314004,
+          "type": "item",
+          "objectId": 90120001,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 56200,
+      "gifts": [
+        { "id": 319, "type": "item", "objectId": 3, "priority": 0, "num": 20 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 56700,
+      "gifts": [
+        {
+          "id": 13000,
+          "type": "item",
+          "objectId": 101,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 57300,
+      "gifts": [
+        {
+          "id": 10086,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 6000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 57900,
+      "gifts": [
+        { "id": 322, "type": "item", "objectId": 3, "priority": 0, "num": 50 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 58600,
+      "gifts": [
+        {
+          "id": 10080,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 3000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 59300,
+      "gifts": [
+        {
+          "id": 80314004,
+          "type": "item",
+          "objectId": 90120001,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 60000,
+      "gifts": [
+        {
+          "id": 32043,
+          "type": "servant",
+          "objectId": 9670400,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033101.png"
+    },
+    {
+      "groupId": 0,
+      "point": 60500,
+      "gifts": [
+        {
+          "id": 21303,
+          "type": "item",
+          "objectId": 6501,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 61000,
+      "gifts": [
+        {
+          "id": 12000,
+          "type": "item",
+          "objectId": 100,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 61500,
+      "gifts": [
+        { "id": 319, "type": "item", "objectId": 3, "priority": 0, "num": 20 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 62000,
+      "gifts": [
+        {
+          "id": 10086,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 6000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 62700,
+      "gifts": [
+        {
+          "id": 80314004,
+          "type": "item",
+          "objectId": 90120001,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 63300,
+      "gifts": [
+        { "id": 319, "type": "item", "objectId": 3, "priority": 0, "num": 20 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 64000,
+      "gifts": [
+        {
+          "id": 25520,
+          "type": "item",
+          "objectId": 6542,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 64500,
+      "gifts": [
+        {
+          "id": 13000,
+          "type": "item",
+          "objectId": 101,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 65000,
+      "gifts": [
+        {
+          "id": 21701,
+          "type": "item",
+          "objectId": 6999,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033101.png"
+    },
+    {
+      "groupId": 0,
+      "point": 65600,
+      "gifts": [
+        { "id": 327, "type": "item", "objectId": 3, "priority": 0, "num": 100 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 66200,
+      "gifts": [
+        {
+          "id": 13000,
+          "type": "item",
+          "objectId": 101,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 67000,
+      "gifts": [
+        { "id": 319, "type": "item", "objectId": 3, "priority": 0, "num": 20 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 67600,
+      "gifts": [
+        {
+          "id": 10080,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 3000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 68200,
+      "gifts": [
+        {
+          "id": 30064,
+          "type": "servant",
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 68700,
+      "gifts": [
+        {
+          "id": 25475,
+          "type": "item",
+          "objectId": 6538,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 69300,
+      "gifts": [
+        {
+          "id": 12000,
+          "type": "item",
+          "objectId": 100,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 70000,
+      "gifts": [
+        {
+          "id": 41526,
+          "type": "servant",
+          "objectId": 9405300,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033101.png"
+    },
+    {
+      "groupId": 0,
+      "point": 70500,
+      "gifts": [
+        { "id": 319, "type": "item", "objectId": 3, "priority": 0, "num": 20 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 71000,
+      "gifts": [
+        {
+          "id": 10086,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 6000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 71600,
+      "gifts": [
+        {
+          "id": 13000,
+          "type": "item",
+          "objectId": 101,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 72300,
+      "gifts": [
+        { "id": 319, "type": "item", "objectId": 3, "priority": 0, "num": 20 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 73000,
+      "gifts": [
+        {
+          "id": 30064,
+          "type": "servant",
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 73600,
+      "gifts": [
+        { "id": 322, "type": "item", "objectId": 3, "priority": 0, "num": 50 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 74200,
+      "gifts": [
+        {
+          "id": 10080,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 3000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 75000,
+      "gifts": [
+        {
+          "id": 31043,
+          "type": "servant",
+          "objectId": 9570400,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033101.png"
+    },
+    {
+      "groupId": 0,
+      "point": 75500,
+      "gifts": [
+        { "id": 319, "type": "item", "objectId": 3, "priority": 0, "num": 20 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 76000,
+      "gifts": [
+        {
+          "id": 13000,
+          "type": "item",
+          "objectId": 101,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 76600,
+      "gifts": [
+        {
+          "id": 30064,
+          "type": "servant",
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 77300,
+      "gifts": [
+        { "id": 319, "type": "item", "objectId": 3, "priority": 0, "num": 20 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 78000,
+      "gifts": [
+        {
+          "id": 12000,
+          "type": "item",
+          "objectId": 100,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 78500,
+      "gifts": [
+        { "id": 319, "type": "item", "objectId": 3, "priority": 0, "num": 20 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 79000,
+      "gifts": [
+        {
+          "id": 25520,
+          "type": "item",
+          "objectId": 6542,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 79600,
+      "gifts": [
+        { "id": 322, "type": "item", "objectId": 3, "priority": 0, "num": 50 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 80000,
+      "gifts": [
+        {
+          "id": 32043,
+          "type": "servant",
+          "objectId": 9670400,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033101.png"
+    },
+    {
+      "groupId": 0,
+      "point": 80700,
+      "gifts": [
+        {
+          "id": 12000,
+          "type": "item",
+          "objectId": 100,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 81400,
+      "gifts": [
+        { "id": 319, "type": "item", "objectId": 3, "priority": 0, "num": 20 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 82000,
+      "gifts": [
+        {
+          "id": 21303,
+          "type": "item",
+          "objectId": 6501,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 82700,
+      "gifts": [
+        { "id": 319, "type": "item", "objectId": 3, "priority": 0, "num": 20 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 83300,
+      "gifts": [
+        {
+          "id": 10086,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 6000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 84000,
+      "gifts": [
+        {
+          "id": 30064,
+          "type": "servant",
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 5
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 84500,
+      "gifts": [
+        { "id": 319, "type": "item", "objectId": 3, "priority": 0, "num": 20 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 85000,
+      "gifts": [
+        {
+          "id": 31043,
+          "type": "servant",
+          "objectId": 9570400,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033101.png"
+    },
+    {
+      "groupId": 0,
+      "point": 85700,
+      "gifts": [
+        {
+          "id": 25520,
+          "type": "item",
+          "objectId": 6542,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 86400,
+      "gifts": [
+        {
+          "id": 12000,
+          "type": "item",
+          "objectId": 100,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 87000,
+      "gifts": [
+        { "id": 319, "type": "item", "objectId": 3, "priority": 0, "num": 20 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033103.png"
+    },
+    {
+      "groupId": 0,
+      "point": 87500,
+      "gifts": [
+        {
+          "id": 32043,
+          "type": "servant",
+          "objectId": 9670400,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033101.png"
+    },
+    {
+      "groupId": 0,
+      "point": 88100,
+      "gifts": [
+        {
+          "id": 10086,
+          "type": "item",
+          "objectId": 1,
+          "priority": 0,
+          "num": 6000000
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 88700,
+      "gifts": [
+        { "id": 327, "type": "item", "objectId": 3, "priority": 0, "num": 100 }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 89300,
+      "gifts": [
+        {
+          "id": 25520,
+          "type": "item",
+          "objectId": 6542,
+          "priority": 0,
+          "num": 3
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033102.png"
+    },
+    {
+      "groupId": 0,
+      "point": 90000,
+      "gifts": [
+        {
+          "id": 21701,
+          "type": "item",
+          "objectId": 6999,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
+      "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033101.png"
+    }
+  ],
+  "pointGroups": [],
+  "pointBuffs": [],
+  "missions": [],
+  "towers": [],
+  "lotteries": [],
+  "treasureBoxes": [
+    {
+      "slot": 1,
+      "id": 803311,
+      "idx": 0,
+      "treasureBoxGifts": [
+        {
+          "id": 8033101,
+          "idx": 1,
+          "gifts": [
+            {
+              "id": 20201,
+              "type": "item",
+              "objectId": 6516,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "collateralUpperLimit": 15
+        },
+        {
+          "id": 8033101,
+          "idx": 2,
+          "gifts": [
+            {
+              "id": 20301,
+              "type": "item",
+              "objectId": 6512,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "collateralUpperLimit": 15
+        },
+        {
+          "id": 8033101,
+          "idx": 3,
+          "gifts": [
+            {
+              "id": 25384,
+              "type": "item",
+              "objectId": 6534,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "collateralUpperLimit": 15
+        },
+        {
+          "id": 8033101,
+          "idx": 4,
+          "gifts": [
+            {
+              "id": 25309,
+              "type": "item",
+              "objectId": 6527,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "collateralUpperLimit": 15
+        },
+        {
+          "id": 8033101,
+          "idx": 5,
+          "gifts": [
+            {
+              "id": 25340,
+              "type": "item",
+              "objectId": 6530,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "collateralUpperLimit": 15
+        }
+      ],
+      "maxDrawNumOnce": 100,
+      "extraGifts": [
+        {
+          "id": 94060425,
+          "type": "item",
+          "objectId": 94060408,
+          "priority": 0,
+          "num": 100
+        }
+      ],
+      "commonConsume": {
+        "id": 94060401,
+        "priority": 3,
+        "type": "item",
+        "objectId": 94060405,
+        "num": 1
+      }
+    },
+    {
+      "slot": 1,
+      "id": 803312,
+      "idx": 1,
+      "treasureBoxGifts": [
+        {
+          "id": 8033102,
+          "idx": 1,
+          "gifts": [
+            {
+              "id": 20801,
+              "type": "item",
+              "objectId": 6509,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "collateralUpperLimit": 15
+        },
+        {
+          "id": 8033102,
+          "idx": 2,
+          "gifts": [
+            {
+              "id": 25299,
+              "type": "item",
+              "objectId": 6526,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "collateralUpperLimit": 15
+        },
+        {
+          "id": 8033102,
+          "idx": 3,
+          "gifts": [
+            {
+              "id": 20601,
+              "type": "item",
+              "objectId": 6508,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "collateralUpperLimit": 15
+        },
+        {
+          "id": 8033102,
+          "idx": 4,
+          "gifts": [
+            {
+              "id": 25407,
+              "type": "item",
+              "objectId": 6537,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "collateralUpperLimit": 15
+        },
+        {
+          "id": 8033102,
+          "idx": 5,
+          "gifts": [
+            {
+              "id": 25576,
+              "type": "item",
+              "objectId": 6547,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "collateralUpperLimit": 15
+        }
+      ],
+      "maxDrawNumOnce": 100,
+      "extraGifts": [
+        {
+          "id": 94060425,
+          "type": "item",
+          "objectId": 94060408,
+          "priority": 0,
+          "num": 100
+        }
+      ],
+      "commonConsume": {
+        "id": 94060402,
+        "priority": 2,
+        "type": "item",
+        "objectId": 94060406,
+        "num": 1
+      }
+    },
+    {
+      "slot": 1,
+      "id": 803313,
+      "idx": 2,
+      "treasureBoxGifts": [
+        {
+          "id": 8033103,
+          "idx": 1,
+          "gifts": [
+            {
+              "id": 21601,
+              "type": "item",
+              "objectId": 6506,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "collateralUpperLimit": 15
+        },
+        {
+          "id": 8033103,
+          "idx": 2,
+          "gifts": [
+            {
+              "id": 25562,
+              "type": "item",
+              "objectId": 6546,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "collateralUpperLimit": 15
+        },
+        {
+          "id": 8033103,
+          "idx": 3,
+          "gifts": [
+            {
+              "id": 25319,
+              "type": "item",
+              "objectId": 6528,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "collateralUpperLimit": 15
+        },
+        {
+          "id": 8033103,
+          "idx": 4,
+          "gifts": [
+            {
+              "id": 25351,
+              "type": "item",
+              "objectId": 6531,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "collateralUpperLimit": 15
+        },
+        {
+          "id": 8033103,
+          "idx": 5,
+          "gifts": [
+            {
+              "id": 25540,
+              "type": "item",
+              "objectId": 6544,
+              "priority": 0,
+              "num": 1
+            }
+          ],
+          "collateralUpperLimit": 15
+        }
+      ],
+      "maxDrawNumOnce": 100,
+      "extraGifts": [
+        {
+          "id": 94060425,
+          "type": "item",
+          "objectId": 94060408,
+          "priority": 0,
+          "num": 100
+        }
+      ],
+      "commonConsume": {
+        "id": 94060403,
+        "priority": 1,
+        "type": "item",
+        "objectId": 94060407,
+        "num": 1
+      }
+    }
+  ]
+}

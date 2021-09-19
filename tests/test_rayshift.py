@@ -3,6 +3,7 @@ import pytest
 from httpx import AsyncClient
 from sqlalchemy.sql import and_, delete, select
 
+from app.config import SecretSettings
 from app.db.engine import engines
 from app.db.load import (
     get_missing_query_ids,
@@ -15,7 +16,14 @@ from app.schemas.common import Region
 from app.schemas.rayshift import QuestList
 
 
+settings = SecretSettings()
+
+doesnt_have_rayshift_api_key = settings.rayshift_api_key.get_secret_value() == ""
+skip_reason = "Requires rayshift API key"
+
+
 @pytest.mark.asyncio
+@pytest.mark.skipif(doesnt_have_rayshift_api_key, reason=skip_reason)
 async def test_rayshift_uncached_quest(client: AsyncClient) -> None:
     test_quest_id = 94033502
     select_stmt = select(rayshiftQuest).where(rayshiftQuest.c.questId == test_quest_id)
@@ -34,6 +42,7 @@ async def test_rayshift_uncached_quest(client: AsyncClient) -> None:
         assert conn.execute(select_stmt).fetchone()
 
 
+@pytest.mark.skipif(doesnt_have_rayshift_api_key, reason=skip_reason)
 def test_rayshift_get_quest_list() -> None:
     quest_list = get_all_quest_lists(Region.NA)
     assert len(quest_list) > 100
@@ -44,11 +53,13 @@ def test_rayshift_missing_ids() -> None:
     assert len(query_ids) >= 0
 
 
+@pytest.mark.skipif(doesnt_have_rayshift_api_key, reason=skip_reason)
 def test_get_rayshift_query_ids() -> None:
     assert get_multiple_quests(Region.NA, []) == {}
     assert 157425 in get_multiple_quests(Region.NA, [157425])
 
 
+@pytest.mark.skipif(doesnt_have_rayshift_api_key, reason=skip_reason)
 def test_load_rayshift_quest_details() -> None:
     query_ids = [157425, 157429]
     quest_details = get_multiple_quests(Region.NA, query_ids)
@@ -71,6 +82,7 @@ def test_load_rayshift_quest_details() -> None:
 
 
 @pytest.mark.asyncio
+@pytest.mark.skipif(doesnt_have_rayshift_api_key, reason=skip_reason)
 async def test_rayshift_load_quest_list(client: AsyncClient) -> None:
     test_quest_id = 1000000
     select_stmt = select(rayshiftQuest).where(rayshiftQuest.c.questId == test_quest_id)

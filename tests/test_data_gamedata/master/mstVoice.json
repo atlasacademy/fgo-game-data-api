@@ -1,0 +1,15 @@
+[
+  {
+    "id": "S010",
+    "priority": 7920,
+    "svtVoiceType": 3,
+    "name": "召喚",
+    "nameDefault": "英霊召喚時に開放",
+    "condType": 8,
+    "condValue": 0,
+    "voicePlayedValue": 0,
+    "firstPlayPriority": 0,
+    "closedType": 1,
+    "flag": 0
+  }
+]
