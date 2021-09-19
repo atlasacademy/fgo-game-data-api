@@ -1,9 +1,14 @@
 import re
 
 
+brackets_regex = re.compile(r"[\[].*?[\]]")
+ruby_regex = re.compile(r"[\[]#(.*):(.*)?[\]]")
+
+
 def strip_script_formatting(sentence: str) -> str:
     stripped = sentence.strip()
-    removed_brackets = re.sub(r"[\[].*?[\]]", " ", stripped)
+    replaced_ruby = re.sub(ruby_regex, r"\1\2", stripped)
+    removed_brackets = re.sub(brackets_regex, " ", replaced_ruby)
     return removed_brackets.replace("\u3000", " ")
 
 
