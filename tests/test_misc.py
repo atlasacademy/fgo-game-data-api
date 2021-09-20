@@ -6,10 +6,10 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 from app.core.nice.func import parse_dataVals
 from app.core.utils import get_voice_name, sort_by_collection_no
 from app.data.custom_mappings import Translation
-from app.data.script import get_script_path, get_script_text_only
+from app.data.script import get_script_path, get_script_text_only, remove_brackets
 from app.routers.utils import list_string_exclude
 from app.schemas.basic import BasicServant
-from app.schemas.common import Language, ReverseDepth
+from app.schemas.common import Language, Region, ReverseDepth
 from app.schemas.gameenums import FuncType
 from app.schemas.nice import NiceServant
 from app.schemas.raw import get_subtitle_svtId
@@ -144,5 +144,9 @@ def test_get_script_path() -> None:
 
 def test_parse_script() -> None:
     test_script = get_text_data("test_data_misc", "test_script")
-    output = "Jeanne! Jeanne I was careless... I never expected to be forced to acknowledge her like this...! Jeanne Alter"
-    assert get_script_text_only(test_script) == output
+    output = "Jeanne! (Jeanne) I was careless... I never expected to be forced to acknowledge her like this...! (Jeanne Alter)"
+    assert get_script_text_only(Region.NA, test_script) == output
+
+    ruby_text = "[line 3]オールトの雲より飛来した、[r][#極限の単独種:ア ル テ ミ ッ ト ・ ワ ン]がね。"
+    expected = "オールトの雲より飛来した、極限の単独種アルテミット・ワンがね。"
+    assert remove_brackets(Region.JP, ruby_text) == expected

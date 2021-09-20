@@ -147,7 +147,7 @@ def load_item(engine: Engine, gamedata_path: DirectoryPath) -> None:  # pragma: 
 
 
 def load_script_list(
-    engine: Engine, repo_folder: DirectoryPath
+    engine: Engine, region: Region, repo_folder: DirectoryPath
 ) -> None:  # pragma: no cover
     script_list_file = (
         repo_folder
@@ -182,7 +182,7 @@ def load_script_list(
             if script_path.exists():
                 with open(script_path, "r", encoding="utf-8") as fp:
                     script_data = fp.read()
-                    script_text = get_script_text_only(script_data)
+                    script_text = get_script_text_only(region, script_data)
                     script_sha1 = hashlib.sha1(script_text.encode("utf-8")).hexdigest()
             else:
                 script_data = ""
@@ -315,7 +315,7 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
         load_item(engine, repo_folder)
 
         logger.info("Updating script list …")
-        load_script_list(engine, repo_folder)
+        load_script_list(engine, region, repo_folder)
 
         with engine.begin() as conn:
             rayshiftQuest.create(conn, checkfirst=True)
