@@ -18,6 +18,7 @@ class Region(str, Enum):
 
     NA = "NA"
     JP = "JP"
+    CN = "CN"
 
 
 class Language(str, Enum):

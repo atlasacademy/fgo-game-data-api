@@ -21,9 +21,9 @@ from ..schemas.raw import (
 from .utils import load_master_data
 
 
-VALENTINE_NAME = {Region.NA: "Valentine", Region.JP: "バレンタイン"}
+VALENTINE_NAME = {Region.NA: "Valentine", Region.JP: "バレンタイン", Region.CN: "情人节"}
 MASHU_SVT_ID1 = 800100
-MASH_NAME = {Region.NA: "Mash", Region.JP: "マシュ"}
+MASH_NAME = {Region.NA: "Mash", Region.JP: "マシュ", Region.CN: "玛修"}
 
 
 def is_Mash_Valentine_equip(region: Region, comment: str) -> bool:
@@ -126,7 +126,10 @@ def get_extra_svt_data(
             zeroLimitOverwriteName[limitAdd.svtId] = limitAdd.script[
                 "overWriteServantName"
             ]
-        if limitAdd.limitCount in mstSvtCostumeId.get(limitAdd.svtId, set()):
+        if (
+            limitAdd.limitCount in mstSvtCostumeId.get(limitAdd.svtId, set())
+            or limitAdd.limitCount > 10
+        ):
             svtCostumeIds[limitAdd.svtId][limitAdd.limitCount] = limitAdd.battleCharaId
 
     all_svt_ids = (

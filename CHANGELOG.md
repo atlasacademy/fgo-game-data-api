@@ -6,11 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.73.0 - 2021-09-25
+### Added
+- Support for CN data.
+
 ## 5.72.0 - 2021-09-15
 ### Added
-- illustrator and cv name translation
-- rate limit to nice and raw endpoint
-- raw and nice script endpoints
+- illustrator and cv name translation.
+- rate limit to nice and raw endpoint.
+- raw and nice script endpoints.
 
 ## 5.71.0 - 2021-08-26
 ### Added

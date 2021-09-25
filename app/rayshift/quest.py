@@ -20,6 +20,7 @@ from ..schemas.rayshift import (
 
 settings = Settings()
 
+NO_API_KEY = settings.rayshift_api_key.get_secret_value() == ""
 QUEST_ENDPOINT = f"{settings.rayshift_api_url}/avalon-data-export/quests"
 REGION_ENUM = {Region.JP: 1, Region.NA: 2}
 
@@ -27,7 +28,7 @@ REGION_ENUM = {Region.JP: 1, Region.NA: 2}
 async def get_quest_response(
     region: Region, quest_id: int, phase: int
 ) -> Optional[QuestResponse]:
-    if settings.rayshift_api_key.get_secret_value() == "":  # pragma: no cover
+    if NO_API_KEY or region not in REGION_ENUM:  # pragma: no cover
         return None
 
     async with httpx.AsyncClient() as client:
@@ -70,7 +71,7 @@ async def get_quest_detail(
 
 
 def get_multiple_quests(region: Region, query_ids: list[int]) -> dict[int, QuestDetail]:
-    if settings.rayshift_api_key.get_secret_value() == "":  # pragma: no cover
+    if NO_API_KEY or region not in REGION_ENUM:  # pragma: no cover
         return {}
 
     params: dict[str, Union[str, int, list[int]]] = {
@@ -95,7 +96,7 @@ def get_multiple_quests(region: Region, query_ids: list[int]) -> dict[int, Quest
 
 
 def get_all_quest_lists(region: Region) -> list[QuestList]:
-    if settings.rayshift_api_key.get_secret_value() == "":  # pragma: no cover
+    if NO_API_KEY or region not in REGION_ENUM:  # pragma: no cover
         return []
 
     params: dict[str, Union[str, int]] = {

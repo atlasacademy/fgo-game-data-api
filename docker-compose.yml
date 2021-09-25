@@ -20,6 +20,16 @@ services:
       POSTGRES_PASSWORD: password
     volumes:
       - pg-na-data:/var/lib/postgresql/data
+  pg-fgoapicn:
+    image: groonga/pgroonga:latest-alpine-13-slim
+    ports:
+      - "5435:5432"
+    environment:
+      POSTGRES_DB: fgoapicn
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - pg-cn-data:/var/lib/postgresql/data
   redis:
     image: redis:alpine
     ports:
@@ -27,3 +37,4 @@ services:
 volumes:
   pg-jp-data:
   pg-na-data:
+  pg-cn-data:

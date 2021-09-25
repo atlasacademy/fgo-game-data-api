@@ -10,7 +10,7 @@ from .gameenums import SvtType
 class MstConstant(BaseModelORJson):
     name: str  # "IS_IOS_EXAMINATION"
     value: int  # 0
-    createdAt: int  # 946652400
+    createdAt: int = 0  # 946652400
 
 
 class MstCommonRelease(BaseModelORJson):
@@ -49,7 +49,7 @@ class MstFunc(BaseModelORJson):
     effectList: list[int]  # [332],
     popupTextColor: int  # 2,
     id: int  # 657,
-    cond: int  # 0,
+    cond: int = 0  # 0,
     funcType: int  # 16,
     targetType: int  # 0,
     applyTarget: int  # 3,
@@ -101,7 +101,7 @@ class MstSvtSkill(BaseModelORJson):
     skillId: int  # 990183,
     condQuestId: int  # 0,
     condQuestPhase: int  # 0,
-    condLv: int  # 0,
+    condLv: int = 0  # 0,
     condLimitCount: int  # 0,
     eventId: int  # 0,
     flag: int  # 0
@@ -114,11 +114,11 @@ class MstSvtPassiveSkill(BaseModelORJson):
     skillId: int
     condQuestId: int
     condQuestPhase: int
-    condLv: int
-    condLimitCount: int
+    condLv: int = 0
+    condLimitCount: int = 0
     condFriendshipRank: int
     eventId: int
-    flag: int
+    flag: int = 0
     commonReleaseId: Optional[int] = None
     startedAt: int
     endedAt: int
@@ -241,8 +241,8 @@ class MstSvtTreasureDevice(BaseModelORJson):
     treasureDeviceId: int  # 400901,
     condQuestId: int  # 0,
     condQuestPhase: int  # 0,
-    condLv: int  # 0,
-    condFriendshipRank: int  # 0,
+    condLv: int = 0  # 0,
+    condFriendshipRank: int = 0  # 0,
     motion: int  # 50,
     cardId: int  # 3
 
@@ -330,6 +330,9 @@ class MstSvtIndividuality(BaseModelORJson):
     condType: Optional[int] = None
     condId: Optional[int] = None
     condNum: Optional[int] = None
+    startedAt: Optional[int] = None
+    eventId: Optional[int] = None
+    endedAt: Optional[int] = None
 
 
 class MstSvtExtra(BaseModelORJson):
@@ -419,24 +422,26 @@ class MstSvtScript(BaseModelORJson):
     form: int  # 0
     faceX: int  # 376
     faceY: int  # 163
-    bgImageId: int  # 0
+    bgImageId: int = 0  # 0
     scale: Decimal  # 1.0
     offsetX: int  # -4
     offsetY: int  # 102
     offsetXMyroom: int  # 283
     offsetYMyroom: int  # 119
+    svtId: Optional[int]
+    limitCount: Optional[int]
 
 
 class MstCv(BaseModelORJson):
     id: int  # 93
     name: str  # "Satoshi Hino"
-    comment: str  # ""
+    comment: str = ""  # ""
 
 
 class MstIllustrator(BaseModelORJson):
     id: int  # 2
     name: str  # "Takashi Takeuchi"
-    comment: str  # ""
+    comment: str = ""  # ""
 
 
 class MstSvtExp(BaseModelORJson):
@@ -478,7 +483,7 @@ class MstCombineMaterial(BaseModelORJson):
     id: int  # 1
     lv: int  # 1
     value: int  # 3000
-    createdAt: int  # 1893423600
+    createdAt: int = 0  # 1893423600
 
 
 class MstEquip(BaseModelORJson):
@@ -507,7 +512,7 @@ class MstEquipSkill(BaseModelORJson):
     equipId: int  # 1
     num: int  # 1
     skillId: int  # 980001
-    condLv: int  # 0
+    condLv: int = 0  # 0
 
 
 class MstCommandCode(BaseModelORJson):
@@ -518,7 +523,7 @@ class MstCommandCode(BaseModelORJson):
     rarity: int  # 3
     sellQp: int  # 500
     sellMana: int  # 1
-    sellRarePri: int  # 0
+    sellRarePri: int = 0  # 0
 
 
 class MstCommandCodeSkill(BaseModelORJson):
@@ -546,8 +551,8 @@ class CommandCodeEntity(BaseModelORJson):
 class MstItem(BaseModelORJson):
     individuality: list[int]  # [],
     script: dict[str, Any]  # {},
-    eventId: int  # 0,
-    eventGroupId: int  # 0,
+    eventId: int = 0  # 0,
+    eventGroupId: int = 0  # 0,
     id: int  # 6505,
     name: str  # "Void's Dust",
     detail: str  # "\"Skill Up & Ascension Material\"\nDust that disperses when hollow shadows disappear.",
@@ -572,7 +577,7 @@ class MstSetItem(BaseModelORJson):
     purchaseType: int
     targetId: int
     setNum: int
-    createdAt: int
+    createdAt: int = 0
 
 
 class ItemEntity(BaseModelORJson):
@@ -632,8 +637,8 @@ class ScriptJsonInfo(BaseModelORJson):
     face: int  # 0
     delay: Decimal  # 0.0
     text: Optional[str]  # "I ask of you, are you my Master?"
-    form: int  # 0
-    changeEffect: int  # 0
+    form: int = 0  # 0
+    changeEffect: int = 0  # 0
 
     def get_voice_id(self) -> str:
         # Some voice lines have the first info id ending with xxx1 or xxx2 and we want xxx0
@@ -643,19 +648,20 @@ class ScriptJsonInfo(BaseModelORJson):
 class ScriptJsonCond(BaseModelORJson):
     condType: int  # 1
     value: int  # 0
-    eventId: int  # 0
+    eventId: int = 0  # 0
 
 
 class ScriptJson(BaseModelORJson):
     summonScript: Optional[str]
     overwriteName: Optional[str]
     overwritePriority: Optional[int]
-    infos: list[ScriptJsonInfo]
-    conds: list[ScriptJsonCond]
+    infos: list[ScriptJsonInfo] = []
+    conds: list[ScriptJsonCond] = []
 
 
 class MstSvtVoice(BaseModelORJson):
     scriptJson: list[ScriptJson]
+    scriptJsonAdditory: Optional[list[ScriptJson]]
     id: int
     voicePrefix: int
     type: int
@@ -740,6 +746,8 @@ class MstGift(BaseModelORJson):
     objectId: int  # 403000
     priority: int  # 0
     num: int  # 1
+    lv: Optional[int]
+    limitCount: Optional[int]
 
 
 class MstBgm(BaseModelORJson):
@@ -747,7 +755,7 @@ class MstBgm(BaseModelORJson):
     fileName: str  # "BGM_BATTLE_1"
     name: str  # "集いし英雄\n～BATTLE 1～"
     priority: int  # 1012
-    detail: str  # ""
+    detail: str = ""  # ""
     flag: int  # 0
     shopId: int  # 7000001
     logoId: int  # 1
@@ -840,7 +848,7 @@ class MstEventPointBuff(BaseModelORJson):
     funcIds: list[int]
     id: int
     eventId: int
-    groupId: int
+    groupId: int = 0
     eventPoint: int
     name: str
     detail: str
@@ -851,11 +859,11 @@ class MstEventPointBuff(BaseModelORJson):
 
 class MstMasterMission(BaseModelORJson):
     id: int
-    priority: int
+    priority: int = 0
     startedAt: int
     endedAt: int
     closedAt: int
-    imageId: int
+    imageId: int = 0
     name: str
 
 
@@ -921,7 +929,7 @@ class MstEventTowerReward(BaseModelORJson):
     towerId: int
     floor: int
     giftId: int
-    iconId: int
+    iconId: int = 0
     presentMessageId: int
     boardMessage: str
     boardImageId: int
@@ -942,6 +950,7 @@ class MstBoxGacha(BaseModelORJson):
     detailUrl: str
     priority: int
     flag: int
+    presentMessageId: Optional[int]
 
 
 class MstBoxGachaBase(BaseModelORJson):
@@ -1001,14 +1010,14 @@ class MstEvent(BaseModelORJson):
     type: int  # 20
     openType: int  # 1
     name: str  # "劇場版「Fate/stay night [Heaven's Feel]」公開記念キャンペーン"
-    shortName: str  # ""
+    shortName: str = ""  # ""
     detail: str  # "劇場版「Fate/stay night [Heaven's Feel]」公開記念キャンペーン"
     noticeBannerId: int  # 0
     bannerId: int  # 0
     iconId: int  # 0
     bannerPriority: int  # 0
-    openHours: int  # 0
-    intervalHours: int  # 0
+    openHours: int = 0  # 0
+    intervalHours: int = 0  # 0
     noticeAt: int  # 1509116400
     startedAt: int  # 1509116400
     endedAt: int  # 1509721199
@@ -1016,10 +1025,10 @@ class MstEvent(BaseModelORJson):
     materialOpenedAt: int  # 1751295600
     linkType: int  # 1
     linkBody: str  # "/summon/detail_summon_1.html"
-    deviceType: int  # 0
+    deviceType: int = 0  # 0
     myroomBgId: int  # 0
     myroomBgmId: int  # 0
-    createdAt: int  # 1435676400
+    createdAt: int = 0  # 1435676400
     warIds: list[int] = []
 
 
@@ -1036,7 +1045,7 @@ class MstWar(BaseModelORJson):
     headerImageId: int  # 1000
     priority: int  # 9046
     parentWarId: int  # 0
-    materialParentWarId: int  # 0
+    materialParentWarId: int = 0  # 0
     flag: int  # 32
     emptyMessage: str  # "クエストがありません"
     bgmId: int  # 8
@@ -1074,7 +1083,7 @@ class MstMap(BaseModelORJson):
 
 
 class MstSpot(BaseModelORJson):
-    joinSpotIds: list[int]  # []
+    joinSpotIds: list[int] = []  # []
     id: int  # 10001
     warId: int  # 100
     mapId: int  # 100
@@ -1088,7 +1097,7 @@ class MstSpot(BaseModelORJson):
     nameOfsY: int  # 0
     questOfsX: int  # 38
     questOfsY: int  # -62
-    nextOfsX: int  # 0
+    nextOfsX: int = 0  # 0
     nextOfsY: int  # 0
     dispCondType1: int  # 1
     dispTargetId1: int  # 0
@@ -1108,7 +1117,7 @@ class MstQuest(BaseModelORJson):
     afterActionVals: list[str]  # []
     id: int  # 94024618
     name: str  # "Automata Hunt - Pride Rank"
-    nameRuby: str  # ""
+    nameRuby: str = ""  # ""
     type: int  # 5
     consumeType: int  # 1
     actConsume: int  # 40
@@ -1121,7 +1130,7 @@ class MstQuest(BaseModelORJson):
     iconId: int  # 94024608
     charaIconId: int  # 0
     giftIconId: int  # 0
-    forceOperation: int  # 0
+    forceOperation: int = 0  # 0
     afterClear: int  # 3
     displayHours: int  # 0
     intervalHours: int  # 0
@@ -1162,7 +1171,7 @@ class MstQuestRelease(BaseModelORJson):
     type: int  # 7
     targetId: int  # 100100
     value: int  # 4
-    openLimit: int  # 0
+    openLimit: int = 0  # 0
     closedMessageId: int  # 2
     imagePriority: int  # 3000
 
@@ -1190,7 +1199,8 @@ class MstQuestPhase(BaseModelORJson):
     qp: int  # 1900,
     playerExp: int  # 550,
     friendshipExp: int  # 165
-    giftId: int
+    giftId: int = 0
+    encountSvtIds: Optional[list[int]]
 
 
 class MstQuestPhaseDetail(BaseModelORJson):
@@ -1246,7 +1256,7 @@ class NpcFollower(BaseModelORJson):
     svtEquipIds: list[int]
     flag: int
     npcScript: str
-    createdAt: int
+    createdAt: int = 0
 
 
 class NpcFollowerRelease(BaseModelORJson):
@@ -1255,8 +1265,8 @@ class NpcFollowerRelease(BaseModelORJson):
     questPhase: int
     condType: int
     condTargetId: int
-    condValue: int
-    createdAt: int
+    condValue: int = 0
+    createdAt: int = 0
 
 
 class NpcSvtFollower(BaseModelORJson):
@@ -1278,8 +1288,9 @@ class NpcSvtFollower(BaseModelORJson):
     skillLv1: int
     skillLv2: int
     skillLv3: int
+    passiveSkills: Optional[list[int]]
     flag: int
-    createdAt: int
+    createdAt: int = 0
 
 
 class NpcSvtEquip(BaseModelORJson):
@@ -1309,7 +1320,7 @@ class MstAiAct(BaseModelORJson):
     id: int  # 94016184
     type: int  # 40
     target: int  # 0
-    createdAt: int  # 946652400
+    createdAt: int = 0  # 946652400
 
 
 class MysticCodeEntity(BaseModelORJson):

@@ -261,6 +261,32 @@ def load_pydantic_to_db(
         insert_db(conn, db_table, db_data)
 
 
+NOT_AVAILABLE_TABLES = {
+    Region.NA: {
+        "mstStageRemap",
+        "mstSvtAdd",
+        "mstSvtAppendPassiveSkill",
+        "mstSvtAppendPassiveSkillUnlock",
+        "mstCombineAppendPassiveSkill",
+        "mstSvtCoin",
+        "mstSkillAdd",
+        "mstTreasureBox",
+        "mstTreasureBoxGift",
+    },
+    Region.CN: {
+        "mstSkillAdd",
+        "mstSvtAdd",
+        "mstSvtAppendPassiveSkill",
+        "mstSvtAppendPassiveSkillUnlock",
+        "mstCombineAppendPassiveSkill",
+        "mstSvtCoin",
+        "mstTreasureBox",
+        "mstTreasureBoxGift",
+        "mstStageRemap",
+    },
+}
+
+
 def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no cover
     logger.info("Loading db …")
     start_loading_time = time.perf_counter()
@@ -281,19 +307,8 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
                     data = remove_unknown_columns(data, table)
             else:
                 if not (
-                    region == Region.NA
-                    and table.name
-                    in {
-                        "mstStageRemap",
-                        "mstSvtAdd",
-                        "mstSvtAppendPassiveSkill",
-                        "mstSvtAppendPassiveSkillUnlock",
-                        "mstCombineAppendPassiveSkill",
-                        "mstSvtCoin",
-                        "mstSkillAdd",
-                        "mstTreasureBox",
-                        "mstTreasureBoxGift",
-                    }
+                    region in NOT_AVAILABLE_TABLES
+                    and table.name in NOT_AVAILABLE_TABLES[region]
                 ):
                     logger.warning(f"Can't find file {table_json}.")
                 data = []

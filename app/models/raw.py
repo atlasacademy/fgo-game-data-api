@@ -20,7 +20,7 @@ mstConstant = Table(
     metadata,
     Column("name", String, index=True),
     Column("value", Integer),
-    Column("createdAt", Integer),
+    Column("createdAt", Integer, default=0),
 )
 
 
@@ -76,7 +76,7 @@ mstFunc = Table(
     Column("effectList", ARRAY(Integer)),
     Column("popupTextColor", Integer),
     Column("id", Integer, primary_key=True),
-    Column("cond", Integer),
+    Column("cond", Integer, default=0),
     Column("funcType", Integer, index=True),
     Column("targetType", Integer, index=True),
     Column("applyTarget", Integer, index=True),
@@ -137,7 +137,7 @@ mstSvtSkill = Table(
     Column("skillId", Integer, index=True),
     Column("condQuestId", Integer),
     Column("condQuestPhase", Integer),
-    Column("condLv", Integer),
+    Column("condLv", Integer, default=0),
     Column("condLimitCount", Integer),
     Column("eventId", Integer),
     Column("flag", Integer),
@@ -153,11 +153,11 @@ mstSvtPassiveSkill = Table(
     Column("skillId", Integer, index=True),
     Column("condQuestId", Integer),
     Column("condQuestPhase", Integer),
-    Column("condLv", Integer),
-    Column("condLimitCount", Integer),
+    Column("condLv", Integer, default=0),
+    Column("condLimitCount", Integer, default=0),
     Column("condFriendshipRank", Integer),
     Column("eventId", Integer),
-    Column("flag", Integer),
+    Column("flag", Integer, default=0),
     Column("commonReleaseId", Integer),
     Column("startedAt", Integer),
     Column("endedAt", Integer),
@@ -232,8 +232,8 @@ mstSvtTreasureDevice = Table(
     Column("treasureDeviceId", Integer, index=True),
     Column("condQuestId", Integer),
     Column("condQuestPhase", Integer),
-    Column("condLv", Integer),
-    Column("condFriendshipRank", Integer),
+    Column("condLv", Integer, default=0),
+    Column("condFriendshipRank", Integer, default=0),
     Column("motion", Integer),
     Column("cardId", Integer, index=True),
 )
@@ -327,6 +327,9 @@ mstSvtIndividuality = Table(
     Column("condType", Integer),
     Column("condId", Integer),
     Column("condNum", Integer),
+    Column("startedAt", Integer),
+    Column("eventId", Integer),
+    Column("endedAt", Integer),
 )
 
 
@@ -414,6 +417,7 @@ mstSvtVoice = Table(
     "mstSvtVoice",
     metadata,
     Column("scriptJson", JSONB),
+    Column("scriptJsonAdditory", JSONB),
     Column("id", Integer, index=True),
     Column("voicePrefix", Integer),
     Column("type", Integer),
@@ -574,7 +578,7 @@ mstCombineMaterial = Table(
     Column("id", Integer, index=True),
     Column("lv", Integer),
     Column("value", Integer),
-    Column("createdAt", Integer),
+    Column("createdAt", Integer, default=0),
 )
 
 
@@ -586,12 +590,14 @@ mstSvtScript = Table(
     Column("form", Integer),
     Column("faceX", Integer),
     Column("faceY", Integer),
-    Column("bgImageId", Integer),
+    Column("bgImageId", Integer, default=0),
     Column("scale", Numeric),
     Column("offsetX", Integer),
     Column("offsetY", Integer),
     Column("offsetXMyroom", Integer),
     Column("offsetYMyroom", Integer),
+    Column("svtId", Integer),
+    Column("limitCount", Integer),
 )
 
 
@@ -705,7 +711,7 @@ mstEquipSkill = Table(
     Column("equipId", Integer, index=True),
     Column("num", Integer),
     Column("skillId", Integer),
-    Column("condLv", Integer),
+    Column("condLv", Integer, default=0),
 )
 
 
@@ -714,8 +720,8 @@ mstItem = Table(
     metadata,
     Column("individuality", ARRAY(Integer)),
     Column("script", JSONB),
-    Column("eventId", Integer),
-    Column("eventGroupId", Integer),
+    Column("eventId", Integer, default=0),
+    Column("eventGroupId", Integer, default=0),
     Column("id", Integer, primary_key=True),
     Column("name", String),
     Column("detail", String),
@@ -746,7 +752,7 @@ mstCommandCode = Table(
     Column("rarity", Integer),
     Column("sellQp", Integer),
     Column("sellMana", Integer),
-    Column("sellRarePri", Integer),
+    Column("sellRarePri", Integer, default=0),
 )
 
 
@@ -776,7 +782,7 @@ mstCv = Table(
     metadata,
     Column("id", Integer, primary_key=True),
     Column("name", String, index=True),
-    Column("comment", String),
+    Column("comment", String, default=""),
 )
 
 
@@ -785,7 +791,7 @@ mstIllustrator = Table(
     metadata,
     Column("id", Integer, primary_key=True),
     Column("name", String, index=True),
-    Column("comment", String),
+    Column("comment", String, default=0),
 )
 
 
@@ -797,6 +803,8 @@ mstGift = Table(
     Column("objectId", Integer),
     Column("priority", Integer),
     Column("num", Integer),
+    Column("lv", Integer),
+    Column("limitCount", Integer),
 )
 
 
@@ -807,7 +815,7 @@ mstSetItem = Table(
     Column("purchaseType", Integer),
     Column("targetId", Integer),
     Column("setNum", Integer),
-    Column("createdAt", Integer),
+    Column("createdAt", Integer, default=0),
 )
 
 
@@ -870,14 +878,14 @@ mstEvent = Table(
     Column("type", Integer),
     Column("openType", Integer),
     Column("name", String),
-    Column("shortName", String),
+    Column("shortName", String, default=""),
     Column("detail", String),
     Column("noticeBannerId", Integer),
     Column("bannerId", Integer),
     Column("iconId", Integer),
     Column("bannerPriority", Integer),
-    Column("openHours", Integer),
-    Column("intervalHours", Integer),
+    Column("openHours", Integer, default=0),
+    Column("intervalHours", Integer, default=0),
     Column("noticeAt", Integer),
     Column("startedAt", Integer),
     Column("endedAt", Integer),
@@ -885,10 +893,10 @@ mstEvent = Table(
     Column("materialOpenedAt", Integer),
     Column("linkType", Integer),
     Column("linkBody", String),
-    Column("deviceType", Integer),
+    Column("deviceType", Integer, default=0),
     Column("myroomBgId", Integer),
     Column("myroomBgmId", Integer),
-    Column("createdAt", Integer),
+    Column("createdAt", Integer, default=0),
     Column("warIds", ARRAY(Integer)),
 )
 
@@ -922,7 +930,7 @@ mstEventPointBuff = Table(
     Column("funcIds", ARRAY(Integer)),
     Column("id", Integer),
     Column("eventId", Integer, index=True),
-    Column("groupId", Integer),
+    Column("groupId", Integer, default=0),
     Column("eventPoint", Integer),
     Column("name", String),
     Column("detail", String),
@@ -936,11 +944,11 @@ mstMasterMission = Table(
     "mstMasterMission",
     metadata,
     Column("id", Integer),
-    Column("priority", Integer),
+    Column("priority", Integer, default=0),
     Column("startedAt", Integer),
     Column("endedAt", Integer),
     Column("closedAt", Integer),
-    Column("imageId", Integer),
+    Column("imageId", Integer, default=0),
     Column("name", String),
 )
 
@@ -1021,7 +1029,7 @@ mstEventTowerReward = Table(
     Column("towerId", Integer),
     Column("floor", Integer),
     Column("giftId", Integer),
-    Column("iconId", Integer),
+    Column("iconId", Integer, default=0),
     Column("presentMessageId", Integer),
     Column("boardMessage", String),
     Column("boardImageId", Integer),
@@ -1081,6 +1089,7 @@ mstBoxGacha = Table(
     Column("detailUrl", String),
     Column("priority", Integer),
     Column("flag", Integer),
+    Column("presentMessageId", Integer),
 )
 
 
@@ -1120,7 +1129,7 @@ mstBgm = Table(
     Column("fileName", String),
     Column("name", String),
     Column("priority", Integer),
-    Column("detail", String),
+    Column("detail", String, default=""),
     Column("flag", Integer),
     Column("shopId", Integer),
     Column("logoId", Integer),
@@ -1156,7 +1165,7 @@ mstWar = Table(
     Column("headerImageId", Integer),
     Column("priority", Integer),
     Column("parentWarId", Integer),
-    Column("materialParentWarId", Integer),
+    Column("materialParentWarId", Integer, default=0),
     Column("flag", Integer),
     Column("emptyMessage", String),
     Column("bgmId", Integer),
@@ -1186,7 +1195,7 @@ mstMap = Table(
 mstSpot = Table(
     "mstSpot",
     metadata,
-    Column("joinSpotIds", ARRAY(Integer)),
+    Column("joinSpotIds", ARRAY(Integer), default=[]),
     Column("id", Integer, primary_key=True),
     Column("warId", Integer, index=True),
     Column("mapId", Integer),
@@ -1200,7 +1209,7 @@ mstSpot = Table(
     Column("nameOfsY", Integer),
     Column("questOfsX", Integer),
     Column("questOfsY", Integer),
-    Column("nextOfsX", Integer),
+    Column("nextOfsX", Integer, default=0),
     Column("nextOfsY", Integer),
     Column("dispCondType1", Integer),
     Column("dispTargetId1", Integer),
@@ -1240,7 +1249,7 @@ mstQuest = Table(
     Column("afterActionVals", ARRAY(String)),
     Column("id", Integer, primary_key=True),
     Column("name", String, index=True),
-    Column("nameRuby", String),
+    Column("nameRuby", String, default=""),
     Column("type", Integer, index=True),
     Column("consumeType", Integer),
     Column("actConsume", Integer),
@@ -1253,7 +1262,7 @@ mstQuest = Table(
     Column("iconId", Integer),
     Column("charaIconId", Integer),
     Column("giftIconId", Integer),
-    Column("forceOperation", Integer),
+    Column("forceOperation", Integer, default=0),
     Column("afterClear", Integer),
     Column("displayHours", Integer),
     Column("intervalHours", Integer),
@@ -1292,7 +1301,7 @@ mstQuestRelease = Table(
     Column("type", Integer),
     Column("targetId", Integer),
     Column("value", BigInteger),
-    Column("openLimit", Integer),
+    Column("openLimit", Integer, default=0),
     Column("closedMessageId", Integer),
     Column("imagePriority", Integer),
 )
@@ -1329,7 +1338,8 @@ mstQuestPhase = Table(
     Column("qp", Integer),
     Column("playerExp", Integer),
     Column("friendshipExp", Integer),
-    Column("giftId", Integer),
+    Column("giftId", Integer, default=0),
+    Column("encountSvtIds", ARRAY(Integer)),
 )
 
 
@@ -1390,7 +1400,7 @@ npcFollower = Table(
     Column("svtEquipIds", ARRAY(Integer)),
     Column("flag", Integer),
     Column("npcScript", String),
-    Column("createdAt", Integer),
+    Column("createdAt", Integer, default=0),
 )
 
 
@@ -1402,8 +1412,8 @@ npcFollowerRelease = Table(
     Column("questPhase", Integer, index=True),
     Column("condType", Integer),
     Column("condTargetId", Integer),
-    Column("condValue", Integer),
-    Column("createdAt", Integer),
+    Column("condValue", Integer, default=0),
+    Column("createdAt", Integer, default=0),
 )
 
 
@@ -1428,8 +1438,9 @@ npcSvtFollower = Table(
     Column("skillLv1", Integer),
     Column("skillLv2", Integer),
     Column("skillLv3", Integer),
+    Column("passiveSkills", ARRAY(Integer)),
     Column("flag", Integer),
-    Column("createdAt", Integer),
+    Column("createdAt", Integer, default=0),
 )
 
 
@@ -1488,7 +1499,7 @@ mstAiAct = Table(
     Column("id", Integer, primary_key=True),
     Column("type", Integer),
     Column("target", Integer),
-    Column("createdAt", Integer),
+    Column("createdAt", Integer, default=0),
 )
 
 Index("ix_mstAiAct_skillVals", mstAiAct.c.skillVals[1])

@@ -167,6 +167,7 @@ def get_nice_voice_group(
                 lang,
             )
             for script in voice.scriptJson
+            if script.infos
         ),
     )
 

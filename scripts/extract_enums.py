@@ -104,12 +104,17 @@ def out_strenum(
     return strenum_lines
 
 
+EXTRA_ENUM_DICT = {"NiceEventType": {21: "COMEBACK_CAMPAIGN"}}
+
+
 def out_enumdict(
     input_dict: dict[int, str], nice_class: str, dict_name: str
 ) -> list[str]:
     strenumdict_lines = [f"{dict_name}: dict[int, {nice_class}] = {{\n"]
-    for enumint, enumstr in list(input_dict.items()) + list(
-        EXTRA_STR_NAME.get(nice_class, {}).items()
+    for enumint, enumstr in (
+        list(input_dict.items())
+        + list(EXTRA_STR_NAME.get(nice_class, {}).items())
+        + list(EXTRA_ENUM_DICT.get(nice_class, {}).items())
     ):
         json_name = convert_name(enumstr)
         strenumdict_lines.append(f"    {enumint}: {nice_class}.{json_name},\n")

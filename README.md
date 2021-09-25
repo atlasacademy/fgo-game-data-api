@@ -32,7 +32,7 @@ List of environment variables for the main app.
 
 #### Optional variables
 <details>
-<summary>Click to view!</summary>
+<summary>Click to view</summary>
 
 - `REDIS_PREFIX`: default to `fgoapi`. Prefix for redis keys.
 - `CLEAR_REDIS_CACHE`: default to `True`. If set, will clear the redis cache on start and when the webhook above is used.
