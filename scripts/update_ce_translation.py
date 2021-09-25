@@ -8,6 +8,7 @@ from typing import Any, Callable, Union
 
 
 MAPPING_PATH = Path(__file__).resolve().parents[1] / "app" / "data" / "mappings"
+CONFIG_JSON_PATH = Path(__file__).resolve().parents[1] / "config.json"
 TRANSLATIONS: dict[str, str] = {}
 ENTITY_TRANSLATIONS: dict[str, str] = {}
 TRANSLATION_FILES = (
@@ -321,17 +322,31 @@ if __name__ == "__main__":
     except ImportError:
         print("Can't find dotenv package.")
 
+    if CONFIG_JSON_PATH.exists():
+        config = json.load(CONFIG_JSON_PATH.open("r", encoding="utf-8"))
+    else:
+        config = {}
+
+    if data_env := os.getenv("DATA"):
+        data = json.loads(data_env)
+    else:
+        data = {}
+
     if args.jp_master:
         jp_path = Path(args.jp_master).resolve()
-    elif os.getenv("JP_GAMEDATA"):
-        jp_path = Path(str(os.getenv("JP_GAMEDATA"))).resolve() / "master"
+    elif "data" in config and "JP" in config["data"]:
+        jp_path = Path(config["data"]["JP"]["gamedata"]).resolve() / "master"
+    elif "JP" in data:
+        jp_path = Path(data["JP"]["gamedata"]).resolve() / "master"
     else:
         raise KeyError("JP_GAMEDATA not found")
 
     if args.na_master:
         na_path = Path(args.na_master).resolve()
-    elif os.getenv("NA_GAMEDATA"):
-        na_path = Path(str(os.getenv("NA_GAMEDATA"))).resolve() / "master"
+    elif "data" in config and "NA" in config["data"]:
+        na_path = Path(config["data"]["NA"]["gamedata"]).resolve() / "master"
+    elif "NA" in data:
+        na_path = Path(data["NA"]["gamedata"]).resolve() / "master"
     else:
         raise KeyError("NA_GAMEDATA not found")
 

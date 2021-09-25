@@ -4,13 +4,12 @@ from pathlib import Path
 import pytest
 from httpx import AsyncClient
 
-from app.config import SecretSettings, Settings
+from app.config import Settings
 from app.main import app
 
 
 file_path = Path(__file__).resolve().parents[1]
 settings = Settings()
-secrets = SecretSettings()
 
 
 @pytest.mark.asyncio
@@ -51,22 +50,15 @@ class TestMain:
         assert response["JP"]["timestamp"] > 1594450000
 
     @pytest.mark.skipif(
-        secrets.github_webhook_secret.get_secret_value() == "",
+        settings.github_webhook_secret.get_secret_value() == "",
         reason="Secret path not set",
     )
     async def test_secret_info(self, client: AsyncClient) -> None:
-        info_path = f"/{secrets.github_webhook_secret.get_secret_value()}/info"
+        info_path = f"/{settings.github_webhook_secret.get_secret_value()}/info"
         response = await client.get(info_path)
         assert response.status_code == 200
         response_data = response.json()
-        assert "game_data" in response_data
+        assert "data_repo_version" in response_data
         assert "app_version" in response_data
+        assert "app_settings" in response_data
         assert response_data["file_path"] == str(file_path)
-        expected_data = {
-            k: str(v)
-            if k in ("jp_gamedata", "na_gamedata", "github_webhook_secret")
-            else v
-            for k, v in settings.dict().items()
-            if k not in {"rayshift_api_key", "github_webhook_secret"}
-        }
-        assert response_data["app_settings"] == expected_data

@@ -11,7 +11,7 @@ from git import Repo  # type: ignore
 from pydantic import DirectoryPath
 from sqlalchemy.ext.asyncio import AsyncConnection, AsyncEngine
 
-from .config import SecretSettings, Settings, logger, project_root
+from .config import Settings, logger, project_root
 from .core.basic import (
     get_all_basic_ccs,
     get_all_basic_equips,
@@ -57,8 +57,6 @@ from .schemas.raw import (
 
 
 settings = Settings()
-secrets = SecretSettings()
-REGION_PATHS = {Region.JP: settings.jp_gamedata, Region.NA: settings.na_gamedata}
 
 
 export_path = project_root / "export"

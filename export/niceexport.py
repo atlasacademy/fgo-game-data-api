@@ -342,12 +342,11 @@ def export_nice_master_lvl(region: Region, master_path: Path, export_path: Path)
 
 def main() -> None:
     settings = Settings()
-    region_path = [(Region.NA, settings.na_gamedata), (Region.JP, settings.jp_gamedata)]
     export_path = Path(__file__).resolve().parents[1] / "export"
-    for region, gamedata in region_path:
+    for region, region_data in settings.data.items():
         print(region)
-        export_constant(region, gamedata, export_path)
-        export_nice_master_lvl(region, gamedata, export_path)
+        export_constant(region, region_data.gamedata, export_path)
+        export_nice_master_lvl(region, region_data.gamedata, export_path)
 
 
 if __name__ == "__main__":

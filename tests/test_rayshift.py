@@ -3,7 +3,7 @@ import pytest
 from httpx import AsyncClient
 from sqlalchemy.sql import and_, delete, select
 
-from app.config import SecretSettings
+from app.config import Settings
 from app.db.engine import engines
 from app.db.load import (
     get_missing_query_ids,
@@ -16,7 +16,7 @@ from app.schemas.common import Region
 from app.schemas.rayshift import QuestList
 
 
-settings = SecretSettings()
+settings = Settings()
 
 doesnt_have_rayshift_api_key = settings.rayshift_api_key.get_secret_value() == ""
 skip_reason = "Requires rayshift API key"

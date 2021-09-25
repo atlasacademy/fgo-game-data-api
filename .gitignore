@@ -4,6 +4,7 @@
 play*
 .python-version
 fil-result/
+config.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -2,10 +2,13 @@
 
 HTTP API for FGO game data. Transform the raw game data into something a bit more manageable.
 
+View the API documentation here: https://api.atlasacademy.io.
+
 - [Environment variables](#environment-variables)
-  - [Required environment variables](#required-environment-variables)
-  - [Optional environment variables](#optional-environment-variables)
+  - [Required variables](#required-variables)
+  - [Optional variables](#optional-variables)
   - [Secrets](#secrets)
+  - [config.json](#configjson)
 - [Run the API server](#run-the-api-server)
 - [Architecture](#architecture)
 - [Linting](#linting)
@@ -20,69 +23,54 @@ HTTP API for FGO game data. Transform the raw game data into something a bit mor
 
 ### Environment variables
 
+
 List of environment variables for the main app.
 
-#### Required environment variables
-- `NA_GAMEDATA`: path to NA gamedata's folder that contains the `master` and `ScriptActionEncrypt` folders.
-- `JP_GAMEDATA`: path to JP gamedata's folder that contains the `master` and `ScriptActionEncrypt` folders.
-- `NA_POSTGRESDSN`: PostgreSQL DSN to a database for NA.
-- `JP_POSTGRESDSN`: PostgreSQL DSN to a database for JP.
+#### Required variables
+- `DATA`: A JSON object string with keys being region strings and values being gamedata's folder location and Postgresql DSN.
 - `REDISDSN`: Redis DSN to a Redis server for caching.
 
-#### Optional environment variables
-- `ASSET_URL`: defaults to https://assets.atlasacademy.io/GameData/. Base URL for the game assets.
+#### Optional variables
+<details>
+<summary>Click to view!</summary>
+
+- `REDIS_PREFIX`: default to `fgoapi`. Prefix for redis keys.
+- `CLEAR_REDIS_CACHE`: default to `True`. If set, will clear the redis cache on start and when the webhook above is used.
+- `RATE_LIMIT_PER_5_SEC`: default to `100`. The rate limit per 5 seconds for nice and raw endpoints.
 - `RAYSHIFT_API_KEY`: default to `""`. Rayshift.io API key to pull quest data.
 - `RAYSHIFT_API_URL`: default to https://rayshift.io/api/v1/. Rayshift.io API URL.
 - `QUEST_CACHE_LENGTH`: default to `3600`. How long to cache the quest and war endpoints in seconds. Because the rayshift data is updated continously, web and quest endpoints have lower cache time.
 - `WRITE_POSTGRES_DATA`: default to `True`. Overwrite the data in PostgreSQL when importing.
 - `WRITE_REDIS_DATA`: default to `True`. Overwrite the data in Redis when importing.
+- `ASSET_URL`: defaults to https://assets.atlasacademy.io/GameData/. Base URL for the game assets.
 - `OPENAPI_URL`: default to `None`. Set the server URL in the openapi schema export.
 - `EXPORT_ALL_NICE`: default to `False`. If set to `True`, at start the app will generate nice data of all servant and CE and serve them at the `/export` endpoint. It's recommended to serve the files in the `/export` folder using nginx or equivalent webserver to lighten the load on the API server.
 - `DOCUMENTATION_ALL_NICE`: default to `False`. If set to `True`, there will be links to the exported all nice files in the documentation.
 - `GITHUB_WEBHOOK_SECRET`: default to `""`. If set, will add a webhook location at `/GITHUB_WEBHOOK_SECRET/update` that will pull and update the game data. If it's not set, the endpoint is not created.
 - `GITHUB_WEBHOOK_GIT_PULL`: default to `False`. If set, the app will do `git pull` on the gamedata repos when the webhook above is used.
 - `GITHUB_WEBHOOK_SLEEP`: default to `0`. If set, will delay the action above by `GITHUB_WEBHOOK_SLEEP` seconds.
-- `BLOOM_SHARD`: default to `0`. [Bloom](https://github.com/valeriansaliou/bloom) shard that is used for caching.
-- `REDIS_PREFIX`: default to `fgoapi`. Prefix for redis keys.
 
-You can also make a .env file at the project root with the following entries instead of setting the environment variables:
-
-```
-NA_GAMEDATA="/path/to/gamedata/NA"
-JP_GAMEDATA="/path/to/gamedata/JP"
-NA_POSTGRESDSN="postgresql://username:password@localhost:5432/fgoapiNA"
-JP_POSTGRESDSN="postgresql://username:password@localhost:5432/fgoapiJP"
-REDISDSN="redis://localhost:6379/0"
-RAYSHIFT_API_KEY="eca334a9-3289-4ad7-9b92-1ec2bbc3fc19"
-QUEST_CACHE_LENGTH=3600
-WRITE_POSTGRES_DATA=True
-WRITE_REDIS_DATA=True
-ASSET_URL="https://example.com/assets/"
-OPENAPI_URL="https://api.atlasacademy.io"
-EXPORT_ALL_NICE=False
-DOCUMENTATION_ALL_NICE=True
-GITHUB_WEBHOOK_SECRET="e81c7b97-9a57-4424-a887-149b4b5adf57"
-GITHUB_WEBHOOK_GIT_PULL=True
-GITHUB_WEBHOOK_SLEEP=0
-BLOOM_SHARD=0
-REDIS_PREFIX="fgoapi"
-```
+</details>
 
 #### Secrets
 
-Secret variables can also be put in the `secrets` folder instead of being supplied as environment variable:
+Secret variables can be put in the [secrets](secrets/) folder instead of being supplied as environment variable:
 ```
-> cat .\secrets\jp_postgresdsn
-postgresql://username:password@localhost:5432/fgoapiJP
-> cat .\secrets\na_postgresdsn
-postgresql://username:password@localhost:5432/fgoapiNA
 > cat .\secrets\rayshift_api_key
 eca334a9-3289-4ad7-9b92-1ec2bbc3fc19
-> cat .\secrets\github_webhook_secret
-e81c7b97-9a57-4424-a887-149b4b5adf57
 > cat .\secrets\redisdsn
 redis://localhost
 ```
+
+#### config.json
+
+You can make a `config.json` file with the settings instead of setting the environment variables. Check the [config.sample.json](config.sample.json) file for an example.
+
+Settings at a higher level will override the settings at a lower level.
+1. Secrets variable
+2. Enviornment variable
+3. `.env` file
+4. `config.json`
 
 ### Run the API server
 
@@ -110,11 +98,12 @@ Go to http://127.0.0.1:8000/docs or http://127.0.0.1:8000/redoc for the API docu
 
 - `main.py`: Main entrypoint of the application.
 - `routers/`: Routers to deal with incoming requests. The routers call functions from `core` to get the response data.
-- `core/`: Build response data. Get raw data from either `db/helpers/` or the `masters` object in `data/gamedata`.
-- `data/`: Import master data and translations data into memory.
-  - `data/gamedata.py`: has the `masters` object containing some master data as Pydantic objects. The `masters` object is used for frequently accessed master data.
+- `core/`: Build response data. Get raw data from either `db/helpers/` or `redis/helpers`.
+- `data/`: Import translation data into memory. Preprocessing conde for data to be imported into db and redis.
 - `db/`: DB stuffs.
   - `db/helpers/`: Functions to be used by `core` to get data from the DB.
+- `redis/`: Redis stuffs.
+  - `redis/helpers/`: Functions to be used by `core` to get data from Redis.
 - `schemas/`: Response Pydantic models.
 - `models/`: SQLAlchemy Core Tables.
 

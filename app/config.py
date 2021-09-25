@@ -1,7 +1,8 @@
 import logging
 from pathlib import Path
-from typing import Optional
+from typing import Any, Optional
 
+import orjson
 from pydantic import (
     BaseSettings,
     DirectoryPath,
@@ -11,8 +12,11 @@ from pydantic import (
     SecretStr,
     validator,
 )
+from pydantic.main import BaseModel
 from pydantic.tools import parse_obj_as
 from uvicorn.logging import DefaultFormatter  # type: ignore
+
+from .schemas.common import Region
 
 
 project_root = Path(__file__).resolve().parents[1]
@@ -26,10 +30,23 @@ logger.addHandler(console_handler)
 logger.setLevel(uvicorn_logger.level)
 
 
+def json_config_settings_source(_: BaseSettings) -> Any:
+    return orjson.loads(Path("config.json").read_bytes())
+
+
+class RegionSettings(BaseModel):
+    gamedata: DirectoryPath
+    postgresdsn: PostgresDsn
+
+
 # pylint: disable=no-self-argument, no-self-use
 class Settings(BaseSettings):
-    na_gamedata: DirectoryPath
-    jp_gamedata: DirectoryPath
+    data: dict[Region, RegionSettings]
+    redisdsn: RedisDsn
+    redis_prefix: str = "fgoapi"
+    clear_redis_cache: bool = True
+    rate_limit_per_5_sec: int = 100
+    rayshift_api_key: SecretStr = SecretStr("")
     rayshift_api_url: HttpUrl = parse_obj_as(HttpUrl, "https://rayshift.io/api/v1/")
     quest_cache_length: int = 3600
     write_postgres_data: bool = True
@@ -40,11 +57,9 @@ class Settings(BaseSettings):
     openapi_url: Optional[HttpUrl] = None
     export_all_nice: bool = False
     documentation_all_nice: bool = False
+    github_webhook_secret: SecretStr = SecretStr("")
     github_webhook_git_pull: bool = False
     github_webhook_sleep: int = 0
-    clear_redis_cache: bool = True
-    redis_prefix: str = "fgoapi"
-    rate_limit_per_5_sec: int = 100
 
     @validator("asset_url", "rayshift_api_url")
     def remove_last_slash(cls, value: str) -> str:
@@ -55,15 +70,13 @@ class Settings(BaseSettings):
 
     class Config:
         env_file = ".env"
-
-
-class SecretSettings(BaseSettings):
-    na_postgresdsn: PostgresDsn
-    jp_postgresdsn: PostgresDsn
-    rayshift_api_key: SecretStr = SecretStr("")
-    github_webhook_secret: SecretStr = SecretStr("")
-    redisdsn: RedisDsn
-
-    class Config:
-        env_file = ".env"
         secrets_dir = "secrets"
+
+        @classmethod
+        def customise_sources(cls, init_settings, env_settings, file_secret_settings):  # type: ignore
+            return (
+                init_settings,
+                file_secret_settings,
+                env_settings,
+                json_config_settings_source,
+            )

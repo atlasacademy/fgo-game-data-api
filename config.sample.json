@@ -1,0 +1,28 @@
+{
+  "data": {
+    "NA": {
+      "gamedata": "..\\fgo-game-data-na",
+      "postgresdsn": "postgresql://user:password@127.0.0.1:5434/fgoapina"
+    },
+    "JP": {
+      "gamedata": "..\\fgo-game-data-jp",
+      "postgresdsn": "postgresql://user:password@127.0.0.1:5433/fgoapijp"
+    }
+  },
+  "redisdsn": "redis://localhost:6379/0",
+  "redis_prefix": "fgoapi",
+  "clear_redis_cache": true,
+  "rate_limit_per_5_sec": 100,
+  "rayshift_api_key": "9c8c0bcb-b33e-4540-9cc6-0052751d4c5d",
+  "rayshift_api_url": "https://rayshift.io/api/v1",
+  "quest_cache_length": 3600,
+  "write_postgres_data": false,
+  "write_redis_data": true,
+  "asset_url": "https://assets.atlasacademy.io/GameData",
+  "openapi_url": "https://api.atlasacademy.io",
+  "export_all_nice": false,
+  "documentation_all_nice": true,
+  "github_webhook_secret": "653b10c7-b81b-4a56-a48c-757b510bf423",
+  "github_webhook_git_pull": false,
+  "github_webhook_sleep": 0
+}

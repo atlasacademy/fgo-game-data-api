@@ -8,11 +8,12 @@ from asgi_lifespan import LifespanManager
 from httpx import AsyncClient
 from sqlalchemy.ext.asyncio import AsyncConnection, create_async_engine
 
-from app.config import SecretSettings
+from app.config import Settings
 from app.main import app
+from app.schemas.common import Region
 
 
-secrets = SecretSettings()
+settings = Settings()
 
 
 @pytest.fixture(scope="session")
@@ -36,7 +37,7 @@ async def client() -> AsyncGenerator[AsyncClient, None]:
 @pytest.fixture(scope="session")
 async def na_db_conn() -> AsyncGenerator[AsyncConnection, None]:
     engine = create_async_engine(
-        secrets.na_postgresdsn.replace("postgresql", "postgresql+asyncpg")
+        settings.data[Region.NA].postgresdsn.replace("postgresql", "postgresql+asyncpg")
     )
     connection = await engine.connect()
     try:
@@ -48,7 +49,7 @@ async def na_db_conn() -> AsyncGenerator[AsyncConnection, None]:
 
 @pytest.fixture(scope="session")
 async def redis() -> AsyncGenerator[Redis, None]:
-    redis_client = await Redis.from_url(secrets.redisdsn)
+    redis_client = await Redis.from_url(settings.redisdsn)
     try:
         yield redis_client
     finally:

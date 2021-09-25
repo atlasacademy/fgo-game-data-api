@@ -1,7 +1,7 @@
 from typing import AsyncGenerator, Optional
 
 from aioredis import Redis
-from fastapi import Request
+from fastapi import HTTPException, Request
 from sqlalchemy.ext.asyncio import AsyncConnection, AsyncEngine
 
 from ..schemas.common import Language, Region
@@ -18,6 +18,8 @@ async def language_parameter(lang: Optional[Language] = None) -> Language:
 async def get_db(
     request: Request, region: Region
 ) -> AsyncGenerator[AsyncConnection, None]:
+    if region not in request.app.state.async_engines:  # pragma: no cover
+        raise HTTPException(status_code=404, detail="Region not found")
     async with request.app.state.async_engines[region].connect() as connection:
         connection.info["region"] = region
         yield connection
@@ -26,6 +28,8 @@ async def get_db(
 async def get_db_transaction(
     request: Request, region: Region
 ) -> AsyncGenerator[AsyncConnection, None]:
+    if region not in request.app.state.async_engines:  # pragma: no cover
+        raise HTTPException(status_code=404, detail="Region not found")
     async with request.app.state.async_engines[region].begin() as connection:
         connection.info["region"] = region
         yield connection

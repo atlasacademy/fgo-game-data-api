@@ -19,16 +19,15 @@ from fastapi_cache.coder import PickleCoder
 from fastapi_limiter import FastAPILimiter  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection, create_async_engine
 
-from .config import SecretSettings, Settings, logger, project_root
+from .config import Settings, logger, project_root
 from .core.info import get_all_repo_info
 from .routers import basic, nice, raw, secret
 from .routers.deps import get_redis
 from .schemas.common import Region, RepoInfo
-from .tasks import REGION_PATHS, load_and_export
+from .tasks import load_and_export
 
 
 settings = Settings()
-secrets = SecretSettings()
 
 
 app_short_description = "Provide raw and nicely bundled FGO game data."
@@ -246,7 +245,7 @@ def custom_key_builder(
 
 @app.on_event("startup")
 async def startup() -> None:
-    redis = await Redis.from_url(secrets.redisdsn)
+    redis = await Redis.from_url(settings.redisdsn)
     await FastAPILimiter.init(
         redis, prefix=f"{settings.redis_prefix}:limiter", callback=limiter_callback
     )
@@ -260,22 +259,21 @@ async def startup() -> None:
     app.state.redis = redis
 
     async_engines = {
-        Region.NA: create_async_engine(
-            secrets.na_postgresdsn.replace("postgresql", "postgresql+asyncpg"),
+        region: create_async_engine(
+            region_data.postgresdsn.replace("postgresql", "postgresql+asyncpg"),
             echo=logger.isEnabledFor(logging.DEBUG),
             pool_size=3,
             max_overflow=10,
-        ),
-        Region.JP: create_async_engine(
-            secrets.jp_postgresdsn.replace("postgresql", "postgresql+asyncpg"),
-            echo=logger.isEnabledFor(logging.DEBUG),
-            pool_size=3,
-            max_overflow=10,
-        ),
+        )
+        for region, region_data in settings.data.items()
     }
     app.state.async_engines = async_engines
 
-    await load_and_export(redis, REGION_PATHS, async_engines)
+    region_pathes = {
+        region: region_data.gamedata for region, region_data in settings.data.items()
+    }
+
+    await load_and_export(redis, region_pathes, async_engines)
 
 
 @app.on_event("shutdown")
@@ -298,10 +296,10 @@ async def root() -> RedirectResponse:
 
 @app.get("/info", summary="Data version info", response_model=dict[Region, RepoInfo])
 async def main_info(redis: Redis = Depends(get_redis)) -> dict[Region, RepoInfo]:
-    return await get_all_repo_info(redis)
+    return await get_all_repo_info(redis, settings.data.keys())
 
 
-if secrets.github_webhook_secret.get_secret_value() != "":  # pragma: no cover
+if settings.github_webhook_secret.get_secret_value() != "":  # pragma: no cover
     app.include_router(secret.router)
 
 
