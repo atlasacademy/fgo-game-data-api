@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## 5.73.0 - 2021-09-25
 ### Added
-- Support for CN data.
+- Support for CN and KR data.
 
 ## 5.72.0 - 2021-09-15
 ### Added

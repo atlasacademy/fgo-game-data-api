@@ -284,6 +284,16 @@ NOT_AVAILABLE_TABLES = {
         "mstTreasureBoxGift",
         "mstStageRemap",
     },
+    Region.KR: {
+        "mstSkillAdd",
+        "mstSvtAdd",
+        "mstSvtAppendPassiveSkill",
+        "mstSvtAppendPassiveSkillUnlock",
+        "mstCombineAppendPassiveSkill",
+        "mstSvtCoin",
+        "mstTreasureBox",
+        "mstTreasureBoxGift",
+    },
 }
 
 

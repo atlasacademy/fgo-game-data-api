@@ -21,9 +21,14 @@ from ..schemas.raw import (
 from .utils import load_master_data
 
 
-VALENTINE_NAME = {Region.NA: "Valentine", Region.JP: "バレンタイン", Region.CN: "情人节"}
+VALENTINE_NAME = {
+    Region.NA: "Valentine",
+    Region.JP: "バレンタイン",
+    Region.CN: "情人节",
+    Region.KR: "발렌타인",
+}
 MASHU_SVT_ID1 = 800100
-MASH_NAME = {Region.NA: "Mash", Region.JP: "マシュ", Region.CN: "玛修"}
+MASH_NAME = {Region.NA: "Mash", Region.JP: "マシュ", Region.CN: "玛修", Region.KR: "마슈"}
 
 
 def is_Mash_Valentine_equip(region: Region, comment: str) -> bool:

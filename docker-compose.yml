@@ -30,6 +30,16 @@ services:
       POSTGRES_PASSWORD: password
     volumes:
       - pg-cn-data:/var/lib/postgresql/data
+  pg-fgoapikr:
+    image: groonga/pgroonga:latest-alpine-13-slim
+    ports:
+      - "5436:5432"
+    environment:
+      POSTGRES_DB: fgoapikr
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - pg-kr-data:/var/lib/postgresql/data
   redis:
     image: redis:alpine
     ports:
@@ -38,3 +48,4 @@ volumes:
   pg-jp-data:
   pg-na-data:
   pg-cn-data:
+  pg-kr-data:

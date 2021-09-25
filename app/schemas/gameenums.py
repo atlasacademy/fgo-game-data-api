@@ -3161,9 +3161,15 @@ class NiceAiCond(str, Enum):
     checkOpponentHpHigher = "checkOpponentHpHigher"
     checkOpponentHpLower = "checkOpponentHpLower"
     checkTargetPosition = "checkTargetPosition"
-    checkSelfBuffActiveAndPassiveIndividuality = "checkSelfBuffActiveAndPassiveIndividuality"
-    checkPtBuffActiveAndPassiveIndividuality = "checkPtBuffActiveAndPassiveIndividuality"
-    checkOpponentBuffActiveAndPassiveIndividuality = "checkOpponentBuffActiveAndPassiveIndividuality"
+    checkSelfBuffActiveAndPassiveIndividuality = (
+        "checkSelfBuffActiveAndPassiveIndividuality"
+    )
+    checkPtBuffActiveAndPassiveIndividuality = (
+        "checkPtBuffActiveAndPassiveIndividuality"
+    )
+    checkOpponentBuffActiveAndPassiveIndividuality = (
+        "checkOpponentBuffActiveAndPassiveIndividuality"
+    )
     checkPtAllBuff = "checkPtAllBuff"
     checkOpponentAllBuff = "checkOpponentAllBuff"
     checkPtAllBuffIndividuality = "checkPtAllBuffIndividuality"
@@ -3175,17 +3181,23 @@ class NiceAiCond(str, Enum):
     countHigherBuffIndividualitySumPt = "countHigherBuffIndividualitySumPt"
     countHigherBuffIndividualitySumPtAll = "countHigherBuffIndividualitySumPtAll"
     countHigherBuffIndividualitySumOpponent = "countHigherBuffIndividualitySumOpponent"
-    countHigherBuffIndividualitySumOpponentAll = "countHigherBuffIndividualitySumOpponentAll"
+    countHigherBuffIndividualitySumOpponentAll = (
+        "countHigherBuffIndividualitySumOpponentAll"
+    )
     countHigherBuffIndividualitySumSelf = "countHigherBuffIndividualitySumSelf"
     countLowerBuffIndividualitySumPt = "countLowerBuffIndividualitySumPt"
     countLowerBuffIndividualitySumPtAll = "countLowerBuffIndividualitySumPtAll"
     countLowerBuffIndividualitySumOpponent = "countLowerBuffIndividualitySumOpponent"
-    countLowerBuffIndividualitySumOpponentAll = "countLowerBuffIndividualitySumOpponentAll"
+    countLowerBuffIndividualitySumOpponentAll = (
+        "countLowerBuffIndividualitySumOpponentAll"
+    )
     countLowerBuffIndividualitySumSelf = "countLowerBuffIndividualitySumSelf"
     countEqualBuffIndividualitySumPt = "countEqualBuffIndividualitySumPt"
     countEqualBuffIndividualitySumPtAll = "countEqualBuffIndividualitySumPtAll"
     countEqualBuffIndividualitySumOpponent = "countEqualBuffIndividualitySumOpponent"
-    countEqualBuffIndividualitySumOpponentAll = "countEqualBuffIndividualitySumOpponentAll"
+    countEqualBuffIndividualitySumOpponentAll = (
+        "countEqualBuffIndividualitySumOpponentAll"
+    )
     countEqualBuffIndividualitySumSelf = "countEqualBuffIndividualitySumSelf"
     existIndividualityOpponentFront = "existIndividualityOpponentFront"
     existIndividualityOpponentCenter = "existIndividualityOpponentCenter"
@@ -3193,7 +3205,9 @@ class NiceAiCond(str, Enum):
     totalCountHigherIndividualityPt = "totalCountHigherIndividualityPt"
     totalCountHigherIndividualityPtAll = "totalCountHigherIndividualityPtAll"
     totalCountHigherIndividualityOpponent = "totalCountHigherIndividualityOpponent"
-    totalCountHigherIndividualityOpponentAll = "totalCountHigherIndividualityOpponentAll"
+    totalCountHigherIndividualityOpponentAll = (
+        "totalCountHigherIndividualityOpponentAll"
+    )
     totalCountHigherIndividualityAllField = "totalCountHigherIndividualityAllField"
     totalCountLowerIndividualityPt = "totalCountLowerIndividualityPt"
     totalCountLowerIndividualityPtAll = "totalCountLowerIndividualityPtAll"
