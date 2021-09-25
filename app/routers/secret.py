@@ -1,10 +1,11 @@
-from typing import Any
+from typing import Any, Optional
 
 import orjson
 from aioredis import Redis
 from fastapi import APIRouter, BackgroundTasks, Depends, Response
 from git import Repo  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncEngine
+from pydantic import BaseModel
 
 from ..config import Settings, project_root
 from ..core.info import get_all_repo_info
@@ -48,15 +49,27 @@ async def get_secret_info(redis: Redis) -> dict[str, Any]:
     return response_data
 
 
+class GithubWebhookPayload(BaseModel):
+    ref: str
+
+
 @router.post("/update")  # pragma: no cover
 async def update_gamedata(
     background_tasks: BackgroundTasks,
+    payload: Optional[GithubWebhookPayload],
     async_engines: dict[Region, AsyncEngine] = Depends(get_async_engines),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    region_pathes = {
-        region: region_data.gamedata for region, region_data in settings.data.items()
-    }
+    if payload:
+        for region, region_data in settings.data.items():
+            if payload.ref == f"refs/heads/{region.name}":
+                region_pathes = {region: region_data.gamedata}
+                break
+    else:
+        region_pathes = {
+            region: region_data.gamedata
+            for region, region_data in settings.data.items()
+        }
     background_tasks.add_task(pull_and_update, region_pathes, async_engines, redis)
     response_data = await get_secret_info(redis)
     response_data["message"] = "Game data is being updated in the background"
