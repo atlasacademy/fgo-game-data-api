@@ -5,7 +5,10 @@ All notable changes to the public API will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
+
+## 5.72.0 - 2021-09-15
 ### Added
+- illustrator and cv name translation
 - rate limit to nice and raw endpoint
 - raw and nice script endpoints
 
