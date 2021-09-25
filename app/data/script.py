@@ -8,14 +8,15 @@ ruby_regex = re.compile(r"[\[]#(.*):(.*)?[\]]")
 
 
 def remove_brackets(region: Region, sentence: str) -> str:
-    stripped = sentence.replace("\u3000", " ").strip()
-    replaced_ruby = re.sub(ruby_regex, r"\1\2", stripped)
+    replaced_full_width_space = sentence.replace("\u3000", " ")
+    replaced_ruby = re.sub(ruby_regex, r"\1\2", replaced_full_width_space)
     removed_brackets = re.sub(brackets_regex, " ", replaced_ruby)
+    stripped = removed_brackets.strip()
 
     if region == Region.JP:
-        return removed_brackets.replace(" ", "")
+        return stripped.replace(" ", "")
 
-    return removed_brackets
+    return stripped
 
 
 def get_script_text_only(region: Region, script: str) -> str:

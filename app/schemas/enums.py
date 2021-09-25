@@ -757,6 +757,8 @@ class Trait(str, Enum):
     buffNullifyBuff = "buffNullifyBuff"
     enemyGudaMiniNobu = "enemyGudaMiniNobu"
     burningLove = "burningLove"
+    buffStrongAgainstWildBeast = "buffStrongAgainstWildBeast"
+    buffStrongAgainstDragon = "buffStrongAgainstDragon"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -905,6 +907,8 @@ TRAIT_NAME: dict[int, Trait] = {
     2795: Trait.knightsOfTheRound,
     2797: Trait.divineSpirit,
     2801: Trait.burningLove,  # Summer Kama 3rd skill
+    2802: Trait.buffStrongAgainstDragon,
+    2803: Trait.buffStrongAgainstWildBeast,
     # 2xxx: CQ or Story quests buff
     3000: Trait.attackPhysical,  # Normal attack, including NP
     3001: Trait.attackProjectile,
