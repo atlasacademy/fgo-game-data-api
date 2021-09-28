@@ -4,9 +4,9 @@ aiofiles==0.7.0; python_version >= "3.6" and python_version < "4.0" \
 aioredis==2.0.0; python_version >= "3.6" \
     --hash=sha256:9921d68a3df5c5cdb0d5b49ad4fc88a4cfdd60c108325df4f0066e8410c55ffb \
     --hash=sha256:3a2de4b614e6a5f8e104238924294dc4e811aefbe17ddf52c04a93cbf06e67db
-anyio==3.3.1; python_full_version >= "3.6.2" and python_version >= "3.6" \
-    --hash=sha256:d7c604dd491eca70e19c78664d685d5e4337612d574419d503e76f5d7d1590bd \
-    --hash=sha256:85913b4e2fec030e8c72a8f9f98092eeb9e25847a6e00d567751b77e34f856fe
+anyio==3.3.2; python_full_version >= "3.6.2" and python_version >= "3.6" \
+    --hash=sha256:c32da314c510b34a862f5afeaf8a446ffed2c2fde21583e654bd71ecfb5b744b \
+    --hash=sha256:0b993a2ef6c1dc456815c2b5ca2819f382f20af98087cc2090a4afed3a501436
 asgiref==3.4.1; python_version >= "3.7" and python_version < "4.0" \
     --hash=sha256:ffc141aa908e6f175673e7b1b3b7af4fdb0ecb738fc5c8b88f69f055c2415214 \
     --hash=sha256:4ef1ab46b484e3c706329cedeff284a5d40824200638503f5768edb6de7d58e9

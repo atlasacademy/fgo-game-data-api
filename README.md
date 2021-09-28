@@ -9,6 +9,7 @@ View the API documentation here: https://api.atlasacademy.io.
   - [Optional variables](#optional-variables)
   - [Secrets](#secrets)
   - [config.json](#configjson)
+- [Development environment set up](#development-environment-set-up)
 - [Run the API server](#run-the-api-server)
 - [Architecture](#architecture)
 - [Linting](#linting)
@@ -72,6 +73,25 @@ Settings at a higher level will override the settings at a lower level.
 3. `.env` file
 4. `config.json`
 
+### Development environment set up
+
+Make sure poetry is installed: https://python-poetry.org/docs/#installation.
+
+Docker is recommended to set up the Postgres and redis servers but those can be set up manually as well. Postgres needs the [PGroonga](https://pgroonga.github.io/install/) extension installed.
+
+```
+> git clone --depth 0 --branch JP https://github.com/atlasacademy/fgo-game-data.git fgo-game-data-jp
+> git clone --depth 0 --branch NA https://github.com/atlasacademy/fgo-game-data.git fgo-game-data-na
+> git clone --depth 0 --branch CN https://github.com/atlasacademy/fgo-game-data.git fgo-game-data-cn
+> git clone --depth 0 --branch KR https://github.com/atlasacademy/fgo-game-data.git fgo-game-data-kr
+> git clone https://github.com/atlasacademy/fgo-game-data-api.git
+> cd fgo-game-data-api
+> cp config.sample.json config.json
+> docker-compose up -d
+> poetry install
+> poetry shell
+```
+
 ### Run the API server
 
 Run at the project root to start the API server:
@@ -92,7 +112,10 @@ DEBUG     fgoapi: Processed in 0.24ms.
 INFO:     127.0.0.1:56759 - "GET /rapidoc HTTP/1.1" 200 OK
 ```
 
-Go to http://127.0.0.1:8000/docs or http://127.0.0.1:8000/redoc for the API documentation.
+Go to http://127.0.0.1:8000 for the API documentation.
+
+Tips:
+- Change `write_postgres_data` to `false` after the first run to speed up reloading if it's not needed (schema doesn't change or data hasn't changed).
 
 ### Architecture
 
@@ -155,7 +178,7 @@ python scripts/extract_enums.py dump.cs_path app/schemas/gameenums.py
 
 #### [`update_ce_translation.py`](scripts/update_ce_translation.py)
 
-Update `equip_names.json` with new NA CEs translations. `--jp-master` and `--na-master` arguments are not needed if environment variables `JP_GAMEDATA` and `NA_GAMEDATA` are set or added to the `.env` file.
+Update `equip_names.json` with new NA CEs translations. `--jp-master` and `--na-master` arguments are not needed if environment variables `JP_GAMEDATA` and `NA_GAMEDATA` are set, added to the `.env` file or set in `config.json`.
 
 ```
 python scripts/update_ce_translation.py --jp-master jp_master_path --na-master na_master_path

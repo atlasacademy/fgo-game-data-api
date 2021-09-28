@@ -4,8 +4,8 @@ import orjson
 from aioredis import Redis
 from fastapi import APIRouter, BackgroundTasks, Depends, Response
 from git import Repo  # type: ignore
-from sqlalchemy.ext.asyncio import AsyncEngine
 from pydantic import BaseModel
+from sqlalchemy.ext.asyncio import AsyncEngine
 
 from ..config import Settings, project_root
 from ..core.info import get_all_repo_info
@@ -71,8 +71,11 @@ async def update_gamedata(
             for region, region_data in settings.data.items()
         }
     background_tasks.add_task(pull_and_update, region_pathes, async_engines, redis)
-    response_data = await get_secret_info(redis)
-    response_data["message"] = "Game data is being updated in the background"
+    secret_info = await get_secret_info(redis)
+    regions = ", ".join(region.name for region in region_pathes.keys())
+    response_data = dict(
+        message=f"{regions} game data is being updated in the background", **secret_info
+    )
     return pretty_print_response(response_data)
 
 

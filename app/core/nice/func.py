@@ -195,12 +195,15 @@ async def parse_dataVals(
                 )
 
     # Further parsing
-    if functype in EVENT_FUNCTIONS:
+    if functype in EVENT_FUNCTIONS and f"{prefix}1" in output:
         if output[f"{prefix}1"] == 1:
             output["AddCount"] = output[f"{prefix}2"]
         elif output[f"{prefix}1"] == 2:
             output["RateCount"] = output[f"{prefix}2"]
-    elif functype in {FuncType.CLASS_DROP_UP} | FRIEND_SUPPORT_FUNCTIONS:
+    elif (
+        functype in {FuncType.CLASS_DROP_UP} | FRIEND_SUPPORT_FUNCTIONS
+        and f"{prefix}0" in output
+    ):
         if output[f"{prefix}0"] == 1:
             output["AddCount"] = output[f"{prefix}1"]
         elif output[f"{prefix}0"] == 2:
