@@ -108,6 +108,7 @@ mstSkill = Table(
     Column("script", JSONB),
     Column("id", Integer, primary_key=True),
     Column("type", Integer, index=True),
+    Column("category", Integer),
     Column("name", String),
     Column("ruby", String),
     Column("maxLv", Integer),
@@ -577,6 +578,7 @@ mstCombineMaterial = Table(
     metadata,
     Column("id", Integer, index=True),
     Column("lv", Integer),
+    Column("price", Integer),
     Column("value", Integer),
     Column("createdAt", Integer, default=0),
 )
@@ -607,7 +609,6 @@ Index("ix_mstSvtScript_svtId", mstSvtScript.c.id / 10)
 mstSvtComment = Table(
     "mstSvtComment",
     metadata,
-    Column("condValues", ARRAY(Integer)),
     Column("script", JSONB),
     Column("svtId", Integer, index=True),
     Column("id", Integer),
@@ -615,7 +616,9 @@ mstSvtComment = Table(
     Column("condMessage", String),
     Column("comment", String),
     Column("condType", Integer),
+    Column("condValue", Integer),
     Column("condValue2", Integer),
+    Column("condValues", ARRAY(Integer)),
 )
 
 
@@ -906,6 +909,7 @@ mstEventReward = Table(
     metadata,
     Column("eventId", Integer, index=True),
     Column("groupId", Integer),
+    Column("slot", Integer),
     Column("point", Integer),
     Column("type", Integer),
     Column("giftId", Integer),
@@ -1361,6 +1365,8 @@ mstQuestPhaseDetail = Table(
 mstStage = Table(
     "mstStage",
     metadata,
+    Column("name", String),
+    Column("npcDeckId", Integer),
     Column("npcDeckIds", ARRAY(Integer)),
     Column("script", JSONB),
     Column("questId", Integer, index=True),
