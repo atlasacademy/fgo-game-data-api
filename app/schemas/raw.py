@@ -642,7 +642,10 @@ class ScriptJsonInfo(BaseModelORJson):
 
     def get_voice_id(self) -> str:
         # Some voice lines have the first info id ending with xxx1 or xxx2 and we want xxx0
-        return self.id.split("_")[1][:-1] + "0"
+        splitted = self.id.split("_")  # TW has lines with odd ids: 御主任務 2021年4月 2
+        if len(splitted) >= 2:
+            return self.id.split("_")[1][:-1] + "0"
+        return self.id
 
 
 class ScriptJsonCond(BaseModelORJson):
