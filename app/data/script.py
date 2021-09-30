@@ -13,7 +13,7 @@ def remove_brackets(region: Region, sentence: str) -> str:
     removed_brackets = re.sub(brackets_regex, " ", replaced_ruby)
     stripped = removed_brackets.strip()
 
-    if region in (Region.JP, Region.CN):
+    if region != Region.NA:
         return stripped.replace(" ", "")
 
     return stripped

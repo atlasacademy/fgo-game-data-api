@@ -26,9 +26,16 @@ VALENTINE_NAME = {
     Region.JP: "バレンタイン",
     Region.CN: "情人节",
     Region.KR: "발렌타인",
+    Region.TW: "情人節",
 }
 MASHU_SVT_ID1 = 800100
-MASH_NAME = {Region.NA: "Mash", Region.JP: "マシュ", Region.CN: "玛修", Region.KR: "마슈"}
+MASH_NAME = {
+    Region.NA: "Mash",
+    Region.JP: "マシュ",
+    Region.CN: "玛修",
+    Region.KR: "마슈",
+    Region.TW: "瑪修",
+}
 
 
 def is_Mash_Valentine_equip(region: Region, comment: str) -> bool:

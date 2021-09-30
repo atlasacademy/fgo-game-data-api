@@ -28,7 +28,7 @@ View the API documentation here: https://api.atlasacademy.io.
 List of environment variables for the main app.
 
 #### Required variables
-- `DATA`: A JSON object string with keys being region strings and values being gamedata's folder location and Postgresql DSN.
+- `DATA`: A JSON object string with keys being region strings and values being gamedata's folder location and Postgresql DSN. Not all regions are required in the object. Any combination of regions is accepted.
 - `REDISDSN`: Redis DSN to a Redis server for caching.
 
 #### Optional variables

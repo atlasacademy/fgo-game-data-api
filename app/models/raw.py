@@ -949,9 +949,9 @@ mstMasterMission = Table(
     metadata,
     Column("id", Integer),
     Column("priority", Integer, default=0),
-    Column("startedAt", Integer),
-    Column("endedAt", Integer),
-    Column("closedAt", Integer),
+    Column("startedAt", BigInteger),
+    Column("endedAt", BigInteger),
+    Column("closedAt", BigInteger),
     Column("imageId", Integer, default=0),
     Column("name", String),
 )

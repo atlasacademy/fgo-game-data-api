@@ -15,6 +15,10 @@
     "KR": {
       "gamedata": "..\\fgo-game-data-kr",
       "postgresdsn": "postgresql://user:password@127.0.0.1:5436/fgoapikr"
+    },
+    "TW": {
+      "gamedata": "..\\fgo-game-data-tw",
+      "postgresdsn": "postgresql://user:password@127.0.0.1:5437/fgoapikr"
     }
   },
   "redisdsn": "redis://localhost:6379/0",

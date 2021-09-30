@@ -20,6 +20,7 @@ class Region(str, Enum):
     JP = "JP"
     CN = "CN"
     KR = "KR"
+    TW = "TW"
 
 
 class Language(str, Enum):
