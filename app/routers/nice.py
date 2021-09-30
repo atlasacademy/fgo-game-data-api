@@ -792,7 +792,6 @@ async def get_quest(
     response_model=list[NiceScriptSearchResult],
     response_model_exclude_unset=True,
 )
-@cache()  # type: ignore
 async def find_script(
     search_param: ScriptSearchQueryParams = Depends(ScriptSearchQueryParams),
     conn: AsyncConnection = Depends(get_db),
