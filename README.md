@@ -84,6 +84,7 @@ Docker is recommended to set up the Postgres and redis servers but those can be 
 > git clone --depth 0 --branch NA https://github.com/atlasacademy/fgo-game-data.git fgo-game-data-na
 > git clone --depth 0 --branch CN https://github.com/atlasacademy/fgo-game-data.git fgo-game-data-cn
 > git clone --depth 0 --branch KR https://github.com/atlasacademy/fgo-game-data.git fgo-game-data-kr
+> git clone --depth 0 --branch TW https://github.com/atlasacademy/fgo-game-data.git fgo-game-data-tw
 > git clone https://github.com/atlasacademy/fgo-game-data-api.git
 > cd fgo-game-data-api
 > cp config.sample.json config.json
