@@ -336,7 +336,7 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
                 data = []
 
             with engine.begin() as conn:
-                logger.info(f"Updating {table.name} …")
+                logger.debug(f"Updating {table.name} …")
                 insert_db(conn, table, data)
 
         logger.info("Updating subtitle …")
