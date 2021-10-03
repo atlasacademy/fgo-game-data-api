@@ -91,14 +91,29 @@ async def get_nice_td(
         svt_td for svt_td in tdEntity.mstSvtTreasureDevice if svt_td.svtId == svtId
     ]
     out_tds = []
+
+    base_settings_id = {
+        "base_url": settings.asset_url,
+        "region": region,
+        "item_id": svtId,
+    }
+
+    if not chosen_svts:
+        nice_td |= {
+            "icon": AssetURL.commands.format(**base_settings_id, i="np"),
+            "strengthStatus": 0,
+            "num": 0,
+            "priority": 0,
+            "condQuestId": 0,
+            "condQuestPhase": 0,
+            "card": CARD_TYPE_NAME[5],
+            "npDistribution": [],
+        }
+        out_tds.append(nice_td)
+
     for chosen_svt in chosen_svts:
         out_td = deepcopy(nice_td)
         imageId = chosen_svt.imageIndex
-        base_settings_id = {
-            "base_url": settings.asset_url,
-            "region": region,
-            "item_id": svtId,
-        }
         if imageId < 2:
             file_i = "np"
         else:
