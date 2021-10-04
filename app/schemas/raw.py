@@ -1056,6 +1056,7 @@ class MstWar(BaseModelORJson):
     startType: int  # 0
     targetId: int  # 0
     eventId: int  # 80112
+    eventName: str = ""
     lastQuestId: int  # 0
     assetId: int  # 0
 

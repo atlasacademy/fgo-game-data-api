@@ -549,6 +549,7 @@ def get_basic_war_from_raw(mstWar: MstWar, lang: Language) -> BasicWar:
         name=mstWar.name,
         longName=get_translation(lang, mstWar.longName),
         eventId=mstWar.eventId,
+        eventName=mstWar.eventName,
     )
 
 

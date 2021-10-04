@@ -1733,6 +1733,7 @@ class NiceWar(BaseModelORJson):
     startType: NiceWarStartType
     targetId: int
     eventId: int
+    eventName: str
     lastQuestId: int
     warAdds: list[NiceWarAdd]
     maps: list[NiceMap]

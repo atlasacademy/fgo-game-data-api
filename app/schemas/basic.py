@@ -157,6 +157,7 @@ class BasicWar(BaseModelORJson):
     name: str
     longName: str
     eventId: int
+    eventName: str
 
 
 class BasicQuest(BaseModelORJson):

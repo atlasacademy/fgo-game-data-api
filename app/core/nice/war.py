@@ -167,6 +167,7 @@ async def get_nice_war(
         startType=WAR_START_TYPE_NAME[raw_war.mstWar.startType],
         targetId=raw_war.mstWar.targetId,
         eventId=raw_war.mstWar.eventId,
+        eventName=raw_war.mstWar.eventName,
         lastQuestId=raw_war.mstWar.lastQuestId,
         warAdds=(get_nice_war_add(region, war_add) for war_add in raw_war.mstWarAdd),
         maps=(

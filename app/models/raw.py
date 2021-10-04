@@ -1177,6 +1177,7 @@ mstWar = Table(
     Column("startType", Integer),
     Column("targetId", BigInteger),
     Column("eventId", Integer),
+    Column("eventName", String),
     Column("lastQuestId", Integer),
     Column("assetId", Integer),
 )
@@ -1541,7 +1542,6 @@ TABLES_TO_BE_LOADED = [
     mstShopScript,
     mstBgm,
     mstBgmRelease,
-    mstWar,
     mstMap,
     mstSpot,
     mstQuest,

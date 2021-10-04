@@ -18,7 +18,7 @@
     },
     "TW": {
       "gamedata": "..\\fgo-game-data-tw",
-      "postgresdsn": "postgresql://user:password@127.0.0.1:5437/fgoapikr"
+      "postgresdsn": "postgresql://user:password@127.0.0.1:5437/fgoapitw"
     }
   },
   "redisdsn": "redis://localhost:6379/0",

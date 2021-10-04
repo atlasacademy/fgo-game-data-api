@@ -25,6 +25,7 @@ from ..models.raw import (
     mstSkillLv,
     mstSubtitle,
     mstTreasureDeviceLv,
+    mstWar,
 )
 from ..models.rayshift import rayshiftQuest
 from ..schemas.base import BaseModelORJson
@@ -133,10 +134,12 @@ def load_skill_td_lv(
 def load_event(
     engine: Engine, gamedata_path: DirectoryPath
 ) -> None:  # pragma: no cover
-    mstEvents = get_event_with_warIds(gamedata_path)
-    mstEvent_db_data = [svtExtra.dict() for svtExtra in mstEvents]
+    event_war = get_event_with_warIds(gamedata_path)
+    load_pydantic_to_db(engine, event_war.mstEvents, mstEvent)
+
+    mstWar_db_data = [orjson.loads(war.json()) for war in event_war.mstWars]
     with engine.begin() as conn:
-        insert_db(conn, mstEvent, mstEvent_db_data)
+        insert_db(conn, mstWar, mstWar_db_data)
 
 
 def load_item(engine: Engine, gamedata_path: DirectoryPath) -> None:  # pragma: no cover

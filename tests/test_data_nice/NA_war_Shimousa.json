@@ -22,6 +22,7 @@
   "startType": "quest",
   "targetId": 2000300,
   "eventId": 0,
+  "eventName": "",
   "lastQuestId": 2000316,
   "warAdds": [
     {
