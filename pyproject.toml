@@ -6,7 +6,7 @@ authors = ["squaresmile <squaresmile@protonmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-fastapi = "^0.68.1"
+fastapi = "^0.70.0"
 uvicorn = {extras = ["standard"], version = "^0.15.0"}
 python-dotenv = "^0.19.0"
 fuzzywuzzy = "^0.18.0"
@@ -31,7 +31,7 @@ pylint = "^2.11.1"
 mypy = "^0.910"
 black = "^21.9b0"
 pytest-xdist = "^2.4.0"
-coverage = "^6.0"
+coverage = "^6.0.1"
 fuzzywuzzy-stubs = "^0.0.1"
 isort = "^5.9.3"
 sqlalchemy2-stubs = "^0.0.2-alpha.17"

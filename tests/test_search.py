@@ -161,7 +161,7 @@ test_cases_dict: dict[str, tuple[str, set[int]]] = {
     "buff_buffGroup": ("NA/buff/search?buffGroup=800", {182, 1178, 1311}),
     "func_type_targetType_targetTeam_vals": (
         "JP/function/search?type=addStateShort&targetType=ptAll&targetTeam=playerAndEnemy&vals=101",
-        {115, 116, 117},
+        {115, 116, 117, 7691},
     ),
     "func_tvals": (
         "JP/function/search?type=addStateShort&tvals=divine",

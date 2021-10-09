@@ -1522,7 +1522,7 @@
               "ruby": "びょうじゃく",
               "detail": "自身のスター集中度を大アップ(1ターン)",
               "type": "active",
-              "strengthStatus": 0,
+              "strengthStatus": 1,
               "priority": 1,
               "condQuestId": 0,
               "condQuestPhase": 0,

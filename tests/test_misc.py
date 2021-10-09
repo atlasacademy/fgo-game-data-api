@@ -12,7 +12,7 @@ from app.schemas.basic import BasicServant
 from app.schemas.common import Language, Region, ReverseDepth
 from app.schemas.gameenums import FuncType
 from app.schemas.nice import NiceServant
-from app.schemas.raw import get_subtitle_svtId
+from app.schemas.raw import ScriptJsonInfo, get_subtitle_svtId
 
 from .utils import get_response_data, get_text_data
 
@@ -144,9 +144,23 @@ def test_get_script_path() -> None:
 
 def test_parse_script() -> None:
     test_script = get_text_data("test_data_misc", "test_script")
-    output = "Jeanne! (Jeanne) I was careless... I never expected to be forced to acknowledge her like this...! (Jeanne Alter)"
+    output = (
+        "(Choice) Jeanne! (Jeanne) I was careless... "
+        "I never expected to be forced to acknowledge her like this...! (Jeanne Alter)"
+    )
     assert get_script_text_only(Region.NA, test_script) == output
 
     ruby_text = "[line 3]オールトの雲より飛来した、[r][#極限の単独種:ア ル テ ミ ッ ト ・ ワ ン]がね。"
     expected = "オールトの雲より飛来した、極限の単独種アルテミット・ワンがね。"
     assert remove_brackets(Region.JP, ruby_text) == expected
+
+    gender_line = "＠talker\n[&male1:female1] and [&male2:female2]\n[k]"
+    expected_gender = "(talker) (Male) male1 and male2 (Female) female1 and female2"
+    assert get_script_text_only(Region.NA, gender_line) == expected_gender
+
+
+def test_TW_odd_voice_id() -> None:
+    script_json = ScriptJsonInfo(
+        id="御主任務 2021年4月 2", face=13, delay=0.3, text="0_A1430", form=0
+    )
+    assert script_json.get_voice_id() == "御主任務 2021年4月 2"

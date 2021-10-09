@@ -1,0 +1,147 @@
+{
+  "id": 603002,
+  "num": 0,
+  "card": "blank",
+  "name": "絡繰幻法・呑牛",
+  "ruby": "からくりげんぽう・どんぎゅう",
+  "icon": "https://assets.atlasacademy.io/GameData/CN/Servants/Commands/603002/card_servant_np.png",
+  "rank": "C+",
+  "type": "対獣宝具",
+  "detail": "敵全体に強力な〔魔性〕特攻攻撃▲<オーバーチャージで特攻威力アップ>＋己方全体的力指令卡性能提升(3回合)▲",
+  "npGain": {
+    "buster": [71, 71, 71, 71, 71],
+    "arts": [71, 71, 71, 71, 71],
+    "quick": [71, 71, 71, 71, 71],
+    "extra": [71, 71, 71, 71, 71],
+    "defence": [400, 400, 400, 400, 400],
+    "np": [71, 71, 71, 71, 71]
+  },
+  "npDistribution": [],
+  "strengthStatus": 0,
+  "priority": 0,
+  "condQuestId": 0,
+  "condQuestPhase": 0,
+  "individuality": [
+    { "id": 3000, "name": "attackPhysical" },
+    { "id": 4002, "name": "cardBuster" },
+    { "id": 4007, "name": "cardNP" },
+    { "id": 4101, "name": "aoeNP" }
+  ],
+  "script": {},
+  "functions": [
+    {
+      "funcId": 17,
+      "funcType": "damageNpIndividual",
+      "funcTargetType": "enemyAll",
+      "funcTargetTeam": "playerAndEnemy",
+      "funcPopupText": "无",
+      "functvals": [],
+      "funcquestTvals": [],
+      "funcGroup": [],
+      "buffs": [],
+      "svals": [
+        { "Rate": 1000, "Value": 4000, "Target": 2019, "Correction": 1500 },
+        { "Rate": 1000, "Value": 5000, "Target": 2019, "Correction": 1500 },
+        { "Rate": 1000, "Value": 5500, "Target": 2019, "Correction": 1500 },
+        { "Rate": 1000, "Value": 5750, "Target": 2019, "Correction": 1500 },
+        { "Rate": 1000, "Value": 6000, "Target": 2019, "Correction": 1500 }
+      ],
+      "svals2": [
+        { "Rate": 1000, "Value": 4000, "Target": 2019, "Correction": 1625 },
+        { "Rate": 1000, "Value": 5000, "Target": 2019, "Correction": 1625 },
+        { "Rate": 1000, "Value": 5500, "Target": 2019, "Correction": 1625 },
+        { "Rate": 1000, "Value": 5750, "Target": 2019, "Correction": 1625 },
+        { "Rate": 1000, "Value": 6000, "Target": 2019, "Correction": 1625 }
+      ],
+      "svals3": [
+        { "Rate": 1000, "Value": 4000, "Target": 2019, "Correction": 1750 },
+        { "Rate": 1000, "Value": 5000, "Target": 2019, "Correction": 1750 },
+        { "Rate": 1000, "Value": 5500, "Target": 2019, "Correction": 1750 },
+        { "Rate": 1000, "Value": 5750, "Target": 2019, "Correction": 1750 },
+        { "Rate": 1000, "Value": 6000, "Target": 2019, "Correction": 1750 }
+      ],
+      "svals4": [
+        { "Rate": 1000, "Value": 4000, "Target": 2019, "Correction": 1875 },
+        { "Rate": 1000, "Value": 5000, "Target": 2019, "Correction": 1875 },
+        { "Rate": 1000, "Value": 5500, "Target": 2019, "Correction": 1875 },
+        { "Rate": 1000, "Value": 5750, "Target": 2019, "Correction": 1875 },
+        { "Rate": 1000, "Value": 6000, "Target": 2019, "Correction": 1875 }
+      ],
+      "svals5": [
+        { "Rate": 1000, "Value": 4000, "Target": 2019, "Correction": 2000 },
+        { "Rate": 1000, "Value": 5000, "Target": 2019, "Correction": 2000 },
+        { "Rate": 1000, "Value": 5500, "Target": 2019, "Correction": 2000 },
+        { "Rate": 1000, "Value": 5750, "Target": 2019, "Correction": 2000 },
+        { "Rate": 1000, "Value": 6000, "Target": 2019, "Correction": 2000 }
+      ]
+    },
+    {
+      "funcId": 126,
+      "funcType": "addStateShort",
+      "funcTargetType": "ptAll",
+      "funcTargetTeam": "playerAndEnemy",
+      "funcPopupText": "力提升",
+      "funcPopupIcon": "https://assets.atlasacademy.io/GameData/CN/BuffIcons/bufficon_314.png",
+      "functvals": [],
+      "funcquestTvals": [],
+      "funcGroup": [],
+      "buffs": [
+        {
+          "id": 102,
+          "name": "力提升",
+          "detail": "力指令卡的性能提升",
+          "icon": "https://assets.atlasacademy.io/GameData/CN/BuffIcons/bufficon_314.png",
+          "type": "upCommandall",
+          "buffGroup": 0,
+          "script": {},
+          "vals": [
+            { "id": 3004, "name": "buffPositiveEffect" },
+            { "id": 3006, "name": "buffIncreaseDamage" }
+          ],
+          "tvals": [
+            { "id": 5000, "name": "canBeInBattle" },
+            { "id": 4002, "name": "cardBuster" }
+          ],
+          "ckSelfIndv": [{ "id": 4002, "name": "cardBuster" }],
+          "ckOpIndv": [],
+          "maxRate": 5000
+        }
+      ],
+      "svals": [
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+      ],
+      "svals2": [
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+      ],
+      "svals3": [
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+      ],
+      "svals4": [
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+      ],
+      "svals5": [
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
+        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+      ]
+    }
+  ]
+}
