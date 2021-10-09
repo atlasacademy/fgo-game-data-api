@@ -58,7 +58,11 @@ async def get_one_quest_with_war(
 ) -> Optional[MstQuestWithWar]:
     stmt = QUEST_WITH_WAR_SELECT.where(mstQuest.c.id == quest_id)
 
-    mstQuestWar = (await conn.execute(stmt)).fetchone()
+    try:
+        mstQuestWar = (await conn.execute(stmt)).fetchone()
+    except DBAPIError:
+        return None
+
     if mstQuestWar:
         return MstQuestWithWar.from_orm(mstQuestWar)
 
@@ -108,7 +112,11 @@ async def get_one_quest_with_phase(
         and_(mstQuest.c.id == quest_id, mstQuestPhase.c.phase == phase_id)
     )
 
-    mstQuestWithPhase = (await conn.execute(stmt)).fetchone()
+    try:
+        mstQuestWithPhase = (await conn.execute(stmt)).fetchone()
+    except DBAPIError:
+        return None
+
     if mstQuestWithPhase:
         return MstQuestWithPhase.from_orm(mstQuestWithPhase)
 

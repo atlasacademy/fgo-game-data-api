@@ -87,6 +87,27 @@ async def test_404_basic(client: AsyncClient, endpoint: str, item_id: str) -> No
     assert response.json()["detail"][-9:] == "not found"
 
 
+cases_overflow_dict = {
+    "quest": "112345678910111213",
+    "quest/112345678910111213": "1",
+}
+
+
+cases_overflow = [
+    pytest.param(key, value, id=key) for key, value in cases_overflow_dict.items()
+]
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("endpoint,item_id", cases_overflow)
+async def test_int_overflow_basic(
+    client: AsyncClient, endpoint: str, item_id: str
+) -> None:
+    response = await client.get(f"/basic/JP/{endpoint}/{item_id}")
+    assert response.status_code == 404
+    assert response.json()["detail"][-9:] == "not found"
+
+
 @pytest.mark.asyncio
 class TestBasicSpecial:
     async def test_NA_not_integer(self, client: AsyncClient) -> None:
