@@ -151,10 +151,10 @@ async def get_multiple_nice_tds(
     Args:
         `conn`: DB Connection
         `region`: Region
-        `skill_svts`: List of skill id - NP id tuple pairs
+        `td_svts`: List of skill id - NP id tuple pairs
 
     Returns:
-        Mapping of skill id - svt id tuple to nice NP
+        Mapping of td id - svt id tuple to nice NP
     """
     raw_tds = {
         td.mstTreasureDevice.id: td

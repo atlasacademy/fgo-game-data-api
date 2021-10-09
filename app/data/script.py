@@ -4,12 +4,13 @@ from ..schemas.common import Region
 
 
 brackets_regex = re.compile(r"[\[].*?[\]]")
-ruby_regex = re.compile(r"[\[]#(.*):(.*)?[\]]")
+ruby_regex = re.compile(r"[\[]#(.*?):(.*?)?[\]]")
+gender_regex = re.compile(r"[\[]&(.*?):(.*?)?[\]]")
 
 
 def remove_brackets(region: Region, sentence: str) -> str:
     replaced_full_width_space = sentence.replace("\u3000", " ")
-    replaced_ruby = re.sub(ruby_regex, r"\1\2", replaced_full_width_space)
+    replaced_ruby = re.sub(ruby_regex, r"\1 \2", replaced_full_width_space)
     removed_brackets = re.sub(brackets_regex, " ", replaced_ruby)
     stripped = removed_brackets.strip()
 
@@ -33,6 +34,7 @@ def get_script_text_only(region: Region, script: str) -> str:
             script_lines.append(f"({name})")
 
         if line.startswith("？") and "：" in line:
+            script_lines.append("(Choice)")
             script_lines.append(remove_brackets(region, line.split("：")[1]))
 
         if not in_recording_mode:
@@ -43,6 +45,10 @@ def get_script_text_only(region: Region, script: str) -> str:
         elif line.startswith("[k]") or line.startswith("[page]"):
             in_recording_mode = False
             continue
+        elif "[&" in line:
+            male_line = remove_brackets(region, re.sub(gender_regex, r"\1", line))
+            female_line = remove_brackets(region, re.sub(gender_regex, r"\2", line))
+            script_lines.append(f"(Male) {male_line} (Female) {female_line}")
         else:
             script_lines.append(remove_brackets(region, line))
 
