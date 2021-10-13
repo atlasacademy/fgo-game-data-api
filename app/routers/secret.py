@@ -60,16 +60,14 @@ async def update_gamedata(
     async_engines: dict[Region, AsyncEngine] = Depends(get_async_engines),
     redis: Redis = Depends(get_redis),
 ) -> Response:
+    region_pathes = {
+        region: region_data.gamedata for region, region_data in settings.data.items()
+    }
     if payload:
         for region, region_data in settings.data.items():
             if payload.ref == f"refs/heads/{region.name}":
                 region_pathes = {region: region_data.gamedata}
                 break
-    else:
-        region_pathes = {
-            region: region_data.gamedata
-            for region, region_data in settings.data.items()
-        }
     background_tasks.add_task(pull_and_update, region_pathes, async_engines, redis)
     secret_info = await get_secret_info(redis)
     regions = ", ".join(region.name for region in region_pathes.keys())

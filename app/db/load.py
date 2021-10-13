@@ -42,12 +42,14 @@ from .helpers.rayshift import (
 
 
 def recreate_table(conn: Connection, table: Table) -> None:  # pragma: no cover
+    logger.debug(f"Recreating table {table.name}")
     table.drop(conn, checkfirst=True)
     table.create(conn, checkfirst=True)
 
 
 def insert_db(conn: Connection, table: Table, db_data: Any) -> None:  # pragma: no cover
     recreate_table(conn, table)
+    logger.debug(f"Inserting into {table.name}")
     conn.execute(table.insert(), db_data)
 
 

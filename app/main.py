@@ -1,6 +1,5 @@
 import hashlib
 import json
-import logging
 import time
 from math import ceil
 from typing import Any, Awaitable, Callable, Optional
@@ -8,6 +7,7 @@ from typing import Any, Awaitable, Callable, Optional
 import orjson
 import toml
 import uvicorn  # type: ignore
+from uvicorn.logging import TRACE_LOG_LEVEL  # type: ignore
 from aioredis import Redis
 from fastapi import Depends, FastAPI, HTTPException, Request, Response, status
 from fastapi.middleware.cors import CORSMiddleware
@@ -261,7 +261,7 @@ async def startup() -> None:
     async_engines = {
         region: create_async_engine(
             region_data.postgresdsn.replace("postgresql", "postgresql+asyncpg"),
-            echo=logger.isEnabledFor(logging.DEBUG),
+            echo=logger.isEnabledFor(TRACE_LOG_LEVEL),
             pool_size=3,
             max_overflow=10,
         )
