@@ -7,7 +7,6 @@ from typing import Any, Awaitable, Callable, Optional
 import orjson
 import toml
 import uvicorn  # type: ignore
-from uvicorn.logging import TRACE_LOG_LEVEL  # type: ignore
 from aioredis import Redis
 from fastapi import Depends, FastAPI, HTTPException, Request, Response, status
 from fastapi.middleware.cors import CORSMiddleware
@@ -18,6 +17,7 @@ from fastapi_cache.backends.redis import RedisBackend
 from fastapi_cache.coder import PickleCoder
 from fastapi_limiter import FastAPILimiter  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection, create_async_engine
+from uvicorn.logging import TRACE_LOG_LEVEL  # type: ignore
 
 from .config import Settings, logger, project_root
 from .core.info import get_all_repo_info

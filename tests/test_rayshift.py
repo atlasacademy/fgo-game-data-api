@@ -1,6 +1,6 @@
 # pylint: disable=R0201,R0904
 import pytest
-from httpx import AsyncClient
+from httpx import AsyncClient, Client
 from sqlalchemy.sql import and_, delete, select
 
 from app.config import Settings
@@ -44,7 +44,8 @@ async def test_rayshift_uncached_quest(client: AsyncClient) -> None:
 
 @pytest.mark.skipif(doesnt_have_rayshift_api_key, reason=skip_reason)
 def test_rayshift_get_quest_list() -> None:
-    quest_list = get_all_quest_lists(Region.NA)
+    client = Client(follow_redirects=True)
+    quest_list = get_all_quest_lists(client, Region.NA)
     assert len(quest_list) > 100
 
 
@@ -55,14 +56,16 @@ def test_rayshift_missing_ids() -> None:
 
 @pytest.mark.skipif(doesnt_have_rayshift_api_key, reason=skip_reason)
 def test_get_rayshift_query_ids() -> None:
-    assert get_multiple_quests(Region.NA, []) == {}
-    assert 157425 in get_multiple_quests(Region.NA, [157425])
+    client = Client(follow_redirects=True)
+    assert get_multiple_quests(client, Region.NA, []) == {}
+    assert 157425 in get_multiple_quests(client, Region.NA, [157425])
 
 
 @pytest.mark.skipif(doesnt_have_rayshift_api_key, reason=skip_reason)
 def test_load_rayshift_quest_details() -> None:
+    client = Client(follow_redirects=True)
     query_ids = [157425, 157429]
-    quest_details = get_multiple_quests(Region.NA, query_ids)
+    quest_details = get_multiple_quests(client, Region.NA, query_ids)
     for query_id in query_ids:
         assert query_id in quest_details
 

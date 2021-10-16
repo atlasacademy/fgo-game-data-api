@@ -1,5 +1,7 @@
 import time
 
+import httpx
+
 from app.db.load import (
     get_missing_query_ids,
     load_rayshift_quest_details,
@@ -10,11 +12,12 @@ from app.schemas.common import Region
 
 
 def main() -> None:
+    client = httpx.Client(follow_redirects=True)
     for region in [Region.NA, Region.JP]:
         print(f"Loading {region} rayshift data cache …")
         start_loading_time = time.perf_counter()
 
-        quest_list = get_all_quest_lists(region)
+        quest_list = get_all_quest_lists(client, region)
 
         if not quest_list:
             print(f"No quest list found for {region}")
@@ -30,7 +33,7 @@ def main() -> None:
             QUERY_IDS_PER_REQUEST = 25
             for i in range(0, len(query_ids), QUERY_IDS_PER_REQUEST):
                 request_query_ids = query_ids[i : i + QUERY_IDS_PER_REQUEST]
-                quest_details = get_multiple_quests(region, request_query_ids)
+                quest_details = get_multiple_quests(client, region, request_query_ids)
                 load_rayshift_quest_details(region, quest_details)
                 print(
                     f"Loaded {min(i + QUERY_IDS_PER_REQUEST, len(query_ids))} query IDs"

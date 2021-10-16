@@ -3,6 +3,7 @@ from typing import Optional, Union
 
 import httpx
 from fastapi import HTTPException
+from httpx import Client
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..config import Settings, logger
@@ -31,7 +32,7 @@ async def get_quest_response(
     if NO_API_KEY or region not in REGION_ENUM:  # pragma: no cover
         return None
 
-    async with httpx.AsyncClient() as client:
+    async with httpx.AsyncClient(follow_redirects=True) as client:
         params: dict[str, Union[str, int]] = {
             "apiKey": settings.rayshift_api_key.get_secret_value(),
             "region": REGION_ENUM[region],
@@ -70,7 +71,9 @@ async def get_quest_detail(
         return None
 
 
-def get_multiple_quests(region: Region, query_ids: list[int]) -> dict[int, QuestDetail]:
+def get_multiple_quests(
+    client: Client, region: Region, query_ids: list[int]
+) -> dict[int, QuestDetail]:
     if NO_API_KEY or region not in REGION_ENUM:  # pragma: no cover
         return {}
 
@@ -85,17 +88,17 @@ def get_multiple_quests(region: Region, query_ids: list[int]) -> dict[int, Quest
     else:
         params["ids"] = query_ids
 
-    r = httpx.get(f"{QUEST_ENDPOINT}/get", params=params)
+    r = client.get(f"{QUEST_ENDPOINT}/get", params=params)
     if r.status_code == httpx.codes.TOO_MANY_REQUESTS:  # pragma: no cover
         sleep_time = r.json().get("wait", 10)
         logger.info(f"Sleeping {sleep_time} seconds for RayShift API")
         time.sleep(sleep_time)
-        r = httpx.get(f"{QUEST_ENDPOINT}/get", params=params)
+        r = client.get(f"{QUEST_ENDPOINT}/get", params=params)
 
     return QuestRayshiftResponse.parse_raw(r.content).response.questDetails
 
 
-def get_all_quest_lists(region: Region) -> list[QuestList]:
+def get_all_quest_lists(client: Client, region: Region) -> list[QuestList]:
     if NO_API_KEY or region not in REGION_ENUM:  # pragma: no cover
         return []
 
@@ -103,7 +106,7 @@ def get_all_quest_lists(region: Region) -> list[QuestList]:
         "apiKey": settings.rayshift_api_key.get_secret_value(),
         "region": REGION_ENUM[region],
     }
-    r = httpx.get(f"{QUEST_ENDPOINT}/list", params=params)
+    r = client.get(f"{QUEST_ENDPOINT}/list", params=params, follow_redirects=True)
     if r.status_code != httpx.codes.OK:  # pragma: no cover
         return []
 
