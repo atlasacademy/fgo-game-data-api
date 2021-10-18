@@ -4,6 +4,7 @@ from typing import Any, Optional
 from pydantic import Field
 
 from .base import BaseModelORJson
+from .nice import DeckType
 
 
 class BaseRayshiftResponse(BaseModelORJson):
@@ -161,3 +162,14 @@ class QuestListResponse(BaseModelORJson):
 
 class QuestListRayshiftResponse(BaseRayshiftResponse):
     response: QuestListResponse
+
+
+class QuestDrop(BaseModelORJson):
+    stage: int
+    deckType: DeckType
+    deckId: int
+    type: int
+    objectId: int
+    originalNum: int
+    dropCount: int
+    runs: int

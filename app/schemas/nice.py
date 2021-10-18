@@ -1536,6 +1536,14 @@ class EnemyMisc(BaseModelORJson):
     status: int
 
 
+class EnemyDrop(BaseModelORJson):
+    type: NiceGiftType
+    objectId: int
+    num: int
+    dropCount: int
+    runs: int
+
+
 class DeckType(str, Enum):
     ENEMY = "enemy"
     CALL = "call"
@@ -1553,6 +1561,7 @@ class QuestEnemy(BaseModelORJson):
     npcId: int
     name: str
     svt: BasicServant
+    drops: list[EnemyDrop]
     lv: int
     exp: int
     atk: int

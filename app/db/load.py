@@ -35,6 +35,7 @@ from ..schemas.raw import get_subtitle_svtId
 from ..schemas.rayshift import QuestDetail, QuestList
 from .engine import engines
 from .helpers.rayshift import (
+    fetch_all_missing_quest_ids,
     fetch_missing_quest_ids,
     insert_rayshift_quest_db_sync,
     insert_rayshift_quest_list,
@@ -375,6 +376,12 @@ def load_rayshift_quest_list(region: Region, quest_list: list[QuestList]) -> Non
 def get_missing_query_ids(region: Region) -> list[int]:
     with engines[region].connect() as conn:
         query_ids = fetch_missing_quest_ids(conn)
+    return query_ids
+
+
+def get_all_missing_query_ids(region: Region) -> list[int]:
+    with engines[region].connect() as conn:
+        query_ids = fetch_all_missing_quest_ids(conn)
     return query_ids
 
 

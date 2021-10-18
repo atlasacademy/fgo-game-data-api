@@ -8,6 +8,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
 from ...db.helpers import war
+from ...db.helpers.rayshift import get_rayshift_drops
 from ...rayshift.quest import get_quest_detail
 from ...redis.helpers.quest import get_stages_cache, set_stages_cache
 from ...schemas.common import Language, Region, ScriptLink
@@ -253,9 +254,10 @@ async def get_nice_quest_phase(
     quest_enemies: list[list[QuestEnemy]] = [[]] * len(db_data.raw.mstStage)
     if stages:
         quest_detail = await get_quest_detail(conn, region, quest_id, phase)
+        quest_drop = await get_rayshift_drops(conn, quest_id, phase)
         if quest_detail:
             quest_enemies = await get_quest_enemies(
-                conn, redis, region, quest_detail, lang
+                conn, redis, region, quest_detail, quest_drop, lang
             )
         else:
             save_stages_cache = False

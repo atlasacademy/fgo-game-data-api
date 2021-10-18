@@ -1,8 +1,10 @@
+import argparse
 import time
 
 import httpx
 
 from app.db.load import (
+    get_all_missing_query_ids,
     get_missing_query_ids,
     load_rayshift_quest_details,
     load_rayshift_quest_list,
@@ -11,7 +13,7 @@ from app.rayshift.quest import get_all_quest_lists, get_multiple_quests
 from app.schemas.common import Region
 
 
-def main() -> None:
+def main(load_all: bool = False) -> None:
     client = httpx.Client(follow_redirects=True)
     for region in [Region.NA, Region.JP]:
         print(f"Loading {region} rayshift data cache …")
@@ -26,7 +28,10 @@ def main() -> None:
         print(f"Inserting {region} rayshift data cache into db …")
         load_rayshift_quest_list(region, quest_list)
 
-        query_ids = get_missing_query_ids(region)
+        if load_all:
+            query_ids = get_missing_query_ids(region)
+        else:
+            query_ids = get_all_missing_query_ids(region)
         print(f"Loading {len(query_ids)} query IDs")
 
         if query_ids:
@@ -44,4 +49,18 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(
+        description="Load Rayshift quest data into the db."
+    )
+    parser.add_argument(
+        "--all",
+        "-a",
+        type=bool,
+        help="Load all missing quest details instead of just the latest ones",
+        required=False,
+        default=False,
+    )
+
+    args = parser.parse_args()
+
+    main(args.all)

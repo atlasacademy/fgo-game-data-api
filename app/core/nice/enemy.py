@@ -7,9 +7,11 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 from ...data.custom_mappings import Translation
 from ...schemas.common import Language, Region
 from ...schemas.enums import ATTRIBUTE_NAME, CLASS_NAME, ENEMY_DEATH_TYPE_NAME
+from ...schemas.gameenums import GIFT_TYPE_NAME
 from ...schemas.nice import (
     DeckType,
     EnemyAi,
+    EnemyDrop,
     EnemyLimit,
     EnemyMisc,
     EnemyPassive,
@@ -19,7 +21,7 @@ from ...schemas.nice import (
     EnemyTd,
     QuestEnemy,
 )
-from ...schemas.rayshift import Deck, DeckSvt, QuestDetail, UserSvt
+from ...schemas.rayshift import Deck, DeckSvt, QuestDetail, QuestDrop, UserSvt
 from ..basic import get_basic_servant
 from ..utils import get_traits_list, get_translation, nullable_to_string
 from .skill import MultipleNiceSkills, SkillSvt, get_multiple_nice_skills
@@ -170,6 +172,16 @@ def get_enemy_td(svt: UserSvt, all_nps: MultipleNiceTds) -> EnemyTd:
     )
 
 
+def get_nice_drop(drop: QuestDrop) -> EnemyDrop:
+    return EnemyDrop(
+        type=GIFT_TYPE_NAME[drop.type],
+        objectId=drop.objectId,
+        num=drop.originalNum,
+        dropCount=drop.dropCount,
+        runs=drop.runs,
+    )
+
+
 @dataclass
 class EnemyDeckInfo:
     deckType: DeckType
@@ -184,6 +196,7 @@ async def get_quest_enemy(
     region: Region,
     deck_svt_info: EnemyDeckInfo,
     user_svt: UserSvt,
+    drops: list[QuestDrop],
     all_enemy_skills: MultipleNiceSkills,
     all_enemy_tds: MultipleNiceTds,
     lang: Language = Language.jp,
@@ -209,6 +222,7 @@ async def get_quest_enemy(
             lang, nullable_to_string(deck_svt.name), Translation.ENEMY
         ),
         svt=basic_svt,
+        drops=[get_nice_drop(drop) for drop in drops],
         lv=user_svt.lv,
         exp=user_svt.exp,
         atk=user_svt.atk,
@@ -287,6 +301,7 @@ async def get_quest_enemies(
     redis: Redis,
     region: Region,
     quest_detail: QuestDetail,
+    quest_drop: list[QuestDrop],
     lang: Language = Language.jp,
 ) -> list[list[QuestEnemy]]:
     npc_id_map: dict[DeckType, dict[int, DeckSvt]] = {}
@@ -325,7 +340,7 @@ async def get_quest_enemies(
     all_tds = await get_multiple_nice_tds(conn, region, all_td_ids, lang)
 
     out_enemies: list[list[QuestEnemy]] = []
-    for enemy_deck in quest_detail.enemyDeck:
+    for stage, enemy_deck in enumerate(quest_detail.enemyDeck):
         enemy_decks = [
             EnemyDeckInfo(DeckType.ENEMY, enemy)
             for enemy in sorted(enemy_deck.svts, key=lambda enemy: enemy.id)
@@ -339,11 +354,22 @@ async def get_quest_enemies(
 
         stage_nice_enemies: list[QuestEnemy] = []
         for deck_svt_info in get_enemies_in_stage(enemy_decks, npc_id_map):
+            drops = [
+                drop
+                for drop in quest_drop
+                if drop.deckType == deck_svt_info.deckType
+                and drop.deckId == deck_svt_info.deck.id
+                and (
+                    (drop.deckType == DeckType.ENEMY and drop.stage == stage + 1)
+                    or drop.deckType == DeckType.SHIFT
+                )
+            ]
             nice_enemy = await get_quest_enemy(
                 redis=redis,
                 region=region,
                 deck_svt_info=deck_svt_info,
                 user_svt=user_svt_id[deck_svt_info.deck.userSvtId],
+                drops=drops,
                 all_enemy_skills=all_skills,
                 all_enemy_tds=all_tds,
                 lang=lang,

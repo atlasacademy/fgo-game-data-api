@@ -4,9 +4,11 @@ from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import and_, case, func, select
+from sqlalchemy.sql.elements import literal_column
+from sqlalchemy.sql.expression import text
 
 from ...models.rayshift import rayshiftQuest
-from ...schemas.rayshift import QuestDetail, QuestList
+from ...schemas.rayshift import QuestDetail, QuestDrop, QuestList
 
 
 async def get_rayshift_quest_db(
@@ -24,6 +26,112 @@ async def get_rayshift_quest_db(
         return QuestDetail.parse_obj(rayshift_quest.questDetail)
 
     return None
+
+
+async def get_rayshift_drops(
+    conn: AsyncConnection, quest_id: int, phase: int
+) -> list[QuestDrop]:
+    enemy_deck_svt = (
+        select(
+            literal_column("'enemy'").label("deckType"),
+            func.jsonb_array_elements(literal_column("d.deck->'svts'")).label(
+                "deck_svt"
+            ),
+            literal_column("d.stage").label("stage"),
+        )
+        .select_from(
+            rayshiftQuest,
+            text(
+                'jsonb_array_elements("rayshiftQuest"."questDetail"->\'enemyDeck\') '
+                "with ordinality as d(deck, stage)"
+            ),
+        )
+        .where(
+            and_(
+                rayshiftQuest.c.questId == quest_id,
+                rayshiftQuest.c.phase == phase,
+                rayshiftQuest.c.questDetail.is_not(None),
+            )
+        )
+    )
+
+    shift_deck_svt = (
+        select(
+            literal_column("'shift'").label("deckType"),
+            func.jsonb_array_elements(literal_column("d.deck->'svts'")).label(
+                "deck_svt"
+            ),
+            literal_column("d.stage").label("stage"),
+        )
+        .select_from(
+            rayshiftQuest,
+            text(
+                'jsonb_array_elements("rayshiftQuest"."questDetail"->\'shiftDeck\') '
+                "with ordinality as d(deck, stage)"
+            ),
+        )
+        .where(
+            and_(
+                rayshiftQuest.c.questId == quest_id,
+                rayshiftQuest.c.phase == phase,
+                rayshiftQuest.c.questDetail.is_not(None),
+            )
+        )
+    )
+
+    deck_svt = enemy_deck_svt.union_all(shift_deck_svt).cte(name="deck_svt")
+
+    drops = select(
+        deck_svt.c.deckType,
+        deck_svt.c.stage,
+        literal_column("deck_svt.deck_svt->>'id'").label("deckId"),
+        literal_column("jsonb_array_elements(deck_svt.deck_svt->'dropInfos')").label(
+            "drops"
+        ),
+    ).cte(name="drops")
+
+    drop_items = select(
+        drops.c.stage,
+        drops.c.deckType,
+        drops.c.deckId,
+        literal_column("drops.drops->>'type'").label("type"),
+        literal_column("drops.drops->>'objectId'").label("objectId"),
+        literal_column("drops.drops->>'originalNum'").label("originalNum"),
+    ).cte(name="drop_items")
+
+    runs = (
+        select(func.count(rayshiftQuest.c.queryId))
+        .where(
+            and_(
+                rayshiftQuest.c.questId == quest_id,
+                rayshiftQuest.c.phase == phase,
+                rayshiftQuest.c.questDetail.is_not(None),
+            )
+        )
+        .subquery()
+        .select()
+    )
+
+    stmt = select(
+        drop_items.c.stage,
+        drop_items.c.deckType,
+        drop_items.c.deckId,
+        drop_items.c.type,
+        drop_items.c.objectId,
+        drop_items.c.originalNum,
+        func.count(drop_items.c.objectId).label("dropCount"),
+        runs.label("runs"),
+    ).group_by(
+        drop_items.c.stage,
+        drop_items.c.deckType,
+        drop_items.c.deckId,
+        drop_items.c.type,
+        drop_items.c.objectId,
+        drop_items.c.originalNum,
+    )
+
+    results = await conn.execute(stmt)
+    return [QuestDrop.parse_obj(row) for row in results.fetchall()]
 
 
 insert_quest_stmt = insert(rayshiftQuest)
@@ -97,4 +205,9 @@ def fetch_missing_quest_ids(conn: Connection) -> list[int]:
         .cte()
     )
     stmt = select(count_values.c.queryId).where(count_values.c.data_count == 0)
+    return [row.queryId for row in conn.execute(stmt).fetchall()]
+
+
+def fetch_all_missing_quest_ids(conn: Connection) -> list[int]:
+    stmt = select(rayshiftQuest.c.queryId).where(rayshiftQuest.c.questDetail.is_(None))
     return [row.queryId for row in conn.execute(stmt).fetchall()]

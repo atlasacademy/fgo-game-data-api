@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
 
+## 5.74.0 - 2021-10-18
+### Added
+- Rayshift drop data.
+
 ## 5.73.0 - 2021-09-25
 ### Added
 - Support for CN and KR data.
