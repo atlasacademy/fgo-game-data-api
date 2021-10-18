@@ -29,9 +29,9 @@ def main(load_all: bool = False) -> None:
         load_rayshift_quest_list(region, quest_list)
 
         if load_all:
-            query_ids = get_missing_query_ids(region)
-        else:
             query_ids = get_all_missing_query_ids(region)
+        else:
+            query_ids = get_missing_query_ids(region)
         print(f"Loading {len(query_ids)} query IDs")
 
         if query_ids:
@@ -55,10 +55,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "--all",
         "-a",
-        type=bool,
         help="Load all missing quest details instead of just the latest ones",
-        required=False,
-        default=False,
+        action="store_true",
     )
 
     args = parser.parse_args()
