@@ -16,6 +16,7 @@ export enum NiceSvtType {
     ENEMY_COLLECTION_DETAIL = "enemyCollectionDetail",
     ALL = "all",
     COMMAND_CODE = "commandCode",
+    SVT_MATERIAL_TD = "svtMaterialTd",
 }
 
 export enum NiceSvtFlag {
@@ -1153,6 +1154,8 @@ export enum NiceAiCond {
     COUNT_LOWER_AI_172 = "countLowerAi172",
     COUNT_EQUAL_AI_173 = "countEqualAi173",
     CHECK_AI_174 = "checkAi174",
+    CHECK_SELF_NPTURN_HIGHER = "checkSelfNpturnHigher",
+    CHECK_SELF_NPTURN_LOWER = "checkSelfNpturnLower",
 }
 
 export enum NiceAiActType {

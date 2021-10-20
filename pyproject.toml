@@ -15,7 +15,7 @@ orjson = "^3.6.4"
 aiofiles = "^0.7.0"
 GitPython = "^3.1.24"
 toml = "^0.10.2"
-SQLAlchemy = "^1.4.25"
+SQLAlchemy = "^1.4.26"
 psycopg2 = "^2.9.1"
 httpx = "^0.20.0"
 aioredis = { extras = ["hiredis"], version = "^2.0.0" }

@@ -38,6 +38,7 @@ class SvtType(IntEnum):
     ENEMY_COLLECTION_DETAIL = 9
     ALL = 10
     COMMAND_CODE = 11
+    SVT_MATERIAL_TD = 12
 
 
 class NiceSvtType(str, Enum):
@@ -54,6 +55,7 @@ class NiceSvtType(str, Enum):
     enemyCollectionDetail = "enemyCollectionDetail"
     all = "all"
     commandCode = "commandCode"
+    svtMaterialTd = "svtMaterialTd"
 
 
 SVT_TYPE_NAME: dict[int, NiceSvtType] = {
@@ -68,6 +70,7 @@ SVT_TYPE_NAME: dict[int, NiceSvtType] = {
     9: NiceSvtType.enemyCollectionDetail,
     10: NiceSvtType.all,
     11: NiceSvtType.commandCode,
+    12: NiceSvtType.svtMaterialTd,
 }
 
 
@@ -3093,6 +3096,8 @@ class AiCond(IntEnum):
     COUNT_LOWER_AI_172 = 172
     COUNT_EQUAL_AI_173 = 173
     CHECK_AI_174 = 174
+    CHECK_SELF_NPTURN_HIGHER = 175
+    CHECK_SELF_NPTURN_LOWER = 176
 
 
 class NiceAiCond(str, Enum):
@@ -3247,6 +3252,8 @@ class NiceAiCond(str, Enum):
     countLowerAi172 = "countLowerAi172"
     countEqualAi173 = "countEqualAi173"
     checkAi174 = "checkAi174"
+    checkSelfNpturnHigher = "checkSelfNpturnHigher"
+    checkSelfNpturnLower = "checkSelfNpturnLower"
 
 
 AI_COND_NAME: dict[int, NiceAiCond] = {
@@ -3385,6 +3392,8 @@ AI_COND_NAME: dict[int, NiceAiCond] = {
     172: NiceAiCond.countLowerAi172,
     173: NiceAiCond.countEqualAi173,
     174: NiceAiCond.checkAi174,
+    175: NiceAiCond.checkSelfNpturnHigher,
+    176: NiceAiCond.checkSelfNpturnLower,
 }
 
 
