@@ -1,6 +1,6 @@
 from typing import Iterable, Optional, Union
 
-from sqlalchemy import Table
+from sqlalchemy import Integer, Table
 from sqlalchemy.dialects.postgresql import array_agg
 from sqlalchemy.exc import DBAPIError
 from sqlalchemy.ext.asyncio import AsyncConnection
@@ -254,7 +254,8 @@ async def get_quest_phase_search(
             rayshiftQuest.c.questId,
             rayshiftQuest.c.phase,
             literal_column(
-                "(jsonb_path_query(\"questDetail\", '$.userSvt[*] ? (@.npcSvtClassId == 0).svtId')->0)::int"
+                "(jsonb_path_query(\"questDetail\", '$.userSvt[*] ? (@.npcSvtClassId == 0).svtId')->0)::int",
+                type_=Integer,
             ).label("rayshift_svt_id"),
         ).cte()
         deduped_svt_ids = (

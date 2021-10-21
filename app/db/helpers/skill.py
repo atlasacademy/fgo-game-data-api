@@ -3,7 +3,7 @@ from typing import Any, Iterable, Optional
 from sqlalchemy.dialects.postgresql import aggregate_order_by, array_agg
 from sqlalchemy.exc import DBAPIError
 from sqlalchemy.ext.asyncio import AsyncConnection
-from sqlalchemy.sql import and_, func, literal_column, select
+from sqlalchemy.sql import and_, func, select
 
 from ...models.raw import (
     mstAi,
@@ -35,10 +35,9 @@ async def get_skillEntity(
         .cte()
     )
 
-    skill_id_col = literal_column('"mstAiAct"."skillVals"[1]')
     aiIds = (
         select(
-            skill_id_col.label("skillId"),
+            mstAiAct.c.skillVals[1].label("skillId"),
             func.jsonb_build_object(
                 "svt",
                 func.coalesce(
@@ -57,8 +56,8 @@ async def get_skillEntity(
                 mstAiField, mstAiField.c.aiActId == mstAiAct.c.id
             )
         )
-        .where(skill_id_col.in_(skill_ids))
-        .group_by(skill_id_col)
+        .where(mstAiAct.c.skillVals[1].in_(skill_ids))
+        .group_by(mstAiAct.c.skillVals)
         .cte()
     )
 

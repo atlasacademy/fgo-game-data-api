@@ -1,6 +1,6 @@
 from typing import Any, Optional
 
-from sqlalchemy.dialects.postgresql import insert
+from sqlalchemy.dialects.postgresql import JSONB, insert
 from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import and_, case, func, select
@@ -85,18 +85,18 @@ async def get_rayshift_drops(
         deck_svt.c.deckType,
         deck_svt.c.stage,
         literal_column("deck_svt.deck_svt->>'id'").label("deckId"),
-        literal_column("jsonb_array_elements(deck_svt.deck_svt->'dropInfos')").label(
-            "drops"
-        ),
+        func.jsonb_array_elements(
+            literal_column("deck_svt.deck_svt->'dropInfos'"), type_=JSONB
+        ).label("drops"),
     ).cte(name="drops")
 
     drop_items = select(
         drops.c.stage,
         drops.c.deckType,
         drops.c.deckId,
-        literal_column("drops.drops->>'type'").label("type"),
-        literal_column("drops.drops->>'objectId'").label("objectId"),
-        literal_column("drops.drops->>'originalNum'").label("originalNum"),
+        drops.c.drops["type"].label("type"),
+        drops.c.drops["objectId"].label("objectId"),
+        drops.c.drops["originalNum"].label("originalNum"),
     ).cte(name="drop_items")
 
     runs = (
