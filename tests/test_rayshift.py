@@ -6,6 +6,7 @@ from sqlalchemy.sql import and_, delete, select
 from app.config import Settings
 from app.db.engine import engines
 from app.db.load import (
+    get_all_missing_query_ids,
     get_missing_query_ids,
     load_rayshift_quest_details,
     load_rayshift_quest_list,
@@ -51,6 +52,8 @@ def test_rayshift_get_quest_list() -> None:
 
 def test_rayshift_missing_ids() -> None:
     query_ids = get_missing_query_ids(Region.NA)
+    assert len(query_ids) >= 0
+    query_ids = get_all_missing_query_ids(Region.NA)
     assert len(query_ids) >= 0
 
 

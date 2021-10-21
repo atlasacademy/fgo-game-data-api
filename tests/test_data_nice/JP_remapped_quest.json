@@ -75,6 +75,22 @@
             "hpMax": 55085,
             "face": "https://assets.atlasacademy.io/GameData/JP/Enemys/99388901.png"
           },
+          "drops": [
+            {
+              "type": "item",
+              "objectId": 94060004,
+              "num": 4,
+              "dropCount": 0,
+              "runs": 0
+            },
+            {
+              "type": "item",
+              "objectId": 94060001,
+              "num": 3,
+              "dropCount": 0,
+              "runs": 0
+            }
+          ],
           "lv": 18,
           "exp": 0,
           "atk": 2923,
@@ -338,6 +354,15 @@
             "hpMax": 55085,
             "face": "https://assets.atlasacademy.io/GameData/JP/Enemys/99388901.png"
           },
+          "drops": [
+            {
+              "type": "item",
+              "objectId": 94060001,
+              "num": 3,
+              "dropCount": 0,
+              "runs": 0
+            }
+          ],
           "lv": 22,
           "exp": 0,
           "atk": 3464,
@@ -614,6 +639,15 @@
             "hpMax": 55085,
             "face": "https://assets.atlasacademy.io/GameData/JP/Enemys/99388901.png"
           },
+          "drops": [
+            {
+              "type": "item",
+              "objectId": 94060004,
+              "num": 4,
+              "dropCount": 0,
+              "runs": 0
+            }
+          ],
           "lv": 23,
           "exp": 0,
           "atk": 3596,
@@ -877,6 +911,22 @@
             "hpMax": 55085,
             "face": "https://assets.atlasacademy.io/GameData/JP/Enemys/99388901.png"
           },
+          "drops": [
+            {
+              "type": "item",
+              "objectId": 94060001,
+              "num": 3,
+              "dropCount": 0,
+              "runs": 0
+            },
+            {
+              "type": "item",
+              "objectId": 94060004,
+              "num": 4,
+              "dropCount": 0,
+              "runs": 0
+            }
+          ],
           "lv": 18,
           "exp": 0,
           "atk": 2923,
@@ -1140,6 +1190,22 @@
             "hpMax": 55085,
             "face": "https://assets.atlasacademy.io/GameData/JP/Enemys/99388901.png"
           },
+          "drops": [
+            {
+              "type": "item",
+              "objectId": 94060001,
+              "num": 3,
+              "dropCount": 0,
+              "runs": 0
+            },
+            {
+              "type": "item",
+              "objectId": 94060004,
+              "num": 4,
+              "dropCount": 0,
+              "runs": 0
+            }
+          ],
           "lv": 23,
           "exp": 0,
           "atk": 3596,
@@ -1416,6 +1482,29 @@
             "hpMax": 13225,
             "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_1027003.png"
           },
+          "drops": [
+            {
+              "type": "item",
+              "objectId": 94060002,
+              "num": 3,
+              "dropCount": 0,
+              "runs": 0
+            },
+            {
+              "type": "item",
+              "objectId": 94060001,
+              "num": 3,
+              "dropCount": 0,
+              "runs": 0
+            },
+            {
+              "type": "item",
+              "objectId": 94060004,
+              "num": 4,
+              "dropCount": 0,
+              "runs": 0
+            }
+          ],
           "lv": 28,
           "exp": 0,
           "atk": 6017,
@@ -2043,6 +2132,22 @@
             "hpMax": 12028,
             "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_7025000.png"
           },
+          "drops": [
+            {
+              "type": "item",
+              "objectId": 94060004,
+              "num": 3,
+              "dropCount": 0,
+              "runs": 0
+            },
+            {
+              "type": "item",
+              "objectId": 94060001,
+              "num": 3,
+              "dropCount": 0,
+              "runs": 0
+            }
+          ],
           "lv": 18,
           "exp": 0,
           "atk": 3820,

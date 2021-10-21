@@ -80,6 +80,7 @@
             "hpMax": 285000,
             "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99359001.png"
           },
+          "drops": [],
           "lv": 41,
           "exp": 0,
           "atk": 7029,
@@ -387,6 +388,15 @@
             "hpMax": 11589,
             "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_1020002.png"
           },
+          "drops": [
+            {
+              "type": "item",
+              "objectId": 6505,
+              "num": 1,
+              "dropCount": 0,
+              "runs": 0
+            }
+          ],
           "lv": 81,
           "exp": 0,
           "atk": 12000,
@@ -1049,6 +1059,7 @@
             "hpMax": 11761,
             "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_3019002.png"
           },
+          "drops": [],
           "lv": 81,
           "exp": 0,
           "atk": 12000,
@@ -1634,6 +1645,15 @@
             "hpMax": 11637,
             "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_2008002.png"
           },
+          "drops": [
+            {
+              "type": "item",
+              "objectId": 6505,
+              "num": 1,
+              "dropCount": 0,
+              "runs": 0
+            }
+          ],
           "lv": 83,
           "exp": 0,
           "atk": 12000,
@@ -2257,6 +2277,15 @@
             "hpMax": 9595,
             "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_1012002.png"
           },
+          "drops": [
+            {
+              "type": "item",
+              "objectId": 6505,
+              "num": 1,
+              "dropCount": 0,
+              "runs": 0
+            }
+          ],
           "lv": 80,
           "exp": 0,
           "atk": 12000,
@@ -2814,6 +2843,15 @@
             "hpMax": 11761,
             "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_3019002.png"
           },
+          "drops": [
+            {
+              "type": "item",
+              "objectId": 6505,
+              "num": 1,
+              "dropCount": 0,
+              "runs": 0
+            }
+          ],
           "lv": 81,
           "exp": 0,
           "atk": 12000,

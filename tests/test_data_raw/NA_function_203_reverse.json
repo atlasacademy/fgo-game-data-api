@@ -945,6 +945,132 @@
               "priority": 0
             }
           ]
+        },
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
+            "id": 980062,
+            "type": 1,
+            "name": "Star Blaster",
+            "ruby": "Star Blaster",
+            "maxLv": 10,
+            "iconId": 303,
+            "motion": 102
+          },
+          "mstSkillDetail": [
+            {
+              "id": 980062,
+              "detail": "Increase Critical Strength [{0}] (1 turn) for one ally",
+              "detailShort": "Increase Critical Strength [{0}] (1 turn) for one ally"
+            }
+          ],
+          "mstSvtSkill": [],
+          "mstSkillAdd": [],
+          "mstCommonRelease": [],
+          "mstSkillLv": [
+            {
+              "funcId": [203],
+              "svals": ["[5000,1,-1,300]"],
+              "script": {},
+              "skillId": 980062,
+              "lv": 1,
+              "chargeTurn": 12,
+              "skillDetailId": 980062,
+              "priority": 0
+            },
+            {
+              "funcId": [203],
+              "svals": ["[5000,1,-1,320]"],
+              "script": {},
+              "skillId": 980062,
+              "lv": 2,
+              "chargeTurn": 12,
+              "skillDetailId": 980062,
+              "priority": 0
+            },
+            {
+              "funcId": [203],
+              "svals": ["[5000,1,-1,340]"],
+              "script": {},
+              "skillId": 980062,
+              "lv": 3,
+              "chargeTurn": 12,
+              "skillDetailId": 980062,
+              "priority": 0
+            },
+            {
+              "funcId": [203],
+              "svals": ["[5000,1,-1,360]"],
+              "script": {},
+              "skillId": 980062,
+              "lv": 4,
+              "chargeTurn": 12,
+              "skillDetailId": 980062,
+              "priority": 0
+            },
+            {
+              "funcId": [203],
+              "svals": ["[5000,1,-1,380]"],
+              "script": {},
+              "skillId": 980062,
+              "lv": 5,
+              "chargeTurn": 12,
+              "skillDetailId": 980062,
+              "priority": 0
+            },
+            {
+              "funcId": [203],
+              "svals": ["[5000,1,-1,400]"],
+              "script": {},
+              "skillId": 980062,
+              "lv": 6,
+              "chargeTurn": 11,
+              "skillDetailId": 980062,
+              "priority": 0
+            },
+            {
+              "funcId": [203],
+              "svals": ["[5000,1,-1,420]"],
+              "script": {},
+              "skillId": 980062,
+              "lv": 7,
+              "chargeTurn": 11,
+              "skillDetailId": 980062,
+              "priority": 0
+            },
+            {
+              "funcId": [203],
+              "svals": ["[5000,1,-1,440]"],
+              "script": {},
+              "skillId": 980062,
+              "lv": 8,
+              "chargeTurn": 11,
+              "skillDetailId": 980062,
+              "priority": 0
+            },
+            {
+              "funcId": [203],
+              "svals": ["[5000,1,-1,460]"],
+              "script": {},
+              "skillId": 980062,
+              "lv": 9,
+              "chargeTurn": 11,
+              "skillDetailId": 980062,
+              "priority": 0
+            },
+            {
+              "funcId": [203],
+              "svals": ["[5000,1,-1,500]"],
+              "script": {},
+              "skillId": 980062,
+              "lv": 10,
+              "chargeTurn": 10,
+              "skillDetailId": 980062,
+              "priority": 0
+            }
+          ]
         }
       ],
       "NP": []

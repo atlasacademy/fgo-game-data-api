@@ -68,6 +68,12 @@
           "name": "",
           "ruby": "",
           "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png"
+        },
+        {
+          "id": 963790,
+          "name": "\"You don't have even an ounce of grace!\"",
+          "ruby": "-",
+          "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png"
         }
       ],
       "NP": []

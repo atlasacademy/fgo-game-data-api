@@ -12,7 +12,7 @@ from app.db.helpers import event
 from app.schemas.common import Language, Region
 from app.schemas.raw import MstSvtVoice, MstVoice
 
-from .utils import get_response_data, test_gamedata
+from .utils import clear_drop_data, get_response_data, test_gamedata
 
 
 test_cases_dict: dict[str, tuple[str, str]] = {
@@ -88,8 +88,11 @@ test_cases = [pytest.param(*value, id=key) for key, value in test_cases_dict.ite
 @pytest.mark.parametrize("query,result", test_cases)
 async def test_nice(client: AsyncClient, query: str, result: str) -> None:
     response = await client.get(f"/nice/{query}")
+    test_data = response.json()
+    if "quest" in query and len(query.split("/")) == 4:
+        test_data = clear_drop_data(test_data)
     assert response.status_code == 200
-    assert response.json() == get_response_data("test_data_nice", result)
+    assert test_data == get_response_data("test_data_nice", result)
 
 
 cases_404_dict = {

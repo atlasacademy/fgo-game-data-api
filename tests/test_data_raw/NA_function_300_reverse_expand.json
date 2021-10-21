@@ -1097,6 +1097,37 @@
             }
           ],
           "aiIds": { "svt": [], "field": [802150, 802151] }
+        },
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
+            "id": 963790,
+            "type": 1,
+            "name": "\"You don't have even an ounce of grace!\"",
+            "ruby": "-",
+            "maxLv": 1,
+            "iconId": 600,
+            "motion": 102
+          },
+          "mstSkillDetail": [],
+          "mstSvtSkill": [],
+          "mstSkillAdd": [],
+          "mstCommonRelease": [],
+          "mstSkillLv": [
+            {
+              "funcId": [685, 300],
+              "svals": ["[1000,3,-1,500]", "[1000,3,-1,500]"],
+              "script": {},
+              "skillId": 963790,
+              "lv": 1,
+              "chargeTurn": 0,
+              "skillDetailId": 1,
+              "priority": 0
+            }
+          ],
+          "aiIds": { "svt": [], "field": [94042220] }
         }
       ],
       "NP": []

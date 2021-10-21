@@ -1626,6 +1626,21 @@
               "flag": 0,
               "startedAt": 1508018400,
               "endedAt": 1893456000
+            },
+            {
+              "svtId": 303200,
+              "num": 16,
+              "priority": 1,
+              "skillId": 963096,
+              "condQuestId": 0,
+              "condQuestPhase": 0,
+              "condLv": 0,
+              "condLimitCount": 0,
+              "condFriendshipRank": 0,
+              "eventId": 80260,
+              "flag": 0,
+              "startedAt": 1634529600,
+              "endedAt": 1635739199
             }
           ],
           "mstSvtAppendPassiveSkill": [],

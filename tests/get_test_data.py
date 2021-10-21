@@ -4,6 +4,7 @@ import argparse
 import asyncio
 
 import aiofiles
+import orjson
 from asgi_lifespan import LifespanManager
 from httpx import AsyncClient
 
@@ -12,7 +13,7 @@ from app.main import app
 from .test_basic import test_cases_dict as test_basic_data
 from .test_nice import test_cases_dict as test_nice_data
 from .test_raw import test_cases_dict as test_raw_data
-from .utils import parent_folder
+from .utils import clear_drop_data, parent_folder
 
 
 async def save_test_data(
@@ -20,9 +21,14 @@ async def save_test_data(
 ) -> None:
     uri = f"/{endpoint}/{query}"
     print("Getting " + uri)
-    data = await client.get(uri)
+    response = await client.get(uri)
     async with aiofiles.open(parent_folder / folder / f"{file_name}.json", "wb") as fp:
-        await fp.write(data.content)
+        if "quest" in query and len(query.split("/")) == 4:
+            quest_phase_data = response.json()
+            cleared_drop_data = clear_drop_data(quest_phase_data)
+            await fp.write(orjson.dumps(cleared_drop_data))
+        else:
+            await fp.write(response.content)
 
 
 async def main(
