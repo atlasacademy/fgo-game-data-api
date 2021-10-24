@@ -26,6 +26,7 @@ from .enums import (
     AiType,
     Attribute,
     EnemyDeathType,
+    EnemyRoleType,
     FuncApplyTarget,
     NiceDetailMissionCondLinkType,
     NiceItemBGType,
@@ -1556,9 +1557,11 @@ class DeckType(str, Enum):
 
 class QuestEnemy(BaseModelORJson):
     deck: DeckType
+    deckId: int
     userSvtId: int
     uniqueId: int
     npcId: int
+    roleType: EnemyRoleType
     name: str
     svt: BasicServant
     drops: list[EnemyDrop]

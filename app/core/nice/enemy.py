@@ -6,7 +6,13 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...data.custom_mappings import Translation
 from ...schemas.common import Language, Region
-from ...schemas.enums import ATTRIBUTE_NAME, CLASS_NAME, ENEMY_DEATH_TYPE_NAME
+from ...schemas.enums import (
+    ATTRIBUTE_NAME,
+    CLASS_NAME,
+    ENEMY_DEATH_TYPE_NAME,
+    ENEMY_ROLE_TYPE_NAME,
+    EnemyRoleType,
+)
 from ...schemas.gameenums import GIFT_TYPE_NAME
 from ...schemas.nice import (
     DeckType,
@@ -215,9 +221,11 @@ async def get_quest_enemy(
 
     return QuestEnemy(
         deck=deck_svt_info.deckType,
+        deckId=deck_svt.id,
         userSvtId=user_svt.id,
         uniqueId=deck_svt.uniqueId,
         npcId=deck_svt.npcId,
+        roleType=ENEMY_ROLE_TYPE_NAME.get(deck_svt.roleType, EnemyRoleType.NORMAL),
         name=get_translation(
             lang, nullable_to_string(deck_svt.name), Translation.ENEMY
         ),

@@ -58,9 +58,11 @@
       "enemies": [
         {
           "deck": "enemy",
+          "deckId": 1,
           "userSvtId": 1,
           "uniqueId": 6,
           "npcId": 94016111,
+          "roleType": "normal",
           "name": "ノブ選組Ａ",
           "svt": {
             "id": 9938890,
@@ -337,9 +339,11 @@
         },
         {
           "deck": "enemy",
+          "deckId": 2,
           "userSvtId": 2,
           "uniqueId": 7,
           "npcId": 94016111,
+          "roleType": "normal",
           "name": "ノブ選組Ｂ",
           "svt": {
             "id": 9938890,
@@ -622,9 +626,11 @@
       "enemies": [
         {
           "deck": "enemy",
+          "deckId": 1,
           "userSvtId": 3,
           "uniqueId": 8,
           "npcId": 94016111,
+          "roleType": "normal",
           "name": "ノブ選組Ａ",
           "svt": {
             "id": 9938890,
@@ -894,9 +900,11 @@
         },
         {
           "deck": "enemy",
+          "deckId": 2,
           "userSvtId": 1,
           "uniqueId": 9,
           "npcId": 94016111,
+          "roleType": "normal",
           "name": "ノブ選組Ｂ",
           "svt": {
             "id": 9938890,
@@ -1173,9 +1181,11 @@
         },
         {
           "deck": "enemy",
+          "deckId": 3,
           "userSvtId": 3,
           "uniqueId": 10,
           "npcId": 94016111,
+          "roleType": "normal",
           "name": "ノブ選組Ｃ",
           "svt": {
             "id": 9938890,
@@ -1465,9 +1475,11 @@
       "enemies": [
         {
           "deck": "enemy",
+          "deckId": 1,
           "userSvtId": 4,
           "uniqueId": 11,
           "npcId": 94016125,
+          "roleType": "servant",
           "name": "水着審査再希望！",
           "svt": {
             "id": 102700,
@@ -2115,9 +2127,11 @@
         },
         {
           "deck": "enemy",
+          "deckId": 2,
           "userSvtId": 5,
           "uniqueId": 12,
           "npcId": 94016126,
+          "roleType": "servant",
           "name": "たくあん歳三",
           "svt": {
             "id": 702500,

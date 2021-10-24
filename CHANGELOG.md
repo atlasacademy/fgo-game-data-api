@@ -5,6 +5,8 @@ All notable changes to the public API will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
+### Added
+- `deckId` (position) and `roleType` (danger, servant) to enemy data.
 
 ## 5.74.0 - 2021-10-18
 ### Added

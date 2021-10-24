@@ -446,6 +446,21 @@ ENEMY_DEATH_TYPE_NAME: dict[int, EnemyDeathType] = {
 }
 
 
+### Enemy role type ###
+
+
+class EnemyRoleType(str, Enum):
+    NORMAL = "normal"
+    DANGER = "danger"
+    SERVANT = "servant"
+
+
+ENEMY_ROLE_TYPE_NAME: dict[int, EnemyRoleType] = {
+    2: EnemyRoleType.DANGER,
+    3: EnemyRoleType.SERVANT,
+}
+
+
 ### Mission Cond Detail Type ###
 
 

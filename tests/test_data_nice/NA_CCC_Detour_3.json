@@ -63,9 +63,11 @@
       "enemies": [
         {
           "deck": "enemy",
+          "deckId": 2,
           "userSvtId": 1,
           "uniqueId": 7,
           "npcId": 94034210,
+          "roleType": "danger",
           "name": "Junk Code: Eater",
           "svt": {
             "id": 9935900,
@@ -371,9 +373,11 @@
       "enemies": [
         {
           "deck": "enemy",
+          "deckId": 1,
           "userSvtId": 2,
           "uniqueId": 8,
           "npcId": 94034212,
+          "roleType": "servant",
           "name": "L",
           "svt": {
             "id": 102000,
@@ -1042,9 +1046,11 @@
         },
         {
           "deck": "enemy",
+          "deckId": 2,
           "userSvtId": 3,
           "uniqueId": 9,
           "npcId": 94034214,
+          "roleType": "servant",
           "name": "A. P. A.",
           "svt": {
             "id": 301900,
@@ -1628,9 +1634,11 @@
         },
         {
           "deck": "enemy",
+          "deckId": 3,
           "userSvtId": 4,
           "uniqueId": 10,
           "npcId": 94034213,
+          "roleType": "servant",
           "name": "T",
           "svt": {
             "id": 200800,
@@ -2260,9 +2268,11 @@
         },
         {
           "deck": "enemy",
+          "deckId": 4,
           "userSvtId": 5,
           "uniqueId": 11,
           "npcId": 94034211,
+          "roleType": "servant",
           "name": "B",
           "svt": {
             "id": 101200,
@@ -2826,9 +2836,11 @@
         },
         {
           "deck": "shift",
+          "deckId": 1,
           "userSvtId": 6,
           "uniqueId": 0,
           "npcId": 94034215,
+          "roleType": "servant",
           "name": "A. P. A.",
           "svt": {
             "id": 301900,
