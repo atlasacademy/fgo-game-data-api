@@ -105,7 +105,7 @@
     { "id": 1000, "name": "basedOnServant" },
     { "id": 2000, "name": "divine" },
     { "id": 2001, "name": "humanoid" },
-    { "id": 2040, "name": "divineOrDaemonOrUndead" },
+    { "id": 2040, "name": "divineOrDemonOrUndead" },
     { "id": 2780, "name": "hasCostume" },
     { "id": 2797, "name": "divineSpirit" },
     { "id": 5000, "name": "canBeInBattle" },

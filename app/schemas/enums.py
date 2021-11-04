@@ -565,6 +565,7 @@ class Trait(str, Enum):
     artificialDemon = "artificialDemon"
     demonBeast = "demonBeast"
     daemon = "daemon"
+    demon = "demon"
     soldier = "soldier"
     amazoness = "amazoness"
     skeleton = "skeleton"
@@ -601,9 +602,11 @@ class Trait(str, Enum):
     skyOrEarth = "skyOrEarth"
     brynhildsBeloved = "brynhildsBeloved"
     undeadOrDaemon = "undeadOrDaemon"
+    undeadOrDemon = "undeadOrDemon"
     demonic = "demonic"
     skyOrEarthExceptPseudoAndDemi = "skyOrEarthExceptPseudoAndDemi"
     divineOrDaemonOrUndead = "divineOrDaemonOrUndead"
+    divineOrDemonOrUndead = "divineOrDemonOrUndead"
     saberClassServant = "saberClassServant"
     superGiant = "superGiant"
     king = "king"
@@ -611,6 +614,7 @@ class Trait(str, Enum):
     illya = "illya"
     feminineLookingServant = "feminineLookingServant"
     argonaut = "argonaut"
+    associatedToTheArgo = "associatedToTheArgo"
     genderCaenisServant = "genderCaenisServant"
     hominidaeServant = "hominidaeServant"
     blessedByKur = "blessedByKur"
@@ -820,7 +824,7 @@ TRAIT_NAME: dict[int, Trait] = {
     1002: Trait.undead,  # Scathach's 3rd skill
     1003: Trait.artificialDemon,
     1004: Trait.demonBeast,
-    1005: Trait.daemon,
+    1005: Trait.demon,
     1100: Trait.soldier,
     1101: Trait.amazoness,
     1102: Trait.skeleton,
@@ -873,14 +877,14 @@ TRAIT_NAME: dict[int, Trait] = {
     2010: Trait.arthur,
     2011: Trait.skyOrEarth,  # Tesla's NP
     2012: Trait.brynhildsBeloved,
-    2018: Trait.undeadOrDaemon,  # Amakusa bond CE
+    2018: Trait.undeadOrDemon,  # Amakusa bond CE
     2019: Trait.demonic,
     2023: Trait.enemyDavinciTrueEnemy,
     2024: Trait.enemyDavinciFalseEnemy,
     2037: Trait.skyOrEarthExceptPseudoAndDemi,  # Raikou's 3rd skill
     2038: Trait.fieldSunlight,
     2039: Trait.fieldShore,
-    2040: Trait.divineOrDaemonOrUndead,  # Ruler Martha's 3rd skill
+    2040: Trait.divineOrDemonOrUndead,  # Ruler Martha's 3rd skill
     2073: Trait.fieldForest,
     2074: Trait.blessedByKur,  # Eresh's 3rd skill add this individuality
     2075: Trait.saberClassServant,  # MHXA NP
@@ -898,7 +902,7 @@ TRAIT_NAME: dict[int, Trait] = {
     2392: Trait.fieldCity,
     2403: Trait.enemyCaseFilesRareEnemy,
     2469: Trait.enemyLasVegasBonusEnemy,
-    2466: Trait.argonaut,
+    2466: Trait.associatedToTheArgo,
     2467: Trait.weakPointsRevealed,  # Paris 1st skill
     2615: Trait.genderCaenisServant,  # Phantom's 2nd skill
     2631: Trait.hominidaeServant,  # used in TamaVitch's fight
@@ -1030,6 +1034,15 @@ TRAIT_NAME: dict[int, Trait] = {
 
 
 TRAIT_NAME_REVERSE: dict[Trait, int] = {v: k for k, v in TRAIT_NAME.items()}
+
+OLD_TRAIT_MAPPING = {
+    Trait.daemon: 1005,
+    Trait.undeadOrDaemon: 2018,
+    Trait.divineOrDaemonOrUndead: 2040,
+    Trait.argonaut: 2466,
+}
+
+TRAIT_NAME_REVERSE |= OLD_TRAIT_MAPPING
 
 
 ALL_ENUMS = {

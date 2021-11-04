@@ -181,7 +181,7 @@
             { "id": 2008, "name": "weakToEnumaElish" },
             { "id": 2011, "name": "skyOrEarth" },
             { "id": 2037, "name": "skyOrEarthExceptPseudoAndDemi" },
-            { "id": 2040, "name": "divineOrDaemonOrUndead" },
+            { "id": 2040, "name": "divineOrDemonOrUndead" },
             { "id": 2631, "name": "hominidaeServant" },
             { "id": 5000, "name": "canBeInBattle" },
             { "id": 301100, "name": "unknown" }
@@ -2094,7 +2094,7 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/301100/card_servant_np.png",
               "rank": "A",
               "type": "Anti-Army",
-              "detail": "Deal heavy damage & decrease ATK (3 turns) <effect increases with Overcharge> to all enemies + apply immunity to Mental Debuffs (3 turns) for yourself",
+              "detail": "Deal heavy damage & decrease ATK (3 turns) <effect increases with Overcharge> to all enemies + Apply immunity to Mental Debuffs (3 turns) for yourself",
               "npGain": {
                 "buster": [55, 55, 55, 55, 55],
                 "arts": [55, 55, 55, 55, 55],
@@ -2303,7 +2303,7 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/301100/card_servant_np.png",
               "rank": "A+",
               "type": "Anti-Army",
-              "detail": "Deal heavy damage ▲ & decrease ATK (3 turns) <effect increases with Overcharge> to all enemies + apply immunity to Mental Debuffs (3 turns) for yourself",
+              "detail": "Deal heavy damage ▲ & decrease ATK (3 turns) <effect increases with Overcharge> to all enemies + Apply immunity to Mental Debuffs (3 turns) for yourself",
               "npGain": {
                 "buster": [55, 55, 55, 55, 55],
                 "arts": [55, 55, 55, 55, 55],

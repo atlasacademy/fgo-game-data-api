@@ -116,6 +116,10 @@ test_cases_dict: dict[str, tuple[str, set[int]]] = {
         {202900},
     ),
     "servant_search_va": ("JP/svt/search?cv=伊瀬茉莉也", {304400, 603500}),
+    "servant_search_old_trait_name": (
+        "NA/servant/search?trait=argonaut&rarity=2",
+        {203500},
+    ),
     "equip_search_illustrator": ("NA/svt/search?illustrator=Cogecha", {9403840}),
     "skill_search_type_coolDown_numFunc": (
         "NA/skill/search?lvl1coolDown=8&numFunctions=8&type=active",

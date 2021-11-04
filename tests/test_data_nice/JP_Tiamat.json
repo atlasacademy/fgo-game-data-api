@@ -44,7 +44,7 @@
     { "id": 301, "name": "alignmentChaotic" },
     { "id": 304, "name": "alignmentEvil" },
     { "id": 2000, "name": "divine" },
-    { "id": 2040, "name": "divineOrDaemonOrUndead" },
+    { "id": 2040, "name": "divineOrDemonOrUndead" },
     { "id": 2797, "name": "divineSpirit" },
     { "id": 5000, "name": "canBeInBattle" },
     { "id": 9935400, "name": "unknown" }
