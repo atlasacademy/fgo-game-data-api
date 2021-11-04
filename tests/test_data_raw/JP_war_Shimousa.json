@@ -667,7 +667,7 @@
         "chapterSubStr": "",
         "recommendLv": "75",
         "hasStartAction": 1,
-        "flag": 0,
+        "flag": 134217728,
         "scriptQuestId": 0,
         "noticeAt": 946652400,
         "openedAt": 946652400,
@@ -687,6 +687,13 @@
       ],
       "mstClosedMessage": [{ "id": 0, "message": "" }],
       "mstGift": [
+        {
+          "id": 315100,
+          "type": 1,
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 2
+        },
         { "id": 315100, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
         { "id": 315100, "type": 2, "objectId": 6530, "priority": 0, "num": 1 }
       ],
@@ -747,7 +754,7 @@
         "chapterSubStr": "",
         "recommendLv": "83",
         "hasStartAction": 1,
-        "flag": 0,
+        "flag": 134217728,
         "scriptQuestId": 0,
         "noticeAt": 946652400,
         "openedAt": 946652400,
@@ -767,6 +774,13 @@
       ],
       "mstClosedMessage": [{ "id": 0, "message": "" }],
       "mstGift": [
+        {
+          "id": 315101,
+          "type": 1,
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 2
+        },
         { "id": 315101, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
         { "id": 315101, "type": 2, "objectId": 6530, "priority": 0, "num": 1 }
       ],
@@ -825,7 +839,7 @@
         "chapterSubStr": "",
         "recommendLv": "85",
         "hasStartAction": 1,
-        "flag": 0,
+        "flag": 134217728,
         "scriptQuestId": 0,
         "noticeAt": 946652400,
         "openedAt": 946652400,
@@ -845,6 +859,13 @@
       ],
       "mstClosedMessage": [{ "id": 0, "message": "" }],
       "mstGift": [
+        {
+          "id": 315102,
+          "type": 1,
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 2
+        },
         { "id": 315102, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
         { "id": 315102, "type": 2, "objectId": 6507, "priority": 0, "num": 2 }
       ],
@@ -894,7 +915,7 @@
         "chapterSubStr": "",
         "recommendLv": "83",
         "hasStartAction": 1,
-        "flag": 0,
+        "flag": 134217728,
         "scriptQuestId": 0,
         "noticeAt": 946652400,
         "openedAt": 946652400,
@@ -914,6 +935,13 @@
       ],
       "mstClosedMessage": [{ "id": 0, "message": "" }],
       "mstGift": [
+        {
+          "id": 315103,
+          "type": 1,
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 2
+        },
         { "id": 315103, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
         { "id": 315103, "type": 2, "objectId": 6530, "priority": 0, "num": 1 }
       ],
@@ -969,7 +997,7 @@
         "chapterSubStr": "",
         "recommendLv": "80",
         "hasStartAction": 1,
-        "flag": 0,
+        "flag": 134217728,
         "scriptQuestId": 0,
         "noticeAt": 946652400,
         "openedAt": 946652400,
@@ -989,6 +1017,13 @@
       ],
       "mstClosedMessage": [{ "id": 0, "message": "" }],
       "mstGift": [
+        {
+          "id": 315104,
+          "type": 1,
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 2
+        },
         { "id": 315104, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
         { "id": 315104, "type": 2, "objectId": 6530, "priority": 0, "num": 1 }
       ],
@@ -1038,7 +1073,7 @@
         "chapterSubStr": "",
         "recommendLv": "85",
         "hasStartAction": 1,
-        "flag": 0,
+        "flag": 134217728,
         "scriptQuestId": 0,
         "noticeAt": 946652400,
         "openedAt": 946652400,
@@ -1058,6 +1093,13 @@
       ],
       "mstClosedMessage": [{ "id": 0, "message": "" }],
       "mstGift": [
+        {
+          "id": 315105,
+          "type": 1,
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 2
+        },
         { "id": 315105, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
         { "id": 315105, "type": 2, "objectId": 6507, "priority": 0, "num": 2 }
       ],
@@ -1122,7 +1164,7 @@
         "chapterSubStr": "",
         "recommendLv": "82",
         "hasStartAction": 1,
-        "flag": 0,
+        "flag": 134217728,
         "scriptQuestId": 0,
         "noticeAt": 946652400,
         "openedAt": 946652400,
@@ -1142,6 +1184,13 @@
       ],
       "mstClosedMessage": [{ "id": 0, "message": "" }],
       "mstGift": [
+        {
+          "id": 315106,
+          "type": 1,
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 2
+        },
         { "id": 315106, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
         { "id": 315106, "type": 2, "objectId": 6510, "priority": 0, "num": 2 }
       ],
@@ -1191,7 +1240,7 @@
         "chapterSubStr": "",
         "recommendLv": "85",
         "hasStartAction": 1,
-        "flag": 0,
+        "flag": 134217728,
         "scriptQuestId": 0,
         "noticeAt": 946652400,
         "openedAt": 946652400,
@@ -1211,6 +1260,13 @@
       ],
       "mstClosedMessage": [{ "id": 0, "message": "" }],
       "mstGift": [
+        {
+          "id": 315107,
+          "type": 1,
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 2
+        },
         { "id": 315107, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
         { "id": 315107, "type": 2, "objectId": 6510, "priority": 0, "num": 2 }
       ],
@@ -1266,7 +1322,7 @@
         "chapterSubStr": "",
         "recommendLv": "83",
         "hasStartAction": 1,
-        "flag": 0,
+        "flag": 134217728,
         "scriptQuestId": 0,
         "noticeAt": 946652400,
         "openedAt": 946652400,
@@ -1286,6 +1342,13 @@
       ],
       "mstClosedMessage": [{ "id": 0, "message": "" }],
       "mstGift": [
+        {
+          "id": 315108,
+          "type": 1,
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 2
+        },
         { "id": 315108, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
         { "id": 315108, "type": 2, "objectId": 6530, "priority": 0, "num": 2 }
       ],
@@ -1341,7 +1404,7 @@
         "chapterSubStr": "",
         "recommendLv": "83",
         "hasStartAction": 1,
-        "flag": 0,
+        "flag": 134217728,
         "scriptQuestId": 0,
         "noticeAt": 946652400,
         "openedAt": 946652400,
@@ -1361,6 +1424,13 @@
       ],
       "mstClosedMessage": [{ "id": 0, "message": "" }],
       "mstGift": [
+        {
+          "id": 315109,
+          "type": 1,
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 2
+        },
         { "id": 315109, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
         { "id": 315109, "type": 2, "objectId": 6530, "priority": 0, "num": 2 }
       ],
@@ -1425,7 +1495,7 @@
         "chapterSubStr": "",
         "recommendLv": "82",
         "hasStartAction": 1,
-        "flag": 0,
+        "flag": 134217728,
         "scriptQuestId": 0,
         "noticeAt": 946652400,
         "openedAt": 946652400,
@@ -1445,6 +1515,13 @@
       ],
       "mstClosedMessage": [{ "id": 0, "message": "" }],
       "mstGift": [
+        {
+          "id": 315110,
+          "type": 1,
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 2
+        },
         { "id": 315110, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
         { "id": 315110, "type": 2, "objectId": 6530, "priority": 0, "num": 2 }
       ],
@@ -1494,7 +1571,7 @@
         "chapterSubStr": "",
         "recommendLv": "85",
         "hasStartAction": 1,
-        "flag": 0,
+        "flag": 134217728,
         "scriptQuestId": 0,
         "noticeAt": 946652400,
         "openedAt": 946652400,
@@ -1514,6 +1591,13 @@
       ],
       "mstClosedMessage": [{ "id": 0, "message": "" }],
       "mstGift": [
+        {
+          "id": 315111,
+          "type": 1,
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 3
+        },
         { "id": 315111, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
         { "id": 315111, "type": 2, "objectId": 6530, "priority": 0, "num": 3 }
       ],
@@ -1575,7 +1659,7 @@
         "chapterSubStr": "",
         "recommendLv": "87",
         "hasStartAction": 1,
-        "flag": 0,
+        "flag": 134217728,
         "scriptQuestId": 0,
         "noticeAt": 946652400,
         "openedAt": 946652400,
@@ -1595,6 +1679,13 @@
       ],
       "mstClosedMessage": [{ "id": 0, "message": "" }],
       "mstGift": [
+        {
+          "id": 315112,
+          "type": 1,
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 2
+        },
         { "id": 315112, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
         { "id": 315112, "type": 2, "objectId": 6507, "priority": 0, "num": 2 }
       ],
@@ -1644,7 +1735,7 @@
         "chapterSubStr": "",
         "recommendLv": "85",
         "hasStartAction": 1,
-        "flag": 0,
+        "flag": 134217728,
         "scriptQuestId": 0,
         "noticeAt": 946652400,
         "openedAt": 946652400,
@@ -1664,6 +1755,13 @@
       ],
       "mstClosedMessage": [{ "id": 0, "message": "" }],
       "mstGift": [
+        {
+          "id": 315113,
+          "type": 1,
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 2
+        },
         { "id": 315113, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
         { "id": 315113, "type": 2, "objectId": 6507, "priority": 0, "num": 2 }
       ],
@@ -1728,7 +1826,7 @@
         "chapterSubStr": "",
         "recommendLv": "85",
         "hasStartAction": 1,
-        "flag": 0,
+        "flag": 134217728,
         "scriptQuestId": 0,
         "noticeAt": 946652400,
         "openedAt": 946652400,
@@ -1748,6 +1846,13 @@
       ],
       "mstClosedMessage": [{ "id": 0, "message": "" }],
       "mstGift": [
+        {
+          "id": 315114,
+          "type": 1,
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 3
+        },
         { "id": 315114, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
         { "id": 315114, "type": 2, "objectId": 6530, "priority": 0, "num": 3 }
       ],
@@ -1797,7 +1902,7 @@
         "chapterSubStr": "",
         "recommendLv": "84",
         "hasStartAction": 1,
-        "flag": 0,
+        "flag": 134217728,
         "scriptQuestId": 0,
         "noticeAt": 946652400,
         "openedAt": 946652400,
@@ -1817,6 +1922,13 @@
       ],
       "mstClosedMessage": [{ "id": 0, "message": "" }],
       "mstGift": [
+        {
+          "id": 315115,
+          "type": 1,
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 3
+        },
         { "id": 315115, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
         { "id": 315115, "type": 2, "objectId": 6518, "priority": 0, "num": 3 }
       ],
@@ -1884,7 +1996,7 @@
         "chapterSubStr": "",
         "recommendLv": "90",
         "hasStartAction": 1,
-        "flag": 0,
+        "flag": 134217728,
         "scriptQuestId": 0,
         "noticeAt": 946652400,
         "openedAt": 946652400,
@@ -1904,6 +2016,13 @@
       ],
       "mstClosedMessage": [{ "id": 0, "message": "" }],
       "mstGift": [
+        {
+          "id": 315116,
+          "type": 1,
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 3
+        },
         { "id": 315116, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
         { "id": 315116, "type": 2, "objectId": 6511, "priority": 0, "num": 3 }
       ],
@@ -1959,7 +2078,7 @@
         "chapterSubStr": "",
         "recommendLv": "90",
         "hasStartAction": 1,
-        "flag": 32768,
+        "flag": 134250496,
         "scriptQuestId": 0,
         "noticeAt": 946652400,
         "openedAt": 946652400,
@@ -1979,6 +2098,13 @@
       ],
       "mstClosedMessage": [{ "id": 0, "message": "" }],
       "mstGift": [
+        {
+          "id": 315117,
+          "type": 1,
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 10
+        },
         { "id": 315117, "type": 2, "objectId": 6525, "priority": 0, "num": 5 },
         { "id": 315117, "type": 2, "objectId": 7999, "priority": 0, "num": 1 }
       ],

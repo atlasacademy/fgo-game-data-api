@@ -182,7 +182,7 @@ async def get_quest_phase_search(
             ),
         )
 
-    where_clause: list[Union[ClauseElement, bool]] = [True]
+    where_clause: list[ClauseElement] = []
     if name:
         where_clause.append(mstQuest.c.name.ilike(f"%{name}%"))
     if spot_name:

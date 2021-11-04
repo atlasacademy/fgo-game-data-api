@@ -23,7 +23,7 @@ async def save_test_data(
     print("Getting " + uri)
     response = await client.get(uri)
     async with aiofiles.open(parent_folder / folder / f"{file_name}.json", "wb") as fp:
-        if "quest" in query and len(query.split("/")) == 4:
+        if "quest" in query and endpoint == "nice" and len(query.split("/")) == 4:
             quest_phase_data = response.json()
             cleared_drop_data = clear_drop_data(quest_phase_data)
             await fp.write(orjson.dumps(cleared_drop_data))
