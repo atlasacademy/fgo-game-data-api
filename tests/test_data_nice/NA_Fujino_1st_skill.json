@@ -4,6 +4,7 @@
   "name": "Mystic Eyes of Distortion EX",
   "ruby": "Mystic Eyes of Distortion",
   "detail": "Increase Buster Card effectiveness (3 turns) & apply Ignore DEF (3 turns) & increase NP Gain (3 turns) for yourself",
+  "unmodifiedDetail": "Increase Buster Card effectiveness [{0}] (3 turns) & apply Ignore DEF (3 turns) & increase NP Gain [{0}] (3 turns) for yourself",
   "type": "active",
   "strengthStatus": 0,
   "priority": 1,

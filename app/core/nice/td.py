@@ -39,6 +39,7 @@ async def get_nice_td(
         nice_td["detail"] = strip_formatting_brackets(
             tdEntity.mstTreasureDeviceDetail[0].detail
         )
+        nice_td["unmodifiedDetail"] = tdEntity.mstTreasureDeviceDetail[0].detail
 
     nice_td["npGain"] = {
         "buster": [td_lv.tdPointB for td_lv in tdEntity.mstTreasureDeviceLv],

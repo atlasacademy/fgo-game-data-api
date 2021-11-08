@@ -451,6 +451,7 @@ class NiceSkill(BaseModelORJson):
     name: str
     ruby: str
     detail: Optional[str] = None
+    unmodifiedDetail: Optional[str] = None
     type: NiceSkillType
     strengthStatus: int = -1
     priority: int = -1
@@ -487,6 +488,7 @@ class NiceTd(BaseModelORJson):
     rank: str
     type: str
     detail: Optional[str] = None
+    unmodifiedDetail: Optional[str] = None
     npGain: NpGain
     npDistribution: list[int]
     strengthStatus: int

@@ -101,6 +101,7 @@ async def get_nice_skill_with_svt(
         nice_skill["detail"] = strip_formatting_brackets(
             skillEntity.mstSkillDetail[0].detail
         )
+        nice_skill["unmodifiedDetail"] = skillEntity.mstSkillDetail[0].detail
 
     nice_skill["aiIds"] = skillEntity.aiIds
 

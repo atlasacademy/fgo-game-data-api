@@ -8,6 +8,7 @@
   "rank": "A+",
   "type": "Anti-Army",
   "detail": "Deal heavy Special Attack damage to all [Dragon] enemies <Special Attack damage increases with Overcharge>",
+  "unmodifiedDetail": "Deal heavy Special Attack damage to all [Dragon] enemies [{0}] <Special Attack damage increases with Overcharge>",
   "npGain": {
     "buster": [83, 83, 83, 83, 83],
     "arts": [83, 83, 83, 83, 83],
