@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   pg-fgoapijp:
-    image: groonga/pgroonga:latest-alpine-13-slim
+    image: groonga/pgroonga:latest-alpine-14-slim
     ports:
       - "5433:5432"
     environment:
@@ -11,7 +11,7 @@ services:
     volumes:
       - pg-jp-data:/var/lib/postgresql/data
   pg-fgoapina:
-    image: groonga/pgroonga:latest-alpine-13-slim
+    image: groonga/pgroonga:latest-alpine-14-slim
     ports:
       - "5434:5432"
     environment:
@@ -21,7 +21,7 @@ services:
     volumes:
       - pg-na-data:/var/lib/postgresql/data
   pg-fgoapicn:
-    image: groonga/pgroonga:latest-alpine-13-slim
+    image: groonga/pgroonga:latest-alpine-14-slim
     ports:
       - "5435:5432"
     environment:
@@ -31,7 +31,7 @@ services:
     volumes:
       - pg-cn-data:/var/lib/postgresql/data
   pg-fgoapikr:
-    image: groonga/pgroonga:latest-alpine-13-slim
+    image: groonga/pgroonga:latest-alpine-14-slim
     ports:
       - "5436:5432"
     environment:
@@ -41,7 +41,7 @@ services:
     volumes:
       - pg-kr-data:/var/lib/postgresql/data
   pg-fgoapitw:
-    image: groonga/pgroonga:latest-alpine-13-slim
+    image: groonga/pgroonga:latest-alpine-14-slim
     ports:
       - "5437:5432"
     environment:
