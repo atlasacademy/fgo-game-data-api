@@ -439,7 +439,7 @@ class TestServantSpecial:
                     {"id": 2008, "name": "weakToEnumaElish"},
                     {"id": 2009, "name": "riding"},
                     {"id": 2011, "name": "skyOrEarth"},
-                    {"id": 2040, "name": "divineOrDaemonOrUndead"},
+                    {"id": 2040, "name": "divineOrDemonOrUndead"},
                     {"id": 2631, "name": "hominidaeServant"},
                     {"id": 2667, "name": "childServant"},
                     {"id": 5000, "name": "canBeInBattle"},

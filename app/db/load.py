@@ -373,15 +373,19 @@ def load_rayshift_quest_list(region: Region, quest_list: list[QuestList]) -> Non
         insert_rayshift_quest_list(conn, quest_list)
 
 
-def get_missing_query_ids(region: Region) -> list[int]:
+def get_missing_query_ids(
+    region: Region, quest_ids: Optional[list[int]] = None
+) -> list[int]:
     with engines[region].connect() as conn:
-        query_ids = fetch_missing_quest_ids(conn)
+        query_ids = fetch_missing_quest_ids(conn, quest_ids)
     return query_ids
 
 
-def get_all_missing_query_ids(region: Region) -> list[int]:
+def get_all_missing_query_ids(
+    region: Region, quest_ids: Optional[list[int]] = None
+) -> list[int]:
     with engines[region].connect() as conn:
-        query_ids = fetch_all_missing_quest_ids(conn)
+        query_ids = fetch_all_missing_quest_ids(conn, quest_ids)
     return query_ids
 
 

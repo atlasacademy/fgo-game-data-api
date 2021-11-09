@@ -60,7 +60,7 @@
           "deck": "enemy",
           "deckId": 1,
           "userSvtId": 1,
-          "uniqueId": 6,
+          "uniqueId": 7,
           "npcId": 94016111,
           "roleType": "normal",
           "name": "ノブ選組Ａ",
@@ -87,8 +87,29 @@
             },
             {
               "type": "item",
+              "objectId": 6524,
+              "num": 1,
+              "dropCount": 0,
+              "runs": 0
+            },
+            {
+              "type": "item",
+              "objectId": 94060002,
+              "num": 3,
+              "dropCount": 0,
+              "runs": 0
+            },
+            {
+              "type": "item",
               "objectId": 94060001,
               "num": 3,
+              "dropCount": 0,
+              "runs": 0
+            },
+            {
+              "type": "item",
+              "objectId": 6001,
+              "num": 1,
               "dropCount": 0,
               "runs": 0
             }
@@ -341,7 +362,7 @@
           "deck": "enemy",
           "deckId": 2,
           "userSvtId": 2,
-          "uniqueId": 7,
+          "uniqueId": 8,
           "npcId": 94016111,
           "roleType": "normal",
           "name": "ノブ選組Ｂ",
@@ -361,7 +382,28 @@
           "drops": [
             {
               "type": "item",
+              "objectId": 94060004,
+              "num": 4,
+              "dropCount": 0,
+              "runs": 0
+            },
+            {
+              "type": "item",
+              "objectId": 6524,
+              "num": 1,
+              "dropCount": 0,
+              "runs": 0
+            },
+            {
+              "type": "item",
               "objectId": 94060001,
+              "num": 3,
+              "dropCount": 0,
+              "runs": 0
+            },
+            {
+              "type": "item",
+              "objectId": 94060002,
               "num": 3,
               "dropCount": 0,
               "runs": 0
@@ -628,7 +670,7 @@
           "deck": "enemy",
           "deckId": 1,
           "userSvtId": 3,
-          "uniqueId": 8,
+          "uniqueId": 9,
           "npcId": 94016111,
           "roleType": "normal",
           "name": "ノブ選組Ａ",
@@ -650,6 +692,34 @@
               "type": "item",
               "objectId": 94060004,
               "num": 4,
+              "dropCount": 0,
+              "runs": 0
+            },
+            {
+              "type": "item",
+              "objectId": 94060002,
+              "num": 3,
+              "dropCount": 0,
+              "runs": 0
+            },
+            {
+              "type": "item",
+              "objectId": 6001,
+              "num": 1,
+              "dropCount": 0,
+              "runs": 0
+            },
+            {
+              "type": "item",
+              "objectId": 6524,
+              "num": 1,
+              "dropCount": 0,
+              "runs": 0
+            },
+            {
+              "type": "item",
+              "objectId": 94060001,
+              "num": 3,
               "dropCount": 0,
               "runs": 0
             }
@@ -902,7 +972,7 @@
           "deck": "enemy",
           "deckId": 2,
           "userSvtId": 1,
-          "uniqueId": 9,
+          "uniqueId": 10,
           "npcId": 94016111,
           "roleType": "normal",
           "name": "ノブ選組Ｂ",
@@ -920,6 +990,27 @@
             "face": "https://assets.atlasacademy.io/GameData/JP/Enemys/99388901.png"
           },
           "drops": [
+            {
+              "type": "item",
+              "objectId": 6001,
+              "num": 1,
+              "dropCount": 0,
+              "runs": 0
+            },
+            {
+              "type": "item",
+              "objectId": 94060002,
+              "num": 3,
+              "dropCount": 0,
+              "runs": 0
+            },
+            {
+              "type": "item",
+              "objectId": 6524,
+              "num": 1,
+              "dropCount": 0,
+              "runs": 0
+            },
             {
               "type": "item",
               "objectId": 94060001,
@@ -1183,7 +1274,7 @@
           "deck": "enemy",
           "deckId": 3,
           "userSvtId": 3,
-          "uniqueId": 10,
+          "uniqueId": 11,
           "npcId": 94016111,
           "roleType": "normal",
           "name": "ノブ選組Ｃ",
@@ -1201,6 +1292,27 @@
             "face": "https://assets.atlasacademy.io/GameData/JP/Enemys/99388901.png"
           },
           "drops": [
+            {
+              "type": "item",
+              "objectId": 94060002,
+              "num": 3,
+              "dropCount": 0,
+              "runs": 0
+            },
+            {
+              "type": "item",
+              "objectId": 6001,
+              "num": 1,
+              "dropCount": 0,
+              "runs": 0
+            },
+            {
+              "type": "item",
+              "objectId": 6524,
+              "num": 1,
+              "dropCount": 0,
+              "runs": 0
+            },
             {
               "type": "item",
               "objectId": 94060001,
@@ -1477,7 +1589,7 @@
           "deck": "enemy",
           "deckId": 1,
           "userSvtId": 4,
-          "uniqueId": 11,
+          "uniqueId": 12,
           "npcId": 94016125,
           "roleType": "servant",
           "name": "水着審査再希望！",
@@ -1499,6 +1611,13 @@
               "type": "item",
               "objectId": 94060002,
               "num": 3,
+              "dropCount": 0,
+              "runs": 0
+            },
+            {
+              "type": "item",
+              "objectId": 7001,
+              "num": 1,
               "dropCount": 0,
               "runs": 0
             },
@@ -2135,7 +2254,7 @@
           "deck": "enemy",
           "deckId": 2,
           "userSvtId": 5,
-          "uniqueId": 12,
+          "uniqueId": 13,
           "npcId": 94016126,
           "roleType": "servant",
           "name": "たくあん歳三",
@@ -2155,6 +2274,13 @@
           "drops": [
             {
               "type": "item",
+              "objectId": 94060002,
+              "num": 3,
+              "dropCount": 0,
+              "runs": 0
+            },
+            {
+              "type": "item",
               "objectId": 94060004,
               "num": 3,
               "dropCount": 0,
@@ -2164,6 +2290,13 @@
               "type": "item",
               "objectId": 94060001,
               "num": 3,
+              "dropCount": 0,
+              "runs": 0
+            },
+            {
+              "type": "item",
+              "objectId": 7007,
+              "num": 1,
               "dropCount": 0,
               "runs": 0
             }

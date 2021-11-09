@@ -13,7 +13,7 @@ from app.rayshift.quest import get_all_quest_lists, get_multiple_quests
 from app.schemas.common import Region
 
 
-def main(load_all: bool = False) -> None:
+def main(quest_ids: list[int], load_all: bool = False, no_load: bool = False) -> None:
     client = httpx.Client(follow_redirects=True)
     for region in [Region.NA, Region.JP]:
         print(f"Loading {region} rayshift data cache …")
@@ -28,10 +28,13 @@ def main(load_all: bool = False) -> None:
         print(f"Inserting {region} rayshift data cache into db …")
         load_rayshift_quest_list(region, quest_list)
 
+        if no_load:
+            continue
+
         if load_all:
-            query_ids = get_all_missing_query_ids(region)
+            query_ids = get_all_missing_query_ids(region, quest_ids)
         else:
-            query_ids = get_missing_query_ids(region)
+            query_ids = get_missing_query_ids(region, quest_ids)
         print(f"Loading {len(query_ids)} query IDs")
 
         if query_ids:
@@ -58,7 +61,18 @@ if __name__ == "__main__":
         help="Load all missing quest details instead of just the latest ones",
         action="store_true",
     )
+    parser.add_argument(
+        "--no-load", "-n", help="Don't load rayshift quest data", action="store_true"
+    )
+    parser.add_argument(
+        "--quest-id",
+        "-q",
+        help="quest_id to load rayshift quest data",
+        type=int,
+        action="append",
+        required=False,
+    )
 
     args = parser.parse_args()
 
-    main(args.all)
+    main(args.quest_id, args.all, args.no_load)

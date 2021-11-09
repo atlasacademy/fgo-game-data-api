@@ -191,7 +191,9 @@ def insert_rayshift_quest_list(conn: Connection, quest_list: list[QuestList]) ->
     conn.execute(do_nothing_stmt, data)
 
 
-def fetch_missing_quest_ids(conn: Connection) -> list[int]:
+def fetch_missing_quest_ids(
+    conn: Connection, quest_ids: Optional[list[int]] = None
+) -> list[int]:
     count_values = (
         select(
             rayshiftQuest.c.questId,
@@ -204,10 +206,27 @@ def fetch_missing_quest_ids(conn: Connection) -> list[int]:
         .group_by(rayshiftQuest.c.questId, rayshiftQuest.c.phase)
         .cte()
     )
-    stmt = select(count_values.c.queryId).where(count_values.c.data_count == 0)
+    if quest_ids:
+        stmt = select(count_values.c.queryId).where(
+            and_(count_values.c.data_count == 0, count_values.c.questId.in_(quest_ids))
+        )
+    else:
+        stmt = select(count_values.c.queryId).where(count_values.c.data_count == 0)
     return [row.queryId for row in conn.execute(stmt).fetchall()]
 
 
-def fetch_all_missing_quest_ids(conn: Connection) -> list[int]:
-    stmt = select(rayshiftQuest.c.queryId).where(rayshiftQuest.c.questDetail.is_(None))
+def fetch_all_missing_quest_ids(
+    conn: Connection, quest_ids: Optional[list[int]] = None
+) -> list[int]:
+    if quest_ids:
+        stmt = select(rayshiftQuest.c.queryId).where(
+            and_(
+                rayshiftQuest.c.questDetail.is_(None),
+                rayshiftQuest.c.questId.in_(quest_ids),
+            )
+        )
+    else:
+        stmt = select(rayshiftQuest.c.queryId).where(
+            rayshiftQuest.c.questDetail.is_(None)
+        )
     return [row.queryId for row in conn.execute(stmt).fetchall()]

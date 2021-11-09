@@ -53,8 +53,15 @@ def test_rayshift_get_quest_list() -> None:
 def test_rayshift_missing_ids() -> None:
     query_ids = get_missing_query_ids(Region.NA)
     assert len(query_ids) >= 0
+
+    specific_query_id = get_missing_query_ids(Region.NA, [2000202])
+    assert len(specific_query_id) == 1
+
     query_ids = get_all_missing_query_ids(Region.NA)
     assert len(query_ids) >= 0
+
+    specific_all_query_id = get_all_missing_query_ids(Region.NA, [2000202])
+    assert len(specific_all_query_id) >= 0
 
 
 @pytest.mark.skipif(doesnt_have_rayshift_api_key, reason=skip_reason)
