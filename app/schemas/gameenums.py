@@ -1374,6 +1374,7 @@ class DataValsType(IntEnum):
     TargetIndiv = 83
     IncludeIgnoreIndividuality = 84
     EvenIfWinDie = 85
+    CallSvtEffectId = 86
 
 
 class ClassRelationOverwriteType(IntEnum):

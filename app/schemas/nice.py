@@ -232,6 +232,7 @@ class BaseVals(BaseModel):
     TargetIndiv: Optional[int] = None
     IncludeIgnoreIndividuality: Optional[int] = None
     EvenIfWinDie: Optional[int] = None
+    CallSvtEffectId: Optional[int] = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo

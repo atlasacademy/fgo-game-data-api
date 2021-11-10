@@ -505,6 +505,7 @@ export enum NiceDataValsType {
     TargetIndiv = "targetindiv",
     IncludeIgnoreIndividuality = "includeignoreindividuality",
     EvenIfWinDie = "evenifwindie",
+    CallSvtEffectId = "callsvteffectid",
 }
 
 export enum NiceClassRelationOverwriteType {
