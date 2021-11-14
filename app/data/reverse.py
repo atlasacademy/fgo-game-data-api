@@ -4,7 +4,9 @@ from pydantic import DirectoryPath
 
 from ..schemas.enums import FUNC_VALS_NOT_BUFF
 from ..schemas.raw import (
+    MstCommandCode,
     MstCommandCodeSkill,
+    MstEquip,
     MstEquipSkill,
     MstFunc,
     MstSkill,
@@ -62,20 +64,24 @@ def get_func_to_td(gamedata_path: DirectoryPath) -> dict[int, list[int]]:
 
 def get_td_to_svt(gamedata_path: DirectoryPath) -> dict[int, list[int]]:
     mstSvtTds = load_master_data(gamedata_path, MstSvtTreasureDevice)
+    mstSvt_ids = {mstSvt.id for mstSvt in load_master_data(gamedata_path, MstSvt)}
 
     td_to_svt = defaultdict(set)
-    for svt_skill in mstSvtTds:
-        td_to_svt[svt_skill.treasureDeviceId].add(svt_skill.svtId)
+    for svt_td in mstSvtTds:
+        if svt_td.svtId in mstSvt_ids:
+            td_to_svt[svt_td.treasureDeviceId].add(svt_td.svtId)
 
     return {td_id: sorted(svt_ids) for td_id, svt_ids in td_to_svt.items()}
 
 
 def get_active_skill_to_svt(gamedata_path: DirectoryPath) -> dict[int, list[int]]:
     mstSvtSkills = load_master_data(gamedata_path, MstSvtSkill)
+    mstSvt_ids = {mstSvt.id for mstSvt in load_master_data(gamedata_path, MstSvt)}
 
     active_skill_to_svt = defaultdict(set)
     for svt_skill in mstSvtSkills:
-        active_skill_to_svt[svt_skill.skillId].add(svt_skill.svtId)
+        if svt_skill.svtId in mstSvt_ids:
+            active_skill_to_svt[svt_skill.skillId].add(svt_skill.svtId)
 
     return {
         skill_id: sorted(svt_ids) for skill_id, svt_ids in active_skill_to_svt.items()
@@ -85,13 +91,15 @@ def get_active_skill_to_svt(gamedata_path: DirectoryPath) -> dict[int, list[int]
 def get_passive_skill_to_svt(gamedata_path: DirectoryPath) -> dict[int, list[int]]:
     mstSvts = load_master_data(gamedata_path, MstSvt)
     mstSvtPassives = load_master_data(gamedata_path, MstSvtPassiveSkill)
+    mstSvt_ids = {mstSvt.id for mstSvt in mstSvts}
 
     passive_skill_to_svt = defaultdict(set)
     for svt in mstSvts:
         for skill_id in svt.classPassive:
             passive_skill_to_svt[skill_id].add(svt.id)
     for svt_passive in mstSvtPassives:
-        passive_skill_to_svt[svt_passive.skillId].add(svt_passive.svtId)
+        if svt_passive.svtId in mstSvt_ids:
+            passive_skill_to_svt[svt_passive.skillId].add(svt_passive.svtId)
 
     if (gamedata_path / "master" / "mstSvtAppendPassiveSkill.json").exists():
         append_skills = load_master_data(gamedata_path, MstSvtAppendPassiveSkill)
@@ -105,19 +113,25 @@ def get_passive_skill_to_svt(gamedata_path: DirectoryPath) -> dict[int, list[int
 
 def get_skill_to_MC(gamedata_path: DirectoryPath) -> dict[int, list[int]]:
     mstEquipSkills = load_master_data(gamedata_path, MstEquipSkill)
+    mstEquip_ids = {mstSvt.id for mstSvt in load_master_data(gamedata_path, MstEquip)}
 
     skill_to_mc: dict[int, set[int]] = defaultdict(set)
     for equip_skill in mstEquipSkills:
-        skill_to_mc[equip_skill.skillId].add(equip_skill.equipId)
+        if equip_skill.equipId in mstEquip_ids:
+            skill_to_mc[equip_skill.skillId].add(equip_skill.equipId)
 
     return {skill_id: sorted(mc_ids) for skill_id, mc_ids in skill_to_mc.items()}
 
 
 def get_skill_to_CC(gamedata_path: DirectoryPath) -> dict[int, list[int]]:
     mstCCSkills = load_master_data(gamedata_path, MstCommandCodeSkill)
+    mstCC_ids = {
+        mstSvt.id for mstSvt in load_master_data(gamedata_path, MstCommandCode)
+    }
 
     skill_to_cc: dict[int, set[int]] = defaultdict(set)
     for cc_skill in mstCCSkills:
-        skill_to_cc[cc_skill.skillId].add(cc_skill.commandCodeId)
+        if cc_skill.commandCodeId in mstCC_ids:
+            skill_to_cc[cc_skill.skillId].add(cc_skill.commandCodeId)
 
     return {skill_id: sorted(cc_ids) for skill_id, cc_ids in skill_to_cc.items()}
