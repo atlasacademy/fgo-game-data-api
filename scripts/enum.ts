@@ -575,6 +575,7 @@ export enum NiceShopType {
     LIMIT_MATERIAL = "limitMaterial",
     GRAIL_FRAGMENTS = "grailFragments",
     SVT_COSTUME = "svtCostume",
+    START_UP_SUMMON = "startUpSummon",
 }
 
 export enum NicePayType {
@@ -787,6 +788,13 @@ export enum NiceCondType {
     EVENT_TYPE_START_TIME_TO_END_DATE = "eventTypeStartTimeToEndDate",
     EXIST_BOX_GACHA_SCRIPT_REPLACE_GIFT_ID = "existBoxGachaScriptReplaceGiftId",
     NOT_EXIST_BOX_GACHA_SCRIPT_REPLACE_GIFT_ID = "notExistBoxGachaScriptReplaceGiftId",
+    LIMITED_PERIOD_VOICE_CHANGE_TYPE_ON = "limitedPeriodVoiceChangeTypeOn",
+    START_RANDOM_MISSION = "startRandomMission",
+    RANDOM_MISSION_CLEAR_NUM = "randomMissionClearNum",
+    PROGRESS_VALUE_EQUAL = "progressValueEqual",
+    PROGRESS_VALUE_ABOVE = "progressValueAbove",
+    PROGRESS_VALUE_BELOW = "progressValueBelow",
+    RANDOM_MISSION_TOTAL_CLEAR_NUM = "randomMissionTotalClearNum",
 }
 
 export enum NiceVoiceCondType {
@@ -1221,6 +1229,7 @@ export enum NiceMissionType {
     EXTRA = "extra",
     LIMITED = "limited",
     COMPLETE = "complete",
+    RANDOM = "random",
 }
 
 export enum NiceMissionRewardType {

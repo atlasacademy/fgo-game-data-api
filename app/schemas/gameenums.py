@@ -1561,6 +1561,7 @@ class ShopType(IntEnum):
     LIMIT_MATERIAL = 9
     GRAIL_FRAGMENTS = 10
     SVT_COSTUME = 11
+    START_UP_SUMMON = 12
 
 
 class NiceShopType(str, Enum):
@@ -1578,6 +1579,7 @@ class NiceShopType(str, Enum):
     limitMaterial = "limitMaterial"
     grailFragments = "grailFragments"
     svtCostume = "svtCostume"
+    startUpSummon = "startUpSummon"
 
 
 SHOP_TYPE_NAME: dict[int, NiceShopType] = {
@@ -1593,6 +1595,7 @@ SHOP_TYPE_NAME: dict[int, NiceShopType] = {
     9: NiceShopType.limitMaterial,
     10: NiceShopType.grailFragments,
     11: NiceShopType.svtCostume,
+    12: NiceShopType.startUpSummon,
 }
 
 
@@ -1920,6 +1923,13 @@ class CondType(IntEnum):
     EVENT_TYPE_START_TIME_TO_END_DATE = 153
     EXIST_BOX_GACHA_SCRIPT_REPLACE_GIFT_ID = 154
     NOT_EXIST_BOX_GACHA_SCRIPT_REPLACE_GIFT_ID = 155
+    LIMITED_PERIOD_VOICE_CHANGE_TYPE_ON = 156
+    START_RANDOM_MISSION = 157
+    RANDOM_MISSION_CLEAR_NUM = 158
+    PROGRESS_VALUE_EQUAL = 159
+    PROGRESS_VALUE_ABOVE = 160
+    PROGRESS_VALUE_BELOW = 161
+    RANDOM_MISSION_TOTAL_CLEAR_NUM = 162
 
 
 class NiceCondType(str, Enum):
@@ -2081,6 +2091,13 @@ class NiceCondType(str, Enum):
     eventTypeStartTimeToEndDate = "eventTypeStartTimeToEndDate"
     existBoxGachaScriptReplaceGiftId = "existBoxGachaScriptReplaceGiftId"
     notExistBoxGachaScriptReplaceGiftId = "notExistBoxGachaScriptReplaceGiftId"
+    limitedPeriodVoiceChangeTypeOn = "limitedPeriodVoiceChangeTypeOn"
+    startRandomMission = "startRandomMission"
+    randomMissionClearNum = "randomMissionClearNum"
+    progressValueEqual = "progressValueEqual"
+    progressValueAbove = "progressValueAbove"
+    progressValueBelow = "progressValueBelow"
+    randomMissionTotalClearNum = "randomMissionTotalClearNum"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2240,6 +2257,13 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     153: NiceCondType.eventTypeStartTimeToEndDate,
     154: NiceCondType.existBoxGachaScriptReplaceGiftId,
     155: NiceCondType.notExistBoxGachaScriptReplaceGiftId,
+    156: NiceCondType.limitedPeriodVoiceChangeTypeOn,
+    157: NiceCondType.startRandomMission,
+    158: NiceCondType.randomMissionClearNum,
+    159: NiceCondType.progressValueEqual,
+    160: NiceCondType.progressValueAbove,
+    161: NiceCondType.progressValueBelow,
+    162: NiceCondType.randomMissionTotalClearNum,
 }
 
 
@@ -3576,6 +3600,7 @@ class MissionType(IntEnum):
     EXTRA = 4
     LIMITED = 5
     COMPLETE = 6
+    RANDOM = 7
 
 
 class NiceMissionType(str, Enum):
@@ -3588,6 +3613,7 @@ class NiceMissionType(str, Enum):
     extra = "extra"
     limited = "limited"
     complete = "complete"
+    random = "random"
 
 
 MISSION_TYPE_NAME: dict[int, NiceMissionType] = {
@@ -3598,6 +3624,7 @@ MISSION_TYPE_NAME: dict[int, NiceMissionType] = {
     4: NiceMissionType.extra,
     5: NiceMissionType.limited,
     6: NiceMissionType.complete,
+    7: NiceMissionType.random,
 }
 
 
