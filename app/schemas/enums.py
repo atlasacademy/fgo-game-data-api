@@ -497,7 +497,8 @@ class DetailMissionCondType(IntEnum):
 class DetailMissionCondLinkType(IntEnum):
     EVENT_START = 1
     MISSION_START = 2
-    MASTER＿MISSION_START = 3
+    MASTER_MISSION_START = 3
+    DETECTIVE_START = 4
 
 
 class NiceDetailMissionCondLinkType(str, Enum):
@@ -505,13 +506,15 @@ class NiceDetailMissionCondLinkType(str, Enum):
 
     eventStart = "eventStart"
     missionStart = "missionStart"
-    master＿missionStart = "master＿missionStart"
+    masterMissionStart = "masterMissionStart"
+    detectiveStart = "unknown4Start"
 
 
 DETAIL_MISSION_LINK_TYPE: dict[int, NiceDetailMissionCondLinkType] = {
     1: NiceDetailMissionCondLinkType.eventStart,
     2: NiceDetailMissionCondLinkType.missionStart,
-    3: NiceDetailMissionCondLinkType.master＿missionStart,
+    3: NiceDetailMissionCondLinkType.masterMissionStart,
+    4: NiceDetailMissionCondLinkType.detectiveStart,
 }
 
 

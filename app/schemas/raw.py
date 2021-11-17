@@ -639,6 +639,8 @@ class ScriptJsonInfo(BaseModelORJson):
     text: Optional[str]  # "I ask of you, are you my Master?"
     form: int = 0  # 0
     changeEffect: int = 0  # 0
+    multiFace: Optional[int] = None
+    multiForm: Optional[int] = None
 
     def get_voice_id(self) -> str:
         # Some voice lines have the first info id ending with xxx1 or xxx2 and we want xxx0
