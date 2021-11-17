@@ -7,6 +7,9 @@
       "addAtk": 0,
       "addTdGauge": 1000,
       "addCritical": 0,
+      "addTdAtk": 0,
+      "addTdNpGauge": 0,
+      "addTdCritical": 0,
       "individuality": [
         { "id": 4001, "name": "cardArts" },
         { "id": 4008, "name": "faceCard" }
@@ -19,6 +22,9 @@
       "addAtk": 0,
       "addTdGauge": 0,
       "addCritical": 0,
+      "addTdAtk": 0,
+      "addTdNpGauge": 0,
+      "addTdCritical": 0,
       "individuality": [
         { "id": 4001, "name": "cardArts" },
         { "id": 4008, "name": "faceCard" }
@@ -31,6 +37,9 @@
       "addAtk": 0,
       "addTdGauge": 0,
       "addCritical": 0,
+      "addTdAtk": 0,
+      "addTdNpGauge": 0,
+      "addTdCritical": 0,
       "individuality": [
         { "id": 4001, "name": "cardArts" },
         { "id": 4008, "name": "faceCard" }
@@ -45,6 +54,9 @@
       "addAtk": 500,
       "addTdGauge": 0,
       "addCritical": 0,
+      "addTdAtk": 0,
+      "addTdNpGauge": 0,
+      "addTdCritical": 0,
       "individuality": [
         { "id": 4002, "name": "cardBuster" },
         { "id": 4008, "name": "faceCard" }
@@ -57,6 +69,9 @@
       "addAtk": 0,
       "addTdGauge": 0,
       "addCritical": 0,
+      "addTdAtk": 0,
+      "addTdNpGauge": 0,
+      "addTdCritical": 0,
       "individuality": [
         { "id": 4002, "name": "cardBuster" },
         { "id": 4008, "name": "faceCard" }
@@ -69,6 +84,9 @@
       "addAtk": 0,
       "addTdGauge": 0,
       "addCritical": 0,
+      "addTdAtk": 0,
+      "addTdNpGauge": 0,
+      "addTdCritical": 0,
       "individuality": [
         { "id": 4002, "name": "cardBuster" },
         { "id": 4008, "name": "faceCard" }
@@ -83,6 +101,9 @@
       "addAtk": 0,
       "addTdGauge": 0,
       "addCritical": 200,
+      "addTdAtk": 0,
+      "addTdNpGauge": 0,
+      "addTdCritical": 0,
       "individuality": [
         { "id": 4003, "name": "cardQuick" },
         { "id": 4008, "name": "faceCard" }
@@ -95,6 +116,9 @@
       "addAtk": 0,
       "addTdGauge": 0,
       "addCritical": 0,
+      "addTdAtk": 0,
+      "addTdNpGauge": 0,
+      "addTdCritical": 0,
       "individuality": [
         { "id": 4003, "name": "cardQuick" },
         { "id": 4008, "name": "faceCard" }
@@ -107,6 +131,9 @@
       "addAtk": 0,
       "addTdGauge": 0,
       "addCritical": 0,
+      "addTdAtk": 0,
+      "addTdNpGauge": 0,
+      "addTdCritical": 0,
       "individuality": [
         { "id": 4003, "name": "cardQuick" },
         { "id": 4008, "name": "faceCard" }
@@ -121,6 +148,9 @@
       "addAtk": 0,
       "addTdGauge": 0,
       "addCritical": 0,
+      "addTdAtk": 0,
+      "addTdNpGauge": 0,
+      "addTdCritical": 0,
       "individuality": [
         { "id": 4004, "name": "cardExtra" },
         { "id": 4008, "name": "faceCard" }
@@ -135,6 +165,9 @@
       "addAtk": 0,
       "addTdGauge": 0,
       "addCritical": 0,
+      "addTdAtk": 0,
+      "addTdNpGauge": 0,
+      "addTdCritical": 0,
       "individuality": []
     }
   },
@@ -146,6 +179,9 @@
       "addAtk": 0,
       "addTdGauge": 0,
       "addCritical": 0,
+      "addTdAtk": 0,
+      "addTdNpGauge": 0,
+      "addTdCritical": 0,
       "individuality": [{ "id": 4005, "name": "unknown" }]
     },
     "2": {
@@ -155,6 +191,9 @@
       "addAtk": 0,
       "addTdGauge": 0,
       "addCritical": 0,
+      "addTdAtk": 0,
+      "addTdNpGauge": 0,
+      "addTdCritical": 0,
       "individuality": [{ "id": 4005, "name": "unknown" }]
     },
     "3": {
@@ -164,6 +203,9 @@
       "addAtk": 0,
       "addTdGauge": 0,
       "addCritical": 0,
+      "addTdAtk": 0,
+      "addTdNpGauge": 0,
+      "addTdCritical": 0,
       "individuality": [{ "id": 4005, "name": "unknown" }]
     },
     "4": {
@@ -173,6 +215,9 @@
       "addAtk": 0,
       "addTdGauge": 0,
       "addCritical": 0,
+      "addTdAtk": 0,
+      "addTdNpGauge": 0,
+      "addTdCritical": 0,
       "individuality": [{ "id": 4005, "name": "unknown" }]
     },
     "5": {
@@ -182,6 +227,9 @@
       "addAtk": 0,
       "addTdGauge": 0,
       "addCritical": 0,
+      "addTdAtk": 0,
+      "addTdNpGauge": 0,
+      "addTdCritical": 0,
       "individuality": [{ "id": 4005, "name": "unknown" }]
     }
   },
@@ -193,6 +241,9 @@
       "addAtk": 0,
       "addTdGauge": 0,
       "addCritical": 0,
+      "addTdAtk": 0,
+      "addTdNpGauge": 0,
+      "addTdCritical": 0,
       "individuality": [{ "id": 4006, "name": "unknown" }]
     },
     "2": {
@@ -202,6 +253,9 @@
       "addAtk": 0,
       "addTdGauge": 0,
       "addCritical": 0,
+      "addTdAtk": 0,
+      "addTdNpGauge": 0,
+      "addTdCritical": 0,
       "individuality": [{ "id": 4006, "name": "unknown" }]
     },
     "3": {
@@ -211,6 +265,9 @@
       "addAtk": 0,
       "addTdGauge": 0,
       "addCritical": 0,
+      "addTdAtk": 0,
+      "addTdNpGauge": 0,
+      "addTdCritical": 0,
       "individuality": [{ "id": 4006, "name": "unknown" }]
     },
     "4": {
@@ -220,6 +277,9 @@
       "addAtk": 0,
       "addTdGauge": 0,
       "addCritical": 0,
+      "addTdAtk": 0,
+      "addTdNpGauge": 0,
+      "addTdCritical": 0,
       "individuality": [{ "id": 4006, "name": "unknown" }]
     },
     "5": {
@@ -229,6 +289,9 @@
       "addAtk": 0,
       "addTdGauge": 0,
       "addCritical": 0,
+      "addTdAtk": 0,
+      "addTdNpGauge": 0,
+      "addTdCritical": 0,
       "individuality": [{ "id": 4006, "name": "unknown" }]
     }
   }
