@@ -2417,6 +2417,7 @@
       "scriptJson": [
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H010",
@@ -2447,6 +2448,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H020",
@@ -2469,6 +2471,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H030",
@@ -2483,6 +2486,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H040",
@@ -2505,6 +2509,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H050",
@@ -2535,6 +2540,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H060",
@@ -2565,6 +2571,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H070",
@@ -2595,6 +2602,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H080",
@@ -2625,6 +2633,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H090",
@@ -2639,6 +2648,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H100",
@@ -2653,6 +2663,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H110",
@@ -2675,6 +2686,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H120",
@@ -2697,6 +2709,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H130",
@@ -2750,6 +2763,7 @@
       "scriptJson": [
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_G010",
@@ -2764,6 +2778,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_G9010",
@@ -2778,6 +2793,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_G030",
@@ -2808,6 +2824,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_G020",
@@ -2830,6 +2847,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_G040",
@@ -2860,6 +2878,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_G050",
@@ -2897,6 +2916,7 @@
       "scriptJson": [
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_S010",
@@ -2950,6 +2970,7 @@
       "scriptJson": [
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B010",
@@ -2964,6 +2985,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B020",
@@ -2978,6 +3000,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B030",
@@ -2992,6 +3015,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B040",
@@ -3006,6 +3030,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B080",
@@ -3020,6 +3045,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B090",
@@ -3034,6 +3060,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B100",
@@ -3048,6 +3075,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B110",
@@ -3062,6 +3090,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B120",
@@ -3076,6 +3105,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B130",
@@ -3090,6 +3120,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B140",
@@ -3104,6 +3135,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B150",
@@ -3118,6 +3150,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B160",
@@ -3132,6 +3165,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B170",
@@ -3146,6 +3180,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B180",
@@ -3160,6 +3195,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B190",
@@ -3174,6 +3210,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B200",
@@ -3188,6 +3225,7 @@
         },
         {
           "overwriteName": "",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B210",
@@ -3208,6 +3246,7 @@
     {
       "scriptJson": [
         {
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B050",
@@ -3249,6 +3288,7 @@
       "scriptJson": [
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 1",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_I9010",
@@ -3271,6 +3311,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 2",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_I9020",
@@ -3301,6 +3342,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 3",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_I9030",
@@ -3326,6 +3368,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 4",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_I9040",
@@ -3359,6 +3402,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 5",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_I9050",
@@ -3384,6 +3428,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 6",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_I9060",
@@ -3414,6 +3459,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 7",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_I9070",
@@ -3436,6 +3482,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 8",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_I9080",
@@ -3482,6 +3529,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 9",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_I9090",
@@ -3536,6 +3584,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 10",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_I9100",
@@ -3566,6 +3615,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 11",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_I9110",
@@ -3599,6 +3649,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 12",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_I9120",
@@ -3637,6 +3688,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 13",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_I9130",
@@ -3667,6 +3719,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 14",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_I9410",
@@ -3721,6 +3774,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 15",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_I9500",
@@ -3762,6 +3816,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 16",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_I9510",
@@ -3819,6 +3874,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 17",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_I9520",
@@ -3868,6 +3924,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 18",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_I9530",
@@ -3925,6 +3982,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 19",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_I9540",
@@ -3982,6 +4040,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 20",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_I9550",
@@ -4039,6 +4098,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 21",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_I9560",
@@ -4095,6 +4155,7 @@
       "scriptJson": [
         {
           "overwriteName": "About Spiritron Dress Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_H9000",
@@ -4132,6 +4193,7 @@
       "scriptJson": [
         {
           "overwriteName": "Level Up Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_G010",
@@ -4146,6 +4208,7 @@
         },
         {
           "overwriteName": "Level Up Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_G9410",
@@ -4160,6 +4223,7 @@
         },
         {
           "overwriteName": "Unlock Wardrobe Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_G060",
@@ -4205,6 +4269,7 @@
       "scriptJson": [
         {
           "overwriteName": "Battle Start 1 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B9100",
@@ -4219,6 +4284,7 @@
         },
         {
           "overwriteName": "Battle Start 2 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B9110",
@@ -4233,6 +4299,7 @@
         },
         {
           "overwriteName": "Skill 1 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B9080",
@@ -4247,6 +4314,7 @@
         },
         {
           "overwriteName": "Skill 2 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B9090",
@@ -4261,6 +4329,7 @@
         },
         {
           "overwriteName": "Command Card 1 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B9180",
@@ -4275,6 +4344,7 @@
         },
         {
           "overwriteName": "Command Card 2 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B9190",
@@ -4289,6 +4359,7 @@
         },
         {
           "overwriteName": "Command Card 3 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B9200",
@@ -4303,6 +4374,7 @@
         },
         {
           "overwriteName": "Noble Phantasm Card Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B9210",
@@ -4317,6 +4389,7 @@
         },
         {
           "overwriteName": "Attack 1 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B9010",
@@ -4331,6 +4404,7 @@
         },
         {
           "overwriteName": "Attack 2 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B9020",
@@ -4345,6 +4419,7 @@
         },
         {
           "overwriteName": "Attack 3 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B9030",
@@ -4359,6 +4434,7 @@
         },
         {
           "overwriteName": "Extra Attack Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B9040",
@@ -4373,6 +4449,7 @@
         },
         {
           "overwriteName": "Damage 1 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B9150",
@@ -4387,6 +4464,7 @@
         },
         {
           "overwriteName": "Damage 2 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B9140",
@@ -4401,6 +4479,7 @@
         },
         {
           "overwriteName": "Incapacitated 1 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B9160",
@@ -4415,6 +4494,7 @@
         },
         {
           "overwriteName": "Incapacitated 2 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B9170",
@@ -4429,6 +4509,7 @@
         },
         {
           "overwriteName": "Victory 1 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B9120",
@@ -4443,6 +4524,7 @@
         },
         {
           "overwriteName": "Victory 2 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B9130",
@@ -4464,6 +4546,7 @@
       "scriptJson": [
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 1",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I010",
@@ -4486,6 +4569,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 2",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I020",
@@ -4516,6 +4600,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 3",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I030",
@@ -4541,6 +4626,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 4",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I040",
@@ -4574,6 +4660,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 5",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I050",
@@ -4599,6 +4686,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 6",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I580",
@@ -4632,6 +4720,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 6",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I060",
@@ -4662,6 +4751,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 7",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I070",
@@ -4684,6 +4774,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 8",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I080",
@@ -4730,6 +4821,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 9",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I090",
@@ -4784,6 +4876,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 10",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I100",
@@ -4814,6 +4907,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 11",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I110",
@@ -4847,6 +4941,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 12",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I120",
@@ -4885,6 +4980,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 13",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I130",
@@ -4915,6 +5011,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 14",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I410",
@@ -4969,6 +5066,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 15",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I500",
@@ -5010,6 +5108,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 16",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I510",
@@ -5067,6 +5166,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 17",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I520",
@@ -5116,6 +5216,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 18",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I530",
@@ -5173,6 +5274,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 19",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I540",
@@ -5230,6 +5332,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 20",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I550",
@@ -5287,6 +5390,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 21",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I560",
@@ -5343,6 +5447,7 @@
       "scriptJson": [
         {
           "overwriteName": "Birthday (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H010",
@@ -5365,6 +5470,7 @@
         },
         {
           "overwriteName": "During an Event (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H020",
@@ -5387,6 +5493,7 @@
         },
         {
           "overwriteName": "Conversation 1 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H030",
@@ -5401,6 +5508,7 @@
         },
         {
           "overwriteName": "Conversation 2 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H040",
@@ -5423,6 +5531,7 @@
         },
         {
           "overwriteName": "Conversation 3 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H050",
@@ -5453,6 +5562,7 @@
         },
         {
           "overwriteName": "Likes (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H060",
@@ -5475,6 +5585,7 @@
         },
         {
           "overwriteName": "Dislikes (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H070",
@@ -5497,6 +5608,7 @@
         },
         {
           "overwriteName": "About the Holy Grail (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H080",
@@ -5519,6 +5631,7 @@
         },
         {
           "overwriteName": "Bond Level 1 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H090",
@@ -5533,6 +5646,7 @@
         },
         {
           "overwriteName": "Bond Level 2 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H100",
@@ -5547,6 +5661,7 @@
         },
         {
           "overwriteName": "Bond Level 3 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H110",
@@ -5569,6 +5684,7 @@
         },
         {
           "overwriteName": "Bond Level 4 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H120",
@@ -5599,6 +5715,7 @@
         },
         {
           "overwriteName": "Bond Level 5 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H130",
@@ -5629,6 +5746,7 @@
         },
         {
           "overwriteName": "Conversation 4 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H140",
@@ -5651,6 +5769,7 @@
         },
         {
           "overwriteName": "Conversation 5 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H150",
@@ -5681,6 +5800,7 @@
         },
         {
           "overwriteName": "Conversation 6 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H160",
@@ -5711,6 +5831,7 @@
         },
         {
           "overwriteName": "Conversation 7 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_H170",
@@ -5740,6 +5861,7 @@
       "scriptJson": [
         {
           "overwriteName": "Level up (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_G010",
@@ -5754,6 +5876,7 @@
         },
         {
           "overwriteName": "Ascension 2 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_G020",
@@ -5776,6 +5899,7 @@
         },
         {
           "overwriteName": "Ascension 1 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_G030",
@@ -5814,6 +5938,7 @@
         },
         {
           "overwriteName": "Ascension 3 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_G040",
@@ -5844,6 +5969,7 @@
         },
         {
           "overwriteName": "Ascension 4 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_G050",
@@ -5881,6 +6007,7 @@
       "scriptJson": [
         {
           "overwriteName": "Summon (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_S010",
@@ -5926,6 +6053,7 @@
       "scriptJson": [
         {
           "overwriteName": "Attack 1 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B010",
@@ -5940,6 +6068,7 @@
         },
         {
           "overwriteName": "Attack 2 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B020",
@@ -5954,6 +6083,7 @@
         },
         {
           "overwriteName": "Attack 3 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B030",
@@ -5968,6 +6098,7 @@
         },
         {
           "overwriteName": "Extra Attack (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B040",
@@ -5982,6 +6113,7 @@
         },
         {
           "overwriteName": "Skill 1 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B080",
@@ -5996,6 +6128,7 @@
         },
         {
           "overwriteName": "Skill 2 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B090",
@@ -6010,6 +6143,7 @@
         },
         {
           "overwriteName": "Battle Start 1 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B100",
@@ -6024,6 +6158,7 @@
         },
         {
           "overwriteName": "Battle Start 2 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B110",
@@ -6038,6 +6173,7 @@
         },
         {
           "overwriteName": "Victory 1 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B120",
@@ -6052,6 +6188,7 @@
         },
         {
           "overwriteName": "Victory 2 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B130",
@@ -6066,6 +6203,7 @@
         },
         {
           "overwriteName": "Damage 2 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B140",
@@ -6080,6 +6218,7 @@
         },
         {
           "overwriteName": "Damage 1 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B150",
@@ -6094,6 +6233,7 @@
         },
         {
           "overwriteName": "Incapacitated 1 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B160",
@@ -6108,6 +6248,7 @@
         },
         {
           "overwriteName": "Incapacitated 2 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B170",
@@ -6122,6 +6263,7 @@
         },
         {
           "overwriteName": "Command Card 1 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B180",
@@ -6136,6 +6278,7 @@
         },
         {
           "overwriteName": "Command Card 2 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B190",
@@ -6150,6 +6293,7 @@
         },
         {
           "overwriteName": "Command Card 3 (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B200",
@@ -6164,6 +6308,7 @@
         },
         {
           "overwriteName": "Noble Phantasm Card (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B210",
@@ -6185,6 +6330,7 @@
       "scriptJson": [
         {
           "overwriteName": "Noble Phantasm (True Name Known)",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_B050",
@@ -6226,6 +6372,7 @@
       "scriptJson": [
         {
           "overwriteName": "About Spiritron Dress Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_H9000",
@@ -6263,6 +6410,7 @@
       "scriptJson": [
         {
           "overwriteName": "Level Up Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_G010",
@@ -6277,6 +6425,7 @@
         },
         {
           "overwriteName": "Unlock Wardrobe Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_G060",
@@ -6322,6 +6471,7 @@
       "scriptJson": [
         {
           "overwriteName": "Battle Start 1 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B100",
@@ -6336,6 +6486,7 @@
         },
         {
           "overwriteName": "Battle Start 2 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B110",
@@ -6350,6 +6501,7 @@
         },
         {
           "overwriteName": "Skill 1 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B080",
@@ -6364,6 +6516,7 @@
         },
         {
           "overwriteName": "Skill 2 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B090",
@@ -6378,6 +6531,7 @@
         },
         {
           "overwriteName": "Command Card 1 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B180",
@@ -6392,6 +6546,7 @@
         },
         {
           "overwriteName": "Command Card 2 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B190",
@@ -6406,6 +6561,7 @@
         },
         {
           "overwriteName": "Command Card 3 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B200",
@@ -6420,6 +6576,7 @@
         },
         {
           "overwriteName": "Noble Phantasm Card Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B210",
@@ -6434,6 +6591,7 @@
         },
         {
           "overwriteName": "Attack 1 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B010",
@@ -6448,6 +6606,7 @@
         },
         {
           "overwriteName": "Attack 2 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B020",
@@ -6462,6 +6621,7 @@
         },
         {
           "overwriteName": "Attack 3 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B030",
@@ -6476,6 +6636,7 @@
         },
         {
           "overwriteName": "Extra Attack Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B040",
@@ -6490,6 +6651,7 @@
         },
         {
           "overwriteName": "Damage 1 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B150",
@@ -6504,6 +6666,7 @@
         },
         {
           "overwriteName": "Damage 2 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B140",
@@ -6518,6 +6681,7 @@
         },
         {
           "overwriteName": "Incapacitated 1 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B160",
@@ -6532,6 +6696,7 @@
         },
         {
           "overwriteName": "Incapacitated 2 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B170",
@@ -6546,6 +6711,7 @@
         },
         {
           "overwriteName": "Victory 1 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B120",
@@ -6560,6 +6726,7 @@
         },
         {
           "overwriteName": "Victory 2 Grey Collar",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_B130",
@@ -6581,6 +6748,7 @@
       "scriptJson": [
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 1",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I010",
@@ -6603,6 +6771,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 2",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I020",
@@ -6633,6 +6802,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 3",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I030",
@@ -6658,6 +6828,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 4",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I040",
@@ -6691,6 +6862,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 5",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I050",
@@ -6716,6 +6888,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 6",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I580",
@@ -6749,6 +6922,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 6",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I060",
@@ -6779,6 +6953,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 7",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I070",
@@ -6801,6 +6976,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 8",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I080",
@@ -6847,6 +7023,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 9",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I090",
@@ -6901,6 +7078,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 10",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I100",
@@ -6931,6 +7109,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 11",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I110",
@@ -6964,6 +7143,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 12",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I120",
@@ -7002,6 +7182,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 13",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I130",
@@ -7032,6 +7213,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 14",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I410",
@@ -7086,6 +7268,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 15",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I500",
@@ -7127,6 +7310,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 16",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I510",
@@ -7184,6 +7368,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 17",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I520",
@@ -7233,6 +7418,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 18",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I530",
@@ -7290,6 +7476,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 19",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I540",
@@ -7347,6 +7534,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 20",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I550",
@@ -7404,6 +7592,7 @@
         },
         {
           "overwriteName": "An Old Spider Spins Webs of Memory 21",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "11_I560",
@@ -7460,6 +7649,7 @@
       "scriptJson": [
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 1",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_M610",
@@ -7474,6 +7664,7 @@
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 2",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_M620",
@@ -7488,6 +7679,7 @@
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 3",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_M630",
@@ -7502,6 +7694,7 @@
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 4",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_M640",
@@ -7516,6 +7709,7 @@
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 5",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_M650",
@@ -7530,6 +7724,7 @@
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 6",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_M660",
@@ -7544,6 +7739,7 @@
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 7",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_M670",
@@ -7574,6 +7770,7 @@
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 8",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_M680",
@@ -7604,6 +7801,7 @@
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 9",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_M690",
@@ -7642,6 +7840,7 @@
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 10",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_M700",
@@ -7664,6 +7863,7 @@
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 11",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_M710",
@@ -7710,6 +7910,7 @@
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 12",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_M720",
@@ -7756,6 +7957,7 @@
         },
         {
           "overwriteName": "Dead Heat Summer Race!\r\nTeam Conversation 13",
+          "overwritePriority": 0,
           "infos": [
             {
               "id": "0_M730",

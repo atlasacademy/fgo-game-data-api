@@ -25,7 +25,8 @@
   "individuality": [
     { "id": 3002, "name": "attackMagical" },
     { "id": 4002, "name": "cardBuster" },
-    { "id": 4007, "name": "cardNP" }
+    { "id": 4007, "name": "cardNP" },
+    { "id": 4101, "name": "aoeNP" }
   ],
   "script": {},
   "functions": [

@@ -1326,7 +1326,7 @@
           "mstTreasureDevice": [
             {
               "mstTreasureDevice": {
-                "individuality": [3001, 4003, 4007],
+                "individuality": [3001, 4003, 4007, 4101],
                 "script": {},
                 "id": 602401,
                 "seqId": 602400,
@@ -2488,7 +2488,8 @@
               }
             ],
             "costumeLimitSvtIdMap": {}
-          }
+          },
+          "mstSvtMultiPortrait": []
         }
       ],
       "MC": [],
