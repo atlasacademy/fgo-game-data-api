@@ -61,6 +61,7 @@ from ...models.raw import (
     mstSvtIndividuality,
     mstSvtLimit,
     mstSvtLimitAdd,
+    mstSvtMultiPortrait,
     mstSvtPassiveSkill,
     mstSvtScript,
     mstSvtVoiceRelation,
@@ -127,6 +128,7 @@ from ...schemas.raw import (
     MstSvtIndividuality,
     MstSvtLimit,
     MstSvtLimitAdd,
+    MstSvtMultiPortrait,
     MstSvtPassiveSkill,
     MstSvtScript,
     MstSvtVoiceRelation,
@@ -277,6 +279,11 @@ schema_table_fetch_all: dict[  # type:ignore
         mstSvtIndividuality.c.idx,
     ),
     MstTreasureBox: (mstTreasureBox, mstTreasureBox.c.eventId, mstTreasureBox.c.id),
+    MstSvtMultiPortrait: (
+        mstSvtMultiPortrait,
+        mstSvtMultiPortrait.c.svtId,
+        mstSvtMultiPortrait.c.limitCount,
+    ),
 }
 
 TFetchAll = TypeVar("TFetchAll", bound=BaseModelORJson)

@@ -77,6 +77,7 @@ from ..schemas.raw import (
     MstSvtIndividuality,
     MstSvtLimit,
     MstSvtLimitAdd,
+    MstSvtMultiPortrait,
     MstSvtPassiveSkill,
     MstSvtScript,
     MstSvtVoiceRelation,
@@ -352,6 +353,7 @@ async def get_servant_entity(
     )
     mstSvtCoin = await fetch.get_one(conn, MstSvtCoin, servant_id)
     mstSvtAdd = await fetch.get_one(conn, MstSvtAdd, servant_id)
+    mstSvtMultiPortrait = await fetch.get_all(conn, MstSvtMultiPortrait, servant_id)
 
     costume_chara_ids = [limit.battleCharaId for limit in mstSvtLimitAdd]
     mstSvtScript = await svt.get_svt_script(
@@ -405,6 +407,7 @@ async def get_servant_entity(
         mstTreasureDevice=mstTreasureDevice,
         mstSvtExtra=mstSvtExtra,
         mstItem=mstItem,
+        mstSvtMultiPortrait=mstSvtMultiPortrait,
     )
 
     if expand:

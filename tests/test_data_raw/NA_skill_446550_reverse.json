@@ -2192,7 +2192,8 @@
               }
             ],
             "costumeLimitSvtIdMap": {}
-          }
+          },
+          "mstSvtMultiPortrait": []
         },
         {
           "mstSvt": {
@@ -3448,7 +3449,8 @@
               "friendship": -1,
               "qp": 18000000
             }
-          ]
+          ],
+          "mstSvtMultiPortrait": []
         },
         {
           "mstSvt": {
@@ -4704,7 +4706,8 @@
               "friendship": -1,
               "qp": 18000000
             }
-          ]
+          ],
+          "mstSvtMultiPortrait": []
         }
       ],
       "MC": [],

@@ -256,6 +256,7 @@
               }
             },
             "charaFigureForm": {},
+            "charaFigureMulti": {},
             "commands": {
               "ascension": {
                 "1": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/202900/card_servant_1.png",

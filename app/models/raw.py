@@ -680,6 +680,19 @@ mstSvtCoin = Table(
 )
 
 
+mstSvtMultiPortrait = Table(
+    "mstSvtMultiPortrait",
+    metadata,
+    Column("commonPosition", ARRAY(Integer)),
+    Column("summonPosition", ARRAY(Integer)),
+    Column("svtId", Integer, index=True),
+    Column("limitCount", Integer),
+    Column("idx", Integer),
+    Column("portraitImageId", Integer),
+    Column("displayPriority", Integer),
+)
+
+
 mstEquip = Table(
     "mstEquip",
     metadata,
@@ -1581,6 +1594,7 @@ TABLES_TO_BE_LOADED = [
     mstSvtAppendPassiveSkillUnlock,
     mstCombineAppendPassiveSkill,
     mstSvtCoin,
+    mstSvtMultiPortrait,
     mstEquipExp,
     mstEquipSkill,
     mstCommandCodeSkill,

@@ -96,6 +96,7 @@
       }
     },
     "charaFigureForm": {},
+    "charaFigureMulti": {},
     "commands": {
       "ascension": {
         "1": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/800100/card_servant_1.png",
@@ -4193,6 +4194,223 @@
               "ApplySupportSvt": 0,
               "Individuality": 0,
               "EventId": 80331,
+              "RateCount": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 940221,
+      "name": "邪馬台パワー！ A（丸太）",
+      "ruby": "やまたいぱわー！",
+      "detail": "丈夫な丸太のドロップ獲得数を1個増やす ＋ 自身の『復刻:超古代新選組列伝 ぐだぐだ邪馬台国2020』における攻撃の威力を50%アップ ＋ 味方全体＜控え含む＞の『復刻:超古代新選組列伝 ぐだぐだ邪馬台国2020』のクエストクリア時に得られる絆を5%アップ(サポート時は無効)【『復刻:超古代新選組列伝 ぐだぐだ邪馬台国2020』イベント期間限定】",
+      "unmodifiedDetail": "丈夫な丸太のドロップ獲得数を1個増やす ＋ 自身の『復刻:超古代新選組列伝 ぐだぐだ邪馬台国2020』における攻撃の威力を50%アップ ＋ 味方全体＜控え含む＞の『復刻:超古代新選組列伝 ぐだぐだ邪馬台国2020』のクエストクリア時に得られる絆を5%アップ(サポート時は無効)【『復刻:超古代新選組列伝 ぐだぐだ邪馬台国2020』イベント期間限定】",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00200.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 16,
+          "priority": 156,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 80341,
+          "flag": 0,
+          "startedAt": 1635930000,
+          "endedAt": 1637121599
+        }
+      ],
+      "skillAdd": [],
+      "functions": [
+        {
+          "funcId": 7657,
+          "funcType": "eventDropUp",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80341,
+              "baseFuncId": 0,
+              "nameTotal": "{0}\n獲得数ボーナス合計",
+              "name": "{0}獲得数アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049105.png",
+              "priority": 2000,
+              "isDispValue": true
+            }
+          ],
+          "traitVals": [],
+          "buffs": [],
+          "svals": [{ "Individuality": 10679, "EventId": 80341, "AddCount": 1 }]
+        },
+        {
+          "funcId": 7664,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "邪馬台パワー！",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+          "functvals": [],
+          "funcquestTvals": [{ "id": 94000124, "name": "unknown" }],
+          "funcGroup": [
+            {
+              "eventId": 80341,
+              "baseFuncId": 7662,
+              "nameTotal": "{1} \n攻撃の威力アップ合計",
+              "name": "攻撃の威力アップ合計",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_302.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [
+            {
+              "id": 3845,
+              "name": "邪馬台パワー！",
+              "detail": "『復刻:超古代新選組列伝 ぐだぐだ邪馬台国2020』において与えるダメージをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+              "type": "upDamage",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 10000
+            }
+          ],
+          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 500 }]
+        },
+        {
+          "funcId": 7667,
+          "funcType": "servantFriendshipUp",
+          "funcTargetType": "ptFull",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80341,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n得られる自身の絆ボーナス合計",
+              "name": "得られる自身の絆アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1023.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            {
+              "ApplySupportSvt": 0,
+              "Individuality": 0,
+              "EventId": 80341,
+              "RateCount": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 940231,
+      "name": "SAITAMAパワー B",
+      "ruby": "SAITAMAぱわー",
+      "detail": "自身の『ぐだぐだ龍馬危機一髪！』における攻撃の威力を30%アップ ＋ 味方全体＜控え含む＞の『ぐだぐだ龍馬危機一髪！』のクエストクリア時に得られる絆を5%アップ(サポート時は無効)【『ぐだぐだ龍馬危機一髪！』イベント期間限定】",
+      "unmodifiedDetail": "自身の『ぐだぐだ龍馬危機一髪！』における攻撃の威力を30%アップ ＋ 味方全体＜控え含む＞の『ぐだぐだ龍馬危機一髪！』のクエストクリア時に得られる絆を5%アップ(サポート時は無効)【『ぐだぐだ龍馬危機一髪！』イベント期間限定】",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00301.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 16,
+          "priority": 157,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 80346,
+          "flag": 0,
+          "startedAt": 1637146800,
+          "endedAt": 1638331199
+        }
+      ],
+      "skillAdd": [],
+      "functions": [
+        {
+          "funcId": 7706,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "SAITAMAパワー",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+          "functvals": [],
+          "funcquestTvals": [{ "id": 94000125, "name": "unknown" }],
+          "funcGroup": [
+            {
+              "eventId": 80346,
+              "baseFuncId": 7704,
+              "nameTotal": "{1} \n攻撃の威力アップ合計",
+              "name": "攻撃の威力アップ合計",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_302.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [
+            {
+              "id": 3855,
+              "name": "SAITAMAパワー",
+              "detail": "『ぐだぐだ龍馬危機一髪！』において与えるダメージをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+              "type": "upDamage",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 10000
+            }
+          ],
+          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 300 }]
+        },
+        {
+          "funcId": 7874,
+          "funcType": "servantFriendshipUp",
+          "funcTargetType": "ptFull",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80346,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n得られる自身の絆ボーナス合計",
+              "name": "得られる自身の絆アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1023.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            {
+              "ApplySupportSvt": 0,
+              "Individuality": 0,
+              "EventId": 80346,
               "RateCount": 50
             }
           ]

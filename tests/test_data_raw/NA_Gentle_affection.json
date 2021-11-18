@@ -491,5 +491,6 @@
     { "type": 19, "lv": 99, "exp": 16665000, "curve": 1240 },
     { "type": 19, "lv": 100, "exp": 17170000, "curve": 1253 }
   ],
-  "mstFriendship": []
+  "mstFriendship": [],
+  "mstSvtMultiPortrait": []
 }

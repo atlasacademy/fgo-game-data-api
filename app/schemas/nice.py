@@ -536,6 +536,7 @@ class ExtraAssets(ExtraCCAssets):
     narrowFigure: ExtraAssetsUrl
     charaFigure: ExtraAssetsUrl
     charaFigureForm: dict[int, ExtraAssetsUrl]
+    charaFigureMulti: dict[int, ExtraAssetsUrl]
     commands: ExtraAssetsUrl
     status: ExtraAssetsUrl
     equipFace: ExtraAssetsUrl

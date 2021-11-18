@@ -711,6 +711,16 @@ class MstSvtGroup(BaseModelORJson):
     svtId: int
 
 
+class MstSvtMultiPortrait(BaseModelORJson):
+    commonPosition: list[int]
+    summonPosition: list[int]
+    svtId: int
+    limitCount: int
+    idx: int
+    portraitImageId: int
+    displayPriority: int
+
+
 def get_subtitle_svtId(sub_id: str) -> int:
     svt = sub_id.split("_")[0]
     try:
@@ -1372,6 +1382,7 @@ class ServantEntity(BaseModelORJson):
     mstSvtExtra: Optional[MstSvtExtra] = None
     mstSvtComment: list[MstSvtComment] = []
     mstSvtVoice: list[MstSvtVoice] = []
+    mstSvtMultiPortrait: list[MstSvtMultiPortrait] = []
     mstVoice: list[MstVoice] = []
     mstSvtGroup: list[MstSvtGroup] = []
     mstSubtitle: list[GlobalNewMstSubtitle] = []

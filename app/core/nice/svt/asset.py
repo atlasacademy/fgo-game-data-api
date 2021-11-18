@@ -24,6 +24,16 @@ def fmt_url(url_fmt: str, **kwargs: Union[int, str]) -> HttpUrl:
 def get_svt_extraAssets(
     region: Region, svt_id: int, raw_svt: ServantEntity, costume_ids: dict[int, int]
 ) -> ExtraAssets:
+    """
+    Args:
+        region (`Region`): region
+        svt_id (`int`): servant ID
+        raw_svt (`ServantEntity`): raw servant data
+        costume_ids (`dict[int, int]`): servant costume limit to `battleCharaId` mapping
+
+    Returns:
+        ExtraAssets
+    """
     charaGraph = ExtraAssetsUrl()
     charaGraphEx = ExtraAssetsUrl()
     charaGraphName = ExtraAssetsUrl()
@@ -32,6 +42,9 @@ def get_svt_extraAssets(
     status = ExtraAssetsUrl()
     charaFigure = ExtraAssetsUrl()
     charaFigureForm: dict[int, dict[str, dict[int, str]]] = defaultdict(
+        lambda: defaultdict(dict)
+    )
+    charaFigureMulti: dict[int, dict[str, dict[int, str]]] = defaultdict(
         lambda: defaultdict(dict)
     )
     narrowFigure = ExtraAssetsUrl()
@@ -188,6 +201,18 @@ def get_svt_extraAssets(
             elif svtScript.id in extra_chara_ids:  # pragma: no cover
                 charaFigureForm[script_form]["story"][svtScript.id] = asset_url
 
+    for multiPortrait in raw_svt.mstSvtMultiPortrait:
+        asset_url = AssetURL.charaFigureId.format(
+            **base_settings, charaFigure=multiPortrait.portraitImageId
+        )
+        if multiPortrait.limitCount in costume_ids:  # pragma: no cover
+            battleCharaId = costume_ids[multiPortrait.limitCount]
+            charaFigureMulti[multiPortrait.idx]["costume"][battleCharaId] = asset_url
+        else:
+            charaFigureMulti[multiPortrait.idx]["ascension"][
+                multiPortrait.limitCount + 1
+            ] = asset_url
+
     image.story = {
         i: fmt_url(AssetURL.image, **base_settings, image=image)
         for i, image in enumerate(EXTRA_IMAGES.get(svt_id, []))
@@ -201,6 +226,9 @@ def get_svt_extraAssets(
         charaFigure=charaFigure,
         charaFigureForm={
             k: ExtraAssetsUrl.parse_obj(v) for k, v in charaFigureForm.items()
+        },
+        charaFigureMulti={
+            k: ExtraAssetsUrl.parse_obj(v) for k, v in charaFigureMulti.items()
         },
         narrowFigure=narrowFigure,
         commands=commands,

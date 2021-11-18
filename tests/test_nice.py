@@ -477,6 +477,12 @@ class TestServantSpecial:
             "4"
         ].endswith("JP/CharaGraph/CharaGraphEx/2800100/2800100b@2.png")
 
+    async def test_charaFigureMulti(self, client: AsyncClient) -> None:
+        response = await client.get("/nice/JP/servant/327")
+        assert response.json()["extraAssets"]["charaFigureMulti"]["1"]["ascension"][
+            "1"
+        ].endswith("JP/CharaFigure/5049900/5049900_merged.png")
+
     async def test_skillAdd(self, client: AsyncClient) -> None:
         response = await client.get("/nice/JP/skill/900250")
         assert response.json()["skillAdd"] == [

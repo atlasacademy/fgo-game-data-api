@@ -489,5 +489,6 @@
     "valentineEquip": [],
     "valentineScript": [],
     "costumeLimitSvtIdMap": {}
-  }
+  },
+  "mstSvtMultiPortrait": []
 }
