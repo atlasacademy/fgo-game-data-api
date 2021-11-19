@@ -10,6 +10,7 @@ import uvicorn  # type: ignore
 from aioredis import Redis
 from fastapi import Depends, FastAPI, HTTPException, Request, Response, status
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.openapi.utils import get_openapi
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi_cache import FastAPICache
@@ -304,6 +305,30 @@ if settings.github_webhook_secret.get_secret_value() != "":  # pragma: no cover
 
 
 app.mount("/export", StaticFiles(directory="export"), name="export")
+
+
+def custom_openapi() -> dict[str, Any]:
+    if app.openapi_schema:
+        return app.openapi_schema
+    openapi_schema = get_openapi(
+        title=app.title,
+        version=app.version,
+        openapi_version=app.openapi_version,
+        description=app.description,
+        terms_of_service=app.terms_of_service,
+        contact=app.contact,
+        license_info=app.license_info,
+        routes=app.routes,
+        tags=app.openapi_tags,
+        servers=app.servers,
+    )
+    openapi_schema["info"]["x-server-commit-hash"] = secret.app_info.hash
+    openapi_schema["info"]["x-server-commit-timestamp"] = secret.app_info.timestamp
+    app.openapi_schema = openapi_schema
+    return app.openapi_schema
+
+
+app.openapi = custom_openapi  # type: ignore
 
 
 def get_swagger_ui_html(

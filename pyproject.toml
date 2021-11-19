@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fgo-game-data-api"
-version = "5.74.0"
+version = "5.75.0"
 description = "Provide raw and processed FGO game data"
 authors = ["squaresmile <squaresmile@protonmail.com>"]
 
@@ -29,7 +29,7 @@ setproctitle = "^1.2.2"
 pytest = "^6.2.5"
 pylint = "^2.11.1"
 mypy = "^0.910"
-black = "^21.11b0"
+black = "^21.11b1"
 pytest-xdist = "^2.4.0"
 coverage = "^6.1.2"
 fuzzywuzzy-stubs = "^0.0.1"
