@@ -5,6 +5,7 @@
   "consumeType": "ap",
   "consume": 1,
   "consumeItem": [],
+  "afterClear": "close",
   "spotId": 820001,
   "warId": 8200,
   "warLongName": "The Tale of Setsubun: Oni Pagoda Festival",

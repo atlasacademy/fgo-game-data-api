@@ -5,6 +5,7 @@
   "consumeType": "ap",
   "consume": 5,
   "consumeItem": [],
+  "afterClear": "close",
   "spotId": 909109,
   "warId": 9091,
   "warLongName": "納涼夢幻冥峰　パラダイスレイク",

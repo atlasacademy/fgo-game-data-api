@@ -2483,6 +2483,30 @@ QUEST_CONSUME_TYPE_NAME: dict[int, NiceConsumeType] = {
 }
 
 
+class QuestAfterClearType(IntEnum):
+    CLOSE = 1
+    REPEAT_FIRST = 2
+    REPEAT_LAST = 3
+    RESET_INTERVAL = 4
+
+
+class NiceQuestAfterClearType(str, Enum):
+    """Quest After Clear Enum"""
+
+    close = "close"
+    repeatFirst = "repeatFirst"
+    repeatLast = "repeatLast"
+    resetInterval = "resetInterval"
+
+
+QUEST_AFTER_CLEAR_NAME: dict[int, NiceQuestAfterClearType] = {
+    1: NiceQuestAfterClearType.close,
+    2: NiceQuestAfterClearType.repeatFirst,
+    3: NiceQuestAfterClearType.repeatLast,
+    4: NiceQuestAfterClearType.resetInterval,
+}
+
+
 class QuestFlag(IntEnum):
     NONE = 1
     NO_BATTLE = 2

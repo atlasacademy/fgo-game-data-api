@@ -5,6 +5,7 @@
   "consumeType": "ap",
   "consume": 30,
   "consumeItem": [],
+  "afterClear": "repeatLast",
   "spotId": 836401,
   "warId": 8364,
   "warLongName": "復刻:Grandネロ祭 ～2021 Early Summer～",

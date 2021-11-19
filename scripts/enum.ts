@@ -865,6 +865,13 @@ export enum NiceConsumeType {
     AP_AND_ITEM = "apAndItem",
 }
 
+export enum NiceQuestAfterClearType {
+    CLOSE = "close",
+    REPEAT_FIRST = "repeatFirst",
+    REPEAT_LAST = "repeatLast",
+    RESET_INTERVAL = "resetInterval",
+}
+
 export enum NiceQuestFlag {
     NONE = "none",
     NO_BATTLE = "noBattle",

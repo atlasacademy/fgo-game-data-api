@@ -5,6 +5,7 @@
   "consumeType": "ap",
   "consume": 5,
   "consumeItem": [],
+  "afterClear": "close",
   "spotId": 905332,
   "warId": 9053,
   "warLongName": "Abyssal Cyber Paradise, SE.RA.PH",

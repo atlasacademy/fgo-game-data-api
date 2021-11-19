@@ -5,6 +5,7 @@
   "consumeType": "ap",
   "consume": 20,
   "consumeItem": [],
+  "afterClear": "close",
   "spotId": 99003,
   "warId": 1003,
   "warLongName": "幕間の物語",

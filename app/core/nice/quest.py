@@ -15,6 +15,7 @@ from ...schemas.common import Language, Region, ScriptLink
 from ...schemas.enums import CLASS_NAME
 from ...schemas.gameenums import (
     COND_TYPE_NAME,
+    QUEST_AFTER_CLEAR_NAME,
     QUEST_CONSUME_TYPE_NAME,
     QUEST_TYPE_NAME,
 )
@@ -132,6 +133,7 @@ async def get_nice_quest(
             )
         ],
         "consume": raw_quest.mstQuest.actConsume,
+        "afterClear": QUEST_AFTER_CLEAR_NAME[raw_quest.mstQuest.afterClear],
         "spotId": raw_quest.mstQuest.spotId,
         "warId": mstWar.id,
         "warLongName": get_translation(lang, mstWar.longName),

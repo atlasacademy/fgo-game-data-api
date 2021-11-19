@@ -5,9 +5,15 @@ All notable changes to the public API will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
+
+## 5.75.0 - 2021-11-19
 ### Added
 - `deckId` (position) and `roleType` (danger, servant) to enemy data.
 - `unmodifiedDetail` to nice skill and np.
+- enums from 2.43.0 apk.
+- `charaFigureMulti` for servants with multiple charafigures.
+- `x-server-commit-hash` and `x-server-commit-timestamp` to openapi.json `info` field.
+- `afterClear` to nice quest and nice quest phase.
 
 ## 5.74.0 - 2021-10-18
 ### Added

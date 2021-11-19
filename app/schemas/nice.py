@@ -55,6 +55,7 @@ from .gameenums import (
     NiceMissionType,
     NicePayType,
     NicePurchaseType,
+    NiceQuestAfterClearType,
     NiceQuestType,
     NiceShopType,
     NiceStatusRank,
@@ -1405,6 +1406,7 @@ class NiceQuest(BaseModelORJson):
     consumeType: NiceConsumeType
     consume: int
     consumeItem: list[NiceItemAmount]
+    afterClear: NiceQuestAfterClearType
     spotId: int
     warId: int
     warLongName: str

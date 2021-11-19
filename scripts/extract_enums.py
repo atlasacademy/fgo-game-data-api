@@ -1,5 +1,7 @@
 import argparse
 
+from black import FileMode, format_str
+
 
 PYTHON_NAME_JSON_NAME_OVERRIDE = {
     "UPPER": "upper_",
@@ -266,6 +268,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "QUEST_CONSUME_TYPE_NAME",
     ),
     (
+        "QuestEntity.enAfterClear",
+        "QuestAfterClearType",
+        "NiceQuestAfterClearType",
+        "Quest After Clear Enum",
+        "QUEST_AFTER_CLEAR_NAME",
+    ),
+    (
         "QuestEntity.Flag",
         "QuestFlag",
         "NiceQuestFlag",
@@ -421,7 +430,8 @@ def main(dump_path: str, gameenums_path: str, typescript_path: str = "") -> None
 
     print(f"Writing {gameenums_path} ...")
     with open(gameenums_path, "w", encoding="utf-8", newline="") as fp:
-        fp.writelines(python_lines)
+        blacked = format_str("".join(python_lines), mode=FileMode())
+        fp.writelines(blacked)
 
     if typescript_path:
         ts_lines: list[str] = []
