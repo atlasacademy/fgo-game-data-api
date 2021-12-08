@@ -506,6 +506,11 @@ export enum NiceDataValsType {
     IncludeIgnoreIndividuality = "includeignoreindividuality",
     EvenIfWinDie = "evenifwindie",
     CallSvtEffectId = "callsvteffectid",
+    ForceAddState = "forceaddstate",
+    UnSubState = "unsubstate",
+    ForceSubState = "forcesubstate",
+    IgnoreIndivUnreleaseable = "ignoreindivunreleaseable",
+    OnParty = "onparty",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -544,6 +549,7 @@ export enum NiceItemType {
     CONTINUE_ITEM = "continueItem",
     EUQIP_SKILL_USE_ITEM = "euqipSkillUseItem",
     SVT_COIN = "svtCoin",
+    FRIENDSHIP_UP_ITEM = "friendshipUpItem",
 }
 
 export enum NiceGiftType {

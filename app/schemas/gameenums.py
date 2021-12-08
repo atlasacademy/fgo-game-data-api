@@ -1375,6 +1375,11 @@ class DataValsType(IntEnum):
     IncludeIgnoreIndividuality = 84
     EvenIfWinDie = 85
     CallSvtEffectId = 86
+    ForceAddState = 87
+    UnSubState = 88
+    ForceSubState = 89
+    IgnoreIndivUnreleaseable = 90
+    OnParty = 91
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -1428,6 +1433,7 @@ class ItemType(IntEnum):
     CONTINUE_ITEM = 27
     EUQIP_SKILL_USE_ITEM = 28
     SVT_COIN = 29
+    FRIENDSHIP_UP_ITEM = 30
 
 
 class NiceItemType(str, Enum):
@@ -1462,6 +1468,7 @@ class NiceItemType(str, Enum):
     continueItem = "continueItem"
     euqipSkillUseItem = "euqipSkillUseItem"
     svtCoin = "svtCoin"
+    friendshipUpItem = "friendshipUpItem"
 
 
 ITEM_TYPE_NAME: dict[int, NiceItemType] = {
@@ -1494,6 +1501,7 @@ ITEM_TYPE_NAME: dict[int, NiceItemType] = {
     27: NiceItemType.continueItem,
     28: NiceItemType.euqipSkillUseItem,
     29: NiceItemType.svtCoin,
+    30: NiceItemType.friendshipUpItem,
 }
 
 
