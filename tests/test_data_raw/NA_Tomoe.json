@@ -1111,7 +1111,7 @@
       "mstSvtTreasureDevice": [
         {
           "damage": [100],
-          "strengthStatus": 1,
+          "strengthStatus": 2,
           "svtId": 202100,
           "num": 1,
           "priority": 102,
@@ -2053,8 +2053,8 @@
   "mstSvtLimitAdd": [],
   "mstSvtChange": [
     {
-      "beforeTreasureDeviceIds": [202100],
-      "afterTreasureDeviceIds": [202101],
+      "beforeTreasureDeviceIds": [202100, 202102],
+      "afterTreasureDeviceIds": [202101, 202103],
       "svtId": 202100,
       "priority": 1,
       "condType": 36,

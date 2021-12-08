@@ -128,7 +128,7 @@ test_cases_dict: dict[str, tuple[str, set[int]]] = {
     "skill_search_strength": ("JP/skill/search?strengthStatus=2&type=active", {94349}),
     "skill_search_num": (
         "JP/skill/search?strengthStatus=99&type=active&numFunctions=5&num=3",
-        {292452},
+        {292452, 621675},
     ),
     "skill_search_priority": ("JP/skill/search?priority=5", {744450}),
     "skill_search_name": (
@@ -150,7 +150,7 @@ test_cases_dict: dict[str, tuple[str, set[int]]] = {
     ),
     "buff_type_tvals": (
         "NA/buff/search?type=upCommandall&tvals=cardQuick",
-        {100, 260, 499, 1084, 1094, 1246, 1273, 1301, 1413, 2512, 2210},
+        {100, 260, 499, 1084, 1094, 1246, 1273, 1301, 1413, 2512, 2210, 2630, 2631},
     ),
     "buff_type_vals": ("NA/buff/search?vals=buffCharm", {175, 926, 1315}),
     "buff_type_ckSelfIndv": (

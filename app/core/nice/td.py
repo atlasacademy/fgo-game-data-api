@@ -99,7 +99,7 @@ async def get_nice_td(
         "item_id": svtId,
     }
 
-    if not chosen_svts:
+    if not chosen_svts:  # pragma: no cover
         nice_td |= {
             "icon": AssetURL.commands.format(**base_settings_id, i="np"),
             "strengthStatus": 0,
