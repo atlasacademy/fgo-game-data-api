@@ -1107,6 +1107,8 @@ mstBoxGacha = Table(
     Column("priority", Integer),
     Column("flag", Integer),
     Column("presentMessageId", Integer),
+    Column("changeMaxDrawAtOnceResetNum", BigInteger),
+    Column("maxRequiredPresentBoxSpace", Integer),
 )
 
 

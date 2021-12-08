@@ -966,6 +966,8 @@ class MstBoxGacha(BaseModelORJson):
     priority: int
     flag: int
     presentMessageId: Optional[int]
+    changeMaxDrawAtOnceResetNum: Optional[int]
+    maxRequiredPresentBoxSpace: Optional[int]
 
 
 class MstBoxGachaBase(BaseModelORJson):
