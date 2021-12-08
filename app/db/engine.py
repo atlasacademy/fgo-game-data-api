@@ -1,14 +1,26 @@
-import sqlalchemy
+from sqlalchemy import create_engine
+from sqlalchemy.ext.asyncio import create_async_engine
+from uvicorn.logging import TRACE_LOG_LEVEL  # type: ignore
 
-from ..config import Settings
+from ..config import Settings, logger
 
 
 settings = Settings()
 
 
 engines = {
-    region: sqlalchemy.create_engine(
+    region: create_engine(
         region_data.postgresdsn, pool_size=1, max_overflow=5, future=True
+    )
+    for region, region_data in settings.data.items()
+}
+
+async_engines = {
+    region: create_async_engine(
+        region_data.postgresdsn.replace("postgresql", "postgresql+asyncpg"),
+        echo=logger.isEnabledFor(TRACE_LOG_LEVEL),
+        pool_size=3,
+        max_overflow=10,
     )
     for region, region_data in settings.data.items()
 }

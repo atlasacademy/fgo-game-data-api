@@ -5,13 +5,13 @@ from aioredis import Redis
 from fastapi import APIRouter, BackgroundTasks, Depends, Response
 from git import Repo  # type: ignore
 from pydantic import BaseModel
-from sqlalchemy.ext.asyncio import AsyncEngine
 
 from ..config import Settings, project_root
 from ..core.info import get_all_repo_info
-from ..schemas.common import Region, RepoInfo
+from ..db.engine import async_engines
+from ..schemas.common import RepoInfo
 from ..tasks import pull_and_update
-from .deps import get_async_engines, get_redis
+from .deps import get_redis
 from .utils import pretty_print_response
 
 
@@ -57,7 +57,6 @@ class GithubWebhookPayload(BaseModel):
 async def update_gamedata(
     background_tasks: BackgroundTasks,
     payload: Optional[GithubWebhookPayload],
-    async_engines: dict[Region, AsyncEngine] = Depends(get_async_engines),
     redis: Redis = Depends(get_redis),
 ) -> Response:
     region_pathes = {

@@ -2,7 +2,6 @@ from aioredis import Redis
 from fastapi import APIRouter, Depends, Query, Response
 from fastapi_cache.decorator import cache
 from fastapi_limiter.depends import RateLimiter  # type: ignore
-from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..config import Settings
 from ..core import raw, search
@@ -49,9 +48,7 @@ settings = Settings()
 router = APIRouter(
     prefix="/raw",
     tags=["raw"],
-    dependencies=[
-        Depends(RateLimiter(times=settings.rate_limit_per_5_sec * 5, seconds=5))
-    ],
+    dependencies=[Depends(RateLimiter(times=settings.rate_limit_per_5_sec, seconds=5))],
 )
 
 
@@ -77,15 +74,15 @@ async def find_servant(
     search_param: ServantSearchQueryParams = Depends(ServantSearchQueryParams),
     expand: bool = False,
     lore: bool = False,
-    conn: AsyncConnection = Depends(get_db),
 ) -> Response:
-    matches = await search.search_servant(conn, search_param)
-    return list_response(
-        [
-            await raw.get_servant_entity(conn, mstSvt.id, expand, lore, mstSvt)
-            for mstSvt in matches
-        ]
-    )
+    async with get_db(search_param.region) as conn:
+        matches = await search.search_servant(conn, search_param)
+        return list_response(
+            [
+                await raw.get_servant_entity(conn, mstSvt.id, expand, lore, mstSvt)
+                for mstSvt in matches
+            ]
+        )
 
 
 get_servant_description = """
@@ -107,14 +104,15 @@ Otherwise, it will look up the actual ID field. As a result, it can return not s
 )
 @cache()  # type: ignore
 async def get_servant(
+    region: Region,
     servant_id: int,
     expand: bool = False,
     lore: bool = False,
-    conn: AsyncConnection = Depends(get_db),
 ) -> Response:
-    servant_id = await get_svt_id(conn, servant_id)
-    servant_entity = await raw.get_servant_entity(conn, servant_id, expand, lore)
-    return item_response(servant_entity)
+    async with get_db(region) as conn:
+        servant_id = await get_svt_id(conn, servant_id)
+        servant_entity = await raw.get_servant_entity(conn, servant_id, expand, lore)
+        return item_response(servant_entity)
 
 
 @router.get(
@@ -131,15 +129,15 @@ async def find_equip(
     search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
     expand: bool = False,
     lore: bool = False,
-    conn: AsyncConnection = Depends(get_db),
 ) -> Response:
-    matches = await search.search_equip(conn, search_param)
-    return list_response(
-        [
-            await raw.get_servant_entity(conn, mstSvt.id, expand, lore, mstSvt)
-            for mstSvt in matches
-        ]
-    )
+    async with get_db(search_param.region) as conn:
+        matches = await search.search_equip(conn, search_param)
+        return list_response(
+            [
+                await raw.get_servant_entity(conn, mstSvt.id, expand, lore, mstSvt)
+                for mstSvt in matches
+            ]
+        )
 
 
 get_ce_description = """
@@ -161,14 +159,15 @@ Otherwise, it will look up the actual ID field. As a result, it can return not C
 )
 @cache()  # type: ignore
 async def get_equip(
+    region: Region,
     equip_id: int,
     expand: bool = False,
     lore: bool = False,
-    conn: AsyncConnection = Depends(get_db),
 ) -> Response:
-    equip_id = await get_ce_id(conn, equip_id)
-    servant_entity = await raw.get_servant_entity(conn, equip_id, expand, lore)
-    return item_response(servant_entity)
+    async with get_db(region) as conn:
+        equip_id = await get_ce_id(conn, equip_id)
+        servant_entity = await raw.get_servant_entity(conn, equip_id, expand, lore)
+        return item_response(servant_entity)
 
 
 @router.get(
@@ -185,15 +184,15 @@ async def find_svt(
     search_param: SvtSearchQueryParams = Depends(SvtSearchQueryParams),
     expand: bool = False,
     lore: bool = False,
-    conn: AsyncConnection = Depends(get_db),
 ) -> Response:
-    matches = await search.search_servant(conn, search_param)
-    return list_response(
-        [
-            await raw.get_servant_entity(conn, mstSvt.id, expand, lore, mstSvt)
-            for mstSvt in matches
-        ]
-    )
+    async with get_db(search_param.region) as conn:
+        matches = await search.search_servant(conn, search_param)
+        return list_response(
+            [
+                await raw.get_servant_entity(conn, mstSvt.id, expand, lore, mstSvt)
+                for mstSvt in matches
+            ]
+        )
 
 
 get_svt_description = """
@@ -214,13 +213,14 @@ Only uses actual ID for the lookup.
 )
 @cache()  # type: ignore
 async def get_svt(
+    region: Region,
     svt_id: int,
     expand: bool = False,
     lore: bool = False,
-    conn: AsyncConnection = Depends(get_db),
 ) -> Response:
-    servant_entity = await raw.get_servant_entity(conn, svt_id, expand, lore)
-    return item_response(servant_entity)
+    async with get_db(region) as conn:
+        servant_entity = await raw.get_servant_entity(conn, svt_id, expand, lore)
+        return item_response(servant_entity)
 
 
 @router.get(
@@ -231,11 +231,10 @@ async def get_svt(
     response_model_exclude_unset=True,
 )
 @cache()  # type: ignore
-async def get_svt_scripts(
-    charaId: list[int] = Query([]), conn: AsyncConnection = Depends(get_db)
-) -> Response:
-    servant_entity = await raw.get_svt_scripts(conn, charaId)
-    return list_response(servant_entity)
+async def get_svt_scripts(region: Region, charaId: list[int] = Query([])) -> Response:
+    async with get_db(region) as conn:
+        servant_entity = await raw.get_svt_scripts(conn, charaId)
+        return list_response(servant_entity)
 
 
 @router.get(
@@ -248,17 +247,18 @@ async def get_svt_scripts(
 )
 @cache()  # type: ignore
 async def get_mystic_code(
+    region: Region,
     mc_id: int,
     expand: bool = False,
-    conn: AsyncConnection = Depends(get_db),
 ) -> Response:
     """
     Get Mystic Code info from ID
 
     - **expand**: Expand the skills and functions.
     """
-    mc_entity = await raw.get_mystic_code_entity(conn, mc_id, expand)
-    return item_response(mc_entity)
+    async with get_db(region) as conn:
+        mc_entity = await raw.get_mystic_code_entity(conn, mc_id, expand)
+        return item_response(mc_entity)
 
 
 @router.get(
@@ -271,16 +271,17 @@ async def get_mystic_code(
 )
 @cache()  # type: ignore
 async def get_command_code(
-    cc_id: int, expand: bool = False, conn: AsyncConnection = Depends(get_db)
+    region: Region, cc_id: int, expand: bool = False
 ) -> Response:
     """
     Get Command Code info from ID
 
     - **expand**: Expand the skills and functions.
     """
-    cc_id = await get_cc_id(conn, cc_id)
-    cc_entity = await raw.get_command_code_entity(conn, cc_id, expand)
-    return item_response(cc_entity)
+    async with get_db(region) as conn:
+        cc_id = await get_cc_id(conn, cc_id)
+        cc_entity = await raw.get_command_code_entity(conn, cc_id, expand)
+        return item_response(cc_entity)
 
 
 raw_skill_extra = """
@@ -305,18 +306,23 @@ async def find_skill(
     search_param: SkillSearchParams = Depends(SkillSearchParams),
     reverse: bool = False,
     expand: bool = False,
-    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    matches = await search.search_skill(conn, search_param)
-    return list_response(
-        [
-            await raw.get_skill_entity(
-                conn, redis, search_param.region, mstSkill.id, reverse, expand=expand
-            )
-            for mstSkill in matches
-        ]
-    )
+    async with get_db(search_param.region) as conn:
+        matches = await search.search_skill(conn, search_param)
+        return list_response(
+            [
+                await raw.get_skill_entity(
+                    conn,
+                    redis,
+                    search_param.region,
+                    mstSkill.id,
+                    reverse,
+                    expand=expand,
+                )
+                for mstSkill in matches
+            ]
+        )
 
 
 @router.get(
@@ -334,13 +340,13 @@ async def get_skill(
     skill_id: int,
     reverse: bool = False,
     expand: bool = False,
-    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    skill_entity = await raw.get_skill_entity(
-        conn, redis, region, skill_id, reverse, expand=expand
-    )
-    return item_response(skill_entity)
+    async with get_db(region) as conn:
+        skill_entity = await raw.get_skill_entity(
+            conn, redis, region, skill_id, reverse, expand=expand
+        )
+        return item_response(skill_entity)
 
 
 raw_td_extra = """
@@ -365,12 +371,15 @@ async def find_td(
     search_param: TdSearchParams = Depends(TdSearchParams),
     reverse: bool = False,
     expand: bool = False,
-    conn: AsyncConnection = Depends(get_db),
 ) -> Response:
-    matches = await search.search_td(conn, search_param)
-    return list_response(
-        [await raw.get_td_entity(conn, td.id, reverse, expand=expand) for td in matches]
-    )
+    async with get_db(search_param.region) as conn:
+        matches = await search.search_td(conn, search_param)
+        return list_response(
+            [
+                await raw.get_td_entity(conn, td.id, reverse, expand=expand)
+                for td in matches
+            ]
+        )
 
 
 @router.get(
@@ -384,13 +393,14 @@ async def find_td(
 )
 @cache()  # type: ignore
 async def get_td(
+    region: Region,
     np_id: int,
     reverse: bool = False,
     expand: bool = False,
-    conn: AsyncConnection = Depends(get_db),
 ) -> Response:
-    td_entity = await raw.get_td_entity(conn, np_id, reverse, expand=expand)
-    return item_response(td_entity)
+    async with get_db(region) as conn:
+        td_entity = await raw.get_td_entity(conn, np_id, reverse, expand=expand)
+        return item_response(td_entity)
 
 
 function_reverse_expand_description = """
@@ -416,25 +426,25 @@ async def find_function(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     expand: bool = False,
-    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    matches = await search.search_func(conn, search_param)
-    return list_response(
-        [
-            await raw.get_func_entity(
-                conn,
-                redis,
-                search_param.region,
-                mstFunc.id,
-                reverse,
-                reverseDepth,
-                expand,
-                mstFunc,
-            )
-            for mstFunc in matches
-        ]
-    )
+    async with get_db(search_param.region) as conn:
+        matches = await search.search_func(conn, search_param)
+        return list_response(
+            [
+                await raw.get_func_entity(
+                    conn,
+                    redis,
+                    search_param.region,
+                    mstFunc.id,
+                    reverse,
+                    reverseDepth,
+                    expand,
+                    mstFunc,
+                )
+                for mstFunc in matches
+            ]
+        )
 
 
 @router.get(
@@ -454,13 +464,13 @@ async def get_function(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     expand: bool = False,
-    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    func_entity = await raw.get_func_entity(
-        conn, redis, region, func_id, reverse, reverseDepth, expand
-    )
-    return item_response(func_entity)
+    async with get_db(region) as conn:
+        func_entity = await raw.get_func_entity(
+            conn, redis, region, func_id, reverse, reverseDepth, expand
+        )
+        return item_response(func_entity)
 
 
 buff_reverse_description = """
@@ -484,24 +494,24 @@ async def find_buff(
     search_param: BuffSearchQueryParams = Depends(BuffSearchQueryParams),
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
-    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    matches = await search.search_buff(conn, search_param)
-    return list_response(
-        [
-            await raw.get_buff_entity(
-                conn,
-                redis,
-                search_param.region,
-                mstBuff.id,
-                reverse,
-                reverseDepth,
-                mstBuff,
-            )
-            for mstBuff in matches
-        ]
-    )
+    async with get_db(search_param.region) as conn:
+        matches = await search.search_buff(conn, search_param)
+        return list_response(
+            [
+                await raw.get_buff_entity(
+                    conn,
+                    redis,
+                    search_param.region,
+                    mstBuff.id,
+                    reverse,
+                    reverseDepth,
+                    mstBuff,
+                )
+                for mstBuff in matches
+            ]
+        )
 
 
 @router.get(
@@ -519,13 +529,13 @@ async def get_buff(
     buff_id: int,
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
-    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    buff_entity = await raw.get_buff_entity(
-        conn, redis, region, buff_id, reverse, reverseDepth
-    )
-    return item_response(buff_entity)
+    async with get_db(region) as conn:
+        buff_entity = await raw.get_buff_entity(
+            conn, redis, region, buff_id, reverse, reverseDepth
+        )
+        return item_response(buff_entity)
 
 
 @router.get(
@@ -540,10 +550,10 @@ async def get_buff(
 @cache()  # type: ignore
 async def find_item(
     search_param: ItemSearchQueryParams = Depends(ItemSearchQueryParams),
-    conn: AsyncConnection = Depends(get_db),
 ) -> Response:
-    matches = await search.search_item(conn, search_param)
-    return list_response(ItemEntity(mstItem=mstItem) for mstItem in matches)
+    async with get_db(search_param.region) as conn:
+        matches = await search.search_item(conn, search_param)
+        return list_response(ItemEntity(mstItem=mstItem) for mstItem in matches)
 
 
 @router.get(
@@ -555,11 +565,12 @@ async def find_item(
     responses=get_error_code([404]),
 )
 @cache()  # type: ignore
-async def get_item(item_id: int, conn: AsyncConnection = Depends(get_db)) -> Response:
+async def get_item(region: Region, item_id: int) -> Response:
     """
     Get the item data from the given ID
     """
-    return item_response(await raw.get_item_entity(conn, item_id))
+    async with get_db(region) as conn:
+        return item_response(await raw.get_item_entity(conn, item_id))
 
 
 @router.get(
@@ -571,13 +582,14 @@ async def get_item(item_id: int, conn: AsyncConnection = Depends(get_db)) -> Res
     responses=get_error_code([404]),
 )
 @cache()  # type: ignore
-async def get_mm(
-    master_mission_id: int, conn: AsyncConnection = Depends(get_db)
-) -> Response:
+async def get_mm(region: Region, master_mission_id: int) -> Response:
     """
     Get the master mission data from the given master mission ID
     """
-    return item_response(await raw.get_master_mission_entity(conn, master_mission_id))
+    async with get_db(region) as conn:
+        return item_response(
+            await raw.get_master_mission_entity(conn, master_mission_id)
+        )
 
 
 @router.get(
@@ -589,11 +601,12 @@ async def get_mm(
     responses=get_error_code([404]),
 )
 @cache()  # type: ignore
-async def get_event(event_id: int, conn: AsyncConnection = Depends(get_db)) -> Response:
+async def get_event(region: Region, event_id: int) -> Response:
     """
     Get the event data from the given event ID
     """
-    return item_response(await raw.get_event_entity(conn, event_id))
+    async with get_db(region) as conn:
+        return item_response(await raw.get_event_entity(conn, event_id))
 
 
 @router.get(
@@ -605,12 +618,12 @@ async def get_event(event_id: int, conn: AsyncConnection = Depends(get_db)) -> R
     responses=get_error_code([404]),
 )
 @cache(expire=settings.quest_cache_length)  # type: ignore
-async def get_war(war_id: int, conn: AsyncConnection = Depends(get_db)) -> Response:
+async def get_war(region: Region, war_id: int) -> Response:
     """
     Get the war data from the given war ID
     """
-    war_response = item_response(await raw.get_war_entity(conn, war_id))
-    return war_response
+    async with get_db(region) as conn:
+        return item_response(await raw.get_war_entity(conn, war_id))
 
 
 @router.get(
@@ -623,17 +636,15 @@ async def get_war(war_id: int, conn: AsyncConnection = Depends(get_db)) -> Respo
 )
 @cache(expire=settings.quest_cache_length)  # type: ignore
 async def get_quest_phase(
+    region: Region,
     quest_id: int,
     phase: int,
-    conn: AsyncConnection = Depends(get_db),
 ) -> Response:
     """
     Get the quest phase data from the given quest ID and phase number
     """
-    quest_response = item_response(
-        await raw.get_quest_phase_entity(conn, quest_id, phase)
-    )
-    return quest_response
+    async with get_db(region) as conn:
+        return item_response(await raw.get_quest_phase_entity(conn, quest_id, phase))
 
 
 @router.get(
@@ -646,14 +657,14 @@ async def get_quest_phase(
 )
 @cache(expire=settings.quest_cache_length)  # type: ignore
 async def get_quest(
+    region: Region,
     quest_id: int,
-    conn: AsyncConnection = Depends(get_db),
 ) -> Response:
     """
     Get the quest data from the given quest ID
     """
-    quest_response = item_response(await raw.get_quest_entity(conn, quest_id))
-    return quest_response
+    async with get_db(region) as conn:
+        return item_response(await raw.get_quest_entity(conn, quest_id))
 
 
 @router.get(
@@ -666,10 +677,10 @@ async def get_quest(
 )
 async def find_script(
     search_param: ScriptSearchQueryParams = Depends(ScriptSearchQueryParams),
-    conn: AsyncConnection = Depends(get_db),
 ) -> Response:
-    matches = await search.search_script(conn, search_param)
-    return list_response(matches)
+    async with get_db(search_param.region) as conn:
+        matches = await search.search_script(conn, search_param)
+        return list_response(matches)
 
 
 @router.get(
@@ -681,14 +692,12 @@ async def find_script(
     responses=get_error_code([404]),
 )
 @cache()  # type: ignore
-async def get_script(
-    script_id: str, conn: AsyncConnection = Depends(get_db)
-) -> Response:
+async def get_script(region: Region, script_id: str) -> Response:
     """
     Get the script data from the given script ID
     """
-    quest_response = item_response(await raw.get_script_entity(conn, script_id))
-    return quest_response
+    async with get_db(region) as conn:
+        return item_response(await raw.get_script_entity(conn, script_id))
 
 
 @router.get(
@@ -700,15 +709,14 @@ async def get_script(
     responses=get_error_code([404]),
 )
 @cache()  # type: ignore
-async def get_ai_field(
-    ai_type: AiType, ai_id: int, conn: AsyncConnection = Depends(get_db)
-) -> Response:
+async def get_ai_field(region: Region, ai_type: AiType, ai_id: int) -> Response:
     """
     Get the AI data from the given AI ID
     """
-    field_flag = ai_type == AiType.field
-    ai_entity = await raw.get_ai_collection(conn, ai_id, field=field_flag)
-    return item_response(ai_entity)
+    async with get_db(region) as conn:
+        field_flag = ai_type == AiType.field
+        ai_entity = await raw.get_ai_collection(conn, ai_id, field=field_flag)
+        return item_response(ai_entity)
 
 
 @router.get(
@@ -720,8 +728,9 @@ async def get_ai_field(
     responses=get_error_code([404]),
 )
 @cache()  # type: ignore
-async def get_bgm(bgm_id: int, conn: AsyncConnection = Depends(get_db)) -> Response:
+async def get_bgm(region: Region, bgm_id: int) -> Response:
     """
     Get the BGM data from the given BGM ID
     """
-    return item_response(await raw.get_bgm_entity(conn, bgm_id))
+    async with get_db(region) as conn:
+        return item_response(await raw.get_bgm_entity(conn, bgm_id))

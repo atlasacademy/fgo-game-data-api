@@ -3,7 +3,6 @@ from typing import Optional
 from aioredis import Redis
 from fastapi import APIRouter, Depends, Response
 from fastapi_cache.decorator import cache
-from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..config import Settings
 from ..core import basic, search
@@ -60,18 +59,18 @@ basic_find_servant_extra = """
 async def find_servant(
     search_param: ServantSearchQueryParams = Depends(ServantSearchQueryParams),
     lang: Optional[Language] = None,
-    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    matches = await search.search_servant(conn, search_param, limit=10000)
-    return list_response(
-        [
-            await basic.get_basic_servant(
-                redis, search_param.region, mstSvt.id, 0, lang, mstSvt
-            )
-            for mstSvt in matches
-        ]
-    )
+    async with get_db(search_param.region) as conn:
+        matches = await search.search_servant(conn, search_param, limit=10000)
+        return list_response(
+            [
+                await basic.get_basic_servant(
+                    redis, search_param.region, mstSvt.id, 0, lang, mstSvt
+                )
+                for mstSvt in matches
+            ]
+        )
 
 
 get_servant_description = """Get servant info from ID
@@ -106,13 +105,13 @@ async def get_servant(
     region: Region,
     servant_id: int,
     lang: Optional[Language] = None,
-    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    servant_id = await get_svt_id(conn, servant_id)
-    return item_response(
-        await basic.get_basic_servant(redis, region, servant_id, lang=lang)
-    )
+    async with get_db(region) as conn:
+        servant_id = await get_svt_id(conn, servant_id)
+        return item_response(
+            await basic.get_basic_servant(redis, region, servant_id, lang=lang)
+        )
 
 
 @router.get(
@@ -128,18 +127,18 @@ async def get_servant(
 async def find_equip(
     search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
     lang: Optional[Language] = None,
-    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    matches = await search.search_equip(conn, search_param, limit=10000)
-    return list_response(
-        [
-            await basic.get_basic_equip(
-                redis, search_param.region, mstSvt.id, lang, mstSvt
-            )
-            for mstSvt in matches
-        ]
-    )
+    async with get_db(search_param.region) as conn:
+        matches = await search.search_equip(conn, search_param, limit=10000)
+        return list_response(
+            [
+                await basic.get_basic_equip(
+                    redis, search_param.region, mstSvt.id, lang, mstSvt
+                )
+                for mstSvt in matches
+            ]
+        )
 
 
 get_equip_description = """Get CE info from ID
@@ -173,11 +172,11 @@ async def get_equip(
     region: Region,
     equip_id: int,
     lang: Optional[Language] = None,
-    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    equip_id = await get_ce_id(conn, equip_id)
-    return item_response(await basic.get_basic_equip(redis, region, equip_id, lang))
+    async with get_db(region) as conn:
+        equip_id = await get_ce_id(conn, equip_id)
+        return item_response(await basic.get_basic_equip(redis, region, equip_id, lang))
 
 
 @router.get(
@@ -193,18 +192,18 @@ async def get_equip(
 async def find_svt(
     search_param: SvtSearchQueryParams = Depends(SvtSearchQueryParams),
     lang: Optional[Language] = None,
-    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    matches = await search.search_servant(conn, search_param, limit=10000)
-    return list_response(
-        [
-            await basic.get_basic_servant(
-                redis, search_param.region, mstSvt.id, 0, lang, mstSvt
-            )
-            for mstSvt in matches
-        ]
-    )
+    async with get_db(search_param.region) as conn:
+        matches = await search.search_servant(conn, search_param, limit=10000)
+        return list_response(
+            [
+                await basic.get_basic_servant(
+                    redis, search_param.region, mstSvt.id, 0, lang, mstSvt
+                )
+                for mstSvt in matches
+            ]
+        )
 
 
 @router.get(
@@ -291,11 +290,11 @@ async def get_command_code(
     region: Region,
     cc_id: int,
     lang: Language = Depends(language_parameter),
-    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    cc_id = await get_cc_id(conn, cc_id)
-    return item_response(await basic.get_basic_cc(redis, region, cc_id, lang))
+    async with get_db(region) as conn:
+        cc_id = await get_cc_id(conn, cc_id)
+        return item_response(await basic.get_basic_cc(redis, region, cc_id, lang))
 
 
 basic_skill_extra = """
@@ -319,23 +318,23 @@ async def find_skill(
     search_param: SkillSearchParams = Depends(SkillSearchParams),
     reverse: bool = False,
     lang: Language = Depends(language_parameter),
-    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    matches = await search.search_skill(conn, search_param, limit=10000)
-    return list_response(
-        [
-            await basic.get_basic_skill(
-                redis,
-                search_param.region,
-                mstSkill.id,
-                lang,
-                reverse,
-                mstSkill=mstSkill,
-            )
-            for mstSkill in matches
-        ]
-    )
+    async with get_db(search_param.region) as conn:
+        matches = await search.search_skill(conn, search_param, limit=10000)
+        return list_response(
+            [
+                await basic.get_basic_skill(
+                    redis,
+                    search_param.region,
+                    mstSkill.id,
+                    lang,
+                    reverse,
+                    mstSkill=mstSkill,
+                )
+                for mstSkill in matches
+            ]
+        )
 
 
 @router.get(
@@ -381,18 +380,23 @@ async def find_td(
     search_param: TdSearchParams = Depends(TdSearchParams),
     reverse: bool = False,
     lang: Language = Depends(language_parameter),
-    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    matches = await search.search_td(conn, search_param, limit=10000)
-    return list_response(
-        [
-            await basic.get_basic_td(
-                redis, search_param.region, td.id, lang, reverse, mstTreasureDevice=td
-            )
-            for td in matches
-        ]
-    )
+    async with get_db(search_param.region) as conn:
+        matches = await search.search_td(conn, search_param, limit=10000)
+        return list_response(
+            [
+                await basic.get_basic_td(
+                    redis,
+                    search_param.region,
+                    td.id,
+                    lang,
+                    reverse,
+                    mstTreasureDevice=td,
+                )
+                for td in matches
+            ]
+        )
 
 
 @router.get(
@@ -438,18 +442,18 @@ async def find_function(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
     lang: Language = Depends(language_parameter),
-    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    matches = await search.search_func(conn, search_param, limit=10000)
-    return list_response(
-        [
-            await basic.get_basic_function_from_raw(
-                redis, search_param.region, mstFunc, lang, reverse, reverseDepth
-            )
-            for mstFunc in matches
-        ]
-    )
+    async with get_db(search_param.region) as conn:
+        matches = await search.search_func(conn, search_param, limit=10000)
+        return list_response(
+            [
+                await basic.get_basic_function_from_raw(
+                    redis, search_param.region, mstFunc, lang, reverse, reverseDepth
+                )
+                for mstFunc in matches
+            ]
+        )
 
 
 @router.get(
@@ -501,18 +505,18 @@ async def find_buff(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
     lang: Language = Depends(language_parameter),
-    conn: AsyncConnection = Depends(get_db),
     redis: Redis = Depends(get_redis),
 ) -> Response:
-    matches = await search.search_buff(conn, search_param, limit=10000)
-    return list_response(
-        [
-            await basic.get_basic_buff_from_raw(
-                redis, search_param.region, mstBuff, lang, reverse, reverseDepth
-            )
-            for mstBuff in matches
-        ]
-    )
+    async with get_db(search_param.region) as conn:
+        matches = await search.search_buff(conn, search_param, limit=10000)
+        return list_response(
+            [
+                await basic.get_basic_buff_from_raw(
+                    redis, search_param.region, mstBuff, lang, reverse, reverseDepth
+                )
+                for mstBuff in matches
+            ]
+        )
 
 
 @router.get(
@@ -548,14 +552,15 @@ async def get_buff(
 )
 @cache()  # type: ignore
 async def get_event(
+    region: Region,
     event_id: int,
     lang: Language = Depends(language_parameter),
-    conn: AsyncConnection = Depends(get_db),
 ) -> Response:
     """
     Get the basic event data from the given event ID
     """
-    return item_response(await basic.get_basic_event(conn, event_id, lang))
+    async with get_db(region) as conn:
+        return item_response(await basic.get_basic_event(conn, event_id, lang))
 
 
 @router.get(
@@ -568,14 +573,15 @@ async def get_event(
 )
 @cache()  # type: ignore
 async def get_war(
+    region: Region,
     war_id: int,
     lang: Language = Depends(language_parameter),
-    conn: AsyncConnection = Depends(get_db),
 ) -> Response:
     """
     Get the basic war data from the given event ID
     """
-    return item_response(await basic.get_basic_war(conn, war_id, lang))
+    async with get_db(region) as conn:
+        return item_response(await basic.get_basic_war(conn, war_id, lang))
 
 
 @router.get(
@@ -587,13 +593,13 @@ async def get_war(
 )
 @cache(expire=settings.quest_cache_length)  # type: ignore
 async def get_latest_quest_phase_with_enemies(
-    conn: AsyncConnection = Depends(get_db),
+    region: Region,
     lang: Language = Depends(language_parameter),
 ) -> Response:
-    response = list_response(
-        await basic.get_basic_quest_latest_with_enemies(conn, lang)
-    )
-    return response
+    async with get_db(region) as conn:
+        return list_response(
+            await basic.get_basic_quest_latest_with_enemies(conn, lang)
+        )
 
 
 @router.get(
@@ -608,13 +614,13 @@ async def get_latest_quest_phase_with_enemies(
 @cache(expire=settings.quest_cache_length)  # type: ignore
 async def find_quest_phase(
     search_param: QuestSearchQueryParams = Depends(QuestSearchQueryParams),
-    conn: AsyncConnection = Depends(get_db),
     lang: Language = Depends(language_parameter),
 ) -> Response:
-    matches = await search.search_quest(conn, search_param)
-    return list_response(
-        [basic.get_basic_quest_phase_from_raw(quest, lang) for quest in matches]
-    )
+    async with get_db(search_param.region) as conn:
+        matches = await search.search_quest(conn, search_param)
+        return list_response(
+            [basic.get_basic_quest_phase_from_raw(quest, lang) for quest in matches]
+        )
 
 
 @router.get(
@@ -627,18 +633,18 @@ async def find_quest_phase(
 )
 @cache()  # type: ignore
 async def get_quest_phase(
+    region: Region,
     quest_id: int,
     phase: int,
-    conn: AsyncConnection = Depends(get_db),
     lang: Language = Depends(language_parameter),
 ) -> Response:
     """
     Get the basic quest phase data from the given quest ID and phase number
     """
-    quest_response = item_response(
-        await basic.get_basic_quest_phase(conn, quest_id, phase, lang)
-    )
-    return quest_response
+    async with get_db(region) as conn:
+        return item_response(
+            await basic.get_basic_quest_phase(conn, quest_id, phase, lang)
+        )
 
 
 @router.get(
@@ -651,12 +657,12 @@ async def get_quest_phase(
 )
 @cache()  # type: ignore
 async def get_quest(
+    region: Region,
     quest_id: int,
-    conn: AsyncConnection = Depends(get_db),
     lang: Language = Depends(language_parameter),
 ) -> Response:
     """
     Get the basic quest data from the given quest ID
     """
-    quest_response = item_response(await basic.get_basic_quest(conn, quest_id, lang))
-    return quest_response
+    async with get_db(region) as conn:
+        return item_response(await basic.get_basic_quest(conn, quest_id, lang))

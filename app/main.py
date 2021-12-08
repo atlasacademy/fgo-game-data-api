@@ -1,8 +1,7 @@
 import hashlib
 import json
-import time
 from math import ceil
-from typing import Any, Awaitable, Callable, Optional
+from typing import Any, Callable, Optional
 
 import orjson
 import toml
@@ -17,11 +16,11 @@ from fastapi_cache import FastAPICache
 from fastapi_cache.backends.redis import RedisBackend
 from fastapi_cache.coder import PickleCoder
 from fastapi_limiter import FastAPILimiter  # type: ignore
-from sqlalchemy.ext.asyncio import AsyncConnection, create_async_engine
-from uvicorn.logging import TRACE_LOG_LEVEL  # type: ignore
+from sqlalchemy.ext.asyncio import AsyncConnection
 
-from .config import Settings, logger, project_root
+from .config import Settings, project_root
 from .core.info import get_all_repo_info
+from .db.engine import async_engines
 from .routers import basic, nice, raw, secret
 from .routers.deps import get_redis
 from .schemas.common import Region, RepoInfo
@@ -222,8 +221,6 @@ def custom_key_builder(
 ) -> str:
     prefix = FastAPICache.get_prefix()
     static_kwargs = {k: v for k, v in kwargs.items() if k not in {"conn", "redis"}}
-    if "region" not in kwargs and "conn" in kwargs and "region" in kwargs["conn"].info:
-        static_kwargs["region"] = kwargs["conn"].info["region"]
 
     static_args = [
         arg
@@ -259,28 +256,11 @@ async def startup() -> None:
     )
     app.state.redis = redis
 
-    async_engines = {
-        region: create_async_engine(
-            region_data.postgresdsn.replace("postgresql", "postgresql+asyncpg"),
-            echo=logger.isEnabledFor(TRACE_LOG_LEVEL),
-            pool_size=3,
-            max_overflow=10,
-        )
-        for region, region_data in settings.data.items()
-    }
-    app.state.async_engines = async_engines
-
     region_pathes = {
         region: region_data.gamedata for region, region_data in settings.data.items()
     }
 
     await load_and_export(redis, region_pathes, async_engines)
-
-
-@app.on_event("shutdown")
-async def shutdown() -> None:
-    for engine in app.state.async_engines.values():
-        await engine.dispose()
 
 
 app.include_router(nice.router)

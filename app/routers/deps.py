@@ -1,9 +1,11 @@
+from contextlib import asynccontextmanager
 from typing import AsyncGenerator, Optional
 
 from aioredis import Redis
 from fastapi import HTTPException, Request
-from sqlalchemy.ext.asyncio import AsyncConnection, AsyncEngine
+from sqlalchemy.ext.asyncio import AsyncConnection
 
+from ..db.engine import async_engines
 from ..schemas.common import Language, Region
 
 
@@ -15,33 +17,23 @@ async def language_parameter(lang: Optional[Language] = None) -> Language:
         return Language.jp
 
 
-async def get_db(
-    request: Request, region: Region
-) -> AsyncGenerator[AsyncConnection, None]:
-    if region not in request.app.state.async_engines:  # pragma: no cover
+@asynccontextmanager
+async def get_db(region: Region) -> AsyncGenerator[AsyncConnection, None]:
+    if region not in async_engines:  # pragma: no cover
         raise HTTPException(status_code=404, detail="Region not found")
-    async with request.app.state.async_engines[region].connect() as connection:
+    async with async_engines[region].connect() as connection:
         connection.info["region"] = region
         yield connection
 
 
-async def get_db_transaction(
-    request: Request, region: Region
-) -> AsyncGenerator[AsyncConnection, None]:
-    if region not in request.app.state.async_engines:  # pragma: no cover
+@asynccontextmanager
+async def get_db_transaction(region: Region) -> AsyncGenerator[AsyncConnection, None]:
+    if region not in async_engines:  # pragma: no cover
         raise HTTPException(status_code=404, detail="Region not found")
-    async with request.app.state.async_engines[region].begin() as connection:
-        connection.info["region"] = region
+    async with async_engines[region].begin() as connection:
         yield connection
 
 
 async def get_redis(request: Request) -> Redis:
     redis: Redis = request.app.state.redis
     return redis
-
-
-def get_async_engines(
-    request: Request,
-) -> dict[Region, AsyncEngine]:  # pragma: no cover
-    async_engines: dict[Region, AsyncEngine] = request.app.state.async_engines
-    return async_engines
