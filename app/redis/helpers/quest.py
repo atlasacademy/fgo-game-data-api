@@ -46,4 +46,4 @@ async def set_stages_cache(
         + "]"
     )
 
-    await redis.set(redis_key, json_str)
+    await redis.set(redis_key, json_str, ex=settings.quest_cache_length)

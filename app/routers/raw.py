@@ -88,7 +88,7 @@ async def find_servant(
 get_servant_description = """
 Get servant info from ID
 
-If the given ID is a servants's collectionNo, the corresponding servant data is returned.
+If the given ID is a servant's collectionNo, the corresponding servant data is returned.
 Otherwise, it will look up the actual ID field. As a result, it can return not servant data.
 """
 

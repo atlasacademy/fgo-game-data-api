@@ -240,7 +240,7 @@ async def get_nice_quest_phase(
     phase: int,
     lang: Language = Language.jp,
 ) -> NiceQuestPhase:
-    db_data: DBQuestPhase = await get_nice_quest_phase_no_rayshift(
+    db_data = await get_nice_quest_phase_no_rayshift(
         conn, redis, region, quest_id, phase, lang
     )
 
