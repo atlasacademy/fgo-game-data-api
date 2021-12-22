@@ -1014,6 +1014,7 @@ export enum NiceWarFlag {
     DISP_FIRST_QUEST = "dispFirstQuest",
     EFFECT_DISAPPEAR_BANNER = "effectDisappearBanner",
     WHITE_MARK_WITH_CLEAR = "whiteMarkWithClear",
+    WHITE_MARK_UNDER_BOARD = "whiteMarkUnderBoard",
     SUMMER_CAMP = "summerCamp",
     UNRELEASED_STORY = "unreleasedStory",
 }
@@ -1038,6 +1039,10 @@ export enum NiceWarOverwriteType {
     COORDINATES = "coordinates",
     EFFECT_CHANGE_BLACK_MARK = "effectChangeBlackMark",
     QUEST_BOARD_SECTION_IMAGE = "questBoardSectionImage",
+    WAR_FORCE_DISP = "warForceDisp",
+    WAR_FORCE_HIDE = "warForceHide",
+    START_TYPE = "startType",
+    NOTICE_DIALOG_TEXT = "noticeDialogText",
 }
 
 export enum NiceAiCond {
@@ -1178,6 +1183,10 @@ export enum NiceAiCond {
     CHECK_AI_174 = "checkAi174",
     CHECK_SELF_NPTURN_HIGHER = "checkSelfNpturnHigher",
     CHECK_SELF_NPTURN_LOWER = "checkSelfNpturnLower",
+    CHECK_USE_SKILL_THISTURN = "checkUseSkillThisturn",
+    COUNT_CHAIN_HIGHER = "countChainHigher",
+    COUNT_CHAIN_LOWER = "countChainLower",
+    COUNT_CHAIN_EQUAL = "countChainEqual",
 }
 
 export enum NiceAiActType {
@@ -1231,6 +1240,9 @@ export enum NiceAiActNum {
     MAXNP = "maxnp",
     SHIFT_SARVANT_AFTER = "shiftSarvantAfter",
     USENP_TARGET = "usenpTarget",
+    REACTION_TURNSTART = "reactionTurnstart",
+    REACTION_PLAYERACTIONSTART = "reactionPlayeractionstart",
+    REACTION_ENTRY_UNIT = "reactionEntryUnit",
     UNKNOWN = "unknown",
 }
 

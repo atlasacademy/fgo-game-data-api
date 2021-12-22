@@ -2896,6 +2896,7 @@ class WarEntityFlag(IntEnum):
     DISP_FIRST_QUEST = 32768
     EFFECT_DISAPPEAR_BANNER = 65536
     WHITE_MARK_WITH_CLEAR = 131072
+    WHITE_MARK_UNDER_BOARD = 262144
 
 
 class NiceWarFlag(str, Enum):
@@ -2918,6 +2919,7 @@ class NiceWarFlag(str, Enum):
     dispFirstQuest = "dispFirstQuest"
     effectDisappearBanner = "effectDisappearBanner"
     whiteMarkWithClear = "whiteMarkWithClear"
+    whiteMarkUnderBoard = "whiteMarkUnderBoard"
     summerCamp = "summerCamp"
     unreleasedStory = "unreleasedStory"
 
@@ -2940,6 +2942,7 @@ WAR_FLAG_NAME: dict[int, NiceWarFlag] = {
     32768: NiceWarFlag.dispFirstQuest,
     65536: NiceWarFlag.effectDisappearBanner,
     131072: NiceWarFlag.whiteMarkWithClear,
+    262144: NiceWarFlag.whiteMarkUnderBoard,
     34848: NiceWarFlag.summerCamp,
     49538: NiceWarFlag.unreleasedStory,
 }
@@ -2980,6 +2983,10 @@ class WarOverwriteType(IntEnum):
     COORDINATES = 11
     EFFECT_CHANGE_BLACK_MARK = 12
     QUEST_BOARD_SECTION_IMAGE = 13
+    WAR_FORCE_DISP = 14
+    WAR_FORCE_HIDE = 15
+    START_TYPE = 16
+    NOTICE_DIALOG_TEXT = 17
 
 
 class NiceWarOverwriteType(str, Enum):
@@ -2998,6 +3005,10 @@ class NiceWarOverwriteType(str, Enum):
     coordinates = "coordinates"
     effectChangeBlackMark = "effectChangeBlackMark"
     questBoardSectionImage = "questBoardSectionImage"
+    warForceDisp = "warForceDisp"
+    warForceHide = "warForceHide"
+    startType = "startType"
+    noticeDialogText = "noticeDialogText"
 
 
 WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
@@ -3014,6 +3025,10 @@ WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
     11: NiceWarOverwriteType.coordinates,
     12: NiceWarOverwriteType.effectChangeBlackMark,
     13: NiceWarOverwriteType.questBoardSectionImage,
+    14: NiceWarOverwriteType.warForceDisp,
+    15: NiceWarOverwriteType.warForceHide,
+    16: NiceWarOverwriteType.startType,
+    17: NiceWarOverwriteType.noticeDialogText,
 }
 
 
@@ -3155,6 +3170,10 @@ class AiCond(IntEnum):
     CHECK_AI_174 = 174
     CHECK_SELF_NPTURN_HIGHER = 175
     CHECK_SELF_NPTURN_LOWER = 176
+    CHECK_USE_SKILL_THISTURN = 177
+    COUNT_CHAIN_HIGHER = 178
+    COUNT_CHAIN_LOWER = 179
+    COUNT_CHAIN_EQUAL = 180
 
 
 class NiceAiCond(str, Enum):
@@ -3311,6 +3330,10 @@ class NiceAiCond(str, Enum):
     checkAi174 = "checkAi174"
     checkSelfNpturnHigher = "checkSelfNpturnHigher"
     checkSelfNpturnLower = "checkSelfNpturnLower"
+    checkUseSkillThisturn = "checkUseSkillThisturn"
+    countChainHigher = "countChainHigher"
+    countChainLower = "countChainLower"
+    countChainEqual = "countChainEqual"
 
 
 AI_COND_NAME: dict[int, NiceAiCond] = {
@@ -3451,6 +3474,10 @@ AI_COND_NAME: dict[int, NiceAiCond] = {
     174: NiceAiCond.checkAi174,
     175: NiceAiCond.checkSelfNpturnHigher,
     176: NiceAiCond.checkSelfNpturnLower,
+    177: NiceAiCond.checkUseSkillThisturn,
+    178: NiceAiCond.countChainHigher,
+    179: NiceAiCond.countChainLower,
+    180: NiceAiCond.countChainEqual,
 }
 
 
@@ -3591,6 +3618,9 @@ class AiActNum(IntEnum):
     MAXNP = -9
     SHIFT_SARVANT_AFTER = -10
     USENP_TARGET = -11
+    REACTION_TURNSTART = -12
+    REACTION_PLAYERACTIONSTART = -13
+    REACTION_ENTRY_UNIT = -14
 
 
 class NiceAiActNum(str, Enum):
@@ -3606,6 +3636,9 @@ class NiceAiActNum(str, Enum):
     maxnp = "maxnp"
     shiftSarvantAfter = "shiftSarvantAfter"
     usenpTarget = "usenpTarget"
+    reactionTurnstart = "reactionTurnstart"
+    reactionPlayeractionstart = "reactionPlayeractionstart"
+    reactionEntryUnit = "reactionEntryUnit"
     unknown = "unknown"
 
 
@@ -3620,6 +3653,9 @@ AI_ACT_NUM_NAME: dict[int, NiceAiActNum] = {
     -9: NiceAiActNum.maxnp,
     -10: NiceAiActNum.shiftSarvantAfter,
     -11: NiceAiActNum.usenpTarget,
+    -12: NiceAiActNum.reactionTurnstart,
+    -13: NiceAiActNum.reactionPlayeractionstart,
+    -14: NiceAiActNum.reactionEntryUnit,
     -9999: NiceAiActNum.unknown,
 }
 
