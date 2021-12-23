@@ -662,6 +662,8 @@ class ScriptJson(BaseModelORJson):
     overwritePriority: Optional[int]
     infos: list[ScriptJsonInfo] = []
     conds: list[ScriptJsonCond] = []
+    condAddItem: int = 0
+    materialOverwriteName: Optional[str] = None
 
 
 class MstSvtVoice(BaseModelORJson):
@@ -1231,6 +1233,7 @@ class MstQuestPhaseDetail(BaseModelORJson):
     consumeType: int
     actConsume: int
     flag: int
+    recommendLv: Optional[str] = None
 
 
 class MstQuestMessage(BaseModelORJson):

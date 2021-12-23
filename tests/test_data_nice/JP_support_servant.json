@@ -5856,9 +5856,9 @@
       "wave": 1,
       "bgm": {
         "id": 420,
-        "name": "",
+        "name": "二人の王\n～FGO～",
         "fileName": "BGM_BATTLE_135",
-        "notReleased": true,
+        "notReleased": false,
         "audioAsset": "https://assets.atlasacademy.io/GameData/JP/Audio/BGM_BATTLE_135/BGM_BATTLE_135.mp3"
       },
       "fieldAis": [

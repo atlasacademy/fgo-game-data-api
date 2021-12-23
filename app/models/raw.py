@@ -1375,6 +1375,7 @@ mstQuestPhaseDetail = Table(
     Column("consumeType", Integer),
     Column("actConsume", Integer),
     Column("flag", BigInteger),
+    Column("recommendLv", String),
 )
 
 
