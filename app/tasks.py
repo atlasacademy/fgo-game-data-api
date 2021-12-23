@@ -323,7 +323,8 @@ async def load_svt_extra(
     for region, gamedata_path in region_path.items():
         svtExtras = get_extra_svt_data(region, gamedata_path)
         if settings.write_postgres_data:
-            load_pydantic_to_db(engines[region], svtExtras, mstSvtExtra)
+            with engines[region].begin() as conn:
+                load_pydantic_to_db(conn, svtExtras, mstSvtExtra)
         if settings.write_redis_data:
             await load_svt_extra_redis(redis, region, svtExtras)
 

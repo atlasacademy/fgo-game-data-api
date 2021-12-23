@@ -69,7 +69,7 @@ def remove_unknown_columns(
 
 
 def load_skill_td_lv(
-    engine: Engine, gamedata_path: DirectoryPath
+    conn: Connection, gamedata_path: DirectoryPath
 ) -> None:  # pragma: no cover
     master_folder = gamedata_path / "master"
 
@@ -125,31 +125,30 @@ def load_skill_td_lv(
             if func_id in mstFuncId
         ]
 
-    load_pydantic_to_db(engine, mstBuff_data, mstBuff)
+    load_pydantic_to_db(conn, mstBuff_data, mstBuff)
 
-    with engine.begin() as conn:
-        insert_db(conn, mstFunc, mstFunc_data)
-        insert_db(conn, mstFuncGroup, mstFuncGroup_data)
-        insert_db(conn, mstSkillLv, mstSkillLv_data)
-        insert_db(conn, mstTreasureDeviceLv, mstTreasureDeviceLv_data)
+    insert_db(conn, mstFunc, mstFunc_data)
+    insert_db(conn, mstFuncGroup, mstFuncGroup_data)
+    insert_db(conn, mstSkillLv, mstSkillLv_data)
+    insert_db(conn, mstTreasureDeviceLv, mstTreasureDeviceLv_data)
 
 
 def load_event(
-    engine: Engine, gamedata_path: DirectoryPath
+    conn: Connection, gamedata_path: DirectoryPath
 ) -> None:  # pragma: no cover
     event_war = get_event_with_warIds(gamedata_path)
-    load_pydantic_to_db(engine, event_war.mstEvents, mstEvent)
+    load_pydantic_to_db(conn, event_war.mstEvents, mstEvent)
 
     mstWar_db_data = [orjson.loads(war.json()) for war in event_war.mstWars]
-    with engine.begin() as conn:
-        insert_db(conn, mstWar, mstWar_db_data)
+    insert_db(conn, mstWar, mstWar_db_data)
 
 
-def load_item(engine: Engine, gamedata_path: DirectoryPath) -> None:  # pragma: no cover
+def load_item(
+    conn: Connection, gamedata_path: DirectoryPath
+) -> None:  # pragma: no cover
     mstItems = get_item_with_use(gamedata_path)
     mstItem_db_data = [item.dict() for item in mstItems]
-    with engine.begin() as conn:
-        insert_db(conn, mstItem, mstItem_db_data)
+    insert_db(conn, mstItem, mstItem_db_data)
 
 
 def load_script_list(
@@ -241,7 +240,7 @@ def load_script_list(
 
 
 def load_subtitle(
-    engine: Engine, region: Region, master_folder: DirectoryPath
+    conn: Connection, region: Region, master_folder: DirectoryPath
 ) -> None:  # pragma: no cover
     subtitle_json = master_folder / "globalNewMstSubtitle.json"
     if subtitle_json.exists():
@@ -255,64 +254,14 @@ def load_subtitle(
             logger.warning(f"Can't find file {subtitle_json}.")
         globalNewMstSubtitle = []
 
-    with engine.begin() as conn:
-        insert_db(conn, mstSubtitle, globalNewMstSubtitle)
+    insert_db(conn, mstSubtitle, globalNewMstSubtitle)
 
 
 def load_pydantic_to_db(
-    engine: Engine, pydantic_data: Sequence[BaseModelORJson], db_table: Table
+    conn: Connection, pydantic_data: Sequence[BaseModelORJson], db_table: Table
 ) -> None:  # pragma: no cover
     db_data = [item.dict() for item in pydantic_data]
-    with engine.begin() as conn:
-        insert_db(conn, db_table, db_data)
-
-
-NOT_AVAILABLE_TABLES = {
-    Region.NA: {
-        "mstStageRemap",
-        "mstSvtAdd",
-        "mstSvtAppendPassiveSkill",
-        "mstSvtAppendPassiveSkillUnlock",
-        "mstCombineAppendPassiveSkill",
-        "mstSvtCoin",
-        "mstSkillAdd",
-        "mstTreasureBox",
-        "mstTreasureBoxGift",
-    },
-    Region.CN: {
-        "mstSkillAdd",
-        "mstSvtAdd",
-        "mstSvtAppendPassiveSkill",
-        "mstSvtAppendPassiveSkillUnlock",
-        "mstCombineAppendPassiveSkill",
-        "mstSvtCoin",
-        "mstTreasureBox",
-        "mstTreasureBoxGift",
-        "mstStageRemap",
-    },
-    Region.KR: {
-        "mstSkillAdd",
-        "mstSvtAdd",
-        "mstSvtAppendPassiveSkill",
-        "mstSvtAppendPassiveSkillUnlock",
-        "mstCombineAppendPassiveSkill",
-        "mstSvtCoin",
-        "mstTreasureBox",
-        "mstTreasureBoxGift",
-    },
-    Region.TW: {
-        "mstSkillAdd",
-        "mstSvtAdd",
-        "mstSvtAppendPassiveSkill",
-        "mstSvtAppendPassiveSkillUnlock",
-        "mstCombineAppendPassiveSkill",
-        "mstSvtCoin",
-        "mstTreasureBox",
-        "mstTreasureBoxGift",
-        "mstStageRemap",
-        "mstCommonConsume",
-    },
-}
+    insert_db(conn, db_table, db_data)
 
 
 def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no cover
@@ -324,38 +273,33 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
         master_folder = repo_folder / "master"
         engine = engines[region]
 
-        for table in TABLES_TO_BE_LOADED:
-            table_json = master_folder / f"{table.name}.json"
-            if table_json.exists():
-                with open(table_json, "rb") as fp:
-                    data: list[dict[str, Any]] = orjson.loads(fp.read())
+        with engine.begin() as conn:
+            for table in TABLES_TO_BE_LOADED:
+                table_json = master_folder / f"{table.name}.json"
+                if table_json.exists():
+                    with open(table_json, "rb") as fp:
+                        data: list[dict[str, Any]] = orjson.loads(fp.read())
 
-                if len(data) > 0 and not check_known_columns(data, table):
-                    logger.warning(f"Found unknown columns in {table_json}")
-                    data = remove_unknown_columns(data, table)
-            else:
-                if not (
-                    region in NOT_AVAILABLE_TABLES
-                    and table.name in NOT_AVAILABLE_TABLES[region]
-                ):
-                    logger.warning(f"Can't find file {table_json}.")
-                data = []
+                    if data and not check_known_columns(data, table):
+                        logger.warning(f"Found unknown columns in {table_json}")
+                        data = remove_unknown_columns(data, table)
+                else:
+                    data = []
 
-            with engine.begin() as conn:
                 logger.debug(f"Updating {table.name} …")
                 insert_db(conn, table, data)
 
-        logger.info("Updating subtitle …")
-        load_subtitle(engine, region, master_folder)
+            logger.info("Updating subtitle …")
+            load_subtitle(conn, region, master_folder)
 
-        logger.info("Updating parsed skill and td …")
-        load_skill_td_lv(engine, repo_folder)
+            logger.info("Updating parsed skill and td …")
+            load_skill_td_lv(conn, repo_folder)
 
-        logger.info("Updating event …")
-        load_event(engine, repo_folder)
+            logger.info("Updating event …")
+            load_event(conn, repo_folder)
 
-        logger.info("Updating item …")
-        load_item(engine, repo_folder)
+            logger.info("Updating item …")
+            load_item(conn, repo_folder)
 
         logger.info("Updating script list …")
         load_script_list(engine, region, repo_folder)
