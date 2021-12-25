@@ -1412,7 +1412,9 @@ class NiceQuest(BaseModelORJson):
     consume: int
     consumeItem: list[NiceItemAmount]
     afterClear: NiceQuestAfterClearType
+    recommendLv: str
     spotId: int
+    spotName: str
     warId: int
     warLongName: str
     chapterId: int

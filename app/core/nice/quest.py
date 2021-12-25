@@ -34,6 +34,7 @@ from ...schemas.raw import (
     MstClosedMessage,
     MstQuestMessage,
     MstQuestRelease,
+    MstSpot,
     MstStage,
     MstWar,
     QuestEntity,
@@ -116,9 +117,12 @@ async def get_nice_quest(
     raw_quest: Union[QuestEntity, QuestPhaseEntity],
     lang: Language,
     mstWar: Optional[MstWar] = None,
+    mstSpot: Optional[MstSpot] = None,
 ) -> dict[str, Any]:
     if not mstWar:
         mstWar = await war.get_war_from_spot(conn, raw_quest.mstQuest.spotId)
+    if not mstSpot:
+        mstSpot = await war.get_spot_from_id(conn, raw_quest.mstQuest.spotId)
 
     nice_data: dict[str, Any] = {
         "id": raw_quest.mstQuest.id,
@@ -133,8 +137,10 @@ async def get_nice_quest(
             )
         ],
         "consume": raw_quest.mstQuest.actConsume,
+        "recommendLv": raw_quest.mstQuest.recommendLv,
         "afterClear": QUEST_AFTER_CLEAR_NAME[raw_quest.mstQuest.afterClear],
         "spotId": raw_quest.mstQuest.spotId,
+        "spotName": get_translation(lang, mstSpot.name),
         "warId": mstWar.id,
         "warLongName": get_translation(lang, mstWar.longName),
         "chapterId": raw_quest.mstQuest.chapterId,
@@ -218,7 +224,13 @@ async def get_nice_quest_phase_no_rayshift(
     }
 
     if raw_quest.mstQuestPhaseDetail:
+        mstSpot = await war.get_spot_from_id(conn, raw_quest.mstQuestPhaseDetail.spotId)
+
+        nice_data["recommendLv"] = (
+            raw_quest.mstQuestPhaseDetail.recommendLv or raw_quest.mstQuest.recommendLv
+        )
         nice_data["spotId"] = raw_quest.mstQuestPhaseDetail.spotId
+        nice_data["spotName"] = get_translation(lang, mstSpot.name)
         detail_mstWar = await war.get_war_from_spot(
             conn, raw_quest.mstQuestPhaseDetail.spotId
         )

@@ -111,7 +111,9 @@ async def get_nice_spot(
         nextOfsY=raw_spot.nextOfsY,
         closedMessage=raw_spot.closedMessage,
         quests=[
-            NiceQuest.parse_obj(await get_nice_quest(conn, region, quest, lang, mstWar))
+            NiceQuest.parse_obj(
+                await get_nice_quest(conn, region, quest, lang, mstWar, raw_spot)
+            )
             for quest in quests
             if quest.mstQuest.spotId == raw_spot.id
         ],
