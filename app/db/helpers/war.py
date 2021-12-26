@@ -2,7 +2,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import select
 
 from ...models.raw import mstMap, mstSpot, mstWar
-from ...schemas.raw import MstWar, MstSpot
+from ...schemas.raw import MstSpot, MstWar
 
 
 async def get_war_from_spot(conn: AsyncConnection, spot_id: int) -> MstWar:
