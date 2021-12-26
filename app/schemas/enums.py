@@ -315,6 +315,7 @@ class SvtClass(str, Enum):
     beastI = "beastI"
     beastIIIR = "beastIIIR"
     beastIIIL = "beastIIIL"
+    LBbeastIV = "LBbeastIV"
     beastUnknown = "beastUnknown"
     unknown = "unknown"
     agarthaPenth = "agarthaPenth"
@@ -355,6 +356,7 @@ CLASS_NAME: dict[int, SvtClass] = {
     26: SvtClass.beastIIIL,
     27: SvtClass.beastUnknown,  # LB 5.2 beast
     28: SvtClass.pretender,
+    29: SvtClass.LBbeastIV,
     97: SvtClass.unknown,
     # 98
     # 99

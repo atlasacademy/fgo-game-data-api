@@ -4418,6 +4418,103 @@
       ]
     },
     {
+      "id": 940237,
+      "name": "生存権 A",
+      "ruby": "せいぞんけん",
+      "detail": "自身の『ツングースカ・サンクチュアリ』における攻撃の威力を50%アップ ＋ 味方全体<控え含む>の『ツングースカ・サンクチュアリ』のクエストクリア時に得られる絆を5%アップ(サポート時は無効)【『ツングースカ・サンクチュアリ』イベント期間限定】",
+      "unmodifiedDetail": "自身の『ツングースカ・サンクチュアリ』における攻撃の威力を50%アップ ＋ 味方全体<控え含む>の『ツングースカ・サンクチュアリ』のクエストクリア時に得られる絆を5%アップ(サポート時は無効)【『ツングースカ・サンクチュアリ』イベント期間限定】",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00301.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 16,
+          "priority": 159,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 80349,
+          "flag": 0,
+          "startedAt": 1640163600,
+          "endedAt": 1640923199
+        }
+      ],
+      "skillAdd": [],
+      "functions": [
+        {
+          "funcId": 8013,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "生存権",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+          "functvals": [],
+          "funcquestTvals": [{ "id": 94000127, "name": "unknown" }],
+          "funcGroup": [
+            {
+              "eventId": 80349,
+              "baseFuncId": 8011,
+              "nameTotal": "{1} \n攻撃の威力アップ合計",
+              "name": "攻撃の威力アップ合計",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_302.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [
+            {
+              "id": 3992,
+              "name": "生存権",
+              "detail": "『ツングースカ・サンクチュアリ』において与えるダメージをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+              "type": "upDamage",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 10000
+            }
+          ],
+          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 500 }]
+        },
+        {
+          "funcId": 8015,
+          "funcType": "servantFriendshipUp",
+          "funcTargetType": "ptFull",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80349,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n得られる自身の絆ボーナス合計",
+              "name": "得られる自身の絆アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1023.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            {
+              "ApplySupportSvt": 0,
+              "Individuality": 0,
+              "EventId": 80349,
+              "RateCount": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": 960507,
       "name": "絆の力 EX",
       "ruby": "きずなのちから",
