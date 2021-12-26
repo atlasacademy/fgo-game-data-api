@@ -1169,6 +1169,7 @@ class MstQuest(BaseModelORJson):
 class MstQuestWithWar(MstQuest):
     warId: int
     warLongName: str
+    spotName: str
 
 
 class MstQuestWithPhase(MstQuestWithWar):

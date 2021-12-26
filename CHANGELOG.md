@@ -5,6 +5,9 @@ All notable changes to the public API will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
+### Added
+- `afterClear` and `spotName` to basic quest and basic quest phase.
+- `recommendLv` and `spotName` to nice quest and nice quest phase.
 
 ## 5.75.0 - 2021-11-19
 ### Added

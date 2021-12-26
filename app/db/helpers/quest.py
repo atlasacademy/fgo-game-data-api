@@ -45,7 +45,10 @@ from .utils import sql_jsonb_agg
 
 
 QUEST_WITH_WAR_SELECT = select(
-    mstQuest, mstWar.c.id.label("warId"), mstWar.c.longName.label("warLongName")
+    mstQuest,
+    mstWar.c.id.label("warId"),
+    mstWar.c.longName.label("warLongName"),
+    mstSpot.c.name.label("spotName"),
 ).select_from(
     mstQuest.join(mstSpot, mstSpot.c.id == mstQuest.c.spotId)
     .join(mstMap, mstMap.c.id == mstSpot.c.mapId)
@@ -84,6 +87,7 @@ MSTQUEST_WITH_PHASE_SELECT = select(
     mstQuest,
     mstWar.c.id.label("warId"),
     mstWar.c.longName.label("warLongName"),
+    mstSpot.c.name.label("spotName"),
     mstQuestPhase.c.classIds,
     mstQuestPhase.c.individuality,
     mstQuestPhase.c.script,
