@@ -88,6 +88,7 @@ Docker is recommended to set up the Postgres and redis servers but those can be 
 > git clone --depth 1 --branch TW https://github.com/atlasacademy/fgo-game-data.git fgo-game-data-tw
 > git clone https://github.com/atlasacademy/fgo-game-data-api.git
 > cd fgo-game-data-api
+# If you didn't clone other game data regions, remove them from the data field in config.json.
 > cp config.sample.json config.json
 > docker-compose up -d
 > poetry install

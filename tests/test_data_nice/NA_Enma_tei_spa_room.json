@@ -22,7 +22,9 @@
     }
   ],
   "afterClear": "close",
+  "recommendLv": "1",
   "spotId": 905101,
+  "spotName": "Lobby",
   "warId": 9051,
   "warLongName": "Miyama Onsen Grand Shrine and Restaurant, Enma-tei ",
   "chapterId": 0,

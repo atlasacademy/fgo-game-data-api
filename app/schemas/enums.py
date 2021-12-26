@@ -784,6 +784,7 @@ class Trait(str, Enum):
     buffStrongAgainstWildBeast = "buffStrongAgainstWildBeast"
     buffStrongAgainstDragon = "buffStrongAgainstDragon"
     fairyTaleServant = "fairyTaleServant"
+    classLBBeastIV = "classLBBeastIV"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -811,6 +812,7 @@ TRAIT_NAME: dict[int, Trait] = {
     118: Trait.classBeastIIIL,
     119: Trait.classBeastUnknown,
     120: Trait.classPretender,
+    121: Trait.classLBBeastIV,
     200: Trait.attributeSky,
     201: Trait.attributeEarth,
     202: Trait.attributeHuman,
