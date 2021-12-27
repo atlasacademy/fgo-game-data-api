@@ -92,6 +92,7 @@ def get_nice_stage(
         wave=raw_stage.wave,
         bgm=bgm,
         fieldAis=raw_stage.script.get("aiFieldIds", []),
+        call=raw_stage.script.get("call", []),
         enemies=enemies,
     )
 
@@ -273,7 +274,7 @@ async def get_nice_quest_phase(
         quest_drop = await get_rayshift_drops(conn, quest_id, phase)
         if quest_detail:
             quest_enemies = await get_quest_enemies(
-                conn, redis, region, quest_detail, quest_drop, lang
+                conn, redis, region, stages, quest_detail, quest_drop, lang
             )
         else:
             save_stages_cache = False

@@ -604,6 +604,22 @@ class TestServantSpecial:
             "id": 107050,
         }
 
+    async def test_stage_call(self, client: AsyncClient) -> None:
+        lb_beast_iv_final_battle = (
+            await client.get("/nice/JP/quest/94065004/1")
+        ).json()
+        assert lb_beast_iv_final_battle["stages"][0]["call"] == [
+            94065063,
+            94065062,
+            94065064,
+            94065065,
+            94065066,
+            94065067,
+            94065069,
+            94065068,
+        ]
+        assert len(lb_beast_iv_final_battle["stages"][0]["enemies"]) == 12
+
     async def test_get_all_call_shift_enemies(self, client: AsyncClient) -> None:
         ccc_suzuka_1 = await client.get("/nice/NA/quest/94034017/1")
         assert len(ccc_suzuka_1.json()["stages"][0]["enemies"]) == 2

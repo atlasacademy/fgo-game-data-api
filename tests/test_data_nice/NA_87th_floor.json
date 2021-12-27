@@ -63,6 +63,7 @@
         "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_BATTLE_17/BGM_BATTLE_17.mp3"
       },
       "fieldAis": [],
+      "call": [],
       "enemies": []
     },
     {
@@ -75,6 +76,7 @@
         "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_BATTLE_17/BGM_BATTLE_17.mp3"
       },
       "fieldAis": [],
+      "call": [],
       "enemies": []
     }
   ]

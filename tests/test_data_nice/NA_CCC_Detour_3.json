@@ -63,6 +63,7 @@
         "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_BATTLE_52/BGM_BATTLE_52.mp3"
       },
       "fieldAis": [],
+      "call": [],
       "enemies": [
         {
           "deck": "enemy",
@@ -373,6 +374,7 @@
         "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_BATTLE_46/BGM_BATTLE_46.mp3"
       },
       "fieldAis": [],
+      "call": [],
       "enemies": [
         {
           "deck": "enemy",

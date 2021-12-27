@@ -1609,6 +1609,7 @@ class NiceStage(BaseModelORJson):
     wave: int
     bgm: NiceBgm
     fieldAis: list[FieldAi] = []
+    call: list[int] = Field([], title="Summon these NPC IDs")
     enemies: list[QuestEnemy] = []
 
 

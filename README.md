@@ -79,20 +79,29 @@ Make sure poetry is installed: https://python-poetry.org/docs/#installation.
 
 Docker is recommended to set up the Postgres and redis servers but those can be set up manually as well. Postgres needs the [PGroonga](https://pgroonga.github.io/install/) extension installed.
 
-```
-> git clone --depth 1 --branch JP https://github.com/atlasacademy/fgo-game-data.git fgo-game-data-jp
-> git clone --depth 1 --branch NA https://github.com/atlasacademy/fgo-game-data.git fgo-game-data-na
+```sh
+git clone --depth 1 --branch JP https://github.com/atlasacademy/fgo-game-data.git fgo-game-data-jp
+git clone --depth 1 --branch NA https://github.com/atlasacademy/fgo-game-data.git fgo-game-data-na
+
 # It's not neccecary to clone the other regions.
-> git clone --depth 1 --branch CN https://github.com/atlasacademy/fgo-game-data.git fgo-game-data-cn
-> git clone --depth 1 --branch KR https://github.com/atlasacademy/fgo-game-data.git fgo-game-data-kr
-> git clone --depth 1 --branch TW https://github.com/atlasacademy/fgo-game-data.git fgo-game-data-tw
-> git clone https://github.com/atlasacademy/fgo-game-data-api.git
-> cd fgo-game-data-api
+git clone --depth 1 --branch CN https://github.com/atlasacademy/fgo-game-data.git fgo-game-data-cn
+git clone --depth 1 --branch KR https://github.com/atlasacademy/fgo-game-data.git fgo-game-data-kr
+git clone --depth 1 --branch TW https://github.com/atlasacademy/fgo-game-data.git fgo-game-data-tw
+
+git clone https://github.com/atlasacademy/fgo-game-data-api.git
+cd fgo-game-data-api
+
 # If you didn't clone other game data regions, remove them from the data field in config.json.
-> cp config.sample.json config.json
-> docker-compose up -d
-> poetry install
-> poetry shell
+cp config.sample.json config.json
+
+docker-compose up -d
+
+# Make sure you have the build prerequisites for psycopg2 installed if you are installing on Linux or macOS.
+# https://www.psycopg.org/docs/install.html#build-prerequisites
+# Debian/Ubuntu: sudo apt install libpq-dev python3-dev
+# CentOS: sudo yum install python-devel postgresql-devel
+poetry install
+poetry shell
 ```
 
 ### Run the API server
@@ -124,10 +133,10 @@ Tips:
 
 - `main.py`: Main entrypoint of the application.
 - `routers/`: Routers to deal with incoming requests. The routers call functions from `core` to get the response data.
-- `core/`: Build response data. Get raw data from either `db/helpers/` or `redis/helpers`.
-- `data/`: Import translation data into memory. Preprocessing conde for data to be imported into db and redis.
+- `core/`: Build response data. Get raw data from either `db/helpers/` or `redis/helpers/`.
+- `data/`: Import translation data into memory. Preprocess data to be imported into db and redis.
 - `db/`: DB stuffs.
-  - `db/helpers/`: Functions to be used by `core` to get data from the DB.
+  - `db/helpers/`: Functions to be used by `core` to get data from Postgres.
 - `redis/`: Redis stuffs.
   - `redis/helpers/`: Functions to be used by `core` to get data from Redis.
 - `schemas/`: Response Pydantic models.
@@ -137,20 +146,16 @@ Tips:
 
 [pylint](https://docs.pylint.org/en/latest/index.html) and [mypy](https://mypy.readthedocs.io/en/stable/) are used to lint the code. pylint's configuration and mypy's configuration are in [pyproject.toml](pyproject.toml).
 
+```
+./scripts/lint.ps1
+```
+
 ### [Formatting](scripts/format.ps1)
 
-[isort](https://pycqa.github.io/isort/) and [black](https://black.readthedocs.io/en/stable/) are used to format the code. isort's configuration is in [pyproject.toml](pyproject.toml) and black uses default settings.
+[isort](https://pycqa.github.io/isort/) and [black](https://black.readthedocs.io/en/stable/) are used to format the code. isort's configuration is in [pyproject.toml](pyproject.toml) and black uses default settings. [prettier](https://prettier.io/docs/en/) is used to format the json files.
 
 ```
-isort app tests export scripts; black app tests export scripts
-```
-
-[prettier](https://prettier.io/docs/en/) is used to format the json files.
-
-```
-prettier --write tests/*/*.json
-prettier --write export/*/Nice*.json
-prettier --write export/*/*UserLevel.json --print-width 50
+./scripts/format.ps1
 ```
 
 ### Dependencies
@@ -166,7 +171,7 @@ poetry export -f requirements.txt -o requirements.txt
 Run pytest at project root to run the tests or use `coverage` to get coverage statistics.
 
 ```
-coverage run --source=app/ -m pytest; coverage html
+./scripts/test.ps1
 ```
 
 ### Helper scripts
@@ -181,7 +186,7 @@ python scripts/extract_enums.py dump.cs_path app/schemas/gameenums.py
 
 #### [`update_ce_translation.py`](scripts/update_ce_translation.py)
 
-Update `equip_names.json` with new NA CEs translations. `--jp-master` and `--na-master` arguments are not needed if environment variables `JP_GAMEDATA` and `NA_GAMEDATA` are set, added to the `.env` file or set in `config.json`.
+Update translation files with new NA CEs translations. `--jp-master` and `--na-master` arguments are not needed if environment variables `JP_GAMEDATA` and `NA_GAMEDATA` are set, added to the `.env` file or set in `config.json`.
 
 ```
 python scripts/update_ce_translation.py --jp-master jp_master_path --na-master na_master_path

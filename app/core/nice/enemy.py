@@ -27,6 +27,7 @@ from ...schemas.nice import (
     EnemyTd,
     QuestEnemy,
 )
+from ...schemas.raw import MstStage
 from ...schemas.rayshift import Deck, DeckSvt, QuestDetail, QuestDrop, UserSvt
 from ..basic import get_basic_servant
 from ..utils import get_traits_list, get_translation, nullable_to_string
@@ -256,7 +257,9 @@ async def get_quest_enemy(
 
 
 def get_extra_decks(
-    deck_svts: list[EnemyDeckInfo], npc_id_map: dict[DeckType, dict[int, DeckSvt]]
+    mstStage: MstStage,
+    deck_svts: list[EnemyDeckInfo],
+    npc_id_map: dict[DeckType, dict[int, DeckSvt]],
 ) -> list[EnemyDeckInfo]:
     extra_decks: list[EnemyDeckInfo] = []
 
@@ -274,30 +277,42 @@ def get_extra_decks(
                     if deck_info not in extra_decks:
                         extra_decks.append(deck_info)
 
+    if "call" in mstStage.script:
+        stage_call_npc_ids: list[int] = mstStage.script["call"]
+        for npc_id in stage_call_npc_ids:
+            deck_info = EnemyDeckInfo(DeckType.CALL, npc_id_map[DeckType.CALL][npc_id])
+            if deck_info not in extra_decks:
+                extra_decks.append(deck_info)
+
     return extra_decks
 
 
+def is_spawn_bonus_enemy(deck: DeckSvt) -> bool:
+    return deck.infoScript is not None and "isAddition" in deck.infoScript
+
+
 def get_enemies_in_stage(
-    enemy_deck_svts: list[EnemyDeckInfo], npc_id_map: dict[DeckType, dict[int, DeckSvt]]
+    mstStage: MstStage,
+    enemy_deck_svts: list[EnemyDeckInfo],
+    npc_id_map: dict[DeckType, dict[int, DeckSvt]],
 ) -> list[EnemyDeckInfo]:
     stage_enemies = [
         deck_info
         for deck_info in enemy_deck_svts
-        if not deck_info.deck.infoScript
-        or "isAddition" not in deck_info.deck.infoScript
+        if not is_spawn_bonus_enemy(deck_info.deck)
     ]
 
     # For faster added checks. A quest can have hundreds of enemies but only at most 5 break bars
     added_npc_decks = set(stage_enemies)
 
-    to_be_added_decks = get_extra_decks(stage_enemies, npc_id_map)
+    to_be_added_decks = get_extra_decks(mstStage, stage_enemies, npc_id_map)
 
     while to_be_added_decks:
         stage_enemies += to_be_added_decks
         added_npc_decks |= set(to_be_added_decks)
         to_be_added_decks = [
             deck
-            for deck in get_extra_decks(stage_enemies, npc_id_map)
+            for deck in get_extra_decks(mstStage, stage_enemies, npc_id_map)
             if deck not in added_npc_decks
         ]
 
@@ -308,6 +323,7 @@ async def get_quest_enemies(
     conn: AsyncConnection,
     redis: Redis,
     region: Region,
+    mstStages: list[MstStage],
     quest_detail: QuestDetail,
     quest_drop: list[QuestDrop],
     lang: Language = Language.jp,
@@ -349,19 +365,24 @@ async def get_quest_enemies(
 
     out_enemies: list[list[QuestEnemy]] = []
     for stage, enemy_deck in enumerate(quest_detail.enemyDeck):
+        # It's necessary to go through all these hoohah and get_enemies_in_stage
+        # because we want to put the enemies into stages instead of one long list.
+        # It's pretty annoying to indentify which additional enemies appear in which stages.
         enemy_decks = [
-            EnemyDeckInfo(DeckType.ENEMY, enemy)
-            for enemy in sorted(enemy_deck.svts, key=lambda enemy: enemy.id)
-            if not enemy.infoScript or "isAddition" not in enemy.infoScript
+            EnemyDeckInfo(DeckType.ENEMY, deck)
+            for deck in sorted(enemy_deck.svts, key=lambda enemy: enemy.id)
+            if not is_spawn_bonus_enemy(deck)
         ]
         enemy_decks += [
-            EnemyDeckInfo(DeckType.TRANSFORM, enemy)
-            for enemy in quest_detail.transformDeck.svts
-            if not enemy.infoScript or "isAddition" not in enemy.infoScript
+            EnemyDeckInfo(DeckType.TRANSFORM, deck)
+            for deck in quest_detail.transformDeck.svts
+            if not is_spawn_bonus_enemy(deck)
         ]
 
         stage_nice_enemies: list[QuestEnemy] = []
-        for deck_svt_info in get_enemies_in_stage(enemy_decks, npc_id_map):
+        for deck_svt_info in get_enemies_in_stage(
+            mstStages[stage], enemy_decks, npc_id_map
+        ):
             drops = [
                 drop
                 for drop in quest_drop
