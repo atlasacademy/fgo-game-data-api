@@ -179,6 +179,14 @@ def get_enemy_td(svt: UserSvt, all_nps: MultipleNiceTds) -> EnemyTd:
     )
 
 
+def calculate_unbiased_sample_variance(
+    n: int, sum_of_x: int, sum_of_squared_x: int
+) -> float:
+    if n == 1:
+        return 0.0
+    return (n * sum_of_squared_x - pow(sum_of_x, 2)) / (n * (n - 1))
+
+
 def get_nice_drop(drop: QuestDrop) -> EnemyDrop:
     return EnemyDrop(
         type=GIFT_TYPE_NAME[drop.type],
@@ -186,6 +194,10 @@ def get_nice_drop(drop: QuestDrop) -> EnemyDrop:
         num=drop.originalNum,
         dropCount=drop.dropCount,
         runs=drop.runs,
+        dropExpected=drop.dropCount / drop.runs,
+        dropVariance=calculate_unbiased_sample_variance(
+            drop.runs, drop.dropCount, drop.sumDropCountSquared
+        ),
     )
 
 

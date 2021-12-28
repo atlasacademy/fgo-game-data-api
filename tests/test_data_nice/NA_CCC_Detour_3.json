@@ -52,6 +52,17 @@
   "scripts": [],
   "messages": [],
   "supportServants": [],
+  "drops": [
+    {
+      "type": "item",
+      "objectId": 6505,
+      "num": 1,
+      "dropCount": 4,
+      "runs": 1,
+      "dropExpected": 4.0,
+      "dropVariance": 0.0
+    }
+  ],
   "stages": [
     {
       "wave": 1,
@@ -403,7 +414,9 @@
               "objectId": 6505,
               "num": 1,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             }
           ],
           "lv": 81,
@@ -1674,7 +1687,9 @@
               "objectId": 6505,
               "num": 1,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             }
           ],
           "lv": 83,
@@ -2313,7 +2328,9 @@
               "objectId": 6505,
               "num": 1,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             }
           ],
           "lv": 80,
@@ -2886,7 +2903,9 @@
               "objectId": 6505,
               "num": 1,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             }
           ],
           "lv": 81,

@@ -171,5 +171,6 @@ class QuestDrop(BaseModelORJson):
     type: int
     objectId: int
     originalNum: int
-    dropCount: int
     runs: int
+    dropCount: int
+    sumDropCountSquared: int

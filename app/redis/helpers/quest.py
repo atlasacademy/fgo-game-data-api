@@ -1,14 +1,19 @@
 from typing import Optional
 
-import orjson
 from aioredis import Redis
 
 from ...config import Settings
+from ...schemas.base import BaseModelORJson
 from ...schemas.common import Language, Region
-from ...schemas.nice import NiceStage
+from ...schemas.nice import EnemyDrop, NiceStage
 
 
 settings = Settings()
+
+
+class RayshiftRedisData(BaseModelORJson):
+    quest_drops: list[EnemyDrop]
+    stages: list[NiceStage]
 
 
 async def get_stages_cache(
@@ -17,33 +22,24 @@ async def get_stages_cache(
     quest_id: int,
     phase: int,
     lang: Language = Language.jp,
-) -> Optional[list[NiceStage]]:
+) -> Optional[RayshiftRedisData]:
     redis_key = f"{settings.redis_prefix}:cache:stages:{region.value}:{quest_id}:{phase}:{lang.value}"
-    stage_redis = await redis.get(redis_key)
+    redis_data = await redis.get(redis_key)
 
-    if stage_redis:
-        stages = orjson.loads(stage_redis)
-        return [NiceStage.parse_obj(stage) for stage in stages]
+    if redis_data:
+        return RayshiftRedisData.parse_raw(redis_data)
 
     return None
 
 
 async def set_stages_cache(
     redis: Redis,
-    stages: list[NiceStage],
+    data: RayshiftRedisData,
     region: Region,
     quest_id: int,
     phase: int,
     lang: Language = Language.jp,
 ) -> None:
     redis_key = f"{settings.redis_prefix}:cache:stages:{region.value}:{quest_id}:{phase}:{lang.value}"
-
-    json_str = (
-        "["
-        + ",".join(
-            stage.json(exclude_unset=True, exclude_none=True) for stage in stages
-        )
-        + "]"
-    )
-
+    json_str = data.json(exclude_unset=True, exclude_none=True)
     await redis.set(redis_key, json_str, ex=settings.quest_cache_length)

@@ -10,7 +10,7 @@ from ...config import Settings
 from ...db.helpers import war
 from ...db.helpers.rayshift import get_rayshift_drops
 from ...rayshift.quest import get_quest_detail
-from ...redis.helpers.quest import get_stages_cache, set_stages_cache
+from ...redis.helpers.quest import RayshiftRedisData, get_stages_cache, set_stages_cache
 from ...schemas.common import Language, Region, ScriptLink
 from ...schemas.enums import CLASS_NAME
 from ...schemas.gameenums import (
@@ -20,6 +20,8 @@ from ...schemas.gameenums import (
     QUEST_TYPE_NAME,
 )
 from ...schemas.nice import (
+    DeckType,
+    EnemyDrop,
     NiceQuest,
     NiceQuestMessage,
     NiceQuestPhase,
@@ -45,7 +47,7 @@ from .. import raw
 from ..utils import get_traits_list, get_translation
 from .base_script import get_nice_script_link
 from .bgm import get_nice_bgm
-from .enemy import get_quest_enemies
+from .enemy import get_nice_drop, get_quest_enemies
 from .follower import get_nice_support_servants
 from .gift import get_nice_gift
 from .item import get_nice_item_amount_db
@@ -203,6 +205,7 @@ async def get_nice_quest_phase_no_rayshift(
 
     nice_data |= {
         "phase": raw_quest.mstQuestPhase.phase,
+        "drops": [],
         "className": [
             CLASS_NAME[class_id] for class_id in raw_quest.mstQuestPhase.classIds
         ],
@@ -259,23 +262,38 @@ async def get_nice_quest_phase(
         conn, redis, region, quest_id, phase, lang
     )
 
-    nice_stages = await get_stages_cache(redis, region, quest_id, phase, lang)
+    rayshift_data = await get_stages_cache(redis, region, quest_id, phase, lang)
 
-    if nice_stages:
-        db_data.nice.stages = nice_stages
+    if rayshift_data:
+        db_data.nice.stages = rayshift_data.stages
+        db_data.nice.drops = rayshift_data.quest_drops
         return db_data.nice
 
     stages = sorted(db_data.raw.mstStage, key=lambda stage: stage.wave)
     save_stages_cache = True
 
+    nice_quest_drops: list[EnemyDrop] = []
     quest_enemies: list[list[QuestEnemy]] = [[]] * len(db_data.raw.mstStage)
     if stages:
-        quest_detail = await get_quest_detail(conn, region, quest_id, phase)
-        quest_drop = await get_rayshift_drops(conn, quest_id, phase)
-        if quest_detail:
+        rayshift_quest_detail = await get_quest_detail(conn, region, quest_id, phase)
+        rayshift_quest_drops = await get_rayshift_drops(conn, quest_id, phase)
+        if rayshift_quest_detail:
             quest_enemies = await get_quest_enemies(
-                conn, redis, region, stages, quest_detail, quest_drop, lang
+                conn,
+                redis,
+                region,
+                stages,
+                rayshift_quest_detail,
+                rayshift_quest_drops,
+                lang,
             )
+            nice_quest_drops = [
+                get_nice_drop(drop)
+                for drop in rayshift_quest_drops
+                if drop.stage == -1
+                and drop.deckType == DeckType.ENEMY
+                and drop.deckId == -1
+            ]
         else:
             save_stages_cache = False
 
@@ -284,7 +302,15 @@ async def get_nice_quest_phase(
         for stage, enemies in zip(stages, quest_enemies)
     ]
     db_data.nice.stages = new_nice_stages
+    db_data.nice.drops = nice_quest_drops
     if save_stages_cache:
-        await set_stages_cache(redis, new_nice_stages, region, quest_id, phase, lang)
+        await set_stages_cache(
+            redis,
+            RayshiftRedisData(quest_drops=nice_quest_drops, stages=new_nice_stages),
+            region,
+            quest_id,
+            phase,
+            lang,
+        )
 
     return db_data.nice

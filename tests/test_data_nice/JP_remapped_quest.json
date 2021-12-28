@@ -47,6 +47,80 @@
   "scripts": [],
   "messages": [],
   "supportServants": [],
+  "drops": [
+    {
+      "type": "item",
+      "objectId": 6001,
+      "num": 1,
+      "dropCount": 10,
+      "runs": 48,
+      "dropExpected": 0.20833333333333334,
+      "dropVariance": 0.16843971631205673
+    },
+    {
+      "type": "item",
+      "objectId": 6524,
+      "num": 1,
+      "dropCount": 15,
+      "runs": 48,
+      "dropExpected": 0.3125,
+      "dropVariance": 0.3045212765957447
+    },
+    {
+      "type": "item",
+      "objectId": 7001,
+      "num": 1,
+      "dropCount": 9,
+      "runs": 48,
+      "dropExpected": 0.1875,
+      "dropVariance": 0.15558510638297873
+    },
+    {
+      "type": "item",
+      "objectId": 7007,
+      "num": 1,
+      "dropCount": 5,
+      "runs": 48,
+      "dropExpected": 0.10416666666666667,
+      "dropVariance": 0.09530141843971632
+    },
+    {
+      "type": "item",
+      "objectId": 94060001,
+      "num": 3,
+      "dropCount": 399,
+      "runs": 48,
+      "dropExpected": 8.3125,
+      "dropVariance": 1.240691489361702
+    },
+    {
+      "type": "item",
+      "objectId": 94060002,
+      "num": 3,
+      "dropCount": 74,
+      "runs": 48,
+      "dropExpected": 1.5416666666666667,
+      "dropVariance": 0.6790780141843972
+    },
+    {
+      "type": "item",
+      "objectId": 94060004,
+      "num": 3,
+      "dropCount": 69,
+      "runs": 48,
+      "dropExpected": 1.4375,
+      "dropVariance": 0.33643617021276595
+    },
+    {
+      "type": "item",
+      "objectId": 94060004,
+      "num": 4,
+      "dropCount": 252,
+      "runs": 48,
+      "dropExpected": 5.25,
+      "dropVariance": 1.2127659574468086
+    }
+  ],
   "stages": [
     {
       "wave": 1,
@@ -84,38 +158,48 @@
           "drops": [
             {
               "type": "item",
-              "objectId": 94060004,
-              "num": 4,
+              "objectId": 6001,
+              "num": 1,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             },
             {
               "type": "item",
               "objectId": 6524,
               "num": 1,
               "dropCount": 0,
-              "runs": 0
-            },
-            {
-              "type": "item",
-              "objectId": 94060002,
-              "num": 3,
-              "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             },
             {
               "type": "item",
               "objectId": 94060001,
               "num": 3,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             },
             {
               "type": "item",
-              "objectId": 6001,
-              "num": 1,
+              "objectId": 94060002,
+              "num": 3,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
+            },
+            {
+              "type": "item",
+              "objectId": 94060004,
+              "num": 4,
+              "dropCount": 0,
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             }
           ],
           "lv": 18,
@@ -386,31 +470,39 @@
           "drops": [
             {
               "type": "item",
-              "objectId": 94060004,
-              "num": 4,
-              "dropCount": 0,
-              "runs": 0
-            },
-            {
-              "type": "item",
               "objectId": 6524,
               "num": 1,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             },
             {
               "type": "item",
               "objectId": 94060001,
               "num": 3,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             },
             {
               "type": "item",
               "objectId": 94060002,
               "num": 3,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
+            },
+            {
+              "type": "item",
+              "objectId": 94060004,
+              "num": 4,
+              "dropCount": 0,
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             }
           ],
           "lv": 22,
@@ -695,38 +787,48 @@
           "drops": [
             {
               "type": "item",
-              "objectId": 94060004,
-              "num": 4,
-              "dropCount": 0,
-              "runs": 0
-            },
-            {
-              "type": "item",
-              "objectId": 94060002,
-              "num": 3,
-              "dropCount": 0,
-              "runs": 0
-            },
-            {
-              "type": "item",
               "objectId": 6001,
               "num": 1,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             },
             {
               "type": "item",
               "objectId": 6524,
               "num": 1,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             },
             {
               "type": "item",
               "objectId": 94060001,
               "num": 3,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
+            },
+            {
+              "type": "item",
+              "objectId": 94060002,
+              "num": 3,
+              "dropCount": 0,
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
+            },
+            {
+              "type": "item",
+              "objectId": 94060004,
+              "num": 4,
+              "dropCount": 0,
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             }
           ],
           "lv": 23,
@@ -1000,35 +1102,45 @@
               "objectId": 6001,
               "num": 1,
               "dropCount": 0,
-              "runs": 0
-            },
-            {
-              "type": "item",
-              "objectId": 94060002,
-              "num": 3,
-              "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             },
             {
               "type": "item",
               "objectId": 6524,
               "num": 1,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             },
             {
               "type": "item",
               "objectId": 94060001,
               "num": 3,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
+            },
+            {
+              "type": "item",
+              "objectId": 94060002,
+              "num": 3,
+              "dropCount": 0,
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             },
             {
               "type": "item",
               "objectId": 94060004,
               "num": 4,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             }
           ],
           "lv": 18,
@@ -1299,38 +1411,48 @@
           "drops": [
             {
               "type": "item",
-              "objectId": 94060002,
-              "num": 3,
-              "dropCount": 0,
-              "runs": 0
-            },
-            {
-              "type": "item",
               "objectId": 6001,
               "num": 1,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             },
             {
               "type": "item",
               "objectId": 6524,
               "num": 1,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             },
             {
               "type": "item",
               "objectId": 94060001,
               "num": 3,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
+            },
+            {
+              "type": "item",
+              "objectId": 94060002,
+              "num": 3,
+              "dropCount": 0,
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             },
             {
               "type": "item",
               "objectId": 94060004,
               "num": 4,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             }
           ],
           "lv": 23,
@@ -1615,31 +1737,39 @@
           "drops": [
             {
               "type": "item",
-              "objectId": 94060002,
-              "num": 3,
-              "dropCount": 0,
-              "runs": 0
-            },
-            {
-              "type": "item",
               "objectId": 7001,
               "num": 1,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             },
             {
               "type": "item",
               "objectId": 94060001,
               "num": 3,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
+            },
+            {
+              "type": "item",
+              "objectId": 94060002,
+              "num": 3,
+              "dropCount": 0,
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             },
             {
               "type": "item",
               "objectId": 94060004,
               "num": 4,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             }
           ],
           "lv": 28,
@@ -2280,31 +2410,39 @@
           "drops": [
             {
               "type": "item",
-              "objectId": 94060002,
-              "num": 3,
+              "objectId": 7007,
+              "num": 1,
               "dropCount": 0,
-              "runs": 0
-            },
-            {
-              "type": "item",
-              "objectId": 94060004,
-              "num": 3,
-              "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             },
             {
               "type": "item",
               "objectId": 94060001,
               "num": 3,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             },
             {
               "type": "item",
-              "objectId": 7007,
-              "num": 1,
+              "objectId": 94060002,
+              "num": 3,
               "dropCount": 0,
-              "runs": 0
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
+            },
+            {
+              "type": "item",
+              "objectId": 94060004,
+              "num": 3,
+              "dropCount": 0,
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
             }
           ],
           "lv": 18,

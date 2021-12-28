@@ -1556,6 +1556,8 @@ class EnemyDrop(BaseModelORJson):
     num: int
     dropCount: int
     runs: int
+    dropExpected: float
+    dropVariance: float
 
 
 class DeckType(str, Enum):
@@ -1681,6 +1683,7 @@ class NiceQuestPhase(NiceQuest):
     scripts: list[ScriptLink]
     messages: list[NiceQuestMessage]
     supportServants: list[SupportServant]
+    drops: list[EnemyDrop]
     stages: list[NiceStage]
 
 

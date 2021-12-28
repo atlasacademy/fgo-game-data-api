@@ -52,6 +52,7 @@
   "scripts": [],
   "messages": [],
   "supportServants": [],
+  "drops": [],
   "stages": [
     {
       "wave": 1,

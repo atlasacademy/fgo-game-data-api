@@ -1,9 +1,10 @@
 from typing import Any, Optional
 
+from sqlalchemy import BIGINT, Integer
 from sqlalchemy.dialects.postgresql import JSONB, insert
 from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import AsyncConnection
-from sqlalchemy.sql import and_, case, func, select
+from sqlalchemy.sql import and_, case, cast, func, select
 from sqlalchemy.sql.elements import literal_column
 from sqlalchemy.sql.expression import text
 
@@ -33,6 +34,7 @@ async def get_rayshift_drops(
 ) -> list[QuestDrop]:
     enemy_deck_svt = (
         select(
+            rayshiftQuest.c.queryId,
             literal_column("'enemy'").label("deckType"),
             func.jsonb_array_elements(literal_column("d.deck->'svts'")).label(
                 "deck_svt"
@@ -57,6 +59,7 @@ async def get_rayshift_drops(
 
     shift_deck_svt = (
         select(
+            rayshiftQuest.c.queryId,
             literal_column("'shift'").label("deckType"),
             func.jsonb_array_elements(literal_column("d.deck->'svts'")).label(
                 "deck_svt"
@@ -82,6 +85,7 @@ async def get_rayshift_drops(
     deck_svt = enemy_deck_svt.union_all(shift_deck_svt).cte(name="deck_svt")
 
     drops = select(
+        deck_svt.c.queryId,
         deck_svt.c.deckType,
         deck_svt.c.stage,
         literal_column("deck_svt.deck_svt->>'id'").label("deckId"),
@@ -90,14 +94,55 @@ async def get_rayshift_drops(
         ).label("drops"),
     ).cte(name="drops")
 
-    drop_items = select(
+    all_drops = select(
+        drops.c.queryId,
         drops.c.stage,
         drops.c.deckType,
-        drops.c.deckId,
+        cast(drops.c.deckId, Integer).label("deckId"),
         drops.c.drops["type"].label("type"),
         drops.c.drops["objectId"].label("objectId"),
         drops.c.drops["originalNum"].label("originalNum"),
-    ).cte(name="drop_items")
+    ).cte(name="all_drops")
+
+    run_enemy_drop_items = (
+        select(
+            all_drops.c.queryId,
+            all_drops.c.stage,
+            all_drops.c.deckType,
+            all_drops.c.deckId,
+            all_drops.c.type,
+            all_drops.c.objectId,
+            all_drops.c.originalNum,
+            func.count(all_drops.c.objectId).label("dropCount"),
+        )
+        .group_by(
+            all_drops.c.queryId,
+            all_drops.c.stage,
+            all_drops.c.deckType,
+            all_drops.c.deckId,
+            all_drops.c.type,
+            all_drops.c.objectId,
+            all_drops.c.originalNum,
+        )
+        .cte(name="run_enemy_drop_items")
+    )
+
+    run_drop_items = (
+        select(
+            all_drops.c.queryId,
+            all_drops.c.type,
+            all_drops.c.objectId,
+            all_drops.c.originalNum,
+            func.count(all_drops.c.objectId).label("dropCount"),
+        )
+        .group_by(
+            all_drops.c.queryId,
+            all_drops.c.type,
+            all_drops.c.objectId,
+            all_drops.c.originalNum,
+        )
+        .cte(name="run_drop_items")
+    )
 
     runs = (
         select(func.count(rayshiftQuest.c.queryId))
@@ -112,23 +157,65 @@ async def get_rayshift_drops(
         .select()
     )
 
-    stmt = select(
-        drop_items.c.stage,
-        drop_items.c.deckType,
-        drop_items.c.deckId,
-        drop_items.c.type,
-        drop_items.c.objectId,
-        drop_items.c.originalNum,
-        func.count(drop_items.c.objectId).label("dropCount"),
-        runs.label("runs"),
-    ).group_by(
-        drop_items.c.stage,
-        drop_items.c.deckType,
-        drop_items.c.deckId,
-        drop_items.c.type,
-        drop_items.c.objectId,
-        drop_items.c.originalNum,
+    individual_enemy_drops = (
+        select(
+            run_enemy_drop_items.c.stage,
+            run_enemy_drop_items.c.deckType,
+            run_enemy_drop_items.c.deckId,
+            run_enemy_drop_items.c.type,
+            run_enemy_drop_items.c.objectId,
+            run_enemy_drop_items.c.originalNum,
+            runs.label("runs"),
+            func.sum(run_enemy_drop_items.c.dropCount).label("dropCount"),
+            cast(
+                func.sum(func.power(run_enemy_drop_items.c.dropCount, 2)), BIGINT
+            ).label("sumDropCountSquared"),
+        )
+        .group_by(
+            run_enemy_drop_items.c.stage,
+            run_enemy_drop_items.c.deckType,
+            run_enemy_drop_items.c.deckId,
+            run_enemy_drop_items.c.type,
+            run_enemy_drop_items.c.objectId,
+            run_enemy_drop_items.c.originalNum,
+        )
+        .order_by(
+            run_enemy_drop_items.c.stage,
+            run_enemy_drop_items.c.deckType,
+            run_enemy_drop_items.c.deckId,
+            run_enemy_drop_items.c.type,
+            run_enemy_drop_items.c.objectId,
+            run_enemy_drop_items.c.originalNum,
+        )
     )
+
+    run_drops = (
+        select(
+            literal_column("-1").label("stage"),
+            literal_column("'enemy'").label("deckType"),
+            literal_column("-1").label("deckId"),
+            run_drop_items.c.type,
+            run_drop_items.c.objectId,
+            run_drop_items.c.originalNum,
+            runs.label("runs"),
+            func.sum(run_drop_items.c.dropCount).label("dropCount"),
+            cast(func.sum(func.power(run_drop_items.c.dropCount, 2)), BIGINT).label(
+                "sumDropCountSquared"
+            ),
+        )
+        .group_by(
+            run_drop_items.c.type,
+            run_drop_items.c.objectId,
+            run_drop_items.c.originalNum,
+        )
+        .order_by(
+            run_drop_items.c.type,
+            run_drop_items.c.objectId,
+            run_drop_items.c.originalNum,
+        )
+    )
+
+    stmt = individual_enemy_drops.union_all(run_drops)
 
     results = await conn.execute(stmt)
     return [QuestDrop.parse_obj(row) for row in results.fetchall()]

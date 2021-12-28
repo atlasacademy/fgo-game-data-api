@@ -27,4 +27,6 @@ def clear_drop_data(quest_response: Any) -> Any:
             for drop in enemy["drops"]:
                 drop["dropCount"] = 0
                 drop["runs"] = 0
+                drop["dropExpected"] = 0
+                drop["dropVariance"] = 0
     return quest_response
