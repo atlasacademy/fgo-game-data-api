@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `call` to nice stage.
 - `dropExpected` and `dropVariance` to nice quest enemy drop.
 - `drops` to nice quest phase.
+- `additionalSkillId` and `additionalSkillActorType` to nice skill script.
 
 ## 5.75.0 - 2021-11-19
 ### Added

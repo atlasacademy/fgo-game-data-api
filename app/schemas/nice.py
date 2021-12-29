@@ -443,6 +443,8 @@ class NiceSkillScript(BaseModel):
     HP_VAL_LOWER: Optional[list[int]] = None
     HP_PER_HIGHER: Optional[list[int]] = None
     HP_PER_LOWER: Optional[list[int]] = None
+    additionalSkillId: Optional[list[int]] = None
+    additionalSkillActorType: Optional[list[int]] = None
 
 
 class NiceSkillAdd(BaseModelORJson):
