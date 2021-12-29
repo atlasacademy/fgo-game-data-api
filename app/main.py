@@ -85,6 +85,8 @@ Pre-generated full nice data that can be served instantly:
   - [NA Servant with lore](/export/NA/nice_servant_lore.json)
   - [NA Craft Essence](/export/NA/nice_equip.json)
   - [NA Craft Essence with lore](/export/NA/nice_equip_lore.json)
+  - [NA War](/export/NA/nice_war.json)
+  - [NA Event](/export/NA/nice_event.json)
   - [NA Command Code](/export/NA/nice_command_code.json)
   - [NA Material](/export/NA/nice_item.json)
   - [NA Mystic Code](/export/NA/nice_mystic_code.json)
@@ -102,6 +104,10 @@ Pre-generated full nice data that can be served instantly:
   [JP Craft Essence with English names](/export/JP/nice_equip_lang_en.json)
   - [JP Craft Essence with lore](/export/JP/nice_equip_lore.json),
   [JP Craft Essence with lore and English names](/export/JP/nice_equip_lore_lang_en.json)
+  - [JP War](/export/JP/nice_war.json),
+  [JP War with English names](/export/JP/nice_war_lang_en.json)
+  - [JP Event](/export/JP/nice_event.json),
+  [JP Event with English names](/export/JP/nice_event_lang_en.json)
   - [JP Command Code](/export/JP/nice_command_code.json),
   [JP Command Code with English names](/export/JP/nice_command_code_lang_en.json)
   - [JP Mystic Code](/export/JP/nice_mystic_code.json),

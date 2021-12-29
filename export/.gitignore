@@ -19,3 +19,5 @@ basic_command_code*.json
 basic_event*.json
 basic_war*.json
 nice_bgm*.json
+nice_war*.json
+nice_event*.json

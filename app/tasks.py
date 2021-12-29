@@ -11,6 +11,9 @@ from git import Repo  # type: ignore
 from pydantic import DirectoryPath
 from sqlalchemy.ext.asyncio import AsyncConnection, AsyncEngine
 
+from .core.nice.event import get_nice_event
+from .core.nice.war import get_nice_war
+
 from .config import Settings, logger, project_root
 from .core.basic import (
     get_all_basic_ccs,
@@ -188,6 +191,14 @@ async def generate_exports(
                 all_mm_data = await get_all_nice_mms(
                     conn, mstMasterMissions, Language.jp
                 )
+                all_event_data = [
+                    await get_nice_event(conn, region, event.id, Language.jp)
+                    for event in mstEvents
+                ]
+                all_war_data = [
+                    await get_nice_war(conn, region, war.id, Language.jp)
+                    for war in mstWars
+                ]
 
                 all_basic_servant_data = sort_by_collection_no(
                     await get_all_basic_servants(
@@ -220,6 +231,8 @@ async def generate_exports(
                     ("nice_bgm", all_bgm_data, dump_orjson),
                     ("nice_illustrator", mstIllustrators, dump_orjson),
                     ("nice_cv", mstCvs, dump_orjson),
+                    ("nice_event", all_event_data, dump_orjson),
+                    ("nice_war", all_war_data, dump_orjson),
                 ]
 
                 if region == Region.JP:
@@ -231,6 +244,14 @@ async def generate_exports(
                     all_mc_data_en = await get_all_nice_mcs(
                         conn, region, Language.en, mstEquips
                     )
+                    all_event_data_en = [
+                        await get_nice_event(conn, region, event.id, Language.en)
+                        for event in mstEvents
+                    ]
+                    all_war_data_en = [
+                        await get_nice_war(conn, region, war.id, Language.en)
+                        for war in mstWars
+                    ]
 
                     all_basic_servant_en = sort_by_collection_no(
                         await get_all_basic_servants(
@@ -276,6 +297,8 @@ async def generate_exports(
                         ("nice_bgm_lang_en", all_bgm_data_en, dump_orjson),
                         ("nice_illustrator_lang_en", mstIllustrators_en, dump_orjson),
                         ("nice_cv_lang_en", mstCvs_en, dump_orjson),
+                        ("nice_event_lang_en", all_event_data_en, dump_orjson),
+                        ("nice_war_lang_en", all_war_data_en, dump_orjson),
                     ] + output_files
 
                 base_export_path = export_path / region.value
