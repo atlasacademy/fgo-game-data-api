@@ -315,7 +315,7 @@ class SvtClass(str, Enum):
     beastI = "beastI"
     beastIIIR = "beastIIIR"
     beastIIIL = "beastIIIL"
-    LBbeastIV = "LBbeastIV"
+    beastIV = "beastIV"
     beastUnknown = "beastUnknown"
     unknown = "unknown"
     agarthaPenth = "agarthaPenth"
@@ -356,7 +356,7 @@ CLASS_NAME: dict[int, SvtClass] = {
     26: SvtClass.beastIIIL,
     27: SvtClass.beastUnknown,  # LB 5.2 beast
     28: SvtClass.pretender,
-    29: SvtClass.LBbeastIV,
+    29: SvtClass.beastIV,
     97: SvtClass.unknown,
     # 98
     # 99
@@ -784,7 +784,7 @@ class Trait(str, Enum):
     buffStrongAgainstWildBeast = "buffStrongAgainstWildBeast"
     buffStrongAgainstDragon = "buffStrongAgainstDragon"
     fairyTaleServant = "fairyTaleServant"
-    classLBBeastIV = "classLBBeastIV"
+    classBeastIV = "classBeastIV"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -812,7 +812,7 @@ TRAIT_NAME: dict[int, Trait] = {
     118: Trait.classBeastIIIL,
     119: Trait.classBeastUnknown,
     120: Trait.classPretender,
-    121: Trait.classLBBeastIV,
+    121: Trait.classBeastIV,
     200: Trait.attributeSky,
     201: Trait.attributeEarth,
     202: Trait.attributeHuman,

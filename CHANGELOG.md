@@ -8,6 +8,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 - `afterClear` and `spotName` to basic quest and basic quest phase.
 - `recommendLv` and `spotName` to nice quest and nice quest phase.
+- `call` to nice stage.
+- `dropExpected` and `dropVariance` to nice quest enemy drop.
+- `drops` to nice quest phase.
 
 ## 5.75.0 - 2021-11-19
 ### Added
