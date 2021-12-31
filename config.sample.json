@@ -1,23 +1,23 @@
 {
   "data": {
     "JP": {
-      "gamedata": "..\\fgo-game-data-jp",
+      "gamedata": "../fgo-game-data-jp",
       "postgresdsn": "postgresql://user:password@127.0.0.1:5433/fgoapijp"
     },
     "NA": {
-      "gamedata": "..\\fgo-game-data-na",
+      "gamedata": "../fgo-game-data-na",
       "postgresdsn": "postgresql://user:password@127.0.0.1:5434/fgoapina"
     },
     "CN": {
-      "gamedata": "..\\fgo-game-data-cn",
+      "gamedata": "../fgo-game-data-cn",
       "postgresdsn": "postgresql://user:password@127.0.0.1:5435/fgoapicn"
     },
     "KR": {
-      "gamedata": "..\\fgo-game-data-kr",
+      "gamedata": "../fgo-game-data-kr",
       "postgresdsn": "postgresql://user:password@127.0.0.1:5436/fgoapikr"
     },
     "TW": {
-      "gamedata": "..\\fgo-game-data-tw",
+      "gamedata": "../fgo-game-data-tw",
       "postgresdsn": "postgresql://user:password@127.0.0.1:5437/fgoapitw"
     }
   },

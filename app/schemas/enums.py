@@ -785,6 +785,7 @@ class Trait(str, Enum):
     buffStrongAgainstDragon = "buffStrongAgainstDragon"
     fairyTaleServant = "fairyTaleServant"
     classBeastIV = "classBeastIV"
+    havingAnimalsCharacteristics = "havingAnimalsCharacteristics"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -937,6 +938,7 @@ TRAIT_NAME: dict[int, Trait] = {
     2802: Trait.buffStrongAgainstDragon,
     2803: Trait.buffStrongAgainstWildBeast,
     2810: Trait.fairyTaleServant,
+    2821: Trait.havingAnimalsCharacteristics,
     # 2xxx: CQ or Story quests buff
     3000: Trait.attackPhysical,  # Normal attack, including NP
     3001: Trait.attackProjectile,
