@@ -679,6 +679,7 @@ class NiceLoreStats(BaseModel):
 class NiceCostume(BaseModel):
     id: int
     costumeCollectionNo: int
+    battleCharaId: int
     name: str
     shortName: str
     detail: str

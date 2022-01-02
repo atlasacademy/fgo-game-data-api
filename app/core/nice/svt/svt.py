@@ -74,8 +74,8 @@ def get_nice_comment(comment: MstSvtComment) -> NiceLoreComment:
     )
 
 
-def get_nice_costume(costume: MstSvtCostume) -> NiceCostume:
-    return NiceCostume(**costume.dict())
+def get_nice_costume(costume: MstSvtCostume, battleCharaId: int) -> NiceCostume:
+    return NiceCostume(**costume.dict(), battleCharaId=battleCharaId)
 
 
 async def get_nice_servant(
@@ -303,7 +303,9 @@ async def get_nice_servant(
                 lang, raw_svt.mstIllustrator.name if raw_svt.mstIllustrator else ""
             ),
             "costume": {
-                costume_ids[costume.id]: get_nice_costume(costume)
+                costume_ids[costume.id]: get_nice_costume(
+                    costume, costume_ids[costume.id]
+                )
                 for costume in raw_svt.mstSvtCostume
             },
             "comments": [
