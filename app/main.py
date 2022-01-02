@@ -269,6 +269,12 @@ async def startup() -> None:
     await load_and_export(redis, region_pathes, async_engines)
 
 
+@app.on_event("shutdown")
+async def shutdown() -> None:
+    for async_engine in async_engines.values():
+        await async_engine.dispose()
+
+
 app.include_router(nice.router)
 
 app.include_router(basic.router)

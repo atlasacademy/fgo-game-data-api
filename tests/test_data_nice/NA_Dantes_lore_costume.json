@@ -2288,6 +2288,7 @@
       "1100230": {
         "id": 11,
         "costumeCollectionNo": 9,
+        "battleCharaId": 1100230,
         "name": "Monte Cristo Selection",
         "shortName": "Monte Cristo Selection",
         "detail": "The Count of Monte Cristo's summer attire. He actually really likes the inflatable tube, but won't admit it.",
@@ -2739,7 +2740,8 @@
                   900100, 900200, 900400, 900500, 900600, 900700, 900800,
                   900900, 1000100, 1000200, 1000300, 1000400, 1000500, 1000700,
                   1000800, 1000900, 1100300, 1100400, 1100500, 1100600, 1100700,
-                  1100900, 2300100, 2300200, 2300300, 2500100, 2500200, 2500300
+                  1100900, 2300100, 2300200, 2300300, 2500100, 2500200, 2500300,
+                  2500400
                 ],
                 "eventId": 0
               }
