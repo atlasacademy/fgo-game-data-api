@@ -1,3 +1,4 @@
+import time
 from collections import defaultdict
 from dataclasses import dataclass
 from typing import Any, Optional, Union
@@ -304,13 +305,12 @@ async def get_nice_quest_phase(
     db_data.nice.stages = new_nice_stages
     db_data.nice.drops = nice_quest_drops
     if save_stages_cache:
+        cache_data = RayshiftRedisData(
+            quest_drops=nice_quest_drops, stages=new_nice_stages
+        )
+        long_ttl = time.time() > db_data.nice.closedAt
         await set_stages_cache(
-            redis,
-            RayshiftRedisData(quest_drops=nice_quest_drops, stages=new_nice_stages),
-            region,
-            quest_id,
-            phase,
-            lang,
+            redis, cache_data, region, quest_id, phase, lang, long_ttl
         )
 
     return db_data.nice

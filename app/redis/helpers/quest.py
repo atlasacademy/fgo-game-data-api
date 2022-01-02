@@ -39,7 +39,11 @@ async def set_stages_cache(
     quest_id: int,
     phase: int,
     lang: Language = Language.jp,
+    long_ttl: bool = False,
 ) -> None:
     redis_key = f"{settings.redis_prefix}:cache:stages:{region.value}:{quest_id}:{phase}:{lang.value}"
     json_str = data.json(exclude_unset=True, exclude_none=True)
-    await redis.set(redis_key, json_str, ex=settings.quest_cache_length)
+    if long_ttl:
+        await redis.set(redis_key, json_str)
+    else:
+        await redis.set(redis_key, json_str, ex=settings.quest_cache_length)
