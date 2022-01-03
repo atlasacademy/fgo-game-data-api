@@ -2303,7 +2303,8 @@
         "comment": "The world's most well known seeker of vengeance.\nKnown as \"The Count of Monte Cristo.\"\nEntrapped by a cruel plot and convicted of a crime he didn't commit, he was sent to the nightmarish Château d'If. His iron will kept him from falling into despair, and with the treasure of Monte Cristo island in hand he returned to Paris.\nThere he exacted a terrible revenge upon the city's most influential people who had betrayed him to become so.",
         "condType": "none",
         "condValues": [0],
-        "condValue2": 0
+        "condValue2": 0,
+        "additionalConds": []
       },
       {
         "id": 2,
@@ -2312,7 +2313,8 @@
         "comment": "Height/Weight: 185cm, 75kg\nOrigin: Dumas' \"The Count of Monte Cristo\"?\nRegion: France\nAlignment: Chaotic-Evil\nGender: Male\nHis favorite phrase is \"Attendre et espérer,\" which translates to \"Wait and hope.\"",
         "condType": "svtFriendship",
         "condValues": [1],
-        "condValue2": 0
+        "condValue2": 0,
+        "additionalConds": []
       },
       {
         "id": 3,
@@ -2321,7 +2323,8 @@
         "comment": "His dreadful life, his path of vengeance, his devotion to his beloved Mercédès, his struggle and regret, and finally his path to repentance... It is a story beloved by the people of France and the world that features him as the \"World's Greatest Seeker of Vengeance.\"\n\nThe story of the Count of Monte Cristo was written by Alexandre Dumas and is a work of fiction. However, the existence of the priest who gave Edmond guidance within the Château d'If, Abbé Faria, has been confirmed...",
         "condType": "svtFriendship",
         "condValues": [2],
-        "condValue2": 0
+        "condValue2": 0,
+        "additionalConds": []
       },
       {
         "id": 4,
@@ -2330,7 +2333,8 @@
         "comment": "His True Name is Edmond Dantès, but he considers himself a different person than the \"Edmond Dantès\" who was a sailor in Marseille.\nHis reasoning is that at the end of his quest for vengeance, \"Edmond Dantès\" abandoned his evil nature...but this Servant continues to be a personification of vengeance. Thus, he says, he is not Edmond.",
         "condType": "svtFriendship",
         "condValues": [3],
-        "condValue2": 0
+        "condValue2": 0,
+        "additionalConds": []
       },
       {
         "id": 5,
@@ -2339,7 +2343,8 @@
         "comment": "『Monte Cristo Mythology』\nRank: C\nNP Type: Anti-Personnel\nRange: N/A　Maximum Targets: 1\nHe is the personification of vengeance itself. He doesn't belong to any single class, and is summoned as an Extra Class, Avenger. When he materializes as an Avenger, the tales of his lifetime have been elevated to the status of Noble Phantasm and grant him a superhuman physique.\nIn addition to his physique, he can use magical energy to attack and conceal his own stats and class.\n\nThis Noble Phantasm is constantly active. It has an extra effect when his True Name is released, but it is not used in this game.",
         "condType": "svtFriendship",
         "condValues": [4],
-        "condValue2": 0
+        "condValue2": 0,
+        "additionalConds": []
       },
       {
         "id": 6,
@@ -2348,7 +2353,8 @@
         "comment": "『Enfer Château d'If』\nRank: A\nNP Type: Anti-Personnel/Anti-Army\nRange: 1-20　Maximum Targets: 1-100\nThe manifestation of his iron will, trained within the hellish Château d'If. He can escape not only the prison of his body, but also the formless prisons of time and space.\nBy accelerating his thought processes and forcing his body to reflect them, he can move at incredibly high speeds.\nTo those observing his movements, it might look like he has the ability to stop time.\n\nIn this game, his high-speed movements enable him to create clones and attack multiple times simultaneously.",
         "condType": "svtFriendship",
         "condValues": [5],
-        "condValue2": 0
+        "condValue2": 0,
+        "additionalConds": []
       },
       {
         "id": 7,
@@ -2357,7 +2363,8 @@
         "comment": "I am the Count of Monte Cristo.\nI know neither love nor compassion. Until I burn everything to cinders, I will remain an Avenger, fueled by hatred and vengeance to make myself a brightly burning black flame of rage.\nMy beloved Haydée does not exist in this world, and thus, I will be a vengeful demon for eternity...",
         "condType": "questClear",
         "condValues": [911100201],
-        "condValue2": 0
+        "condValue2": 0,
+        "additionalConds": []
       }
     ],
     "voices": [

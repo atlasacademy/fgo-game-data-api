@@ -54,6 +54,7 @@ from ...models.raw import (
     mstSvtChange,
     mstSvtCoin,
     mstSvtComment,
+    mstSvtCommentAdd,
     mstSvtCostume,
     mstSvtExp,
     mstSvtExtra,
@@ -121,6 +122,7 @@ from ...schemas.raw import (
     MstSvtChange,
     MstSvtCoin,
     MstSvtComment,
+    MstSvtCommentAdd,
     MstSvtCostume,
     MstSvtExp,
     MstSvtExtra,
@@ -193,6 +195,11 @@ schema_table_fetch_all: dict[  # type:ignore
     MstSvtExp: (mstSvtExp, mstSvtExp.c.type, mstSvtExp.c.lv),
     MstFriendship: (mstFriendship, mstFriendship.c.id, mstFriendship.c.rank),
     MstSvtComment: (mstSvtComment, mstSvtComment.c.svtId, mstSvtComment.c.id),
+    MstSvtCommentAdd: (
+        mstSvtCommentAdd,
+        mstSvtCommentAdd.c.svtId,
+        mstSvtCommentAdd.c.id,
+    ),
     MstCommandCodeComment: (
         mstCommandCodeComment,
         mstCommandCodeComment.c.commandCodeId,

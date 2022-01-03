@@ -2412,6 +2412,53 @@
       "condValue2": 0
     }
   ],
+  "mstSvtCommentAdd": [
+    {
+      "svtId": 202300,
+      "id": 2,
+      "priority": 0,
+      "idx": 0,
+      "condType": 9,
+      "condValues": [1],
+      "condValue2": 0
+    },
+    {
+      "svtId": 202300,
+      "id": 3,
+      "priority": 0,
+      "idx": 0,
+      "condType": 9,
+      "condValues": [2],
+      "condValue2": 0
+    },
+    {
+      "svtId": 202300,
+      "id": 4,
+      "priority": 0,
+      "idx": 0,
+      "condType": 9,
+      "condValues": [3],
+      "condValue2": 0
+    },
+    {
+      "svtId": 202300,
+      "id": 5,
+      "priority": 0,
+      "idx": 0,
+      "condType": 9,
+      "condValues": [4],
+      "condValue2": 0
+    },
+    {
+      "svtId": 202300,
+      "id": 6,
+      "priority": 0,
+      "idx": 0,
+      "condType": 9,
+      "condValues": [5],
+      "condValue2": 0
+    }
+  ],
   "mstSvtVoice": [
     {
       "scriptJson": [

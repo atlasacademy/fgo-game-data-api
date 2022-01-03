@@ -393,7 +393,7 @@ class MstSvtLimit(BaseModelORJson):
 
 
 class MstSvtComment(BaseModelORJson):
-    condValues: Optional[list[int]]  # [1]
+    condValues: Optional[list[int]]  # Can be `null` explicitly
     script: Optional[dict[str, Any]] = None
     svtId: int  # 1000100
     id: int  # 2
@@ -402,6 +402,16 @@ class MstSvtComment(BaseModelORJson):
     comment: str  # ""
     condType: int  # 9
     condValue2: int  # 0
+
+
+class MstSvtCommentAdd(BaseModelORJson):
+    svtId: int
+    id: int
+    priority: int
+    idx: int
+    condType: int
+    condValues: list[int]
+    condValue2: int
 
 
 class MstSvtScriptExtendDataCond(BaseModelORJson):
@@ -1387,6 +1397,7 @@ class ServantEntity(BaseModelORJson):
     mstFriendship: list[MstFriendship] = []
     mstSvtExtra: Optional[MstSvtExtra] = None
     mstSvtComment: list[MstSvtComment] = []
+    mstSvtCommentAdd: list[MstSvtCommentAdd] = []
     mstSvtVoice: list[MstSvtVoice] = []
     mstSvtMultiPortrait: list[MstSvtMultiPortrait] = []
     mstVoice: list[MstVoice] = []

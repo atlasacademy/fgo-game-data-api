@@ -654,6 +654,17 @@ class NiceServantTrait(BaseModel):
     condNum: Optional[int] = None
 
 
+class NiceLoreCommentAdd(BaseModel):
+    idx: int
+    condType: NiceCondType
+    condValues: list[int]
+    condValue2: int = Field(
+        ...,
+        title="condValue2",
+        description="This field can be safely ignored. All values are 0.",
+    )
+
+
 class NiceLoreComment(BaseModel):
     id: int
     priority: int
@@ -662,6 +673,7 @@ class NiceLoreComment(BaseModel):
     condType: NiceCondType
     condValues: Optional[list[int]]
     condValue2: int
+    additionalConds: list[NiceLoreCommentAdd]
 
 
 class NiceLoreStats(BaseModel):

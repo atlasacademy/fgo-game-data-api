@@ -622,6 +622,19 @@ mstSvtComment = Table(
 )
 
 
+mstSvtCommentAdd = Table(
+    "mstSvtCommentAdd",
+    metadata,
+    Column("svtId", Integer, index=True),
+    Column("id", Integer),
+    Column("priority", Integer),
+    Column("idx", Integer),
+    Column("condType", Integer),
+    Column("condValues", ARRAY(Integer)),
+    Column("condValue2", Integer),
+)
+
+
 mstSubtitle = Table(
     "mstSubtitle",
     metadata,
@@ -1587,6 +1600,7 @@ TABLES_TO_BE_LOADED = [
     mstSvtVoiceRelation,
     mstVoicePlayCond,
     mstSvtComment,
+    mstSvtCommentAdd,
     mstSvtGroup,
     mstSvtScript,
     mstSvtExp,

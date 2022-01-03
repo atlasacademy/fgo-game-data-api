@@ -16,12 +16,18 @@ from ....schemas.gameenums import (
     NiceStatusRank,
     SvtType,
 )
-from ....schemas.nice import NiceCostume, NiceLoreComment, NiceServantChange
+from ....schemas.nice import (
+    NiceCostume,
+    NiceLoreComment,
+    NiceLoreCommentAdd,
+    NiceServantChange,
+)
 from ....schemas.raw import (
     BAD_COMBINE_SVT_LIMIT,
     MstSvt,
     MstSvtChange,
     MstSvtComment,
+    MstSvtCommentAdd,
     MstSvtCostume,
     ServantEntity,
 )
@@ -62,7 +68,18 @@ def get_nice_servant_change(change: MstSvtChange) -> NiceServantChange:
     )
 
 
-def get_nice_comment(comment: MstSvtComment) -> NiceLoreComment:
+def get_nice_comment_adds(comment_add: MstSvtCommentAdd) -> NiceLoreCommentAdd:
+    return NiceLoreCommentAdd(
+        idx=comment_add.idx,
+        condType=COND_TYPE_NAME[comment_add.condType],
+        condValues=comment_add.condValues,
+        condValue2=comment_add.condValue2,
+    )
+
+
+def get_nice_comment(
+    comment: MstSvtComment, comment_adds: list[MstSvtCommentAdd]
+) -> NiceLoreComment:
     return NiceLoreComment(
         id=comment.id,
         priority=comment.priority,
@@ -71,6 +88,11 @@ def get_nice_comment(comment: MstSvtComment) -> NiceLoreComment:
         condType=COND_TYPE_NAME[comment.condType],
         condValues=comment.condValues,
         condValue2=comment.condValue2,
+        additionalConds=[
+            get_nice_comment_adds(add)
+            for add in comment_adds
+            if add.id == comment.id and add.priority == comment.priority
+        ],
     )
 
 
@@ -309,7 +331,8 @@ async def get_nice_servant(
                 for costume in raw_svt.mstSvtCostume
             },
             "comments": [
-                get_nice_comment(svt_comment) for svt_comment in raw_svt.mstSvtComment
+                get_nice_comment(svt_comment, raw_svt.mstSvtCommentAdd)
+                for svt_comment in raw_svt.mstSvtComment
             ],
             "voices": get_nice_voice(region, raw_svt, costume_ids, lang),
             "stats": {

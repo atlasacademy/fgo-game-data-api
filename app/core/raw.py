@@ -70,6 +70,7 @@ from ..schemas.raw import (
     MstSvtChange,
     MstSvtCoin,
     MstSvtComment,
+    MstSvtCommentAdd,
     MstSvtCostume,
     MstSvtExp,
     MstSvtExtra,
@@ -438,6 +439,9 @@ async def get_servant_entity(
             conn, MstIllustrator, svt_db.illustratorId
         )
         svt_entity.mstSvtComment = await fetch.get_all(conn, MstSvtComment, servant_id)
+        svt_entity.mstSvtCommentAdd = await fetch.get_all(
+            conn, MstSvtCommentAdd, servant_id
+        )
 
         # Try to match order in the voice tab in game
         voice_ids = []
