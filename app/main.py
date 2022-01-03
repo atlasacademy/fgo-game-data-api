@@ -20,7 +20,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from .config import Settings, project_root
 from .core.info import get_all_repo_info
-from .db.engine import async_engines
+from .db.engine import async_engines, engines
 from .routers import basic, nice, raw, secret
 from .routers.deps import get_redis
 from .schemas.common import Region, RepoInfo
@@ -271,6 +271,8 @@ async def startup() -> None:
 
 @app.on_event("shutdown")
 async def shutdown() -> None:
+    for engine in engines.values():
+        engine.dispose()
     for async_engine in async_engines.values():
         await async_engine.dispose()
 

@@ -49,6 +49,7 @@ class Settings(BaseSettings):
     rayshift_api_key: SecretStr = SecretStr("")
     rayshift_api_url: HttpUrl = parse_obj_as(HttpUrl, "https://rayshift.io/api/v1/")
     quest_cache_length: int = 3600
+    db_max_overflow: int = 10
     write_postgres_data: bool = True
     write_redis_data: bool = True
     asset_url: HttpUrl = parse_obj_as(
