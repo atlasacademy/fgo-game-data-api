@@ -344,6 +344,7 @@ async def get_nice_servant(
                 "magic": get_nice_status_rank(last_svt_limit.magic),
                 "luck": get_nice_status_rank(last_svt_limit.luck),
                 "np": get_nice_status_rank(last_svt_limit.treasureDevice),
+                "deity": get_nice_status_rank(last_svt_limit.deity),
             },
         }
 

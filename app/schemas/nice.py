@@ -685,7 +685,7 @@ class NiceLoreStats(BaseModel):
     np: NiceStatusRank  # treasureDevice
     # policy: NiceStatusRank
     # personality: NiceStatusRank
-    # deity: NiceStatusRank
+    deity: NiceStatusRank
 
 
 class NiceCostume(BaseModel):
