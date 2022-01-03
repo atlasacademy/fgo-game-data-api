@@ -32,6 +32,8 @@ from .enums import (
     NiceItemBGType,
     NiceItemUse,
     NiceSkillType,
+    ServantPersonality,
+    ServantPolicy,
     SvtClass,
 )
 from .gameenums import (
@@ -683,8 +685,8 @@ class NiceLoreStats(BaseModel):
     magic: NiceStatusRank
     luck: NiceStatusRank
     np: NiceStatusRank  # treasureDevice
-    # policy: NiceStatusRank
-    # personality: NiceStatusRank
+    policy: ServantPolicy
+    personality: ServantPersonality
     deity: NiceStatusRank
 
 

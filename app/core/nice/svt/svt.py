@@ -5,7 +5,14 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ....config import Settings
 from ....schemas.common import Language, Region
-from ....schemas.enums import ATTRIBUTE_NAME, CLASS_NAME
+from ....schemas.enums import (
+    ATTRIBUTE_NAME,
+    CLASS_NAME,
+    SERVANT_PERSONALITY_NAME,
+    SERVANT_POLICY_NAME,
+    ServantPersonality,
+    ServantPolicy,
+)
 from ....schemas.gameenums import (
     CARD_TYPE_NAME,
     COND_TYPE_NAME,
@@ -345,6 +352,12 @@ async def get_nice_servant(
                 "luck": get_nice_status_rank(last_svt_limit.luck),
                 "np": get_nice_status_rank(last_svt_limit.treasureDevice),
                 "deity": get_nice_status_rank(last_svt_limit.deity),
+                "policy": SERVANT_POLICY_NAME.get(
+                    last_svt_limit.policy, ServantPolicy.unknown
+                ),
+                "personality": SERVANT_PERSONALITY_NAME.get(
+                    last_svt_limit.personality, ServantPersonality.unknown
+                ),
             },
         }
 

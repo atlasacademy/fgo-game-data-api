@@ -520,6 +520,56 @@ DETAIL_MISSION_LINK_TYPE: dict[int, NiceDetailMissionCondLinkType] = {
 }
 
 
+### Servant Policy ###
+
+
+class ServantPolicy(str, Enum):
+    """Servant Policy Enum"""
+
+    none = "none"
+    neutral = "neutral"
+    lawful = "lawful"
+    chaotic = "chaotic"
+    unknown = "unknown"
+
+
+SERVANT_POLICY_NAME = {
+    0: ServantPolicy.none,
+    1: ServantPolicy.neutral,
+    2: ServantPolicy.chaotic,
+    3: ServantPolicy.lawful,
+}
+
+
+### Servant Personality ###
+
+
+class ServantPersonality(str, Enum):
+    """Servant Personality Enum"""
+
+    none = "none"
+    good = "good"
+    madness = "madness"
+    balanced = "balanced"
+    summer = "summer"
+    evil = "evil"
+    goodAndEvil = "goodAndEvil"
+    bride = "bride"
+    unknown = "unknown"
+
+
+SERVANT_PERSONALITY_NAME = {
+    0: ServantPersonality.none,
+    1: ServantPersonality.good,
+    2: ServantPersonality.evil,
+    4: ServantPersonality.madness,
+    5: ServantPersonality.balanced,
+    6: ServantPersonality.goodAndEvil,
+    7: ServantPersonality.bride,
+    8: ServantPersonality.summer,
+}
+
+
 ### Trait ###
 
 

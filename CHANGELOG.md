@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `drops` to nice quest phase.
 - `additionalSkillId` and `additionalSkillActorType` to nice skill script.
 - `battleCharaId` to nice servant costume.
+- `deity`, `policy`, `personality` to nice servant lore.
 
 ## 5.75.0 - 2021-11-19
 ### Added

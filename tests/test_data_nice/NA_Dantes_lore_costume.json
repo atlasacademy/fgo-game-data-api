@@ -2282,7 +2282,10 @@
       "agility": "C",
       "magic": "B",
       "luck": "?",
-      "np": "A"
+      "np": "A",
+      "policy": "chaotic",
+      "personality": "evil",
+      "deity": "None"
     },
     "costume": {
       "1100230": {
