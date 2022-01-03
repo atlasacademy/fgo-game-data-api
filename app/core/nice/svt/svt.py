@@ -114,7 +114,7 @@ async def get_nice_servant(
         raw_svt = await raw.get_servant_entity(
             conn, svt_id, expand=True, lore=lore, mstSvt=mstSvt
         )
-    first_svt_limit = raw_svt.mstSvtLimit[0]
+    last_svt_limit = raw_svt.mstSvtLimit[-1]
 
     nice_data: dict[str, Any] = {
         "id": raw_svt.mstSvt.id,
@@ -130,8 +130,8 @@ async def get_nice_servant(
         "instantDeathChance": raw_svt.mstSvt.deathRate,
         "starGen": raw_svt.mstSvt.starRate,
         "traits": get_traits_list(sorted(raw_svt.mstSvt.individuality)),
-        "starAbsorb": first_svt_limit.criticalWeight,
-        "rarity": first_svt_limit.rarity,
+        "starAbsorb": last_svt_limit.criticalWeight,
+        "rarity": last_svt_limit.rarity,
         "cards": [CARD_TYPE_NAME[card_id] for card_id in raw_svt.mstSvt.cardIds],
         "bondGrowth": [
             friendship.friendship
@@ -166,12 +166,14 @@ async def get_nice_servant(
     nice_data["extraAssets"] = get_svt_extraAssets(region, svt_id, raw_svt, costume_ids)
 
     lvMax = max(svt_limit.lvMax for svt_limit in raw_svt.mstSvtLimit)
-    atkMax = first_svt_limit.atkMax
-    atkBase = first_svt_limit.atkBase
-    hpMax = first_svt_limit.hpMax
-    hpBase = first_svt_limit.hpBase
+    atkMax = last_svt_limit.atkMax
+    atkBase = last_svt_limit.atkBase
+    hpMax = last_svt_limit.hpMax
+    hpBase = last_svt_limit.hpBase
     maxLv = 121 if region == Region.JP else 101
     growthCurveMax = maxLv if raw_svt.mstSvt.type == SvtType.NORMAL else (lvMax + 1)
+    if raw_svt.mstSvt.type == SvtType.HEROINE and region == Region.JP:
+        growthCurveMax = 91
     growthCurveValues = sorted(raw_svt.mstSvtExp, key=lambda svtExp: svtExp.lv)
     atkGrowth = [
         atkBase + (atkMax - atkBase) * exp.curve // 1000
@@ -336,12 +338,12 @@ async def get_nice_servant(
             ],
             "voices": get_nice_voice(region, raw_svt, costume_ids, lang),
             "stats": {
-                "strength": get_nice_status_rank(first_svt_limit.power),
-                "endurance": get_nice_status_rank(first_svt_limit.defense),
-                "agility": get_nice_status_rank(first_svt_limit.agility),
-                "magic": get_nice_status_rank(first_svt_limit.magic),
-                "luck": get_nice_status_rank(first_svt_limit.luck),
-                "np": get_nice_status_rank(first_svt_limit.treasureDevice),
+                "strength": get_nice_status_rank(last_svt_limit.power),
+                "endurance": get_nice_status_rank(last_svt_limit.defense),
+                "agility": get_nice_status_rank(last_svt_limit.agility),
+                "magic": get_nice_status_rank(last_svt_limit.magic),
+                "luck": get_nice_status_rank(last_svt_limit.luck),
+                "np": get_nice_status_rank(last_svt_limit.treasureDevice),
             },
         }
 
