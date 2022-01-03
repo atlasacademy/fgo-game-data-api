@@ -1,3 +1,4 @@
+from itertools import chain
 from typing import Optional, Type, TypeVar
 
 from aioredis import Redis
@@ -58,7 +59,7 @@ async def fetch_mstSvtLimit(
         if mstSvtLimit:
             return MstSvtLimit.parse_raw(mstSvtLimit)
 
-    for i in range(100):
+    for i in chain(range(4, -1, -1), range(5, 100)):
         mstSvtLimit = await redis.hget(redis_key, f"{svt_id}:{i}")
         if mstSvtLimit:
             return MstSvtLimit.parse_raw(mstSvtLimit)
