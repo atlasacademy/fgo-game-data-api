@@ -38,7 +38,7 @@ sqlalchemy2-stubs = "^0.0.2-alpha.19"
 pytest-asyncio = "^0.16.0"
 asgi-lifespan = "^1.0.1"
 types-toml = "^0.10.1"
-types-aiofiles = "^0.7.3"
+types-aiofiles = "^0.8.0"
 
 [tool.isort]
 line_length = 88

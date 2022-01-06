@@ -63,7 +63,7 @@ tests = ["pytest", "pytest-asyncio", "mypy (>=0.800)"]
 
 [[package]]
 name = "astroid"
-version = "2.9.1"
+version = "2.9.2"
 description = "An abstract syntax tree for Python with inference support."
 category = "dev"
 optional = false
@@ -71,7 +71,6 @@ python-versions = ">=3.6.2"
 
 [package.dependencies]
 lazy-object-proxy = ">=1.4.0"
-typing-extensions = {version = ">=3.10", markers = "python_version < \"3.10\""}
 wrapt = ">=1.11,<1.14"
 
 [[package]]
@@ -153,7 +152,7 @@ python-versions = "*"
 
 [[package]]
 name = "charset-normalizer"
-version = "2.0.9"
+version = "2.0.10"
 description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
 category = "main"
 optional = false
@@ -302,7 +301,6 @@ python-versions = ">=3.7"
 
 [package.dependencies]
 gitdb = ">=4.0.1,<5"
-typing-extensions = {version = ">=3.7.4.3", markers = "python_version < \"3.10\""}
 
 [[package]]
 name = "greenlet"
@@ -347,7 +345,7 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "httpcore"
-version = "0.14.3"
+version = "0.14.4"
 description = "A minimal low-level HTTP client."
 category = "main"
 optional = false
@@ -573,7 +571,6 @@ isort = ">=4.2.5,<6"
 mccabe = ">=0.6,<0.7"
 platformdirs = ">=2.2.0"
 toml = ">=0.9.2"
-typing-extensions = {version = ">=3.10.0", markers = "python_version < \"3.10\""}
 
 [[package]]
 name = "pyparsing"
@@ -821,7 +818,7 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "types-aiofiles"
-version = "0.7.3"
+version = "0.8.0"
 description = "Typing stubs for aiofiles"
 category = "dev"
 optional = false
@@ -905,8 +902,8 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
 
 [metadata]
 lock-version = "1.1"
-python-versions = "^3.9"
-content-hash = "79369341a220876dc3d03b05e443bca6328ff0d8851ad6e9ce2944c639423880"
+python-versions = "^3.10"
+content-hash = "1958ac41d37453642f7f6becbb042c00a6269f3ada973703df604ad4dbc76d18"
 
 [metadata.files]
 aiofiles = [
@@ -930,8 +927,8 @@ asgiref = [
     {file = "asgiref-3.4.1.tar.gz", hash = "sha256:4ef1ab46b484e3c706329cedeff284a5d40824200638503f5768edb6de7d58e9"},
 ]
 astroid = [
-    {file = "astroid-2.9.1-py3-none-any.whl", hash = "sha256:bfd6c41149d1a368e9b7d3cc90470528e080efdd57fbc0c95426794e0be91c5b"},
-    {file = "astroid-2.9.1.tar.gz", hash = "sha256:f973b3622700431b6e8734ce66f6c18503922a13fb8eb8592e78bd4506823efb"},
+    {file = "astroid-2.9.2-py3-none-any.whl", hash = "sha256:aa296702f1a5c3102c860de49473aaa90a7f6d221555d5cf2678940a9be32a4e"},
+    {file = "astroid-2.9.2.tar.gz", hash = "sha256:72ace9c3333e274e9248168fc4f3e300da8545af1c303bd69197027f49e2bfff"},
 ]
 async-timeout = [
     {file = "async-timeout-4.0.2.tar.gz", hash = "sha256:2163e1640ddb52b7a8c80d0a67a08587e5d245cc9c553a74a847056bc2976b15"},
@@ -982,8 +979,8 @@ certifi = [
     {file = "certifi-2021.10.8.tar.gz", hash = "sha256:78884e7c1d4b00ce3cea67b44566851c4343c120abd683433ce934a68ea58872"},
 ]
 charset-normalizer = [
-    {file = "charset-normalizer-2.0.9.tar.gz", hash = "sha256:b0b883e8e874edfdece9c28f314e3dd5badf067342e42fb162203335ae61aa2c"},
-    {file = "charset_normalizer-2.0.9-py3-none-any.whl", hash = "sha256:1eecaa09422db5be9e29d7fc65664e6c33bd06f9ced7838578ba40d58bdf3721"},
+    {file = "charset-normalizer-2.0.10.tar.gz", hash = "sha256:876d180e9d7432c5d1dfd4c5d26b72f099d503e8fcc0feb7532c9289be60fcbd"},
+    {file = "charset_normalizer-2.0.10-py3-none-any.whl", hash = "sha256:cb957888737fc0bbcd78e3df769addb41fd1ff8cf950dc9e7ad7793f1bf44455"},
 ]
 click = [
     {file = "click-8.0.3-py3-none-any.whl", hash = "sha256:353f466495adaeb40b6b5f592f9f91cb22372351c84caeb068132442a4518ef3"},
@@ -1175,8 +1172,8 @@ hiredis = [
     {file = "hiredis-2.0.0.tar.gz", hash = "sha256:81d6d8e39695f2c37954d1011c0480ef7cf444d4e3ae24bc5e89ee5de360139a"},
 ]
 httpcore = [
-    {file = "httpcore-0.14.3-py3-none-any.whl", hash = "sha256:9a98d2416b78976fc5396ff1f6b26ae9885efbb3105d24eed490f20ab4c95ec1"},
-    {file = "httpcore-0.14.3.tar.gz", hash = "sha256:d10162a63265a0228d5807964bd964478cbdb5178f9a2eedfebb2faba27eef5d"},
+    {file = "httpcore-0.14.4-py3-none-any.whl", hash = "sha256:9410fe352bea732311f2b2bee0555c8cc5e62b9a73b9d3272fe125a2aa6eb28e"},
+    {file = "httpcore-0.14.4.tar.gz", hash = "sha256:d4305811f604d3c2e22869147392f134796976ff946c96a8cfba87f4e0171d83"},
 ]
 httptools = [
     {file = "httptools-0.3.0-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:4137137de8976511a392e27bfdcf231bd926ac13d375e0414e927b08217d779e"},
@@ -1576,8 +1573,8 @@ tomli = [
     {file = "tomli-1.2.3.tar.gz", hash = "sha256:05b6166bff487dc068d322585c7ea4ef78deed501cc124060e0f238e89a9231f"},
 ]
 types-aiofiles = [
-    {file = "types-aiofiles-0.7.3.tar.gz", hash = "sha256:5c54783745252302f5ba3e14d8f7e8547d100f72c74c9a5478ce2f7f01aa0cda"},
-    {file = "types_aiofiles-0.7.3-py3-none-any.whl", hash = "sha256:fd7f410a94e0362c7a3cf7a98e62f972f1dab245130dfdf6f48914f462994262"},
+    {file = "types-aiofiles-0.8.0.tar.gz", hash = "sha256:2a11ae2b5b7330706994ddb864fc084ba067d0cde9af7e1ed663fccf2eeece92"},
+    {file = "types_aiofiles-0.8.0-py3-none-any.whl", hash = "sha256:844382334052b47d26f228e03687fd440c9d078adddafa0e8a80d89bed61d00d"},
 ]
 types-toml = [
     {file = "types-toml-0.10.1.tar.gz", hash = "sha256:5c1f8f8d57692397c8f902bf6b4d913a0952235db7db17d2908cc110e70610cb"},
