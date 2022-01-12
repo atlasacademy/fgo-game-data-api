@@ -1434,6 +1434,7 @@ class ItemType(IntEnum):
     EUQIP_SKILL_USE_ITEM = 28
     SVT_COIN = 29
     FRIENDSHIP_UP_ITEM = 30
+    PP = 31
 
 
 class NiceItemType(str, Enum):
@@ -1469,6 +1470,7 @@ class NiceItemType(str, Enum):
     euqipSkillUseItem = "euqipSkillUseItem"
     svtCoin = "svtCoin"
     friendshipUpItem = "friendshipUpItem"
+    pp = "pp"
 
 
 ITEM_TYPE_NAME: dict[int, NiceItemType] = {
@@ -1502,6 +1504,7 @@ ITEM_TYPE_NAME: dict[int, NiceItemType] = {
     28: NiceItemType.euqipSkillUseItem,
     29: NiceItemType.svtCoin,
     30: NiceItemType.friendshipUpItem,
+    31: NiceItemType.pp,
 }
 
 
@@ -1570,6 +1573,7 @@ class ShopType(IntEnum):
     GRAIL_FRAGMENTS = 10
     SVT_COSTUME = 11
     START_UP_SUMMON = 12
+    SHOP13 = 13
 
 
 class NiceShopType(str, Enum):
@@ -1588,6 +1592,7 @@ class NiceShopType(str, Enum):
     grailFragments = "grailFragments"
     svtCostume = "svtCostume"
     startUpSummon = "startUpSummon"
+    shop13 = "shop13"
 
 
 SHOP_TYPE_NAME: dict[int, NiceShopType] = {
@@ -1604,6 +1609,7 @@ SHOP_TYPE_NAME: dict[int, NiceShopType] = {
     10: NiceShopType.grailFragments,
     11: NiceShopType.svtCostume,
     12: NiceShopType.startUpSummon,
+    13: NiceShopType.shop13,
 }
 
 

@@ -550,6 +550,7 @@ export enum NiceItemType {
     EUQIP_SKILL_USE_ITEM = "euqipSkillUseItem",
     SVT_COIN = "svtCoin",
     FRIENDSHIP_UP_ITEM = "friendshipUpItem",
+    PP = "pp",
 }
 
 export enum NiceGiftType {
@@ -582,6 +583,7 @@ export enum NiceShopType {
     GRAIL_FRAGMENTS = "grailFragments",
     SVT_COSTUME = "svtCostume",
     START_UP_SUMMON = "startUpSummon",
+    SHOP13 = "shop13",
 }
 
 export enum NicePayType {
