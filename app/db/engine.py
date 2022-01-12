@@ -19,8 +19,9 @@ async_engines = {
     region: create_async_engine(
         region_data.postgresdsn.replace("postgresql", "postgresql+asyncpg"),
         echo=logger.isEnabledFor(TRACE_LOG_LEVEL),
-        pool_size=5,
+        pool_size=settings.db_pool_size,
         max_overflow=settings.db_max_overflow,
+        pool_timeout=300,
     )
     for region, region_data in settings.data.items()
 }

@@ -6,18 +6,18 @@ authors = ["squaresmile <squaresmile@protonmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-fastapi = "^0.70.1"
+fastapi = "^0.71.0"
 uvicorn = { extras = ["standard"], version = "^0.16.0" }
 python-dotenv = "^0.19.2"
 fuzzywuzzy = "^0.18.0"
 python-Levenshtein = "^0.12.2"
 orjson = "^3.6.5"
 aiofiles = "^0.8.0"
-GitPython = "^3.1.24"
+GitPython = "^3.1.26"
 toml = "^0.10.2"
 SQLAlchemy = "^1.4.29"
 psycopg2 = "^2.9.3"
-httpx = "^0.21.1"
+httpx = "^0.21.3"
 aioredis = { extras = ["hiredis"], version = "^2.0.1" }
 asyncpg = "^0.25.0"
 fastapi-limiter = { git = "https://github.com/long2ice/fastapi-limiter.git" }
@@ -28,7 +28,7 @@ setproctitle = "^1.2.2"
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
 pylint = "^2.12.2"
-mypy = "^0.930"
+mypy = "^0.931"
 black = "^21.12b0"
 pytest-xdist = "^2.5.0"
 coverage = "^6.2"
@@ -37,8 +37,8 @@ isort = "^5.10.1"
 sqlalchemy2-stubs = "^0.0.2-alpha.19"
 pytest-asyncio = "^0.16.0"
 asgi-lifespan = "^1.0.1"
-types-toml = "^0.10.1"
-types-aiofiles = "^0.8.0"
+types-toml = "^0.10.3"
+types-aiofiles = "^0.8.2"
 
 [tool.isort]
 line_length = 88

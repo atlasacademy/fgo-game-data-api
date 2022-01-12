@@ -28,6 +28,8 @@
   "rayshift_api_key": "",
   "rayshift_api_url": "https://rayshift.io/api/v1",
   "quest_cache_length": 3600,
+  "db_pool_size": 3,
+  "db_max_overflow": 10,
   "write_postgres_data": true,
   "write_redis_data": true,
   "asset_url": "https://assets.atlasacademy.io/GameData",

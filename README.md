@@ -41,6 +41,8 @@ List of environment variables for the main app.
 - `RAYSHIFT_API_KEY`: default to `""`. Rayshift.io API key to pull quest data.
 - `RAYSHIFT_API_URL`: default to https://rayshift.io/api/v1/. Rayshift.io API URL.
 - `QUEST_CACHE_LENGTH`: default to `3600`. How long to cache the quest and war endpoints in seconds. Because the rayshift data is updated continously, web and quest endpoints have lower cache time.
+- `DB_POOL_SIZE`: defaults to 3. Default pool size for SQLAlchemy connection pool. https://docs.sqlalchemy.org/en/14/core/pooling.html#sqlalchemy.pool.QueuePool.params.pool_size
+- `DB_MAX_OVERFLOW`: defaults to 10. Max overflow for SQLAlchemy connection pool. https://docs.sqlalchemy.org/en/14/core/pooling.html#sqlalchemy.pool.QueuePool.params.max_overflow
 - `WRITE_POSTGRES_DATA`: default to `True`. Overwrite the data in PostgreSQL when importing.
 - `WRITE_REDIS_DATA`: default to `True`. Overwrite the data in Redis when importing.
 - `ASSET_URL`: defaults to https://assets.atlasacademy.io/GameData/. Base URL for the game assets.
