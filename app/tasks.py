@@ -1,4 +1,3 @@
-import asyncio
 import time
 from dataclasses import dataclass
 from pathlib import Path
@@ -458,7 +457,5 @@ async def pull_and_update(
     async_engines: dict[Region, AsyncEngine],
     redis: Redis,
 ) -> None:  # pragma: no cover
-    logger.info(f"Sleeping {settings.github_webhook_sleep} seconds …")
-    await asyncio.sleep(settings.github_webhook_sleep)
     await run_in_threadpool(lambda: update_data_repo(region_path))
     await load_and_export(redis, region_path, async_engines)

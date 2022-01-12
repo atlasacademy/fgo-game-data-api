@@ -4,11 +4,9 @@ HTTP API for FGO game data. Transform the raw game data into something a bit mor
 
 View the API documentation here: https://api.atlasacademy.io.
 
-- [Environment variables](#environment-variables)
-  - [Required variables](#required-variables)
-  - [Optional variables](#optional-variables)
+- [Configuration](#configuration)
+  - [Environment Variables](#environment-variables)
   - [Secrets](#secrets)
-  - [config.json](#configjson)
 - [Development environment set up](#development-environment-set-up)
 - [Run the API server](#run-the-api-server)
 - [Architecture](#architecture)
@@ -22,18 +20,16 @@ View the API documentation here: https://api.atlasacademy.io.
   - [`load_rayshift_quest_list.py`](#load_rayshift_quest_listpy)
   - [`get_test_data.py`](#get_test_datapy)
 
-### Environment variables
+### Configuration
 
+List of configuration variables for the main app.
 
-List of environment variables for the main app.
-
-#### Required variables
+**Required variables**
 - `DATA`: A JSON object string with keys being region strings and values being gamedata's folder location and Postgresql DSN. Not all regions are required in the object. Any combination of regions is accepted.
 - `REDISDSN`: Redis DSN to a Redis server for caching.
 
-#### Optional variables
 <details>
-<summary>Click to view</summary>
+<summary><b>Optional variables</b> (click to show)</summary>
 
 - `REDIS_PREFIX`: default to `fgoapi`. Prefix for redis keys.
 - `CLEAR_REDIS_CACHE`: default to `True`. If set, will clear the redis cache on start and when the webhook above is used.
@@ -51,9 +47,17 @@ List of environment variables for the main app.
 - `DOCUMENTATION_ALL_NICE`: default to `False`. If set to `True`, there will be links to the exported all nice files in the documentation.
 - `GITHUB_WEBHOOK_SECRET`: default to `""`. If set, will add a webhook location at `/GITHUB_WEBHOOK_SECRET/update` that will pull and update the game data. If it's not set, the endpoint is not created.
 - `GITHUB_WEBHOOK_GIT_PULL`: default to `False`. If set, the app will do `git pull` on the gamedata repos when the webhook above is used.
-- `GITHUB_WEBHOOK_SLEEP`: default to `0`. If set, will delay the action above by `GITHUB_WEBHOOK_SLEEP` seconds.
 
 </details>
+<br />
+You can make a `config.json` file with the settings. Check the [config.sample.json](config.sample.json) file for an example.
+
+<details>
+<summary>Other way to set the variables (click to show)</summary>
+
+#### Environment Variables
+
+The variables can also be set as environment variables.
 
 #### Secrets
 
@@ -65,15 +69,13 @@ eca334a9-3289-4ad7-9b92-1ec2bbc3fc19
 redis://localhost
 ```
 
-#### config.json
-
-You can make a `config.json` file with the settings instead of setting the environment variables. Check the [config.sample.json](config.sample.json) file for an example.
-
 Settings at a higher level will override the settings at a lower level.
 1. Secrets variable
 2. Enviornment variable
 3. `.env` file
 4. `config.json`
+</details>
+<br />
 
 ### Development environment set up
 

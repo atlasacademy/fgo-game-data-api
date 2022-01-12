@@ -56,7 +56,7 @@ class GithubWebhookPayload(BaseModel):
 @router.post("/update")  # pragma: no cover
 async def update_gamedata(
     background_tasks: BackgroundTasks,
-    payload: Optional[GithubWebhookPayload],
+    payload: Optional[GithubWebhookPayload] = None,
     redis: Redis = Depends(get_redis),
 ) -> Response:
     region_pathes = {
@@ -69,7 +69,7 @@ async def update_gamedata(
                 break
     background_tasks.add_task(pull_and_update, region_pathes, async_engines, redis)
     secret_info = await get_secret_info(redis)
-    regions = ", ".join(region.name for region in region_pathes.keys())
+    regions = ", ".join(region.name for region in region_pathes)
     response_data = dict(
         message=f"{regions} game data is being updated in the background", **secret_info
     )

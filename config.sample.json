@@ -37,6 +37,5 @@
   "export_all_nice": false,
   "documentation_all_nice": true,
   "github_webhook_secret": "",
-  "github_webhook_git_pull": false,
-  "github_webhook_sleep": 0
+  "github_webhook_git_pull": false
 }
