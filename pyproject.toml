@@ -6,16 +6,16 @@ authors = ["squaresmile <squaresmile@protonmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-fastapi = "^0.71.0"
-uvicorn = { extras = ["standard"], version = "^0.16.0" }
+fastapi = "^0.72.0"
+uvicorn = { extras = ["standard"], version = "^0.17.0" }
 python-dotenv = "^0.19.2"
 fuzzywuzzy = "^0.18.0"
 python-Levenshtein = "^0.12.2"
-orjson = "^3.6.5"
+orjson = "^3.6.6"
 aiofiles = "^0.8.0"
 GitPython = "^3.1.26"
 toml = "^0.10.2"
-SQLAlchemy = "^1.4.29"
+SQLAlchemy = "^1.4.31"
 psycopg2 = "^2.9.3"
 httpx = "^0.21.3"
 aioredis = { extras = ["hiredis"], version = "^2.0.1" }
@@ -35,10 +35,10 @@ coverage = "^6.2"
 fuzzywuzzy-stubs = "^0.0.1"
 isort = "^5.10.1"
 sqlalchemy2-stubs = "^0.0.2-alpha.19"
-pytest-asyncio = "^0.16.0"
+pytest-asyncio = "^0.17.2"
 asgi-lifespan = "^1.0.1"
 types-toml = "^0.10.3"
-types-aiofiles = "^0.8.2"
+types-aiofiles = "^0.8.3"
 
 [tool.isort]
 line_length = 88
