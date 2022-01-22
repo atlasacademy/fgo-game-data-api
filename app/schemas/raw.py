@@ -807,6 +807,10 @@ class MstShop(BaseModelORJson):
     anotherPayType: Optional[int] = None
     anotherItemIds: Optional[list[int]] = None
     useAnotherPayCommonReleaseId: Optional[int] = None
+    freeShopCondId: Optional[int] = None
+    freeShopCondMessage: Optional[str] = None
+    hideWarningMessageCondId: Optional[int] = None
+    freeShopReleaseDate: Optional[int] = None
     id: int  # 80107019
     baseShopId: int  # 80107019
     eventId: int  # 80107
