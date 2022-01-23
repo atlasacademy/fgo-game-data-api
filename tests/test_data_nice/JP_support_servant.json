@@ -62,6 +62,7 @@
   "exp": 1385,
   "bond": 265,
   "battleBgId": 63010,
+  "extraDetail": { "questSelect": [94051406, 94051499] },
   "scripts": [
     {
       "scriptId": "9405140610",

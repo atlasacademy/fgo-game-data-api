@@ -34,6 +34,7 @@ from ...schemas.common import StageLink
 from ...schemas.gameenums import QuestFlag
 from ...schemas.raw import (
     MstBgm,
+    MstQuestPhase,
     MstQuestWithPhase,
     MstQuestWithWar,
     MstStage,
@@ -588,3 +589,20 @@ async def get_quest_from_ai(conn: AsyncConnection, ai_id: int) -> list[StageLink
         StageLink(questId=stage.questId, phase=stage.questPhase, stage=stage.wave)
         for stage in stages
     ]
+
+
+async def get_questSelect_container(
+    conn: AsyncConnection, quest_id: int, phase: int
+) -> MstQuestPhase | None:
+    stmt = select(mstQuestPhase).where(
+        and_(
+            mstQuestPhase.c.phase == phase,
+            mstQuestPhase.c.script.contains({"questSelect": [quest_id]}),
+        )
+    )
+
+    quest_phase = (await conn.execute(stmt)).fetchone()
+    if quest_phase:
+        return MstQuestPhase.from_orm(quest_phase)
+
+    return None

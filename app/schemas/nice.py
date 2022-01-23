@@ -1689,6 +1689,11 @@ class SupportServant(BaseModelORJson):
     misc: SupportServantMisc
 
 
+class NiceQuestPhaseExtraDetail(BaseModelORJson):
+    questSelect: list[int] | None = None
+    singleForceSvtId: int | None = None
+
+
 class NiceQuestPhase(NiceQuest):
     phase: int
     className: list[SvtClass]
@@ -1697,6 +1702,7 @@ class NiceQuestPhase(NiceQuest):
     exp: int
     bond: int
     battleBgId: int
+    extraDetail: NiceQuestPhaseExtraDetail
     scripts: list[ScriptLink]
     messages: list[NiceQuestMessage]
     supportServants: list[SupportServant]

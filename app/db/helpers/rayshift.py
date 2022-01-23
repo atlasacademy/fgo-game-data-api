@@ -13,15 +13,18 @@ from ...schemas.rayshift import QuestDetail, QuestDrop, QuestList
 
 
 async def get_rayshift_quest_db(
-    conn: AsyncConnection, quest_id: int, phase: int
+    conn: AsyncConnection, quest_id: int, phase: int, questSelect: int | None = None
 ) -> Optional[QuestDetail]:
-    stmt = select(rayshiftQuest.c.questDetail).where(
-        and_(
-            rayshiftQuest.c.questId == quest_id,
-            rayshiftQuest.c.phase == phase,
-            rayshiftQuest.c.questDetail.isnot(None),
+    where_conds = [
+        rayshiftQuest.c.questId == quest_id,
+        rayshiftQuest.c.phase == phase,
+        rayshiftQuest.c.questDetail.isnot(None),
+    ]
+    if questSelect is not None:
+        where_conds.append(
+            rayshiftQuest.c.questDetail.contains({"questSelect": questSelect})
         )
-    )
+    stmt = select(rayshiftQuest.c.questDetail).where(and_(*where_conds))
     rayshift_quest = (await conn.execute(stmt)).fetchone()
     if rayshift_quest and rayshift_quest.questDetail:
         return QuestDetail.parse_obj(rayshift_quest.questDetail)
@@ -30,8 +33,18 @@ async def get_rayshift_quest_db(
 
 
 async def get_rayshift_drops(
-    conn: AsyncConnection, quest_id: int, phase: int
+    conn: AsyncConnection, quest_id: int, phase: int, questSelect: int | None = None
 ) -> list[QuestDrop]:
+    where_conds = [
+        rayshiftQuest.c.questId == quest_id,
+        rayshiftQuest.c.phase == phase,
+        rayshiftQuest.c.questDetail.isnot(None),
+    ]
+    if questSelect is not None:
+        where_conds.append(
+            rayshiftQuest.c.questDetail.contains({"questSelect": questSelect})
+        )
+
     enemy_deck_svt = (
         select(
             rayshiftQuest.c.queryId,
@@ -48,13 +61,7 @@ async def get_rayshift_drops(
                 "with ordinality as d(deck, stage)"
             ),
         )
-        .where(
-            and_(
-                rayshiftQuest.c.questId == quest_id,
-                rayshiftQuest.c.phase == phase,
-                rayshiftQuest.c.questDetail.is_not(None),
-            )
-        )
+        .where(and_(*where_conds))
     )
 
     shift_deck_svt = (
@@ -73,13 +80,7 @@ async def get_rayshift_drops(
                 "with ordinality as d(deck, stage)"
             ),
         )
-        .where(
-            and_(
-                rayshiftQuest.c.questId == quest_id,
-                rayshiftQuest.c.phase == phase,
-                rayshiftQuest.c.questDetail.is_not(None),
-            )
-        )
+        .where(and_(*where_conds))
     )
 
     deck_svt = enemy_deck_svt.union_all(shift_deck_svt).cte(name="deck_svt")
@@ -146,13 +147,7 @@ async def get_rayshift_drops(
 
     runs = (
         select(func.count(rayshiftQuest.c.queryId))
-        .where(
-            and_(
-                rayshiftQuest.c.questId == quest_id,
-                rayshiftQuest.c.phase == phase,
-                rayshiftQuest.c.questDetail.is_not(None),
-            )
-        )
+        .where(and_(*where_conds))
         .subquery()
         .select()
     )

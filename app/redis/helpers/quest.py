@@ -21,9 +21,10 @@ async def get_stages_cache(
     region: Region,
     quest_id: int,
     phase: int,
+    questSelect: int | None = None,
     lang: Language = Language.jp,
 ) -> Optional[RayshiftRedisData]:
-    redis_key = f"{settings.redis_prefix}:cache:stages:{region.value}:{quest_id}:{phase}:{lang.value}"
+    redis_key = f"{settings.redis_prefix}:cache:stages:{region.value}:{lang.value}:{quest_id}:{phase}:{questSelect}"
     redis_data = await redis.get(redis_key)
 
     if redis_data:
@@ -38,10 +39,11 @@ async def set_stages_cache(
     region: Region,
     quest_id: int,
     phase: int,
+    questSelect: int | None = None,
     lang: Language = Language.jp,
     long_ttl: bool = False,
 ) -> None:
-    redis_key = f"{settings.redis_prefix}:cache:stages:{region.value}:{quest_id}:{phase}:{lang.value}"
+    redis_key = f"{settings.redis_prefix}:cache:stages:{region.value}:{lang.value}:{quest_id}:{phase}:{questSelect}"
     json_str = data.json(exclude_unset=True, exclude_none=True)
     if long_ttl:
         await redis.set(redis_key, json_str)

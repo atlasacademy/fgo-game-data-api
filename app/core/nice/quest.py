@@ -9,6 +9,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
 from ...db.helpers import war
+from ...db.helpers.quest import get_questSelect_container
 from ...db.helpers.rayshift import get_rayshift_drops
 from ...rayshift.quest import get_quest_detail
 from ...redis.helpers.quest import RayshiftRedisData, get_stages_cache, set_stages_cache
@@ -215,6 +216,7 @@ async def get_nice_quest_phase_no_rayshift(
         "exp": raw_quest.mstQuestPhase.playerExp,
         "bond": raw_quest.mstQuestPhase.friendshipExp,
         "battleBgId": raw_quest.mstQuestPhase.battleBgId,
+        "extraDetail": raw_quest.mstQuestPhase.script,
         "scripts": [
             get_nice_script_link(region, script) for script in sorted(raw_quest.scripts)
         ],
@@ -263,7 +265,16 @@ async def get_nice_quest_phase(
         conn, redis, region, quest_id, phase, lang
     )
 
-    rayshift_data = await get_stages_cache(redis, region, quest_id, phase, lang)
+    if "questSelect" in db_data.raw.mstQuestPhase.script:
+        questSelect: int | None = db_data.raw.mstQuestPhase.script["questSelect"].index(
+            quest_id
+        )
+    else:
+        questSelect = None
+
+    rayshift_data = await get_stages_cache(
+        redis, region, quest_id, phase, questSelect, lang
+    )
 
     if rayshift_data:
         db_data.nice.stages = rayshift_data.stages
@@ -276,8 +287,18 @@ async def get_nice_quest_phase(
     nice_quest_drops: list[EnemyDrop] = []
     quest_enemies: list[list[QuestEnemy]] = [[]] * len(db_data.raw.mstStage)
     if stages:
-        rayshift_quest_detail = await get_quest_detail(conn, region, quest_id, phase)
-        rayshift_quest_drops = await get_rayshift_drops(conn, quest_id, phase)
+        rayshift_quest_id = quest_id
+        if questSelect is None:
+            quest_select_owner = await get_questSelect_container(conn, quest_id, phase)
+            if quest_select_owner:
+                rayshift_quest_id = quest_select_owner.questId
+                questSelect = quest_select_owner.script["questSelect"].index(quest_id)
+        rayshift_quest_detail = await get_quest_detail(
+            conn, region, rayshift_quest_id, phase, questSelect
+        )
+        rayshift_quest_drops = await get_rayshift_drops(
+            conn, rayshift_quest_id, phase, questSelect
+        )
         if rayshift_quest_detail:
             quest_enemies = await get_quest_enemies(
                 conn,
@@ -310,7 +331,7 @@ async def get_nice_quest_phase(
         )
         long_ttl = time.time() > db_data.nice.closedAt
         await set_stages_cache(
-            redis, cache_data, region, quest_id, phase, lang, long_ttl
+            redis, cache_data, region, quest_id, phase, questSelect, lang, long_ttl
         )
 
     return db_data.nice

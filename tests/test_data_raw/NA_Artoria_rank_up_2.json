@@ -62,7 +62,7 @@
     { "id": 94012504, "type": 8, "objectId": 9, "priority": 0, "num": 0 }
   ],
   "phases": [1, 2, 3],
-  "phasesWithEnemies": [],
+  "phasesWithEnemies": [3],
   "phasesNoBattle": [],
   "allScripts": []
 }
