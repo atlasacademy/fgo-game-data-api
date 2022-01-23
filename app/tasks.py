@@ -86,14 +86,14 @@ class ExportUtil:
     export_path: Path
     lang: Language = Language.jp
 
-    def append_file_name(self, file_name: str) -> str:
+    def append_file_name(self, file_name: str) -> str:  # pragma: no cover
         if self.lang == Language.en:
             return file_name + "_lang_en"
         return file_name
 
     async def dump_orjson(
         self, file_name: str, data: Iterable[BaseModelORJson]
-    ) -> None:
+    ) -> None:  # pragma: no cover
         await dump_orjson(self.export_path, self.append_file_name(file_name), data)
 
 

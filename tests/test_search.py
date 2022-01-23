@@ -149,8 +149,8 @@ test_cases_dict: dict[str, tuple[str, set[int]]] = {
         {504201},
     ),
     "buff_type_tvals": (
-        "NA/buff/search?type=upCommandall&tvals=cardQuick",
-        {100, 260, 499, 1084, 1094, 1246, 1273, 1301, 1413, 2512, 2210, 2630, 2631},
+        "NA/buff/search?type=upCommandall&tvals=cardQuick&name=Boost",
+        {260, 499},
     ),
     "buff_type_vals": ("NA/buff/search?vals=buffCharm", {175, 926, 1315}),
     "buff_type_ckSelfIndv": (
