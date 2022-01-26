@@ -27,6 +27,7 @@ export enum NiceSvtFlag {
     SVT_EQUIP_CHOCOLATE = "svtEquipChocolate",
     NORMAL = "normal",
     GOETIA = "goetia",
+    MAT_DROP_RATE_UP_CE = "matDropRateUpCe",
 }
 
 export enum NiceFuncType {

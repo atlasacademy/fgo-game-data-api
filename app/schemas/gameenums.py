@@ -92,6 +92,7 @@ class NiceSvtFlag(str, Enum):
     svtEquipChocolate = "svtEquipChocolate"
     normal = "normal"
     goetia = "goetia"
+    matDropRateUpCe = "matDropRateUpCe"
 
 
 SVT_FLAG_NAME: dict[int, NiceSvtFlag] = {
@@ -102,6 +103,7 @@ SVT_FLAG_NAME: dict[int, NiceSvtFlag] = {
     32: NiceSvtFlag.svtEquipChocolate,
     0: NiceSvtFlag.normal,
     63: NiceSvtFlag.goetia,
+    64: NiceSvtFlag.matDropRateUpCe,
 }
 
 

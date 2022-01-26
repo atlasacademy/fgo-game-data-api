@@ -41,7 +41,7 @@ def out_intenum(input_dict: dict[int, str], className: str) -> list[str]:
 
 EXTRA_STR_NAME = {
     "NiceStatusRank": {-1: "UNKNOWN"},
-    "NiceSvtFlag": {0: "NORMAL", 63: "GOETIA"},
+    "NiceSvtFlag": {0: "NORMAL", 63: "GOETIA", 64: "MAT_DROP_RATE_UP_CE"},
     "NiceWarFlag": {34848: "SUMMER_CAMP", 49538: "UNRELEASED_STORY"},
     "NiceAiActNum": {-9999: "UNKNOWN"},
     "NicePurchaseType": {13: "KIARA_PUNISHER_RESET"},
