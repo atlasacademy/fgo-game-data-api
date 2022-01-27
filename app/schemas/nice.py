@@ -248,6 +248,7 @@ class BaseVals(BaseModel):
     EventId: Optional[int] = None
     AddCount: Optional[int] = None
     RateCount: Optional[int] = None
+    DropRateCount: Optional[int] = None
     # aa0: Optional[int] = None
     # aa1: Optional[int] = None
     # aa2: Optional[int] = None

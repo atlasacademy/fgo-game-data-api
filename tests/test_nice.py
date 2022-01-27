@@ -168,6 +168,11 @@ cases_datavals_dict = {
         0,
         {"Individuality": 0, "AddCount": 50},
     ),
+    "test_dataVals_item_drop_rate_up": (
+        992948,
+        0,
+        {"Individuality": 20042, "EventId": 0, "DropRateCount": 250},
+    ),
     "test_dataVals_servant_friendpoint_up_add": (990071, 0, {"AddCount": 75}),
     "test_dataVals_servant_friendpoint_up_dupe_add": (992320, 0, {"AddCount": 10}),
     "test_dataVals_master_exp_up_rate": (990311, 0, {"RateCount": 20}),
