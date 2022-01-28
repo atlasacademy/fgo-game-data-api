@@ -3,11 +3,12 @@ name = "fgo-game-data-api"
 version = "5.76.0"
 description = "Provide raw and processed FGO game data"
 authors = ["squaresmile <squaresmile@protonmail.com>"]
+packages = [{ include = "app" }]
 
 [tool.poetry.dependencies]
 python = "^3.10"
 fastapi = "^0.73.0"
-uvicorn = {extras = ["standard"], version = "^0.17.0"}
+uvicorn = { extras = ["standard"], version = "^0.17.1" }
 python-dotenv = "^0.19.2"
 fuzzywuzzy = "^0.18.0"
 python-Levenshtein = "^0.12.2"
@@ -17,7 +18,7 @@ GitPython = "^3.1.26"
 toml = "^0.10.2"
 SQLAlchemy = "^1.4.31"
 psycopg2 = "^2.9.3"
-httpx = "^0.21.3"
+httpx = "^0.22.0"
 aioredis = { extras = ["hiredis"], version = "^2.0.1" }
 asyncpg = "^0.25.0"
 fastapi-limiter = { git = "https://github.com/long2ice/fastapi-limiter.git" }
