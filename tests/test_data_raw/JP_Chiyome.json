@@ -2352,7 +2352,7 @@
   ],
   "mstItem": [
     {
-      "individuality": [],
+      "individuality": [20076],
       "script": {},
       "eventId": 0,
       "eventGroupId": 0,
@@ -2375,7 +2375,7 @@
       "useCostume": true
     },
     {
-      "individuality": [],
+      "individuality": [20033],
       "script": {},
       "eventId": 0,
       "eventGroupId": 0,
@@ -2398,7 +2398,7 @@
       "useCostume": false
     },
     {
-      "individuality": [],
+      "individuality": [20077],
       "script": {},
       "eventId": 0,
       "eventGroupId": 0,
@@ -2421,7 +2421,7 @@
       "useCostume": true
     },
     {
-      "individuality": [],
+      "individuality": [20053],
       "script": {},
       "eventId": 0,
       "eventGroupId": 0,
@@ -2444,7 +2444,7 @@
       "useCostume": true
     },
     {
-      "individuality": [],
+      "individuality": [20042],
       "script": {},
       "eventId": 0,
       "eventGroupId": 0,
@@ -2467,7 +2467,7 @@
       "useCostume": true
     },
     {
-      "individuality": [],
+      "individuality": [20073],
       "script": {},
       "eventId": 0,
       "eventGroupId": 0,
@@ -2490,7 +2490,7 @@
       "useCostume": true
     },
     {
-      "individuality": [],
+      "individuality": [20064],
       "script": {},
       "eventId": 0,
       "eventGroupId": 0,
@@ -2513,7 +2513,7 @@
       "useCostume": true
     },
     {
-      "individuality": [],
+      "individuality": [20078],
       "script": {},
       "eventId": 0,
       "eventGroupId": 0,
@@ -2559,7 +2559,7 @@
       "useCostume": false
     },
     {
-      "individuality": [],
+      "individuality": [20043],
       "script": {},
       "eventId": 0,
       "eventGroupId": 0,
@@ -2628,7 +2628,7 @@
       "useCostume": false
     },
     {
-      "individuality": [],
+      "individuality": [20074],
       "script": {},
       "eventId": 0,
       "eventGroupId": 0,
@@ -2651,7 +2651,7 @@
       "useCostume": true
     },
     {
-      "individuality": [],
+      "individuality": [20005],
       "script": {},
       "eventId": 0,
       "eventGroupId": 0,
@@ -2674,7 +2674,7 @@
       "useCostume": false
     },
     {
-      "individuality": [],
+      "individuality": [20019],
       "script": {},
       "eventId": 0,
       "eventGroupId": 0,
@@ -2697,7 +2697,7 @@
       "useCostume": false
     },
     {
-      "individuality": [],
+      "individuality": [20012],
       "script": {},
       "eventId": 0,
       "eventGroupId": 0,
@@ -2720,7 +2720,7 @@
       "useCostume": false
     },
     {
-      "individuality": [],
+      "individuality": [20026],
       "script": {},
       "eventId": 0,
       "eventGroupId": 0,
@@ -2743,7 +2743,7 @@
       "useCostume": false
     },
     {
-      "individuality": [],
+      "individuality": [20045],
       "script": {},
       "eventId": 0,
       "eventGroupId": 0,

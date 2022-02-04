@@ -1,6 +1,6 @@
 {
   "mstSvt": {
-    "relateQuestIds": [94034901],
+    "relateQuestIds": [91202301, 94034901],
     "individuality": [
       5000, 202300, 1, 102, 202, 301, 304, 1000, 2001, 2008, 2631
     ],
@@ -1738,7 +1738,7 @@
       "value": 0,
       "sellQp": 2500,
       "isSell": true,
-      "priority": 241,
+      "priority": 243,
       "dropPriority": 8505,
       "startedAt": 946684800,
       "endedAt": 1910908800,
@@ -1807,7 +1807,7 @@
       "value": 0,
       "sellQp": 2500,
       "isSell": true,
-      "priority": 222,
+      "priority": 223,
       "dropPriority": 8311,
       "startedAt": 946684800,
       "endedAt": 1910908800,
@@ -1853,7 +1853,7 @@
       "value": 0,
       "sellQp": 2500,
       "isSell": true,
-      "priority": 230,
+      "priority": 232,
       "dropPriority": 8400,
       "startedAt": 946684800,
       "endedAt": 1910908800,
@@ -1876,7 +1876,7 @@
       "value": 0,
       "sellQp": 2500,
       "isSell": true,
-      "priority": 215,
+      "priority": 216,
       "dropPriority": 8303,
       "startedAt": 946684800,
       "endedAt": 1910908800,
@@ -1991,7 +1991,7 @@
       "value": 0,
       "sellQp": 2500,
       "isSell": true,
-      "priority": 235,
+      "priority": 237,
       "dropPriority": 8402,
       "startedAt": 946684800,
       "endedAt": 1910908800,
@@ -2037,7 +2037,7 @@
       "value": 0,
       "sellQp": 2500,
       "isSell": true,
-      "priority": 238,
+      "priority": 240,
       "dropPriority": 8503,
       "startedAt": 946684800,
       "endedAt": 1910908800,
@@ -2406,8 +2406,8 @@
       "svtId": 202300,
       "id": 7,
       "priority": 0,
-      "condMessage": "",
-      "comment": "",
+      "condMessage": "Unlock after completing \"Seeking Quieter Times\" and reach Bond Level 5",
+      "comment": "His lifelong rival is Sherlock Holmes.\nWhy does he get to be young and handsome while I'm stuck as a middle-aged gentleman? Why must I, a Servant, suffer chronic back pain!?\nHolmes! Is... Could that be the power of baritsu?\nFine! As we are both aged gentlemen, I will ask the esteemed Li Shuwen to teach me a martial art!\nNo? Okay, I see...",
       "condType": 1,
       "condValue2": 0
     }
@@ -2452,6 +2452,15 @@
     {
       "svtId": 202300,
       "id": 6,
+      "priority": 0,
+      "idx": 0,
+      "condType": 9,
+      "condValues": [5],
+      "condValue2": 0
+    },
+    {
+      "svtId": 202300,
+      "id": 7,
       "priority": 0,
       "idx": 0,
       "condType": 9,

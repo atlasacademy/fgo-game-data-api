@@ -248,7 +248,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6513.png",
             "background": "silver",
-            "priority": 217,
+            "priority": 218,
             "dropPriority": 8305
           },
           "amount": 5
@@ -298,7 +298,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6501.png",
             "background": "silver",
-            "priority": 213,
+            "priority": 214,
             "dropPriority": 8306
           },
           "amount": 3
@@ -333,7 +333,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6501.png",
             "background": "silver",
-            "priority": 213,
+            "priority": 214,
             "dropPriority": 8306
           },
           "amount": 6
@@ -348,7 +348,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6507.png",
             "background": "gold",
-            "priority": 230,
+            "priority": 232,
             "dropPriority": 8400
           },
           "amount": 5
@@ -515,7 +515,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6513.png",
             "background": "silver",
-            "priority": 217,
+            "priority": 218,
             "dropPriority": 8305
           },
           "amount": 4
@@ -535,7 +535,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6513.png",
             "background": "silver",
-            "priority": 217,
+            "priority": 218,
             "dropPriority": 8305
           },
           "amount": 7
@@ -585,7 +585,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6520.png",
             "background": "gold",
-            "priority": 235,
+            "priority": 237,
             "dropPriority": 8402
           },
           "amount": 10
@@ -1542,103 +1542,6 @@
               "Individuality": 0,
               "EventId": 80072,
               "RateCount": 1000
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 963095,
-      "name": "Space Hunter A",
-      "ruby": "Space Hunter",
-      "detail": "Increase your ATK Strength by 50% in \"Saber Wars 2 - To the Beginning of Space\" & increase Bond gained when completing quests by 20% [Event Only]",
-      "unmodifiedDetail": "Increase your ATK Strength by 50% in \"Saber Wars 2 - To the Beginning of Space\" & increase Bond gained when completing quests by 20% [Event Only]",
-      "type": "passive",
-      "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00301.png",
-      "coolDown": [0],
-      "actIndividuality": [],
-      "script": {},
-      "extraPassive": [
-        {
-          "num": 16,
-          "priority": 1,
-          "condQuestId": 0,
-          "condQuestPhase": 0,
-          "condLv": 0,
-          "condLimitCount": 0,
-          "condFriendshipRank": 0,
-          "eventId": 80260,
-          "flag": 0,
-          "startedAt": 1634529600,
-          "endedAt": 1635739199
-        }
-      ],
-      "skillAdd": [],
-      "functions": [
-        {
-          "funcId": 4075,
-          "funcType": "addStateShort",
-          "funcTargetType": "self",
-          "funcTargetTeam": "player",
-          "funcPopupText": "Space Hunter",
-          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_302.png",
-          "functvals": [],
-          "funcquestTvals": [{ "id": 94000095, "name": "eventSaberWarsII" }],
-          "funcGroup": [
-            {
-              "eventId": 80260,
-              "baseFuncId": 4073,
-              "nameTotal": "{1}\nTotal ATK Strength Up",
-              "name": "Total ATK Strength Up",
-              "icon": "https://assets.atlasacademy.io/GameData/NA/EventUI/func_group_icon_302.png",
-              "priority": 1,
-              "isDispValue": true
-            }
-          ],
-          "buffs": [
-            {
-              "id": 1887,
-              "name": "Space Hunter",
-              "detail": "Increase damage dealt during \"Saber Wars 2 - To the Beginning of Space\"",
-              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_302.png",
-              "type": "upDamage",
-              "buffGroup": 0,
-              "script": {},
-              "vals": [],
-              "tvals": [],
-              "ckSelfIndv": [],
-              "ckOpIndv": [],
-              "maxRate": 10000
-            }
-          ],
-          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 500 }]
-        },
-        {
-          "funcId": 4080,
-          "funcType": "servantFriendshipUp",
-          "funcTargetType": "self",
-          "funcTargetTeam": "playerAndEnemy",
-          "funcPopupText": "None",
-          "functvals": [],
-          "funcquestTvals": [],
-          "funcGroup": [
-            {
-              "eventId": 80260,
-              "baseFuncId": 0,
-              "nameTotal": "{1}\nTotal Bond Bonus",
-              "name": "Increase Bond gained",
-              "icon": "https://assets.atlasacademy.io/GameData/NA/EventUI/func_group_icon_1009.png",
-              "priority": 1,
-              "isDispValue": true
-            }
-          ],
-          "buffs": [],
-          "svals": [
-            {
-              "Target": 1,
-              "Individuality": 0,
-              "EventId": 80260,
-              "RateCount": 200
             }
           ]
         }

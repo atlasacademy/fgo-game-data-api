@@ -39,7 +39,7 @@
           "mstSkill": {
             "effectList": [],
             "actIndividuality": [],
-            "script": {},
+            "script": { "OverwriteMotion_1003": [101300] },
             "id": 42900,
             "type": 1,
             "name": "Incite EX",

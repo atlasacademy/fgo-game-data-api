@@ -25,7 +25,7 @@
         "type": "tdLvUp",
         "uses": ["ascension"],
         "detail": "【霊基再臨素材】\nアサシンクラスを称えるモニュメント",
-        "individuality": [],
+        "individuality": [{ "id": 20033, "name": "unknown" }],
         "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7106.png",
         "background": "gold",
         "priority": 312,
