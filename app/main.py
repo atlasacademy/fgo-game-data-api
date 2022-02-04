@@ -4,7 +4,7 @@ from math import ceil
 from typing import Any, Callable, Optional
 
 import orjson
-import toml
+import tomli
 import uvicorn  # type: ignore
 from aioredis import Redis
 from fastapi import Depends, FastAPI, HTTPException, Request, Response, status
@@ -169,7 +169,8 @@ tags_metadata = [
 ]
 
 
-pyproject_toml = toml.load(project_root / "pyproject.toml")
+with open(project_root / "pyproject.toml", "rb") as f:
+    pyproject_toml = tomli.load(f)
 
 
 app = FastAPI(
