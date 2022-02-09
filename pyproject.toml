@@ -24,7 +24,7 @@ fastapi-limiter = { git = "https://github.com/long2ice/fastapi-limiter.git" }
 fastapi-cache2 = "^0.1.8"
 gunicorn = "^20.1.0"
 setproctitle = "^1.2.2"
-tomli = "^2.0.0"
+tomli = "^2.0.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.0.0"
@@ -36,7 +36,7 @@ coverage = "^6.3.1"
 fuzzywuzzy-stubs = "^0.0.1"
 isort = "^5.10.1"
 sqlalchemy2-stubs = "^0.0.2-alpha.19"
-pytest-asyncio = "^0.17.2"
+pytest-asyncio = "^0.18.0"
 asgi-lifespan = "^1.0.1"
 types-toml = "^0.10.3"
 types-aiofiles = "^0.8.3"
@@ -46,15 +46,12 @@ asyncio_mode = "auto"
 
 [tool.isort]
 line_length = 88
+profile = "black"
 known_third_party = "orjson"
-multi_line_output = 3
-force_grid_wrap = 0
 lines_after_imports = 2
-combine_as_imports = true
-include_trailing_comma = true
 
 [tool.black]
-target-version = ['py39']
+target-version = ['py310']
 
 [tool.mypy]
 plugins = "pydantic.mypy, sqlalchemy.ext.mypy.plugin"

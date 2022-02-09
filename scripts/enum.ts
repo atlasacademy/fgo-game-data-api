@@ -121,6 +121,7 @@ export enum NiceFuncType {
     FUNC_126 = "func126",
     FUNC_127 = "func127",
     UPDATE_ENTRY_POSITIONS = "updateEntryPositions",
+    BUDDY_POINT_UP = "buddyPointUp",
 }
 
 export enum NiceFuncTargetType {
@@ -306,6 +307,7 @@ export enum NiceBuffType {
     DONOT_SKILL_SELECT = "donotSkillSelect",
     BUFF_RATE = "buffRate",
     INVISIBLE_BATTLE_CHARA = "invisibleBattleChara",
+    COUNTER_FUNCTION = "counterFunction",
 }
 
 export enum NiceBuffAction {
@@ -410,6 +412,7 @@ export enum NiceBuffAction {
     FUNCTION_ATTACK_BEFORE = "functionAttackBefore",
     DONOT_SKILL_SELECT = "donotSkillSelect",
     BUFF_RATE = "buffRate",
+    COUNTER_FUNCTION = "counterFunction",
 }
 
 export enum NiceBuffLimit {
@@ -512,6 +515,11 @@ export enum NiceDataValsType {
     ForceSubState = "forcesubstate",
     IgnoreIndivUnreleaseable = "ignoreindivunreleaseable",
     OnParty = "onparty",
+    CounterId = "counterid",
+    CounterLv = "counterlv",
+    CounterOc = "counteroc",
+    UseTreasureDevice = "usetreasuredevice",
+    SkillReaction = "skillreaction",
 }
 
 export enum NiceClassRelationOverwriteType {

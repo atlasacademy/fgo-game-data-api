@@ -198,6 +198,7 @@ class FuncType(IntEnum):
     FUNC_126 = 126
     FUNC_127 = 127
     UPDATE_ENTRY_POSITIONS = 128
+    BUDDY_POINT_UP = 129
 
 
 class NiceFuncType(str, Enum):
@@ -293,6 +294,7 @@ class NiceFuncType(str, Enum):
     func126 = "func126"
     func127 = "func127"
     updateEntryPositions = "updateEntryPositions"
+    buddyPointUp = "buddyPointUp"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -386,6 +388,7 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     126: NiceFuncType.func126,
     127: NiceFuncType.func127,
     128: NiceFuncType.updateEntryPositions,
+    129: NiceFuncType.buddyPointUp,
 }
 
 
@@ -641,6 +644,7 @@ class BuffType(IntEnum):
     DONOT_SKILL_SELECT = 161
     BUFF_RATE = 162
     INVISIBLE_BATTLE_CHARA = 163
+    COUNTER_FUNCTION = 165
 
 
 class NiceBuffType(str, Enum):
@@ -795,6 +799,7 @@ class NiceBuffType(str, Enum):
     donotSkillSelect = "donotSkillSelect"
     buffRate = "buffRate"
     invisibleBattleChara = "invisibleBattleChara"
+    counterFunction = "counterFunction"
 
 
 BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
@@ -947,6 +952,7 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     161: NiceBuffType.donotSkillSelect,
     162: NiceBuffType.buffRate,
     163: NiceBuffType.invisibleBattleChara,
+    165: NiceBuffType.counterFunction,
 }
 
 
@@ -1052,6 +1058,7 @@ class BuffAction(IntEnum):
     FUNCTION_ATTACK_BEFORE = 98
     DONOT_SKILL_SELECT = 99
     BUFF_RATE = 100
+    COUNTER_FUNCTION = 101
 
 
 class NiceBuffAction(str, Enum):
@@ -1158,6 +1165,7 @@ class NiceBuffAction(str, Enum):
     functionAttackBefore = "functionAttackBefore"
     donotSkillSelect = "donotSkillSelect"
     buffRate = "buffRate"
+    counterFunction = "counterFunction"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1262,6 +1270,7 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     98: NiceBuffAction.functionAttackBefore,
     99: NiceBuffAction.donotSkillSelect,
     100: NiceBuffAction.buffRate,
+    101: NiceBuffAction.counterFunction,
 }
 
 
@@ -1382,6 +1391,11 @@ class DataValsType(IntEnum):
     ForceSubState = 89
     IgnoreIndivUnreleaseable = 90
     OnParty = 91
+    CounterId = 92
+    CounterLv = 93
+    CounterOc = 94
+    UseTreasureDevice = 95
+    SkillReaction = 96
 
 
 class ClassRelationOverwriteType(IntEnum):

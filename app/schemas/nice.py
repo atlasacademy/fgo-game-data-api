@@ -241,6 +241,11 @@ class BaseVals(BaseModel):
     ForceSubState: Optional[int] = None
     IgnoreIndivUnreleaseable: Optional[int] = None
     OnParty: Optional[int] = None
+    CounterId: int | None = None
+    CounterLv: int | None = None
+    CounterOc: int | None = None
+    UseTreasureDevice: int | None = None
+    SkillReaction: int | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
