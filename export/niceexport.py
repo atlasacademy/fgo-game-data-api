@@ -120,11 +120,86 @@ CONSTANT_INCLUDE = {
 }
 
 
-def get_nice_constant(raw_data: Any) -> Any:
+def get_nice_constant(raw_data: Any) -> dict[str, int]:
     return {
         constant["name"]: constant["value"]
         for constant in raw_data
         if constant["name"] in CONSTANT_INCLUDE
+    }
+
+
+CONSTANT_STR_INCLUDE = {
+    "BIRTHDAY_BEFORE_VALENTINE_SVT_ID",
+    "COIN_ROOM_CLOSED_MESSAGE",
+    "COMBINE_SCENE_VOICE_RETURN",
+    "COMBINE_SCENE_VOICE_WELCOME",
+    "EFFECT_INVINCIBLE_AVOID_OFFSET_Z",
+    "EVENT_BOARD_GAME_DICE_BUTTON_POS",
+    "EVENT_BOARD_GAME_DICE_VOICE_INFO",
+    "EVENT_BOARD_GAME_MAP_ID_LIST",
+    "EVENT_BOARD_GAME_MAP_POSITION",
+    "EVENT_BOARD_GAME_QUEST_ARRIVAL_VOICE_SVT_ID_LIST",
+    "EVENT_ITEM_REPLACE_BEFORE_EVENT_NAME",
+    "EVENT_ITEM_REPLACE_EVENT_NAME",
+    "EVENT_SVT_WITH_GACHA_LIST",
+    "EVENT_TOWER_FADEOUT_DELAY_TIME",
+    "EXTEND_TURN_BUFF_TYPE",
+    "FULL_SCREEN_NP_CHRS",
+    "HIDE_DEFF_TYPE",
+    "IGNORE_AURA_BUFF",
+    "IGNORE_FORM_CHANGE_SVT_ID",
+    "LEGACY_ASPECT_MOVIES",
+    "MATERIAL_MAIN_INTERLUDE_WAR_ID",
+    "NOT_REDUCE_COUNT_WITH_NO_DAMAGE_BUFF",
+    "OPEN_MAIN_SCENARIO_TITLE",
+    "PRESENT_BOX_FILTER_SVT_EQUIP_MATERIAL",
+    "PROLOGUE_WAR_AFTER_QUEST_CLEAR_IDS",
+    "PROLOGUE_WAR_IDS",
+    "QPEVENT_NEXT_DISPLAY_DATA",
+    "REPRINT_LAST_WAR_RAID_EVENT_ID_LIST",
+    "SCENARIO_SPEED_DEFAULT",
+    "SCENARIO_SPEED_HIGH",
+    "SCENARIO_SPEED_LOW",
+    "SCENARIO_SPEED_STEP",
+    "SHOP_SCENE_VOICE_ANONYMOUS",
+    "SHOP_SCENE_VOICE_BACK1",
+    "SHOP_SCENE_VOICE_BACK2",
+    "SHOP_SCENE_VOICE_CANCEL",
+    "SHOP_SCENE_VOICE_DECIDE",
+    "SHOP_SCENE_VOICE_EQFRAME",
+    "SHOP_SCENE_VOICE_EQSTORAGE",
+    "SHOP_SCENE_VOICE_EVENT",
+    "SHOP_SCENE_VOICE_EXCHANGE",
+    "SHOP_SCENE_VOICE_FRAGMENT",
+    "SHOP_SCENE_VOICE_GRAIL_FRAGMENTS",
+    "SHOP_SCENE_VOICE_MANA",
+    "SHOP_SCENE_VOICE_RARE_PRI",
+    "SHOP_SCENE_VOICE_SELL",
+    "SHOP_SCENE_VOICE_SHOP04",
+    "SHOP_SCENE_VOICE_SPECIAL",
+    "SHOP_SCENE_VOICE_STARTUPSUMMON",
+    "SHOP_SCENE_VOICE_STONE",
+    "SHOP_SCENE_VOICE_SVTFRAME",
+    "SHOP_SCENE_VOICE_SVTSTORAGE",
+    "SHOP_SCENE_VOICE_WELCOME",
+    "SHORT_DEAD_EFFECT_SHADOW_SVT_ID",
+    "STAR_REFRESH_BUFF_TYPE",
+    "SUB_PT_BUFF_INDIVI",
+    "SVT_EXIT_PT_BUFF_INDIVI",
+    "TIME_STATUS_COND_QUEST_DATA",
+    "TOWEREVENT_TOWER_CLEAR_DISABLE",
+    "WAR_BOARD_BATTLE_END_RESET_BUFF_TYPES",
+    "WAR_BOARD_PROGRESS_SELF_BUFF_TYPES",
+    "WAR_IDS_OF_COUNTING_QUEST_ONLY_REACHABLE_MAPS",
+    "X_SCALE_APPLY_SVTIDS",
+}
+
+
+def get_nice_constant_str(raw_data: Any) -> dict[str, str]:
+    return {
+        constant["name"]: constant["value"]
+        for constant in raw_data
+        if constant["name"] in CONSTANT_STR_INCLUDE
     }
 
 
@@ -259,6 +334,11 @@ class ExportParam(NamedTuple):
 TO_EXPORT = [
     ExportParam(
         input="mstConstant", converter=get_nice_constant, output="NiceConstant"
+    ),
+    ExportParam(
+        input="mstConstantStr",
+        converter=get_nice_constant_str,
+        output="NiceConstantStr",
     ),
     ExportParam(
         input="mstClass", converter=get_nice_attackrate, output="NiceClassAttackRate"
