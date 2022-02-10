@@ -362,6 +362,11 @@ class TestServantSpecial:
         }
         assert response.json()["script"]["SkillRankUp"] == expected
 
+    async def test_script_svt_svtBuffTurnExtend(self, client: AsyncClient) -> None:
+        response = await client.get("/nice/JP/servant/336")
+        assert response.status_code == 200
+        assert response.json()["script"]["svtBuffTurnExtend"] is True
+
     async def test_script_STAR_HIGHER_Moriarty(self, client: AsyncClient) -> None:
         response = await client.get("/nice/NA/skill/334552")
         assert response.status_code == 200

@@ -270,6 +270,10 @@ async def get_nice_servant(
             rank_up_script[0]: rank_up_script[1:]
             for rank_up_script in orjson.loads(raw_svt.mstSvt.script["SkillRankUp"])
         }
+    if "svtBuffTurnExtend" in raw_svt.mstSvt.script:
+        nice_data["script"]["svtBuffTurnExtend"] = (
+            raw_svt.mstSvt.script["svtBuffTurnExtend"] == 1
+        )
 
     nice_data["skills"] = [
         skill

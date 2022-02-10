@@ -837,6 +837,11 @@ class NiceServantScript(BaseModel):
         "Summer Kiara 1st skill additional data. "
         "The keys are the base skill IDs and the values are the rank-up skill IDs.",
     )
+    svtBuffTurnExtend: bool | None = Field(
+        None,
+        title="Servant Buff Turn Extend",
+        description="Bazett's effect. Extend buff's duration from end of player turn to end of enemy turn.",
+    )
 
 
 class NiceCommandCode(BaseModelORJson):
