@@ -24,7 +24,7 @@ View the API documentation here: https://api.atlasacademy.io.
 
 ### Configuration
 
-List of configuration variables for the main app.
+List of configuration variables for the main app. You can make a `config.json` file at the project root with the settings. Check the [`config.sample.json`](/config.sample.json) file for an example.
 
 **Required variables**
 - `DATA`: A JSON object string with keys being region strings and values being gamedata's folder location and Postgresql DSN. Not all regions are required in the object. Any combination of regions is accepted.
@@ -51,11 +51,8 @@ List of configuration variables for the main app.
 - `GITHUB_WEBHOOK_GIT_PULL`: default to `False`. If set, the app will do `git pull` on the gamedata repos when the webhook above is used.
 
 </details>
-<br />
-You can make a `config.json` file with the settings. Check the [config.sample.json](config.sample.json) file for an example.
-
 <details>
-<summary>Other way to set the variables (click to show)</summary>
+<summary><b>Other way to set the variables</b> (click to show)</summary>
 
 #### Environment Variables
 
@@ -77,7 +74,6 @@ Settings at a higher level will override the settings at a lower level.
 3. `.env` file
 4. `config.json`
 </details>
-<br />
 
 ### Development environment set up
 
