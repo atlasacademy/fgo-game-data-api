@@ -27,7 +27,7 @@ setproctitle = "^1.2.2"
 tomli = "^2.0.1"
 
 [tool.poetry.dev-dependencies]
-pytest = "^7.0.0"
+pytest = "^7.0.1"
 pylint = "^2.12.2"
 mypy = "^0.931"
 black = "^22.1.0"
@@ -36,9 +36,8 @@ coverage = "^6.3.1"
 fuzzywuzzy-stubs = "^0.0.1"
 isort = "^5.10.1"
 sqlalchemy2-stubs = "^0.0.2-alpha.19"
-pytest-asyncio = "^0.18.0"
+pytest-asyncio = "^0.18.1"
 asgi-lifespan = "^1.0.1"
-types-toml = "^0.10.3"
 types-aiofiles = "^0.8.3"
 
 [tool.pytest.ini_options]
