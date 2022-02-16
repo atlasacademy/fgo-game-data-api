@@ -1,3 +1,4 @@
+from decimal import Decimal
 from typing import Optional
 
 from pydantic import HttpUrl
@@ -153,7 +154,7 @@ class BasicEvent(BaseModelORJson):
 
 class BasicWar(BaseModelORJson):
     id: int
-    coordinates: list[list[int]]
+    coordinates: list[list[Decimal]]
     age: str
     name: str
     longName: str
