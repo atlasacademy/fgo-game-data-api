@@ -16,6 +16,7 @@ from ..data.item import get_item_with_use
 from ..data.script import get_script_path, get_script_text_only
 from ..models.raw import (
     TABLES_TO_BE_LOADED,
+    AssetStorage,
     ScriptFileList,
     mstBuff,
     mstEvent,
@@ -31,7 +32,7 @@ from ..models.rayshift import rayshiftQuest
 from ..schemas.base import BaseModelORJson
 from ..schemas.common import Region
 from ..schemas.enums import FUNC_VALS_NOT_BUFF
-from ..schemas.raw import get_subtitle_svtId
+from ..schemas.raw import AssetStorageLine, get_subtitle_svtId
 from ..schemas.rayshift import QuestDetail, QuestList
 from .engine import engines
 from .helpers.rayshift import (
@@ -264,6 +265,40 @@ def load_pydantic_to_db(
     insert_db(conn, db_table, db_data)
 
 
+def load_asset_storage(
+    conn: Connection, repo_folder: DirectoryPath
+) -> None:  # pragma: no cover
+    with open(repo_folder / "AssetStorage.txt", "r", encoding="utf-8") as fp:
+        asset_storage = fp.readlines()
+
+    asset_lines: list[AssetStorageLine] = []
+
+    for line in asset_storage:
+        if line[0] in ("~", "@"):
+            continue
+        splitted = line.strip().split(",")
+        path_splitted = splitted[4].split("/")
+        if len(path_splitted) == 1:
+            file_name = path_splitted[0]
+            folder = ""
+        else:
+            file_name = path_splitted[-1]
+            folder = "/".join(path_splitted[:-1])
+        asset_lines.append(
+            AssetStorageLine(
+                first=splitted[0],
+                required=splitted[1],
+                size=int(splitted[2]),
+                crc32=int(splitted[3]),
+                path=splitted[4],
+                folder=folder,
+                fileName=file_name,
+            )
+        )
+
+    load_pydantic_to_db(conn, asset_lines, AssetStorage)
+
+
 def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no cover
     logger.info("Loading db …")
     start_loading_time = time.perf_counter()
@@ -300,6 +335,9 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
 
             logger.info("Updating item …")
             load_item(conn, repo_folder)
+
+            logger.info("Updated AssetStorage …")
+            load_asset_storage(conn, repo_folder)
 
         logger.info("Updating script list …")
         load_script_list(engine, region, repo_folder)

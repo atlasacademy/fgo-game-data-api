@@ -45,6 +45,7 @@ from .schemas.enums import ALL_ENUMS, TRAIT_NAME
 from .schemas.gameenums import SvtType
 from .schemas.nice import NiceEquip, NiceServant
 from .schemas.raw import (
+    AssetStorageLine,
     BgmEntity,
     MstCommandCode,
     MstCv,
@@ -347,6 +348,9 @@ async def generate_exports(
                 bgms = await get_all_bgm_entities(conn)
                 mstItems = await fetch.get_everything(conn, MstItem)
                 mstMasterMissions = await fetch.get_everything(conn, MstMasterMission)
+
+                asset_storage = await fetch.get_everything(conn, AssetStorageLine)
+                await util.dump_orjson("asset_storage", asset_storage)
 
                 await dump_nice_items(util, mstItems)
                 await dump_nice_mcs(util, mstEquips)

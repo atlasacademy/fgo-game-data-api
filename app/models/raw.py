@@ -1561,6 +1561,18 @@ Index(
     "ix_ScriptFileList_text", ScriptFileList.c.textScript, postgresql_using="pgroonga"
 )
 
+AssetStorage = Table(
+    "AssetStorage",
+    metadata,
+    Column("first", String),
+    Column("required", String),
+    Column("size", BigInteger),
+    Column("crc32", BigInteger),
+    Column("path", String),
+    Column("folder", String, index=True),
+    Column("fileName", String),
+)
+
 TABLES_TO_BE_LOADED = [
     mstCommonRelease,
     mstSkill,

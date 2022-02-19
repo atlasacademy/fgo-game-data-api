@@ -1560,3 +1560,25 @@ class BgmEntity(BaseModelORJson):
     mstClosedMessage: list[MstClosedMessage]
     mstShop: Optional[MstShop]
     mstItem: Optional[MstItem]
+
+
+class AssetStorageLine(BaseModelORJson):
+    first: str = Field(
+        ...,
+        title="First field",
+        description="Unused in JP/NA/KR. Download name of the asset in CN/TW.",
+    )
+    required: str = Field(
+        ...,
+        title="Whether the asset is required",
+        description="SYSTEM=Required DATA0=Not Required. If required, the asset will be downloaded before the title screen.",
+    )
+    size: int = Field(..., title="Size of the asset in bytes")
+    crc32: int = Field(
+        ...,
+        title="CRC32 of the asset",
+        description="CRC32 of the asset as an unsigned 32-bit integer.",
+    )
+    path: str
+    folder: str
+    fileName: str

@@ -6,6 +6,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import ColumnElement, select
 
 from ...models.raw import (
+    AssetStorage,
     mstBgm,
     mstBgmRelease,
     mstBoxGacha,
@@ -74,6 +75,7 @@ from ...models.raw import (
 )
 from ...schemas.base import BaseModelORJson
 from ...schemas.raw import (
+    AssetStorageLine,
     MstBgm,
     MstBgmRelease,
     MstBoxGacha,
@@ -371,6 +373,7 @@ schema_map_fetch_everything: dict[  # type:ignore
     MstIllustrator: (mstIllustrator, mstIllustrator.c.id),
     MstCv: (mstCv, mstCv.c.id),
     MstMasterMission: (mstMasterMission, mstMasterMission.c.id),
+    AssetStorageLine: (AssetStorage, AssetStorage.c.path),
 }
 
 TFetchEverything = TypeVar("TFetchEverything", bound=BaseModelORJson)

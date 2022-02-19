@@ -95,6 +95,7 @@ Pre-generated full nice data that can be served instantly:
   - [NA Illustrator](/export/NA/nice_illustrator.json)
   - [NA Voice Actor](/export/NA/nice_cv.json)
   - [NA BGM](/export/NA/nice_bgm.json)
+  - [JP Asset Storage](/export/NA/asset_storage.json)
 - JP data:
   - [JP Servant](/export/JP/nice_servant.json),
   [JP Servant with English names](/export/JP/nice_servant_lang_en.json)
@@ -121,6 +122,7 @@ Pre-generated full nice data that can be served instantly:
   [JP Voice Actor with English names](/export/JP/nice_cv_lang_en.json)
   - [JP BGM](/export/JP/nice_bgm.json),
   [JP BGM](/export/JP/nice_bgm_lang_en.json)
+  - [JP Asset Storage](/export/JP/asset_storage.json)
 - Both regions (The data is the same for both NA and JP endpoints):
   - [All enums](/export/JP/nice_enums.json)
   - [Trait mapping](/export/JP/nice_trait.json)
