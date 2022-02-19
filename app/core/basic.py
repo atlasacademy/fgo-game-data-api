@@ -367,7 +367,6 @@ async def get_basic_svt(
                 "id": costume.id,
                 "costumeCollectionNo": costume.costumeCollectionNo,
                 "battleCharaId": costume.battleCharaId,
-                "name": costume.name,
                 "shortName": costume.shortName,
             }
             for costume in svtExtra.costumeLimitSvtIdMap.values()

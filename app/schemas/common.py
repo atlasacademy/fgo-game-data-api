@@ -115,7 +115,6 @@ class BasicCostume(BaseModel):
     id: int
     costumeCollectionNo: int
     battleCharaId: int
-    name: str
     shortName: str
 
 
