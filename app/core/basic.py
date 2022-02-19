@@ -356,11 +356,22 @@ async def get_basic_svt(
         "rarity": mstSvtLimit.rarity,
         "atkMax": mstSvtLimit.atkMax,
         "hpMax": mstSvtLimit.hpMax,
+        "costume": {},
     }
 
     if svtExtra:
         basic_servant["bondEquipOwner"] = svtExtra.bondEquipOwner
         basic_servant["valentineEquipOwner"] = svtExtra.valentineEquipOwner
+        basic_servant["costume"] = {
+            costume.battleCharaId: {
+                "id": costume.id,
+                "costumeCollectionNo": costume.costumeCollectionNo,
+                "battleCharaId": costume.battleCharaId,
+                "name": costume.name,
+                "shortName": costume.shortName,
+            }
+            for costume in svtExtra.costumeLimitSvtIdMap.values()
+        }
         if svtExtra.zeroLimitOverwriteName is not None:
             basic_servant["name"] = svtExtra.zeroLimitOverwriteName
 
@@ -371,11 +382,11 @@ async def get_basic_svt(
     }
 
     if svt_limit is not None and mstSvt.type != SvtType.SERVANT_EQUIP:
-        if svtExtra and svt_limit in svtExtra.costumeLimitSvtIdMap:
+        if svtExtra and svt_limit > 10 and svt_limit in svtExtra.costumeLimitSvtIdMap:
             basic_servant["face"] = AssetURL.face.format(
                 base_url=settings.asset_url,
                 region=region,
-                item_id=svtExtra.costumeLimitSvtIdMap[svt_limit],
+                item_id=svtExtra.costumeLimitSvtIdMap[svt_limit].battleCharaId,
                 i=0,
             )
         elif mstSvt.type in (SvtType.ENEMY, SvtType.ENEMY_COLLECTION):

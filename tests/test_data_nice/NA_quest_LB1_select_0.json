@@ -82,7 +82,8 @@
         "rarity": 3,
         "atkMax": 6376,
         "hpMax": 9981,
-        "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_5036002.png"
+        "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_5036002.png",
+        "costume": {}
       },
       "releaseConditions": [],
       "lv": 80,
@@ -879,7 +880,8 @@
             "rarity": 3,
             "atkMax": 12093,
             "hpMax": 64902,
-            "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99411501.png"
+            "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99411501.png",
+            "costume": {}
           },
           "drops": [
             {
@@ -1223,7 +1225,8 @@
             "rarity": 3,
             "atkMax": 12093,
             "hpMax": 64902,
-            "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99411501.png"
+            "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99411501.png",
+            "costume": {}
           },
           "drops": [
             {
@@ -1576,7 +1579,8 @@
             "rarity": 3,
             "atkMax": 12093,
             "hpMax": 64902,
-            "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99411501.png"
+            "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99411501.png",
+            "costume": {}
           },
           "drops": [],
           "lv": 48,
@@ -1901,7 +1905,8 @@
             "rarity": 3,
             "atkMax": 12093,
             "hpMax": 64902,
-            "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99411501.png"
+            "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99411501.png",
+            "costume": {}
           },
           "drops": [
             {
@@ -2245,7 +2250,8 @@
             "rarity": 3,
             "atkMax": 12093,
             "hpMax": 64902,
-            "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99411501.png"
+            "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99411501.png",
+            "costume": {}
           },
           "drops": [
             {
@@ -2580,7 +2586,8 @@
             "rarity": 3,
             "atkMax": 12093,
             "hpMax": 64902,
-            "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99411501.png"
+            "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99411501.png",
+            "costume": {}
           },
           "drops": [
             {
@@ -2924,7 +2931,8 @@
             "rarity": 3,
             "atkMax": 12093,
             "hpMax": 64902,
-            "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99411501.png"
+            "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99411501.png",
+            "costume": {}
           },
           "drops": [
             {
@@ -3268,7 +3276,8 @@
             "rarity": 3,
             "atkMax": 12093,
             "hpMax": 64902,
-            "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99411501.png"
+            "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99411501.png",
+            "costume": {}
           },
           "drops": [
             {

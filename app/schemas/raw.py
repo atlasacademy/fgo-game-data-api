@@ -1,8 +1,10 @@
 from decimal import Decimal
 from typing import Any, Optional
 
+from pydantic import Field
+
 from .base import BaseModelORJson
-from .common import NiceValentineScript, StageLink
+from .common import NiceCostume, NiceValentineScript, StageLink
 from .enums import SERVANT_TYPES, AiType
 from .gameenums import SvtType
 
@@ -343,7 +345,7 @@ class MstSvtExtra(BaseModelORJson):
     valentineEquip: list[int]
     valentineScript: list[NiceValentineScript]
     valentineEquipOwner: Optional[int] = None
-    costumeLimitSvtIdMap: dict[int, int] = {}
+    costumeLimitSvtIdMap: dict[int, NiceCostume] = {}  # Map<costume limit, NiceCostume>
 
 
 class MstSvtCard(BaseModelORJson):

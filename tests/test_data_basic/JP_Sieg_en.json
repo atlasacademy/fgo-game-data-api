@@ -9,5 +9,6 @@
   "rarity": 4,
   "atkMax": 8394,
   "hpMax": 11288,
-  "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_5038000.png"
+  "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_5038000.png",
+  "costume": {}
 }

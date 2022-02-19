@@ -2338,7 +2338,17 @@
         "scriptName": "Evil Doctrine"
       }
     ],
-    "costumeLimitSvtIdMap": { "11": 202330 }
+    "costumeLimitSvtIdMap": {
+      "11": {
+        "id": 11,
+        "costumeCollectionNo": 17,
+        "battleCharaId": 202330,
+        "name": "Grey Collar",
+        "shortName": "Grey Collar",
+        "detail": "A bartender's outfit with a butterfly motif. The Professor's fashion sense really shines through in this outfit.",
+        "priority": 98
+      }
+    }
   },
   "mstSvtComment": [
     {

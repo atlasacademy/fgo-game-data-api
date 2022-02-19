@@ -91,7 +91,16 @@
           "rarity": 4,
           "atkMax": 8181,
           "hpMax": 14165,
-          "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_1008000.png"
+          "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_1008000.png",
+          "costume": {
+            "100830": {
+              "id": 11,
+              "costumeCollectionNo": 22,
+              "battleCharaId": 100830,
+              "name": "Super Cool Biz",
+              "shortName": "Super Cool Biz"
+            }
+          }
         }
       ]
     }

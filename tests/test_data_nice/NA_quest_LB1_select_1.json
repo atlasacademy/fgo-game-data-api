@@ -82,7 +82,8 @@
         "rarity": 3,
         "atkMax": 6376,
         "hpMax": 9981,
-        "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_5036002.png"
+        "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_5036002.png",
+        "costume": {}
       },
       "releaseConditions": [],
       "lv": 80,
@@ -852,7 +853,8 @@
             "rarity": 5,
             "atkMax": 9525,
             "hpMax": 514026,
-            "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99393401.png"
+            "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99393401.png",
+            "costume": {}
           },
           "drops": [
             {

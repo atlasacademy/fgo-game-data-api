@@ -16,6 +16,7 @@ from .basic import (
 from .common import (
     MCAssets,
     NiceBuffScript,
+    NiceCostume,
     NiceTrait,
     NiceValentineScript,
     ScriptLink,
@@ -696,16 +697,6 @@ class NiceLoreStats(BaseModel):
     deity: NiceStatusRank
 
 
-class NiceCostume(BaseModel):
-    id: int
-    costumeCollectionNo: int
-    battleCharaId: int
-    name: str
-    shortName: str
-    detail: str
-    priority: int
-
-
 class NiceVoiceCond(BaseModel):
     condType: NiceVoiceCondType = Field(
         ..., title="Voice Cond Type", description="Voice Condition Type Enum"
@@ -824,7 +815,11 @@ class NiceLore(BaseModel):
     cv: str
     illustrator: str
     stats: Optional[NiceLoreStats] = None
-    costume: dict[int, NiceCostume]
+    costume: dict[int, NiceCostume] = Field(
+        ...,
+        title="Costume Details",
+        description="Mapping <Costume BattleCharaID, Costume Detail>.",
+    )
     comments: list[NiceLoreComment]
     voices: list[NiceVoiceGroup]
 

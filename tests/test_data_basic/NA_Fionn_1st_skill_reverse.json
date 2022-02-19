@@ -17,7 +17,30 @@
           "rarity": 4,
           "atkMax": 8930,
           "hpMax": 12750,
-          "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_3011000.png"
+          "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_3011000.png",
+          "costume": {
+            "301100": {
+              "id": 0,
+              "costumeCollectionNo": 0,
+              "battleCharaId": 301100,
+              "name": "",
+              "shortName": ""
+            },
+            "301110": {
+              "id": 2,
+              "costumeCollectionNo": 0,
+              "battleCharaId": 301110,
+              "name": "",
+              "shortName": ""
+            },
+            "301120": {
+              "id": 4,
+              "costumeCollectionNo": 0,
+              "battleCharaId": 301120,
+              "name": "",
+              "shortName": ""
+            }
+          }
         }
       ],
       "MC": [],

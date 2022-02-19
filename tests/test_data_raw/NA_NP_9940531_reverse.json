@@ -840,6 +840,59 @@
               "qp": 0
             }
           ],
+          "mstSvtExtra": {
+            "svtId": 9940530,
+            "bondEquip": 0,
+            "valentineEquip": [],
+            "valentineScript": [],
+            "costumeLimitSvtIdMap": {
+              "0": {
+                "id": 0,
+                "costumeCollectionNo": 0,
+                "battleCharaId": 9940530,
+                "name": "",
+                "shortName": "",
+                "detail": "",
+                "priority": 0
+              },
+              "1": {
+                "id": 1,
+                "costumeCollectionNo": 0,
+                "battleCharaId": 9940530,
+                "name": "",
+                "shortName": "",
+                "detail": "",
+                "priority": 1
+              },
+              "2": {
+                "id": 2,
+                "costumeCollectionNo": 0,
+                "battleCharaId": 9940530,
+                "name": "",
+                "shortName": "",
+                "detail": "",
+                "priority": 2
+              },
+              "3": {
+                "id": 3,
+                "costumeCollectionNo": 0,
+                "battleCharaId": 9940530,
+                "name": "",
+                "shortName": "",
+                "detail": "",
+                "priority": 3
+              },
+              "4": {
+                "id": 4,
+                "costumeCollectionNo": 0,
+                "battleCharaId": 9940530,
+                "name": "",
+                "shortName": "",
+                "detail": "",
+                "priority": 4
+              }
+            }
+          },
           "mstSvtMultiPortrait": []
         }
       ]

@@ -4,7 +4,7 @@ import orjson
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ....config import Settings
-from ....schemas.common import Language, Region
+from ....schemas.common import Language, NiceCostume, Region
 from ....schemas.enums import (
     ATTRIBUTE_NAME,
     CLASS_NAME,
@@ -23,12 +23,7 @@ from ....schemas.gameenums import (
     NiceStatusRank,
     SvtType,
 )
-from ....schemas.nice import (
-    NiceCostume,
-    NiceLoreComment,
-    NiceLoreCommentAdd,
-    NiceServantChange,
-)
+from ....schemas.nice import NiceLoreComment, NiceLoreCommentAdd, NiceServantChange
 from ....schemas.raw import (
     BAD_COMBINE_SVT_LIMIT,
     MstSvt,
@@ -161,7 +156,11 @@ async def get_nice_servant(
         nice_data["valentineScript"] = raw_svt.mstSvtExtra.valentineScript
         nice_data["bondEquipOwner"] = raw_svt.mstSvtExtra.bondEquipOwner
         nice_data["valentineEquipOwner"] = raw_svt.mstSvtExtra.valentineEquipOwner
-        costume_ids = raw_svt.mstSvtExtra.costumeLimitSvtIdMap
+        costume_ids = {
+            costumeMap.id: costumeMap.battleCharaId
+            for limitCount, costumeMap in raw_svt.mstSvtExtra.costumeLimitSvtIdMap.items()
+            if limitCount > 10
+        }
     else:
         nice_data["bondEquip"] = 0
         nice_data["valentineEquip"] = []

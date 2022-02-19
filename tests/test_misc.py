@@ -98,6 +98,7 @@ def test_sort_by_collection_no() -> None:
         atkMax=11221,
         hpMax=15150,
         face="https://assets.atlasacademy.io/GameData/NA/Faces/f_1001000.png",
+        costume={},
     )
     second_item = BasicServant(
         id=202900,
@@ -111,6 +112,7 @@ def test_sort_by_collection_no() -> None:
         atkMax=10299,
         hpMax=11025,
         face="https://assets.atlasacademy.io/GameData/NA/Faces/f_2029000.png",
+        costume={},
     )
     input_data = [second_item, first_item]
     result = sort_by_collection_no(input_data)

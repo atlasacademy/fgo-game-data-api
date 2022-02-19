@@ -16,7 +16,23 @@
           "rarity": 4,
           "atkMax": 10299,
           "hpMax": 11025,
-          "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_2029000.png"
+          "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_2029000.png",
+          "costume": {
+            "202900": {
+              "id": 2,
+              "costumeCollectionNo": 0,
+              "battleCharaId": 202900,
+              "name": "",
+              "shortName": ""
+            },
+            "202910": {
+              "id": 4,
+              "costumeCollectionNo": 0,
+              "battleCharaId": 202910,
+              "name": "",
+              "shortName": ""
+            }
+          }
         }
       ]
     }

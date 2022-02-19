@@ -3,7 +3,7 @@ from collections import defaultdict
 from pydantic import DirectoryPath
 
 from ..core.nice.base_script import get_script_url
-from ..schemas.common import NiceValentineScript, Region
+from ..schemas.common import NiceCostume, NiceValentineScript, Region
 from ..schemas.gameenums import CondType, PurchaseType, SvtType
 from ..schemas.raw import (
     MstEvent,
@@ -68,9 +68,9 @@ def get_extra_svt_data(
     for shop_release in mstShopReleases:
         mstShopReleaseShopId[shop_release.shopId].append(shop_release)
 
-    mstSvtCostumeId: dict[int, set[int]] = defaultdict(set)
+    mstSvtCostumeId: dict[int, dict[int, MstSvtCostume]] = defaultdict(dict)
     for costume in mstSvtCostumes:
-        mstSvtCostumeId[costume.svtId].add(costume.id)
+        mstSvtCostumeId[costume.svtId][costume.id] = costume
 
     # Bond CE has servant's ID in skill's actIndividuality
     # to bind the CE effect to the servant
@@ -132,17 +132,33 @@ def get_extra_svt_data(
     }
 
     zeroLimitOverwriteName: dict[int, str] = {}
-    svtCostumeIds: dict[int, dict[int, int]] = defaultdict(dict)
+    svtCostumeIds: dict[int, dict[int, NiceCostume]] = defaultdict(dict)
     for limitAdd in mstSvtLimitAdds:
         if limitAdd.limitCount == 0 and "overWriteServantName" in limitAdd.script:
             zeroLimitOverwriteName[limitAdd.svtId] = limitAdd.script[
                 "overWriteServantName"
             ]
-        if (
-            limitAdd.limitCount in mstSvtCostumeId.get(limitAdd.svtId, set())
-            or limitAdd.limitCount > 10
-        ):
-            svtCostumeIds[limitAdd.svtId][limitAdd.limitCount] = limitAdd.battleCharaId
+        if limitAdd.limitCount in mstSvtCostumeId.get(limitAdd.svtId, {}):
+            raw_costume = mstSvtCostumeId[limitAdd.svtId][limitAdd.limitCount]
+            svtCostumeIds[limitAdd.svtId][limitAdd.limitCount] = NiceCostume(
+                id=raw_costume.id,
+                costumeCollectionNo=raw_costume.costumeCollectionNo,
+                battleCharaId=limitAdd.battleCharaId,
+                name=raw_costume.name,
+                shortName=raw_costume.shortName,
+                detail=raw_costume.detail,
+                priority=raw_costume.priority,
+            )
+        else:
+            svtCostumeIds[limitAdd.svtId][limitAdd.limitCount] = NiceCostume(
+                id=limitAdd.limitCount,
+                costumeCollectionNo=0,
+                battleCharaId=limitAdd.battleCharaId,
+                name="",
+                shortName="",
+                detail="",
+                priority=limitAdd.limitCount,
+            )
 
     all_svt_ids = (
         bondEquip.keys()
