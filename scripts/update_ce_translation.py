@@ -28,6 +28,7 @@ TRANSLATION_FILES = (
     "equip_names",
     "cc_names",
     "mc_names",
+    "costume_names",
 )
 LOGIN_ITEM_REGEX = re.compile(r"(\d+)月交換券\((\d+)\)")
 VOICE_NAME_REGEX = re.compile(r"^(.*?)(\d+)$", re.DOTALL)
@@ -168,6 +169,13 @@ def get_svt_voice_names(mstSvtVoice: Any) -> dict[str, str]:
     return out_dict
 
 
+def get_costume_names(mstCostume: Any) -> dict[str, str]:
+    return {
+        str(costume["svtId"]) + "-" + str(costume["id"]): costume["shortName"]
+        for costume in mstCostume
+    }
+
+
 def update_translation(
     mapping: str,
     jp_master: Path,
@@ -285,6 +293,9 @@ def main(jp_master: Path, na_master: Path) -> None:
     update_translation("spot_names", jp_master, na_master, "mstSpot", get_names)
     update_translation(
         "illustrator_names", jp_master, na_master, "mstIllustrator", get_names
+    )
+    update_translation(
+        "costume_names", jp_master, na_master, "mstSvtCostume", get_costume_names
     )
     update_translation("cv_names", jp_master, na_master, "mstCv", get_names)
     update_translation(

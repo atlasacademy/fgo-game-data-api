@@ -31,6 +31,7 @@ class Translation(str, Enum):
     EQUIP = "equip_names"
     CC = "cc_names"
     MC = "mc_names"
+    COSTUME = "costume_names"
 
 
 for translation_file in Translation.__members__.values():

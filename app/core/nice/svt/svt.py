@@ -98,8 +98,18 @@ def get_nice_comment(
     )
 
 
-def get_nice_costume(costume: MstSvtCostume, battleCharaId: int) -> NiceCostume:
-    return NiceCostume(**costume.dict(), battleCharaId=battleCharaId)
+def get_nice_costume(
+    costume: MstSvtCostume, battleCharaId: int, lang: Language
+) -> NiceCostume:
+    return NiceCostume(
+        id=costume.id,
+        costumeCollectionNo=costume.costumeCollectionNo,
+        battleCharaId=battleCharaId,
+        name=costume.name,
+        shortName=get_translation(lang, costume.shortName),
+        detail=costume.detail,
+        priority=costume.priority,
+    )
 
 
 async def get_nice_servant(
@@ -338,7 +348,7 @@ async def get_nice_servant(
             ),
             "costume": {
                 costume_ids[costume.id]: get_nice_costume(
-                    costume, costume_ids[costume.id]
+                    costume, costume_ids[costume.id], lang
                 )
                 for costume in raw_svt.mstSvtCostume
             },

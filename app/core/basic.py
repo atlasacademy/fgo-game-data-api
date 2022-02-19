@@ -367,7 +367,9 @@ async def get_basic_svt(
                 "id": costume.id,
                 "costumeCollectionNo": costume.costumeCollectionNo,
                 "battleCharaId": costume.battleCharaId,
-                "shortName": costume.shortName,
+                "shortName": get_translation(lang, costume.shortName)
+                if region == Region.JP and lang is not None
+                else costume.shortName,
             }
             for costume in svtExtra.costumeLimitSvtIdMap.values()
         }
