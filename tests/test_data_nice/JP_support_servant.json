@@ -104,7 +104,6 @@
             "id": 11,
             "costumeCollectionNo": 44,
             "battleCharaId": 200130,
-            "name": "サマー・カジュアル",
             "shortName": "サマー・カジュアル"
           }
         }
@@ -1595,21 +1594,18 @@
             "id": 0,
             "costumeCollectionNo": 0,
             "battleCharaId": 204200,
-            "name": "",
             "shortName": ""
           },
           "204210": {
             "id": 2,
             "costumeCollectionNo": 0,
             "battleCharaId": 204210,
-            "name": "",
             "shortName": ""
           },
           "204220": {
             "id": 4,
             "costumeCollectionNo": 0,
             "battleCharaId": 204220,
-            "name": "",
             "shortName": ""
           }
         }
@@ -3158,21 +3154,18 @@
             "id": 0,
             "costumeCollectionNo": 0,
             "battleCharaId": 404100,
-            "name": "",
             "shortName": ""
           },
           "404110": {
             "id": 2,
             "costumeCollectionNo": 0,
             "battleCharaId": 404110,
-            "name": "",
             "shortName": ""
           },
           "404120": {
             "id": 4,
             "costumeCollectionNo": 0,
             "battleCharaId": 404120,
-            "name": "",
             "shortName": ""
           }
         }
@@ -4480,7 +4473,6 @@
             "id": 11,
             "costumeCollectionNo": 43,
             "battleCharaId": 103630,
-            "name": "辨天衣",
             "shortName": "辨天衣"
           }
         }

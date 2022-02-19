@@ -126,21 +126,18 @@
                                 "id": 0,
                                 "costumeCollectionNo": 0,
                                 "battleCharaId": 504500,
-                                "name": "",
                                 "shortName": ""
                               },
                               "504510": {
                                 "id": 2,
                                 "costumeCollectionNo": 0,
                                 "battleCharaId": 504510,
-                                "name": "",
                                 "shortName": ""
                               },
                               "504520": {
                                 "id": 4,
                                 "costumeCollectionNo": 0,
                                 "battleCharaId": 504520,
-                                "name": "",
                                 "shortName": ""
                               }
                             }
@@ -173,7 +170,6 @@
                                 "id": 4,
                                 "costumeCollectionNo": 0,
                                 "battleCharaId": 9943080,
-                                "name": "",
                                 "shortName": ""
                               }
                             }
@@ -206,7 +202,6 @@
                                 "id": 4,
                                 "costumeCollectionNo": 0,
                                 "battleCharaId": 9943090,
-                                "name": "",
                                 "shortName": ""
                               }
                             }
@@ -239,7 +234,6 @@
                                 "id": 4,
                                 "costumeCollectionNo": 0,
                                 "battleCharaId": 9943090,
-                                "name": "",
                                 "shortName": ""
                               }
                             }

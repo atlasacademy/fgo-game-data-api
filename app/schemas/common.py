@@ -111,14 +111,14 @@ class StageLink(BaseModel):
     stage: int
 
 
-class BasicCostume(BaseModel):
+class BasicCostume(BaseModelORJson):
     id: int
     costumeCollectionNo: int
     battleCharaId: int
     shortName: str
 
 
-class NiceCostume(BasicCostume):
+class NiceCostume(BaseModelORJson):
     id: int
     costumeCollectionNo: int
     battleCharaId: int

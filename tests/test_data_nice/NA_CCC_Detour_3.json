@@ -1095,7 +1095,6 @@
                 "id": 4,
                 "costumeCollectionNo": 0,
                 "battleCharaId": 301900,
-                "name": "",
                 "shortName": ""
               }
             }
@@ -2339,7 +2338,6 @@
                 "id": 11,
                 "costumeCollectionNo": 48,
                 "battleCharaId": 101230,
-                "name": "Silver Butler",
                 "shortName": "Silver Butler"
               }
             }
@@ -2923,7 +2921,6 @@
                 "id": 4,
                 "costumeCollectionNo": 0,
                 "battleCharaId": 301900,
-                "name": "",
                 "shortName": ""
               }
             }

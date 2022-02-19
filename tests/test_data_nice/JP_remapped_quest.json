@@ -160,7 +160,6 @@
                 "id": 1,
                 "costumeCollectionNo": 0,
                 "battleCharaId": 9938890,
-                "name": "",
                 "shortName": ""
               }
             }
@@ -481,7 +480,6 @@
                 "id": 1,
                 "costumeCollectionNo": 0,
                 "battleCharaId": 9938890,
-                "name": "",
                 "shortName": ""
               }
             }
@@ -807,7 +805,6 @@
                 "id": 1,
                 "costumeCollectionNo": 0,
                 "battleCharaId": 9938890,
-                "name": "",
                 "shortName": ""
               }
             }
@@ -1128,7 +1125,6 @@
                 "id": 1,
                 "costumeCollectionNo": 0,
                 "battleCharaId": 9938890,
-                "name": "",
                 "shortName": ""
               }
             }
@@ -1449,7 +1445,6 @@
                 "id": 1,
                 "costumeCollectionNo": 0,
                 "battleCharaId": 9938890,
-                "name": "",
                 "shortName": ""
               }
             }
@@ -1784,28 +1779,24 @@
                 "id": 0,
                 "costumeCollectionNo": 0,
                 "battleCharaId": 102700,
-                "name": "",
                 "shortName": ""
               },
               "102710": {
                 "id": 2,
                 "costumeCollectionNo": 0,
                 "battleCharaId": 102710,
-                "name": "",
                 "shortName": ""
               },
               "102720": {
                 "id": 4,
                 "costumeCollectionNo": 0,
                 "battleCharaId": 102720,
-                "name": "",
                 "shortName": ""
               },
               "102730": {
                 "id": 11,
                 "costumeCollectionNo": 47,
                 "battleCharaId": 102730,
-                "name": "簡易霊衣：浅葱の羽織袴",
                 "shortName": "浅葱の羽織袴"
               }
             }
