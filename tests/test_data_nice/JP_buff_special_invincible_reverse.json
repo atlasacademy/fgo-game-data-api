@@ -129,13 +129,13 @@
                                 "shortName": ""
                               },
                               "504510": {
-                                "id": 2,
+                                "id": 1,
                                 "costumeCollectionNo": 0,
                                 "battleCharaId": 504510,
                                 "shortName": ""
                               },
                               "504520": {
-                                "id": 4,
+                                "id": 3,
                                 "costumeCollectionNo": 0,
                                 "battleCharaId": 504520,
                                 "shortName": ""
@@ -167,7 +167,7 @@
                             "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_99430800.png",
                             "costume": {
                               "9943080": {
-                                "id": 4,
+                                "id": 0,
                                 "costumeCollectionNo": 0,
                                 "battleCharaId": 9943080,
                                 "shortName": ""
@@ -199,7 +199,7 @@
                             "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_99430900.png",
                             "costume": {
                               "9943090": {
-                                "id": 4,
+                                "id": 0,
                                 "costumeCollectionNo": 0,
                                 "battleCharaId": 9943090,
                                 "shortName": ""
@@ -231,7 +231,7 @@
                             "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_99430900.png",
                             "costume": {
                               "9943090": {
-                                "id": 4,
+                                "id": 0,
                                 "costumeCollectionNo": 0,
                                 "battleCharaId": 9943090,
                                 "shortName": ""

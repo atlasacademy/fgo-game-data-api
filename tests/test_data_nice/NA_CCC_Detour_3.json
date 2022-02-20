@@ -1092,7 +1092,7 @@
             "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_3019002.png",
             "costume": {
               "301900": {
-                "id": 4,
+                "id": 0,
                 "costumeCollectionNo": 0,
                 "battleCharaId": 301900,
                 "shortName": ""
@@ -2918,7 +2918,7 @@
             "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_3019002.png",
             "costume": {
               "301900": {
-                "id": 4,
+                "id": 0,
                 "costumeCollectionNo": 0,
                 "battleCharaId": 301900,
                 "shortName": ""

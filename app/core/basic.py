@@ -362,17 +362,17 @@ async def get_basic_svt(
     if svtExtra:
         basic_servant["bondEquipOwner"] = svtExtra.bondEquipOwner
         basic_servant["valentineEquipOwner"] = svtExtra.valentineEquipOwner
-        basic_servant["costume"] = {
-            costume.battleCharaId: {
-                "id": costume.id,
-                "costumeCollectionNo": costume.costumeCollectionNo,
-                "battleCharaId": costume.battleCharaId,
-                "shortName": get_translation(lang, costume.shortName)
-                if region == Region.JP and lang is not None
-                else costume.shortName,
-            }
-            for costume in svtExtra.costumeLimitSvtIdMap.values()
-        }
+        basic_servant["costume"] = {}
+        for costume in svtExtra.costumeLimitSvtIdMap.values():
+            if costume.battleCharaId not in basic_servant["costume"]:
+                basic_servant["costume"][costume.battleCharaId] = {
+                    "id": costume.id,
+                    "costumeCollectionNo": costume.costumeCollectionNo,
+                    "battleCharaId": costume.battleCharaId,
+                    "shortName": get_translation(lang, costume.shortName)
+                    if region == Region.JP and lang is not None
+                    else costume.shortName,
+                }
         if svtExtra.zeroLimitOverwriteName is not None:
             basic_servant["name"] = svtExtra.zeroLimitOverwriteName
 

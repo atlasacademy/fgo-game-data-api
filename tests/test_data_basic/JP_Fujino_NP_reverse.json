@@ -19,13 +19,13 @@
           "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_2029000.png",
           "costume": {
             "202900": {
-              "id": 2,
+              "id": 0,
               "costumeCollectionNo": 0,
               "battleCharaId": 202900,
               "shortName": ""
             },
             "202910": {
-              "id": 4,
+              "id": 3,
               "costumeCollectionNo": 0,
               "battleCharaId": 202910,
               "shortName": ""
