@@ -50,6 +50,7 @@ def get_svt_extraAssets(
     narrowFigure = ExtraAssetsUrl()
     equipFace = ExtraAssetsUrl()
     image = ExtraAssetsUrl()
+    spriteModel = ExtraAssetsUrl()
 
     base_settings = {"base_url": settings.asset_url, "region": region}
     base_settings_id: dict[str, Union[int, str]] = {
@@ -177,6 +178,28 @@ def get_svt_extraAssets(
         faces.equip = {svt_id: fmt_url(AssetURL.face, **base_settings_id, i=0)}
         equipFace.equip = {svt_id: fmt_url(AssetURL.equipFace, **base_settings_id, i=0)}
 
+    for limit_add in raw_svt.mstSvtLimitAdd:
+        model_url = fmt_url(
+            AssetURL.servantModel, **base_settings, item_id=limit_add.battleCharaId
+        )
+        if limit_add.limitCount <= 10:
+            if spriteModel.ascension is None:
+                spriteModel.ascension = {limit_add.limitCount: model_url}
+            else:
+                spriteModel.ascension[limit_add.limitCount] = model_url
+        else:
+            if spriteModel.costume is None:
+                spriteModel.costume = {limit_add.battleCharaId: model_url}
+            else:
+                spriteModel.costume[limit_add.battleCharaId] = model_url
+
+    if raw_svt.mstSvt.isServant() or raw_svt.mstSvt.type == SvtType.ENEMY:
+        model_url = fmt_url(AssetURL.servantModel, **base_settings, item_id=svt_id)
+        if spriteModel.ascension is None:
+            spriteModel.ascension = {0: model_url}
+        elif 0 not in spriteModel.ascension:
+            spriteModel.ascension[0] = model_url
+
     if svt_id in EXTRA_CHARAFIGURES:
         charaFigure.story = {}
         extra_chara_ids = sorted(EXTRA_CHARAFIGURES[svt_id])
@@ -235,4 +258,5 @@ def get_svt_extraAssets(
         status=status,
         equipFace=equipFace,
         image=image,
+        spriteModel=spriteModel,
     )

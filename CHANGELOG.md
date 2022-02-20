@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `NiceConstantStr` export file.
 - `costume` to basic servant. This costume field contains "ascension" costume change as well as actual costumes.
 - `asset_storage` export.
+- `spriteModel` to nice servant assets.
 
 ## 5.76.0 - 2022-01-23
 ### Added

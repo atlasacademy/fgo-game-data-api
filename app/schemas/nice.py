@@ -125,6 +125,7 @@ class AssetURL:
     spotImg = "{base_url}/{region}/Terminal/QuestMap/Capter{war_asset_id:0>4}/QMap_Cap{war_asset_id:0>4}_Atlas/spot_{spot_id:0>6}.png"
     script = "{base_url}/{region}/Script/{script_path}.txt"
     bgmLogo = "{base_url}/{region}/MyRoomSound/soundlogo_{logo_id:0>3}.png"
+    servantModel = "{base_url}/{region}/Servants/{item_id}/manifest.json"
 
 
 class NiceItem(BaseModelORJson):
@@ -563,6 +564,7 @@ class ExtraAssets(ExtraCCAssets):
         description="Images that are used in the game scripts. Only the story field will be filled."
         "Since the list comes from JP, the NA asset might not exist and returns 404.",
     )
+    spriteModel: ExtraAssetsUrl
 
 
 class NiceCardDetail(BaseModel):

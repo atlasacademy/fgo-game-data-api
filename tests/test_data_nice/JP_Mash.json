@@ -126,7 +126,19 @@
       }
     },
     "equipFace": {},
-    "image": { "story": {} }
+    "image": { "story": {} },
+    "spriteModel": {
+      "ascension": {
+        "0": "https://assets.atlasacademy.io/GameData/JP/Servants/800100/manifest.json"
+      },
+      "costume": {
+        "800130": "https://assets.atlasacademy.io/GameData/JP/Servants/800130/manifest.json",
+        "800140": "https://assets.atlasacademy.io/GameData/JP/Servants/800140/manifest.json",
+        "800150": "https://assets.atlasacademy.io/GameData/JP/Servants/800150/manifest.json",
+        "800160": "https://assets.atlasacademy.io/GameData/JP/Servants/800160/manifest.json",
+        "800170": "https://assets.atlasacademy.io/GameData/JP/Servants/800170/manifest.json"
+      }
+    }
   },
   "gender": "female",
   "attribute": "earth",

@@ -989,7 +989,8 @@
                   "9404580": "https://assets.atlasacademy.io/GameData/JP/EquipFaces/f_94045800.png"
                 }
               },
-              "image": { "story": {} }
+              "image": { "story": {} },
+              "spriteModel": {}
             },
             "atkBase": 500,
             "atkMax": 2000,
@@ -2549,7 +2550,8 @@
                   "9404580": "https://assets.atlasacademy.io/GameData/JP/EquipFaces/f_94045800.png"
                 }
               },
-              "image": { "story": {} }
+              "image": { "story": {} },
+              "spriteModel": {}
             },
             "atkBase": 500,
             "atkMax": 2000,
@@ -3868,7 +3870,8 @@
                   "9404580": "https://assets.atlasacademy.io/GameData/JP/EquipFaces/f_94045800.png"
                 }
               },
-              "image": { "story": {} }
+              "image": { "story": {} },
+              "spriteModel": {}
             },
             "atkBase": 500,
             "atkMax": 2000,
@@ -5325,7 +5328,8 @@
                   "9404580": "https://assets.atlasacademy.io/GameData/JP/EquipFaces/f_94045800.png"
                 }
               },
-              "image": { "story": {} }
+              "image": { "story": {} },
+              "spriteModel": {}
             },
             "atkBase": 500,
             "atkMax": 2000,

@@ -63,7 +63,12 @@
       }
     },
     "equipFace": {},
-    "image": { "story": {} }
+    "image": { "story": {} },
+    "spriteModel": {
+      "ascension": {
+        "0": "https://assets.atlasacademy.io/GameData/JP/Servants/304300/manifest.json"
+      }
+    }
   },
   "gender": "female",
   "attribute": "human",

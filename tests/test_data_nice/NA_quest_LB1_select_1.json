@@ -675,7 +675,8 @@
                   "9200010": "https://assets.atlasacademy.io/GameData/NA/EquipFaces/f_92000100.png"
                 }
               },
-              "image": { "story": {} }
+              "image": { "story": {} },
+              "spriteModel": {}
             },
             "atkBase": 0,
             "atkMax": 0,

@@ -84,7 +84,19 @@
       }
     },
     "equipFace": {},
-    "image": { "story": {} }
+    "image": { "story": {} },
+    "spriteModel": {
+      "ascension": {
+        "0": "https://assets.atlasacademy.io/GameData/NA/Servants/1100200/manifest.json",
+        "1": "https://assets.atlasacademy.io/GameData/NA/Servants/1100210/manifest.json",
+        "2": "https://assets.atlasacademy.io/GameData/NA/Servants/1100210/manifest.json",
+        "3": "https://assets.atlasacademy.io/GameData/NA/Servants/1100220/manifest.json",
+        "4": "https://assets.atlasacademy.io/GameData/NA/Servants/1100220/manifest.json"
+      },
+      "costume": {
+        "1100230": "https://assets.atlasacademy.io/GameData/NA/Servants/1100230/manifest.json"
+      }
+    }
   },
   "gender": "male",
   "attribute": "human",

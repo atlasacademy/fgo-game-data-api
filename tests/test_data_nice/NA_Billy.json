@@ -63,7 +63,12 @@
       }
     },
     "equipFace": {},
-    "image": { "story": {} }
+    "image": { "story": {} },
+    "spriteModel": {
+      "ascension": {
+        "0": "https://assets.atlasacademy.io/GameData/NA/Servants/201000/manifest.json"
+      }
+    }
   },
   "gender": "male",
   "attribute": "human",
