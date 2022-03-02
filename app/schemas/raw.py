@@ -1228,6 +1228,7 @@ class MstQuestPhase(BaseModelORJson):
     classIds: list[int]  # [7],
     individuality: list[int]  # [2038, 2039, 94000046],
     script: dict[str, Any]  # {"resultBgmId": 61},
+    questSelect: list[int] | None = None
     questId: int  # 94004502,
     phase: int  # 1,
     isNpcOnly: bool  # true,

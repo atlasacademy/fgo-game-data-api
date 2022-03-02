@@ -1367,6 +1367,7 @@ mstQuestPhase = Table(
     Column("classIds", ARRAY(Integer)),
     Column("individuality", ARRAY(Integer), index=True),
     Column("script", JSONB),
+    Column("questSelect", ARRAY(Integer)),
     Column("questId", Integer, index=True),
     Column("phase", Integer, index=True),
     Column("isNpcOnly", Boolean),
