@@ -5,12 +5,15 @@ All notable changes to the public API will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
+
+## 5.77.0 - 2022-03-02
 ### Added
 - `svtBuffTurnExtend` to nice servant script.
 - `NiceConstantStr` export file.
 - `costume` to basic servant. This costume field contains "ascension" costume change as well as actual costumes.
 - `asset_storage` export.
 - `spriteModel` to nice servant assets.
+- `basic_svt` export.
 
 ## 5.76.0 - 2022-01-23
 ### Added

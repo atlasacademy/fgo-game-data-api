@@ -95,7 +95,7 @@ Pre-generated full nice data that can be served instantly:
   - [NA Illustrator](/export/NA/nice_illustrator.json)
   - [NA Voice Actor](/export/NA/nice_cv.json)
   - [NA BGM](/export/NA/nice_bgm.json)
-  - [JP Asset Storage](/export/NA/asset_storage.json)
+  - [NA Asset Storage](/export/NA/asset_storage.json)
 - JP data:
   - [JP Servant](/export/JP/nice_servant.json),
   [JP Servant with English names](/export/JP/nice_servant_lang_en.json)
@@ -133,6 +133,7 @@ Pre-generated, trimmed-down, lightweight basic data that can be used for indexin
 - NA data:
   - [NA servant](/export/NA/basic_servant.json)
   - [NA CE](/export/NA/basic_equip.json)
+  - [NA svt](/export/NA/basic_svt.json)
   - [NA Command Code](/export/NA/basic_command_code.json)
   - [NA Mystic Code](/export/NA/basic_mystic_code.json)
   - [NA War](/export/NA/basic_war.json)
@@ -142,6 +143,8 @@ Pre-generated, trimmed-down, lightweight basic data that can be used for indexin
   [JP servant with English names](/export/JP/basic_servant_lang_en.json)
   - [JP CE](/export/JP/basic_equip.json),
   [JP CE with English names](/export/JP/basic_equip_lang_en.json)
+  - [JP svt](/export/JP/basic_svt.json),
+  [JP svt with English names](/export/JP/basic_svt_lang_en.json)
   - [JP Command Code](/export/JP/basic_command_code.json),
   [JP Command Code with English names](/export/JP/basic_command_code_lang_en.json)
   - [JP Mystic Code](/export/JP/basic_mystic_code.json),

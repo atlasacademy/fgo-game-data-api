@@ -423,7 +423,9 @@ async def get_all_basic_servants(
     redis: Redis, region: Region, lang: Language, all_servants: list[MstSvt]
 ) -> list[BasicServant]:  # pragma: no cover
     return [
-        await get_basic_servant(redis, region, svt.id, svt_limit=0, lang=lang)
+        await get_basic_servant(
+            redis, region, svt.id, svt_limit=0, lang=lang, mstSvt=svt
+        )
         for svt in all_servants
     ]
 

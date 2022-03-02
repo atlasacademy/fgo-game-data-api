@@ -19,7 +19,6 @@ from ...models.raw import (
     mstSvtVoice,
     mstVoicePlayCond,
 )
-from ...schemas.enums import SERVANT_TYPES
 from ...schemas.gameenums import CondType, SvtType, VoiceCondType
 from ...schemas.raw import (
     GlobalNewMstSubtitle,
@@ -28,13 +27,6 @@ from ...schemas.raw import (
     MstSvtVoice,
     MstVoicePlayCond,
 )
-
-
-async def get_all_servants(conn: AsyncConnection) -> list[MstSvt]:  # pragma: no cover
-    stmt = select(mstSvt).where(
-        and_(mstSvt.c.collectionNo != 0, mstSvt.c.type.in_(SERVANT_TYPES))
-    )
-    return [MstSvt.from_orm(svt) for svt in (await conn.execute(stmt)).fetchall()]
 
 
 async def get_all_equips(conn: AsyncConnection) -> list[MstSvt]:  # pragma: no cover

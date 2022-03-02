@@ -33,7 +33,7 @@ from .core.utils import get_translation, sort_by_collection_no
 from .data.extra import get_extra_svt_data
 from .db.engine import engines
 from .db.helpers import fetch
-from .db.helpers.svt import get_all_equips, get_all_servants
+from .db.helpers.svt import get_all_equips
 from .db.load import load_pydantic_to_db, update_db
 from .models.raw import mstSvtExtra
 from .redis.helpers.repo_version import set_repo_version
@@ -41,7 +41,7 @@ from .redis.load import load_redis_data, load_svt_extra_redis
 from .routers.utils import list_string
 from .schemas.base import BaseModelORJson
 from .schemas.common import Language, Region, RepoInfo
-from .schemas.enums import ALL_ENUMS, TRAIT_NAME
+from .schemas.enums import ALL_ENUMS, SERVANT_TYPES, TRAIT_NAME
 from .schemas.gameenums import SvtType
 from .schemas.nice import NiceEquip, NiceServant
 from .schemas.raw import (
@@ -256,12 +256,12 @@ async def dump_cvs(util: ExportUtil, cvs: list[MstCv]) -> None:  # pragma: no co
 
 
 async def dump_basic_servants(
-    util: ExportUtil, svts: list[MstSvt]
+    util: ExportUtil, file_name: str, svts: list[MstSvt]
 ) -> None:  # pragma: no cover
     all_basic_servant_data = sort_by_collection_no(
         await get_all_basic_servants(util.redis, util.region, util.lang, svts)
     )
-    await util.dump_orjson("basic_servant", all_basic_servant_data)
+    await util.dump_orjson(file_name, all_basic_servant_data)
 
 
 async def dump_basic_equips(
@@ -318,8 +318,13 @@ async def generate_exports(
 
                 util = ExportUtil(conn, redis, region, export_path)
 
-                all_servants = await get_all_servants(conn)
-                await dump_basic_servants(util, all_servants)
+                all_svts = await fetch.get_everything(conn, MstSvt)
+                all_servants = [
+                    svt
+                    for svt in all_svts
+                    if svt.collectionNo != 0 and svt.type in SERVANT_TYPES
+                ]
+                await dump_basic_servants(util, "basic_servant", all_servants)
 
                 all_equips = await get_all_equips(conn)
                 await dump_basic_equips(util, all_equips)
@@ -352,6 +357,8 @@ async def generate_exports(
                 asset_storage = await fetch.get_everything(conn, AssetStorageLine)
                 await util.dump_orjson("asset_storage", asset_storage)
 
+                await dump_basic_servants(util, "basic_svt", all_svts)
+
                 await dump_nice_items(util, mstItems)
                 await dump_nice_mcs(util, mstEquips)
                 await dump_nice_ccs(util, mstCcs)
@@ -363,7 +370,7 @@ async def generate_exports(
                 if region == Region.JP:
                     util_en = ExportUtil(conn, redis, region, export_path, Language.en)
 
-                    await dump_basic_servants(util_en, all_servants)
+                    await dump_basic_servants(util_en, "basic_servant", all_servants)
                     await dump_basic_equips(util_en, all_equips)
                     await dump_basic_ccs(util_en, mstCcs)
                     await dump_basic_wars(util_en, mstWars)
@@ -373,6 +380,7 @@ async def generate_exports(
                     await dump_illustrators(util_en, mstIllustrators)
                     await dump_cvs(util_en, mstCvs)
 
+                    await dump_basic_servants(util_en, "basic_svt", all_svts)
                     await dump_nice_items(util_en, mstItems)
                     await dump_nice_mcs(util_en, mstEquips)
                     await dump_nice_ccs(util_en, mstCcs)
