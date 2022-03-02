@@ -167,9 +167,21 @@ def get_svt_extraAssets(
         if raw_svt.mstSvtAdd:
             if "additionExpandImage" in raw_svt.mstSvtAdd.script:
                 for i in raw_svt.mstSvtAdd.script["additionExpandImage"]:
-                    charaGraphEx.ascension = {
-                        i + 1: fmt_url(AssetURL.charaGraphEx[i + 1], **base_settings_id)
-                    }
+                    if i not in costume_ids:
+                        if charaGraphEx.ascension is None:
+                            charaGraphEx.ascension = {}
+                        charaGraphEx.ascension[i + 1] = fmt_url(
+                            AssetURL.charaGraphEx[i + 1], **base_settings_id
+                        )
+
+                    else:
+                        if charaGraphEx.costume is None:
+                            charaGraphEx.costume = {}
+                        charaGraphEx.costume[costume_ids[i]] = fmt_url(
+                            AssetURL.charaGraphExCostume,
+                            item_id=costume_ids[i],
+                            **base_settings,
+                        )
 
     elif raw_svt.mstSvt.isEquip():
         charaGraph.equip = {
