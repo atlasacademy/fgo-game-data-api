@@ -55,11 +55,11 @@ def insert_db(conn: Connection, table: Table, db_data: Any) -> None:  # pragma: 
     conn.execute(table.insert(), db_data)
 
 
-def check_known_columns(
+def diff_column_schemas(
     data: list[dict[str, Any]], table: Table
-) -> bool:  # pragma: no cover
+) -> set[str]:  # pragma: no cover
     table_columns = {column.name for column in table.columns}
-    return set(data[0].keys()).issubset(table_columns)
+    return data[0].keys() - table_columns
 
 
 def remove_unknown_columns(
@@ -315,9 +315,13 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
                     with open(table_json, "rb") as fp:
                         data: list[dict[str, Any]] = orjson.loads(fp.read())
 
-                    if data and not check_known_columns(data, table):
-                        logger.warning(f"Found unknown columns in {table_json}")
-                        data = remove_unknown_columns(data, table)
+                    if data:
+                        different_columns = diff_column_schemas(data, table)
+                        if different_columns:
+                            logger.warning(
+                                f"Found unknown columns: {', '.join(different_columns)} in {table_json}"
+                            )
+                            data = remove_unknown_columns(data, table)
                 else:
                     data = []
 
