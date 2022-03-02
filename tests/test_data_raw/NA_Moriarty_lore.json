@@ -1071,6 +1071,12 @@
       "svtId": 202300,
       "idx": 1,
       "limitCount": -1
+    },
+    {
+      "individuality": [2600, 2601, 2603],
+      "svtId": 202300,
+      "idx": 8027301,
+      "limitCount": -1
     }
   ],
   "mstSvtCard": [

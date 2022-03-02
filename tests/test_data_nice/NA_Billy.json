@@ -202,6 +202,14 @@
         { "id": 2072, "name": "unknown" }
       ],
       "limitCount": -1
+    },
+    {
+      "idx": 8027301,
+      "trait": [
+        { "id": 2601, "name": "unknown" },
+        { "id": 2602, "name": "unknown" }
+      ],
+      "limitCount": -1
     }
   ],
   "svtChange": [],

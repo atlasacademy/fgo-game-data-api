@@ -4063,7 +4063,7 @@
                       "id": 202,
                       "buffGroup": 0,
                       "type": 82,
-                      "name": "Reduce Max HP",
+                      "name": "Minus Maximum HP",
                       "detail": "Decrease Max HP",
                       "iconId": 522,
                       "maxRate": 50000
@@ -4180,7 +4180,7 @@
                       "id": 202,
                       "buffGroup": 0,
                       "type": 82,
-                      "name": "Reduce Max HP",
+                      "name": "Minus Maximum HP",
                       "detail": "Decrease Max HP",
                       "iconId": 522,
                       "maxRate": 50000
@@ -4297,7 +4297,7 @@
                       "id": 202,
                       "buffGroup": 0,
                       "type": 82,
-                      "name": "Reduce Max HP",
+                      "name": "Minus Maximum HP",
                       "detail": "Decrease Max HP",
                       "iconId": 522,
                       "maxRate": 50000
@@ -4414,7 +4414,7 @@
                       "id": 202,
                       "buffGroup": 0,
                       "type": 82,
-                      "name": "Reduce Max HP",
+                      "name": "Minus Maximum HP",
                       "detail": "Decrease Max HP",
                       "iconId": 522,
                       "maxRate": 50000
@@ -4531,7 +4531,7 @@
                       "id": 202,
                       "buffGroup": 0,
                       "type": 82,
-                      "name": "Reduce Max HP",
+                      "name": "Minus Maximum HP",
                       "detail": "Decrease Max HP",
                       "iconId": 522,
                       "maxRate": 50000
@@ -4648,7 +4648,7 @@
                       "id": 202,
                       "buffGroup": 0,
                       "type": 82,
-                      "name": "Reduce Max HP",
+                      "name": "Minus Maximum HP",
                       "detail": "Decrease Max HP",
                       "iconId": 522,
                       "maxRate": 50000
@@ -4765,7 +4765,7 @@
                       "id": 202,
                       "buffGroup": 0,
                       "type": 82,
-                      "name": "Reduce Max HP",
+                      "name": "Minus Maximum HP",
                       "detail": "Decrease Max HP",
                       "iconId": 522,
                       "maxRate": 50000
@@ -4882,7 +4882,7 @@
                       "id": 202,
                       "buffGroup": 0,
                       "type": 82,
-                      "name": "Reduce Max HP",
+                      "name": "Minus Maximum HP",
                       "detail": "Decrease Max HP",
                       "iconId": 522,
                       "maxRate": 50000
@@ -4999,7 +4999,7 @@
                       "id": 202,
                       "buffGroup": 0,
                       "type": 82,
-                      "name": "Reduce Max HP",
+                      "name": "Minus Maximum HP",
                       "detail": "Decrease Max HP",
                       "iconId": 522,
                       "maxRate": 50000
@@ -5116,7 +5116,7 @@
                       "id": 202,
                       "buffGroup": 0,
                       "type": 82,
-                      "name": "Reduce Max HP",
+                      "name": "Minus Maximum HP",
                       "detail": "Decrease Max HP",
                       "iconId": 522,
                       "maxRate": 50000
@@ -5813,7 +5813,14 @@
       ]
     }
   ],
-  "mstSvtIndividuality": [],
+  "mstSvtIndividuality": [
+    {
+      "individuality": [2601, 2603],
+      "svtId": 202900,
+      "idx": 8027301,
+      "limitCount": -1
+    }
+  ],
   "mstSvtCard": [
     {
       "normalDamage": [16, 33, 51],
