@@ -2839,7 +2839,7 @@ class EventType(IntEnum):
     LOCATION_CAMPAIGN = 20
     WAR_BOARD = 22
     COMBINE_COSUTUME_ITEM = 23
-    TREASURE_BOX = 24
+    MYROOM_MULTIPLE_VIEW_CAMPAIGN = 24
 
 
 class NiceEventType(str, Enum):
@@ -2868,7 +2868,7 @@ class NiceEventType(str, Enum):
     locationCampaign = "locationCampaign"
     warBoard = "warBoard"
     combineCosutumeItem = "combineCosutumeItem"
-    treasureBox = "treasureBox"
+    myroomMultipleViewCampaign = "myroomMultipleViewCampaign"
 
 
 EVENT_TYPE_NAME: dict[int, NiceEventType] = {
@@ -2895,7 +2895,7 @@ EVENT_TYPE_NAME: dict[int, NiceEventType] = {
     20: NiceEventType.locationCampaign,
     22: NiceEventType.warBoard,
     23: NiceEventType.combineCosutumeItem,
-    24: NiceEventType.treasureBox,
+    24: NiceEventType.myroomMultipleViewCampaign,
     21: NiceEventType.comebackCampaign,
 }
 
