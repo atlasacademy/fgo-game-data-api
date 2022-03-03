@@ -61,6 +61,7 @@ class Settings(BaseSettings):
     documentation_all_nice: bool = False
     github_webhook_secret: SecretStr = SecretStr("")
     github_webhook_git_pull: bool = False
+    webhooks: list[str] = []
 
     @validator("asset_url", "rayshift_api_url")
     def remove_last_slash(cls, value: str) -> str:

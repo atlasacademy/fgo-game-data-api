@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Any, Iterable, Union
 
 import aiofiles
+import httpx
 import orjson
 from aioredis import Redis
 from fastapi.concurrency import run_in_threadpool
@@ -464,6 +465,17 @@ def update_data_repo(
                     logger.info(f"Updated {fetch_info.ref} to {commit_hash}")
 
 
+async def report_webhooks(
+    region_path: dict[Region, DirectoryPath]
+) -> None:  # pragma: no cover
+    async with httpx.AsyncClient() as client:
+        for index, url in enumerate(settings.webhooks):
+            try:
+                await client.post(url, json={"regions": list(region_path.keys())})
+            except Exception:
+                logger.exception(f"Failed to report webhook {index}")
+
+
 async def pull_and_update(
     region_path: dict[Region, DirectoryPath],
     async_engines: dict[Region, AsyncEngine],
@@ -471,3 +483,4 @@ async def pull_and_update(
 ) -> None:  # pragma: no cover
     await run_in_threadpool(lambda: update_data_repo(region_path))
     await load_and_export(redis, region_path, async_engines)
+    await report_webhooks(region_path)
