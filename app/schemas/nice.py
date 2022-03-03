@@ -116,6 +116,7 @@ class AssetURL:
     mc = {
         "item": "{base_url}/{region}/Items/masterequip{item_id:05}.png",
         "masterFace": "{base_url}/{region}/MasterFace/equip{item_id:05}.png",
+        "masterFaceImage": "{base_url}/{region}/MasterFace/image{item_id:05}.png",
         "masterFigure": "{base_url}/{region}/MasterFigure/equip{item_id:05}.png",
     }
     commandCode = "{base_url}/{region}/CommandCodes/c_{item_id}.png"
@@ -528,6 +529,12 @@ class ExtraMCAssets(BaseModel):
     masterFigure: MCAssets
 
 
+class NiceMysticCodeCostume(BaseModel):
+    id: int
+    releaseConditions: list[NiceCommonRelease]
+    extraAssets: ExtraMCAssets
+
+
 class NiceMysticCode(BaseModelORJson):
     id: int
     name: str
@@ -536,6 +543,7 @@ class NiceMysticCode(BaseModelORJson):
     extraAssets: ExtraMCAssets
     skills: list[NiceSkill]
     expRequired: list[int]
+    costumes: list[NiceMysticCodeCostume]
 
 
 class ExtraAssetsUrl(BaseModel):

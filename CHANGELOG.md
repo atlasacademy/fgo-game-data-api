@@ -5,6 +5,8 @@ All notable changes to the public API will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
+### Added
+- `costumes` to nice mystic code.
 
 ## 5.77.0 - 2022-03-02
 ### Added

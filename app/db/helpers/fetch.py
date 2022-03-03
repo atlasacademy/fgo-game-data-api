@@ -21,9 +21,11 @@ from ...models.raw import (
     mstCommandCodeComment,
     mstCommandCodeSkill,
     mstCommonConsume,
+    mstCommonRelease,
     mstConstant,
     mstCv,
     mstEquip,
+    mstEquipAdd,
     mstEquipExp,
     mstEquipSkill,
     mstEvent,
@@ -90,9 +92,11 @@ from ...schemas.raw import (
     MstCommandCodeComment,
     MstCommandCodeSkill,
     MstCommonConsume,
+    MstCommonRelease,
     MstConstant,
     MstCv,
     MstEquip,
+    MstEquipAdd,
     MstEquipExp,
     MstEquipSkill,
     MstEvent,
@@ -246,6 +250,7 @@ schema_table_fetch_all: dict[  # type:ignore
     MstWarAdd: (mstWarAdd, mstWarAdd.c.warId, mstWarAdd.c.priority),
     MstEquipSkill: (mstEquipSkill, mstEquipSkill.c.equipId, mstEquipSkill.c.num),
     MstEquipExp: (mstEquipExp, mstEquipExp.c.equipId, mstEquipExp.c.lv),
+    MstEquipAdd: (mstEquipAdd, mstEquipAdd.c.equipId, mstEquipAdd.c.id),
     MstEventMission: (
         mstEventMission,
         mstEventMission.c.missionTargetId,
@@ -342,6 +347,7 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
         mstTreasureBoxGift.c.id,
     ),
     MstCommonConsume: (mstCommonConsume, mstCommonConsume.c.id, mstCommonConsume.c.id),
+    MstCommonRelease: (mstCommonRelease, mstCommonRelease.c.id, mstCommonRelease.c.id),
 }
 
 TFetchAllMultiple = TypeVar("TFetchAllMultiple", bound=BaseModelORJson)

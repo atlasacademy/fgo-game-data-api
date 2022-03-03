@@ -527,6 +527,14 @@ class MstEquipSkill(BaseModelORJson):
     condLv: int = 0  # 0
 
 
+class MstEquipAdd(BaseModelORJson):
+    id: int
+    equipId: int
+    commonReleaseId: int
+    maleImageId: int
+    femaleImageId: int
+
+
 class MstCommandCode(BaseModelORJson):
     id: int  # 8400110
     collectionNo: int  # 11
@@ -1366,6 +1374,8 @@ class MysticCodeEntity(BaseModelORJson):
     mstEquip: MstEquip
     mstSkill: list[SkillEntityNoReverse]
     mstEquipExp: list[MstEquipExp]
+    mstEquipAdd: list[MstEquipAdd]
+    mstCommonRelease: list[MstCommonRelease]
 
 
 class Master(BaseModelORJson):

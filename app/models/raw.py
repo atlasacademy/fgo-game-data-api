@@ -744,6 +744,17 @@ mstEquipSkill = Table(
 )
 
 
+mstEquipAdd = Table(
+    "mstEquipAdd",
+    metadata,
+    Column("id", Integer),
+    Column("equipId", Integer, index=True),
+    Column("commonReleaseId", Integer),
+    Column("maleImageId", Integer),
+    Column("femaleImageId", Integer),
+)
+
+
 mstItem = Table(
     "mstItem",
     metadata,
@@ -1631,6 +1642,7 @@ TABLES_TO_BE_LOADED = [
     mstSvtMultiPortrait,
     mstEquipExp,
     mstEquipSkill,
+    mstEquipAdd,
     mstCommandCodeSkill,
     mstCommandCodeComment,
     mstGift,

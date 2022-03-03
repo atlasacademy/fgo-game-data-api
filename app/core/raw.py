@@ -38,8 +38,10 @@ from ..schemas.raw import (
     MstCommandCodeComment,
     MstCommandCodeSkill,
     MstCommonConsume,
+    MstCommonRelease,
     MstCv,
     MstEquip,
+    MstEquipAdd,
     MstEquipExp,
     MstEquipSkill,
     MstEvent,
@@ -518,10 +520,21 @@ async def get_mystic_code_entity(
     skill_ids = [mc.skillId for mc in await fetch.get_all(conn, MstEquipSkill, mc_id)]
     mstSkill = await get_skill_entity_no_reverse_many(conn, skill_ids, expand)
 
+    mstEquipAdd = await fetch.get_all(conn, MstEquipAdd, mc_id)
+    if mstEquipAdd:
+        common_release_ids = [equipAdd.commonReleaseId for equipAdd in mstEquipAdd]
+        mstCommonRelease = await fetch.get_all_multiple(
+            conn, MstCommonRelease, common_release_ids
+        )
+    else:
+        mstCommonRelease = []
+
     mc_entity = MysticCodeEntity(
         mstEquip=mc_db,
         mstSkill=mstSkill,
         mstEquipExp=await fetch.get_all(conn, MstEquipExp, mc_id),
+        mstEquipAdd=mstEquipAdd,
+        mstCommonRelease=mstCommonRelease,
     )
     return mc_entity
 

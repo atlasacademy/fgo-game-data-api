@@ -4,14 +4,60 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
 from ...schemas.common import Language, Region
-from ...schemas.nice import AssetURL, NiceMysticCode
-from ...schemas.raw import MstEquip
+from ...schemas.nice import AssetURL, NiceMysticCode, NiceMysticCodeCostume
+from ...schemas.raw import MstCommonRelease, MstEquip, MstEquipAdd
 from .. import raw
 from ..utils import get_translation
+from .common_release import get_nice_common_release
 from .skill import get_nice_skill_with_svt
 
 
 settings = Settings()
+
+
+def get_nice_mc_costume(
+    region: Region,
+    equip: MstEquip,
+    equipAdd: MstEquipAdd,
+    releases: list[MstCommonRelease],
+) -> NiceMysticCodeCostume:
+    base_settings = {"base_url": settings.asset_url, "region": region}
+    extraAssets = {
+        "item": {
+            "male": AssetURL.mc["item"].format(
+                **base_settings, item_id=equip.maleImageId
+            ),
+            "female": AssetURL.mc["item"].format(
+                **base_settings, item_id=equip.femaleImageId
+            ),
+        },
+        "masterFace": {
+            "male": AssetURL.mc["masterFaceImage"].format(
+                **base_settings, item_id=equipAdd.maleImageId
+            ),
+            "female": AssetURL.mc["masterFaceImage"].format(
+                **base_settings, item_id=equipAdd.femaleImageId
+            ),
+        },
+        "masterFigure": {
+            "male": AssetURL.mc["masterFigure"].format(
+                **base_settings, item_id=equipAdd.maleImageId
+            ),
+            "female": AssetURL.mc["masterFigure"].format(
+                **base_settings, item_id=equipAdd.femaleImageId
+            ),
+        },
+    }
+
+    return NiceMysticCodeCostume(
+        id=equipAdd.id,
+        releaseConditions=[
+            get_nice_common_release(release)
+            for release in releases
+            if release.id == equipAdd.commonReleaseId
+        ],
+        extraAssets=extraAssets,
+    )
 
 
 async def get_nice_mystic_code(
@@ -50,6 +96,12 @@ async def get_nice_mystic_code(
             for skill in await get_nice_skill_with_svt(
                 conn, skillEntity, mc_id, region, lang
             )
+        ],
+        costumes=[
+            get_nice_mc_costume(
+                region, raw_mc.mstEquip, equipAdd, raw_mc.mstCommonRelease
+            )
+            for equipAdd in raw_mc.mstEquipAdd
         ],
     )
 
