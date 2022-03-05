@@ -64,6 +64,7 @@ from ..schemas.raw import (
     MstShop,
     MstShopScript,
     MstSpot,
+    MstSpotRoad,
     MstSvt,
     MstSvtAdd,
     MstSvtAppendPassiveSkill,
@@ -604,6 +605,8 @@ async def get_war_entity(conn: AsyncConnection, war_id: int) -> WarEntity:
     bgm_ids = [war_map.bgmId for war_map in maps] + [war_db.bgmId]
     bgms = await fetch.get_all_multiple(conn, MstBgm, bgm_ids)
 
+    spot_roads = await fetch.get_all_multiple(conn, MstSpotRoad, map_ids)
+
     return WarEntity(
         mstWar=war_db,
         mstEvent=await fetch.get_one(conn, MstEvent, war_db.eventId),
@@ -612,6 +615,7 @@ async def get_war_entity(conn: AsyncConnection, war_id: int) -> WarEntity:
         mstBgm=bgms,
         mstSpot=spots,
         mstQuest=quests,
+        mstSpotRoad=spot_roads,
     )
 
 

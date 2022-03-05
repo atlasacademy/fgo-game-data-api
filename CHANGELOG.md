@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## Changes to be tagged
 ### Added
 - `costumes` to nice mystic code.
+- `spotRoads` to nice war.
 
 ## 5.77.0 - 2022-03-02
 ### Added

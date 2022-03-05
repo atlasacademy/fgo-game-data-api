@@ -1156,6 +1156,25 @@ class MstSpot(BaseModelORJson):
     flag: int  # 0
 
 
+class MstSpotRoad(BaseModelORJson):
+    id: int
+    warId: int
+    mapId: int
+    srcSpotId: int
+    dstSpotId: int
+    type: int
+    imageId: int
+    dispCondType: int
+    dispTargetId: int
+    dispTargetValue: int
+    dispCondType2: int
+    dispTargetId2: int
+    dispTargetValue2: int
+    activeCondType: int
+    activeTargetId: int
+    activeTargetValue: int
+
+
 class MstQuest(BaseModelORJson):
     beforeActionVals: list[str]
     afterActionVals: list[str]  # []
@@ -1542,6 +1561,7 @@ class WarEntity(BaseModelORJson):
     mstBgm: list[MstBgm]
     mstSpot: list[MstSpot]
     mstQuest: list[QuestEntity]
+    mstSpotRoad: list[MstSpotRoad]
 
 
 class MasterMissionEntity(BaseModelORJson):

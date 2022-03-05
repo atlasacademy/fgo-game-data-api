@@ -1273,6 +1273,28 @@ mstSpot = Table(
 )
 
 
+mstSpotRoad = Table(
+    "mstSpotRoad",
+    metadata,
+    Column("id", Integer),
+    Column("warId", Integer, index=True),
+    Column("mapId", Integer, index=True),
+    Column("srcSpotId", Integer),
+    Column("dstSpotId", Integer),
+    Column("type", Integer),
+    Column("imageId", Integer),
+    Column("dispCondType", Integer),
+    Column("dispTargetId", Integer),
+    Column("dispTargetValue", Integer),
+    Column("dispCondType2", Integer),
+    Column("dispTargetId2", Integer),
+    Column("dispTargetValue2", Integer),
+    Column("activeCondType", Integer),
+    Column("activeTargetId", Integer),
+    Column("activeTargetValue", Integer),
+)
+
+
 mstWarAdd = Table(
     "mstWarAdd",
     metadata,
@@ -1601,6 +1623,7 @@ TABLES_TO_BE_LOADED = [
     mstBgmRelease,
     mstMap,
     mstSpot,
+    mstSpotRoad,
     mstQuest,
     mstQuestMessage,
     mstClosedMessage,

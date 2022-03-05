@@ -49,6 +49,7 @@ from ...models.raw import (
     mstShop,
     mstShopScript,
     mstSpot,
+    mstSpotRoad,
     mstSvt,
     mstSvtAdd,
     mstSvtAppendPassiveSkill,
@@ -120,6 +121,7 @@ from ...schemas.raw import (
     MstShop,
     MstShopScript,
     MstSpot,
+    MstSpotRoad,
     MstSvt,
     MstSvtAdd,
     MstSvtAppendPassiveSkill,
@@ -348,6 +350,7 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
     ),
     MstCommonConsume: (mstCommonConsume, mstCommonConsume.c.id, mstCommonConsume.c.id),
     MstCommonRelease: (mstCommonRelease, mstCommonRelease.c.id, mstCommonRelease.c.id),
+    MstSpotRoad: (mstSpotRoad, mstSpotRoad.c.mapId, mstSpotRoad.c.id),
 }
 
 TFetchAllMultiple = TypeVar("TFetchAllMultiple", bound=BaseModelORJson)

@@ -12,12 +12,21 @@ from ...schemas.gameenums import (
     WarEntityFlag,
     WarOverwriteType,
 )
-from ...schemas.nice import AssetURL, NiceMap, NiceQuest, NiceSpot, NiceWar, NiceWarAdd
+from ...schemas.nice import (
+    AssetURL,
+    NiceMap,
+    NiceQuest,
+    NiceSpot,
+    NiceSpotRoad,
+    NiceWar,
+    NiceWarAdd,
+)
 from ...schemas.raw import (
     MstBgm,
     MstConstant,
     MstMap,
     MstSpot,
+    MstSpotRoad,
     MstWar,
     MstWarAdd,
     QuestEntity,
@@ -30,6 +39,25 @@ from .quest import get_nice_quest
 
 
 settings = Settings()
+
+
+def get_nice_spot_road(spot_road: MstSpotRoad) -> NiceSpotRoad:
+    return NiceSpotRoad(
+        id=spot_road.id,
+        warId=spot_road.warId,
+        mapId=spot_road.mapId,
+        srcSpotId=spot_road.srcSpotId,
+        dstSpotId=spot_road.dstSpotId,
+        dispCondType=COND_TYPE_NAME[spot_road.dispCondType],
+        dispTargetId=spot_road.dispTargetId,
+        dispTargetValue=spot_road.dispTargetValue,
+        dispCondType2=COND_TYPE_NAME[spot_road.dispCondType2],
+        dispTargetId2=spot_road.dispTargetId2,
+        dispTargetValue2=spot_road.dispTargetValue2,
+        activeCondType=COND_TYPE_NAME[spot_road.activeCondType],
+        activeTargetId=spot_road.activeTargetId,
+        activeTargetValue=spot_road.activeTargetValue,
+    )
 
 
 def get_nice_map(region: Region, raw_map: MstMap, bgms: list[MstBgm]) -> NiceMap:
@@ -187,4 +215,5 @@ async def get_nice_war(
             )
             for raw_spot in raw_war.mstSpot
         ],
+        spotRoads=[get_nice_spot_road(spot_road) for spot_road in raw_war.mstSpotRoad],
     )
