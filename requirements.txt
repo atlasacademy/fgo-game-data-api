@@ -10,7 +10,7 @@ click==8.0.4; python_version >= "3.7" and python_version < "4.0"
 colorama==0.4.4; python_version >= "3.7" and python_full_version < "3.0.0" and sys_platform == "win32" and platform_system == "Windows" and python_version < "4.0" or sys_platform == "win32" and python_version >= "3.7" and python_full_version >= "3.5.0" and platform_system == "Windows" and python_version < "4.0"
 fastapi-cache2==0.1.8; python_version >= "3.7" and python_version < "4.0"
 fastapi-limiter @ git+https://github.com/long2ice/fastapi-limiter.git@master ; python_version >= "3.7" and python_version < "4.0"
-fastapi==0.74.1; python_full_version >= "3.6.1"
+fastapi==0.75.0; python_full_version >= "3.6.1"
 fuzzywuzzy==0.18.0
 gitdb==4.0.9; python_version >= "3.7"
 gitpython==3.1.27; python_version >= "3.7"

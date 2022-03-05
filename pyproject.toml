@@ -7,7 +7,7 @@ packages = [{ include = "app" }]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-fastapi = "^0.74.1"
+fastapi = "^0.75.0"
 uvicorn = { extras = ["standard"], version = "^0.17.5" }
 python-dotenv = "^0.19.2"
 fuzzywuzzy = "^0.18.0"
@@ -36,7 +36,7 @@ coverage = "^6.3.2"
 fuzzywuzzy-stubs = "^0.0.1"
 isort = "^5.10.1"
 sqlalchemy2-stubs = "^0.0.2-alpha.20"
-pytest-asyncio = "^0.18.1"
+pytest-asyncio = "^0.18.2"
 asgi-lifespan = "^1.0.1"
 types-aiofiles = "^0.8.3"
 
