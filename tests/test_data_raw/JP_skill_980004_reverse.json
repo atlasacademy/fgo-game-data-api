@@ -601,6 +601,25 @@
               "skillLv2": 10,
               "skillLv3": 10
             }
+          ],
+          "mstEquipAdd": [
+            {
+              "id": 1,
+              "equipId": 20,
+              "commonReleaseId": 94049030,
+              "maleImageId": 23,
+              "femaleImageId": 24
+            }
+          ],
+          "mstCommonRelease": [
+            {
+              "id": 94049030,
+              "priority": 1,
+              "condGroup": 0,
+              "condType": 46,
+              "condId": 94067002,
+              "condNum": 1
+            }
           ]
         }
       ],
