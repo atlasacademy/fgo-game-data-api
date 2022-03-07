@@ -70,8 +70,8 @@ def get_svt_extraAssets(
         faces.ascension = {0: fmt_url(AssetURL.face, **base_settings_id, i=0)}
     elif raw_svt.mstSvt.type == SvtType.SVT_MATERIAL_TD:
         charaGraph.ascension = {
-            0: fmt_url(
-                AssetURL.charaGraphDefault,
+            1: fmt_url(
+                AssetURL.charaGraph[1],
                 **base_settings,
                 item_id=raw_svt.mstSvt.baseSvtId,
             )
