@@ -68,6 +68,19 @@ def get_svt_extraAssets(
             0: fmt_url(AssetURL.charaGraphDefault, **base_settings_id)
         }
         faces.ascension = {0: fmt_url(AssetURL.face, **base_settings_id, i=0)}
+    elif raw_svt.mstSvt.type == SvtType.SVT_MATERIAL_TD:
+        charaGraph.ascension = {
+            0: fmt_url(
+                AssetURL.charaGraphDefault,
+                **base_settings,
+                item_id=raw_svt.mstSvt.baseSvtId,
+            )
+        }
+        faces.ascension = {
+            0: fmt_url(
+                AssetURL.face, **base_settings, item_id=raw_svt.mstSvt.baseSvtId, i=0
+            )
+        }
     elif raw_svt.mstSvt.type in (SvtType.ENEMY, SvtType.ENEMY_COLLECTION):
         faces.ascension = {
             limit.limitCount: fmt_url(

@@ -383,6 +383,8 @@ async def get_basic_svt(
         "region": region,
         "item_id": svt_id,
     }
+    if mstSvt.type == SvtType.SVT_MATERIAL_TD:
+        base_settings["item_id"] = mstSvt.baseSvtId
 
     if mstSvt.type == SvtType.SERVANT_EQUIP:
         basic_servant["face"] = AssetURL.face.format(**base_settings, i=0)
