@@ -345,6 +345,8 @@ async def get_basic_svt(
 
     svtExtra = await pydantic_object.fetch_id(redis, region, MstSvtExtra, svt_id)
 
+    svt_limit = mstSvtLimit.limitCount
+
     basic_servant = {
         "id": svt_id,
         "collectionNo": mstSvt.collectionNo,
@@ -382,23 +384,19 @@ async def get_basic_svt(
         "item_id": svt_id,
     }
 
-    if svt_limit is not None and mstSvt.type != SvtType.SERVANT_EQUIP:
-        if svtExtra and svt_limit > 10 and svt_limit in svtExtra.costumeLimitSvtIdMap:
-            basic_servant["face"] = AssetURL.face.format(
-                base_url=settings.asset_url,
-                region=region,
-                item_id=svtExtra.costumeLimitSvtIdMap[svt_limit].battleCharaId,
-                i=0,
-            )
-        elif mstSvt.type in (SvtType.ENEMY, SvtType.ENEMY_COLLECTION):
-            basic_servant["face"] = AssetURL.enemy.format(**base_settings, i=svt_limit)
-        else:
-            basic_servant["face"] = AssetURL.face.format(**base_settings, i=svt_limit)
+    if mstSvt.type == SvtType.SERVANT_EQUIP:
+        basic_servant["face"] = AssetURL.face.format(**base_settings, i=0)
+    elif svtExtra and svt_limit > 10 and svt_limit in svtExtra.costumeLimitSvtIdMap:
+        basic_servant["face"] = AssetURL.face.format(
+            base_url=settings.asset_url,
+            region=region,
+            item_id=svtExtra.costumeLimitSvtIdMap[svt_limit].battleCharaId,
+            i=0,
+        )
+    elif mstSvt.type in (SvtType.ENEMY, SvtType.ENEMY_COLLECTION):
+        basic_servant["face"] = AssetURL.enemy.format(**base_settings, i=svt_limit)
     else:
-        if mstSvt.type in (SvtType.ENEMY, SvtType.ENEMY_COLLECTION):
-            basic_servant["face"] = AssetURL.enemy.format(**base_settings, i=1)
-        else:
-            basic_servant["face"] = AssetURL.face.format(**base_settings, i=0)
+        basic_servant["face"] = AssetURL.face.format(**base_settings, i=svt_limit)
 
     if region == Region.JP and lang is not None:
         basic_servant["name"] = get_translation(lang, str(basic_servant["name"]))

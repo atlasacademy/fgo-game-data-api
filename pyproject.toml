@@ -15,7 +15,7 @@ python-Levenshtein = "^0.12.2"
 orjson = "^3.6.7"
 aiofiles = "^0.8.0"
 GitPython = "^3.1.27"
-SQLAlchemy = "^1.4.31"
+SQLAlchemy = "^1.4.32"
 psycopg2 = "^2.9.3"
 httpx = "^0.22.0"
 aioredis = { extras = ["hiredis"], version = "^2.0.1" }
@@ -38,7 +38,7 @@ isort = "^5.10.1"
 sqlalchemy2-stubs = "^0.0.2-alpha.20"
 pytest-asyncio = "^0.18.2"
 asgi-lifespan = "^1.0.1"
-types-aiofiles = "^0.8.3"
+types-aiofiles = "^0.8.4"
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"

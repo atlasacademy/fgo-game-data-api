@@ -199,7 +199,7 @@ async def find_svt(
         return list_response(
             [
                 await basic.get_basic_servant(
-                    redis, search_param.region, mstSvt.id, 0, lang, mstSvt
+                    redis, search_param.region, mstSvt.id, None, lang, mstSvt
                 )
                 for mstSvt in matches
             ]
