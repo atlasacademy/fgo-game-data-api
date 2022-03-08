@@ -6,6 +6,7 @@ import orjson
 from pydantic import (
     BaseSettings,
     DirectoryPath,
+    Field,
     HttpUrl,
     PostgresDsn,
     RedisDsn,
@@ -41,8 +42,8 @@ class RegionSettings(BaseModel):
 
 # pylint: disable=no-self-argument, no-self-use
 class Settings(BaseSettings):
-    data: dict[Region, RegionSettings]
-    redisdsn: RedisDsn
+    data: dict[Region, RegionSettings] = Field(default=...)
+    redisdsn: RedisDsn = Field(default=...)
     redis_prefix: str = "fgoapi"
     clear_redis_cache: bool = True
     rate_limit_per_5_sec: int = 100
