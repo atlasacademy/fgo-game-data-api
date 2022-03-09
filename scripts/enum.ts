@@ -1005,6 +1005,7 @@ export enum NiceEventType {
     WAR_BOARD = "warBoard",
     COMBINE_COSUTUME_ITEM = "combineCosutumeItem",
     MYROOM_MULTIPLE_VIEW_CAMPAIGN = "myroomMultipleViewCampaign",
+    RELAXED_QUEST_REQUIREMENT_CAMPAIGN = "relaxedQuestRequirementCampaign",
 }
 
 export enum NiceWarFlag {

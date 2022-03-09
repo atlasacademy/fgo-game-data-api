@@ -45,6 +45,7 @@ EXTRA_STR_NAME = {
     "NiceWarFlag": {34848: "SUMMER_CAMP", 49538: "UNRELEASED_STORY"},
     "NiceAiActNum": {-9999: "UNKNOWN"},
     "NicePurchaseType": {13: "KIARA_PUNISHER_RESET"},
+    "NiceEventType": {25: "RELAXED_QUEST_REQUIREMENT_CAMPAIGN"},
 }
 
 

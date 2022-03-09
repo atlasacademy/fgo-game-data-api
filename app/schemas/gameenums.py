@@ -2869,6 +2869,7 @@ class NiceEventType(str, Enum):
     warBoard = "warBoard"
     combineCosutumeItem = "combineCosutumeItem"
     myroomMultipleViewCampaign = "myroomMultipleViewCampaign"
+    relaxedQuestRequirementCampaign = "relaxedQuestRequirementCampaign"
 
 
 EVENT_TYPE_NAME: dict[int, NiceEventType] = {
@@ -2896,6 +2897,7 @@ EVENT_TYPE_NAME: dict[int, NiceEventType] = {
     22: NiceEventType.warBoard,
     23: NiceEventType.combineCosutumeItem,
     24: NiceEventType.myroomMultipleViewCampaign,
+    25: NiceEventType.relaxedQuestRequirementCampaign,
     21: NiceEventType.comebackCampaign,
 }
 
