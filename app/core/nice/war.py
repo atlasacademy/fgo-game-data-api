@@ -41,11 +41,17 @@ from .quest import get_nice_quest
 settings = Settings()
 
 
-def get_nice_spot_road(spot_road: MstSpotRoad) -> NiceSpotRoad:
+def get_nice_spot_road(region: Region, spot_road: MstSpotRoad, war_asset_id: int) -> NiceSpotRoad:
     return NiceSpotRoad(
         id=spot_road.id,
         warId=spot_road.warId,
         mapId=spot_road.mapId,
+        image=AssetURL.spotRoadImg.format(
+            base_url=settings.asset_url,
+            region=region,
+            war_asset_id=war_asset_id,
+            spot_road_id=spot_road.id,
+        ),
         srcSpotId=spot_road.srcSpotId,
         dstSpotId=spot_road.dstSpotId,
         dispCondType=COND_TYPE_NAME[spot_road.dispCondType],
@@ -215,5 +221,5 @@ async def get_nice_war(
             )
             for raw_spot in raw_war.mstSpot
         ],
-        spotRoads=[get_nice_spot_road(spot_road) for spot_road in raw_war.mstSpotRoad],
+        spotRoads=[get_nice_spot_road(region, spot_road, war_asset_id) for spot_road in raw_war.mstSpotRoad],
     )
