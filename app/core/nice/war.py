@@ -50,7 +50,6 @@ def get_nice_spot_road(region: Region, spot_road: MstSpotRoad, war_asset_id: int
             base_url=settings.asset_url,
             region=region,
             war_asset_id=war_asset_id,
-            spot_road_id=spot_road.id,
         ),
         srcSpotId=spot_road.srcSpotId,
         dstSpotId=spot_road.dstSpotId,

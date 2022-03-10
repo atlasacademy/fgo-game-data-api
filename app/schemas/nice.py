@@ -1748,7 +1748,7 @@ class NiceSpotRoad(BaseModelORJson):
     id: int
     warId: int
     mapId: int
-    image: Optional[HttpUrl] = None
+    image: HttpUrl
     srcSpotId: int
     dstSpotId: int
     dispCondType: NiceCondType
