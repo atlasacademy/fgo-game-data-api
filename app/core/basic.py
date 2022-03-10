@@ -366,8 +366,8 @@ async def get_basic_svt(
         basic_servant["valentineEquipOwner"] = svtExtra.valentineEquipOwner
         basic_servant["costume"] = {}
         for costume in svtExtra.costumeLimitSvtIdMap.values():
-            if costume.battleCharaId not in basic_servant["costume"]:
-                basic_servant["costume"][costume.battleCharaId] = {
+            if costume.battleCharaId not in basic_servant["costume"]: # type: ignore
+                basic_servant["costume"][costume.battleCharaId] = { # type: ignore
                     "id": costume.id,
                     "costumeCollectionNo": costume.costumeCollectionNo,
                     "battleCharaId": costume.battleCharaId,
