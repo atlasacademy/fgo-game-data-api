@@ -1,0 +1,65 @@
+version: "3.9"
+services:
+  pg-fgoapijp:
+    image: groonga/pgroonga:latest-alpine-14-slim
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: fgoapijp
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - pg-jp-data:/var/lib/postgresql/data
+  pg-fgoapina:
+    image: groonga/pgroonga:latest-alpine-14-slim
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_DB: fgoapina
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - pg-na-data:/var/lib/postgresql/data
+  pg-fgoapicn:
+    image: groonga/pgroonga:latest-alpine-14-slim
+    ports:
+      - "5435:5432"
+    environment:
+      POSTGRES_DB: fgoapicn
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - pg-cn-data:/var/lib/postgresql/data
+  pg-fgoapikr:
+    image: groonga/pgroonga:latest-alpine-14-slim
+    ports:
+      - "5436:5432"
+    environment:
+      POSTGRES_DB: fgoapikr
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - pg-kr-data:/var/lib/postgresql/data
+  pg-fgoapitw:
+    image: groonga/pgroonga:latest-alpine-14-slim
+    ports:
+      - "5437:5432"
+    environment:
+      POSTGRES_DB: fgoapitw
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - pg-tw-data:/var/lib/postgresql/data
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+volumes:
+  pg-jp-data:
+  pg-na-data:
+  pg-cn-data:
+  pg-kr-data:
+  pg-tw-data:
+  redis-data:

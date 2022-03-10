@@ -93,8 +93,10 @@ git clone --depth 1 --branch TW https://github.com/atlasacademy/fgo-game-data.gi
 git clone https://github.com/atlasacademy/fgo-game-data-api.git
 cd fgo-game-data-api
 
-# If you didn't clone other game data regions, remove them from the data field in config.json.
+# If you didn't clone other game data regions, remove them from the data field in config.json,
+# and the services key in docker-compose.sample.yaml
 cp config.sample.json config.json
+cp docker-compose.sample.yml docker-compose.yml
 
 docker-compose up -d
 

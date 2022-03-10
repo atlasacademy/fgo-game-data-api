@@ -5,6 +5,7 @@ play*
 .python-version
 fil-result/
 config.json
+docker-compose.yml
 
 # macOS
 .DS_Store
