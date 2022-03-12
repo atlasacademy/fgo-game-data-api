@@ -1534,6 +1534,7 @@ class EventEntity(BaseModelORJson):
     mstWar: list[MstWar]
     mstGift: list[MstGift]
     mstShop: list[MstShop]
+    mstShopRelease: list[MstShopRelease]
     mstShopScript: list[MstShopScript]
     mstSetItem: list[MstSetItem]
     mstEventReward: list[MstEventReward]

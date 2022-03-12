@@ -43,6 +43,7 @@ from ...schemas.nice import (
     NiceItemAmount,
     NiceItemSet,
     NiceShop,
+    NiceShopRelease,
 )
 from ...schemas.raw import (
     MstBoxGacha,
@@ -59,6 +60,7 @@ from ...schemas.raw import (
     MstGift,
     MstSetItem,
     MstShop,
+    MstShopRelease,
     MstShopScript,
     MstTreasureBox,
     MstTreasureBoxGift,
@@ -96,12 +98,26 @@ def get_nice_set_item(set_item: MstSetItem) -> NiceItemSet:
     )
 
 
+def get_nice_shop_release(shop_release: MstShopRelease) -> NiceShopRelease:
+    return NiceShopRelease(
+        condValues=shop_release.condValues,
+        shopId=shop_release.shopId,
+        condType=COND_TYPE_NAME[shop_release.condType],
+        condNum=shop_release.condNum,
+        priority=shop_release.priority,
+        isClosedDisp=shop_release.isClosedDisp,
+        closedMessage=shop_release.closedMessage,
+        closedItemName=shop_release.closedItemName,
+    )
+
+
 def get_nice_shop(
     region: Region,
     shop: MstShop,
     set_items: list[MstSetItem],
     shop_scripts: dict[int, MstShopScript],
     item_map: dict[int, NiceItem],
+    shop_releases: list[MstShopRelease],
 ) -> NiceShop:
     shop_item_id = get_shop_cost_item_id(shop)
 
@@ -139,6 +155,11 @@ def get_nice_shop(
         id=shop.id,
         baseShopId=shop.baseShopId,
         shopType=SHOP_TYPE_NAME[shop.shopType],
+        releaseConditions=[
+            get_nice_shop_release(release)
+            for release in shop_releases
+            if release.shopId == shop.id
+        ],
         eventId=shop.eventId,
         slot=shop.slot,
         priority=shop.priority,
@@ -508,7 +529,14 @@ async def get_nice_event(
         materialOpenedAt=raw_event.mstEvent.materialOpenedAt,
         warIds=(war.id for war in raw_event.mstWar),
         shop=[
-            get_nice_shop(region, shop, raw_event.mstSetItem, shop_scripts, item_map)
+            get_nice_shop(
+                region,
+                shop,
+                raw_event.mstSetItem,
+                shop_scripts,
+                item_map,
+                raw_event.mstShopRelease,
+            )
             for shop in raw_event.mstShop
         ],
         rewards=(

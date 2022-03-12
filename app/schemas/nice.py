@@ -1202,10 +1202,22 @@ class NiceItemSet(BaseModelORJson):
     setNum: int
 
 
+class NiceShopRelease(BaseModelORJson):
+    condValues: list[int]
+    shopId: int
+    condType: NiceCondType
+    condNum: int
+    priority: int
+    isClosedDisp: bool
+    closedMessage: str
+    closedItemName: str
+
+
 class NiceShop(BaseModelORJson):
     id: int
     baseShopId: int
     shopType: NiceShopType
+    releaseConditions: list[NiceShopRelease]
     eventId: int
     slot: int = Field(..., title="Slot", description="Tab number in the shop")
     priority: int = Field(..., title="Priority", description="Sort order in the shop")

@@ -896,6 +896,18 @@ mstShop = Table(
     Column("closedAt", Integer),
 )
 
+mstShopRelease = Table(
+    "mstShopRelease",
+    metadata,
+    Column("condValues", ARRAY(Integer)),
+    Column("shopId", Integer, index=True),
+    Column("condType", Integer),
+    Column("condNum", Integer),
+    Column("priority", Integer),
+    Column("isClosedDisp", Boolean),
+    Column("closedMessage", String),
+    Column("closedItemName", String),
+)
 
 mstShopScript = Table(
     "mstShopScript",
@@ -1618,6 +1630,7 @@ TABLES_TO_BE_LOADED = [
     mstCv,
     mstIllustrator,
     mstShop,
+    mstShopRelease,
     mstShopScript,
     mstBgm,
     mstBgmRelease,

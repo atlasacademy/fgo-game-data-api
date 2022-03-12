@@ -62,6 +62,7 @@ from ..schemas.raw import (
     MstMap,
     MstMasterMission,
     MstShop,
+    MstShopRelease,
     MstShopScript,
     MstSpot,
     MstSpotRoad,
@@ -711,6 +712,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
 
     shop_ids = [shop.id for shop in shops]
     shop_scripts = await fetch.get_all_multiple(conn, MstShopScript, shop_ids)
+    shop_releases = await fetch.get_all_multiple(conn, MstShopRelease, shop_ids)
 
     rewards = await fetch.get_all(conn, MstEventReward, event_id)
 
@@ -745,6 +747,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         mstWar=await event.get_event_wars(conn, event_id),
         mstShop=shops,
         mstShopScript=shop_scripts,
+        mstShopRelease=shop_releases,
         mstGift=gifts,
         mstSetItem=set_items,
         mstEventReward=rewards,
