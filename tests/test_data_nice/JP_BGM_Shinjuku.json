@@ -10,6 +10,7 @@
     "id": 7000138,
     "baseShopId": 7000138,
     "shopType": "bgm",
+    "releaseConditions": [],
     "eventId": 0,
     "slot": 0,
     "priority": 66,

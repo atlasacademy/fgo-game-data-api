@@ -1308,6 +1308,38 @@
       "closedAt": 1583467199
     }
   ],
+  "mstShopRelease": [
+    {
+      "condValues": [94021309],
+      "shopId": 80090005,
+      "condType": 1,
+      "condNum": 1,
+      "priority": 0,
+      "isClosedDisp": true,
+      "closedMessage": "Exchangeable after completing the Main Quest",
+      "closedItemName": ""
+    },
+    {
+      "condValues": [94021309],
+      "shopId": 80090006,
+      "condType": 1,
+      "condNum": 1,
+      "priority": 0,
+      "isClosedDisp": true,
+      "closedMessage": "Exchangeable after completing the Main Quest",
+      "closedItemName": ""
+    },
+    {
+      "condValues": [94021309],
+      "shopId": 80090007,
+      "condType": 1,
+      "condNum": 1,
+      "priority": 0,
+      "isClosedDisp": true,
+      "closedMessage": "Exchangeable after completing the Main Quest",
+      "closedItemName": ""
+    }
+  ],
   "mstShopScript": [],
   "mstSetItem": [],
   "mstEventReward": [],

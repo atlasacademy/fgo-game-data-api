@@ -19,6 +19,7 @@
       "id": 80289001,
       "baseShopId": 80289001,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 200,
@@ -56,6 +57,7 @@
       "id": 80289002,
       "baseShopId": 80289002,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 210,
@@ -93,6 +95,7 @@
       "id": 80289003,
       "baseShopId": 80289003,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 220,
@@ -130,6 +133,18 @@
       "id": 80289004,
       "baseShopId": 80289004,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94049113],
+          "shopId": 80289004,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "メインクエストクリア後に交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80289,
       "slot": 1,
       "priority": 300,
@@ -167,6 +182,18 @@
       "id": 80289005,
       "baseShopId": 80289005,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94049113],
+          "shopId": 80289005,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "メインクエストクリア後に交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80289,
       "slot": 1,
       "priority": 310,
@@ -204,6 +231,18 @@
       "id": 80289006,
       "baseShopId": 80289006,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94049113],
+          "shopId": 80289006,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "メインクエストクリア後に交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80289,
       "slot": 1,
       "priority": 330,
@@ -241,6 +280,18 @@
       "id": 80289007,
       "baseShopId": 80289007,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94049113],
+          "shopId": 80289007,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "メインクエストクリア後に交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80289,
       "slot": 1,
       "priority": 340,
@@ -278,6 +329,7 @@
       "id": 80289008,
       "baseShopId": 80289008,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 400,
@@ -315,6 +367,7 @@
       "id": 80289009,
       "baseShopId": 80289009,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 410,
@@ -352,6 +405,7 @@
       "id": 80289010,
       "baseShopId": 80289010,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 500,
@@ -389,6 +443,7 @@
       "id": 80289011,
       "baseShopId": 80289011,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 510,
@@ -426,6 +481,7 @@
       "id": 80289012,
       "baseShopId": 80289012,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 600,
@@ -463,6 +519,7 @@
       "id": 80289013,
       "baseShopId": 80289013,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 610,
@@ -500,6 +557,7 @@
       "id": 80289014,
       "baseShopId": 80289014,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 620,
@@ -537,6 +595,7 @@
       "id": 80289015,
       "baseShopId": 80289015,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 630,
@@ -574,6 +633,7 @@
       "id": 80289016,
       "baseShopId": 80289016,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 700,
@@ -611,6 +671,7 @@
       "id": 80289017,
       "baseShopId": 80289017,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 710,
@@ -648,6 +709,7 @@
       "id": 80289018,
       "baseShopId": 80289018,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 720,
@@ -685,6 +747,7 @@
       "id": 80289019,
       "baseShopId": 80289019,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 730,
@@ -722,6 +785,7 @@
       "id": 80289020,
       "baseShopId": 80289020,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 740,
@@ -759,6 +823,7 @@
       "id": 80289021,
       "baseShopId": 80289021,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 750,
@@ -796,6 +861,7 @@
       "id": 80289022,
       "baseShopId": 80289022,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 760,
@@ -833,6 +899,7 @@
       "id": 80289023,
       "baseShopId": 80289023,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 770,
@@ -870,6 +937,7 @@
       "id": 80289024,
       "baseShopId": 80289024,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 780,
@@ -907,6 +975,7 @@
       "id": 80289025,
       "baseShopId": 80289025,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 800,
@@ -944,6 +1013,7 @@
       "id": 80289026,
       "baseShopId": 80289026,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 810,
@@ -981,6 +1051,7 @@
       "id": 80289027,
       "baseShopId": 80289027,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 820,
@@ -1018,6 +1089,7 @@
       "id": 80289028,
       "baseShopId": 80289028,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 830,
@@ -1055,6 +1127,7 @@
       "id": 80289029,
       "baseShopId": 80289029,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 840,
@@ -1092,6 +1165,7 @@
       "id": 80289030,
       "baseShopId": 80289030,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 850,
@@ -1129,6 +1203,18 @@
       "id": 80289031,
       "baseShopId": 80289031,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94049201],
+          "shopId": 80289031,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "特定のクエストクリアで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80289,
       "slot": 1,
       "priority": 860,
@@ -1166,6 +1252,18 @@
       "id": 80289032,
       "baseShopId": 80289032,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94049207],
+          "shopId": 80289032,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "特定のクエストクリアで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80289,
       "slot": 1,
       "priority": 870,
@@ -1203,6 +1301,18 @@
       "id": 80289033,
       "baseShopId": 80289033,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94049204],
+          "shopId": 80289033,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "特定のクエストクリアで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80289,
       "slot": 1,
       "priority": 880,
@@ -1240,6 +1350,18 @@
       "id": 80289034,
       "baseShopId": 80289034,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94049210],
+          "shopId": 80289034,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "特定のクエストクリアで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80289,
       "slot": 1,
       "priority": 890,
@@ -1277,6 +1399,18 @@
       "id": 80289035,
       "baseShopId": 80289035,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94049210],
+          "shopId": 80289035,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "特定のクエストクリアで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80289,
       "slot": 1,
       "priority": 900,
@@ -1314,6 +1448,18 @@
       "id": 80289036,
       "baseShopId": 80289036,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94049213],
+          "shopId": 80289036,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "特定のクエストクリアで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80289,
       "slot": 1,
       "priority": 910,
@@ -1351,6 +1497,18 @@
       "id": 80289037,
       "baseShopId": 80289037,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94049213],
+          "shopId": 80289037,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "特定のクエストクリアで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80289,
       "slot": 1,
       "priority": 920,
@@ -1388,6 +1546,18 @@
       "id": 80289038,
       "baseShopId": 80289038,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94049216],
+          "shopId": 80289038,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "特定のクエストクリアで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80289,
       "slot": 1,
       "priority": 930,
@@ -1425,6 +1595,18 @@
       "id": 80289039,
       "baseShopId": 80289039,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94049216],
+          "shopId": 80289039,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "特定のクエストクリアで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80289,
       "slot": 1,
       "priority": 940,
@@ -1462,6 +1644,7 @@
       "id": 80289040,
       "baseShopId": 80289040,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 950,
@@ -1499,6 +1682,7 @@
       "id": 80289041,
       "baseShopId": 80289041,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 960,
@@ -1536,6 +1720,7 @@
       "id": 80289042,
       "baseShopId": 80289042,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80289,
       "slot": 1,
       "priority": 1000,
@@ -1573,6 +1758,18 @@
       "id": 80289043,
       "baseShopId": 80289043,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [0],
+          "shopId": 80289043,
+          "condType": "date",
+          "condNum": 1603425600,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "イベント終了後(10月23日 13時00分)に交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80289,
       "slot": 1,
       "priority": 1010,
@@ -1610,6 +1807,18 @@
       "id": 80289044,
       "baseShopId": 80289044,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [0],
+          "shopId": 80289044,
+          "condType": "date",
+          "condNum": 1603425600,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "イベント終了後(10月23日 13時00分)に交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80289,
       "slot": 1,
       "priority": 1020,
@@ -1647,6 +1856,18 @@
       "id": 80289045,
       "baseShopId": 80289045,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [0],
+          "shopId": 80289045,
+          "condType": "date",
+          "condNum": 1603425600,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "イベント終了後(10月23日 13時00分)に交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80289,
       "slot": 1,
       "priority": 1030,

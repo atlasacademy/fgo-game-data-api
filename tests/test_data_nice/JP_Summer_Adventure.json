@@ -19,6 +19,7 @@
       "id": 80331001,
       "baseShopId": 80331001,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 310,
@@ -56,6 +57,7 @@
       "id": 80331002,
       "baseShopId": 80331002,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 320,
@@ -93,6 +95,7 @@
       "id": 80331003,
       "baseShopId": 80331003,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 330,
@@ -130,6 +133,7 @@
       "id": 80331004,
       "baseShopId": 80331004,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 10,
@@ -167,6 +171,7 @@
       "id": 80331005,
       "baseShopId": 80331005,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 20,
@@ -204,6 +209,7 @@
       "id": 80331006,
       "baseShopId": 80331006,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 30,
@@ -241,6 +247,18 @@
       "id": 80331007,
       "baseShopId": 80331007,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94060412],
+          "shopId": 80331007,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "メインクエストクリア後に交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 40,
@@ -278,6 +296,18 @@
       "id": 80331008,
       "baseShopId": 80331008,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94060412],
+          "shopId": 80331008,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "メインクエストクリア後に交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 50,
@@ -315,6 +345,18 @@
       "id": 80331009,
       "baseShopId": 80331009,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94060412],
+          "shopId": 80331009,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "メインクエストクリア後に交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 60,
@@ -352,6 +394,18 @@
       "id": 80331010,
       "baseShopId": 80331010,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94060412],
+          "shopId": 80331010,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "メインクエストクリア後に交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 460,
@@ -389,6 +443,7 @@
       "id": 80331011,
       "baseShopId": 80331011,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 340,
@@ -426,6 +481,7 @@
       "id": 80331012,
       "baseShopId": 80331012,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 350,
@@ -463,6 +519,7 @@
       "id": 80331013,
       "baseShopId": 80331013,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 360,
@@ -500,6 +557,7 @@
       "id": 80331014,
       "baseShopId": 80331014,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 370,
@@ -537,6 +595,7 @@
       "id": 80331015,
       "baseShopId": 80331015,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 380,
@@ -574,6 +633,7 @@
       "id": 80331016,
       "baseShopId": 80331016,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 390,
@@ -611,6 +671,7 @@
       "id": 80331017,
       "baseShopId": 80331017,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 400,
@@ -648,6 +709,7 @@
       "id": 80331018,
       "baseShopId": 80331018,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 410,
@@ -685,6 +747,7 @@
       "id": 80331019,
       "baseShopId": 80331019,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 420,
@@ -722,6 +785,7 @@
       "id": 80331020,
       "baseShopId": 80331020,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 430,
@@ -759,6 +823,7 @@
       "id": 80331021,
       "baseShopId": 80331021,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 440,
@@ -796,6 +861,7 @@
       "id": 80331022,
       "baseShopId": 80331022,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 450,
@@ -833,6 +899,7 @@
       "id": 80331023,
       "baseShopId": 80331023,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 470,
@@ -870,6 +937,7 @@
       "id": 80331024,
       "baseShopId": 80331024,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 480,
@@ -907,6 +975,7 @@
       "id": 80331025,
       "baseShopId": 80331025,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 490,
@@ -944,6 +1013,7 @@
       "id": 80331026,
       "baseShopId": 80331026,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 500,
@@ -981,6 +1051,7 @@
       "id": 80331027,
       "baseShopId": 80331027,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 510,
@@ -1018,6 +1089,7 @@
       "id": 80331028,
       "baseShopId": 80331028,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 520,
@@ -1055,6 +1127,7 @@
       "id": 80331029,
       "baseShopId": 80331029,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 530,
@@ -1092,6 +1165,7 @@
       "id": 80331030,
       "baseShopId": 80331030,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 540,
@@ -1129,6 +1203,7 @@
       "id": 80331031,
       "baseShopId": 80331031,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 550,
@@ -1166,6 +1241,7 @@
       "id": 80331032,
       "baseShopId": 80331032,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 560,
@@ -1203,6 +1279,7 @@
       "id": 80331033,
       "baseShopId": 80331033,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 570,
@@ -1240,6 +1317,7 @@
       "id": 80331034,
       "baseShopId": 80331034,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 580,
@@ -1277,6 +1355,7 @@
       "id": 80331035,
       "baseShopId": 80331035,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 590,
@@ -1314,6 +1393,7 @@
       "id": 80331036,
       "baseShopId": 80331036,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 600,
@@ -1351,6 +1431,7 @@
       "id": 80331037,
       "baseShopId": 80331037,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 610,
@@ -1388,6 +1469,7 @@
       "id": 80331038,
       "baseShopId": 80331038,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 620,
@@ -1425,6 +1507,18 @@
       "id": 80331039,
       "baseShopId": 80331039,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94060403],
+          "shopId": 80331039,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "「カルデア・サマーアドベンチャー！」\nのストーリーを進めることで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 110,
@@ -1462,6 +1556,18 @@
       "id": 80331040,
       "baseShopId": 80331040,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94060403],
+          "shopId": 80331040,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "「カルデア・サマーアドベンチャー！」\nのストーリーを進めることで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 120,
@@ -1499,6 +1605,18 @@
       "id": 80331041,
       "baseShopId": 80331041,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94060404],
+          "shopId": 80331041,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "「カルデア・サマーアドベンチャー！」\nのストーリーを進めることで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 130,
@@ -1536,6 +1654,18 @@
       "id": 80331042,
       "baseShopId": 80331042,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94060404],
+          "shopId": 80331042,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "「カルデア・サマーアドベンチャー！」\nのストーリーを進めることで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 140,
@@ -1573,6 +1703,18 @@
       "id": 80331043,
       "baseShopId": 80331043,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94060405],
+          "shopId": 80331043,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "「カルデア・サマーアドベンチャー！」\nのストーリーを進めることで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 150,
@@ -1610,6 +1752,18 @@
       "id": 80331044,
       "baseShopId": 80331044,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94060405],
+          "shopId": 80331044,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "「カルデア・サマーアドベンチャー！」\nのストーリーを進めることで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 160,
@@ -1647,6 +1801,18 @@
       "id": 80331045,
       "baseShopId": 80331045,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94060407],
+          "shopId": 80331045,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "「カルデア・サマーアドベンチャー！」\nのストーリーを進めることで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 170,
@@ -1684,6 +1850,18 @@
       "id": 80331046,
       "baseShopId": 80331046,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94060407],
+          "shopId": 80331046,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "「カルデア・サマーアドベンチャー！」\nのストーリーを進めることで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 180,
@@ -1721,6 +1899,18 @@
       "id": 80331047,
       "baseShopId": 80331047,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94060408],
+          "shopId": 80331047,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "「カルデア・サマーアドベンチャー！」\nのストーリーを進めることで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 190,
@@ -1758,6 +1948,18 @@
       "id": 80331048,
       "baseShopId": 80331048,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94060408],
+          "shopId": 80331048,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "「カルデア・サマーアドベンチャー！」\nのストーリーを進めることで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 200,
@@ -1795,6 +1997,18 @@
       "id": 80331049,
       "baseShopId": 80331049,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94060409],
+          "shopId": 80331049,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "「カルデア・サマーアドベンチャー！」\nのストーリーを進めることで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 210,
@@ -1832,6 +2046,18 @@
       "id": 80331050,
       "baseShopId": 80331050,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94060409],
+          "shopId": 80331050,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "「カルデア・サマーアドベンチャー！」\nのストーリーを進めることで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 220,
@@ -1869,6 +2095,18 @@
       "id": 80331051,
       "baseShopId": 80331051,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94060412],
+          "shopId": 80331051,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "「カルデア・サマーアドベンチャー！」\nのストーリーを進めることで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 230,
@@ -1906,6 +2144,18 @@
       "id": 80331052,
       "baseShopId": 80331052,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94060412],
+          "shopId": 80331052,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "「カルデア・サマーアドベンチャー！」\nのストーリーを進めることで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 240,
@@ -1943,6 +2193,18 @@
       "id": 80331053,
       "baseShopId": 80331053,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94060412],
+          "shopId": 80331053,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": true,
+          "closedMessage": "「カルデア・サマーアドベンチャー！」\nのストーリーを進めることで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 250,
@@ -1980,6 +2242,18 @@
       "id": 80331054,
       "baseShopId": 80331054,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94060507],
+          "shopId": 80331054,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": false,
+          "closedMessage": "「カルデア・サマーアドベンチャー！」\nのストーリーを進めることで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 260,
@@ -2017,6 +2291,28 @@
       "id": 80331055,
       "baseShopId": 80331055,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94060508],
+          "shopId": 80331055,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 1,
+          "isClosedDisp": true,
+          "closedMessage": "「カルデア・サマーアドベンチャー！」\nのストーリーを進めることで交換可能",
+          "closedItemName": ""
+        },
+        {
+          "condValues": [94060507],
+          "shopId": 80331055,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 10,
+          "isClosedDisp": false,
+          "closedMessage": "「カルデア・サマーアドベンチャー！」\nのストーリーを進めることで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 270,
@@ -2054,6 +2350,28 @@
       "id": 80331056,
       "baseShopId": 80331056,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94060508],
+          "shopId": 80331056,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 1,
+          "isClosedDisp": true,
+          "closedMessage": "「カルデア・サマーアドベンチャー！」\nのストーリーを進めることで交換可能",
+          "closedItemName": ""
+        },
+        {
+          "condValues": [94060507],
+          "shopId": 80331056,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 10,
+          "isClosedDisp": false,
+          "closedMessage": "「カルデア・サマーアドベンチャー！」\nのストーリーを進めることで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 280,
@@ -2091,6 +2409,28 @@
       "id": 80331057,
       "baseShopId": 80331057,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [94060508],
+          "shopId": 80331057,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 1,
+          "isClosedDisp": true,
+          "closedMessage": "「カルデア・サマーアドベンチャー！」\nのストーリーを進めることで交換可能",
+          "closedItemName": ""
+        },
+        {
+          "condValues": [94060507],
+          "shopId": 80331057,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 10,
+          "isClosedDisp": false,
+          "closedMessage": "「カルデア・サマーアドベンチャー！」\nのストーリーを進めることで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 290,
@@ -2128,6 +2468,18 @@
       "id": 80331058,
       "baseShopId": 80331058,
       "shopType": "eventItem",
+      "releaseConditions": [
+        {
+          "condValues": [10060401],
+          "shopId": 80331058,
+          "condType": "commonRelease",
+          "condNum": 1,
+          "priority": 0,
+          "isClosedDisp": false,
+          "closedMessage": "「カルデア・サマーアドベンチャー！」\nのストーリーを進めることで交換可能",
+          "closedItemName": ""
+        }
+      ],
       "eventId": 80331,
       "slot": 2,
       "priority": 300,
@@ -2165,6 +2517,7 @@
       "id": 80331059,
       "baseShopId": 80331059,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 630,
@@ -2202,6 +2555,7 @@
       "id": 80331060,
       "baseShopId": 80331060,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 640,
@@ -2239,6 +2593,7 @@
       "id": 80331061,
       "baseShopId": 80331061,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 650,
@@ -2276,6 +2631,7 @@
       "id": 80331062,
       "baseShopId": 80331062,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 660,
@@ -2313,6 +2669,7 @@
       "id": 80331063,
       "baseShopId": 80331063,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 670,
@@ -2350,6 +2707,7 @@
       "id": 80331064,
       "baseShopId": 80331064,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 680,
@@ -2387,6 +2745,7 @@
       "id": 80331065,
       "baseShopId": 80331065,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 690,
@@ -2424,6 +2783,7 @@
       "id": 80331066,
       "baseShopId": 80331066,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 700,
@@ -2461,6 +2821,7 @@
       "id": 80331067,
       "baseShopId": 80331067,
       "shopType": "eventItem",
+      "releaseConditions": [],
       "eventId": 80331,
       "slot": 2,
       "priority": 710,
