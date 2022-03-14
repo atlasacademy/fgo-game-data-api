@@ -1,0 +1,14 @@
+{
+  "id": 9935900,
+  "collectionNo": 0,
+  "name": "ソウルイーター",
+  "type": "enemy",
+  "flag": "normal",
+  "className": "assassin",
+  "attribute": "earth",
+  "rarity": 4,
+  "atkMax": 16658,
+  "hpMax": 380000,
+  "face": "https://assets.atlasacademy.io/GameData/JP/Enemys/99359003.png",
+  "costume": {}
+}

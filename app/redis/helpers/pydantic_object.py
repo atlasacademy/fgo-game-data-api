@@ -50,7 +50,11 @@ async def fetch_id(
 
 
 async def fetch_mstSvtLimit(
-    redis: Redis, region: Region, svt_id: int, svt_limit: Optional[int] = None
+    redis: Redis,
+    region: Region,
+    svt_id: int,
+    svt_limit: Optional[int] = None,
+    prefer_lower: bool = False,
 ) -> Optional[MstSvtLimit]:
     redis_key = f"{settings.redis_prefix}:data:{region.name}:mstSvtlimit"
 
@@ -59,9 +63,12 @@ async def fetch_mstSvtLimit(
         if mstSvtLimit:
             return MstSvtLimit.parse_raw(mstSvtLimit)
 
-    for i in chain(range(3, -1, -1), range(4, 100)):
+    lower_limit_range = range(0, 4) if prefer_lower else range(3, -1, -1)
+
+    for i in chain(lower_limit_range, range(4, 100)):
         mstSvtLimit = await redis.hget(redis_key, f"{svt_id}:{i}")
         if mstSvtLimit:
             return MstSvtLimit.parse_raw(mstSvtLimit)
 
-    return None
+    # All svts should have at least one limit
+    return None  # pragma: no cover

@@ -336,16 +336,17 @@ async def get_basic_svt(
     if not mstSvt:
         mstSvt = await pydantic_object.fetch_id(redis, region, MstSvt, svt_id)
 
+    if not mstSvt:
+        raise HTTPException(status_code=404, detail="Svt not found")
+
     mstSvtLimit = await pydantic_object.fetch_mstSvtLimit(
-        redis, region, svt_id, svt_limit
+        redis, region, svt_id, svt_limit, mstSvt.isServant()
     )
 
-    if not mstSvt or not mstSvtLimit:
+    if not mstSvtLimit:  # pragma: no cover
         raise HTTPException(status_code=404, detail="Svt not found")
 
     svtExtra = await pydantic_object.fetch_id(redis, region, MstSvtExtra, svt_id)
-
-    svt_limit = mstSvtLimit.limitCount
 
     basic_servant = {
         "id": svt_id,
@@ -388,7 +389,12 @@ async def get_basic_svt(
 
     if mstSvt.type == SvtType.SERVANT_EQUIP:
         basic_servant["face"] = AssetURL.face.format(**base_settings, i=0)
-    elif svtExtra and svt_limit > 10 and svt_limit in svtExtra.costumeLimitSvtIdMap:
+    elif (
+        svtExtra
+        and svt_limit is not None
+        and svt_limit > 10
+        and svt_limit in svtExtra.costumeLimitSvtIdMap
+    ):
         basic_servant["face"] = AssetURL.face.format(
             base_url=settings.asset_url,
             region=region,
@@ -396,9 +402,13 @@ async def get_basic_svt(
             i=0,
         )
     elif mstSvt.type in (SvtType.ENEMY, SvtType.ENEMY_COLLECTION):
-        basic_servant["face"] = AssetURL.enemy.format(**base_settings, i=svt_limit)
+        basic_servant["face"] = AssetURL.enemy.format(
+            **base_settings, i=mstSvtLimit.limitCount
+        )
     else:
-        basic_servant["face"] = AssetURL.face.format(**base_settings, i=svt_limit)
+        basic_servant["face"] = AssetURL.face.format(
+            **base_settings, i=mstSvtLimit.limitCount
+        )
 
     if region == Region.JP and lang is not None:
         basic_servant["name"] = get_translation(lang, str(basic_servant["name"]))

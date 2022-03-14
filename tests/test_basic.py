@@ -14,6 +14,10 @@ test_cases_dict: dict[str, tuple[str, str]] = {
     "servant_JP_id": ("JP/servant/303900", "JP_Gareth"),
     "servant_JP_lang_en": ("JP/servant/208?lang=en", "JP_Sieg_en"),
     "svt_JP_lang_en": ("JP/svt/503800?lang=en", "JP_Sieg_en"),
+    "svt_JP_limit_3_face": (
+        "JP/svt/9935900",
+        "JP_Soul_Eater",
+    ),  # This one only has limit=3 so the face URL should use 3 instead of 0
     "equip_JP_collectionNo": ("JP/equip/467", "JP_Bitter_Chocolates"),
     "equip_JP_id": ("JP/equip/9805370", "JP_Bitter_Chocolates"),
     "skill_NA_id": ("NA/skill/455350", "NA_Fujino_2nd_skill"),
