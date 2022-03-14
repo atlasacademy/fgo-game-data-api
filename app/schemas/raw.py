@@ -1590,8 +1590,8 @@ class BgmEntity(BaseModelORJson):
     mstBgm: MstBgm
     mstBgmRelease: list[MstBgmRelease]
     mstClosedMessage: list[MstClosedMessage]
-    mstShop: Optional[MstShop]
-    mstItem: Optional[MstItem]
+    mstShop: MstShop | None = None
+    mstItem: MstItem | None = None
 
 
 class AssetStorageLine(BaseModelORJson):
