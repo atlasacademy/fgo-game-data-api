@@ -18,6 +18,7 @@ test_cases_dict: dict[str, tuple[str, str]] = {
         "JP/svt/9935900",
         "JP_Soul_Eater",
     ),  # This one only has limit=3 so the face URL should use 3 instead of 0
+    "svt_material_td_JP": ("JP/svt/404601", "JP_Liz_td_material"),
     "equip_JP_collectionNo": ("JP/equip/467", "JP_Bitter_Chocolates"),
     "equip_JP_id": ("JP/equip/9805370", "JP_Bitter_Chocolates"),
     "skill_NA_id": ("NA/skill/455350", "NA_Fujino_2nd_skill"),

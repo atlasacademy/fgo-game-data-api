@@ -1,0 +1,14 @@
+{
+  "id": 404601,
+  "collectionNo": 0,
+  "name": "エリザベート・バートリー〔シンデレラ〕",
+  "type": "svtMaterialTd",
+  "flag": "ignoreCombineLimitSpecial",
+  "className": "rider",
+  "attribute": "human",
+  "rarity": 4,
+  "atkMax": 0,
+  "hpMax": 0,
+  "face": "https://assets.atlasacademy.io/GameData/JP/Faces/f_4046000.png",
+  "costume": {}
+}
