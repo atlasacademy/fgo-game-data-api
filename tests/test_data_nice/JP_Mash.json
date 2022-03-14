@@ -4863,6 +4863,74 @@
           ]
         }
       ]
+    },
+    {
+      "id": 993006,
+      "name": "理知の結晶 B",
+      "ruby": "りちのけっしょう",
+      "detail": "自身の『15人の理知的なメガネたち』における攻撃の威力を30%アップ【『15人の理知的なメガネたち』イベント期間限定】",
+      "unmodifiedDetail": "自身の『15人の理知的なメガネたち』における攻撃の威力を30%アップ【『15人の理知的なメガネたち』イベント期間限定】",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00301.png",
+      "coolDown": [0],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 16,
+          "priority": 164,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 80359,
+          "flag": 0,
+          "startedAt": 1646211600,
+          "endedAt": 1647403199
+        }
+      ],
+      "skillAdd": [],
+      "functions": [
+        {
+          "funcId": 8203,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "理知の結晶 B",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+          "functvals": [],
+          "funcquestTvals": [{ "id": 94000130, "name": "unknown" }],
+          "funcGroup": [
+            {
+              "eventId": 80359,
+              "baseFuncId": 0,
+              "nameTotal": "{1} \n攻撃の威力アップ合計",
+              "name": "攻撃の威力アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_302.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [
+            {
+              "id": 4068,
+              "name": "理知の結晶",
+              "detail": "『15人の理知的なメガネたち』において与えるダメージをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+              "type": "upDamage",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 10000
+            }
+          ],
+          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 300 }]
+        }
+      ]
     }
   ],
   "appendPassive": [

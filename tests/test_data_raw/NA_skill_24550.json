@@ -34,7 +34,7 @@
     },
     {
       "strengthStatus": 0,
-      "svtId": 900200,
+      "svtId": 9936990,
       "num": 1,
       "priority": 1,
       "skillId": 24550,
@@ -46,8 +46,8 @@
       "flag": 0
     },
     {
-      "strengthStatus": 0,
-      "svtId": 9936990,
+      "strengthStatus": 1,
+      "svtId": 900200,
       "num": 1,
       "priority": 1,
       "skillId": 24550,

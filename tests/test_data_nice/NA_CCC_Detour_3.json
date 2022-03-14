@@ -633,7 +633,7 @@
                       "tvals": [],
                       "ckSelfIndv": [],
                       "ckOpIndv": [],
-                      "maxRate": 100000
+                      "maxRate": 500000
                     }
                   ],
                   "svals": [
@@ -1246,7 +1246,7 @@
                       "tvals": [],
                       "ckSelfIndv": [],
                       "ckOpIndv": [],
-                      "maxRate": 100000
+                      "maxRate": 500000
                     }
                   ],
                   "svals": [
@@ -3082,7 +3082,7 @@
                       "tvals": [],
                       "ckSelfIndv": [],
                       "ckOpIndv": [],
-                      "maxRate": 100000
+                      "maxRate": 500000
                     }
                   ],
                   "svals": [

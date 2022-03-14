@@ -10,5 +10,12 @@
   "atkMax": 11723,
   "hpMax": 14680,
   "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_1009000.png",
-  "costume": {}
+  "costume": {
+    "100930": {
+      "id": 11,
+      "costumeCollectionNo": 34,
+      "battleCharaId": 100930,
+      "shortName": "Memories of Trifas"
+    }
+  }
 }
