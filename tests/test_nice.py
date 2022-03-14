@@ -490,6 +490,12 @@ class TestServantSpecial:
             "4"
         ].endswith("JP/CharaGraph/CharaGraphEx/2800100/2800100b@2.png")
 
+    async def test_charaGraphExCostume(self, client: AsyncClient) -> None:
+        response = await client.get("/nice/JP/servant/247")
+        assert response.json()["extraAssets"]["charaGraphEx"]["costume"][
+            "703330"
+        ].endswith("JP/CharaGraph/CharaGraphEx/703330/703330a.png")
+
     async def test_charaFigureMulti(self, client: AsyncClient) -> None:
         response = await client.get("/nice/JP/servant/327")
         assert response.json()["extraAssets"]["charaFigureMulti"]["1"]["ascension"][
