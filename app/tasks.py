@@ -42,7 +42,7 @@ from .redis.load import load_redis_data, load_svt_extra_redis
 from .routers.utils import list_string
 from .schemas.base import BaseModelORJson
 from .schemas.common import Language, Region, RepoInfo
-from .schemas.enums import ALL_ENUMS, SERVANT_TYPES, TRAIT_NAME
+from .schemas.enums import ALL_ENUMS, TRAIT_NAME
 from .schemas.gameenums import SvtType
 from .schemas.nice import NiceEquip, NiceServant
 from .schemas.raw import (
@@ -321,9 +321,7 @@ async def generate_exports(
 
                 all_svts = await fetch.get_everything(conn, MstSvt)
                 all_servants = [
-                    svt
-                    for svt in all_svts
-                    if svt.collectionNo != 0 and svt.type in SERVANT_TYPES
+                    svt for svt in all_svts if svt.collectionNo != 0 and svt.isServant()
                 ]
                 await dump_basic_servants(util, "basic_servant", all_servants)
 
