@@ -174,7 +174,6 @@ schema_map_fetch_one: dict[  # type:ignore
     MstMasterMission: (mstMasterMission, mstMasterMission.c.id),
     MstSvtExtra: (mstSvtExtra, mstSvtExtra.c.svtId),
     MstSvtCoin: (mstSvtCoin, mstSvtCoin.c.svtId),
-    mstSvtLimitImage: (mstSvtLimitImage, mstSvtLimitImage.c.svtId),
     MstSvtAdd: (mstSvtAdd, mstSvtAdd.c.svtId),
 }
 
