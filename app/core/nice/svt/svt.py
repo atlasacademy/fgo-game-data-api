@@ -120,7 +120,6 @@ def get_nice_costume(
 
 def get_nice_svt_limit_image(limit_image: MstSvtLimitImage) -> NiceServantLimitImage:
     return NiceServantLimitImage(
-        svtId=limit_image.svtId,
         limitCount=limit_image.limitCount,
         priority=limit_image.priority,
         defaultLimitCount=limit_image.defaultLimitCount,
