@@ -26,7 +26,18 @@
       "unmodifiedDetail": "Restore HP [{0}] & remove DEF Debuffs for one ally",
       "type": "active",
       "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png",
-      "coolDown": [12, 12, 12, 12, 12, 11, 11, 11, 11, 10],
+      "coolDown": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        11,
+        11,
+        11,
+        11,
+        10
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
@@ -43,16 +54,46 @@
           "funcGroup": [],
           "buffs": [],
           "svals": [
-            { "Rate": 1000, "Value": 1000 },
-            { "Rate": 1000, "Value": 1200 },
-            { "Rate": 1000, "Value": 1400 },
-            { "Rate": 1000, "Value": 1600 },
-            { "Rate": 1000, "Value": 1800 },
-            { "Rate": 1000, "Value": 2000 },
-            { "Rate": 1000, "Value": 2200 },
-            { "Rate": 1000, "Value": 2400 },
-            { "Rate": 1000, "Value": 2600 },
-            { "Rate": 1000, "Value": 3000 }
+            {
+              "Rate": 1000,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Value": 1200
+            },
+            {
+              "Rate": 1000,
+              "Value": 1400
+            },
+            {
+              "Rate": 1000,
+              "Value": 1600
+            },
+            {
+              "Rate": 1000,
+              "Value": 1800
+            },
+            {
+              "Rate": 1000,
+              "Value": 2000
+            },
+            {
+              "Rate": 1000,
+              "Value": 2200
+            },
+            {
+              "Rate": 1000,
+              "Value": 2400
+            },
+            {
+              "Rate": 1000,
+              "Value": 2600
+            },
+            {
+              "Rate": 1000,
+              "Value": 3000
+            }
           ]
         },
         {
@@ -64,19 +105,44 @@
           "functvals": [],
           "funcquestTvals": [],
           "funcGroup": [],
-          "traitVals": [{ "id": 3009, "name": "buffDecreaseDefence" }],
+          "traitVals": [
+            {
+              "id": 3009,
+              "name": "buffDecreaseDefence"
+            }
+          ],
           "buffs": [],
           "svals": [
-            { "Rate": 5000 },
-            { "Rate": 5000 },
-            { "Rate": 5000 },
-            { "Rate": 5000 },
-            { "Rate": 5000 },
-            { "Rate": 5000 },
-            { "Rate": 5000 },
-            { "Rate": 5000 },
-            { "Rate": 5000 },
-            { "Rate": 5000 }
+            {
+              "Rate": 5000
+            },
+            {
+              "Rate": 5000
+            },
+            {
+              "Rate": 5000
+            },
+            {
+              "Rate": 5000
+            },
+            {
+              "Rate": 5000
+            },
+            {
+              "Rate": 5000
+            },
+            {
+              "Rate": 5000
+            },
+            {
+              "Rate": 5000
+            },
+            {
+              "Rate": 5000
+            },
+            {
+              "Rate": 5000
+            }
           ]
         }
       ]
@@ -89,7 +155,18 @@
       "unmodifiedDetail": "Increase ATK [{0}] (1 turn) & increase NP Strength [{0}] (1 turn) for one ally",
       "type": "active",
       "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00300.png",
-      "coolDown": [15, 15, 15, 15, 15, 14, 14, 14, 14, 13],
+      "coolDown": [
+        15,
+        15,
+        15,
+        15,
+        15,
+        14,
+        14,
+        14,
+        14,
+        13
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
@@ -115,9 +192,18 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" },
-                { "id": 3027, "name": "buffAtkUp" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                },
+                {
+                  "id": 3027,
+                  "name": "buffAtkUp"
+                }
               ],
               "tvals": [],
               "ckSelfIndv": [],
@@ -126,16 +212,66 @@
             }
           ],
           "svals": [
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 200 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 220 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 240 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 260 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 280 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 300 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 320 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 340 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 360 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 400 }
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 220
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 240
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 260
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 280
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 300
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 320
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 340
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 360
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 400
+            }
           ]
         },
         {
@@ -158,9 +294,18 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" },
-                { "id": 3030, "name": "buffNpDamageUp" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                },
+                {
+                  "id": 3030,
+                  "name": "buffNpDamageUp"
+                }
               ],
               "tvals": [],
               "ckSelfIndv": [],
@@ -169,16 +314,66 @@
             }
           ],
           "svals": [
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 100 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 110 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 120 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 130 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 140 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 150 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 160 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 170 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 180 },
-            { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 200 }
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 100
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 110
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 120
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 130
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 140
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 150
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 160
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 170
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 180
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 200
+            }
           ]
         }
       ]
@@ -191,7 +386,18 @@
       "unmodifiedDetail": "Apply Evade to one ally (1 time, 3 turns)",
       "type": "active",
       "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00402.png",
-      "coolDown": [12, 12, 12, 12, 12, 11, 11, 11, 11, 10],
+      "coolDown": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        11,
+        11,
+        11,
+        11,
+        10
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
@@ -217,10 +423,22 @@
               "buffGroup": 200,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3018, "name": "buffEvadeAndInvincible" },
-                { "id": 3021, "name": "buffEvade" },
-                { "id": 3007, "name": "buffIncreaseDefence" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3018,
+                  "name": "buffEvadeAndInvincible"
+                },
+                {
+                  "id": 3021,
+                  "name": "buffEvade"
+                },
+                {
+                  "id": 3007,
+                  "name": "buffIncreaseDefence"
+                }
               ],
               "tvals": [],
               "ckSelfIndv": [],
@@ -229,24 +447,71 @@
             }
           ],
           "svals": [
-            { "Rate": 5000, "Turn": 3, "Count": 1 },
-            { "Rate": 5000, "Turn": 3, "Count": 1 },
-            { "Rate": 5000, "Turn": 3, "Count": 1 },
-            { "Rate": 5000, "Turn": 3, "Count": 1 },
-            { "Rate": 5000, "Turn": 3, "Count": 1 },
-            { "Rate": 5000, "Turn": 3, "Count": 1 },
-            { "Rate": 5000, "Turn": 3, "Count": 1 },
-            { "Rate": 5000, "Turn": 3, "Count": 1 },
-            { "Rate": 5000, "Turn": 3, "Count": 1 },
-            { "Rate": 5000, "Turn": 3, "Count": 1 }
+            {
+              "Rate": 5000,
+              "Turn": 3,
+              "Count": 1
+            },
+            {
+              "Rate": 5000,
+              "Turn": 3,
+              "Count": 1
+            },
+            {
+              "Rate": 5000,
+              "Turn": 3,
+              "Count": 1
+            },
+            {
+              "Rate": 5000,
+              "Turn": 3,
+              "Count": 1
+            },
+            {
+              "Rate": 5000,
+              "Turn": 3,
+              "Count": 1
+            },
+            {
+              "Rate": 5000,
+              "Turn": 3,
+              "Count": 1
+            },
+            {
+              "Rate": 5000,
+              "Turn": 3,
+              "Count": 1
+            },
+            {
+              "Rate": 5000,
+              "Turn": 3,
+              "Count": 1
+            },
+            {
+              "Rate": 5000,
+              "Turn": 3,
+              "Count": 1
+            },
+            {
+              "Rate": 5000,
+              "Turn": 3,
+              "Count": 1
+            }
           ]
         }
       ]
     }
   ],
   "expRequired": [
-    3451800, 10355400, 20710800, 34518000, 51777000, 72487800, 96650400,
-    124264800, 155331000
+    3451800,
+    10355400,
+    20710800,
+    34518000,
+    51777000,
+    72487800,
+    96650400,
+    124264800,
+    155331000
   ],
   "costumes": []
 }

@@ -1,10 +1,16 @@
 {
   "mstFunc": {
-    "vals": [142],
+    "vals": [
+      142
+    ],
     "expandedVals": [
       {
         "mstBuff": {
-          "vals": [3004, 3006, 3031],
+          "vals": [
+            3004,
+            3006,
+            3031
+          ],
           "tvals": [],
           "ckSelfIndv": [],
           "ckOpIndv": [],
@@ -21,7 +27,9 @@
     ],
     "tvals": [],
     "questTvals": [],
-    "effectList": [330],
+    "effectList": [
+      330
+    ],
     "popupTextColor": 2,
     "id": 205,
     "cond": 0,

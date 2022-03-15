@@ -13,7 +13,9 @@
   "endedAt": 1580702399,
   "finishedAt": 1581307199,
   "materialOpenedAt": 1751328000,
-  "warIds": [8200],
+  "warIds": [
+    8200
+  ],
   "shop": [],
   "rewards": [],
   "pointGroups": [],

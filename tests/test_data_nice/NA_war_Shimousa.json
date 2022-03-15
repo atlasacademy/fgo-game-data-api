@@ -1,6 +1,12 @@
 {
   "id": 203,
-  "coordinates": [[35.530136, 140.28941], []],
+  "coordinates": [
+    [
+      35.530136,
+      140.28941
+    ],
+    []
+  ],
   "age": "Kan'ei 16",
   "name": "Pseudo-Parallel World",
   "longName": "Pseudo-Parallel World\nThe Stage of Carnage, Shimousa",
@@ -168,11 +174,20 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1],
+          "phases": [
+            1
+          ],
           "phasesWithEnemies": [],
-          "phasesNoBattle": [1],
+          "phasesNoBattle": [
+            1
+          ],
           "phaseScripts": [
             {
               "phase": 1,
@@ -227,10 +242,21 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2],
-          "phasesWithEnemies": [1, 2],
+          "phases": [
+            1,
+            2
+          ],
+          "phasesWithEnemies": [
+            1,
+            2
+          ],
           "phasesNoBattle": [],
           "phaseScripts": [
             {
@@ -296,10 +322,23 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2, 3],
-          "phasesWithEnemies": [1, 2, 3],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
           "phasesNoBattle": [],
           "phaseScripts": [],
           "noticeAt": 1508018400,
@@ -365,11 +404,23 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2],
-          "phasesWithEnemies": [1],
-          "phasesNoBattle": [2],
+          "phases": [
+            1,
+            2
+          ],
+          "phasesWithEnemies": [
+            1
+          ],
+          "phasesNoBattle": [
+            2
+          ],
           "phaseScripts": [
             {
               "phase": 1,
@@ -437,11 +488,27 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2, 3, 4],
-          "phasesWithEnemies": [1, 2, 4],
-          "phasesNoBattle": [3],
+          "phases": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            4
+          ],
+          "phasesNoBattle": [
+            3
+          ],
           "phaseScripts": [
             {
               "phase": 1,
@@ -548,10 +615,23 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2, 3],
-          "phasesWithEnemies": [1, 2, 3],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
           "phasesNoBattle": [],
           "phaseScripts": [],
           "noticeAt": 1508018400,
@@ -617,11 +697,23 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2],
-          "phasesWithEnemies": [2],
-          "phasesNoBattle": [1],
+          "phases": [
+            1,
+            2
+          ],
+          "phasesWithEnemies": [
+            2
+          ],
+          "phasesNoBattle": [
+            1
+          ],
           "phaseScripts": [
             {
               "phase": 1,
@@ -689,11 +781,23 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2],
-          "phasesWithEnemies": [2],
-          "phasesNoBattle": [1],
+          "phases": [
+            1,
+            2
+          ],
+          "phasesWithEnemies": [
+            2
+          ],
+          "phasesNoBattle": [
+            1
+          ],
           "phaseScripts": [
             {
               "phase": 1,
@@ -754,10 +858,23 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2, 3],
-          "phasesWithEnemies": [1, 2, 3],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
           "phasesNoBattle": [],
           "phaseScripts": [],
           "noticeAt": 1508018400,
@@ -823,11 +940,27 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2, 3, 4],
-          "phasesWithEnemies": [1, 3, 4],
-          "phasesNoBattle": [2],
+          "phases": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesWithEnemies": [
+            1,
+            3,
+            4
+          ],
+          "phasesNoBattle": [
+            2
+          ],
           "phaseScripts": [
             {
               "phase": 1,
@@ -917,11 +1050,27 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2, 3, 4],
-          "phasesWithEnemies": [2, 3, 4],
-          "phasesNoBattle": [1],
+          "phases": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesWithEnemies": [
+            2,
+            3,
+            4
+          ],
+          "phasesNoBattle": [
+            1
+          ],
           "phaseScripts": [
             {
               "phase": 1,
@@ -1011,10 +1160,19 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1],
-          "phasesWithEnemies": [1],
+          "phases": [
+            1
+          ],
+          "phasesWithEnemies": [
+            1
+          ],
           "phasesNoBattle": [],
           "phaseScripts": [
             {
@@ -1067,11 +1225,22 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2],
+          "phases": [
+            1,
+            2
+          ],
           "phasesWithEnemies": [],
-          "phasesNoBattle": [1, 2],
+          "phasesNoBattle": [
+            1,
+            2
+          ],
           "phaseScripts": [
             {
               "phase": 1,
@@ -1128,10 +1297,23 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2, 3],
-          "phasesWithEnemies": [1, 2, 3],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
           "phasesNoBattle": [],
           "phaseScripts": [],
           "noticeAt": 1508018400,
@@ -1209,10 +1391,23 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2, 3],
-          "phasesWithEnemies": [1, 2, 3],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
           "phasesNoBattle": [],
           "phaseScripts": [],
           "noticeAt": 1508018400,
@@ -1278,10 +1473,23 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2, 3],
-          "phasesWithEnemies": [1, 2, 3],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
           "phasesNoBattle": [],
           "phaseScripts": [
             {
@@ -1363,11 +1571,27 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2, 3, 4],
-          "phasesWithEnemies": [2, 3, 4],
-          "phasesNoBattle": [1],
+          "phases": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesWithEnemies": [
+            2,
+            3,
+            4
+          ],
+          "phasesNoBattle": [
+            1
+          ],
           "phaseScripts": [
             {
               "phase": 1,
@@ -1477,11 +1701,25 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2, 3],
-          "phasesWithEnemies": [2, 3],
-          "phasesNoBattle": [1],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            2,
+            3
+          ],
+          "phasesNoBattle": [
+            1
+          ],
           "phaseScripts": [
             {
               "phase": 1,
@@ -1578,10 +1816,23 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2, 3],
-          "phasesWithEnemies": [1, 2, 3],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
           "phasesNoBattle": [],
           "phaseScripts": [
             {
@@ -1663,11 +1914,27 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2, 3, 4],
-          "phasesWithEnemies": [2, 3],
-          "phasesNoBattle": [1, 4],
+          "phases": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesWithEnemies": [
+            2,
+            3
+          ],
+          "phasesNoBattle": [
+            1,
+            4
+          ],
           "phaseScripts": [
             {
               "phase": 1,
@@ -1777,8 +2044,14 @@
               "closedMessage": "Unlock at Bond Level {0}"
             }
           ],
-          "phases": [1, 2],
-          "phasesWithEnemies": [1, 2],
+          "phases": [
+            1,
+            2
+          ],
+          "phasesWithEnemies": [
+            1,
+            2
+          ],
           "phasesNoBattle": [],
           "phaseScripts": [
             {
@@ -1840,10 +2113,23 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2, 3],
-          "phasesWithEnemies": [1, 2, 3],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
           "phasesNoBattle": [],
           "phaseScripts": [],
           "noticeAt": 1508018400,
@@ -1882,10 +2168,23 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2, 3],
-          "phasesWithEnemies": [1, 2, 3],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
           "phasesNoBattle": [],
           "phaseScripts": [],
           "noticeAt": 1613534400,
@@ -1951,11 +2250,29 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2, 3, 4, 5],
-          "phasesWithEnemies": [1, 2, 3, 4],
-          "phasesNoBattle": [5],
+          "phases": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "phasesNoBattle": [
+            5
+          ],
           "phaseScripts": [
             {
               "phase": 1,
@@ -2071,10 +2388,23 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2, 3],
-          "phasesWithEnemies": [1, 2, 3],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
           "phasesNoBattle": [],
           "phaseScripts": [],
           "noticeAt": 1508018400,
@@ -2140,10 +2470,29 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2, 3, 4, 5, 6],
-          "phasesWithEnemies": [1, 2, 3, 4, 5, 6],
+          "phases": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
           "phasesNoBattle": [],
           "phaseScripts": [
             {
@@ -2315,10 +2664,23 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1, 2, 3],
-          "phasesWithEnemies": [1, 2, 3],
+          "phases": [
+            1,
+            2,
+            3
+          ],
+          "phasesWithEnemies": [
+            1,
+            2,
+            3
+          ],
           "phasesNoBattle": [],
           "phaseScripts": [],
           "noticeAt": 1508018400,
@@ -2369,11 +2731,20 @@
               "value": 0,
               "closedMessage": ""
             },
-            { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+            {
+              "type": "date",
+              "targetId": 0,
+              "value": 0,
+              "closedMessage": ""
+            }
           ],
-          "phases": [1],
+          "phases": [
+            1
+          ],
           "phasesWithEnemies": [],
-          "phasesNoBattle": [1],
+          "phasesNoBattle": [
+            1
+          ],
           "phaseScripts": [],
           "noticeAt": 1570680000,
           "openedAt": 1570680000,

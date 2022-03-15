@@ -11,8 +11,12 @@
   },
   "mstBgmRelease": [
     {
-      "targetIds": [1000822],
-      "vals": [0],
+      "targetIds": [
+        1000822
+      ],
+      "vals": [
+        0
+      ],
       "bgmId": 138,
       "id": 1,
       "priority": 10000,
@@ -21,8 +25,12 @@
       "closedMessageId": 110
     },
     {
-      "targetIds": [2000118],
-      "vals": [0],
+      "targetIds": [
+        2000118
+      ],
+      "vals": [
+        0
+      ],
       "bgmId": 138,
       "id": 2,
       "priority": 9000,
@@ -32,13 +40,25 @@
     }
   ],
   "mstClosedMessage": [
-    { "id": 110, "message": "？？？" },
-    { "id": 112, "message": "亜種特異点Ⅰクリアで開放可能" }
+    {
+      "id": 110,
+      "message": "？？？"
+    },
+    {
+      "id": 112,
+      "message": "亜種特異点Ⅰクリアで開放可能"
+    }
   ],
   "mstShop": {
-    "itemIds": [7106],
-    "prices": [20],
-    "targetIds": [0],
+    "itemIds": [
+      7106
+    ],
+    "prices": [
+      20
+    ],
+    "targetIds": [
+      0
+    ],
     "script": {},
     "anotherPayType": 0,
     "anotherItemIds": [],
@@ -70,7 +90,9 @@
     "closedAt": 1901199599
   },
   "mstItem": {
-    "individuality": [20033],
+    "individuality": [
+      20033
+    ],
     "script": {},
     "eventId": 0,
     "eventGroupId": 0,

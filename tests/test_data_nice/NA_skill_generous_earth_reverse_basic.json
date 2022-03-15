@@ -13,7 +13,9 @@
   "condLv": 0,
   "condLimitCount": 0,
   "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00202.png",
-  "coolDown": [0],
+  "coolDown": [
+    0
+  ],
   "actIndividuality": [],
   "script": {},
   "extraPassive": [],
@@ -29,7 +31,11 @@
       "funcquestTvals": [],
       "funcGroup": [],
       "buffs": [],
-      "svals": [{ "AddCount": 50 }]
+      "svals": [
+        {
+          "AddCount": 50
+        }
+      ]
     }
   ],
   "reverse": {

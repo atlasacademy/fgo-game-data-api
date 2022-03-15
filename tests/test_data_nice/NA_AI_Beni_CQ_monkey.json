@@ -9,12 +9,19 @@
       "probability": 100,
       "cond": "checkPtIndividuality",
       "condNegative": false,
-      "vals": [103700],
+      "vals": [
+        103700
+      ],
       "aiAct": {
         "id": 94032214,
         "type": "skillId",
         "target": "random",
-        "targetIndividuality": [{ "id": 103700, "name": "unknown" }],
+        "targetIndividuality": [
+          {
+            "id": 103700,
+            "name": "unknown"
+          }
+        ],
         "skillId": 962336,
         "skillLv": 1,
         "skill": {
@@ -23,12 +30,19 @@
           "ruby": "-",
           "type": "active",
           "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png",
-          "coolDown": [0],
+          "coolDown": [
+            0
+          ],
           "actIndividuality": [],
           "script": {},
           "extraPassive": [],
           "skillAdd": [],
-          "aiIds": { "svt": [94032580], "field": [] },
+          "aiIds": {
+            "svt": [
+              94032580
+            ],
+            "field": []
+          },
           "functions": [
             {
               "funcId": 180,
@@ -50,9 +64,18 @@
                   "buffGroup": 0,
                   "script": {},
                   "vals": [
-                    { "id": 3004, "name": "buffPositiveEffect" },
-                    { "id": 3007, "name": "buffIncreaseDefence" },
-                    { "id": 3040, "name": "buffDefenceUp" },
+                    {
+                      "id": 3004,
+                      "name": "buffPositiveEffect"
+                    },
+                    {
+                      "id": 3007,
+                      "name": "buffIncreaseDefence"
+                    },
+                    {
+                      "id": 3040,
+                      "name": "buffDefenceUp"
+                    },
                     {
                       "id": 3058,
                       "name": "buffIncreaseDefenceAgainstIndividuality"
@@ -64,7 +87,14 @@
                   "maxRate": 5000
                 }
               ],
-              "svals": [{ "Rate": 1000, "Turn": 1, "Count": -1, "Value": 300 }]
+              "svals": [
+                {
+                  "Rate": 1000,
+                  "Turn": 1,
+                  "Count": -1,
+                  "Value": 300
+                }
+              ]
             },
             {
               "funcId": 204,
@@ -86,9 +116,18 @@
                   "buffGroup": 0,
                   "script": {},
                   "vals": [
-                    { "id": 3004, "name": "buffPositiveEffect" },
-                    { "id": 3006, "name": "buffIncreaseDamage" },
-                    { "id": 3031, "name": "buffCritDamageUp" }
+                    {
+                      "id": 3004,
+                      "name": "buffPositiveEffect"
+                    },
+                    {
+                      "id": 3006,
+                      "name": "buffIncreaseDamage"
+                    },
+                    {
+                      "id": 3031,
+                      "name": "buffCritDamageUp"
+                    }
                   ],
                   "tvals": [],
                   "ckSelfIndv": [],
@@ -96,13 +135,29 @@
                   "maxRate": 5000
                 }
               ],
-              "svals": [{ "Rate": 1000, "Turn": 1, "Count": -1, "Value": 500 }]
+              "svals": [
+                {
+                  "Rate": 1000,
+                  "Turn": 1,
+                  "Count": -1,
+                  "Value": 500
+                }
+              ]
             }
           ]
         }
       },
-      "avals": [94032581, 0],
-      "parentAis": { "svt": [94032581, 94032582], "field": [] },
+      "avals": [
+        94032581,
+        0
+      ],
+      "parentAis": {
+        "svt": [
+          94032581,
+          94032582
+        ],
+        "field": []
+      },
       "infoText": ""
     },
     {
@@ -114,15 +169,26 @@
       "probability": 100,
       "cond": "checkPtIndividuality",
       "condNegative": true,
-      "vals": [103700],
+      "vals": [
+        103700
+      ],
       "aiAct": {
         "id": 1,
         "type": "none",
         "target": "none",
         "targetIndividuality": []
       },
-      "avals": [94032581, 0],
-      "parentAis": { "svt": [94032581, 94032582], "field": [] },
+      "avals": [
+        94032581,
+        0
+      ],
+      "parentAis": {
+        "svt": [
+          94032581,
+          94032582
+        ],
+        "field": []
+      },
       "infoText": ""
     },
     {
@@ -141,8 +207,17 @@
         "target": "none",
         "targetIndividuality": []
       },
-      "avals": [94032581, 0],
-      "parentAis": { "svt": [94032581, 94032582], "field": [] },
+      "avals": [
+        94032581,
+        0
+      ],
+      "parentAis": {
+        "svt": [
+          94032581,
+          94032582
+        ],
+        "field": []
+      },
       "infoText": ""
     }
   ],
@@ -163,8 +238,16 @@
         "target": "random",
         "targetIndividuality": []
       },
-      "avals": [94032580, 0],
-      "parentAis": { "svt": [94032580], "field": [] },
+      "avals": [
+        94032580,
+        0
+      ],
+      "parentAis": {
+        "svt": [
+          94032580
+        ],
+        "field": []
+      },
       "infoText": ""
     },
     {
@@ -176,15 +259,25 @@
       "probability": 100,
       "cond": "actcountThisturn",
       "condNegative": false,
-      "vals": [0],
+      "vals": [
+        0
+      ],
       "aiAct": {
         "id": 2,
         "type": "changeThinking",
         "target": "none",
         "targetIndividuality": []
       },
-      "avals": [94032582, 0],
-      "parentAis": { "svt": [94032580], "field": [] },
+      "avals": [
+        94032582,
+        0
+      ],
+      "parentAis": {
+        "svt": [
+          94032580
+        ],
+        "field": []
+      },
       "infoText": ""
     },
     {
@@ -203,8 +296,16 @@
         "target": "random",
         "targetIndividuality": []
       },
-      "avals": [94032580, 0],
-      "parentAis": { "svt": [94032581], "field": [] },
+      "avals": [
+        94032580,
+        0
+      ],
+      "parentAis": {
+        "svt": [
+          94032581
+        ],
+        "field": []
+      },
       "infoText": ""
     },
     {
@@ -216,7 +317,9 @@
       "probability": 30,
       "cond": "checkSelfBuff",
       "condNegative": true,
-      "vals": [144],
+      "vals": [
+        144
+      ],
       "aiAct": {
         "id": 94032213,
         "type": "skillIdCheckbuff",
@@ -230,12 +333,21 @@
           "ruby": "-",
           "type": "active",
           "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png",
-          "coolDown": [0],
+          "coolDown": [
+            0
+          ],
           "actIndividuality": [],
           "script": {},
           "extraPassive": [],
           "skillAdd": [],
-          "aiIds": { "svt": [94032582, 94032592, 94032602], "field": [] },
+          "aiIds": {
+            "svt": [
+              94032582,
+              94032592,
+              94032602
+            ],
+            "field": []
+          },
           "functions": [
             {
               "funcId": 216,
@@ -257,9 +369,18 @@
                   "buffGroup": 0,
                   "script": {},
                   "vals": [
-                    { "id": 3004, "name": "buffPositiveEffect" },
-                    { "id": 3006, "name": "buffIncreaseDamage" },
-                    { "id": 3032, "name": "buffCritRateUp" }
+                    {
+                      "id": 3004,
+                      "name": "buffPositiveEffect"
+                    },
+                    {
+                      "id": 3006,
+                      "name": "buffIncreaseDamage"
+                    },
+                    {
+                      "id": 3032,
+                      "name": "buffCritRateUp"
+                    }
                   ],
                   "tvals": [],
                   "ckSelfIndv": [],
@@ -267,7 +388,14 @@
                   "maxRate": 5000
                 }
               ],
-              "svals": [{ "Rate": 1000, "Turn": -1, "Count": 1, "Value": 300 }]
+              "svals": [
+                {
+                  "Rate": 1000,
+                  "Turn": -1,
+                  "Count": 1,
+                  "Value": 300
+                }
+              ]
             },
             {
               "funcId": 201,
@@ -289,9 +417,18 @@
                   "buffGroup": 0,
                   "script": {},
                   "vals": [
-                    { "id": 3004, "name": "buffPositiveEffect" },
-                    { "id": 3006, "name": "buffIncreaseDamage" },
-                    { "id": 3031, "name": "buffCritDamageUp" }
+                    {
+                      "id": 3004,
+                      "name": "buffPositiveEffect"
+                    },
+                    {
+                      "id": 3006,
+                      "name": "buffIncreaseDamage"
+                    },
+                    {
+                      "id": 3031,
+                      "name": "buffCritDamageUp"
+                    }
                   ],
                   "tvals": [],
                   "ckSelfIndv": [],
@@ -299,13 +436,28 @@
                   "maxRate": 5000
                 }
               ],
-              "svals": [{ "Rate": 1000, "Turn": -1, "Count": 1, "Value": 500 }]
+              "svals": [
+                {
+                  "Rate": 1000,
+                  "Turn": -1,
+                  "Count": 1,
+                  "Value": 500
+                }
+              ]
             }
           ]
         }
       },
-      "avals": [94032580, 0],
-      "parentAis": { "svt": [94032581], "field": [] },
+      "avals": [
+        94032580,
+        0
+      ],
+      "parentAis": {
+        "svt": [
+          94032581
+        ],
+        "field": []
+      },
       "infoText": ""
     },
     {
@@ -317,15 +469,25 @@
       "probability": 20,
       "cond": "checkSelfBuff",
       "condNegative": true,
-      "vals": [142],
+      "vals": [
+        142
+      ],
       "aiAct": {
         "id": 1005,
         "type": "skill1",
         "target": "random",
         "targetIndividuality": []
       },
-      "avals": [94032580, 0],
-      "parentAis": { "svt": [94032581], "field": [] },
+      "avals": [
+        94032580,
+        0
+      ],
+      "parentAis": {
+        "svt": [
+          94032581
+        ],
+        "field": []
+      },
       "infoText": ""
     },
     {
@@ -337,15 +499,30 @@
       "probability": 50,
       "cond": "checkOpponentBuffIndividuality",
       "condNegative": false,
-      "vals": [3060],
+      "vals": [
+        3060
+      ],
       "aiAct": {
         "id": 94032218,
         "type": "skill2",
         "target": "individualityActive",
-        "targetIndividuality": [{ "id": 3060, "name": "buffHpRecoveryPerTurn" }]
+        "targetIndividuality": [
+          {
+            "id": 3060,
+            "name": "buffHpRecoveryPerTurn"
+          }
+        ]
       },
-      "avals": [94032580, 0],
-      "parentAis": { "svt": [94032581], "field": [] },
+      "avals": [
+        94032580,
+        0
+      ],
+      "parentAis": {
+        "svt": [
+          94032581
+        ],
+        "field": []
+      },
       "infoText": ""
     }
   ],

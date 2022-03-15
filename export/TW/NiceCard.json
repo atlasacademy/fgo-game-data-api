@@ -11,8 +11,14 @@
       "addTdNpGauge": 0,
       "addTdCritical": 0,
       "individuality": [
-        { "id": 4001, "name": "cardArts" },
-        { "id": 4008, "name": "faceCard" }
+        {
+          "id": 4001,
+          "name": "cardArts"
+        },
+        {
+          "id": 4008,
+          "name": "faceCard"
+        }
       ]
     },
     "2": {
@@ -26,8 +32,14 @@
       "addTdNpGauge": 0,
       "addTdCritical": 0,
       "individuality": [
-        { "id": 4001, "name": "cardArts" },
-        { "id": 4008, "name": "faceCard" }
+        {
+          "id": 4001,
+          "name": "cardArts"
+        },
+        {
+          "id": 4008,
+          "name": "faceCard"
+        }
       ]
     },
     "3": {
@@ -41,8 +53,14 @@
       "addTdNpGauge": 0,
       "addTdCritical": 0,
       "individuality": [
-        { "id": 4001, "name": "cardArts" },
-        { "id": 4008, "name": "faceCard" }
+        {
+          "id": 4001,
+          "name": "cardArts"
+        },
+        {
+          "id": 4008,
+          "name": "faceCard"
+        }
       ]
     }
   },
@@ -58,8 +76,14 @@
       "addTdNpGauge": 0,
       "addTdCritical": 0,
       "individuality": [
-        { "id": 4002, "name": "cardBuster" },
-        { "id": 4008, "name": "faceCard" }
+        {
+          "id": 4002,
+          "name": "cardBuster"
+        },
+        {
+          "id": 4008,
+          "name": "faceCard"
+        }
       ]
     },
     "2": {
@@ -73,8 +97,14 @@
       "addTdNpGauge": 0,
       "addTdCritical": 0,
       "individuality": [
-        { "id": 4002, "name": "cardBuster" },
-        { "id": 4008, "name": "faceCard" }
+        {
+          "id": 4002,
+          "name": "cardBuster"
+        },
+        {
+          "id": 4008,
+          "name": "faceCard"
+        }
       ]
     },
     "3": {
@@ -88,8 +118,14 @@
       "addTdNpGauge": 0,
       "addTdCritical": 0,
       "individuality": [
-        { "id": 4002, "name": "cardBuster" },
-        { "id": 4008, "name": "faceCard" }
+        {
+          "id": 4002,
+          "name": "cardBuster"
+        },
+        {
+          "id": 4008,
+          "name": "faceCard"
+        }
       ]
     }
   },
@@ -105,8 +141,14 @@
       "addTdNpGauge": 0,
       "addTdCritical": 0,
       "individuality": [
-        { "id": 4003, "name": "cardQuick" },
-        { "id": 4008, "name": "faceCard" }
+        {
+          "id": 4003,
+          "name": "cardQuick"
+        },
+        {
+          "id": 4008,
+          "name": "faceCard"
+        }
       ]
     },
     "2": {
@@ -120,8 +162,14 @@
       "addTdNpGauge": 0,
       "addTdCritical": 0,
       "individuality": [
-        { "id": 4003, "name": "cardQuick" },
-        { "id": 4008, "name": "faceCard" }
+        {
+          "id": 4003,
+          "name": "cardQuick"
+        },
+        {
+          "id": 4008,
+          "name": "faceCard"
+        }
       ]
     },
     "3": {
@@ -135,8 +183,14 @@
       "addTdNpGauge": 0,
       "addTdCritical": 0,
       "individuality": [
-        { "id": 4003, "name": "cardQuick" },
-        { "id": 4008, "name": "faceCard" }
+        {
+          "id": 4003,
+          "name": "cardQuick"
+        },
+        {
+          "id": 4008,
+          "name": "faceCard"
+        }
       ]
     }
   },
@@ -152,8 +206,14 @@
       "addTdNpGauge": 0,
       "addTdCritical": 0,
       "individuality": [
-        { "id": 4004, "name": "cardExtra" },
-        { "id": 4008, "name": "faceCard" }
+        {
+          "id": 4004,
+          "name": "cardExtra"
+        },
+        {
+          "id": 4008,
+          "name": "faceCard"
+        }
       ]
     }
   },
@@ -182,7 +242,12 @@
       "addTdAtk": 0,
       "addTdNpGauge": 0,
       "addTdCritical": 0,
-      "individuality": [{ "id": 4005, "name": "unknown" }]
+      "individuality": [
+        {
+          "id": 4005,
+          "name": "unknown"
+        }
+      ]
     },
     "2": {
       "adjustAtk": 1000,
@@ -194,7 +259,12 @@
       "addTdAtk": 0,
       "addTdNpGauge": 0,
       "addTdCritical": 0,
-      "individuality": [{ "id": 4005, "name": "unknown" }]
+      "individuality": [
+        {
+          "id": 4005,
+          "name": "unknown"
+        }
+      ]
     },
     "3": {
       "adjustAtk": 1000,
@@ -206,7 +276,12 @@
       "addTdAtk": 0,
       "addTdNpGauge": 0,
       "addTdCritical": 0,
-      "individuality": [{ "id": 4005, "name": "unknown" }]
+      "individuality": [
+        {
+          "id": 4005,
+          "name": "unknown"
+        }
+      ]
     },
     "4": {
       "adjustAtk": 1000,
@@ -218,7 +293,12 @@
       "addTdAtk": 0,
       "addTdNpGauge": 0,
       "addTdCritical": 0,
-      "individuality": [{ "id": 4005, "name": "unknown" }]
+      "individuality": [
+        {
+          "id": 4005,
+          "name": "unknown"
+        }
+      ]
     },
     "5": {
       "adjustAtk": 1000,
@@ -230,7 +310,12 @@
       "addTdAtk": 0,
       "addTdNpGauge": 0,
       "addTdCritical": 0,
-      "individuality": [{ "id": 4005, "name": "unknown" }]
+      "individuality": [
+        {
+          "id": 4005,
+          "name": "unknown"
+        }
+      ]
     }
   },
   "strength": {
@@ -244,7 +329,12 @@
       "addTdAtk": 0,
       "addTdNpGauge": 0,
       "addTdCritical": 0,
-      "individuality": [{ "id": 4006, "name": "unknown" }]
+      "individuality": [
+        {
+          "id": 4006,
+          "name": "unknown"
+        }
+      ]
     },
     "2": {
       "adjustAtk": 1000,
@@ -256,7 +346,12 @@
       "addTdAtk": 0,
       "addTdNpGauge": 0,
       "addTdCritical": 0,
-      "individuality": [{ "id": 4006, "name": "unknown" }]
+      "individuality": [
+        {
+          "id": 4006,
+          "name": "unknown"
+        }
+      ]
     },
     "3": {
       "adjustAtk": 1000,
@@ -268,7 +363,12 @@
       "addTdAtk": 0,
       "addTdNpGauge": 0,
       "addTdCritical": 0,
-      "individuality": [{ "id": 4006, "name": "unknown" }]
+      "individuality": [
+        {
+          "id": 4006,
+          "name": "unknown"
+        }
+      ]
     },
     "4": {
       "adjustAtk": 1000,
@@ -280,7 +380,12 @@
       "addTdAtk": 0,
       "addTdNpGauge": 0,
       "addTdCritical": 0,
-      "individuality": [{ "id": 4006, "name": "unknown" }]
+      "individuality": [
+        {
+          "id": 4006,
+          "name": "unknown"
+        }
+      ]
     },
     "5": {
       "adjustAtk": 1000,
@@ -292,7 +397,12 @@
       "addTdAtk": 0,
       "addTdNpGauge": 0,
       "addTdCritical": 0,
-      "individuality": [{ "id": 4006, "name": "unknown" }]
+      "individuality": [
+        {
+          "id": 4006,
+          "name": "unknown"
+        }
+      ]
     }
   }
 }

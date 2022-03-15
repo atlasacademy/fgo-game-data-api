@@ -4,7 +4,12 @@
   "type": "eventItem",
   "uses": [],
   "detail": "At the 'Master Recruitment Campaign Exchange' of the Da Vinci Workshop, you can use this item to exchange for 1 out of the 10 available Servants.",
-  "individuality": [{ "id": 10041, "name": "unknown" }],
+  "individuality": [
+    {
+      "id": 10041,
+      "name": "unknown"
+    }
+  ],
   "icon": "https://assets.atlasacademy.io/GameData/NA/Items/8008.png",
   "background": "silver",
   "priority": 94000201,

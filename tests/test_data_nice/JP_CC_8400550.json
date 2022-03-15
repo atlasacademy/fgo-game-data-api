@@ -24,7 +24,9 @@
       "unmodifiedDetail": "刻印されたカードによる攻撃時に、自身のHPを1000回復(1度使用すると再使用に3ターン必要)",
       "type": "passive",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00600.png",
-      "coolDown": [3],
+      "coolDown": [
+        3
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],

@@ -48,13 +48,36 @@
           "imagePriority": 10000
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
-      "mstGift": [
-        { "id": 320300, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
-        { "id": 320300, "type": 2, "objectId": 6538, "priority": 0, "num": 1 }
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
       ],
-      "phases": [1, 2],
-      "phasesWithEnemies": [1, 2],
+      "mstGift": [
+        {
+          "id": 320300,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        },
+        {
+          "id": 320300,
+          "type": 2,
+          "objectId": 6538,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "phases": [
+        1,
+        2
+      ],
+      "phasesWithEnemies": [
+        1,
+        2
+      ],
       "phasesNoBattle": [],
       "allScripts": [
         {

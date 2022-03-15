@@ -53,16 +53,35 @@
       "imagePriority": 10000
     }
   ],
-  "mstClosedMessage": [{ "id": 0, "message": "" }],
-  "mstGift": [
-    { "id": 12000, "type": 2, "objectId": 100, "priority": 0, "num": 1 }
+  "mstClosedMessage": [
+    {
+      "id": 0,
+      "message": ""
+    }
   ],
-  "phases": [1],
+  "mstGift": [
+    {
+      "id": 12000,
+      "type": 2,
+      "objectId": 100,
+      "priority": 0,
+      "num": 1
+    }
+  ],
+  "phases": [
+    1
+  ],
   "phasesWithEnemies": [],
   "allScripts": [],
   "mstQuestPhase": {
-    "classIds": [2, 7],
-    "individuality": [2392, 94000075],
+    "classIds": [
+      2,
+      7
+    ],
+    "individuality": [
+      2392,
+      94000075
+    ],
     "script": {},
     "questId": 94025012,
     "phase": 1,
@@ -78,7 +97,10 @@
   "scripts": [],
   "mstStage": [
     {
-      "npcDeckIds": [94025034, 1000],
+      "npcDeckIds": [
+        94025034,
+        1000
+      ],
       "script": {},
       "questId": 94025012,
       "questPhase": 1,
@@ -88,7 +110,10 @@
       "startEffectId": 1
     },
     {
-      "npcDeckIds": [94025035, 1000],
+      "npcDeckIds": [
+        94025035,
+        1000
+      ],
       "script": {},
       "questId": 94025012,
       "questPhase": 1,
@@ -98,7 +123,10 @@
       "startEffectId": 1
     },
     {
-      "npcDeckIds": [94025036, 1000],
+      "npcDeckIds": [
+        94025036,
+        1000
+      ],
       "script": {},
       "questId": 94025012,
       "questPhase": 1,

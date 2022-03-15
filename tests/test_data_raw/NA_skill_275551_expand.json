@@ -37,15 +37,23 @@
   "mstCommonRelease": [],
   "mstSkillLv": [
     {
-      "funcId": [358, 200],
+      "funcId": [
+        358,
+        200
+      ],
       "expandedFuncId": [
         {
           "mstFunc": {
-            "vals": [181],
+            "vals": [
+              181
+            ],
             "expandedVals": [
               {
                 "mstBuff": {
-                  "vals": [3004, 3023],
+                  "vals": [
+                    3004,
+                    3023
+                  ],
                   "tvals": [],
                   "ckSelfIndv": [],
                   "ckOpIndv": [],
@@ -62,7 +70,9 @@
             ],
             "tvals": [],
             "questTvals": [],
-            "effectList": [328],
+            "effectList": [
+              328
+            ],
             "popupTextColor": 1,
             "id": 358,
             "cond": 0,
@@ -76,11 +86,17 @@
         },
         {
           "mstFunc": {
-            "vals": [142],
+            "vals": [
+              142
+            ],
             "expandedVals": [
               {
                 "mstBuff": {
-                  "vals": [3004, 3006, 3031],
+                  "vals": [
+                    3004,
+                    3006,
+                    3031
+                  ],
                   "tvals": [],
                   "ckSelfIndv": [],
                   "ckOpIndv": [],
@@ -97,7 +113,9 @@
             ],
             "tvals": [],
             "questTvals": [],
-            "effectList": [331],
+            "effectList": [
+              331
+            ],
             "popupTextColor": 2,
             "id": 200,
             "cond": 0,
@@ -110,7 +128,10 @@
           "mstFuncGroup": []
         }
       ],
-      "svals": ["[1000,1,-1,1000]", "[1000,1,-1,300]"],
+      "svals": [
+        "[1000,1,-1,1000]",
+        "[1000,1,-1,300]"
+      ],
       "script": {},
       "skillId": 275551,
       "lv": 1,
@@ -119,15 +140,23 @@
       "priority": 0
     },
     {
-      "funcId": [358, 200],
+      "funcId": [
+        358,
+        200
+      ],
       "expandedFuncId": [
         {
           "mstFunc": {
-            "vals": [181],
+            "vals": [
+              181
+            ],
             "expandedVals": [
               {
                 "mstBuff": {
-                  "vals": [3004, 3023],
+                  "vals": [
+                    3004,
+                    3023
+                  ],
                   "tvals": [],
                   "ckSelfIndv": [],
                   "ckOpIndv": [],
@@ -144,7 +173,9 @@
             ],
             "tvals": [],
             "questTvals": [],
-            "effectList": [328],
+            "effectList": [
+              328
+            ],
             "popupTextColor": 1,
             "id": 358,
             "cond": 0,
@@ -158,11 +189,17 @@
         },
         {
           "mstFunc": {
-            "vals": [142],
+            "vals": [
+              142
+            ],
             "expandedVals": [
               {
                 "mstBuff": {
-                  "vals": [3004, 3006, 3031],
+                  "vals": [
+                    3004,
+                    3006,
+                    3031
+                  ],
                   "tvals": [],
                   "ckSelfIndv": [],
                   "ckOpIndv": [],
@@ -179,7 +216,9 @@
             ],
             "tvals": [],
             "questTvals": [],
-            "effectList": [331],
+            "effectList": [
+              331
+            ],
             "popupTextColor": 2,
             "id": 200,
             "cond": 0,
@@ -192,7 +231,10 @@
           "mstFuncGroup": []
         }
       ],
-      "svals": ["[1000,1,-1,1200]", "[1000,1,-1,320]"],
+      "svals": [
+        "[1000,1,-1,1200]",
+        "[1000,1,-1,320]"
+      ],
       "script": {},
       "skillId": 275551,
       "lv": 2,
@@ -201,15 +243,23 @@
       "priority": 0
     },
     {
-      "funcId": [358, 200],
+      "funcId": [
+        358,
+        200
+      ],
       "expandedFuncId": [
         {
           "mstFunc": {
-            "vals": [181],
+            "vals": [
+              181
+            ],
             "expandedVals": [
               {
                 "mstBuff": {
-                  "vals": [3004, 3023],
+                  "vals": [
+                    3004,
+                    3023
+                  ],
                   "tvals": [],
                   "ckSelfIndv": [],
                   "ckOpIndv": [],
@@ -226,7 +276,9 @@
             ],
             "tvals": [],
             "questTvals": [],
-            "effectList": [328],
+            "effectList": [
+              328
+            ],
             "popupTextColor": 1,
             "id": 358,
             "cond": 0,
@@ -240,11 +292,17 @@
         },
         {
           "mstFunc": {
-            "vals": [142],
+            "vals": [
+              142
+            ],
             "expandedVals": [
               {
                 "mstBuff": {
-                  "vals": [3004, 3006, 3031],
+                  "vals": [
+                    3004,
+                    3006,
+                    3031
+                  ],
                   "tvals": [],
                   "ckSelfIndv": [],
                   "ckOpIndv": [],
@@ -261,7 +319,9 @@
             ],
             "tvals": [],
             "questTvals": [],
-            "effectList": [331],
+            "effectList": [
+              331
+            ],
             "popupTextColor": 2,
             "id": 200,
             "cond": 0,
@@ -274,7 +334,10 @@
           "mstFuncGroup": []
         }
       ],
-      "svals": ["[1000,1,-1,1400]", "[1000,1,-1,340]"],
+      "svals": [
+        "[1000,1,-1,1400]",
+        "[1000,1,-1,340]"
+      ],
       "script": {},
       "skillId": 275551,
       "lv": 3,
@@ -283,15 +346,23 @@
       "priority": 0
     },
     {
-      "funcId": [358, 200],
+      "funcId": [
+        358,
+        200
+      ],
       "expandedFuncId": [
         {
           "mstFunc": {
-            "vals": [181],
+            "vals": [
+              181
+            ],
             "expandedVals": [
               {
                 "mstBuff": {
-                  "vals": [3004, 3023],
+                  "vals": [
+                    3004,
+                    3023
+                  ],
                   "tvals": [],
                   "ckSelfIndv": [],
                   "ckOpIndv": [],
@@ -308,7 +379,9 @@
             ],
             "tvals": [],
             "questTvals": [],
-            "effectList": [328],
+            "effectList": [
+              328
+            ],
             "popupTextColor": 1,
             "id": 358,
             "cond": 0,
@@ -322,11 +395,17 @@
         },
         {
           "mstFunc": {
-            "vals": [142],
+            "vals": [
+              142
+            ],
             "expandedVals": [
               {
                 "mstBuff": {
-                  "vals": [3004, 3006, 3031],
+                  "vals": [
+                    3004,
+                    3006,
+                    3031
+                  ],
                   "tvals": [],
                   "ckSelfIndv": [],
                   "ckOpIndv": [],
@@ -343,7 +422,9 @@
             ],
             "tvals": [],
             "questTvals": [],
-            "effectList": [331],
+            "effectList": [
+              331
+            ],
             "popupTextColor": 2,
             "id": 200,
             "cond": 0,
@@ -356,7 +437,10 @@
           "mstFuncGroup": []
         }
       ],
-      "svals": ["[1000,1,-1,1600]", "[1000,1,-1,360]"],
+      "svals": [
+        "[1000,1,-1,1600]",
+        "[1000,1,-1,360]"
+      ],
       "script": {},
       "skillId": 275551,
       "lv": 4,
@@ -365,15 +449,23 @@
       "priority": 0
     },
     {
-      "funcId": [358, 200],
+      "funcId": [
+        358,
+        200
+      ],
       "expandedFuncId": [
         {
           "mstFunc": {
-            "vals": [181],
+            "vals": [
+              181
+            ],
             "expandedVals": [
               {
                 "mstBuff": {
-                  "vals": [3004, 3023],
+                  "vals": [
+                    3004,
+                    3023
+                  ],
                   "tvals": [],
                   "ckSelfIndv": [],
                   "ckOpIndv": [],
@@ -390,7 +482,9 @@
             ],
             "tvals": [],
             "questTvals": [],
-            "effectList": [328],
+            "effectList": [
+              328
+            ],
             "popupTextColor": 1,
             "id": 358,
             "cond": 0,
@@ -404,11 +498,17 @@
         },
         {
           "mstFunc": {
-            "vals": [142],
+            "vals": [
+              142
+            ],
             "expandedVals": [
               {
                 "mstBuff": {
-                  "vals": [3004, 3006, 3031],
+                  "vals": [
+                    3004,
+                    3006,
+                    3031
+                  ],
                   "tvals": [],
                   "ckSelfIndv": [],
                   "ckOpIndv": [],
@@ -425,7 +525,9 @@
             ],
             "tvals": [],
             "questTvals": [],
-            "effectList": [331],
+            "effectList": [
+              331
+            ],
             "popupTextColor": 2,
             "id": 200,
             "cond": 0,
@@ -438,7 +540,10 @@
           "mstFuncGroup": []
         }
       ],
-      "svals": ["[1000,1,-1,1800]", "[1000,1,-1,380]"],
+      "svals": [
+        "[1000,1,-1,1800]",
+        "[1000,1,-1,380]"
+      ],
       "script": {},
       "skillId": 275551,
       "lv": 5,
@@ -447,15 +552,23 @@
       "priority": 0
     },
     {
-      "funcId": [358, 200],
+      "funcId": [
+        358,
+        200
+      ],
       "expandedFuncId": [
         {
           "mstFunc": {
-            "vals": [181],
+            "vals": [
+              181
+            ],
             "expandedVals": [
               {
                 "mstBuff": {
-                  "vals": [3004, 3023],
+                  "vals": [
+                    3004,
+                    3023
+                  ],
                   "tvals": [],
                   "ckSelfIndv": [],
                   "ckOpIndv": [],
@@ -472,7 +585,9 @@
             ],
             "tvals": [],
             "questTvals": [],
-            "effectList": [328],
+            "effectList": [
+              328
+            ],
             "popupTextColor": 1,
             "id": 358,
             "cond": 0,
@@ -486,11 +601,17 @@
         },
         {
           "mstFunc": {
-            "vals": [142],
+            "vals": [
+              142
+            ],
             "expandedVals": [
               {
                 "mstBuff": {
-                  "vals": [3004, 3006, 3031],
+                  "vals": [
+                    3004,
+                    3006,
+                    3031
+                  ],
                   "tvals": [],
                   "ckSelfIndv": [],
                   "ckOpIndv": [],
@@ -507,7 +628,9 @@
             ],
             "tvals": [],
             "questTvals": [],
-            "effectList": [331],
+            "effectList": [
+              331
+            ],
             "popupTextColor": 2,
             "id": 200,
             "cond": 0,
@@ -520,7 +643,10 @@
           "mstFuncGroup": []
         }
       ],
-      "svals": ["[1000,1,-1,2000]", "[1000,1,-1,400]"],
+      "svals": [
+        "[1000,1,-1,2000]",
+        "[1000,1,-1,400]"
+      ],
       "script": {},
       "skillId": 275551,
       "lv": 6,
@@ -529,15 +655,23 @@
       "priority": 0
     },
     {
-      "funcId": [358, 200],
+      "funcId": [
+        358,
+        200
+      ],
       "expandedFuncId": [
         {
           "mstFunc": {
-            "vals": [181],
+            "vals": [
+              181
+            ],
             "expandedVals": [
               {
                 "mstBuff": {
-                  "vals": [3004, 3023],
+                  "vals": [
+                    3004,
+                    3023
+                  ],
                   "tvals": [],
                   "ckSelfIndv": [],
                   "ckOpIndv": [],
@@ -554,7 +688,9 @@
             ],
             "tvals": [],
             "questTvals": [],
-            "effectList": [328],
+            "effectList": [
+              328
+            ],
             "popupTextColor": 1,
             "id": 358,
             "cond": 0,
@@ -568,11 +704,17 @@
         },
         {
           "mstFunc": {
-            "vals": [142],
+            "vals": [
+              142
+            ],
             "expandedVals": [
               {
                 "mstBuff": {
-                  "vals": [3004, 3006, 3031],
+                  "vals": [
+                    3004,
+                    3006,
+                    3031
+                  ],
                   "tvals": [],
                   "ckSelfIndv": [],
                   "ckOpIndv": [],
@@ -589,7 +731,9 @@
             ],
             "tvals": [],
             "questTvals": [],
-            "effectList": [331],
+            "effectList": [
+              331
+            ],
             "popupTextColor": 2,
             "id": 200,
             "cond": 0,
@@ -602,7 +746,10 @@
           "mstFuncGroup": []
         }
       ],
-      "svals": ["[1000,1,-1,2200]", "[1000,1,-1,420]"],
+      "svals": [
+        "[1000,1,-1,2200]",
+        "[1000,1,-1,420]"
+      ],
       "script": {},
       "skillId": 275551,
       "lv": 7,
@@ -611,15 +758,23 @@
       "priority": 0
     },
     {
-      "funcId": [358, 200],
+      "funcId": [
+        358,
+        200
+      ],
       "expandedFuncId": [
         {
           "mstFunc": {
-            "vals": [181],
+            "vals": [
+              181
+            ],
             "expandedVals": [
               {
                 "mstBuff": {
-                  "vals": [3004, 3023],
+                  "vals": [
+                    3004,
+                    3023
+                  ],
                   "tvals": [],
                   "ckSelfIndv": [],
                   "ckOpIndv": [],
@@ -636,7 +791,9 @@
             ],
             "tvals": [],
             "questTvals": [],
-            "effectList": [328],
+            "effectList": [
+              328
+            ],
             "popupTextColor": 1,
             "id": 358,
             "cond": 0,
@@ -650,11 +807,17 @@
         },
         {
           "mstFunc": {
-            "vals": [142],
+            "vals": [
+              142
+            ],
             "expandedVals": [
               {
                 "mstBuff": {
-                  "vals": [3004, 3006, 3031],
+                  "vals": [
+                    3004,
+                    3006,
+                    3031
+                  ],
                   "tvals": [],
                   "ckSelfIndv": [],
                   "ckOpIndv": [],
@@ -671,7 +834,9 @@
             ],
             "tvals": [],
             "questTvals": [],
-            "effectList": [331],
+            "effectList": [
+              331
+            ],
             "popupTextColor": 2,
             "id": 200,
             "cond": 0,
@@ -684,7 +849,10 @@
           "mstFuncGroup": []
         }
       ],
-      "svals": ["[1000,1,-1,2400]", "[1000,1,-1,440]"],
+      "svals": [
+        "[1000,1,-1,2400]",
+        "[1000,1,-1,440]"
+      ],
       "script": {},
       "skillId": 275551,
       "lv": 8,
@@ -693,15 +861,23 @@
       "priority": 0
     },
     {
-      "funcId": [358, 200],
+      "funcId": [
+        358,
+        200
+      ],
       "expandedFuncId": [
         {
           "mstFunc": {
-            "vals": [181],
+            "vals": [
+              181
+            ],
             "expandedVals": [
               {
                 "mstBuff": {
-                  "vals": [3004, 3023],
+                  "vals": [
+                    3004,
+                    3023
+                  ],
                   "tvals": [],
                   "ckSelfIndv": [],
                   "ckOpIndv": [],
@@ -718,7 +894,9 @@
             ],
             "tvals": [],
             "questTvals": [],
-            "effectList": [328],
+            "effectList": [
+              328
+            ],
             "popupTextColor": 1,
             "id": 358,
             "cond": 0,
@@ -732,11 +910,17 @@
         },
         {
           "mstFunc": {
-            "vals": [142],
+            "vals": [
+              142
+            ],
             "expandedVals": [
               {
                 "mstBuff": {
-                  "vals": [3004, 3006, 3031],
+                  "vals": [
+                    3004,
+                    3006,
+                    3031
+                  ],
                   "tvals": [],
                   "ckSelfIndv": [],
                   "ckOpIndv": [],
@@ -753,7 +937,9 @@
             ],
             "tvals": [],
             "questTvals": [],
-            "effectList": [331],
+            "effectList": [
+              331
+            ],
             "popupTextColor": 2,
             "id": 200,
             "cond": 0,
@@ -766,7 +952,10 @@
           "mstFuncGroup": []
         }
       ],
-      "svals": ["[1000,1,-1,2600]", "[1000,1,-1,460]"],
+      "svals": [
+        "[1000,1,-1,2600]",
+        "[1000,1,-1,460]"
+      ],
       "script": {},
       "skillId": 275551,
       "lv": 9,
@@ -775,15 +964,23 @@
       "priority": 0
     },
     {
-      "funcId": [358, 200],
+      "funcId": [
+        358,
+        200
+      ],
       "expandedFuncId": [
         {
           "mstFunc": {
-            "vals": [181],
+            "vals": [
+              181
+            ],
             "expandedVals": [
               {
                 "mstBuff": {
-                  "vals": [3004, 3023],
+                  "vals": [
+                    3004,
+                    3023
+                  ],
                   "tvals": [],
                   "ckSelfIndv": [],
                   "ckOpIndv": [],
@@ -800,7 +997,9 @@
             ],
             "tvals": [],
             "questTvals": [],
-            "effectList": [328],
+            "effectList": [
+              328
+            ],
             "popupTextColor": 1,
             "id": 358,
             "cond": 0,
@@ -814,11 +1013,17 @@
         },
         {
           "mstFunc": {
-            "vals": [142],
+            "vals": [
+              142
+            ],
             "expandedVals": [
               {
                 "mstBuff": {
-                  "vals": [3004, 3006, 3031],
+                  "vals": [
+                    3004,
+                    3006,
+                    3031
+                  ],
                   "tvals": [],
                   "ckSelfIndv": [],
                   "ckOpIndv": [],
@@ -835,7 +1040,9 @@
             ],
             "tvals": [],
             "questTvals": [],
-            "effectList": [331],
+            "effectList": [
+              331
+            ],
             "popupTextColor": 2,
             "id": 200,
             "cond": 0,
@@ -848,7 +1055,10 @@
           "mstFuncGroup": []
         }
       ],
-      "svals": ["[1000,1,-1,3000]", "[1000,1,-1,500]"],
+      "svals": [
+        "[1000,1,-1,3000]",
+        "[1000,1,-1,500]"
+      ],
       "script": {},
       "skillId": 275551,
       "lv": 10,

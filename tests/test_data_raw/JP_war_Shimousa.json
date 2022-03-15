@@ -1,6 +1,12 @@
 {
   "mstWar": {
-    "coordinates": [[35.9748, 138.94534], []],
+    "coordinates": [
+      [
+        35.9748,
+        138.94534
+      ],
+      []
+    ],
     "id": 201,
     "age": "AD:1999",
     "name": "亜種特異点Ⅰ",
@@ -54,7 +60,10 @@
   ],
   "mstMap": [
     {
-      "script": { "firstEffectTime": 3000, "firstEffectType": "fadeIn" },
+      "script": {
+        "firstEffectTime": 3000,
+        "firstEffectType": "fadeIn"
+      },
       "id": 201,
       "warId": 201,
       "mapImageId": 201,
@@ -685,7 +694,12 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
+      ],
       "mstGift": [
         {
           "id": 315100,
@@ -694,12 +708,34 @@
           "priority": 0,
           "num": 2
         },
-        { "id": 315100, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
-        { "id": 315100, "type": 2, "objectId": 46, "priority": 0, "num": 1 },
-        { "id": 315100, "type": 2, "objectId": 6530, "priority": 0, "num": 1 }
+        {
+          "id": 315100,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        },
+        {
+          "id": 315100,
+          "type": 2,
+          "objectId": 46,
+          "priority": 0,
+          "num": 1
+        },
+        {
+          "id": 315100,
+          "type": 2,
+          "objectId": 6530,
+          "priority": 0,
+          "num": 1
+        }
       ],
-      "phases": [1],
-      "phasesWithEnemies": [1],
+      "phases": [
+        1
+      ],
+      "phasesWithEnemies": [
+        1
+      ],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -773,7 +809,12 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
+      ],
       "mstGift": [
         {
           "id": 315101,
@@ -782,12 +823,34 @@
           "priority": 0,
           "num": 2
         },
-        { "id": 315101, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
-        { "id": 315101, "type": 2, "objectId": 46, "priority": 0, "num": 1 },
-        { "id": 315101, "type": 2, "objectId": 6530, "priority": 0, "num": 1 }
+        {
+          "id": 315101,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        },
+        {
+          "id": 315101,
+          "type": 2,
+          "objectId": 46,
+          "priority": 0,
+          "num": 1
+        },
+        {
+          "id": 315101,
+          "type": 2,
+          "objectId": 6530,
+          "priority": 0,
+          "num": 1
+        }
       ],
-      "phases": [1],
-      "phasesWithEnemies": [1],
+      "phases": [
+        1
+      ],
+      "phasesWithEnemies": [
+        1
+      ],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -859,7 +922,12 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
+      ],
       "mstGift": [
         {
           "id": 315102,
@@ -868,12 +936,34 @@
           "priority": 0,
           "num": 2
         },
-        { "id": 315102, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
-        { "id": 315102, "type": 2, "objectId": 46, "priority": 0, "num": 2 },
-        { "id": 315102, "type": 2, "objectId": 6507, "priority": 0, "num": 2 }
+        {
+          "id": 315102,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        },
+        {
+          "id": 315102,
+          "type": 2,
+          "objectId": 46,
+          "priority": 0,
+          "num": 2
+        },
+        {
+          "id": 315102,
+          "type": 2,
+          "objectId": 6507,
+          "priority": 0,
+          "num": 2
+        }
       ],
-      "phases": [1],
-      "phasesWithEnemies": [1],
+      "phases": [
+        1
+      ],
+      "phasesWithEnemies": [
+        1
+      ],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -936,7 +1026,12 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
+      ],
       "mstGift": [
         {
           "id": 315103,
@@ -945,13 +1040,38 @@
           "priority": 0,
           "num": 2
         },
-        { "id": 315103, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
-        { "id": 315103, "type": 2, "objectId": 46, "priority": 0, "num": 1 },
-        { "id": 315103, "type": 2, "objectId": 6530, "priority": 0, "num": 1 }
+        {
+          "id": 315103,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        },
+        {
+          "id": 315103,
+          "type": 2,
+          "objectId": 46,
+          "priority": 0,
+          "num": 1
+        },
+        {
+          "id": 315103,
+          "type": 2,
+          "objectId": 6530,
+          "priority": 0,
+          "num": 1
+        }
       ],
-      "phases": [1, 2],
-      "phasesWithEnemies": [2],
-      "phasesNoBattle": [1],
+      "phases": [
+        1,
+        2
+      ],
+      "phasesWithEnemies": [
+        2
+      ],
+      "phasesNoBattle": [
+        1
+      ],
       "allScripts": [
         {
           "scriptFileName": "0200010410",
@@ -1019,7 +1139,12 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
+      ],
       "mstGift": [
         {
           "id": 315104,
@@ -1028,12 +1153,34 @@
           "priority": 0,
           "num": 2
         },
-        { "id": 315104, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
-        { "id": 315104, "type": 2, "objectId": 46, "priority": 0, "num": 1 },
-        { "id": 315104, "type": 2, "objectId": 6530, "priority": 0, "num": 1 }
+        {
+          "id": 315104,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        },
+        {
+          "id": 315104,
+          "type": 2,
+          "objectId": 46,
+          "priority": 0,
+          "num": 1
+        },
+        {
+          "id": 315104,
+          "type": 2,
+          "objectId": 6530,
+          "priority": 0,
+          "num": 1
+        }
       ],
-      "phases": [1],
-      "phasesWithEnemies": [1],
+      "phases": [
+        1
+      ],
+      "phasesWithEnemies": [
+        1
+      ],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1053,7 +1200,10 @@
     {
       "mstQuest": {
         "beforeActionVals": [],
-        "afterActionVals": ["300", "20104"],
+        "afterActionVals": [
+          "300",
+          "20104"
+        ],
         "id": 2000106,
         "name": "包囲網ウルフ",
         "nameRuby": "",
@@ -1096,7 +1246,12 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
+      ],
       "mstGift": [
         {
           "id": 315105,
@@ -1105,12 +1260,36 @@
           "priority": 0,
           "num": 2
         },
-        { "id": 315105, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
-        { "id": 315105, "type": 2, "objectId": 46, "priority": 0, "num": 2 },
-        { "id": 315105, "type": 2, "objectId": 6507, "priority": 0, "num": 2 }
+        {
+          "id": 315105,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        },
+        {
+          "id": 315105,
+          "type": 2,
+          "objectId": 46,
+          "priority": 0,
+          "num": 2
+        },
+        {
+          "id": 315105,
+          "type": 2,
+          "objectId": 6507,
+          "priority": 0,
+          "num": 2
+        }
       ],
-      "phases": [1, 2],
-      "phasesWithEnemies": [1, 2],
+      "phases": [
+        1,
+        2
+      ],
+      "phasesWithEnemies": [
+        1,
+        2
+      ],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1188,7 +1367,12 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
+      ],
       "mstGift": [
         {
           "id": 315106,
@@ -1197,12 +1381,34 @@
           "priority": 0,
           "num": 2
         },
-        { "id": 315106, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
-        { "id": 315106, "type": 2, "objectId": 46, "priority": 0, "num": 2 },
-        { "id": 315106, "type": 2, "objectId": 6510, "priority": 0, "num": 2 }
+        {
+          "id": 315106,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        },
+        {
+          "id": 315106,
+          "type": 2,
+          "objectId": 46,
+          "priority": 0,
+          "num": 2
+        },
+        {
+          "id": 315106,
+          "type": 2,
+          "objectId": 6510,
+          "priority": 0,
+          "num": 2
+        }
       ],
-      "phases": [1],
-      "phasesWithEnemies": [1],
+      "phases": [
+        1
+      ],
+      "phasesWithEnemies": [
+        1
+      ],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1222,7 +1428,10 @@
     {
       "mstQuest": {
         "beforeActionVals": [],
-        "afterActionVals": ["300", "20104"],
+        "afterActionVals": [
+          "300",
+          "20104"
+        ],
         "id": 2000108,
         "name": "女帝クリスティーヌ",
         "nameRuby": "",
@@ -1265,7 +1474,12 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
+      ],
       "mstGift": [
         {
           "id": 315107,
@@ -1274,12 +1488,36 @@
           "priority": 0,
           "num": 2
         },
-        { "id": 315107, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
-        { "id": 315107, "type": 2, "objectId": 46, "priority": 0, "num": 2 },
-        { "id": 315107, "type": 2, "objectId": 6510, "priority": 0, "num": 2 }
+        {
+          "id": 315107,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        },
+        {
+          "id": 315107,
+          "type": 2,
+          "objectId": 46,
+          "priority": 0,
+          "num": 2
+        },
+        {
+          "id": 315107,
+          "type": 2,
+          "objectId": 6510,
+          "priority": 0,
+          "num": 2
+        }
       ],
-      "phases": [1, 2],
-      "phasesWithEnemies": [1, 2],
+      "phases": [
+        1,
+        2
+      ],
+      "phasesWithEnemies": [
+        1,
+        2
+      ],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1348,7 +1586,12 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
+      ],
       "mstGift": [
         {
           "id": 315108,
@@ -1357,12 +1600,36 @@
           "priority": 0,
           "num": 2
         },
-        { "id": 315108, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
-        { "id": 315108, "type": 2, "objectId": 46, "priority": 0, "num": 2 },
-        { "id": 315108, "type": 2, "objectId": 6530, "priority": 0, "num": 2 }
+        {
+          "id": 315108,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        },
+        {
+          "id": 315108,
+          "type": 2,
+          "objectId": 46,
+          "priority": 0,
+          "num": 2
+        },
+        {
+          "id": 315108,
+          "type": 2,
+          "objectId": 6530,
+          "priority": 0,
+          "num": 2
+        }
       ],
-      "phases": [1, 2],
-      "phasesWithEnemies": [1, 2],
+      "phases": [
+        1,
+        2
+      ],
+      "phasesWithEnemies": [
+        1,
+        2
+      ],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1388,7 +1655,10 @@
     {
       "mstQuest": {
         "beforeActionVals": [],
-        "afterActionVals": ["300", "20104"],
+        "afterActionVals": [
+          "300",
+          "20104"
+        ],
         "id": 2000110,
         "name": "監獄グレートエスケープ",
         "nameRuby": "",
@@ -1431,7 +1701,12 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
+      ],
       "mstGift": [
         {
           "id": 315109,
@@ -1440,12 +1715,36 @@
           "priority": 0,
           "num": 2
         },
-        { "id": 315109, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
-        { "id": 315109, "type": 2, "objectId": 46, "priority": 0, "num": 2 },
-        { "id": 315109, "type": 2, "objectId": 6530, "priority": 0, "num": 2 }
+        {
+          "id": 315109,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        },
+        {
+          "id": 315109,
+          "type": 2,
+          "objectId": 46,
+          "priority": 0,
+          "num": 2
+        },
+        {
+          "id": 315109,
+          "type": 2,
+          "objectId": 6530,
+          "priority": 0,
+          "num": 2
+        }
       ],
-      "phases": [1, 2],
-      "phasesWithEnemies": [1, 2],
+      "phases": [
+        1,
+        2
+      ],
+      "phasesWithEnemies": [
+        1,
+        2
+      ],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1523,7 +1822,12 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
+      ],
       "mstGift": [
         {
           "id": 315110,
@@ -1532,12 +1836,34 @@
           "priority": 0,
           "num": 2
         },
-        { "id": 315110, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
-        { "id": 315110, "type": 2, "objectId": 46, "priority": 0, "num": 2 },
-        { "id": 315110, "type": 2, "objectId": 6530, "priority": 0, "num": 2 }
+        {
+          "id": 315110,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        },
+        {
+          "id": 315110,
+          "type": 2,
+          "objectId": 46,
+          "priority": 0,
+          "num": 2
+        },
+        {
+          "id": 315110,
+          "type": 2,
+          "objectId": 6530,
+          "priority": 0,
+          "num": 2
+        }
       ],
-      "phases": [1],
-      "phasesWithEnemies": [1],
+      "phases": [
+        1
+      ],
+      "phasesWithEnemies": [
+        1
+      ],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1600,7 +1926,12 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
+      ],
       "mstGift": [
         {
           "id": 315111,
@@ -1609,12 +1940,38 @@
           "priority": 0,
           "num": 3
         },
-        { "id": 315111, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
-        { "id": 315111, "type": 2, "objectId": 46, "priority": 0, "num": 3 },
-        { "id": 315111, "type": 2, "objectId": 6530, "priority": 0, "num": 3 }
+        {
+          "id": 315111,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        },
+        {
+          "id": 315111,
+          "type": 2,
+          "objectId": 46,
+          "priority": 0,
+          "num": 3
+        },
+        {
+          "id": 315111,
+          "type": 2,
+          "objectId": 6530,
+          "priority": 0,
+          "num": 3
+        }
       ],
-      "phases": [1, 2, 3],
-      "phasesWithEnemies": [1, 2, 3],
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "phasesWithEnemies": [
+        1,
+        2,
+        3
+      ],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1646,7 +2003,12 @@
     {
       "mstQuest": {
         "beforeActionVals": [],
-        "afterActionVals": ["300", "20103", "510", "20103"],
+        "afterActionVals": [
+          "300",
+          "20103",
+          "510",
+          "20103"
+        ],
         "id": 2000113,
         "name": "狼王リターン",
         "nameRuby": "",
@@ -1689,7 +2051,12 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
+      ],
       "mstGift": [
         {
           "id": 315112,
@@ -1698,12 +2065,34 @@
           "priority": 0,
           "num": 2
         },
-        { "id": 315112, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
-        { "id": 315112, "type": 2, "objectId": 46, "priority": 0, "num": 2 },
-        { "id": 315112, "type": 2, "objectId": 6507, "priority": 0, "num": 2 }
+        {
+          "id": 315112,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        },
+        {
+          "id": 315112,
+          "type": 2,
+          "objectId": 46,
+          "priority": 0,
+          "num": 2
+        },
+        {
+          "id": 315112,
+          "type": 2,
+          "objectId": 6507,
+          "priority": 0,
+          "num": 2
+        }
       ],
-      "phases": [1],
-      "phasesWithEnemies": [1],
+      "phases": [
+        1
+      ],
+      "phasesWithEnemies": [
+        1
+      ],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1723,7 +2112,12 @@
     {
       "mstQuest": {
         "beforeActionVals": [],
-        "afterActionVals": ["300", "20104", "510", "20104"],
+        "afterActionVals": [
+          "300",
+          "20104",
+          "510",
+          "20104"
+        ],
         "id": 2000114,
         "name": "懐郷ホームシック",
         "nameRuby": "",
@@ -1766,7 +2160,12 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
+      ],
       "mstGift": [
         {
           "id": 315113,
@@ -1775,12 +2174,34 @@
           "priority": 0,
           "num": 2
         },
-        { "id": 315113, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
-        { "id": 315113, "type": 2, "objectId": 46, "priority": 0, "num": 2 },
-        { "id": 315113, "type": 2, "objectId": 6507, "priority": 0, "num": 2 }
+        {
+          "id": 315113,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        },
+        {
+          "id": 315113,
+          "type": 2,
+          "objectId": 46,
+          "priority": 0,
+          "num": 2
+        },
+        {
+          "id": 315113,
+          "type": 2,
+          "objectId": 6507,
+          "priority": 0,
+          "num": 2
+        }
       ],
-      "phases": [1],
-      "phasesWithEnemies": [1],
+      "phases": [
+        1
+      ],
+      "phasesWithEnemies": [
+        1
+      ],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1858,7 +2279,12 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
+      ],
       "mstGift": [
         {
           "id": 315114,
@@ -1867,12 +2293,34 @@
           "priority": 0,
           "num": 3
         },
-        { "id": 315114, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
-        { "id": 315114, "type": 2, "objectId": 46, "priority": 0, "num": 3 },
-        { "id": 315114, "type": 2, "objectId": 6530, "priority": 0, "num": 3 }
+        {
+          "id": 315114,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        },
+        {
+          "id": 315114,
+          "type": 2,
+          "objectId": 46,
+          "priority": 0,
+          "num": 3
+        },
+        {
+          "id": 315114,
+          "type": 2,
+          "objectId": 6530,
+          "priority": 0,
+          "num": 3
+        }
       ],
-      "phases": [1],
-      "phasesWithEnemies": [1],
+      "phases": [
+        1
+      ],
+      "phasesWithEnemies": [
+        1
+      ],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -1935,7 +2383,12 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
+      ],
       "mstGift": [
         {
           "id": 315115,
@@ -1944,12 +2397,40 @@
           "priority": 0,
           "num": 3
         },
-        { "id": 315115, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
-        { "id": 315115, "type": 2, "objectId": 46, "priority": 0, "num": 3 },
-        { "id": 315115, "type": 2, "objectId": 6518, "priority": 0, "num": 3 }
+        {
+          "id": 315115,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        },
+        {
+          "id": 315115,
+          "type": 2,
+          "objectId": 46,
+          "priority": 0,
+          "num": 3
+        },
+        {
+          "id": 315115,
+          "type": 2,
+          "objectId": 6518,
+          "priority": 0,
+          "num": 3
+        }
       ],
-      "phases": [1, 2, 3, 4],
-      "phasesWithEnemies": [1, 2, 3, 4],
+      "phases": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "phasesWithEnemies": [
+        1,
+        2,
+        3,
+        4
+      ],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -2030,7 +2511,12 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
+      ],
       "mstGift": [
         {
           "id": 315116,
@@ -2039,12 +2525,36 @@
           "priority": 0,
           "num": 3
         },
-        { "id": 315116, "type": 2, "objectId": 2, "priority": 0, "num": 1 },
-        { "id": 315116, "type": 2, "objectId": 46, "priority": 0, "num": 3 },
-        { "id": 315116, "type": 2, "objectId": 6511, "priority": 0, "num": 3 }
+        {
+          "id": 315116,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        },
+        {
+          "id": 315116,
+          "type": 2,
+          "objectId": 46,
+          "priority": 0,
+          "num": 3
+        },
+        {
+          "id": 315116,
+          "type": 2,
+          "objectId": 6511,
+          "priority": 0,
+          "num": 3
+        }
       ],
-      "phases": [1, 2],
-      "phasesWithEnemies": [1, 2],
+      "phases": [
+        1,
+        2
+      ],
+      "phasesWithEnemies": [
+        1,
+        2
+      ],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -2113,7 +2623,12 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
+      ],
       "mstGift": [
         {
           "id": 315117,
@@ -2122,12 +2637,34 @@
           "priority": 0,
           "num": 10
         },
-        { "id": 315117, "type": 2, "objectId": 46, "priority": 0, "num": 5 },
-        { "id": 315117, "type": 2, "objectId": 6525, "priority": 0, "num": 5 },
-        { "id": 315117, "type": 2, "objectId": 7999, "priority": 0, "num": 1 }
+        {
+          "id": 315117,
+          "type": 2,
+          "objectId": 46,
+          "priority": 0,
+          "num": 5
+        },
+        {
+          "id": 315117,
+          "type": 2,
+          "objectId": 6525,
+          "priority": 0,
+          "num": 5
+        },
+        {
+          "id": 315117,
+          "type": 2,
+          "objectId": 7999,
+          "priority": 0,
+          "num": 1
+        }
       ],
-      "phases": [1],
-      "phasesWithEnemies": [1],
+      "phases": [
+        1
+      ],
+      "phasesWithEnemies": [
+        1
+      ],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -2218,15 +2755,26 @@
         }
       ],
       "mstClosedMessage": [
-        { "id": 0, "message": "" },
+        {
+          "id": 0,
+          "message": ""
+        },
         {
           "id": 80195,
           "message": "亜種特異点Ⅰをクリア＆霊基再臨3段階目＆絆Lv.5で開放"
         }
       ],
       "mstGift": [],
-      "phases": [1, 2, 3],
-      "phasesWithEnemies": [1, 2, 3],
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "phasesWithEnemies": [
+        1,
+        2,
+        3
+      ],
       "phasesNoBattle": [],
       "allScripts": [
         {
@@ -2313,12 +2861,31 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
-      "mstGift": [
-        { "id": 101, "type": 2, "objectId": 2, "priority": 0, "num": 1 }
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
       ],
-      "phases": [1, 2, 3],
-      "phasesWithEnemies": [1, 2, 3],
+      "mstGift": [
+        {
+          "id": 101,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "phasesWithEnemies": [
+        1,
+        2,
+        3
+      ],
       "phasesNoBattle": [],
       "allScripts": []
     },
@@ -2368,12 +2935,31 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
-      "mstGift": [
-        { "id": 101, "type": 2, "objectId": 2, "priority": 0, "num": 1 }
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
       ],
-      "phases": [1, 2, 3],
-      "phasesWithEnemies": [1, 2, 3],
+      "mstGift": [
+        {
+          "id": 101,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "phasesWithEnemies": [
+        1,
+        2,
+        3
+      ],
       "phasesNoBattle": [],
       "allScripts": []
     },
@@ -2423,12 +3009,31 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
-      "mstGift": [
-        { "id": 101, "type": 2, "objectId": 2, "priority": 0, "num": 1 }
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
       ],
-      "phases": [1, 2, 3],
-      "phasesWithEnemies": [1, 2, 3],
+      "mstGift": [
+        {
+          "id": 101,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "phasesWithEnemies": [
+        1,
+        2,
+        3
+      ],
       "phasesNoBattle": [],
       "allScripts": []
     },
@@ -2487,12 +3092,31 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
-      "mstGift": [
-        { "id": 101, "type": 2, "objectId": 2, "priority": 0, "num": 1 }
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
       ],
-      "phases": [1, 2, 3],
-      "phasesWithEnemies": [1, 2, 3],
+      "mstGift": [
+        {
+          "id": 101,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "phasesWithEnemies": [
+        1,
+        2,
+        3
+      ],
       "phasesNoBattle": [],
       "allScripts": []
     },
@@ -2551,12 +3175,31 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
-      "mstGift": [
-        { "id": 101, "type": 2, "objectId": 2, "priority": 0, "num": 1 }
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
       ],
-      "phases": [1, 2, 3],
-      "phasesWithEnemies": [1, 2, 3],
+      "mstGift": [
+        {
+          "id": 101,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "phasesWithEnemies": [
+        1,
+        2,
+        3
+      ],
       "phasesNoBattle": [],
       "allScripts": []
     },
@@ -2606,12 +3249,31 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
-      "mstGift": [
-        { "id": 101, "type": 2, "objectId": 2, "priority": 0, "num": 1 }
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
       ],
-      "phases": [1, 2, 3],
-      "phasesWithEnemies": [1, 2, 3],
+      "mstGift": [
+        {
+          "id": 101,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "phasesWithEnemies": [
+        1,
+        2,
+        3
+      ],
       "phasesNoBattle": [],
       "allScripts": []
     },
@@ -2661,12 +3323,31 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
-      "mstGift": [
-        { "id": 101, "type": 2, "objectId": 2, "priority": 0, "num": 1 }
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
       ],
-      "phases": [1, 2, 3],
-      "phasesWithEnemies": [1, 2, 3],
+      "mstGift": [
+        {
+          "id": 101,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "phasesWithEnemies": [
+        1,
+        2,
+        3
+      ],
       "phasesNoBattle": [],
       "allScripts": []
     },
@@ -2716,12 +3397,31 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
-      "mstGift": [
-        { "id": 101, "type": 2, "objectId": 2, "priority": 0, "num": 1 }
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
       ],
-      "phases": [1, 2, 3],
-      "phasesWithEnemies": [1, 2, 3],
+      "mstGift": [
+        {
+          "id": 101,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "phasesWithEnemies": [
+        1,
+        2,
+        3
+      ],
       "phasesNoBattle": [],
       "allScripts": []
     },
@@ -2771,12 +3471,31 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
-      "mstGift": [
-        { "id": 101, "type": 2, "objectId": 2, "priority": 0, "num": 1 }
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
       ],
-      "phases": [1, 2, 3],
-      "phasesWithEnemies": [1, 2, 3],
+      "mstGift": [
+        {
+          "id": 101,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "phasesWithEnemies": [
+        1,
+        2,
+        3
+      ],
       "phasesNoBattle": [],
       "allScripts": []
     },
@@ -2826,12 +3545,31 @@
           "imagePriority": 0
         }
       ],
-      "mstClosedMessage": [{ "id": 0, "message": "" }],
-      "mstGift": [
-        { "id": 101, "type": 2, "objectId": 2, "priority": 0, "num": 1 }
+      "mstClosedMessage": [
+        {
+          "id": 0,
+          "message": ""
+        }
       ],
-      "phases": [1, 2, 3],
-      "phasesWithEnemies": [1, 2, 3],
+      "mstGift": [
+        {
+          "id": 101,
+          "type": 2,
+          "objectId": 2,
+          "priority": 0,
+          "num": 1
+        }
+      ],
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "phasesWithEnemies": [
+        1,
+        2,
+        3
+      ],
       "phasesNoBattle": [],
       "allScripts": []
     }

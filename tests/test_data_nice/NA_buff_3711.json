@@ -6,12 +6,26 @@
   "type": "buffRate",
   "buffGroup": 370,
   "script": {
-    "UpBuffRateBuffIndiv": [{ "id": 3030, "name": "buffNpDamageUp" }]
+    "UpBuffRateBuffIndiv": [
+      {
+        "id": 3030,
+        "name": "buffNpDamageUp"
+      }
+    ]
   },
   "vals": [
-    { "id": 3004, "name": "buffPositiveEffect" },
-    { "id": 3006, "name": "buffIncreaseDamage" },
-    { "id": 3071, "name": "unknown" }
+    {
+      "id": 3004,
+      "name": "buffPositiveEffect"
+    },
+    {
+      "id": 3006,
+      "name": "buffIncreaseDamage"
+    },
+    {
+      "id": 3071,
+      "name": "unknown"
+    }
   ],
   "tvals": [],
   "ckSelfIndv": [],

@@ -3,7 +3,13 @@
     "relateQuestIds": [],
     "individuality": [],
     "classPassive": [],
-    "cardIds": [3, 3, 3, 3, 3],
+    "cardIds": [
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
     "script": {},
     "id": 9401400,
     "baseSvtId": 9401400,
@@ -77,8 +83,14 @@
       "mstCommonRelease": [],
       "mstSkillLv": [
         {
-          "funcId": [781, 796],
-          "svals": ["[1000,-1,-1,150]", "[10252,1,1,80087]"],
+          "funcId": [
+            781,
+            796
+          ],
+          "svals": [
+            "[1000,-1,-1,150]",
+            "[10252,1,1,80087]"
+          ],
           "script": {},
           "skillId": 990324,
           "lv": 1,
@@ -127,8 +139,14 @@
       "mstCommonRelease": [],
       "mstSkillLv": [
         {
-          "funcId": [781, 796],
-          "svals": ["[1000,-1,-1,200]", "[10252,1,2,80087]"],
+          "funcId": [
+            781,
+            796
+          ],
+          "svals": [
+            "[1000,-1,-1,200]",
+            "[10252,1,2,80087]"
+          ],
           "script": {},
           "skillId": 990325,
           "lv": 1,
@@ -278,106 +296,606 @@
   "mstCombineLimit": [],
   "mstCombineCostume": [],
   "mstCombineMaterial": [
-    { "id": 24, "lv": 1, "value": 10000, "createdAt": 1893456000 },
-    { "id": 24, "lv": 2, "value": 10010, "createdAt": 1893456000 },
-    { "id": 24, "lv": 3, "value": 10020, "createdAt": 1893456000 },
-    { "id": 24, "lv": 4, "value": 10030, "createdAt": 1893456000 },
-    { "id": 24, "lv": 5, "value": 10040, "createdAt": 1893456000 },
-    { "id": 24, "lv": 6, "value": 10050, "createdAt": 1893456000 },
-    { "id": 24, "lv": 7, "value": 10060, "createdAt": 1893456000 },
-    { "id": 24, "lv": 8, "value": 10070, "createdAt": 1893456000 },
-    { "id": 24, "lv": 9, "value": 10080, "createdAt": 1893456000 },
-    { "id": 24, "lv": 10, "value": 10090, "createdAt": 1893456000 },
-    { "id": 24, "lv": 11, "value": 10100, "createdAt": 1893456000 },
-    { "id": 24, "lv": 12, "value": 10110, "createdAt": 1893456000 },
-    { "id": 24, "lv": 13, "value": 10120, "createdAt": 1893456000 },
-    { "id": 24, "lv": 14, "value": 10130, "createdAt": 1893456000 },
-    { "id": 24, "lv": 15, "value": 10140, "createdAt": 1893456000 },
-    { "id": 24, "lv": 16, "value": 10150, "createdAt": 1893456000 },
-    { "id": 24, "lv": 17, "value": 10160, "createdAt": 1893456000 },
-    { "id": 24, "lv": 18, "value": 10170, "createdAt": 1893456000 },
-    { "id": 24, "lv": 19, "value": 10180, "createdAt": 1893456000 },
-    { "id": 24, "lv": 20, "value": 10190, "createdAt": 1893456000 },
-    { "id": 24, "lv": 21, "value": 10200, "createdAt": 1893456000 },
-    { "id": 24, "lv": 22, "value": 10210, "createdAt": 1893456000 },
-    { "id": 24, "lv": 23, "value": 10220, "createdAt": 1893456000 },
-    { "id": 24, "lv": 24, "value": 10230, "createdAt": 1893456000 },
-    { "id": 24, "lv": 25, "value": 10240, "createdAt": 1893456000 },
-    { "id": 24, "lv": 26, "value": 10250, "createdAt": 1893456000 },
-    { "id": 24, "lv": 27, "value": 10260, "createdAt": 1893456000 },
-    { "id": 24, "lv": 28, "value": 10270, "createdAt": 1893456000 },
-    { "id": 24, "lv": 29, "value": 10280, "createdAt": 1893456000 },
-    { "id": 24, "lv": 30, "value": 10290, "createdAt": 1893456000 },
-    { "id": 24, "lv": 31, "value": 10300, "createdAt": 1893456000 },
-    { "id": 24, "lv": 32, "value": 10310, "createdAt": 1893456000 },
-    { "id": 24, "lv": 33, "value": 10320, "createdAt": 1893456000 },
-    { "id": 24, "lv": 34, "value": 10330, "createdAt": 1893456000 },
-    { "id": 24, "lv": 35, "value": 10340, "createdAt": 1893456000 },
-    { "id": 24, "lv": 36, "value": 10350, "createdAt": 1893456000 },
-    { "id": 24, "lv": 37, "value": 10360, "createdAt": 1893456000 },
-    { "id": 24, "lv": 38, "value": 10370, "createdAt": 1893456000 },
-    { "id": 24, "lv": 39, "value": 10380, "createdAt": 1893456000 },
-    { "id": 24, "lv": 40, "value": 10390, "createdAt": 1893456000 },
-    { "id": 24, "lv": 41, "value": 10400, "createdAt": 1893456000 },
-    { "id": 24, "lv": 42, "value": 10410, "createdAt": 1893456000 },
-    { "id": 24, "lv": 43, "value": 10420, "createdAt": 1893456000 },
-    { "id": 24, "lv": 44, "value": 10430, "createdAt": 1893456000 },
-    { "id": 24, "lv": 45, "value": 10440, "createdAt": 1893456000 },
-    { "id": 24, "lv": 46, "value": 10450, "createdAt": 1893456000 },
-    { "id": 24, "lv": 47, "value": 10460, "createdAt": 1893456000 },
-    { "id": 24, "lv": 48, "value": 10470, "createdAt": 1893456000 },
-    { "id": 24, "lv": 49, "value": 10480, "createdAt": 1893456000 },
-    { "id": 24, "lv": 50, "value": 10490, "createdAt": 946684800 },
-    { "id": 24, "lv": 51, "value": 10500, "createdAt": 946684800 },
-    { "id": 24, "lv": 52, "value": 10510, "createdAt": 946684800 },
-    { "id": 24, "lv": 53, "value": 10520, "createdAt": 946684800 },
-    { "id": 24, "lv": 54, "value": 10530, "createdAt": 946684800 },
-    { "id": 24, "lv": 55, "value": 10540, "createdAt": 946684800 },
-    { "id": 24, "lv": 56, "value": 10550, "createdAt": 946684800 },
-    { "id": 24, "lv": 57, "value": 10560, "createdAt": 946684800 },
-    { "id": 24, "lv": 58, "value": 10570, "createdAt": 946684800 },
-    { "id": 24, "lv": 59, "value": 10580, "createdAt": 946684800 },
-    { "id": 24, "lv": 60, "value": 10590, "createdAt": 946684800 },
-    { "id": 24, "lv": 61, "value": 10600, "createdAt": 946684800 },
-    { "id": 24, "lv": 62, "value": 10610, "createdAt": 946684800 },
-    { "id": 24, "lv": 63, "value": 10620, "createdAt": 946684800 },
-    { "id": 24, "lv": 64, "value": 10630, "createdAt": 946684800 },
-    { "id": 24, "lv": 65, "value": 10640, "createdAt": 946684800 },
-    { "id": 24, "lv": 66, "value": 10650, "createdAt": 946684800 },
-    { "id": 24, "lv": 67, "value": 10660, "createdAt": 946684800 },
-    { "id": 24, "lv": 68, "value": 10670, "createdAt": 946684800 },
-    { "id": 24, "lv": 69, "value": 10680, "createdAt": 946684800 },
-    { "id": 24, "lv": 70, "value": 10690, "createdAt": 946684800 },
-    { "id": 24, "lv": 71, "value": 10700, "createdAt": 946684800 },
-    { "id": 24, "lv": 72, "value": 10710, "createdAt": 946684800 },
-    { "id": 24, "lv": 73, "value": 10720, "createdAt": 946684800 },
-    { "id": 24, "lv": 74, "value": 10730, "createdAt": 946684800 },
-    { "id": 24, "lv": 75, "value": 10740, "createdAt": 946684800 },
-    { "id": 24, "lv": 76, "value": 10750, "createdAt": 946684800 },
-    { "id": 24, "lv": 77, "value": 10760, "createdAt": 946684800 },
-    { "id": 24, "lv": 78, "value": 10770, "createdAt": 946684800 },
-    { "id": 24, "lv": 79, "value": 10780, "createdAt": 946684800 },
-    { "id": 24, "lv": 80, "value": 10790, "createdAt": 946684800 },
-    { "id": 24, "lv": 81, "value": 10800, "createdAt": 946684800 },
-    { "id": 24, "lv": 82, "value": 10810, "createdAt": 946684800 },
-    { "id": 24, "lv": 83, "value": 10820, "createdAt": 946684800 },
-    { "id": 24, "lv": 84, "value": 10830, "createdAt": 946684800 },
-    { "id": 24, "lv": 85, "value": 10840, "createdAt": 946684800 },
-    { "id": 24, "lv": 86, "value": 10850, "createdAt": 946684800 },
-    { "id": 24, "lv": 87, "value": 10860, "createdAt": 946684800 },
-    { "id": 24, "lv": 88, "value": 10870, "createdAt": 946684800 },
-    { "id": 24, "lv": 89, "value": 10880, "createdAt": 946684800 },
-    { "id": 24, "lv": 90, "value": 10890, "createdAt": 946684800 },
-    { "id": 24, "lv": 91, "value": 10900, "createdAt": 946684800 },
-    { "id": 24, "lv": 92, "value": 10910, "createdAt": 946684800 },
-    { "id": 24, "lv": 93, "value": 10920, "createdAt": 946684800 },
-    { "id": 24, "lv": 94, "value": 10930, "createdAt": 946684800 },
-    { "id": 24, "lv": 95, "value": 10940, "createdAt": 946684800 },
-    { "id": 24, "lv": 96, "value": 10950, "createdAt": 946684800 },
-    { "id": 24, "lv": 97, "value": 10960, "createdAt": 946684800 },
-    { "id": 24, "lv": 98, "value": 10970, "createdAt": 946684800 },
-    { "id": 24, "lv": 99, "value": 10980, "createdAt": 946684800 },
-    { "id": 24, "lv": 100, "value": 10990, "createdAt": 946684800 }
+    {
+      "id": 24,
+      "lv": 1,
+      "value": 10000,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 2,
+      "value": 10010,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 3,
+      "value": 10020,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 4,
+      "value": 10030,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 5,
+      "value": 10040,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 6,
+      "value": 10050,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 7,
+      "value": 10060,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 8,
+      "value": 10070,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 9,
+      "value": 10080,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 10,
+      "value": 10090,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 11,
+      "value": 10100,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 12,
+      "value": 10110,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 13,
+      "value": 10120,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 14,
+      "value": 10130,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 15,
+      "value": 10140,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 16,
+      "value": 10150,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 17,
+      "value": 10160,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 18,
+      "value": 10170,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 19,
+      "value": 10180,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 20,
+      "value": 10190,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 21,
+      "value": 10200,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 22,
+      "value": 10210,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 23,
+      "value": 10220,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 24,
+      "value": 10230,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 25,
+      "value": 10240,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 26,
+      "value": 10250,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 27,
+      "value": 10260,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 28,
+      "value": 10270,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 29,
+      "value": 10280,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 30,
+      "value": 10290,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 31,
+      "value": 10300,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 32,
+      "value": 10310,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 33,
+      "value": 10320,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 34,
+      "value": 10330,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 35,
+      "value": 10340,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 36,
+      "value": 10350,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 37,
+      "value": 10360,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 38,
+      "value": 10370,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 39,
+      "value": 10380,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 40,
+      "value": 10390,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 41,
+      "value": 10400,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 42,
+      "value": 10410,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 43,
+      "value": 10420,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 44,
+      "value": 10430,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 45,
+      "value": 10440,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 46,
+      "value": 10450,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 47,
+      "value": 10460,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 48,
+      "value": 10470,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 49,
+      "value": 10480,
+      "createdAt": 1893456000
+    },
+    {
+      "id": 24,
+      "lv": 50,
+      "value": 10490,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 51,
+      "value": 10500,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 52,
+      "value": 10510,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 53,
+      "value": 10520,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 54,
+      "value": 10530,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 55,
+      "value": 10540,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 56,
+      "value": 10550,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 57,
+      "value": 10560,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 58,
+      "value": 10570,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 59,
+      "value": 10580,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 60,
+      "value": 10590,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 61,
+      "value": 10600,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 62,
+      "value": 10610,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 63,
+      "value": 10620,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 64,
+      "value": 10630,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 65,
+      "value": 10640,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 66,
+      "value": 10650,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 67,
+      "value": 10660,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 68,
+      "value": 10670,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 69,
+      "value": 10680,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 70,
+      "value": 10690,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 71,
+      "value": 10700,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 72,
+      "value": 10710,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 73,
+      "value": 10720,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 74,
+      "value": 10730,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 75,
+      "value": 10740,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 76,
+      "value": 10750,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 77,
+      "value": 10760,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 78,
+      "value": 10770,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 79,
+      "value": 10780,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 80,
+      "value": 10790,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 81,
+      "value": 10800,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 82,
+      "value": 10810,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 83,
+      "value": 10820,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 84,
+      "value": 10830,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 85,
+      "value": 10840,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 86,
+      "value": 10850,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 87,
+      "value": 10860,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 88,
+      "value": 10870,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 89,
+      "value": 10880,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 90,
+      "value": 10890,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 91,
+      "value": 10900,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 92,
+      "value": 10910,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 93,
+      "value": 10920,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 94,
+      "value": 10930,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 95,
+      "value": 10940,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 96,
+      "value": 10950,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 97,
+      "value": 10960,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 98,
+      "value": 10970,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 99,
+      "value": 10980,
+      "createdAt": 946684800
+    },
+    {
+      "id": 24,
+      "lv": 100,
+      "value": 10990,
+      "createdAt": 946684800
+    }
   ],
   "mstSvtLimitAdd": [],
   "mstSvtChange": [],
@@ -389,107 +907,612 @@
   "mstCombineAppendPassiveSkill": [],
   "mstItem": [],
   "mstSvtExp": [
-    { "type": 19, "lv": 0, "exp": 0, "curve": 0 },
-    { "type": 19, "lv": 1, "exp": 100, "curve": 0 },
-    { "type": 19, "lv": 2, "exp": 400, "curve": 12 },
-    { "type": 19, "lv": 3, "exp": 1000, "curve": 25 },
-    { "type": 19, "lv": 4, "exp": 2000, "curve": 37 },
-    { "type": 19, "lv": 5, "exp": 3500, "curve": 50 },
-    { "type": 19, "lv": 6, "exp": 5600, "curve": 63 },
-    { "type": 19, "lv": 7, "exp": 8400, "curve": 75 },
-    { "type": 19, "lv": 8, "exp": 12000, "curve": 88 },
-    { "type": 19, "lv": 9, "exp": 16500, "curve": 101 },
-    { "type": 19, "lv": 10, "exp": 22000, "curve": 113 },
-    { "type": 19, "lv": 11, "exp": 28600, "curve": 126 },
-    { "type": 19, "lv": 12, "exp": 36400, "curve": 139 },
-    { "type": 19, "lv": 13, "exp": 45500, "curve": 151 },
-    { "type": 19, "lv": 14, "exp": 56000, "curve": 164 },
-    { "type": 19, "lv": 15, "exp": 68000, "curve": 177 },
-    { "type": 19, "lv": 16, "exp": 81600, "curve": 189 },
-    { "type": 19, "lv": 17, "exp": 96900, "curve": 202 },
-    { "type": 19, "lv": 18, "exp": 114000, "curve": 215 },
-    { "type": 19, "lv": 19, "exp": 133000, "curve": 227 },
-    { "type": 19, "lv": 20, "exp": 154000, "curve": 240 },
-    { "type": 19, "lv": 21, "exp": 177100, "curve": 253 },
-    { "type": 19, "lv": 22, "exp": 202400, "curve": 265 },
-    { "type": 19, "lv": 23, "exp": 230000, "curve": 278 },
-    { "type": 19, "lv": 24, "exp": 260000, "curve": 291 },
-    { "type": 19, "lv": 25, "exp": 292500, "curve": 303 },
-    { "type": 19, "lv": 26, "exp": 327600, "curve": 316 },
-    { "type": 19, "lv": 27, "exp": 365400, "curve": 329 },
-    { "type": 19, "lv": 28, "exp": 406000, "curve": 341 },
-    { "type": 19, "lv": 29, "exp": 449500, "curve": 354 },
-    { "type": 19, "lv": 30, "exp": 496000, "curve": 367 },
-    { "type": 19, "lv": 31, "exp": 545600, "curve": 379 },
-    { "type": 19, "lv": 32, "exp": 598400, "curve": 392 },
-    { "type": 19, "lv": 33, "exp": 654500, "curve": 405 },
-    { "type": 19, "lv": 34, "exp": 714000, "curve": 417 },
-    { "type": 19, "lv": 35, "exp": 777000, "curve": 430 },
-    { "type": 19, "lv": 36, "exp": 843600, "curve": 443 },
-    { "type": 19, "lv": 37, "exp": 913900, "curve": 455 },
-    { "type": 19, "lv": 38, "exp": 988000, "curve": 468 },
-    { "type": 19, "lv": 39, "exp": 1066000, "curve": 481 },
-    { "type": 19, "lv": 40, "exp": 1148000, "curve": 493 },
-    { "type": 19, "lv": 41, "exp": 1234100, "curve": 506 },
-    { "type": 19, "lv": 42, "exp": 1324400, "curve": 518 },
-    { "type": 19, "lv": 43, "exp": 1419000, "curve": 531 },
-    { "type": 19, "lv": 44, "exp": 1518000, "curve": 544 },
-    { "type": 19, "lv": 45, "exp": 1621500, "curve": 556 },
-    { "type": 19, "lv": 46, "exp": 1729600, "curve": 569 },
-    { "type": 19, "lv": 47, "exp": 1842400, "curve": 582 },
-    { "type": 19, "lv": 48, "exp": 1960000, "curve": 594 },
-    { "type": 19, "lv": 49, "exp": 2082500, "curve": 607 },
-    { "type": 19, "lv": 50, "exp": 2210000, "curve": 620 },
-    { "type": 19, "lv": 51, "exp": 2342600, "curve": 632 },
-    { "type": 19, "lv": 52, "exp": 2480400, "curve": 645 },
-    { "type": 19, "lv": 53, "exp": 2623500, "curve": 658 },
-    { "type": 19, "lv": 54, "exp": 2772000, "curve": 670 },
-    { "type": 19, "lv": 55, "exp": 2926000, "curve": 683 },
-    { "type": 19, "lv": 56, "exp": 3085600, "curve": 696 },
-    { "type": 19, "lv": 57, "exp": 3250900, "curve": 708 },
-    { "type": 19, "lv": 58, "exp": 3422000, "curve": 721 },
-    { "type": 19, "lv": 59, "exp": 3599000, "curve": 734 },
-    { "type": 19, "lv": 60, "exp": 3782000, "curve": 746 },
-    { "type": 19, "lv": 61, "exp": 3971100, "curve": 759 },
-    { "type": 19, "lv": 62, "exp": 4166400, "curve": 772 },
-    { "type": 19, "lv": 63, "exp": 4368000, "curve": 784 },
-    { "type": 19, "lv": 64, "exp": 4576000, "curve": 797 },
-    { "type": 19, "lv": 65, "exp": 4790500, "curve": 810 },
-    { "type": 19, "lv": 66, "exp": 5011600, "curve": 822 },
-    { "type": 19, "lv": 67, "exp": 5239400, "curve": 835 },
-    { "type": 19, "lv": 68, "exp": 5474000, "curve": 848 },
-    { "type": 19, "lv": 69, "exp": 5715500, "curve": 860 },
-    { "type": 19, "lv": 70, "exp": 5964000, "curve": 873 },
-    { "type": 19, "lv": 71, "exp": 6219600, "curve": 886 },
-    { "type": 19, "lv": 72, "exp": 6482400, "curve": 898 },
-    { "type": 19, "lv": 73, "exp": 6752500, "curve": 911 },
-    { "type": 19, "lv": 74, "exp": 7030000, "curve": 924 },
-    { "type": 19, "lv": 75, "exp": 7315000, "curve": 936 },
-    { "type": 19, "lv": 76, "exp": 7607600, "curve": 949 },
-    { "type": 19, "lv": 77, "exp": 7907900, "curve": 962 },
-    { "type": 19, "lv": 78, "exp": 8216000, "curve": 974 },
-    { "type": 19, "lv": 79, "exp": 8532000, "curve": 987 },
-    { "type": 19, "lv": 80, "exp": 8856000, "curve": 1000 },
-    { "type": 19, "lv": 81, "exp": 9188100, "curve": 1012 },
-    { "type": 19, "lv": 82, "exp": 9528400, "curve": 1025 },
-    { "type": 19, "lv": 83, "exp": 9877000, "curve": 1037 },
-    { "type": 19, "lv": 84, "exp": 10234000, "curve": 1050 },
-    { "type": 19, "lv": 85, "exp": 10599500, "curve": 1063 },
-    { "type": 19, "lv": 86, "exp": 10973600, "curve": 1075 },
-    { "type": 19, "lv": 87, "exp": 11356400, "curve": 1088 },
-    { "type": 19, "lv": 88, "exp": 11748000, "curve": 1101 },
-    { "type": 19, "lv": 89, "exp": 12148500, "curve": 1113 },
-    { "type": 19, "lv": 90, "exp": 12558000, "curve": 1126 },
-    { "type": 19, "lv": 91, "exp": 12976600, "curve": 1139 },
-    { "type": 19, "lv": 92, "exp": 13404400, "curve": 1151 },
-    { "type": 19, "lv": 93, "exp": 13841500, "curve": 1164 },
-    { "type": 19, "lv": 94, "exp": 14288000, "curve": 1177 },
-    { "type": 19, "lv": 95, "exp": 14744000, "curve": 1189 },
-    { "type": 19, "lv": 96, "exp": 15209600, "curve": 1202 },
-    { "type": 19, "lv": 97, "exp": 15684900, "curve": 1215 },
-    { "type": 19, "lv": 98, "exp": 16170000, "curve": 1227 },
-    { "type": 19, "lv": 99, "exp": 16665000, "curve": 1240 },
-    { "type": 19, "lv": 100, "exp": 17170000, "curve": 1253 }
+    {
+      "type": 19,
+      "lv": 0,
+      "exp": 0,
+      "curve": 0
+    },
+    {
+      "type": 19,
+      "lv": 1,
+      "exp": 100,
+      "curve": 0
+    },
+    {
+      "type": 19,
+      "lv": 2,
+      "exp": 400,
+      "curve": 12
+    },
+    {
+      "type": 19,
+      "lv": 3,
+      "exp": 1000,
+      "curve": 25
+    },
+    {
+      "type": 19,
+      "lv": 4,
+      "exp": 2000,
+      "curve": 37
+    },
+    {
+      "type": 19,
+      "lv": 5,
+      "exp": 3500,
+      "curve": 50
+    },
+    {
+      "type": 19,
+      "lv": 6,
+      "exp": 5600,
+      "curve": 63
+    },
+    {
+      "type": 19,
+      "lv": 7,
+      "exp": 8400,
+      "curve": 75
+    },
+    {
+      "type": 19,
+      "lv": 8,
+      "exp": 12000,
+      "curve": 88
+    },
+    {
+      "type": 19,
+      "lv": 9,
+      "exp": 16500,
+      "curve": 101
+    },
+    {
+      "type": 19,
+      "lv": 10,
+      "exp": 22000,
+      "curve": 113
+    },
+    {
+      "type": 19,
+      "lv": 11,
+      "exp": 28600,
+      "curve": 126
+    },
+    {
+      "type": 19,
+      "lv": 12,
+      "exp": 36400,
+      "curve": 139
+    },
+    {
+      "type": 19,
+      "lv": 13,
+      "exp": 45500,
+      "curve": 151
+    },
+    {
+      "type": 19,
+      "lv": 14,
+      "exp": 56000,
+      "curve": 164
+    },
+    {
+      "type": 19,
+      "lv": 15,
+      "exp": 68000,
+      "curve": 177
+    },
+    {
+      "type": 19,
+      "lv": 16,
+      "exp": 81600,
+      "curve": 189
+    },
+    {
+      "type": 19,
+      "lv": 17,
+      "exp": 96900,
+      "curve": 202
+    },
+    {
+      "type": 19,
+      "lv": 18,
+      "exp": 114000,
+      "curve": 215
+    },
+    {
+      "type": 19,
+      "lv": 19,
+      "exp": 133000,
+      "curve": 227
+    },
+    {
+      "type": 19,
+      "lv": 20,
+      "exp": 154000,
+      "curve": 240
+    },
+    {
+      "type": 19,
+      "lv": 21,
+      "exp": 177100,
+      "curve": 253
+    },
+    {
+      "type": 19,
+      "lv": 22,
+      "exp": 202400,
+      "curve": 265
+    },
+    {
+      "type": 19,
+      "lv": 23,
+      "exp": 230000,
+      "curve": 278
+    },
+    {
+      "type": 19,
+      "lv": 24,
+      "exp": 260000,
+      "curve": 291
+    },
+    {
+      "type": 19,
+      "lv": 25,
+      "exp": 292500,
+      "curve": 303
+    },
+    {
+      "type": 19,
+      "lv": 26,
+      "exp": 327600,
+      "curve": 316
+    },
+    {
+      "type": 19,
+      "lv": 27,
+      "exp": 365400,
+      "curve": 329
+    },
+    {
+      "type": 19,
+      "lv": 28,
+      "exp": 406000,
+      "curve": 341
+    },
+    {
+      "type": 19,
+      "lv": 29,
+      "exp": 449500,
+      "curve": 354
+    },
+    {
+      "type": 19,
+      "lv": 30,
+      "exp": 496000,
+      "curve": 367
+    },
+    {
+      "type": 19,
+      "lv": 31,
+      "exp": 545600,
+      "curve": 379
+    },
+    {
+      "type": 19,
+      "lv": 32,
+      "exp": 598400,
+      "curve": 392
+    },
+    {
+      "type": 19,
+      "lv": 33,
+      "exp": 654500,
+      "curve": 405
+    },
+    {
+      "type": 19,
+      "lv": 34,
+      "exp": 714000,
+      "curve": 417
+    },
+    {
+      "type": 19,
+      "lv": 35,
+      "exp": 777000,
+      "curve": 430
+    },
+    {
+      "type": 19,
+      "lv": 36,
+      "exp": 843600,
+      "curve": 443
+    },
+    {
+      "type": 19,
+      "lv": 37,
+      "exp": 913900,
+      "curve": 455
+    },
+    {
+      "type": 19,
+      "lv": 38,
+      "exp": 988000,
+      "curve": 468
+    },
+    {
+      "type": 19,
+      "lv": 39,
+      "exp": 1066000,
+      "curve": 481
+    },
+    {
+      "type": 19,
+      "lv": 40,
+      "exp": 1148000,
+      "curve": 493
+    },
+    {
+      "type": 19,
+      "lv": 41,
+      "exp": 1234100,
+      "curve": 506
+    },
+    {
+      "type": 19,
+      "lv": 42,
+      "exp": 1324400,
+      "curve": 518
+    },
+    {
+      "type": 19,
+      "lv": 43,
+      "exp": 1419000,
+      "curve": 531
+    },
+    {
+      "type": 19,
+      "lv": 44,
+      "exp": 1518000,
+      "curve": 544
+    },
+    {
+      "type": 19,
+      "lv": 45,
+      "exp": 1621500,
+      "curve": 556
+    },
+    {
+      "type": 19,
+      "lv": 46,
+      "exp": 1729600,
+      "curve": 569
+    },
+    {
+      "type": 19,
+      "lv": 47,
+      "exp": 1842400,
+      "curve": 582
+    },
+    {
+      "type": 19,
+      "lv": 48,
+      "exp": 1960000,
+      "curve": 594
+    },
+    {
+      "type": 19,
+      "lv": 49,
+      "exp": 2082500,
+      "curve": 607
+    },
+    {
+      "type": 19,
+      "lv": 50,
+      "exp": 2210000,
+      "curve": 620
+    },
+    {
+      "type": 19,
+      "lv": 51,
+      "exp": 2342600,
+      "curve": 632
+    },
+    {
+      "type": 19,
+      "lv": 52,
+      "exp": 2480400,
+      "curve": 645
+    },
+    {
+      "type": 19,
+      "lv": 53,
+      "exp": 2623500,
+      "curve": 658
+    },
+    {
+      "type": 19,
+      "lv": 54,
+      "exp": 2772000,
+      "curve": 670
+    },
+    {
+      "type": 19,
+      "lv": 55,
+      "exp": 2926000,
+      "curve": 683
+    },
+    {
+      "type": 19,
+      "lv": 56,
+      "exp": 3085600,
+      "curve": 696
+    },
+    {
+      "type": 19,
+      "lv": 57,
+      "exp": 3250900,
+      "curve": 708
+    },
+    {
+      "type": 19,
+      "lv": 58,
+      "exp": 3422000,
+      "curve": 721
+    },
+    {
+      "type": 19,
+      "lv": 59,
+      "exp": 3599000,
+      "curve": 734
+    },
+    {
+      "type": 19,
+      "lv": 60,
+      "exp": 3782000,
+      "curve": 746
+    },
+    {
+      "type": 19,
+      "lv": 61,
+      "exp": 3971100,
+      "curve": 759
+    },
+    {
+      "type": 19,
+      "lv": 62,
+      "exp": 4166400,
+      "curve": 772
+    },
+    {
+      "type": 19,
+      "lv": 63,
+      "exp": 4368000,
+      "curve": 784
+    },
+    {
+      "type": 19,
+      "lv": 64,
+      "exp": 4576000,
+      "curve": 797
+    },
+    {
+      "type": 19,
+      "lv": 65,
+      "exp": 4790500,
+      "curve": 810
+    },
+    {
+      "type": 19,
+      "lv": 66,
+      "exp": 5011600,
+      "curve": 822
+    },
+    {
+      "type": 19,
+      "lv": 67,
+      "exp": 5239400,
+      "curve": 835
+    },
+    {
+      "type": 19,
+      "lv": 68,
+      "exp": 5474000,
+      "curve": 848
+    },
+    {
+      "type": 19,
+      "lv": 69,
+      "exp": 5715500,
+      "curve": 860
+    },
+    {
+      "type": 19,
+      "lv": 70,
+      "exp": 5964000,
+      "curve": 873
+    },
+    {
+      "type": 19,
+      "lv": 71,
+      "exp": 6219600,
+      "curve": 886
+    },
+    {
+      "type": 19,
+      "lv": 72,
+      "exp": 6482400,
+      "curve": 898
+    },
+    {
+      "type": 19,
+      "lv": 73,
+      "exp": 6752500,
+      "curve": 911
+    },
+    {
+      "type": 19,
+      "lv": 74,
+      "exp": 7030000,
+      "curve": 924
+    },
+    {
+      "type": 19,
+      "lv": 75,
+      "exp": 7315000,
+      "curve": 936
+    },
+    {
+      "type": 19,
+      "lv": 76,
+      "exp": 7607600,
+      "curve": 949
+    },
+    {
+      "type": 19,
+      "lv": 77,
+      "exp": 7907900,
+      "curve": 962
+    },
+    {
+      "type": 19,
+      "lv": 78,
+      "exp": 8216000,
+      "curve": 974
+    },
+    {
+      "type": 19,
+      "lv": 79,
+      "exp": 8532000,
+      "curve": 987
+    },
+    {
+      "type": 19,
+      "lv": 80,
+      "exp": 8856000,
+      "curve": 1000
+    },
+    {
+      "type": 19,
+      "lv": 81,
+      "exp": 9188100,
+      "curve": 1012
+    },
+    {
+      "type": 19,
+      "lv": 82,
+      "exp": 9528400,
+      "curve": 1025
+    },
+    {
+      "type": 19,
+      "lv": 83,
+      "exp": 9877000,
+      "curve": 1037
+    },
+    {
+      "type": 19,
+      "lv": 84,
+      "exp": 10234000,
+      "curve": 1050
+    },
+    {
+      "type": 19,
+      "lv": 85,
+      "exp": 10599500,
+      "curve": 1063
+    },
+    {
+      "type": 19,
+      "lv": 86,
+      "exp": 10973600,
+      "curve": 1075
+    },
+    {
+      "type": 19,
+      "lv": 87,
+      "exp": 11356400,
+      "curve": 1088
+    },
+    {
+      "type": 19,
+      "lv": 88,
+      "exp": 11748000,
+      "curve": 1101
+    },
+    {
+      "type": 19,
+      "lv": 89,
+      "exp": 12148500,
+      "curve": 1113
+    },
+    {
+      "type": 19,
+      "lv": 90,
+      "exp": 12558000,
+      "curve": 1126
+    },
+    {
+      "type": 19,
+      "lv": 91,
+      "exp": 12976600,
+      "curve": 1139
+    },
+    {
+      "type": 19,
+      "lv": 92,
+      "exp": 13404400,
+      "curve": 1151
+    },
+    {
+      "type": 19,
+      "lv": 93,
+      "exp": 13841500,
+      "curve": 1164
+    },
+    {
+      "type": 19,
+      "lv": 94,
+      "exp": 14288000,
+      "curve": 1177
+    },
+    {
+      "type": 19,
+      "lv": 95,
+      "exp": 14744000,
+      "curve": 1189
+    },
+    {
+      "type": 19,
+      "lv": 96,
+      "exp": 15209600,
+      "curve": 1202
+    },
+    {
+      "type": 19,
+      "lv": 97,
+      "exp": 15684900,
+      "curve": 1215
+    },
+    {
+      "type": 19,
+      "lv": 98,
+      "exp": 16170000,
+      "curve": 1227
+    },
+    {
+      "type": 19,
+      "lv": 99,
+      "exp": 16665000,
+      "curve": 1240
+    },
+    {
+      "type": 19,
+      "lv": 100,
+      "exp": 17170000,
+      "curve": 1253
+    }
   ],
   "mstFriendship": [],
   "mstSvtMultiPortrait": []

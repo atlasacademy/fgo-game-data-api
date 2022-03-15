@@ -9,14 +9,26 @@
     "scriptId": "9310510000",
     "script": "https://assets.atlasacademy.io/GameData/JP/Script/93/9310510000.txt"
   },
-  "id": ["0_S010", "0_S011"],
+  "id": [
+    "0_S010",
+    "0_S011"
+  ],
   "audioAssets": [
     "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_105100/0_S010.mp3",
     "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_105100/0_S011.mp3"
   ],
-  "delay": [0.0, 0.1],
-  "face": [13, 10],
-  "form": [0, 0],
+  "delay": [
+    0.0,
+    0.1
+  ],
+  "face": [
+    13,
+    10
+  ],
+  "form": [
+    0,
+    0
+  ],
   "text": [
     "―――久しぶりだなマスター、魔セイバー、無穹の彼方より帰還した。[r]",
     "\nん？　ちょっと待て、なんだこの感じは……[r]"

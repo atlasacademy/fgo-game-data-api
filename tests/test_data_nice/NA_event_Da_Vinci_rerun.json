@@ -13,7 +13,9 @@
   "endedAt": 1579492799,
   "finishedAt": 1580097599,
   "materialOpenedAt": 1751328000,
-  "warIds": [8196],
+  "warIds": [
+    8196
+  ],
   "shop": [
     {
       "id": 80087001,
@@ -21,7 +23,9 @@
       "shopType": "eventItem",
       "releaseConditions": [
         {
-          "condValues": [94019608],
+          "condValues": [
+            94019608
+          ],
           "shopId": 80087001,
           "condType": "questClear",
           "condNum": 1,
@@ -46,7 +50,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA portrait of a noblewoman said to have been drawn by Da Vinci.\nIt's slightly different from the real one, but it's still beautiful on its own.",
-          "individuality": [{ "id": 10252, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10252,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002801.png",
           "background": "gold",
           "priority": 94002803,
@@ -55,7 +64,9 @@
         "amount": 400
       },
       "purchaseType": "costumeRelease",
-      "targetIds": [110030011],
+      "targetIds": [
+        110030011
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
@@ -84,7 +95,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA portrait of a noblewoman said to have been drawn by Da Vinci.\nIt's slightly different from the real one, but it's still beautiful on its own.",
-          "individuality": [{ "id": 10252, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10252,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002801.png",
           "background": "gold",
           "priority": 94002803,
@@ -93,7 +109,9 @@
         "amount": 200
       },
       "purchaseType": "servant",
-      "targetIds": [9401350],
+      "targetIds": [
+        9401350
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 2,
@@ -122,7 +140,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA portrait of a noblewoman said to have been drawn by Da Vinci.\nIt's slightly different from the real one, but it's still beautiful on its own.",
-          "individuality": [{ "id": 10252, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10252,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002801.png",
           "background": "gold",
           "priority": 94002803,
@@ -131,7 +154,9 @@
         "amount": 30
       },
       "purchaseType": "item",
-      "targetIds": [6517],
+      "targetIds": [
+        6517
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -160,7 +185,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA portrait of a noblewoman said to have been drawn by Da Vinci.\nIt's slightly different from the real one, but it's still beautiful on its own.",
-          "individuality": [{ "id": 10252, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10252,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002801.png",
           "background": "gold",
           "priority": 94002803,
@@ -169,7 +199,9 @@
         "amount": 30
       },
       "purchaseType": "item",
-      "targetIds": [6518],
+      "targetIds": [
+        6518
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -198,7 +230,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA portrait of a noblewoman said to have been drawn by Da Vinci.\nIt's slightly different from the real one, but it's still beautiful on its own.",
-          "individuality": [{ "id": 10252, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10252,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002801.png",
           "background": "gold",
           "priority": 94002803,
@@ -207,7 +244,9 @@
         "amount": 20
       },
       "purchaseType": "item",
-      "targetIds": [6520],
+      "targetIds": [
+        6520
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -236,7 +275,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA portrait of a noblewoman said to have been drawn by Da Vinci.\nIt's slightly different from the real one, but it's still beautiful on its own.",
-          "individuality": [{ "id": 10252, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10252,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002801.png",
           "background": "gold",
           "priority": 94002803,
@@ -245,7 +289,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [6201],
+      "targetIds": [
+        6201
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -274,7 +320,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA portrait of a noblewoman said to have been drawn by Da Vinci.\nIt's slightly different from the real one, but it's still beautiful on its own.",
-          "individuality": [{ "id": 10252, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10252,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002801.png",
           "background": "gold",
           "priority": 94002803,
@@ -283,7 +334,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [6202],
+      "targetIds": [
+        6202
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -312,7 +365,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA portrait of a noblewoman said to have been drawn by Da Vinci.\nIt's slightly different from the real one, but it's still beautiful on its own.",
-          "individuality": [{ "id": 10252, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10252,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002801.png",
           "background": "gold",
           "priority": 94002803,
@@ -321,7 +379,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [6203],
+      "targetIds": [
+        6203
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -350,7 +410,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA portrait of a noblewoman said to have been drawn by Da Vinci.\nIt's slightly different from the real one, but it's still beautiful on its own.",
-          "individuality": [{ "id": 10252, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10252,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002801.png",
           "background": "gold",
           "priority": 94002803,
@@ -359,7 +424,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [6204],
+      "targetIds": [
+        6204
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -388,7 +455,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA portrait of a noblewoman said to have been drawn by Da Vinci.\nIt's slightly different from the real one, but it's still beautiful on its own.",
-          "individuality": [{ "id": 10252, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10252,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002801.png",
           "background": "gold",
           "priority": 94002803,
@@ -397,7 +469,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [6205],
+      "targetIds": [
+        6205
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -426,7 +500,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA portrait of a noblewoman said to have been drawn by Da Vinci.\nIt's slightly different from the real one, but it's still beautiful on its own.",
-          "individuality": [{ "id": 10252, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10252,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002801.png",
           "background": "gold",
           "priority": 94002803,
@@ -435,7 +514,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [6206],
+      "targetIds": [
+        6206
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -464,7 +545,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA portrait of a noblewoman said to have been drawn by Da Vinci.\nIt's slightly different from the real one, but it's still beautiful on its own.",
-          "individuality": [{ "id": 10252, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10252,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002801.png",
           "background": "gold",
           "priority": 94002803,
@@ -473,7 +559,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [6207],
+      "targetIds": [
+        6207
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -502,7 +590,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA portrait of a noblewoman said to have been drawn by Da Vinci.\nIt's slightly different from the real one, but it's still beautiful on its own.",
-          "individuality": [{ "id": 10252, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10252,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002801.png",
           "background": "gold",
           "priority": 94002803,
@@ -511,7 +604,9 @@
         "amount": 1
       },
       "purchaseType": "item",
-      "targetIds": [3],
+      "targetIds": [
+        3
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 500,
@@ -540,7 +635,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA portrait of a noblewoman said to have been drawn by Da Vinci.\nIt's slightly different from the real one, but it's still beautiful on its own.",
-          "individuality": [{ "id": 10252, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10252,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002801.png",
           "background": "gold",
           "priority": 94002803,
@@ -549,7 +649,9 @@
         "amount": 1
       },
       "purchaseType": "item",
-      "targetIds": [1],
+      "targetIds": [
+        1
+      ],
       "itemSet": [],
       "setNum": 10000,
       "limitNum": 0,
@@ -578,7 +680,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA supposed self-portrait of Da Vinci.\nIt's completely different from her actual face.",
-          "individuality": [{ "id": 10253, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10253,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002802.png",
           "background": "silver",
           "priority": 94002802,
@@ -587,7 +694,9 @@
         "amount": 200
       },
       "purchaseType": "servant",
-      "targetIds": [9401350],
+      "targetIds": [
+        9401350
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
@@ -616,7 +725,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA supposed self-portrait of Da Vinci.\nIt's completely different from her actual face.",
-          "individuality": [{ "id": 10253, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10253,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002802.png",
           "background": "silver",
           "priority": 94002802,
@@ -625,7 +739,9 @@
         "amount": 20
       },
       "purchaseType": "item",
-      "targetIds": [6521],
+      "targetIds": [
+        6521
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -654,7 +770,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA supposed self-portrait of Da Vinci.\nIt's completely different from her actual face.",
-          "individuality": [{ "id": 10253, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10253,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002802.png",
           "background": "silver",
           "priority": 94002802,
@@ -663,7 +784,9 @@
         "amount": 20
       },
       "purchaseType": "item",
-      "targetIds": [6507],
+      "targetIds": [
+        6507
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -692,7 +815,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA supposed self-portrait of Da Vinci.\nIt's completely different from her actual face.",
-          "individuality": [{ "id": 10253, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10253,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002802.png",
           "background": "silver",
           "priority": 94002802,
@@ -701,7 +829,9 @@
         "amount": 20
       },
       "purchaseType": "item",
-      "targetIds": [6501],
+      "targetIds": [
+        6501
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -730,7 +860,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA supposed self-portrait of Da Vinci.\nIt's completely different from her actual face.",
-          "individuality": [{ "id": 10253, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10253,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002802.png",
           "background": "silver",
           "priority": 94002802,
@@ -739,7 +874,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [6101],
+      "targetIds": [
+        6101
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -768,7 +905,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA supposed self-portrait of Da Vinci.\nIt's completely different from her actual face.",
-          "individuality": [{ "id": 10253, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10253,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002802.png",
           "background": "silver",
           "priority": 94002802,
@@ -777,7 +919,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [6102],
+      "targetIds": [
+        6102
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -806,7 +950,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA supposed self-portrait of Da Vinci.\nIt's completely different from her actual face.",
-          "individuality": [{ "id": 10253, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10253,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002802.png",
           "background": "silver",
           "priority": 94002802,
@@ -815,7 +964,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [6103],
+      "targetIds": [
+        6103
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -844,7 +995,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA supposed self-portrait of Da Vinci.\nIt's completely different from her actual face.",
-          "individuality": [{ "id": 10253, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10253,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002802.png",
           "background": "silver",
           "priority": 94002802,
@@ -853,7 +1009,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [6104],
+      "targetIds": [
+        6104
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -882,7 +1040,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA supposed self-portrait of Da Vinci.\nIt's completely different from her actual face.",
-          "individuality": [{ "id": 10253, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10253,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002802.png",
           "background": "silver",
           "priority": 94002802,
@@ -891,7 +1054,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [6105],
+      "targetIds": [
+        6105
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -920,7 +1085,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA supposed self-portrait of Da Vinci.\nIt's completely different from her actual face.",
-          "individuality": [{ "id": 10253, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10253,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002802.png",
           "background": "silver",
           "priority": 94002802,
@@ -929,7 +1099,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [6106],
+      "targetIds": [
+        6106
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -958,7 +1130,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA supposed self-portrait of Da Vinci.\nIt's completely different from her actual face.",
-          "individuality": [{ "id": 10253, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10253,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002802.png",
           "background": "silver",
           "priority": 94002802,
@@ -967,7 +1144,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [6107],
+      "targetIds": [
+        6107
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -996,7 +1175,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA supposed self-portrait of Da Vinci.\nIt's completely different from her actual face.",
-          "individuality": [{ "id": 10253, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10253,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002802.png",
           "background": "silver",
           "priority": 94002802,
@@ -1005,7 +1189,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [94019601],
+      "targetIds": [
+        94019601
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 0,
@@ -1034,7 +1220,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA human diagram supposedly drawn by Da Vinci.\nThere are some deformities.",
-          "individuality": [{ "id": 10254, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10254,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002803.png",
           "background": "bronze",
           "priority": 94002801,
@@ -1043,7 +1234,9 @@
         "amount": 200
       },
       "purchaseType": "servant",
-      "targetIds": [9401350],
+      "targetIds": [
+        9401350
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
@@ -1072,7 +1265,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA human diagram supposedly drawn by Da Vinci.\nThere are some deformities.",
-          "individuality": [{ "id": 10254, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10254,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002803.png",
           "background": "bronze",
           "priority": 94002801,
@@ -1081,7 +1279,9 @@
         "amount": 10
       },
       "purchaseType": "servant",
-      "targetIds": [9570300],
+      "targetIds": [
+        9570300
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -1110,7 +1310,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA human diagram supposedly drawn by Da Vinci.\nThere are some deformities.",
-          "individuality": [{ "id": 10254, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10254,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002803.png",
           "background": "bronze",
           "priority": 94002801,
@@ -1119,7 +1324,9 @@
         "amount": 10
       },
       "purchaseType": "servant",
-      "targetIds": [9670300],
+      "targetIds": [
+        9670300
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -1148,7 +1355,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA human diagram supposedly drawn by Da Vinci.\nThere are some deformities.",
-          "individuality": [{ "id": 10254, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10254,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002803.png",
           "background": "bronze",
           "priority": 94002801,
@@ -1157,7 +1369,9 @@
         "amount": 20
       },
       "purchaseType": "item",
-      "targetIds": [6519],
+      "targetIds": [
+        6519
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -1186,7 +1400,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA human diagram supposedly drawn by Da Vinci.\nThere are some deformities.",
-          "individuality": [{ "id": 10254, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10254,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002803.png",
           "background": "bronze",
           "priority": 94002801,
@@ -1195,7 +1414,9 @@
         "amount": 15
       },
       "purchaseType": "item",
-      "targetIds": [6508],
+      "targetIds": [
+        6508
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -1224,7 +1445,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA human diagram supposedly drawn by Da Vinci.\nThere are some deformities.",
-          "individuality": [{ "id": 10254, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10254,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002803.png",
           "background": "bronze",
           "priority": 94002801,
@@ -1233,7 +1459,9 @@
         "amount": 15
       },
       "purchaseType": "item",
-      "targetIds": [6514],
+      "targetIds": [
+        6514
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -1262,7 +1490,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA human diagram supposedly drawn by Da Vinci.\nThere are some deformities.",
-          "individuality": [{ "id": 10254, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10254,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002803.png",
           "background": "bronze",
           "priority": 94002801,
@@ -1271,7 +1504,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [6001],
+      "targetIds": [
+        6001
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -1300,7 +1535,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA human diagram supposedly drawn by Da Vinci.\nThere are some deformities.",
-          "individuality": [{ "id": 10254, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10254,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002803.png",
           "background": "bronze",
           "priority": 94002801,
@@ -1309,7 +1549,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [6002],
+      "targetIds": [
+        6002
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -1338,7 +1580,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA human diagram supposedly drawn by Da Vinci.\nThere are some deformities.",
-          "individuality": [{ "id": 10254, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10254,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002803.png",
           "background": "bronze",
           "priority": 94002801,
@@ -1347,7 +1594,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [6003],
+      "targetIds": [
+        6003
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -1376,7 +1625,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA human diagram supposedly drawn by Da Vinci.\nThere are some deformities.",
-          "individuality": [{ "id": 10254, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10254,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002803.png",
           "background": "bronze",
           "priority": 94002801,
@@ -1385,7 +1639,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [6004],
+      "targetIds": [
+        6004
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -1414,7 +1670,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA human diagram supposedly drawn by Da Vinci.\nThere are some deformities.",
-          "individuality": [{ "id": 10254, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10254,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002803.png",
           "background": "bronze",
           "priority": 94002801,
@@ -1423,7 +1684,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [6005],
+      "targetIds": [
+        6005
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -1452,7 +1715,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA human diagram supposedly drawn by Da Vinci.\nThere are some deformities.",
-          "individuality": [{ "id": 10254, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10254,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002803.png",
           "background": "bronze",
           "priority": 94002801,
@@ -1461,7 +1729,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [6006],
+      "targetIds": [
+        6006
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -1490,7 +1760,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA human diagram supposedly drawn by Da Vinci.\nThere are some deformities.",
-          "individuality": [{ "id": 10254, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10254,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002803.png",
           "background": "bronze",
           "priority": 94002801,
@@ -1499,7 +1774,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [6007],
+      "targetIds": [
+        6007
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -1528,7 +1805,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nA counterfeit painting obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nA human diagram supposedly drawn by Da Vinci.\nThere are some deformities.",
-          "individuality": [{ "id": 10254, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10254,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002803.png",
           "background": "bronze",
           "priority": 94002801,
@@ -1537,7 +1819,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [94019602],
+      "targetIds": [
+        94019602
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 0,
@@ -1565,9 +1849,18 @@
           "uses": [],
           "detail": "\"Event Item\"\nA manuscript obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nMany inspirational ideas created by an almighty mind are written all over it.",
           "individuality": [
-            { "id": 10255, "name": "unknown" },
-            { "id": 2020, "name": "unknown" },
-            { "id": 2022, "name": "unknown" }
+            {
+              "id": 10255,
+              "name": "unknown"
+            },
+            {
+              "id": 2020,
+              "name": "unknown"
+            },
+            {
+              "id": 2022,
+              "name": "unknown"
+            }
           ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002804.png",
           "background": "silver",
@@ -7074,9 +7367,18 @@
           "uses": [],
           "detail": "\"Event Item\"\nA manuscript obtained during\n\"Revival: Da Vinci and the 7 Counterfeit Heroic Spirits - Lite\".\nMany enciphered, ridiculous stories are written all over it.",
           "individuality": [
-            { "id": 10256, "name": "unknown" },
-            { "id": 2021, "name": "unknown" },
-            { "id": 2022, "name": "unknown" }
+            {
+              "id": 10256,
+              "name": "unknown"
+            },
+            {
+              "id": 2021,
+              "name": "unknown"
+            },
+            {
+              "id": 2022,
+              "name": "unknown"
+            }
           ],
           "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94002805.png",
           "background": "silver",

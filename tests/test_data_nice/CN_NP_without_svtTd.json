@@ -10,23 +10,75 @@
   "detail": "对敌方全体发动强大的〔魔性〕特攻攻击▲<过量充能时特攻威力提升>＋己方全体的力指令卡性能提升(3回合)▲",
   "unmodifiedDetail": "对敌方全体发动强大的〔魔性〕特攻攻击[g][o]▲[/o][/g][{0}]<过量充能时特攻威力提升>＋己方全体的力指令卡性能提升(3回合)[g][o]▲[/o][/g]",
   "npGain": {
-    "buster": [71, 71, 71, 71, 71],
-    "arts": [71, 71, 71, 71, 71],
-    "quick": [71, 71, 71, 71, 71],
-    "extra": [71, 71, 71, 71, 71],
-    "defence": [400, 400, 400, 400, 400],
-    "np": [71, 71, 71, 71, 71]
+    "buster": [
+      71,
+      71,
+      71,
+      71,
+      71
+    ],
+    "arts": [
+      71,
+      71,
+      71,
+      71,
+      71
+    ],
+    "quick": [
+      71,
+      71,
+      71,
+      71,
+      71
+    ],
+    "extra": [
+      71,
+      71,
+      71,
+      71,
+      71
+    ],
+    "defence": [
+      400,
+      400,
+      400,
+      400,
+      400
+    ],
+    "np": [
+      71,
+      71,
+      71,
+      71,
+      71
+    ]
   },
-  "npDistribution": [16, 33, 51],
+  "npDistribution": [
+    16,
+    33,
+    51
+  ],
   "strengthStatus": 2,
   "priority": 102,
   "condQuestId": 94054488,
   "condQuestPhase": 3,
   "individuality": [
-    { "id": 3000, "name": "attackPhysical" },
-    { "id": 4002, "name": "cardBuster" },
-    { "id": 4007, "name": "cardNP" },
-    { "id": 4101, "name": "aoeNP" }
+    {
+      "id": 3000,
+      "name": "attackPhysical"
+    },
+    {
+      "id": 4002,
+      "name": "cardBuster"
+    },
+    {
+      "id": 4007,
+      "name": "cardNP"
+    },
+    {
+      "id": 4101,
+      "name": "aoeNP"
+    }
   ],
   "script": {},
   "functions": [
@@ -41,39 +93,164 @@
       "funcGroup": [],
       "buffs": [],
       "svals": [
-        { "Rate": 1000, "Value": 4000, "Target": 2019, "Correction": 1500 },
-        { "Rate": 1000, "Value": 5000, "Target": 2019, "Correction": 1500 },
-        { "Rate": 1000, "Value": 5500, "Target": 2019, "Correction": 1500 },
-        { "Rate": 1000, "Value": 5750, "Target": 2019, "Correction": 1500 },
-        { "Rate": 1000, "Value": 6000, "Target": 2019, "Correction": 1500 }
+        {
+          "Rate": 1000,
+          "Value": 4000,
+          "Target": 2019,
+          "Correction": 1500
+        },
+        {
+          "Rate": 1000,
+          "Value": 5000,
+          "Target": 2019,
+          "Correction": 1500
+        },
+        {
+          "Rate": 1000,
+          "Value": 5500,
+          "Target": 2019,
+          "Correction": 1500
+        },
+        {
+          "Rate": 1000,
+          "Value": 5750,
+          "Target": 2019,
+          "Correction": 1500
+        },
+        {
+          "Rate": 1000,
+          "Value": 6000,
+          "Target": 2019,
+          "Correction": 1500
+        }
       ],
       "svals2": [
-        { "Rate": 1000, "Value": 4000, "Target": 2019, "Correction": 1625 },
-        { "Rate": 1000, "Value": 5000, "Target": 2019, "Correction": 1625 },
-        { "Rate": 1000, "Value": 5500, "Target": 2019, "Correction": 1625 },
-        { "Rate": 1000, "Value": 5750, "Target": 2019, "Correction": 1625 },
-        { "Rate": 1000, "Value": 6000, "Target": 2019, "Correction": 1625 }
+        {
+          "Rate": 1000,
+          "Value": 4000,
+          "Target": 2019,
+          "Correction": 1625
+        },
+        {
+          "Rate": 1000,
+          "Value": 5000,
+          "Target": 2019,
+          "Correction": 1625
+        },
+        {
+          "Rate": 1000,
+          "Value": 5500,
+          "Target": 2019,
+          "Correction": 1625
+        },
+        {
+          "Rate": 1000,
+          "Value": 5750,
+          "Target": 2019,
+          "Correction": 1625
+        },
+        {
+          "Rate": 1000,
+          "Value": 6000,
+          "Target": 2019,
+          "Correction": 1625
+        }
       ],
       "svals3": [
-        { "Rate": 1000, "Value": 4000, "Target": 2019, "Correction": 1750 },
-        { "Rate": 1000, "Value": 5000, "Target": 2019, "Correction": 1750 },
-        { "Rate": 1000, "Value": 5500, "Target": 2019, "Correction": 1750 },
-        { "Rate": 1000, "Value": 5750, "Target": 2019, "Correction": 1750 },
-        { "Rate": 1000, "Value": 6000, "Target": 2019, "Correction": 1750 }
+        {
+          "Rate": 1000,
+          "Value": 4000,
+          "Target": 2019,
+          "Correction": 1750
+        },
+        {
+          "Rate": 1000,
+          "Value": 5000,
+          "Target": 2019,
+          "Correction": 1750
+        },
+        {
+          "Rate": 1000,
+          "Value": 5500,
+          "Target": 2019,
+          "Correction": 1750
+        },
+        {
+          "Rate": 1000,
+          "Value": 5750,
+          "Target": 2019,
+          "Correction": 1750
+        },
+        {
+          "Rate": 1000,
+          "Value": 6000,
+          "Target": 2019,
+          "Correction": 1750
+        }
       ],
       "svals4": [
-        { "Rate": 1000, "Value": 4000, "Target": 2019, "Correction": 1875 },
-        { "Rate": 1000, "Value": 5000, "Target": 2019, "Correction": 1875 },
-        { "Rate": 1000, "Value": 5500, "Target": 2019, "Correction": 1875 },
-        { "Rate": 1000, "Value": 5750, "Target": 2019, "Correction": 1875 },
-        { "Rate": 1000, "Value": 6000, "Target": 2019, "Correction": 1875 }
+        {
+          "Rate": 1000,
+          "Value": 4000,
+          "Target": 2019,
+          "Correction": 1875
+        },
+        {
+          "Rate": 1000,
+          "Value": 5000,
+          "Target": 2019,
+          "Correction": 1875
+        },
+        {
+          "Rate": 1000,
+          "Value": 5500,
+          "Target": 2019,
+          "Correction": 1875
+        },
+        {
+          "Rate": 1000,
+          "Value": 5750,
+          "Target": 2019,
+          "Correction": 1875
+        },
+        {
+          "Rate": 1000,
+          "Value": 6000,
+          "Target": 2019,
+          "Correction": 1875
+        }
       ],
       "svals5": [
-        { "Rate": 1000, "Value": 4000, "Target": 2019, "Correction": 2000 },
-        { "Rate": 1000, "Value": 5000, "Target": 2019, "Correction": 2000 },
-        { "Rate": 1000, "Value": 5500, "Target": 2019, "Correction": 2000 },
-        { "Rate": 1000, "Value": 5750, "Target": 2019, "Correction": 2000 },
-        { "Rate": 1000, "Value": 6000, "Target": 2019, "Correction": 2000 }
+        {
+          "Rate": 1000,
+          "Value": 4000,
+          "Target": 2019,
+          "Correction": 2000
+        },
+        {
+          "Rate": 1000,
+          "Value": 5000,
+          "Target": 2019,
+          "Correction": 2000
+        },
+        {
+          "Rate": 1000,
+          "Value": 5500,
+          "Target": 2019,
+          "Correction": 2000
+        },
+        {
+          "Rate": 1000,
+          "Value": 5750,
+          "Target": 2019,
+          "Correction": 2000
+        },
+        {
+          "Rate": 1000,
+          "Value": 6000,
+          "Target": 2019,
+          "Correction": 2000
+        }
       ]
     },
     {
@@ -96,52 +273,194 @@
           "buffGroup": 0,
           "script": {},
           "vals": [
-            { "id": 3004, "name": "buffPositiveEffect" },
-            { "id": 3006, "name": "buffIncreaseDamage" }
+            {
+              "id": 3004,
+              "name": "buffPositiveEffect"
+            },
+            {
+              "id": 3006,
+              "name": "buffIncreaseDamage"
+            }
           ],
           "tvals": [
-            { "id": 5000, "name": "canBeInBattle" },
-            { "id": 4002, "name": "cardBuster" }
+            {
+              "id": 5000,
+              "name": "canBeInBattle"
+            },
+            {
+              "id": 4002,
+              "name": "cardBuster"
+            }
           ],
-          "ckSelfIndv": [{ "id": 4002, "name": "cardBuster" }],
+          "ckSelfIndv": [
+            {
+              "id": 4002,
+              "name": "cardBuster"
+            }
+          ],
           "ckOpIndv": [],
           "maxRate": 5000
         }
       ],
       "svals": [
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        }
       ],
       "svals2": [
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        }
       ],
       "svals3": [
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        }
       ],
       "svals4": [
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        }
       ],
       "svals5": [
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        }
       ]
     }
   ]

@@ -93,7 +93,9 @@
       }
     },
     "equipFace": {},
-    "image": { "story": {} },
+    "image": {
+      "story": {}
+    },
     "spriteModel": {
       "ascension": {
         "0": "https://assets.atlasacademy.io/GameData/JP/Servants/1100900/manifest.json",
@@ -110,42 +112,125 @@
   "gender": "female",
   "attribute": "star",
   "traits": [
-    { "id": 2, "name": "genderFemale" },
-    { "id": 110, "name": "classAvenger" },
-    { "id": 203, "name": "attributeStar" },
-    { "id": 300, "name": "alignmentLawful" },
-    { "id": 304, "name": "alignmentEvil" },
-    { "id": 1000, "name": "basedOnServant" },
-    { "id": 2000, "name": "divine" },
-    { "id": 2001, "name": "humanoid" },
-    { "id": 2040, "name": "divineOrDemonOrUndead" },
-    { "id": 2780, "name": "hasCostume" },
-    { "id": 2797, "name": "divineSpirit" },
-    { "id": 5000, "name": "canBeInBattle" },
-    { "id": 1100900, "name": "unknown" }
+    {
+      "id": 2,
+      "name": "genderFemale"
+    },
+    {
+      "id": 110,
+      "name": "classAvenger"
+    },
+    {
+      "id": 203,
+      "name": "attributeStar"
+    },
+    {
+      "id": 300,
+      "name": "alignmentLawful"
+    },
+    {
+      "id": 304,
+      "name": "alignmentEvil"
+    },
+    {
+      "id": 1000,
+      "name": "basedOnServant"
+    },
+    {
+      "id": 2000,
+      "name": "divine"
+    },
+    {
+      "id": 2001,
+      "name": "humanoid"
+    },
+    {
+      "id": 2040,
+      "name": "divineOrDemonOrUndead"
+    },
+    {
+      "id": 2780,
+      "name": "hasCostume"
+    },
+    {
+      "id": 2797,
+      "name": "divineSpirit"
+    },
+    {
+      "id": 5000,
+      "name": "canBeInBattle"
+    },
+    {
+      "id": 1100900,
+      "name": "unknown"
+    }
   ],
   "starAbsorb": 29,
   "starGen": 60,
   "instantDeathChance": 50,
-  "cards": ["quick", "arts", "arts", "buster", "buster"],
+  "cards": [
+    "quick",
+    "arts",
+    "arts",
+    "buster",
+    "buster"
+  ],
   "hitsDistribution": {
-    "arts": [33, 67],
-    "buster": [16, 33, 51],
-    "quick": [10, 20, 30, 40],
-    "extra": [6, 13, 20, 26, 35]
+    "arts": [
+      33,
+      67
+    ],
+    "buster": [
+      16,
+      33,
+      51
+    ],
+    "quick": [
+      10,
+      20,
+      30,
+      40
+    ],
+    "extra": [
+      6,
+      13,
+      20,
+      26,
+      35
+    ]
   },
   "cardDetails": {
     "arts": {
-      "attackIndividuality": [{ "id": 3002, "name": "attackMagical" }]
+      "attackIndividuality": [
+        {
+          "id": 3002,
+          "name": "attackMagical"
+        }
+      ]
     },
     "buster": {
-      "attackIndividuality": [{ "id": 3002, "name": "attackMagical" }]
+      "attackIndividuality": [
+        {
+          "id": 3002,
+          "name": "attackMagical"
+        }
+      ]
     },
     "quick": {
-      "attackIndividuality": [{ "id": 3002, "name": "attackMagical" }]
+      "attackIndividuality": [
+        {
+          "id": 3002,
+          "name": "attackMagical"
+        }
+      ]
     },
     "extra": {
-      "attackIndividuality": [{ "id": 3002, "name": "attackMagical" }]
+      "attackIndividuality": [
+        {
+          "id": 3002,
+          "name": "attackMagical"
+        }
+      ]
     }
   },
   "atkBase": 1949,
@@ -155,67 +240,514 @@
   "relateQuestIds": [],
   "growthCurve": 15,
   "atkGrowth": [
-    1949, 1959, 1970, 1991, 2023, 2066, 2108, 2151, 2215, 2268, 2343, 2418,
-    2492, 2578, 2674, 2770, 2876, 2983, 3100, 3217, 3345, 3473, 3601, 3740,
-    3889, 4038, 4188, 4337, 4497, 4668, 4828, 4998, 5169, 5339, 5521, 5702,
-    5883, 6064, 6246, 6427, 6619, 6800, 6992, 7184, 7365, 7557, 7749, 7930,
-    8122, 8304, 8485, 8666, 8847, 9029, 9210, 9381, 9551, 9722, 9882, 10052,
-    10212, 10362, 10511, 10660, 10809, 10948, 11076, 11204, 11332, 11449, 11567,
-    11673, 11780, 11876, 11972, 12057, 12132, 12206, 12281, 12334, 12398, 12441,
-    12462, 12484, 12505, 12526, 12548, 12569, 12590, 12612, 12729, 12846, 12963,
-    13081, 13209, 13326, 13443, 13561, 13688, 13806, 13923, 14040, 14168, 14286,
-    14403, 14520, 14648, 14765, 14883, 15000, 15117, 15245, 15363, 15480, 15597,
-    15725, 15842, 15960, 16077, 16205
+    1949,
+    1959,
+    1970,
+    1991,
+    2023,
+    2066,
+    2108,
+    2151,
+    2215,
+    2268,
+    2343,
+    2418,
+    2492,
+    2578,
+    2674,
+    2770,
+    2876,
+    2983,
+    3100,
+    3217,
+    3345,
+    3473,
+    3601,
+    3740,
+    3889,
+    4038,
+    4188,
+    4337,
+    4497,
+    4668,
+    4828,
+    4998,
+    5169,
+    5339,
+    5521,
+    5702,
+    5883,
+    6064,
+    6246,
+    6427,
+    6619,
+    6800,
+    6992,
+    7184,
+    7365,
+    7557,
+    7749,
+    7930,
+    8122,
+    8304,
+    8485,
+    8666,
+    8847,
+    9029,
+    9210,
+    9381,
+    9551,
+    9722,
+    9882,
+    10052,
+    10212,
+    10362,
+    10511,
+    10660,
+    10809,
+    10948,
+    11076,
+    11204,
+    11332,
+    11449,
+    11567,
+    11673,
+    11780,
+    11876,
+    11972,
+    12057,
+    12132,
+    12206,
+    12281,
+    12334,
+    12398,
+    12441,
+    12462,
+    12484,
+    12505,
+    12526,
+    12548,
+    12569,
+    12590,
+    12612,
+    12729,
+    12846,
+    12963,
+    13081,
+    13209,
+    13326,
+    13443,
+    13561,
+    13688,
+    13806,
+    13923,
+    14040,
+    14168,
+    14286,
+    14403,
+    14520,
+    14648,
+    14765,
+    14883,
+    15000,
+    15117,
+    15245,
+    15363,
+    15480,
+    15597,
+    15725,
+    15842,
+    15960,
+    16077,
+    16205
   ],
   "hpGrowth": [
-    1912, 1923, 1934, 1956, 1989, 2034, 2078, 2123, 2190, 2245, 2323, 2401,
-    2479, 2568, 2668, 2768, 2880, 2991, 3113, 3236, 3369, 3503, 3636, 3781,
-    3937, 4093, 4249, 4404, 4571, 4749, 4916, 5094, 5272, 5451, 5640, 5829,
-    6018, 6207, 6396, 6586, 6786, 6975, 7176, 7376, 7565, 7765, 7966, 8155,
-    8355, 8544, 8734, 8923, 9112, 9301, 9490, 9668, 9846, 10025, 10191, 10370,
-    10536, 10692, 10848, 11004, 11160, 11304, 11438, 11571, 11705, 11827, 11950,
-    12061, 12172, 12273, 12373, 12462, 12540, 12618, 12696, 12751, 12818, 12862,
-    12885, 12907, 12929, 12951, 12974, 12996, 13018, 13041, 13163, 13285, 13408,
-    13530, 13664, 13786, 13909, 14031, 14165, 14287, 14409, 14532, 14665, 14788,
-    14910, 15033, 15166, 15289, 15411, 15533, 15656, 15789, 15912, 16034, 16157,
-    16290, 16413, 16535, 16657, 16791
+    1912,
+    1923,
+    1934,
+    1956,
+    1989,
+    2034,
+    2078,
+    2123,
+    2190,
+    2245,
+    2323,
+    2401,
+    2479,
+    2568,
+    2668,
+    2768,
+    2880,
+    2991,
+    3113,
+    3236,
+    3369,
+    3503,
+    3636,
+    3781,
+    3937,
+    4093,
+    4249,
+    4404,
+    4571,
+    4749,
+    4916,
+    5094,
+    5272,
+    5451,
+    5640,
+    5829,
+    6018,
+    6207,
+    6396,
+    6586,
+    6786,
+    6975,
+    7176,
+    7376,
+    7565,
+    7765,
+    7966,
+    8155,
+    8355,
+    8544,
+    8734,
+    8923,
+    9112,
+    9301,
+    9490,
+    9668,
+    9846,
+    10025,
+    10191,
+    10370,
+    10536,
+    10692,
+    10848,
+    11004,
+    11160,
+    11304,
+    11438,
+    11571,
+    11705,
+    11827,
+    11950,
+    12061,
+    12172,
+    12273,
+    12373,
+    12462,
+    12540,
+    12618,
+    12696,
+    12751,
+    12818,
+    12862,
+    12885,
+    12907,
+    12929,
+    12951,
+    12974,
+    12996,
+    13018,
+    13041,
+    13163,
+    13285,
+    13408,
+    13530,
+    13664,
+    13786,
+    13909,
+    14031,
+    14165,
+    14287,
+    14409,
+    14532,
+    14665,
+    14788,
+    14910,
+    15033,
+    15166,
+    15289,
+    15411,
+    15533,
+    15656,
+    15789,
+    15912,
+    16034,
+    16157,
+    16290,
+    16413,
+    16535,
+    16657,
+    16791
   ],
   "bondGrowth": [
-    4000, 16000, 19000, 32000, 35000, 200000, 580000, 940000, 1320000, 1680000,
-    2770000, 4000000, 5360000, 6860000, 8500000
+    4000,
+    16000,
+    19000,
+    32000,
+    35000,
+    200000,
+    580000,
+    940000,
+    1320000,
+    1680000,
+    2770000,
+    4000000,
+    5360000,
+    6860000,
+    8500000
   ],
   "expGrowth": [
-    0, 100, 400, 1000, 2000, 3500, 5600, 8400, 12000, 16500, 22000, 28600,
-    36400, 45500, 56000, 68000, 81600, 96900, 114000, 133000, 154000, 177100,
-    202400, 230000, 260000, 292500, 327600, 365400, 406000, 449500, 496000,
-    545600, 598400, 654500, 714000, 777000, 843600, 913900, 988000, 1066000,
-    1148000, 1234100, 1324400, 1419000, 1518000, 1621500, 1729600, 1842400,
-    1960000, 2082500, 2210000, 2342600, 2480400, 2623500, 2772000, 2926000,
-    3085600, 3250900, 3422000, 3599000, 3782000, 3971100, 4166400, 4368000,
-    4576000, 4790500, 5011600, 5239400, 5474000, 5715500, 5964000, 6219600,
-    6482400, 6752500, 7030000, 7315000, 7607600, 7907900, 8216000, 8532000,
-    8856000, 9188100, 9528400, 9877000, 10234000, 10599500, 10973600, 11356400,
-    11748000, 12148500, 12567000, 13021900, 13532000, 14116500, 14795000,
-    15587500, 16514400, 17596500, 18855000, 20311500, 40623000, 60934500,
-    81246000, 101557500, 121869000, 142180500, 162492000, 182803500, 203115000,
-    223426500, 243738000, 264049500, 284361000, 304672500, 324984000, 345295500,
-    365607000, 385918500, 406230000, 426541500
+    0,
+    100,
+    400,
+    1000,
+    2000,
+    3500,
+    5600,
+    8400,
+    12000,
+    16500,
+    22000,
+    28600,
+    36400,
+    45500,
+    56000,
+    68000,
+    81600,
+    96900,
+    114000,
+    133000,
+    154000,
+    177100,
+    202400,
+    230000,
+    260000,
+    292500,
+    327600,
+    365400,
+    406000,
+    449500,
+    496000,
+    545600,
+    598400,
+    654500,
+    714000,
+    777000,
+    843600,
+    913900,
+    988000,
+    1066000,
+    1148000,
+    1234100,
+    1324400,
+    1419000,
+    1518000,
+    1621500,
+    1729600,
+    1842400,
+    1960000,
+    2082500,
+    2210000,
+    2342600,
+    2480400,
+    2623500,
+    2772000,
+    2926000,
+    3085600,
+    3250900,
+    3422000,
+    3599000,
+    3782000,
+    3971100,
+    4166400,
+    4368000,
+    4576000,
+    4790500,
+    5011600,
+    5239400,
+    5474000,
+    5715500,
+    5964000,
+    6219600,
+    6482400,
+    6752500,
+    7030000,
+    7315000,
+    7607600,
+    7907900,
+    8216000,
+    8532000,
+    8856000,
+    9188100,
+    9528400,
+    9877000,
+    10234000,
+    10599500,
+    10973600,
+    11356400,
+    11748000,
+    12148500,
+    12567000,
+    13021900,
+    13532000,
+    14116500,
+    14795000,
+    15587500,
+    16514400,
+    17596500,
+    18855000,
+    20311500,
+    40623000,
+    60934500,
+    81246000,
+    101557500,
+    121869000,
+    142180500,
+    162492000,
+    182803500,
+    203115000,
+    223426500,
+    243738000,
+    264049500,
+    284361000,
+    304672500,
+    324984000,
+    345295500,
+    365607000,
+    385918500,
+    406230000,
+    426541500
   ],
   "expFeed": [
-    15000, 15010, 15020, 15030, 15040, 15050, 15060, 15070, 15080, 15090, 15100,
-    15110, 15120, 15130, 15140, 15150, 15160, 15170, 15180, 15190, 15200, 15210,
-    15220, 15230, 15240, 15250, 15260, 15270, 15280, 15290, 15300, 15310, 15320,
-    15330, 15340, 15350, 15360, 15370, 15380, 15390, 15400, 15410, 15420, 15430,
-    15440, 15450, 15460, 15470, 15480, 15490, 15500, 15510, 15520, 15530, 15540,
-    15550, 15560, 15570, 15580, 15590, 15600, 15610, 15620, 15630, 15640, 15650,
-    15660, 15670, 15680, 15690, 15700, 15710, 15720, 15730, 15740, 15750, 15760,
-    15770, 15780, 15790, 15800, 15810, 15820, 15830, 15840, 15850, 15860, 15870,
-    15880, 15890, 15900, 15910, 15920, 15930, 15940, 15950, 15960, 15970, 15980,
-    15990, 16000, 16010, 16020, 16030, 16040, 16050, 16060, 16070, 16080, 16090,
-    16100, 16110, 16120, 16130, 16140, 16150, 16160, 16170, 16180, 16190
+    15000,
+    15010,
+    15020,
+    15030,
+    15040,
+    15050,
+    15060,
+    15070,
+    15080,
+    15090,
+    15100,
+    15110,
+    15120,
+    15130,
+    15140,
+    15150,
+    15160,
+    15170,
+    15180,
+    15190,
+    15200,
+    15210,
+    15220,
+    15230,
+    15240,
+    15250,
+    15260,
+    15270,
+    15280,
+    15290,
+    15300,
+    15310,
+    15320,
+    15330,
+    15340,
+    15350,
+    15360,
+    15370,
+    15380,
+    15390,
+    15400,
+    15410,
+    15420,
+    15430,
+    15440,
+    15450,
+    15460,
+    15470,
+    15480,
+    15490,
+    15500,
+    15510,
+    15520,
+    15530,
+    15540,
+    15550,
+    15560,
+    15570,
+    15580,
+    15590,
+    15600,
+    15610,
+    15620,
+    15630,
+    15640,
+    15650,
+    15660,
+    15670,
+    15680,
+    15690,
+    15700,
+    15710,
+    15720,
+    15730,
+    15740,
+    15750,
+    15760,
+    15770,
+    15780,
+    15790,
+    15800,
+    15810,
+    15820,
+    15830,
+    15840,
+    15850,
+    15860,
+    15870,
+    15880,
+    15890,
+    15900,
+    15910,
+    15920,
+    15930,
+    15940,
+    15950,
+    15960,
+    15970,
+    15980,
+    15990,
+    16000,
+    16010,
+    16020,
+    16030,
+    16040,
+    16050,
+    16060,
+    16070,
+    16080,
+    16090,
+    16100,
+    16110,
+    16120,
+    16130,
+    16140,
+    16150,
+    16160,
+    16170,
+    16180,
+    16190
   ],
   "bondEquip": 9304390,
-  "valentineEquip": [9807550],
+  "valentineEquip": [
+    9807550
+  ],
   "valentineScript": [
     {
       "scriptId": "9403355300",
@@ -225,29 +757,71 @@
   ],
   "ascensionAdd": {
     "individuality": {
-      "ascension": { "0": [], "1": [], "2": [], "3": [], "4": [] },
-      "costume": { "1100930": [] }
+      "ascension": {
+        "0": [],
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      },
+      "costume": {
+        "1100930": []
+      }
     },
     "voicePrefix": {
-      "ascension": { "0": 0, "1": 1, "2": 1, "3": 2, "4": 2 },
-      "costume": { "1100930": 11 }
+      "ascension": {
+        "0": 0,
+        "1": 1,
+        "2": 1,
+        "3": 2,
+        "4": 2
+      },
+      "costume": {
+        "1100930": 11
+      }
     },
-    "overWriteServantName": { "ascension": {}, "costume": {} },
+    "overWriteServantName": {
+      "ascension": {},
+      "costume": {}
+    },
     "overWriteServantBattleName": {
       "ascension": {
         "0": "アシュタレト",
         "3": "イシュタル・アシュタレト",
         "4": "イシュタル・アシュタレト"
       },
-      "costume": { "11": "アシュタレト・オリジン" }
+      "costume": {
+        "11": "アシュタレト・オリジン"
+      }
     },
-    "overWriteTDName": { "ascension": {}, "costume": {} },
-    "overWriteTDRuby": { "ascension": {}, "costume": {} },
-    "overWriteTDFileName": { "ascension": {}, "costume": {} },
-    "overWriteTDRank": { "ascension": {}, "costume": {} },
-    "overWriteTDTypeText": { "ascension": {}, "costume": {} },
+    "overWriteTDName": {
+      "ascension": {},
+      "costume": {}
+    },
+    "overWriteTDRuby": {
+      "ascension": {},
+      "costume": {}
+    },
+    "overWriteTDFileName": {
+      "ascension": {},
+      "costume": {}
+    },
+    "overWriteTDRank": {
+      "ascension": {},
+      "costume": {}
+    },
+    "overWriteTDTypeText": {
+      "ascension": {},
+      "costume": {}
+    },
     "lvMax": {
-      "ascension": { "0": 50, "1": 60, "2": 70, "3": 80, "4": 90 },
+      "ascension": {
+        "0": 50,
+        "1": 60,
+        "2": 70,
+        "3": 80,
+        "4": 90
+      },
       "costume": {}
     }
   },
@@ -255,8 +829,14 @@
     {
       "idx": 8027301,
       "trait": [
-        { "id": 2600, "name": "unknown" },
-        { "id": 2601, "name": "unknown" }
+        {
+          "id": 2600,
+          "name": "unknown"
+        },
+        {
+          "id": 2601,
+          "name": "unknown"
+        }
       ],
       "limitCount": -1,
       "condType": "none",
@@ -266,8 +846,14 @@
     {
       "idx": 8031801,
       "trait": [
-        { "id": 2769, "name": "unknown" },
-        { "id": 2772, "name": "unknown" }
+        {
+          "id": 2769,
+          "name": "unknown"
+        },
+        {
+          "id": 2772,
+          "name": "unknown"
+        }
       ],
       "limitCount": -1,
       "condType": "none",
@@ -284,9 +870,18 @@
             "id": 6515,
             "name": "八連双晶",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\nゴーレムの体内で造られる多結晶体",
-            "individuality": [{ "id": 20046, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20046,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6515.png",
             "background": "silver",
             "priority": 212,
@@ -299,9 +894,18 @@
             "id": 6521,
             "name": "黒獣脂",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n魂を喰らう獣の体表から採れるドロドロとした脂。\n蒸留により精製を幾度も繰り返すことで、\n上質の魔術資源となる。",
-            "individuality": [{ "id": 20067, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20067,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6521.png",
             "background": "gold",
             "priority": 238,
@@ -319,9 +923,18 @@
             "id": 6509,
             "name": "蛇の宝玉",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n蛇の瞳に睨まれているかのような宝玉",
-            "individuality": [{ "id": 20063, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20063,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6509.png",
             "background": "silver",
             "priority": 213,
@@ -334,9 +947,18 @@
             "id": 6528,
             "name": "原初の産毛",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n猛々しく燃え盛る炎のような獣の毛。\nその神々しさから、魔除けの御守として珍重される。",
-            "individuality": [{ "id": 20069, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20069,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6528.png",
             "background": "gold",
             "priority": 241,
@@ -354,9 +976,18 @@
             "id": 6520,
             "name": "血の涙石",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n巨大な目玉の怪物が息絶える瞬間に流す涙の結晶体。\n強烈な呪いが込められている。",
-            "individuality": [{ "id": 20066, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20066,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6520.png",
             "background": "gold",
             "priority": 237,
@@ -369,9 +1000,18 @@
             "id": 6539,
             "name": "暁光炉心",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n明け方の太陽のように眩く輝く動力炉。\n仙道を基にした技術が使われており、\n現代科学や近代魔術では解明できない謎を\n多く秘めている。",
-            "individuality": [{ "id": 20070, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20070,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6539.png",
             "background": "gold",
             "priority": 244,
@@ -389,9 +1029,18 @@
             "id": 6525,
             "name": "智慧のスカラベ",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n再生と復活の象徴たる聖なる虫の飾り物。\n難題を解きし真に聡しき者にのみ与えられる。",
-            "individuality": [{ "id": 20075, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20075,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6525.png",
             "background": "gold",
             "priority": 240,
@@ -404,9 +1053,18 @@
             "id": 6517,
             "name": "蛮神の心臓",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n荒ぶるデミゴッドの心臓。\n偽りとはいえ神は神。\nその鼓動は多くの呪いを放つ。",
-            "individuality": [{ "id": 20072, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20072,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6517.png",
             "background": "gold",
             "priority": 233,
@@ -426,9 +1084,18 @@
             "id": 6510,
             "name": "無間の歯車",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n永久機関の夢。\n一度回転しだすといつまでも回転し続ける歯車。",
-            "individuality": [{ "id": 20048, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20048,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6510.png",
             "background": "silver",
             "priority": 215,
@@ -446,9 +1113,18 @@
             "id": 6501,
             "name": "鳳凰の羽根",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n東洋の霊鳥の羽根",
-            "individuality": [{ "id": 20062, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20062,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6501.png",
             "background": "silver",
             "priority": 214,
@@ -466,9 +1142,18 @@
             "id": 6530,
             "name": "魔術髄液",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\nただの人間を魔術師に仕立て上げる霊薬。\n脊髄に打ち込むことで僅かな刻の間\n疑似的な魔術回路を形成する。",
-            "individuality": [{ "id": 20038, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20038,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6530.png",
             "background": "bronze",
             "priority": 206,
@@ -486,9 +1171,18 @@
             "id": 6533,
             "name": "宵哭きの鉄杭",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n死した肉体が動きださないようにと躯に穿たれた杭。\n血を吸うことで錆びることなく艶やかさを増す。\n闇夜に潜むこの世ならざる者をも穿つことができる。",
-            "individuality": [{ "id": 20039, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20039,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6533.png",
             "background": "bronze",
             "priority": 207,
@@ -506,9 +1200,18 @@
             "id": 6534,
             "name": "励振火薬",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n魔力を込めることで発火する特殊な火薬。\nわずかな魔力で爆発的な火力を得られることから\n魔獣を狩る銃の弾薬などに用いられる。",
-            "individuality": [{ "id": 20040, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20040,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6534.png",
             "background": "bronze",
             "priority": 208,
@@ -526,9 +1229,18 @@
             "id": 6536,
             "name": "オーロラ鋼",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\nオーロラのような揺蕩う耀きを放つ神聖な鋼。\n北欧神話のワルキューレたちは\nこの鋼で造られた鎧を身に纏い、\n天を駆けたと云われている。",
-            "individuality": [{ "id": 20056, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20056,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6536.png",
             "background": "silver",
             "priority": 225,
@@ -546,9 +1258,18 @@
             "id": 6529,
             "name": "呪獣胆石",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n呪われた獣の体内で呪いが醸成されてできた石。\n晴れることのない強烈な呪いを放ち続ける。",
-            "individuality": [{ "id": 20076, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20076,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6529.png",
             "background": "gold",
             "priority": 242,
@@ -566,9 +1287,18 @@
             "id": 6542,
             "name": "真理の卵",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n内に真理を秘めているという神聖な卵。\nその殻は硬く何人も割ることができない。",
-            "individuality": [{ "id": 20079, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20079,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6542.png",
             "background": "gold",
             "priority": 246,
@@ -586,7 +1316,9 @@
             "id": 6999,
             "name": "伝承結晶",
             "type": "skillLvUp",
-            "uses": ["skill"],
+            "uses": [
+              "skill"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n人類史とマナの奔流が交差する事で\n産み出される高純度の魔力結晶。\n物質化した英霊の素材とも言える。",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6999.png",
@@ -608,9 +1340,18 @@
             "id": 6515,
             "name": "八連双晶",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\nゴーレムの体内で造られる多結晶体",
-            "individuality": [{ "id": 20046, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20046,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6515.png",
             "background": "silver",
             "priority": 212,
@@ -628,9 +1369,18 @@
             "id": 6509,
             "name": "蛇の宝玉",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n蛇の瞳に睨まれているかのような宝玉",
-            "individuality": [{ "id": 20063, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20063,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6509.png",
             "background": "silver",
             "priority": 213,
@@ -648,9 +1398,18 @@
             "id": 6521,
             "name": "黒獣脂",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n魂を喰らう獣の体表から採れるドロドロとした脂。\n蒸留により精製を幾度も繰り返すことで、\n上質の魔術資源となる。",
-            "individuality": [{ "id": 20067, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20067,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6521.png",
             "background": "gold",
             "priority": 238,
@@ -668,9 +1427,18 @@
             "id": 6528,
             "name": "原初の産毛",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n猛々しく燃え盛る炎のような獣の毛。\nその神々しさから、魔除けの御守として珍重される。",
-            "individuality": [{ "id": 20069, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20069,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6528.png",
             "background": "gold",
             "priority": 241,
@@ -688,9 +1456,18 @@
             "id": 6537,
             "name": "巨人の指輪",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\nヒトが身に着けることは\nおよそ叶わない巨大な指輪。\n伝説と幻想と神秘に彩られたその造形は\n古き時代の栄光を偲ばせる。",
-            "individuality": [{ "id": 20055, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20055,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6537.png",
             "background": "silver",
             "priority": 224,
@@ -708,9 +1485,18 @@
             "id": 6539,
             "name": "暁光炉心",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n明け方の太陽のように眩く輝く動力炉。\n仙道を基にした技術が使われており、\n現代科学や近代魔術では解明できない謎を\n多く秘めている。",
-            "individuality": [{ "id": 20070, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20070,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6539.png",
             "background": "gold",
             "priority": 244,
@@ -728,9 +1514,18 @@
             "id": 6541,
             "name": "禍罪の矢尻",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n数多の血、数多の罪、数多の穢れを啜り、\n災いを招き寄せる呪いを帯びた矢尻。",
-            "individuality": [{ "id": 20058, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20058,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6541.png",
             "background": "silver",
             "priority": 227,
@@ -748,9 +1543,18 @@
             "id": 6544,
             "name": "煌星のカケラ",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n夜空にきらめく星がそのまま落ちて\nきたかのような形をした不思議な鉱石。",
-            "individuality": [{ "id": 20080, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20080,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6544.png",
             "background": "gold",
             "priority": 247,
@@ -768,7 +1572,9 @@
             "id": 6999,
             "name": "伝承結晶",
             "type": "skillLvUp",
-            "uses": ["skill"],
+            "uses": [
+              "skill"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n人類史とマナの奔流が交差する事で\n産み出される高純度の魔力結晶。\n物質化した英霊の素材とも言える。",
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6999.png",
@@ -790,9 +1596,18 @@
             "id": 6505,
             "name": "虚影の塵",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n虚ろな影が消える時に飛び散る塵",
-            "individuality": [{ "id": 20042, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20042,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
             "background": "bronze",
             "priority": 203,
@@ -805,9 +1620,18 @@
             "id": 6537,
             "name": "巨人の指輪",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\nヒトが身に着けることは\nおよそ叶わない巨大な指輪。\n伝説と幻想と神秘に彩られたその造形は\n古き時代の栄光を偲ばせる。",
-            "individuality": [{ "id": 20055, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20055,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6537.png",
             "background": "silver",
             "priority": 224,
@@ -820,9 +1644,18 @@
             "id": 6528,
             "name": "原初の産毛",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n猛々しく燃え盛る炎のような獣の毛。\nその神々しさから、魔除けの御守として珍重される。",
-            "individuality": [{ "id": 20069, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20069,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6528.png",
             "background": "gold",
             "priority": 241,
@@ -835,9 +1668,18 @@
             "id": 6542,
             "name": "真理の卵",
             "type": "skillLvUp",
-            "uses": ["skill", "ascension", "costume"],
+            "uses": [
+              "skill",
+              "ascension",
+              "costume"
+            ],
             "detail": "【スキル強化＆霊基再臨素材】\n内に真理を秘めているという神聖な卵。\nその殻は硬く何人も割ることができない。",
-            "individuality": [{ "id": 20079, "name": "unknown" }],
+            "individuality": [
+              {
+                "id": 20079,
+                "name": "unknown"
+              }
+            ],
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6542.png",
             "background": "gold",
             "priority": 246,
@@ -881,7 +1723,18 @@
       "condLv": 0,
       "condLimitCount": 0,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00300.png",
-      "coolDown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5],
+      "coolDown": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        6,
+        6,
+        6,
+        6,
+        5
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
@@ -907,9 +1760,18 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" },
-                { "id": 3027, "name": "buffAtkUp" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                },
+                {
+                  "id": 3027,
+                  "name": "buffAtkUp"
+                }
               ],
               "tvals": [],
               "ckSelfIndv": [],
@@ -918,16 +1780,66 @@
             }
           ],
           "svals": [
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 110 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 120 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 130 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 140 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 150 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 160 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 170 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 180 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 100
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 110
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 120
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 130
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 140
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 150
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 160
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 170
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 180
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            }
           ]
         },
         {
@@ -950,9 +1862,18 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" },
-                { "id": 3027, "name": "buffAtkUp" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                },
+                {
+                  "id": 3027,
+                  "name": "buffAtkUp"
+                }
               ],
               "tvals": [],
               "ckSelfIndv": [],
@@ -961,16 +1882,66 @@
             }
           ],
           "svals": [
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 210 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 220 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 230 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 240 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 260 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 270 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 280 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 }
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 210
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 220
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 230
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 240
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 250
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 260
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 270
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 280
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 300
+            }
           ]
         },
         {
@@ -993,26 +1964,82 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3061, "name": "buffNegativeEffectImmunity" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3061,
+                  "name": "buffNegativeEffectImmunity"
+                }
               ],
-              "tvals": [{ "id": 3012, "name": "buffCharm" }],
+              "tvals": [
+                {
+                  "id": 3012,
+                  "name": "buffCharm"
+                }
+              ],
               "ckSelfIndv": [],
-              "ckOpIndv": [{ "id": 3012, "name": "buffCharm" }],
+              "ckOpIndv": [
+                {
+                  "id": 3012,
+                  "name": "buffCharm"
+                }
+              ],
               "maxRate": 0
             }
           ],
           "svals": [
-            { "Rate": 1000, "Turn": 3, "Count": -1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1 }
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1
+            }
           ]
         }
       ]
@@ -1032,7 +2059,18 @@
       "condLv": 0,
       "condLimitCount": 1,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00302.png",
-      "coolDown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5],
+      "coolDown": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        6,
+        6,
+        6,
+        6,
+        5
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
@@ -1058,9 +2096,18 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" },
-                { "id": 3030, "name": "buffNpDamageUp" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                },
+                {
+                  "id": 3030,
+                  "name": "buffNpDamageUp"
+                }
               ],
               "tvals": [],
               "ckSelfIndv": [],
@@ -1069,16 +2116,66 @@
             }
           ],
           "svals": [
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 100 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 110 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 120 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 130 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 140 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 150 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 160 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 170 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 180 },
-            { "Rate": 1000, "Turn": 3, "Count": 1, "Value": 200 }
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": 1,
+              "Value": 100
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": 1,
+              "Value": 110
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": 1,
+              "Value": 120
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": 1,
+              "Value": 130
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": 1,
+              "Value": 140
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": 1,
+              "Value": 150
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": 1,
+              "Value": 160
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": 1,
+              "Value": 170
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": 1,
+              "Value": 180
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": 1,
+              "Value": 200
+            }
           ]
         },
         {
@@ -1101,10 +2198,22 @@
               "buffGroup": 400,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3018, "name": "buffEvadeAndInvincible" },
-                { "id": 3022, "name": "buffInvincible" },
-                { "id": 3007, "name": "buffIncreaseDefence" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3018,
+                  "name": "buffEvadeAndInvincible"
+                },
+                {
+                  "id": 3022,
+                  "name": "buffInvincible"
+                },
+                {
+                  "id": 3007,
+                  "name": "buffIncreaseDefence"
+                }
               ],
               "tvals": [],
               "ckSelfIndv": [],
@@ -1113,16 +2222,56 @@
             }
           ],
           "svals": [
-            { "Rate": 1000, "Turn": 3, "Count": 1 },
-            { "Rate": 1000, "Turn": 3, "Count": 1 },
-            { "Rate": 1000, "Turn": 3, "Count": 1 },
-            { "Rate": 1000, "Turn": 3, "Count": 1 },
-            { "Rate": 1000, "Turn": 3, "Count": 1 },
-            { "Rate": 1000, "Turn": 3, "Count": 1 },
-            { "Rate": 1000, "Turn": 3, "Count": 1 },
-            { "Rate": 1000, "Turn": 3, "Count": 1 },
-            { "Rate": 1000, "Turn": 3, "Count": 1 },
-            { "Rate": 1000, "Turn": 3, "Count": 1 }
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": 1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": 1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": 1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": 1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": 1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": 1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": 1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": 1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": 1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": 1
+            }
           ]
         },
         {
@@ -1144,9 +2293,17 @@
               "type": "tdTypeChange",
               "buffGroup": 0,
               "script": {
-                "INDIVIDUALITIE": { "id": 1100900, "name": "unknown" }
+                "INDIVIDUALITIE": {
+                  "id": 1100900,
+                  "name": "unknown"
+                }
               },
-              "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+              "vals": [
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                }
+              ],
               "tvals": [],
               "ckSelfIndv": [],
               "ckOpIndv": [],
@@ -1154,16 +2311,66 @@
             }
           ],
           "svals": [
-            { "Rate": 1000, "Turn": 3, "Count": -1, "InvalidHide": 1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "InvalidHide": 1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "InvalidHide": 1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "InvalidHide": 1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "InvalidHide": 1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "InvalidHide": 1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "InvalidHide": 1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "InvalidHide": 1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "InvalidHide": 1 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "InvalidHide": 1 }
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "InvalidHide": 1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "InvalidHide": 1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "InvalidHide": 1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "InvalidHide": 1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "InvalidHide": 1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "InvalidHide": 1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "InvalidHide": 1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "InvalidHide": 1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "InvalidHide": 1
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "InvalidHide": 1
+            }
           ]
         },
         {
@@ -1185,9 +2392,17 @@
               "type": "tdTypeChangeArts",
               "buffGroup": 0,
               "script": {
-                "INDIVIDUALITIE": { "id": 1100900, "name": "unknown" }
+                "INDIVIDUALITIE": {
+                  "id": 1100900,
+                  "name": "unknown"
+                }
               },
-              "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+              "vals": [
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                }
+              ],
               "tvals": [],
               "ckSelfIndv": [],
               "ckOpIndv": [],
@@ -1296,9 +2511,17 @@
               "type": "tdTypeChangeBuster",
               "buffGroup": 0,
               "script": {
-                "INDIVIDUALITIE": { "id": 1100900, "name": "unknown" }
+                "INDIVIDUALITIE": {
+                  "id": 1100900,
+                  "name": "unknown"
+                }
               },
-              "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+              "vals": [
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                }
+              ],
               "tvals": [],
               "ckSelfIndv": [],
               "ckOpIndv": [],
@@ -1407,9 +2630,17 @@
               "type": "tdTypeChangeQuick",
               "buffGroup": 0,
               "script": {
-                "INDIVIDUALITIE": { "id": 1100900, "name": "unknown" }
+                "INDIVIDUALITIE": {
+                  "id": 1100900,
+                  "name": "unknown"
+                }
               },
-              "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+              "vals": [
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                }
+              ],
               "tvals": [],
               "ckSelfIndv": [],
               "ckOpIndv": [],
@@ -1516,7 +2747,18 @@
       "condLv": 0,
       "condLimitCount": 3,
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00601.png",
-      "coolDown": [8, 8, 8, 8, 8, 7, 7, 7, 7, 6],
+      "coolDown": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        7,
+        7,
+        7,
+        7,
+        6
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
@@ -1533,16 +2775,46 @@
           "funcGroup": [],
           "buffs": [],
           "svals": [
-            { "Rate": 1000, "Value": 3000 },
-            { "Rate": 1000, "Value": 3200 },
-            { "Rate": 1000, "Value": 3400 },
-            { "Rate": 1000, "Value": 3600 },
-            { "Rate": 1000, "Value": 3800 },
-            { "Rate": 1000, "Value": 4000 },
-            { "Rate": 1000, "Value": 4200 },
-            { "Rate": 1000, "Value": 4400 },
-            { "Rate": 1000, "Value": 4600 },
-            { "Rate": 1000, "Value": 5000 }
+            {
+              "Rate": 1000,
+              "Value": 3000
+            },
+            {
+              "Rate": 1000,
+              "Value": 3200
+            },
+            {
+              "Rate": 1000,
+              "Value": 3400
+            },
+            {
+              "Rate": 1000,
+              "Value": 3600
+            },
+            {
+              "Rate": 1000,
+              "Value": 3800
+            },
+            {
+              "Rate": 1000,
+              "Value": 4000
+            },
+            {
+              "Rate": 1000,
+              "Value": 4200
+            },
+            {
+              "Rate": 1000,
+              "Value": 4400
+            },
+            {
+              "Rate": 1000,
+              "Value": 4600
+            },
+            {
+              "Rate": 1000,
+              "Value": 5000
+            }
           ]
         },
         {
@@ -1556,16 +2828,46 @@
           "funcGroup": [],
           "buffs": [],
           "svals": [
-            { "Rate": 1000, "Value": 1 },
-            { "Rate": 1000, "Value": 1 },
-            { "Rate": 1000, "Value": 1 },
-            { "Rate": 1000, "Value": 1 },
-            { "Rate": 1000, "Value": 1 },
-            { "Rate": 1000, "Value": 1 },
-            { "Rate": 1000, "Value": 1 },
-            { "Rate": 1000, "Value": 1 },
-            { "Rate": 1000, "Value": 1 },
-            { "Rate": 1000, "Value": 1 }
+            {
+              "Rate": 1000,
+              "Value": 1
+            },
+            {
+              "Rate": 1000,
+              "Value": 1
+            },
+            {
+              "Rate": 1000,
+              "Value": 1
+            },
+            {
+              "Rate": 1000,
+              "Value": 1
+            },
+            {
+              "Rate": 1000,
+              "Value": 1
+            },
+            {
+              "Rate": 1000,
+              "Value": 1
+            },
+            {
+              "Rate": 1000,
+              "Value": 1
+            },
+            {
+              "Rate": 1000,
+              "Value": 1
+            },
+            {
+              "Rate": 1000,
+              "Value": 1
+            },
+            {
+              "Rate": 1000,
+              "Value": 1
+            }
           ]
         },
         {
@@ -1588,29 +2890,96 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                }
               ],
               "tvals": [
-                { "id": 5000, "name": "canBeInBattle" },
-                { "id": 4003, "name": "cardQuick" }
+                {
+                  "id": 5000,
+                  "name": "canBeInBattle"
+                },
+                {
+                  "id": 4003,
+                  "name": "cardQuick"
+                }
               ],
-              "ckSelfIndv": [{ "id": 4003, "name": "cardQuick" }],
+              "ckSelfIndv": [
+                {
+                  "id": 4003,
+                  "name": "cardQuick"
+                }
+              ],
               "ckOpIndv": [],
               "maxRate": 5000
             }
           ],
           "svals": [
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 }
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            }
           ]
         },
         {
@@ -1633,29 +3002,96 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                }
               ],
               "tvals": [
-                { "id": 5000, "name": "canBeInBattle" },
-                { "id": 4001, "name": "cardArts" }
+                {
+                  "id": 5000,
+                  "name": "canBeInBattle"
+                },
+                {
+                  "id": 4001,
+                  "name": "cardArts"
+                }
               ],
-              "ckSelfIndv": [{ "id": 4001, "name": "cardArts" }],
+              "ckSelfIndv": [
+                {
+                  "id": 4001,
+                  "name": "cardArts"
+                }
+              ],
               "ckOpIndv": [],
               "maxRate": 5000
             }
           ],
           "svals": [
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 }
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            }
           ]
         },
         {
@@ -1678,29 +3114,96 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                }
               ],
               "tvals": [
-                { "id": 5000, "name": "canBeInBattle" },
-                { "id": 4002, "name": "cardBuster" }
+                {
+                  "id": 5000,
+                  "name": "canBeInBattle"
+                },
+                {
+                  "id": 4002,
+                  "name": "cardBuster"
+                }
               ],
-              "ckSelfIndv": [{ "id": 4002, "name": "cardBuster" }],
+              "ckSelfIndv": [
+                {
+                  "id": 4002,
+                  "name": "cardBuster"
+                }
+              ],
               "ckOpIndv": [],
               "maxRate": 5000
             }
           ],
           "svals": [
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 800, "Turn": 3, "Count": -1, "Value": 200 }
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 800,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            }
           ]
         }
       ]
@@ -1715,7 +3218,18 @@
       "unmodifiedDetail": "自身の弱体耐性を少しアップ",
       "type": "passive",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00100.png",
-      "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "coolDown": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
@@ -1740,24 +3254,89 @@
               "type": "upTolerance",
               "buffGroup": 0,
               "script": {},
-              "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
-              "tvals": [{ "id": 3005, "name": "buffNegativeEffect" }],
+              "vals": [
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                }
+              ],
+              "tvals": [
+                {
+                  "id": 3005,
+                  "name": "buffNegativeEffect"
+                }
+              ],
               "ckSelfIndv": [],
-              "ckOpIndv": [{ "id": 3005, "name": "buffNegativeEffect" }],
+              "ckOpIndv": [
+                {
+                  "id": 3005,
+                  "name": "buffNegativeEffect"
+                }
+              ],
               "maxRate": 5000
             }
           ],
           "svals": [
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 150 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 150 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 150 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 150 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 150 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 150 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 150 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 150 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 150 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 150 }
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 150
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 150
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 150
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 150
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 150
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 150
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 150
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 150
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 150
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 150
+            }
           ]
         }
       ]
@@ -1770,7 +3349,18 @@
       "unmodifiedDetail": "自身のクリティカル威力を少しアップ",
       "type": "passive",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00101.png",
-      "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "coolDown": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
@@ -1796,9 +3386,18 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" },
-                { "id": 3031, "name": "buffCritDamageUp" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                },
+                {
+                  "id": 3031,
+                  "name": "buffCritDamageUp"
+                }
               ],
               "tvals": [],
               "ckSelfIndv": [],
@@ -1807,16 +3406,66 @@
             }
           ],
           "svals": [
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 60 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 60 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 60 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 60 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 60 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 60 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 60 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 60 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 60 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 60 }
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 60
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 60
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 60
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 60
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 60
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 60
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 60
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 60
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 60
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 60
+            }
           ]
         }
       ]
@@ -1829,7 +3478,18 @@
       "unmodifiedDetail": "自身に与ダメージプラス状態を付与＆弱体耐性をアップ",
       "type": "passive",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00327.png",
-      "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "coolDown": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
@@ -1855,9 +3515,18 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" },
-                { "id": 3029, "name": "buffDamagePlus" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                },
+                {
+                  "id": 3029,
+                  "name": "buffDamagePlus"
+                }
               ],
               "tvals": [],
               "ckSelfIndv": [],
@@ -1866,16 +3535,66 @@
             }
           ],
           "svals": [
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 270 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 270 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 270 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 270 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 270 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 270 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 270 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 270 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 270 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 270 }
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 270
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 270
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 270
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 270
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 270
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 270
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 270
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 270
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 270
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 270
+            }
           ]
         },
         {
@@ -1897,24 +3616,89 @@
               "type": "upTolerance",
               "buffGroup": 0,
               "script": {},
-              "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
-              "tvals": [{ "id": 3005, "name": "buffNegativeEffect" }],
+              "vals": [
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                }
+              ],
+              "tvals": [
+                {
+                  "id": 3005,
+                  "name": "buffNegativeEffect"
+                }
+              ],
               "ckSelfIndv": [],
-              "ckOpIndv": [{ "id": 3005, "name": "buffNegativeEffect" }],
+              "ckOpIndv": [
+                {
+                  "id": 3005,
+                  "name": "buffNegativeEffect"
+                }
+              ],
               "maxRate": 5000
             }
           ],
           "svals": [
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 270 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 270 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 270 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 270 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 270 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 270 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 270 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 270 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 270 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 270 }
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 270
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 270
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 270
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 270
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 270
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 270
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 270
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 270
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 270
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 270
+            }
           ]
         }
       ]
@@ -1927,7 +3711,18 @@
       "unmodifiedDetail": "自身の被ダメージ時に獲得するNPアップ ＋ 自身を除く味方全体<控え含む>の弱体耐性をダウン【デメリット】",
       "type": "passive",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00107.png",
-      "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "coolDown": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
@@ -1952,24 +3747,89 @@
               "type": "downTolerance",
               "buffGroup": 0,
               "script": {},
-              "vals": [{ "id": 3005, "name": "buffNegativeEffect" }],
-              "tvals": [{ "id": 3005, "name": "buffNegativeEffect" }],
+              "vals": [
+                {
+                  "id": 3005,
+                  "name": "buffNegativeEffect"
+                }
+              ],
+              "tvals": [
+                {
+                  "id": 3005,
+                  "name": "buffNegativeEffect"
+                }
+              ],
               "ckSelfIndv": [],
-              "ckOpIndv": [{ "id": 3005, "name": "buffNegativeEffect" }],
+              "ckOpIndv": [
+                {
+                  "id": 3005,
+                  "name": "buffNegativeEffect"
+                }
+              ],
               "maxRate": 5000
             }
           ],
           "svals": [
-            { "Rate": 5000, "Turn": -1, "Count": -1, "Value": 120 },
-            { "Rate": 5000, "Turn": -1, "Count": -1, "Value": 120 },
-            { "Rate": 5000, "Turn": -1, "Count": -1, "Value": 120 },
-            { "Rate": 5000, "Turn": -1, "Count": -1, "Value": 120 },
-            { "Rate": 5000, "Turn": -1, "Count": -1, "Value": 120 },
-            { "Rate": 5000, "Turn": -1, "Count": -1, "Value": 120 },
-            { "Rate": 5000, "Turn": -1, "Count": -1, "Value": 120 },
-            { "Rate": 5000, "Turn": -1, "Count": -1, "Value": 120 },
-            { "Rate": 5000, "Turn": -1, "Count": -1, "Value": 120 },
-            { "Rate": 5000, "Turn": -1, "Count": -1, "Value": 120 }
+            {
+              "Rate": 5000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 120
+            },
+            {
+              "Rate": 5000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 120
+            },
+            {
+              "Rate": 5000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 120
+            },
+            {
+              "Rate": 5000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 120
+            },
+            {
+              "Rate": 5000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 120
+            },
+            {
+              "Rate": 5000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 120
+            },
+            {
+              "Rate": 5000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 120
+            },
+            {
+              "Rate": 5000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 120
+            },
+            {
+              "Rate": 5000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 120
+            },
+            {
+              "Rate": 5000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 120
+            }
           ]
         },
         {
@@ -1991,7 +3851,12 @@
               "type": "upDamagedropnp",
               "buffGroup": 0,
               "script": {},
-              "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+              "vals": [
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                }
+              ],
               "tvals": [],
               "ckSelfIndv": [],
               "ckOpIndv": [],
@@ -1999,16 +3864,66 @@
             }
           ],
           "svals": [
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 220 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 220 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 220 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 220 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 220 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 220 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 220 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 220 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 220 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 220 }
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 220
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 220
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 220
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 220
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 220
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 220
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 220
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 220
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 220
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 220
+            }
           ]
         }
       ]
@@ -2021,7 +3936,18 @@
       "unmodifiedDetail": "自身のクリティカル威力をアップ",
       "type": "passive",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00108.png",
-      "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "coolDown": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
@@ -2047,9 +3973,18 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" },
-                { "id": 3031, "name": "buffCritDamageUp" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                },
+                {
+                  "id": 3031,
+                  "name": "buffCritDamageUp"
+                }
               ],
               "tvals": [],
               "ckSelfIndv": [],
@@ -2058,16 +3993,66 @@
             }
           ],
           "svals": [
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 100 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 100 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 100 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 100 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 100 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 100 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 100 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 100 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 100 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 100 }
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 100
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 100
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 100
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 100
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 100
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 100
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 100
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 100
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 100
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 100
+            }
           ]
         }
       ]
@@ -2080,7 +4065,18 @@
       "unmodifiedDetail": "自身に毎ターンNP獲得状態を付与",
       "type": "passive",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00109.png",
-      "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "coolDown": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
@@ -2105,7 +4101,12 @@
               "type": "regainNp",
               "buffGroup": 0,
               "script": {},
-              "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+              "vals": [
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                }
+              ],
               "tvals": [],
               "ckSelfIndv": [],
               "ckOpIndv": [],
@@ -2113,16 +4114,66 @@
             }
           ],
           "svals": [
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 350 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 350 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 350 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 350 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 350 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 350 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 350 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 350 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 350 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 350 }
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 350
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 350
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 350
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 350
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 350
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 350
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 350
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 350
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 350
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 350
+            }
           ]
         }
       ]
@@ -2137,7 +4188,9 @@
       "unmodifiedDetail": "自身の『影の国の舞闘会 ～ネコとバニーと聖杯戦争～』のフリークエストにおける攻撃の威力を20%アップ【『影の国の舞闘会 ～ネコとバニーと聖杯戦争～』イベント期間限定】",
       "type": "passive",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00301.png",
-      "coolDown": [0],
+      "coolDown": [
+        0
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [
@@ -2165,7 +4218,12 @@
           "funcPopupText": "特訓サポーター",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
           "functvals": [],
-          "funcquestTvals": [{ "id": 94000109, "name": "unknown" }],
+          "funcquestTvals": [
+            {
+              "id": 94000109,
+              "name": "unknown"
+            }
+          ],
           "funcGroup": [
             {
               "eventId": 80301,
@@ -2193,7 +4251,14 @@
               "maxRate": 10000
             }
           ],
-          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 200 }]
+          "svals": [
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 200
+            }
+          ]
         }
       ]
     },
@@ -2205,7 +4270,9 @@
       "unmodifiedDetail": "丈夫な丸太のドロップ獲得数を1個増やす ＋ 自身の『超古代新選組列伝 ぐだぐだ邪馬台国2020』における攻撃の威力を30%アップ＆クエストクリア時に得られる絆を20%増やす【『超古代新選組列伝 ぐだぐだ邪馬台国2020』イベント期間限定】",
       "type": "passive",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00200.png",
-      "coolDown": [0],
+      "coolDown": [
+        0
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [
@@ -2246,7 +4313,13 @@
           ],
           "traitVals": [],
           "buffs": [],
-          "svals": [{ "Individuality": 10559, "EventId": 80289, "AddCount": 1 }]
+          "svals": [
+            {
+              "Individuality": 10559,
+              "EventId": 80289,
+              "AddCount": 1
+            }
+          ]
         },
         {
           "funcId": 5833,
@@ -2256,7 +4329,12 @@
           "funcPopupText": "邪馬台パワー！",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
           "functvals": [],
-          "funcquestTvals": [{ "id": 94000108, "name": "eventGuda5" }],
+          "funcquestTvals": [
+            {
+              "id": 94000108,
+              "name": "eventGuda5"
+            }
+          ],
           "funcGroup": [
             {
               "eventId": 80289,
@@ -2284,7 +4362,14 @@
               "maxRate": 10000
             }
           ],
-          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 300 }]
+          "svals": [
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 300
+            }
+          ]
         },
         {
           "funcId": 5761,
@@ -2325,7 +4410,9 @@
       "unmodifiedDetail": "自身の『カルデア・ビター・バレンタイン2021』における攻撃の威力を50%アップ＆クエストクリア時に得られる絆を30%増やす【『カルデア・ビター・バレンタイン2021』イベント期間限定】",
       "type": "passive",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00301.png",
-      "coolDown": [0],
+      "coolDown": [
+        0
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [
@@ -2353,7 +4440,12 @@
           "funcPopupText": "スナイプドハート",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
           "functvals": [],
-          "funcquestTvals": [{ "id": 94000116, "name": "unknown" }],
+          "funcquestTvals": [
+            {
+              "id": 94000116,
+              "name": "unknown"
+            }
+          ],
           "funcGroup": [
             {
               "eventId": 80313,
@@ -2381,7 +4473,14 @@
               "maxRate": 10000
             }
           ],
-          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 500 }]
+          "svals": [
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 500
+            }
+          ]
         },
         {
           "funcId": 6547,
@@ -2422,7 +4521,9 @@
       "unmodifiedDetail": "丈夫な丸太のドロップ獲得数を1個増やす ＋ 自身の『復刻:超古代新選組列伝 ぐだぐだ邪馬台国2020』における攻撃の威力を30%アップ＆クエストクリア時に得られる絆を20%増やす【『復刻:超古代新選組列伝 ぐだぐだ邪馬台国2020』イベント期間限定】",
       "type": "passive",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00200.png",
-      "coolDown": [0],
+      "coolDown": [
+        0
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [
@@ -2463,7 +4564,13 @@
           ],
           "traitVals": [],
           "buffs": [],
-          "svals": [{ "Individuality": 10679, "EventId": 80341, "AddCount": 1 }]
+          "svals": [
+            {
+              "Individuality": 10679,
+              "EventId": 80341,
+              "AddCount": 1
+            }
+          ]
         },
         {
           "funcId": 7664,
@@ -2473,7 +4580,12 @@
           "funcPopupText": "邪馬台パワー！",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
           "functvals": [],
-          "funcquestTvals": [{ "id": 94000124, "name": "unknown" }],
+          "funcquestTvals": [
+            {
+              "id": 94000124,
+              "name": "unknown"
+            }
+          ],
           "funcGroup": [
             {
               "eventId": 80341,
@@ -2501,7 +4613,14 @@
               "maxRate": 10000
             }
           ],
-          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 300 }]
+          "svals": [
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 300
+            }
+          ]
         },
         {
           "funcId": 7666,
@@ -2542,7 +4661,9 @@
       "unmodifiedDetail": "自身の『終局特異点 冠位時間神殿 ソロモン』における攻撃の威力を20%アップ",
       "type": "passive",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_01001.png",
-      "coolDown": [0],
+      "coolDown": [
+        0
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [
@@ -2570,7 +4691,12 @@
           "funcPopupText": "威力アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_1005.png",
           "functvals": [],
-          "funcquestTvals": [{ "id": 94000052, "name": "unknown" }],
+          "funcquestTvals": [
+            {
+              "id": 94000052,
+              "name": "unknown"
+            }
+          ],
           "funcGroup": [
             {
               "eventId": 80038,
@@ -2592,8 +4718,14 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                }
               ],
               "tvals": [],
               "ckSelfIndv": [],
@@ -2621,7 +4753,9 @@
       "unmodifiedDetail": "自身の『終局特異点 冠位時間神殿 ソロモン』における攻撃の威力を40%アップ",
       "type": "passive",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_01001.png",
-      "coolDown": [0],
+      "coolDown": [
+        0
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [
@@ -2649,7 +4783,12 @@
           "funcPopupText": "威力アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_1005.png",
           "functvals": [],
-          "funcquestTvals": [{ "id": 94000052, "name": "unknown" }],
+          "funcquestTvals": [
+            {
+              "id": 94000052,
+              "name": "unknown"
+            }
+          ],
           "funcGroup": [
             {
               "eventId": 80038,
@@ -2671,8 +4810,14 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                }
               ],
               "tvals": [],
               "ckSelfIndv": [],
@@ -2700,7 +4845,9 @@
       "unmodifiedDetail": "自身の『終局特異点 冠位時間神殿 ソロモン』における攻撃の威力を60%アップ",
       "type": "passive",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_01001.png",
-      "coolDown": [0],
+      "coolDown": [
+        0
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [
@@ -2728,7 +4875,12 @@
           "funcPopupText": "威力アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_1005.png",
           "functvals": [],
-          "funcquestTvals": [{ "id": 94000052, "name": "unknown" }],
+          "funcquestTvals": [
+            {
+              "id": 94000052,
+              "name": "unknown"
+            }
+          ],
           "funcGroup": [
             {
               "eventId": 80038,
@@ -2750,8 +4902,14 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                }
               ],
               "tvals": [],
               "ckSelfIndv": [],
@@ -2779,7 +4937,9 @@
       "unmodifiedDetail": "自身の『終局特異点 冠位時間神殿 ソロモン』における攻撃の威力を75%アップ",
       "type": "passive",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_01002.png",
-      "coolDown": [0],
+      "coolDown": [
+        0
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [
@@ -2807,7 +4967,12 @@
           "funcPopupText": "威力アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_1006.png",
           "functvals": [],
-          "funcquestTvals": [{ "id": 94000052, "name": "unknown" }],
+          "funcquestTvals": [
+            {
+              "id": 94000052,
+              "name": "unknown"
+            }
+          ],
           "funcGroup": [
             {
               "eventId": 80038,
@@ -2829,8 +4994,14 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                }
               ],
               "tvals": [],
               "ckSelfIndv": [],
@@ -2858,7 +5029,9 @@
       "unmodifiedDetail": "自身の『終局特異点 冠位時間神殿 ソロモン』における攻撃の威力を90%アップ",
       "type": "passive",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_01002.png",
-      "coolDown": [0],
+      "coolDown": [
+        0
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [
@@ -2886,7 +5059,12 @@
           "funcPopupText": "威力アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_1006.png",
           "functvals": [],
-          "funcquestTvals": [{ "id": 94000052, "name": "unknown" }],
+          "funcquestTvals": [
+            {
+              "id": 94000052,
+              "name": "unknown"
+            }
+          ],
           "funcGroup": [
             {
               "eventId": 80038,
@@ -2908,8 +5086,14 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                }
               ],
               "tvals": [],
               "ckSelfIndv": [],
@@ -2937,7 +5121,9 @@
       "unmodifiedDetail": "自身の『終局特異点 冠位時間神殿 ソロモン』における攻撃の威力を100%アップ",
       "type": "passive",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_01003.png",
-      "coolDown": [0],
+      "coolDown": [
+        0
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [
@@ -2965,7 +5151,12 @@
           "funcPopupText": "威力アップ",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_1007.png",
           "functvals": [],
-          "funcquestTvals": [{ "id": 94000052, "name": "unknown" }],
+          "funcquestTvals": [
+            {
+              "id": 94000052,
+              "name": "unknown"
+            }
+          ],
           "funcGroup": [
             {
               "eventId": 80038,
@@ -2987,8 +5178,14 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                }
               ],
               "tvals": [],
               "ckSelfIndv": [],
@@ -3016,7 +5213,9 @@
       "unmodifiedDetail": "『亜種特異点Ⅰ 悪性隔絶魔境 新宿』のメインクエストクリア時に得られる自身の絆を100%増やす",
       "type": "passive",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00205.png",
-      "coolDown": [0],
+      "coolDown": [
+        0
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [
@@ -3102,7 +5301,9 @@
       "unmodifiedDetail": "『亜種特異点Ⅱ 伝承地底世界 アガルタ』のメインクエストクリア時に得られる自身の絆を100%増やす",
       "type": "passive",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00205.png",
-      "coolDown": [0],
+      "coolDown": [
+        0
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [
@@ -3188,7 +5389,9 @@
       "unmodifiedDetail": "自身の『復刻:セイバーウォーズ２ ～始まりの宇宙へ～ ライト版』において、攻撃の威力を100%アップ＆クエストクリア時に得られる絆を50%増やす【『復刻:セイバーウォーズ２ ～始まりの宇宙へ～ ライト版』イベント期間限定】",
       "type": "passive",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00301.png",
-      "coolDown": [0],
+      "coolDown": [
+        0
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [
@@ -3216,7 +5419,12 @@
           "funcPopupText": "スペースハンター",
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
           "functvals": [],
-          "funcquestTvals": [{ "id": 94000115, "name": "unknown" }],
+          "funcquestTvals": [
+            {
+              "id": 94000115,
+              "name": "unknown"
+            }
+          ],
           "funcGroup": [
             {
               "eventId": 80308,
@@ -3244,7 +5452,14 @@
               "maxRate": 10000
             }
           ],
-          "svals": [{ "Rate": 1000, "Turn": -1, "Count": -1, "Value": 1000 }]
+          "svals": [
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 1000
+            }
+          ]
         },
         {
           "funcId": 6364,
@@ -3290,7 +5505,18 @@
         "unmodifiedDetail": "自身のExtra Attackカードの性能を30%アップする[{0}]",
         "type": "passive",
         "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00301.png",
-        "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "coolDown": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "actIndividuality": [],
         "script": {},
         "extraPassive": [],
@@ -3316,14 +5542,31 @@
                 "buffGroup": 0,
                 "script": {},
                 "vals": [
-                  { "id": 3004, "name": "buffPositiveEffect" },
-                  { "id": 3006, "name": "buffIncreaseDamage" }
+                  {
+                    "id": 3004,
+                    "name": "buffPositiveEffect"
+                  },
+                  {
+                    "id": 3006,
+                    "name": "buffIncreaseDamage"
+                  }
                 ],
                 "tvals": [
-                  { "id": 5000, "name": "canBeInBattle" },
-                  { "id": 4004, "name": "cardExtra" }
+                  {
+                    "id": 5000,
+                    "name": "canBeInBattle"
+                  },
+                  {
+                    "id": 4004,
+                    "name": "cardExtra"
+                  }
                 ],
-                "ckSelfIndv": [{ "id": 4004, "name": "cardExtra" }],
+                "ckSelfIndv": [
+                  {
+                    "id": 4004,
+                    "name": "cardExtra"
+                  }
+                ],
                 "ckOpIndv": [],
                 "maxRate": 5000
               }
@@ -3432,7 +5675,18 @@
         "unmodifiedDetail": "自身のNPを10%チャージした状態でバトルを開始する[{0}]",
         "type": "passive",
         "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00601.png",
-        "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "coolDown": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "actIndividuality": [],
         "script": {},
         "extraPassive": [],
@@ -3449,16 +5703,56 @@
             "funcGroup": [],
             "buffs": [],
             "svals": [
-              { "Rate": 1000, "Value": 1000, "ShowState": -1 },
-              { "Rate": 1000, "Value": 1100, "ShowState": -1 },
-              { "Rate": 1000, "Value": 1200, "ShowState": -1 },
-              { "Rate": 1000, "Value": 1300, "ShowState": -1 },
-              { "Rate": 1000, "Value": 1400, "ShowState": -1 },
-              { "Rate": 1000, "Value": 1500, "ShowState": -1 },
-              { "Rate": 1000, "Value": 1600, "ShowState": -1 },
-              { "Rate": 1000, "Value": 1700, "ShowState": -1 },
-              { "Rate": 1000, "Value": 1800, "ShowState": -1 },
-              { "Rate": 1000, "Value": 2000, "ShowState": -1 }
+              {
+                "Rate": 1000,
+                "Value": 1000,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Value": 1100,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Value": 1200,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Value": 1300,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Value": 1400,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Value": 1500,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Value": 1600,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Value": 1700,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Value": 1800,
+                "ShowState": -1
+              },
+              {
+                "Rate": 1000,
+                "Value": 2000,
+                "ShowState": -1
+              }
             ]
           }
         ]
@@ -3492,7 +5786,18 @@
         "unmodifiedDetail": "自身の〔アーチャー〕クラスに対する攻撃力を20%アップする[{0}]",
         "type": "passive",
         "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00300.png",
-        "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "coolDown": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "actIndividuality": [],
         "script": {},
         "extraPassive": [],
@@ -3518,13 +5823,32 @@
                 "buffGroup": 0,
                 "script": {},
                 "vals": [
-                  { "id": 3004, "name": "buffPositiveEffect" },
-                  { "id": 3006, "name": "buffIncreaseDamage" },
-                  { "id": 3027, "name": "buffAtkUp" }
+                  {
+                    "id": 3004,
+                    "name": "buffPositiveEffect"
+                  },
+                  {
+                    "id": 3006,
+                    "name": "buffIncreaseDamage"
+                  },
+                  {
+                    "id": 3027,
+                    "name": "buffAtkUp"
+                  }
                 ],
-                "tvals": [{ "id": 102, "name": "classArcher" }],
+                "tvals": [
+                  {
+                    "id": 102,
+                    "name": "classArcher"
+                  }
+                ],
                 "ckSelfIndv": [],
-                "ckOpIndv": [{ "id": 102, "name": "classArcher" }],
+                "ckOpIndv": [
+                  {
+                    "id": 102,
+                    "name": "classArcher"
+                  }
+                ],
                 "maxRate": 5000
               }
             ],
@@ -3635,23 +5959,75 @@
       "detail": "自身の宝具威力をアップ(3ターン)<オーバーチャージで効果アップ> ＋ 敵全体に強力な攻撃 ＋ 自身のExtra Attackの威力をアップ(1ターン)",
       "unmodifiedDetail": "自身の宝具威力をアップ(3ターン)<オーバーチャージで効果アップ> ＋ 敵全体に強力な攻撃[{0}] ＋ 自身のExtra Attackの威力をアップ(1ターン)",
       "npGain": {
-        "buster": [69, 69, 69, 69, 69],
-        "arts": [69, 69, 69, 69, 69],
-        "quick": [69, 69, 69, 69, 69],
-        "extra": [69, 69, 69, 69, 69],
-        "defence": [500, 500, 500, 500, 500],
-        "np": [69, 69, 69, 69, 69]
+        "buster": [
+          69,
+          69,
+          69,
+          69,
+          69
+        ],
+        "arts": [
+          69,
+          69,
+          69,
+          69,
+          69
+        ],
+        "quick": [
+          69,
+          69,
+          69,
+          69,
+          69
+        ],
+        "extra": [
+          69,
+          69,
+          69,
+          69,
+          69
+        ],
+        "defence": [
+          500,
+          500,
+          500,
+          500,
+          500
+        ],
+        "np": [
+          69,
+          69,
+          69,
+          69,
+          69
+        ]
       },
-      "npDistribution": [16, 33, 51],
+      "npDistribution": [
+        16,
+        33,
+        51
+      ],
       "strengthStatus": 0,
       "priority": 101,
       "condQuestId": 0,
       "condQuestPhase": 0,
       "individuality": [
-        { "id": 3002, "name": "attackMagical" },
-        { "id": 4001, "name": "cardArts" },
-        { "id": 4007, "name": "cardNP" },
-        { "id": 4101, "name": "aoeNP" }
+        {
+          "id": 3002,
+          "name": "attackMagical"
+        },
+        {
+          "id": 4001,
+          "name": "cardArts"
+        },
+        {
+          "id": 4007,
+          "name": "cardNP"
+        },
+        {
+          "id": 4101,
+          "name": "aoeNP"
+        }
       ],
       "script": {},
       "functions": [
@@ -3675,9 +6051,18 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" },
-                { "id": 3030, "name": "buffNpDamageUp" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                },
+                {
+                  "id": 3030,
+                  "name": "buffNpDamageUp"
+                }
               ],
               "tvals": [],
               "ckSelfIndv": [],
@@ -3686,39 +6071,164 @@
             }
           ],
           "svals": [
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            }
           ],
           "svals2": [
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 }
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 300
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 300
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 300
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 300
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 300
+            }
           ],
           "svals3": [
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 }
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 400
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 400
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 400
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 400
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 400
+            }
           ],
           "svals4": [
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 500 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 500 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 500 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 500 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 500 }
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 500
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 500
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 500
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 500
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 500
+            }
           ],
           "svals5": [
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 600 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 600 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 600 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 600 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 600 }
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 600
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 600
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 600
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 600
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 600
+            }
           ]
         },
         {
@@ -3732,39 +6242,114 @@
           "funcGroup": [],
           "buffs": [],
           "svals": [
-            { "Rate": 1000, "Value": 4500 },
-            { "Rate": 1000, "Value": 6000 },
-            { "Rate": 1000, "Value": 6750 },
-            { "Rate": 1000, "Value": 7125 },
-            { "Rate": 1000, "Value": 7500 }
+            {
+              "Rate": 1000,
+              "Value": 4500
+            },
+            {
+              "Rate": 1000,
+              "Value": 6000
+            },
+            {
+              "Rate": 1000,
+              "Value": 6750
+            },
+            {
+              "Rate": 1000,
+              "Value": 7125
+            },
+            {
+              "Rate": 1000,
+              "Value": 7500
+            }
           ],
           "svals2": [
-            { "Rate": 1000, "Value": 4500 },
-            { "Rate": 1000, "Value": 6000 },
-            { "Rate": 1000, "Value": 6750 },
-            { "Rate": 1000, "Value": 7125 },
-            { "Rate": 1000, "Value": 7500 }
+            {
+              "Rate": 1000,
+              "Value": 4500
+            },
+            {
+              "Rate": 1000,
+              "Value": 6000
+            },
+            {
+              "Rate": 1000,
+              "Value": 6750
+            },
+            {
+              "Rate": 1000,
+              "Value": 7125
+            },
+            {
+              "Rate": 1000,
+              "Value": 7500
+            }
           ],
           "svals3": [
-            { "Rate": 1000, "Value": 4500 },
-            { "Rate": 1000, "Value": 6000 },
-            { "Rate": 1000, "Value": 6750 },
-            { "Rate": 1000, "Value": 7125 },
-            { "Rate": 1000, "Value": 7500 }
+            {
+              "Rate": 1000,
+              "Value": 4500
+            },
+            {
+              "Rate": 1000,
+              "Value": 6000
+            },
+            {
+              "Rate": 1000,
+              "Value": 6750
+            },
+            {
+              "Rate": 1000,
+              "Value": 7125
+            },
+            {
+              "Rate": 1000,
+              "Value": 7500
+            }
           ],
           "svals4": [
-            { "Rate": 1000, "Value": 4500 },
-            { "Rate": 1000, "Value": 6000 },
-            { "Rate": 1000, "Value": 6750 },
-            { "Rate": 1000, "Value": 7125 },
-            { "Rate": 1000, "Value": 7500 }
+            {
+              "Rate": 1000,
+              "Value": 4500
+            },
+            {
+              "Rate": 1000,
+              "Value": 6000
+            },
+            {
+              "Rate": 1000,
+              "Value": 6750
+            },
+            {
+              "Rate": 1000,
+              "Value": 7125
+            },
+            {
+              "Rate": 1000,
+              "Value": 7500
+            }
           ],
           "svals5": [
-            { "Rate": 1000, "Value": 4500 },
-            { "Rate": 1000, "Value": 6000 },
-            { "Rate": 1000, "Value": 6750 },
-            { "Rate": 1000, "Value": 7125 },
-            { "Rate": 1000, "Value": 7500 }
+            {
+              "Rate": 1000,
+              "Value": 4500
+            },
+            {
+              "Rate": 1000,
+              "Value": 6000
+            },
+            {
+              "Rate": 1000,
+              "Value": 6750
+            },
+            {
+              "Rate": 1000,
+              "Value": 7125
+            },
+            {
+              "Rate": 1000,
+              "Value": 7500
+            }
           ]
         },
         {
@@ -3787,52 +6372,194 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                }
               ],
               "tvals": [
-                { "id": 5000, "name": "canBeInBattle" },
-                { "id": 4004, "name": "cardExtra" }
+                {
+                  "id": 5000,
+                  "name": "canBeInBattle"
+                },
+                {
+                  "id": 4004,
+                  "name": "cardExtra"
+                }
               ],
-              "ckSelfIndv": [{ "id": 4004, "name": "cardExtra" }],
+              "ckSelfIndv": [
+                {
+                  "id": 4004,
+                  "name": "cardExtra"
+                }
+              ],
               "ckOpIndv": [],
               "maxRate": 5000
             }
           ],
           "svals": [
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 }
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            }
           ],
           "svals2": [
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 }
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            }
           ],
           "svals3": [
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 }
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            }
           ],
           "svals4": [
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 }
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            }
           ],
           "svals5": [
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 }
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            }
           ]
         }
       ]
@@ -3849,23 +6576,75 @@
       "detail": "自身の宝具威力をアップ(3ターン)<オーバーチャージで効果アップ> ＋ 敵全体に強力な攻撃 ＋ 自身のExtra Attackの威力をアップ(1ターン)",
       "unmodifiedDetail": "自身の宝具威力をアップ(3ターン)<オーバーチャージで効果アップ> ＋ 敵全体に強力な攻撃[{0}] ＋ 自身のExtra Attackの威力をアップ(1ターン)",
       "npGain": {
-        "buster": [69, 69, 69, 69, 69],
-        "arts": [69, 69, 69, 69, 69],
-        "quick": [69, 69, 69, 69, 69],
-        "extra": [69, 69, 69, 69, 69],
-        "defence": [500, 500, 500, 500, 500],
-        "np": [69, 69, 69, 69, 69]
+        "buster": [
+          69,
+          69,
+          69,
+          69,
+          69
+        ],
+        "arts": [
+          69,
+          69,
+          69,
+          69,
+          69
+        ],
+        "quick": [
+          69,
+          69,
+          69,
+          69,
+          69
+        ],
+        "extra": [
+          69,
+          69,
+          69,
+          69,
+          69
+        ],
+        "defence": [
+          500,
+          500,
+          500,
+          500,
+          500
+        ],
+        "np": [
+          69,
+          69,
+          69,
+          69,
+          69
+        ]
       },
-      "npDistribution": [16, 33, 51],
+      "npDistribution": [
+        16,
+        33,
+        51
+      ],
       "strengthStatus": 0,
       "priority": 0,
       "condQuestId": 0,
       "condQuestPhase": 0,
       "individuality": [
-        { "id": 3002, "name": "attackMagical" },
-        { "id": 4002, "name": "cardBuster" },
-        { "id": 4007, "name": "cardNP" },
-        { "id": 4101, "name": "aoeNP" }
+        {
+          "id": 3002,
+          "name": "attackMagical"
+        },
+        {
+          "id": 4002,
+          "name": "cardBuster"
+        },
+        {
+          "id": 4007,
+          "name": "cardNP"
+        },
+        {
+          "id": 4101,
+          "name": "aoeNP"
+        }
       ],
       "script": {},
       "functions": [
@@ -3889,9 +6668,18 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" },
-                { "id": 3030, "name": "buffNpDamageUp" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                },
+                {
+                  "id": 3030,
+                  "name": "buffNpDamageUp"
+                }
               ],
               "tvals": [],
               "ckSelfIndv": [],
@@ -3900,39 +6688,164 @@
             }
           ],
           "svals": [
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            }
           ],
           "svals2": [
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 }
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 300
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 300
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 300
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 300
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 300
+            }
           ],
           "svals3": [
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 }
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 400
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 400
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 400
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 400
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 400
+            }
           ],
           "svals4": [
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 500 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 500 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 500 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 500 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 500 }
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 500
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 500
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 500
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 500
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 500
+            }
           ],
           "svals5": [
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 600 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 600 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 600 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 600 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 600 }
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 600
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 600
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 600
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 600
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 600
+            }
           ]
         },
         {
@@ -3946,39 +6859,114 @@
           "funcGroup": [],
           "buffs": [],
           "svals": [
-            { "Rate": 1000, "Value": 3000 },
-            { "Rate": 1000, "Value": 4000 },
-            { "Rate": 1000, "Value": 4500 },
-            { "Rate": 1000, "Value": 4750 },
-            { "Rate": 1000, "Value": 5000 }
+            {
+              "Rate": 1000,
+              "Value": 3000
+            },
+            {
+              "Rate": 1000,
+              "Value": 4000
+            },
+            {
+              "Rate": 1000,
+              "Value": 4500
+            },
+            {
+              "Rate": 1000,
+              "Value": 4750
+            },
+            {
+              "Rate": 1000,
+              "Value": 5000
+            }
           ],
           "svals2": [
-            { "Rate": 1000, "Value": 3000 },
-            { "Rate": 1000, "Value": 4000 },
-            { "Rate": 1000, "Value": 4500 },
-            { "Rate": 1000, "Value": 4750 },
-            { "Rate": 1000, "Value": 5000 }
+            {
+              "Rate": 1000,
+              "Value": 3000
+            },
+            {
+              "Rate": 1000,
+              "Value": 4000
+            },
+            {
+              "Rate": 1000,
+              "Value": 4500
+            },
+            {
+              "Rate": 1000,
+              "Value": 4750
+            },
+            {
+              "Rate": 1000,
+              "Value": 5000
+            }
           ],
           "svals3": [
-            { "Rate": 1000, "Value": 3000 },
-            { "Rate": 1000, "Value": 4000 },
-            { "Rate": 1000, "Value": 4500 },
-            { "Rate": 1000, "Value": 4750 },
-            { "Rate": 1000, "Value": 5000 }
+            {
+              "Rate": 1000,
+              "Value": 3000
+            },
+            {
+              "Rate": 1000,
+              "Value": 4000
+            },
+            {
+              "Rate": 1000,
+              "Value": 4500
+            },
+            {
+              "Rate": 1000,
+              "Value": 4750
+            },
+            {
+              "Rate": 1000,
+              "Value": 5000
+            }
           ],
           "svals4": [
-            { "Rate": 1000, "Value": 3000 },
-            { "Rate": 1000, "Value": 4000 },
-            { "Rate": 1000, "Value": 4500 },
-            { "Rate": 1000, "Value": 4750 },
-            { "Rate": 1000, "Value": 5000 }
+            {
+              "Rate": 1000,
+              "Value": 3000
+            },
+            {
+              "Rate": 1000,
+              "Value": 4000
+            },
+            {
+              "Rate": 1000,
+              "Value": 4500
+            },
+            {
+              "Rate": 1000,
+              "Value": 4750
+            },
+            {
+              "Rate": 1000,
+              "Value": 5000
+            }
           ],
           "svals5": [
-            { "Rate": 1000, "Value": 3000 },
-            { "Rate": 1000, "Value": 4000 },
-            { "Rate": 1000, "Value": 4500 },
-            { "Rate": 1000, "Value": 4750 },
-            { "Rate": 1000, "Value": 5000 }
+            {
+              "Rate": 1000,
+              "Value": 3000
+            },
+            {
+              "Rate": 1000,
+              "Value": 4000
+            },
+            {
+              "Rate": 1000,
+              "Value": 4500
+            },
+            {
+              "Rate": 1000,
+              "Value": 4750
+            },
+            {
+              "Rate": 1000,
+              "Value": 5000
+            }
           ]
         },
         {
@@ -4001,52 +6989,194 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                }
               ],
               "tvals": [
-                { "id": 5000, "name": "canBeInBattle" },
-                { "id": 4004, "name": "cardExtra" }
+                {
+                  "id": 5000,
+                  "name": "canBeInBattle"
+                },
+                {
+                  "id": 4004,
+                  "name": "cardExtra"
+                }
               ],
-              "ckSelfIndv": [{ "id": 4004, "name": "cardExtra" }],
+              "ckSelfIndv": [
+                {
+                  "id": 4004,
+                  "name": "cardExtra"
+                }
+              ],
               "ckOpIndv": [],
               "maxRate": 5000
             }
           ],
           "svals": [
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 }
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            }
           ],
           "svals2": [
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 }
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            }
           ],
           "svals3": [
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 }
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            }
           ],
           "svals4": [
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 }
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            }
           ],
           "svals5": [
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 }
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            }
           ]
         }
       ]
@@ -4063,23 +7193,75 @@
       "detail": "自身の宝具威力をアップ(3ターン)<オーバーチャージで効果アップ> ＋ 敵全体に強力な攻撃 ＋ 自身のExtra Attackの威力をアップ(1ターン)",
       "unmodifiedDetail": "自身の宝具威力をアップ(3ターン)<オーバーチャージで効果アップ> ＋ 敵全体に強力な攻撃[{0}] ＋ 自身のExtra Attackの威力をアップ(1ターン)",
       "npGain": {
-        "buster": [69, 69, 69, 69, 69],
-        "arts": [69, 69, 69, 69, 69],
-        "quick": [69, 69, 69, 69, 69],
-        "extra": [69, 69, 69, 69, 69],
-        "defence": [500, 500, 500, 500, 500],
-        "np": [69, 69, 69, 69, 69]
+        "buster": [
+          69,
+          69,
+          69,
+          69,
+          69
+        ],
+        "arts": [
+          69,
+          69,
+          69,
+          69,
+          69
+        ],
+        "quick": [
+          69,
+          69,
+          69,
+          69,
+          69
+        ],
+        "extra": [
+          69,
+          69,
+          69,
+          69,
+          69
+        ],
+        "defence": [
+          500,
+          500,
+          500,
+          500,
+          500
+        ],
+        "np": [
+          69,
+          69,
+          69,
+          69,
+          69
+        ]
       },
-      "npDistribution": [16, 33, 51],
+      "npDistribution": [
+        16,
+        33,
+        51
+      ],
       "strengthStatus": 0,
       "priority": 0,
       "condQuestId": 0,
       "condQuestPhase": 0,
       "individuality": [
-        { "id": 3002, "name": "attackMagical" },
-        { "id": 4003, "name": "cardQuick" },
-        { "id": 4007, "name": "cardNP" },
-        { "id": 4101, "name": "aoeNP" }
+        {
+          "id": 3002,
+          "name": "attackMagical"
+        },
+        {
+          "id": 4003,
+          "name": "cardQuick"
+        },
+        {
+          "id": 4007,
+          "name": "cardNP"
+        },
+        {
+          "id": 4101,
+          "name": "aoeNP"
+        }
       ],
       "script": {},
       "functions": [
@@ -4103,9 +7285,18 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" },
-                { "id": 3030, "name": "buffNpDamageUp" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                },
+                {
+                  "id": 3030,
+                  "name": "buffNpDamageUp"
+                }
               ],
               "tvals": [],
               "ckSelfIndv": [],
@@ -4114,39 +7305,164 @@
             }
           ],
           "svals": [
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 200
+            }
           ],
           "svals2": [
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 }
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 300
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 300
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 300
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 300
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 300
+            }
           ],
           "svals3": [
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 400 }
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 400
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 400
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 400
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 400
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 400
+            }
           ],
           "svals4": [
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 500 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 500 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 500 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 500 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 500 }
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 500
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 500
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 500
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 500
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 500
+            }
           ],
           "svals5": [
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 600 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 600 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 600 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 600 },
-            { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 600 }
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 600
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 600
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 600
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 600
+            },
+            {
+              "Rate": 1000,
+              "Turn": 3,
+              "Count": -1,
+              "Value": 600
+            }
           ]
         },
         {
@@ -4160,39 +7476,114 @@
           "funcGroup": [],
           "buffs": [],
           "svals": [
-            { "Rate": 1000, "Value": 6000 },
-            { "Rate": 1000, "Value": 8000 },
-            { "Rate": 1000, "Value": 9000 },
-            { "Rate": 1000, "Value": 9500 },
-            { "Rate": 1000, "Value": 10000 }
+            {
+              "Rate": 1000,
+              "Value": 6000
+            },
+            {
+              "Rate": 1000,
+              "Value": 8000
+            },
+            {
+              "Rate": 1000,
+              "Value": 9000
+            },
+            {
+              "Rate": 1000,
+              "Value": 9500
+            },
+            {
+              "Rate": 1000,
+              "Value": 10000
+            }
           ],
           "svals2": [
-            { "Rate": 1000, "Value": 6000 },
-            { "Rate": 1000, "Value": 8000 },
-            { "Rate": 1000, "Value": 9000 },
-            { "Rate": 1000, "Value": 9500 },
-            { "Rate": 1000, "Value": 10000 }
+            {
+              "Rate": 1000,
+              "Value": 6000
+            },
+            {
+              "Rate": 1000,
+              "Value": 8000
+            },
+            {
+              "Rate": 1000,
+              "Value": 9000
+            },
+            {
+              "Rate": 1000,
+              "Value": 9500
+            },
+            {
+              "Rate": 1000,
+              "Value": 10000
+            }
           ],
           "svals3": [
-            { "Rate": 1000, "Value": 6000 },
-            { "Rate": 1000, "Value": 8000 },
-            { "Rate": 1000, "Value": 9000 },
-            { "Rate": 1000, "Value": 9500 },
-            { "Rate": 1000, "Value": 10000 }
+            {
+              "Rate": 1000,
+              "Value": 6000
+            },
+            {
+              "Rate": 1000,
+              "Value": 8000
+            },
+            {
+              "Rate": 1000,
+              "Value": 9000
+            },
+            {
+              "Rate": 1000,
+              "Value": 9500
+            },
+            {
+              "Rate": 1000,
+              "Value": 10000
+            }
           ],
           "svals4": [
-            { "Rate": 1000, "Value": 6000 },
-            { "Rate": 1000, "Value": 8000 },
-            { "Rate": 1000, "Value": 9000 },
-            { "Rate": 1000, "Value": 9500 },
-            { "Rate": 1000, "Value": 10000 }
+            {
+              "Rate": 1000,
+              "Value": 6000
+            },
+            {
+              "Rate": 1000,
+              "Value": 8000
+            },
+            {
+              "Rate": 1000,
+              "Value": 9000
+            },
+            {
+              "Rate": 1000,
+              "Value": 9500
+            },
+            {
+              "Rate": 1000,
+              "Value": 10000
+            }
           ],
           "svals5": [
-            { "Rate": 1000, "Value": 6000 },
-            { "Rate": 1000, "Value": 8000 },
-            { "Rate": 1000, "Value": 9000 },
-            { "Rate": 1000, "Value": 9500 },
-            { "Rate": 1000, "Value": 10000 }
+            {
+              "Rate": 1000,
+              "Value": 6000
+            },
+            {
+              "Rate": 1000,
+              "Value": 8000
+            },
+            {
+              "Rate": 1000,
+              "Value": 9000
+            },
+            {
+              "Rate": 1000,
+              "Value": 9500
+            },
+            {
+              "Rate": 1000,
+              "Value": 10000
+            }
           ]
         },
         {
@@ -4215,52 +7606,194 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                }
               ],
               "tvals": [
-                { "id": 5000, "name": "canBeInBattle" },
-                { "id": 4004, "name": "cardExtra" }
+                {
+                  "id": 5000,
+                  "name": "canBeInBattle"
+                },
+                {
+                  "id": 4004,
+                  "name": "cardExtra"
+                }
               ],
-              "ckSelfIndv": [{ "id": 4004, "name": "cardExtra" }],
+              "ckSelfIndv": [
+                {
+                  "id": 4004,
+                  "name": "cardExtra"
+                }
+              ],
               "ckOpIndv": [],
               "maxRate": 5000
             }
           ],
           "svals": [
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 }
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            }
           ],
           "svals2": [
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 }
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            }
           ],
           "svals3": [
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 }
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            }
           ],
           "svals4": [
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 }
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            }
           ],
           "svals5": [
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 },
-            { "Rate": 1000, "Turn": 1, "Count": -1, "Value": 1000 }
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            }
           ]
         }
       ]

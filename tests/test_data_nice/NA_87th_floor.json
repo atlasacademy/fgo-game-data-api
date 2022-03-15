@@ -15,7 +15,13 @@
   "chapterSubId": 0,
   "chapterSubStr": "",
   "gifts": [
-    { "id": 25239, "type": "item", "objectId": 6520, "priority": 0, "num": 1 }
+    {
+      "id": 25239,
+      "type": "item",
+      "objectId": 6520,
+      "priority": 0,
+      "num": 1
+    }
   ],
   "releaseConditions": [
     {
@@ -30,9 +36,16 @@
       "value": 0,
       "closedMessage": "87th Floor: The Clatter of Hooves"
     },
-    { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+    {
+      "type": "date",
+      "targetId": 0,
+      "value": 0,
+      "closedMessage": ""
+    }
   ],
-  "phases": [1],
+  "phases": [
+    1
+  ],
   "phasesWithEnemies": [],
   "phasesNoBattle": [],
   "phaseScripts": [],
@@ -40,10 +53,18 @@
   "openedAt": 1580097600,
   "closedAt": 1580702399,
   "phase": 1,
-  "className": ["assassin"],
+  "className": [
+    "assassin"
+  ],
   "individuality": [
-    { "id": 2038, "name": "fieldSunlight" },
-    { "id": 94000071, "name": "eventSetsubun" }
+    {
+      "id": 2038,
+      "name": "fieldSunlight"
+    },
+    {
+      "id": 94000071,
+      "name": "eventSetsubun"
+    }
   ],
   "qp": 6400,
   "exp": 15690,

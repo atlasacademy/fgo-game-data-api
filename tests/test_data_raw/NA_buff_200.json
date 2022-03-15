@@ -1,6 +1,9 @@
 {
   "mstBuff": {
-    "vals": [3005, 3042],
+    "vals": [
+      3005,
+      3042
+    ],
     "tvals": [],
     "ckSelfIndv": [],
     "ckOpIndv": [],

@@ -17,7 +17,12 @@
       "type": "upCriticalpoint",
       "buffGroup": 0,
       "script": {},
-      "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+      "vals": [
+        {
+          "id": 3004,
+          "name": "buffPositiveEffect"
+        }
+      ],
       "tvals": [],
       "ckSelfIndv": [],
       "ckOpIndv": [],
@@ -35,7 +40,18 @@
           "unmodifiedDetail": "Increase an ally's Critical Star drop rate [{0}] (1 turn)",
           "type": "active",
           "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00604.png",
-          "coolDown": [12, 12, 12, 12, 12, 11, 11, 11, 11, 10],
+          "coolDown": [
+            12,
+            12,
+            12,
+            12,
+            12,
+            11,
+            11,
+            11,
+            11,
+            10
+          ],
           "actIndividuality": [],
           "script": {},
           "extraPassive": [],
@@ -60,7 +76,12 @@
                   "type": "upCriticalpoint",
                   "buffGroup": 0,
                   "script": {},
-                  "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+                  "vals": [
+                    {
+                      "id": 3004,
+                      "name": "buffPositiveEffect"
+                    }
+                  ],
                   "tvals": [],
                   "ckSelfIndv": [],
                   "ckOpIndv": [],
@@ -68,16 +89,66 @@
                 }
               ],
               "svals": [
-                { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 500 },
-                { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 550 },
-                { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 600 },
-                { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 650 },
-                { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 700 },
-                { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 750 },
-                { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 800 },
-                { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 850 },
-                { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 900 },
-                { "Rate": 5000, "Turn": 1, "Count": -1, "Value": 1000 }
+                {
+                  "Rate": 5000,
+                  "Turn": 1,
+                  "Count": -1,
+                  "Value": 500
+                },
+                {
+                  "Rate": 5000,
+                  "Turn": 1,
+                  "Count": -1,
+                  "Value": 550
+                },
+                {
+                  "Rate": 5000,
+                  "Turn": 1,
+                  "Count": -1,
+                  "Value": 600
+                },
+                {
+                  "Rate": 5000,
+                  "Turn": 1,
+                  "Count": -1,
+                  "Value": 650
+                },
+                {
+                  "Rate": 5000,
+                  "Turn": 1,
+                  "Count": -1,
+                  "Value": 700
+                },
+                {
+                  "Rate": 5000,
+                  "Turn": 1,
+                  "Count": -1,
+                  "Value": 750
+                },
+                {
+                  "Rate": 5000,
+                  "Turn": 1,
+                  "Count": -1,
+                  "Value": 800
+                },
+                {
+                  "Rate": 5000,
+                  "Turn": 1,
+                  "Count": -1,
+                  "Value": 850
+                },
+                {
+                  "Rate": 5000,
+                  "Turn": 1,
+                  "Count": -1,
+                  "Value": 900
+                },
+                {
+                  "Rate": 5000,
+                  "Turn": 1,
+                  "Count": -1,
+                  "Value": 1000
+                }
               ]
             }
           ]

@@ -1,78 +1,127 @@
 {
   "commandAtk": {
     "limit": "normal",
-    "plusTypes": ["upCommandatk", "upCommandall"],
-    "minusTypes": ["downCommandatk", "downCommandall"],
+    "plusTypes": [
+      "upCommandatk",
+      "upCommandall"
+    ],
+    "minusTypes": [
+      "downCommandatk",
+      "downCommandall"
+    ],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "commandDef": {
     "limit": "upper",
-    "plusTypes": ["upDefencecommandall", "upDefencecommanDamage"],
-    "minusTypes": ["downDefencecommandall", "downDefencecommanDamage"],
+    "plusTypes": [
+      "upDefencecommandall",
+      "upDefencecommanDamage"
+    ],
+    "minusTypes": [
+      "downDefencecommandall",
+      "downDefencecommanDamage"
+    ],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "atk": {
     "limit": "normal",
-    "plusTypes": ["upAtk"],
-    "minusTypes": ["downAtk"],
+    "plusTypes": [
+      "upAtk"
+    ],
+    "minusTypes": [
+      "downAtk"
+    ],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000, 10000]
+    "maxRate": [
+      5000,
+      10000
+    ]
   },
   "defence": {
     "limit": "lower",
-    "plusTypes": ["upDefence"],
-    "minusTypes": ["downDefence"],
+    "plusTypes": [
+      "upDefence"
+    ],
+    "minusTypes": [
+      "downDefence"
+    ],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "defencePierce": {
     "limit": "lower",
     "plusTypes": [],
-    "minusTypes": ["downDefence"],
+    "minusTypes": [
+      "downDefence"
+    ],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "specialdefence": {
     "limit": "normal",
-    "plusTypes": ["upSpecialdefence"],
-    "minusTypes": ["downSpecialdefence"],
+    "plusTypes": [
+      "upSpecialdefence"
+    ],
+    "minusTypes": [
+      "downSpecialdefence"
+    ],
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "damage": {
     "limit": "upper",
-    "plusTypes": ["upDamage"],
-    "minusTypes": ["downDamage"],
+    "plusTypes": [
+      "upDamage"
+    ],
+    "minusTypes": [
+      "downDamage"
+    ],
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [10000]
+    "maxRate": [
+      10000
+    ]
   },
   "damageIndividuality": {
     "limit": "upper",
-    "plusTypes": ["upDamageIndividuality"],
-    "minusTypes": ["downDamageIndividuality"],
+    "plusTypes": [
+      "upDamageIndividuality"
+    ],
+    "minusTypes": [
+      "downDamageIndividuality"
+    ],
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
@@ -81,457 +130,687 @@
   },
   "damageIndividualityActiveonly": {
     "limit": "upper",
-    "plusTypes": ["upDamageIndividualityActiveonly"],
-    "minusTypes": ["downDamageIndividualityActiveonly"],
+    "plusTypes": [
+      "upDamageIndividualityActiveonly"
+    ],
+    "minusTypes": [
+      "downDamageIndividualityActiveonly"
+    ],
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [10000]
+    "maxRate": [
+      10000
+    ]
   },
   "selfdamage": {
     "limit": "upper",
-    "plusTypes": ["upSelfdamage"],
-    "minusTypes": ["downSelfdamage"],
+    "plusTypes": [
+      "upSelfdamage"
+    ],
+    "minusTypes": [
+      "downSelfdamage"
+    ],
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "criticalDamage": {
     "limit": "upper",
-    "plusTypes": ["upCriticaldamage"],
-    "minusTypes": ["downCriticaldamage"],
+    "plusTypes": [
+      "upCriticaldamage"
+    ],
+    "minusTypes": [
+      "downCriticaldamage"
+    ],
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "npdamage": {
     "limit": "upper",
-    "plusTypes": ["upNpdamage"],
-    "minusTypes": ["downNpdamage"],
+    "plusTypes": [
+      "upNpdamage"
+    ],
+    "minusTypes": [
+      "downNpdamage"
+    ],
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "givenDamage": {
     "limit": "none",
-    "plusTypes": ["addDamage"],
-    "minusTypes": ["subDamage"],
+    "plusTypes": [
+      "addDamage"
+    ],
+    "minusTypes": [
+      "subDamage"
+    ],
     "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "receiveDamage": {
     "limit": "none",
-    "plusTypes": ["addSelfdamage"],
-    "minusTypes": ["subSelfdamage"],
+    "plusTypes": [
+      "addSelfdamage"
+    ],
+    "minusTypes": [
+      "subSelfdamage"
+    ],
     "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "pierceInvincible": {
     "limit": "none",
-    "plusTypes": ["pierceInvincible"],
+    "plusTypes": [
+      "pierceInvincible"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "invincible": {
     "limit": "none",
-    "plusTypes": ["invincible"],
+    "plusTypes": [
+      "invincible"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "breakAvoidance": {
     "limit": "none",
-    "plusTypes": ["breakAvoidance"],
+    "plusTypes": [
+      "breakAvoidance"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "avoidance": {
     "limit": "none",
-    "plusTypes": ["avoidance"],
+    "plusTypes": [
+      "avoidance"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "overwriteBattleclass": {
     "limit": "none",
-    "plusTypes": ["overwriteBattleclass"],
+    "plusTypes": [
+      "overwriteBattleclass"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "overwriteClassrelatioAtk": {
     "limit": "none",
-    "plusTypes": ["overwriteClassrelatioAtk"],
+    "plusTypes": [
+      "overwriteClassrelatioAtk"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [2000]
+    "maxRate": [
+      2000
+    ]
   },
   "overwriteClassrelatioDef": {
     "limit": "none",
-    "plusTypes": ["overwriteClassrelatioDef"],
+    "plusTypes": [
+      "overwriteClassrelatioDef"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [2000]
+    "maxRate": [
+      2000
+    ]
   },
   "commandNpAtk": {
     "limit": "normal",
-    "plusTypes": ["upCommandnp", "upCommandall"],
-    "minusTypes": ["downCommandnp", "downCommandall"],
+    "plusTypes": [
+      "upCommandnp",
+      "upCommandall"
+    ],
+    "minusTypes": [
+      "downCommandnp",
+      "downCommandall"
+    ],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "commandNpDef": {
     "limit": "upper",
-    "plusTypes": ["upDefencecommandall"],
-    "minusTypes": ["downDefencecommandall"],
+    "plusTypes": [
+      "upDefencecommandall"
+    ],
+    "minusTypes": [
+      "downDefencecommandall"
+    ],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "dropNp": {
     "limit": "normal",
-    "plusTypes": ["upDropnp"],
-    "minusTypes": ["downDropnp"],
+    "plusTypes": [
+      "upDropnp"
+    ],
+    "minusTypes": [
+      "downDropnp"
+    ],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "dropNpDamage": {
     "limit": "normal",
-    "plusTypes": ["upDamagedropnp"],
-    "minusTypes": ["downDamagedropnp"],
+    "plusTypes": [
+      "upDamagedropnp"
+    ],
+    "minusTypes": [
+      "downDamagedropnp"
+    ],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "commandStarAtk": {
     "limit": "normal",
-    "plusTypes": ["upCommandstar", "upCommandall"],
-    "minusTypes": ["downCommanstar", "downCommandall"],
+    "plusTypes": [
+      "upCommandstar",
+      "upCommandall"
+    ],
+    "minusTypes": [
+      "downCommanstar",
+      "downCommandall"
+    ],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "commandStarDef": {
     "limit": "upper",
-    "plusTypes": ["upDefencecommandall"],
-    "minusTypes": ["downDefencecommandall"],
+    "plusTypes": [
+      "upDefencecommandall"
+    ],
+    "minusTypes": [
+      "downDefencecommandall"
+    ],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "criticalPoint": {
     "limit": "normal",
-    "plusTypes": ["upCriticalpoint"],
-    "minusTypes": ["downCriticalpoint"],
+    "plusTypes": [
+      "upCriticalpoint"
+    ],
+    "minusTypes": [
+      "downCriticalpoint"
+    ],
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "starweight": {
     "limit": "normal",
-    "plusTypes": ["upStarweight"],
-    "minusTypes": ["downStarweight"],
+    "plusTypes": [
+      "upStarweight"
+    ],
+    "minusTypes": [
+      "downStarweight"
+    ],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [100000]
+    "maxRate": [
+      100000
+    ]
   },
   "turnendNp": {
     "limit": "none",
-    "plusTypes": ["regainNp"],
-    "minusTypes": ["reduceNp"],
+    "plusTypes": [
+      "regainNp"
+    ],
+    "minusTypes": [
+      "reduceNp"
+    ],
     "baseParam": 0,
     "baseValue": 0,
     "isRec": false,
     "plusAction": 71,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "turnendStar": {
     "limit": "none",
-    "plusTypes": ["regainStar"],
+    "plusTypes": [
+      "regainStar"
+    ],
     "minusTypes": [],
     "baseParam": 0,
     "baseValue": 0,
     "isRec": false,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "turnendHpRegain": {
     "limit": "none",
-    "plusTypes": ["regainHp"],
+    "plusTypes": [
+      "regainHp"
+    ],
     "minusTypes": [],
     "baseParam": 0,
     "baseValue": 0,
     "isRec": false,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "turnendHpReduce": {
     "limit": "none",
-    "plusTypes": ["reduceHp"],
+    "plusTypes": [
+      "reduceHp"
+    ],
     "minusTypes": [],
     "baseParam": 0,
     "baseValue": 0,
     "isRec": false,
     "plusAction": 72,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "gainHp": {
     "limit": "normal",
-    "plusTypes": ["upGainHp"],
-    "minusTypes": ["downGainHp"],
+    "plusTypes": [
+      "upGainHp"
+    ],
+    "minusTypes": [
+      "downGainHp"
+    ],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [50000]
+    "maxRate": [
+      50000
+    ]
   },
   "turnvalNp": {
     "limit": "none",
-    "plusTypes": ["upNpturnval"],
-    "minusTypes": ["downNpturnval"],
+    "plusTypes": [
+      "upNpturnval"
+    ],
+    "minusTypes": [
+      "downNpturnval"
+    ],
     "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "grantState": {
     "limit": "normal",
-    "plusTypes": ["upGrantstate"],
-    "minusTypes": ["downGrantstate"],
+    "plusTypes": [
+      "upGrantstate"
+    ],
+    "minusTypes": [
+      "downGrantstate"
+    ],
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "resistanceState": {
     "limit": "normal",
-    "plusTypes": ["upTolerance"],
-    "minusTypes": ["downTolerance"],
+    "plusTypes": [
+      "upTolerance"
+    ],
+    "minusTypes": [
+      "downTolerance"
+    ],
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "avoidState": {
     "limit": "none",
-    "plusTypes": ["avoidState"],
+    "plusTypes": [
+      "avoidState"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "donotAct": {
     "limit": "none",
-    "plusTypes": ["donotAct"],
+    "plusTypes": [
+      "donotAct"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "donotSkill": {
     "limit": "none",
-    "plusTypes": ["donotSkill"],
+    "plusTypes": [
+      "donotSkill"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "donotNoble": {
     "limit": "none",
-    "plusTypes": ["donotNoble"],
+    "plusTypes": [
+      "donotNoble"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "donotRecovery": {
     "limit": "none",
-    "plusTypes": ["donotRecovery"],
+    "plusTypes": [
+      "donotRecovery"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "individualityAdd": {
     "limit": "none",
-    "plusTypes": ["addIndividuality"],
+    "plusTypes": [
+      "addIndividuality"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "individualitySub": {
     "limit": "none",
-    "plusTypes": ["subIndividuality"],
+    "plusTypes": [
+      "subIndividuality"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "hate": {
     "limit": "none",
-    "plusTypes": ["upHate"],
+    "plusTypes": [
+      "upHate"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [50000]
+    "maxRate": [
+      50000
+    ]
   },
   "criticalRate": {
     "limit": "normal",
-    "plusTypes": ["upCriticalrate"],
-    "minusTypes": ["downCriticalrate"],
+    "plusTypes": [
+      "upCriticalrate"
+    ],
+    "minusTypes": [
+      "downCriticalrate"
+    ],
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "avoidInstantdeath": {
     "limit": "normal",
-    "plusTypes": ["avoidInstantdeath"],
+    "plusTypes": [
+      "avoidInstantdeath"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "resistInstantdeath": {
     "limit": "normal",
-    "plusTypes": ["upResistInstantdeath"],
+    "plusTypes": [
+      "upResistInstantdeath"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "nonresistInstantdeath": {
     "limit": "normal",
-    "plusTypes": ["upNonresistInstantdeath"],
+    "plusTypes": [
+      "upNonresistInstantdeath"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "regainNpUsedNoble": {
     "limit": "none",
-    "plusTypes": ["regainNpUsedNoble"],
+    "plusTypes": [
+      "regainNpUsedNoble"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [50000]
+    "maxRate": [
+      50000
+    ]
   },
   "functionDead": {
     "limit": "none",
-    "plusTypes": ["deadFunction"],
+    "plusTypes": [
+      "deadFunction"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "maxhpRate": {
     "limit": "normal",
-    "plusTypes": ["upMaxhp"],
-    "minusTypes": ["downMaxhp"],
+    "plusTypes": [
+      "upMaxhp"
+    ],
+    "minusTypes": [
+      "downMaxhp"
+    ],
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "maxhpValue": {
     "limit": "none",
-    "plusTypes": ["addMaxhp"],
-    "minusTypes": ["subMaxhp"],
+    "plusTypes": [
+      "addMaxhp"
+    ],
+    "minusTypes": [
+      "subMaxhp"
+    ],
     "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [50000]
+    "maxRate": [
+      50000
+    ]
   },
   "functionWavestart": {
     "limit": "none",
-    "plusTypes": ["wavestartFunction"],
+    "plusTypes": [
+      "wavestartFunction"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
@@ -541,138 +820,204 @@
   },
   "functionSelfturnend": {
     "limit": "none",
-    "plusTypes": ["selfturnendFunction"],
+    "plusTypes": [
+      "selfturnendFunction"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "giveGainHp": {
     "limit": "normal",
-    "plusTypes": ["upGivegainHp"],
-    "minusTypes": ["downGivegainHp"],
+    "plusTypes": [
+      "upGivegainHp"
+    ],
+    "minusTypes": [
+      "downGivegainHp"
+    ],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [50000]
+    "maxRate": [
+      50000
+    ]
   },
   "functionCommandattack": {
     "limit": "none",
-    "plusTypes": ["commandattackFunction"],
+    "plusTypes": [
+      "commandattackFunction"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "functionDeadattack": {
     "limit": "none",
-    "plusTypes": ["deadattackFunction"],
+    "plusTypes": [
+      "deadattackFunction"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "functionEntry": {
     "limit": "none",
-    "plusTypes": ["entryFunction"],
+    "plusTypes": [
+      "entryFunction"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "chagetd": {
     "limit": "none",
-    "plusTypes": ["upChagetd"],
+    "plusTypes": [
+      "upChagetd"
+    ],
     "minusTypes": [],
     "baseParam": 0,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5]
+    "maxRate": [
+      5
+    ]
   },
   "grantSubstate": {
     "limit": "normal",
-    "plusTypes": ["upGrantSubstate"],
-    "minusTypes": ["downGrantSubstate"],
+    "plusTypes": [
+      "upGrantSubstate"
+    ],
+    "minusTypes": [
+      "downGrantSubstate"
+    ],
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "toleranceSubstate": {
     "limit": "normal",
-    "plusTypes": ["upToleranceSubstate"],
-    "minusTypes": ["downToleranceSubstate"],
+    "plusTypes": [
+      "upToleranceSubstate"
+    ],
+    "minusTypes": [
+      "downToleranceSubstate"
+    ],
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "grantInstantdeath": {
     "limit": "normal",
-    "plusTypes": ["upGrantInstantdeath"],
-    "minusTypes": ["downGrantInstantdeath"],
+    "plusTypes": [
+      "upGrantInstantdeath"
+    ],
+    "minusTypes": [
+      "downGrantInstantdeath"
+    ],
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "functionDamage": {
     "limit": "none",
-    "plusTypes": ["damageFunction"],
+    "plusTypes": [
+      "damageFunction"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "functionReflection": {
     "limit": "none",
-    "plusTypes": ["reflectionFunction"],
+    "plusTypes": [
+      "reflectionFunction"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "multiattack": {
     "limit": "none",
-    "plusTypes": ["multiattack"],
+    "plusTypes": [
+      "multiattack"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [10]
+    "maxRate": [
+      10
+    ]
   },
   "giveNp": {
     "limit": "upper",
-    "plusTypes": ["upGiveNp"],
-    "minusTypes": ["downGiveNp"],
+    "plusTypes": [
+      "upGiveNp"
+    ],
+    "minusTypes": [
+      "downGiveNp"
+    ],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "resistanceDelayNpturn": {
     "limit": "none",
-    "plusTypes": ["upResistanceDelayNpturn"],
-    "minusTypes": ["downResistanceDelayNpturn"],
+    "plusTypes": [
+      "upResistanceDelayNpturn"
+    ],
+    "minusTypes": [
+      "downResistanceDelayNpturn"
+    ],
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
@@ -681,18 +1026,26 @@
   },
   "pierceDefence": {
     "limit": "none",
-    "plusTypes": ["pierceDefence"],
+    "plusTypes": [
+      "pierceDefence"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "gutsHp": {
     "limit": "none",
-    "plusTypes": ["upGutsHp"],
-    "minusTypes": ["downGutsHp"],
+    "plusTypes": [
+      "upGutsHp"
+    ],
+    "minusTypes": [
+      "downGutsHp"
+    ],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
@@ -701,47 +1054,69 @@
   },
   "funcgainNp": {
     "limit": "none",
-    "plusTypes": ["upFuncgainNp"],
-    "minusTypes": ["downFuncgainNp"],
+    "plusTypes": [
+      "upFuncgainNp"
+    ],
+    "minusTypes": [
+      "downFuncgainNp"
+    ],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [1000]
+    "maxRate": [
+      1000
+    ]
   },
   "funcHpReduce": {
     "limit": "none",
-    "plusTypes": ["upFuncHpReduce"],
-    "minusTypes": ["downFuncHpReduce"],
+    "plusTypes": [
+      "upFuncHpReduce"
+    ],
+    "minusTypes": [
+      "downFuncHpReduce"
+    ],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [5000]
+    "maxRate": [
+      5000
+    ]
   },
   "functionNpattack": {
     "limit": "none",
-    "plusTypes": ["npattackPrevBuff"],
+    "plusTypes": [
+      "npattackPrevBuff"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "fixCommandcard": {
     "limit": "none",
-    "plusTypes": ["fixCommandcard"],
+    "plusTypes": [
+      "fixCommandcard"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "donotGainnp": {
     "limit": "none",
-    "plusTypes": ["donotGainnp"],
+    "plusTypes": [
+      "donotGainnp"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
@@ -751,37 +1126,51 @@
   },
   "fieldIndividuality": {
     "limit": "none",
-    "plusTypes": ["fieldIndividuality"],
+    "plusTypes": [
+      "fieldIndividuality"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "donotActCommandtype": {
     "limit": "none",
-    "plusTypes": ["donotActCommandtype"],
+    "plusTypes": [
+      "donotActCommandtype"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "damageEventPoint": {
     "limit": "upper",
-    "plusTypes": ["upDamageEventPoint"],
+    "plusTypes": [
+      "upDamageEventPoint"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [10000]
+    "maxRate": [
+      10000
+    ]
   },
   "damageSpecial": {
     "limit": "upper",
-    "plusTypes": ["upDamageSpecial"],
+    "plusTypes": [
+      "upDamageSpecial"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 1000,
@@ -791,63 +1180,87 @@
   },
   "functionAttack": {
     "limit": "none",
-    "plusTypes": ["attackFunction"],
+    "plusTypes": [
+      "attackFunction"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "functionCommandcodeattack": {
     "limit": "none",
-    "plusTypes": ["commandcodeattackFunction"],
+    "plusTypes": [
+      "commandcodeattackFunction"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "donotNobleCondMismatch": {
     "limit": "none",
-    "plusTypes": ["donotNobleCondMismatch"],
+    "plusTypes": [
+      "donotNobleCondMismatch"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "donotSelectCommandcard": {
     "limit": "none",
-    "plusTypes": ["donotSelectCommandcard"],
+    "plusTypes": [
+      "donotSelectCommandcard"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "donotReplace": {
     "limit": "none",
-    "plusTypes": ["donotReplace"],
+    "plusTypes": [
+      "donotReplace"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "shortenUserEquipSkill": {
     "limit": "none",
-    "plusTypes": ["shortenUserEquipSkill"],
+    "plusTypes": [
+      "shortenUserEquipSkill"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "tdTypeChange": {
     "limit": "none",
@@ -862,42 +1275,60 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "overwriteClassRelation": {
     "limit": "none",
-    "plusTypes": ["overwriteClassRelation"],
+    "plusTypes": [
+      "overwriteClassRelation"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "functionCommandattackBefore": {
     "limit": "none",
-    "plusTypes": ["commandattackBeforeFunction"],
+    "plusTypes": [
+      "commandattackBeforeFunction"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "functionGuts": {
     "limit": "none",
-    "plusTypes": ["gutsFunction"],
+    "plusTypes": [
+      "gutsFunction"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": [0]
+    "maxRate": [
+      0
+    ]
   },
   "criticalRateDamageTaken": {
     "limit": "normal",
-    "plusTypes": ["upCriticalRateDamageTaken"],
-    "minusTypes": ["downCriticalRateDamageTaken"],
+    "plusTypes": [
+      "upCriticalRateDamageTaken"
+    ],
+    "minusTypes": [
+      "downCriticalRateDamageTaken"
+    ],
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
@@ -906,8 +1337,12 @@
   },
   "criticalStarDamageTaken": {
     "limit": "normal",
-    "plusTypes": ["upCriticalStarDamageTaken"],
-    "minusTypes": ["downCriticalStarDamageTaken"],
+    "plusTypes": [
+      "upCriticalStarDamageTaken"
+    ],
+    "minusTypes": [
+      "downCriticalStarDamageTaken"
+    ],
     "baseParam": 1000,
     "baseValue": 1000,
     "isRec": true,
@@ -916,7 +1351,9 @@
   },
   "skillRankChange": {
     "limit": "normal",
-    "plusTypes": ["skillRankUp"],
+    "plusTypes": [
+      "skillRankUp"
+    ],
     "minusTypes": [],
     "baseParam": 0,
     "baseValue": 0,
@@ -926,7 +1363,9 @@
   },
   "avoidanceIndividuality": {
     "limit": "normal",
-    "plusTypes": ["avoidanceIndividuality"],
+    "plusTypes": [
+      "avoidanceIndividuality"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
@@ -936,7 +1375,9 @@
   },
   "changeCommandCardType": {
     "limit": "none",
-    "plusTypes": ["changeCommandCardType"],
+    "plusTypes": [
+      "changeCommandCardType"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
@@ -946,7 +1387,9 @@
   },
   "specialInvincible": {
     "limit": "none",
-    "plusTypes": ["specialInvincible"],
+    "plusTypes": [
+      "specialInvincible"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
@@ -956,7 +1399,9 @@
   },
   "preventDeathByDamage": {
     "limit": "none",
-    "plusTypes": ["preventDeathByDamage"],
+    "plusTypes": [
+      "preventDeathByDamage"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
@@ -966,7 +1411,9 @@
   },
   "functionCommandcodeattackAfter": {
     "limit": "none",
-    "plusTypes": ["commandcodeattackAfterFunction"],
+    "plusTypes": [
+      "commandcodeattackAfterFunction"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,
@@ -976,7 +1423,9 @@
   },
   "functionAttackBefore": {
     "limit": "none",
-    "plusTypes": ["attackBeforeFunction"],
+    "plusTypes": [
+      "attackBeforeFunction"
+    ],
     "minusTypes": [],
     "baseParam": 1000,
     "baseValue": 0,

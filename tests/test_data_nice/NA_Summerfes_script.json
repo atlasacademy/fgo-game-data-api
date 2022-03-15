@@ -35,11 +35,20 @@
           "value": 0,
           "closedMessage": ""
         },
-        { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+        {
+          "type": "date",
+          "targetId": 0,
+          "value": 0,
+          "closedMessage": ""
+        }
       ],
-      "phases": [1],
+      "phases": [
+        1
+      ],
       "phasesWithEnemies": [],
-      "phasesNoBattle": [1],
+      "phasesNoBattle": [
+        1
+      ],
       "phaseScripts": [
         {
           "phase": 1,
@@ -87,11 +96,20 @@
           "value": 0,
           "closedMessage": ""
         },
-        { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+        {
+          "type": "date",
+          "targetId": 0,
+          "value": 0,
+          "closedMessage": ""
+        }
       ],
-      "phases": [1],
+      "phases": [
+        1
+      ],
       "phasesWithEnemies": [],
-      "phasesNoBattle": [1],
+      "phasesNoBattle": [
+        1
+      ],
       "phaseScripts": [
         {
           "phase": 1,

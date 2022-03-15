@@ -1,19 +1,27 @@
 [
   {
     "svtId": 203200,
-    "imageIds": ["cut084_jnn"]
+    "imageIds": [
+      "cut084_jnn"
+    ]
   },
   {
     "svtId": 1000100,
-    "imageIds": [1098126000]
+    "imageIds": [
+      1098126000
+    ]
   },
   {
     "svtId": 700900,
-    "imageIds": ["back57100"]
+    "imageIds": [
+      "back57100"
+    ]
   },
   {
     "svtId": 403700,
-    "imageIds": ["chara_cut01"]
+    "imageIds": [
+      "chara_cut01"
+    ]
   },
   {
     "svtId": 700100,
@@ -27,62 +35,103 @@
   },
   {
     "svtId": 103400,
-    "imageIds": ["cut085_miv"]
+    "imageIds": [
+      "cut085_miv"
+    ]
   },
   {
     "svtId": 300400,
-    "imageIds": ["cut111_krn", "cut111_krn02"]
+    "imageIds": [
+      "cut111_krn",
+      "cut111_krn02"
+    ]
   },
   {
     "svtId": 600800,
-    "imageIds": ["cut114_cle0", "cut114_cle1", "cut114_cle2", "cut114_cle3"]
+    "imageIds": [
+      "cut114_cle0",
+      "cut114_cle1",
+      "cut114_cle2",
+      "cut114_cle3"
+    ]
   },
   {
     "svtId": 602800,
-    "imageIds": ["cut115_ntc0"]
+    "imageIds": [
+      "cut115_ntc0"
+    ]
   },
   {
     "svtId": 203900,
-    "imageIds": ["cut143_ncgs"]
+    "imageIds": [
+      "cut143_ncgs"
+    ]
   },
   {
     "svtId": 2300300,
-    "imageIds": ["cut151_gns"]
+    "imageIds": [
+      "cut151_gns"
+    ]
   },
   {
     "svtId": 1000900,
-    "imageIds": ["cut153_kpt_foot"]
+    "imageIds": [
+      "cut153_kpt_foot"
+    ]
   },
   {
     "svtId": 304200,
-    "imageIds": ["cut194_rrsq"]
+    "imageIds": [
+      "cut194_rrsq"
+    ]
   },
   {
     "svtId": 2500600,
-    "imageIds": ["cut241_gho"]
+    "imageIds": [
+      "cut241_gho"
+    ]
   },
   {
     "svtId": 2500800,
-    "imageIds": ["cut257_hxo", "cut258_hxo", "cut259_hxo"]
+    "imageIds": [
+      "cut257_hxo",
+      "cut258_hxo",
+      "cut259_hxo"
+    ]
   },
   {
     "svtId": 2800100,
-    "imageIds": ["cut252_brk", "cut270_obr"]
+    "imageIds": [
+      "cut252_brk",
+      "cut270_obr"
+    ]
   },
   {
     "svtId": 401300,
-    "imageIds": ["cut265_nnr", "cut271_nnr"]
+    "imageIds": [
+      "cut265_nnr",
+      "cut271_nnr"
+    ]
   },
   {
     "svtId": 504500,
-    "imageIds": ["cut666_atc01", "cut666_atc02"]
+    "imageIds": [
+      "cut666_atc01",
+      "cut666_atc02"
+    ]
   },
   {
     "svtId": 104900,
-    "imageIds": ["cut257_mms01", "cut257_mms02", "cut257_mms03"]
+    "imageIds": [
+      "cut257_mms01",
+      "cut257_mms02",
+      "cut257_mms03"
+    ]
   },
   {
     "svtId": 204300,
-    "imageIds": ["cut671_brl"]
+    "imageIds": [
+      "cut671_brl"
+    ]
   }
 ]

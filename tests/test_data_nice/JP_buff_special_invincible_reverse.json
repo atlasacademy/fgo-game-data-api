@@ -8,9 +8,18 @@
     "buffGroup": 250,
     "script": {},
     "vals": [
-      { "id": 3004, "name": "buffPositiveEffect" },
-      { "id": 3064, "name": "buffSpecialInvincible" },
-      { "id": 3007, "name": "buffIncreaseDefence" }
+      {
+        "id": 3004,
+        "name": "buffPositiveEffect"
+      },
+      {
+        "id": 3064,
+        "name": "buffSpecialInvincible"
+      },
+      {
+        "id": 3007,
+        "name": "buffIncreaseDefence"
+      }
     ],
     "tvals": [],
     "ckSelfIndv": [],
@@ -35,16 +44,30 @@
                 "type": "specialInvincible",
                 "script": {},
                 "vals": [
-                  { "id": 3004, "name": "buffPositiveEffect" },
-                  { "id": 3064, "name": "buffSpecialInvincible" },
-                  { "id": 3007, "name": "buffIncreaseDefence" }
+                  {
+                    "id": 3004,
+                    "name": "buffPositiveEffect"
+                  },
+                  {
+                    "id": 3064,
+                    "name": "buffSpecialInvincible"
+                  },
+                  {
+                    "id": 3007,
+                    "name": "buffIncreaseDefence"
+                  }
                 ],
                 "tvals": [],
                 "ckSelfIndv": [],
                 "ckOpIndv": []
               }
             ],
-            "reverse": { "basic": { "skill": [], "NP": [] } }
+            "reverse": {
+              "basic": {
+                "skill": [],
+                "NP": []
+              }
+            }
           },
           {
             "funcId": 5611,
@@ -62,16 +85,30 @@
                 "type": "specialInvincible",
                 "script": {},
                 "vals": [
-                  { "id": 3004, "name": "buffPositiveEffect" },
-                  { "id": 3064, "name": "buffSpecialInvincible" },
-                  { "id": 3007, "name": "buffIncreaseDefence" }
+                  {
+                    "id": 3004,
+                    "name": "buffPositiveEffect"
+                  },
+                  {
+                    "id": 3064,
+                    "name": "buffSpecialInvincible"
+                  },
+                  {
+                    "id": 3007,
+                    "name": "buffIncreaseDefence"
+                  }
                 ],
                 "tvals": [],
                 "ckSelfIndv": [],
                 "ckOpIndv": []
               }
             ],
-            "reverse": { "basic": { "skill": [], "NP": [] } }
+            "reverse": {
+              "basic": {
+                "skill": [],
+                "NP": []
+              }
+            }
           },
           {
             "funcId": 5612,
@@ -89,9 +126,18 @@
                 "type": "specialInvincible",
                 "script": {},
                 "vals": [
-                  { "id": 3004, "name": "buffPositiveEffect" },
-                  { "id": 3064, "name": "buffSpecialInvincible" },
-                  { "id": 3007, "name": "buffIncreaseDefence" }
+                  {
+                    "id": 3004,
+                    "name": "buffPositiveEffect"
+                  },
+                  {
+                    "id": 3064,
+                    "name": "buffSpecialInvincible"
+                  },
+                  {
+                    "id": 3007,
+                    "name": "buffIncreaseDefence"
+                  }
                 ],
                 "tvals": [],
                 "ckSelfIndv": [],

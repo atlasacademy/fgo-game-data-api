@@ -10,23 +10,73 @@
   "detail": "Deal heavy Special Attack damage to all [Dragon] enemies <Special Attack damage increases with Overcharge>",
   "unmodifiedDetail": "Deal heavy Special Attack damage to all [Dragon] enemies [{0}] <Special Attack damage increases with Overcharge>",
   "npGain": {
-    "buster": [83, 83, 83, 83, 83],
-    "arts": [83, 83, 83, 83, 83],
-    "quick": [83, 83, 83, 83, 83],
-    "extra": [83, 83, 83, 83, 83],
-    "defence": [300, 300, 300, 300, 300],
-    "np": [83, 83, 83, 83, 83]
+    "buster": [
+      83,
+      83,
+      83,
+      83,
+      83
+    ],
+    "arts": [
+      83,
+      83,
+      83,
+      83,
+      83
+    ],
+    "quick": [
+      83,
+      83,
+      83,
+      83,
+      83
+    ],
+    "extra": [
+      83,
+      83,
+      83,
+      83,
+      83
+    ],
+    "defence": [
+      300,
+      300,
+      300,
+      300,
+      300
+    ],
+    "np": [
+      83,
+      83,
+      83,
+      83,
+      83
+    ]
   },
-  "npDistribution": [100],
+  "npDistribution": [
+    100
+  ],
   "strengthStatus": 1,
   "priority": 101,
   "condQuestId": 0,
   "condQuestPhase": 0,
   "individuality": [
-    { "id": 3002, "name": "attackMagical" },
-    { "id": 4002, "name": "cardBuster" },
-    { "id": 4007, "name": "cardNP" },
-    { "id": 4101, "name": "aoeNP" }
+    {
+      "id": 3002,
+      "name": "attackMagical"
+    },
+    {
+      "id": 4002,
+      "name": "cardBuster"
+    },
+    {
+      "id": 4007,
+      "name": "cardNP"
+    },
+    {
+      "id": 4101,
+      "name": "aoeNP"
+    }
   ],
   "script": {},
   "functions": [
@@ -41,39 +91,164 @@
       "funcGroup": [],
       "buffs": [],
       "svals": [
-        { "Rate": 1000, "Value": 3000, "Target": 2002, "Correction": 1500 },
-        { "Rate": 1000, "Value": 4000, "Target": 2002, "Correction": 1500 },
-        { "Rate": 1000, "Value": 4500, "Target": 2002, "Correction": 1500 },
-        { "Rate": 1000, "Value": 4750, "Target": 2002, "Correction": 1500 },
-        { "Rate": 1000, "Value": 5000, "Target": 2002, "Correction": 1500 }
+        {
+          "Rate": 1000,
+          "Value": 3000,
+          "Target": 2002,
+          "Correction": 1500
+        },
+        {
+          "Rate": 1000,
+          "Value": 4000,
+          "Target": 2002,
+          "Correction": 1500
+        },
+        {
+          "Rate": 1000,
+          "Value": 4500,
+          "Target": 2002,
+          "Correction": 1500
+        },
+        {
+          "Rate": 1000,
+          "Value": 4750,
+          "Target": 2002,
+          "Correction": 1500
+        },
+        {
+          "Rate": 1000,
+          "Value": 5000,
+          "Target": 2002,
+          "Correction": 1500
+        }
       ],
       "svals2": [
-        { "Rate": 1000, "Value": 3000, "Target": 2002, "Correction": 1625 },
-        { "Rate": 1000, "Value": 4000, "Target": 2002, "Correction": 1625 },
-        { "Rate": 1000, "Value": 4500, "Target": 2002, "Correction": 1625 },
-        { "Rate": 1000, "Value": 4750, "Target": 2002, "Correction": 1625 },
-        { "Rate": 1000, "Value": 5000, "Target": 2002, "Correction": 1625 }
+        {
+          "Rate": 1000,
+          "Value": 3000,
+          "Target": 2002,
+          "Correction": 1625
+        },
+        {
+          "Rate": 1000,
+          "Value": 4000,
+          "Target": 2002,
+          "Correction": 1625
+        },
+        {
+          "Rate": 1000,
+          "Value": 4500,
+          "Target": 2002,
+          "Correction": 1625
+        },
+        {
+          "Rate": 1000,
+          "Value": 4750,
+          "Target": 2002,
+          "Correction": 1625
+        },
+        {
+          "Rate": 1000,
+          "Value": 5000,
+          "Target": 2002,
+          "Correction": 1625
+        }
       ],
       "svals3": [
-        { "Rate": 1000, "Value": 3000, "Target": 2002, "Correction": 1750 },
-        { "Rate": 1000, "Value": 4000, "Target": 2002, "Correction": 1750 },
-        { "Rate": 1000, "Value": 4500, "Target": 2002, "Correction": 1750 },
-        { "Rate": 1000, "Value": 4750, "Target": 2002, "Correction": 1750 },
-        { "Rate": 1000, "Value": 5000, "Target": 2002, "Correction": 1750 }
+        {
+          "Rate": 1000,
+          "Value": 3000,
+          "Target": 2002,
+          "Correction": 1750
+        },
+        {
+          "Rate": 1000,
+          "Value": 4000,
+          "Target": 2002,
+          "Correction": 1750
+        },
+        {
+          "Rate": 1000,
+          "Value": 4500,
+          "Target": 2002,
+          "Correction": 1750
+        },
+        {
+          "Rate": 1000,
+          "Value": 4750,
+          "Target": 2002,
+          "Correction": 1750
+        },
+        {
+          "Rate": 1000,
+          "Value": 5000,
+          "Target": 2002,
+          "Correction": 1750
+        }
       ],
       "svals4": [
-        { "Rate": 1000, "Value": 3000, "Target": 2002, "Correction": 1875 },
-        { "Rate": 1000, "Value": 4000, "Target": 2002, "Correction": 1875 },
-        { "Rate": 1000, "Value": 4500, "Target": 2002, "Correction": 1875 },
-        { "Rate": 1000, "Value": 4750, "Target": 2002, "Correction": 1875 },
-        { "Rate": 1000, "Value": 5000, "Target": 2002, "Correction": 1875 }
+        {
+          "Rate": 1000,
+          "Value": 3000,
+          "Target": 2002,
+          "Correction": 1875
+        },
+        {
+          "Rate": 1000,
+          "Value": 4000,
+          "Target": 2002,
+          "Correction": 1875
+        },
+        {
+          "Rate": 1000,
+          "Value": 4500,
+          "Target": 2002,
+          "Correction": 1875
+        },
+        {
+          "Rate": 1000,
+          "Value": 4750,
+          "Target": 2002,
+          "Correction": 1875
+        },
+        {
+          "Rate": 1000,
+          "Value": 5000,
+          "Target": 2002,
+          "Correction": 1875
+        }
       ],
       "svals5": [
-        { "Rate": 1000, "Value": 3000, "Target": 2002, "Correction": 2000 },
-        { "Rate": 1000, "Value": 4000, "Target": 2002, "Correction": 2000 },
-        { "Rate": 1000, "Value": 4500, "Target": 2002, "Correction": 2000 },
-        { "Rate": 1000, "Value": 4750, "Target": 2002, "Correction": 2000 },
-        { "Rate": 1000, "Value": 5000, "Target": 2002, "Correction": 2000 }
+        {
+          "Rate": 1000,
+          "Value": 3000,
+          "Target": 2002,
+          "Correction": 2000
+        },
+        {
+          "Rate": 1000,
+          "Value": 4000,
+          "Target": 2002,
+          "Correction": 2000
+        },
+        {
+          "Rate": 1000,
+          "Value": 4500,
+          "Target": 2002,
+          "Correction": 2000
+        },
+        {
+          "Rate": 1000,
+          "Value": 4750,
+          "Target": 2002,
+          "Correction": 2000
+        },
+        {
+          "Rate": 1000,
+          "Value": 5000,
+          "Target": 2002,
+          "Correction": 2000
+        }
       ]
     }
   ],

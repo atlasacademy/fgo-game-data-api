@@ -35,8 +35,12 @@
       "mstCommonRelease": [],
       "mstSkillLv": [
         {
-          "funcId": [3600],
-          "svals": ["[1000,-1,-1,991385,Value2:1,ShowState:-1]"],
+          "funcId": [
+            3600
+          ],
+          "svals": [
+            "[1000,-1,-1,991385,Value2:1,ShowState:-1]"
+          ],
           "script": {},
           "skillId": 991384,
           "lv": 1,
@@ -52,5 +56,9 @@
     "comment": "\"Fou! Foufoufooou!!!\" (Translation: Put me on a Command Card of your choice!)",
     "illustratorId": 40
   },
-  "mstIllustrator": { "id": 40, "name": "BLACK", "comment": "" }
+  "mstIllustrator": {
+    "id": 40,
+    "name": "BLACK",
+    "comment": ""
+  }
 }

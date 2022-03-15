@@ -29,31 +29,81 @@
     "commands": {},
     "status": {},
     "equipFace": {},
-    "image": { "story": {} },
+    "image": {
+      "story": {}
+    },
     "spriteModel": {}
   },
   "gender": "female",
   "attribute": "human",
   "traits": [
-    { "id": 2, "name": "genderFemale" },
-    { "id": 103, "name": "classRider" },
-    { "id": 202, "name": "attributeHuman" },
-    { "id": 301, "name": "alignmentChaotic" },
-    { "id": 305, "name": "alignmentBalanced" },
-    { "id": 1000, "name": "basedOnServant" },
-    { "id": 2001, "name": "humanoid" },
-    { "id": 2002, "name": "dragon" },
-    { "id": 2008, "name": "weakToEnumaElish" },
-    { "id": 2009, "name": "riding" },
-    { "id": 2631, "name": "hominidaeServant" },
-    { "id": 2810, "name": "fairyTaleServant" },
-    { "id": 5000, "name": "canBeInBattle" },
-    { "id": 404600, "name": "unknown" }
+    {
+      "id": 2,
+      "name": "genderFemale"
+    },
+    {
+      "id": 103,
+      "name": "classRider"
+    },
+    {
+      "id": 202,
+      "name": "attributeHuman"
+    },
+    {
+      "id": 301,
+      "name": "alignmentChaotic"
+    },
+    {
+      "id": 305,
+      "name": "alignmentBalanced"
+    },
+    {
+      "id": 1000,
+      "name": "basedOnServant"
+    },
+    {
+      "id": 2001,
+      "name": "humanoid"
+    },
+    {
+      "id": 2002,
+      "name": "dragon"
+    },
+    {
+      "id": 2008,
+      "name": "weakToEnumaElish"
+    },
+    {
+      "id": 2009,
+      "name": "riding"
+    },
+    {
+      "id": 2631,
+      "name": "hominidaeServant"
+    },
+    {
+      "id": 2810,
+      "name": "fairyTaleServant"
+    },
+    {
+      "id": 5000,
+      "name": "canBeInBattle"
+    },
+    {
+      "id": 404600,
+      "name": "unknown"
+    }
   ],
   "starAbsorb": 205,
   "starGen": 91,
   "instantDeathChance": 350,
-  "cards": ["quick", "arts", "arts", "buster", "buster"],
+  "cards": [
+    "quick",
+    "arts",
+    "arts",
+    "buster",
+    "buster"
+  ],
   "hitsDistribution": {},
   "cardDetails": {},
   "atkBase": 0,
@@ -62,28 +112,81 @@
   "hpMax": 0,
   "relateQuestIds": [],
   "growthCurve": 4,
-  "atkGrowth": [0],
-  "hpGrowth": [0],
-  "bondGrowth": [
-    2000, 5000, 9000, 14000, 20000, 230000, 460000, 730000, 1080000, 1480000,
-    2570000, 3800000, 5160000, 6660000, 8300000
+  "atkGrowth": [
+    0
   ],
-  "expGrowth": [0],
-  "expFeed": [12000],
+  "hpGrowth": [
+    0
+  ],
+  "bondGrowth": [
+    2000,
+    5000,
+    9000,
+    14000,
+    20000,
+    230000,
+    460000,
+    730000,
+    1080000,
+    1480000,
+    2570000,
+    3800000,
+    5160000,
+    6660000,
+    8300000
+  ],
+  "expGrowth": [
+    0
+  ],
+  "expFeed": [
+    12000
+  ],
   "bondEquip": 0,
   "valentineEquip": [],
   "valentineScript": [],
   "ascensionAdd": {
-    "individuality": { "ascension": {}, "costume": {} },
-    "voicePrefix": { "ascension": {}, "costume": {} },
-    "overWriteServantName": { "ascension": {}, "costume": {} },
-    "overWriteServantBattleName": { "ascension": {}, "costume": {} },
-    "overWriteTDName": { "ascension": {}, "costume": {} },
-    "overWriteTDRuby": { "ascension": {}, "costume": {} },
-    "overWriteTDFileName": { "ascension": {}, "costume": {} },
-    "overWriteTDRank": { "ascension": {}, "costume": {} },
-    "overWriteTDTypeText": { "ascension": {}, "costume": {} },
-    "lvMax": { "ascension": { "0": 1 }, "costume": {} }
+    "individuality": {
+      "ascension": {},
+      "costume": {}
+    },
+    "voicePrefix": {
+      "ascension": {},
+      "costume": {}
+    },
+    "overWriteServantName": {
+      "ascension": {},
+      "costume": {}
+    },
+    "overWriteServantBattleName": {
+      "ascension": {},
+      "costume": {}
+    },
+    "overWriteTDName": {
+      "ascension": {},
+      "costume": {}
+    },
+    "overWriteTDRuby": {
+      "ascension": {},
+      "costume": {}
+    },
+    "overWriteTDFileName": {
+      "ascension": {},
+      "costume": {}
+    },
+    "overWriteTDRank": {
+      "ascension": {},
+      "costume": {}
+    },
+    "overWriteTDTypeText": {
+      "ascension": {},
+      "costume": {}
+    },
+    "lvMax": {
+      "ascension": {
+        "0": 1
+      },
+      "costume": {}
+    }
   },
   "traitAdd": [],
   "svtChange": [],
@@ -102,7 +205,18 @@
       "unmodifiedDetail": "自身のQuickカードの性能をアップ",
       "type": "passive",
       "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00102.png",
-      "coolDown": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "coolDown": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
       "actIndividuality": [],
       "script": {},
       "extraPassive": [],
@@ -128,29 +242,96 @@
               "buffGroup": 0,
               "script": {},
               "vals": [
-                { "id": 3004, "name": "buffPositiveEffect" },
-                { "id": 3006, "name": "buffIncreaseDamage" }
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                }
               ],
               "tvals": [
-                { "id": 5000, "name": "canBeInBattle" },
-                { "id": 4003, "name": "cardQuick" }
+                {
+                  "id": 5000,
+                  "name": "canBeInBattle"
+                },
+                {
+                  "id": 4003,
+                  "name": "cardQuick"
+                }
               ],
-              "ckSelfIndv": [{ "id": 4003, "name": "cardQuick" }],
+              "ckSelfIndv": [
+                {
+                  "id": 4003,
+                  "name": "cardQuick"
+                }
+              ],
               "ckOpIndv": [],
               "maxRate": 5000
             }
           ],
           "svals": [
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 120 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 120 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 120 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 120 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 120 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 120 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 120 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 120 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 120 },
-            { "Rate": 1000, "Turn": -1, "Count": -1, "Value": 120 }
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 120
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 120
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 120
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 120
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 120
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 120
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 120
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 120
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 120
+            },
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 120
+            }
           ]
         }
       ]

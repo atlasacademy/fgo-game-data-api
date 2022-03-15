@@ -23,12 +23,19 @@
           "ruby": "-",
           "type": "active",
           "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00600.png",
-          "coolDown": [0],
+          "coolDown": [
+            0
+          ],
           "actIndividuality": [],
           "script": {},
           "extraPassive": [],
           "skillAdd": [],
-          "aiIds": { "svt": [], "field": [90161870] },
+          "aiIds": {
+            "svt": [],
+            "field": [
+              90161870
+            ]
+          },
           "functions": [
             {
               "funcId": 7182,
@@ -50,8 +57,14 @@
                   "buffGroup": 700,
                   "script": {},
                   "vals": [
-                    { "id": 3005, "name": "buffNegativeEffect" },
-                    { "id": 3023, "name": "buffTargetFocus" }
+                    {
+                      "id": 3005,
+                      "name": "buffNegativeEffect"
+                    },
+                    {
+                      "id": 3023,
+                      "name": "buffTargetFocus"
+                    }
                   ],
                   "tvals": [],
                   "ckSelfIndv": [],
@@ -59,13 +72,26 @@
                   "maxRate": 50000
                 }
               ],
-              "svals": [{ "Rate": 5000, "Turn": 1, "Count": 1, "Value": 3000 }]
+              "svals": [
+                {
+                  "Rate": 5000,
+                  "Turn": 1,
+                  "Count": 1,
+                  "Value": 3000
+                }
+              ]
             }
           ]
         }
       },
-      "avals": [0, 0],
-      "parentAis": { "svt": [], "field": [] },
+      "avals": [
+        0,
+        0
+      ],
+      "parentAis": {
+        "svt": [],
+        "field": []
+      },
       "infoText": "見定める",
       "timing": 5,
       "timingDescription": "turnEnemyStart"
@@ -79,7 +105,9 @@
       "probability": 100,
       "cond": "checkOpponentIndividuality",
       "condNegative": false,
-      "vals": [602500],
+      "vals": [
+        602500
+      ],
       "aiAct": {
         "id": 94016185,
         "type": "skillId",
@@ -93,12 +121,19 @@
           "ruby": "-",
           "type": "active",
           "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00600.png",
-          "coolDown": [8],
+          "coolDown": [
+            8
+          ],
           "actIndividuality": [],
           "script": {},
           "extraPassive": [],
           "skillAdd": [],
-          "aiIds": { "svt": [], "field": [90161870] },
+          "aiIds": {
+            "svt": [],
+            "field": [
+              90161870
+            ]
+          },
           "functions": [
             {
               "funcId": 1764,
@@ -120,8 +155,14 @@
                   "buffGroup": 700,
                   "script": {},
                   "vals": [
-                    { "id": 3005, "name": "buffNegativeEffect" },
-                    { "id": 3023, "name": "buffTargetFocus" }
+                    {
+                      "id": 3005,
+                      "name": "buffNegativeEffect"
+                    },
+                    {
+                      "id": 3023,
+                      "name": "buffTargetFocus"
+                    }
                   ],
                   "tvals": [],
                   "ckSelfIndv": [],
@@ -129,13 +170,26 @@
                   "maxRate": 50000
                 }
               ],
-              "svals": [{ "Rate": 5000, "Turn": 1, "Count": 1, "Value": 3000 }]
+              "svals": [
+                {
+                  "Rate": 5000,
+                  "Turn": 1,
+                  "Count": 1,
+                  "Value": 3000
+                }
+              ]
             }
           ]
         }
       },
-      "avals": [0, 0],
-      "parentAis": { "svt": [], "field": [] },
+      "avals": [
+        0,
+        0
+      ],
+      "parentAis": {
+        "svt": [],
+        "field": []
+      },
       "infoText": "見定める",
       "timing": 5,
       "timingDescription": "turnEnemyStart"
@@ -156,13 +210,25 @@
         "target": "none",
         "targetIndividuality": []
       },
-      "avals": [0, 0],
-      "parentAis": { "svt": [], "field": [] },
+      "avals": [
+        0,
+        0
+      ],
+      "parentAis": {
+        "svt": [],
+        "field": []
+      },
       "infoText": "",
       "timing": 5,
       "timingDescription": "turnEnemyStart"
     }
   ],
   "relatedAis": [],
-  "relatedQuests": [{ "questId": 94016145, "phase": 1, "stage": 1 }]
+  "relatedQuests": [
+    {
+      "questId": 94016145,
+      "phase": 1,
+      "stage": 1
+    }
+  ]
 }

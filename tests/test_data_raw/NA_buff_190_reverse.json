@@ -1,9 +1,17 @@
 {
   "mstBuff": {
-    "vals": [3004, 3006, 3028],
-    "tvals": [2000],
+    "vals": [
+      3004,
+      3006,
+      3028
+    ],
+    "tvals": [
+      2000
+    ],
     "ckSelfIndv": [],
-    "ckOpIndv": [2000],
+    "ckOpIndv": [
+      2000
+    ],
     "script": {},
     "id": 190,
     "buffGroup": 0,
@@ -18,10 +26,14 @@
       "function": [
         {
           "mstFunc": {
-            "vals": [190],
+            "vals": [
+              190
+            ],
             "tvals": [],
             "questTvals": [],
-            "effectList": [330],
+            "effectList": [
+              330
+            ],
             "popupTextColor": 2,
             "id": 518,
             "cond": 0,
@@ -35,10 +47,14 @@
         },
         {
           "mstFunc": {
-            "vals": [190],
+            "vals": [
+              190
+            ],
             "tvals": [],
             "questTvals": [],
-            "effectList": [331],
+            "effectList": [
+              331
+            ],
             "popupTextColor": 2,
             "id": 519,
             "cond": 0,
@@ -52,10 +68,14 @@
         },
         {
           "mstFunc": {
-            "vals": [190],
+            "vals": [
+              190
+            ],
             "tvals": [],
             "questTvals": [],
-            "effectList": [332],
+            "effectList": [
+              332
+            ],
             "popupTextColor": 2,
             "id": 520,
             "cond": 0,

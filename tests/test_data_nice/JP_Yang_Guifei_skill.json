@@ -13,7 +13,18 @@
   "condLv": 0,
   "condLimitCount": 1,
   "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00513.png",
-  "coolDown": [9, 9, 9, 9, 9, 8, 8, 8, 8, 7],
+  "coolDown": [
+    9,
+    9,
+    9,
+    9,
+    9,
+    8,
+    8,
+    8,
+    8,
+    7
+  ],
   "actIndividuality": [],
   "script": {},
   "extraPassive": [],
@@ -33,52 +44,92 @@
         {
           "Rate": 1000,
           "DependFuncId": 474,
-          "DependFuncVals": { "Rate": 0, "Value": 1, "Value2": 1000 }
+          "DependFuncVals": {
+            "Rate": 0,
+            "Value": 1,
+            "Value2": 1000
+          }
         },
         {
           "Rate": 1000,
           "DependFuncId": 474,
-          "DependFuncVals": { "Rate": 0, "Value": 1, "Value2": 1100 }
+          "DependFuncVals": {
+            "Rate": 0,
+            "Value": 1,
+            "Value2": 1100
+          }
         },
         {
           "Rate": 1000,
           "DependFuncId": 474,
-          "DependFuncVals": { "Rate": 0, "Value": 1, "Value2": 1200 }
+          "DependFuncVals": {
+            "Rate": 0,
+            "Value": 1,
+            "Value2": 1200
+          }
         },
         {
           "Rate": 1000,
           "DependFuncId": 474,
-          "DependFuncVals": { "Rate": 0, "Value": 1, "Value2": 1300 }
+          "DependFuncVals": {
+            "Rate": 0,
+            "Value": 1,
+            "Value2": 1300
+          }
         },
         {
           "Rate": 1000,
           "DependFuncId": 474,
-          "DependFuncVals": { "Rate": 0, "Value": 1, "Value2": 1400 }
+          "DependFuncVals": {
+            "Rate": 0,
+            "Value": 1,
+            "Value2": 1400
+          }
         },
         {
           "Rate": 1000,
           "DependFuncId": 474,
-          "DependFuncVals": { "Rate": 0, "Value": 1, "Value2": 1500 }
+          "DependFuncVals": {
+            "Rate": 0,
+            "Value": 1,
+            "Value2": 1500
+          }
         },
         {
           "Rate": 1000,
           "DependFuncId": 474,
-          "DependFuncVals": { "Rate": 0, "Value": 1, "Value2": 1600 }
+          "DependFuncVals": {
+            "Rate": 0,
+            "Value": 1,
+            "Value2": 1600
+          }
         },
         {
           "Rate": 1000,
           "DependFuncId": 474,
-          "DependFuncVals": { "Rate": 0, "Value": 1, "Value2": 1700 }
+          "DependFuncVals": {
+            "Rate": 0,
+            "Value": 1,
+            "Value2": 1700
+          }
         },
         {
           "Rate": 1000,
           "DependFuncId": 474,
-          "DependFuncVals": { "Rate": 0, "Value": 1, "Value2": 1800 }
+          "DependFuncVals": {
+            "Rate": 0,
+            "Value": 1,
+            "Value2": 1800
+          }
         },
         {
           "Rate": 1000,
           "DependFuncId": 474,
-          "DependFuncVals": { "Rate": 0, "Value": 1, "Value2": 2000 }
+          "DependFuncVals": {
+            "Rate": 0,
+            "Value": 1,
+            "Value2": 2000
+          }
         }
       ]
     },
@@ -96,52 +147,92 @@
         {
           "Rate": 1000,
           "DependFuncId": 469,
-          "DependFuncVals": { "Rate": 0, "Value": 2000, "Value2": 100 }
+          "DependFuncVals": {
+            "Rate": 0,
+            "Value": 2000,
+            "Value2": 100
+          }
         },
         {
           "Rate": 1000,
           "DependFuncId": 469,
-          "DependFuncVals": { "Rate": 0, "Value": 2000, "Value2": 100 }
+          "DependFuncVals": {
+            "Rate": 0,
+            "Value": 2000,
+            "Value2": 100
+          }
         },
         {
           "Rate": 1000,
           "DependFuncId": 469,
-          "DependFuncVals": { "Rate": 0, "Value": 2000, "Value2": 100 }
+          "DependFuncVals": {
+            "Rate": 0,
+            "Value": 2000,
+            "Value2": 100
+          }
         },
         {
           "Rate": 1000,
           "DependFuncId": 469,
-          "DependFuncVals": { "Rate": 0, "Value": 2000, "Value2": 100 }
+          "DependFuncVals": {
+            "Rate": 0,
+            "Value": 2000,
+            "Value2": 100
+          }
         },
         {
           "Rate": 1000,
           "DependFuncId": 469,
-          "DependFuncVals": { "Rate": 0, "Value": 2000, "Value2": 100 }
+          "DependFuncVals": {
+            "Rate": 0,
+            "Value": 2000,
+            "Value2": 100
+          }
         },
         {
           "Rate": 1000,
           "DependFuncId": 469,
-          "DependFuncVals": { "Rate": 0, "Value": 2000, "Value2": 100 }
+          "DependFuncVals": {
+            "Rate": 0,
+            "Value": 2000,
+            "Value2": 100
+          }
         },
         {
           "Rate": 1000,
           "DependFuncId": 469,
-          "DependFuncVals": { "Rate": 0, "Value": 2000, "Value2": 100 }
+          "DependFuncVals": {
+            "Rate": 0,
+            "Value": 2000,
+            "Value2": 100
+          }
         },
         {
           "Rate": 1000,
           "DependFuncId": 469,
-          "DependFuncVals": { "Rate": 0, "Value": 2000, "Value2": 100 }
+          "DependFuncVals": {
+            "Rate": 0,
+            "Value": 2000,
+            "Value2": 100
+          }
         },
         {
           "Rate": 1000,
           "DependFuncId": 469,
-          "DependFuncVals": { "Rate": 0, "Value": 2000, "Value2": 100 }
+          "DependFuncVals": {
+            "Rate": 0,
+            "Value": 2000,
+            "Value2": 100
+          }
         },
         {
           "Rate": 1000,
           "DependFuncId": 469,
-          "DependFuncVals": { "Rate": 0, "Value": 2000, "Value2": 100 }
+          "DependFuncVals": {
+            "Rate": 0,
+            "Value": 2000,
+            "Value2": 100
+          }
         }
       ]
     },
@@ -165,8 +256,14 @@
           "buffGroup": 0,
           "script": {},
           "vals": [
-            { "id": 3005, "name": "buffNegativeEffect" },
-            { "id": 3009, "name": "buffDecreaseDefence" }
+            {
+              "id": 3005,
+              "name": "buffNegativeEffect"
+            },
+            {
+              "id": 3009,
+              "name": "buffDecreaseDefence"
+            }
           ],
           "tvals": [],
           "ckSelfIndv": [],
@@ -175,16 +272,66 @@
         }
       ],
       "svals": [
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 100 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 110 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 120 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 130 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 140 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 150 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 160 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 170 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 180 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 }
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 100
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 110
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 120
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 130
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 140
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 150
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 160
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 170
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 180
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        }
       ]
     }
   ]

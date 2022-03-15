@@ -17,10 +17,25 @@
       "type": "upTolerance",
       "buffGroup": 0,
       "script": {},
-      "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
-      "tvals": [{ "id": 3011, "name": "buffPoison" }],
+      "vals": [
+        {
+          "id": 3004,
+          "name": "buffPositiveEffect"
+        }
+      ],
+      "tvals": [
+        {
+          "id": 3011,
+          "name": "buffPoison"
+        }
+      ],
       "ckSelfIndv": [],
-      "ckOpIndv": [{ "id": 3011, "name": "buffPoison" }],
+      "ckOpIndv": [
+        {
+          "id": 3011,
+          "name": "buffPoison"
+        }
+      ],
       "maxRate": 5000
     }
   ]

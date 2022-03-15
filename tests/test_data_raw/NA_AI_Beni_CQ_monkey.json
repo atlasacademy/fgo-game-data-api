@@ -8,20 +8,36 @@
         "priority": 100,
         "probability": 100,
         "cond": 53,
-        "vals": [103700],
+        "vals": [
+          103700
+        ],
         "aiActId": 94032214,
-        "avals": [94032581, 0],
+        "avals": [
+          94032581,
+          0
+        ],
         "infoText": ""
       },
       "mstAiAct": {
-        "targetIndividuality": [103700],
-        "skillVals": [962336, 1],
+        "targetIndividuality": [
+          103700
+        ],
+        "skillVals": [
+          962336,
+          1
+        ],
         "id": 94032214,
         "type": 40,
         "target": 1,
         "createdAt": 946684800
       },
-      "parentAis": { "svt": [94032581, 94032582], "field": [] }
+      "parentAis": {
+        "svt": [
+          94032581,
+          94032582
+        ],
+        "field": []
+      }
     },
     {
       "mstAi": {
@@ -31,9 +47,14 @@
         "priority": 1,
         "probability": 100,
         "cond": -53,
-        "vals": [103700],
+        "vals": [
+          103700
+        ],
         "aiActId": 1,
-        "avals": [94032581, 0],
+        "avals": [
+          94032581,
+          0
+        ],
         "infoText": ""
       },
       "mstAiAct": {
@@ -44,7 +65,13 @@
         "target": 0,
         "createdAt": 946684800
       },
-      "parentAis": { "svt": [94032581, 94032582], "field": [] }
+      "parentAis": {
+        "svt": [
+          94032581,
+          94032582
+        ],
+        "field": []
+      }
     },
     {
       "mstAi": {
@@ -56,7 +83,10 @@
         "cond": 0,
         "vals": [],
         "aiActId": 2,
-        "avals": [94032581, 0],
+        "avals": [
+          94032581,
+          0
+        ],
         "infoText": ""
       },
       "mstAiAct": {
@@ -67,7 +97,13 @@
         "target": 0,
         "createdAt": 946684800
       },
-      "parentAis": { "svt": [94032581, 94032582], "field": [] }
+      "parentAis": {
+        "svt": [
+          94032581,
+          94032582
+        ],
+        "field": []
+      }
     }
   ],
   "relatedAis": [
@@ -81,7 +117,10 @@
         "cond": 0,
         "vals": [],
         "aiActId": 1002,
-        "avals": [94032580, 0],
+        "avals": [
+          94032580,
+          0
+        ],
         "infoText": ""
       },
       "mstAiAct": {
@@ -92,7 +131,12 @@
         "target": 1,
         "createdAt": 946684800
       },
-      "parentAis": { "svt": [94032580], "field": [] }
+      "parentAis": {
+        "svt": [
+          94032580
+        ],
+        "field": []
+      }
     },
     {
       "mstAi": {
@@ -102,9 +146,14 @@
         "priority": 100,
         "probability": 100,
         "cond": 63,
-        "vals": [0],
+        "vals": [
+          0
+        ],
         "aiActId": 2,
-        "avals": [94032582, 0],
+        "avals": [
+          94032582,
+          0
+        ],
         "infoText": ""
       },
       "mstAiAct": {
@@ -115,7 +164,12 @@
         "target": 0,
         "createdAt": 946684800
       },
-      "parentAis": { "svt": [94032580], "field": [] }
+      "parentAis": {
+        "svt": [
+          94032580
+        ],
+        "field": []
+      }
     },
     {
       "mstAi": {
@@ -127,7 +181,10 @@
         "cond": 0,
         "vals": [],
         "aiActId": 1002,
-        "avals": [94032580, 0],
+        "avals": [
+          94032580,
+          0
+        ],
         "infoText": ""
       },
       "mstAiAct": {
@@ -138,7 +195,12 @@
         "target": 1,
         "createdAt": 946684800
       },
-      "parentAis": { "svt": [94032581], "field": [] }
+      "parentAis": {
+        "svt": [
+          94032581
+        ],
+        "field": []
+      }
     },
     {
       "mstAi": {
@@ -148,20 +210,33 @@
         "priority": 1,
         "probability": 30,
         "cond": -50,
-        "vals": [144],
+        "vals": [
+          144
+        ],
         "aiActId": 94032213,
-        "avals": [94032580, 0],
+        "avals": [
+          94032580,
+          0
+        ],
         "infoText": ""
       },
       "mstAiAct": {
         "targetIndividuality": [],
-        "skillVals": [962335, 1],
+        "skillVals": [
+          962335,
+          1
+        ],
         "id": 94032213,
         "type": 41,
         "target": 1,
         "createdAt": 946684800
       },
-      "parentAis": { "svt": [94032581], "field": [] }
+      "parentAis": {
+        "svt": [
+          94032581
+        ],
+        "field": []
+      }
     },
     {
       "mstAi": {
@@ -171,9 +246,14 @@
         "priority": 1,
         "probability": 20,
         "cond": -50,
-        "vals": [142],
+        "vals": [
+          142
+        ],
         "aiActId": 1005,
-        "avals": [94032580, 0],
+        "avals": [
+          94032580,
+          0
+        ],
         "infoText": ""
       },
       "mstAiAct": {
@@ -184,7 +264,12 @@
         "target": 1,
         "createdAt": 946684800
       },
-      "parentAis": { "svt": [94032581], "field": [] }
+      "parentAis": {
+        "svt": [
+          94032581
+        ],
+        "field": []
+      }
     },
     {
       "mstAi": {
@@ -194,20 +279,32 @@
         "priority": 1,
         "probability": 50,
         "cond": 59,
-        "vals": [3060],
+        "vals": [
+          3060
+        ],
         "aiActId": 94032218,
-        "avals": [94032580, 0],
+        "avals": [
+          94032580,
+          0
+        ],
         "infoText": ""
       },
       "mstAiAct": {
-        "targetIndividuality": [3060],
+        "targetIndividuality": [
+          3060
+        ],
         "skillVals": [],
         "id": 94032218,
         "type": 12,
         "target": 13,
         "createdAt": 946684800
       },
-      "parentAis": { "svt": [94032581], "field": [] }
+      "parentAis": {
+        "svt": [
+          94032581
+        ],
+        "field": []
+      }
     }
   ],
   "relatedQuests": []

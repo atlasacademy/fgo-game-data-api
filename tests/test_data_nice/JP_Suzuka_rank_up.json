@@ -41,8 +41,16 @@
       "closedMessage": "霊基再臨2段階目＆絆Lv.5で開放"
     }
   ],
-  "phases": [1, 2, 3],
-  "phasesWithEnemies": [1, 2, 3],
+  "phases": [
+    1,
+    2,
+    3
+  ],
+  "phasesWithEnemies": [
+    1,
+    2,
+    3
+  ],
   "phasesNoBattle": [],
   "phaseScripts": [
     {

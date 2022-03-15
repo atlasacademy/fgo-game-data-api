@@ -12,7 +12,12 @@
         "type": "eventItem",
         "uses": [],
         "detail": "\"Event Item\"\nA piece of lumber made by processing cypress trees, acquired from \"Sparrow's Inn Daily Report - Records of the Enma-tei's Prosperity\". It's often used for a building's interior, furniture, cutting boards, and bath tubs because it exudes a sense of cleanliness.",
-        "individuality": [{ "id": 10360, "name": "unknown" }],
+        "individuality": [
+          {
+            "id": 10360,
+            "name": "unknown"
+          }
+        ],
         "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94032205.png",
         "background": "silver",
         "priority": 94032205,
@@ -31,7 +36,13 @@
   "chapterSubId": 0,
   "chapterSubStr": "",
   "gifts": [
-    { "id": 21603, "type": "item", "objectId": 6506, "priority": 0, "num": 3 }
+    {
+      "id": 21603,
+      "type": "item",
+      "objectId": 6506,
+      "priority": 0,
+      "num": 3
+    }
   ],
   "releaseConditions": [
     {
@@ -40,11 +51,20 @@
       "value": 0,
       "closedMessage": ""
     },
-    { "type": "date", "targetId": 0, "value": 0, "closedMessage": "" }
+    {
+      "type": "date",
+      "targetId": 0,
+      "value": 0,
+      "closedMessage": ""
+    }
   ],
-  "phases": [1],
+  "phases": [
+    1
+  ],
   "phasesWithEnemies": [],
-  "phasesNoBattle": [1],
+  "phasesNoBattle": [
+    1
+  ],
   "phaseScripts": [],
   "noticeAt": 1609488000,
   "openedAt": 1609488000,

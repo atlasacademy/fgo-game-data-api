@@ -13,7 +13,12 @@
       "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_321.png",
       "type": "upCriticalpoint",
       "script": {},
-      "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+      "vals": [
+        {
+          "id": 3004,
+          "name": "buffPositiveEffect"
+        }
+      ],
       "tvals": [],
       "ckSelfIndv": [],
       "ckOpIndv": []

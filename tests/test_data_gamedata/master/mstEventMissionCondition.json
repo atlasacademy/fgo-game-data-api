@@ -1,6 +1,11 @@
 [
   {
-    "targetIds": [94002213, 94002214, 94002215, 94002109],
+    "targetIds": [
+      94002213,
+      94002214,
+      94002215,
+      94002109
+    ],
     "missionId": 77,
     "missionProgressType": 4,
     "priority": 0,

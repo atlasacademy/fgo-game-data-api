@@ -24,9 +24,16 @@
         "id": 7106,
         "name": "Assassin Monument",
         "type": "tdLvUp",
-        "uses": ["ascension"],
+        "uses": [
+          "ascension"
+        ],
         "detail": "【霊基再臨素材】\nアサシンクラスを称えるモニュメント",
-        "individuality": [{ "id": 20033, "name": "unknown" }],
+        "individuality": [
+          {
+            "id": 20033,
+            "name": "unknown"
+          }
+        ],
         "icon": "https://assets.atlasacademy.io/GameData/JP/Items/7106.png",
         "background": "gold",
         "priority": 312,
@@ -35,7 +42,9 @@
       "amount": 20
     },
     "purchaseType": "bgm",
-    "targetIds": [0],
+    "targetIds": [
+      0
+    ],
     "itemSet": [],
     "setNum": 1,
     "limitNum": 1,
@@ -50,8 +59,12 @@
       "id": 1,
       "type": "questClear",
       "condGroup": 1,
-      "targetIds": [1000822],
-      "vals": [0],
+      "targetIds": [
+        1000822
+      ],
+      "vals": [
+        0
+      ],
       "priority": 10000,
       "closedMessage": "？？？"
     },
@@ -59,8 +72,12 @@
       "id": 2,
       "type": "questClear",
       "condGroup": 1,
-      "targetIds": [2000118],
-      "vals": [0],
+      "targetIds": [
+        2000118
+      ],
+      "vals": [
+        0
+      ],
       "priority": 9000,
       "closedMessage": "亜種特異点Ⅰクリアで開放可能"
     }

@@ -13,7 +13,9 @@
   "endedAt": 1603425599,
   "finishedAt": 1604289599,
   "materialOpenedAt": 1751295600,
-  "warIds": [9099],
+  "warIds": [
+    9099
+  ],
   "shop": [
     {
       "id": 80289001,
@@ -35,7 +37,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
-          "individuality": [{ "id": 10557, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10557,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
           "background": "gold",
           "priority": 94052652,
@@ -44,7 +51,9 @@
         "amount": 200
       },
       "purchaseType": "servant",
-      "targetIds": [9404740],
+      "targetIds": [
+        9404740
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 2,
@@ -73,7 +82,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
-          "individuality": [{ "id": 10556, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10556,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
           "background": "silver",
           "priority": 94052651,
@@ -82,7 +96,9 @@
         "amount": 200
       },
       "purchaseType": "servant",
-      "targetIds": [9404740],
+      "targetIds": [
+        9404740
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
@@ -111,7 +127,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
-          "individuality": [{ "id": 10555, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10555,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
           "background": "bronze",
           "priority": 94052650,
@@ -120,7 +141,9 @@
         "amount": 200
       },
       "purchaseType": "servant",
-      "targetIds": [9404740],
+      "targetIds": [
+        9404740
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
@@ -135,7 +158,9 @@
       "shopType": "eventItem",
       "releaseConditions": [
         {
-          "condValues": [94049113],
+          "condValues": [
+            94049113
+          ],
           "shopId": 80289004,
           "condType": "questClear",
           "condNum": 1,
@@ -160,7 +185,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
-          "individuality": [{ "id": 10557, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10557,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
           "background": "gold",
           "priority": 94052652,
@@ -169,7 +199,9 @@
         "amount": 200
       },
       "purchaseType": "servant",
-      "targetIds": [9570400],
+      "targetIds": [
+        9570400
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 2,
@@ -184,7 +216,9 @@
       "shopType": "eventItem",
       "releaseConditions": [
         {
-          "condValues": [94049113],
+          "condValues": [
+            94049113
+          ],
           "shopId": 80289005,
           "condType": "questClear",
           "condNum": 1,
@@ -209,7 +243,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
-          "individuality": [{ "id": 10555, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10555,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
           "background": "bronze",
           "priority": 94052650,
@@ -218,7 +257,9 @@
         "amount": 200
       },
       "purchaseType": "servant",
-      "targetIds": [9570400],
+      "targetIds": [
+        9570400
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
@@ -233,7 +274,9 @@
       "shopType": "eventItem",
       "releaseConditions": [
         {
-          "condValues": [94049113],
+          "condValues": [
+            94049113
+          ],
           "shopId": 80289006,
           "condType": "questClear",
           "condNum": 1,
@@ -258,7 +301,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
-          "individuality": [{ "id": 10557, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10557,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
           "background": "gold",
           "priority": 94052652,
@@ -267,7 +315,9 @@
         "amount": 200
       },
       "purchaseType": "servant",
-      "targetIds": [9670400],
+      "targetIds": [
+        9670400
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 2,
@@ -282,7 +332,9 @@
       "shopType": "eventItem",
       "releaseConditions": [
         {
-          "condValues": [94049113],
+          "condValues": [
+            94049113
+          ],
           "shopId": 80289007,
           "condType": "questClear",
           "condNum": 1,
@@ -307,7 +359,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
-          "individuality": [{ "id": 10556, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10556,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
           "background": "silver",
           "priority": 94052651,
@@ -316,7 +373,9 @@
         "amount": 200
       },
       "purchaseType": "servant",
-      "targetIds": [9670400],
+      "targetIds": [
+        9670400
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
@@ -345,7 +404,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
-          "individuality": [{ "id": 10557, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10557,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
           "background": "gold",
           "priority": 94052652,
@@ -354,7 +418,9 @@
         "amount": 100
       },
       "purchaseType": "item",
-      "targetIds": [5003],
+      "targetIds": [
+        5003
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
@@ -383,7 +449,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
-          "individuality": [{ "id": 10556, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10556,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
           "background": "silver",
           "priority": 94052651,
@@ -392,7 +463,9 @@
         "amount": 100
       },
       "purchaseType": "item",
-      "targetIds": [5003],
+      "targetIds": [
+        5003
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
@@ -421,7 +494,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
-          "individuality": [{ "id": 10556, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10556,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
           "background": "silver",
           "priority": 94052651,
@@ -430,7 +508,9 @@
         "amount": 100
       },
       "purchaseType": "servant",
-      "targetIds": [9807650],
+      "targetIds": [
+        9807650
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 10,
@@ -459,7 +539,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
-          "individuality": [{ "id": 10555, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10555,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
           "background": "bronze",
           "priority": 94052650,
@@ -468,7 +553,9 @@
         "amount": 50
       },
       "purchaseType": "servant",
-      "targetIds": [9807660],
+      "targetIds": [
+        9807660
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 10,
@@ -497,7 +584,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
-          "individuality": [{ "id": 10555, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10555,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
           "background": "bronze",
           "priority": 94052650,
@@ -506,7 +598,9 @@
         "amount": 20
       },
       "purchaseType": "servant",
-      "targetIds": [9570300],
+      "targetIds": [
+        9570300
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -535,7 +629,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
-          "individuality": [{ "id": 10555, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10555,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
           "background": "bronze",
           "priority": 94052650,
@@ -544,7 +643,9 @@
         "amount": 20
       },
       "purchaseType": "servant",
-      "targetIds": [9670300],
+      "targetIds": [
+        9670300
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -573,7 +674,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
-          "individuality": [{ "id": 10555, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10555,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
           "background": "bronze",
           "priority": 94052650,
@@ -582,7 +688,9 @@
         "amount": 6
       },
       "purchaseType": "servant",
-      "targetIds": [9770400],
+      "targetIds": [
+        9770400
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 100,
@@ -611,7 +719,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
-          "individuality": [{ "id": 10555, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10555,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
           "background": "bronze",
           "priority": 94052650,
@@ -620,7 +733,9 @@
         "amount": 3
       },
       "purchaseType": "servant",
-      "targetIds": [9770300],
+      "targetIds": [
+        9770300
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 100,
@@ -649,7 +764,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
-          "individuality": [{ "id": 10557, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10557,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
           "background": "gold",
           "priority": 94052652,
@@ -658,7 +778,9 @@
         "amount": 40
       },
       "purchaseType": "item",
-      "targetIds": [6540],
+      "targetIds": [
+        6540
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 10,
@@ -687,7 +809,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
-          "individuality": [{ "id": 10557, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10557,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
           "background": "gold",
           "priority": 94052652,
@@ -696,7 +823,9 @@
         "amount": 30
       },
       "purchaseType": "item",
-      "targetIds": [6539],
+      "targetIds": [
+        6539
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -725,7 +854,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
-          "individuality": [{ "id": 10557, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10557,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
           "background": "gold",
           "priority": 94052652,
@@ -734,7 +868,9 @@
         "amount": 30
       },
       "purchaseType": "item",
-      "targetIds": [6511],
+      "targetIds": [
+        6511
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -763,7 +899,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
-          "individuality": [{ "id": 10556, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10556,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
           "background": "silver",
           "priority": 94052651,
@@ -772,7 +913,9 @@
         "amount": 30
       },
       "purchaseType": "item",
-      "targetIds": [6531],
+      "targetIds": [
+        6531
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 10,
@@ -801,7 +944,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
-          "individuality": [{ "id": 10556, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10556,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
           "background": "silver",
           "priority": 94052651,
@@ -810,7 +958,9 @@
         "amount": 20
       },
       "purchaseType": "item",
-      "targetIds": [6541],
+      "targetIds": [
+        6541
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -839,7 +989,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
-          "individuality": [{ "id": 10556, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10556,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
           "background": "silver",
           "priority": 94052651,
@@ -848,7 +1003,9 @@
         "amount": 20
       },
       "purchaseType": "item",
-      "targetIds": [6502],
+      "targetIds": [
+        6502
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -877,7 +1034,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
-          "individuality": [{ "id": 10555, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10555,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
           "background": "bronze",
           "priority": 94052650,
@@ -886,7 +1048,9 @@
         "amount": 20
       },
       "purchaseType": "item",
-      "targetIds": [6508],
+      "targetIds": [
+        6508
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -915,7 +1079,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
-          "individuality": [{ "id": 10555, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10555,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
           "background": "bronze",
           "priority": 94052650,
@@ -924,7 +1093,9 @@
         "amount": 15
       },
       "purchaseType": "item",
-      "targetIds": [6512],
+      "targetIds": [
+        6512
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 30,
@@ -953,7 +1124,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
-          "individuality": [{ "id": 10555, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10555,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
           "background": "bronze",
           "priority": 94052650,
@@ -962,7 +1138,9 @@
         "amount": 15
       },
       "purchaseType": "item",
-      "targetIds": [6534],
+      "targetIds": [
+        6534
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 30,
@@ -991,7 +1169,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
-          "individuality": [{ "id": 10557, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10557,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
           "background": "gold",
           "priority": 94052652,
@@ -1000,7 +1183,9 @@
         "amount": 20
       },
       "purchaseType": "item",
-      "targetIds": [7102],
+      "targetIds": [
+        7102
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -1029,7 +1214,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
-          "individuality": [{ "id": 10557, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10557,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
           "background": "gold",
           "priority": 94052652,
@@ -1038,7 +1228,9 @@
         "amount": 20
       },
       "purchaseType": "item",
-      "targetIds": [7106],
+      "targetIds": [
+        7106
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -1067,7 +1259,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
-          "individuality": [{ "id": 10557, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10557,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
           "background": "gold",
           "priority": 94052652,
@@ -1076,7 +1273,9 @@
         "amount": 20
       },
       "purchaseType": "item",
-      "targetIds": [7107],
+      "targetIds": [
+        7107
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -1105,7 +1304,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
-          "individuality": [{ "id": 10556, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10556,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
           "background": "silver",
           "priority": 94052651,
@@ -1114,7 +1318,9 @@
         "amount": 20
       },
       "purchaseType": "item",
-      "targetIds": [7002],
+      "targetIds": [
+        7002
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -1143,7 +1349,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
-          "individuality": [{ "id": 10556, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10556,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
           "background": "silver",
           "priority": 94052651,
@@ -1152,7 +1363,9 @@
         "amount": 20
       },
       "purchaseType": "item",
-      "targetIds": [7006],
+      "targetIds": [
+        7006
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -1181,7 +1394,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
-          "individuality": [{ "id": 10556, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10556,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
           "background": "silver",
           "priority": 94052651,
@@ -1190,7 +1408,9 @@
         "amount": 20
       },
       "purchaseType": "item",
-      "targetIds": [7007],
+      "targetIds": [
+        7007
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
@@ -1205,7 +1425,9 @@
       "shopType": "eventItem",
       "releaseConditions": [
         {
-          "condValues": [94049201],
+          "condValues": [
+            94049201
+          ],
           "shopId": 80289031,
           "condType": "questClear",
           "condNum": 1,
@@ -1230,7 +1452,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
-          "individuality": [{ "id": 10557, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10557,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
           "background": "gold",
           "priority": 94052652,
@@ -1239,7 +1466,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [94049104],
+      "targetIds": [
+        94049104
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 0,
@@ -1254,7 +1483,9 @@
       "shopType": "eventItem",
       "releaseConditions": [
         {
-          "condValues": [94049207],
+          "condValues": [
+            94049207
+          ],
           "shopId": 80289032,
           "condType": "questClear",
           "condNum": 1,
@@ -1279,7 +1510,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
-          "individuality": [{ "id": 10556, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10556,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
           "background": "silver",
           "priority": 94052651,
@@ -1288,7 +1524,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [94049105],
+      "targetIds": [
+        94049105
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 0,
@@ -1303,7 +1541,9 @@
       "shopType": "eventItem",
       "releaseConditions": [
         {
-          "condValues": [94049204],
+          "condValues": [
+            94049204
+          ],
           "shopId": 80289033,
           "condType": "questClear",
           "condNum": 1,
@@ -1328,7 +1568,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
-          "individuality": [{ "id": 10555, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10555,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
           "background": "bronze",
           "priority": 94052650,
@@ -1337,7 +1582,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [94049106],
+      "targetIds": [
+        94049106
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 0,
@@ -1352,7 +1599,9 @@
       "shopType": "eventItem",
       "releaseConditions": [
         {
-          "condValues": [94049210],
+          "condValues": [
+            94049210
+          ],
           "shopId": 80289034,
           "condType": "questClear",
           "condNum": 1,
@@ -1377,7 +1626,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、立派な丸太。\n建物の柱や矢板の材料として用いられる。",
-          "individuality": [{ "id": 10559, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10559,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049105.png",
           "background": "silver",
           "priority": 94052654,
@@ -1386,7 +1640,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [94049104],
+      "targetIds": [
+        94049104
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 0,
@@ -1401,7 +1657,9 @@
       "shopType": "eventItem",
       "releaseConditions": [
         {
-          "condValues": [94049210],
+          "condValues": [
+            94049210
+          ],
           "shopId": 80289035,
           "condType": "questClear",
           "condNum": 1,
@@ -1426,7 +1684,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、きめ細かい粘土。\n土器や埴輪の材料として用いられる。",
-          "individuality": [{ "id": 10560, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10560,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049106.png",
           "background": "silver",
           "priority": 94052655,
@@ -1435,7 +1698,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [94049104],
+      "targetIds": [
+        94049104
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 0,
@@ -1450,7 +1715,9 @@
       "shopType": "eventItem",
       "releaseConditions": [
         {
-          "condValues": [94049213],
+          "condValues": [
+            94049213
+          ],
           "shopId": 80289036,
           "condType": "questClear",
           "condNum": 1,
@@ -1475,7 +1742,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、茅の束。\n建物の屋根を葺くのに用いられる。",
-          "individuality": [{ "id": 10558, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10558,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049104.png",
           "background": "silver",
           "priority": 94052653,
@@ -1484,7 +1756,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [94049105],
+      "targetIds": [
+        94049105
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 0,
@@ -1499,7 +1773,9 @@
       "shopType": "eventItem",
       "releaseConditions": [
         {
-          "condValues": [94049213],
+          "condValues": [
+            94049213
+          ],
           "shopId": 80289037,
           "condType": "questClear",
           "condNum": 1,
@@ -1524,7 +1800,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、きめ細かい粘土。\n土器や埴輪の材料として用いられる。",
-          "individuality": [{ "id": 10560, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10560,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049106.png",
           "background": "silver",
           "priority": 94052655,
@@ -1533,7 +1814,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [94049105],
+      "targetIds": [
+        94049105
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 0,
@@ -1548,7 +1831,9 @@
       "shopType": "eventItem",
       "releaseConditions": [
         {
-          "condValues": [94049216],
+          "condValues": [
+            94049216
+          ],
           "shopId": 80289038,
           "condType": "questClear",
           "condNum": 1,
@@ -1573,7 +1858,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、茅の束。\n建物の屋根を葺くのに用いられる。",
-          "individuality": [{ "id": 10558, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10558,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049104.png",
           "background": "silver",
           "priority": 94052653,
@@ -1582,7 +1872,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [94049106],
+      "targetIds": [
+        94049106
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 0,
@@ -1597,7 +1889,9 @@
       "shopType": "eventItem",
       "releaseConditions": [
         {
-          "condValues": [94049216],
+          "condValues": [
+            94049216
+          ],
           "shopId": 80289039,
           "condType": "questClear",
           "condNum": 1,
@@ -1622,7 +1916,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、立派な丸太。\n建物の柱や矢板の材料として用いられる。",
-          "individuality": [{ "id": 10559, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10559,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049105.png",
           "background": "silver",
           "priority": 94052654,
@@ -1631,7 +1930,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [94049106],
+      "targetIds": [
+        94049106
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 0,
@@ -1660,7 +1961,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
-          "individuality": [{ "id": 10556, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10556,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049102.png",
           "background": "silver",
           "priority": 94052651,
@@ -1669,7 +1975,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [94049103],
+      "targetIds": [
+        94049103
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 0,
@@ -1698,7 +2006,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
-          "individuality": [{ "id": 10555, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10555,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049101.png",
           "background": "bronze",
           "priority": 94052650,
@@ -1707,7 +2020,9 @@
         "amount": 10
       },
       "purchaseType": "item",
-      "targetIds": [94049102],
+      "targetIds": [
+        94049102
+      ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 0,
@@ -1736,7 +2051,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
-          "individuality": [{ "id": 10557, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10557,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049103.png",
           "background": "gold",
           "priority": 94052652,
@@ -1745,7 +2065,9 @@
         "amount": 3
       },
       "purchaseType": "item",
-      "targetIds": [1],
+      "targetIds": [
+        1
+      ],
       "itemSet": [],
       "setNum": 10000,
       "limitNum": 0,
@@ -1760,7 +2082,9 @@
       "shopType": "eventItem",
       "releaseConditions": [
         {
-          "condValues": [0],
+          "condValues": [
+            0
+          ],
           "shopId": 80289043,
           "condType": "date",
           "condNum": 1603425600,
@@ -1785,7 +2109,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、茅の束。\n建物の屋根を葺くのに用いられる。",
-          "individuality": [{ "id": 10558, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10558,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049104.png",
           "background": "silver",
           "priority": 94052653,
@@ -1794,7 +2123,9 @@
         "amount": 50
       },
       "purchaseType": "item",
-      "targetIds": [1],
+      "targetIds": [
+        1
+      ],
       "itemSet": [],
       "setNum": 10000,
       "limitNum": 0,
@@ -1809,7 +2140,9 @@
       "shopType": "eventItem",
       "releaseConditions": [
         {
-          "condValues": [0],
+          "condValues": [
+            0
+          ],
           "shopId": 80289044,
           "condType": "date",
           "condNum": 1603425600,
@@ -1834,7 +2167,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、立派な丸太。\n建物の柱や矢板の材料として用いられる。",
-          "individuality": [{ "id": 10559, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10559,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049105.png",
           "background": "silver",
           "priority": 94052654,
@@ -1843,7 +2181,9 @@
         "amount": 50
       },
       "purchaseType": "item",
-      "targetIds": [1],
+      "targetIds": [
+        1
+      ],
       "itemSet": [],
       "setNum": 10000,
       "limitNum": 0,
@@ -1858,7 +2198,9 @@
       "shopType": "eventItem",
       "releaseConditions": [
         {
-          "condValues": [0],
+          "condValues": [
+            0
+          ],
           "shopId": 80289045,
           "condType": "date",
           "condNum": 1603425600,
@@ -1883,7 +2225,12 @@
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、きめ細かい粘土。\n土器や埴輪の材料として用いられる。",
-          "individuality": [{ "id": 10560, "name": "unknown" }],
+          "individuality": [
+            {
+              "id": 10560,
+              "name": "unknown"
+            }
+          ],
           "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94049106.png",
           "background": "silver",
           "priority": 94052655,
@@ -1892,7 +2239,9 @@
         "amount": 50
       },
       "purchaseType": "item",
-      "targetIds": [1],
+      "targetIds": [
+        1
+      ],
       "itemSet": [],
       "setNum": 10000,
       "limitNum": 0,
@@ -1940,7 +2289,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "questClear",
-          "targetIds": [94049102],
+          "targetIds": [
+            94049102
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -1953,7 +2304,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "missionConditionDetail",
-          "targetIds": [80289002],
+          "targetIds": [
+            80289002
+          ],
           "targetNum": 50,
           "conditionMessage": "『芳しい茅束』を累計50個獲得せよ",
           "closedMessage": "",
@@ -1963,7 +2316,9 @@
             "missionTargetId": 80289,
             "missionCondType": 12,
             "logicType": 1,
-            "targetIds": [94049104],
+            "targetIds": [
+              94049104
+            ],
             "addTargetIds": [],
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
@@ -2006,7 +2361,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "eventMissionAchieve",
-          "targetIds": [80289001],
+          "targetIds": [
+            80289001
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -2019,7 +2376,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "missionConditionDetail",
-          "targetIds": [80289002],
+          "targetIds": [
+            80289002
+          ],
           "targetNum": 100,
           "conditionMessage": "『芳しい茅束』を累計100個獲得せよ",
           "closedMessage": "",
@@ -2029,7 +2388,9 @@
             "missionTargetId": 80289,
             "missionCondType": 12,
             "logicType": 1,
-            "targetIds": [94049104],
+            "targetIds": [
+              94049104
+            ],
             "addTargetIds": [],
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
@@ -2072,7 +2433,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "questClear",
-          "targetIds": [94049102],
+          "targetIds": [
+            94049102
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -2085,7 +2448,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "missionConditionDetail",
-          "targetIds": [80289003],
+          "targetIds": [
+            80289003
+          ],
           "targetNum": 50,
           "conditionMessage": "『丈夫な丸太』を累計50個獲得せよ",
           "closedMessage": "",
@@ -2095,7 +2460,9 @@
             "missionTargetId": 80289,
             "missionCondType": 12,
             "logicType": 1,
-            "targetIds": [94049105],
+            "targetIds": [
+              94049105
+            ],
             "addTargetIds": [],
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
@@ -2138,7 +2505,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "eventMissionAchieve",
-          "targetIds": [80289003],
+          "targetIds": [
+            80289003
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -2151,7 +2520,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "missionConditionDetail",
-          "targetIds": [80289003],
+          "targetIds": [
+            80289003
+          ],
           "targetNum": 100,
           "conditionMessage": "『丈夫な丸太』を累計100個獲得せよ",
           "closedMessage": "",
@@ -2161,7 +2532,9 @@
             "missionTargetId": 80289,
             "missionCondType": 12,
             "logicType": 1,
-            "targetIds": [94049105],
+            "targetIds": [
+              94049105
+            ],
             "addTargetIds": [],
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
@@ -2204,7 +2577,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "questClear",
-          "targetIds": [94049102],
+          "targetIds": [
+            94049102
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -2217,7 +2592,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "missionConditionDetail",
-          "targetIds": [80289004],
+          "targetIds": [
+            80289004
+          ],
           "targetNum": 50,
           "conditionMessage": "『寝かせた粘土』を累計50個獲得せよ",
           "closedMessage": "",
@@ -2227,7 +2604,9 @@
             "missionTargetId": 80289,
             "missionCondType": 12,
             "logicType": 1,
-            "targetIds": [94049106],
+            "targetIds": [
+              94049106
+            ],
             "addTargetIds": [],
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
@@ -2249,7 +2628,13 @@
       "closedAt": 1604289599,
       "rewardType": "gift",
       "gifts": [
-        { "id": 337, "type": "item", "objectId": 3, "priority": 0, "num": 200 }
+        {
+          "id": 337,
+          "type": "item",
+          "objectId": 3,
+          "priority": 0,
+          "num": 200
+        }
       ],
       "bannerGroup": 0,
       "priority": 0,
@@ -2264,7 +2649,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "eventMissionAchieve",
-          "targetIds": [80289005],
+          "targetIds": [
+            80289005
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -2277,7 +2664,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "missionConditionDetail",
-          "targetIds": [80289004],
+          "targetIds": [
+            80289004
+          ],
           "targetNum": 100,
           "conditionMessage": "『寝かせた粘土』を累計100個獲得せよ",
           "closedMessage": "",
@@ -2287,7 +2676,9 @@
             "missionTargetId": 80289,
             "missionCondType": 12,
             "logicType": 1,
-            "targetIds": [94049106],
+            "targetIds": [
+              94049106
+            ],
             "addTargetIds": [],
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
@@ -2330,7 +2721,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "questClear",
-          "targetIds": [94049102],
+          "targetIds": [
+            94049102
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -2343,7 +2736,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "missionConditionDetail",
-          "targetIds": [80289005],
+          "targetIds": [
+            80289005
+          ],
           "targetNum": 1,
           "conditionMessage": "復興クエストを1回クリアせよ",
           "closedMessage": "",
@@ -2354,10 +2749,30 @@
             "missionCondType": 10,
             "logicType": 1,
             "targetIds": [
-              94049201, 94049202, 94049203, 94049204, 94049205, 94049206,
-              94049207, 94049208, 94049209, 94049210, 94049211, 94049212,
-              94049213, 94049214, 94049215, 94049216, 94049217, 94049218,
-              94049219, 94049220, 94049221, 94049222, 94049223, 94049224
+              94049201,
+              94049202,
+              94049203,
+              94049204,
+              94049205,
+              94049206,
+              94049207,
+              94049208,
+              94049209,
+              94049210,
+              94049211,
+              94049212,
+              94049213,
+              94049214,
+              94049215,
+              94049216,
+              94049217,
+              94049218,
+              94049219,
+              94049220,
+              94049221,
+              94049222,
+              94049223,
+              94049224
             ],
             "addTargetIds": [],
             "targetQuestIndividualities": [],
@@ -2401,7 +2816,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "eventMissionAchieve",
-          "targetIds": [80289007],
+          "targetIds": [
+            80289007
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -2414,7 +2831,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "missionConditionDetail",
-          "targetIds": [80289005],
+          "targetIds": [
+            80289005
+          ],
           "targetNum": 3,
           "conditionMessage": "復興クエストを合計3回クリアせよ",
           "closedMessage": "",
@@ -2425,10 +2844,30 @@
             "missionCondType": 10,
             "logicType": 1,
             "targetIds": [
-              94049201, 94049202, 94049203, 94049204, 94049205, 94049206,
-              94049207, 94049208, 94049209, 94049210, 94049211, 94049212,
-              94049213, 94049214, 94049215, 94049216, 94049217, 94049218,
-              94049219, 94049220, 94049221, 94049222, 94049223, 94049224
+              94049201,
+              94049202,
+              94049203,
+              94049204,
+              94049205,
+              94049206,
+              94049207,
+              94049208,
+              94049209,
+              94049210,
+              94049211,
+              94049212,
+              94049213,
+              94049214,
+              94049215,
+              94049216,
+              94049217,
+              94049218,
+              94049219,
+              94049220,
+              94049221,
+              94049222,
+              94049223,
+              94049224
             ],
             "addTargetIds": [],
             "targetQuestIndividualities": [],
@@ -2451,7 +2890,13 @@
       "closedAt": 1604289599,
       "rewardType": "gift",
       "gifts": [
-        { "id": 337, "type": "item", "objectId": 3, "priority": 0, "num": 200 }
+        {
+          "id": 337,
+          "type": "item",
+          "objectId": 3,
+          "priority": 0,
+          "num": 200
+        }
       ],
       "bannerGroup": 0,
       "priority": 0,
@@ -2466,7 +2911,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "eventMissionAchieve",
-          "targetIds": [80289008],
+          "targetIds": [
+            80289008
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -2479,7 +2926,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "missionConditionDetail",
-          "targetIds": [80289005],
+          "targetIds": [
+            80289005
+          ],
           "targetNum": 5,
           "conditionMessage": "復興クエストを合計5回クリアせよ",
           "closedMessage": "",
@@ -2490,10 +2939,30 @@
             "missionCondType": 10,
             "logicType": 1,
             "targetIds": [
-              94049201, 94049202, 94049203, 94049204, 94049205, 94049206,
-              94049207, 94049208, 94049209, 94049210, 94049211, 94049212,
-              94049213, 94049214, 94049215, 94049216, 94049217, 94049218,
-              94049219, 94049220, 94049221, 94049222, 94049223, 94049224
+              94049201,
+              94049202,
+              94049203,
+              94049204,
+              94049205,
+              94049206,
+              94049207,
+              94049208,
+              94049209,
+              94049210,
+              94049211,
+              94049212,
+              94049213,
+              94049214,
+              94049215,
+              94049216,
+              94049217,
+              94049218,
+              94049219,
+              94049220,
+              94049221,
+              94049222,
+              94049223,
+              94049224
             ],
             "addTargetIds": [],
             "targetQuestIndividualities": [],
@@ -2537,7 +3006,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "eventMissionAchieve",
-          "targetIds": [80289009],
+          "targetIds": [
+            80289009
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -2550,7 +3021,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "missionConditionDetail",
-          "targetIds": [80289005],
+          "targetIds": [
+            80289005
+          ],
           "targetNum": 7,
           "conditionMessage": "復興クエストを合計7回クリアせよ",
           "closedMessage": "",
@@ -2561,10 +3034,30 @@
             "missionCondType": 10,
             "logicType": 1,
             "targetIds": [
-              94049201, 94049202, 94049203, 94049204, 94049205, 94049206,
-              94049207, 94049208, 94049209, 94049210, 94049211, 94049212,
-              94049213, 94049214, 94049215, 94049216, 94049217, 94049218,
-              94049219, 94049220, 94049221, 94049222, 94049223, 94049224
+              94049201,
+              94049202,
+              94049203,
+              94049204,
+              94049205,
+              94049206,
+              94049207,
+              94049208,
+              94049209,
+              94049210,
+              94049211,
+              94049212,
+              94049213,
+              94049214,
+              94049215,
+              94049216,
+              94049217,
+              94049218,
+              94049219,
+              94049220,
+              94049221,
+              94049222,
+              94049223,
+              94049224
             ],
             "addTargetIds": [],
             "targetQuestIndividualities": [],
@@ -2608,7 +3101,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "eventMissionAchieve",
-          "targetIds": [80289010],
+          "targetIds": [
+            80289010
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -2621,7 +3116,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "missionConditionDetail",
-          "targetIds": [80289005],
+          "targetIds": [
+            80289005
+          ],
           "targetNum": 10,
           "conditionMessage": "復興クエストを合計10回クリアせよ",
           "closedMessage": "",
@@ -2632,10 +3129,30 @@
             "missionCondType": 10,
             "logicType": 1,
             "targetIds": [
-              94049201, 94049202, 94049203, 94049204, 94049205, 94049206,
-              94049207, 94049208, 94049209, 94049210, 94049211, 94049212,
-              94049213, 94049214, 94049215, 94049216, 94049217, 94049218,
-              94049219, 94049220, 94049221, 94049222, 94049223, 94049224
+              94049201,
+              94049202,
+              94049203,
+              94049204,
+              94049205,
+              94049206,
+              94049207,
+              94049208,
+              94049209,
+              94049210,
+              94049211,
+              94049212,
+              94049213,
+              94049214,
+              94049215,
+              94049216,
+              94049217,
+              94049218,
+              94049219,
+              94049220,
+              94049221,
+              94049222,
+              94049223,
+              94049224
             ],
             "addTargetIds": [],
             "targetQuestIndividualities": [],
@@ -2679,7 +3196,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "eventMissionAchieve",
-          "targetIds": [80289011],
+          "targetIds": [
+            80289011
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -2692,7 +3211,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "missionConditionDetail",
-          "targetIds": [80289005],
+          "targetIds": [
+            80289005
+          ],
           "targetNum": 15,
           "conditionMessage": "復興クエストを合計15回クリアせよ",
           "closedMessage": "",
@@ -2703,10 +3224,30 @@
             "missionCondType": 10,
             "logicType": 1,
             "targetIds": [
-              94049201, 94049202, 94049203, 94049204, 94049205, 94049206,
-              94049207, 94049208, 94049209, 94049210, 94049211, 94049212,
-              94049213, 94049214, 94049215, 94049216, 94049217, 94049218,
-              94049219, 94049220, 94049221, 94049222, 94049223, 94049224
+              94049201,
+              94049202,
+              94049203,
+              94049204,
+              94049205,
+              94049206,
+              94049207,
+              94049208,
+              94049209,
+              94049210,
+              94049211,
+              94049212,
+              94049213,
+              94049214,
+              94049215,
+              94049216,
+              94049217,
+              94049218,
+              94049219,
+              94049220,
+              94049221,
+              94049222,
+              94049223,
+              94049224
             ],
             "addTargetIds": [],
             "targetQuestIndividualities": [],
@@ -2750,7 +3291,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "questClear",
-          "targetIds": [94049102],
+          "targetIds": [
+            94049102
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -2763,7 +3306,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "missionConditionDetail",
-          "targetIds": [80289001],
+          "targetIds": [
+            80289001
+          ],
           "targetNum": 1,
           "conditionMessage": "収穫クエストを1回クリアせよ",
           "closedMessage": "",
@@ -2774,9 +3319,21 @@
             "missionCondType": 10,
             "logicType": 1,
             "targetIds": [
-              94049251, 94049252, 94049253, 94049254, 94049255, 94049256,
-              94049257, 94049258, 94049259, 94049260, 94049261, 94049262,
-              94049263, 94049264, 94049265
+              94049251,
+              94049252,
+              94049253,
+              94049254,
+              94049255,
+              94049256,
+              94049257,
+              94049258,
+              94049259,
+              94049260,
+              94049261,
+              94049262,
+              94049263,
+              94049264,
+              94049265
             ],
             "addTargetIds": [],
             "targetQuestIndividualities": [],
@@ -2820,7 +3377,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "eventMissionAchieve",
-          "targetIds": [80289013],
+          "targetIds": [
+            80289013
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -2833,7 +3392,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "missionConditionDetail",
-          "targetIds": [80289001],
+          "targetIds": [
+            80289001
+          ],
           "targetNum": 3,
           "conditionMessage": "収穫クエストを合計3回クリアせよ",
           "closedMessage": "",
@@ -2844,9 +3405,21 @@
             "missionCondType": 10,
             "logicType": 1,
             "targetIds": [
-              94049251, 94049252, 94049253, 94049254, 94049255, 94049256,
-              94049257, 94049258, 94049259, 94049260, 94049261, 94049262,
-              94049263, 94049264, 94049265
+              94049251,
+              94049252,
+              94049253,
+              94049254,
+              94049255,
+              94049256,
+              94049257,
+              94049258,
+              94049259,
+              94049260,
+              94049261,
+              94049262,
+              94049263,
+              94049264,
+              94049265
             ],
             "addTargetIds": [],
             "targetQuestIndividualities": [],
@@ -2890,7 +3463,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "eventMissionAchieve",
-          "targetIds": [80289014],
+          "targetIds": [
+            80289014
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -2903,7 +3478,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "missionConditionDetail",
-          "targetIds": [80289001],
+          "targetIds": [
+            80289001
+          ],
           "targetNum": 5,
           "conditionMessage": "収穫クエストを合計5回クリアせよ",
           "closedMessage": "",
@@ -2914,9 +3491,21 @@
             "missionCondType": 10,
             "logicType": 1,
             "targetIds": [
-              94049251, 94049252, 94049253, 94049254, 94049255, 94049256,
-              94049257, 94049258, 94049259, 94049260, 94049261, 94049262,
-              94049263, 94049264, 94049265
+              94049251,
+              94049252,
+              94049253,
+              94049254,
+              94049255,
+              94049256,
+              94049257,
+              94049258,
+              94049259,
+              94049260,
+              94049261,
+              94049262,
+              94049263,
+              94049264,
+              94049265
             ],
             "addTargetIds": [],
             "targetQuestIndividualities": [],
@@ -2939,7 +3528,13 @@
       "closedAt": 1604289599,
       "rewardType": "gift",
       "gifts": [
-        { "id": 337, "type": "item", "objectId": 3, "priority": 0, "num": 200 }
+        {
+          "id": 337,
+          "type": "item",
+          "objectId": 3,
+          "priority": 0,
+          "num": 200
+        }
       ],
       "bannerGroup": 0,
       "priority": 0,
@@ -2954,7 +3549,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "eventMissionAchieve",
-          "targetIds": [80289015],
+          "targetIds": [
+            80289015
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -2967,7 +3564,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "missionConditionDetail",
-          "targetIds": [80289001],
+          "targetIds": [
+            80289001
+          ],
           "targetNum": 10,
           "conditionMessage": "収穫クエストを合計10回クリアせよ",
           "closedMessage": "",
@@ -2978,9 +3577,21 @@
             "missionCondType": 10,
             "logicType": 1,
             "targetIds": [
-              94049251, 94049252, 94049253, 94049254, 94049255, 94049256,
-              94049257, 94049258, 94049259, 94049260, 94049261, 94049262,
-              94049263, 94049264, 94049265
+              94049251,
+              94049252,
+              94049253,
+              94049254,
+              94049255,
+              94049256,
+              94049257,
+              94049258,
+              94049259,
+              94049260,
+              94049261,
+              94049262,
+              94049263,
+              94049264,
+              94049265
             ],
             "addTargetIds": [],
             "targetQuestIndividualities": [],
@@ -3024,7 +3635,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "questClear",
-          "targetIds": [94049102],
+          "targetIds": [
+            94049102
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -3037,7 +3650,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "missionConditionDetail",
-          "targetIds": [80289006],
+          "targetIds": [
+            80289006
+          ],
           "targetNum": 30,
           "conditionMessage": "『埴輪ノッブ』系の敵を30体倒せ",
           "closedMessage": "",
@@ -3047,7 +3662,9 @@
             "missionTargetId": 80289,
             "missionCondType": 2,
             "logicType": 1,
-            "targetIds": [2720],
+            "targetIds": [
+              2720
+            ],
             "addTargetIds": [],
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
@@ -3090,7 +3707,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "eventMissionAchieve",
-          "targetIds": [80289017],
+          "targetIds": [
+            80289017
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -3103,7 +3722,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "missionConditionDetail",
-          "targetIds": [80289006],
+          "targetIds": [
+            80289006
+          ],
           "targetNum": 60,
           "conditionMessage": "『埴輪ノッブ』系の敵を60体倒せ",
           "closedMessage": "",
@@ -3113,7 +3734,9 @@
             "missionTargetId": 80289,
             "missionCondType": 2,
             "logicType": 1,
-            "targetIds": [2720],
+            "targetIds": [
+              2720
+            ],
             "addTargetIds": [],
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
@@ -3156,7 +3779,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "eventMissionAchieve",
-          "targetIds": [80289018],
+          "targetIds": [
+            80289018
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -3169,7 +3794,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "missionConditionDetail",
-          "targetIds": [80289006],
+          "targetIds": [
+            80289006
+          ],
           "targetNum": 90,
           "conditionMessage": "『埴輪ノッブ』系の敵を90体倒せ",
           "closedMessage": "",
@@ -3179,7 +3806,9 @@
             "missionTargetId": 80289,
             "missionCondType": 2,
             "logicType": 1,
-            "targetIds": [2720],
+            "targetIds": [
+              2720
+            ],
             "addTargetIds": [],
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
@@ -3222,7 +3851,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "questClear",
-          "targetIds": [94049102],
+          "targetIds": [
+            94049102
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -3235,7 +3866,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "missionConditionDetail",
-          "targetIds": [80289009],
+          "targetIds": [
+            80289009
+          ],
           "targetNum": 400,
           "conditionMessage": "『ミニ銅鐸』を戦利品で累計400個獲得せよ",
           "closedMessage": "",
@@ -3245,7 +3878,9 @@
             "missionTargetId": 80289,
             "missionCondType": 12,
             "logicType": 1,
-            "targetIds": [94049101],
+            "targetIds": [
+              94049101
+            ],
             "addTargetIds": [],
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
@@ -3288,7 +3923,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "questClear",
-          "targetIds": [94049102],
+          "targetIds": [
+            94049102
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -3301,7 +3938,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "missionConditionDetail",
-          "targetIds": [80289008],
+          "targetIds": [
+            80289008
+          ],
           "targetNum": 400,
           "conditionMessage": "『おてがる銅鏡』を戦利品で累計400個獲得せよ",
           "closedMessage": "",
@@ -3311,7 +3950,9 @@
             "missionTargetId": 80289,
             "missionCondType": 12,
             "logicType": 1,
-            "targetIds": [94049102],
+            "targetIds": [
+              94049102
+            ],
             "addTargetIds": [],
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
@@ -3354,7 +3995,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "questClear",
-          "targetIds": [94049102],
+          "targetIds": [
+            94049102
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -3367,7 +4010,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "missionConditionDetail",
-          "targetIds": [80289007],
+          "targetIds": [
+            80289007
+          ],
           "targetNum": 400,
           "conditionMessage": "『おおぶり蛤』を戦利品で累計400個獲得せよ",
           "closedMessage": "",
@@ -3377,7 +4022,9 @@
             "missionTargetId": 80289,
             "missionCondType": 12,
             "logicType": 1,
-            "targetIds": [94049103],
+            "targetIds": [
+              94049103
+            ],
             "addTargetIds": [],
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
@@ -3421,10 +4068,28 @@
           "condGroup": 1,
           "condType": "eventMissionClear",
           "targetIds": [
-            80289013, 80289014, 80289015, 80289016, 80289001, 80289002,
-            80289003, 80289004, 80289005, 80289006, 80289007, 80289008,
-            80289009, 80289010, 80289011, 80289012, 80289017, 80289018,
-            80289019, 80289022, 80289021, 80289020
+            80289013,
+            80289014,
+            80289015,
+            80289016,
+            80289001,
+            80289002,
+            80289003,
+            80289004,
+            80289005,
+            80289006,
+            80289007,
+            80289008,
+            80289009,
+            80289010,
+            80289011,
+            80289012,
+            80289017,
+            80289018,
+            80289019,
+            80289022,
+            80289021,
+            80289020
           ],
           "targetNum": 22,
           "conditionMessage": "No.1～No.22のミッションすべてをクリアせよ",
@@ -3438,7 +4103,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "questClear",
-          "targetIds": [94049102],
+          "targetIds": [
+            94049102
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -3480,7 +4147,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "date",
-          "targetIds": [0],
+          "targetIds": [
+            0
+          ],
           "targetNum": 1602579600,
           "conditionMessage": "???\n※「10/13 18:00」以降、特定条件達成で開放",
           "closedMessage": "",
@@ -3493,7 +4162,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "questClear",
-          "targetIds": [94049108],
+          "targetIds": [
+            94049108
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -3506,7 +4177,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "onTimeLimitRaidDeadNum",
-          "targetIds": [1],
+          "targetIds": [
+            1
+          ],
           "targetNum": 1,
           "conditionMessage": "集落防壁到達までに凶つ神『炎ノブ』を他マスターと協力して撃破せよ",
           "closedMessage": "",
@@ -3548,7 +4221,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "date",
-          "targetIds": [0],
+          "targetIds": [
+            0
+          ],
           "targetNum": 1602579600,
           "conditionMessage": "???\n※「10/13 18:00」以降、特定条件達成で開放",
           "closedMessage": "",
@@ -3561,7 +4236,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "questClear",
-          "targetIds": [94049108],
+          "targetIds": [
+            94049108
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -3574,7 +4251,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "onTimeLimitRaidDeadNum",
-          "targetIds": [2],
+          "targetIds": [
+            2
+          ],
           "targetNum": 1,
           "conditionMessage": "集落防壁到達までに凶つ神『地ノブ』を他マスターと協力して撃破せよ",
           "closedMessage": "",
@@ -3616,7 +4295,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "date",
-          "targetIds": [0],
+          "targetIds": [
+            0
+          ],
           "targetNum": 1602579600,
           "conditionMessage": "???\n※「10/13 18:00」以降、特定条件達成で開放",
           "closedMessage": "",
@@ -3629,7 +4310,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "questClear",
-          "targetIds": [94049108],
+          "targetIds": [
+            94049108
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -3642,7 +4325,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "onTimeLimitRaidDeadNum",
-          "targetIds": [3],
+          "targetIds": [
+            3
+          ],
           "targetNum": 1,
           "conditionMessage": "集落防壁到達までに凶つ神『水ノブ』を他マスターと協力して撃破せよ",
           "closedMessage": "",
@@ -3684,7 +4369,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "date",
-          "targetIds": [0],
+          "targetIds": [
+            0
+          ],
           "targetNum": 1602579600,
           "conditionMessage": "???\n※「10/13 18:00」以降、特定条件達成で開放",
           "closedMessage": "",
@@ -3697,7 +4384,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "questClear",
-          "targetIds": [94049108],
+          "targetIds": [
+            94049108
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -3710,7 +4399,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "onTimeLimitRaidDeadNum",
-          "targetIds": [4],
+          "targetIds": [
+            4
+          ],
           "targetNum": 1,
           "conditionMessage": "集落防壁到達までに凶つ神『嵐ノブ』を他マスターと協力して撃破せよ",
           "closedMessage": "",
@@ -3752,7 +4443,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "date",
-          "targetIds": [0],
+          "targetIds": [
+            0
+          ],
           "targetNum": 1602579600,
           "conditionMessage": "???\n※「10/13 18:00」以降、特定条件達成で開放",
           "closedMessage": "",
@@ -3765,7 +4458,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "questClear",
-          "targetIds": [94049108],
+          "targetIds": [
+            94049108
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -3778,7 +4473,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "onTimeLimitRaidDeadNum",
-          "targetIds": [5],
+          "targetIds": [
+            5
+          ],
           "targetNum": 1,
           "conditionMessage": "集落防壁到達までに凶つ神『光ノブ』を他マスターと協力して撃破せよ",
           "closedMessage": "",
@@ -3820,7 +4517,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "date",
-          "targetIds": [0],
+          "targetIds": [
+            0
+          ],
           "targetNum": 1602579600,
           "conditionMessage": "???\n※「10/13 18:00」以降、特定条件達成で開放",
           "closedMessage": "",
@@ -3833,7 +4532,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "questClear",
-          "targetIds": [94049108],
+          "targetIds": [
+            94049108
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -3846,7 +4547,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "onTimeLimitRaidDeadNum",
-          "targetIds": [6],
+          "targetIds": [
+            6
+          ],
           "targetNum": 1,
           "conditionMessage": "集落防壁到達までに凶つ神『闇ノブ』を他マスターと協力して撃破せよ",
           "closedMessage": "",
@@ -3888,7 +4591,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "date",
-          "targetIds": [0],
+          "targetIds": [
+            0
+          ],
           "targetNum": 1602579600,
           "conditionMessage": "???\n※「10/13 18:00」以降、特定条件達成で開放",
           "closedMessage": "",
@@ -3901,7 +4606,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "questClear",
-          "targetIds": [94049108],
+          "targetIds": [
+            94049108
+          ],
           "targetNum": 1,
           "conditionMessage": "???",
           "closedMessage": "",
@@ -3914,7 +4621,9 @@
           "missionTargetId": 80289,
           "condGroup": 1,
           "condType": "onTimeLimitRaidDeadNum",
-          "targetIds": [7],
+          "targetIds": [
+            7
+          ],
           "targetNum": 1,
           "conditionMessage": "集落防壁到達までに凶つ神『狂ノブ』を他マスターと協力して撃破せよ",
           "closedMessage": "",

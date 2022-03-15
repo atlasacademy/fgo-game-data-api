@@ -23,8 +23,14 @@
           "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_302.png",
           "functvals": [],
           "funcquestTvals": [
-            { "id": 94000046, "name": "eventOnigashimaRaid" },
-            { "id": 94000045, "name": "eventOnigashima" }
+            {
+              "id": 94000046,
+              "name": "eventOnigashimaRaid"
+            },
+            {
+              "id": 94000045,
+              "name": "eventOnigashima"
+            }
           ],
           "funcGroup": [],
           "buffs": [

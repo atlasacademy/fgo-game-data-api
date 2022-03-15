@@ -13,7 +13,18 @@
   "condLv": 0,
   "condLimitCount": 0,
   "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00306.png",
-  "coolDown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5],
+  "coolDown": [
+    7,
+    7,
+    7,
+    7,
+    7,
+    6,
+    6,
+    6,
+    6,
+    5
+  ],
   "actIndividuality": [],
   "script": {},
   "extraPassive": [],
@@ -39,29 +50,96 @@
           "buffGroup": 0,
           "script": {},
           "vals": [
-            { "id": 3004, "name": "buffPositiveEffect" },
-            { "id": 3006, "name": "buffIncreaseDamage" }
+            {
+              "id": 3004,
+              "name": "buffPositiveEffect"
+            },
+            {
+              "id": 3006,
+              "name": "buffIncreaseDamage"
+            }
           ],
           "tvals": [
-            { "id": 5000, "name": "canBeInBattle" },
-            { "id": 4002, "name": "cardBuster" }
+            {
+              "id": 5000,
+              "name": "canBeInBattle"
+            },
+            {
+              "id": 4002,
+              "name": "cardBuster"
+            }
           ],
-          "ckSelfIndv": [{ "id": 4002, "name": "cardBuster" }],
+          "ckSelfIndv": [
+            {
+              "id": 4002,
+              "name": "cardBuster"
+            }
+          ],
           "ckOpIndv": [],
           "maxRate": 5000
         }
       ],
       "svals": [
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 215 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 230 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 245 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 260 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 275 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 290 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 305 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 320 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 350 }
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 215
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 230
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 245
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 260
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 275
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 290
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 305
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 320
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 350
+        }
       ]
     },
     {
@@ -84,8 +162,14 @@
           "buffGroup": 450,
           "script": {},
           "vals": [
-            { "id": 3004, "name": "buffPositiveEffect" },
-            { "id": 3006, "name": "buffIncreaseDamage" }
+            {
+              "id": 3004,
+              "name": "buffPositiveEffect"
+            },
+            {
+              "id": 3006,
+              "name": "buffIncreaseDamage"
+            }
           ],
           "tvals": [],
           "ckSelfIndv": [],
@@ -94,16 +178,56 @@
         }
       ],
       "svals": [
-        { "Rate": 1000, "Turn": 3, "Count": -1 },
-        { "Rate": 1000, "Turn": 3, "Count": -1 },
-        { "Rate": 1000, "Turn": 3, "Count": -1 },
-        { "Rate": 1000, "Turn": 3, "Count": -1 },
-        { "Rate": 1000, "Turn": 3, "Count": -1 },
-        { "Rate": 1000, "Turn": 3, "Count": -1 },
-        { "Rate": 1000, "Turn": 3, "Count": -1 },
-        { "Rate": 1000, "Turn": 3, "Count": -1 },
-        { "Rate": 1000, "Turn": 3, "Count": -1 },
-        { "Rate": 1000, "Turn": 3, "Count": -1 }
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1
+        }
       ]
     },
     {
@@ -125,7 +249,12 @@
           "type": "upDropnp",
           "buffGroup": 0,
           "script": {},
-          "vals": [{ "id": 3004, "name": "buffPositiveEffect" }],
+          "vals": [
+            {
+              "id": 3004,
+              "name": "buffPositiveEffect"
+            }
+          ],
           "tvals": [],
           "ckSelfIndv": [],
           "ckOpIndv": [],
@@ -133,16 +262,66 @@
         }
       ],
       "svals": [
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 200 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 210 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 220 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 230 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 240 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 250 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 260 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 270 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 280 },
-        { "Rate": 1000, "Turn": 3, "Count": -1, "Value": 300 }
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 210
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 220
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 230
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 240
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 250
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 260
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 270
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 280
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 300
+        }
       ]
     },
     {
@@ -156,16 +335,46 @@
       "funcGroup": [],
       "buffs": [],
       "svals": [
-        { "Rate": 600, "Value": 1 },
-        { "Rate": 600, "Value": 1 },
-        { "Rate": 600, "Value": 1 },
-        { "Rate": 600, "Value": 1 },
-        { "Rate": 600, "Value": 1 },
-        { "Rate": 600, "Value": 1 },
-        { "Rate": 600, "Value": 1 },
-        { "Rate": 600, "Value": 1 },
-        { "Rate": 600, "Value": 1 },
-        { "Rate": 600, "Value": 1 }
+        {
+          "Rate": 600,
+          "Value": 1
+        },
+        {
+          "Rate": 600,
+          "Value": 1
+        },
+        {
+          "Rate": 600,
+          "Value": 1
+        },
+        {
+          "Rate": 600,
+          "Value": 1
+        },
+        {
+          "Rate": 600,
+          "Value": 1
+        },
+        {
+          "Rate": 600,
+          "Value": 1
+        },
+        {
+          "Rate": 600,
+          "Value": 1
+        },
+        {
+          "Rate": 600,
+          "Value": 1
+        },
+        {
+          "Rate": 600,
+          "Value": 1
+        },
+        {
+          "Rate": 600,
+          "Value": 1
+        }
       ]
     }
   ]

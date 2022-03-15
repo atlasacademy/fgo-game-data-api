@@ -1,6 +1,8 @@
 [
   {
-    "extendData": { "faceSize": 336 },
+    "extendData": {
+      "faceSize": 336
+    },
     "id": 10010001,
     "form": 0,
     "faceX": 336,
@@ -13,7 +15,9 @@
     "offsetYMyroom": 168
   },
   {
-    "extendData": { "faceSize": 512 },
+    "extendData": {
+      "faceSize": 512
+    },
     "id": 10010002,
     "form": 0,
     "faceX": 256,
