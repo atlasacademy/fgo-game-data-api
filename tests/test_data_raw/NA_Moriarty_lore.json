@@ -2734,6 +2734,7 @@
       "voicePrefix": 11
     }
   ],
+  "mstSvtLimitImage": [],
   "mstSvtChange": [
     {
       "beforeTreasureDeviceIds": [

@@ -619,6 +619,16 @@ class MstSvtLimitAdd(BaseModelORJson):
     voicePrefix: int  # 11
 
 
+class MstSvtLimitImage(BaseModelORJson):
+    svtId: int
+    limitCount: int
+    priority: int
+    defaultLimitCount: int
+    condType: int
+    condTargetId: int
+    condNum: int
+
+
 class MstSvtCostume(BaseModelORJson):
     svtId: int  # 702700,
     id: int  # 11,
@@ -1415,6 +1425,7 @@ class ServantEntity(BaseModelORJson):
     mstCombineCostume: list[MstCombineCostume]
     mstCombineMaterial: list[MstCombineMaterial]
     mstSvtLimitAdd: list[MstSvtLimitAdd]
+    mstSvtLimitImage: list[MstSvtLimitImage]
     mstSvtChange: list[MstSvtChange]
     mstSvtCostume: list[MstSvtCostume]
     mstSvtScript: list[MstSvtScript]

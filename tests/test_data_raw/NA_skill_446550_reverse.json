@@ -2495,6 +2495,7 @@
             }
           ],
           "mstSvtLimitAdd": [],
+          "mstSvtLimitImage": [],
           "mstSvtChange": [],
           "mstSvtCostume": [],
           "mstSvtScript": [
@@ -5596,6 +5597,7 @@
               "voicePrefix": 0
             }
           ],
+          "mstSvtLimitImage": [],
           "mstSvtChange": [],
           "mstSvtCostume": [],
           "mstSvtScript": [],
@@ -8255,6 +8257,7 @@
               "voicePrefix": 0
             }
           ],
+          "mstSvtLimitImage": [],
           "mstSvtChange": [],
           "mstSvtCostume": [],
           "mstSvtScript": [],

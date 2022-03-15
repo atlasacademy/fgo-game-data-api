@@ -23,7 +23,12 @@ from ....schemas.gameenums import (
     NiceStatusRank,
     SvtType,
 )
-from ....schemas.nice import NiceLoreComment, NiceLoreCommentAdd, NiceServantChange
+from ....schemas.nice import (
+    NiceLoreComment,
+    NiceLoreCommentAdd,
+    NiceServantChange,
+    NiceServantLimitImage,
+)
 from ....schemas.raw import (
     BAD_COMBINE_SVT_LIMIT,
     MstSvt,
@@ -31,6 +36,7 @@ from ....schemas.raw import (
     MstSvtComment,
     MstSvtCommentAdd,
     MstSvtCostume,
+    MstSvtLimitImage,
     ServantEntity,
 )
 from ... import raw
@@ -109,6 +115,18 @@ def get_nice_costume(
         shortName=get_translation(lang, costume.shortName),
         detail=costume.detail,
         priority=costume.priority,
+    )
+
+
+def get_nice_svt_limit_image(limit_image: MstSvtLimitImage) -> NiceServantLimitImage:
+    return NiceServantLimitImage(
+        svtId=limit_image.svtId,
+        limitCount=limit_image.limitCount,
+        priority=limit_image.priority,
+        defaultLimitCount=limit_image.defaultLimitCount,
+        condType=COND_TYPE_NAME[limit_image.condType],
+        condTargetId=limit_image.condTargetId,
+        condNum=limit_image.condNum,
     )
 
 
@@ -232,6 +250,10 @@ async def get_nice_servant(
 
     nice_data["svtChange"] = [
         get_nice_servant_change(change) for change in raw_svt.mstSvtChange
+    ]
+
+    nice_data["ascensionImage"] = [
+        get_nice_svt_limit_image(limitImage) for limitImage in raw_svt.mstSvtLimitImage
     ]
 
     item_map = {

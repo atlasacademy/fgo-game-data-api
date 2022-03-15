@@ -3140,6 +3140,7 @@
     }
   ],
   "mstSvtLimitAdd": [],
+  "mstSvtLimitImage": [],
   "mstSvtChange": [
     {
       "beforeTreasureDeviceIds": [

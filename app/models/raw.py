@@ -509,6 +509,19 @@ mstSvtLimitAdd = Table(
 )
 
 
+mstSvtLimitImage = Table(
+    "mstSvtLimitImage",
+    metadata,
+    Column("svtId", Integer, index=True),
+    Column("limitCount", Integer, index=True),
+    Column("priority", Integer),
+    Column("defaultLimitCount", Integer),
+    Column("condType", Integer),
+    Column("condTargetId", Integer),
+    Column("condNum", Integer),
+)
+
+
 mstSvtChange = Table(
     "mstSvtChange",
     metadata,
@@ -1658,6 +1671,7 @@ TABLES_TO_BE_LOADED = [
     mstCombineSkill,
     mstCombineCostume,
     mstSvtLimitAdd,
+    mstSvtLimitImage,
     mstSvtChange,
     mstSvtCostume,
     mstSvtVoice,

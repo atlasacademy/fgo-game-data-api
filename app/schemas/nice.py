@@ -656,6 +656,15 @@ class NiceServantChange(BaseModel):
     battleSvtId: int
 
 
+class NiceServantLimitImage(BaseModel):
+    limitCount: int
+    priority: int
+    defaultLimitCount: int
+    condType: NiceCondType
+    condTargetId: int
+    condNum: int
+
+
 class NiceServantAppendPassiveSkill(BaseModel):
     num: int
     priority: int
@@ -1005,6 +1014,9 @@ class NiceServant(BaseModelORJson):
     )
     svtChange: list[NiceServantChange] = Field(
         ..., title="Servant Change", description="EOR servants' hidden name details."
+    )
+    ascensionImage: list[NiceServantLimitImage] = Field(
+        ..., title="Servant Limit Image"
     )
     ascensionMaterials: dict[int, NiceLvlUpMaterial] = Field(
         ...,

@@ -67,6 +67,7 @@ from ...models.raw import (
     mstSvtIndividuality,
     mstSvtLimit,
     mstSvtLimitAdd,
+    mstSvtLimitImage,
     mstSvtMultiPortrait,
     mstSvtPassiveSkill,
     mstSvtScript,
@@ -140,6 +141,7 @@ from ...schemas.raw import (
     MstSvtIndividuality,
     MstSvtLimit,
     MstSvtLimitAdd,
+    MstSvtLimitImage,
     MstSvtMultiPortrait,
     MstSvtPassiveSkill,
     MstSvtScript,
@@ -172,6 +174,7 @@ schema_map_fetch_one: dict[  # type:ignore
     MstMasterMission: (mstMasterMission, mstMasterMission.c.id),
     MstSvtExtra: (mstSvtExtra, mstSvtExtra.c.svtId),
     MstSvtCoin: (mstSvtCoin, mstSvtCoin.c.svtId),
+    mstSvtLimitImage: (mstSvtLimitImage, mstSvtLimitImage.c.svtId),
     MstSvtAdd: (mstSvtAdd, mstSvtAdd.c.svtId),
 }
 
@@ -234,6 +237,11 @@ schema_table_fetch_all: dict[  # type:ignore
         mstSvtLimitAdd,
         mstSvtLimitAdd.c.svtId,
         mstSvtLimitAdd.c.limitCount,
+    ),
+    MstSvtLimitImage: (
+        mstSvtLimitImage,
+        mstSvtLimitImage.c.svtId,
+        mstSvtLimitImage.c.limitCount,
     ),
     MstSvtAppendPassiveSkill: (
         mstSvtAppendPassiveSkill,
