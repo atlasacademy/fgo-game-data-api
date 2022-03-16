@@ -29,7 +29,7 @@ tomli = "^2.0.1"
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.0"
 pylint = "^2.12.2"
-mypy = "^0.940"
+mypy = "^0.941"
 black = "^22.1.0"
 pytest-xdist = "^2.5.0"
 coverage = "^6.3.2"
