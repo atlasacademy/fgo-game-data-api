@@ -29,7 +29,7 @@ from ..schemas.basic import (
     BasicTdReverse,
     BasicWar,
 )
-from ..schemas.common import Language, NiceBuffScript, Region, ReverseDepth
+from ..schemas.common import Language, MCAssets, NiceBuffScript, Region, ReverseDepth
 from ..schemas.enums import (
     ATTRIBUTE_NAME,
     CLASS_NAME,
@@ -66,7 +66,13 @@ from ..schemas.raw import (
     MstTreasureDevice,
     MstWar,
 )
-from .utils import get_nice_trait, get_np_name, get_traits_list, get_translation
+from .utils import (
+    fmt_url,
+    get_nice_trait,
+    get_np_name,
+    get_traits_list,
+    get_translation,
+)
 
 
 settings = Settings()
@@ -127,8 +133,11 @@ async def get_basic_buff_from_raw(
     basic_buff = BasicBuffReverse(
         id=mstBuff.id,
         name=mstBuff.name,
-        icon=AssetURL.buffIcon.format(
-            base_url=settings.asset_url, region=region, item_id=mstBuff.iconId
+        icon=fmt_url(
+            AssetURL.buffIcon,
+            base_url=settings.asset_url,
+            region=region,
+            item_id=mstBuff.iconId,
         ),
         type=BUFF_TYPE_NAME[mstBuff.type],
         script=get_nice_buff_script(mstBuff),
@@ -257,8 +266,11 @@ async def get_basic_skill(
         id=mstSkill.id,
         name=get_translation(lang, mstSkill.name),
         ruby=mstSkill.ruby,
-        icon=AssetURL.skillIcon.format(
-            base_url=settings.asset_url, region=region, item_id=mstSkill.iconId
+        icon=fmt_url(
+            AssetURL.skillIcon,
+            base_url=settings.asset_url,
+            region=region,
+            item_id=mstSkill.iconId,
         ),
     )
 
@@ -464,14 +476,14 @@ def get_basic_mc_from_raw(
     region: Region, mstEquip: MstEquip, lang: Language
 ) -> BasicMysticCode:
     base_settings = {"base_url": settings.asset_url, "region": region}
-    item_assets = {
-        "male": AssetURL.mc["item"].format(
-            **base_settings, item_id=mstEquip.maleImageId
+    item_assets = MCAssets(
+        male=fmt_url(
+            AssetURL.mc["item"], **base_settings, item_id=mstEquip.maleImageId
         ),
-        "female": AssetURL.mc["item"].format(
-            **base_settings, item_id=mstEquip.femaleImageId
+        female=fmt_url(
+            AssetURL.mc["item"], **base_settings, item_id=mstEquip.femaleImageId
         ),
-    }
+    )
 
     basic_mc = BasicMysticCode(
         id=mstEquip.id,
@@ -501,18 +513,17 @@ def get_all_basic_mcs(
 def get_basic_cc_from_raw(
     region: Region, mstCommandCode: MstCommandCode, lang: Language
 ) -> BasicCommandCode:
-    base_settings = {
-        "base_url": settings.asset_url,
-        "region": region,
-        "item_id": mstCommandCode.id,
-    }
-
     basic_cc = BasicCommandCode(
         id=mstCommandCode.id,
         collectionNo=mstCommandCode.collectionNo,
         name=get_translation(lang, mstCommandCode.name),
         rarity=mstCommandCode.rarity,
-        face=AssetURL.commandCode.format(**base_settings),
+        face=fmt_url(
+            AssetURL.commandCode,
+            base_url=settings.asset_url,
+            region=region,
+            item_id=mstCommandCode.id,
+        ),
     )
 
     return basic_cc

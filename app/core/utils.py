@@ -2,6 +2,9 @@ import re
 import string
 from typing import Iterable, Literal, Optional, TypeVar, Union
 
+from pydantic import HttpUrl
+from pydantic.tools import parse_obj_as
+
 from ..data.custom_mappings import TRANSLATION_OVERRIDE, TRANSLATIONS, Translation
 from ..schemas.basic import BasicCommandCode, BasicEquip, BasicServant
 from ..schemas.common import Language, NiceTrait
@@ -136,3 +139,8 @@ def nullable_to_string(nullable: Optional[str]) -> str:
         return ""
     else:
         return nullable
+
+
+def fmt_url(url_fmt: str, **kwargs: int | str) -> HttpUrl:
+    url: HttpUrl = parse_obj_as(HttpUrl, url_fmt.format(**kwargs))
+    return url
