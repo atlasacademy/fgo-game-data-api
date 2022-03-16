@@ -1057,8 +1057,9 @@ class BuffAction(IntEnum):
     FUNCTION_COMMANDCODEATTACK_AFTER = 97
     FUNCTION_ATTACK_BEFORE = 98
     DONOT_SKILL_SELECT = 99
-    BUFF_RATE = 100
-    COUNTER_FUNCTION = 101
+    INVISIBLE_BATTLE_CHARA = 100
+    BUFF_RATE = 101
+    COUNTER_FUNCTION = 102
 
 
 class NiceBuffAction(str, Enum):
@@ -1164,6 +1165,7 @@ class NiceBuffAction(str, Enum):
     functionCommandcodeattackAfter = "functionCommandcodeattackAfter"
     functionAttackBefore = "functionAttackBefore"
     donotSkillSelect = "donotSkillSelect"
+    invisibleBattleChara = "invisibleBattleChara"
     buffRate = "buffRate"
     counterFunction = "counterFunction"
 
@@ -1269,8 +1271,9 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     97: NiceBuffAction.functionCommandcodeattackAfter,
     98: NiceBuffAction.functionAttackBefore,
     99: NiceBuffAction.donotSkillSelect,
-    100: NiceBuffAction.buffRate,
-    101: NiceBuffAction.counterFunction,
+    100: NiceBuffAction.invisibleBattleChara,
+    101: NiceBuffAction.buffRate,
+    102: NiceBuffAction.counterFunction,
 }
 
 
@@ -1396,6 +1399,9 @@ class DataValsType(IntEnum):
     CounterOc = 94
     UseTreasureDevice = 95
     SkillReaction = 96
+    BehaveAsFamilyBuff = 97
+    UnSubStateWhileLinkedToOthers = 98
+    NotAccompanyWhenLinkedTargetMoveState = 99
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -2518,6 +2524,7 @@ class QuestAfterClearType(IntEnum):
     REPEAT_FIRST = 2
     REPEAT_LAST = 3
     RESET_INTERVAL = 4
+    CLOSE_DISP = 5
 
 
 class NiceQuestAfterClearType(str, Enum):
@@ -2527,6 +2534,7 @@ class NiceQuestAfterClearType(str, Enum):
     repeatFirst = "repeatFirst"
     repeatLast = "repeatLast"
     resetInterval = "resetInterval"
+    closeDisp = "closeDisp"
 
 
 QUEST_AFTER_CLEAR_NAME: dict[int, NiceQuestAfterClearType] = {
@@ -2534,6 +2542,7 @@ QUEST_AFTER_CLEAR_NAME: dict[int, NiceQuestAfterClearType] = {
     2: NiceQuestAfterClearType.repeatFirst,
     3: NiceQuestAfterClearType.repeatLast,
     4: NiceQuestAfterClearType.resetInterval,
+    5: NiceQuestAfterClearType.closeDisp,
 }
 
 
@@ -2594,6 +2603,8 @@ class QuestFlag(IntEnum):
     ENEMY_IMMEDIATE_APPEAR = 18014398509481984
     NO_SUPPORT_LIST = 36028797018963968
     LIVE = 72057594037927936
+    FORCE_DISPLAY_ENEMY_INFO = 144115188075855872
+    ALLOUT_BATTLE = 288230376151711744
 
 
 class NiceQuestFlag(str, Enum):
@@ -2655,6 +2666,8 @@ class NiceQuestFlag(str, Enum):
     enemyImmediateAppear = "enemyImmediateAppear"
     noSupportList = "noSupportList"
     live = "live"
+    forceDisplayEnemyInfo = "forceDisplayEnemyInfo"
+    alloutBattle = "alloutBattle"
 
 
 Quest_FLAG_NAME: dict[int, NiceQuestFlag] = {
@@ -2714,6 +2727,8 @@ Quest_FLAG_NAME: dict[int, NiceQuestFlag] = {
     18014398509481984: NiceQuestFlag.enemyImmediateAppear,
     36028797018963968: NiceQuestFlag.noSupportList,
     72057594037927936: NiceQuestFlag.live,
+    144115188075855872: NiceQuestFlag.forceDisplayEnemyInfo,
+    288230376151711744: NiceQuestFlag.alloutBattle,
 }
 
 
@@ -2921,6 +2936,7 @@ class WarEntityFlag(IntEnum):
     EFFECT_DISAPPEAR_BANNER = 65536
     WHITE_MARK_WITH_CLEAR = 131072
     WHITE_MARK_UNDER_BOARD = 262144
+    SUB_FOLDER = 524288
 
 
 class NiceWarFlag(str, Enum):
@@ -2944,6 +2960,7 @@ class NiceWarFlag(str, Enum):
     effectDisappearBanner = "effectDisappearBanner"
     whiteMarkWithClear = "whiteMarkWithClear"
     whiteMarkUnderBoard = "whiteMarkUnderBoard"
+    subFolder = "subFolder"
     summerCamp = "summerCamp"
     unreleasedStory = "unreleasedStory"
 
@@ -2967,6 +2984,7 @@ WAR_FLAG_NAME: dict[int, NiceWarFlag] = {
     65536: NiceWarFlag.effectDisappearBanner,
     131072: NiceWarFlag.whiteMarkWithClear,
     262144: NiceWarFlag.whiteMarkUnderBoard,
+    524288: NiceWarFlag.subFolder,
     34848: NiceWarFlag.summerCamp,
     49538: NiceWarFlag.unreleasedStory,
 }

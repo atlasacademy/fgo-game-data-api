@@ -411,6 +411,7 @@ export enum NiceBuffAction {
     FUNCTION_COMMANDCODEATTACK_AFTER = "functionCommandcodeattackAfter",
     FUNCTION_ATTACK_BEFORE = "functionAttackBefore",
     DONOT_SKILL_SELECT = "donotSkillSelect",
+    INVISIBLE_BATTLE_CHARA = "invisibleBattleChara",
     BUFF_RATE = "buffRate",
     COUNTER_FUNCTION = "counterFunction",
 }
@@ -520,6 +521,9 @@ export enum NiceDataValsType {
     CounterOc = "counteroc",
     UseTreasureDevice = "usetreasuredevice",
     SkillReaction = "skillreaction",
+    BehaveAsFamilyBuff = "behaveasfamilybuff",
+    UnSubStateWhileLinkedToOthers = "unsubstatewhilelinkedtoothers",
+    NotAccompanyWhenLinkedTargetMoveState = "notaccompanywhenlinkedtargetmovestate",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -887,6 +891,7 @@ export enum NiceQuestAfterClearType {
     REPEAT_FIRST = "repeatFirst",
     REPEAT_LAST = "repeatLast",
     RESET_INTERVAL = "resetInterval",
+    CLOSE_DISP = "closeDisp",
 }
 
 export enum NiceQuestFlag {
@@ -946,6 +951,8 @@ export enum NiceQuestFlag {
     ENEMY_IMMEDIATE_APPEAR = "enemyImmediateAppear",
     NO_SUPPORT_LIST = "noSupportList",
     LIVE = "live",
+    FORCE_DISPLAY_ENEMY_INFO = "forceDisplayEnemyInfo",
+    ALLOUT_BATTLE = "alloutBattle",
 }
 
 export enum NiceStatusRank {
@@ -1027,6 +1034,7 @@ export enum NiceWarFlag {
     EFFECT_DISAPPEAR_BANNER = "effectDisappearBanner",
     WHITE_MARK_WITH_CLEAR = "whiteMarkWithClear",
     WHITE_MARK_UNDER_BOARD = "whiteMarkUnderBoard",
+    SUB_FOLDER = "subFolder",
     SUMMER_CAMP = "summerCamp",
     UNRELEASED_STORY = "unreleasedStory",
 }

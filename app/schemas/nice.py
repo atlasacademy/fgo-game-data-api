@@ -253,6 +253,9 @@ class BaseVals(BaseModel):
     CounterOc: int | None = None
     UseTreasureDevice: int | None = None
     SkillReaction: int | None = None
+    BehaveAsFamilyBuff: int | None = None
+    UnSubStateWhileLinkedToOthers: int | None = None
+    NotAccompanyWhenLinkedTargetMoveState: int | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
