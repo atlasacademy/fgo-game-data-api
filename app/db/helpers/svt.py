@@ -3,7 +3,7 @@ from typing import Iterable, Optional, Union
 from sqlalchemy import Table
 from sqlalchemy.exc import DBAPIError
 from sqlalchemy.ext.asyncio import AsyncConnection
-from sqlalchemy.sql import Join, and_, not_, or_, select
+from sqlalchemy.sql import Join, and_, not_, or_, select, true
 from sqlalchemy.sql.elements import ClauseElement
 
 from ...models.raw import (
@@ -170,7 +170,7 @@ async def get_svt_search(
     cv: Optional[str] = None,
 ) -> list[MstSvt]:
     from_clause: Union[Join, Table] = mstSvt
-    where_clause: list[Union[ClauseElement, bool]] = [True]
+    where_clause: list[ClauseElement] = [true()]
 
     if svt_type_ints:
         where_clause.append(mstSvt.c.type.in_(svt_type_ints))

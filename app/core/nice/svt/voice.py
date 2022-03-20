@@ -102,25 +102,25 @@ def get_nice_voice_line(
         overwriteName=get_voice_name(
             nullable_to_string(script.overwriteName), lang, Translation.OVERWRITE_VOICE
         ),
-        id=(info.id for info in script.infos),
-        audioAssets=(
+        id=[info.id for info in script.infos],
+        audioAssets=[
             get_voice_url(region, svt_id, voice_type, info.id) for info in script.infos
-        ),
-        delay=(info.delay for info in script.infos),
-        face=(info.face for info in script.infos),
-        form=(info.form for info in script.infos),
-        text=(nullable_to_string(info.text) for info in script.infos),
-        conds=(
+        ],
+        delay=[info.delay for info in script.infos],
+        face=[info.face for info in script.infos],
+        form=[info.form for info in script.infos],
+        text=[nullable_to_string(info.text) for info in script.infos],
+        conds=[
             get_nice_voice_cond(info, costume_ids, mstSvtGroups)
             for info in script.conds
-        ),
-        playConds=(
+        ],
+        playConds=[
             get_nice_play_cond(play_cond)
             for play_cond in play_conds
             if play_cond.svtId == svt_id
             and play_cond.voiceId == voice_id
             and play_cond.voicePrefix in (-1, voice_prefix)
-        ),
+        ],
         subtitle=subtitle_ids.get(str(svt_id) + "_" + first_voice.id, ""),
     )
 
@@ -152,7 +152,7 @@ def get_nice_voice_group(
         svtId=voice.id,
         voicePrefix=voice.voicePrefix,
         type=VOICE_TYPE_NAME[voice.type],
-        voiceLines=(
+        voiceLines=[
             get_nice_voice_line(
                 region,
                 script,
@@ -168,7 +168,7 @@ def get_nice_voice_group(
             )
             for script in voice.scriptJson
             if script.infos
-        ),
+        ],
     )
 
 

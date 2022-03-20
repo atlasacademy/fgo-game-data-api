@@ -2,6 +2,7 @@ import re
 from typing import Any, Optional, Union
 
 from fastapi import HTTPException
+from pydantic import HttpUrl
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings, logger
@@ -11,7 +12,7 @@ from ...schemas.enums import FUNC_APPLYTARGET_NAME, FUNC_VALS_NOT_BUFF
 from ...schemas.gameenums import FUNC_TARGETTYPE_NAME, FUNC_TYPE_NAME, FuncType
 from ...schemas.nice import AssetURL, NiceFuncGroup
 from ...schemas.raw import FunctionEntityNoReverse, MstFunc, MstFuncGroup
-from ..utils import get_traits_list
+from ..utils import fmt_url, get_traits_list
 from .buff import get_nice_buff
 
 
@@ -217,16 +218,16 @@ async def parse_dataVals(
     return output
 
 
-def get_func_group_icon(region: Region, funcType: int, iconId: int) -> Optional[str]:
+def get_func_group_icon(region: Region, funcType: int, iconId: int) -> HttpUrl | None:
     if iconId == 0:
         return None
 
     base_settings = {"base_url": settings.asset_url, "region": region}
     if funcType in EVENT_DROP_FUNCTIONS:
-        return AssetURL.items.format(**base_settings, item_id=iconId)
+        return fmt_url(AssetURL.items, **base_settings, item_id=iconId)
     else:
-        return AssetURL.eventUi.format(
-            **base_settings, event=f"func_group_icon_{iconId}"
+        return fmt_url(
+            AssetURL.eventUi, **base_settings, event=f"func_group_icon_{iconId}"
         )
 
 

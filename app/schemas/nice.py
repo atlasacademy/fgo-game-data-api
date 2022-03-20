@@ -762,31 +762,35 @@ class NiceVoicePlayCond(BaseModel):
 
 class NiceVoiceLine(BaseModelORJson):
     name: Optional[str] = Field(
-        None, title="Voice line default name", description="Voice line default name."
+        default=None,
+        title="Voice line default name",
+        description="Voice line default name.",
     )
     condType: Optional[NiceCondType] = Field(
-        None,
+        default=None,
         title="Voice line default condition type",
         description="Voice line default condition type.",
     )
     condValue: Optional[int] = Field(
-        None,
+        default=None,
         title="Voice line default condition value",
         description="Voice line default condition threshold value.",
     )
     priority: Optional[int] = Field(
-        None,
+        default=None,
         title="Voice line default priority",
         description="Voice line default priority.",
     )
     svtVoiceType: Optional[NiceSvtVoiceType] = Field(
-        None, title="Voice line default type", description="Voice line default type."
+        default=None,
+        title="Voice line default type",
+        description="Voice line default type.",
     )
     overwriteName: str = Field(
         ..., title="Voice line overwrite name", description="Voice line overwrite name."
     )
     summonScript: Optional[ScriptLink] = Field(
-        None, title="Script to be played when summoning"
+        default=None, title="Script to be played when summoning"
     )
     id: list[str] = Field(..., title="Voice line IDs", description="Voice line IDs.")
     audioAssets: list[str] = Field(
