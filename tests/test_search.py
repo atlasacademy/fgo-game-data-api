@@ -125,7 +125,10 @@ test_cases_dict: dict[str, tuple[str, set[int]]] = {
         "NA/skill/search?lvl1coolDown=8&numFunctions=8&type=active",
         {961472, 961475, 961620},
     ),
-    "skill_search_strength": ("JP/skill/search?strengthStatus=2&type=active", {94349}),
+    "skill_search_strength": (
+        "JP/skill/search?strengthStatus=2&type=active",
+        {94349, 136550},
+    ),
     "skill_search_num": (
         "JP/skill/search?strengthStatus=99&type=active&numFunctions=5&num=3",
         {292452, 621675},
