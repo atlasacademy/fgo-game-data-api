@@ -13,9 +13,11 @@ from .gameenums import (
     NiceFuncTargetType,
     NiceFuncType,
     NiceQuestAfterClearType,
+    NiceQuestFlag,
     NiceQuestType,
     NiceSvtFlag,
     NiceSvtType,
+    NiceWarFlag,
 )
 
 
@@ -163,6 +165,7 @@ class BasicWar(BaseModelORJson):
     age: str
     name: str
     longName: str
+    flags: list[NiceWarFlag]
     eventId: int
     eventName: str
 
@@ -171,6 +174,7 @@ class BasicQuest(BaseModelORJson):
     id: int
     name: str
     type: NiceQuestType
+    flags: list[NiceQuestFlag]
     afterClear: NiceQuestAfterClearType
     consumeType: NiceConsumeType
     consume: int

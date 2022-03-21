@@ -20,6 +20,7 @@ from ...schemas.gameenums import (
     QUEST_AFTER_CLEAR_NAME,
     QUEST_CONSUME_TYPE_NAME,
     QUEST_TYPE_NAME,
+    Quest_FLAG_NAME,
 )
 from ...schemas.nice import (
     DeckType,
@@ -133,6 +134,7 @@ async def get_nice_quest(
         "id": raw_quest.mstQuest.id,
         "name": get_translation(lang, raw_quest.mstQuest.name),
         "type": QUEST_TYPE_NAME[raw_quest.mstQuest.type],
+        "flags": [v for k, v in Quest_FLAG_NAME.items() if k & raw_quest.mstQuest.flag],
         "consumeType": QUEST_CONSUME_TYPE_NAME[raw_quest.mstQuest.consumeType],
         "consumeItem": [
             nice_item_amount

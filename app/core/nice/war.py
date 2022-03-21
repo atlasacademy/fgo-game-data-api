@@ -5,6 +5,7 @@ from ...db.helpers import fetch
 from ...schemas.common import Language, Region
 from ...schemas.gameenums import (
     COND_TYPE_NAME,
+    WAR_FLAG_NAME,
     WAR_OVERWRITE_TYPE_NAME,
     WAR_START_TYPE_NAME,
     WarEntityFlag,
@@ -191,6 +192,7 @@ async def get_nice_war(
         age=raw_war.mstWar.age,
         name=raw_war.mstWar.name,
         longName=get_translation(lang, raw_war.mstWar.longName),
+        flags=[v for k, v in WAR_FLAG_NAME.items() if k & raw_war.mstWar.flag],
         banner=fmt_url(AssetURL.banner, **base_settings, banner=banner_file)
         if raw_war.mstWar.bannerId != 0
         else None,

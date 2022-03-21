@@ -48,6 +48,8 @@ from ..schemas.gameenums import (
     QUEST_TYPE_NAME,
     SVT_FLAG_NAME,
     SVT_TYPE_NAME,
+    WAR_FLAG_NAME,
+    Quest_FLAG_NAME,
     SvtType,
 )
 from ..schemas.nice import AssetURL
@@ -588,6 +590,7 @@ def get_basic_war_from_raw(mstWar: MstWar, lang: Language) -> BasicWar:
         age=mstWar.age,
         name=mstWar.name,
         longName=get_translation(lang, mstWar.longName),
+        flags=[v for k, v in WAR_FLAG_NAME.items() if k & mstWar.flag],
         eventId=mstWar.eventId,
         eventName=get_translation(lang, mstWar.eventName),
     )
@@ -611,6 +614,7 @@ def get_basic_quest_from_raw(mstQuest: MstQuestWithWar, lang: Language) -> Basic
         id=mstQuest.id,
         name=get_translation(lang, mstQuest.name),
         type=QUEST_TYPE_NAME[mstQuest.type],
+        flags=[v for k, v in Quest_FLAG_NAME.items() if k & mstQuest.flag],
         afterClear=QUEST_AFTER_CLEAR_NAME[mstQuest.afterClear],
         consumeType=QUEST_CONSUME_TYPE_NAME[mstQuest.consumeType],
         consume=mstQuest.actConsume,
@@ -641,6 +645,7 @@ def get_basic_quest_phase_from_raw(
         id=mstQuestPhase.id,
         name=get_translation(lang, mstQuestPhase.name),
         type=QUEST_TYPE_NAME[mstQuestPhase.type],
+        flags=[v for k, v in Quest_FLAG_NAME.items() if k & mstQuestPhase.flag],
         afterClear=QUEST_AFTER_CLEAR_NAME[mstQuestPhase.afterClear],
         consumeType=QUEST_CONSUME_TYPE_NAME[mstQuestPhase.consumeType],
         consume=mstQuestPhase.actConsume,
