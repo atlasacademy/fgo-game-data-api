@@ -1366,7 +1366,7 @@ mstQuest = Table(
     Column("chapterSubStr", String),
     Column("recommendLv", String),
     Column("hasStartAction", Integer),
-    Column("flag", BigInteger),
+    Column("flag", BigInteger, index=True),
     Column("scriptQuestId", Integer),
     Column("noticeAt", Integer),
     Column("openedAt", Integer),

@@ -1,3 +1,4 @@
+import functools
 from typing import Iterable, Optional, Union
 
 from sqlalchemy import Integer, Table
@@ -160,6 +161,7 @@ async def get_quest_phase_search(
     spot_name: Optional[str] = None,
     war_ids: Optional[Iterable[int]] = None,
     quest_type: Optional[Iterable[int]] = None,
+    flag: Optional[Iterable[int]] = None,
     field_individuality: Optional[Iterable[int]] = None,
     battle_bg_id: Optional[int] = None,
     bgm_id: Optional[int] = None,
@@ -228,6 +230,9 @@ async def get_quest_phase_search(
         where_clause.append(mstWar.c.id.in_(war_ids))
     if quest_type:
         where_clause.append(mstQuest.c.type.in_(quest_type))
+    if flag:
+        flag_bit = functools.reduce(lambda x, y: x | y, flag)
+        where_clause.append(mstQuest.c.flag.op("&")(flag_bit) == flag_bit)
     if field_individuality:
         where_clause.append(mstQuestPhase.c.individuality.contains(field_individuality))
     if battle_bg_id:

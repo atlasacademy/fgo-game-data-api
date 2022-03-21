@@ -23,6 +23,7 @@ from .gameenums import (
     NiceFuncType,
     NiceGender,
     NiceItemType,
+    NiceQuestFlag,
     NiceQuestType,
     NiceSvtFlag,
     NiceSvtType,
@@ -400,6 +401,7 @@ class QuestSearchQueryParams:
     spotName: Optional[str] = None
     warId: list[int] = Query([])
     type: list[NiceQuestType] = Query([])
+    flag: list[NiceQuestFlag] = Query([])
     fieldIndividuality: list[Union[Trait, int]] = Query([])
     battleBgId: Optional[int] = None
     bgmId: Optional[int] = None
@@ -416,6 +418,7 @@ class QuestSearchQueryParams:
                 self.spotName,
                 self.warId,
                 self.type,
+                self.flag,
                 self.fieldIndividuality,
                 self.battleBgId,
                 self.bgmId,
@@ -435,6 +438,7 @@ class QuestSearchQueryParams:
         - **spotName**: name of quests's spot.
         - **warId**: War ID.
         - **type**: Quest Type Enum.
+        - **flag**: Quest Flag Enum.
         - **fieldIndividuality**: Trait Enum or an Integer.
         - **battleBgId**: Battle BG ID.
         - **bgmId**: BGM ID.

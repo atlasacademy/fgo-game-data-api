@@ -39,9 +39,11 @@ from .gameenums import (
     NiceFuncTargetType,
     NiceFuncType,
     NiceGender,
+    NiceQuestFlag,
     NiceQuestType,
     NiceSvtFlag,
     NiceSvtType,
+    Quest_FLAG_NAME,
     SvtType,
 )
 
@@ -258,6 +260,13 @@ GENDER_TYPE_NAME_REVERSE: dict[NiceGender, int] = {
 
 QUEST_TYPE_REVERSE: dict[NiceQuestType, int] = {
     v: k for k, v in QUEST_TYPE_NAME.items()
+}
+
+
+### Quest Flag ###
+
+QUEST_FLAG_REVERSE: dict[NiceQuestFlag, int] = {
+    v: k for k, v in Quest_FLAG_NAME.items()
 }
 
 
