@@ -10,6 +10,11 @@
   "age": "AD:1999",
   "name": "亜種特異点Ⅰ",
   "longName": "亜種特異点Ⅰ\n悪性隔絶魔境 新宿",
+  "flags": [
+    "withMap",
+    "mainScenario",
+    "isWarIconLeft"
+  ],
   "eventId": 0,
   "eventName": ""
 }

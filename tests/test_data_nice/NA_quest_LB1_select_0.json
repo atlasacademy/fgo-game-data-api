@@ -2,6 +2,7 @@
   "id": 3000109,
   "name": "Vodka",
   "type": "main",
+  "flags": [],
   "consumeType": "ap",
   "consume": 23,
   "consumeItem": [],

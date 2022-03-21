@@ -2,6 +2,7 @@
   "id": 94060012,
   "name": "予選 上級 ぐだぐだ☆新選組",
   "type": "event",
+  "flags": [],
   "consumeType": "ap",
   "consume": 30,
   "consumeItem": [],

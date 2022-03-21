@@ -2,6 +2,10 @@
   "id": 94020187,
   "name": "87th Floor: The Clatter of Hooves",
   "type": "event",
+  "flags": [
+    "eventDeckNoSupport",
+    "fatigueBattle"
+  ],
   "consumeType": "ap",
   "consume": 1,
   "consumeItem": [],

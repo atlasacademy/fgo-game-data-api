@@ -2,6 +2,7 @@
   "id": 91600701,
   "name": "Dr. Jekyll and Mr. Hyde",
   "type": "friendship",
+  "flags": [],
   "afterClear": "close",
   "consumeType": "ap",
   "consume": 18,

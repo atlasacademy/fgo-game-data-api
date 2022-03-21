@@ -2,6 +2,10 @@
   "id": 94032412,
   "name": "[Renovate Enma-tei] Restore the Spa Room (+50000 Satisfaction)",
   "type": "event",
+  "flags": [
+    "noBattle",
+    "hideProgress"
+  ],
   "consumeType": "item",
   "consume": 0,
   "consumeItem": [

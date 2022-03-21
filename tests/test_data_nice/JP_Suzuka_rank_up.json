@@ -2,6 +2,7 @@
   "id": 91103002,
   "name": "ミミ思う故にミミあり",
   "type": "friendship",
+  "flags": [],
   "consumeType": "ap",
   "consume": 20,
   "consumeItem": [],

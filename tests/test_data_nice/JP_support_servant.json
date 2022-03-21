@@ -2,6 +2,9 @@
   "id": 94051406,
   "name": "第二節『仮面の殺人鬼たち』",
   "type": "main",
+  "flags": [
+    "supportSelectAfterScript"
+  ],
   "consumeType": "ap",
   "consume": 5,
   "consumeItem": [],

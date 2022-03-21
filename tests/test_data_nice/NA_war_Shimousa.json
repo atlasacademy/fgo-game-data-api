@@ -10,6 +10,11 @@
   "age": "Kan'ei 16",
   "name": "Pseudo-Parallel World",
   "longName": "Pseudo-Parallel World\nThe Stage of Carnage, Shimousa",
+  "flags": [
+    "withMap",
+    "mainScenario",
+    "isWarIconLeft"
+  ],
   "banner": "https://assets.atlasacademy.io/GameData/NA/Banner/questboard_cap203.png",
   "headerImage": "https://assets.atlasacademy.io/GameData/NA/Banner/img_title_header_17.png",
   "priority": 203,
@@ -146,6 +151,10 @@
           "id": 2000300,
           "name": "Prelude",
           "type": "main",
+          "flags": [
+            "noBattle",
+            "noDisplayRemain"
+          ],
           "consumeType": "ap",
           "consume": 0,
           "consumeItem": [],
@@ -207,6 +216,9 @@
           "id": 2000301,
           "name": "Prima Cantica: Purgatorio (Beginning)",
           "type": "main",
+          "flags": [
+            "noDisplayRemain"
+          ],
           "consumeType": "ap",
           "consume": 23,
           "consumeItem": [],
@@ -294,6 +306,10 @@
           "id": 93020301,
           "name": "Rural Landscape",
           "type": "free",
+          "flags": [
+            "noDisplayRemain",
+            "displayLoopmark"
+          ],
           "consumeType": "ap",
           "consume": 20,
           "consumeItem": [],
@@ -369,6 +385,9 @@
           "id": 2000302,
           "name": "Prima Cantica: Purgatorio (Middle)",
           "type": "main",
+          "flags": [
+            "noDisplayRemain"
+          ],
           "consumeType": "ap",
           "consume": 23,
           "consumeItem": [],
@@ -453,6 +472,9 @@
           "id": 2000303,
           "name": "Prima Cantica: Purgatorio (Ending)",
           "type": "main",
+          "flags": [
+            "noDisplayRemain"
+          ],
           "consumeType": "ap",
           "consume": 24,
           "consumeItem": [],
@@ -587,6 +609,10 @@
           "id": 93020302,
           "name": "Desolate Settlement",
           "type": "free",
+          "flags": [
+            "noDisplayRemain",
+            "displayLoopmark"
+          ],
           "consumeType": "ap",
           "consume": 21,
           "consumeItem": [],
@@ -662,6 +688,9 @@
           "id": 2000304,
           "name": "Seconda Cantica: Inferno (Beginning)",
           "type": "main",
+          "flags": [
+            "noDisplayRemain"
+          ],
           "consumeType": "ap",
           "consume": 23,
           "consumeItem": [],
@@ -746,6 +775,9 @@
           "id": 2000313,
           "name": "Ultima Cantica: The Stage of Carnage, Onriedo (Beginning)",
           "type": "main",
+          "flags": [
+            "noDisplayRemain"
+          ],
           "consumeType": "ap",
           "consume": 24,
           "consumeItem": [],
@@ -830,6 +862,10 @@
           "id": 93020303,
           "name": "Senju Sengen",
           "type": "free",
+          "flags": [
+            "noDisplayRemain",
+            "displayLoopmark"
+          ],
           "consumeType": "ap",
           "consume": 21,
           "consumeItem": [],
@@ -905,6 +941,9 @@
           "id": 2000305,
           "name": "Seconda Cantica: Inferno (Middle)",
           "type": "main",
+          "flags": [
+            "noDisplayRemain"
+          ],
           "consumeType": "ap",
           "consume": 24,
           "consumeItem": [],
@@ -1015,6 +1054,9 @@
           "id": 2000306,
           "name": "Seconda Cantica: Inferno (Ending)",
           "type": "main",
+          "flags": [
+            "noDisplayRemain"
+          ],
           "consumeType": "ap",
           "consume": 24,
           "consumeItem": [],
@@ -1125,6 +1167,9 @@
           "id": 2000307,
           "name": "Terza Cantica: Paraíso (Beginning)",
           "type": "main",
+          "flags": [
+            "noDisplayRemain"
+          ],
           "consumeType": "ap",
           "consume": 23,
           "consumeItem": [],
@@ -1197,6 +1242,10 @@
           "id": 2000316,
           "name": "See You Again Someday, Flower at the Apex of Heaven",
           "type": "main",
+          "flags": [
+            "noBattle",
+            "noDisplayRemain"
+          ],
           "consumeType": "ap",
           "consume": 0,
           "consumeItem": [],
@@ -1269,6 +1318,10 @@
           "id": 93020304,
           "name": "Rise and Fall",
           "type": "free",
+          "flags": [
+            "noDisplayRemain",
+            "displayLoopmark"
+          ],
           "consumeType": "ap",
           "consume": 21,
           "consumeItem": [],
@@ -1363,6 +1416,10 @@
           "id": 93020305,
           "name": "The Remains of Soldiers' Dreams",
           "type": "free",
+          "flags": [
+            "noDisplayRemain",
+            "displayLoopmark"
+          ],
           "consumeType": "ap",
           "consume": 21,
           "consumeItem": [],
@@ -1438,6 +1495,9 @@
           "id": 2000308,
           "name": "Terza Cantica: Paraíso (Middle)",
           "type": "main",
+          "flags": [
+            "noDisplayRemain"
+          ],
           "consumeType": "ap",
           "consume": 24,
           "consumeItem": [],
@@ -1536,6 +1596,9 @@
           "id": 2000309,
           "name": "Terza Cantica: Paraíso (Ending)",
           "type": "main",
+          "flags": [
+            "noDisplayRemain"
+          ],
           "consumeType": "ap",
           "consume": 24,
           "consumeItem": [],
@@ -1666,6 +1729,9 @@
           "id": 2000310,
           "name": "Quarta Cantica: Kālasūtra Hell (Beginning)",
           "type": "main",
+          "flags": [
+            "noDisplayRemain"
+          ],
           "consumeType": "ap",
           "consume": 25,
           "consumeItem": [],
@@ -1781,6 +1847,9 @@
           "id": 2000311,
           "name": "Quarta Cantica: Kālasūtra Hell (Middle)",
           "type": "main",
+          "flags": [
+            "noDisplayRemain"
+          ],
           "consumeType": "ap",
           "consume": 24,
           "consumeItem": [],
@@ -1879,6 +1948,9 @@
           "id": 2000312,
           "name": "Quarta Cantica: Kālasūtra Hell (Ending)",
           "type": "main",
+          "flags": [
+            "noDisplayRemain"
+          ],
           "consumeType": "ap",
           "consume": 25,
           "consumeItem": [],
@@ -2005,6 +2077,7 @@
           "id": 91601901,
           "name": "Piercing the Heart with a Blade",
           "type": "friendship",
+          "flags": [],
           "consumeType": "ap",
           "consume": 18,
           "consumeItem": [],
@@ -2085,6 +2158,10 @@
           "id": 93020307,
           "name": "Nameless Sacred Mountain",
           "type": "free",
+          "flags": [
+            "noDisplayRemain",
+            "displayLoopmark"
+          ],
           "consumeType": "ap",
           "consume": 21,
           "consumeItem": [],
@@ -2140,6 +2217,10 @@
           "id": 93020309,
           "name": "Trembling with Fear",
           "type": "free",
+          "flags": [
+            "noDisplayRemain",
+            "displayLoopmark"
+          ],
           "consumeType": "ap",
           "consume": 21,
           "consumeItem": [],
@@ -2215,6 +2296,9 @@
           "id": 2000315,
           "name": "Ultima Cantica: The Stage of Carnage, Onriedo (Ending)",
           "type": "main",
+          "flags": [
+            "noDisplayRemain"
+          ],
           "consumeType": "ap",
           "consume": 25,
           "consumeItem": [],
@@ -2360,6 +2444,10 @@
           "id": 93020308,
           "name": "Ancient Battlefield",
           "type": "free",
+          "flags": [
+            "noDisplayRemain",
+            "displayLoopmark"
+          ],
           "consumeType": "ap",
           "consume": 21,
           "consumeItem": [],
@@ -2435,6 +2523,9 @@
           "id": 2000314,
           "name": "Ultima Cantica: The Stage of Carnage, Onriedo (Middle)",
           "type": "main",
+          "flags": [
+            "noDisplayRemain"
+          ],
           "consumeType": "ap",
           "consume": 25,
           "consumeItem": [],
@@ -2636,6 +2727,10 @@
           "id": 93020306,
           "name": "Kifune Castle",
           "type": "free",
+          "flags": [
+            "noDisplayRemain",
+            "displayLoopmark"
+          ],
           "consumeType": "ap",
           "consume": 21,
           "consumeItem": [],
@@ -2711,6 +2806,10 @@
           "id": 2000317,
           "name": "ba5df22",
           "type": "main",
+          "flags": [
+            "noBattle",
+            "noDisplayRemain"
+          ],
           "consumeType": "ap",
           "consume": 999,
           "consumeItem": [],

@@ -7,6 +7,9 @@
       "id": 94027501,
       "name": "To the Heavenly Island!",
       "type": "main",
+      "flags": [
+        "noBattle"
+      ],
       "consumeType": "ap",
       "consume": 0,
       "consumeItem": [],
@@ -68,6 +71,9 @@
       "id": 94039101,
       "name": "To the Heavenly Island!",
       "type": "main",
+      "flags": [
+        "noBattle"
+      ],
       "consumeType": "ap",
       "consume": 0,
       "consumeItem": [],

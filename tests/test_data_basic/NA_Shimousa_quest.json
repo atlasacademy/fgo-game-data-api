@@ -2,6 +2,9 @@
   "id": 2000301,
   "name": "Prima Cantica: Purgatorio (Beginning)",
   "type": "main",
+  "flags": [
+    "noDisplayRemain"
+  ],
   "afterClear": "close",
   "consumeType": "ap",
   "consume": 23,

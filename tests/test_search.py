@@ -272,6 +272,10 @@ basic_quest_search_test_cases_dict = {
         "NA/quest/phase/search?spotName=Southern Town&type=main",
         {(3000412, 4), (3000412, 5)},
     ),
+    "quest_flag": (
+        "JP/quest/phase/search?flag=supportSelectAfterScript&flag=branch&warId=8362",
+        {(94057198, 1), (94057199, 1)},
+    ),
 }
 basic_quest_phase_test_cases = [
     pytest.param(*value, id=key)

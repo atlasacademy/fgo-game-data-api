@@ -2,6 +2,7 @@
   "id": 94034503,
   "name": "[High Difficulty] Cage of the Fallen (3/10)",
   "type": "event",
+  "flags": [],
   "consumeType": "ap",
   "consume": 5,
   "consumeItem": [],
