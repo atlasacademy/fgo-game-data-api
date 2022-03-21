@@ -2961,8 +2961,6 @@ class NiceWarFlag(str, Enum):
     whiteMarkWithClear = "whiteMarkWithClear"
     whiteMarkUnderBoard = "whiteMarkUnderBoard"
     subFolder = "subFolder"
-    summerCamp = "summerCamp"
-    unreleasedStory = "unreleasedStory"
 
 
 WAR_FLAG_NAME: dict[int, NiceWarFlag] = {
@@ -2985,8 +2983,6 @@ WAR_FLAG_NAME: dict[int, NiceWarFlag] = {
     131072: NiceWarFlag.whiteMarkWithClear,
     262144: NiceWarFlag.whiteMarkUnderBoard,
     524288: NiceWarFlag.subFolder,
-    34848: NiceWarFlag.summerCamp,
-    49538: NiceWarFlag.unreleasedStory,
 }
 
 

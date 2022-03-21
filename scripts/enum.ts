@@ -1035,8 +1035,6 @@ export enum NiceWarFlag {
     WHITE_MARK_WITH_CLEAR = "whiteMarkWithClear",
     WHITE_MARK_UNDER_BOARD = "whiteMarkUnderBoard",
     SUB_FOLDER = "subFolder",
-    SUMMER_CAMP = "summerCamp",
-    UNRELEASED_STORY = "unreleasedStory",
 }
 
 export enum NiceWarStartType {
