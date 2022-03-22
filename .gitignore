@@ -6,6 +6,9 @@ play*
 fil-result/
 config.json
 docker-compose.yml
+rayshift_quest_jp.sql
+rayshift_quest_na.sql
+rayshiftQuest.zip
 
 # macOS
 .DS_Store
