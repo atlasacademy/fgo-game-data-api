@@ -44,7 +44,6 @@ EXTRA_STR_NAME = {
     "NiceSvtFlag": {0: "NORMAL", 63: "GOETIA", 64: "MAT_DROP_RATE_UP_CE"},
     "NiceAiActNum": {-9999: "UNKNOWN"},
     "NicePurchaseType": {13: "KIARA_PUNISHER_RESET"},
-    "NiceEventType": {25: "RELAXED_QUEST_REQUIREMENT_CAMPAIGN"},
 }
 
 

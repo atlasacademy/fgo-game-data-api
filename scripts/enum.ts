@@ -1012,7 +1012,7 @@ export enum NiceEventType {
     WAR_BOARD = "warBoard",
     COMBINE_COSUTUME_ITEM = "combineCosutumeItem",
     MYROOM_MULTIPLE_VIEW_CAMPAIGN = "myroomMultipleViewCampaign",
-    RELAXED_QUEST_REQUIREMENT_CAMPAIGN = "relaxedQuestRequirementCampaign",
+    INTERLUDE_CAMPAIGN = "interludeCampaign",
 }
 
 export enum NiceWarFlag {
@@ -1061,6 +1061,7 @@ export enum NiceWarOverwriteType {
     WAR_FORCE_HIDE = "warForceHide",
     START_TYPE = "startType",
     NOTICE_DIALOG_TEXT = "noticeDialogText",
+    CLEAR_MARK = "clearMark",
 }
 
 export enum NiceAiCond {

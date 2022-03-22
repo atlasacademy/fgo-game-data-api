@@ -2855,6 +2855,7 @@ class EventType(IntEnum):
     WAR_BOARD = 22
     COMBINE_COSUTUME_ITEM = 23
     MYROOM_MULTIPLE_VIEW_CAMPAIGN = 24
+    INTERLUDE_CAMPAIGN = 25
 
 
 class NiceEventType(str, Enum):
@@ -2884,7 +2885,7 @@ class NiceEventType(str, Enum):
     warBoard = "warBoard"
     combineCosutumeItem = "combineCosutumeItem"
     myroomMultipleViewCampaign = "myroomMultipleViewCampaign"
-    relaxedQuestRequirementCampaign = "relaxedQuestRequirementCampaign"
+    interludeCampaign = "interludeCampaign"
 
 
 EVENT_TYPE_NAME: dict[int, NiceEventType] = {
@@ -2912,7 +2913,7 @@ EVENT_TYPE_NAME: dict[int, NiceEventType] = {
     22: NiceEventType.warBoard,
     23: NiceEventType.combineCosutumeItem,
     24: NiceEventType.myroomMultipleViewCampaign,
-    25: NiceEventType.relaxedQuestRequirementCampaign,
+    25: NiceEventType.interludeCampaign,
     21: NiceEventType.comebackCampaign,
 }
 
@@ -3025,6 +3026,7 @@ class WarOverwriteType(IntEnum):
     WAR_FORCE_HIDE = 15
     START_TYPE = 16
     NOTICE_DIALOG_TEXT = 17
+    CLEAR_MARK = 18
 
 
 class NiceWarOverwriteType(str, Enum):
@@ -3047,6 +3049,7 @@ class NiceWarOverwriteType(str, Enum):
     warForceHide = "warForceHide"
     startType = "startType"
     noticeDialogText = "noticeDialogText"
+    clearMark = "clearMark"
 
 
 WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
@@ -3067,6 +3070,7 @@ WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
     15: NiceWarOverwriteType.warForceHide,
     16: NiceWarOverwriteType.startType,
     17: NiceWarOverwriteType.noticeDialogText,
+    18: NiceWarOverwriteType.clearMark,
 }
 
 
