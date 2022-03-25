@@ -11494,5 +11494,22 @@
       "serif": "Is it your first time in a haunted house? It's pretty common in any populated city... \nWell, follow me as far as you can without dying."
     }
   ],
-  "mstVoicePlayCond": []
+  "mstVoicePlayCond": [],
+  "mstSvtExtra": [
+    {
+      "svtId": 602300,
+      "bondEquip": 9300850,
+      "valentineEquip": [
+        9805820
+      ],
+      "valentineScript": [
+        {
+          "scriptId": "9403352370",
+          "script": "https://assets.atlasacademy.io/GameData/NA/Script/94/9403/9403352370.txt",
+          "scriptName": "Red and White Chocolate"
+        }
+      ],
+      "costumeLimitSvtIdMap": {}
+    }
+  ]
 }

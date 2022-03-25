@@ -740,6 +740,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
     mstSvtGroup = await get_voice_group_from_svtVoice(conn, mstSvtVoice)
     mstSubtitle = await svt.get_mstSubtitle(conn, voice_ids)
     mstVoicePlayCond = await svt.get_mstVoicePlayCond(conn, voice_ids)
+    mstSvtExtra = await fetch.get_all_multiple(conn, MstSvtExtra, voice_ids)
 
     shops = await fetch.get_all(conn, MstShop, event_id)
     set_item_ids = [
@@ -811,6 +812,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         mstSvtGroup=mstSvtGroup,
         mstSubtitle=mstSubtitle,
         mstVoicePlayCond=mstVoicePlayCond,
+        mstSvtExtra=mstSvtExtra,
     )
 
 

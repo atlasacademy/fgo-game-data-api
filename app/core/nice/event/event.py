@@ -10,7 +10,7 @@ from ....schemas.raw import MstGift
 from ... import raw
 from ...utils import fmt_url, get_translation
 from ..item import get_nice_item_from_raw
-from ..svt.voice import get_nice_voice
+from ..svt.voice import get_nice_voice_group
 from .lottery import get_nice_lottery
 from .mission import get_nice_missions
 from .point import get_nice_pointBuff, get_nice_pointGroup
@@ -54,7 +54,33 @@ async def get_nice_event(
         gift_maps,
     )
 
-    voice_groups = get_nice_voice(region, raw_event, {}, lang)
+    mstVoices = {voice.id: voice for voice in raw_event.mstVoice}
+    voice_groups: list[NiceVoiceGroup] = []
+    for svt_voice in raw_event.mstSvtVoice:
+        subtitle_ids = {
+            subtitle.id: subtitle.serif
+            for subtitle in raw_event.mstSubtitle
+            if subtitle.get_svtId() == svt_voice.id == svt_voice.id
+        }
+        costume_ids = {
+            costumeMap.id: costumeMap.battleCharaId
+            for mstSvtExtra in raw_event.mstSvtExtra
+            for limitCount, costumeMap in mstSvtExtra.costumeLimitSvtIdMap.items()
+            if mstSvtExtra.svtId == svt_voice.id and limitCount > 10
+        }
+
+        voice_groups.append(
+            get_nice_voice_group(
+                region=region,
+                voice=svt_voice,
+                costume_ids=costume_ids,
+                subtitle_ids=subtitle_ids,
+                play_conds=raw_event.mstVoicePlayCond,
+                mstVoices=mstVoices,
+                mstSvtGroups=raw_event.mstSvtGroup,
+                lang=lang,
+            )
+        )
 
     known_voice_ids: dict[int, set[str]] = defaultdict(set)
     for gacha_talk in raw_event.mstBoxGachaTalk:

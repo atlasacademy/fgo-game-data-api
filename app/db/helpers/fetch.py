@@ -378,6 +378,7 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
     MstCommonRelease: (mstCommonRelease, mstCommonRelease.c.id, mstCommonRelease.c.id),
     MstSpotRoad: (mstSpotRoad, mstSpotRoad.c.mapId, mstSpotRoad.c.id),
     MstBoxGachaTalk: (mstBoxGachaTalk, mstBoxGachaTalk.c.id, mstBoxGachaTalk.c.id),
+    MstSvtExtra: (mstSvtExtra, mstSvtExtra.c.svtId, mstSvtExtra.c.svtId),
 }
 
 TFetchAllMultiple = TypeVar("TFetchAllMultiple", bound=BaseModelORJson)

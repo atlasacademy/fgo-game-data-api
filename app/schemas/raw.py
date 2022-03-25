@@ -1609,9 +1609,10 @@ class EventEntity(BaseModelORJson):
     mstCommonConsume: list[MstCommonConsume]
     mstSvtVoice: list[MstSvtVoice]
     mstVoice: list[MstVoice]
-    mstSvtGroup: list[MstSvtGroup] = []
-    mstSubtitle: list[GlobalNewMstSubtitle] = []
-    mstVoicePlayCond: list[MstVoicePlayCond] = []
+    mstSvtGroup: list[MstSvtGroup]
+    mstSubtitle: list[GlobalNewMstSubtitle]
+    mstVoicePlayCond: list[MstVoicePlayCond]
+    mstSvtExtra: list[MstSvtExtra]
 
 
 class WarEntity(BaseModelORJson):
