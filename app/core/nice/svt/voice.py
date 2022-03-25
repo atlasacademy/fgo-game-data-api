@@ -1,3 +1,5 @@
+from typing import Protocol
+
 from ....config import Settings
 from ....data.custom_mappings import Translation
 from ....schemas.common import Language, Region
@@ -16,13 +18,13 @@ from ....schemas.nice import (
     NiceVoicePlayCond,
 )
 from ....schemas.raw import (
+    GlobalNewMstSubtitle,
     MstSvtGroup,
     MstSvtVoice,
     MstVoice,
     MstVoicePlayCond,
     ScriptJson,
     ScriptJsonCond,
-    ServantEntity,
 )
 from ...utils import get_voice_name, nullable_to_string
 from ..base_script import get_nice_script_link
@@ -172,11 +174,22 @@ def get_nice_voice_group(
     )
 
 
+class RequiredVoiceData(Protocol):
+    mstSvtVoice: list[MstSvtVoice]
+    mstVoice: list[MstVoice]
+    mstVoicePlayCond: list[MstVoicePlayCond]
+    mstSvtGroup: list[MstSvtGroup]
+    mstSubtitle: list[GlobalNewMstSubtitle]
+
+
 def get_nice_voice(
-    region: Region, raw_svt: ServantEntity, costume_ids: dict[int, int], lang: Language
+    region: Region,
+    voice_data: RequiredVoiceData,
+    costume_ids: dict[int, int],
+    lang: Language,
 ) -> list[NiceVoiceGroup]:
-    subtitle_ids = {subtitle.id: subtitle.serif for subtitle in raw_svt.mstSubtitle}
-    mstVoices = {voice.id: voice for voice in raw_svt.mstVoice}
+    subtitle_ids = {subtitle.id: subtitle.serif for subtitle in voice_data.mstSubtitle}
+    mstVoices = {voice.id: voice for voice in voice_data.mstVoice}
 
     return [
         get_nice_voice_group(
@@ -184,10 +197,10 @@ def get_nice_voice(
             voice,
             costume_ids,
             subtitle_ids,
-            raw_svt.mstVoicePlayCond,
+            voice_data.mstVoicePlayCond,
             mstVoices,
-            raw_svt.mstSvtGroup,
+            voice_data.mstSvtGroup,
             lang,
         )
-        for voice in raw_svt.mstSvtVoice
+        for voice in voice_data.mstSvtVoice
     ]

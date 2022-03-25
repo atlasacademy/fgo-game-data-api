@@ -918,6 +918,38 @@ class MstMasterMission(BaseModelORJson):
     name: str
 
 
+class MstEventRewardScene(BaseModelORJson):
+    guideImageIds: list[int]
+    guideLimitCounts: list[int]
+    guideFaceIds: list[int]
+    guideDisplayNames: list[str]
+    guideWeights: list[int]
+    guideUnselectedMax: list[int]
+    eventId: int
+    slot: int
+    groupId: int
+    type: int
+    tabImageId: int
+    imageId: int
+    bgId: int
+    bgmId: int
+    afterBgmId: int
+    flag: int
+
+
+class MstEventVoicePlay(BaseModelORJson):
+    voiceIds: list[str]
+    confirmVoiceIds: list[str]
+    eventId: int
+    slot: int
+    idx: int
+    guideImageId: int
+    condType: int
+    condValue: int
+    startedAt: int
+    endedAt: int
+
+
 class MstEventMission(BaseModelORJson):
     id: int
     flag: int
@@ -1017,6 +1049,15 @@ class MstBoxGachaBase(BaseModelORJson):
     priority: int
     maxNum: int
     detail: str
+
+
+class MstBoxGachaTalk(BaseModelORJson):
+    befVoiceIds: list[str]
+    aftVoiceIds: list[str]
+    id: int
+    guideImageId: int
+    no: int
+    isRare: bool
 
 
 class MstEventRewardSet(BaseModelORJson):
@@ -1543,6 +1584,8 @@ class ScriptEntity(BaseModelORJson):
 class EventEntity(BaseModelORJson):
     mstEvent: MstEvent
     mstWar: list[MstWar]
+    mstEventRewardScene: list[MstEventRewardScene]
+    mstEventVoicePlay: list[MstEventVoicePlay]
     mstGift: list[MstGift]
     mstShop: list[MstShop]
     mstShopRelease: list[MstShopRelease]
@@ -1559,10 +1602,16 @@ class EventEntity(BaseModelORJson):
     mstEventTowerReward: list[MstEventTowerReward]
     mstBoxGacha: list[MstBoxGacha]
     mstBoxGachaBase: list[MstBoxGachaBase]
+    mstBoxGachaTalk: list[MstBoxGachaTalk]
     mstTreasureBox: list[MstTreasureBox]
     mstTreasureBoxGift: list[MstTreasureBoxGift]
     mstItem: list[MstItem]
     mstCommonConsume: list[MstCommonConsume]
+    mstSvtVoice: list[MstSvtVoice]
+    mstVoice: list[MstVoice]
+    mstSvtGroup: list[MstSvtGroup] = []
+    mstSubtitle: list[GlobalNewMstSubtitle] = []
+    mstVoicePlayCond: list[MstVoicePlayCond] = []
 
 
 class WarEntity(BaseModelORJson):

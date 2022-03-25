@@ -62,6 +62,122 @@
       "assetId": 0
     }
   ],
+  "mstEventRewardScene": [
+    {
+      "guideImageIds": [
+        602300
+      ],
+      "guideLimitCounts": [
+        0
+      ],
+      "guideFaceIds": [
+        0
+      ],
+      "guideDisplayNames": [],
+      "guideWeights": [],
+      "guideUnselectedMax": [],
+      "eventId": 80090,
+      "slot": 0,
+      "groupId": 0,
+      "type": 4,
+      "tabImageId": 0,
+      "imageId": 0,
+      "bgId": 22100,
+      "bgmId": 31,
+      "afterBgmId": 31,
+      "flag": 0
+    },
+    {
+      "guideImageIds": [
+        602300
+      ],
+      "guideLimitCounts": [
+        0
+      ],
+      "guideFaceIds": [
+        0
+      ],
+      "guideDisplayNames": [],
+      "guideWeights": [],
+      "guideUnselectedMax": [],
+      "eventId": 80090,
+      "slot": 1,
+      "groupId": 0,
+      "type": 1,
+      "tabImageId": 1,
+      "imageId": 0,
+      "bgId": 22100,
+      "bgmId": 31,
+      "afterBgmId": 31,
+      "flag": 0
+    }
+  ],
+  "mstEventVoicePlay": [
+    {
+      "voiceIds": [
+        "0_N1010",
+        "0_N1020",
+        "0_N1030",
+        "0_N1040",
+        "0_N1050"
+      ],
+      "confirmVoiceIds": [],
+      "eventId": 80090,
+      "slot": 0,
+      "idx": 0,
+      "guideImageId": 602300,
+      "condType": 11,
+      "condValue": 80090,
+      "startedAt": 946684800,
+      "endedAt": 1901231999
+    },
+    {
+      "voiceIds": [
+        "0_N1060",
+        "0_N1070",
+        "0_N1080"
+      ],
+      "confirmVoiceIds": [],
+      "eventId": 80090,
+      "slot": 0,
+      "idx": 1,
+      "guideImageId": 602300,
+      "condType": 20,
+      "condValue": 80090,
+      "startedAt": 946684800,
+      "endedAt": 1901231999
+    },
+    {
+      "voiceIds": [
+        "0_I1010",
+        "0_I1020"
+      ],
+      "confirmVoiceIds": [],
+      "eventId": 80090,
+      "slot": 1,
+      "idx": 0,
+      "guideImageId": 602300,
+      "condType": 11,
+      "condValue": 80090,
+      "startedAt": 946684800,
+      "endedAt": 1901231999
+    },
+    {
+      "voiceIds": [
+        "0_I1110",
+        "0_I1120"
+      ],
+      "confirmVoiceIds": [],
+      "eventId": 80090,
+      "slot": 1,
+      "idx": 1,
+      "guideImageId": 602300,
+      "condType": 20,
+      "condValue": 80090,
+      "startedAt": 946684800,
+      "endedAt": 1901231999
+    }
+  ],
   "mstGift": [
     {
       "id": 103,
@@ -7830,6 +7946,7 @@
   "mstEventTowerReward": [],
   "mstBoxGacha": [],
   "mstBoxGachaBase": [],
+  "mstBoxGachaTalk": [],
   "mstTreasureBox": [],
   "mstTreasureBoxGift": [],
   "mstItem": [
@@ -7909,5 +8026,3473 @@
       "useCostume": false
     }
   ],
-  "mstCommonConsume": []
+  "mstCommonConsume": [],
+  "mstSvtVoice": [
+    {
+      "scriptJson": [
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_H010",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H011",
+              "face": 8,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H012",
+              "face": 4,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H013",
+              "face": 4,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 1,
+              "value": 0,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_H020",
+              "face": 8,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H021",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H022",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 2,
+              "value": 0,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_H030",
+              "face": 8,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H031",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_H040",
+              "face": 8,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H041",
+              "face": 8,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H042",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H043",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_H050",
+              "face": 8,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H051",
+              "face": 1,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H052",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_H060",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H061",
+              "face": 8,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H062",
+              "face": 3,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_H070",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H071",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H072",
+              "face": 5,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_H080",
+              "face": 8,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H081",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H082",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_H090",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H091",
+              "face": 8,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H092",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H093",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 3,
+              "value": 1,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_H100",
+              "face": 4,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H101",
+              "face": 4,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H102",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 3,
+              "value": 2,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_H110",
+              "face": 6,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H111",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H112",
+              "face": 8,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H113",
+              "face": 1,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H114",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 3,
+              "value": 3,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_H120",
+              "face": 4,
+              "delay": 0.2,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H121",
+              "face": 4,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H122",
+              "face": 8,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H123",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 3,
+              "value": 4,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_H130",
+              "face": 6,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H131",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H132",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H133",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H134",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 3,
+              "value": 5,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_H140",
+              "face": 2,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H141",
+              "face": 4,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H142",
+              "face": 4,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 4,
+              "value": 102800,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_H150",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H151",
+              "face": 8,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H152",
+              "face": 8,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H153",
+              "face": 6,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 4,
+              "value": 201400,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_H160",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H161",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H162",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H163",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H164",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_H165",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 4,
+              "value": 202900,
+              "eventId": 0
+            }
+          ]
+        }
+      ],
+      "id": 602300,
+      "voicePrefix": 0,
+      "type": 1
+    },
+    {
+      "scriptJson": [
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_G010",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G011",
+              "face": 6,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 8,
+              "value": 0,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_G020",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G021",
+              "face": 1,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 10,
+              "value": 0,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_G030",
+              "face": 8,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G031",
+              "face": 8,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G032",
+              "face": 4,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 9,
+              "value": 1,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_G040",
+              "face": 8,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G041",
+              "face": 8,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G042",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 9,
+              "value": 3,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_G050",
+              "face": 8,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G051",
+              "face": 8,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G052",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G053",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_G054",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 11,
+              "value": 0,
+              "eventId": 0
+            }
+          ]
+        }
+      ],
+      "id": 602300,
+      "voicePrefix": 0,
+      "type": 2
+    },
+    {
+      "scriptJson": [
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_S010",
+              "face": 0,
+              "delay": 0.0,
+              "text": "Assassin-class Servant. ",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_S011",
+              "face": 0,
+              "delay": 0.1,
+              "text": "Name's Ryougi Shiki.",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_S012",
+              "face": 8,
+              "delay": 0.3,
+              "text": "[r]\n...Does this work as a greeting? ",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_S013",
+              "face": 8,
+              "delay": 0.1,
+              "text": "I guess it is a weird one huh...",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_S014",
+              "face": 1,
+              "delay": 0.3,
+              "text": "[r]\nI am a bit different, but I will beat the crap out of our enemies.",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        }
+      ],
+      "id": 602300,
+      "voicePrefix": 0,
+      "type": 3
+    },
+    {
+      "scriptJson": [
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_S020",
+              "face": 0,
+              "delay": 0.0,
+              "text": "Is it your first time in a haunted house?",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_S021",
+              "face": 6,
+              "delay": 0.1,
+              "text": " It's pretty common in any populated city...",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_S022",
+              "face": 1,
+              "delay": 0.3,
+              "text": "[r]\nWell, follow me as far as you can without dying.",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        }
+      ],
+      "id": 602300,
+      "voicePrefix": 0,
+      "type": 4
+    },
+    {
+      "scriptJson": [
+        {
+          "overwriteName": "the Garden of sinners/the Garden of Order 1",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_N010",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N011",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 14,
+              "value": 80011,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "the Garden of sinners/the Garden of Order 2",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_N020",
+              "face": 6,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N021",
+              "face": 0,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N022",
+              "face": 4,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 14,
+              "value": 80011,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "the Garden of sinners/the Garden of Order 3",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_N030",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N031",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 14,
+              "value": 80011,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "the Garden of sinners/the Garden of Order 4",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_N040",
+              "face": 8,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N041",
+              "face": 8,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 14,
+              "value": 80011,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "the Garden of sinners/the Garden of Order 5",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_N050",
+              "face": 8,
+              "delay": 0.2,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N051",
+              "face": 4,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 14,
+              "value": 80011,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "the Garden of sinners/the Garden of Order 6",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_N060",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N061",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N062",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N063",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 13,
+              "value": 80011,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "the Garden of sinners/the Garden of Order 7",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_N070",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N071",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N072",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N073",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 13,
+              "value": 80011,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "Revival: the Garden of sinners/the Garden of Order 1",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_N1010",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N1011",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 14,
+              "value": 80090,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "Revival: the Garden of sinners/the Garden of Order 2",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_N1020",
+              "face": 6,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N1021",
+              "face": 0,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N1022",
+              "face": 4,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 14,
+              "value": 80090,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "Revival: the Garden of sinners/the Garden of Order 3",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_N1030",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N1031",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 14,
+              "value": 80090,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "Revival: the Garden of sinners/the Garden of Order 4",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_N1040",
+              "face": 8,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N1041",
+              "face": 8,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 14,
+              "value": 80090,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "Revival: the Garden of sinners/the Garden of Order 5",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_N1050",
+              "face": 8,
+              "delay": 0.2,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N1051",
+              "face": 4,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 14,
+              "value": 80090,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "Revival: the Garden of sinners/the Garden of Order 6",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_N1060",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N1061",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N1062",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N1063",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 13,
+              "value": 80090,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "Revival: the Garden of sinners/the Garden of Order 7",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_N1070",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N1071",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N1072",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N1073",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 13,
+              "value": 80090,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "Revival: the Garden of sinners/the Garden of Order 8",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_N1080",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N1081",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N1082",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_N1083",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 13,
+              "value": 80090,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "Revival: the Garden of sinners/the Garden of Order 9",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_M1010",
+              "face": 1,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_M1011",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_M1012",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 15,
+              "value": 80090,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "Revival: the Garden of sinners/the Garden of Order 10",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_M1020",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_M1021",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 15,
+              "value": 80090,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "Revival: the Garden of sinners/the Garden of Order 11",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_M1030",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 15,
+              "value": 80090,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "Revival: the Garden of sinners/the Garden of Order 12",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_M1040",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_M1041",
+              "face": 8,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 15,
+              "value": 80090,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "Revival: the Garden of sinners/the Garden of Order 13",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_M1050",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 15,
+              "value": 80090,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "Revival: the Garden of sinners/the Garden of Order 14",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_M1070",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 15,
+              "value": 80090,
+              "eventId": 0
+            }
+          ]
+        }
+      ],
+      "id": 602300,
+      "voicePrefix": 0,
+      "type": 5
+    },
+    {
+      "scriptJson": [
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_B010",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_B020",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_B030",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_B040",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_B041",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_B080",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_B090",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_B100",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_B110",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_B120",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_B130",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_B140",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_B150",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_B160",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_B170",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_B180",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_B190",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_B200",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Noble Phantasm Card {0}",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_B210",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        },
+        {
+          "overwriteName": "Noble Phantasm Card {0}",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_B220",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": []
+        }
+      ],
+      "id": 602300,
+      "voicePrefix": 0,
+      "type": 6
+    },
+    {
+      "scriptJson": [
+        {
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_B050",
+              "face": 4,
+              "delay": 0.0,
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_B051",
+              "face": 4,
+              "delay": 3.132794,
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 13,
+              "value": 0,
+              "eventId": 0
+            }
+          ]
+        }
+      ],
+      "id": 602300,
+      "voicePrefix": 0,
+      "type": 7
+    },
+    {
+      "scriptJson": [
+        {
+          "overwriteName": "Revival: the Garden of sinners/the Garden of Order 15",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_I1010",
+              "face": 3,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I1011",
+              "face": 4,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I1012",
+              "face": 0,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I1013",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 14,
+              "value": 80090,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "Revival: the Garden of sinners/the Garden of Order 16",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_I1020",
+              "face": 8,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I1021",
+              "face": 3,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I1022",
+              "face": 1,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 14,
+              "value": 80090,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "Revival: the Garden of sinners/the Garden of Order 17",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_I1030",
+              "face": 6,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I1031",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 18,
+              "value": 80090,
+              "eventId": 0
+            },
+            {
+              "condType": 19,
+              "value": 80090,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "Revival: the Garden of sinners/the Garden of Order 18",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_I1040",
+              "face": 5,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I1041",
+              "face": 0,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 18,
+              "value": 80090,
+              "eventId": 0
+            },
+            {
+              "condType": 19,
+              "value": 80090,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "Revival: the Garden of sinners/the Garden of Order 19",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_I1050",
+              "face": 8,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I1051",
+              "face": 8,
+              "delay": 0.3,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 18,
+              "value": 80090,
+              "eventId": 0
+            },
+            {
+              "condType": 19,
+              "value": 80090,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "Revival: the Garden of sinners/the Garden of Order 20",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_I1110",
+              "face": 0,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I1111",
+              "face": 6,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 13,
+              "value": 80090,
+              "eventId": 0
+            }
+          ]
+        },
+        {
+          "overwriteName": "Revival: the Garden of sinners/the Garden of Order 21",
+          "overwritePriority": 0,
+          "infos": [
+            {
+              "id": "0_I1120",
+              "face": 8,
+              "delay": 0.0,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I1121",
+              "face": 8,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            },
+            {
+              "id": "0_I1122",
+              "face": 3,
+              "delay": 0.1,
+              "text": "",
+              "form": 0,
+              "changeEffect": 0
+            }
+          ],
+          "conds": [
+            {
+              "condType": 13,
+              "value": 80090,
+              "eventId": 0
+            }
+          ]
+        }
+      ],
+      "id": 602300,
+      "voicePrefix": 0,
+      "type": 9
+    }
+  ],
+  "mstVoice": [
+    {
+      "id": "B010",
+      "priority": 9590,
+      "svtVoiceType": 6,
+      "name": "Attack 1",
+      "nameDefault": "Unlocks through battle actions",
+      "condType": 0,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "B020",
+      "priority": 9580,
+      "svtVoiceType": 6,
+      "name": "Attack 2",
+      "nameDefault": "Unlocks through battle actions",
+      "condType": 0,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "B030",
+      "priority": 9570,
+      "svtVoiceType": 6,
+      "name": "Attack 3",
+      "nameDefault": "Unlocks through battle actions",
+      "condType": 0,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "B040",
+      "priority": 9490,
+      "svtVoiceType": 6,
+      "name": "Extra Attack",
+      "nameDefault": "Unlocks through battle actions",
+      "condType": 0,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "B050",
+      "priority": 9390,
+      "svtVoiceType": 7,
+      "name": "Noble Phantasm",
+      "nameDefault": "Unlocks through battle actions",
+      "condType": 17,
+      "condValue": 1,
+      "voicePlayedValue": 1,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "B080",
+      "priority": 9890,
+      "svtVoiceType": 6,
+      "name": "Skill 1",
+      "nameDefault": "Unlocks through battle actions",
+      "condType": 0,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "B090",
+      "priority": 9880,
+      "svtVoiceType": 6,
+      "name": "Skill 2",
+      "nameDefault": "Unlocks through battle actions",
+      "condType": 0,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "B100",
+      "priority": 9990,
+      "svtVoiceType": 6,
+      "name": "Battle Start 1",
+      "nameDefault": "Unlocks through battle actions",
+      "condType": 0,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "B110",
+      "priority": 9980,
+      "svtVoiceType": 6,
+      "name": "Battle Start 2",
+      "nameDefault": "Unlocks through battle actions",
+      "condType": 0,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "B120",
+      "priority": 9090,
+      "svtVoiceType": 6,
+      "name": "Victory 1",
+      "nameDefault": "Unlocks through battle actions",
+      "condType": 0,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "B130",
+      "priority": 9080,
+      "svtVoiceType": 6,
+      "name": "Victory 2",
+      "nameDefault": "Unlocks through battle actions",
+      "condType": 0,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "B140",
+      "priority": 9280,
+      "svtVoiceType": 6,
+      "name": "Damage 2",
+      "nameDefault": "Unlocks through battle actions",
+      "condType": 0,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "B150",
+      "priority": 9290,
+      "svtVoiceType": 6,
+      "name": "Damage 1",
+      "nameDefault": "Unlocks through battle actions",
+      "condType": 0,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "B160",
+      "priority": 9190,
+      "svtVoiceType": 6,
+      "name": "Incapacitated 1",
+      "nameDefault": "Unlocks through battle actions",
+      "condType": 0,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "B170",
+      "priority": 9180,
+      "svtVoiceType": 6,
+      "name": "Incapacitated 2",
+      "nameDefault": "Unlocks through battle actions",
+      "condType": 0,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "B180",
+      "priority": 9790,
+      "svtVoiceType": 6,
+      "name": "Command Card 1",
+      "nameDefault": "Unlocks through battle actions",
+      "condType": 0,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "B190",
+      "priority": 9780,
+      "svtVoiceType": 6,
+      "name": "Command Card 2",
+      "nameDefault": "Unlocks through battle actions",
+      "condType": 0,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "B200",
+      "priority": 9770,
+      "svtVoiceType": 6,
+      "name": "Command Card 3",
+      "nameDefault": "Unlocks through battle actions",
+      "condType": 0,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "B210",
+      "priority": 9690,
+      "svtVoiceType": 6,
+      "name": "Noble Phantasm Card",
+      "nameDefault": "Unlocks through battle actions",
+      "condType": 17,
+      "condValue": 4,
+      "voicePlayedValue": 4,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "B220",
+      "priority": 9680,
+      "svtVoiceType": 6,
+      "name": "Noble Phantasm Card",
+      "nameDefault": "Unlocks through battle actions",
+      "condType": 17,
+      "condValue": 5,
+      "voicePlayedValue": 5,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "G010",
+      "priority": 8990,
+      "svtVoiceType": 2,
+      "name": "Level up",
+      "nameDefault": "Unlocks through Enhance",
+      "condType": 6,
+      "condValue": 2,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "G020",
+      "priority": 8880,
+      "svtVoiceType": 2,
+      "name": "Ascension 2",
+      "nameDefault": "Unlocks through Ascension",
+      "condType": 7,
+      "condValue": 2,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "G030",
+      "priority": 8890,
+      "svtVoiceType": 2,
+      "name": "Ascension 1",
+      "nameDefault": "Unlocks through Ascension",
+      "condType": 7,
+      "condValue": 1,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "G040",
+      "priority": 8870,
+      "svtVoiceType": 2,
+      "name": "Ascension 3",
+      "nameDefault": "Unlocks through Ascension",
+      "condType": 7,
+      "condValue": 3,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "G050",
+      "priority": 8860,
+      "svtVoiceType": 2,
+      "name": "Ascension 4",
+      "nameDefault": "Unlocks through Ascension",
+      "condType": 18,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "H010",
+      "priority": 7960,
+      "svtVoiceType": 1,
+      "name": "Birthday",
+      "nameDefault": "???",
+      "condType": 19,
+      "condValue": 0,
+      "voicePlayedValue": 64,
+      "firstPlayPriority": 80,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "H020",
+      "priority": 7980,
+      "svtVoiceType": 1,
+      "name": "During an Event",
+      "nameDefault": "???",
+      "condType": 17,
+      "condValue": 11,
+      "voicePlayedValue": 11,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "H030",
+      "priority": 8690,
+      "svtVoiceType": 1,
+      "name": "Conversation 1",
+      "nameDefault": "Unlocks through My Room conversations",
+      "condType": 17,
+      "condValue": 12,
+      "voicePlayedValue": 12,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "H040",
+      "priority": 8680,
+      "svtVoiceType": 1,
+      "name": "Conversation 2",
+      "nameDefault": "Unlocks through My Room conversations",
+      "condType": 17,
+      "condValue": 13,
+      "voicePlayedValue": 13,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "H050",
+      "priority": 8670,
+      "svtVoiceType": 1,
+      "name": "Conversation 3",
+      "nameDefault": "Unlocks through My Room conversations",
+      "condType": 17,
+      "condValue": 14,
+      "voicePlayedValue": 14,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "H060",
+      "priority": 8090,
+      "svtVoiceType": 1,
+      "name": "Likes",
+      "nameDefault": "Unlocks through My Room conversations",
+      "condType": 17,
+      "condValue": 15,
+      "voicePlayedValue": 15,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "H070",
+      "priority": 8060,
+      "svtVoiceType": 1,
+      "name": "Dislikes",
+      "nameDefault": "Unlocks through My Room conversations",
+      "condType": 17,
+      "condValue": 16,
+      "voicePlayedValue": 16,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "H080",
+      "priority": 8020,
+      "svtVoiceType": 1,
+      "name": "About the Holy Grail",
+      "nameDefault": "Unlocks through My Room conversations",
+      "condType": 17,
+      "condValue": 17,
+      "voicePlayedValue": 17,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "H090",
+      "priority": 8790,
+      "svtVoiceType": 1,
+      "name": "Bond Level 1",
+      "nameDefault": "Unlocks through increasing Bond Levels",
+      "condType": 9,
+      "condValue": 1,
+      "voicePlayedValue": 66,
+      "firstPlayPriority": 75,
+      "closedType": 1,
+      "flag": 2
+    },
+    {
+      "id": "H100",
+      "priority": 8783,
+      "svtVoiceType": 1,
+      "name": "Bond Level 2",
+      "nameDefault": "Unlocks through increasing Bond Levels",
+      "condType": 9,
+      "condValue": 2,
+      "voicePlayedValue": 73,
+      "firstPlayPriority": 70,
+      "closedType": 1,
+      "flag": 2
+    },
+    {
+      "id": "H110",
+      "priority": 8776,
+      "svtVoiceType": 1,
+      "name": "Bond Level 3",
+      "nameDefault": "Unlocks through increasing Bond Levels",
+      "condType": 9,
+      "condValue": 3,
+      "voicePlayedValue": 80,
+      "firstPlayPriority": 65,
+      "closedType": 1,
+      "flag": 2
+    },
+    {
+      "id": "H120",
+      "priority": 8769,
+      "svtVoiceType": 1,
+      "name": "Bond Level 4",
+      "nameDefault": "Unlocks through increasing Bond Levels",
+      "condType": 9,
+      "condValue": 4,
+      "voicePlayedValue": 87,
+      "firstPlayPriority": 60,
+      "closedType": 1,
+      "flag": 2
+    },
+    {
+      "id": "H130",
+      "priority": 8762,
+      "svtVoiceType": 1,
+      "name": "Bond Level 5",
+      "nameDefault": "Unlocks through increasing Bond Levels",
+      "condType": 9,
+      "condValue": 5,
+      "voicePlayedValue": 94,
+      "firstPlayPriority": 55,
+      "closedType": 1,
+      "flag": 2
+    },
+    {
+      "id": "H140",
+      "priority": 8660,
+      "svtVoiceType": 1,
+      "name": "Conversation 4",
+      "nameDefault": "Unlocks through My Room conversations",
+      "condType": 17,
+      "condValue": 18,
+      "voicePlayedValue": 18,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "H150",
+      "priority": 8600,
+      "svtVoiceType": 1,
+      "name": "Conversation 5",
+      "nameDefault": "Unlocks through My Room conversations",
+      "condType": 17,
+      "condValue": 19,
+      "voicePlayedValue": 19,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "H160",
+      "priority": 8540,
+      "svtVoiceType": 1,
+      "name": "Conversation 6",
+      "nameDefault": "Unlocks through My Room conversations",
+      "condType": 17,
+      "condValue": 20,
+      "voicePlayedValue": 20,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "I1010",
+      "priority": 4000,
+      "svtVoiceType": 9,
+      "name": "Shop Voice (Second Block) 1",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "I1020",
+      "priority": 3999,
+      "svtVoiceType": 9,
+      "name": "Shop Voice (Second Block) 2",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "I1030",
+      "priority": 3998,
+      "svtVoiceType": 9,
+      "name": "Shop Voice (Second Block) 3",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "I1040",
+      "priority": 3997,
+      "svtVoiceType": 9,
+      "name": "Shop Voice (Second Block) 4",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "I1050",
+      "priority": 3996,
+      "svtVoiceType": 9,
+      "name": "Shop Voice (Second Block) 5",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "I1110",
+      "priority": 3990,
+      "svtVoiceType": 9,
+      "name": "Shop Voice (Second Block) 11",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "I1120",
+      "priority": 3989,
+      "svtVoiceType": 9,
+      "name": "Shop Voice (Second Block) 12",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "M1010",
+      "priority": 4500,
+      "svtVoiceType": 5,
+      "name": "Mission Voice (Second Block) 1",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "M1020",
+      "priority": 4499,
+      "svtVoiceType": 5,
+      "name": "Mission Voice (Second Block) 2",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "M1030",
+      "priority": 4498,
+      "svtVoiceType": 5,
+      "name": "Mission Voice (Second Block) 3",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "M1040",
+      "priority": 4497,
+      "svtVoiceType": 5,
+      "name": "Mission Voice (Second Block) 4",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "M1050",
+      "priority": 4496,
+      "svtVoiceType": 5,
+      "name": "Mission Voice (Second Block) 5",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "M1070",
+      "priority": 4494,
+      "svtVoiceType": 5,
+      "name": "Mission Voice (Second Block) 7",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "N010",
+      "priority": 6990,
+      "svtVoiceType": 5,
+      "name": "About the Event 1",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "N020",
+      "priority": 6980,
+      "svtVoiceType": 5,
+      "name": "About the Event 2",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "N030",
+      "priority": 6970,
+      "svtVoiceType": 5,
+      "name": "About the Event 3",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "N040",
+      "priority": 6960,
+      "svtVoiceType": 5,
+      "name": "About the Event 4",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "N050",
+      "priority": 6950,
+      "svtVoiceType": 5,
+      "name": "About the Event 5",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "N060",
+      "priority": 6940,
+      "svtVoiceType": 5,
+      "name": "About the Event 6",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "N070",
+      "priority": 6930,
+      "svtVoiceType": 5,
+      "name": "About the Event 7",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "N1010",
+      "priority": 5000,
+      "svtVoiceType": 5,
+      "name": "About the Event (Second Block) 1",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "N1020",
+      "priority": 4999,
+      "svtVoiceType": 5,
+      "name": "About the Event (Second Block) 2",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "N1030",
+      "priority": 4998,
+      "svtVoiceType": 5,
+      "name": "About the Event (Second Block) 3",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "N1040",
+      "priority": 4997,
+      "svtVoiceType": 5,
+      "name": "About the Event (Second Block) 4",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "N1050",
+      "priority": 4996,
+      "svtVoiceType": 5,
+      "name": "About the Event (Second Block) 5",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "N1060",
+      "priority": 4995,
+      "svtVoiceType": 5,
+      "name": "About the Event (Second Block) 6",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "N1070",
+      "priority": 4994,
+      "svtVoiceType": 5,
+      "name": "About the Event (Second Block) 7",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "N1080",
+      "priority": 4993,
+      "svtVoiceType": 5,
+      "name": "About the Event (Second Block) 8",
+      "nameDefault": "???",
+      "condType": 20,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "S010",
+      "priority": 7920,
+      "svtVoiceType": 3,
+      "name": "Summon",
+      "nameDefault": "Unlocks when summoned ",
+      "condType": 8,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    },
+    {
+      "id": "S020",
+      "priority": 7905,
+      "svtVoiceType": 4,
+      "name": "Temporary",
+      "nameDefault": "Unlocked when temporary joined",
+      "condType": 21,
+      "condValue": 0,
+      "voicePlayedValue": 0,
+      "firstPlayPriority": 0,
+      "closedType": 1,
+      "flag": 0
+    }
+  ],
+  "mstSvtGroup": [],
+  "mstSubtitle": [
+    {
+      "id": "602300_0_A010",
+      "serif": "Mission accomplished. Here, take this. Don't waste it."
+    },
+    {
+      "id": "602300_0_A020",
+      "serif": "A new request has come in. There's too much going on in this apartment!"
+    },
+    {
+      "id": "602300_0_A030",
+      "serif": "Ding dong. A notice for all you curious people. \nThe next floor is open, so Master, please feel free to challenge the new missions."
+    },
+    {
+      "id": "602300_0_A040",
+      "serif": "Ding dong. A notice for all you curious people. \nA new location is open, so Master, please feel free to challenge the new missions."
+    },
+    {
+      "id": "602300_0_B010",
+      "serif": "Hmph!"
+    },
+    {
+      "id": "602300_0_B020",
+      "serif": "There."
+    },
+    {
+      "id": "602300_0_B030",
+      "serif": "Haaah!"
+    },
+    {
+      "id": "602300_0_B040",
+      "serif": "Your time in this world is over. See you in hell."
+    },
+    {
+      "id": "602300_0_B050",
+      "serif": "[id 602300_0_B050]Death Perception...\n[id 602300_0_B051]Death is not going to get in my way!"
+    },
+    {
+      "id": "602300_0_B080",
+      "serif": "What a bother..."
+    },
+    {
+      "id": "602300_0_B090",
+      "serif": "Okay, you want me to do this?"
+    },
+    {
+      "id": "602300_0_B100",
+      "serif": "Tch, you're all the same..."
+    },
+    {
+      "id": "602300_0_B110",
+      "serif": "My turn? You really work people hard."
+    },
+    {
+      "id": "602300_0_B120",
+      "serif": "Finished? I'll leave the clean up to you, then."
+    },
+    {
+      "id": "602300_0_B130",
+      "serif": "Well, it's good to have someone worth fighting."
+    },
+    {
+      "id": "602300_0_B140",
+      "serif": "Ugh!"
+    },
+    {
+      "id": "602300_0_B150",
+      "serif": "This is bad!"
+    },
+    {
+      "id": "602300_0_B160",
+      "serif": "Look what you got me into..."
+    },
+    {
+      "id": "602300_0_B170",
+      "serif": "I guess this is karma..."
+    },
+    {
+      "id": "602300_0_B180",
+      "serif": "What."
+    },
+    {
+      "id": "602300_0_B190",
+      "serif": "That thing?"
+    },
+    {
+      "id": "602300_0_B200",
+      "serif": "Oh brother..."
+    },
+    {
+      "id": "602300_0_B210",
+      "serif": "Oh, I feel sick."
+    },
+    {
+      "id": "602300_0_B220",
+      "serif": "It's the end of the dream."
+    },
+    {
+      "id": "602300_0_G010",
+      "serif": "[id 602300_0_G010]So this is what you call the fruit of your labor, huh?\n[id 602300_0_G011]...Not a bad feeling."
+    },
+    {
+      "id": "602300_0_G020",
+      "serif": "[id 602300_0_G020]One grade up... [id 602300_0_G021]There's still a long way to go, Master."
+    },
+    {
+      "id": "602300_0_G030",
+      "serif": "[id 602300_0_G030]Huh? Won't I get changed? [id 602300_0_G031]Everyone else wears different clothes? [id 602300_0_G032]...Heroic Spirits are quite fashionable, aren't they..."
+    },
+    {
+      "id": "602300_0_G040",
+      "serif": "[id 602300_0_G040]Shut up. I like these clothes, I'm not changing. \n[id 602300_0_G041]I might change the kimono to a different one, [id 602300_0_G042]but I'm not changing my jacket."
+    },
+    {
+      "id": "602300_0_G050",
+      "serif": "[id 602300_0_G050]...What? Even I take a break sometimes. [id 602300_0_G051]Actually, this is usually how I am when I am not needed. \n[id 602300_0_G052]If it's you...then, [id 602300_0_G053]I guess it's okay to let you in my room. [id 602300_0_G054]There's more ice cream in the fridge, help yourself."
+    },
+    {
+      "id": "602300_0_H010",
+      "serif": "Whose birthday? Yours? I see.\n...I wonder if there are any good restaurants around here... I should have checked..."
+    },
+    {
+      "id": "602300_0_H020",
+      "serif": "It's noisy... Another strange festival, I suppose. \nGo if you want. I'll join you if I feel like it."
+    },
+    {
+      "id": "602300_0_H030",
+      "serif": "I'm bored. Is this Touko's office or something?\nIf you're feeling restless let's go out, come on."
+    },
+    {
+      "id": "602300_0_H040",
+      "serif": "What, a Servant? That's what I am right now. That's all right. It's easy. I'll follow your plan."
+    },
+    {
+      "id": "602300_0_H050",
+      "serif": "Master Servant relationship, hmm... our relationship will be good as long as you give decent instructions, won't it? I'm happy as long as you give me prey."
+    },
+    {
+      "id": "602300_0_H060",
+      "serif": "What do I like... Hmph, I don't know. You ask some amazing things."
+    },
+    {
+      "id": "602300_0_H070",
+      "serif": "What do I hate? Ah, that's clear to me. People who know their true nature, yet still lie to themselves."
+    },
+    {
+      "id": "602300_0_H080",
+      "serif": "A Holy Grail that grants wishes? What? That sounds so fake. \nSales people aren't welcome at this house."
+    },
+    {
+      "id": "602300_0_H090",
+      "serif": "Why a kimono and leather jacket? ...Why does it matter? It's just what I feel like wearing. \nWhat? Not why but how I wear it? Well, there's a trick to tie the obi and with the hem..."
+    },
+    {
+      "id": "602300_0_H100",
+      "serif": "Servant and Master, huh... I feel like there's been something like this before, but that may have been a dream. \nHere is a lot more comfortable than that time."
+    },
+    {
+      "id": "602300_0_H110",
+      "serif": "You're more understanding than I expected. You're an airhead, pure hearted, you speak openly, and yet your heart is strong... huh? \n...Oh, you're the same as him. It's no wonder I can't think badly of you."
+    },
+    {
+      "id": "602300_0_H120",
+      "serif": "...I'm stuck. I want to get back to where I was as soon as possible, but my life here isn't all bad. \nAnd... I can't leave you alone. I think I might have to see this through to the end..."
+    },
+    {
+      "id": "602300_0_H130",
+      "serif": "All right, I have made up my mind!\nIt's all too suspicious, all this talk about Chaldea and Masters. What kind of mess has Touko gotten us into, but as they say, even a chance acquaintance is decreed by destiny. \nPlease continue to take care of me, Master. I will accompany you as a guard until the day you return to your old life."
+    },
+    {
+      "id": "602300_0_H140",
+      "serif": "Was that me just now?\n...Maybe I've been working too hard since I got here... How pathetic of me to be seeing ghosts..."
+    },
+    {
+      "id": "602300_0_H150",
+      "serif": "You sure are an interesting fellow...\nWhat's with that sack? You can pull food out as much as you want? No matter how exotic the food may be?\n...Interesting, show us what you can do then."
+    },
+    {
+      "id": "602300_0_H160",
+      "serif": "So Asagami's here now, too. Huh. That's good to know.\nShe might seem like a dangerous woman, but she's pretty reliable.\nShe's a bit of a loose canon, though. So be careful.\nShe's incredibly opinionated, and it really doesn't take much to set her off since she's pretty lacking in empathy.\nOne wrong step, and things'll go sideways pretty quick."
+    },
+    {
+      "id": "602300_0_I1010",
+      "serif": "Welcome.\nUgh, what a drag.\nI'm not going to explain what's for exchange here.\nJust hang around as long as you like."
+    },
+    {
+      "id": "602300_0_I1020",
+      "serif": "Exchanging items... Are we in the stone age or something?\nNo, never mind.\nPrimitive isn't so bad...yeah..."
+    },
+    {
+      "id": "602300_0_I1030",
+      "serif": "You want that one?\nI don't need to wrap it up for you, right?"
+    },
+    {
+      "id": "602300_0_I1040",
+      "serif": "Obviously we do not accept returns. Make sure you use everything, okay?"
+    },
+    {
+      "id": "602300_0_I1050",
+      "serif": "This shop sure carries a bunch of weird stuff...\nEven Touko's office didn't have this much crap..."
+    },
+    {
+      "id": "602300_0_I1110",
+      "serif": "The street vendor is closing up soon.\nIt's just about time, but if you have anything left to exchange yet, I'll take it."
+    },
+    {
+      "id": "602300_0_I1120",
+      "serif": "To be honest, this was my first try at a part-time job.\nAnd I have to say, it was easy.\nBut Mikiya always told me to just not work as a convenience store clerk."
+    },
+    {
+      "id": "602300_0_M010",
+      "serif": "Mission accomplished. Here, take this. Don't waste it."
+    },
+    {
+      "id": "602300_0_M020",
+      "serif": "A new request has come in. There's too much going on in this apartment!"
+    },
+    {
+      "id": "602300_0_M030",
+      "serif": "Ding dong. A notice for all you curious people. \nThe next floor is open, so Master, please feel free to challenge the new missions."
+    },
+    {
+      "id": "602300_0_M1010",
+      "serif": "Mission accomplished. Here, take this. Don't waste it."
+    },
+    {
+      "id": "602300_0_M1020",
+      "serif": "Huh. This thing looks like it's valuable. Why don't you take it for safekeeping?"
+    },
+    {
+      "id": "602300_0_M1030",
+      "serif": "Ding dong. A notice for all you curious people. \nThe next floor is open, so Master, please feel free to challenge the new missions."
+    },
+    {
+      "id": "602300_0_M1040",
+      "serif": "A new request has come in. There's too much going on in this apartment!"
+    },
+    {
+      "id": "602300_0_M1050",
+      "serif": "Ding dong. A notice for all you curious people. \nA new location is open, so Master, please feel free to challenge the new missions."
+    },
+    {
+      "id": "602300_0_M1070",
+      "serif": "It's the finale. This showdown will be a brief moment of glory tonight. She's going to be a tough opponent, but why don't you just enjoy the ride?"
+    },
+    {
+      "id": "602300_0_N010",
+      "serif": "Yes, yes, good job. \nAre you working hard at exterminating zombies?"
+    },
+    {
+      "id": "602300_0_N020",
+      "serif": "Welcome to the Garan no Dou♪\n...Oh, you don't get it? You don't, do you? \nWhat am I doing..."
+    },
+    {
+      "id": "602300_0_N030",
+      "serif": "Nights in the city are long, but there's a limit to that too. \nYou can't just take your time in doing everything."
+    },
+    {
+      "id": "602300_0_N040",
+      "serif": "You could just keep mowing down those zombies, but read the information sometimes. \nIt's an apartment, so at least look at the community boards."
+    },
+    {
+      "id": "602300_0_N050",
+      "serif": "...This apartment is really lacking in taste... Zombies, ghosts, Servants... How much is the rent here?"
+    },
+    {
+      "id": "602300_0_N060",
+      "serif": "What, you're back again? \nThus the case was solved. The building is going to be demolished. If you have anything left to exchange, do it now. This will be gone soon."
+    },
+    {
+      "id": "602300_0_N070",
+      "serif": "What, you're back again? \nThus the case was solved. The building is going to be demolished. There is still some time left, so don't forget to press the claim reward button. This will be gone soon."
+    },
+    {
+      "id": "602300_0_N080",
+      "serif": "What, you're back again? \nThus the case was solved. The building is going to be demolished. There is still some time left, so don't forget to make your exchanges and collect your rewards. This will be gone soon."
+    },
+    {
+      "id": "602300_0_N1010",
+      "serif": "Yes, yes, good job. \nAre you working hard at exterminating zombies?"
+    },
+    {
+      "id": "602300_0_N1020",
+      "serif": "Welcome to the Garan no Dou♪\n...Oh, you don't get it? You don't, do you? \nWhat am I doing..."
+    },
+    {
+      "id": "602300_0_N1030",
+      "serif": "Nights in the city are long, but there's a limit to that too. \nYou can't just take your time in doing everything."
+    },
+    {
+      "id": "602300_0_N1040",
+      "serif": "You could just keep mowing down those zombies, but read the information sometimes. \nIt's an apartment, so at least look at the community boards."
+    },
+    {
+      "id": "602300_0_N1050",
+      "serif": "...This apartment is really lacking in taste... Zombies, ghosts, Servants... How much is the rent here?"
+    },
+    {
+      "id": "602300_0_N1060",
+      "serif": "What, you're back again? \nThus the case was solved. The building is going to be demolished. If you have anything left to exchange, do it now. This will be gone soon."
+    },
+    {
+      "id": "602300_0_N1070",
+      "serif": "What, you're back again? \nThus the case was solved. The building is going to be demolished. There is still some time left, so don't forget to press the claim reward button. This will be gone soon."
+    },
+    {
+      "id": "602300_0_N1080",
+      "serif": "What, you're back again? \nThe case is solved. The building is going to be demolished. There is still some time left, so don't forget to make your exchanges and collect your rewards. All this will be gone soon."
+    },
+    {
+      "id": "602300_0_S010",
+      "serif": "Assassin-class Servant. Name's Ryougi Shiki.\n...Does this work as a greeting? I guess it is a weird one huh...\nI am a bit different, but I will beat the crap out of our enemies."
+    },
+    {
+      "id": "602300_0_S020",
+      "serif": "Is it your first time in a haunted house? It's pretty common in any populated city... \nWell, follow me as far as you can without dying."
+    }
+  ],
+  "mstVoicePlayCond": []
 }

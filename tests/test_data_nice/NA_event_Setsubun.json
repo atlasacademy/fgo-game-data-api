@@ -18,6 +18,44 @@
   ],
   "shop": [],
   "rewards": [],
+  "rewardScenes": [
+    {
+      "slot": 0,
+      "groupId": 0,
+      "type": 7,
+      "guides": [
+        {
+          "imageId": 202100,
+          "limitCount": 1,
+          "faceId": 0
+        }
+      ],
+      "tabImageId": 0,
+      "imageId": 0,
+      "bgId": 52800,
+      "bgmId": 58,
+      "afterBgmId": 58,
+      "flags": []
+    },
+    {
+      "slot": 1,
+      "groupId": 0,
+      "type": 8,
+      "guides": [
+        {
+          "imageId": 202100,
+          "limitCount": 0,
+          "faceId": 0
+        }
+      ],
+      "tabImageId": 1,
+      "imageId": 0,
+      "bgId": 37300,
+      "bgmId": 58,
+      "afterBgmId": 58,
+      "flags": []
+    }
+  ],
   "pointGroups": [],
   "pointBuffs": [],
   "missions": [],
@@ -636,5 +674,1920 @@
     }
   ],
   "lotteries": [],
-  "treasureBoxes": []
+  "treasureBoxes": [],
+  "voicePlays": [
+    {
+      "slot": 0,
+      "idx": 0,
+      "guideImageId": 202100,
+      "voiceLines": [
+        {
+          "name": "About the Event 11",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6908,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 8",
+          "id": [
+            "0_N110",
+            "0_N111"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N110.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N111.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "Your actions climbing the tower have been documented.\nIt is nice to be able to review our progress.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 12",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6907,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 9",
+          "id": [
+            "0_N120",
+            "0_N121"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N120.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N121.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "Suitable rewards for battle are necessary.\nThat is very important.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 13",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6906,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 10",
+          "id": [
+            "0_N130",
+            "0_N131"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N130.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N131.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "Ah, is this what they call an ah-cheeb-ment? \nPing♪",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 14",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6905,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 11",
+          "id": [
+            "0_N140",
+            "0_N141"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N140.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N141.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            0
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "Please be diligent in checking this thing called \nin-for-mation. Knowledge is key to victory.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ],
+      "confirmVoiceLines": [],
+      "condType": "event",
+      "condValue": 80088,
+      "startedAt": 946684800,
+      "endedAt": 1901231999
+    },
+    {
+      "slot": 0,
+      "idx": 1,
+      "guideImageId": 202100,
+      "voiceLines": [
+        {
+          "name": "About the Event 16",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6903,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 12",
+          "id": [
+            "0_N160",
+            "0_N161"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N160.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N161.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1
+          ],
+          "face": [
+            5,
+            0
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "The oni tower has disappeared entirely.\nYou have done extremely well.",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 17",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6902,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 13",
+          "id": [
+            "0_N170",
+            "0_N171"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N170.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N171.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1
+          ],
+          "face": [
+            5,
+            0
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "Hmmm...\nThis is so moving, even just as a spectator.",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ],
+      "confirmVoiceLines": [],
+      "condType": "eventEnd",
+      "condValue": 80088,
+      "startedAt": 946684800,
+      "endedAt": 1901231999
+    },
+    {
+      "slot": 1,
+      "idx": 0,
+      "guideImageId": 202100,
+      "voiceLines": [
+        {
+          "name": "About the Event 1",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6990,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 1",
+          "id": [
+            "0_N010",
+            "0_N011"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N010.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N011.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1
+          ],
+          "face": [
+            1,
+            1
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "These hot springs are good for recovering.\nI would like all Servants to enjoy themselves. And, of course, you as well, Master.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 2",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6980,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 2",
+          "id": [
+            "0_N020"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N020.mp3"
+          ],
+          "delay": [
+            0.1
+          ],
+          "face": [
+            1
+          ],
+          "form": [
+            0
+          ],
+          "text": [
+            ""
+          ],
+          "subtitle": "Shall I wash your back?",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 3",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6970,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 3",
+          "id": [
+            "0_N030",
+            "0_N031",
+            "0_N032"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N030.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N031.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N032.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "I have prepared this chilled drink known as coffee milk.\nI hear that it is wonderful after taking a hot bath.\n...I shall have some afterwards, too.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 4",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6960,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 4",
+          "id": [
+            "0_N040",
+            "0_N041",
+            "0_N042"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N040.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N041.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N042.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.3,
+            0.3
+          ],
+          "face": [
+            1,
+            1,
+            0
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "Soaking in hot water...leisurely closing one's eyes...\nHow nice...\nBut please make sure you keep an eye out for the news and announcements.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 5",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6950,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 5",
+          "id": [
+            "0_N050",
+            "0_N051",
+            "0_N052",
+            "0_N053"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N050.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N051.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N052.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N053.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.3,
+            0.1,
+            0.1
+          ],
+          "face": [
+            4,
+            0,
+            1,
+            3
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "Oh, you look tired...\nThis is a good opportunity for me to massage you! Now, come, do not be bashful!\n...I will try to control my strength...",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ],
+      "confirmVoiceLines": [
+        {
+          "name": "Prolonged Bath Warning 1",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6100,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 14",
+          "id": [
+            "0_P010",
+            "0_P011",
+            "0_P012"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P010.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P011.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P012.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1,
+            0.3
+          ],
+          "face": [
+            0,
+            3,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "I see that one of the Servants has recovered.\nThey look so fierce!\nNow, let us move on to the next battle!",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": [
+            {
+              "condGroup": 1,
+              "condType": "svtRecoverd",
+              "targetId": 1,
+              "condValue": 0,
+              "condValues": [
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Prolonged Bath Warning 2",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6090,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 15",
+          "id": [
+            "0_P020"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P020.mp3"
+          ],
+          "delay": [
+            0.1
+          ],
+          "face": [
+            5
+          ],
+          "form": [
+            0
+          ],
+          "text": [
+            ""
+          ],
+          "subtitle": "Grrr. Someone is taking their sweet time in the bath...",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": [
+            {
+              "condGroup": 1,
+              "condType": "svtRecoverd",
+              "targetId": 1,
+              "condValue": 0,
+              "condValues": [
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Prolonged Bath Warning 3",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6080,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 16",
+          "id": [
+            "0_P030",
+            "0_P031"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P030.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P031.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.3
+          ],
+          "face": [
+            5,
+            4
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "They have been in the hot bath for so long...and I think they have fallen asleep.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": [
+            {
+              "condGroup": 1,
+              "condType": "svtRecoverd",
+              "targetId": 1,
+              "condValue": 0,
+              "condValues": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "condType": "event",
+      "condValue": 80088,
+      "startedAt": 946684800,
+      "endedAt": 1901231999
+    },
+    {
+      "slot": 1,
+      "idx": 1,
+      "guideImageId": 202100,
+      "voiceLines": [
+        {
+          "name": "About the Event 6",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6940,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 6",
+          "id": [
+            "0_N060",
+            "0_N061",
+            "0_N062"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N060.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N061.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N062.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            5,
+            0,
+            0
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "Good work in these recent battles.\nThis hot spring will still be here for a while, so please take your time and enjoy yourself.",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 8",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6920,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 7",
+          "id": [
+            "0_N080"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N080.mp3"
+          ],
+          "delay": [
+            0.1
+          ],
+          "face": [
+            0
+          ],
+          "form": [
+            0
+          ],
+          "text": [
+            ""
+          ],
+          "subtitle": "Master. Please make sure you did not forget anything.",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ],
+      "confirmVoiceLines": [],
+      "condType": "eventEnd",
+      "condValue": 80088,
+      "startedAt": 946684800,
+      "endedAt": 1901231999
+    }
+  ],
+  "voices": [
+    {
+      "svtId": 202100,
+      "voicePrefix": 0,
+      "type": "eventReward",
+      "voiceLines": [
+        {
+          "name": "About the Event 1",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6990,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 1",
+          "id": [
+            "0_N010",
+            "0_N011"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N010.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N011.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1
+          ],
+          "face": [
+            1,
+            1
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "These hot springs are good for recovering.\nI would like all Servants to enjoy themselves. And, of course, you as well, Master.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 2",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6980,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 2",
+          "id": [
+            "0_N020"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N020.mp3"
+          ],
+          "delay": [
+            0.1
+          ],
+          "face": [
+            1
+          ],
+          "form": [
+            0
+          ],
+          "text": [
+            ""
+          ],
+          "subtitle": "Shall I wash your back?",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 3",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6970,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 3",
+          "id": [
+            "0_N030",
+            "0_N031",
+            "0_N032"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N030.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N031.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N032.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "I have prepared this chilled drink known as coffee milk.\nI hear that it is wonderful after taking a hot bath.\n...I shall have some afterwards, too.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 4",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6960,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 4",
+          "id": [
+            "0_N040",
+            "0_N041",
+            "0_N042"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N040.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N041.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N042.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.3,
+            0.3
+          ],
+          "face": [
+            1,
+            1,
+            0
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "Soaking in hot water...leisurely closing one's eyes...\nHow nice...\nBut please make sure you keep an eye out for the news and announcements.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 5",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6950,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 5",
+          "id": [
+            "0_N050",
+            "0_N051",
+            "0_N052",
+            "0_N053"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N050.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N051.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N052.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N053.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.3,
+            0.1,
+            0.1
+          ],
+          "face": [
+            4,
+            0,
+            1,
+            3
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "Oh, you look tired...\nThis is a good opportunity for me to massage you! Now, come, do not be bashful!\n...I will try to control my strength...",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 6",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6940,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 6",
+          "id": [
+            "0_N060",
+            "0_N061",
+            "0_N062"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N060.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N061.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N062.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            5,
+            0,
+            0
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "Good work in these recent battles.\nThis hot spring will still be here for a while, so please take your time and enjoy yourself.",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 8",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6920,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 7",
+          "id": [
+            "0_N080"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N080.mp3"
+          ],
+          "delay": [
+            0.1
+          ],
+          "face": [
+            0
+          ],
+          "form": [
+            0
+          ],
+          "text": [
+            ""
+          ],
+          "subtitle": "Master. Please make sure you did not forget anything.",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 11",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6908,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 8",
+          "id": [
+            "0_N110",
+            "0_N111"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N110.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N111.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "Your actions climbing the tower have been documented.\nIt is nice to be able to review our progress.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 12",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6907,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 9",
+          "id": [
+            "0_N120",
+            "0_N121"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N120.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N121.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "Suitable rewards for battle are necessary.\nThat is very important.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 13",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6906,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 10",
+          "id": [
+            "0_N130",
+            "0_N131"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N130.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N131.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "Ah, is this what they call an ah-cheeb-ment? \nPing♪",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 14",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6905,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 11",
+          "id": [
+            "0_N140",
+            "0_N141"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N140.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N141.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            0
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "Please be diligent in checking this thing called \nin-for-mation. Knowledge is key to victory.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 16",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6903,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 12",
+          "id": [
+            "0_N160",
+            "0_N161"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N160.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N161.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1
+          ],
+          "face": [
+            5,
+            0
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "The oni tower has disappeared entirely.\nYou have done extremely well.",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 17",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6902,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 13",
+          "id": [
+            "0_N170",
+            "0_N171"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N170.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_N171.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1
+          ],
+          "face": [
+            5,
+            0
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "Hmmm...\nThis is so moving, even just as a spectator.",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "Prolonged Bath Warning 1",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6100,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 14",
+          "id": [
+            "0_P010",
+            "0_P011",
+            "0_P012"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P010.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P011.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P012.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1,
+            0.3
+          ],
+          "face": [
+            0,
+            3,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "I see that one of the Servants has recovered.\nThey look so fierce!\nNow, let us move on to the next battle!",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": [
+            {
+              "condGroup": 1,
+              "condType": "svtRecoverd",
+              "targetId": 1,
+              "condValue": 0,
+              "condValues": [
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Prolonged Bath Warning 2",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6090,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 15",
+          "id": [
+            "0_P020"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P020.mp3"
+          ],
+          "delay": [
+            0.1
+          ],
+          "face": [
+            5
+          ],
+          "form": [
+            0
+          ],
+          "text": [
+            ""
+          ],
+          "subtitle": "Grrr. Someone is taking their sweet time in the bath...",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": [
+            {
+              "condGroup": 1,
+              "condType": "svtRecoverd",
+              "targetId": 1,
+              "condValue": 0,
+              "condValues": [
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Prolonged Bath Warning 3",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6080,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 16",
+          "id": [
+            "0_P030",
+            "0_P031"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P030.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P031.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.3
+          ],
+          "face": [
+            5,
+            4
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "They have been in the hot bath for so long...and I think they have fallen asleep.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": [
+            {
+              "condGroup": 1,
+              "condType": "svtRecoverd",
+              "targetId": 1,
+              "condValue": 0,
+              "condValues": [
+                0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "svtId": 202100,
+      "voicePrefix": 0,
+      "type": "eventTowerReward",
+      "voiceLines": [
+        {
+          "name": "Tower Clear 1",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6070,
+          "svtVoiceType": "eventTowerReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 17",
+          "id": [
+            "0_P070",
+            "0_P071"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P070.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P071.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1
+          ],
+          "face": [
+            1,
+            1
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "Wonderful.\nNow, let's head to the next level!",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "Tower Clear 2",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6060,
+          "svtVoiceType": "eventTowerReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 18",
+          "id": [
+            "0_P080",
+            "0_P081",
+            "0_P082"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P080.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P081.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P082.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            2,
+            1,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "Floor cleared!\n...That's what I'm supposed to say, correct?\nTee hee. I did once play a game with a phrase like that.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "Tower Clear 4",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6050,
+          "svtVoiceType": "eventTowerReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 19",
+          "id": [
+            "0_P100",
+            "0_P101",
+            "0_P102"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P100.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P101.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P102.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            1,
+            1,
+            0
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "You have managed to reach the fiftieth floor. Congratulations! Let's climb the second half with just as much spirit! I will of course, accompany you.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "Tower Clear 5",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6045,
+          "svtVoiceType": "eventTowerReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 20",
+          "id": [
+            "0_P110",
+            "0_P111",
+            "0_P112",
+            "0_P113"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P110.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P111.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P112.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P113.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            1,
+            0,
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "We have finally reached and completed the one hundredth floor!\nI have nothing but admiration for you.\nMaster and Servants...you have all done well!",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "Tower Clear 16",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6025,
+          "svtVoiceType": "eventTowerReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 21",
+          "id": [
+            "0_P270"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P270.mp3"
+          ],
+          "delay": [
+            0.1
+          ],
+          "face": [
+            0
+          ],
+          "form": [
+            0
+          ],
+          "text": [
+            ""
+          ],
+          "subtitle": "Let's buckle down and proceed to the next floor!",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "Tower Clear 17",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6020,
+          "svtVoiceType": "eventTowerReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 22",
+          "id": [
+            "0_P280"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P280.mp3"
+          ],
+          "delay": [
+            0.1
+          ],
+          "face": [
+            5
+          ],
+          "form": [
+            0
+          ],
+          "text": [
+            ""
+          ],
+          "subtitle": "Master, we cannot let our guard down!",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "Tower Clear 18",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6010,
+          "svtVoiceType": "eventTowerReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 23",
+          "id": [
+            "0_P290",
+            "0_P291",
+            "0_P292"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P290.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P291.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P292.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            0,
+            0
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "No need to be impatient.\nIt's especially important to take it one step at a time on treacherous paths.\nLet's proceed steadily. ",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "Tower Clear 19",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6000,
+          "svtVoiceType": "eventTowerReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 24",
+          "id": [
+            "0_P300",
+            "0_P301",
+            "0_P302"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P300.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P301.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P302.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            5,
+            5,
+            0
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "Now, we're halfway there.\nThis will truly be the path that leads to our FINAL summit.\nOf course I shall accompany you! ",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "Tower Clear 20",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 5990,
+          "svtVoiceType": "eventTowerReward",
+          "overwriteName": "The Tale of Setsubun: Oni Pagoda Festival 25",
+          "id": [
+            "0_P310",
+            "0_P311",
+            "0_P312"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P310.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P311.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_202100/0_P312.mp3"
+          ],
+          "delay": [
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            3,
+            1,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "I am moved beyond words.\nYou did extremely well.\nAnd thank you very much, Master.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80088,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ]
+    }
+  ]
 }

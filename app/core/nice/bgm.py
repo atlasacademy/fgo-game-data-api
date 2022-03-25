@@ -1,5 +1,4 @@
-from typing import Optional
-
+from pydantic import HttpUrl
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
@@ -8,17 +7,18 @@ from ...schemas.gameenums import COND_TYPE_NAME, BgmFlag
 from ...schemas.nice import AssetURL, NiceBgm, NiceBgmEntity, NiceBgmRelease
 from ...schemas.raw import BgmEntity, MstBgm, MstBgmRelease, MstClosedMessage
 from ..raw import get_bgm_entity
-from ..utils import get_translation
-from .event import get_nice_shop
+from ..utils import fmt_url, get_translation
+from .event.shop import get_nice_shop
 from .item import get_nice_item_from_raw
 
 
 settings = Settings()
 
 
-def get_bgm_url(region: Region, raw_bgm: MstBgm) -> Optional[str]:
+def get_bgm_url(region: Region, raw_bgm: MstBgm) -> HttpUrl | None:
     return (
-        AssetURL.audio.format(
+        fmt_url(
+            AssetURL.audio,
             base_url=settings.asset_url,
             region=region,
             folder=raw_bgm.fileName,
@@ -72,15 +72,16 @@ def get_nice_bgm_entity_from_raw(
         priority=bgm_entity.mstBgm.priority,
         detail=bgm_entity.mstBgm.detail,
         notReleased=bgm_entity.mstBgm.flag == BgmFlag.IS_NOT_RELEASE,
-        logo=AssetURL.bgmLogo.format(
+        logo=fmt_url(
+            AssetURL.bgmLogo,
             base_url=settings.asset_url,
             region=region,
             logo_id=bgm_entity.mstBgm.logoId,
         ),
-        releaseConditions=(
+        releaseConditions=[
             get_nice_bgm_release(release, bgm_entity.mstClosedMessage)
             for release in bgm_entity.mstBgmRelease
-        ),
+        ],
     )
 
     if (

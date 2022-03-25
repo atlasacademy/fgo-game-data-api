@@ -4220,6 +4220,62 @@
       "bgImageGet": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_rewardget_8001800.png"
     }
   ],
+  "rewardScenes": [
+    {
+      "slot": 0,
+      "groupId": 0,
+      "type": 3,
+      "guides": [
+        {
+          "imageId": 602100,
+          "limitCount": 1,
+          "faceId": 0
+        }
+      ],
+      "tabImageId": 0,
+      "imageId": 0,
+      "bgId": 27000,
+      "bgmId": 58,
+      "afterBgmId": 58,
+      "flags": []
+    },
+    {
+      "slot": 1,
+      "groupId": 0,
+      "type": 4,
+      "guides": [
+        {
+          "imageId": 602100,
+          "limitCount": 1,
+          "faceId": 0
+        }
+      ],
+      "tabImageId": 1,
+      "imageId": 1,
+      "bgId": 27000,
+      "bgmId": 58,
+      "afterBgmId": 58,
+      "flags": []
+    },
+    {
+      "slot": 2,
+      "groupId": 0,
+      "type": 1,
+      "guides": [
+        {
+          "imageId": 602100,
+          "limitCount": 1,
+          "faceId": 0
+        }
+      ],
+      "tabImageId": 2,
+      "imageId": 2,
+      "bgId": 27000,
+      "bgmId": 58,
+      "afterBgmId": 58,
+      "flags": []
+    }
+  ],
   "pointGroups": [],
   "pointBuffs": [],
   "missions": [
@@ -8274,5 +8330,1481 @@
   ],
   "towers": [],
   "lotteries": [],
-  "treasureBoxes": []
+  "treasureBoxes": [],
+  "voicePlays": [
+    {
+      "slot": 2,
+      "idx": 0,
+      "guideImageId": 602100,
+      "voiceLines": [
+        {
+          "name": "About the Shop 1",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6490,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 10",
+          "id": [
+            "0_I010",
+            "0_I011",
+            "0_I012"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I010.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I011.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I012.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            1,
+            0
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "Welcome. Fufu, to think I would open up a shop like this... Oh, how ridiculous.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Shop 2",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6480,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 11",
+          "id": [
+            "0_I020",
+            "0_I021",
+            "0_I022",
+            "0_I023"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I020.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I021.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I022.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I023.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "For you who has come from afar, welcome. Would you like some tea? Take your time and look around, I've got plenty in this shop. You might just find something you want.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Shop 3",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6470,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 12",
+          "id": [
+            "0_I030",
+            "0_I031",
+            "0_I032",
+            "0_I033"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I030.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I031.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I032.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I033.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.3,
+            0.1
+          ],
+          "face": [
+            1,
+            1,
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "I don't recommend holding back for too long. Either you release everything you bottled up, or you hold it for even longer... Don't be embarassed, if you have something that's troubling you, I will take a look for you here.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ],
+      "confirmVoiceLines": [],
+      "condType": "event",
+      "condValue": 80018,
+      "startedAt": 946684800,
+      "endedAt": 1901231999
+    },
+    {
+      "slot": 2,
+      "idx": 1,
+      "guideImageId": 602100,
+      "voiceLines": [
+        {
+          "name": "About the Shop 11",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6380,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 16",
+          "id": [
+            "0_I110",
+            "0_I111"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I110.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I111.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            1,
+            0
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "This is it, time to close the shop. These will just rot away if I keep them, so make sure you exchange them all, okay?",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Shop 12",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6370,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 17",
+          "id": [
+            "0_I120",
+            "0_I121"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I120.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I121.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            4,
+            0
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "For the prize exchange, you already finished everything to the last drop? Did you leave anything?",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Shop 13",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6360,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 18",
+          "id": [
+            "0_I130",
+            "0_I131"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I130.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I131.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            1,
+            1
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "Fufufu, make sure you squeeze out everything and have no leftovers. Exchange all the prizes, okay?",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ],
+      "confirmVoiceLines": [],
+      "condType": "eventEnd",
+      "condValue": 80018,
+      "startedAt": 946684800,
+      "endedAt": 1901231999
+    }
+  ],
+  "voices": [
+    {
+      "svtId": 602100,
+      "voicePrefix": 0,
+      "type": "eventReward",
+      "voiceLines": [
+        {
+          "name": "About the Event 1",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6990,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Demonic Capital: Rashomon 1",
+          "id": [
+            "0_N010",
+            "0_N011",
+            "0_N012"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N010.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N011.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N012.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            1,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "Welcome. Don't hold back, take whatever you want. Good business makes me happy too.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80018,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 2",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6980,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Demonic Capital: Rashomon 2",
+          "id": [
+            "0_N020",
+            "0_N021",
+            "0_N022"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N020.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N021.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N022.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.3,
+            0.1
+          ],
+          "face": [
+            0,
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "Completely, completely... A good word, is it not? I have to suck it all out, down to the marrow of the bones.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80018,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 3",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6970,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Demonic Capital: Rashomon 3",
+          "id": [
+            "0_N030",
+            "0_N031",
+            "0_N032"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N030.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N031.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N032.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            0,
+            0
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "You don't have to hold back when you're with me. All your desires are cute to an oni like me.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80018,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 4",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6960,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Demonic Capital: Rashomon 4",
+          "id": [
+            "0_N040",
+            "0_N041",
+            "0_N042"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N040.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N041.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N042.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            0,
+            0
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "You should check all notices carefully. The worst things in this fleeting life are expirations and contracts. Even I don't want to meet a bill collector.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80018,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 5",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6950,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Demonic Capital: Rashomon 5",
+          "id": [
+            "0_N050",
+            "0_N051",
+            "0_N052",
+            "0_N053"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N050.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N051.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N052.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N053.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            3,
+            3,
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "Don't look at me like that. You'll make me blush. If I'm what you want most, then you have strange tastes, Master.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80018,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 6",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6940,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "The Demonic Capital: Rashomon 6",
+          "id": [
+            "0_N060",
+            "0_N061",
+            "0_N062",
+            "0_N063"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N060.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N061.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N062.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N063.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "It seems the party is over.\nPlease exchange your gifts while you can. Don't leave any leftovers. Bye, bye.",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80018,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 7",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6930,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 1",
+          "id": [
+            "0_N070",
+            "0_N071",
+            "0_N072"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N070.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N071.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N072.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.3,
+            0.1
+          ],
+          "face": [
+            1,
+            1,
+            0
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "Oh sweetie, aren't you a popular one. I wonder if you will visit me again tomorrow? That aside, how many times have you come to me today already?",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 8",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6920,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 2",
+          "id": [
+            "0_N080",
+            "0_N081",
+            "0_N082",
+            "0_N083"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N080.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N081.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N082.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N083.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.3,
+            0.3
+          ],
+          "face": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "Yes? You came here to see me? That makes me so happy. You know, I really wanted to see you as well... Just kidding. Fufu, that's just a joke.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 9",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6910,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 3",
+          "id": [
+            "0_N090",
+            "0_N091",
+            "0_N092"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N090.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N091.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N092.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "How are you doing? No, I can tell by looking at your face, you don't have to tell me. Do your best out there.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 10",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6909,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 4",
+          "id": [
+            "0_N100",
+            "0_N101",
+            "0_N102"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N100.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N101.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N102.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.3,
+            0.1
+          ],
+          "face": [
+            0,
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "It's not good to get too enthralled by one thing but... you... are trying your best to see me right? Fufufu, in that case I can't really stop you now, can I?",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 11",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6908,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 5",
+          "id": [
+            "0_N110",
+            "0_N111"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N110.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N111.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.3
+          ],
+          "face": [
+            1,
+            1
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "Sweetie, the depths of your desire, I want to see more of it. Can you show me? ...Pretty please?",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 12",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6907,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 6",
+          "id": [
+            "0_N120",
+            "0_N121"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N120.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N121.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "We're done, that's it. Make sure you grab whatever you need, and relax both your body and mind before you leave.",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Event 13",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6906,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 7",
+          "id": [
+            "0_N130",
+            "0_N131",
+            "0_N132",
+            "0_N133",
+            "0_N134"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N130.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N131.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N132.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N133.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_N134.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.3,
+            0.1
+          ],
+          "face": [
+            0,
+            0,
+            4,
+            1,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "I guess this is goodbye. Don't forget about me, okay, Sweetie?\nI'm going to miss you... Just kidding, fufufu. If fate allows, we'll see each other again.",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Mission 1",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6890,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 8",
+          "id": [
+            "0_M010",
+            "0_M011"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_M010.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_M011.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "Congratulations. Here, why don't you take this reward with you.",
+          "conds": [
+            {
+              "condType": "eventMissionAction",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Mission 2",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6880,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 9",
+          "id": [
+            "0_M020",
+            "0_M021"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_M020.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_M021.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "I see... You there, you're pretty lucky. Seems like you got yourself a good item there, no?",
+          "conds": [
+            {
+              "condType": "eventMissionAction",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ]
+    },
+    {
+      "svtId": 602100,
+      "voicePrefix": 0,
+      "type": "eventShop",
+      "voiceLines": [
+        {
+          "name": "About the Shop 1",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6490,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 10",
+          "id": [
+            "0_I010",
+            "0_I011",
+            "0_I012"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I010.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I011.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I012.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            1,
+            0
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "Welcome. Fufu, to think I would open up a shop like this... Oh, how ridiculous.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Shop 2",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6480,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 11",
+          "id": [
+            "0_I020",
+            "0_I021",
+            "0_I022",
+            "0_I023"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I020.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I021.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I022.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I023.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "For you who has come from afar, welcome. Would you like some tea? Take your time and look around, I've got plenty in this shop. You might just find something you want.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Shop 3",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6470,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 12",
+          "id": [
+            "0_I030",
+            "0_I031",
+            "0_I032",
+            "0_I033"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I030.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I031.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I032.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I033.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.3,
+            0.1
+          ],
+          "face": [
+            1,
+            1,
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "I don't recommend holding back for too long. Either you release everything you bottled up, or you hold it for even longer... Don't be embarassed, if you have something that's troubling you, I will take a look for you here.",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Shop 4",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6460,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 13",
+          "id": [
+            "0_I040"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I040.mp3"
+          ],
+          "delay": [
+            0.0
+          ],
+          "face": [
+            0
+          ],
+          "form": [
+            0
+          ],
+          "text": [
+            ""
+          ],
+          "subtitle": "Thank you for your patronage.",
+          "conds": [
+            {
+              "condType": "eventPeriod",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            },
+            {
+              "condType": "eventShopPurchase",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Shop 5",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6450,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 14",
+          "id": [
+            "0_I050",
+            "0_I051",
+            "0_I052"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I050.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I051.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I052.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.3,
+            0.1
+          ],
+          "face": [
+            0,
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "When it comes to shops and business, I don't know anything really, but... since you come visit me so much, it might not be so bad. Please, come back again.",
+          "conds": [
+            {
+              "condType": "eventPeriod",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            },
+            {
+              "condType": "eventShopPurchase",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Shop 6",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6440,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 15",
+          "id": [
+            "0_I060",
+            "0_I061"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I060.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I061.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            1,
+            0
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "Okay, time to exchange. Don't you drop it, okay? Here, come back again.",
+          "conds": [
+            {
+              "condType": "eventPeriod",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            },
+            {
+              "condType": "eventShopPurchase",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Shop 11",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6380,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 16",
+          "id": [
+            "0_I110",
+            "0_I111"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I110.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I111.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            1,
+            0
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "This is it, time to close the shop. These will just rot away if I keep them, so make sure you exchange them all, okay?",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Shop 12",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6370,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 17",
+          "id": [
+            "0_I120",
+            "0_I121"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I120.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I121.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            4,
+            0
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "For the prize exchange, you already finished everything to the last drop? Did you leave anything?",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "About the Shop 13",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6360,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "Revival: The Demonic Capital: Rashomon 18",
+          "id": [
+            "0_I130",
+            "0_I131"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I130.mp3",
+            "https://assets.atlasacademy.io/GameData/NA/Audio/ChrVoice_602100/0_I131.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            1,
+            1
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "Fufufu, make sure you squeeze out everything and have no leftovers. Exchange all the prizes, okay?",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80055,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ]
+    }
+  ]
 }

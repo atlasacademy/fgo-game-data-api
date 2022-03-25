@@ -10,6 +10,7 @@ from ...models.raw import (
     mstBgm,
     mstBgmRelease,
     mstBoxGacha,
+    mstBoxGachaTalk,
     mstBuff,
     mstClosedMessage,
     mstCombineAppendPassiveSkill,
@@ -35,8 +36,10 @@ from ...models.raw import (
     mstEventPointBuff,
     mstEventPointGroup,
     mstEventReward,
+    mstEventRewardScene,
     mstEventRewardSet,
     mstEventTower,
+    mstEventVoicePlay,
     mstFriendship,
     mstFunc,
     mstFuncGroup,
@@ -84,6 +87,7 @@ from ...schemas.raw import (
     MstBgm,
     MstBgmRelease,
     MstBoxGacha,
+    MstBoxGachaTalk,
     MstBuff,
     MstClosedMessage,
     MstCombineAppendPassiveSkill,
@@ -109,8 +113,10 @@ from ...schemas.raw import (
     MstEventPointBuff,
     MstEventPointGroup,
     MstEventReward,
+    MstEventRewardScene,
     MstEventRewardSet,
     MstEventTower,
+    MstEventVoicePlay,
     MstFriendship,
     MstFunc,
     MstFuncGroup,
@@ -309,6 +315,16 @@ schema_table_fetch_all: dict[  # type:ignore
         mstSvtMultiPortrait.c.svtId,
         mstSvtMultiPortrait.c.limitCount,
     ),
+    MstEventRewardScene: (
+        mstEventRewardScene,
+        mstEventRewardScene.c.eventId,
+        mstEventRewardScene.c.slot,
+    ),
+    MstEventVoicePlay: (
+        mstEventVoicePlay,
+        mstEventVoicePlay.c.eventId,
+        mstEventVoicePlay.c.slot,
+    ),
 }
 
 TFetchAll = TypeVar("TFetchAll", bound=BaseModelORJson)
@@ -361,6 +377,7 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
     MstCommonConsume: (mstCommonConsume, mstCommonConsume.c.id, mstCommonConsume.c.id),
     MstCommonRelease: (mstCommonRelease, mstCommonRelease.c.id, mstCommonRelease.c.id),
     MstSpotRoad: (mstSpotRoad, mstSpotRoad.c.mapId, mstSpotRoad.c.id),
+    MstBoxGachaTalk: (mstBoxGachaTalk, mstBoxGachaTalk.c.id, mstBoxGachaTalk.c.id),
 }
 
 TFetchAllMultiple = TypeVar("TFetchAllMultiple", bound=BaseModelORJson)

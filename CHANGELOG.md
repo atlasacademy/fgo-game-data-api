@@ -8,6 +8,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 - `costumes` to nice mystic code.
 - `spotRoads` to nice war.
+- Webhooks after data update.
+- `image` to spot road.
+- `releaseConditions` to nice shop.
+- `ascensionImage` to nice servant.
+- `flags` to nice quest and nice war.
 
 ## 5.77.0 - 2022-03-02
 ### Added

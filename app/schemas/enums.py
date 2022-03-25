@@ -472,6 +472,23 @@ ENEMY_ROLE_TYPE_NAME: dict[int, EnemyRoleType] = {
 }
 
 
+### Event Reward Scene Type ###
+
+
+class EventRewardSceneType(IntEnum):
+    EVENT_SHOP = 1
+    BOX_GACHA = 2
+    EVENT_POINT = 3
+    EVENT_MISSION = 4
+    DAMAGE_POINT = 5
+    RANKING = 6
+    TOWER = 7
+    FATIGUE_RECOVERY = 8
+    BOARD_GAME_TOKEN = 9
+    TREASURE_BOX = 10
+    RANDOM_MISSION = 11
+
+
 ### Mission Cond Detail Type ###
 
 

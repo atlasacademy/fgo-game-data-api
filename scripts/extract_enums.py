@@ -374,6 +374,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Common Consume Type",
         "COMMON_CONSUME_TYPE_NAME",
     ),
+    (
+        "EventRewardSceneEntity.Flag",
+        "EventRewardSceneFlag",
+        "NiceEventRewardSceneFlag",
+        "Event Reward Scene Flag",
+        "EVENT_REWARD_SCENE_FLAG",
+    ),
 ]
 
 

@@ -3871,3 +3871,24 @@ class NiceCommonConsumeType(str, Enum):
 COMMON_CONSUME_TYPE_NAME: dict[int, NiceCommonConsumeType] = {
     1: NiceCommonConsumeType.item,
 }
+
+
+class EventRewardSceneFlag(IntEnum):
+    NPC_GUIDE = 2
+    IS_CHANGE_SVT_BY_CHANGED_TAB = 4
+    IS_HIDE_TAB = 8
+
+
+class NiceEventRewardSceneFlag(str, Enum):
+    """Event Reward Scene Flag"""
+
+    npcGuide = "npcGuide"
+    isChangeSvtByChangedTab = "isChangeSvtByChangedTab"
+    isHideTab = "isHideTab"
+
+
+EVENT_REWARD_SCENE_FLAG: dict[int, NiceEventRewardSceneFlag] = {
+    2: NiceEventRewardSceneFlag.npcGuide,
+    4: NiceEventRewardSceneFlag.isChangeSvtByChangedTab,
+    8: NiceEventRewardSceneFlag.isHideTab,
+}

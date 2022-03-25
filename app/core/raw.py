@@ -27,6 +27,7 @@ from ..schemas.raw import (
     MstBgm,
     MstBgmRelease,
     MstBoxGacha,
+    MstBoxGachaTalk,
     MstBuff,
     MstClosedMessage,
     MstCombineAppendPassiveSkill,
@@ -51,8 +52,10 @@ from ..schemas.raw import (
     MstEventPointBuff,
     MstEventPointGroup,
     MstEventReward,
+    MstEventRewardScene,
     MstEventRewardSet,
     MstEventTower,
+    MstEventVoicePlay,
     MstFriendship,
     MstFunc,
     MstFuncGroup,
@@ -86,6 +89,7 @@ from ..schemas.raw import (
     MstSvtMultiPortrait,
     MstSvtPassiveSkill,
     MstSvtScript,
+    MstSvtVoice,
     MstSvtVoiceRelation,
     MstTreasureBox,
     MstTreasureBoxGift,
@@ -321,6 +325,31 @@ async def get_svt_scripts(
     return await fetch.get_all_multiple(conn, MstSvtScript, ids)
 
 
+async def get_voice_from_svtVoice(
+    conn: AsyncConnection, mstSvtVoices: list[MstSvtVoice]
+) -> list[MstVoice]:
+    base_voice_ids = {
+        info.get_voice_id()
+        for svt_voice in mstSvtVoices
+        for script_json in svt_voice.scriptJson
+        for info in script_json.infos
+    }
+    return await fetch.get_all_multiple(conn, MstVoice, base_voice_ids)
+
+
+async def get_voice_group_from_svtVoice(
+    conn: AsyncConnection, mstSvtVoices: list[MstSvtVoice]
+) -> list[MstSvtGroup]:
+    group_ids = {
+        cond.value
+        for svt_voice in mstSvtVoices
+        for script_json in svt_voice.scriptJson
+        for cond in script_json.conds
+        if cond.condType == VoiceCondType.SVT_GROUP
+    }
+    return await fetch.get_all_multiple(conn, MstSvtGroup, group_ids)
+
+
 async def get_servant_entity(
     conn: AsyncConnection,
     servant_id: int,
@@ -480,26 +509,9 @@ async def get_servant_entity(
         mstSubtitle = await svt.get_mstSubtitle(conn, voice_ids)
         mstVoicePlayCond = await svt.get_mstVoicePlayCond(conn, voice_ids)
 
-        base_voice_ids = {
-            info.get_voice_id()
-            for svt_voice in mstSvtVoice
-            for script_json in svt_voice.scriptJson
-            for info in script_json.infos
-        }
-        svt_entity.mstVoice = await fetch.get_all_multiple(
-            conn, MstVoice, base_voice_ids
-        )
+        svt_entity.mstVoice = await get_voice_from_svtVoice(conn, mstSvtVoice)
 
-        group_ids = {
-            cond.value
-            for svt_voice in mstSvtVoice
-            for script_json in svt_voice.scriptJson
-            for cond in script_json.conds
-            if cond.condType == VoiceCondType.SVT_GROUP
-        }
-        svt_entity.mstSvtGroup = await fetch.get_all_multiple(
-            conn, MstSvtGroup, group_ids
-        )
+        svt_entity.mstSvtGroup = await get_voice_group_from_svtVoice(conn, mstSvtVoice)
 
         svt_entity.mstSvtVoice = sorted(mstSvtVoice, key=lambda voice: order[voice.id])
         svt_entity.mstVoicePlayCond = sorted(
@@ -700,9 +712,34 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
     )
 
     box_gachas = await fetch.get_all(conn, MstBoxGacha, event_id)
+
     box_gacha_base_ids = [
         base_id for box_gacha in box_gachas for base_id in box_gacha.baseIds
     ]
+    gacha_bases = await event.get_mstBoxGachaBase(conn, box_gacha_base_ids)
+
+    box_gacha_talk_ids = {
+        talk_id for box_gacha in box_gachas for talk_id in box_gacha.talkIds
+    }
+    gacha_talks = await fetch.get_all_multiple(
+        conn, MstBoxGachaTalk, box_gacha_talk_ids
+    )
+
+    voice_plays = await fetch.get_all(conn, MstEventVoicePlay, event_id)
+
+    reward_scenes = await fetch.get_all(conn, MstEventRewardScene, event_id)
+
+    voice_ids = (
+        {voice_play.guideImageId for voice_play in voice_plays}
+        | {gacha_talk.guideImageId for gacha_talk in gacha_talks}
+        | {guide_id for scene in reward_scenes for guide_id in scene.guideImageIds}
+    )
+
+    mstSvtVoice = await svt.get_mstSvtVoice(conn, voice_ids)
+    mstVoice = await get_voice_from_svtVoice(conn, mstSvtVoice)
+    mstSvtGroup = await get_voice_group_from_svtVoice(conn, mstSvtVoice)
+    mstSubtitle = await svt.get_mstSubtitle(conn, voice_ids)
+    mstVoicePlayCond = await svt.get_mstVoicePlayCond(conn, voice_ids)
 
     shops = await fetch.get_all(conn, MstShop, event_id)
     set_item_ids = [
@@ -720,8 +757,6 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
     rewards = await fetch.get_all(conn, MstEventReward, event_id)
 
     tower_rewards = await event.get_mstEventTowerReward(conn, event_id)
-
-    gacha_bases = await event.get_mstBoxGachaBase(conn, box_gacha_base_ids)
 
     treasure_boxes = await fetch.get_all(conn, MstTreasureBox, event_id)
     box_gift_ids = {box.treasureBoxGiftId for box in treasure_boxes}
@@ -748,6 +783,8 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
     return EventEntity(
         mstEvent=mstEvent,
         mstWar=await event.get_event_wars(conn, event_id),
+        mstEventRewardScene=reward_scenes,
+        mstEventVoicePlay=voice_plays,
         mstShop=shops,
         mstShopScript=shop_scripts,
         mstShopRelease=shop_releases,
@@ -764,10 +801,16 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         mstEventTowerReward=tower_rewards,
         mstBoxGacha=box_gachas,
         mstBoxGachaBase=gacha_bases,
+        mstBoxGachaTalk=gacha_talks,
         mstTreasureBox=treasure_boxes,
         mstTreasureBoxGift=box_gifts,
         mstItem=mstItem,
         mstCommonConsume=common_consumes,
+        mstSvtVoice=mstSvtVoice,
+        mstVoice=mstVoice,
+        mstSvtGroup=mstSvtGroup,
+        mstSubtitle=mstSubtitle,
+        mstVoicePlayCond=mstVoicePlayCond,
     )
 
 

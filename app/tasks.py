@@ -23,7 +23,7 @@ from .core.basic import (
 )
 from .core.nice.bgm import get_all_nice_bgms
 from .core.nice.cc import get_all_nice_ccs
-from .core.nice.event import get_nice_event
+from .core.nice.event.event import get_nice_event
 from .core.nice.item import get_all_nice_items
 from .core.nice.mc import get_all_nice_mcs
 from .core.nice.mm import get_all_nice_mms

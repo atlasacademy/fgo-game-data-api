@@ -5,7 +5,8 @@ from fastapi_limiter.depends import RateLimiter  # type: ignore
 
 from ..config import Settings
 from ..core import search
-from ..core.nice import ai, bgm, cc, event, item, mc, mm, nice, quest, script, war
+from ..core.nice import ai, bgm, cc, item, mc, mm, nice, quest, script, war
+from ..core.nice.event.event import get_nice_event
 from ..core.nice.script import get_nice_script_search_result
 from ..db.helpers.cc import get_cc_id
 from ..db.helpers.svt import get_ce_id, get_svt_id
@@ -705,7 +706,7 @@ async def get_event(
     Get the nice event data from the given event ID
     """
     async with get_db(region) as conn:
-        return item_response(await event.get_nice_event(conn, region, event_id, lang))
+        return item_response(await get_nice_event(conn, region, event_id, lang))
 
 
 @router.get(

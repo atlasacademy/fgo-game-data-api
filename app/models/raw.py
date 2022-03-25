@@ -1010,6 +1010,44 @@ mstEventPointBuff = Table(
 )
 
 
+mstEventRewardScene = Table(
+    "mstEventRewardScene",
+    metadata,
+    Column("guideImageIds", ARRAY(Integer)),
+    Column("guideLimitCounts", ARRAY(Integer)),
+    Column("guideFaceIds", ARRAY(Integer)),
+    Column("guideDisplayNames", ARRAY(String)),
+    Column("guideWeights", ARRAY(Integer)),
+    Column("guideUnselectedMax", ARRAY(Integer)),
+    Column("eventId", Integer, index=True),
+    Column("slot", Integer),
+    Column("groupId", Integer),
+    Column("type", Integer),
+    Column("tabImageId", Integer),
+    Column("imageId", Integer),
+    Column("bgId", Integer),
+    Column("bgmId", Integer),
+    Column("afterBgmId", Integer),
+    Column("flag", Integer),
+)
+
+
+mstEventVoicePlay = Table(
+    "mstEventVoicePlay",
+    metadata,
+    Column("voiceIds", ARRAY(String)),
+    Column("confirmVoiceIds", ARRAY(String)),
+    Column("eventId", Integer, index=True),
+    Column("slot", Integer),
+    Column("idx", Integer),
+    Column("guideImageId", Integer),
+    Column("condType", Integer),
+    Column("condValue", Integer),
+    Column("startedAt", Integer),
+    Column("endedAt", Integer),
+)
+
+
 mstMasterMission = Table(
     "mstMasterMission",
     metadata,
@@ -1178,6 +1216,18 @@ mstBoxGachaBase = Table(
     Column("priority", Integer),
     Column("maxNum", Integer),
     Column("detail", String),
+)
+
+
+mstBoxGachaTalk = Table(
+    "mstBoxGachaTalk",
+    metadata,
+    Column("befVoiceIds", ARRAY(String)),
+    Column("aftVoiceIds", ARRAY(String)),
+    Column("id", Integer, index=True),
+    Column("guideImageId", Integer),
+    Column("no", Integer),
+    Column("isRare", Boolean),
 )
 
 
@@ -1705,11 +1755,14 @@ TABLES_TO_BE_LOADED = [
     mstEventMissionCondition,
     mstEventTower,
     mstEventTowerReward,
+    mstEventRewardScene,
+    mstEventVoicePlay,
     mstTreasureBox,
     mstTreasureBoxGift,
     mstCommonConsume,
     mstBoxGacha,
     mstBoxGachaBase,
+    mstBoxGachaTalk,
     mstWarAdd,
     mstQuestRelease,
     mstQuestConsumeItem,

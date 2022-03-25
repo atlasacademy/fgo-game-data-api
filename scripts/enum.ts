@@ -1314,3 +1314,9 @@ export enum NiceSvtFrameType {
 export enum NiceCommonConsumeType {
     ITEM = "item",
 }
+
+export enum NiceEventRewardSceneFlag {
+    NPC_GUIDE = "npcGuide",
+    IS_CHANGE_SVT_BY_CHANGED_TAB = "isChangeSvtByChangedTab",
+    IS_HIDE_TAB = "isHideTab",
+}

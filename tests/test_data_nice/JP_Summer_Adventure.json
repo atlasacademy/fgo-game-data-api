@@ -5753,6 +5753,79 @@
       "bgImageGet": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardget_8033101.png"
     }
   ],
+  "rewardScenes": [
+    {
+      "slot": 0,
+      "groupId": 0,
+      "type": 3,
+      "guides": [
+        {
+          "imageId": 109822140,
+          "limitCount": 0,
+          "faceId": 11
+        },
+        {
+          "imageId": 109822141,
+          "limitCount": 0,
+          "faceId": 11
+        },
+        {
+          "imageId": 109822061,
+          "limitCount": 0,
+          "faceId": 7
+        },
+        {
+          "imageId": 109822060,
+          "limitCount": 0,
+          "faceId": 7
+        }
+      ],
+      "tabImageId": 0,
+      "imageId": 0,
+      "bgId": 129703,
+      "bgmId": 533,
+      "afterBgmId": 533,
+      "flags": [
+        "npcGuide"
+      ]
+    },
+    {
+      "slot": 1,
+      "groupId": 0,
+      "type": 10,
+      "guides": [
+        {
+          "imageId": 901200,
+          "limitCount": 0,
+          "faceId": 10
+        }
+      ],
+      "tabImageId": 1,
+      "imageId": 1,
+      "bgId": 129703,
+      "bgmId": 533,
+      "afterBgmId": 533,
+      "flags": []
+    },
+    {
+      "slot": 2,
+      "groupId": 0,
+      "type": 1,
+      "guides": [
+        {
+          "imageId": 901200,
+          "limitCount": 0,
+          "faceId": 10
+        }
+      ],
+      "tabImageId": 2,
+      "imageId": 2,
+      "bgId": 129703,
+      "bgmId": 533,
+      "afterBgmId": 533,
+      "flags": []
+    }
+  ],
   "pointGroups": [],
   "pointBuffs": [],
   "missions": [],
@@ -6040,6 +6113,3041 @@
         "objectId": 94060407,
         "num": 1
       }
+    }
+  ],
+  "voicePlays": [
+    {
+      "slot": 0,
+      "idx": 0,
+      "guideImageId": 109822060,
+      "voiceLines": [
+        {
+          "name": "イベントについて 1",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6990,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N010",
+            "0_N011",
+            "0_N012",
+            "0_N013"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822060/0_N010.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822060/0_N011.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822060/0_N012.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822060/0_N013.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.3,
+            0.1,
+            0.1
+          ],
+          "face": [
+            1,
+            1,
+            8,
+            8
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "イベントについて 2",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6980,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N020",
+            "0_N021",
+            "0_N022"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822060/0_N020.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822060/0_N021.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822060/0_N022.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1
+          ],
+          "face": [
+            8,
+            8,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ],
+      "confirmVoiceLines": [],
+      "condType": "event",
+      "condValue": 80331,
+      "startedAt": 1631102400,
+      "endedAt": 1901199599
+    },
+    {
+      "slot": 0,
+      "idx": 0,
+      "guideImageId": 109822061,
+      "voiceLines": [
+        {
+          "name": "イベントについて 3",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6970,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N030",
+            "0_N031",
+            "0_N032",
+            "0_N033"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N030.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N031.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N032.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N033.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.3,
+            0.1
+          ],
+          "face": [
+            0,
+            0,
+            4,
+            2
+          ],
+          "form": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "イベントについて 4",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6960,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N040",
+            "0_N041",
+            "0_N042",
+            "0_N043"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N040.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N041.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N042.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N043.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.3,
+            0.1
+          ],
+          "face": [
+            1,
+            1,
+            8,
+            7
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "イベントについて 5",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6950,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N050",
+            "0_N051"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N050.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N051.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ],
+      "confirmVoiceLines": [],
+      "condType": "event",
+      "condValue": 80331,
+      "startedAt": 1631102400,
+      "endedAt": 1901199599
+    },
+    {
+      "slot": 0,
+      "idx": 0,
+      "guideImageId": 109822140,
+      "voiceLines": [
+        {
+          "name": "イベントについて 1",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6990,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N010",
+            "0_N011",
+            "0_N012",
+            "0_N013",
+            "0_N014"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N010.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N011.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N012.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N013.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N014.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            1,
+            1,
+            14,
+            17,
+            16
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "イベントについて 3",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6970,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N030",
+            "0_N031",
+            "0_N032",
+            "0_N033",
+            "0_N034"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N030.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N031.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N032.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N033.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N034.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            11,
+            18,
+            3,
+            3,
+            5
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "イベントについて 4",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6960,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N040",
+            "0_N041",
+            "0_N042",
+            "0_N043",
+            "0_N044"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N040.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N041.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N042.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N043.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N044.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            3,
+            3,
+            2,
+            5,
+            26
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "イベントについて 5",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6950,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N050",
+            "0_N051",
+            "0_N052"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N050.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N051.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N052.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            4,
+            25
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ],
+      "confirmVoiceLines": [],
+      "condType": "event",
+      "condValue": 80331,
+      "startedAt": 1631102400,
+      "endedAt": 1901199599
+    },
+    {
+      "slot": 0,
+      "idx": 0,
+      "guideImageId": 109822141,
+      "voiceLines": [
+        {
+          "name": "イベントについて 2",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6980,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N020",
+            "0_N021",
+            "0_N022",
+            "0_N023",
+            "0_N024"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N020.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N021.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N022.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N023.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N024.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.3,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            50,
+            51,
+            52,
+            52,
+            53
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ],
+      "confirmVoiceLines": [],
+      "condType": "event",
+      "condValue": 80331,
+      "startedAt": 1631102400,
+      "endedAt": 1901199599
+    },
+    {
+      "slot": 0,
+      "idx": 1,
+      "guideImageId": 109822060,
+      "voiceLines": [
+        {
+          "name": "イベントについて 6",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6940,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N060",
+            "0_N061",
+            "0_N062"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822060/0_N060.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822060/0_N061.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822060/0_N062.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.3,
+            0.1
+          ],
+          "face": [
+            4,
+            8,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ],
+      "confirmVoiceLines": [],
+      "condType": "eventEnd",
+      "condValue": 80331,
+      "startedAt": 1632888000,
+      "endedAt": 1901199599
+    },
+    {
+      "slot": 0,
+      "idx": 1,
+      "guideImageId": 109822061,
+      "voiceLines": [
+        {
+          "name": "イベントについて 7",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6930,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N070",
+            "0_N071",
+            "0_N072"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N070.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N071.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N072.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1
+          ],
+          "face": [
+            7,
+            7,
+            8
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ],
+      "confirmVoiceLines": [],
+      "condType": "eventEnd",
+      "condValue": 80331,
+      "startedAt": 1632888000,
+      "endedAt": 1901199599
+    },
+    {
+      "slot": 0,
+      "idx": 1,
+      "guideImageId": 109822140,
+      "voiceLines": [
+        {
+          "name": "イベントについて 6",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6940,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N060",
+            "0_N061",
+            "0_N062",
+            "0_N063"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N060.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N061.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N062.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N063.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.3,
+            0.1,
+            0.1
+          ],
+          "face": [
+            4,
+            24,
+            23,
+            36
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ],
+      "confirmVoiceLines": [],
+      "condType": "eventEnd",
+      "condValue": 80331,
+      "startedAt": 1632888000,
+      "endedAt": 1901199599
+    },
+    {
+      "slot": 0,
+      "idx": 1,
+      "guideImageId": 109822141,
+      "voiceLines": [
+        {
+          "name": "イベントについて 7",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6930,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N070",
+            "0_N071",
+            "0_N072",
+            "0_N073",
+            "0_N074",
+            "0_N075",
+            "0_N076",
+            "0_N077"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N070.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N071.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N072.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N073.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N074.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N075.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N076.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N077.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            1,
+            1,
+            12,
+            54,
+            12,
+            12,
+            11,
+            40
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ],
+      "confirmVoiceLines": [],
+      "condType": "eventEnd",
+      "condValue": 80331,
+      "startedAt": 1632888000,
+      "endedAt": 1901199599
+    },
+    {
+      "slot": 1,
+      "idx": 0,
+      "guideImageId": 901200,
+      "voiceLines": [
+        {
+          "name": "イベントについて 1",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6990,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 1",
+          "id": [
+            "0_N010",
+            "0_N011"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_N010.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_N011.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            1,
+            29
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "イベントについて 3",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6970,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 2",
+          "id": [
+            "0_N030",
+            "0_N031"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_N030.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_N031.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            25,
+            13
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ],
+      "confirmVoiceLines": [],
+      "condType": "event",
+      "condValue": 80331,
+      "startedAt": 1631102400,
+      "endedAt": 1901199599
+    },
+    {
+      "slot": 1,
+      "idx": 1,
+      "guideImageId": 901200,
+      "voiceLines": [
+        {
+          "name": "イベントについて 4",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6960,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 3",
+          "id": [
+            "0_N040",
+            "0_N041"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_N040.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_N041.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            23,
+            10
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "イベントについて 5",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6950,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 4",
+          "id": [
+            "0_N050",
+            "0_N051"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_N050.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_N051.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            6,
+            7
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ],
+      "confirmVoiceLines": [],
+      "condType": "eventEnd",
+      "condValue": 80331,
+      "startedAt": 1632888000,
+      "endedAt": 1901199599
+    },
+    {
+      "slot": 2,
+      "idx": 0,
+      "guideImageId": 901200,
+      "voiceLines": [
+        {
+          "name": "ショップついて 1",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6490,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 5",
+          "id": [
+            "0_I010",
+            "0_I011"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I010.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I011.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            1,
+            19
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 2",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6480,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 6",
+          "id": [
+            "0_I020"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I020.mp3"
+          ],
+          "delay": [
+            0.0
+          ],
+          "face": [
+            9
+          ],
+          "form": [
+            0
+          ],
+          "text": [
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ],
+      "confirmVoiceLines": [],
+      "condType": "event",
+      "condValue": 80331,
+      "startedAt": 1631102400,
+      "endedAt": 1901199599
+    },
+    {
+      "slot": 2,
+      "idx": 1,
+      "guideImageId": 901200,
+      "voiceLines": [
+        {
+          "name": "ショップついて 16",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6330,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 20",
+          "id": [
+            "0_I160",
+            "0_I161",
+            "0_I162"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I160.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I161.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I162.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.3
+          ],
+          "face": [
+            0,
+            4,
+            3
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 17",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6320,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 21",
+          "id": [
+            "0_I170",
+            "0_I171"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I170.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I171.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ],
+      "confirmVoiceLines": [],
+      "condType": "eventEnd",
+      "condValue": 80331,
+      "startedAt": 1632888000,
+      "endedAt": 1901199599
+    }
+  ],
+  "voices": [
+    {
+      "svtId": 901200,
+      "voicePrefix": 0,
+      "type": "eventReward",
+      "voiceLines": [
+        {
+          "name": "イベントについて 1",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6990,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 1",
+          "id": [
+            "0_N010",
+            "0_N011"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_N010.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_N011.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            1,
+            29
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "イベントについて 3",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6970,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 2",
+          "id": [
+            "0_N030",
+            "0_N031"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_N030.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_N031.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            25,
+            13
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "イベントについて 4",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6960,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 3",
+          "id": [
+            "0_N040",
+            "0_N041"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_N040.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_N041.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            23,
+            10
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "イベントについて 5",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6950,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 4",
+          "id": [
+            "0_N050",
+            "0_N051"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_N050.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_N051.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            6,
+            7
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ]
+    },
+    {
+      "svtId": 901200,
+      "voicePrefix": 0,
+      "type": "eventShop",
+      "voiceLines": [
+        {
+          "name": "ショップついて 1",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6490,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 5",
+          "id": [
+            "0_I010",
+            "0_I011"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I010.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I011.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            1,
+            19
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 2",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6480,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 6",
+          "id": [
+            "0_I020"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I020.mp3"
+          ],
+          "delay": [
+            0.0
+          ],
+          "face": [
+            9
+          ],
+          "form": [
+            0
+          ],
+          "text": [
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 3",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6470,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 7",
+          "id": [
+            "0_I030",
+            "0_I031"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I030.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I031.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            9,
+            1
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventShopPurchase",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            },
+            {
+              "condType": "eventPeriod",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 4",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6460,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 8",
+          "id": [
+            "0_I040",
+            "0_I041"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I040.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I041.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            10,
+            11
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventShopPurchase",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            },
+            {
+              "condType": "eventPeriod",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 5",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6450,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 9",
+          "id": [
+            "0_I050",
+            "0_I051"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I050.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I051.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            1,
+            12
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventShopPurchase",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            },
+            {
+              "condType": "eventPeriod",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 6",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6440,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 10",
+          "id": [
+            "0_I060",
+            "0_I061",
+            "0_I062"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I060.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I061.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I062.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1
+          ],
+          "face": [
+            1,
+            26,
+            19
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventShopPurchase",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            },
+            {
+              "condType": "eventPeriod",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 7",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6430,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 11",
+          "id": [
+            "0_I070",
+            "0_I071"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I070.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I071.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            6,
+            1
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventPeriod",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            },
+            {
+              "condType": "spacificShopPurchase",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 8",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6420,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 12",
+          "id": [
+            "0_I080",
+            "0_I081"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I080.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I081.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            1,
+            9
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventPeriod",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            },
+            {
+              "condType": "spacificShopPurchase",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 9",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6410,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 13",
+          "id": [
+            "0_I090"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I090.mp3"
+          ],
+          "delay": [
+            0.0
+          ],
+          "face": [
+            10
+          ],
+          "form": [
+            0
+          ],
+          "text": [
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventPeriod",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            },
+            {
+              "condType": "spacificShopPurchase",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 10",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6400,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 14",
+          "id": [
+            "0_I100"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I100.mp3"
+          ],
+          "delay": [
+            0.0
+          ],
+          "face": [
+            23
+          ],
+          "form": [
+            0
+          ],
+          "text": [
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventPeriod",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            },
+            {
+              "condType": "spacificShopPurchase",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 11",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6380,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 15",
+          "id": [
+            "0_I110"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I110.mp3"
+          ],
+          "delay": [
+            0.0
+          ],
+          "face": [
+            5
+          ],
+          "form": [
+            0
+          ],
+          "text": [
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventPeriod",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            },
+            {
+              "condType": "spacificShopPurchase",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 12",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6370,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 16",
+          "id": [
+            "0_I120"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I120.mp3"
+          ],
+          "delay": [
+            0.0
+          ],
+          "face": [
+            9
+          ],
+          "form": [
+            0
+          ],
+          "text": [
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventPeriod",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            },
+            {
+              "condType": "spacificShopPurchase",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 13",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6360,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 17",
+          "id": [
+            "0_I130"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I130.mp3"
+          ],
+          "delay": [
+            0.0
+          ],
+          "face": [
+            12
+          ],
+          "form": [
+            0
+          ],
+          "text": [
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventPeriod",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            },
+            {
+              "condType": "spacificShopPurchase",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 14",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6350,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 18",
+          "id": [
+            "0_I140"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I140.mp3"
+          ],
+          "delay": [
+            0.0
+          ],
+          "face": [
+            27
+          ],
+          "form": [
+            0
+          ],
+          "text": [
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventPeriod",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            },
+            {
+              "condType": "spacificShopPurchase",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 15",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6340,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 19",
+          "id": [
+            "0_I150"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I150.mp3"
+          ],
+          "delay": [
+            0.0
+          ],
+          "face": [
+            19
+          ],
+          "form": [
+            0
+          ],
+          "text": [
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventPeriod",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            },
+            {
+              "condType": "spacificShopPurchase",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 16",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6330,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 20",
+          "id": [
+            "0_I160",
+            "0_I161",
+            "0_I162"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I160.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I161.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I162.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.3
+          ],
+          "face": [
+            0,
+            4,
+            3
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 17",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6320,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 21",
+          "id": [
+            "0_I170",
+            "0_I171"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I170.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_I171.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ]
+    },
+    {
+      "svtId": 901200,
+      "voicePrefix": 0,
+      "type": "treasureBox",
+      "voiceLines": [
+        {
+          "name": "宝箱開封ボイス 2",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 3469,
+          "svtVoiceType": "treasureBox",
+          "overwriteName": "カルデア・サマーアドベンチャー！\n～夢追う少年と夢見る少女～ 22",
+          "id": [
+            "0_T020",
+            "0_T021"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_T020.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901200/0_T021.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            5,
+            1
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ]
+    },
+    {
+      "svtId": 109822060,
+      "voicePrefix": 0,
+      "type": "eventReward",
+      "voiceLines": [
+        {
+          "name": "イベントについて 1",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6990,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N010",
+            "0_N011",
+            "0_N012",
+            "0_N013"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822060/0_N010.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822060/0_N011.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822060/0_N012.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822060/0_N013.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.3,
+            0.1,
+            0.1
+          ],
+          "face": [
+            1,
+            1,
+            8,
+            8
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "イベントについて 2",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6980,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N020",
+            "0_N021",
+            "0_N022"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822060/0_N020.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822060/0_N021.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822060/0_N022.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1
+          ],
+          "face": [
+            8,
+            8,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "イベントについて 6",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6940,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N060",
+            "0_N061",
+            "0_N062"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822060/0_N060.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822060/0_N061.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822060/0_N062.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.3,
+            0.1
+          ],
+          "face": [
+            4,
+            8,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ]
+    },
+    {
+      "svtId": 109822061,
+      "voicePrefix": 0,
+      "type": "eventReward",
+      "voiceLines": [
+        {
+          "name": "イベントについて 3",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6970,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N030",
+            "0_N031",
+            "0_N032",
+            "0_N033"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N030.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N031.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N032.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N033.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.3,
+            0.1
+          ],
+          "face": [
+            0,
+            0,
+            4,
+            2
+          ],
+          "form": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "イベントについて 4",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6960,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N040",
+            "0_N041",
+            "0_N042",
+            "0_N043"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N040.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N041.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N042.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N043.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.3,
+            0.1
+          ],
+          "face": [
+            1,
+            1,
+            8,
+            7
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "イベントについて 5",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6950,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N050",
+            "0_N051"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N050.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N051.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "イベントについて 7",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6930,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N070",
+            "0_N071",
+            "0_N072"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N070.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N071.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822061/0_N072.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1
+          ],
+          "face": [
+            7,
+            7,
+            8
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ]
+    },
+    {
+      "svtId": 109822140,
+      "voicePrefix": 0,
+      "type": "eventReward",
+      "voiceLines": [
+        {
+          "name": "イベントについて 1",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6990,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N010",
+            "0_N011",
+            "0_N012",
+            "0_N013",
+            "0_N014"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N010.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N011.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N012.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N013.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N014.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            1,
+            1,
+            14,
+            17,
+            16
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "イベントについて 3",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6970,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N030",
+            "0_N031",
+            "0_N032",
+            "0_N033",
+            "0_N034"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N030.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N031.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N032.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N033.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N034.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            11,
+            18,
+            3,
+            3,
+            5
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "イベントについて 4",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6960,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N040",
+            "0_N041",
+            "0_N042",
+            "0_N043",
+            "0_N044"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N040.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N041.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N042.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N043.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N044.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            3,
+            3,
+            2,
+            5,
+            26
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "イベントについて 5",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6950,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N050",
+            "0_N051",
+            "0_N052"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N050.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N051.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N052.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            4,
+            25
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "イベントについて 6",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6940,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N060",
+            "0_N061",
+            "0_N062",
+            "0_N063"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N060.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N061.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N062.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822140/0_N063.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.3,
+            0.1,
+            0.1
+          ],
+          "face": [
+            4,
+            24,
+            23,
+            36
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ]
+    },
+    {
+      "svtId": 109822141,
+      "voicePrefix": 0,
+      "type": "eventReward",
+      "voiceLines": [
+        {
+          "name": "イベントについて 2",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6980,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N020",
+            "0_N021",
+            "0_N022",
+            "0_N023",
+            "0_N024"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N020.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N021.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N022.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N023.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N024.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.3,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            50,
+            51,
+            52,
+            52,
+            53
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "イベントについて 7",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6930,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "",
+          "id": [
+            "0_N070",
+            "0_N071",
+            "0_N072",
+            "0_N073",
+            "0_N074",
+            "0_N075",
+            "0_N076",
+            "0_N077"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N070.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N071.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N072.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N073.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N074.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N075.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N076.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109822141/0_N077.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            1,
+            1,
+            12,
+            54,
+            12,
+            12,
+            11,
+            40
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80331,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ]
     }
   ]
 }
