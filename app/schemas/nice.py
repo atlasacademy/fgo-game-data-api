@@ -1434,7 +1434,7 @@ class NiceEventTreasureBox(BaseModelORJson):
 class NiceEventRewardSceneGuide(BaseModelORJson):
     imageId: int
     limitCount: int
-    faceId: int
+    faceId: int | None = None
     displayName: str | None = None
     weight: int | None = None
     unselectedMax: int | None = None

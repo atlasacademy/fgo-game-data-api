@@ -11,7 +11,9 @@ def get_nice_event_reward_scene(
         NiceEventRewardSceneGuide(
             imageId=guideImageId,
             limitCount=reward_scene.guideLimitCounts[i],
-            faceId=reward_scene.guideFaceIds[i],
+            faceId=reward_scene.guideFaceIds[i]
+            if len(reward_scene.guideFaceIds) > i
+            else None,
             displayName=reward_scene.guideDisplayNames[i]
             if len(reward_scene.guideDisplayNames) > i
             else None,

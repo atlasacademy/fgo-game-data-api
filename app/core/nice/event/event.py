@@ -60,7 +60,7 @@ async def get_nice_event(
         subtitle_ids = {
             subtitle.id: subtitle.serif
             for subtitle in raw_event.mstSubtitle
-            if subtitle.get_svtId() == svt_voice.id == svt_voice.id
+            if subtitle.get_svtId() == svt_voice.id
         }
         costume_ids = {
             costumeMap.id: costumeMap.battleCharaId
