@@ -47,7 +47,7 @@ from ...schemas.raw import (
     ScriptFile,
 )
 from .. import raw
-from ..utils import get_traits_list, get_translation
+from ..utils import get_flags, get_traits_list, get_translation
 from .base_script import get_nice_script_link
 from .bgm import get_nice_bgm
 from .enemy import get_nice_drop, get_quest_enemies
@@ -134,7 +134,7 @@ async def get_nice_quest(
         "id": raw_quest.mstQuest.id,
         "name": get_translation(lang, raw_quest.mstQuest.name),
         "type": QUEST_TYPE_NAME[raw_quest.mstQuest.type],
-        "flags": [v for k, v in Quest_FLAG_NAME.items() if k & raw_quest.mstQuest.flag],
+        "flags": get_flags(raw_quest.mstQuest.flag, Quest_FLAG_NAME),
         "consumeType": QUEST_CONSUME_TYPE_NAME[raw_quest.mstQuest.consumeType],
         "consumeItem": [
             nice_item_amount

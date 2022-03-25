@@ -1,5 +1,6 @@
 import re
 import string
+from enum import Enum
 from typing import Iterable, Literal, Optional, TypeVar, Union
 
 from pydantic import HttpUrl
@@ -144,3 +145,10 @@ def nullable_to_string(nullable: Optional[str]) -> str:
 def fmt_url(url_fmt: str, **kwargs: int | str) -> HttpUrl:
     url: HttpUrl = parse_obj_as(HttpUrl, url_fmt.format(**kwargs))
     return url
+
+
+TFlagEnum = TypeVar("TFlagEnum", bound=Enum)
+
+
+def get_flags(flag: int, flag_enums: dict[int, TFlagEnum]) -> list[TFlagEnum]:
+    return [flag_value for flag_id, flag_value in flag_enums.items() if flag_id & flag]

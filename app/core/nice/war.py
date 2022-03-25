@@ -31,7 +31,7 @@ from ...schemas.raw import (
     QuestEntity,
 )
 from .. import raw
-from ..utils import fmt_url, get_translation
+from ..utils import fmt_url, get_flags, get_translation
 from .base_script import get_script_url
 from .bgm import get_nice_bgm
 from .quest import get_nice_quest
@@ -192,7 +192,7 @@ async def get_nice_war(
         age=raw_war.mstWar.age,
         name=raw_war.mstWar.name,
         longName=get_translation(lang, raw_war.mstWar.longName),
-        flags=[v for k, v in WAR_FLAG_NAME.items() if k & raw_war.mstWar.flag],
+        flags=get_flags(raw_war.mstWar.flag, WAR_FLAG_NAME),
         banner=fmt_url(AssetURL.banner, **base_settings, banner=banner_file)
         if raw_war.mstWar.bannerId != 0
         else None,
