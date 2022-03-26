@@ -2261,6 +2261,7 @@
         {
           "imageId": 901000,
           "limitCount": 0,
+          "image": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/9010000/9010000_merged.png",
           "faceId": 12
         }
       ],
@@ -2427,6 +2428,7 @@
         {
           "imageId": 204100,
           "limitCount": 0,
+          "image": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/2041000/2041000_merged.png",
           "faceId": 0
         }
       ],

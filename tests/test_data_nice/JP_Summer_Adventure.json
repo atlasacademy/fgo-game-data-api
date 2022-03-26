@@ -5762,21 +5762,25 @@
         {
           "imageId": 109822140,
           "limitCount": 0,
+          "image": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/1098221400/1098221400_merged.png",
           "faceId": 11
         },
         {
           "imageId": 109822141,
           "limitCount": 0,
+          "image": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/1098221410/1098221410_merged.png",
           "faceId": 11
         },
         {
           "imageId": 109822061,
           "limitCount": 0,
+          "image": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/1098220610/1098220610_merged.png",
           "faceId": 7
         },
         {
           "imageId": 109822060,
           "limitCount": 0,
+          "image": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/1098220600/1098220600_merged.png",
           "faceId": 7
         }
       ],
@@ -5817,6 +5821,7 @@
         {
           "imageId": 901200,
           "limitCount": 0,
+          "image": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/9012000/9012000_merged.png",
           "faceId": 10
         }
       ],
@@ -5856,6 +5861,7 @@
         {
           "imageId": 901200,
           "limitCount": 0,
+          "image": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/9012000/9012000_merged.png",
           "faceId": 10
         }
       ],

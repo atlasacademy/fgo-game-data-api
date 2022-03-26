@@ -19,10 +19,18 @@ def get_nice_event_reward_scene(
     reward_scene: MstEventRewardScene,
     nice_bgms: dict[int, NiceBgmEntity],
 ) -> NiceEventRewardScene:
+    base_settings = {"base_url": settings.asset_url, "region": region}
+
     guides = [
         NiceEventRewardSceneGuide(
             imageId=guideImageId,
             limitCount=reward_scene.guideLimitCounts[i],
+            image=fmt_url(
+                AssetURL.charaFigure,
+                **base_settings,
+                item_id=guideImageId,
+                i=reward_scene.guideLimitCounts[i],
+            ),
             faceId=reward_scene.guideFaceIds[i]
             if len(reward_scene.guideFaceIds) > i
             else None,
@@ -40,7 +48,6 @@ def get_nice_event_reward_scene(
     ]
 
     event_id = reward_scene.eventId
-    base_settings = {"base_url": settings.asset_url, "region": region}
 
     return NiceEventRewardScene(
         slot=reward_scene.slot,

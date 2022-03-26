@@ -27,6 +27,7 @@
         {
           "imageId": 202100,
           "limitCount": 1,
+          "image": "https://assets.atlasacademy.io/GameData/NA/CharaFigure/2021001/2021001_merged.png",
           "faceId": 0
         }
       ],
@@ -183,6 +184,7 @@
         {
           "imageId": 202100,
           "limitCount": 0,
+          "image": "https://assets.atlasacademy.io/GameData/NA/CharaFigure/2021000/2021000_merged.png",
           "faceId": 0
         }
       ],
