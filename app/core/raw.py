@@ -781,6 +781,11 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
     }
     mstItem = await get_multiple_items(conn, item_ids)
 
+    bgm_ids = {reward_scene.bgmId for reward_scene in reward_scenes} | {
+        reward_scene.afterBgmId for reward_scene in reward_scenes
+    }
+    mstBgm = [await get_bgm_entity(conn, bgm_id) for bgm_id in bgm_ids]
+
     return EventEntity(
         mstEvent=mstEvent,
         mstWar=await event.get_event_wars(conn, event_id),
@@ -813,6 +818,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         mstSubtitle=mstSubtitle,
         mstVoicePlayCond=mstVoicePlayCond,
         mstSvtExtra=mstSvtExtra,
+        mstBgm=mstBgm,
     )
 
 

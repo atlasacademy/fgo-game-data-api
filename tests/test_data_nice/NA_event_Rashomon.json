@@ -4232,11 +4232,149 @@
           "faceId": 0
         }
       ],
-      "tabImageId": 0,
-      "imageId": 0,
-      "bgId": 27000,
-      "bgmId": 58,
-      "afterBgmId": 58,
+      "tabOnImage": "https://assets.atlasacademy.io/GameData/NA/EventReward/btn_txt_on_80018_0.png",
+      "tabOffImage": "https://assets.atlasacademy.io/GameData/NA/EventReward/btn_txt_off_80018_0.png",
+      "bg": "https://assets.atlasacademy.io/GameData/NA/Back/back27000.png",
+      "bgm": {
+        "id": 58,
+        "name": "The Demonic Capital Rashomon:\nShop Theme Song",
+        "fileName": "BGM_EVENT_19",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_EVENT_19/BGM_EVENT_19.mp3",
+        "priority": 1006003,
+        "detail": "",
+        "notReleased": false,
+        "shop": {
+          "id": 7000058,
+          "baseShopId": 7000058,
+          "shopType": "bgm",
+          "releaseConditions": [],
+          "eventId": 0,
+          "slot": 0,
+          "priority": 129,
+          "name": "The Demonic Capital Rashomon:\nShop Theme Song",
+          "detail": "The following items will be used to unlock this track:\nSeed of Yggdrasil 15",
+          "infoMessage": "",
+          "warningMessage": "",
+          "payType": "item",
+          "cost": {
+            "item": {
+              "id": 6502,
+              "name": "Seed of Yggdrasil",
+              "type": "skillLvUp",
+              "uses": [
+                "skill",
+                "ascension",
+                "costume"
+              ],
+              "detail": "\"Skill Up & Ascension Material\"\nA seed of a giant tree that symbolizes the world.",
+              "individuality": [],
+              "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6502.png",
+              "background": "silver",
+              "priority": 210,
+              "dropPriority": 8203
+            },
+            "amount": 15
+          },
+          "purchaseType": "bgm",
+          "targetIds": [
+            0
+          ],
+          "itemSet": [],
+          "setNum": 1,
+          "limitNum": 1,
+          "defaultLv": 0,
+          "defaultLimitCount": 0,
+          "openedAt": 1487944800,
+          "closedAt": 1901231999
+        },
+        "logo": "https://assets.atlasacademy.io/GameData/NA/MyRoomSound/soundlogo_015.png",
+        "releaseConditions": [
+          {
+            "id": 50,
+            "type": "questClear",
+            "condGroup": 0,
+            "targetIds": [
+              94003777,
+              94012377
+            ],
+            "vals": [
+              0
+            ],
+            "priority": 10000,
+            "closedMessage": "Unlock by completing The Demonic Capital: Rashomon"
+          }
+        ]
+      },
+      "afterBgm": {
+        "id": 58,
+        "name": "The Demonic Capital Rashomon:\nShop Theme Song",
+        "fileName": "BGM_EVENT_19",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_EVENT_19/BGM_EVENT_19.mp3",
+        "priority": 1006003,
+        "detail": "",
+        "notReleased": false,
+        "shop": {
+          "id": 7000058,
+          "baseShopId": 7000058,
+          "shopType": "bgm",
+          "releaseConditions": [],
+          "eventId": 0,
+          "slot": 0,
+          "priority": 129,
+          "name": "The Demonic Capital Rashomon:\nShop Theme Song",
+          "detail": "The following items will be used to unlock this track:\nSeed of Yggdrasil 15",
+          "infoMessage": "",
+          "warningMessage": "",
+          "payType": "item",
+          "cost": {
+            "item": {
+              "id": 6502,
+              "name": "Seed of Yggdrasil",
+              "type": "skillLvUp",
+              "uses": [
+                "skill",
+                "ascension",
+                "costume"
+              ],
+              "detail": "\"Skill Up & Ascension Material\"\nA seed of a giant tree that symbolizes the world.",
+              "individuality": [],
+              "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6502.png",
+              "background": "silver",
+              "priority": 210,
+              "dropPriority": 8203
+            },
+            "amount": 15
+          },
+          "purchaseType": "bgm",
+          "targetIds": [
+            0
+          ],
+          "itemSet": [],
+          "setNum": 1,
+          "limitNum": 1,
+          "defaultLv": 0,
+          "defaultLimitCount": 0,
+          "openedAt": 1487944800,
+          "closedAt": 1901231999
+        },
+        "logo": "https://assets.atlasacademy.io/GameData/NA/MyRoomSound/soundlogo_015.png",
+        "releaseConditions": [
+          {
+            "id": 50,
+            "type": "questClear",
+            "condGroup": 0,
+            "targetIds": [
+              94003777,
+              94012377
+            ],
+            "vals": [
+              0
+            ],
+            "priority": 10000,
+            "closedMessage": "Unlock by completing The Demonic Capital: Rashomon"
+          }
+        ]
+      },
       "flags": []
     },
     {
@@ -4250,11 +4388,150 @@
           "faceId": 0
         }
       ],
-      "tabImageId": 1,
-      "imageId": 1,
-      "bgId": 27000,
-      "bgmId": 58,
-      "afterBgmId": 58,
+      "tabOnImage": "https://assets.atlasacademy.io/GameData/NA/EventReward/btn_txt_on_80018_1.png",
+      "tabOffImage": "https://assets.atlasacademy.io/GameData/NA/EventReward/btn_txt_off_80018_1.png",
+      "image": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_type_txt_80018_1.png",
+      "bg": "https://assets.atlasacademy.io/GameData/NA/Back/back27000.png",
+      "bgm": {
+        "id": 58,
+        "name": "The Demonic Capital Rashomon:\nShop Theme Song",
+        "fileName": "BGM_EVENT_19",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_EVENT_19/BGM_EVENT_19.mp3",
+        "priority": 1006003,
+        "detail": "",
+        "notReleased": false,
+        "shop": {
+          "id": 7000058,
+          "baseShopId": 7000058,
+          "shopType": "bgm",
+          "releaseConditions": [],
+          "eventId": 0,
+          "slot": 0,
+          "priority": 129,
+          "name": "The Demonic Capital Rashomon:\nShop Theme Song",
+          "detail": "The following items will be used to unlock this track:\nSeed of Yggdrasil 15",
+          "infoMessage": "",
+          "warningMessage": "",
+          "payType": "item",
+          "cost": {
+            "item": {
+              "id": 6502,
+              "name": "Seed of Yggdrasil",
+              "type": "skillLvUp",
+              "uses": [
+                "skill",
+                "ascension",
+                "costume"
+              ],
+              "detail": "\"Skill Up & Ascension Material\"\nA seed of a giant tree that symbolizes the world.",
+              "individuality": [],
+              "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6502.png",
+              "background": "silver",
+              "priority": 210,
+              "dropPriority": 8203
+            },
+            "amount": 15
+          },
+          "purchaseType": "bgm",
+          "targetIds": [
+            0
+          ],
+          "itemSet": [],
+          "setNum": 1,
+          "limitNum": 1,
+          "defaultLv": 0,
+          "defaultLimitCount": 0,
+          "openedAt": 1487944800,
+          "closedAt": 1901231999
+        },
+        "logo": "https://assets.atlasacademy.io/GameData/NA/MyRoomSound/soundlogo_015.png",
+        "releaseConditions": [
+          {
+            "id": 50,
+            "type": "questClear",
+            "condGroup": 0,
+            "targetIds": [
+              94003777,
+              94012377
+            ],
+            "vals": [
+              0
+            ],
+            "priority": 10000,
+            "closedMessage": "Unlock by completing The Demonic Capital: Rashomon"
+          }
+        ]
+      },
+      "afterBgm": {
+        "id": 58,
+        "name": "The Demonic Capital Rashomon:\nShop Theme Song",
+        "fileName": "BGM_EVENT_19",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_EVENT_19/BGM_EVENT_19.mp3",
+        "priority": 1006003,
+        "detail": "",
+        "notReleased": false,
+        "shop": {
+          "id": 7000058,
+          "baseShopId": 7000058,
+          "shopType": "bgm",
+          "releaseConditions": [],
+          "eventId": 0,
+          "slot": 0,
+          "priority": 129,
+          "name": "The Demonic Capital Rashomon:\nShop Theme Song",
+          "detail": "The following items will be used to unlock this track:\nSeed of Yggdrasil 15",
+          "infoMessage": "",
+          "warningMessage": "",
+          "payType": "item",
+          "cost": {
+            "item": {
+              "id": 6502,
+              "name": "Seed of Yggdrasil",
+              "type": "skillLvUp",
+              "uses": [
+                "skill",
+                "ascension",
+                "costume"
+              ],
+              "detail": "\"Skill Up & Ascension Material\"\nA seed of a giant tree that symbolizes the world.",
+              "individuality": [],
+              "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6502.png",
+              "background": "silver",
+              "priority": 210,
+              "dropPriority": 8203
+            },
+            "amount": 15
+          },
+          "purchaseType": "bgm",
+          "targetIds": [
+            0
+          ],
+          "itemSet": [],
+          "setNum": 1,
+          "limitNum": 1,
+          "defaultLv": 0,
+          "defaultLimitCount": 0,
+          "openedAt": 1487944800,
+          "closedAt": 1901231999
+        },
+        "logo": "https://assets.atlasacademy.io/GameData/NA/MyRoomSound/soundlogo_015.png",
+        "releaseConditions": [
+          {
+            "id": 50,
+            "type": "questClear",
+            "condGroup": 0,
+            "targetIds": [
+              94003777,
+              94012377
+            ],
+            "vals": [
+              0
+            ],
+            "priority": 10000,
+            "closedMessage": "Unlock by completing The Demonic Capital: Rashomon"
+          }
+        ]
+      },
       "flags": []
     },
     {
@@ -4268,11 +4545,150 @@
           "faceId": 0
         }
       ],
-      "tabImageId": 2,
-      "imageId": 2,
-      "bgId": 27000,
-      "bgmId": 58,
-      "afterBgmId": 58,
+      "tabOnImage": "https://assets.atlasacademy.io/GameData/NA/EventReward/btn_txt_on_80018_2.png",
+      "tabOffImage": "https://assets.atlasacademy.io/GameData/NA/EventReward/btn_txt_off_80018_2.png",
+      "image": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_type_txt_80018_2.png",
+      "bg": "https://assets.atlasacademy.io/GameData/NA/Back/back27000.png",
+      "bgm": {
+        "id": 58,
+        "name": "The Demonic Capital Rashomon:\nShop Theme Song",
+        "fileName": "BGM_EVENT_19",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_EVENT_19/BGM_EVENT_19.mp3",
+        "priority": 1006003,
+        "detail": "",
+        "notReleased": false,
+        "shop": {
+          "id": 7000058,
+          "baseShopId": 7000058,
+          "shopType": "bgm",
+          "releaseConditions": [],
+          "eventId": 0,
+          "slot": 0,
+          "priority": 129,
+          "name": "The Demonic Capital Rashomon:\nShop Theme Song",
+          "detail": "The following items will be used to unlock this track:\nSeed of Yggdrasil 15",
+          "infoMessage": "",
+          "warningMessage": "",
+          "payType": "item",
+          "cost": {
+            "item": {
+              "id": 6502,
+              "name": "Seed of Yggdrasil",
+              "type": "skillLvUp",
+              "uses": [
+                "skill",
+                "ascension",
+                "costume"
+              ],
+              "detail": "\"Skill Up & Ascension Material\"\nA seed of a giant tree that symbolizes the world.",
+              "individuality": [],
+              "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6502.png",
+              "background": "silver",
+              "priority": 210,
+              "dropPriority": 8203
+            },
+            "amount": 15
+          },
+          "purchaseType": "bgm",
+          "targetIds": [
+            0
+          ],
+          "itemSet": [],
+          "setNum": 1,
+          "limitNum": 1,
+          "defaultLv": 0,
+          "defaultLimitCount": 0,
+          "openedAt": 1487944800,
+          "closedAt": 1901231999
+        },
+        "logo": "https://assets.atlasacademy.io/GameData/NA/MyRoomSound/soundlogo_015.png",
+        "releaseConditions": [
+          {
+            "id": 50,
+            "type": "questClear",
+            "condGroup": 0,
+            "targetIds": [
+              94003777,
+              94012377
+            ],
+            "vals": [
+              0
+            ],
+            "priority": 10000,
+            "closedMessage": "Unlock by completing The Demonic Capital: Rashomon"
+          }
+        ]
+      },
+      "afterBgm": {
+        "id": 58,
+        "name": "The Demonic Capital Rashomon:\nShop Theme Song",
+        "fileName": "BGM_EVENT_19",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_EVENT_19/BGM_EVENT_19.mp3",
+        "priority": 1006003,
+        "detail": "",
+        "notReleased": false,
+        "shop": {
+          "id": 7000058,
+          "baseShopId": 7000058,
+          "shopType": "bgm",
+          "releaseConditions": [],
+          "eventId": 0,
+          "slot": 0,
+          "priority": 129,
+          "name": "The Demonic Capital Rashomon:\nShop Theme Song",
+          "detail": "The following items will be used to unlock this track:\nSeed of Yggdrasil 15",
+          "infoMessage": "",
+          "warningMessage": "",
+          "payType": "item",
+          "cost": {
+            "item": {
+              "id": 6502,
+              "name": "Seed of Yggdrasil",
+              "type": "skillLvUp",
+              "uses": [
+                "skill",
+                "ascension",
+                "costume"
+              ],
+              "detail": "\"Skill Up & Ascension Material\"\nA seed of a giant tree that symbolizes the world.",
+              "individuality": [],
+              "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6502.png",
+              "background": "silver",
+              "priority": 210,
+              "dropPriority": 8203
+            },
+            "amount": 15
+          },
+          "purchaseType": "bgm",
+          "targetIds": [
+            0
+          ],
+          "itemSet": [],
+          "setNum": 1,
+          "limitNum": 1,
+          "defaultLv": 0,
+          "defaultLimitCount": 0,
+          "openedAt": 1487944800,
+          "closedAt": 1901231999
+        },
+        "logo": "https://assets.atlasacademy.io/GameData/NA/MyRoomSound/soundlogo_015.png",
+        "releaseConditions": [
+          {
+            "id": 50,
+            "type": "questClear",
+            "condGroup": 0,
+            "targetIds": [
+              94003777,
+              94012377
+            ],
+            "vals": [
+              0
+            ],
+            "priority": 10000,
+            "closedMessage": "Unlock by completing The Demonic Capital: Rashomon"
+          }
+        ]
+      },
       "flags": []
     }
   ],

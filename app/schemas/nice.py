@@ -75,6 +75,7 @@ from .gameenums import (
 
 
 class AssetURL:
+    back = "{base_url}/{region}/Back/back{bg_id}.png"
     charaGraph = {
         1: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a@1.png",
         2: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}a@2.png",
@@ -1275,6 +1276,34 @@ class NiceShop(BaseModelORJson):
     closedAt: int
 
 
+class NiceBgmRelease(BaseModelORJson):
+    id: int
+    type: NiceCondType
+    condGroup: int = Field(
+        ...,
+        title="Condition Group",
+        description="To play the BGM, at least one condition group needs to be statisfied."
+        "Within one condition group, all conditions need to be statisfied.",
+    )
+    targetIds: list[int]
+    vals: list[int]
+    priority: int
+    closedMessage: str
+
+
+class NiceBgmEntity(BaseModelORJson):
+    id: int
+    name: str
+    fileName: str
+    audioAsset: Optional[HttpUrl] = None
+    priority: int
+    detail: str
+    notReleased: bool
+    shop: Optional[NiceShop] = None
+    logo: HttpUrl
+    releaseConditions: list[NiceBgmRelease]
+
+
 class NiceGift(BaseModelORJson):
     id: int
     type: NiceGiftType
@@ -1447,11 +1476,12 @@ class NiceEventRewardScene(BaseModelORJson):
         ..., description="See Event Reward Scene Type in app/schemas/enums.py"
     )
     guides: list[NiceEventRewardSceneGuide]
-    tabImageId: int
-    imageId: int
-    bgId: int
-    bgmId: int
-    afterBgmId: int
+    tabOnImage: HttpUrl
+    tabOffImage: HttpUrl
+    image: HttpUrl | None = None
+    bg: HttpUrl
+    bgm: NiceBgmEntity
+    afterBgm: NiceBgmEntity
     flags: list[NiceEventRewardSceneFlag]
 
 
@@ -1951,31 +1981,3 @@ class NiceAiCollection(BaseModelORJson):
     mainAis: list[NiceAi]
     relatedAis: list[NiceAi]
     relatedQuests: list[StageLink]
-
-
-class NiceBgmRelease(BaseModelORJson):
-    id: int
-    type: NiceCondType
-    condGroup: int = Field(
-        ...,
-        title="Condition Group",
-        description="To play the BGM, at least one condition group needs to be statisfied."
-        "Within one condition group, all conditions need to be statisfied.",
-    )
-    targetIds: list[int]
-    vals: list[int]
-    priority: int
-    closedMessage: str
-
-
-class NiceBgmEntity(BaseModelORJson):
-    id: int
-    name: str
-    fileName: str
-    audioAsset: Optional[HttpUrl] = None
-    priority: int
-    detail: str
-    notReleased: bool
-    shop: Optional[NiceShop] = None
-    logo: HttpUrl
-    releaseConditions: list[NiceBgmRelease]

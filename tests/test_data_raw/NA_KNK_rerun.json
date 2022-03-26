@@ -11511,5 +11511,21 @@
       ],
       "costumeLimitSvtIdMap": {}
     }
+  ],
+  "mstBgm": [
+    {
+      "mstBgm": {
+        "id": 31,
+        "fileName": "BGM_KARANOKYOKAI_1",
+        "name": "0",
+        "priority": 0,
+        "detail": "",
+        "flag": 1,
+        "shopId": 7000031,
+        "logoId": 1
+      },
+      "mstBgmRelease": [],
+      "mstClosedMessage": []
+    }
   ]
 }

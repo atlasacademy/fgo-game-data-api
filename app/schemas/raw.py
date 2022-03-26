@@ -1581,6 +1581,14 @@ class ScriptEntity(BaseModelORJson):
     quests: list[QuestEntity]
 
 
+class BgmEntity(BaseModelORJson):
+    mstBgm: MstBgm
+    mstBgmRelease: list[MstBgmRelease]
+    mstClosedMessage: list[MstClosedMessage]
+    mstShop: MstShop | None = None
+    mstItem: MstItem | None = None
+
+
 class EventEntity(BaseModelORJson):
     mstEvent: MstEvent
     mstWar: list[MstWar]
@@ -1613,6 +1621,7 @@ class EventEntity(BaseModelORJson):
     mstSubtitle: list[GlobalNewMstSubtitle]
     mstVoicePlayCond: list[MstVoicePlayCond]
     mstSvtExtra: list[MstSvtExtra]
+    mstBgm: list[BgmEntity]
 
 
 class WarEntity(BaseModelORJson):
@@ -1645,14 +1654,6 @@ class AiCollection(BaseModelORJson):
     mainAis: list[AiEntity]
     relatedAis: list[AiEntity]
     relatedQuests: list[StageLink]
-
-
-class BgmEntity(BaseModelORJson):
-    mstBgm: MstBgm
-    mstBgmRelease: list[MstBgmRelease]
-    mstClosedMessage: list[MstClosedMessage]
-    mstShop: MstShop | None = None
-    mstItem: MstItem | None = None
 
 
 class AssetStorageLine(BaseModelORJson):

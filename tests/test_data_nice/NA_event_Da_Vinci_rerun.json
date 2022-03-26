@@ -1844,11 +1844,32 @@
           "faceId": 0
         }
       ],
-      "tabImageId": 0,
-      "imageId": 1,
-      "bgId": 10600,
-      "bgmId": 12,
-      "afterBgmId": 12,
+      "tabOnImage": "https://assets.atlasacademy.io/GameData/NA/EventReward/btn_txt_on_80087_0.png",
+      "tabOffImage": "https://assets.atlasacademy.io/GameData/NA/EventReward/btn_txt_off_80087_0.png",
+      "image": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_type_txt_80087_1.png",
+      "bg": "https://assets.atlasacademy.io/GameData/NA/Back/back10600.png",
+      "bgm": {
+        "id": 12,
+        "name": "Chaldea",
+        "fileName": "BGM_CHALDEA_1",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_CHALDEA_1/BGM_CHALDEA_1.mp3",
+        "priority": 1003,
+        "detail": "",
+        "notReleased": false,
+        "logo": "https://assets.atlasacademy.io/GameData/NA/MyRoomSound/soundlogo_001.png",
+        "releaseConditions": []
+      },
+      "afterBgm": {
+        "id": 12,
+        "name": "Chaldea",
+        "fileName": "BGM_CHALDEA_1",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_CHALDEA_1/BGM_CHALDEA_1.mp3",
+        "priority": 1003,
+        "detail": "",
+        "notReleased": false,
+        "logo": "https://assets.atlasacademy.io/GameData/NA/MyRoomSound/soundlogo_001.png",
+        "releaseConditions": []
+      },
       "flags": []
     },
     {
@@ -1862,11 +1883,32 @@
           "faceId": 0
         }
       ],
-      "tabImageId": 1,
-      "imageId": 2,
-      "bgId": 10600,
-      "bgmId": 12,
-      "afterBgmId": 12,
+      "tabOnImage": "https://assets.atlasacademy.io/GameData/NA/EventReward/btn_txt_on_80087_1.png",
+      "tabOffImage": "https://assets.atlasacademy.io/GameData/NA/EventReward/btn_txt_off_80087_1.png",
+      "image": "https://assets.atlasacademy.io/GameData/NA/EventReward/event_type_txt_80087_2.png",
+      "bg": "https://assets.atlasacademy.io/GameData/NA/Back/back10600.png",
+      "bgm": {
+        "id": 12,
+        "name": "Chaldea",
+        "fileName": "BGM_CHALDEA_1",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_CHALDEA_1/BGM_CHALDEA_1.mp3",
+        "priority": 1003,
+        "detail": "",
+        "notReleased": false,
+        "logo": "https://assets.atlasacademy.io/GameData/NA/MyRoomSound/soundlogo_001.png",
+        "releaseConditions": []
+      },
+      "afterBgm": {
+        "id": 12,
+        "name": "Chaldea",
+        "fileName": "BGM_CHALDEA_1",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_CHALDEA_1/BGM_CHALDEA_1.mp3",
+        "priority": 1003,
+        "detail": "",
+        "notReleased": false,
+        "logo": "https://assets.atlasacademy.io/GameData/NA/MyRoomSound/soundlogo_001.png",
+        "releaseConditions": []
+      },
       "flags": []
     },
     {
@@ -1880,11 +1922,31 @@
           "faceId": 0
         }
       ],
-      "tabImageId": 2,
-      "imageId": 0,
-      "bgId": 10600,
-      "bgmId": 12,
-      "afterBgmId": 12,
+      "tabOnImage": "https://assets.atlasacademy.io/GameData/NA/EventReward/btn_txt_on_80087_2.png",
+      "tabOffImage": "https://assets.atlasacademy.io/GameData/NA/EventReward/btn_txt_off_80087_2.png",
+      "bg": "https://assets.atlasacademy.io/GameData/NA/Back/back10600.png",
+      "bgm": {
+        "id": 12,
+        "name": "Chaldea",
+        "fileName": "BGM_CHALDEA_1",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_CHALDEA_1/BGM_CHALDEA_1.mp3",
+        "priority": 1003,
+        "detail": "",
+        "notReleased": false,
+        "logo": "https://assets.atlasacademy.io/GameData/NA/MyRoomSound/soundlogo_001.png",
+        "releaseConditions": []
+      },
+      "afterBgm": {
+        "id": 12,
+        "name": "Chaldea",
+        "fileName": "BGM_CHALDEA_1",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_CHALDEA_1/BGM_CHALDEA_1.mp3",
+        "priority": 1003,
+        "detail": "",
+        "notReleased": false,
+        "logo": "https://assets.atlasacademy.io/GameData/NA/MyRoomSound/soundlogo_001.png",
+        "releaseConditions": []
+      },
       "flags": []
     }
   ],

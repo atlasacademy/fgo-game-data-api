@@ -9,6 +9,7 @@ from ....schemas.nice import AssetURL, NiceEvent, NiceVoiceGroup
 from ....schemas.raw import MstGift
 from ... import raw
 from ...utils import fmt_url, get_translation
+from ..bgm import get_nice_bgm_entity_from_raw
 from ..item import get_nice_item_from_raw
 from ..svt.voice import get_nice_voice_group
 from .lottery import get_nice_lottery
@@ -53,6 +54,11 @@ async def get_nice_event(
         raw_event.mstEventMissionConditionDetail,
         gift_maps,
     )
+
+    nice_bgms = {
+        bgm.mstBgm.id: get_nice_bgm_entity_from_raw(region, bgm, lang)
+        for bgm in raw_event.mstBgm
+    }
 
     mstVoices = {voice.id: voice for voice in raw_event.mstVoice}
     voice_groups: list[NiceVoiceGroup] = []
@@ -169,7 +175,7 @@ async def get_nice_event(
             for reward in raw_event.mstEventReward
         ],
         rewardScenes=[
-            get_nice_event_reward_scene(reward_scene)
+            get_nice_event_reward_scene(region, reward_scene, nice_bgms)
             for reward_scene in raw_event.mstEventRewardScene
         ],
         pointGroups=[

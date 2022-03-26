@@ -2264,11 +2264,159 @@
           "faceId": 12
         }
       ],
-      "tabImageId": 0,
-      "imageId": 0,
-      "bgId": 97900,
-      "bgmId": 434,
-      "afterBgmId": 434,
+      "tabOnImage": "https://assets.atlasacademy.io/GameData/JP/EventReward/btn_txt_on_80289_0.png",
+      "tabOffImage": "https://assets.atlasacademy.io/GameData/JP/EventReward/btn_txt_off_80289_0.png",
+      "bg": "https://assets.atlasacademy.io/GameData/JP/Back/back97900.png",
+      "bgm": {
+        "id": 434,
+        "name": "ぐだぐだショップ大炎上\n～鏡～",
+        "fileName": "BGM_YAMA",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/JP/Audio/BGM_YAMA/BGM_YAMA.mp3",
+        "priority": 1036006,
+        "detail": "",
+        "notReleased": false,
+        "shop": {
+          "id": 7000434,
+          "baseShopId": 7000434,
+          "shopType": "bgm",
+          "releaseConditions": [],
+          "eventId": 0,
+          "slot": 0,
+          "priority": 299,
+          "name": "ぐだぐだショップ大炎上 ～鏡～",
+          "detail": "虚影の塵を15個消費して\nぐだぐだショップ大炎上 ～鏡～を開放",
+          "infoMessage": "",
+          "warningMessage": "",
+          "payType": "item",
+          "cost": {
+            "item": {
+              "id": 6505,
+              "name": "虚影の塵",
+              "type": "skillLvUp",
+              "uses": [
+                "skill",
+                "ascension",
+                "costume"
+              ],
+              "detail": "【スキル強化＆霊基再臨素材】\n虚ろな影が消える時に飛び散る塵",
+              "individuality": [
+                {
+                  "id": 20042,
+                  "name": "unknown"
+                }
+              ],
+              "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
+              "background": "bronze",
+              "priority": 203,
+              "dropPriority": 8201
+            },
+            "amount": 15
+          },
+          "purchaseType": "bgm",
+          "targetIds": [
+            0
+          ],
+          "itemSet": [],
+          "setNum": 1,
+          "limitNum": 1,
+          "defaultLv": 0,
+          "defaultLimitCount": 0,
+          "openedAt": 1640077200,
+          "closedAt": 1901199599
+        },
+        "logo": "https://assets.atlasacademy.io/GameData/JP/MyRoomSound/soundlogo_063.png",
+        "releaseConditions": [
+          {
+            "id": 1,
+            "type": "questClear",
+            "condGroup": 0,
+            "targetIds": [
+              94049113,
+              94062313
+            ],
+            "vals": [
+              0
+            ],
+            "priority": 9000,
+            "closedMessage": "超古代新選組列伝 ぐだぐだ邪馬台国2020\nクリアで開放可能"
+          }
+        ]
+      },
+      "afterBgm": {
+        "id": 434,
+        "name": "ぐだぐだショップ大炎上\n～鏡～",
+        "fileName": "BGM_YAMA",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/JP/Audio/BGM_YAMA/BGM_YAMA.mp3",
+        "priority": 1036006,
+        "detail": "",
+        "notReleased": false,
+        "shop": {
+          "id": 7000434,
+          "baseShopId": 7000434,
+          "shopType": "bgm",
+          "releaseConditions": [],
+          "eventId": 0,
+          "slot": 0,
+          "priority": 299,
+          "name": "ぐだぐだショップ大炎上 ～鏡～",
+          "detail": "虚影の塵を15個消費して\nぐだぐだショップ大炎上 ～鏡～を開放",
+          "infoMessage": "",
+          "warningMessage": "",
+          "payType": "item",
+          "cost": {
+            "item": {
+              "id": 6505,
+              "name": "虚影の塵",
+              "type": "skillLvUp",
+              "uses": [
+                "skill",
+                "ascension",
+                "costume"
+              ],
+              "detail": "【スキル強化＆霊基再臨素材】\n虚ろな影が消える時に飛び散る塵",
+              "individuality": [
+                {
+                  "id": 20042,
+                  "name": "unknown"
+                }
+              ],
+              "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
+              "background": "bronze",
+              "priority": 203,
+              "dropPriority": 8201
+            },
+            "amount": 15
+          },
+          "purchaseType": "bgm",
+          "targetIds": [
+            0
+          ],
+          "itemSet": [],
+          "setNum": 1,
+          "limitNum": 1,
+          "defaultLv": 0,
+          "defaultLimitCount": 0,
+          "openedAt": 1640077200,
+          "closedAt": 1901199599
+        },
+        "logo": "https://assets.atlasacademy.io/GameData/JP/MyRoomSound/soundlogo_063.png",
+        "releaseConditions": [
+          {
+            "id": 1,
+            "type": "questClear",
+            "condGroup": 0,
+            "targetIds": [
+              94049113,
+              94062313
+            ],
+            "vals": [
+              0
+            ],
+            "priority": 9000,
+            "closedMessage": "超古代新選組列伝 ぐだぐだ邪馬台国2020\nクリアで開放可能"
+          }
+        ]
+      },
       "flags": []
     },
     {
@@ -2282,11 +2430,159 @@
           "faceId": 0
         }
       ],
-      "tabImageId": 1,
-      "imageId": 0,
-      "bgId": 97900,
-      "bgmId": 434,
-      "afterBgmId": 434,
+      "tabOnImage": "https://assets.atlasacademy.io/GameData/JP/EventReward/btn_txt_on_80289_1.png",
+      "tabOffImage": "https://assets.atlasacademy.io/GameData/JP/EventReward/btn_txt_off_80289_1.png",
+      "bg": "https://assets.atlasacademy.io/GameData/JP/Back/back97900.png",
+      "bgm": {
+        "id": 434,
+        "name": "ぐだぐだショップ大炎上\n～鏡～",
+        "fileName": "BGM_YAMA",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/JP/Audio/BGM_YAMA/BGM_YAMA.mp3",
+        "priority": 1036006,
+        "detail": "",
+        "notReleased": false,
+        "shop": {
+          "id": 7000434,
+          "baseShopId": 7000434,
+          "shopType": "bgm",
+          "releaseConditions": [],
+          "eventId": 0,
+          "slot": 0,
+          "priority": 299,
+          "name": "ぐだぐだショップ大炎上 ～鏡～",
+          "detail": "虚影の塵を15個消費して\nぐだぐだショップ大炎上 ～鏡～を開放",
+          "infoMessage": "",
+          "warningMessage": "",
+          "payType": "item",
+          "cost": {
+            "item": {
+              "id": 6505,
+              "name": "虚影の塵",
+              "type": "skillLvUp",
+              "uses": [
+                "skill",
+                "ascension",
+                "costume"
+              ],
+              "detail": "【スキル強化＆霊基再臨素材】\n虚ろな影が消える時に飛び散る塵",
+              "individuality": [
+                {
+                  "id": 20042,
+                  "name": "unknown"
+                }
+              ],
+              "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
+              "background": "bronze",
+              "priority": 203,
+              "dropPriority": 8201
+            },
+            "amount": 15
+          },
+          "purchaseType": "bgm",
+          "targetIds": [
+            0
+          ],
+          "itemSet": [],
+          "setNum": 1,
+          "limitNum": 1,
+          "defaultLv": 0,
+          "defaultLimitCount": 0,
+          "openedAt": 1640077200,
+          "closedAt": 1901199599
+        },
+        "logo": "https://assets.atlasacademy.io/GameData/JP/MyRoomSound/soundlogo_063.png",
+        "releaseConditions": [
+          {
+            "id": 1,
+            "type": "questClear",
+            "condGroup": 0,
+            "targetIds": [
+              94049113,
+              94062313
+            ],
+            "vals": [
+              0
+            ],
+            "priority": 9000,
+            "closedMessage": "超古代新選組列伝 ぐだぐだ邪馬台国2020\nクリアで開放可能"
+          }
+        ]
+      },
+      "afterBgm": {
+        "id": 434,
+        "name": "ぐだぐだショップ大炎上\n～鏡～",
+        "fileName": "BGM_YAMA",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/JP/Audio/BGM_YAMA/BGM_YAMA.mp3",
+        "priority": 1036006,
+        "detail": "",
+        "notReleased": false,
+        "shop": {
+          "id": 7000434,
+          "baseShopId": 7000434,
+          "shopType": "bgm",
+          "releaseConditions": [],
+          "eventId": 0,
+          "slot": 0,
+          "priority": 299,
+          "name": "ぐだぐだショップ大炎上 ～鏡～",
+          "detail": "虚影の塵を15個消費して\nぐだぐだショップ大炎上 ～鏡～を開放",
+          "infoMessage": "",
+          "warningMessage": "",
+          "payType": "item",
+          "cost": {
+            "item": {
+              "id": 6505,
+              "name": "虚影の塵",
+              "type": "skillLvUp",
+              "uses": [
+                "skill",
+                "ascension",
+                "costume"
+              ],
+              "detail": "【スキル強化＆霊基再臨素材】\n虚ろな影が消える時に飛び散る塵",
+              "individuality": [
+                {
+                  "id": 20042,
+                  "name": "unknown"
+                }
+              ],
+              "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
+              "background": "bronze",
+              "priority": 203,
+              "dropPriority": 8201
+            },
+            "amount": 15
+          },
+          "purchaseType": "bgm",
+          "targetIds": [
+            0
+          ],
+          "itemSet": [],
+          "setNum": 1,
+          "limitNum": 1,
+          "defaultLv": 0,
+          "defaultLimitCount": 0,
+          "openedAt": 1640077200,
+          "closedAt": 1901199599
+        },
+        "logo": "https://assets.atlasacademy.io/GameData/JP/MyRoomSound/soundlogo_063.png",
+        "releaseConditions": [
+          {
+            "id": 1,
+            "type": "questClear",
+            "condGroup": 0,
+            "targetIds": [
+              94049113,
+              94062313
+            ],
+            "vals": [
+              0
+            ],
+            "priority": 9000,
+            "closedMessage": "超古代新選組列伝 ぐだぐだ邪馬台国2020\nクリアで開放可能"
+          }
+        ]
+      },
       "flags": []
     }
   ],

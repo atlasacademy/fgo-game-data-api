@@ -5780,11 +5780,31 @@
           "faceId": 7
         }
       ],
-      "tabImageId": 0,
-      "imageId": 0,
-      "bgId": 129703,
-      "bgmId": 533,
-      "afterBgmId": 533,
+      "tabOnImage": "https://assets.atlasacademy.io/GameData/JP/EventReward/btn_txt_on_80331_0.png",
+      "tabOffImage": "https://assets.atlasacademy.io/GameData/JP/EventReward/btn_txt_off_80331_0.png",
+      "bg": "https://assets.atlasacademy.io/GameData/JP/Back/back129703.png",
+      "bgm": {
+        "id": 533,
+        "name": "",
+        "fileName": "BGM_MIZUGI_2021_1",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/JP/Audio/BGM_MIZUGI_2021_1/BGM_MIZUGI_2021_1.mp3",
+        "priority": 0,
+        "detail": "",
+        "notReleased": true,
+        "logo": "https://assets.atlasacademy.io/GameData/JP/MyRoomSound/soundlogo_001.png",
+        "releaseConditions": []
+      },
+      "afterBgm": {
+        "id": 533,
+        "name": "",
+        "fileName": "BGM_MIZUGI_2021_1",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/JP/Audio/BGM_MIZUGI_2021_1/BGM_MIZUGI_2021_1.mp3",
+        "priority": 0,
+        "detail": "",
+        "notReleased": true,
+        "logo": "https://assets.atlasacademy.io/GameData/JP/MyRoomSound/soundlogo_001.png",
+        "releaseConditions": []
+      },
       "flags": [
         "npcGuide"
       ]
@@ -5800,11 +5820,32 @@
           "faceId": 10
         }
       ],
-      "tabImageId": 1,
-      "imageId": 1,
-      "bgId": 129703,
-      "bgmId": 533,
-      "afterBgmId": 533,
+      "tabOnImage": "https://assets.atlasacademy.io/GameData/JP/EventReward/btn_txt_on_80331_1.png",
+      "tabOffImage": "https://assets.atlasacademy.io/GameData/JP/EventReward/btn_txt_off_80331_1.png",
+      "image": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_type_txt_80331_1.png",
+      "bg": "https://assets.atlasacademy.io/GameData/JP/Back/back129703.png",
+      "bgm": {
+        "id": 533,
+        "name": "",
+        "fileName": "BGM_MIZUGI_2021_1",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/JP/Audio/BGM_MIZUGI_2021_1/BGM_MIZUGI_2021_1.mp3",
+        "priority": 0,
+        "detail": "",
+        "notReleased": true,
+        "logo": "https://assets.atlasacademy.io/GameData/JP/MyRoomSound/soundlogo_001.png",
+        "releaseConditions": []
+      },
+      "afterBgm": {
+        "id": 533,
+        "name": "",
+        "fileName": "BGM_MIZUGI_2021_1",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/JP/Audio/BGM_MIZUGI_2021_1/BGM_MIZUGI_2021_1.mp3",
+        "priority": 0,
+        "detail": "",
+        "notReleased": true,
+        "logo": "https://assets.atlasacademy.io/GameData/JP/MyRoomSound/soundlogo_001.png",
+        "releaseConditions": []
+      },
       "flags": []
     },
     {
@@ -5818,11 +5859,32 @@
           "faceId": 10
         }
       ],
-      "tabImageId": 2,
-      "imageId": 2,
-      "bgId": 129703,
-      "bgmId": 533,
-      "afterBgmId": 533,
+      "tabOnImage": "https://assets.atlasacademy.io/GameData/JP/EventReward/btn_txt_on_80331_2.png",
+      "tabOffImage": "https://assets.atlasacademy.io/GameData/JP/EventReward/btn_txt_off_80331_2.png",
+      "image": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_type_txt_80331_2.png",
+      "bg": "https://assets.atlasacademy.io/GameData/JP/Back/back129703.png",
+      "bgm": {
+        "id": 533,
+        "name": "",
+        "fileName": "BGM_MIZUGI_2021_1",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/JP/Audio/BGM_MIZUGI_2021_1/BGM_MIZUGI_2021_1.mp3",
+        "priority": 0,
+        "detail": "",
+        "notReleased": true,
+        "logo": "https://assets.atlasacademy.io/GameData/JP/MyRoomSound/soundlogo_001.png",
+        "releaseConditions": []
+      },
+      "afterBgm": {
+        "id": 533,
+        "name": "",
+        "fileName": "BGM_MIZUGI_2021_1",
+        "audioAsset": "https://assets.atlasacademy.io/GameData/JP/Audio/BGM_MIZUGI_2021_1/BGM_MIZUGI_2021_1.mp3",
+        "priority": 0,
+        "detail": "",
+        "notReleased": true,
+        "logo": "https://assets.atlasacademy.io/GameData/JP/MyRoomSound/soundlogo_001.png",
+        "releaseConditions": []
+      },
       "flags": []
     }
   ],
