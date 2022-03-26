@@ -1035,6 +1035,100 @@
             "effectList": [],
             "actIndividuality": [],
             "script": {},
+            "id": 964365,
+            "type": 1,
+            "name": "Void",
+            "ruby": "-",
+            "maxLv": 1,
+            "iconId": 600,
+            "motion": 1003
+          },
+          "mstSkillDetail": [],
+          "mstSvtSkill": [],
+          "mstSkillAdd": [],
+          "mstCommonRelease": [],
+          "mstSkillLv": [
+            {
+              "funcId": [
+                508,
+                203,
+                3112
+              ],
+              "svals": [
+                "[1000,-1,-1,ShowState:1,SetPassiveFrame:1,HideNoEffect:1,HideMiss:1,IgnoreIndividuality:1,ProcPassive:1]",
+                "[1000,-1,-1,200,ShowState:1,SetPassiveFrame:1,HideNoEffect:1,HideMiss:1,IgnoreIndividuality:1,ProcPassive:1]",
+                "[5000,-1,-1,2638,ShowState:-1,HideNoEffect:1,ProcPassive:1]"
+              ],
+              "script": {},
+              "skillId": 964365,
+              "lv": 1,
+              "chargeTurn": 0,
+              "skillDetailId": 1,
+              "priority": 0
+            }
+          ],
+          "aiIds": {
+            "svt": [],
+            "field": [
+              304437,
+              304438,
+              304447,
+              304448
+            ]
+          }
+        },
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
+            "id": 964366,
+            "type": 1,
+            "name": "Void, Flash",
+            "ruby": "-",
+            "maxLv": 1,
+            "iconId": 600,
+            "motion": 1004
+          },
+          "mstSkillDetail": [],
+          "mstSvtSkill": [],
+          "mstSkillAdd": [],
+          "mstCommonRelease": [],
+          "mstSkillLv": [
+            {
+              "funcId": [
+                508,
+                203,
+                5304,
+                3112
+              ],
+              "svals": [
+                "[1000,-1,-1,ShowState:1,SetPassiveFrame:1,HideNoEffect:1,HideMiss:1,IgnoreIndividuality:1,ProcPassive:1]",
+                "[1000,-1,-1,200,ShowState:1,SetPassiveFrame:1,HideNoEffect:1,HideMiss:1,IgnoreIndividuality:1,ProcPassive:1]",
+                "[5000]",
+                "[5000,-1,-1,2638,ShowState:-1,HideNoEffect:1,ProcPassive:1]"
+              ],
+              "script": {},
+              "skillId": 964366,
+              "lv": 1,
+              "chargeTurn": 0,
+              "skillDetailId": 1,
+              "priority": 0
+            }
+          ],
+          "aiIds": {
+            "svt": [],
+            "field": [
+              304442,
+              304443
+            ]
+          }
+        },
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
             "id": 980057,
             "type": 1,
             "name": "Buke Shohatto",

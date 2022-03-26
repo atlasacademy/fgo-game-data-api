@@ -595,7 +595,7 @@ class TestServantSpecial:
         assert heroine_x["stages"][1]["enemies"][0]["name"] == "Heroine X"
 
     async def test_latest_story_war_banner(self, client: AsyncClient) -> None:
-        latest_story_war = await client.get("nice/NA/war/306")
+        latest_story_war = await client.get("nice/NA/war/307")
         assert "questboard_cap_closed" in latest_story_war.json()["banner"]
 
     async def test_enemy_script(self, client: AsyncClient) -> None:

@@ -179,8 +179,8 @@ test_cases_dict: dict[str, tuple[str, set[int]]] = {
         {889, 890, 891},
     ),
     "func_popupText": (
-        "NA/function/search?popupText=Curse&targetType=self",
-        {490, 1700, 2021, 2451, 4809, 5149},
+        "NA/function/search?popupText=Curse&targetType=self&type=subState",
+        {2451},
     ),
 }
 
