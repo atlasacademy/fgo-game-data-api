@@ -1300,6 +1300,29 @@ mstWar = Table(
     Column("assetId", Integer),
 )
 
+mstMapGimmick = Table(
+    "mstMapGimmick",
+    metadata,
+    Column("script", JSONB),
+    Column("id", Integer, index=True),
+    Column("warId", Integer),
+    Column("mapId", Integer),
+    Column("imageId", Integer),
+    Column("x", Integer),
+    Column("y", Integer),
+    Column("depthOffset", Integer),
+    Column("scale", Integer),
+    Column("dispCondType", Integer),
+    Column("dispTargetId", Integer),
+    Column("dispTargetValue", Integer),
+    Column("dispCondType2", Integer),
+    Column("dispTargetId2", Integer),
+    Column("dispTargetValue2", Integer),
+    Column("actionAnimTime", Integer),
+    Column("actionEffectId", Integer),
+    Column("startedAt", Integer),
+    Column("endedAt", Integer),
+)
 
 mstMap = Table(
     "mstMap",
@@ -1698,6 +1721,7 @@ TABLES_TO_BE_LOADED = [
     mstBgm,
     mstBgmRelease,
     mstMap,
+    mstMapGimmick,
     mstSpot,
     mstSpotRoad,
     mstQuest,

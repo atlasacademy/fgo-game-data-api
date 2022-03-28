@@ -14,6 +14,7 @@ from ...schemas.gameenums import (
 from ...schemas.nice import (
     AssetURL,
     NiceMap,
+    NiceMapGimmick,
     NiceQuest,
     NiceSpot,
     NiceSpotRoad,
@@ -24,6 +25,7 @@ from ...schemas.raw import (
     MstBgm,
     MstConstant,
     MstMap,
+    MstMapGimmick,
     MstSpot,
     MstSpotRoad,
     MstWar,
@@ -67,7 +69,42 @@ def get_nice_spot_road(
     )
 
 
-def get_nice_map(region: Region, raw_map: MstMap, bgms: list[MstBgm]) -> NiceMap:
+def get_nice_map_gimmick(
+    region: Region, raw_map_gimmick: MstMapGimmick, war_asset_id: int
+) -> NiceMapGimmick:
+    return NiceMapGimmick(
+        id=raw_map_gimmick.id,
+        image=fmt_url(
+            AssetURL.mapGimmickImg,
+            base_url=settings.asset_url,
+            region=region,
+            war_asset_id=war_asset_id,
+            gimmick_id=raw_map_gimmick.id,
+        ),
+        x=raw_map_gimmick.x,
+        y=raw_map_gimmick.y,
+        depthOffset=raw_map_gimmick.depthOffset,
+        scale=raw_map_gimmick.scale,
+        dispCondType=COND_TYPE_NAME[raw_map_gimmick.dispCondType],
+        dispTargetId=raw_map_gimmick.dispTargetId,
+        dispTargetValue=raw_map_gimmick.dispTargetValue,
+        dispCondType2=COND_TYPE_NAME[raw_map_gimmick.dispCondType2],
+        dispTargetId2=raw_map_gimmick.dispTargetId2,
+        dispTargetValue2=raw_map_gimmick.dispTargetValue2,
+        actionAnimTime=raw_map_gimmick.actionAnimTime,
+        actionEffectId=raw_map_gimmick.actionEffectId,
+        startedAt=raw_map_gimmick.startedAt,
+        endedAt=raw_map_gimmick.endedAt,
+    )
+
+
+def get_nice_map(
+    region: Region,
+    raw_map: MstMap,
+    bgms: list[MstBgm],
+    gimmicks: list[MstMapGimmick],
+    war_asset_id: int,
+) -> NiceMap:
     base_settings = {"base_url": settings.asset_url, "region": region}
 
     bgm = get_nice_bgm(region, next(bgm for bgm in bgms if bgm.id == raw_map.bgmId))
@@ -79,6 +116,9 @@ def get_nice_map(region: Region, raw_map: MstMap, bgms: list[MstBgm]) -> NiceMap
         else None,
         mapImageW=raw_map.mapImageW,
         mapImageH=raw_map.mapImageH,
+        mapGimmicks=[
+            get_nice_map_gimmick(region, gimmick, war_asset_id) for gimmick in gimmicks
+        ],
         headerImage=fmt_url(
             AssetURL.banner,
             **base_settings,
@@ -217,7 +257,18 @@ async def get_nice_war(
         lastQuestId=raw_war.mstWar.lastQuestId,
         warAdds=[get_nice_war_add(region, war_add) for war_add in raw_war.mstWarAdd],
         maps=[
-            get_nice_map(region, raw_map, raw_war.mstBgm) for raw_map in raw_war.mstMap
+            get_nice_map(
+                region,
+                raw_map,
+                raw_war.mstBgm,
+                [
+                    gimmick
+                    for gimmick in raw_war.mstMapGimmick
+                    if gimmick.mapId == raw_map.id
+                ],
+                war_asset_id,
+            )
+            for raw_map in raw_war.mstMap
         ],
         spots=[
             await get_nice_spot(

@@ -130,6 +130,7 @@ class AssetURL:
     eventUi = "{base_url}/{region}/EventUI/{event}.png"
     eventReward = "{base_url}/{region}/EventReward/{fname}.png"
     mapImg = "{base_url}/{region}/Terminal/MapImgs/img_questmap_{map_id:0>6}/img_questmap_{map_id:0>6}.png"
+    mapGimmickImg = "{base_url}/{region}/Terminal/QuestMap/Capter{war_asset_id:0>4}/QMap_Cap{war_asset_id:0>4}_Atlas/gimmick_{gimmick_id:0>6}.png"
     spotImg = "{base_url}/{region}/Terminal/QuestMap/Capter{war_asset_id:0>4}/QMap_Cap{war_asset_id:0>4}_Atlas/spot_{spot_id:0>6}.png"
     spotRoadImg = "{base_url}/{region}/Terminal/QuestMap/Capter{war_asset_id:0>4}/QMap_Cap{war_asset_id:0>4}_Atlas/img_road{war_asset_id:0>4}_00.png"
     script = "{base_url}/{region}/Script/{script_path}.txt"
@@ -1880,11 +1881,31 @@ class NiceSpotRoad(BaseModelORJson):
     activeTargetValue: int
 
 
+class NiceMapGimmick(BaseModel):
+    id: int
+    image: Optional[HttpUrl]
+    x: int
+    y: int
+    depthOffset: int
+    scale: int
+    dispCondType: NiceCondType
+    dispTargetId: int
+    dispTargetValue: int
+    dispCondType2: NiceCondType
+    dispTargetId2: int
+    dispTargetValue2: int
+    actionAnimTime: int
+    actionEffectId: int
+    startedAt: int
+    endedAt: int
+
+
 class NiceMap(BaseModel):
     id: int
     mapImage: Optional[HttpUrl] = None
     mapImageW: int
     mapImageH: int
+    mapGimmicks: list[NiceMapGimmick]
     headerImage: Optional[HttpUrl] = None
     bgm: NiceBgm
 
