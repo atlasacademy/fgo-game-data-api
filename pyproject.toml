@@ -28,17 +28,17 @@ tomli = "^2.0.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.1"
-pylint = "^2.13.0"
+pylint = "^2.13.2"
 mypy = "^0.942"
-black = "^22.1.0"
+black = "^22.3.0"
 pytest-xdist = "^2.5.0"
 coverage = "^6.3.2"
 fuzzywuzzy-stubs = "^0.0.1"
 isort = "^5.10.1"
 sqlalchemy2-stubs = "^0.0.2-alpha.21"
-pytest-asyncio = "^0.18.2"
+pytest-asyncio = "^0.18.3"
 asgi-lifespan = "^1.0.1"
-types-aiofiles = "^0.8.5"
+types-aiofiles = "^0.8.6"
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"

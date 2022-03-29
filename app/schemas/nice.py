@@ -259,7 +259,10 @@ class BaseVals(BaseModel):
     UseTreasureDevice: int | None = None
     SkillReaction: int | None = None
     BehaveAsFamilyBuff: int | None = None
-    UnSubStateWhileLinkedToOthers: int | None = None
+    UnSubStateWhileLinkedToOthers: int | None = Field(
+        default=None,
+        description="The buff with this dataVal is removed if the linked buff is removed.",
+    )
     NotAccompanyWhenLinkedTargetMoveState: int | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
