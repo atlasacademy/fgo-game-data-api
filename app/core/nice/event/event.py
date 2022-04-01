@@ -129,6 +129,7 @@ async def get_nice_event(
         id=raw_event.mstEvent.id,
         type=EVENT_TYPE_NAME[raw_event.mstEvent.type],
         name=get_translation(lang, raw_event.mstEvent.name),
+        originalName=raw_event.mstEvent.name,
         shortName=raw_event.mstEvent.shortName,
         detail=raw_event.mstEvent.detail,
         noticeBanner=fmt_url(

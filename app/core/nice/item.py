@@ -52,6 +52,7 @@ def get_nice_item_from_raw(
     return NiceItem(
         id=raw_item.id,
         name=get_translation(lang, raw_item.name),
+        originalName=raw_item.name,
         type=ITEM_TYPE_NAME[raw_item.type],
         uses=get_item_use(raw_item),
         detail=raw_item.detail,

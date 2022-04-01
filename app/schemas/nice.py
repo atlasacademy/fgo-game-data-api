@@ -141,6 +141,7 @@ class AssetURL:
 class NiceItem(BaseModelORJson):
     id: int
     name: str
+    originalName: str
     type: NiceItemType
     uses: list[NiceItemUse]
     detail: str
@@ -484,6 +485,7 @@ class NiceSkill(BaseModelORJson):
     id: int
     num: int = -1
     name: str
+    originalName: str
     ruby: str
     detail: Optional[str] = None
     unmodifiedDetail: Optional[str] = None
@@ -550,6 +552,7 @@ class NiceMysticCodeCostume(BaseModel):
 class NiceMysticCode(BaseModelORJson):
     id: int
     name: str
+    originalName: str
     detail: str
     maxLv: int
     extraAssets: ExtraMCAssets
@@ -881,6 +884,7 @@ class NiceCommandCode(BaseModelORJson):
     id: int
     collectionNo: int
     name: str
+    originalName: str
     rarity: int
     extraAssets: ExtraCCAssets
     skills: list[NiceSkill]
@@ -904,6 +908,9 @@ class NiceServant(BaseModelORJson):
         "The community usually means this number when they talk about servant or CE IDs.",
     )
     name: str = Field(..., title="svt's name", description="svt's name")
+    originalName: str = Field(
+        ..., title="untranslated svt name", description="untranslated svt name"
+    )
     ruby: str = Field(
         ..., title="svt's name ruby text", description="svt's name ruby text"
     )
@@ -1103,6 +1110,9 @@ class NiceEquip(BaseModelORJson):
         "The community usually means this number when they talk about servant or CE IDs.",
     )
     name: str = Field(..., title="svt's name", description="svt's name")
+    originalName: str = Field(
+        ..., title="untranslated svt name", description="untranslated svt name"
+    )
     type: NiceSvtType = Field(..., title="svt's type", description="svt's type.")
     flag: NiceSvtFlag = Field(
         ..., title="svt's flag", description="Some random flags given to the svt items."
@@ -1298,6 +1308,7 @@ class NiceBgmRelease(BaseModelORJson):
 class NiceBgmEntity(BaseModelORJson):
     id: int
     name: str
+    originalName: str
     fileName: str
     audioAsset: Optional[HttpUrl] = None
     priority: int
@@ -1506,6 +1517,7 @@ class NiceEvent(BaseModelORJson):
     id: int
     type: NiceEventType
     name: str
+    originalName: str
     shortName: str
     detail: str
     noticeBanner: Optional[HttpUrl] = None
@@ -1918,6 +1930,7 @@ class NiceSpot(BaseModel):
     joinSpotIds: list[int]
     mapId: int
     name: str
+    originalName: str
     image: Optional[HttpUrl] = None
     x: int
     y: int
@@ -1952,7 +1965,9 @@ class NiceWar(BaseModelORJson):
     coordinates: list[list[Decimal]]
     age: str
     name: str
+    originalName: str
     longName: str
+    originalLongName: str
     flags: list[NiceWarFlag]
     banner: Optional[HttpUrl] = None
     headerImage: Optional[HttpUrl] = None

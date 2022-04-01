@@ -133,6 +133,7 @@ async def get_nice_quest(
     nice_data: dict[str, Any] = {
         "id": raw_quest.mstQuest.id,
         "name": get_translation(lang, raw_quest.mstQuest.name),
+        "originalName": raw_quest.mstQuest.name,
         "type": QUEST_TYPE_NAME[raw_quest.mstQuest.type],
         "flags": get_flags(raw_quest.mstQuest.flag, Quest_FLAG_NAME),
         "consumeType": QUEST_CONSUME_TYPE_NAME[raw_quest.mstQuest.consumeType],

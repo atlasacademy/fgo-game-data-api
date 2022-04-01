@@ -27,6 +27,7 @@ async def get_nice_command_code(
     nice_cc = NiceCommandCode(
         id=raw_cc.mstCommandCode.id,
         name=get_translation(lang, raw_cc.mstCommandCode.name),
+        originalName=raw_cc.mstCommandCode.name,
         collectionNo=raw_cc.mstCommandCode.collectionNo,
         rarity=raw_cc.mstCommandCode.rarity,
         extraAssets={

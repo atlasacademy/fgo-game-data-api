@@ -74,6 +74,7 @@ async def get_nice_skill_with_svt(
     nice_skill: dict[str, Any] = {
         "id": skillEntity.mstSkill.id,
         "name": get_translation(lang, skillEntity.mstSkill.name),
+        "originalName": skillEntity.mstSkill.name,
         "ruby": skillEntity.mstSkill.ruby,
         "type": SKILL_TYPE_NAME[skillEntity.mstSkill.type],
         "actIndividuality": get_traits_list(skillEntity.mstSkill.actIndividuality),

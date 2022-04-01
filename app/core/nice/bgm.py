@@ -67,6 +67,7 @@ def get_nice_bgm_entity_from_raw(
     nice_bgm = NiceBgmEntity(
         id=bgm_entity.mstBgm.id,
         name=get_translation(lang, bgm_entity.mstBgm.name),
+        originalName=bgm_entity.mstBgm.name,
         fileName=bgm_entity.mstBgm.fileName,
         audioAsset=get_bgm_url(region, bgm_entity.mstBgm),
         priority=bgm_entity.mstBgm.priority,

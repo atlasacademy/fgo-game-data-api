@@ -149,6 +149,7 @@ async def get_nice_servant(
         "id": raw_svt.mstSvt.id,
         "collectionNo": raw_svt.mstSvt.collectionNo,
         "name": get_translation(lang, raw_svt.mstSvt.name),
+        "originalName": raw_svt.mstSvt.name,
         "ruby": raw_svt.mstSvt.ruby,
         "gender": GENDER_TYPE_NAME[raw_svt.mstSvt.genderType],
         "attribute": ATTRIBUTE_NAME[raw_svt.mstSvt.attri],
