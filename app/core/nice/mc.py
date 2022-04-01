@@ -3,11 +3,17 @@ from typing import Optional
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
-from ...schemas.common import Language, Region
-from ...schemas.nice import AssetURL, NiceMysticCode, NiceMysticCodeCostume
+from ...schemas.common import Language, MCAssets, Region
+from ...schemas.nice import (
+    AssetURL,
+    ExtraAssetsUrl,
+    ExtraMCAssets,
+    NiceMysticCode,
+    NiceMysticCodeCostume,
+)
 from ...schemas.raw import MstCommonRelease, MstEquip, MstEquipAdd
 from .. import raw
-from ..utils import get_translation
+from ..utils import fmt_url, get_translation
 from .common_release import get_nice_common_release
 from .skill import get_nice_skill_with_svt
 
@@ -22,32 +28,38 @@ def get_nice_mc_costume(
     releases: list[MstCommonRelease],
 ) -> NiceMysticCodeCostume:
     base_settings = {"base_url": settings.asset_url, "region": region}
-    extraAssets = {
-        "item": {
-            "male": AssetURL.mc["item"].format(
-                **base_settings, item_id=equip.maleImageId
+    extraAssets = ExtraMCAssets(
+        item=MCAssets(
+            male=fmt_url(
+                AssetURL.mc["item"], **base_settings, item_id=equip.maleImageId
             ),
-            "female": AssetURL.mc["item"].format(
-                **base_settings, item_id=equip.femaleImageId
+            female=fmt_url(
+                AssetURL.mc["item"], **base_settings, item_id=equip.femaleImageId
             ),
-        },
-        "masterFace": {
-            "male": AssetURL.mc["masterFaceImage"].format(
-                **base_settings, item_id=equipAdd.maleImageId
+        ),
+        masterFigure=MCAssets(
+            male=fmt_url(
+                AssetURL.mc["masterFigure"],
+                **base_settings,
+                item_id=equipAdd.maleImageId,
             ),
-            "female": AssetURL.mc["masterFaceImage"].format(
-                **base_settings, item_id=equipAdd.femaleImageId
+            female=fmt_url(
+                AssetURL.mc["masterFigure"],
+                **base_settings,
+                item_id=equipAdd.femaleImageId,
             ),
-        },
-        "masterFigure": {
-            "male": AssetURL.mc["masterFigure"].format(
-                **base_settings, item_id=equipAdd.maleImageId
+        ),
+        masterFace=MCAssets(
+            male=fmt_url(
+                AssetURL.mc["masterFace"], **base_settings, item_id=equipAdd.maleImageId
             ),
-            "female": AssetURL.mc["masterFigure"].format(
-                **base_settings, item_id=equipAdd.femaleImageId
+            female=fmt_url(
+                AssetURL.mc["masterFace"],
+                **base_settings,
+                item_id=equipAdd.femaleImageId,
             ),
-        },
-    }
+        ),
+    )
 
     return NiceMysticCodeCostume(
         id=equipAdd.id,
@@ -75,21 +87,31 @@ async def get_nice_mystic_code(
         originalName=raw_mc.mstEquip.name,
         detail=raw_mc.mstEquip.detail,
         maxLv=raw_mc.mstEquip.maxLv,
-        extraAssets={
-            asset_category: {
-                "male": AssetURL.mc[asset_category].format(
-                    **base_settings, item_id=raw_mc.mstEquip.maleImageId
-                ),
-                "female": AssetURL.mc[asset_category].format(
-                    **base_settings, item_id=raw_mc.mstEquip.femaleImageId
-                ),
+        extraAssets=ExtraMCAssets(
+            **{
+                asset_category: (
+                    MCAssets(
+                        male=fmt_url(
+                            AssetURL.mc[asset_category],
+                            **base_settings,
+                            item_id=raw_mc.mstEquip.maleImageId,
+                        ),
+                        female=fmt_url(
+                            AssetURL.mc[asset_category],
+                            **base_settings,
+                            item_id=raw_mc.mstEquip.femaleImageId,
+                        ),
+                    )
+                )
+                for asset_category in ("item", "masterFace", "masterFigure")
             }
-            for asset_category in ("item", "masterFace", "masterFigure")
-        },
+        ),
         expRequired=(
-            exp.exp
-            for exp in sorted(raw_mc.mstEquipExp, key=lambda x: x.lv)
-            if exp.exp != -1
+            [
+                exp.exp
+                for exp in sorted(raw_mc.mstEquipExp, key=lambda x: x.lv)
+                if exp.exp != -1
+            ]
         ),
         skills=[
             skill

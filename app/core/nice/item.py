@@ -9,7 +9,7 @@ from ...schemas.gameenums import ITEM_TYPE_NAME, ItemType
 from ...schemas.nice import AssetURL, NiceItem, NiceItemAmount, NiceLvlUpMaterial
 from ...schemas.raw import MstItem
 from ..raw import get_item_entity, get_multiple_items
-from ..utils import get_traits_list, get_translation
+from ..utils import fmt_url, get_traits_list, get_translation
 
 
 settings = Settings()
@@ -45,9 +45,19 @@ def get_nice_item_from_raw(
         "item_id": raw_item.imageId,
     }
     if raw_item.type == ItemType.SVT_COIN:
-        icon_url = AssetURL.coins.format(**url_format_params)
+        icon_url = fmt_url(
+            AssetURL.coins,
+            base_url=settings.asset_url,
+            region=region,
+            item_id=raw_item.imageId,
+        )
     else:
-        icon_url = AssetURL.items.format(**url_format_params)
+        icon_url = fmt_url(
+            AssetURL.items,
+            base_url=settings.asset_url,
+            region=region,
+            item_id=raw_item.imageId,
+        )
 
     return NiceItem(
         id=raw_item.id,

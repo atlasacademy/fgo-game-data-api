@@ -124,7 +124,7 @@ async def get_nice_quest(
     lang: Language,
     mstWar: Optional[MstWar] = None,
     mstSpot: Optional[MstSpot] = None,
-) -> dict[str, Any]:
+) -> NiceQuest:
     if not mstWar:
         mstWar = await war.get_war_from_spot(conn, raw_quest.mstQuest.spotId)
     if not mstSpot:

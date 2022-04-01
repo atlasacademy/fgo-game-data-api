@@ -73,6 +73,7 @@ def get_nice_shop(
             item=NiceItem(
                 id=0,
                 name="",
+                originalName="",
                 type=NiceItemType.stone,
                 uses=[],
                 detail="",
