@@ -3,6 +3,8 @@ import orjson
 import pytest
 from httpx import AsyncClient
 from sqlalchemy.ext.asyncio.engine import AsyncConnection
+from pydantic import HttpUrl
+from pydantic.tools import parse_obj_as
 
 from app.core.nice.enemy import get_enemy_script
 from app.core.nice.svt.voice import get_nice_voice_line
@@ -11,6 +13,7 @@ from app.data.utils import load_master_data
 from app.db.helpers import event
 from app.schemas.common import Language, Region
 from app.schemas.raw import MstSvtVoice, MstVoice
+from app.schemas.nice import ExtraAssetsUrl
 
 from .utils import clear_drop_data, get_response_data, test_gamedata
 
@@ -716,3 +719,22 @@ def test_nice_voice_summon_script() -> None:
 
     expected = get_response_data("test_data_nice", "svt_voice_summon_script")
     assert orjson.loads(nice_voice.json()) == expected
+
+
+def test_asset_set_url() -> None:
+    assets_url = ExtraAssetsUrl()
+    url = parse_obj_as(HttpUrl, "https://example.com")
+    costume_ids = {11: 100011, 12: 100012}
+
+    assets_url.set_limit_asset(11, url, costume_ids)
+    assets_url.set_limit_asset(12, url, costume_ids)
+    assets_url.set_limit_asset(1, url, costume_ids)
+    assets_url.set_limit_asset(4, url, costume_ids)
+
+    assert assets_url.dict() == {
+        "ascension": {2: url, 4: url},
+        "costume": {100011: url, 100012: url},
+        "cc": None,
+        "equip": None,
+        "story": None,
+    }
