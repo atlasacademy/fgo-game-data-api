@@ -1,7 +1,7 @@
 from typing import Optional
 
 from sqlalchemy.ext.asyncio import AsyncConnection
-from sqlalchemy.sql import func, literal_column, select
+from sqlalchemy.sql import and_, func, literal_column, select
 
 from ...models.raw import ScriptFileList
 from ...schemas.raw import ScriptEntity, ScriptSearchResult
@@ -32,19 +32,30 @@ async def get_script(conn: AsyncConnection, script_id: str) -> Optional[ScriptEn
 
 
 async def get_script_search(
-    conn: AsyncConnection, search_query: str, limit_result: int = 50
+    conn: AsyncConnection,
+    search_query: str,
+    script_file_name: str | None = None,
+    limit_result: int = 50,
 ) -> list[ScriptSearchResult]:
     score = func.pgroonga_score(literal_column("tableoid"), literal_column("ctid"))
     snippets = func.pgroonga_snippet_html(
         ScriptFileList.c.textScript, func.pgroonga_query_extract_keywords(search_query)
     )
+
+    where_conds = [ScriptFileList.c.textScript.op("&@~")(search_query)]
+
+    if script_file_name:
+        where_conds.append(
+            ScriptFileList.c.scriptFileName.like(f"%{script_file_name}%")
+        )
+
     stmt = (
         select(
             ScriptFileList.c.scriptFileName.distinct().label("scriptId"),
             score.label("score"),
             snippets.label("snippets"),
         )
-        .where(ScriptFileList.c.textScript.op("&@~")(search_query))
+        .where(and_(*where_conds))
         .order_by(score.desc())
         .limit(limit_result)
     )

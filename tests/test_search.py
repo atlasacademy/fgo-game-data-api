@@ -311,6 +311,10 @@ nice_raw_test_cases_dict = {
     ),
     "item_type": ("JP/item/search?type=chargeStone", {6}),
     "script_search": ("JP/script/search?query=存在したでしょう", {"0300051410"}),
+    "script_search_name": (
+        "NA/script/search?query=gomenasorry&scriptFileName=9401",
+        {"9401760110"},
+    ),
 }
 
 nice_raw_test_cases = [

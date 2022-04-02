@@ -2,9 +2,9 @@
 import orjson
 import pytest
 from httpx import AsyncClient
-from sqlalchemy.ext.asyncio.engine import AsyncConnection
 from pydantic import HttpUrl
 from pydantic.tools import parse_obj_as
+from sqlalchemy.ext.asyncio.engine import AsyncConnection
 
 from app.core.nice.enemy import get_enemy_script
 from app.core.nice.svt.voice import get_nice_voice_line
@@ -12,8 +12,8 @@ from app.data.shop import get_shop_cost_item_id
 from app.data.utils import load_master_data
 from app.db.helpers import event
 from app.schemas.common import Language, Region
-from app.schemas.raw import MstSvtVoice, MstVoice
 from app.schemas.nice import ExtraAssetsUrl
+from app.schemas.raw import MstSvtVoice, MstVoice
 
 from .utils import clear_drop_data, get_response_data, test_gamedata
 

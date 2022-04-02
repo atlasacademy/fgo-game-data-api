@@ -457,6 +457,7 @@ class QuestSearchQueryParams:
 class ScriptSearchQueryParams:
     region: Region
     query: str = Query(..., max_length=999)
+    scriptFileName: str | None = Query(default=None, max_length=99)
 
     DESCRIPTION: ClassVar[str] = inspect.cleandoc(
         """

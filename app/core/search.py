@@ -446,4 +446,6 @@ async def search_quest(
 async def search_script(
     conn: AsyncConnection, search_param: ScriptSearchQueryParams
 ) -> list[ScriptSearchResult]:
-    return await get_script_search(conn, search_param.query)
+    return await get_script_search(
+        conn, search_param.query, search_param.scriptFileName
+    )
