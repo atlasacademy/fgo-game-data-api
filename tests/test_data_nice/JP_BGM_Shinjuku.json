@@ -1,6 +1,7 @@
 {
   "id": 138,
   "name": "Quarantined Territory of Malice:\nShinjuku",
+  "originalName": "悪性隔絶魔境：\n新宿",
   "fileName": "BGM_MAP_23",
   "audioAsset": "https://assets.atlasacademy.io/GameData/JP/Audio/BGM_MAP_23/BGM_MAP_23.mp3",
   "priority": 12001,
@@ -23,6 +24,7 @@
       "item": {
         "id": 7106,
         "name": "Assassin Monument",
+        "originalName": "アサシンモニュメント",
         "type": "tdLvUp",
         "uses": [
           "ascension"

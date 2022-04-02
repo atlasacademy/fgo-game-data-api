@@ -27,6 +27,7 @@
         "skill": {
           "id": 962336,
           "name": "Report with Information Collected Through Glances",
+          "originalName": "Report with Information Collected Through Glances",
           "ruby": "-",
           "type": "active",
           "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png",
@@ -330,6 +331,7 @@
         "skill": {
           "id": 962335,
           "name": "King Monkey's Fist",
+          "originalName": "King Monkey's Fist",
           "ruby": "-",
           "type": "active",
           "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png",

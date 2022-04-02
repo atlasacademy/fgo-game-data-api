@@ -1,6 +1,7 @@
 {
   "id": 110,
   "name": "Mystic Code: Chaldea Uniform - Arctic",
+  "originalName": "Mystic Code: Chaldea Uniform - Arctic",
   "detail": "A Mystic Code created in anticipation of the wearer encountering extreme cold.",
   "maxLv": 10,
   "extraAssets": {
@@ -21,6 +22,7 @@
     {
       "id": 980031,
       "name": "Purifying Recovery",
+      "originalName": "Purifying Recovery",
       "ruby": "Purifying Recovery",
       "detail": "Restore HP & remove DEF Debuffs for one ally",
       "unmodifiedDetail": "Restore HP [{0}] & remove DEF Debuffs for one ally",
@@ -150,6 +152,7 @@
     {
       "id": 980032,
       "name": "Illusionary Buff",
+      "originalName": "Illusionary Buff",
       "ruby": "Illusionary Buff",
       "detail": "Increase ATK (1 turn) & increase NP Strength (1 turn) for one ally",
       "unmodifiedDetail": "Increase ATK [{0}] (1 turn) & increase NP Strength [{0}] (1 turn) for one ally",
@@ -381,6 +384,7 @@
     {
       "id": 980033,
       "name": "Predictive Evasion",
+      "originalName": "Predictive Evasion",
       "ruby": "Predictive Evasion",
       "detail": "Apply Evade to one ally (1 time, 3 turns)",
       "unmodifiedDetail": "Apply Evade to one ally (1 time, 3 turns)",

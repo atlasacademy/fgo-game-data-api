@@ -1,5 +1,6 @@
 from typing import Iterable
 
+from pydantic import HttpUrl
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
@@ -39,25 +40,15 @@ async def get_nice_item(
 def get_nice_item_from_raw(
     region: Region, raw_item: MstItem, lang: Language
 ) -> NiceItem:
-    url_format_params = {
+    url_format_params: dict[str, HttpUrl | str | int] = {
         "base_url": settings.asset_url,
         "region": region,
         "item_id": raw_item.imageId,
     }
     if raw_item.type == ItemType.SVT_COIN:
-        icon_url = fmt_url(
-            AssetURL.coins,
-            base_url=settings.asset_url,
-            region=region,
-            item_id=raw_item.imageId,
-        )
+        icon_url = fmt_url(AssetURL.coins, **url_format_params)
     else:
-        icon_url = fmt_url(
-            AssetURL.items,
-            base_url=settings.asset_url,
-            region=region,
-            item_id=raw_item.imageId,
-        )
+        icon_url = fmt_url(AssetURL.items, **url_format_params)
 
     return NiceItem(
         id=raw_item.id,

@@ -2,6 +2,7 @@
   "id": 404601,
   "collectionNo": 0,
   "name": "エリザベート・バートリー〔シンデレラ〕",
+  "originalName": "エリザベート・バートリー〔シンデレラ〕",
   "ruby": "エリザベート・バートリー〔シンデレラ〕",
   "className": "rider",
   "type": "svtMaterialTd",
@@ -201,6 +202,7 @@
     {
       "id": 88650,
       "name": "騎乗 EX",
+      "originalName": "騎乗 EX",
       "ruby": "きじょう",
       "detail": "自身のQuickカードの性能をアップ",
       "unmodifiedDetail": "自身のQuickカードの性能をアップ",

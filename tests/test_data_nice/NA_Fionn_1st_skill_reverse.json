@@ -2,6 +2,7 @@
   "id": 19450,
   "num": 1,
   "name": "Clairvoyance B",
+  "originalName": "Clairvoyance B",
   "ruby": "Clairvoyance ",
   "detail": "Increase your C. Star Drop Rate (3 turns)",
   "unmodifiedDetail": "Increase your C. Star Drop Rate [{0}] (3 turns)",
@@ -234,6 +235,7 @@
           "id": 301100,
           "collectionNo": 87,
           "name": "Fionn mac Cumhaill",
+          "originalName": "Fionn mac Cumhaill",
           "ruby": "Fionn mac Cumhaill",
           "className": "lancer",
           "type": "normal",
@@ -985,6 +987,7 @@
                   "item": {
                     "id": 7003,
                     "name": "Lancer Piece",
+                    "originalName": "Lancer Piece",
                     "type": "tdLvUp",
                     "uses": [
                       "ascension"
@@ -1007,6 +1010,7 @@
                   "item": {
                     "id": 7003,
                     "name": "Lancer Piece",
+                    "originalName": "Lancer Piece",
                     "type": "tdLvUp",
                     "uses": [
                       "ascension"
@@ -1024,6 +1028,7 @@
                   "item": {
                     "id": 6501,
                     "name": "Phoenix Feather",
+                    "originalName": "Phoenix Feather",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1048,6 +1053,7 @@
                   "item": {
                     "id": 7103,
                     "name": "Lancer Monument",
+                    "originalName": "Lancer Monument",
                     "type": "tdLvUp",
                     "uses": [
                       "ascension"
@@ -1065,6 +1071,7 @@
                   "item": {
                     "id": 6516,
                     "name": "Evil Bone",
+                    "originalName": "Evil Bone",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1084,6 +1091,7 @@
                   "item": {
                     "id": 6507,
                     "name": "Claw of Chaos",
+                    "originalName": "Claw of Chaos",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1108,6 +1116,7 @@
                   "item": {
                     "id": 7103,
                     "name": "Lancer Monument",
+                    "originalName": "Lancer Monument",
                     "type": "tdLvUp",
                     "uses": [
                       "ascension"
@@ -1125,6 +1134,7 @@
                   "item": {
                     "id": 6507,
                     "name": "Claw of Chaos",
+                    "originalName": "Claw of Chaos",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1144,6 +1154,7 @@
                   "item": {
                     "id": 6505,
                     "name": "Void's Dust",
+                    "originalName": "Void's Dust",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1170,6 +1181,7 @@
                   "item": {
                     "id": 6003,
                     "name": "Gem of Lancer",
+                    "originalName": "Gem of Lancer",
                     "type": "skillLvUp",
                     "uses": [
                       "skill"
@@ -1192,6 +1204,7 @@
                   "item": {
                     "id": 6003,
                     "name": "Gem of Lancer",
+                    "originalName": "Gem of Lancer",
                     "type": "skillLvUp",
                     "uses": [
                       "skill"
@@ -1214,6 +1227,7 @@
                   "item": {
                     "id": 6103,
                     "name": "Magic Gem of Lancer",
+                    "originalName": "Magic Gem of Lancer",
                     "type": "skillLvUp",
                     "uses": [
                       "skill"
@@ -1236,6 +1250,7 @@
                   "item": {
                     "id": 6103,
                     "name": "Magic Gem of Lancer",
+                    "originalName": "Magic Gem of Lancer",
                     "type": "skillLvUp",
                     "uses": [
                       "skill"
@@ -1253,6 +1268,7 @@
                   "item": {
                     "id": 6516,
                     "name": "Evil Bone",
+                    "originalName": "Evil Bone",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1277,6 +1293,7 @@
                   "item": {
                     "id": 6203,
                     "name": "Secret Gem of Lancer",
+                    "originalName": "Secret Gem of Lancer",
                     "type": "skillLvUp",
                     "uses": [
                       "skill"
@@ -1294,6 +1311,7 @@
                   "item": {
                     "id": 6516,
                     "name": "Evil Bone",
+                    "originalName": "Evil Bone",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1318,6 +1336,7 @@
                   "item": {
                     "id": 6203,
                     "name": "Secret Gem of Lancer",
+                    "originalName": "Secret Gem of Lancer",
                     "type": "skillLvUp",
                     "uses": [
                       "skill"
@@ -1335,6 +1354,7 @@
                   "item": {
                     "id": 6501,
                     "name": "Phoenix Feather",
+                    "originalName": "Phoenix Feather",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1359,6 +1379,7 @@
                   "item": {
                     "id": 6501,
                     "name": "Phoenix Feather",
+                    "originalName": "Phoenix Feather",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1378,6 +1399,7 @@
                   "item": {
                     "id": 6515,
                     "name": "Octuplet Crystals",
+                    "originalName": "Octuplet Crystals",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1402,6 +1424,7 @@
                   "item": {
                     "id": 6515,
                     "name": "Octuplet Crystals",
+                    "originalName": "Octuplet Crystals",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1421,6 +1444,7 @@
                   "item": {
                     "id": 6509,
                     "name": "Serpent Jewel",
+                    "originalName": "Serpent Jewel",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1445,6 +1469,7 @@
                   "item": {
                     "id": 6999,
                     "name": "Crystallized Lore",
+                    "originalName": "Crystallized Lore",
                     "type": "skillLvUp",
                     "uses": [
                       "skill"
@@ -1470,6 +1495,7 @@
               "id": 19450,
               "num": 1,
               "name": "Clairvoyance B",
+              "originalName": "Clairvoyance B",
               "ruby": "Clairvoyance ",
               "detail": "Increase your C. Star Drop Rate (3 turns)",
               "unmodifiedDetail": "Increase your C. Star Drop Rate [{0}] (3 turns)",
@@ -1700,6 +1726,7 @@
               "id": 156550,
               "num": 2,
               "name": "Trouble with Women A",
+              "originalName": "Trouble with Women A",
               "ruby": "Trouble with Women",
               "detail": "Chance to Evade incoming attacks (1 turn) & apply Target Focus (1 turn) & decrease Charm Resist from [Female] enemies (3 turns) [Demerit] for yourself",
               "unmodifiedDetail": "Chance to Evade incoming attacks [{0}] (1 turn) & apply Target Focus [{0}] (1 turn) & decrease Charm Resist from [Female] enemies (3 turns) [Demerit] for yourself",
@@ -2046,6 +2073,7 @@
               "id": 94450,
               "num": 3,
               "name": "Magecraft B",
+              "originalName": "Magecraft B",
               "ruby": "Magecraft ",
               "detail": "Increase your Arts Card effectiveness (1 turn)",
               "unmodifiedDetail": "Increase your Arts Card effectiveness [{0}] (1 turn)",
@@ -2192,6 +2220,7 @@
               "id": 401452,
               "num": 1,
               "name": "Clairvoyance (Beauty) B++",
+              "originalName": "Clairvoyance (Beauty) B++",
               "ruby": "Clairvoyance",
               "detail": "Increase C. Star Drop Rate ▲ (3 turns) & NP Gain ▲ (3 turns) for all allies ",
               "unmodifiedDetail": "Increase C. Star Drop Rate [{0}] [g][o]▲[/o][/g] (3 turns) & NP Gain [{0}] [g][o]▲[/o][/g] (3 turns) for all allies ",
@@ -2569,6 +2598,7 @@
               "id": 570550,
               "num": 2,
               "name": "Uninhibited Resplendence A",
+              "originalName": "Uninhibited Resplendence A",
               "ruby": "Uninhibited Resplendence",
               "detail": "Chance to Evade incoming attacks (1 turn) & apply Target Focus (1 turn) & increase NP Gauge ▲ & decrease Charm Resist from [Female] enemies (3 turn) [Demerit] for yourself",
               "unmodifiedDetail": "Chance to Evade incoming attacks [{0}] (1 turn) & apply Target Focus (1 turn) & increase NP Gauge [{0}] [g][o]▲[/o][/g] & decrease Charm Resist from [Female] enemies (3 turn) [Demerit] for yourself",
@@ -3022,6 +3052,7 @@
             {
               "id": 34450,
               "name": "Magic Resistance B",
+              "originalName": "Magic Resistance B",
               "ruby": "Magic Resistance ",
               "detail": "Increase your Debuff Resist",
               "unmodifiedDetail": "Increase your Debuff Resist",
@@ -3153,6 +3184,7 @@
             {
               "id": 62250,
               "name": "Divinity D",
+              "originalName": "Divinity D",
               "ruby": "Divinity ",
               "detail": "Apply Damage Plus for yourself",
               "unmodifiedDetail": "Apply Damage Plus for yourself",
@@ -3284,6 +3316,7 @@
             {
               "id": 960502,
               "name": "Power of Bonds E",
+              "originalName": "Power of Bonds E",
               "ruby": "Power of Bonds",
               "detail": "Increase your ATK Strength by 20% in \"Final Singularity: The Grand Temple of Time Solomon\"",
               "unmodifiedDetail": "Increase your ATK Strength by 20% in \"Final Singularity: The Grand Temple of Time Solomon\"",
@@ -3376,6 +3409,7 @@
             {
               "id": 960503,
               "name": "Power of Bonds D",
+              "originalName": "Power of Bonds D",
               "ruby": "Power of Bonds",
               "detail": "Increase your ATK Strength by 40% in \"Final Singularity: The Grand Temple of Time Solomon\"",
               "unmodifiedDetail": "Increase your ATK Strength by 40% in \"Final Singularity: The Grand Temple of Time Solomon\"",
@@ -3468,6 +3502,7 @@
             {
               "id": 960504,
               "name": "Power of Bonds C",
+              "originalName": "Power of Bonds C",
               "ruby": "Power of Bonds",
               "detail": "Increase your ATK Strength by 60% in \"Final Singularity: The Grand Temple of Time Solomon\"",
               "unmodifiedDetail": "Increase your ATK Strength by 60% in \"Final Singularity: The Grand Temple of Time Solomon\"",
@@ -3560,6 +3595,7 @@
             {
               "id": 960505,
               "name": "Power of Bonds B",
+              "originalName": "Power of Bonds B",
               "ruby": "Power of Bonds",
               "detail": "Increase your ATK Strength by 75% in \"Final Singularity: The Grand Temple of Time Solomon\"",
               "unmodifiedDetail": "Increase your ATK Strength by 75% in \"Final Singularity: The Grand Temple of Time Solomon\"",
@@ -3652,6 +3688,7 @@
             {
               "id": 960506,
               "name": "Power of Bonds A",
+              "originalName": "Power of Bonds A",
               "ruby": "Power of Bonds",
               "detail": "Increase your ATK Strength by 90% in \"Final Singularity: The Grand Temple of Time Solomon\"",
               "unmodifiedDetail": "Increase your ATK Strength by 90% in \"Final Singularity: The Grand Temple of Time Solomon\"",
@@ -3744,6 +3781,7 @@
             {
               "id": 960507,
               "name": "Power of Bonds EX",
+              "originalName": "Power of Bonds EX",
               "ruby": "Power of Bonds",
               "detail": "Increase your ATK Strength by 100% in \"Final Singularity: The Grand Temple of Time Solomon\"",
               "unmodifiedDetail": "Increase your ATK Strength by 100% in \"Final Singularity: The Grand Temple of Time Solomon\"",
@@ -3836,6 +3874,7 @@
             {
               "id": 961154,
               "name": "Serious Match",
+              "originalName": "Serious Match",
               "ruby": "Serious Match",
               "detail": "Bond gained upon clearing \"Pseudo-Singularity III: The Stage of Carnage, Shimousa\" main quests increased by 100%",
               "unmodifiedDetail": "Bond gained upon clearing \"Pseudo-Singularity III: The Stage of Carnage, Shimousa\" main quests increased by 100%",

@@ -6,7 +6,6 @@ from ...config import Settings
 from ...schemas.common import Language, MCAssets, Region
 from ...schemas.nice import (
     AssetURL,
-    ExtraAssetsUrl,
     ExtraMCAssets,
     NiceMysticCode,
     NiceMysticCodeCostume,
@@ -87,8 +86,8 @@ async def get_nice_mystic_code(
         originalName=raw_mc.mstEquip.name,
         detail=raw_mc.mstEquip.detail,
         maxLv=raw_mc.mstEquip.maxLv,
-        extraAssets=ExtraMCAssets(
-            **{
+        extraAssets=ExtraMCAssets.parse_obj(
+            {
                 asset_category: (
                     MCAssets(
                         male=fmt_url(

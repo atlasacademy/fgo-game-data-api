@@ -35,6 +35,7 @@
         {
           "id": 980023,
           "name": "Stepping Stone to Ultimate Victory",
+          "originalName": "Stepping Stone to Ultimate Victory",
           "ruby": "Stepping Stone to Ultimate Victory",
           "detail": "Increase an ally's Critical Star drop rate (1 turn)",
           "unmodifiedDetail": "Increase an ally's Critical Star drop rate [{0}] (1 turn)",

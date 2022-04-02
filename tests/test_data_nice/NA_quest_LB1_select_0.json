@@ -122,6 +122,7 @@
           "id": 470450,
           "num": 1,
           "name": "Numerology B",
+          "originalName": "Numerology B",
           "ruby": "Numerology",
           "detail": "Increase Arts Card effectiveness (3 turns) & Buster Card effectiveness (3 turns) for yourself",
           "unmodifiedDetail": "Increase Arts Card effectiveness [{0}] (3 turns) & Buster Card effectiveness [{0}] (3 turns) for yourself",
@@ -380,6 +381,7 @@
           "id": 90451,
           "num": 2,
           "name": "Rapid Casting B+",
+          "originalName": "Rapid Casting B+",
           "ruby": "Rapid Casting ",
           "detail": "Greatly increase your NP Gauge ",
           "unmodifiedDetail": "Greatly increase your NP Gauge [{0}]",
@@ -520,6 +522,7 @@
           "id": 471650,
           "num": 3,
           "name": "Tranquil Fig EX",
+          "originalName": "Tranquil Fig EX",
           "ruby": "Tranquil Fig",
           "detail": "Gain a status that applies the following effects to all allies when defeated (5 turns): <Apply Invincible (2 times [3 times at Lv. 10], 3 turns) & Recover HP >",
           "unmodifiedDetail": "Gain a status that applies the following effects to all allies when defeated (5 turns): <Apply Invincible (2 times [3 times at Lv. 10], 3 turns) & Recover HP [{0}]>",
@@ -1309,6 +1312,7 @@
             "id": 9200010,
             "collectionNo": 0,
             "name": "",
+            "originalName": "",
             "type": "servantEquip",
             "flag": "onlyUseForNpc",
             "rarity": 5,
@@ -1810,6 +1814,7 @@
                 "id": 991817,
                 "num": 1,
                 "name": "",
+                "originalName": "",
                 "ruby": "",
                 "detail": "Begin battle with NP charged at 50% & increase NP Gain by 50% for yourself",
                 "unmodifiedDetail": "Begin battle with NP charged at 50% & increase NP Gain by 50% for yourself",
@@ -2036,6 +2041,7 @@
             "skill1": {
               "id": 961419,
               "name": "Reload Chilled Poison",
+              "originalName": "Reload Chilled Poison",
               "ruby": "-",
               "type": "active",
               "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png",
@@ -2627,6 +2633,7 @@
             "skill1": {
               "id": 961419,
               "name": "Reload Chilled Poison",
+              "originalName": "Reload Chilled Poison",
               "ruby": "-",
               "type": "active",
               "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png",
@@ -3190,6 +3197,7 @@
             "skill1": {
               "id": 961419,
               "name": "Reload Chilled Poison",
+              "originalName": "Reload Chilled Poison",
               "ruby": "-",
               "type": "active",
               "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png",
@@ -3772,6 +3780,7 @@
             "skill1": {
               "id": 961419,
               "name": "Reload Chilled Poison",
+              "originalName": "Reload Chilled Poison",
               "ruby": "-",
               "type": "active",
               "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png",
@@ -4345,6 +4354,7 @@
             "skill1": {
               "id": 961419,
               "name": "Reload Chilled Poison",
+              "originalName": "Reload Chilled Poison",
               "ruby": "-",
               "type": "active",
               "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png",
@@ -4927,6 +4937,7 @@
             "skill1": {
               "id": 961419,
               "name": "Reload Chilled Poison",
+              "originalName": "Reload Chilled Poison",
               "ruby": "-",
               "type": "active",
               "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png",
@@ -5509,6 +5520,7 @@
             "skill1": {
               "id": 961419,
               "name": "Reload Chilled Poison",
+              "originalName": "Reload Chilled Poison",
               "ruby": "-",
               "type": "active",
               "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png",
@@ -6082,6 +6094,7 @@
             "skill1": {
               "id": 961419,
               "name": "Reload Chilled Poison",
+              "originalName": "Reload Chilled Poison",
               "ruby": "-",
               "type": "active",
               "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png",

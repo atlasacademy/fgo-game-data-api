@@ -2,6 +2,7 @@
   "id": 8400550,
   "collectionNo": 55,
   "name": "オルレアンの乙女",
+  "originalName": "オルレアンの乙女",
   "rarity": 5,
   "extraAssets": {
     "charaGraph": {
@@ -19,6 +20,7 @@
     {
       "id": 991981,
       "name": "オルレアンの乙女",
+      "originalName": "オルレアンの乙女",
       "ruby": "おるれあんのおとめ",
       "detail": "刻印されたカードによる攻撃時に、自身のHPを1000回復(1度使用すると再使用に3ターン必要)",
       "unmodifiedDetail": "刻印されたカードによる攻撃時に、自身のHPを1000回復(1度使用すると再使用に3ターン必要)",

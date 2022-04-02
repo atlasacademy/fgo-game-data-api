@@ -2,6 +2,7 @@
   "id": 80018,
   "type": "eventQuest",
   "name": "The Demonic Capital: Rashomon",
+  "originalName": "The Demonic Capital: Rashomon",
   "shortName": "",
   "detail": "The Demonic Capital: Rashomon",
   "noticeBanner": "https://assets.atlasacademy.io/GameData/NA/Banner/event_war_80023.png",
@@ -34,6 +35,7 @@
         "item": {
           "id": 94003702,
           "name": "Oni Gourd",
+          "originalName": "Oni Gourd",
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
@@ -79,6 +81,7 @@
         "item": {
           "id": 94003702,
           "name": "Oni Gourd",
+          "originalName": "Oni Gourd",
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
@@ -124,6 +127,7 @@
         "item": {
           "id": 94003702,
           "name": "Oni Gourd",
+          "originalName": "Oni Gourd",
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
@@ -169,6 +173,7 @@
         "item": {
           "id": 94003702,
           "name": "Oni Gourd",
+          "originalName": "Oni Gourd",
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
@@ -214,6 +219,7 @@
         "item": {
           "id": 94003702,
           "name": "Oni Gourd",
+          "originalName": "Oni Gourd",
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
@@ -259,6 +265,7 @@
         "item": {
           "id": 94003702,
           "name": "Oni Gourd",
+          "originalName": "Oni Gourd",
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
@@ -304,6 +311,7 @@
         "item": {
           "id": 94003702,
           "name": "Oni Gourd",
+          "originalName": "Oni Gourd",
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
@@ -349,6 +357,7 @@
         "item": {
           "id": 94003702,
           "name": "Oni Gourd",
+          "originalName": "Oni Gourd",
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
@@ -394,6 +403,7 @@
         "item": {
           "id": 94003702,
           "name": "Oni Gourd",
+          "originalName": "Oni Gourd",
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
@@ -439,6 +449,7 @@
         "item": {
           "id": 94003702,
           "name": "Oni Gourd",
+          "originalName": "Oni Gourd",
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
@@ -484,6 +495,7 @@
         "item": {
           "id": 94003702,
           "name": "Oni Gourd",
+          "originalName": "Oni Gourd",
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
@@ -529,6 +541,7 @@
         "item": {
           "id": 94003702,
           "name": "Oni Gourd",
+          "originalName": "Oni Gourd",
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
@@ -574,6 +587,7 @@
         "item": {
           "id": 94003702,
           "name": "Oni Gourd",
+          "originalName": "Oni Gourd",
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
@@ -619,6 +633,7 @@
         "item": {
           "id": 94003702,
           "name": "Oni Gourd",
+          "originalName": "Oni Gourd",
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
@@ -664,6 +679,7 @@
         "item": {
           "id": 94003702,
           "name": "Oni Gourd",
+          "originalName": "Oni Gourd",
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
@@ -709,6 +725,7 @@
         "item": {
           "id": 94003702,
           "name": "Oni Gourd",
+          "originalName": "Oni Gourd",
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
@@ -754,6 +771,7 @@
         "item": {
           "id": 94003702,
           "name": "Oni Gourd",
+          "originalName": "Oni Gourd",
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
@@ -799,6 +817,7 @@
         "item": {
           "id": 94003702,
           "name": "Oni Gourd",
+          "originalName": "Oni Gourd",
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
@@ -844,6 +863,7 @@
         "item": {
           "id": 94003702,
           "name": "Oni Gourd",
+          "originalName": "Oni Gourd",
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
@@ -889,6 +909,7 @@
         "item": {
           "id": 94003702,
           "name": "Oni Gourd",
+          "originalName": "Oni Gourd",
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
@@ -934,6 +955,7 @@
         "item": {
           "id": 94003702,
           "name": "Oni Gourd",
+          "originalName": "Oni Gourd",
           "type": "eventItem",
           "uses": [],
           "detail": "\"Event Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA gourd that contains wine said to confuse the hearts of men.\nHas the effect of facilitating the\nsecret desires of whoever drinks it.\nMore than anything, it is a very tasty wine on its own.",
@@ -979,6 +1001,7 @@
         "item": {
           "id": 94003701,
           "name": "Golden Rice Ball",
+          "originalName": "Golden Rice Ball",
           "type": "rpAdd",
           "uses": [],
           "detail": "\"Event BP Recovery Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA golden rice ball fit for the truly golden one.\nCurry-flavored, but mild.\nWhen you eat it, it will make your waist light up, turn your brocade into bamboo grass, or even make your tuft look like a girl's, but only if made with Japanese rice...\nJust what type of rice is this?\nRecovers 8 BP during the Rashomon Raids.",
@@ -1024,6 +1047,7 @@
         "item": {
           "id": 94003703,
           "name": "Rice Ball of Power",
+          "originalName": "Rice Ball of Power",
           "type": "rpAdd",
           "uses": [],
           "detail": "\"Event BP Recovery Item\"\nObtained during \"The Demonic Capital: Rashomon.\"\nA rice ball that represents the friendship with the animals of Mt. Ashigara.\nPower will pour out of your body with just one bite!\n\"I'm totally pumped with motivation!\"\nThat was the review of a Rider passing by.\nRecovers 2 BP during the Rashomon Raids.",
@@ -4239,6 +4263,7 @@
       "bgm": {
         "id": 58,
         "name": "The Demonic Capital Rashomon:\nShop Theme Song",
+        "originalName": "The Demonic Capital Rashomon:\nShop Theme Song",
         "fileName": "BGM_EVENT_19",
         "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_EVENT_19/BGM_EVENT_19.mp3",
         "priority": 1006003,
@@ -4261,6 +4286,7 @@
             "item": {
               "id": 6502,
               "name": "Seed of Yggdrasil",
+              "originalName": "Seed of Yggdrasil",
               "type": "skillLvUp",
               "uses": [
                 "skill",
@@ -4309,6 +4335,7 @@
       "afterBgm": {
         "id": 58,
         "name": "The Demonic Capital Rashomon:\nShop Theme Song",
+        "originalName": "The Demonic Capital Rashomon:\nShop Theme Song",
         "fileName": "BGM_EVENT_19",
         "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_EVENT_19/BGM_EVENT_19.mp3",
         "priority": 1006003,
@@ -4331,6 +4358,7 @@
             "item": {
               "id": 6502,
               "name": "Seed of Yggdrasil",
+              "originalName": "Seed of Yggdrasil",
               "type": "skillLvUp",
               "uses": [
                 "skill",
@@ -4397,6 +4425,7 @@
       "bgm": {
         "id": 58,
         "name": "The Demonic Capital Rashomon:\nShop Theme Song",
+        "originalName": "The Demonic Capital Rashomon:\nShop Theme Song",
         "fileName": "BGM_EVENT_19",
         "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_EVENT_19/BGM_EVENT_19.mp3",
         "priority": 1006003,
@@ -4419,6 +4448,7 @@
             "item": {
               "id": 6502,
               "name": "Seed of Yggdrasil",
+              "originalName": "Seed of Yggdrasil",
               "type": "skillLvUp",
               "uses": [
                 "skill",
@@ -4467,6 +4497,7 @@
       "afterBgm": {
         "id": 58,
         "name": "The Demonic Capital Rashomon:\nShop Theme Song",
+        "originalName": "The Demonic Capital Rashomon:\nShop Theme Song",
         "fileName": "BGM_EVENT_19",
         "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_EVENT_19/BGM_EVENT_19.mp3",
         "priority": 1006003,
@@ -4489,6 +4520,7 @@
             "item": {
               "id": 6502,
               "name": "Seed of Yggdrasil",
+              "originalName": "Seed of Yggdrasil",
               "type": "skillLvUp",
               "uses": [
                 "skill",
@@ -4555,6 +4587,7 @@
       "bgm": {
         "id": 58,
         "name": "The Demonic Capital Rashomon:\nShop Theme Song",
+        "originalName": "The Demonic Capital Rashomon:\nShop Theme Song",
         "fileName": "BGM_EVENT_19",
         "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_EVENT_19/BGM_EVENT_19.mp3",
         "priority": 1006003,
@@ -4577,6 +4610,7 @@
             "item": {
               "id": 6502,
               "name": "Seed of Yggdrasil",
+              "originalName": "Seed of Yggdrasil",
               "type": "skillLvUp",
               "uses": [
                 "skill",
@@ -4625,6 +4659,7 @@
       "afterBgm": {
         "id": 58,
         "name": "The Demonic Capital Rashomon:\nShop Theme Song",
+        "originalName": "The Demonic Capital Rashomon:\nShop Theme Song",
         "fileName": "BGM_EVENT_19",
         "audioAsset": "https://assets.atlasacademy.io/GameData/NA/Audio/BGM_EVENT_19/BGM_EVENT_19.mp3",
         "priority": 1006003,
@@ -4647,6 +4682,7 @@
             "item": {
               "id": 6502,
               "name": "Seed of Yggdrasil",
+              "originalName": "Seed of Yggdrasil",
               "type": "skillLvUp",
               "uses": [
                 "skill",

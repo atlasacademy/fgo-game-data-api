@@ -588,6 +588,7 @@
           "id": 202900,
           "collectionNo": 200,
           "name": "浅上藤乃",
+          "originalName": "浅上藤乃",
           "ruby": "アサガミフジノ",
           "className": "archer",
           "type": "normal",
@@ -1404,6 +1405,7 @@
                   "item": {
                     "id": 7002,
                     "name": "アーチャーピース",
+                    "originalName": "アーチャーピース",
                     "type": "tdLvUp",
                     "uses": [
                       "ascension"
@@ -1431,6 +1433,7 @@
                   "item": {
                     "id": 7002,
                     "name": "アーチャーピース",
+                    "originalName": "アーチャーピース",
                     "type": "tdLvUp",
                     "uses": [
                       "ascension"
@@ -1453,6 +1456,7 @@
                   "item": {
                     "id": 6516,
                     "name": "凶骨",
+                    "originalName": "凶骨",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1482,6 +1486,7 @@
                   "item": {
                     "id": 7102,
                     "name": "アーチャーモニュメント",
+                    "originalName": "アーチャーモニュメント",
                     "type": "tdLvUp",
                     "uses": [
                       "ascension"
@@ -1504,6 +1509,7 @@
                   "item": {
                     "id": 6505,
                     "name": "虚影の塵",
+                    "originalName": "虚影の塵",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1528,6 +1534,7 @@
                   "item": {
                     "id": 6529,
                     "name": "呪獣胆石",
+                    "originalName": "呪獣胆石",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1557,6 +1564,7 @@
                   "item": {
                     "id": 7102,
                     "name": "アーチャーモニュメント",
+                    "originalName": "アーチャーモニュメント",
                     "type": "tdLvUp",
                     "uses": [
                       "ascension"
@@ -1579,6 +1587,7 @@
                   "item": {
                     "id": 6529,
                     "name": "呪獣胆石",
+                    "originalName": "呪獣胆石",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1603,6 +1612,7 @@
                   "item": {
                     "id": 6520,
                     "name": "血の涙石",
+                    "originalName": "血の涙石",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1634,6 +1644,7 @@
                   "item": {
                     "id": 6002,
                     "name": "弓の輝石",
+                    "originalName": "弓の輝石",
                     "type": "skillLvUp",
                     "uses": [
                       "skill"
@@ -1661,6 +1672,7 @@
                   "item": {
                     "id": 6002,
                     "name": "弓の輝石",
+                    "originalName": "弓の輝石",
                     "type": "skillLvUp",
                     "uses": [
                       "skill"
@@ -1688,6 +1700,7 @@
                   "item": {
                     "id": 6102,
                     "name": "弓の魔石",
+                    "originalName": "弓の魔石",
                     "type": "skillLvUp",
                     "uses": [
                       "skill"
@@ -1715,6 +1728,7 @@
                   "item": {
                     "id": 6102,
                     "name": "弓の魔石",
+                    "originalName": "弓の魔石",
                     "type": "skillLvUp",
                     "uses": [
                       "skill"
@@ -1737,6 +1751,7 @@
                   "item": {
                     "id": 6505,
                     "name": "虚影の塵",
+                    "originalName": "虚影の塵",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1766,6 +1781,7 @@
                   "item": {
                     "id": 6202,
                     "name": "弓の秘石",
+                    "originalName": "弓の秘石",
                     "type": "skillLvUp",
                     "uses": [
                       "skill"
@@ -1788,6 +1804,7 @@
                   "item": {
                     "id": 6505,
                     "name": "虚影の塵",
+                    "originalName": "虚影の塵",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1817,6 +1834,7 @@
                   "item": {
                     "id": 6202,
                     "name": "弓の秘石",
+                    "originalName": "弓の秘石",
                     "type": "skillLvUp",
                     "uses": [
                       "skill"
@@ -1839,6 +1857,7 @@
                   "item": {
                     "id": 6516,
                     "name": "凶骨",
+                    "originalName": "凶骨",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1868,6 +1887,7 @@
                   "item": {
                     "id": 6516,
                     "name": "凶骨",
+                    "originalName": "凶骨",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1892,6 +1912,7 @@
                   "item": {
                     "id": 6533,
                     "name": "宵哭きの鉄杭",
+                    "originalName": "宵哭きの鉄杭",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1921,6 +1942,7 @@
                   "item": {
                     "id": 6533,
                     "name": "宵哭きの鉄杭",
+                    "originalName": "宵哭きの鉄杭",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1945,6 +1967,7 @@
                   "item": {
                     "id": 6530,
                     "name": "魔術髄液",
+                    "originalName": "魔術髄液",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -1974,6 +1997,7 @@
                   "item": {
                     "id": 6999,
                     "name": "伝承結晶",
+                    "originalName": "伝承結晶",
                     "type": "skillLvUp",
                     "uses": [
                       "skill"
@@ -1998,6 +2022,7 @@
                   "item": {
                     "id": 6002,
                     "name": "弓の輝石",
+                    "originalName": "弓の輝石",
                     "type": "skillLvUp",
                     "uses": [
                       "skill"
@@ -2025,6 +2050,7 @@
                   "item": {
                     "id": 6002,
                     "name": "弓の輝石",
+                    "originalName": "弓の輝石",
                     "type": "skillLvUp",
                     "uses": [
                       "skill"
@@ -2052,6 +2078,7 @@
                   "item": {
                     "id": 6102,
                     "name": "弓の魔石",
+                    "originalName": "弓の魔石",
                     "type": "skillLvUp",
                     "uses": [
                       "skill"
@@ -2079,6 +2106,7 @@
                   "item": {
                     "id": 6102,
                     "name": "弓の魔石",
+                    "originalName": "弓の魔石",
                     "type": "skillLvUp",
                     "uses": [
                       "skill"
@@ -2101,6 +2129,7 @@
                   "item": {
                     "id": 6529,
                     "name": "呪獣胆石",
+                    "originalName": "呪獣胆石",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -2130,6 +2159,7 @@
                   "item": {
                     "id": 6202,
                     "name": "弓の秘石",
+                    "originalName": "弓の秘石",
                     "type": "skillLvUp",
                     "uses": [
                       "skill"
@@ -2152,6 +2182,7 @@
                   "item": {
                     "id": 6529,
                     "name": "呪獣胆石",
+                    "originalName": "呪獣胆石",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -2181,6 +2212,7 @@
                   "item": {
                     "id": 6202,
                     "name": "弓の秘石",
+                    "originalName": "弓の秘石",
                     "type": "skillLvUp",
                     "uses": [
                       "skill"
@@ -2203,6 +2235,7 @@
                   "item": {
                     "id": 6520,
                     "name": "血の涙石",
+                    "originalName": "血の涙石",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -2232,6 +2265,7 @@
                   "item": {
                     "id": 6520,
                     "name": "血の涙石",
+                    "originalName": "血の涙石",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -2256,6 +2290,7 @@
                   "item": {
                     "id": 6541,
                     "name": "禍罪の矢尻",
+                    "originalName": "禍罪の矢尻",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -2285,6 +2320,7 @@
                   "item": {
                     "id": 6541,
                     "name": "禍罪の矢尻",
+                    "originalName": "禍罪の矢尻",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -2309,6 +2345,7 @@
                   "item": {
                     "id": 6550,
                     "name": "夢幻の鱗粉",
+                    "originalName": "夢幻の鱗粉",
                     "type": "skillLvUp",
                     "uses": [
                       "skill",
@@ -2338,6 +2375,7 @@
                   "item": {
                     "id": 6999,
                     "name": "伝承結晶",
+                    "originalName": "伝承結晶",
                     "type": "skillLvUp",
                     "uses": [
                       "skill"
@@ -2361,6 +2399,7 @@
             "item": {
               "id": 20290001,
               "name": "サーヴァントコイン",
+              "originalName": "サーヴァントコイン",
               "type": "svtCoin",
               "uses": [],
               "detail": "【サーヴァント強化素材】\nサーヴァントの霊基のカケラ。",
@@ -2377,6 +2416,7 @@
               "id": 454650,
               "num": 1,
               "name": "歪曲の魔眼 EX",
+              "originalName": "歪曲の魔眼 EX",
               "ruby": "わいきょくのまがん",
               "detail": "自身のBusterカード性能をアップ(3ターン)＆防御無視状態を付与(3ターン)＆NP獲得量アップ(3ターン)",
               "unmodifiedDetail": "自身のBusterカード性能をアップ[{0}](3ターン)＆防御無視状態を付与(3ターン)＆NP獲得量アップ[{0}](3ターン)",
@@ -2758,6 +2798,7 @@
               "id": 455350,
               "num": 2,
               "name": "千里眼（闇） C",
+              "originalName": "千里眼（闇） C",
               "ruby": "せんりがん（やみ）",
               "detail": "自身に必中状態を付与(3ターン)＆スター獲得",
               "unmodifiedDetail": "自身に必中状態を付与(3ターン)＆スター獲得[{0}]",
@@ -3039,6 +3080,7 @@
               "id": 456550,
               "num": 3,
               "name": "痛覚残留 A",
+              "originalName": "痛覚残留 A",
               "ruby": "つうかくざんりゅう",
               "detail": "自身に最大HPが2000減る状態を付与(3ターン)【デメリット】＆被ダメージカット状態を付与(3ターン)＆ガッツ状態を付与(1回・3ターン)",
               "unmodifiedDetail": "自身に最大HPが2000減る状態を付与(3ターン)【デメリット】＆被ダメージカット状態を付与[{0}](3ターン)＆ガッツ状態を付与(1回・3ターン)",
@@ -3372,6 +3414,7 @@
             {
               "id": 34250,
               "name": "対魔力 D",
+              "originalName": "対魔力 D",
               "ruby": "たいまりょく",
               "detail": "自身の弱体耐性を少しアップ",
               "unmodifiedDetail": "自身の弱体耐性を少しアップ",
@@ -3503,6 +3546,7 @@
             {
               "id": 20551,
               "name": "単独行動 A+",
+              "originalName": "単独行動 A+",
               "ruby": "たんどくこうどう",
               "detail": "自身のクリティカル威力をアップ",
               "unmodifiedDetail": "自身のクリティカル威力をアップ",
@@ -3632,6 +3676,7 @@
             {
               "id": 83450,
               "name": "陣地作成 B",
+              "originalName": "陣地作成 B",
               "ruby": "じんちさくせい",
               "detail": "自身のArtsカードの性能をアップ",
               "unmodifiedDetail": "自身のArtsカードの性能をアップ",
@@ -3773,6 +3818,7 @@
             {
               "id": 940150,
               "name": "迷宮濶歩 B",
+              "originalName": "迷宮濶歩 B",
               "ruby": "めいきゅうかっぽ",
               "detail": "自身の『復刻:徳川廻天迷宮 大奥』における攻撃の威力を30%アップ【『復刻:徳川廻天迷宮 大奥』イベント期間限定】",
               "unmodifiedDetail": "自身の『復刻:徳川廻天迷宮 大奥』における攻撃の威力を30%アップ【『復刻:徳川廻天迷宮 大奥』イベント期間限定】",
@@ -3855,6 +3901,7 @@
             {
               "id": 940169,
               "name": "特訓サポーター C",
+              "originalName": "特訓サポーター C",
               "ruby": "とっくんさぽーたー",
               "detail": "自身の『影の国の舞闘会 ～ネコとバニーと聖杯戦争～』のフリークエストにおける攻撃の威力を30%アップ【『影の国の舞闘会 ～ネコとバニーと聖杯戦争～』イベント期間限定】",
               "unmodifiedDetail": "自身の『影の国の舞闘会 ～ネコとバニーと聖杯戦争～』のフリークエストにおける攻撃の威力を30%アップ【『影の国の舞闘会 ～ネコとバニーと聖杯戦争～』イベント期間限定】",
@@ -3937,6 +3984,7 @@
             {
               "id": 940194,
               "name": "スナイプドハート B",
+              "originalName": "スナイプドハート B",
               "ruby": "すないぷどはーと",
               "detail": "自身の『カルデア・ビター・バレンタイン2021』における攻撃の威力を50%アップ＆クエストクリア時に得られる絆を30%増やす【『カルデア・ビター・バレンタイン2021』イベント期間限定】",
               "unmodifiedDetail": "自身の『カルデア・ビター・バレンタイン2021』における攻撃の威力を50%アップ＆クエストクリア時に得られる絆を30%増やす【『カルデア・ビター・バレンタイン2021』イベント期間限定】",
@@ -4048,6 +4096,7 @@
             {
               "id": 940206,
               "name": "サバキャンパー A",
+              "originalName": "サバキャンパー A",
               "ruby": "さばきゃんぱー",
               "detail": "自身の『復刻:サーヴァント・サマーキャンプ！ ライト版』における攻撃の威力を50%アップ＆クエストクリア時に得られる絆を20%増やす【『復刻:サーヴァント・サマーキャンプ！ ライト版』イベント期間限定】",
               "unmodifiedDetail": "自身の『復刻:サーヴァント・サマーキャンプ！ ライト版』における攻撃の威力を50%アップ＆クエストクリア時に得られる絆を20%増やす【『復刻:サーヴァント・サマーキャンプ！ ライト版』イベント期間限定】",
@@ -4159,6 +4208,7 @@
             {
               "id": 960502,
               "name": "絆の力 E",
+              "originalName": "絆の力 E",
               "ruby": "きずなのちから",
               "detail": "自身の『終局特異点 冠位時間神殿 ソロモン』における攻撃の威力を20%アップ",
               "unmodifiedDetail": "自身の『終局特異点 冠位時間神殿 ソロモン』における攻撃の威力を20%アップ",
@@ -4251,6 +4301,7 @@
             {
               "id": 960503,
               "name": "絆の力 D",
+              "originalName": "絆の力 D",
               "ruby": "きずなのちから",
               "detail": "自身の『終局特異点 冠位時間神殿 ソロモン』における攻撃の威力を40%アップ",
               "unmodifiedDetail": "自身の『終局特異点 冠位時間神殿 ソロモン』における攻撃の威力を40%アップ",
@@ -4343,6 +4394,7 @@
             {
               "id": 960504,
               "name": "絆の力 C",
+              "originalName": "絆の力 C",
               "ruby": "きずなのちから",
               "detail": "自身の『終局特異点 冠位時間神殿 ソロモン』における攻撃の威力を60%アップ",
               "unmodifiedDetail": "自身の『終局特異点 冠位時間神殿 ソロモン』における攻撃の威力を60%アップ",
@@ -4435,6 +4487,7 @@
             {
               "id": 960505,
               "name": "絆の力 B",
+              "originalName": "絆の力 B",
               "ruby": "きずなのちから",
               "detail": "自身の『終局特異点 冠位時間神殿 ソロモン』における攻撃の威力を75%アップ",
               "unmodifiedDetail": "自身の『終局特異点 冠位時間神殿 ソロモン』における攻撃の威力を75%アップ",
@@ -4527,6 +4580,7 @@
             {
               "id": 960506,
               "name": "絆の力 A",
+              "originalName": "絆の力 A",
               "ruby": "きずなのちから",
               "detail": "自身の『終局特異点 冠位時間神殿 ソロモン』における攻撃の威力を90%アップ",
               "unmodifiedDetail": "自身の『終局特異点 冠位時間神殿 ソロモン』における攻撃の威力を90%アップ",
@@ -4619,6 +4673,7 @@
             {
               "id": 960507,
               "name": "絆の力 EX",
+              "originalName": "絆の力 EX",
               "ruby": "きずなのちから",
               "detail": "自身の『終局特異点 冠位時間神殿 ソロモン』における攻撃の威力を100%アップ",
               "unmodifiedDetail": "自身の『終局特異点 冠位時間神殿 ソロモン』における攻撃の威力を100%アップ",
@@ -4711,6 +4766,7 @@
             {
               "id": 960557,
               "name": "悪の遍満",
+              "originalName": "悪の遍満",
               "ruby": "あくのへんまん",
               "detail": "『亜種特異点Ⅰ 悪性隔絶魔境 新宿』のメインクエストクリア時に得られる自身の絆を100%増やす",
               "unmodifiedDetail": "『亜種特異点Ⅰ 悪性隔絶魔境 新宿』のメインクエストクリア時に得られる自身の絆を100%増やす",
@@ -4799,6 +4855,7 @@
             {
               "id": 960837,
               "name": "女傑の威風",
+              "originalName": "女傑の威風",
               "ruby": "じょけつのいふう",
               "detail": "『亜種特異点Ⅱ 伝承地底世界 アガルタ』のメインクエストクリア時に得られる自身の絆を100%増やす",
               "unmodifiedDetail": "『亜種特異点Ⅱ 伝承地底世界 アガルタ』のメインクエストクリア時に得られる自身の絆を100%増やす",
@@ -4887,6 +4944,7 @@
             {
               "id": 961154,
               "name": "真剣勝負",
+              "originalName": "真剣勝負",
               "ruby": "しんけんしょうぶ",
               "detail": "『亜種特異点Ⅲ 屍山血河舞台 下総国』のメインクエストクリア時に得られる自身の絆を100%増やす",
               "unmodifiedDetail": "『亜種特異点Ⅲ 屍山血河舞台 下総国』のメインクエストクリア時に得られる自身の絆を100%増やす",
@@ -4980,6 +5038,7 @@
               "skill": {
                 "id": 3001000,
                 "name": "追撃技巧向上",
+                "originalName": "追撃技巧向上",
                 "ruby": "",
                 "detail": "自身のExtra Attackカードの性能を30%アップする",
                 "unmodifiedDetail": "自身のExtra Attackカードの性能を30%アップする[{0}]",
@@ -5131,6 +5190,7 @@
                   "item": {
                     "id": 20290001,
                     "name": "サーヴァントコイン",
+                    "originalName": "サーヴァントコイン",
                     "type": "svtCoin",
                     "uses": [],
                     "detail": "【サーヴァント強化素材】\nサーヴァントの霊基のカケラ。",
@@ -5150,6 +5210,7 @@
               "skill": {
                 "id": 3002000,
                 "name": "魔力装填",
+                "originalName": "魔力装填",
                 "ruby": "",
                 "detail": "自身のNPを10%チャージした状態でバトルを開始する",
                 "unmodifiedDetail": "自身のNPを10%チャージした状態でバトルを開始する[{0}]",
@@ -5242,6 +5303,7 @@
                   "item": {
                     "id": 20290001,
                     "name": "サーヴァントコイン",
+                    "originalName": "サーヴァントコイン",
                     "type": "svtCoin",
                     "uses": [],
                     "detail": "【サーヴァント強化素材】\nサーヴァントの霊基のカケラ。",
@@ -5261,6 +5323,7 @@
               "skill": {
                 "id": 3008000,
                 "name": "対アサシン攻撃適性",
+                "originalName": "対アサシン攻撃適性",
                 "ruby": "",
                 "detail": "自身の〔アサシン〕クラスに対する攻撃力を20%アップする",
                 "unmodifiedDetail": "自身の〔アサシン〕クラスに対する攻撃力を20%アップする[{0}]",
@@ -5412,6 +5475,7 @@
                   "item": {
                     "id": 20290001,
                     "name": "サーヴァントコイン",
+                    "originalName": "サーヴァントコイン",
                     "type": "svtCoin",
                     "uses": [],
                     "detail": "【サーヴァント強化素材】\nサーヴァントの霊基のカケラ。",

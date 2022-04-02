@@ -2,6 +2,7 @@
   "id": 1100200,
   "collectionNo": 96,
   "name": "Edmond Dantès",
+  "originalName": "Edmond Dantès",
   "ruby": "Edmond Dantès",
   "className": "avenger",
   "type": "normal",
@@ -768,6 +769,7 @@
           "item": {
             "id": 6516,
             "name": "Evil Bone",
+            "originalName": "Evil Bone",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -787,6 +789,7 @@
           "item": {
             "id": 6515,
             "name": "Octuplet Crystals",
+            "originalName": "Octuplet Crystals",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -811,6 +814,7 @@
           "item": {
             "id": 6509,
             "name": "Serpent Jewel",
+            "originalName": "Serpent Jewel",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -830,6 +834,7 @@
           "item": {
             "id": 6511,
             "name": "Forbidden Page",
+            "originalName": "Forbidden Page",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -853,6 +858,7 @@
           "item": {
             "id": 6505,
             "name": "Void's Dust",
+            "originalName": "Void's Dust",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -872,6 +878,7 @@
           "item": {
             "id": 6510,
             "name": "Eternal Gear",
+            "originalName": "Eternal Gear",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -896,6 +903,7 @@
           "item": {
             "id": 6501,
             "name": "Phoenix Feather",
+            "originalName": "Phoenix Feather",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -915,6 +923,7 @@
           "item": {
             "id": 6517,
             "name": "Heart of the Foreign God",
+            "originalName": "Heart of the Foreign God",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -941,6 +950,7 @@
           "item": {
             "id": 6503,
             "name": "Proof of Hero",
+            "originalName": "Proof of Hero",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -965,6 +975,7 @@
           "item": {
             "id": 6502,
             "name": "Seed of Yggdrasil",
+            "originalName": "Seed of Yggdrasil",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -989,6 +1000,7 @@
           "item": {
             "id": 6512,
             "name": "Dragon Fang",
+            "originalName": "Dragon Fang",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -1013,6 +1025,7 @@
           "item": {
             "id": 6508,
             "name": "Ghost Lantern",
+            "originalName": "Ghost Lantern",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -1037,6 +1050,7 @@
           "item": {
             "id": 6513,
             "name": "Meteor Horseshoe",
+            "originalName": "Meteor Horseshoe",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -1061,6 +1075,7 @@
           "item": {
             "id": 6514,
             "name": "Homunculus Baby",
+            "originalName": "Homunculus Baby",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -1085,6 +1100,7 @@
           "item": {
             "id": 6507,
             "name": "Claw of Chaos",
+            "originalName": "Claw of Chaos",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -1109,6 +1125,7 @@
           "item": {
             "id": 6506,
             "name": "Dragon's Reverse Scale",
+            "originalName": "Dragon's Reverse Scale",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -1133,6 +1150,7 @@
           "item": {
             "id": 6999,
             "name": "Crystallized Lore",
+            "originalName": "Crystallized Lore",
             "type": "skillLvUp",
             "uses": [
               "skill"
@@ -1158,6 +1176,7 @@
           "item": {
             "id": 6533,
             "name": "Stake of Wailing Night",
+            "originalName": "Stake of Wailing Night",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -1177,6 +1196,7 @@
           "item": {
             "id": 6526,
             "name": "Shell of Reminiscence",
+            "originalName": "Shell of Reminiscence",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -1201,6 +1221,7 @@
           "item": {
             "id": 6520,
             "name": "Tearstone of Blood",
+            "originalName": "Tearstone of Blood",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -1220,6 +1241,7 @@
           "item": {
             "id": 6529,
             "name": "Cursed Beast Gallstone",
+            "originalName": "Cursed Beast Gallstone",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -1245,6 +1267,7 @@
       "id": 172650,
       "num": 1,
       "name": "Iron Determination EX",
+      "originalName": "Iron Determination EX",
       "ruby": "Iron Determination",
       "detail": "Apply Ignore Invincible (1 turn) & increase ATK (1 turn) & Debuff Resist (3 turns) for yourself",
       "unmodifiedDetail": "Apply Ignore Invincible (1 turn) & increase ATK [{0}] (1 turn) & Debuff Resist [{0}] (3 turns) for yourself",
@@ -1577,6 +1600,7 @@
       "id": 97550,
       "num": 2,
       "name": "Golden Rule A",
+      "originalName": "Golden Rule A",
       "ruby": "Golden Rule ",
       "detail": "Increase your NP Gain (3 turns)",
       "unmodifiedDetail": "Increase your NP Gain [{0}] (3 turns)",
@@ -1758,6 +1782,7 @@
       "id": 173550,
       "num": 3,
       "name": "Wisdom of Crisis A",
+      "originalName": "Wisdom of Crisis A",
       "ruby": "Wisdom of Crisis",
       "detail": "Decrease one enemy's Charge + remove your Debuffs + gain C. Stars ",
       "unmodifiedDetail": "Decrease one enemy's Charge + remove your Debuffs + gain C. Stars [{0}]",
@@ -2103,6 +2128,7 @@
     {
       "id": 169550,
       "name": "Avenger A",
+      "originalName": "Avenger A",
       "ruby": "Avenger",
       "detail": "Increase the amount of NP you gain when damaged + Decrease Debuff Resist for all allies (including sub-members) except yourself [Demerit]",
       "unmodifiedDetail": "Increase the amount of NP you gain when damaged + Decrease Debuff Resist for all allies (including sub-members) except yourself [Demerit]",
@@ -2328,6 +2354,7 @@
     {
       "id": 170450,
       "name": "Oblivion Correction B",
+      "originalName": "Oblivion Correction B",
       "ruby": "Oblivion Correction ",
       "detail": "Increase your Critical Strength",
       "unmodifiedDetail": "Increase your Critical Strength",
@@ -2457,6 +2484,7 @@
     {
       "id": 171250,
       "name": "Self-Restoration (Magical Energy) D",
+      "originalName": "Self-Restoration (Magical Energy) D",
       "ruby": "Self-Restoration (Magical Energy) ",
       "detail": "Increase NP Gauge each turn for yourself",
       "unmodifiedDetail": "Increase NP Gauge each turn for yourself",
@@ -2580,6 +2608,7 @@
     {
       "id": 960502,
       "name": "Power of Bonds E",
+      "originalName": "Power of Bonds E",
       "ruby": "Power of Bonds",
       "detail": "Increase your ATK Strength by 20% in \"Final Singularity: The Grand Temple of Time Solomon\"",
       "unmodifiedDetail": "Increase your ATK Strength by 20% in \"Final Singularity: The Grand Temple of Time Solomon\"",
@@ -2672,6 +2701,7 @@
     {
       "id": 960503,
       "name": "Power of Bonds D",
+      "originalName": "Power of Bonds D",
       "ruby": "Power of Bonds",
       "detail": "Increase your ATK Strength by 40% in \"Final Singularity: The Grand Temple of Time Solomon\"",
       "unmodifiedDetail": "Increase your ATK Strength by 40% in \"Final Singularity: The Grand Temple of Time Solomon\"",
@@ -2764,6 +2794,7 @@
     {
       "id": 960504,
       "name": "Power of Bonds C",
+      "originalName": "Power of Bonds C",
       "ruby": "Power of Bonds",
       "detail": "Increase your ATK Strength by 60% in \"Final Singularity: The Grand Temple of Time Solomon\"",
       "unmodifiedDetail": "Increase your ATK Strength by 60% in \"Final Singularity: The Grand Temple of Time Solomon\"",
@@ -2856,6 +2887,7 @@
     {
       "id": 960505,
       "name": "Power of Bonds B",
+      "originalName": "Power of Bonds B",
       "ruby": "Power of Bonds",
       "detail": "Increase your ATK Strength by 75% in \"Final Singularity: The Grand Temple of Time Solomon\"",
       "unmodifiedDetail": "Increase your ATK Strength by 75% in \"Final Singularity: The Grand Temple of Time Solomon\"",
@@ -2948,6 +2980,7 @@
     {
       "id": 960506,
       "name": "Power of Bonds A",
+      "originalName": "Power of Bonds A",
       "ruby": "Power of Bonds",
       "detail": "Increase your ATK Strength by 90% in \"Final Singularity: The Grand Temple of Time Solomon\"",
       "unmodifiedDetail": "Increase your ATK Strength by 90% in \"Final Singularity: The Grand Temple of Time Solomon\"",
@@ -3040,6 +3073,7 @@
     {
       "id": 960507,
       "name": "Power of Bonds EX",
+      "originalName": "Power of Bonds EX",
       "ruby": "Power of Bonds",
       "detail": "Increase your ATK Strength by 100% in \"Final Singularity: The Grand Temple of Time Solomon\"",
       "unmodifiedDetail": "Increase your ATK Strength by 100% in \"Final Singularity: The Grand Temple of Time Solomon\"",
@@ -3132,6 +3166,7 @@
     {
       "id": 960557,
       "name": "Permeation of Evil",
+      "originalName": "Permeation of Evil",
       "ruby": "Permeation of Evil",
       "detail": "Bond gained upon clearing \"Pseudo-Singularity I: Quarantined Territory of Malice, Shinjuku\" main quests increased by 100%",
       "unmodifiedDetail": "Bond gained upon clearing \"Pseudo-Singularity I: Quarantined Territory of Malice, Shinjuku\" main quests increased by 100%",

@@ -20,6 +20,7 @@
         "skill": {
           "id": 966256,
           "name": "見定める",
+          "originalName": "見定める",
           "ruby": "-",
           "type": "active",
           "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00600.png",
@@ -118,6 +119,7 @@
         "skill": {
           "id": 961075,
           "name": "見定める",
+          "originalName": "見定める",
           "ruby": "-",
           "type": "active",
           "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00600.png",

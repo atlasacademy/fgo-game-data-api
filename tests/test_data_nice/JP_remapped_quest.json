@@ -282,6 +282,7 @@
             "skill1": {
               "id": 960611,
               "name": "ノブの閃き",
+              "originalName": "ノブの閃き",
               "ruby": "-",
               "type": "active",
               "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00600.png",
@@ -894,6 +895,7 @@
             "skill1": {
               "id": 960611,
               "name": "ノブの閃き",
+              "originalName": "ノブの閃き",
               "ruby": "-",
               "type": "active",
               "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00600.png",
@@ -1529,6 +1531,7 @@
             "skill1": {
               "id": 960611,
               "name": "ノブの閃き",
+              "originalName": "ノブの閃き",
               "ruby": "-",
               "type": "active",
               "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00600.png",
@@ -2150,6 +2153,7 @@
             "skill1": {
               "id": 960611,
               "name": "ノブの閃き",
+              "originalName": "ノブの閃き",
               "ruby": "-",
               "type": "active",
               "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00600.png",
@@ -2771,6 +2775,7 @@
             "skill1": {
               "id": 960611,
               "name": "ノブの閃き",
+              "originalName": "ノブの閃き",
               "ruby": "-",
               "type": "active",
               "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00600.png",
@@ -3452,6 +3457,7 @@
               "id": 119450,
               "num": 1,
               "name": "縮地 B",
+              "originalName": "縮地 B",
               "ruby": "しゅくち",
               "detail": "自身のQuickカード性能をアップ(1ターン)",
               "unmodifiedDetail": "自身のQuickカード性能をアップ[{0}](1ターン)",
@@ -3604,6 +3610,7 @@
               "id": 118550,
               "num": 2,
               "name": "病弱 A",
+              "originalName": "病弱 A",
               "ruby": "びょうじゃく",
               "detail": "自身のスター集中度を大アップ(1ターン)",
               "unmodifiedDetail": "自身のスター集中度を大アップ[{0}](1ターン)",
@@ -3834,6 +3841,7 @@
               "id": 36550,
               "num": 3,
               "name": "心眼（偽） A",
+              "originalName": "心眼（偽） A",
               "ruby": "しんがん（ぎ）",
               "detail": "自身に回避状態を付与(1ターン)＆クリティカル威力をアップ(3ターン)",
               "unmodifiedDetail": "自身に回避状態を付与(1ターン)＆クリティカル威力をアップ[{0}](3ターン)",
@@ -4071,6 +4079,7 @@
               {
                 "id": 34150,
                 "name": "対魔力 E",
+                "originalName": "対魔力 E",
                 "ruby": "たいまりょく",
                 "detail": "自身の弱体耐性を少しアップ",
                 "unmodifiedDetail": "自身の弱体耐性を少しアップ",
@@ -4202,6 +4211,7 @@
               {
                 "id": 88150,
                 "name": "騎乗 E",
+                "originalName": "騎乗 E",
                 "ruby": "きじょう",
                 "detail": "自身のQuickカードの性能を少しアップ",
                 "unmodifiedDetail": "自身のQuickカードの性能を少しアップ",
@@ -4908,6 +4918,7 @@
               "id": 343450,
               "num": 1,
               "name": "戦場の鬼 B",
+              "originalName": "戦場の鬼 B",
               "ruby": "いくさばのおに",
               "detail": "味方全体のBusterカード性能をアップ(3ターン)＆スター発生率をアップ(3ターン)",
               "unmodifiedDetail": "味方全体のBusterカード性能をアップ[{0}](3ターン)＆スター発生率をアップ[{0}](3ターン)",
@@ -5250,6 +5261,7 @@
               "id": 12350,
               "num": 2,
               "name": "仕切り直し C",
+              "originalName": "仕切り直し C",
               "ruby": "しきりなおし",
               "detail": "自身の弱体状態を解除＆HPを回復",
               "unmodifiedDetail": "自身の弱体状態を解除＆HPを回復[{0}]",
@@ -5391,6 +5403,7 @@
               {
                 "id": 54251,
                 "name": "狂化 D+",
+                "originalName": "狂化 D+",
                 "ruby": "きょうか",
                 "detail": "自身のBusterカードの性能を少しアップ",
                 "unmodifiedDetail": "自身のBusterカードの性能を少しアップ",

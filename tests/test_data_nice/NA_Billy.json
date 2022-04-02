@@ -2,6 +2,7 @@
   "id": 201000,
   "collectionNo": 105,
   "name": "Billy the Kid",
+  "originalName": "Billy the Kid",
   "ruby": "Billy the Kid",
   "className": "archer",
   "type": "normal",
@@ -735,6 +736,7 @@
           "item": {
             "id": 7002,
             "name": "Archer Piece",
+            "originalName": "Archer Piece",
             "type": "tdLvUp",
             "uses": [
               "ascension"
@@ -757,6 +759,7 @@
           "item": {
             "id": 7002,
             "name": "Archer Piece",
+            "originalName": "Archer Piece",
             "type": "tdLvUp",
             "uses": [
               "ascension"
@@ -774,6 +777,7 @@
           "item": {
             "id": 6513,
             "name": "Meteor Horseshoe",
+            "originalName": "Meteor Horseshoe",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -798,6 +802,7 @@
           "item": {
             "id": 7102,
             "name": "Archer Monument",
+            "originalName": "Archer Monument",
             "type": "tdLvUp",
             "uses": [
               "ascension"
@@ -815,6 +820,7 @@
           "item": {
             "id": 6516,
             "name": "Evil Bone",
+            "originalName": "Evil Bone",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -834,6 +840,7 @@
           "item": {
             "id": 6501,
             "name": "Phoenix Feather",
+            "originalName": "Phoenix Feather",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -858,6 +865,7 @@
           "item": {
             "id": 7102,
             "name": "Archer Monument",
+            "originalName": "Archer Monument",
             "type": "tdLvUp",
             "uses": [
               "ascension"
@@ -875,6 +883,7 @@
           "item": {
             "id": 6501,
             "name": "Phoenix Feather",
+            "originalName": "Phoenix Feather",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -894,6 +903,7 @@
           "item": {
             "id": 6507,
             "name": "Claw of Chaos",
+            "originalName": "Claw of Chaos",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -920,6 +930,7 @@
           "item": {
             "id": 6002,
             "name": "Gem of Archer",
+            "originalName": "Gem of Archer",
             "type": "skillLvUp",
             "uses": [
               "skill"
@@ -942,6 +953,7 @@
           "item": {
             "id": 6002,
             "name": "Gem of Archer",
+            "originalName": "Gem of Archer",
             "type": "skillLvUp",
             "uses": [
               "skill"
@@ -964,6 +976,7 @@
           "item": {
             "id": 6102,
             "name": "Magic Gem of Archer",
+            "originalName": "Magic Gem of Archer",
             "type": "skillLvUp",
             "uses": [
               "skill"
@@ -986,6 +999,7 @@
           "item": {
             "id": 6102,
             "name": "Magic Gem of Archer",
+            "originalName": "Magic Gem of Archer",
             "type": "skillLvUp",
             "uses": [
               "skill"
@@ -1003,6 +1017,7 @@
           "item": {
             "id": 6516,
             "name": "Evil Bone",
+            "originalName": "Evil Bone",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -1027,6 +1042,7 @@
           "item": {
             "id": 6202,
             "name": "Secret Gem of Archer",
+            "originalName": "Secret Gem of Archer",
             "type": "skillLvUp",
             "uses": [
               "skill"
@@ -1044,6 +1060,7 @@
           "item": {
             "id": 6516,
             "name": "Evil Bone",
+            "originalName": "Evil Bone",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -1068,6 +1085,7 @@
           "item": {
             "id": 6202,
             "name": "Secret Gem of Archer",
+            "originalName": "Secret Gem of Archer",
             "type": "skillLvUp",
             "uses": [
               "skill"
@@ -1085,6 +1103,7 @@
           "item": {
             "id": 6513,
             "name": "Meteor Horseshoe",
+            "originalName": "Meteor Horseshoe",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -1109,6 +1128,7 @@
           "item": {
             "id": 6513,
             "name": "Meteor Horseshoe",
+            "originalName": "Meteor Horseshoe",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -1128,6 +1148,7 @@
           "item": {
             "id": 6505,
             "name": "Void's Dust",
+            "originalName": "Void's Dust",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -1152,6 +1173,7 @@
           "item": {
             "id": 6505,
             "name": "Void's Dust",
+            "originalName": "Void's Dust",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -1171,6 +1193,7 @@
           "item": {
             "id": 6520,
             "name": "Tearstone of Blood",
+            "originalName": "Tearstone of Blood",
             "type": "skillLvUp",
             "uses": [
               "skill",
@@ -1195,6 +1218,7 @@
           "item": {
             "id": 6999,
             "name": "Crystallized Lore",
+            "originalName": "Crystallized Lore",
             "type": "skillLvUp",
             "uses": [
               "skill"
@@ -1220,6 +1244,7 @@
       "id": 114552,
       "num": 1,
       "name": "Marksmanship A++",
+      "originalName": "Marksmanship A++",
       "ruby": "Marksmanship",
       "detail": "Increase your Critical Strength (1 turn)",
       "unmodifiedDetail": "Increase your Critical Strength [{0}] (1 turn)",
@@ -1356,6 +1381,7 @@
       "id": 195551,
       "num": 2,
       "name": "Quick Draw A+",
+      "originalName": "Quick Draw A+",
       "ruby": "Quick Draw",
       "detail": "Increase your NP Gauge ",
       "unmodifiedDetail": "Increase your NP Gauge [{0}]",
@@ -1496,6 +1522,7 @@
       "id": 36350,
       "num": 3,
       "name": "Mind's Eye (Fake) C",
+      "originalName": "Mind's Eye (Fake) C",
       "ruby": "Mind's Eye (Fake)",
       "detail": "Apply Evade (1 turn) & increase Critical Strength (3 turns) for yourself",
       "unmodifiedDetail": "Apply Evade (1 turn) & increase Critical Strength [{0}] (3 turns) for yourself",
@@ -1729,6 +1756,7 @@
     {
       "id": 20550,
       "name": "Independent Action A",
+      "originalName": "Independent Action A",
       "ruby": "Independent Action ",
       "detail": "Increase your Critical Strength",
       "unmodifiedDetail": "Increase your Critical Strength",
@@ -1858,6 +1886,7 @@
     {
       "id": 88351,
       "name": "Riding Skill C+",
+      "originalName": "Riding Skill C+",
       "ruby": "Riding Skill ",
       "detail": "Slightly increase your Quick Card effectiveness",
       "unmodifiedDetail": "Slightly increase your Quick Card effectiveness",
@@ -1999,6 +2028,7 @@
     {
       "id": 960502,
       "name": "Power of Bonds E",
+      "originalName": "Power of Bonds E",
       "ruby": "Power of Bonds",
       "detail": "Increase your ATK Strength by 20% in \"Final Singularity: The Grand Temple of Time Solomon\"",
       "unmodifiedDetail": "Increase your ATK Strength by 20% in \"Final Singularity: The Grand Temple of Time Solomon\"",
@@ -2091,6 +2121,7 @@
     {
       "id": 960503,
       "name": "Power of Bonds D",
+      "originalName": "Power of Bonds D",
       "ruby": "Power of Bonds",
       "detail": "Increase your ATK Strength by 40% in \"Final Singularity: The Grand Temple of Time Solomon\"",
       "unmodifiedDetail": "Increase your ATK Strength by 40% in \"Final Singularity: The Grand Temple of Time Solomon\"",
@@ -2183,6 +2214,7 @@
     {
       "id": 960504,
       "name": "Power of Bonds C",
+      "originalName": "Power of Bonds C",
       "ruby": "Power of Bonds",
       "detail": "Increase your ATK Strength by 60% in \"Final Singularity: The Grand Temple of Time Solomon\"",
       "unmodifiedDetail": "Increase your ATK Strength by 60% in \"Final Singularity: The Grand Temple of Time Solomon\"",
@@ -2275,6 +2307,7 @@
     {
       "id": 960505,
       "name": "Power of Bonds B",
+      "originalName": "Power of Bonds B",
       "ruby": "Power of Bonds",
       "detail": "Increase your ATK Strength by 75% in \"Final Singularity: The Grand Temple of Time Solomon\"",
       "unmodifiedDetail": "Increase your ATK Strength by 75% in \"Final Singularity: The Grand Temple of Time Solomon\"",
@@ -2367,6 +2400,7 @@
     {
       "id": 960506,
       "name": "Power of Bonds A",
+      "originalName": "Power of Bonds A",
       "ruby": "Power of Bonds",
       "detail": "Increase your ATK Strength by 90% in \"Final Singularity: The Grand Temple of Time Solomon\"",
       "unmodifiedDetail": "Increase your ATK Strength by 90% in \"Final Singularity: The Grand Temple of Time Solomon\"",
@@ -2459,6 +2493,7 @@
     {
       "id": 960507,
       "name": "Power of Bonds EX",
+      "originalName": "Power of Bonds EX",
       "ruby": "Power of Bonds",
       "detail": "Increase your ATK Strength by 100% in \"Final Singularity: The Grand Temple of Time Solomon\"",
       "unmodifiedDetail": "Increase your ATK Strength by 100% in \"Final Singularity: The Grand Temple of Time Solomon\"",
@@ -2551,6 +2586,7 @@
     {
       "id": 961154,
       "name": "Serious Match",
+      "originalName": "Serious Match",
       "ruby": "Serious Match",
       "detail": "Bond gained upon clearing \"Pseudo-Singularity III: The Stage of Carnage, Shimousa\" main quests increased by 100%",
       "unmodifiedDetail": "Bond gained upon clearing \"Pseudo-Singularity III: The Stage of Carnage, Shimousa\" main quests increased by 100%",

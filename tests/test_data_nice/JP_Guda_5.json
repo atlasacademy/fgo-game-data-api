@@ -2,6 +2,7 @@
   "id": 80289,
   "type": "eventQuest",
   "name": "超古代新選組列伝 ぐだぐだ邪馬台国2020",
+  "originalName": "超古代新選組列伝 ぐだぐだ邪馬台国2020",
   "shortName": "",
   "detail": "超古代新選組列伝 ぐだぐだ邪馬台国2020",
   "noticeBanner": "https://assets.atlasacademy.io/GameData/JP/Banner/event_war_80274.png",
@@ -34,6 +35,7 @@
         "item": {
           "id": 94049103,
           "name": "おおぶり蛤",
+          "originalName": "おおぶり蛤",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
@@ -79,6 +81,7 @@
         "item": {
           "id": 94049102,
           "name": "おてがる銅鏡",
+          "originalName": "おてがる銅鏡",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
@@ -124,6 +127,7 @@
         "item": {
           "id": 94049101,
           "name": "ミニ銅鐸",
+          "originalName": "ミニ銅鐸",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
@@ -182,6 +186,7 @@
         "item": {
           "id": 94049103,
           "name": "おおぶり蛤",
+          "originalName": "おおぶり蛤",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
@@ -240,6 +245,7 @@
         "item": {
           "id": 94049101,
           "name": "ミニ銅鐸",
+          "originalName": "ミニ銅鐸",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
@@ -298,6 +304,7 @@
         "item": {
           "id": 94049103,
           "name": "おおぶり蛤",
+          "originalName": "おおぶり蛤",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
@@ -356,6 +363,7 @@
         "item": {
           "id": 94049102,
           "name": "おてがる銅鏡",
+          "originalName": "おてがる銅鏡",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
@@ -401,6 +409,7 @@
         "item": {
           "id": 94049103,
           "name": "おおぶり蛤",
+          "originalName": "おおぶり蛤",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
@@ -446,6 +455,7 @@
         "item": {
           "id": 94049102,
           "name": "おてがる銅鏡",
+          "originalName": "おてがる銅鏡",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
@@ -491,6 +501,7 @@
         "item": {
           "id": 94049102,
           "name": "おてがる銅鏡",
+          "originalName": "おてがる銅鏡",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
@@ -536,6 +547,7 @@
         "item": {
           "id": 94049101,
           "name": "ミニ銅鐸",
+          "originalName": "ミニ銅鐸",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
@@ -581,6 +593,7 @@
         "item": {
           "id": 94049101,
           "name": "ミニ銅鐸",
+          "originalName": "ミニ銅鐸",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
@@ -626,6 +639,7 @@
         "item": {
           "id": 94049101,
           "name": "ミニ銅鐸",
+          "originalName": "ミニ銅鐸",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
@@ -671,6 +685,7 @@
         "item": {
           "id": 94049101,
           "name": "ミニ銅鐸",
+          "originalName": "ミニ銅鐸",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
@@ -716,6 +731,7 @@
         "item": {
           "id": 94049101,
           "name": "ミニ銅鐸",
+          "originalName": "ミニ銅鐸",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
@@ -761,6 +777,7 @@
         "item": {
           "id": 94049103,
           "name": "おおぶり蛤",
+          "originalName": "おおぶり蛤",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
@@ -806,6 +823,7 @@
         "item": {
           "id": 94049103,
           "name": "おおぶり蛤",
+          "originalName": "おおぶり蛤",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
@@ -851,6 +869,7 @@
         "item": {
           "id": 94049103,
           "name": "おおぶり蛤",
+          "originalName": "おおぶり蛤",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
@@ -896,6 +915,7 @@
         "item": {
           "id": 94049102,
           "name": "おてがる銅鏡",
+          "originalName": "おてがる銅鏡",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
@@ -941,6 +961,7 @@
         "item": {
           "id": 94049102,
           "name": "おてがる銅鏡",
+          "originalName": "おてがる銅鏡",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
@@ -986,6 +1007,7 @@
         "item": {
           "id": 94049102,
           "name": "おてがる銅鏡",
+          "originalName": "おてがる銅鏡",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
@@ -1031,6 +1053,7 @@
         "item": {
           "id": 94049101,
           "name": "ミニ銅鐸",
+          "originalName": "ミニ銅鐸",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
@@ -1076,6 +1099,7 @@
         "item": {
           "id": 94049101,
           "name": "ミニ銅鐸",
+          "originalName": "ミニ銅鐸",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
@@ -1121,6 +1145,7 @@
         "item": {
           "id": 94049101,
           "name": "ミニ銅鐸",
+          "originalName": "ミニ銅鐸",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
@@ -1166,6 +1191,7 @@
         "item": {
           "id": 94049103,
           "name": "おおぶり蛤",
+          "originalName": "おおぶり蛤",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
@@ -1211,6 +1237,7 @@
         "item": {
           "id": 94049103,
           "name": "おおぶり蛤",
+          "originalName": "おおぶり蛤",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
@@ -1256,6 +1283,7 @@
         "item": {
           "id": 94049103,
           "name": "おおぶり蛤",
+          "originalName": "おおぶり蛤",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
@@ -1301,6 +1329,7 @@
         "item": {
           "id": 94049102,
           "name": "おてがる銅鏡",
+          "originalName": "おてがる銅鏡",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
@@ -1346,6 +1375,7 @@
         "item": {
           "id": 94049102,
           "name": "おてがる銅鏡",
+          "originalName": "おてがる銅鏡",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
@@ -1391,6 +1421,7 @@
         "item": {
           "id": 94049102,
           "name": "おてがる銅鏡",
+          "originalName": "おてがる銅鏡",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
@@ -1449,6 +1480,7 @@
         "item": {
           "id": 94049103,
           "name": "おおぶり蛤",
+          "originalName": "おおぶり蛤",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
@@ -1507,6 +1539,7 @@
         "item": {
           "id": 94049102,
           "name": "おてがる銅鏡",
+          "originalName": "おてがる銅鏡",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
@@ -1565,6 +1598,7 @@
         "item": {
           "id": 94049101,
           "name": "ミニ銅鐸",
+          "originalName": "ミニ銅鐸",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
@@ -1623,6 +1657,7 @@
         "item": {
           "id": 94049105,
           "name": "丈夫な丸太",
+          "originalName": "丈夫な丸太",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、立派な丸太。\n建物の柱や矢板の材料として用いられる。",
@@ -1681,6 +1716,7 @@
         "item": {
           "id": 94049106,
           "name": "寝かせた粘土",
+          "originalName": "寝かせた粘土",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、きめ細かい粘土。\n土器や埴輪の材料として用いられる。",
@@ -1739,6 +1775,7 @@
         "item": {
           "id": 94049104,
           "name": "芳しい茅束",
+          "originalName": "芳しい茅束",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、茅の束。\n建物の屋根を葺くのに用いられる。",
@@ -1797,6 +1834,7 @@
         "item": {
           "id": 94049106,
           "name": "寝かせた粘土",
+          "originalName": "寝かせた粘土",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、きめ細かい粘土。\n土器や埴輪の材料として用いられる。",
@@ -1855,6 +1893,7 @@
         "item": {
           "id": 94049104,
           "name": "芳しい茅束",
+          "originalName": "芳しい茅束",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、茅の束。\n建物の屋根を葺くのに用いられる。",
@@ -1913,6 +1952,7 @@
         "item": {
           "id": 94049105,
           "name": "丈夫な丸太",
+          "originalName": "丈夫な丸太",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、立派な丸太。\n建物の柱や矢板の材料として用いられる。",
@@ -1958,6 +1998,7 @@
         "item": {
           "id": 94049102,
           "name": "おてがる銅鏡",
+          "originalName": "おてがる銅鏡",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、持ち運びやすい銅鏡。\n身だしなみは乙女のたしなみ。",
@@ -2003,6 +2044,7 @@
         "item": {
           "id": 94049101,
           "name": "ミニ銅鐸",
+          "originalName": "ミニ銅鐸",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、小さな銅鐸。\n何に使うのかは不明だけどカワイイ。",
@@ -2048,6 +2090,7 @@
         "item": {
           "id": 94049103,
           "name": "おおぶり蛤",
+          "originalName": "おおぶり蛤",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、でっぷりとした蛤。\n卑弥呼の大好物！",
@@ -2106,6 +2149,7 @@
         "item": {
           "id": 94049104,
           "name": "芳しい茅束",
+          "originalName": "芳しい茅束",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、茅の束。\n建物の屋根を葺くのに用いられる。",
@@ -2164,6 +2208,7 @@
         "item": {
           "id": 94049105,
           "name": "丈夫な丸太",
+          "originalName": "丈夫な丸太",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、立派な丸太。\n建物の柱や矢板の材料として用いられる。",
@@ -2222,6 +2267,7 @@
         "item": {
           "id": 94049106,
           "name": "寝かせた粘土",
+          "originalName": "寝かせた粘土",
           "type": "eventItem",
           "uses": [],
           "detail": "【イベント収集アイテム】\n『ぐだぐだ邪馬台国2020』\nで手に入れた、きめ細かい粘土。\n土器や埴輪の材料として用いられる。",
@@ -2271,6 +2317,7 @@
       "bgm": {
         "id": 434,
         "name": "ぐだぐだショップ大炎上\n～鏡～",
+        "originalName": "ぐだぐだショップ大炎上\n～鏡～",
         "fileName": "BGM_YAMA",
         "audioAsset": "https://assets.atlasacademy.io/GameData/JP/Audio/BGM_YAMA/BGM_YAMA.mp3",
         "priority": 1036006,
@@ -2293,6 +2340,7 @@
             "item": {
               "id": 6505,
               "name": "虚影の塵",
+              "originalName": "虚影の塵",
               "type": "skillLvUp",
               "uses": [
                 "skill",
@@ -2346,6 +2394,7 @@
       "afterBgm": {
         "id": 434,
         "name": "ぐだぐだショップ大炎上\n～鏡～",
+        "originalName": "ぐだぐだショップ大炎上\n～鏡～",
         "fileName": "BGM_YAMA",
         "audioAsset": "https://assets.atlasacademy.io/GameData/JP/Audio/BGM_YAMA/BGM_YAMA.mp3",
         "priority": 1036006,
@@ -2368,6 +2417,7 @@
             "item": {
               "id": 6505,
               "name": "虚影の塵",
+              "originalName": "虚影の塵",
               "type": "skillLvUp",
               "uses": [
                 "skill",
@@ -2438,6 +2488,7 @@
       "bgm": {
         "id": 434,
         "name": "ぐだぐだショップ大炎上\n～鏡～",
+        "originalName": "ぐだぐだショップ大炎上\n～鏡～",
         "fileName": "BGM_YAMA",
         "audioAsset": "https://assets.atlasacademy.io/GameData/JP/Audio/BGM_YAMA/BGM_YAMA.mp3",
         "priority": 1036006,
@@ -2460,6 +2511,7 @@
             "item": {
               "id": 6505,
               "name": "虚影の塵",
+              "originalName": "虚影の塵",
               "type": "skillLvUp",
               "uses": [
                 "skill",
@@ -2513,6 +2565,7 @@
       "afterBgm": {
         "id": 434,
         "name": "ぐだぐだショップ大炎上\n～鏡～",
+        "originalName": "ぐだぐだショップ大炎上\n～鏡～",
         "fileName": "BGM_YAMA",
         "audioAsset": "https://assets.atlasacademy.io/GameData/JP/Audio/BGM_YAMA/BGM_YAMA.mp3",
         "priority": 1036006,
@@ -2535,6 +2588,7 @@
             "item": {
               "id": 6505,
               "name": "虚影の塵",
+              "originalName": "虚影の塵",
               "type": "skillLvUp",
               "uses": [
                 "skill",

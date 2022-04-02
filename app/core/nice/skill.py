@@ -13,7 +13,6 @@ from ...schemas.nice import (
     NiceSkill,
     NiceSkillAdd,
     NiceSkillReverse,
-    NiceSkillScript,
 )
 from ...schemas.raw import (
     MstCommonRelease,
@@ -71,7 +70,7 @@ async def get_nice_skill_with_svt(
     region: Region,
     lang: Language,
     mstSvtPassiveSkills: Optional[list[MstSvtPassiveSkill]] = None,
-) -> list[NiceSkill]:
+) -> list[dict[str, Any]]:
     nice_skill: dict[str, Any] = {
         "id": skillEntity.mstSkill.id,
         "name": get_translation(lang, skillEntity.mstSkill.name),
@@ -111,12 +110,10 @@ async def get_nice_skill_with_svt(
         skill_lv.chargeTurn for skill_lv in skillEntity.mstSkillLv
     ]
 
-    nice_skill["script"] = NiceSkillScript(
-        **{
-            scriptKey: [skillLv.script[scriptKey] for skillLv in skillEntity.mstSkillLv]
-            for scriptKey in skillEntity.mstSkillLv[0].script
-        }
-    )
+    nice_skill["script"] = {
+        scriptKey: [skillLv.script[scriptKey] for skillLv in skillEntity.mstSkillLv]
+        for scriptKey in skillEntity.mstSkillLv[0].script
+    }
 
     nice_skill["functions"] = []
     for funci, _ in enumerate(skillEntity.mstSkillLv[0].funcId):
@@ -161,21 +158,7 @@ async def get_nice_skill_with_svt(
             out_skills.append(out_skill)
         return out_skills
 
-    return [
-        NiceSkill(
-            id=nice_skill["id"],
-            name=nice_skill["name"],
-            originalName=nice_skill["originalName"],
-            ruby=nice_skill["ruby"],
-            type=nice_skill["type"],
-            coolDown=nice_skill["coolDown"],
-            actIndividuality=nice_skill["actIndividuality"],
-            script=nice_skill["script"],
-            extraPassive=nice_skill["extraPassive"],
-            skillAdd=nice_skill["skillAdd"],
-            functions=nice_skill["functions"],
-        )
-    ]
+    return [nice_skill]
 
 
 async def get_nice_skill_from_raw(

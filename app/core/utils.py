@@ -142,7 +142,7 @@ def nullable_to_string(nullable: Optional[str]) -> str:
         return nullable
 
 
-def fmt_url(url_fmt: str, **kwargs: int | str) -> HttpUrl:
+def fmt_url(url_fmt: str, **kwargs: int | str | HttpUrl) -> HttpUrl:
     url: HttpUrl = parse_obj_as(HttpUrl, url_fmt.format(**kwargs))
     return url
 
