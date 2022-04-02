@@ -903,6 +903,7 @@
   "mstSvtAppendPassiveSkillUnlock": [],
   "mstCombineAppendPassiveSkill": [],
   "mstItem": [],
+  "mstCommonRelease": [],
   "mstSvtExp": [
     {
       "type": 19,

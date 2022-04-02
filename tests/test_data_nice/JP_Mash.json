@@ -141,7 +141,10 @@
         "800160": "https://assets.atlasacademy.io/GameData/JP/Servants/800160/manifest.json",
         "800170": "https://assets.atlasacademy.io/GameData/JP/Servants/800170/manifest.json"
       }
-    }
+    },
+    "charaGraphChange": {},
+    "narrowFigureChange": {},
+    "facesChange": {}
   },
   "gender": "female",
   "attribute": "earth",
@@ -723,6 +726,22 @@
         "3": 70,
         "4": 80
       },
+      "costume": {}
+    },
+    "charaGraphChange": {
+      "ascension": {},
+      "costume": {}
+    },
+    "charaGraphChangeCommonRelease": {
+      "ascension": {},
+      "costume": {}
+    },
+    "faceChange": {
+      "ascension": {},
+      "costume": {}
+    },
+    "faceChangeCommonRelease": {
+      "ascension": {},
       "costume": {}
     }
   },

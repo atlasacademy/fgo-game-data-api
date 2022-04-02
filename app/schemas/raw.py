@@ -1500,6 +1500,7 @@ class ServantEntity(BaseModelORJson):
     mstSvtAppendPassiveSkillUnlock: list[MstSvtAppendPassiveSkillUnlock]
     mstCombineAppendPassiveSkill: list[MstCombineAppendPassiveSkill]
     mstItem: list[MstItem]
+    mstCommonRelease: list[MstCommonRelease]
     mstSvtCoin: Optional[MstSvtCoin] = None
     mstCv: Optional[MstCv] = None
     mstIllustrator: Optional[MstIllustrator] = None

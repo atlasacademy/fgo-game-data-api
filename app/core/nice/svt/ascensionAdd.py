@@ -1,10 +1,11 @@
-from typing import Union
+import orjson
 
 from ....config import Settings
 from ....schemas.common import Language, NiceTrait, Region
-from ....schemas.nice import AscensionAdd, AssetURL
+from ....schemas.nice import AscensionAdd, AssetURL, NiceCommonRelease
 from ....schemas.raw import ServantEntity
-from ...utils import get_np_name, get_traits_list, get_translation
+from ...utils import fmt_url, get_np_name, get_traits_list, get_translation
+from ..common_release import get_nice_common_release
 
 
 settings = Settings()
@@ -13,6 +14,11 @@ settings = Settings()
 def get_nice_ascensionAdd(
     region: Region, raw_svt: ServantEntity, costume_ids: dict[int, int], lang: Language
 ) -> AscensionAdd:
+    base_settings_id: dict[str, int | str] = {
+        "base_url": settings.asset_url,
+        "region": region,
+        "item_id": raw_svt.mstSvt.id,
+    }
     OVERWRITE_FIELDS = [
         "overWriteServantName",
         "overWriteServantBattleName",
@@ -23,14 +29,61 @@ def get_nice_ascensionAdd(
         "overWriteTDTypeText",
     ]
 
-    ascensionAdd: dict[str, dict[str, dict[int, Union[list[NiceTrait], int, str]]]] = {
+    ascensionAdd: dict[
+        str, dict[str, dict[int, list[NiceCommonRelease] | list[NiceTrait] | int | str]]
+    ] = {
         ascensionAddField: {"ascension": {}, "costume": {}}
         for ascensionAddField in OVERWRITE_FIELDS
         + ["individuality", "voicePrefix", "lvMax"]
     }
 
+    ascensionAdd["charaGraphChange"] = {"ascension": {}, "costume": {}}
+    ascensionAdd["charaGraphChangeCommonRelease"] = {"ascension": {}, "costume": {}}
+    ascensionAdd["faceChange"] = {"ascension": {}, "costume": {}}
+    ascensionAdd["faceChangeCommonRelease"] = {"ascension": {}, "costume": {}}
+
     for limit in raw_svt.mstSvtLimit:
         ascensionAdd["lvMax"]["ascension"][limit.limitCount] = limit.lvMax
+        try:
+            strParam = orjson.loads(limit.strParam)
+            if "changeGraphCommonReleaseId" in strParam:
+                nice_release = [
+                    get_nice_common_release(cr)
+                    for cr in raw_svt.mstCommonRelease
+                    if cr.id == strParam["changeGraphCommonReleaseId"]
+                ]
+                ascensionAdd["charaGraphChangeCommonRelease"]["ascension"][
+                    limit.limitCount
+                ] = nice_release
+            if "changeGraphSuffix" in strParam:
+                asset_url = fmt_url(
+                    AssetURL.charaGraphChange[limit.limitCount],
+                    **base_settings_id,
+                    suffix=strParam["changeGraphSuffix"],
+                )
+                ascensionAdd["charaGraphChange"]["ascension"][
+                    limit.limitCount
+                ] = asset_url
+            if "changeIconCommonReleaseId" in strParam:
+                nice_release = [
+                    get_nice_common_release(cr)
+                    for cr in raw_svt.mstCommonRelease
+                    if cr.id == strParam["changeIconCommonReleaseId"]
+                ]
+                ascensionAdd["faceChangeCommonRelease"]["ascension"][
+                    limit.limitCount
+                ] = nice_release
+            if "changeIconSuffix" in strParam:
+                asset_url = fmt_url(
+                    AssetURL.faceChange,
+                    **base_settings_id,
+                    i=limit.limitCount,
+                    suffix=strParam["changeIconSuffix"],
+                )
+                ascensionAdd["faceChange"]["ascension"][limit.limitCount] = asset_url
+
+        except orjson.JSONDecodeError:  # pragma: no cover
+            pass
 
     for limitAdd in raw_svt.mstSvtLimitAdd:
         if limitAdd.limitCount in costume_ids:

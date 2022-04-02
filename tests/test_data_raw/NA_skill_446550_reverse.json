@@ -2984,6 +2984,7 @@
               "useCostume": false
             }
           ],
+          "mstCommonRelease": [],
           "mstSvtExp": [
             {
               "type": 30,
@@ -5606,6 +5607,7 @@
           "mstSvtAppendPassiveSkillUnlock": [],
           "mstCombineAppendPassiveSkill": [],
           "mstItem": [],
+          "mstCommonRelease": [],
           "mstSvtExp": [
             {
               "type": 30,
@@ -8266,6 +8268,7 @@
           "mstSvtAppendPassiveSkillUnlock": [],
           "mstCombineAppendPassiveSkill": [],
           "mstItem": [],
+          "mstCommonRelease": [],
           "mstSvtExp": [
             {
               "type": 30,

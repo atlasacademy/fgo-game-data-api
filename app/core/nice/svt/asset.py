@@ -45,6 +45,9 @@ def get_svt_extraAssets(
     equipFace = ExtraAssetsUrl()
     image = ExtraAssetsUrl()
     spriteModel = ExtraAssetsUrl()
+    charaGraphChange = ExtraAssetsUrl()
+    narrowFigureChange = ExtraAssetsUrl()
+    facesChange = ExtraAssetsUrl()
 
     base_settings = {"base_url": settings.asset_url, "region": region}
     base_settings_id: dict[str, Union[int, str]] = {
@@ -168,6 +171,38 @@ def get_svt_extraAssets(
                                 )
                                 for i in range(1, 5)
                             }
+
+                    if "changeGraphSuffix" in strParam:
+                        charaGraphChange.set_limit_asset(
+                            svt_limit.limitCount,
+                            fmt_url(
+                                AssetURL.charaGraphChange[svt_limit.limitCount],
+                                **base_settings_id,
+                                suffix=strParam["changeGraphSuffix"],
+                            ),
+                            costume_ids,
+                        )
+                        narrowFigureChange.set_limit_asset(
+                            svt_limit.limitCount,
+                            fmt_url(
+                                AssetURL.narrowFigureChange[svt_limit.limitCount],
+                                **base_settings_id,
+                                suffix=strParam["changeGraphSuffix"],
+                            ),
+                            costume_ids,
+                        )
+
+                    if "changeIconSuffix" in strParam:
+                        facesChange.set_limit_asset(
+                            svt_limit.limitCount,
+                            fmt_url(
+                                AssetURL.faceChange,
+                                **base_settings_id,
+                                i=svt_limit.limitCount,
+                                suffix=strParam["changeIconSuffix"],
+                            ),
+                            costume_ids,
+                        )
                 except orjson.JSONDecodeError:  # pragma: no cover
                     pass
 
@@ -278,4 +313,7 @@ def get_svt_extraAssets(
         equipFace=equipFace,
         image=image,
         spriteModel=spriteModel,
+        charaGraphChange=charaGraphChange,
+        narrowFigureChange=narrowFigureChange,
+        facesChange=facesChange,
     )

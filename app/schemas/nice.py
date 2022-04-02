@@ -82,6 +82,12 @@ class AssetURL:
         3: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@1.png",
         4: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}b@2.png",
     }
+    charaGraphChange = {
+        0: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}{suffix}@1.png",
+        1: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}{suffix}@2.png",
+        3: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}{suffix}@1.png",
+        4: "{base_url}/{region}/CharaGraph/{item_id}/{item_id}{suffix}@2.png",
+    }
     charaGraphEx = {
         1: "{base_url}/{region}/CharaGraph/CharaGraphEx/{item_id}/{item_id}a@1.png",
         2: "{base_url}/{region}/CharaGraph/CharaGraphEx/{item_id}/{item_id}a@2.png",
@@ -107,6 +113,12 @@ class AssetURL:
         3: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}@2.png",
         4: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}_2@0.png",
     }
+    narrowFigureChange = {
+        0: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}{suffix}@0.png",
+        1: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}{suffix}@1.png",
+        3: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}{suffix}@2.png",
+        4: "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}_2{suffix}@0.png",
+    }
     image = "{base_url}/{region}/Image/{image}/{image}.png"
     narrowFigureDefault = "{base_url}/{region}/NarrowFigure/{item_id}/{item_id}@0.png"
     skillIcon = "{base_url}/{region}/SkillIcons/skill_{item_id:05}.png"
@@ -114,6 +126,7 @@ class AssetURL:
     items = "{base_url}/{region}/Items/{item_id}.png"
     coins = "{base_url}/{region}/Coins/{item_id}.png"
     face = "{base_url}/{region}/Faces/f_{item_id}{i}.png"
+    faceChange = "{base_url}/{region}/Faces/f_{item_id}{i}{suffix}.png"
     equipFace = "{base_url}/{region}/EquipFaces/f_{item_id}{i}.png"
     enemy = "{base_url}/{region}/Enemys/{item_id}{i}.png"
     mcitem = "{base_url}/{region}/Items/masterequip{item_id:05}.png"
@@ -561,12 +574,31 @@ class NiceMysticCode(BaseModelORJson):
     costumes: list[NiceMysticCodeCostume]
 
 
+def get_community_limit(limit_count: int) -> int:
+    return limit_count + 1 if limit_count < 2 else limit_count
+
+
 class ExtraAssetsUrl(BaseModel):
     ascension: Optional[dict[int, HttpUrl]] = None
     story: Optional[dict[int, HttpUrl]] = None
     costume: Optional[dict[int, HttpUrl]] = None
     equip: Optional[dict[int, HttpUrl]] = None
     cc: Optional[dict[int, HttpUrl]] = None
+
+    def set_limit_asset(
+        self, limit_count: int, url: HttpUrl, costume_ids: dict[int, int]
+    ) -> None:
+        if limit_count > 10 and limit_count in costume_ids:
+            if self.costume is None:
+                self.costume = {costume_ids[limit_count]: url}
+            else:
+                self.costume[costume_ids[limit_count]] = url
+        else:
+            community_limit = get_community_limit(limit_count)
+            if self.ascension is None:
+                self.ascension = {community_limit: url}
+            else:
+                self.ascension[community_limit] = url
 
 
 class ExtraCCAssets(BaseModel):
@@ -591,6 +623,9 @@ class ExtraAssets(ExtraCCAssets):
         "Since the list comes from JP, the NA asset might not exist and returns 404.",
     )
     spriteModel: ExtraAssetsUrl
+    charaGraphChange: ExtraAssetsUrl
+    narrowFigureChange: ExtraAssetsUrl
+    facesChange: ExtraAssetsUrl
 
 
 class NiceCardDetail(BaseModel):
@@ -619,6 +654,17 @@ class AscensionAddEntryTrait(BaseModel):
         description="Mapping <Ascension level, Ascension level data>.",
     )
     costume: dict[int, list[NiceTrait]] = Field(
+        ..., title="Costume changes", description="Mapping <Costume ID, Costume data>."
+    )
+
+
+class AscensionAddEntryCommonRelease(BaseModel):
+    ascension: dict[int, list[NiceCommonRelease]] = Field(
+        ...,
+        title="Ascension changes",
+        description="Mapping <Ascension level, Ascension level data>.",
+    )
+    costume: dict[int, list[NiceCommonRelease]] = Field(
         ..., title="Costume changes", description="Mapping <Costume ID, Costume data>."
     )
 
@@ -653,6 +699,10 @@ class AscensionAdd(BaseModel):
     overWriteTDRank: AscensionAddEntryStr = Field(..., title="NP rank changes")
     overWriteTDTypeText: AscensionAddEntryStr = Field(..., title="NP type changes")
     lvMax: AscensionAddEntryInt = Field(..., title="Max level")
+    charaGraphChange: AscensionAddEntryHttpUrl
+    charaGraphChangeCommonRelease: AscensionAddEntryCommonRelease
+    faceChange: AscensionAddEntryHttpUrl
+    faceChangeCommonRelease: AscensionAddEntryCommonRelease
 
 
 class NiceServantChange(BaseModel):

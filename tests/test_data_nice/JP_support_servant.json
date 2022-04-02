@@ -1881,7 +1881,10 @@
               "image": {
                 "story": {}
               },
-              "spriteModel": {}
+              "spriteModel": {},
+              "charaGraphChange": {},
+              "narrowFigureChange": {},
+              "facesChange": {}
             },
             "atkBase": 500,
             "atkMax": 2000,
@@ -2342,6 +2345,22 @@
                   "3": 80,
                   "4": 100
                 },
+                "costume": {}
+              },
+              "charaGraphChange": {
+                "ascension": {},
+                "costume": {}
+              },
+              "charaGraphChangeCommonRelease": {
+                "ascension": {},
+                "costume": {}
+              },
+              "faceChange": {
+                "ascension": {},
+                "costume": {}
+              },
+              "faceChangeCommonRelease": {
+                "ascension": {},
                 "costume": {}
               }
             },
@@ -5332,7 +5351,10 @@
               "image": {
                 "story": {}
               },
-              "spriteModel": {}
+              "spriteModel": {},
+              "charaGraphChange": {},
+              "narrowFigureChange": {},
+              "facesChange": {}
             },
             "atkBase": 500,
             "atkMax": 2000,
@@ -5793,6 +5815,22 @@
                   "3": 80,
                   "4": 100
                 },
+                "costume": {}
+              },
+              "charaGraphChange": {
+                "ascension": {},
+                "costume": {}
+              },
+              "charaGraphChangeCommonRelease": {
+                "ascension": {},
+                "costume": {}
+              },
+              "faceChange": {
+                "ascension": {},
+                "costume": {}
+              },
+              "faceChangeCommonRelease": {
+                "ascension": {},
                 "costume": {}
               }
             },
@@ -8071,7 +8109,10 @@
               "image": {
                 "story": {}
               },
-              "spriteModel": {}
+              "spriteModel": {},
+              "charaGraphChange": {},
+              "narrowFigureChange": {},
+              "facesChange": {}
             },
             "atkBase": 500,
             "atkMax": 2000,
@@ -8532,6 +8573,22 @@
                   "3": 80,
                   "4": 100
                 },
+                "costume": {}
+              },
+              "charaGraphChange": {
+                "ascension": {},
+                "costume": {}
+              },
+              "charaGraphChangeCommonRelease": {
+                "ascension": {},
+                "costume": {}
+              },
+              "faceChange": {
+                "ascension": {},
+                "costume": {}
+              },
+              "faceChangeCommonRelease": {
+                "ascension": {},
                 "costume": {}
               }
             },
@@ -11283,7 +11340,10 @@
               "image": {
                 "story": {}
               },
-              "spriteModel": {}
+              "spriteModel": {},
+              "charaGraphChange": {},
+              "narrowFigureChange": {},
+              "facesChange": {}
             },
             "atkBase": 500,
             "atkMax": 2000,
@@ -11744,6 +11804,22 @@
                   "3": 80,
                   "4": 100
                 },
+                "costume": {}
+              },
+              "charaGraphChange": {
+                "ascension": {},
+                "costume": {}
+              },
+              "charaGraphChangeCommonRelease": {
+                "ascension": {},
+                "costume": {}
+              },
+              "faceChange": {
+                "ascension": {},
+                "costume": {}
+              },
+              "faceChangeCommonRelease": {
+                "ascension": {},
                 "costume": {}
               }
             },

@@ -1345,7 +1345,10 @@
               "image": {
                 "story": {}
               },
-              "spriteModel": {}
+              "spriteModel": {},
+              "charaGraphChange": {},
+              "narrowFigureChange": {},
+              "facesChange": {}
             },
             "atkBase": 0,
             "atkMax": 0,
@@ -1806,6 +1809,22 @@
                   "3": 80,
                   "4": 100
                 },
+                "costume": {}
+              },
+              "charaGraphChange": {
+                "ascension": {},
+                "costume": {}
+              },
+              "charaGraphChangeCommonRelease": {
+                "ascension": {},
+                "costume": {}
+              },
+              "faceChange": {
+                "ascension": {},
+                "costume": {}
+              },
+              "faceChangeCommonRelease": {
+                "ascension": {},
                 "costume": {}
               }
             },

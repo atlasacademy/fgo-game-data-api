@@ -1,5 +1,6 @@
 from typing import Iterable, Optional
 
+import orjson
 from aioredis import Redis
 from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncConnection
@@ -417,6 +418,23 @@ async def get_servant_entity(
 
     mstItem = await get_multiple_items(conn, item_ids)
 
+    common_release_ids: set[int] = set()
+    for limit in mstSvtLimit:
+        try:
+            strParam = orjson.loads(limit.strParam)
+            for field_name in (
+                "changeGraphCommonReleaseId",
+                "changeIconCommonReleaseId",
+            ):
+                if field_name in strParam:
+                    common_release_ids.add(strParam[field_name])
+        except orjson.JSONDecodeError:  # pragma: no cover
+            pass
+
+    mstCommonRelease = await fetch.get_all_multiple(
+        conn, MstCommonRelease, common_release_ids
+    )
+
     svt_entity = ServantEntity(
         mstSvt=svt_db,
         mstSvtIndividuality=mstSvtIndividuality,
@@ -446,6 +464,7 @@ async def get_servant_entity(
         mstSvtExtra=mstSvtExtra,
         mstItem=mstItem,
         mstSvtMultiPortrait=mstSvtMultiPortrait,
+        mstCommonRelease=mstCommonRelease,
     )
 
     if expand:

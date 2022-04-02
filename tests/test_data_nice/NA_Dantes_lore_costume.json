@@ -99,7 +99,10 @@
       "costume": {
         "1100230": "https://assets.atlasacademy.io/GameData/NA/Servants/1100230/manifest.json"
       }
-    }
+    },
+    "charaGraphChange": {},
+    "narrowFigureChange": {},
+    "facesChange": {}
   },
   "gender": "male",
   "attribute": "human",
@@ -723,6 +726,22 @@
         "3": 80,
         "4": 90
       },
+      "costume": {}
+    },
+    "charaGraphChange": {
+      "ascension": {},
+      "costume": {}
+    },
+    "charaGraphChangeCommonRelease": {
+      "ascension": {},
+      "costume": {}
+    },
+    "faceChange": {
+      "ascension": {},
+      "costume": {}
+    },
+    "faceChangeCommonRelease": {
+      "ascension": {},
       "costume": {}
     }
   },

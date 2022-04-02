@@ -24,6 +24,7 @@ test_cases_dict: dict[str, tuple[str, str]] = {
     "servant_JP_collection_servant": ("JP/servant/149", "JP_Tiamat"),
     "servant_JP_costume": ("JP/servant/1", "JP_Mash"),
     "servant_JP_multiple_NPs_space_istar": ("JP/servant/268", "JP_Space_Ishtar"),
+    "servant_charaGraph_change": ("JP/servant/277", "JP_Ody"),
     "svt_material_td_JP": ("JP/svt/404601", "JP_Liz_td_material"),
     "skill_NA_id": ("NA/skill/454650", "NA_Fujino_1st_skill"),
     "skill_NA_reverse": ("NA/skill/19450?reverse=True", "NA_Fionn_1st_skill_reverse"),

@@ -33,7 +33,10 @@
       "ascension": {
         "0": "https://assets.atlasacademy.io/GameData/NA/Servants/9939120/manifest.json"
       }
-    }
+    },
+    "charaGraphChange": {},
+    "narrowFigureChange": {},
+    "facesChange": {}
   },
   "gender": "unknown",
   "attribute": "beast",
@@ -455,6 +458,22 @@
       "ascension": {
         "1": 100
       },
+      "costume": {}
+    },
+    "charaGraphChange": {
+      "ascension": {},
+      "costume": {}
+    },
+    "charaGraphChangeCommonRelease": {
+      "ascension": {},
+      "costume": {}
+    },
+    "faceChange": {
+      "ascension": {},
+      "costume": {}
+    },
+    "faceChangeCommonRelease": {
+      "ascension": {},
       "costume": {}
     }
   },

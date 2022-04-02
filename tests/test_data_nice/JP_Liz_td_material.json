@@ -33,7 +33,10 @@
     "image": {
       "story": {}
     },
-    "spriteModel": {}
+    "spriteModel": {},
+    "charaGraphChange": {},
+    "narrowFigureChange": {},
+    "facesChange": {}
   },
   "gender": "female",
   "attribute": "human",
@@ -186,6 +189,22 @@
       "ascension": {
         "0": 1
       },
+      "costume": {}
+    },
+    "charaGraphChange": {
+      "ascension": {},
+      "costume": {}
+    },
+    "charaGraphChangeCommonRelease": {
+      "ascension": {},
+      "costume": {}
+    },
+    "faceChange": {
+      "ascension": {},
+      "costume": {}
+    },
+    "faceChangeCommonRelease": {
+      "ascension": {},
       "costume": {}
     }
   },

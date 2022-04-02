@@ -46,7 +46,10 @@
         "3": "https://assets.atlasacademy.io/GameData/JP/Servants/9935400/manifest.json",
         "4": "https://assets.atlasacademy.io/GameData/JP/Servants/9935400/manifest.json"
       }
-    }
+    },
+    "charaGraphChange": {},
+    "narrowFigureChange": {},
+    "facesChange": {}
   },
   "gender": "female",
   "attribute": "beast",
@@ -591,6 +594,22 @@
         "3": 80,
         "4": 90
       },
+      "costume": {}
+    },
+    "charaGraphChange": {
+      "ascension": {},
+      "costume": {}
+    },
+    "charaGraphChangeCommonRelease": {
+      "ascension": {},
+      "costume": {}
+    },
+    "faceChange": {
+      "ascension": {},
+      "costume": {}
+    },
+    "faceChangeCommonRelease": {
+      "ascension": {},
       "costume": {}
     }
   },
