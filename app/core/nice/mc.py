@@ -50,10 +50,12 @@ def get_nice_mc_costume(
         ),
         masterFace=MCAssets(
             male=fmt_url(
-                AssetURL.mc["masterFace"], **base_settings, item_id=equipAdd.maleImageId
+                AssetURL.mc["masterFaceImage"],
+                **base_settings,
+                item_id=equipAdd.maleImageId,
             ),
             female=fmt_url(
-                AssetURL.mc["masterFace"],
+                AssetURL.mc["masterFaceImage"],
                 **base_settings,
                 item_id=equipAdd.femaleImageId,
             ),
@@ -88,20 +90,14 @@ async def get_nice_mystic_code(
         maxLv=raw_mc.mstEquip.maxLv,
         extraAssets=ExtraMCAssets.parse_obj(
             {
-                asset_category: (
-                    MCAssets(
-                        male=fmt_url(
-                            AssetURL.mc[asset_category],
-                            **base_settings,
-                            item_id=raw_mc.mstEquip.maleImageId,
-                        ),
-                        female=fmt_url(
-                            AssetURL.mc[asset_category],
-                            **base_settings,
-                            item_id=raw_mc.mstEquip.femaleImageId,
-                        ),
-                    )
-                )
+                asset_category: {
+                    "male": AssetURL.mc[asset_category].format(
+                        **base_settings, item_id=raw_mc.mstEquip.maleImageId
+                    ),
+                    "female": AssetURL.mc[asset_category].format(
+                        **base_settings, item_id=raw_mc.mstEquip.femaleImageId
+                    ),
+                }
                 for asset_category in ("item", "masterFace", "masterFigure")
             }
         ),

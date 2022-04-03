@@ -465,5 +465,7 @@ class ScriptSearchQueryParams:
 
         - **query**: search query https://groonga.org/docs/reference/grn_expr/query_syntax.html.
         (Queries starting with `column:` are not supported).
+        - **scriptFileName**: The script name should contain this string.
+        For example: 30001 string for LB1 scripts or 9401 for interlude scripts.
         """
     )

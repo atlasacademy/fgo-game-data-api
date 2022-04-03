@@ -62,6 +62,7 @@ test_cases_dict: dict[str, tuple[str, str]] = {
     "svt_NA_id": ("NA/svt/9939120", "NA_svt_9939120"),
     "item_NA_id": ("NA/item/94000201", "NA_item_94000201"),
     "MC_NA_id": ("NA/MC/110", "NA_MC_LB"),
+    "MC_JP_costume": ("JP/MC/120?lang=en", "JP_MC_Tropical_Summer"),
     "JP_CC_id": ("JP/CC/8400550", "JP_CC_8400550"),
     "JP_CC_collectionNo": ("JP/CC/55", "JP_CC_8400550"),
     "event_JP_id": ("JP/event/80289", "JP_Guda_5"),
@@ -294,11 +295,6 @@ class TestServantSpecial:
         response = await client.get("/nice/JP/CC/8400240?lang=en")
         assert response.status_code == 200
         assert response.json()["name"] == "The Holy Night's Aurora"
-
-    async def test_JP_MC_English_name(self, client: AsyncClient) -> None:
-        response = await client.get("/nice/JP/MC/60?lang=en")
-        assert response.status_code == 200
-        assert response.json()["name"] == "Royal Brand"
 
     async def test_CE_bond_owner(self, client: AsyncClient) -> None:
         for endpoint in ("equip", "svt"):

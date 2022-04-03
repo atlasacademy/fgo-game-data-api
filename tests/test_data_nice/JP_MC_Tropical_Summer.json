@@ -1,0 +1,656 @@
+{
+  "id": 120,
+  "name": "Tropical Summer",
+  "originalName": "トロピカルサマー",
+  "detail": "ダ・ヴィンチ工房特製、対南国用装備\nつまりアロハであるが、戦闘機能も備えた魔術礼装",
+  "maxLv": 10,
+  "extraAssets": {
+    "item": {
+      "male": "https://assets.atlasacademy.io/GameData/JP/Items/masterequip00121.png",
+      "female": "https://assets.atlasacademy.io/GameData/JP/Items/masterequip00122.png"
+    },
+    "masterFace": {
+      "male": "https://assets.atlasacademy.io/GameData/JP/MasterFace/equip00121.png",
+      "female": "https://assets.atlasacademy.io/GameData/JP/MasterFace/equip00122.png"
+    },
+    "masterFigure": {
+      "male": "https://assets.atlasacademy.io/GameData/JP/MasterFigure/equip00121.png",
+      "female": "https://assets.atlasacademy.io/GameData/JP/MasterFigure/equip00122.png"
+    }
+  },
+  "skills": [
+    {
+      "id": 980037,
+      "name": "Blue Splash",
+      "originalName": "ブルー・スプラッシュ",
+      "ruby": "ぶるー・すぷらっしゅ",
+      "detail": "味方単体のArtsカード性能をアップ(1ターン)＆宝具威力をアップ(1ターン)",
+      "unmodifiedDetail": "味方単体のArtsカード性能をアップ[{0}](1ターン)＆宝具威力をアップ[{0}](1ターン)",
+      "type": "active",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00305.png",
+      "coolDown": [
+        15,
+        15,
+        15,
+        15,
+        15,
+        14,
+        14,
+        14,
+        14,
+        13
+      ],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [],
+      "skillAdd": [],
+      "functions": [
+        {
+          "funcId": 114,
+          "funcType": "addStateShort",
+          "funcTargetType": "ptOne",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "アーツアップ",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_313.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [],
+          "buffs": [
+            {
+              "id": 101,
+              "name": "Artsアップ",
+              "detail": "Artsカードの性能をアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_313.png",
+              "type": "upCommandall",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                }
+              ],
+              "tvals": [
+                {
+                  "id": 5000,
+                  "name": "canBeInBattle"
+                },
+                {
+                  "id": 4001,
+                  "name": "cardArts"
+                }
+              ],
+              "ckSelfIndv": [
+                {
+                  "id": 4001,
+                  "name": "cardArts"
+                }
+              ],
+              "ckOpIndv": [],
+              "maxRate": 5000
+            }
+          ],
+          "svals": [
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 200
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 210
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 220
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 230
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 240
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 250
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 260
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 270
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 280
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 300
+            }
+          ]
+        },
+        {
+          "funcId": 252,
+          "funcType": "addStateShort",
+          "funcTargetType": "ptOne",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "宝具威力アップ",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_310.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [],
+          "buffs": [
+            {
+              "id": 138,
+              "name": "宝具威力アップ",
+              "detail": "宝具で与えるダメージをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_310.png",
+              "type": "upNpdamage",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                },
+                {
+                  "id": 3030,
+                  "name": "buffNpDamageUp"
+                }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 5000
+            }
+          ],
+          "svals": [
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 100
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 110
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 120
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 130
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 140
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 150
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 160
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 170
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 180
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 200
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 980038,
+      "name": "Surprise Water",
+      "originalName": "サプライ・ウォーター",
+      "ruby": "さぷらい・うぉーたー",
+      "detail": "味方単体のArtsカードへのスター集中度をアップ(1ターン)",
+      "unmodifiedDetail": "味方単体のArtsカードへのスター集中度をアップ[{0}](1ターン)",
+      "type": "active",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00309.png",
+      "coolDown": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        11,
+        11,
+        11,
+        11,
+        10
+      ],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [],
+      "skillAdd": [],
+      "functions": [
+        {
+          "funcId": 1863,
+          "funcType": "addStateShort",
+          "funcTargetType": "ptOne",
+          "funcTargetTeam": "player",
+          "funcPopupText": "スター集中アップ：Arts",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_325.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [],
+          "buffs": [
+            {
+              "id": 722,
+              "name": "スター集中アップ:Arts",
+              "detail": "Artsカードへのスターの集まりやすさをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_325.png",
+              "type": "upStarweight",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [
+                {
+                  "id": 4001,
+                  "name": "cardArts"
+                }
+              ],
+              "ckOpIndv": [],
+              "maxRate": 500000
+            }
+          ],
+          "svals": [
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 50000
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 55000
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 60000
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 65000
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 70000
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 75000
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 80000
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 85000
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 90000
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 100000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 980039,
+      "name": "Safety Oil",
+      "originalName": "セーフティ・オイル",
+      "ruby": "せーふてぃ・おいる",
+      "detail": "味方単体の強化解除耐性をアップ(1ターン)＆NPを増やす",
+      "unmodifiedDetail": "味方単体の強化解除耐性をアップ[{0}](1ターン)＆NPを増やす",
+      "type": "active",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00416.png",
+      "coolDown": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        11,
+        11,
+        11,
+        11,
+        10
+      ],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [],
+      "skillAdd": [],
+      "functions": [
+        {
+          "funcId": 2565,
+          "funcType": "addState",
+          "funcTargetType": "ptOne",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "強化解除耐性アップ",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_348.png",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [],
+          "buffs": [
+            {
+              "id": 887,
+              "name": "強化解除耐性アップ",
+              "detail": "強化解除耐性をアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_348.png",
+              "type": "upToleranceSubstate",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                }
+              ],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [
+                {
+                  "id": 3004,
+                  "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3006,
+                  "name": "buffIncreaseDamage"
+                },
+                {
+                  "id": 3007,
+                  "name": "buffIncreaseDefence"
+                },
+                {
+                  "id": 3027,
+                  "name": "buffAtkUp"
+                },
+                {
+                  "id": 3058,
+                  "name": "buffIncreaseDefenceAgainstIndividuality"
+                },
+                {
+                  "id": 3031,
+                  "name": "buffCritDamageUp"
+                },
+                {
+                  "id": 3021,
+                  "name": "buffEvade"
+                },
+                {
+                  "id": 3018,
+                  "name": "buffEvadeAndInvincible"
+                },
+                {
+                  "id": 3024,
+                  "name": "buffGuts"
+                },
+                {
+                  "id": 3030,
+                  "name": "buffNpDamageUp"
+                },
+                {
+                  "id": 3032,
+                  "name": "buffCritRateUp"
+                },
+                {
+                  "id": 3019,
+                  "name": "buffSureHit"
+                }
+              ],
+              "maxRate": 5000
+            }
+          ],
+          "svals": [
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 500
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 550
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 600
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 650
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 700
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 750
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 800
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 850
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 900
+            },
+            {
+              "Rate": 5000,
+              "Turn": 1,
+              "Count": -1,
+              "Value": 1000
+            }
+          ]
+        },
+        {
+          "funcId": 463,
+          "funcType": "gainNp",
+          "funcTargetType": "ptOne",
+          "funcTargetTeam": "player",
+          "funcPopupText": "NP増加",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [],
+          "buffs": [],
+          "svals": [
+            {
+              "Rate": 1000,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Value": 1000
+            },
+            {
+              "Rate": 1000,
+              "Value": 1000
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "expRequired": [
+    53000,
+    132500,
+    305000,
+    609000,
+    1218000,
+    2200000,
+    3727000,
+    5963000,
+    8950000
+  ],
+  "costumes": [
+    {
+      "id": 1,
+      "releaseConditions": [
+        {
+          "id": 94049030,
+          "priority": 1,
+          "condGroup": 0,
+          "condType": "questClearPhase",
+          "condId": 94067002,
+          "condNum": 1
+        }
+      ],
+      "extraAssets": {
+        "item": {
+          "male": "https://assets.atlasacademy.io/GameData/JP/Items/masterequip00121.png",
+          "female": "https://assets.atlasacademy.io/GameData/JP/Items/masterequip00122.png"
+        },
+        "masterFace": {
+          "male": "https://assets.atlasacademy.io/GameData/JP/MasterFace/image00123.png",
+          "female": "https://assets.atlasacademy.io/GameData/JP/MasterFace/image00124.png"
+        },
+        "masterFigure": {
+          "male": "https://assets.atlasacademy.io/GameData/JP/MasterFigure/equip00123.png",
+          "female": "https://assets.atlasacademy.io/GameData/JP/MasterFigure/equip00124.png"
+        }
+      }
+    }
+  ]
+}
