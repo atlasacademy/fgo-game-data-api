@@ -1,3 +1,5 @@
+from typing import cast
+
 import orjson
 
 from ....config import Settings
@@ -19,22 +21,25 @@ def get_nice_ascensionAdd(
         "region": region,
         "item_id": raw_svt.mstSvt.id,
     }
-    OVERWRITE_FIELDS = [
-        "overWriteServantName",
-        "overWriteServantBattleName",
-        "overWriteTDName",
-        "overWriteTDRuby",
-        "overWriteTDFileName",
-        "overWriteTDRank",
-        "overWriteTDTypeText",
-    ]
+    OVERWRITE_FIELDS = {
+        "overWriteServantName": "overWriteServantName",
+        "originalOverWriteServantName": "overWriteServantName",
+        "overWriteServantBattleName": "overWriteServantBattleName",
+        "originalOverWriteServantBattleName": "overWriteServantBattleName",
+        "overWriteTDName": "overWriteTDName",
+        "originalOverWriteTDName": "overWriteTDName",
+        "overWriteTDRuby": "overWriteTDRuby",
+        "overWriteTDFileName": "overWriteTDFileName",
+        "overWriteTDRank": "overWriteTDRank",
+        "overWriteTDTypeText": "overWriteTDTypeText",
+    }
 
     ascensionAdd: dict[
         str, dict[str, dict[int, list[NiceCommonRelease] | list[NiceTrait] | int | str]]
     ] = {
         ascensionAddField: {"ascension": {}, "costume": {}}
-        for ascensionAddField in OVERWRITE_FIELDS
-        + ["individuality", "voicePrefix", "lvMax"]
+        for ascensionAddField in set(OVERWRITE_FIELDS)
+        | {"individuality", "voicePrefix", "lvMax"}
     }
 
     ascensionAdd["charaGraphChange"] = {"ascension": {}, "costume": {}}
@@ -98,21 +103,21 @@ def get_nice_ascensionAdd(
                 sorted(set(limitAdd.individuality + raw_svt.mstSvt.individuality))
             )
             if limitAdd.individuality
-            else []
+            else cast(list[NiceTrait], [])
         )
 
         ascensionAdd["voicePrefix"][dict_to_add][key_value] = limitAdd.voicePrefix
 
-    for overwrite_field in OVERWRITE_FIELDS:
-        ascensionAdd[overwrite_field] = {"ascension": {}, "costume": {}}
+    for dst_field, src_field in OVERWRITE_FIELDS.items():
+        ascensionAdd[dst_field] = {"ascension": {}, "costume": {}}
         for limitAdd in raw_svt.mstSvtLimitAdd:
-            if overwrite_field in limitAdd.script:
+            if src_field in limitAdd.script:
                 add_category = (
                     "costume" if limitAdd.limitCount in costume_ids else "ascension"
                 )
-                add_data = limitAdd.script[overwrite_field]
+                add_data = limitAdd.script[src_field]
 
-                if overwrite_field == "overWriteTDFileName":
+                if dst_field == "overWriteTDFileName":
                     add_data = AssetURL.commandFile.format(
                         base_url=settings.asset_url,
                         region=region,
@@ -120,20 +125,18 @@ def get_nice_ascensionAdd(
                         file_name=add_data,
                     )
                 elif region == Region.JP:
-                    if overwrite_field in (
+                    if dst_field in (
                         "overWriteServantName",
                         "overWriteServantBattleName",
                     ):
                         add_data = get_translation(lang, add_data)
-                    elif overwrite_field == "overWriteTDName":
+                    elif dst_field == "overWriteTDName":
                         add_data = get_np_name(
                             add_data,
                             limitAdd.script.get("overWriteTDRuby", add_data),
                             lang,
                         )
 
-                ascensionAdd[overwrite_field][add_category][
-                    limitAdd.limitCount
-                ] = add_data
+                ascensionAdd[dst_field][add_category][limitAdd.limitCount] = add_data
 
     return AscensionAdd.parse_obj(ascensionAdd)

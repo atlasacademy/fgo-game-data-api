@@ -688,10 +688,13 @@ class AscensionAdd(BaseModel):
     overWriteServantName: AscensionAddEntryStr = Field(
         ..., title="Servant name changes"
     )
+    originalOverWriteServantName: AscensionAddEntryStr
     overWriteServantBattleName: AscensionAddEntryStr = Field(
         ..., title="Servant battle name changes"
     )
+    originalOverWriteServantBattleName: AscensionAddEntryStr
     overWriteTDName: AscensionAddEntryStr = Field(..., title="NP name changes")
+    originalOverWriteTDName: AscensionAddEntryStr
     overWriteTDRuby: AscensionAddEntryStr = Field(..., title="NP ruby changes")
     overWriteTDFileName: AscensionAddEntryHttpUrl = Field(
         ..., title="NP image URL changes"

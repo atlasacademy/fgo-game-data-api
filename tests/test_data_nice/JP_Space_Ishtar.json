@@ -788,6 +788,10 @@
       "ascension": {},
       "costume": {}
     },
+    "originalOverWriteServantName": {
+      "ascension": {},
+      "costume": {}
+    },
     "overWriteServantBattleName": {
       "ascension": {
         "0": "アシュタレト",
@@ -798,7 +802,21 @@
         "11": "アシュタレト・オリジン"
       }
     },
+    "originalOverWriteServantBattleName": {
+      "ascension": {
+        "0": "アシュタレト",
+        "3": "イシュタル・アシュタレト",
+        "4": "イシュタル・アシュタレト"
+      },
+      "costume": {
+        "11": "アシュタレト・オリジン"
+      }
+    },
     "overWriteTDName": {
+      "ascension": {},
+      "costume": {}
+    },
+    "originalOverWriteTDName": {
       "ascension": {},
       "costume": {}
     },
