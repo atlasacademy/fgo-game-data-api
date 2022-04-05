@@ -14,12 +14,16 @@ from app.schemas.common import Region
 
 
 def main(quest_ids: list[int], load_all: bool = False, no_load: bool = False) -> None:
-    client = httpx.Client(follow_redirects=True)
+    client = httpx.Client(follow_redirects=True, timeout=60)
     for region in [Region.NA, Region.JP]:
         print(f"Loading {region} rayshift data cache …")
         start_loading_time = time.perf_counter()
 
-        quest_list = get_all_quest_lists(client, region)
+        try:
+            quest_list = get_all_quest_lists(client, region)
+        except httpx.TimeoutException:
+            print("TimeoutException: Failed to get quest list")
+            return
 
         if not quest_list:
             print(f"No quest list found for {region}")
