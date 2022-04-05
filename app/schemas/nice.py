@@ -1908,6 +1908,7 @@ class NiceQuestPhase(NiceQuest):
     qp: int
     exp: int
     bond: int
+    isNpcOnly: bool
     battleBgId: int
     extraDetail: NiceQuestPhaseExtraDetail
     scripts: list[ScriptLink]

@@ -218,6 +218,7 @@ async def get_nice_quest_phase_no_rayshift(
         "qp": raw_quest.mstQuestPhase.qp,
         "exp": raw_quest.mstQuestPhase.playerExp,
         "bond": raw_quest.mstQuestPhase.friendshipExp,
+        "isNpcOnly": raw_quest.mstQuestPhase.isNpcOnly,
         "battleBgId": raw_quest.mstQuestPhase.battleBgId,
         "extraDetail": raw_quest.mstQuestPhase.script,
         "scripts": [

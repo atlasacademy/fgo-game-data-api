@@ -75,6 +75,7 @@
   "qp": 9400,
   "exp": 38190,
   "bond": 915,
+  "isNpcOnly": false,
   "battleBgId": 25800,
   "extraDetail": {},
   "scripts": [],
