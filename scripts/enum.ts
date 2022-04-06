@@ -524,6 +524,7 @@ export enum NiceDataValsType {
     BehaveAsFamilyBuff = "behaveasfamilybuff",
     UnSubStateWhileLinkedToOthers = "unsubstatewhilelinkedtoothers",
     NotAccompanyWhenLinkedTargetMoveState = "notaccompanywhenlinkedtargetmovestate",
+    AllowSubBgmPlaying = "allowsubbgmplaying",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -1035,6 +1036,7 @@ export enum NiceWarFlag {
     WHITE_MARK_WITH_CLEAR = "whiteMarkWithClear",
     WHITE_MARK_UNDER_BOARD = "whiteMarkUnderBoard",
     SUB_FOLDER = "subFolder",
+    DISP_EARTH_POINT_WITHOUT_MAP = "dispEarthPointWithoutMap",
 }
 
 export enum NiceWarStartType {

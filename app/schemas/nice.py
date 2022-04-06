@@ -277,6 +277,7 @@ class BaseVals(BaseModel):
         default=None,
         description="The buff with this dataVal is removed if the linked buff is removed.",
     )
+    AllowSubBgmPlaying: int | None = None
     NotAccompanyWhenLinkedTargetMoveState: int | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None

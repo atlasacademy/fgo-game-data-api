@@ -1402,6 +1402,7 @@ class DataValsType(IntEnum):
     BehaveAsFamilyBuff = 97
     UnSubStateWhileLinkedToOthers = 98
     NotAccompanyWhenLinkedTargetMoveState = 99
+    AllowSubBgmPlaying = 100
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -2938,6 +2939,7 @@ class WarEntityFlag(IntEnum):
     WHITE_MARK_WITH_CLEAR = 131072
     WHITE_MARK_UNDER_BOARD = 262144
     SUB_FOLDER = 524288
+    DISP_EARTH_POINT_WITHOUT_MAP = 1048576
 
 
 class NiceWarFlag(str, Enum):
@@ -2962,6 +2964,7 @@ class NiceWarFlag(str, Enum):
     whiteMarkWithClear = "whiteMarkWithClear"
     whiteMarkUnderBoard = "whiteMarkUnderBoard"
     subFolder = "subFolder"
+    dispEarthPointWithoutMap = "dispEarthPointWithoutMap"
 
 
 WAR_FLAG_NAME: dict[int, NiceWarFlag] = {
@@ -2984,6 +2987,7 @@ WAR_FLAG_NAME: dict[int, NiceWarFlag] = {
     131072: NiceWarFlag.whiteMarkWithClear,
     262144: NiceWarFlag.whiteMarkUnderBoard,
     524288: NiceWarFlag.subFolder,
+    1048576: NiceWarFlag.dispEarthPointWithoutMap,
 }
 
 
