@@ -469,3 +469,6 @@ class ScriptSearchQueryParams:
         For example: 30001 string for LB1 scripts or 9401 for interlude scripts.
         """
     )
+
+    def hasSearchParams(self) -> bool:
+        return 1 <= len(self.query.strip()) <= 999

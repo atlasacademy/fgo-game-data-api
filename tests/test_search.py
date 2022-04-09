@@ -381,3 +381,11 @@ class TestSearchNiceRaw:
     ) -> None:
         response = await client.get(f"/{response_type}/NA/NP/search?minNpNpGain=40")
         assert response.status_code == 403
+
+    async def test_script_search_empty_query(
+        self, client: AsyncClient, response_type: str
+    ) -> None:
+        response = await client.get(
+            f"/{response_type}/NA/script/search?query=+&scriptFileName=10006"
+        )
+        assert response.status_code == 400

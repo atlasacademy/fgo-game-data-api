@@ -446,6 +446,8 @@ async def search_quest(
 async def search_script(
     conn: AsyncConnection, search_param: ScriptSearchQueryParams
 ) -> list[ScriptSearchResult]:
+    if not search_param.hasSearchParams():
+        raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
     return await get_script_search(
         conn, search_param.query, search_param.scriptFileName
     )
