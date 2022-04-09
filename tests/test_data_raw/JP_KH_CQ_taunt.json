@@ -15,7 +15,8 @@
           0
         ],
         "infoText": "見定める",
-        "timing": 5
+        "timing": 5,
+        "script": {}
       },
       "mstAiAct": {
         "targetIndividuality": [],
@@ -50,7 +51,8 @@
           0
         ],
         "infoText": "見定める",
-        "timing": 5
+        "timing": 5,
+        "script": {}
       },
       "mstAiAct": {
         "targetIndividuality": [],
@@ -83,7 +85,8 @@
           0
         ],
         "infoText": "",
-        "timing": 5
+        "timing": 5,
+        "script": {}
       },
       "mstAiAct": {
         "targetIndividuality": [],

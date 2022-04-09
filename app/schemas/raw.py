@@ -1395,6 +1395,8 @@ class NpcFollower(BaseModelORJson):
     svtEquipIds: list[int]
     flag: int
     npcScript: str
+    openedAt: int = 0
+    closedAt: int = 0
     createdAt: int = 0
 
 
@@ -1451,6 +1453,7 @@ class MstAi(BaseModelORJson):
     avals: list[int]
     infoText: str
     timing: Optional[int] = None  # only in mstAiField
+    script: dict[str, Any] | None = None
 
 
 class MstAiAct(BaseModelORJson):

@@ -1573,6 +1573,8 @@ npcFollower = Table(
     Column("flag", Integer),
     Column("npcScript", String),
     Column("createdAt", Integer, default=0),
+    Column("openedAt", Integer, default=0),
+    Column("closedAt", Integer, default=0),
 )
 
 
@@ -1639,6 +1641,7 @@ mstAi = Table(
     Column("aiActId", Integer),
     Column("avals", ARRAY(Integer)),
     Column("infoText", String),
+    Column("script", JSONB),
 )
 
 Index("ix_mstAi_avals_first", mstAi.c.avals[1])
