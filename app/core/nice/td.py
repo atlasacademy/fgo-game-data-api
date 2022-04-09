@@ -29,6 +29,7 @@ async def get_nice_td(
         "name": get_np_name(
             tdEntity.mstTreasureDevice.name, tdEntity.mstTreasureDevice.ruby, lang
         ),
+        "originalName": tdEntity.mstTreasureDevice.name,
         "ruby": tdEntity.mstTreasureDevice.ruby,
         "rank": tdEntity.mstTreasureDevice.rank,
         "type": tdEntity.mstTreasureDevice.typeText,

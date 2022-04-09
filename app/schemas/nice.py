@@ -534,6 +534,7 @@ class NiceTd(BaseModelORJson):
     num: int
     card: NiceCardType
     name: str
+    originalName: str
     ruby: str
     icon: Optional[HttpUrl] = None
     rank: str
@@ -939,6 +940,7 @@ class NiceCommandCode(BaseModelORJson):
     collectionNo: int
     name: str
     originalName: str
+    ruby: str
     rarity: int
     extraAssets: ExtraCCAssets
     skills: list[NiceSkill]
