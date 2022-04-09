@@ -1167,6 +1167,9 @@ class NiceEquip(BaseModelORJson):
     originalName: str = Field(
         ..., title="untranslated svt name", description="untranslated svt name"
     )
+    ruby: str = Field(
+        ..., title="svt's name ruby text", description="svt's name ruby text"
+    )
     type: NiceSvtType = Field(..., title="svt's type", description="svt's type.")
     flag: NiceSvtFlag = Field(
         ..., title="svt's flag", description="Some random flags given to the svt items."
