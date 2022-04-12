@@ -1,7 +1,7 @@
 from typing import Iterable, Optional
 
 import orjson
-from aioredis import Redis
+from redis.asyncio import Redis  # type: ignore
 from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncConnection
 

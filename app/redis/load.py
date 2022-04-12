@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from typing import Any, Callable
 
 import orjson
-from aioredis import Redis
+from redis.asyncio import Redis  # type: ignore
 from pydantic import DirectoryPath
 
 from ..config import Settings, logger

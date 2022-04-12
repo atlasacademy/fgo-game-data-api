@@ -1,4 +1,4 @@
-from aioredis import Redis
+from redis.asyncio import Redis  # type: ignore
 from fastapi import APIRouter, Depends, Query, Response
 from fastapi_cache.decorator import cache
 from fastapi_limiter.depends import RateLimiter  # type: ignore

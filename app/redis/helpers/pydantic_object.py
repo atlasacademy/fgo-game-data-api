@@ -1,7 +1,7 @@
 from itertools import chain
 from typing import Optional, Type, TypeVar
 
-from aioredis import Redis
+from redis.asyncio import Redis  # type: ignore
 
 from ...config import Settings
 from ...schemas.base import BaseModelORJson

@@ -3,7 +3,7 @@ from asyncio.events import AbstractEventLoop
 from typing import AsyncGenerator, Generator
 
 import pytest
-from aioredis import Redis
+from redis.asyncio import Redis  # type: ignore
 from asgi_lifespan import LifespanManager
 from httpx import AsyncClient
 from sqlalchemy.ext.asyncio import AsyncConnection, create_async_engine
@@ -49,8 +49,5 @@ async def na_db_conn() -> AsyncGenerator[AsyncConnection, None]:
 
 @pytest.fixture(scope="session")
 async def redis() -> AsyncGenerator[Redis, None]:
-    redis_client = await Redis.from_url(settings.redisdsn)
-    try:
+    async with Redis.from_url(settings.redisdsn) as redis_client:
         yield redis_client
-    finally:
-        redis_client.close()

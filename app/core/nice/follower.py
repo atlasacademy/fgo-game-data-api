@@ -1,5 +1,5 @@
 import orjson
-from aioredis import Redis
+from redis.asyncio import Redis  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...core.basic import get_basic_servant

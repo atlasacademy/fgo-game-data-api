@@ -1,7 +1,7 @@
 from enum import Enum
 
 import orjson
-from aioredis import Redis
+from redis.asyncio import Redis  # type: ignore
 
 from ...config import Settings
 from ...schemas.common import Region

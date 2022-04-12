@@ -3,7 +3,7 @@ from collections import defaultdict
 from dataclasses import dataclass
 from typing import Any, Optional, Union
 
-from aioredis import Redis
+from redis.asyncio import Redis  # type: ignore
 from fastapi_cache.decorator import cache
 from sqlalchemy.ext.asyncio import AsyncConnection
 

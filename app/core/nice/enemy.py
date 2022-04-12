@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Any
 
-from aioredis import Redis
+from redis.asyncio import Redis  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...data.custom_mappings import Translation

@@ -1,7 +1,7 @@
 from typing import Any, Optional
 
 import orjson
-from aioredis import Redis
+from redis.asyncio import Redis  # type: ignore
 from fastapi import APIRouter, BackgroundTasks, Depends, Response
 from git import Repo  # type: ignore
 from pydantic import BaseModel

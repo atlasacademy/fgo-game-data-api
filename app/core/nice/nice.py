@@ -1,6 +1,6 @@
 from typing import Optional
 
-from aioredis import Redis
+from redis.asyncio import Redis  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings

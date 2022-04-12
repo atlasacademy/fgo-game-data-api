@@ -1,6 +1,6 @@
 from typing import Iterable
 
-from aioredis import Redis
+from redis.asyncio import Redis  # type: ignore
 
 from ..redis.helpers.repo_version import get_repo_version
 from ..schemas.common import Region, RepoInfo
