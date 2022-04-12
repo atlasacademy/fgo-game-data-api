@@ -410,7 +410,12 @@ async def search_item(
     )
 
     if search_param.name:
-        matches = [item for item in matches if match_name(search_param.name, item.name)]
+        matches = [
+            item
+            for item in matches
+            if match_name(search_param.name, item.name)
+            or match_name(search_param.name, get_translation(Language.en, item.name))
+        ]
 
     return sorted(matches, key=lambda item: item.id)
 

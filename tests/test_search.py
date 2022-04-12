@@ -310,6 +310,7 @@ nice_raw_test_cases_dict = {
         {6507},
     ),
     "item_type": ("JP/item/search?type=chargeStone", {6}),
+    "item_name_translation": ("JP/item/search?name=Lancer%20Piece", {7003}),
     "script_search": ("JP/script/search?query=存在したでしょう", {"0300051410"}),
     "script_search_name": (
         "NA/script/search?query=gomenasorry&scriptFileName=9401",
