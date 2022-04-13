@@ -189,7 +189,8 @@
     "isRec": true,
     "plusAction": 0,
     "maxRate": [
-      5000
+      5000,
+      30000
     ]
   },
   "givenDamage": {
@@ -451,6 +452,7 @@
     "isRec": true,
     "plusAction": 0,
     "maxRate": [
+      500000,
       100000
     ]
   },
@@ -764,6 +766,20 @@
     "limit": "none",
     "plusTypes": [
       "deadFunction"
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": [
+      0
+    ]
+  },
+  "functionGuts": {
+    "limit": "none",
+    "plusTypes": [
+      "gutsFunction"
     ],
     "minusTypes": [],
     "baseParam": 1000,
@@ -1307,20 +1323,6 @@
       0
     ]
   },
-  "functionGuts": {
-    "limit": "none",
-    "plusTypes": [
-      "gutsFunction"
-    ],
-    "minusTypes": [],
-    "baseParam": 1000,
-    "baseValue": 0,
-    "isRec": true,
-    "plusAction": 0,
-    "maxRate": [
-      0
-    ]
-  },
   "criticalRateDamageTaken": {
     "limit": "normal",
     "plusTypes": [
@@ -1425,6 +1427,54 @@
     "limit": "none",
     "plusTypes": [
       "attackBeforeFunction"
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
+  },
+  "donotSkillSelect": {
+    "limit": "none",
+    "plusTypes": [
+      "donotSkillSelect"
+    ],
+    "minusTypes": [],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
+  },
+  "invisibleBattleChara": {
+    "limit": "none",
+    "plusTypes": [
+      "invisibleBattleChara"
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
+  },
+  "buffRate": {
+    "limit": "normal",
+    "plusTypes": [
+      "buffRate"
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
+  },
+  "counterFunction": {
+    "limit": "none",
+    "plusTypes": [
+      "counterFunction"
     ],
     "minusTypes": [],
     "baseParam": 1000,

@@ -622,6 +622,17 @@
     "isRec": true,
     "plusAction": 0
   },
+  "FUNCTION_GUTS": {
+    "limit": 0,
+    "plusTypes": [
+      149
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
   "MAXHP_RATE": {
     "limit": 3,
     "plusTypes": [
@@ -1054,17 +1065,6 @@
     "isRec": true,
     "plusAction": 0
   },
-  "FUNCTION_GUTS": {
-    "limit": 0,
-    "plusTypes": [
-      149
-    ],
-    "minusTypes": [],
-    "baseParam": 1000,
-    "baseValue": 0,
-    "isRec": true,
-    "plusAction": 0
-  },
   "CRITICAL_RATE_DAMAGE_TAKEN": {
     "limit": 3,
     "plusTypes": [
@@ -1161,6 +1161,50 @@
     "limit": 0,
     "plusTypes": [
       160
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "DONOT_SKILL_SELECT": {
+    "limit": 0,
+    "plusTypes": [
+      161
+    ],
+    "minusTypes": [],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "INVISIBLE_BATTLE_CHARA": {
+    "limit": 0,
+    "plusTypes": [
+      163
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "BUFF_RATE": {
+    "limit": 3,
+    "plusTypes": [
+      162
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "COUNTER_FUNCTION": {
+    "limit": 0,
+    "plusTypes": [
+      165
     ],
     "minusTypes": [],
     "baseParam": 1000,

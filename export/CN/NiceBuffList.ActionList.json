@@ -772,6 +772,20 @@
       0
     ]
   },
+  "functionGuts": {
+    "limit": "none",
+    "plusTypes": [
+      "gutsFunction"
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": [
+      0
+    ]
+  },
   "maxhpRate": {
     "limit": "normal",
     "plusTypes": [
@@ -1309,20 +1323,6 @@
       0
     ]
   },
-  "functionGuts": {
-    "limit": "none",
-    "plusTypes": [
-      "gutsFunction"
-    ],
-    "minusTypes": [],
-    "baseParam": 1000,
-    "baseValue": 0,
-    "isRec": true,
-    "plusAction": 0,
-    "maxRate": [
-      0
-    ]
-  },
   "criticalRateDamageTaken": {
     "limit": "normal",
     "plusTypes": [
@@ -1452,5 +1452,57 @@
     "maxRate": [
       0
     ]
+  },
+  "donotSkillSelect": {
+    "limit": "none",
+    "plusTypes": [
+      "donotSkillSelect"
+    ],
+    "minusTypes": [],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": [
+      0
+    ]
+  },
+  "invisibleBattleChara": {
+    "limit": "none",
+    "plusTypes": [
+      "invisibleBattleChara"
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": [
+      0
+    ]
+  },
+  "buffRate": {
+    "limit": "normal",
+    "plusTypes": [
+      "buffRate"
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
+  },
+  "counterFunction": {
+    "limit": "none",
+    "plusTypes": [
+      "counterFunction"
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
   }
 }
