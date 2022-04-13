@@ -1,0 +1,21 @@
+{
+  "id": 9100101,
+  "collectionNo": 0,
+  "name": "女子高生ゴースト",
+  "type": "enemy",
+  "flag": "normal",
+  "className": "rider",
+  "attribute": "human",
+  "rarity": 2,
+  "atkMax": 12579,
+  "hpMax": 55267,
+  "face": "https://assets.atlasacademy.io/GameData/JP/Enemys/99402402.png",
+  "costume": {
+    "9940240": {
+      "id": 2,
+      "costumeCollectionNo": 0,
+      "battleCharaId": 9940240,
+      "shortName": ""
+    }
+  }
+}

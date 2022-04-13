@@ -79,9 +79,17 @@ def get_svt_extraAssets(
             )
         }
     elif raw_svt.mstSvt.type in (SvtType.ENEMY, SvtType.ENEMY_COLLECTION):
+        all_limit_adds = {
+            limit_add.limitCount: limit_add for limit_add in raw_svt.mstSvtLimitAdd
+        }
         faces.ascension = {
             limit.limitCount: fmt_url(
-                AssetURL.enemy, **base_settings_id, i=limit.limitCount
+                AssetURL.enemy,
+                **base_settings,
+                item_id=all_limit_adds[limit.limitCount].battleCharaId
+                if limit.limitCount in all_limit_adds
+                else svt_id,
+                i=limit.limitCount,
             )
             for limit in raw_svt.mstSvtLimit
         }
@@ -247,12 +255,13 @@ def get_svt_extraAssets(
             else:
                 spriteModel.costume[limit_add.battleCharaId] = model_url
 
+    min_normal_limit_count = min(limit.limitCount for limit in raw_svt.mstSvtLimit)
     if raw_svt.mstSvt.isServant() or raw_svt.mstSvt.type == SvtType.ENEMY:
         model_url = fmt_url(AssetURL.servantModel, **base_settings, item_id=svt_id)
         if spriteModel.ascension is None:
-            spriteModel.ascension = {0: model_url}
-        elif 0 not in spriteModel.ascension:
-            spriteModel.ascension[0] = model_url
+            spriteModel.ascension = {min_normal_limit_count: model_url}
+        elif min_normal_limit_count not in spriteModel.ascension:
+            spriteModel.ascension[min_normal_limit_count] = model_url
 
     if svt_id in EXTRA_CHARAFIGURES:
         charaFigure.story = {}

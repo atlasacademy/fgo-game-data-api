@@ -60,6 +60,7 @@ test_cases_dict: dict[str, tuple[str, str]] = {
     "equip_JP_collectionNo": ("JP/equip/683", "JP_Aerial_Drive"),
     "equip_JP_id": ("JP/equip/9402750", "JP_Aerial_Drive"),
     "svt_NA_id": ("NA/svt/9939120", "NA_svt_9939120"),
+    "svt_JP_enemy_costume": ("JP/svt/9100101", "JP_svt_9100101"),
     "item_NA_id": ("NA/item/94000201", "NA_item_94000201"),
     "MC_NA_id": ("NA/MC/110", "NA_MC_LB"),
     "MC_JP_costume": ("JP/MC/120?lang=en", "JP_MC_Tropical_Summer"),

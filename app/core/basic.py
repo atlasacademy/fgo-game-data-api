@@ -417,9 +417,19 @@ async def get_basic_svt(
             i=0,
         )
     elif mstSvt.type in (SvtType.ENEMY, SvtType.ENEMY_COLLECTION):
-        basic_servant["face"] = AssetURL.enemy.format(
-            **base_settings, i=mstSvtLimit.limitCount
-        )
+        if svtExtra and mstSvtLimit.limitCount in svtExtra.costumeLimitSvtIdMap:
+            basic_servant["face"] = AssetURL.enemy.format(
+                base_url=settings.asset_url,
+                region=region,
+                item_id=svtExtra.costumeLimitSvtIdMap[
+                    mstSvtLimit.limitCount
+                ].battleCharaId,
+                i=mstSvtLimit.limitCount,
+            )
+        else:
+            basic_servant["face"] = AssetURL.enemy.format(
+                **base_settings, i=mstSvtLimit.limitCount
+            )
     else:
         basic_servant["face"] = AssetURL.face.format(
             **base_settings, i=mstSvtLimit.limitCount
