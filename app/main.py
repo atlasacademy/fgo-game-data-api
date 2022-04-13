@@ -6,7 +6,6 @@ from typing import Any, Callable, Optional
 import orjson
 import tomli
 import uvicorn  # type: ignore
-from redis.asyncio import Redis  # type: ignore
 from fastapi import Depends, FastAPI, HTTPException, Request, Response, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.utils import get_openapi
@@ -16,6 +15,7 @@ from fastapi_cache import FastAPICache
 from fastapi_cache.backends.redis import RedisBackend
 from fastapi_cache.coder import PickleCoder
 from fastapi_limiter import FastAPILimiter  # type: ignore
+from redis.asyncio import Redis  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from .config import Settings, project_root

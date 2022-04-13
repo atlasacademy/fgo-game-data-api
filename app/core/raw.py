@@ -1,8 +1,8 @@
 from typing import Iterable, Optional
 
 import orjson
-from redis.asyncio import Redis  # type: ignore
 from fastapi import HTTPException
+from redis.asyncio import Redis  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..data.custom_mappings import EXTRA_CHARAFIGURES

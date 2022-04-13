@@ -6,10 +6,10 @@ from typing import Any, Iterable, Union
 import aiofiles
 import httpx
 import orjson
-from redis.asyncio import Redis  # type: ignore
 from fastapi.concurrency import run_in_threadpool
 from git import Repo  # type: ignore
 from pydantic import DirectoryPath
+from redis.asyncio import Redis  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection, AsyncEngine
 
 from .config import Settings, logger, project_root

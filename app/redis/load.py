@@ -3,8 +3,8 @@ from dataclasses import dataclass
 from typing import Any, Callable
 
 import orjson
-from redis.asyncio import Redis  # type: ignore
 from pydantic import DirectoryPath
+from redis.asyncio import Redis  # type: ignore
 
 from ..config import Settings, logger
 from ..data.buff import get_buff_with_classrelation

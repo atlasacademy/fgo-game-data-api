@@ -3,9 +3,9 @@ from asyncio.events import AbstractEventLoop
 from typing import AsyncGenerator, Generator
 
 import pytest
-from redis.asyncio import Redis  # type: ignore
 from asgi_lifespan import LifespanManager
 from httpx import AsyncClient
+from redis.asyncio import Redis  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection, create_async_engine
 
 from app.config import Settings

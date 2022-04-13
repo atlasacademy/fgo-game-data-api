@@ -1,10 +1,10 @@
 from typing import Any, Optional
 
 import orjson
-from redis.asyncio import Redis  # type: ignore
 from fastapi import APIRouter, BackgroundTasks, Depends, Response
 from git import Repo  # type: ignore
 from pydantic import BaseModel
+from redis.asyncio import Redis  # type: ignore
 
 from ..config import Settings, project_root
 from ..core.info import get_all_repo_info

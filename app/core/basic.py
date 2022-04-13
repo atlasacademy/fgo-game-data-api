@@ -1,8 +1,8 @@
 from collections import defaultdict
 from typing import Any, Generator, Iterable, Optional
 
-from redis.asyncio import Redis  # type: ignore
 from fastapi import HTTPException
+from redis.asyncio import Redis  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..config import Settings
