@@ -281,7 +281,7 @@ class TestServantSpecial:
     async def test_JP_English_name(self, client: AsyncClient) -> None:
         response = await client.get("/nice/JP/servant/304300?lang=en")
         assert response.status_code == 200
-        assert response.json()["name"] == "Elice Utsumi"
+        assert response.json()["name"] == "Utsumi Erice"
 
         response = await client.get("/nice/JP/equip/1296?lang=en")
         assert response.status_code == 200

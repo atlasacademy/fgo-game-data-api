@@ -137,7 +137,7 @@ class TestBasicSpecial:
 
     async def test_JP_English_name(self, client: AsyncClient) -> None:
         response = await client.get("/basic/JP/servant/304300?lang=en")
-        assert response.json()["name"] == "Elice Utsumi"
+        assert response.json()["name"] == "Utsumi Erice"
 
         response = await client.get("/basic/JP/servant/311?lang=en")
         assert response.json()["name"] == "Fairy Knight Tristan"
