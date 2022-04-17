@@ -3896,3 +3896,240 @@ EVENT_REWARD_SCENE_FLAG: dict[int, NiceEventRewardSceneFlag] = {
     4: NiceEventRewardSceneFlag.isChangeSvtByChangedTab,
     8: NiceEventRewardSceneFlag.isHideTab,
 }
+
+
+class AiCondTarget(IntEnum):
+    NONE = 0
+    FIELD = 1
+    SELF = 2
+    PT = 3
+    OPPONENT = 4
+    PT_FIELD = 5
+    OPPONENT_FIELD = 6
+    PT_ALL = 7
+    OPPONENT_ALL = 8
+    OPPONENT_FRONT = 9
+    OPPONENT_CENTER = 10
+    OPPONENT_BACK = 11
+    ALL_FIELD = 12
+    PT_FRONT = 13
+    PT_CENTER = 14
+    PT_BACK = 15
+
+
+class NiceAiCondTarget(str, Enum):
+    """Ai Condition Target"""
+
+    none = "none"
+    field = "field"
+    self_ = "self"
+    pt = "pt"
+    opponent = "opponent"
+    ptField = "ptField"
+    opponentField = "opponentField"
+    ptAll = "ptAll"
+    opponentAll = "opponentAll"
+    opponentFront = "opponentFront"
+    opponentCenter = "opponentCenter"
+    opponentBack = "opponentBack"
+    allField = "allField"
+    ptFront = "ptFront"
+    ptCenter = "ptCenter"
+    ptBack = "ptBack"
+
+
+AI_COND_TARGET_NAME: dict[int, NiceAiCondTarget] = {
+    0: NiceAiCondTarget.none,
+    1: NiceAiCondTarget.field,
+    2: NiceAiCondTarget.self_,
+    3: NiceAiCondTarget.pt,
+    4: NiceAiCondTarget.opponent,
+    5: NiceAiCondTarget.ptField,
+    6: NiceAiCondTarget.opponentField,
+    7: NiceAiCondTarget.ptAll,
+    8: NiceAiCondTarget.opponentAll,
+    9: NiceAiCondTarget.opponentFront,
+    10: NiceAiCondTarget.opponentCenter,
+    11: NiceAiCondTarget.opponentBack,
+    12: NiceAiCondTarget.allField,
+    13: NiceAiCondTarget.ptFront,
+    14: NiceAiCondTarget.ptCenter,
+    15: NiceAiCondTarget.ptBack,
+}
+
+
+class AiCondParameter(IntEnum):
+    NONE = 0
+    TURN = 1
+    SPACE = 2
+    PREV_ACTID = 3
+    PREV_ACTTYPE = 4
+    HP = 5
+    NPGAUGE = 6
+    TDTURN = 7
+    ACT_COUNT = 8
+    ACT_COUNT_THISTURN = 9
+    TURN_FIELD = 10
+    TURN_ACT_COUNT = 11
+    BUFF_ID = 12
+    INDIVIDUALITY = 13
+    BUFF_INDIVIDUALITY = 14
+    BUFF_ACTIVE_INDIVIDUALITY = 15
+    RAID_HP = 16
+    RAID_COUNT = 17
+    RAID_COUNT_VALUE = 18
+    COUNT_ALIVE = 19
+    COUNT_REST = 20
+    COUNT_ITEM = 21
+    COUNT_BUFFCOUNT_INDIVIDUALITY = 22
+    BUFF_ACTIVE_ID = 23
+    ENEMY_MASTER_COMMAND_SPELL_COUNT = 24
+    COUNT_STAR = 25
+    TARGET_POSITION = 26
+    COUNT_TARGET_BUFF_INDIVIDUALITY_SUM = 27
+    DEAD = 28
+    PRECEDING_ENEMY = 29
+    REMAIN_TURN = 30
+    AVALON_145566 = 31
+    CHECK_PARAMATER_32 = 32
+    CHAIN_COUNT = 33
+    CHECK_TARGET_SKILL_THISTURN = 34
+
+
+class NiceAiCondParameter(str, Enum):
+    """Ai Condition Parameter"""
+
+    none = "none"
+    turn = "turn"
+    space = "space"
+    prevActid = "prevActid"
+    prevActtype = "prevActtype"
+    hp = "hp"
+    npgauge = "npgauge"
+    tdturn = "tdturn"
+    actCount = "actCount"
+    actCountThisturn = "actCountThisturn"
+    turnField = "turnField"
+    turnActCount = "turnActCount"
+    buffId = "buffId"
+    individuality = "individuality"
+    buffIndividuality = "buffIndividuality"
+    buffActiveIndividuality = "buffActiveIndividuality"
+    raidHp = "raidHp"
+    raidCount = "raidCount"
+    raidCountValue = "raidCountValue"
+    countAlive = "countAlive"
+    countRest = "countRest"
+    countItem = "countItem"
+    countBuffcountIndividuality = "countBuffcountIndividuality"
+    buffActiveId = "buffActiveId"
+    enemyMasterCommandSpellCount = "enemyMasterCommandSpellCount"
+    countStar = "countStar"
+    targetPosition = "targetPosition"
+    countTargetBuffIndividualitySum = "countTargetBuffIndividualitySum"
+    dead = "dead"
+    precedingEnemy = "precedingEnemy"
+    remainTurn = "remainTurn"
+    avalon145566 = "avalon145566"
+    checkParamater32 = "checkParamater32"
+    chainCount = "chainCount"
+    checkTargetSkillThisturn = "checkTargetSkillThisturn"
+
+
+AI_COND_PARAMETER_NAME: dict[int, NiceAiCondParameter] = {
+    0: NiceAiCondParameter.none,
+    1: NiceAiCondParameter.turn,
+    2: NiceAiCondParameter.space,
+    3: NiceAiCondParameter.prevActid,
+    4: NiceAiCondParameter.prevActtype,
+    5: NiceAiCondParameter.hp,
+    6: NiceAiCondParameter.npgauge,
+    7: NiceAiCondParameter.tdturn,
+    8: NiceAiCondParameter.actCount,
+    9: NiceAiCondParameter.actCountThisturn,
+    10: NiceAiCondParameter.turnField,
+    11: NiceAiCondParameter.turnActCount,
+    12: NiceAiCondParameter.buffId,
+    13: NiceAiCondParameter.individuality,
+    14: NiceAiCondParameter.buffIndividuality,
+    15: NiceAiCondParameter.buffActiveIndividuality,
+    16: NiceAiCondParameter.raidHp,
+    17: NiceAiCondParameter.raidCount,
+    18: NiceAiCondParameter.raidCountValue,
+    19: NiceAiCondParameter.countAlive,
+    20: NiceAiCondParameter.countRest,
+    21: NiceAiCondParameter.countItem,
+    22: NiceAiCondParameter.countBuffcountIndividuality,
+    23: NiceAiCondParameter.buffActiveId,
+    24: NiceAiCondParameter.enemyMasterCommandSpellCount,
+    25: NiceAiCondParameter.countStar,
+    26: NiceAiCondParameter.targetPosition,
+    27: NiceAiCondParameter.countTargetBuffIndividualitySum,
+    28: NiceAiCondParameter.dead,
+    29: NiceAiCondParameter.precedingEnemy,
+    30: NiceAiCondParameter.remainTurn,
+    31: NiceAiCondParameter.avalon145566,
+    32: NiceAiCondParameter.checkParamater32,
+    33: NiceAiCondParameter.chainCount,
+    34: NiceAiCondParameter.checkTargetSkillThisturn,
+}
+
+
+class AiRefineTarget(IntEnum):
+    ANY = 0
+    ALL = 1
+    HIGHER = 2
+    LOWER = 3
+    TOTAL_COUNT = 4
+
+
+class NiceAiCondRefine(str, Enum):
+    """Ai Condition Refine"""
+
+    any = "any"
+    all = "all"
+    higher = "higher"
+    lower_ = "lower"
+    totalCount = "totalCount"
+
+
+AI_COND_REFINE_NAME: dict[int, NiceAiCondRefine] = {
+    0: NiceAiCondRefine.any,
+    1: NiceAiCondRefine.all,
+    2: NiceAiCondRefine.higher,
+    3: NiceAiCondRefine.lower_,
+    4: NiceAiCondRefine.totalCount,
+}
+
+
+class AiCheckTarget(IntEnum):
+    NONE = 0
+    EQUAL = 1
+    EQUAL_NOT = 2
+    HIGHER = 3
+    LOWER = 4
+    MULTIPLE = 5
+    EXIST = 6
+
+
+class NiceAiCondCheck(str, Enum):
+    """Ai Condition Check"""
+
+    none = "none"
+    equal = "equal"
+    equalNot = "equalNot"
+    higher = "higher"
+    lower_ = "lower"
+    multiple = "multiple"
+    exist = "exist"
+
+
+AI_COND_CHECK_NAME: dict[int, NiceAiCondCheck] = {
+    0: NiceAiCondCheck.none,
+    1: NiceAiCondCheck.equal,
+    2: NiceAiCondCheck.equalNot,
+    3: NiceAiCondCheck.higher,
+    4: NiceAiCondCheck.lower_,
+    5: NiceAiCondCheck.multiple,
+    6: NiceAiCondCheck.exist,
+}

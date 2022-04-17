@@ -1,0 +1,522 @@
+{
+  "NONE": {
+    "target": 1,
+    "paramater": 0,
+    "check": 0,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "HP_HIGHER": {
+    "target": 2,
+    "paramater": 5,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "HP_LOWER": {
+    "target": 2,
+    "paramater": 5,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "ACTCOUNT": {
+    "target": 2,
+    "paramater": 8,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "ACTCOUNT_MULTIPLE": {
+    "target": 2,
+    "paramater": 8,
+    "check": 5,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "TURN": {
+    "target": 1,
+    "paramater": 1,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "TURN_MULTIPLE": {
+    "target": 1,
+    "paramater": 1,
+    "check": 5,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "BEFORE_ACT_ID": {
+    "target": 2,
+    "paramater": 3,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "BEFORE_ACT_TYPE": {
+    "target": 2,
+    "paramater": 4,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "BEFORE_NOT_ACT_ID": {
+    "target": 2,
+    "paramater": 3,
+    "check": 2,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "BEFORE_NOT_ACT_TYPE": {
+    "target": 2,
+    "paramater": 4,
+    "check": 2,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_SELF_BUFF": {
+    "target": 2,
+    "paramater": 12,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_SELF_INDIVIDUALITY": {
+    "target": 2,
+    "paramater": 13,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_SELF_BUFF_INDIVIDUALITY": {
+    "target": 2,
+    "paramater": 15,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_PT_BUFF": {
+    "target": 3,
+    "paramater": 12,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_PT_INDIVIDUALITY": {
+    "target": 3,
+    "paramater": 13,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_PT_BUFF_INDIVIDUALITY": {
+    "target": 3,
+    "paramater": 15,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_OPPONENT_BUFF": {
+    "target": 4,
+    "paramater": 12,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_OPPONENT_INDIVIDUALITY": {
+    "target": 4,
+    "paramater": 13,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_OPPONENT_BUFF_INDIVIDUALITY": {
+    "target": 4,
+    "paramater": 15,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_SELF_NPTURN": {
+    "target": 2,
+    "paramater": 7,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_OPPONENT_HEIGHT_NPGAUGE": {
+    "target": 4,
+    "paramater": 6,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "ACTCOUNT_THISTURN": {
+    "target": 2,
+    "paramater": 9,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_PT_HP_HIGHER": {
+    "target": 3,
+    "paramater": 5,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": true,
+    "isParams": false
+  },
+  "CHECK_PT_HP_LOWER": {
+    "target": 3,
+    "paramater": 5,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": true,
+    "isParams": false
+  },
+  "CHECK_SELF_NOT_BUFF_INDIVIDUALITY": {
+    "target": 2,
+    "paramater": 14,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "TURN_AND_ACTCOUNT_THISTURN": {
+    "target": 2,
+    "paramater": 11,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "FIELDTURN": {
+    "target": 2,
+    "paramater": 10,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "FIELDTURN_MULTIPLE": {
+    "target": 2,
+    "paramater": 10,
+    "check": 5,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_PT_LOWER_TDTURN": {
+    "target": 3,
+    "paramater": 7,
+    "check": 1,
+    "refine": 3,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "RAID_HP_HIGHER": {
+    "target": 2,
+    "paramater": 16,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "RAID_HP_LOWER": {
+    "target": 2,
+    "paramater": 16,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "RAID_COUNT_HIGHER": {
+    "target": 2,
+    "paramater": 17,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "RAID_COUNT_LOWER": {
+    "target": 2,
+    "paramater": 17,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "RAID_COUNT_VALUE_HIGHER": {
+    "target": 2,
+    "paramater": 18,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "RAID_COUNT_VALUE_LOWER": {
+    "target": 2,
+    "paramater": 18,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_SPACE": {
+    "target": 2,
+    "paramater": 2,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "TURN_HIGHER": {
+    "target": 1,
+    "paramater": 1,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "TURN_LOWER": {
+    "target": 1,
+    "paramater": 1,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHARACTOR_TURN_HIGHER": {
+    "target": 2,
+    "paramater": 10,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHARACTOR_TURN_LOWER": {
+    "target": 2,
+    "paramater": 10,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "COUNT_ALIVE_PT": {
+    "target": 5,
+    "paramater": 19,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "COUNT_ALIVE_OPPONENT": {
+    "target": 6,
+    "paramater": 19,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "COUNT_PT_REST_HIGHER": {
+    "target": 5,
+    "paramater": 20,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "COUNT_PT_REST_LOWER": {
+    "target": 5,
+    "paramater": 20,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "COUNT_OPPONENT_REST_HIGHER": {
+    "target": 6,
+    "paramater": 20,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "COUNT_OPPONENT_REST_LOWER": {
+    "target": 6,
+    "paramater": 20,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "COUNT_ITEM_HIGHER": {
+    "target": 1,
+    "paramater": 21,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_ITEM_LOWER": {
+    "target": 1,
+    "paramater": 21,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "CHECK_SELF_BUFFCOUNT_INDIVIDUALITY": {
+    "target": 2,
+    "paramater": 22,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "CHECK_PT_BUFFCOUNT_INDIVIDUALITY": {
+    "target": 3,
+    "paramater": 22,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "CHECK_SELF_BUFF_ACTIVE": {
+    "target": 2,
+    "paramater": 23,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_PT_BUFF_ACTIVE": {
+    "target": 3,
+    "paramater": 23,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_OPPONENT_BUFF_ACTIVE": {
+    "target": 4,
+    "paramater": 23,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "COUNT_ENEMY_COMMAND_SPELL_HIGHER": {
+    "target": 1,
+    "paramater": 24,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_PT_ALL_INDIVIDUALITY": {
+    "target": 7,
+    "paramater": 13,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_OPPONENT_ALL_INDIVIDUALITY": {
+    "target": 8,
+    "paramater": 13,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "STAR_HIGHER": {
+    "target": 8,
+    "paramater": 25,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "STAR_LOWER": {
+    "target": 8,
+    "paramater": 25,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_OPPONENT_HP_HIGHER": {
+    "target": 4,
+    "paramater": 5,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": true,
+    "isParams": false
+  },
+  "CHECK_OPPONENT_HP_LOWER": {
+    "target": 4,
+    "paramater": 5,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": true,
+    "isParams": false
+  },
+  "CHECK_TARGET_POSITION": {
+    "target": 4,
+    "paramater": 26,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_SELF_BUFF_ACTIVE_AND_PASSIVE_INDIVIDUALITY": {
+    "target": 2,
+    "paramater": 14,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_PT_BUFF_ACTIVE_AND_PASSIVE_INDIVIDUALITY": {
+    "target": 3,
+    "paramater": 14,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_OPPONENT_BUFF_ACTIVE_AND_PASSIVE_INDIVIDUALITY": {
+    "target": 4,
+    "paramater": 14,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  }
+}

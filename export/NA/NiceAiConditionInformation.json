@@ -1,0 +1,522 @@
+{
+  "none": {
+    "target": "field",
+    "paramater": "none",
+    "check": "none",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "hpHigher": {
+    "target": "self",
+    "paramater": "hp",
+    "check": "higher",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "hpLower": {
+    "target": "self",
+    "paramater": "hp",
+    "check": "lower",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "actcount": {
+    "target": "self",
+    "paramater": "actCount",
+    "check": "equal",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "actcountMultiple": {
+    "target": "self",
+    "paramater": "actCount",
+    "check": "multiple",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "turn": {
+    "target": "field",
+    "paramater": "turn",
+    "check": "equal",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "turnMultiple": {
+    "target": "field",
+    "paramater": "turn",
+    "check": "multiple",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "beforeActId": {
+    "target": "self",
+    "paramater": "prevActid",
+    "check": "equal",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "beforeActType": {
+    "target": "self",
+    "paramater": "prevActtype",
+    "check": "equal",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "beforeNotActId": {
+    "target": "self",
+    "paramater": "prevActid",
+    "check": "equalNot",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "beforeNotActType": {
+    "target": "self",
+    "paramater": "prevActtype",
+    "check": "equalNot",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "checkSelfBuff": {
+    "target": "self",
+    "paramater": "buffId",
+    "check": "exist",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "checkSelfIndividuality": {
+    "target": "self",
+    "paramater": "individuality",
+    "check": "exist",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "checkSelfBuffIndividuality": {
+    "target": "self",
+    "paramater": "buffActiveIndividuality",
+    "check": "exist",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "checkPtBuff": {
+    "target": "pt",
+    "paramater": "buffId",
+    "check": "exist",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "checkPtIndividuality": {
+    "target": "pt",
+    "paramater": "individuality",
+    "check": "exist",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "checkPtBuffIndividuality": {
+    "target": "pt",
+    "paramater": "buffActiveIndividuality",
+    "check": "exist",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "checkOpponentBuff": {
+    "target": "opponent",
+    "paramater": "buffId",
+    "check": "exist",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "checkOpponentIndividuality": {
+    "target": "opponent",
+    "paramater": "individuality",
+    "check": "exist",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "checkOpponentBuffIndividuality": {
+    "target": "opponent",
+    "paramater": "buffActiveIndividuality",
+    "check": "exist",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "checkSelfNpturn": {
+    "target": "self",
+    "paramater": "tdturn",
+    "check": "exist",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "checkOpponentHeightNpgauge": {
+    "target": "opponent",
+    "paramater": "npgauge",
+    "check": "higher",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "actcountThisturn": {
+    "target": "self",
+    "paramater": "actCountThisturn",
+    "check": "equal",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "checkPtHpHigher": {
+    "target": "pt",
+    "paramater": "hp",
+    "check": "higher",
+    "refine": "any",
+    "isIndiv": true,
+    "isParams": false
+  },
+  "checkPtHpLower": {
+    "target": "pt",
+    "paramater": "hp",
+    "check": "lower",
+    "refine": "any",
+    "isIndiv": true,
+    "isParams": false
+  },
+  "checkSelfNotBuffIndividuality": {
+    "target": "self",
+    "paramater": "buffIndividuality",
+    "check": "exist",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "turnAndActcountThisturn": {
+    "target": "self",
+    "paramater": "turnActCount",
+    "check": "equal",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "fieldturn": {
+    "target": "self",
+    "paramater": "turnField",
+    "check": "equal",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "fieldturnMultiple": {
+    "target": "self",
+    "paramater": "turnField",
+    "check": "multiple",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "checkPtLowerTdturn": {
+    "target": "pt",
+    "paramater": "tdturn",
+    "check": "equal",
+    "refine": "lower",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "raidHpHigher": {
+    "target": "self",
+    "paramater": "raidHp",
+    "check": "higher",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "raidHpLower": {
+    "target": "self",
+    "paramater": "raidHp",
+    "check": "lower",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "raidCountHigher": {
+    "target": "self",
+    "paramater": "raidCount",
+    "check": "higher",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "raidCountLower": {
+    "target": "self",
+    "paramater": "raidCount",
+    "check": "lower",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "raidCountValueHigher": {
+    "target": "self",
+    "paramater": "raidCountValue",
+    "check": "higher",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "raidCountValueLower": {
+    "target": "self",
+    "paramater": "raidCountValue",
+    "check": "lower",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "checkSpace": {
+    "target": "self",
+    "paramater": "space",
+    "check": "higher",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "turnHigher": {
+    "target": "field",
+    "paramater": "turn",
+    "check": "higher",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "turnLower": {
+    "target": "field",
+    "paramater": "turn",
+    "check": "lower",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "charactorTurnHigher": {
+    "target": "self",
+    "paramater": "turnField",
+    "check": "higher",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "charactorTurnLower": {
+    "target": "self",
+    "paramater": "turnField",
+    "check": "lower",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "countAlivePt": {
+    "target": "ptField",
+    "paramater": "countAlive",
+    "check": "equal",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "countAliveOpponent": {
+    "target": "opponentField",
+    "paramater": "countAlive",
+    "check": "equal",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "countPtRestHigher": {
+    "target": "ptField",
+    "paramater": "countRest",
+    "check": "higher",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "countPtRestLower": {
+    "target": "ptField",
+    "paramater": "countRest",
+    "check": "lower",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "countOpponentRestHigher": {
+    "target": "opponentField",
+    "paramater": "countRest",
+    "check": "higher",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "countOpponentRestLower": {
+    "target": "opponentField",
+    "paramater": "countRest",
+    "check": "lower",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "countItemHigher": {
+    "target": "field",
+    "paramater": "countItem",
+    "check": "higher",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": true
+  },
+  "countItemLower": {
+    "target": "field",
+    "paramater": "countItem",
+    "check": "lower",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": true
+  },
+  "checkSelfBuffcountIndividuality": {
+    "target": "self",
+    "paramater": "countBuffcountIndividuality",
+    "check": "equal",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": true
+  },
+  "checkPtBuffcountIndividuality": {
+    "target": "pt",
+    "paramater": "countBuffcountIndividuality",
+    "check": "equal",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": true
+  },
+  "checkSelfBuffActive": {
+    "target": "self",
+    "paramater": "buffActiveId",
+    "check": "exist",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "checkPtBuffActive": {
+    "target": "pt",
+    "paramater": "buffActiveId",
+    "check": "exist",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "checkOpponentBuffActive": {
+    "target": "opponent",
+    "paramater": "buffActiveId",
+    "check": "exist",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "countEnemyCommandSpellHigher": {
+    "target": "field",
+    "paramater": "enemyMasterCommandSpellCount",
+    "check": "higher",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "checkPtAllIndividuality": {
+    "target": "ptAll",
+    "paramater": "individuality",
+    "check": "exist",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "checkOpponentAllIndividuality": {
+    "target": "opponentAll",
+    "paramater": "individuality",
+    "check": "exist",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "starHigher": {
+    "target": "opponentAll",
+    "paramater": "countStar",
+    "check": "higher",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "starLower": {
+    "target": "opponentAll",
+    "paramater": "countStar",
+    "check": "lower",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "checkOpponentHpHigher": {
+    "target": "opponent",
+    "paramater": "hp",
+    "check": "higher",
+    "refine": "any",
+    "isIndiv": true,
+    "isParams": false
+  },
+  "checkOpponentHpLower": {
+    "target": "opponent",
+    "paramater": "hp",
+    "check": "lower",
+    "refine": "any",
+    "isIndiv": true,
+    "isParams": false
+  },
+  "checkTargetPosition": {
+    "target": "opponent",
+    "paramater": "targetPosition",
+    "check": "exist",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "checkSelfBuffActiveAndPassiveIndividuality": {
+    "target": "self",
+    "paramater": "buffIndividuality",
+    "check": "exist",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "checkPtBuffActiveAndPassiveIndividuality": {
+    "target": "pt",
+    "paramater": "buffIndividuality",
+    "check": "exist",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  },
+  "checkOpponentBuffActiveAndPassiveIndividuality": {
+    "target": "opponent",
+    "paramater": "buffIndividuality",
+    "check": "exist",
+    "refine": "any",
+    "isIndiv": false,
+    "isParams": false
+  }
+}

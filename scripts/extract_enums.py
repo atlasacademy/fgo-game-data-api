@@ -381,6 +381,34 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Event Reward Scene Flag",
         "EVENT_REWARD_SCENE_FLAG",
     ),
+    (
+        "ConditionsInformation.TARGET",
+        "AiCondTarget",
+        "NiceAiCondTarget",
+        "Ai Condition Target",
+        "AI_COND_TARGET_NAME",
+    ),
+    (
+        "ConditionsInformation.PARAMATER",
+        "AiCondParameter",
+        "NiceAiCondParameter",
+        "Ai Condition Parameter",
+        "AI_COND_PARAMETER_NAME",
+    ),
+    (
+        "ConditionsInformation.REFINE",
+        "AiRefineTarget",
+        "NiceAiCondRefine",
+        "Ai Condition Refine",
+        "AI_COND_REFINE_NAME",
+    ),
+    (
+        "ConditionsInformation.CHECK",
+        "AiCheckTarget",
+        "NiceAiCondCheck",
+        "Ai Condition Check",
+        "AI_COND_CHECK_NAME",
+    ),
 ]
 
 
