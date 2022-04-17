@@ -518,5 +518,605 @@
     "refine": 0,
     "isIndiv": false,
     "isParams": false
+  },
+  "CHECK_PT_ALL_BUFF": {
+    "target": 7,
+    "paramater": 12,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_OPPONENT_ALL_BUFF": {
+    "target": 8,
+    "paramater": 12,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_PT_ALL_BUFF_INDIVIDUALITY": {
+    "target": 7,
+    "paramater": 15,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_OPPONENT_ALL_BUFF_INDIVIDUALITY": {
+    "target": 8,
+    "paramater": 15,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "COUNT_ALIVE_PT_ALL": {
+    "target": 5,
+    "paramater": 20,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "COUNT_ALIVE_OPPONENT_ALL": {
+    "target": 6,
+    "paramater": 20,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_PT_ALL_BUFF_ACTIVE": {
+    "target": 7,
+    "paramater": 23,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_OPPONENT_ALL_BUFF_ACTIVE": {
+    "target": 8,
+    "paramater": 23,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "COUNT_HIGHER_BUFF_INDIVIDUALITY_SUM_PT": {
+    "target": 3,
+    "paramater": 27,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_HIGHER_BUFF_INDIVIDUALITY_SUM_PT_ALL": {
+    "target": 7,
+    "paramater": 27,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_HIGHER_BUFF_INDIVIDUALITY_SUM_OPPONENT": {
+    "target": 4,
+    "paramater": 27,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_HIGHER_BUFF_INDIVIDUALITY_SUM_OPPONENT_ALL": {
+    "target": 8,
+    "paramater": 27,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_HIGHER_BUFF_INDIVIDUALITY_SUM_SELF": {
+    "target": 2,
+    "paramater": 27,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_LOWER_BUFF_INDIVIDUALITY_SUM_PT": {
+    "target": 3,
+    "paramater": 27,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_LOWER_BUFF_INDIVIDUALITY_SUM_PT_ALL": {
+    "target": 7,
+    "paramater": 27,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_LOWER_BUFF_INDIVIDUALITY_SUM_OPPONENT": {
+    "target": 4,
+    "paramater": 27,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_LOWER_BUFF_INDIVIDUALITY_SUM_OPPONENT_ALL": {
+    "target": 8,
+    "paramater": 27,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_LOWER_BUFF_INDIVIDUALITY_SUM_SELF": {
+    "target": 2,
+    "paramater": 27,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_EQUAL_BUFF_INDIVIDUALITY_SUM_PT": {
+    "target": 3,
+    "paramater": 27,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_EQUAL_BUFF_INDIVIDUALITY_SUM_PT_ALL": {
+    "target": 7,
+    "paramater": 27,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_EQUAL_BUFF_INDIVIDUALITY_SUM_OPPONENT": {
+    "target": 4,
+    "paramater": 27,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_EQUAL_BUFF_INDIVIDUALITY_SUM_OPPONENT_ALL": {
+    "target": 8,
+    "paramater": 27,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_EQUAL_BUFF_INDIVIDUALITY_SUM_SELF": {
+    "target": 2,
+    "paramater": 27,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "EXIST_INDIVIDUALITY_OPPONENT_FRONT": {
+    "target": 9,
+    "paramater": 13,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "EXIST_INDIVIDUALITY_OPPONENT_CENTER": {
+    "target": 10,
+    "paramater": 13,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "EXIST_INDIVIDUALITY_OPPONENT_BACK": {
+    "target": 11,
+    "paramater": 13,
+    "check": 6,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "TOTAL_COUNT_HIGHER_INDIVIDUALITY_PT": {
+    "target": 3,
+    "paramater": 27,
+    "check": 3,
+    "refine": 4,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "TOTAL_COUNT_HIGHER_INDIVIDUALITY_PT_ALL": {
+    "target": 7,
+    "paramater": 27,
+    "check": 3,
+    "refine": 4,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "TOTAL_COUNT_HIGHER_INDIVIDUALITY_OPPONENT": {
+    "target": 4,
+    "paramater": 27,
+    "check": 3,
+    "refine": 4,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "TOTAL_COUNT_HIGHER_INDIVIDUALITY_OPPONENT_ALL": {
+    "target": 8,
+    "paramater": 27,
+    "check": 3,
+    "refine": 4,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "TOTAL_COUNT_HIGHER_INDIVIDUALITY_ALL_FIELD": {
+    "target": 12,
+    "paramater": 27,
+    "check": 3,
+    "refine": 4,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "TOTAL_COUNT_LOWER_INDIVIDUALITY_PT": {
+    "target": 3,
+    "paramater": 27,
+    "check": 4,
+    "refine": 4,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "TOTAL_COUNT_LOWER_INDIVIDUALITY_PT_ALL": {
+    "target": 7,
+    "paramater": 27,
+    "check": 4,
+    "refine": 4,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "TOTAL_COUNT_LOWER_INDIVIDUALITY_OPPONENT": {
+    "target": 4,
+    "paramater": 27,
+    "check": 4,
+    "refine": 4,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "TOTAL_COUNT_LOWER_INDIVIDUALITY_OPPONENT_ALL": {
+    "target": 8,
+    "paramater": 27,
+    "check": 4,
+    "refine": 4,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "TOTAL_COUNT_LOWER_INDIVIDUALITY_ALL_FIELD": {
+    "target": 12,
+    "paramater": 27,
+    "check": 4,
+    "refine": 4,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "TOTAL_COUNT_EQUAL_INDIVIDUALITY_PT": {
+    "target": 3,
+    "paramater": 27,
+    "check": 1,
+    "refine": 4,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "TOTAL_COUNT_EQUAL_INDIVIDUALITY_PT_ALL": {
+    "target": 7,
+    "paramater": 27,
+    "check": 1,
+    "refine": 4,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "TOTAL_COUNT_EQUAL_INDIVIDUALITY_OPPONENT": {
+    "target": 4,
+    "paramater": 27,
+    "check": 1,
+    "refine": 4,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "TOTAL_COUNT_EQUAL_INDIVIDUALITY_OPPONENT_ALL": {
+    "target": 8,
+    "paramater": 27,
+    "check": 1,
+    "refine": 4,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "TOTAL_COUNT_EQUAL_INDIVIDUALITY_ALL_FIELD": {
+    "target": 12,
+    "paramater": 27,
+    "check": 1,
+    "refine": 4,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "PT_FRONT_DEAD_EQUAL": {
+    "target": 13,
+    "paramater": 28,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "PT_CENTER_DEAD_EQUAL": {
+    "target": 14,
+    "paramater": 28,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "PT_BACK_DEAD_EQUAL": {
+    "target": 15,
+    "paramater": 28,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "COUNT_HIGHER_INDIVIDUALITY_PT_FRONT": {
+    "target": 13,
+    "paramater": 27,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_HIGHER_INDIVIDUALITY_PT_CENTER": {
+    "target": 14,
+    "paramater": 27,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_HIGHER_INDIVIDUALITY_PT_BACK": {
+    "target": 15,
+    "paramater": 27,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_HIGHER_INDIVIDUALITY_OPPONENT_FRONT": {
+    "target": 9,
+    "paramater": 27,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_HIGHER_INDIVIDUALITY_OPPONENT_CENTER": {
+    "target": 10,
+    "paramater": 27,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_HIGHER_INDIVIDUALITY_OPPONENT_BACK": {
+    "target": 11,
+    "paramater": 27,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_LOWER_INDIVIDUALITY_PT_FRONT": {
+    "target": 13,
+    "paramater": 27,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_LOWER_INDIVIDUALITY_PT_CENTER": {
+    "target": 14,
+    "paramater": 27,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_LOWER_INDIVIDUALITY_PT_BACK": {
+    "target": 15,
+    "paramater": 27,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_LOWER_INDIVIDUALITY_OPPONENT_FRONT": {
+    "target": 9,
+    "paramater": 27,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_LOWER_INDIVIDUALITY_OPPONENT_CENTER": {
+    "target": 10,
+    "paramater": 27,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_LOWER_INDIVIDUALITY_OPPONENT_BACK": {
+    "target": 11,
+    "paramater": 27,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_EQUAL_INDIVIDUALITY_PT_FRONT": {
+    "target": 13,
+    "paramater": 27,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_EQUAL_INDIVIDUALITY_PT_CENTER": {
+    "target": 14,
+    "paramater": 27,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_EQUAL_INDIVIDUALITY_PT_BACK": {
+    "target": 15,
+    "paramater": 27,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_EQUAL_INDIVIDUALITY_OPPONENT_FRONT": {
+    "target": 9,
+    "paramater": 27,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_EQUAL_INDIVIDUALITY_OPPONENT_CENTER": {
+    "target": 10,
+    "paramater": 27,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_EQUAL_INDIVIDUALITY_OPPONENT_BACK": {
+    "target": 11,
+    "paramater": 27,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "CHECK_PRECEDING_ENEMY": {
+    "target": 1,
+    "paramater": 29,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "COUNT_HIGHER_REMAIN_TURN": {
+    "target": 1,
+    "paramater": 30,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "COUNT_LOWER_REMAIN_TURN": {
+    "target": 1,
+    "paramater": 30,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "COUNT_HIGHER_AI_171": {
+    "target": 1,
+    "paramater": 31,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "COUNT_LOWER_AI_172": {
+    "target": 1,
+    "paramater": 31,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "COUNT_EQUAL_AI_173": {
+    "target": 1,
+    "paramater": 31,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_AI_174": {
+    "target": 1,
+    "paramater": 32,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_SELF_NPTURN_HIGHER": {
+    "target": 2,
+    "paramater": 7,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "CHECK_SELF_NPTURN_LOWER": {
+    "target": 2,
+    "paramater": 7,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": false
+  },
+  "COUNT_CHAIN_HIGHER": {
+    "target": 1,
+    "paramater": 33,
+    "check": 3,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_CHAIN_LOWER": {
+    "target": 1,
+    "paramater": 33,
+    "check": 4,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "COUNT_CHAIN_EQUAL": {
+    "target": 1,
+    "paramater": 33,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
+  },
+  "CHECK_USE_SKILL_THISTURN": {
+    "target": 1,
+    "paramater": 34,
+    "check": 1,
+    "refine": 0,
+    "isIndiv": false,
+    "isParams": true
   }
 }
