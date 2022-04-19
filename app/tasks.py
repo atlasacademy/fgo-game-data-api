@@ -408,11 +408,21 @@ async def update_master_repo_info(
             await set_repo_version(redis, region, repo_info)
 
 
-async def clear_bloom_redis_cache(redis: Redis) -> None:  # pragma: no cover
+async def clear_redis_cache(
+    redis: Redis, region_path: dict[Region, DirectoryPath]
+) -> None:  # pragma: no cover
     key_count = 0
-    async for key in redis.scan_iter(match=f"{settings.redis_prefix}:cache*"):
+
+    for region in region_path:
+        key_pattern = f"{settings.redis_prefix}:cache:{region.value}*"
+        async for key in redis.scan_iter(match=key_pattern):
+            await redis.delete(key)
+            key_count += 1
+
+    async for key in redis.scan_iter(match=f"{settings.redis_prefix}:cache::*"):
         await redis.delete(key)
         key_count += 1
+
     logger.info(f"Cleared {key_count} cache redis keys.")
 
 
@@ -447,7 +457,7 @@ async def load_and_export(
         await load_svt_extra(redis, region_path)
     await update_master_repo_info(redis, region_path)
     if settings.clear_redis_cache:
-        await clear_bloom_redis_cache(redis)
+        await clear_redis_cache(redis, region_path)
     await generate_exports(redis, region_path, async_engines)
 
 

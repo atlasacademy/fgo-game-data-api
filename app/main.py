@@ -240,6 +240,15 @@ def custom_key_builder(
         if not isinstance(arg, AsyncConnection) and not isinstance(arg, Redis)
     ]
 
+    region = ""
+    if "region" in static_kwargs and isinstance(static_kwargs["region"], Region):
+        region = static_kwargs["region"].value
+    else:
+        for arg in static_args:
+            if isinstance(arg, Region):
+                region = arg.value
+                break
+
     try:
         args_dump = orjson.dumps(static_args).decode("utf-8")
         kwargs_dump = orjson.dumps(static_kwargs).decode("utf-8")
@@ -250,7 +259,7 @@ def custom_key_builder(
     raw_key = f"{func.__module__}:{func.__name__}:{args_dump}:{kwargs_dump}"
     cache_key = hashlib.sha1(raw_key.encode("utf-8")).hexdigest()
 
-    return f"{prefix}:{namespace}:{cache_key}"
+    return f"{prefix}:{region}:{namespace}:{cache_key}"
 
 
 @app.on_event("startup")

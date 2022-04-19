@@ -11,6 +11,16 @@ from ...schemas.nice import EnemyDrop, NiceStage
 settings = Settings()
 
 
+def get_redis_cache_key(
+    region: Region,
+    quest_id: int,
+    phase: int,
+    questSelect: int | None = None,
+    lang: Language = Language.jp,
+) -> str:
+    return f"{settings.redis_prefix}:cache:{region.value}:stage_data:{quest_id}:{phase}:{questSelect}:{lang.value}"
+
+
 class RayshiftRedisData(BaseModelORJson):
     quest_drops: list[EnemyDrop]
     stages: list[NiceStage]
@@ -24,7 +34,7 @@ async def get_stages_cache(
     questSelect: int | None = None,
     lang: Language = Language.jp,
 ) -> Optional[RayshiftRedisData]:
-    redis_key = f"{settings.redis_prefix}:cache:stages:{region.value}:{lang.value}:{quest_id}:{phase}:{questSelect}"
+    redis_key = get_redis_cache_key(region, quest_id, phase, questSelect, lang)
     redis_data = await redis.get(redis_key)
 
     if redis_data:
@@ -43,7 +53,7 @@ async def set_stages_cache(
     lang: Language = Language.jp,
     long_ttl: bool = False,
 ) -> None:
-    redis_key = f"{settings.redis_prefix}:cache:stages:{region.value}:{lang.value}:{quest_id}:{phase}:{questSelect}"
+    redis_key = get_redis_cache_key(region, quest_id, phase, questSelect, lang)
     json_str = data.json(exclude_unset=True, exclude_none=True)
     if long_ttl:
         await redis.set(redis_key, json_str)
