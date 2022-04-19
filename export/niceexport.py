@@ -6,7 +6,7 @@ from typing import Any, Callable, NamedTuple, Union
 from app.config import Settings
 from app.core.utils import get_traits_list
 from app.schemas.common import Region
-from app.schemas.enums import ATTRIBUTE_NAME, CLASS_NAME
+from app.schemas.enums import ATTRIBUTE_NAME, CLASS_NAME, TRAIT_NAME, Trait
 from app.schemas.gameenums import (
     AI_COND_CHECK_NAME,
     AI_COND_NAME,
@@ -219,6 +219,27 @@ def get_nice_gift(raw_gift: Any) -> dict[Any, Any]:
     }
 
 
+def get_nice_class(raw_data: Any) -> Any:
+    return [
+        {
+            "id": class_data["id"],
+            "className": CLASS_NAME.get(class_data["id"]),
+            "name": class_data["name"],
+            "individuality": TRAIT_NAME.get(class_data["individuality"], Trait.unknown),
+            "attackRate": class_data["attackRate"],
+            "imageId": class_data["imageId"],
+            "iconImageId": class_data["iconImageId"],
+            "frameId": class_data["frameId"],
+            "priority": class_data["priority"],
+            "groupType": class_data["groupType"],
+            "relationId": class_data["relationId"],
+            "supportGroup": class_data["supportGroup"],
+            "autoSelSupportType": class_data["autoSelSupportType"],
+        }
+        for class_data in raw_data
+    ]
+
+
 def get_nice_attackrate(raw_data: Any) -> Any:
     return {
         CLASS_NAME[class_data["id"]]: class_data["attackRate"]
@@ -366,6 +387,11 @@ TO_EXPORT = [
         input="mstConstantStr",
         converter=get_nice_constant_str,
         output="NiceConstantStr",
+    ),
+    ExportParam(
+        input="mstClass",
+        converter=get_nice_class,
+        output="NiceClass",
     ),
     ExportParam(
         input="mstClass", converter=get_nice_attackrate, output="NiceClassAttackRate"
