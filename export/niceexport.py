@@ -225,7 +225,9 @@ def get_nice_class(raw_data: Any) -> Any:
             "id": class_data["id"],
             "className": CLASS_NAME.get(class_data["id"]),
             "name": class_data["name"],
-            "individuality": TRAIT_NAME.get(class_data["individuality"], Trait.unknown),
+            "individuality": TRAIT_NAME.get(class_data["individuality"], Trait.unknown)
+            if class_data["individuality"]
+            else Trait.unknown,
             "attackRate": class_data["attackRate"],
             "imageId": class_data["imageId"],
             "iconImageId": class_data["iconImageId"],
