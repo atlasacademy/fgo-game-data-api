@@ -5,6 +5,8 @@ All notable changes to the public API will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Changes to be tagged
+
+## 5.78.0 - 2022-04-23
 ### Added
 - `costumes` to nice mystic code.
 - `spotRoads` to nice war.
@@ -13,6 +15,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `releaseConditions` to nice shop.
 - `ascensionImage` to nice servant.
 - `flags` to nice quest and nice war.
+- `trialQuestIds` to nice servant.
+- costume maps for nice event.
+- event reward scene.
+- `mapGimmicks` to nice map.
+- `originalName` to servant, skill, NP, buff, function.
+- AiCond dictionary export.
 
 ## 5.77.0 - 2022-03-02
 ### Added
