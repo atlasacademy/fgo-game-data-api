@@ -207,7 +207,7 @@ async def dump_nice_bgms(
 async def dump_nice_mms(
     util: ExportUtil, mms: list[MstMasterMission]
 ) -> None:  # pragma: no cover
-    all_mm_data = await get_all_nice_mms(util.conn, mms, util.lang)
+    all_mm_data = await get_all_nice_mms(util.conn, util.region, mms, util.lang)
     await util.dump_orjson("nice_master_mission", all_mm_data)
 
 

@@ -2663,7 +2663,8 @@
           "type": "item",
           "objectId": 4,
           "priority": 0,
-          "num": 6000
+          "num": 6000,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -2735,7 +2736,8 @@
           "type": "item",
           "objectId": 6001,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -2807,7 +2809,8 @@
           "type": "item",
           "objectId": 4,
           "priority": 0,
-          "num": 6000
+          "num": 6000,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -2879,7 +2882,8 @@
           "type": "item",
           "objectId": 6102,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -2951,7 +2955,8 @@
           "type": "item",
           "objectId": 4,
           "priority": 0,
-          "num": 6000
+          "num": 6000,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -3023,7 +3028,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 200
+          "num": 200,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -3095,7 +3101,8 @@
           "type": "item",
           "objectId": 100,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -3190,7 +3197,8 @@
           "type": "item",
           "objectId": 4,
           "priority": 0,
-          "num": 6000
+          "num": 6000,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -3285,7 +3293,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 200
+          "num": 200,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -3380,7 +3389,8 @@
           "type": "item",
           "objectId": 4,
           "priority": 0,
-          "num": 10000
+          "num": 10000,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -3475,7 +3485,8 @@
           "type": "item",
           "objectId": 6101,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -3570,7 +3581,8 @@
           "type": "item",
           "objectId": 4,
           "priority": 0,
-          "num": 20000
+          "num": 20000,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -3665,7 +3677,8 @@
           "type": "item",
           "objectId": 4,
           "priority": 0,
-          "num": 2000
+          "num": 2000,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -3751,7 +3764,8 @@
           "type": "item",
           "objectId": 6002,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -3837,7 +3851,8 @@
           "type": "item",
           "objectId": 4,
           "priority": 0,
-          "num": 4000
+          "num": 4000,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -3923,7 +3938,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 200
+          "num": 200,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -4009,7 +4025,8 @@
           "type": "item",
           "objectId": 4001,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -4081,7 +4098,8 @@
           "type": "item",
           "objectId": 6202,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -4153,7 +4171,8 @@
           "type": "commandCode",
           "objectId": 8400740,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -4225,7 +4244,8 @@
           "type": "commandCode",
           "objectId": 8400720,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -4297,7 +4317,8 @@
           "type": "item",
           "objectId": 6201,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -4369,7 +4390,8 @@
           "type": "commandCode",
           "objectId": 8400730,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -4441,7 +4463,8 @@
           "type": "item",
           "objectId": 6999,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -4521,7 +4544,8 @@
           "type": "item",
           "objectId": 5000,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -4595,7 +4619,8 @@
           "type": "item",
           "objectId": 5003,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -4669,7 +4694,8 @@
           "type": "item",
           "objectId": 5001,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -4743,7 +4769,8 @@
           "type": "servant",
           "objectId": 9670400,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -4817,7 +4844,8 @@
           "type": "item",
           "objectId": 5002,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -4891,7 +4919,8 @@
           "type": "servant",
           "objectId": 9570400,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,
@@ -4965,7 +4994,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 5000000
+          "num": 5000000,
+          "giftAdds": []
         }
       ],
       "bannerGroup": 0,

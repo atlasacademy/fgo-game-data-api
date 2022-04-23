@@ -234,7 +234,8 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -298,14 +299,16 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             },
             {
               "id": 315300,
               "type": "item",
               "objectId": 6532,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -389,7 +392,8 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -468,14 +472,16 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             },
             {
               "id": 315301,
               "type": "item",
               "objectId": 6532,
               "priority": 0,
-              "num": 2
+              "num": 2,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -555,14 +561,16 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             },
             {
               "id": 315302,
               "type": "item",
               "objectId": 6532,
               "priority": 0,
-              "num": 3
+              "num": 3,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -694,7 +702,8 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -773,14 +782,16 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             },
             {
               "id": 315303,
               "type": "item",
               "objectId": 6532,
               "priority": 0,
-              "num": 2
+              "num": 2,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -860,14 +871,16 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             },
             {
               "id": 315312,
               "type": "item",
               "objectId": 6532,
               "priority": 0,
-              "num": 2
+              "num": 2,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -948,7 +961,8 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -1027,14 +1041,16 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             },
             {
               "id": 315304,
               "type": "item",
               "objectId": 6508,
               "priority": 0,
-              "num": 2
+              "num": 2,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -1140,14 +1156,16 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             },
             {
               "id": 315305,
               "type": "item",
               "objectId": 6508,
               "priority": 0,
-              "num": 2
+              "num": 2,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -1253,14 +1271,16 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             },
             {
               "id": 315306,
               "type": "item",
               "objectId": 6508,
               "priority": 0,
-              "num": 2
+              "num": 2,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -1329,7 +1349,8 @@
               "type": "item",
               "objectId": 7999,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -1405,7 +1426,8 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -1505,7 +1527,8 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -1584,14 +1607,16 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             },
             {
               "id": 315307,
               "type": "item",
               "objectId": 6508,
               "priority": 0,
-              "num": 2
+              "num": 2,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -1685,14 +1710,16 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             },
             {
               "id": 315308,
               "type": "item",
               "objectId": 6531,
               "priority": 0,
-              "num": 2
+              "num": 2,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -1819,14 +1846,16 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             },
             {
               "id": 315309,
               "type": "item",
               "objectId": 6531,
               "priority": 0,
-              "num": 2
+              "num": 2,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -1938,14 +1967,16 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             },
             {
               "id": 315310,
               "type": "item",
               "objectId": 6531,
               "priority": 0,
-              "num": 2
+              "num": 2,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -2039,14 +2070,16 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             },
             {
               "id": 315311,
               "type": "item",
               "objectId": 6532,
               "priority": 0,
-              "num": 3
+              "num": 3,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -2251,7 +2284,8 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -2310,7 +2344,8 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -2389,14 +2424,16 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             },
             {
               "id": 315314,
               "type": "item",
               "objectId": 6517,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -2539,7 +2576,8 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -2618,14 +2656,16 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             },
             {
               "id": 315313,
               "type": "item",
               "objectId": 6532,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -2826,7 +2866,8 @@
               "type": "item",
               "objectId": 2,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [

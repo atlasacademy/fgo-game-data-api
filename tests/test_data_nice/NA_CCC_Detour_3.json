@@ -21,7 +21,8 @@
       "type": "item",
       "objectId": 6533,
       "priority": 0,
-      "num": 3
+      "num": 3,
+      "giftAdds": []
     }
   ],
   "releaseConditions": [

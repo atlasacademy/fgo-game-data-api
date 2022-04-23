@@ -797,6 +797,17 @@ class MstGift(BaseModelORJson):
     limitCount: Optional[int]
 
 
+class MstGiftAdd(BaseModelORJson):
+    priorGiftIconIds: list[int]
+    giftId: int
+    priority: int | None = None
+    condType: int
+    targetId: int
+    targetNum: int
+    priorGiftId: int
+    script: str
+
+
 class MstBgm(BaseModelORJson):
     id: int  # 1
     fileName: str  # "BGM_BATTLE_1"
@@ -1582,6 +1593,7 @@ class QuestEntity(BaseModelORJson):
     mstQuestRelease: list[MstQuestRelease]
     mstClosedMessage: list[MstClosedMessage]
     mstGift: list[MstGift]
+    mstGiftAdd: list[MstGiftAdd]
     phases: list[int]
     phasesWithEnemies: list[int] = []
     phasesNoBattle: list[int] = []
@@ -1621,6 +1633,7 @@ class EventEntity(BaseModelORJson):
     mstEventRewardScene: list[MstEventRewardScene]
     mstEventVoicePlay: list[MstEventVoicePlay]
     mstGift: list[MstGift]
+    mstGiftAdd: list[MstGiftAdd]
     mstShop: list[MstShop]
     mstShopRelease: list[MstShopRelease]
     mstShopScript: list[MstShopScript]
@@ -1668,6 +1681,7 @@ class MasterMissionEntity(BaseModelORJson):
     mstEventMissionCondition: list[MstEventMissionCondition]
     mstEventMissionConditionDetail: list[MstEventMissionConditionDetail]
     mstGift: list[MstGift]
+    mstGiftAdd: list[MstGiftAdd]
     mstQuest: list[MstQuestWithWar]
 
 

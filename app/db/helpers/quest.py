@@ -13,6 +13,7 @@ from ...models.raw import (
     mstBgm,
     mstClosedMessage,
     mstGift,
+    mstGiftAdd,
     mstMap,
     mstQuest,
     mstQuestConsumeItem,
@@ -333,7 +334,13 @@ JOINED_QUEST_TABLES = (
         mstClosedMessage, mstClosedMessage.c.id == mstQuestRelease.c.closedMessageId
     )
     .outerjoin(rayshiftQuest, rayshiftQuest.c.questId == mstQuest.c.id)
-    .outerjoin(mstGift, mstGift.c.id == mstQuest.c.giftId)
+    .outerjoin(mstGiftAdd, mstGiftAdd.c.giftId == mstQuest.c.giftId)
+    .outerjoin(
+        mstGift,
+        or_(
+            mstGift.c.id == mstQuest.c.giftId, mstGift.c.id == mstGiftAdd.c.priorGiftId
+        ),
+    )
 )
 
 
@@ -377,6 +384,7 @@ SELECT_QUEST_ENTITY = [
     sql_jsonb_agg(mstQuestRelease),
     sql_jsonb_agg(mstClosedMessage),
     sql_jsonb_agg(mstGift),
+    sql_jsonb_agg(mstGiftAdd),
     func.to_jsonb(
         func.array_remove(array_agg(mstQuestPhase.c.phase.distinct()), None)
     ).label("phases"),
@@ -503,6 +511,7 @@ async def get_quest_phase_entity(
         sql_jsonb_agg(mstQuestRelease),
         sql_jsonb_agg(mstClosedMessage),
         sql_jsonb_agg(mstGift),
+        sql_jsonb_agg(mstGiftAdd),
         all_phases_cte.c.phases,
         phasesWithEnemies,
         func.to_jsonb(mstQuestPhase.table_valued()).label(mstQuestPhase.name),

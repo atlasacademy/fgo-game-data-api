@@ -359,7 +359,8 @@
               "type": "item",
               "objectId": 6502,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
@@ -374,7 +375,8 @@
               "type": "item",
               "objectId": 6528,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
@@ -389,7 +391,8 @@
               "type": "item",
               "objectId": 6530,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
@@ -404,7 +407,8 @@
               "type": "item",
               "objectId": 6507,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
@@ -419,7 +423,8 @@
               "type": "item",
               "objectId": 4001,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
@@ -434,7 +439,8 @@
               "type": "servant",
               "objectId": 9402860,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
@@ -449,7 +455,8 @@
               "type": "item",
               "objectId": 6502,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
@@ -464,7 +471,8 @@
               "type": "item",
               "objectId": 6528,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
@@ -479,7 +487,8 @@
               "type": "item",
               "objectId": 6530,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
@@ -494,7 +503,8 @@
               "type": "servant",
               "objectId": 9570400,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
@@ -509,7 +519,8 @@
               "type": "item",
               "objectId": 6502,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
@@ -524,7 +535,8 @@
               "type": "servant",
               "objectId": 9402860,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
@@ -539,7 +551,8 @@
               "type": "item",
               "objectId": 6530,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
@@ -554,7 +567,8 @@
               "type": "item",
               "objectId": 6531,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
@@ -569,7 +583,8 @@
               "type": "item",
               "objectId": 4001,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
@@ -584,7 +599,8 @@
               "type": "servant",
               "objectId": 9670400,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
@@ -599,7 +615,8 @@
               "type": "item",
               "objectId": 6502,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
@@ -614,7 +631,8 @@
               "type": "servant",
               "objectId": 9570400,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
@@ -629,7 +647,8 @@
               "type": "item",
               "objectId": 6530,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
@@ -644,7 +663,8 @@
               "type": "servant",
               "objectId": 9402860,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda",
@@ -665,7 +685,8 @@
               "type": "item",
               "objectId": 6532,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
@@ -680,7 +701,8 @@
               "type": "item",
               "objectId": 6506,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
@@ -695,7 +717,8 @@
               "type": "item",
               "objectId": 6508,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
@@ -710,7 +733,8 @@
               "type": "servant",
               "objectId": 9402860,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
@@ -725,7 +749,8 @@
               "type": "item",
               "objectId": 4001,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
@@ -740,7 +765,8 @@
               "type": "servant",
               "objectId": 9670400,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
@@ -755,7 +781,8 @@
               "type": "item",
               "objectId": 6532,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
@@ -770,7 +797,8 @@
               "type": "servant",
               "objectId": 9402860,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
@@ -785,7 +813,8 @@
               "type": "item",
               "objectId": 6508,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
@@ -800,7 +829,8 @@
               "type": "item",
               "objectId": 6999,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
@@ -815,7 +845,8 @@
               "type": "item",
               "objectId": 6532,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
@@ -830,7 +861,8 @@
               "type": "servant",
               "objectId": 9570400,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
@@ -845,7 +877,8 @@
               "type": "item",
               "objectId": 6508,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
@@ -860,7 +893,8 @@
               "type": "servant",
               "objectId": 9670400,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
@@ -875,7 +909,8 @@
               "type": "item",
               "objectId": 6507,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
@@ -890,7 +925,8 @@
               "type": "servant",
               "objectId": 9570400,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
@@ -905,7 +941,8 @@
               "type": "item",
               "objectId": 6531,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
@@ -920,7 +957,8 @@
               "type": "servant",
               "objectId": 9670400,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
@@ -935,7 +973,8 @@
               "type": "item",
               "objectId": 6506,
               "priority": 0,
-              "num": 5
+              "num": 5,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",
@@ -950,7 +989,8 @@
               "type": "item",
               "objectId": 6999,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "boardMessage": "Obtained by reaching [ffe051]Floor {0}[-] of the Oni Pagoda (Mirage)",

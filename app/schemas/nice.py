@@ -1379,12 +1379,25 @@ class NiceBgmEntity(BaseModelORJson):
     releaseConditions: list[NiceBgmRelease]
 
 
-class NiceGift(BaseModelORJson):
+class NiceBaseGift(BaseModelORJson):
     id: int
     type: NiceGiftType
     objectId: int
     priority: int
     num: int
+
+
+class NiceGiftAdd(BaseModelORJson):
+    priority: int
+    replacementGiftIcon: HttpUrl
+    condType: NiceCondType
+    targetId: int
+    targetNum: int
+    replacementGifts: list[NiceBaseGift]
+
+
+class NiceGift(NiceBaseGift):
+    giftAdds: list[NiceGiftAdd]
 
 
 class NiceEventReward(BaseModelORJson):

@@ -3459,7 +3459,8 @@
           "type": "servant",
           "objectId": 9770400,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -3474,7 +3475,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 500000
+          "num": 500000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -3489,7 +3491,8 @@
           "type": "item",
           "objectId": 102,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -3504,7 +3507,8 @@
           "type": "item",
           "objectId": 6538,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -3519,7 +3523,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 1000000
+          "num": 1000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -3534,7 +3539,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 10
+          "num": 10,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -3549,7 +3555,8 @@
           "type": "item",
           "objectId": 6501,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -3564,7 +3571,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 500000
+          "num": 500000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -3579,7 +3587,8 @@
           "type": "item",
           "objectId": 94060409,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
@@ -3594,7 +3603,8 @@
           "type": "item",
           "objectId": 90120001,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -3609,7 +3619,8 @@
           "type": "item",
           "objectId": 102,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -3624,7 +3635,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 2000000
+          "num": 2000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -3639,7 +3651,8 @@
           "type": "servant",
           "objectId": 9770400,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -3654,7 +3667,8 @@
           "type": "item",
           "objectId": 101,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -3669,7 +3683,8 @@
           "type": "item",
           "objectId": 94060409,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
@@ -3684,7 +3699,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 20
+          "num": 20,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -3699,7 +3715,8 @@
           "type": "item",
           "objectId": 6538,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -3714,7 +3731,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 500000
+          "num": 500000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -3729,7 +3747,8 @@
           "type": "item",
           "objectId": 6501,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -3744,7 +3763,8 @@
           "type": "servant",
           "objectId": 9405300,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
@@ -3759,7 +3779,8 @@
           "type": "servant",
           "objectId": 9770400,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -3774,7 +3795,8 @@
           "type": "item",
           "objectId": 94060409,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
@@ -3789,7 +3811,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 2000000
+          "num": 2000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -3804,7 +3827,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 10
+          "num": 10,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -3819,7 +3843,8 @@
           "type": "item",
           "objectId": 90120001,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -3834,7 +3859,8 @@
           "type": "item",
           "objectId": 6542,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -3849,7 +3875,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 3000000
+          "num": 3000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -3864,7 +3891,8 @@
           "type": "item",
           "objectId": 102,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -3879,7 +3907,8 @@
           "type": "servant",
           "objectId": 9770500,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -3894,7 +3923,8 @@
           "type": "item",
           "objectId": 90120001,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -3909,7 +3939,8 @@
           "type": "item",
           "objectId": 94060409,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
@@ -3924,7 +3955,8 @@
           "type": "servant",
           "objectId": 9770400,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -3939,7 +3971,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 500000
+          "num": 500000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -3954,7 +3987,8 @@
           "type": "item",
           "objectId": 6538,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -3969,7 +4003,8 @@
           "type": "servant",
           "objectId": 9770400,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -3984,7 +4019,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 2000000
+          "num": 2000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -3999,7 +4035,8 @@
           "type": "item",
           "objectId": 90120001,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4014,7 +4051,8 @@
           "type": "item",
           "objectId": 100,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -4029,7 +4067,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 6000000
+          "num": 6000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -4044,7 +4083,8 @@
           "type": "servant",
           "objectId": 9405300,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
@@ -4059,7 +4099,8 @@
           "type": "item",
           "objectId": 6501,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4074,7 +4115,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 1000000
+          "num": 1000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -4089,7 +4131,8 @@
           "type": "item",
           "objectId": 6538,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4104,7 +4147,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 50
+          "num": 50,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4119,7 +4163,8 @@
           "type": "item",
           "objectId": 90120001,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4134,7 +4179,8 @@
           "type": "servant",
           "objectId": 9770500,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4149,7 +4195,8 @@
           "type": "item",
           "objectId": 102,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -4164,7 +4211,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 2000000
+          "num": 2000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4179,7 +4227,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 20
+          "num": 20,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4194,7 +4243,8 @@
           "type": "item",
           "objectId": 5001,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
@@ -4209,7 +4259,8 @@
           "type": "servant",
           "objectId": 9770400,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -4224,7 +4275,8 @@
           "type": "item",
           "objectId": 101,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4239,7 +4291,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 3000000
+          "num": 3000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -4254,7 +4307,8 @@
           "type": "servant",
           "objectId": 9770400,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -4269,7 +4323,8 @@
           "type": "item",
           "objectId": 90120001,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4284,7 +4339,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 50
+          "num": 50,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4299,7 +4355,8 @@
           "type": "item",
           "objectId": 6501,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4314,7 +4371,8 @@
           "type": "servant",
           "objectId": 9405300,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
@@ -4329,7 +4387,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 1000000
+          "num": 1000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -4344,7 +4403,8 @@
           "type": "item",
           "objectId": 90120001,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4359,7 +4419,8 @@
           "type": "item",
           "objectId": 102,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -4374,7 +4435,8 @@
           "type": "item",
           "objectId": 6542,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -4389,7 +4451,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 20
+          "num": 20,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4404,7 +4467,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 2000000
+          "num": 2000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4419,7 +4483,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 20
+          "num": 20,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4434,7 +4499,8 @@
           "type": "servant",
           "objectId": 9770500,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4449,7 +4515,8 @@
           "type": "item",
           "objectId": 5000,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
@@ -4464,7 +4531,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 6000000
+          "num": 6000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -4479,7 +4547,8 @@
           "type": "item",
           "objectId": 6538,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4494,7 +4563,8 @@
           "type": "item",
           "objectId": 100,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -4509,7 +4579,8 @@
           "type": "item",
           "objectId": 5002,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
@@ -4524,7 +4595,8 @@
           "type": "servant",
           "objectId": 9770400,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -4539,7 +4611,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 100
+          "num": 100,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -4554,7 +4627,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 1000000
+          "num": 1000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -4569,7 +4643,8 @@
           "type": "servant",
           "objectId": 9405310,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
@@ -4584,7 +4659,8 @@
           "type": "item",
           "objectId": 6501,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4599,7 +4675,8 @@
           "type": "item",
           "objectId": 102,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -4614,7 +4691,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 2000000
+          "num": 2000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4629,7 +4707,8 @@
           "type": "item",
           "objectId": 101,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4644,7 +4723,8 @@
           "type": "item",
           "objectId": 90120001,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4659,7 +4739,8 @@
           "type": "servant",
           "objectId": 9770500,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4674,7 +4755,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 6000000
+          "num": 6000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -4689,7 +4771,8 @@
           "type": "item",
           "objectId": 6999,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
@@ -4704,7 +4787,8 @@
           "type": "item",
           "objectId": 102,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -4719,7 +4803,8 @@
           "type": "item",
           "objectId": 6542,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -4734,7 +4819,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 2000000
+          "num": 2000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4749,7 +4835,8 @@
           "type": "item",
           "objectId": 6538,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4764,7 +4851,8 @@
           "type": "item",
           "objectId": 90120001,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4779,7 +4867,8 @@
           "type": "item",
           "objectId": 100,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -4794,7 +4883,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 20
+          "num": 20,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4809,7 +4899,8 @@
           "type": "servant",
           "objectId": 9405300,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
@@ -4824,7 +4915,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 50
+          "num": 50,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4839,7 +4931,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 6000000
+          "num": 6000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -4854,7 +4947,8 @@
           "type": "item",
           "objectId": 6542,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -4869,7 +4963,8 @@
           "type": "item",
           "objectId": 6501,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4884,7 +4979,8 @@
           "type": "item",
           "objectId": 102,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033104.png",
@@ -4899,7 +4995,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 20
+          "num": 20,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4914,7 +5011,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 2000000
+          "num": 2000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4929,7 +5027,8 @@
           "type": "item",
           "objectId": 6538,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4944,7 +5043,8 @@
           "type": "servant",
           "objectId": 9570400,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
@@ -4959,7 +5059,8 @@
           "type": "item",
           "objectId": 90120001,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4974,7 +5075,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 20
+          "num": 20,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -4989,7 +5091,8 @@
           "type": "item",
           "objectId": 101,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5004,7 +5107,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 6000000
+          "num": 6000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -5019,7 +5123,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 50
+          "num": 50,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5034,7 +5139,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 3000000
+          "num": 3000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -5049,7 +5155,8 @@
           "type": "item",
           "objectId": 90120001,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5064,7 +5171,8 @@
           "type": "servant",
           "objectId": 9670400,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
@@ -5079,7 +5187,8 @@
           "type": "item",
           "objectId": 6501,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5094,7 +5203,8 @@
           "type": "item",
           "objectId": 100,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -5109,7 +5219,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 20
+          "num": 20,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5124,7 +5235,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 6000000
+          "num": 6000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -5139,7 +5251,8 @@
           "type": "item",
           "objectId": 90120001,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5154,7 +5267,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 20
+          "num": 20,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5169,7 +5283,8 @@
           "type": "item",
           "objectId": 6542,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -5184,7 +5299,8 @@
           "type": "item",
           "objectId": 101,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5199,7 +5315,8 @@
           "type": "item",
           "objectId": 6999,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
@@ -5214,7 +5331,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 100
+          "num": 100,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -5229,7 +5347,8 @@
           "type": "item",
           "objectId": 101,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5244,7 +5363,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 20
+          "num": 20,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5259,7 +5379,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 3000000
+          "num": 3000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -5274,7 +5395,8 @@
           "type": "servant",
           "objectId": 9770500,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5289,7 +5411,8 @@
           "type": "item",
           "objectId": 6538,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5304,7 +5427,8 @@
           "type": "item",
           "objectId": 100,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -5319,7 +5443,8 @@
           "type": "servant",
           "objectId": 9405300,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
@@ -5334,7 +5459,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 20
+          "num": 20,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5349,7 +5475,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 6000000
+          "num": 6000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -5364,7 +5491,8 @@
           "type": "item",
           "objectId": 101,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5379,7 +5507,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 20
+          "num": 20,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5394,7 +5523,8 @@
           "type": "servant",
           "objectId": 9770500,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5409,7 +5539,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 50
+          "num": 50,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5424,7 +5555,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 3000000
+          "num": 3000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -5439,7 +5571,8 @@
           "type": "servant",
           "objectId": 9570400,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
@@ -5454,7 +5587,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 20
+          "num": 20,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5469,7 +5603,8 @@
           "type": "item",
           "objectId": 101,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5484,7 +5619,8 @@
           "type": "servant",
           "objectId": 9770500,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5499,7 +5635,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 20
+          "num": 20,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5514,7 +5651,8 @@
           "type": "item",
           "objectId": 100,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -5529,7 +5667,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 20
+          "num": 20,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5544,7 +5683,8 @@
           "type": "item",
           "objectId": 6542,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -5559,7 +5699,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 50
+          "num": 50,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5574,7 +5715,8 @@
           "type": "servant",
           "objectId": 9670400,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
@@ -5589,7 +5731,8 @@
           "type": "item",
           "objectId": 100,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -5604,7 +5747,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 20
+          "num": 20,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5619,7 +5763,8 @@
           "type": "item",
           "objectId": 6501,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5634,7 +5779,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 20
+          "num": 20,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5649,7 +5795,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 6000000
+          "num": 6000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -5664,7 +5811,8 @@
           "type": "servant",
           "objectId": 9770500,
           "priority": 0,
-          "num": 5
+          "num": 5,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5679,7 +5827,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 20
+          "num": 20,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5694,7 +5843,8 @@
           "type": "servant",
           "objectId": 9570400,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
@@ -5709,7 +5859,8 @@
           "type": "item",
           "objectId": 6542,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -5724,7 +5875,8 @@
           "type": "item",
           "objectId": 100,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -5739,7 +5891,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 20
+          "num": 20,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033103.png",
@@ -5754,7 +5907,8 @@
           "type": "servant",
           "objectId": 9670400,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
@@ -5769,7 +5923,8 @@
           "type": "item",
           "objectId": 1,
           "priority": 0,
-          "num": 6000000
+          "num": 6000000,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -5784,7 +5939,8 @@
           "type": "item",
           "objectId": 3,
           "priority": 0,
-          "num": 100
+          "num": 100,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -5799,7 +5955,8 @@
           "type": "item",
           "objectId": 6542,
           "priority": 0,
-          "num": 3
+          "num": 3,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033102.png",
@@ -5814,7 +5971,8 @@
           "type": "item",
           "objectId": 6999,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "bgImagePoint": "https://assets.atlasacademy.io/GameData/JP/EventReward/event_rewardpoint_8033101.png",
@@ -5988,7 +6146,8 @@
               "type": "item",
               "objectId": 6516,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "collateralUpperLimit": 15
@@ -6002,7 +6161,8 @@
               "type": "item",
               "objectId": 6512,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "collateralUpperLimit": 15
@@ -6016,7 +6176,8 @@
               "type": "item",
               "objectId": 6534,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "collateralUpperLimit": 15
@@ -6030,7 +6191,8 @@
               "type": "item",
               "objectId": 6527,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "collateralUpperLimit": 15
@@ -6044,7 +6206,8 @@
               "type": "item",
               "objectId": 6530,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "collateralUpperLimit": 15
@@ -6057,7 +6220,8 @@
           "type": "item",
           "objectId": 94060408,
           "priority": 0,
-          "num": 100
+          "num": 100,
+          "giftAdds": []
         }
       ],
       "commonConsume": {
@@ -6082,7 +6246,8 @@
               "type": "item",
               "objectId": 6509,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "collateralUpperLimit": 15
@@ -6096,7 +6261,8 @@
               "type": "item",
               "objectId": 6526,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "collateralUpperLimit": 15
@@ -6110,7 +6276,8 @@
               "type": "item",
               "objectId": 6508,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "collateralUpperLimit": 15
@@ -6124,7 +6291,8 @@
               "type": "item",
               "objectId": 6537,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "collateralUpperLimit": 15
@@ -6138,7 +6306,8 @@
               "type": "item",
               "objectId": 6547,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "collateralUpperLimit": 15
@@ -6151,7 +6320,8 @@
           "type": "item",
           "objectId": 94060408,
           "priority": 0,
-          "num": 100
+          "num": 100,
+          "giftAdds": []
         }
       ],
       "commonConsume": {
@@ -6176,7 +6346,8 @@
               "type": "item",
               "objectId": 6506,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "collateralUpperLimit": 15
@@ -6190,7 +6361,8 @@
               "type": "item",
               "objectId": 6546,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "collateralUpperLimit": 15
@@ -6204,7 +6376,8 @@
               "type": "item",
               "objectId": 6528,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "collateralUpperLimit": 15
@@ -6218,7 +6391,8 @@
               "type": "item",
               "objectId": 6531,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "collateralUpperLimit": 15
@@ -6232,7 +6406,8 @@
               "type": "item",
               "objectId": 6544,
               "priority": 0,
-              "num": 1
+              "num": 1,
+              "giftAdds": []
             }
           ],
           "collateralUpperLimit": 15
@@ -6245,7 +6420,8 @@
           "type": "item",
           "objectId": 94060408,
           "priority": 0,
-          "num": 100
+          "num": 100,
+          "giftAdds": []
         }
       ],
       "commonConsume": {

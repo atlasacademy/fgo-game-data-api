@@ -3,9 +3,9 @@ from pydantic import HttpUrl
 from ....config import Settings
 from ....schemas.common import Region
 from ....schemas.nice import AssetURL, NiceEventReward
-from ....schemas.raw import MstEventReward, MstGift
+from ....schemas.raw import MstEventReward
 from ...utils import fmt_url
-from .utils import get_nice_gifts
+from .utils import GiftData, get_nice_gifts
 
 
 settings = Settings()
@@ -25,15 +25,12 @@ def get_bgImage_url(
 
 
 def get_nice_reward(
-    region: Region,
-    reward: MstEventReward,
-    event_id: int,
-    gift_maps: dict[int, list[MstGift]],
+    region: Region, reward: MstEventReward, event_id: int, gift_data: GiftData
 ) -> NiceEventReward:
     return NiceEventReward(
         groupId=reward.groupId,
         point=reward.point,
-        gifts=get_nice_gifts(reward.giftId, gift_maps),
+        gifts=get_nice_gifts(region, reward.giftId, gift_data),
         bgImagePoint=get_bgImage_url(
             region, reward.bgImageId, event_id, "event_rewardpoint_"
         ),

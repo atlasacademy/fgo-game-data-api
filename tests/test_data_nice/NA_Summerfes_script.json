@@ -28,7 +28,8 @@
           "type": "eventSvtJoin",
           "objectId": 703100,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "releaseConditions": [
@@ -92,7 +93,8 @@
           "type": "eventSvtJoin",
           "objectId": 703100,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "giftAdds": []
         }
       ],
       "releaseConditions": [

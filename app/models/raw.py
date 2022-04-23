@@ -861,6 +861,20 @@ mstGift = Table(
 )
 
 
+mstGiftAdd = Table(
+    "mstGiftAdd",
+    metadata,
+    Column("priorGiftIconIds", ARRAY(Integer)),
+    Column("giftId", Integer, index=True),
+    Column("priority", Integer),
+    Column("condType", Integer),
+    Column("targetId", Integer),
+    Column("targetNum", Integer),
+    Column("priorGiftId", Integer),
+    Column("script", String),
+)
+
+
 mstSetItem = Table(
     "mstSetItem",
     metadata,
@@ -1773,6 +1787,7 @@ TABLES_TO_BE_LOADED = [
     mstCommandCodeSkill,
     mstCommandCodeComment,
     mstGift,
+    mstGiftAdd,
     mstSetItem,
     mstMasterMission,
     mstEventReward,

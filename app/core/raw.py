@@ -61,6 +61,7 @@ from ..schemas.raw import (
     MstFunc,
     MstFuncGroup,
     MstGift,
+    MstGiftAdd,
     MstIllustrator,
     MstItem,
     MstMap,
@@ -698,7 +699,11 @@ async def get_master_mission_entity(
     )
 
     gift_ids = {mission.giftId for mission in missions}
-    gifts = await fetch.get_all_multiple(conn, MstGift, gift_ids)
+
+    gift_adds = await fetch.get_all_multiple(conn, MstGiftAdd, gift_ids)
+    replacement_gift_ids = {gift.priorGiftId for gift in gift_adds}
+
+    gifts = await fetch.get_all_multiple(conn, MstGift, gift_ids | replacement_gift_ids)
 
     quest_ids = get_quest_ids_in_conds(conds, cond_details)
     quests = await quest.get_many_quests_with_war(conn, quest_ids)
@@ -709,6 +714,7 @@ async def get_master_mission_entity(
         mstEventMissionCondition=conds,
         mstEventMissionConditionDetail=cond_details,
         mstGift=gifts,
+        mstGiftAdd=gift_adds,
         mstQuest=quests,
     )
 
@@ -795,7 +801,11 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         | {box.extraGiftId for box in treasure_boxes}
         | {treasure_box_gift.giftId for treasure_box_gift in box_gifts}
     )
-    gifts = await fetch.get_all_multiple(conn, MstGift, gift_ids)
+
+    gift_adds = await fetch.get_all_multiple(conn, MstGiftAdd, gift_ids)
+    replacement_gift_ids = {gift.priorGiftId for gift in gift_adds}
+
+    gifts = await fetch.get_all_multiple(conn, MstGift, gift_ids | replacement_gift_ids)
 
     item_ids = {get_shop_cost_item_id(shop) for shop in shops} | {
         lottery.payTargetId for lottery in box_gachas
@@ -816,6 +826,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         mstShopScript=shop_scripts,
         mstShopRelease=shop_releases,
         mstGift=gifts,
+        mstGiftAdd=gift_adds,
         mstSetItem=set_items,
         mstEventReward=rewards,
         mstEventRewardSet=await fetch.get_all(conn, MstEventRewardSet, event_id),

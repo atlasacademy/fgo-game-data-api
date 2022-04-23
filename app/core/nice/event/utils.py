@@ -1,6 +1,9 @@
+from dataclasses import dataclass
+
+from ....schemas.common import Region
 from ....schemas.gameenums import COMMON_CONSUME_TYPE_NAME
 from ....schemas.nice import NiceCommonConsume, NiceGift, NiceVoiceGroup, NiceVoiceLine
-from ....schemas.raw import MstCommonConsume, MstGift
+from ....schemas.raw import MstCommonConsume, MstGift, MstGiftAdd
 from ..gift import get_nice_gift
 
 
@@ -15,8 +18,17 @@ def get_voice_lines(
     ]
 
 
-def get_nice_gifts(gift_id: int, gift_maps: dict[int, list[MstGift]]) -> list[NiceGift]:
-    return [get_nice_gift(gift) for gift in gift_maps[gift_id]]
+@dataclass
+class GiftData:
+    gift_adds: list[MstGiftAdd]
+    gift_maps: dict[int, list[MstGift]]
+
+
+def get_nice_gifts(region: Region, gift_id: int, gift_data: GiftData) -> list[NiceGift]:
+    return [
+        get_nice_gift(region, gift, gift_data.gift_adds, gift_data.gift_maps)
+        for gift in gift_data.gift_maps[gift_id]
+    ]
 
 
 def get_nice_common_consume(common_consume: MstCommonConsume) -> NiceCommonConsume:

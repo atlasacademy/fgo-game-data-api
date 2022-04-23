@@ -15,10 +15,9 @@ from ....schemas.raw import (
     MstBoxGachaBase,
     MstBoxGachaTalk,
     MstEventRewardScene,
-    MstGift,
 )
 from ...utils import fmt_url
-from .utils import get_nice_gifts, get_voice_lines
+from .utils import GiftData, get_nice_gifts, get_voice_lines
 
 
 settings = Settings()
@@ -29,7 +28,7 @@ def get_nice_lottery_box(
     box: MstBoxGachaBase,
     box_index: int,
     talk_id: int,
-    gift_maps: dict[int, list[MstGift]],
+    gift_data: GiftData,
 ) -> NiceEventLotteryBox:
     base_settings = {"base_url": settings.asset_url, "region": region}
     return NiceEventLotteryBox(
@@ -38,7 +37,7 @@ def get_nice_lottery_box(
         talkId=talk_id,
         no=box.no,
         type=box.type,
-        gifts=get_nice_gifts(box.targetId, gift_maps),
+        gifts=get_nice_gifts(region, box.targetId, gift_data),
         maxNum=box.maxNum,
         isRare=box.isRare,
         priority=box.priority,
@@ -82,7 +81,7 @@ def get_nice_lottery(
     lottery: MstBoxGacha,
     boxes: list[MstBoxGachaBase],
     lottery_talks: list[MstBoxGachaTalk],
-    gift_maps: dict[int, list[MstGift]],
+    gift_data: GiftData,
     item_map: dict[int, NiceItem],
     reward_scenes: list[MstEventRewardScene],
     voice_groups: list[NiceVoiceGroup],
@@ -93,7 +92,7 @@ def get_nice_lottery(
             if box.id == base_id:
                 nice_boxes.append(
                     get_nice_lottery_box(
-                        region, box, box_index, lottery.talkIds[box_index], gift_maps
+                        region, box, box_index, lottery.talkIds[box_index], gift_data
                     )
                 )
 

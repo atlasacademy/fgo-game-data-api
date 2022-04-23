@@ -1,21 +1,21 @@
 from ....config import Settings
 from ....schemas.common import Region
 from ....schemas.nice import AssetURL, NiceEventTower, NiceEventTowerReward
-from ....schemas.raw import MstEventTower, MstEventTowerReward, MstGift
+from ....schemas.raw import MstEventTower, MstEventTowerReward
 from ...utils import fmt_url
-from .utils import get_nice_gifts
+from .utils import GiftData, get_nice_gifts
 
 
 settings = Settings()
 
 
 def get_nice_tower_rewards(
-    region: Region, reward: MstEventTowerReward, gift_maps: dict[int, list[MstGift]]
+    region: Region, reward: MstEventTowerReward, gift_data: GiftData
 ) -> NiceEventTowerReward:
     base_settings = {"base_url": settings.asset_url, "region": region}
     return NiceEventTowerReward(
         floor=reward.floor,
-        gifts=get_nice_gifts(reward.giftId, gift_maps),
+        gifts=get_nice_gifts(region, reward.giftId, gift_data),
         boardMessage=reward.boardMessage,
         rewardGet=fmt_url(
             AssetURL.eventReward,
@@ -34,13 +34,13 @@ def get_nice_event_tower(
     region: Region,
     tower: MstEventTower,
     rewards: list[MstEventTowerReward],
-    gift_maps: dict[int, list[MstGift]],
+    gift_data: GiftData,
 ) -> NiceEventTower:
     return NiceEventTower(
         towerId=tower.towerId,
         name=tower.name,
         rewards=[
-            get_nice_tower_rewards(region, reward, gift_maps)
+            get_nice_tower_rewards(region, reward, gift_data)
             for reward in rewards
             if reward.towerId == tower.towerId
         ],

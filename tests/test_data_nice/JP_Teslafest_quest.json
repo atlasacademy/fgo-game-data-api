@@ -1,0 +1,98 @@
+{
+  "id": 94067702,
+  "name": "復刻シナリオ: 授賞式の前に",
+  "type": "event",
+  "flags": [],
+  "consumeType": "ap",
+  "consume": 5,
+  "consumeItem": [],
+  "afterClear": "close",
+  "recommendLv": "30",
+  "spotId": 837101,
+  "spotName": "復刻クエスト2018",
+  "warId": 8371,
+  "warLongName": "バトル・イン・ニューヨーク2022 ～スペース・オデュッセウス対ニコラ・テスラ～",
+  "chapterId": 0,
+  "chapterSubId": 0,
+  "chapterSubStr": "",
+  "gifts": [
+    {
+      "id": 94067637,
+      "type": "item",
+      "objectId": 7999,
+      "priority": 0,
+      "num": 1,
+      "giftAdds": [
+        {
+          "priority": 1,
+          "replacementGiftIcon": "https://assets.atlasacademy.io/GameData/JP/Items/19.png",
+          "condType": "questClear",
+          "targetId": 94029002,
+          "targetNum": 1,
+          "replacementGifts": [
+            {
+              "id": 94067638,
+              "type": "item",
+              "objectId": 6999,
+              "priority": 0,
+              "num": 1
+            }
+          ]
+        },
+        {
+          "priority": 2,
+          "replacementGiftIcon": "https://assets.atlasacademy.io/GameData/JP/Items/19.png",
+          "condType": "questClear",
+          "targetId": 94041202,
+          "targetNum": 1,
+          "replacementGifts": [
+            {
+              "id": 94067638,
+              "type": "item",
+              "objectId": 6999,
+              "priority": 0,
+              "num": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "releaseConditions": [
+    {
+      "type": "questClear",
+      "targetId": 94067701,
+      "value": 0,
+      "closedMessage": ""
+    },
+    {
+      "type": "date",
+      "targetId": 0,
+      "value": 0,
+      "closedMessage": ""
+    }
+  ],
+  "phases": [
+    1
+  ],
+  "phasesWithEnemies": [],
+  "phasesNoBattle": [],
+  "phaseScripts": [
+    {
+      "phase": 1,
+      "scripts": [
+        {
+          "scriptId": "9406770210",
+          "script": "https://assets.atlasacademy.io/GameData/JP/Script/94/9406/9406770210.txt"
+        },
+        {
+          "scriptId": "9406770211",
+          "script": "https://assets.atlasacademy.io/GameData/JP/Script/94/9406/9406770211.txt"
+        }
+      ]
+    }
+  ],
+  "noticeAt": 1647421200,
+  "openedAt": 1647421200,
+  "closedAt": 1648612799
+}

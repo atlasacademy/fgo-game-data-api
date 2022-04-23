@@ -1,28 +1,25 @@
+from ....schemas.common import Region
 from ....schemas.nice import NiceEventTreasureBox, NiceEventTreasureBoxGift
-from ....schemas.raw import (
-    MstCommonConsume,
-    MstGift,
-    MstTreasureBox,
-    MstTreasureBoxGift,
-)
-from .utils import get_nice_common_consume, get_nice_gifts
+from ....schemas.raw import MstCommonConsume, MstTreasureBox, MstTreasureBoxGift
+from .utils import GiftData, get_nice_common_consume, get_nice_gifts
 
 
 def get_nice_treasure_box_gift(
-    box_gift: MstTreasureBoxGift, gift_maps: dict[int, list[MstGift]]
+    region: Region, box_gift: MstTreasureBoxGift, gift_data: GiftData
 ) -> NiceEventTreasureBoxGift:
     return NiceEventTreasureBoxGift(
         id=box_gift.id,
         idx=box_gift.idx,
-        gifts=get_nice_gifts(box_gift.giftId, gift_maps),
+        gifts=get_nice_gifts(region, box_gift.giftId, gift_data),
         collateralUpperLimit=box_gift.collateralUpperLimit,
     )
 
 
 def get_nice_treasure_box(
+    region: Region,
     treasure_box: MstTreasureBox,
     box_gifts: list[MstTreasureBoxGift],
-    gift_maps: dict[int, list[MstGift]],
+    gift_data: GiftData,
     common_consumes: dict[int, MstCommonConsume],
 ) -> NiceEventTreasureBox:
     return NiceEventTreasureBox(
@@ -30,12 +27,12 @@ def get_nice_treasure_box(
         id=treasure_box.id,
         idx=treasure_box.idx,
         treasureBoxGifts=[
-            get_nice_treasure_box_gift(box_gift, gift_maps)
+            get_nice_treasure_box_gift(region, box_gift, gift_data)
             for box_gift in box_gifts
             if box_gift.id == treasure_box.treasureBoxGiftId
         ],
         maxDrawNumOnce=treasure_box.maxDrawNumOnce,
-        extraGifts=get_nice_gifts(treasure_box.extraGiftId, gift_maps),
+        extraGifts=get_nice_gifts(region, treasure_box.extraGiftId, gift_data),
         commonConsume=get_nice_common_consume(
             common_consumes[treasure_box.commonConsumeId]
         ),

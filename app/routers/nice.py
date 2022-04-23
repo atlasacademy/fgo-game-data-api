@@ -684,7 +684,7 @@ async def get_mm(
     """
     async with get_db(region) as conn:
         return item_response(
-            await mm.get_nice_master_mission(conn, master_mission_id, lang)
+            await mm.get_nice_master_mission(conn, region, master_mission_id, lang)
         )
 
 

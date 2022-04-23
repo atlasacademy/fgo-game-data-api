@@ -2,6 +2,8 @@ from collections import defaultdict
 
 from sqlalchemy.ext.asyncio import AsyncConnection
 
+from app.core.nice.event.utils import GiftData
+
 from ....config import Settings
 from ....schemas.common import Language, Region
 from ....schemas.gameenums import EVENT_TYPE_NAME, NiceSvtVoiceType, NiceVoiceCondType
@@ -48,11 +50,14 @@ async def get_nice_event(
 
     common_consumes = {consume.id: consume for consume in raw_event.mstCommonConsume}
 
+    gift_data = GiftData(raw_event.mstGiftAdd, gift_maps)
+
     missions = get_nice_missions(
+        region,
         raw_event.mstEventMission,
         raw_event.mstEventMissionCondition,
         raw_event.mstEventMissionConditionDetail,
-        gift_maps,
+        gift_data,
     )
 
     nice_bgms = {
@@ -172,7 +177,7 @@ async def get_nice_event(
             for shop in raw_event.mstShop
         ],
         rewards=[
-            get_nice_reward(region, reward, event_id, gift_maps)
+            get_nice_reward(region, reward, event_id, gift_data)
             for reward in raw_event.mstEventReward
         ],
         rewardScenes=[
@@ -190,7 +195,7 @@ async def get_nice_event(
         missions=missions,
         towers=[
             get_nice_event_tower(
-                region, tower, raw_event.mstEventTowerReward, gift_maps
+                region, tower, raw_event.mstEventTowerReward, gift_data
             )
             for tower in raw_event.mstEventTower
         ],
@@ -200,7 +205,7 @@ async def get_nice_event(
                 lottery,
                 raw_event.mstBoxGachaBase,
                 raw_event.mstBoxGachaTalk,
-                gift_maps,
+                gift_data,
                 item_map,
                 raw_event.mstEventRewardScene,
                 voice_groups,
@@ -209,7 +214,7 @@ async def get_nice_event(
         ],
         treasureBoxes=[
             get_nice_treasure_box(
-                box, raw_event.mstTreasureBoxGift, gift_maps, common_consumes
+                region, box, raw_event.mstTreasureBoxGift, gift_data, common_consumes
             )
             for box in raw_event.mstTreasureBox
         ],

@@ -1,3 +1,4 @@
+from ....schemas.common import Region
 from ....schemas.enums import DETAIL_MISSION_LINK_TYPE
 from ....schemas.gameenums import (
     COND_TYPE_NAME,
@@ -15,10 +16,9 @@ from ....schemas.raw import (
     MstEventMission,
     MstEventMissionCondition,
     MstEventMissionConditionDetail,
-    MstGift,
 )
 from ...utils import get_traits_list
-from .utils import get_nice_gifts
+from .utils import GiftData, get_nice_gifts
 
 
 def get_nice_mission_cond_detail(
@@ -66,10 +66,11 @@ def get_nice_mission_cond(
 
 
 def get_nice_mission(
+    region: Region,
     mission: MstEventMission,
     conds: list[MstEventMissionCondition],
     details: dict[int, MstEventMissionConditionDetail],
-    gift_maps: dict[int, list[MstGift]],
+    gift_data: GiftData,
 ) -> NiceEventMission:
     return NiceEventMission(
         id=mission.id,
@@ -83,7 +84,7 @@ def get_nice_mission(
         endedAt=mission.endedAt,
         closedAt=mission.closedAt,
         rewardType=MISSION_REWARD_TYPE_NAME[mission.rewardType],
-        gifts=get_nice_gifts(mission.giftId, gift_maps),
+        gifts=get_nice_gifts(region, mission.giftId, gift_data),
         bannerGroup=mission.bannerGroup,
         priority=mission.priority,
         rewardRarity=mission.rewardRarity,
@@ -94,20 +95,22 @@ def get_nice_mission(
 
 
 def get_nice_missions(
+    region: Region,
     mstEventMission: list[MstEventMission],
     mstEventMissionCondition: list[MstEventMissionCondition],
     mstEventMissionConditionDetail: list[MstEventMissionConditionDetail],
-    gift_maps: dict[int, list[MstGift]],
+    gift_data: GiftData,
 ) -> list[NiceEventMission]:
     mission_cond_details = {
         detail.id: detail for detail in mstEventMissionConditionDetail
     }
     missions = [
         get_nice_mission(
+            region,
             mission,
             [cond for cond in mstEventMissionCondition if cond.missionId == mission.id],
             mission_cond_details,
-            gift_maps,
+            gift_data,
         )
         for mission in mstEventMission
     ]

@@ -21,14 +21,16 @@
       "type": "item",
       "objectId": 2,
       "priority": 0,
-      "num": 1
+      "num": 1,
+      "giftAdds": []
     },
     {
       "id": 320104,
       "type": "item",
       "objectId": 6531,
       "priority": 0,
-      "num": 2
+      "num": 2,
+      "giftAdds": []
     }
   ],
   "releaseConditions": [
