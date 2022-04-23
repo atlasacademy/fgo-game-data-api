@@ -223,7 +223,7 @@ async def limiter_callback(
     )
 
 
-def get_region(args: list[Any], kwargs: dict[str, Any]) -> str:
+def get_region(args: list[Any], kwargs: dict[str, Any]) -> str:  # pragma: no cover
     if "region" in kwargs and isinstance(kwargs["region"], Region):
         return kwargs["region"].value
     elif "search_param" in kwargs:
