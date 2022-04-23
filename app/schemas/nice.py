@@ -1027,6 +1027,7 @@ class NiceServant(BaseModelORJson):
         title="Related quest IDs",
         description="IDs of related quests: rank-ups or interludes.",
     )
+    trialQuestIds: list[int] = Field(..., title="Trial quest IDs")
     growthCurve: int = Field(
         ..., title="Growth curve type", description="Growth curve type"
     )

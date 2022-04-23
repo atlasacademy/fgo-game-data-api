@@ -4,6 +4,7 @@ import orjson
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ....config import Settings
+from ....data.custom_mappings import TRIAL_QUESTS
 from ....schemas.common import Language, NiceCostume, Region
 from ....schemas.enums import (
     ATTRIBUTE_NAME,
@@ -176,6 +177,7 @@ async def get_nice_servant(
         ],
         # "bondEquip": masters[region].bondEquip.get(svt_id, 0),
         "relateQuestIds": raw_svt.mstSvt.relateQuestIds,
+        "trialQuestIds": TRIAL_QUESTS.get(svt_id, []),
     }
 
     if raw_svt.mstSvtExtra:

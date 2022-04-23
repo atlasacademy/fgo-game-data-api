@@ -787,6 +787,9 @@
           "relateQuestIds": [
             94059780
           ],
+          "trialQuestIds": [
+            94021501
+          ],
           "growthCurve": 9,
           "atkGrowth": [
             1716,

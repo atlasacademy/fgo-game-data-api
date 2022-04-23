@@ -115,6 +115,7 @@
   "hpBase": 0,
   "hpMax": 0,
   "relateQuestIds": [],
+  "trialQuestIds": [],
   "growthCurve": 4,
   "atkGrowth": [
     0

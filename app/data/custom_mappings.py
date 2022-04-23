@@ -64,3 +64,10 @@ with open(MAPPING_PATH / "extra_image.json", "rb") as fp:
     EXTRA_IMAGES = {
         im["svtId"]: sorted(im["imageIds"]) for im in orjson.loads(fp.read())
     }
+
+TRIAL_QUESTS: dict[int, list[int]] = {}
+
+with open(MAPPING_PATH / "trial_quests.json", "rb") as fp:
+    TRIAL_QUESTS = {
+        tq["svtId"]: sorted(tq["questIds"]) for tq in orjson.loads(fp.read())
+    }

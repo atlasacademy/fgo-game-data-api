@@ -242,6 +242,7 @@
   "hpBase": 1912,
   "hpMax": 13041,
   "relateQuestIds": [],
+  "trialQuestIds": [],
   "growthCurve": 15,
   "atkGrowth": [
     1949,
