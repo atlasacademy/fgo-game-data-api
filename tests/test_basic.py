@@ -3,6 +3,10 @@ from dataclasses import dataclass
 
 import pytest
 from httpx import AsyncClient
+from redis.asyncio import Redis  # type: ignore
+
+from app.core.basic import get_basic_svt
+from app.schemas.common import Region
 
 from .utils import get_response_data
 
@@ -117,8 +121,33 @@ async def test_int_overflow_basic(
     assert response.json()["detail"][-9:] == "not found"
 
 
+@dataclass
+class BasicSvtFaceCase:
+    region: Region
+    svt_id: int
+    svt_limit: int | None = None
+    face_suffix: str = ""
+
+
 @pytest.mark.asyncio
 class TestBasicSpecial:
+    async def test_basic_servant_face(self, redis: Redis) -> None:
+        basic_face_cases = [
+            BasicSvtFaceCase(Region.NA, 303800, None, "NA/Faces/f_3038000.png"),
+            BasicSvtFaceCase(Region.NA, 303800, 4, "NA/Faces/f_3038003.png"),
+            BasicSvtFaceCase(Region.NA, 303800, 11, "NA/Faces/f_3038300.png"),
+            BasicSvtFaceCase(Region.JP, 9100101, None, "JP/Enemys/99402402.png"),
+            BasicSvtFaceCase(Region.JP, 9100101, 2, "JP/Enemys/99402402.png"),
+            BasicSvtFaceCase(Region.JP, 9935900, None, "JP/Enemys/99359003.png"),
+            BasicSvtFaceCase(Region.JP, 404601, None, "JP/Faces/f_4046000.png"),
+        ]
+
+        for case in basic_face_cases:
+            basic_svt = await get_basic_svt(
+                redis, case.region, case.svt_id, case.svt_limit
+            )
+            assert basic_svt["face"].endswith(case.face_suffix)
+
     async def test_NA_not_integer(self, client: AsyncClient) -> None:
         response = await client.get("/basic/NA/servant/lkji")
         assert response.status_code == 422

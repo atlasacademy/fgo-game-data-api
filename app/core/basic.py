@@ -404,18 +404,6 @@ async def get_basic_svt(
 
     if mstSvt.type == SvtType.SERVANT_EQUIP:
         basic_servant["face"] = AssetURL.face.format(**base_settings, i=0)
-    elif (
-        svtExtra
-        and svt_limit is not None
-        and svt_limit > 10
-        and svt_limit in svtExtra.costumeLimitSvtIdMap
-    ):
-        basic_servant["face"] = AssetURL.face.format(
-            base_url=settings.asset_url,
-            region=region,
-            item_id=svtExtra.costumeLimitSvtIdMap[svt_limit].battleCharaId,
-            i=0,
-        )
     elif mstSvt.type in (SvtType.ENEMY, SvtType.ENEMY_COLLECTION):
         if svtExtra and mstSvtLimit.limitCount in svtExtra.costumeLimitSvtIdMap:
             basic_servant["face"] = AssetURL.enemy.format(
@@ -430,9 +418,22 @@ async def get_basic_svt(
             basic_servant["face"] = AssetURL.enemy.format(
                 **base_settings, i=mstSvtLimit.limitCount
             )
+    elif (
+        svtExtra
+        and svt_limit is not None
+        and svt_limit > 10
+        and svt_limit in svtExtra.costumeLimitSvtIdMap
+    ):
+        basic_servant["face"] = AssetURL.face.format(
+            base_url=settings.asset_url,
+            region=region,
+            item_id=svtExtra.costumeLimitSvtIdMap[svt_limit].battleCharaId,
+            i=0,
+        )
     else:
         basic_servant["face"] = AssetURL.face.format(
-            **base_settings, i=mstSvtLimit.limitCount
+            **base_settings,
+            i=3 if mstSvtLimit.limitCount == 4 else mstSvtLimit.limitCount,
         )
 
     if region == Region.JP and lang is not None:
