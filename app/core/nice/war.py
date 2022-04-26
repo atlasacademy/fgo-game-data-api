@@ -213,10 +213,15 @@ async def get_nice_war(
     )
 
     if raw_war.mstEvent:
-        banner_file = f"event_war_{raw_war.mstEvent.bannerId}"
+        if raw_war.mstWar.flag & WarEntityFlag.SUB_FOLDER != 0:
+            banner_file = f"chaldea_category_{raw_war.mstWar.bannerId}"
+        else:
+            banner_file = f"event_war_{raw_war.mstEvent.bannerId}"
     elif raw_war.mstWar.flag & WarEntityFlag.MAIN_SCENARIO != 0:
         last_war_id = await fetch.get_one(conn, MstConstant, "LAST_WAR_ID")
-        if last_war_id and raw_war.mstWar.id <= last_war_id.value:
+        if raw_war.mstWar.id > 10000 or (
+            last_war_id and raw_war.mstWar.id <= last_war_id.value
+        ):
             banner_file = f"questboard_cap{raw_war.mstWar.bannerId:>03}"
         else:
             banner_file = "questboard_cap_closed"

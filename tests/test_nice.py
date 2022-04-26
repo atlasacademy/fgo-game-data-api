@@ -528,9 +528,18 @@ class TestServantSpecial:
         war_oniland = await client.get("/nice/NA/war/9050")
         assert war_oniland.status_code == 200
         assert "event_war_" in war_oniland.json()["banner"]
-        war_interlude = await client.get("/nice/NA/war/1003")
-        assert war_interlude.status_code == 200
-        assert "chaldea_category_" in war_interlude.json()["banner"]
+
+        cases = {
+            303: "questboard_cap",  # main scenario
+            9088: "event_war_",  # main interlude
+            1003: "chaldea_category_",  # interlude
+            11000: "questboard_cap",  # arc 1
+            8372: "chaldea_category_", # subFolder
+        }
+        for warId, prefix in cases.items():
+            war = await client.get(f"nice/JP/war/{warId}")
+            assert war.status_code == 200
+            assert prefix in war.json()["banner"]
 
     async def test_skill_ai_id(self, client: AsyncClient) -> None:
         nice_skill = await client.get("/nice/NA/skill/962219")
