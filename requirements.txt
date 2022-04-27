@@ -40,7 +40,7 @@ setproctitle==1.2.3; python_version >= "3.6"
 six==1.16.0; python_version >= "3.7" and python_full_version < "3.0.0" and python_version < "4.0" or python_version >= "3.7" and python_version < "4.0" and python_full_version >= "3.5.0"
 smmap==5.0.0; python_version >= "3.7"
 sniffio==1.2.0; python_version >= "3.7" and python_full_version >= "3.6.2"
-sqlalchemy==1.4.35; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.6.0")
+sqlalchemy==1.4.36; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.6.0")
 starlette==0.17.1; python_version >= "3.7" and python_full_version >= "3.6.1" and python_version < "4.0"
 tomli==2.0.1; python_version >= "3.7"
 typing-extensions==4.2.0; python_version >= "3.7" and python_full_version >= "3.6.1" and python_version < "4.0"
