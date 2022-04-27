@@ -867,6 +867,8 @@ export enum NiceSvtVoiceType {
     EVENT_DAILY_POINT = "eventDailyPoint",
     TDDAMAGE = "tddamage",
     TREASURE_BOX = "treasureBox",
+    WAR_BOARD = "warBoard",
+    EVENT_DIGGING = "eventDigging",
     SUM = "sum",
 }
 
@@ -1229,6 +1231,8 @@ export enum NiceAiActType {
     SKILL_ID_CHECKBUFF = "skillIdCheckbuff",
     RESURRECTION = "resurrection",
     PLAY_MOTION = "playMotion",
+    MESSAGE = "message",
+    MESSAGE_GROUP = "messageGroup",
     NOBLE_PHANTASM = "noblePhantasm",
     BATTLE_END = "battleEnd",
     LOSE_END = "loseEnd",
@@ -1264,6 +1268,8 @@ export enum NiceAiActNum {
     REACTION_TURNSTART = "reactionTurnstart",
     REACTION_PLAYERACTIONSTART = "reactionPlayeractionstart",
     REACTION_ENTRY_UNIT = "reactionEntryUnit",
+    REACTION_BEFORE_RESURRECTION = "reactionBeforeResurrection",
+    REACTION_BEFORE_DEAD = "reactionBeforeDead",
     UNKNOWN = "unknown",
 }
 

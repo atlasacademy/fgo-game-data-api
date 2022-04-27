@@ -2413,7 +2413,9 @@ class SvtVoiceType(IntEnum):
     EVENT_DAILY_POINT = 16
     TDDAMAGE = 17
     TREASURE_BOX = 18
-    SUM = 19
+    WAR_BOARD = 19
+    EVENT_DIGGING = 20
+    SUM = 21
 
 
 class NiceSvtVoiceType(str, Enum):
@@ -2437,6 +2439,8 @@ class NiceSvtVoiceType(str, Enum):
     eventDailyPoint = "eventDailyPoint"
     tddamage = "tddamage"
     treasureBox = "treasureBox"
+    warBoard = "warBoard"
+    eventDigging = "eventDigging"
     sum = "sum"
 
 
@@ -2459,7 +2463,9 @@ VOICE_TYPE_NAME: dict[int, NiceSvtVoiceType] = {
     16: NiceSvtVoiceType.eventDailyPoint,
     17: NiceSvtVoiceType.tddamage,
     18: NiceSvtVoiceType.treasureBox,
-    19: NiceSvtVoiceType.sum,
+    19: NiceSvtVoiceType.warBoard,
+    20: NiceSvtVoiceType.eventDigging,
+    21: NiceSvtVoiceType.sum,
 }
 
 
@@ -3546,6 +3552,8 @@ class AiActType(IntEnum):
     SKILL_ID_CHECKBUFF = 41
     RESURRECTION = 42
     PLAY_MOTION = 71
+    MESSAGE = 72
+    MESSAGE_GROUP = 73
     NOBLE_PHANTASM = 80
     BATTLE_END = 90
     LOSE_END = 91
@@ -3573,6 +3581,8 @@ class NiceAiActType(str, Enum):
     skillIdCheckbuff = "skillIdCheckbuff"
     resurrection = "resurrection"
     playMotion = "playMotion"
+    message = "message"
+    messageGroup = "messageGroup"
     noblePhantasm = "noblePhantasm"
     battleEnd = "battleEnd"
     loseEnd = "loseEnd"
@@ -3598,6 +3608,8 @@ AI_ACT_TYPE_NAME: dict[int, NiceAiActType] = {
     41: NiceAiActType.skillIdCheckbuff,
     42: NiceAiActType.resurrection,
     71: NiceAiActType.playMotion,
+    72: NiceAiActType.message,
+    73: NiceAiActType.messageGroup,
     80: NiceAiActType.noblePhantasm,
     90: NiceAiActType.battleEnd,
     91: NiceAiActType.loseEnd,
@@ -3667,6 +3679,8 @@ class AiActNum(IntEnum):
     REACTION_TURNSTART = -12
     REACTION_PLAYERACTIONSTART = -13
     REACTION_ENTRY_UNIT = -14
+    REACTION_BEFORE_RESURRECTION = -15
+    REACTION_BEFORE_DEAD = -16
 
 
 class NiceAiActNum(str, Enum):
@@ -3685,6 +3699,8 @@ class NiceAiActNum(str, Enum):
     reactionTurnstart = "reactionTurnstart"
     reactionPlayeractionstart = "reactionPlayeractionstart"
     reactionEntryUnit = "reactionEntryUnit"
+    reactionBeforeResurrection = "reactionBeforeResurrection"
+    reactionBeforeDead = "reactionBeforeDead"
     unknown = "unknown"
 
 
@@ -3702,6 +3718,8 @@ AI_ACT_NUM_NAME: dict[int, NiceAiActNum] = {
     -12: NiceAiActNum.reactionTurnstart,
     -13: NiceAiActNum.reactionPlayeractionstart,
     -14: NiceAiActNum.reactionEntryUnit,
+    -15: NiceAiActNum.reactionBeforeResurrection,
+    -16: NiceAiActNum.reactionBeforeDead,
     -9999: NiceAiActNum.unknown,
 }
 
