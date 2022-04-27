@@ -525,16 +525,13 @@ class TestServantSpecial:
         ]
 
     async def test_war_banner(self, client: AsyncClient) -> None:
-        war_oniland = await client.get("/nice/NA/war/9050")
-        assert war_oniland.status_code == 200
-        assert "event_war_" in war_oniland.json()["banner"]
-
         cases = {
+            9050: "event_war_",
             303: "questboard_cap",  # main scenario
             9088: "event_war_",  # main interlude
             1003: "chaldea_category_",  # interlude
             11000: "questboard_cap",  # arc 1
-            8372: "chaldea_category_", # subFolder
+            8372: "chaldea_category_",  # subFolder
         }
         for warId, prefix in cases.items():
             war = await client.get(f"nice/JP/war/{warId}")
