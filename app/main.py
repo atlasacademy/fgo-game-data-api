@@ -12,7 +12,7 @@ from fastapi.openapi.utils import get_openapi
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi_cache import FastAPICache
-from fastapi_cache.backends.redis import RedisBackend
+from fastapi_cache.backends import Backend
 from fastapi_cache.coder import PickleCoder
 from redis.asyncio import Redis  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection
@@ -263,6 +263,30 @@ def custom_key_builder(
     cache_key = hashlib.sha1(raw_key.encode("utf-8")).hexdigest()
 
     return f"{prefix}:{region}:{namespace}:{cache_key}"
+
+
+class RedisBackend(Backend):  # type: ignore
+    def __init__(self, redis: Redis):
+        self.redis = redis
+
+    async def get_with_ttl(self, key: str) -> tuple[int, str]:
+        async with self.redis.pipeline(transaction=True) as pipe:
+            return await pipe.ttl(key).get(key).execute()  # type: ignore
+
+    async def get(self, key: str) -> Any:
+        return await self.redis.get(key)
+
+    async def set(self, key: str, value: str, expire: int | None = None) -> Any:
+        return await self.redis.set(key, value, ex=expire)
+
+    async def clear(self, namespace: str | None = None, key: str | None = None) -> int:
+        if namespace:
+            lua = f"for i, name in ipairs(redis.call('KEYS', '{namespace}:*')) do redis.call('DEL', name); end"
+            return await self.redis.eval(lua, numkeys=0)  # type: ignore
+        elif key:
+            return await self.redis.delete(key)  # type: ignore
+
+        raise ValueError("Either namespace or key must be specified.")
 
 
 @app.on_event("startup")
