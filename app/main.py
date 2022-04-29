@@ -14,7 +14,6 @@ from fastapi.staticfiles import StaticFiles
 from fastapi_cache import FastAPICache
 from fastapi_cache.backends.redis import RedisBackend
 from fastapi_cache.coder import PickleCoder
-from fastapi_limiter import FastAPILimiter  # type: ignore
 from redis.asyncio import Redis  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection
 
@@ -162,15 +161,9 @@ else:  # pragma: no cover
 
 
 tags_metadata = [
-    {
-        "name": "nice",
-        "description": f"Nicely human-readable bundled data. Rate Limit: {settings.rate_limit_per_5_sec} requests / 5 seconds",
-    },
+    {"name": "nice", "description": "Nicely human-readable bundled data."},
     {"name": "basic", "description": "Minimal nice data for indexing"},
-    {
-        "name": "raw",
-        "description": f"Raw game data. Rate Limit: {settings.rate_limit_per_5_sec} requests / 5 seconds",
-    },
+    {"name": "raw", "description": "Raw game data."},
 ]
 
 
@@ -275,9 +268,6 @@ def custom_key_builder(
 @app.on_event("startup")
 async def startup() -> None:
     redis = await Redis.from_url(settings.redisdsn)
-    await FastAPILimiter.init(
-        redis, prefix=f"{settings.redis_prefix}:limiter", callback=limiter_callback
-    )
     FastAPICache.init(
         RedisBackend(redis),
         prefix=f"{settings.redis_prefix}:cache",

@@ -24,7 +24,6 @@
   "redisdsn": "redis://localhost:6379/0",
   "redis_prefix": "fgoapi",
   "clear_redis_cache": true,
-  "rate_limit_per_5_sec": 100,
   "rayshift_api_key": "",
   "rayshift_api_url": "https://rayshift.io/api/v1",
   "quest_cache_length": 3600,

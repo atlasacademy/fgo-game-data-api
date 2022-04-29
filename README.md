@@ -27,7 +27,7 @@ View the API documentation here: https://api.atlasacademy.io.
 List of configuration variables for the main app. You can make a `config.json` file at the project root with the settings. Check the [`config.sample.json`](/config.sample.json) file for an example.
 
 **Required variables**
-- `DATA`: A JSON object string with keys being region strings and values being gamedata's folder location and Postgresql DSN. Not all regions are required in the object. Any combination of regions is accepted.
+- `DATA`: A JSON object with keys being region and values being gamedata's folder location and Postgresql DSN. Not all regions are required in the object. Any combination of regions is accepted.
 - `REDISDSN`: Redis DSN to a Redis server for caching.
 
 <details>
@@ -35,7 +35,6 @@ List of configuration variables for the main app. You can make a `config.json` f
 
 - `REDIS_PREFIX`: default to `fgoapi`. Prefix for redis keys.
 - `CLEAR_REDIS_CACHE`: default to `True`. If set, will clear the redis cache on start and when the webhook above is used.
-- `RATE_LIMIT_PER_5_SEC`: default to `100`. The rate limit per 5 seconds for nice and raw endpoints.
 - `RAYSHIFT_API_KEY`: default to `""`. Rayshift.io API key to pull quest data.
 - `RAYSHIFT_API_URL`: default to https://rayshift.io/api/v1/. Rayshift.io API URL.
 - `QUEST_CACHE_LENGTH`: default to `3600`. How long to cache the quest and war endpoints in seconds. Because the rayshift data is updated continously, web and quest endpoints have lower cache time.
@@ -52,7 +51,7 @@ List of configuration variables for the main app. You can make a `config.json` f
 
 </details>
 <details>
-<summary><b>Other way to set the variables</b> (click to show)</summary>
+<summary><b>Other ways to set the variables</b> (click to show)</summary>
 
 #### Environment Variables
 

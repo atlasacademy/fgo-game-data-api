@@ -46,7 +46,6 @@ class Settings(BaseSettings):
     redisdsn: RedisDsn = Field(default=...)
     redis_prefix: str = "fgoapi"
     clear_redis_cache: bool = True
-    rate_limit_per_5_sec: int = 100
     rayshift_api_key: SecretStr = SecretStr("")
     rayshift_api_url: HttpUrl = parse_obj_as(HttpUrl, "https://rayshift.io/api/v1/")
     quest_cache_length: int = 3600

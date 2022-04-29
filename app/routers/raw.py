@@ -1,6 +1,5 @@
 from fastapi import APIRouter, Depends, Query, Response
 from fastapi_cache.decorator import cache
-from fastapi_limiter.depends import RateLimiter  # type: ignore
 from redis.asyncio import Redis  # type: ignore
 
 from ..config import Settings
@@ -45,11 +44,7 @@ from .utils import get_error_code, item_response, list_response
 
 
 settings = Settings()
-router = APIRouter(
-    prefix="/raw",
-    tags=["raw"],
-    dependencies=[Depends(RateLimiter(times=settings.rate_limit_per_5_sec, seconds=5))],
-)
+router = APIRouter(prefix="/raw", tags=["raw"])
 
 
 svt_expand_lore_description = """
