@@ -1,0 +1,46 @@
+name: Upload Python Package
+
+on:
+  push:
+    paths:
+      - "fgo_api_types/**"
+      - "app/schemas/*.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.x"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip wheel setuptools
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+      - name: Build package
+        run: |
+          cp app/schemas/*.py fgo_api_types/fgo_api_types/
+          cd fgo_api_types
+          poetry version $(date -u +"%Y.%m.%d.%H.%M.%S")
+          poetry build
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: wheels
+          path: fgo_api_types/dist/*.whl
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: fgo_api_types/dist/*.whl
+          generate_release_notes: true
