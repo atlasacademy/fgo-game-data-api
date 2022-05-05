@@ -11,9 +11,9 @@ permissions:
   contents: write
 
 jobs:
-  deploy:
+  publish:
     runs-on: ubuntu-latest
-
+    environment: Default
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python
@@ -36,11 +36,9 @@ jobs:
         with:
           name: wheels
           path: fgo_api_types/dist/*.whl
-      - name: Create Release
-        id: create_release
-        uses: softprops/action-gh-release@v1
+      - name: Upload to PyPI
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          files: fgo_api_types/dist/*.whl
-          generate_release_notes: true
+          POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN }}
+        runs: |
+          poetry config http-basic.pypi "__token__" "$POETRY_PYPI_TOKEN_PYPI"
+          poetry publish --repository pypi --username __token__
