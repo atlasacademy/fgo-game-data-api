@@ -39,6 +39,7 @@ jobs:
       - name: Upload to PyPI
         env:
           POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN }}
+        working-directory: ./fgo_api_types
         run: |
           poetry config http-basic.pypi "__token__" "$POETRY_PYPI_TOKEN_PYPI"
           poetry publish --repository pypi --username __token__
