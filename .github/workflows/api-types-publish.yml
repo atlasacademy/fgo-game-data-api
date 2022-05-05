@@ -39,6 +39,6 @@ jobs:
       - name: Upload to PyPI
         env:
           POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN }}
-        runs: |
+        run: |
           poetry config http-basic.pypi "__token__" "$POETRY_PYPI_TOKEN_PYPI"
           poetry publish --repository pypi --username __token__
