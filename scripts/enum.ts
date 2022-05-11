@@ -565,6 +565,7 @@ export enum NiceItemType {
     SVT_COIN = "svtCoin",
     FRIENDSHIP_UP_ITEM = "friendshipUpItem",
     PP = "pp",
+    TRADE_AP = "tradeAp",
 }
 
 export enum NiceGiftType {
@@ -598,6 +599,7 @@ export enum NiceShopType {
     SVT_COSTUME = "svtCostume",
     START_UP_SUMMON = "startUpSummon",
     SHOP13 = "shop13",
+    TRADE_AP = "tradeAp",
 }
 
 export enum NicePayType {
@@ -614,6 +616,7 @@ export enum NicePayType {
     ITEM = "item",
     GRAIL_FRAGMENTS = "grailFragments",
     FREE = "free",
+    COMMON_CONSUME = "commonConsume",
 }
 
 export enum NicePurchaseType {
@@ -1321,6 +1324,7 @@ export enum NiceSvtFrameType {
 
 export enum NiceCommonConsumeType {
     ITEM = "item",
+    AP = "ap",
 }
 
 export enum NiceEventRewardSceneFlag {

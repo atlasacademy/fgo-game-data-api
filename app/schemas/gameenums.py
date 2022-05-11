@@ -1458,6 +1458,7 @@ class ItemType(IntEnum):
     SVT_COIN = 29
     FRIENDSHIP_UP_ITEM = 30
     PP = 31
+    TRADE_AP = 32
 
 
 class NiceItemType(str, Enum):
@@ -1494,6 +1495,7 @@ class NiceItemType(str, Enum):
     svtCoin = "svtCoin"
     friendshipUpItem = "friendshipUpItem"
     pp = "pp"
+    tradeAp = "tradeAp"
 
 
 ITEM_TYPE_NAME: dict[int, NiceItemType] = {
@@ -1528,6 +1530,7 @@ ITEM_TYPE_NAME: dict[int, NiceItemType] = {
     29: NiceItemType.svtCoin,
     30: NiceItemType.friendshipUpItem,
     31: NiceItemType.pp,
+    32: NiceItemType.tradeAp,
 }
 
 
@@ -1597,6 +1600,7 @@ class ShopType(IntEnum):
     SVT_COSTUME = 11
     START_UP_SUMMON = 12
     SHOP13 = 13
+    TRADE_AP = 14
 
 
 class NiceShopType(str, Enum):
@@ -1616,6 +1620,7 @@ class NiceShopType(str, Enum):
     svtCostume = "svtCostume"
     startUpSummon = "startUpSummon"
     shop13 = "shop13"
+    tradeAp = "tradeAp"
 
 
 SHOP_TYPE_NAME: dict[int, NiceShopType] = {
@@ -1633,6 +1638,7 @@ SHOP_TYPE_NAME: dict[int, NiceShopType] = {
     11: NiceShopType.svtCostume,
     12: NiceShopType.startUpSummon,
     13: NiceShopType.shop13,
+    14: NiceShopType.tradeAp,
 }
 
 
@@ -1650,6 +1656,7 @@ class PayType(IntEnum):
     ITEM = 11
     GRAIL_FRAGMENTS = 12
     FREE = 13
+    COMMON_CONSUME = 14
 
 
 class NicePayType(str, Enum):
@@ -1668,6 +1675,7 @@ class NicePayType(str, Enum):
     item = "item"
     grailFragments = "grailFragments"
     free = "free"
+    commonConsume = "commonConsume"
 
 
 PAY_TYPE_NAME: dict[int, NicePayType] = {
@@ -1684,6 +1692,7 @@ PAY_TYPE_NAME: dict[int, NicePayType] = {
     11: NicePayType.item,
     12: NicePayType.grailFragments,
     13: NicePayType.free,
+    14: NicePayType.commonConsume,
 }
 
 
@@ -3882,16 +3891,19 @@ SERVANT_FRAME_TYPE_NAME: dict[int, NiceSvtFrameType] = {
 
 class CommonConsumeType(IntEnum):
     ITEM = 1
+    AP = 2
 
 
 class NiceCommonConsumeType(str, Enum):
     """Common Consume Type"""
 
     item = "item"
+    ap = "ap"
 
 
 COMMON_CONSUME_TYPE_NAME: dict[int, NiceCommonConsumeType] = {
     1: NiceCommonConsumeType.item,
+    2: NiceCommonConsumeType.ap,
 }
 
 
