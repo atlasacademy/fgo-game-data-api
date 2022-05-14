@@ -4,6 +4,8 @@ HTTP API for FGO game data. Transform the raw game data into something a bit mor
 
 View the API documentation here: https://api.atlasacademy.io.
 
+If you are looking for only the type definitions and enums. You can download the [`fgo-api-types` package](https://pypi.org/project/fgo-api-types/).
+
 - [Configuration](#configuration)
   - [Environment Variables](#environment-variables)
   - [Secrets](#secrets)

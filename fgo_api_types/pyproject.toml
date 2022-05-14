@@ -3,6 +3,9 @@ name = "fgo-api-types"
 version = "0.1.0"
 description = "Provide Pydantic types from FGO API"
 authors = ["squaresmile <squaresmile@protonmail.com>"]
+readme = "README.md"
+homepage = "https://api.atlasacademy.io"
+repository = "https://github.com/atlasacademy/fgo-game-data-api"
 
 [tool.poetry.dependencies]
 python = "^3.6"
