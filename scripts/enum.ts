@@ -1407,3 +1407,9 @@ export enum NiceAiCondCheck {
     MULTIPLE = "multiple",
     EXIST = "exist",
 }
+
+export enum NiceTdEffectFlag {
+    SUPPORT = "support",
+    ATTACK_ENEMY_ALL = "attackEnemyAll",
+    ATTACK_ENEMY_ONE = "attackEnemyOne",
+}

@@ -4163,3 +4163,24 @@ AI_COND_CHECK_NAME: dict[int, NiceAiCondCheck] = {
     5: NiceAiCondCheck.multiple,
     6: NiceAiCondCheck.exist,
 }
+
+
+class TreasureDeviceEffectFlag(IntEnum):
+    SUPPORT = -1
+    ATTACK_ENEMY_ALL = 1
+    ATTACK_ENEMY_ONE = 2
+
+
+class NiceTdEffectFlag(str, Enum):
+    """Treasure Device Effect Flag"""
+
+    support = "support"
+    attackEnemyAll = "attackEnemyAll"
+    attackEnemyOne = "attackEnemyOne"
+
+
+TREASURE_DEVICE_EFFECT_FLAG_NAME: dict[int, NiceTdEffectFlag] = {
+    -1: NiceTdEffectFlag.support,
+    1: NiceTdEffectFlag.attackEnemyAll,
+    2: NiceTdEffectFlag.attackEnemyOne,
+}

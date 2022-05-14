@@ -3297,6 +3297,9 @@
       "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/1100200/card_servant_np.png",
       "rank": "A",
       "type": "Anti-Army",
+      "effectFlags": [
+        "attackEnemyAll"
+      ],
       "detail": "Deal heavy damage to all enemies & decrease DEF (3 turns) <effect increases with Overcharge> & inflict Curse (5 turns) <effect increases with Overcharge> for all enemies",
       "unmodifiedDetail": "Deal heavy damage to all enemies [{0}] & decrease DEF (3 turns) <effect increases with Overcharge> & inflict Curse (5 turns) <effect increases with Overcharge> for all enemies",
       "npGain": {
@@ -3902,6 +3905,9 @@
       "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/1100200/card_servant_np.png",
       "rank": "A+",
       "type": "Anti-Army",
+      "effectFlags": [
+        "attackEnemyAll"
+      ],
       "detail": "Deal heavy damage ▲ & decrease DEF (3 turns) <effect increases with Overcharge> & inflict Curse (5 turns) <effect increases with Overcharge> & inflict Disastrous Curse (increase Curse damage) ▲ (5 turns) to all enemies.",
       "unmodifiedDetail": "Deal heavy damage [{0}] [g][o]▲[/o][/g] & decrease DEF (3 turns) <effect increases with Overcharge> & inflict Curse (5 turns) <effect increases with Overcharge> & inflict Disastrous Curse (increase Curse damage) [g][o]▲[/o][/g] (5 turns) to all enemies.",
       "npGain": {

@@ -409,6 +409,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Ai Condition Check",
         "AI_COND_CHECK_NAME",
     ),
+    (
+        "TreasureDvcEntity.EffectFlag",
+        "TreasureDeviceEffectFlag",
+        "NiceTdEffectFlag",
+        "Treasure Device Effect Flag",
+        "TREASURE_DEVICE_EFFECT_FLAG_NAME",
+    ),
 ]
 
 

@@ -8,6 +8,9 @@
   "icon": "https://assets.atlasacademy.io/GameData/CN/Servants/Commands/603000/card_servant_np.png",
   "rank": "C+",
   "type": "对兽宝具",
+  "effectFlags": [
+    "attackEnemyAll"
+  ],
   "detail": "对敌方全体发动强大的〔魔性〕特攻攻击▲<过量充能时特攻威力提升>＋己方全体的力指令卡性能提升(3回合)▲",
   "unmodifiedDetail": "对敌方全体发动强大的〔魔性〕特攻攻击[g][o]▲[/o][/g][{0}]<过量充能时特攻威力提升>＋己方全体的力指令卡性能提升(3回合)[g][o]▲[/o][/g]",
   "npGain": {

@@ -4005,6 +4005,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/301100/card_servant_np.png",
               "rank": "A",
               "type": "Anti-Army",
+              "effectFlags": [
+                "attackEnemyAll"
+              ],
               "detail": "Deal heavy damage & decrease ATK (3 turns) <effect increases with Overcharge> to all enemies + Apply immunity to Mental Debuffs (3 turns) for yourself",
               "unmodifiedDetail": "Deal heavy damage [{0}] & decrease ATK [{0}] (3 turns) <effect increases with Overcharge> to all enemies + Apply immunity to Mental Debuffs [{0}] (3 turns) for yourself",
               "npGain": {
@@ -4594,6 +4597,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/301100/card_servant_np.png",
               "rank": "A+",
               "type": "Anti-Army",
+              "effectFlags": [
+                "attackEnemyAll"
+              ],
               "detail": "Deal heavy damage ▲ & decrease ATK (3 turns) <effect increases with Overcharge> to all enemies + Apply immunity to Mental Debuffs (3 turns) for yourself",
               "unmodifiedDetail": "Deal heavy damage [{0}] [g][o]▲[/o][/g] & decrease ATK [{0}] (3 turns) <effect increases with Overcharge> to all enemies + Apply immunity to Mental Debuffs [{0}] (3 turns) for yourself",
               "npGain": {

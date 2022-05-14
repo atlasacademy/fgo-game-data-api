@@ -67,6 +67,7 @@ from .gameenums import (
     NiceSvtFlag,
     NiceSvtType,
     NiceSvtVoiceType,
+    NiceTdEffectFlag,
     NiceVoiceCondType,
     NiceWarFlag,
     NiceWarOverwriteType,
@@ -539,6 +540,7 @@ class NiceTd(BaseModelORJson):
     icon: Optional[HttpUrl] = None
     rank: str
     type: str
+    effectFlags: list[NiceTdEffectFlag]
     detail: Optional[str] = None
     unmodifiedDetail: Optional[str] = None
     npGain: NpGain

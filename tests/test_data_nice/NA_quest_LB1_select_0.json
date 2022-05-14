@@ -676,6 +676,9 @@
           "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/503600/card_servant_np.png",
           "rank": "A+",
           "type": "Anti-Army",
+          "effectFlags": [
+            "attackEnemyAll"
+          ],
           "detail": "Deal heavy damage to all enemies + Increase NP Gain for all allies (3 turns) <effect increases with Overcharge>",
           "unmodifiedDetail": "Deal heavy damage to all enemies [{0}] + Increase NP Gain for all allies (3 turns) <effect increases with Overcharge>",
           "npGain": {
@@ -2252,6 +2255,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/9941150/card_servant_np.png",
               "rank": "None",
               "type": "",
+              "effectFlags": [
+                "support"
+              ],
               "npGain": {
                 "buster": [
                   0,
@@ -2845,6 +2851,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/9941150/card_servant_np.png",
               "rank": "None",
               "type": "",
+              "effectFlags": [
+                "support"
+              ],
               "npGain": {
                 "buster": [
                   0,
@@ -3410,6 +3419,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/9941150/card_servant_np.png",
               "rank": "None",
               "type": "",
+              "effectFlags": [
+                "support"
+              ],
               "npGain": {
                 "buster": [
                   0,
@@ -3994,6 +4006,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/9941150/card_servant_np.png",
               "rank": "None",
               "type": "",
+              "effectFlags": [
+                "support"
+              ],
               "npGain": {
                 "buster": [
                   0,
@@ -4569,6 +4584,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/9941150/card_servant_np.png",
               "rank": "None",
               "type": "",
+              "effectFlags": [
+                "support"
+              ],
               "npGain": {
                 "buster": [
                   0,
@@ -5153,6 +5171,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/9941150/card_servant_np.png",
               "rank": "None",
               "type": "",
+              "effectFlags": [
+                "support"
+              ],
               "npGain": {
                 "buster": [
                   0,
@@ -5737,6 +5758,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/9941150/card_servant_np.png",
               "rank": "None",
               "type": "",
+              "effectFlags": [
+                "support"
+              ],
               "npGain": {
                 "buster": [
                   0,
@@ -6312,6 +6336,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/9941150/card_servant_np.png",
               "rank": "None",
               "type": "",
+              "effectFlags": [
+                "support"
+              ],
               "npGain": {
                 "buster": [
                   0,

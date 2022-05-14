@@ -366,6 +366,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/9938890/card_servant_np.png",
               "rank": "なし",
               "type": "",
+              "effectFlags": [
+                "support"
+              ],
               "npGain": {
                 "buster": [
                   0,
@@ -980,6 +983,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/9938890/card_servant_np.png",
               "rank": "なし",
               "type": "",
+              "effectFlags": [
+                "support"
+              ],
               "npGain": {
                 "buster": [
                   0,
@@ -1617,6 +1623,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/9938890/card_servant_np.png",
               "rank": "なし",
               "type": "",
+              "effectFlags": [
+                "support"
+              ],
               "npGain": {
                 "buster": [
                   0,
@@ -2240,6 +2249,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/9938890/card_servant_np.png",
               "rank": "なし",
               "type": "",
+              "effectFlags": [
+                "support"
+              ],
               "npGain": {
                 "buster": [
                   0,
@@ -2863,6 +2875,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/9938890/card_servant_np.png",
               "rank": "なし",
               "type": "",
+              "effectFlags": [
+                "support"
+              ],
               "npGain": {
                 "buster": [
                   0,
@@ -4370,6 +4385,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/102700/card_servant_np.png",
               "rank": "－",
               "type": "対人魔剣",
+              "effectFlags": [
+                "attackEnemyOne"
+              ],
               "detail": "敵単体に超強力な防御力無視攻撃＆防御力を大ダウン(3ターン)<オーバーチャージで効果アップ>",
               "unmodifiedDetail": "敵単体に超強力な防御力無視攻撃[{0}]＆防御力を大ダウン(3ターン)<オーバーチャージで効果アップ>",
               "npGain": {
@@ -5563,6 +5581,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/702500/card_servant_np.png",
               "rank": "C+",
               "type": "対人宝具",
+              "effectFlags": [
+                "attackEnemyOne"
+              ],
               "detail": "敵単体に自身のHPが少ないほど威力の高い超強力な攻撃<オーバーチャージで威力アップ>",
               "unmodifiedDetail": "敵単体に自身のHPが少ないほど威力の高い超強力な攻撃[{0}]<オーバーチャージで威力アップ>",
               "npGain": {

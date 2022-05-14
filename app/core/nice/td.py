@@ -6,7 +6,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
 from ...schemas.common import Language, Region
-from ...schemas.gameenums import CARD_TYPE_NAME
+from ...schemas.gameenums import CARD_TYPE_NAME, NiceTdEffectFlag
 from ...schemas.nice import AssetURL, NiceTd
 from ...schemas.raw import TdEntityNoReverse
 from ..raw import get_td_entity_no_reverse_many
@@ -15,6 +15,15 @@ from .func import get_nice_function
 
 
 settings = Settings()
+
+
+def get_nice_td_effect_flag(effectFlag: int) -> NiceTdEffectFlag:
+    if effectFlag == 1:
+        return NiceTdEffectFlag.attackEnemyAll
+    elif effectFlag == 2:
+        return NiceTdEffectFlag.attackEnemyOne
+
+    return NiceTdEffectFlag.support
 
 
 async def get_nice_td(
@@ -33,6 +42,7 @@ async def get_nice_td(
         "ruby": tdEntity.mstTreasureDevice.ruby,
         "rank": tdEntity.mstTreasureDevice.rank,
         "type": tdEntity.mstTreasureDevice.typeText,
+        "effectFlags": [get_nice_td_effect_flag(tdEntity.mstTreasureDevice.effectFlag)],
         "individuality": get_traits_list(tdEntity.mstTreasureDevice.individuality),
     }
 

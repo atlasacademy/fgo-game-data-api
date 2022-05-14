@@ -6056,6 +6056,9 @@
       "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/1100900/card_servant_np.png",
       "rank": "EX",
       "type": "対星宝具",
+      "effectFlags": [
+        "attackEnemyAll"
+      ],
       "detail": "自身の宝具威力をアップ(3ターン)<オーバーチャージで効果アップ> ＋ 敵全体に強力な攻撃 ＋ 自身のExtra Attackの威力をアップ(1ターン)",
       "unmodifiedDetail": "自身の宝具威力をアップ(3ターン)<オーバーチャージで効果アップ> ＋ 敵全体に強力な攻撃[{0}] ＋ 自身のExtra Attackの威力をアップ(1ターン)",
       "npGain": {
@@ -6674,6 +6677,9 @@
       "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/1100900/card_servant_np.png",
       "rank": "EX",
       "type": "対星宝具",
+      "effectFlags": [
+        "attackEnemyAll"
+      ],
       "detail": "自身の宝具威力をアップ(3ターン)<オーバーチャージで効果アップ> ＋ 敵全体に強力な攻撃 ＋ 自身のExtra Attackの威力をアップ(1ターン)",
       "unmodifiedDetail": "自身の宝具威力をアップ(3ターン)<オーバーチャージで効果アップ> ＋ 敵全体に強力な攻撃[{0}] ＋ 自身のExtra Attackの威力をアップ(1ターン)",
       "npGain": {
@@ -7292,6 +7298,9 @@
       "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/1100900/card_servant_np.png",
       "rank": "EX",
       "type": "対星宝具",
+      "effectFlags": [
+        "attackEnemyAll"
+      ],
       "detail": "自身の宝具威力をアップ(3ターン)<オーバーチャージで効果アップ> ＋ 敵全体に強力な攻撃 ＋ 自身のExtra Attackの威力をアップ(1ターン)",
       "unmodifiedDetail": "自身の宝具威力をアップ(3ターン)<オーバーチャージで効果アップ> ＋ 敵全体に強力な攻撃[{0}] ＋ 自身のExtra Attackの威力をアップ(1ターン)",
       "npGain": {

@@ -8,6 +8,9 @@
   "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/100800/card_servant_np.png",
   "rank": "A+",
   "type": "Anti-Army",
+  "effectFlags": [
+    "attackEnemyAll"
+  ],
   "detail": "Deal heavy Special Attack damage to all [Dragon] enemies <Special Attack damage increases with Overcharge>",
   "unmodifiedDetail": "Deal heavy Special Attack damage to all [Dragon] enemies [{0}] <Special Attack damage increases with Overcharge>",
   "npGain": {

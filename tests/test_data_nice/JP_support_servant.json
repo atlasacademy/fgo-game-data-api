@@ -1438,6 +1438,9 @@
           "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/200100/card_servant_np.png",
           "rank": "E～A",
           "type": "？？？？",
+          "effectFlags": [
+            "attackEnemyAll"
+          ],
           "detail": "敵全体に強力な防御力無視攻撃▲＆攻撃力をダウン(3ターン)<オーバーチャージで効果アップ>",
           "unmodifiedDetail": "敵全体に強力な防御力無視攻撃[{0}][g][o]▲[/o][/g]＆攻撃力をダウン(3ターン)<オーバーチャージで効果アップ>",
           "npGain": {
@@ -4322,6 +4325,9 @@
           "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/204200/card_servant_np.png",
           "rank": "A",
           "type": "対軍宝具",
+          "effectFlags": [
+            "attackEnemyAll"
+          ],
           "detail": "自身のQuickカード性能をアップ(1ターン)<オーバーチャージで効果アップ>＆Artsカード性能をアップ(1ターン)<オーバーチャージで効果アップ>＆Busterカード性能をアップ(1ターン)<オーバーチャージで効果アップ>＆必中状態を付与(1ターン) ＋ 敵全体に強力な攻撃",
           "unmodifiedDetail": "自身のQuickカード性能をアップ(1ターン)<オーバーチャージで効果アップ>＆Artsカード性能をアップ(1ターン)<オーバーチャージで効果アップ>＆Busterカード性能をアップ(1ターン)<オーバーチャージで効果アップ>＆必中状態を付与(1ターン) ＋ 敵全体に強力な攻撃[{0}]",
           "npGain": {
@@ -7453,6 +7459,9 @@
           "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/404100/card_servant_np.png",
           "rank": "B",
           "type": "対人宝具",
+          "effectFlags": [
+            "attackEnemyOne"
+          ],
           "detail": "敵単体に超強力な攻撃＆確率でチャージを減らす＆Arts攻撃耐性をダウン(3ターン)<オーバーチャージで効果アップ>",
           "unmodifiedDetail": "敵単体に超強力な攻撃[{0}]＆確率でチャージを減らす＆Arts攻撃耐性をダウン(3ターン)<オーバーチャージで効果アップ>",
           "npGain": {
@@ -10239,6 +10248,9 @@
           "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/103600/card_servant_np.png",
           "rank": "Ｃ＋",
           "type": "対軍宝具（自陣）",
+          "effectFlags": [
+            "support"
+          ],
           "detail": "敵全体のチャージを1減らす＆クリティカル発生率をダウン(3ターン) ＋ 味方全体の攻撃力をアップ(3ターン)<オーバーチャージで効果アップ>＆被ダメージカット状態を付与(3ターン)",
           "unmodifiedDetail": "敵全体のチャージを1減らす＆クリティカル発生率をダウン(3ターン) ＋ 味方全体の攻撃力をアップ(3ターン)<オーバーチャージで効果アップ>＆被ダメージカット状態を付与[{0}](3ターン)",
           "npGain": {

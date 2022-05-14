@@ -8,6 +8,9 @@
   "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/301100/card_servant_np.png",
   "rank": "A",
   "type": "対軍宝具",
+  "effectFlags": [
+    "attackEnemyAll"
+  ],
   "detail": "敵全体に強力な攻撃＆攻撃力をダウン(3ターン)<オーバーチャージで効果アップ>＋自身に精神異常無効状態を付与(3ターン)",
   "unmodifiedDetail": "敵全体に強力な攻撃[{0}]＆攻撃力をダウン(3ターン)<オーバーチャージで効果アップ>＋自身に精神異常無効状態を付与(3ターン)",
   "npGain": {

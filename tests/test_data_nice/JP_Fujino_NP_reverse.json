@@ -8,6 +8,9 @@
   "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/202900/card_servant_np.png",
   "rank": "EX",
   "type": "対界宝具",
+  "effectFlags": [
+    "attackEnemyOne"
+  ],
   "detail": "敵単体に超強力な攻撃＆強化無効状態を付与(1回・3ターン)＆攻撃力をダウン(3ターン)<オーバーチャージで効果アップ>",
   "unmodifiedDetail": "敵単体に超強力な攻撃[{0}]＆強化無効状態を付与(1回・3ターン)＆攻撃力をダウン(3ターン)<オーバーチャージで効果アップ>",
   "npGain": {
@@ -5536,6 +5539,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/202900/card_servant_np.png",
               "rank": "EX",
               "type": "対界宝具",
+              "effectFlags": [
+                "attackEnemyOne"
+              ],
               "detail": "敵単体に超強力な攻撃＆強化無効状態を付与(1回・3ターン)＆攻撃力をダウン(3ターン)<オーバーチャージで効果アップ>",
               "unmodifiedDetail": "敵単体に超強力な攻撃[{0}]＆強化無効状態を付与(1回・3ターン)＆攻撃力をダウン(3ターン)<オーバーチャージで効果アップ>",
               "npGain": {
@@ -6121,6 +6127,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/202900/card_servant_np.png",
               "rank": "EX",
               "type": "対界宝具",
+              "effectFlags": [
+                "attackEnemyOne"
+              ],
               "detail": "敵単体に超強力な〔超巨大〕特攻攻撃▲<オーバーチャージで特攻威力アップ>▲＆強化無効状態を付与(1回・3ターン)＆攻撃力をダウン(3ターン)<オーバーチャージで効果アップ>",
               "unmodifiedDetail": "敵単体に超強力な〔超巨大〕特攻攻撃[g][o]▲[/o][/g][{0}]<オーバーチャージで特攻威力アップ>[g][o]▲[/o][/g]＆強化無効状態を付与(1回・3ターン)＆攻撃力をダウン(3ターン)<オーバーチャージで効果アップ>",
               "npGain": {

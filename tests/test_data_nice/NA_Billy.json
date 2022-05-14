@@ -2717,6 +2717,9 @@
       "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/201000/card_servant_np.png",
       "rank": "C++",
       "type": "Anti-Personnel",
+      "effectFlags": [
+        "attackEnemyOne"
+      ],
       "detail": "Apply Sure Hit for yourself (1 turn) + deal significant damage to a single enemy & decrease Critical Rate (3 turns) <effect increases with Overcharge> for a single enemy",
       "unmodifiedDetail": "Apply Sure Hit for yourself (1 turn) + deal significant damage to a single enemy [{0}] & decrease Critical Rate (3 turns) <effect increases with Overcharge> for a single enemy",
       "npGain": {
@@ -3488,6 +3491,9 @@
       "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/201000/card_servant_np.png",
       "rank": "C+++",
       "type": "Anti-Personnel",
+      "effectFlags": [
+        "attackEnemyOne"
+      ],
       "detail": "Apply Sure Hit for yourself (1 turn) + deal significant damage to a single enemy ▲ & decrease Critical Rate ▲ (3 turns) <effect increases with Overcharge> for a single enemy",
       "unmodifiedDetail": "Apply Sure Hit for yourself (1 turn) + deal significant damage to a single enemy [{0}] [g][o]▲[/o][/g] & decrease Critical Rate [g][o]▲[/o][/g] (3 turns) <effect increases with Overcharge> for a single enemy",
       "npGain": {

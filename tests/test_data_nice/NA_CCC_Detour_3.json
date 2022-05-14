@@ -299,6 +299,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/9935900/card_servant_np.png",
               "rank": "None",
               "type": "",
+              "effectFlags": [
+                "support"
+              ],
               "npGain": {
                 "buster": [
                   0,
@@ -1985,6 +1988,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/102000/card_servant_np.png",
               "rank": "None",
               "type": "",
+              "effectFlags": [
+                "attackEnemyOne"
+              ],
               "npGain": {
                 "buster": [
                   0,
@@ -3289,6 +3295,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/301900/card_servant_np.png",
               "rank": "None",
               "type": "",
+              "effectFlags": [
+                "attackEnemyOne"
+              ],
               "npGain": {
                 "buster": [
                   0,
@@ -4640,6 +4649,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/200800/card_servant_np.png",
               "rank": "None",
               "type": "",
+              "effectFlags": [
+                "attackEnemyOne"
+              ],
               "npGain": {
                 "buster": [
                   0,
@@ -5896,6 +5908,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/101200/card_servant_np.png",
               "rank": "None",
               "type": "",
+              "effectFlags": [
+                "attackEnemyOne"
+              ],
               "npGain": {
                 "buster": [
                   0,
@@ -7208,6 +7223,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/Servants/Commands/301900/card_servant_np.png",
               "rank": "None",
               "type": "",
+              "effectFlags": [
+                "attackEnemyOne"
+              ],
               "npGain": {
                 "buster": [
                   0,

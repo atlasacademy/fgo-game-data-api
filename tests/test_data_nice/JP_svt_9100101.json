@@ -547,6 +547,9 @@
       "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/9100101/card_servant_np.png",
       "rank": "なし",
       "type": "",
+      "effectFlags": [
+        "support"
+      ],
       "npGain": {
         "buster": [
           0,
