@@ -96,6 +96,7 @@
     "script": {},
     "eventId": 0,
     "eventGroupId": 0,
+    "isPresent": false,
     "id": 7106,
     "name": "アサシンモニュメント",
     "detail": "【霊基再臨素材】\nアサシンクラスを称えるモニュメント",

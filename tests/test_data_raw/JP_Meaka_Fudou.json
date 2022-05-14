@@ -65,7 +65,9 @@
       "type": 2,
       "objectId": 100,
       "priority": 0,
-      "num": 1
+      "num": 1,
+      "lv": 0,
+      "limitCount": 0
     }
   ],
   "mstGiftAdd": [],

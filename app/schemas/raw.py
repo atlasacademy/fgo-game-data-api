@@ -573,6 +573,7 @@ class MstItem(BaseModelORJson):
     script: dict[str, Any]  # {},
     eventId: int = 0  # 0,
     eventGroupId: int = 0  # 0,
+    isPresent: bool = False
     id: int  # 6505,
     name: str  # "Void's Dust",
     detail: str  # "\"Skill Up & Ascension Material\"\nDust that disperses when hollow shadows disappear.",

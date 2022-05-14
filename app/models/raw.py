@@ -775,6 +775,7 @@ mstItem = Table(
     Column("script", JSONB),
     Column("eventId", Integer, default=0),
     Column("eventGroupId", Integer, default=0),
+    Column("isPresent", Boolean),
     Column("id", Integer, primary_key=True),
     Column("name", String),
     Column("detail", String),
