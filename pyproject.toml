@@ -28,11 +28,11 @@ hiredis = "^2.0.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"
-pylint = "^2.13.8"
+pylint = "^2.13.9"
 mypy = "^0.950"
 black = "^22.3.0"
 pytest-xdist = "^2.5.0"
-coverage = "^6.3.2"
+coverage = "^6.3.3"
 fuzzywuzzy-stubs = "^0.0.1"
 isort = "^5.10.1"
 sqlalchemy2-stubs = "^0.0.2-alpha.22"

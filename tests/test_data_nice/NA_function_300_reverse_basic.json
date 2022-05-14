@@ -79,6 +79,12 @@
           "name": "\"You don't have even an ounce of grace!\"",
           "ruby": "-",
           "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png"
+        },
+        {
+          "id": 964536,
+          "name": "Beauty of Spring Night",
+          "ruby": "-",
+          "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00600.png"
         }
       ],
       "NP": []

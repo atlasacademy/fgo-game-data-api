@@ -1559,6 +1559,48 @@
               94042220
             ]
           }
+        },
+        {
+          "mstSkill": {
+            "effectList": [],
+            "actIndividuality": [],
+            "script": {},
+            "id": 964536,
+            "type": 1,
+            "name": "Beauty of Spring Night",
+            "ruby": "-",
+            "maxLv": 1,
+            "iconId": 600,
+            "motion": 102
+          },
+          "mstSkillDetail": [],
+          "mstSvtSkill": [],
+          "mstSkillAdd": [],
+          "mstCommonRelease": [],
+          "mstSkillLv": [
+            {
+              "funcId": [
+                3367,
+                300
+              ],
+              "svals": [
+                "[1000,2,-1,20]",
+                "[1000,2,-1,1000]"
+              ],
+              "script": {},
+              "skillId": 964536,
+              "lv": 1,
+              "chargeTurn": 0,
+              "skillDetailId": 1,
+              "priority": 0
+            }
+          ],
+          "aiIds": {
+            "svt": [],
+            "field": [
+              803189
+            ]
+          }
         }
       ],
       "NP": []
