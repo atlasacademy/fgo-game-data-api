@@ -3,7 +3,7 @@ from typing import Any, Iterable, Optional
 from sqlalchemy.dialects.postgresql import aggregate_order_by
 from sqlalchemy.exc import DBAPIError
 from sqlalchemy.ext.asyncio import AsyncConnection
-from sqlalchemy.sql import and_, func, select
+from sqlalchemy.sql import and_, func, or_, select
 
 from ...models.raw import (
     mstSvtTreasureDevice,
@@ -92,6 +92,7 @@ async def get_td_search(
     numFunctions: Optional[Iterable[int]],
     minNpNpGain: Optional[int],
     maxNpNpGain: Optional[int],
+    svalsContain: str | None,
 ) -> list[MstTreasureDevice]:
     where_clause = [mstTreasureDeviceLv.c.lv == 1]
     if individuality:
@@ -112,6 +113,26 @@ async def get_td_search(
         where_clause.append(mstTreasureDeviceLv.c.tdPoint >= minNpNpGain)
     if maxNpNpGain:
         where_clause.append(mstTreasureDeviceLv.c.tdPoint <= maxNpNpGain)
+    if svalsContain:
+        where_clause.append(
+            or_(
+                func.array_to_string(mstTreasureDeviceLv.c.svals, "|").like(
+                    f"%{svalsContain}%"
+                ),
+                func.array_to_string(mstTreasureDeviceLv.c.svals2, "|").like(
+                    f"%{svalsContain}%"
+                ),
+                func.array_to_string(mstTreasureDeviceLv.c.svals3, "|").like(
+                    f"%{svalsContain}%"
+                ),
+                func.array_to_string(mstTreasureDeviceLv.c.svals4, "|").like(
+                    f"%{svalsContain}%"
+                ),
+                func.array_to_string(mstTreasureDeviceLv.c.svals5, "|").like(
+                    f"%{svalsContain}%"
+                ),
+            )
+        )
 
     td_search_stmt = (
         select(mstTreasureDevice)

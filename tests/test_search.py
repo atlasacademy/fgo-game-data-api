@@ -138,6 +138,7 @@ test_cases_dict: dict[str, tuple[str, set[int]]] = {
         "NA/skill/search?name=Mystic%20Eyes%20of%20Distortion%20EX&lvl1coolDown=7",
         {454650},
     ),
+    "skill_search_svals_contain": ("JP/skill/search?svalsContain=964096", {706350}),
     "np_search_minNp_strength": (
         "NA/NP/search?minNpNpGain=220&strengthStatus=2",
         {601002},
@@ -151,6 +152,7 @@ test_cases_dict: dict[str, tuple[str, set[int]]] = {
         "JP/NP/search?individuality=aoeNP&hits=6&card=arts&strengthStatus=0",
         {504201},
     ),
+    "np_search_svals_contain": ("JP/NP/search?svalsContain=962350", {504101}),
     "buff_type_tvals": (
         "NA/buff/search?type=upCommandall&tvals=cardQuick&name=Boost",
         {260, 499},

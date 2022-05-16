@@ -263,6 +263,7 @@ async def search_skill(
         search_param.strengthStatus,
         search_param.lvl1coolDown,
         search_param.numFunctions,
+        search_param.svalsContain,
     )
 
     if search_param.name:
@@ -302,6 +303,7 @@ async def search_td(
         search_param.numFunctions,
         search_param.minNpNpGain,
         search_param.maxNpNpGain,
+        search_param.svalsContain,
     )
 
     if search_param.name:

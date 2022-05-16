@@ -199,6 +199,7 @@ class SkillSearchParams:
     strengthStatus: Optional[list[int]] = Query(None)
     lvl1coolDown: Optional[list[int]] = Query(None)
     numFunctions: Optional[list[int]] = Query(None)
+    svalsContain: str | None = Query(None)
 
     def hasSearchParams(self) -> bool:
         return any(
@@ -210,6 +211,7 @@ class SkillSearchParams:
                 self.strengthStatus,
                 self.lvl1coolDown,
                 self.numFunctions,
+                self.svalsContain is not None and self.svalsContain.strip() != "",
             ]
         )
 
@@ -224,6 +226,7 @@ class SkillSearchParams:
         - **strengthStatus**: strengthening status. [1]
         - **lvl1coolDown**: Cooldown at level 1.
         - **numFunctions**: Number of functions in the skill.
+        - **svalsContain**: Skill's svals should contain this pattern.
 
         At least one of the parameter is required for the query.
 
@@ -244,6 +247,7 @@ class TdSearchParams:
     numFunctions: Optional[list[int]] = Query(None)
     minNpNpGain: Optional[int] = None
     maxNpNpGain: Optional[int] = None
+    svalsContain: str | None = Query(None)
 
     def hasSearchParams(self) -> bool:
         return any(
@@ -256,6 +260,7 @@ class TdSearchParams:
                 self.numFunctions,
                 self.minNpNpGain is not None,
                 self.maxNpNpGain is not None,
+                self.svalsContain is not None and self.svalsContain.strip() != "",
             ]
         )
 
@@ -270,6 +275,7 @@ class TdSearchParams:
         - **numFunctions**: number of functions the NP has.
         - **minNpNpGain**: NP gain of the NP is at least this value.
         - **maxNpNpGain**: NP gain of the NP is at most this value.
+        - **svalsContain**: NP's svals should contain this pattern.
 
         At least one of the parameter is required for the query.
         """

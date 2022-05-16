@@ -115,6 +115,7 @@ async def get_skill_search(
     strengthStatus: Optional[Iterable[int]],
     lvl1coolDown: Optional[Iterable[int]],
     numFunctions: Optional[Iterable[int]],
+    svalsContain: str | None,
 ) -> list[MstSkill]:
     where_clause = [mstSkillLv.c.lv == 1]
     if skillType:
@@ -129,6 +130,10 @@ async def get_skill_search(
         where_clause.append(mstSkillLv.c.chargeTurn.in_(lvl1coolDown))
     if numFunctions:
         where_clause.append(func.array_length(mstSkillLv.c.funcId, 1).in_(numFunctions))
+    if svalsContain:
+        where_clause.append(
+            func.array_to_string(mstSkillLv.c.svals, "|").like(f"%{svalsContain}%")
+        )
 
     skill_search_stmt = (
         select(mstSkill)
