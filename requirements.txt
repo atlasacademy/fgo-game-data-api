@@ -55,9 +55,9 @@ deprecated==1.2.13; python_version >= "3.6" and python_full_version < "3.0.0" or
 fastapi-cache2==0.1.8; python_version >= "3.7" and python_version < "4.0" \
     --hash=sha256:e074a6dad600f9a19f0e7111f58350d6cc7c17d27a0bad1f67336d178b19387b \
     --hash=sha256:7cdd5037cdc0b10a99c0effcef30c42e212f4fc20db49a472dbf0d42174e955a
-fastapi==0.77.1; python_full_version >= "3.6.1" \
-    --hash=sha256:041d8935a13c8f22a7ef80c76d8eea54953c44476d7057e7734138ee8951b9dc \
-    --hash=sha256:6dfa715a334d1fafedcea33d74c7382afd2ce123093f83be2f4e322e89d45e22
+fastapi==0.78.0; python_full_version >= "3.6.1" \
+    --hash=sha256:15fcabd5c78c266fa7ae7d8de9b384bfc2375ee0503463a6febbe3bab69d6f65 \
+    --hash=sha256:3233d4a789ba018578658e2af1a4bb5e38bdd122ff722b313666a9b2c6786a83
 fuzzywuzzy==0.18.0 \
     --hash=sha256:928244b28db720d1e0ee7587acf660ea49d7e4c632569cad4f1cd7e68a5f0993 \
     --hash=sha256:45016e92264780e58972dca1b3d939ac864b78437422beecebb3095f8efd00e8
