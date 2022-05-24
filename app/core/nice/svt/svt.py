@@ -206,7 +206,7 @@ async def get_nice_servant(
     atkBase = last_svt_limit.atkBase
     hpMax = last_svt_limit.hpMax
     hpBase = last_svt_limit.hpBase
-    maxLv = 121 if region == Region.JP else 101
+    maxLv = 121 if region in (Region.JP, Region.NA) else 101
     growthCurveMax = maxLv if raw_svt.mstSvt.type == SvtType.NORMAL else (lvMax + 1)
     if raw_svt.mstSvt.type == SvtType.HEROINE and region == Region.JP:
         growthCurveMax = 91
