@@ -791,6 +791,7 @@ mstItem = Table(
     Column("startedAt", Integer),
     Column("endedAt", Integer),
     Column("useSkill", Boolean),
+    Column("useAppendSkill", Boolean),
     Column("useAscension", Boolean),
     Column("useCostume", Boolean),
 )

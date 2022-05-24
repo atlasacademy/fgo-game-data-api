@@ -3597,6 +3597,7 @@
       "startedAt": 946652400,
       "endedAt": 1910876400,
       "useSkill": true,
+      "useAppendSkill": true,
       "useAscension": true,
       "useCostume": true
     },
@@ -3623,6 +3624,7 @@
       "startedAt": 946652400,
       "endedAt": 1910876400,
       "useSkill": false,
+      "useAppendSkill": false,
       "useAscension": true,
       "useCostume": false
     },
@@ -3649,6 +3651,7 @@
       "startedAt": 946652400,
       "endedAt": 1910876400,
       "useSkill": true,
+      "useAppendSkill": true,
       "useAscension": true,
       "useCostume": true
     },
@@ -3675,6 +3678,7 @@
       "startedAt": 946652400,
       "endedAt": 1910876400,
       "useSkill": true,
+      "useAppendSkill": true,
       "useAscension": true,
       "useCostume": true
     },
@@ -3701,6 +3705,7 @@
       "startedAt": 946652400,
       "endedAt": 1910876400,
       "useSkill": true,
+      "useAppendSkill": true,
       "useAscension": true,
       "useCostume": true
     },
@@ -3727,6 +3732,7 @@
       "startedAt": 946652400,
       "endedAt": 1910876400,
       "useSkill": true,
+      "useAppendSkill": true,
       "useAscension": true,
       "useCostume": true
     },
@@ -3753,6 +3759,7 @@
       "startedAt": 946652400,
       "endedAt": 1910876400,
       "useSkill": true,
+      "useAppendSkill": true,
       "useAscension": true,
       "useCostume": true
     },
@@ -3779,6 +3786,7 @@
       "startedAt": 1549443600,
       "endedAt": 1910876400,
       "useSkill": true,
+      "useAppendSkill": true,
       "useAscension": true,
       "useCostume": true
     },
@@ -3805,6 +3813,7 @@
       "startedAt": 946652400,
       "endedAt": 1910876400,
       "useSkill": true,
+      "useAppendSkill": true,
       "useAscension": false,
       "useCostume": false
     },
@@ -3831,6 +3840,7 @@
       "startedAt": 946652400,
       "endedAt": 1910876400,
       "useSkill": true,
+      "useAppendSkill": true,
       "useAscension": true,
       "useCostume": true
     },
@@ -3855,6 +3865,7 @@
       "startedAt": 946652400,
       "endedAt": 1910876400,
       "useSkill": false,
+      "useAppendSkill": false,
       "useAscension": false,
       "useCostume": false
     },
@@ -3881,6 +3892,7 @@
       "startedAt": 946652400,
       "endedAt": 1910876400,
       "useSkill": false,
+      "useAppendSkill": false,
       "useAscension": false,
       "useCostume": false
     },
@@ -3907,6 +3919,7 @@
       "startedAt": 946652400,
       "endedAt": 1910876400,
       "useSkill": true,
+      "useAppendSkill": true,
       "useAscension": true,
       "useCostume": true
     },
@@ -3933,6 +3946,7 @@
       "startedAt": 946652400,
       "endedAt": 1910876400,
       "useSkill": true,
+      "useAppendSkill": true,
       "useAscension": false,
       "useCostume": false
     },
@@ -3959,6 +3973,7 @@
       "startedAt": 946652400,
       "endedAt": 1910876400,
       "useSkill": true,
+      "useAppendSkill": true,
       "useAscension": false,
       "useCostume": false
     },
@@ -3985,6 +4000,7 @@
       "startedAt": 946652400,
       "endedAt": 1910876400,
       "useSkill": true,
+      "useAppendSkill": true,
       "useAscension": false,
       "useCostume": false
     },
@@ -4011,6 +4027,7 @@
       "startedAt": 946652400,
       "endedAt": 1910876400,
       "useSkill": false,
+      "useAppendSkill": false,
       "useAscension": true,
       "useCostume": false
     },
@@ -4037,6 +4054,7 @@
       "startedAt": 946652400,
       "endedAt": 1910876400,
       "useSkill": true,
+      "useAppendSkill": true,
       "useAscension": true,
       "useCostume": true
     }

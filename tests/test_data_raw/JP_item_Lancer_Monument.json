@@ -22,6 +22,7 @@
     "startedAt": 946652400,
     "endedAt": 1910876400,
     "useSkill": false,
+    "useAppendSkill": false,
     "useAscension": true,
     "useCostume": false
   }

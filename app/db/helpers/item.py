@@ -39,6 +39,8 @@ async def get_item_search(
     if uses:
         if NiceItemUse.skill in uses:
             where_clause.append(mstItem.c.useSkill.is_(True))
+        if NiceItemUse.appendSkill in uses:
+            where_clause.append(mstItem.c.useAppendSkill.is_(True))
         if NiceItemUse.ascension in uses:
             where_clause.append(mstItem.c.useAscension.is_(True))
         if NiceItemUse.costume in uses:

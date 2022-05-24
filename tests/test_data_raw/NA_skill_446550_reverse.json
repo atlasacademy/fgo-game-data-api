@@ -3019,6 +3019,7 @@
               "startedAt": 946684800,
               "endedAt": 1910908800,
               "useSkill": false,
+              "useAppendSkill": false,
               "useAscension": false,
               "useCostume": false
             },
@@ -3043,6 +3044,7 @@
               "startedAt": 946684800,
               "endedAt": 1910908800,
               "useSkill": true,
+              "useAppendSkill": true,
               "useAscension": true,
               "useCostume": true
             },
@@ -3067,6 +3069,7 @@
               "startedAt": 946684800,
               "endedAt": 1910908800,
               "useSkill": true,
+              "useAppendSkill": true,
               "useAscension": true,
               "useCostume": true
             },
@@ -3091,6 +3094,7 @@
               "startedAt": 946684800,
               "endedAt": 1910908800,
               "useSkill": true,
+              "useAppendSkill": true,
               "useAscension": true,
               "useCostume": true
             },
@@ -3115,6 +3119,7 @@
               "startedAt": 946684800,
               "endedAt": 1910908800,
               "useSkill": true,
+              "useAppendSkill": true,
               "useAscension": false,
               "useCostume": false
             },
@@ -3139,6 +3144,7 @@
               "startedAt": 946684800,
               "endedAt": 1910908800,
               "useSkill": true,
+              "useAppendSkill": true,
               "useAscension": true,
               "useCostume": true
             },
@@ -3163,6 +3169,7 @@
               "startedAt": 946684800,
               "endedAt": 1910908800,
               "useSkill": true,
+              "useAppendSkill": true,
               "useAscension": true,
               "useCostume": true
             },
@@ -3187,6 +3194,7 @@
               "startedAt": 1612324800,
               "endedAt": 1910908800,
               "useSkill": true,
+              "useAppendSkill": true,
               "useAscension": true,
               "useCostume": true
             },
@@ -3213,6 +3221,7 @@
               "startedAt": 946684800,
               "endedAt": 1910908800,
               "useSkill": true,
+              "useAppendSkill": true,
               "useAscension": false,
               "useCostume": false
             },
@@ -3237,6 +3246,7 @@
               "startedAt": 946684800,
               "endedAt": 1910908800,
               "useSkill": true,
+              "useAppendSkill": true,
               "useAscension": false,
               "useCostume": false
             },
@@ -3261,6 +3271,7 @@
               "startedAt": 946684800,
               "endedAt": 1910908800,
               "useSkill": true,
+              "useAppendSkill": true,
               "useAscension": true,
               "useCostume": true
             },
@@ -3287,6 +3298,7 @@
               "startedAt": 946684800,
               "endedAt": 1910908800,
               "useSkill": false,
+              "useAppendSkill": false,
               "useAscension": false,
               "useCostume": false
             },
@@ -3311,6 +3323,7 @@
               "startedAt": 946684800,
               "endedAt": 1910908800,
               "useSkill": true,
+              "useAppendSkill": true,
               "useAscension": false,
               "useCostume": false
             },
@@ -3335,6 +3348,7 @@
               "startedAt": 946684800,
               "endedAt": 1910908800,
               "useSkill": false,
+              "useAppendSkill": true,
               "useAscension": false,
               "useCostume": false
             },
@@ -3359,6 +3373,7 @@
               "startedAt": 946684800,
               "endedAt": 1910908800,
               "useSkill": true,
+              "useAppendSkill": true,
               "useAscension": true,
               "useCostume": true
             },
@@ -3383,6 +3398,7 @@
               "startedAt": 946684800,
               "endedAt": 1910908800,
               "useSkill": false,
+              "useAppendSkill": false,
               "useAscension": true,
               "useCostume": false
             },
@@ -3407,6 +3423,7 @@
               "startedAt": 946684800,
               "endedAt": 1910908800,
               "useSkill": false,
+              "useAppendSkill": false,
               "useAscension": true,
               "useCostume": false
             }

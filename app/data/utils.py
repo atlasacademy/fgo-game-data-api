@@ -9,6 +9,7 @@ from ..schemas.raw import (
     MstAiAct,
     MstBuff,
     MstClassRelationOverwrite,
+    MstCombineAppendPassiveSkill,
     MstCombineCostume,
     MstCombineLimit,
     MstCombineSkill,
@@ -84,6 +85,7 @@ MODEL_FILE_NAME: dict[Type[BaseModelORJson], str] = {
     MstSvtTreasureDevice: "mstSvtTreasureDevice",
     MstSvtVoice: "mstSvtVoice",
     MstVoice: "mstVoice",
+    MstCombineAppendPassiveSkill: "mstCombineAppendPassiveSkill",
 }
 
 
@@ -91,6 +93,11 @@ def load_master_data(
     gamedata_path: DirectoryPath, model: Type[PydanticModel]
 ) -> list[PydanticModel]:
     file_name = MODEL_FILE_NAME[model]
-    with open(gamedata_path / "master" / f"{file_name}.json", "rb") as fp:
+    file_loc = gamedata_path / "master" / f"{file_name}.json"
+
+    if not file_loc.exists():
+        return []
+
+    with open(file_loc, "rb") as fp:
         data = orjson.loads(fp.read())
     return [model.parse_obj(item) for item in data]

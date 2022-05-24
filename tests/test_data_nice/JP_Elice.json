@@ -969,7 +969,8 @@
             "originalName": "槍の輝石",
             "type": "skillLvUp",
             "uses": [
-              "skill"
+              "skill",
+              "appendSkill"
             ],
             "detail": "【スキル強化素材】\n槍兵の力が宿った光輝く石",
             "individuality": [
@@ -997,7 +998,8 @@
             "originalName": "槍の輝石",
             "type": "skillLvUp",
             "uses": [
-              "skill"
+              "skill",
+              "appendSkill"
             ],
             "detail": "【スキル強化素材】\n槍兵の力が宿った光輝く石",
             "individuality": [
@@ -1025,7 +1027,8 @@
             "originalName": "槍の魔石",
             "type": "skillLvUp",
             "uses": [
-              "skill"
+              "skill",
+              "appendSkill"
             ],
             "detail": "【スキル強化素材】\n槍兵の強い力が宿った魔法石",
             "individuality": [
@@ -1053,7 +1056,8 @@
             "originalName": "槍の魔石",
             "type": "skillLvUp",
             "uses": [
-              "skill"
+              "skill",
+              "appendSkill"
             ],
             "detail": "【スキル強化素材】\n槍兵の強い力が宿った魔法石",
             "individuality": [
@@ -1077,6 +1081,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1106,7 +1111,8 @@
             "originalName": "槍の秘石",
             "type": "skillLvUp",
             "uses": [
-              "skill"
+              "skill",
+              "appendSkill"
             ],
             "detail": "【スキル強化素材】\n槍兵の強大な力が宿った宝石",
             "individuality": [
@@ -1130,6 +1136,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1159,7 +1166,8 @@
             "originalName": "槍の秘石",
             "type": "skillLvUp",
             "uses": [
-              "skill"
+              "skill",
+              "appendSkill"
             ],
             "detail": "【スキル強化素材】\n槍兵の強大な力が宿った宝石",
             "individuality": [
@@ -1183,6 +1191,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1213,6 +1222,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1238,6 +1248,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1268,6 +1279,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1293,6 +1305,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1322,7 +1335,8 @@
             "originalName": "伝承結晶",
             "type": "skillLvUp",
             "uses": [
-              "skill"
+              "skill",
+              "appendSkill"
             ],
             "detail": "【スキル強化＆霊基再臨素材】\n人類史とマナの奔流が交差する事で\n産み出される高純度の魔力結晶。\n物質化した英霊の素材とも言える。",
             "individuality": [],
@@ -1347,7 +1361,8 @@
             "originalName": "槍の輝石",
             "type": "skillLvUp",
             "uses": [
-              "skill"
+              "skill",
+              "appendSkill"
             ],
             "detail": "【スキル強化素材】\n槍兵の力が宿った光輝く石",
             "individuality": [
@@ -1375,7 +1390,8 @@
             "originalName": "槍の輝石",
             "type": "skillLvUp",
             "uses": [
-              "skill"
+              "skill",
+              "appendSkill"
             ],
             "detail": "【スキル強化素材】\n槍兵の力が宿った光輝く石",
             "individuality": [
@@ -1403,7 +1419,8 @@
             "originalName": "槍の魔石",
             "type": "skillLvUp",
             "uses": [
-              "skill"
+              "skill",
+              "appendSkill"
             ],
             "detail": "【スキル強化素材】\n槍兵の強い力が宿った魔法石",
             "individuality": [
@@ -1431,7 +1448,8 @@
             "originalName": "槍の魔石",
             "type": "skillLvUp",
             "uses": [
-              "skill"
+              "skill",
+              "appendSkill"
             ],
             "detail": "【スキル強化素材】\n槍兵の強い力が宿った魔法石",
             "individuality": [
@@ -1455,6 +1473,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1484,7 +1503,8 @@
             "originalName": "槍の秘石",
             "type": "skillLvUp",
             "uses": [
-              "skill"
+              "skill",
+              "appendSkill"
             ],
             "detail": "【スキル強化素材】\n槍兵の強大な力が宿った宝石",
             "individuality": [
@@ -1508,6 +1528,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1537,7 +1558,8 @@
             "originalName": "槍の秘石",
             "type": "skillLvUp",
             "uses": [
-              "skill"
+              "skill",
+              "appendSkill"
             ],
             "detail": "【スキル強化素材】\n槍兵の強大な力が宿った宝石",
             "individuality": [
@@ -1561,6 +1583,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1591,6 +1614,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1616,6 +1640,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1646,6 +1671,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1671,6 +1697,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1700,7 +1727,8 @@
             "originalName": "伝承結晶",
             "type": "skillLvUp",
             "uses": [
-              "skill"
+              "skill",
+              "appendSkill"
             ],
             "detail": "【スキル強化＆霊基再臨素材】\n人類史とマナの奔流が交差する事で\n産み出される高純度の魔力結晶。\n物質化した英霊の素材とも言える。",
             "individuality": [],

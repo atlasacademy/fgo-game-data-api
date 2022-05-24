@@ -21,6 +21,7 @@ def get_item_use(item: MstItem) -> list[NiceItemUse]:
 
     for use_type, use_variable in (
         (NiceItemUse.skill, item.useSkill),
+        (NiceItemUse.appendSkill, item.useAppendSkill),
         (NiceItemUse.ascension, item.useAscension),
         (NiceItemUse.costume, item.useCostume),
     ):

@@ -589,6 +589,7 @@ class MstItem(BaseModelORJson):
     startedAt: int  # 946684800,
     endedAt: int  # 1910908800
     useSkill: bool = False
+    useAppendSkill: bool = False
     useAscension: bool = False
     useCostume: bool = False
 

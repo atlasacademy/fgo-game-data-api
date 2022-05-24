@@ -65,6 +65,7 @@
               "type": "skillLvUp",
               "uses": [
                 "skill",
+                "appendSkill",
                 "ascension",
                 "costume"
               ],
@@ -137,6 +138,7 @@
               "type": "skillLvUp",
               "uses": [
                 "skill",
+                "appendSkill",
                 "ascension",
                 "costume"
               ],
@@ -226,6 +228,7 @@
               "type": "skillLvUp",
               "uses": [
                 "skill",
+                "appendSkill",
                 "ascension",
                 "costume"
               ],
@@ -298,6 +301,7 @@
               "type": "skillLvUp",
               "uses": [
                 "skill",
+                "appendSkill",
                 "ascension",
                 "costume"
               ],

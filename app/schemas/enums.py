@@ -80,6 +80,7 @@ class NiceItemUse(str, Enum):
     """Item Use Enum"""
 
     skill = "skill"
+    appendSkill = "appendSkill"
     ascension = "ascension"
     costume = "costume"
 

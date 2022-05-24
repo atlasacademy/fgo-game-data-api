@@ -811,6 +811,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -831,6 +832,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -856,6 +858,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -876,6 +879,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension"
             ],
             "detail": "\"Skill Up & Ascension Material\"\nA page which nobody should ever read.\nUsually mixed in as the first or last page.",
@@ -900,6 +904,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -920,6 +925,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -945,6 +951,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -965,6 +972,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -992,6 +1000,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1017,6 +1026,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1042,6 +1052,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1067,6 +1078,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1092,6 +1104,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1117,6 +1130,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1142,6 +1156,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1167,6 +1182,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1191,7 +1207,8 @@
             "originalName": "Crystallized Lore",
             "type": "skillLvUp",
             "uses": [
-              "skill"
+              "skill",
+              "appendSkill"
             ],
             "detail": "\"Skill Up & Ascension Material\"\nA highly pure crystal of magic created\nwhen human history crosses a stream of Mana.\nIt can be said that it is the ingredient for materializing Heroic Spirits.",
             "individuality": [],
@@ -1217,6 +1234,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1242,6 +1260,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1272,6 +1291,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1297,6 +1317,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1322,6 +1343,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1347,6 +1369,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1372,6 +1395,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1397,6 +1421,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1421,7 +1446,8 @@
             "originalName": "Crystallized Lore",
             "type": "skillLvUp",
             "uses": [
-              "skill"
+              "skill",
+              "appendSkill"
             ],
             "detail": "\"Skill Up & Ascension Material\"\nA highly pure crystal of magic created\nwhen human history crosses a stream of Mana.\nIt can be said that it is the ingredient for materializing Heroic Spirits.",
             "individuality": [],
@@ -1447,6 +1473,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1467,6 +1494,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1492,6 +1520,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1512,6 +1541,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],

@@ -853,6 +853,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -883,6 +884,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -913,6 +915,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -943,6 +946,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -973,6 +977,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1003,6 +1008,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1033,6 +1039,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1063,6 +1070,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1092,7 +1100,8 @@
             "originalName": "伝承結晶",
             "type": "skillLvUp",
             "uses": [
-              "skill"
+              "skill",
+              "appendSkill"
             ],
             "detail": "【スキル強化＆霊基再臨素材】\n人類史とマナの奔流が交差する事で\n産み出される高純度の魔力結晶。\n物質化した英霊の素材とも言える。",
             "individuality": [],
@@ -1118,6 +1127,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1148,6 +1158,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1178,6 +1189,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1208,6 +1220,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1238,6 +1251,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1268,6 +1282,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1298,6 +1313,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1328,6 +1344,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1357,7 +1374,8 @@
             "originalName": "伝承結晶",
             "type": "skillLvUp",
             "uses": [
-              "skill"
+              "skill",
+              "appendSkill"
             ],
             "detail": "【スキル強化＆霊基再臨素材】\n人類史とマナの奔流が交差する事で\n産み出される高純度の魔力結晶。\n物質化した英霊の素材とも言える。",
             "individuality": [],
@@ -1383,6 +1401,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1412,6 +1431,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1437,6 +1457,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1462,6 +1483,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1492,6 +1514,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1521,6 +1544,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1546,6 +1570,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],
@@ -1571,6 +1596,7 @@
             "type": "skillLvUp",
             "uses": [
               "skill",
+              "appendSkill",
               "ascension",
               "costume"
             ],

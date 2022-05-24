@@ -8106,6 +8106,7 @@
       "startedAt": 1581998400,
       "endedAt": 1583467199,
       "useSkill": false,
+      "useAppendSkill": false,
       "useAscension": false,
       "useCostume": false
     },
@@ -8132,6 +8133,7 @@
       "startedAt": 1581998400,
       "endedAt": 1583467199,
       "useSkill": false,
+      "useAppendSkill": false,
       "useAscension": false,
       "useCostume": false
     },
@@ -8158,6 +8160,7 @@
       "startedAt": 1581998400,
       "endedAt": 1583467199,
       "useSkill": false,
+      "useAppendSkill": false,
       "useAscension": false,
       "useCostume": false
     }
