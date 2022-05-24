@@ -585,6 +585,9 @@
         9401110
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090001,
       "baseShopId": 80090001,
       "eventId": 80090,
@@ -618,6 +621,9 @@
         9401140
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090002,
       "baseShopId": 80090002,
       "eventId": 80090,
@@ -651,6 +657,9 @@
         9401170
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090003,
       "baseShopId": 80090003,
       "eventId": 80090,
@@ -684,6 +693,9 @@
         9401180
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090004,
       "baseShopId": 80090004,
       "eventId": 80090,
@@ -717,6 +729,9 @@
         9570400
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090005,
       "baseShopId": 80090005,
       "eventId": 80090,
@@ -750,6 +765,9 @@
         9570400
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090006,
       "baseShopId": 80090006,
       "eventId": 80090,
@@ -783,6 +801,9 @@
         9570400
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090007,
       "baseShopId": 80090007,
       "eventId": 80090,
@@ -816,6 +837,9 @@
         9570300
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090008,
       "baseShopId": 80090008,
       "eventId": 80090,
@@ -849,6 +873,9 @@
         9670300
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090009,
       "baseShopId": 80090009,
       "eventId": 80090,
@@ -882,6 +909,9 @@
         9770400
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090010,
       "baseShopId": 80090010,
       "eventId": 80090,
@@ -915,6 +945,9 @@
         9770300
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090011,
       "baseShopId": 80090011,
       "eventId": 80090,
@@ -948,6 +981,9 @@
         6529
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090012,
       "baseShopId": 80090012,
       "eventId": 80090,
@@ -981,6 +1017,9 @@
         6507
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090013,
       "baseShopId": 80090013,
       "eventId": 80090,
@@ -1014,6 +1053,9 @@
         6501
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090014,
       "baseShopId": 80090014,
       "eventId": 80090,
@@ -1047,6 +1089,9 @@
         6520
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090015,
       "baseShopId": 80090015,
       "eventId": 80090,
@@ -1080,6 +1125,9 @@
         6510
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090016,
       "baseShopId": 80090016,
       "eventId": 80090,
@@ -1113,6 +1161,9 @@
         6508
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090017,
       "baseShopId": 80090017,
       "eventId": 80090,
@@ -1146,6 +1197,9 @@
         6505
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090018,
       "baseShopId": 80090018,
       "eventId": 80090,
@@ -1179,6 +1233,9 @@
         6533
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090019,
       "baseShopId": 80090019,
       "eventId": 80090,
@@ -1212,6 +1269,9 @@
         6201
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090020,
       "baseShopId": 80090020,
       "eventId": 80090,
@@ -1245,6 +1305,9 @@
         6202
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090021,
       "baseShopId": 80090021,
       "eventId": 80090,
@@ -1278,6 +1341,9 @@
         6203
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090022,
       "baseShopId": 80090022,
       "eventId": 80090,
@@ -1311,6 +1377,9 @@
         6204
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090023,
       "baseShopId": 80090023,
       "eventId": 80090,
@@ -1344,6 +1413,9 @@
         6205
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090024,
       "baseShopId": 80090024,
       "eventId": 80090,
@@ -1377,6 +1449,9 @@
         6206
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090025,
       "baseShopId": 80090025,
       "eventId": 80090,
@@ -1410,6 +1485,9 @@
         6207
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090026,
       "baseShopId": 80090026,
       "eventId": 80090,
@@ -1443,6 +1521,9 @@
         6101
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090027,
       "baseShopId": 80090027,
       "eventId": 80090,
@@ -1476,6 +1557,9 @@
         6102
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090028,
       "baseShopId": 80090028,
       "eventId": 80090,
@@ -1509,6 +1593,9 @@
         6103
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090029,
       "baseShopId": 80090029,
       "eventId": 80090,
@@ -1542,6 +1629,9 @@
         6104
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090030,
       "baseShopId": 80090030,
       "eventId": 80090,
@@ -1575,6 +1665,9 @@
         6105
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090031,
       "baseShopId": 80090031,
       "eventId": 80090,
@@ -1608,6 +1701,9 @@
         6106
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090032,
       "baseShopId": 80090032,
       "eventId": 80090,
@@ -1641,6 +1737,9 @@
         6107
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090033,
       "baseShopId": 80090033,
       "eventId": 80090,
@@ -1674,6 +1773,9 @@
         6001
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090034,
       "baseShopId": 80090034,
       "eventId": 80090,
@@ -1707,6 +1809,9 @@
         6002
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090035,
       "baseShopId": 80090035,
       "eventId": 80090,
@@ -1740,6 +1845,9 @@
         6003
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090036,
       "baseShopId": 80090036,
       "eventId": 80090,
@@ -1773,6 +1881,9 @@
         6004
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090037,
       "baseShopId": 80090037,
       "eventId": 80090,
@@ -1806,6 +1917,9 @@
         6005
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090038,
       "baseShopId": 80090038,
       "eventId": 80090,
@@ -1839,6 +1953,9 @@
         6006
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090039,
       "baseShopId": 80090039,
       "eventId": 80090,
@@ -1872,6 +1989,9 @@
         6007
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090040,
       "baseShopId": 80090040,
       "eventId": 80090,
@@ -1905,6 +2025,9 @@
         3
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090041,
       "baseShopId": 80090041,
       "eventId": 80090,
@@ -1938,6 +2061,9 @@
         94021302
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090042,
       "baseShopId": 80090042,
       "eventId": 80090,
@@ -1971,6 +2097,9 @@
         94021303
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090043,
       "baseShopId": 80090043,
       "eventId": 80090,
@@ -2004,6 +2133,9 @@
         1
       ],
       "script": {},
+      "anotherPayType": 0,
+      "anotherItemIds": [],
+      "useAnotherPayCommonReleaseId": 0,
       "id": 80090044,
       "baseShopId": 80090044,
       "eventId": 80090,

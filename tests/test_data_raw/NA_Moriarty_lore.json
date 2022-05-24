@@ -86,6 +86,7 @@
       ],
       "mstSvtSkill": [
         {
+          "script": {},
           "strengthStatus": 0,
           "svtId": 202300,
           "num": 1,
@@ -99,6 +100,7 @@
           "flag": 0
         },
         {
+          "script": {},
           "strengthStatus": 0,
           "svtId": 9939010,
           "num": 1,
@@ -112,6 +114,7 @@
           "flag": 0
         },
         {
+          "script": {},
           "strengthStatus": 0,
           "svtId": 9939020,
           "num": 1,
@@ -332,6 +335,7 @@
       ],
       "mstSvtSkill": [
         {
+          "script": {},
           "strengthStatus": 0,
           "svtId": 9939010,
           "num": 2,
@@ -345,6 +349,7 @@
           "flag": 0
         },
         {
+          "script": {},
           "strengthStatus": 0,
           "svtId": 9939020,
           "num": 2,
@@ -358,6 +363,7 @@
           "flag": 0
         },
         {
+          "script": {},
           "strengthStatus": 1,
           "svtId": 202300,
           "num": 2,
@@ -638,6 +644,7 @@
       ],
       "mstSvtSkill": [
         {
+          "script": {},
           "strengthStatus": 0,
           "svtId": 202300,
           "num": 3,
@@ -651,6 +658,7 @@
           "flag": 0
         },
         {
+          "script": {},
           "strengthStatus": 0,
           "svtId": 9939010,
           "num": 3,
@@ -664,6 +672,7 @@
           "flag": 0
         },
         {
+          "script": {},
           "strengthStatus": 0,
           "svtId": 9939020,
           "num": 3,
@@ -864,6 +873,7 @@
       ],
       "mstSvtSkill": [
         {
+          "script": {},
           "strengthStatus": 99,
           "svtId": 202300,
           "num": 2,
@@ -1190,6 +1200,7 @@
           ],
           "treaureDeviceId": 202300,
           "lv": 1,
+          "script": {},
           "gaugeCount": 1,
           "detailId": 202300,
           "tdPoint": 38,
@@ -1227,6 +1238,7 @@
           ],
           "treaureDeviceId": 202300,
           "lv": 2,
+          "script": {},
           "gaugeCount": 2,
           "detailId": 202300,
           "tdPoint": 38,
@@ -1264,6 +1276,7 @@
           ],
           "treaureDeviceId": 202300,
           "lv": 3,
+          "script": {},
           "gaugeCount": 2,
           "detailId": 202300,
           "tdPoint": 38,
@@ -1301,6 +1314,7 @@
           ],
           "treaureDeviceId": 202300,
           "lv": 4,
+          "script": {},
           "gaugeCount": 2,
           "detailId": 202300,
           "tdPoint": 38,
@@ -1338,6 +1352,7 @@
           ],
           "treaureDeviceId": 202300,
           "lv": 5,
+          "script": {},
           "gaugeCount": 3,
           "detailId": 202300,
           "tdPoint": 38,
@@ -1436,6 +1451,7 @@
           ],
           "treaureDeviceId": 202301,
           "lv": 1,
+          "script": {},
           "gaugeCount": 1,
           "detailId": 202301,
           "tdPoint": 38,
@@ -1473,6 +1489,7 @@
           ],
           "treaureDeviceId": 202301,
           "lv": 2,
+          "script": {},
           "gaugeCount": 2,
           "detailId": 202301,
           "tdPoint": 38,
@@ -1510,6 +1527,7 @@
           ],
           "treaureDeviceId": 202301,
           "lv": 3,
+          "script": {},
           "gaugeCount": 2,
           "detailId": 202301,
           "tdPoint": 38,
@@ -1547,6 +1565,7 @@
           ],
           "treaureDeviceId": 202301,
           "lv": 4,
+          "script": {},
           "gaugeCount": 2,
           "detailId": 202301,
           "tdPoint": 38,
@@ -1584,6 +1603,7 @@
           ],
           "treaureDeviceId": 202301,
           "lv": 5,
+          "script": {},
           "gaugeCount": 3,
           "detailId": 202301,
           "tdPoint": 38,
@@ -1606,7 +1626,10 @@
       ],
       "svtId": 202300,
       "idx": 1,
-      "limitCount": -1
+      "limitCount": -1,
+      "condType": 0,
+      "condId": 0,
+      "condNum": 0
     },
     {
       "individuality": [
@@ -1616,7 +1639,10 @@
       ],
       "svtId": 202300,
       "idx": 8027301,
-      "limitCount": -1
+      "limitCount": -1,
+      "condType": 0,
+      "condId": 0,
+      "condNum": 0
     }
   ],
   "mstSvtCard": [
@@ -2716,6 +2742,126 @@
       "lv": 100,
       "value": 15990,
       "createdAt": 946684800
+    },
+    {
+      "id": 5,
+      "lv": 101,
+      "value": 16000,
+      "createdAt": 946684800
+    },
+    {
+      "id": 5,
+      "lv": 102,
+      "value": 16010,
+      "createdAt": 946684800
+    },
+    {
+      "id": 5,
+      "lv": 103,
+      "value": 16020,
+      "createdAt": 946684800
+    },
+    {
+      "id": 5,
+      "lv": 104,
+      "value": 16030,
+      "createdAt": 946684800
+    },
+    {
+      "id": 5,
+      "lv": 105,
+      "value": 16040,
+      "createdAt": 946684800
+    },
+    {
+      "id": 5,
+      "lv": 106,
+      "value": 16050,
+      "createdAt": 946684800
+    },
+    {
+      "id": 5,
+      "lv": 107,
+      "value": 16060,
+      "createdAt": 946684800
+    },
+    {
+      "id": 5,
+      "lv": 108,
+      "value": 16070,
+      "createdAt": 946684800
+    },
+    {
+      "id": 5,
+      "lv": 109,
+      "value": 16080,
+      "createdAt": 946684800
+    },
+    {
+      "id": 5,
+      "lv": 110,
+      "value": 16090,
+      "createdAt": 946684800
+    },
+    {
+      "id": 5,
+      "lv": 111,
+      "value": 16100,
+      "createdAt": 946684800
+    },
+    {
+      "id": 5,
+      "lv": 112,
+      "value": 16110,
+      "createdAt": 946684800
+    },
+    {
+      "id": 5,
+      "lv": 113,
+      "value": 16120,
+      "createdAt": 946684800
+    },
+    {
+      "id": 5,
+      "lv": 114,
+      "value": 16130,
+      "createdAt": 946684800
+    },
+    {
+      "id": 5,
+      "lv": 115,
+      "value": 16140,
+      "createdAt": 946684800
+    },
+    {
+      "id": 5,
+      "lv": 116,
+      "value": 16150,
+      "createdAt": 946684800
+    },
+    {
+      "id": 5,
+      "lv": 117,
+      "value": 16160,
+      "createdAt": 946684800
+    },
+    {
+      "id": 5,
+      "lv": 118,
+      "value": 16170,
+      "createdAt": 946684800
+    },
+    {
+      "id": 5,
+      "lv": 119,
+      "value": 16180,
+      "createdAt": 946684800
+    },
+    {
+      "id": 5,
+      "lv": 120,
+      "value": 16190,
+      "createdAt": 946684800
     }
   ],
   "mstSvtLimitAdd": [
@@ -2771,8 +2917,10 @@
       "priority": 98,
       "flag": 0,
       "costumeCollectionNo": 17,
+      "iconId": 0,
       "openedAt": 1615176000,
-      "endedAt": 1893628799
+      "endedAt": 1893628799,
+      "script": ""
     }
   ],
   "mstSvtScript": [
@@ -2842,6 +2990,7 @@
       "condFriendshipRank": 5,
       "eventId": 80038,
       "flag": 0,
+      "commonReleaseId": 0,
       "startedAt": 1482415200,
       "endedAt": 1893456000
     },
@@ -2857,6 +3006,7 @@
       "condFriendshipRank": 6,
       "eventId": 80038,
       "flag": 0,
+      "commonReleaseId": 0,
       "startedAt": 1482415200,
       "endedAt": 1893456000
     },
@@ -2872,6 +3022,7 @@
       "condFriendshipRank": 7,
       "eventId": 80038,
       "flag": 0,
+      "commonReleaseId": 0,
       "startedAt": 1482415200,
       "endedAt": 1893456000
     },
@@ -2887,6 +3038,7 @@
       "condFriendshipRank": 8,
       "eventId": 80038,
       "flag": 0,
+      "commonReleaseId": 0,
       "startedAt": 1482415200,
       "endedAt": 1893456000
     },
@@ -2902,6 +3054,7 @@
       "condFriendshipRank": 9,
       "eventId": 80038,
       "flag": 0,
+      "commonReleaseId": 0,
       "startedAt": 1482415200,
       "endedAt": 1893456000
     },
@@ -2917,6 +3070,7 @@
       "condFriendshipRank": 10,
       "eventId": 80038,
       "flag": 0,
+      "commonReleaseId": 0,
       "startedAt": 1482415200,
       "endedAt": 1893456000
     },
@@ -2932,6 +3086,7 @@
       "condFriendshipRank": 0,
       "eventId": 80044,
       "flag": 0,
+      "commonReleaseId": 0,
       "startedAt": 1487944800,
       "endedAt": 1893456000
     },
@@ -2947,13 +3102,183 @@
       "condFriendshipRank": 0,
       "eventId": 80072,
       "flag": 0,
+      "commonReleaseId": 0,
       "startedAt": 1508018400,
       "endedAt": 1893456000
     }
   ],
-  "mstSvtAppendPassiveSkill": [],
-  "mstSvtAppendPassiveSkillUnlock": [],
-  "mstCombineAppendPassiveSkill": [],
+  "mstSvtAppendPassiveSkill": [
+    {
+      "svtId": 202300,
+      "num": 100,
+      "priority": 1,
+      "skillId": 3001000
+    },
+    {
+      "svtId": 202300,
+      "num": 101,
+      "priority": 1,
+      "skillId": 3002000
+    },
+    {
+      "svtId": 202300,
+      "num": 102,
+      "priority": 1,
+      "skillId": 3007000
+    }
+  ],
+  "mstSvtAppendPassiveSkillUnlock": [
+    {
+      "svtId": 202300,
+      "num": 100,
+      "itemIds": [
+        20230001
+      ],
+      "itemNums": [
+        120
+      ]
+    },
+    {
+      "svtId": 202300,
+      "num": 101,
+      "itemIds": [
+        20230001
+      ],
+      "itemNums": [
+        120
+      ]
+    },
+    {
+      "svtId": 202300,
+      "num": 102,
+      "itemIds": [
+        20230001
+      ],
+      "itemNums": [
+        120
+      ]
+    }
+  ],
+  "mstCombineAppendPassiveSkill": [
+    {
+      "svtId": 202300,
+      "num": 0,
+      "skillLv": 1,
+      "qp": 200000,
+      "itemIds": [
+        6002
+      ],
+      "itemNums": [
+        5
+      ]
+    },
+    {
+      "svtId": 202300,
+      "num": 0,
+      "skillLv": 2,
+      "qp": 400000,
+      "itemIds": [
+        6002
+      ],
+      "itemNums": [
+        12
+      ]
+    },
+    {
+      "svtId": 202300,
+      "num": 0,
+      "skillLv": 3,
+      "qp": 1200000,
+      "itemIds": [
+        6102
+      ],
+      "itemNums": [
+        5
+      ]
+    },
+    {
+      "svtId": 202300,
+      "num": 0,
+      "skillLv": 4,
+      "qp": 1600000,
+      "itemIds": [
+        6102,
+        6507
+      ],
+      "itemNums": [
+        12,
+        3
+      ]
+    },
+    {
+      "svtId": 202300,
+      "num": 0,
+      "skillLv": 5,
+      "qp": 4000000,
+      "itemIds": [
+        6202,
+        6507
+      ],
+      "itemNums": [
+        5,
+        6
+      ]
+    },
+    {
+      "svtId": 202300,
+      "num": 0,
+      "skillLv": 6,
+      "qp": 5000000,
+      "itemIds": [
+        6202,
+        6525
+      ],
+      "itemNums": [
+        12,
+        2
+      ]
+    },
+    {
+      "svtId": 202300,
+      "num": 0,
+      "skillLv": 7,
+      "qp": 10000000,
+      "itemIds": [
+        6525,
+        6534
+      ],
+      "itemNums": [
+        4,
+        18
+      ]
+    },
+    {
+      "svtId": 202300,
+      "num": 0,
+      "skillLv": 8,
+      "qp": 12000000,
+      "itemIds": [
+        6534,
+        6542
+      ],
+      "itemNums": [
+        54,
+        10
+      ]
+    },
+    {
+      "svtId": 202300,
+      "num": 0,
+      "skillLv": 9,
+      "qp": 20000000,
+      "itemIds": [
+        6999
+      ],
+      "itemNums": [
+        1
+      ]
+    }
+  ],
   "mstItem": [
     {
       "individuality": [],
@@ -3009,30 +3334,6 @@
       "eventId": 0,
       "eventGroupId": 0,
       "isPresent": false,
-      "id": 6202,
-      "name": "Secret Gem of Archer",
-      "detail": "\"Skill Up Material\"\nA bright stone glimmering with the immense power of an Archer.",
-      "imageId": 6202,
-      "bgImageId": 3,
-      "type": 11,
-      "unit": "",
-      "value": 0,
-      "sellQp": 2500,
-      "isSell": true,
-      "priority": 115,
-      "dropPriority": 6299,
-      "startedAt": 946684800,
-      "endedAt": 1910908800,
-      "useSkill": true,
-      "useAscension": false,
-      "useCostume": false
-    },
-    {
-      "individuality": [],
-      "script": {},
-      "eventId": 0,
-      "eventGroupId": 0,
-      "isPresent": false,
       "id": 6533,
       "name": "Stake of Wailing Night",
       "detail": "\"Skill Up & Ascension Material\"\nA stake driven into a corpse to prevent its reanimation.\nIt never rusts, and retains its luster by absorbing blood.\nIt can even pierce otherworldly beings that lurk in the dark of night.",
@@ -3045,6 +3346,30 @@
       "isSell": true,
       "priority": 207,
       "dropPriority": 8104,
+      "startedAt": 946684800,
+      "endedAt": 1910908800,
+      "useSkill": true,
+      "useAscension": true,
+      "useCostume": true
+    },
+    {
+      "individuality": [],
+      "script": {},
+      "eventId": 0,
+      "eventGroupId": 0,
+      "isPresent": false,
+      "id": 6534,
+      "name": "Mystic Gunpowder",
+      "detail": "\"Skill Up & Ascension Material\"\nCustom made gunpowder that ignites when the user focuses magical energy into it.\nSince it can generate a massive amount of firepower with only a small amount of magical energy, it's widely utilized as ammunition to hunt Demonic Beasts.",
+      "imageId": 6534,
+      "bgImageId": 1,
+      "type": 11,
+      "unit": "",
+      "value": 0,
+      "sellQp": 2500,
+      "isSell": true,
+      "priority": 208,
+      "dropPriority": 8105,
       "startedAt": 946684800,
       "endedAt": 1910908800,
       "useSkill": true,
@@ -3081,42 +3406,18 @@
       "eventId": 0,
       "eventGroupId": 0,
       "isPresent": false,
-      "id": 6505,
-      "name": "Void's Dust",
-      "detail": "\"Skill Up & Ascension Material\"\nDust that disperses when hollow shadows disappear.",
-      "imageId": 6505,
-      "bgImageId": 1,
-      "type": 11,
-      "unit": "",
-      "value": 0,
-      "sellQp": 2500,
-      "isSell": true,
-      "priority": 203,
-      "dropPriority": 8201,
-      "startedAt": 946684800,
-      "endedAt": 1910908800,
-      "useSkill": true,
-      "useAscension": true,
-      "useCostume": true
-    },
-    {
-      "individuality": [],
-      "script": {},
-      "eventId": 0,
-      "eventGroupId": 0,
-      "isPresent": false,
-      "id": 6507,
-      "name": "Claw of Chaos",
-      "detail": "\"Skill Up & Ascension Material\"\nThose wounded by this claw become prisoners of chaos.",
-      "imageId": 6507,
+      "id": 6542,
+      "name": "Egg of Truth",
+      "detail": "\"Skill Up & Ascension Material\"\nA sacred egg that is said to contain the truth of the world. Its shell is so tough that no being can break it.",
+      "imageId": 6542,
       "bgImageId": 3,
       "type": 11,
       "unit": "",
       "value": 0,
       "sellQp": 2500,
       "isSell": true,
-      "priority": 232,
-      "dropPriority": 8400,
+      "priority": 246,
+      "dropPriority": 8507,
       "startedAt": 946684800,
       "endedAt": 1910908800,
       "useSkill": true,
@@ -3129,22 +3430,22 @@
       "eventId": 0,
       "eventGroupId": 0,
       "isPresent": false,
-      "id": 6511,
-      "name": "Forbidden Page",
-      "detail": "\"Skill Up & Ascension Material\"\nA page which nobody should ever read.\nUsually mixed in as the first or last page.",
-      "imageId": 6511,
-      "bgImageId": 2,
+      "id": 6202,
+      "name": "Secret Gem of Archer",
+      "detail": "\"Skill Up Material\"\nA bright stone glimmering with the immense power of an Archer.",
+      "imageId": 6202,
+      "bgImageId": 3,
       "type": 11,
       "unit": "",
       "value": 0,
       "sellQp": 2500,
       "isSell": true,
-      "priority": 216,
-      "dropPriority": 8303,
+      "priority": 115,
+      "dropPriority": 6299,
       "startedAt": 946684800,
       "endedAt": 1910908800,
       "useSkill": true,
-      "useAscension": true,
+      "useAscension": false,
       "useCostume": false
     },
     {
@@ -3153,22 +3454,22 @@
       "eventId": 0,
       "eventGroupId": 0,
       "isPresent": false,
-      "id": 6002,
-      "name": "Gem of Archer",
-      "detail": "\"Skill Up Material\"\nA bright stone glimmering with the power of an Archer.",
-      "imageId": 6002,
-      "bgImageId": 1,
-      "type": 11,
+      "id": 7102,
+      "name": "Archer Monument",
+      "detail": "\"Ascension Material\"\nA monument in glory of the Archer class.",
+      "imageId": 7102,
+      "bgImageId": 3,
+      "type": 12,
       "unit": "",
       "value": 0,
-      "sellQp": 100,
+      "sellQp": 2500,
       "isSell": true,
-      "priority": 101,
-      "dropPriority": 6099,
+      "priority": 308,
+      "dropPriority": 5299,
       "startedAt": 946684800,
       "endedAt": 1910908800,
-      "useSkill": true,
-      "useAscension": false,
+      "useSkill": false,
+      "useAscension": true,
       "useCostume": false
     },
     {
@@ -3253,30 +3554,6 @@
       "eventId": 0,
       "eventGroupId": 0,
       "isPresent": false,
-      "id": 6520,
-      "name": "Tearstone of Blood",
-      "detail": "\"Skill Up & Ascension Material\"\nThe crystal of the tear shed by a giant eyeball-like creature when it dies.\nA strong curse is residing within this crystal.",
-      "imageId": 6520,
-      "bgImageId": 3,
-      "type": 11,
-      "unit": "",
-      "value": 0,
-      "sellQp": 2500,
-      "isSell": true,
-      "priority": 237,
-      "dropPriority": 8402,
-      "startedAt": 946684800,
-      "endedAt": 1910908800,
-      "useSkill": true,
-      "useAscension": true,
-      "useCostume": true
-    },
-    {
-      "individuality": [],
-      "script": {},
-      "eventId": 0,
-      "eventGroupId": 0,
-      "isPresent": false,
       "id": 7002,
       "name": "Archer Piece",
       "detail": "\"Ascension Material\"\nA piece signifying the Archer class.",
@@ -3294,6 +3571,150 @@
       "useSkill": false,
       "useAscension": true,
       "useCostume": false
+    },
+    {
+      "individuality": [],
+      "script": {},
+      "eventId": 0,
+      "eventGroupId": 0,
+      "isPresent": false,
+      "id": 6505,
+      "name": "Void's Dust",
+      "detail": "\"Skill Up & Ascension Material\"\nDust that disperses when hollow shadows disappear.",
+      "imageId": 6505,
+      "bgImageId": 1,
+      "type": 11,
+      "unit": "",
+      "value": 0,
+      "sellQp": 2500,
+      "isSell": true,
+      "priority": 203,
+      "dropPriority": 8201,
+      "startedAt": 946684800,
+      "endedAt": 1910908800,
+      "useSkill": true,
+      "useAscension": true,
+      "useCostume": true
+    },
+    {
+      "individuality": [],
+      "script": {},
+      "eventId": 0,
+      "eventGroupId": 0,
+      "isPresent": false,
+      "id": 6507,
+      "name": "Claw of Chaos",
+      "detail": "\"Skill Up & Ascension Material\"\nThose wounded by this claw become prisoners of chaos.",
+      "imageId": 6507,
+      "bgImageId": 3,
+      "type": 11,
+      "unit": "",
+      "value": 0,
+      "sellQp": 2500,
+      "isSell": true,
+      "priority": 232,
+      "dropPriority": 8400,
+      "startedAt": 946684800,
+      "endedAt": 1910908800,
+      "useSkill": true,
+      "useAscension": true,
+      "useCostume": true
+    },
+    {
+      "individuality": [],
+      "script": {},
+      "eventId": 0,
+      "eventGroupId": 0,
+      "isPresent": false,
+      "id": 6511,
+      "name": "Forbidden Page",
+      "detail": "\"Skill Up & Ascension Material\"\nA page which nobody should ever read.\nUsually mixed in as the first or last page.",
+      "imageId": 6511,
+      "bgImageId": 2,
+      "type": 11,
+      "unit": "",
+      "value": 0,
+      "sellQp": 2500,
+      "isSell": true,
+      "priority": 216,
+      "dropPriority": 8303,
+      "startedAt": 946684800,
+      "endedAt": 1910908800,
+      "useSkill": true,
+      "useAscension": true,
+      "useCostume": false
+    },
+    {
+      "individuality": [],
+      "script": {},
+      "eventId": 0,
+      "eventGroupId": 0,
+      "isPresent": false,
+      "id": 20230001,
+      "name": "Servant Coin",
+      "detail": "\"Servant Enhancement Material\"\n A shard of a Servant's Spirit Origin",
+      "imageId": 202300,
+      "bgImageId": 2,
+      "type": 29,
+      "unit": "",
+      "value": 202300,
+      "sellQp": -1,
+      "isSell": false,
+      "priority": 57,
+      "dropPriority": 1003,
+      "startedAt": 946684800,
+      "endedAt": 1910908800,
+      "useSkill": false,
+      "useAscension": false,
+      "useCostume": false
+    },
+    {
+      "individuality": [],
+      "script": {},
+      "eventId": 0,
+      "eventGroupId": 0,
+      "isPresent": false,
+      "id": 6002,
+      "name": "Gem of Archer",
+      "detail": "\"Skill Up Material\"\nA bright stone glimmering with the power of an Archer.",
+      "imageId": 6002,
+      "bgImageId": 1,
+      "type": 11,
+      "unit": "",
+      "value": 0,
+      "sellQp": 100,
+      "isSell": true,
+      "priority": 101,
+      "dropPriority": 6099,
+      "startedAt": 946684800,
+      "endedAt": 1910908800,
+      "useSkill": true,
+      "useAscension": false,
+      "useCostume": false
+    },
+    {
+      "individuality": [],
+      "script": {},
+      "eventId": 0,
+      "eventGroupId": 0,
+      "isPresent": false,
+      "id": 6520,
+      "name": "Tearstone of Blood",
+      "detail": "\"Skill Up & Ascension Material\"\nThe crystal of the tear shed by a giant eyeball-like creature when it dies.\nA strong curse is residing within this crystal.",
+      "imageId": 6520,
+      "bgImageId": 3,
+      "type": 11,
+      "unit": "",
+      "value": 0,
+      "sellQp": 2500,
+      "isSell": true,
+      "priority": 237,
+      "dropPriority": 8402,
+      "startedAt": 946684800,
+      "endedAt": 1910908800,
+      "useSkill": true,
+      "useAscension": true,
+      "useCostume": true
     },
     {
       "individuality": [],
@@ -3325,30 +3746,6 @@
       "eventId": 0,
       "eventGroupId": 0,
       "isPresent": false,
-      "id": 7102,
-      "name": "Archer Monument",
-      "detail": "\"Ascension Material\"\nA monument in glory of the Archer class.",
-      "imageId": 7102,
-      "bgImageId": 3,
-      "type": 12,
-      "unit": "",
-      "value": 0,
-      "sellQp": 2500,
-      "isSell": true,
-      "priority": 308,
-      "dropPriority": 5299,
-      "startedAt": 946684800,
-      "endedAt": 1910908800,
-      "useSkill": false,
-      "useAscension": true,
-      "useCostume": false
-    },
-    {
-      "individuality": [],
-      "script": {},
-      "eventId": 0,
-      "eventGroupId": 0,
-      "isPresent": false,
       "id": 6527,
       "name": "Deadly Poisonous Needle",
       "detail": "\"Skill Up & Ascension Material\"\nIt is said that anyone who is infected by this poison will not die immediately, but experience multiple deaths until their soul itself rots away. ",
@@ -3369,6 +3766,11 @@
     }
   ],
   "mstCommonRelease": [],
+  "mstSvtCoin": {
+    "svtId": 202300,
+    "summonNum": 90,
+    "itemId": 20230001
+  },
   "mstCv": {
     "id": 65,
     "name": "Takaya Hashi",
@@ -3983,8 +4385,128 @@
     {
       "type": 10,
       "lv": 100,
-      "exp": 21988000,
+      "exp": 40623000,
       "curve": 1112
+    },
+    {
+      "type": 10,
+      "lv": 101,
+      "exp": 60934500,
+      "curve": 1123
+    },
+    {
+      "type": 10,
+      "lv": 102,
+      "exp": 81246000,
+      "curve": 1134
+    },
+    {
+      "type": 10,
+      "lv": 103,
+      "exp": 101557500,
+      "curve": 1146
+    },
+    {
+      "type": 10,
+      "lv": 104,
+      "exp": 121869000,
+      "curve": 1157
+    },
+    {
+      "type": 10,
+      "lv": 105,
+      "exp": 142180500,
+      "curve": 1168
+    },
+    {
+      "type": 10,
+      "lv": 106,
+      "exp": 162492000,
+      "curve": 1179
+    },
+    {
+      "type": 10,
+      "lv": 107,
+      "exp": 182803500,
+      "curve": 1191
+    },
+    {
+      "type": 10,
+      "lv": 108,
+      "exp": 203115000,
+      "curve": 1202
+    },
+    {
+      "type": 10,
+      "lv": 109,
+      "exp": 223426500,
+      "curve": 1213
+    },
+    {
+      "type": 10,
+      "lv": 110,
+      "exp": 243738000,
+      "curve": 1224
+    },
+    {
+      "type": 10,
+      "lv": 111,
+      "exp": 264049500,
+      "curve": 1235
+    },
+    {
+      "type": 10,
+      "lv": 112,
+      "exp": 284361000,
+      "curve": 1247
+    },
+    {
+      "type": 10,
+      "lv": 113,
+      "exp": 304672500,
+      "curve": 1258
+    },
+    {
+      "type": 10,
+      "lv": 114,
+      "exp": 324984000,
+      "curve": 1269
+    },
+    {
+      "type": 10,
+      "lv": 115,
+      "exp": 345295500,
+      "curve": 1280
+    },
+    {
+      "type": 10,
+      "lv": 116,
+      "exp": 365607000,
+      "curve": 1292
+    },
+    {
+      "type": 10,
+      "lv": 117,
+      "exp": 385918500,
+      "curve": 1303
+    },
+    {
+      "type": 10,
+      "lv": 118,
+      "exp": 406230000,
+      "curve": 1314
+    },
+    {
+      "type": 10,
+      "lv": 119,
+      "exp": 426541500,
+      "curve": 1325
+    },
+    {
+      "type": 10,
+      "lv": 120,
+      "exp": 426541500,
+      "curve": 1337
     }
   ],
   "mstFriendship": [

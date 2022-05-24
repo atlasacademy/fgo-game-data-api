@@ -1993,6 +1993,7 @@
       ],
       "mstSvtSkill": [
         {
+          "script": {},
           "strengthStatus": 0,
           "svtId": 202900,
           "num": 1,
@@ -3753,6 +3754,7 @@
       ],
       "mstSvtSkill": [
         {
+          "script": {},
           "strengthStatus": 0,
           "svtId": 202900,
           "num": 2,
@@ -5053,6 +5055,7 @@
       ],
       "mstSvtSkill": [
         {
+          "script": {},
           "strengthStatus": 0,
           "svtId": 202900,
           "num": 3,
@@ -6737,6 +6740,7 @@
           ],
           "treaureDeviceId": 202901,
           "lv": 1,
+          "script": {},
           "gaugeCount": 1,
           "detailId": 202901,
           "tdPoint": 59,
@@ -6888,6 +6892,7 @@
           ],
           "treaureDeviceId": 202901,
           "lv": 2,
+          "script": {},
           "gaugeCount": 2,
           "detailId": 202901,
           "tdPoint": 59,
@@ -7039,6 +7044,7 @@
           ],
           "treaureDeviceId": 202901,
           "lv": 3,
+          "script": {},
           "gaugeCount": 2,
           "detailId": 202901,
           "tdPoint": 59,
@@ -7190,6 +7196,7 @@
           ],
           "treaureDeviceId": 202901,
           "lv": 4,
+          "script": {},
           "gaugeCount": 2,
           "detailId": 202901,
           "tdPoint": 59,
@@ -7341,6 +7348,7 @@
           ],
           "treaureDeviceId": 202901,
           "lv": 5,
+          "script": {},
           "gaugeCount": 3,
           "detailId": 202901,
           "tdPoint": 59,
@@ -7362,7 +7370,10 @@
       ],
       "svtId": 202900,
       "idx": 8027301,
-      "limitCount": -1
+      "limitCount": -1,
+      "condType": 0,
+      "condId": 0,
+      "condNum": 0
     }
   ],
   "mstSvtCard": [
@@ -8424,6 +8435,126 @@
       "lv": 100,
       "value": 12990,
       "createdAt": 946684800
+    },
+    {
+      "id": 4,
+      "lv": 101,
+      "value": 13000,
+      "createdAt": 946684800
+    },
+    {
+      "id": 4,
+      "lv": 102,
+      "value": 13010,
+      "createdAt": 946684800
+    },
+    {
+      "id": 4,
+      "lv": 103,
+      "value": 13020,
+      "createdAt": 946684800
+    },
+    {
+      "id": 4,
+      "lv": 104,
+      "value": 13030,
+      "createdAt": 946684800
+    },
+    {
+      "id": 4,
+      "lv": 105,
+      "value": 13040,
+      "createdAt": 946684800
+    },
+    {
+      "id": 4,
+      "lv": 106,
+      "value": 13050,
+      "createdAt": 946684800
+    },
+    {
+      "id": 4,
+      "lv": 107,
+      "value": 13060,
+      "createdAt": 946684800
+    },
+    {
+      "id": 4,
+      "lv": 108,
+      "value": 13070,
+      "createdAt": 946684800
+    },
+    {
+      "id": 4,
+      "lv": 109,
+      "value": 13080,
+      "createdAt": 946684800
+    },
+    {
+      "id": 4,
+      "lv": 110,
+      "value": 13090,
+      "createdAt": 946684800
+    },
+    {
+      "id": 4,
+      "lv": 111,
+      "value": 13100,
+      "createdAt": 946684800
+    },
+    {
+      "id": 4,
+      "lv": 112,
+      "value": 13110,
+      "createdAt": 946684800
+    },
+    {
+      "id": 4,
+      "lv": 113,
+      "value": 13120,
+      "createdAt": 946684800
+    },
+    {
+      "id": 4,
+      "lv": 114,
+      "value": 13130,
+      "createdAt": 946684800
+    },
+    {
+      "id": 4,
+      "lv": 115,
+      "value": 13140,
+      "createdAt": 946684800
+    },
+    {
+      "id": 4,
+      "lv": 116,
+      "value": 13150,
+      "createdAt": 946684800
+    },
+    {
+      "id": 4,
+      "lv": 117,
+      "value": 13160,
+      "createdAt": 946684800
+    },
+    {
+      "id": 4,
+      "lv": 118,
+      "value": 13170,
+      "createdAt": 946684800
+    },
+    {
+      "id": 4,
+      "lv": 119,
+      "value": 13171,
+      "createdAt": 946684800
+    },
+    {
+      "id": 4,
+      "lv": 120,
+      "value": 13172,
+      "createdAt": 946684800
     }
   ],
   "mstSvtLimitAdd": [
@@ -8555,6 +8686,7 @@
       "condFriendshipRank": 5,
       "eventId": 80038,
       "flag": 0,
+      "commonReleaseId": 0,
       "startedAt": 1482415200,
       "endedAt": 1893456000
     },
@@ -8570,6 +8702,7 @@
       "condFriendshipRank": 6,
       "eventId": 80038,
       "flag": 0,
+      "commonReleaseId": 0,
       "startedAt": 1482415200,
       "endedAt": 1893456000
     },
@@ -8585,6 +8718,7 @@
       "condFriendshipRank": 7,
       "eventId": 80038,
       "flag": 0,
+      "commonReleaseId": 0,
       "startedAt": 1482415200,
       "endedAt": 1893456000
     },
@@ -8600,6 +8734,7 @@
       "condFriendshipRank": 8,
       "eventId": 80038,
       "flag": 0,
+      "commonReleaseId": 0,
       "startedAt": 1482415200,
       "endedAt": 1893456000
     },
@@ -8615,6 +8750,7 @@
       "condFriendshipRank": 9,
       "eventId": 80038,
       "flag": 0,
+      "commonReleaseId": 0,
       "startedAt": 1482415200,
       "endedAt": 1893456000
     },
@@ -8630,6 +8766,7 @@
       "condFriendshipRank": 10,
       "eventId": 80038,
       "flag": 0,
+      "commonReleaseId": 0,
       "startedAt": 1482415200,
       "endedAt": 1893456000
     },
@@ -8645,6 +8782,7 @@
       "condFriendshipRank": 0,
       "eventId": 80044,
       "flag": 0,
+      "commonReleaseId": 0,
       "startedAt": 1487944800,
       "endedAt": 1893456000
     },
@@ -8660,6 +8798,7 @@
       "condFriendshipRank": 0,
       "eventId": 80059,
       "flag": 0,
+      "commonReleaseId": 0,
       "startedAt": 1498759200,
       "endedAt": 1893456000
     },
@@ -8675,6 +8814,7 @@
       "condFriendshipRank": 0,
       "eventId": 80072,
       "flag": 0,
+      "commonReleaseId": 0,
       "startedAt": 1508018400,
       "endedAt": 1893456000
     }
@@ -9566,10 +9706,1878 @@
       ]
     }
   ],
-  "mstSvtAppendPassiveSkill": [],
-  "expandedAppendPassive": [],
-  "mstSvtAppendPassiveSkillUnlock": [],
-  "mstCombineAppendPassiveSkill": [],
+  "mstSvtAppendPassiveSkill": [
+    {
+      "svtId": 202900,
+      "num": 100,
+      "priority": 1,
+      "skillId": 3001000
+    },
+    {
+      "svtId": 202900,
+      "num": 101,
+      "priority": 1,
+      "skillId": 3002000
+    },
+    {
+      "svtId": 202900,
+      "num": 102,
+      "priority": 1,
+      "skillId": 3008000
+    }
+  ],
+  "expandedAppendPassive": [
+    {
+      "mstSkill": {
+        "effectList": [],
+        "actIndividuality": [],
+        "script": {},
+        "id": 3001000,
+        "type": 2,
+        "name": "Extra Attack Boost",
+        "ruby": "",
+        "maxLv": 10,
+        "iconId": 301,
+        "motion": 101
+      },
+      "mstSkillDetail": [
+        {
+          "id": 3001000,
+          "detail": "Increase Extra Attack Card's effectiveness by 30% for yourself [{0}]",
+          "detailShort": "Increase Extra Attack Card's effectiveness by 30% for yourself [{0}]"
+        }
+      ],
+      "mstSvtSkill": [],
+      "mstSkillAdd": [],
+      "mstCommonRelease": [],
+      "mstSkillLv": [
+        {
+          "funcId": [
+            30003
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [
+                  30001
+                ],
+                "expandedVals": [
+                  {
+                    "mstBuff": {
+                      "vals": [
+                        3004,
+                        3006
+                      ],
+                      "tvals": [
+                        5000,
+                        4004
+                      ],
+                      "ckSelfIndv": [
+                        4004
+                      ],
+                      "ckOpIndv": [],
+                      "script": {},
+                      "id": 30001,
+                      "buffGroup": 0,
+                      "type": 52,
+                      "name": "Extra Attack Up",
+                      "detail": "Increase Extra Attack Card effectiveness",
+                      "iconId": 302,
+                      "maxRate": 5000
+                    }
+                  }
+                ],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  332
+                ],
+                "popupTextColor": 2,
+                "id": 30003,
+                "cond": 0,
+                "funcType": 16,
+                "targetType": 0,
+                "applyTarget": 3,
+                "popupIconId": 302,
+                "popupText": "Extra Attack Up"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,-1,-1,300,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3001000,
+          "lv": 1,
+          "chargeTurn": 0,
+          "skillDetailId": 3001000,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30003
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [
+                  30001
+                ],
+                "expandedVals": [
+                  {
+                    "mstBuff": {
+                      "vals": [
+                        3004,
+                        3006
+                      ],
+                      "tvals": [
+                        5000,
+                        4004
+                      ],
+                      "ckSelfIndv": [
+                        4004
+                      ],
+                      "ckOpIndv": [],
+                      "script": {},
+                      "id": 30001,
+                      "buffGroup": 0,
+                      "type": 52,
+                      "name": "Extra Attack Up",
+                      "detail": "Increase Extra Attack Card effectiveness",
+                      "iconId": 302,
+                      "maxRate": 5000
+                    }
+                  }
+                ],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  332
+                ],
+                "popupTextColor": 2,
+                "id": 30003,
+                "cond": 0,
+                "funcType": 16,
+                "targetType": 0,
+                "applyTarget": 3,
+                "popupIconId": 302,
+                "popupText": "Extra Attack Up"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,-1,-1,320,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3001000,
+          "lv": 2,
+          "chargeTurn": 0,
+          "skillDetailId": 3001001,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30003
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [
+                  30001
+                ],
+                "expandedVals": [
+                  {
+                    "mstBuff": {
+                      "vals": [
+                        3004,
+                        3006
+                      ],
+                      "tvals": [
+                        5000,
+                        4004
+                      ],
+                      "ckSelfIndv": [
+                        4004
+                      ],
+                      "ckOpIndv": [],
+                      "script": {},
+                      "id": 30001,
+                      "buffGroup": 0,
+                      "type": 52,
+                      "name": "Extra Attack Up",
+                      "detail": "Increase Extra Attack Card effectiveness",
+                      "iconId": 302,
+                      "maxRate": 5000
+                    }
+                  }
+                ],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  332
+                ],
+                "popupTextColor": 2,
+                "id": 30003,
+                "cond": 0,
+                "funcType": 16,
+                "targetType": 0,
+                "applyTarget": 3,
+                "popupIconId": 302,
+                "popupText": "Extra Attack Up"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,-1,-1,340,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3001000,
+          "lv": 3,
+          "chargeTurn": 0,
+          "skillDetailId": 3001002,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30003
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [
+                  30001
+                ],
+                "expandedVals": [
+                  {
+                    "mstBuff": {
+                      "vals": [
+                        3004,
+                        3006
+                      ],
+                      "tvals": [
+                        5000,
+                        4004
+                      ],
+                      "ckSelfIndv": [
+                        4004
+                      ],
+                      "ckOpIndv": [],
+                      "script": {},
+                      "id": 30001,
+                      "buffGroup": 0,
+                      "type": 52,
+                      "name": "Extra Attack Up",
+                      "detail": "Increase Extra Attack Card effectiveness",
+                      "iconId": 302,
+                      "maxRate": 5000
+                    }
+                  }
+                ],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  332
+                ],
+                "popupTextColor": 2,
+                "id": 30003,
+                "cond": 0,
+                "funcType": 16,
+                "targetType": 0,
+                "applyTarget": 3,
+                "popupIconId": 302,
+                "popupText": "Extra Attack Up"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,-1,-1,360,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3001000,
+          "lv": 4,
+          "chargeTurn": 0,
+          "skillDetailId": 3001003,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30003
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [
+                  30001
+                ],
+                "expandedVals": [
+                  {
+                    "mstBuff": {
+                      "vals": [
+                        3004,
+                        3006
+                      ],
+                      "tvals": [
+                        5000,
+                        4004
+                      ],
+                      "ckSelfIndv": [
+                        4004
+                      ],
+                      "ckOpIndv": [],
+                      "script": {},
+                      "id": 30001,
+                      "buffGroup": 0,
+                      "type": 52,
+                      "name": "Extra Attack Up",
+                      "detail": "Increase Extra Attack Card effectiveness",
+                      "iconId": 302,
+                      "maxRate": 5000
+                    }
+                  }
+                ],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  332
+                ],
+                "popupTextColor": 2,
+                "id": 30003,
+                "cond": 0,
+                "funcType": 16,
+                "targetType": 0,
+                "applyTarget": 3,
+                "popupIconId": 302,
+                "popupText": "Extra Attack Up"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,-1,-1,380,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3001000,
+          "lv": 5,
+          "chargeTurn": 0,
+          "skillDetailId": 3001004,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30003
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [
+                  30001
+                ],
+                "expandedVals": [
+                  {
+                    "mstBuff": {
+                      "vals": [
+                        3004,
+                        3006
+                      ],
+                      "tvals": [
+                        5000,
+                        4004
+                      ],
+                      "ckSelfIndv": [
+                        4004
+                      ],
+                      "ckOpIndv": [],
+                      "script": {},
+                      "id": 30001,
+                      "buffGroup": 0,
+                      "type": 52,
+                      "name": "Extra Attack Up",
+                      "detail": "Increase Extra Attack Card effectiveness",
+                      "iconId": 302,
+                      "maxRate": 5000
+                    }
+                  }
+                ],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  332
+                ],
+                "popupTextColor": 2,
+                "id": 30003,
+                "cond": 0,
+                "funcType": 16,
+                "targetType": 0,
+                "applyTarget": 3,
+                "popupIconId": 302,
+                "popupText": "Extra Attack Up"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,-1,-1,400,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3001000,
+          "lv": 6,
+          "chargeTurn": 0,
+          "skillDetailId": 3001005,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30003
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [
+                  30001
+                ],
+                "expandedVals": [
+                  {
+                    "mstBuff": {
+                      "vals": [
+                        3004,
+                        3006
+                      ],
+                      "tvals": [
+                        5000,
+                        4004
+                      ],
+                      "ckSelfIndv": [
+                        4004
+                      ],
+                      "ckOpIndv": [],
+                      "script": {},
+                      "id": 30001,
+                      "buffGroup": 0,
+                      "type": 52,
+                      "name": "Extra Attack Up",
+                      "detail": "Increase Extra Attack Card effectiveness",
+                      "iconId": 302,
+                      "maxRate": 5000
+                    }
+                  }
+                ],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  332
+                ],
+                "popupTextColor": 2,
+                "id": 30003,
+                "cond": 0,
+                "funcType": 16,
+                "targetType": 0,
+                "applyTarget": 3,
+                "popupIconId": 302,
+                "popupText": "Extra Attack Up"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,-1,-1,420,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3001000,
+          "lv": 7,
+          "chargeTurn": 0,
+          "skillDetailId": 3001006,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30003
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [
+                  30001
+                ],
+                "expandedVals": [
+                  {
+                    "mstBuff": {
+                      "vals": [
+                        3004,
+                        3006
+                      ],
+                      "tvals": [
+                        5000,
+                        4004
+                      ],
+                      "ckSelfIndv": [
+                        4004
+                      ],
+                      "ckOpIndv": [],
+                      "script": {},
+                      "id": 30001,
+                      "buffGroup": 0,
+                      "type": 52,
+                      "name": "Extra Attack Up",
+                      "detail": "Increase Extra Attack Card effectiveness",
+                      "iconId": 302,
+                      "maxRate": 5000
+                    }
+                  }
+                ],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  332
+                ],
+                "popupTextColor": 2,
+                "id": 30003,
+                "cond": 0,
+                "funcType": 16,
+                "targetType": 0,
+                "applyTarget": 3,
+                "popupIconId": 302,
+                "popupText": "Extra Attack Up"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,-1,-1,440,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3001000,
+          "lv": 8,
+          "chargeTurn": 0,
+          "skillDetailId": 3001007,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30003
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [
+                  30001
+                ],
+                "expandedVals": [
+                  {
+                    "mstBuff": {
+                      "vals": [
+                        3004,
+                        3006
+                      ],
+                      "tvals": [
+                        5000,
+                        4004
+                      ],
+                      "ckSelfIndv": [
+                        4004
+                      ],
+                      "ckOpIndv": [],
+                      "script": {},
+                      "id": 30001,
+                      "buffGroup": 0,
+                      "type": 52,
+                      "name": "Extra Attack Up",
+                      "detail": "Increase Extra Attack Card effectiveness",
+                      "iconId": 302,
+                      "maxRate": 5000
+                    }
+                  }
+                ],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  332
+                ],
+                "popupTextColor": 2,
+                "id": 30003,
+                "cond": 0,
+                "funcType": 16,
+                "targetType": 0,
+                "applyTarget": 3,
+                "popupIconId": 302,
+                "popupText": "Extra Attack Up"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,-1,-1,460,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3001000,
+          "lv": 9,
+          "chargeTurn": 0,
+          "skillDetailId": 3001008,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30003
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [
+                  30001
+                ],
+                "expandedVals": [
+                  {
+                    "mstBuff": {
+                      "vals": [
+                        3004,
+                        3006
+                      ],
+                      "tvals": [
+                        5000,
+                        4004
+                      ],
+                      "ckSelfIndv": [
+                        4004
+                      ],
+                      "ckOpIndv": [],
+                      "script": {},
+                      "id": 30001,
+                      "buffGroup": 0,
+                      "type": 52,
+                      "name": "Extra Attack Up",
+                      "detail": "Increase Extra Attack Card effectiveness",
+                      "iconId": 302,
+                      "maxRate": 5000
+                    }
+                  }
+                ],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  332
+                ],
+                "popupTextColor": 2,
+                "id": 30003,
+                "cond": 0,
+                "funcType": 16,
+                "targetType": 0,
+                "applyTarget": 3,
+                "popupIconId": 302,
+                "popupText": "Extra Attack Up"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,-1,-1,500,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3001000,
+          "lv": 10,
+          "chargeTurn": 0,
+          "skillDetailId": 3001009,
+          "priority": 0
+        }
+      ]
+    },
+    {
+      "mstSkill": {
+        "effectList": [],
+        "actIndividuality": [],
+        "script": {},
+        "id": 3002000,
+        "type": 2,
+        "name": "Load Magical Energy",
+        "ruby": "",
+        "maxLv": 10,
+        "iconId": 601,
+        "motion": 101
+      },
+      "mstSkillDetail": [
+        {
+          "id": 3002000,
+          "detail": "Begin battle with NP charged at 10% for yourself [{0}]",
+          "detailShort": "Begin battle with NP charged at 10% for yourself [{0}]"
+        }
+      ],
+      "mstSvtSkill": [],
+      "mstSkillAdd": [],
+      "mstCommonRelease": [],
+      "mstSkillLv": [
+        {
+          "funcId": [
+            30005
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [],
+                "expandedVals": [],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  327
+                ],
+                "popupTextColor": 2,
+                "id": 30005,
+                "cond": 0,
+                "funcType": 7,
+                "targetType": 0,
+                "applyTarget": 1,
+                "popupIconId": 0,
+                "popupText": "NP Gain"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,1000,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3002000,
+          "lv": 1,
+          "chargeTurn": 0,
+          "skillDetailId": 3002000,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30005
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [],
+                "expandedVals": [],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  327
+                ],
+                "popupTextColor": 2,
+                "id": 30005,
+                "cond": 0,
+                "funcType": 7,
+                "targetType": 0,
+                "applyTarget": 1,
+                "popupIconId": 0,
+                "popupText": "NP Gain"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,1100,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3002000,
+          "lv": 2,
+          "chargeTurn": 0,
+          "skillDetailId": 3002001,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30005
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [],
+                "expandedVals": [],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  327
+                ],
+                "popupTextColor": 2,
+                "id": 30005,
+                "cond": 0,
+                "funcType": 7,
+                "targetType": 0,
+                "applyTarget": 1,
+                "popupIconId": 0,
+                "popupText": "NP Gain"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,1200,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3002000,
+          "lv": 3,
+          "chargeTurn": 0,
+          "skillDetailId": 3002002,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30005
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [],
+                "expandedVals": [],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  327
+                ],
+                "popupTextColor": 2,
+                "id": 30005,
+                "cond": 0,
+                "funcType": 7,
+                "targetType": 0,
+                "applyTarget": 1,
+                "popupIconId": 0,
+                "popupText": "NP Gain"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,1300,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3002000,
+          "lv": 4,
+          "chargeTurn": 0,
+          "skillDetailId": 3002003,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30005
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [],
+                "expandedVals": [],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  327
+                ],
+                "popupTextColor": 2,
+                "id": 30005,
+                "cond": 0,
+                "funcType": 7,
+                "targetType": 0,
+                "applyTarget": 1,
+                "popupIconId": 0,
+                "popupText": "NP Gain"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,1400,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3002000,
+          "lv": 5,
+          "chargeTurn": 0,
+          "skillDetailId": 3002004,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30005
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [],
+                "expandedVals": [],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  327
+                ],
+                "popupTextColor": 2,
+                "id": 30005,
+                "cond": 0,
+                "funcType": 7,
+                "targetType": 0,
+                "applyTarget": 1,
+                "popupIconId": 0,
+                "popupText": "NP Gain"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,1500,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3002000,
+          "lv": 6,
+          "chargeTurn": 0,
+          "skillDetailId": 3002005,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30005
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [],
+                "expandedVals": [],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  327
+                ],
+                "popupTextColor": 2,
+                "id": 30005,
+                "cond": 0,
+                "funcType": 7,
+                "targetType": 0,
+                "applyTarget": 1,
+                "popupIconId": 0,
+                "popupText": "NP Gain"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,1600,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3002000,
+          "lv": 7,
+          "chargeTurn": 0,
+          "skillDetailId": 3002006,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30005
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [],
+                "expandedVals": [],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  327
+                ],
+                "popupTextColor": 2,
+                "id": 30005,
+                "cond": 0,
+                "funcType": 7,
+                "targetType": 0,
+                "applyTarget": 1,
+                "popupIconId": 0,
+                "popupText": "NP Gain"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,1700,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3002000,
+          "lv": 8,
+          "chargeTurn": 0,
+          "skillDetailId": 3002007,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30005
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [],
+                "expandedVals": [],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  327
+                ],
+                "popupTextColor": 2,
+                "id": 30005,
+                "cond": 0,
+                "funcType": 7,
+                "targetType": 0,
+                "applyTarget": 1,
+                "popupIconId": 0,
+                "popupText": "NP Gain"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,1800,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3002000,
+          "lv": 9,
+          "chargeTurn": 0,
+          "skillDetailId": 3002008,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30005
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [],
+                "expandedVals": [],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  327
+                ],
+                "popupTextColor": 2,
+                "id": 30005,
+                "cond": 0,
+                "funcType": 7,
+                "targetType": 0,
+                "applyTarget": 1,
+                "popupIconId": 0,
+                "popupText": "NP Gain"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,2000,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3002000,
+          "lv": 10,
+          "chargeTurn": 0,
+          "skillDetailId": 3002009,
+          "priority": 0
+        }
+      ]
+    },
+    {
+      "mstSkill": {
+        "effectList": [],
+        "actIndividuality": [],
+        "script": {},
+        "id": 3008000,
+        "type": 2,
+        "name": "Anti-Assassin (ATK Up)",
+        "ruby": "",
+        "maxLv": 10,
+        "iconId": 300,
+        "motion": 101
+      },
+      "mstSkillDetail": [
+        {
+          "id": 3008000,
+          "detail": "Increase ATK against [Assassin] class by 20% for yourself [{0}]",
+          "detailShort": "Increase ATK against [Assassin] class by 20% for yourself [{0}]"
+        }
+      ],
+      "mstSvtSkill": [],
+      "mstSkillAdd": [],
+      "mstCommonRelease": [],
+      "mstSkillLv": [
+        {
+          "funcId": [
+            30030
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [
+                  30009
+                ],
+                "expandedVals": [
+                  {
+                    "mstBuff": {
+                      "vals": [
+                        3004,
+                        3006,
+                        3027
+                      ],
+                      "tvals": [
+                        105
+                      ],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [
+                        105
+                      ],
+                      "script": {},
+                      "id": 30009,
+                      "buffGroup": 0,
+                      "type": 9,
+                      "name": "ATK Up (Anti-Assassin)",
+                      "detail": "Increase ATK against [Assassin] class",
+                      "iconId": 300,
+                      "maxRate": 5000
+                    }
+                  }
+                ],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  332
+                ],
+                "popupTextColor": 2,
+                "id": 30030,
+                "cond": 0,
+                "funcType": 16,
+                "targetType": 0,
+                "applyTarget": 3,
+                "popupIconId": 300,
+                "popupText": "ATK Up (Anti-Assassin)"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,-1,-1,200,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3008000,
+          "lv": 1,
+          "chargeTurn": 0,
+          "skillDetailId": 3008000,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30030
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [
+                  30009
+                ],
+                "expandedVals": [
+                  {
+                    "mstBuff": {
+                      "vals": [
+                        3004,
+                        3006,
+                        3027
+                      ],
+                      "tvals": [
+                        105
+                      ],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [
+                        105
+                      ],
+                      "script": {},
+                      "id": 30009,
+                      "buffGroup": 0,
+                      "type": 9,
+                      "name": "ATK Up (Anti-Assassin)",
+                      "detail": "Increase ATK against [Assassin] class",
+                      "iconId": 300,
+                      "maxRate": 5000
+                    }
+                  }
+                ],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  332
+                ],
+                "popupTextColor": 2,
+                "id": 30030,
+                "cond": 0,
+                "funcType": 16,
+                "targetType": 0,
+                "applyTarget": 3,
+                "popupIconId": 300,
+                "popupText": "ATK Up (Anti-Assassin)"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,-1,-1,210,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3008000,
+          "lv": 2,
+          "chargeTurn": 0,
+          "skillDetailId": 3008001,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30030
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [
+                  30009
+                ],
+                "expandedVals": [
+                  {
+                    "mstBuff": {
+                      "vals": [
+                        3004,
+                        3006,
+                        3027
+                      ],
+                      "tvals": [
+                        105
+                      ],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [
+                        105
+                      ],
+                      "script": {},
+                      "id": 30009,
+                      "buffGroup": 0,
+                      "type": 9,
+                      "name": "ATK Up (Anti-Assassin)",
+                      "detail": "Increase ATK against [Assassin] class",
+                      "iconId": 300,
+                      "maxRate": 5000
+                    }
+                  }
+                ],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  332
+                ],
+                "popupTextColor": 2,
+                "id": 30030,
+                "cond": 0,
+                "funcType": 16,
+                "targetType": 0,
+                "applyTarget": 3,
+                "popupIconId": 300,
+                "popupText": "ATK Up (Anti-Assassin)"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,-1,-1,220,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3008000,
+          "lv": 3,
+          "chargeTurn": 0,
+          "skillDetailId": 3008002,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30030
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [
+                  30009
+                ],
+                "expandedVals": [
+                  {
+                    "mstBuff": {
+                      "vals": [
+                        3004,
+                        3006,
+                        3027
+                      ],
+                      "tvals": [
+                        105
+                      ],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [
+                        105
+                      ],
+                      "script": {},
+                      "id": 30009,
+                      "buffGroup": 0,
+                      "type": 9,
+                      "name": "ATK Up (Anti-Assassin)",
+                      "detail": "Increase ATK against [Assassin] class",
+                      "iconId": 300,
+                      "maxRate": 5000
+                    }
+                  }
+                ],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  332
+                ],
+                "popupTextColor": 2,
+                "id": 30030,
+                "cond": 0,
+                "funcType": 16,
+                "targetType": 0,
+                "applyTarget": 3,
+                "popupIconId": 300,
+                "popupText": "ATK Up (Anti-Assassin)"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,-1,-1,230,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3008000,
+          "lv": 4,
+          "chargeTurn": 0,
+          "skillDetailId": 3008003,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30030
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [
+                  30009
+                ],
+                "expandedVals": [
+                  {
+                    "mstBuff": {
+                      "vals": [
+                        3004,
+                        3006,
+                        3027
+                      ],
+                      "tvals": [
+                        105
+                      ],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [
+                        105
+                      ],
+                      "script": {},
+                      "id": 30009,
+                      "buffGroup": 0,
+                      "type": 9,
+                      "name": "ATK Up (Anti-Assassin)",
+                      "detail": "Increase ATK against [Assassin] class",
+                      "iconId": 300,
+                      "maxRate": 5000
+                    }
+                  }
+                ],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  332
+                ],
+                "popupTextColor": 2,
+                "id": 30030,
+                "cond": 0,
+                "funcType": 16,
+                "targetType": 0,
+                "applyTarget": 3,
+                "popupIconId": 300,
+                "popupText": "ATK Up (Anti-Assassin)"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,-1,-1,240,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3008000,
+          "lv": 5,
+          "chargeTurn": 0,
+          "skillDetailId": 3008004,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30030
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [
+                  30009
+                ],
+                "expandedVals": [
+                  {
+                    "mstBuff": {
+                      "vals": [
+                        3004,
+                        3006,
+                        3027
+                      ],
+                      "tvals": [
+                        105
+                      ],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [
+                        105
+                      ],
+                      "script": {},
+                      "id": 30009,
+                      "buffGroup": 0,
+                      "type": 9,
+                      "name": "ATK Up (Anti-Assassin)",
+                      "detail": "Increase ATK against [Assassin] class",
+                      "iconId": 300,
+                      "maxRate": 5000
+                    }
+                  }
+                ],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  332
+                ],
+                "popupTextColor": 2,
+                "id": 30030,
+                "cond": 0,
+                "funcType": 16,
+                "targetType": 0,
+                "applyTarget": 3,
+                "popupIconId": 300,
+                "popupText": "ATK Up (Anti-Assassin)"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,-1,-1,250,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3008000,
+          "lv": 6,
+          "chargeTurn": 0,
+          "skillDetailId": 3008005,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30030
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [
+                  30009
+                ],
+                "expandedVals": [
+                  {
+                    "mstBuff": {
+                      "vals": [
+                        3004,
+                        3006,
+                        3027
+                      ],
+                      "tvals": [
+                        105
+                      ],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [
+                        105
+                      ],
+                      "script": {},
+                      "id": 30009,
+                      "buffGroup": 0,
+                      "type": 9,
+                      "name": "ATK Up (Anti-Assassin)",
+                      "detail": "Increase ATK against [Assassin] class",
+                      "iconId": 300,
+                      "maxRate": 5000
+                    }
+                  }
+                ],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  332
+                ],
+                "popupTextColor": 2,
+                "id": 30030,
+                "cond": 0,
+                "funcType": 16,
+                "targetType": 0,
+                "applyTarget": 3,
+                "popupIconId": 300,
+                "popupText": "ATK Up (Anti-Assassin)"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,-1,-1,260,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3008000,
+          "lv": 7,
+          "chargeTurn": 0,
+          "skillDetailId": 3008006,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30030
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [
+                  30009
+                ],
+                "expandedVals": [
+                  {
+                    "mstBuff": {
+                      "vals": [
+                        3004,
+                        3006,
+                        3027
+                      ],
+                      "tvals": [
+                        105
+                      ],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [
+                        105
+                      ],
+                      "script": {},
+                      "id": 30009,
+                      "buffGroup": 0,
+                      "type": 9,
+                      "name": "ATK Up (Anti-Assassin)",
+                      "detail": "Increase ATK against [Assassin] class",
+                      "iconId": 300,
+                      "maxRate": 5000
+                    }
+                  }
+                ],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  332
+                ],
+                "popupTextColor": 2,
+                "id": 30030,
+                "cond": 0,
+                "funcType": 16,
+                "targetType": 0,
+                "applyTarget": 3,
+                "popupIconId": 300,
+                "popupText": "ATK Up (Anti-Assassin)"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,-1,-1,270,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3008000,
+          "lv": 8,
+          "chargeTurn": 0,
+          "skillDetailId": 3008007,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30030
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [
+                  30009
+                ],
+                "expandedVals": [
+                  {
+                    "mstBuff": {
+                      "vals": [
+                        3004,
+                        3006,
+                        3027
+                      ],
+                      "tvals": [
+                        105
+                      ],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [
+                        105
+                      ],
+                      "script": {},
+                      "id": 30009,
+                      "buffGroup": 0,
+                      "type": 9,
+                      "name": "ATK Up (Anti-Assassin)",
+                      "detail": "Increase ATK against [Assassin] class",
+                      "iconId": 300,
+                      "maxRate": 5000
+                    }
+                  }
+                ],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  332
+                ],
+                "popupTextColor": 2,
+                "id": 30030,
+                "cond": 0,
+                "funcType": 16,
+                "targetType": 0,
+                "applyTarget": 3,
+                "popupIconId": 300,
+                "popupText": "ATK Up (Anti-Assassin)"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,-1,-1,280,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3008000,
+          "lv": 9,
+          "chargeTurn": 0,
+          "skillDetailId": 3008008,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            30030
+          ],
+          "expandedFuncId": [
+            {
+              "mstFunc": {
+                "vals": [
+                  30009
+                ],
+                "expandedVals": [
+                  {
+                    "mstBuff": {
+                      "vals": [
+                        3004,
+                        3006,
+                        3027
+                      ],
+                      "tvals": [
+                        105
+                      ],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [
+                        105
+                      ],
+                      "script": {},
+                      "id": 30009,
+                      "buffGroup": 0,
+                      "type": 9,
+                      "name": "ATK Up (Anti-Assassin)",
+                      "detail": "Increase ATK against [Assassin] class",
+                      "iconId": 300,
+                      "maxRate": 5000
+                    }
+                  }
+                ],
+                "tvals": [],
+                "questTvals": [],
+                "effectList": [
+                  332
+                ],
+                "popupTextColor": 2,
+                "id": 30030,
+                "cond": 0,
+                "funcType": 16,
+                "targetType": 0,
+                "applyTarget": 3,
+                "popupIconId": 300,
+                "popupText": "ATK Up (Anti-Assassin)"
+              },
+              "mstFuncGroup": []
+            }
+          ],
+          "svals": [
+            "[1000,-1,-1,300,ShowState:-1]"
+          ],
+          "script": {},
+          "skillId": 3008000,
+          "lv": 10,
+          "chargeTurn": 0,
+          "skillDetailId": 3008009,
+          "priority": 0
+        }
+      ]
+    }
+  ],
+  "mstSvtAppendPassiveSkillUnlock": [
+    {
+      "svtId": 202900,
+      "num": 100,
+      "itemIds": [
+        20290001
+      ],
+      "itemNums": [
+        120
+      ]
+    },
+    {
+      "svtId": 202900,
+      "num": 101,
+      "itemIds": [
+        20290001
+      ],
+      "itemNums": [
+        120
+      ]
+    },
+    {
+      "svtId": 202900,
+      "num": 102,
+      "itemIds": [
+        20290001
+      ],
+      "itemNums": [
+        120
+      ]
+    }
+  ],
+  "mstCombineAppendPassiveSkill": [
+    {
+      "svtId": 202900,
+      "num": 0,
+      "skillLv": 1,
+      "qp": 100000,
+      "itemIds": [
+        6002
+      ],
+      "itemNums": [
+        4
+      ]
+    },
+    {
+      "svtId": 202900,
+      "num": 0,
+      "skillLv": 2,
+      "qp": 200000,
+      "itemIds": [
+        6002
+      ],
+      "itemNums": [
+        10
+      ]
+    },
+    {
+      "svtId": 202900,
+      "num": 0,
+      "skillLv": 3,
+      "qp": 600000,
+      "itemIds": [
+        6102
+      ],
+      "itemNums": [
+        4
+      ]
+    },
+    {
+      "svtId": 202900,
+      "num": 0,
+      "skillLv": 4,
+      "qp": 800000,
+      "itemIds": [
+        6102,
+        6529
+      ],
+      "itemNums": [
+        10,
+        2
+      ]
+    },
+    {
+      "svtId": 202900,
+      "num": 0,
+      "skillLv": 5,
+      "qp": 2000000,
+      "itemIds": [
+        6202,
+        6529
+      ],
+      "itemNums": [
+        4,
+        4
+      ]
+    },
+    {
+      "svtId": 202900,
+      "num": 0,
+      "skillLv": 6,
+      "qp": 2500000,
+      "itemIds": [
+        6202,
+        6520
+      ],
+      "itemNums": [
+        10,
+        3
+      ]
+    },
+    {
+      "svtId": 202900,
+      "num": 0,
+      "skillLv": 7,
+      "qp": 5000000,
+      "itemIds": [
+        6520,
+        6541
+      ],
+      "itemNums": [
+        5,
+        5
+      ]
+    },
+    {
+      "svtId": 202900,
+      "num": 0,
+      "skillLv": 8,
+      "qp": 6000000,
+      "itemIds": [
+        6541,
+        6550
+      ],
+      "itemNums": [
+        15,
+        20
+      ]
+    },
+    {
+      "svtId": 202900,
+      "num": 0,
+      "skillLv": 9,
+      "qp": 10000000,
+      "itemIds": [
+        6999
+      ],
+      "itemNums": [
+        1
+      ]
+    }
+  ],
   "mstItem": [
     {
       "individuality": [],
@@ -9690,6 +11698,54 @@
       "useSkill": true,
       "useAscension": true,
       "useCostume": true
+    },
+    {
+      "individuality": [],
+      "script": {},
+      "eventId": 0,
+      "eventGroupId": 0,
+      "isPresent": false,
+      "id": 6541,
+      "name": "Arrowhead of Malice",
+      "detail": "\"Skill Up & Ascension Material\"\nAn arrowhead that has bathed in blood, sin, and corruption. It is said to carry a curse that invites disaster.",
+      "imageId": 6541,
+      "bgImageId": 2,
+      "type": 11,
+      "unit": "",
+      "value": 0,
+      "sellQp": 2500,
+      "isSell": true,
+      "priority": 227,
+      "dropPriority": 8315,
+      "startedAt": 946684800,
+      "endedAt": 1910908800,
+      "useSkill": true,
+      "useAscension": true,
+      "useCostume": true
+    },
+    {
+      "individuality": [],
+      "script": {},
+      "eventId": 0,
+      "eventGroupId": 0,
+      "isPresent": false,
+      "id": 20290001,
+      "name": "Servant Coin",
+      "detail": "\"Servant Enhancement Material\"\n A shard of a Servant's Spirit Origin",
+      "imageId": 202900,
+      "bgImageId": 2,
+      "type": 29,
+      "unit": "",
+      "value": 202900,
+      "sellQp": -1,
+      "isSell": false,
+      "priority": 57,
+      "dropPriority": 1003,
+      "startedAt": 946684800,
+      "endedAt": 1910908800,
+      "useSkill": false,
+      "useAscension": false,
+      "useCostume": false
     },
     {
       "individuality": [],
@@ -9819,6 +11875,30 @@
       "eventId": 0,
       "eventGroupId": 0,
       "isPresent": false,
+      "id": 6550,
+      "name": "Scale of Fantasy",
+      "detail": "\"Skill Up & Ascension Material\"\nScales shed from fairy wings.\nThey serve as a reagent for various magical powders.",
+      "imageId": 6550,
+      "bgImageId": 2,
+      "type": 11,
+      "unit": "",
+      "value": 0,
+      "sellQp": 2500,
+      "isSell": true,
+      "priority": 231,
+      "dropPriority": 8319,
+      "startedAt": 946684800,
+      "endedAt": 1910908800,
+      "useSkill": false,
+      "useAscension": false,
+      "useCostume": false
+    },
+    {
+      "individuality": [],
+      "script": {},
+      "eventId": 0,
+      "eventGroupId": 0,
+      "isPresent": false,
       "id": 7002,
       "name": "Archer Piece",
       "detail": "\"Ascension Material\"\nA piece signifying the Archer class.",
@@ -9889,6 +11969,11 @@
     }
   ],
   "mstCommonRelease": [],
+  "mstSvtCoin": {
+    "svtId": 202900,
+    "summonNum": 50,
+    "itemId": 20290001
+  },
   "mstSvtExp": [
     {
       "type": 9,
@@ -10493,8 +12578,128 @@
     {
       "type": 9,
       "lv": 100,
-      "exp": 21988000,
+      "exp": 40623000,
       "curve": 1253
+    },
+    {
+      "type": 9,
+      "lv": 101,
+      "exp": 60934500,
+      "curve": 1265
+    },
+    {
+      "type": 9,
+      "lv": 102,
+      "exp": 81246000,
+      "curve": 1278
+    },
+    {
+      "type": 9,
+      "lv": 103,
+      "exp": 101557500,
+      "curve": 1291
+    },
+    {
+      "type": 9,
+      "lv": 104,
+      "exp": 121869000,
+      "curve": 1303
+    },
+    {
+      "type": 9,
+      "lv": 105,
+      "exp": 142180500,
+      "curve": 1316
+    },
+    {
+      "type": 9,
+      "lv": 106,
+      "exp": 162492000,
+      "curve": 1329
+    },
+    {
+      "type": 9,
+      "lv": 107,
+      "exp": 182803500,
+      "curve": 1341
+    },
+    {
+      "type": 9,
+      "lv": 108,
+      "exp": 203115000,
+      "curve": 1354
+    },
+    {
+      "type": 9,
+      "lv": 109,
+      "exp": 223426500,
+      "curve": 1367
+    },
+    {
+      "type": 9,
+      "lv": 110,
+      "exp": 243738000,
+      "curve": 1379
+    },
+    {
+      "type": 9,
+      "lv": 111,
+      "exp": 264049500,
+      "curve": 1392
+    },
+    {
+      "type": 9,
+      "lv": 112,
+      "exp": 284361000,
+      "curve": 1405
+    },
+    {
+      "type": 9,
+      "lv": 113,
+      "exp": 304672500,
+      "curve": 1417
+    },
+    {
+      "type": 9,
+      "lv": 114,
+      "exp": 324984000,
+      "curve": 1430
+    },
+    {
+      "type": 9,
+      "lv": 115,
+      "exp": 345295500,
+      "curve": 1443
+    },
+    {
+      "type": 9,
+      "lv": 116,
+      "exp": 365607000,
+      "curve": 1455
+    },
+    {
+      "type": 9,
+      "lv": 117,
+      "exp": 385918500,
+      "curve": 1468
+    },
+    {
+      "type": 9,
+      "lv": 118,
+      "exp": 406230000,
+      "curve": 1481
+    },
+    {
+      "type": 9,
+      "lv": 119,
+      "exp": 426541500,
+      "curve": 1493
+    },
+    {
+      "type": 9,
+      "lv": 120,
+      "exp": 426541500,
+      "curve": 1506
     }
   ],
   "mstFriendship": [

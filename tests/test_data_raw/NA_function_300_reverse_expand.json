@@ -65,6 +65,7 @@
           ],
           "mstSvtSkill": [
             {
+              "script": {},
               "strengthStatus": 99,
               "svtId": 101300,
               "num": 3,
@@ -305,6 +306,7 @@
           ],
           "mstSvtSkill": [
             {
+              "script": {},
               "strengthStatus": 0,
               "svtId": 502500,
               "num": 3,
@@ -525,6 +527,7 @@
           ],
           "mstSvtSkill": [
             {
+              "script": {},
               "strengthStatus": 0,
               "svtId": 500700,
               "num": 3,
@@ -538,6 +541,7 @@
               "flag": 0
             },
             {
+              "script": {},
               "strengthStatus": 0,
               "svtId": 9942010,
               "num": 3,
@@ -758,6 +762,7 @@
           ],
           "mstSvtSkill": [
             {
+              "script": {},
               "strengthStatus": 1,
               "svtId": 402700,
               "num": 2,
@@ -998,6 +1003,7 @@
           ],
           "mstSvtSkill": [
             {
+              "script": {},
               "strengthStatus": 99,
               "svtId": 402700,
               "num": 2,
@@ -1258,6 +1264,7 @@
           ],
           "mstSvtSkill": [
             {
+              "script": {},
               "strengthStatus": 0,
               "svtId": 103300,
               "num": 3,
@@ -1271,6 +1278,7 @@
               "flag": 0
             },
             {
+              "script": {},
               "strengthStatus": 0,
               "svtId": 9941180,
               "num": 3,

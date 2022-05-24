@@ -66,6 +66,7 @@
       ],
       "mstSvtSkill": [
         {
+          "script": {},
           "strengthStatus": 1,
           "svtId": 9401400,
           "num": 1,
@@ -122,6 +123,7 @@
       ],
       "mstSvtSkill": [
         {
+          "script": {},
           "strengthStatus": 99,
           "svtId": 9401400,
           "num": 1,

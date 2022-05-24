@@ -5385,6 +5385,9 @@
       "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/403800/card_servant_np.png",
       "rank": "B++",
       "type": "対国宝具",
+      "effectFlags": [
+        "attackEnemyAll"
+      ],
       "detail": "自身の宝具威力をアップ(1ターン)<オーバーチャージで効果アップ> ＋ 敵全体の防御強化状態を解除＆強力な攻撃",
       "unmodifiedDetail": "自身の宝具威力をアップ(1ターン)<オーバーチャージで効果アップ> ＋ 敵全体の防御強化状態を解除＆強力な攻撃[{0}]",
       "npGain": {

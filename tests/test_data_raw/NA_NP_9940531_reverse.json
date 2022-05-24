@@ -77,6 +77,7 @@
       ],
       "treaureDeviceId": 9940531,
       "lv": 1,
+      "script": {},
       "gaugeCount": 1,
       "detailId": 9940531,
       "tdPoint": 77,
@@ -120,6 +121,7 @@
       ],
       "treaureDeviceId": 9940531,
       "lv": 2,
+      "script": {},
       "gaugeCount": 2,
       "detailId": 9940531,
       "tdPoint": 77,
@@ -163,6 +165,7 @@
       ],
       "treaureDeviceId": 9940531,
       "lv": 3,
+      "script": {},
       "gaugeCount": 2,
       "detailId": 9940531,
       "tdPoint": 77,
@@ -206,6 +209,7 @@
       ],
       "treaureDeviceId": 9940531,
       "lv": 4,
+      "script": {},
       "gaugeCount": 2,
       "detailId": 9940531,
       "tdPoint": 77,
@@ -249,6 +253,7 @@
       ],
       "treaureDeviceId": 9940531,
       "lv": 5,
+      "script": {},
       "gaugeCount": 3,
       "detailId": 9940531,
       "tdPoint": 77,
@@ -408,6 +413,7 @@
                   ],
                   "treaureDeviceId": 9940531,
                   "lv": 1,
+                  "script": {},
                   "gaugeCount": 1,
                   "detailId": 9940531,
                   "tdPoint": 77,
@@ -451,6 +457,7 @@
                   ],
                   "treaureDeviceId": 9940531,
                   "lv": 2,
+                  "script": {},
                   "gaugeCount": 2,
                   "detailId": 9940531,
                   "tdPoint": 77,
@@ -494,6 +501,7 @@
                   ],
                   "treaureDeviceId": 9940531,
                   "lv": 3,
+                  "script": {},
                   "gaugeCount": 2,
                   "detailId": 9940531,
                   "tdPoint": 77,
@@ -537,6 +545,7 @@
                   ],
                   "treaureDeviceId": 9940531,
                   "lv": 4,
+                  "script": {},
                   "gaugeCount": 2,
                   "detailId": 9940531,
                   "tdPoint": 77,
@@ -580,6 +589,7 @@
                   ],
                   "treaureDeviceId": 9940531,
                   "lv": 5,
+                  "script": {},
                   "gaugeCount": 3,
                   "detailId": 9940531,
                   "tdPoint": 77,
@@ -1452,6 +1462,126 @@
               "lv": 100,
               "value": 12990,
               "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 101,
+              "value": 13000,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 102,
+              "value": 13010,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 103,
+              "value": 13020,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 104,
+              "value": 13030,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 105,
+              "value": 13040,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 106,
+              "value": 13050,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 107,
+              "value": 13060,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 108,
+              "value": 13070,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 109,
+              "value": 13080,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 110,
+              "value": 13090,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 111,
+              "value": 13100,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 112,
+              "value": 13110,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 113,
+              "value": 13120,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 114,
+              "value": 13130,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 115,
+              "value": 13140,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 116,
+              "value": 13150,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 117,
+              "value": 13160,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 118,
+              "value": 13170,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 119,
+              "value": 13171,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 120,
+              "value": 13172,
+              "createdAt": 946684800
             }
           ],
           "mstSvtLimitAdd": [
@@ -2140,8 +2270,128 @@
             {
               "type": 4,
               "lv": 100,
-              "exp": 21988000,
+              "exp": 40623000,
               "curve": 1253
+            },
+            {
+              "type": 4,
+              "lv": 101,
+              "exp": 60934500,
+              "curve": 1265
+            },
+            {
+              "type": 4,
+              "lv": 102,
+              "exp": 81246000,
+              "curve": 1278
+            },
+            {
+              "type": 4,
+              "lv": 103,
+              "exp": 101557500,
+              "curve": 1291
+            },
+            {
+              "type": 4,
+              "lv": 104,
+              "exp": 121869000,
+              "curve": 1303
+            },
+            {
+              "type": 4,
+              "lv": 105,
+              "exp": 142180500,
+              "curve": 1316
+            },
+            {
+              "type": 4,
+              "lv": 106,
+              "exp": 162492000,
+              "curve": 1329
+            },
+            {
+              "type": 4,
+              "lv": 107,
+              "exp": 182803500,
+              "curve": 1341
+            },
+            {
+              "type": 4,
+              "lv": 108,
+              "exp": 203115000,
+              "curve": 1354
+            },
+            {
+              "type": 4,
+              "lv": 109,
+              "exp": 223426500,
+              "curve": 1367
+            },
+            {
+              "type": 4,
+              "lv": 110,
+              "exp": 243738000,
+              "curve": 1379
+            },
+            {
+              "type": 4,
+              "lv": 111,
+              "exp": 264049500,
+              "curve": 1392
+            },
+            {
+              "type": 4,
+              "lv": 112,
+              "exp": 284361000,
+              "curve": 1405
+            },
+            {
+              "type": 4,
+              "lv": 113,
+              "exp": 304672500,
+              "curve": 1417
+            },
+            {
+              "type": 4,
+              "lv": 114,
+              "exp": 324984000,
+              "curve": 1430
+            },
+            {
+              "type": 4,
+              "lv": 115,
+              "exp": 345295500,
+              "curve": 1443
+            },
+            {
+              "type": 4,
+              "lv": 116,
+              "exp": 365607000,
+              "curve": 1455
+            },
+            {
+              "type": 4,
+              "lv": 117,
+              "exp": 385918500,
+              "curve": 1468
+            },
+            {
+              "type": 4,
+              "lv": 118,
+              "exp": 406230000,
+              "curve": 1481
+            },
+            {
+              "type": 4,
+              "lv": 119,
+              "exp": 426541500,
+              "curve": 1493
+            },
+            {
+              "type": 4,
+              "lv": 120,
+              "exp": 426541500,
+              "curve": 1506
             }
           ],
           "mstFriendship": [

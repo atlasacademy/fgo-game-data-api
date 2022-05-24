@@ -20,6 +20,7 @@
   ],
   "mstSvtSkill": [
     {
+      "script": {},
       "strengthStatus": 0,
       "svtId": 602400,
       "num": 1,
@@ -39,6 +40,7 @@
     {
       "funcId": [
         358,
+        2195,
         200
       ],
       "expandedFuncId": [
@@ -79,6 +81,48 @@
             "funcType": 1,
             "targetType": 0,
             "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              487
+            ],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [
+                    3004,
+                    3023
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 487,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focus Up",
+                  "detail": "Set Target to yourself",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              328
+            ],
+            "popupTextColor": 1,
+            "id": 2195,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 2,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
           },
@@ -130,6 +174,7 @@
       ],
       "svals": [
         "[1000,1,-1,1000]",
+        "[1000,1,-1,1000]",
         "[1000,1,-1,300]"
       ],
       "script": {},
@@ -142,6 +187,7 @@
     {
       "funcId": [
         358,
+        2195,
         200
       ],
       "expandedFuncId": [
@@ -182,6 +228,48 @@
             "funcType": 1,
             "targetType": 0,
             "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              487
+            ],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [
+                    3004,
+                    3023
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 487,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focus Up",
+                  "detail": "Set Target to yourself",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              328
+            ],
+            "popupTextColor": 1,
+            "id": 2195,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 2,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
           },
@@ -233,6 +321,7 @@
       ],
       "svals": [
         "[1000,1,-1,1200]",
+        "[1000,1,-1,1200]",
         "[1000,1,-1,320]"
       ],
       "script": {},
@@ -245,6 +334,7 @@
     {
       "funcId": [
         358,
+        2195,
         200
       ],
       "expandedFuncId": [
@@ -285,6 +375,48 @@
             "funcType": 1,
             "targetType": 0,
             "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              487
+            ],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [
+                    3004,
+                    3023
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 487,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focus Up",
+                  "detail": "Set Target to yourself",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              328
+            ],
+            "popupTextColor": 1,
+            "id": 2195,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 2,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
           },
@@ -336,6 +468,7 @@
       ],
       "svals": [
         "[1000,1,-1,1400]",
+        "[1000,1,-1,1400]",
         "[1000,1,-1,340]"
       ],
       "script": {},
@@ -348,6 +481,7 @@
     {
       "funcId": [
         358,
+        2195,
         200
       ],
       "expandedFuncId": [
@@ -388,6 +522,48 @@
             "funcType": 1,
             "targetType": 0,
             "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              487
+            ],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [
+                    3004,
+                    3023
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 487,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focus Up",
+                  "detail": "Set Target to yourself",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              328
+            ],
+            "popupTextColor": 1,
+            "id": 2195,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 2,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
           },
@@ -439,6 +615,7 @@
       ],
       "svals": [
         "[1000,1,-1,1600]",
+        "[1000,1,-1,1600]",
         "[1000,1,-1,360]"
       ],
       "script": {},
@@ -451,6 +628,7 @@
     {
       "funcId": [
         358,
+        2195,
         200
       ],
       "expandedFuncId": [
@@ -491,6 +669,48 @@
             "funcType": 1,
             "targetType": 0,
             "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              487
+            ],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [
+                    3004,
+                    3023
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 487,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focus Up",
+                  "detail": "Set Target to yourself",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              328
+            ],
+            "popupTextColor": 1,
+            "id": 2195,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 2,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
           },
@@ -542,6 +762,7 @@
       ],
       "svals": [
         "[1000,1,-1,1800]",
+        "[1000,1,-1,1800]",
         "[1000,1,-1,380]"
       ],
       "script": {},
@@ -554,6 +775,7 @@
     {
       "funcId": [
         358,
+        2195,
         200
       ],
       "expandedFuncId": [
@@ -594,6 +816,48 @@
             "funcType": 1,
             "targetType": 0,
             "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              487
+            ],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [
+                    3004,
+                    3023
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 487,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focus Up",
+                  "detail": "Set Target to yourself",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              328
+            ],
+            "popupTextColor": 1,
+            "id": 2195,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 2,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
           },
@@ -645,6 +909,7 @@
       ],
       "svals": [
         "[1000,1,-1,2000]",
+        "[1000,1,-1,2000]",
         "[1000,1,-1,400]"
       ],
       "script": {},
@@ -657,6 +922,7 @@
     {
       "funcId": [
         358,
+        2195,
         200
       ],
       "expandedFuncId": [
@@ -697,6 +963,48 @@
             "funcType": 1,
             "targetType": 0,
             "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              487
+            ],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [
+                    3004,
+                    3023
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 487,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focus Up",
+                  "detail": "Set Target to yourself",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              328
+            ],
+            "popupTextColor": 1,
+            "id": 2195,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 2,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
           },
@@ -748,6 +1056,7 @@
       ],
       "svals": [
         "[1000,1,-1,2200]",
+        "[1000,1,-1,2200]",
         "[1000,1,-1,420]"
       ],
       "script": {},
@@ -760,6 +1069,7 @@
     {
       "funcId": [
         358,
+        2195,
         200
       ],
       "expandedFuncId": [
@@ -800,6 +1110,48 @@
             "funcType": 1,
             "targetType": 0,
             "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              487
+            ],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [
+                    3004,
+                    3023
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 487,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focus Up",
+                  "detail": "Set Target to yourself",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              328
+            ],
+            "popupTextColor": 1,
+            "id": 2195,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 2,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
           },
@@ -851,6 +1203,7 @@
       ],
       "svals": [
         "[1000,1,-1,2400]",
+        "[1000,1,-1,2400]",
         "[1000,1,-1,440]"
       ],
       "script": {},
@@ -863,6 +1216,7 @@
     {
       "funcId": [
         358,
+        2195,
         200
       ],
       "expandedFuncId": [
@@ -903,6 +1257,48 @@
             "funcType": 1,
             "targetType": 0,
             "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              487
+            ],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [
+                    3004,
+                    3023
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 487,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focus Up",
+                  "detail": "Set Target to yourself",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              328
+            ],
+            "popupTextColor": 1,
+            "id": 2195,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 2,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
           },
@@ -954,6 +1350,7 @@
       ],
       "svals": [
         "[1000,1,-1,2600]",
+        "[1000,1,-1,2600]",
         "[1000,1,-1,460]"
       ],
       "script": {},
@@ -966,6 +1363,7 @@
     {
       "funcId": [
         358,
+        2195,
         200
       ],
       "expandedFuncId": [
@@ -1006,6 +1404,48 @@
             "funcType": 1,
             "targetType": 0,
             "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              487
+            ],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [
+                    3004,
+                    3023
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 487,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focus Up",
+                  "detail": "Set Target to yourself",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              328
+            ],
+            "popupTextColor": 1,
+            "id": 2195,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 2,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
           },
@@ -1056,6 +1496,7 @@
         }
       ],
       "svals": [
+        "[1000,1,-1,3000]",
         "[1000,1,-1,3000]",
         "[1000,1,-1,500]"
       ],

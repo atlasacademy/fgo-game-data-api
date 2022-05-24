@@ -20,6 +20,7 @@
   ],
   "mstSvtSkill": [
     {
+      "script": {},
       "strengthStatus": 0,
       "svtId": 602400,
       "num": 1,
@@ -39,6 +40,7 @@
     {
       "funcId": [
         358,
+        2195,
         200
       ],
       "expandedFuncId": [
@@ -79,6 +81,48 @@
             "funcType": 1,
             "targetType": 0,
             "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              487
+            ],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [
+                    3004,
+                    3023
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 487,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focus Up",
+                  "detail": "Set Target to yourself",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              328
+            ],
+            "popupTextColor": 1,
+            "id": 2195,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 2,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
           },
@@ -130,6 +174,7 @@
       ],
       "svals": [
         "[1000,1,-1,1000]",
+        "[1000,1,-1,1000]",
         "[1000,1,-1,300]"
       ],
       "script": {},
@@ -142,6 +187,7 @@
     {
       "funcId": [
         358,
+        2195,
         200
       ],
       "expandedFuncId": [
@@ -182,6 +228,48 @@
             "funcType": 1,
             "targetType": 0,
             "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              487
+            ],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [
+                    3004,
+                    3023
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 487,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focus Up",
+                  "detail": "Set Target to yourself",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              328
+            ],
+            "popupTextColor": 1,
+            "id": 2195,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 2,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
           },
@@ -233,6 +321,7 @@
       ],
       "svals": [
         "[1000,1,-1,1200]",
+        "[1000,1,-1,1200]",
         "[1000,1,-1,320]"
       ],
       "script": {},
@@ -245,6 +334,7 @@
     {
       "funcId": [
         358,
+        2195,
         200
       ],
       "expandedFuncId": [
@@ -285,6 +375,48 @@
             "funcType": 1,
             "targetType": 0,
             "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              487
+            ],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [
+                    3004,
+                    3023
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 487,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focus Up",
+                  "detail": "Set Target to yourself",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              328
+            ],
+            "popupTextColor": 1,
+            "id": 2195,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 2,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
           },
@@ -336,6 +468,7 @@
       ],
       "svals": [
         "[1000,1,-1,1400]",
+        "[1000,1,-1,1400]",
         "[1000,1,-1,340]"
       ],
       "script": {},
@@ -348,6 +481,7 @@
     {
       "funcId": [
         358,
+        2195,
         200
       ],
       "expandedFuncId": [
@@ -388,6 +522,48 @@
             "funcType": 1,
             "targetType": 0,
             "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              487
+            ],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [
+                    3004,
+                    3023
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 487,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focus Up",
+                  "detail": "Set Target to yourself",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              328
+            ],
+            "popupTextColor": 1,
+            "id": 2195,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 2,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
           },
@@ -439,6 +615,7 @@
       ],
       "svals": [
         "[1000,1,-1,1600]",
+        "[1000,1,-1,1600]",
         "[1000,1,-1,360]"
       ],
       "script": {},
@@ -451,6 +628,7 @@
     {
       "funcId": [
         358,
+        2195,
         200
       ],
       "expandedFuncId": [
@@ -491,6 +669,48 @@
             "funcType": 1,
             "targetType": 0,
             "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              487
+            ],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [
+                    3004,
+                    3023
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 487,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focus Up",
+                  "detail": "Set Target to yourself",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              328
+            ],
+            "popupTextColor": 1,
+            "id": 2195,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 2,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
           },
@@ -542,6 +762,7 @@
       ],
       "svals": [
         "[1000,1,-1,1800]",
+        "[1000,1,-1,1800]",
         "[1000,1,-1,380]"
       ],
       "script": {},
@@ -554,6 +775,7 @@
     {
       "funcId": [
         358,
+        2195,
         200
       ],
       "expandedFuncId": [
@@ -594,6 +816,48 @@
             "funcType": 1,
             "targetType": 0,
             "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              487
+            ],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [
+                    3004,
+                    3023
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 487,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focus Up",
+                  "detail": "Set Target to yourself",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              328
+            ],
+            "popupTextColor": 1,
+            "id": 2195,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 2,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
           },
@@ -645,6 +909,7 @@
       ],
       "svals": [
         "[1000,1,-1,2000]",
+        "[1000,1,-1,2000]",
         "[1000,1,-1,400]"
       ],
       "script": {},
@@ -657,6 +922,7 @@
     {
       "funcId": [
         358,
+        2195,
         200
       ],
       "expandedFuncId": [
@@ -697,6 +963,48 @@
             "funcType": 1,
             "targetType": 0,
             "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              487
+            ],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [
+                    3004,
+                    3023
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 487,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focus Up",
+                  "detail": "Set Target to yourself",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              328
+            ],
+            "popupTextColor": 1,
+            "id": 2195,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 2,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
           },
@@ -748,6 +1056,7 @@
       ],
       "svals": [
         "[1000,1,-1,2200]",
+        "[1000,1,-1,2200]",
         "[1000,1,-1,420]"
       ],
       "script": {},
@@ -760,6 +1069,7 @@
     {
       "funcId": [
         358,
+        2195,
         200
       ],
       "expandedFuncId": [
@@ -800,6 +1110,48 @@
             "funcType": 1,
             "targetType": 0,
             "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              487
+            ],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [
+                    3004,
+                    3023
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 487,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focus Up",
+                  "detail": "Set Target to yourself",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              328
+            ],
+            "popupTextColor": 1,
+            "id": 2195,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 2,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
           },
@@ -851,6 +1203,7 @@
       ],
       "svals": [
         "[1000,1,-1,2400]",
+        "[1000,1,-1,2400]",
         "[1000,1,-1,440]"
       ],
       "script": {},
@@ -863,6 +1216,7 @@
     {
       "funcId": [
         358,
+        2195,
         200
       ],
       "expandedFuncId": [
@@ -903,6 +1257,48 @@
             "funcType": 1,
             "targetType": 0,
             "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              487
+            ],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [
+                    3004,
+                    3023
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 487,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focus Up",
+                  "detail": "Set Target to yourself",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              328
+            ],
+            "popupTextColor": 1,
+            "id": 2195,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 2,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
           },
@@ -954,6 +1350,7 @@
       ],
       "svals": [
         "[1000,1,-1,2600]",
+        "[1000,1,-1,2600]",
         "[1000,1,-1,460]"
       ],
       "script": {},
@@ -966,6 +1363,7 @@
     {
       "funcId": [
         358,
+        2195,
         200
       ],
       "expandedFuncId": [
@@ -1006,6 +1404,48 @@
             "funcType": 1,
             "targetType": 0,
             "applyTarget": 1,
+            "popupIconId": 323,
+            "popupText": "Target Focus\nUp"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              487
+            ],
+            "expandedVals": [
+              {
+                "mstBuff": {
+                  "vals": [
+                    3004,
+                    3023
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "script": {},
+                  "id": 487,
+                  "buffGroup": 700,
+                  "type": 38,
+                  "name": "Target Focus Up",
+                  "detail": "Set Target to yourself",
+                  "iconId": 323,
+                  "maxRate": 50000
+                }
+              }
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              328
+            ],
+            "popupTextColor": 1,
+            "id": 2195,
+            "cond": 0,
+            "funcType": 1,
+            "targetType": 0,
+            "applyTarget": 2,
             "popupIconId": 323,
             "popupText": "Target Focus\nUp"
           },
@@ -1056,6 +1496,7 @@
         }
       ],
       "svals": [
+        "[1000,1,-1,3000]",
         "[1000,1,-1,3000]",
         "[1000,1,-1,500]"
       ],
@@ -1153,6 +1594,7 @@
               ],
               "mstSvtSkill": [
                 {
+                  "script": {},
                   "strengthStatus": 0,
                   "svtId": 602400,
                   "num": 1,
@@ -1172,9 +1614,11 @@
                 {
                   "funcId": [
                     358,
+                    2195,
                     200
                   ],
                   "svals": [
+                    "[1000,1,-1,1000]",
                     "[1000,1,-1,1000]",
                     "[1000,1,-1,300]"
                   ],
@@ -1188,9 +1632,11 @@
                 {
                   "funcId": [
                     358,
+                    2195,
                     200
                   ],
                   "svals": [
+                    "[1000,1,-1,1200]",
                     "[1000,1,-1,1200]",
                     "[1000,1,-1,320]"
                   ],
@@ -1204,9 +1650,11 @@
                 {
                   "funcId": [
                     358,
+                    2195,
                     200
                   ],
                   "svals": [
+                    "[1000,1,-1,1400]",
                     "[1000,1,-1,1400]",
                     "[1000,1,-1,340]"
                   ],
@@ -1220,9 +1668,11 @@
                 {
                   "funcId": [
                     358,
+                    2195,
                     200
                   ],
                   "svals": [
+                    "[1000,1,-1,1600]",
                     "[1000,1,-1,1600]",
                     "[1000,1,-1,360]"
                   ],
@@ -1236,9 +1686,11 @@
                 {
                   "funcId": [
                     358,
+                    2195,
                     200
                   ],
                   "svals": [
+                    "[1000,1,-1,1800]",
                     "[1000,1,-1,1800]",
                     "[1000,1,-1,380]"
                   ],
@@ -1252,9 +1704,11 @@
                 {
                   "funcId": [
                     358,
+                    2195,
                     200
                   ],
                   "svals": [
+                    "[1000,1,-1,2000]",
                     "[1000,1,-1,2000]",
                     "[1000,1,-1,400]"
                   ],
@@ -1268,9 +1722,11 @@
                 {
                   "funcId": [
                     358,
+                    2195,
                     200
                   ],
                   "svals": [
+                    "[1000,1,-1,2200]",
                     "[1000,1,-1,2200]",
                     "[1000,1,-1,420]"
                   ],
@@ -1284,9 +1740,11 @@
                 {
                   "funcId": [
                     358,
+                    2195,
                     200
                   ],
                   "svals": [
+                    "[1000,1,-1,2400]",
                     "[1000,1,-1,2400]",
                     "[1000,1,-1,440]"
                   ],
@@ -1300,9 +1758,11 @@
                 {
                   "funcId": [
                     358,
+                    2195,
                     200
                   ],
                   "svals": [
+                    "[1000,1,-1,2600]",
                     "[1000,1,-1,2600]",
                     "[1000,1,-1,460]"
                   ],
@@ -1316,9 +1776,11 @@
                 {
                   "funcId": [
                     358,
+                    2195,
                     200
                   ],
                   "svals": [
+                    "[1000,1,-1,3000]",
                     "[1000,1,-1,3000]",
                     "[1000,1,-1,500]"
                   ],
@@ -1353,6 +1815,7 @@
               ],
               "mstSvtSkill": [
                 {
+                  "script": {},
                   "strengthStatus": 0,
                   "svtId": 602400,
                   "num": 2,
@@ -1553,6 +2016,7 @@
               ],
               "mstSvtSkill": [
                 {
+                  "script": {},
                   "strengthStatus": 0,
                   "svtId": 602400,
                   "num": 3,
@@ -1811,6 +2275,7 @@
                   ],
                   "treaureDeviceId": 602401,
                   "lv": 1,
+                  "script": {},
                   "gaugeCount": 1,
                   "detailId": 602401,
                   "tdPoint": 71,
@@ -1848,6 +2313,7 @@
                   ],
                   "treaureDeviceId": 602401,
                   "lv": 2,
+                  "script": {},
                   "gaugeCount": 2,
                   "detailId": 602401,
                   "tdPoint": 71,
@@ -1885,6 +2351,7 @@
                   ],
                   "treaureDeviceId": 602401,
                   "lv": 3,
+                  "script": {},
                   "gaugeCount": 2,
                   "detailId": 602401,
                   "tdPoint": 71,
@@ -1922,6 +2389,7 @@
                   ],
                   "treaureDeviceId": 602401,
                   "lv": 4,
+                  "script": {},
                   "gaugeCount": 2,
                   "detailId": 602401,
                   "tdPoint": 71,
@@ -1959,6 +2427,7 @@
                   ],
                   "treaureDeviceId": 602401,
                   "lv": 5,
+                  "script": {},
                   "gaugeCount": 3,
                   "detailId": 602401,
                   "tdPoint": 71,
@@ -1980,7 +2449,10 @@
               ],
               "svtId": 602400,
               "idx": 1,
-              "limitCount": -1
+              "limitCount": -1,
+              "condType": 0,
+              "condId": 0,
+              "condNum": 0
             },
             {
               "individuality": [
@@ -1990,7 +2462,10 @@
               ],
               "svtId": 602400,
               "idx": 8027301,
-              "limitCount": -1
+              "limitCount": -1,
+              "condType": 0,
+              "condId": 0,
+              "condNum": 0
             }
           ],
           "mstSvtCard": [
@@ -3042,6 +3517,126 @@
               "lv": 100,
               "value": 12990,
               "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 101,
+              "value": 13000,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 102,
+              "value": 13010,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 103,
+              "value": 13020,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 104,
+              "value": 13030,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 105,
+              "value": 13040,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 106,
+              "value": 13050,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 107,
+              "value": 13060,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 108,
+              "value": 13070,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 109,
+              "value": 13080,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 110,
+              "value": 13090,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 111,
+              "value": 13100,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 112,
+              "value": 13110,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 113,
+              "value": 13120,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 114,
+              "value": 13130,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 115,
+              "value": 13140,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 116,
+              "value": 13150,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 117,
+              "value": 13160,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 118,
+              "value": 13170,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 119,
+              "value": 13171,
+              "createdAt": 946684800
+            },
+            {
+              "id": 4,
+              "lv": 120,
+              "value": 13172,
+              "createdAt": 946684800
             }
           ],
           "mstSvtLimitAdd": [],
@@ -3102,6 +3697,7 @@
               "condFriendshipRank": 5,
               "eventId": 80038,
               "flag": 0,
+              "commonReleaseId": 0,
               "startedAt": 1482415200,
               "endedAt": 1893456000
             },
@@ -3117,6 +3713,7 @@
               "condFriendshipRank": 6,
               "eventId": 80038,
               "flag": 0,
+              "commonReleaseId": 0,
               "startedAt": 1482415200,
               "endedAt": 1893456000
             },
@@ -3132,6 +3729,7 @@
               "condFriendshipRank": 7,
               "eventId": 80038,
               "flag": 0,
+              "commonReleaseId": 0,
               "startedAt": 1482415200,
               "endedAt": 1893456000
             },
@@ -3147,6 +3745,7 @@
               "condFriendshipRank": 8,
               "eventId": 80038,
               "flag": 0,
+              "commonReleaseId": 0,
               "startedAt": 1482415200,
               "endedAt": 1893456000
             },
@@ -3162,6 +3761,7 @@
               "condFriendshipRank": 9,
               "eventId": 80038,
               "flag": 0,
+              "commonReleaseId": 0,
               "startedAt": 1482415200,
               "endedAt": 1893456000
             },
@@ -3177,6 +3777,7 @@
               "condFriendshipRank": 10,
               "eventId": 80038,
               "flag": 0,
+              "commonReleaseId": 0,
               "startedAt": 1482415200,
               "endedAt": 1893456000
             },
@@ -3192,14 +3793,208 @@
               "condFriendshipRank": 0,
               "eventId": 80059,
               "flag": 0,
+              "commonReleaseId": 0,
               "startedAt": 1498759200,
               "endedAt": 1893456000
             }
           ],
-          "mstSvtAppendPassiveSkill": [],
-          "mstSvtAppendPassiveSkillUnlock": [],
-          "mstCombineAppendPassiveSkill": [],
+          "mstSvtAppendPassiveSkill": [
+            {
+              "svtId": 602400,
+              "num": 100,
+              "priority": 1,
+              "skillId": 3001000
+            },
+            {
+              "svtId": 602400,
+              "num": 101,
+              "priority": 1,
+              "skillId": 3002000
+            },
+            {
+              "svtId": 602400,
+              "num": 102,
+              "priority": 1,
+              "skillId": 3005000
+            }
+          ],
+          "mstSvtAppendPassiveSkillUnlock": [
+            {
+              "svtId": 602400,
+              "num": 100,
+              "itemIds": [
+                60240001
+              ],
+              "itemNums": [
+                120
+              ]
+            },
+            {
+              "svtId": 602400,
+              "num": 101,
+              "itemIds": [
+                60240001
+              ],
+              "itemNums": [
+                120
+              ]
+            },
+            {
+              "svtId": 602400,
+              "num": 102,
+              "itemIds": [
+                60240001
+              ],
+              "itemNums": [
+                120
+              ]
+            }
+          ],
+          "mstCombineAppendPassiveSkill": [
+            {
+              "svtId": 602400,
+              "num": 0,
+              "skillLv": 1,
+              "qp": 100000,
+              "itemIds": [
+                6006
+              ],
+              "itemNums": [
+                4
+              ]
+            },
+            {
+              "svtId": 602400,
+              "num": 0,
+              "skillLv": 2,
+              "qp": 200000,
+              "itemIds": [
+                6006
+              ],
+              "itemNums": [
+                10
+              ]
+            },
+            {
+              "svtId": 602400,
+              "num": 0,
+              "skillLv": 3,
+              "qp": 600000,
+              "itemIds": [
+                6106
+              ],
+              "itemNums": [
+                4
+              ]
+            },
+            {
+              "svtId": 602400,
+              "num": 0,
+              "skillLv": 4,
+              "qp": 800000,
+              "itemIds": [
+                6106,
+                6505
+              ],
+              "itemNums": [
+                10,
+                8
+              ]
+            },
+            {
+              "svtId": 602400,
+              "num": 0,
+              "skillLv": 5,
+              "qp": 2000000,
+              "itemIds": [
+                6206,
+                6505
+              ],
+              "itemNums": [
+                4,
+                16
+              ]
+            },
+            {
+              "svtId": 602400,
+              "num": 0,
+              "skillLv": 6,
+              "qp": 2500000,
+              "itemIds": [
+                6206,
+                6511
+              ],
+              "itemNums": [
+                10,
+                4
+              ]
+            },
+            {
+              "svtId": 602400,
+              "num": 0,
+              "skillLv": 7,
+              "qp": 5000000,
+              "itemIds": [
+                6511,
+                6535
+              ],
+              "itemNums": [
+                8,
+                5
+              ]
+            },
+            {
+              "svtId": 602400,
+              "num": 0,
+              "skillLv": 8,
+              "qp": 6000000,
+              "itemIds": [
+                6535,
+                6544
+              ],
+              "itemNums": [
+                15,
+                8
+              ]
+            },
+            {
+              "svtId": 602400,
+              "num": 0,
+              "skillLv": 9,
+              "qp": 10000000,
+              "itemIds": [
+                6999
+              ],
+              "itemNums": [
+                1
+              ]
+            }
+          ],
           "mstItem": [
+            {
+              "individuality": [],
+              "script": {},
+              "eventId": 0,
+              "eventGroupId": 0,
+              "isPresent": false,
+              "id": 60240001,
+              "name": "Servant Coin",
+              "detail": "\"Servant Enhancement Material\"\n A shard of a Servant's Spirit Origin",
+              "imageId": 602400,
+              "bgImageId": 2,
+              "type": 29,
+              "unit": "",
+              "value": 602400,
+              "sellQp": -1,
+              "isSell": false,
+              "priority": 57,
+              "dropPriority": 1003,
+              "startedAt": 946684800,
+              "endedAt": 1910908800,
+              "useSkill": false,
+              "useAscension": false,
+              "useCostume": false
+            },
             {
               "individuality": [
                 10085
@@ -3278,6 +4073,54 @@
             },
             {
               "individuality": [],
+              "script": {},
+              "eventId": 0,
+              "eventGroupId": 0,
+              "isPresent": false,
+              "id": 6535,
+              "name": "Eternal Ice",
+              "detail": "\"Skill Up & Ascension Material\"\nIce that does not melt, even at room temperature.\nSome see a lovely crystalline flower, but those with no appreciation of beauty see only a piece of ice.",
+              "imageId": 6535,
+              "bgImageId": 2,
+              "type": 11,
+              "unit": "",
+              "value": 0,
+              "sellQp": 2500,
+              "isSell": true,
+              "priority": 223,
+              "dropPriority": 8311,
+              "startedAt": 946684800,
+              "endedAt": 1910908800,
+              "useSkill": true,
+              "useAscension": true,
+              "useCostume": true
+            },
+            {
+              "individuality": [],
+              "script": {},
+              "eventId": 0,
+              "eventGroupId": 0,
+              "isPresent": false,
+              "id": 6505,
+              "name": "Void's Dust",
+              "detail": "\"Skill Up & Ascension Material\"\nDust that disperses when hollow shadows disappear.",
+              "imageId": 6505,
+              "bgImageId": 1,
+              "type": 11,
+              "unit": "",
+              "value": 0,
+              "sellQp": 2500,
+              "isSell": true,
+              "priority": 203,
+              "dropPriority": 8201,
+              "startedAt": 946684800,
+              "endedAt": 1910908800,
+              "useSkill": true,
+              "useAscension": true,
+              "useCostume": true
+            },
+            {
+              "individuality": [],
               "script": {
                 "effectId": 1
               },
@@ -3300,6 +4143,54 @@
               "endedAt": 1910908800,
               "useSkill": true,
               "useAscension": false,
+              "useCostume": false
+            },
+            {
+              "individuality": [],
+              "script": {},
+              "eventId": 0,
+              "eventGroupId": 0,
+              "isPresent": false,
+              "id": 6511,
+              "name": "Forbidden Page",
+              "detail": "\"Skill Up & Ascension Material\"\nA page which nobody should ever read.\nUsually mixed in as the first or last page.",
+              "imageId": 6511,
+              "bgImageId": 2,
+              "type": 11,
+              "unit": "",
+              "value": 0,
+              "sellQp": 2500,
+              "isSell": true,
+              "priority": 216,
+              "dropPriority": 8303,
+              "startedAt": 946684800,
+              "endedAt": 1910908800,
+              "useSkill": true,
+              "useAscension": true,
+              "useCostume": false
+            },
+            {
+              "individuality": [],
+              "script": {},
+              "eventId": 0,
+              "eventGroupId": 0,
+              "isPresent": false,
+              "id": 6544,
+              "name": "Fragment of a Twinkling Star",
+              "detail": "\"Skill Up & Ascension Material\"\nA strange ore shaped like a twinkling star that fell from the night sky.",
+              "imageId": 6544,
+              "bgImageId": 3,
+              "type": 11,
+              "unit": "",
+              "value": 0,
+              "sellQp": 2500,
+              "isSell": true,
+              "priority": 247,
+              "dropPriority": 8508,
+              "startedAt": 946684800,
+              "endedAt": 1910908800,
+              "useSkill": true,
+              "useAscension": true,
               "useCostume": false
             },
             {
@@ -3450,6 +4341,11 @@
             }
           ],
           "mstCommonRelease": [],
+          "mstSvtCoin": {
+            "svtId": 602400,
+            "summonNum": 0,
+            "itemId": 60240001
+          },
           "mstSvtExp": [
             {
               "type": 4,
@@ -4054,8 +4950,128 @@
             {
               "type": 4,
               "lv": 100,
-              "exp": 21988000,
+              "exp": 40623000,
               "curve": 1253
+            },
+            {
+              "type": 4,
+              "lv": 101,
+              "exp": 60934500,
+              "curve": 1265
+            },
+            {
+              "type": 4,
+              "lv": 102,
+              "exp": 81246000,
+              "curve": 1278
+            },
+            {
+              "type": 4,
+              "lv": 103,
+              "exp": 101557500,
+              "curve": 1291
+            },
+            {
+              "type": 4,
+              "lv": 104,
+              "exp": 121869000,
+              "curve": 1303
+            },
+            {
+              "type": 4,
+              "lv": 105,
+              "exp": 142180500,
+              "curve": 1316
+            },
+            {
+              "type": 4,
+              "lv": 106,
+              "exp": 162492000,
+              "curve": 1329
+            },
+            {
+              "type": 4,
+              "lv": 107,
+              "exp": 182803500,
+              "curve": 1341
+            },
+            {
+              "type": 4,
+              "lv": 108,
+              "exp": 203115000,
+              "curve": 1354
+            },
+            {
+              "type": 4,
+              "lv": 109,
+              "exp": 223426500,
+              "curve": 1367
+            },
+            {
+              "type": 4,
+              "lv": 110,
+              "exp": 243738000,
+              "curve": 1379
+            },
+            {
+              "type": 4,
+              "lv": 111,
+              "exp": 264049500,
+              "curve": 1392
+            },
+            {
+              "type": 4,
+              "lv": 112,
+              "exp": 284361000,
+              "curve": 1405
+            },
+            {
+              "type": 4,
+              "lv": 113,
+              "exp": 304672500,
+              "curve": 1417
+            },
+            {
+              "type": 4,
+              "lv": 114,
+              "exp": 324984000,
+              "curve": 1430
+            },
+            {
+              "type": 4,
+              "lv": 115,
+              "exp": 345295500,
+              "curve": 1443
+            },
+            {
+              "type": 4,
+              "lv": 116,
+              "exp": 365607000,
+              "curve": 1455
+            },
+            {
+              "type": 4,
+              "lv": 117,
+              "exp": 385918500,
+              "curve": 1468
+            },
+            {
+              "type": 4,
+              "lv": 118,
+              "exp": 406230000,
+              "curve": 1481
+            },
+            {
+              "type": 4,
+              "lv": 119,
+              "exp": 426541500,
+              "curve": 1493
+            },
+            {
+              "type": 4,
+              "lv": 120,
+              "exp": 426541500,
+              "curve": 1506
             }
           ],
           "mstFriendship": [

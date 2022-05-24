@@ -185,6 +185,7 @@
       ],
       "treaureDeviceId": 301202,
       "lv": 1,
+      "script": {},
       "gaugeCount": 1,
       "detailId": 301202,
       "tdPoint": 107,
@@ -332,6 +333,7 @@
       ],
       "treaureDeviceId": 301202,
       "lv": 2,
+      "script": {},
       "gaugeCount": 2,
       "detailId": 301202,
       "tdPoint": 107,
@@ -479,6 +481,7 @@
       ],
       "treaureDeviceId": 301202,
       "lv": 3,
+      "script": {},
       "gaugeCount": 2,
       "detailId": 301202,
       "tdPoint": 107,
@@ -626,6 +629,7 @@
       ],
       "treaureDeviceId": 301202,
       "lv": 4,
+      "script": {},
       "gaugeCount": 2,
       "detailId": 301202,
       "tdPoint": 107,
@@ -773,6 +777,7 @@
       ],
       "treaureDeviceId": 301202,
       "lv": 5,
+      "script": {},
       "gaugeCount": 3,
       "detailId": 301202,
       "tdPoint": 107,
@@ -880,6 +885,7 @@
               ],
               "mstSvtSkill": [
                 {
+                  "script": {},
                   "strengthStatus": 0,
                   "svtId": 301200,
                   "num": 1,
@@ -1080,6 +1086,7 @@
               ],
               "mstSvtSkill": [
                 {
+                  "script": {},
                   "strengthStatus": 0,
                   "svtId": 301200,
                   "num": 2,
@@ -1300,6 +1307,7 @@
               ],
               "mstSvtSkill": [
                 {
+                  "script": {},
                   "strengthStatus": 1,
                   "svtId": 301200,
                   "num": 3,
@@ -1520,6 +1528,7 @@
               ],
               "mstSvtSkill": [
                 {
+                  "script": {},
                   "strengthStatus": 99,
                   "svtId": 301200,
                   "num": 3,
@@ -1823,6 +1832,7 @@
                   ],
                   "treaureDeviceId": 301298,
                   "lv": 1,
+                  "script": {},
                   "gaugeCount": 1,
                   "detailId": 301298,
                   "tdPoint": 107,
@@ -1866,6 +1876,7 @@
                   ],
                   "treaureDeviceId": 301298,
                   "lv": 2,
+                  "script": {},
                   "gaugeCount": 2,
                   "detailId": 301298,
                   "tdPoint": 107,
@@ -1909,6 +1920,7 @@
                   ],
                   "treaureDeviceId": 301298,
                   "lv": 3,
+                  "script": {},
                   "gaugeCount": 2,
                   "detailId": 301298,
                   "tdPoint": 107,
@@ -1952,6 +1964,7 @@
                   ],
                   "treaureDeviceId": 301298,
                   "lv": 4,
+                  "script": {},
                   "gaugeCount": 2,
                   "detailId": 301298,
                   "tdPoint": 107,
@@ -1995,6 +2008,7 @@
                   ],
                   "treaureDeviceId": 301298,
                   "lv": 5,
+                  "script": {},
                   "gaugeCount": 3,
                   "detailId": 301298,
                   "tdPoint": 107,
@@ -2090,6 +2104,7 @@
                   ],
                   "treaureDeviceId": 301201,
                   "lv": 1,
+                  "script": {},
                   "gaugeCount": 1,
                   "detailId": 301201,
                   "tdPoint": 107,
@@ -2133,6 +2148,7 @@
                   ],
                   "treaureDeviceId": 301201,
                   "lv": 2,
+                  "script": {},
                   "gaugeCount": 2,
                   "detailId": 301201,
                   "tdPoint": 107,
@@ -2176,6 +2192,7 @@
                   ],
                   "treaureDeviceId": 301201,
                   "lv": 3,
+                  "script": {},
                   "gaugeCount": 2,
                   "detailId": 301201,
                   "tdPoint": 107,
@@ -2219,6 +2236,7 @@
                   ],
                   "treaureDeviceId": 301201,
                   "lv": 4,
+                  "script": {},
                   "gaugeCount": 2,
                   "detailId": 301201,
                   "tdPoint": 107,
@@ -2262,6 +2280,7 @@
                   ],
                   "treaureDeviceId": 301201,
                   "lv": 5,
+                  "script": {},
                   "gaugeCount": 3,
                   "detailId": 301201,
                   "tdPoint": 107,
@@ -2357,6 +2376,7 @@
                   ],
                   "treaureDeviceId": 301202,
                   "lv": 1,
+                  "script": {},
                   "gaugeCount": 1,
                   "detailId": 301202,
                   "tdPoint": 107,
@@ -2400,6 +2420,7 @@
                   ],
                   "treaureDeviceId": 301202,
                   "lv": 2,
+                  "script": {},
                   "gaugeCount": 2,
                   "detailId": 301202,
                   "tdPoint": 107,
@@ -2443,6 +2464,7 @@
                   ],
                   "treaureDeviceId": 301202,
                   "lv": 3,
+                  "script": {},
                   "gaugeCount": 2,
                   "detailId": 301202,
                   "tdPoint": 107,
@@ -2486,6 +2508,7 @@
                   ],
                   "treaureDeviceId": 301202,
                   "lv": 4,
+                  "script": {},
                   "gaugeCount": 2,
                   "detailId": 301202,
                   "tdPoint": 107,
@@ -2529,6 +2552,7 @@
                   ],
                   "treaureDeviceId": 301202,
                   "lv": 5,
+                  "script": {},
                   "gaugeCount": 3,
                   "detailId": 301202,
                   "tdPoint": 107,
@@ -2550,7 +2574,10 @@
               ],
               "svtId": 301200,
               "idx": 1,
-              "limitCount": -1
+              "limitCount": -1,
+              "condType": 0,
+              "condId": 0,
+              "condNum": 0
             },
             {
               "individuality": [
@@ -2560,7 +2587,10 @@
               ],
               "svtId": 301200,
               "idx": 8027301,
-              "limitCount": -1
+              "limitCount": -1,
+              "condType": 0,
+              "condId": 0,
+              "condNum": 0
             }
           ],
           "mstSvtCard": [
@@ -3607,6 +3637,126 @@
               "lv": 100,
               "value": 15990,
               "createdAt": 946684800
+            },
+            {
+              "id": 5,
+              "lv": 101,
+              "value": 16000,
+              "createdAt": 946684800
+            },
+            {
+              "id": 5,
+              "lv": 102,
+              "value": 16010,
+              "createdAt": 946684800
+            },
+            {
+              "id": 5,
+              "lv": 103,
+              "value": 16020,
+              "createdAt": 946684800
+            },
+            {
+              "id": 5,
+              "lv": 104,
+              "value": 16030,
+              "createdAt": 946684800
+            },
+            {
+              "id": 5,
+              "lv": 105,
+              "value": 16040,
+              "createdAt": 946684800
+            },
+            {
+              "id": 5,
+              "lv": 106,
+              "value": 16050,
+              "createdAt": 946684800
+            },
+            {
+              "id": 5,
+              "lv": 107,
+              "value": 16060,
+              "createdAt": 946684800
+            },
+            {
+              "id": 5,
+              "lv": 108,
+              "value": 16070,
+              "createdAt": 946684800
+            },
+            {
+              "id": 5,
+              "lv": 109,
+              "value": 16080,
+              "createdAt": 946684800
+            },
+            {
+              "id": 5,
+              "lv": 110,
+              "value": 16090,
+              "createdAt": 946684800
+            },
+            {
+              "id": 5,
+              "lv": 111,
+              "value": 16100,
+              "createdAt": 946684800
+            },
+            {
+              "id": 5,
+              "lv": 112,
+              "value": 16110,
+              "createdAt": 946684800
+            },
+            {
+              "id": 5,
+              "lv": 113,
+              "value": 16120,
+              "createdAt": 946684800
+            },
+            {
+              "id": 5,
+              "lv": 114,
+              "value": 16130,
+              "createdAt": 946684800
+            },
+            {
+              "id": 5,
+              "lv": 115,
+              "value": 16140,
+              "createdAt": 946684800
+            },
+            {
+              "id": 5,
+              "lv": 116,
+              "value": 16150,
+              "createdAt": 946684800
+            },
+            {
+              "id": 5,
+              "lv": 117,
+              "value": 16160,
+              "createdAt": 946684800
+            },
+            {
+              "id": 5,
+              "lv": 118,
+              "value": 16170,
+              "createdAt": 946684800
+            },
+            {
+              "id": 5,
+              "lv": 119,
+              "value": 16180,
+              "createdAt": 946684800
+            },
+            {
+              "id": 5,
+              "lv": 120,
+              "value": 16190,
+              "createdAt": 946684800
             }
           ],
           "mstSvtLimitAdd": [],
@@ -3667,6 +3817,7 @@
               "condFriendshipRank": 5,
               "eventId": 80038,
               "flag": 0,
+              "commonReleaseId": 0,
               "startedAt": 1482415200,
               "endedAt": 1893456000
             },
@@ -3682,6 +3833,7 @@
               "condFriendshipRank": 6,
               "eventId": 80038,
               "flag": 0,
+              "commonReleaseId": 0,
               "startedAt": 1482415200,
               "endedAt": 1893456000
             },
@@ -3697,6 +3849,7 @@
               "condFriendshipRank": 7,
               "eventId": 80038,
               "flag": 0,
+              "commonReleaseId": 0,
               "startedAt": 1482415200,
               "endedAt": 1893456000
             },
@@ -3712,6 +3865,7 @@
               "condFriendshipRank": 8,
               "eventId": 80038,
               "flag": 0,
+              "commonReleaseId": 0,
               "startedAt": 1482415200,
               "endedAt": 1893456000
             },
@@ -3727,6 +3881,7 @@
               "condFriendshipRank": 9,
               "eventId": 80038,
               "flag": 0,
+              "commonReleaseId": 0,
               "startedAt": 1482415200,
               "endedAt": 1893456000
             },
@@ -3742,6 +3897,7 @@
               "condFriendshipRank": 10,
               "eventId": 80038,
               "flag": 0,
+              "commonReleaseId": 0,
               "startedAt": 1482415200,
               "endedAt": 1893456000
             },
@@ -3757,6 +3913,7 @@
               "condFriendshipRank": 0,
               "eventId": 80059,
               "flag": 0,
+              "commonReleaseId": 0,
               "startedAt": 1498759200,
               "endedAt": 1893456000
             },
@@ -3772,14 +3929,208 @@
               "condFriendshipRank": 0,
               "eventId": 80072,
               "flag": 0,
+              "commonReleaseId": 0,
               "startedAt": 1508018400,
               "endedAt": 1893456000
             }
           ],
-          "mstSvtAppendPassiveSkill": [],
-          "mstSvtAppendPassiveSkillUnlock": [],
-          "mstCombineAppendPassiveSkill": [],
+          "mstSvtAppendPassiveSkill": [
+            {
+              "svtId": 301200,
+              "num": 100,
+              "priority": 1,
+              "skillId": 3001000
+            },
+            {
+              "svtId": 301200,
+              "num": 101,
+              "priority": 1,
+              "skillId": 3002000
+            },
+            {
+              "svtId": 301200,
+              "num": 102,
+              "priority": 1,
+              "skillId": 3005000
+            }
+          ],
+          "mstSvtAppendPassiveSkillUnlock": [
+            {
+              "svtId": 301200,
+              "num": 100,
+              "itemIds": [
+                30120001
+              ],
+              "itemNums": [
+                120
+              ]
+            },
+            {
+              "svtId": 301200,
+              "num": 101,
+              "itemIds": [
+                30120001
+              ],
+              "itemNums": [
+                120
+              ]
+            },
+            {
+              "svtId": 301200,
+              "num": 102,
+              "itemIds": [
+                30120001
+              ],
+              "itemNums": [
+                120
+              ]
+            }
+          ],
+          "mstCombineAppendPassiveSkill": [
+            {
+              "svtId": 301200,
+              "num": 0,
+              "skillLv": 1,
+              "qp": 200000,
+              "itemIds": [
+                6003
+              ],
+              "itemNums": [
+                5
+              ]
+            },
+            {
+              "svtId": 301200,
+              "num": 0,
+              "skillLv": 2,
+              "qp": 400000,
+              "itemIds": [
+                6003
+              ],
+              "itemNums": [
+                12
+              ]
+            },
+            {
+              "svtId": 301200,
+              "num": 0,
+              "skillLv": 3,
+              "qp": 1200000,
+              "itemIds": [
+                6103
+              ],
+              "itemNums": [
+                5
+              ]
+            },
+            {
+              "svtId": 301200,
+              "num": 0,
+              "skillLv": 4,
+              "qp": 1600000,
+              "itemIds": [
+                6103,
+                6503
+              ],
+              "itemNums": [
+                12,
+                15
+              ]
+            },
+            {
+              "svtId": 301200,
+              "num": 0,
+              "skillLv": 5,
+              "qp": 4000000,
+              "itemIds": [
+                6203,
+                6503
+              ],
+              "itemNums": [
+                5,
+                29
+              ]
+            },
+            {
+              "svtId": 301200,
+              "num": 0,
+              "skillLv": 6,
+              "qp": 5000000,
+              "itemIds": [
+                6203,
+                6523
+              ],
+              "itemNums": [
+                12,
+                3
+              ]
+            },
+            {
+              "svtId": 301200,
+              "num": 0,
+              "skillLv": 7,
+              "qp": 10000000,
+              "itemIds": [
+                6523,
+                6536
+              ],
+              "itemNums": [
+                6,
+                6
+              ]
+            },
+            {
+              "svtId": 301200,
+              "num": 0,
+              "skillLv": 8,
+              "qp": 12000000,
+              "itemIds": [
+                6536,
+                6535
+              ],
+              "itemNums": [
+                18,
+                24
+              ]
+            },
+            {
+              "svtId": 301200,
+              "num": 0,
+              "skillLv": 9,
+              "qp": 20000000,
+              "itemIds": [
+                6999
+              ],
+              "itemNums": [
+                1
+              ]
+            }
+          ],
           "mstItem": [
+            {
+              "individuality": [],
+              "script": {},
+              "eventId": 0,
+              "eventGroupId": 0,
+              "isPresent": false,
+              "id": 30120001,
+              "name": "Servant Coin",
+              "detail": "\"Servant Enhancement Material\"\n A shard of a Servant's Spirit Origin",
+              "imageId": 301200,
+              "bgImageId": 2,
+              "type": 29,
+              "unit": "",
+              "value": 301200,
+              "sellQp": -1,
+              "isSell": false,
+              "priority": 57,
+              "dropPriority": 1003,
+              "startedAt": 946684800,
+              "endedAt": 1910908800,
+              "useSkill": false,
+              "useAscension": false,
+              "useCostume": false
+            },
             {
               "individuality": [],
               "script": {},
@@ -3858,6 +4209,30 @@
               "eventId": 0,
               "eventGroupId": 0,
               "isPresent": false,
+              "id": 6536,
+              "name": "Aurora Steel",
+              "detail": "\"Skill Up & Ascension Material\"\nA piece of divine steel that glistens like the flickering aurora.\nThe Valkyries from Norse mythology are said to have soared through the heavens wearing armor made of this steel.",
+              "imageId": 6536,
+              "bgImageId": 2,
+              "type": 11,
+              "unit": "",
+              "value": 0,
+              "sellQp": 2500,
+              "isSell": true,
+              "priority": 225,
+              "dropPriority": 8313,
+              "startedAt": 946684800,
+              "endedAt": 1910908800,
+              "useSkill": true,
+              "useAscension": true,
+              "useCostume": true
+            },
+            {
+              "individuality": [],
+              "script": {},
+              "eventId": 0,
+              "eventGroupId": 0,
+              "isPresent": false,
               "id": 6203,
               "name": "Secret Gem of Lancer",
               "detail": "\"Skill Up Material\"\nA bright stone glimmering with the immense power of a Lancer.",
@@ -3875,6 +4250,30 @@
               "useSkill": true,
               "useAscension": false,
               "useCostume": false
+            },
+            {
+              "individuality": [],
+              "script": {},
+              "eventId": 0,
+              "eventGroupId": 0,
+              "isPresent": false,
+              "id": 6535,
+              "name": "Eternal Ice",
+              "detail": "\"Skill Up & Ascension Material\"\nIce that does not melt, even at room temperature.\nSome see a lovely crystalline flower, but those with no appreciation of beauty see only a piece of ice.",
+              "imageId": 6535,
+              "bgImageId": 2,
+              "type": 11,
+              "unit": "",
+              "value": 0,
+              "sellQp": 2500,
+              "isSell": true,
+              "priority": 223,
+              "dropPriority": 8311,
+              "startedAt": 946684800,
+              "endedAt": 1910908800,
+              "useSkill": true,
+              "useAscension": true,
+              "useCostume": true
             },
             {
               "individuality": [],
@@ -3973,6 +4372,30 @@
               "useSkill": true,
               "useAscension": false,
               "useCostume": false
+            },
+            {
+              "individuality": [],
+              "script": {},
+              "eventId": 0,
+              "eventGroupId": 0,
+              "isPresent": false,
+              "id": 6523,
+              "name": "Lamp of Evil-Sealing",
+              "detail": "\"Skill Up & Ascension Material\"\nA fascinating lamp that is said to\nhave sealed in an elemental\nwith tremendous magical energy.",
+              "imageId": 6523,
+              "bgImageId": 3,
+              "type": 11,
+              "unit": "",
+              "value": 0,
+              "sellQp": 2500,
+              "isSell": true,
+              "priority": 239,
+              "dropPriority": 8404,
+              "startedAt": 946684800,
+              "endedAt": 1910908800,
+              "useSkill": true,
+              "useAscension": true,
+              "useCostume": true
             },
             {
               "individuality": [],
@@ -4098,6 +4521,11 @@
             }
           ],
           "mstCommonRelease": [],
+          "mstSvtCoin": {
+            "svtId": 301200,
+            "summonNum": 90,
+            "itemId": 30120001
+          },
           "mstSvtExp": [
             {
               "type": 25,
@@ -4702,8 +5130,128 @@
             {
               "type": 25,
               "lv": 100,
-              "exp": 21988000,
+              "exp": 40623000,
               "curve": 1112
+            },
+            {
+              "type": 25,
+              "lv": 101,
+              "exp": 60934500,
+              "curve": 1123
+            },
+            {
+              "type": 25,
+              "lv": 102,
+              "exp": 81246000,
+              "curve": 1134
+            },
+            {
+              "type": 25,
+              "lv": 103,
+              "exp": 101557500,
+              "curve": 1146
+            },
+            {
+              "type": 25,
+              "lv": 104,
+              "exp": 121869000,
+              "curve": 1157
+            },
+            {
+              "type": 25,
+              "lv": 105,
+              "exp": 142180500,
+              "curve": 1168
+            },
+            {
+              "type": 25,
+              "lv": 106,
+              "exp": 162492000,
+              "curve": 1179
+            },
+            {
+              "type": 25,
+              "lv": 107,
+              "exp": 182803500,
+              "curve": 1191
+            },
+            {
+              "type": 25,
+              "lv": 108,
+              "exp": 203115000,
+              "curve": 1202
+            },
+            {
+              "type": 25,
+              "lv": 109,
+              "exp": 223426500,
+              "curve": 1213
+            },
+            {
+              "type": 25,
+              "lv": 110,
+              "exp": 243738000,
+              "curve": 1224
+            },
+            {
+              "type": 25,
+              "lv": 111,
+              "exp": 264049500,
+              "curve": 1235
+            },
+            {
+              "type": 25,
+              "lv": 112,
+              "exp": 284361000,
+              "curve": 1247
+            },
+            {
+              "type": 25,
+              "lv": 113,
+              "exp": 304672500,
+              "curve": 1258
+            },
+            {
+              "type": 25,
+              "lv": 114,
+              "exp": 324984000,
+              "curve": 1269
+            },
+            {
+              "type": 25,
+              "lv": 115,
+              "exp": 345295500,
+              "curve": 1280
+            },
+            {
+              "type": 25,
+              "lv": 116,
+              "exp": 365607000,
+              "curve": 1292
+            },
+            {
+              "type": 25,
+              "lv": 117,
+              "exp": 385918500,
+              "curve": 1303
+            },
+            {
+              "type": 25,
+              "lv": 118,
+              "exp": 406230000,
+              "curve": 1314
+            },
+            {
+              "type": 25,
+              "lv": 119,
+              "exp": 426541500,
+              "curve": 1325
+            },
+            {
+              "type": 25,
+              "lv": 120,
+              "exp": 426541500,
+              "curve": 1337
             }
           ],
           "mstFriendship": [
