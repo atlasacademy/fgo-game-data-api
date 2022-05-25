@@ -3690,6 +3690,8 @@ class AiActNum(IntEnum):
     REACTION_ENTRY_UNIT = -14
     REACTION_BEFORE_RESURRECTION = -15
     REACTION_BEFORE_DEAD = -16
+    REACTION_ENEMY_TURN_START_PRIORITY = -401
+    REACTION_ENEMY_TURN_END_PRIORITY = -501
 
 
 class NiceAiActNum(str, Enum):
@@ -3710,6 +3712,8 @@ class NiceAiActNum(str, Enum):
     reactionEntryUnit = "reactionEntryUnit"
     reactionBeforeResurrection = "reactionBeforeResurrection"
     reactionBeforeDead = "reactionBeforeDead"
+    reactionEnemyTurnStartPriority = "reactionEnemyTurnStartPriority"
+    reactionEnemyTurnEndPriority = "reactionEnemyTurnEndPriority"
     unknown = "unknown"
 
 
@@ -3729,6 +3733,8 @@ AI_ACT_NUM_NAME: dict[int, NiceAiActNum] = {
     -14: NiceAiActNum.reactionEntryUnit,
     -15: NiceAiActNum.reactionBeforeResurrection,
     -16: NiceAiActNum.reactionBeforeDead,
+    -401: NiceAiActNum.reactionEnemyTurnStartPriority,
+    -501: NiceAiActNum.reactionEnemyTurnEndPriority,
     -9999: NiceAiActNum.unknown,
 }
 
