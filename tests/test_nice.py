@@ -453,7 +453,7 @@ class TestServantSpecial:
                     {"id": 2001, "name": "humanoid"},
                     {"id": 2008, "name": "weakToEnumaElish"},
                     {"id": 2009, "name": "riding"},
-                    {"id": 2011, "name": "skyOrEarth"},
+                    {"id": 2011, "name": "skyOrEarthServant"},
                     {"id": 2040, "name": "divineOrDemonOrUndead"},
                     {"id": 2631, "name": "hominidaeServant"},
                     {"id": 2667, "name": "childServant"},

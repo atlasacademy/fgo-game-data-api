@@ -682,11 +682,13 @@ class Trait(str, Enum):
     riding = "riding"
     arthur = "arthur"
     skyOrEarth = "skyOrEarth"
+    skyOrEarthServant = "skyOrEarthServant"
     brynhildsBeloved = "brynhildsBeloved"
     undeadOrDaemon = "undeadOrDaemon"
     undeadOrDemon = "undeadOrDemon"
     demonic = "demonic"
     skyOrEarthExceptPseudoAndDemi = "skyOrEarthExceptPseudoAndDemi"
+    skyOrEarthExceptPseudoAndDemiServant = "skyOrEarthExceptPseudoAndDemiServant"
     divineOrDaemonOrUndead = "divineOrDaemonOrUndead"
     divineOrDemonOrUndead = "divineOrDemonOrUndead"
     saberClassServant = "saberClassServant"
@@ -961,13 +963,13 @@ TRAIT_NAME: dict[int, Trait] = {
     2008: Trait.weakToEnumaElish,
     2009: Trait.riding,
     2010: Trait.arthur,
-    2011: Trait.skyOrEarth,  # Tesla's NP
+    2011: Trait.skyOrEarthServant,  # Tesla's NP
     2012: Trait.brynhildsBeloved,
     2018: Trait.undeadOrDemon,  # Amakusa bond CE
     2019: Trait.demonic,
     2023: Trait.enemyDavinciTrueEnemy,
     2024: Trait.enemyDavinciFalseEnemy,
-    2037: Trait.skyOrEarthExceptPseudoAndDemi,  # Raikou's 3rd skill
+    2037: Trait.skyOrEarthExceptPseudoAndDemiServant,  # Raikou's 3rd skill
     2038: Trait.fieldSunlight,
     2039: Trait.fieldShore,
     2040: Trait.divineOrDemonOrUndead,  # Ruler Martha's 3rd skill
@@ -1128,6 +1130,8 @@ OLD_TRAIT_MAPPING = {
     Trait.undeadOrDaemon: 2018,
     Trait.divineOrDaemonOrUndead: 2040,
     Trait.argonaut: 2466,
+    Trait.skyOrEarth: 2011,
+    Trait.skyOrEarthExceptPseudoAndDemi: 2037,
 }
 
 TRAIT_NAME_REVERSE |= OLD_TRAIT_MAPPING
