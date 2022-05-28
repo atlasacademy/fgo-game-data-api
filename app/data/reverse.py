@@ -101,9 +101,9 @@ def get_passive_skill_to_svt(gamedata_path: DirectoryPath) -> dict[int, list[int
         if svt_passive.svtId in mstSvt_ids:
             passive_skill_to_svt[svt_passive.skillId].add(svt_passive.svtId)
 
-    if (gamedata_path / "master" / "mstSvtAppendPassiveSkill.json").exists():
-        append_skills = load_master_data(gamedata_path, MstSvtAppendPassiveSkill)
-        for append_skill in append_skills:
+    append_skills = load_master_data(gamedata_path, MstSvtAppendPassiveSkill)
+    for append_skill in append_skills:
+        if append_skill.svtId in mstSvt_ids:
             passive_skill_to_svt[append_skill.skillId].add(append_skill.svtId)
 
     return {
