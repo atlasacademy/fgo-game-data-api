@@ -308,6 +308,7 @@ export enum NiceBuffType {
     BUFF_RATE = "buffRate",
     INVISIBLE_BATTLE_CHARA = "invisibleBattleChara",
     COUNTER_FUNCTION = "counterFunction",
+    NOT_TARGET_SKILL = "notTargetSkill",
 }
 
 export enum NiceBuffAction {
@@ -414,6 +415,7 @@ export enum NiceBuffAction {
     INVISIBLE_BATTLE_CHARA = "invisibleBattleChara",
     BUFF_RATE = "buffRate",
     COUNTER_FUNCTION = "counterFunction",
+    NOT_TARGET_SKILL = "notTargetSkill",
 }
 
 export enum NiceBuffLimit {
@@ -525,6 +527,7 @@ export enum NiceDataValsType {
     UnSubStateWhileLinkedToOthers = "unsubstatewhilelinkedtoothers",
     NotAccompanyWhenLinkedTargetMoveState = "notaccompanywhenlinkedtargetmovestate",
     AllowSubBgmPlaying = "allowsubbgmplaying",
+    NotTargetSkillIdArray = "nottargetskillidarray",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -1069,6 +1072,7 @@ export enum NiceWarOverwriteType {
     START_TYPE = "startType",
     NOTICE_DIALOG_TEXT = "noticeDialogText",
     CLEAR_MARK = "clearMark",
+    EFFECT_CHANGE_WHITE_MARK = "effectChangeWhiteMark",
 }
 
 export enum NiceAiCond {

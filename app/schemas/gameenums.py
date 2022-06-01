@@ -645,6 +645,7 @@ class BuffType(IntEnum):
     BUFF_RATE = 162
     INVISIBLE_BATTLE_CHARA = 163
     COUNTER_FUNCTION = 165
+    NOT_TARGET_SKILL = 166
 
 
 class NiceBuffType(str, Enum):
@@ -800,6 +801,7 @@ class NiceBuffType(str, Enum):
     buffRate = "buffRate"
     invisibleBattleChara = "invisibleBattleChara"
     counterFunction = "counterFunction"
+    notTargetSkill = "notTargetSkill"
 
 
 BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
@@ -953,6 +955,7 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     162: NiceBuffType.buffRate,
     163: NiceBuffType.invisibleBattleChara,
     165: NiceBuffType.counterFunction,
+    166: NiceBuffType.notTargetSkill,
 }
 
 
@@ -1060,6 +1063,7 @@ class BuffAction(IntEnum):
     INVISIBLE_BATTLE_CHARA = 100
     BUFF_RATE = 101
     COUNTER_FUNCTION = 102
+    NOT_TARGET_SKILL = 103
 
 
 class NiceBuffAction(str, Enum):
@@ -1168,6 +1172,7 @@ class NiceBuffAction(str, Enum):
     invisibleBattleChara = "invisibleBattleChara"
     buffRate = "buffRate"
     counterFunction = "counterFunction"
+    notTargetSkill = "notTargetSkill"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1274,6 +1279,7 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     100: NiceBuffAction.invisibleBattleChara,
     101: NiceBuffAction.buffRate,
     102: NiceBuffAction.counterFunction,
+    103: NiceBuffAction.notTargetSkill,
 }
 
 
@@ -1403,6 +1409,7 @@ class DataValsType(IntEnum):
     UnSubStateWhileLinkedToOthers = 98
     NotAccompanyWhenLinkedTargetMoveState = 99
     AllowSubBgmPlaying = 100
+    NotTargetSkillIdArray = 101
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -3046,6 +3053,7 @@ class WarOverwriteType(IntEnum):
     START_TYPE = 16
     NOTICE_DIALOG_TEXT = 17
     CLEAR_MARK = 18
+    EFFECT_CHANGE_WHITE_MARK = 19
 
 
 class NiceWarOverwriteType(str, Enum):
@@ -3069,6 +3077,7 @@ class NiceWarOverwriteType(str, Enum):
     startType = "startType"
     noticeDialogText = "noticeDialogText"
     clearMark = "clearMark"
+    effectChangeWhiteMark = "effectChangeWhiteMark"
 
 
 WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
@@ -3090,6 +3099,7 @@ WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
     16: NiceWarOverwriteType.startType,
     17: NiceWarOverwriteType.noticeDialogText,
     18: NiceWarOverwriteType.clearMark,
+    19: NiceWarOverwriteType.effectChangeWhiteMark,
 }
 
 
