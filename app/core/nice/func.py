@@ -50,6 +50,7 @@ LIST_DATAVALS = {
     "DamageRates",
     "OnPositions",
     "OffPositions",
+    "NotTargetSkillIdArray",
 }
 
 
