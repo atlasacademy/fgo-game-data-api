@@ -1,14 +1,15 @@
+from decimal import Decimal
+
 import orjson
 import pytest
 from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from app.core.nice.func import parse_dataVals
-from app.core.utils import get_voice_name, sort_by_collection_no
+from app.core.utils import get_voice_name
 from app.data.custom_mappings import Translation
 from app.data.script import get_script_path, get_script_text_only, remove_brackets
 from app.routers.utils import list_string_exclude
-from app.schemas.basic import BasicServant
 from app.schemas.common import Language, Region, ReverseDepth
 from app.schemas.gameenums import FuncType
 from app.schemas.nice import NiceServant
@@ -85,40 +86,6 @@ def test_reverseDepth_str_comparison() -> None:
     assert ReverseDepth.function >= "aaaaa"
 
 
-def test_sort_by_collection_no() -> None:
-    first_item = BasicServant(
-        id=100100,
-        collectionNo=2,
-        name="Altria Pendragon",
-        type="normal",
-        flag="normal",
-        className="saber",
-        attribute="earth",
-        rarity=5,
-        atkMax=11221,
-        hpMax=15150,
-        face="https://assets.atlasacademy.io/GameData/NA/Faces/f_1001000.png",
-        costume={},
-    )
-    second_item = BasicServant(
-        id=202900,
-        collectionNo=200,
-        name="Asagami Fujino",
-        type="normal",
-        flag="normal",
-        className="archer",
-        attribute="human",
-        rarity=4,
-        atkMax=10299,
-        hpMax=11025,
-        face="https://assets.atlasacademy.io/GameData/NA/Faces/f_2029000.png",
-        costume={},
-    )
-    input_data = [second_item, first_item]
-    result = sort_by_collection_no(input_data)
-    assert result == [first_item, second_item]
-
-
 def test_list_exclude() -> None:
     test_data = NiceServant.parse_obj(
         get_response_data("test_data_nice", "NA_Dantes_lore_costume")
@@ -163,6 +130,6 @@ def test_parse_script() -> None:
 
 def test_TW_odd_voice_id() -> None:
     script_json = ScriptJsonInfo(
-        id="御主任務 2021年4月 2", face=13, delay=0.3, text="0_A1430", form=0
+        id="御主任務 2021年4月 2", face=13, delay=Decimal(0.3), text="0_A1430", form=0
     )
     assert script_json.get_voice_id() == "御主任務 2021年4月 2"

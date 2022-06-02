@@ -30,7 +30,7 @@ from .core.nice.mm import get_all_nice_mms
 from .core.nice.nice import get_nice_equip_model, get_nice_servant_model
 from .core.nice.war import get_nice_war
 from .core.raw import get_all_bgm_entities, get_servant_entity
-from .core.utils import get_translation, sort_by_collection_no
+from .core.utils import get_translation
 from .data.extra import get_extra_svt_data
 from .db.engine import engines
 from .db.helpers import fetch
@@ -259,8 +259,9 @@ async def dump_cvs(util: ExportUtil, cvs: list[MstCv]) -> None:  # pragma: no co
 async def dump_basic_servants(
     util: ExportUtil, file_name: str, svts: list[MstSvt]
 ) -> None:  # pragma: no cover
-    all_basic_servant_data = sort_by_collection_no(
-        await get_all_basic_servants(util.redis, util.region, util.lang, svts)
+    all_basic_servant_data = sorted(
+        await get_all_basic_servants(util.redis, util.region, util.lang, svts),
+        key=lambda x: x.collectionNo,
     )
     await util.dump_orjson(file_name, all_basic_servant_data)
 
@@ -268,8 +269,9 @@ async def dump_basic_servants(
 async def dump_basic_equips(
     util: ExportUtil, equips: list[MstSvt]
 ) -> None:  # pragma: no cover
-    all_basic_equip_data = sort_by_collection_no(
-        await get_all_basic_equips(util.redis, util.region, util.lang, equips)
+    all_basic_equip_data = sorted(
+        await get_all_basic_equips(util.redis, util.region, util.lang, equips),
+        key=lambda x: x.collectionNo,
     )
     await util.dump_orjson("basic_equip", all_basic_equip_data)
 
@@ -284,8 +286,8 @@ async def dump_basic_mcs(
 async def dump_basic_ccs(
     util: ExportUtil, ccs: list[MstCommandCode]
 ) -> None:  # pragma: no cover
-    all_basic_cc_data = sort_by_collection_no(
-        get_all_basic_ccs(util.region, util.lang, ccs)
+    all_basic_cc_data = sorted(
+        get_all_basic_ccs(util.region, util.lang, ccs), key=lambda x: x.collectionNo
     )
     await util.dump_orjson("basic_command_code", all_basic_cc_data)
 

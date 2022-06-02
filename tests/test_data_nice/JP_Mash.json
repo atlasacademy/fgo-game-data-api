@@ -8432,6 +8432,10 @@
                   {
                     "id": 119,
                     "name": "classBeastUnknown"
+                  },
+                  {
+                    "id": 121,
+                    "name": "classBeastIV"
                   }
                 ],
                 "ckSelfIndv": [],
@@ -8487,6 +8491,10 @@
                   {
                     "id": 119,
                     "name": "classBeastUnknown"
+                  },
+                  {
+                    "id": 121,
+                    "name": "classBeastIV"
                   }
                 ],
                 "maxRate": 5000
