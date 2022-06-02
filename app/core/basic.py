@@ -369,6 +369,7 @@ async def get_basic_svt(
         "type": SVT_TYPE_NAME[mstSvt.type],
         "flag": SVT_FLAG_NAME[mstSvt.flag],
         "name": mstSvt.name,
+        "originalName": mstSvt.name,
         "className": CLASS_NAME[mstSvt.classId],
         "attribute": ATTRIBUTE_NAME[mstSvt.attri],
         "rarity": mstSvtLimit.rarity,
@@ -393,6 +394,8 @@ async def get_basic_svt(
                 }
         if svtExtra.zeroLimitOverwriteName is not None:
             basic_servant["name"] = svtExtra.zeroLimitOverwriteName
+            basic_servant["overwriteName"] = mstSvt.name
+            basic_servant["originalOverwriteName"] = mstSvt.name
 
     base_settings = {
         "base_url": settings.asset_url,
@@ -438,6 +441,10 @@ async def get_basic_svt(
 
     if region == Region.JP and lang is not None:
         basic_servant["name"] = get_translation(lang, str(basic_servant["name"]))
+        if "overwriteName" in basic_servant:
+            basic_servant["overwriteName"] = get_translation(
+                lang, str(basic_servant["overwriteName"])
+            )
 
     return basic_servant
 

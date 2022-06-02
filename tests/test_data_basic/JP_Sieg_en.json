@@ -2,6 +2,7 @@
   "id": 503800,
   "collectionNo": 208,
   "name": "Sieg",
+  "originalName": "ジーク",
   "type": "normal",
   "flag": "ignoreCombineLimitSpecial",
   "className": "caster",

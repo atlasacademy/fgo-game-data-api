@@ -263,6 +263,7 @@
           "id": 100800,
           "collectionNo": 6,
           "name": "Siegfried",
+          "originalName": "Siegfried",
           "type": "normal",
           "flag": "normal",
           "className": "saber",

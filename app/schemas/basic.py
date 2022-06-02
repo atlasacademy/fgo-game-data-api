@@ -61,6 +61,9 @@ class BasicServant(BaseModelORJson):
     id: int
     collectionNo: int
     name: str
+    originalName: str
+    overwriteName: str | None = None
+    originalOverwriteName: str | None = None
     type: NiceSvtType
     flag: NiceSvtFlag
     className: SvtClass
@@ -80,6 +83,7 @@ class BasicEquip(BaseModelORJson):
     id: int
     collectionNo: int
     name: str
+    originalName: str
     type: NiceSvtType
     flag: NiceSvtFlag
     rarity: int

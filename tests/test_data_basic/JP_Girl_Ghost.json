@@ -2,6 +2,7 @@
   "id": 9100101,
   "collectionNo": 0,
   "name": "女子高生ゴースト",
+  "originalName": "女子高生ゴースト",
   "type": "enemy",
   "flag": "normal",
   "className": "rider",
