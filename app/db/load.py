@@ -309,37 +309,43 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
         engine = engines[region]
 
         with engine.begin() as conn:
-            for table in TABLES_TO_BE_LOADED:
-                table_json = master_folder / f"{table.name}.json"
-                if table_json.exists():
-                    with open(table_json, "rb") as fp:
-                        data: list[dict[str, Any]] = orjson.loads(fp.read())
-
-                    if data:
-                        different_columns = diff_column_schemas(data, table)
-                        if different_columns:
-                            logger.warning(
-                                f"Found unknown columns: {', '.join(different_columns)} in {table_json}"
-                            )
-                            data = remove_unknown_columns(data, table)
-                else:
-                    data = []
-
-                logger.debug(f"Updating {table.name} …")
-                insert_db(conn, table, data)
-
-            logger.info("Updating subtitle …")
-            load_subtitle(conn, region, master_folder)
-
             logger.info("Updating parsed skill and td …")
             load_skill_td_lv(conn, repo_folder)
 
-            logger.info("Updating event …")
-            load_event(conn, repo_folder)
-
+        with engine.begin() as conn:
             logger.info("Updating item …")
             load_item(conn, repo_folder)
 
+        for table_group in TABLES_TO_BE_LOADED:
+            with engine.begin() as conn:
+                for table in table_group:
+                    table_json = master_folder / f"{table.name}.json"
+                    if table_json.exists():
+                        with open(table_json, "rb") as fp:
+                            data: list[dict[str, Any]] = orjson.loads(fp.read())
+
+                        if data:
+                            different_columns = diff_column_schemas(data, table)
+                            if different_columns:
+                                logger.warning(
+                                    f"Found unknown columns: {', '.join(different_columns)} in {table_json}"
+                                )
+                                data = remove_unknown_columns(data, table)
+                    else:
+                        data = []
+
+                    logger.debug(f"Updating {table.name} …")
+                    insert_db(conn, table, data)
+
+        with engine.begin() as conn:
+            logger.info("Updating subtitle …")
+            load_subtitle(conn, region, master_folder)
+
+        with engine.begin() as conn:
+            logger.info("Updating event …")
+            load_event(conn, repo_folder)
+
+        with engine.begin() as conn:
             logger.info("Updated AssetStorage …")
             load_asset_storage(conn, repo_folder)
 
