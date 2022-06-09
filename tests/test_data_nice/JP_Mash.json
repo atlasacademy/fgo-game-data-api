@@ -7569,6 +7569,259 @@
       ]
     },
     {
+      "id": 940244,
+      "name": "アイランド・レスキュー A（陽気なコン）",
+      "originalName": "アイランド・レスキュー A（陽気なコン）",
+      "ruby": "あいらんど・れすきゅー",
+      "detail": "陽気なコンのドロップ獲得数を1個増やす ＋ 自身の『水怪クライシス 無垢なる者たちの浮島』における攻撃の威力を50%アップ ＋ 味方全体＜控え含む＞の『水怪クライシス 無垢なる者たちの浮島』のクエストクリア時に得られる絆を5%アップ(サポート時は無効)【『水怪クライシス 無垢なる者たちの浮島』イベント期間限定】",
+      "unmodifiedDetail": "陽気なコンのドロップ獲得数を1個増やす ＋ 自身の『水怪クライシス 無垢なる者たちの浮島』における攻撃の威力を50%アップ ＋ 味方全体＜控え含む＞の『水怪クライシス 無垢なる者たちの浮島』のクエストクリア時に得られる絆を5%アップ(サポート時は無効)【『水怪クライシス 無垢なる者たちの浮島』イベント期間限定】",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00200.png",
+      "coolDown": [
+        0
+      ],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 16,
+          "priority": 169,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 80364,
+          "flag": 0,
+          "startedAt": 1649235600,
+          "endedAt": 1651031999
+        }
+      ],
+      "skillAdd": [],
+      "functions": [
+        {
+          "funcId": 8265,
+          "funcType": "eventDropUp",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80364,
+              "baseFuncId": 0,
+              "nameTotal": "{0}\n獲得数ボーナス合計",
+              "name": "{0}獲得数アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/Items/94068805.png",
+              "priority": 5000,
+              "isDispValue": true
+            }
+          ],
+          "traitVals": [],
+          "buffs": [],
+          "svals": [
+            {
+              "Individuality": 10722,
+              "EventId": 80364,
+              "AddCount": 1
+            }
+          ]
+        },
+        {
+          "funcId": 8433,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "アイランド・レスキュー",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+          "functvals": [],
+          "funcquestTvals": [
+            {
+              "id": 94000132,
+              "name": "unknown"
+            }
+          ],
+          "funcGroup": [
+            {
+              "eventId": 80364,
+              "baseFuncId": 8431,
+              "nameTotal": "{1} \n攻撃の威力アップ合計",
+              "name": "攻撃の威力アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_302.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [
+            {
+              "id": 4199,
+              "name": "アイランド・レスキュー",
+              "detail": "『水怪クライシス 無垢なる者たちの浮島』において与えるダメージをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+              "type": "upDamage",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 10000
+            }
+          ],
+          "svals": [
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 500
+            }
+          ]
+        },
+        {
+          "funcId": 8435,
+          "funcType": "servantFriendshipUp",
+          "funcTargetType": "ptFull",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80364,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n得られる自身の絆ボーナス合計",
+              "name": "得られる自身の絆アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1023.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            {
+              "ApplySupportSvt": 0,
+              "Individuality": 0,
+              "EventId": 80364,
+              "RateCount": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 940250,
+      "name": "愉快で素敵な仲間たち A",
+      "originalName": "愉快で素敵な仲間たち A",
+      "ruby": "ゆかいですてきななかまたち",
+      "detail": "自身の『ミシシッピ・ミササイザーズ』における攻撃の威力を50%アップ ＋ 味方全体<控え含む>の『ミシシッピ・ミササイザーズ』のクエストクリア時に得られる絆を5%アップ(サポート時は無効)【『ミシシッピ・ミササイザーズ』イベント期間限定】",
+      "unmodifiedDetail": "自身の『ミシシッピ・ミササイザーズ』における攻撃の威力を50%アップ ＋ 味方全体<控え含む>の『ミシシッピ・ミササイザーズ』のクエストクリア時に得られる絆を5%アップ(サポート時は無効)【『ミシシッピ・ミササイザーズ』イベント期間限定】",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00301.png",
+      "coolDown": [
+        0
+      ],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 16,
+          "priority": 171,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 80367,
+          "flag": 0,
+          "startedAt": 1651059000,
+          "endedAt": 1652846399
+        }
+      ],
+      "skillAdd": [],
+      "functions": [
+        {
+          "funcId": 8383,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "愉快で素敵な仲間たち",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+          "functvals": [],
+          "funcquestTvals": [
+            {
+              "id": 94000133,
+              "name": "unknown"
+            }
+          ],
+          "funcGroup": [
+            {
+              "eventId": 80367,
+              "baseFuncId": 8381,
+              "nameTotal": "{1} \n攻撃の威力アップ合計",
+              "name": "攻撃の威力アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_302.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [
+            {
+              "id": 4178,
+              "name": "愉快で素敵な仲間たち",
+              "detail": "『ミシシッピ・ミササイザーズ』において与えるダメージをアップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_302.png",
+              "type": "upDamage",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 10000
+            }
+          ],
+          "svals": [
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 500
+            }
+          ]
+        },
+        {
+          "funcId": 8512,
+          "funcType": "servantFriendshipUp",
+          "funcTargetType": "ptFull",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "なし",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80367,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\n得られる自身の絆ボーナス合計",
+              "name": "得られる自身の絆アップ",
+              "icon": "https://assets.atlasacademy.io/GameData/JP/EventUI/func_group_icon_1023.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            {
+              "ApplySupportSvt": 0,
+              "Individuality": 0,
+              "EventId": 80367,
+              "RateCount": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": 960507,
       "name": "絆の力 EX",
       "originalName": "絆の力 EX",

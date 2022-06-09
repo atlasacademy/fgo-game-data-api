@@ -3274,6 +3274,22 @@
     },
     {
       "svtId": 602900,
+      "num": 16,
+      "priority": 169,
+      "skillId": 940247,
+      "condQuestId": 0,
+      "condQuestPhase": 0,
+      "condLv": 0,
+      "condLimitCount": 0,
+      "condFriendshipRank": 0,
+      "eventId": 80364,
+      "flag": 0,
+      "commonReleaseId": 0,
+      "startedAt": 1649235600,
+      "endedAt": 1651031999
+    },
+    {
+      "svtId": 602900,
       "num": 10,
       "priority": 1,
       "skillId": 960502,

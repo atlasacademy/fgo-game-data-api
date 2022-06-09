@@ -3687,6 +3687,22 @@
           "mstSvtPassiveSkill": [
             {
               "svtId": 602400,
+              "num": 16,
+              "priority": 127,
+              "skillId": 940154,
+              "condQuestId": 0,
+              "condQuestPhase": 0,
+              "condLv": 0,
+              "condLimitCount": 0,
+              "condFriendshipRank": 0,
+              "eventId": 80291,
+              "flag": 0,
+              "commonReleaseId": 0,
+              "startedAt": 1653278400,
+              "endedAt": 1655092799
+            },
+            {
+              "svtId": 602400,
               "num": 10,
               "priority": 1,
               "skillId": 960502,
