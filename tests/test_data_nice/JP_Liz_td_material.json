@@ -5,6 +5,7 @@
   "originalName": "エリザベート・バートリー〔シンデレラ〕",
   "ruby": "エリザベート・バートリー〔シンデレラ〕",
   "battleName": "エリザベート",
+  "originalBattleName": "エリザベート",
   "className": "rider",
   "type": "svtMaterialTd",
   "flag": "ignoreCombineLimitSpecial",

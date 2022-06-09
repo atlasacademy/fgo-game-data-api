@@ -5,6 +5,7 @@
   "originalName": "Billy the Kid",
   "ruby": "Billy the Kid",
   "battleName": "Billy",
+  "originalBattleName": "Billy",
   "className": "archer",
   "type": "normal",
   "flag": "normal",

@@ -978,6 +978,11 @@ class NiceServant(BaseModelORJson):
     battleName: str = Field(
         ..., title="svt's battle name", description="Name that appears in battle"
     )
+    originalBattleName: str = Field(
+        ...,
+        title="untranslated svt's battle name",
+        description="untranslated svt's battle name",
+    )
     className: SvtClass = Field(
         ...,
         title="svt's class",
