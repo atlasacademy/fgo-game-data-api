@@ -722,6 +722,8 @@ class NiceServantChange(BaseModel):
     condTargetId: int
     condValue: int
     name: str
+    ruby: str
+    battleName: str
     svtVoiceId: int
     limitCount: int
     flag: int
@@ -972,6 +974,9 @@ class NiceServant(BaseModelORJson):
     )
     ruby: str = Field(
         ..., title="svt's name ruby text", description="svt's name ruby text"
+    )
+    battleName: str = Field(
+        ..., title="svt's battle name", description="Name that appears in battle"
     )
     className: SvtClass = Field(
         ...,
