@@ -394,6 +394,7 @@ async def get_basic_svt(
                 }
         if svtExtra.zeroLimitOverwriteName is not None:
             basic_servant["name"] = svtExtra.zeroLimitOverwriteName
+            basic_servant["originalName"] = svtExtra.zeroLimitOverwriteName
             basic_servant["overwriteName"] = mstSvt.name
             basic_servant["originalOverwriteName"] = mstSvt.name
 
