@@ -434,9 +434,12 @@ async def get_basic_svt(
             i=0,
         )
     else:
+        limit_count_to_face_id = {0: 0, 1: 1, 2: 1, 3: 2, 4: 3}
         basic_servant["face"] = AssetURL.face.format(
             **base_settings,
-            i=3 if mstSvtLimit.limitCount == 4 else mstSvtLimit.limitCount,
+            i=limit_count_to_face_id.get(
+                mstSvtLimit.limitCount, mstSvtLimit.limitCount
+            ),
         )
 
     if region == Region.JP and lang is not None:

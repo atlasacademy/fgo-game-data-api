@@ -140,6 +140,7 @@ class TestBasicSpecial:
             BasicSvtFaceCase(Region.JP, 9100101, 2, "JP/Enemys/99402402.png"),
             BasicSvtFaceCase(Region.JP, 9935900, None, "JP/Enemys/99359003.png"),
             BasicSvtFaceCase(Region.JP, 404601, None, "JP/Faces/f_4046000.png"),
+            BasicSvtFaceCase(Region.JP, 9943860, 2, "JP/Faces/f_99438601.png"),
         ]
 
         for case in basic_face_cases:

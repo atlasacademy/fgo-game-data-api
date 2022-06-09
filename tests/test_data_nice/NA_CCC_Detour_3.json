@@ -743,7 +743,7 @@
             "rarity": 4,
             "atkMax": 9949,
             "hpMax": 11589,
-            "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_1020002.png",
+            "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_1020001.png",
             "costume": {}
           },
           "drops": [
@@ -2236,7 +2236,7 @@
             "rarity": 4,
             "atkMax": 9968,
             "hpMax": 11761,
-            "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_3019002.png",
+            "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_3019001.png",
             "costume": {
               "301900": {
                 "id": 0,
@@ -3546,7 +3546,7 @@
             "rarity": 4,
             "atkMax": 9735,
             "hpMax": 11637,
-            "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_2008002.png",
+            "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_2008001.png",
             "costume": {}
           },
           "drops": [
@@ -4900,7 +4900,7 @@
             "rarity": 3,
             "atkMax": 7627,
             "hpMax": 9595,
-            "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_1012002.png",
+            "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_1012001.png",
             "costume": {
               "101230": {
                 "id": 11,
@@ -6157,7 +6157,7 @@
             "rarity": 4,
             "atkMax": 9968,
             "hpMax": 11761,
-            "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_3019002.png",
+            "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_3019001.png",
             "costume": {
               "301900": {
                 "id": 0,
