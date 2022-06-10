@@ -693,7 +693,7 @@ class ScriptJson(BaseModelORJson):
     overwriteName: Optional[str]
     overwritePriority: Optional[int]
     infos: list[ScriptJsonInfo] = []
-    conds: list[ScriptJsonCond] = []
+    conds: list[ScriptJsonCond] | None = []
     condAddItem: int = 0
     materialOverwriteName: Optional[str] = None
 

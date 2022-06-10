@@ -114,7 +114,7 @@ def get_nice_voice_line(
         text=[nullable_to_string(info.text) for info in script.infos],
         conds=[
             get_nice_voice_cond(info, costume_ids, mstSvtGroups)
-            for info in script.conds
+            for info in (script.conds if script.conds is not None else [])
         ],
         playConds=[
             get_nice_play_cond(play_cond)

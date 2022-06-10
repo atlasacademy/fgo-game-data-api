@@ -350,7 +350,7 @@ async def get_voice_group_from_svtVoice(
         cond.value
         for svt_voice in mstSvtVoices
         for script_json in svt_voice.scriptJson
-        for cond in script_json.conds
+        for cond in (script_json.conds if script_json.conds is not None else [])
         if cond.condType == VoiceCondType.SVT_GROUP
     }
     return await fetch.get_all_multiple(conn, MstSvtGroup, group_ids)
