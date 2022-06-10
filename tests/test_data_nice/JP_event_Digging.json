@@ -3710,7 +3710,7 @@
   "digging": {
     "sizeX": 7,
     "sizeY": 4,
-    "bgImage": "https://assets.atlasacademy.io/GameData/JP/EventUI/digging_bg_80367.png",
+    "bgImage": "https://assets.atlasacademy.io/GameData/JP/EventUI/Prefabs/80367/digging_bg_80367.png",
     "eventPointItem": {
       "id": 94069607,
       "name": "バニペイポイント",
@@ -3734,7 +3734,7 @@
       {
         "id": 8036701,
         "eventId": 80367,
-        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/event_digging_block_1.png",
+        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/Prefabs/80367/event_digging_block_1.png",
         "commonConsume": {
           "id": 20069601,
           "priority": 1,
@@ -3749,7 +3749,7 @@
       {
         "id": 8036702,
         "eventId": 80367,
-        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/event_digging_block_2.png",
+        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/Prefabs/80367/event_digging_block_2.png",
         "commonConsume": {
           "id": 20069602,
           "priority": 1,
@@ -3764,7 +3764,7 @@
       {
         "id": 8036703,
         "eventId": 80367,
-        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/event_digging_block_3.png",
+        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/Prefabs/80367/event_digging_block_3.png",
         "commonConsume": {
           "id": 20069603,
           "priority": 1,
@@ -3779,7 +3779,7 @@
       {
         "id": 8036704,
         "eventId": 80367,
-        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/event_digging_block_6.png",
+        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/Prefabs/80367/event_digging_block_6.png",
         "commonConsume": {
           "id": 20069604,
           "priority": 1,
@@ -3794,7 +3794,7 @@
       {
         "id": 8036705,
         "eventId": 80367,
-        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/event_digging_block_7.png",
+        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/Prefabs/80367/event_digging_block_7.png",
         "commonConsume": {
           "id": 20069605,
           "priority": 1,
@@ -3809,7 +3809,7 @@
       {
         "id": 8036706,
         "eventId": 80367,
-        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/event_digging_block_4.png",
+        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/Prefabs/80367/event_digging_block_4.png",
         "commonConsume": {
           "id": 20069606,
           "priority": 1,
@@ -3824,7 +3824,7 @@
       {
         "id": 8036707,
         "eventId": 80367,
-        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/event_digging_block_5.png",
+        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/Prefabs/80367/event_digging_block_5.png",
         "commonConsume": {
           "id": 20069607,
           "priority": 1,
@@ -3839,7 +3839,7 @@
       {
         "id": 8036708,
         "eventId": 80367,
-        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/event_digging_block_11.png",
+        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/Prefabs/80367/event_digging_block_11.png",
         "commonConsume": {
           "id": 20069608,
           "priority": 1,
@@ -3854,7 +3854,7 @@
       {
         "id": 8036709,
         "eventId": 80367,
-        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/event_digging_block_8.png",
+        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/Prefabs/80367/event_digging_block_8.png",
         "commonConsume": {
           "id": 20069609,
           "priority": 1,
@@ -3869,7 +3869,7 @@
       {
         "id": 8036710,
         "eventId": 80367,
-        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/event_digging_block_9.png",
+        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/Prefabs/80367/event_digging_block_9.png",
         "commonConsume": {
           "id": 20069610,
           "priority": 1,
@@ -3884,7 +3884,7 @@
       {
         "id": 8036711,
         "eventId": 80367,
-        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/event_digging_block_10.png",
+        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/Prefabs/80367/event_digging_block_10.png",
         "commonConsume": {
           "id": 20069611,
           "priority": 1,
@@ -3899,7 +3899,7 @@
       {
         "id": 8036712,
         "eventId": 80367,
-        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/event_digging_block_12.png",
+        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/Prefabs/80367/event_digging_block_12.png",
         "commonConsume": {
           "id": 20069612,
           "priority": 1,
@@ -3914,7 +3914,7 @@
       {
         "id": 8036713,
         "eventId": 80367,
-        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/event_digging_block_14.png",
+        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/Prefabs/80367/event_digging_block_14.png",
         "commonConsume": {
           "id": 20069613,
           "priority": 1,
@@ -3929,7 +3929,7 @@
       {
         "id": 8036714,
         "eventId": 80367,
-        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/event_digging_block_13.png",
+        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/Prefabs/80367/event_digging_block_13.png",
         "commonConsume": {
           "id": 20069614,
           "priority": 1,
@@ -3944,7 +3944,7 @@
       {
         "id": 8036715,
         "eventId": 80367,
-        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/event_digging_block_15.png",
+        "image": "https://assets.atlasacademy.io/GameData/JP/EventUI/Prefabs/80367/event_digging_block_15.png",
         "commonConsume": {
           "id": 20069615,
           "priority": 1,
