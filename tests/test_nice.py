@@ -71,6 +71,7 @@ test_cases_dict: dict[str, tuple[str, str]] = {
     "event_tower_JP": ("NA/event/80088", "NA_event_Setsubun"),
     "event_lottery_NA": ("NA/event/80087", "NA_event_Da_Vinci_rerun"),
     "event_treasureBox_JP": ("JP/event/80331", "JP_Summer_Adventure"),
+    "event_digging_JP": ("JP/event/80367", "JP_event_Digging"),
     "war_NA_id": ("NA/war/203", "NA_war_Shimousa"),
     "quest_JP_id": ("JP/quest/91103002", "JP_Suzuka_rank_up"),
     "quest_NA_id_phase": ("NA/quest/94020187/1", "NA_87th_floor"),
