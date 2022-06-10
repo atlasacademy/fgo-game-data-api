@@ -47,6 +47,9 @@ from ..schemas.raw import (
     MstEquipExp,
     MstEquipSkill,
     MstEvent,
+    MstEventDigging,
+    MstEventDiggingBlock,
+    MstEventDiggingReward,
     MstEventMission,
     MstEventMissionCondition,
     MstEventMissionConditionDetail,
@@ -790,8 +793,22 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
     box_gift_ids = {box.treasureBoxGiftId for box in treasure_boxes}
     box_gifts = await fetch.get_all_multiple(conn, MstTreasureBoxGift, box_gift_ids)
 
-    consume_ids = {box.commonConsumeId for box in treasure_boxes}
-    common_consumes = await fetch.get_all_multiple(conn, MstCommonConsume, consume_ids)
+    digging = await fetch.get_one(conn, MstEventDigging, event_id)
+    if digging:
+        digging_blocks = await fetch.get_all(conn, MstEventDiggingBlock, event_id)
+        digging_rewards = await fetch.get_all(conn, MstEventDiggingReward, event_id)
+        digging_gift_ids = {reward.giftId for reward in digging_rewards}
+        digging_consume_ids = {block.commonConsumeId for block in digging_blocks}
+    else:
+        digging_blocks = []
+        digging_rewards = []
+        digging_gift_ids: set[int] = set()
+        digging_consume_ids: set[int] = set()
+
+    treasure_box_consume_ids = {box.commonConsumeId for box in treasure_boxes}
+    common_consumes = await fetch.get_all_multiple(
+        conn, MstCommonConsume, digging_consume_ids | treasure_box_consume_ids
+    )
 
     gift_ids = (
         {reward.giftId for reward in rewards}
@@ -800,6 +817,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         | {box.targetId for box in gacha_bases}
         | {box.extraGiftId for box in treasure_boxes}
         | {treasure_box_gift.giftId for treasure_box_gift in box_gifts}
+        | digging_gift_ids
     )
 
     gift_adds = await fetch.get_all_multiple(conn, MstGiftAdd, gift_ids)
@@ -810,6 +828,8 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
     item_ids = {get_shop_cost_item_id(shop) for shop in shops} | {
         lottery.payTargetId for lottery in box_gachas
     }
+    if digging:
+        item_ids |= {digging.eventPointItemId}
     mstItem = await get_multiple_items(conn, item_ids)
 
     bgm_ids = {reward_scene.bgmId for reward_scene in reward_scenes} | {
@@ -842,6 +862,9 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         mstBoxGachaTalk=gacha_talks,
         mstTreasureBox=treasure_boxes,
         mstTreasureBoxGift=box_gifts,
+        mstEventDigging=digging,
+        mstEventDiggingBlock=digging_blocks,
+        mstEventDiggingReward=digging_rewards,
         mstItem=mstItem,
         mstCommonConsume=common_consumes,
         mstSvtVoice=mstSvtVoice,

@@ -30,6 +30,9 @@ from ...models.raw import (
     mstEquipExp,
     mstEquipSkill,
     mstEvent,
+    mstEventDigging,
+    mstEventDiggingBlock,
+    mstEventDiggingReward,
     mstEventMission,
     mstEventMissionCondition,
     mstEventMissionConditionDetail,
@@ -109,6 +112,9 @@ from ...schemas.raw import (
     MstEquipExp,
     MstEquipSkill,
     MstEvent,
+    MstEventDigging,
+    MstEventDiggingBlock,
+    MstEventDiggingReward,
     MstEventMission,
     MstEventMissionCondition,
     MstEventMissionConditionDetail,
@@ -185,6 +191,7 @@ schema_map_fetch_one: dict[  # type:ignore
     MstSvtExtra: (mstSvtExtra, mstSvtExtra.c.svtId),
     MstSvtCoin: (mstSvtCoin, mstSvtCoin.c.svtId),
     MstSvtAdd: (mstSvtAdd, mstSvtAdd.c.svtId),
+    MstEventDigging: (mstEventDigging, mstEventDigging.c.eventId),
 }
 
 TFetchOne = TypeVar("TFetchOne", bound=BaseModelORJson)
@@ -314,6 +321,16 @@ schema_table_fetch_all: dict[  # type:ignore
         mstSvtIndividuality.c.idx,
     ),
     MstTreasureBox: (mstTreasureBox, mstTreasureBox.c.eventId, mstTreasureBox.c.id),
+    MstEventDiggingBlock: (
+        mstEventDiggingBlock,
+        mstEventDiggingBlock.c.eventId,
+        mstEventDiggingBlock.c.id,
+    ),
+    MstEventDiggingReward: (
+        mstEventDiggingReward,
+        mstEventDiggingReward.c.eventId,
+        mstEventDiggingReward.c.id,
+    ),
     MstSvtMultiPortrait: (
         mstSvtMultiPortrait,
         mstSvtMultiPortrait.c.svtId,

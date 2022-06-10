@@ -1184,6 +1184,44 @@ mstTreasureBoxGift = Table(
     Column("collateralUpperLimit", Integer),
 )
 
+mstEventDigging = Table(
+    "mstEventDigging",
+    metadata,
+    Column("eventId", Integer, index=True),
+    Column("sizeX", Integer),
+    Column("sizeY", Integer),
+    Column("bgImageId", Integer),
+    Column("eventPointItemId", Integer),
+    Column("resettableDiggedNum", Integer),
+    Column("script", JSONB),
+)
+
+mstEventDiggingBlock = Table(
+    "mstEventDiggingBlock",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("eventId", Integer, index=True),
+    Column("imageId", Integer),
+    Column("commonConsumeId", Integer),
+    Column("objectId", Integer),
+    Column("diggingEventPoint", Integer),
+    Column("script", JSONB),
+    # Column("consumeHintImageIds", ARRAY),
+    # Column("consumeHintItemNums", ARRAY),
+    # Column("hintEventPoints", ARRAY),
+)
+
+mstEventDiggingReward = Table(
+    "mstEventDiggingReward",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("eventId", Integer, index=True),
+    Column("giftId", Integer),
+    Column("iconId", Integer),
+    Column("rewardSize", Integer),
+    Column("script", JSONB),
+)
+
 
 mstCommonConsume = Table(
     "mstCommonConsume",
@@ -1791,6 +1829,7 @@ TABLES_TO_BE_LOADED = [
     [mstTreasureBoxGift],
     [mstTreasureDevice],
     [mstTreasureDeviceDetail],
+    [mstEventDigging, mstEventDiggingBlock, mstEventDiggingReward],
     [mstVoice],
     [mstVoicePlayCond],
     [mstSvt],

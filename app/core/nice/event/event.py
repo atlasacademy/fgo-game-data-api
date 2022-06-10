@@ -2,8 +2,6 @@ from collections import defaultdict
 
 from sqlalchemy.ext.asyncio import AsyncConnection
 
-from app.core.nice.event.utils import GiftData
-
 from ....config import Settings
 from ....schemas.common import Language, Region
 from ....schemas.gameenums import EVENT_TYPE_NAME, NiceSvtVoiceType, NiceVoiceCondType
@@ -14,6 +12,7 @@ from ...utils import fmt_url, get_translation
 from ..bgm import get_nice_bgm_entity_from_raw
 from ..item import get_nice_item_from_raw
 from ..svt.voice import get_nice_voice_group
+from .digging import get_nice_digging
 from .lottery import get_nice_lottery
 from .mission import get_nice_missions
 from .point import get_nice_pointBuff, get_nice_pointGroup
@@ -22,6 +21,7 @@ from .reward_scene import get_nice_event_reward_scene
 from .shop import get_nice_shop
 from .tower import get_nice_event_tower
 from .treasure_box import get_nice_treasure_box
+from .utils import GiftData
 from .voice_play import get_nice_event_voice_play
 
 
@@ -218,6 +218,17 @@ async def get_nice_event(
             )
             for box in raw_event.mstTreasureBox
         ],
+        digging=get_nice_digging(
+            region,
+            raw_event.mstEventDigging,
+            raw_event.mstEventDiggingBlock,
+            raw_event.mstEventDiggingReward,
+            item_map=item_map,
+            gift_data=gift_data,
+            common_consumes=common_consumes,
+        )
+        if raw_event.mstEventDigging
+        else None,
         voicePlays=[
             get_nice_event_voice_play(voice_play, voice_groups)
             for voice_play in raw_event.mstEventVoicePlay

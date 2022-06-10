@@ -1561,6 +1561,33 @@ class NiceEventTreasureBox(BaseModelORJson):
     commonConsume: NiceCommonConsume
 
 
+class NiceEventDiggingBlock(BaseModelORJson):
+    id: int
+    eventId: int
+    image: HttpUrl
+    commonConsume: NiceCommonConsume
+    objectId: int
+    diggingEventPoint: int
+    blockNum: int
+
+
+class NiceEventDiggingReward(BaseModelORJson):
+    id: int
+    # icon: Optional[HttpUrl] = None
+    gifts: list[NiceGift]
+    rewardSize: int
+
+
+class NiceEventDigging(BaseModelORJson):
+    sizeX: int
+    sizeY: int
+    bgImage: HttpUrl
+    eventPointItem: NiceItem
+    resettableDiggedNum: int
+    blocks: list[NiceEventDiggingBlock]
+    rewards: list[NiceEventDiggingReward]
+
+
 class NiceEventRewardSceneGuide(BaseModelORJson):
     imageId: int
     limitCount: int
@@ -1625,6 +1652,7 @@ class NiceEvent(BaseModelORJson):
     towers: list[NiceEventTower]
     lotteries: list[NiceEventLottery]
     treasureBoxes: list[NiceEventTreasureBox]
+    digging: NiceEventDigging | None
     voicePlays: list[NiceEventVoicePlay]
     voices: list[NiceVoiceGroup] = Field(
         ..., description="All voice lines related to this event"
