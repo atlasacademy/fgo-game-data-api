@@ -1206,9 +1206,9 @@ mstEventDiggingBlock = Table(
     Column("objectId", Integer),
     Column("diggingEventPoint", Integer),
     Column("script", JSONB),
-    # Column("consumeHintImageIds", ARRAY),
-    # Column("consumeHintItemNums", ARRAY),
-    # Column("hintEventPoints", ARRAY),
+    Column("consumeHintImageIds", ARRAY(Integer)),
+    Column("consumeHintItemNums", ARRAY(Integer)),
+    Column("hintEventPoints", ARRAY(Integer)),
 )
 
 mstEventDiggingReward = Table(

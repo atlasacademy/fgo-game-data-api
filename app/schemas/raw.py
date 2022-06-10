@@ -1120,6 +1120,9 @@ class MstEventDiggingBlock(BaseModelORJson):
     objectId: int
     diggingEventPoint: int
     script: dict[str, Any]
+    consumeHintImageIds: list[int]
+    consumeHintItemNums: list[int]
+    hintEventPoints: list[int]
 
 
 class MstEventDiggingReward(BaseModelORJson):
