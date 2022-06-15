@@ -2628,6 +2628,7 @@ class QuestFlag(IntEnum):
     LIVE = 72057594037927936
     FORCE_DISPLAY_ENEMY_INFO = 144115188075855872
     ALLOUT_BATTLE = 288230376151711744
+    RECOLLECTION = 576460752303423488
 
 
 class NiceQuestFlag(str, Enum):
@@ -2691,6 +2692,7 @@ class NiceQuestFlag(str, Enum):
     live = "live"
     forceDisplayEnemyInfo = "forceDisplayEnemyInfo"
     alloutBattle = "alloutBattle"
+    recollection = "recollection"
 
 
 Quest_FLAG_NAME: dict[int, NiceQuestFlag] = {
@@ -2752,6 +2754,7 @@ Quest_FLAG_NAME: dict[int, NiceQuestFlag] = {
     72057594037927936: NiceQuestFlag.live,
     144115188075855872: NiceQuestFlag.forceDisplayEnemyInfo,
     288230376151711744: NiceQuestFlag.alloutBattle,
+    576460752303423488: NiceQuestFlag.recollection,
 }
 
 

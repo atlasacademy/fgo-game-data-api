@@ -962,6 +962,7 @@ export enum NiceQuestFlag {
     LIVE = "live",
     FORCE_DISPLAY_ENEMY_INFO = "forceDisplayEnemyInfo",
     ALLOUT_BATTLE = "alloutBattle",
+    RECOLLECTION = "recollection",
 }
 
 export enum NiceStatusRank {
