@@ -7,6 +7,7 @@ from ....schemas.gameenums import (
     COND_TYPE_NAME,
     VOICE_COND_NAME,
     VOICE_TYPE_NAME,
+    NiceVoiceCondType,
     SvtVoiceType,
     VoiceCondType,
 )
@@ -75,7 +76,7 @@ def get_nice_voice_cond(
     )
 
     voice_cond = NiceVoiceCond(
-        condType=VOICE_COND_NAME[cond.condType],
+        condType=VOICE_COND_NAME.get(cond.condType, NiceVoiceCondType.unknown),
         eventId=cond.eventId,
         value=cond_value,
         valueList=cond_value_list,

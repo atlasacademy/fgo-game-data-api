@@ -2378,6 +2378,15 @@ class NiceVoiceCondType(str, Enum):
     levelUpLimitCount = "levelUpLimitCount"
     levelUpLimitCountAbove = "levelUpLimitCountAbove"
     levelUpLimitCountBelow = "levelUpLimitCountBelow"
+    unknown27 = "unknown27"
+    unknown30 = "unknown30"
+    unknown32 = "unknown32"
+    unknown34 = "unknown34"
+    unknown35 = "unknown35"
+    unknown37 = "unknown37"
+    unknown38 = "unknown38"
+    unknown40 = "unknown40"
+    unknown = "unknown"
 
 
 VOICE_COND_NAME: dict[int, NiceVoiceCondType] = {
@@ -2407,6 +2416,15 @@ VOICE_COND_NAME: dict[int, NiceVoiceCondType] = {
     24: NiceVoiceCondType.levelUpLimitCount,
     25: NiceVoiceCondType.levelUpLimitCountAbove,
     26: NiceVoiceCondType.levelUpLimitCountBelow,
+    27: NiceVoiceCondType.unknown27,
+    30: NiceVoiceCondType.unknown30,
+    32: NiceVoiceCondType.unknown32,
+    34: NiceVoiceCondType.unknown34,
+    35: NiceVoiceCondType.unknown35,
+    37: NiceVoiceCondType.unknown37,
+    38: NiceVoiceCondType.unknown38,
+    40: NiceVoiceCondType.unknown40,
+    -1: NiceVoiceCondType.unknown,
 }
 
 

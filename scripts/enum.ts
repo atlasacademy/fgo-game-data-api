@@ -852,6 +852,15 @@ export enum NiceVoiceCondType {
     LEVEL_UP_LIMIT_COUNT = "levelUpLimitCount",
     LEVEL_UP_LIMIT_COUNT_ABOVE = "levelUpLimitCountAbove",
     LEVEL_UP_LIMIT_COUNT_BELOW = "levelUpLimitCountBelow",
+    UNKNOWN_27 = "unknown27",
+    UNKNOWN_30 = "unknown30",
+    UNKNOWN_32 = "unknown32",
+    UNKNOWN_34 = "unknown34",
+    UNKNOWN_35 = "unknown35",
+    UNKNOWN_37 = "unknown37",
+    UNKNOWN_38 = "unknown38",
+    UNKNOWN_40 = "unknown40",
+    UNKNOWN = "unknown",
 }
 
 export enum NiceSvtVoiceType {
