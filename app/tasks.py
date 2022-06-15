@@ -365,12 +365,9 @@ async def generate_exports(
                 await dump_nice_ccs(util, mstCcs)
                 await dump_nice_mms(util, mstMasterMissions)
                 await dump_nice_bgms(util, bgms)
-                await dump_nice_wars(util, mstWars)
-                await dump_nice_events(util, mstEvents)
 
+                util_en = ExportUtil(conn, redis, region, export_path, Language.en)
                 if region == Region.JP:
-                    util_en = ExportUtil(conn, redis, region, export_path, Language.en)
-
                     await dump_basic_servants(util_en, "basic_servant", all_servants)
                     await dump_basic_equips(util_en, all_equips)
                     await dump_basic_ccs(util_en, mstCcs)
@@ -386,11 +383,16 @@ async def generate_exports(
                     await dump_nice_mcs(util_en, mstEquips)
                     await dump_nice_ccs(util_en, mstCcs)
                     await dump_nice_bgms(util_en, bgms)
-                    await dump_nice_wars(util_en, mstWars)
-                    await dump_nice_events(util_en, mstEvents)
 
                 await dump_svt(util, "nice_servant", all_servants)
                 await dump_svt(util, "nice_equip", all_equips)
+
+                await dump_nice_wars(util, mstWars)
+                await dump_nice_events(util, mstEvents)
+
+                if region == Region.JP:
+                    await dump_nice_wars(util_en, mstWars)
+                    await dump_nice_events(util_en, mstEvents)
 
             run_time = time.perf_counter() - start_time
             logger.info(f"Exported {region} data in {run_time:.2f}s.")
