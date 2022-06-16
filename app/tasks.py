@@ -37,7 +37,7 @@ from .db.helpers import fetch
 from .db.helpers.svt import get_all_equips
 from .db.load import load_pydantic_to_db, update_db
 from .models.raw import mstSvtExtra
-from .redis.helpers.repo_version import set_repo_version
+from .redis.helpers.repo_version import get_repo_version, set_repo_version
 from .redis.load import load_redis_data, load_svt_extra_redis
 from .routers.utils import list_string
 from .schemas.base import BaseModelORJson
@@ -393,6 +393,10 @@ async def generate_exports(
                 if region == Region.JP:
                     await dump_nice_wars(util_en, mstWars)
                     await dump_nice_events(util_en, mstEvents)
+
+            repo_info = await get_repo_version(redis, region)
+            if repo_info is not None:
+                await dump_normal(export_path, "info", repo_info.dict())
 
             run_time = time.perf_counter() - start_time
             logger.info(f"Exported {region} data in {run_time:.2f}s.")
