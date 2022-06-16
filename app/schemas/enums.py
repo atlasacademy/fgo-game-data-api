@@ -774,6 +774,7 @@ class Trait(str, Enum):
     faceCard = "faceCard"
     cardNP = "cardNP"
     kingproteaGrowth = "kingproteaGrowth"
+    kingproteaInfiniteProliferation = "kingproteaInfiniteProliferation"
     kingproteaProliferation = "kingproteaProliferation"
     kingproteaProliferationNPDefense = "kingproteaProliferationNPDefense"
     fieldSunlight = "fieldSunlight"
@@ -987,7 +988,7 @@ TRAIT_NAME: dict[int, Trait] = {
     2356: Trait.feminineLookingServant,  # Teach's 3rd skill
     2385: Trait.cursedBook,  # Murasaki Valentine
     2386: Trait.kingproteaProliferation,
-    2387: Trait.kingproteaGrowth,
+    2387: Trait.kingproteaInfiniteProliferation,
     2392: Trait.fieldCity,
     2403: Trait.enemyCaseFilesRareEnemy,
     2469: Trait.enemyLasVegasBonusEnemy,
@@ -1134,6 +1135,7 @@ OLD_TRAIT_MAPPING = {
     Trait.argonaut: 2466,
     Trait.skyOrEarth: 2011,
     Trait.skyOrEarthExceptPseudoAndDemi: 2037,
+    Trait.kingproteaGrowth: 2387,
 }
 
 TRAIT_NAME_REVERSE |= OLD_TRAIT_MAPPING
