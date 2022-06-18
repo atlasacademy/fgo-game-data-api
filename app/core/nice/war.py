@@ -130,13 +130,15 @@ def get_nice_map(
     )
 
 
-def get_nice_war_add(region: Region, war_add: MstWarAdd) -> NiceWarAdd:
+def get_nice_war_add(
+    region: Region, war_add: MstWarAdd, banner_template: str
+) -> NiceWarAdd:
     banner_url = (
         fmt_url(
             AssetURL.banner,
             base_url=settings.asset_url,
             region=region,
-            banner=f"questboard_cap{war_add.overwriteId:>03}",
+            banner=banner_template.format(war_add.overwriteId),
         )
         if war_add.type == WarOverwriteType.BANNER
         else None
@@ -214,19 +216,26 @@ async def get_nice_war(
 
     if raw_war.mstEvent:
         if raw_war.mstWar.flag & WarEntityFlag.SUB_FOLDER != 0:
-            banner_file = f"chaldea_category_{raw_war.mstWar.bannerId}"
+            banner_template = "chaldea_category_{}"
+            banner_id = raw_war.mstWar.bannerId
         else:
-            banner_file = f"event_war_{raw_war.mstEvent.bannerId}"
+            banner_template = "event_war_{}"
+            banner_id = raw_war.mstEvent.bannerId
     elif raw_war.mstWar.flag & WarEntityFlag.MAIN_SCENARIO != 0:
         last_war_id = await fetch.get_one(conn, MstConstant, "LAST_WAR_ID")
         if raw_war.mstWar.id > 10000 or (
             last_war_id and raw_war.mstWar.id <= last_war_id.value
         ):
-            banner_file = f"questboard_cap{raw_war.mstWar.bannerId:>03}"
+            banner_template = "questboard_cap{:>03}"
+            banner_id = raw_war.mstWar.bannerId
         else:
-            banner_file = "questboard_cap_closed"
+            banner_template = "questboard_cap_closed"
+            banner_id = 0
     else:
-        banner_file = f"chaldea_category_{raw_war.mstWar.bannerId}"
+        banner_template = "chaldea_category_{}"
+        banner_id = raw_war.mstWar.bannerId
+
+    banner_file = banner_template.format(banner_id)
 
     bgm = get_nice_bgm(
         region, next(bgm for bgm in raw_war.mstBgm if bgm.id == raw_war.mstWar.bgmId)
@@ -263,7 +272,10 @@ async def get_nice_war(
         eventId=raw_war.mstWar.eventId,
         eventName=get_translation(lang, raw_war.mstWar.eventName),
         lastQuestId=raw_war.mstWar.lastQuestId,
-        warAdds=[get_nice_war_add(region, war_add) for war_add in raw_war.mstWarAdd],
+        warAdds=[
+            get_nice_war_add(region, war_add, banner_template)
+            for war_add in raw_war.mstWarAdd
+        ],
         maps=[
             get_nice_map(
                 region,
