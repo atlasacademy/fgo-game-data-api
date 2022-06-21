@@ -822,7 +822,7 @@ class NiceVoicePlayCond(BaseModel):
     targetId: int = Field(..., title="Voice play condition target ID")
     condValue: int = Field(
         ...,
-        title="[DEPRECIATED, use condValues] Voice play condition target value."
+        title="[DEPRECATED, use condValues] Voice play condition target value."
         "Use condValues since condValues in other places can have multiple values."
         "This value is the first element of condValues.",
     )

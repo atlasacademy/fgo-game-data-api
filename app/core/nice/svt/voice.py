@@ -55,7 +55,7 @@ def get_nice_play_cond(playCond: MstVoicePlayCond) -> NiceVoicePlayCond:
         condGroup=playCond.condGroup,
         condType=COND_TYPE_NAME[playCond.condType],
         targetId=playCond.targetId,
-        condValue=playCond.condValues[0],
+        condValue=playCond.condValues[0] if playCond.condValues else 0,
         condValues=playCond.condValues,
     )
 
