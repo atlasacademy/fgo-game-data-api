@@ -1763,7 +1763,9 @@ AssetStorage = Table(
 )
 
 TABLES_TO_BE_LOADED = [
-    [mstAi, mstAiField, mstAiAct],
+    [mstAiAct],
+    [mstAi],
+    [mstAiField],
     [mstBgm, mstBgmRelease],
     [mstBoxGacha, mstBoxGachaBase, mstBoxGachaTalk],
     [mstClassRelationOverwrite],
