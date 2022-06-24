@@ -71,6 +71,8 @@ async def parse_dataVals(
         datavals = remove_brackets(datavals)
         array = re.split(r",\s*(?![^\[\]]*])", datavals)
         for i, arrayi in enumerate(array):
+            if arrayi == "":
+                continue
             text = ""
             value = INITIAL_VALUE
             try:

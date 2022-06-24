@@ -200,6 +200,18 @@ cases_datavals_dict = {
         0,
         {"Rate": 5000, "Value": 304800, "Target": 0, "SetLimitCount": 3},
     ),
+    "test_trailing_comma": (
+        966964,
+        0,
+        {
+            "Rate": 5000,
+            "Turn": -1,
+            "Count": 1,
+            "Value": 967006,
+            "Value2": 1,
+            "ShowState": -1,
+        },
+    ),
 }
 
 
