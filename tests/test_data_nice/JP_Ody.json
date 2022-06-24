@@ -3772,7 +3772,7 @@
       "skillAdd": [],
       "functions": [
         {
-          "funcId": 2012,
+          "funcId": 8799,
           "funcType": "addState",
           "funcTargetType": "self",
           "funcTargetTeam": "playerAndEnemy",
@@ -3783,7 +3783,7 @@
           "funcGroup": [],
           "buffs": [
             {
-              "id": 855,
+              "id": 4372,
               "name": "豚化無効",
               "detail": "豚化を受けなくなる",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_322.png",
@@ -3793,15 +3793,15 @@
               "vals": [],
               "tvals": [
                 {
-                  "id": 3047,
-                  "name": "buffPigify"
+                  "id": 3077,
+                  "name": "unknown"
                 }
               ],
               "ckSelfIndv": [],
               "ckOpIndv": [
                 {
-                  "id": 3047,
-                  "name": "buffPigify"
+                  "id": 3077,
+                  "name": "unknown"
                 }
               ],
               "maxRate": 0
