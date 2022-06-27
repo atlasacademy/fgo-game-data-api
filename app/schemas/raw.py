@@ -568,6 +568,35 @@ class CommandCodeEntity(BaseModelORJson):
     mstIllustrator: Optional[MstIllustrator] = None
 
 
+class MstGift(BaseModelORJson):
+    id: int  # 94024900
+    type: int  # 6
+    objectId: int  # 403000
+    priority: int  # 0
+    num: int  # 1
+    lv: Optional[int]
+    limitCount: Optional[int]
+
+
+class MstGiftAdd(BaseModelORJson):
+    priorGiftIconIds: list[int]
+    giftId: int
+    priority: int | None = None
+    condType: int
+    targetId: int
+    targetNum: int
+    priorGiftId: int
+    script: str
+
+
+class MstItemSelect(BaseModelORJson):
+    itemId: int
+    idx: int
+    candidateGiftId: int
+    requireNum: int
+    detail: str
+
+
 class MstItem(BaseModelORJson):
     individuality: list[int]  # [],
     script: dict[str, Any]  # {},
@@ -592,6 +621,9 @@ class MstItem(BaseModelORJson):
     useAppendSkill: bool = False
     useAscension: bool = False
     useCostume: bool = False
+    mstItemSelect: list[MstItemSelect] = []
+    mstGift: list[MstGift] = []
+    mstGiftAdd: list[MstGiftAdd] = []
 
 
 class MstSetItem(BaseModelORJson):
@@ -787,27 +819,6 @@ class MstClassRelationOverwrite(BaseModelORJson):
     defClass: int  # 9
     damageRate: int  # 1300
     type: int  # 0
-
-
-class MstGift(BaseModelORJson):
-    id: int  # 94024900
-    type: int  # 6
-    objectId: int  # 403000
-    priority: int  # 0
-    num: int  # 1
-    lv: Optional[int]
-    limitCount: Optional[int]
-
-
-class MstGiftAdd(BaseModelORJson):
-    priorGiftIconIds: list[int]
-    giftId: int
-    priority: int | None = None
-    condType: int
-    targetId: int
-    targetNum: int
-    priorGiftId: int
-    script: str
 
 
 class MstBgm(BaseModelORJson):

@@ -10,6 +10,7 @@ from ....schemas.raw import MstGift
 from ... import raw
 from ...utils import fmt_url, get_translation
 from ..bgm import get_nice_bgm_entity_from_raw
+from ..gift import GiftData
 from ..item import get_nice_item_from_raw
 from ..svt.voice import get_nice_voice_group
 from .digging import get_nice_digging
@@ -21,7 +22,6 @@ from .reward_scene import get_nice_event_reward_scene
 from .shop import get_nice_shop
 from .tower import get_nice_event_tower
 from .treasure_box import get_nice_treasure_box
-from .utils import GiftData
 from .voice_play import get_nice_event_voice_play
 
 

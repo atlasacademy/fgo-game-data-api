@@ -794,6 +794,9 @@ mstItem = Table(
     Column("useAppendSkill", Boolean),
     Column("useAscension", Boolean),
     Column("useCostume", Boolean),
+    Column("mstItemSelect", JSONB),
+    Column("mstGift", JSONB),
+    Column("mstGiftAdd", JSONB),
 )
 
 
@@ -876,6 +879,15 @@ mstGiftAdd = Table(
     Column("script", String),
 )
 
+mstItemSelect = Table(
+    "mstItemSelect",
+    metadata,
+    Column("itemId", Integer, index=True),
+    Column("idx", Integer),
+    Column("candidateGiftId", Integer),
+    Column("requireNum", Integer),
+    Column("detail", String),
+)
 
 mstSetItem = Table(
     "mstSetItem",

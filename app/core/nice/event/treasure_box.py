@@ -1,7 +1,7 @@
 from ....schemas.common import Region
 from ....schemas.nice import NiceEventTreasureBox, NiceEventTreasureBoxGift
 from ....schemas.raw import MstCommonConsume, MstTreasureBox, MstTreasureBoxGift
-from .utils import GiftData, get_nice_common_consume, get_nice_gifts
+from ..gift import GiftData, get_nice_common_consume, get_nice_gifts
 
 
 def get_nice_treasure_box_gift(

@@ -14,7 +14,7 @@ from ....schemas.raw import (
     MstEventDiggingReward,
 )
 from ...utils import fmt_url
-from .utils import GiftData, get_nice_common_consume, get_nice_gifts
+from ..gift import GiftData, get_nice_common_consume, get_nice_gifts
 
 
 settings = Settings()

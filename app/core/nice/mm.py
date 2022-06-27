@@ -9,7 +9,7 @@ from ...schemas.nice import NiceMasterMission
 from ...schemas.raw import MasterMissionEntity, MstGift, MstMasterMission
 from .. import raw
 from .event.mission import get_nice_missions
-from .event.utils import GiftData
+from .gift import GiftData
 
 
 def get_nice_master_mission_from_raw(

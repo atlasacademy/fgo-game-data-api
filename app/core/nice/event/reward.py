@@ -5,7 +5,7 @@ from ....schemas.common import Region
 from ....schemas.nice import AssetURL, NiceEventReward
 from ....schemas.raw import MstEventReward
 from ...utils import fmt_url
-from .utils import GiftData, get_nice_gifts
+from ..gift import GiftData, get_nice_gifts
 
 
 settings = Settings()

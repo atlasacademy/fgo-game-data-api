@@ -87,6 +87,7 @@ def get_nice_shop(
                 background=NiceItemBGType.zero,
                 priority=0,
                 dropPriority=0,
+                itemSelects=[],
             ),
             amount=0,
         )

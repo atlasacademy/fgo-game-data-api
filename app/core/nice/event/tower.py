@@ -3,7 +3,7 @@ from ....schemas.common import Region
 from ....schemas.nice import AssetURL, NiceEventTower, NiceEventTowerReward
 from ....schemas.raw import MstEventTower, MstEventTowerReward
 from ...utils import fmt_url
-from .utils import GiftData, get_nice_gifts
+from ..gift import GiftData, get_nice_gifts
 
 
 settings = Settings()

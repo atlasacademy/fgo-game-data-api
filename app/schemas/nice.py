@@ -152,6 +152,34 @@ class AssetURL:
     servantModel = "{base_url}/{region}/Servants/{item_id}/manifest.json"
 
 
+class NiceBaseGift(BaseModelORJson):
+    id: int
+    type: NiceGiftType
+    objectId: int
+    priority: int
+    num: int
+
+
+class NiceGiftAdd(BaseModelORJson):
+    priority: int
+    replacementGiftIcon: HttpUrl
+    condType: NiceCondType
+    targetId: int
+    targetNum: int
+    replacementGifts: list[NiceBaseGift]
+
+
+class NiceGift(NiceBaseGift):
+    giftAdds: list[NiceGiftAdd]
+
+
+class NiceItemSelect(BaseModelORJson):
+    idx: int
+    gifts: list[NiceGift]
+    requireNum: int
+    detail: str
+
+
 class NiceItem(BaseModelORJson):
     id: int
     name: str
@@ -164,6 +192,7 @@ class NiceItem(BaseModelORJson):
     background: NiceItemBGType
     priority: int
     dropPriority: int
+    itemSelects: list[NiceItemSelect]
 
 
 class NiceItemAmount(BaseModel):
@@ -1390,27 +1419,6 @@ class NiceBgmEntity(BaseModelORJson):
     shop: Optional[NiceShop] = None
     logo: HttpUrl
     releaseConditions: list[NiceBgmRelease]
-
-
-class NiceBaseGift(BaseModelORJson):
-    id: int
-    type: NiceGiftType
-    objectId: int
-    priority: int
-    num: int
-
-
-class NiceGiftAdd(BaseModelORJson):
-    priority: int
-    replacementGiftIcon: HttpUrl
-    condType: NiceCondType
-    targetId: int
-    targetNum: int
-    replacementGifts: list[NiceBaseGift]
-
-
-class NiceGift(NiceBaseGift):
-    giftAdds: list[NiceGiftAdd]
 
 
 class NiceEventReward(BaseModelORJson):

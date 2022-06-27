@@ -18,7 +18,7 @@ from ....schemas.raw import (
     MstEventMissionConditionDetail,
 )
 from ...utils import get_traits_list
-from .utils import GiftData, get_nice_gifts
+from ..gift import GiftData, get_nice_gifts
 
 
 def get_nice_mission_cond_detail(
