@@ -24,6 +24,9 @@
     "useSkill": false,
     "useAppendSkill": false,
     "useAscension": true,
-    "useCostume": false
+    "useCostume": false,
+    "mstItemSelect": [],
+    "mstGift": [],
+    "mstGiftAdd": []
   }
 }

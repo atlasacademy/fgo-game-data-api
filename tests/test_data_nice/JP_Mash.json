@@ -869,7 +869,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6503.png",
             "background": "bronze",
             "priority": 200,
-            "dropPriority": 8100
+            "dropPriority": 8100,
+            "itemSelects": []
           },
           "amount": 5
         }
@@ -900,7 +901,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6512.png",
             "background": "bronze",
             "priority": 202,
-            "dropPriority": 8200
+            "dropPriority": 8200,
+            "itemSelects": []
           },
           "amount": 5
         }
@@ -931,7 +933,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6502.png",
             "background": "silver",
             "priority": 212,
-            "dropPriority": 8203
+            "dropPriority": 8203,
+            "itemSelects": []
           },
           "amount": 5
         }
@@ -962,7 +965,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6515.png",
             "background": "silver",
             "priority": 214,
-            "dropPriority": 8301
+            "dropPriority": 8301,
+            "itemSelects": []
           },
           "amount": 5
         }
@@ -993,7 +997,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6505.png",
             "background": "bronze",
             "priority": 203,
-            "dropPriority": 8201
+            "dropPriority": 8201,
+            "itemSelects": []
           },
           "amount": 5
         }
@@ -1024,7 +1029,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6510.png",
             "background": "silver",
             "priority": 217,
-            "dropPriority": 8302
+            "dropPriority": 8302,
+            "itemSelects": []
           },
           "amount": 5
         }
@@ -1055,7 +1061,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6501.png",
             "background": "silver",
             "priority": 216,
-            "dropPriority": 8306
+            "dropPriority": 8306,
+            "itemSelects": []
           },
           "amount": 5
         }
@@ -1086,7 +1093,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6506.png",
             "background": "gold",
             "priority": 236,
-            "dropPriority": 8501
+            "dropPriority": 8501,
+            "itemSelects": []
           },
           "amount": 5
         }
@@ -1110,7 +1118,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6999.png",
             "background": "gold",
             "priority": 299,
-            "dropPriority": 8900
+            "dropPriority": 8900,
+            "itemSelects": []
           },
           "amount": 1
         }
@@ -1143,7 +1152,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6503.png",
             "background": "bronze",
             "priority": 200,
-            "dropPriority": 8100
+            "dropPriority": 8100,
+            "itemSelects": []
           },
           "amount": 5
         }
@@ -1174,7 +1184,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6512.png",
             "background": "bronze",
             "priority": 202,
-            "dropPriority": 8200
+            "dropPriority": 8200,
+            "itemSelects": []
           },
           "amount": 5
         }
@@ -1205,7 +1216,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6502.png",
             "background": "silver",
             "priority": 212,
-            "dropPriority": 8203
+            "dropPriority": 8203,
+            "itemSelects": []
           },
           "amount": 5
         }
@@ -1236,7 +1248,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6515.png",
             "background": "silver",
             "priority": 214,
-            "dropPriority": 8301
+            "dropPriority": 8301,
+            "itemSelects": []
           },
           "amount": 5
         }
@@ -1267,7 +1280,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6524.png",
             "background": "silver",
             "priority": 222,
-            "dropPriority": 8309
+            "dropPriority": 8309,
+            "itemSelects": []
           },
           "amount": 5
         }
@@ -1298,7 +1312,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6528.png",
             "background": "gold",
             "priority": 243,
-            "dropPriority": 8405
+            "dropPriority": 8405,
+            "itemSelects": []
           },
           "amount": 5
         }
@@ -1329,7 +1344,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6518.png",
             "background": "gold",
             "priority": 237,
-            "dropPriority": 8502
+            "dropPriority": 8502,
+            "itemSelects": []
           },
           "amount": 5
         }
@@ -1360,7 +1376,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6525.png",
             "background": "gold",
             "priority": 242,
-            "dropPriority": 8503
+            "dropPriority": 8503,
+            "itemSelects": []
           },
           "amount": 5
         }
@@ -1384,7 +1401,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6999.png",
             "background": "gold",
             "priority": 299,
-            "dropPriority": 8900
+            "dropPriority": 8900,
+            "itemSelects": []
           },
           "amount": 1
         }
@@ -1421,7 +1439,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6526.png",
             "background": "silver",
             "priority": 223,
-            "dropPriority": 8308
+            "dropPriority": 8308,
+            "itemSelects": []
           },
           "amount": 5
         },
@@ -1447,7 +1466,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6515.png",
             "background": "silver",
             "priority": 214,
-            "dropPriority": 8301
+            "dropPriority": 8301,
+            "itemSelects": []
           },
           "amount": 5
         },
@@ -1473,7 +1493,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6524.png",
             "background": "silver",
             "priority": 222,
-            "dropPriority": 8309
+            "dropPriority": 8309,
+            "itemSelects": []
           },
           "amount": 5
         },
@@ -1499,7 +1520,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6501.png",
             "background": "silver",
             "priority": 216,
-            "dropPriority": 8306
+            "dropPriority": 8306,
+            "itemSelects": []
           },
           "amount": 5
         }
@@ -1534,7 +1556,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6526.png",
             "background": "silver",
             "priority": 223,
-            "dropPriority": 8308
+            "dropPriority": 8308,
+            "itemSelects": []
           },
           "amount": 5
         },
@@ -1560,7 +1583,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6524.png",
             "background": "silver",
             "priority": 222,
-            "dropPriority": 8309
+            "dropPriority": 8309,
+            "itemSelects": []
           },
           "amount": 5
         },
@@ -1586,7 +1610,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6535.png",
             "background": "silver",
             "priority": 225,
-            "dropPriority": 8311
+            "dropPriority": 8311,
+            "itemSelects": []
           },
           "amount": 5
         },
@@ -1612,7 +1637,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Items/6536.png",
             "background": "silver",
             "priority": 227,
-            "dropPriority": 8313
+            "dropPriority": 8313,
+            "itemSelects": []
           },
           "amount": 5
         }
@@ -1633,7 +1659,8 @@
       "icon": "https://assets.atlasacademy.io/GameData/JP/Coins/800100.png",
       "background": "silver",
       "priority": 57,
-      "dropPriority": 1003
+      "dropPriority": 1003,
+      "itemSelects": []
     }
   },
   "script": {},
@@ -8454,7 +8481,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Coins/800100.png",
             "background": "silver",
             "priority": 57,
-            "dropPriority": 1003
+            "dropPriority": 1003,
+            "itemSelects": []
           },
           "amount": 120
         }
@@ -8567,7 +8595,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Coins/800100.png",
             "background": "silver",
             "priority": 57,
-            "dropPriority": 1003
+            "dropPriority": 1003,
+            "itemSelects": []
           },
           "amount": 120
         }
@@ -8843,7 +8872,8 @@
             "icon": "https://assets.atlasacademy.io/GameData/JP/Coins/800100.png",
             "background": "silver",
             "priority": 57,
-            "dropPriority": 1003
+            "dropPriority": 1003,
+            "itemSelects": []
           },
           "amount": 120
         }

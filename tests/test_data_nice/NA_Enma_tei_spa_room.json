@@ -26,7 +26,8 @@
         "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94032205.png",
         "background": "silver",
         "priority": 94032205,
-        "dropPriority": 2005
+        "dropPriority": 2005,
+        "itemSelects": []
       },
       "amount": 310
     }

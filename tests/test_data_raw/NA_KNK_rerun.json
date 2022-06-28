@@ -8110,7 +8110,10 @@
       "useSkill": false,
       "useAppendSkill": false,
       "useAscension": false,
-      "useCostume": false
+      "useCostume": false,
+      "mstItemSelect": [],
+      "mstGift": [],
+      "mstGiftAdd": []
     },
     {
       "individuality": [
@@ -8137,7 +8140,10 @@
       "useSkill": false,
       "useAppendSkill": false,
       "useAscension": false,
-      "useCostume": false
+      "useCostume": false,
+      "mstItemSelect": [],
+      "mstGift": [],
+      "mstGiftAdd": []
     },
     {
       "individuality": [
@@ -8164,7 +8170,10 @@
       "useSkill": false,
       "useAppendSkill": false,
       "useAscension": false,
-      "useCostume": false
+      "useCostume": false,
+      "mstItemSelect": [],
+      "mstGift": [],
+      "mstGiftAdd": []
     }
   ],
   "mstCommonConsume": [],

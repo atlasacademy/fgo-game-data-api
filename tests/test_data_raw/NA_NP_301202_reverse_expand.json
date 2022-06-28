@@ -4130,7 +4130,10 @@
               "useSkill": false,
               "useAppendSkill": false,
               "useAscension": false,
-              "useCostume": false
+              "useCostume": false,
+              "mstItemSelect": [],
+              "mstGift": [],
+              "mstGiftAdd": []
             },
             {
               "individuality": [],
@@ -4155,7 +4158,10 @@
               "useSkill": true,
               "useAppendSkill": true,
               "useAscension": true,
-              "useCostume": true
+              "useCostume": true,
+              "mstItemSelect": [],
+              "mstGift": [],
+              "mstGiftAdd": []
             },
             {
               "individuality": [],
@@ -4180,7 +4186,10 @@
               "useSkill": true,
               "useAppendSkill": true,
               "useAscension": true,
-              "useCostume": true
+              "useCostume": true,
+              "mstItemSelect": [],
+              "mstGift": [],
+              "mstGiftAdd": []
             },
             {
               "individuality": [],
@@ -4205,7 +4214,10 @@
               "useSkill": true,
               "useAppendSkill": true,
               "useAscension": true,
-              "useCostume": true
+              "useCostume": true,
+              "mstItemSelect": [],
+              "mstGift": [],
+              "mstGiftAdd": []
             },
             {
               "individuality": [],
@@ -4230,7 +4242,10 @@
               "useSkill": true,
               "useAppendSkill": true,
               "useAscension": true,
-              "useCostume": true
+              "useCostume": true,
+              "mstItemSelect": [],
+              "mstGift": [],
+              "mstGiftAdd": []
             },
             {
               "individuality": [],
@@ -4255,7 +4270,10 @@
               "useSkill": true,
               "useAppendSkill": true,
               "useAscension": false,
-              "useCostume": false
+              "useCostume": false,
+              "mstItemSelect": [],
+              "mstGift": [],
+              "mstGiftAdd": []
             },
             {
               "individuality": [],
@@ -4280,7 +4298,10 @@
               "useSkill": true,
               "useAppendSkill": true,
               "useAscension": true,
-              "useCostume": true
+              "useCostume": true,
+              "mstItemSelect": [],
+              "mstGift": [],
+              "mstGiftAdd": []
             },
             {
               "individuality": [],
@@ -4305,7 +4326,10 @@
               "useSkill": true,
               "useAppendSkill": true,
               "useAscension": true,
-              "useCostume": true
+              "useCostume": true,
+              "mstItemSelect": [],
+              "mstGift": [],
+              "mstGiftAdd": []
             },
             {
               "individuality": [],
@@ -4330,7 +4354,10 @@
               "useSkill": true,
               "useAppendSkill": true,
               "useAscension": true,
-              "useCostume": true
+              "useCostume": true,
+              "mstItemSelect": [],
+              "mstGift": [],
+              "mstGiftAdd": []
             },
             {
               "individuality": [],
@@ -4357,7 +4384,10 @@
               "useSkill": true,
               "useAppendSkill": true,
               "useAscension": false,
-              "useCostume": false
+              "useCostume": false,
+              "mstItemSelect": [],
+              "mstGift": [],
+              "mstGiftAdd": []
             },
             {
               "individuality": [],
@@ -4382,7 +4412,10 @@
               "useSkill": true,
               "useAppendSkill": true,
               "useAscension": false,
-              "useCostume": false
+              "useCostume": false,
+              "mstItemSelect": [],
+              "mstGift": [],
+              "mstGiftAdd": []
             },
             {
               "individuality": [],
@@ -4407,7 +4440,10 @@
               "useSkill": true,
               "useAppendSkill": true,
               "useAscension": true,
-              "useCostume": true
+              "useCostume": true,
+              "mstItemSelect": [],
+              "mstGift": [],
+              "mstGiftAdd": []
             },
             {
               "individuality": [],
@@ -4432,7 +4468,10 @@
               "useSkill": true,
               "useAppendSkill": true,
               "useAscension": true,
-              "useCostume": true
+              "useCostume": true,
+              "mstItemSelect": [],
+              "mstGift": [],
+              "mstGiftAdd": []
             },
             {
               "individuality": [],
@@ -4459,7 +4498,10 @@
               "useSkill": false,
               "useAppendSkill": false,
               "useAscension": false,
-              "useCostume": false
+              "useCostume": false,
+              "mstItemSelect": [],
+              "mstGift": [],
+              "mstGiftAdd": []
             },
             {
               "individuality": [],
@@ -4484,7 +4526,10 @@
               "useSkill": true,
               "useAppendSkill": true,
               "useAscension": false,
-              "useCostume": false
+              "useCostume": false,
+              "mstItemSelect": [],
+              "mstGift": [],
+              "mstGiftAdd": []
             },
             {
               "individuality": [],
@@ -4509,7 +4554,10 @@
               "useSkill": false,
               "useAppendSkill": false,
               "useAscension": true,
-              "useCostume": false
+              "useCostume": false,
+              "mstItemSelect": [],
+              "mstGift": [],
+              "mstGiftAdd": []
             },
             {
               "individuality": [],
@@ -4534,7 +4582,10 @@
               "useSkill": false,
               "useAppendSkill": false,
               "useAscension": true,
-              "useCostume": false
+              "useCostume": false,
+              "mstItemSelect": [],
+              "mstGift": [],
+              "mstGiftAdd": []
             }
           ],
           "mstCommonRelease": [],
