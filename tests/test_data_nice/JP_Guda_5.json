@@ -4225,7 +4225,24 @@
           "objectId": 8400740,
           "priority": 0,
           "num": 1,
-          "giftAdds": []
+          "giftAdds": [
+            {
+              "priority": 0,
+              "replacementGiftIcon": "https://assets.atlasacademy.io/GameData/JP/Items/80355.png",
+              "condType": "eventMissionAchieve",
+              "targetId": 80289019,
+              "targetNum": 1,
+              "replacementGifts": [
+                {
+                  "id": 106,
+                  "type": "item",
+                  "objectId": 18,
+                  "priority": 0,
+                  "num": 1
+                }
+              ]
+            }
+          ]
         }
       ],
       "bannerGroup": 0,

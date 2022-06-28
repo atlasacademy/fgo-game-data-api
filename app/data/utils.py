@@ -92,6 +92,7 @@ MODEL_FILE_NAME: dict[Type[BaseModelORJson], str] = {
     MstSvtVoice: "mstSvtVoice",
     MstVoice: "mstVoice",
     MstCombineAppendPassiveSkill: "mstCombineAppendPassiveSkill",
+    MstGift: "mstGift",
 }
 
 

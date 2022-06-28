@@ -12,6 +12,7 @@ from sqlalchemy.sql import text
 from ..config import logger
 from ..data.buff import get_buff_with_classrelation
 from ..data.event import get_event_with_warIds
+from ..data.gift import get_gift_with_index
 from ..data.item import get_item_with_use
 from ..data.script import get_script_path, get_script_text_only
 from ..models.raw import (
@@ -22,6 +23,7 @@ from ..models.raw import (
     mstEvent,
     mstFunc,
     mstFuncGroup,
+    mstGift,
     mstItem,
     mstSkillLv,
     mstSubtitle,
@@ -150,6 +152,13 @@ def load_item(
     mstItems = get_item_with_use(gamedata_path)
     mstItem_db_data = [item.dict() for item in mstItems]
     insert_db(conn, mstItem, mstItem_db_data)
+
+
+def load_gift(
+    conn: Connection, gamedata_path: DirectoryPath
+) -> None:  # pragma: no cover
+    mstGifts = get_gift_with_index(gamedata_path)
+    insert_db(conn, mstGift, [item.dict() for item in mstGifts])
 
 
 def load_script_list(
@@ -315,6 +324,10 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
         with engine.begin() as conn:
             logger.info("Updating item …")
             load_item(conn, repo_folder)
+
+        with engine.begin() as conn:
+            logger.info("Updating gift …")
+            load_gift(conn, repo_folder)
 
         for table_group in TABLES_TO_BE_LOADED:
             with engine.begin() as conn:

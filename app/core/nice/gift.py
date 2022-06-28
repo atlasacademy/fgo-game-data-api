@@ -80,11 +80,13 @@ def get_nice_gift_adds(
 ) -> list[NiceGiftAdd]:
     nice_gift_adds: list[NiceGiftAdd] = []
 
+    gift_index = sorted(gift.sort_id for gift in gift_maps[gift.id]).index(gift.sort_id)
+
     for gift_add in gift_adds:
-        if gift_add.giftId == gift.id and len(gift_add.priorGiftIconIds) > gift.num:
+        if gift_add.giftId == gift.id and len(gift_add.priorGiftIconIds) > gift_index:
             nice_gift_adds.append(
                 get_nice_gift_add(
-                    region, gift_add, gift_maps[gift_add.priorGiftId], gift.num - 1
+                    region, gift_add, gift_maps[gift_add.priorGiftId], gift_index
                 )
             )
 

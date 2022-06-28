@@ -856,6 +856,7 @@ mstIllustrator = Table(
 mstGift = Table(
     "mstGift",
     metadata,
+    Column("sort_id", Integer),
     Column("id", Integer, index=True),
     Column("type", Integer),
     Column("objectId", Integer),
@@ -1800,7 +1801,7 @@ TABLES_TO_BE_LOADED = [
     [mstEventTower, mstEventTowerReward],
     [mstEventVoicePlay],
     [mstFriendship],
-    [mstGift, mstGiftAdd],
+    [mstGiftAdd],
     [mstIllustrator],
     [mstMasterMission],
     [mstQuestConsumeItem],

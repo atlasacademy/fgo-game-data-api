@@ -2,8 +2,7 @@ from collections import defaultdict
 
 from pydantic import DirectoryPath
 
-from app.schemas.gameenums import ItemType
-
+from ..schemas.gameenums import ItemType
 from ..schemas.raw import (
     BAD_COMBINE_SVT_LIMIT,
     MstCombineAppendPassiveSkill,

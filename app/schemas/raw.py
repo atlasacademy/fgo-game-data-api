@@ -569,6 +569,7 @@ class CommandCodeEntity(BaseModelORJson):
 
 
 class MstGift(BaseModelORJson):
+    sort_id: int = 0
     id: int  # 94024900
     type: int  # 6
     objectId: int  # 403000

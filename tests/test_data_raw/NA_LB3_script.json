@@ -56,6 +56,7 @@
       ],
       "mstGift": [
         {
+          "sort_id": 5568,
           "id": 320300,
           "type": 2,
           "objectId": 2,
@@ -63,6 +64,7 @@
           "num": 1
         },
         {
+          "sort_id": 5569,
           "id": 320300,
           "type": 2,
           "objectId": 6538,
