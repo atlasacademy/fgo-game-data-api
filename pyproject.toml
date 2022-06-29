@@ -8,11 +8,11 @@ packages = [{ include = "app" }]
 [tool.poetry.dependencies]
 python = "^3.10"
 fastapi = "^0.78.0"
-uvicorn = {extras = ["standard"], version = "^0.18.1"}
+uvicorn = { extras = ["standard"], version = "^0.18.2" }
 python-dotenv = "^0.20.0"
 fuzzywuzzy = "^0.18.0"
 python-Levenshtein = "^0.12.2"
-orjson = "^3.7.3"
+orjson = "^3.7.5"
 aiofiles = "^0.8.0"
 GitPython = "^3.1.27"
 SQLAlchemy = "^1.4.39"
@@ -23,14 +23,14 @@ fastapi-cache2 = "^0.1.8"
 gunicorn = "^20.1.0"
 setproctitle = "^1.2.2"
 tomli = "^2.0.1"
-redis = "^4.3.3"
+redis = "^4.3.4"
 hiredis = "^2.0.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"
 pylint = "^2.14.3"
 mypy = "^0.961"
-black = "^22.3.0"
+black = "^22.6.0"
 pytest-xdist = "^2.5.0"
 coverage = "^6.4.1"
 fuzzywuzzy-stubs = "^0.0.1"
@@ -39,7 +39,7 @@ sqlalchemy2-stubs = "^0.0.2-alpha.24"
 pytest-asyncio = "^0.18.3"
 asgi-lifespan = "^1.0.1"
 types-aiofiles = "^0.8.8"
-types-redis = "^4.3.2"
+types-redis = "^4.3.3"
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"

@@ -2449,7 +2449,8 @@ class SvtVoiceType(IntEnum):
     TREASURE_BOX = 18
     WAR_BOARD = 19
     EVENT_DIGGING = 20
-    SUM = 21
+    EVENT_EXPEDITION = 21
+    SUM = 22
 
 
 class NiceSvtVoiceType(str, Enum):
@@ -2475,6 +2476,7 @@ class NiceSvtVoiceType(str, Enum):
     treasureBox = "treasureBox"
     warBoard = "warBoard"
     eventDigging = "eventDigging"
+    eventExpedition = "eventExpedition"
     sum = "sum"
 
 
@@ -2499,7 +2501,8 @@ VOICE_TYPE_NAME: dict[int, NiceSvtVoiceType] = {
     18: NiceSvtVoiceType.treasureBox,
     19: NiceSvtVoiceType.warBoard,
     20: NiceSvtVoiceType.eventDigging,
-    21: NiceSvtVoiceType.sum,
+    21: NiceSvtVoiceType.eventExpedition,
+    22: NiceSvtVoiceType.sum,
 }
 
 
