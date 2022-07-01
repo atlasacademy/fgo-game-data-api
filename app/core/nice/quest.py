@@ -172,6 +172,7 @@ async def get_nice_quest(
         "phasesWithEnemies": sorted(raw_quest.phasesWithEnemies),
         "phasesNoBattle": sorted(raw_quest.phasesNoBattle),
         "phaseScripts": get_nice_all_scripts(region, raw_quest.allScripts),
+        "priority": raw_quest.mstQuest.priority,
         "noticeAt": raw_quest.mstQuest.noticeAt,
         "openedAt": raw_quest.mstQuest.openedAt,
         "closedAt": raw_quest.mstQuest.closedAt,

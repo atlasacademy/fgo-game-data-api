@@ -186,6 +186,7 @@ class BasicQuest(BaseModelORJson):
     spotName: str
     warId: int
     warLongName: str
+    priority: int
     noticeAt: int
     openedAt: int
     closedAt: int

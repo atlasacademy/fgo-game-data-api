@@ -1727,6 +1727,7 @@ class NiceQuest(BaseModelORJson):
         description="List of phases no battle (Story quest).",
     )
     phaseScripts: list[NiceQuestPhaseScript]
+    priority: int
     noticeAt: int
     openedAt: int
     closedAt: int
