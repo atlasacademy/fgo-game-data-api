@@ -1,0 +1,270 @@
+{
+  "id": 15000,
+  "name": "Thanksgiving Exchange Ticket 2019",
+  "originalName": "Thanksgiving Exchange Ticket 2019",
+  "type": "itemSelect",
+  "uses": [],
+  "detail": "Can be exchanged for 1 of 17 materials.",
+  "individuality": [],
+  "icon": "https://assets.atlasacademy.io/GameData/NA/Items/15000.png",
+  "background": "silver",
+  "priority": 200,
+  "dropPriority": 9001,
+  "itemSelects": [
+    {
+      "idx": 1,
+      "gifts": [
+        {
+          "id": 20301,
+          "type": "item",
+          "objectId": 6512,
+          "priority": 0,
+          "num": 1,
+          "giftAdds": []
+        }
+      ],
+      "requireNum": 1,
+      "detail": "Exchange for [Skill up & Ascension Material]"
+    },
+    {
+      "idx": 2,
+      "gifts": [
+        {
+          "id": 25259,
+          "type": "item",
+          "objectId": 6522,
+          "priority": 0,
+          "num": 1,
+          "giftAdds": []
+        }
+      ],
+      "requireNum": 1,
+      "detail": "Exchange for [Skill up & Ascension Material]"
+    },
+    {
+      "idx": 3,
+      "gifts": [
+        {
+          "id": 20101,
+          "type": "item",
+          "objectId": 6503,
+          "priority": 0,
+          "num": 1,
+          "giftAdds": []
+        }
+      ],
+      "requireNum": 1,
+      "detail": "Exchange for [Skill up & Ascension Material]"
+    },
+    {
+      "idx": 4,
+      "gifts": [
+        {
+          "id": 20401,
+          "type": "item",
+          "objectId": 6505,
+          "priority": 0,
+          "num": 1,
+          "giftAdds": []
+        }
+      ],
+      "requireNum": 1,
+      "detail": "Exchange for [Skill up & Ascension Material]"
+    },
+    {
+      "idx": 5,
+      "gifts": [
+        {
+          "id": 21001,
+          "type": "item",
+          "objectId": 6510,
+          "priority": 0,
+          "num": 1,
+          "giftAdds": []
+        }
+      ],
+      "requireNum": 1,
+      "detail": "Exchange for [Skill up & Ascension Material]"
+    },
+    {
+      "idx": 6,
+      "gifts": [
+        {
+          "id": 25279,
+          "type": "item",
+          "objectId": 6524,
+          "priority": 0,
+          "num": 1,
+          "giftAdds": []
+        }
+      ],
+      "requireNum": 1,
+      "detail": "Exchange for [Skill up & Ascension Material]"
+    },
+    {
+      "idx": 7,
+      "gifts": [
+        {
+          "id": 20901,
+          "type": "item",
+          "objectId": 6513,
+          "priority": 0,
+          "num": 1,
+          "giftAdds": []
+        }
+      ],
+      "requireNum": 1,
+      "detail": "Exchange for [Skill up & Ascension Material]"
+    },
+    {
+      "idx": 8,
+      "gifts": [
+        {
+          "id": 20701,
+          "type": "item",
+          "objectId": 6515,
+          "priority": 0,
+          "num": 1,
+          "giftAdds": []
+        }
+      ],
+      "requireNum": 1,
+      "detail": "Exchange for [Skill up & Ascension Material]"
+    },
+    {
+      "idx": 9,
+      "gifts": [
+        {
+          "id": 21301,
+          "type": "item",
+          "objectId": 6501,
+          "priority": 0,
+          "num": 1,
+          "giftAdds": []
+        }
+      ],
+      "requireNum": 1,
+      "detail": "Exchange for [Skill up & Ascension Material]"
+    },
+    {
+      "idx": 10,
+      "gifts": [
+        {
+          "id": 20801,
+          "type": "item",
+          "objectId": 6509,
+          "priority": 0,
+          "num": 1,
+          "giftAdds": []
+        }
+      ],
+      "requireNum": 1,
+      "detail": "Exchange for [Skill up & Ascension Material]"
+    },
+    {
+      "idx": 11,
+      "gifts": [
+        {
+          "id": 21801,
+          "type": "item",
+          "objectId": 7001,
+          "priority": 0,
+          "num": 1,
+          "giftAdds": []
+        }
+      ],
+      "requireNum": 1,
+      "detail": "Exchange for [Ascension Material]"
+    },
+    {
+      "idx": 12,
+      "gifts": [
+        {
+          "id": 21901,
+          "type": "item",
+          "objectId": 7002,
+          "priority": 0,
+          "num": 1,
+          "giftAdds": []
+        }
+      ],
+      "requireNum": 1,
+      "detail": "Exchange for [Ascension Material]"
+    },
+    {
+      "idx": 13,
+      "gifts": [
+        {
+          "id": 22001,
+          "type": "item",
+          "objectId": 7003,
+          "priority": 0,
+          "num": 1,
+          "giftAdds": []
+        }
+      ],
+      "requireNum": 1,
+      "detail": "Exchange for [Ascension Material]"
+    },
+    {
+      "idx": 14,
+      "gifts": [
+        {
+          "id": 22101,
+          "type": "item",
+          "objectId": 7004,
+          "priority": 0,
+          "num": 1,
+          "giftAdds": []
+        }
+      ],
+      "requireNum": 1,
+      "detail": "Exchange for [Ascension Material]"
+    },
+    {
+      "idx": 15,
+      "gifts": [
+        {
+          "id": 22201,
+          "type": "item",
+          "objectId": 7005,
+          "priority": 0,
+          "num": 1,
+          "giftAdds": []
+        }
+      ],
+      "requireNum": 1,
+      "detail": "Exchange for [Ascension Material]"
+    },
+    {
+      "idx": 16,
+      "gifts": [
+        {
+          "id": 22301,
+          "type": "item",
+          "objectId": 7006,
+          "priority": 0,
+          "num": 1,
+          "giftAdds": []
+        }
+      ],
+      "requireNum": 1,
+      "detail": "Exchange for [Ascension Material]"
+    },
+    {
+      "idx": 17,
+      "gifts": [
+        {
+          "id": 22401,
+          "type": "item",
+          "objectId": 7007,
+          "priority": 0,
+          "num": 1,
+          "giftAdds": []
+        }
+      ],
+      "requireNum": 1,
+      "detail": "Exchange for [Ascension Material]"
+    }
+  ]
+}

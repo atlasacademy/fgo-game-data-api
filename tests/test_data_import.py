@@ -1,4 +1,5 @@
 from app.data.event import get_event_with_warIds
+from app.data.gift import get_gift_with_index
 from app.data.item import get_item_with_use
 
 from .utils import test_gamedata
@@ -22,3 +23,15 @@ def test_append_use_to_item() -> None:
     assert feather.useSkill is False
     assert feather.useAscension is False
     assert feather.useCostume is True
+
+    exchange_ticket = next(item for item in mstItems if item.id == 10005)
+    assert len(exchange_ticket.mstItemSelect) == 3
+    assert len(exchange_ticket.mstGift) == 3
+    assert len(exchange_ticket.mstGiftAdd) == 1
+
+
+def test_gift_import() -> None:
+    mstGift = get_gift_with_index(test_gamedata)
+
+    for i, gift in enumerate(mstGift):
+        assert gift.sort_id == i

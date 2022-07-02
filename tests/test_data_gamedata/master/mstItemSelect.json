@@ -1,0 +1,23 @@
+[
+  {
+    "itemId": 10005,
+    "idx": 1,
+    "candidateGiftId": 20701,
+    "requireNum": 1,
+    "detail": "Exchange for [Skill up & Ascension Material]"
+  },
+  {
+    "itemId": 10005,
+    "idx": 2,
+    "candidateGiftId": 20201,
+    "requireNum": 1,
+    "detail": "Exchange for [Skill up & Ascension Material]"
+  },
+  {
+    "itemId": 10005,
+    "idx": 3,
+    "candidateGiftId": 20501,
+    "requireNum": 1,
+    "detail": "Exchange for [Skill up & Ascension Material]"
+  }
+]

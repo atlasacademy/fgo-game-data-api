@@ -1,0 +1,15 @@
+[
+  {
+    "priorGiftIconIds": [
+      3,
+      6
+    ],
+    "giftId": 20701,
+    "priority": 1,
+    "condType": 1,
+    "targetId": 3000604,
+    "targetNum": 1,
+    "priorGiftId": 25572,
+    "script": "{}"
+  }
+]

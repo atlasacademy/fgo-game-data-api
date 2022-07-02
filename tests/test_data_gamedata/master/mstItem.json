@@ -38,5 +38,25 @@
     "dropPriority": 8306,
     "startedAt": 946684800,
     "endedAt": 1910908800
+  },
+  {
+    "individuality": [],
+    "script": {},
+    "eventId": 0,
+    "eventGroupId": 0,
+    "id": 10005,
+    "name": "Exchange Ticket (JAN 2020)",
+    "detail": "Can be exchanged for one Octuplet Crystals, Evil Bone, or Seed of Yggdrasil.",
+    "imageId": 10000,
+    "bgImageId": 2,
+    "type": 24,
+    "unit": "",
+    "value": 0,
+    "sellQp": -1,
+    "isSell": false,
+    "priority": 200,
+    "dropPriority": 9001,
+    "startedAt": 1443657600,
+    "endedAt": 1588291199
   }
 ]
