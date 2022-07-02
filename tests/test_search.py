@@ -318,6 +318,10 @@ nice_raw_test_cases_dict = {
         "NA/script/search?query=gomenasorry&scriptFileName=9401",
         {"9401760110"},
     ),
+    "script_search_warId": (
+        "NA/script/search?query=Gomenasorry&warId=9029",
+        {"9401760110"},
+    ),
 }
 
 nice_raw_test_cases = [

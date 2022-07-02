@@ -456,5 +456,5 @@ async def search_script(
     if not search_param.hasSearchParams():
         raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
     return await get_script_search(
-        conn, search_param.query, search_param.scriptFileName
+        conn, search_param.query, search_param.scriptFileName, search_param.warId
     )
