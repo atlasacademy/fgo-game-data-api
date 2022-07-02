@@ -741,6 +741,7 @@ class MstSvtVoice(BaseModelORJson):
 
 class MstVoicePlayCond(BaseModelORJson):
     svtId: int
+    script: dict[str, Any] | None = None
     voicePrefix: int
     voiceId: str
     idx: int

@@ -451,6 +451,7 @@ mstVoicePlayCond = Table(
     "mstVoicePlayCond",
     metadata,
     Column("svtId", Integer, index=True),
+    Column("script", JSONB),
     Column("voicePrefix", Integer),
     Column("voiceId", String),
     Column("idx", Integer),
