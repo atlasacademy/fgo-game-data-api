@@ -54,6 +54,7 @@
   "phasesWithEnemies": [],
   "phasesNoBattle": [],
   "phaseScripts": [],
+  "priority": 94020112,
   "noticeAt": 1580097600,
   "openedAt": 1580097600,
   "closedAt": 1580702399,

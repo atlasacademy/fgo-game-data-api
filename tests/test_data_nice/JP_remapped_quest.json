@@ -47,6 +47,7 @@
   ],
   "phasesNoBattle": [],
   "phaseScripts": [],
+  "priority": 94060086,
   "noticeAt": 1625043600,
   "openedAt": 1625043600,
   "closedAt": 1625389199,

@@ -270,6 +270,7 @@
               ]
             }
           ],
+          "priority": 899770,
           "noticeAt": 1570680000,
           "openedAt": 1570680000,
           "closedAt": 1893456000
@@ -362,6 +363,7 @@
               ]
             }
           ],
+          "priority": 899769,
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -422,6 +424,7 @@
           ],
           "phasesNoBattle": [],
           "phaseScripts": [],
+          "priority": 499908,
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -532,6 +535,7 @@
               ]
             }
           ],
+          "priority": 899768,
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -651,6 +655,7 @@
               ]
             }
           ],
+          "priority": 899767,
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -732,6 +737,7 @@
           ],
           "phasesNoBattle": [],
           "phaseScripts": [],
+          "priority": 499907,
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -842,6 +848,7 @@
               ]
             }
           ],
+          "priority": 899766,
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -931,6 +938,7 @@
               ]
             }
           ],
+          "priority": 899757,
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -991,6 +999,7 @@
           ],
           "phasesNoBattle": [],
           "phaseScripts": [],
+          "priority": 499906,
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1127,6 +1136,7 @@
               ]
             }
           ],
+          "priority": 899765,
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1242,6 +1252,7 @@
               ]
             }
           ],
+          "priority": 899764,
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1319,6 +1330,7 @@
               ]
             }
           ],
+          "priority": 899763,
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1396,6 +1408,7 @@
               ]
             }
           ],
+          "priority": 899754,
           "noticeAt": 1570680000,
           "openedAt": 1570680000,
           "closedAt": 1893456000
@@ -1456,6 +1469,7 @@
           ],
           "phasesNoBattle": [],
           "phaseScripts": [],
+          "priority": 499905,
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1557,6 +1571,7 @@
           ],
           "phasesNoBattle": [],
           "phaseScripts": [],
+          "priority": 499904,
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1681,6 +1696,7 @@
               ]
             }
           ],
+          "priority": 899762,
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1796,6 +1812,7 @@
               ]
             }
           ],
+          "priority": 899761,
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -1917,6 +1934,7 @@
               ]
             }
           ],
+          "priority": 899760,
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -2041,6 +2059,7 @@
               ]
             }
           ],
+          "priority": 899759,
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -2152,6 +2171,7 @@
               ]
             }
           ],
+          "priority": 899758,
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -2254,6 +2274,7 @@
               ]
             }
           ],
+          "priority": 639809,
           "noticeAt": 1509645600,
           "openedAt": 1509645600,
           "closedAt": 1893456000
@@ -2314,6 +2335,7 @@
           ],
           "phasesNoBattle": [],
           "phaseScripts": [],
+          "priority": 499902,
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -2374,6 +2396,7 @@
           ],
           "phasesNoBattle": [],
           "phaseScripts": [],
+          "priority": 899753,
           "noticeAt": 1613534400,
           "openedAt": 1613534400,
           "closedAt": 1893456000
@@ -2525,6 +2548,7 @@
               ]
             }
           ],
+          "priority": 899755,
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -2606,6 +2630,7 @@
           ],
           "phasesNoBattle": [],
           "phaseScripts": [],
+          "priority": 499901,
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -2775,6 +2800,7 @@
               ]
             }
           ],
+          "priority": 899756,
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -2896,6 +2922,7 @@
           ],
           "phasesNoBattle": [],
           "phaseScripts": [],
+          "priority": 499903,
           "noticeAt": 1508018400,
           "openedAt": 1508018400,
           "closedAt": 1893456000
@@ -2964,6 +2991,7 @@
             1
           ],
           "phaseScripts": [],
+          "priority": 899753,
           "noticeAt": 1570680000,
           "openedAt": 1570680000,
           "closedAt": 1893456000
