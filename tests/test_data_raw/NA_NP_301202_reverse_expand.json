@@ -796,7 +796,8 @@
           "mstSvt": {
             "relateQuestIds": [
               91301201,
-              91301202
+              91301202,
+              94052292
             ],
             "individuality": [
               5000,
@@ -1087,7 +1088,7 @@
               "mstSvtSkill": [
                 {
                   "script": {},
-                  "strengthStatus": 0,
+                  "strengthStatus": 1,
                   "svtId": 301200,
                   "num": 2,
                   "priority": 1,
@@ -1502,6 +1503,267 @@
                   "lv": 10,
                   "chargeTurn": 5,
                   "skillDetailId": 157350,
+                  "priority": 0
+                }
+              ]
+            },
+            {
+              "mstSkill": {
+                "effectList": [],
+                "actIndividuality": [],
+                "script": {},
+                "id": 127020,
+                "type": 1,
+                "name": "Primordial Rune",
+                "ruby": "Primordial Rune",
+                "maxLv": 10,
+                "iconId": 601,
+                "motion": 104
+              },
+              "mstSkillDetail": [
+                {
+                  "id": 127020,
+                  "detail": "Increase your NP Gauge [{0}] [g][o]▲[/o][/g] + Decrease Critical Rate [{0}] (3 turns) & NP Strength [{0}] (1 turn) for a single enemy",
+                  "detailShort": "Increase your NP Gauge [{0}] [g][o]▲[/o][/g] + Decrease Critical Rate [{0}] (3 turns) & NP Strength [{0}] (1 turn) for a single enemy"
+                }
+              ],
+              "mstSvtSkill": [
+                {
+                  "script": {},
+                  "strengthStatus": 99,
+                  "svtId": 301200,
+                  "num": 2,
+                  "priority": 2,
+                  "skillId": 127020,
+                  "condQuestId": 94052292,
+                  "condQuestPhase": 3,
+                  "condLv": 0,
+                  "condLimitCount": 1,
+                  "eventId": 0,
+                  "flag": 0
+                }
+              ],
+              "mstSkillAdd": [],
+              "mstCommonRelease": [],
+              "mstSkillLv": [
+                {
+                  "funcId": [
+                    460,
+                    470,
+                    305,
+                    224,
+                    258
+                  ],
+                  "svals": [
+                    "[1000,2000]",
+                    "[1000,1]",
+                    "[1000,3,-1,300]",
+                    "[1000,3,-1,300]",
+                    "[1000,1,-1,150]"
+                  ],
+                  "script": {},
+                  "skillId": 127020,
+                  "lv": 1,
+                  "chargeTurn": 8,
+                  "skillDetailId": 127020,
+                  "priority": 0
+                },
+                {
+                  "funcId": [
+                    460,
+                    470,
+                    305,
+                    224,
+                    258
+                  ],
+                  "svals": [
+                    "[1000,2100]",
+                    "[1000,1]",
+                    "[1000,3,-1,320]",
+                    "[1000,3,-1,320]",
+                    "[1000,1,-1,165]"
+                  ],
+                  "script": {},
+                  "skillId": 127020,
+                  "lv": 2,
+                  "chargeTurn": 8,
+                  "skillDetailId": 127020,
+                  "priority": 0
+                },
+                {
+                  "funcId": [
+                    460,
+                    470,
+                    305,
+                    224,
+                    258
+                  ],
+                  "svals": [
+                    "[1000,2200]",
+                    "[1000,1]",
+                    "[1000,3,-1,340]",
+                    "[1000,3,-1,340]",
+                    "[1000,1,-1,180]"
+                  ],
+                  "script": {},
+                  "skillId": 127020,
+                  "lv": 3,
+                  "chargeTurn": 8,
+                  "skillDetailId": 127020,
+                  "priority": 0
+                },
+                {
+                  "funcId": [
+                    460,
+                    470,
+                    305,
+                    224,
+                    258
+                  ],
+                  "svals": [
+                    "[1000,2300]",
+                    "[1000,1]",
+                    "[1000,3,-1,360]",
+                    "[1000,3,-1,360]",
+                    "[1000,1,-1,195]"
+                  ],
+                  "script": {},
+                  "skillId": 127020,
+                  "lv": 4,
+                  "chargeTurn": 8,
+                  "skillDetailId": 127020,
+                  "priority": 0
+                },
+                {
+                  "funcId": [
+                    460,
+                    470,
+                    305,
+                    224,
+                    258
+                  ],
+                  "svals": [
+                    "[1000,2400]",
+                    "[1000,1]",
+                    "[1000,3,-1,380]",
+                    "[1000,3,-1,380]",
+                    "[1000,1,-1,210]"
+                  ],
+                  "script": {},
+                  "skillId": 127020,
+                  "lv": 5,
+                  "chargeTurn": 8,
+                  "skillDetailId": 127020,
+                  "priority": 0
+                },
+                {
+                  "funcId": [
+                    460,
+                    470,
+                    305,
+                    224,
+                    258
+                  ],
+                  "svals": [
+                    "[1000,2500]",
+                    "[1000,1]",
+                    "[1000,3,-1,400]",
+                    "[1000,3,-1,400]",
+                    "[1000,1,-1,225]"
+                  ],
+                  "script": {},
+                  "skillId": 127020,
+                  "lv": 6,
+                  "chargeTurn": 7,
+                  "skillDetailId": 127020,
+                  "priority": 0
+                },
+                {
+                  "funcId": [
+                    460,
+                    470,
+                    305,
+                    224,
+                    258
+                  ],
+                  "svals": [
+                    "[1000,2600]",
+                    "[1000,1]",
+                    "[1000,3,-1,420]",
+                    "[1000,3,-1,420]",
+                    "[1000,1,-1,240]"
+                  ],
+                  "script": {},
+                  "skillId": 127020,
+                  "lv": 7,
+                  "chargeTurn": 7,
+                  "skillDetailId": 127020,
+                  "priority": 0
+                },
+                {
+                  "funcId": [
+                    460,
+                    470,
+                    305,
+                    224,
+                    258
+                  ],
+                  "svals": [
+                    "[1000,2700]",
+                    "[1000,1]",
+                    "[1000,3,-1,440]",
+                    "[1000,3,-1,440]",
+                    "[1000,1,-1,255]"
+                  ],
+                  "script": {},
+                  "skillId": 127020,
+                  "lv": 8,
+                  "chargeTurn": 7,
+                  "skillDetailId": 127020,
+                  "priority": 0
+                },
+                {
+                  "funcId": [
+                    460,
+                    470,
+                    305,
+                    224,
+                    258
+                  ],
+                  "svals": [
+                    "[1000,2800]",
+                    "[1000,1]",
+                    "[1000,3,-1,460]",
+                    "[1000,3,-1,460]",
+                    "[1000,1,-1,270]"
+                  ],
+                  "script": {},
+                  "skillId": 127020,
+                  "lv": 9,
+                  "chargeTurn": 7,
+                  "skillDetailId": 127020,
+                  "priority": 0
+                },
+                {
+                  "funcId": [
+                    460,
+                    470,
+                    305,
+                    224,
+                    258
+                  ],
+                  "svals": [
+                    "[1000,3000]",
+                    "[1000,1]",
+                    "[1000,3,-1,500]",
+                    "[1000,3,-1,500]",
+                    "[1000,1,-1,300]"
+                  ],
+                  "script": {},
+                  "skillId": 127020,
+                  "lv": 10,
+                  "chargeTurn": 6,
+                  "skillDetailId": 127020,
                   "priority": 0
                 }
               ]

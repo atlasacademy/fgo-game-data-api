@@ -2476,6 +2476,104 @@
                   ]
                 },
                 {
+                  "funcId": 2195,
+                  "funcType": "addState",
+                  "funcTargetType": "self",
+                  "funcTargetTeam": "enemy",
+                  "funcPopupText": "Target Focus\nUp",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_323.png",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "funcGroup": [],
+                  "buffs": [
+                    {
+                      "id": 487,
+                      "name": "Target Focus Up",
+                      "detail": "Set Target to yourself",
+                      "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_323.png",
+                      "type": "upHate",
+                      "buffGroup": 700,
+                      "script": {},
+                      "vals": [
+                        {
+                          "id": 3004,
+                          "name": "buffPositiveEffect"
+                        },
+                        {
+                          "id": 3023,
+                          "name": "buffTargetFocus"
+                        }
+                      ],
+                      "tvals": [],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [],
+                      "maxRate": 50000
+                    }
+                  ],
+                  "svals": [
+                    {
+                      "Rate": 5000,
+                      "Turn": 1,
+                      "Count": -1,
+                      "Value": 3000
+                    },
+                    {
+                      "Rate": 5000,
+                      "Turn": 1,
+                      "Count": -1,
+                      "Value": 3000
+                    },
+                    {
+                      "Rate": 5000,
+                      "Turn": 1,
+                      "Count": -1,
+                      "Value": 3000
+                    },
+                    {
+                      "Rate": 5000,
+                      "Turn": 1,
+                      "Count": -1,
+                      "Value": 3000
+                    },
+                    {
+                      "Rate": 5000,
+                      "Turn": 1,
+                      "Count": -1,
+                      "Value": 3000
+                    },
+                    {
+                      "Rate": 5000,
+                      "Turn": 1,
+                      "Count": -1,
+                      "Value": 3000
+                    },
+                    {
+                      "Rate": 5000,
+                      "Turn": 1,
+                      "Count": -1,
+                      "Value": 3000
+                    },
+                    {
+                      "Rate": 5000,
+                      "Turn": 1,
+                      "Count": -1,
+                      "Value": 3000
+                    },
+                    {
+                      "Rate": 5000,
+                      "Turn": 1,
+                      "Count": -1,
+                      "Value": 3000
+                    },
+                    {
+                      "Rate": 5000,
+                      "Turn": 1,
+                      "Count": -1,
+                      "Value": 3000
+                    }
+                  ]
+                },
+                {
                   "funcId": 672,
                   "funcType": "addState",
                   "funcTargetType": "self",
@@ -3338,6 +3436,104 @@
                       "Turn": 1,
                       "Count": -1,
                       "Value": 2600
+                    },
+                    {
+                      "Rate": 5000,
+                      "Turn": 1,
+                      "Count": -1,
+                      "Value": 3000
+                    }
+                  ]
+                },
+                {
+                  "funcId": 2195,
+                  "funcType": "addState",
+                  "funcTargetType": "self",
+                  "funcTargetTeam": "enemy",
+                  "funcPopupText": "Target Focus\nUp",
+                  "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_323.png",
+                  "functvals": [],
+                  "funcquestTvals": [],
+                  "funcGroup": [],
+                  "buffs": [
+                    {
+                      "id": 487,
+                      "name": "Target Focus Up",
+                      "detail": "Set Target to yourself",
+                      "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_323.png",
+                      "type": "upHate",
+                      "buffGroup": 700,
+                      "script": {},
+                      "vals": [
+                        {
+                          "id": 3004,
+                          "name": "buffPositiveEffect"
+                        },
+                        {
+                          "id": 3023,
+                          "name": "buffTargetFocus"
+                        }
+                      ],
+                      "tvals": [],
+                      "ckSelfIndv": [],
+                      "ckOpIndv": [],
+                      "maxRate": 50000
+                    }
+                  ],
+                  "svals": [
+                    {
+                      "Rate": 5000,
+                      "Turn": 1,
+                      "Count": -1,
+                      "Value": 3000
+                    },
+                    {
+                      "Rate": 5000,
+                      "Turn": 1,
+                      "Count": -1,
+                      "Value": 3000
+                    },
+                    {
+                      "Rate": 5000,
+                      "Turn": 1,
+                      "Count": -1,
+                      "Value": 3000
+                    },
+                    {
+                      "Rate": 5000,
+                      "Turn": 1,
+                      "Count": -1,
+                      "Value": 3000
+                    },
+                    {
+                      "Rate": 5000,
+                      "Turn": 1,
+                      "Count": -1,
+                      "Value": 3000
+                    },
+                    {
+                      "Rate": 5000,
+                      "Turn": 1,
+                      "Count": -1,
+                      "Value": 3000
+                    },
+                    {
+                      "Rate": 5000,
+                      "Turn": 1,
+                      "Count": -1,
+                      "Value": 3000
+                    },
+                    {
+                      "Rate": 5000,
+                      "Turn": 1,
+                      "Count": -1,
+                      "Value": 3000
+                    },
+                    {
+                      "Rate": 5000,
+                      "Turn": 1,
+                      "Count": -1,
+                      "Value": 3000
                     },
                     {
                       "Rate": 5000,
