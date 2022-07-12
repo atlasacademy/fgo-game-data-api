@@ -21,6 +21,7 @@ from ...schemas.gameenums import (
     QUEST_CONSUME_TYPE_NAME,
     QUEST_TYPE_NAME,
     Quest_FLAG_NAME,
+    QuestType,
 )
 from ...schemas.nice import (
     DeckType,
@@ -310,9 +311,21 @@ async def get_nice_quest_phase(
         rayshift_quest_detail = await get_quest_detail(
             conn, region, rayshift_quest_id, phase, questSelect
         )
+
+        min_query_id: int | None = None
+        if (
+            db_data.raw.mstQuest.type in (QuestType.MAIN, QuestType.FREE)
+            and db_data.nice.warId < 1000
+        ) or db_data.nice.warId == 1002:
+            if region == Region.JP:
+                min_query_id = 154613  # 2021-08-01 10:00:00 UTC
+            elif region == Region.NA:
+                min_query_id = 1062363  # 2022-07-04 09:00:00 UTC
+
         rayshift_quest_drops = await get_rayshift_drops(
-            conn, rayshift_quest_id, phase, questSelect
+            conn, rayshift_quest_id, phase, questSelect, min_query_id
         )
+
         if rayshift_quest_detail:
             quest_enemies = await get_quest_enemies(
                 conn,

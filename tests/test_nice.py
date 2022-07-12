@@ -707,6 +707,14 @@ class TestServantSpecial:
         idxs = [message["idx"] for message in babylonia_reflection_3.json()["messages"]]
         assert idxs == [0, 1, 2, 3]
 
+    async def test_anni_drop_change(self, client: AsyncClient) -> None:
+        anni_drop_change = (await client.get("/nice/NA/quest/93030706/3")).json()
+        drops = [
+            (drop["type"], drop["objectId"], drop["num"])
+            for drop in anni_drop_change["drops"]
+        ]
+        assert ("item", 1, 20000) in drops
+
 
 @pytest.mark.asyncio
 async def test_shop_itemIds_0(na_db_conn: AsyncConnection) -> None:

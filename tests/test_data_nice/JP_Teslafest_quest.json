@@ -75,7 +75,9 @@
   "phases": [
     1
   ],
-  "phasesWithEnemies": [],
+  "phasesWithEnemies": [
+    1
+  ],
   "phasesNoBattle": [],
   "phaseScripts": [
     {

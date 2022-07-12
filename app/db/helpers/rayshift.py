@@ -33,7 +33,11 @@ async def get_rayshift_quest_db(
 
 
 async def get_rayshift_drops(
-    conn: AsyncConnection, quest_id: int, phase: int, questSelect: int | None = None
+    conn: AsyncConnection,
+    quest_id: int,
+    phase: int,
+    questSelect: int | None = None,
+    min_query_id: int | None = None,
 ) -> list[QuestDrop]:
     where_conds = [
         rayshiftQuest.c.questId == quest_id,
@@ -44,6 +48,8 @@ async def get_rayshift_drops(
         where_conds.append(
             rayshiftQuest.c.questDetail.contains({"questSelect": questSelect})
         )
+    if min_query_id is not None:
+        where_conds.append(rayshiftQuest.c.queryId >= min_query_id)
 
     enemy_deck_svt = (
         select(
