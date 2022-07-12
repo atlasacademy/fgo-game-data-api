@@ -361,47 +361,63 @@ async def get_all(
 
 
 schema_table_fetch_all_multiple: dict[  # type:ignore
-    Type[BaseModelORJson], tuple[Table, ColumnElement, ColumnElement]
+    Type[BaseModelORJson], tuple[Table, ColumnElement, list[ColumnElement]]
 ] = {
-    MstSpot: (mstSpot, mstSpot.c.mapId, mstSpot.c.id),
-    MstVoice: (mstVoice, mstVoice.c.id, mstVoice.c.id),
-    MstSvtGroup: (mstSvtGroup, mstSvtGroup.c.id, mstSvtGroup.c.svtId),
+    MstSpot: (mstSpot, mstSpot.c.mapId, [mstSpot.c.id]),
+    MstVoice: (mstVoice, mstVoice.c.id, [mstVoice.c.id]),
+    MstSvtGroup: (mstSvtGroup, mstSvtGroup.c.id, [mstSvtGroup.c.svtId]),
     MstEventMissionCondition: (
         mstEventMissionCondition,
         mstEventMissionCondition.c.missionId,
-        mstEventMissionCondition.c.id,
+        [mstEventMissionCondition.c.id],
     ),
     MstEventMissionConditionDetail: (
         mstEventMissionConditionDetail,
         mstEventMissionConditionDetail.c.id,
-        mstEventMissionConditionDetail.c.id,
+        [mstEventMissionConditionDetail.c.id],
     ),
     MstSvtVoiceRelation: (
         mstSvtVoiceRelation,
         mstSvtVoiceRelation.c.svtId,
-        mstSvtVoiceRelation.c.svtId,
+        [mstSvtVoiceRelation.c.svtId],
     ),
-    MstBgm: (mstBgm, mstBgm.c.id, mstBgm.c.id),
-    MstGift: (mstGift, mstGift.c.id, mstGift.c.sort_id),
-    MstGiftAdd: (mstGiftAdd, mstGiftAdd.c.giftId, mstGiftAdd.c.giftId),
-    MstShopScript: (mstShopScript, mstShopScript.c.shopId, mstShopScript.c.shopId),
-    MstShopRelease: (mstShopRelease, mstShopRelease.c.shopId, mstShopRelease.c.shopId),
-    MstItem: (mstItem, mstItem.c.id, mstItem.c.id),
-    MstMapGimmick: (mstMapGimmick, mstMapGimmick.c.mapId, mstMapGimmick.c.id),
-    MstClosedMessage: (mstClosedMessage, mstClosedMessage.c.id, mstClosedMessage.c.id),
-    MstShop: (mstShop, mstShop.c.id, mstShop.c.id),
-    MstQuest: (mstQuest, mstQuest.c.id, mstQuest.c.id),
-    MstSvtScript: (mstSvtScript, mstSvtScript.c.id, mstSvtScript.c.id),
+    MstBgm: (mstBgm, mstBgm.c.id, [mstBgm.c.id]),
+    MstGift: (mstGift, mstGift.c.id, [mstGift.c.id, mstGift.c.sort_id]),
+    MstGiftAdd: (mstGiftAdd, mstGiftAdd.c.giftId, [mstGiftAdd.c.giftId]),
+    MstShopScript: (mstShopScript, mstShopScript.c.shopId, [mstShopScript.c.shopId]),
+    MstShopRelease: (
+        mstShopRelease,
+        mstShopRelease.c.shopId,
+        [mstShopRelease.c.shopId],
+    ),
+    MstItem: (mstItem, mstItem.c.id, [mstItem.c.id]),
+    MstMapGimmick: (mstMapGimmick, mstMapGimmick.c.mapId, [mstMapGimmick.c.id]),
+    MstClosedMessage: (
+        mstClosedMessage,
+        mstClosedMessage.c.id,
+        [mstClosedMessage.c.id],
+    ),
+    MstShop: (mstShop, mstShop.c.id, [mstShop.c.id]),
+    MstQuest: (mstQuest, mstQuest.c.id, [mstQuest.c.id]),
+    MstSvtScript: (mstSvtScript, mstSvtScript.c.id, [mstSvtScript.c.id]),
     MstTreasureBoxGift: (
         mstTreasureBoxGift,
         mstTreasureBoxGift.c.id,
-        mstTreasureBoxGift.c.id,
+        [mstTreasureBoxGift.c.id],
     ),
-    MstCommonConsume: (mstCommonConsume, mstCommonConsume.c.id, mstCommonConsume.c.id),
-    MstCommonRelease: (mstCommonRelease, mstCommonRelease.c.id, mstCommonRelease.c.id),
-    MstSpotRoad: (mstSpotRoad, mstSpotRoad.c.mapId, mstSpotRoad.c.id),
-    MstBoxGachaTalk: (mstBoxGachaTalk, mstBoxGachaTalk.c.id, mstBoxGachaTalk.c.id),
-    MstSvtExtra: (mstSvtExtra, mstSvtExtra.c.svtId, mstSvtExtra.c.svtId),
+    MstCommonConsume: (
+        mstCommonConsume,
+        mstCommonConsume.c.id,
+        [mstCommonConsume.c.id],
+    ),
+    MstCommonRelease: (
+        mstCommonRelease,
+        mstCommonRelease.c.id,
+        [mstCommonRelease.c.id],
+    ),
+    MstSpotRoad: (mstSpotRoad, mstSpotRoad.c.mapId, [mstSpotRoad.c.id]),
+    MstBoxGachaTalk: (mstBoxGachaTalk, mstBoxGachaTalk.c.id, [mstBoxGachaTalk.c.id]),
+    MstSvtExtra: (mstSvtExtra, mstSvtExtra.c.svtId, [mstSvtExtra.c.svtId]),
 }
 
 TFetchAllMultiple = TypeVar("TFetchAllMultiple", bound=BaseModelORJson)
@@ -415,7 +431,7 @@ async def get_all_multiple(
     if not where_ids:
         return []
     table, where_col, order_col = schema_table_fetch_all_multiple[schema]
-    stmt = select(table).where(where_col.in_(where_ids)).order_by(order_col)
+    stmt = select(table).where(where_col.in_(where_ids)).order_by(*order_col)
     result = await conn.execute(stmt)
     return [schema.from_orm(db_row) for db_row in result.fetchall()]
 
