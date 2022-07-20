@@ -96,6 +96,8 @@ def get_nice_follower_script(npcScript: str) -> SupportServantScript:
 
         if "dispLimitCount" in parsed:
             script.dispLimitCount = int(parsed["dispLimitCount"])
+        if "eventDeckIndex" in parsed:
+            script.eventDeckIndex = int(parsed["eventDeckIndex"])
     except orjson.JSONDecodeError:  # pragma: no cover
         pass
 

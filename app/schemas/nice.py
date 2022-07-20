@@ -1946,6 +1946,7 @@ class SupportServantEquip(BaseModelORJson):
 
 class SupportServantScript(BaseModelORJson):
     dispLimitCount: Optional[int] = None
+    eventDeckIndex: int | None = None
 
 
 class SupportServant(BaseModelORJson):
