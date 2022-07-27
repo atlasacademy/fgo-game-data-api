@@ -100,6 +100,7 @@ def get_nice_stage(
         bgm=bgm,
         fieldAis=raw_stage.script.get("aiFieldIds", []),
         call=raw_stage.script.get("call", []),
+        enemyFieldPosCount=raw_stage.script.get("enemyFieldPosCount"),
         enemies=enemies,
     )
 

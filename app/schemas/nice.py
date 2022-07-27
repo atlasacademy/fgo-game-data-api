@@ -1906,6 +1906,7 @@ class NiceStage(BaseModelORJson):
     bgm: NiceBgm
     fieldAis: list[FieldAi] = []
     call: list[int] = Field([], title="Summon these NPC IDs")
+    enemyFieldPosCount: int | None = None
     enemies: list[QuestEnemy] = []
 
 
