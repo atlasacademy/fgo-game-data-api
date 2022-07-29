@@ -199,6 +199,8 @@ class FuncType(IntEnum):
     FUNC_127 = 127
     UPDATE_ENTRY_POSITIONS = 128
     BUDDY_POINT_UP = 129
+    ADD_FIELD_CHANGE_TO_FIELD = 130
+    SUB_FIELD_BUFF = 131
 
 
 class NiceFuncType(str, Enum):
@@ -295,6 +297,8 @@ class NiceFuncType(str, Enum):
     func127 = "func127"
     updateEntryPositions = "updateEntryPositions"
     buddyPointUp = "buddyPointUp"
+    addFieldChangeToField = "addFieldChangeToField"
+    subFieldBuff = "subFieldBuff"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -389,6 +393,8 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     127: NiceFuncType.func127,
     128: NiceFuncType.updateEntryPositions,
     129: NiceFuncType.buddyPointUp,
+    130: NiceFuncType.addFieldChangeToField,
+    131: NiceFuncType.subFieldBuff,
 }
 
 
@@ -646,6 +652,8 @@ class BuffType(IntEnum):
     INVISIBLE_BATTLE_CHARA = 163
     COUNTER_FUNCTION = 165
     NOT_TARGET_SKILL = 166
+    TO_FIELD_CHANGE_FIELD = 10001
+    TO_FIELD_AVOID_BUFF = 10002
 
 
 class NiceBuffType(str, Enum):
@@ -802,6 +810,8 @@ class NiceBuffType(str, Enum):
     invisibleBattleChara = "invisibleBattleChara"
     counterFunction = "counterFunction"
     notTargetSkill = "notTargetSkill"
+    toFieldChangeField = "toFieldChangeField"
+    toFieldAvoidBuff = "toFieldAvoidBuff"
 
 
 BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
@@ -956,6 +966,8 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     163: NiceBuffType.invisibleBattleChara,
     165: NiceBuffType.counterFunction,
     166: NiceBuffType.notTargetSkill,
+    10001: NiceBuffType.toFieldChangeField,
+    10002: NiceBuffType.toFieldAvoidBuff,
 }
 
 
@@ -1064,6 +1076,8 @@ class BuffAction(IntEnum):
     BUFF_RATE = 101
     COUNTER_FUNCTION = 102
     NOT_TARGET_SKILL = 103
+    TO_FIELD_CHANGE_FIELD = 104
+    TO_FIELD_AVOID_BUFF = 105
 
 
 class NiceBuffAction(str, Enum):
@@ -1173,6 +1187,8 @@ class NiceBuffAction(str, Enum):
     buffRate = "buffRate"
     counterFunction = "counterFunction"
     notTargetSkill = "notTargetSkill"
+    toFieldChangeField = "toFieldChangeField"
+    toFieldAvoidBuff = "toFieldAvoidBuff"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1280,6 +1296,8 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     101: NiceBuffAction.buffRate,
     102: NiceBuffAction.counterFunction,
     103: NiceBuffAction.notTargetSkill,
+    104: NiceBuffAction.toFieldChangeField,
+    105: NiceBuffAction.toFieldAvoidBuff,
 }
 
 
@@ -1410,6 +1428,16 @@ class DataValsType(IntEnum):
     NotAccompanyWhenLinkedTargetMoveState = 99
     AllowSubBgmPlaying = 100
     NotTargetSkillIdArray = 101
+    ShortTurn = 102
+    FieldIndividuality = 103
+    BGId = 104
+    BGType = 105
+    BgmId = 106
+    TakeOverFieldState = 107
+    TakeOverNextWaveBGAndBGM = 108
+    RemoveFieldBuffActorDeath = 109
+    FieldBuffGrantType = 110
+    Priority = 111
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -1983,6 +2011,7 @@ class CondType(IntEnum):
     PROGRESS_VALUE_ABOVE = 160
     PROGRESS_VALUE_BELOW = 161
     RANDOM_MISSION_TOTAL_CLEAR_NUM = 162
+    WEEKDAYS = 166
 
 
 class NiceCondType(str, Enum):
@@ -2151,6 +2180,7 @@ class NiceCondType(str, Enum):
     progressValueAbove = "progressValueAbove"
     progressValueBelow = "progressValueBelow"
     randomMissionTotalClearNum = "randomMissionTotalClearNum"
+    weekdays = "weekdays"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2317,6 +2347,7 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     160: NiceCondType.progressValueAbove,
     161: NiceCondType.progressValueBelow,
     162: NiceCondType.randomMissionTotalClearNum,
+    166: NiceCondType.weekdays,
 }
 
 
@@ -3269,6 +3300,7 @@ class AiCond(IntEnum):
     COUNT_CHAIN_HIGHER = 178
     COUNT_CHAIN_LOWER = 179
     COUNT_CHAIN_EQUAL = 180
+    CHECK_SELECT_CHAIN = 181
 
 
 class NiceAiCond(str, Enum):
@@ -3429,6 +3461,7 @@ class NiceAiCond(str, Enum):
     countChainHigher = "countChainHigher"
     countChainLower = "countChainLower"
     countChainEqual = "countChainEqual"
+    checkSelectChain = "checkSelectChain"
 
 
 AI_COND_NAME: dict[int, NiceAiCond] = {
@@ -3573,6 +3606,7 @@ AI_COND_NAME: dict[int, NiceAiCond] = {
     178: NiceAiCond.countChainHigher,
     179: NiceAiCond.countChainLower,
     180: NiceAiCond.countChainEqual,
+    181: NiceAiCond.checkSelectChain,
 }
 
 
@@ -4064,6 +4098,7 @@ class AiCondParameter(IntEnum):
     CHECK_PARAMATER_32 = 32
     CHAIN_COUNT = 33
     CHECK_TARGET_SKILL_THISTURN = 34
+    CHECK_SELECT_CHAIN = 35
 
 
 class NiceAiCondParameter(str, Enum):
@@ -4104,6 +4139,7 @@ class NiceAiCondParameter(str, Enum):
     checkParamater32 = "checkParamater32"
     chainCount = "chainCount"
     checkTargetSkillThisturn = "checkTargetSkillThisturn"
+    checkSelectChain = "checkSelectChain"
 
 
 AI_COND_PARAMETER_NAME: dict[int, NiceAiCondParameter] = {
@@ -4142,6 +4178,7 @@ AI_COND_PARAMETER_NAME: dict[int, NiceAiCondParameter] = {
     32: NiceAiCondParameter.checkParamater32,
     33: NiceAiCondParameter.chainCount,
     34: NiceAiCondParameter.checkTargetSkillThisturn,
+    35: NiceAiCondParameter.checkSelectChain,
 }
 
 

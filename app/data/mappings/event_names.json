@@ -71,7 +71,7 @@
   "消費AP 0": "AP Cost 0",
   "マシュサポート時 獲得FP2倍！": "Mash FP x2!",
   "初回クリアまで 消費AP 50%DOWN": "AP Cost 1/2 Until First Clear",
-  "コンティニューアイテム使用可能！": "Revive Item Available!",
+  "コンティニューアイテム使用可能！": "A Continue Item is available!",
   "絆獲得量アップ": "Bond Gain Increased",
   "消費AP0！": "Zero AP Consumption!",
   "ホワイトデー・スペクタクルズ": "White Day Spectacles",
@@ -282,8 +282,10 @@
   "2500万DL突破キャンペーン": "Over 25 Million Downloads Campaign",
   "コンスタンティノス11世体験クエスト": "Constantine XI Trial Quest",
   "アドバンスドクエスト 第5弾": "5th Advanced Quest",
+  "メイン・インタールード\n徳川廻天迷宮 大奥": "メイン・インタールード\n徳川廻天迷宮 大奥",
   "死想顕現界域 トラオム": "Realms of Mortality Incarnate, Traum",
   "南溟弓張八犬伝": "Nanmei Yumihari Hakkenden",
   "アドバンスドクエスト 第6弾": "6th Advanced Quest",
-  "リコレクションクエスト": "Recollection Quest"
+  "リコレクションクエスト": "Recollection Quest",
+  "ハンティングクエスト 第12弾 ～7周年カウントダウンハンティング～": "ハンティングクエスト 第12弾 ～7周年カウントダウンハンティング～"
 }

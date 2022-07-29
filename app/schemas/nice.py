@@ -310,6 +310,16 @@ class BaseVals(BaseModel):
     AllowSubBgmPlaying: int | None = None
     NotAccompanyWhenLinkedTargetMoveState: int | None = None
     NotTargetSkillIdArray: list[int] | None = None
+    ShortTurn: int | None = None
+    FieldIndividuality: int | None = None
+    BGId: int | None = None
+    BGType: int | None = None
+    BgmId: int | None = None
+    TakeOverFieldState: int | None = None
+    TakeOverNextWaveBGAndBGM: int | None = None
+    RemoveFieldBuffActorDeath: int | None = None
+    FieldBuffGrantType: int | None = None
+    Priority: int | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo

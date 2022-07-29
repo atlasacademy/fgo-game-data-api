@@ -122,6 +122,8 @@ export enum NiceFuncType {
     FUNC_127 = "func127",
     UPDATE_ENTRY_POSITIONS = "updateEntryPositions",
     BUDDY_POINT_UP = "buddyPointUp",
+    ADD_FIELD_CHANGE_TO_FIELD = "addFieldChangeToField",
+    SUB_FIELD_BUFF = "subFieldBuff",
 }
 
 export enum NiceFuncTargetType {
@@ -309,6 +311,8 @@ export enum NiceBuffType {
     INVISIBLE_BATTLE_CHARA = "invisibleBattleChara",
     COUNTER_FUNCTION = "counterFunction",
     NOT_TARGET_SKILL = "notTargetSkill",
+    TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
+    TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
 }
 
 export enum NiceBuffAction {
@@ -416,6 +420,8 @@ export enum NiceBuffAction {
     BUFF_RATE = "buffRate",
     COUNTER_FUNCTION = "counterFunction",
     NOT_TARGET_SKILL = "notTargetSkill",
+    TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
+    TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
 }
 
 export enum NiceBuffLimit {
@@ -528,6 +534,16 @@ export enum NiceDataValsType {
     NotAccompanyWhenLinkedTargetMoveState = "notaccompanywhenlinkedtargetmovestate",
     AllowSubBgmPlaying = "allowsubbgmplaying",
     NotTargetSkillIdArray = "nottargetskillidarray",
+    ShortTurn = "shortturn",
+    FieldIndividuality = "fieldindividuality",
+    BGId = "bgid",
+    BGType = "bgtype",
+    BgmId = "bgmid",
+    TakeOverFieldState = "takeoverfieldstate",
+    TakeOverNextWaveBGAndBGM = "takeovernextwavebgandbgm",
+    RemoveFieldBuffActorDeath = "removefieldbuffactordeath",
+    FieldBuffGrantType = "fieldbuffgranttype",
+    Priority = "priority",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -823,6 +839,7 @@ export enum NiceCondType {
     PROGRESS_VALUE_ABOVE = "progressValueAbove",
     PROGRESS_VALUE_BELOW = "progressValueBelow",
     RANDOM_MISSION_TOTAL_CLEAR_NUM = "randomMissionTotalClearNum",
+    WEEKDAYS = "weekdays",
 }
 
 export enum NiceVoiceCondType {
@@ -1228,6 +1245,7 @@ export enum NiceAiCond {
     COUNT_CHAIN_HIGHER = "countChainHigher",
     COUNT_CHAIN_LOWER = "countChainLower",
     COUNT_CHAIN_EQUAL = "countChainEqual",
+    CHECK_SELECT_CHAIN = "checkSelectChain",
 }
 
 export enum NiceAiActType {
@@ -1405,6 +1423,7 @@ export enum NiceAiCondParameter {
     CHECK_PARAMATER_32 = "checkParamater32",
     CHAIN_COUNT = "chainCount",
     CHECK_TARGET_SKILL_THISTURN = "checkTargetSkillThisturn",
+    CHECK_SELECT_CHAIN = "checkSelectChain",
 }
 
 export enum NiceAiCondRefine {
