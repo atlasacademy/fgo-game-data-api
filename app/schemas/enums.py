@@ -870,6 +870,8 @@ class Trait(str, Enum):
     havingAnimalsCharacteristics = "havingAnimalsCharacteristics"
     like = "like"
     exaltation = "exaltation"
+    gubijin = "gubijin"
+    milleniumCastle = "milleniumCastle"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1025,6 +1027,8 @@ TRAIT_NAME: dict[int, Trait] = {
     2821: Trait.havingAnimalsCharacteristics,
     2827: Trait.like,  # Super Bunyan NP
     2828: Trait.exaltation,
+    2829: Trait.milleniumCastle,
+    2833: Trait.gubijin,
     # 2xxx: CQ or Story quests buff
     3000: Trait.attackPhysical,  # Normal attack, including NP
     3001: Trait.attackProjectile,
