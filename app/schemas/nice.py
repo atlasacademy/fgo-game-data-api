@@ -527,6 +527,8 @@ class NiceSkillScript(BaseModel):
     HP_PER_LOWER: Optional[list[int]] = None
     additionalSkillId: Optional[list[int]] = None
     additionalSkillActorType: Optional[list[int]] = None
+    tdTypeChangeIDs: list[int] | None = None
+    excludeTdChangeTypes: list[int] | None = None
 
 
 class NiceSkillAdd(BaseModelORJson):

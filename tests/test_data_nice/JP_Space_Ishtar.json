@@ -6260,7 +6260,13 @@
           "name": "aoeNP"
         }
       ],
-      "script": {},
+      "script": {
+        "tdTypeChangeIDs": [
+          1100901,
+          1100997,
+          1100998
+        ]
+      },
       "functions": [
         {
           "funcId": 249,
@@ -6881,7 +6887,13 @@
           "name": "aoeNP"
         }
       ],
-      "script": {},
+      "script": {
+        "tdTypeChangeIDs": [
+          1100901,
+          1100997,
+          1100998
+        ]
+      },
       "functions": [
         {
           "funcId": 249,
@@ -7502,7 +7514,13 @@
           "name": "aoeNP"
         }
       ],
-      "script": {},
+      "script": {
+        "tdTypeChangeIDs": [
+          1100901,
+          1100997,
+          1100998
+        ]
+      },
       "functions": [
         {
           "funcId": 249,

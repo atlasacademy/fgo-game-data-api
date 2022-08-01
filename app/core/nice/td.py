@@ -61,16 +61,18 @@ async def get_nice_td(
         "defence": [td_lv.tdPointDef for td_lv in tdEntity.mstTreasureDeviceLv],
     }
 
+    nice_td["script"] = {}
     if tdEntity.mstTreasureDeviceLv[0].script:
-        nice_td["script"] = {
-            scriptKey: [
-                tdLv.script[scriptKey] if tdLv.script else None
+        for script_key in tdEntity.mstTreasureDeviceLv[0].script:
+            nice_td["script"][script_key] = [
+                tdLv.script[script_key] if tdLv.script else None
                 for tdLv in tdEntity.mstTreasureDeviceLv
             ]
-            for scriptKey in tdEntity.mstTreasureDeviceLv[0].script
-        }
-    else:
-        nice_td["script"] = {}
+    for script_key in ("tdTypeChangeIDs", "excludeTdChangeTypes"):
+        if script_key in tdEntity.mstTreasureDevice.script:
+            nice_td["script"][script_key] = tdEntity.mstTreasureDevice.script[
+                script_key
+            ]
 
     nice_td["functions"] = []
 

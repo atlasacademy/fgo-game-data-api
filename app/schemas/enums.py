@@ -871,6 +871,7 @@ class Trait(str, Enum):
     like = "like"
     exaltation = "exaltation"
     gubijin = "gubijin"
+    yuMeiren = "yuMeiren"
     milleniumCastle = "milleniumCastle"
 
 
@@ -1028,7 +1029,7 @@ TRAIT_NAME: dict[int, Trait] = {
     2827: Trait.like,  # Super Bunyan NP
     2828: Trait.exaltation,
     2829: Trait.milleniumCastle,
-    2833: Trait.gubijin,
+    2833: Trait.yuMeiren,
     # 2xxx: CQ or Story quests buff
     3000: Trait.attackPhysical,  # Normal attack, including NP
     3001: Trait.attackProjectile,
@@ -1142,6 +1143,7 @@ OLD_TRAIT_MAPPING = {
     Trait.skyOrEarth: 2011,
     Trait.skyOrEarthExceptPseudoAndDemi: 2037,
     Trait.kingproteaGrowth: 2387,
+    Trait.gubijin: 2833,
 }
 
 TRAIT_NAME_REVERSE |= OLD_TRAIT_MAPPING
