@@ -275,6 +275,21 @@ async def test_list_datavals_1_item(client: AsyncClient) -> None:
 
 
 @pytest.mark.asyncio
+async def test_dataval_add_field(client: AsyncClient) -> None:
+    response = await client.get("/nice/JP/NP/2300501")
+    assert response.status_code == 200
+    assert response.json()["functions"][0]["svals"][0] == {
+        "Rate": 1000,
+        "Turn": 3,
+        "Count": -1,
+        "FieldIndividuality": 2829,
+        "TakeOverFieldState": 1,
+        "RemoveFieldBuffActorDeath": 1,
+        "FieldBuffGrantType": 2,
+    }
+
+
+@pytest.mark.asyncio
 class TestServantSpecial:
     async def test_NA_not_integer(self, client: AsyncClient) -> None:
         response = await client.get("/nice/NA/servant/lkji")
