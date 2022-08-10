@@ -3,6 +3,7 @@ from collections import defaultdict
 from dataclasses import dataclass
 from typing import Any, Optional, Union
 
+from fastapi import HTTPException
 from fastapi_cache.decorator import cache
 from redis.asyncio import Redis  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection
@@ -132,6 +133,8 @@ async def get_nice_quest(
         mstWar = await war.get_war_from_spot(conn, raw_quest.mstQuest.spotId)
     if not mstSpot:
         mstSpot = await war.get_spot_from_id(conn, raw_quest.mstQuest.spotId)
+    if mstSpot is None or mstWar is None:
+        raise HTTPException(status_code=404, detail="Quest's spot not found")
 
     gift_maps: dict[int, list[MstGift]] = defaultdict(list)
     for gift in raw_quest.mstGift:
@@ -251,16 +254,18 @@ async def get_nice_quest_phase_no_rayshift(
             mstSpot = await war.get_spot_from_id(
                 conn, raw_quest.mstQuestPhaseDetail.spotId
             )
-            nice_data["spotId"] = raw_quest.mstQuestPhaseDetail.spotId
-            nice_data["spotName"] = get_translation(lang, mstSpot.name)
+            if mstSpot:
+                nice_data["spotId"] = raw_quest.mstQuestPhaseDetail.spotId
+                nice_data["spotName"] = get_translation(lang, mstSpot.name)
         nice_data["recommendLv"] = (
             raw_quest.mstQuestPhaseDetail.recommendLv or raw_quest.mstQuest.recommendLv
         )
         detail_mstWar = await war.get_war_from_spot(
             conn, raw_quest.mstQuestPhaseDetail.spotId
         )
-        nice_data["warId"] = detail_mstWar.id
-        nice_data["warLongName"] = get_translation(lang, detail_mstWar.longName)
+        if detail_mstWar:
+            nice_data["warId"] = detail_mstWar.id
+            nice_data["warLongName"] = get_translation(lang, detail_mstWar.longName)
         nice_data["consumeType"] = QUEST_CONSUME_TYPE_NAME[
             raw_quest.mstQuestPhaseDetail.consumeType
         ]
