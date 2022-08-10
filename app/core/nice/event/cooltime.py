@@ -1,5 +1,5 @@
 from ....schemas.common import Region
-from ....schemas.nice import NiceEventCooltime
+from ....schemas.nice import NiceEventCooltimeReward
 from ....schemas.raw import MstCommonRelease, MstEventCooltimeReward
 from ..common_release import get_nice_common_release
 from ..gift import GiftData, get_nice_gifts
@@ -10,8 +10,8 @@ def get_nice_event_cooltime(
     cooltime: MstEventCooltimeReward,
     gift_data: GiftData,
     common_release: MstCommonRelease,
-) -> NiceEventCooltime:
-    return NiceEventCooltime(
+) -> NiceEventCooltimeReward:
+    return NiceEventCooltimeReward(
         spotId=cooltime.spotId,
         lv=cooltime.lv,
         name=cooltime.name,

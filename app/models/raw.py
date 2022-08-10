@@ -1252,6 +1252,17 @@ mstEventCooltimeReward = Table(
 )
 
 
+mstEventQuestCooltime = Table(
+    "mstEventQuestCooltime",
+    metadata,
+    Column("eventId", Integer, index=True),
+    Column("questId", Integer, index=True),
+    Column("phase", Integer),
+    Column("cooltime", Integer),
+    Column("isEnabledInitial", Boolean),
+)
+
+
 mstCommonConsume = Table(
     "mstCommonConsume",
     metadata,
@@ -1860,7 +1871,7 @@ TABLES_TO_BE_LOADED = [
     [mstTreasureBoxGift],
     [mstTreasureDevice, mstTreasureDeviceDetail],
     [mstEventDigging, mstEventDiggingBlock, mstEventDiggingReward],
-    [mstEventCooltimeReward],
+    [mstEventCooltimeReward, mstEventQuestCooltime],
     [mstVoice],
     [mstVoicePlayCond],
     [mstSvt],

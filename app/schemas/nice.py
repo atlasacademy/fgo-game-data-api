@@ -1608,7 +1608,7 @@ class NiceEventDigging(BaseModelORJson):
     rewards: list[NiceEventDiggingReward]
 
 
-class NiceEventCooltime(BaseModelORJson):
+class NiceEventCooltimeReward(BaseModelORJson):
     spotId: int
     lv: int
     name: str
@@ -1617,6 +1617,10 @@ class NiceEventCooltime(BaseModelORJson):
     addEventPointRate: int
     gifts: list[NiceGift]
     upperLimitGiftNum: int
+
+
+class NiceEventCooltime(BaseModelORJson):
+    rewards: list[NiceEventCooltimeReward]
 
 
 class NiceEventRewardSceneGuide(BaseModelORJson):
@@ -1684,7 +1688,7 @@ class NiceEvent(BaseModelORJson):
     lotteries: list[NiceEventLottery]
     treasureBoxes: list[NiceEventTreasureBox]
     digging: NiceEventDigging | None
-    cooltimes: list[NiceEventCooltime]
+    cooltime: NiceEventCooltime | None
     voicePlays: list[NiceEventVoicePlay]
     voices: list[NiceVoiceGroup] = Field(
         ..., description="All voice lines related to this event"

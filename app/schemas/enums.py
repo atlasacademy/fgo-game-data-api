@@ -873,6 +873,8 @@ class Trait(str, Enum):
     gubijin = "gubijin"
     yuMeiren = "yuMeiren"
     milleniumCastle = "milleniumCastle"
+    protoMerlinDrainNP = "protoMerlinDrainNP"
+    valkyrie = "valkyrie"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1030,6 +1032,8 @@ TRAIT_NAME: dict[int, Trait] = {
     2828: Trait.exaltation,
     2829: Trait.milleniumCastle,
     2833: Trait.yuMeiren,
+    2836: Trait.protoMerlinDrainNP,
+    2837: Trait.valkyrie,
     # 2xxx: CQ or Story quests buff
     3000: Trait.attackPhysical,  # Normal attack, including NP
     3001: Trait.attackProjectile,

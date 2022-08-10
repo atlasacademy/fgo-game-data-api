@@ -39,6 +39,7 @@ from ...models.raw import (
     mstEventMissionConditionDetail,
     mstEventPointBuff,
     mstEventPointGroup,
+    mstEventQuestCooltime,
     mstEventReward,
     mstEventRewardScene,
     mstEventRewardSet,
@@ -122,6 +123,7 @@ from ...schemas.raw import (
     MstEventMissionConditionDetail,
     MstEventPointBuff,
     MstEventPointGroup,
+    MstEventQuestCooltime,
     MstEventReward,
     MstEventRewardScene,
     MstEventRewardSet,
@@ -337,6 +339,11 @@ schema_table_fetch_all: dict[  # type:ignore
         mstEventCooltimeReward,
         mstEventCooltimeReward.c.eventId,
         mstEventCooltimeReward.c.spotId,
+    ),
+    MstEventQuestCooltime: (
+        mstEventQuestCooltime,
+        mstEventQuestCooltime.c.eventId,
+        mstEventQuestCooltime.c.questId,
     ),
     MstSvtMultiPortrait: (
         mstSvtMultiPortrait,

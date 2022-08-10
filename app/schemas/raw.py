@@ -1159,6 +1159,14 @@ class MstEventCooltimeReward(BaseModelORJson):
     upperLimitGiftNum: int
 
 
+class MstEventQuestCooltime(BaseModelORJson):
+    eventId: int
+    questId: int
+    phase: int
+    cooltime: int
+    isEnabledInitial: bool
+
+
 class MstCommonConsume(BaseModelORJson):
     id: int
     priority: int
@@ -1715,6 +1723,7 @@ class EventEntity(BaseModelORJson):
     mstEventDiggingBlock: list[MstEventDiggingBlock]
     mstEventDiggingReward: list[MstEventDiggingReward]
     mstEventCooltimeReward: list[MstEventCooltimeReward]
+    mstEventQuestCooltime: list[MstEventQuestCooltime]
     mstItem: list[MstItem]
     mstCommonConsume: list[MstCommonConsume]
     mstCommonRelease: list[MstCommonRelease]

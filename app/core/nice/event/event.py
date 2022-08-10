@@ -5,7 +5,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 from ....config import Settings
 from ....schemas.common import Language, Region
 from ....schemas.gameenums import EVENT_TYPE_NAME, NiceSvtVoiceType, NiceVoiceCondType
-from ....schemas.nice import AssetURL, NiceEvent, NiceVoiceGroup
+from ....schemas.nice import AssetURL, NiceEvent, NiceEventCooltime, NiceVoiceGroup
 from ....schemas.raw import MstGift
 from ... import raw
 from ...utils import fmt_url, get_translation
@@ -231,12 +231,19 @@ async def get_nice_event(
         )
         if raw_event.mstEventDigging
         else None,
-        cooltimes=[
-            get_nice_event_cooltime(
-                region, cooltime, gift_data, common_releases[cooltime.commonReleaseId]
-            )
-            for cooltime in raw_event.mstEventCooltimeReward
-        ],
+        cooltime=NiceEventCooltime(
+            rewards=[
+                get_nice_event_cooltime(
+                    region,
+                    cooltime,
+                    gift_data,
+                    common_releases[cooltime.commonReleaseId],
+                )
+                for cooltime in raw_event.mstEventCooltimeReward
+            ]
+        )
+        if raw_event.mstEventCooltimeReward
+        else None,
         voicePlays=[
             get_nice_event_voice_play(voice_play, voice_groups)
             for voice_play in raw_event.mstEventVoicePlay
