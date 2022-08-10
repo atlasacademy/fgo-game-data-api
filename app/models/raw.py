@@ -1237,6 +1237,21 @@ mstEventDiggingReward = Table(
 )
 
 
+mstEventCooltimeReward = Table(
+    "mstEventCooltimeReward",
+    metadata,
+    Column("eventId", Integer, index=True),
+    Column("spotId", Integer, index=True),
+    Column("lv", Integer),
+    Column("name", String),
+    Column("commonReleaseId", Integer),
+    Column("cooltime", Integer),
+    Column("addEventPointRate", Integer),
+    Column("giftId", Integer),
+    Column("upperLimitGiftNum", Integer),
+)
+
+
 mstCommonConsume = Table(
     "mstCommonConsume",
     metadata,
@@ -1845,6 +1860,7 @@ TABLES_TO_BE_LOADED = [
     [mstTreasureBoxGift],
     [mstTreasureDevice, mstTreasureDeviceDetail],
     [mstEventDigging, mstEventDiggingBlock, mstEventDiggingReward],
+    [mstEventCooltimeReward],
     [mstVoice],
     [mstVoicePlayCond],
     [mstSvt],

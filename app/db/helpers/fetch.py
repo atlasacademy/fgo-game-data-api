@@ -30,6 +30,7 @@ from ...models.raw import (
     mstEquipExp,
     mstEquipSkill,
     mstEvent,
+    mstEventCooltimeReward,
     mstEventDigging,
     mstEventDiggingBlock,
     mstEventDiggingReward,
@@ -112,6 +113,7 @@ from ...schemas.raw import (
     MstEquipExp,
     MstEquipSkill,
     MstEvent,
+    MstEventCooltimeReward,
     MstEventDigging,
     MstEventDiggingBlock,
     MstEventDiggingReward,
@@ -330,6 +332,11 @@ schema_table_fetch_all: dict[  # type:ignore
         mstEventDiggingReward,
         mstEventDiggingReward.c.eventId,
         mstEventDiggingReward.c.id,
+    ),
+    MstEventCooltimeReward: (
+        mstEventCooltimeReward,
+        mstEventCooltimeReward.c.eventId,
+        mstEventCooltimeReward.c.spotId,
     ),
     MstSvtMultiPortrait: (
         mstSvtMultiPortrait,
