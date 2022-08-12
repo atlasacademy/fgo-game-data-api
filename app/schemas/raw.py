@@ -1171,7 +1171,7 @@ class MstEventBulletinBoard(BaseModelORJson):
     id: int
     eventId: int
     message: str
-    probability: int
+    probability: int | None = None
 
 
 class MstEventBulletinBoardRelease(BaseModelORJson):

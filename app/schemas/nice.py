@@ -1633,7 +1633,7 @@ class NiceEventBulletinBoardRelease(BaseModelORJson):
 class NiceEventBulletinBoard(BaseModelORJson):
     bulletinBoardId: int
     message: str
-    probability: int
+    probability: int | None = None
     releaseConditions: list[NiceEventBulletinBoardRelease]
 
 
