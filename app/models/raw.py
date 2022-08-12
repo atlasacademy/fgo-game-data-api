@@ -1263,6 +1263,26 @@ mstEventQuestCooltime = Table(
 )
 
 
+mstEventBulletinBoard = Table(
+    "mstEventBulletinBoard",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("eventId", Integer, index=True),
+    Column("message", String),
+    Column("probability", Integer),
+)
+
+mstEventBulletinBoardRelease = Table(
+    "mstEventBulletinBoardRelease",
+    metadata,
+    Column("bulletinBoardId", Integer, index=True),
+    Column("condType", Integer),
+    Column("condTargetId", Integer),
+    Column("condNum", Integer),
+    Column("condGroup", Integer),
+)
+
+
 mstCommonConsume = Table(
     "mstCommonConsume",
     metadata,
@@ -1872,6 +1892,7 @@ TABLES_TO_BE_LOADED = [
     [mstTreasureDevice, mstTreasureDeviceDetail],
     [mstEventDigging, mstEventDiggingBlock, mstEventDiggingReward],
     [mstEventCooltimeReward, mstEventQuestCooltime],
+    [mstEventBulletinBoard, mstEventBulletinBoardRelease],
     [mstVoice],
     [mstVoicePlayCond],
     [mstSvt],

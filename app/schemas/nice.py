@@ -1623,6 +1623,20 @@ class NiceEventCooltime(BaseModelORJson):
     rewards: list[NiceEventCooltimeReward]
 
 
+class NiceEventBulletinBoardRelease(BaseModelORJson):
+    condGroup: int
+    condType: NiceCondType
+    condTargetId: int
+    condNum: int
+
+
+class NiceEventBulletinBoard(BaseModelORJson):
+    bulletinBoardId: int
+    message: str
+    probability: int
+    releaseConditions: list[NiceEventBulletinBoardRelease]
+
+
 class NiceEventRewardSceneGuide(BaseModelORJson):
     imageId: int
     limitCount: int
@@ -1687,6 +1701,7 @@ class NiceEvent(BaseModelORJson):
     towers: list[NiceEventTower]
     lotteries: list[NiceEventLottery]
     treasureBoxes: list[NiceEventTreasureBox]
+    bulletinBoards: list[NiceEventBulletinBoard]
     digging: NiceEventDigging | None
     cooltime: NiceEventCooltime | None
     voicePlays: list[NiceEventVoicePlay]

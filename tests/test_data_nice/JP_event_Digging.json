@@ -3763,6 +3763,7 @@
   "towers": [],
   "lotteries": [],
   "treasureBoxes": [],
+  "bulletinBoards": [],
   "digging": {
     "sizeX": 7,
     "sizeY": 4,

@@ -30,6 +30,8 @@ from ...models.raw import (
     mstEquipExp,
     mstEquipSkill,
     mstEvent,
+    mstEventBulletinBoard,
+    mstEventBulletinBoardRelease,
     mstEventCooltimeReward,
     mstEventDigging,
     mstEventDiggingBlock,
@@ -114,6 +116,8 @@ from ...schemas.raw import (
     MstEquipExp,
     MstEquipSkill,
     MstEvent,
+    MstEventBulletinBoard,
+    MstEventBulletinBoardRelease,
     MstEventCooltimeReward,
     MstEventDigging,
     MstEventDiggingBlock,
@@ -360,6 +364,11 @@ schema_table_fetch_all: dict[  # type:ignore
         mstEventVoicePlay.c.eventId,
         mstEventVoicePlay.c.slot,
     ),
+    MstEventBulletinBoard: (
+        mstEventBulletinBoard,
+        mstEventBulletinBoard.c.eventId,
+        mstEventBulletinBoard.c.id,
+    ),
 }
 
 TFetchAll = TypeVar("TFetchAll", bound=BaseModelORJson)
@@ -432,6 +441,11 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
     MstSpotRoad: (mstSpotRoad, mstSpotRoad.c.mapId, [mstSpotRoad.c.id]),
     MstBoxGachaTalk: (mstBoxGachaTalk, mstBoxGachaTalk.c.id, [mstBoxGachaTalk.c.id]),
     MstSvtExtra: (mstSvtExtra, mstSvtExtra.c.svtId, [mstSvtExtra.c.svtId]),
+    MstEventBulletinBoardRelease: (
+        mstEventBulletinBoardRelease,
+        mstEventBulletinBoardRelease.c.bulletinBoardId,
+        [mstEventBulletinBoardRelease.c.bulletinBoardId],
+    ),
 }
 
 TFetchAllMultiple = TypeVar("TFetchAllMultiple", bound=BaseModelORJson)

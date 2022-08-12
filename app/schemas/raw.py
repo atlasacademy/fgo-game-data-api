@@ -1167,6 +1167,21 @@ class MstEventQuestCooltime(BaseModelORJson):
     isEnabledInitial: bool
 
 
+class MstEventBulletinBoard(BaseModelORJson):
+    id: int
+    eventId: int
+    message: str
+    probability: int
+
+
+class MstEventBulletinBoardRelease(BaseModelORJson):
+    bulletinBoardId: int
+    condType: int
+    condTargetId: int
+    condNum: int
+    condGroup: int
+
+
 class MstCommonConsume(BaseModelORJson):
     id: int
     priority: int
@@ -1724,6 +1739,8 @@ class EventEntity(BaseModelORJson):
     mstEventDiggingReward: list[MstEventDiggingReward]
     mstEventCooltimeReward: list[MstEventCooltimeReward]
     mstEventQuestCooltime: list[MstEventQuestCooltime]
+    mstEventBulletinBoard: list[MstEventBulletinBoard]
+    mstEventBulletinBoardRelease: list[MstEventBulletinBoardRelease]
     mstItem: list[MstItem]
     mstCommonConsume: list[MstCommonConsume]
     mstCommonRelease: list[MstCommonRelease]

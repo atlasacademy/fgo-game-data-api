@@ -8140,6 +8140,10 @@
   "mstTreasureBoxGift": [],
   "mstEventDiggingBlock": [],
   "mstEventDiggingReward": [],
+  "mstEventCooltimeReward": [],
+  "mstEventQuestCooltime": [],
+  "mstEventBulletinBoard": [],
+  "mstEventBulletinBoardRelease": [],
   "mstItem": [
     {
       "individuality": [
@@ -8233,6 +8237,7 @@
     }
   ],
   "mstCommonConsume": [],
+  "mstCommonRelease": [],
   "mstSvtVoice": [
     {
       "scriptJson": [

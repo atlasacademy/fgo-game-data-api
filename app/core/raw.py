@@ -47,6 +47,8 @@ from ..schemas.raw import (
     MstEquipExp,
     MstEquipSkill,
     MstEvent,
+    MstEventBulletinBoard,
+    MstEventBulletinBoardRelease,
     MstEventCooltimeReward,
     MstEventDigging,
     MstEventDiggingBlock,
@@ -814,6 +816,12 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
 
     event_cooltimes = await fetch.get_all(conn, MstEventCooltimeReward, event_id)
 
+    bulletins = await fetch.get_all(conn, MstEventBulletinBoard, event_id)
+    bulletin_ids = {bulletin.id for bulletin in bulletins}
+    bulletin_releases = await fetch.get_all_multiple(
+        conn, MstEventBulletinBoardRelease, bulletin_ids
+    )
+
     common_release_ids = {cooltime.commonReleaseId for cooltime in event_cooltimes}
     common_releases = await fetch.get_all_multiple(
         conn, MstCommonRelease, common_release_ids
@@ -879,6 +887,8 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         mstEventQuestCooltime=await fetch.get_all(
             conn, MstEventQuestCooltime, event_id
         ),
+        mstEventBulletinBoard=bulletins,
+        mstEventBulletinBoardRelease=bulletin_releases,
         mstItem=mstItem,
         mstCommonConsume=common_consumes,
         mstCommonRelease=common_releases,

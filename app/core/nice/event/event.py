@@ -13,6 +13,7 @@ from ..bgm import get_nice_bgm_entity_from_raw
 from ..gift import GiftData
 from ..item import get_nice_item_from_raw
 from ..svt.voice import get_nice_voice_group
+from .bulletin_board import get_nice_bulletin_board
 from .cooltime import get_nice_event_cooltime
 from .digging import get_nice_digging
 from .lottery import get_nice_lottery
@@ -219,6 +220,12 @@ async def get_nice_event(
                 region, box, raw_event.mstTreasureBoxGift, gift_data, common_consumes
             )
             for box in raw_event.mstTreasureBox
+        ],
+        bulletinBoards=[
+            get_nice_bulletin_board(
+                bulletin_board, raw_event.mstEventBulletinBoardRelease
+            )
+            for bulletin_board in raw_event.mstEventBulletinBoard
         ],
         digging=get_nice_digging(
             region,
