@@ -732,6 +732,15 @@ class TestServantSpecial:
         ]
         assert ("item", 1, 20000) in drops
 
+    async def test_transform_enemy(self, client: AsyncClient) -> None:
+        transform_enemy = (await client.get("/nice/NA/quest/94050181/2")).json()
+        for stage in transform_enemy["stages"]:
+            decks = {enemy["deck"] for enemy in stage["enemies"]}
+            if stage["wave"] == 3:
+                assert "transform" in decks
+            else:
+                assert "transform" not in decks
+
 
 @pytest.mark.asyncio
 async def test_shop_itemIds_0(na_db_conn: AsyncConnection) -> None:

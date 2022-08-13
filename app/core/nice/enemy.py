@@ -385,10 +385,12 @@ async def get_quest_enemies(
             for deck in sorted(enemy_deck.svts, key=lambda enemy: enemy.id)
             if not is_spawn_bonus_enemy(deck)
         ]
+        enemy_uniqueIds = {enemy.deck.uniqueId for enemy in enemy_decks}
+        # The tranform target and transform source have the same uniqueId
         enemy_decks += [
             EnemyDeckInfo(DeckType.TRANSFORM, deck)
             for deck in quest_detail.transformDeck.svts
-            if not is_spawn_bonus_enemy(deck)
+            if not is_spawn_bonus_enemy(deck) and deck.uniqueId in enemy_uniqueIds
         ]
 
         stage_nice_enemies: list[QuestEnemy] = []
