@@ -399,6 +399,7 @@ PLAYABLE_CLASS_LIST = [
     SvtClass.avenger,
     SvtClass.moonCancer,
     SvtClass.foreigner,
+    SvtClass.pretender,
 ]
 
 
