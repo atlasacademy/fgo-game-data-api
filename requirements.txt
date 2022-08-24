@@ -49,9 +49,9 @@ deprecated==1.2.13; python_version >= "3.6" and python_full_version < "3.0.0" or
 fastapi-cache2==0.1.9; python_version >= "3.7" and python_version < "4.0" \
     --hash=sha256:816612f7b29b4ea4ed3b4e03c55b7f96b4e4d6dffce6a95e2cf5cf36a980eaaa \
     --hash=sha256:5b6f32bc8e786d9fffe4f3ef343861cab276acc64fb5d8d09077524743ad3702
-fastapi==0.79.0; python_full_version >= "3.6.1" \
-    --hash=sha256:d337563424ceada23857f73d5abe8dae0c28e4cccb53b2af06e78b7bb4a1c7d7 \
-    --hash=sha256:cf0ff6db25b91d321050c4112baab0908c90f19b40bf257f9591d2f9780d1f22
+fastapi==0.80.0; python_full_version >= "3.6.1" \
+    --hash=sha256:5340f6016860baf94a52be5040c3a2e94c39ddc7ab4cc7548558182db742d9d6 \
+    --hash=sha256:4e542f71b5b0f4f54a82449e8bd0244305de319186a31addab976bf672206420
 fuzzywuzzy==0.18.0 \
     --hash=sha256:928244b28db720d1e0ee7587acf660ea49d7e4c632569cad4f1cd7e68a5f0993 \
     --hash=sha256:45016e92264780e58972dca1b3d939ac864b78437422beecebb3095f8efd00e8
@@ -495,9 +495,9 @@ tomli==2.0.1; python_version >= "3.7" \
 typing-extensions==4.3.0; python_version >= "3.7" and python_full_version >= "3.6.1" \
     --hash=sha256:25642c956049920a5aa49edcdd6ab1e06d7e5d467fc00e0506c44ac86fbfca02 \
     --hash=sha256:e6d2677a32f47fc7eb2795db1dd15c1f34eff616bcaf2cfb5e997f854fa1c4a6
-uvicorn==0.18.2; python_version >= "3.7" \
-    --hash=sha256:c19a057deb1c5bb060946e2e5c262fc01590c6529c0af2c3d9ce941e89bc30e0 \
-    --hash=sha256:cade07c403c397f9fe275492a48c1b869efd175d5d8a692df649e6e7e2ed8f4e
+uvicorn==0.18.3; python_version >= "3.7" \
+    --hash=sha256:0abd429ebb41e604ed8d2be6c60530de3408f250e8d2d84967d85ba9e86fe3af \
+    --hash=sha256:9a66e7c42a2a95222f76ec24a4b754c158261c4696e683b9dadc72b590e0311b
 uvloop==0.16.0; sys_platform != "win32" and sys_platform != "cygwin" and platform_python_implementation != "PyPy" and python_version >= "3.7" and python_version < "4.0" \
     --hash=sha256:6224f1401025b748ffecb7a6e2652b17768f30b1a6a3f7b44660e5b5b690b12d \
     --hash=sha256:30ba9dcbd0965f5c812b7c2112a1ddf60cf904c1c160f398e7eed3a6b82dcd9c \
