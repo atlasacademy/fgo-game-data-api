@@ -9,7 +9,7 @@ packages = [{ include = "app" }]
 python = "^3.10"
 fastapi = "^0.81.0"
 uvicorn = {extras = ["standard"], version = "^0.18.3"}
-python-dotenv = "^0.20.0"
+python-dotenv = "^0.21.0"
 fuzzywuzzy = "^0.18.0"
 python-Levenshtein = "^0.12.2"
 orjson = "^3.8.0"
@@ -44,6 +44,8 @@ types-redis = "^4.3.19"
 [tool.poetry.group.dev.dependencies]
 black = "^22.8.0"
 sqlalchemy2-stubs = "^0.0.2a27"
+pytest = "^7.1.3"
+types-redis = "^4.3.20"
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
