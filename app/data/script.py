@@ -58,7 +58,7 @@ def get_script_text_only(region: Region, script: str) -> str:
 def get_script_path(script_file_name: str) -> str:
     if script_file_name == "WarEpilogue108":
         return "01/WarEpilogue108"
-    if script_file_name[0] in ("0", "9"):
+    if len(script_file_name) > 0 and script_file_name[0] in ("0", "9"):
         if script_file_name[:2] == "94":
             return f"94/{script_file_name[:4]}/{script_file_name}"
         else:
