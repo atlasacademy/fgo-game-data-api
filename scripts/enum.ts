@@ -902,6 +902,7 @@ export enum NiceSvtVoiceType {
     WAR_BOARD = "warBoard",
     EVENT_DIGGING = "eventDigging",
     EVENT_EXPEDITION = "eventExpedition",
+    EVENT_RECIPE = "eventRecipe",
     SUM = "sum",
 }
 
