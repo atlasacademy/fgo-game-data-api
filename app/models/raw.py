@@ -1283,6 +1283,35 @@ mstEventBulletinBoardRelease = Table(
 )
 
 
+mstEventRecipe = Table(
+    "mstEventRecipe",
+    metadata,
+    Column("voiceIds", ARRAY(String)),
+    Column("id", Integer, index=True),
+    Column("eventId", Integer, index=True),
+    Column("iconId", Integer),
+    Column("name", String),
+    Column("maxNum", Integer),
+    Column("eventPointItemId", Integer),
+    Column("eventPointNum", Integer),
+    Column("commonConsumeId", Integer),
+    Column("commonReleaseId", Integer),
+    Column("closedMessage", String),
+)
+
+
+mstEventRecipeGift = Table(
+    "mstEventRecipeGift",
+    metadata,
+    Column("recipeId", Integer, index=True),
+    Column("idx", Integer),
+    Column("eventId", Integer, index=True),
+    Column("giftId", Integer),
+    Column("displayOrder", Integer),
+    Column("topIconId", Integer),
+)
+
+
 mstCommonConsume = Table(
     "mstCommonConsume",
     metadata,
@@ -1893,6 +1922,7 @@ TABLES_TO_BE_LOADED = [
     [mstEventDigging, mstEventDiggingBlock, mstEventDiggingReward],
     [mstEventCooltimeReward, mstEventQuestCooltime],
     [mstEventBulletinBoard, mstEventBulletinBoardRelease],
+    [mstEventRecipe, mstEventRecipeGift],
     [mstVoice],
     [mstVoicePlayCond],
     [mstSvt],

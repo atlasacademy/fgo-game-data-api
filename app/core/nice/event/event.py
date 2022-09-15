@@ -19,6 +19,7 @@ from .digging import get_nice_digging
 from .lottery import get_nice_lottery
 from .mission import get_nice_missions
 from .point import get_nice_pointBuff, get_nice_pointGroup
+from .recipe import get_nice_recipe
 from .reward import get_nice_reward
 from .reward_scene import get_nice_event_reward_scene
 from .shop import get_nice_shop
@@ -217,7 +218,12 @@ async def get_nice_event(
         ],
         treasureBoxes=[
             get_nice_treasure_box(
-                region, box, raw_event.mstTreasureBoxGift, gift_data, common_consumes
+                region,
+                box,
+                raw_event.mstTreasureBoxGift,
+                gift_data,
+                common_consumes,
+                raw_event.mstCommonConsume,
             )
             for box in raw_event.mstTreasureBox
         ],
@@ -227,6 +233,18 @@ async def get_nice_event(
             )
             for bulletin_board in raw_event.mstEventBulletinBoard
         ],
+        recipes=[
+            get_nice_recipe(
+                region=region,
+                recipe=recipe,
+                recipe_gifts=raw_event.mstEventRecipeGift,
+                raw_consumes=raw_event.mstCommonConsume,
+                raw_releases=raw_event.mstCommonRelease,
+                item_map=item_map,
+                gift_data=gift_data,
+            )
+            for recipe in raw_event.mstEventRecipe
+        ],
         digging=get_nice_digging(
             region,
             raw_event.mstEventDigging,
@@ -235,6 +253,7 @@ async def get_nice_event(
             item_map=item_map,
             gift_data=gift_data,
             common_consumes=common_consumes,
+            raw_consumes=raw_event.mstCommonConsume,
         )
         if raw_event.mstEventDigging
         else None,
@@ -245,6 +264,7 @@ async def get_nice_event(
                     cooltime,
                     gift_data,
                     common_releases[cooltime.commonReleaseId],
+                    raw_releases=raw_event.mstCommonRelease,
                 )
                 for cooltime in raw_event.mstEventCooltimeReward
             ]

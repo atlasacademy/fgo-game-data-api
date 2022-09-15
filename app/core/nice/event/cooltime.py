@@ -10,12 +10,18 @@ def get_nice_event_cooltime(
     cooltime: MstEventCooltimeReward,
     gift_data: GiftData,
     common_release: MstCommonRelease,
+    raw_releases: list[MstCommonRelease],
 ) -> NiceEventCooltimeReward:
     return NiceEventCooltimeReward(
         spotId=cooltime.spotId,
         lv=cooltime.lv,
         name=cooltime.name,
         commonRelease=get_nice_common_release(common_release),
+        releaseConditions=[
+            get_nice_common_release(release)
+            for release in raw_releases
+            if release.id == cooltime.commonReleaseId
+        ],
         cooltime=cooltime.cooltime,
         addEventPointRate=cooltime.addEventPointRate,
         gifts=get_nice_gifts(region, cooltime.giftId, gift_data),

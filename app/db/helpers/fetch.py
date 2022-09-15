@@ -42,6 +42,8 @@ from ...models.raw import (
     mstEventPointBuff,
     mstEventPointGroup,
     mstEventQuestCooltime,
+    mstEventRecipe,
+    mstEventRecipeGift,
     mstEventReward,
     mstEventRewardScene,
     mstEventRewardSet,
@@ -128,6 +130,8 @@ from ...schemas.raw import (
     MstEventPointBuff,
     MstEventPointGroup,
     MstEventQuestCooltime,
+    MstEventRecipe,
+    MstEventRecipeGift,
     MstEventReward,
     MstEventRewardScene,
     MstEventRewardSet,
@@ -369,6 +373,11 @@ schema_table_fetch_all: dict[  # type:ignore
         mstEventBulletinBoard.c.eventId,
         mstEventBulletinBoard.c.id,
     ),
+    MstEventRecipe: (
+        mstEventRecipe,
+        mstEventRecipe.c.eventId,
+        mstEventRecipe.c.id,
+    ),
 }
 
 TFetchAll = TypeVar("TFetchAll", bound=BaseModelORJson)
@@ -445,6 +454,11 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
         mstEventBulletinBoardRelease,
         mstEventBulletinBoardRelease.c.bulletinBoardId,
         [mstEventBulletinBoardRelease.c.bulletinBoardId],
+    ),
+    MstEventRecipeGift: (
+        mstEventRecipeGift,
+        mstEventRecipeGift.c.recipeId,
+        [mstEventRecipeGift.c.recipeId, mstEventRecipeGift.c.idx],
     ),
 }
 

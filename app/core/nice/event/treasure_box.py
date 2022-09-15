@@ -21,6 +21,7 @@ def get_nice_treasure_box(
     box_gifts: list[MstTreasureBoxGift],
     gift_data: GiftData,
     common_consumes: dict[int, MstCommonConsume],
+    raw_consumes: list[MstCommonConsume],
 ) -> NiceEventTreasureBox:
     return NiceEventTreasureBox(
         slot=treasure_box.slot,
@@ -36,4 +37,9 @@ def get_nice_treasure_box(
         commonConsume=get_nice_common_consume(
             common_consumes[treasure_box.commonConsumeId]
         ),
+        consumes=[
+            get_nice_common_consume(consume)
+            for consume in raw_consumes
+            if consume.id == treasure_box.commonConsumeId
+        ],
     )

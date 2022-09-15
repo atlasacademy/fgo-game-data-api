@@ -24,7 +24,8 @@ def get_nice_digging_block(
     region: Region,
     block: MstEventDiggingBlock,
     common_consumes: dict[int, MstCommonConsume],
-):
+    raw_consumes: list[MstCommonConsume],
+) -> NiceEventDiggingBlock:
 
     return NiceEventDiggingBlock(
         id=block.id,
@@ -36,6 +37,11 @@ def get_nice_digging_block(
             event=f"Prefabs/{block.eventId}/event_digging_block_{block.imageId}",
         ),
         commonConsume=get_nice_common_consume(common_consumes[block.commonConsumeId]),
+        consumes=[
+            get_nice_common_consume(consume)
+            for consume in raw_consumes
+            if consume.id == block.commonConsumeId
+        ],
         objectId=block.objectId,
         diggingEventPoint=block.diggingEventPoint,
         blockNum=block.script["blockNum"],
@@ -46,7 +52,7 @@ def get_nice_digging_reward(
     region: Region,
     reward: MstEventDiggingReward,
     gift_data: GiftData,
-):
+) -> NiceEventDiggingReward:
     return NiceEventDiggingReward(
         id=reward.id,
         gifts=get_nice_gifts(region, reward.giftId, gift_data),
@@ -62,6 +68,7 @@ def get_nice_digging(
     item_map: dict[int, NiceItem],
     gift_data: GiftData,
     common_consumes: dict[int, MstCommonConsume],
+    raw_consumes: list[MstCommonConsume],
 ) -> NiceEventDigging:
     return NiceEventDigging(
         sizeX=digging.sizeX,
@@ -75,7 +82,7 @@ def get_nice_digging(
         eventPointItem=item_map[digging.eventPointItemId],
         resettableDiggedNum=digging.resettableDiggedNum,
         blocks=[
-            get_nice_digging_block(region, block, common_consumes)
+            get_nice_digging_block(region, block, common_consumes, raw_consumes)
             for block in blocks
             if block.eventId == digging.eventId
         ],

@@ -1182,6 +1182,29 @@ class MstEventBulletinBoardRelease(BaseModelORJson):
     condGroup: int
 
 
+class MstEventRecipe(BaseModelORJson):
+    voiceIds: list[str]
+    id: int
+    eventId: int
+    iconId: int
+    name: str
+    maxNum: int
+    eventPointItemId: int
+    eventPointNum: int
+    commonConsumeId: int
+    commonReleaseId: int
+    closedMessage: str
+
+
+class MstEventRecipeGift(BaseModelORJson):
+    recipeId: int
+    idx: int
+    eventId: int
+    giftId: int
+    displayOrder: int
+    topIconId: int
+
+
 class MstCommonConsume(BaseModelORJson):
     id: int
     priority: int
@@ -1741,6 +1764,8 @@ class EventEntity(BaseModelORJson):
     mstEventQuestCooltime: list[MstEventQuestCooltime]
     mstEventBulletinBoard: list[MstEventBulletinBoard]
     mstEventBulletinBoardRelease: list[MstEventBulletinBoardRelease]
+    mstEventRecipe: list[MstEventRecipe]
+    mstEventRecipeGift: list[MstEventRecipeGift]
     mstItem: list[MstItem]
     mstCommonConsume: list[MstCommonConsume]
     mstCommonRelease: list[MstCommonRelease]

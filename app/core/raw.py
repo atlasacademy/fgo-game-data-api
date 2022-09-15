@@ -59,6 +59,8 @@ from ..schemas.raw import (
     MstEventPointBuff,
     MstEventPointGroup,
     MstEventQuestCooltime,
+    MstEventRecipe,
+    MstEventRecipeGift,
     MstEventReward,
     MstEventRewardScene,
     MstEventRewardSet,
@@ -809,11 +811,6 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         digging_gift_ids = set()
         digging_consume_ids = set()
 
-    treasure_box_consume_ids = {box.commonConsumeId for box in treasure_boxes}
-    common_consumes = await fetch.get_all_multiple(
-        conn, MstCommonConsume, digging_consume_ids | treasure_box_consume_ids
-    )
-
     event_cooltimes = await fetch.get_all(conn, MstEventCooltimeReward, event_id)
 
     bulletins = await fetch.get_all(conn, MstEventBulletinBoard, event_id)
@@ -822,9 +819,24 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         conn, MstEventBulletinBoardRelease, bulletin_ids
     )
 
-    common_release_ids = {cooltime.commonReleaseId for cooltime in event_cooltimes}
+    recipes = await fetch.get_all(conn, MstEventRecipe, event_id)
+    recipe_ids = {recipe.id for recipe in recipes}
+    recipe_gifts = await fetch.get_all_multiple(conn, MstEventRecipeGift, recipe_ids)
+
+    common_release_ids = {cooltime.commonReleaseId for cooltime in event_cooltimes} | {
+        recipe.commonReleaseId for recipe in recipes
+    }
     common_releases = await fetch.get_all_multiple(
         conn, MstCommonRelease, common_release_ids
+    )
+
+    common_consume_ids = (
+        digging_consume_ids
+        | {box.commonConsumeId for box in treasure_boxes}
+        | {recipe.commonConsumeId for recipe in recipes}
+    )
+    common_consumes = await fetch.get_all_multiple(
+        conn, MstCommonConsume, common_consume_ids
     )
 
     gift_ids = (
@@ -835,6 +847,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         | {box.extraGiftId for box in treasure_boxes}
         | {treasure_box_gift.giftId for treasure_box_gift in box_gifts}
         | {cooltime.giftId for cooltime in event_cooltimes}
+        | {recipe_gift.giftId for recipe_gift in recipe_gifts}
         | digging_gift_ids
     )
 
@@ -843,9 +856,11 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
 
     gifts = await fetch.get_all_multiple(conn, MstGift, gift_ids | replacement_gift_ids)
 
-    item_ids = {get_shop_cost_item_id(shop) for shop in shops} | {
-        lottery.payTargetId for lottery in box_gachas
-    }
+    item_ids = (
+        {get_shop_cost_item_id(shop) for shop in shops}
+        | {lottery.payTargetId for lottery in box_gachas}
+        | {recipe.eventPointItemId for recipe in recipes}
+    )
     if digging:
         item_ids |= {digging.eventPointItemId}
     mstItem = await get_multiple_items(conn, item_ids)
@@ -889,6 +904,8 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         ),
         mstEventBulletinBoard=bulletins,
         mstEventBulletinBoardRelease=bulletin_releases,
+        mstEventRecipe=recipes,
+        mstEventRecipeGift=recipe_gifts,
         mstItem=mstItem,
         mstCommonConsume=common_consumes,
         mstCommonRelease=common_releases,
