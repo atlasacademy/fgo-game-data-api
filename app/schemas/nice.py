@@ -1643,6 +1643,7 @@ class NiceEventBulletinBoard(BaseModelORJson):
 class NiceEventRecipeGift(BaseModelORJson):
     idx: int
     displayOrder: int
+    topIconId: int
     gifts: list[NiceGift]
 
 

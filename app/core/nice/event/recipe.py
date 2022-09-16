@@ -21,6 +21,7 @@ def get_nice_recipe_gift(
     return NiceEventRecipeGift(
         idx=recipe_gift.idx,
         displayOrder=recipe_gift.displayOrder,
+        topIconId=recipe_gift.topIconId,
         gifts=get_nice_gifts(region, recipe_gift.giftId, gift_data),
     )
 
