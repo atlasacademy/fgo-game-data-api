@@ -9,12 +9,14 @@ from ...schemas.gameenums import (
     AI_ACT_TYPE_NAME,
     AI_COND_NAME,
     NiceAiActNum,
+    AiActType,
 )
 from ...schemas.nice import NiceAi, NiceAiAct, NiceAiCollection
 from ...schemas.raw import AiEntity, MstAiAct
 from ..raw import get_ai_collection
 from ..utils import get_traits_list
 from .skill import get_nice_skill_from_id
+from .td import get_nice_td_from_id
 
 
 settings = Settings()
@@ -32,7 +34,14 @@ async def get_nice_ai_act(
         target=AI_ACT_TARGET_NAME[mstAiAct.target],
         targetIndividuality=get_traits_list(mstAiAct.targetIndividuality),
     )
-    if len(mstAiAct.skillVals) >= 2:
+    if mstAiAct.type == AiActType.NOBLE_PHANTASM and len(mstAiAct.skillVals) >= 3:
+        nice_ai_act.noblePhantasmId = mstAiAct.skillVals[0]
+        nice_ai_act.noblePhantasmLv = mstAiAct.skillVals[1]
+        nice_ai_act.noblePhantasmOc = mstAiAct.skillVals[2]
+        nice_ai_act.noblePhantasm = await get_nice_td_from_id(
+            conn, region, mstAiAct.skillVals[0], lang
+        )
+    elif len(mstAiAct.skillVals) >= 2:
         nice_ai_act.skillId = mstAiAct.skillVals[0]
         nice_ai_act.skillLv = mstAiAct.skillVals[1]
         nice_ai_act.skill = await get_nice_skill_from_id(

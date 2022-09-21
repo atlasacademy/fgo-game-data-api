@@ -9,7 +9,7 @@ from ...schemas.common import Language, Region
 from ...schemas.gameenums import CARD_TYPE_NAME, NiceTdEffectFlag
 from ...schemas.nice import AssetURL, NiceTd
 from ...schemas.raw import TdEntityNoReverse
-from ..raw import get_td_entity_no_reverse_many
+from ..raw import get_td_entity_no_reverse_many, get_td_entity_no_reverse
 from ..utils import get_np_name, get_traits_list, strip_formatting_brackets
 from .func import get_nice_function
 
@@ -144,6 +144,22 @@ async def get_nice_td(
         }
         out_tds.append(out_td)
     return out_tds
+
+
+async def get_nice_td_from_id(
+    conn: AsyncConnection,
+    region: Region,
+    td_id: int,
+    lang: Language,
+) -> NiceTd:
+    raw_td = await get_td_entity_no_reverse(conn, td_id, expand=True)
+
+    svt_id = next((svt_id.svtId for svt_id in raw_td.mstSvtTreasureDevice), td_id)
+    nice_td = NiceTd.parse_obj(
+        (await get_nice_td(conn, raw_td, svt_id, region, lang))[0]
+    )
+
+    return nice_td
 
 
 @dataclass(eq=True, frozen=True)

@@ -2190,6 +2190,10 @@ class NiceAiAct(BaseModelORJson):
     skillId: Optional[int] = None
     skillLv: Optional[int] = None
     skill: Optional[NiceSkill] = None
+    noblePhantasmId: Optional[int] = None
+    noblePhantasmLv: Optional[int] = None
+    noblePhantasmOc: Optional[int] = None
+    noblePhantasm: Optional[NiceTd] = None
 
 
 class NiceAi(BaseModelORJson):
