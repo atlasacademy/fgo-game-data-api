@@ -1282,6 +1282,13 @@ class MstWarAdd(BaseModelORJson):
     endedAt: int
 
 
+class MstWarQuestSelection(BaseModelORJson):
+    warId: int
+    questId: int
+    shortCutBannerId: int
+    priority: int
+
+
 class MstMap(BaseModelORJson):
     script: dict[str, Any]
     id: int  # 100
@@ -1788,6 +1795,7 @@ class WarEntity(BaseModelORJson):
     mstSpot: list[MstSpot]
     mstQuest: list[QuestEntity]
     mstSpotRoad: list[MstSpotRoad]
+    mstWarQuestSelection: list[MstWarQuestSelection]
 
 
 class MasterMissionEntity(BaseModelORJson):

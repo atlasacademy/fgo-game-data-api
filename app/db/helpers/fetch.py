@@ -91,6 +91,7 @@ from ...models.raw import (
     mstVoice,
     mstWar,
     mstWarAdd,
+    mstWarQuestSelection,
 )
 from ...schemas.base import BaseModelORJson
 from ...schemas.raw import (
@@ -179,6 +180,7 @@ from ...schemas.raw import (
     MstVoice,
     MstWar,
     MstWarAdd,
+    MstWarQuestSelection,
 )
 
 
@@ -288,6 +290,11 @@ schema_table_fetch_all: dict[  # type:ignore
     ),
     MstMap: (mstMap, mstMap.c.warId, mstMap.c.id),
     MstWarAdd: (mstWarAdd, mstWarAdd.c.warId, mstWarAdd.c.priority),
+    MstWarQuestSelection: (
+        mstWarQuestSelection,
+        mstWarQuestSelection.c.warId,
+        mstWarQuestSelection.c.priority,
+    ),
     MstEquipSkill: (mstEquipSkill, mstEquipSkill.c.equipId, mstEquipSkill.c.num),
     MstEquipExp: (mstEquipExp, mstEquipExp.c.equipId, mstEquipExp.c.lv),
     MstEquipAdd: (mstEquipAdd, mstEquipAdd.c.equipId, mstEquipAdd.c.id),

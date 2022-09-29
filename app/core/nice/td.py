@@ -9,7 +9,7 @@ from ...schemas.common import Language, Region
 from ...schemas.gameenums import CARD_TYPE_NAME, NiceTdEffectFlag
 from ...schemas.nice import AssetURL, NiceTd
 from ...schemas.raw import TdEntityNoReverse
-from ..raw import get_td_entity_no_reverse_many, get_td_entity_no_reverse
+from ..raw import get_td_entity_no_reverse, get_td_entity_no_reverse_many
 from ..utils import get_np_name, get_traits_list, strip_formatting_brackets
 from .func import get_nice_function
 

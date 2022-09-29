@@ -20,6 +20,7 @@ from ...schemas.nice import (
     NiceSpotRoad,
     NiceWar,
     NiceWarAdd,
+    NiceWarQuestSelection,
 )
 from ...schemas.raw import (
     MstBgm,
@@ -30,6 +31,7 @@ from ...schemas.raw import (
     MstSpotRoad,
     MstWar,
     MstWarAdd,
+    MstWarQuestSelection,
     QuestEntity,
 )
 from .. import raw
@@ -156,6 +158,38 @@ def get_nice_war_add(
         value=war_add.value,
         startedAt=war_add.startedAt,
         endedAt=war_add.endedAt,
+    )
+
+
+async def get_nice_war_quest_selection(
+    conn: AsyncConnection,
+    region: Region,
+    quest_selection: MstWarQuestSelection,
+    mstWar: MstWar,
+    quests: list[QuestEntity],
+    spots: list[MstSpot],
+    lang: Language,
+):
+    banner_url = (
+        fmt_url(
+            AssetURL.eventUi,
+            base_url=settings.asset_url,
+            region=region,
+            event="img_questboard_{0}".format(quest_selection.shortCutBannerId),
+        )
+        if quest_selection.shortCutBannerId != 0
+        else None
+    )
+    quest = next(
+        quest for quest in quests if quest.mstQuest.id == quest_selection.questId
+    )
+    spot = next(spot for spot in spots if spot.id == quest.mstQuest.spotId)
+    return NiceWarQuestSelection(
+        quest=NiceQuest.parse_obj(
+            await get_nice_quest(conn, region, quest, lang, mstWar, spot)
+        ),
+        shortcutBanner=banner_url,
+        priority=quest_selection.priority,
     )
 
 
@@ -301,9 +335,22 @@ async def get_nice_war(
                 lang,
             )
             for raw_spot in raw_war.mstSpot
+            if raw_spot.warId == war_id
         ],
         spotRoads=[
             get_nice_spot_road(region, spot_road, war_asset_id)
             for spot_road in raw_war.mstSpotRoad
+        ],
+        questSelections=[
+            await get_nice_war_quest_selection(
+                conn,
+                region,
+                quest_selection,
+                raw_war.mstWar,
+                raw_war.mstQuest,
+                raw_war.mstSpot,
+                lang,
+            )
+            for quest_selection in raw_war.mstWarQuestSelection
         ],
     )

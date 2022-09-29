@@ -1553,6 +1553,16 @@ mstWarAdd = Table(
 )
 
 
+mstWarQuestSelection = Table(
+    "mstWarQuestSelection",
+    metadata,
+    Column("warId", Integer, index=True),
+    Column("questId", Integer),
+    Column("shortCutBannerId", Integer),
+    Column("priority", Integer),
+)
+
+
 mstQuest = Table(
     "mstQuest",
     metadata,
@@ -1930,4 +1940,5 @@ TABLES_TO_BE_LOADED = [
     [mstSpot, mstSpotRoad],
     [mstMapGimmick],
     [mstWarAdd],
+    [mstWarQuestSelection],
 ]

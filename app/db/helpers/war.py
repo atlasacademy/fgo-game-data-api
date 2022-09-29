@@ -1,3 +1,5 @@
+from typing import Iterable
+
 from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import select
 
@@ -30,3 +32,10 @@ async def get_spot_from_id(conn: AsyncConnection, spot_id: int) -> MstSpot | Non
         return MstSpot.from_orm(spot)
 
     return None
+
+
+async def get_spot_from_ids(
+    conn: AsyncConnection, spot_ids: Iterable[int]
+) -> list[MstSpot]:
+    stmt = select(mstSpot).where(mstSpot.c.id.in_(spot_ids))
+    return [MstSpot.from_orm(spot) for spot in (await conn.execute(stmt)).fetchall()]

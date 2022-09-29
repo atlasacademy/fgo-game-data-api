@@ -7,7 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..data.custom_mappings import EXTRA_CHARAFIGURES
 from ..data.shop import get_shop_cost_item_id
-from ..db.helpers import ai, event, fetch, item, quest, script, skill, svt, td
+from ..db.helpers import ai, event, fetch, item, quest, script, skill, svt, td, war
 from ..redis.helpers.reverse import RedisReverse, get_reverse_ids
 from ..schemas.common import Region, ReverseDepth
 from ..schemas.enums import FUNC_VALS_NOT_BUFF, DetailMissionCondType
@@ -108,6 +108,7 @@ from ..schemas.raw import (
     MstVoice,
     MstWar,
     MstWarAdd,
+    MstWarQuestSelection,
     MysticCodeEntity,
     QuestEntity,
     QuestPhaseEntity,
@@ -640,6 +641,8 @@ async def get_war_entity(conn: AsyncConnection, war_id: int) -> WarEntity:
     if not war_db:
         raise HTTPException(status_code=404, detail="War not found")
 
+    quest_selections = await fetch.get_all(conn, MstWarQuestSelection, war_id)
+
     maps = await fetch.get_all(conn, MstMap, war_id)
     map_ids = [event_map.id for event_map in maps]
 
@@ -647,6 +650,14 @@ async def get_war_entity(conn: AsyncConnection, war_id: int) -> WarEntity:
     spot_ids = [spot.id for spot in spots]
 
     quests = await quest.get_quest_by_spot(conn, spot_ids)
+
+    quest_selection_ids = [selection.questId for selection in quest_selections]
+    selection_quests = await quest.get_quest_entity(conn, quest_selection_ids)
+    selection_spot_ids = set(quest.mstQuest.spotId for quest in selection_quests)
+    selection_spots = await war.get_spot_from_ids(conn, selection_spot_ids)
+
+    quests += selection_quests
+    spots += selection_spots
 
     bgm_ids = [war_map.bgmId for war_map in maps] + [war_db.bgmId]
     bgms = await fetch.get_all_multiple(conn, MstBgm, bgm_ids)
@@ -663,6 +674,7 @@ async def get_war_entity(conn: AsyncConnection, war_id: int) -> WarEntity:
         mstSpot=spots,
         mstQuest=quests,
         mstSpotRoad=spot_roads,
+        mstWarQuestSelection=quest_selections,
     )
 
 

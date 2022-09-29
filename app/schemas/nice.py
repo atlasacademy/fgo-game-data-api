@@ -2153,6 +2153,12 @@ class NiceWarAdd(BaseModelORJson):
     endedAt: int
 
 
+class NiceWarQuestSelection(BaseModelORJson):
+    quest: NiceQuest
+    shortcutBanner: HttpUrl | None = None
+    priority: int
+
+
 class NiceWar(BaseModelORJson):
     id: int
     coordinates: list[list[Decimal]]
@@ -2180,6 +2186,7 @@ class NiceWar(BaseModelORJson):
     maps: list[NiceMap]
     spots: list[NiceSpot]
     spotRoads: list[NiceSpotRoad]
+    questSelections: list[NiceWarQuestSelection]
 
 
 class NiceAiAct(BaseModelORJson):

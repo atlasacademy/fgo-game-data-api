@@ -8,8 +8,8 @@ from ...schemas.gameenums import (
     AI_ACT_TARGET_NAME,
     AI_ACT_TYPE_NAME,
     AI_COND_NAME,
-    NiceAiActNum,
     AiActType,
+    NiceAiActNum,
 )
 from ...schemas.nice import NiceAi, NiceAiAct, NiceAiCollection
 from ...schemas.raw import AiEntity, MstAiAct
