@@ -1780,6 +1780,7 @@ class NiceQuest(BaseModelORJson):
     chapterId: int
     chapterSubId: int
     chapterSubStr: str
+    giftIcon: HttpUrl | None = None
     gifts: list[NiceGift]
     releaseConditions: list[NiceQuestRelease]
     phases: list[int]

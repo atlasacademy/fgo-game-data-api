@@ -25,6 +25,7 @@ from ...schemas.gameenums import (
     QuestType,
 )
 from ...schemas.nice import (
+    AssetURL,
     DeckType,
     EnemyDrop,
     NiceQuest,
@@ -164,6 +165,13 @@ async def get_nice_quest(
         "chapterId": raw_quest.mstQuest.chapterId,
         "chapterSubId": raw_quest.mstQuest.chapterSubId,
         "chapterSubStr": raw_quest.mstQuest.chapterSubStr,
+        "giftIcon": AssetURL.items.format(
+            base_url=settings.asset_url,
+            region=region,
+            item_id=raw_quest.mstQuest.giftIconId,
+        )
+        if raw_quest.mstQuest.giftIconId != 0
+        else None,
         "gifts": [
             get_nice_gift(region, gift, raw_quest.mstGiftAdd, gift_maps)
             for gift in raw_quest.mstGift
