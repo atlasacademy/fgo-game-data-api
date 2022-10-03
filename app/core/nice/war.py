@@ -169,13 +169,13 @@ async def get_nice_war_quest_selection(
     quests: list[QuestEntity],
     spots: list[MstSpot],
     lang: Language,
-):
+) -> NiceWarQuestSelection:
     banner_url = (
         fmt_url(
             AssetURL.eventUi,
             base_url=settings.asset_url,
             region=region,
-            event="img_questboard_{0}".format(quest_selection.shortCutBannerId),
+            event=f"img_questboard_{quest_selection.shortCutBannerId}",
         )
         if quest_selection.shortCutBannerId != 0
         else None
