@@ -3020,6 +3020,8 @@ class WarEntityFlag(IntEnum):
     WHITE_MARK_UNDER_BOARD = 262144
     SUB_FOLDER = 524288
     DISP_EARTH_POINT_WITHOUT_MAP = 1048576
+    IS_WAR_ICON_FREE = 2097152
+    IS_WAR_ICON_CENTER = 4194304
 
 
 class NiceWarFlag(str, Enum):
@@ -3045,6 +3047,8 @@ class NiceWarFlag(str, Enum):
     whiteMarkUnderBoard = "whiteMarkUnderBoard"
     subFolder = "subFolder"
     dispEarthPointWithoutMap = "dispEarthPointWithoutMap"
+    isWarIconFree = "isWarIconFree"
+    isWarIconCenter = "isWarIconCenter"
 
 
 WAR_FLAG_NAME: dict[int, NiceWarFlag] = {
@@ -3068,6 +3072,8 @@ WAR_FLAG_NAME: dict[int, NiceWarFlag] = {
     262144: NiceWarFlag.whiteMarkUnderBoard,
     524288: NiceWarFlag.subFolder,
     1048576: NiceWarFlag.dispEarthPointWithoutMap,
+    2097152: NiceWarFlag.isWarIconFree,
+    4194304: NiceWarFlag.isWarIconCenter,
 }
 
 
@@ -4263,4 +4269,130 @@ TREASURE_DEVICE_EFFECT_FLAG_NAME: dict[int, NiceTdEffectFlag] = {
     -1: NiceTdEffectFlag.support,
     1: NiceTdEffectFlag.attackEnemyAll,
     2: NiceTdEffectFlag.attackEnemyOne,
+}
+
+
+class CombineAdjustTargetType(IntEnum):
+    COMBINE_QP = 1
+    COMBINE_EXP = 2
+    ACTIVE_SKILL = 3
+    LARGE_SUCCESS = 4
+    SUPER_SUCCESS = 5
+    LIMIT_QP = 6
+    LIMIT_ITEM = 7
+    SKILL_QP = 8
+    SKILL_ITEM = 9
+    TREASURE_DEVICE_QP = 10
+    TREASURE_DEVICE_ITEM = 11
+    QUEST_AP = 12
+    QUEST_EXP = 13
+    QUEST_QP = 14
+    QUEST_DROP = 15
+    SVTEQUIP_COMBINE_QP = 16
+    SVTEQUIP_COMBINE_EXP = 17
+    SVTEQUIP_LARGE_SUCCESS = 18
+    SVTEQUIP_SUPER_SUCCESS = 19
+    QUEST_EVENT_POINT = 20
+    ENEMY_SVT_CLASS_PICK_UP = 21
+    EVENT_EACH_DROP_NUM = 22
+    EVENT_EACH_DROP_RATE = 23
+    QUEST_FP = 24
+    QUEST_AP_FIRST_TIME = 25
+    DAILY_DROP_UP = 26
+    EXCHANGE_SVT_COMBINE_EXP = 27
+    QUEST_USE_CONTINUE_ITEM = 28
+    FRIEND_POINT_GACHA_FREE_DRAW_NUM = 29
+    QUEST_USE_FRIENDSHIP_UP_ITEM = 30
+    QUEST_FRIENDSHIP = 31
+
+
+class NiceCombineAdjustTarget(str, Enum):
+    """Combine Adjust Target Type"""
+
+    combineQp = "combineQp"
+    combineExp = "combineExp"
+    activeSkill = "activeSkill"
+    largeSuccess = "largeSuccess"
+    superSuccess = "superSuccess"
+    limitQp = "limitQp"
+    limitItem = "limitItem"
+    skillQp = "skillQp"
+    skillItem = "skillItem"
+    treasureDeviceQp = "treasureDeviceQp"
+    treasureDeviceItem = "treasureDeviceItem"
+    questAp = "questAp"
+    questExp = "questExp"
+    questQp = "questQp"
+    questDrop = "questDrop"
+    svtequipCombineQp = "svtequipCombineQp"
+    svtequipCombineExp = "svtequipCombineExp"
+    svtequipLargeSuccess = "svtequipLargeSuccess"
+    svtequipSuperSuccess = "svtequipSuperSuccess"
+    questEventPoint = "questEventPoint"
+    enemySvtClassPickUp = "enemySvtClassPickUp"
+    eventEachDropNum = "eventEachDropNum"
+    eventEachDropRate = "eventEachDropRate"
+    questFp = "questFp"
+    questApFirstTime = "questApFirstTime"
+    dailyDropUp = "dailyDropUp"
+    exchangeSvtCombineExp = "exchangeSvtCombineExp"
+    questUseContinueItem = "questUseContinueItem"
+    friendPointGachaFreeDrawNum = "friendPointGachaFreeDrawNum"
+    questUseFriendshipUpItem = "questUseFriendshipUpItem"
+    questFriendship = "questFriendship"
+
+
+COMBINE_ADJUST_TARGET_TYPE_NAME: dict[int, NiceCombineAdjustTarget] = {
+    1: NiceCombineAdjustTarget.combineQp,
+    2: NiceCombineAdjustTarget.combineExp,
+    3: NiceCombineAdjustTarget.activeSkill,
+    4: NiceCombineAdjustTarget.largeSuccess,
+    5: NiceCombineAdjustTarget.superSuccess,
+    6: NiceCombineAdjustTarget.limitQp,
+    7: NiceCombineAdjustTarget.limitItem,
+    8: NiceCombineAdjustTarget.skillQp,
+    9: NiceCombineAdjustTarget.skillItem,
+    10: NiceCombineAdjustTarget.treasureDeviceQp,
+    11: NiceCombineAdjustTarget.treasureDeviceItem,
+    12: NiceCombineAdjustTarget.questAp,
+    13: NiceCombineAdjustTarget.questExp,
+    14: NiceCombineAdjustTarget.questQp,
+    15: NiceCombineAdjustTarget.questDrop,
+    16: NiceCombineAdjustTarget.svtequipCombineQp,
+    17: NiceCombineAdjustTarget.svtequipCombineExp,
+    18: NiceCombineAdjustTarget.svtequipLargeSuccess,
+    19: NiceCombineAdjustTarget.svtequipSuperSuccess,
+    20: NiceCombineAdjustTarget.questEventPoint,
+    21: NiceCombineAdjustTarget.enemySvtClassPickUp,
+    22: NiceCombineAdjustTarget.eventEachDropNum,
+    23: NiceCombineAdjustTarget.eventEachDropRate,
+    24: NiceCombineAdjustTarget.questFp,
+    25: NiceCombineAdjustTarget.questApFirstTime,
+    26: NiceCombineAdjustTarget.dailyDropUp,
+    27: NiceCombineAdjustTarget.exchangeSvtCombineExp,
+    28: NiceCombineAdjustTarget.questUseContinueItem,
+    29: NiceCombineAdjustTarget.friendPointGachaFreeDrawNum,
+    30: NiceCombineAdjustTarget.questUseFriendshipUpItem,
+    31: NiceCombineAdjustTarget.questFriendship,
+}
+
+
+class EventCombineEntityCalcType(IntEnum):
+    ADDITION = 1
+    MULTIPLICATION = 2
+    FIXED_VALUE = 3
+
+
+class NiceEventCombineCalc(str, Enum):
+    """Event Combine Calc Type"""
+
+    addition = "addition"
+    multiplication = "multiplication"
+    fixedValue = "fixedValue"
+
+
+EVENT_COMBINE_CALC_TYPE_NAME: dict[int, NiceEventCombineCalc] = {
+    1: NiceEventCombineCalc.addition,
+    2: NiceEventCombineCalc.multiplication,
+    3: NiceEventCombineCalc.fixedValue,
 }

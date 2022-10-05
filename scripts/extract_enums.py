@@ -427,6 +427,20 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Treasure Device Effect Flag",
         "TREASURE_DEVICE_EFFECT_FLAG_NAME",
     ),
+    (
+        "CombineAdjustTarget.TYPE",
+        "CombineAdjustTargetType",
+        "NiceCombineAdjustTarget",
+        "Combine Adjust Target Type",
+        "COMBINE_ADJUST_TARGET_TYPE_NAME",
+    ),
+    (
+        "EventCombineEntity.CalcType",
+        "EventCombineEntityCalcType",
+        "NiceEventCombineCalc",
+        "Event Combine Calc Type",
+        "EVENT_COMBINE_CALC_TYPE_NAME",
+    ),
 ]
 
 

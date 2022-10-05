@@ -1074,6 +1074,8 @@ export enum NiceWarFlag {
     WHITE_MARK_UNDER_BOARD = "whiteMarkUnderBoard",
     SUB_FOLDER = "subFolder",
     DISP_EARTH_POINT_WITHOUT_MAP = "dispEarthPointWithoutMap",
+    IS_WAR_ICON_FREE = "isWarIconFree",
+    IS_WAR_ICON_CENTER = "isWarIconCenter",
 }
 
 export enum NiceWarStartType {
@@ -1449,4 +1451,44 @@ export enum NiceTdEffectFlag {
     SUPPORT = "support",
     ATTACK_ENEMY_ALL = "attackEnemyAll",
     ATTACK_ENEMY_ONE = "attackEnemyOne",
+}
+
+export enum NiceCombineAdjustTarget {
+    COMBINE_QP = "combineQp",
+    COMBINE_EXP = "combineExp",
+    ACTIVE_SKILL = "activeSkill",
+    LARGE_SUCCESS = "largeSuccess",
+    SUPER_SUCCESS = "superSuccess",
+    LIMIT_QP = "limitQp",
+    LIMIT_ITEM = "limitItem",
+    SKILL_QP = "skillQp",
+    SKILL_ITEM = "skillItem",
+    TREASURE_DEVICE_QP = "treasureDeviceQp",
+    TREASURE_DEVICE_ITEM = "treasureDeviceItem",
+    QUEST_AP = "questAp",
+    QUEST_EXP = "questExp",
+    QUEST_QP = "questQp",
+    QUEST_DROP = "questDrop",
+    SVTEQUIP_COMBINE_QP = "svtequipCombineQp",
+    SVTEQUIP_COMBINE_EXP = "svtequipCombineExp",
+    SVTEQUIP_LARGE_SUCCESS = "svtequipLargeSuccess",
+    SVTEQUIP_SUPER_SUCCESS = "svtequipSuperSuccess",
+    QUEST_EVENT_POINT = "questEventPoint",
+    ENEMY_SVT_CLASS_PICK_UP = "enemySvtClassPickUp",
+    EVENT_EACH_DROP_NUM = "eventEachDropNum",
+    EVENT_EACH_DROP_RATE = "eventEachDropRate",
+    QUEST_FP = "questFp",
+    QUEST_AP_FIRST_TIME = "questApFirstTime",
+    DAILY_DROP_UP = "dailyDropUp",
+    EXCHANGE_SVT_COMBINE_EXP = "exchangeSvtCombineExp",
+    QUEST_USE_CONTINUE_ITEM = "questUseContinueItem",
+    FRIEND_POINT_GACHA_FREE_DRAW_NUM = "friendPointGachaFreeDrawNum",
+    QUEST_USE_FRIENDSHIP_UP_ITEM = "questUseFriendshipUpItem",
+    QUEST_FRIENDSHIP = "questFriendship",
+}
+
+export enum NiceEventCombineCalc {
+    ADDITION = "addition",
+    MULTIPLICATION = "multiplication",
+    FIXED_VALUE = "fixedValue",
 }
