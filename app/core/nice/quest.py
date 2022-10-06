@@ -134,7 +134,7 @@ async def get_nice_quest(
         mstWar = await war.get_war_from_spot(conn, raw_quest.mstQuest.spotId)
     if not mstSpot:
         mstSpot = await war.get_spot_from_id(conn, raw_quest.mstQuest.spotId)
-    if mstSpot is None or mstWar is None:
+    if mstSpot is None or mstWar is None:  # pragma: no cover
         raise HTTPException(status_code=404, detail="Quest's spot not found")
 
     gift_maps: dict[int, list[MstGift]] = defaultdict(list)

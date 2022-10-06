@@ -33,5 +33,4 @@ def test_append_use_to_item() -> None:
 def test_gift_import() -> None:
     mstGift = get_gift_with_index(test_gamedata)
 
-    for i, gift in enumerate(mstGift):
-        assert gift.sort_id == i
+    assert [gift.sort_id for gift in mstGift[:3]] == [0, 1, 0]

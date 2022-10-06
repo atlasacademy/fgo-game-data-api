@@ -75,7 +75,7 @@ cases_404 = [
     Case404("svt", "10098"),
     Case404("skill", "25689"),
     Case404("NP", "900205"),
-    Case404("function", "9000"),
+    Case404("function", "90000"),
     Case404("buff", "765"),
     Case404("MC", "62537"),
     Case404("CC", "8400111"),

@@ -1,0 +1,1751 @@
+{
+  "id": 8377,
+  "coordinates": [
+    [],
+    []
+  ],
+  "age": "-",
+  "name": "Road To 7",
+  "originalName": "Road To 7",
+  "longName": "Road To 7",
+  "originalLongName": "Road To 7",
+  "flags": [
+    "isEvent",
+    "noClearMarkWithComplete"
+  ],
+  "banner": "https://assets.atlasacademy.io/GameData/JP/Banner/event_war_80390.png",
+  "priority": 10000,
+  "parentWarId": 0,
+  "materialParentWarId": 0,
+  "emptyMessage": "クエストがありません",
+  "bgm": {
+    "id": 0,
+    "name": "",
+    "fileName": "",
+    "notReleased": true
+  },
+  "scriptId": "NONE",
+  "script": "https://assets.atlasacademy.io/GameData/JP/Script/Common/NONE.txt",
+  "startType": "none",
+  "targetId": 0,
+  "eventId": 80403,
+  "eventName": "リコレクションクエスト",
+  "lastQuestId": 0,
+  "warAdds": [],
+  "maps": [],
+  "spots": [],
+  "spotRoads": [],
+  "questSelections": [
+    {
+      "quest": {
+        "id": 91603801,
+        "name": "万感の想いは楔のように",
+        "type": "friendship",
+        "flags": [],
+        "consumeType": "ap",
+        "consume": 15,
+        "consumeItem": [],
+        "afterClear": "close",
+        "recommendLv": "40",
+        "spotId": 99003,
+        "spotName": "幕間の物語",
+        "warId": 8377,
+        "warLongName": "Road To 7",
+        "chapterId": 1,
+        "chapterSubId": 1,
+        "chapterSubStr": "",
+        "gifts": [
+          {
+            "id": 201,
+            "type": "item",
+            "objectId": 2,
+            "priority": 0,
+            "num": 2,
+            "giftAdds": []
+          }
+        ],
+        "releaseConditions": [
+          {
+            "type": "questClear",
+            "targetId": 3000531,
+            "value": 0,
+            "closedMessage": "Lostbelt No.5 アトランティスクリア＆霊基再臨2段階目＆絆Lv.3で開放"
+          },
+          {
+            "type": "svtLimit",
+            "targetId": 603800,
+            "value": 2,
+            "closedMessage": "Lostbelt No.5 アトランティスクリア＆霊基再臨2段階目＆絆Lv.3で開放"
+          },
+          {
+            "type": "svtGet",
+            "targetId": 603800,
+            "value": 0,
+            "closedMessage": ""
+          },
+          {
+            "type": "svtFriendship",
+            "targetId": 603800,
+            "value": 3,
+            "closedMessage": "Lostbelt No.5 アトランティスクリア＆霊基再臨2段階目＆絆Lv.3で開放"
+          }
+        ],
+        "phases": [
+          1,
+          2
+        ],
+        "phasesWithEnemies": [
+          1,
+          2
+        ],
+        "phasesNoBattle": [],
+        "phaseScripts": [
+          {
+            "phase": 1,
+            "scripts": [
+              {
+                "scriptId": "9160380110",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9160380110.txt"
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "scripts": [
+              {
+                "scriptId": "9160380120",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9160380120.txt"
+              },
+              {
+                "scriptId": "9160380121",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9160380121.txt"
+              }
+            ]
+          }
+        ],
+        "priority": 639619,
+        "noticeAt": 1632906000,
+        "openedAt": 1632906000,
+        "closedAt": 1893423600
+      },
+      "priority": 1
+    },
+    {
+      "quest": {
+        "id": 91403401,
+        "name": "ドリーム・トレジャー",
+        "type": "friendship",
+        "flags": [],
+        "consumeType": "ap",
+        "consume": 15,
+        "consumeItem": [],
+        "afterClear": "close",
+        "recommendLv": "40",
+        "spotId": 99003,
+        "spotName": "幕間の物語",
+        "warId": 8377,
+        "warLongName": "Road To 7",
+        "chapterId": 1,
+        "chapterSubId": 1,
+        "chapterSubStr": "",
+        "gifts": [
+          {
+            "id": 201,
+            "type": "item",
+            "objectId": 2,
+            "priority": 0,
+            "num": 2,
+            "giftAdds": []
+          }
+        ],
+        "releaseConditions": [
+          {
+            "type": "questClear",
+            "targetId": 1000011,
+            "value": 0,
+            "closedMessage": "特異点Fをクリア＆霊基再臨2段階目＆絆Lv.3で開放"
+          },
+          {
+            "type": "svtLimit",
+            "targetId": 403400,
+            "value": 2,
+            "closedMessage": "特異点Fをクリア＆霊基再臨2段階目＆絆Lv.3で開放"
+          },
+          {
+            "type": "svtGet",
+            "targetId": 403400,
+            "value": 0,
+            "closedMessage": ""
+          },
+          {
+            "type": "svtFriendship",
+            "targetId": 403400,
+            "value": 3,
+            "closedMessage": "特異点Fをクリア＆霊基再臨2段階目＆絆Lv.3で開放"
+          }
+        ],
+        "phases": [
+          1,
+          2
+        ],
+        "phasesWithEnemies": [
+          1,
+          2
+        ],
+        "phasesNoBattle": [],
+        "phaseScripts": [
+          {
+            "phase": 1,
+            "scripts": [
+              {
+                "scriptId": "9140340110",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9140340110.txt"
+              },
+              {
+                "scriptId": "9140340111",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9140340111.txt"
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "scripts": [
+              {
+                "scriptId": "9140340120",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9140340120.txt"
+              },
+              {
+                "scriptId": "9140340121",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9140340121.txt"
+              }
+            ]
+          }
+        ],
+        "priority": 659659,
+        "noticeAt": 1607936400,
+        "openedAt": 1607936400,
+        "closedAt": 1893423600
+      },
+      "priority": 2
+    },
+    {
+      "quest": {
+        "id": 91203501,
+        "name": "英雄かくあるべし、と少年は思う",
+        "type": "friendship",
+        "flags": [],
+        "consumeType": "ap",
+        "consume": 16,
+        "consumeItem": [],
+        "afterClear": "close",
+        "recommendLv": "45",
+        "spotId": 99003,
+        "spotName": "幕間の物語",
+        "warId": 8377,
+        "warLongName": "Road To 7",
+        "chapterId": 1,
+        "chapterSubId": 1,
+        "chapterSubStr": "",
+        "gifts": [
+          {
+            "id": 201,
+            "type": "item",
+            "objectId": 2,
+            "priority": 0,
+            "num": 2,
+            "giftAdds": []
+          }
+        ],
+        "releaseConditions": [
+          {
+            "type": "questClear",
+            "targetId": 1000011,
+            "value": 0,
+            "closedMessage": "特異点Fをクリア＆霊基再臨2段階目＆絆Lv.3で開放"
+          },
+          {
+            "type": "svtLimit",
+            "targetId": 203500,
+            "value": 2,
+            "closedMessage": "特異点Fをクリア＆霊基再臨2段階目＆絆Lv.3で開放"
+          },
+          {
+            "type": "svtGet",
+            "targetId": 203500,
+            "value": 0,
+            "closedMessage": ""
+          },
+          {
+            "type": "svtFriendship",
+            "targetId": 203500,
+            "value": 3,
+            "closedMessage": "特異点Fをクリア＆霊基再臨2段階目＆絆Lv.3で開放"
+          }
+        ],
+        "phases": [
+          1,
+          2
+        ],
+        "phasesWithEnemies": [
+          1,
+          2
+        ],
+        "phasesNoBattle": [],
+        "phaseScripts": [
+          {
+            "phase": 1,
+            "scripts": [
+              {
+                "scriptId": "9120350110",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9120350110.txt"
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "scripts": [
+              {
+                "scriptId": "9120350120",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9120350120.txt"
+              },
+              {
+                "scriptId": "9120350121",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9120350121.txt"
+              }
+            ]
+          }
+        ],
+        "priority": 679649,
+        "noticeAt": 1607936400,
+        "openedAt": 1607936400,
+        "closedAt": 1893423600
+      },
+      "priority": 3
+    },
+    {
+      "quest": {
+        "id": 91403901,
+        "name": "君を想うということ",
+        "type": "friendship",
+        "flags": [],
+        "consumeType": "ap",
+        "consume": 17,
+        "consumeItem": [],
+        "afterClear": "close",
+        "recommendLv": "50",
+        "spotId": 99003,
+        "spotName": "幕間の物語",
+        "warId": 8377,
+        "warLongName": "Road To 7",
+        "chapterId": 1,
+        "chapterSubId": 1,
+        "chapterSubStr": "",
+        "gifts": [
+          {
+            "id": 201,
+            "type": "item",
+            "objectId": 2,
+            "priority": 0,
+            "num": 2,
+            "giftAdds": []
+          }
+        ],
+        "releaseConditions": [
+          {
+            "type": "questClear",
+            "targetId": 3000531,
+            "value": 0,
+            "closedMessage": "Lostbelt No.5 アトランティスクリア＆霊基再臨3段階目＆絆Lv.3で開放"
+          },
+          {
+            "type": "svtLimit",
+            "targetId": 403900,
+            "value": 3,
+            "closedMessage": "Lostbelt No.5 アトランティスクリア＆霊基再臨3段階目＆絆Lv.3で開放"
+          },
+          {
+            "type": "svtGet",
+            "targetId": 403900,
+            "value": 0,
+            "closedMessage": ""
+          },
+          {
+            "type": "svtFriendship",
+            "targetId": 403900,
+            "value": 3,
+            "closedMessage": "Lostbelt No.5 アトランティスクリア＆霊基再臨3段階目＆絆Lv.3で開放"
+          }
+        ],
+        "phases": [
+          1,
+          2
+        ],
+        "phasesWithEnemies": [
+          1,
+          2
+        ],
+        "phasesNoBattle": [],
+        "phaseScripts": [
+          {
+            "phase": 1,
+            "scripts": [
+              {
+                "scriptId": "9140390110",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9140390110.txt"
+              },
+              {
+                "scriptId": "9140390111",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9140390111.txt"
+              },
+              {
+                "scriptId": "9140390112",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9140390112.txt"
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "scripts": [
+              {
+                "scriptId": "9140390120",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9140390120.txt"
+              },
+              {
+                "scriptId": "9140390121",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9140390121.txt"
+              }
+            ]
+          }
+        ],
+        "priority": 659609,
+        "noticeAt": 1624438800,
+        "openedAt": 1624438800,
+        "closedAt": 1893423600
+      },
+      "priority": 4
+    },
+    {
+      "quest": {
+        "id": 91301601,
+        "name": "トロージャン・ガーディアン",
+        "type": "friendship",
+        "flags": [],
+        "consumeType": "ap",
+        "consume": 15,
+        "consumeItem": [],
+        "afterClear": "close",
+        "recommendLv": "40",
+        "spotId": 99003,
+        "spotName": "幕間の物語",
+        "warId": 8377,
+        "warLongName": "Road To 7",
+        "chapterId": 1,
+        "chapterSubId": 1,
+        "chapterSubStr": "",
+        "giftIcon": "https://assets.atlasacademy.io/GameData/JP/Items/8.png",
+        "gifts": [],
+        "releaseConditions": [
+          {
+            "type": "questClear",
+            "targetId": 1000314,
+            "value": 0,
+            "closedMessage": "第三特異点をクリア＆霊基再臨1段階目＆絆Lv.3で開放"
+          },
+          {
+            "type": "svtLimit",
+            "targetId": 301600,
+            "value": 1,
+            "closedMessage": "第三特異点をクリア＆霊基再臨1段階目＆絆Lv.3で開放"
+          },
+          {
+            "type": "svtGet",
+            "targetId": 301600,
+            "value": 0,
+            "closedMessage": ""
+          },
+          {
+            "type": "svtFriendship",
+            "targetId": 301600,
+            "value": 3,
+            "closedMessage": "第三特異点をクリア＆霊基再臨1段階目＆絆Lv.3で開放"
+          }
+        ],
+        "phases": [
+          1,
+          2,
+          3
+        ],
+        "phasesWithEnemies": [
+          1,
+          2,
+          3
+        ],
+        "phasesNoBattle": [],
+        "phaseScripts": [
+          {
+            "phase": 1,
+            "scripts": [
+              {
+                "scriptId": "9130160110",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9130160110.txt"
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "scripts": [
+              {
+                "scriptId": "9130160120",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9130160120.txt"
+              }
+            ]
+          },
+          {
+            "phase": 3,
+            "scripts": [
+              {
+                "scriptId": "9130160130",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9130160130.txt"
+              },
+              {
+                "scriptId": "9130160131",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9130160131.txt"
+              }
+            ]
+          }
+        ],
+        "priority": 669839,
+        "noticeAt": 946652400,
+        "openedAt": 946652400,
+        "closedAt": 1893423600
+      },
+      "priority": 5
+    },
+    {
+      "quest": {
+        "id": 91900801,
+        "name": "裁くもの 裁かれるもの",
+        "type": "friendship",
+        "flags": [],
+        "consumeType": "ap",
+        "consume": 18,
+        "consumeItem": [],
+        "afterClear": "close",
+        "recommendLv": "60",
+        "spotId": 99003,
+        "spotName": "幕間の物語",
+        "warId": 8377,
+        "warLongName": "Road To 7",
+        "chapterId": 1,
+        "chapterSubId": 1,
+        "chapterSubStr": "",
+        "giftIcon": "https://assets.atlasacademy.io/GameData/JP/Items/8.png",
+        "gifts": [],
+        "releaseConditions": [
+          {
+            "type": "questClear",
+            "targetId": 3000303,
+            "value": 0,
+            "closedMessage": "Lostbelt No.3 プロローグをクリア＆霊基再臨2段階目＆絆Lv.4で開放"
+          },
+          {
+            "type": "svtLimit",
+            "targetId": 900800,
+            "value": 2,
+            "closedMessage": "Lostbelt No.3 プロローグをクリア＆霊基再臨2段階目＆絆Lv.4で開放"
+          },
+          {
+            "type": "svtGet",
+            "targetId": 900800,
+            "value": 0,
+            "closedMessage": ""
+          },
+          {
+            "type": "svtFriendship",
+            "targetId": 900800,
+            "value": 4,
+            "closedMessage": "Lostbelt No.3 プロローグをクリア＆霊基再臨2段階目＆絆Lv.4で開放"
+          }
+        ],
+        "phases": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "phasesWithEnemies": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "phasesNoBattle": [],
+        "phaseScripts": [
+          {
+            "phase": 1,
+            "scripts": [
+              {
+                "scriptId": "9190080110",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9190080110.txt"
+              },
+              {
+                "scriptId": "9190080111",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9190080111.txt"
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "scripts": [
+              {
+                "scriptId": "9190080120",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9190080120.txt"
+              },
+              {
+                "scriptId": "9190080121",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9190080121.txt"
+              }
+            ]
+          },
+          {
+            "phase": 3,
+            "scripts": [
+              {
+                "scriptId": "9190080130",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9190080130.txt"
+              },
+              {
+                "scriptId": "9190080131",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9190080131.txt"
+              }
+            ]
+          },
+          {
+            "phase": 4,
+            "scripts": [
+              {
+                "scriptId": "9190080140",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9190080140.txt"
+              },
+              {
+                "scriptId": "9190080141",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9190080141.txt"
+              }
+            ]
+          }
+        ],
+        "priority": 609919,
+        "noticeAt": 1607936400,
+        "openedAt": 1607936400,
+        "closedAt": 1893423600
+      },
+      "priority": 6
+    },
+    {
+      "quest": {
+        "id": 91602901,
+        "name": "蛇───我が身を這い回るものよ",
+        "type": "friendship",
+        "flags": [],
+        "consumeType": "ap",
+        "consume": 18,
+        "consumeItem": [],
+        "afterClear": "close",
+        "recommendLv": "60",
+        "spotId": 99003,
+        "spotName": "幕間の物語",
+        "warId": 8377,
+        "warLongName": "Road To 7",
+        "chapterId": 1,
+        "chapterSubId": 1,
+        "chapterSubStr": "",
+        "gifts": [
+          {
+            "id": 201,
+            "type": "item",
+            "objectId": 2,
+            "priority": 0,
+            "num": 2,
+            "giftAdds": []
+          }
+        ],
+        "releaseConditions": [
+          {
+            "type": "questClear",
+            "targetId": 2000316,
+            "value": 0,
+            "closedMessage": "亜種特異点Ⅲをクリア＆霊基再臨2段階目＆絆Lv.3で開放"
+          },
+          {
+            "type": "svtLimit",
+            "targetId": 602900,
+            "value": 2,
+            "closedMessage": "亜種特異点Ⅲをクリア＆霊基再臨2段階目＆絆Lv.3で開放"
+          },
+          {
+            "type": "svtGet",
+            "targetId": 602900,
+            "value": 0,
+            "closedMessage": ""
+          },
+          {
+            "type": "svtFriendship",
+            "targetId": 602900,
+            "value": 3,
+            "closedMessage": "亜種特異点Ⅲをクリア＆霊基再臨2段階目＆絆Lv.3で開放"
+          }
+        ],
+        "phases": [
+          1,
+          2,
+          3
+        ],
+        "phasesWithEnemies": [
+          1,
+          2,
+          3
+        ],
+        "phasesNoBattle": [],
+        "phaseScripts": [
+          {
+            "phase": 1,
+            "scripts": [
+              {
+                "scriptId": "9160290110",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9160290110.txt"
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "scripts": [
+              {
+                "scriptId": "9160290120",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9160290120.txt"
+              }
+            ]
+          },
+          {
+            "phase": 3,
+            "scripts": [
+              {
+                "scriptId": "9160290130",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9160290130.txt"
+              },
+              {
+                "scriptId": "9160290131",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9160290131.txt"
+              }
+            ]
+          }
+        ],
+        "priority": 639709,
+        "noticeAt": 1539766800,
+        "openedAt": 1539766800,
+        "closedAt": 1893423600
+      },
+      "priority": 7
+    },
+    {
+      "quest": {
+        "id": 91203001,
+        "name": "かくて勝者は獅子となり敗者は虎となる",
+        "type": "friendship",
+        "flags": [],
+        "consumeType": "ap",
+        "consume": 18,
+        "consumeItem": [],
+        "afterClear": "close",
+        "recommendLv": "60",
+        "spotId": 99003,
+        "spotName": "幕間の物語",
+        "warId": 8377,
+        "warLongName": "Road To 7",
+        "chapterId": 1,
+        "chapterSubId": 1,
+        "chapterSubStr": "",
+        "giftIcon": "https://assets.atlasacademy.io/GameData/JP/Items/8.png",
+        "gifts": [],
+        "releaseConditions": [
+          {
+            "type": "questClear",
+            "targetId": 1000011,
+            "value": 0,
+            "closedMessage": "特異点Fをクリア＆霊基再臨2段階目＆絆Lv.3で開放"
+          },
+          {
+            "type": "svtLimit",
+            "targetId": 203000,
+            "value": 2,
+            "closedMessage": "特異点Fをクリア＆霊基再臨2段階目＆絆Lv.3で開放"
+          },
+          {
+            "type": "svtGet",
+            "targetId": 203000,
+            "value": 0,
+            "closedMessage": ""
+          },
+          {
+            "type": "svtFriendship",
+            "targetId": 203000,
+            "value": 3,
+            "closedMessage": "特異点Fをクリア＆霊基再臨2段階目＆絆Lv.3で開放"
+          }
+        ],
+        "phases": [
+          1
+        ],
+        "phasesWithEnemies": [
+          1
+        ],
+        "phasesNoBattle": [],
+        "phaseScripts": [
+          {
+            "phase": 1,
+            "scripts": [
+              {
+                "scriptId": "9120300110",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9120300110.txt"
+              },
+              {
+                "scriptId": "9120300111",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9120300111.txt"
+              }
+            ]
+          }
+        ],
+        "priority": 679699,
+        "noticeAt": 1638435600,
+        "openedAt": 1638435600,
+        "closedAt": 1893423600
+      },
+      "priority": 8
+    },
+    {
+      "quest": {
+        "id": 91400302,
+        "name": "『星の開拓者』",
+        "type": "friendship",
+        "flags": [],
+        "consumeType": "ap",
+        "consume": 21,
+        "consumeItem": [],
+        "afterClear": "close",
+        "recommendLv": "80",
+        "spotId": 99003,
+        "spotName": "幕間の物語",
+        "warId": 8377,
+        "warLongName": "Road To 7",
+        "chapterId": 1,
+        "chapterSubId": 2,
+        "chapterSubStr": "",
+        "gifts": [
+          {
+            "id": 201,
+            "type": "item",
+            "objectId": 2,
+            "priority": 0,
+            "num": 2,
+            "giftAdds": []
+          }
+        ],
+        "releaseConditions": [
+          {
+            "type": "questClear",
+            "targetId": 1000413,
+            "value": 0,
+            "closedMessage": "第四特異点をクリア＆霊基再臨3段階目＆絆Lv.5で開放"
+          },
+          {
+            "type": "questClear",
+            "targetId": 91400301,
+            "value": 0,
+            "closedMessage": ""
+          },
+          {
+            "type": "svtLimit",
+            "targetId": 400300,
+            "value": 3,
+            "closedMessage": "第四特異点をクリア＆霊基再臨3段階目＆絆Lv.5で開放"
+          },
+          {
+            "type": "svtGet",
+            "targetId": 400300,
+            "value": 0,
+            "closedMessage": ""
+          },
+          {
+            "type": "svtFriendship",
+            "targetId": 400300,
+            "value": 5,
+            "closedMessage": "第四特異点をクリア＆霊基再臨3段階目＆絆Lv.5で開放"
+          }
+        ],
+        "phases": [
+          1,
+          2
+        ],
+        "phasesWithEnemies": [
+          1,
+          2
+        ],
+        "phasesNoBattle": [],
+        "phaseScripts": [
+          {
+            "phase": 1,
+            "scripts": [
+              {
+                "scriptId": "9140030210",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9140030210.txt"
+              },
+              {
+                "scriptId": "9140030211",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9140030211.txt"
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "scripts": [
+              {
+                "scriptId": "9140030220",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9140030220.txt"
+              },
+              {
+                "scriptId": "9140030221",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9140030221.txt"
+              }
+            ]
+          }
+        ],
+        "priority": 659968,
+        "noticeAt": 1525856400,
+        "openedAt": 1525856400,
+        "closedAt": 1893423600
+      },
+      "priority": 9
+    },
+    {
+      "quest": {
+        "id": 91400301,
+        "name": "財宝の島",
+        "type": "friendship",
+        "flags": [],
+        "consumeType": "ap",
+        "consume": 18,
+        "consumeItem": [],
+        "afterClear": "close",
+        "recommendLv": "60",
+        "spotId": 10202,
+        "spotName": "ローマ",
+        "warId": 8377,
+        "warLongName": "Road To 7",
+        "chapterId": 1,
+        "chapterSubId": 1,
+        "chapterSubStr": "",
+        "giftIcon": "https://assets.atlasacademy.io/GameData/JP/Items/8.png",
+        "gifts": [],
+        "releaseConditions": [
+          {
+            "type": "questClear",
+            "targetId": 1000314,
+            "value": 0,
+            "closedMessage": "第三特異点をクリア＆霊基再臨1段階目＆絆Lv.1で開放"
+          },
+          {
+            "type": "svtLimit",
+            "targetId": 400300,
+            "value": 1,
+            "closedMessage": "第三特異点をクリア＆霊基再臨1段階目＆絆Lv.1で開放"
+          },
+          {
+            "type": "svtGet",
+            "targetId": 400300,
+            "value": 0,
+            "closedMessage": ""
+          },
+          {
+            "type": "svtFriendship",
+            "targetId": 400300,
+            "value": 1,
+            "closedMessage": "第三特異点をクリア＆霊基再臨1段階目＆絆Lv.1で開放"
+          }
+        ],
+        "phases": [
+          1,
+          2,
+          3
+        ],
+        "phasesWithEnemies": [
+          1,
+          2,
+          3
+        ],
+        "phasesNoBattle": [],
+        "phaseScripts": [
+          {
+            "phase": 1,
+            "scripts": [
+              {
+                "scriptId": "9140030110",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9140030110.txt"
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "scripts": [
+              {
+                "scriptId": "9140030120",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9140030120.txt"
+              }
+            ]
+          },
+          {
+            "phase": 3,
+            "scripts": [
+              {
+                "scriptId": "9140030130",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9140030130.txt"
+              },
+              {
+                "scriptId": "9140030131",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9140030131.txt"
+              }
+            ]
+          }
+        ],
+        "priority": 659969,
+        "noticeAt": 946652400,
+        "openedAt": 946652400,
+        "closedAt": 1893423600
+      },
+      "priority": 10
+    },
+    {
+      "quest": {
+        "id": 91103801,
+        "name": "第二、あるいは三回アルゴノーツ乗員募集大会",
+        "type": "friendship",
+        "flags": [],
+        "consumeType": "ap",
+        "consume": 17,
+        "consumeItem": [],
+        "afterClear": "close",
+        "recommendLv": "50",
+        "spotId": 99003,
+        "spotName": "幕間の物語",
+        "warId": 8377,
+        "warLongName": "Road To 7",
+        "chapterId": 1,
+        "chapterSubId": 1,
+        "chapterSubStr": "",
+        "giftIcon": "https://assets.atlasacademy.io/GameData/JP/Items/8.png",
+        "gifts": [],
+        "releaseConditions": [
+          {
+            "type": "questClear",
+            "targetId": 3000531,
+            "value": 0,
+            "closedMessage": "Lostbelt No.5 アトランティスクリア＆霊基再臨3段階目＆絆Lv.3で開放"
+          },
+          {
+            "type": "svtLimit",
+            "targetId": 103800,
+            "value": 3,
+            "closedMessage": "Lostbelt No.5 アトランティスクリア＆霊基再臨3段階目＆絆Lv.3で開放"
+          },
+          {
+            "type": "svtGet",
+            "targetId": 103800,
+            "value": 0,
+            "closedMessage": ""
+          },
+          {
+            "type": "svtFriendship",
+            "targetId": 103800,
+            "value": 3,
+            "closedMessage": "Lostbelt No.5 アトランティスクリア＆霊基再臨3段階目＆絆Lv.3で開放"
+          }
+        ],
+        "phases": [
+          1
+        ],
+        "phasesWithEnemies": [],
+        "phasesNoBattle": [],
+        "phaseScripts": [
+          {
+            "phase": 1,
+            "scripts": [
+              {
+                "scriptId": "9110380110",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9110380110.txt"
+              },
+              {
+                "scriptId": "9110380111",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9110380111.txt"
+              }
+            ]
+          }
+        ],
+        "priority": 689619,
+        "noticeAt": 1664355600,
+        "openedAt": 1664355600,
+        "closedAt": 1893423600
+      },
+      "priority": 11
+    },
+    {
+      "quest": {
+        "id": 91203801,
+        "name": "超人オリオン、未体験の感覚に戸惑う",
+        "type": "friendship",
+        "flags": [],
+        "consumeType": "ap",
+        "consume": 21,
+        "consumeItem": [],
+        "afterClear": "close",
+        "recommendLv": "80",
+        "spotId": 99003,
+        "spotName": "幕間の物語",
+        "warId": 8377,
+        "warLongName": "Road To 7",
+        "chapterId": 1,
+        "chapterSubId": 1,
+        "chapterSubStr": "",
+        "gifts": [
+          {
+            "id": 201,
+            "type": "item",
+            "objectId": 2,
+            "priority": 0,
+            "num": 2,
+            "giftAdds": []
+          }
+        ],
+        "releaseConditions": [
+          {
+            "type": "questClear",
+            "targetId": 3000531,
+            "value": 0,
+            "closedMessage": "Lostbelt No.5 アトランティスクリア＆霊基再臨3段階目＆絆Lv.3で開放"
+          },
+          {
+            "type": "svtLimit",
+            "targetId": 203800,
+            "value": 3,
+            "closedMessage": "Lostbelt No.5 アトランティスクリア＆霊基再臨3段階目＆絆Lv.3で開放"
+          },
+          {
+            "type": "svtGet",
+            "targetId": 203800,
+            "value": 0,
+            "closedMessage": ""
+          },
+          {
+            "type": "svtFriendship",
+            "targetId": 203800,
+            "value": 3,
+            "closedMessage": "Lostbelt No.5 アトランティスクリア＆霊基再臨3段階目＆絆Lv.3で開放"
+          }
+        ],
+        "phases": [
+          1
+        ],
+        "phasesWithEnemies": [],
+        "phasesNoBattle": [],
+        "phaseScripts": [
+          {
+            "phase": 1,
+            "scripts": [
+              {
+                "scriptId": "9120380110",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9120380110.txt"
+              },
+              {
+                "scriptId": "9120380111",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9120380111.txt"
+              }
+            ]
+          }
+        ],
+        "priority": 679619,
+        "noticeAt": 1664355600,
+        "openedAt": 1664355600,
+        "closedAt": 1893423600
+      },
+      "priority": 12
+    },
+    {
+      "quest": {
+        "id": 91403801,
+        "name": "ドリーム・オデッセイ",
+        "type": "friendship",
+        "flags": [],
+        "consumeType": "ap",
+        "consume": 21,
+        "consumeItem": [],
+        "afterClear": "close",
+        "recommendLv": "80",
+        "spotId": 99003,
+        "spotName": "幕間の物語",
+        "warId": 8377,
+        "warLongName": "Road To 7",
+        "chapterId": 1,
+        "chapterSubId": 1,
+        "chapterSubStr": "",
+        "gifts": [
+          {
+            "id": 201,
+            "type": "item",
+            "objectId": 2,
+            "priority": 0,
+            "num": 2,
+            "giftAdds": []
+          }
+        ],
+        "releaseConditions": [
+          {
+            "type": "questClear",
+            "targetId": 1000011,
+            "value": 0,
+            "closedMessage": "特異点Fをクリア＆霊基再臨3段階目＆絆Lv.5で開放"
+          },
+          {
+            "type": "svtLimit",
+            "targetId": 403800,
+            "value": 3,
+            "closedMessage": "特異点Fをクリア＆霊基再臨3段階目＆絆Lv.5で開放"
+          },
+          {
+            "type": "svtGet",
+            "targetId": 403800,
+            "value": 0,
+            "closedMessage": ""
+          },
+          {
+            "type": "svtFriendship",
+            "targetId": 403800,
+            "value": 5,
+            "closedMessage": "特異点Fをクリア＆霊基再臨3段階目＆絆Lv.5で開放"
+          }
+        ],
+        "phases": [
+          1,
+          2
+        ],
+        "phasesWithEnemies": [],
+        "phasesNoBattle": [],
+        "phaseScripts": [
+          {
+            "phase": 1,
+            "scripts": [
+              {
+                "scriptId": "9140380110",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9140380110.txt"
+              }
+            ]
+          },
+          {
+            "phase": 2,
+            "scripts": [
+              {
+                "scriptId": "9140380120",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9140380120.txt"
+              },
+              {
+                "scriptId": "9140380121",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/91/9140380121.txt"
+              }
+            ]
+          }
+        ],
+        "priority": 659619,
+        "noticeAt": 1664528400,
+        "openedAt": 1664528400,
+        "closedAt": 1893423600
+      },
+      "priority": 13
+    },
+    {
+      "quest": {
+        "id": 94076906,
+        "name": "第23節 進行度3 スーパーリコレクションクエスト(3/3)",
+        "type": "event",
+        "flags": [
+          "dropFirstTimeOnly",
+          "supportSelectAfterScript",
+          "notRetrievable",
+          "recollection"
+        ],
+        "consumeType": "ap",
+        "consume": 5,
+        "consumeItem": [],
+        "afterClear": "repeatLast",
+        "recommendLv": "90++",
+        "spotId": 30572,
+        "spotName": "暗黒の海域",
+        "warId": 8377,
+        "warLongName": "Road To 7",
+        "chapterId": 0,
+        "chapterSubId": 0,
+        "chapterSubStr": "",
+        "gifts": [
+          {
+            "id": 94075801,
+            "type": "item",
+            "objectId": 94075801,
+            "priority": 0,
+            "num": 10,
+            "giftAdds": []
+          }
+        ],
+        "releaseConditions": [
+          {
+            "type": "questClear",
+            "targetId": 3000531,
+            "value": 0,
+            "closedMessage": ""
+          },
+          {
+            "type": "questClear",
+            "targetId": 94076905,
+            "value": 0,
+            "closedMessage": "「第23節 進行度3 リコレクションクエスト」クリアで開放"
+          },
+          {
+            "type": "date",
+            "targetId": 0,
+            "value": 0,
+            "closedMessage": ""
+          }
+        ],
+        "phases": [
+          1
+        ],
+        "phasesWithEnemies": [],
+        "phasesNoBattle": [],
+        "phaseScripts": [
+          {
+            "phase": 1,
+            "scripts": [
+              {
+                "scriptId": "9407690610",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/94/9407/9407690610.txt"
+              },
+              {
+                "scriptId": "9407690611",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/94/9407/9407690611.txt"
+              }
+            ]
+          }
+        ],
+        "priority": 94076993,
+        "noticeAt": 1664355600,
+        "openedAt": 1664355600,
+        "closedAt": 1664942399
+      },
+      "shortcutBanner": "https://assets.atlasacademy.io/GameData/JP/EventUI/img_questboard_94076902.png",
+      "priority": 14
+    },
+    {
+      "quest": {
+        "id": 94076904,
+        "name": "第17節 進行度1 スーパーリコレクションクエスト(2/3)",
+        "type": "event",
+        "flags": [
+          "dropFirstTimeOnly",
+          "supportSelectAfterScript",
+          "notRetrievable",
+          "recollection"
+        ],
+        "consumeType": "ap",
+        "consume": 5,
+        "consumeItem": [],
+        "afterClear": "repeatLast",
+        "recommendLv": "90++",
+        "spotId": 30571,
+        "spotName": "ペルセイス島",
+        "warId": 8377,
+        "warLongName": "Road To 7",
+        "chapterId": 0,
+        "chapterSubId": 0,
+        "chapterSubStr": "",
+        "gifts": [
+          {
+            "id": 94075801,
+            "type": "item",
+            "objectId": 94075801,
+            "priority": 0,
+            "num": 10,
+            "giftAdds": []
+          }
+        ],
+        "releaseConditions": [
+          {
+            "type": "questClear",
+            "targetId": 3000531,
+            "value": 0,
+            "closedMessage": ""
+          },
+          {
+            "type": "questClear",
+            "targetId": 94076903,
+            "value": 0,
+            "closedMessage": "「第17節 進行度1 リコレクションクエスト」クリアで開放"
+          },
+          {
+            "type": "date",
+            "targetId": 0,
+            "value": 0,
+            "closedMessage": ""
+          }
+        ],
+        "phases": [
+          1
+        ],
+        "phasesWithEnemies": [],
+        "phasesNoBattle": [],
+        "phaseScripts": [
+          {
+            "phase": 1,
+            "scripts": [
+              {
+                "scriptId": "9407690410",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/94/9407/9407690410.txt"
+              },
+              {
+                "scriptId": "9407690411",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/94/9407/9407690411.txt"
+              }
+            ]
+          }
+        ],
+        "priority": 94076995,
+        "noticeAt": 1664355600,
+        "openedAt": 1664355600,
+        "closedAt": 1664942399
+      },
+      "shortcutBanner": "https://assets.atlasacademy.io/GameData/JP/EventUI/img_questboard_94076902.png",
+      "priority": 15
+    },
+    {
+      "quest": {
+        "id": 94076902,
+        "name": "第11節 進行度2 スーパーリコレクションクエスト(1/3)",
+        "type": "event",
+        "flags": [
+          "dropFirstTimeOnly",
+          "supportSelectAfterScript",
+          "notRetrievable",
+          "recollection"
+        ],
+        "consumeType": "ap",
+        "consume": 5,
+        "consumeItem": [],
+        "afterClear": "repeatLast",
+        "recommendLv": "90++",
+        "spotId": 30563,
+        "spotName": "デイモス島",
+        "warId": 8377,
+        "warLongName": "Road To 7",
+        "chapterId": 0,
+        "chapterSubId": 0,
+        "chapterSubStr": "",
+        "gifts": [
+          {
+            "id": 94075801,
+            "type": "item",
+            "objectId": 94075801,
+            "priority": 0,
+            "num": 10,
+            "giftAdds": []
+          }
+        ],
+        "releaseConditions": [
+          {
+            "type": "questClear",
+            "targetId": 3000531,
+            "value": 0,
+            "closedMessage": ""
+          },
+          {
+            "type": "questClear",
+            "targetId": 94076901,
+            "value": 0,
+            "closedMessage": "「第11節 進行度2 リコレクションクエスト」クリアで開放"
+          },
+          {
+            "type": "date",
+            "targetId": 0,
+            "value": 0,
+            "closedMessage": ""
+          }
+        ],
+        "phases": [
+          1
+        ],
+        "phasesWithEnemies": [],
+        "phasesNoBattle": [],
+        "phaseScripts": [
+          {
+            "phase": 1,
+            "scripts": [
+              {
+                "scriptId": "9407690210",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/94/9407/9407690210.txt"
+              },
+              {
+                "scriptId": "9407690211",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/94/9407/9407690211.txt"
+              }
+            ]
+          }
+        ],
+        "priority": 94076997,
+        "noticeAt": 1664355600,
+        "openedAt": 1664355600,
+        "closedAt": 1664942399
+      },
+      "shortcutBanner": "https://assets.atlasacademy.io/GameData/JP/EventUI/img_questboard_94076902.png",
+      "priority": 16
+    },
+    {
+      "quest": {
+        "id": 94076905,
+        "name": "第23節 進行度3 リコレクションクエスト(3/3)",
+        "type": "event",
+        "flags": [
+          "dropFirstTimeOnly",
+          "supportSelectAfterScript",
+          "notRetrievable",
+          "recollection"
+        ],
+        "consumeType": "ap",
+        "consume": 5,
+        "consumeItem": [],
+        "afterClear": "repeatLast",
+        "recommendLv": "86",
+        "spotId": 30572,
+        "spotName": "暗黒の海域",
+        "warId": 8377,
+        "warLongName": "Road To 7",
+        "chapterId": 0,
+        "chapterSubId": 0,
+        "chapterSubStr": "",
+        "gifts": [
+          {
+            "id": 15000,
+            "type": "item",
+            "objectId": 4001,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "releaseConditions": [
+          {
+            "type": "questClear",
+            "targetId": 3000531,
+            "value": 0,
+            "closedMessage": ""
+          },
+          {
+            "type": "questClear",
+            "targetId": 94076903,
+            "value": 0,
+            "closedMessage": "「第17節 進行度1 リコレクションクエスト」クリアで開放"
+          },
+          {
+            "type": "date",
+            "targetId": 0,
+            "value": 0,
+            "closedMessage": ""
+          }
+        ],
+        "phases": [
+          1
+        ],
+        "phasesWithEnemies": [],
+        "phasesNoBattle": [],
+        "phaseScripts": [
+          {
+            "phase": 1,
+            "scripts": [
+              {
+                "scriptId": "9407690510",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/94/9407/9407690510.txt"
+              },
+              {
+                "scriptId": "9407690511",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/94/9407/9407690511.txt"
+              }
+            ]
+          }
+        ],
+        "priority": 94076994,
+        "noticeAt": 1664355600,
+        "openedAt": 1664355600,
+        "closedAt": 1664942399
+      },
+      "shortcutBanner": "https://assets.atlasacademy.io/GameData/JP/EventUI/img_questboard_94076902.png",
+      "priority": 17
+    },
+    {
+      "quest": {
+        "id": 94076903,
+        "name": "第17節 進行度1 リコレクションクエスト(2/3)",
+        "type": "event",
+        "flags": [
+          "dropFirstTimeOnly",
+          "supportSelectAfterScript",
+          "notRetrievable",
+          "recollection"
+        ],
+        "consumeType": "ap",
+        "consume": 5,
+        "consumeItem": [],
+        "afterClear": "repeatLast",
+        "recommendLv": "85",
+        "spotId": 30571,
+        "spotName": "ペルセイス島",
+        "warId": 8377,
+        "warLongName": "Road To 7",
+        "chapterId": 0,
+        "chapterSubId": 0,
+        "chapterSubStr": "",
+        "gifts": [
+          {
+            "id": 15000,
+            "type": "item",
+            "objectId": 4001,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "releaseConditions": [
+          {
+            "type": "questClear",
+            "targetId": 3000531,
+            "value": 0,
+            "closedMessage": ""
+          },
+          {
+            "type": "questClear",
+            "targetId": 94076901,
+            "value": 0,
+            "closedMessage": "「第11節 進行度2 リコレクションクエスト」クリアで開放"
+          },
+          {
+            "type": "date",
+            "targetId": 0,
+            "value": 0,
+            "closedMessage": ""
+          }
+        ],
+        "phases": [
+          1
+        ],
+        "phasesWithEnemies": [],
+        "phasesNoBattle": [],
+        "phaseScripts": [
+          {
+            "phase": 1,
+            "scripts": [
+              {
+                "scriptId": "9407690310",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/94/9407/9407690310.txt"
+              },
+              {
+                "scriptId": "9407690311",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/94/9407/9407690311.txt"
+              }
+            ]
+          }
+        ],
+        "priority": 94076996,
+        "noticeAt": 1664355600,
+        "openedAt": 1664355600,
+        "closedAt": 1664942399
+      },
+      "shortcutBanner": "https://assets.atlasacademy.io/GameData/JP/EventUI/img_questboard_94076902.png",
+      "priority": 18
+    },
+    {
+      "quest": {
+        "id": 94076901,
+        "name": "第11節 進行度2 リコレクションクエスト(1/3)",
+        "type": "event",
+        "flags": [
+          "dropFirstTimeOnly",
+          "supportSelectAfterScript",
+          "notRetrievable",
+          "recollection"
+        ],
+        "consumeType": "ap",
+        "consume": 5,
+        "consumeItem": [],
+        "afterClear": "repeatLast",
+        "recommendLv": "90",
+        "spotId": 30563,
+        "spotName": "デイモス島",
+        "warId": 8377,
+        "warLongName": "Road To 7",
+        "chapterId": 0,
+        "chapterSubId": 0,
+        "chapterSubStr": "",
+        "gifts": [
+          {
+            "id": 15000,
+            "type": "item",
+            "objectId": 4001,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "releaseConditions": [
+          {
+            "type": "questClear",
+            "targetId": 3000531,
+            "value": 0,
+            "closedMessage": ""
+          },
+          {
+            "type": "date",
+            "targetId": 0,
+            "value": 0,
+            "closedMessage": ""
+          }
+        ],
+        "phases": [
+          1
+        ],
+        "phasesWithEnemies": [],
+        "phasesNoBattle": [],
+        "phaseScripts": [
+          {
+            "phase": 1,
+            "scripts": [
+              {
+                "scriptId": "9407690110",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/94/9407/9407690110.txt"
+              },
+              {
+                "scriptId": "9407690111",
+                "script": "https://assets.atlasacademy.io/GameData/JP/Script/94/9407/9407690111.txt"
+              }
+            ]
+          }
+        ],
+        "priority": 94076998,
+        "noticeAt": 1664355600,
+        "openedAt": 1664355600,
+        "closedAt": 1664942399
+      },
+      "shortcutBanner": "https://assets.atlasacademy.io/GameData/JP/EventUI/img_questboard_94076902.png",
+      "priority": 19
+    }
+  ]
+}

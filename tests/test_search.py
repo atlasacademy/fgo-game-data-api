@@ -76,7 +76,7 @@ test_cases_dict: dict[str, tuple[str, set[int]]] = {
         "NA/servant/search?name=Okita Souji (Alter)",
         {1000700},  # shouldn't return Okita Saber
     ),
-    "servant_JP_search_EN_name": ("JP/servant/search?name=Skadi", {503900}),
+    "servant_JP_search_EN_name": ("JP/servant/search?name=Skadi", {503900, 901400}),
     "servant_NA_search_Scathach": (
         "NA/servant/search?name=Scathach",
         {301300, 503900, 602400},
@@ -96,7 +96,7 @@ test_cases_dict: dict[str, tuple[str, set[int]]] = {
     ),
     "servant_search_voice_cond_svt_group": (
         "JP/servant/search?voiceCondSvt=190&lang=en&className=archer",
-        {201200, 202900},
+        {201200, 202900, 204600},
     ),
     "servant_search_notTrait": (
         "NA/servant/search?notTrait=weakToEnumaElish&notTrait=genderMale&className=archer",
@@ -131,7 +131,7 @@ test_cases_dict: dict[str, tuple[str, set[int]]] = {
     ),
     "skill_search_num": (
         "JP/skill/search?strengthStatus=99&type=active&numFunctions=5&num=3",
-        {292452, 621675},
+        {165551, 292452, 621675, 2101550},
     ),
     "skill_search_priority": ("JP/skill/search?priority=5", {744450}),
     "skill_search_name": (

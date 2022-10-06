@@ -22,7 +22,7 @@ async def get_war_from_spot(conn: AsyncConnection, spot_id: int) -> MstWar | Non
     if war:
         return MstWar.from_orm(war)
 
-    return None
+    return None  # pragma: no cover
 
 
 async def get_spot_from_id(conn: AsyncConnection, spot_id: int) -> MstSpot | None:
@@ -31,7 +31,7 @@ async def get_spot_from_id(conn: AsyncConnection, spot_id: int) -> MstSpot | Non
     if spot:
         return MstSpot.from_orm(spot)
 
-    return None
+    return None  # pragma: no cover
 
 
 async def get_spot_from_ids(

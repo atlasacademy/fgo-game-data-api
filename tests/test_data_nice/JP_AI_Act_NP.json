@@ -1,0 +1,750 @@
+{
+  "mainAis": [
+    {
+      "id": 94074555,
+      "idx": 1,
+      "actNumInt": -13,
+      "actNum": "reactionPlayeractionstart",
+      "priority": 1,
+      "probability": 100,
+      "cond": "none",
+      "condNegative": false,
+      "vals": [],
+      "aiAct": {
+        "id": 1002,
+        "type": "attack",
+        "target": "random",
+        "targetIndividuality": []
+      },
+      "avals": [
+        0,
+        0
+      ],
+      "parentAis": {
+        "svt": [],
+        "field": []
+      },
+      "infoText": ""
+    },
+    {
+      "id": 94074555,
+      "idx": 2,
+      "actNumInt": -13,
+      "actNum": "reactionPlayeractionstart",
+      "priority": 100,
+      "probability": 100,
+      "cond": "checkUseSkillThisturn",
+      "condNegative": false,
+      "vals": [
+        1,
+        968735
+      ],
+      "aiAct": {
+        "id": 94074527,
+        "type": "noblePhantasm",
+        "target": "random",
+        "targetIndividuality": [],
+        "noblePhantasmId": 901001,
+        "noblePhantasmLv": 3,
+        "noblePhantasmOc": 10000,
+        "noblePhantasm": {
+          "id": 901001,
+          "num": 1,
+          "card": "buster",
+          "name": "星辰象る久遠鏡",
+          "originalName": "星辰象る久遠鏡",
+          "ruby": "せいしんかたどるきゅうえんきょう",
+          "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/901000/card_servant_np.png",
+          "rank": "B",
+          "type": "結界宝具",
+          "effectFlags": [
+            "support"
+          ],
+          "detail": "味方全体のBusterカード性能をアップ(3ターン)＆クリティカル威力をアップ(3ターン)<オーバーチャージで効果アップ>＆宝具使用時のチャージ段階を2段階引き上げる状態を付与(1回・3ターン)",
+          "unmodifiedDetail": "味方全体のBusterカード性能をアップ[{0}](3ターン)＆クリティカル威力をアップ(3ターン)<オーバーチャージで効果アップ>＆宝具使用時のチャージ段階を2段階引き上げる状態を付与(1回・3ターン)",
+          "npGain": {
+            "buster": [
+              57,
+              57,
+              57,
+              57,
+              57
+            ],
+            "arts": [
+              57,
+              57,
+              57,
+              57,
+              57
+            ],
+            "quick": [
+              57,
+              57,
+              57,
+              57,
+              57
+            ],
+            "extra": [
+              57,
+              57,
+              57,
+              57,
+              57
+            ],
+            "defence": [
+              300,
+              300,
+              300,
+              300,
+              300
+            ],
+            "np": [
+              57,
+              57,
+              57,
+              57,
+              57
+            ]
+          },
+          "npDistribution": [
+            100
+          ],
+          "strengthStatus": 0,
+          "priority": 101,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "individuality": [
+            {
+              "id": 3002,
+              "name": "attackMagical"
+            },
+            {
+              "id": 4002,
+              "name": "cardBuster"
+            },
+            {
+              "id": 4007,
+              "name": "cardNP"
+            }
+          ],
+          "script": {},
+          "functions": [
+            {
+              "funcId": 126,
+              "funcType": "addStateShort",
+              "funcTargetType": "ptAll",
+              "funcTargetTeam": "playerAndEnemy",
+              "funcPopupText": "バスターアップ",
+              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
+              "functvals": [],
+              "funcquestTvals": [],
+              "funcGroup": [],
+              "buffs": [
+                {
+                  "id": 102,
+                  "name": "Busterアップ",
+                  "detail": "Busterカードの性能をアップ",
+                  "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
+                  "type": "upCommandall",
+                  "buffGroup": 0,
+                  "script": {},
+                  "vals": [
+                    {
+                      "id": 3004,
+                      "name": "buffPositiveEffect"
+                    },
+                    {
+                      "id": 3006,
+                      "name": "buffIncreaseDamage"
+                    }
+                  ],
+                  "tvals": [
+                    {
+                      "id": 5000,
+                      "name": "canBeInBattle"
+                    },
+                    {
+                      "id": 4002,
+                      "name": "cardBuster"
+                    }
+                  ],
+                  "ckSelfIndv": [
+                    {
+                      "id": 4002,
+                      "name": "cardBuster"
+                    }
+                  ],
+                  "ckOpIndv": [],
+                  "maxRate": 5000
+                }
+              ],
+              "svals": [
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 300
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 400
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 450
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 475
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 500
+                }
+              ],
+              "svals2": [
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 300
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 400
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 450
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 475
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 500
+                }
+              ],
+              "svals3": [
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 300
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 400
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 450
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 475
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 500
+                }
+              ],
+              "svals4": [
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 300
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 400
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 450
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 475
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 500
+                }
+              ],
+              "svals5": [
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 300
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 400
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 450
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 475
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 500
+                }
+              ]
+            },
+            {
+              "funcId": 207,
+              "funcType": "addStateShort",
+              "funcTargetType": "ptAll",
+              "funcTargetTeam": "playerAndEnemy",
+              "funcPopupText": "クリティカル威力アップ",
+              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
+              "functvals": [],
+              "funcquestTvals": [],
+              "funcGroup": [],
+              "buffs": [
+                {
+                  "id": 142,
+                  "name": "クリティカル威力アップ",
+                  "detail": "クリティカル時のダメージをアップ",
+                  "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
+                  "type": "upCriticaldamage",
+                  "buffGroup": 0,
+                  "script": {},
+                  "vals": [
+                    {
+                      "id": 3004,
+                      "name": "buffPositiveEffect"
+                    },
+                    {
+                      "id": 3006,
+                      "name": "buffIncreaseDamage"
+                    },
+                    {
+                      "id": 3031,
+                      "name": "buffCritDamageUp"
+                    }
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "maxRate": 5000
+                }
+              ],
+              "svals": [
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 500
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 500
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 500
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 500
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 500
+                }
+              ],
+              "svals2": [
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 625
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 625
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 625
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 625
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 625
+                }
+              ],
+              "svals3": [
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 750
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 750
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 750
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 750
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 750
+                }
+              ],
+              "svals4": [
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 875
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 875
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 875
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 875
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 875
+                }
+              ],
+              "svals5": [
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 1000
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 1000
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 1000
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 1000
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": -1,
+                  "Value": 1000
+                }
+              ]
+            },
+            {
+              "funcId": 760,
+              "funcType": "addStateShort",
+              "funcTargetType": "ptAll",
+              "funcTargetTeam": "playerAndEnemy",
+              "funcPopupText": "オーバーチャージ段階UP",
+              "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_336.png",
+              "functvals": [],
+              "funcquestTvals": [],
+              "funcGroup": [],
+              "buffs": [
+                {
+                  "id": 227,
+                  "name": "オーバーチャージ段階UP",
+                  "detail": "宝具発動時、オーバーチャージ段階をアップする",
+                  "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_336.png",
+                  "type": "upChagetd",
+                  "buffGroup": 0,
+                  "script": {},
+                  "vals": [
+                    {
+                      "id": 3004,
+                      "name": "buffPositiveEffect"
+                    }
+                  ],
+                  "tvals": [],
+                  "ckSelfIndv": [],
+                  "ckOpIndv": [],
+                  "maxRate": 5
+                }
+              ],
+              "svals": [
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                }
+              ],
+              "svals2": [
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                }
+              ],
+              "svals3": [
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                }
+              ],
+              "svals4": [
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                }
+              ],
+              "svals5": [
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                },
+                {
+                  "Rate": 1000,
+                  "Turn": 3,
+                  "Count": 1,
+                  "Value": 2
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "avals": [
+        0,
+        0
+      ],
+      "parentAis": {
+        "svt": [],
+        "field": []
+      },
+      "infoText": ""
+    }
+  ],
+  "relatedAis": [],
+  "relatedQuests": []
+}
