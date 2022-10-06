@@ -3764,6 +3764,7 @@
   "lotteries": [],
   "treasureBoxes": [],
   "bulletinBoards": [],
+  "recipes": [],
   "digging": {
     "sizeX": 7,
     "sizeY": 4,
@@ -3800,6 +3801,15 @@
           "objectId": 94069605,
           "num": 10
         },
+        "consumes": [
+          {
+            "id": 20069601,
+            "priority": 1,
+            "type": "item",
+            "objectId": 94069605,
+            "num": 10
+          }
+        ],
         "objectId": 1,
         "diggingEventPoint": 200,
         "blockNum": 1
@@ -3815,6 +3825,15 @@
           "objectId": 94069604,
           "num": 10
         },
+        "consumes": [
+          {
+            "id": 20069602,
+            "priority": 1,
+            "type": "item",
+            "objectId": 94069604,
+            "num": 10
+          }
+        ],
         "objectId": 2,
         "diggingEventPoint": 200,
         "blockNum": 1
@@ -3830,6 +3849,15 @@
           "objectId": 94069606,
           "num": 10
         },
+        "consumes": [
+          {
+            "id": 20069603,
+            "priority": 1,
+            "type": "item",
+            "objectId": 94069606,
+            "num": 10
+          }
+        ],
         "objectId": 0,
         "diggingEventPoint": 200,
         "blockNum": 2
@@ -3845,6 +3873,15 @@
           "objectId": 94069605,
           "num": 20
         },
+        "consumes": [
+          {
+            "id": 20069604,
+            "priority": 1,
+            "type": "item",
+            "objectId": 94069605,
+            "num": 20
+          }
+        ],
         "objectId": 1,
         "diggingEventPoint": 400,
         "blockNum": 2
@@ -3860,6 +3897,15 @@
           "objectId": 94069605,
           "num": 20
         },
+        "consumes": [
+          {
+            "id": 20069605,
+            "priority": 1,
+            "type": "item",
+            "objectId": 94069605,
+            "num": 20
+          }
+        ],
         "objectId": 1,
         "diggingEventPoint": 400,
         "blockNum": 2
@@ -3875,6 +3921,15 @@
           "objectId": 94069605,
           "num": 30
         },
+        "consumes": [
+          {
+            "id": 20069606,
+            "priority": 1,
+            "type": "item",
+            "objectId": 94069605,
+            "num": 30
+          }
+        ],
         "objectId": 1,
         "diggingEventPoint": 600,
         "blockNum": 2
@@ -3890,6 +3945,15 @@
           "objectId": 94069605,
           "num": 30
         },
+        "consumes": [
+          {
+            "id": 20069607,
+            "priority": 1,
+            "type": "item",
+            "objectId": 94069605,
+            "num": 30
+          }
+        ],
         "objectId": 1,
         "diggingEventPoint": 600,
         "blockNum": 2
@@ -3905,6 +3969,15 @@
           "objectId": 94069604,
           "num": 20
         },
+        "consumes": [
+          {
+            "id": 20069608,
+            "priority": 1,
+            "type": "item",
+            "objectId": 94069604,
+            "num": 20
+          }
+        ],
         "objectId": 2,
         "diggingEventPoint": 400,
         "blockNum": 2
@@ -3920,6 +3993,15 @@
           "objectId": 94069604,
           "num": 20
         },
+        "consumes": [
+          {
+            "id": 20069609,
+            "priority": 1,
+            "type": "item",
+            "objectId": 94069604,
+            "num": 20
+          }
+        ],
         "objectId": 2,
         "diggingEventPoint": 400,
         "blockNum": 2
@@ -3935,6 +4017,15 @@
           "objectId": 94069604,
           "num": 30
         },
+        "consumes": [
+          {
+            "id": 20069610,
+            "priority": 1,
+            "type": "item",
+            "objectId": 94069604,
+            "num": 30
+          }
+        ],
         "objectId": 2,
         "diggingEventPoint": 600,
         "blockNum": 2
@@ -3950,6 +4041,15 @@
           "objectId": 94069604,
           "num": 30
         },
+        "consumes": [
+          {
+            "id": 20069611,
+            "priority": 1,
+            "type": "item",
+            "objectId": 94069604,
+            "num": 30
+          }
+        ],
         "objectId": 2,
         "diggingEventPoint": 600,
         "blockNum": 2
@@ -3965,6 +4065,15 @@
           "objectId": 94069606,
           "num": 20
         },
+        "consumes": [
+          {
+            "id": 20069612,
+            "priority": 1,
+            "type": "item",
+            "objectId": 94069606,
+            "num": 20
+          }
+        ],
         "objectId": 0,
         "diggingEventPoint": 400,
         "blockNum": 2
@@ -3980,6 +4089,15 @@
           "objectId": 94069606,
           "num": 20
         },
+        "consumes": [
+          {
+            "id": 20069613,
+            "priority": 1,
+            "type": "item",
+            "objectId": 94069606,
+            "num": 20
+          }
+        ],
         "objectId": 0,
         "diggingEventPoint": 400,
         "blockNum": 2
@@ -3995,6 +4113,15 @@
           "objectId": 94069606,
           "num": 30
         },
+        "consumes": [
+          {
+            "id": 20069614,
+            "priority": 1,
+            "type": "item",
+            "objectId": 94069606,
+            "num": 30
+          }
+        ],
         "objectId": 0,
         "diggingEventPoint": 600,
         "blockNum": 2
@@ -4010,6 +4137,15 @@
           "objectId": 94069606,
           "num": 30
         },
+        "consumes": [
+          {
+            "id": 20069615,
+            "priority": 1,
+            "type": "item",
+            "objectId": 94069606,
+            "num": 30
+          }
+        ],
         "objectId": 0,
         "diggingEventPoint": 600,
         "blockNum": 2

@@ -8144,6 +8144,8 @@
   "mstEventQuestCooltime": [],
   "mstEventBulletinBoard": [],
   "mstEventBulletinBoardRelease": [],
+  "mstEventRecipe": [],
+  "mstEventRecipeGift": [],
   "mstItem": [
     {
       "individuality": [

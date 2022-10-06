@@ -6297,7 +6297,16 @@
         "type": "item",
         "objectId": 94060405,
         "num": 1
-      }
+      },
+      "consumes": [
+        {
+          "id": 94060401,
+          "priority": 3,
+          "type": "item",
+          "objectId": 94060405,
+          "num": 1
+        }
+      ]
     },
     {
       "slot": 1,
@@ -6397,7 +6406,16 @@
         "type": "item",
         "objectId": 94060406,
         "num": 1
-      }
+      },
+      "consumes": [
+        {
+          "id": 94060402,
+          "priority": 2,
+          "type": "item",
+          "objectId": 94060406,
+          "num": 1
+        }
+      ]
     },
     {
       "slot": 1,
@@ -6497,10 +6515,20 @@
         "type": "item",
         "objectId": 94060407,
         "num": 1
-      }
+      },
+      "consumes": [
+        {
+          "id": 94060403,
+          "priority": 1,
+          "type": "item",
+          "objectId": 94060407,
+          "num": 1
+        }
+      ]
     }
   ],
   "bulletinBoards": [],
+  "recipes": [],
   "voicePlays": [
     {
       "slot": 0,
