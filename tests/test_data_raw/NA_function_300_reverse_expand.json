@@ -12,7 +12,9 @@
           "tvals": [],
           "ckSelfIndv": [],
           "ckOpIndv": [],
-          "script": {},
+          "script": {
+            "ProgressSelfTurn": 1
+          },
           "id": 117,
           "buffGroup": 0,
           "type": 3,

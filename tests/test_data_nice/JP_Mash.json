@@ -676,10 +676,148 @@
     "individuality": {
       "ascension": {},
       "costume": {
-        "800130": [],
+        "800130": [
+          {
+            "id": 2,
+            "name": "genderFemale"
+          },
+          {
+            "id": 107,
+            "name": "classShielder"
+          },
+          {
+            "id": 201,
+            "name": "attributeEarth"
+          },
+          {
+            "id": 300,
+            "name": "alignmentLawful"
+          },
+          {
+            "id": 303,
+            "name": "alignmentGood"
+          },
+          {
+            "id": 1000,
+            "name": "basedOnServant"
+          },
+          {
+            "id": 2001,
+            "name": "humanoid"
+          },
+          {
+            "id": 2008,
+            "name": "weakToEnumaElish"
+          },
+          {
+            "id": 2009,
+            "name": "riding"
+          },
+          {
+            "id": 2011,
+            "name": "skyOrEarthServant"
+          },
+          {
+            "id": 2631,
+            "name": "hominidaeServant"
+          },
+          {
+            "id": 2654,
+            "name": "livingHuman"
+          },
+          {
+            "id": 2780,
+            "name": "hasCostume"
+          },
+          {
+            "id": 2795,
+            "name": "knightsOfTheRound"
+          },
+          {
+            "id": 2838,
+            "name": "summerModeServant"
+          },
+          {
+            "id": 5000,
+            "name": "canBeInBattle"
+          },
+          {
+            "id": 800100,
+            "name": "unknown"
+          }
+        ],
         "800140": [],
         "800150": [],
-        "800160": [],
+        "800160": [
+          {
+            "id": 2,
+            "name": "genderFemale"
+          },
+          {
+            "id": 107,
+            "name": "classShielder"
+          },
+          {
+            "id": 201,
+            "name": "attributeEarth"
+          },
+          {
+            "id": 300,
+            "name": "alignmentLawful"
+          },
+          {
+            "id": 303,
+            "name": "alignmentGood"
+          },
+          {
+            "id": 1000,
+            "name": "basedOnServant"
+          },
+          {
+            "id": 2001,
+            "name": "humanoid"
+          },
+          {
+            "id": 2008,
+            "name": "weakToEnumaElish"
+          },
+          {
+            "id": 2009,
+            "name": "riding"
+          },
+          {
+            "id": 2011,
+            "name": "skyOrEarthServant"
+          },
+          {
+            "id": 2631,
+            "name": "hominidaeServant"
+          },
+          {
+            "id": 2654,
+            "name": "livingHuman"
+          },
+          {
+            "id": 2780,
+            "name": "hasCostume"
+          },
+          {
+            "id": 2795,
+            "name": "knightsOfTheRound"
+          },
+          {
+            "id": 2838,
+            "name": "summerModeServant"
+          },
+          {
+            "id": 5000,
+            "name": "canBeInBattle"
+          },
+          {
+            "id": 800100,
+            "name": "unknown"
+          }
+        ],
         "800170": []
       }
     },
@@ -2197,6 +2335,10 @@
                 {
                   "id": 3004,
                   "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3084,
+                  "name": "unknown"
                 }
               ],
               "tvals": [],

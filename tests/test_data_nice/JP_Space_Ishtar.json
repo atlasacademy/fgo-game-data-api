@@ -163,6 +163,10 @@
       "name": "divineSpirit"
     },
     {
+      "id": 2835,
+      "name": "immuneToPigify"
+    },
+    {
       "id": 5000,
       "name": "canBeInBattle"
     },
@@ -4248,6 +4252,10 @@
                 {
                   "id": 3004,
                   "name": "buffPositiveEffect"
+                },
+                {
+                  "id": 3080,
+                  "name": "unknown"
                 }
               ],
               "tvals": [],

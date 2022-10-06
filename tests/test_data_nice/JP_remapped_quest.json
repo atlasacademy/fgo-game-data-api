@@ -5116,6 +5116,10 @@
                         {
                           "id": 3004,
                           "name": "buffPositiveEffect"
+                        },
+                        {
+                          "id": 3083,
+                          "name": "unknown"
                         }
                       ],
                       "tvals": [],

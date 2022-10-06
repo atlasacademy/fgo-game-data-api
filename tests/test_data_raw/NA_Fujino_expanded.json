@@ -2038,7 +2038,9 @@
                         4002
                       ],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 102,
                       "buffGroup": 0,
                       "type": 52,
@@ -2210,7 +2212,9 @@
                         4002
                       ],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 102,
                       "buffGroup": 0,
                       "type": 52,
@@ -2382,7 +2386,9 @@
                         4002
                       ],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 102,
                       "buffGroup": 0,
                       "type": 52,
@@ -2554,7 +2560,9 @@
                         4002
                       ],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 102,
                       "buffGroup": 0,
                       "type": 52,
@@ -2726,7 +2734,9 @@
                         4002
                       ],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 102,
                       "buffGroup": 0,
                       "type": 52,
@@ -2898,7 +2908,9 @@
                         4002
                       ],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 102,
                       "buffGroup": 0,
                       "type": 52,
@@ -3070,7 +3082,9 @@
                         4002
                       ],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 102,
                       "buffGroup": 0,
                       "type": 52,
@@ -3242,7 +3256,9 @@
                         4002
                       ],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 102,
                       "buffGroup": 0,
                       "type": 52,
@@ -3414,7 +3430,9 @@
                         4002
                       ],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 102,
                       "buffGroup": 0,
                       "type": 52,
@@ -3586,7 +3604,9 @@
                         4002
                       ],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 102,
                       "buffGroup": 0,
                       "type": 52,
@@ -3794,7 +3814,9 @@
                       "tvals": [],
                       "ckSelfIndv": [],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 154,
                       "buffGroup": 0,
                       "type": 25,
@@ -3857,7 +3879,9 @@
                       "tvals": [],
                       "ckSelfIndv": [],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 144,
                       "buffGroup": 0,
                       "type": 70,
@@ -3920,7 +3944,9 @@
                       "tvals": [],
                       "ckSelfIndv": [],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 154,
                       "buffGroup": 0,
                       "type": 25,
@@ -3983,7 +4009,9 @@
                       "tvals": [],
                       "ckSelfIndv": [],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 144,
                       "buffGroup": 0,
                       "type": 70,
@@ -4046,7 +4074,9 @@
                       "tvals": [],
                       "ckSelfIndv": [],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 154,
                       "buffGroup": 0,
                       "type": 25,
@@ -4109,7 +4139,9 @@
                       "tvals": [],
                       "ckSelfIndv": [],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 144,
                       "buffGroup": 0,
                       "type": 70,
@@ -4172,7 +4204,9 @@
                       "tvals": [],
                       "ckSelfIndv": [],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 154,
                       "buffGroup": 0,
                       "type": 25,
@@ -4235,7 +4269,9 @@
                       "tvals": [],
                       "ckSelfIndv": [],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 144,
                       "buffGroup": 0,
                       "type": 70,
@@ -4298,7 +4334,9 @@
                       "tvals": [],
                       "ckSelfIndv": [],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 154,
                       "buffGroup": 0,
                       "type": 25,
@@ -4361,7 +4399,9 @@
                       "tvals": [],
                       "ckSelfIndv": [],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 144,
                       "buffGroup": 0,
                       "type": 70,
@@ -4424,7 +4464,9 @@
                       "tvals": [],
                       "ckSelfIndv": [],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 154,
                       "buffGroup": 0,
                       "type": 25,
@@ -4487,7 +4529,9 @@
                       "tvals": [],
                       "ckSelfIndv": [],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 144,
                       "buffGroup": 0,
                       "type": 70,
@@ -4550,7 +4594,9 @@
                       "tvals": [],
                       "ckSelfIndv": [],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 154,
                       "buffGroup": 0,
                       "type": 25,
@@ -4613,7 +4659,9 @@
                       "tvals": [],
                       "ckSelfIndv": [],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 144,
                       "buffGroup": 0,
                       "type": 70,
@@ -4676,7 +4724,9 @@
                       "tvals": [],
                       "ckSelfIndv": [],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 154,
                       "buffGroup": 0,
                       "type": 25,
@@ -4739,7 +4789,9 @@
                       "tvals": [],
                       "ckSelfIndv": [],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 144,
                       "buffGroup": 0,
                       "type": 70,
@@ -4802,7 +4854,9 @@
                       "tvals": [],
                       "ckSelfIndv": [],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 154,
                       "buffGroup": 0,
                       "type": 25,
@@ -4865,7 +4919,9 @@
                       "tvals": [],
                       "ckSelfIndv": [],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 144,
                       "buffGroup": 0,
                       "type": 70,
@@ -4928,7 +4984,9 @@
                       "tvals": [],
                       "ckSelfIndv": [],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 154,
                       "buffGroup": 0,
                       "type": 25,
@@ -4991,7 +5049,9 @@
                       "tvals": [],
                       "ckSelfIndv": [],
                       "ckOpIndv": [],
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "id": 144,
                       "buffGroup": 0,
                       "type": 70,
