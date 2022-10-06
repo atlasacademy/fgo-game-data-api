@@ -228,6 +228,7 @@
           "chapterId": -1,
           "chapterSubId": 0,
           "chapterSubStr": "",
+          "giftIcon": "https://assets.atlasacademy.io/GameData/NA/Items/6.png",
           "gifts": [
             {
               "id": 101,
@@ -396,6 +397,7 @@
           "chapterId": 203,
           "chapterSubId": 1,
           "chapterSubStr": "",
+          "giftIcon": "https://assets.atlasacademy.io/GameData/NA/Items/6.png",
           "gifts": [
             {
               "id": 101,
@@ -725,6 +727,7 @@
           "chapterId": 203,
           "chapterSubId": 2,
           "chapterSubStr": "",
+          "giftIcon": "https://assets.atlasacademy.io/GameData/NA/Items/6.png",
           "gifts": [
             {
               "id": 101,
@@ -1003,6 +1006,7 @@
           "chapterId": 203,
           "chapterSubId": 3,
           "chapterSubStr": "",
+          "giftIcon": "https://assets.atlasacademy.io/GameData/NA/Items/6.png",
           "gifts": [
             {
               "id": 101,
@@ -1419,6 +1423,7 @@
           "chapterId": -1,
           "chapterSubId": 16,
           "chapterSubStr": "",
+          "giftIcon": "https://assets.atlasacademy.io/GameData/NA/Items/3.png",
           "gifts": [
             {
               "id": 20058,
@@ -1497,6 +1502,7 @@
           "chapterId": 203,
           "chapterSubId": 4,
           "chapterSubStr": "",
+          "giftIcon": "https://assets.atlasacademy.io/GameData/NA/Items/6.png",
           "gifts": [
             {
               "id": 101,
@@ -1599,6 +1605,7 @@
           "chapterId": 203,
           "chapterSubId": 5,
           "chapterSubStr": "",
+          "giftIcon": "https://assets.atlasacademy.io/GameData/NA/Items/6.png",
           "gifts": [
             {
               "id": 101,
@@ -2318,6 +2325,7 @@
           "chapterId": 1,
           "chapterSubId": 1,
           "chapterSubStr": "",
+          "giftIcon": "https://assets.atlasacademy.io/GameData/NA/Items/8.png",
           "gifts": [],
           "releaseConditions": [
             {
@@ -2403,6 +2411,7 @@
           "chapterId": 203,
           "chapterSubId": 7,
           "chapterSubStr": "",
+          "giftIcon": "https://assets.atlasacademy.io/GameData/NA/Items/6.png",
           "gifts": [
             {
               "id": 101,
@@ -2464,6 +2473,7 @@
           "chapterId": 203,
           "chapterSubId": 9,
           "chapterSubStr": "",
+          "giftIcon": "https://assets.atlasacademy.io/GameData/NA/Items/6.png",
           "gifts": [
             {
               "id": 101,
@@ -2706,6 +2716,7 @@
           "chapterId": 203,
           "chapterSubId": 8,
           "chapterSubStr": "",
+          "giftIcon": "https://assets.atlasacademy.io/GameData/NA/Items/6.png",
           "gifts": [
             {
               "id": 101,
@@ -3006,6 +3017,7 @@
           "chapterId": 203,
           "chapterSubId": 6,
           "chapterSubStr": "",
+          "giftIcon": "https://assets.atlasacademy.io/GameData/NA/Items/6.png",
           "gifts": [
             {
               "id": 101,
@@ -3256,5 +3268,6 @@
       "activeTargetId": 93020302,
       "activeTargetValue": 0
     }
-  ]
+  ],
+  "questSelections": []
 }
