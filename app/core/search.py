@@ -1,7 +1,8 @@
 from typing import Iterable, Optional, Union
 
 from fastapi import HTTPException
-from fuzzywuzzy import fuzz, utils
+from fuzzywuzzy import utils
+from Levenshtein import ratio  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..data.custom_mappings import CV_EN_TO_JP, ILLUSTRATOR_EN_TO_JP
@@ -126,14 +127,14 @@ def match_name(search_param: str, name: str) -> bool:
     combined_1to2 = combined_1to2.strip()
     combined_2to1 = combined_2to1.strip()
 
-    NAME_MATCH_THRESHOLD = 80
+    NAME_MATCH_THRESHOLD = 0.8
 
     # Use sorted_sect first so "Okita Souji (Alter)" works as expected
     # This way "a b c" search_param will match to "a b c d e" but not vice versa
     if sorted_sect:
-        return fuzz.ratio(sorted_sect, combined_1to2) > NAME_MATCH_THRESHOLD
+        return float(ratio(sorted_sect, combined_1to2)) > NAME_MATCH_THRESHOLD
     else:
-        return fuzz.ratio(combined_2to1, combined_1to2) > NAME_MATCH_THRESHOLD
+        return float(ratio(combined_2to1, combined_1to2)) > NAME_MATCH_THRESHOLD
 
 
 async def search_servant(
