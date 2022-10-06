@@ -2,7 +2,8 @@
   "mstSvt": {
     "relateQuestIds": [
       91602901,
-      94058502
+      94058502,
+      94077002
     ],
     "individuality": [
       5000,
@@ -90,7 +91,7 @@
       "mstSvtSkill": [
         {
           "script": {},
-          "strengthStatus": 0,
+          "strengthStatus": 1,
           "svtId": 602900,
           "num": 1,
           "priority": 1,
@@ -667,6 +668,229 @@
           "chargeTurn": 6,
           "skillDetailId": 417550,
           "priority": 0
+        }
+      ]
+    },
+    {
+      "mstSkill": {
+        "effectList": [
+          336
+        ],
+        "actIndividuality": [],
+        "script": {},
+        "id": 422352,
+        "type": 1,
+        "name": "呪術（巫） C++",
+        "ruby": "じゅじゅつ",
+        "maxLv": 10,
+        "iconId": 512,
+        "motion": 104
+      },
+      "mstSkillDetail": [
+        {
+          "id": 422352,
+          "detail": "敵単体に高確率で宝具封印状態を付与[{0}](1ターン) ＋ 自身に〔魔性〕特攻状態を付与[{0}](3ターン)[g][o]▲[/o][/g]＆〔呪い〕特攻状態を付与[{0}](3ターン)[g][o]▲[/o][/g]",
+          "detailShort": "敵単体に高確率で宝具封印状態を付与[{0}](1ターン) ＋ 自身に〔魔性〕特攻状態を付与[{0}](3ターン)[g][o]▲[/o][/g]＆〔呪い〕特攻状態を付与[{0}](3ターン)[g][o]▲[/o][/g]"
+        }
+      ],
+      "mstSvtSkill": [
+        {
+          "script": {},
+          "strengthStatus": 99,
+          "svtId": 602900,
+          "num": 1,
+          "priority": 2,
+          "skillId": 422352,
+          "condQuestId": 94077002,
+          "condQuestPhase": 3,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "eventId": 0,
+          "flag": 0
+        }
+      ],
+      "mstSkillAdd": [],
+      "mstCommonRelease": [],
+      "mstSkillLv": [
+        {
+          "funcId": [
+            362,
+            907,
+            9540
+          ],
+          "svals": [
+            "[800,1,-1]",
+            "[1000,3,-1,200]",
+            "[1000,3,-1,100]"
+          ],
+          "script": {},
+          "skillId": 422352,
+          "lv": 1,
+          "chargeTurn": 7,
+          "skillDetailId": 422352,
+          "priority": 50
+        },
+        {
+          "funcId": [
+            362,
+            907,
+            9540
+          ],
+          "svals": [
+            "[820,1,-1]",
+            "[1000,3,-1,210]",
+            "[1000,3,-1,110]"
+          ],
+          "script": {},
+          "skillId": 422352,
+          "lv": 2,
+          "chargeTurn": 7,
+          "skillDetailId": 422352,
+          "priority": 50
+        },
+        {
+          "funcId": [
+            362,
+            907,
+            9540
+          ],
+          "svals": [
+            "[840,1,-1]",
+            "[1000,3,-1,220]",
+            "[1000,3,-1,120]"
+          ],
+          "script": {},
+          "skillId": 422352,
+          "lv": 3,
+          "chargeTurn": 7,
+          "skillDetailId": 422352,
+          "priority": 50
+        },
+        {
+          "funcId": [
+            362,
+            907,
+            9540
+          ],
+          "svals": [
+            "[860,1,-1]",
+            "[1000,3,-1,230]",
+            "[1000,3,-1,130]"
+          ],
+          "script": {},
+          "skillId": 422352,
+          "lv": 4,
+          "chargeTurn": 7,
+          "skillDetailId": 422352,
+          "priority": 50
+        },
+        {
+          "funcId": [
+            362,
+            907,
+            9540
+          ],
+          "svals": [
+            "[880,1,-1]",
+            "[1000,3,-1,240]",
+            "[1000,3,-1,140]"
+          ],
+          "script": {},
+          "skillId": 422352,
+          "lv": 5,
+          "chargeTurn": 7,
+          "skillDetailId": 422352,
+          "priority": 50
+        },
+        {
+          "funcId": [
+            362,
+            907,
+            9540
+          ],
+          "svals": [
+            "[900,1,-1]",
+            "[1000,3,-1,250]",
+            "[1000,3,-1,150]"
+          ],
+          "script": {},
+          "skillId": 422352,
+          "lv": 6,
+          "chargeTurn": 6,
+          "skillDetailId": 422352,
+          "priority": 50
+        },
+        {
+          "funcId": [
+            362,
+            907,
+            9540
+          ],
+          "svals": [
+            "[920,1,-1]",
+            "[1000,3,-1,260]",
+            "[1000,3,-1,160]"
+          ],
+          "script": {},
+          "skillId": 422352,
+          "lv": 7,
+          "chargeTurn": 6,
+          "skillDetailId": 422352,
+          "priority": 50
+        },
+        {
+          "funcId": [
+            362,
+            907,
+            9540
+          ],
+          "svals": [
+            "[940,1,-1]",
+            "[1000,3,-1,270]",
+            "[1000,3,-1,170]"
+          ],
+          "script": {},
+          "skillId": 422352,
+          "lv": 8,
+          "chargeTurn": 6,
+          "skillDetailId": 422352,
+          "priority": 50
+        },
+        {
+          "funcId": [
+            362,
+            907,
+            9540
+          ],
+          "svals": [
+            "[960,1,-1]",
+            "[1000,3,-1,280]",
+            "[1000,3,-1,180]"
+          ],
+          "script": {},
+          "skillId": 422352,
+          "lv": 9,
+          "chargeTurn": 6,
+          "skillDetailId": 422352,
+          "priority": 50
+        },
+        {
+          "funcId": [
+            362,
+            907,
+            9540
+          ],
+          "svals": [
+            "[1000,1,-1]",
+            "[1000,3,-1,300]",
+            "[1000,3,-1,200]"
+          ],
+          "script": {},
+          "skillId": 422352,
+          "lv": 10,
+          "chargeTurn": 5,
+          "skillDetailId": 422352,
+          "priority": 50
         }
       ]
     }

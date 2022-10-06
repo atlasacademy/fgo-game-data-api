@@ -1527,7 +1527,15 @@
               "name": "aoeNP"
             }
           ],
-          "script": {},
+          "script": {
+            "tdTypeChangeIDs": [
+              200197,
+              200102
+            ],
+            "excludeTdChangeTypes": [
+              3
+            ]
+          },
           "functions": [
             {
               "funcId": 15,
@@ -7545,7 +7553,7 @@
             33,
             51
           ],
-          "strengthStatus": 0,
+          "strengthStatus": 1,
           "priority": 101,
           "condQuestId": 0,
           "condQuestPhase": 0,

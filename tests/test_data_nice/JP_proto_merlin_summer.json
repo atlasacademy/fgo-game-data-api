@@ -2420,9 +2420,9 @@
       "eventId": 80384,
       "slot": 1,
       "priority": 2,
-      "name": "QP",
-      "detail": "QPへ交換",
-      "infoMessage": "",
+      "name": "簡易霊衣「荒ぶる真夏の女神」開放権",
+      "detail": "伊吹童子（バーサーカー）簡易霊衣\n「荒ぶる真夏の女神」開放権へ交換",
+      "infoMessage": "簡易霊衣「荒ぶる真夏の女神」開放権を獲得できます。",
       "warningMessage": "",
       "payType": "eventItem",
       "cost": {
@@ -2447,16 +2447,16 @@
         },
         "amount": 200
       },
-      "purchaseType": "item",
+      "purchaseType": "costumeRelease",
       "targetIds": [
-        1
+        70430011
       ],
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
       "defaultLv": 0,
       "defaultLimitCount": 0,
-      "openedAt": 1660132800,
+      "openedAt": 1660640400,
       "closedAt": 1662523199
     },
     {
@@ -2526,12 +2526,24 @@
       "releaseConditions": [
         {
           "condValues": [
+            94073950
+          ],
+          "shopId": 80384052,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 1,
+          "isClosedDisp": true,
+          "closedMessage": "※【いずれかのみ】スルーズを正式加入させなかったため交換できません",
+          "closedItemName": ""
+        },
+        {
+          "condValues": [
             94073601
           ],
           "shopId": 80384052,
           "condType": "questGroupClear",
           "condNum": 1,
-          "priority": 0,
+          "priority": 2,
           "isClosedDisp": true,
           "closedMessage": "※【いずれかのみ】スルーズを正式加入させた場合のみ交換可能",
           "closedItemName": ""
@@ -2586,12 +2598,24 @@
       "releaseConditions": [
         {
           "condValues": [
+            94073950
+          ],
+          "shopId": 80384053,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 1,
+          "isClosedDisp": true,
+          "closedMessage": "※【いずれかのみ】スルーズを正式加入させなかったため交換できません",
+          "closedItemName": ""
+        },
+        {
+          "condValues": [
             94073601
           ],
           "shopId": 80384053,
           "condType": "questGroupClear",
           "condNum": 1,
-          "priority": 0,
+          "priority": 2,
           "isClosedDisp": true,
           "closedMessage": "※【いずれかのみ】スルーズを正式加入させた場合のみ交換可能",
           "closedItemName": ""
@@ -2646,12 +2670,24 @@
       "releaseConditions": [
         {
           "condValues": [
+            94073950
+          ],
+          "shopId": 80384054,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 1,
+          "isClosedDisp": true,
+          "closedMessage": "※【いずれかのみ】スルーズを正式加入させなかったため交換できません",
+          "closedItemName": ""
+        },
+        {
+          "condValues": [
             94073601
           ],
           "shopId": 80384054,
           "condType": "questGroupClear",
           "condNum": 1,
-          "priority": 0,
+          "priority": 2,
           "isClosedDisp": true,
           "closedMessage": "※【いずれかのみ】スルーズを正式加入させた場合のみ交換可能",
           "closedItemName": ""
@@ -2706,12 +2742,24 @@
       "releaseConditions": [
         {
           "condValues": [
+            94073951
+          ],
+          "shopId": 80384055,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 1,
+          "isClosedDisp": true,
+          "closedMessage": "※【いずれかのみ】ヒルドを正式加入させなかったため交換できません",
+          "closedItemName": ""
+        },
+        {
+          "condValues": [
             94073601
           ],
           "shopId": 80384055,
           "condType": "questGroupClear",
           "condNum": 1,
-          "priority": 0,
+          "priority": 2,
           "isClosedDisp": true,
           "closedMessage": "※【いずれかのみ】ヒルドを正式加入させた場合のみ交換可能",
           "closedItemName": ""
@@ -2766,12 +2814,24 @@
       "releaseConditions": [
         {
           "condValues": [
+            94073951
+          ],
+          "shopId": 80384056,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 1,
+          "isClosedDisp": true,
+          "closedMessage": "※【いずれかのみ】ヒルドを正式加入させなかったため交換できません",
+          "closedItemName": ""
+        },
+        {
+          "condValues": [
             94073601
           ],
           "shopId": 80384056,
           "condType": "questGroupClear",
           "condNum": 1,
-          "priority": 0,
+          "priority": 2,
           "isClosedDisp": true,
           "closedMessage": "※【いずれかのみ】ヒルドを正式加入させた場合のみ交換可能",
           "closedItemName": ""
@@ -2826,12 +2886,24 @@
       "releaseConditions": [
         {
           "condValues": [
+            94073951
+          ],
+          "shopId": 80384057,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 1,
+          "isClosedDisp": true,
+          "closedMessage": "※【いずれかのみ】ヒルドを正式加入させなかったため交換できません",
+          "closedItemName": ""
+        },
+        {
+          "condValues": [
             94073601
           ],
           "shopId": 80384057,
           "condType": "questGroupClear",
           "condNum": 1,
-          "priority": 0,
+          "priority": 2,
           "isClosedDisp": true,
           "closedMessage": "※【いずれかのみ】ヒルドを正式加入させた場合のみ交換可能",
           "closedItemName": ""
@@ -2886,12 +2958,24 @@
       "releaseConditions": [
         {
           "condValues": [
+            94073952
+          ],
+          "shopId": 80384058,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 1,
+          "isClosedDisp": true,
+          "closedMessage": "※【いずれかのみ】オルトリンデを正式加入させなかったため交換できません",
+          "closedItemName": ""
+        },
+        {
+          "condValues": [
             94073601
           ],
           "shopId": 80384058,
           "condType": "questGroupClear",
           "condNum": 1,
-          "priority": 0,
+          "priority": 2,
           "isClosedDisp": true,
           "closedMessage": "※【いずれかのみ】オルトリンデを正式加入させた場合のみ交換可能",
           "closedItemName": ""
@@ -2946,12 +3030,24 @@
       "releaseConditions": [
         {
           "condValues": [
+            94073952
+          ],
+          "shopId": 80384059,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 1,
+          "isClosedDisp": true,
+          "closedMessage": "※【いずれかのみ】オルトリンデを正式加入させなかったため交換できません",
+          "closedItemName": ""
+        },
+        {
+          "condValues": [
             94073601
           ],
           "shopId": 80384059,
           "condType": "questGroupClear",
           "condNum": 1,
-          "priority": 0,
+          "priority": 2,
           "isClosedDisp": true,
           "closedMessage": "※【いずれかのみ】オルトリンデを正式加入させた場合のみ交換可能",
           "closedItemName": ""
@@ -3006,12 +3102,24 @@
       "releaseConditions": [
         {
           "condValues": [
+            94073952
+          ],
+          "shopId": 80384060,
+          "condType": "questClear",
+          "condNum": 1,
+          "priority": 1,
+          "isClosedDisp": true,
+          "closedMessage": "※【いずれかのみ】オルトリンデを正式加入させなかったため交換できません",
+          "closedItemName": ""
+        },
+        {
+          "condValues": [
             94073601
           ],
           "shopId": 80384060,
           "condType": "questGroupClear",
           "condNum": 1,
-          "priority": 0,
+          "priority": 2,
           "isClosedDisp": true,
           "closedMessage": "※【いずれかのみ】オルトリンデを正式加入させた場合のみ交換可能",
           "closedItemName": ""
@@ -5576,6 +5684,18 @@
           "limitCount": 0,
           "image": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/1098248300/1098248300_merged.png",
           "faceId": 0
+        },
+        {
+          "imageId": 109824831,
+          "limitCount": 0,
+          "image": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/1098248310/1098248310_merged.png",
+          "faceId": 0
+        },
+        {
+          "imageId": 109824730,
+          "limitCount": 0,
+          "image": "https://assets.atlasacademy.io/GameData/JP/CharaFigure/1098247300/1098247300_merged.png",
+          "faceId": 0
         }
       ],
       "tabOnImage": "https://assets.atlasacademy.io/GameData/JP/EventReward/btn_txt_on_80384_0.png",
@@ -5758,6 +5878,12 @@
           "condType": "questNotClear",
           "condTargetId": 94074004,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -5776,6 +5902,12 @@
           "condGroup": 1,
           "condType": "questNotClear",
           "condTargetId": 94074004,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
           "condNum": 1
         }
       ]
@@ -5796,6 +5928,12 @@
           "condType": "questNotClear",
           "condTargetId": 94074004,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -5814,6 +5952,12 @@
           "condGroup": 1,
           "condType": "questNotClear",
           "condTargetId": 94074004,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
           "condNum": 1
         }
       ]
@@ -5834,6 +5978,12 @@
           "condType": "questNotClear",
           "condTargetId": 94074004,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -5852,6 +6002,12 @@
           "condGroup": 1,
           "condType": "questNotClear",
           "condTargetId": 94074009,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
           "condNum": 1
         }
       ]
@@ -5872,6 +6028,12 @@
           "condType": "questNotClear",
           "condTargetId": 94074009,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -5890,6 +6052,12 @@
           "condGroup": 1,
           "condType": "questNotClear",
           "condTargetId": 94074009,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
           "condNum": 1
         }
       ]
@@ -5910,6 +6078,12 @@
           "condType": "questNotClear",
           "condTargetId": 94074009,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -5929,6 +6103,12 @@
           "condType": "questNotClear",
           "condTargetId": 94074009,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -5941,6 +6121,12 @@
           "condGroup": 1,
           "condType": "questClear",
           "condTargetId": 94074009,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
           "condNum": 1
         }
       ]
@@ -5955,6 +6141,12 @@
           "condType": "questClear",
           "condTargetId": 94074009,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -5967,6 +6159,12 @@
           "condGroup": 1,
           "condType": "questClear",
           "condTargetId": 94074009,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
           "condNum": 1
         }
       ]
@@ -5981,6 +6179,12 @@
           "condType": "questClear",
           "condTargetId": 94074009,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -5993,6 +6197,12 @@
           "condGroup": 1,
           "condType": "questClear",
           "condTargetId": 94074009,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
           "condNum": 1
         }
       ]
@@ -6013,6 +6223,12 @@
           "condType": "questNotClear",
           "condTargetId": 94074013,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -6031,6 +6247,12 @@
           "condGroup": 1,
           "condType": "questNotClear",
           "condTargetId": 94074013,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
           "condNum": 1
         }
       ]
@@ -6051,6 +6273,12 @@
           "condType": "questNotClear",
           "condTargetId": 94074013,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -6069,6 +6297,12 @@
           "condGroup": 1,
           "condType": "questNotClear",
           "condTargetId": 94074013,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
           "condNum": 1
         }
       ]
@@ -6089,6 +6323,12 @@
           "condType": "questNotClear",
           "condTargetId": 94074013,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -6107,6 +6347,12 @@
           "condGroup": 1,
           "condType": "questNotClear",
           "condTargetId": 94074018,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
           "condNum": 1
         }
       ]
@@ -6127,6 +6373,12 @@
           "condType": "questNotClear",
           "condTargetId": 94074018,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -6145,6 +6397,12 @@
           "condGroup": 1,
           "condType": "questNotClear",
           "condTargetId": 94074018,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
           "condNum": 1
         }
       ]
@@ -6165,6 +6423,12 @@
           "condType": "questNotClear",
           "condTargetId": 94074018,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -6184,6 +6448,12 @@
           "condType": "questNotClear",
           "condTargetId": 94074018,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -6196,6 +6466,12 @@
           "condGroup": 1,
           "condType": "questClear",
           "condTargetId": 94074018,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
           "condNum": 1
         }
       ]
@@ -6210,6 +6486,12 @@
           "condType": "questClear",
           "condTargetId": 94074018,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -6222,6 +6504,12 @@
           "condGroup": 1,
           "condType": "questClear",
           "condTargetId": 94074018,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
           "condNum": 1
         }
       ]
@@ -6236,6 +6524,12 @@
           "condType": "questClear",
           "condTargetId": 94074018,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -6248,6 +6542,12 @@
           "condGroup": 1,
           "condType": "questClear",
           "condTargetId": 94074018,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
           "condNum": 1
         }
       ]
@@ -6268,6 +6568,12 @@
           "condType": "questNotClear",
           "condTargetId": 94074022,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -6286,6 +6592,12 @@
           "condGroup": 1,
           "condType": "questNotClear",
           "condTargetId": 94074022,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
           "condNum": 1
         }
       ]
@@ -6306,6 +6618,12 @@
           "condType": "questNotClear",
           "condTargetId": 94074022,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -6324,6 +6642,12 @@
           "condGroup": 1,
           "condType": "questNotClear",
           "condTargetId": 94074022,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
           "condNum": 1
         }
       ]
@@ -6344,6 +6668,12 @@
           "condType": "questNotClear",
           "condTargetId": 94074022,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -6362,6 +6692,12 @@
           "condGroup": 1,
           "condType": "questNotClear",
           "condTargetId": 94074027,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
           "condNum": 1
         }
       ]
@@ -6382,6 +6718,12 @@
           "condType": "questNotClear",
           "condTargetId": 94074027,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -6400,6 +6742,12 @@
           "condGroup": 1,
           "condType": "questNotClear",
           "condTargetId": 94074027,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
           "condNum": 1
         }
       ]
@@ -6420,6 +6768,12 @@
           "condType": "questNotClear",
           "condTargetId": 94074027,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -6439,6 +6793,12 @@
           "condType": "questNotClear",
           "condTargetId": 94074027,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -6451,6 +6811,12 @@
           "condGroup": 1,
           "condType": "questClear",
           "condTargetId": 94074027,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
           "condNum": 1
         }
       ]
@@ -6465,6 +6831,12 @@
           "condType": "questClear",
           "condTargetId": 94074027,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -6477,6 +6849,12 @@
           "condGroup": 1,
           "condType": "questClear",
           "condTargetId": 94074027,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
           "condNum": 1
         }
       ]
@@ -6491,6 +6869,12 @@
           "condType": "questClear",
           "condTargetId": 94074027,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
         }
       ]
     },
@@ -6504,10 +6888,1212 @@
           "condType": "questClear",
           "condTargetId": 94074027,
           "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 196,
+      "message": "魔氷城は本来、ひんやり涼しく心地よいショッピングモール＆フードコートとして稼働するはずだった、とスカサハ＝スカディ談",
+      "probability": 250,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94073606,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074031,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 197,
+      "message": "入場客、特に子供たちの人気を受けて、城門前広場ヒーローショーが恒常イベント化。スポンサーにシバの女王が名乗りを上げる",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94073606,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074031,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 198,
+      "message": "魔氷城フードコートで発売予定だったという幻のホットドッグ、レシピ散逸の噂。アマゾネス・ドットコム、カエサル、シバの女王、レシピに懸賞金をかける",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94073606,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074031,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 199,
+      "message": "魔氷城の氷は多少の熱では溶けず、触っても手が貼り付いたりしないようになっている",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94073606,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074031,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 200,
+      "message": "子シロクマや海鳥の子、そして幼年型サーヴァントたちの間で、ヒーローごっこが大流行の兆し",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94073606,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074031,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 201,
+      "message": "スカサハ＝スカディ、「大事ないから医者たちはもう帰ってよい」と虚勢を張るも即座にダウン。アスクレピオス謹製の巨大注射とナイチンゲール謹製のアサルト・メディスンを前に涙目",
+      "probability": 250,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074031,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074036,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 202,
+      "message": "城門前広場ヒーローショー、セカンドシーズンに突入。新たなヴィラン『不死身の竜戦士』『喪服の花嫁』の正体は一体！？",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074031,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074036,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 203,
+      "message": "偶然にも幻のレシピを入手したゴルドルフ所長、城門前広場にホットドッグ露店を出すことに。「いやいや露店って。我々は先を急ぐのだがね！？」",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074031,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074036,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 204,
+      "message": "魔氷城の氷で作ったかき氷、時間が経っても溶けないことが判明。うっかり口にした黒髭、お腹をこわす",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074031,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074036,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 205,
+      "message": "ヒーローグッズというかヒロインＸＸグッズ、売れ行き快調。しかしヒロインＸＸがマージン契約をしていなかったため、販売元であるシバの女王が丸儲けとの噂",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074031,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074036,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 206,
+      "message": "紅女将、城門前広場で新たな露店を開くもたちまち大盛況、長蛇の列に。「ヒーローショーの間はお店はお休みでち」行列がエリアの魅力を削がないように、という紅女将の配慮か",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074036,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 207,
+      "message": "城門前広場ヒーローショー、クライマックス。ヒロインＸＸの新たな力のキーワードは『木馬』。ヴィラン『天空と冥界の女王』が呼び寄せた大死霊モンスターが吠える時、城門前広場に白き守護神が降臨する！",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074036,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 208,
+      "message": "新しい露店のホットドッグが爆発的ヒット。ゴルドルフ所長、レシピと店をブーディカとキルケーに預けてなんとか氷上クルーザーに合流",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074036,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 209,
+      "message": "キルケー、魔氷城かき氷をキュケオーンに転化させることに成功。これで食べてもお腹をこわさないが、豚にはなる",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074036,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 210,
+      "message": "ヒロインＸＸ、『北極アナスタシアまんじゅう』のキャンペーンキャラクターに。今度はマージン契約もちゃんとしている模様",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074036,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 211,
+      "message": "実はこのエリアでは鶏がたくさん飼育されている。鶏血はお札の文字用に、肉は唐揚げに",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94073607,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074040,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 212,
+      "message": "訪れたハサン系サーヴァント、最恐の出し物『山の翁』を最大限に警戒",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94073607,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074040,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 213,
+      "message": "道士の使う木の剣は、邪を払うという桃の木から作られている",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94073607,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074040,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 214,
+      "message": "新規アルバイトとしてヒマワリ頭のゴッホちゃんを採用",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94073607,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074040,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 215,
+      "message": "キョンシーは元々、出稼ぎ先で死んだ労働者の死体を故郷に送り届けるために作られたものだと言われている",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94073607,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074040,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 216,
+      "message": "鶏が大脱走したので酷吏キョンシーたちがピョンピョンと追いかける事件発生",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074040,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074045,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 217,
+      "message": "実は酷吏キョンシーは普通に歩けるタイプのキョンシーだが、皇帝に怒られるためあえてピョンピョン動く",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074040,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074045,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 218,
+      "message": "お札には様々な種類があり、酷吏キョンシーに貼られているのは武則天オリジナルのお札である",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074040,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074045,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 219,
+      "message": "館内での洗礼詠唱は禁止とさせていただきます",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074040,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074045,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 220,
+      "message": "『美人なら幽霊でも可』と意気揚々と乗り込んだ超人オリオンを待っていたのはアルテミスの姿だけが無限に映り続けるミラーハウスだった",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074040,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074045,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 221,
+      "message": "働きにはちゃんと報いる君主武則天、そのへんで寝ていた太歳星君にBGN（バックグラウンド呪い）代を支払う",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074045,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 222,
+      "message": "ヘシアン、順調に昇格し首無し部門のトップに。給金が十倍に",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074045,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 223,
+      "message": "「ここは合法的にお姉ちゃんと手を繋げる場所だ」と気付いた瞬間、徴弐の表情が変わった",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074045,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 224,
+      "message": "マルタさん！　『ヤコブの手足』もご遠慮ください！",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074045,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 225,
+      "message": "様々な恐怖が体験可能なこのエリアだが、なぜか猫が登場する出し物だけは支配人権限により封印されている",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074045,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 226,
+      "message": "ゲシュペンスト・ケッツァー、いつものようにギリギリで入稿。「間に合ったのだから文句はないでしょう」と言い張るもマルタに説教を受ける",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94073608,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074049,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 227,
+      "message": "ジャンヌ・ダルクのサークルであるSt.オルレアン、珍しくスランプに。純愛とは一体なんぞや？　マリーと二人思い悩んでいる様子。",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94073608,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074049,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 228,
+      "message": "サンチョ、『ドン・キホーテ・デ・ラ・マンチャの秘匿された冒険』の頒布を決意。没になったエピソードから幾つかをチョイス、面白おかしく執筆中",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94073608,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074049,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 229,
+      "message": "ミニなせいでスタッフもやや少なめ。レオニダス、自分を含めた三人で警備を担当することに",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94073608,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074049,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 230,
+      "message": "徐福ちゃん、不老不死の霊薬レシピ本を頒布。割と雑な材料集めと手段に、「本当かなー？」と疑念の声",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94073608,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074049,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 231,
+      "message": "ゲシュペンスト・ケッツァー、マスターを強引に引っ張って次回作についての打ち合わせ。ついでにチョコレートパフェも頼んでご満悦。しょうがないわね、一口くらいならあげてもいいわよ？　要らない？　いいから食え",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074049,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074054,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 232,
+      "message": "St.オルレアン、とりあえずシグルド＆ブリュンヒルデに話を聞いてみるが、やや血塗れで参考にならず。ならばとジークフリート＆クリームヒルトに話を聞いてみるが、クリームヒルトが奇声を上げて暴れ出したのでやっぱり参考にならない",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074049,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074054,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 233,
+      "message": "『ドン・キホーテ（略）冒険』好評につき、続刊を求める声が続出。サンチョ、即座に動画配信、コミカライズなど幅広く手がける。バーチャル騎士ドン・キホーテ爆誕",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074049,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074054,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 234,
+      "message": "三人が１００倍の力を発揮すれば、それは即ち３００人とイコールでは？　レオニダスは気付いた。これが数学だ",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074049,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074054,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 235,
+      "message": "荊軻、暗殺マニュアル本を頒布しようとして制止される。頒布すると暗殺ノウハウがばれるため。もっともな理由のために諦めて酒レビュー本に切り替えるも、ほぼ全部星五つついているので文章しか参考にならない",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074049,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questNotClear",
+          "condTargetId": 94074054,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 236,
+      "message": "ゲシュペンスト・ケッツァー、いつものお助け面子と共に温泉サウナマッサージとこの世の極楽を謳歌する。まあ、それが終われば次回作に向けての準備なのだけどね！",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074054,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 237,
+      "message": "St.オルレアン、とりあえず自分の考える純愛らしさを一杯に詰めた新作を送り出す。それなりに好評だったものの、純愛でしたか？　と問われると読者が一斉に難しい顔をして考え込む事態に。「ラブコメに巨大弩（バリスタ）って必要？」「はい！」",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074054,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 238,
+      "message": "バーチャル騎士ドン・キホーテ、煽りに反射的に一騎討ちを申し込んで軽い炎上。本当に一騎討ちをしてボロ勝ちした相手が炎上。ドン・キホーテ、約束通り引退。サンチョもお供をするために引退。彼女の本は伝説の稀覯本になると予想される",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074054,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 239,
+      "message": "本当に三人で乗り切りやがった",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074054,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 240,
+      "message": "メイヴ、『ハチミツで作ってみた』シリーズ生配信を開始。過激かつ自由な発言が人気を呼ぶも、本人の「飽きたわ」の発言で電撃引退",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94074054,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 241,
+      "message": "聖杯の回収に伴い、アークティック・サマーワールドの閉園が決定。スカサハ＝スカディ、「これまでの愛顧に心より感謝する」と発表",
+      "probability": 700,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94073611,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 242,
+      "message": "今回も壺にインした状態となった蘆屋道満、七つのエリアにそれぞれ一つずつ呪詛を仕込んだと自白。鬼一法眼は「放っておけ」と言い捨てるも、通りすがりの太公望は「放っておかないほうがいいと思うなァ僕は」とコメント",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94073611,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 243,
+      "message": "アークティック・タワーの太陽、物理的存在ではなくあくまで概念か？　複数のキャスターによる検証レポートが提出される",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94073611,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 244,
+      "message": "伊吹童子、『真夏の応援団』を自称。古代ローマ系英霊たちを前に頭を垂れるコンスタンティノス11世を応援する姿が目撃される",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94073611,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 245,
+      "message": "来園者である動物たち、どこへともなく去って行く。いつか人理が取り戻されても、彼らはこの夏の記憶を持たないだろう。けれどもしかしたら、「楽しい夢を見た」という想いの欠片ぐらいは…",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "questClear",
+          "condTargetId": 94073611,
+          "condNum": 1
+        },
+        {
+          "condGroup": 1,
+          "condType": "questAvailable",
+          "condTargetId": 94073801,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 246,
+      "message": "※※※　情報収集停止　※※※",
+      "probability": 50,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "eventEnd",
+          "condTargetId": 80384,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 247,
+      "message": "アークティック・サマーワールドはこれにて閉園となります。短い間ではありましたが、ご愛顧いただきまことにありがとうございました",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "eventEnd",
+          "condTargetId": 80384,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 248,
+      "message": "[#来年巡]もまた、良き夏をお過ごしください",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "eventEnd",
+          "condTargetId": 80384,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 249,
+      "message": "夏バテにはご注意を！",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "eventEnd",
+          "condTargetId": 80384,
+          "condNum": 1
+        }
+      ]
+    },
+    {
+      "bulletinBoardId": 250,
+      "message": "夏は、水分補給を忘れずに！",
+      "probability": 100,
+      "releaseConditions": [
+        {
+          "condGroup": 1,
+          "condType": "eventEnd",
+          "condTargetId": 80384,
+          "condNum": 1
         }
       ]
     }
   ],
+  "recipes": [],
   "cooltime": {
     "rewards": [
       {
@@ -6522,19 +8108,29 @@
           "condId": 94073602,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074001,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94073602,
+            "condNum": 0
+          }
+        ],
         "cooltime": 108000,
         "addEventPointRate": 500,
         "gifts": [
           {
-            "id": 10036,
+            "id": 10105,
             "type": "item",
             "objectId": 1,
             "priority": 0,
-            "num": 10000,
+            "num": 1,
             "giftAdds": []
           }
         ],
-        "upperLimitGiftNum": 800
+        "upperLimitGiftNum": 8000000
       },
       {
         "spotId": 914320,
@@ -6548,19 +8144,29 @@
           "condId": 94074001,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074002,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074001,
+            "condNum": 0
+          }
+        ],
         "cooltime": 104400,
         "addEventPointRate": 1000,
         "gifts": [
           {
-            "id": 10036,
+            "id": 10105,
             "type": "item",
             "objectId": 1,
             "priority": 0,
-            "num": 10000,
+            "num": 1,
             "giftAdds": []
           }
         ],
-        "upperLimitGiftNum": 800
+        "upperLimitGiftNum": 8000000
       },
       {
         "spotId": 914320,
@@ -6574,19 +8180,29 @@
           "condId": 94074002,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074003,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074002,
+            "condNum": 0
+          }
+        ],
         "cooltime": 100800,
         "addEventPointRate": 1500,
         "gifts": [
           {
-            "id": 10036,
+            "id": 10105,
             "type": "item",
             "objectId": 1,
             "priority": 0,
-            "num": 10000,
+            "num": 1,
             "giftAdds": []
           }
         ],
-        "upperLimitGiftNum": 800
+        "upperLimitGiftNum": 8000000
       },
       {
         "spotId": 914320,
@@ -6600,19 +8216,29 @@
           "condId": 94074003,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074004,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074003,
+            "condNum": 0
+          }
+        ],
         "cooltime": 97200,
         "addEventPointRate": 2000,
         "gifts": [
           {
-            "id": 10036,
+            "id": 10105,
             "type": "item",
             "objectId": 1,
             "priority": 0,
-            "num": 10000,
+            "num": 1,
             "giftAdds": []
           }
         ],
-        "upperLimitGiftNum": 800
+        "upperLimitGiftNum": 8000000
       },
       {
         "spotId": 914320,
@@ -6626,19 +8252,29 @@
           "condId": 94074004,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074005,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074004,
+            "condNum": 0
+          }
+        ],
         "cooltime": 93600,
         "addEventPointRate": 2500,
         "gifts": [
           {
-            "id": 10036,
+            "id": 10105,
             "type": "item",
             "objectId": 1,
             "priority": 0,
-            "num": 10000,
+            "num": 1,
             "giftAdds": []
           }
         ],
-        "upperLimitGiftNum": 800
+        "upperLimitGiftNum": 8000000
       },
       {
         "spotId": 914320,
@@ -6652,19 +8288,29 @@
           "condId": 94074005,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074006,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074005,
+            "condNum": 0
+          }
+        ],
         "cooltime": 90000,
         "addEventPointRate": 3000,
         "gifts": [
           {
-            "id": 10036,
+            "id": 10105,
             "type": "item",
             "objectId": 1,
             "priority": 0,
-            "num": 10000,
+            "num": 1,
             "giftAdds": []
           }
         ],
-        "upperLimitGiftNum": 800
+        "upperLimitGiftNum": 8000000
       },
       {
         "spotId": 914320,
@@ -6678,19 +8324,29 @@
           "condId": 94074006,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074007,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074006,
+            "condNum": 0
+          }
+        ],
         "cooltime": 86400,
         "addEventPointRate": 3500,
         "gifts": [
           {
-            "id": 10036,
+            "id": 10105,
             "type": "item",
             "objectId": 1,
             "priority": 0,
-            "num": 10000,
+            "num": 1,
             "giftAdds": []
           }
         ],
-        "upperLimitGiftNum": 800
+        "upperLimitGiftNum": 8000000
       },
       {
         "spotId": 914320,
@@ -6704,19 +8360,29 @@
           "condId": 94074007,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074008,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074007,
+            "condNum": 0
+          }
+        ],
         "cooltime": 82800,
         "addEventPointRate": 4000,
         "gifts": [
           {
-            "id": 10036,
+            "id": 10105,
             "type": "item",
             "objectId": 1,
             "priority": 0,
-            "num": 10000,
+            "num": 1,
             "giftAdds": []
           }
         ],
-        "upperLimitGiftNum": 800
+        "upperLimitGiftNum": 8000000
       },
       {
         "spotId": 914320,
@@ -6730,19 +8396,29 @@
           "condId": 94074008,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074009,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074008,
+            "condNum": 0
+          }
+        ],
         "cooltime": 79200,
         "addEventPointRate": 4500,
         "gifts": [
           {
-            "id": 10036,
+            "id": 10105,
             "type": "item",
             "objectId": 1,
             "priority": 0,
-            "num": 10000,
+            "num": 1,
             "giftAdds": []
           }
         ],
-        "upperLimitGiftNum": 800
+        "upperLimitGiftNum": 8000000
       },
       {
         "spotId": 914320,
@@ -6756,19 +8432,29 @@
           "condId": 94074009,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074010,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074009,
+            "condNum": 0
+          }
+        ],
         "cooltime": 72000,
         "addEventPointRate": 5000,
         "gifts": [
           {
-            "id": 10036,
+            "id": 10105,
             "type": "item",
             "objectId": 1,
             "priority": 0,
-            "num": 10000,
+            "num": 1,
             "giftAdds": []
           }
         ],
-        "upperLimitGiftNum": 800
+        "upperLimitGiftNum": 8000000
       },
       {
         "spotId": 914321,
@@ -6782,6 +8468,16 @@
           "condId": 94073603,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074011,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94073603,
+            "condNum": 0
+          }
+        ],
         "cooltime": 162000,
         "addEventPointRate": 700,
         "gifts": [
@@ -6808,6 +8504,16 @@
           "condId": 94074010,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074012,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074010,
+            "condNum": 0
+          }
+        ],
         "cooltime": 156600,
         "addEventPointRate": 1400,
         "gifts": [
@@ -6834,6 +8540,16 @@
           "condId": 94074011,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074013,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074011,
+            "condNum": 0
+          }
+        ],
         "cooltime": 151200,
         "addEventPointRate": 2100,
         "gifts": [
@@ -6860,6 +8576,16 @@
           "condId": 94074012,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074014,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074012,
+            "condNum": 0
+          }
+        ],
         "cooltime": 145800,
         "addEventPointRate": 2800,
         "gifts": [
@@ -6886,6 +8612,16 @@
           "condId": 94074013,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074015,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074013,
+            "condNum": 0
+          }
+        ],
         "cooltime": 140400,
         "addEventPointRate": 3500,
         "gifts": [
@@ -6912,6 +8648,16 @@
           "condId": 94074014,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074016,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074014,
+            "condNum": 0
+          }
+        ],
         "cooltime": 135000,
         "addEventPointRate": 4200,
         "gifts": [
@@ -6938,6 +8684,16 @@
           "condId": 94074015,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074017,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074015,
+            "condNum": 0
+          }
+        ],
         "cooltime": 129600,
         "addEventPointRate": 4900,
         "gifts": [
@@ -6964,6 +8720,16 @@
           "condId": 94074016,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074018,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074016,
+            "condNum": 0
+          }
+        ],
         "cooltime": 124200,
         "addEventPointRate": 5600,
         "gifts": [
@@ -6990,6 +8756,16 @@
           "condId": 94074017,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074019,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074017,
+            "condNum": 0
+          }
+        ],
         "cooltime": 118800,
         "addEventPointRate": 6300,
         "gifts": [
@@ -7016,6 +8792,16 @@
           "condId": 94074018,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074020,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074018,
+            "condNum": 0
+          }
+        ],
         "cooltime": 108000,
         "addEventPointRate": 7000,
         "gifts": [
@@ -7042,6 +8828,16 @@
           "condId": 94073604,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074021,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94073604,
+            "condNum": 0
+          }
+        ],
         "cooltime": 270000,
         "addEventPointRate": 1000,
         "gifts": [
@@ -7068,6 +8864,16 @@
           "condId": 94074019,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074022,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074019,
+            "condNum": 0
+          }
+        ],
         "cooltime": 261000,
         "addEventPointRate": 2000,
         "gifts": [
@@ -7094,6 +8900,16 @@
           "condId": 94074020,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074023,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074020,
+            "condNum": 0
+          }
+        ],
         "cooltime": 252000,
         "addEventPointRate": 3000,
         "gifts": [
@@ -7120,6 +8936,16 @@
           "condId": 94074021,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074024,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074021,
+            "condNum": 0
+          }
+        ],
         "cooltime": 243000,
         "addEventPointRate": 4000,
         "gifts": [
@@ -7146,6 +8972,16 @@
           "condId": 94074022,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074025,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074022,
+            "condNum": 0
+          }
+        ],
         "cooltime": 234000,
         "addEventPointRate": 5000,
         "gifts": [
@@ -7172,6 +9008,16 @@
           "condId": 94074023,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074026,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074023,
+            "condNum": 0
+          }
+        ],
         "cooltime": 225000,
         "addEventPointRate": 6000,
         "gifts": [
@@ -7198,6 +9044,16 @@
           "condId": 94074024,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074027,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074024,
+            "condNum": 0
+          }
+        ],
         "cooltime": 216000,
         "addEventPointRate": 7000,
         "gifts": [
@@ -7224,6 +9080,16 @@
           "condId": 94074025,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074028,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074025,
+            "condNum": 0
+          }
+        ],
         "cooltime": 207000,
         "addEventPointRate": 8000,
         "gifts": [
@@ -7250,6 +9116,16 @@
           "condId": 94074026,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074029,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074026,
+            "condNum": 0
+          }
+        ],
         "cooltime": 198000,
         "addEventPointRate": 9000,
         "gifts": [
@@ -7276,6 +9152,16 @@
           "condId": 94074027,
           "condNum": 0
         },
+        "releaseConditions": [
+          {
+            "id": 20074030,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074027,
+            "condNum": 0
+          }
+        ],
         "cooltime": 180000,
         "addEventPointRate": 10000,
         "gifts": [
@@ -7283,6 +9169,1086 @@
             "id": 25319,
             "type": "item",
             "objectId": 6528,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914323,
+        "lv": 1,
+        "name": "極北魔氷城",
+        "commonRelease": {
+          "id": 20074031,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94073606,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074031,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94073606,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 216000,
+        "addEventPointRate": 1600,
+        "gifts": [
+          {
+            "id": 25395,
+            "type": "item",
+            "objectId": 6535,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914323,
+        "lv": 2,
+        "name": "極北魔氷城",
+        "commonRelease": {
+          "id": 20074032,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074028,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074032,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074028,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 208800,
+        "addEventPointRate": 3200,
+        "gifts": [
+          {
+            "id": 25395,
+            "type": "item",
+            "objectId": 6535,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914323,
+        "lv": 3,
+        "name": "極北魔氷城",
+        "commonRelease": {
+          "id": 20074033,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074029,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074033,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074029,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 201600,
+        "addEventPointRate": 4800,
+        "gifts": [
+          {
+            "id": 25395,
+            "type": "item",
+            "objectId": 6535,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914323,
+        "lv": 4,
+        "name": "極北魔氷城",
+        "commonRelease": {
+          "id": 20074034,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074030,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074034,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074030,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 194400,
+        "addEventPointRate": 6400,
+        "gifts": [
+          {
+            "id": 25395,
+            "type": "item",
+            "objectId": 6535,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914323,
+        "lv": 5,
+        "name": "極北魔氷城",
+        "commonRelease": {
+          "id": 20074035,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074031,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074035,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074031,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 187200,
+        "addEventPointRate": 8000,
+        "gifts": [
+          {
+            "id": 25395,
+            "type": "item",
+            "objectId": 6535,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914323,
+        "lv": 6,
+        "name": "極北魔氷城",
+        "commonRelease": {
+          "id": 20074036,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074032,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074036,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074032,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 180000,
+        "addEventPointRate": 9600,
+        "gifts": [
+          {
+            "id": 25395,
+            "type": "item",
+            "objectId": 6535,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914323,
+        "lv": 7,
+        "name": "極北魔氷城",
+        "commonRelease": {
+          "id": 20074037,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074033,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074037,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074033,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 172800,
+        "addEventPointRate": 11200,
+        "gifts": [
+          {
+            "id": 25395,
+            "type": "item",
+            "objectId": 6535,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914323,
+        "lv": 8,
+        "name": "極北魔氷城",
+        "commonRelease": {
+          "id": 20074038,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074034,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074038,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074034,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 165600,
+        "addEventPointRate": 12800,
+        "gifts": [
+          {
+            "id": 25395,
+            "type": "item",
+            "objectId": 6535,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914323,
+        "lv": 9,
+        "name": "極北魔氷城",
+        "commonRelease": {
+          "id": 20074039,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074035,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074039,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074035,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 158400,
+        "addEventPointRate": 14400,
+        "gifts": [
+          {
+            "id": 25395,
+            "type": "item",
+            "objectId": 6535,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914323,
+        "lv": 10,
+        "name": "極北魔氷城",
+        "commonRelease": {
+          "id": 20074040,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074036,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074040,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074036,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 144000,
+        "addEventPointRate": 16000,
+        "gifts": [
+          {
+            "id": 25395,
+            "type": "item",
+            "objectId": 6535,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914324,
+        "lv": 1,
+        "name": "ほーんてっど鬼屋",
+        "commonRelease": {
+          "id": 20074041,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94073607,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074041,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94073607,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 162000,
+        "addEventPointRate": 2500,
+        "gifts": [
+          {
+            "id": 20401,
+            "type": "item",
+            "objectId": 6505,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914324,
+        "lv": 2,
+        "name": "ほーんてっど鬼屋",
+        "commonRelease": {
+          "id": 20074042,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074037,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074042,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074037,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 156600,
+        "addEventPointRate": 5000,
+        "gifts": [
+          {
+            "id": 20401,
+            "type": "item",
+            "objectId": 6505,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914324,
+        "lv": 3,
+        "name": "ほーんてっど鬼屋",
+        "commonRelease": {
+          "id": 20074043,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074038,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074043,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074038,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 151200,
+        "addEventPointRate": 7500,
+        "gifts": [
+          {
+            "id": 20401,
+            "type": "item",
+            "objectId": 6505,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914324,
+        "lv": 4,
+        "name": "ほーんてっど鬼屋",
+        "commonRelease": {
+          "id": 20074044,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074039,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074044,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074039,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 145800,
+        "addEventPointRate": 10000,
+        "gifts": [
+          {
+            "id": 20401,
+            "type": "item",
+            "objectId": 6505,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914324,
+        "lv": 5,
+        "name": "ほーんてっど鬼屋",
+        "commonRelease": {
+          "id": 20074045,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074040,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074045,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074040,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 140400,
+        "addEventPointRate": 12500,
+        "gifts": [
+          {
+            "id": 20401,
+            "type": "item",
+            "objectId": 6505,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914324,
+        "lv": 6,
+        "name": "ほーんてっど鬼屋",
+        "commonRelease": {
+          "id": 20074046,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074041,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074046,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074041,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 135000,
+        "addEventPointRate": 15000,
+        "gifts": [
+          {
+            "id": 20401,
+            "type": "item",
+            "objectId": 6505,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914324,
+        "lv": 7,
+        "name": "ほーんてっど鬼屋",
+        "commonRelease": {
+          "id": 20074047,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074042,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074047,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074042,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 129600,
+        "addEventPointRate": 17500,
+        "gifts": [
+          {
+            "id": 20401,
+            "type": "item",
+            "objectId": 6505,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914324,
+        "lv": 8,
+        "name": "ほーんてっど鬼屋",
+        "commonRelease": {
+          "id": 20074048,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074043,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074048,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074043,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 124200,
+        "addEventPointRate": 20000,
+        "gifts": [
+          {
+            "id": 20401,
+            "type": "item",
+            "objectId": 6505,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914324,
+        "lv": 9,
+        "name": "ほーんてっど鬼屋",
+        "commonRelease": {
+          "id": 20074049,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074044,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074049,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074044,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 118800,
+        "addEventPointRate": 22500,
+        "gifts": [
+          {
+            "id": 20401,
+            "type": "item",
+            "objectId": 6505,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914324,
+        "lv": 10,
+        "name": "ほーんてっど鬼屋",
+        "commonRelease": {
+          "id": 20074050,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074045,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074050,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074045,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 108000,
+        "addEventPointRate": 25000,
+        "gifts": [
+          {
+            "id": 20401,
+            "type": "item",
+            "objectId": 6505,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914325,
+        "lv": 1,
+        "name": "ミニサバフェス会場",
+        "commonRelease": {
+          "id": 20074051,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94073608,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074051,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94073608,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 216000,
+        "addEventPointRate": 3700,
+        "gifts": [
+          {
+            "id": 21101,
+            "type": "item",
+            "objectId": 6511,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914325,
+        "lv": 2,
+        "name": "ミニサバフェス会場",
+        "commonRelease": {
+          "id": 20074052,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074046,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074052,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074046,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 208800,
+        "addEventPointRate": 7400,
+        "gifts": [
+          {
+            "id": 21101,
+            "type": "item",
+            "objectId": 6511,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914325,
+        "lv": 3,
+        "name": "ミニサバフェス会場",
+        "commonRelease": {
+          "id": 20074053,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074047,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074053,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074047,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 201600,
+        "addEventPointRate": 11100,
+        "gifts": [
+          {
+            "id": 21101,
+            "type": "item",
+            "objectId": 6511,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914325,
+        "lv": 4,
+        "name": "ミニサバフェス会場",
+        "commonRelease": {
+          "id": 20074054,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074048,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074054,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074048,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 194400,
+        "addEventPointRate": 14800,
+        "gifts": [
+          {
+            "id": 21101,
+            "type": "item",
+            "objectId": 6511,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914325,
+        "lv": 5,
+        "name": "ミニサバフェス会場",
+        "commonRelease": {
+          "id": 20074055,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074049,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074055,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074049,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 187200,
+        "addEventPointRate": 18500,
+        "gifts": [
+          {
+            "id": 21101,
+            "type": "item",
+            "objectId": 6511,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914325,
+        "lv": 6,
+        "name": "ミニサバフェス会場",
+        "commonRelease": {
+          "id": 20074056,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074050,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074056,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074050,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 180000,
+        "addEventPointRate": 22200,
+        "gifts": [
+          {
+            "id": 21101,
+            "type": "item",
+            "objectId": 6511,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914325,
+        "lv": 7,
+        "name": "ミニサバフェス会場",
+        "commonRelease": {
+          "id": 20074057,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074051,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074057,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074051,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 172800,
+        "addEventPointRate": 25900,
+        "gifts": [
+          {
+            "id": 21101,
+            "type": "item",
+            "objectId": 6511,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914325,
+        "lv": 8,
+        "name": "ミニサバフェス会場",
+        "commonRelease": {
+          "id": 20074058,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074052,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074058,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074052,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 165600,
+        "addEventPointRate": 29600,
+        "gifts": [
+          {
+            "id": 21101,
+            "type": "item",
+            "objectId": 6511,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914325,
+        "lv": 9,
+        "name": "ミニサバフェス会場",
+        "commonRelease": {
+          "id": 20074059,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074053,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074059,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074053,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 158400,
+        "addEventPointRate": 33300,
+        "gifts": [
+          {
+            "id": 21101,
+            "type": "item",
+            "objectId": 6511,
+            "priority": 0,
+            "num": 1,
+            "giftAdds": []
+          }
+        ],
+        "upperLimitGiftNum": 5
+      },
+      {
+        "spotId": 914325,
+        "lv": 10,
+        "name": "ミニサバフェス会場",
+        "commonRelease": {
+          "id": 20074060,
+          "priority": 1,
+          "condGroup": 1,
+          "condType": "questClear",
+          "condId": 94074054,
+          "condNum": 0
+        },
+        "releaseConditions": [
+          {
+            "id": 20074060,
+            "priority": 1,
+            "condGroup": 1,
+            "condType": "questClear",
+            "condId": 94074054,
+            "condNum": 0
+          }
+        ],
+        "cooltime": 144000,
+        "addEventPointRate": 37000,
+        "gifts": [
+          {
+            "id": 21101,
+            "type": "item",
+            "objectId": 6511,
             "priority": 0,
             "num": 1,
             "giftAdds": []
@@ -7624,7 +10590,7 @@
           "condValue": 0,
           "priority": 6910,
           "svtVoiceType": "eventReward",
-          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 9",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 6",
           "id": [
             "0_N090",
             "0_N091",
@@ -7695,6 +10661,441 @@
       "condType": "event",
       "condValue": 80384,
       "startedAt": 1660132800,
+      "endedAt": 1901199599
+    },
+    {
+      "slot": 0,
+      "idx": 1,
+      "guideImageId": 109824820,
+      "voiceLines": [
+        {
+          "name": "イベントについて 6",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6940,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 7",
+          "id": [
+            "0_N060",
+            "0_N061",
+            "0_N062",
+            "0_N063",
+            "0_N064",
+            "0_N065",
+            "0_N066",
+            "0_N067"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N060.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N061.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N062.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N063.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N064.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N065.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N066.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N067.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.3,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            1,
+            0,
+            4,
+            4,
+            0,
+            1,
+            3,
+            3
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "イベントについて 7",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6930,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 8",
+          "id": [
+            "0_N070",
+            "0_N071",
+            "0_N072",
+            "0_N073",
+            "0_N074",
+            "0_N075",
+            "0_N076"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N070.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N071.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N072.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N073.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N074.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N075.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N076.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            1,
+            0,
+            0,
+            1,
+            6,
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ],
+      "confirmVoiceLines": [],
+      "condType": "eventEnd",
+      "condValue": 80384,
+      "startedAt": 1661918400,
+      "endedAt": 1901199599
+    },
+    {
+      "slot": 1,
+      "idx": 0,
+      "guideImageId": 109824730,
+      "voiceLines": [
+        {
+          "name": "ショップついて 1",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6490,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 1",
+          "id": [
+            "0_I010",
+            "0_I011",
+            "0_I012",
+            "0_I013"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I010.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I011.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I012.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I013.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": [
+            {
+              "condGroup": 1,
+              "condType": "eventRewardDispCount",
+              "targetId": 80384,
+              "condValue": 2,
+              "condValues": [
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ショップついて 2",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6480,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 2",
+          "id": [
+            "0_I020",
+            "0_I021",
+            "0_I022",
+            "0_I023",
+            "0_I024",
+            "0_I025"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I020.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I021.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I022.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I023.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I024.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I025.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            0,
+            1,
+            6,
+            6,
+            9
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": [
+            {
+              "condGroup": 1,
+              "condType": "eventRewardDispCount",
+              "targetId": 80384,
+              "condValue": 2,
+              "condValues": [
+                2
+              ]
+            },
+            {
+              "condGroup": 1,
+              "condType": "questNotClear",
+              "targetId": 94073611,
+              "condValue": 0,
+              "condValues": [
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ショップついて 8",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6420,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 3",
+          "id": [
+            "0_I080",
+            "0_I081",
+            "0_I082",
+            "0_I083"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I080.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I081.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I082.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I083.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.3,
+            0.1
+          ],
+          "face": [
+            8,
+            8,
+            1,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 9",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6410,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 4",
+          "id": [
+            "0_I090",
+            "0_I091",
+            "0_I092"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I090.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I091.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I092.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1
+          ],
+          "face": [
+            6,
+            6,
+            9
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": [
+            {
+              "condGroup": 1,
+              "condType": "questClear",
+              "targetId": 94073611,
+              "condValue": 0,
+              "condValues": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "confirmVoiceLines": [],
+      "condType": "event",
+      "condValue": 80384,
+      "startedAt": 1660381200,
       "endedAt": 1901199599
     },
     {
@@ -7822,9 +11223,1396 @@
       "condValue": 80384,
       "startedAt": 1660132800,
       "endedAt": 1901199599
+    },
+    {
+      "slot": 1,
+      "idx": 0,
+      "guideImageId": 109824831,
+      "voiceLines": [
+        {
+          "name": "ショップついて 1",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6490,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 1",
+          "id": [
+            "0_I010",
+            "0_I011",
+            "0_I012",
+            "0_I013"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I010.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I011.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I012.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I013.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            7,
+            3,
+            0,
+            7
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": [
+            {
+              "condGroup": 1,
+              "condType": "eventRewardDispCount",
+              "targetId": 80384,
+              "condValue": 2,
+              "condValues": [
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ショップついて 2",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6480,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 2",
+          "id": [
+            "0_I020",
+            "0_I021",
+            "0_I022",
+            "0_I023",
+            "0_I024"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I020.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I021.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I022.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I023.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I024.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.3,
+            0.1,
+            0.1
+          ],
+          "face": [
+            3,
+            7,
+            8,
+            9,
+            3
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": [
+            {
+              "condGroup": 1,
+              "condType": "eventRewardDispCount",
+              "targetId": 80384,
+              "condValue": 2,
+              "condValues": [
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ショップついて 8",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6420,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 8",
+          "id": [
+            "0_I080",
+            "0_I081",
+            "0_I082",
+            "0_I083",
+            "0_I084",
+            "0_I085",
+            "0_I086",
+            "0_I087"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I080.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I081.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I082.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I083.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I084.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I085.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I086.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I087.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.3
+          ],
+          "face": [
+            9,
+            4,
+            4,
+            10,
+            0,
+            7,
+            7,
+            3
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ],
+      "confirmVoiceLines": [],
+      "condType": "event",
+      "condValue": 80384,
+      "startedAt": 1660381200,
+      "endedAt": 1901199599
+    },
+    {
+      "slot": 1,
+      "idx": 1,
+      "guideImageId": 109824730,
+      "voiceLines": [
+        {
+          "name": "ショップついて 6",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6440,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 8",
+          "id": [
+            "0_I060",
+            "0_I061",
+            "0_I062",
+            "0_I063",
+            "0_I064",
+            "0_I065",
+            "0_I066",
+            "0_I067"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I060.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I061.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I062.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I063.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I064.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I065.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I066.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I067.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.3,
+            0.1,
+            0.1,
+            0.3,
+            0.1,
+            0.1,
+            0.3
+          ],
+          "face": [
+            4,
+            8,
+            5,
+            14,
+            15,
+            15,
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 7",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6430,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 9",
+          "id": [
+            "0_I070",
+            "0_I071",
+            "0_I072",
+            "0_I073",
+            "0_I074",
+            "0_I075"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I070.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I071.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I072.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I073.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I074.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I075.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.3,
+            0.3,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            4,
+            8,
+            4,
+            0,
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ],
+      "confirmVoiceLines": [],
+      "condType": "eventEnd",
+      "condValue": 80384,
+      "startedAt": 1661918400,
+      "endedAt": 1901199599
+    },
+    {
+      "slot": 1,
+      "idx": 1,
+      "guideImageId": 109824830,
+      "voiceLines": [
+        {
+          "name": "ショップついて 6",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6440,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 7",
+          "id": [
+            "0_I060",
+            "0_I061",
+            "0_I062",
+            "0_I063",
+            "0_I064",
+            "0_I065"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I060.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I061.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I062.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I063.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I064.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I065.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.3,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            1,
+            0,
+            7,
+            0,
+            3,
+            14
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 7",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6430,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 8",
+          "id": [
+            "0_I070",
+            "0_I071",
+            "0_I072",
+            "0_I073",
+            "0_I074",
+            "0_I075",
+            "0_I076",
+            "0_I077",
+            "0_I078",
+            "0_I079"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I070.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I071.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I072.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I073.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I074.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I075.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I076.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I077.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I078.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I079.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.3,
+            0.1,
+            0.3,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            3,
+            4,
+            9,
+            4,
+            8,
+            0,
+            9,
+            5,
+            15,
+            14
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ],
+      "confirmVoiceLines": [],
+      "condType": "eventEnd",
+      "condValue": 80384,
+      "startedAt": 1661918400,
+      "endedAt": 1901199599
+    },
+    {
+      "slot": 1,
+      "idx": 1,
+      "guideImageId": 109824831,
+      "voiceLines": [
+        {
+          "name": "ショップついて 6",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6440,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 6",
+          "id": [
+            "0_I060",
+            "0_I061",
+            "0_I062",
+            "0_I063",
+            "0_I064",
+            "0_I065"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I060.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I061.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I062.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I063.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I064.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I065.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.3,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            1,
+            0,
+            7,
+            0,
+            3,
+            14
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 7",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6430,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 7",
+          "id": [
+            "0_I070",
+            "0_I071",
+            "0_I072",
+            "0_I073",
+            "0_I074",
+            "0_I075",
+            "0_I076",
+            "0_I077",
+            "0_I078",
+            "0_I079"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I070.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I071.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I072.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I073.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I074.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I075.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I076.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I077.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I078.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I079.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.3,
+            0.1,
+            0.3,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            3,
+            4,
+            9,
+            4,
+            8,
+            0,
+            9,
+            5,
+            15,
+            14
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ],
+      "confirmVoiceLines": [],
+      "condType": "eventEnd",
+      "condValue": 80384,
+      "startedAt": 1661918400,
+      "endedAt": 1901199599
     }
   ],
   "voices": [
+    {
+      "svtId": 109824730,
+      "voicePrefix": 0,
+      "type": "eventShop",
+      "voiceLines": [
+        {
+          "name": "ショップついて 1",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6490,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 1",
+          "id": [
+            "0_I010",
+            "0_I011",
+            "0_I012",
+            "0_I013"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I010.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I011.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I012.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I013.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": [
+            {
+              "condGroup": 1,
+              "condType": "eventRewardDispCount",
+              "targetId": 80384,
+              "condValue": 2,
+              "condValues": [
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ショップついて 2",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6480,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 2",
+          "id": [
+            "0_I020",
+            "0_I021",
+            "0_I022",
+            "0_I023",
+            "0_I024",
+            "0_I025"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I020.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I021.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I022.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I023.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I024.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I025.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            0,
+            0,
+            1,
+            6,
+            6,
+            9
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": [
+            {
+              "condGroup": 1,
+              "condType": "eventRewardDispCount",
+              "targetId": 80384,
+              "condValue": 2,
+              "condValues": [
+                2
+              ]
+            },
+            {
+              "condGroup": 1,
+              "condType": "questNotClear",
+              "targetId": 94073611,
+              "condValue": 0,
+              "condValues": [
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ショップついて 3",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6470,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 5",
+          "id": [
+            "0_I030",
+            "0_I031"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I030.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I031.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            1,
+            6
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventShopPurchase",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            },
+            {
+              "condType": "eventPeriod",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": [
+            {
+              "condGroup": 1,
+              "condType": "eventRewardDispCount",
+              "targetId": 80384,
+              "condValue": 1,
+              "condValues": [
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ショップついて 4",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6460,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 6",
+          "id": [
+            "0_I040",
+            "0_I041"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I040.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I041.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventShopPurchase",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            },
+            {
+              "condType": "eventPeriod",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": [
+            {
+              "condGroup": 1,
+              "condType": "eventRewardDispCount",
+              "targetId": 80384,
+              "condValue": 1,
+              "condValues": [
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ショップついて 5",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6450,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 7",
+          "id": [
+            "0_I050",
+            "0_I051",
+            "0_I052"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I050.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I051.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I052.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1
+          ],
+          "face": [
+            9,
+            9,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventShopPurchase",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            },
+            {
+              "condType": "eventPeriod",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": [
+            {
+              "condGroup": 1,
+              "condType": "eventRewardDispCount",
+              "targetId": 80384,
+              "condValue": 1,
+              "condValues": [
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ショップついて 6",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6440,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 8",
+          "id": [
+            "0_I060",
+            "0_I061",
+            "0_I062",
+            "0_I063",
+            "0_I064",
+            "0_I065",
+            "0_I066",
+            "0_I067"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I060.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I061.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I062.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I063.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I064.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I065.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I066.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I067.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.3,
+            0.1,
+            0.1,
+            0.3,
+            0.1,
+            0.1,
+            0.3
+          ],
+          "face": [
+            4,
+            8,
+            5,
+            14,
+            15,
+            15,
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 7",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6430,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 9",
+          "id": [
+            "0_I070",
+            "0_I071",
+            "0_I072",
+            "0_I073",
+            "0_I074",
+            "0_I075"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I070.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I071.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I072.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I073.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I074.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I075.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.3,
+            0.3,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            4,
+            8,
+            4,
+            0,
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 8",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6420,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 3",
+          "id": [
+            "0_I080",
+            "0_I081",
+            "0_I082",
+            "0_I083"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I080.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I081.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I082.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I083.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.3,
+            0.1
+          ],
+          "face": [
+            8,
+            8,
+            1,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 9",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6410,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 4",
+          "id": [
+            "0_I090",
+            "0_I091",
+            "0_I092"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I090.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I091.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_I092.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1
+          ],
+          "face": [
+            6,
+            6,
+            9
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": [
+            {
+              "condGroup": 1,
+              "condType": "questClear",
+              "targetId": 94073611,
+              "condValue": 0,
+              "condValues": [
+                0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "svtId": 109824730,
+      "voicePrefix": 0,
+      "type": "warBoard",
+      "voiceLines": [
+        {
+          "name": "聖杯戦線",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 4999,
+          "svtVoiceType": "warBoard",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 10",
+          "id": [
+            "0_X020"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_X020.mp3"
+          ],
+          "delay": [
+            0.0
+          ],
+          "face": [
+            0
+          ],
+          "form": [
+            0
+          ],
+          "text": [
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "聖杯戦線",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 4997,
+          "svtVoiceType": "warBoard",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 11",
+          "id": [
+            "0_X040"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824730/0_X040.mp3"
+          ],
+          "delay": [
+            0.0
+          ],
+          "face": [
+            0
+          ],
+          "form": [
+            0
+          ],
+          "text": [
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ]
+    },
     {
       "svtId": 109824820,
       "voicePrefix": 0,
@@ -8151,12 +12939,162 @@
           ]
         },
         {
+          "name": "イベントについて 6",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6940,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 7",
+          "id": [
+            "0_N060",
+            "0_N061",
+            "0_N062",
+            "0_N063",
+            "0_N064",
+            "0_N065",
+            "0_N066",
+            "0_N067"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N060.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N061.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N062.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N063.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N064.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N065.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N066.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N067.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.3,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            1,
+            0,
+            4,
+            4,
+            0,
+            1,
+            3,
+            3
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "イベントについて 7",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6930,
+          "svtVoiceType": "eventReward",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 8",
+          "id": [
+            "0_N070",
+            "0_N071",
+            "0_N072",
+            "0_N073",
+            "0_N074",
+            "0_N075",
+            "0_N076"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N070.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N071.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N072.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N073.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N074.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N075.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_N076.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            1,
+            0,
+            0,
+            1,
+            6,
+            0,
+            1
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
           "name": "イベントについて 9",
           "condType": "eventEnd",
           "condValue": 0,
           "priority": 6910,
           "svtVoiceType": "eventReward",
-          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 9",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 6",
           "id": [
             "0_N090",
             "0_N091",
@@ -8209,6 +13147,85 @@
             "",
             "",
             "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ]
+    },
+    {
+      "svtId": 109824820,
+      "voicePrefix": 0,
+      "type": "warBoard",
+      "voiceLines": [
+        {
+          "name": "聖杯戦線",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 5000,
+          "svtVoiceType": "warBoard",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 9",
+          "id": [
+            "0_X010"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_X010.mp3"
+          ],
+          "delay": [
+            0.0
+          ],
+          "face": [
+            0
+          ],
+          "form": [
+            0
+          ],
+          "text": [
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "聖杯戦線",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 4995,
+          "svtVoiceType": "warBoard",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 10",
+          "id": [
+            "0_X060"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824820/0_X060.mp3"
+          ],
+          "delay": [
+            0.0
+          ],
+          "face": [
+            0
+          ],
+          "form": [
+            0
+          ],
+          "text": [
             ""
           ],
           "subtitle": "",
@@ -8349,7 +13366,7 @@
           "condValue": 0,
           "priority": 6470,
           "svtVoiceType": "eventShop",
-          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 3",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 4",
           "id": [
             "0_I030",
             "0_I031"
@@ -8397,7 +13414,7 @@
           "condValue": 0,
           "priority": 6460,
           "svtVoiceType": "eventShop",
-          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 4",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 5",
           "id": [
             "0_I040",
             "0_I041",
@@ -8451,7 +13468,7 @@
           "condValue": 0,
           "priority": 6450,
           "svtVoiceType": "eventShop",
-          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 5",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 6",
           "id": [
             "0_I050",
             "0_I051"
@@ -8486,6 +13503,884 @@
             },
             {
               "condType": "eventPeriod",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 6",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6440,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 7",
+          "id": [
+            "0_I060",
+            "0_I061",
+            "0_I062",
+            "0_I063",
+            "0_I064",
+            "0_I065"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I060.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I061.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I062.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I063.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I064.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I065.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.3,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            1,
+            0,
+            7,
+            0,
+            3,
+            14
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 7",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6430,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 8",
+          "id": [
+            "0_I070",
+            "0_I071",
+            "0_I072",
+            "0_I073",
+            "0_I074",
+            "0_I075",
+            "0_I076",
+            "0_I077",
+            "0_I078",
+            "0_I079"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I070.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I071.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I072.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I073.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I074.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I075.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I076.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I077.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I078.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I079.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.3,
+            0.1,
+            0.3,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            3,
+            4,
+            9,
+            4,
+            8,
+            0,
+            9,
+            5,
+            15,
+            14
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 8",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6420,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 3",
+          "id": [
+            "0_I080",
+            "0_I081",
+            "0_I082",
+            "0_I083",
+            "0_I084",
+            "0_I085",
+            "0_I086",
+            "0_I087"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I080.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I081.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I082.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I083.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I084.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I085.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I086.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_I087.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.3
+          ],
+          "face": [
+            9,
+            4,
+            4,
+            10,
+            0,
+            7,
+            7,
+            3
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": [
+            {
+              "condGroup": 1,
+              "condType": "forceFalse",
+              "targetId": 0,
+              "condValue": 0,
+              "condValues": [
+                0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "svtId": 109824830,
+      "voicePrefix": 0,
+      "type": "warBoard",
+      "voiceLines": [
+        {
+          "name": "聖杯戦線",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 4998,
+          "svtVoiceType": "warBoard",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 9",
+          "id": [
+            "0_X030"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_X030.mp3"
+          ],
+          "delay": [
+            0.0
+          ],
+          "face": [
+            0
+          ],
+          "form": [
+            0
+          ],
+          "text": [
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "聖杯戦線",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 4996,
+          "svtVoiceType": "warBoard",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 10",
+          "id": [
+            "0_X050"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824830/0_X050.mp3"
+          ],
+          "delay": [
+            0.0
+          ],
+          "face": [
+            0
+          ],
+          "form": [
+            0
+          ],
+          "text": [
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        }
+      ]
+    },
+    {
+      "svtId": 109824831,
+      "voicePrefix": 0,
+      "type": "eventShop",
+      "voiceLines": [
+        {
+          "name": "ショップついて 1",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6490,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 1",
+          "id": [
+            "0_I010",
+            "0_I011",
+            "0_I012",
+            "0_I013"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I010.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I011.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I012.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I013.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            7,
+            3,
+            0,
+            7
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": [
+            {
+              "condGroup": 1,
+              "condType": "eventRewardDispCount",
+              "targetId": 80384,
+              "condValue": 2,
+              "condValues": [
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ショップついて 2",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6480,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 2",
+          "id": [
+            "0_I020",
+            "0_I021",
+            "0_I022",
+            "0_I023",
+            "0_I024"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I020.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I021.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I022.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I023.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I024.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.3,
+            0.1,
+            0.1
+          ],
+          "face": [
+            3,
+            7,
+            8,
+            9,
+            3
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": [
+            {
+              "condGroup": 1,
+              "condType": "eventRewardDispCount",
+              "targetId": 80384,
+              "condValue": 2,
+              "condValues": [
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ショップついて 3",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6470,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 3",
+          "id": [
+            "0_I030",
+            "0_I031"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I030.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I031.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            10,
+            0
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventShopPurchase",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            },
+            {
+              "condType": "eventPeriod",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": [
+            {
+              "condGroup": 1,
+              "condType": "eventRewardDispCount",
+              "targetId": 80384,
+              "condValue": 1,
+              "condValues": [
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ショップついて 4",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6460,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 4",
+          "id": [
+            "0_I040",
+            "0_I041",
+            "0_I042"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I040.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I041.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I042.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1
+          ],
+          "face": [
+            4,
+            15,
+            14
+          ],
+          "form": [
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventShopPurchase",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            },
+            {
+              "condType": "eventPeriod",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": [
+            {
+              "condGroup": 1,
+              "condType": "eventRewardDispCount",
+              "targetId": 80384,
+              "condValue": 1,
+              "condValues": [
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ショップついて 5",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6450,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 5",
+          "id": [
+            "0_I050",
+            "0_I051"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I050.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I051.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1
+          ],
+          "face": [
+            9,
+            7
+          ],
+          "form": [
+            0,
+            0
+          ],
+          "text": [
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventShopPurchase",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            },
+            {
+              "condType": "eventPeriod",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": [
+            {
+              "condGroup": 1,
+              "condType": "eventRewardDispCount",
+              "targetId": 80384,
+              "condValue": 1,
+              "condValues": [
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ショップついて 6",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6440,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 6",
+          "id": [
+            "0_I060",
+            "0_I061",
+            "0_I062",
+            "0_I063",
+            "0_I064",
+            "0_I065"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I060.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I061.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I062.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I063.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I064.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I065.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.3,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            1,
+            0,
+            7,
+            0,
+            3,
+            14
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 7",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6430,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 7",
+          "id": [
+            "0_I070",
+            "0_I071",
+            "0_I072",
+            "0_I073",
+            "0_I074",
+            "0_I075",
+            "0_I076",
+            "0_I077",
+            "0_I078",
+            "0_I079"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I070.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I071.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I072.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I073.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I074.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I075.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I076.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I077.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I078.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I079.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.3,
+            0.1,
+            0.3,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "face": [
+            3,
+            4,
+            9,
+            4,
+            8,
+            0,
+            9,
+            5,
+            15,
+            14
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventEnd",
+              "value": 80384,
+              "valueList": [],
+              "eventId": 0
+            }
+          ],
+          "playConds": []
+        },
+        {
+          "name": "ショップついて 8",
+          "condType": "eventEnd",
+          "condValue": 0,
+          "priority": 6420,
+          "svtVoiceType": "eventShop",
+          "overwriteName": "アークティック・サマーワールド！\n～カルデア真夏の魔園観光～ 8",
+          "id": [
+            "0_I080",
+            "0_I081",
+            "0_I082",
+            "0_I083",
+            "0_I084",
+            "0_I085",
+            "0_I086",
+            "0_I087"
+          ],
+          "audioAssets": [
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I080.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I081.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I082.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I083.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I084.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I085.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I086.mp3",
+            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_109824831/0_I087.mp3"
+          ],
+          "delay": [
+            0.0,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.3
+          ],
+          "face": [
+            9,
+            4,
+            4,
+            10,
+            0,
+            7,
+            7,
+            3
+          ],
+          "form": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "subtitle": "",
+          "conds": [
+            {
+              "condType": "eventNoend",
               "value": 80384,
               "valueList": [],
               "eventId": 0
