@@ -44,9 +44,11 @@ from .gameenums import (
     NiceAiCond,
     NiceBuffType,
     NiceCardType,
+    NiceCombineAdjustTarget,
     NiceCommonConsumeType,
     NiceCondType,
     NiceConsumeType,
+    NiceEventCombineCalc,
     NiceEventRewardSceneFlag,
     NiceEventType,
     NiceFuncTargetType,
@@ -1433,6 +1435,21 @@ class NiceBgmEntity(BaseModelORJson):
     releaseConditions: list[NiceBgmRelease]
 
 
+class NiceEventQuest(BaseModelORJson):
+    questId: int
+    # phase: int
+
+
+class NiceEventCampaign(BaseModelORJson):
+    targetIds: list[int]
+    warIds: list[int]
+    target: NiceCombineAdjustTarget
+    idx: int
+    value: int
+    calcType: NiceEventCombineCalc
+    entryCondMessage: str
+
+
 class NiceEventReward(BaseModelORJson):
     groupId: int
     point: int
@@ -1728,6 +1745,8 @@ class NiceEvent(BaseModelORJson):
     recipes: list[NiceEventRecipe]
     digging: NiceEventDigging | None
     cooltime: NiceEventCooltime | None
+    campaigns: list[NiceEventCampaign]
+    campaignQuests: list[NiceEventQuest]
     voicePlays: list[NiceEventVoicePlay]
     voices: list[NiceVoiceGroup] = Field(
         ..., description="All voice lines related to this event"

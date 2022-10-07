@@ -1167,6 +1167,25 @@ class MstEventQuestCooltime(BaseModelORJson):
     isEnabledInitial: bool
 
 
+class MstEventCampaign(BaseModelORJson):
+    targetIds: list[int]
+    warIds: list[int]
+    eventId: int
+    target: int
+    idx: int
+    value: int
+    calcType: int
+    entryCondMessage: str
+    createdAt: int
+
+
+class MstEventQuest(BaseModelORJson):
+    eventId: int
+    questId: int
+    phase: int
+    createdAt: int
+
+
 class MstEventBulletinBoard(BaseModelORJson):
     id: int
     eventId: int
@@ -1769,6 +1788,8 @@ class EventEntity(BaseModelORJson):
     mstEventDiggingReward: list[MstEventDiggingReward]
     mstEventCooltimeReward: list[MstEventCooltimeReward]
     mstEventQuestCooltime: list[MstEventQuestCooltime]
+    mstEventCampaign: list[MstEventCampaign]
+    mstEventQuest: list[MstEventQuest]
     mstEventBulletinBoard: list[MstEventBulletinBoard]
     mstEventBulletinBoardRelease: list[MstEventBulletinBoardRelease]
     mstEventRecipe: list[MstEventRecipe]

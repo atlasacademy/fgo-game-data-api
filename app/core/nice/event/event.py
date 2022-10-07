@@ -14,6 +14,7 @@ from ..gift import GiftData
 from ..item import get_nice_item_from_raw
 from ..svt.voice import get_nice_voice_group
 from .bulletin_board import get_nice_bulletin_board
+from .campaign import get_nice_campaign, get_nice_event_quest
 from .cooltime import get_nice_event_cooltime
 from .digging import get_nice_digging
 from .lottery import get_nice_lottery
@@ -271,6 +272,12 @@ async def get_nice_event(
         )
         if raw_event.mstEventCooltimeReward
         else None,
+        campaignQuests=[
+            get_nice_event_quest(quest) for quest in raw_event.mstEventQuest
+        ],
+        campaigns=[
+            get_nice_campaign(campaign) for campaign in raw_event.mstEventCampaign
+        ],
         voicePlays=[
             get_nice_event_voice_play(voice_play, voice_groups)
             for voice_play in raw_event.mstEventVoicePlay

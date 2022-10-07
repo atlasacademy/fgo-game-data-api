@@ -49,6 +49,7 @@ from ..schemas.raw import (
     MstEvent,
     MstEventBulletinBoard,
     MstEventBulletinBoardRelease,
+    MstEventCampaign,
     MstEventCooltimeReward,
     MstEventDigging,
     MstEventDiggingBlock,
@@ -58,6 +59,7 @@ from ..schemas.raw import (
     MstEventMissionConditionDetail,
     MstEventPointBuff,
     MstEventPointGroup,
+    MstEventQuest,
     MstEventQuestCooltime,
     MstEventRecipe,
     MstEventRecipeGift,
@@ -914,6 +916,8 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         mstEventQuestCooltime=await fetch.get_all(
             conn, MstEventQuestCooltime, event_id
         ),
+        mstEventQuest=await fetch.get_all(conn, MstEventQuest, event_id),
+        mstEventCampaign=await fetch.get_all(conn, MstEventCampaign, event_id),
         mstEventBulletinBoard=bulletins,
         mstEventBulletinBoardRelease=bulletin_releases,
         mstEventRecipe=recipes,

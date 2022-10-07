@@ -1263,6 +1263,31 @@ mstEventQuestCooltime = Table(
 )
 
 
+mstEventQuest = Table(
+    "mstEventQuest",
+    metadata,
+    Column("eventId", Integer, index=True),
+    Column("questId", Integer),
+    Column("phase", Integer),
+    Column("createdAt", Integer),
+)
+
+
+mstEventCampaign = Table(
+    "mstEventCampaign",
+    metadata,
+    Column("targetIds", ARRAY(Integer)),
+    Column("warIds", ARRAY(Integer)),
+    Column("eventId", Integer, index=True),
+    Column("target", Integer),
+    Column("idx", Integer),
+    Column("value", Integer),
+    Column("calcType", Integer),
+    Column("entryCondMessage", String),
+    Column("createdAt", Integer),
+)
+
+
 mstEventBulletinBoard = Table(
     "mstEventBulletinBoard",
     metadata,
@@ -1941,4 +1966,6 @@ TABLES_TO_BE_LOADED = [
     [mstMapGimmick],
     [mstWarAdd],
     [mstWarQuestSelection],
+    [mstEventCampaign],
+    [mstEventQuest],
 ]
