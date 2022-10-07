@@ -1176,14 +1176,14 @@ class MstEventCampaign(BaseModelORJson):
     value: int
     calcType: int
     entryCondMessage: str
-    createdAt: int
+    createdAt: int | None = None
 
 
 class MstEventQuest(BaseModelORJson):
     eventId: int
     questId: int
     phase: int
-    createdAt: int
+    createdAt: int | None = None
 
 
 class MstEventBulletinBoard(BaseModelORJson):
