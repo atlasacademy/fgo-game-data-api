@@ -1337,6 +1337,48 @@ mstEventRecipeGift = Table(
 )
 
 
+mstEventFortification = Table(
+    "mstEventFortification",
+    metadata,
+    Column("eventId", Integer, index=True),
+    Column("idx", Integer),
+    Column("name", String),
+    Column("x", Integer),
+    Column("y", Integer),
+    Column("rewardSceneX", Integer),
+    Column("rewardSceneY", Integer),
+    Column("maxFortificationPoint", Integer),
+    Column("workType", Integer),
+    Column("giftId", Integer),
+    Column("commonReleaseId", Integer),
+)
+
+
+mstEventFortificationDetail = Table(
+    "mstEventFortificationDetail",
+    metadata,
+    Column("eventId", Integer, index=True),
+    Column("fortificationIdx", Integer),
+    Column("position", Integer),
+    Column("name", String),
+    Column("classId", Integer),
+    Column("commonReleaseId", Integer),
+)
+
+
+mstEventFortificationSvt = Table(
+    "mstEventFortificationSvt",
+    metadata,
+    Column("eventId", Integer, index=True),
+    Column("fortificationIdx", Integer),
+    Column("position", Integer),
+    Column("type", Integer),
+    Column("svtId", Integer),
+    Column("limitCount", Integer),
+    Column("lv", Integer),
+    Column("commonReleaseId", Integer),
+)
+
 mstCommonConsume = Table(
     "mstCommonConsume",
     metadata,
@@ -1958,6 +2000,7 @@ TABLES_TO_BE_LOADED = [
     [mstEventCooltimeReward, mstEventQuestCooltime],
     [mstEventBulletinBoard, mstEventBulletinBoardRelease],
     [mstEventRecipe, mstEventRecipeGift],
+    [mstEventFortification, mstEventFortificationDetail, mstEventFortificationSvt],
     [mstVoice],
     [mstVoicePlayCond],
     [mstSvt],

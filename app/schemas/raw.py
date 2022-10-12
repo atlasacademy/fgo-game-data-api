@@ -1224,6 +1224,40 @@ class MstEventRecipeGift(BaseModelORJson):
     topIconId: int
 
 
+class MstEventFortification(BaseModelORJson):
+    eventId: int
+    idx: int
+    name: str
+    x: int
+    y: int
+    rewardSceneX: int
+    rewardSceneY: int
+    maxFortificationPoint: int
+    workType: int
+    giftId: int
+    commonReleaseId: int
+
+
+class MstEventFortificationDetail(BaseModelORJson):
+    eventId: int
+    fortificationIdx: int
+    position: int
+    name: str
+    classId: int
+    commonReleaseId: int
+
+
+class MstEventFortificationSvt(BaseModelORJson):
+    eventId: int
+    fortificationIdx: int
+    position: int
+    type: int
+    svtId: int
+    limitCount: int
+    lv: int
+    commonReleaseId: int
+
+
 class MstCommonConsume(BaseModelORJson):
     id: int
     priority: int
