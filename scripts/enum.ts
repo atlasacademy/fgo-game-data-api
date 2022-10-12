@@ -124,6 +124,8 @@ export enum NiceFuncType {
     BUDDY_POINT_UP = "buddyPointUp",
     ADD_FIELD_CHANGE_TO_FIELD = "addFieldChangeToField",
     SUB_FIELD_BUFF = "subFieldBuff",
+    EVENT_FORTIFICATION_POINT_UP = "eventFortificationPointUp",
+    GAIN_NP_INDIVIDUAL_SUM = "gainNpIndividualSum",
 }
 
 export enum NiceFuncTargetType {
@@ -422,6 +424,7 @@ export enum NiceBuffAction {
     NOT_TARGET_SKILL = "notTargetSkill",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
+    GRANT_STATE_UP_ONLY = "grantStateUpOnly",
 }
 
 export enum NiceBuffLimit {
@@ -544,6 +547,9 @@ export enum NiceDataValsType {
     RemoveFieldBuffActorDeath = "removefieldbuffactordeath",
     FieldBuffGrantType = "fieldbuffgranttype",
     Priority = "priority",
+    AddIndividualityEx = "addindividualityex",
+    IgnoreResistance = "ignoreresistance",
+    GainNpTargetPassiveIndividuality = "gainnptargetpassiveindividuality",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -840,6 +846,7 @@ export enum NiceCondType {
     PROGRESS_VALUE_BELOW = "progressValueBelow",
     RANDOM_MISSION_TOTAL_CLEAR_NUM = "randomMissionTotalClearNum",
     WEEKDAYS = "weekdays",
+    EVENT_FORTIFICATION_REWARD_NUM = "eventFortificationRewardNum",
 }
 
 export enum NiceVoiceCondType {
@@ -903,6 +910,7 @@ export enum NiceSvtVoiceType {
     EVENT_DIGGING = "eventDigging",
     EVENT_EXPEDITION = "eventExpedition",
     EVENT_RECIPE = "eventRecipe",
+    EVENT_FORTIFICATION = "eventFortification",
     SUM = "sum",
 }
 

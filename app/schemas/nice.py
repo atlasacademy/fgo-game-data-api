@@ -322,6 +322,9 @@ class BaseVals(BaseModel):
     RemoveFieldBuffActorDeath: int | None = None
     FieldBuffGrantType: int | None = None
     Priority: int | None = None
+    AddIndividualityEx: int | None = None
+    IgnoreResistance: int | None = None
+    GainNpTargetPassiveIndividuality: int | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo

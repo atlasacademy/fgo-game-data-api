@@ -201,6 +201,8 @@ class FuncType(IntEnum):
     BUDDY_POINT_UP = 129
     ADD_FIELD_CHANGE_TO_FIELD = 130
     SUB_FIELD_BUFF = 131
+    EVENT_FORTIFICATION_POINT_UP = 132
+    GAIN_NP_INDIVIDUAL_SUM = 133
 
 
 class NiceFuncType(str, Enum):
@@ -299,6 +301,8 @@ class NiceFuncType(str, Enum):
     buddyPointUp = "buddyPointUp"
     addFieldChangeToField = "addFieldChangeToField"
     subFieldBuff = "subFieldBuff"
+    eventFortificationPointUp = "eventFortificationPointUp"
+    gainNpIndividualSum = "gainNpIndividualSum"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -395,6 +399,8 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     129: NiceFuncType.buddyPointUp,
     130: NiceFuncType.addFieldChangeToField,
     131: NiceFuncType.subFieldBuff,
+    132: NiceFuncType.eventFortificationPointUp,
+    133: NiceFuncType.gainNpIndividualSum,
 }
 
 
@@ -1078,6 +1084,7 @@ class BuffAction(IntEnum):
     NOT_TARGET_SKILL = 103
     TO_FIELD_CHANGE_FIELD = 104
     TO_FIELD_AVOID_BUFF = 105
+    GRANT_STATE_UP_ONLY = 106
 
 
 class NiceBuffAction(str, Enum):
@@ -1189,6 +1196,7 @@ class NiceBuffAction(str, Enum):
     notTargetSkill = "notTargetSkill"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
+    grantStateUpOnly = "grantStateUpOnly"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1298,6 +1306,7 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     103: NiceBuffAction.notTargetSkill,
     104: NiceBuffAction.toFieldChangeField,
     105: NiceBuffAction.toFieldAvoidBuff,
+    106: NiceBuffAction.grantStateUpOnly,
 }
 
 
@@ -1438,6 +1447,9 @@ class DataValsType(IntEnum):
     RemoveFieldBuffActorDeath = 109
     FieldBuffGrantType = 110
     Priority = 111
+    AddIndividualityEx = 112
+    IgnoreResistance = 113
+    GainNpTargetPassiveIndividuality = 114
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -2012,6 +2024,7 @@ class CondType(IntEnum):
     PROGRESS_VALUE_BELOW = 161
     RANDOM_MISSION_TOTAL_CLEAR_NUM = 162
     WEEKDAYS = 166
+    EVENT_FORTIFICATION_REWARD_NUM = 167
 
 
 class NiceCondType(str, Enum):
@@ -2181,6 +2194,7 @@ class NiceCondType(str, Enum):
     progressValueBelow = "progressValueBelow"
     randomMissionTotalClearNum = "randomMissionTotalClearNum"
     weekdays = "weekdays"
+    eventFortificationRewardNum = "eventFortificationRewardNum"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2348,6 +2362,7 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     161: NiceCondType.progressValueBelow,
     162: NiceCondType.randomMissionTotalClearNum,
     166: NiceCondType.weekdays,
+    167: NiceCondType.eventFortificationRewardNum,
 }
 
 
@@ -2482,7 +2497,8 @@ class SvtVoiceType(IntEnum):
     EVENT_DIGGING = 20
     EVENT_EXPEDITION = 21
     EVENT_RECIPE = 22
-    SUM = 23
+    EVENT_FORTIFICATION = 23
+    SUM = 24
 
 
 class NiceSvtVoiceType(str, Enum):
@@ -2510,6 +2526,7 @@ class NiceSvtVoiceType(str, Enum):
     eventDigging = "eventDigging"
     eventExpedition = "eventExpedition"
     eventRecipe = "eventRecipe"
+    eventFortification = "eventFortification"
     sum = "sum"
 
 
@@ -2536,7 +2553,8 @@ VOICE_TYPE_NAME: dict[int, NiceSvtVoiceType] = {
     20: NiceSvtVoiceType.eventDigging,
     21: NiceSvtVoiceType.eventExpedition,
     22: NiceSvtVoiceType.eventRecipe,
-    23: NiceSvtVoiceType.sum,
+    23: NiceSvtVoiceType.eventFortification,
+    24: NiceSvtVoiceType.sum,
 }
 
 
