@@ -879,6 +879,7 @@ class Trait(str, Enum):
     immuneToPigify = "immuneToPigify"
     summerModeServant = "summerModeServant"
     shinsengumiServant = "shinsengumiServant"
+    ryozanpaku = "ryozanpaku"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1041,6 +1042,7 @@ TRAIT_NAME: dict[int, Trait] = {
     2837: Trait.valkyrie,
     2838: Trait.summerModeServant,
     2839: Trait.shinsengumiServant,
+    2840: Trait.ryozanpaku,
     # 2xxx: CQ or Story quests buff
     3000: Trait.attackPhysical,  # Normal attack, including NP
     3001: Trait.attackProjectile,
