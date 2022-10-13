@@ -1500,3 +1500,29 @@ export enum NiceEventCombineCalc {
     MULTIPLICATION = "multiplication",
     FIXED_VALUE = "fixedValue",
 }
+
+export enum NiceEventWorkType {
+    MILITSRY_AFFAIRS = "militsryAffairs",
+    INTERNAL_AFFAIRS = "internalAffairs",
+    FARMMING = "farmming",
+}
+
+export enum NiceEventFortificationSvtType {
+    USER_SVT = "userSvt",
+    NPC = "npc",
+    NONE = "none",
+}
+
+export enum NiceSvtClassSupportGroupType {
+    ALL = "all",
+    SABER = "saber",
+    ARCHER = "archer",
+    LANCER = "lancer",
+    RIDER = "rider",
+    CASTER = "caster",
+    ASSASSIN = "assassin",
+    BERSERKER = "berserker",
+    EXTRA = "extra",
+    MIX = "mix",
+    NOT_SUPPORT = "notSupport",
+}

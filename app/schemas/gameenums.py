@@ -4414,3 +4414,90 @@ EVENT_COMBINE_CALC_TYPE_NAME: dict[int, NiceEventCombineCalc] = {
     2: NiceEventCombineCalc.multiplication,
     3: NiceEventCombineCalc.fixedValue,
 }
+
+
+class EventWorkType(IntEnum):
+    MILITSRY_AFFAIRS = 1
+    INTERNAL_AFFAIRS = 2
+    FARMMING = 3
+
+
+class NiceEventWorkType(str, Enum):
+    """Event Fortification Work Type"""
+
+    militsryAffairs = "militsryAffairs"
+    internalAffairs = "internalAffairs"
+    farmming = "farmming"
+
+
+EVENT_WORK_TYPE_NAME: dict[int, NiceEventWorkType] = {
+    1: NiceEventWorkType.militsryAffairs,
+    2: NiceEventWorkType.internalAffairs,
+    3: NiceEventWorkType.farmming,
+}
+
+
+class EventFortificationSvtType(IntEnum):
+    USER_SVT = 0
+    NPC = 1
+    NONE = 2
+
+
+class NiceEventFortificationSvtType(str, Enum):
+    """Event Fortification Servant Type"""
+
+    userSvt = "userSvt"
+    npc = "npc"
+    none = "none"
+
+
+EVENT_FORTIFICATION_SVT_TYPE_NAME: dict[int, NiceEventFortificationSvtType] = {
+    0: NiceEventFortificationSvtType.userSvt,
+    1: NiceEventFortificationSvtType.npc,
+    2: NiceEventFortificationSvtType.none,
+}
+
+
+class ServantClassSupportGroupType(IntEnum):
+    ALL = 0
+    SABER = 1
+    ARCHER = 2
+    LANCER = 3
+    RIDER = 4
+    CASTER = 5
+    ASSASSIN = 6
+    BERSERKER = 7
+    EXTRA = 8
+    MIX = 9
+    NOT_SUPPORT = 999
+
+
+class NiceSvtClassSupportGroupType(str, Enum):
+    """Servant Class Support Group Type"""
+
+    all = "all"
+    saber = "saber"
+    archer = "archer"
+    lancer = "lancer"
+    rider = "rider"
+    caster = "caster"
+    assassin = "assassin"
+    berserker = "berserker"
+    extra = "extra"
+    mix = "mix"
+    notSupport = "notSupport"
+
+
+SVT_CLASS_SUPPORT_GROUP_TYPE_NAME: dict[int, NiceSvtClassSupportGroupType] = {
+    0: NiceSvtClassSupportGroupType.all,
+    1: NiceSvtClassSupportGroupType.saber,
+    2: NiceSvtClassSupportGroupType.archer,
+    3: NiceSvtClassSupportGroupType.lancer,
+    4: NiceSvtClassSupportGroupType.rider,
+    5: NiceSvtClassSupportGroupType.caster,
+    6: NiceSvtClassSupportGroupType.assassin,
+    7: NiceSvtClassSupportGroupType.berserker,
+    8: NiceSvtClassSupportGroupType.extra,
+    9: NiceSvtClassSupportGroupType.mix,
+    999: NiceSvtClassSupportGroupType.notSupport,
+}

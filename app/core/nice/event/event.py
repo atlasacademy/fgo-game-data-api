@@ -17,6 +17,7 @@ from .bulletin_board import get_nice_bulletin_board
 from .campaign import get_nice_campaign, get_nice_event_quest
 from .cooltime import get_nice_event_cooltime
 from .digging import get_nice_digging
+from .fortification import get_nice_fortification
 from .lottery import get_nice_lottery
 from .mission import get_nice_missions
 from .point import get_nice_pointBuff, get_nice_pointGroup
@@ -272,6 +273,17 @@ async def get_nice_event(
         )
         if raw_event.mstEventCooltimeReward
         else None,
+        fortifications=[
+            get_nice_fortification(
+                region,
+                fortification,
+                raw_event.mstEventFortificationDetail,
+                raw_event.mstEventFortificationSvt,
+                gift_data,
+                raw_event.mstCommonRelease,
+            )
+            for fortification in raw_event.mstEventFortification
+        ],
         campaignQuests=[
             get_nice_event_quest(quest) for quest in raw_event.mstEventQuest
         ],

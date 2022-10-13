@@ -54,6 +54,9 @@ from ..schemas.raw import (
     MstEventDigging,
     MstEventDiggingBlock,
     MstEventDiggingReward,
+    MstEventFortification,
+    MstEventFortificationDetail,
+    MstEventFortificationSvt,
     MstEventMission,
     MstEventMissionCondition,
     MstEventMissionConditionDetail,
@@ -826,6 +829,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         digging_consume_ids = set()
 
     event_cooltimes = await fetch.get_all(conn, MstEventCooltimeReward, event_id)
+    cooltime_release_ids = {cooltime.commonReleaseId for cooltime in event_cooltimes}
 
     bulletins = await fetch.get_all(conn, MstEventBulletinBoard, event_id)
     bulletin_ids = {bulletin.id for bulletin in bulletins}
@@ -836,10 +840,25 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
     recipes = await fetch.get_all(conn, MstEventRecipe, event_id)
     recipe_ids = {recipe.id for recipe in recipes}
     recipe_gifts = await fetch.get_all_multiple(conn, MstEventRecipeGift, recipe_ids)
+    recipe_release_ids = {recipe.commonReleaseId for recipe in recipes}
 
-    common_release_ids = {cooltime.commonReleaseId for cooltime in event_cooltimes} | {
-        recipe.commonReleaseId for recipe in recipes
-    }
+    fortifications = await fetch.get_all(conn, MstEventFortification, event_id)
+    fortification_details = await fetch.get_all(
+        conn, MstEventFortificationDetail, event_id
+    )
+    fortification_servants = await fetch.get_all(
+        conn, MstEventFortificationSvt, event_id
+    )
+    fortification_gift_ids = {fortification.giftId for fortification in fortifications}
+    fortification_release_ids = (
+        {fortification.commonReleaseId for fortification in fortifications}
+        | {detail.commonReleaseId for detail in fortification_details}
+        | {svt.commonReleaseId for svt in fortification_servants}
+    )
+
+    common_release_ids = (
+        cooltime_release_ids | recipe_release_ids | fortification_release_ids
+    )
     common_releases = await fetch.get_all_multiple(
         conn, MstCommonRelease, common_release_ids
     )
@@ -863,6 +882,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         | {cooltime.giftId for cooltime in event_cooltimes}
         | {recipe_gift.giftId for recipe_gift in recipe_gifts}
         | digging_gift_ids
+        | fortification_gift_ids
     )
 
     gift_adds = await fetch.get_all_multiple(conn, MstGiftAdd, gift_ids)
@@ -916,6 +936,9 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         mstEventQuestCooltime=await fetch.get_all(
             conn, MstEventQuestCooltime, event_id
         ),
+        mstEventFortification=fortifications,
+        mstEventFortificationDetail=fortification_details,
+        mstEventFortificationSvt=fortification_servants,
         mstEventQuest=await fetch.get_all(conn, MstEventQuest, event_id),
         mstEventCampaign=await fetch.get_all(conn, MstEventCampaign, event_id),
         mstEventBulletinBoard=bulletins,

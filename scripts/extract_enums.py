@@ -441,6 +441,27 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Event Combine Calc Type",
         "EVENT_COMBINE_CALC_TYPE_NAME",
     ),
+    (
+        "EventWorkType.Type",
+        "EventWorkType",
+        "NiceEventWorkType",
+        "Event Fortification Work Type",
+        "EVENT_WORK_TYPE_NAME",
+    ),
+    (
+        "EventFortificationDataLogic.SvtType",
+        "EventFortificationSvtType",
+        "NiceEventFortificationSvtType",
+        "Event Fortification Servant Type",
+        "EVENT_FORTIFICATION_SVT_TYPE_NAME",
+    ),
+    (
+        "ServantClassEntity.SupportGroupType",
+        "ServantClassSupportGroupType",
+        "NiceSvtClassSupportGroupType",
+        "Servant Class Support Group Type",
+        "SVT_CLASS_SUPPORT_GROUP_TYPE_NAME",
+    ),
 ]
 
 
