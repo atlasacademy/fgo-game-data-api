@@ -5,13 +5,15 @@ from ..schemas.common import Region
 
 brackets_regex = re.compile(r"[\[].*?[\]]")
 ruby_regex = re.compile(r"[\[]#(.*?):(.*?)?[\]]")
+ruby_emphasis_regex = re.compile(r"\[#(.*?)\]")
 gender_regex = re.compile(r"[\[]&(.*?):(.*?)?[\]]")
 
 
 def remove_brackets(region: Region, sentence: str) -> str:
     replaced_full_width_space = sentence.replace("\u3000", " ")
     replaced_ruby = re.sub(ruby_regex, r"\1 \2", replaced_full_width_space)
-    removed_brackets = re.sub(brackets_regex, " ", replaced_ruby)
+    replaced_ruby_emphasis = re.sub(ruby_emphasis_regex, r"\1", replaced_ruby)
+    removed_brackets = re.sub(brackets_regex, " ", replaced_ruby_emphasis)
     stripped = removed_brackets.strip()
 
     if region != Region.NA:
