@@ -496,13 +496,19 @@ async def get_servant_entity(
             )
         }
         svt_entity.mstSvt.expandedClassPassive = [
-            expand_skills[skill_id] for skill_id in svt_entity.mstSvt.classPassive
+            expand_skills[skill_id]
+            for skill_id in svt_entity.mstSvt.classPassive
+            if skill_id in expand_skills
         ]
         svt_entity.expandedExtraPassive = [
-            expand_skills[skill.skillId] for skill in mstSvtPassiveSkill
+            expand_skills[skill.skillId]
+            for skill in mstSvtPassiveSkill
+            if skill.skillId in expand_skills
         ]
         svt_entity.expandedAppendPassive = [
-            expand_skills[skill.skillId] for skill in mstSvtAppendPassiveSkill
+            expand_skills[skill.skillId]
+            for skill in mstSvtAppendPassiveSkill
+            if skill.skillId in expand_skills
         ]
 
     if lore:
