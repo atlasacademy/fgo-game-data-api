@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.asyncio import create_async_engine
-from uvicorn.logging import TRACE_LOG_LEVEL  # type: ignore
+from uvicorn.logging import TRACE_LOG_LEVEL
 
 from ..config import Settings, logger
 

@@ -15,7 +15,7 @@ from pydantic import (
 )
 from pydantic.main import BaseModel
 from pydantic.tools import parse_obj_as
-from uvicorn.logging import DefaultFormatter  # type: ignore
+from uvicorn.logging import DefaultFormatter
 
 from .schemas.common import Region
 

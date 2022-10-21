@@ -5,7 +5,7 @@ from typing import Any, Callable, Optional
 
 import orjson
 import tomli
-import uvicorn  # type: ignore
+import uvicorn
 from fastapi import Depends, FastAPI, HTTPException, Request, Response, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.utils import get_openapi
