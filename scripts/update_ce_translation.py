@@ -2,6 +2,7 @@ import argparse
 import json
 import os
 import re
+from difflib import ndiff
 from enum import IntEnum
 from pathlib import Path
 from typing import Any, Callable, Union
@@ -106,6 +107,104 @@ def is_servant(svt: Any) -> bool:
         in {SvtType.NORMAL, SvtType.HEROINE, SvtType.ENEMY_COLLECTION_DETAIL}
         and svt["collectionNo"] != 0
     )
+
+
+def get_servant_names(mstSvt: Any) -> dict[tuple[int, int, int], str]:
+    names = {}
+
+    for svt in mstSvt:
+        if is_servant(svt):
+            names[(svt["collectionNo"], -1, -1)] = svt["name"]
+            names[(svt["collectionNo"], -1, 1)] = svt["battleName"]
+
+    return names
+
+
+def update_servant_translation(jp_master: Path, na_master: Path) -> None:
+    with open(jp_master / "mstSvt.json", "r", encoding="utf-8") as fp:
+        jp_svt = json.load(fp)
+    with open(na_master / "mstSvt.json", "r", encoding="utf-8") as fp:
+        na_svt = json.load(fp)
+
+    col_nos = {
+        svt["id"]: svt["collectionNo"]
+        for svt in jp_svt
+        if svt["type"]
+        in {
+            SvtType.NORMAL,
+            SvtType.HEROINE,
+            SvtType.ENEMY_COLLECTION_DETAIL,
+        }
+        and svt["collectionNo"] != 0
+    }
+
+    mapping_path = MAPPING_PATH / "servant_names.json"
+    if mapping_path.exists():
+        with open(mapping_path, "r", encoding="utf-8") as fp:
+            current_translations: dict[str, str] = json.load(fp)
+    else:
+        current_translations = {}
+
+    jp_names = get_servant_names(jp_svt)
+    na_names = get_servant_names(na_svt)
+
+    with open(jp_master / "mstSvtLimitAdd.json", "r", encoding="utf-8") as fp:
+        jp_limit_add = json.load(fp)
+    with open(na_master / "mstSvtLimitAdd.json", "r", encoding="utf-8") as fp:
+        na_limit_add = json.load(fp)
+
+    for limit_add, names_dict in [[jp_limit_add, jp_names], [na_limit_add, na_names]]:
+        for limit in limit_add:
+            if limit["svtId"] in col_nos:
+                limit_id = (col_nos[limit["svtId"]], limit["limitCount"], 0)
+                if "overWriteServantName" in limit["script"]:
+                    names_dict[limit_id] = limit["script"]["overWriteServantName"]
+                if "overWriteServantBattleName" in limit["script"]:
+                    names_dict[
+                        (col_nos[limit["svtId"]], limit["limitCount"], 1)
+                    ] = limit["script"]["overWriteServantBattleName"]
+
+    updated_translation = {}
+    for jp_key in sorted(jp_names.keys()):
+        jp_name = jp_names[jp_key]
+        current_translation = current_translations.get(jp_name)
+        na_translation = na_names.get(jp_key)
+
+        if current_translation is not None:
+            new_translation = current_translation
+        elif na_translation is not None:
+            new_translation = na_translation
+        else:
+            new_translation = jp_name
+
+        if (
+            current_translation is not None
+            and na_translation is not None
+            and current_translation != na_translation
+        ):
+            diff = "".join(
+                li.removeprefix("+ ")
+                for li in ndiff(current_translation, na_translation)
+                if li[0] == "+"
+            ).strip()
+
+            if not (
+                (diff.startswith("(") and diff.endswith(")"))  # (class name)
+                or (
+                    diff.startswith("(")
+                    and current_translation.endswith(")")
+                    and not diff.endswith(")")  # (class name
+                )
+            ):
+                print(
+                    f"Different translation: {jp_name} to Current: {current_translation} vs NA: {na_translation}"
+                )
+
+        updated_translation[jp_name] = new_translation
+
+    with open(mapping_path, "w", encoding="utf-8") as fp:
+        json.dump(updated_translation, fp, indent=2, ensure_ascii=False)
+        fp.write("\n")
 
 
 def is_ce(svt: Any) -> bool:
@@ -276,6 +375,7 @@ def update_translation(
 
 
 def main(jp_master: Path, na_master: Path) -> None:
+    update_servant_translation(jp_master, na_master)
     update_translation("equip_names", jp_master, na_master, "mstSvt", get_ce_names)
     update_translation("cc_names", jp_master, na_master, "mstCommandCode", get_cc_names)
     update_translation("mc_names", jp_master, na_master, "mstEquip", get_names)
