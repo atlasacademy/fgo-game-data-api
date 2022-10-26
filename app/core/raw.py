@@ -427,7 +427,13 @@ async def get_servant_entity(
     mstTreasureDevice = await get_td_entity_no_reverse_many(conn, td_ids, expand)
 
     item_ids: set[int] = set()
-    for combine in mstCombineLimit + mstCombineSkill + mstCombineAppendPassiveSkill + mstCombineCostume + mstSvtAppendPassiveSkillUnlock:  # type: ignore
+    for combine in (
+        mstCombineLimit
+        + mstCombineSkill
+        + mstCombineAppendPassiveSkill
+        + mstCombineCostume
+        + mstSvtAppendPassiveSkillUnlock
+    ):
         item_ids.update(combine.itemIds)
     if mstSvtCoin is not None:
         item_ids.add(mstSvtCoin.itemId)

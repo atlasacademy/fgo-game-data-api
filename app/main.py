@@ -1,10 +1,10 @@
 import hashlib
 import json
+import tomllib
 from math import ceil
 from typing import Any, Callable, Optional
 
 import orjson
-import tomli
 import uvicorn
 from fastapi import Depends, FastAPI, HTTPException, Request, Response, status
 from fastapi.middleware.cors import CORSMiddleware
@@ -168,7 +168,7 @@ tags_metadata = [
 
 
 with open(project_root / "pyproject.toml", "rb") as f:
-    pyproject_toml = tomli.load(f)
+    pyproject_toml = tomllib.load(f)
 
 
 app = FastAPI(
