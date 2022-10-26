@@ -1,4 +1,3 @@
-# pylint: disable=R0201
 import pytest
 from httpx import AsyncClient, Response
 

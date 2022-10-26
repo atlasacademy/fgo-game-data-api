@@ -1,4 +1,4 @@
-# pylint: disable=R0201,R0904
+# pylint: disable=too-many-public-methods
 import pytest
 from httpx import AsyncClient, Client
 from sqlalchemy.sql import and_, delete, select

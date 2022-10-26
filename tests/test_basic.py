@@ -1,4 +1,3 @@
-# pylint: disable=R0201
 from dataclasses import dataclass
 
 import pytest
