@@ -1,4 +1,4 @@
-from enum import Enum
+from enum import StrEnum
 from typing import Optional, Union
 
 from pydantic import BaseModel, HttpUrl
@@ -13,7 +13,7 @@ class RepoInfo(BaseModelORJson):
     timestamp: int
 
 
-class Region(str, Enum):
+class Region(StrEnum):
     """Region Enum"""
 
     NA = "NA"
@@ -23,21 +23,21 @@ class Region(str, Enum):
     TW = "TW"
 
 
-class Language(str, Enum):
+class Language(StrEnum):
     """Language Enum"""
 
     en = "en"
     jp = "jp"
 
 
-class ReverseData(str, Enum):
+class ReverseData(StrEnum):
     """Reverse Data Detail Level"""
 
     basic = "basic"
     nice = "nice"
 
 
-class ReverseDepth(str, Enum):
+class ReverseDepth(StrEnum):
     """Reverse Data Depth"""
 
     function = "function"

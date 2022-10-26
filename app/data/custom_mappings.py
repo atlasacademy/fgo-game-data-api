@@ -1,4 +1,4 @@
-from enum import Enum
+from enum import StrEnum
 from pathlib import Path
 from typing import Union
 
@@ -12,7 +12,7 @@ MAPPING_PATH = file_path.parent / "mappings"
 TRANSLATIONS: dict[str, str] = {}
 
 
-class Translation(str, Enum):
+class Translation(StrEnum):
     ENEMY = "enemy_names"
     VOICE = "voice_names"
     OVERWRITE_VOICE = "overwrite_voice_names"

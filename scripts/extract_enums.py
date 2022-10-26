@@ -99,7 +99,7 @@ def out_strenum(
     input_dict: dict[int, str], nice_class: str, nice_class_title: str
 ) -> list[str]:
     strenum_lines = [
-        f"class {nice_class}(str, Enum):\n",
+        f"class {nice_class}(StrEnum):\n",
         f'    """{nice_class_title}"""\n',
         "\n",
     ]
@@ -504,7 +504,7 @@ def main(dump_path: str, gameenums_path: str, typescript_path: str = "") -> None
         "# You shouldn't edit this file directly.\n",
         "\n",
         "\n",
-        "from enum import Enum, IntEnum\n",
+        "from enum import IntEnum, StrEnum\n",
         "\n",
         "\n",
     ]

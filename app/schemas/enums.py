@@ -1,4 +1,4 @@
-from enum import Enum, IntEnum
+from enum import IntEnum, StrEnum
 
 from .gameenums import (
     AI_ACT_NUM_NAME,
@@ -76,7 +76,7 @@ SVT_FLAG_NAME_REVERSE: dict[NiceSvtFlag, int] = {v: k for k, v in SVT_FLAG_NAME.
 ### Item Use Type ###
 
 
-class NiceItemUse(str, Enum):
+class NiceItemUse(StrEnum):
     """Item Use Enum"""
 
     skill = "skill"
@@ -88,7 +88,7 @@ class NiceItemUse(str, Enum):
 ### Skill Type ###
 
 
-class NiceSkillType(str, Enum):
+class NiceSkillType(StrEnum):
     """Skill Type Enum"""
 
     active = "active"
@@ -124,7 +124,7 @@ FUNC_TYPE_NAME_REVERSE: dict[NiceFuncType, int] = {
 ### Func Apply Target ###
 
 
-class FuncApplyTarget(str, Enum):
+class FuncApplyTarget(StrEnum):
     """Function Target Team Enum"""
 
     player = "player"
@@ -212,7 +212,7 @@ BUFF_TYPE_NAME_REVERSE: dict[NiceBuffType, int] = {
 ### Item BG Type ###
 
 
-class NiceItemBGType(str, Enum):
+class NiceItemBGType(StrEnum):
     """Item Background Type Enum"""
 
     zero = "zero"  # qp, friendpoint
@@ -274,7 +274,7 @@ QUEST_FLAG_REVERSE: dict[NiceQuestFlag, int] = {
 ### Attribute ###
 
 
-class Attribute(str, Enum):
+class Attribute(StrEnum):
     """Servant Attribute Enum"""
 
     human = "human"
@@ -301,7 +301,7 @@ ATTRIBUTE_NAME_REVERSE: dict[Attribute, int] = {v: k for k, v in ATTRIBUTE_NAME.
 ### Servant Class ###
 
 
-class SvtClass(str, Enum):
+class SvtClass(StrEnum):
     """Servant Class"""
 
     saber = "saber"
@@ -406,7 +406,7 @@ PLAYABLE_CLASS_LIST = [
 ### AI Type ###
 
 
-class AiType(str, Enum):
+class AiType(StrEnum):
     """AI Type: where the AI is used"""
 
     svt = "svt"
@@ -416,7 +416,7 @@ class AiType(str, Enum):
 ### AI Timing ###
 
 
-class AiTiming(str, Enum):
+class AiTiming(StrEnum):
     """Field AI timing Enum"""
 
     dead = "dead"
@@ -444,7 +444,7 @@ AI_TIMING_NAME: dict[int, AiTiming] = {
 ### Enemy death type ###
 
 
-class EnemyDeathType(str, Enum):
+class EnemyDeathType(StrEnum):
     ESCAPE = "escape"
     STAND = "stand"
     EFFECT = "effect"
@@ -464,7 +464,7 @@ ENEMY_DEATH_TYPE_NAME: dict[int, EnemyDeathType] = {
 ### Enemy role type ###
 
 
-class EnemyRoleType(str, Enum):
+class EnemyRoleType(StrEnum):
     NORMAL = "normal"
     DANGER = "danger"
     SERVANT = "servant"
@@ -533,7 +533,7 @@ class DetailMissionCondLinkType(IntEnum):
     RANDOM_MISSION_START = 4
 
 
-class NiceDetailMissionCondLinkType(str, Enum):
+class NiceDetailMissionCondLinkType(StrEnum):
     """Mission Condition Detail Condition Link Type Enum"""
 
     eventStart = "eventStart"
@@ -553,7 +553,7 @@ DETAIL_MISSION_LINK_TYPE: dict[int, NiceDetailMissionCondLinkType] = {
 ### Servant Policy ###
 
 
-class ServantPolicy(str, Enum):
+class ServantPolicy(StrEnum):
     """Servant Policy Enum"""
 
     none = "none"
@@ -574,7 +574,7 @@ SERVANT_POLICY_NAME = {
 ### Servant Personality ###
 
 
-class ServantPersonality(str, Enum):
+class ServantPersonality(StrEnum):
     """Servant Personality Enum"""
 
     none = "none"
@@ -603,7 +603,7 @@ SERVANT_PERSONALITY_NAME = {
 ### Trait ###
 
 
-class Trait(str, Enum):
+class Trait(StrEnum):
     """Trait/Individuality Enum"""
 
     unknown = "unknown"

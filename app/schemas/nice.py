@@ -1,5 +1,5 @@
 from decimal import Decimal
-from enum import Enum
+from enum import StrEnum
 from typing import Generic, Optional, TypeVar
 
 from pydantic import BaseModel, Field, HttpUrl
@@ -1979,7 +1979,7 @@ class EnemyDrop(BaseModelORJson):
     dropVariance: float
 
 
-class DeckType(str, Enum):
+class DeckType(StrEnum):
     ENEMY = "enemy"
     CALL = "call"
     SHIFT = "shift"

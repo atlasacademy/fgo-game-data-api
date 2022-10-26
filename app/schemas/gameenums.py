@@ -2,7 +2,7 @@
 # You shouldn't edit this file directly.
 
 
-from enum import Enum, IntEnum
+from enum import IntEnum, StrEnum
 
 
 class GenderType(IntEnum):
@@ -11,7 +11,7 @@ class GenderType(IntEnum):
     OTHER = 3
 
 
-class NiceGender(str, Enum):
+class NiceGender(StrEnum):
     """Gender Enum"""
 
     male = "male"
@@ -41,7 +41,7 @@ class SvtType(IntEnum):
     SVT_MATERIAL_TD = 12
 
 
-class NiceSvtType(str, Enum):
+class NiceSvtType(StrEnum):
     """Servant Type Enum"""
 
     normal = "normal"
@@ -82,7 +82,7 @@ class SvtFlag(IntEnum):
     SVT_EQUIP_CHOCOLATE = 32
 
 
-class NiceSvtFlag(str, Enum):
+class NiceSvtFlag(StrEnum):
     """Servant Flag Enum"""
 
     onlyUseForNpc = "onlyUseForNpc"
@@ -205,7 +205,7 @@ class FuncType(IntEnum):
     GAIN_NP_INDIVIDUAL_SUM = 133
 
 
-class NiceFuncType(str, Enum):
+class NiceFuncType(StrEnum):
     """Function Type Enum"""
 
     none = "none"
@@ -437,7 +437,7 @@ class FuncTargetType(IntEnum):
     PT_ONE_HP_LOWEST_RATE = 29
 
 
-class NiceFuncTargetType(str, Enum):
+class NiceFuncTargetType(StrEnum):
     """Function Target Type Enum"""
 
     self_ = "self"
@@ -662,7 +662,7 @@ class BuffType(IntEnum):
     TO_FIELD_AVOID_BUFF = 10002
 
 
-class NiceBuffType(str, Enum):
+class NiceBuffType(StrEnum):
     """Buff Type Enum"""
 
     none = "none"
@@ -1087,7 +1087,7 @@ class BuffAction(IntEnum):
     GRANT_STATE_UP_ONLY = 106
 
 
-class NiceBuffAction(str, Enum):
+class NiceBuffAction(StrEnum):
     """Buff Action Type Enum"""
 
     none = "none"
@@ -1317,7 +1317,7 @@ class BuffLimit(IntEnum):
     NORMAL = 3
 
 
-class NiceBuffLimit(str, Enum):
+class NiceBuffLimit(StrEnum):
     """Buff Limit Enum"""
 
     none = "none"
@@ -1458,7 +1458,7 @@ class ClassRelationOverwriteType(IntEnum):
     OVERWRITE_LESS_THAN_TARGET = 2
 
 
-class NiceClassRelationOverwriteType(str, Enum):
+class NiceClassRelationOverwriteType(StrEnum):
     """Class Relation Overwrite Type Enum"""
 
     overwriteForce = "overwriteForce"
@@ -1508,7 +1508,7 @@ class ItemType(IntEnum):
     TRADE_AP = 32
 
 
-class NiceItemType(str, Enum):
+class NiceItemType(StrEnum):
     """Item Type Enum"""
 
     qp = "qp"
@@ -1597,7 +1597,7 @@ class GiftType(IntEnum):
     EVENT_BOARD_GAME_TOKEN = 13
 
 
-class NiceGiftType(str, Enum):
+class NiceGiftType(StrEnum):
     """Gift Type Enum"""
 
     servant = "servant"
@@ -1650,7 +1650,7 @@ class ShopType(IntEnum):
     TRADE_AP = 14
 
 
-class NiceShopType(str, Enum):
+class NiceShopType(StrEnum):
     """Shop Type Enum"""
 
     none = "none"
@@ -1706,7 +1706,7 @@ class PayType(IntEnum):
     COMMON_CONSUME = 14
 
 
-class NicePayType(str, Enum):
+class NicePayType(StrEnum):
     """Pay Type Enum"""
 
     stone = "stone"
@@ -1768,7 +1768,7 @@ class PurchaseType(IntEnum):
     ASSIST = 22
 
 
-class NicePurchaseType(str, Enum):
+class NicePurchaseType(StrEnum):
     """Purchase Type Enum"""
 
     none = "none"
@@ -1834,7 +1834,7 @@ class CardType(IntEnum):
     STRENGTH = 11
 
 
-class NiceCardType(str, Enum):
+class NiceCardType(StrEnum):
     """Card Type Enum"""
 
     none = "none"
@@ -2027,7 +2027,7 @@ class CondType(IntEnum):
     EVENT_FORTIFICATION_REWARD_NUM = 167
 
 
-class NiceCondType(str, Enum):
+class NiceCondType(StrEnum):
     """Condition Type Enum"""
 
     none = "none"
@@ -2395,7 +2395,7 @@ class VoiceCondType(IntEnum):
     LEVEL_UP_LIMIT_COUNT_BELOW = 26
 
 
-class NiceVoiceCondType(str, Enum):
+class NiceVoiceCondType(StrEnum):
     """Voice Condition Type Enum"""
 
     birthDay = "birthDay"
@@ -2501,7 +2501,7 @@ class SvtVoiceType(IntEnum):
     SUM = 24
 
 
-class NiceSvtVoiceType(str, Enum):
+class NiceSvtVoiceType(StrEnum):
     """Servant Voice Type Enum"""
 
     home = "home"
@@ -2567,7 +2567,7 @@ class QuestType(IntEnum):
     WAR_BOARD = 7
 
 
-class NiceQuestType(str, Enum):
+class NiceQuestType(StrEnum):
     """Quest Type Enum"""
 
     main = "main"
@@ -2596,7 +2596,7 @@ class QuestConsumeType(IntEnum):
     AP_AND_ITEM = 4
 
 
-class NiceConsumeType(str, Enum):
+class NiceConsumeType(StrEnum):
     """Consume Type Enum"""
 
     none = "none"
@@ -2623,7 +2623,7 @@ class QuestAfterClearType(IntEnum):
     CLOSE_DISP = 5
 
 
-class NiceQuestAfterClearType(str, Enum):
+class NiceQuestAfterClearType(StrEnum):
     """Quest After Clear Enum"""
 
     close = "close"
@@ -2704,7 +2704,7 @@ class QuestFlag(IntEnum):
     RECOLLECTION = 576460752303423488
 
 
-class NiceQuestFlag(str, Enum):
+class NiceQuestFlag(StrEnum):
     """Quest Flag Enum"""
 
     none = "none"
@@ -2862,7 +2862,7 @@ class StatusRank(IntEnum):
     NONE = 99
 
 
-class NiceStatusRank(str, Enum):
+class NiceStatusRank(StrEnum):
     """Status Rank Enum"""
 
     a = "A"
@@ -2957,7 +2957,7 @@ class EventType(IntEnum):
     INTERLUDE_CAMPAIGN = 25
 
 
-class NiceEventType(str, Enum):
+class NiceEventType(StrEnum):
     """Event Type Enum"""
 
     none = "none"
@@ -3042,7 +3042,7 @@ class WarEntityFlag(IntEnum):
     IS_WAR_ICON_CENTER = 4194304
 
 
-class NiceWarFlag(str, Enum):
+class NiceWarFlag(StrEnum):
     """War Flag Enum"""
 
     withMap = "withMap"
@@ -3101,7 +3101,7 @@ class WarEntityStartType(IntEnum):
     QUEST = 2
 
 
-class NiceWarStartType(str, Enum):
+class NiceWarStartType(StrEnum):
     """War Start Type Enum"""
 
     none = "none"
@@ -3138,7 +3138,7 @@ class WarOverwriteType(IntEnum):
     EFFECT_CHANGE_WHITE_MARK = 19
 
 
-class NiceWarOverwriteType(str, Enum):
+class NiceWarOverwriteType(StrEnum):
     """War Overwrite Type Enum"""
 
     bgm = "bgm"
@@ -3330,7 +3330,7 @@ class AiCond(IntEnum):
     CHECK_SELECT_CHAIN = 181
 
 
-class NiceAiCond(str, Enum):
+class NiceAiCond(StrEnum):
     """AI Cond Enum"""
 
     none = "none"
@@ -3664,7 +3664,7 @@ class AiActType(IntEnum):
     CHANGE_THINKING = 99
 
 
-class NiceAiActType(str, Enum):
+class NiceAiActType(StrEnum):
     """AI Act Type Enum"""
 
     none = "none"
@@ -3736,7 +3736,7 @@ class AiActTarget(IntEnum):
     BACK = 17
 
 
-class NiceAiActTarget(str, Enum):
+class NiceAiActTarget(StrEnum):
     """AI Act Target Enum"""
 
     none = "none"
@@ -3789,7 +3789,7 @@ class AiActNum(IntEnum):
     REACTION_ENEMY_TURN_END_PRIORITY = -501
 
 
-class NiceAiActNum(str, Enum):
+class NiceAiActNum(StrEnum):
     """AI Act Num Enum"""
 
     nomal = "nomal"
@@ -3845,7 +3845,7 @@ class MissionType(IntEnum):
     RANDOM = 7
 
 
-class NiceMissionType(str, Enum):
+class NiceMissionType(StrEnum):
     """Mission Type Enum"""
 
     none = "none"
@@ -3876,7 +3876,7 @@ class MissionRewardType(IntEnum):
     SET = 3
 
 
-class NiceMissionRewardType(str, Enum):
+class NiceMissionRewardType(StrEnum):
     """Mission Reward Type Enum"""
 
     gift = "gift"
@@ -3900,7 +3900,7 @@ class MissionProgressType(IntEnum):
     ACHIEVE = 5
 
 
-class NiceMissionProgressType(str, Enum):
+class NiceMissionProgressType(StrEnum):
     """Mission Progress Type Enum"""
 
     none = "none"
@@ -3926,7 +3926,7 @@ class BoxGachaFlag(IntEnum):
     LIMIT_RESET = 2
 
 
-class NiceLotteryFlag(str, Enum):
+class NiceLotteryFlag(StrEnum):
     """Event Lottery Flag"""
 
     none = "none"
@@ -3943,7 +3943,7 @@ class BgmFlag(IntEnum):
     IS_NOT_RELEASE = 1
 
 
-class NiceBgmFlag(str, Enum):
+class NiceBgmFlag(StrEnum):
     """Bgm Flag"""
 
     isNotRelease = "isNotRelease"
@@ -3965,7 +3965,7 @@ class SvtFrameType(IntEnum):
     FRAME_0804 = 7
 
 
-class NiceSvtFrameType(str, Enum):
+class NiceSvtFrameType(StrEnum):
     """Servant Frame Type"""
 
     black = "black"
@@ -3995,7 +3995,7 @@ class CommonConsumeType(IntEnum):
     AP = 2
 
 
-class NiceCommonConsumeType(str, Enum):
+class NiceCommonConsumeType(StrEnum):
     """Common Consume Type"""
 
     item = "item"
@@ -4014,7 +4014,7 @@ class EventRewardSceneFlag(IntEnum):
     IS_HIDE_TAB = 8
 
 
-class NiceEventRewardSceneFlag(str, Enum):
+class NiceEventRewardSceneFlag(StrEnum):
     """Event Reward Scene Flag"""
 
     npcGuide = "npcGuide"
@@ -4048,7 +4048,7 @@ class AiCondTarget(IntEnum):
     PT_BACK = 15
 
 
-class NiceAiCondTarget(str, Enum):
+class NiceAiCondTarget(StrEnum):
     """Ai Condition Target"""
 
     none = "none"
@@ -4128,7 +4128,7 @@ class AiCondParameter(IntEnum):
     CHECK_SELECT_CHAIN = 35
 
 
-class NiceAiCondParameter(str, Enum):
+class NiceAiCondParameter(StrEnum):
     """Ai Condition Parameter"""
 
     none = "none"
@@ -4217,7 +4217,7 @@ class AiRefineTarget(IntEnum):
     TOTAL_COUNT = 4
 
 
-class NiceAiCondRefine(str, Enum):
+class NiceAiCondRefine(StrEnum):
     """Ai Condition Refine"""
 
     any = "any"
@@ -4246,7 +4246,7 @@ class AiCheckTarget(IntEnum):
     EXIST = 6
 
 
-class NiceAiCondCheck(str, Enum):
+class NiceAiCondCheck(StrEnum):
     """Ai Condition Check"""
 
     none = "none"
@@ -4275,7 +4275,7 @@ class TreasureDeviceEffectFlag(IntEnum):
     ATTACK_ENEMY_ONE = 2
 
 
-class NiceTdEffectFlag(str, Enum):
+class NiceTdEffectFlag(StrEnum):
     """Treasure Device Effect Flag"""
 
     support = "support"
@@ -4324,7 +4324,7 @@ class CombineAdjustTargetType(IntEnum):
     QUEST_FRIENDSHIP = 31
 
 
-class NiceCombineAdjustTarget(str, Enum):
+class NiceCombineAdjustTarget(StrEnum):
     """Combine Adjust Target Type"""
 
     combineQp = "combineQp"
@@ -4401,7 +4401,7 @@ class EventCombineEntityCalcType(IntEnum):
     FIXED_VALUE = 3
 
 
-class NiceEventCombineCalc(str, Enum):
+class NiceEventCombineCalc(StrEnum):
     """Event Combine Calc Type"""
 
     addition = "addition"
@@ -4422,7 +4422,7 @@ class EventWorkType(IntEnum):
     FARMMING = 3
 
 
-class NiceEventWorkType(str, Enum):
+class NiceEventWorkType(StrEnum):
     """Event Fortification Work Type"""
 
     militsryAffairs = "militsryAffairs"
@@ -4443,7 +4443,7 @@ class EventFortificationSvtType(IntEnum):
     NONE = 2
 
 
-class NiceEventFortificationSvtType(str, Enum):
+class NiceEventFortificationSvtType(StrEnum):
     """Event Fortification Servant Type"""
 
     userSvt = "userSvt"
@@ -4472,7 +4472,7 @@ class ServantClassSupportGroupType(IntEnum):
     NOT_SUPPORT = 999
 
 
-class NiceSvtClassSupportGroupType(str, Enum):
+class NiceSvtClassSupportGroupType(StrEnum):
     """Servant Class Support Group Type"""
 
     all = "all"

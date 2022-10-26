@@ -1,4 +1,4 @@
-from enum import Enum
+from enum import StrEnum
 
 import orjson
 
@@ -10,7 +10,7 @@ from .. import Redis
 settings = Settings()
 
 
-class RedisReverse(str, Enum):
+class RedisReverse(StrEnum):
     BUFF_TO_FUNC = "buff_to_func"
     FUNC_TO_SKILL = "func_to_skill"
     FUNC_TO_TD = "func_to_td"
