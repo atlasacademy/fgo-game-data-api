@@ -2,7 +2,7 @@ from typing import Iterable, Optional, Union
 
 from fastapi import HTTPException
 from fuzzywuzzy import utils
-from Levenshtein import ratio  # type: ignore
+from Levenshtein import ratio
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..data.custom_mappings import CV_EN_TO_JP, ILLUSTRATOR_EN_TO_JP

@@ -1,8 +1,6 @@
 from itertools import chain
 from typing import Optional, Type, TypeVar
 
-from redis.asyncio import Redis  # type: ignore
-
 from ...config import Settings
 from ...schemas.base import BaseModelORJson
 from ...schemas.common import Region
@@ -17,6 +15,7 @@ from ...schemas.raw import (
     MstSvtLimit,
     MstTreasureDevice,
 )
+from .. import Redis
 
 
 settings = Settings()
@@ -41,7 +40,7 @@ async def fetch_id(
 ) -> Optional[RedisPydantic]:
     redis_table = pydantic_obj_redis_table[schema][0]
     redis_key = f"{settings.redis_prefix}:data:{region.name}:{redis_table}"
-    item_redis = await redis.hget(redis_key, item_id)
+    item_redis = await redis.hget(redis_key, str(item_id))
 
     if item_redis:
         return schema.parse_raw(item_redis)

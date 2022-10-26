@@ -1,9 +1,8 @@
 from typing import Optional
 
-from redis.asyncio import Redis  # type: ignore
-
 from ...config import Settings
 from ...schemas.common import Region, RepoInfo
+from .. import Redis
 
 
 settings = Settings()

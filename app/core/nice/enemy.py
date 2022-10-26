@@ -1,10 +1,10 @@
 from dataclasses import dataclass
 from typing import Any
 
-from redis.asyncio import Redis  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...data.custom_mappings import Translation
+from ...redis import Redis
 from ...schemas.common import Language, Region
 from ...schemas.enums import (
     ATTRIBUTE_NAME,

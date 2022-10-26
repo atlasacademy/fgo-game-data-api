@@ -2,11 +2,11 @@ from collections import defaultdict
 from typing import Any, Generator, Iterable, Optional
 
 from fastapi import HTTPException
-from redis.asyncio import Redis  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..config import Settings
 from ..db.helpers import fetch, quest
+from ..redis import Redis
 from ..redis.helpers import pydantic_object
 from ..redis.helpers.reverse import RedisReverse, get_reverse_ids
 from ..schemas.basic import (

@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends, Query, Response
 from fastapi_cache.decorator import cache
-from redis.asyncio import Redis  # type: ignore
 
 from ..config import Settings
 from ..core import raw, search
 from ..db.helpers.cc import get_cc_id
 from ..db.helpers.svt import get_ce_id, get_svt_id
+from ..redis import Redis
 from ..schemas.common import Region, ReverseDepth
 from ..schemas.enums import AiType
 from ..schemas.raw import (

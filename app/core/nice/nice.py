@@ -1,9 +1,9 @@
 from typing import Optional
 
-from redis.asyncio import Redis  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
+from ...redis import Redis
 from ...redis.helpers.reverse import RedisReverse, get_reverse_ids
 from ...schemas.basic import (
     BasicReversedBuff,

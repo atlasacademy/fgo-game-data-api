@@ -1,6 +1,5 @@
 from fastapi import APIRouter, Depends, Response
 from fastapi_cache.decorator import cache
-from redis.asyncio import Redis  # type: ignore
 
 from ..config import Settings
 from ..core import search
@@ -9,6 +8,7 @@ from ..core.nice.event.event import get_nice_event
 from ..core.nice.script import get_nice_script_search_result
 from ..db.helpers.cc import get_cc_id
 from ..db.helpers.svt import get_ce_id, get_svt_id
+from ..redis import Redis
 from ..schemas.common import Language, Region, ReverseData, ReverseDepth
 from ..schemas.enums import AiType
 from ..schemas.nice import (

@@ -9,7 +9,6 @@ import orjson
 from fastapi.concurrency import run_in_threadpool
 from git import Repo  # type: ignore
 from pydantic import DirectoryPath
-from redis.asyncio import Redis  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection, AsyncEngine
 
 from .config import Settings, logger, project_root
@@ -37,6 +36,7 @@ from .db.helpers import fetch
 from .db.helpers.svt import get_all_equips
 from .db.load import load_pydantic_to_db, update_db
 from .models.raw import mstSvtExtra
+from .redis import Redis
 from .redis.helpers.repo_version import get_repo_version, set_repo_version
 from .redis.load import load_redis_data, load_svt_extra_redis
 from .routers.utils import list_string

@@ -1,9 +1,9 @@
 import orjson
-from redis.asyncio import Redis  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...core.basic import get_basic_servant
 from ...core.utils import get_nice_trait
+from ...redis import Redis
 from ...schemas.common import Language, NiceTrait, Region
 from ...schemas.gameenums import COND_TYPE_NAME
 from ...schemas.nice import (

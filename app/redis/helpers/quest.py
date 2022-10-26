@@ -1,11 +1,10 @@
 from typing import Optional
 
-from redis.asyncio import Redis  # type: ignore
-
 from ...config import Settings
 from ...schemas.base import BaseModelORJson
 from ...schemas.common import Language, Region
 from ...schemas.nice import EnemyDrop, NiceStage
+from .. import Redis
 
 
 settings = Settings()

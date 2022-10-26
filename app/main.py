@@ -14,12 +14,13 @@ from fastapi.staticfiles import StaticFiles
 from fastapi_cache import FastAPICache
 from fastapi_cache.backends import Backend
 from fastapi_cache.coder import PickleCoder
-from redis.asyncio import Redis  # type: ignore
+from redis.asyncio import Redis as AsyncRedis
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from .config import Settings, project_root
 from .core.info import get_all_repo_info
 from .db.engine import async_engines, engines
+from .redis import Redis
 from .routers import basic, nice, raw, secret
 from .routers.deps import get_redis
 from .schemas.common import Region, RepoInfo
@@ -247,7 +248,7 @@ def custom_key_builder(
     static_args = [
         arg
         for arg in args
-        if not isinstance(arg, AsyncConnection) and not isinstance(arg, Redis)
+        if not isinstance(arg, AsyncConnection) and not isinstance(arg, AsyncRedis)
     ]
 
     region = get_region(static_args, static_kwargs)
@@ -284,7 +285,7 @@ class RedisBackend(Backend):  # type: ignore # pragma: no cover
             lua = f"for i, name in ipairs(redis.call('KEYS', '{namespace}:*')) do redis.call('DEL', name); end"
             return await self.redis.eval(lua, numkeys=0)  # type: ignore
         elif key:
-            return await self.redis.delete(key)  # type: ignore
+            return await self.redis.delete(key)
 
         raise ValueError("Either namespace or key must be specified.")
 

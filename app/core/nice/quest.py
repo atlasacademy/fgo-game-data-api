@@ -5,7 +5,6 @@ from typing import Any, Optional, Union
 
 from fastapi import HTTPException
 from fastapi_cache.decorator import cache
-from redis.asyncio import Redis  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
@@ -13,6 +12,7 @@ from ...db.helpers import war
 from ...db.helpers.quest import get_questSelect_container
 from ...db.helpers.rayshift import get_rayshift_drops
 from ...rayshift.quest import get_quest_detail
+from ...redis import Redis
 from ...redis.helpers.quest import RayshiftRedisData, get_stages_cache, set_stages_cache
 from ...schemas.common import Language, Region, ScriptLink
 from ...schemas.enums import CLASS_NAME

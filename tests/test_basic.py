@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 import pytest
 from httpx import AsyncClient
-from redis.asyncio import Redis  # type: ignore
+from redis.asyncio import Redis
 
 from app.core.basic import get_basic_svt
 from app.schemas.common import Region
@@ -130,7 +130,7 @@ class BasicSvtFaceCase:
 
 @pytest.mark.asyncio
 class TestBasicSpecial:
-    async def test_basic_servant_face(self, redis: Redis) -> None:
+    async def test_basic_servant_face(self, redis: "Redis[bytes]") -> None:
         basic_face_cases = [
             BasicSvtFaceCase(Region.NA, 303800, None, "NA/Faces/f_3038000.png"),
             BasicSvtFaceCase(Region.NA, 303800, 4, "NA/Faces/f_3038003.png"),

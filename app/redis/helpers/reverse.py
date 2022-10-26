@@ -1,10 +1,10 @@
 from enum import Enum
 
 import orjson
-from redis.asyncio import Redis  # type: ignore
 
 from ...config import Settings
 from ...schemas.common import Region
+from .. import Redis
 
 
 settings = Settings()
@@ -25,7 +25,7 @@ async def get_reverse_ids(
     redis: Redis, region: Region, reverse_type: RedisReverse, item_id: int
 ) -> list[int]:
     redis_key = f"{settings.redis_prefix}:data:{region.name}:{reverse_type.name}"
-    item_redis = await redis.hget(redis_key, item_id)
+    item_redis = await redis.hget(redis_key, str(item_id))
 
     if item_redis:
         id_list: list[int] = orjson.loads(item_redis)

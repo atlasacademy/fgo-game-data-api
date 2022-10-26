@@ -2,10 +2,10 @@ from contextlib import asynccontextmanager
 from typing import AsyncGenerator, Optional
 
 from fastapi import HTTPException, Request
-from redis.asyncio import Redis  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..db.engine import async_engines
+from ..redis import Redis
 from ..schemas.common import Language, Region
 
 

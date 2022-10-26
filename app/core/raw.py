@@ -2,12 +2,12 @@ from typing import Iterable, Optional
 
 import orjson
 from fastapi import HTTPException
-from redis.asyncio import Redis  # type: ignore
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..data.custom_mappings import EXTRA_CHARAFIGURES
 from ..data.shop import get_shop_cost_item_id
 from ..db.helpers import ai, event, fetch, item, quest, script, skill, svt, td, war
+from ..redis import Redis
 from ..redis.helpers.reverse import RedisReverse, get_reverse_ids
 from ..schemas.common import Region, ReverseDepth
 from ..schemas.enums import FUNC_VALS_NOT_BUFF, DetailMissionCondType
