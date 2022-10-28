@@ -306,7 +306,8 @@ def update_translation(
             }
 
         last_war_id = na_constant["LAST_WAR_ID"]
-        na_names.pop(last_war_id + 1)
+        if last_war_id in na_names:
+            na_names.pop(last_war_id)
 
     if master_file == "mstTreasureDevice":
         na_names = get_names(na_svt)
