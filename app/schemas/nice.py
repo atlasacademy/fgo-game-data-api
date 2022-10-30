@@ -2027,12 +2027,18 @@ class FieldAi(BaseModelORJson):
     id: int
 
 
+class NiceStageStartMovie(BaseModelORJson):
+    wave: int
+    waveStartMovie: HttpUrl
+
+
 class NiceStage(BaseModelORJson):
     wave: int
     bgm: NiceBgm
     fieldAis: list[FieldAi] = []
     call: list[int] = Field([], title="Summon these NPC IDs")
     enemyFieldPosCount: int | None = None
+    waveStartMovies: list[NiceStageStartMovie] = []
     enemies: list[QuestEnemy] = []
 
 
@@ -2094,15 +2100,9 @@ class SupportServant(BaseModelORJson):
     misc: SupportServantMisc
 
 
-class NiceQuestPhaseWaveStartMovie(BaseModelORJson):
-    wave: int
-    waveStartMovie: HttpUrl
-
-
 class NiceQuestPhaseExtraDetail(BaseModelORJson):
     questSelect: list[int] | None = None
     singleForceSvtId: int | None = None
-    waveStartMovies: list[NiceQuestPhaseWaveStartMovie] | None = None
 
 
 class NiceQuestPhase(NiceQuest):
