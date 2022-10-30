@@ -31,6 +31,7 @@ from ...schemas.nice import (
     NiceQuest,
     NiceQuestMessage,
     NiceQuestPhase,
+    NiceQuestPhaseWaveStartMovie,
     NiceQuestPhaseScript,
     NiceQuestRelease,
     NiceStage,
@@ -51,7 +52,7 @@ from ...schemas.raw import (
     ScriptFile,
 )
 from .. import raw
-from ..utils import get_flags, get_traits_list, get_translation
+from ..utils import fmt_url, get_flags, get_traits_list, get_translation
 from .base_script import get_nice_script_link
 from .bgm import get_nice_bgm
 from .enemy import get_nice_drop, get_quest_enemies
@@ -230,6 +231,26 @@ async def get_nice_quest_phase_no_rayshift(
             raw_quest.npcSvtEquip,
             lang,
         )
+
+    if (
+        "waveStartMovie" in raw_quest.mstQuestPhase.script
+        and "movieWave" in raw_quest.mstQuestPhase.script
+    ):
+        raw_quest.mstQuestPhase.script["waveStartMovies"] = [
+            NiceQuestPhaseWaveStartMovie(
+                wave=wave,
+                waveStartMovie=fmt_url(
+                    AssetURL.movie,
+                    base_url=settings.asset_url,
+                    region=region,
+                    item_id=movie_name.removesuffix(".usm"),
+                ),
+            )
+            for movie_name, wave in zip(
+                raw_quest.mstQuestPhase.script["waveStartMovie"],
+                raw_quest.mstQuestPhase.script["movieWave"],
+            )
+        ]
 
     nice_data |= {
         "phase": raw_quest.mstQuestPhase.phase,

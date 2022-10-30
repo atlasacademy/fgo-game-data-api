@@ -155,6 +155,7 @@ class AssetURL:
     script = "{base_url}/{region}/Script/{script_path}.txt"
     bgmLogo = "{base_url}/{region}/MyRoomSound/soundlogo_{logo_id:0>3}.png"
     servantModel = "{base_url}/{region}/Servants/{item_id}/manifest.json"
+    movie = "{base_url}/{region}/Movie/{item_id}.mp4"
 
 
 class NiceBaseGift(BaseModelORJson):
@@ -2093,9 +2094,15 @@ class SupportServant(BaseModelORJson):
     misc: SupportServantMisc
 
 
+class NiceQuestPhaseWaveStartMovie(BaseModelORJson):
+    wave: int
+    waveStartMovie: HttpUrl
+
+
 class NiceQuestPhaseExtraDetail(BaseModelORJson):
     questSelect: list[int] | None = None
     singleForceSvtId: int | None = None
+    waveStartMovies: list[NiceQuestPhaseWaveStartMovie] | None = None
 
 
 class NiceQuestPhase(NiceQuest):
