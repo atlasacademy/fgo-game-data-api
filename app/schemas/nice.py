@@ -2028,7 +2028,6 @@ class FieldAi(BaseModelORJson):
 
 
 class NiceStageStartMovie(BaseModelORJson):
-    wave: int
     waveStartMovie: HttpUrl
 
 
