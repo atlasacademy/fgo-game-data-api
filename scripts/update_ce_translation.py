@@ -202,7 +202,7 @@ def update_servant_translation(jp_master: Path, na_master: Path) -> None:
 
         updated_translation[jp_name] = new_translation
 
-    with open(mapping_path, "w", encoding="utf-8") as fp:
+    with open(mapping_path, "w", encoding="utf-8", newline="\n") as fp:
         json.dump(updated_translation, fp, indent=2, ensure_ascii=False)
         fp.write("\n")
 
