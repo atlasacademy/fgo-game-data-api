@@ -305,7 +305,7 @@ def update_translation(
                 constant["name"]: constant["value"] for constant in json.load(fp)
             }
 
-        last_war_id = na_constant["LAST_WAR_ID"]
+        last_war_id = na_constant["LAST_WAR_ID"] + 1
         if last_war_id in na_names:
             na_names.pop(last_war_id)
 
