@@ -313,6 +313,8 @@ export enum NiceBuffType {
     INVISIBLE_BATTLE_CHARA = "invisibleBattleChara",
     COUNTER_FUNCTION = "counterFunction",
     NOT_TARGET_SKILL = "notTargetSkill",
+    HP_REDUCE_TO_REGAIN = "hpReduceToRegain",
+    SELFTURNSTART_FUNCTION = "selfturnstartFunction",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
 }
@@ -425,6 +427,8 @@ export enum NiceBuffAction {
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
     GRANT_STATE_UP_ONLY = "grantStateUpOnly",
+    TURNEND_HP_REDUCE_TO_REGAIN = "turnendHpReduceToRegain",
+    FUNCTION_SELFTURNSTART = "functionSelfturnstart",
 }
 
 export enum NiceBuffLimit {
@@ -550,6 +554,7 @@ export enum NiceDataValsType {
     AddIndividualityEx = "addindividualityex",
     IgnoreResistance = "ignoreresistance",
     GainNpTargetPassiveIndividuality = "gainnptargetpassiveindividuality",
+    HpReduceToRegainIndiv = "hpreducetoregainindiv",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -847,6 +852,10 @@ export enum NiceCondType {
     RANDOM_MISSION_TOTAL_CLEAR_NUM = "randomMissionTotalClearNum",
     WEEKDAYS = "weekdays",
     EVENT_FORTIFICATION_REWARD_NUM = "eventFortificationRewardNum",
+    QUEST_CLEAR_BEFORE_EVENT_START = "questClearBeforeEventStart",
+    NOT_QUEST_CLEAR_BEFORE_EVENT_START = "notQuestClearBeforeEventStart",
+    EVENT_TUTORIAL_FLAG_ON = "eventTutorialFlagOn",
+    EVENT_TUTORIAL_FLAG_OFF = "eventTutorialFlagOff",
 }
 
 export enum NiceVoiceCondType {

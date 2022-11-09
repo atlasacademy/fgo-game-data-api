@@ -658,6 +658,8 @@ class BuffType(IntEnum):
     INVISIBLE_BATTLE_CHARA = 163
     COUNTER_FUNCTION = 165
     NOT_TARGET_SKILL = 166
+    HP_REDUCE_TO_REGAIN = 167
+    SELFTURNSTART_FUNCTION = 168
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
 
@@ -816,6 +818,8 @@ class NiceBuffType(StrEnum):
     invisibleBattleChara = "invisibleBattleChara"
     counterFunction = "counterFunction"
     notTargetSkill = "notTargetSkill"
+    hpReduceToRegain = "hpReduceToRegain"
+    selfturnstartFunction = "selfturnstartFunction"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
 
@@ -972,6 +976,8 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     163: NiceBuffType.invisibleBattleChara,
     165: NiceBuffType.counterFunction,
     166: NiceBuffType.notTargetSkill,
+    167: NiceBuffType.hpReduceToRegain,
+    168: NiceBuffType.selfturnstartFunction,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
 }
@@ -1085,6 +1091,8 @@ class BuffAction(IntEnum):
     TO_FIELD_CHANGE_FIELD = 104
     TO_FIELD_AVOID_BUFF = 105
     GRANT_STATE_UP_ONLY = 106
+    TURNEND_HP_REDUCE_TO_REGAIN = 107
+    FUNCTION_SELFTURNSTART = 108
 
 
 class NiceBuffAction(StrEnum):
@@ -1197,6 +1205,8 @@ class NiceBuffAction(StrEnum):
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     grantStateUpOnly = "grantStateUpOnly"
+    turnendHpReduceToRegain = "turnendHpReduceToRegain"
+    functionSelfturnstart = "functionSelfturnstart"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1307,6 +1317,8 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     104: NiceBuffAction.toFieldChangeField,
     105: NiceBuffAction.toFieldAvoidBuff,
     106: NiceBuffAction.grantStateUpOnly,
+    107: NiceBuffAction.turnendHpReduceToRegain,
+    108: NiceBuffAction.functionSelfturnstart,
 }
 
 
@@ -1450,6 +1462,7 @@ class DataValsType(IntEnum):
     AddIndividualityEx = 112
     IgnoreResistance = 113
     GainNpTargetPassiveIndividuality = 114
+    HpReduceToRegainIndiv = 115
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -2025,6 +2038,10 @@ class CondType(IntEnum):
     RANDOM_MISSION_TOTAL_CLEAR_NUM = 162
     WEEKDAYS = 166
     EVENT_FORTIFICATION_REWARD_NUM = 167
+    QUEST_CLEAR_BEFORE_EVENT_START = 168
+    NOT_QUEST_CLEAR_BEFORE_EVENT_START = 169
+    EVENT_TUTORIAL_FLAG_ON = 170
+    EVENT_TUTORIAL_FLAG_OFF = 171
 
 
 class NiceCondType(StrEnum):
@@ -2195,6 +2212,10 @@ class NiceCondType(StrEnum):
     randomMissionTotalClearNum = "randomMissionTotalClearNum"
     weekdays = "weekdays"
     eventFortificationRewardNum = "eventFortificationRewardNum"
+    questClearBeforeEventStart = "questClearBeforeEventStart"
+    notQuestClearBeforeEventStart = "notQuestClearBeforeEventStart"
+    eventTutorialFlagOn = "eventTutorialFlagOn"
+    eventTutorialFlagOff = "eventTutorialFlagOff"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2363,6 +2384,10 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     162: NiceCondType.randomMissionTotalClearNum,
     166: NiceCondType.weekdays,
     167: NiceCondType.eventFortificationRewardNum,
+    168: NiceCondType.questClearBeforeEventStart,
+    169: NiceCondType.notQuestClearBeforeEventStart,
+    170: NiceCondType.eventTutorialFlagOn,
+    171: NiceCondType.eventTutorialFlagOff,
 }
 
 
