@@ -9102,6 +9102,9 @@
   "treasureBoxes": [],
   "bulletinBoards": [],
   "recipes": [],
+  "fortifications": [],
+  "campaigns": [],
+  "campaignQuests": [],
   "voicePlays": [
     {
       "slot": 2,

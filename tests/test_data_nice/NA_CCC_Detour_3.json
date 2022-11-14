@@ -106,6 +106,7 @@
       },
       "fieldAis": [],
       "call": [],
+      "waveStartMovies": [],
       "enemies": [
         {
           "deck": "enemy",
@@ -723,6 +724,7 @@
       },
       "fieldAis": [],
       "call": [],
+      "waveStartMovies": [],
       "enemies": [
         {
           "deck": "enemy",
@@ -745,7 +747,26 @@
             "atkMax": 9949,
             "hpMax": 11589,
             "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_1020001.png",
-            "costume": {}
+            "costume": {
+              "102000": {
+                "id": 0,
+                "costumeCollectionNo": 0,
+                "battleCharaId": 102000,
+                "shortName": ""
+              },
+              "102010": {
+                "id": 1,
+                "costumeCollectionNo": 0,
+                "battleCharaId": 102010,
+                "shortName": ""
+              },
+              "102020": {
+                "id": 3,
+                "costumeCollectionNo": 0,
+                "battleCharaId": 102020,
+                "shortName": ""
+              }
+            }
           },
           "drops": [
             {
@@ -3548,7 +3569,26 @@
             "atkMax": 9735,
             "hpMax": 11637,
             "face": "https://assets.atlasacademy.io/GameData/NA/Faces/f_2008001.png",
-            "costume": {}
+            "costume": {
+              "200800": {
+                "id": 0,
+                "costumeCollectionNo": 0,
+                "battleCharaId": 200800,
+                "shortName": ""
+              },
+              "200810": {
+                "id": 1,
+                "costumeCollectionNo": 0,
+                "battleCharaId": 200810,
+                "shortName": ""
+              },
+              "200820": {
+                "id": 3,
+                "costumeCollectionNo": 0,
+                "battleCharaId": 200820,
+                "shortName": ""
+              }
+            }
           },
           "drops": [
             {

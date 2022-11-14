@@ -94,6 +94,7 @@
       },
       "fieldAis": [],
       "call": [],
+      "waveStartMovies": [],
       "enemies": []
     },
     {
@@ -107,6 +108,7 @@
       },
       "fieldAis": [],
       "call": [],
+      "waveStartMovies": [],
       "enemies": []
     }
   ]

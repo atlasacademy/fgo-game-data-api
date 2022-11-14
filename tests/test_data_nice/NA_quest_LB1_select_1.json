@@ -1966,6 +1966,7 @@
       },
       "fieldAis": [],
       "call": [],
+      "waveStartMovies": [],
       "enemies": [
         {
           "deck": "enemy",

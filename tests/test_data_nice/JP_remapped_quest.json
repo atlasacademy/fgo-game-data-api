@@ -165,6 +165,7 @@
       },
       "fieldAis": [],
       "call": [],
+      "waveStartMovies": [],
       "enemies": [
         {
           "deck": "enemy",
@@ -1424,6 +1425,7 @@
       },
       "fieldAis": [],
       "call": [],
+      "waveStartMovies": [],
       "enemies": [
         {
           "deck": "enemy",
@@ -3319,6 +3321,7 @@
       },
       "fieldAis": [],
       "call": [],
+      "waveStartMovies": [],
       "enemies": [
         {
           "deck": "enemy",
