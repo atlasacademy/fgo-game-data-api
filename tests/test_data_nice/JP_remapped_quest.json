@@ -85,72 +85,72 @@
       "objectId": 6001,
       "num": 1,
       "dropCount": 10,
-      "runs": 48,
-      "dropExpected": 0.20833333333333334,
-      "dropVariance": 0.16843971631205673
+      "runs": 47,
+      "dropExpected": 0.2127659574468085,
+      "dropVariance": 0.1711378353376503
     },
     {
       "type": "item",
       "objectId": 6524,
       "num": 1,
       "dropCount": 15,
-      "runs": 48,
-      "dropExpected": 0.3125,
-      "dropVariance": 0.3045212765957447
+      "runs": 47,
+      "dropExpected": 0.3191489361702128,
+      "dropVariance": 0.3089731729879741
     },
     {
       "type": "item",
       "objectId": 7001,
       "num": 1,
-      "dropCount": 9,
-      "runs": 48,
-      "dropExpected": 0.1875,
-      "dropVariance": 0.15558510638297873
+      "dropCount": 8,
+      "runs": 47,
+      "dropExpected": 0.1702127659574468,
+      "dropVariance": 0.14431082331174838
     },
     {
       "type": "item",
       "objectId": 7007,
       "num": 1,
       "dropCount": 5,
-      "runs": 48,
-      "dropExpected": 0.10416666666666667,
-      "dropVariance": 0.09530141843971632
+      "runs": 47,
+      "dropExpected": 0.10638297872340426,
+      "dropVariance": 0.0971322849213691
     },
     {
       "type": "item",
       "objectId": 94060001,
       "num": 3,
-      "dropCount": 399,
-      "runs": 48,
-      "dropExpected": 8.3125,
-      "dropVariance": 1.240691489361702
+      "dropCount": 392,
+      "runs": 47,
+      "dropExpected": 8.340425531914894,
+      "dropVariance": 1.2294172062904718
     },
     {
       "type": "item",
       "objectId": 94060002,
       "num": 3,
-      "dropCount": 74,
-      "runs": 48,
-      "dropExpected": 1.5416666666666667,
-      "dropVariance": 0.6790780141843972
+      "dropCount": 73,
+      "runs": 47,
+      "dropExpected": 1.553191489361702,
+      "dropVariance": 0.6873265494912119
     },
     {
       "type": "item",
       "objectId": 94060004,
       "num": 3,
-      "dropCount": 69,
-      "runs": 48,
-      "dropExpected": 1.4375,
-      "dropVariance": 0.33643617021276595
+      "dropCount": 68,
+      "runs": 47,
+      "dropExpected": 1.446808510638298,
+      "dropVariance": 0.33950046253469013
     },
     {
       "type": "item",
       "objectId": 94060004,
       "num": 4,
-      "dropCount": 252,
-      "runs": 48,
-      "dropExpected": 5.25,
-      "dropVariance": 1.2127659574468086
+      "dropCount": 246,
+      "runs": 47,
+      "dropExpected": 5.23404255319149,
+      "dropVariance": 1.2266419981498613
     }
   ],
   "stages": [

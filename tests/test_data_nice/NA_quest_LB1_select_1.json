@@ -1953,7 +1953,17 @@
       }
     }
   ],
-  "drops": [],
+  "drops": [
+    {
+      "type": "item",
+      "objectId": 6531,
+      "num": 1,
+      "dropCount": 18,
+      "runs": 18,
+      "dropExpected": 1.0,
+      "dropVariance": 0.0
+    }
+  ],
   "stages": [
     {
       "wave": 1,
@@ -1991,7 +2001,17 @@
             "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99393401.png",
             "costume": {}
           },
-          "drops": [],
+          "drops": [
+            {
+              "type": "item",
+              "objectId": 6531,
+              "num": 1,
+              "dropCount": 0,
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
+            }
+          ],
           "lv": 80,
           "exp": 0,
           "atk": 7739,
@@ -2448,6 +2468,10 @@
                         {
                           "id": 3026,
                           "name": "buffCurse"
+                        },
+                        {
+                          "id": 2729,
+                          "name": "curse"
                         }
                       ],
                       "tvals": [],

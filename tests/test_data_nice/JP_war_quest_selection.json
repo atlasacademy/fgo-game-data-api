@@ -1071,7 +1071,9 @@
         "phases": [
           1
         ],
-        "phasesWithEnemies": [],
+        "phasesWithEnemies": [
+          1
+        ],
         "phasesNoBattle": [],
         "phaseScripts": [
           {
@@ -1152,7 +1154,9 @@
         "phases": [
           1
         ],
-        "phasesWithEnemies": [],
+        "phasesWithEnemies": [
+          1
+        ],
         "phasesNoBattle": [],
         "phaseScripts": [
           {
@@ -1234,7 +1238,10 @@
           1,
           2
         ],
-        "phasesWithEnemies": [],
+        "phasesWithEnemies": [
+          1,
+          2
+        ],
         "phasesNoBattle": [],
         "phaseScripts": [
           {
@@ -1323,7 +1330,9 @@
         "phases": [
           1
         ],
-        "phasesWithEnemies": [],
+        "phasesWithEnemies": [
+          1
+        ],
         "phasesNoBattle": [],
         "phaseScripts": [
           {
@@ -1404,7 +1413,9 @@
         "phases": [
           1
         ],
-        "phasesWithEnemies": [],
+        "phasesWithEnemies": [
+          1
+        ],
         "phasesNoBattle": [],
         "phaseScripts": [
           {
@@ -1485,7 +1496,9 @@
         "phases": [
           1
         ],
-        "phasesWithEnemies": [],
+        "phasesWithEnemies": [
+          1
+        ],
         "phasesNoBattle": [],
         "phaseScripts": [
           {
@@ -1566,7 +1579,9 @@
         "phases": [
           1
         ],
-        "phasesWithEnemies": [],
+        "phasesWithEnemies": [
+          1
+        ],
         "phasesNoBattle": [],
         "phaseScripts": [
           {
@@ -1647,7 +1662,9 @@
         "phases": [
           1
         ],
-        "phasesWithEnemies": [],
+        "phasesWithEnemies": [
+          1
+        ],
         "phasesNoBattle": [],
         "phaseScripts": [
           {
@@ -1722,7 +1739,9 @@
         "phases": [
           1
         ],
-        "phasesWithEnemies": [],
+        "phasesWithEnemies": [
+          1
+        ],
         "phasesNoBattle": [],
         "phaseScripts": [
           {

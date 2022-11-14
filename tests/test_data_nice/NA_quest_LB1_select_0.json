@@ -1958,7 +1958,35 @@
       }
     }
   ],
-  "drops": [],
+  "drops": [
+    {
+      "type": "servant",
+      "objectId": 9702300,
+      "num": 1,
+      "dropCount": 2,
+      "runs": 5,
+      "dropExpected": 0.4,
+      "dropVariance": 0.3
+    },
+    {
+      "type": "item",
+      "objectId": 1,
+      "num": 15000,
+      "dropCount": 6,
+      "runs": 5,
+      "dropExpected": 1.2,
+      "dropVariance": 2.7
+    },
+    {
+      "type": "item",
+      "objectId": 6527,
+      "num": 1,
+      "dropCount": 6,
+      "runs": 5,
+      "dropExpected": 1.2,
+      "dropVariance": 0.2
+    }
+  ],
   "stages": [
     {
       "wave": 1,
@@ -2565,7 +2593,35 @@
             "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99411501.png",
             "costume": {}
           },
-          "drops": [],
+          "drops": [
+            {
+              "type": "servant",
+              "objectId": 9702300,
+              "num": 1,
+              "dropCount": 0,
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
+            },
+            {
+              "type": "item",
+              "objectId": 1,
+              "num": 15000,
+              "dropCount": 0,
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
+            },
+            {
+              "type": "item",
+              "objectId": 6527,
+              "num": 1,
+              "dropCount": 0,
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
+            }
+          ],
           "lv": 45,
           "exp": 0,
           "atk": 5692,
@@ -3703,7 +3759,17 @@
             "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99411501.png",
             "costume": {}
           },
-          "drops": [],
+          "drops": [
+            {
+              "type": "servant",
+              "objectId": 9702300,
+              "num": 1,
+              "dropCount": 0,
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
+            }
+          ],
           "lv": 49,
           "exp": 0,
           "atk": 6152,
@@ -4272,7 +4338,17 @@
             "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99411501.png",
             "costume": {}
           },
-          "drops": [],
+          "drops": [
+            {
+              "type": "item",
+              "objectId": 1,
+              "num": 15000,
+              "dropCount": 0,
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
+            }
+          ],
           "lv": 47,
           "exp": 0,
           "atk": 5922,
@@ -4841,7 +4917,17 @@
             "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99411501.png",
             "costume": {}
           },
-          "drops": [],
+          "drops": [
+            {
+              "type": "item",
+              "objectId": 1,
+              "num": 15000,
+              "dropCount": 0,
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
+            }
+          ],
           "lv": 50,
           "exp": 0,
           "atk": 6267,
@@ -5410,7 +5496,17 @@
             "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99411501.png",
             "costume": {}
           },
-          "drops": [],
+          "drops": [
+            {
+              "type": "item",
+              "objectId": 1,
+              "num": 15000,
+              "dropCount": 0,
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
+            }
+          ],
           "lv": 52,
           "exp": 0,
           "atk": 6509,
@@ -5979,7 +6075,17 @@
             "face": "https://assets.atlasacademy.io/GameData/NA/Enemys/99411501.png",
             "costume": {}
           },
-          "drops": [],
+          "drops": [
+            {
+              "type": "item",
+              "objectId": 6527,
+              "num": 1,
+              "dropCount": 0,
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
+            }
+          ],
           "lv": 67,
           "exp": 0,
           "atk": 8247,

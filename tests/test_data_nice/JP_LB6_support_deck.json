@@ -6524,6 +6524,24 @@
   ],
   "drops": [
     {
+      "type": "servant",
+      "objectId": 9707400,
+      "num": 1,
+      "dropCount": 3,
+      "runs": 1,
+      "dropExpected": 3.0,
+      "dropVariance": 0.0
+    },
+    {
+      "type": "item",
+      "objectId": 6002,
+      "num": 1,
+      "dropCount": 1,
+      "runs": 1,
+      "dropExpected": 1.0,
+      "dropVariance": 0.0
+    },
+    {
       "type": "item",
       "objectId": 6550,
       "num": 1,
@@ -7769,7 +7787,17 @@
               }
             }
           },
-          "drops": [],
+          "drops": [
+            {
+              "type": "servant",
+              "objectId": 9707400,
+              "num": 1,
+              "dropCount": 0,
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
+            }
+          ],
           "lv": 25,
           "exp": 0,
           "atk": 5369,
@@ -8961,7 +8989,17 @@
               }
             }
           },
-          "drops": [],
+          "drops": [
+            {
+              "type": "servant",
+              "objectId": 9707400,
+              "num": 1,
+              "dropCount": 0,
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
+            }
+          ],
           "lv": 28,
           "exp": 0,
           "atk": 5897,
@@ -9557,7 +9595,17 @@
               }
             }
           },
-          "drops": [],
+          "drops": [
+            {
+              "type": "servant",
+              "objectId": 9707400,
+              "num": 1,
+              "dropCount": 0,
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
+            }
+          ],
           "lv": 29,
           "exp": 0,
           "atk": 6073,
@@ -10161,7 +10209,17 @@
             "face": "https://assets.atlasacademy.io/GameData/JP/Enemys/99331001.png",
             "costume": {}
           },
-          "drops": [],
+          "drops": [
+            {
+              "type": "item",
+              "objectId": 6002,
+              "num": 1,
+              "dropCount": 0,
+              "runs": 0,
+              "dropExpected": 0,
+              "dropVariance": 0
+            }
+          ],
           "lv": 42,
           "exp": 0,
           "atk": 5407,
