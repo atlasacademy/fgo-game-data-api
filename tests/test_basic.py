@@ -153,8 +153,9 @@ class TestBasicSpecial:
         assert response.status_code == 422
 
     async def test_func_addState_no_buff(self, client: AsyncClient) -> None:
-        response = await client.get("/basic/JP/function/4086")
+        response = await client.get("/basic/NA/function/4086")
         assert response.status_code == 200
+        assert len(response.json()["buffs"]) == 0
 
     async def test_skill_reverse_passive(self, client: AsyncClient) -> None:
         response = await client.get("/basic/NA/skill/30650?reverse=True")

@@ -146,6 +146,10 @@
       "name": "hominidaeServant"
     },
     {
+      "id": 2780,
+      "name": "hasCostume"
+    },
+    {
       "id": 5000,
       "name": "canBeInBattle"
     },
@@ -923,7 +927,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6515.png",
             "background": "silver",
-            "priority": 212,
+            "priority": 214,
             "dropPriority": 8301,
             "itemSelects": []
           },
@@ -950,7 +954,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6509.png",
             "background": "silver",
-            "priority": 213,
+            "priority": 215,
             "dropPriority": 8307,
             "itemSelects": []
           },
@@ -971,7 +975,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6511.png",
             "background": "silver",
-            "priority": 216,
+            "priority": 218,
             "dropPriority": 8303,
             "itemSelects": []
           },
@@ -1020,7 +1024,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6510.png",
             "background": "silver",
-            "priority": 215,
+            "priority": 217,
             "dropPriority": 8302,
             "itemSelects": []
           },
@@ -1047,7 +1051,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6501.png",
             "background": "silver",
-            "priority": 214,
+            "priority": 216,
             "dropPriority": 8306,
             "itemSelects": []
           },
@@ -1069,7 +1073,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6517.png",
             "background": "gold",
-            "priority": 233,
+            "priority": 235,
             "dropPriority": 8500,
             "itemSelects": []
           },
@@ -1125,7 +1129,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6502.png",
             "background": "silver",
-            "priority": 210,
+            "priority": 212,
             "dropPriority": 8203,
             "itemSelects": []
           },
@@ -1179,7 +1183,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6508.png",
             "background": "silver",
-            "priority": 211,
+            "priority": 213,
             "dropPriority": 8300,
             "itemSelects": []
           },
@@ -1206,7 +1210,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6513.png",
             "background": "silver",
-            "priority": 218,
+            "priority": 220,
             "dropPriority": 8305,
             "itemSelects": []
           },
@@ -1233,7 +1237,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6514.png",
             "background": "silver",
-            "priority": 217,
+            "priority": 219,
             "dropPriority": 8304,
             "itemSelects": []
           },
@@ -1260,7 +1264,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6507.png",
             "background": "gold",
-            "priority": 232,
+            "priority": 234,
             "dropPriority": 8400,
             "itemSelects": []
           },
@@ -1287,7 +1291,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6506.png",
             "background": "gold",
-            "priority": 234,
+            "priority": 236,
             "dropPriority": 8501,
             "itemSelects": []
           },
@@ -1373,7 +1377,7 @@
             ],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6526.png",
             "background": "silver",
-            "priority": 221,
+            "priority": 223,
             "dropPriority": 8308,
             "itemSelects": []
           },
@@ -1481,7 +1485,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6541.png",
             "background": "silver",
-            "priority": 227,
+            "priority": 229,
             "dropPriority": 8315,
             "itemSelects": []
           },
@@ -1508,7 +1512,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6537.png",
             "background": "silver",
-            "priority": 224,
+            "priority": 226,
             "dropPriority": 8312,
             "itemSelects": []
           },
@@ -1535,7 +1539,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6542.png",
             "background": "gold",
-            "priority": 246,
+            "priority": 248,
             "dropPriority": 8507,
             "itemSelects": []
           },
@@ -1616,7 +1620,7 @@
             ],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6526.png",
             "background": "silver",
-            "priority": 221,
+            "priority": 223,
             "dropPriority": 8308,
             "itemSelects": []
           },
@@ -1638,7 +1642,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6520.png",
             "background": "gold",
-            "priority": 237,
+            "priority": 239,
             "dropPriority": 8402,
             "itemSelects": []
           },
@@ -1660,7 +1664,7 @@
             "individuality": [],
             "icon": "https://assets.atlasacademy.io/GameData/NA/Items/6529.png",
             "background": "gold",
-            "priority": 242,
+            "priority": 244,
             "dropPriority": 8504,
             "itemSelects": []
           },
@@ -3031,6 +3035,151 @@
     }
   ],
   "extraPassive": [
+    {
+      "id": 940187,
+      "name": "Imaginary Diver (Sharp Tooth)",
+      "originalName": "Imaginary Diver (Sharp Tooth)",
+      "ruby": "Imaginary Diver",
+      "detail": "Increase Dazzling Sharp Tooth amount per drop by 1 + Increase your ATK Strength by 30% in \"Great Void Sea Battle, Imaginary Scramble - To the Surface, Nautilus!\" & increase Bond gained when completing quests by 20% [Event Only]",
+      "unmodifiedDetail": "Increase Dazzling Sharp Tooth amount per drop by 1 + Increase your ATK Strength by 30% in \"Great Void Sea Battle, Imaginary Scramble - To the Surface, Nautilus!\" & increase Bond gained when completing quests by 20% [Event Only]",
+      "type": "passive",
+      "icon": "https://assets.atlasacademy.io/GameData/NA/SkillIcons/skill_00200.png",
+      "coolDown": [
+        0
+      ],
+      "actIndividuality": [],
+      "script": {},
+      "extraPassive": [
+        {
+          "num": 16,
+          "priority": 135,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "condFriendshipRank": 0,
+          "eventId": 80305,
+          "flag": 0,
+          "startedAt": 1666843200,
+          "endedAt": 1668052799
+        }
+      ],
+      "skillAdd": [],
+      "functions": [
+        {
+          "funcId": 5854,
+          "funcType": "eventDropUp",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "None",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80305,
+              "baseFuncId": 0,
+              "nameTotal": "{0}\nTotal Bonus Amount",
+              "name": "{0} acquired",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/Items/94053406.png",
+              "priority": 1000,
+              "isDispValue": true
+            }
+          ],
+          "traitVals": [],
+          "buffs": [],
+          "svals": [
+            {
+              "Individuality": 10571,
+              "EventId": 80305,
+              "AddCount": 1
+            }
+          ]
+        },
+        {
+          "funcId": 5992,
+          "funcType": "addStateShort",
+          "funcTargetType": "self",
+          "funcTargetTeam": "player",
+          "funcPopupText": "Imaginary Diver",
+          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_302.png",
+          "functvals": [],
+          "funcquestTvals": [
+            {
+              "id": 94000113,
+              "name": "unknown"
+            },
+            {
+              "id": 94000111,
+              "name": "unknown"
+            }
+          ],
+          "funcGroup": [
+            {
+              "eventId": 80305,
+              "baseFuncId": 5855,
+              "nameTotal": "{1}\nTotal ATK Strength Up",
+              "name": "Total ATK Strength Up",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/EventUI/func_group_icon_302.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [
+            {
+              "id": 3046,
+              "name": "Imaginary Diver",
+              "detail": "Increase damage dealt during \"Great Void Sea Battle, Imaginary Scramble - To the Surface, Nautilus!\"",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_302.png",
+              "type": "upDamage",
+              "buffGroup": 0,
+              "script": {},
+              "vals": [],
+              "tvals": [],
+              "ckSelfIndv": [],
+              "ckOpIndv": [],
+              "maxRate": 10000
+            }
+          ],
+          "svals": [
+            {
+              "Rate": 1000,
+              "Turn": -1,
+              "Count": -1,
+              "Value": 300
+            }
+          ]
+        },
+        {
+          "funcId": 5858,
+          "funcType": "servantFriendshipUp",
+          "funcTargetType": "self",
+          "funcTargetTeam": "playerAndEnemy",
+          "funcPopupText": "None",
+          "functvals": [],
+          "funcquestTvals": [],
+          "funcGroup": [
+            {
+              "eventId": 80305,
+              "baseFuncId": 0,
+              "nameTotal": "{1}\nTotal Bond Bonus",
+              "name": "Increase Bond gained",
+              "icon": "https://assets.atlasacademy.io/GameData/NA/EventUI/func_group_icon_1009.png",
+              "priority": 1,
+              "isDispValue": true
+            }
+          ],
+          "buffs": [],
+          "svals": [
+            {
+              "Target": 1,
+              "Individuality": 0,
+              "EventId": 80305,
+              "RateCount": 200
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": 960502,
       "name": "Power of Bonds E",
@@ -4579,6 +4728,10 @@
                 {
                   "id": 3026,
                   "name": "buffCurse"
+                },
+                {
+                  "id": 2729,
+                  "name": "curse"
                 }
               ],
               "tvals": [],
@@ -5187,6 +5340,10 @@
                 {
                   "id": 3026,
                   "name": "buffCurse"
+                },
+                {
+                  "id": 2729,
+                  "name": "curse"
                 }
               ],
               "tvals": [],
@@ -6400,6 +6557,7 @@
                   2500300,
                   2500400,
                   2500500,
+                  2500600,
                   2500700
                 ],
                 "eventId": 0

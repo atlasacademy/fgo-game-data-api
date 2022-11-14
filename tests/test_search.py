@@ -130,7 +130,7 @@ test_cases_dict: dict[str, tuple[str, set[int]]] = {
     ),
     "skill_search_num": (
         "JP/skill/search?strengthStatus=99&type=active&numFunctions=5&num=3",
-        {165551, 292452, 621675, 2101550},
+        {165551, 292452, 621675, 2101550, 2142550},
     ),
     "skill_search_priority": ("JP/skill/search?priority=5", {744450}),
     "skill_search_name": (
@@ -181,7 +181,7 @@ test_cases_dict: dict[str, tuple[str, set[int]]] = {
     ),
     "func_popupText": (
         "NA/function/search?popupText=Curse&targetType=self&type=subState",
-        {2451},
+        {2451, 6112},
     ),
 }
 

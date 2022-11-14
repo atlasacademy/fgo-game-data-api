@@ -787,6 +787,7 @@ class Trait(StrEnum):
     fieldCity = "fieldCity"
     shadowServant = "shadowServant"
     aoeNP = "aoeNP"
+    stNP = "stNP"
     giant = "giant"
     childServant = "childServant"
     buffSpecialInvincible = "buffSpecialInvincible"
@@ -1121,6 +1122,7 @@ TRAIT_NAME: dict[int, Trait] = {
     4008: Trait.faceCard,  # Normal Buster, Arts, Quick, Extra Attack
     4100: Trait.criticalHit,
     4101: Trait.aoeNP,
+    4102: Trait.stNP,
     5000: Trait.canBeInBattle,  # can be NPC, enemy or playable servant i.e. not CE
     5010: Trait.notBasedOnServant,
     94000015: Trait.eventSaberWars,

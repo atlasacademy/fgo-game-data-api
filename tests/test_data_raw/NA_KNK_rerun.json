@@ -185,7 +185,9 @@
       "type": 2,
       "objectId": 4001,
       "priority": 0,
-      "num": 1
+      "num": 1,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -193,7 +195,9 @@
       "type": 2,
       "objectId": 2,
       "priority": 0,
-      "num": 1
+      "num": 1,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -201,7 +205,9 @@
       "type": 2,
       "objectId": 3,
       "priority": 0,
-      "num": 500
+      "num": 500,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -209,7 +215,9 @@
       "type": 2,
       "objectId": 1,
       "priority": 0,
-      "num": 6000000
+      "num": 6000000,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -217,7 +225,9 @@
       "type": 2,
       "objectId": 100,
       "priority": 0,
-      "num": 1
+      "num": 1,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -225,7 +235,9 @@
       "type": 2,
       "objectId": 100,
       "priority": 0,
-      "num": 2
+      "num": 2,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -233,7 +245,9 @@
       "type": 2,
       "objectId": 100,
       "priority": 0,
-      "num": 3
+      "num": 3,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -241,7 +255,9 @@
       "type": 2,
       "objectId": 100,
       "priority": 0,
-      "num": 4
+      "num": 4,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -249,7 +265,9 @@
       "type": 2,
       "objectId": 100,
       "priority": 0,
-      "num": 5
+      "num": 5,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -257,7 +275,9 @@
       "type": 2,
       "objectId": 6999,
       "priority": 0,
-      "num": 1
+      "num": 1,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -265,7 +285,9 @@
       "type": 2,
       "objectId": 6503,
       "priority": 0,
-      "num": 5
+      "num": 5,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -273,7 +295,9 @@
       "type": 2,
       "objectId": 6503,
       "priority": 0,
-      "num": 10
+      "num": 10,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -281,7 +305,9 @@
       "type": 2,
       "objectId": 6503,
       "priority": 0,
-      "num": 15
+      "num": 15,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -289,7 +315,9 @@
       "type": 2,
       "objectId": 6516,
       "priority": 0,
-      "num": 5
+      "num": 5,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -297,7 +325,9 @@
       "type": 2,
       "objectId": 6516,
       "priority": 0,
-      "num": 10
+      "num": 10,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -305,7 +335,9 @@
       "type": 2,
       "objectId": 6516,
       "priority": 0,
-      "num": 15
+      "num": 15,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -313,7 +345,9 @@
       "type": 2,
       "objectId": 6512,
       "priority": 0,
-      "num": 5
+      "num": 5,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -321,7 +355,9 @@
       "type": 2,
       "objectId": 6512,
       "priority": 0,
-      "num": 10
+      "num": 10,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -329,7 +365,9 @@
       "type": 2,
       "objectId": 6512,
       "priority": 0,
-      "num": 15
+      "num": 15,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -337,7 +375,9 @@
       "type": 2,
       "objectId": 6502,
       "priority": 0,
-      "num": 5
+      "num": 5,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -345,7 +385,9 @@
       "type": 2,
       "objectId": 6502,
       "priority": 0,
-      "num": 10
+      "num": 10,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -353,7 +395,9 @@
       "type": 2,
       "objectId": 6502,
       "priority": 0,
-      "num": 15
+      "num": 15,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -361,7 +405,9 @@
       "type": 2,
       "objectId": 6515,
       "priority": 0,
-      "num": 5
+      "num": 5,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -369,7 +415,9 @@
       "type": 2,
       "objectId": 6515,
       "priority": 0,
-      "num": 10
+      "num": 10,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -377,7 +425,9 @@
       "type": 2,
       "objectId": 6515,
       "priority": 0,
-      "num": 15
+      "num": 15,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -385,7 +435,9 @@
       "type": 2,
       "objectId": 6513,
       "priority": 0,
-      "num": 10
+      "num": 10,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -393,7 +445,9 @@
       "type": 2,
       "objectId": 6514,
       "priority": 0,
-      "num": 10
+      "num": 10,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -401,7 +455,9 @@
       "type": 2,
       "objectId": 6517,
       "priority": 0,
-      "num": 5
+      "num": 5,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -409,7 +465,9 @@
       "type": 2,
       "objectId": 6506,
       "priority": 0,
-      "num": 5
+      "num": 5,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -417,7 +475,9 @@
       "type": 2,
       "objectId": 7001,
       "priority": 0,
-      "num": 5
+      "num": 5,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -425,7 +485,9 @@
       "type": 2,
       "objectId": 7002,
       "priority": 0,
-      "num": 5
+      "num": 5,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -433,7 +495,9 @@
       "type": 2,
       "objectId": 7003,
       "priority": 0,
-      "num": 5
+      "num": 5,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -441,7 +505,9 @@
       "type": 2,
       "objectId": 7004,
       "priority": 0,
-      "num": 5
+      "num": 5,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -449,7 +515,9 @@
       "type": 2,
       "objectId": 7005,
       "priority": 0,
-      "num": 5
+      "num": 5,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -457,7 +525,9 @@
       "type": 2,
       "objectId": 7006,
       "priority": 0,
-      "num": 5
+      "num": 5,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -465,7 +535,9 @@
       "type": 2,
       "objectId": 7007,
       "priority": 0,
-      "num": 5
+      "num": 5,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -473,7 +545,9 @@
       "type": 2,
       "objectId": 7101,
       "priority": 0,
-      "num": 5
+      "num": 5,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -481,7 +555,9 @@
       "type": 2,
       "objectId": 7102,
       "priority": 0,
-      "num": 5
+      "num": 5,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -489,7 +565,9 @@
       "type": 2,
       "objectId": 7103,
       "priority": 0,
-      "num": 5
+      "num": 5,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -497,7 +575,9 @@
       "type": 2,
       "objectId": 7104,
       "priority": 0,
-      "num": 5
+      "num": 5,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -505,7 +585,9 @@
       "type": 2,
       "objectId": 7105,
       "priority": 0,
-      "num": 5
+      "num": 5,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -513,7 +595,9 @@
       "type": 2,
       "objectId": 7106,
       "priority": 0,
-      "num": 5
+      "num": 5,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -521,7 +605,9 @@
       "type": 2,
       "objectId": 7107,
       "priority": 0,
-      "num": 5
+      "num": 5,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -529,7 +615,9 @@
       "type": 2,
       "objectId": 6001,
       "priority": 0,
-      "num": 10
+      "num": 10,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -537,7 +625,9 @@
       "type": 2,
       "objectId": 6002,
       "priority": 0,
-      "num": 10
+      "num": 10,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -545,7 +635,9 @@
       "type": 2,
       "objectId": 6003,
       "priority": 0,
-      "num": 10
+      "num": 10,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -553,7 +645,9 @@
       "type": 2,
       "objectId": 6004,
       "priority": 0,
-      "num": 10
+      "num": 10,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -561,7 +655,9 @@
       "type": 2,
       "objectId": 6005,
       "priority": 0,
-      "num": 10
+      "num": 10,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -569,7 +665,9 @@
       "type": 2,
       "objectId": 6006,
       "priority": 0,
-      "num": 10
+      "num": 10,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -577,7 +675,9 @@
       "type": 2,
       "objectId": 6007,
       "priority": 0,
-      "num": 10
+      "num": 10,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -585,7 +685,9 @@
       "type": 1,
       "objectId": 9670400,
       "priority": 0,
-      "num": 1
+      "num": 1,
+      "lv": 1,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -593,7 +695,9 @@
       "type": 1,
       "objectId": 9401170,
       "priority": 0,
-      "num": 1
+      "num": 1,
+      "lv": 1,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -601,7 +705,9 @@
       "type": 1,
       "objectId": 602300,
       "priority": 0,
-      "num": 1
+      "num": 1,
+      "lv": 1,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -609,7 +715,9 @@
       "type": 2,
       "objectId": 94002005,
       "priority": 0,
-      "num": 1
+      "num": 1,
+      "lv": 0,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -617,7 +725,9 @@
       "type": 1,
       "objectId": 9804800,
       "priority": 0,
-      "num": 5
+      "num": 5,
+      "lv": 1,
+      "limitCount": 0
     },
     {
       "sort_id": 0,
@@ -625,7 +735,9 @@
       "type": 1,
       "objectId": 9804800,
       "priority": 0,
-      "num": 10
+      "num": 10,
+      "lv": 1,
+      "limitCount": 0
     }
   ],
   "mstGiftAdd": [],
@@ -644,6 +756,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090001,
       "baseShopId": 80090001,
       "eventId": 80090,
@@ -680,6 +796,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090002,
       "baseShopId": 80090002,
       "eventId": 80090,
@@ -716,6 +836,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090003,
       "baseShopId": 80090003,
       "eventId": 80090,
@@ -752,6 +876,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090004,
       "baseShopId": 80090004,
       "eventId": 80090,
@@ -788,6 +916,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090005,
       "baseShopId": 80090005,
       "eventId": 80090,
@@ -824,6 +956,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090006,
       "baseShopId": 80090006,
       "eventId": 80090,
@@ -860,6 +996,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090007,
       "baseShopId": 80090007,
       "eventId": 80090,
@@ -896,6 +1036,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090008,
       "baseShopId": 80090008,
       "eventId": 80090,
@@ -932,6 +1076,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090009,
       "baseShopId": 80090009,
       "eventId": 80090,
@@ -968,6 +1116,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090010,
       "baseShopId": 80090010,
       "eventId": 80090,
@@ -1004,6 +1156,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090011,
       "baseShopId": 80090011,
       "eventId": 80090,
@@ -1040,6 +1196,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090012,
       "baseShopId": 80090012,
       "eventId": 80090,
@@ -1076,6 +1236,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090013,
       "baseShopId": 80090013,
       "eventId": 80090,
@@ -1112,6 +1276,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090014,
       "baseShopId": 80090014,
       "eventId": 80090,
@@ -1148,6 +1316,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090015,
       "baseShopId": 80090015,
       "eventId": 80090,
@@ -1184,6 +1356,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090016,
       "baseShopId": 80090016,
       "eventId": 80090,
@@ -1220,6 +1396,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090017,
       "baseShopId": 80090017,
       "eventId": 80090,
@@ -1256,6 +1436,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090018,
       "baseShopId": 80090018,
       "eventId": 80090,
@@ -1292,6 +1476,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090019,
       "baseShopId": 80090019,
       "eventId": 80090,
@@ -1328,6 +1516,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090020,
       "baseShopId": 80090020,
       "eventId": 80090,
@@ -1364,6 +1556,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090021,
       "baseShopId": 80090021,
       "eventId": 80090,
@@ -1400,6 +1596,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090022,
       "baseShopId": 80090022,
       "eventId": 80090,
@@ -1436,6 +1636,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090023,
       "baseShopId": 80090023,
       "eventId": 80090,
@@ -1472,6 +1676,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090024,
       "baseShopId": 80090024,
       "eventId": 80090,
@@ -1508,6 +1716,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090025,
       "baseShopId": 80090025,
       "eventId": 80090,
@@ -1544,6 +1756,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090026,
       "baseShopId": 80090026,
       "eventId": 80090,
@@ -1580,6 +1796,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090027,
       "baseShopId": 80090027,
       "eventId": 80090,
@@ -1616,6 +1836,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090028,
       "baseShopId": 80090028,
       "eventId": 80090,
@@ -1652,6 +1876,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090029,
       "baseShopId": 80090029,
       "eventId": 80090,
@@ -1688,6 +1916,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090030,
       "baseShopId": 80090030,
       "eventId": 80090,
@@ -1724,6 +1956,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090031,
       "baseShopId": 80090031,
       "eventId": 80090,
@@ -1760,6 +1996,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090032,
       "baseShopId": 80090032,
       "eventId": 80090,
@@ -1796,6 +2036,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090033,
       "baseShopId": 80090033,
       "eventId": 80090,
@@ -1832,6 +2076,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090034,
       "baseShopId": 80090034,
       "eventId": 80090,
@@ -1868,6 +2116,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090035,
       "baseShopId": 80090035,
       "eventId": 80090,
@@ -1904,6 +2156,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090036,
       "baseShopId": 80090036,
       "eventId": 80090,
@@ -1940,6 +2196,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090037,
       "baseShopId": 80090037,
       "eventId": 80090,
@@ -1976,6 +2236,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090038,
       "baseShopId": 80090038,
       "eventId": 80090,
@@ -2012,6 +2276,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090039,
       "baseShopId": 80090039,
       "eventId": 80090,
@@ -2048,6 +2316,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090040,
       "baseShopId": 80090040,
       "eventId": 80090,
@@ -2084,6 +2356,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090041,
       "baseShopId": 80090041,
       "eventId": 80090,
@@ -2120,6 +2396,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090042,
       "baseShopId": 80090042,
       "eventId": 80090,
@@ -2156,6 +2436,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090043,
       "baseShopId": 80090043,
       "eventId": 80090,
@@ -2192,6 +2476,10 @@
       "anotherPayType": 0,
       "anotherItemIds": [],
       "useAnotherPayCommonReleaseId": 0,
+      "freeShopCondId": 0,
+      "freeShopCondMessage": "",
+      "hideWarningMessageCondId": 0,
+      "freeShopReleaseDate": 0,
       "id": 80090044,
       "baseShopId": 80090044,
       "eventId": 80090,
@@ -8142,6 +8430,11 @@
   "mstEventDiggingReward": [],
   "mstEventCooltimeReward": [],
   "mstEventQuestCooltime": [],
+  "mstEventFortification": [],
+  "mstEventFortificationDetail": [],
+  "mstEventFortificationSvt": [],
+  "mstEventCampaign": [],
+  "mstEventQuest": [],
   "mstEventBulletinBoard": [],
   "mstEventBulletinBoardRelease": [],
   "mstEventRecipe": [],
@@ -8244,6 +8537,7 @@
     {
       "scriptJson": [
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -8286,9 +8580,11 @@
               "value": 0,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -8323,9 +8619,11 @@
               "value": 0,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -8346,9 +8644,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -8385,9 +8685,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -8416,9 +8718,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -8447,9 +8751,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -8478,9 +8784,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -8509,9 +8817,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -8554,9 +8864,11 @@
               "value": 1,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -8591,9 +8903,11 @@
               "value": 2,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -8644,9 +8958,11 @@
               "value": 3,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -8689,9 +9005,11 @@
               "value": 4,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -8742,9 +9060,11 @@
               "value": 5,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -8779,9 +9099,11 @@
               "value": 102800,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -8824,9 +9146,11 @@
               "value": 201400,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -8885,7 +9209,8 @@
               "value": 202900,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         }
       ],
       "id": 602300,
@@ -8895,6 +9220,7 @@
     {
       "scriptJson": [
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -8921,9 +9247,11 @@
               "value": 0,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -8950,9 +9278,11 @@
               "value": 0,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -8987,9 +9317,11 @@
               "value": 1,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -9024,9 +9356,11 @@
               "value": 3,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -9077,7 +9411,8 @@
               "value": 0,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         }
       ],
       "id": 602300,
@@ -9087,6 +9422,7 @@
     {
       "scriptJson": [
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -9131,7 +9467,8 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         }
       ],
       "id": 602300,
@@ -9141,6 +9478,7 @@
     {
       "scriptJson": [
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -9169,7 +9507,8 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         }
       ],
       "id": 602300,
@@ -9179,6 +9518,7 @@
     {
       "scriptJson": [
         {
+          "summonScript": "",
           "overwriteName": "the Garden of sinners/the Garden of Order 1",
           "overwritePriority": 0,
           "infos": [
@@ -9205,9 +9545,11 @@
               "value": 80011,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "the Garden of sinners/the Garden of Order 2",
           "overwritePriority": 0,
           "infos": [
@@ -9242,9 +9584,11 @@
               "value": 80011,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "the Garden of sinners/the Garden of Order 3",
           "overwritePriority": 0,
           "infos": [
@@ -9271,9 +9615,11 @@
               "value": 80011,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "the Garden of sinners/the Garden of Order 4",
           "overwritePriority": 0,
           "infos": [
@@ -9300,9 +9646,11 @@
               "value": 80011,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "the Garden of sinners/the Garden of Order 5",
           "overwritePriority": 0,
           "infos": [
@@ -9329,9 +9677,11 @@
               "value": 80011,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "the Garden of sinners/the Garden of Order 6",
           "overwritePriority": 0,
           "infos": [
@@ -9374,9 +9724,11 @@
               "value": 80011,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "the Garden of sinners/the Garden of Order 7",
           "overwritePriority": 0,
           "infos": [
@@ -9419,9 +9771,11 @@
               "value": 80011,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "Revival: the Garden of sinners/the Garden of Order 1",
           "overwritePriority": 0,
           "infos": [
@@ -9448,9 +9802,11 @@
               "value": 80090,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "Revival: the Garden of sinners/the Garden of Order 2",
           "overwritePriority": 0,
           "infos": [
@@ -9485,9 +9841,11 @@
               "value": 80090,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "Revival: the Garden of sinners/the Garden of Order 3",
           "overwritePriority": 0,
           "infos": [
@@ -9514,9 +9872,11 @@
               "value": 80090,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "Revival: the Garden of sinners/the Garden of Order 4",
           "overwritePriority": 0,
           "infos": [
@@ -9543,9 +9903,11 @@
               "value": 80090,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "Revival: the Garden of sinners/the Garden of Order 5",
           "overwritePriority": 0,
           "infos": [
@@ -9572,9 +9934,11 @@
               "value": 80090,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "Revival: the Garden of sinners/the Garden of Order 6",
           "overwritePriority": 0,
           "infos": [
@@ -9617,9 +9981,11 @@
               "value": 80090,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "Revival: the Garden of sinners/the Garden of Order 7",
           "overwritePriority": 0,
           "infos": [
@@ -9662,9 +10028,11 @@
               "value": 80090,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "Revival: the Garden of sinners/the Garden of Order 8",
           "overwritePriority": 0,
           "infos": [
@@ -9707,9 +10075,11 @@
               "value": 80090,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "Revival: the Garden of sinners/the Garden of Order 9",
           "overwritePriority": 0,
           "infos": [
@@ -9744,9 +10114,11 @@
               "value": 80090,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "Revival: the Garden of sinners/the Garden of Order 10",
           "overwritePriority": 0,
           "infos": [
@@ -9773,9 +10145,11 @@
               "value": 80090,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "Revival: the Garden of sinners/the Garden of Order 11",
           "overwritePriority": 0,
           "infos": [
@@ -9794,9 +10168,11 @@
               "value": 80090,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "Revival: the Garden of sinners/the Garden of Order 12",
           "overwritePriority": 0,
           "infos": [
@@ -9823,9 +10199,11 @@
               "value": 80090,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "Revival: the Garden of sinners/the Garden of Order 13",
           "overwritePriority": 0,
           "infos": [
@@ -9844,9 +10222,11 @@
               "value": 80090,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "Revival: the Garden of sinners/the Garden of Order 14",
           "overwritePriority": 0,
           "infos": [
@@ -9865,7 +10245,8 @@
               "value": 80090,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         }
       ],
       "id": 602300,
@@ -9875,6 +10256,7 @@
     {
       "scriptJson": [
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -9887,9 +10269,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -9902,9 +10286,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -9917,9 +10303,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -9940,9 +10328,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -9955,9 +10345,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -9970,9 +10362,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -9985,9 +10379,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -10000,9 +10396,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -10015,9 +10413,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -10030,9 +10430,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -10045,9 +10447,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -10060,9 +10464,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -10075,9 +10481,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -10090,9 +10498,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -10105,9 +10515,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -10120,9 +10532,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "",
           "overwritePriority": 0,
           "infos": [
@@ -10135,9 +10549,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "Noble Phantasm Card {0}",
           "overwritePriority": 0,
           "infos": [
@@ -10150,9 +10566,11 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "Noble Phantasm Card {0}",
           "overwritePriority": 0,
           "infos": [
@@ -10165,7 +10583,8 @@
               "changeEffect": 0
             }
           ],
-          "conds": []
+          "conds": [],
+          "condAddItem": 0
         }
       ],
       "id": 602300,
@@ -10175,6 +10594,7 @@
     {
       "scriptJson": [
         {
+          "summonScript": "",
           "overwritePriority": 0,
           "infos": [
             {
@@ -10198,7 +10618,8 @@
               "value": 0,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         }
       ],
       "id": 602300,
@@ -10208,6 +10629,7 @@
     {
       "scriptJson": [
         {
+          "summonScript": "",
           "overwriteName": "Revival: the Garden of sinners/the Garden of Order 15",
           "overwritePriority": 0,
           "infos": [
@@ -10250,9 +10672,11 @@
               "value": 80090,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "Revival: the Garden of sinners/the Garden of Order 16",
           "overwritePriority": 0,
           "infos": [
@@ -10287,9 +10711,11 @@
               "value": 80090,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "Revival: the Garden of sinners/the Garden of Order 17",
           "overwritePriority": 0,
           "infos": [
@@ -10321,9 +10747,11 @@
               "value": 80090,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "Revival: the Garden of sinners/the Garden of Order 18",
           "overwritePriority": 0,
           "infos": [
@@ -10355,9 +10783,11 @@
               "value": 80090,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "Revival: the Garden of sinners/the Garden of Order 19",
           "overwritePriority": 0,
           "infos": [
@@ -10389,9 +10819,11 @@
               "value": 80090,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "Revival: the Garden of sinners/the Garden of Order 20",
           "overwritePriority": 0,
           "infos": [
@@ -10418,9 +10850,11 @@
               "value": 80090,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         },
         {
+          "summonScript": "",
           "overwriteName": "Revival: the Garden of sinners/the Garden of Order 21",
           "overwritePriority": 0,
           "infos": [
@@ -10455,7 +10889,8 @@
               "value": 80090,
               "eventId": 0
             }
-          ]
+          ],
+          "condAddItem": 0
         }
       ],
       "id": 602300,

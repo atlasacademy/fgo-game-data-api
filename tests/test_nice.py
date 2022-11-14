@@ -585,7 +585,7 @@ class TestServantSpecial:
         overWriteTDName = ascensionAdd["overWriteTDName"]
         overWriteTDFileName = ascensionAdd["overWriteTDFileName"]
 
-        assert overWriteServantName["ascension"]["1"] == "Okita J Souji"
+        assert overWriteServantName["ascension"]["1"] == "Okita J. Souji"
         assert (
             overWriteTDName["ascension"]["1"] == "The Mumyou's Light Radiates at Dawn"
         )
@@ -638,7 +638,7 @@ class TestServantSpecial:
         assert heroine_x["stages"][1]["enemies"][0]["name"] == "Heroine X"
 
     async def test_latest_story_war_banner(self, client: AsyncClient) -> None:
-        latest_story_war = await client.get("nice/NA/war/307")
+        latest_story_war = await client.get("nice/NA/war/308")
         assert "questboard_cap_closed" in latest_story_war.json()["banner"]
 
     async def test_enemy_script(self, client: AsyncClient) -> None:

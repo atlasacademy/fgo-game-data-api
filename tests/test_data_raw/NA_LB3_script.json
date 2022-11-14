@@ -61,7 +61,9 @@
           "type": 2,
           "objectId": 2,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "lv": 0,
+          "limitCount": 0
         },
         {
           "sort_id": 1,
@@ -69,7 +71,9 @@
           "type": 2,
           "objectId": 6538,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "lv": 0,
+          "limitCount": 0
         },
         {
           "sort_id": 2,
@@ -77,7 +81,9 @@
           "type": 2,
           "objectId": 46,
           "priority": 0,
-          "num": 1
+          "num": 1,
+          "lv": 0,
+          "limitCount": 0
         }
       ],
       "mstGiftAdd": [],

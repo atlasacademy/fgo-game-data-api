@@ -1,0 +1,19 @@
+{
+  "mstFunc": {
+    "vals": [
+      1823
+    ],
+    "tvals": [],
+    "questTvals": [],
+    "effectList": [],
+    "popupTextColor": 3,
+    "id": 4086,
+    "cond": 0,
+    "funcType": 1,
+    "targetType": 0,
+    "applyTarget": 3,
+    "popupIconId": 0,
+    "popupText": ""
+  },
+  "mstFuncGroup": []
+}

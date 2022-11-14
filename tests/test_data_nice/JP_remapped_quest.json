@@ -4465,6 +4465,10 @@
                 {
                   "id": 4007,
                   "name": "cardNP"
+                },
+                {
+                  "id": 4102,
+                  "name": "stNP"
                 }
               ],
               "script": {},
@@ -5668,6 +5672,10 @@
                 {
                   "id": 4007,
                   "name": "cardNP"
+                },
+                {
+                  "id": 4102,
+                  "name": "stNP"
                 }
               ],
               "script": {},
