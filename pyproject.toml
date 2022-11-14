@@ -7,14 +7,14 @@ packages = [{ include = "app" }]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-fastapi = "^0.86.0"
+fastapi = "^0.87.0"
 uvicorn = { extras = ["standard"], version = "^0.19.0" }
 python-dotenv = "^0.21.0"
 fuzzywuzzy = { extras = ["speedup"], version = "^0.18.0" }
 orjson = "^3.8.1"
 aiofiles = "^22.1.0"
 GitPython = "^3.1.29"
-SQLAlchemy = "^1.4.43"
+SQLAlchemy = "^1.4.44"
 psycopg2 = "^2.9.5"
 httpx = "^0.23.0"
 asyncpg = "^0.27.0"
@@ -31,12 +31,12 @@ black = "^22.10.0"
 isort = "^5.10.1"
 pytest = "^7.2.0"
 pytest-xdist = "^3.0.2"
-pytest-asyncio = "^0.20.1"
+pytest-asyncio = "^0.20.2"
 coverage = "^6.5.0"
-asgi-lifespan = "^1.0.1"
+asgi-lifespan = "^2.0.0"
 fuzzywuzzy-stubs = "^0.0.1"
 sqlalchemy2-stubs = "^0.0.2a29"
-types-aiofiles = "^22.1.0.2"
+types-aiofiles = "^22.1.0.3"
 types-redis = "^4.3.21.4"
 types-orjson = "^3.6.2"
 

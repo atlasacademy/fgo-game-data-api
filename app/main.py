@@ -1,8 +1,9 @@
 import hashlib
 import json
+import time
 import tomllib
 from math import ceil
-from typing import Any, Callable, Optional
+from typing import Any, Awaitable, Callable, Optional
 
 import orjson
 import uvicorn
@@ -17,7 +18,7 @@ from fastapi_cache.coder import PickleCoder
 from redis.asyncio import Redis as AsyncRedis
 from sqlalchemy.ext.asyncio import AsyncConnection
 
-from .config import Settings, project_root
+from .config import Settings, logger, project_root
 from .core.info import get_all_repo_info
 from .db.engine import async_engines, engines
 from .redis import Redis
@@ -188,16 +189,16 @@ if settings.openapi_url:
 app.add_middleware(CORSMiddleware, allow_origins=["*"])
 
 
-# @app.middleware("http")
-# async def add_process_time_header(
-#     request: Request, call_next: Callable[..., Awaitable[Response]]
-# ) -> Response:
-#     start_time = time.perf_counter()
-#     response = await call_next(request)
-#     process_time = round((time.perf_counter() - start_time) * 1000, 2)
-#     response.headers["Server-Timing"] = f"app;dur={process_time}"
-#     logger.debug(f"Processed in {process_time}ms.")
-#     return response
+@app.middleware("http")
+async def add_process_time_header(
+    request: Request, call_next: Callable[..., Awaitable[Response]]
+) -> Response:
+    start_time = time.perf_counter()
+    response = await call_next(request)
+    process_time = round((time.perf_counter() - start_time) * 1000, 2)
+    response.headers["Server-Timing"] = f"app;dur={process_time}"
+    logger.debug(f"Processed in {process_time}ms.")
+    return response
 
 
 async def limiter_callback(
