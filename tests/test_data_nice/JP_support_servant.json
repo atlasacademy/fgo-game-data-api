@@ -309,7 +309,7 @@
                     },
                     {
                       "id": 3058,
-                      "name": "buffIncreaseDefenceAgainstIndividuality"
+                      "name": "buffDefUp"
                     }
                   ],
                   "tvals": [],

@@ -2158,7 +2158,7 @@
                         },
                         {
                           "id": 3058,
-                          "name": "buffIncreaseDefenceAgainstIndividuality"
+                          "name": "buffDefUp"
                         }
                       ],
                       "tvals": [],
@@ -2755,7 +2755,7 @@
                         },
                         {
                           "id": 3058,
-                          "name": "buffIncreaseDefenceAgainstIndividuality"
+                          "name": "buffDefUp"
                         }
                       ],
                       "tvals": [],
@@ -3324,7 +3324,7 @@
                         },
                         {
                           "id": 3058,
-                          "name": "buffIncreaseDefenceAgainstIndividuality"
+                          "name": "buffDefUp"
                         }
                       ],
                       "tvals": [],
@@ -3903,7 +3903,7 @@
                         },
                         {
                           "id": 3058,
-                          "name": "buffIncreaseDefenceAgainstIndividuality"
+                          "name": "buffDefUp"
                         }
                       ],
                       "tvals": [],
@@ -4482,7 +4482,7 @@
                         },
                         {
                           "id": 3058,
-                          "name": "buffIncreaseDefenceAgainstIndividuality"
+                          "name": "buffDefUp"
                         }
                       ],
                       "tvals": [],
@@ -5061,7 +5061,7 @@
                         },
                         {
                           "id": 3058,
-                          "name": "buffIncreaseDefenceAgainstIndividuality"
+                          "name": "buffDefUp"
                         }
                       ],
                       "tvals": [],
@@ -5640,7 +5640,7 @@
                         },
                         {
                           "id": 3058,
-                          "name": "buffIncreaseDefenceAgainstIndividuality"
+                          "name": "buffDefUp"
                         }
                       ],
                       "tvals": [],
@@ -6219,7 +6219,7 @@
                         },
                         {
                           "id": 3058,
-                          "name": "buffIncreaseDefenceAgainstIndividuality"
+                          "name": "buffDefUp"
                         }
                       ],
                       "tvals": [],

@@ -766,6 +766,7 @@ class Trait(StrEnum):
     buffDisableColorCard = "buffDisableColorCard"
     buffChangeField = "buffChangeField"
     buffIncreaseDefenceAgainstIndividuality = "buffIncreaseDefenceAgainstIndividuality"
+    buffDefUp = "buffDefUp"
     buffInvinciblePierce = "buffInvinciblePierce"
     buffHpRecoveryPerTurn = "buffHpRecoveryPerTurn"
     buffNegativeEffectImmunity = "buffNegativeEffectImmunity"
@@ -1100,7 +1101,7 @@ TRAIT_NAME: dict[int, Trait] = {
     3055: Trait.buffLockCardsDeck,  # Summer BB
     3056: Trait.buffDisableColorCard,
     3057: Trait.buffChangeField,
-    3058: Trait.buffIncreaseDefenceAgainstIndividuality,  # Unsure
+    3058: Trait.buffDefUp,
     3059: Trait.buffInvinciblePierce,
     3060: Trait.buffHpRecoveryPerTurn,
     3061: Trait.buffNegativeEffectImmunity,
@@ -1159,6 +1160,7 @@ OLD_TRAIT_MAPPING = {
     Trait.skyOrEarthExceptPseudoAndDemi: 2037,
     Trait.kingproteaGrowth: 2387,
     Trait.gubijin: 2833,
+    Trait.buffIncreaseDefenceAgainstIndividuality: 3058,
 }
 
 TRAIT_NAME_REVERSE |= OLD_TRAIT_MAPPING
