@@ -103,7 +103,13 @@ def get_nice_buff_script(mstBuff: MstBuff) -> NiceBuffScript:
             relationId[side][atkClass][defClass] = relationDetail
         script["relationId"] = relationId
 
-    for script_item in ("ReleaseText", "DamageRelease", "checkIndvType", "HP_LOWER"):
+    for script_item in (
+        "ReleaseText",
+        "DamageRelease",
+        "checkIndvType",
+        "HP_LOWER",
+        "INDIVIDUALITIE_COUNT_ABOVE",
+    ):
         if script_item in mstBuff.script:
             script[script_item] = mstBuff.script[script_item]
 
