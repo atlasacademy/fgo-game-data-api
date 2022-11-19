@@ -2103,6 +2103,8 @@ class SupportServant(BaseModelORJson):
 class NiceQuestPhaseExtraDetail(BaseModelORJson):
     questSelect: list[int] | None = None
     singleForceSvtId: int | None = None
+    hintTitle: str | None = None
+    hintMessage: str | None = None
 
 
 class NiceQuestPhase(NiceQuest):
