@@ -422,6 +422,8 @@ class QuestSearchQueryParams:
     enemySvtAiId: Optional[int] = None
     enemyTrait: list[Union[Trait, int]] = Query([])
     enemyClassName: list[SvtClass] = Query([])
+    enemySkillId: list[int] | None = Query(None)
+    enemyNoblePhantasmId: list[int] | None = Query(None)
 
     def hasSearchParams(self) -> bool:
         return any(
@@ -439,6 +441,8 @@ class QuestSearchQueryParams:
                 self.fieldAiId,
                 self.enemyTrait,
                 self.enemyClassName,
+                self.enemySkillId,
+                self.enemyNoblePhantasmId,
             ]
         )
 
@@ -459,6 +463,8 @@ class QuestSearchQueryParams:
         - **enemySvtAiId**: Enemy's servant AI ID.
         - **enemyTrait**: Enemy's Trait. Trait Enum or an Integer.
         - **enemyClassName**: Enemy's Class Name Enum.
+        - **enemySkillId**: Enemy's Skill, Passive Skill,
+        - **enemyNoblePhantasmId**: Enemy's NP
 
         At least one of the parameter is required for the query.
         """

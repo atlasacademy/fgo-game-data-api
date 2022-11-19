@@ -1,11 +1,20 @@
 import functools
-from typing import Iterable, Optional, Union
+from typing import Any, Iterable, Optional, Union
 
-from sqlalchemy import Integer, Table
+from sqlalchemy import Boolean, Integer, Table
 from sqlalchemy.dialects.postgresql import array_agg
 from sqlalchemy.exc import DBAPIError
 from sqlalchemy.ext.asyncio import AsyncConnection
-from sqlalchemy.sql import Join, and_, case, func, literal_column, or_, select
+from sqlalchemy.sql import (
+    ColumnElement,
+    Join,
+    and_,
+    case,
+    func,
+    literal_column,
+    or_,
+    select,
+)
 from sqlalchemy.sql.elements import ClauseElement
 
 from ...models.raw import (
@@ -171,6 +180,8 @@ async def get_quest_phase_search(
     enemy_svt_ai_id: Optional[int] = None,
     enemy_trait: Optional[Iterable[int]] = None,
     enemy_class: Optional[Iterable[int]] = None,
+    enemy_skill: Optional[Iterable[int]] = None,
+    enemy_np: Optional[Iterable[int]] = None,
 ) -> list[MstQuestWithPhase]:
     from_clause: Union[Join, Table] = MSTQUEST_WITH_PHASE_FROM
     if bgm_id or field_ai_id:
@@ -181,7 +192,14 @@ async def get_quest_phase_search(
                 mstQuestPhase.c.phase == mstStage.c.questPhase,
             ),
         )
-    if enemy_svt_id or enemy_svt_ai_id or enemy_trait or enemy_class:
+    if (
+        enemy_svt_id
+        or enemy_svt_ai_id
+        or enemy_trait
+        or enemy_class
+        or enemy_skill
+        or enemy_np
+    ):
         from_clause = from_clause.outerjoin(
             rayshiftQuest,
             and_(
@@ -189,6 +207,9 @@ async def get_quest_phase_search(
                 mstQuestPhase.c.phase == rayshiftQuest.c.phase,
             ),
         )
+
+    def questDetail_contains(userSvt_shape: dict[str, Any]) -> ColumnElement[Boolean]:
+        return rayshiftQuest.c.questDetail.contains({"userSvt": [userSvt_shape]})
 
     where_clause: list[ClauseElement] = []
     if name:
@@ -245,21 +266,11 @@ async def get_quest_phase_search(
             mstStage.c.script.contains({"aiFieldIds": [{"id": field_ai_id}]})
         )
     if enemy_svt_ai_id:
-        where_clause.append(
-            rayshiftQuest.c.questDetail.contains(
-                {"userSvt": [{"aiId": enemy_svt_ai_id}]}
-            )
-        )
+        where_clause.append(questDetail_contains({"aiId": enemy_svt_ai_id}))
     if enemy_trait:
-        where_clause.append(
-            rayshiftQuest.c.questDetail.contains(
-                {"userSvt": [{"individuality": list(enemy_trait)}]}
-            )
-        )
+        where_clause.append(questDetail_contains({"individuality": list(enemy_trait)}))
     if enemy_svt_id:
-        where_clause.append(
-            rayshiftQuest.c.questDetail.contains({"userSvt": [{"svtId": enemy_svt_id}]})
-        )
+        where_clause.append(questDetail_contains({"svtId": enemy_svt_id}))
     if enemy_class:
         rayshift_svt_ids = select(
             rayshiftQuest.c.questId,
@@ -297,12 +308,24 @@ async def get_quest_phase_search(
         for class_id in enemy_class:
             where_clause.append(
                 or_(
-                    rayshiftQuest.c.questDetail.contains(
-                        {"userSvt": [{"npcSvtClassId": class_id}]}
-                    ),
+                    questDetail_contains({"npcSvtClassId": class_id}),
                     merged_class_ids.c.classId == class_id,
                 )
             )
+    if enemy_skill:
+        for skill_id in enemy_skill:
+            where_clause.append(
+                or_(
+                    questDetail_contains({"skillId1": skill_id}),
+                    questDetail_contains({"skillId2": skill_id}),
+                    questDetail_contains({"skillId3": skill_id}),
+                    questDetail_contains({"classPassive": [skill_id]}),
+                    questDetail_contains({"addPassive": [skill_id]}),
+                )
+            )
+    if enemy_np:
+        for np_id in enemy_np:
+            where_clause.append(questDetail_contains({"treasureDeviceId": np_id}))
 
     quest_search_stmt = (
         MSTQUEST_WITH_PHASE_SELECT.distinct()

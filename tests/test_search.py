@@ -282,6 +282,14 @@ basic_quest_search_test_cases_dict = {
         "JP/quest/phase/search?flag=supportSelectAfterScript&flag=branch&warId=8362",
         {(94057198, 1), (94057199, 1)},
     ),
+    "quest_enemySkillId": (
+        "JP/quest/phase/search?enemySkillId=968351",
+        {(94073901, 1)},
+    ),
+    "quest_enemyNoblePhantasmId": (
+        "JP/quest/phase/search?enemyNoblePhantasmId=484",
+        {(94060012, 1)},
+    ),
 }
 basic_quest_phase_test_cases = [
     pytest.param(*value, id=key)
