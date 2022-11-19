@@ -265,6 +265,7 @@ async def search_skill(
         search_param.lvl1coolDown,
         search_param.numFunctions,
         search_param.svalsContain,
+        search_param.triggerSkillId,
     )
 
     if search_param.name:
@@ -305,6 +306,7 @@ async def search_td(
         search_param.minNpNpGain,
         search_param.maxNpNpGain,
         search_param.svalsContain,
+        search_param.triggerSkillId,
     )
 
     if search_param.name:

@@ -116,6 +116,7 @@ async def get_skill_search(
     lvl1coolDown: Optional[Iterable[int]],
     numFunctions: Optional[Iterable[int]],
     svalsContain: str | None,
+    triggerSkillId: Iterable[int] | None,
 ) -> list[MstSkill]:
     where_clause = [mstSkillLv.c.lv == 1]
     if skillType:
@@ -134,6 +135,9 @@ async def get_skill_search(
         where_clause.append(
             func.array_to_string(mstSkillLv.c.svals, "|").like(f"%{svalsContain}%")
         )
+    if triggerSkillId:
+        for skill_id in triggerSkillId:
+            where_clause.append(mstSkillLv.c.relatedSkillIds.contains([skill_id]))
 
     skill_search_stmt = (
         select(mstSkill)

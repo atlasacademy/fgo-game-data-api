@@ -93,6 +93,7 @@ async def get_td_search(
     minNpNpGain: Optional[int],
     maxNpNpGain: Optional[int],
     svalsContain: str | None,
+    triggerSkillId: Iterable[int] | None,
 ) -> list[MstTreasureDevice]:
     where_clause = [mstTreasureDeviceLv.c.lv == 1]
     if individuality:
@@ -133,6 +134,11 @@ async def get_td_search(
                 ),
             )
         )
+    if triggerSkillId:
+        for skill_id in triggerSkillId:
+            where_clause.append(
+                mstTreasureDeviceLv.c.relatedSkillIds.contains([skill_id])
+            )
 
     td_search_stmt = (
         select(mstTreasureDevice)

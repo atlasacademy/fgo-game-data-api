@@ -34,6 +34,7 @@ from ..models.rayshift import rayshiftQuest
 from ..schemas.base import BaseModelORJson
 from ..schemas.common import Region
 from ..schemas.enums import FUNC_VALS_NOT_BUFF
+from ..schemas.gameenums import BuffType, FuncType
 from ..schemas.raw import AssetStorageLine, get_subtitle_svtId
 from ..schemas.rayshift import QuestDetail, QuestList
 from .engine import engines
@@ -69,6 +70,42 @@ def remove_unknown_columns(
 ) -> list[dict[str, Any]]:  # pragma: no cover
     table_columns = {column.name for column in table.columns}
     return [{k: v for k, v in item.items() if k in table_columns} for item in data]
+
+
+BUFF_TRIGGERING_SKILLS_VALUE = {
+    BuffType.DELAY_FUNCTION,
+    BuffType.DEAD_FUNCTION,
+    BuffType.BATTLESTART_FUNCTION,
+    BuffType.WAVESTART_FUNCTION,
+    BuffType.SELFTURNEND_FUNCTION,
+    BuffType.DAMAGE_FUNCTION,
+    BuffType.COMMANDATTACK_FUNCTION,
+    BuffType.DEADATTACK_FUNCTION,
+    BuffType.ENTRY_FUNCTION,
+    BuffType.REFLECTION_FUNCTION,
+    BuffType.ATTACK_FUNCTION,
+    BuffType.COMMANDCODEATTACK_FUNCTION,
+    BuffType.COMMANDATTACK_BEFORE_FUNCTION,
+    BuffType.GUTS_FUNCTION,
+    BuffType.COMMANDCODEATTACK_AFTER_FUNCTION,
+    BuffType.ATTACK_BEFORE_FUNCTION,
+    BuffType.SELFTURNSTART_FUNCTION,
+}
+
+
+def get_Value_from_sval(sval: str) -> int:
+    return int(sval.split(",")[3])
+
+
+BUFF_TRIGGERING_SKILLS_SKILL_ID = {BuffType.NPATTACK_PREV_BUFF}
+
+
+def get_SkillID_from_sval(sval: str) -> int:
+    return int(
+        next(val for val in sval.split(",") if "SkillID:" in val).removeprefix(
+            "SkillID:"
+        )
+    )
 
 
 def load_skill_td_lv(
@@ -114,12 +151,36 @@ def load_skill_td_lv(
 
         return func_entity
 
+    def get_trigger_skill_ids(entity_lv: dict[str, Any]) -> list[int]:
+        skill_ids = set()
+
+        for field_name in ("svals", "svals2", "svals3", "svals4", "svals5"):
+            if field_name in entity_lv:
+                for func_id, sval in zip(entity_lv["funcId"], entity_lv[field_name]):
+                    if func_id in mstFuncId:
+                        func = mstFuncId[func_id]
+                        if (
+                            func["funcType"]
+                            in [FuncType.ADD_STATE, FuncType.ADD_STATE_SHORT]
+                            and func["vals"]
+                        ):
+                            buff_id = func["vals"][0]
+                            if buff_id in mstBuffId:
+                                buff = mstBuffId[buff_id]
+                                if buff.type in BUFF_TRIGGERING_SKILLS_VALUE:
+                                    skill_ids.add(get_Value_from_sval(sval))
+                                elif buff.type in BUFF_TRIGGERING_SKILLS_SKILL_ID:
+                                    skill_ids.add(get_SkillID_from_sval(sval))
+
+        return sorted(skill_ids)
+
     for skillLv in mstSkillLv_data:
         skillLv["expandedFuncId"] = [
             get_func_entity(func_id)
             for func_id in skillLv["funcId"]
             if func_id in mstFuncId
         ]
+        skillLv["relatedSkillIds"] = get_trigger_skill_ids(skillLv)
 
     for treasureDeviceLv in mstTreasureDeviceLv_data:
         treasureDeviceLv["expandedFuncId"] = [
@@ -127,6 +188,7 @@ def load_skill_td_lv(
             for func_id in treasureDeviceLv["funcId"]
             if func_id in mstFuncId
         ]
+        treasureDeviceLv["relatedSkillIds"] = get_trigger_skill_ids(treasureDeviceLv)
 
     load_pydantic_to_db(conn, mstBuff_data, mstBuff)
 

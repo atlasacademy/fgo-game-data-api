@@ -177,8 +177,14 @@ mstSkillLv = Table(
     Column("skillDetailId", Integer),
     Column("priority", Integer),
     Column("expandedFuncId", JSONB),
+    Column("relatedSkillIds", ARRAY(Integer)),
 )
 
+Index(
+    "ix_mstSkillLv_relatedSkillIds_GIN",
+    mstSkillLv.c.relatedSkillIds,
+    postgresql_using="gin",
+)
 
 Index("ix_mstSkillLv_funcId_length", func.array_length(mstSkillLv.c.funcId, 1))
 
@@ -267,8 +273,14 @@ mstTreasureDeviceLv = Table(
     Column("tdPointDef", Integer),
     Column("qp", Integer),
     Column("expandedFuncId", JSONB),
+    Column("relatedSkillIds", ARRAY(Integer)),
 )
 
+Index(
+    "ix_mstTreasureDeviceLv_relatedSkillIds_GIN",
+    mstTreasureDeviceLv.c.relatedSkillIds,
+    postgresql_using="gin",
+)
 
 Index(
     "ix_mstTreasureDeviceLv_funcId_length",
