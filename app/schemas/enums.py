@@ -882,6 +882,7 @@ class Trait(StrEnum):
     summerModeServant = "summerModeServant"
     shinsengumiServant = "shinsengumiServant"
     ryozanpaku = "ryozanpaku"
+    demonUnused = "demonUnused"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -928,7 +929,7 @@ TRAIT_NAME: dict[int, Trait] = {
     1002: Trait.undead,  # Scathach's 3rd skill
     1003: Trait.artificialDemon,
     1004: Trait.demonBeast,
-    1005: Trait.demon,
+    1005: Trait.demonUnused,
     1100: Trait.soldier,
     1101: Trait.amazoness,
     1102: Trait.skeleton,
@@ -944,7 +945,7 @@ TRAIT_NAME: dict[int, Trait] = {
     1113: Trait.chimera,
     1117: Trait.wyvern,
     1118: Trait.dragonType,
-    1119: Trait.gazer,
+    1119: Trait.demon,
     1120: Trait.handOrDoor,
     1121: Trait.demonGodPillar,
     1122: Trait.shadowServant,
