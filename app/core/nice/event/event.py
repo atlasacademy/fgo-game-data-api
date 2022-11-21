@@ -5,7 +5,13 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 from ....config import Settings
 from ....schemas.common import Language, Region
 from ....schemas.gameenums import EVENT_TYPE_NAME, NiceSvtVoiceType, NiceVoiceCondType
-from ....schemas.nice import AssetURL, NiceEvent, NiceEventCooltime, NiceVoiceGroup
+from ....schemas.nice import (
+    AssetURL,
+    NiceEvent,
+    NiceEventCooltime,
+    NiceVoiceCond,
+    NiceVoiceGroup,
+)
 from ....schemas.raw import MstGift
 from ... import raw
 from ...utils import fmt_url, get_translation
@@ -31,6 +37,25 @@ from .voice_play import get_nice_event_voice_play
 
 
 settings = Settings()
+
+
+def conds_related_to_event(voice_conds: list[NiceVoiceCond], event_id: int) -> bool:
+    for voice_cond in voice_conds:
+        if (
+            voice_cond.condType
+            in {
+                NiceVoiceCondType.eventNoend,
+                NiceVoiceCondType.eventEnd,
+                NiceVoiceCondType.eventPeriod,
+                NiceVoiceCondType.eventShopPurchase,
+                NiceVoiceCondType.spacificShopPurchase,
+                NiceVoiceCondType.eventMissionAction,
+            }
+            and voice_cond.value == event_id
+        ):
+            return True
+
+    return False
 
 
 async def get_nice_event(
@@ -107,23 +132,12 @@ async def get_nice_event(
         known_voice_ids[voice_play.guideImageId] |= set(voice_play.voiceIds)
         known_voice_ids[voice_play.guideImageId] |= set(voice_play.confirmVoiceIds)
 
-    shop_voice_conds = {
-        NiceVoiceCondType.eventNoend,
-        NiceVoiceCondType.eventEnd,
-        NiceVoiceCondType.eventPeriod,
-        NiceVoiceCondType.eventShopPurchase,
-        NiceVoiceCondType.spacificShopPurchase,
-        NiceVoiceCondType.eventMissionAction,
-    }
-
     event_voices: list[NiceVoiceGroup] = []
     for voice_group in voice_groups:
         event_voice_lines = [
             voice_line
             for voice_line in voice_group.voiceLines
-            if {
-                voice_line_cond.condType for voice_line_cond in voice_line.conds
-            }.intersection(shop_voice_conds)
+            if conds_related_to_event(voice_line.conds, event_id)
             or known_voice_ids.get(voice_group.svtId, set()).intersection(voice_line.id)
         ]
         if event_voice_lines and voice_group.type != NiceSvtVoiceType.treasureDevice:
