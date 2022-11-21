@@ -55,13 +55,18 @@ def get_nice_mission_cond(
         closedMessage=cond.closedMessage,
         flag=cond.flag,
     )
-    if (
-        cond.condType == CondType.MISSION_CONDITION_DETAIL
-        and cond.targetIds[0] in details
-    ):
-        nice_mission_cond.detail = get_nice_mission_cond_detail(
-            details[cond.targetIds[0]]
-        )
+
+    if cond.condType == CondType.MISSION_CONDITION_DETAIL and cond.targetIds:
+        if cond.targetIds[0] in details:
+            nice_mission_cond.detail = get_nice_mission_cond_detail(
+                details[cond.targetIds[0]]
+            )
+        nice_mission_cond.details = [
+            get_nice_mission_cond_detail(details[detail_id])
+            for detail_id in cond.targetIds
+            if detail_id in details
+        ]
+
     return nice_mission_cond
 
 
