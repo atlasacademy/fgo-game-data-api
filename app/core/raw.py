@@ -728,9 +728,10 @@ async def get_master_mission_entity(
 
     conds = await fetch.get_all_multiple(conn, MstEventMissionCondition, mission_ids)
     cond_detail_ids = [
-        cond.targetIds[0]
+        target_id
         for cond in conds
         if cond.condType == CondType.MISSION_CONDITION_DETAIL
+        for target_id in cond.targetIds
     ]
 
     cond_details = await fetch.get_all_multiple(
@@ -768,9 +769,10 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
 
     conds = await fetch.get_all_multiple(conn, MstEventMissionCondition, mission_ids)
     cond_detail_ids = [
-        cond.targetIds[0]
+        target_id
         for cond in conds
         if cond.condType == CondType.MISSION_CONDITION_DETAIL
+        for target_id in cond.targetIds
     ]
 
     cond_details = await fetch.get_all_multiple(
