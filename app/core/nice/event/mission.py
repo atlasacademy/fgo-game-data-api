@@ -11,11 +11,13 @@ from ....schemas.nice import (
     NiceEventMission,
     NiceEventMissionCondition,
     NiceEventMissionConditionDetail,
+    NiceEventRandomMission,
 )
 from ....schemas.raw import (
     MstEventMission,
     MstEventMissionCondition,
     MstEventMissionConditionDetail,
+    MstEventRandomMission,
 )
 from ...utils import get_traits_list
 from ..gift import GiftData, get_nice_gifts
@@ -120,3 +122,15 @@ def get_nice_missions(
         for mission in mstEventMission
     ]
     return missions
+
+
+def get_nice_random_mission(
+    random_mission: MstEventRandomMission,
+) -> NiceEventRandomMission:
+    return NiceEventRandomMission(
+        missionId=random_mission.missionId,
+        missionRank=random_mission.missionRank,
+        condType=COND_TYPE_NAME[random_mission.condType],
+        condId=random_mission.condId,
+        condNum=random_mission.condNum,
+    )

@@ -976,6 +976,15 @@ class MstEventVoicePlay(BaseModelORJson):
     endedAt: int
 
 
+class MstEventRandomMission(BaseModelORJson):
+    missionId: int
+    eventId: int
+    missionRank: int
+    condType: int
+    condId: int
+    condNum: int
+
+
 class MstEventMission(BaseModelORJson):
     id: int
     flag: int
@@ -1808,6 +1817,7 @@ class EventEntity(BaseModelORJson):
     mstEventPointBuff: list[MstEventPointBuff]
     mstEventPointGroup: list[MstEventPointGroup]
     mstEventMission: list[MstEventMission]
+    mstEventRandomMission: list[MstEventRandomMission]
     mstEventMissionCondition: list[MstEventMissionCondition]
     mstEventMissionConditionDetail: list[MstEventMissionConditionDetail]
     mstEventTower: list[MstEventTower]

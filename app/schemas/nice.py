@@ -1533,6 +1533,14 @@ class NiceEventMission(BaseModelORJson):
     conds: list[NiceEventMissionCondition]
 
 
+class NiceEventRandomMission(BaseModelORJson):
+    missionId: int
+    missionRank: int
+    condType: NiceCondType
+    condId: int
+    condNum: int
+
+
 class NiceEventTowerReward(BaseModelORJson):
     floor: int
     gifts: list[NiceGift]
@@ -1778,6 +1786,7 @@ class NiceEvent(BaseModelORJson):
     pointGroups: list[NiceEventPointGroup]
     pointBuffs: list[NiceEventPointBuff]
     missions: list[NiceEventMission]
+    randomMissions: list[NiceEventRandomMission]
     towers: list[NiceEventTower]
     lotteries: list[NiceEventLottery]
     treasureBoxes: list[NiceEventTreasureBox]

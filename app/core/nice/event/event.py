@@ -19,7 +19,7 @@ from .cooltime import get_nice_event_cooltime
 from .digging import get_nice_digging
 from .fortification import get_nice_fortification
 from .lottery import get_nice_lottery
-from .mission import get_nice_missions
+from .mission import get_nice_missions, get_nice_random_mission
 from .point import get_nice_pointBuff, get_nice_pointGroup
 from .recipe import get_nice_recipe
 from .reward import get_nice_reward
@@ -199,6 +199,10 @@ async def get_nice_event(
             for pointBuff in raw_event.mstEventPointBuff
         ],
         missions=missions,
+        randomMissions=[
+            get_nice_random_mission(random_mission)
+            for random_mission in raw_event.mstEventRandomMission
+        ],
         towers=[
             get_nice_event_tower(
                 region, tower, raw_event.mstEventTowerReward, gift_data

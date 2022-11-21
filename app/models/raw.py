@@ -1103,6 +1103,18 @@ mstMasterMission = Table(
 )
 
 
+mstEventRandomMission = Table(
+    "mstEventRandomMission",
+    metadata,
+    Column("missionId", Integer),
+    Column("eventId", Integer, index=True),
+    Column("missionRank", Integer),
+    Column("condType", Integer),
+    Column("condId", Integer),
+    Column("condNum", Integer),
+)
+
+
 mstEventMission = Table(
     "mstEventMission",
     metadata,
@@ -1969,6 +1981,7 @@ TABLES_TO_BE_LOADED = [
     [mstGiftAdd],
     [mstIllustrator],
     [mstMasterMission],
+    [mstEventRandomMission],
     [mstQuestConsumeItem],
     [mstQuestMessage],
     [mstQuestPhaseDetail],
