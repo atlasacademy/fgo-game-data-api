@@ -522,8 +522,9 @@ class DetailMissionCondType(IntEnum):
     DICE_USE = 25  # Probably Fate/Requiem event
     SQUARE_ADVANCED = 26
     MORE_FRIEND_FOLLOWER = 27  # 5th Anniversary missions
-    MAIN_QUEST_DONE = 28  # 22M Download Campaign
+    QUEST_TYPE_CLEAR = 28  # 22M Download Campaign
     QUEST_CLEAR_NUM_INCLUDING_GRAILFRONT = 31
+    WAR_MAIN_QUEST_CLEAR = 32
 
 
 class DetailMissionCondLinkType(IntEnum):
