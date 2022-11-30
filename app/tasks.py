@@ -23,6 +23,7 @@ from .core.basic import (
 from .core.nice.bgm import get_all_nice_bgms
 from .core.nice.cc import get_all_nice_ccs
 from .core.nice.event.event import get_nice_event
+from .core.nice.event.shop import get_nice_shops_from_raw
 from .core.nice.item import get_all_nice_items
 from .core.nice.mc import get_all_nice_mcs
 from .core.nice.mm import get_all_nice_mms
@@ -55,6 +56,7 @@ from .schemas.raw import (
     MstIllustrator,
     MstItem,
     MstMasterMission,
+    MstShop,
     MstSvt,
     MstWar,
     ServantEntity,
@@ -230,6 +232,15 @@ async def dump_nice_events(
     await util.dump_orjson("nice_event", all_event_data)
 
 
+async def dump_nice_shops(
+    util: ExportUtil, shops: list[MstShop]
+) -> None:  # pragma: no cover
+    all_shop_data = await get_nice_shops_from_raw(
+        util.conn, util.region, shops, util.lang
+    )
+    await util.dump_orjson("nice_shop", all_shop_data)
+
+
 async def dump_illustrators(
     util: ExportUtil, illustrators: list[MstIllustrator]
 ) -> None:  # pragma: no cover
@@ -354,6 +365,7 @@ async def generate_exports(
                 bgms = await get_all_bgm_entities(conn)
                 mstItems = await fetch.get_everything(conn, MstItem)
                 mstMasterMissions = await fetch.get_everything(conn, MstMasterMission)
+                mstShops = await fetch.get_all(conn, MstShop, 0)
 
                 asset_storage = await fetch.get_everything(conn, AssetStorageLine)
                 await util.dump_orjson("asset_storage", asset_storage)
@@ -365,6 +377,7 @@ async def generate_exports(
                 await dump_nice_ccs(util, mstCcs)
                 await dump_nice_mms(util, mstMasterMissions)
                 await dump_nice_bgms(util, bgms)
+                await dump_nice_shops(util, mstShops)
 
                 util_en = ExportUtil(conn, redis, region, export_path, Language.en)
                 if region == Region.JP:

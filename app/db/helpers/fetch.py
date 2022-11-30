@@ -322,6 +322,7 @@ schema_table_fetch_all: dict[  # type:ignore
         mstEventRandomMission.c.missionId,
     ),
     MstShop: (mstShop, mstShop.c.eventId, mstShop.c.id),
+    MstShopRelease: (mstShopRelease, mstShopRelease.c.shopId, mstShopRelease.c.shopId),
     MstEventReward: (mstEventReward, mstEventReward.c.eventId, mstEventReward.c.point),
     MstEventRewardSet: (
         mstEventRewardSet,

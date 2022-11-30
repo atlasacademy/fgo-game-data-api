@@ -1,14 +1,12 @@
 from collections import defaultdict
 
-from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ....config import Settings
 from ....core.nice.gift import GiftData, get_nice_common_consume, get_nice_gifts
 from ....core.nice.item import get_nice_item_from_raw
-from ....core.raw import get_shops_entity
+from ....core.raw import get_shop_entities, get_shop_entity
 from ....data.shop import get_shop_cost_item_id
-from ....db.helpers import fetch
 from ....schemas.common import Language, Region
 from ....schemas.enums import NiceItemBGType
 from ....schemas.gameenums import (
@@ -78,7 +76,7 @@ def get_nice_shop(
     shop_scripts: dict[int, MstShopScript],
     item_map: dict[int, NiceItem],
     gift_data: GiftData,
-    common_consumes: dict[int, MstCommonConsume],
+    raw_consumes: list[MstCommonConsume],
     shop_releases: list[MstShopRelease],
 ) -> NiceShop:
     shop_item_id = get_shop_cost_item_id(shop)
@@ -118,9 +116,13 @@ def get_nice_shop(
         cost = NiceItemAmount(item=item_map[shop_item_id], amount=shop.prices[0])
 
     if shop.payType == PayType.COMMON_CONSUME:
-        common_consume = get_nice_common_consume(common_consumes[shop.itemIds[0]])
+        common_consumes = [
+            get_nice_common_consume(consume)
+            for consume in raw_consumes
+            if consume.id in shop.itemIds
+        ]
     else:
-        common_consume = None
+        common_consumes = []
 
     gifts: list[NiceGift] = []
     if shop.purchaseType == PurchaseType.GIFT:
@@ -145,7 +147,7 @@ def get_nice_shop(
         warningMessage=shop.warningMessage,
         payType=PAY_TYPE_NAME[shop.payType],
         cost=cost,
-        commonConsume=common_consume,
+        consumes=common_consumes,
         purchaseType=PURCHASE_TYPE_NAME[shop.purchaseType],
         targetIds=shop.targetIds,
         itemSet=shop_set_items,
@@ -173,11 +175,34 @@ async def get_nice_shop_from_raw(
     shop_id: int,
     lang: Language,
 ) -> NiceShop:
-    mstShop = await fetch.get_one(conn, MstShop, shop_id)
-    if not mstShop:
-        raise HTTPException(status_code=404, detail="Shop not found")
+    raw_shop = await get_shop_entity(conn, shop_id)
+    gift_maps: dict[int, list[MstGift]] = defaultdict(list)
+    for gift in raw_shop.mstGift:
+        gift_maps[gift.id].append(gift)
+    gift_data = GiftData(raw_shop.mstGiftAdd, gift_maps)
+    script_map = (
+        {
+            raw_shop.mstShopScript.shopId: raw_shop.mstShopScript
+            for script in raw_shop.mstShopScript
+        }
+        if raw_shop.mstShopScript
+        else {}
+    )
+    item_map = {
+        item.id: get_nice_item_from_raw(region, item, lang) for item in raw_shop.mstItem
+    }
+    set_item_map = {set_item.id: set_item for set_item in raw_shop.mstSetItem}
 
-    return (await get_nice_shops_from_raw(conn, region, [mstShop], lang))[0]
+    return get_nice_shop(
+        region,
+        shop=raw_shop.mstShop,
+        set_items=set_item_map,
+        shop_scripts=script_map,
+        item_map=item_map,
+        gift_data=gift_data,
+        raw_consumes=raw_shop.mstCommonConsume,
+        shop_releases=raw_shop.mstShopRelease,
+    )
 
 
 async def get_nice_shops_from_raw(
@@ -186,27 +211,37 @@ async def get_nice_shops_from_raw(
     shops: list[MstShop],
     lang: Language,
 ) -> list[NiceShop]:
-    raw_shop = await get_shops_entity(conn, shops)
+    raw_shops = await get_shop_entities(conn, shops)
     gift_maps: dict[int, list[MstGift]] = defaultdict(list)
-    for gift in raw_shop.mstGift:
-        gift_maps[gift.id].append(gift)
-    gift_data = GiftData(raw_shop.mstGiftAdd, gift_maps)
-    script_map = {script.shopId: script for script in raw_shop.mstShopScript}
-    item_map = {
-        item.id: get_nice_item_from_raw(region, item, lang) for item in raw_shop.mstItem
+    for shop in raw_shops:
+        for gift in shop.mstGift:
+            gift_maps[gift.id].append(gift)
+    gift_data = GiftData(
+        [gift_add for shop in raw_shops for gift_add in shop.mstGiftAdd], gift_maps
+    )
+    script_map = {
+        shop.mstShopScript.shopId: shop.mstShopScript
+        for shop in raw_shops
+        if shop.mstShopScript
     }
-    common_consume_map = {consume.id: consume for consume in raw_shop.mstCommonConsume}
-    set_item_map = {set_item.id: set_item for set_item in raw_shop.mstSetItem}
+    item_map = {
+        item.id: get_nice_item_from_raw(region, item, lang)
+        for shop in raw_shops
+        for item in shop.mstItem
+    }
+    set_item_map = {
+        set_item.id: set_item for shop in raw_shops for set_item in shop.mstSetItem
+    }
     return [
         get_nice_shop(
             region=region,
-            shop=shop,
+            shop=shop.mstShop,
             set_items=set_item_map,
             shop_scripts=script_map,
             item_map=item_map,
-            common_consumes=common_consume_map,
+            raw_consumes=shop.mstCommonConsume,
             gift_data=gift_data,
-            shop_releases=raw_shop.mstShopRelease,
+            shop_releases=shop.mstShopRelease,
         )
-        for shop in raw_shop.mstShop
+        for shop in raw_shops
     ]
