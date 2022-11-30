@@ -7,5 +7,7 @@ def get_shop_cost_item_id(shop: MstShop) -> int:
         return 4
     elif shop.payType == PayType.MANA:
         return 3
+    elif shop.payType == PayType.COMMON_CONSUME:
+        return 0
     else:
         return shop.itemIds[0]

@@ -1866,12 +1866,15 @@ class WarEntity(BaseModelORJson):
     mstWarQuestSelection: list[MstWarQuestSelection]
 
 
-class ShopEntity(BaseModelORJson):
-    mstShop: MstShop
+class ShopsEntity(BaseModelORJson):
+    mstShop: list[MstShop]
     mstSetItem: list[MstSetItem]
     mstShopRelease: list[MstShopRelease]
-    mstShopScript: MstShopScript | None = None
+    mstShopScript: list[MstShopScript]
     mstItem: list[MstItem]
+    mstGift: list[MstGift]
+    mstGiftAdd: list[MstGiftAdd]
+    mstCommonConsume: list[MstCommonConsume]
 
 
 class MasterMissionEntity(BaseModelORJson):

@@ -1,9 +1,14 @@
+from collections import defaultdict
+
+from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ....config import Settings
+from ....core.nice.gift import GiftData, get_nice_common_consume, get_nice_gifts
 from ....core.nice.item import get_nice_item_from_raw
-from ....core.raw import get_shop_entity
+from ....core.raw import get_shops_entity
 from ....data.shop import get_shop_cost_item_id
+from ....db.helpers import fetch
 from ....schemas.common import Language, Region
 from ....schemas.enums import NiceItemBGType
 from ....schemas.gameenums import (
@@ -17,13 +22,21 @@ from ....schemas.gameenums import (
 )
 from ....schemas.nice import (
     AssetURL,
+    NiceGift,
     NiceItem,
     NiceItemAmount,
     NiceItemSet,
     NiceShop,
     NiceShopRelease,
 )
-from ....schemas.raw import MstSetItem, MstShop, MstShopRelease, MstShopScript
+from ....schemas.raw import (
+    MstCommonConsume,
+    MstGift,
+    MstSetItem,
+    MstShop,
+    MstShopRelease,
+    MstShopScript,
+)
 from ...utils import fmt_url
 from ..base_script import get_script_url
 
@@ -31,12 +44,17 @@ from ..base_script import get_script_url
 settings = Settings()
 
 
-def get_nice_set_item(set_item: MstSetItem) -> NiceItemSet:
+def get_nice_set_item(
+    region: Region, set_item: MstSetItem, gift_data: GiftData
+) -> NiceItemSet:
     return NiceItemSet(
         id=set_item.id,
         purchaseType=PURCHASE_TYPE_NAME[set_item.purchaseType],
         targetId=set_item.targetId,
         setNum=set_item.setNum,
+        gifts=get_nice_gifts(region, set_item.targetId, gift_data)
+        if set_item.purchaseType == PurchaseType.GIFT
+        else [],
     )
 
 
@@ -56,23 +74,24 @@ def get_nice_shop_release(shop_release: MstShopRelease) -> NiceShopRelease:
 def get_nice_shop(
     region: Region,
     shop: MstShop,
-    set_items: list[MstSetItem],
+    set_items: dict[int, MstSetItem],
     shop_scripts: dict[int, MstShopScript],
     item_map: dict[int, NiceItem],
+    gift_data: GiftData,
+    common_consumes: dict[int, MstCommonConsume],
     shop_releases: list[MstShopRelease],
 ) -> NiceShop:
     shop_item_id = get_shop_cost_item_id(shop)
 
     if shop.purchaseType == PurchaseType.SET_ITEM:
         shop_set_items = [
-            get_nice_set_item(set_item)
-            for set_item in set_items
-            if set_item.id in shop.targetIds
+            get_nice_set_item(region, set_items[set_item_id], gift_data)
+            for set_item_id in shop.targetIds
         ]
     else:
         shop_set_items = []
 
-    if shop.payType == PayType.FREE:
+    if shop.payType in (PayType.FREE, PayType.COMMON_CONSUME):
         cost = NiceItemAmount(
             item=NiceItem(
                 id=0,
@@ -98,6 +117,16 @@ def get_nice_shop(
     else:
         cost = NiceItemAmount(item=item_map[shop_item_id], amount=shop.prices[0])
 
+    if shop.payType == PayType.COMMON_CONSUME:
+        common_consume = get_nice_common_consume(common_consumes[shop.itemIds[0]])
+    else:
+        common_consume = None
+
+    gifts: list[NiceGift] = []
+    if shop.purchaseType == PurchaseType.GIFT:
+        for gift_id in shop.targetIds:
+            gifts += get_nice_gifts(region, gift_id, gift_data)
+
     nice_shop = NiceShop(
         id=shop.id,
         baseShopId=shop.baseShopId,
@@ -116,9 +145,11 @@ def get_nice_shop(
         warningMessage=shop.warningMessage,
         payType=PAY_TYPE_NAME[shop.payType],
         cost=cost,
+        commonConsume=common_consume,
         purchaseType=PURCHASE_TYPE_NAME[shop.purchaseType],
         targetIds=shop.targetIds,
         itemSet=shop_set_items,
+        gifts=gifts,
         setNum=shop.setNum,
         limitNum=shop.limitNum,
         defaultLv=shop.defaultLv,
@@ -140,20 +171,42 @@ async def get_nice_shop_from_raw(
     conn: AsyncConnection,
     region: Region,
     shop_id: int,
-    shop: MstShop | None,
     lang: Language,
 ) -> NiceShop:
-    shop_entity = await get_shop_entity(conn, shop_id, shop)
-    return get_nice_shop(
-        region=region,
-        shop=shop_entity.mstShop,
-        set_items=shop_entity.mstSetItem,
-        shop_scripts={shop_entity.mstShopScript.shopId: shop_entity.mstShopScript}
-        if shop_entity.mstShopScript
-        else {},
-        item_map={
-            item.id: get_nice_item_from_raw(region, item, lang)
-            for item in shop_entity.mstItem
-        },
-        shop_releases=shop_entity.mstShopRelease,
-    )
+    mstShop = await fetch.get_one(conn, MstShop, shop_id)
+    if not mstShop:
+        raise HTTPException(status_code=404, detail="Shop not found")
+
+    return (await get_nice_shops_from_raw(conn, region, [mstShop], lang))[0]
+
+
+async def get_nice_shops_from_raw(
+    conn: AsyncConnection,
+    region: Region,
+    shops: list[MstShop],
+    lang: Language,
+) -> list[NiceShop]:
+    raw_shop = await get_shops_entity(conn, shops)
+    gift_maps: dict[int, list[MstGift]] = defaultdict(list)
+    for gift in raw_shop.mstGift:
+        gift_maps[gift.id].append(gift)
+    gift_data = GiftData(raw_shop.mstGiftAdd, gift_maps)
+    script_map = {script.shopId: script for script in raw_shop.mstShopScript}
+    item_map = {
+        item.id: get_nice_item_from_raw(region, item, lang) for item in raw_shop.mstItem
+    }
+    common_consume_map = {consume.id: consume for consume in raw_shop.mstCommonConsume}
+    set_item_map = {set_item.id: set_item for set_item in raw_shop.mstSetItem}
+    return [
+        get_nice_shop(
+            region=region,
+            shop=shop,
+            set_items=set_item_map,
+            shop_scripts=script_map,
+            item_map=item_map,
+            common_consumes=common_consume_map,
+            gift_data=gift_data,
+            shop_releases=raw_shop.mstShopRelease,
+        )
+        for shop in raw_shop.mstShop
+    ]

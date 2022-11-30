@@ -1361,6 +1361,15 @@ class NiceItemSet(BaseModelORJson):
     purchaseType: NicePurchaseType
     targetId: int
     setNum: int
+    gifts: list[NiceGift]
+
+
+class NiceCommonConsume(BaseModelORJson):
+    id: int
+    priority: int
+    type: NiceCommonConsumeType
+    objectId: int
+    num: int
 
 
 class NiceShopRelease(BaseModelORJson):
@@ -1390,6 +1399,7 @@ class NiceShop(BaseModelORJson):
         ..., title="Payment Type", description="Type of items to be used as payment."
     )
     cost: NiceItemAmount
+    commonConsume: NiceCommonConsume | None = None
     purchaseType: NicePurchaseType = Field(
         ..., title="Reward Type", description="Type of items to be received."
     )
@@ -1404,6 +1414,9 @@ class NiceShop(BaseModelORJson):
     )
     limitNum: int = Field(
         ..., title="Limit Number", description="Maximum number of buying units"
+    )
+    gifts: list[NiceGift] = Field(
+        ..., title="Gift", description="If purchaseType is gift"
     )
     defaultLv: int
     defaultLimitCount: int
@@ -1588,14 +1601,6 @@ class NiceEventLottery(BaseModelORJson):
     limited: bool
     boxes: list[NiceEventLotteryBox]
     talks: list[NiceEventLotteryTalk]
-
-
-class NiceCommonConsume(BaseModelORJson):
-    id: int
-    priority: int
-    type: NiceCommonConsumeType
-    objectId: int
-    num: int
 
 
 class NiceEventTreasureBoxGift(BaseModelORJson):

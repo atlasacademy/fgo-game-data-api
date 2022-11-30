@@ -5,7 +5,7 @@ from ..config import Settings
 from ..core import search
 from ..core.nice import ai, bgm, cc, item, mc, mm, nice, quest, script, war
 from ..core.nice.event.event import get_nice_event
-from ..core.nice.event.shop import get_nice_shop_from_raw
+from ..core.nice.event.shop import get_nice_shop_from_raw, get_nice_shops_from_raw
 from ..core.nice.script import get_nice_script_search_result
 from ..db.helpers.cc import get_cc_id
 from ..db.helpers.svt import get_ce_id, get_svt_id
@@ -884,12 +884,7 @@ async def find_shop(
     async with get_db(search_param.region) as conn:
         matches = await search.search_shop(conn, search_param, limit=10000)
         return list_response(
-            [
-                await get_nice_shop_from_raw(
-                    conn, search_param.region, mstShop.id, mstShop, lang
-                )
-                for mstShop in matches
-            ]
+            await get_nice_shops_from_raw(conn, search_param.region, matches, lang)
         )
 
 
@@ -911,6 +906,4 @@ async def get_shop(
     Get the shop data from the given shop ID
     """
     async with get_db(region) as conn:
-        return item_response(
-            await get_nice_shop_from_raw(conn, region, shop_id, None, lang)
-        )
+        return item_response(await get_nice_shop_from_raw(conn, region, shop_id, lang))
