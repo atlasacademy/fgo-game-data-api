@@ -23,8 +23,10 @@ from .gameenums import (
     NiceFuncType,
     NiceGender,
     NiceItemType,
+    NicePayType,
     NiceQuestFlag,
     NiceQuestType,
+    NiceShopType,
     NiceSvtFlag,
     NiceSvtType,
 )
@@ -492,3 +494,28 @@ class ScriptSearchQueryParams:
 
     def hasSearchParams(self) -> bool:
         return 1 <= len(self.query.strip()) <= 999
+
+
+@dataclass
+class ShopSearchQueryParams:
+    region: Region
+    name: Optional[str] = Query(None, max_length=999)
+    eventId: list[int] = Query([])
+    type: list[NiceShopType] = Query([])
+    payType: list[NicePayType] = Query([])
+
+    def hasSearchParams(self) -> bool:
+        return any(
+            [
+                self.name,
+                self.eventId,
+                self.type,
+                self.payType,
+            ]
+        )
+
+    DESCRIPTION: ClassVar[str] = inspect.cleandoc(
+        """
+        Search and return the list of matched shop entities.
+        """
+    )

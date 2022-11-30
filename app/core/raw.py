@@ -126,6 +126,7 @@ from ..schemas.raw import (
     ReversedSkillTdType,
     ScriptEntity,
     ServantEntity,
+    ShopEntity,
     SkillEntity,
     SkillEntityNoReverse,
     TdEntity,
@@ -1132,3 +1133,33 @@ async def get_all_bgm_entities(
         out_entities.append(bgm_entity)
 
     return out_entities
+
+
+async def get_shop_entity(
+    conn: AsyncConnection, shop_id: int, mstShop: MstShop | None = None
+) -> ShopEntity:
+    if not mstShop:
+        mstShop = await fetch.get_one(conn, MstShop, shop_id)
+    if not mstShop:
+        raise HTTPException(status_code=404, detail="Shop not found")
+
+    set_item_ids = [
+        set_id
+        for set_id in mstShop.targetIds
+        if mstShop.purchaseType == PurchaseType.SET_ITEM
+    ]
+    set_items = await item.get_mstSetItem(conn, set_item_ids)
+
+    shop_script = await fetch.get_one(conn, MstShopScript, mstShop.id)
+    shop_releases = await fetch.get_all_multiple(conn, MstShopRelease, [mstShop.id])
+
+    item_id = get_shop_cost_item_id(mstShop)
+    mstItem = await get_multiple_items(conn, [item_id])
+
+    return ShopEntity(
+        mstShop=mstShop,
+        mstSetItem=set_items,
+        mstShopRelease=shop_releases,
+        mstShopScript=shop_script,
+        mstItem=mstItem,
+    )

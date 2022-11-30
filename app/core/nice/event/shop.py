@@ -1,6 +1,10 @@
+from sqlalchemy.ext.asyncio import AsyncConnection
+
 from ....config import Settings
+from ....core.nice.item import get_nice_item_from_raw
+from ....core.raw import get_shop_entity
 from ....data.shop import get_shop_cost_item_id
-from ....schemas.common import Region
+from ....schemas.common import Language, Region
 from ....schemas.enums import NiceItemBGType
 from ....schemas.gameenums import (
     COND_TYPE_NAME,
@@ -130,3 +134,26 @@ def get_nice_shop(
         nice_shop.script = get_script_url(region, shop_script.scriptId)
 
     return nice_shop
+
+
+async def get_nice_shop_from_raw(
+    conn: AsyncConnection,
+    region: Region,
+    shop_id: int,
+    shop: MstShop | None,
+    lang: Language,
+) -> NiceShop:
+    shop_entity = await get_shop_entity(conn, shop_id, shop)
+    return get_nice_shop(
+        region=region,
+        shop=shop_entity.mstShop,
+        set_items=shop_entity.mstSetItem,
+        shop_scripts={shop_entity.mstShopScript.shopId: shop_entity.mstShopScript}
+        if shop_entity.mstShopScript
+        else {},
+        item_map={
+            item.id: get_nice_item_from_raw(region, item, lang)
+            for item in shop_entity.mstItem
+        },
+        shop_releases=shop_entity.mstShopRelease,
+    )

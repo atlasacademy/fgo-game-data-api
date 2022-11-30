@@ -850,7 +850,7 @@ class NiceVoiceCond(BaseModel):
         ..., title="Voice Cond Type", description="Voice Condition Type Enum"
     )
     value: int = Field(
-        ..., title="Voice Cond Value", description="Threshold value for the condtion."
+        ..., title="Voice Cond Value", description="Threshold value for the condition."
     )
     valueList: list[int] = Field(
         [],
