@@ -1423,6 +1423,7 @@ class NiceShop(BaseModelORJson):
     scriptName: Optional[str] = None
     scriptId: Optional[str] = None
     script: Optional[HttpUrl] = None
+    image: HttpUrl | None = None
     openedAt: int
     closedAt: int
 

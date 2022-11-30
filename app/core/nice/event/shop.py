@@ -156,6 +156,14 @@ def get_nice_shop(
         limitNum=shop.limitNum,
         defaultLv=shop.defaultLv,
         defaultLimitCount=shop.defaultLimitCount,
+        image=fmt_url(
+            AssetURL.items,
+            base_url=settings.asset_url,
+            region=region,
+            item_id=shop.imageId,
+        )
+        if shop.imageId != 0
+        else None,
         openedAt=shop.openedAt,
         closedAt=shop.closedAt,
     )
