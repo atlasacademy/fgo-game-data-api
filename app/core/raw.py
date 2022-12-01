@@ -1215,42 +1215,56 @@ async def get_shop_entities(
         conn, MstCommonConsume, common_consume_ids
     )
 
-    set_item_ids = [
+    set_item_ids = {
         set_id
         for shop in shops
         if shop.purchaseType == PurchaseType.SET_ITEM
         for set_id in shop.targetIds
-    ]
-    set_items = await item.get_mstSetItem(conn, set_item_ids)
+    }
+    all_set_items = await item.get_mstSetItem(conn, set_item_ids)
 
-    gift_ids = {
+    all_gift_ids = {
         gift_id
         for shop in shops
         if shop.purchaseType == PurchaseType.GIFT
         for gift_id in shop.targetIds
     }
-    gift_ids |= {
+    all_gift_ids |= {
         set_item.targetId
-        for set_item in set_items
+        for set_item in all_set_items
         if set_item.purchaseType == PurchaseType.GIFT
     }
 
-    gift_adds = await fetch.get_all_multiple(conn, MstGiftAdd, gift_ids)
-    replacement_gift_ids = {gift.priorGiftId for gift in gift_adds}
+    all_gift_adds = await fetch.get_all_multiple(conn, MstGiftAdd, all_gift_ids)
+    replacement_gift_ids = {gift.priorGiftId for gift in all_gift_adds}
 
-    gifts = await fetch.get_all_multiple(conn, MstGift, gift_ids | replacement_gift_ids)
+    all_gifts = await fetch.get_all_multiple(
+        conn, MstGift, all_gift_ids | replacement_gift_ids
+    )
 
     entities: list[ShopEntity] = []
     for shop in shops:
         item_id = get_shop_cost_item_id(shop)
+        set_items = (
+            [set_item for set_item in all_set_items if set_item.id in shop.targetIds]
+            if shop.purchaseType == PurchaseType.SET_ITEM
+            else []
+        )
+        gift_ids = (
+            set(shop.targetIds) if shop.purchaseType == PurchaseType.GIFT else set()
+        )
+        for set_item in set_items:
+            if set_item.purchaseType == PurchaseType.GIFT:
+                gift_ids.add(set_item.targetId)
+        gift_adds = [
+            gift_add for gift_add in all_gift_adds if gift_add.giftId in gift_ids
+        ]
+        gift_ids |= {gift.priorGiftId for gift in gift_adds}
+        gifts = [gift for gift in all_gifts if gift.id in gift_ids]
         entities.append(
             ShopEntity(
                 mstShop=shop,
-                mstSetItem=[
-                    set_item for set_item in set_items if set_item.id in shop.targetIds
-                ]
-                if shop.purchaseType == PurchaseType.SET_ITEM
-                else [],
+                mstSetItem=set_items,
                 mstShopRelease=[
                     release for release in shop_releases if release.shopId == shop.id
                 ],
