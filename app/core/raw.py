@@ -1203,10 +1203,10 @@ async def get_shop_entities(
 
     item_ids = {get_shop_cost_item_id(shop) for shop in shops}
     common_consume_ids = {
-        target_id
+        consume_id
         for shop in shops
         if shop.payType == PayType.COMMON_CONSUME
-        for target_id in shop.targetIds
+        for consume_id in shop.itemIds
     }
     mstItem = await get_multiple_items(conn, item_ids)
     item_map = {item.id: item for item in mstItem}
@@ -1259,7 +1259,7 @@ async def get_shop_entities(
                 mstCommonConsume=[
                     consume
                     for consume in common_consumes
-                    if consume.id in shop.targetIds
+                    if consume.id in shop.itemIds
                 ]
                 if shop.payType == PayType.COMMON_CONSUME
                 else [],
