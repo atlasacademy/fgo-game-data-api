@@ -78,8 +78,6 @@ async def get_nice_event(
         for item in raw_event.mstItem
     }
 
-    set_item_map = {set_item.id: set_item for set_item in raw_event.mstSetItem}
-
     common_consumes = {consume.id: consume for consume in raw_event.mstCommonConsume}
     common_releases = {release.id: release for release in raw_event.mstCommonRelease}
 
@@ -191,7 +189,7 @@ async def get_nice_event(
             get_nice_shop(
                 region,
                 shop,
-                set_item_map,
+                raw_event.mstSetItem,
                 shop_scripts,
                 item_map,
                 gift_data,

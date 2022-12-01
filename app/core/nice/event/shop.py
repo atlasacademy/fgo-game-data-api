@@ -72,7 +72,7 @@ def get_nice_shop_release(shop_release: MstShopRelease) -> NiceShopRelease:
 def get_nice_shop(
     region: Region,
     shop: MstShop,
-    set_items: dict[int, MstSetItem],
+    set_items: list[MstSetItem],
     shop_scripts: dict[int, MstShopScript],
     item_map: dict[int, NiceItem],
     gift_data: GiftData,
@@ -83,8 +83,9 @@ def get_nice_shop(
 
     if shop.purchaseType == PurchaseType.SET_ITEM:
         shop_set_items = [
-            get_nice_set_item(region, set_items[set_item_id], gift_data)
-            for set_item_id in shop.targetIds
+            get_nice_set_item(region, set_item, gift_data)
+            for set_item in set_items
+            for set_item.id in shop.targetIds
         ]
     else:
         shop_set_items = []
@@ -199,12 +200,11 @@ async def get_nice_shop_from_raw(
     item_map = {
         item.id: get_nice_item_from_raw(region, item, lang) for item in raw_shop.mstItem
     }
-    set_item_map = {set_item.id: set_item for set_item in raw_shop.mstSetItem}
 
     return get_nice_shop(
         region,
         shop=raw_shop.mstShop,
-        set_items=set_item_map,
+        set_items=raw_shop.mstSetItem,
         shop_scripts=script_map,
         item_map=item_map,
         gift_data=gift_data,
@@ -237,14 +237,11 @@ async def get_nice_shops_from_raw(
         for shop in raw_shops
         for item in shop.mstItem
     }
-    set_item_map = {
-        set_item.id: set_item for shop in raw_shops for set_item in shop.mstSetItem
-    }
     return [
         get_nice_shop(
             region=region,
             shop=shop.mstShop,
-            set_items=set_item_map,
+            set_items=shop.mstSetItem,
             shop_scripts=script_map,
             item_map=item_map,
             raw_consumes=shop.mstCommonConsume,
