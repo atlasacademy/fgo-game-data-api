@@ -362,6 +362,7 @@
   "pointGroups": [],
   "pointBuffs": [],
   "missions": [],
+  "randomMissions": [],
   "towers": [
     {
       "towerId": 1,

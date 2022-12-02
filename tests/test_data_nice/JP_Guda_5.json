@@ -2865,7 +2865,22 @@
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
             "targetEventIds": []
-          }
+          },
+          "details": [
+            {
+              "id": 80289002,
+              "missionTargetId": 80289,
+              "missionCondType": 12,
+              "logicType": 1,
+              "targetIds": [
+                94049104
+              ],
+              "addTargetIds": [],
+              "targetQuestIndividualities": [],
+              "conditionLinkType": "missionStart",
+              "targetEventIds": []
+            }
+          ]
         }
       ]
     },
@@ -2938,7 +2953,22 @@
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
             "targetEventIds": []
-          }
+          },
+          "details": [
+            {
+              "id": 80289002,
+              "missionTargetId": 80289,
+              "missionCondType": 12,
+              "logicType": 1,
+              "targetIds": [
+                94049104
+              ],
+              "addTargetIds": [],
+              "targetQuestIndividualities": [],
+              "conditionLinkType": "missionStart",
+              "targetEventIds": []
+            }
+          ]
         }
       ]
     },
@@ -3011,7 +3041,22 @@
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
             "targetEventIds": []
-          }
+          },
+          "details": [
+            {
+              "id": 80289003,
+              "missionTargetId": 80289,
+              "missionCondType": 12,
+              "logicType": 1,
+              "targetIds": [
+                94049105
+              ],
+              "addTargetIds": [],
+              "targetQuestIndividualities": [],
+              "conditionLinkType": "missionStart",
+              "targetEventIds": []
+            }
+          ]
         }
       ]
     },
@@ -3084,7 +3129,22 @@
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
             "targetEventIds": []
-          }
+          },
+          "details": [
+            {
+              "id": 80289003,
+              "missionTargetId": 80289,
+              "missionCondType": 12,
+              "logicType": 1,
+              "targetIds": [
+                94049105
+              ],
+              "addTargetIds": [],
+              "targetQuestIndividualities": [],
+              "conditionLinkType": "missionStart",
+              "targetEventIds": []
+            }
+          ]
         }
       ]
     },
@@ -3157,7 +3217,22 @@
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
             "targetEventIds": []
-          }
+          },
+          "details": [
+            {
+              "id": 80289004,
+              "missionTargetId": 80289,
+              "missionCondType": 12,
+              "logicType": 1,
+              "targetIds": [
+                94049106
+              ],
+              "addTargetIds": [],
+              "targetQuestIndividualities": [],
+              "conditionLinkType": "missionStart",
+              "targetEventIds": []
+            }
+          ]
         }
       ]
     },
@@ -3230,7 +3305,22 @@
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
             "targetEventIds": []
-          }
+          },
+          "details": [
+            {
+              "id": 80289004,
+              "missionTargetId": 80289,
+              "missionCondType": 12,
+              "logicType": 1,
+              "targetIds": [
+                94049106
+              ],
+              "addTargetIds": [],
+              "targetQuestIndividualities": [],
+              "conditionLinkType": "missionStart",
+              "targetEventIds": []
+            }
+          ]
         }
       ]
     },
@@ -3326,7 +3416,45 @@
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
             "targetEventIds": []
-          }
+          },
+          "details": [
+            {
+              "id": 80289005,
+              "missionTargetId": 80289,
+              "missionCondType": 10,
+              "logicType": 1,
+              "targetIds": [
+                94049201,
+                94049202,
+                94049203,
+                94049204,
+                94049205,
+                94049206,
+                94049207,
+                94049208,
+                94049209,
+                94049210,
+                94049211,
+                94049212,
+                94049213,
+                94049214,
+                94049215,
+                94049216,
+                94049217,
+                94049218,
+                94049219,
+                94049220,
+                94049221,
+                94049222,
+                94049223,
+                94049224
+              ],
+              "addTargetIds": [],
+              "targetQuestIndividualities": [],
+              "conditionLinkType": "missionStart",
+              "targetEventIds": []
+            }
+          ]
         }
       ]
     },
@@ -3422,7 +3550,45 @@
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
             "targetEventIds": []
-          }
+          },
+          "details": [
+            {
+              "id": 80289005,
+              "missionTargetId": 80289,
+              "missionCondType": 10,
+              "logicType": 1,
+              "targetIds": [
+                94049201,
+                94049202,
+                94049203,
+                94049204,
+                94049205,
+                94049206,
+                94049207,
+                94049208,
+                94049209,
+                94049210,
+                94049211,
+                94049212,
+                94049213,
+                94049214,
+                94049215,
+                94049216,
+                94049217,
+                94049218,
+                94049219,
+                94049220,
+                94049221,
+                94049222,
+                94049223,
+                94049224
+              ],
+              "addTargetIds": [],
+              "targetQuestIndividualities": [],
+              "conditionLinkType": "missionStart",
+              "targetEventIds": []
+            }
+          ]
         }
       ]
     },
@@ -3518,7 +3684,45 @@
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
             "targetEventIds": []
-          }
+          },
+          "details": [
+            {
+              "id": 80289005,
+              "missionTargetId": 80289,
+              "missionCondType": 10,
+              "logicType": 1,
+              "targetIds": [
+                94049201,
+                94049202,
+                94049203,
+                94049204,
+                94049205,
+                94049206,
+                94049207,
+                94049208,
+                94049209,
+                94049210,
+                94049211,
+                94049212,
+                94049213,
+                94049214,
+                94049215,
+                94049216,
+                94049217,
+                94049218,
+                94049219,
+                94049220,
+                94049221,
+                94049222,
+                94049223,
+                94049224
+              ],
+              "addTargetIds": [],
+              "targetQuestIndividualities": [],
+              "conditionLinkType": "missionStart",
+              "targetEventIds": []
+            }
+          ]
         }
       ]
     },
@@ -3614,7 +3818,45 @@
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
             "targetEventIds": []
-          }
+          },
+          "details": [
+            {
+              "id": 80289005,
+              "missionTargetId": 80289,
+              "missionCondType": 10,
+              "logicType": 1,
+              "targetIds": [
+                94049201,
+                94049202,
+                94049203,
+                94049204,
+                94049205,
+                94049206,
+                94049207,
+                94049208,
+                94049209,
+                94049210,
+                94049211,
+                94049212,
+                94049213,
+                94049214,
+                94049215,
+                94049216,
+                94049217,
+                94049218,
+                94049219,
+                94049220,
+                94049221,
+                94049222,
+                94049223,
+                94049224
+              ],
+              "addTargetIds": [],
+              "targetQuestIndividualities": [],
+              "conditionLinkType": "missionStart",
+              "targetEventIds": []
+            }
+          ]
         }
       ]
     },
@@ -3710,7 +3952,45 @@
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
             "targetEventIds": []
-          }
+          },
+          "details": [
+            {
+              "id": 80289005,
+              "missionTargetId": 80289,
+              "missionCondType": 10,
+              "logicType": 1,
+              "targetIds": [
+                94049201,
+                94049202,
+                94049203,
+                94049204,
+                94049205,
+                94049206,
+                94049207,
+                94049208,
+                94049209,
+                94049210,
+                94049211,
+                94049212,
+                94049213,
+                94049214,
+                94049215,
+                94049216,
+                94049217,
+                94049218,
+                94049219,
+                94049220,
+                94049221,
+                94049222,
+                94049223,
+                94049224
+              ],
+              "addTargetIds": [],
+              "targetQuestIndividualities": [],
+              "conditionLinkType": "missionStart",
+              "targetEventIds": []
+            }
+          ]
         }
       ]
     },
@@ -3806,7 +4086,45 @@
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
             "targetEventIds": []
-          }
+          },
+          "details": [
+            {
+              "id": 80289005,
+              "missionTargetId": 80289,
+              "missionCondType": 10,
+              "logicType": 1,
+              "targetIds": [
+                94049201,
+                94049202,
+                94049203,
+                94049204,
+                94049205,
+                94049206,
+                94049207,
+                94049208,
+                94049209,
+                94049210,
+                94049211,
+                94049212,
+                94049213,
+                94049214,
+                94049215,
+                94049216,
+                94049217,
+                94049218,
+                94049219,
+                94049220,
+                94049221,
+                94049222,
+                94049223,
+                94049224
+              ],
+              "addTargetIds": [],
+              "targetQuestIndividualities": [],
+              "conditionLinkType": "missionStart",
+              "targetEventIds": []
+            }
+          ]
         }
       ]
     },
@@ -3893,7 +4211,36 @@
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
             "targetEventIds": []
-          }
+          },
+          "details": [
+            {
+              "id": 80289001,
+              "missionTargetId": 80289,
+              "missionCondType": 10,
+              "logicType": 1,
+              "targetIds": [
+                94049251,
+                94049252,
+                94049253,
+                94049254,
+                94049255,
+                94049256,
+                94049257,
+                94049258,
+                94049259,
+                94049260,
+                94049261,
+                94049262,
+                94049263,
+                94049264,
+                94049265
+              ],
+              "addTargetIds": [],
+              "targetQuestIndividualities": [],
+              "conditionLinkType": "missionStart",
+              "targetEventIds": []
+            }
+          ]
         }
       ]
     },
@@ -3980,7 +4327,36 @@
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
             "targetEventIds": []
-          }
+          },
+          "details": [
+            {
+              "id": 80289001,
+              "missionTargetId": 80289,
+              "missionCondType": 10,
+              "logicType": 1,
+              "targetIds": [
+                94049251,
+                94049252,
+                94049253,
+                94049254,
+                94049255,
+                94049256,
+                94049257,
+                94049258,
+                94049259,
+                94049260,
+                94049261,
+                94049262,
+                94049263,
+                94049264,
+                94049265
+              ],
+              "addTargetIds": [],
+              "targetQuestIndividualities": [],
+              "conditionLinkType": "missionStart",
+              "targetEventIds": []
+            }
+          ]
         }
       ]
     },
@@ -4067,7 +4443,36 @@
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
             "targetEventIds": []
-          }
+          },
+          "details": [
+            {
+              "id": 80289001,
+              "missionTargetId": 80289,
+              "missionCondType": 10,
+              "logicType": 1,
+              "targetIds": [
+                94049251,
+                94049252,
+                94049253,
+                94049254,
+                94049255,
+                94049256,
+                94049257,
+                94049258,
+                94049259,
+                94049260,
+                94049261,
+                94049262,
+                94049263,
+                94049264,
+                94049265
+              ],
+              "addTargetIds": [],
+              "targetQuestIndividualities": [],
+              "conditionLinkType": "missionStart",
+              "targetEventIds": []
+            }
+          ]
         }
       ]
     },
@@ -4154,7 +4559,36 @@
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
             "targetEventIds": []
-          }
+          },
+          "details": [
+            {
+              "id": 80289001,
+              "missionTargetId": 80289,
+              "missionCondType": 10,
+              "logicType": 1,
+              "targetIds": [
+                94049251,
+                94049252,
+                94049253,
+                94049254,
+                94049255,
+                94049256,
+                94049257,
+                94049258,
+                94049259,
+                94049260,
+                94049261,
+                94049262,
+                94049263,
+                94049264,
+                94049265
+              ],
+              "addTargetIds": [],
+              "targetQuestIndividualities": [],
+              "conditionLinkType": "missionStart",
+              "targetEventIds": []
+            }
+          ]
         }
       ]
     },
@@ -4227,7 +4661,22 @@
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
             "targetEventIds": []
-          }
+          },
+          "details": [
+            {
+              "id": 80289006,
+              "missionTargetId": 80289,
+              "missionCondType": 2,
+              "logicType": 1,
+              "targetIds": [
+                2720
+              ],
+              "addTargetIds": [],
+              "targetQuestIndividualities": [],
+              "conditionLinkType": "missionStart",
+              "targetEventIds": []
+            }
+          ]
         }
       ]
     },
@@ -4300,7 +4749,22 @@
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
             "targetEventIds": []
-          }
+          },
+          "details": [
+            {
+              "id": 80289006,
+              "missionTargetId": 80289,
+              "missionCondType": 2,
+              "logicType": 1,
+              "targetIds": [
+                2720
+              ],
+              "addTargetIds": [],
+              "targetQuestIndividualities": [],
+              "conditionLinkType": "missionStart",
+              "targetEventIds": []
+            }
+          ]
         }
       ]
     },
@@ -4390,7 +4854,22 @@
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
             "targetEventIds": []
-          }
+          },
+          "details": [
+            {
+              "id": 80289006,
+              "missionTargetId": 80289,
+              "missionCondType": 2,
+              "logicType": 1,
+              "targetIds": [
+                2720
+              ],
+              "addTargetIds": [],
+              "targetQuestIndividualities": [],
+              "conditionLinkType": "missionStart",
+              "targetEventIds": []
+            }
+          ]
         }
       ]
     },
@@ -4463,7 +4942,22 @@
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
             "targetEventIds": []
-          }
+          },
+          "details": [
+            {
+              "id": 80289009,
+              "missionTargetId": 80289,
+              "missionCondType": 12,
+              "logicType": 1,
+              "targetIds": [
+                94049101
+              ],
+              "addTargetIds": [],
+              "targetQuestIndividualities": [],
+              "conditionLinkType": "missionStart",
+              "targetEventIds": []
+            }
+          ]
         }
       ]
     },
@@ -4536,7 +5030,22 @@
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
             "targetEventIds": []
-          }
+          },
+          "details": [
+            {
+              "id": 80289008,
+              "missionTargetId": 80289,
+              "missionCondType": 12,
+              "logicType": 1,
+              "targetIds": [
+                94049102
+              ],
+              "addTargetIds": [],
+              "targetQuestIndividualities": [],
+              "conditionLinkType": "missionStart",
+              "targetEventIds": []
+            }
+          ]
         }
       ]
     },
@@ -4609,7 +5118,22 @@
             "targetQuestIndividualities": [],
             "conditionLinkType": "missionStart",
             "targetEventIds": []
-          }
+          },
+          "details": [
+            {
+              "id": 80289007,
+              "missionTargetId": 80289,
+              "missionCondType": 12,
+              "logicType": 1,
+              "targetIds": [
+                94049103
+              ],
+              "addTargetIds": [],
+              "targetQuestIndividualities": [],
+              "conditionLinkType": "missionStart",
+              "targetEventIds": []
+            }
+          ]
         }
       ]
     },
@@ -5220,6 +5744,7 @@
       ]
     }
   ],
+  "randomMissions": [],
   "towers": [],
   "lotteries": [],
   "treasureBoxes": [],
@@ -5999,180 +6524,6 @@
           "playConds": []
         },
         {
-          "name": "ショップついて 3",
-          "condType": "eventEnd",
-          "condValue": 0,
-          "priority": 6470,
-          "svtVoiceType": "eventShop",
-          "overwriteName": "超古代新選組列伝 ぐだぐだ邪馬台国2020 3",
-          "id": [
-            "0_I030",
-            "0_I031",
-            "0_I032",
-            "0_I033"
-          ],
-          "audioAssets": [
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_204100/0_I030.mp3",
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_204100/0_I031.mp3",
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_204100/0_I032.mp3",
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_204100/0_I033.mp3"
-          ],
-          "delay": [
-            0.0,
-            0.1,
-            0.1,
-            0.1
-          ],
-          "face": [
-            0,
-            0,
-            14,
-            2
-          ],
-          "form": [
-            0,
-            0,
-            0,
-            0
-          ],
-          "text": [
-            "",
-            "",
-            "",
-            ""
-          ],
-          "subtitle": "",
-          "conds": [
-            {
-              "condType": "eventShopPurchase",
-              "value": 80341,
-              "valueList": [],
-              "eventId": 0
-            },
-            {
-              "condType": "eventPeriod",
-              "value": 80341,
-              "valueList": [],
-              "eventId": 0
-            }
-          ],
-          "playConds": []
-        },
-        {
-          "name": "ショップついて 4",
-          "condType": "eventEnd",
-          "condValue": 0,
-          "priority": 6460,
-          "svtVoiceType": "eventShop",
-          "overwriteName": "超古代新選組列伝 ぐだぐだ邪馬台国2020 4",
-          "id": [
-            "0_I040",
-            "0_I041",
-            "0_I042"
-          ],
-          "audioAssets": [
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_204100/0_I040.mp3",
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_204100/0_I041.mp3",
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_204100/0_I042.mp3"
-          ],
-          "delay": [
-            0.0,
-            0.1,
-            0.3
-          ],
-          "face": [
-            0,
-            0,
-            4
-          ],
-          "form": [
-            0,
-            0,
-            0
-          ],
-          "text": [
-            "",
-            "",
-            ""
-          ],
-          "subtitle": "",
-          "conds": [
-            {
-              "condType": "eventShopPurchase",
-              "value": 80341,
-              "valueList": [],
-              "eventId": 0
-            },
-            {
-              "condType": "eventPeriod",
-              "value": 80341,
-              "valueList": [],
-              "eventId": 0
-            }
-          ],
-          "playConds": []
-        },
-        {
-          "name": "ショップついて 5",
-          "condType": "eventEnd",
-          "condValue": 0,
-          "priority": 6450,
-          "svtVoiceType": "eventShop",
-          "overwriteName": "超古代新選組列伝 ぐだぐだ邪馬台国2020 5",
-          "id": [
-            "0_I050",
-            "0_I051",
-            "0_I052",
-            "0_I053"
-          ],
-          "audioAssets": [
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_204100/0_I050.mp3",
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_204100/0_I051.mp3",
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_204100/0_I052.mp3",
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_204100/0_I053.mp3"
-          ],
-          "delay": [
-            0.0,
-            0.1,
-            0.1,
-            0.1
-          ],
-          "face": [
-            5,
-            2,
-            14,
-            2
-          ],
-          "form": [
-            0,
-            0,
-            0,
-            0
-          ],
-          "text": [
-            "",
-            "",
-            "",
-            ""
-          ],
-          "subtitle": "",
-          "conds": [
-            {
-              "condType": "eventShopPurchase",
-              "value": 80341,
-              "valueList": [],
-              "eventId": 0
-            },
-            {
-              "condType": "eventPeriod",
-              "value": 80341,
-              "valueList": [],
-              "eventId": 0
-            }
-          ],
-          "playConds": []
-        },
-        {
           "name": "ショップついて 6",
           "condType": "eventEnd",
           "condValue": 0,
@@ -6670,282 +7021,6 @@
           "conds": [
             {
               "condType": "eventEnd",
-              "value": 80341,
-              "valueList": [],
-              "eventId": 0
-            }
-          ],
-          "playConds": []
-        },
-        {
-          "name": "ミッションについて 1",
-          "condType": "eventEnd",
-          "condValue": 0,
-          "priority": 6890,
-          "svtVoiceType": "eventReward",
-          "overwriteName": "超古代新選組列伝 ぐだぐだ邪馬台国2020 9",
-          "id": [
-            "0_M010",
-            "0_M011"
-          ],
-          "audioAssets": [
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901000/0_M010.mp3",
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901000/0_M011.mp3"
-          ],
-          "delay": [
-            0.0,
-            0.1
-          ],
-          "face": [
-            0,
-            1
-          ],
-          "form": [
-            0,
-            0
-          ],
-          "text": [
-            "",
-            ""
-          ],
-          "subtitle": "",
-          "conds": [
-            {
-              "condType": "eventMissionAction",
-              "value": 80341,
-              "valueList": [],
-              "eventId": 0
-            }
-          ],
-          "playConds": []
-        },
-        {
-          "name": "ミッションについて 2",
-          "condType": "eventEnd",
-          "condValue": 0,
-          "priority": 6880,
-          "svtVoiceType": "eventReward",
-          "overwriteName": "超古代新選組列伝 ぐだぐだ邪馬台国2020 10",
-          "id": [
-            "0_M020",
-            "0_M021"
-          ],
-          "audioAssets": [
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901000/0_M020.mp3",
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901000/0_M021.mp3"
-          ],
-          "delay": [
-            0.0,
-            0.1
-          ],
-          "face": [
-            2,
-            1
-          ],
-          "form": [
-            1,
-            0
-          ],
-          "text": [
-            "",
-            ""
-          ],
-          "subtitle": "",
-          "conds": [
-            {
-              "condType": "eventMissionAction",
-              "value": 80341,
-              "valueList": [],
-              "eventId": 0
-            }
-          ],
-          "playConds": []
-        },
-        {
-          "name": "ミッションについて 3",
-          "condType": "eventEnd",
-          "condValue": 0,
-          "priority": 6870,
-          "svtVoiceType": "eventReward",
-          "overwriteName": "超古代新選組列伝 ぐだぐだ邪馬台国2020 11",
-          "id": [
-            "0_M030",
-            "0_M031"
-          ],
-          "audioAssets": [
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901000/0_M030.mp3",
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901000/0_M031.mp3"
-          ],
-          "delay": [
-            0.0,
-            0.1
-          ],
-          "face": [
-            0,
-            1
-          ],
-          "form": [
-            0,
-            0
-          ],
-          "text": [
-            "",
-            ""
-          ],
-          "subtitle": "",
-          "conds": [
-            {
-              "condType": "eventMissionAction",
-              "value": 80341,
-              "valueList": [],
-              "eventId": 0
-            }
-          ],
-          "playConds": []
-        },
-        {
-          "name": "ミッションについて 4",
-          "condType": "eventEnd",
-          "condValue": 0,
-          "priority": 6860,
-          "svtVoiceType": "eventReward",
-          "overwriteName": "超古代新選組列伝 ぐだぐだ邪馬台国2020 12",
-          "id": [
-            "0_M040",
-            "0_M041"
-          ],
-          "audioAssets": [
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901000/0_M040.mp3",
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901000/0_M041.mp3"
-          ],
-          "delay": [
-            0.0,
-            0.3
-          ],
-          "face": [
-            2,
-            5
-          ],
-          "form": [
-            0,
-            0
-          ],
-          "text": [
-            "",
-            ""
-          ],
-          "subtitle": "",
-          "conds": [
-            {
-              "condType": "eventMissionAction",
-              "value": 80341,
-              "valueList": [],
-              "eventId": 0
-            }
-          ],
-          "playConds": []
-        },
-        {
-          "name": "ミッションについて 5",
-          "condType": "eventEnd",
-          "condValue": 0,
-          "priority": 6850,
-          "svtVoiceType": "eventReward",
-          "overwriteName": "超古代新選組列伝 ぐだぐだ邪馬台国2020 13",
-          "id": [
-            "0_M050",
-            "0_M051",
-            "0_M052",
-            "0_M053"
-          ],
-          "audioAssets": [
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901000/0_M050.mp3",
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901000/0_M051.mp3",
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901000/0_M052.mp3",
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901000/0_M053.mp3"
-          ],
-          "delay": [
-            0.0,
-            0.1,
-            0.1,
-            0.1
-          ],
-          "face": [
-            2,
-            1,
-            12,
-            6
-          ],
-          "form": [
-            0,
-            0,
-            0,
-            0
-          ],
-          "text": [
-            "",
-            "",
-            "",
-            ""
-          ],
-          "subtitle": "",
-          "conds": [
-            {
-              "condType": "eventMissionAction",
-              "value": 80341,
-              "valueList": [],
-              "eventId": 0
-            }
-          ],
-          "playConds": []
-        },
-        {
-          "name": "ミッションについて 7",
-          "condType": "eventEnd",
-          "condValue": 0,
-          "priority": 6830,
-          "svtVoiceType": "eventReward",
-          "overwriteName": "超古代新選組列伝 ぐだぐだ邪馬台国2020 14",
-          "id": [
-            "0_M070",
-            "0_M071",
-            "0_M072",
-            "0_M073"
-          ],
-          "audioAssets": [
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901000/0_M070.mp3",
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901000/0_M071.mp3",
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901000/0_M072.mp3",
-            "https://assets.atlasacademy.io/GameData/JP/Audio/ChrVoice_901000/0_M073.mp3"
-          ],
-          "delay": [
-            0.0,
-            0.1,
-            0.1,
-            0.1
-          ],
-          "face": [
-            6,
-            1,
-            12,
-            6
-          ],
-          "form": [
-            0,
-            1,
-            0,
-            0
-          ],
-          "text": [
-            "",
-            "",
-            "",
-            ""
-          ],
-          "subtitle": "",
-          "conds": [
-            {
-              "condType": "eventMissionAction",
               "value": 80341,
               "valueList": [],
               "eventId": 0

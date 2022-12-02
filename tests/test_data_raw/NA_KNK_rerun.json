@@ -4449,6 +4449,7 @@
       "presentMessageId": 800222
     }
   ],
+  "mstEventRandomMission": [],
   "mstEventMissionCondition": [
     {
       "missionId": 80090001,
