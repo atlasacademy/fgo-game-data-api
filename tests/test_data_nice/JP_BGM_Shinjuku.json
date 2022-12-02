@@ -44,6 +44,7 @@
       },
       "amount": 20
     },
+    "consumes": [],
     "purchaseType": "bgm",
     "targetIds": [
       0
@@ -51,6 +52,7 @@
     "itemSet": [],
     "setNum": 1,
     "limitNum": 1,
+    "gifts": [],
     "defaultLv": 0,
     "defaultLimitCount": 0,
     "openedAt": 1521968400,

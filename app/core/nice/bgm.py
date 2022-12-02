@@ -2,6 +2,7 @@ from pydantic import HttpUrl
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
+from ...core.nice.gift import GiftData
 from ...schemas.common import Language, Region
 from ...schemas.gameenums import COND_TYPE_NAME, BgmFlag
 from ...schemas.nice import AssetURL, NiceBgm, NiceBgmEntity, NiceBgmRelease
@@ -95,7 +96,9 @@ def get_nice_bgm_entity_from_raw(
                 region, bgm_entity.mstItem, lang
             )
         }
-        nice_bgm.shop = get_nice_shop(region, bgm_entity.mstShop, [], {}, item_map, [])
+        nice_bgm.shop = get_nice_shop(
+            region, bgm_entity.mstShop, [], {}, item_map, GiftData([], {}), [], []
+        )
 
     return nice_bgm
 

@@ -850,7 +850,7 @@ class NiceVoiceCond(BaseModel):
         ..., title="Voice Cond Type", description="Voice Condition Type Enum"
     )
     value: int = Field(
-        ..., title="Voice Cond Value", description="Threshold value for the condtion."
+        ..., title="Voice Cond Value", description="Threshold value for the condition."
     )
     valueList: list[int] = Field(
         [],
@@ -1361,6 +1361,15 @@ class NiceItemSet(BaseModelORJson):
     purchaseType: NicePurchaseType
     targetId: int
     setNum: int
+    gifts: list[NiceGift]
+
+
+class NiceCommonConsume(BaseModelORJson):
+    id: int
+    priority: int
+    type: NiceCommonConsumeType
+    objectId: int
+    num: int
 
 
 class NiceShopRelease(BaseModelORJson):
@@ -1390,6 +1399,9 @@ class NiceShop(BaseModelORJson):
         ..., title="Payment Type", description="Type of items to be used as payment."
     )
     cost: NiceItemAmount
+    consumes: list[NiceCommonConsume] = Field(
+        ..., title="Common Consume", description="If payType is commonConsume"
+    )
     purchaseType: NicePurchaseType = Field(
         ..., title="Reward Type", description="Type of items to be received."
     )
@@ -1405,11 +1417,15 @@ class NiceShop(BaseModelORJson):
     limitNum: int = Field(
         ..., title="Limit Number", description="Maximum number of buying units"
     )
+    gifts: list[NiceGift] = Field(
+        ..., title="Gift", description="If purchaseType is gift"
+    )
     defaultLv: int
     defaultLimitCount: int
     scriptName: Optional[str] = None
     scriptId: Optional[str] = None
     script: Optional[HttpUrl] = None
+    image: HttpUrl | None = None
     openedAt: int
     closedAt: int
 
@@ -1588,14 +1604,6 @@ class NiceEventLottery(BaseModelORJson):
     limited: bool
     boxes: list[NiceEventLotteryBox]
     talks: list[NiceEventLotteryTalk]
-
-
-class NiceCommonConsume(BaseModelORJson):
-    id: int
-    priority: int
-    type: NiceCommonConsumeType
-    objectId: int
-    num: int
 
 
 class NiceEventTreasureBoxGift(BaseModelORJson):

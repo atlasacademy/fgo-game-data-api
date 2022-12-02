@@ -5,6 +5,7 @@ from ..config import Settings
 from ..core import search
 from ..core.nice import ai, bgm, cc, item, mc, mm, nice, quest, script, war
 from ..core.nice.event.event import get_nice_event
+from ..core.nice.event.shop import get_nice_shop_from_raw, get_nice_shops_from_raw
 from ..core.nice.script import get_nice_script_search_result
 from ..db.helpers.cc import get_cc_id
 from ..db.helpers.svt import get_ce_id, get_svt_id
@@ -27,6 +28,7 @@ from ..schemas.nice import (
     NiceScript,
     NiceScriptSearchResult,
     NiceServant,
+    NiceShop,
     NiceSkillReverse,
     NiceTdReverse,
     NiceWar,
@@ -38,6 +40,7 @@ from ..schemas.search import (
     ItemSearchQueryParams,
     ScriptSearchQueryParams,
     ServantSearchQueryParams,
+    ShopSearchQueryParams,
     SkillSearchParams,
     SvtSearchQueryParams,
     TdSearchParams,
@@ -862,3 +865,45 @@ async def get_bgm(
     """
     async with get_db(region) as conn:
         return item_response(await bgm.get_nice_bgm_entity(conn, region, bgm_id, lang))
+
+
+@router.get(
+    "/{region}/shop/search",
+    summary="Find and get nice shop data",
+    description="Find and get nice shop data",
+    response_description="Nice Shop Entities",
+    response_model=list[NiceShop],
+    response_model_exclude_unset=True,
+    responses=get_error_code([400, 403]),
+)
+@cache()  # type: ignore
+async def find_shop(
+    search_param: ShopSearchQueryParams = Depends(ShopSearchQueryParams),
+    lang: Language = Depends(language_parameter),
+) -> Response:
+    async with get_db(search_param.region) as conn:
+        matches = await search.search_shop(conn, search_param, limit=10000)
+        return list_response(
+            await get_nice_shops_from_raw(conn, search_param.region, matches, lang)
+        )
+
+
+@router.get(
+    "/{region}/shop/{shop_id}",
+    summary="Get Nice Shop data",
+    response_description="Nice Shop Entity",
+    response_model=NiceShop,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()  # type: ignore
+async def get_shop(
+    region: Region,
+    shop_id: int,
+    lang: Language = Depends(language_parameter),
+) -> Response:
+    """
+    Get the shop data from the given shop ID
+    """
+    async with get_db(region) as conn:
+        return item_response(await get_nice_shop_from_raw(conn, region, shop_id, lang))

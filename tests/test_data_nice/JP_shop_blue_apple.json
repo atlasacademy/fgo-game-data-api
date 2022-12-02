@@ -1,0 +1,59 @@
+{
+  "id": 13000000,
+  "baseShopId": 13000000,
+  "shopType": "tradeAp",
+  "releaseConditions": [],
+  "eventId": 0,
+  "slot": 0,
+  "priority": 1,
+  "name": "青銅の果実",
+  "detail": "【APを40回復する果実】へ交換",
+  "infoMessage": "",
+  "warningMessage": "",
+  "payType": "commonConsume",
+  "cost": {
+    "item": {
+      "id": 0,
+      "name": "",
+      "originalName": "",
+      "type": "stone",
+      "uses": [],
+      "detail": "",
+      "individuality": [],
+      "icon": "https://assets.atlasacademy.io/GameData/JP/Items/0.png",
+      "background": "zero",
+      "priority": 0,
+      "dropPriority": 0,
+      "itemSelects": []
+    },
+    "amount": 0
+  },
+  "consumes": [
+    {
+      "id": 20071601,
+      "priority": 1,
+      "type": "item",
+      "objectId": 103,
+      "num": 1
+    },
+    {
+      "id": 20071601,
+      "priority": 2,
+      "type": "ap",
+      "objectId": 0,
+      "num": 40
+    }
+  ],
+  "purchaseType": "item",
+  "targetIds": [
+    104
+  ],
+  "itemSet": [],
+  "setNum": 1,
+  "limitNum": 0,
+  "gifts": [],
+  "defaultLv": 0,
+  "defaultLimitCount": 0,
+  "openedAt": 1652266800,
+  "closedAt": 1901199599
+}

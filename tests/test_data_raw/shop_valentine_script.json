@@ -1,0 +1,104 @@
+{
+  "mstShop": {
+    "itemIds": [
+      94045905
+    ],
+    "prices": [
+      1
+    ],
+    "targetIds": [
+      9807000
+    ],
+    "script": {},
+    "anotherPayType": 0,
+    "anotherItemIds": [],
+    "useAnotherPayCommonReleaseId": 0,
+    "freeShopCondId": 0,
+    "freeShopCondMessage": "",
+    "hideWarningMessageCondId": 0,
+    "freeShopReleaseDate": 0,
+    "id": 80276219,
+    "baseShopId": 80276219,
+    "eventId": 80276,
+    "slot": 1,
+    "flag": 16384,
+    "priority": 808,
+    "purchaseType": 4,
+    "setNum": 1,
+    "payType": 6,
+    "shopType": 1,
+    "limitNum": 1,
+    "defaultLv": 80,
+    "defaultLimitCount": 4,
+    "name": "Master in the Chocolate",
+    "detail": "Receive Valentine's chocolate from BB (SSR Moon Cancer).",
+    "infoMessage": "",
+    "warningMessage": "",
+    "imageId": 0,
+    "bgImageId": 8027606,
+    "openedAt": 1643688000,
+    "closedAt": 1645502399
+  },
+  "mstSetItem": [],
+  "mstShopRelease": [
+    {
+      "condValues": [
+        2300200
+      ],
+      "shopId": 80276219,
+      "condType": 8,
+      "condNum": 1,
+      "priority": 0,
+      "isClosedDisp": false,
+      "closedMessage": "Unable to exchange, requirements not met",
+      "closedItemName": ""
+    }
+  ],
+  "mstShopScript": {
+    "ignoreEventIds": [],
+    "shopId": 80276219,
+    "priority": 101,
+    "name": "Master in the Chocolate",
+    "scriptId": "9403353220",
+    "frequencyType": 1,
+    "eventId": 80276,
+    "svtId": 2300200,
+    "limitCount": 0,
+    "materialFolderId": 8027602
+  },
+  "mstItem": [
+    {
+      "individuality": [
+        10262
+      ],
+      "script": {},
+      "eventId": 0,
+      "eventGroupId": 0,
+      "isPresent": false,
+      "id": 94045905,
+      "name": "Lock-On Chocolate",
+      "detail": "\"Event Exchange Item\"\nSpecially made chocolate obtained during \"Valentine's 2022 - A Not-So-Ordinary Valentine's.\"\nIt's the perfect aggressive gift.",
+      "imageId": 94020806,
+      "bgImageId": 3,
+      "type": 15,
+      "unit": "",
+      "value": 0,
+      "sellQp": -1,
+      "isSell": false,
+      "priority": 94045905,
+      "dropPriority": 2006,
+      "startedAt": 1643688000,
+      "endedAt": 1645502399,
+      "useSkill": false,
+      "useAppendSkill": false,
+      "useAscension": false,
+      "useCostume": false,
+      "mstItemSelect": [],
+      "mstGift": [],
+      "mstGiftAdd": []
+    }
+  ],
+  "mstGift": [],
+  "mstGiftAdd": [],
+  "mstCommonConsume": []
+}

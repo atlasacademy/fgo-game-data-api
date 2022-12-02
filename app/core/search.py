@@ -7,6 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..data.custom_mappings import CV_EN_TO_JP, ILLUSTRATOR_EN_TO_JP
 from ..db.helpers.buff import get_buff_search
+from ..db.helpers.event import get_shop_search
 from ..db.helpers.func import get_func_search
 from ..db.helpers.item import get_item_search
 from ..db.helpers.quest import get_quest_phase_search
@@ -26,8 +27,10 @@ from ..schemas.enums import (
     GENDER_TYPE_NAME_REVERSE,
     ITEM_BG_TYPE_REVERSE,
     ITEM_TYPE_REVERSE,
+    PAY_TYPE_NAME_REVERSE,
     QUEST_FLAG_REVERSE,
     QUEST_TYPE_REVERSE,
+    SHOP_TYPE_NAME_REVERSE,
     SKILL_TYPE_NAME_REVERSE,
     SVT_FLAG_NAME_REVERSE,
     SVT_TYPE_NAME_REVERSE,
@@ -39,6 +42,7 @@ from ..schemas.raw import (
     MstFunc,
     MstItem,
     MstQuestWithPhase,
+    MstShop,
     MstSkill,
     MstSvt,
     MstTreasureDevice,
@@ -52,6 +56,7 @@ from ..schemas.search import (
     QuestSearchQueryParams,
     ScriptSearchQueryParams,
     ServantSearchQueryParams,
+    ShopSearchQueryParams,
     SkillSearchParams,
     SvtSearchQueryParams,
     TdSearchParams,
@@ -463,3 +468,31 @@ async def search_script(
     return await get_script_search(
         conn, search_param.query, search_param.scriptFileName, search_param.warId
     )
+
+
+async def search_shop(
+    conn: AsyncConnection,
+    search_param: ShopSearchQueryParams,
+    limit: int = 100,
+) -> list[MstShop]:
+    if not search_param.hasSearchParams():
+        raise HTTPException(status_code=400, detail=INSUFFICIENT_QUERY)
+
+    shop_type_ints = {
+        SHOP_TYPE_NAME_REVERSE[shop_type] for shop_type in search_param.type
+    }
+    pay_type_ints = {
+        PAY_TYPE_NAME_REVERSE[pay_type] for pay_type in search_param.payType
+    }
+
+    matches = await get_shop_search(
+        conn,
+        event_ids=search_param.eventId,
+        shop_type_ints=shop_type_ints,
+        pay_type_ints=pay_type_ints,
+    )
+
+    if len(matches) > limit:
+        raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
+
+    return sorted(matches, key=lambda shop: shop.id)

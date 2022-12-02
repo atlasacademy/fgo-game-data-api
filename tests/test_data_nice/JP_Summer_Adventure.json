@@ -53,6 +53,7 @@
         },
         "amount": 200
       },
+      "consumes": [],
       "purchaseType": "servant",
       "targetIds": [
         9405310
@@ -60,6 +61,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 2,
+      "gifts": [],
       "defaultLv": 1,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -100,6 +102,7 @@
         },
         "amount": 200
       },
+      "consumes": [],
       "purchaseType": "servant",
       "targetIds": [
         9405310
@@ -107,6 +110,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 1,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -147,6 +151,7 @@
         },
         "amount": 200
       },
+      "consumes": [],
       "purchaseType": "servant",
       "targetIds": [
         9405310
@@ -154,6 +159,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 1,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -194,6 +200,7 @@
         },
         "amount": 200
       },
+      "consumes": [],
       "purchaseType": "costumeRelease",
       "targetIds": [
         40290011
@@ -201,6 +208,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 1,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -241,6 +249,7 @@
         },
         "amount": 200
       },
+      "consumes": [],
       "purchaseType": "costumeRelease",
       "targetIds": [
         40390011
@@ -248,6 +257,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 1,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -288,6 +298,7 @@
         },
         "amount": 200
       },
+      "consumes": [],
       "purchaseType": "costumeRelease",
       "targetIds": [
         40080011
@@ -295,6 +306,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 1,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -348,6 +360,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         90120001
@@ -355,6 +368,7 @@
       "itemSet": [],
       "setNum": 10,
       "limitNum": 10,
+      "gifts": [],
       "defaultLv": 1,
       "defaultLimitCount": 0,
       "openedAt": 1631610000,
@@ -408,6 +422,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         90120001
@@ -415,6 +430,7 @@
       "itemSet": [],
       "setNum": 10,
       "limitNum": 10,
+      "gifts": [],
       "defaultLv": 1,
       "defaultLimitCount": 0,
       "openedAt": 1631610000,
@@ -468,6 +484,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         90120001
@@ -475,6 +492,7 @@
       "itemSet": [],
       "setNum": 10,
       "limitNum": 10,
+      "gifts": [],
       "defaultLv": 1,
       "defaultLimitCount": 0,
       "openedAt": 1631610000,
@@ -528,6 +546,7 @@
         },
         "amount": 400
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         6999
@@ -535,6 +554,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -575,6 +595,7 @@
         },
         "amount": 100
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         5003
@@ -582,6 +603,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -622,6 +644,7 @@
         },
         "amount": 100
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         5003
@@ -629,6 +652,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -669,6 +693,7 @@
         },
         "amount": 100
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         5003
@@ -676,6 +701,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -716,6 +742,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "servant",
       "targetIds": [
         9570300
@@ -723,6 +750,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 1,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -763,6 +791,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "servant",
       "targetIds": [
         9670300
@@ -770,6 +799,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 1,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -810,6 +840,7 @@
         },
         "amount": 10
       },
+      "consumes": [],
       "purchaseType": "servant",
       "targetIds": [
         9770500
@@ -817,6 +848,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 50,
+      "gifts": [],
       "defaultLv": 1,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -857,6 +889,7 @@
         },
         "amount": 6
       },
+      "consumes": [],
       "purchaseType": "servant",
       "targetIds": [
         9770400
@@ -864,6 +897,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 100,
+      "gifts": [],
       "defaultLv": 1,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -904,6 +938,7 @@
         },
         "amount": 3
       },
+      "consumes": [],
       "purchaseType": "servant",
       "targetIds": [
         9770300
@@ -911,6 +946,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 100,
+      "gifts": [],
       "defaultLv": 1,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -951,6 +987,7 @@
         },
         "amount": 30
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         6517
@@ -958,6 +995,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 10,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -998,6 +1036,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         6539
@@ -1005,6 +1044,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -1045,6 +1085,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         6523
@@ -1052,6 +1093,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -1092,6 +1134,7 @@
         },
         "amount": 15
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         6532
@@ -1099,6 +1142,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -1139,6 +1183,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         6519
@@ -1146,6 +1191,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -1186,6 +1232,7 @@
         },
         "amount": 15
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         6535
@@ -1193,6 +1240,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -1233,6 +1281,7 @@
         },
         "amount": 15
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         6514
@@ -1240,6 +1289,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -1280,6 +1330,7 @@
         },
         "amount": 15
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         6510
@@ -1287,6 +1338,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -1327,6 +1379,7 @@
         },
         "amount": 15
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         6526
@@ -1334,6 +1387,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -1374,6 +1428,7 @@
         },
         "amount": 15
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         6502
@@ -1381,6 +1436,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -1421,6 +1477,7 @@
         },
         "amount": 10
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         6549
@@ -1428,6 +1485,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 30,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -1468,6 +1526,7 @@
         },
         "amount": 10
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         6522
@@ -1475,6 +1534,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 30,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -1515,6 +1575,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         7101
@@ -1522,6 +1583,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -1562,6 +1624,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         7102
@@ -1569,6 +1632,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -1609,6 +1673,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         7103
@@ -1616,6 +1681,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -1656,6 +1722,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         7104
@@ -1663,6 +1730,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -1703,6 +1771,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         7105
@@ -1710,6 +1779,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -1750,6 +1820,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         7106
@@ -1757,6 +1828,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -1797,6 +1869,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         7107
@@ -1804,6 +1877,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -1844,6 +1918,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         7001
@@ -1851,6 +1926,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -1904,6 +1980,7 @@
         },
         "amount": 10
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         94060404
@@ -1911,6 +1988,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -1964,6 +2042,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         94060410
@@ -1971,6 +2050,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -2024,6 +2104,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         94060411
@@ -2031,6 +2112,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -2084,6 +2166,7 @@
         },
         "amount": 30
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         94060412
@@ -2091,6 +2174,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -2144,6 +2228,7 @@
         },
         "amount": 30
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         94060413
@@ -2151,6 +2236,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -2204,6 +2290,7 @@
         },
         "amount": 30
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         94060414
@@ -2211,6 +2298,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -2264,6 +2352,7 @@
         },
         "amount": 40
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         94060415
@@ -2271,6 +2360,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -2324,6 +2414,7 @@
         },
         "amount": 40
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         94060416
@@ -2331,6 +2422,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -2384,6 +2476,7 @@
         },
         "amount": 40
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         94060417
@@ -2391,6 +2484,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -2444,6 +2538,7 @@
         },
         "amount": 50
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         94060418
@@ -2451,6 +2546,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -2504,6 +2600,7 @@
         },
         "amount": 50
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         94060419
@@ -2511,6 +2608,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -2564,6 +2662,7 @@
         },
         "amount": 50
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         94060420
@@ -2571,6 +2670,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -2624,6 +2724,7 @@
         },
         "amount": 60
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         94060421
@@ -2631,6 +2732,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -2684,6 +2786,7 @@
         },
         "amount": 60
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         94060422
@@ -2691,6 +2794,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -2744,6 +2848,7 @@
         },
         "amount": 60
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         94060423
@@ -2751,6 +2856,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -2804,6 +2910,7 @@
         },
         "amount": 80
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         94060424
@@ -2811,6 +2918,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -2876,6 +2984,7 @@
         },
         "amount": 80
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         94060425
@@ -2883,6 +2992,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -2948,6 +3058,7 @@
         },
         "amount": 80
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         94060426
@@ -2955,6 +3066,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -3020,6 +3132,7 @@
         },
         "amount": 80
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         94060427
@@ -3027,6 +3140,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -3080,6 +3194,7 @@
         },
         "amount": 100
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         94060428
@@ -3087,6 +3202,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 1,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -3127,6 +3243,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         7002
@@ -3134,6 +3251,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -3174,6 +3292,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         7003
@@ -3181,6 +3300,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -3221,6 +3341,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         7004
@@ -3228,6 +3349,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -3268,6 +3390,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         7005
@@ -3275,6 +3398,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -3315,6 +3439,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         7006
@@ -3322,6 +3447,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -3362,6 +3488,7 @@
         },
         "amount": 20
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         7007
@@ -3369,6 +3496,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 20,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -3409,6 +3537,7 @@
         },
         "amount": 10
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         94060403
@@ -3416,6 +3545,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 0,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -3456,6 +3586,7 @@
         },
         "amount": 10
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         94060402
@@ -3463,6 +3594,7 @@
       "itemSet": [],
       "setNum": 1,
       "limitNum": 0,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,
@@ -3503,6 +3635,7 @@
         },
         "amount": 2
       },
+      "consumes": [],
       "purchaseType": "item",
       "targetIds": [
         1
@@ -3510,6 +3643,7 @@
       "itemSet": [],
       "setNum": 10000,
       "limitNum": 0,
+      "gifts": [],
       "defaultLv": 0,
       "defaultLimitCount": 0,
       "openedAt": 1631091600,

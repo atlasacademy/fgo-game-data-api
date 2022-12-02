@@ -39,8 +39,10 @@ from .gameenums import (
     NiceFuncTargetType,
     NiceFuncType,
     NiceGender,
+    NicePayType,
     NiceQuestFlag,
     NiceQuestType,
+    NiceShopType,
     NiceSvtFlag,
     NiceSvtType,
     Quest_FLAG_NAME,
@@ -491,6 +493,16 @@ class EventRewardSceneType(IntEnum):
     BOARD_GAME_TOKEN = 9
     TREASURE_BOX = 10
     RANDOM_MISSION = 11
+
+
+### Event Shop
+
+
+SHOP_TYPE_NAME_REVERSE: dict[NiceShopType, int] = {
+    v: k for k, v in SHOP_TYPE_NAME.items()
+}
+
+PAY_TYPE_NAME_REVERSE: dict[NicePayType, int] = {v: k for k, v in PAY_TYPE_NAME.items()}
 
 
 ### Mission Cond Detail Type ###

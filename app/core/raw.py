@@ -11,7 +11,7 @@ from ..redis import Redis
 from ..redis.helpers.reverse import RedisReverse, get_reverse_ids
 from ..schemas.common import Region, ReverseDepth
 from ..schemas.enums import FUNC_VALS_NOT_BUFF, DetailMissionCondType
-from ..schemas.gameenums import BgmFlag, CondType, PurchaseType, VoiceCondType
+from ..schemas.gameenums import BgmFlag, CondType, PayType, PurchaseType, VoiceCondType
 from ..schemas.raw import (
     EXTRA_ATTACK_TD_ID,
     AiCollection,
@@ -126,6 +126,7 @@ from ..schemas.raw import (
     ReversedSkillTdType,
     ScriptEntity,
     ServantEntity,
+    ShopEntity,
     SkillEntity,
     SkillEntityNoReverse,
     TdEntity,
@@ -818,6 +819,9 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         if shop.purchaseType == PurchaseType.SET_ITEM
     ]
     set_items = await item.get_mstSetItem(conn, set_item_ids)
+    shop_consume_ids = {
+        shop.itemIds[0] for shop in shops if shop.payType == PayType.COMMON_CONSUME
+    }
 
     shop_ids = [shop.id for shop in shops]
     shop_scripts = await fetch.get_all_multiple(conn, MstShopScript, shop_ids)
@@ -879,7 +883,8 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
     )
 
     common_consume_ids = (
-        digging_consume_ids
+        shop_consume_ids
+        | digging_consume_ids
         | {box.commonConsumeId for box in treasure_boxes}
         | {recipe.commonConsumeId for recipe in recipes}
     )
@@ -888,7 +893,13 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
     )
 
     gift_ids = (
-        {reward.giftId for reward in rewards}
+        {shop.targetIds[0] for shop in shops if shop.purchaseType == PurchaseType.GIFT}
+        | {
+            set_item.targetId
+            for set_item in set_items
+            if set_item.purchaseType == PurchaseType.GIFT
+        }
+        | {reward.giftId for reward in rewards}
         | {mission.giftId for mission in missions}
         | {tower_reward.giftId for tower_reward in tower_rewards}
         | {box.targetId for box in gacha_bases}
@@ -1132,3 +1143,109 @@ async def get_all_bgm_entities(
         out_entities.append(bgm_entity)
 
     return out_entities
+
+
+async def get_shop_entities(
+    conn: AsyncConnection, shops: list[MstShop]
+) -> list[ShopEntity]:
+    shop_scripts = await fetch.get_all_multiple(
+        conn, MstShopScript, [shop.id for shop in shops]
+    )
+    shop_script_map = {script.shopId: script for script in shop_scripts}
+    shop_releases = await fetch.get_all_multiple(
+        conn, MstShopRelease, [shop.id for shop in shops]
+    )
+
+    item_ids = {get_shop_cost_item_id(shop) for shop in shops}
+    common_consume_ids = {
+        consume_id
+        for shop in shops
+        if shop.payType == PayType.COMMON_CONSUME
+        for consume_id in shop.itemIds
+    }
+    mstItem = await get_multiple_items(conn, item_ids)
+    item_map = {item.id: item for item in mstItem}
+
+    common_consumes = await fetch.get_all_multiple(
+        conn, MstCommonConsume, common_consume_ids
+    )
+
+    set_item_ids = {
+        set_id
+        for shop in shops
+        if shop.purchaseType == PurchaseType.SET_ITEM
+        for set_id in shop.targetIds
+    }
+    all_set_items = await item.get_mstSetItem(conn, set_item_ids)
+
+    all_gift_ids = {
+        gift_id
+        for shop in shops
+        if shop.purchaseType == PurchaseType.GIFT
+        for gift_id in shop.targetIds
+    }
+    all_gift_ids |= {
+        set_item.targetId
+        for set_item in all_set_items
+        if set_item.purchaseType == PurchaseType.GIFT
+    }
+
+    all_gift_adds = await fetch.get_all_multiple(conn, MstGiftAdd, all_gift_ids)
+    replacement_gift_ids = {gift.priorGiftId for gift in all_gift_adds}
+
+    all_gifts = await fetch.get_all_multiple(
+        conn, MstGift, all_gift_ids | replacement_gift_ids
+    )
+
+    entities: list[ShopEntity] = []
+    for shop in shops:
+        item_id = get_shop_cost_item_id(shop)
+        set_items = (
+            [set_item for set_item in all_set_items if set_item.id in shop.targetIds]
+            if shop.purchaseType == PurchaseType.SET_ITEM
+            else []
+        )
+        gift_ids = (
+            set(shop.targetIds) if shop.purchaseType == PurchaseType.GIFT else set()
+        )
+        for set_item in set_items:
+            if set_item.purchaseType == PurchaseType.GIFT:
+                gift_ids.add(set_item.targetId)
+        gift_adds = [
+            gift_add for gift_add in all_gift_adds if gift_add.giftId in gift_ids
+        ]
+        gift_ids |= {gift.priorGiftId for gift in gift_adds}
+        gifts = [gift for gift in all_gifts if gift.id in gift_ids]
+        entities.append(
+            ShopEntity(
+                mstShop=shop,
+                mstSetItem=set_items,
+                mstShopRelease=[
+                    release for release in shop_releases if release.shopId == shop.id
+                ],
+                mstShopScript=shop_script_map.get(shop.id),
+                mstItem=[item_map[item_id]] if item_id in item_map else [],
+                mstCommonConsume=[
+                    consume for consume in common_consumes if consume.id in shop.itemIds
+                ]
+                if shop.payType == PayType.COMMON_CONSUME
+                else [],
+                mstGift=gifts,
+                mstGiftAdd=gift_adds,
+            )
+        )
+    return entities
+
+
+async def get_raw_mstShop(conn: AsyncConnection, shop_id: int) -> MstShop:
+    shop = await fetch.get_one(conn, MstShop, shop_id)
+
+    if not shop:
+        raise HTTPException(status_code=404, detail="Shop not found")
+
+    return shop
+
+
+async def get_shop_entity(conn: AsyncConnection, shop_id: int) -> ShopEntity:
+    shop = await get_raw_mstShop(conn, shop_id)
+    return (await get_shop_entities(conn, [shop]))[0]

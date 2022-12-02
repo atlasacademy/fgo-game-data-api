@@ -95,6 +95,7 @@ test_cases_dict: dict[str, tuple[str, str]] = {
     "bgm_NA_without_shop": ("NA/bgm/35", "NA_BGM_event_8"),
     "script_NA_2_quests": ("NA/script/9402750110", "NA_Summerfes_script"),
     "script_JP_no_quest": ("NA/script/WarEpilogue108", "JP_WarEpilogue108"),
+    "shop_JP": ("JP/shop/13000000", "JP_shop_blue_apple"),
 }
 
 
@@ -132,6 +133,7 @@ cases_404_dict = {
     "bgm": "31234",
     "mm": "41232",
     "script": "dasdasd",
+    "shop": "1238712",
 }
 
 

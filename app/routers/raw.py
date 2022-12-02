@@ -24,6 +24,7 @@ from ..schemas.raw import (
     ScriptEntity,
     ScriptSearchResult,
     ServantEntity,
+    ShopEntity,
     SkillEntity,
     TdEntity,
     WarEntity,
@@ -35,6 +36,7 @@ from ..schemas.search import (
     ItemSearchQueryParams,
     ScriptSearchQueryParams,
     ServantSearchQueryParams,
+    ShopSearchQueryParams,
     SkillSearchParams,
     SvtSearchQueryParams,
     TdSearchParams,
@@ -729,3 +731,41 @@ async def get_bgm(region: Region, bgm_id: int) -> Response:
     """
     async with get_db(region) as conn:
         return item_response(await raw.get_bgm_entity(conn, bgm_id))
+
+
+@router.get(
+    "/{region}/shop/search",
+    summary="Find and get shop data",
+    description="Find and get shop data",
+    response_description="Shop Entities",
+    response_model=list[ShopEntity],
+    response_model_exclude_unset=True,
+    responses=get_error_code([400, 403]),
+)
+@cache()  # type: ignore
+async def find_shop(
+    search_param: ShopSearchQueryParams = Depends(ShopSearchQueryParams),
+) -> Response:
+    async with get_db(search_param.region) as conn:
+        matches = await search.search_shop(conn, search_param, limit=10000)
+        return list_response(await raw.get_shop_entities(conn, matches))
+
+
+@router.get(
+    "/{region}/shop/{shop_id}",
+    summary="Get Shop data",
+    response_description="Shop Entity",
+    response_model=ShopEntity,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()  # type: ignore
+async def get_shop(
+    region: Region,
+    shop_id: int,
+) -> Response:
+    """
+    Get the shop data from the given shop ID
+    """
+    async with get_db(region) as conn:
+        return item_response(await raw.get_shop_entity(conn, shop_id))

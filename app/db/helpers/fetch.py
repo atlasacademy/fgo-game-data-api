@@ -213,6 +213,7 @@ schema_map_fetch_one: dict[  # type:ignore
     MstItem: (mstItem, mstItem.c.id),
     MstBgm: (mstBgm, mstBgm.c.id),
     MstShop: (mstShop, mstShop.c.id),
+    MstShopScript: (mstShopScript, mstShopScript.c.shopId),
     MstMasterMission: (mstMasterMission, mstMasterMission.c.id),
     MstSvtExtra: (mstSvtExtra, mstSvtExtra.c.svtId),
     MstSvtCoin: (mstSvtCoin, mstSvtCoin.c.svtId),
@@ -321,6 +322,7 @@ schema_table_fetch_all: dict[  # type:ignore
         mstEventRandomMission.c.missionId,
     ),
     MstShop: (mstShop, mstShop.c.eventId, mstShop.c.id),
+    MstShopRelease: (mstShopRelease, mstShopRelease.c.shopId, mstShopRelease.c.shopId),
     MstEventReward: (mstEventReward, mstEventReward.c.eventId, mstEventReward.c.point),
     MstEventRewardSet: (
         mstEventRewardSet,
