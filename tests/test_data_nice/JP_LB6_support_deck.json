@@ -160,6 +160,40 @@
     }
   ],
   "messages": [],
+  "restrictions": [
+    {
+      "restriction": {
+        "id": 3000901,
+        "name": "編成制限あり",
+        "type": "mySvtNum",
+        "rangeType": "below",
+        "targetVals": [
+          4
+        ],
+        "targetVals2": []
+      },
+      "frequencyType": "none",
+      "dialogMessage": "",
+      "noticeMessage": "",
+      "title": ""
+    },
+    {
+      "restriction": {
+        "id": 3000902,
+        "name": "2騎NPC固定出撃",
+        "type": "svtNum",
+        "rangeType": "below",
+        "targetVals": [
+          6
+        ],
+        "targetVals2": []
+      },
+      "frequencyType": "once",
+      "dialogMessage": "このクエストでは\n所持サーヴァントから3騎まで\n編成できます",
+      "noticeMessage": "",
+      "title": ""
+    }
+  ],
   "supportServants": [
     {
       "id": 1000,

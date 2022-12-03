@@ -18,9 +18,12 @@ from ...schemas.common import Language, Region, ScriptLink
 from ...schemas.enums import CLASS_NAME
 from ...schemas.gameenums import (
     COND_TYPE_NAME,
+    FREQUENCY_TYPE_NAME,
     QUEST_AFTER_CLEAR_NAME,
     QUEST_CONSUME_TYPE_NAME,
     QUEST_TYPE_NAME,
+    RESTRICTION_RANGE_TYPE_NAME,
+    RESTRICTION_TYPE_NAME,
     Quest_FLAG_NAME,
     QuestType,
 )
@@ -31,8 +34,10 @@ from ...schemas.nice import (
     NiceQuest,
     NiceQuestMessage,
     NiceQuestPhase,
+    NiceQuestPhaseRestriction,
     NiceQuestPhaseScript,
     NiceQuestRelease,
+    NiceRestriction,
     NiceStage,
     NiceStageStartMovie,
     QuestEnemy,
@@ -44,6 +49,8 @@ from ...schemas.raw import (
     MstGift,
     MstQuestMessage,
     MstQuestRelease,
+    MstQuestRestriction,
+    MstRestriction,
     MstSpot,
     MstStage,
     MstWar,
@@ -91,6 +98,25 @@ def get_nice_quest_message(message: MstQuestMessage) -> NiceQuestMessage:
         condType=COND_TYPE_NAME[message.condType],
         targetId=message.targetId,
         targetNum=message.targetNum,
+    )
+
+
+def get_nice_quest_restriction(
+    quest_restriction: MstQuestRestriction, restriction: MstRestriction
+) -> NiceQuestPhaseRestriction:
+    return NiceQuestPhaseRestriction(
+        restriction=NiceRestriction(
+            id=restriction.id,
+            name=restriction.name,
+            type=RESTRICTION_TYPE_NAME[restriction.type],
+            rangeType=RESTRICTION_RANGE_TYPE_NAME[restriction.rangeType],
+            targetVals=restriction.targetVals,
+            targetVals2=restriction.targetVals2,
+        ),
+        frequencyType=FREQUENCY_TYPE_NAME[quest_restriction.frequencyType],
+        dialogMessage=quest_restriction.dialogMessage,
+        noticeMessage=quest_restriction.noticeMessage,
+        title=quest_restriction.title,
     )
 
 
@@ -238,6 +264,10 @@ async def get_nice_quest_phase_no_rayshift(
             lang,
         )
 
+    restrictions = {
+        restriction.id: restriction for restriction in raw_quest.mstRestriction
+    }
+
     nice_data |= {
         "phase": raw_quest.mstQuestPhase.phase,
         "drops": [],
@@ -259,6 +289,12 @@ async def get_nice_quest_phase_no_rayshift(
             for message in sorted(
                 raw_quest.mstQuestMessage, key=lambda script: script.idx
             )
+        ],
+        "restrictions": [
+            get_nice_quest_restriction(
+                quest_restriction, restrictions[quest_restriction.restrictionId]
+            )
+            for quest_restriction in raw_quest.mstQuestRestriction
         ],
         "supportServants": support_servants,
         "stages": [],

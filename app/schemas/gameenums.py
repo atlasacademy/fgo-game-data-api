@@ -4526,3 +4526,119 @@ SVT_CLASS_SUPPORT_GROUP_TYPE_NAME: dict[int, NiceSvtClassSupportGroupType] = {
     9: NiceSvtClassSupportGroupType.mix,
     999: NiceSvtClassSupportGroupType.notSupport,
 }
+
+
+class RestrictionType(IntEnum):
+    INDIVIDUALITY = 1
+    RARITY = 2
+    TOTAL_COST = 3
+    LV = 4
+    SUPPORT_ONLY = 5
+    UNIQUE_SVT_ONLY = 6
+    FIXED_SUPPORT_POSITION = 7
+    FIXED_MY_SVT_INDIVIDUALITY_POSITION_MAIN = 8
+    FIXED_MY_SVT_INDIVIDUALITY_SINGLE = 9
+    SVT_NUM = 10
+    MY_SVT_NUM = 11
+    MY_SVT_OR_NPC = 12
+    ALLOUT_BATTLE_UNIQUE_SVT = 13
+    FIXED_SVT_INDIVIDUALITY_POSITION_MAIN = 14
+    UNIQUE_INDIVIDUALITY = 15
+
+
+class NiceRestrictionType(StrEnum):
+    """Restriction Type"""
+
+    individuality = "individuality"
+    rarity = "rarity"
+    totalCost = "totalCost"
+    lv = "lv"
+    supportOnly = "supportOnly"
+    uniqueSvtOnly = "uniqueSvtOnly"
+    fixedSupportPosition = "fixedSupportPosition"
+    fixedMySvtIndividualityPositionMain = "fixedMySvtIndividualityPositionMain"
+    fixedMySvtIndividualitySingle = "fixedMySvtIndividualitySingle"
+    svtNum = "svtNum"
+    mySvtNum = "mySvtNum"
+    mySvtOrNpc = "mySvtOrNpc"
+    alloutBattleUniqueSvt = "alloutBattleUniqueSvt"
+    fixedSvtIndividualityPositionMain = "fixedSvtIndividualityPositionMain"
+    uniqueIndividuality = "uniqueIndividuality"
+
+
+RESTRICTION_TYPE_NAME: dict[int, NiceRestrictionType] = {
+    1: NiceRestrictionType.individuality,
+    2: NiceRestrictionType.rarity,
+    3: NiceRestrictionType.totalCost,
+    4: NiceRestrictionType.lv,
+    5: NiceRestrictionType.supportOnly,
+    6: NiceRestrictionType.uniqueSvtOnly,
+    7: NiceRestrictionType.fixedSupportPosition,
+    8: NiceRestrictionType.fixedMySvtIndividualityPositionMain,
+    9: NiceRestrictionType.fixedMySvtIndividualitySingle,
+    10: NiceRestrictionType.svtNum,
+    11: NiceRestrictionType.mySvtNum,
+    12: NiceRestrictionType.mySvtOrNpc,
+    13: NiceRestrictionType.alloutBattleUniqueSvt,
+    14: NiceRestrictionType.fixedSvtIndividualityPositionMain,
+    15: NiceRestrictionType.uniqueIndividuality,
+}
+
+
+class RestrictionRangeType(IntEnum):
+    NONE = 0
+    EQUAL = 1
+    NOT_EQUAL = 2
+    ABOVE = 3
+    BELOW = 4
+    BETWEEN = 5
+
+
+class NiceRestrictionRangeType(StrEnum):
+    """Restriction Range Type"""
+
+    none = "none"
+    equal = "equal"
+    notEqual = "notEqual"
+    above = "above"
+    below = "below"
+    between = "between"
+
+
+RESTRICTION_RANGE_TYPE_NAME: dict[int, NiceRestrictionRangeType] = {
+    0: NiceRestrictionRangeType.none,
+    1: NiceRestrictionRangeType.equal,
+    2: NiceRestrictionRangeType.notEqual,
+    3: NiceRestrictionRangeType.above,
+    4: NiceRestrictionRangeType.below,
+    5: NiceRestrictionRangeType.between,
+}
+
+
+class FrequencyType(IntEnum):
+    ONCE = 1
+    ONCE_UNTIL_REBOOT = 2
+    EVERY_TIME = 3
+    VALENTINE = 4
+    EVERY_TIME_AFTER = 5
+
+
+class NiceFrequencyType(StrEnum):
+    """Frequency Type"""
+
+    once = "once"
+    onceUntilReboot = "onceUntilReboot"
+    everyTime = "everyTime"
+    valentine = "valentine"
+    everyTimeAfter = "everyTimeAfter"
+    none = "none"
+
+
+FREQUENCY_TYPE_NAME: dict[int, NiceFrequencyType] = {
+    1: NiceFrequencyType.once,
+    2: NiceFrequencyType.onceUntilReboot,
+    3: NiceFrequencyType.everyTime,
+    4: NiceFrequencyType.valentine,
+    5: NiceFrequencyType.everyTimeAfter,
+    0: NiceFrequencyType.none,
+}

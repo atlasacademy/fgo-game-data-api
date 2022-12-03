@@ -55,6 +55,7 @@ EXTRA_STR_NAME = {
         40: "UNKNOWN_40",
         -1: "UNKNOWN",
     },
+    "NiceFrequencyType": {0: "NONE"},
 }
 
 
@@ -461,6 +462,27 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "NiceSvtClassSupportGroupType",
         "Servant Class Support Group Type",
         "SVT_CLASS_SUPPORT_GROUP_TYPE_NAME",
+    ),
+    (
+        "Restriction.Type",
+        "RestrictionType",
+        "NiceRestrictionType",
+        "Restriction Type",
+        "RESTRICTION_TYPE_NAME",
+    ),
+    (
+        "Restriction.RangeType",
+        "RestrictionRangeType",
+        "NiceRestrictionRangeType",
+        "Restriction Range Type",
+        "RESTRICTION_RANGE_TYPE_NAME",
+    ),
+    (
+        "ShopDetailEntity.FrequencyType",
+        "FrequencyType",
+        "NiceFrequencyType",
+        "Frequency Type",
+        "FREQUENCY_TYPE_NAME",
     ),
 ]
 

@@ -1772,6 +1772,40 @@ mstQuestPhaseDetail = Table(
 )
 
 
+mstQuestRestriction = Table(
+    "mstQuestRestriction",
+    metadata,
+    Column("questId", Integer, index=True),
+    Column("phase", Integer, index=True),
+    Column("restrictionId", Integer),
+    Column("frequencyType", Integer),
+    Column("dialogMessage", String),
+    Column("noticeMessage", String),
+    Column("title", String),
+)
+
+mstQuestRestrictionInfo = Table(
+    "mstQuestRestrictionInfo",
+    metadata,
+    Column("script", JSONB),
+    Column("questId", Integer, index=True),
+    Column("phase", Integer, index=True),
+    Column("flag", Integer),
+)
+
+
+mstRestriction = Table(
+    "mstRestriction",
+    metadata,
+    Column("targetVals", ARRAY(Integer)),
+    Column("targetVals2", ARRAY(Integer)),
+    Column("id", Integer, index=True),
+    Column("name", String),
+    Column("type", Integer),
+    Column("rangeType", Integer),
+)
+
+
 mstStage = Table(
     "mstStage",
     metadata,
@@ -1986,6 +2020,7 @@ TABLES_TO_BE_LOADED = [
     [mstQuestMessage],
     [mstQuestPhaseDetail],
     [mstQuestRelease],
+    [mstQuestRestriction, mstQuestRestrictionInfo, mstRestriction],
     [mstStage],
     [mstStageRemap],
     [npcFollower],

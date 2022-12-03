@@ -110,6 +110,26 @@
       "targetNum": 0
     }
   ],
+  "restrictions": [
+    {
+      "restriction": {
+        "id": 2000302,
+        "name": "編成条件あり",
+        "type": "fixedSupportPosition",
+        "rangeType": "equal",
+        "targetVals": [
+          1,
+          2,
+          3
+        ],
+        "targetVals2": []
+      },
+      "frequencyType": "everyTime",
+      "dialogMessage": "サポートサーヴァントをスターティングメンバ―に設定してください。",
+      "noticeMessage": "サポートはサブメンバーとして出撃できません",
+      "title": ""
+    }
+  ],
   "supportServants": [
     {
       "id": 1000,

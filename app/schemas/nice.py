@@ -53,6 +53,7 @@ from .gameenums import (
     NiceEventRewardSceneFlag,
     NiceEventType,
     NiceEventWorkType,
+    NiceFrequencyType,
     NiceFuncTargetType,
     NiceFuncType,
     NiceGender,
@@ -66,6 +67,8 @@ from .gameenums import (
     NiceQuestAfterClearType,
     NiceQuestFlag,
     NiceQuestType,
+    NiceRestrictionRangeType,
+    NiceRestrictionType,
     NiceShopType,
     NiceStatusRank,
     NiceSvtClassSupportGroupType,
@@ -2125,6 +2128,23 @@ class NiceQuestPhaseExtraDetail(BaseModelORJson):
     hintMessage: str | None = None
 
 
+class NiceRestriction(BaseModelORJson):
+    id: int
+    name: str
+    type: NiceRestrictionType
+    rangeType: NiceRestrictionRangeType
+    targetVals: list[int]
+    targetVals2: list[int]
+
+
+class NiceQuestPhaseRestriction(BaseModelORJson):
+    restriction: NiceRestriction
+    frequencyType: NiceFrequencyType
+    dialogMessage: str
+    noticeMessage: str
+    title: str
+
+
 class NiceQuestPhase(NiceQuest):
     phase: int
     className: list[SvtClass]
@@ -2137,6 +2157,7 @@ class NiceQuestPhase(NiceQuest):
     extraDetail: NiceQuestPhaseExtraDetail
     scripts: list[ScriptLink]
     messages: list[NiceQuestMessage]
+    restrictions: list[NiceQuestPhaseRestriction]
     supportServants: list[SupportServant]
     drops: list[EnemyDrop]
     stages: list[NiceStage]

@@ -165,5 +165,8 @@
   "npcFollower": [],
   "npcFollowerRelease": [],
   "npcSvtFollower": [],
-  "npcSvtEquip": []
+  "npcSvtEquip": [],
+  "mstQuestRestriction": [],
+  "mstQuestRestrictionInfo": [],
+  "mstRestriction": []
 }

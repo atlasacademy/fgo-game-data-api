@@ -30,6 +30,9 @@ from ...models.raw import (
     mstQuestPhase,
     mstQuestPhaseDetail,
     mstQuestRelease,
+    mstQuestRestriction,
+    mstQuestRestrictionInfo,
+    mstRestriction,
     mstSpot,
     mstStage,
     mstStageRemap,
@@ -515,6 +518,24 @@ async def get_quest_phase_entity(
                 mstQuestPhase.c.phase == npcFollowerRelease.c.questPhase,
             ),
         )
+        .outerjoin(
+            mstQuestRestriction,
+            and_(
+                mstQuest.c.id == mstQuestRestriction.c.questId,
+                mstQuestPhase.c.phase == mstQuestRestriction.c.phase,
+            ),
+        )
+        .outerjoin(
+            mstQuestRestrictionInfo,
+            and_(
+                mstQuest.c.id == mstQuestRestrictionInfo.c.questId,
+                mstQuestPhase.c.phase == mstQuestRestrictionInfo.c.phase,
+            ),
+        )
+        .outerjoin(
+            mstRestriction,
+            mstRestriction.c.id == mstQuestRestriction.c.restrictionId,
+        )
         .outerjoin(npcSvtFollower, npcFollower.c.leaderSvtId == npcSvtFollower.c.id)
         .outerjoin(npcSvtEquip, npcFollower.c.svtEquipIds[1] == npcSvtEquip.c.id)
         .outerjoin(mstBgm, mstBgm.c.id == mstStage.c.bgmId)
@@ -556,6 +577,9 @@ async def get_quest_phase_entity(
         sql_jsonb_agg(npcSvtFollower),
         sql_jsonb_agg(npcSvtEquip),
         sql_jsonb_agg(mstBgm),
+        sql_jsonb_agg(mstQuestRestriction),
+        sql_jsonb_agg(mstQuestRestrictionInfo),
+        sql_jsonb_agg(mstRestriction),
     ]
 
     sql_stmt = (
