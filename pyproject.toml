@@ -7,11 +7,11 @@ packages = [{ include = "app" }]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-fastapi = "^0.87.0"
+fastapi = "^0.88.0"
 uvicorn = { extras = ["standard"], version = "^0.20.0" }
 python-dotenv = "^0.21.0"
 fuzzywuzzy = { extras = ["speedup"], version = "^0.18.0" }
-orjson = "^3.8.2"
+orjson = "^3.8.3"
 aiofiles = "^22.1.0"
 GitPython = "^3.1.29"
 SQLAlchemy = "^1.4.44"
@@ -26,7 +26,7 @@ hiredis = "^2.0.0"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^0.991"
-pylint = "^2.15.6"
+pylint = "^2.15.7"
 black = "^22.10.0"
 isort = "^5.10.1"
 pytest = "^7.2.0"
@@ -36,8 +36,8 @@ coverage = "^6.5.0"
 asgi-lifespan = "^2.0.0"
 fuzzywuzzy-stubs = "^0.0.1"
 sqlalchemy2-stubs = "^0.0.2a29"
-types-aiofiles = "^22.1.0.3"
-types-redis = "^4.3.21.5"
+types-aiofiles = "^22.1.0.4"
+types-redis = "^4.3.21.6"
 types-orjson = "^3.6.2"
 
 [tool.pytest.ini_options]
