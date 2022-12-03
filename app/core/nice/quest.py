@@ -252,17 +252,21 @@ async def get_nice_quest_phase_no_rayshift(
     nice_data = await get_nice_quest(conn, region, raw_quest, lang)
 
     support_servants: list[SupportServant] = []
-    if raw_quest.npcFollower:
-        support_servants = await get_nice_support_servants(
-            conn,
-            redis,
-            region,
-            raw_quest.npcFollower,
-            raw_quest.npcFollowerRelease,
-            raw_quest.npcSvtFollower,
-            raw_quest.npcSvtEquip,
-            lang,
+    if raw_quest.npcFollower or "aiNpc" in raw_quest.mstQuestPhase.script:
+        npcs = await get_nice_support_servants(
+            conn=conn,
+            redis=redis,
+            region=region,
+            npcFollower=raw_quest.npcFollower,
+            npcFollowerRelease=raw_quest.npcFollowerRelease,
+            npcSvtFollower=raw_quest.npcSvtFollower,
+            npcSvtEquip=raw_quest.npcSvtEquip,
+            lang=lang,
+            aiNpcId=raw_quest.mstQuestPhase.script.get("aiNpc", {}).get("npcId"),
         )
+        support_servants = npcs.support_servants
+        if "aiNpc" in raw_quest.mstQuestPhase.script:
+            raw_quest.mstQuestPhase.script["aiNpc"]["npc"] = npcs.ai_npc
 
     restrictions = {
         restriction.id: restriction for restriction in raw_quest.mstRestriction

@@ -1,3 +1,5 @@
+from dataclasses import dataclass
+
 import orjson
 from sqlalchemy.ext.asyncio import AsyncConnection
 
@@ -9,6 +11,7 @@ from ...schemas.gameenums import COND_TYPE_NAME
 from ...schemas.nice import (
     EnemySkill,
     NiceEquip,
+    NpcServant,
     SupportServant,
     SupportServantEquip,
     SupportServantLimit,
@@ -104,6 +107,29 @@ def get_nice_follower_script(npcScript: str) -> SupportServantScript:
     return script
 
 
+async def get_nice_npc_servant(
+    redis: Redis,
+    region: Region,
+    npcSvtFollower: NpcSvtFollower,
+    all_skills: MultipleNiceSkills,
+    all_tds: MultipleNiceTds,
+    lang: Language,
+) -> NpcServant:
+    return NpcServant(
+        name=npcSvtFollower.name,
+        svt=await get_basic_servant(
+            redis, region, npcSvtFollower.svtId, npcSvtFollower.limitCount, lang
+        ),
+        lv=npcSvtFollower.lv,
+        atk=npcSvtFollower.atk,
+        hp=npcSvtFollower.hp,
+        traits=get_nice_follower_traits(npcSvtFollower.individuality),
+        skills=get_nice_follower_skills(npcSvtFollower, all_skills),
+        noblePhantasm=get_nice_follower_td(npcSvtFollower, all_tds),
+        limit=get_nice_follower_limit(npcSvtFollower),
+    )
+
+
 async def get_nice_support_servant(
     redis: Redis,
     region: Region,
@@ -146,6 +172,12 @@ async def get_nice_support_servant(
     )
 
 
+@dataclass
+class NiceNpc:
+    support_servants: list[SupportServant]
+    ai_npc: NpcServant | None = None
+
+
 async def get_nice_support_servants(
     conn: AsyncConnection,
     redis: Redis,
@@ -155,7 +187,8 @@ async def get_nice_support_servants(
     npcSvtFollower: list[NpcSvtFollower],
     npcSvtEquip: list[NpcSvtEquip],
     lang: Language,
-) -> list[SupportServant]:
+    aiNpcId: int | None = None,
+) -> NiceNpc:
     all_skill_ids: set[SkillSvt] = set()
     all_td_ids: set[TdSvt] = set()
     for npcSvt in npcSvtFollower:
@@ -198,4 +231,18 @@ async def get_nice_support_servants(
         )
         out_support_servants.append(nice_support_servant)
 
-    return out_support_servants
+    if aiNpcId:
+        ai_npc = await get_nice_npc_servant(
+            redis=redis,
+            region=region,
+            npcSvtFollower=next(
+                npc_svt for npc_svt in npcSvtFollower if npc_svt.id == aiNpcId
+            ),
+            all_skills=all_skills,
+            all_tds=all_tds,
+            lang=lang,
+        )
+    else:
+        ai_npc = None
+
+    return NiceNpc(support_servants=out_support_servants, ai_npc=ai_npc)

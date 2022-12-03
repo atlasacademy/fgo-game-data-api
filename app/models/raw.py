@@ -10,7 +10,7 @@ from sqlalchemy import (
     text,
 )
 from sqlalchemy.dialects.postgresql import ARRAY, JSONB, TEXT
-from sqlalchemy.sql import func
+from sqlalchemy.sql import cast, func
 
 from .base import metadata
 
@@ -1753,6 +1753,11 @@ mstQuestPhase = Table(
     Column("friendshipExp", Integer),
     Column("giftId", Integer, default=0),
     Column("encountSvtIds", ARRAY(Integer)),
+)
+
+Index(
+    "ix_mstQuestPhase_script_aiNpc_npcId",
+    cast(mstQuestPhase.c.script["aiNpc"]["npcId"], Integer),
 )
 
 

@@ -10,6 +10,7 @@ from sqlalchemy.sql import (
     Join,
     and_,
     case,
+    cast,
     func,
     literal_column,
     or_,
@@ -536,7 +537,14 @@ async def get_quest_phase_entity(
             mstRestriction,
             mstRestriction.c.id == mstQuestRestriction.c.restrictionId,
         )
-        .outerjoin(npcSvtFollower, npcFollower.c.leaderSvtId == npcSvtFollower.c.id)
+        .outerjoin(
+            npcSvtFollower,
+            or_(
+                npcFollower.c.leaderSvtId == npcSvtFollower.c.id,
+                cast(mstQuestPhase.c.script["aiNpc"]["npcId"], Integer)
+                == npcSvtFollower.c.id,
+            ),
+        )
         .outerjoin(npcSvtEquip, npcFollower.c.svtEquipIds[1] == npcSvtEquip.c.id)
         .outerjoin(mstBgm, mstBgm.c.id == mstStage.c.bgmId)
         .outerjoin(

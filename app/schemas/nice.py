@@ -2103,6 +2103,18 @@ class SupportServantScript(BaseModelORJson):
     eventDeckIndex: int | None = None
 
 
+class NpcServant(BaseModelORJson):
+    name: str
+    svt: BasicServant
+    lv: int
+    atk: int
+    hp: int
+    traits: list[NiceTrait]
+    skills: EnemySkill
+    noblePhantasm: SupportServantTd
+    limit: SupportServantLimit
+
+
 class SupportServant(BaseModelORJson):
     id: int
     priority: int
@@ -2121,11 +2133,17 @@ class SupportServant(BaseModelORJson):
     misc: SupportServantMisc
 
 
+class NiceQuestPhaseAiNpc(BaseModelORJson):
+    npc: NpcServant
+    aiIds: list[int]
+
+
 class NiceQuestPhaseExtraDetail(BaseModelORJson):
     questSelect: list[int] | None = None
     singleForceSvtId: int | None = None
     hintTitle: str | None = None
     hintMessage: str | None = None
+    aiNpc: NiceQuestPhaseAiNpc | None = None
 
 
 class NiceRestriction(BaseModelORJson):

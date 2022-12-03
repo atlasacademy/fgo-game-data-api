@@ -88,6 +88,7 @@ test_cases_dict: dict[str, tuple[str, str]] = {
     "quest_NA_select_1": ("NA/quest/3000110/1", "NA_quest_LB1_select_1"),
     "quest_JP_2_gift_adds": ("JP/quest/94067702", "JP_Teslafest_quest"),
     "quest_follower_deck_index": ("JP/quest/3000903/3", "JP_LB6_support_deck"),
+    "quest_aiNpc": ("JP/quest/94074510/1", "JP_Himiko_AI_NPC"),
     "ai_beni_cq_monkey_NA": ("NA/ai/svt/94032580", "NA_AI_Beni_CQ_monkey"),
     "ai_act_np": ("JP/ai/svt/94074555", "JP_AI_Act_NP"),
     "kh_cq_JP": ("JP/ai/field/90161870", "JP_KH_CQ_taunt"),
