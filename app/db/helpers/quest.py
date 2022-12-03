@@ -547,14 +547,7 @@ async def get_quest_phase_entity(
             ),
         )
         .outerjoin(all_scripts_cte, mstQuest.c.id == all_scripts_cte.c.questId)
-        .outerjoin(
-            npcSvtFollower,
-            or_(
-                npcFollower.c.leaderSvtId == npcSvtFollower.c.id,
-                cast(mstQuestPhase.c.script["aiNpc"]["npcId"], Integer)
-                == npcSvtFollower.c.id,
-            ),
-        )
+        .outerjoin(npcSvtFollower, npcFollower.c.leaderSvtId == npcSvtFollower.c.id)
     )
 
     select_quest_phase = [

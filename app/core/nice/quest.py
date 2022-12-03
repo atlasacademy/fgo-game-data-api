@@ -265,7 +265,7 @@ async def get_nice_quest_phase_no_rayshift(
             aiNpcId=raw_quest.mstQuestPhase.script.get("aiNpc", {}).get("npcId"),
         )
         support_servants = npcs.support_servants
-        if "aiNpc" in raw_quest.mstQuestPhase.script:
+        if "aiNpc" in raw_quest.mstQuestPhase.script and npcs.ai_npc is not None:
             raw_quest.mstQuestPhase.script["aiNpc"]["npc"] = npcs.ai_npc
 
     restrictions = {
