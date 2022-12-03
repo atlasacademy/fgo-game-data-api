@@ -1570,7 +1570,7 @@ class MstQuestRestrictionInfo(BaseModelORJson):
 
 class MstRestriction(BaseModelORJson):
     targetVals: list[int]
-    targetVals2: list[int]
+    targetVals2: list[int] | None
     id: int
     name: str
     type: int
