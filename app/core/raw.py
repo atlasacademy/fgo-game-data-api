@@ -47,6 +47,7 @@ from ..schemas.raw import (
     MstEquipExp,
     MstEquipSkill,
     MstEvent,
+    MstEventAlloutBattle,
     MstEventBulletinBoard,
     MstEventBulletinBoardRelease,
     MstEventCampaign,
@@ -343,6 +344,15 @@ async def get_svt_scripts(
         return []
 
     return await fetch.get_all_multiple(conn, MstSvtScript, ids)
+
+
+async def get_event_allout(
+    conn: AsyncConnection, event_ids: Iterable[int]
+) -> list[MstEventAlloutBattle]:
+    if not event_ids:
+        return []
+
+    return await fetch.get_all_multiple(conn, MstEventAlloutBattle, event_ids)
 
 
 async def get_voice_from_svtVoice(

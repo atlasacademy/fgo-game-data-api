@@ -235,6 +235,20 @@ async def get_svt_scripts(region: Region, charaId: list[int] = Query([])) -> Res
 
 
 @router.get(
+    "/{region}/eventAlloutBattle",
+    summary="Get servant script data",
+    response_description="Servant Scipt Entity",
+    response_model=list[MstSvtScript],
+    response_model_exclude_unset=True,
+)
+@cache()  # type: ignore
+async def get_event_allout(region: Region, eventId: list[int] = Query([])) -> Response:
+    async with get_db(region) as conn:
+        allouts = await raw.get_event_allout(conn, eventId)
+        return list_response(allouts)
+
+
+@router.get(
     "/{region}/MC/{mc_id}",
     summary="Get Mystic Code data",
     response_description="Mystic Code entity",

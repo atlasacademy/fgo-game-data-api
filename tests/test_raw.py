@@ -74,6 +74,10 @@ test_cases_dict: dict[str, tuple[str, str]] = {
     "bgm_NA_without_shop": ("NA/bgm/33", "NA_BGM_battle_10"),
     "script_NA": ("NA/script/0300030510", "NA_LB3_script"),
     "shop_NA": ("NA/shop/80276219", "shop_valentine_script"),
+    "eventAlloutBattle_JP": (
+        "JP/eventAlloutBattle?eventId=80363",
+        "eventAlloutBattle_JP",
+    ),
 }
 
 

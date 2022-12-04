@@ -1275,6 +1275,12 @@ class MstCommonConsume(BaseModelORJson):
     num: int
 
 
+class MstEventAlloutBattle(BaseModelORJson):
+    eventId: int
+    alloutBattleId: int
+    warId: int
+
+
 class MstEvent(BaseModelORJson):
     script: list[dict[str, str]]  # []
     id: int  # 10083

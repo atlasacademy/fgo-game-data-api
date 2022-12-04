@@ -30,6 +30,7 @@ from ...models.raw import (
     mstEquipExp,
     mstEquipSkill,
     mstEvent,
+    mstEventAlloutBattle,
     mstEventBulletinBoard,
     mstEventBulletinBoardRelease,
     mstEventCampaign,
@@ -125,6 +126,7 @@ from ...schemas.raw import (
     MstEquipExp,
     MstEquipSkill,
     MstEvent,
+    MstEventAlloutBattle,
     MstEventBulletinBoard,
     MstEventBulletinBoardRelease,
     MstEventCampaign,
@@ -510,6 +512,11 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
         mstEventRecipeGift,
         mstEventRecipeGift.c.recipeId,
         [mstEventRecipeGift.c.recipeId, mstEventRecipeGift.c.idx],
+    ),
+    MstEventAlloutBattle: (
+        mstEventAlloutBattle,
+        mstEventAlloutBattle.c.eventId,
+        [mstEventAlloutBattle.c.eventId, mstEventAlloutBattle.c.alloutBattleId],
     ),
 }
 

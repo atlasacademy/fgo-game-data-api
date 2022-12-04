@@ -1403,6 +1403,14 @@ mstEventFortificationSvt = Table(
     Column("commonReleaseId", Integer),
 )
 
+mstEventAlloutBattle = Table(
+    "mstEventAlloutBattle",
+    metadata,
+    Column("eventId", Integer, index=True),
+    Column("alloutBattleId", Integer),
+    Column("warId", Integer),
+)
+
 mstCommonConsume = Table(
     "mstCommonConsume",
     metadata,
@@ -2079,4 +2087,5 @@ TABLES_TO_BE_LOADED = [
     [mstWarQuestSelection],
     [mstEventCampaign],
     [mstEventQuest],
+    [mstEventAlloutBattle],
 ]
