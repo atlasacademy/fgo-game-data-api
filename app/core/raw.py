@@ -1249,3 +1249,10 @@ async def get_raw_mstShop(conn: AsyncConnection, shop_id: int) -> MstShop:
 async def get_shop_entity(conn: AsyncConnection, shop_id: int) -> ShopEntity:
     shop = await get_raw_mstShop(conn, shop_id)
     return (await get_shop_entities(conn, [shop]))[0]
+
+
+async def get_common_releases(
+    conn: AsyncConnection, release_ids: Iterable[int]
+) -> list[MstCommonRelease]:
+    releases = await fetch.get_all_multiple(conn, MstCommonRelease, release_ids)
+    return releases

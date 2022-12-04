@@ -4,6 +4,7 @@ from fastapi_cache.decorator import cache
 from ..config import Settings
 from ..core import search
 from ..core.nice import ai, bgm, cc, item, mc, mm, nice, quest, script, war
+from ..core.nice.common_release import get_nice_common_releases_from_id
 from ..core.nice.event.event import get_nice_event
 from ..core.nice.event.shop import get_nice_shop_from_raw, get_nice_shops_from_raw
 from ..core.nice.script import get_nice_script_search_result
@@ -18,6 +19,7 @@ from ..schemas.nice import (
     NiceBgmEntity,
     NiceBuffReverse,
     NiceCommandCode,
+    NiceCommonRelease,
     NiceEquip,
     NiceEvent,
     NiceItem,
@@ -907,3 +909,26 @@ async def get_shop(
     """
     async with get_db(region) as conn:
         return item_response(await get_nice_shop_from_raw(conn, region, shop_id, lang))
+
+
+@router.get(
+    "/{region}/common-release/{common_release_id}",
+    summary="Get Nice Common Release data",
+    response_description="List of Nice Common Release Entities",
+    response_model=list[NiceCommonRelease],
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()  # type: ignore
+async def get_common_releases(
+    region: Region,
+    common_release_id: int,
+    lang: Language = Depends(language_parameter),
+) -> Response:
+    """
+    Get the common release data from the given ID
+    """
+    async with get_db(region) as conn:
+        return list_response(
+            await get_nice_common_releases_from_id(conn, common_release_id)
+        )
