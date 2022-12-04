@@ -889,7 +889,7 @@ mstGiftAdd = Table(
     Column("condType", Integer),
     Column("targetId", Integer),
     Column("targetNum", Integer),
-    Column("priorGiftId", Integer),
+    Column("priorGiftId", Integer, index=True),
     Column("script", String),
 )
 
@@ -1667,7 +1667,7 @@ mstQuest = Table(
     Column("actConsume", Integer),
     Column("chaldeaGateCategory", Integer),
     Column("spotId", Integer, index=True),
-    Column("giftId", Integer),
+    Column("giftId", Integer, index=True),
     Column("priority", Integer),
     Column("bannerType", Integer),
     Column("bannerId", Integer),
@@ -1694,8 +1694,8 @@ mstQuest = Table(
 mstQuestMessage = Table(
     "mstQuestMessage",
     metadata,
-    Column("questId", Integer),
-    Column("phase", Integer),
+    Column("questId", Integer, index=True),
+    Column("phase", Integer, index=True),
     Column("idx", Integer),
     Column("message", String),
     Column("condType", Integer),
@@ -1851,7 +1851,7 @@ npcFollower = Table(
     Column("questId", Integer, index=True),
     Column("questPhase", Integer, index=True),
     Column("priority", Integer),
-    Column("leaderSvtId", Integer),
+    Column("leaderSvtId", Integer, index=True),
     Column("svtEquipIds", ARRAY(Integer)),
     Column("flag", Integer),
     Column("npcScript", String),
@@ -1859,6 +1859,9 @@ npcFollower = Table(
     Column("openedAt", Integer, default=0),
     Column("closedAt", Integer, default=0),
 )
+
+
+Index("ix_npcFollower_svtEquipIds_first", npcFollower.c.svtEquipIds[1])
 
 
 npcFollowerRelease = Table(

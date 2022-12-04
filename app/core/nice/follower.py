@@ -231,18 +231,18 @@ async def get_nice_support_servants(
         )
         out_support_servants.append(nice_support_servant)
 
-        # if aiNpcId:
-        #     ai_npc = await get_nice_npc_servant(
-        #         redis=redis,
-        #         region=region,
-        #         npcSvtFollower=next(
-        #             npc_svt for npc_svt in npcSvtFollower if npc_svt.id == aiNpcId
-        #         ),
-        #         all_skills=all_skills,
-        #         all_tds=all_tds,
-        #         lang=lang,
-        #     )
-        # else:
-    ai_npc = None
+    if aiNpcId:
+        ai_npc = await get_nice_npc_servant(
+            redis=redis,
+            region=region,
+            npcSvtFollower=next(
+                npc_svt for npc_svt in npcSvtFollower if npc_svt.id == aiNpcId
+            ),
+            all_skills=all_skills,
+            all_tds=all_tds,
+            lang=lang,
+        )
+    else:
+        ai_npc = None
 
     return NiceNpc(support_servants=out_support_servants, ai_npc=ai_npc)
