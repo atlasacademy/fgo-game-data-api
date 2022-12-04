@@ -570,15 +570,12 @@ async def get_quest_phase_entity(
         sql_jsonb_agg(mstGift),
         sql_jsonb_agg(mstGiftAdd),
         all_phases_cte.c.phases,
-        select(
-            func.to_jsonb(
-                func.array_remove(array_agg(rayshiftQuest.c.phase.distinct()), None)
-            )
-        )
-        .where(rayshiftQuest.c.questId == quest_id)
-        .subquery()
-        .select()
-        .label("phasesWithEnemies"),
+        func.coalesce(
+            select(func.array_remove(array_agg(rayshiftQuest.c.phase.distinct()), None))
+            .where(rayshiftQuest.c.questId == quest_id)
+            .scalar_subquery(),
+            [],
+        ).label("phasesWithEnemies"),
         func.to_jsonb(mstQuestPhase.table_valued()).label(mstQuestPhase.name),
         func.to_jsonb(mstQuestPhaseDetail.table_valued()).label(
             mstQuestPhaseDetail.name
