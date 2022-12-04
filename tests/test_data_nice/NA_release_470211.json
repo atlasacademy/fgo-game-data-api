@@ -1,0 +1,50 @@
+[
+  {
+    "id": 470211,
+    "priority": 1,
+    "condGroup": 1,
+    "condType": "raidDead",
+    "condId": 80283,
+    "condNum": 1
+  },
+  {
+    "id": 470211,
+    "priority": 1,
+    "condGroup": 1,
+    "condType": "raidDead",
+    "condId": 80283,
+    "condNum": 2
+  },
+  {
+    "id": 470211,
+    "priority": 1,
+    "condGroup": 1,
+    "condType": "raidDead",
+    "condId": 80283,
+    "condNum": 3
+  },
+  {
+    "id": 470211,
+    "priority": 1,
+    "condGroup": 1,
+    "condType": "raidDead",
+    "condId": 80283,
+    "condNum": 4
+  },
+  {
+    "id": 470211,
+    "priority": 1,
+    "condGroup": 1,
+    "condType": "raidDead",
+    "condId": 80283,
+    "condNum": 5
+  },
+  {
+    "id": 470211,
+    "priority": 1,
+    "condGroup": 1,
+    "condType": "raidDead",
+    "condId": 80283,
+    "condNum": 6
+  }
+]

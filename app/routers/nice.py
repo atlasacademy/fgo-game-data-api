@@ -920,11 +920,7 @@ async def get_shop(
     responses=get_error_code([404]),
 )
 @cache()  # type: ignore
-async def get_common_releases(
-    region: Region,
-    common_release_id: int,
-    lang: Language = Depends(language_parameter),
-) -> Response:
+async def get_common_releases(region: Region, common_release_id: int) -> Response:
     """
     Get the common release data from the given ID
     """

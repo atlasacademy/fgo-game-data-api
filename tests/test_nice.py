@@ -97,6 +97,7 @@ test_cases_dict: dict[str, tuple[str, str]] = {
     "script_NA_2_quests": ("NA/script/9402750110", "NA_Summerfes_script"),
     "script_JP_no_quest": ("NA/script/WarEpilogue108", "JP_WarEpilogue108"),
     "shop_JP": ("JP/shop/13000000", "JP_shop_blue_apple"),
+    "common_release": ("NA/common-release/470211", "NA_release_470211"),
 }
 
 
@@ -135,6 +136,7 @@ cases_404_dict = {
     "mm": "41232",
     "script": "dasdasd",
     "shop": "1238712",
+    "common-release": "12345134",
 }
 
 
@@ -703,6 +705,7 @@ class TestServantSpecial:
             "purchaseType": "servant",
             "targetId": 9804500,
             "setNum": 1,
+            "gifts": [],
         }
 
     async def test_enemy_change_class(self, client: AsyncClient) -> None:
