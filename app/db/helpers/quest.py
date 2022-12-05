@@ -528,7 +528,10 @@ async def get_quest_phase_entity(
             mstQuestRestriction,
             and_(
                 mstQuest.c.id == mstQuestRestriction.c.questId,
-                mstQuestPhase.c.phase == mstQuestRestriction.c.phase,
+                or_(
+                    mstQuestPhase.c.phase == mstQuestRestriction.c.phase,
+                    mstQuestRestriction.c.phase == 0,
+                ),
             ),
         )
         .outerjoin(
