@@ -57,6 +57,10 @@ else:
     DONT_USE_NA_TRANSLATION = set()
 
 
+def strip_space(translations: dict[Any, str]) -> dict[Any, str]:
+    return {k: v.strip() for k, v in translations.items()}
+
+
 class SvtType(IntEnum):
     NORMAL = 1
     HEROINE = 2
@@ -97,7 +101,7 @@ def update_enemy_translation() -> None:
     with open(
         MAPPING_PATH / "enemy_names.json", "w", encoding="utf-8", newline="\n"
     ) as fp:
-        json.dump(translated, fp, indent=2, ensure_ascii=False)
+        json.dump(strip_space(translated), fp, indent=2, ensure_ascii=False)
         fp.write("\n")
 
 
@@ -203,7 +207,7 @@ def update_servant_translation(jp_master: Path, na_master: Path) -> None:
         updated_translation[jp_name] = new_translation
 
     with open(mapping_path, "w", encoding="utf-8", newline="\n") as fp:
-        json.dump(updated_translation, fp, indent=2, ensure_ascii=False)
+        json.dump(strip_space(updated_translation), fp, indent=2, ensure_ascii=False)
         fp.write("\n")
 
 
@@ -371,7 +375,7 @@ def update_translation(
             updated_translation = json.load(fp) | updated_translation
 
     with open(mapping_path, "w", encoding="utf-8", newline="\n") as fp:
-        json.dump(updated_translation, fp, indent=2, ensure_ascii=False)
+        json.dump(strip_space(updated_translation), fp, indent=2, ensure_ascii=False)
         fp.write("\n")
 
 
