@@ -1533,7 +1533,7 @@ class MstQuestPhase(BaseModelORJson):
 
 
 class MstQuestPhaseDetail(BaseModelORJson):
-    beforeActionVals: list[str]
+    beforeActionVals: list[str] | None
     afterActionVals: list[str]
     boardMessage: dict[str, Any]
     questId: int
