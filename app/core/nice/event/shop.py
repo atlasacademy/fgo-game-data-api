@@ -85,7 +85,7 @@ def get_nice_shop(
         shop_set_items = [
             get_nice_set_item(region, set_item, gift_data)
             for set_item in set_items
-            for set_item.id in shop.targetIds
+            if set_item.id in shop.targetIds
         ]
     else:
         shop_set_items = []
