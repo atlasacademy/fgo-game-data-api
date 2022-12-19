@@ -10,6 +10,7 @@ from sqlalchemy.sql.expression import text
 
 from ...models.rayshift import rayshiftQuest
 from ...schemas.rayshift import QuestDetail, QuestDrop, QuestList
+from .utils import fetch_one
 
 
 async def get_rayshift_quest_db(
@@ -25,7 +26,7 @@ async def get_rayshift_quest_db(
             rayshiftQuest.c.questDetail.contains({"questSelect": questSelect})
         )
     stmt = select(rayshiftQuest.c.questDetail).where(and_(*where_conds))
-    rayshift_quest = (await conn.execute(stmt)).fetchone()
+    rayshift_quest = await fetch_one(conn, stmt)
     if rayshift_quest and rayshift_quest.questDetail:
         return QuestDetail.parse_obj(rayshift_quest.questDetail)
 

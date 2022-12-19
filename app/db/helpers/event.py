@@ -7,6 +7,7 @@ from sqlalchemy.sql.elements import ClauseElement
 
 from ...models.raw import mstBoxGachaBase, mstEventTowerReward, mstShop, mstWar
 from ...schemas.raw import MstBoxGachaBase, MstEventTowerReward, MstShop, MstWar
+from .utils import fetch_one
 
 
 async def get_event_wars(conn: AsyncConnection, event_id: int) -> list[MstWar]:
@@ -20,7 +21,7 @@ async def get_event_wars(conn: AsyncConnection, event_id: int) -> list[MstWar]:
 
 async def get_mstShop_by_id(conn: AsyncConnection, shop_id: int) -> MstShop:
     mstShop_stmt = select(mstShop).where(mstShop.c.id == shop_id)
-    return MstShop.from_orm((await conn.execute(mstShop_stmt)).fetchone())
+    return MstShop.from_orm(await fetch_one(conn, mstShop_stmt))
 
 
 async def get_mstEventTowerReward(

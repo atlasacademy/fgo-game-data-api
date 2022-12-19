@@ -57,7 +57,7 @@ from ...schemas.raw import (
     QuestEntity,
     QuestPhaseEntity,
 )
-from .utils import sql_jsonb_agg
+from .utils import fetch_one, sql_jsonb_agg
 
 
 QUEST_WITH_WAR_SELECT = select(
@@ -78,7 +78,7 @@ async def get_one_quest_with_war(
     stmt = QUEST_WITH_WAR_SELECT.where(mstQuest.c.id == quest_id)
 
     try:
-        mstQuestWar = (await conn.execute(stmt)).fetchone()
+        mstQuestWar = await fetch_one(conn, stmt)
     except DBAPIError:
         return None
 
@@ -133,7 +133,7 @@ async def get_one_quest_with_phase(
     )
 
     try:
-        mstQuestWithPhase = (await conn.execute(stmt)).fetchone()
+        mstQuestWithPhase = await fetch_one(conn, stmt)
     except DBAPIError:
         return None
 
@@ -616,7 +616,7 @@ async def get_quest_phase_entity(
     )
 
     try:
-        quest_phase = (await conn.execute(sql_stmt)).fetchone()
+        quest_phase = await fetch_one(conn, sql_stmt)
         if quest_phase:
             return QuestPhaseEntity.from_orm(quest_phase)
     except DBAPIError:
@@ -683,7 +683,7 @@ async def get_questSelect_container(
         )
     )
 
-    quest_phase = (await conn.execute(stmt)).fetchone()
+    quest_phase = await fetch_one(conn, stmt)
     if quest_phase:
         return MstQuestPhase.from_orm(quest_phase)
 

@@ -39,41 +39,51 @@ async def get_all_equips(conn: AsyncConnection) -> list[MstSvt]:  # pragma: no c
 async def get_svt_id(conn: AsyncConnection, col_no: int) -> int:
     if col_no == 0:
         return 0
-    stmt = select(mstSvt.c.id).where(
-        and_(
-            mstSvt.c.collectionNo == col_no,
-            or_(
-                mstSvt.c.type == SvtType.HEROINE,
-                mstSvt.c.type == SvtType.NORMAL,
-                mstSvt.c.type == SvtType.ENEMY_COLLECTION_DETAIL,
-            ),
+    stmt = (
+        select(mstSvt.c.id)
+        .where(
+            and_(
+                mstSvt.c.collectionNo == col_no,
+                or_(
+                    mstSvt.c.type == SvtType.HEROINE,
+                    mstSvt.c.type == SvtType.NORMAL,
+                    mstSvt.c.type == SvtType.ENEMY_COLLECTION_DETAIL,
+                ),
+            )
         )
+        .limit(1)
     )
 
     try:
-        mstSvt_db = (await conn.execute(stmt)).fetchone()
+        mstSvt_db = (await conn.execute(stmt)).scalar()
     except DBAPIError:
         return col_no
 
     if mstSvt_db:
-        return int(mstSvt_db.id)
+        return int(mstSvt_db)
     return col_no
 
 
 async def get_ce_id(conn: AsyncConnection, col_no: int) -> int:
     if col_no == 0:
         return 0
-    stmt = select(mstSvt.c.id).where(
-        and_(mstSvt.c.collectionNo == col_no, mstSvt.c.type == SvtType.SERVANT_EQUIP)
+    stmt = (
+        select(mstSvt.c.id)
+        .where(
+            and_(
+                mstSvt.c.collectionNo == col_no, mstSvt.c.type == SvtType.SERVANT_EQUIP
+            )
+        )
+        .limit(1)
     )
 
     try:
-        mstSvt_db = (await conn.execute(stmt)).fetchone()
+        mstSvt_db = (await conn.execute(stmt)).scalar()
     except DBAPIError:
         return col_no
 
     if mstSvt_db:
-        return int(mstSvt_db.id)
+        return int(mstSvt_db)
     return col_no
 
 

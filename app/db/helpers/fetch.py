@@ -196,6 +196,7 @@ from ...schemas.raw import (
     MstWarAdd,
     MstWarQuestSelection,
 )
+from .utils import fetch_one
 
 
 schema_map_fetch_one: dict[  # type:ignore
@@ -232,7 +233,7 @@ async def get_one(
     table, where_col = schema_map_fetch_one[schema]
     stmt = select(table).where(where_col == where_id)
     try:
-        entity_db = (await conn.execute(stmt)).fetchone()
+        entity_db = await fetch_one(conn, stmt)
     except DBAPIError:
         return None
 

@@ -5,6 +5,7 @@ from sqlalchemy.sql import select
 
 from ...models.raw import mstMap, mstSpot, mstWar
 from ...schemas.raw import MstSpot, MstWar
+from .utils import fetch_one
 
 
 async def get_war_from_spot(conn: AsyncConnection, spot_id: int) -> MstWar | None:
@@ -18,7 +19,7 @@ async def get_war_from_spot(conn: AsyncConnection, spot_id: int) -> MstWar | Non
         .where(mstSpot.c.id == spot_id)
     )
 
-    war = (await conn.execute(stmt)).fetchone()
+    war = await fetch_one(conn, stmt)
     if war:
         return MstWar.from_orm(war)
 
@@ -27,7 +28,7 @@ async def get_war_from_spot(conn: AsyncConnection, spot_id: int) -> MstWar | Non
 
 async def get_spot_from_id(conn: AsyncConnection, spot_id: int) -> MstSpot | None:
     stmt = select(mstSpot).where(mstSpot.c.id == spot_id)
-    spot = (await conn.execute(stmt)).fetchone()
+    spot = await fetch_one(conn, stmt)
     if spot:
         return MstSpot.from_orm(spot)
 
