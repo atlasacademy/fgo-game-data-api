@@ -76,7 +76,7 @@ def get_voice_name(
         if match := VOICE_NAME_REGEX.match(voice_name):
             name, number = match.groups()
             translated_name = get_translation(language, name, override_file)
-            return f"{translated_name}{number}"
+            return f"{translated_name.rstrip()} {number}"
         else:
             return get_translation(language, voice_name, override_file)
 

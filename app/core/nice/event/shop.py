@@ -126,7 +126,7 @@ def get_nice_shop(
         common_consumes = []
 
     gifts: list[NiceGift] = []
-    if shop.purchaseType == PurchaseType.GIFT:
+    if shop.purchaseType == PurchaseType.GIFT:  # pragma: no cover
         for gift_id in shop.targetIds:
             gifts += get_nice_gifts(region, gift_id, gift_data)
 

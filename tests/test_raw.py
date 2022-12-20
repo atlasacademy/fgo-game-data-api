@@ -267,6 +267,10 @@ class TestServantSpecial:
         assert data.get("mstMasterMission") is not None
         assert len(data["mstEventMission"]) > 0
 
+    async def test_empty_eventAlloutBattle(self, client: AsyncClient) -> None:
+        response = await client.get("/raw/JP/eventAlloutBattle")
+        assert len(response.json()) == 0
+
 
 def test_get_quest_id_from_conds() -> None:
     conds = load_master_data(test_gamedata, MstEventMissionCondition)

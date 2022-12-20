@@ -11,6 +11,7 @@ RAW_MAIN_ITEM = {
     "skill": "mstSkill",
     "NP": "mstTreasureDevice",
     "item": "mstItem",
+    "shop": "mstShop",
 }
 
 
@@ -25,7 +26,16 @@ def get_item_list(response: Response, response_type: str, endpoint: str) -> set[
             raise ValueError
         return {item[main_item]["id"] for item in response.json()}
     else:
-        if item_type in ("servant", "equip", "buff", "svt", "skill", "NP", "item"):
+        if item_type in (
+            "servant",
+            "equip",
+            "buff",
+            "svt",
+            "skill",
+            "NP",
+            "item",
+            "shop",
+        ):
             id_name = "id"
         elif item_type == "function":
             id_name = "funcId"
@@ -331,6 +341,11 @@ nice_raw_test_cases_dict = {
         "NA/script/search?query=Gomenasorry&warId=9029",
         {"9401760110"},
     ),
+    "shop_name_eventId": (
+        "NA/shop/search?eventId=80000&name=Nightless Rose",
+        {400002, 400003},
+    ),
+    "shop_type_payType": ("NA/shop/search?type=svtStorage&payType=mana", {11000000}),
 }
 
 nice_raw_test_cases = [
@@ -354,7 +369,7 @@ class TestSearchNiceRaw:
         assert response.status_code == 200
         assert result_ids == result
 
-    @pytest.mark.parametrize("endpoint", ["item"])
+    @pytest.mark.parametrize("endpoint", ["item", "shop"])
     async def test_empty_input(
         self, client: AsyncClient, response_type: str, endpoint: str
     ) -> None:

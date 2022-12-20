@@ -917,7 +917,6 @@ async def get_shop(
     response_description="List of Nice Common Release Entities",
     response_model=list[NiceCommonRelease],
     response_model_exclude_unset=True,
-    responses=get_error_code([404]),
 )
 @cache()  # type: ignore
 async def get_common_releases(region: Region, common_release_id: int) -> Response:

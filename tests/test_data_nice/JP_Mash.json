@@ -900,6 +900,19 @@
   },
   "traitAdd": [
     {
+      "idx": 1,
+      "trait": [
+        {
+          "id": 2846,
+          "name": "unknown"
+        }
+      ],
+      "limitCount": -1,
+      "condType": "questClear",
+      "condId": 3001009,
+      "condNum": 0
+    },
+    {
       "idx": 8006901,
       "trait": [
         {

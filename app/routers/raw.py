@@ -17,6 +17,7 @@ from ..schemas.raw import (
     FunctionEntity,
     ItemEntity,
     MasterMissionEntity,
+    MstEventAlloutBattle,
     MstSvtScript,
     MysticCodeEntity,
     QuestEntity,
@@ -238,7 +239,7 @@ async def get_svt_scripts(region: Region, charaId: list[int] = Query([])) -> Res
     "/{region}/eventAlloutBattle",
     summary="Get servant script data",
     response_description="Servant Scipt Entity",
-    response_model=list[MstSvtScript],
+    response_model=list[MstEventAlloutBattle],
     response_model_exclude_unset=True,
 )
 @cache()  # type: ignore

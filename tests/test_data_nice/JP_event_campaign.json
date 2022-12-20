@@ -1,0 +1,88 @@
+{
+  "id": 71090,
+  "type": "questCampaign",
+  "name": "初回クリアまで消費AP 50%DOWN",
+  "originalName": "初回クリアまで消費AP 50%DOWN",
+  "shortName": "",
+  "detail": "消費AP 半減キャンペーン",
+  "bannerPriority": 0,
+  "noticeAt": 1547110800,
+  "startedAt": 1547110800,
+  "endedAt": 1548302399,
+  "finishedAt": 1548302399,
+  "materialOpenedAt": 1751295600,
+  "warIds": [],
+  "shop": [],
+  "rewards": [],
+  "rewardScenes": [],
+  "pointGroups": [],
+  "pointBuffs": [],
+  "missions": [],
+  "randomMissions": [],
+  "towers": [],
+  "lotteries": [],
+  "treasureBoxes": [],
+  "bulletinBoards": [],
+  "recipes": [],
+  "fortifications": [],
+  "campaigns": [
+    {
+      "targetIds": [],
+      "warIds": [],
+      "target": "questApFirstTime",
+      "idx": 1,
+      "value": 500,
+      "calcType": "multiplication",
+      "entryCondMessage": ""
+    }
+  ],
+  "campaignQuests": [
+    {
+      "questId": 93000701
+    },
+    {
+      "questId": 93000702
+    },
+    {
+      "questId": 93000703
+    },
+    {
+      "questId": 93000704
+    },
+    {
+      "questId": 93000705
+    },
+    {
+      "questId": 93000706
+    },
+    {
+      "questId": 93000707
+    },
+    {
+      "questId": 93000708
+    },
+    {
+      "questId": 93000709
+    },
+    {
+      "questId": 93000710
+    },
+    {
+      "questId": 93000711
+    },
+    {
+      "questId": 93000712
+    },
+    {
+      "questId": 93000713
+    },
+    {
+      "questId": 93000714
+    },
+    {
+      "questId": 93000715
+    }
+  ],
+  "voicePlays": [],
+  "voices": []
+}

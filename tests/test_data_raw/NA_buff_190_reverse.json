@@ -86,6 +86,132 @@
             "popupText": "STR Up\nvs. Divine"
           },
           "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              190
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              330
+            ],
+            "popupTextColor": 2,
+            "id": 6425,
+            "cond": 0,
+            "funcType": 16,
+            "targetType": 3,
+            "applyTarget": 3,
+            "popupIconId": 302,
+            "popupText": "STR Up\nvs. Divine"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              190
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              331
+            ],
+            "popupTextColor": 2,
+            "id": 6426,
+            "cond": 0,
+            "funcType": 16,
+            "targetType": 3,
+            "applyTarget": 3,
+            "popupIconId": 302,
+            "popupText": "STR Up\nvs. Divine"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              190
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              332
+            ],
+            "popupTextColor": 2,
+            "id": 6427,
+            "cond": 0,
+            "funcType": 16,
+            "targetType": 3,
+            "applyTarget": 3,
+            "popupIconId": 302,
+            "popupText": "STR Up\nvs. Divine"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              190
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              330
+            ],
+            "popupTextColor": 2,
+            "id": 6431,
+            "cond": 0,
+            "funcType": 16,
+            "targetType": 7,
+            "applyTarget": 3,
+            "popupIconId": 302,
+            "popupText": "STR Up\nvs. Divine"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              190
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              331
+            ],
+            "popupTextColor": 2,
+            "id": 6432,
+            "cond": 0,
+            "funcType": 16,
+            "targetType": 7,
+            "applyTarget": 3,
+            "popupIconId": 302,
+            "popupText": "STR Up\nvs. Divine"
+          },
+          "mstFuncGroup": []
+        },
+        {
+          "mstFunc": {
+            "vals": [
+              190
+            ],
+            "tvals": [],
+            "questTvals": [],
+            "effectList": [
+              332
+            ],
+            "popupTextColor": 2,
+            "id": 6433,
+            "cond": 0,
+            "funcType": 16,
+            "targetType": 7,
+            "applyTarget": 3,
+            "popupIconId": 302,
+            "popupText": "STR Up\nvs. Divine"
+          },
+          "mstFuncGroup": []
         }
       ]
     }

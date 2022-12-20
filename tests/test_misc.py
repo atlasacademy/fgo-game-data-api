@@ -9,6 +9,7 @@ from app.core.nice.func import parse_dataVals
 from app.core.utils import get_voice_name
 from app.data.custom_mappings import Translation
 from app.data.script import get_script_path, get_script_text_only, remove_brackets
+from app.db.load import get_SkillID_from_sval, get_Value_from_sval
 from app.routers.utils import list_string_exclude
 from app.schemas.common import Language, Region, ReverseDepth
 from app.schemas.gameenums import FuncType
@@ -133,3 +134,16 @@ def test_TW_odd_voice_id() -> None:
         id="御主任務 2021年4月 2", face=13, delay=Decimal(0.3), text="0_A1430", form=0
     )
     assert script_json.get_voice_id() == "御主任務 2021年4月 2"
+
+
+def test_get_Value_from_sval() -> None:
+    assert get_Value_from_sval("1000,3,-1,965198,Value2:1") == 965198
+
+
+def test_get_SkillID_from_sval() -> None:
+    assert (
+        get_SkillID_from_sval(
+            "1000,3,-1,1,SkillID:961313,SkillLV:1,HideMiss:1,HideNoEffect:1,ShowCardOnly:1"
+        )
+        == 961313
+    )

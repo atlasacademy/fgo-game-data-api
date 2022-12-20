@@ -492,7 +492,10 @@ async def search_shop(
         pay_type_ints=pay_type_ints,
     )
 
-    if len(matches) > limit:
+    if search_param.name:
+        matches = [item for item in matches if match_name(search_param.name, item.name)]
+
+    if len(matches) > limit:  # pragma: no cover
         raise HTTPException(status_code=403, detail=TOO_MANY_RESULTS.format(limit))
 
     return sorted(matches, key=lambda shop: shop.id)

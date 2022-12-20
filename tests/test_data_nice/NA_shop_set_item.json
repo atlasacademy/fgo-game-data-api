@@ -1,0 +1,82 @@
+{
+  "id": 6000189,
+  "baseShopId": 6000189,
+  "shopType": "rarePri",
+  "releaseConditions": [
+    {
+      "condValues": [
+        80052
+      ],
+      "shopId": 6000189,
+      "condType": "notEventShopPurchase",
+      "condNum": 1,
+      "priority": 0,
+      "isClosedDisp": true,
+      "closedMessage": "Cannot be exchanged (already claimed).",
+      "closedItemName": ""
+    }
+  ],
+  "eventId": 0,
+  "slot": 0,
+  "priority": 75,
+  "name": "\"CBC 2019\" Limited Craft Essence Exchange Shop",
+  "detail": "Unlocks \"CBC 2019\" Limited Craft Essence exchange through Shop",
+  "infoMessage": "Unlocks \"CBC 2019\" Limited Craft Essence exchange through Shop",
+  "warningMessage": "",
+  "payType": "rarePri",
+  "cost": {
+    "item": {
+      "id": 18,
+      "name": "Rare Prism",
+      "originalName": "Rare Prism",
+      "type": "rarePri",
+      "uses": [],
+      "detail": "\"Exchange Item\"\nA rare crystal created by concentrating mana under special circumstances.",
+      "individuality": [],
+      "icon": "https://assets.atlasacademy.io/GameData/NA/Items/18.png",
+      "background": "gold",
+      "priority": 4,
+      "dropPriority": 9004,
+      "itemSelects": []
+    },
+    "amount": 3
+  },
+  "consumes": [],
+  "purchaseType": "setItem",
+  "targetIds": [
+    8009401
+  ],
+  "itemSet": [
+    {
+      "id": 8009401,
+      "purchaseType": "eventShop",
+      "targetId": 80052,
+      "setNum": 1,
+      "gifts": []
+    },
+    {
+      "id": 8009401,
+      "purchaseType": "gift",
+      "targetId": 94022401,
+      "setNum": 1,
+      "gifts": [
+        {
+          "id": 94022401,
+          "type": "item",
+          "objectId": 94022401,
+          "priority": 0,
+          "num": 1,
+          "giftAdds": []
+        }
+      ]
+    }
+  ],
+  "setNum": 1,
+  "limitNum": 1,
+  "gifts": [],
+  "defaultLv": 0,
+  "defaultLimitCount": 0,
+  "image": "https://assets.atlasacademy.io/GameData/NA/Items/80058.png",
+  "openedAt": 1583467200,
+  "closedAt": 1901231999
+}

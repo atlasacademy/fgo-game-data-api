@@ -75,6 +75,9 @@ test_cases_dict: dict[str, tuple[str, str]] = {
     "event_digging_JP": ("JP/event/80367", "JP_event_Digging"),
     "event_bulletin_cooltime_JP": ("JP/event/80384", "JP_proto_merlin_summer"),
     "event_recipe_JP": ("JP/event/80391", "JP_tea_recipe"),
+    "event_fortification_JP": ("JP/event/80400", "JP_event_fortification"),
+    "event_campaign_JP": ("JP/event/71090", "JP_event_campaign"),
+    "event_random_mission_JP": ("JP/event/80346", "JP_event_random_mission"),
     "war_NA_id": ("NA/war/203", "NA_war_Shimousa"),
     "war_JP_quest_selection": ("JP/war/8377", "JP_war_quest_selection"),
     "quest_JP_id": ("JP/quest/91103002", "JP_Suzuka_rank_up"),
@@ -97,6 +100,7 @@ test_cases_dict: dict[str, tuple[str, str]] = {
     "script_NA_2_quests": ("NA/script/9402750110", "NA_Summerfes_script"),
     "script_JP_no_quest": ("NA/script/WarEpilogue108", "JP_WarEpilogue108"),
     "shop_JP": ("JP/shop/13000000", "JP_shop_blue_apple"),
+    "shop_set_item": ("NA/shop/6000189", "NA_shop_set_item"),
     "common_release": ("NA/common-release/470211", "NA_release_470211"),
 }
 
@@ -136,7 +140,6 @@ cases_404_dict = {
     "mm": "41232",
     "script": "dasdasd",
     "shop": "1238712",
-    "common-release": "12345134",
 }
 
 
