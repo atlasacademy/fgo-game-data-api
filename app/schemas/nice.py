@@ -25,6 +25,7 @@ from .common import (
 from .enums import (
     AiTiming,
     AiType,
+    AttackType,
     Attribute,
     EnemyDeathType,
     EnemyRoleType,
@@ -688,7 +689,9 @@ class ExtraAssets(ExtraCCAssets):
 
 
 class NiceCardDetail(BaseModel):
+    hitsDistribution: list[int]
     attackIndividuality: list[NiceTrait]
+    attackType: AttackType
 
 
 AscensionAddData = TypeVar("AscensionAddData")
