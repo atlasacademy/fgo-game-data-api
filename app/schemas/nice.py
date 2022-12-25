@@ -25,7 +25,6 @@ from .common import (
 from .enums import (
     AiTiming,
     AiType,
-    AttackType,
     Attribute,
     EnemyDeathType,
     EnemyRoleType,
@@ -46,6 +45,7 @@ from .gameenums import (
     NiceBuffType,
     NiceCardType,
     NiceCombineAdjustTarget,
+    NiceCommandCardAttackType,
     NiceCommonConsumeType,
     NiceCondType,
     NiceConsumeType,
@@ -691,7 +691,7 @@ class ExtraAssets(ExtraCCAssets):
 class NiceCardDetail(BaseModel):
     hitsDistribution: list[int]
     attackIndividuality: list[NiceTrait]
-    attackType: AttackType
+    attackType: NiceCommandCardAttackType
 
 
 AscensionAddData = TypeVar("AscensionAddData")

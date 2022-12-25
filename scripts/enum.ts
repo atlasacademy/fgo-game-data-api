@@ -1571,3 +1571,8 @@ export enum NiceFrequencyType {
     EVERY_TIME_AFTER = "everyTimeAfter",
     NONE = "none",
 }
+
+export enum NiceCommandCardAttackType {
+    ONE = "one",
+    ALL = "all",
+}

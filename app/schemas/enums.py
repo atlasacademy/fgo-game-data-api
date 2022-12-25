@@ -250,25 +250,6 @@ CARD_TYPE_NAME_REVERSE: dict[NiceCardType, int] = {
 }
 
 
-## AttackType
-
-
-class AttackType(StrEnum):
-    """Card Attack Type Enum"""
-
-    ST = "ST"
-    AOE = "AOE"
-
-
-ATTACK_TYPE_NAME: dict[int, AttackType] = {
-    1: AttackType.ST,
-    2: AttackType.AOE,
-}
-
-
-ATTACK_TYPE_NAME_REVERSE = {v: k for k, v in ATTACK_TYPE_NAME.items()}
-
-
 ### Gender ###
 
 

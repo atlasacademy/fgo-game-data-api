@@ -484,6 +484,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Frequency Type",
         "FREQUENCY_TYPE_NAME",
     ),
+    (
+        "ServantCardEntity.CommandCardAttackType",
+        "CommandCardAttackType",
+        "NiceCommandCardAttackType",
+        "Command Card Attack Type",
+        "COMMAND_CARD_ATK_TYPE_NAME",
+    ),
 ]
 
 
