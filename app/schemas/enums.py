@@ -333,6 +333,8 @@ class SvtClass(StrEnum):
     agarthaPenth = "agarthaPenth"
     cccFinaleEmiyaAlter = "cccFinaleEmiyaAlter"
     salemAbby = "salemAbby"
+    uOlgaMarie = "uOlgaMarie"
+    uOlgaMarieAlienGod = "uOlgaMarieAlienGod"
     # OTHER = "OTHER"
     ALL = "ALL"
     # EXTRA = "EXTRA"
@@ -369,6 +371,8 @@ CLASS_NAME: dict[int, SvtClass] = {
     27: SvtClass.beastUnknown,  # LB 5.2 beast
     28: SvtClass.pretender,
     29: SvtClass.beastIV,
+    31: SvtClass.uOlgaMarieAlienGod,
+    32: SvtClass.uOlgaMarie,
     97: SvtClass.unknown,
     # 98
     # 99
@@ -644,6 +648,7 @@ class Trait(StrEnum):
     classBeastIIIL = "classBeastIIIL"
     classBeastUnknown = "classBeastUnknown"
     classPretender = "classPretender"
+    classUOlgaMarie = "classUOlgaMarie"
     attributeSky = "attributeSky"
     attributeEarth = "attributeEarth"
     attributeHuman = "attributeHuman"
@@ -924,6 +929,7 @@ TRAIT_NAME: dict[int, Trait] = {
     119: Trait.classBeastUnknown,
     120: Trait.classPretender,
     121: Trait.classBeastIV,
+    123: Trait.classUOlgaMarie,
     200: Trait.attributeSky,
     201: Trait.attributeEarth,
     202: Trait.attributeHuman,
