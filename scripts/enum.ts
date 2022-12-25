@@ -126,6 +126,7 @@ export enum NiceFuncType {
     SUB_FIELD_BUFF = "subFieldBuff",
     EVENT_FORTIFICATION_POINT_UP = "eventFortificationPointUp",
     GAIN_NP_INDIVIDUAL_SUM = "gainNpIndividualSum",
+    SET_QUEST_ROUTE_FLAG = "setQuestRouteFlag",
 }
 
 export enum NiceFuncTargetType {
@@ -315,6 +316,7 @@ export enum NiceBuffType {
     NOT_TARGET_SKILL = "notTargetSkill",
     HP_REDUCE_TO_REGAIN = "hpReduceToRegain",
     SELFTURNSTART_FUNCTION = "selfturnstartFunction",
+    OVERWRITE_DEAD_TYPE = "overwriteDeadType",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
 }
@@ -429,6 +431,7 @@ export enum NiceBuffAction {
     GRANT_STATE_UP_ONLY = "grantStateUpOnly",
     TURNEND_HP_REDUCE_TO_REGAIN = "turnendHpReduceToRegain",
     FUNCTION_SELFTURNSTART = "functionSelfturnstart",
+    OVERWRITE_DEAD_TYPE = "overwriteDeadType",
 }
 
 export enum NiceBuffLimit {
@@ -555,6 +558,9 @@ export enum NiceDataValsType {
     IgnoreResistance = "ignoreresistance",
     GainNpTargetPassiveIndividuality = "gainnptargetpassiveindividuality",
     HpReduceToRegainIndiv = "hpreducetoregainindiv",
+    DisplayActualRecoveryHpFlag = "displayactualrecoveryhpflag",
+    ShiftDeckIndex = "shiftdeckindex",
+    PopValueText = "popvaluetext",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -1121,6 +1127,8 @@ export enum NiceWarOverwriteType {
     NOTICE_DIALOG_TEXT = "noticeDialogText",
     CLEAR_MARK = "clearMark",
     EFFECT_CHANGE_WHITE_MARK = "effectChangeWhiteMark",
+    COMMAND_SPELL_ICON = "commandSpellIcon",
+    MASTER_FACE_ICON = "masterFaceIcon",
 }
 
 export enum NiceAiCond {
@@ -1502,6 +1510,8 @@ export enum NiceCombineAdjustTarget {
     FRIEND_POINT_GACHA_FREE_DRAW_NUM = "friendPointGachaFreeDrawNum",
     QUEST_USE_FRIENDSHIP_UP_ITEM = "questUseFriendshipUpItem",
     QUEST_FRIENDSHIP = "questFriendship",
+    LARGE_SUCCESS_BY_CLASS = "largeSuccessByClass",
+    SUPER_SUCCESS_BY_CLASS = "superSuccessByClass",
 }
 
 export enum NiceEventCombineCalc {
@@ -1552,6 +1562,7 @@ export enum NiceRestrictionType {
     ALLOUT_BATTLE_UNIQUE_SVT = "alloutBattleUniqueSvt",
     FIXED_SVT_INDIVIDUALITY_POSITION_MAIN = "fixedSvtIndividualityPositionMain",
     UNIQUE_INDIVIDUALITY = "uniqueIndividuality",
+    MY_SVT_OR_SUPPORT = "mySvtOrSupport",
 }
 
 export enum NiceRestrictionRangeType {

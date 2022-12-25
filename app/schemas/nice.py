@@ -334,6 +334,9 @@ class BaseVals(BaseModel):
     IgnoreResistance: int | None = None
     GainNpTargetPassiveIndividuality: int | None = None
     HpReduceToRegainIndiv: int | None = None
+    DisplayActualRecoveryHpFlag: int | None = None
+    ShiftDeckIndex: int | None = None
+    PopValueText: int | str | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo

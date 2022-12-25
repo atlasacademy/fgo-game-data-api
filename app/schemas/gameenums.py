@@ -203,6 +203,7 @@ class FuncType(IntEnum):
     SUB_FIELD_BUFF = 131
     EVENT_FORTIFICATION_POINT_UP = 132
     GAIN_NP_INDIVIDUAL_SUM = 133
+    SET_QUEST_ROUTE_FLAG = 134
 
 
 class NiceFuncType(StrEnum):
@@ -303,6 +304,7 @@ class NiceFuncType(StrEnum):
     subFieldBuff = "subFieldBuff"
     eventFortificationPointUp = "eventFortificationPointUp"
     gainNpIndividualSum = "gainNpIndividualSum"
+    setQuestRouteFlag = "setQuestRouteFlag"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -401,6 +403,7 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     131: NiceFuncType.subFieldBuff,
     132: NiceFuncType.eventFortificationPointUp,
     133: NiceFuncType.gainNpIndividualSum,
+    134: NiceFuncType.setQuestRouteFlag,
 }
 
 
@@ -660,6 +663,7 @@ class BuffType(IntEnum):
     NOT_TARGET_SKILL = 166
     HP_REDUCE_TO_REGAIN = 167
     SELFTURNSTART_FUNCTION = 168
+    OVERWRITE_DEAD_TYPE = 169
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
 
@@ -820,6 +824,7 @@ class NiceBuffType(StrEnum):
     notTargetSkill = "notTargetSkill"
     hpReduceToRegain = "hpReduceToRegain"
     selfturnstartFunction = "selfturnstartFunction"
+    overwriteDeadType = "overwriteDeadType"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
 
@@ -978,6 +983,7 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     166: NiceBuffType.notTargetSkill,
     167: NiceBuffType.hpReduceToRegain,
     168: NiceBuffType.selfturnstartFunction,
+    169: NiceBuffType.overwriteDeadType,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
 }
@@ -1093,6 +1099,7 @@ class BuffAction(IntEnum):
     GRANT_STATE_UP_ONLY = 106
     TURNEND_HP_REDUCE_TO_REGAIN = 107
     FUNCTION_SELFTURNSTART = 108
+    OVERWRITE_DEAD_TYPE = 109
 
 
 class NiceBuffAction(StrEnum):
@@ -1207,6 +1214,7 @@ class NiceBuffAction(StrEnum):
     grantStateUpOnly = "grantStateUpOnly"
     turnendHpReduceToRegain = "turnendHpReduceToRegain"
     functionSelfturnstart = "functionSelfturnstart"
+    overwriteDeadType = "overwriteDeadType"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1319,6 +1327,7 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     106: NiceBuffAction.grantStateUpOnly,
     107: NiceBuffAction.turnendHpReduceToRegain,
     108: NiceBuffAction.functionSelfturnstart,
+    109: NiceBuffAction.overwriteDeadType,
 }
 
 
@@ -1463,6 +1472,9 @@ class DataValsType(IntEnum):
     IgnoreResistance = 113
     GainNpTargetPassiveIndividuality = 114
     HpReduceToRegainIndiv = 115
+    DisplayActualRecoveryHpFlag = 116
+    ShiftDeckIndex = 117
+    PopValueText = 118
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -3161,6 +3173,8 @@ class WarOverwriteType(IntEnum):
     NOTICE_DIALOG_TEXT = 17
     CLEAR_MARK = 18
     EFFECT_CHANGE_WHITE_MARK = 19
+    COMMAND_SPELL_ICON = 20
+    MASTER_FACE_ICON = 21
 
 
 class NiceWarOverwriteType(StrEnum):
@@ -3185,6 +3199,8 @@ class NiceWarOverwriteType(StrEnum):
     noticeDialogText = "noticeDialogText"
     clearMark = "clearMark"
     effectChangeWhiteMark = "effectChangeWhiteMark"
+    commandSpellIcon = "commandSpellIcon"
+    masterFaceIcon = "masterFaceIcon"
 
 
 WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
@@ -3207,6 +3223,8 @@ WAR_OVERWRITE_TYPE_NAME: dict[int, NiceWarOverwriteType] = {
     17: NiceWarOverwriteType.noticeDialogText,
     18: NiceWarOverwriteType.clearMark,
     19: NiceWarOverwriteType.effectChangeWhiteMark,
+    20: NiceWarOverwriteType.commandSpellIcon,
+    21: NiceWarOverwriteType.masterFaceIcon,
 }
 
 
@@ -4347,6 +4365,8 @@ class CombineAdjustTargetType(IntEnum):
     FRIEND_POINT_GACHA_FREE_DRAW_NUM = 29
     QUEST_USE_FRIENDSHIP_UP_ITEM = 30
     QUEST_FRIENDSHIP = 31
+    LARGE_SUCCESS_BY_CLASS = 32
+    SUPER_SUCCESS_BY_CLASS = 33
 
 
 class NiceCombineAdjustTarget(StrEnum):
@@ -4383,6 +4403,8 @@ class NiceCombineAdjustTarget(StrEnum):
     friendPointGachaFreeDrawNum = "friendPointGachaFreeDrawNum"
     questUseFriendshipUpItem = "questUseFriendshipUpItem"
     questFriendship = "questFriendship"
+    largeSuccessByClass = "largeSuccessByClass"
+    superSuccessByClass = "superSuccessByClass"
 
 
 COMBINE_ADJUST_TARGET_TYPE_NAME: dict[int, NiceCombineAdjustTarget] = {
@@ -4417,6 +4439,8 @@ COMBINE_ADJUST_TARGET_TYPE_NAME: dict[int, NiceCombineAdjustTarget] = {
     29: NiceCombineAdjustTarget.friendPointGachaFreeDrawNum,
     30: NiceCombineAdjustTarget.questUseFriendshipUpItem,
     31: NiceCombineAdjustTarget.questFriendship,
+    32: NiceCombineAdjustTarget.largeSuccessByClass,
+    33: NiceCombineAdjustTarget.superSuccessByClass,
 }
 
 
@@ -4544,6 +4568,7 @@ class RestrictionType(IntEnum):
     ALLOUT_BATTLE_UNIQUE_SVT = 13
     FIXED_SVT_INDIVIDUALITY_POSITION_MAIN = 14
     UNIQUE_INDIVIDUALITY = 15
+    MY_SVT_OR_SUPPORT = 16
 
 
 class NiceRestrictionType(StrEnum):
@@ -4564,6 +4589,7 @@ class NiceRestrictionType(StrEnum):
     alloutBattleUniqueSvt = "alloutBattleUniqueSvt"
     fixedSvtIndividualityPositionMain = "fixedSvtIndividualityPositionMain"
     uniqueIndividuality = "uniqueIndividuality"
+    mySvtOrSupport = "mySvtOrSupport"
 
 
 RESTRICTION_TYPE_NAME: dict[int, NiceRestrictionType] = {
@@ -4582,6 +4608,7 @@ RESTRICTION_TYPE_NAME: dict[int, NiceRestrictionType] = {
     13: NiceRestrictionType.alloutBattleUniqueSvt,
     14: NiceRestrictionType.fixedSvtIndividualityPositionMain,
     15: NiceRestrictionType.uniqueIndividuality,
+    16: NiceRestrictionType.mySvtOrSupport,
 }
 
 
@@ -4641,4 +4668,22 @@ FREQUENCY_TYPE_NAME: dict[int, NiceFrequencyType] = {
     4: NiceFrequencyType.valentine,
     5: NiceFrequencyType.everyTimeAfter,
     0: NiceFrequencyType.none,
+}
+
+
+class CommandCardAttackType(IntEnum):
+    ONE = 1
+    ALL = 2
+
+
+class NiceCommandCardAttackType(StrEnum):
+    """Command Card Attack Type"""
+
+    one = "one"
+    all = "all"
+
+
+COMMAND_CARD_ATK_TYPE_NAME: dict[int, NiceCommandCardAttackType] = {
+    1: NiceCommandCardAttackType.one,
+    2: NiceCommandCardAttackType.all,
 }
