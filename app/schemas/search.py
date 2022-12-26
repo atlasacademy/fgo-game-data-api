@@ -479,6 +479,7 @@ class ScriptSearchQueryParams:
     query: str = Query(..., max_length=999)
     scriptFileName: str | None = Query(default=None, max_length=99)
     warId: list[int] = Query([])
+    limit: int | None = Query(None, le=500)
 
     DESCRIPTION: ClassVar[str] = inspect.cleandoc(
         """
