@@ -15,7 +15,7 @@ from ...rayshift.quest import get_quest_detail
 from ...redis import Redis
 from ...redis.helpers.quest import RayshiftRedisData, get_stages_cache, set_stages_cache
 from ...schemas.common import Language, Region, ScriptLink
-from ...schemas.enums import CLASS_NAME
+from ...schemas.enums import CLASS_NAME, SvtClass
 from ...schemas.gameenums import (
     COND_TYPE_NAME,
     FREQUENCY_TYPE_NAME,
@@ -276,7 +276,8 @@ async def get_nice_quest_phase_no_rayshift(
         "phase": raw_quest.mstQuestPhase.phase,
         "drops": [],
         "className": [
-            CLASS_NAME[class_id] for class_id in raw_quest.mstQuestPhase.classIds
+            CLASS_NAME.get(class_id, SvtClass.atlasUnmappedClass)
+            for class_id in raw_quest.mstQuestPhase.classIds
         ],
         "individuality": get_traits_list(raw_quest.mstQuestPhase.individuality),
         "qp": raw_quest.mstQuestPhase.qp,

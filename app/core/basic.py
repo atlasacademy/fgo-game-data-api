@@ -94,8 +94,8 @@ def get_nice_buff_script(mstBuff: MstBuff) -> NiceBuffScript:
         }
         for relation in relationOverwrite:
             side = "atkSide" if relation.atkSide == 1 else "defSide"
-            atkClass = CLASS_NAME[relation.atkClass]
-            defClass = CLASS_NAME[relation.defClass]
+            atkClass = CLASS_NAME.get(relation.atkClass, SvtClass.atlasUnmappedClass)
+            defClass = CLASS_NAME.get(relation.defClass, SvtClass.atlasUnmappedClass)
             relationDetail = {
                 "damageRate": relation.damageRate,
                 "type": CLASS_OVERWRITE_NAME[relation.type],
@@ -376,7 +376,7 @@ async def get_basic_svt(
         "flag": SVT_FLAG_NAME[mstSvt.flag],
         "name": mstSvt.name,
         "originalName": mstSvt.name,
-        "className": CLASS_NAME[mstSvt.classId],
+        "className": CLASS_NAME.get(mstSvt.classId, SvtClass.atlasUnmappedClass),
         "attribute": ATTRIBUTE_NAME[mstSvt.attri],
         "rarity": mstSvtLimit.rarity,
         "atkMax": mstSvtLimit.atkMax,

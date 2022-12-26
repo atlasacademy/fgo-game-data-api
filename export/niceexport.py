@@ -6,7 +6,7 @@ from typing import Any, Callable, NamedTuple, Union
 from app.config import Settings
 from app.core.utils import get_traits_list
 from app.schemas.common import Region
-from app.schemas.enums import ATTRIBUTE_NAME, CLASS_NAME, TRAIT_NAME, Trait
+from app.schemas.enums import ATTRIBUTE_NAME, CLASS_NAME, TRAIT_NAME, SvtClass, Trait
 from app.schemas.gameenums import (
     AI_COND_CHECK_NAME,
     AI_COND_NAME,
@@ -244,7 +244,9 @@ def get_nice_class(raw_data: Any) -> Any:
 
 def get_nice_attackrate(raw_data: Any) -> Any:
     return {
-        CLASS_NAME[class_data["id"]]: class_data["attackRate"]
+        CLASS_NAME.get(class_data["id"], SvtClass.atlasUnmappedClass): class_data[
+            "attackRate"
+        ]
         for class_data in raw_data
         if class_data["id"] in CLASS_NAME
     }

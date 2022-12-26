@@ -13,6 +13,7 @@ from ....schemas.enums import (
     SERVANT_POLICY_NAME,
     ServantPersonality,
     ServantPolicy,
+    SvtClass,
 )
 from ....schemas.gameenums import (
     CARD_TYPE_NAME,
@@ -158,7 +159,9 @@ async def get_nice_servant(
         "originalBattleName": raw_svt.mstSvt.battleName,
         "gender": GENDER_TYPE_NAME[raw_svt.mstSvt.genderType],
         "attribute": ATTRIBUTE_NAME[raw_svt.mstSvt.attri],
-        "className": CLASS_NAME[raw_svt.mstSvt.classId],
+        "className": CLASS_NAME.get(
+            raw_svt.mstSvt.classId, SvtClass.atlasUnmappedClass
+        ),
         "type": SVT_TYPE_NAME[raw_svt.mstSvt.type],
         "flag": SVT_FLAG_NAME[raw_svt.mstSvt.flag],
         "cost": raw_svt.mstSvt.cost,
