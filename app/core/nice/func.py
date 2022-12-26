@@ -53,6 +53,7 @@ LIST_DATAVALS = {
     "OffPositions",
     "NotTargetSkillIdArray",
 }
+STRING_DATAVALS = {"PopValueText"}
 
 
 async def parse_dataVals(
@@ -185,6 +186,8 @@ async def parse_dataVals(
                             output[array2[0]] = [int(i) for i in array2[1].split("/")]
                         except ValueError:
                             raise HTTPException(status_code=500, detail=error_message)
+                    elif array2[0] in STRING_DATAVALS:
+                        output[array2[0]] = array2[1]
                     else:
                         try:
                             text = array2[0]

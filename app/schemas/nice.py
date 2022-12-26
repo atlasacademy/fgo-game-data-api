@@ -336,7 +336,7 @@ class BaseVals(BaseModel):
     HpReduceToRegainIndiv: int | None = None
     DisplayActualRecoveryHpFlag: int | None = None
     ShiftDeckIndex: int | None = None
-    PopValueText: int | str | None = None
+    PopValueText: str | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
