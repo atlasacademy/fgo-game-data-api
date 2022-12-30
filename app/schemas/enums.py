@@ -902,6 +902,10 @@ class Trait(StrEnum):
     shinsengumiServant = "shinsengumiServant"
     ryozanpaku = "ryozanpaku"
     demonUnused = "demonUnused"
+    levitating = "levitating"
+    obstacleMaker = "obstacleMaker"
+    defender = "defender"
+    hasGoddessMetamorphosis = "hasGoddessMetamorphosis"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1066,6 +1070,10 @@ TRAIT_NAME: dict[int, Trait] = {
     2838: Trait.summerModeServant,
     2839: Trait.shinsengumiServant,
     2840: Trait.ryozanpaku,
+    2847: Trait.levitating,
+    2848: Trait.obstacleMaker,
+    2949: Trait.defender,
+    2850: Trait.hasGoddessMetamorphosis,
     # 2xxx: CQ or Story quests buff
     3000: Trait.attackPhysical,  # Normal attack, including NP
     3001: Trait.attackProjectile,
