@@ -1,4 +1,5 @@
 .vscode/
+.fleet/
 .idea/
 .vs/
 play*
