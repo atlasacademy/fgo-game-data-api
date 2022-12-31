@@ -906,6 +906,7 @@ class Trait(StrEnum):
     obstacleMaker = "obstacleMaker"
     defender = "defender"
     hasGoddessMetamorphosis = "hasGoddessMetamorphosis"
+    servantsWithSkyAttribute = "servantsWithSkyAttribute"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1072,8 +1073,9 @@ TRAIT_NAME: dict[int, Trait] = {
     2840: Trait.ryozanpaku,
     2847: Trait.levitating,
     2848: Trait.obstacleMaker,
-    2949: Trait.defender,
+    2849: Trait.defender,
     2850: Trait.hasGoddessMetamorphosis,
+    2851: Trait.servantsWithSkyAttribute,
     # 2xxx: CQ or Story quests buff
     3000: Trait.attackPhysical,  # Normal attack, including NP
     3001: Trait.attackProjectile,
