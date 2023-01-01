@@ -907,6 +907,7 @@ class Trait(StrEnum):
     defender = "defender"
     hasGoddessMetamorphosis = "hasGoddessMetamorphosis"
     servantsWithSkyAttribute = "servantsWithSkyAttribute"
+    moon = "moon"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1000,7 +1001,7 @@ TRAIT_NAME: dict[int, Trait] = {
     2003: Trait.dragonSlayer,
     2004: Trait.roman,
     2005: Trait.wildbeast,
-    2006: Trait.atalante,
+    2006: Trait.moon,
     2007: Trait.saberface,
     2008: Trait.weakToEnumaElish,
     2009: Trait.riding,
@@ -1192,6 +1193,7 @@ OLD_TRAIT_MAPPING = {
     Trait.kingproteaGrowth: 2387,
     Trait.gubijin: 2833,
     Trait.buffIncreaseDefenceAgainstIndividuality: 3058,
+    Trait.atalante: 2006,
 }
 
 TRAIT_NAME_REVERSE |= OLD_TRAIT_MAPPING
