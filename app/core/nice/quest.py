@@ -126,8 +126,11 @@ def get_nice_stage(
     enemies: list[QuestEnemy],
     bgms: list[MstBgm],
     waveStartMovies: dict[int, list[NiceStageStartMovie]],
+    lang: Language,
 ) -> NiceStage:
-    bgm = get_nice_bgm(region, next(bgm for bgm in bgms if bgm.id == raw_stage.bgmId))
+    bgm = get_nice_bgm(
+        region, next(bgm for bgm in bgms if bgm.id == raw_stage.bgmId), lang
+    )
 
     return NiceStage(
         wave=raw_stage.wave,
@@ -429,7 +432,9 @@ async def get_nice_quest_phase(
             )
 
     new_nice_stages = [
-        get_nice_stage(region, stage, enemies, db_data.raw.mstBgm, waveStartMovies)
+        get_nice_stage(
+            region, stage, enemies, db_data.raw.mstBgm, waveStartMovies, lang
+        )
         for stage, enemies in zip(stages, quest_enemies)
     ]
     db_data.nice.stages = new_nice_stages

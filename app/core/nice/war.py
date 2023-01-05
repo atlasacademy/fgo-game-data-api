@@ -106,10 +106,13 @@ def get_nice_map(
     bgms: list[MstBgm],
     gimmicks: list[MstMapGimmick],
     war_asset_id: int,
+    lang: Language,
 ) -> NiceMap:
     base_settings = {"base_url": settings.asset_url, "region": region}
 
-    bgm = get_nice_bgm(region, next(bgm for bgm in bgms if bgm.id == raw_map.bgmId))
+    bgm = get_nice_bgm(
+        region, next(bgm for bgm in bgms if bgm.id == raw_map.bgmId), lang
+    )
 
     return NiceMap(
         id=raw_map.id,
@@ -272,7 +275,9 @@ async def get_nice_war(
     banner_file = banner_template.format(banner_id)
 
     bgm = get_nice_bgm(
-        region, next(bgm for bgm in raw_war.mstBgm if bgm.id == raw_war.mstWar.bgmId)
+        region,
+        next(bgm for bgm in raw_war.mstBgm if bgm.id == raw_war.mstWar.bgmId),
+        lang,
     )
 
     return NiceWar(
@@ -321,6 +326,7 @@ async def get_nice_war(
                     if gimmick.mapId == raw_map.id
                 ],
                 war_asset_id,
+                lang,
             )
             for raw_map in raw_war.mstMap
         ],
