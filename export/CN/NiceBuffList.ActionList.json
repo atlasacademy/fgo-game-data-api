@@ -1192,7 +1192,9 @@
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": []
+    "maxRate": [
+      10000
+    ]
   },
   "functionAttack": {
     "limit": "none",
@@ -1491,7 +1493,9 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": []
+    "maxRate": [
+      5000
+    ]
   },
   "counterFunction": {
     "limit": "none",
@@ -1503,6 +1507,8 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": []
+    "maxRate": [
+      0
+    ]
   }
 }

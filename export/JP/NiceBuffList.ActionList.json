@@ -126,7 +126,9 @@
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": []
+    "maxRate": [
+      10000
+    ]
   },
   "damageIndividualityActiveonly": {
     "limit": "upper",

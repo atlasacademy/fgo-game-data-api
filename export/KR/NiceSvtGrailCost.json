@@ -49,6 +49,56 @@
       "qp": 8000000,
       "addLvMax": 35,
       "frameType": "black"
+    },
+    "11": {
+      "qp": 9000000,
+      "addLvMax": 37,
+      "frameType": "frame0803"
+    },
+    "12": {
+      "qp": 9000000,
+      "addLvMax": 39,
+      "frameType": "frame0803"
+    },
+    "13": {
+      "qp": 9000000,
+      "addLvMax": 41,
+      "frameType": "frame0803"
+    },
+    "14": {
+      "qp": 9000000,
+      "addLvMax": 43,
+      "frameType": "frame0803"
+    },
+    "15": {
+      "qp": 9000000,
+      "addLvMax": 45,
+      "frameType": "frame0803"
+    },
+    "16": {
+      "qp": 9000000,
+      "addLvMax": 47,
+      "frameType": "frame0803"
+    },
+    "17": {
+      "qp": 9000000,
+      "addLvMax": 49,
+      "frameType": "frame0803"
+    },
+    "18": {
+      "qp": 9000000,
+      "addLvMax": 51,
+      "frameType": "frame0803"
+    },
+    "19": {
+      "qp": 9000000,
+      "addLvMax": 53,
+      "frameType": "frame0803"
+    },
+    "20": {
+      "qp": 9000000,
+      "addLvMax": 55,
+      "frameType": "frame0803"
     }
   },
   "1": {
@@ -101,6 +151,56 @@
       "qp": 7000000,
       "addLvMax": 40,
       "frameType": "gold"
+    },
+    "11": {
+      "qp": 8000000,
+      "addLvMax": 42,
+      "frameType": "frame0801"
+    },
+    "12": {
+      "qp": 8000000,
+      "addLvMax": 44,
+      "frameType": "frame0801"
+    },
+    "13": {
+      "qp": 8000000,
+      "addLvMax": 46,
+      "frameType": "frame0801"
+    },
+    "14": {
+      "qp": 8000000,
+      "addLvMax": 48,
+      "frameType": "frame0801"
+    },
+    "15": {
+      "qp": 8000000,
+      "addLvMax": 50,
+      "frameType": "frame0801"
+    },
+    "16": {
+      "qp": 8000000,
+      "addLvMax": 52,
+      "frameType": "frame0801"
+    },
+    "17": {
+      "qp": 8000000,
+      "addLvMax": 54,
+      "frameType": "frame0801"
+    },
+    "18": {
+      "qp": 8000000,
+      "addLvMax": 56,
+      "frameType": "frame0801"
+    },
+    "19": {
+      "qp": 8000000,
+      "addLvMax": 58,
+      "frameType": "frame0801"
+    },
+    "20": {
+      "qp": 8000000,
+      "addLvMax": 60,
+      "frameType": "frame0801"
     }
   },
   "2": {
@@ -153,6 +253,56 @@
       "qp": 8000000,
       "addLvMax": 35,
       "frameType": "gold"
+    },
+    "11": {
+      "qp": 9000000,
+      "addLvMax": 37,
+      "frameType": "frame0801"
+    },
+    "12": {
+      "qp": 9000000,
+      "addLvMax": 39,
+      "frameType": "frame0801"
+    },
+    "13": {
+      "qp": 9000000,
+      "addLvMax": 41,
+      "frameType": "frame0801"
+    },
+    "14": {
+      "qp": 9000000,
+      "addLvMax": 43,
+      "frameType": "frame0801"
+    },
+    "15": {
+      "qp": 9000000,
+      "addLvMax": 45,
+      "frameType": "frame0801"
+    },
+    "16": {
+      "qp": 9000000,
+      "addLvMax": 47,
+      "frameType": "frame0801"
+    },
+    "17": {
+      "qp": 9000000,
+      "addLvMax": 49,
+      "frameType": "frame0801"
+    },
+    "18": {
+      "qp": 9000000,
+      "addLvMax": 51,
+      "frameType": "frame0801"
+    },
+    "19": {
+      "qp": 9000000,
+      "addLvMax": 53,
+      "frameType": "frame0801"
+    },
+    "20": {
+      "qp": 9000000,
+      "addLvMax": 55,
+      "frameType": "frame0801"
     }
   },
   "3": {
@@ -200,6 +350,56 @@
       "qp": 9000000,
       "addLvMax": 30,
       "frameType": "gold"
+    },
+    "10": {
+      "qp": 10000000,
+      "addLvMax": 32,
+      "frameType": "frame0801"
+    },
+    "11": {
+      "qp": 10000000,
+      "addLvMax": 34,
+      "frameType": "frame0801"
+    },
+    "12": {
+      "qp": 10000000,
+      "addLvMax": 36,
+      "frameType": "frame0801"
+    },
+    "13": {
+      "qp": 10000000,
+      "addLvMax": 38,
+      "frameType": "frame0801"
+    },
+    "14": {
+      "qp": 10000000,
+      "addLvMax": 40,
+      "frameType": "frame0801"
+    },
+    "15": {
+      "qp": 10000000,
+      "addLvMax": 42,
+      "frameType": "frame0801"
+    },
+    "16": {
+      "qp": 10000000,
+      "addLvMax": 44,
+      "frameType": "frame0801"
+    },
+    "17": {
+      "qp": 10000000,
+      "addLvMax": 46,
+      "frameType": "frame0801"
+    },
+    "18": {
+      "qp": 10000000,
+      "addLvMax": 48,
+      "frameType": "frame0801"
+    },
+    "19": {
+      "qp": 10000000,
+      "addLvMax": 50,
+      "frameType": "frame0801"
     }
   },
   "4": {
@@ -237,6 +437,56 @@
       "qp": 10000000,
       "addLvMax": 20,
       "frameType": "gold"
+    },
+    "8": {
+      "qp": 12000000,
+      "addLvMax": 22,
+      "frameType": "frame0801"
+    },
+    "9": {
+      "qp": 12000000,
+      "addLvMax": 24,
+      "frameType": "frame0801"
+    },
+    "10": {
+      "qp": 12000000,
+      "addLvMax": 26,
+      "frameType": "frame0801"
+    },
+    "11": {
+      "qp": 12000000,
+      "addLvMax": 28,
+      "frameType": "frame0801"
+    },
+    "12": {
+      "qp": 12000000,
+      "addLvMax": 30,
+      "frameType": "frame0801"
+    },
+    "13": {
+      "qp": 12000000,
+      "addLvMax": 32,
+      "frameType": "frame0801"
+    },
+    "14": {
+      "qp": 12000000,
+      "addLvMax": 34,
+      "frameType": "frame0801"
+    },
+    "15": {
+      "qp": 12000000,
+      "addLvMax": 36,
+      "frameType": "frame0801"
+    },
+    "16": {
+      "qp": 12000000,
+      "addLvMax": 38,
+      "frameType": "frame0801"
+    },
+    "17": {
+      "qp": 12000000,
+      "addLvMax": 40,
+      "frameType": "frame0801"
     }
   },
   "5": {
@@ -264,6 +514,56 @@
       "qp": 13000000,
       "addLvMax": 10,
       "frameType": "gold"
+    },
+    "6": {
+      "qp": 15000000,
+      "addLvMax": 12,
+      "frameType": "frame0801"
+    },
+    "7": {
+      "qp": 15000000,
+      "addLvMax": 14,
+      "frameType": "frame0801"
+    },
+    "8": {
+      "qp": 15000000,
+      "addLvMax": 16,
+      "frameType": "frame0801"
+    },
+    "9": {
+      "qp": 15000000,
+      "addLvMax": 18,
+      "frameType": "frame0801"
+    },
+    "10": {
+      "qp": 15000000,
+      "addLvMax": 20,
+      "frameType": "frame0801"
+    },
+    "11": {
+      "qp": 15000000,
+      "addLvMax": 22,
+      "frameType": "frame0801"
+    },
+    "12": {
+      "qp": 15000000,
+      "addLvMax": 24,
+      "frameType": "frame0801"
+    },
+    "13": {
+      "qp": 15000000,
+      "addLvMax": 26,
+      "frameType": "frame0801"
+    },
+    "14": {
+      "qp": 15000000,
+      "addLvMax": 28,
+      "frameType": "frame0801"
+    },
+    "15": {
+      "qp": 15000000,
+      "addLvMax": 30,
+      "frameType": "frame0801"
     }
   }
 }

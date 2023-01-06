@@ -377,7 +377,7 @@
   {
     "id": 26,
     "className": "beastIIIL",
-    "name": "獸Ⅲ／L",
+    "name": "BeastⅢ／L",
     "individuality": "unknown",
     "attackRate": 1000,
     "imageId": 9999,
@@ -392,7 +392,7 @@
   {
     "id": 27,
     "className": "beastUnknown",
-    "name": "ビースト？",
+    "name": "Beast？",
     "individuality": "unknown",
     "attackRate": 1000,
     "imageId": 9999,
