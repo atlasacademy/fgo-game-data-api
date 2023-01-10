@@ -469,6 +469,7 @@ async def load_and_export(
     redis: Redis,
     region_path: dict[Region, DirectoryPath],
     async_engines: dict[Region, AsyncEngine],
+    enable_webhook: bool,
 ) -> None:  # pragma: no cover
     if settings.write_postgres_data:
         update_db(region_path)
@@ -479,9 +480,11 @@ async def load_and_export(
     await update_master_repo_info(redis, region_path)
     if settings.clear_redis_cache:
         await clear_redis_cache(redis, region_path)
-    await report_webhooks(region_path, "load")
+    if enable_webhook:
+        await report_webhooks(region_path, "load")
     await generate_exports(redis, region_path, async_engines)
-    await report_webhooks(region_path, "export")
+    if enable_webhook:
+        await report_webhooks(region_path, "export")
 
 
 def update_data_repo(

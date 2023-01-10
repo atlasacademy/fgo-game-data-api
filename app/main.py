@@ -307,7 +307,7 @@ async def startup() -> None:
         region: region_data.gamedata for region, region_data in settings.data.items()
     }
 
-    await load_and_export(redis, region_pathes, async_engines)
+    await load_and_export(redis, region_pathes, async_engines, False)
 
 
 @app.on_event("shutdown")
