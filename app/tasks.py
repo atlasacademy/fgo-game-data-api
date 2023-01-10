@@ -479,7 +479,9 @@ async def load_and_export(
     await update_master_repo_info(redis, region_path)
     if settings.clear_redis_cache:
         await clear_redis_cache(redis, region_path)
+    await report_webhooks(region_path, "load")
     await generate_exports(redis, region_path, async_engines)
+    await report_webhooks(region_path, "export")
 
 
 def update_data_repo(
@@ -495,12 +497,15 @@ def update_data_repo(
 
 
 async def report_webhooks(
-    region_path: dict[Region, DirectoryPath]
+    region_path: dict[Region, DirectoryPath],
+    event: str,
 ) -> None:  # pragma: no cover
     async with httpx.AsyncClient() as client:
         for index, url in enumerate(settings.webhooks):
             try:
-                await client.post(url, json={"regions": list(region_path.keys())})
+                await client.post(
+                    url, json={"regions": list(region_path.keys()), "event": event}
+                )
             except Exception:  # pylint: disable=broad-except
                 logger.exception(f"Failed to report webhook {index}")
 
@@ -512,4 +517,3 @@ async def pull_and_update(
 ) -> None:  # pragma: no cover
     await run_in_threadpool(lambda: update_data_repo(region_path))
     await load_and_export(redis, region_path, async_engines)
-    await report_webhooks(region_path)
