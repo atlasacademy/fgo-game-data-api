@@ -475,16 +475,19 @@ async def load_and_export(
         update_db(region_path)
     if settings.write_redis_data:
         await load_redis_data(redis, region_path)
+        await update_master_repo_info(redis, region_path)
     if settings.write_postgres_data or settings.write_redis_data:
         await load_svt_extra(redis, region_path)
-    await update_master_repo_info(redis, region_path)
+        if enable_webhook:
+            await report_webhooks(region_path, "load")
+
     if settings.clear_redis_cache:
         await clear_redis_cache(redis, region_path)
-    if enable_webhook:
-        await report_webhooks(region_path, "load")
-    await generate_exports(redis, region_path, async_engines)
-    if enable_webhook:
-        await report_webhooks(region_path, "export")
+
+    if settings.export_all_nice:
+        await generate_exports(redis, region_path, async_engines)
+        if enable_webhook:
+            await report_webhooks(region_path, "export")
 
 
 def update_data_repo(
@@ -519,4 +522,4 @@ async def pull_and_update(
     redis: Redis,
 ) -> None:  # pragma: no cover
     await run_in_threadpool(lambda: update_data_repo(region_path))
-    await load_and_export(redis, region_path, async_engines)
+    await load_and_export(redis, region_path, async_engines, True)
