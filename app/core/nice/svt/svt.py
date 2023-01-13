@@ -247,8 +247,11 @@ async def get_nice_servant(
         for svt_card in raw_svt.mstSvtCard
     }
 
+    card_add_map = {card_add.cardId: card_add for card_add in raw_svt.mstSvtCardAdd}
     nice_data["cardDetails"] = {
-        CARD_TYPE_NAME[svt_card.cardId]: get_nice_card(svt_card)
+        CARD_TYPE_NAME[svt_card.cardId]: get_nice_card(
+            svt_card, card_add_map.get(svt_card.cardId)
+        )
         for svt_card in raw_svt.mstSvtCard
     }
 

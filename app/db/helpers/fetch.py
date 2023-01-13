@@ -77,6 +77,7 @@ from ...models.raw import (
     mstSvtAppendPassiveSkill,
     mstSvtAppendPassiveSkillUnlock,
     mstSvtCard,
+    mstSvtCardAdd,
     mstSvtChange,
     mstSvtCoin,
     mstSvtComment,
@@ -173,6 +174,7 @@ from ...schemas.raw import (
     MstSvtAppendPassiveSkill,
     MstSvtAppendPassiveSkillUnlock,
     MstSvtCard,
+    MstSvtCardAdd,
     MstSvtChange,
     MstSvtCoin,
     MstSvtComment,
@@ -247,6 +249,7 @@ schema_table_fetch_all: dict[  # type:ignore
     Type[BaseModelORJson], tuple[Table, ColumnElement, ColumnElement]
 ] = {
     MstSvtCard: (mstSvtCard, mstSvtCard.c.svtId, mstSvtCard.c.cardId),
+    MstSvtCardAdd: (mstSvtCardAdd, mstSvtCardAdd.c.svtId, mstSvtCardAdd.c.cardId),
     MstSvtLimit: (mstSvtLimit, mstSvtLimit.c.svtId, mstSvtLimit.c.limitCount),
     MstCombineSkill: (mstCombineSkill, mstCombineSkill.c.id, mstCombineSkill.c.skillLv),
     MstSvtChange: (mstSvtChange, mstSvtChange.c.svtId, mstSvtChange.c.priority),

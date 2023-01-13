@@ -361,6 +361,12 @@ class MstSvtCard(BaseModelORJson):
     attackType: int  # 5001
 
 
+class MstSvtCardAdd(BaseModelORJson):
+    svtId: int
+    cardId: int
+    script: str
+
+
 class BasicMstSvtLimit(BaseModelORJson):
     rarity: int
     hpMax: int
@@ -1702,6 +1708,7 @@ class ServantEntity(BaseModelORJson):
     mstTreasureDevice: list[TdEntityNoReverse]
     mstSvtIndividuality: list[MstSvtIndividuality]
     mstSvtCard: list[MstSvtCard]
+    mstSvtCardAdd: list[MstSvtCardAdd]
     mstSvtLimit: list[MstSvtLimit]
     mstCombineSkill: list[MstCombineSkill]
     mstCombineLimit: list[MstCombineLimit]

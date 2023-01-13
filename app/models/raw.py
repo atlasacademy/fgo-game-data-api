@@ -376,6 +376,15 @@ mstSvtCard = Table(
 )
 
 
+mstSvtCardAdd = Table(
+    "mstSvtCardAdd",
+    metadata,
+    Column("svtId", Integer, index=True),
+    Column("cardId", Integer),
+    Column("script", String),
+)
+
+
 mstCombineLimit = Table(
     "mstCombineLimit",
     metadata,
@@ -2050,7 +2059,7 @@ TABLES_TO_BE_LOADED = [
     [mstSkill, mstSkillAdd, mstSkillDetail],
     [mstSvtAdd],
     [mstSvtAppendPassiveSkill, mstSvtAppendPassiveSkillUnlock],
-    [mstSvtCard],
+    [mstSvtCard, mstSvtCardAdd],
     [mstSvtChange],
     [mstSvtCoin],
     [mstSvtComment],

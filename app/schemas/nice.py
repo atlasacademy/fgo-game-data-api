@@ -695,6 +695,10 @@ class NiceCardDetail(BaseModel):
     hitsDistribution: list[int]
     attackIndividuality: list[NiceTrait]
     attackType: NiceCommandCardAttackType
+    damageRate: int | None
+    attackNpRate: int | None
+    defenseNpRate: int | None
+    dropStarRate: int | None
 
 
 AscensionAddData = TypeVar("AscensionAddData")

@@ -93,6 +93,7 @@ from ..schemas.raw import (
     MstSvtAppendPassiveSkill,
     MstSvtAppendPassiveSkillUnlock,
     MstSvtCard,
+    MstSvtCardAdd,
     MstSvtChange,
     MstSvtCoin,
     MstSvtComment,
@@ -393,6 +394,7 @@ async def get_servant_entity(
 
     mstSvtIndividuality = await fetch.get_all(conn, MstSvtIndividuality, servant_id)
     mstSvtCard = await fetch.get_all(conn, MstSvtCard, servant_id)
+    mstSvtCardAdd = await fetch.get_all(conn, MstSvtCardAdd, servant_id)
     mstSvtLimit = await fetch.get_all(conn, MstSvtLimit, servant_id)
     mstCombineSkill = await fetch.get_all(conn, MstCombineSkill, svt_db.combineSkillId)
     mstCombineLimit = await fetch.get_all(conn, MstCombineLimit, svt_db.combineLimitId)
@@ -473,6 +475,7 @@ async def get_servant_entity(
         mstSvt=svt_db,
         mstSvtIndividuality=mstSvtIndividuality,
         mstSvtCard=mstSvtCard,
+        mstSvtCardAdd=mstSvtCardAdd,
         mstSvtLimit=mstSvtLimit,
         mstCombineSkill=mstCombineSkill,
         mstCombineLimit=mstCombineLimit,
