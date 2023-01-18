@@ -2,6 +2,7 @@ import hashlib
 import json
 import time
 import tomllib
+import pickle
 from math import ceil
 from typing import Any, Awaitable, Callable, Optional
 
@@ -13,8 +14,6 @@ from fastapi.openapi.utils import get_openapi
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi_cache import FastAPICache
-from fastapi_cache.backends import Backend
-from fastapi_cache.coder import PickleCoder
 from redis.asyncio import Redis as AsyncRedis
 from sqlalchemy.ext.asyncio import AsyncConnection
 
@@ -267,18 +266,18 @@ def custom_key_builder(
     return f"{prefix}:{region}:{namespace}:{cache_key}"
 
 
-class RedisBackend(Backend):  # pragma: no cover
+class RedisBackend:  # pragma: no cover
     def __init__(self, redis: Redis):
-        self.redis = redis
+        self.redis: Redis = redis
 
     async def get_with_ttl(self, key: str) -> tuple[int, str]:
         async with self.redis.pipeline(transaction=True) as pipe:
             return await pipe.ttl(key).get(key).execute()  # type: ignore
 
-    async def get(self, key: str) -> Any:
+    async def get(self, key: str) -> bytes | None:
         return await self.redis.get(key)
 
-    async def set(self, key: str, value: str, expire: int | None = None) -> Any:
+    async def set(self, key: str, value: str, expire: int | None = None) -> bool | None:
         return await self.redis.set(key, value, ex=expire)
 
     async def clear(self, namespace: str | None = None, key: str | None = None) -> int:
@@ -291,15 +290,25 @@ class RedisBackend(Backend):  # pragma: no cover
         raise ValueError("Either namespace or key must be specified.")
 
 
+class PickleCoder:  # pragma: no cover
+    @classmethod
+    def encode(cls, value: Any) -> bytes:
+        return pickle.dumps(value)
+
+    @classmethod
+    def decode(cls, value: bytes) -> Any:
+        return pickle.loads(value)
+
+
 @app.on_event("startup")
 async def startup() -> None:
     redis = await Redis.from_url(settings.redisdsn)
     FastAPICache.init(
-        RedisBackend(redis),
+        RedisBackend(redis),  # type: ignore
         prefix=f"{settings.redis_prefix}:cache",
         expire=60 * 60 * 24 * 7,
         key_builder=custom_key_builder,
-        coder=PickleCoder,  # pyright: reportGeneralTypeIssues=false
+        coder=PickleCoder,  # type: ignore
     )
     app.state.redis = redis
 
