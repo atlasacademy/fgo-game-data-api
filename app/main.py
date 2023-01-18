@@ -267,7 +267,7 @@ def custom_key_builder(
     return f"{prefix}:{region}:{namespace}:{cache_key}"
 
 
-class RedisBackend(Backend):  # type: ignore # pragma: no cover
+class RedisBackend(Backend):  # pragma: no cover
     def __init__(self, redis: Redis):
         self.redis = redis
 

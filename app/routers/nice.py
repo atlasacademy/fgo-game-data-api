@@ -70,7 +70,7 @@ svt_lang_lore_description = """
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403, 500]),
 )
-@cache()  # type: ignore
+@cache()
 async def find_servant(
     search_param: ServantSearchQueryParams = Depends(ServantSearchQueryParams),
     lang: Language = Depends(language_parameter),
@@ -116,7 +116,7 @@ if settings.documentation_all_nice:
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_servant(
     region: Region,
     servant_id: int,
@@ -144,7 +144,7 @@ equip_lore_description = """
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403, 500]),
 )
-@cache()  # type: ignore
+@cache()
 async def find_equip(
     search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
     lang: Language = Depends(language_parameter),
@@ -190,7 +190,7 @@ if settings.documentation_all_nice:
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_equip(
     region: Region,
     equip_id: int,
@@ -213,7 +213,7 @@ async def get_equip(
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403, 500]),
 )
-@cache()  # type: ignore
+@cache()
 async def find_svt(
     search_param: SvtSearchQueryParams = Depends(SvtSearchQueryParams),
     lang: Language = Depends(language_parameter),
@@ -239,7 +239,7 @@ async def find_svt(
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_svt(
     region: Region,
     svt_id: int,
@@ -279,7 +279,7 @@ if settings.documentation_all_nice:
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_mystic_code(
     region: Region,
     mc_id: int,
@@ -311,7 +311,7 @@ if settings.documentation_all_nice:
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_command_code(
     region: Region,
     cc_id: int,
@@ -339,7 +339,7 @@ and return the reverse skill objects.
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
-@cache()  # type: ignore
+@cache()
 async def find_skill(
     search_param: SkillSearchParams = Depends(SkillSearchParams),
     lang: Language = Depends(language_parameter),
@@ -374,7 +374,7 @@ async def find_skill(
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_skill(
     region: Region,
     skill_id: int,
@@ -408,7 +408,7 @@ and return the reversed servant objects.
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
-@cache()  # type: ignore
+@cache()
 async def find_td(
     search_param: TdSearchParams = Depends(TdSearchParams),
     lang: Language = Depends(language_parameter),
@@ -443,7 +443,7 @@ async def find_td(
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_td(
     region: Region,
     np_id: int,
@@ -478,7 +478,7 @@ and return the reversed skill objects.
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403, 500]),
 )
-@cache()  # type: ignore
+@cache()
 async def find_function(
     search_param: FuncSearchQueryParams = Depends(FuncSearchQueryParams),
     lang: Language = Depends(language_parameter),
@@ -517,7 +517,7 @@ async def find_function(
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_function(
     region: Region,
     func_id: int,
@@ -553,7 +553,7 @@ and return the reversed function objects.
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403, 500]),
 )
-@cache()  # type: ignore
+@cache()
 async def find_buff(
     search_param: BuffSearchQueryParams = Depends(BuffSearchQueryParams),
     lang: Language = Depends(language_parameter),
@@ -591,7 +591,7 @@ async def find_buff(
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_buff(
     region: Region,
     buff_id: int,
@@ -618,7 +618,7 @@ async def get_buff(
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
-@cache()  # type: ignore
+@cache()
 async def find_item(
     search_param: ItemSearchQueryParams = Depends(ItemSearchQueryParams),
     lang: Language = Depends(language_parameter),
@@ -652,7 +652,7 @@ if settings.documentation_all_nice:
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_item(
     region: Region,
     item_id: int,
@@ -673,7 +673,7 @@ async def get_item(
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_mm(
     region: Region,
     master_mission_id: int,
@@ -696,7 +696,7 @@ async def get_mm(
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_event(
     region: Region,
     event_id: int,
@@ -717,7 +717,7 @@ async def get_event(
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-@cache(expire=settings.quest_cache_length)  # type: ignore
+@cache(expire=settings.quest_cache_length)
 async def get_war(
     region: Region,
     war_id: int,
@@ -765,7 +765,7 @@ async def get_quest_phase(
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-@cache(expire=settings.quest_cache_length)  # type: ignore
+@cache(expire=settings.quest_cache_length)
 async def get_quest(
     region: Region,
     quest_id: int,
@@ -807,7 +807,7 @@ async def find_script(
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_script(
     region: Region,
     script_id: str,
@@ -830,7 +830,7 @@ async def get_script(
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_ai_field(
     region: Region,
     ai_type: AiType,
@@ -856,7 +856,7 @@ async def get_ai_field(
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_bgm(
     region: Region,
     bgm_id: int,
@@ -878,7 +878,7 @@ async def get_bgm(
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
-@cache()  # type: ignore
+@cache()
 async def find_shop(
     search_param: ShopSearchQueryParams = Depends(ShopSearchQueryParams),
     lang: Language = Depends(language_parameter),
@@ -898,7 +898,7 @@ async def find_shop(
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_shop(
     region: Region,
     shop_id: int,
@@ -918,7 +918,7 @@ async def get_shop(
     response_model=list[NiceCommonRelease],
     response_model_exclude_unset=True,
 )
-@cache()  # type: ignore
+@cache()
 async def get_common_releases(region: Region, common_release_id: int) -> Response:
     """
     Get the common release data from the given ID

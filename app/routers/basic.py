@@ -55,7 +55,7 @@ basic_find_servant_extra = """
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
-@cache()  # type: ignore
+@cache()
 async def find_servant(
     search_param: ServantSearchQueryParams = Depends(ServantSearchQueryParams),
     lang: Optional[Language] = None,
@@ -100,7 +100,7 @@ if settings.documentation_all_nice:
     description=get_servant_description,
     responses=get_error_code([400, 403]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_servant(
     region: Region,
     servant_id: int,
@@ -123,7 +123,7 @@ async def get_servant(
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
-@cache()  # type: ignore
+@cache()
 async def find_equip(
     search_param: EquipSearchQueryParams = Depends(EquipSearchQueryParams),
     lang: Optional[Language] = None,
@@ -167,7 +167,7 @@ if settings.documentation_all_nice:
     description=get_equip_description,
     responses=get_error_code([400, 403]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_equip(
     region: Region,
     equip_id: int,
@@ -188,7 +188,7 @@ async def get_equip(
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
-@cache()  # type: ignore
+@cache()
 async def find_svt(
     search_param: SvtSearchQueryParams = Depends(SvtSearchQueryParams),
     lang: Optional[Language] = None,
@@ -214,7 +214,7 @@ async def find_svt(
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_svt(
     region: Region,
     svt_id: int,
@@ -253,7 +253,7 @@ if settings.documentation_all_nice:
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_mystic_code(
     region: Region,
     mc_id: int,
@@ -285,7 +285,7 @@ if settings.documentation_all_nice:
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_command_code(
     region: Region,
     cc_id: int,
@@ -313,7 +313,7 @@ and return the reverse skill objects.
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
-@cache()  # type: ignore
+@cache()
 async def find_skill(
     search_param: SkillSearchParams = Depends(SkillSearchParams),
     reverse: bool = False,
@@ -346,7 +346,7 @@ async def find_skill(
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_skill(
     region: Region,
     skill_id: int,
@@ -375,7 +375,7 @@ and return the reversed servant objects.
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
-@cache()  # type: ignore
+@cache()
 async def find_td(
     search_param: TdSearchParams = Depends(TdSearchParams),
     reverse: bool = False,
@@ -408,7 +408,7 @@ async def find_td(
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_td(
     region: Region,
     np_id: int,
@@ -436,7 +436,7 @@ and return the reversed skill objects.
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
-@cache()  # type: ignore
+@cache()
 async def find_function(
     search_param: FuncSearchQueryParams = Depends(FuncSearchQueryParams),
     reverse: bool = False,
@@ -466,7 +466,7 @@ async def find_function(
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_function(
     region: Region,
     func_id: int,
@@ -499,7 +499,7 @@ and return the reversed function objects.
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
-@cache()  # type: ignore
+@cache()
 async def find_buff(
     search_param: BuffSearchQueryParams = Depends(BuffSearchQueryParams),
     reverse: bool = False,
@@ -528,7 +528,7 @@ async def find_buff(
     response_model_exclude_unset=True,
     responses=get_error_code([404]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_buff(
     region: Region,
     buff_id: int,
@@ -550,7 +550,7 @@ async def get_buff(
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_event(
     region: Region,
     event_id: int,
@@ -571,7 +571,7 @@ async def get_event(
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_war(
     region: Region,
     war_id: int,
@@ -591,7 +591,7 @@ async def get_war(
     response_model=list[BasicQuestPhase],
     response_model_exclude_unset=True,
 )
-@cache(expire=settings.quest_cache_length)  # type: ignore
+@cache(expire=settings.quest_cache_length)
 async def get_latest_quest_phase_with_enemies(
     region: Region,
     lang: Language = Depends(language_parameter),
@@ -611,7 +611,7 @@ async def get_latest_quest_phase_with_enemies(
     response_model_exclude_unset=True,
     responses=get_error_code([400, 403]),
 )
-@cache(expire=settings.quest_cache_length)  # type: ignore
+@cache(expire=settings.quest_cache_length)
 async def find_quest_phase(
     search_param: QuestSearchQueryParams = Depends(QuestSearchQueryParams),
     lang: Language = Depends(language_parameter),
@@ -631,7 +631,7 @@ async def find_quest_phase(
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_quest_phase(
     region: Region,
     quest_id: int,
@@ -655,7 +655,7 @@ async def get_quest_phase(
     response_model_exclude_unset=True,
     responses=get_error_code([404, 500]),
 )
-@cache()  # type: ignore
+@cache()
 async def get_quest(
     region: Region,
     quest_id: int,
