@@ -19,6 +19,7 @@ from ...schemas.nice import (
     DeckType,
     EnemyAi,
     EnemyDrop,
+    EnemyInfoScript,
     EnemyLimit,
     EnemyMisc,
     EnemyPassive,
@@ -138,6 +139,15 @@ def get_enemy_script(enemyScript: dict[str, Any]) -> EnemyScript:
         enemy_script["forceDropItem"] = "forceDropItem" in enemyScript
 
     return EnemyScript.parse_obj(enemy_script)
+
+
+def get_enemy_info_script(infoScript: dict[str, Any]) -> EnemyInfoScript:
+    info_script: dict[str, Any] = {}
+
+    if "isAddition" in infoScript:
+        info_script["isAddition"] = "isAddition" in infoScript
+
+    return EnemyInfoScript.parse_obj(info_script)
 
 
 def get_enemy_skills(svt: UserSvt, all_skills: MultipleNiceSkills) -> EnemySkill:
@@ -266,6 +276,11 @@ async def get_quest_enemy(
         enemyScript=get_enemy_script(
             deck_svt.enemyScript if deck_svt.enemyScript else {}
         ),
+        originalEnemyScript=deck_svt.enemyScript or {},
+        infoScript=get_enemy_info_script(
+            deck_svt.infoScript if deck_svt.infoScript else {}
+        ),
+        originalInfoScript=deck_svt.infoScript or {},
         limit=get_enemy_limit(user_svt),
         misc=get_enemy_misc(user_svt),
     )

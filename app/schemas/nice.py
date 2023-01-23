@@ -1,6 +1,6 @@
 from decimal import Decimal
 from enum import StrEnum
-from typing import Generic, Optional, TypeVar
+from typing import Any, Generic, Optional, TypeVar
 
 from pydantic import BaseModel, Field, HttpUrl
 from pydantic.generics import GenericModel
@@ -1927,6 +1927,10 @@ class EnemyScript(BaseModelORJson):
     NoSkipDead: Optional[bool]
 
 
+class EnemyInfoScript(BaseModelORJson):
+    isAddition: bool | None
+
+
 class EnemySkill(BaseModelORJson):
     skillId1: int
     skillId2: int
@@ -2049,6 +2053,9 @@ class QuestEnemy(BaseModelORJson):
     serverMod: EnemyServerMod
     ai: EnemyAi
     enemyScript: EnemyScript
+    originalEnemyScript: dict[str, Any]
+    infoScript: EnemyInfoScript
+    originalInfoScript: dict[str, Any]
     limit: EnemyLimit
     misc: EnemyMisc
 
