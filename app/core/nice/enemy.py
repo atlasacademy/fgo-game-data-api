@@ -349,6 +349,12 @@ def get_enemies_in_stage(
     return stage_enemies
 
 
+@dataclass
+class QuestEnemies:
+    enemy_waves: list[list[QuestEnemy]]
+    npc_ai: QuestEnemy | None = None
+
+
 async def get_quest_enemies(
     conn: AsyncConnection,
     redis: Redis,
@@ -357,7 +363,7 @@ async def get_quest_enemies(
     quest_detail: QuestDetail,
     quest_drop: list[QuestDrop],
     lang: Language = Language.jp,
-) -> list[list[QuestEnemy]]:
+) -> QuestEnemies:
     npc_id_map: dict[DeckType, dict[int, DeckSvt]] = {}
     DECK_LIST: list[tuple[list[Deck], DeckType]] = [
         (quest_detail.enemyDeck, DeckType.ENEMY),
@@ -439,4 +445,19 @@ async def get_quest_enemies(
 
         out_enemies.append(stage_nice_enemies)
 
-    return out_enemies
+    if quest_detail.aiNpcDeck is not None and quest_detail.aiNpcDeck.svts:
+        svt_deck = quest_detail.aiNpcDeck.svts[0]
+        nice_npc_ai = await get_quest_enemy(
+            redis=redis,
+            region=region,
+            deck_svt_info=EnemyDeckInfo(DeckType.AI_NPC, svt_deck),
+            user_svt=user_svt_id[svt_deck.userSvtId],
+            drops=[],
+            all_enemy_skills=all_skills,
+            all_enemy_tds=all_tds,
+            lang=lang,
+        )
+    else:
+        nice_npc_ai = None
+
+    return QuestEnemies(enemy_waves=out_enemies, npc_ai=nice_npc_ai)

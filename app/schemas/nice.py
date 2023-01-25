@@ -2024,6 +2024,7 @@ class DeckType(StrEnum):
     TRANSFORM = "transform"
     SKILL_SHIFT = "skillShift"
     MISSION_TARGET_SKILL_SHIFT = "missionTargetSkillShift"
+    AI_NPC = "aiNpc"
 
 
 class QuestEnemy(BaseModelORJson):
@@ -2152,6 +2153,7 @@ class SupportServant(BaseModelORJson):
 
 class NiceQuestPhaseAiNpc(BaseModelORJson):
     npc: NpcServant
+    detail: QuestEnemy | None = None
     aiIds: list[int]
 
 

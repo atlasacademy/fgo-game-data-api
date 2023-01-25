@@ -62,7 +62,7 @@ from .. import raw
 from ..utils import fmt_url, get_flags, get_traits_list, get_translation
 from .base_script import get_nice_script_link
 from .bgm import get_nice_bgm
-from .enemy import get_nice_drop, get_quest_enemies
+from .enemy import QuestEnemies, get_nice_drop, get_quest_enemies
 from .follower import get_nice_support_servants
 from .gift import get_nice_gift
 from .item import get_nice_item_amount_db
@@ -242,7 +242,7 @@ class DBQuestPhase:
     nice: NiceQuestPhase
 
 
-@cache()  # type: ignore
+@cache()
 async def get_nice_quest_phase_no_rayshift(
     conn: AsyncConnection,
     redis: Redis,
@@ -371,7 +371,7 @@ async def get_nice_quest_phase(
     save_stages_cache = True
 
     nice_quest_drops: list[EnemyDrop] = []
-    quest_enemies: list[list[QuestEnemy]] = [[]] * len(db_data.raw.mstStage)
+    quest_enemies = QuestEnemies(enemy_waves=[[]] * len(db_data.raw.mstStage))
     if stages:
         rayshift_quest_id = quest_id
         if questSelect is None:
@@ -417,6 +417,9 @@ async def get_nice_quest_phase(
         else:
             save_stages_cache = False
 
+    if quest_enemies.npc_ai is not None and db_data.nice.extraDetail.aiNpc is not None:
+        db_data.nice.extraDetail.aiNpc.detail = quest_enemies.npc_ai
+
     waveStartMovies: dict[int, list[NiceStageStartMovie]] = defaultdict(list)
     if (
         "waveStartMovie" in db_data.raw.mstQuestPhase.script
@@ -441,7 +444,7 @@ async def get_nice_quest_phase(
         get_nice_stage(
             region, stage, enemies, db_data.raw.mstBgm, waveStartMovies, lang
         )
-        for stage, enemies in zip(stages, quest_enemies)
+        for stage, enemies in zip(stages, quest_enemies.enemy_waves)
     ]
     db_data.nice.stages = new_nice_stages
     db_data.nice.drops = nice_quest_drops

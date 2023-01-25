@@ -132,6 +132,7 @@ class QuestDetail(BaseModelORJson):
     enemyDeck: list[Deck]
     transformDeck: Deck
     callDeck: list[Deck]
+    aiNpcDeck: Deck | None = None
     shiftDeck: list[Deck]
     raidInfo: list[RaidInfo]
     startRaidInfo: list[RaidInfo]
