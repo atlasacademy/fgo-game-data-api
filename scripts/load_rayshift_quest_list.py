@@ -46,10 +46,13 @@ def main(quest_ids: list[int], load_all: bool = False, no_load: bool = False) ->
             for i in range(0, len(query_ids), QUERY_IDS_PER_REQUEST):
                 request_query_ids = query_ids[i : i + QUERY_IDS_PER_REQUEST]
                 quest_details = get_multiple_quests(client, region, request_query_ids)
-                load_rayshift_quest_details(region, quest_details)
-                print(
-                    f"Loaded {min(i + QUERY_IDS_PER_REQUEST, len(query_ids))} query IDs"
-                )
+                if quest_details:
+                    load_rayshift_quest_details(region, quest_details)
+                    print(
+                        f"Loaded {min(i + QUERY_IDS_PER_REQUEST, len(query_ids))} query IDs"
+                    )
+                else:
+                    print(f"Failed to fetch query IDs: {request_query_ids}")
 
         rayshift_load_time = time.perf_counter() - start_loading_time
         print(f"Loaded {region} rayshift in {rayshift_load_time:.2f}s.")

@@ -4,6 +4,7 @@ from typing import Optional, Union
 import httpx
 from fastapi import HTTPException
 from httpx import Client
+from pydantic import ValidationError
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..config import Settings, logger
@@ -104,7 +105,10 @@ def get_multiple_quests(
         time.sleep(sleep_time)
         r = client.get(f"{QUEST_ENDPOINT}/get", params=params)
 
-    return QuestRayshiftResponse.parse_raw(r.content).response.questDetails
+    try:
+        return QuestRayshiftResponse.parse_raw(r.content).response.questDetails
+    except ValidationError:  # pragma: no cover
+        return {}
 
 
 def get_all_quest_lists(client: Client, region: Region) -> list[QuestList]:
