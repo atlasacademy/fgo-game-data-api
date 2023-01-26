@@ -352,7 +352,7 @@ def get_enemies_in_stage(
 @dataclass
 class QuestEnemies:
     enemy_waves: list[list[QuestEnemy]]
-    npc_ai: QuestEnemy | None = None
+    ai_npc: QuestEnemy | None = None
 
 
 async def get_quest_enemies(
@@ -447,7 +447,7 @@ async def get_quest_enemies(
 
     if quest_detail.aiNpcDeck is not None and quest_detail.aiNpcDeck.svts:
         svt_deck = quest_detail.aiNpcDeck.svts[0]
-        nice_npc_ai = await get_quest_enemy(
+        nice_ai_npc = await get_quest_enemy(
             redis=redis,
             region=region,
             deck_svt_info=EnemyDeckInfo(DeckType.AI_NPC, svt_deck),
@@ -458,6 +458,6 @@ async def get_quest_enemies(
             lang=lang,
         )
     else:
-        nice_npc_ai = None
+        nice_ai_npc = None
 
-    return QuestEnemies(enemy_waves=out_enemies, npc_ai=nice_npc_ai)
+    return QuestEnemies(enemy_waves=out_enemies, ai_npc=nice_ai_npc)

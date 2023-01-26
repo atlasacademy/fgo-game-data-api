@@ -365,6 +365,13 @@ async def get_nice_quest_phase(
     if rayshift_data:
         db_data.nice.stages = rayshift_data.stages
         db_data.nice.drops = rayshift_data.quest_drops
+
+        if (
+            rayshift_data.ai_npc is not None
+            and db_data.nice.extraDetail.aiNpc is not None
+        ):
+            db_data.nice.extraDetail.aiNpc.detail = rayshift_data.ai_npc
+
         return db_data.nice
 
     stages = sorted(db_data.raw.mstStage, key=lambda stage: stage.wave)
@@ -417,8 +424,8 @@ async def get_nice_quest_phase(
         else:
             save_stages_cache = False
 
-    if quest_enemies.npc_ai is not None and db_data.nice.extraDetail.aiNpc is not None:
-        db_data.nice.extraDetail.aiNpc.detail = quest_enemies.npc_ai
+    if quest_enemies.ai_npc is not None and db_data.nice.extraDetail.aiNpc is not None:
+        db_data.nice.extraDetail.aiNpc.detail = quest_enemies.ai_npc
 
     waveStartMovies: dict[int, list[NiceStageStartMovie]] = defaultdict(list)
     if (
@@ -450,7 +457,9 @@ async def get_nice_quest_phase(
     db_data.nice.drops = nice_quest_drops
     if save_stages_cache:
         cache_data = RayshiftRedisData(
-            quest_drops=nice_quest_drops, stages=new_nice_stages
+            quest_drops=nice_quest_drops,
+            stages=new_nice_stages,
+            ai_npc=quest_enemies.ai_npc,
         )
         long_ttl = time.time() > db_data.nice.closedAt
         await set_stages_cache(
