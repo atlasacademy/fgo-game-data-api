@@ -17321,6 +17321,16 @@
               94074544
             ]
           },
+          "originalEnemyScript": {
+            "shift": [
+              94074543,
+              94074544
+            ],
+            "appear": 1,
+            "billBoardGroup": 1
+          },
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -19999,6 +20009,15 @@
               94074541
             ]
           },
+          "originalEnemyScript": {
+            "shift": [
+              94074541
+            ],
+            "appear": 1,
+            "billBoardGroup": 1
+          },
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 3,
             "imageLimitCount": 0,
@@ -20923,6 +20942,11 @@
           "enemyScript": {
             "appear": true
           },
+          "originalEnemyScript": {
+            "appear": 1
+          },
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -21867,6 +21891,12 @@
             "appear": true,
             "NoSkipDead": true
           },
+          "originalEnemyScript": {
+            "appear": 1,
+            "NoSkipDead": 1
+          },
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -24561,6 +24591,12 @@
             "deathType": "escape",
             "appear": true
           },
+          "originalEnemyScript": {
+            "kill": 1,
+            "appear": 1
+          },
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 3,
             "imageLimitCount": 0,

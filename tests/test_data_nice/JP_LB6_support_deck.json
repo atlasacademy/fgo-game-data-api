@@ -7173,6 +7173,13 @@
             "billBoardGroup": 1,
             "NoSkipDead": true
           },
+          "originalEnemyScript": {
+            "kill": 1,
+            "NoSkipDead": 1,
+            "billBoardGroup": 1
+          },
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -7769,6 +7776,13 @@
             "billBoardGroup": 1,
             "NoSkipDead": true
           },
+          "originalEnemyScript": {
+            "kill": 1,
+            "NoSkipDead": 1,
+            "billBoardGroup": 1
+          },
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -8375,6 +8389,13 @@
             "billBoardGroup": 1,
             "NoSkipDead": true
           },
+          "originalEnemyScript": {
+            "kill": 1,
+            "NoSkipDead": 1,
+            "billBoardGroup": 1
+          },
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -8971,6 +8992,13 @@
             "billBoardGroup": 1,
             "NoSkipDead": true
           },
+          "originalEnemyScript": {
+            "kill": 1,
+            "NoSkipDead": 1,
+            "billBoardGroup": 1
+          },
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -9577,6 +9605,13 @@
             "billBoardGroup": 1,
             "NoSkipDead": true
           },
+          "originalEnemyScript": {
+            "kill": 1,
+            "NoSkipDead": 1,
+            "billBoardGroup": 1
+          },
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -10183,6 +10218,13 @@
             "billBoardGroup": 1,
             "NoSkipDead": true
           },
+          "originalEnemyScript": {
+            "kill": 1,
+            "NoSkipDead": 1,
+            "billBoardGroup": 1
+          },
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -10787,6 +10829,13 @@
             "billBoardGroup": 1,
             "NoSkipDead": true
           },
+          "originalEnemyScript": {
+            "kill": 1,
+            "NoSkipDead": 1,
+            "billBoardGroup": 1
+          },
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -11366,6 +11415,13 @@
             "billBoardGroup": 1,
             "NoSkipDead": true
           },
+          "originalEnemyScript": {
+            "kill": 1,
+            "NoSkipDead": 1,
+            "billBoardGroup": 1
+          },
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -11945,6 +12001,13 @@
             "billBoardGroup": 1,
             "NoSkipDead": true
           },
+          "originalEnemyScript": {
+            "kill": 1,
+            "NoSkipDead": 1,
+            "billBoardGroup": 1
+          },
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -12579,6 +12642,14 @@
               3000931
             ]
           },
+          "originalEnemyScript": {
+            "shift": [
+              3000931
+            ],
+            "appear": 1
+          },
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -13205,6 +13276,12 @@
             "deathType": "escape",
             "NoSkipDead": true
           },
+          "originalEnemyScript": {
+            "kill": 1,
+            "NoSkipDead": 1
+          },
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,

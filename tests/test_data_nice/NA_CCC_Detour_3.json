@@ -686,6 +686,9 @@
             "maxActNum": 3
           },
           "enemyScript": {},
+          "originalEnemyScript": {},
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -2213,6 +2216,11 @@
           "enemyScript": {
             "appear": true
           },
+          "originalEnemyScript": {
+            "appear": 1
+          },
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 2,
             "imageLimitCount": 0,
@@ -3523,6 +3531,14 @@
               94034215
             ]
           },
+          "originalEnemyScript": {
+            "shift": [
+              94034215
+            ],
+            "appear": 1
+          },
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 2,
             "imageLimitCount": 0,
@@ -4896,6 +4912,11 @@
           "enemyScript": {
             "appear": true
           },
+          "originalEnemyScript": {
+            "appear": 1
+          },
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 2,
             "imageLimitCount": 0,
@@ -6153,6 +6174,9 @@
             "maxActNum": 3
           },
           "enemyScript": {},
+          "originalEnemyScript": {},
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 2,
             "imageLimitCount": 0,
@@ -7470,6 +7494,13 @@
           "enemyScript": {
             "shiftClear": []
           },
+          "originalEnemyScript": {
+            "shiftClear": [
+              0
+            ]
+          },
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 2,
             "imageLimitCount": 0,

@@ -2545,6 +2545,9 @@
             "maxActNum": 2
           },
           "enemyScript": {},
+          "originalEnemyScript": {},
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -3142,6 +3145,9 @@
             "maxActNum": 2
           },
           "enemyScript": {},
+          "originalEnemyScript": {},
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -3711,6 +3717,9 @@
             "maxActNum": 2
           },
           "enemyScript": {},
+          "originalEnemyScript": {},
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -4290,6 +4299,9 @@
             "maxActNum": 2
           },
           "enemyScript": {},
+          "originalEnemyScript": {},
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -4869,6 +4881,9 @@
             "maxActNum": 2
           },
           "enemyScript": {},
+          "originalEnemyScript": {},
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -5448,6 +5463,9 @@
             "maxActNum": 2
           },
           "enemyScript": {},
+          "originalEnemyScript": {},
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -6027,6 +6045,9 @@
             "maxActNum": 2
           },
           "enemyScript": {},
+          "originalEnemyScript": {},
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -6606,6 +6627,9 @@
             "maxActNum": 2
           },
           "enemyScript": {},
+          "originalEnemyScript": {},
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,

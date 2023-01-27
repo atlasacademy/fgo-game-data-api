@@ -3033,6 +3033,11 @@
           "enemyScript": {
             "appear": true
           },
+          "originalEnemyScript": {
+            "appear": 1
+          },
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,

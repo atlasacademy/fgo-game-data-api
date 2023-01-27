@@ -769,6 +769,9 @@
             "maxActNum": 2
           },
           "enemyScript": {},
+          "originalEnemyScript": {},
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -1387,6 +1390,9 @@
             "maxActNum": 2
           },
           "enemyScript": {},
+          "originalEnemyScript": {},
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -2029,6 +2035,9 @@
             "maxActNum": 2
           },
           "enemyScript": {},
+          "originalEnemyScript": {},
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -2656,6 +2665,9 @@
             "maxActNum": 2
           },
           "enemyScript": {},
+          "originalEnemyScript": {},
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -3283,6 +3295,9 @@
             "maxActNum": 2
           },
           "enemyScript": {},
+          "originalEnemyScript": {},
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 1,
             "imageLimitCount": 0,
@@ -4809,6 +4824,11 @@
           "enemyScript": {
             "appear": true
           },
+          "originalEnemyScript": {
+            "appear": 1
+          },
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 3,
             "imageLimitCount": 0,
@@ -5845,6 +5865,11 @@
           "enemyScript": {
             "appear": true
           },
+          "originalEnemyScript": {
+            "appear": 1
+          },
+          "infoScript": {},
+          "originalInfoScript": {},
           "limit": {
             "limitCount": 0,
             "imageLimitCount": 0,
