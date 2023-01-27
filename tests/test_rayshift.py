@@ -43,13 +43,6 @@ async def test_rayshift_uncached_quest(client: AsyncClient) -> None:
         assert conn.execute(select_stmt).fetchone()
 
 
-@pytest.mark.skipif(doesnt_have_rayshift_api_key, reason=skip_reason)
-def test_rayshift_get_quest_list() -> None:
-    client = Client(follow_redirects=True)
-    quest_list = get_all_quest_lists(client, Region.NA)
-    assert len(quest_list) > 100
-
-
 def test_rayshift_missing_ids() -> None:
     query_ids = get_missing_query_ids(Region.NA)
     assert len(query_ids) >= 0

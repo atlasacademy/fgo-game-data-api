@@ -1,7 +1,7 @@
 import functools
 from typing import Any, Iterable, Optional, Union
 
-from sqlalchemy import Boolean, Integer, Table
+from sqlalchemy import Integer, Table
 from sqlalchemy.dialects.postgresql import array_agg
 from sqlalchemy.exc import DBAPIError
 from sqlalchemy.ext.asyncio import AsyncConnection
@@ -16,7 +16,7 @@ from sqlalchemy.sql import (
     or_,
     select,
 )
-from sqlalchemy.sql.elements import ClauseElement
+from sqlalchemy.sql._typing import _ColumnExpressionArgument
 
 from ...models.raw import (
     ScriptFileList,
@@ -212,10 +212,10 @@ async def get_quest_phase_search(
             ),
         )
 
-    def questDetail_contains(userSvt_shape: dict[str, Any]) -> ColumnElement[Boolean]:
+    def questDetail_contains(userSvt_shape: dict[str, Any]) -> ColumnElement[bool]:
         return rayshiftQuest.c.questDetail.contains({"userSvt": [userSvt_shape]})
 
-    where_clause: list[ClauseElement] = []
+    where_clause: list[_ColumnExpressionArgument[bool]] = []
     if name:
         where_clause.append(mstQuest.c.name.ilike(f"%{name}%"))
     if spot_name:

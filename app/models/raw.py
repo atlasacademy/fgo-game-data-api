@@ -638,7 +638,7 @@ mstSvtScript = Table(
 )
 
 
-Index("ix_mstSvtScript_svtId", mstSvtScript.c.id / 10)
+Index("ix_mstSvtScript_svtId", mstSvtScript.c.id // 10)
 
 
 mstSvtComment = Table(

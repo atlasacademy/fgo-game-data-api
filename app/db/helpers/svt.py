@@ -4,7 +4,7 @@ from sqlalchemy import Table
 from sqlalchemy.exc import DBAPIError
 from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import Join, and_, not_, or_, select, true
-from sqlalchemy.sql.elements import ClauseElement
+from sqlalchemy.sql._typing import _ColumnExpressionArgument
 
 from ...models.raw import (
     mstCv,
@@ -92,7 +92,7 @@ async def get_svt_script(
 ) -> list[MstSvtScript]:
     stmt = (
         select(mstSvtScript)
-        .where((mstSvtScript.c.id / 10).in_(svt_ids))
+        .where((mstSvtScript.c.id // 10).in_(set(svt_ids)))
         .order_by(mstSvtScript.c.id, mstSvtScript.c.form)
     )
     return [
@@ -180,7 +180,7 @@ async def get_svt_search(
     cv: Optional[str] = None,
 ) -> list[MstSvt]:
     from_clause: Union[Join, Table] = mstSvt
-    where_clause: list[ClauseElement] = [true()]
+    where_clause: list[_ColumnExpressionArgument[bool]] = [true()]
 
     if svt_type_ints:
         where_clause.append(mstSvt.c.type.in_(svt_type_ints))
@@ -231,7 +231,7 @@ async def get_svt_search(
             mstSvtVoice, mstSvtVoice.c.id == mstSvt.c.id
         )
 
-    or_voice_clause: list[ClauseElement] = []
+    or_voice_clause: list[_ColumnExpressionArgument[bool]] = []
     if cond_svt_value:
         or_voice_clause += [
             mstSvtVoice.c.scriptJson.contains(

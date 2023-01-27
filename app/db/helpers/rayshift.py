@@ -228,7 +228,7 @@ async def get_rayshift_drops(
     stmt = individual_enemy_drops.union_all(run_drops)
 
     results = await conn.execute(stmt)
-    return [QuestDrop.parse_obj(row) for row in results.fetchall()]
+    return [QuestDrop.from_orm(row) for row in results.fetchall()]
 
 
 insert_quest_stmt = insert(rayshiftQuest)

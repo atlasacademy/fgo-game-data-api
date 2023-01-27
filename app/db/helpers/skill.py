@@ -1,4 +1,4 @@
-from typing import Any, Iterable, Optional
+from typing import Iterable, Optional
 
 from sqlalchemy.dialects.postgresql import aggregate_order_by, array_agg
 from sqlalchemy.exc import DBAPIError
@@ -16,7 +16,7 @@ from ...models.raw import (
     mstSkillLv,
     mstSvtSkill,
 )
-from ...schemas.raw import MstSkill, SkillEntityNoReverse
+from ...schemas.raw import MstSkill, MstSvtSkill, SkillEntityNoReverse
 from .utils import sql_jsonb_agg
 
 
@@ -101,10 +101,10 @@ async def get_skillEntity(
     return sorted(skill_entities, key=lambda skill: order[skill.mstSkill.id])
 
 
-async def get_mstSvtSkill(conn: AsyncConnection, svt_id: int) -> list[Any]:
+async def get_mstSvtSkill(conn: AsyncConnection, svt_id: int) -> list[MstSvtSkill]:
     mstSvtSkill_stmt = select(mstSvtSkill).where(mstSvtSkill.c.svtId == svt_id)
-    fetched: list[Any] = (await conn.execute(mstSvtSkill_stmt)).fetchall()
-    return fetched
+    fetched = (await conn.execute(mstSvtSkill_stmt)).fetchall()
+    return [MstSvtSkill.from_orm(svt_skill) for svt_skill in fetched]
 
 
 async def get_skill_search(

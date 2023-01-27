@@ -1,4 +1,4 @@
-from typing import Any, Iterable, Optional
+from typing import Iterable, Optional
 
 from sqlalchemy.dialects.postgresql import aggregate_order_by
 from sqlalchemy.exc import DBAPIError
@@ -11,7 +11,7 @@ from ...models.raw import (
     mstTreasureDeviceDetail,
     mstTreasureDeviceLv,
 )
-from ...schemas.raw import MstTreasureDevice, TdEntityNoReverse
+from ...schemas.raw import MstSvtTreasureDevice, MstTreasureDevice, TdEntityNoReverse
 from .utils import sql_jsonb_agg
 
 
@@ -75,12 +75,14 @@ async def get_tdEntity(
     return sorted(td_entities, key=lambda td: order[td.mstTreasureDevice.id])
 
 
-async def get_mstSvtTreasureDevice(conn: AsyncConnection, svt_id: int) -> list[Any]:
+async def get_mstSvtTreasureDevice(
+    conn: AsyncConnection, svt_id: int
+) -> list[MstSvtTreasureDevice]:
     mstSvtTreasureDevice_stmt = select(mstSvtTreasureDevice).where(
         mstSvtTreasureDevice.c.svtId == svt_id
     )
-    fetched: list[Any] = (await conn.execute(mstSvtTreasureDevice_stmt)).fetchall()
-    return fetched
+    fetched = (await conn.execute(mstSvtTreasureDevice_stmt)).fetchall()
+    return [MstSvtTreasureDevice.from_orm(svt_td) for svt_td in fetched]
 
 
 async def get_td_search(

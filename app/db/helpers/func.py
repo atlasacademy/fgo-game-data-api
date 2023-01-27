@@ -1,7 +1,8 @@
-from typing import Any, Iterable, Optional
+from typing import Iterable, Optional
 
 from sqlalchemy.ext.asyncio import AsyncConnection
-from sqlalchemy.sql import and_, select
+from sqlalchemy.sql import and_, select, true
+from sqlalchemy.sql._typing import _ColumnExpressionArgument
 
 from ...models.raw import mstFunc
 from ...schemas.raw import MstFunc
@@ -16,7 +17,7 @@ async def get_func_search(
     tvals: Optional[Iterable[int]],
     questTvals: Optional[Iterable[int]],
 ) -> list[MstFunc]:
-    where_clause: list[Any] = [True]
+    where_clause: list[_ColumnExpressionArgument[bool]] = [true()]
     if func_types:
         where_clause.append(mstFunc.c.funcType.in_(func_types))
     if target_types:

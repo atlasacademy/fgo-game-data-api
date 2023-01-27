@@ -1,7 +1,6 @@
-from __future__ import annotations
-
 import argparse
 import asyncio
+import platform
 
 import aiofiles
 import orjson
@@ -91,5 +90,8 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args()
+
+    if platform.system() == "Windows":
+        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
     asyncio.run(main(args.raw, args.nice, args.basic, args.test))

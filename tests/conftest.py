@@ -1,5 +1,6 @@
 import asyncio
-from asyncio.events import AbstractEventLoop
+import platform
+from asyncio.events import AbstractEventLoop, AbstractEventLoopPolicy
 from typing import AsyncGenerator, Generator
 
 import pytest
@@ -22,7 +23,11 @@ def event_loop() -> Generator[AbstractEventLoop, None, None]:
     Create an instance of the default event loop for each test case.
     https://github.com/pytest-dev/pytest-asyncio/issues/171
     """
-    loop = asyncio.get_event_loop_policy().new_event_loop()
+    if platform.system() == "Windows":
+        policy: AbstractEventLoopPolicy = asyncio.WindowsSelectorEventLoopPolicy()
+    else:
+        policy = asyncio.get_event_loop_policy()
+    loop = policy.new_event_loop()
     yield loop
     loop.close()
 
@@ -37,7 +42,7 @@ async def client() -> AsyncGenerator[AsyncClient, None]:
 @pytest.fixture(scope="session")
 async def na_db_conn() -> AsyncGenerator[AsyncConnection, None]:
     engine = create_async_engine(
-        settings.data[Region.NA].postgresdsn.replace("postgresql", "postgresql+asyncpg")
+        settings.data[Region.NA].postgresdsn.replace("postgresql", "postgresql+psycopg")
     )
     connection = await engine.connect()
     try:

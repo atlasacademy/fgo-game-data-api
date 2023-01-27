@@ -3,7 +3,7 @@ from typing import Iterable
 from sqlalchemy import Table
 from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import Join, and_, select, true
-from sqlalchemy.sql.elements import ClauseElement
+from sqlalchemy.sql._typing import _ColumnExpressionArgument
 
 from ...models.raw import mstBoxGachaBase, mstEventTowerReward, mstShop, mstWar
 from ...schemas.raw import MstBoxGachaBase, MstEventTowerReward, MstShop, MstWar
@@ -59,7 +59,7 @@ async def get_shop_search(
     pay_type_ints: Iterable[int] | None = None,
 ) -> list[MstShop]:
     from_clause: Join | Table = mstShop
-    where_clause: list[ClauseElement] = [true()]
+    where_clause: list[_ColumnExpressionArgument[bool]] = [true()]
 
     if event_ids:
         where_clause.append(mstShop.c.eventId.in_(event_ids))

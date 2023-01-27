@@ -2,6 +2,7 @@ from typing import Iterable, Optional
 
 from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import and_, func, literal_column, select
+from sqlalchemy.sql._typing import _ColumnExpressionArgument
 
 from ...models.raw import ScriptFileList, mstMap, mstQuest, mstSpot, mstWar
 from ...schemas.raw import ScriptEntity, ScriptSearchResult
@@ -43,7 +44,9 @@ async def get_script_search(
         ScriptFileList.c.textScript, func.pgroonga_query_extract_keywords(search_query)
     )
 
-    where_conds = [ScriptFileList.c.textScript.op("&@~")(search_query)]
+    where_conds: list[_ColumnExpressionArgument[bool]] = [
+        ScriptFileList.c.textScript.op("&@~")(search_query)
+    ]
 
     if script_file_name:
         where_conds.append(
