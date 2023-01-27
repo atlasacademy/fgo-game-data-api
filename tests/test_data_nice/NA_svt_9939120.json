@@ -84,20 +84,28 @@
   },
   "cardDetails": {
     "weak": {
+      "hitsDistribution": [
+        100
+      ],
       "attackIndividuality": [
         {
           "id": 3001,
           "name": "attackProjectile"
         }
-      ]
+      ],
+      "attackType": "all"
     },
     "strength": {
+      "hitsDistribution": [
+        100
+      ],
       "attackIndividuality": [
         {
           "id": 3001,
           "name": "attackProjectile"
         }
-      ]
+      ],
+      "attackType": "all"
     }
   },
   "atkBase": 792,

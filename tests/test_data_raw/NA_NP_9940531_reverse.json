@@ -727,6 +727,7 @@
               "attackType": 2
             }
           ],
+          "mstSvtCardAdd": [],
           "mstSvtLimit": [
             {
               "weaponColor": 16777215,

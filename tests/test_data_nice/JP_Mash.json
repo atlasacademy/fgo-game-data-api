@@ -246,36 +246,56 @@
   },
   "cardDetails": {
     "arts": {
+      "hitsDistribution": [
+        33,
+        67
+      ],
       "attackIndividuality": [
         {
           "id": 3000,
           "name": "attackPhysical"
         }
-      ]
+      ],
+      "attackType": "one"
     },
     "buster": {
+      "hitsDistribution": [
+        100
+      ],
       "attackIndividuality": [
         {
           "id": 3000,
           "name": "attackPhysical"
         }
-      ]
+      ],
+      "attackType": "one"
     },
     "quick": {
+      "hitsDistribution": [
+        25,
+        75
+      ],
       "attackIndividuality": [
         {
           "id": 3000,
           "name": "attackPhysical"
         }
-      ]
+      ],
+      "attackType": "one"
     },
     "extra": {
+      "hitsDistribution": [
+        12,
+        25,
+        63
+      ],
       "attackIndividuality": [
         {
           "id": 3000,
           "name": "attackPhysical"
         }
-      ]
+      ],
+      "attackType": "one"
     }
   },
   "atkBase": 1455,

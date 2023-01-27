@@ -162,6 +162,7 @@
   "mstTreasureDevice": [],
   "mstSvtIndividuality": [],
   "mstSvtCard": [],
+  "mstSvtCardAdd": [],
   "mstSvtLimit": [
     {
       "weaponColor": 16777215,

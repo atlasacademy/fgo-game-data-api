@@ -757,36 +757,62 @@
           },
           "cardDetails": {
             "arts": {
+              "hitsDistribution": [
+                16,
+                33,
+                51
+              ],
               "attackIndividuality": [
                 {
                   "id": 3002,
                   "name": "attackMagical"
                 }
-              ]
+              ],
+              "attackType": "one"
             },
             "buster": {
+              "hitsDistribution": [
+                16,
+                33,
+                51
+              ],
               "attackIndividuality": [
                 {
                   "id": 3002,
                   "name": "attackMagical"
                 }
-              ]
+              ],
+              "attackType": "one"
             },
             "quick": {
+              "hitsDistribution": [
+                16,
+                33,
+                51
+              ],
               "attackIndividuality": [
                 {
                   "id": 3002,
                   "name": "attackMagical"
                 }
-              ]
+              ],
+              "attackType": "one"
             },
             "extra": {
+              "hitsDistribution": [
+                6,
+                13,
+                20,
+                26,
+                35
+              ],
               "attackIndividuality": [
                 {
                   "id": 3002,
                   "name": "attackMagical"
                 }
-              ]
+              ],
+              "attackType": "one"
             }
           },
           "atkBase": 1716,

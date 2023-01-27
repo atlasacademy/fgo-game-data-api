@@ -165,36 +165,61 @@
   },
   "cardDetails": {
     "arts": {
+      "hitsDistribution": [
+        16,
+        33,
+        51
+      ],
       "attackIndividuality": [
         {
           "id": 3001,
           "name": "attackProjectile"
         }
-      ]
+      ],
+      "attackType": "one"
     },
     "buster": {
+      "hitsDistribution": [
+        10,
+        20,
+        30,
+        40
+      ],
       "attackIndividuality": [
         {
           "id": 3001,
           "name": "attackProjectile"
         }
-      ]
+      ],
+      "attackType": "one"
     },
     "quick": {
+      "hitsDistribution": [
+        33,
+        67
+      ],
       "attackIndividuality": [
         {
           "id": 3001,
           "name": "attackProjectile"
         }
-      ]
+      ],
+      "attackType": "one"
     },
     "extra": {
+      "hitsDistribution": [
+        9,
+        18,
+        27,
+        46
+      ],
       "attackIndividuality": [
         {
           "id": 3001,
           "name": "attackProjectile"
         }
-      ]
+      ],
+      "attackType": "one"
     }
   },
   "atkBase": 1279,

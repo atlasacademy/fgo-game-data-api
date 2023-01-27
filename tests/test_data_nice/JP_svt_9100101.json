@@ -114,20 +114,30 @@
   },
   "cardDetails": {
     "weak": {
+      "hitsDistribution": [
+        16,
+        33,
+        51
+      ],
       "attackIndividuality": [
         {
           "id": 3000,
           "name": "attackPhysical"
         }
-      ]
+      ],
+      "attackType": "one"
     },
     "strength": {
+      "hitsDistribution": [
+        100
+      ],
       "attackIndividuality": [
         {
           "id": 3002,
           "name": "attackMagical"
         }
-      ]
+      ],
+      "attackType": "one"
     }
   },
   "atkBase": 604,
