@@ -2,7 +2,10 @@
   "id": 94074510,
   "name": "第九服「ぶっちぎり茶の湯バトル」",
   "type": "main",
-  "flags": [],
+  "flags": [
+    "notDisplayResultGetPoint",
+    "supportSelectAfterScript"
+  ],
   "consumeType": "ap",
   "consume": 5,
   "consumeItem": [],

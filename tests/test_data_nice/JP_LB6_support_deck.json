@@ -3,7 +3,11 @@
   "name": "ノリッジ（Ⅱ）",
   "type": "main",
   "flags": [
-    "enableFollowQuest"
+    "enableFollowQuest",
+    "supportSelectAfterScript",
+    "supportSvtEditablePosition",
+    "supportSvtMultipleSet",
+    "userEventDeck"
   ],
   "consumeType": "ap",
   "consume": 23,

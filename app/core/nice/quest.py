@@ -329,7 +329,7 @@ async def get_nice_quest_phase_no_rayshift(
             raw_quest.mstQuestPhaseDetail.consumeType
         ]
         nice_data["consume"] = raw_quest.mstQuestPhaseDetail.actConsume
-        nice_data["flags"] = list(
+        nice_data["flags"] = sorted(
             set(
                 nice_data["flags"]
                 + get_flags(raw_quest.mstQuestPhaseDetail.flag, Quest_FLAG_NAME)
