@@ -482,36 +482,16 @@ class TestServantSpecial:
 
     async def test_ascension_trait(self, client: AsyncClient) -> None:
         response = await client.get("/nice/JP/servant/603700")
-        expected = {
-            "ascension": {
-                "0": [
-                    {"id": 2, "name": "genderFemale"},
-                    {"id": 105, "name": "classAssassin"},
-                    {"id": 200, "name": "attributeSky"},
-                    {"id": 301, "name": "alignmentChaotic"},
-                    {"id": 304, "name": "alignmentEvil"},
-                    {"id": 1000, "name": "basedOnServant"},
-                    {"id": 2000, "name": "divine"},
-                    {"id": 2001, "name": "humanoid"},
-                    {"id": 2008, "name": "weakToEnumaElish"},
-                    {"id": 2009, "name": "riding"},
-                    {"id": 2011, "name": "skyOrEarthServant"},
-                    {"id": 2040, "name": "divineOrDemonOrUndead"},
-                    {"id": 2631, "name": "hominidaeServant"},
-                    {"id": 2667, "name": "childServant"},
-                    {"id": 2835, "name": "immuneToPigify"},
-                    {"id": 5000, "name": "canBeInBattle"},
-                    {"id": 603700, "name": "unknown"},
-                ],
-                "1": [],
-                "2": [],
-                "3": [],
-                "4": [],
-            },
-            "costume": {},
-        }
+        ascension_traits = response.json()["ascensionAdd"]["individuality"]["ascension"]
+
+        zero_ascension = {trait["name"] for trait in ascension_traits["0"]}
+        third_ascension = {trait["name"] for trait in ascension_traits["3"]}
+
         assert response.status_code == 200
-        assert response.json()["ascensionAdd"]["individuality"] == expected
+        assert (
+            "childServant" in zero_ascension and "childServant" not in third_ascension
+        )
+        assert "levitating" not in zero_ascension and "levitating" in third_ascension
 
     async def test_servant_change(self, client: AsyncClient) -> None:
         response = await client.get("/nice/NA/servant/184")

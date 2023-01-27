@@ -319,6 +319,14 @@
               "priority": 0,
               "num": 1,
               "giftAdds": []
+            },
+            {
+              "id": 315300,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -503,6 +511,14 @@
               "priority": 0,
               "num": 2,
               "giftAdds": []
+            },
+            {
+              "id": 315301,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -598,6 +614,14 @@
               "id": 315302,
               "type": "item",
               "objectId": 46,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 315302,
+              "type": "servant",
+              "objectId": 9770500,
               "priority": 0,
               "num": 3,
               "giftAdds": []
@@ -833,6 +857,14 @@
               "priority": 0,
               "num": 2,
               "giftAdds": []
+            },
+            {
+              "id": 315303,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -928,6 +960,14 @@
               "id": 315312,
               "type": "item",
               "objectId": 46,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            },
+            {
+              "id": 315312,
+              "type": "servant",
+              "objectId": 9770500,
               "priority": 0,
               "num": 2,
               "giftAdds": []
@@ -1112,6 +1152,14 @@
               "priority": 0,
               "num": 2,
               "giftAdds": []
+            },
+            {
+              "id": 315304,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -1236,6 +1284,14 @@
               "priority": 0,
               "num": 2,
               "giftAdds": []
+            },
+            {
+              "id": 315305,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -1357,6 +1413,14 @@
               "id": 315306,
               "type": "item",
               "objectId": 46,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            },
+            {
+              "id": 315306,
+              "type": "servant",
+              "objectId": 9770500,
               "priority": 0,
               "num": 2,
               "giftAdds": []
@@ -1711,6 +1775,14 @@
               "priority": 0,
               "num": 2,
               "giftAdds": []
+            },
+            {
+              "id": 315307,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -1820,6 +1892,14 @@
               "id": 315308,
               "type": "item",
               "objectId": 46,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
+            },
+            {
+              "id": 315308,
+              "type": "servant",
+              "objectId": 9770500,
               "priority": 0,
               "num": 2,
               "giftAdds": []
@@ -1968,6 +2048,14 @@
               "priority": 0,
               "num": 2,
               "giftAdds": []
+            },
+            {
+              "id": 315309,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -2098,6 +2186,14 @@
               "priority": 0,
               "num": 2,
               "giftAdds": []
+            },
+            {
+              "id": 315310,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 2,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -2207,6 +2303,14 @@
               "id": 315311,
               "type": "item",
               "objectId": 46,
+              "priority": 0,
+              "num": 3,
+              "giftAdds": []
+            },
+            {
+              "id": 315311,
+              "type": "servant",
+              "objectId": 9770500,
               "priority": 0,
               "num": 3,
               "giftAdds": []
@@ -2579,6 +2683,14 @@
               "priority": 0,
               "num": 5,
               "giftAdds": []
+            },
+            {
+              "id": 315314,
+              "type": "servant",
+              "objectId": 9770500,
+              "priority": 0,
+              "num": 10,
+              "giftAdds": []
             }
           ],
           "releaseConditions": [
@@ -2819,6 +2931,14 @@
               "id": 315313,
               "type": "item",
               "objectId": 46,
+              "priority": 0,
+              "num": 5,
+              "giftAdds": []
+            },
+            {
+              "id": 315313,
+              "type": "servant",
+              "objectId": 9770500,
               "priority": 0,
               "num": 5,
               "giftAdds": []

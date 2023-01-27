@@ -7582,7 +7582,7 @@
               ]
             },
             {
-              "funcId": 1893,
+              "funcId": 9861,
               "funcType": "addStateShort",
               "funcTargetType": "self",
               "funcTargetTeam": "playerAndEnemy",

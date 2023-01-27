@@ -142,7 +142,7 @@ test_cases_dict: dict[str, tuple[str, set[int]]] = {
         "JP/skill/search?strengthStatus=99&type=active&numFunctions=5&num=3",
         {165551, 292452, 621675, 2101550, 2142550},
     ),
-    "skill_search_priority": ("JP/skill/search?priority=5", {744450}),
+    "skill_search_priority": ("JP/skill/search?priority=5", {744450, 2162350}),
     "skill_search_name": (
         "NA/skill/search?name=Mystic%20Eyes%20of%20Distortion%20EX&lvl1coolDown=7",
         {454650},
@@ -193,7 +193,7 @@ test_cases_dict: dict[str, tuple[str, set[int]]] = {
     ),
     "func_popupText": (
         "NA/function/search?popupText=Curse&targetType=self&type=subState",
-        {2451, 6112},
+        {2451, 6112, 6585},
     ),
 }
 

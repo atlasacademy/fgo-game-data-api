@@ -84,6 +84,16 @@
           "num": 1,
           "lv": 0,
           "limitCount": 0
+        },
+        {
+          "sort_id": 3,
+          "id": 320300,
+          "type": 1,
+          "objectId": 9770500,
+          "priority": 0,
+          "num": 2,
+          "lv": 1,
+          "limitCount": 0
         }
       ],
       "mstGiftAdd": [],
