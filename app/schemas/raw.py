@@ -838,6 +838,7 @@ class MstBgm(BaseModelORJson):
     flag: int  # 0
     shopId: int  # 7000001
     logoId: int  # 1
+    script: str | None = None
 
 
 class MstBgmRelease(BaseModelORJson):

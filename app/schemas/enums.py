@@ -910,6 +910,10 @@ class Trait(StrEnum):
     moon = "moon"
     cardWeak = "cardWeak"
     cardStrong = "cardStrong"
+    servant = "servant"
+    shadow = "shadow"
+    chenGongNp = "chenGongNp"
+    cantBeSacrificed = "cantBeSacrificed"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -952,7 +956,7 @@ TRAIT_NAME: dict[int, Trait] = {
     305: Trait.alignmentBalanced,
     306: Trait.alignmentMadness,
     308: Trait.alignmentSummer,
-    1000: Trait.basedOnServant,  # can be NPC or enemy but use a servant's data
+    1000: Trait.servant,  # can be NPC or enemy but use a servant's data
     1001: Trait.human,  # Sanson's 3rd skill
     1002: Trait.undead,  # Scathach's 3rd skill
     1003: Trait.artificialDemon,
@@ -976,7 +980,7 @@ TRAIT_NAME: dict[int, Trait] = {
     1119: Trait.demon,
     1120: Trait.handOrDoor,
     1121: Trait.demonGodPillar,
-    1122: Trait.shadowServant,
+    1122: Trait.shadow,
     1128: Trait.enemyGardenOfSinnersLivingCorpse,
     1129: Trait.enemyGardenOfSinnersApartmentGhostAndSkeleton,
     1130: Trait.enemyGardenOfSinnersBaseModel,
@@ -1143,8 +1147,9 @@ TRAIT_NAME: dict[int, Trait] = {
     3064: Trait.buffSpecialInvincible,
     3065: Trait.buffSkillRankUp,
     3066: Trait.buffSleep,
-    3068: Trait.chenGongNpBlock,
+    3068: Trait.chenGongNp,
     3070: Trait.buffNullifyBuff,
+    3076: Trait.cantBeSacrificed,
     # 6016: No detail
     # 6021: No detail
     # 6022: No detail
@@ -1198,6 +1203,9 @@ OLD_TRAIT_MAPPING = {
     Trait.gubijin: 2833,
     Trait.buffIncreaseDefenceAgainstIndividuality: 3058,
     Trait.atalante: 2006,
+    Trait.basedOnServant: 1000,
+    Trait.shadowServant: 1122,
+    Trait.chenGongNpBlock: 3068,
 }
 
 TRAIT_NAME_REVERSE |= OLD_TRAIT_MAPPING

@@ -1506,6 +1506,7 @@ mstBgm = Table(
     Column("flag", Integer),
     Column("shopId", Integer),
     Column("logoId", Integer),
+    Column("script", String),
 )
 
 
