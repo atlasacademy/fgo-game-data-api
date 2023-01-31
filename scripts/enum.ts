@@ -127,6 +127,7 @@ export enum NiceFuncType {
     EVENT_FORTIFICATION_POINT_UP = "eventFortificationPointUp",
     GAIN_NP_INDIVIDUAL_SUM = "gainNpIndividualSum",
     SET_QUEST_ROUTE_FLAG = "setQuestRouteFlag",
+    LAST_USE_PLAYER_SKILL_COPY = "lastUsePlayerSkillCopy",
 }
 
 export enum NiceFuncTargetType {
@@ -317,8 +318,16 @@ export enum NiceBuffType {
     HP_REDUCE_TO_REGAIN = "hpReduceToRegain",
     SELFTURNSTART_FUNCTION = "selfturnstartFunction",
     OVERWRITE_DEAD_TYPE = "overwriteDeadType",
+    UP_ACTION_COUNT = "upActionCount",
+    DOWN_ACTION_COUNT = "downActionCount",
+    SHIFT_GUTS = "shiftGuts",
+    SHIFT_GUTS_RATIO = "shiftGutsRatio",
+    MASTER_SKILL_VALUE_UP = "masterSkillValueUp",
+    BUFF_CONVERT = "buffConvert",
+    SUB_FIELD_INDIVIDUALITY = "subFieldIndividuality",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
+    TO_FIELD_SUB_INDIVIDUALITY_FIELD = "toFieldSubIndividualityField",
 }
 
 export enum NiceBuffAction {
@@ -432,6 +441,12 @@ export enum NiceBuffAction {
     TURNEND_HP_REDUCE_TO_REGAIN = "turnendHpReduceToRegain",
     FUNCTION_SELFTURNSTART = "functionSelfturnstart",
     OVERWRITE_DEAD_TYPE = "overwriteDeadType",
+    ACTION_COUNT = "actionCount",
+    SHIFT_GUTS = "shiftGuts",
+    TO_FIELD_SUB_INDIVIDUALITY_FIELD = "toFieldSubIndividualityField",
+    MASTER_SKILL_VALUE_UP = "masterSkillValueUp",
+    BUFF_CONVERT = "buffConvert",
+    SUB_FIELD_INDIVIDUALITY = "subFieldIndividuality",
 }
 
 export enum NiceBuffLimit {
@@ -561,6 +576,14 @@ export enum NiceDataValsType {
     DisplayActualRecoveryHpFlag = "displayactualrecoveryhpflag",
     ShiftDeckIndex = "shiftdeckindex",
     PopValueText = "popvaluetext",
+    IsLossHpPerNow = "islosshppernow",
+    CopyTargetFunctionType = "copytargetfunctiontype",
+    CopyFunctionTargetPTOnly = "copyfunctiontargetptonly",
+    IgnoreValueUp = "ignorevalueup",
+    ApplyValueUp = "applyvalueup",
+    ActNoDamageBuff = "actnodamagebuff",
+    ActSelectIndex = "actselectindex",
+    CopyTargetBuffType = "copytargetbufftype",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -862,6 +885,10 @@ export enum NiceCondType {
     NOT_QUEST_CLEAR_BEFORE_EVENT_START = "notQuestClearBeforeEventStart",
     EVENT_TUTORIAL_FLAG_ON = "eventTutorialFlagOn",
     EVENT_TUTORIAL_FLAG_OFF = "eventTutorialFlagOff",
+    EVENT_SUPER_BOSS_VALUE_EQUAL = "eventSuperBossValueEqual",
+    NOT_EVENT_SUPER_BOSS_VALUE_EQUAL = "notEventSuperBossValueEqual",
+    SUPER_BOSS_DAMAGE_ABOVE = "superBossDamageAbove",
+    SUPER_BOSS_DAMAGE_BELOW = "superBossDamageBelow",
 }
 
 export enum NiceVoiceCondType {
@@ -1014,6 +1041,7 @@ export enum NiceQuestFlag {
     FORCE_DISPLAY_ENEMY_INFO = "forceDisplayEnemyInfo",
     ALLOUT_BATTLE = "alloutBattle",
     RECOLLECTION = "recollection",
+    NOT_SINGLE_SUPPORT_ONLY = "notSingleSupportOnly",
 }
 
 export enum NiceStatusRank {
@@ -1274,6 +1302,15 @@ export enum NiceAiCond {
     COUNT_CHAIN_LOWER = "countChainLower",
     COUNT_CHAIN_EQUAL = "countChainEqual",
     CHECK_SELECT_CHAIN = "checkSelectChain",
+    COUNT_PLAYER_NP_HIGHER = "countPlayerNpHigher",
+    COUNT_PLAYER_NP_LOWER = "countPlayerNpLower",
+    COUNT_PLAYER_NP_EQUAL = "countPlayerNpEqual",
+    COUNT_PLAYER_SKILL_HIGHER = "countPlayerSkillHigher",
+    COUNT_PLAYER_SKILL_LOWER = "countPlayerSkillLower",
+    COUNT_PLAYER_SKILL_EQUAL = "countPlayerSkillEqual",
+    COUNT_PLAYER_SKILL_HIGHER_INCLUDE_MASTER_SKILL = "countPlayerSkillHigherIncludeMasterSkill",
+    COUNT_PLAYER_SKILL_LOWER_INCLUDE_MASTER_SKILL = "countPlayerSkillLowerIncludeMasterSkill",
+    COUNT_PLAYER_SKILL_EQUAL_INCLUDE_MASTER_SKILL = "countPlayerSkillEqualIncludeMasterSkill",
 }
 
 export enum NiceAiActType {
@@ -1321,6 +1358,7 @@ export enum NiceAiActTarget {
 export enum NiceAiActNum {
     NOMAL = "nomal",
     ANYTIME = "anytime",
+    REACTION_PLYAER_SKILL = "reactionPlyaerSkill",
     REACTION_ENEMYTURN_START = "reactionEnemyturnStart",
     REACTION_ENEMYTURN_END = "reactionEnemyturnEnd",
     REACTION_DEAD = "reactionDead",
@@ -1452,6 +1490,9 @@ export enum NiceAiCondParameter {
     CHAIN_COUNT = "chainCount",
     CHECK_TARGET_SKILL_THISTURN = "checkTargetSkillThisturn",
     CHECK_SELECT_CHAIN = "checkSelectChain",
+    COUNT_PLAYER_NP = "countPlayerNp",
+    COUNT_PLAYER_SKILL = "countPlayerSkill",
+    COUNT_PLAYER_SKILL_INCLUDE_MASTER_SKILL = "countPlayerSkillIncludeMasterSkill",
 }
 
 export enum NiceAiCondRefine {
@@ -1563,6 +1604,7 @@ export enum NiceRestrictionType {
     FIXED_SVT_INDIVIDUALITY_POSITION_MAIN = "fixedSvtIndividualityPositionMain",
     UNIQUE_INDIVIDUALITY = "uniqueIndividuality",
     MY_SVT_OR_SUPPORT = "mySvtOrSupport",
+    DATA_LOST_BATTLE_UNIQUE_SVT = "dataLostBattleUniqueSvt",
 }
 
 export enum NiceRestrictionRangeType {

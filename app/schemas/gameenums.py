@@ -204,6 +204,7 @@ class FuncType(IntEnum):
     EVENT_FORTIFICATION_POINT_UP = 132
     GAIN_NP_INDIVIDUAL_SUM = 133
     SET_QUEST_ROUTE_FLAG = 134
+    LAST_USE_PLAYER_SKILL_COPY = 135
 
 
 class NiceFuncType(StrEnum):
@@ -305,6 +306,7 @@ class NiceFuncType(StrEnum):
     eventFortificationPointUp = "eventFortificationPointUp"
     gainNpIndividualSum = "gainNpIndividualSum"
     setQuestRouteFlag = "setQuestRouteFlag"
+    lastUsePlayerSkillCopy = "lastUsePlayerSkillCopy"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -404,6 +406,7 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     132: NiceFuncType.eventFortificationPointUp,
     133: NiceFuncType.gainNpIndividualSum,
     134: NiceFuncType.setQuestRouteFlag,
+    135: NiceFuncType.lastUsePlayerSkillCopy,
 }
 
 
@@ -664,8 +667,16 @@ class BuffType(IntEnum):
     HP_REDUCE_TO_REGAIN = 167
     SELFTURNSTART_FUNCTION = 168
     OVERWRITE_DEAD_TYPE = 169
+    UP_ACTION_COUNT = 170
+    DOWN_ACTION_COUNT = 171
+    SHIFT_GUTS = 172
+    SHIFT_GUTS_RATIO = 173
+    MASTER_SKILL_VALUE_UP = 174
+    BUFF_CONVERT = 175
+    SUB_FIELD_INDIVIDUALITY = 176
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
+    TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
 
 
 class NiceBuffType(StrEnum):
@@ -825,8 +836,16 @@ class NiceBuffType(StrEnum):
     hpReduceToRegain = "hpReduceToRegain"
     selfturnstartFunction = "selfturnstartFunction"
     overwriteDeadType = "overwriteDeadType"
+    upActionCount = "upActionCount"
+    downActionCount = "downActionCount"
+    shiftGuts = "shiftGuts"
+    shiftGutsRatio = "shiftGutsRatio"
+    masterSkillValueUp = "masterSkillValueUp"
+    buffConvert = "buffConvert"
+    subFieldIndividuality = "subFieldIndividuality"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
+    toFieldSubIndividualityField = "toFieldSubIndividualityField"
 
 
 BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
@@ -984,8 +1003,16 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     167: NiceBuffType.hpReduceToRegain,
     168: NiceBuffType.selfturnstartFunction,
     169: NiceBuffType.overwriteDeadType,
+    170: NiceBuffType.upActionCount,
+    171: NiceBuffType.downActionCount,
+    172: NiceBuffType.shiftGuts,
+    173: NiceBuffType.shiftGutsRatio,
+    174: NiceBuffType.masterSkillValueUp,
+    175: NiceBuffType.buffConvert,
+    176: NiceBuffType.subFieldIndividuality,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
+    10003: NiceBuffType.toFieldSubIndividualityField,
 }
 
 
@@ -1100,6 +1127,12 @@ class BuffAction(IntEnum):
     TURNEND_HP_REDUCE_TO_REGAIN = 107
     FUNCTION_SELFTURNSTART = 108
     OVERWRITE_DEAD_TYPE = 109
+    ACTION_COUNT = 110
+    SHIFT_GUTS = 111
+    TO_FIELD_SUB_INDIVIDUALITY_FIELD = 112
+    MASTER_SKILL_VALUE_UP = 113
+    BUFF_CONVERT = 114
+    SUB_FIELD_INDIVIDUALITY = 115
 
 
 class NiceBuffAction(StrEnum):
@@ -1215,6 +1248,12 @@ class NiceBuffAction(StrEnum):
     turnendHpReduceToRegain = "turnendHpReduceToRegain"
     functionSelfturnstart = "functionSelfturnstart"
     overwriteDeadType = "overwriteDeadType"
+    actionCount = "actionCount"
+    shiftGuts = "shiftGuts"
+    toFieldSubIndividualityField = "toFieldSubIndividualityField"
+    masterSkillValueUp = "masterSkillValueUp"
+    buffConvert = "buffConvert"
+    subFieldIndividuality = "subFieldIndividuality"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1328,6 +1367,12 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     107: NiceBuffAction.turnendHpReduceToRegain,
     108: NiceBuffAction.functionSelfturnstart,
     109: NiceBuffAction.overwriteDeadType,
+    110: NiceBuffAction.actionCount,
+    111: NiceBuffAction.shiftGuts,
+    112: NiceBuffAction.toFieldSubIndividualityField,
+    113: NiceBuffAction.masterSkillValueUp,
+    114: NiceBuffAction.buffConvert,
+    115: NiceBuffAction.subFieldIndividuality,
 }
 
 
@@ -1475,6 +1520,14 @@ class DataValsType(IntEnum):
     DisplayActualRecoveryHpFlag = 116
     ShiftDeckIndex = 117
     PopValueText = 118
+    IsLossHpPerNow = 119
+    CopyTargetFunctionType = 120
+    CopyFunctionTargetPTOnly = 121
+    IgnoreValueUp = 122
+    ApplyValueUp = 123
+    ActNoDamageBuff = 124
+    ActSelectIndex = 125
+    CopyTargetBuffType = 126
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -2054,6 +2107,10 @@ class CondType(IntEnum):
     NOT_QUEST_CLEAR_BEFORE_EVENT_START = 169
     EVENT_TUTORIAL_FLAG_ON = 170
     EVENT_TUTORIAL_FLAG_OFF = 171
+    EVENT_SUPER_BOSS_VALUE_EQUAL = 172
+    NOT_EVENT_SUPER_BOSS_VALUE_EQUAL = 173
+    SUPER_BOSS_DAMAGE_ABOVE = 175
+    SUPER_BOSS_DAMAGE_BELOW = 176
 
 
 class NiceCondType(StrEnum):
@@ -2228,6 +2285,10 @@ class NiceCondType(StrEnum):
     notQuestClearBeforeEventStart = "notQuestClearBeforeEventStart"
     eventTutorialFlagOn = "eventTutorialFlagOn"
     eventTutorialFlagOff = "eventTutorialFlagOff"
+    eventSuperBossValueEqual = "eventSuperBossValueEqual"
+    notEventSuperBossValueEqual = "notEventSuperBossValueEqual"
+    superBossDamageAbove = "superBossDamageAbove"
+    superBossDamageBelow = "superBossDamageBelow"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2400,6 +2461,10 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     169: NiceCondType.notQuestClearBeforeEventStart,
     170: NiceCondType.eventTutorialFlagOn,
     171: NiceCondType.eventTutorialFlagOff,
+    172: NiceCondType.eventSuperBossValueEqual,
+    173: NiceCondType.notEventSuperBossValueEqual,
+    175: NiceCondType.superBossDamageAbove,
+    176: NiceCondType.superBossDamageBelow,
 }
 
 
@@ -2739,6 +2804,7 @@ class QuestFlag(IntEnum):
     FORCE_DISPLAY_ENEMY_INFO = 144115188075855872
     ALLOUT_BATTLE = 288230376151711744
     RECOLLECTION = 576460752303423488
+    NOT_SINGLE_SUPPORT_ONLY = 1152921504606846976
 
 
 class NiceQuestFlag(StrEnum):
@@ -2803,6 +2869,7 @@ class NiceQuestFlag(StrEnum):
     forceDisplayEnemyInfo = "forceDisplayEnemyInfo"
     alloutBattle = "alloutBattle"
     recollection = "recollection"
+    notSingleSupportOnly = "notSingleSupportOnly"
 
 
 Quest_FLAG_NAME: dict[int, NiceQuestFlag] = {
@@ -2865,6 +2932,7 @@ Quest_FLAG_NAME: dict[int, NiceQuestFlag] = {
     144115188075855872: NiceQuestFlag.forceDisplayEnemyInfo,
     288230376151711744: NiceQuestFlag.alloutBattle,
     576460752303423488: NiceQuestFlag.recollection,
+    1152921504606846976: NiceQuestFlag.notSingleSupportOnly,
 }
 
 
@@ -3371,6 +3439,15 @@ class AiCond(IntEnum):
     COUNT_CHAIN_LOWER = 179
     COUNT_CHAIN_EQUAL = 180
     CHECK_SELECT_CHAIN = 181
+    COUNT_PLAYER_NP_HIGHER = 182
+    COUNT_PLAYER_NP_LOWER = 183
+    COUNT_PLAYER_NP_EQUAL = 184
+    COUNT_PLAYER_SKILL_HIGHER = 185
+    COUNT_PLAYER_SKILL_LOWER = 186
+    COUNT_PLAYER_SKILL_EQUAL = 187
+    COUNT_PLAYER_SKILL_HIGHER_INCLUDE_MASTER_SKILL = 188
+    COUNT_PLAYER_SKILL_LOWER_INCLUDE_MASTER_SKILL = 189
+    COUNT_PLAYER_SKILL_EQUAL_INCLUDE_MASTER_SKILL = 190
 
 
 class NiceAiCond(StrEnum):
@@ -3532,6 +3609,17 @@ class NiceAiCond(StrEnum):
     countChainLower = "countChainLower"
     countChainEqual = "countChainEqual"
     checkSelectChain = "checkSelectChain"
+    countPlayerNpHigher = "countPlayerNpHigher"
+    countPlayerNpLower = "countPlayerNpLower"
+    countPlayerNpEqual = "countPlayerNpEqual"
+    countPlayerSkillHigher = "countPlayerSkillHigher"
+    countPlayerSkillLower = "countPlayerSkillLower"
+    countPlayerSkillEqual = "countPlayerSkillEqual"
+    countPlayerSkillHigherIncludeMasterSkill = (
+        "countPlayerSkillHigherIncludeMasterSkill"
+    )
+    countPlayerSkillLowerIncludeMasterSkill = "countPlayerSkillLowerIncludeMasterSkill"
+    countPlayerSkillEqualIncludeMasterSkill = "countPlayerSkillEqualIncludeMasterSkill"
 
 
 AI_COND_NAME: dict[int, NiceAiCond] = {
@@ -3677,6 +3765,15 @@ AI_COND_NAME: dict[int, NiceAiCond] = {
     179: NiceAiCond.countChainLower,
     180: NiceAiCond.countChainEqual,
     181: NiceAiCond.checkSelectChain,
+    182: NiceAiCond.countPlayerNpHigher,
+    183: NiceAiCond.countPlayerNpLower,
+    184: NiceAiCond.countPlayerNpEqual,
+    185: NiceAiCond.countPlayerSkillHigher,
+    186: NiceAiCond.countPlayerSkillLower,
+    187: NiceAiCond.countPlayerSkillEqual,
+    188: NiceAiCond.countPlayerSkillHigherIncludeMasterSkill,
+    189: NiceAiCond.countPlayerSkillLowerIncludeMasterSkill,
+    190: NiceAiCond.countPlayerSkillEqualIncludeMasterSkill,
 }
 
 
@@ -3815,6 +3912,7 @@ AI_ACT_TARGET_NAME: dict[int, NiceAiActTarget] = {
 class AiActNum(IntEnum):
     NOMAL = 0
     ANYTIME = -1
+    REACTION_PLYAER_SKILL = -3
     REACTION_ENEMYTURN_START = -4
     REACTION_ENEMYTURN_END = -5
     REACTION_DEAD = -6
@@ -3837,6 +3935,7 @@ class NiceAiActNum(StrEnum):
 
     nomal = "nomal"
     anytime = "anytime"
+    reactionPlyaerSkill = "reactionPlyaerSkill"
     reactionEnemyturnStart = "reactionEnemyturnStart"
     reactionEnemyturnEnd = "reactionEnemyturnEnd"
     reactionDead = "reactionDead"
@@ -3858,6 +3957,7 @@ class NiceAiActNum(StrEnum):
 AI_ACT_NUM_NAME: dict[int, NiceAiActNum] = {
     0: NiceAiActNum.nomal,
     -1: NiceAiActNum.anytime,
+    -3: NiceAiActNum.reactionPlyaerSkill,
     -4: NiceAiActNum.reactionEnemyturnStart,
     -5: NiceAiActNum.reactionEnemyturnEnd,
     -6: NiceAiActNum.reactionDead,
@@ -4169,6 +4269,9 @@ class AiCondParameter(IntEnum):
     CHAIN_COUNT = 33
     CHECK_TARGET_SKILL_THISTURN = 34
     CHECK_SELECT_CHAIN = 35
+    COUNT_PLAYER_NP = 36
+    COUNT_PLAYER_SKILL = 37
+    COUNT_PLAYER_SKILL_INCLUDE_MASTER_SKILL = 38
 
 
 class NiceAiCondParameter(StrEnum):
@@ -4210,6 +4313,9 @@ class NiceAiCondParameter(StrEnum):
     chainCount = "chainCount"
     checkTargetSkillThisturn = "checkTargetSkillThisturn"
     checkSelectChain = "checkSelectChain"
+    countPlayerNp = "countPlayerNp"
+    countPlayerSkill = "countPlayerSkill"
+    countPlayerSkillIncludeMasterSkill = "countPlayerSkillIncludeMasterSkill"
 
 
 AI_COND_PARAMETER_NAME: dict[int, NiceAiCondParameter] = {
@@ -4249,6 +4355,9 @@ AI_COND_PARAMETER_NAME: dict[int, NiceAiCondParameter] = {
     33: NiceAiCondParameter.chainCount,
     34: NiceAiCondParameter.checkTargetSkillThisturn,
     35: NiceAiCondParameter.checkSelectChain,
+    36: NiceAiCondParameter.countPlayerNp,
+    37: NiceAiCondParameter.countPlayerSkill,
+    38: NiceAiCondParameter.countPlayerSkillIncludeMasterSkill,
 }
 
 
@@ -4569,6 +4678,7 @@ class RestrictionType(IntEnum):
     FIXED_SVT_INDIVIDUALITY_POSITION_MAIN = 14
     UNIQUE_INDIVIDUALITY = 15
     MY_SVT_OR_SUPPORT = 16
+    DATA_LOST_BATTLE_UNIQUE_SVT = 17
 
 
 class NiceRestrictionType(StrEnum):
@@ -4590,6 +4700,7 @@ class NiceRestrictionType(StrEnum):
     fixedSvtIndividualityPositionMain = "fixedSvtIndividualityPositionMain"
     uniqueIndividuality = "uniqueIndividuality"
     mySvtOrSupport = "mySvtOrSupport"
+    dataLostBattleUniqueSvt = "dataLostBattleUniqueSvt"
 
 
 RESTRICTION_TYPE_NAME: dict[int, NiceRestrictionType] = {
@@ -4609,6 +4720,7 @@ RESTRICTION_TYPE_NAME: dict[int, NiceRestrictionType] = {
     14: NiceRestrictionType.fixedSvtIndividualityPositionMain,
     15: NiceRestrictionType.uniqueIndividuality,
     16: NiceRestrictionType.mySvtOrSupport,
+    17: NiceRestrictionType.dataLostBattleUniqueSvt,
 }
 
 
