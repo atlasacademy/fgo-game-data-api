@@ -337,6 +337,14 @@ class BaseVals(BaseModel):
     DisplayActualRecoveryHpFlag: int | None = None
     ShiftDeckIndex: int | None = None
     PopValueText: str | None = None
+    IsLossHpPerNow: int | None = None
+    CopyTargetFunctionType: int | None = None
+    CopyFunctionTargetPTOnly: int | None = None
+    IgnoreValueUp: int | None = None
+    ApplyValueUp: int | None = None
+    ActNoDamageBuff: int | None = None
+    ActSelectIndex: int | None = None
+    CopyTargetBuffType: int | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
