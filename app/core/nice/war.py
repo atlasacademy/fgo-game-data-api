@@ -251,7 +251,7 @@ async def get_nice_war(
         raw_war.mstWar.assetId if raw_war.mstWar.assetId > 0 else raw_war.mstWar.id
     )
 
-    if raw_war.mstEvent:
+    if raw_war.mstEvent and raw_war.mstWar.flag & WarEntityFlag.MAIN_SCENARIO == 0:
         if raw_war.mstWar.flag & WarEntityFlag.SUB_FOLDER != 0:
             banner_template = "chaldea_category_{}"
             banner_id = raw_war.mstWar.bannerId
