@@ -325,6 +325,7 @@ class SvtClass(StrEnum):
     beastII = "beastII"
     ushiChaosTide = "ushiChaosTide"
     beastI = "beastI"
+    beastILost = "beastILost"
     beastIIIR = "beastIIIR"
     beastIIIL = "beastIIIL"
     beastIV = "beastIV"
@@ -372,6 +373,7 @@ CLASS_NAME: dict[int, SvtClass] = {
     27: SvtClass.beastUnknown,  # LB 5.2 beast
     28: SvtClass.pretender,
     29: SvtClass.beastIV,
+    30: SvtClass.beastILost,
     31: SvtClass.uOlgaMarieAlienGod,
     32: SvtClass.uOlgaMarie,
     97: SvtClass.unknown,
@@ -914,6 +916,7 @@ class Trait(StrEnum):
     shadow = "shadow"
     chenGongNp = "chenGongNp"
     cantBeSacrificed = "cantBeSacrificed"
+    gutsBlock = "gutsBlock"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1150,6 +1153,7 @@ TRAIT_NAME: dict[int, Trait] = {
     3068: Trait.chenGongNp,
     3070: Trait.buffNullifyBuff,
     3076: Trait.cantBeSacrificed,
+    3086: Trait.gutsBlock,
     # 6016: No detail
     # 6021: No detail
     # 6022: No detail
