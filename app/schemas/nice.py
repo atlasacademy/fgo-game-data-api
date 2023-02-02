@@ -1055,6 +1055,7 @@ class NiceServant(BaseModelORJson):
         title="untranslated svt's battle name",
         description="untranslated svt's battle name",
     )
+    classId: int = Field(..., title="svt's class ID")
     className: SvtClass = Field(
         ...,
         title="svt's class",

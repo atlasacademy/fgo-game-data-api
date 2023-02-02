@@ -66,6 +66,7 @@ class BasicServant(BaseModelORJson):
     originalOverwriteName: str | None = None
     type: NiceSvtType
     flag: NiceSvtFlag
+    classId: int
     className: SvtClass
     attribute: Attribute
     rarity: int

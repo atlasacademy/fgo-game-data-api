@@ -159,6 +159,7 @@ async def get_nice_servant(
         "originalBattleName": raw_svt.mstSvt.battleName,
         "gender": GENDER_TYPE_NAME[raw_svt.mstSvt.genderType],
         "attribute": ATTRIBUTE_NAME[raw_svt.mstSvt.attri],
+        "classId": raw_svt.mstSvt.classId,
         "className": CLASS_NAME.get(
             raw_svt.mstSvt.classId, SvtClass.atlasUnmappedClass
         ),

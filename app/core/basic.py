@@ -376,6 +376,7 @@ async def get_basic_svt(
         "flag": SVT_FLAG_NAME[mstSvt.flag],
         "name": mstSvt.name,
         "originalName": mstSvt.name,
+        "classId": mstSvt.classId,
         "className": CLASS_NAME.get(mstSvt.classId, SvtClass.atlasUnmappedClass),
         "attribute": ATTRIBUTE_NAME[mstSvt.attri],
         "rarity": mstSvtLimit.rarity,

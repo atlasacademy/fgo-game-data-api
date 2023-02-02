@@ -237,6 +237,7 @@ async def get_quest_enemy(
     )
 
     if user_svt.npcSvtClassId != 0:
+        basic_svt.classId = user_svt.npcSvtClassId
         basic_svt.className = CLASS_NAME.get(
             user_svt.npcSvtClassId, SvtClass.atlasUnmappedClass
         )
