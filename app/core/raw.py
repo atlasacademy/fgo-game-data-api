@@ -87,6 +87,7 @@ from ..schemas.raw import (
     MstShopRelease,
     MstShopScript,
     MstSpot,
+    MstSpotAdd,
     MstSpotRoad,
     MstSvt,
     MstSvtAdd,
@@ -680,6 +681,7 @@ async def get_war_entity(conn: AsyncConnection, war_id: int) -> WarEntity:
 
     spots = await fetch.get_all_multiple(conn, MstSpot, map_ids)
     spot_ids = [spot.id for spot in spots]
+    spot_adds = await fetch.get_all_multiple(conn, MstSpotAdd, spot_ids)
 
     quests = await quest.get_quest_by_spot(conn, spot_ids)
 
@@ -704,6 +706,7 @@ async def get_war_entity(conn: AsyncConnection, war_id: int) -> WarEntity:
         mstMapGimmick=await fetch.get_all_multiple(conn, MstMapGimmick, map_ids),
         mstBgm=bgms,
         mstSpot=spots,
+        mstSpotAdd=spot_adds,
         mstQuest=quests,
         mstSpotRoad=spot_roads,
         mstWarQuestSelection=quest_selections,

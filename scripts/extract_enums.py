@@ -491,6 +491,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Command Card Attack Type",
         "COMMAND_CARD_ATK_TYPE_NAME",
     ),
+    (
+        "SpotAddEntity.SpotOverwriteType",
+        "SpotOverwriteType",
+        "NiceSpotOverwriteType",
+        "Spot Overwrite Type",
+        "SPOT_OVERWRITE_TYPE_NAME",
+    ),
 ]
 
 

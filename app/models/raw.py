@@ -1623,6 +1623,20 @@ mstSpot = Table(
 )
 
 
+mstSpotAdd = Table(
+    "mstSpotAdd",
+    metadata,
+    Column("spotId", Integer, index=True),
+    Column("priority", Integer),
+    Column("overrideType", Integer),
+    Column("targetId", Integer),
+    Column("targetText", String),
+    Column("condType", Integer),
+    Column("condTargetId", Integer),
+    Column("condNum", Integer),
+)
+
+
 mstSpotRoad = Table(
     "mstSpotRoad",
     metadata,
@@ -2091,7 +2105,7 @@ TABLES_TO_BE_LOADED = [
     [mstVoicePlayCond],
     [mstSvt],
     [mstMap],
-    [mstSpot, mstSpotRoad],
+    [mstSpot, mstSpotAdd, mstSpotRoad],
     [mstMapGimmick],
     [mstWarAdd],
     [mstWarQuestSelection],

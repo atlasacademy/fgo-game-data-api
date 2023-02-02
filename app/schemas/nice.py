@@ -71,6 +71,7 @@ from .gameenums import (
     NiceRestrictionRangeType,
     NiceRestrictionType,
     NiceShopType,
+    NiceSpotOverwriteType,
     NiceStatusRank,
     NiceSvtClassSupportGroupType,
     NiceSvtFlag,
@@ -2270,6 +2271,17 @@ class NiceMap(BaseModel):
     bgm: NiceBgm
 
 
+class NiceSpotAdd(BaseModel):
+    # spotId: int
+    priority: int
+    overrideType: NiceSpotOverwriteType
+    targetId: int
+    targetText: str
+    condType: NiceCondType
+    condTargetId: int
+    condNum: int
+
+
 class NiceSpot(BaseModel):
     id: int
     joinSpotIds: list[int]
@@ -2288,6 +2300,7 @@ class NiceSpot(BaseModel):
     nextOfsX: int
     nextOfsY: int
     closedMessage: str
+    spotAdds: list[NiceSpotAdd]
     quests: list[NiceQuest]
 
 

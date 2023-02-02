@@ -5,6 +5,7 @@ from ...db.helpers import fetch
 from ...schemas.common import Language, Region
 from ...schemas.gameenums import (
     COND_TYPE_NAME,
+    SPOT_OVERWRITE_TYPE_NAME,
     WAR_FLAG_NAME,
     WAR_OVERWRITE_TYPE_NAME,
     WAR_START_TYPE_NAME,
@@ -17,6 +18,7 @@ from ...schemas.nice import (
     NiceMapGimmick,
     NiceQuest,
     NiceSpot,
+    NiceSpotAdd,
     NiceSpotRoad,
     NiceWar,
     NiceWarAdd,
@@ -28,6 +30,7 @@ from ...schemas.raw import (
     MstMap,
     MstMapGimmick,
     MstSpot,
+    MstSpotAdd,
     MstSpotRoad,
     MstWar,
     MstWarAdd,
@@ -196,11 +199,24 @@ async def get_nice_war_quest_selection(
     )
 
 
+def get_nice_spot_add(mstWarAdd: MstSpotAdd) -> NiceSpotAdd:
+    return NiceSpotAdd(
+        priority=mstWarAdd.priority,
+        overrideType=SPOT_OVERWRITE_TYPE_NAME[mstWarAdd.overrideType],
+        targetId=mstWarAdd.targetId,
+        targetText=mstWarAdd.targetText,
+        condType=COND_TYPE_NAME[mstWarAdd.condType],
+        condTargetId=mstWarAdd.condTargetId,
+        condNum=mstWarAdd.condNum,
+    )
+
+
 async def get_nice_spot(
     conn: AsyncConnection,
     region: Region,
     mstWar: MstWar,
     raw_spot: MstSpot,
+    mst_spot_adds: list[MstSpotAdd],
     war_asset_id: int,
     quests: list[QuestEntity],
     lang: Language,
@@ -231,6 +247,11 @@ async def get_nice_spot(
         nextOfsX=raw_spot.nextOfsX,
         nextOfsY=raw_spot.nextOfsY,
         closedMessage=raw_spot.closedMessage,
+        spotAdds=[
+            get_nice_spot_add(spot_add)
+            for spot_add in mst_spot_adds
+            if spot_add.spotId == raw_spot.id
+        ],
         quests=[
             NiceQuest.parse_obj(
                 await get_nice_quest(conn, region, quest, lang, mstWar, raw_spot)
@@ -336,6 +357,7 @@ async def get_nice_war(
                 region,
                 raw_war.mstWar,
                 raw_spot,
+                raw_war.mstSpotAdd,
                 war_asset_id,
                 raw_war.mstQuest,
                 lang,

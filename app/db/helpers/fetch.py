@@ -71,6 +71,7 @@ from ...models.raw import (
     mstShopRelease,
     mstShopScript,
     mstSpot,
+    mstSpotAdd,
     mstSpotRoad,
     mstSvt,
     mstSvtAdd,
@@ -168,6 +169,7 @@ from ...schemas.raw import (
     MstShopRelease,
     MstShopScript,
     MstSpot,
+    MstSpotAdd,
     MstSpotRoad,
     MstSvt,
     MstSvtAdd,
@@ -453,6 +455,7 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
     Type[BaseModelORJson], tuple[Table, ColumnElement, list[ColumnElement]]
 ] = {
     MstSpot: (mstSpot, mstSpot.c.mapId, [mstSpot.c.id]),
+    MstSpotAdd: (mstSpotAdd, mstSpotAdd.c.spotId, [mstSpotAdd.c.priority]),
     MstVoice: (mstVoice, mstVoice.c.id, [mstVoice.c.id]),
     MstSvtGroup: (mstSvtGroup, mstSvtGroup.c.id, [mstSvtGroup.c.svtId]),
     MstEventMissionCondition: (

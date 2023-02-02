@@ -4799,3 +4799,36 @@ COMMAND_CARD_ATK_TYPE_NAME: dict[int, NiceCommandCardAttackType] = {
     1: NiceCommandCardAttackType.one,
     2: NiceCommandCardAttackType.all,
 }
+
+
+class SpotOverwriteType(IntEnum):
+    NONE = 0
+    FLAG = 1
+    PATH_POINT_RATIO = 2
+    PATH_POINT_RATIO_LIMIT = 3
+    NAME_PANEL_OFFSET_X = 4
+    NAME_PANEL_OFFSET_Y = 5
+    NAME = 6
+
+
+class NiceSpotOverwriteType(StrEnum):
+    """Spot Overwrite Type"""
+
+    none = "none"
+    flag = "flag"
+    pathPointRatio = "pathPointRatio"
+    pathPointRatioLimit = "pathPointRatioLimit"
+    namePanelOffsetX = "namePanelOffsetX"
+    namePanelOffsetY = "namePanelOffsetY"
+    name_ = "name"
+
+
+SPOT_OVERWRITE_TYPE_NAME: dict[int, NiceSpotOverwriteType] = {
+    0: NiceSpotOverwriteType.none,
+    1: NiceSpotOverwriteType.flag,
+    2: NiceSpotOverwriteType.pathPointRatio,
+    3: NiceSpotOverwriteType.pathPointRatioLimit,
+    4: NiceSpotOverwriteType.namePanelOffsetX,
+    5: NiceSpotOverwriteType.namePanelOffsetY,
+    6: NiceSpotOverwriteType.name_,
+}

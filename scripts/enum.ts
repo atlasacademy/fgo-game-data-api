@@ -1629,3 +1629,13 @@ export enum NiceCommandCardAttackType {
     ONE = "one",
     ALL = "all",
 }
+
+export enum NiceSpotOverwriteType {
+    NONE = "none",
+    FLAG = "flag",
+    PATH_POINT_RATIO = "pathPointRatio",
+    PATH_POINT_RATIO_LIMIT = "pathPointRatioLimit",
+    NAME_PANEL_OFFSET_X = "namePanelOffsetX",
+    NAME_PANEL_OFFSET_Y = "namePanelOffsetY",
+    NAME = "name",
+}
