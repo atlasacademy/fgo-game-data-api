@@ -934,6 +934,7 @@ class Trait(StrEnum):
     chenGongNp = "chenGongNp"
     cantBeSacrificed = "cantBeSacrificed"
     gutsBlock = "gutsBlock"
+    classBeastILost = "classBeastILost"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -962,6 +963,7 @@ TRAIT_NAME: dict[int, Trait] = {
     119: Trait.classBeastUnknown,
     120: Trait.classPretender,
     121: Trait.classBeastIV,
+    122: Trait.classBeastILost,
     123: Trait.classUOlgaMarie,
     200: Trait.attributeSky,
     201: Trait.attributeEarth,
