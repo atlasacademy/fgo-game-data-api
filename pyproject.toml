@@ -14,7 +14,7 @@ fuzzywuzzy = { extras = ["speedup"], version = "^0.18.0" }
 orjson = "^3.8.5"
 aiofiles = "^22.1.0"
 GitPython = "^3.1.30"
-SQLAlchemy = "^2.0.0"
+SQLAlchemy = "^2.0.1"
 httpx = "^0.23.3"
 fastapi-cache2 = "^0.2.0"
 gunicorn = { extras = ["setproctitle"], version = "^20.1.0" }
@@ -24,9 +24,8 @@ psycopg = "^3.1.8"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^0.991"
-pylint = "^2.15.10"
-black = "^22.12.0"
-isort = "^5.11.4"
+black = "^23.1.0"
+isort = "^5.12.0"
 pytest = "^7.2.1"
 pytest-xdist = "^3.1.0"
 pytest-asyncio = "^0.20.3"
@@ -34,8 +33,9 @@ coverage = "^7.1.0"
 asgi-lifespan = "^2.0.0"
 fuzzywuzzy-stubs = "^0.0.1"
 types-aiofiles = "^22.1.0.6"
-types-redis = "^4.4.0.3"
+types-redis = "^4.4.0.5"
 types-orjson = "^3.6.2"
+ruff = "^0.0.240"
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
@@ -77,11 +77,32 @@ module = ["fastapi_cache.*"]
 no_implicit_reexport = false
 ignore_missing_imports = true
 
-[tool.pylint.MASTER]
-extension-pkg-whitelist = "orjson,pydantic"
-
-[tool.pylint.'MESSAGES CONTROL']
-disable = "duplicate-code,invalid-name,line-too-long,logging-fstring-interpolation,missing-docstring,no-else-return,raise-missing-from,too-few-public-methods,too-many-arguments,too-many-branches,too-many-instance-attributes,too-many-lines,too-many-locals,too-many-nested-blocks,too-many-statements,wrong-import-order,unhashable-member"
+[tool.ruff]
+select = [
+    "F",
+    "E",
+    "W",
+    "BLE",
+    "ARG",
+    "B",
+    "C4",
+    "PT",
+    "PIE",
+    "PLC",
+    "PLE",
+    "PLR",
+    "RUF",
+]
+ignore = [
+    "E501",
+    "B008",
+    "PT023",
+    "PT006",
+    "PLR2004",
+    "PLR0913",
+    "RUF001",
+    "RUF003",
+]
 
 [build-system]
 requires = ["poetry>=0.12"]

@@ -83,7 +83,7 @@ def reverse_traits(traits: Iterable[Union[Trait, int]]) -> set[int]:
 
 accent_from = "àáâäèéëíðñóöùúāēīŋōšαβḗḫ"
 accent_to__ = "aaaaeeeidnoouuaeinosabeh"
-translation_table = {ord(k): v for k, v in zip(accent_from, accent_to__)}
+translation_table = {ord(k): v for k, v in zip(accent_from, accent_to__, strict=True)}
 
 
 SPECIAL_REPLACE = {"artoria": "altria"}

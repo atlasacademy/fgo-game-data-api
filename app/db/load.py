@@ -156,7 +156,9 @@ def load_skill_td_lv(
 
         for field_name in ("svals", "svals2", "svals3", "svals4", "svals5"):
             if field_name in entity_lv:
-                for func_id, sval in zip(entity_lv["funcId"], entity_lv[field_name]):
+                for func_id, sval in zip(
+                    entity_lv["funcId"], entity_lv[field_name], strict=False
+                ):
                     if func_id in mstFuncId:
                         func = mstFuncId[func_id]
                         if (

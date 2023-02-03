@@ -99,7 +99,8 @@ def get_nice_item_amount(
     items: Iterable[NiceItem], amounts: Iterable[int]
 ) -> list[NiceItemAmount]:
     return [
-        NiceItemAmount(item=item, amount=amount) for item, amount in zip(items, amounts)
+        NiceItemAmount(item=item, amount=amount)
+        for item, amount in zip(items, amounts, strict=False)
     ]
 
 

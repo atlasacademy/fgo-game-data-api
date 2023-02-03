@@ -11,7 +11,6 @@ settings = Settings()
 
 
 def get_script_url(region: Region, script_file_name: str) -> HttpUrl:
-
     url = AssetURL.script.format(
         base_url=settings.asset_url,
         region=region,

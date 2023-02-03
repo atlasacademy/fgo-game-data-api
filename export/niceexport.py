@@ -376,7 +376,6 @@ def get_nice_ai_cond(region: Region, export_path: Path) -> None:
         json.dump(out_data, fp, ensure_ascii=False)
 
 
-# pylint: disable=inherit-non-class
 class ExportParam(NamedTuple):
     input: str
     converter: Callable[[Any], Any]

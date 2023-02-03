@@ -149,7 +149,7 @@ Tips:
 
 ### [Linting](scripts/lint.ps1)
 
-[pylint](https://docs.pylint.org/en/latest/index.html) and [mypy](https://mypy.readthedocs.io/en/stable/) are used to lint the code. pylint's configuration and mypy's configuration are in [pyproject.toml](pyproject.toml).
+[ruff](https://github.com/charliermarsh/ruff) and [mypy](https://mypy.readthedocs.io/en/stable/) are used to lint the code. ruff's configuration and mypy's configuration are in [pyproject.toml](pyproject.toml).
 
 ```
 ./scripts/lint.ps1

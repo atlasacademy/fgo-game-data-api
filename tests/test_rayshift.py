@@ -1,4 +1,3 @@
-# pylint: disable=too-many-public-methods
 import pytest
 from httpx import AsyncClient, Client
 from sqlalchemy.sql import and_, delete, select
@@ -12,7 +11,7 @@ from app.db.load import (
     load_rayshift_quest_list,
 )
 from app.models.rayshift import rayshiftQuest
-from app.rayshift.quest import get_all_quest_lists, get_multiple_quests
+from app.rayshift.quest import get_multiple_quests
 from app.schemas.common import Region
 from app.schemas.rayshift import QuestList
 

@@ -1,4 +1,3 @@
-# pylint: disable=too-many-public-methods
 import orjson
 import pytest
 from httpx import AsyncClient
@@ -488,10 +487,10 @@ class TestServantSpecial:
         third_ascension = {trait["name"] for trait in ascension_traits["3"]}
 
         assert response.status_code == 200
-        assert (
-            "childServant" in zero_ascension and "childServant" not in third_ascension
-        )
-        assert "levitating" not in zero_ascension and "levitating" in third_ascension
+        assert "childServant" in zero_ascension
+        assert "childServant" not in third_ascension
+        assert "levitating" not in zero_ascension
+        assert "levitating" in third_ascension
 
     async def test_servant_change(self, client: AsyncClient) -> None:
         response = await client.get("/nice/NA/servant/184")

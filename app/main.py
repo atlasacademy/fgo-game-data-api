@@ -202,7 +202,7 @@ async def add_process_time_header(
 
 async def limiter_callback(
     request: Request,
-    response: Response,  # pylint: disable=unused-argument
+    response: Response,  # noqa: ARG001
     pexpire: int,
 ) -> None:  # pragma: no cover
     expire = ceil(pexpire / 1000)
@@ -239,8 +239,8 @@ def custom_key_builder(
     namespace: str,
     args: tuple[Any, ...],
     kwargs: dict[str, Any],
-    request: Optional[Request] = None,  # pylint: disable=unused-argument
-    response: Optional[Response] = None,  # pylint: disable=unused-argument
+    request: Optional[Request] = None,  # noqa: ARG001
+    response: Optional[Response] = None,  # noqa: ARG001
 ) -> str:
     prefix = FastAPICache.get_prefix()
     static_kwargs = {k: v for k, v in kwargs.items() if k not in {"conn", "redis"}}
@@ -382,7 +382,6 @@ def get_swagger_ui_html(
     swagger_js_url: str = "https://cdn.jsdelivr.net/npm/swagger-ui-dist/swagger-ui-bundle.js",
     swagger_css_url: str = "https://cdn.jsdelivr.net/npm/swagger-ui-dist/swagger-ui.css",
 ) -> HTMLResponse:
-
     html = f"""
     <!DOCTYPE html>
     <html lang="en">
@@ -429,7 +428,6 @@ def get_rapidoc_html(
     description: str,
     rapidoc_js_url: str = "https://cdn.jsdelivr.net/npm/rapidoc/dist/rapidoc-min.js",
 ) -> HTMLResponse:
-
     html = f"""
     <!DOCTYPE html>
     <html lang="en">

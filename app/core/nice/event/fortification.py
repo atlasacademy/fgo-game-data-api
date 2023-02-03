@@ -27,7 +27,6 @@ def get_nice_fortification_detail(
     detail: MstEventFortificationDetail,
     raw_releases: list[MstCommonRelease],
 ) -> NiceEventFortificationDetail:
-
     return NiceEventFortificationDetail(
         position=detail.position,
         name=detail.name,
@@ -44,7 +43,6 @@ def get_nice_fortification_svt(
     svt: MstEventFortificationSvt,
     raw_releases: list[MstCommonRelease],
 ) -> NiceEventFortificationSvt:
-
     return NiceEventFortificationSvt(
         position=svt.position,
         type=EVENT_FORTIFICATION_SVT_TYPE_NAME[svt.type],

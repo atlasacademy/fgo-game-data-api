@@ -426,7 +426,7 @@ async def get_servant_entity(
 
     costume_chara_ids = [limit.battleCharaId for limit in mstSvtLimitAdd]
     mstSvtScript = await svt.get_svt_script(
-        conn, [servant_id] + costume_chara_ids + EXTRA_CHARAFIGURES.get(servant_id, [])
+        conn, [servant_id, *costume_chara_ids, *EXTRA_CHARAFIGURES.get(servant_id, [])]
     )
 
     skill_ids = [
@@ -687,7 +687,7 @@ async def get_war_entity(conn: AsyncConnection, war_id: int) -> WarEntity:
 
     quest_selection_ids = [selection.questId for selection in quest_selections]
     selection_quests = await quest.get_quest_entity(conn, quest_selection_ids)
-    selection_spot_ids = set(quest.mstQuest.spotId for quest in selection_quests)
+    selection_spot_ids = {quest.mstQuest.spotId for quest in selection_quests}
     selection_spots = await war.get_spot_from_ids(conn, selection_spot_ids)
 
     quests += selection_quests

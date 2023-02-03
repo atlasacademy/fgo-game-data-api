@@ -26,7 +26,6 @@ def get_nice_digging_block(
     common_consumes: dict[int, MstCommonConsume],
     raw_consumes: list[MstCommonConsume],
 ) -> NiceEventDiggingBlock:
-
     return NiceEventDiggingBlock(
         id=block.id,
         eventId=block.eventId,

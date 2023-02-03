@@ -40,7 +40,6 @@ class RegionSettings(BaseModel):
     postgresdsn: PostgresDsn
 
 
-# pylint: disable=no-self-argument
 class Settings(BaseSettings):
     data: dict[Region, RegionSettings] = Field(default=...)
     redisdsn: RedisDsn = Field(default=...)

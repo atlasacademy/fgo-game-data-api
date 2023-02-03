@@ -435,6 +435,7 @@ async def get_nice_quest_phase(
         for movie_name, wave in zip(
             db_data.raw.mstQuestPhase.script["waveStartMovie"],
             db_data.raw.mstQuestPhase.script["movieWave"],
+            strict=False,
         ):
             waveStartMovies[wave].append(
                 NiceStageStartMovie(
@@ -451,7 +452,7 @@ async def get_nice_quest_phase(
         get_nice_stage(
             region, stage, enemies, db_data.raw.mstBgm, waveStartMovies, lang
         )
-        for stage, enemies in zip(stages, quest_enemies.enemy_waves)
+        for stage, enemies in zip(stages, quest_enemies.enemy_waves, strict=False)
     ]
     db_data.nice.stages = new_nice_stages
     db_data.nice.drops = nice_quest_drops

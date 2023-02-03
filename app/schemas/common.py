@@ -45,9 +45,8 @@ class ReverseDepth(StrEnum):
     servant = "servant"
 
     def order(self) -> int:
-        # https://github.com/PyCQA/pylint/issues/2306
         self_value = str(self.value)
-        if self_value == "function":
+        if self.value == "function":
             return 1
         elif self_value == "skillNp":
             return 2
@@ -85,7 +84,11 @@ class NiceBuffRelationOverwrite(BaseModel):
     defSide: dict[SvtClass, dict[SvtClass, RelationOverwriteDetail]]
 
 
-class NiceBuffScript(BaseModel):
+class BuffConvertScript(BaseModel):
+    OverwritePopupText: list[str]
+
+
+class BuffScript(BaseModel):
     checkIndvType: Optional[int] = None
     CheckOpponentBuffTypes: Optional[list[NiceBuffType]] = None
     relationId: Optional[NiceBuffRelationOverwrite] = None

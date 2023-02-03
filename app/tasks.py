@@ -512,7 +512,7 @@ async def report_webhooks(
                 await client.post(
                     url, json={"regions": list(region_path.keys()), "event": event}
                 )
-            except Exception:  # pylint: disable=broad-except
+            except Exception:
                 logger.exception(f"Failed to report webhook {index}")
 
 
