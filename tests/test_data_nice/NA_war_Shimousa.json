@@ -207,6 +207,7 @@
       "nextOfsX": 0,
       "nextOfsY": 0,
       "closedMessage": "",
+      "spotAdds": [],
       "quests": [
         {
           "id": 2000300,
@@ -467,6 +468,7 @@
       "nextOfsX": 0,
       "nextOfsY": 0,
       "closedMessage": "",
+      "spotAdds": [],
       "quests": [
         {
           "id": 2000302,
@@ -730,6 +732,7 @@
       "nextOfsX": 0,
       "nextOfsY": 0,
       "closedMessage": "",
+      "spotAdds": [],
       "quests": [
         {
           "id": 93020302,
@@ -813,6 +816,7 @@
       "nextOfsX": 0,
       "nextOfsY": 0,
       "closedMessage": "",
+      "spotAdds": [],
       "quests": [
         {
           "id": 2000304,
@@ -1108,6 +1112,7 @@
       "nextOfsX": 0,
       "nextOfsY": 0,
       "closedMessage": "",
+      "spotAdds": [],
       "quests": [
         {
           "id": 2000305,
@@ -1628,6 +1633,7 @@
       "nextOfsX": 0,
       "nextOfsY": 0,
       "closedMessage": "",
+      "spotAdds": [],
       "quests": []
     },
     {
@@ -1648,6 +1654,7 @@
       "nextOfsX": 0,
       "nextOfsY": 0,
       "closedMessage": "",
+      "spotAdds": [],
       "quests": [
         {
           "id": 93020305,
@@ -1731,6 +1738,7 @@
       "nextOfsX": 0,
       "nextOfsY": 0,
       "closedMessage": "",
+      "spotAdds": [],
       "quests": [
         {
           "id": 2000308,
@@ -2004,6 +2012,7 @@
       "nextOfsX": 0,
       "nextOfsY": 0,
       "closedMessage": "",
+      "spotAdds": [],
       "quests": [
         {
           "id": 2000310,
@@ -2142,6 +2151,7 @@
       "nextOfsX": 0,
       "nextOfsY": 0,
       "closedMessage": "",
+      "spotAdds": [],
       "quests": [
         {
           "id": 2000311,
@@ -2411,6 +2421,7 @@
       "nextOfsX": 0,
       "nextOfsY": 0,
       "closedMessage": "",
+      "spotAdds": [],
       "quests": [
         {
           "id": 91601901,
@@ -2639,6 +2650,7 @@
       "nextOfsX": 0,
       "nextOfsY": 0,
       "closedMessage": "",
+      "spotAdds": [],
       "quests": [
         {
           "id": 2000315,
@@ -2807,6 +2819,7 @@
       "nextOfsX": 0,
       "nextOfsY": 0,
       "closedMessage": "",
+      "spotAdds": [],
       "quests": [
         {
           "id": 93020308,
@@ -2890,6 +2903,7 @@
       "nextOfsX": 0,
       "nextOfsY": 0,
       "closedMessage": "",
+      "spotAdds": [],
       "quests": [
         {
           "id": 2000314,
@@ -3076,6 +3090,7 @@
       "nextOfsX": 0,
       "nextOfsY": 0,
       "closedMessage": "",
+      "spotAdds": [],
       "quests": []
     },
     {
@@ -3096,6 +3111,7 @@
       "nextOfsX": 0,
       "nextOfsY": 0,
       "closedMessage": "",
+      "spotAdds": [],
       "quests": []
     },
     {
@@ -3116,6 +3132,7 @@
       "nextOfsX": 0,
       "nextOfsY": 0,
       "closedMessage": "",
+      "spotAdds": [],
       "quests": [
         {
           "id": 93020306,
@@ -3199,6 +3216,7 @@
       "nextOfsX": 0,
       "nextOfsY": 0,
       "closedMessage": "",
+      "spotAdds": [],
       "quests": [
         {
           "id": 2000317,

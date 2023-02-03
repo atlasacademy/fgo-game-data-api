@@ -6,6 +6,7 @@
   "ruby": "オデュッセウス",
   "battleName": "オデュッセウス",
   "originalBattleName": "オデュッセウス",
+  "classId": 4,
   "className": "rider",
   "type": "normal",
   "flag": "normal",
@@ -148,7 +149,7 @@
     },
     {
       "id": 1000,
-      "name": "basedOnServant"
+      "name": "servant"
     },
     {
       "id": 2001,

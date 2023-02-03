@@ -6,6 +6,7 @@
   "ruby": "-",
   "battleName": "女子高生ゴースト",
   "originalBattleName": "女子高生ゴースト",
+  "classId": 4,
   "className": "rider",
   "type": "enemy",
   "flag": "normal",

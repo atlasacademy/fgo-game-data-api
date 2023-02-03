@@ -266,6 +266,7 @@
           "originalName": "Siegfried",
           "type": "normal",
           "flag": "normal",
+          "classId": 1,
           "className": "saber",
           "attribute": "earth",
           "rarity": 4,

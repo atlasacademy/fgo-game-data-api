@@ -5,6 +5,7 @@
   "originalName": "エリザベート・バートリー〔シンデレラ〕",
   "type": "svtMaterialTd",
   "flag": "ignoreCombineLimitSpecial",
+  "classId": 4,
   "className": "rider",
   "attribute": "human",
   "rarity": 4,

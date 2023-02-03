@@ -600,6 +600,7 @@
           "ruby": "アサガミフジノ",
           "battleName": "浅上藤乃",
           "originalBattleName": "浅上藤乃",
+          "classId": 2,
           "className": "archer",
           "type": "normal",
           "flag": "normal",
@@ -698,7 +699,7 @@
             },
             {
               "id": 1000,
-              "name": "basedOnServant"
+              "name": "servant"
             },
             {
               "id": 2001,
@@ -3381,6 +3382,10 @@
                           "name": "buffIncreaseDefence"
                         },
                         {
+                          "id": 3085,
+                          "name": "unknown"
+                        },
+                        {
                           "id": 3040,
                           "name": "buffDefenceUp"
                         }
@@ -3472,7 +3477,13 @@
                       "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_304.png",
                       "type": "guts",
                       "buffGroup": 600,
-                      "script": {},
+                      "script": {
+                        "INDIVIDUALITIE": {
+                          "id": 3086,
+                          "name": "gutsBlock",
+                          "negative": true
+                        }
+                      },
                       "vals": [
                         {
                           "id": 3004,

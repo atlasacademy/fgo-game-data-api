@@ -6,6 +6,7 @@
   "ruby": "スペース・イシュタル",
   "battleName": "Sイシュタル",
   "originalBattleName": "Sイシュタル",
+  "classId": 11,
   "className": "avenger",
   "type": "normal",
   "flag": "normal",
@@ -140,7 +141,7 @@
     },
     {
       "id": 1000,
-      "name": "basedOnServant"
+      "name": "servant"
     },
     {
       "id": 2000,
@@ -821,7 +822,7 @@
           },
           {
             "id": 1000,
-            "name": "basedOnServant"
+            "name": "servant"
           },
           {
             "id": 2000,
@@ -883,7 +884,7 @@
           },
           {
             "id": 1000,
-            "name": "basedOnServant"
+            "name": "servant"
           },
           {
             "id": 2000,
@@ -947,7 +948,7 @@
           },
           {
             "id": 1000,
-            "name": "basedOnServant"
+            "name": "servant"
           },
           {
             "id": 2000,

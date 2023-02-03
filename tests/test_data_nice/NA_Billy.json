@@ -6,6 +6,7 @@
   "ruby": "Billy the Kid",
   "battleName": "Billy",
   "originalBattleName": "Billy",
+  "classId": 2,
   "className": "archer",
   "type": "normal",
   "flag": "normal",
@@ -103,7 +104,7 @@
     },
     {
       "id": 1000,
-      "name": "basedOnServant"
+      "name": "servant"
     },
     {
       "id": 2001,

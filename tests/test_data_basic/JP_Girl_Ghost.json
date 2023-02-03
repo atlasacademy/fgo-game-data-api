@@ -5,6 +5,7 @@
   "originalName": "女子高生ゴースト",
   "type": "enemy",
   "flag": "normal",
+  "classId": 4,
   "className": "rider",
   "attribute": "human",
   "rarity": 2,

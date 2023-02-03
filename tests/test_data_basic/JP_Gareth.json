@@ -5,6 +5,7 @@
   "originalName": "ガレス",
   "type": "normal",
   "flag": "normal",
+  "classId": 3,
   "className": "lancer",
   "attribute": "earth",
   "rarity": 2,

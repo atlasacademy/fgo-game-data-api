@@ -6,6 +6,7 @@
   "ruby": "ティアマト",
   "battleName": "ティアマト",
   "originalBattleName": "ティアマト",
+  "classId": 20,
   "className": "beastII",
   "type": "enemyCollectionDetail",
   "flag": "normal",

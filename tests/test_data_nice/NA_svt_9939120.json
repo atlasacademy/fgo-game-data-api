@@ -6,6 +6,7 @@
   "ruby": "-",
   "battleName": "Demon God Pillar",
   "originalBattleName": "Demon God Pillar",
+  "classId": 7,
   "className": "berserker",
   "type": "enemy",
   "flag": "normal",

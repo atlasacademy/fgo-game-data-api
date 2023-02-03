@@ -13,6 +13,7 @@
           "originalName": "Fionn mac Cumhaill",
           "type": "normal",
           "flag": "normal",
+          "classId": 3,
           "className": "lancer",
           "attribute": "sky",
           "rarity": 4,

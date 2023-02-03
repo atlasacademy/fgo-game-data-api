@@ -149,7 +149,8 @@
       "detail": "",
       "flag": 0,
       "shopId": 7000057,
-      "logoId": 15
+      "logoId": 15,
+      "script": ""
     },
     {
       "id": 264,
@@ -159,7 +160,8 @@
       "detail": "",
       "flag": 0,
       "shopId": 7000264,
-      "logoId": 40
+      "logoId": 40,
+      "script": ""
     }
   ],
   "npcFollower": [],

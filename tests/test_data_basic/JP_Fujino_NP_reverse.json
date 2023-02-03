@@ -12,6 +12,7 @@
           "originalName": "浅上藤乃",
           "type": "normal",
           "flag": "normal",
+          "classId": 2,
           "className": "archer",
           "attribute": "human",
           "rarity": 4,

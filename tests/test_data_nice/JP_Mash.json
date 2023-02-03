@@ -6,6 +6,7 @@
   "ruby": "マシュ・キリエライト",
   "battleName": "マシュ",
   "originalBattleName": "マシュ",
+  "classId": 8,
   "className": "shielder",
   "type": "heroine",
   "flag": "normal",
@@ -173,7 +174,7 @@
     },
     {
       "id": 1000,
-      "name": "basedOnServant"
+      "name": "servant"
     },
     {
       "id": 2001,
@@ -497,7 +498,8 @@
     5000,
     267500,
     557500,
-    858000
+    858000,
+    1160000
   ],
   "expGrowth": [
     0,
@@ -719,7 +721,7 @@
           },
           {
             "id": 1000,
-            "name": "basedOnServant"
+            "name": "servant"
           },
           {
             "id": 2001,
@@ -791,7 +793,7 @@
           },
           {
             "id": 1000,
-            "name": "basedOnServant"
+            "name": "servant"
           },
           {
             "id": 2001,
@@ -2764,6 +2766,10 @@
                   "name": "buffIncreaseDefence"
                 },
                 {
+                  "id": 3085,
+                  "name": "unknown"
+                },
+                {
                   "id": 3040,
                   "name": "buffDefenceUp"
                 }
@@ -4449,6 +4455,10 @@
                 {
                   "id": 3031,
                   "name": "buffCritDamageUp"
+                },
+                {
+                  "id": 2852,
+                  "name": "unknown"
                 }
               ],
               "tvals": [],
@@ -4703,6 +4713,10 @@
                 {
                   "id": 3031,
                   "name": "buffCritDamageUp"
+                },
+                {
+                  "id": 2852,
+                  "name": "unknown"
                 }
               ],
               "tvals": [],
@@ -6221,6 +6235,10 @@
                 {
                   "id": 3031,
                   "name": "buffCritDamageUp"
+                },
+                {
+                  "id": 2852,
+                  "name": "unknown"
                 }
               ],
               "tvals": [],
@@ -6593,6 +6611,10 @@
                 {
                   "id": 3031,
                   "name": "buffCritDamageUp"
+                },
+                {
+                  "id": 2852,
+                  "name": "unknown"
                 }
               ],
               "tvals": [],
@@ -10153,6 +10175,10 @@
                   {
                     "id": 123,
                     "name": "classUOlgaMarie"
+                  },
+                  {
+                    "id": 122,
+                    "name": "classBeastILost"
                   }
                 ],
                 "ckSelfIndv": [],
@@ -10216,6 +10242,10 @@
                   {
                     "id": 123,
                     "name": "classUOlgaMarie"
+                  },
+                  {
+                    "id": 122,
+                    "name": "classBeastILost"
                   }
                 ],
                 "maxRate": 5000
@@ -10716,6 +10746,10 @@
                   "name": "buffIncreaseDefence"
                 },
                 {
+                  "id": 3085,
+                  "name": "unknown"
+                },
+                {
                   "id": 3040,
                   "name": "buffDefenceUp"
                 }
@@ -11202,6 +11236,10 @@
                 {
                   "id": 3007,
                   "name": "buffIncreaseDefence"
+                },
+                {
+                  "id": 3085,
+                  "name": "unknown"
                 },
                 {
                   "id": 3040,
@@ -11892,6 +11930,10 @@
                   "name": "buffIncreaseDefence"
                 },
                 {
+                  "id": 3085,
+                  "name": "unknown"
+                },
+                {
                   "id": 3040,
                   "name": "buffDefenceUp"
                 }
@@ -12378,6 +12420,10 @@
                 {
                   "id": 3007,
                   "name": "buffIncreaseDefence"
+                },
+                {
+                  "id": 3085,
+                  "name": "unknown"
                 },
                 {
                   "id": 3040,

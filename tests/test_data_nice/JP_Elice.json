@@ -6,6 +6,7 @@
   "ruby": "ウツミエリセ",
   "battleName": "宇津見エリセ",
   "originalBattleName": "宇津見エリセ",
+  "classId": 3,
   "className": "lancer",
   "type": "normal",
   "flag": "ignoreCombineLimitSpecial",
@@ -103,7 +104,7 @@
     },
     {
       "id": 1000,
-      "name": "basedOnServant"
+      "name": "servant"
     },
     {
       "id": 2000,
@@ -2655,14 +2656,14 @@
               "tvals": [
                 {
                   "id": 1000,
-                  "name": "basedOnServant"
+                  "name": "servant"
                 }
               ],
               "ckSelfIndv": [],
               "ckOpIndv": [
                 {
                   "id": 1000,
-                  "name": "basedOnServant"
+                  "name": "servant"
                 }
               ],
               "maxRate": 10000

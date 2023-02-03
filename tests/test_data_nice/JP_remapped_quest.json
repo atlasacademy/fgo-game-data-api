@@ -183,6 +183,7 @@
             "originalName": "ノブ選組",
             "type": "enemy",
             "flag": "normal",
+            "classId": 1,
             "className": "saber",
             "attribute": "human",
             "rarity": 1,
@@ -813,6 +814,7 @@
             "originalName": "ノブ選組",
             "type": "enemy",
             "flag": "normal",
+            "classId": 1,
             "className": "saber",
             "attribute": "human",
             "rarity": 1,
@@ -1449,6 +1451,7 @@
             "originalName": "ノブ選組",
             "type": "enemy",
             "flag": "normal",
+            "classId": 1,
             "className": "saber",
             "attribute": "human",
             "rarity": 1,
@@ -2079,6 +2082,7 @@
             "originalName": "ノブ選組",
             "type": "enemy",
             "flag": "normal",
+            "classId": 1,
             "className": "saber",
             "attribute": "human",
             "rarity": 1,
@@ -2709,6 +2713,7 @@
             "originalName": "ノブ選組",
             "type": "enemy",
             "flag": "normal",
+            "classId": 1,
             "className": "saber",
             "attribute": "human",
             "rarity": 1,
@@ -3354,6 +3359,7 @@
             "originalName": "沖田総司",
             "type": "normal",
             "flag": "normal",
+            "classId": 1,
             "className": "saber",
             "attribute": "human",
             "rarity": 5,
@@ -3466,7 +3472,7 @@
             },
             {
               "id": 1000,
-              "name": "basedOnServant"
+              "name": "servant"
             },
             {
               "id": 2001,
@@ -4870,6 +4876,7 @@
             "originalName": "土方歳三",
             "type": "normal",
             "flag": "normal",
+            "classId": 7,
             "className": "berserker",
             "attribute": "human",
             "rarity": 5,
@@ -4953,7 +4960,7 @@
             },
             {
               "id": 1000,
-              "name": "basedOnServant"
+              "name": "servant"
             },
             {
               "id": 2001,

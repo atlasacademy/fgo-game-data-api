@@ -5,6 +5,7 @@
   "originalName": "ソウルイーター",
   "type": "enemy",
   "flag": "normal",
+  "classId": 6,
   "className": "assassin",
   "attribute": "earth",
   "rarity": 4,

@@ -124,6 +124,7 @@
             "originalName": "Soul Eater",
             "type": "enemy",
             "flag": "normal",
+            "classId": 6,
             "className": "assassin",
             "attribute": "earth",
             "rarity": 4,
@@ -745,6 +746,7 @@
             "originalName": "Lancelot",
             "type": "normal",
             "flag": "normal",
+            "classId": 1,
             "className": "saber",
             "attribute": "earth",
             "rarity": 4,
@@ -828,7 +830,7 @@
             },
             {
               "id": 1000,
-              "name": "basedOnServant"
+              "name": "servant"
             },
             {
               "id": 2001,
@@ -856,7 +858,7 @@
             },
             {
               "id": 1122,
-              "name": "shadowServant"
+              "name": "shadow"
             }
           ],
           "skills": {
@@ -2262,6 +2264,7 @@
             "originalName": "Altria Pendragon (Alter)",
             "type": "normal",
             "flag": "normal",
+            "classId": 3,
             "className": "lancer",
             "attribute": "sky",
             "rarity": 4,
@@ -2323,7 +2326,7 @@
             },
             {
               "id": 1000,
-              "name": "basedOnServant"
+              "name": "servant"
             },
             {
               "id": 2001,
@@ -2359,7 +2362,7 @@
             },
             {
               "id": 1122,
-              "name": "shadowServant"
+              "name": "shadow"
             }
           ],
           "skills": {
@@ -3580,6 +3583,7 @@
             "originalName": "Tristan",
             "type": "normal",
             "flag": "normal",
+            "classId": 2,
             "className": "archer",
             "attribute": "earth",
             "rarity": 4,
@@ -3659,7 +3663,7 @@
             },
             {
               "id": 1000,
-              "name": "basedOnServant"
+              "name": "servant"
             },
             {
               "id": 2001,
@@ -3679,7 +3683,7 @@
             },
             {
               "id": 1122,
-              "name": "shadowServant"
+              "name": "shadow"
             }
           ],
           "skills": {
@@ -4958,6 +4962,7 @@
             "originalName": "Bedivere",
             "type": "normal",
             "flag": "normal",
+            "classId": 1,
             "className": "saber",
             "attribute": "star",
             "rarity": 3,
@@ -5029,7 +5034,7 @@
             },
             {
               "id": 1000,
-              "name": "basedOnServant"
+              "name": "servant"
             },
             {
               "id": 2001,
@@ -5049,7 +5054,7 @@
             },
             {
               "id": 1122,
-              "name": "shadowServant"
+              "name": "shadow"
             }
           ],
           "skills": {
@@ -6218,6 +6223,7 @@
             "originalName": "Altria Pendragon (Alter)",
             "type": "normal",
             "flag": "normal",
+            "classId": 3,
             "className": "lancer",
             "attribute": "sky",
             "rarity": 4,
@@ -6289,7 +6295,7 @@
             },
             {
               "id": 1000,
-              "name": "basedOnServant"
+              "name": "servant"
             },
             {
               "id": 2001,
@@ -6325,7 +6331,7 @@
             },
             {
               "id": 1122,
-              "name": "shadowServant"
+              "name": "shadow"
             }
           ],
           "skills": {

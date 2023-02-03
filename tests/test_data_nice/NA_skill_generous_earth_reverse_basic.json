@@ -49,6 +49,7 @@
           "originalName": "Elegant Heavens, Generous Earth",
           "type": "servantEquip",
           "flag": "normal",
+          "classId": 1001,
           "className": "ALL",
           "attribute": "sky",
           "rarity": 4,

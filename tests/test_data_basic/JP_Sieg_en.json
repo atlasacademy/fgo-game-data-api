@@ -5,6 +5,7 @@
   "originalName": "ジーク",
   "type": "normal",
   "flag": "ignoreCombineLimitSpecial",
+  "classId": 5,
   "className": "caster",
   "attribute": "human",
   "rarity": 4,

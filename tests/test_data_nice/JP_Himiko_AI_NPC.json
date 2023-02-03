@@ -118,6 +118,7 @@
           "originalName": "卑弥呼",
           "type": "normal",
           "flag": "normal",
+          "classId": 9,
           "className": "ruler",
           "attribute": "earth",
           "rarity": 5,
@@ -1221,6 +1222,10 @@
                       {
                         "id": 3031,
                         "name": "buffCritDamageUp"
+                      },
+                      {
+                        "id": 2852,
+                        "name": "unknown"
                       }
                     ],
                     "tvals": [],
@@ -2012,6 +2017,7 @@
           "originalName": "卑弥呼",
           "type": "normal",
           "flag": "normal",
+          "classId": 9,
           "className": "ruler",
           "attribute": "earth",
           "rarity": 5,
@@ -2077,7 +2083,7 @@
           },
           {
             "id": 1000,
-            "name": "basedOnServant"
+            "name": "servant"
           },
           {
             "id": 2001,
@@ -3180,6 +3186,10 @@
                       {
                         "id": 3031,
                         "name": "buffCritDamageUp"
+                      },
+                      {
+                        "id": 2852,
+                        "name": "unknown"
                       }
                     ],
                     "tvals": [],
@@ -4453,6 +4463,7 @@
         "originalName": "沖田総司〔オルタ〕",
         "type": "normal",
         "flag": "normal",
+        "classId": 10,
         "className": "alterEgo",
         "attribute": "human",
         "rarity": 5,
@@ -4517,7 +4528,7 @@
         },
         {
           "id": 1000,
-          "name": "basedOnServant"
+          "name": "servant"
         },
         {
           "id": 2001,
@@ -7160,6 +7171,7 @@
         "originalOverwriteName": "魔王信長",
         "type": "normal",
         "flag": "normal",
+        "classId": 11,
         "className": "avenger",
         "attribute": "earth",
         "rarity": 5,
@@ -10195,6 +10207,7 @@
         "originalName": "山南敬助",
         "type": "normal",
         "flag": "normal",
+        "classId": 1,
         "className": "saber",
         "attribute": "human",
         "rarity": 4,
@@ -13445,6 +13458,7 @@
         "originalName": "沖田総司",
         "type": "normal",
         "flag": "normal",
+        "classId": 1,
         "className": "saber",
         "attribute": "human",
         "rarity": 5,
@@ -15873,6 +15887,7 @@
         "originalName": "斎藤一",
         "type": "normal",
         "flag": "normal",
+        "classId": 1,
         "className": "saber",
         "attribute": "human",
         "rarity": 4,
@@ -18726,6 +18741,7 @@
             "originalName": "祖獣",
             "type": "enemy",
             "flag": "normal",
+            "classId": 7,
             "className": "berserker",
             "attribute": "sky",
             "rarity": 5,
@@ -19777,6 +19793,7 @@
             "originalName": "千利休",
             "type": "normal",
             "flag": "normal",
+            "classId": 7,
             "className": "berserker",
             "attribute": "human",
             "rarity": 5,
@@ -19830,7 +19847,7 @@
             },
             {
               "id": 1000,
-              "name": "basedOnServant"
+              "name": "servant"
             },
             {
               "id": 2001,
@@ -20803,6 +20820,10 @@
                         {
                           "id": 3031,
                           "name": "buffCritDamageUp"
+                        },
+                        {
+                          "id": 2852,
+                          "name": "unknown"
                         }
                       ],
                       "tvals": [],
@@ -22464,6 +22485,7 @@
             "originalName": "祖獣",
             "type": "enemy",
             "flag": "normal",
+            "classId": 7,
             "className": "berserker",
             "attribute": "sky",
             "rarity": 5,
@@ -23393,6 +23415,7 @@
             "originalName": "祖獣",
             "type": "enemy",
             "flag": "normal",
+            "classId": 7,
             "className": "berserker",
             "attribute": "sky",
             "rarity": 5,
@@ -24343,6 +24366,7 @@
             "originalName": "千利休",
             "type": "normal",
             "flag": "normal",
+            "classId": 7,
             "className": "berserker",
             "attribute": "human",
             "rarity": 5,
@@ -24415,7 +24439,7 @@
             },
             {
               "id": 1000,
-              "name": "basedOnServant"
+              "name": "servant"
             },
             {
               "id": 2001,
@@ -25388,6 +25412,10 @@
                         {
                           "id": 3031,
                           "name": "buffCritDamageUp"
+                        },
+                        {
+                          "id": 2852,
+                          "name": "unknown"
                         }
                       ],
                       "tvals": [],
