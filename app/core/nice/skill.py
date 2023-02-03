@@ -6,10 +6,11 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
 from ...schemas.common import Language, Region
-from ...schemas.enums import SKILL_TYPE_NAME
+from ...schemas.enums import SKILL_TYPE_NAME, SkillScriptCond
 from ...schemas.nice import (
     AssetURL,
     ExtraPassive,
+    NiceSelectAddInfoBtnCond,
     NiceSkill,
     NiceSkillAdd,
     NiceSkillReverse,
@@ -63,6 +64,27 @@ def get_nice_skill_add(
     ]
 
 
+def parse_skill_script_cond(cond: str) -> NiceSelectAddInfoBtnCond:
+    if ":" in cond:
+        cond_type, value = cond.split(":", maxsplit=2)
+        if cond_type in SkillScriptCond.__members__:
+            return NiceSelectAddInfoBtnCond(
+                cond=SkillScriptCond(cond_type), value=int(value)
+            )
+
+    return NiceSelectAddInfoBtnCond(cond=SkillScriptCond.NONE)
+
+
+def get_nice_skill_script(skill_script: dict[str, Any]) -> dict[str, Any]:
+    if SelectAddInfo := skill_script.get("SelectAddInfo"):
+        for button in SelectAddInfo["btn"]:
+            button["conds"] = [
+                parse_skill_script_cond(cond) for cond in button["conds"]
+            ]
+
+    return skill_script
+
+
 async def get_nice_skill_with_svt(
     conn: AsyncConnection,
     skillEntity: SkillEntityNoReverse,
@@ -111,7 +133,10 @@ async def get_nice_skill_with_svt(
     ]
 
     nice_skill["script"] = {
-        scriptKey: [skillLv.script[scriptKey] for skillLv in skillEntity.mstSkillLv]
+        scriptKey: [
+            get_nice_skill_script(skillLv.script)[scriptKey]
+            for skillLv in skillEntity.mstSkillLv
+        ]
         for scriptKey in skillEntity.mstSkillLv[0].script
     }
 

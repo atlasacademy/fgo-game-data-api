@@ -1,0 +1,723 @@
+{
+  "id": 2189551,
+  "num": 1,
+  "name": "翡翠のカリスマ A+",
+  "originalName": "翡翠のカリスマ A+",
+  "ruby": "ひすいのかりすま",
+  "detail": "味方全体の攻撃力をアップ(3ターン)＆被クリティカル発生耐性をアップ(3ターン) ＋ 【スターを消費してこの効果を得るか選択可能】スターを10個消費することで自身の攻撃力をアップ(3ターン)",
+  "unmodifiedDetail": "味方全体の攻撃力をアップ[{0}](3ターン)＆被クリティカル発生耐性をアップ[{0}](3ターン) ＋ 【スターを消費してこの効果を得るか選択可能】スターを10個消費することで自身の攻撃力をアップ[{0}](3ターン)",
+  "type": "active",
+  "strengthStatus": 0,
+  "priority": 1,
+  "condQuestId": 0,
+  "condQuestPhase": 0,
+  "condLv": 0,
+  "condLimitCount": 0,
+  "icon": "https://assets.atlasacademy.io/GameData/JP/SkillIcons/skill_00300.png",
+  "coolDown": [
+    7,
+    7,
+    7,
+    7,
+    7,
+    6,
+    6,
+    6,
+    6,
+    5
+  ],
+  "actIndividuality": [],
+  "script": {
+    "SelectAddInfo": [
+      {
+        "title": "スターを消費して追加の効果を得るか選択してください",
+        "btn": [
+          {
+            "name": "消費しない",
+            "conds": [
+              {
+                "cond": "NONE"
+              }
+            ]
+          },
+          {
+            "name": "10個消費する",
+            "conds": [
+              {
+                "cond": "STAR_HIGHER",
+                "value": 10
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "スターを消費して追加の効果を得るか選択してください",
+        "btn": [
+          {
+            "name": "消費しない",
+            "conds": [
+              {
+                "cond": "NONE"
+              }
+            ]
+          },
+          {
+            "name": "10個消費する",
+            "conds": [
+              {
+                "cond": "STAR_HIGHER",
+                "value": 10
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "スターを消費して追加の効果を得るか選択してください",
+        "btn": [
+          {
+            "name": "消費しない",
+            "conds": [
+              {
+                "cond": "NONE"
+              }
+            ]
+          },
+          {
+            "name": "10個消費する",
+            "conds": [
+              {
+                "cond": "STAR_HIGHER",
+                "value": 10
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "スターを消費して追加の効果を得るか選択してください",
+        "btn": [
+          {
+            "name": "消費しない",
+            "conds": [
+              {
+                "cond": "NONE"
+              }
+            ]
+          },
+          {
+            "name": "10個消費する",
+            "conds": [
+              {
+                "cond": "STAR_HIGHER",
+                "value": 10
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "スターを消費して追加の効果を得るか選択してください",
+        "btn": [
+          {
+            "name": "消費しない",
+            "conds": [
+              {
+                "cond": "NONE"
+              }
+            ]
+          },
+          {
+            "name": "10個消費する",
+            "conds": [
+              {
+                "cond": "STAR_HIGHER",
+                "value": 10
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "スターを消費して追加の効果を得るか選択してください",
+        "btn": [
+          {
+            "name": "消費しない",
+            "conds": [
+              {
+                "cond": "NONE"
+              }
+            ]
+          },
+          {
+            "name": "10個消費する",
+            "conds": [
+              {
+                "cond": "STAR_HIGHER",
+                "value": 10
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "スターを消費して追加の効果を得るか選択してください",
+        "btn": [
+          {
+            "name": "消費しない",
+            "conds": [
+              {
+                "cond": "NONE"
+              }
+            ]
+          },
+          {
+            "name": "10個消費する",
+            "conds": [
+              {
+                "cond": "STAR_HIGHER",
+                "value": 10
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "スターを消費して追加の効果を得るか選択してください",
+        "btn": [
+          {
+            "name": "消費しない",
+            "conds": [
+              {
+                "cond": "NONE"
+              }
+            ]
+          },
+          {
+            "name": "10個消費する",
+            "conds": [
+              {
+                "cond": "STAR_HIGHER",
+                "value": 10
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "スターを消費して追加の効果を得るか選択してください",
+        "btn": [
+          {
+            "name": "消費しない",
+            "conds": [
+              {
+                "cond": "NONE"
+              }
+            ]
+          },
+          {
+            "name": "10個消費する",
+            "conds": [
+              {
+                "cond": "STAR_HIGHER",
+                "value": 10
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "スターを消費して追加の効果を得るか選択してください",
+        "btn": [
+          {
+            "name": "消費しない",
+            "conds": [
+              {
+                "cond": "NONE"
+              }
+            ]
+          },
+          {
+            "name": "10個消費する",
+            "conds": [
+              {
+                "cond": "STAR_HIGHER",
+                "value": 10
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "extraPassive": [],
+  "skillAdd": [],
+  "functions": [
+    {
+      "funcId": 152,
+      "funcType": "addStateShort",
+      "funcTargetType": "ptAll",
+      "funcTargetTeam": "playerAndEnemy",
+      "funcPopupText": "攻撃力アップ",
+      "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_300.png",
+      "functvals": [],
+      "funcquestTvals": [],
+      "funcGroup": [],
+      "buffs": [
+        {
+          "id": 126,
+          "name": "攻撃力アップ",
+          "detail": "攻撃力をアップ",
+          "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_300.png",
+          "type": "upAtk",
+          "buffGroup": 0,
+          "script": {},
+          "vals": [
+            {
+              "id": 3004,
+              "name": "buffPositiveEffect"
+            },
+            {
+              "id": 3006,
+              "name": "buffIncreaseDamage"
+            },
+            {
+              "id": 3027,
+              "name": "buffAtkUp"
+            }
+          ],
+          "tvals": [],
+          "ckSelfIndv": [],
+          "ckOpIndv": [],
+          "maxRate": 5000
+        }
+      ],
+      "svals": [
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 100
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 110
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 120
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 130
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 140
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 150
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 160
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 170
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 180
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        }
+      ]
+    },
+    {
+      "funcId": 5510,
+      "funcType": "addState",
+      "funcTargetType": "ptAll",
+      "funcTargetTeam": "player",
+      "funcPopupText": "被クリティカル発生耐性アップ",
+      "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_363.png",
+      "functvals": [],
+      "funcquestTvals": [],
+      "funcGroup": [],
+      "buffs": [
+        {
+          "id": 2888,
+          "name": "被クリティカル発生耐性アップ",
+          "detail": "クリティカル攻撃を受ける確率を減らす",
+          "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_363.png",
+          "type": "downCriticalRateDamageTaken",
+          "buffGroup": 0,
+          "script": {},
+          "vals": [
+            {
+              "id": 3004,
+              "name": "buffPositiveEffect"
+            }
+          ],
+          "tvals": [],
+          "ckSelfIndv": [],
+          "ckOpIndv": [],
+          "maxRate": 5000
+        }
+      ],
+      "svals": [
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 210
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 220
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 230
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 240
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 250
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 260
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 270
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 280
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 300
+        }
+      ]
+    },
+    {
+      "funcId": 5513,
+      "funcType": "addState",
+      "funcTargetType": "ptAll",
+      "funcTargetTeam": "enemy",
+      "funcPopupText": "被スター発生耐性アップ",
+      "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_364.png",
+      "functvals": [],
+      "funcquestTvals": [],
+      "funcGroup": [],
+      "buffs": [
+        {
+          "id": 2889,
+          "name": "被スター発生耐性アップ",
+          "detail": "スターが発生する確率を減らす",
+          "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_364.png",
+          "type": "downCriticalStarDamageTaken",
+          "buffGroup": 0,
+          "script": {},
+          "vals": [
+            {
+              "id": 3004,
+              "name": "buffPositiveEffect"
+            }
+          ],
+          "tvals": [],
+          "ckSelfIndv": [],
+          "ckOpIndv": [],
+          "maxRate": 5000
+        }
+      ],
+      "svals": [
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200
+        }
+      ]
+    },
+    {
+      "funcId": 1300,
+      "funcType": "lossStar",
+      "funcTargetType": "self",
+      "funcTargetTeam": "player",
+      "funcPopupText": "スター減少",
+      "functvals": [],
+      "funcquestTvals": [],
+      "funcGroup": [],
+      "buffs": [],
+      "svals": [
+        {
+          "Rate": 5000,
+          "Value": 10,
+          "ActSelectIndex": 1
+        },
+        {
+          "Rate": 5000,
+          "Value": 10,
+          "ActSelectIndex": 1
+        },
+        {
+          "Rate": 5000,
+          "Value": 10,
+          "ActSelectIndex": 1
+        },
+        {
+          "Rate": 5000,
+          "Value": 10,
+          "ActSelectIndex": 1
+        },
+        {
+          "Rate": 5000,
+          "Value": 10,
+          "ActSelectIndex": 1
+        },
+        {
+          "Rate": 5000,
+          "Value": 10,
+          "ActSelectIndex": 1
+        },
+        {
+          "Rate": 5000,
+          "Value": 10,
+          "ActSelectIndex": 1
+        },
+        {
+          "Rate": 5000,
+          "Value": 10,
+          "ActSelectIndex": 1
+        },
+        {
+          "Rate": 5000,
+          "Value": 10,
+          "ActSelectIndex": 1
+        },
+        {
+          "Rate": 5000,
+          "Value": 10,
+          "ActSelectIndex": 1
+        }
+      ]
+    },
+    {
+      "funcId": 146,
+      "funcType": "addStateShort",
+      "funcTargetType": "self",
+      "funcTargetTeam": "playerAndEnemy",
+      "funcPopupText": "攻撃力アップ",
+      "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_300.png",
+      "functvals": [],
+      "funcquestTvals": [],
+      "funcGroup": [],
+      "buffs": [
+        {
+          "id": 126,
+          "name": "攻撃力アップ",
+          "detail": "攻撃力をアップ",
+          "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_300.png",
+          "type": "upAtk",
+          "buffGroup": 0,
+          "script": {},
+          "vals": [
+            {
+              "id": 3004,
+              "name": "buffPositiveEffect"
+            },
+            {
+              "id": 3006,
+              "name": "buffIncreaseDamage"
+            },
+            {
+              "id": 3027,
+              "name": "buffAtkUp"
+            }
+          ],
+          "tvals": [],
+          "ckSelfIndv": [],
+          "ckOpIndv": [],
+          "maxRate": 5000
+        }
+      ],
+      "svals": [
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 200,
+          "ActSelectIndex": 1
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 210,
+          "ActSelectIndex": 1
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 220,
+          "ActSelectIndex": 1
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 230,
+          "ActSelectIndex": 1
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 240,
+          "ActSelectIndex": 1
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 250,
+          "ActSelectIndex": 1
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 260,
+          "ActSelectIndex": 1
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 270,
+          "ActSelectIndex": 1
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 280,
+          "ActSelectIndex": 1
+        },
+        {
+          "Rate": 1000,
+          "Turn": 3,
+          "Count": -1,
+          "Value": 300,
+          "ActSelectIndex": 1
+        }
+      ]
+    }
+  ]
+}

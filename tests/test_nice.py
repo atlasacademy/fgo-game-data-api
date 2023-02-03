@@ -36,6 +36,7 @@ test_cases_dict: dict[str, tuple[str, str]] = {
     ),
     "skill_JP_dependFunc": ("JP/skill/671650", "JP_Melt_skill_dependFunc"),
     "skill_JP_dependFunc_colon": ("JP/skill/711550", "JP_Yang_Guifei_skill"),
+    "skill_JP_SelectAddInfo": ("JP/skill/2189551", "JP_skill_2189551"),
     "NP_JP_id": ("JP/NP/301101", "JP_Fionn_NP"),
     "NP_JP_reverse": ("JP/NP/202901?reverse=True", "JP_Fujino_NP_reverse"),
     "NP_CN_without_svtTd": ("CN/NP/603002", "CN_NP_without_svtTd"),

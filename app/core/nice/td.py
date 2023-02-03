@@ -12,6 +12,7 @@ from ...schemas.raw import TdEntityNoReverse
 from ..raw import get_td_entity_no_reverse, get_td_entity_no_reverse_many
 from ..utils import get_np_name, get_traits_list, strip_formatting_brackets
 from .func import get_nice_function
+from .skill import get_nice_skill_script
 
 
 settings = Settings()
@@ -65,7 +66,7 @@ async def get_nice_td(
     if tdEntity.mstTreasureDeviceLv[0].script:
         for script_key in tdEntity.mstTreasureDeviceLv[0].script:
             nice_td["script"][script_key] = [
-                tdLv.script[script_key] if tdLv.script else None
+                get_nice_skill_script(tdLv.script)[script_key] if tdLv.script else None
                 for tdLv in tdEntity.mstTreasureDeviceLv
             ]
     for script_key in ("tdTypeChangeIDs", "excludeTdChangeTypes"):

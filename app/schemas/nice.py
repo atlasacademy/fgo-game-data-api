@@ -35,6 +35,7 @@ from .enums import (
     NiceSkillType,
     ServantPersonality,
     ServantPolicy,
+    SkillScriptCond,
     SvtClass,
 )
 from .gameenums import (
@@ -339,13 +340,13 @@ class BaseVals(BaseModel):
     ShiftDeckIndex: int | None = None
     PopValueText: str | None = None
     IsLossHpPerNow: int | None = None
-    CopyTargetFunctionType: int | None = None
+    CopyTargetFunctionType: list[int] | None = None
     CopyFunctionTargetPTOnly: int | None = None
     IgnoreValueUp: int | None = None
-    ApplyValueUp: int | None = None
+    ApplyValueUp: list[str] | None = None
     ActNoDamageBuff: int | None = None
     ActSelectIndex: int | None = None
-    CopyTargetBuffType: int | None = None
+    CopyTargetBuffType: list[int] | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
@@ -542,6 +543,21 @@ class ExtraPassive(BaseModel):
     endedAt: int
 
 
+class NiceSelectAddInfoBtnCond(BaseModel):
+    cond: SkillScriptCond
+    value: int | None = None
+
+
+class NiceSelectAddInfoBtn(BaseModel):
+    name: str
+    conds: list[NiceSelectAddInfoBtnCond]
+
+
+class NiceSelectAddInfo(BaseModel):
+    title: str
+    btn: list[NiceSelectAddInfoBtn]
+
+
 class NiceSkillScript(BaseModel):
     NP_HIGHER: Optional[list[int]] = None
     NP_LOWER: Optional[list[int]] = None
@@ -555,6 +571,7 @@ class NiceSkillScript(BaseModel):
     additionalSkillActorType: Optional[list[int]] = None
     tdTypeChangeIDs: list[int] | None = None
     excludeTdChangeTypes: list[int] | None = None
+    SelectAddInfo: list[NiceSelectAddInfo] | None = None
 
 
 class NiceSkillAdd(BaseModelORJson):

@@ -620,6 +620,23 @@ SERVANT_PERSONALITY_NAME = {
 }
 
 
+### Skill Script Cond ###
+
+
+class SkillScriptCond(StrEnum):
+    """Skill Script Condition Type"""
+
+    NONE = "NONE"
+    NP_HIGHER = "NP_HIGHER"
+    NP_LOWER = "NP_LOWER"
+    STAR_HIGHER = "STAR_HIGHER"
+    STAR_LOWER = "STAR_LOWER"
+    HP_VAL_HIGHER = "HP_VAL_HIGHER"
+    HP_VAL_LOWER = "HP_VAL_LOWER"
+    HP_PER_HIGHER = "HP_PER_HIGHER"
+    HP_PER_LOWER = "HP_PER_LOWER"
+
+
 ### Trait ###
 
 
