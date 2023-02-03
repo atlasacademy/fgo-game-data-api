@@ -1442,7 +1442,7 @@ class MstSpotAdd(BaseModelORJson):
     priority: int
     overrideType: int
     targetId: int
-    targetText: str
+    targetText: str | None = None
     condType: int
     condTargetId: int
     condNum: int

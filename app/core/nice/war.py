@@ -204,7 +204,7 @@ def get_nice_spot_add(mstWarAdd: MstSpotAdd) -> NiceSpotAdd:
         priority=mstWarAdd.priority,
         overrideType=SPOT_OVERWRITE_TYPE_NAME[mstWarAdd.overrideType],
         targetId=mstWarAdd.targetId,
-        targetText=mstWarAdd.targetText,
+        targetText="" if mstWarAdd.targetText is None else mstWarAdd.targetText,
         condType=COND_TYPE_NAME[mstWarAdd.condType],
         condTargetId=mstWarAdd.condTargetId,
         condNum=mstWarAdd.condNum,
