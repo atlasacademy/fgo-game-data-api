@@ -1,11 +1,16 @@
 from enum import StrEnum
-from typing import Optional, Union
+from typing import Any, Optional, Union
 
 from pydantic import BaseModel, HttpUrl
 
 from .base import BaseModelORJson
 from .enums import SvtClass, Trait
-from .gameenums import NiceBuffType, NiceClassRelationOverwriteType
+from .gameenums import (
+    NiceBuffConvertLimitType,
+    NiceBuffConvertType,
+    NiceBuffType,
+    NiceClassRelationOverwriteType,
+)
 
 
 class RepoInfo(BaseModelORJson):
@@ -88,6 +93,21 @@ class BuffConvertScript(BaseModel):
     OverwritePopupText: list[str]
 
 
+class BuffConvert(BaseModel):
+    """Buff Convert
+
+    Due to a limitation in Pydantic and OpenAPI schema generation, `dict[str, Any]
+    is used in place of either BasicBuff or NiceBuff
+    """
+
+    targetLimit: NiceBuffConvertLimitType
+    convertType: NiceBuffConvertType
+    convertBuffs: list[dict[str, Any]]
+    script: BuffConvertScript
+    effectId: int
+    targets: list[int] | list[NiceTrait] | list[dict[str, Any]]
+
+
 class BuffScript(BaseModel):
     checkIndvType: Optional[int] = None
     CheckOpponentBuffTypes: Optional[list[NiceBuffType]] = None
@@ -98,6 +118,7 @@ class BuffScript(BaseModel):
     INDIVIDUALITIE_COUNT_ABOVE: int | None = None
     UpBuffRateBuffIndiv: Optional[list[NiceTrait]] = None
     HP_LOWER: Optional[int] = None
+    convert: BuffConvert | None = None
 
 
 class ScriptLink(BaseModelORJson):

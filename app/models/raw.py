@@ -67,6 +67,19 @@ mstClassRelationOverwrite = Table(
 )
 
 
+mstBuffConvert = Table(
+    "mstBuffConvert",
+    metadata,
+    Column("targetIds", ARRAY(Integer)),
+    Column("convertBuffIds", ARRAY(Integer)),
+    Column("script", JSONB),
+    Column("buffId", Integer, index=True),
+    Column("convertType", Integer),
+    Column("targetLimit", Integer),
+    Column("effectId", Integer),
+)
+
+
 mstFunc = Table(
     "mstFunc",
     metadata,
@@ -2032,7 +2045,7 @@ TABLES_TO_BE_LOADED = [
     [mstAiField],
     [mstBgm, mstBgmRelease],
     [mstBoxGacha, mstBoxGachaBase, mstBoxGachaTalk],
-    [mstClassRelationOverwrite],
+    [mstClassRelationOverwrite, mstBuffConvert],
     [mstClosedMessage],
     [mstCombineAppendPassiveSkill],
     [mstCombineCostume],

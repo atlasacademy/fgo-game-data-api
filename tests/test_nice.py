@@ -56,6 +56,7 @@ test_cases_dict: dict[str, tuple[str, str]] = {
         "JP/buff/search?type=specialInvincible&reverse=true&reverseData=basic&reverseDepth=servant&lang=en",
         "JP_buff_special_invincible_reverse",
     ),
+    "buff_convert": ("JP/buff/5326", "JP_buff_convert"),
     "equip_JP_collectionNo": ("JP/equip/683", "JP_Aerial_Drive"),
     "equip_JP_id": ("JP/equip/9402750", "JP_Aerial_Drive"),
     "svt_NA_id": ("NA/svt/9939120", "NA_svt_9939120"),

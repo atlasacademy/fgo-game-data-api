@@ -13,7 +13,7 @@ settings = Settings()
 
 
 def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> dict[str, Any]:
-    buffInfo: dict[str, Any] = {
+    nice_buff: dict[str, Any] = {
         "id": buffEntity.mstBuff.id,
         "name": buffEntity.mstBuff.name,
         "detail": buffEntity.mstBuff.detail,
@@ -28,10 +28,15 @@ def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> dict[str, 
 
     iconId = buffEntity.mstBuff.iconId
     if iconId != 0:
-        buffInfo["icon"] = AssetURL.buffIcon.format(
+        nice_buff["icon"] = AssetURL.buffIcon.format(
             base_url=settings.asset_url, region=region, item_id=iconId
         )
 
-    buffInfo["script"] = get_nice_buff_script(buffEntity.mstBuff)
+    script = get_nice_buff_script(
+        buffEntity.mstBuff,
+        lambda buff: get_nice_buff(BuffEntityNoReverse(mstBuff=buff), region),
+    )
 
-    return buffInfo
+    nice_buff["script"] = script
+
+    return nice_buff

@@ -113,8 +113,7 @@ def load_skill_td_lv(
 ) -> None:  # pragma: no cover
     master_folder = gamedata_path / "master"
 
-    mstBuff_data = get_buff_with_classrelation(gamedata_path)
-    mstBuffId = {buff.id: buff for buff in mstBuff_data}
+    mstBuffId = get_buff_with_classrelation(gamedata_path)
 
     with open(master_folder / "mstFunc.json", "rb") as fp:
         mstFunc_data = orjson.loads(fp.read())
@@ -192,7 +191,7 @@ def load_skill_td_lv(
         ]
         treasureDeviceLv["relatedSkillIds"] = get_trigger_skill_ids(treasureDeviceLv)
 
-    load_pydantic_to_db(conn, mstBuff_data, mstBuff)
+    load_pydantic_to_db(conn, list(mstBuffId.values()), mstBuff)
 
     insert_db(conn, mstFunc, mstFunc_data)
     insert_db(conn, mstFuncGroup, mstFuncGroup_data)

@@ -1,0 +1,92 @@
+{
+  "id": 5326,
+  "name": "対粛正防御化",
+  "detail": "自身に付与される無敵効果を対粛正防御効果に変化させる",
+  "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_377.png",
+  "type": "buffConvert",
+  "buffGroup": 0,
+  "script": {
+    "convert": {
+      "targetLimit": "all",
+      "convertType": "buff",
+      "convertBuffs": [
+        {
+          "id": 2926,
+          "name": "対粛正防御",
+          "detail": "無敵貫通を無視して、攻撃によるダメージを0にする",
+          "type": "specialInvincible",
+          "buffGroup": 250,
+          "vals": [
+            {
+              "id": 3004,
+              "name": "buffPositiveEffect"
+            },
+            {
+              "id": 3064,
+              "name": "buffSpecialInvincible"
+            },
+            {
+              "id": 3007,
+              "name": "buffIncreaseDefence"
+            }
+          ],
+          "tvals": [],
+          "ckSelfIndv": [],
+          "ckOpIndv": [],
+          "maxRate": 0,
+          "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_368.png",
+          "script": {}
+        }
+      ],
+      "script": {
+        "OverwritePopupText": [
+          "対粛正防御"
+        ]
+      },
+      "effectId": 335,
+      "targets": [
+        {
+          "id": 155,
+          "name": "無敵",
+          "detail": "必中を無視して、攻撃によるダメージを0にする",
+          "type": "invincible",
+          "buffGroup": 400,
+          "vals": [
+            {
+              "id": 3004,
+              "name": "buffPositiveEffect"
+            },
+            {
+              "id": 3018,
+              "name": "buffEvadeAndInvincible"
+            },
+            {
+              "id": 3022,
+              "name": "buffInvincible"
+            },
+            {
+              "id": 3007,
+              "name": "buffIncreaseDefence"
+            }
+          ],
+          "tvals": [],
+          "ckSelfIndv": [],
+          "ckOpIndv": [],
+          "maxRate": 0,
+          "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_311.png",
+          "script": {}
+        }
+      ]
+    }
+  },
+  "vals": [
+    {
+      "id": 3004,
+      "name": "buffPositiveEffect"
+    }
+  ],
+  "tvals": [],
+  "ckSelfIndv": [],
+  "ckOpIndv": [],
+  "maxRate": 0
+}

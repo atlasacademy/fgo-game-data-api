@@ -4,7 +4,7 @@ from typing import Optional
 from pydantic import Field, HttpUrl
 
 from .base import BaseModelORJson
-from .common import BasicCostume, MCAssets, NiceBuffScript, NiceTrait
+from .common import BasicCostume, BuffScript, MCAssets, NiceTrait
 from .enums import Attribute, FuncApplyTarget, SvtClass
 from .gameenums import (
     NiceBuffType,
@@ -26,7 +26,7 @@ class BasicBuff(BaseModelORJson):
     name: str
     icon: HttpUrl
     type: NiceBuffType
-    script: NiceBuffScript
+    script: BuffScript
     vals: list[NiceTrait]
     tvals: list[NiceTrait]
     ckSelfIndv: list[NiceTrait]

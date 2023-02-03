@@ -39,6 +39,16 @@ class MstBuff(BaseModelORJson):
     maxRate: int  # 5000
 
 
+class MstBuffConvert(BaseModelORJson):
+    targetIds: list[int]
+    convertBuffIds: list[int]
+    script: dict[str, Any]
+    buffId: int
+    convertType: int
+    targetLimit: int
+    effectId: int
+
+
 class BuffEntityNoReverse(BaseModelORJson):
     mstBuff: MstBuff
 

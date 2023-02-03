@@ -1639,3 +1639,14 @@ export enum NiceSpotOverwriteType {
     NAME_PANEL_OFFSET_Y = "namePanelOffsetY",
     NAME = "name",
 }
+
+export enum NiceBuffConvertType {
+    NONE = "none",
+    BUFF = "buff",
+    INDIVIDUALITY = "individuality",
+}
+
+export enum NiceBuffConvertLimitType {
+    ALL = "all",
+    SELF = "self",
+}

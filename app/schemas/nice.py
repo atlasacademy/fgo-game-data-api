@@ -14,8 +14,8 @@ from .basic import (
     BasicServant,
 )
 from .common import (
+    BuffScript,
     MCAssets,
-    NiceBuffScript,
     NiceCostume,
     NiceTrait,
     NiceValentineScript,
@@ -387,11 +387,11 @@ class NiceBuff(BaseModelORJson):
     buffGroup: int = Field(
         ...,
         title="Buff group",
-        description="Buff group. "
+        description="Buff group."
         "See https://github.com/atlasacademy/fgo-docs#unstackable-buffs "
         "for how this field is used.",
     )
-    script: NiceBuffScript = Field(
+    script: BuffScript = Field(
         ...,
         title="Buff script",
         description="Random stuffs that get added to the buff entry. "

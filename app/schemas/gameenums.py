@@ -4832,3 +4832,42 @@ SPOT_OVERWRITE_TYPE_NAME: dict[int, NiceSpotOverwriteType] = {
     5: NiceSpotOverwriteType.namePanelOffsetY,
     6: NiceSpotOverwriteType.name_,
 }
+
+
+class BuffConvertType(IntEnum):
+    NONE = 0
+    BUFF = 1
+    INDIVIDUALITY = 2
+
+
+class NiceBuffConvertType(StrEnum):
+    """Buff Convert Type"""
+
+    none = "none"
+    buff = "buff"
+    individuality = "individuality"
+
+
+BUFF_CONVERT_TYPE_NAME: dict[int, NiceBuffConvertType] = {
+    0: NiceBuffConvertType.none,
+    1: NiceBuffConvertType.buff,
+    2: NiceBuffConvertType.individuality,
+}
+
+
+class BuffConvertLimitType(IntEnum):
+    ALL = 0
+    SELF = 1
+
+
+class NiceBuffConvertLimitType(StrEnum):
+    """Buff Convert Limit Type"""
+
+    all = "all"
+    self_ = "self"
+
+
+BUFF_CONVERT_LIMIT_TYPE_NAME: dict[int, NiceBuffConvertLimitType] = {
+    0: NiceBuffConvertLimitType.all,
+    1: NiceBuffConvertLimitType.self_,
+}

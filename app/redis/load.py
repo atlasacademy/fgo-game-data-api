@@ -62,7 +62,7 @@ async def load_mstBuff(
     for region, repo_folder in region_path.items():
         redis_key = f"{redis_prefix}:{region.name}:mstBuff"
         mstBuff_data = get_buff_with_classrelation(repo_folder)
-        mstBuff_redis = {str(mstBuff.id): mstBuff.json() for mstBuff in mstBuff_data}
+        mstBuff_redis = {k: v.json() for k, v in mstBuff_data.items()}
         await redis.delete(redis_key)
         await redis.hset(redis_key, mapping=mstBuff_redis)
 

@@ -8,6 +8,7 @@ from ..schemas.raw import (
     MstAi,
     MstAiAct,
     MstBuff,
+    MstBuffConvert,
     MstClassRelationOverwrite,
     MstCombineAppendPassiveSkill,
     MstCombineCostume,
@@ -90,6 +91,7 @@ MODEL_FILE_NAME: dict[Type[BaseModelORJson], str] = {
     MstTreasureDeviceLv: "mstTreasureDeviceLv",
     MstVoice: "mstVoice",
     MstWar: "mstWar",
+    MstBuffConvert: "mstBuffConvert",
 }
 
 

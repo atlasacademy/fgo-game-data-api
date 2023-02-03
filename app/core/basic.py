@@ -1,5 +1,5 @@
 from collections import defaultdict
-from typing import Any, Generator, Iterable, Optional
+from typing import Any, Callable, Generator, Iterable, Optional
 
 from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncConnection
@@ -29,7 +29,7 @@ from ..schemas.basic import (
     BasicTdReverse,
     BasicWar,
 )
-from ..schemas.common import Language, MCAssets, NiceBuffScript, Region, ReverseDepth
+from ..schemas.common import BuffScript, Language, MCAssets, Region, ReverseDepth
 from ..schemas.enums import (
     ATTRIBUTE_NAME,
     CLASS_NAME,
@@ -38,6 +38,8 @@ from ..schemas.enums import (
     SvtClass,
 )
 from ..schemas.gameenums import (
+    BUFF_CONVERT_LIMIT_TYPE_NAME,
+    BUFF_CONVERT_TYPE_NAME,
     BUFF_TYPE_NAME,
     CLASS_OVERWRITE_NAME,
     EVENT_TYPE_NAME,
@@ -49,6 +51,7 @@ from ..schemas.gameenums import (
     SVT_FLAG_NAME,
     SVT_TYPE_NAME,
     WAR_FLAG_NAME,
+    BuffConvertType,
     Quest_FLAG_NAME,
     SvtType,
 )
@@ -81,7 +84,9 @@ from .utils import (
 settings = Settings()
 
 
-def get_nice_buff_script(mstBuff: MstBuff) -> NiceBuffScript:
+def get_nice_buff_script(
+    mstBuff: MstBuff, raw_to_out: Callable[[MstBuff], Any]
+) -> dict[str, Any]:
     script: dict[str, Any] = {}
     if "relationOverwrite" in mstBuff.script:
         relationOverwrite = [
@@ -128,7 +133,50 @@ def get_nice_buff_script(mstBuff: MstBuff) -> NiceBuffScript:
             for buffType in mstBuff.script["CheckOpponentBuffTypes"].split(",")
         ]
 
-    return NiceBuffScript.parse_obj(script)
+    if "convert" in mstBuff.script:
+        script["convert"] = mstBuff.script["convert"]
+
+    if "convert" in mstBuff.script:
+        convert = mstBuff.script["convert"]
+
+        if convert["convertType"] == BuffConvertType.BUFF:
+            convert["targets"] = [raw_to_out(buff) for buff in convert["targetBuffs"]]
+        elif convert["convertType"] == BuffConvertType.INDIVIDUALITY:
+            convert["targets"] = get_traits_list(convert["targetIds"])
+        else:
+            convert["targets"] = []
+
+        convert["convertType"] = BUFF_CONVERT_TYPE_NAME[convert["convertType"]]
+        convert["targetLimit"] = BUFF_CONVERT_LIMIT_TYPE_NAME[convert["targetLimit"]]
+        convert["convertBuffs"] = [raw_to_out(buff) for buff in convert["convertBuffs"]]
+
+        script["convert"] = convert
+
+    return script
+
+
+def get_basic_buff_no_reverse(mstBuff: MstBuff, region: Region) -> BasicBuffReverse:
+    return BasicBuffReverse(
+        id=mstBuff.id,
+        name=mstBuff.name,
+        icon=fmt_url(
+            AssetURL.buffIcon,
+            base_url=settings.asset_url,
+            region=region,
+            item_id=mstBuff.iconId,
+        ),
+        type=BUFF_TYPE_NAME[mstBuff.type],
+        script=BuffScript.parse_obj(
+            get_nice_buff_script(
+                mstBuff,
+                lambda buff: get_basic_buff_no_reverse(MstBuff.parse_obj(buff), region),
+            )
+        ),
+        vals=get_traits_list(mstBuff.vals),
+        tvals=get_traits_list(mstBuff.tvals),
+        ckSelfIndv=get_traits_list(mstBuff.ckSelfIndv),
+        ckOpIndv=get_traits_list(mstBuff.ckOpIndv),
+    )
 
 
 async def get_basic_buff_from_raw(
@@ -139,22 +187,7 @@ async def get_basic_buff_from_raw(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
 ) -> BasicBuffReverse:
-    basic_buff = BasicBuffReverse(
-        id=mstBuff.id,
-        name=mstBuff.name,
-        icon=fmt_url(
-            AssetURL.buffIcon,
-            base_url=settings.asset_url,
-            region=region,
-            item_id=mstBuff.iconId,
-        ),
-        type=BUFF_TYPE_NAME[mstBuff.type],
-        script=get_nice_buff_script(mstBuff),
-        vals=get_traits_list(mstBuff.vals),
-        tvals=get_traits_list(mstBuff.tvals),
-        ckSelfIndv=get_traits_list(mstBuff.ckSelfIndv),
-        ckOpIndv=get_traits_list(mstBuff.ckOpIndv),
-    )
+    basic_buff = get_basic_buff_no_reverse(mstBuff, region)
     if reverse and reverseDepth >= ReverseDepth.function:
         func_ids = await get_reverse_ids(
             redis, region, RedisReverse.BUFF_TO_FUNC, mstBuff.id
