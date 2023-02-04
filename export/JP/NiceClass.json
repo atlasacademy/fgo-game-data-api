@@ -435,6 +435,21 @@
     "autoSelSupportType": 8
   },
   {
+    "id": 30,
+    "className": "beastILost",
+    "name": "？",
+    "individuality": "classBeastILost",
+    "attackRate": 1000,
+    "imageId": 9999,
+    "iconImageId": 30,
+    "frameId": 20,
+    "priority": 50,
+    "groupType": 2,
+    "relationId": 30,
+    "supportGroup": 999,
+    "autoSelSupportType": 0
+  },
+  {
     "id": 31,
     "className": "uOlgaMarieAlienGod",
     "name": "？",
