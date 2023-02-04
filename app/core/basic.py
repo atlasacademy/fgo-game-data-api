@@ -108,13 +108,23 @@ def get_nice_buff_script(
             relationId[side][atkClass][defClass] = relationDetail
         script["relationId"] = relationId
 
-    for script_item in (
+    for script_item in {
         "ReleaseText",
         "DamageRelease",
         "checkIndvType",
         "HP_LOWER",
         "INDIVIDUALITIE_COUNT_ABOVE",
-    ):
+        "HP_HIGHER",
+        "CounterMessage",
+        "avoidanceText",
+        "gutsText",
+        "missText",
+        "AppId",
+        "IncludeIgnoreIndividuality",
+        "ProgressSelfTurn",
+        "TargetIndiv",
+        "extendLowerLimit",
+    }:
         if script_item in mstBuff.script:
             script[script_item] = mstBuff.script[script_item]
 
@@ -132,6 +142,9 @@ def get_nice_buff_script(
             BUFF_TYPE_NAME[int(buffType)]
             for buffType in mstBuff.script["CheckOpponentBuffTypes"].split(",")
         ]
+
+    if "TargetIndiv" in mstBuff.script:
+        script["TargetIndiv"] = get_nice_trait(mstBuff.script["TargetIndiv"])
 
     if "convert" in mstBuff.script:
         script["convert"] = mstBuff.script["convert"]

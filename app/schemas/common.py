@@ -118,6 +118,16 @@ class BuffScript(BaseModel):
     INDIVIDUALITIE_COUNT_ABOVE: int | None = None
     UpBuffRateBuffIndiv: Optional[list[NiceTrait]] = None
     HP_LOWER: Optional[int] = None
+    HP_HIGHER: int | None = None
+    CounterMessage: str | None = None
+    avoidanceText: str | None = None
+    gutsText: str | None = None
+    missText: str | None = None
+    AppId: int | None = None
+    IncludeIgnoreIndividuality: int | None = None
+    ProgressSelfTurn: int | None = None
+    TargetIndiv: NiceTrait | None = None
+    extendLowerLimit: int | None = None
     convert: BuffConvert | None = None
 
 
