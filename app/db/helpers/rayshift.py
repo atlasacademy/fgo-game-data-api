@@ -92,16 +92,20 @@ async def get_rayshift_drops(
 
     deck_svt = enemy_deck_svt.union_all(shift_deck_svt).cte(name="deck_svt")
 
-    drops = select(
-        deck_svt.c.queryId,
-        deck_svt.c.deckType,
-        deck_svt.c.stage,
-        literal_column("deck_svt.deck_svt->>'id'").label("deckId"),
-        literal_column("deck_svt.deck_svt->>'npcId'").label("npcId"),
-        func.jsonb_array_elements(
-            literal_column("deck_svt.deck_svt->'dropInfos'"), type_=JSONB
-        ).label("drops"),
-    ).cte(name="drops")
+    drops = (
+        select(
+            deck_svt.c.queryId,
+            deck_svt.c.deckType,
+            deck_svt.c.stage,
+            literal_column("deck_svt.deck_svt->>'id'").label("deckId"),
+            literal_column("deck_svt.deck_svt->>'npcId'").label("npcId"),
+            func.jsonb_array_elements(
+                literal_column("deck_svt.deck_svt->'dropInfos'"), type_=JSONB
+            ).label("drops"),
+        )
+        .where(literal_column("deck_svt.deck_svt->'dropInfos' != 'null'::JSONB"))
+        .cte(name="drops")
+    )
 
     all_drops = select(
         drops.c.queryId,
