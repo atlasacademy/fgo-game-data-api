@@ -273,6 +273,20 @@ QUEST_FLAG_REVERSE: dict[NiceQuestFlag, int] = {
 }
 
 
+### Stage Turn Limit Action Type ###
+
+
+class StageLimitActType(StrEnum):
+    win = "win"
+    lose = "lose"
+
+
+STAGE_LIMIT_ACT_TYPE_NAME: dict[int, StageLimitActType] = {
+    1: StageLimitActType.win,
+    2: StageLimitActType.lose,
+}
+
+
 ### Attribute ###
 
 

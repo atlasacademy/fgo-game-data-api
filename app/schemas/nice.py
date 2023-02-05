@@ -36,6 +36,7 @@ from .enums import (
     ServantPersonality,
     ServantPolicy,
     SkillScriptCond,
+    StageLimitActType,
     SvtClass,
 )
 from .gameenums import (
@@ -2104,6 +2105,11 @@ class NiceStage(BaseModelORJson):
     fieldAis: list[FieldAi] = []
     call: list[int] = Field([], title="Summon these NPC IDs")
     enemyFieldPosCount: int | None = None
+    enemyActCount: int | None = None
+    turn: int | None = Field(None, title="Turn countdown")
+    limitAct: StageLimitActType | None = Field(
+        None, title="Action after turn countdown is over"
+    )
     waveStartMovies: list[NiceStageStartMovie] = []
     enemies: list[QuestEnemy] = []
 
