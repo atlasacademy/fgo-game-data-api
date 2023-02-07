@@ -23,7 +23,7 @@ def get_redis_cache_key(
 class RayshiftRedisData(BaseModelORJson):
     quest_drops: list[EnemyDrop]
     stages: list[NiceStage]
-    ai_npc: QuestEnemy | None = None
+    ai_npcs: dict[int, QuestEnemy] | None = None
 
 
 async def get_stages_cache(

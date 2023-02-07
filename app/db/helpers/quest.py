@@ -561,6 +561,10 @@ async def get_quest_phase_entity(
                 npcFollower.c.leaderSvtId == npcSvtFollower.c.id,
                 cast(mstQuestPhase.c.script["aiNpc"]["npcId"], Integer)
                 == npcSvtFollower.c.id,
+                literal_column(
+                    "any(array(select jsonb_path_query(\"mstQuestPhase\".script, '$.aiMultiNpc[*].npcId')::int))"
+                )
+                == npcSvtFollower.c.id,
             ),
         )
     )

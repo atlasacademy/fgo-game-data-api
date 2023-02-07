@@ -116,6 +116,7 @@ async def get_nice_npc_servant(
     lang: Language,
 ) -> NpcServant:
     return NpcServant(
+        npcId=npcSvtFollower.id,
         name=npcSvtFollower.name,
         svt=await get_basic_servant(
             redis, region, npcSvtFollower.svtId, npcSvtFollower.limitCount, lang
@@ -175,7 +176,7 @@ async def get_nice_support_servant(
 @dataclass
 class NiceNpc:
     support_servants: list[SupportServant]
-    ai_npc: NpcServant | None = None
+    ai_npc: dict[int, NpcServant]
 
 
 async def get_nice_support_servants(
@@ -187,7 +188,7 @@ async def get_nice_support_servants(
     npcSvtFollower: list[NpcSvtFollower],
     npcSvtEquip: list[NpcSvtEquip],
     lang: Language,
-    aiNpcId: int | None = None,
+    aiNpcIds: list[int] | None = None,
 ) -> NiceNpc:
     all_skill_ids: set[SkillSvt] = set()
     all_td_ids: set[TdSvt] = set()
@@ -231,18 +232,21 @@ async def get_nice_support_servants(
         )
         out_support_servants.append(nice_support_servant)
 
-    if aiNpcId:
-        ai_npc = await get_nice_npc_servant(
-            redis=redis,
-            region=region,
-            npcSvtFollower=next(
-                npc_svt for npc_svt in npcSvtFollower if npc_svt.id == aiNpcId
-            ),
-            all_skills=all_skills,
-            all_tds=all_tds,
-            lang=lang,
-        )
+    if aiNpcIds:
+        ai_npc = {
+            aiNpcId: await get_nice_npc_servant(
+                redis=redis,
+                region=region,
+                npcSvtFollower=next(
+                    npc_svt for npc_svt in npcSvtFollower if npc_svt.id == aiNpcId
+                ),
+                all_skills=all_skills,
+                all_tds=all_tds,
+                lang=lang,
+            )
+            for aiNpcId in aiNpcIds
+        }
     else:
-        ai_npc = None
+        ai_npc = {}
 
     return NiceNpc(support_servants=out_support_servants, ai_npc=ai_npc)

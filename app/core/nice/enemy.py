@@ -353,7 +353,7 @@ def get_enemies_in_stage(
 @dataclass
 class QuestEnemies:
     enemy_waves: list[list[QuestEnemy]]
-    ai_npc: QuestEnemy | None = None
+    ai_npcs: dict[int, QuestEnemy] | None = None
 
 
 async def get_quest_enemies(
@@ -447,18 +447,20 @@ async def get_quest_enemies(
         out_enemies.append(stage_nice_enemies)
 
     if quest_detail.aiNpcDeck is not None and quest_detail.aiNpcDeck.svts:
-        svt_deck = quest_detail.aiNpcDeck.svts[0]
-        nice_ai_npc = await get_quest_enemy(
-            redis=redis,
-            region=region,
-            deck_svt_info=EnemyDeckInfo(DeckType.AI_NPC, svt_deck),
-            user_svt=user_svt_id[svt_deck.userSvtId],
-            drops=[],
-            all_enemy_skills=all_skills,
-            all_enemy_tds=all_tds,
-            lang=lang,
-        )
+        nice_ai_npc = {
+            svt_deck.npcId: await get_quest_enemy(
+                redis=redis,
+                region=region,
+                deck_svt_info=EnemyDeckInfo(DeckType.AI_NPC, svt_deck),
+                user_svt=user_svt_id[svt_deck.userSvtId],
+                drops=[],
+                all_enemy_skills=all_skills,
+                all_enemy_tds=all_tds,
+                lang=lang,
+            )
+            for svt_deck in quest_detail.aiNpcDeck.svts
+        }
     else:
-        nice_ai_npc = None
+        nice_ai_npc = {}
 
-    return QuestEnemies(enemy_waves=out_enemies, ai_npc=nice_ai_npc)
+    return QuestEnemies(enemy_waves=out_enemies, ai_npcs=nice_ai_npc)

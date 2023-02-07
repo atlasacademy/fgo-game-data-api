@@ -1,5 +1,5 @@
 import re
-from typing import Any, Optional, Union
+from typing import Any, Optional
 
 from fastapi import HTTPException
 from pydantic import HttpUrl

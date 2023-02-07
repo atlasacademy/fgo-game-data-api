@@ -2155,6 +2155,7 @@ class SupportServantScript(BaseModelORJson):
 
 
 class NpcServant(BaseModelORJson):
+    npcId: int
     name: str
     svt: BasicServant
     lv: int
@@ -2196,6 +2197,7 @@ class NiceQuestPhaseExtraDetail(BaseModelORJson):
     hintTitle: str | None = None
     hintMessage: str | None = None
     aiNpc: NiceQuestPhaseAiNpc | None = None
+    aiMultiNpc: list[NiceQuestPhaseAiNpc] | None = None
 
 
 class NiceRestriction(BaseModelORJson):
