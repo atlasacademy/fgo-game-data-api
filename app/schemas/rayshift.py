@@ -38,6 +38,7 @@ class DeckSvt(BaseModelORJson):
     userSvtEquipIds: list[int]
     isFollowerSvt: bool
     npcFollowerSvtId: int
+    followerType: int | None = None
 
 
 class Deck(BaseModelORJson):
@@ -88,9 +89,11 @@ class UserSvt(BaseModelORJson):
     individuality: list[int]
     classPassive: list[int]
     addPassive: Optional[list[int]] = None
+    addPassiveLvs: list[int] | None = None
     aiId: int
     actPriority: int
     maxActNum: int
+    minActNum: int | None = None
     displayType: int
     npcSvtType: int
     passiveSkill: Optional[list[int]] = None
@@ -115,8 +118,14 @@ class UserSvt(BaseModelORJson):
     limitCountSupport: Optional[int] = None
     battleVoice: int
     treasureDeviceLv1: int
+    treasureDeviceLv2: int | None = None
+    treasureDeviceLv3: int | None = None
     exceedCount: int
     status: int
+    condVal: int | None = None
+    enemyScript: dict[str, Any] | None = None
+    hpGaugeType: int | None = None
+    imageSvtId: int | None = None
     createdAt: int
 
 

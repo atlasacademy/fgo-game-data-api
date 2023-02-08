@@ -49,6 +49,9 @@ def get_enemy_misc(svt: UserSvt) -> EnemyMisc:
         userCommandCodeIds=svt.userCommandCodeIds if svt.userCommandCodeIds else [],
         commandCardParam=svt.commandCardParam,
         status=svt.status,
+        hpGaugeType=svt.hpGaugeType,
+        imageSvtId=svt.imageSvtId,
+        condVal=svt.condVal,
     )
 
 
@@ -78,6 +81,7 @@ def get_enemy_ai(svt: UserSvt) -> EnemyAi:
         aiId=svt.aiId,
         actPriority=svt.actPriority,
         maxActNum=svt.maxActNum,
+        minActNum=svt.minActNum,
     )
 
 
@@ -178,6 +182,9 @@ def get_enemy_passive(svt: UserSvt, all_skills: MultipleNiceSkills) -> EnemyPass
         ]
         if svt.addPassive
         else [],
+        addPassiveLvs=svt.addPassiveLvs,
+        appendPassiveSkillIds=svt.appendPassiveSkillIds,
+        appendPassiveSkillLvs=svt.appendPassiveSkillLvs,
     )
 
 
@@ -187,6 +194,8 @@ def get_enemy_td(svt: UserSvt, all_nps: MultipleNiceTds) -> EnemyTd:
         noblePhantasm=all_nps.get(TdSvt(svt.treasureDeviceId, svt.svtId), None),
         noblePhantasmLv=svt.treasureDeviceLv,
         noblePhantasmLv1=svt.treasureDeviceLv1,
+        noblePhantasmLv2=svt.treasureDeviceLv2,
+        noblePhantasmLv3=svt.treasureDeviceLv3,
     )
 
 

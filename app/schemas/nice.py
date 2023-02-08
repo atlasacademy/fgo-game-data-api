@@ -1974,6 +1974,9 @@ class EnemySkill(BaseModelORJson):
 class EnemyPassive(BaseModelORJson):
     classPassive: list[NiceSkill]
     addPassive: list[NiceSkill]
+    addPassiveLvs: list[int] | None = None
+    appendPassiveSkillIds: list[int] | None = None
+    appendPassiveSkillLvs: list[int] | None = None
 
 
 class EnemyTd(BaseModelORJson):
@@ -1981,6 +1984,8 @@ class EnemyTd(BaseModelORJson):
     noblePhantasm: Optional[NiceTd] = None
     noblePhantasmLv: int
     noblePhantasmLv1: int
+    noblePhantasmLv2: int | None = None
+    noblePhantasmLv3: int | None = None
 
 
 class EnemyLimit(BaseModelORJson):
@@ -2019,6 +2024,7 @@ class EnemyAi(BaseModelORJson):
     aiId: int
     actPriority: int
     maxActNum: int
+    minActNum: int | None = None
 
 
 class EnemyMisc(BaseModelORJson):
@@ -2032,6 +2038,9 @@ class EnemyMisc(BaseModelORJson):
     userCommandCodeIds: list[int]
     commandCardParam: Optional[list[int]] = None
     status: int
+    hpGaugeType: int | None = None
+    imageSvtId: int | None = None
+    condVal: int | None = None
 
 
 class EnemyDrop(BaseModelORJson):
