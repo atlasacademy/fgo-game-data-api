@@ -147,23 +147,23 @@ def get_nice_buff_script(
         script["TargetIndiv"] = get_nice_trait(mstBuff.script["TargetIndiv"])
 
     if "convert" in mstBuff.script:
-        script["convert"] = mstBuff.script["convert"]
-
-    if "convert" in mstBuff.script:
         convert = mstBuff.script["convert"]
 
         if convert["convertType"] == BuffConvertType.BUFF:
-            convert["targets"] = [raw_to_out(buff) for buff in convert["targetBuffs"]]
+            targets = [raw_to_out(buff) for buff in convert["targetBuffs"]]
         elif convert["convertType"] == BuffConvertType.INDIVIDUALITY:
-            convert["targets"] = get_traits_list(convert["targetIds"])
+            targets = get_traits_list(convert["targetIds"])
         else:
-            convert["targets"] = []
+            targets = []
 
-        convert["convertType"] = BUFF_CONVERT_TYPE_NAME[convert["convertType"]]
-        convert["targetLimit"] = BUFF_CONVERT_LIMIT_TYPE_NAME[convert["targetLimit"]]
-        convert["convertBuffs"] = [raw_to_out(buff) for buff in convert["convertBuffs"]]
-
-        script["convert"] = convert
+        script["convert"] = {
+            "targetLimit": BUFF_CONVERT_LIMIT_TYPE_NAME[convert["targetLimit"]],
+            "convertType": BUFF_CONVERT_TYPE_NAME[convert["convertType"]],
+            "targets": targets,
+            "convertBuffs": [raw_to_out(buff) for buff in convert["convertBuffs"]],
+            "script": convert["script"],
+            "effectId": convert["effectId"],
+        }
 
     return script
 
