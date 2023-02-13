@@ -2109,6 +2109,7 @@ class CondType(IntEnum):
     EVENT_TUTORIAL_FLAG_OFF = 171
     EVENT_SUPER_BOSS_VALUE_EQUAL = 172
     NOT_EVENT_SUPER_BOSS_VALUE_EQUAL = 173
+    ALL_SVT_TARGET_SKILL_LV_NUM = 174
     SUPER_BOSS_DAMAGE_ABOVE = 175
     SUPER_BOSS_DAMAGE_BELOW = 176
 
@@ -2287,6 +2288,7 @@ class NiceCondType(StrEnum):
     eventTutorialFlagOff = "eventTutorialFlagOff"
     eventSuperBossValueEqual = "eventSuperBossValueEqual"
     notEventSuperBossValueEqual = "notEventSuperBossValueEqual"
+    allSvtTargetSkillLvNum = "allSvtTargetSkillLvNum"
     superBossDamageAbove = "superBossDamageAbove"
     superBossDamageBelow = "superBossDamageBelow"
 
@@ -2463,6 +2465,7 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     171: NiceCondType.eventTutorialFlagOff,
     172: NiceCondType.eventSuperBossValueEqual,
     173: NiceCondType.notEventSuperBossValueEqual,
+    174: NiceCondType.allSvtTargetSkillLvNum,
     175: NiceCondType.superBossDamageAbove,
     176: NiceCondType.superBossDamageBelow,
 }

@@ -887,6 +887,7 @@ export enum NiceCondType {
     EVENT_TUTORIAL_FLAG_OFF = "eventTutorialFlagOff",
     EVENT_SUPER_BOSS_VALUE_EQUAL = "eventSuperBossValueEqual",
     NOT_EVENT_SUPER_BOSS_VALUE_EQUAL = "notEventSuperBossValueEqual",
+    ALL_SVT_TARGET_SKILL_LV_NUM = "allSvtTargetSkillLvNum",
     SUPER_BOSS_DAMAGE_ABOVE = "superBossDamageAbove",
     SUPER_BOSS_DAMAGE_BELOW = "superBossDamageBelow",
 }
