@@ -44,7 +44,7 @@ def get_script_text_only(region: Region, script: str) -> str:
                 in_recording_mode = True
                 continue
 
-        elif line.startswith("[k]") or line.startswith("[page]"):
+        elif line.startswith(("[page]", "[k]")):
             in_recording_mode = False
             continue
         elif "[&" in line:
