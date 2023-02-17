@@ -3148,6 +3148,7 @@ class WarEntityFlag(IntEnum):
     DISP_EARTH_POINT_WITHOUT_MAP = 1048576
     IS_WAR_ICON_FREE = 2097152
     IS_WAR_ICON_CENTER = 4194304
+    NOTICE_BOARD = 8388608
 
 
 class NiceWarFlag(StrEnum):
@@ -3175,6 +3176,7 @@ class NiceWarFlag(StrEnum):
     dispEarthPointWithoutMap = "dispEarthPointWithoutMap"
     isWarIconFree = "isWarIconFree"
     isWarIconCenter = "isWarIconCenter"
+    noticeBoard = "noticeBoard"
 
 
 WAR_FLAG_NAME: dict[int, NiceWarFlag] = {
@@ -3200,6 +3202,7 @@ WAR_FLAG_NAME: dict[int, NiceWarFlag] = {
     1048576: NiceWarFlag.dispEarthPointWithoutMap,
     2097152: NiceWarFlag.isWarIconFree,
     4194304: NiceWarFlag.isWarIconCenter,
+    8388608: NiceWarFlag.noticeBoard,
 }
 
 

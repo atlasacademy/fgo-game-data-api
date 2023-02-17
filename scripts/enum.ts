@@ -1128,6 +1128,7 @@ export enum NiceWarFlag {
     DISP_EARTH_POINT_WITHOUT_MAP = "dispEarthPointWithoutMap",
     IS_WAR_ICON_FREE = "isWarIconFree",
     IS_WAR_ICON_CENTER = "isWarIconCenter",
+    NOTICE_BOARD = "noticeBoard",
 }
 
 export enum NiceWarStartType {
