@@ -182,7 +182,9 @@ async def parse_dataVals(
                         # using DUMMY_PREFIX + ... and parse it later
                         dependMstFunc = await fetch.get_one(conn, MstFunc, int(output["DependFuncId"]))  # type: ignore
                         if not dependMstFunc:
-                            raise HTTPException(status_code=500, detail=error_message)
+                            raise HTTPException(
+                                status_code=500, detail=error_message
+                            ) from None
                         vals_value = await parse_dataVals(
                             conn, array2[1], dependMstFunc.funcType
                         )
@@ -207,7 +209,7 @@ async def parse_dataVals(
                                 status_code=500, detail=error_message
                             ) from err
                 else:
-                    raise HTTPException(status_code=500, detail=error_message)
+                    raise HTTPException(status_code=500, detail=error_message) from None
 
             if text:
                 output[text] = value
