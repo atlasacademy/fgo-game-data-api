@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import Iterable, Optional, Union
 
 from sqlalchemy import Table
@@ -23,6 +24,7 @@ from ...schemas.gameenums import CondType, SvtType, VoiceCondType
 from ...schemas.raw import (
     GlobalNewMstSubtitle,
     MstSvt,
+    MstSvtLimitAdd,
     MstSvtScript,
     MstSvtVoice,
     MstVoicePlayCond,
@@ -85,6 +87,36 @@ async def get_ce_id(conn: AsyncConnection, col_no: int) -> int:
     if mstSvt_db:
         return int(mstSvt_db)
     return col_no
+
+
+@dataclass
+class SvtLimit:
+    svt_id: int
+    limit: int
+
+
+async def get_svt_limit_add(
+    conn: AsyncConnection, svt_limits: Iterable[SvtLimit]
+) -> list[MstSvtLimitAdd]:
+    if not svt_limits:
+        return []
+
+    stmt = select(mstSvtLimitAdd).where(
+        or_(
+            *[
+                and_(
+                    mstSvtLimitAdd.c.svtId == svt_limit.svt_id,
+                    mstSvtLimitAdd.c.limitCount == svt_limit.limit,
+                )
+                for svt_limit in svt_limits
+            ]
+        )
+    )
+
+    return [
+        MstSvtLimitAdd.from_orm(db_row)
+        for db_row in (await conn.execute(stmt)).fetchall()
+    ]
 
 
 async def get_svt_script(

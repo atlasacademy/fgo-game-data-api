@@ -12,6 +12,7 @@ from ..redis.helpers.reverse import RedisReverse, get_reverse_ids
 from ..schemas.common import Region, ReverseDepth
 from ..schemas.enums import FUNC_VALS_NOT_BUFF, DetailMissionCondType
 from ..schemas.gameenums import BgmFlag, CondType, PayType, PurchaseType, VoiceCondType
+from ..schemas.nice import COSTUME_LIMIT_NO_LESS_THAN
 from ..schemas.raw import (
     EXTRA_ATTACK_TD_ID,
     AiCollection,
@@ -814,6 +815,16 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
 
     reward_scenes = await fetch.get_all(conn, MstEventRewardScene, event_id)
 
+    costume_limits = [
+        svt.SvtLimit(svt_id=svt_id, limit=limit)
+        for reward_scene in reward_scenes
+        for svt_id, limit in zip(
+            reward_scene.guideImageIds, reward_scene.guideLimitCounts, strict=False
+        )
+        if limit >= COSTUME_LIMIT_NO_LESS_THAN
+    ]
+    mstSvtLimitAdd = await svt.get_svt_limit_add(conn, costume_limits)
+
     voice_ids = (
         {voice_play.guideImageId for voice_play in voice_plays}
         | {gacha_talk.guideImageId for gacha_talk in gacha_talks}
@@ -999,6 +1010,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         mstSubtitle=mstSubtitle,
         mstVoicePlayCond=mstVoicePlayCond,
         mstSvtExtra=mstSvtExtra,
+        mstSvtLimitAdd=mstSvtLimitAdd,
         mstBgm=mstBgm,
     )
 

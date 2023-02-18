@@ -165,6 +165,11 @@ class AssetURL:
     movie = "{base_url}/{region}/Movie/{item_id}.mp4"
 
 
+COSTUME_LIMIT_NO_LESS_THAN = 11
+LIMIT_TO_FACE_ID = {0: 0, 1: 1, 2: 1, 3: 2, 4: 3}
+LIMIT_TO_FIGURE_ID = {0: 0, 1: 1, 2: 1, 3: 2, 4: 2}
+
+
 class NiceBaseGift(BaseModelORJson):
     id: int
     type: NiceGiftType

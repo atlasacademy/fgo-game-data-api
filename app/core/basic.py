@@ -55,7 +55,7 @@ from ..schemas.gameenums import (
     Quest_FLAG_NAME,
     SvtType,
 )
-from ..schemas.nice import AssetURL
+from ..schemas.nice import LIMIT_TO_FACE_ID, AssetURL
 from ..schemas.raw import (
     MstBuff,
     MstClassRelationOverwrite,
@@ -488,12 +488,9 @@ async def get_basic_svt(
             i=0,
         )
     else:
-        limit_count_to_face_id = {0: 0, 1: 1, 2: 1, 3: 2, 4: 3}
         basic_servant["face"] = AssetURL.face.format(
             **base_settings,
-            i=limit_count_to_face_id.get(
-                mstSvtLimit.limitCount, mstSvtLimit.limitCount
-            ),
+            i=LIMIT_TO_FACE_ID.get(mstSvtLimit.limitCount, mstSvtLimit.limitCount),
         )
 
     if region == Region.JP and lang is not None:

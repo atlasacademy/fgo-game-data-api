@@ -203,7 +203,9 @@ async def get_nice_event(
             for reward in raw_event.mstEventReward
         ],
         rewardScenes=[
-            get_nice_event_reward_scene(region, reward_scene, nice_bgms)
+            get_nice_event_reward_scene(
+                region, reward_scene, nice_bgms, raw_event.mstSvtLimitAdd
+            )
             for reward_scene in raw_event.mstEventRewardScene
         ],
         pointGroups=[
