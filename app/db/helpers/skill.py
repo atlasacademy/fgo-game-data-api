@@ -3,7 +3,7 @@ from typing import Iterable, Optional
 from sqlalchemy.dialects.postgresql import aggregate_order_by, array_agg
 from sqlalchemy.exc import DBAPIError
 from sqlalchemy.ext.asyncio import AsyncConnection
-from sqlalchemy.sql import and_, func, select
+from sqlalchemy.sql import and_, func, or_, select
 
 from ...models.raw import (
     mstAi,
@@ -13,6 +13,8 @@ from ...models.raw import (
     mstSkill,
     mstSkillAdd,
     mstSkillDetail,
+    mstSkillGroup,
+    mstSkillGroupOverwrite,
     mstSkillLv,
     mstSvtSkill,
 )
@@ -62,14 +64,25 @@ async def get_skillEntity(
     )
 
     JOINED_SKILL_TABLES = (
-        mstSkill.outerjoin(mstSkillDetail, mstSkillDetail.c.id == mstSkill.c.id)
-        .outerjoin(mstSvtSkill, mstSvtSkill.c.skillId == mstSkill.c.id)
+        mstSkill.outerjoin(mstSvtSkill, mstSvtSkill.c.skillId == mstSkill.c.id)
         .outerjoin(mstSkillAdd, mstSkillAdd.c.skillId == mstSkill.c.id)
         .outerjoin(
             mstCommonRelease, mstSkillAdd.c.commonReleaseId == mstCommonRelease.c.id
         )
         .outerjoin(mstSkillLvJson, mstSkillLvJson.c.skillId == mstSkill.c.id)
         .outerjoin(aiIds, aiIds.c.skillId == mstSkill.c.id)
+        .outerjoin(mstSkillGroup, mstSkillGroup.c.skillId == mstSkill.c.id)
+        .outerjoin(
+            mstSkillGroupOverwrite,
+            mstSkillGroupOverwrite.c.skillGroupId == mstSkillGroup.c.id,
+        )
+        .outerjoin(
+            mstSkillDetail,
+            or_(
+                mstSkillDetail.c.id == mstSkill.c.id,
+                mstSkillDetail.c.id == mstSkillGroupOverwrite.c.skillDetailId,
+            ),
+        )
     )
 
     SELECT_SKILL_ENTITY = [
@@ -78,6 +91,8 @@ async def get_skillEntity(
         sql_jsonb_agg(mstSvtSkill),
         sql_jsonb_agg(mstSkillAdd),
         sql_jsonb_agg(mstCommonRelease),
+        sql_jsonb_agg(mstSkillGroup),
+        sql_jsonb_agg(mstSkillGroupOverwrite),
         mstSkillLvJson.c.mstSkillLv,
         aiIds.c.aiIds,
     ]

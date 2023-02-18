@@ -174,6 +174,24 @@ class MstSkillAdd(BaseModelORJson):
     ruby: str
 
 
+class MstSkillGroup(BaseModelORJson):
+    id: int
+    skillId: int
+    lv: int
+
+
+class MstSkillGroupOverwrite(BaseModelORJson):
+    funcId: list[int]
+    svals: list[str]
+    skillGroupId: int
+    startedAt: int
+    endedAt: int
+    iconId: int
+    vals: str
+    skillDetailId: int
+    expandedFuncId: Optional[list[FunctionEntityNoReverse]] = None
+
+
 class SkillEntityNoReverse(BaseModelORJson):
     mstSkill: MstSkill
     mstSkillDetail: list[MstSkillDetail]
@@ -181,6 +199,8 @@ class SkillEntityNoReverse(BaseModelORJson):
     mstSkillAdd: list[MstSkillAdd]
     mstCommonRelease: list[MstCommonRelease]
     mstSkillLv: list[MstSkillLv]
+    mstSkillGroup: list[MstSkillGroup]
+    mstSkillGroupOverwrite: list[MstSkillGroupOverwrite]
     aiIds: Optional[dict[AiType, list[int]]] = None
 
 
@@ -1914,6 +1934,7 @@ class EventEntity(BaseModelORJson):
     mstSubtitle: list[GlobalNewMstSubtitle]
     mstVoicePlayCond: list[MstVoicePlayCond]
     mstSvtExtra: list[MstSvtExtra]
+    mstSvtLimitAdd: list[MstSvtLimitAdd]
     mstBgm: list[BgmEntity]
 
 

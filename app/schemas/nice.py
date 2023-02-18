@@ -587,6 +587,20 @@ class NiceSkillAdd(BaseModelORJson):
     ruby: str
 
 
+class NiceSkillGroupOverwrite(BaseModelORJson):
+    level: int
+    skillGroupId: int
+    startedAt: int
+    endedAt: int
+    icon: Optional[HttpUrl] = None
+    detail: str
+    unmodifiedDetail: str
+    functions: list[NiceFunction] = Field(
+        ...,
+        description="Since each skill level has their own group overwrite, the svals field only contains data for 1 level.",
+    )
+
+
 class NiceSkill(BaseModelORJson):
     id: int
     num: int = -1
@@ -609,6 +623,7 @@ class NiceSkill(BaseModelORJson):
     extraPassive: list[ExtraPassive]
     skillAdd: list[NiceSkillAdd]
     aiIds: Optional[dict[AiType, list[int]]] = None
+    groupOverwrites: list[NiceSkillGroupOverwrite] | None = None
     functions: list[NiceFunction]
 
 

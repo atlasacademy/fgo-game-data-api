@@ -25,6 +25,7 @@ from ..models.raw import (
     mstFuncGroup,
     mstGift,
     mstItem,
+    mstSkillGroupOverwrite,
     mstSkillLv,
     mstSubtitle,
     mstTreasureDeviceLv,
@@ -128,6 +129,13 @@ def load_skill_td_lv(
     with open(master_folder / "mstSkillLv.json", "rb") as fp:
         mstSkillLv_data = orjson.loads(fp.read())
 
+    group_overwrite_file = master_folder / "mstSkillGroupOverwrite.json"
+    if group_overwrite_file.exists():
+        with open(group_overwrite_file, "rb") as fp:
+            mstSkillGroupOverwrite_data = orjson.loads(fp.read())
+    else:
+        mstSkillGroupOverwrite_data = []
+
     with open(master_folder / "mstTreasureDeviceLv.json", "rb") as fp:
         mstTreasureDeviceLv_data = orjson.loads(fp.read())
 
@@ -183,6 +191,13 @@ def load_skill_td_lv(
         ]
         skillLv["relatedSkillIds"] = get_trigger_skill_ids(skillLv)
 
+    for groupOverwrite in mstSkillGroupOverwrite_data:
+        groupOverwrite["expandedFuncId"] = [
+            get_func_entity(func_id)
+            for func_id in groupOverwrite["funcId"]
+            if func_id in mstFuncId
+        ]
+
     for treasureDeviceLv in mstTreasureDeviceLv_data:
         treasureDeviceLv["expandedFuncId"] = [
             get_func_entity(func_id)
@@ -196,6 +211,7 @@ def load_skill_td_lv(
     insert_db(conn, mstFunc, mstFunc_data)
     insert_db(conn, mstFuncGroup, mstFuncGroup_data)
     insert_db(conn, mstSkillLv, mstSkillLv_data)
+    insert_db(conn, mstSkillGroupOverwrite, mstSkillGroupOverwrite_data)
     insert_db(conn, mstTreasureDeviceLv, mstTreasureDeviceLv_data)
 
 
