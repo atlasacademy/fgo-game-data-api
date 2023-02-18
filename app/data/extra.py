@@ -92,11 +92,20 @@ def get_extra_svt_data(
     valentineEquip: dict[int, list[int]] = defaultdict(list)
     valentineScript: dict[int, list[NiceValentineScript]] = defaultdict(list)
 
+    mstShopScriptId = {script.shopId: script for script in mstShopScripts}
+    eventId_with_script = {
+        shop.eventId for shop in mstShops if shop.id in mstShopScriptId
+    }
+
     latest_valentine_event_id = max(
-        (event for event in mstEvents if VALENTINE_NAME[region] in event.name),
+        (
+            event
+            for event in mstEvents
+            if VALENTINE_NAME[region] in event.name or event.id in eventId_with_script
+        ),
         key=lambda event: int(event.startedAt),
     ).id
-    mstShopScriptId = {script.shopId: script for script in mstShopScripts}
+
     # Find Valentince CE's owner by looking at which servant unlock the shop entries
     for shop in mstShops:
         if (
