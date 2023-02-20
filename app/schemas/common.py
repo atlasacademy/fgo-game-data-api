@@ -96,7 +96,7 @@ class BuffConvertScript(BaseModel):
 class BuffConvert(BaseModel):
     """Buff Convert
 
-    Due to a limitation in Pydantic and OpenAPI schema generation, `dict[str, Any]
+    Due to a limitation in Pydantic and OpenAPI schema generation, `dict[str, Any]`
     is used in place of either BasicBuff or NiceBuff
     """
 

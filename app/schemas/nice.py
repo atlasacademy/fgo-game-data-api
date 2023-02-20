@@ -2394,7 +2394,7 @@ class NiceWar(BaseModelORJson):
     materialParentWarId: int
     emptyMessage: str
     bgm: NiceBgm
-    scriptId: str
+    scriptId: str = Field(..., description='Could be "NONE".')
     script: HttpUrl
     startType: NiceWarStartType
     targetId: int
