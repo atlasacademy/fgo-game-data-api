@@ -1504,5 +1504,154 @@
     "isRec": true,
     "plusAction": 0,
     "maxRate": []
+  },
+  "notTargetSkill": {
+    "limit": "none",
+    "plusTypes": [
+      "notTargetSkill"
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
+  },
+  "toFieldAvoidBuff": {
+    "limit": "none",
+    "plusTypes": [
+      "toFieldAvoidBuff"
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
+  },
+  "toFieldSubIndividualityField": {
+    "limit": "none",
+    "plusTypes": [
+      "toFieldSubIndividualityField"
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
+  },
+  "grantStateUpOnly": {
+    "limit": "normal",
+    "plusTypes": [
+      "upGrantstate"
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": [
+      5000
+    ]
+  },
+  "turnendHpReduceToRegain": {
+    "limit": "normal",
+    "plusTypes": [
+      "hpReduceToRegain"
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
+  },
+  "functionSelfturnstart": {
+    "limit": "none",
+    "plusTypes": [
+      "selfturnstartFunction"
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
+  },
+  "overwriteDeadType": {
+    "limit": "none",
+    "plusTypes": [
+      "overwriteDeadType"
+    ],
+    "minusTypes": [],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
+  },
+  "actionCount": {
+    "limit": "none",
+    "plusTypes": [
+      "upActionCount"
+    ],
+    "minusTypes": [
+      "downActionCount"
+    ],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
+  },
+  "shiftGuts": {
+    "limit": "none",
+    "plusTypes": [
+      "shiftGuts",
+      "shiftGutsRatio"
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
+  },
+  "masterSkillValueUp": {
+    "limit": "normal",
+    "plusTypes": [
+      "masterSkillValueUp"
+    ],
+    "minusTypes": [],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
+  },
+  "buffConvert": {
+    "limit": "none",
+    "plusTypes": [
+      "buffConvert"
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
+  },
+  "subFieldIndividuality": {
+    "limit": "none",
+    "plusTypes": [
+      "subFieldIndividuality"
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
   }
 }

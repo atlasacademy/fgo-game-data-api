@@ -1211,5 +1211,140 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0
+  },
+  "NOT_TARGET_SKILL": {
+    "limit": 0,
+    "plusTypes": [
+      166
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "TO_FIELD_AVOID_BUFF": {
+    "limit": 0,
+    "plusTypes": [
+      10002
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "TO_FIELD_SUB_INDIVIDUALITY_FIELD": {
+    "limit": 0,
+    "plusTypes": [
+      10003
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "GRANT_STATE_UP_ONLY": {
+    "limit": 3,
+    "plusTypes": [
+      27
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 1000,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "TURNEND_HP_REDUCE_TO_REGAIN": {
+    "limit": 3,
+    "plusTypes": [
+      167
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_SELFTURNSTART": {
+    "limit": 0,
+    "plusTypes": [
+      168
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "OVERWRITE_DEAD_TYPE": {
+    "limit": 0,
+    "plusTypes": [
+      169
+    ],
+    "minusTypes": [],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "ACTION_COUNT": {
+    "limit": 0,
+    "plusTypes": [
+      170
+    ],
+    "minusTypes": [
+      171
+    ],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "SHIFT_GUTS": {
+    "limit": 0,
+    "plusTypes": [
+      172,
+      173
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "MASTER_SKILL_VALUE_UP": {
+    "limit": 3,
+    "plusTypes": [
+      174
+    ],
+    "minusTypes": [],
+    "baseParam": 0,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "BUFF_CONVERT": {
+    "limit": 0,
+    "plusTypes": [
+      175
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "SUB_FIELD_INDIVIDUALITY": {
+    "limit": 0,
+    "plusTypes": [
+      176
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
   }
 }
