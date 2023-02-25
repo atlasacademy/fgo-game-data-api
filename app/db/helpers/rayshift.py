@@ -25,7 +25,12 @@ async def get_rayshift_quest_db(
         where_conds.append(
             rayshiftQuest.c.questDetail.contains({"questSelect": questSelect})
         )
-    stmt = select(rayshiftQuest.c.questDetail).where(and_(*where_conds))
+    stmt = (
+        select(rayshiftQuest.c.questDetail)
+        .where(and_(*where_conds))
+        .order_by(rayshiftQuest.c.queryId.desc())
+        .limit(1)
+    )
     rayshift_quest = await fetch_one(conn, stmt)
     if rayshift_quest and rayshift_quest.questDetail:
         return QuestDetail.parse_obj(rayshift_quest.questDetail)
