@@ -24,4 +24,5 @@ nice_event*.json
 asset_storage.json
 basic_svt*.json
 nice_shop*.json
+nice_enemy_master*.json
 info.json

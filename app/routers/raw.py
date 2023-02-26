@@ -13,6 +13,7 @@ from ..schemas.raw import (
     BgmEntity,
     BuffEntity,
     CommandCodeEntity,
+    EnemyMasterEntity,
     EventEntity,
     FunctionEntity,
     ItemEntity,
@@ -784,3 +785,24 @@ async def get_shop(
     """
     async with get_db(region) as conn:
         return item_response(await raw.get_shop_entity(conn, shop_id))
+
+
+@router.get(
+    "/{region}/enemy-master/{master_id}",
+    summary="Get Enemy Master data",
+    response_description="Enemy Master entity",
+    response_model=EnemyMasterEntity,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()
+async def get_enemy_master(
+    region: Region,
+    master_id: int,
+) -> Response:
+    """
+    Get Enemy Master info from ID
+    """
+    async with get_db(region) as conn:
+        enemy_master_entity = await raw.get_enemy_master_entity(conn, master_id)
+        return item_response(enemy_master_entity)

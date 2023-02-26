@@ -3,7 +3,19 @@ from fastapi_cache.decorator import cache
 
 from ..config import Settings
 from ..core import search
-from ..core.nice import ai, bgm, cc, item, mc, mm, nice, quest, script, war
+from ..core.nice import (
+    ai,
+    bgm,
+    cc,
+    enemy_master,
+    item,
+    mc,
+    mm,
+    nice,
+    quest,
+    script,
+    war,
+)
 from ..core.nice.common_release import get_nice_common_releases_from_id
 from ..core.nice.event.event import get_nice_event
 from ..core.nice.event.shop import get_nice_shop_from_raw, get_nice_shops_from_raw
@@ -20,6 +32,7 @@ from ..schemas.nice import (
     NiceBuffReverse,
     NiceCommandCode,
     NiceCommonRelease,
+    NiceEnemyMaster,
     NiceEquip,
     NiceEvent,
     NiceItem,
@@ -926,4 +939,23 @@ async def get_common_releases(region: Region, common_release_id: int) -> Respons
     async with get_db(region) as conn:
         return list_response(
             await get_nice_common_releases_from_id(conn, common_release_id)
+        )
+
+
+@router.get(
+    "/{region}/enemy-master/{master_id}",
+    summary="Get Enemy Master data",
+    response_description="Nice Enemy Master Entity",
+    response_model=NiceEnemyMaster,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()
+async def get_enemy_master(
+    region: Region,
+    master_id: int,
+) -> Response:
+    async with get_db(region) as conn:
+        return item_response(
+            await enemy_master.get_nice_enemy_master(conn, region, master_id)
         )

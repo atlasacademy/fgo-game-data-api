@@ -571,6 +571,22 @@ class MstEquipAdd(BaseModelORJson):
     femaleImageId: int
 
 
+class MstEnemyMaster(BaseModelORJson):
+    id: int
+    name: str
+
+
+class MstEnemyMasterBattle(BaseModelORJson):
+    id: int
+    enemyMasterId: int
+    faceId: int
+    commandSpellIconId: int
+    maxCommandSpell: int
+    offsetX: int
+    offsetY: int
+    script: str
+
+
 class MstCommandCode(BaseModelORJson):
     id: int  # 8400110
     collectionNo: int  # 11
@@ -1736,6 +1752,11 @@ class MysticCodeEntity(BaseModelORJson):
     mstEquipExp: list[MstEquipExp]
     mstEquipAdd: list[MstEquipAdd]
     mstCommonRelease: list[MstCommonRelease]
+
+
+class EnemyMasterEntity(BaseModelORJson):
+    mstEnemyMaster: MstEnemyMaster
+    mstEnemyMasterBattle: list[MstEnemyMasterBattle]
 
 
 class Master(BaseModelORJson):

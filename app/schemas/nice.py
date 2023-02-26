@@ -163,6 +163,9 @@ class AssetURL:
     bgmLogo = "{base_url}/{region}/MyRoomSound/soundlogo_{logo_id:0>3}.png"
     servantModel = "{base_url}/{region}/Servants/{item_id}/manifest.json"
     movie = "{base_url}/{region}/Movie/{item_id}.mp4"
+    commandSpell = "{base_url}/{region}/CommandSpell/cs_{item_id:0>4}.png"
+    enemyMasterFace = "{base_url}/{region}/EnemyMasterFace/enemyMstFace{item_id}.png"
+    enemyMasterFigure = "{base_url}/{region}/EnemyMasterFigure/figure{item_id}.png"
 
 
 COSTUME_LIMIT_NO_LESS_THAN = 11
@@ -682,6 +685,24 @@ class NiceMysticCode(BaseModelORJson):
     skills: list[NiceSkill]
     expRequired: list[int]
     costumes: list[NiceMysticCodeCostume]
+
+
+class NiceEnemyMasterBattle(BaseModelORJson):
+    id: int
+    # enemyMasterId: int
+    face: HttpUrl
+    figure: HttpUrl  # may not exist
+    commandSpellIcon: HttpUrl
+    maxCommandSpell: int
+    offsetX: int
+    offsetY: int
+    # script: str
+
+
+class NiceEnemyMaster(BaseModelORJson):
+    id: int
+    name: str
+    battles: list[NiceEnemyMasterBattle]
 
 
 def get_community_limit(limit_count: int) -> int:

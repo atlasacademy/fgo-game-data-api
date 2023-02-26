@@ -827,6 +827,28 @@ mstEquipAdd = Table(
 )
 
 
+mstEnemyMaster = Table(
+    "mstEnemyMaster",
+    metadata,
+    Column("id", Integer, index=True),
+    Column("name", String),
+)
+
+
+mstEnemyMasterBattle = Table(
+    "mstEnemyMasterBattle",
+    metadata,
+    Column("id", Integer),
+    Column("enemyMasterId", Integer, index=True),
+    Column("faceId", Integer),
+    Column("commandSpellIconId", Integer),
+    Column("maxCommandSpell", Integer),
+    Column("offsetX", Integer),
+    Column("offsetY", Integer),
+    Column("script", String),
+)
+
+
 mstItem = Table(
     "mstItem",
     metadata,
@@ -2082,6 +2104,7 @@ TABLES_TO_BE_LOADED = [
     [mstConstant],
     [mstCv],
     [mstEquip, mstEquipAdd, mstEquipExp, mstEquipSkill],
+    [mstEnemyMaster, mstEnemyMasterBattle],
     [mstEventMission, mstEventMissionCondition, mstEventMissionConditionDetail],
     [mstEventPointBuff],
     [mstEventPointGroup],

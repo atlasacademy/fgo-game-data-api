@@ -21,6 +21,7 @@ from ..schemas.raw import (
     BuffEntity,
     BuffEntityNoReverse,
     CommandCodeEntity,
+    EnemyMasterEntity,
     EventEntity,
     FunctionEntity,
     FunctionEntityNoReverse,
@@ -43,6 +44,8 @@ from ..schemas.raw import (
     MstCommonConsume,
     MstCommonRelease,
     MstCv,
+    MstEnemyMaster,
+    MstEnemyMasterBattle,
     MstEquip,
     MstEquipAdd,
     MstEquipExp,
@@ -619,6 +622,24 @@ async def get_mystic_code_entity(
         mstCommonRelease=mstCommonRelease,
     )
     return mc_entity
+
+
+async def get_enemy_master_entity(
+    conn: AsyncConnection,
+    master_id: int,
+    mstEnemyMaster: Optional[MstEnemyMaster] = None,
+) -> EnemyMasterEntity:
+    master_db = (
+        mstEnemyMaster
+        if mstEnemyMaster
+        else await fetch.get_one(conn, MstEnemyMaster, master_id)
+    )
+    if not master_db:
+        raise HTTPException(status_code=404, detail="Enemy Master not found")
+    mstEnemyMasterBattle = await fetch.get_all(conn, MstEnemyMasterBattle, master_id)
+    return EnemyMasterEntity(
+        mstEnemyMaster=master_db, mstEnemyMasterBattle=mstEnemyMasterBattle
+    )
 
 
 async def get_command_code_entity(
