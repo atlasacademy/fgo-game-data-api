@@ -689,14 +689,13 @@ class NiceMysticCode(BaseModelORJson):
 
 class NiceEnemyMasterBattle(BaseModelORJson):
     id: int
-    # enemyMasterId: int
     face: HttpUrl
-    figure: HttpUrl  # may not exist
+    figure: HttpUrl
     commandSpellIcon: HttpUrl
     maxCommandSpell: int
     offsetX: int
     offsetY: int
-    # script: str
+    cutin: list[HttpUrl] | None
 
 
 class NiceEnemyMaster(BaseModelORJson):

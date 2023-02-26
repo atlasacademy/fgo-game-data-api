@@ -1,5 +1,6 @@
 from typing import Optional
 
+import orjson
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
@@ -18,6 +19,14 @@ def get_nice_enemy_master_battle(
     battle: MstEnemyMasterBattle,
 ) -> NiceEnemyMasterBattle:
     base_settings = {"base_url": settings.asset_url, "region": region}
+    try:
+        script = orjson.loads(battle.script)
+    except:
+        script = {}
+    if "cutinId" in script:
+        cutin_ids = [int(cutin) for cutin in script["cutinId"].split(",")]
+    else:
+        cutin_ids = None
     return NiceEnemyMasterBattle(
         id=battle.id,
         face=fmt_url(AssetURL.enemyMasterFace, **base_settings, item_id=battle.faceId),
@@ -30,6 +39,12 @@ def get_nice_enemy_master_battle(
         maxCommandSpell=battle.maxCommandSpell,
         offsetX=battle.offsetX,
         offsetY=battle.offsetY,
+        cutin=[
+            fmt_url(AssetURL.enemyMasterFigure, **base_settings, item_id=cutin_id)
+            for cutin_id in cutin_ids
+        ]
+        if cutin_ids
+        else None,
     )
 
 
