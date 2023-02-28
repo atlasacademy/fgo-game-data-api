@@ -1,10 +1,11 @@
 from typing import Optional
 
 import orjson
+from orjson import JSONDecodeError
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
-from ...schemas.common import Language, Region
+from ...schemas.common import Region
 from ...schemas.nice import AssetURL, NiceEnemyMaster, NiceEnemyMasterBattle
 from ...schemas.raw import MstEnemyMaster, MstEnemyMasterBattle
 from .. import raw
@@ -21,7 +22,7 @@ def get_nice_enemy_master_battle(
     base_settings = {"base_url": settings.asset_url, "region": region}
     try:
         script = orjson.loads(battle.script)
-    except:
+    except JSONDecodeError:
         script = {}
     if "cutinId" in script:
         cutin_ids = [int(cutin) for cutin in script["cutinId"].split(",")]
@@ -68,7 +69,6 @@ async def get_nice_enemy_master(
 async def get_all_nice_enemy_masters(
     conn: AsyncConnection,
     region: Region,
-    lang: Language,
     mstEnemyMasters: list[MstEnemyMaster],
 ) -> list[NiceEnemyMaster]:  # pragma: no cover
     return [

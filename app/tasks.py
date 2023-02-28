@@ -205,7 +205,7 @@ async def dump_nice_enemy_masters(
     util: ExportUtil, mcs: list[MstEnemyMaster]
 ) -> None:  # pragma: no cover
     all_enemy_master_data = await get_all_nice_enemy_masters(
-        util.conn, util.region, util.lang, mcs
+        util.conn, util.region, mcs
     )
     await util.dump_orjson("nice_enemy_master", all_enemy_master_data)
 
