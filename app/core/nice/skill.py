@@ -58,6 +58,7 @@ def get_nice_skill_add(
                 if release.id == skill_add.commonReleaseId
             ],
             name=get_translation(lang, skill_add.name),
+            originalName=skill_add.name,
             ruby=skill_add.ruby,
         )
         for skill_add in skill_adds

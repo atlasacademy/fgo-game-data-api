@@ -587,6 +587,7 @@ class NiceSkillAdd(BaseModelORJson):
     priority: int
     releaseConditions: list[NiceCommonRelease]
     name: str
+    originalName: str
     ruby: str
 
 
