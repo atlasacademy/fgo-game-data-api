@@ -39,7 +39,7 @@
   "カルナ〔サンタ〕獲得経験値2倍！": "Karna (Santa) 2X EXP!",
   "幕間の物語開放サーヴァント強化\n『大成功＆極大成功』率2倍！": "Super & Great Success Rate x2 for Interlude Servants",
   "鬼一法眼獲得経験値2倍！": "Kiichi Hogen 2X EXP!",
-  "強化時 消費QP 75%DOWN": "Consume 75% Less QP When Enhancing",
+  "強化時 消費QP 75%DOWN": "Enhancement QP Cost 1/4 Campaign",
   "特定サーヴァント強化『大成功&極大成功』率2倍！\t": "Certain Servants Super & Great Success x2",
   "謎のアイドルX〔オルタ〕獲得経験値2倍！": "Mysterious Idol X (Alter) 2X EXP!",
   "特定サーヴァントサポート時 獲得FP2倍！": "Certain Servants Gains x2 FP as Support!",
@@ -82,7 +82,7 @@
   "マンわか関連ｻｰｳﾞｧﾝﾄ獲得FP2倍！": "\"Learning with Manga!\" Servants 2X Friend Points!",
   "獲得FP2倍": "Double FP",
   "特定サーヴァント獲得FP2倍！": "Certain Servants FP x2!",
-  "獲得FP2倍！": "2X FP!",
+  "獲得FP2倍！": "Double FP",
   "消費AP 0": "AP Cost 0",
   "マシュサポート時 獲得FP2倍！": "Mash FP x2!",
   "初回クリアまで 消費AP 50%DOWN": "AP Cost 1/2 Until First Clear",
@@ -332,5 +332,6 @@
   "アドバンスドクエスト 第12弾": "アドバンスドクエスト 第12弾",
   "魔術礼装クエスト・新春の装い": "魔術礼装クエスト・新春の装い",
   "Lostbelt No.7": "Lostbelt No.7",
-  "アドバンスドクエスト 第13弾": "アドバンスドクエスト 第13弾"
+  "アドバンスドクエスト 第13弾": "アドバンスドクエスト 第13弾",
+  "アドバンスドクエスト 第14弾": "アドバンスドクエスト 第14弾"
 }
