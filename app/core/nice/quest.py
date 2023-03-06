@@ -449,8 +449,7 @@ async def get_nice_quest_phase(
 
         if rayshift_quest_detail:
             rayshift_quest_hash = get_quest_enemy_hash(1, rayshift_quest_detail)
-            print(rayshift_quest_hash, questHash)
-            if rayshift_quest_hash == questHash:
+            if questHash is None or rayshift_quest_hash == questHash:
                 quest_enemies = await get_quest_enemies(
                     conn,
                     redis,
