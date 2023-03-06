@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Index, Integer, Table, text
+from sqlalchemy import VARCHAR, Column, Index, Integer, Table, text
 from sqlalchemy.dialects.postgresql import JSONB
 
 from .base import metadata
@@ -16,4 +16,12 @@ rayshiftQuest = Table(
         text('"questDetail" jsonb_path_ops'),
         postgresql_using="gin",
     ),
+)
+
+
+rayshiftQuestHash = Table(
+    "rayshiftQuestHash",
+    metadata,
+    Column("queryId", Integer, index=True),
+    Column("questHash", VARCHAR(100), index=True),
 )

@@ -31,7 +31,7 @@ from ..models.raw import (
     mstTreasureDeviceLv,
     mstWar,
 )
-from ..models.rayshift import rayshiftQuest
+from ..models.rayshift import rayshiftQuest, rayshiftQuestHash
 from ..schemas.base import BaseModelORJson
 from ..schemas.common import Region
 from ..schemas.enums import FUNC_VALS_NOT_BUFF
@@ -446,6 +446,7 @@ def update_db(region_path: dict[Region, DirectoryPath]) -> None:  # pragma: no c
 
         with engine.begin() as conn:
             rayshiftQuest.create(conn, checkfirst=True)
+            rayshiftQuestHash.create(conn, checkfirst=True)
 
     db_loading_time = time.perf_counter() - start_loading_time
     logger.info(f"Loaded db in {db_loading_time:.2f}s.")

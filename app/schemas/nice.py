@@ -2276,6 +2276,8 @@ class NiceQuestPhase(NiceQuest):
     bond: int
     isNpcOnly: bool
     battleBgId: int
+    enemyHash: str | None = None
+    availableEnemyHashes: list[str]
     extraDetail: NiceQuestPhaseExtraDetail
     scripts: list[ScriptLink]
     messages: list[NiceQuestMessage]

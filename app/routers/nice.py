@@ -763,10 +763,13 @@ async def get_quest_phase(
     phase: int,
     redis: Redis = Depends(get_redis),
     lang: Language = Depends(language_parameter),
+    hash: str | None = None,
 ) -> Response:
     async with get_db_transaction(region) as conn:
         return item_response(
-            await quest.get_nice_quest_phase(conn, redis, region, quest_id, phase, lang)
+            await quest.get_nice_quest_phase(
+                conn, redis, region, quest_id, phase, lang, hash
+            )
         )
 
 

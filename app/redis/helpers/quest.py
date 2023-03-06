@@ -1,4 +1,5 @@
-from typing import Optional
+import pickle
+from typing import Optional, cast
 
 from ...config import Settings
 from ...schemas.base import BaseModelORJson
@@ -15,15 +16,17 @@ def get_redis_cache_key(
     quest_id: int,
     phase: int,
     questSelect: int | None = None,
+    hash: str | None = None,
     lang: Language = Language.jp,
 ) -> str:
-    return f"{settings.redis_prefix}:cache:{region.value}:stage_data:{quest_id}:{phase}:{questSelect}:{lang.value}"
+    return f"{settings.redis_prefix}:cache:{region.value}:stage_data:{quest_id}:{phase}:{questSelect}:{hash}:{lang.value}"
 
 
 class RayshiftRedisData(BaseModelORJson):
     quest_drops: list[EnemyDrop]
     stages: list[NiceStage]
     ai_npcs: dict[int, QuestEnemy] | None = None
+    quest_hash: str | None = None
 
 
 async def get_stages_cache(
@@ -33,12 +36,13 @@ async def get_stages_cache(
     phase: int,
     questSelect: int | None = None,
     lang: Language = Language.jp,
+    hash: str | None = None,
 ) -> Optional[RayshiftRedisData]:
-    redis_key = get_redis_cache_key(region, quest_id, phase, questSelect, lang)
+    redis_key = get_redis_cache_key(region, quest_id, phase, questSelect, hash, lang)
     redis_data = await redis.get(redis_key)
 
     if redis_data:
-        return RayshiftRedisData.parse_raw(redis_data)
+        return cast(RayshiftRedisData, pickle.loads(redis_data))
 
     return None
 
@@ -51,11 +55,12 @@ async def set_stages_cache(
     phase: int,
     questSelect: int | None = None,
     lang: Language = Language.jp,
+    hash: str | None = None,
     long_ttl: bool = False,
 ) -> None:
-    redis_key = get_redis_cache_key(region, quest_id, phase, questSelect, lang)
-    json_str = data.json(exclude_unset=True, exclude_none=True)
+    redis_key = get_redis_cache_key(region, quest_id, phase, questSelect, hash, lang)
+    redis_data = pickle.dumps(data)
     if long_ttl:
-        await redis.set(redis_key, json_str)
+        await redis.set(redis_key, redis_data)
     else:
-        await redis.set(redis_key, json_str, ex=settings.quest_cache_length)
+        await redis.set(redis_key, redis_data, ex=settings.quest_cache_length)

@@ -8,7 +8,11 @@ from pydantic import ValidationError
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ..config import Settings, logger
-from ..db.helpers.rayshift import get_rayshift_quest_db, insert_rayshift_quest_db
+from ..db.helpers.rayshift import (
+    get_rayshift_quest_db,
+    insert_rayshift_quest_db,
+    insert_rayshift_quest_hash_db,
+)
 from ..schemas.common import Region
 from ..schemas.rayshift import (
     BaseRayshiftResponse,
@@ -63,14 +67,18 @@ async def get_quest_detail(
     quest_id: int,
     phase: int,
     questSelect: int | None = None,
+    questHash: str | None = None,
 ) -> Optional[QuestDetail]:
-    db_quest_detail = await get_rayshift_quest_db(conn, quest_id, phase, questSelect)
+    db_quest_detail = await get_rayshift_quest_db(
+        conn, quest_id, phase, questSelect, questHash
+    )
     if db_quest_detail:
         return db_quest_detail
     else:
         quest_response = await get_quest_response(region, quest_id, phase)
         if quest_response and quest_response.questDetails:
             await insert_rayshift_quest_db(conn, quest_response.questDetails)
+            await insert_rayshift_quest_hash_db(conn, quest_response.questDetails)
             quest_detail = next(iter(quest_response.questDetails.values()))
             if (
                 questSelect is not None and quest_detail.questSelect != questSelect

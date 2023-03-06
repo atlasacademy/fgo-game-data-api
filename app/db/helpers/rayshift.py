@@ -1,32 +1,48 @@
 from typing import Any, Optional
+from typing import cast as typing_cast
 
-from sqlalchemy import BIGINT, Integer
+from sqlalchemy import BIGINT, Integer, Table
 from sqlalchemy.dialects.postgresql import JSONB, insert
 from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import AsyncConnection
-from sqlalchemy.sql import and_, case, cast, func, select
+from sqlalchemy.sql import Join, and_, case, cast, func, select
 from sqlalchemy.sql.elements import literal_column
 from sqlalchemy.sql.expression import text
 
-from ...models.rayshift import rayshiftQuest
+from ...core.rayshift import get_quest_enemy_hash
+from ...models.rayshift import rayshiftQuest, rayshiftQuestHash
 from ...schemas.rayshift import QuestDetail, QuestDrop, QuestList
 from .utils import fetch_one
 
 
 async def get_rayshift_quest_db(
-    conn: AsyncConnection, quest_id: int, phase: int, questSelect: int | None = None
+    conn: AsyncConnection,
+    quest_id: int,
+    phase: int,
+    questSelect: int | None = None,
+    questHash: str | None = None,
 ) -> Optional[QuestDetail]:
+    select_from: Table | Join = rayshiftQuest
     where_conds = [
         rayshiftQuest.c.questId == quest_id,
         rayshiftQuest.c.phase == phase,
         rayshiftQuest.c.questDetail.isnot(None),
     ]
+
     if questSelect is not None:
         where_conds.append(
             rayshiftQuest.c.questDetail.contains({"questSelect": questSelect})
         )
+
+    if questHash:
+        select_from = select_from.join(
+            rayshiftQuestHash, rayshiftQuest.c.queryId == rayshiftQuestHash.c.queryId
+        )
+        where_conds.append(rayshiftQuestHash.c.questHash == questHash)
+
     stmt = (
         select(rayshiftQuest.c.questDetail)
+        .select_from(select_from)
         .where(and_(*where_conds))
         .order_by(rayshiftQuest.c.queryId.desc())
         .limit(1)
@@ -43,8 +59,10 @@ async def get_rayshift_drops(
     quest_id: int,
     phase: int,
     questSelect: int | None = None,
+    questHash: str | None = None,
     min_query_id: int | None = None,
 ) -> list[QuestDrop]:
+    select_from: Table | Join = rayshiftQuest
     where_conds = [
         rayshiftQuest.c.questId == quest_id,
         rayshiftQuest.c.phase == phase,
@@ -56,6 +74,11 @@ async def get_rayshift_drops(
         )
     if min_query_id is not None:
         where_conds.append(rayshiftQuest.c.queryId >= min_query_id)
+    if questHash:
+        select_from = select_from.join(
+            rayshiftQuestHash, rayshiftQuest.c.queryId == rayshiftQuestHash.c.queryId
+        )
+        where_conds.append(rayshiftQuestHash.c.questHash == questHash)
 
     enemy_deck_svt = (
         select(
@@ -67,7 +90,7 @@ async def get_rayshift_drops(
             literal_column("d.stage").label("stage"),
         )
         .select_from(
-            rayshiftQuest,
+            select_from,
             text(
                 'jsonb_array_elements("rayshiftQuest"."questDetail"->\'enemyDeck\') '
                 "with ordinality as d(deck, stage)"
@@ -86,7 +109,7 @@ async def get_rayshift_drops(
             literal_column("d.stage").label("stage"),
         )
         .select_from(
-            rayshiftQuest,
+            select_from,
             text(
                 'jsonb_array_elements("rayshiftQuest"."questDetail"->\'shiftDeck\') '
                 "with ordinality as d(deck, stage)"
@@ -279,6 +302,32 @@ def insert_rayshift_quest_db_sync(
     conn.execute(do_update_quest_stmt, data)
 
 
+def get_insert_rayshift_quest_hash_data(
+    quest_details: dict[int, QuestDetail]
+) -> list[dict[str, Any]]:
+    return [
+        {
+            "queryId": queryId,
+            "questHash": get_quest_enemy_hash(1, quest_detail),
+        }
+        for queryId, quest_detail in quest_details.items()
+    ]
+
+
+async def insert_rayshift_quest_hash_db(
+    conn: AsyncConnection, quest_details: dict[int, QuestDetail]
+) -> None:
+    data = get_insert_rayshift_quest_hash_data(quest_details)
+    await conn.execute(rayshiftQuestHash.insert(), data)
+
+
+def insert_rayshift_quest_hash_db_sync(
+    conn: Connection, quest_details: dict[int, QuestDetail]
+) -> None:
+    data = get_insert_rayshift_quest_hash_data(quest_details)
+    conn.execute(rayshiftQuestHash.insert(), data)
+
+
 def insert_rayshift_quest_list(conn: Connection, quest_list: list[QuestList]) -> None:
     insert_stmt = insert(rayshiftQuest)
     do_nothing_stmt = insert_stmt.on_conflict_do_nothing(
@@ -336,3 +385,33 @@ def fetch_all_missing_quest_ids(
             rayshiftQuest.c.questDetail.is_(None)
         )
     return [row.queryId for row in conn.execute(stmt).fetchall()]
+
+
+def fetch_missing_enemy_hash(
+    conn: Connection, limit: int = 100
+) -> dict[int, QuestDetail]:
+    stmt = (
+        select(rayshiftQuest.c.queryId, rayshiftQuest.c.questDetail)
+        .select_from(
+            rayshiftQuest.join(
+                rayshiftQuestHash,
+                rayshiftQuest.c.queryId == rayshiftQuestHash.c.queryId,
+                isouter=True,
+            )
+        )
+        .where(
+            and_(
+                rayshiftQuestHash.c.questHash.is_(None),
+                rayshiftQuest.c.questDetail.is_not(None),
+            )
+        )
+        .limit(limit)
+    )
+
+    return typing_cast(
+        dict[int, QuestDetail],
+        {
+            row.queryId: QuestDetail.parse_obj(row.questDetail)
+            for row in conn.execute(stmt).fetchall()
+        },
+    )
