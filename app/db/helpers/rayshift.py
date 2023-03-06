@@ -190,6 +190,7 @@ async def get_rayshift_drops(
 
     runs = (
         select(func.count(rayshiftQuest.c.queryId))
+        .select_from(select_from)
         .where(and_(*where_conds))
         .subquery()
         .select()
