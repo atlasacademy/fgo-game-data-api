@@ -22,7 +22,7 @@ def get_quest_enemy_hash_v1(quest_detail: QuestDetail) -> str:
     npc_id_hash = sum(i % 100 for i in all_npc_ids) // len(all_npc_ids)
     sha1_hash = sha1(orjson.dumps(enemy_data)).hexdigest()[:7]
 
-    return f"1-{enemy_count_hash:>02}{npc_id_hash:>02}-{sha1_hash}"
+    return f"1_{enemy_count_hash:>02}{npc_id_hash:>02}_{sha1_hash}"
 
 
 def get_quest_enemy_hash(version: int, quest_detail: QuestDetail) -> str:
