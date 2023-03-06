@@ -32,6 +32,7 @@ from ...schemas.nice import (
     DeckType,
     EnemyDrop,
     NiceQuest,
+    NiceQuestHint,
     NiceQuestMessage,
     NiceQuestPhase,
     NiceQuestPhaseRestriction,
@@ -47,6 +48,7 @@ from ...schemas.raw import (
     MstBgm,
     MstClosedMessage,
     MstGift,
+    MstQuestHint,
     MstQuestMessage,
     MstQuestRelease,
     MstQuestRestriction,
@@ -99,6 +101,12 @@ def get_nice_quest_message(message: MstQuestMessage) -> NiceQuestMessage:
         condType=COND_TYPE_NAME[message.condType],
         targetId=message.targetId,
         targetNum=message.targetNum,
+    )
+
+
+def get_nice_quest_hints(hint: MstQuestHint) -> NiceQuestHint:
+    return NiceQuestHint(
+        title=hint.title, message=hint.message, leftIndent=hint.leftIndent
     )
 
 
@@ -320,6 +328,10 @@ async def get_nice_quest_phase_no_rayshift(
             for message in sorted(
                 raw_quest.mstQuestMessage, key=lambda script: script.idx
             )
+        ],
+        "hints": [
+            get_nice_quest_hints(hint)
+            for hint in sorted(raw_quest.mstQuestHint, key=lambda hint: hint.title)
         ],
         "restrictions": [
             get_nice_quest_restriction(

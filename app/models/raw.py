@@ -1797,6 +1797,18 @@ mstQuestMessage = Table(
 )
 
 
+mstQuestHint = Table(
+    "mstQuestHint",
+    metadata,
+    Column("questId", Integer, index=True),
+    Column("questPhase", Integer, index=True),
+    Column("title", String),
+    Column("message", String),
+    Column("leftIndent", Integer),
+    Column("openType", Integer),
+)
+
+
 mstQuestRelease = Table(
     "mstQuestRelease",
     metadata,
@@ -2118,6 +2130,7 @@ TABLES_TO_BE_LOADED = [
     [mstEventRandomMission],
     [mstQuestConsumeItem],
     [mstQuestMessage],
+    [mstQuestHint],
     [mstQuestPhaseDetail],
     [mstQuestRelease],
     [mstQuestRestriction, mstQuestRestrictionInfo, mstRestriction],

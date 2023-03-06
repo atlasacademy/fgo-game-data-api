@@ -1621,6 +1621,15 @@ class MstQuestMessage(BaseModelORJson):
     displayType: int
 
 
+class MstQuestHint(BaseModelORJson):
+    questId: int
+    questPhase: int
+    title: str
+    message: str
+    leftIndent: int
+    openType: int
+
+
 class MstQuestRestriction(BaseModelORJson):
     questId: int
     phase: int
@@ -1890,6 +1899,7 @@ class QuestPhaseEntity(QuestEntity):
     mstQuestRestriction: list[MstQuestRestriction]
     mstQuestRestrictionInfo: list[MstQuestRestrictionInfo]
     mstRestriction: list[MstRestriction]
+    mstQuestHint: list[MstQuestHint] = []
     availableEnemyHashes: list[str] = []
 
 

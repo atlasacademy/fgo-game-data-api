@@ -2172,6 +2172,12 @@ class NiceQuestMessage(BaseModelORJson):
     targetNum: int
 
 
+class NiceQuestHint(BaseModelORJson):
+    title: str
+    message: str
+    leftIndent: int
+
+
 class SupportServantRelease(BaseModelORJson):
     type: NiceCondType
     targetId: int
@@ -2281,6 +2287,7 @@ class NiceQuestPhase(NiceQuest):
     extraDetail: NiceQuestPhaseExtraDetail
     scripts: list[ScriptLink]
     messages: list[NiceQuestMessage]
+    hints: list[NiceQuestHint]
     restrictions: list[NiceQuestPhaseRestriction]
     supportServants: list[SupportServant]
     drops: list[EnemyDrop]

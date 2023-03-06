@@ -27,6 +27,7 @@ from ...models.raw import (
     mstMap,
     mstQuest,
     mstQuestConsumeItem,
+    mstQuestHint,
     mstQuestMessage,
     mstQuestPhase,
     mstQuestPhaseDetail,
@@ -504,6 +505,13 @@ async def get_quest_phase_entity(
             ),
         )
         .outerjoin(
+            mstQuestHint,
+            and_(
+                mstQuest.c.id == mstQuestHint.c.questId,
+                mstQuestPhase.c.phase == mstQuestHint.c.questPhase,
+            ),
+        )
+        .outerjoin(
             mstStage,
             and_(
                 mstQuest.c.id == mstStage.c.questId,
@@ -604,6 +612,7 @@ async def get_quest_phase_entity(
             mstQuestPhaseDetail.name
         ),
         sql_jsonb_agg(mstQuestMessage),
+        sql_jsonb_agg(mstQuestHint),
         func.array_remove(
             array_agg(ScriptFileList.c.scriptFileName.distinct()), None
         ).label("scripts"),
