@@ -178,7 +178,6 @@ class QuestDrop(BaseModelORJson):
     stage: int
     deckType: DeckType
     deckId: int
-    npcId: int
     type: int
     objectId: int
     originalNum: int
