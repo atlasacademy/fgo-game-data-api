@@ -603,7 +603,12 @@ async def get_quest_phase_entity(
                     rayshiftQuestHash.c.queryId == rayshiftQuest.c.queryId,
                 )
             )
-            .where(rayshiftQuest.c.questId == quest_id)
+            .where(
+                and_(
+                    rayshiftQuest.c.questId == quest_id,
+                    rayshiftQuest.c.phase == phase_id,
+                )
+            )
             .scalar_subquery(),
             [],
         ).label("availableEnemyHashes"),
