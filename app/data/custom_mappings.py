@@ -21,6 +21,7 @@ class Translation(StrEnum):
     NP = "np_names"
     EVENT = "event_names"
     WAR = "war_names"
+    WAR_SHORT = "war_short_names"
     ITEM = "item_names"
     ENTITY = "entity_names"
     QUEST = "quest_names"
