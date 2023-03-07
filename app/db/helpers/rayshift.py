@@ -22,7 +22,6 @@ async def get_rayshift_quest_db(
     questSelect: int | None = None,
     questHash: str | None = None,
 ) -> Optional[QuestDetail]:
-    select_from: Table | Join = rayshiftQuest
     where_conds = [
         rayshiftQuest.c.questId == quest_id,
         rayshiftQuest.c.phase == phase,
@@ -35,18 +34,22 @@ async def get_rayshift_quest_db(
         )
 
     if questHash:
-        select_from = select_from.join(
-            rayshiftQuestHash, rayshiftQuest.c.queryId == rayshiftQuestHash.c.queryId
-        )
         where_conds.append(rayshiftQuestHash.c.questHash == questHash)
 
     stmt = (
         select(rayshiftQuest.c.questDetail)
-        .select_from(select_from)
+        .select_from(
+            rayshiftQuest.join(
+                rayshiftQuestHash,
+                rayshiftQuest.c.queryId == rayshiftQuestHash.c.queryId,
+            )
+        )
         .where(and_(*where_conds))
-        .order_by(rayshiftQuest.c.queryId.desc())
-        .limit(1)
     )
+
+    if not questHash:
+        stmt = stmt.order_by(rayshiftQuestHash.c.questHash.desc())
+
     rayshift_quest = await fetch_one(conn, stmt)
     if rayshift_quest and rayshift_quest.questDetail:
         return QuestDetail.parse_obj(rayshift_quest.questDetail)
