@@ -43,6 +43,7 @@ from .helpers.rayshift import (
     fetch_all_missing_quest_ids,
     fetch_missing_quest_ids,
     insert_rayshift_quest_db_sync,
+    insert_rayshift_quest_hash_db_sync,
     insert_rayshift_quest_list,
 )
 
@@ -479,3 +480,4 @@ def load_rayshift_quest_details(
 ) -> None:
     with engines[region].begin() as conn:
         insert_rayshift_quest_db_sync(conn, quest_details)
+        insert_rayshift_quest_hash_db_sync(conn, quest_details)
