@@ -1,7 +1,8 @@
-from typing import Any, Iterable, Optional
+from typing import Iterable, Optional
 
 from sqlalchemy.ext.asyncio import AsyncConnection
-from sqlalchemy.sql import and_, select
+from sqlalchemy.sql import and_, select, true
+from sqlalchemy.sql._typing import _ColumnExpressionArgument
 
 from ...models.raw import mstBuff
 from ...schemas.raw import MstBuff
@@ -16,7 +17,7 @@ async def get_buff_search(
     ckSelfIndv: Optional[Iterable[int]],
     ckOpIndv: Optional[Iterable[int]],
 ) -> list[MstBuff]:
-    where_clause: list[Any] = [True]
+    where_clause: list[_ColumnExpressionArgument[bool]] = [true()]
     if buff_types:
         where_clause.append(mstBuff.c.type.in_(buff_types))
     if buffGroup:

@@ -1,3 +1,5 @@
+from datetime import datetime
+
 import pytest
 from httpx import AsyncClient, Client
 from sqlalchemy.sql import and_, delete, select
@@ -104,7 +106,7 @@ async def test_rayshift_load_quest_list(client: AsyncClient) -> None:
             questId=1000000,
             questPhase=1,
             count=3,
-            lastUpdated="2021-06-11T08:44:29.838402",
+            lastUpdated=datetime(2021, 6, 11, 8, 44, 29, 838402),
             queryIds=[91327, 82122, 77080],
             region=2,
         )

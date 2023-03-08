@@ -2,7 +2,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
 from ...schemas.common import Language, Region
-from ...schemas.nice import NiceScript, NiceScriptSearchResult
+from ...schemas.nice import NiceQuest, NiceScript, NiceScriptSearchResult
 from ...schemas.raw import ScriptSearchResult
 from ..raw import get_script_entity
 from .base_script import get_script_url
@@ -29,7 +29,8 @@ async def get_nice_script(
     raw_script = await get_script_entity(conn, script_id)
 
     quests = [
-        await get_nice_quest(conn, region, quest, lang) for quest in raw_script.quests
+        NiceQuest.parse_obj(await get_nice_quest(conn, region, quest, lang))
+        for quest in raw_script.quests
     ]
 
     return NiceScript(

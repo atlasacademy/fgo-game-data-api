@@ -9,6 +9,7 @@ from ...schemas.nice import (
     ExtraMCAssets,
     NiceMysticCode,
     NiceMysticCodeCostume,
+    NiceSkill,
 )
 from ...schemas.raw import MstCommonRelease, MstEquip, MstEquipAdd
 from .. import raw
@@ -109,7 +110,7 @@ async def get_nice_mystic_code(
             ]
         ),
         skills=[
-            skill
+            NiceSkill.parse_obj(skill)
             for skillEntity in raw_mc.mstSkill
             for skill in await get_nice_skill_with_svt(
                 conn, skillEntity, mc_id, region, lang

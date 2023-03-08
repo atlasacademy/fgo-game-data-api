@@ -234,8 +234,8 @@ def get_np_names(mstTreasureDevice: Any) -> dict[int, str]:
     }
 
 
-def get_war_names(mstEquip: Any) -> dict[int, str]:
-    return {svt["id"]: svt["longName"] for svt in mstEquip}
+def get_war_names(mstWar: Any) -> dict[int, str]:
+    return {svt["id"]: svt["longName"] for svt in mstWar}
 
 
 def is_not_svt_or_ce(svt: Any) -> bool:
@@ -390,6 +390,7 @@ def main(jp_master: Path, na_master: Path) -> None:
     )
     update_translation("event_names", jp_master, na_master, "mstEvent", get_names)
     update_translation("war_names", jp_master, na_master, "mstWar", get_war_names)
+    update_translation("war_short_names", jp_master, na_master, "mstWar", get_names)
     update_translation("item_names", jp_master, na_master, "mstItem", get_names)
     update_translation("entity_names", jp_master, na_master, "mstSvt", get_entity_names)
     update_translation("bgm_names", jp_master, na_master, "mstBgm", get_names)

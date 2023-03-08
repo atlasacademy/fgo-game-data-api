@@ -242,7 +242,7 @@ async def get_basic_function_from_raw(
     reverseDepth: ReverseDepth = ReverseDepth.skillNp,
 ) -> BasicFunctionReverse:
     traitVals = []
-    buffs = []
+    buffs: list[BasicBuffReverse] = []
     if mstFunc.funcType in FUNC_VALS_NOT_BUFF:
         traitVals = get_traits_list(mstFunc.vals)
     else:

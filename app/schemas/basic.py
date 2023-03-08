@@ -1,5 +1,5 @@
 from decimal import Decimal
-from typing import Optional
+from typing import Optional, Sequence
 
 from pydantic import Field, HttpUrl
 
@@ -41,7 +41,7 @@ class BasicFunction(BaseModelORJson):
     functvals: list[NiceTrait]
     funcquestTvals: list[NiceTrait]
     traitVals: list[NiceTrait] = []
-    buffs: list[BasicBuff]
+    buffs: Sequence[BasicBuff]
 
 
 class BasicSkill(BaseModelORJson):

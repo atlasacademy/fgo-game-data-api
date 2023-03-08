@@ -1,7 +1,7 @@
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ....schemas.common import Language, Region
-from ....schemas.nice import NiceItem, NiceServantAppendPassiveSkill
+from ....schemas.nice import NiceItem, NiceServantAppendPassiveSkill, NiceSkill
 from ....schemas.raw import (
     MstSvtAppendPassiveSkill,
     MstSvtAppendPassiveSkillUnlock,
@@ -30,7 +30,7 @@ async def get_nice_append_passive(
     return NiceServantAppendPassiveSkill(
         num=svt_append.num,
         priority=svt_append.priority,
-        skill=nice_skill,
+        skill=NiceSkill.parse_obj(nice_skill),
         unlockMaterials=nice_unlock,
     )
 

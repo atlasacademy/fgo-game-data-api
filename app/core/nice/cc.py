@@ -1,13 +1,20 @@
 from typing import Optional
 
+from pydantic import HttpUrl
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
 from ...schemas.common import Language, Region
-from ...schemas.nice import AssetURL, NiceCommandCode
+from ...schemas.nice import (
+    AssetURL,
+    ExtraAssetsUrl,
+    ExtraCCAssets,
+    NiceCommandCode,
+    NiceSkill,
+)
 from ...schemas.raw import MstCommandCode
 from .. import raw
-from ..utils import get_translation
+from ..utils import fmt_url, get_translation
 from .skill import get_nice_skill_with_svt
 
 
@@ -23,7 +30,11 @@ async def get_nice_command_code(
 ) -> NiceCommandCode:
     raw_cc = await raw.get_command_code_entity(conn, cc_id, True, mstCc)
 
-    base_settings = {"base_url": settings.asset_url, "region": region, "item_id": cc_id}
+    base_settings: dict[str, str | int | HttpUrl] = {
+        "base_url": settings.asset_url,
+        "region": region,
+        "item_id": cc_id,
+    }
     nice_cc = NiceCommandCode(
         id=raw_cc.mstCommandCode.id,
         name=get_translation(lang, raw_cc.mstCommandCode.name),
@@ -31,14 +42,16 @@ async def get_nice_command_code(
         ruby=raw_cc.mstCommandCode.ruby,
         collectionNo=raw_cc.mstCommandCode.collectionNo,
         rarity=raw_cc.mstCommandCode.rarity,
-        extraAssets={
-            "charaGraph": {
-                "cc": {cc_id: AssetURL.commandGraph.format(**base_settings)}
-            },
-            "faces": {"cc": {cc_id: AssetURL.commandCode.format(**base_settings)}},
-        },
+        extraAssets=ExtraCCAssets(
+            charaGraph=ExtraAssetsUrl(
+                cc={cc_id: fmt_url(AssetURL.commandGraph, **base_settings)}
+            ),
+            faces=ExtraAssetsUrl(
+                cc={cc_id: fmt_url(AssetURL.commandCode, **base_settings)}
+            ),
+        ),
         skills=[
-            skill
+            NiceSkill.parse_obj(skill)
             for skillEntity in raw_cc.mstSkill
             for skill in await get_nice_skill_with_svt(
                 conn, skillEntity, cc_id, region, lang
