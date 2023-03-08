@@ -1,3 +1,4 @@
+import asyncio
 import time
 from collections import defaultdict
 from dataclasses import dataclass
@@ -10,7 +11,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 from ...config import Settings
 from ...db.helpers import war
 from ...db.helpers.quest import get_questSelect_container
-from ...db.helpers.rayshift import get_rayshift_drops
+from ...db.helpers.rayshift import get_all_quest_hashes, get_rayshift_drops
 from ...rayshift.quest import get_quest_detail
 from ...redis import Redis
 from ...redis.helpers.quest import RayshiftRedisData, get_stages_cache, set_stages_cache
@@ -319,7 +320,7 @@ async def get_nice_quest_phase_no_rayshift(
         "isNpcOnly": raw_quest.mstQuestPhase.isNpcOnly,
         "battleBgId": raw_quest.mstQuestPhase.battleBgId,
         "extraDetail": raw_quest.mstQuestPhase.script,
-        "availableEnemyHashes": sorted(raw_quest.availableEnemyHashes),
+        "availableEnemyHashes": [],
         "scripts": [
             get_nice_script_link(region, script) for script in sorted(raw_quest.scripts)
         ],
@@ -388,14 +389,18 @@ async def get_nice_quest_phase(
     )
 
     if "questSelect" in db_data.raw.mstQuestPhase.script:
-        questSelect: int | None = db_data.raw.mstQuestPhase.script["questSelect"].index(
-            quest_id
-        )
+        questSelectScript: list[int] = db_data.raw.mstQuestPhase.script["questSelect"]
+        questSelect: list[int] = [
+            i
+            for i, questSelectScriptId in enumerate(questSelectScript)
+            if questSelectScriptId == quest_id
+        ]
     else:
-        questSelect = None
+        questSelectScript = []
+        questSelect = []
 
     rayshift_data = await get_stages_cache(
-        redis, region, quest_id, phase, questSelect, lang, questHash
+        redis, region, quest_id, phase, lang, questHash
     )
 
     def set_ai_npc_data(ai_npcs: dict[int, QuestEnemy] | None) -> None:
@@ -411,8 +416,11 @@ async def get_nice_quest_phase(
     if rayshift_data:
         db_data.nice.stages = rayshift_data.stages
         db_data.nice.drops = rayshift_data.quest_drops
+        db_data.nice.availableEnemyHashes = rayshift_data.all_hashes
         if rayshift_data.quest_hash:
             db_data.nice.enemyHash = rayshift_data.quest_hash
+        if rayshift_data.quest_select:
+            db_data.nice.extraDetail.questSelect = rayshift_data.quest_select
         set_ai_npc_data(rayshift_data.ai_npcs)
         return db_data.nice
 
@@ -421,17 +429,22 @@ async def get_nice_quest_phase(
 
     nice_quest_drops: list[EnemyDrop] = []
     quest_enemies = QuestEnemies(enemy_waves=[[]] * len(db_data.raw.mstStage))
-    rayshift_quest_hash: str | None = None
+    all_rayshift_hashes: list[str] = []
+
     if stages:
         rayshift_quest_id = quest_id
-        if questSelect is None:
+        if not questSelect:
             quest_select_owner = await get_questSelect_container(conn, quest_id, phase)
             if quest_select_owner:
+                questSelectScript = quest_select_owner.script["questSelect"]
+                db_data.nice.extraDetail.questSelect = questSelectScript
+
                 rayshift_quest_id = quest_select_owner.questId
-                questSelect = quest_select_owner.script["questSelect"].index(quest_id)
-        rayshift_quest_detail = await get_quest_detail(
-            conn, region, rayshift_quest_id, phase, questSelect, questHash
-        )
+                questSelect = [
+                    i
+                    for i, questSelectScriptId in enumerate(questSelectScript)
+                    if questSelectScriptId == quest_id
+                ]
 
         min_query_id: int | None = None
         if (
@@ -443,13 +456,29 @@ async def get_nice_quest_phase(
             elif region == Region.NA:
                 min_query_id = 1062363  # 2022-07-04 09:00:00 UTC
 
-        rayshift_quest_drops = await get_rayshift_drops(
-            conn, rayshift_quest_id, phase, questSelect, questHash, min_query_id
+        (
+            rayshift_quest_detail,
+            rayshift_quest_drops,
+            all_rayshift_hashes,
+        ) = await asyncio.gather(
+            get_quest_detail(
+                conn, region, rayshift_quest_id, phase, questSelect, questHash
+            ),
+            get_rayshift_drops(
+                conn, rayshift_quest_id, phase, questSelect, questHash, min_query_id
+            ),
+            get_all_quest_hashes(conn, rayshift_quest_id, phase, questSelect),
         )
 
-        if rayshift_quest_detail:
+        db_data.nice.availableEnemyHashes = all_rayshift_hashes
+
+        if not rayshift_quest_detail:
+            save_stages_cache = False
+        else:
             rayshift_quest_hash = get_quest_enemy_hash(1, rayshift_quest_detail)
-            if questHash is None or rayshift_quest_hash == questHash:
+            if questHash and rayshift_quest_hash != questHash:
+                save_stages_cache = False
+            else:
                 quest_enemies = await get_quest_enemies(
                     conn,
                     redis,
@@ -467,8 +496,6 @@ async def get_nice_quest_phase(
                     and drop.deckId == -1
                 ]
                 db_data.nice.enemyHash = rayshift_quest_hash
-        else:
-            save_stages_cache = False
 
     set_ai_npc_data(quest_enemies.ai_npcs)
 
@@ -508,19 +535,13 @@ async def get_nice_quest_phase(
             quest_drops=nice_quest_drops,
             stages=new_nice_stages,
             ai_npcs=quest_enemies.ai_npcs,
-            quest_hash=rayshift_quest_hash,
+            quest_select=questSelectScript,
+            quest_hash=db_data.nice.enemyHash,
+            all_hashes=all_rayshift_hashes,
         )
         long_ttl = time.time() > db_data.nice.closedAt
         await set_stages_cache(
-            redis,
-            cache_data,
-            region,
-            quest_id,
-            phase,
-            questSelect,
-            lang,
-            questHash,
-            long_ttl,
+            redis, cache_data, region, quest_id, phase, lang, questHash, long_ttl
         )
 
     return db_data.nice

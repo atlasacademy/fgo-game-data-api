@@ -1900,7 +1900,6 @@ class QuestPhaseEntity(QuestEntity):
     mstQuestRestrictionInfo: list[MstQuestRestrictionInfo]
     mstRestriction: list[MstRestriction]
     mstQuestHint: list[MstQuestHint] = []
-    availableEnemyHashes: list[str] = []
 
 
 class ScriptEntity(BaseModelORJson):

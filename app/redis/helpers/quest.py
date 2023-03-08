@@ -15,18 +15,19 @@ def get_redis_cache_key(
     region: Region,
     quest_id: int,
     phase: int,
-    questSelect: int | None = None,
     hash: str | None = None,
     lang: Language = Language.jp,
 ) -> str:
-    return f"{settings.redis_prefix}:cache:{region.value}:stage_data:{quest_id}:{phase}:{questSelect}:{hash}:{lang.value}"
+    return f"{settings.redis_prefix}:cache:{region.value}:stage_data:{quest_id}:{phase}:{hash}:{lang.value}"
 
 
 class RayshiftRedisData(BaseModelORJson):
     quest_drops: list[EnemyDrop]
     stages: list[NiceStage]
     ai_npcs: dict[int, QuestEnemy] | None = None
+    quest_select: list[int] = []
     quest_hash: str | None = None
+    all_hashes: list[str] = []
 
 
 async def get_stages_cache(
@@ -34,11 +35,10 @@ async def get_stages_cache(
     region: Region,
     quest_id: int,
     phase: int,
-    questSelect: int | None = None,
     lang: Language = Language.jp,
     hash: str | None = None,
 ) -> Optional[RayshiftRedisData]:
-    redis_key = get_redis_cache_key(region, quest_id, phase, questSelect, hash, lang)
+    redis_key = get_redis_cache_key(region, quest_id, phase, hash, lang)
     redis_data = await redis.get(redis_key)
 
     if redis_data:
@@ -53,12 +53,11 @@ async def set_stages_cache(
     region: Region,
     quest_id: int,
     phase: int,
-    questSelect: int | None = None,
     lang: Language = Language.jp,
     hash: str | None = None,
     long_ttl: bool = False,
 ) -> None:
-    redis_key = get_redis_cache_key(region, quest_id, phase, questSelect, hash, lang)
+    redis_key = get_redis_cache_key(region, quest_id, phase, hash, lang)
     redis_data = pickle.dumps(data)
     if long_ttl:
         await redis.set(redis_key, redis_data)

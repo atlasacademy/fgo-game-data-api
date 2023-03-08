@@ -66,7 +66,7 @@ async def get_quest_detail(
     region: Region,
     quest_id: int,
     phase: int,
-    questSelect: int | None = None,
+    questSelect: list[int],
     questHash: str | None = None,
 ) -> Optional[QuestDetail]:
     db_quest_detail = await get_rayshift_quest_db(
@@ -81,7 +81,7 @@ async def get_quest_detail(
             await insert_rayshift_quest_hash_db(conn, quest_response.questDetails)
             quest_detail = next(iter(quest_response.questDetails.values()))
             if (
-                questSelect is not None and quest_detail.questSelect != questSelect
+                questSelect and quest_detail.questSelect not in questSelect
             ):  # pragma: no cover
                 return None
             return quest_detail

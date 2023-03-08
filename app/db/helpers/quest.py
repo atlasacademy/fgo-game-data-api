@@ -47,7 +47,7 @@ from ...models.raw import (
     npcSvtEquip,
     npcSvtFollower,
 )
-from ...models.rayshift import rayshiftQuest, rayshiftQuestHash
+from ...models.rayshift import rayshiftQuest
 from ...schemas.common import StageLink
 from ...schemas.gameenums import QuestFlag
 from ...schemas.raw import (
@@ -593,27 +593,6 @@ async def get_quest_phase_entity(
             .scalar_subquery(),
             [],
         ).label("phasesWithEnemies"),
-        func.coalesce(
-            select(
-                func.array_remove(
-                    array_agg(rayshiftQuestHash.c.questHash.distinct()), None
-                )
-            )
-            .select_from(
-                rayshiftQuestHash.join(
-                    rayshiftQuest,
-                    rayshiftQuestHash.c.queryId == rayshiftQuest.c.queryId,
-                )
-            )
-            .where(
-                and_(
-                    rayshiftQuest.c.questId == quest_id,
-                    rayshiftQuest.c.phase == phase_id,
-                )
-            )
-            .scalar_subquery(),
-            [],
-        ).label("availableEnemyHashes"),
         func.to_jsonb(mstQuestPhase.table_valued()).label(mstQuestPhase.name),
         func.to_jsonb(mstQuestPhaseDetail.table_valued()).label(
             mstQuestPhaseDetail.name

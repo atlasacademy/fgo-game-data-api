@@ -1,11 +1,11 @@
 from typing import Any, Optional
 from typing import cast as typing_cast
 
-from sqlalchemy import BIGINT, Integer, Table
+from sqlalchemy import BIGINT, ColumnElement, Integer, Table
 from sqlalchemy.dialects.postgresql import JSONB, insert
 from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import AsyncConnection
-from sqlalchemy.sql import Join, and_, case, cast, func, select
+from sqlalchemy.sql import Join, and_, case, cast, false, func, or_, select
 from sqlalchemy.sql.elements import literal_column
 from sqlalchemy.sql.expression import text
 
@@ -15,11 +15,21 @@ from ...schemas.rayshift import QuestDetail, QuestDrop, QuestList
 from .utils import fetch_one
 
 
+def quest_select_or(questSelect: list[int]) -> ColumnElement[bool]:
+    return or_(
+        false(),
+        *[
+            rayshiftQuest.c.questDetail.contains({"questSelect": questSelectId})
+            for questSelectId in questSelect
+        ],
+    )
+
+
 async def get_rayshift_quest_db(
     conn: AsyncConnection,
     quest_id: int,
     phase: int,
-    questSelect: int | None = None,
+    questSelect: list[int],
     questHash: str | None = None,
 ) -> Optional[QuestDetail]:
     where_conds = [
@@ -28,13 +38,11 @@ async def get_rayshift_quest_db(
         rayshiftQuest.c.questDetail.isnot(None),
     ]
 
-    if questSelect is not None:
-        where_conds.append(
-            rayshiftQuest.c.questDetail.contains({"questSelect": questSelect})
-        )
-
     if questHash:
         where_conds.append(rayshiftQuestHash.c.questHash == questHash)
+
+    if questSelect:
+        where_conds.append(quest_select_or(questSelect))
 
     stmt = (
         select(rayshiftQuest.c.questDetail)
@@ -57,11 +65,39 @@ async def get_rayshift_quest_db(
     return None
 
 
+async def get_all_quest_hashes(
+    conn: AsyncConnection, quest_id: int, phase: int, questSelect: list[int]
+) -> list[str]:
+    where_conds = [
+        rayshiftQuest.c.questId == quest_id,
+        rayshiftQuest.c.phase == phase,
+    ]
+
+    if questSelect:
+        where_conds.append(quest_select_or(questSelect))
+
+    stmt = (
+        select(rayshiftQuestHash.c.questHash.distinct())
+        .select_from(
+            rayshiftQuestHash.join(
+                rayshiftQuest,
+                rayshiftQuestHash.c.queryId == rayshiftQuest.c.queryId,
+            )
+        )
+        .where(and_(*where_conds))
+        .order_by(rayshiftQuestHash.c.questHash)
+    )
+
+    res = await conn.execute(stmt)
+    rows = res.fetchall()
+    return [str(row.questHash) for row in rows]
+
+
 async def get_rayshift_drops(
     conn: AsyncConnection,
     quest_id: int,
     phase: int,
-    questSelect: int | None = None,
+    questSelect: list[int],
     questHash: str | None = None,
     min_query_id: int | None = None,
 ) -> list[QuestDrop]:
@@ -71,10 +107,7 @@ async def get_rayshift_drops(
         rayshiftQuest.c.phase == phase,
         rayshiftQuest.c.questDetail.isnot(None),
     ]
-    if questSelect is not None:
-        where_conds.append(
-            rayshiftQuest.c.questDetail.contains({"questSelect": questSelect})
-        )
+
     if min_query_id is not None:
         where_conds.append(rayshiftQuest.c.queryId >= min_query_id)
     if questHash:
@@ -82,6 +115,8 @@ async def get_rayshift_drops(
             rayshiftQuestHash, rayshiftQuest.c.queryId == rayshiftQuestHash.c.queryId
         )
         where_conds.append(rayshiftQuestHash.c.questHash == questHash)
+    if questSelect:
+        where_conds.append(quest_select_or(questSelect))
 
     enemy_deck_svt = (
         select(
