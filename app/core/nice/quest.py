@@ -387,6 +387,7 @@ async def get_nice_quest_phase(
     db_data: DBQuestPhase = await get_nice_quest_phase_no_rayshift(
         conn, redis, region, quest_id, phase, lang
     )
+    quest_already_closed = time.time() > db_data.nice.closedAt
 
     if "questSelect" in db_data.raw.mstQuestPhase.script:
         questSelectScript: list[int] = db_data.raw.mstQuestPhase.script["questSelect"]
@@ -462,7 +463,13 @@ async def get_nice_quest_phase(
             all_rayshift_hashes,
         ) = await asyncio.gather(
             get_quest_detail(
-                conn, region, rayshift_quest_id, phase, questSelect, questHash
+                conn=conn,
+                region=region,
+                quest_id=rayshift_quest_id,
+                phase=phase,
+                questSelect=questSelect,
+                questHash=questHash,
+                rayshift_fallback=not quest_already_closed,
             ),
             get_rayshift_drops(
                 conn, rayshift_quest_id, phase, questSelect, questHash, min_query_id
@@ -539,9 +546,15 @@ async def get_nice_quest_phase(
             quest_hash=db_data.nice.enemyHash,
             all_hashes=all_rayshift_hashes,
         )
-        long_ttl = time.time() > db_data.nice.closedAt
         await set_stages_cache(
-            redis, cache_data, region, quest_id, phase, lang, questHash, long_ttl
+            redis=redis,
+            data=cache_data,
+            region=region,
+            quest_id=quest_id,
+            phase=phase,
+            lang=lang,
+            hash=questHash,
+            long_ttl=quest_already_closed,
         )
 
     return db_data.nice
