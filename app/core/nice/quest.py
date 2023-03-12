@@ -417,6 +417,8 @@ async def get_nice_quest_phase(
     if rayshift_data:
         db_data.nice.stages = rayshift_data.stages
         db_data.nice.drops = rayshift_data.quest_drops
+        if rayshift_data.quest_drops:
+            db_data.nice.dropsFromAllHashes = questHash is None
         db_data.nice.availableEnemyHashes = rayshift_data.all_hashes
         if rayshift_data.quest_hash:
             db_data.nice.enemyHash = rayshift_data.quest_hash
@@ -503,6 +505,7 @@ async def get_nice_quest_phase(
                     and drop.deckId == -1
                 ]
                 db_data.nice.enemyHash = rayshift_quest_hash
+                db_data.nice.dropsFromAllHashes = questHash is None
 
     set_ai_npc_data(quest_enemies.ai_npcs)
 

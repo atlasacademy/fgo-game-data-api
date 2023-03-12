@@ -2284,6 +2284,7 @@ class NiceQuestPhase(NiceQuest):
     battleBgId: int
     enemyHash: str | None = None
     availableEnemyHashes: list[str]
+    dropsFromAllHashes: bool | None = None
     extraDetail: NiceQuestPhaseExtraDetail
     scripts: list[ScriptLink]
     messages: list[NiceQuestMessage]
