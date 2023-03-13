@@ -60,7 +60,9 @@ async def get_nice_command_code(
         illustrator=get_translation(
             lang, raw_cc.mstIllustrator.name if raw_cc.mstIllustrator else ""
         ),
-        comment=raw_cc.mstCommandCodeComment.comment,
+        comment=raw_cc.mstCommandCodeComment.comment
+        if raw_cc.mstCommandCodeComment
+        else "",
     )
 
     return nice_cc

@@ -616,7 +616,7 @@ class MstCommandCodeComment(BaseModelORJson):
 class CommandCodeEntity(BaseModelORJson):
     mstCommandCode: MstCommandCode
     mstSkill: list[SkillEntityNoReverse]
-    mstCommandCodeComment: MstCommandCodeComment
+    mstCommandCodeComment: MstCommandCodeComment | None = None
     mstIllustrator: Optional[MstIllustrator] = None
 
 

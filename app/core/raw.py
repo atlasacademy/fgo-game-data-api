@@ -658,10 +658,16 @@ async def get_command_code_entity(
     ]
     mstSkill = await get_skill_entity_no_reverse_many(conn, skill_ids, expand)
 
-    mstCommandCodeComment = (await fetch.get_all(conn, MstCommandCodeComment, cc_id))[0]
-    mstIllustrator = await fetch.get_one(
-        conn, MstIllustrator, mstCommandCodeComment.illustratorId
+    mstCommandCodeComments = await fetch.get_all(conn, MstCommandCodeComment, cc_id)
+    mstCommandCodeComment = (
+        mstCommandCodeComments[0] if mstCommandCodeComments else None
     )
+    if mstCommandCodeComment:
+        mstIllustrator = await fetch.get_one(
+            conn, MstIllustrator, mstCommandCodeComment.illustratorId
+        )
+    else:
+        mstIllustrator = None
 
     return CommandCodeEntity(
         mstCommandCode=cc_db,
