@@ -54,6 +54,8 @@ LIST_DATAVALS = {
     "NotTargetSkillIdArray",
     "CopyTargetFunctionType",
     "CopyTargetBuffType",
+    "NotSkillCopyTargetFuncIds",
+    "NotSkillCopyTargetIndividualities",
 }
 STRING_DATAVALS = {"PopValueText"}
 STRING_LIST_DATAVALS = {"ApplyValueUp"}

@@ -356,6 +356,8 @@ class BaseVals(BaseModel):
     ActNoDamageBuff: int | None = None
     ActSelectIndex: int | None = None
     CopyTargetBuffType: list[int] | None = None
+    NotSkillCopyTargetFuncIds: list[int] | None = None
+    NotSkillCopyTargetIndividualities: list[int] | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo

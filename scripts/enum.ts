@@ -325,6 +325,12 @@ export enum NiceBuffType {
     MASTER_SKILL_VALUE_UP = "masterSkillValueUp",
     BUFF_CONVERT = "buffConvert",
     SUB_FIELD_INDIVIDUALITY = "subFieldIndividuality",
+    COMMANDCODEATTACK_BEFORE_FUNCTION_MAIN_ONLY = "commandcodeattackBeforeFunctionMainOnly",
+    COMMANDCODEATTACK_AFTER_FUNCTION_MAIN_ONLY = "commandcodeattackAfterFunctionMainOnly",
+    COMMANDATTACK_BEFORE_FUNCTION_MAIN_ONLY = "commandattackBeforeFunctionMainOnly",
+    COMMANDATTACK_AFTER_FUNCTION_MAIN_ONLY = "commandattackAfterFunctionMainOnly",
+    ATTACK_BEFORE_FUNCTION_MAIN_ONLY = "attackBeforeFunctionMainOnly",
+    ATTACK_AFTER_FUNCTION_MAIN_ONLY = "attackAfterFunctionMainOnly",
     TO_FIELD_CHANGE_FIELD = "toFieldChangeField",
     TO_FIELD_AVOID_BUFF = "toFieldAvoidBuff",
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = "toFieldSubIndividualityField",
@@ -447,6 +453,12 @@ export enum NiceBuffAction {
     MASTER_SKILL_VALUE_UP = "masterSkillValueUp",
     BUFF_CONVERT = "buffConvert",
     SUB_FIELD_INDIVIDUALITY = "subFieldIndividuality",
+    FUNCTION_COMMANDCODEATTACK_BEFORE_MAIN_ONLY = "functionCommandcodeattackBeforeMainOnly",
+    FUNCTION_COMMANDCODEATTACK_AFTER_MAIN_ONLY = "functionCommandcodeattackAfterMainOnly",
+    FUNCTION_COMMANDATTACK_BEFORE_MAIN_ONLY = "functionCommandattackBeforeMainOnly",
+    FUNCTION_COMMANDATTACK_AFTER_MAIN_ONLY = "functionCommandattackAfterMainOnly",
+    FUNCTION_ATTACK_BEFORE_MAIN_ONLY = "functionAttackBeforeMainOnly",
+    FUNCTION_ATTACK_AFTER_MAIN_ONLY = "functionAttackAfterMainOnly",
 }
 
 export enum NiceBuffLimit {
@@ -584,6 +596,8 @@ export enum NiceDataValsType {
     ActNoDamageBuff = "actnodamagebuff",
     ActSelectIndex = "actselectindex",
     CopyTargetBuffType = "copytargetbufftype",
+    NotSkillCopyTargetFuncIds = "notskillcopytargetfuncids",
+    NotSkillCopyTargetIndividualities = "notskillcopytargetindividualities",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -1103,6 +1117,7 @@ export enum NiceEventType {
     COMBINE_COSUTUME_ITEM = "combineCosutumeItem",
     MYROOM_MULTIPLE_VIEW_CAMPAIGN = "myroomMultipleViewCampaign",
     INTERLUDE_CAMPAIGN = "interludeCampaign",
+    MYROOM_PHOTO_CAMPAIGN = "myroomPhotoCampaign",
 }
 
 export enum NiceWarFlag {
@@ -1367,13 +1382,14 @@ export enum NiceAiActNum {
     REACTION_PLAYERACTIONEND = "reactionPlayeractionend",
     REACTION_WAVESTART = "reactionWavestart",
     MAXNP = "maxnp",
-    SHIFT_SARVANT_AFTER = "shiftSarvantAfter",
+    AFTER_TURN_PLAYER_END = "afterTurnPlayerEnd",
     USENP_TARGET = "usenpTarget",
     REACTION_TURNSTART = "reactionTurnstart",
     REACTION_PLAYERACTIONSTART = "reactionPlayeractionstart",
     REACTION_ENTRY_UNIT = "reactionEntryUnit",
     REACTION_BEFORE_RESURRECTION = "reactionBeforeResurrection",
     REACTION_BEFORE_DEAD = "reactionBeforeDead",
+    SHIFT_SERVANT_AFTER = "shiftServantAfter",
     REACTION_ENEMY_TURN_START_PRIORITY = "reactionEnemyTurnStartPriority",
     REACTION_ENEMY_TURN_END_PRIORITY = "reactionEnemyTurnEndPriority",
     UNKNOWN = "unknown",

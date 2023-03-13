@@ -674,6 +674,12 @@ class BuffType(IntEnum):
     MASTER_SKILL_VALUE_UP = 174
     BUFF_CONVERT = 175
     SUB_FIELD_INDIVIDUALITY = 176
+    COMMANDCODEATTACK_BEFORE_FUNCTION_MAIN_ONLY = 177
+    COMMANDCODEATTACK_AFTER_FUNCTION_MAIN_ONLY = 178
+    COMMANDATTACK_BEFORE_FUNCTION_MAIN_ONLY = 179
+    COMMANDATTACK_AFTER_FUNCTION_MAIN_ONLY = 180
+    ATTACK_BEFORE_FUNCTION_MAIN_ONLY = 181
+    ATTACK_AFTER_FUNCTION_MAIN_ONLY = 182
     TO_FIELD_CHANGE_FIELD = 10001
     TO_FIELD_AVOID_BUFF = 10002
     TO_FIELD_SUB_INDIVIDUALITY_FIELD = 10003
@@ -843,6 +849,12 @@ class NiceBuffType(StrEnum):
     masterSkillValueUp = "masterSkillValueUp"
     buffConvert = "buffConvert"
     subFieldIndividuality = "subFieldIndividuality"
+    commandcodeattackBeforeFunctionMainOnly = "commandcodeattackBeforeFunctionMainOnly"
+    commandcodeattackAfterFunctionMainOnly = "commandcodeattackAfterFunctionMainOnly"
+    commandattackBeforeFunctionMainOnly = "commandattackBeforeFunctionMainOnly"
+    commandattackAfterFunctionMainOnly = "commandattackAfterFunctionMainOnly"
+    attackBeforeFunctionMainOnly = "attackBeforeFunctionMainOnly"
+    attackAfterFunctionMainOnly = "attackAfterFunctionMainOnly"
     toFieldChangeField = "toFieldChangeField"
     toFieldAvoidBuff = "toFieldAvoidBuff"
     toFieldSubIndividualityField = "toFieldSubIndividualityField"
@@ -1010,6 +1022,12 @@ BUFF_TYPE_NAME: dict[int, NiceBuffType] = {
     174: NiceBuffType.masterSkillValueUp,
     175: NiceBuffType.buffConvert,
     176: NiceBuffType.subFieldIndividuality,
+    177: NiceBuffType.commandcodeattackBeforeFunctionMainOnly,
+    178: NiceBuffType.commandcodeattackAfterFunctionMainOnly,
+    179: NiceBuffType.commandattackBeforeFunctionMainOnly,
+    180: NiceBuffType.commandattackAfterFunctionMainOnly,
+    181: NiceBuffType.attackBeforeFunctionMainOnly,
+    182: NiceBuffType.attackAfterFunctionMainOnly,
     10001: NiceBuffType.toFieldChangeField,
     10002: NiceBuffType.toFieldAvoidBuff,
     10003: NiceBuffType.toFieldSubIndividualityField,
@@ -1133,6 +1151,12 @@ class BuffAction(IntEnum):
     MASTER_SKILL_VALUE_UP = 113
     BUFF_CONVERT = 114
     SUB_FIELD_INDIVIDUALITY = 115
+    FUNCTION_COMMANDCODEATTACK_BEFORE_MAIN_ONLY = 116
+    FUNCTION_COMMANDCODEATTACK_AFTER_MAIN_ONLY = 117
+    FUNCTION_COMMANDATTACK_BEFORE_MAIN_ONLY = 118
+    FUNCTION_COMMANDATTACK_AFTER_MAIN_ONLY = 119
+    FUNCTION_ATTACK_BEFORE_MAIN_ONLY = 120
+    FUNCTION_ATTACK_AFTER_MAIN_ONLY = 121
 
 
 class NiceBuffAction(StrEnum):
@@ -1254,6 +1278,12 @@ class NiceBuffAction(StrEnum):
     masterSkillValueUp = "masterSkillValueUp"
     buffConvert = "buffConvert"
     subFieldIndividuality = "subFieldIndividuality"
+    functionCommandcodeattackBeforeMainOnly = "functionCommandcodeattackBeforeMainOnly"
+    functionCommandcodeattackAfterMainOnly = "functionCommandcodeattackAfterMainOnly"
+    functionCommandattackBeforeMainOnly = "functionCommandattackBeforeMainOnly"
+    functionCommandattackAfterMainOnly = "functionCommandattackAfterMainOnly"
+    functionAttackBeforeMainOnly = "functionAttackBeforeMainOnly"
+    functionAttackAfterMainOnly = "functionAttackAfterMainOnly"
 
 
 BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
@@ -1373,6 +1403,12 @@ BUFF_ACTION_NAME: dict[int, NiceBuffAction] = {
     113: NiceBuffAction.masterSkillValueUp,
     114: NiceBuffAction.buffConvert,
     115: NiceBuffAction.subFieldIndividuality,
+    116: NiceBuffAction.functionCommandcodeattackBeforeMainOnly,
+    117: NiceBuffAction.functionCommandcodeattackAfterMainOnly,
+    118: NiceBuffAction.functionCommandattackBeforeMainOnly,
+    119: NiceBuffAction.functionCommandattackAfterMainOnly,
+    120: NiceBuffAction.functionAttackBeforeMainOnly,
+    121: NiceBuffAction.functionAttackAfterMainOnly,
 }
 
 
@@ -1528,6 +1564,8 @@ class DataValsType(IntEnum):
     ActNoDamageBuff = 124
     ActSelectIndex = 125
     CopyTargetBuffType = 126
+    NotSkillCopyTargetFuncIds = 127
+    NotSkillCopyTargetIndividualities = 128
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -3063,6 +3101,7 @@ class EventType(IntEnum):
     COMBINE_COSUTUME_ITEM = 23
     MYROOM_MULTIPLE_VIEW_CAMPAIGN = 24
     INTERLUDE_CAMPAIGN = 25
+    MYROOM_PHOTO_CAMPAIGN = 26
 
 
 class NiceEventType(StrEnum):
@@ -3093,6 +3132,7 @@ class NiceEventType(StrEnum):
     combineCosutumeItem = "combineCosutumeItem"
     myroomMultipleViewCampaign = "myroomMultipleViewCampaign"
     interludeCampaign = "interludeCampaign"
+    myroomPhotoCampaign = "myroomPhotoCampaign"
 
 
 EVENT_TYPE_NAME: dict[int, NiceEventType] = {
@@ -3121,6 +3161,7 @@ EVENT_TYPE_NAME: dict[int, NiceEventType] = {
     23: NiceEventType.combineCosutumeItem,
     24: NiceEventType.myroomMultipleViewCampaign,
     25: NiceEventType.interludeCampaign,
+    26: NiceEventType.myroomPhotoCampaign,
     21: NiceEventType.comebackCampaign,
 }
 
@@ -3925,13 +3966,14 @@ class AiActNum(IntEnum):
     REACTION_PLAYERACTIONEND = -7
     REACTION_WAVESTART = -8
     MAXNP = -9
-    SHIFT_SARVANT_AFTER = -10
+    AFTER_TURN_PLAYER_END = -10
     USENP_TARGET = -11
     REACTION_TURNSTART = -12
     REACTION_PLAYERACTIONSTART = -13
     REACTION_ENTRY_UNIT = -14
     REACTION_BEFORE_RESURRECTION = -15
     REACTION_BEFORE_DEAD = -16
+    SHIFT_SERVANT_AFTER = -17
     REACTION_ENEMY_TURN_START_PRIORITY = -401
     REACTION_ENEMY_TURN_END_PRIORITY = -501
 
@@ -3948,13 +3990,14 @@ class NiceAiActNum(StrEnum):
     reactionPlayeractionend = "reactionPlayeractionend"
     reactionWavestart = "reactionWavestart"
     maxnp = "maxnp"
-    shiftSarvantAfter = "shiftSarvantAfter"
+    afterTurnPlayerEnd = "afterTurnPlayerEnd"
     usenpTarget = "usenpTarget"
     reactionTurnstart = "reactionTurnstart"
     reactionPlayeractionstart = "reactionPlayeractionstart"
     reactionEntryUnit = "reactionEntryUnit"
     reactionBeforeResurrection = "reactionBeforeResurrection"
     reactionBeforeDead = "reactionBeforeDead"
+    shiftServantAfter = "shiftServantAfter"
     reactionEnemyTurnStartPriority = "reactionEnemyTurnStartPriority"
     reactionEnemyTurnEndPriority = "reactionEnemyTurnEndPriority"
     unknown = "unknown"
@@ -3970,13 +4013,14 @@ AI_ACT_NUM_NAME: dict[int, NiceAiActNum] = {
     -7: NiceAiActNum.reactionPlayeractionend,
     -8: NiceAiActNum.reactionWavestart,
     -9: NiceAiActNum.maxnp,
-    -10: NiceAiActNum.shiftSarvantAfter,
+    -10: NiceAiActNum.afterTurnPlayerEnd,
     -11: NiceAiActNum.usenpTarget,
     -12: NiceAiActNum.reactionTurnstart,
     -13: NiceAiActNum.reactionPlayeractionstart,
     -14: NiceAiActNum.reactionEntryUnit,
     -15: NiceAiActNum.reactionBeforeResurrection,
     -16: NiceAiActNum.reactionBeforeDead,
+    -17: NiceAiActNum.shiftServantAfter,
     -401: NiceAiActNum.reactionEnemyTurnStartPriority,
     -501: NiceAiActNum.reactionEnemyTurnEndPriority,
     -9999: NiceAiActNum.unknown,

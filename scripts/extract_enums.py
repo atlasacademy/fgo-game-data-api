@@ -21,14 +21,32 @@ def convert_name(name: str) -> str:
         return "".join([words[0].lower()] + [w.title() for w in words[1:]])
 
 
-def enum_to_dict(cstype: list[str]) -> dict[int, str]:
+RAW_NAME_OVERRIDE = {
+    "BuffType": {
+        "COMMANDATTACK_AFTER_FUNCTION": "COMMANDATTACK_FUNCTION",
+        "UP_DEFENCE_COMMANDDAMAGE": "UP_DEFENCECOMMAN_DAMAGE",
+        "DOWN_DEFENCE_COMMANDDAMAGE": "DOWN_DEFENCECOMMAN_DAMAGE",
+        "ATTACK_AFTER_FUNCTION": "ATTACK_FUNCTION",
+        "COMMANDCODEATTACK_BEFORE_FUNCTION": "COMMANDCODEATTACK_FUNCTION",
+    },
+    "BuffAction": {
+        "FUNCTION_COMMANDATTACK_AFTER": "FUNCTION_COMMANDATTACK",
+        "FUNCTION_ATTACK_AFTER": "FUNCTION_ATTACK",
+        "FUNCTION_COMMANDCODEATTACK_BEFORE": "FUNCTION_COMMANDCODEATTACK",
+    },
+}
+
+
+def enum_to_dict(cstype: list[str], raw_class_name: str) -> dict[int, str]:
     enum_dict: dict[int, str] = {}
     for enum_item in cstype:
         enum_item = enum_item.split(";")[0]
         splitted = enum_item.split(" = ")
         i = int(splitted[1])
         enum_item = splitted[0].split()[-1].strip()
-        enum_dict[i] = enum_item
+        enum_dict[i] = RAW_NAME_OVERRIDE.get(raw_class_name, {}).get(
+            enum_item, enum_item
+        )
     return {k: enum_dict[k] for k in sorted(enum_dict.keys(), key=abs)}
 
 
@@ -142,7 +160,7 @@ def cs_enums_to_lines(
     nice_class_title: str,
     dict_name: str,
 ) -> list[str]:
-    enum_dict = enum_to_dict(cs_enums)
+    enum_dict = enum_to_dict(cs_enums, raw_class)
     if raw_class == "DataValsType":
         return out_intenum(enum_dict, raw_class)
     else:
@@ -155,8 +173,8 @@ def cs_enums_to_lines(
         )
 
 
-def cs_enum_to_ts(cs_enums: list[str], nice_class: str) -> list[str]:
-    enum_dict = enum_to_dict(cs_enums)
+def cs_enum_to_ts(cs_enums: list[str], raw_class: str, nice_class: str) -> list[str]:
+    enum_dict = enum_to_dict(cs_enums, raw_class)
     ts_enum_lines = [f"export enum {nice_class} {{\n"]
     for enumstr in list(enum_dict.values()) + list(
         EXTRA_STR_NAME.get(nice_class, {}).values()
@@ -572,8 +590,8 @@ def main(dump_path: str, gameenums_path: str, typescript_path: str = "") -> None
 
     if typescript_path:
         ts_lines: list[str] = []
-        for cs_enum, _, nice_class, *_ in ENUMS:
-            ts_lines += cs_enum_to_ts(all_cs_enums[cs_enum], nice_class)
+        for cs_enum, raw_class, nice_class, *_ in ENUMS:
+            ts_lines += cs_enum_to_ts(all_cs_enums[cs_enum], raw_class, nice_class)
             if cs_enum != ENUMS[-1][0]:
                 ts_lines.append("\n")
 
