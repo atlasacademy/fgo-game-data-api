@@ -13,19 +13,19 @@ TRANSLATIONS: dict[str, str] = {}
 
 
 class Translation(StrEnum):
-    ENEMY = "enemy_names"
     VOICE = "voice_names"
     OVERWRITE_VOICE = "overwrite_voice_names"
     BGM = "bgm_names"
+    ENTITY = "entity_names"
+    QUEST = "quest_names"
+    SPOT = "spot_names"
+    ENEMY = "enemy_names"
     SKILL = "skill_names"
     NP = "np_names"
     EVENT = "event_names"
     WAR = "war_names"
     WAR_SHORT = "war_short_names"
     ITEM = "item_names"
-    ENTITY = "entity_names"
-    QUEST = "quest_names"
-    SPOT = "spot_names"
     ILLUSTRATOR = "illustrator_names"
     CV = "cv_names"
     SERVANT = "servant_names"
