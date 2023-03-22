@@ -1,4 +1,5 @@
 import logging
+from logging.handlers import HTTPHandler
 from pathlib import Path
 from typing import Any, Optional
 
@@ -6,6 +7,7 @@ import orjson
 from pydantic import (
     BaseSettings,
     DirectoryPath,
+    Extra,
     Field,
     HttpUrl,
     PostgresDsn,
@@ -21,6 +23,14 @@ from .schemas.common import Region
 
 
 project_root = Path(__file__).resolve().parents[1]
+
+
+class CustomHttpHandler(HTTPHandler):
+    def mapLogRecord(self, record: logging.LogRecord) -> dict[str, str]:
+        return {
+            "username": "API",
+            "content": f"API Exception\n\n```\n{self.format(record)}\n```",
+        }
 
 
 uvicorn_logger = logging.getLogger("uvicorn.access")
@@ -61,6 +71,7 @@ class Settings(BaseSettings):
     github_webhook_secret: SecretStr = SecretStr("")
     github_webhook_git_pull: bool = False
     webhooks: list[str] = []
+    error_webhooks: list[HttpUrl] = []
 
     @validator("asset_url", "rayshift_api_url")
     def remove_last_slash(cls, value: str) -> str:
@@ -70,6 +81,7 @@ class Settings(BaseSettings):
             return value
 
     class Config:
+        extra = Extra.ignore
         env_file = ".env"
         secrets_dir = "secrets"
 
@@ -81,3 +93,14 @@ class Settings(BaseSettings):
                 env_settings,
                 json_config_settings_source,
             )
+
+
+settings = Settings()
+
+for url in settings.error_webhooks:
+    if url.host:
+        http_handler = CustomHttpHandler(
+            url.host, url.path if url.path else "", method="POST", secure=True
+        )
+        http_handler.setLevel(logging.ERROR)
+        logger.addHandler(http_handler)

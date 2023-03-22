@@ -534,5 +534,8 @@ async def pull_and_update(
     async_engines: dict[Region, AsyncEngine],
     redis: Redis,
 ) -> None:  # pragma: no cover
-    await run_in_threadpool(lambda: update_data_repo(region_path))
-    await load_and_export(redis, region_path, async_engines, True)
+    try:
+        await run_in_threadpool(lambda: update_data_repo(region_path))
+        await load_and_export(redis, region_path, async_engines, True)
+    except Exception:
+        logger.exception("Failed to pull and update data")
