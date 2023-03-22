@@ -1749,6 +1749,7 @@ class MstAi(BaseModelORJson):
 class MstAiAct(BaseModelORJson):
     targetIndividuality: list[int]  # [0]
     skillVals: list[int]  # [961075, 1]
+    script: dict[str, Any] | None = None
     id: int  # 94016184
     type: int  # 40
     target: int  # 0

@@ -2060,6 +2060,7 @@ mstAiAct = Table(
     metadata,
     Column("targetIndividuality", ARRAY(Integer)),
     Column("skillVals", ARRAY(Integer)),
+    Column("script", JSONB),
     Column("id", Integer, primary_key=True),
     Column("type", Integer),
     Column("target", Integer),
