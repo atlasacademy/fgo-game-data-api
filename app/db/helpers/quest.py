@@ -1,14 +1,16 @@
 import functools
 from typing import Any, Iterable, Optional, Union
 
-from sqlalchemy import Integer, Table
+from sqlalchemy import CTE, Integer, Label, Table
 from sqlalchemy.dialects.postgresql import array_agg
 from sqlalchemy.exc import DBAPIError
 from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import (
     ColumnElement,
     Join,
+    alias,
     and_,
+    any_,
     case,
     cast,
     false,
@@ -26,6 +28,7 @@ from ...models.raw import (
     mstClosedMessage,
     mstGift,
     mstGiftAdd,
+    mstItem,
     mstMap,
     mstQuest,
     mstQuestConsumeItem,
@@ -354,43 +357,58 @@ scripts_cte = select(
 ).cte()
 
 
+def get_rayshift_phases_cte(
+    where_clause: _ColumnExpressionArgument[bool],
+) -> CTE:
+    return (
+        select(mstQuest.c.id, rayshiftQuest.c.phase)
+        .select_from(
+            mstQuest.outerjoin(rayshiftQuest, rayshiftQuest.c.questId == mstQuest.c.id)
+        )
+        .where(where_clause)
+        .group_by(mstQuest.c.id, rayshiftQuest.c.phase)
+        .order_by(mstQuest.c.id, rayshiftQuest.c.phase)
+        .cte()
+    )
+
+
+def get_rayshift_phase_with_enemy_select(rayshift_cte: CTE) -> Label[Any]:
+    return func.to_jsonb(
+        func.array_remove(array_agg(rayshift_cte.c.phase.distinct()), None)
+    ).label("phasesWithEnemies")
+
+
+mstGiftAddAlias = alias(mstGiftAdd, "mstGiftAddTable")
+mstGiftAlias = alias(mstGift, "mstGiftTable")
+
 JOINED_QUEST_TABLES = (
     mstQuest.outerjoin(
         mstQuestConsumeItem, mstQuestConsumeItem.c.questId == mstQuest.c.id
     )
+    .outerjoin(mstItem, mstItem.c.id == any_(mstQuestConsumeItem.c.itemIds))
     .outerjoin(mstQuestRelease, mstQuestRelease.c.questId == mstQuest.c.id)
     .outerjoin(mstQuestPhase, mstQuestPhase.c.questId == mstQuest.c.id)
     .outerjoin(
         mstClosedMessage, mstClosedMessage.c.id == mstQuestRelease.c.closedMessageId
     )
-    .outerjoin(mstGiftAdd, mstGiftAdd.c.giftId == mstQuest.c.giftId)
+    .outerjoin(mstGiftAddAlias, mstGiftAddAlias.c.giftId == mstQuest.c.giftId)
     .outerjoin(
-        mstGift,
+        mstGiftAlias,
         or_(
-            mstGift.c.id == mstQuest.c.giftId, mstGift.c.id == mstGiftAdd.c.priorGiftId
+            mstGiftAlias.c.id == mstQuest.c.giftId,
+            mstGiftAlias.c.id == mstGiftAddAlias.c.priorGiftId,
         ),
     )
 )
 
 
-JOINED_QUEST_ENTITY_TABLES = (
-    JOINED_QUEST_TABLES.outerjoin(
-        rayshiftQuest, rayshiftQuest.c.questId == mstQuest.c.id
-    )
-    .outerjoin(
-        mstQuestPhaseDetail,
-        and_(
-            mstQuest.c.id == mstQuestPhaseDetail.c.questId,
-            mstQuestPhase.c.phase == mstQuestPhaseDetail.c.phase,
-        ),
-    )
-    .outerjoin(scripts_cte, mstQuest.c.id == scripts_cte.c.questId)
-)
-
-
-phasesWithEnemies = func.to_jsonb(
-    func.array_remove(array_agg(rayshiftQuest.c.phase.distinct()), None)
-).label("phasesWithEnemies")
+JOINED_QUEST_ENTITY_TABLES = JOINED_QUEST_TABLES.outerjoin(
+    mstQuestPhaseDetail,
+    and_(
+        mstQuest.c.id == mstQuestPhaseDetail.c.questId,
+        mstQuestPhase.c.phase == mstQuestPhaseDetail.c.phase,
+    ),
+).outerjoin(scripts_cte, mstQuest.c.id == scripts_cte.c.questId)
 
 
 phasesNoBattle = func.array_remove(
@@ -418,12 +436,12 @@ SELECT_QUEST_ENTITY = [
     sql_jsonb_agg(mstQuestConsumeItem),
     sql_jsonb_agg(mstQuestRelease),
     sql_jsonb_agg(mstClosedMessage),
-    sql_jsonb_agg(mstGift),
-    sql_jsonb_agg(mstGiftAdd),
+    sql_jsonb_agg(mstItem),
+    sql_jsonb_agg(mstGiftAlias, "mstGift"),
+    sql_jsonb_agg(mstGiftAddAlias, "mstGiftAdd"),
     func.to_jsonb(
         func.array_remove(array_agg(mstQuestPhase.c.phase.distinct()), None)
     ).label("phases"),
-    phasesWithEnemies,
     phasesNoBattle,
     func.to_jsonb(
         func.array_remove(array_agg(scripts_cte.table_valued().distinct()), None)
@@ -434,10 +452,17 @@ SELECT_QUEST_ENTITY = [
 async def get_quest_entity(
     conn: AsyncConnection, quest_ids: Iterable[int]
 ) -> list[QuestEntity]:
+    where_cond = mstQuest.c.id.in_(quest_ids)
+    rayshift_cte = get_rayshift_phases_cte(where_cond)
+    phasesWithEnemies = get_rayshift_phase_with_enemy_select(rayshift_cte)
     stmt = (
-        select(*SELECT_QUEST_ENTITY)
-        .select_from(JOINED_QUEST_ENTITY_TABLES)
-        .where(mstQuest.c.id.in_(quest_ids))
+        select(*SELECT_QUEST_ENTITY, phasesWithEnemies)
+        .select_from(
+            JOINED_QUEST_ENTITY_TABLES.outerjoin(
+                rayshift_cte, rayshift_cte.c.id == mstQuest.c.id
+            )
+        )
+        .where(where_cond)
         .group_by(mstQuest.c.id)
     )
 
@@ -453,10 +478,17 @@ async def get_quest_entity(
 async def get_quest_by_spot(
     conn: AsyncConnection, spot_ids: Iterable[int]
 ) -> list[QuestEntity]:
+    where_cond = mstQuest.c.spotId.in_(spot_ids)
+    rayshift_cte = get_rayshift_phases_cte(where_cond)
+    phasesWithEnemies = get_rayshift_phase_with_enemy_select(rayshift_cte)
     stmt = (
-        select(*SELECT_QUEST_ENTITY)
-        .select_from(JOINED_QUEST_ENTITY_TABLES)
-        .where(mstQuest.c.spotId.in_(spot_ids))
+        select(*SELECT_QUEST_ENTITY, phasesWithEnemies)
+        .select_from(
+            JOINED_QUEST_ENTITY_TABLES.outerjoin(
+                rayshift_cte, rayshift_cte.c.id == mstQuest.c.id
+            )
+        )
+        .where(where_cond)
         .group_by(mstQuest.c.id)
     )
     return [
@@ -584,8 +616,8 @@ async def get_quest_phase_entity(
         sql_jsonb_agg(mstQuestConsumeItem),
         sql_jsonb_agg(mstQuestRelease),
         sql_jsonb_agg(mstClosedMessage),
-        sql_jsonb_agg(mstGift),
-        sql_jsonb_agg(mstGiftAdd),
+        sql_jsonb_agg(mstGiftAlias, "mstGift"),
+        sql_jsonb_agg(mstGiftAddAlias, "mstGiftAdd"),
         all_phases_cte.c.phases,
         func.coalesce(
             select(func.array_remove(array_agg(rayshiftQuest.c.phase.distinct()), None))

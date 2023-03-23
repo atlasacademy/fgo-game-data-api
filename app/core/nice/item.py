@@ -17,7 +17,7 @@ from ...schemas.nice import (
 )
 from ...schemas.raw import MstGift, MstItem, MstItemSelect
 from ..nice.gift import GiftData, get_nice_gifts
-from ..raw import get_item_entity, get_multiple_items
+from ..raw import get_item_entity
 from ..utils import fmt_url, get_traits_list, get_translation
 
 
@@ -102,18 +102,6 @@ def get_nice_item_amount(
         NiceItemAmount(item=item, amount=amount)
         for item, amount in zip(items, amounts, strict=False)
     ]
-
-
-async def get_nice_item_amount_db(
-    conn: AsyncConnection,
-    region: Region,
-    item_list: list[int],
-    amount_list: list[int],
-    lang: Language,
-) -> list[NiceItemAmount]:
-    mstItems = await get_multiple_items(conn, item_list)
-    nice_items = [get_nice_item_from_raw(region, mstItem, lang) for mstItem in mstItems]
-    return get_nice_item_amount(nice_items, amount_list)
 
 
 def get_nice_item_amount_qp(

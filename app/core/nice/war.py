@@ -41,7 +41,7 @@ from .. import raw
 from ..utils import fmt_url, get_flags, get_translation
 from .base_script import get_script_url
 from .bgm import get_nice_bgm
-from .quest import get_nice_quest
+from .quest import get_nice_quest_with_war_spot
 
 
 settings = Settings()
@@ -167,8 +167,7 @@ def get_nice_war_add(
     )
 
 
-async def get_nice_war_quest_selection(
-    conn: AsyncConnection,
+def get_nice_war_quest_selection(
     region: Region,
     quest_selection: MstWarQuestSelection,
     mstWar: MstWar,
@@ -192,7 +191,7 @@ async def get_nice_war_quest_selection(
     spot = next(spot for spot in spots if spot.id == quest.mstQuest.spotId)
     return NiceWarQuestSelection(
         quest=NiceQuest.parse_obj(
-            await get_nice_quest(conn, region, quest, lang, mstWar, spot)
+            get_nice_quest_with_war_spot(region, quest, lang, mstWar, spot)
         ),
         shortcutBanner=banner_url,
         priority=quest_selection.priority,
@@ -211,8 +210,7 @@ def get_nice_spot_add(mstWarAdd: MstSpotAdd) -> NiceSpotAdd:
     )
 
 
-async def get_nice_spot(
-    conn: AsyncConnection,
+def get_nice_spot(
     region: Region,
     mstWar: MstWar,
     raw_spot: MstSpot,
@@ -254,7 +252,7 @@ async def get_nice_spot(
         ],
         quests=[
             NiceQuest.parse_obj(
-                await get_nice_quest(conn, region, quest, lang, mstWar, raw_spot)
+                get_nice_quest_with_war_spot(region, quest, lang, mstWar, raw_spot)
             )
             for quest in quests
             if quest.mstQuest.spotId == raw_spot.id
@@ -352,8 +350,7 @@ async def get_nice_war(
             for raw_map in raw_war.mstMap
         ],
         spots=[
-            await get_nice_spot(
-                conn,
+            get_nice_spot(
                 region,
                 raw_war.mstWar,
                 raw_spot,
@@ -370,8 +367,7 @@ async def get_nice_war(
             for spot_road in raw_war.mstSpotRoad
         ],
         questSelections=[
-            await get_nice_war_quest_selection(
-                conn,
+            get_nice_war_quest_selection(
                 region,
                 quest_selection,
                 raw_war.mstWar,

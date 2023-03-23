@@ -69,7 +69,7 @@ from .bgm import get_nice_bgm
 from .enemy import QuestEnemies, get_nice_drop, get_quest_enemies
 from .follower import get_nice_support_servants
 from .gift import get_nice_gift
-from .item import get_nice_item_amount_db
+from .item import get_nice_item_amount, get_nice_item_from_raw
 
 
 settings = Settings()
@@ -173,21 +173,13 @@ def get_nice_all_scripts(
     ]
 
 
-async def get_nice_quest(
-    conn: AsyncConnection,
+def get_nice_quest_with_war_spot(
     region: Region,
     raw_quest: Union[QuestEntity, QuestPhaseEntity],
     lang: Language,
-    mstWar: Optional[MstWar] = None,
-    mstSpot: Optional[MstSpot] = None,
+    mstWar: MstWar,
+    mstSpot: MstSpot,
 ) -> dict[str, Any]:
-    if not mstWar:
-        mstWar = await war.get_war_from_spot(conn, raw_quest.mstQuest.spotId)
-    if not mstSpot:
-        mstSpot = await war.get_spot_from_id(conn, raw_quest.mstQuest.spotId)
-    if mstSpot is None or mstWar is None:  # pragma: no cover
-        raise HTTPException(status_code=404, detail="Quest's spot not found")
-
     gift_maps: dict[int, list[MstGift]] = defaultdict(list)
     for gift in raw_quest.mstGift:
         gift_maps[gift.id].append(gift)
@@ -202,8 +194,13 @@ async def get_nice_quest(
         "consumeItem": [
             nice_item_amount
             for consumeItem in raw_quest.mstQuestConsumeItem
-            for nice_item_amount in await get_nice_item_amount_db(
-                conn, region, consumeItem.itemIds, consumeItem.nums, lang
+            for nice_item_amount in get_nice_item_amount(
+                [
+                    get_nice_item_from_raw(region, item, lang)
+                    for item in raw_quest.mstItem
+                    if item.id in consumeItem.itemIds
+                ],
+                consumeItem.nums,
             )
         ],
         "consume": raw_quest.mstQuest.actConsume,
@@ -242,6 +239,24 @@ async def get_nice_quest(
         "closedAt": raw_quest.mstQuest.closedAt,
     }
     return nice_data
+
+
+async def get_nice_quest(
+    conn: AsyncConnection,
+    region: Region,
+    raw_quest: Union[QuestEntity, QuestPhaseEntity],
+    lang: Language,
+    mstWar: Optional[MstWar] = None,
+    mstSpot: Optional[MstSpot] = None,
+) -> dict[str, Any]:
+    if not mstWar:
+        mstWar = await war.get_war_from_spot(conn, raw_quest.mstQuest.spotId)
+    if not mstSpot:
+        mstSpot = await war.get_spot_from_id(conn, raw_quest.mstQuest.spotId)
+    if mstSpot is None or mstWar is None:  # pragma: no cover
+        raise HTTPException(status_code=404, detail="Quest's spot not found")
+
+    return get_nice_quest_with_war_spot(region, raw_quest, lang, mstWar, mstSpot)
 
 
 async def get_nice_quest_alone(

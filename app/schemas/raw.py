@@ -1880,6 +1880,7 @@ class QuestEntity(BaseModelORJson):
     mstClosedMessage: list[MstClosedMessage]
     mstGift: list[MstGift]
     mstGiftAdd: list[MstGiftAdd]
+    mstItem: list[MstItem] = []
     phases: list[int]
     phasesWithEnemies: list[int] = []
     phasesNoBattle: list[int] = []

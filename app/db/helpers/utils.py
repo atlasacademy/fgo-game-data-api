@@ -6,13 +6,16 @@ from sqlalchemy.engine import CursorResult, Row
 from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import Select, func
 from sqlalchemy.sql._typing import _ColumnsClauseArgument
+from sqlalchemy.sql.selectable import NamedFromClause
 
 
-def sql_jsonb_agg(table: Table) -> _ColumnsClauseArgument[JSONB]:
+def sql_jsonb_agg(
+    table: Table | NamedFromClause, label: str | None = None
+) -> _ColumnsClauseArgument[JSONB]:
     """Equivalent to `func.JSONB_AGG` but removes empty elements from the output"""
     return func.to_jsonb(
         func.array_remove(array_agg(table.table_valued().distinct()), None)
-    ).label(table.name)
+    ).label(label if label else table.name)
 
 
 T = TypeVar("T", bound=tuple[Any, ...])
