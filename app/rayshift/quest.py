@@ -70,7 +70,7 @@ async def get_quest_detail(
     questSelect: list[int],
     questHash: str | None = None,
     rayshift_fallback: bool = True,
-) -> Optional[QuestDetail]:
+) -> list[QuestDetail]:
     db_quest_detail = await get_rayshift_quest_db(
         conn, quest_id, phase, questSelect, questHash
     )
@@ -85,10 +85,10 @@ async def get_quest_detail(
             if (
                 questSelect and quest_detail.questSelect not in questSelect
             ):  # pragma: no cover
-                return None
-            return quest_detail
+                return []
+            return [quest_detail]
 
-    return None
+    return []
 
 
 def get_multiple_quests(

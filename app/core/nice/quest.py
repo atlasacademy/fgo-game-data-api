@@ -11,7 +11,11 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 from ...config import Settings
 from ...db.helpers import war
 from ...db.helpers.quest import get_questSelect_container
-from ...db.helpers.rayshift import get_all_quest_hashes, get_rayshift_drops
+from ...db.helpers.rayshift import (
+    get_all_quest_hashes,
+    get_rayshift_drops,
+    get_war_board_quest_details,
+)
 from ...rayshift.quest import get_quest_detail
 from ...redis import Redis
 from ...redis.helpers.quest import RayshiftRedisData, get_stages_cache, set_stages_cache
@@ -66,7 +70,7 @@ from ..rayshift import get_quest_enemy_hash
 from ..utils import fmt_url, get_flags, get_traits_list, get_translation
 from .base_script import get_nice_script_link
 from .bgm import get_nice_bgm
-from .enemy import QuestEnemies, get_nice_drop, get_quest_enemies
+from .enemy import QuestEnemies, get_nice_drop, get_quest_enemies, get_war_board_enemies
 from .follower import get_nice_support_servants
 from .gift import get_nice_gift
 from .item import get_nice_item_amount, get_nice_item_from_raw
@@ -474,12 +478,10 @@ async def get_nice_quest_phase(
             elif region == Region.NA:
                 min_query_id = 1062363  # 2022-07-04 09:00:00 UTC
 
-        (
-            rayshift_quest_detail,
-            rayshift_quest_drops,
-            all_rayshift_hashes,
-        ) = await asyncio.gather(
-            get_quest_detail(
+        if db_data.raw.mstQuest.type == QuestType.WAR_BOARD:
+            quest_enemy_coro = get_war_board_quest_details(conn, quest_id, phase)
+        else:
+            quest_enemy_coro = get_quest_detail(
                 conn=conn,
                 region=region,
                 quest_id=rayshift_quest_id,
@@ -487,7 +489,14 @@ async def get_nice_quest_phase(
                 questSelect=questSelect,
                 questHash=questHash,
                 rayshift_fallback=not quest_already_closed,
-            ),
+            )
+
+        (
+            rayshift_quest_details,
+            rayshift_quest_drops,
+            all_rayshift_hashes,
+        ) = await asyncio.gather(
+            quest_enemy_coro,
             get_rayshift_drops(
                 conn, rayshift_quest_id, phase, questSelect, questHash, min_query_id
             ),
@@ -496,22 +505,27 @@ async def get_nice_quest_phase(
 
         db_data.nice.availableEnemyHashes = all_rayshift_hashes
 
-        if not rayshift_quest_detail:
+        if not rayshift_quest_details:
             save_stages_cache = False
         else:
-            rayshift_quest_hash = get_quest_enemy_hash(1, rayshift_quest_detail)
+            rayshift_quest_hash = get_quest_enemy_hash(1, rayshift_quest_details[0])
             if questHash and rayshift_quest_hash != questHash:
                 save_stages_cache = False
             else:
-                quest_enemies = await get_quest_enemies(
-                    conn,
-                    redis,
-                    region,
-                    stages,
-                    rayshift_quest_detail,
-                    rayshift_quest_drops,
-                    lang,
-                )
+                if db_data.raw.mstQuest.type == QuestType.WAR_BOARD:
+                    quest_enemies = await get_war_board_enemies(
+                        conn, redis, region, rayshift_quest_details, lang
+                    )
+                else:
+                    quest_enemies = await get_quest_enemies(
+                        conn,
+                        redis,
+                        region,
+                        stages,
+                        rayshift_quest_details[0],
+                        rayshift_quest_drops,
+                        lang,
+                    )
                 nice_quest_drops = [
                     get_nice_drop(drop)
                     for drop in rayshift_quest_drops
