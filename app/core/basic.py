@@ -1,5 +1,7 @@
+import asyncio
 from collections import defaultdict
-from typing import Any, Callable, Generator, Iterable, Optional
+from dataclasses import dataclass
+from typing import Any, Callable, Generator, Iterable, Optional, Sequence
 
 from fastapi import HTTPException
 from sqlalchemy.ext.asyncio import AsyncConnection
@@ -513,6 +515,26 @@ async def get_basic_servant(
 ) -> BasicServant:
     return BasicServant.parse_obj(
         await get_basic_svt(redis, region, item_id, svt_limit, lang, mstSvt)
+    )
+
+
+@dataclass
+class BasicServantGet:
+    svt_id: int
+    svt_limit: int
+
+
+async def get_multiple_basic_servants(
+    redis: Redis,
+    region: Region,
+    svt_details: Sequence[BasicServantGet],
+    lang: Language | None = None,
+) -> list[BasicServant]:
+    return await asyncio.gather(
+        *[
+            get_basic_servant(redis, region, detail.svt_id, detail.svt_limit, lang)
+            for detail in svt_details
+        ]
     )
 
 

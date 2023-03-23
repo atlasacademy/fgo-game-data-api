@@ -1,6 +1,6 @@
 from copy import deepcopy
 from dataclasses import dataclass
-from typing import Any, Iterable, Optional
+from typing import Any, Iterable, Optional, Type, TypeVar
 
 from sqlalchemy.ext.asyncio import AsyncConnection
 
@@ -230,19 +230,23 @@ async def get_nice_skill_with_svt(
     return [nice_skill]
 
 
+T = TypeVar("T", NiceSkill, NiceSkillReverse)
+
+
 async def get_nice_skill_from_raw(
     conn: AsyncConnection,
     region: Region,
     raw_skill: SkillEntityNoReverse,
+    nice_skill_type: Type[T],
     lang: Language,
-) -> NiceSkillReverse:
+) -> T:
     svt_list = [svt_skill.svtId for svt_skill in raw_skill.mstSvtSkill]
     if svt_list:
         svt_id = svt_list[0]
     else:
         svt_id = 0
 
-    nice_skill = NiceSkillReverse.parse_obj(
+    nice_skill = nice_skill_type.parse_obj(
         (await get_nice_skill_with_svt(conn, raw_skill, svt_id, region, lang))[0]
     )
 
@@ -253,10 +257,11 @@ async def get_nice_skill_from_id(
     conn: AsyncConnection,
     region: Region,
     skill_id: int,
+    nice_skill_type: Type[T],
     lang: Language,
-) -> NiceSkillReverse:
+) -> T:
     raw_skill = await get_skill_entity_no_reverse(conn, skill_id, expand=True)
-    return await get_nice_skill_from_raw(conn, region, raw_skill, lang)
+    return await get_nice_skill_from_raw(conn, region, raw_skill, nice_skill_type, lang)
 
 
 @dataclass(eq=True, frozen=True)

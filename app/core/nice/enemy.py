@@ -1,3 +1,4 @@
+import asyncio
 from dataclasses import dataclass
 from typing import Any
 
@@ -5,6 +6,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...data.custom_mappings import Translation
 from ...redis import Redis
+from ...schemas.basic import BasicServant
 from ...schemas.common import Language, Region
 from ...schemas.enums import (
     ATTRIBUTE_NAME,
@@ -31,7 +33,7 @@ from ...schemas.nice import (
 )
 from ...schemas.raw import MstStage
 from ...schemas.rayshift import Deck, DeckSvt, QuestDetail, QuestDrop, UserSvt
-from ..basic import get_basic_servant
+from ..basic import BasicServantGet, get_multiple_basic_servants
 from ..utils import get_traits_list, get_translation, nullable_to_string
 from .skill import MultipleNiceSkills, SkillSvt, get_multiple_nice_skills
 from .td import MultipleNiceTds, TdSvt, get_multiple_nice_tds
@@ -230,20 +232,16 @@ class EnemyDeckInfo:
         return hash((self.deckType, self.deck.id))
 
 
-async def get_quest_enemy(
-    redis: Redis,
-    region: Region,
+def get_quest_enemy(
     deck_svt_info: EnemyDeckInfo,
     user_svt: UserSvt,
+    basic_svt: BasicServant,
     drops: list[QuestDrop],
     all_enemy_skills: MultipleNiceSkills,
     all_enemy_tds: MultipleNiceTds,
     lang: Language = Language.jp,
 ) -> QuestEnemy:
     deck_svt = deck_svt_info.deck
-    basic_svt = await get_basic_servant(
-        redis, region, user_svt.svtId, user_svt.limitCount, lang
-    )
 
     if user_svt.npcSvtClassId != 0:
         basic_svt.classId = user_svt.npcSvtClassId
@@ -405,9 +403,21 @@ async def get_quest_enemies(
             if skill_id != 0:
                 all_skill_ids.add(SkillSvt(skill_id, user_svt.svtId))
 
-    # Get all skills and NPs data at once to avoid calling the DB a lot of times
-    all_skills = await get_multiple_nice_skills(conn, region, all_skill_ids, lang)
-    all_tds = await get_multiple_nice_tds(conn, region, all_td_ids, lang)
+    all_svt_ids = [
+        BasicServantGet(userSvt.svtId, userSvt.limitCount)
+        for userSvt in quest_detail.userSvt
+    ]
+
+    all_skills, all_tds, all_svts = await asyncio.gather(
+        get_multiple_nice_skills(conn, region, all_skill_ids, lang),
+        get_multiple_nice_tds(conn, region, all_td_ids, lang),
+        get_multiple_basic_servants(redis, region, all_svt_ids, lang),
+    )
+
+    basic_svt_map = {
+        userSvt.id: basic_svt
+        for userSvt, basic_svt in zip(quest_detail.userSvt, all_svts, strict=False)
+    }
 
     out_enemies: list[list[QuestEnemy]] = []
     for stage, enemy_deck in enumerate(quest_detail.enemyDeck):
@@ -441,11 +451,10 @@ async def get_quest_enemies(
                     or drop.deckType == DeckType.SHIFT
                 )
             ]
-            nice_enemy = await get_quest_enemy(
-                redis=redis,
-                region=region,
+            nice_enemy = get_quest_enemy(
                 deck_svt_info=deck_svt_info,
                 user_svt=user_svt_id[deck_svt_info.deck.userSvtId],
+                basic_svt=basic_svt_map[deck_svt_info.deck.userSvtId],
                 drops=drops,
                 all_enemy_skills=all_skills,
                 all_enemy_tds=all_tds,
@@ -457,11 +466,10 @@ async def get_quest_enemies(
 
     if quest_detail.aiNpcDeck is not None and quest_detail.aiNpcDeck.svts:
         nice_ai_npc = {
-            svt_deck.npcId: await get_quest_enemy(
-                redis=redis,
-                region=region,
+            svt_deck.npcId: get_quest_enemy(
                 deck_svt_info=EnemyDeckInfo(DeckType.AI_NPC, svt_deck),
                 user_svt=user_svt_id[svt_deck.userSvtId],
+                basic_svt=basic_svt_map[svt_deck.userSvtId],
                 drops=[],
                 all_enemy_skills=all_skills,
                 all_enemy_tds=all_tds,

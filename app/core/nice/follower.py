@@ -1,11 +1,17 @@
+import asyncio
 from dataclasses import dataclass
 
 import orjson
 from sqlalchemy.ext.asyncio import AsyncConnection
 
-from ...core.basic import get_basic_servant
+from ...core.basic import (
+    BasicServantGet,
+    get_basic_servant,
+    get_multiple_basic_servants,
+)
 from ...core.utils import get_nice_trait
 from ...redis import Redis
+from ...schemas.basic import BasicServant
 from ...schemas.common import Language, NiceTrait, Region
 from ...schemas.gameenums import COND_TYPE_NAME
 from ...schemas.nice import (
@@ -107,6 +113,15 @@ def get_nice_follower_script(npcScript: str) -> SupportServantScript:
     return script
 
 
+def get_npc_limit(npcFollower: NpcFollower, npcSvtFollower: NpcSvtFollower) -> int:
+    npcScript = get_nice_follower_script(npcFollower.npcScript)
+    return (
+        npcScript.dispLimitCount
+        if npcScript.dispLimitCount is not None
+        else npcSvtFollower.limitCount
+    )
+
+
 async def get_nice_npc_servant(
     redis: Redis,
     region: Region,
@@ -131,32 +146,21 @@ async def get_nice_npc_servant(
     )
 
 
-async def get_nice_support_servant(
-    redis: Redis,
-    region: Region,
+def get_nice_support_servant(
     npcFollower: NpcFollower,
+    basic_svt: BasicServant,
     npcFollowerRelease: list[NpcFollowerRelease],
     npcSvtFollower: NpcSvtFollower,
     npcSvtEquip: list[NpcSvtEquip],
     all_skills: MultipleNiceSkills,
     all_tds: MultipleNiceTds,
     all_equips: dict[int, NiceEquip],
-    lang: Language,
 ) -> SupportServant:
-    npcScript = get_nice_follower_script(npcFollower.npcScript)
-    npcLimit = (
-        npcScript.dispLimitCount
-        if npcScript.dispLimitCount
-        else npcSvtFollower.limitCount
-    )
-
     return SupportServant(
         id=npcFollower.id,
         priority=npcFollower.priority,
         name=npcSvtFollower.name,
-        svt=await get_basic_servant(
-            redis, region, npcSvtFollower.svtId, npcLimit, lang
-        ),
+        svt=basic_svt,
         releaseConditions=[
             get_nice_follower_release(release) for release in npcFollowerRelease
         ],
@@ -167,7 +171,7 @@ async def get_nice_support_servant(
         skills=get_nice_follower_skills(npcSvtFollower, all_skills),
         noblePhantasm=get_nice_follower_td(npcSvtFollower, all_tds),
         equips=[get_nice_follower_equip(equip, all_equips) for equip in npcSvtEquip],
-        script=npcScript,
+        script=get_nice_follower_script(npcFollower.npcScript),
         limit=get_nice_follower_limit(npcSvtFollower),
         misc=get_nice_follower_misc(npcFollower, npcSvtFollower),
     )
@@ -203,8 +207,23 @@ async def get_nice_support_servants(
             if skill_id != 0:
                 all_skill_ids.add(SkillSvt(skill_id, npcSvt.svtId))
 
-    all_skills = await get_multiple_nice_skills(conn, region, all_skill_ids, lang)
-    all_tds = await get_multiple_nice_tds(conn, region, all_td_ids, lang)
+    svt_follower_map = {
+        svt_follower.id: svt_follower for svt_follower in npcSvtFollower
+    }
+
+    all_svt_ids = [
+        BasicServantGet(
+            svt_follower_map[npc.leaderSvtId].svtId,
+            get_npc_limit(npc, svt_follower_map[npc.leaderSvtId]),
+        )
+        for npc in npcFollower
+    ]
+
+    all_skills, all_tds, all_svts = await asyncio.gather(
+        get_multiple_nice_skills(conn, region, all_skill_ids, lang),
+        get_multiple_nice_tds(conn, region, all_td_ids, lang),
+        get_multiple_basic_servants(redis, region, all_svt_ids, lang),
+    )
 
     all_equip_ids = {equip.svtId for equip in npcSvtEquip}
     all_equips = {
@@ -213,22 +232,21 @@ async def get_nice_support_servants(
     }
 
     out_support_servants: list[SupportServant] = []
-    for npc in npcFollower:
-        svt_follower = next(svt for svt in npcSvtFollower if svt.id == npc.leaderSvtId)
+    for i, npc in enumerate(npcFollower):
+        svt_follower = svt_follower_map[npc.leaderSvtId]
         follower_release = [rel for rel in npcFollowerRelease if rel.id == npc.id]
         svt_equip = [equip for equip in npcSvtEquip if equip.id in npc.svtEquipIds]
+        basic_svt = all_svts[i]
 
-        nice_support_servant = await get_nice_support_servant(
-            redis=redis,
-            region=region,
+        nice_support_servant = get_nice_support_servant(
             npcFollower=npc,
+            basic_svt=basic_svt,
             npcFollowerRelease=follower_release,
             npcSvtFollower=svt_follower,
             npcSvtEquip=svt_equip,
             all_skills=all_skills,
             all_tds=all_tds,
             all_equips=all_equips,
-            lang=lang,
         )
         out_support_servants.append(nice_support_servant)
 

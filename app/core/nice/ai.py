@@ -11,7 +11,7 @@ from ...schemas.gameenums import (
     AiActType,
     NiceAiActNum,
 )
-from ...schemas.nice import NiceAi, NiceAiAct, NiceAiCollection
+from ...schemas.nice import NiceAi, NiceAiAct, NiceAiCollection, NiceSkill
 from ...schemas.raw import AiEntity, MstAiAct
 from ..raw import get_ai_collection
 from ..utils import get_traits_list
@@ -45,7 +45,7 @@ async def get_nice_ai_act(
         nice_ai_act.skillId = mstAiAct.skillVals[0]
         nice_ai_act.skillLv = mstAiAct.skillVals[1]
         nice_ai_act.skill = await get_nice_skill_from_id(
-            conn, region, mstAiAct.skillVals[0], lang
+            conn, region, mstAiAct.skillVals[0], NiceSkill, lang
         )
     return nice_ai_act
 

@@ -182,7 +182,9 @@ async def get_nice_skill_with_reverse(
     reverseData: ReverseData = ReverseData.nice,
 ) -> NiceSkillReverse:
     raw_skill = await raw.get_skill_entity_no_reverse(conn, skill_id, expand=True)
-    nice_skill = await get_nice_skill_from_raw(conn, region, raw_skill, lang)
+    nice_skill = await get_nice_skill_from_raw(
+        conn, region, raw_skill, NiceSkillReverse, lang
+    )
 
     if reverse and reverseDepth >= ReverseDepth.servant:
         activeSkills = {svt_skill.svtId for svt_skill in raw_skill.mstSvtSkill}
