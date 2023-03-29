@@ -499,32 +499,8 @@ async def get_quest_by_spot(
 async def get_quest_phase_entity(
     conn: AsyncConnection, quest_id: int, phase_id: int
 ) -> Optional[QuestPhaseEntity]:
-    all_phases_cte = (
-        select(
-            mstQuestPhase.c.questId,
-            func.jsonb_agg(mstQuestPhase.c.phase).label("phases"),
-        )
-        .where(mstQuestPhase.c.questId == quest_id)
-        .group_by(mstQuestPhase.c.questId)
-        .cte()
-    )
-
-    all_scripts_cte = (
-        select(
-            ScriptFileList.c.scriptFileName,
-            ScriptFileList.c.questId,
-            ScriptFileList.c.phase,
-            ScriptFileList.c.sceneType,
-        )
-        .where(ScriptFileList.c.questId == quest_id)
-        .cte()
-    )
-
     joined_quest_phase_tables = (
         JOINED_QUEST_TABLES.outerjoin(
-            all_phases_cte, mstQuest.c.id == all_phases_cte.c.questId
-        )
-        .outerjoin(
             mstQuestPhaseDetail,
             and_(
                 mstQuest.c.id == mstQuestPhaseDetail.c.questId,
@@ -589,27 +565,67 @@ async def get_quest_phase_entity(
         )
         .outerjoin(npcSvtEquip, npcFollower.c.svtEquipIds[1] == npcSvtEquip.c.id)
         .outerjoin(mstBgm, mstBgm.c.id == mstStage.c.bgmId)
-        .outerjoin(
-            ScriptFileList,
-            and_(
-                mstQuest.c.id == ScriptFileList.c.questId,
-                mstQuestPhase.c.phase == ScriptFileList.c.phase,
-            ),
-        )
-        .outerjoin(all_scripts_cte, mstQuest.c.id == all_scripts_cte.c.questId)
-        .outerjoin(
-            npcSvtFollower,
-            or_(
-                npcFollower.c.leaderSvtId == npcSvtFollower.c.id,
-                cast(mstQuestPhase.c.script["aiNpc"]["npcId"], Integer)
-                == npcSvtFollower.c.id,
-                literal_column(
-                    "any(array(select jsonb_path_query(\"mstQuestPhase\".script, '$.aiMultiNpc[*].npcId')::int))"
-                )
-                == npcSvtFollower.c.id,
-            ),
-        )
     )
+
+    phases_select = (
+        select(func.jsonb_agg(mstQuestPhase.c.phase))
+        .select_from(mstQuestPhase)
+        .where(mstQuestPhase.c.questId == quest_id)
+        .group_by(mstQuestPhase.c.questId)
+        .scalar_subquery()
+        .label("phases")
+    )
+
+    phasesWithEnemies_select = func.coalesce(
+        select(func.array_remove(array_agg(rayshiftQuest.c.phase.distinct()), None))
+        .select_from(rayshiftQuest)
+        .where(rayshiftQuest.c.questId == quest_id)
+        .scalar_subquery(),
+        [],
+    ).label("phasesWithEnemies")
+
+    scripts_select = func.coalesce(
+        (
+            select(
+                func.array_remove(
+                    array_agg(ScriptFileList.c.scriptFileName.distinct()), None
+                )
+            )
+            .select_from(ScriptFileList)
+            .where(
+                and_(
+                    ScriptFileList.c.questId == quest_id,
+                    ScriptFileList.c.phase == phase_id,
+                )
+            )
+            .scalar_subquery()
+        ),
+        [],
+    ).label("scripts")
+
+    allScripts_select = func.coalesce(
+        (
+            select(
+                array_agg(
+                    func.jsonb_build_object(
+                        "scriptFileName",
+                        ScriptFileList.c.scriptFileName,
+                        "questId",
+                        ScriptFileList.c.questId,
+                        "phase",
+                        ScriptFileList.c.phase,
+                        "sceneType",
+                        ScriptFileList.c.sceneType,
+                    ).distinct()
+                )
+            )
+            .select_from(ScriptFileList)
+            .where(ScriptFileList.c.questId == quest_id)
+            .group_by(ScriptFileList.c.questId)
+            .scalar_subquery()
+        ),
+        [],
+    ).label("allScripts")
 
     select_quest_phase = [
         func.to_jsonb(mstQuest.table_valued()).label(mstQuest.name),
@@ -618,31 +634,19 @@ async def get_quest_phase_entity(
         sql_jsonb_agg(mstClosedMessage),
         sql_jsonb_agg(mstGiftAlias, "mstGift"),
         sql_jsonb_agg(mstGiftAddAlias, "mstGiftAdd"),
-        all_phases_cte.c.phases,
-        func.coalesce(
-            select(func.array_remove(array_agg(rayshiftQuest.c.phase.distinct()), None))
-            .where(rayshiftQuest.c.questId == quest_id)
-            .scalar_subquery(),
-            [],
-        ).label("phasesWithEnemies"),
+        phases_select,
+        phasesWithEnemies_select,
         func.to_jsonb(mstQuestPhase.table_valued()).label(mstQuestPhase.name),
         func.to_jsonb(mstQuestPhaseDetail.table_valued()).label(
             mstQuestPhaseDetail.name
         ),
         sql_jsonb_agg(mstQuestMessage),
         sql_jsonb_agg(mstQuestHint),
-        func.array_remove(
-            array_agg(ScriptFileList.c.scriptFileName.distinct()), None
-        ).label("scripts"),
-        func.to_jsonb(
-            func.array_remove(
-                array_agg(all_scripts_cte.table_valued().distinct()), None
-            )
-        ).label("allScripts"),
+        scripts_select,
+        allScripts_select,
         sql_jsonb_agg(mstStage),
         sql_jsonb_agg(npcFollower),
         sql_jsonb_agg(npcFollowerRelease),
-        sql_jsonb_agg(npcSvtFollower),
         sql_jsonb_agg(npcSvtEquip),
         sql_jsonb_agg(mstBgm),
         sql_jsonb_agg(mstQuestRestriction),
@@ -658,14 +662,32 @@ async def get_quest_phase_entity(
             mstQuest.table_valued(),
             mstQuestPhase.table_valued(),
             mstQuestPhaseDetail.table_valued(),
-            all_phases_cte.c.phases,
         )
     )
 
     try:
         quest_phase = await fetch_one(conn, sql_stmt)
         if quest_phase:
-            return QuestPhaseEntity.from_orm(quest_phase)
+            npcSvtFollower_ids: set[int] = {
+                npcFollower["leaderSvtId"] for npcFollower in quest_phase.npcFollower
+            }
+
+            script = quest_phase.mstQuestPhase["script"]
+            if "aiNpc" in script:
+                npcSvtFollower_ids.add(script["aiNpc"]["npcId"])
+
+            if "aiMultiNpc" in script:
+                npcSvtFollower_ids |= {npc["npcId"] for npc in script["aiMultiNpc"]}
+
+            if npcSvtFollower_ids:
+                npcSvtFollower_stmt = select(npcSvtFollower).where(
+                    npcSvtFollower.c.id.in_(npcSvtFollower_ids)
+                )
+                svt_follower = (await conn.execute(npcSvtFollower_stmt)).fetchall()
+            else:
+                svt_follower = []
+
+            return QuestPhaseEntity(npcSvtFollower=svt_follower, **quest_phase._mapping)
     except DBAPIError:
         pass
 
