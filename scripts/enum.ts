@@ -639,6 +639,7 @@ export enum NiceItemType {
     FRIENDSHIP_UP_ITEM = "friendshipUpItem",
     PP = "pp",
     TRADE_AP = "tradeAp",
+    RI = "ri",
 }
 
 export enum NiceGiftType {
@@ -673,6 +674,7 @@ export enum NiceShopType {
     START_UP_SUMMON = "startUpSummon",
     SHOP13 = "shop13",
     TRADE_AP = "tradeAp",
+    SHOP15 = "shop15",
 }
 
 export enum NicePayType {
@@ -904,6 +906,7 @@ export enum NiceCondType {
     ALL_SVT_TARGET_SKILL_LV_NUM = "allSvtTargetSkillLvNum",
     SUPER_BOSS_DAMAGE_ABOVE = "superBossDamageAbove",
     SUPER_BOSS_DAMAGE_BELOW = "superBossDamageBelow",
+    NOT_WAR_CLEAR = "notWarClear",
 }
 
 export enum NiceVoiceCondType {

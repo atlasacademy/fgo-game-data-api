@@ -1622,6 +1622,7 @@ class ItemType(IntEnum):
     FRIENDSHIP_UP_ITEM = 30
     PP = 31
     TRADE_AP = 32
+    RI = 33
 
 
 class NiceItemType(StrEnum):
@@ -1659,6 +1660,7 @@ class NiceItemType(StrEnum):
     friendshipUpItem = "friendshipUpItem"
     pp = "pp"
     tradeAp = "tradeAp"
+    ri = "ri"
 
 
 ITEM_TYPE_NAME: dict[int, NiceItemType] = {
@@ -1694,6 +1696,7 @@ ITEM_TYPE_NAME: dict[int, NiceItemType] = {
     30: NiceItemType.friendshipUpItem,
     31: NiceItemType.pp,
     32: NiceItemType.tradeAp,
+    33: NiceItemType.ri,
 }
 
 
@@ -1764,6 +1767,7 @@ class ShopType(IntEnum):
     START_UP_SUMMON = 12
     SHOP13 = 13
     TRADE_AP = 14
+    SHOP15 = 15
 
 
 class NiceShopType(StrEnum):
@@ -1784,6 +1788,7 @@ class NiceShopType(StrEnum):
     startUpSummon = "startUpSummon"
     shop13 = "shop13"
     tradeAp = "tradeAp"
+    shop15 = "shop15"
 
 
 SHOP_TYPE_NAME: dict[int, NiceShopType] = {
@@ -1802,6 +1807,7 @@ SHOP_TYPE_NAME: dict[int, NiceShopType] = {
     12: NiceShopType.startUpSummon,
     13: NiceShopType.shop13,
     14: NiceShopType.tradeAp,
+    15: NiceShopType.shop15,
 }
 
 
@@ -2150,6 +2156,7 @@ class CondType(IntEnum):
     ALL_SVT_TARGET_SKILL_LV_NUM = 174
     SUPER_BOSS_DAMAGE_ABOVE = 175
     SUPER_BOSS_DAMAGE_BELOW = 176
+    NOT_WAR_CLEAR = 179
 
 
 class NiceCondType(StrEnum):
@@ -2329,6 +2336,7 @@ class NiceCondType(StrEnum):
     allSvtTargetSkillLvNum = "allSvtTargetSkillLvNum"
     superBossDamageAbove = "superBossDamageAbove"
     superBossDamageBelow = "superBossDamageBelow"
+    notWarClear = "notWarClear"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2506,6 +2514,7 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     174: NiceCondType.allSvtTargetSkillLvNum,
     175: NiceCondType.superBossDamageAbove,
     176: NiceCondType.superBossDamageBelow,
+    179: NiceCondType.notWarClear,
 }
 
 
