@@ -12,7 +12,6 @@ from sqlalchemy.sql import (
     and_,
     any_,
     case,
-    cast,
     false,
     func,
     literal_column,

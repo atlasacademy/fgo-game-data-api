@@ -683,7 +683,7 @@ def get_basic_war_from_raw(mstWar: MstWar, lang: Language) -> BasicWar:
         id=mstWar.id,
         coordinates=mstWar.coordinates,
         age=mstWar.age,
-        name=mstWar.name,
+        name=get_translation(lang, mstWar.name),
         longName=get_translation(lang, mstWar.longName),
         flags=get_flags(mstWar.flag, WAR_FLAG_NAME),
         eventId=mstWar.eventId,
