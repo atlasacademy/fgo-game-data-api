@@ -369,7 +369,9 @@
                   "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_327.png",
                   "type": "upCriticalrate",
                   "buffGroup": 0,
-                  "script": {},
+                  "script": {
+                    "ProgressSelfTurn": 1
+                  },
                   "vals": [
                     {
                       "id": 3004,

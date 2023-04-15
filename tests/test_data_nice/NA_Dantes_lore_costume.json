@@ -1863,7 +1863,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_300.png",
               "type": "upAtk",
               "buffGroup": 0,
-              "script": {},
+              "script": {
+                "ProgressSelfTurn": 1
+              },
               "vals": [
                 {
                   "id": 3004,
@@ -2441,7 +2443,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_327.png",
               "type": "upCriticalrate",
               "buffGroup": 0,
-              "script": {},
+              "script": {
+                "ProgressSelfTurn": 1
+              },
               "vals": [
                 {
                   "id": 3004,
@@ -4405,7 +4409,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_504.png",
               "type": "downDefence",
               "buffGroup": 0,
-              "script": {},
+              "script": {
+                "ProgressSelfTurn": 0
+              },
               "vals": [
                 {
                   "id": 3005,
@@ -5017,7 +5023,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_504.png",
               "type": "downDefence",
               "buffGroup": 0,
-              "script": {},
+              "script": {
+                "ProgressSelfTurn": 0
+              },
               "vals": [
                 {
                   "id": 3005,
@@ -6416,6 +6424,7 @@
                   900800,
                   900900,
                   901000,
+                  901100,
                   1000100,
                   1000200,
                   1000300,

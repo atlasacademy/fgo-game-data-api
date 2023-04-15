@@ -3780,7 +3780,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_309.png",
               "type": "breakAvoidance",
               "buffGroup": 0,
-              "script": {},
+              "script": {
+                "ProgressSelfTurn": 1
+              },
               "vals": [
                 {
                   "id": 3004,
@@ -4554,7 +4556,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_309.png",
               "type": "breakAvoidance",
               "buffGroup": 0,
-              "script": {},
+              "script": {
+                "ProgressSelfTurn": 1
+              },
               "vals": [
                 {
                   "id": 3004,

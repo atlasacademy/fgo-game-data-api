@@ -2107,7 +2107,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_300.png",
               "type": "upAtk",
               "buffGroup": 0,
-              "script": {},
+              "script": {
+                "ProgressSelfTurn": 1
+              },
               "vals": [
                 {
                   "id": 3004,
@@ -2209,7 +2211,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_300.png",
               "type": "upAtk",
               "buffGroup": 0,
-              "script": {},
+              "script": {
+                "ProgressSelfTurn": 1
+              },
               "vals": [
                 {
                   "id": 3004,
@@ -2736,7 +2740,7 @@
           "buffs": [
             {
               "id": 2534,
-              "name": "宝具タイプチェンジ:Arts",
+              "name": "宝具タイプチェンジ：Arts",
               "detail": "宝具のタイプをArtsにチェンジする",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_361.png",
               "type": "tdTypeChangeArts",
@@ -2855,7 +2859,7 @@
           "buffs": [
             {
               "id": 2535,
-              "name": "宝具タイプチェンジ:Buster",
+              "name": "宝具タイプチェンジ：Buster",
               "detail": "宝具のタイプをBusterにチェンジする",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_361.png",
               "type": "tdTypeChangeBuster",
@@ -2974,7 +2978,7 @@
           "buffs": [
             {
               "id": 2536,
-              "name": "宝具タイプチェンジ:Quick",
+              "name": "宝具タイプチェンジ：Quick",
               "detail": "宝具のタイプをQuickにチェンジする",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_361.png",
               "type": "tdTypeChangeQuick",
@@ -3463,7 +3467,9 @@
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
               "type": "upCommandall",
               "buffGroup": 0,
-              "script": {},
+              "script": {
+                "ProgressSelfTurn": 1
+              },
               "vals": [
                 {
                   "id": 3004,

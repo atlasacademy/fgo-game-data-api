@@ -49,7 +49,9 @@
           "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_321.png",
           "type": "upCriticalpoint",
           "buffGroup": 0,
-          "script": {},
+          "script": {
+            "ProgressSelfTurn": 1
+          },
           "vals": [
             {
               "id": 3004,
@@ -143,7 +145,9 @@
           "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_327.png",
           "type": "upCriticalrate",
           "buffGroup": 0,
-          "script": {},
+          "script": {
+            "ProgressSelfTurn": 1
+          },
           "vals": [
             {
               "id": 3004,
@@ -1118,6 +1122,23 @@
               "condType": "none",
               "condId": 0,
               "condNum": 0
+            },
+            {
+              "idx": 8031801,
+              "trait": [
+                {
+                  "id": 2770,
+                  "name": "unknown"
+                },
+                {
+                  "id": 2772,
+                  "name": "unknown"
+                }
+              ],
+              "limitCount": -1,
+              "condType": "none",
+              "condId": 0,
+              "condNum": 0
             }
           ],
           "svtChange": [],
@@ -2080,7 +2101,9 @@
                       "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_321.png",
                       "type": "upCriticalpoint",
                       "buffGroup": 0,
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "vals": [
                         {
                           "id": 3004,
@@ -2174,7 +2197,9 @@
                       "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_327.png",
                       "type": "upCriticalrate",
                       "buffGroup": 0,
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "vals": [
                         {
                           "id": 3004,
@@ -2903,7 +2928,9 @@
                       "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_321.png",
                       "type": "upCriticalpoint",
                       "buffGroup": 0,
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "vals": [
                         {
                           "id": 3004,
@@ -2997,7 +3024,9 @@
                       "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_327.png",
                       "type": "upCriticalrate",
                       "buffGroup": 0,
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "vals": [
                         {
                           "id": 3004,

@@ -12,7 +12,9 @@
       "name": "C. Star Drop Rate Up",
       "icon": "https://assets.atlasacademy.io/GameData/NA/BuffIcons/bufficon_321.png",
       "type": "upCriticalpoint",
-      "script": {},
+      "script": {
+        "ProgressSelfTurn": 1
+      },
       "vals": [
         {
           "id": 3004,

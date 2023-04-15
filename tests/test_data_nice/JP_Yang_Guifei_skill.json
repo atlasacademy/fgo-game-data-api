@@ -255,7 +255,9 @@
           "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_504.png",
           "type": "downDefence",
           "buffGroup": 0,
-          "script": {},
+          "script": {
+            "ProgressSelfTurn": 0
+          },
           "vals": [
             {
               "id": 3005,

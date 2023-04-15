@@ -2,7 +2,8 @@
   "mstSvt": {
     "relateQuestIds": [
       91202301,
-      94034901
+      94034901,
+      94058603
     ],
     "individuality": [
       5000,
@@ -89,20 +90,6 @@
         {
           "script": {},
           "strengthStatus": 0,
-          "svtId": 202300,
-          "num": 1,
-          "priority": 1,
-          "skillId": 333650,
-          "condQuestId": 0,
-          "condQuestPhase": 0,
-          "condLv": 0,
-          "condLimitCount": 0,
-          "eventId": 0,
-          "flag": 0
-        },
-        {
-          "script": {},
-          "strengthStatus": 0,
           "svtId": 9939010,
           "num": 1,
           "priority": 1,
@@ -118,6 +105,20 @@
           "script": {},
           "strengthStatus": 0,
           "svtId": 9939020,
+          "num": 1,
+          "priority": 1,
+          "skillId": 333650,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "eventId": 0,
+          "flag": 0
+        },
+        {
+          "script": {},
+          "strengthStatus": 1,
+          "svtId": 202300,
           "num": 1,
           "priority": 1,
           "skillId": 333650,
@@ -850,7 +851,292 @@
           "skillDetailId": 335550,
           "priority": 0
         }
-      ]
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
+    },
+    {
+      "mstSkill": {
+        "effectList": [],
+        "actIndividuality": [],
+        "script": {},
+        "id": 333675,
+        "type": 1,
+        "name": "The Freeshooter EX",
+        "ruby": "The Freeshooter",
+        "maxLv": 10,
+        "iconId": 312,
+        "motion": 101
+      },
+      "mstSkillDetail": [
+        {
+          "id": 333675,
+          "detail": "Apply Ignore Invincible (1 turn) & Ignore DEF (1 turn) [g][o]▲[/o][/g] & increase C. Star Gather Rate [{0}] (1 turn) for yourself + Gain C. Stars [{0}] [g][o]▲[/o][/g]",
+          "detailShort": "Apply Ignore Invincible (1 turn) & Ignore DEF (1 turn) [g][o]▲[/o][/g] & increase C. Star Gather Rate [{0}] (1 turn) for yourself + Gain C. Stars [{0}] [g][o]▲[/o][/g]"
+        }
+      ],
+      "mstSvtSkill": [
+        {
+          "script": {},
+          "strengthStatus": 99,
+          "svtId": 202300,
+          "num": 1,
+          "priority": 2,
+          "skillId": 333675,
+          "condQuestId": 94058603,
+          "condQuestPhase": 3,
+          "condLv": 0,
+          "condLimitCount": 0,
+          "eventId": 0,
+          "flag": 0
+        }
+      ],
+      "mstSkillAdd": [],
+      "mstCommonRelease": [],
+      "mstSkillLv": [
+        {
+          "funcId": [
+            510,
+            1588,
+            366,
+            216,
+            477,
+            216
+          ],
+          "svals": [
+            "[1000,1,-1]",
+            "[1000,1,-1]",
+            "[1000,1,-1,3000]",
+            "[1000,2,-1,100]",
+            "[1000,10]",
+            "[1000,2,-1,250]"
+          ],
+          "script": {},
+          "skillId": 333675,
+          "lv": 1,
+          "chargeTurn": 7,
+          "skillDetailId": 333675,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            510,
+            1588,
+            366,
+            216,
+            477,
+            216
+          ],
+          "svals": [
+            "[1000,1,-1]",
+            "[1000,1,-1]",
+            "[1000,1,-1,3300]",
+            "[1000,2,-1,100]",
+            "[1000,11]",
+            "[1000,2,-1,250]"
+          ],
+          "script": {},
+          "skillId": 333675,
+          "lv": 2,
+          "chargeTurn": 7,
+          "skillDetailId": 333675,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            510,
+            1588,
+            366,
+            216,
+            477,
+            216
+          ],
+          "svals": [
+            "[1000,1,-1]",
+            "[1000,1,-1]",
+            "[1000,1,-1,3600]",
+            "[1000,2,-1,100]",
+            "[1000,12]",
+            "[1000,2,-1,250]"
+          ],
+          "script": {},
+          "skillId": 333675,
+          "lv": 3,
+          "chargeTurn": 7,
+          "skillDetailId": 333675,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            510,
+            1588,
+            366,
+            216,
+            477,
+            216
+          ],
+          "svals": [
+            "[1000,1,-1]",
+            "[1000,1,-1]",
+            "[1000,1,-1,3900]",
+            "[1000,2,-1,100]",
+            "[1000,13]",
+            "[1000,2,-1,250]"
+          ],
+          "script": {},
+          "skillId": 333675,
+          "lv": 4,
+          "chargeTurn": 7,
+          "skillDetailId": 333675,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            510,
+            1588,
+            366,
+            216,
+            477,
+            216
+          ],
+          "svals": [
+            "[1000,1,-1]",
+            "[1000,1,-1]",
+            "[1000,1,-1,4200]",
+            "[1000,2,-1,100]",
+            "[1000,14]",
+            "[1000,2,-1,250]"
+          ],
+          "script": {},
+          "skillId": 333675,
+          "lv": 5,
+          "chargeTurn": 7,
+          "skillDetailId": 333675,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            510,
+            1588,
+            366,
+            216,
+            477,
+            216
+          ],
+          "svals": [
+            "[1000,1,-1]",
+            "[1000,1,-1]",
+            "[1000,1,-1,4500]",
+            "[1000,2,-1,100]",
+            "[1000,15]",
+            "[1000,2,-1,250]"
+          ],
+          "script": {},
+          "skillId": 333675,
+          "lv": 6,
+          "chargeTurn": 6,
+          "skillDetailId": 333675,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            510,
+            1588,
+            366,
+            216,
+            477,
+            216
+          ],
+          "svals": [
+            "[1000,1,-1]",
+            "[1000,1,-1]",
+            "[1000,1,-1,4800]",
+            "[1000,2,-1,100]",
+            "[1000,16]",
+            "[1000,2,-1,250]"
+          ],
+          "script": {},
+          "skillId": 333675,
+          "lv": 7,
+          "chargeTurn": 6,
+          "skillDetailId": 333675,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            510,
+            1588,
+            366,
+            216,
+            477,
+            216
+          ],
+          "svals": [
+            "[1000,1,-1]",
+            "[1000,1,-1]",
+            "[1000,1,-1,5100]",
+            "[1000,2,-1,100]",
+            "[1000,17]",
+            "[1000,2,-1,250]"
+          ],
+          "script": {},
+          "skillId": 333675,
+          "lv": 8,
+          "chargeTurn": 6,
+          "skillDetailId": 333675,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            510,
+            1588,
+            366,
+            216,
+            477,
+            216
+          ],
+          "svals": [
+            "[1000,1,-1]",
+            "[1000,1,-1]",
+            "[1000,1,-1,5400]",
+            "[1000,2,-1,100]",
+            "[1000,18]",
+            "[1000,2,-1,250]"
+          ],
+          "script": {},
+          "skillId": 333675,
+          "lv": 9,
+          "chargeTurn": 6,
+          "skillDetailId": 333675,
+          "priority": 0
+        },
+        {
+          "funcId": [
+            510,
+            1588,
+            366,
+            216,
+            477,
+            216
+          ],
+          "svals": [
+            "[1000,1,-1]",
+            "[1000,1,-1]",
+            "[1000,1,-1,6000]",
+            "[1000,2,-1,100]",
+            "[1000,20]",
+            "[1000,2,-1,250]"
+          ],
+          "script": {},
+          "skillId": 333675,
+          "lv": 10,
+          "chargeTurn": 5,
+          "skillDetailId": 333675,
+          "priority": 0
+        }
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
     },
     {
       "mstSkill": {
@@ -1640,6 +1926,19 @@
       ],
       "svtId": 202300,
       "idx": 8027301,
+      "limitCount": -1,
+      "condType": 0,
+      "condId": 0,
+      "condNum": 0
+    },
+    {
+      "individuality": [
+        2768,
+        2771,
+        2772
+      ],
+      "svtId": 202300,
+      "idx": 8031801,
       "limitCount": -1,
       "condType": 0,
       "condId": 0,

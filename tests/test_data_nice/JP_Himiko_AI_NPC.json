@@ -205,7 +205,9 @@
                     "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_300.png",
                     "type": "upAtk",
                     "buffGroup": 0,
-                    "script": {},
+                    "script": {
+                      "ProgressSelfTurn": 1
+                    },
                     "vals": [
                       {
                         "id": 3004,
@@ -405,7 +407,9 @@
                     "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
                     "type": "upCriticalrate",
                     "buffGroup": 0,
-                    "script": {},
+                    "script": {
+                      "ProgressSelfTurn": 1
+                    },
                     "vals": [
                       {
                         "id": 3004,
@@ -542,7 +546,9 @@
                     "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
                     "type": "upCommandall",
                     "buffGroup": 0,
-                    "script": {},
+                    "script": {
+                      "ProgressSelfTurn": 1
+                    },
                     "vals": [
                       {
                         "id": 3004,
@@ -998,7 +1004,7 @@
                 "buffs": [
                   {
                     "id": 720,
-                    "name": "スター集中アップ:Buster",
+                    "name": "スター集中アップ：Buster",
                     "detail": "Busterカードへのスターの集まりやすさをアップ",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_325.png",
                     "type": "upStarweight",
@@ -1089,7 +1095,7 @@
                 "funcType": "addStateShort",
                 "funcTargetType": "self",
                 "funcTargetTeam": "enemy",
-                "funcPopupText": "クリティカル発生率アップ:Buster",
+                "funcPopupText": "クリティカル発生率アップ：Buster",
                 "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
                 "functvals": [],
                 "funcquestTvals": [],
@@ -1097,7 +1103,7 @@
                 "buffs": [
                   {
                     "id": 1436,
-                    "name": "クリティカル発生アップ:Buster",
+                    "name": "クリティカル発生アップ：Buster",
                     "detail": "Busterカードのクリティカルの発生率をアップ",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
                     "type": "upCriticalrate",
@@ -1196,7 +1202,7 @@
                 "funcType": "addStateShort",
                 "funcTargetType": "self",
                 "funcTargetTeam": "playerAndEnemy",
-                "funcPopupText": "クリティカル威力アップ〔Buster〕",
+                "funcPopupText": "クリティカル威力アップ：Buster",
                 "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
                 "functvals": [],
                 "funcquestTvals": [],
@@ -1410,7 +1416,9 @@
                     "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
                     "type": "upCommandall",
                     "buffGroup": 0,
-                    "script": {},
+                    "script": {
+                      "ProgressSelfTurn": 1
+                    },
                     "vals": [
                       {
                         "id": 3004,
@@ -2169,7 +2177,9 @@
                     "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_300.png",
                     "type": "upAtk",
                     "buffGroup": 0,
-                    "script": {},
+                    "script": {
+                      "ProgressSelfTurn": 1
+                    },
                     "vals": [
                       {
                         "id": 3004,
@@ -2369,7 +2379,9 @@
                     "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
                     "type": "upCriticalrate",
                     "buffGroup": 0,
-                    "script": {},
+                    "script": {
+                      "ProgressSelfTurn": 1
+                    },
                     "vals": [
                       {
                         "id": 3004,
@@ -2506,7 +2518,9 @@
                     "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
                     "type": "upCommandall",
                     "buffGroup": 0,
-                    "script": {},
+                    "script": {
+                      "ProgressSelfTurn": 1
+                    },
                     "vals": [
                       {
                         "id": 3004,
@@ -2962,7 +2976,7 @@
                 "buffs": [
                   {
                     "id": 720,
-                    "name": "スター集中アップ:Buster",
+                    "name": "スター集中アップ：Buster",
                     "detail": "Busterカードへのスターの集まりやすさをアップ",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_325.png",
                     "type": "upStarweight",
@@ -3053,7 +3067,7 @@
                 "funcType": "addStateShort",
                 "funcTargetType": "self",
                 "funcTargetTeam": "enemy",
-                "funcPopupText": "クリティカル発生率アップ:Buster",
+                "funcPopupText": "クリティカル発生率アップ：Buster",
                 "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
                 "functvals": [],
                 "funcquestTvals": [],
@@ -3061,7 +3075,7 @@
                 "buffs": [
                   {
                     "id": 1436,
-                    "name": "クリティカル発生アップ:Buster",
+                    "name": "クリティカル発生アップ：Buster",
                     "detail": "Busterカードのクリティカルの発生率をアップ",
                     "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
                     "type": "upCriticalrate",
@@ -3160,7 +3174,7 @@
                 "funcType": "addStateShort",
                 "funcTargetType": "self",
                 "funcTargetTeam": "playerAndEnemy",
-                "funcPopupText": "クリティカル威力アップ〔Buster〕",
+                "funcPopupText": "クリティカル威力アップ：Buster",
                 "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
                 "functvals": [],
                 "funcquestTvals": [],
@@ -3785,7 +3799,9 @@
                     "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
                     "type": "upCommandall",
                     "buffGroup": 0,
-                    "script": {},
+                    "script": {
+                      "ProgressSelfTurn": 1
+                    },
                     "vals": [
                       {
                         "id": 3004,
@@ -4730,7 +4746,9 @@
                   "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
                   "type": "upCommandall",
                   "buffGroup": 0,
-                  "script": {},
+                  "script": {
+                    "ProgressSelfTurn": 1
+                  },
                   "vals": [
                     {
                       "id": 3004,
@@ -5189,7 +5207,9 @@
                   "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
                   "type": "upCriticalrate",
                   "buffGroup": 0,
-                  "script": {},
+                  "script": {
+                    "ProgressSelfTurn": 1
+                  },
                   "vals": [
                     {
                       "id": 3004,
@@ -5291,7 +5311,9 @@
                   "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_300.png",
                   "type": "upAtk",
                   "buffGroup": 0,
-                  "script": {},
+                  "script": {
+                    "ProgressSelfTurn": 1
+                  },
                   "vals": [
                     {
                       "id": 3004,
@@ -6762,7 +6784,9 @@
                         "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
                         "type": "upCommandall",
                         "buffGroup": 0,
-                        "script": {},
+                        "script": {
+                          "ProgressSelfTurn": 1
+                        },
                         "vals": [
                           {
                             "id": 3004,
@@ -6996,7 +7020,9 @@
                         "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
                         "type": "upCommandall",
                         "buffGroup": 0,
-                        "script": {},
+                        "script": {
+                          "ProgressSelfTurn": 1
+                        },
                         "vals": [
                           {
                             "id": 3004,
@@ -7259,7 +7285,9 @@
                   "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_300.png",
                   "type": "upAtk",
                   "buffGroup": 0,
-                  "script": {},
+                  "script": {
+                    "ProgressSelfTurn": 1
+                  },
                   "vals": [
                     {
                       "id": 3004,
@@ -8283,7 +8311,9 @@
                   "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
                   "type": "upCriticalrate",
                   "buffGroup": 0,
-                  "script": {},
+                  "script": {
+                    "ProgressSelfTurn": 1
+                  },
                   "vals": [
                     {
                       "id": 3004,
@@ -9802,7 +9832,9 @@
                         "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
                         "type": "upCommandall",
                         "buffGroup": 0,
-                        "script": {},
+                        "script": {
+                          "ProgressSelfTurn": 1
+                        },
                         "vals": [
                           {
                             "id": 3004,
@@ -10036,7 +10068,9 @@
                         "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
                         "type": "upCommandall",
                         "buffGroup": 0,
-                        "script": {},
+                        "script": {
+                          "ProgressSelfTurn": 1
+                        },
                         "vals": [
                           {
                             "id": 3004,
@@ -10295,7 +10329,9 @@
                   "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_300.png",
                   "type": "upAtk",
                   "buffGroup": 0,
-                  "script": {},
+                  "script": {
+                    "ProgressSelfTurn": 1
+                  },
                   "vals": [
                     {
                       "id": 3004,
@@ -10601,7 +10637,9 @@
                   "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
                   "type": "upCriticalrate",
                   "buffGroup": 0,
-                  "script": {},
+                  "script": {
+                    "ProgressSelfTurn": 1
+                  },
                   "vals": [
                     {
                       "id": 3004,
@@ -11399,7 +11437,9 @@
                   "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_300.png",
                   "type": "upAtk",
                   "buffGroup": 0,
-                  "script": {},
+                  "script": {
+                    "ProgressSelfTurn": 1
+                  },
                   "vals": [
                     {
                       "id": 3004,
@@ -12037,7 +12077,9 @@
                   "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
                   "type": "upCriticalrate",
                   "buffGroup": 0,
-                  "script": {},
+                  "script": {
+                    "ProgressSelfTurn": 1
+                  },
                   "vals": [
                     {
                       "id": 3004,
@@ -13053,7 +13095,9 @@
                         "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
                         "type": "upCommandall",
                         "buffGroup": 0,
-                        "script": {},
+                        "script": {
+                          "ProgressSelfTurn": 1
+                        },
                         "vals": [
                           {
                             "id": 3004,
@@ -13287,7 +13331,9 @@
                         "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
                         "type": "upCommandall",
                         "buffGroup": 0,
-                        "script": {},
+                        "script": {
+                          "ProgressSelfTurn": 1
+                        },
                         "vals": [
                           {
                             "id": 3004,
@@ -13915,7 +13961,9 @@
                   "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
                   "type": "upCriticalrate",
                   "buffGroup": 0,
-                  "script": {},
+                  "script": {
+                    "ProgressSelfTurn": 1
+                  },
                   "vals": [
                     {
                       "id": 3004,
@@ -14675,7 +14723,9 @@
                   "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_504.png",
                   "type": "downDefence",
                   "buffGroup": 0,
-                  "script": {},
+                  "script": {
+                    "ProgressSelfTurn": 0
+                  },
                   "vals": [
                     {
                       "id": 3005,
@@ -15482,7 +15532,9 @@
                         "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
                         "type": "upCommandall",
                         "buffGroup": 0,
-                        "script": {},
+                        "script": {
+                          "ProgressSelfTurn": 1
+                        },
                         "vals": [
                           {
                             "id": 3004,
@@ -15716,7 +15768,9 @@
                         "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
                         "type": "upCommandall",
                         "buffGroup": 0,
-                        "script": {},
+                        "script": {
+                          "ProgressSelfTurn": 1
+                        },
                         "vals": [
                           {
                             "id": 3004,
@@ -16093,7 +16147,9 @@
                   "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
                   "type": "upCommandall",
                   "buffGroup": 0,
-                  "script": {},
+                  "script": {
+                    "ProgressSelfTurn": 1
+                  },
                   "vals": [
                     {
                       "id": 3004,
@@ -16258,7 +16314,9 @@
                   "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
                   "type": "upCriticalrate",
                   "buffGroup": 0,
-                  "script": {},
+                  "script": {
+                    "ProgressSelfTurn": 1
+                  },
                   "vals": [
                     {
                       "id": 3004,
@@ -16632,7 +16690,9 @@
                   "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_300.png",
                   "type": "upAtk",
                   "buffGroup": 0,
-                  "script": {},
+                  "script": {
+                    "ProgressSelfTurn": 1
+                  },
                   "vals": [
                     {
                       "id": 3004,
@@ -17267,7 +17327,9 @@
                   "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_523.png",
                   "type": "downCriticalrate",
                   "buffGroup": 0,
-                  "script": {},
+                  "script": {
+                    "missText": "クリティカル MISS"
+                  },
                   "vals": [
                     {
                       "id": 3005,
@@ -18270,7 +18332,9 @@
                         "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
                         "type": "upCommandall",
                         "buffGroup": 0,
-                        "script": {},
+                        "script": {
+                          "ProgressSelfTurn": 1
+                        },
                         "vals": [
                           {
                             "id": 3004,
@@ -18504,7 +18568,9 @@
                         "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
                         "type": "upCommandall",
                         "buffGroup": 0,
-                        "script": {},
+                        "script": {
+                          "ProgressSelfTurn": 1
+                        },
                         "vals": [
                           {
                             "id": 3004,
@@ -19220,7 +19286,9 @@
                       "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_504.png",
                       "type": "downDefence",
                       "buffGroup": 0,
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 0
+                      },
                       "vals": [
                         {
                           "id": 3005,
@@ -20237,7 +20305,9 @@
                       "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
                       "type": "upCriticalrate",
                       "buffGroup": 0,
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "vals": [
                         {
                           "id": 3004,
@@ -20794,7 +20864,7 @@
                   "funcType": "addStateShort",
                   "funcTargetType": "self",
                   "funcTargetTeam": "playerAndEnemy",
-                  "funcPopupText": "クリティカル威力アップ〔Quick〕",
+                  "funcPopupText": "クリティカル威力アップ：Quick",
                   "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
                   "functvals": [],
                   "funcquestTvals": [],
@@ -21070,7 +21140,9 @@
                         "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
                         "type": "upCommandall",
                         "buffGroup": 0,
-                        "script": {},
+                        "script": {
+                          "ProgressSelfTurn": 1
+                        },
                         "vals": [
                           {
                             "id": 3004,
@@ -22060,7 +22132,9 @@
                       "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_512.png",
                       "type": "donotNoble",
                       "buffGroup": 900,
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "vals": [
                         {
                           "id": 3005,
@@ -22852,7 +22926,9 @@
                       "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_504.png",
                       "type": "downDefence",
                       "buffGroup": 0,
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 0
+                      },
                       "vals": [
                         {
                           "id": 3005,
@@ -23801,7 +23877,9 @@
                       "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_504.png",
                       "type": "downDefence",
                       "buffGroup": 0,
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 0
+                      },
                       "vals": [
                         {
                           "id": 3005,
@@ -24829,7 +24907,9 @@
                       "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
                       "type": "upCriticalrate",
                       "buffGroup": 0,
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "vals": [
                         {
                           "id": 3004,
@@ -25386,7 +25466,7 @@
                   "funcType": "addStateShort",
                   "funcTargetType": "self",
                   "funcTargetTeam": "playerAndEnemy",
-                  "funcPopupText": "クリティカル威力アップ〔Quick〕",
+                  "funcPopupText": "クリティカル威力アップ：Quick",
                   "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_324.png",
                   "functvals": [],
                   "funcquestTvals": [],
@@ -25662,7 +25742,9 @@
                         "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_314.png",
                         "type": "upCommandall",
                         "buffGroup": 0,
-                        "script": {},
+                        "script": {
+                          "ProgressSelfTurn": 1
+                        },
                         "vals": [
                           {
                             "id": 3004,
@@ -26652,7 +26734,9 @@
                       "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_512.png",
                       "type": "donotNoble",
                       "buffGroup": 900,
-                      "script": {},
+                      "script": {
+                        "ProgressSelfTurn": 1
+                      },
                       "vals": [
                         {
                           "id": 3005,

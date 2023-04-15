@@ -300,7 +300,7 @@
           "buffs": [
             {
               "id": 722,
-              "name": "スター集中アップ:Arts",
+              "name": "スター集中アップ：Arts",
               "detail": "Artsカードへのスターの集まりやすさをアップ",
               "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_325.png",
               "type": "upStarweight",

@@ -329,7 +329,9 @@
           "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_327.png",
           "type": "upCriticalrate",
           "buffGroup": 0,
-          "script": {},
+          "script": {
+            "ProgressSelfTurn": 1
+          },
           "vals": [
             {
               "id": 3004,
@@ -431,7 +433,9 @@
           "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_300.png",
           "type": "upAtk",
           "buffGroup": 0,
-          "script": {},
+          "script": {
+            "ProgressSelfTurn": 1
+          },
           "vals": [
             {
               "id": 3004,

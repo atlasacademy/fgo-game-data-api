@@ -1446,6 +1446,19 @@
               "condType": 0,
               "condId": 0,
               "condNum": 0
+            },
+            {
+              "individuality": [
+                2768,
+                2770,
+                2771
+              ],
+              "svtId": 303200,
+              "idx": 8031801,
+              "limitCount": -1,
+              "condType": 0,
+              "condId": 0,
+              "condNum": 0
             }
           ],
           "mstSvtCard": [
