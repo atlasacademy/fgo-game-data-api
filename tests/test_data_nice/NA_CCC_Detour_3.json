@@ -79,9 +79,15 @@
   "bond": 915,
   "isNpcOnly": false,
   "battleBgId": 25800,
+  "enemyHash": "1_0612_6877b57",
+  "availableEnemyHashes": [
+    "1_0612_6877b57"
+  ],
+  "dropsFromAllHashes": true,
   "extraDetail": {},
   "scripts": [],
   "messages": [],
+  "hints": [],
   "restrictions": [],
   "supportServants": [],
   "drops": [

@@ -93,6 +93,11 @@
   "bond": 1590,
   "isNpcOnly": false,
   "battleBgId": 39000,
+  "enemyHash": "1_0835_4c89d6b",
+  "availableEnemyHashes": [
+    "1_0835_4c89d6b"
+  ],
+  "dropsFromAllHashes": true,
   "extraDetail": {
     "questSelect": [
       3000109,
@@ -110,6 +115,7 @@
     }
   ],
   "messages": [],
+  "hints": [],
   "restrictions": [],
   "supportServants": [
     {
@@ -2240,7 +2246,9 @@
           },
           "classPassive": {
             "classPassive": [],
-            "addPassive": []
+            "addPassive": [],
+            "appendPassiveSkillIds": [],
+            "appendPassiveSkillLvs": []
           },
           "noblePhantasm": {
             "noblePhantasmId": 563,
@@ -2843,7 +2851,9 @@
           },
           "classPassive": {
             "classPassive": [],
-            "addPassive": []
+            "addPassive": [],
+            "appendPassiveSkillIds": [],
+            "appendPassiveSkillLvs": []
           },
           "noblePhantasm": {
             "noblePhantasmId": 563,
@@ -3418,7 +3428,9 @@
           },
           "classPassive": {
             "classPassive": [],
-            "addPassive": []
+            "addPassive": [],
+            "appendPassiveSkillIds": [],
+            "appendPassiveSkillLvs": []
           },
           "noblePhantasm": {
             "noblePhantasmId": 563,
@@ -4003,7 +4015,9 @@
           },
           "classPassive": {
             "classPassive": [],
-            "addPassive": []
+            "addPassive": [],
+            "appendPassiveSkillIds": [],
+            "appendPassiveSkillLvs": []
           },
           "noblePhantasm": {
             "noblePhantasmId": 563,
@@ -4588,7 +4602,9 @@
           },
           "classPassive": {
             "classPassive": [],
-            "addPassive": []
+            "addPassive": [],
+            "appendPassiveSkillIds": [],
+            "appendPassiveSkillLvs": []
           },
           "noblePhantasm": {
             "noblePhantasmId": 563,
@@ -5173,7 +5189,9 @@
           },
           "classPassive": {
             "classPassive": [],
-            "addPassive": []
+            "addPassive": [],
+            "appendPassiveSkillIds": [],
+            "appendPassiveSkillLvs": []
           },
           "noblePhantasm": {
             "noblePhantasmId": 563,
@@ -5758,7 +5776,9 @@
           },
           "classPassive": {
             "classPassive": [],
-            "addPassive": []
+            "addPassive": [],
+            "appendPassiveSkillIds": [],
+            "appendPassiveSkillLvs": []
           },
           "noblePhantasm": {
             "noblePhantasmId": 563,
@@ -6343,7 +6363,9 @@
           },
           "classPassive": {
             "classPassive": [],
-            "addPassive": []
+            "addPassive": [],
+            "appendPassiveSkillIds": [],
+            "appendPassiveSkillLvs": []
           },
           "noblePhantasm": {
             "noblePhantasmId": 563,

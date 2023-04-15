@@ -85,6 +85,7 @@
   "bond": 265,
   "isNpcOnly": true,
   "battleBgId": 63010,
+  "availableEnemyHashes": [],
   "extraDetail": {
     "questSelect": [
       94051406,
@@ -110,6 +111,7 @@
       "targetNum": 0
     }
   ],
+  "hints": [],
   "restrictions": [
     {
       "restriction": {

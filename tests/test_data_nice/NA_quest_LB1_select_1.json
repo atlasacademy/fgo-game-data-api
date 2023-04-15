@@ -93,7 +93,17 @@
   "bond": 1590,
   "isNpcOnly": false,
   "battleBgId": 39000,
-  "extraDetail": {},
+  "enemyHash": "1_0156_c3a1e0f",
+  "availableEnemyHashes": [
+    "1_0156_c3a1e0f"
+  ],
+  "dropsFromAllHashes": true,
+  "extraDetail": {
+    "questSelect": [
+      3000109,
+      3000110
+    ]
+  },
   "scripts": [
     {
       "scriptId": "0300010910",
@@ -105,6 +115,7 @@
     }
   ],
   "messages": [],
+  "hints": [],
   "restrictions": [],
   "supportServants": [
     {
@@ -2255,7 +2266,9 @@
                   }
                 ]
               }
-            ]
+            ],
+            "appendPassiveSkillIds": [],
+            "appendPassiveSkillLvs": []
           },
           "noblePhantasm": {
             "noblePhantasmId": 509,

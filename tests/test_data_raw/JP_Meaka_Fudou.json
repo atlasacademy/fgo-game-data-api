@@ -170,5 +170,6 @@
   "npcSvtEquip": [],
   "mstQuestRestriction": [],
   "mstQuestRestrictionInfo": [],
-  "mstRestriction": []
+  "mstRestriction": [],
+  "mstQuestHint": []
 }

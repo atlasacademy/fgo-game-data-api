@@ -107,9 +107,15 @@
   "bond": 915,
   "isNpcOnly": false,
   "battleBgId": 101500,
+  "enemyHash": "1_0542_62e982a",
+  "availableEnemyHashes": [
+    "1_0542_62e982a"
+  ],
+  "dropsFromAllHashes": true,
   "extraDetail": {
     "aiNpc": {
       "npc": {
+        "npcId": 94074506,
         "name": "NONE",
         "svt": {
           "id": 901000,
@@ -3695,7 +3701,9 @@
               ]
             }
           ],
-          "addPassive": []
+          "addPassive": [],
+          "appendPassiveSkillIds": [],
+          "appendPassiveSkillLvs": []
         },
         "noblePhantasm": {
           "noblePhantasmId": 901001,
@@ -4445,6 +4453,7 @@
     }
   ],
   "messages": [],
+  "hints": [],
   "restrictions": [
     {
       "restriction": {
@@ -19188,7 +19197,9 @@
                   }
                 ]
               }
-            ]
+            ],
+            "appendPassiveSkillIds": [],
+            "appendPassiveSkillLvs": []
           },
           "noblePhantasm": {
             "noblePhantasmId": 799,
@@ -21848,7 +21859,9 @@
                 ]
               }
             ],
-            "addPassive": []
+            "addPassive": [],
+            "appendPassiveSkillIds": [],
+            "appendPassiveSkillLvs": []
           },
           "noblePhantasm": {
             "noblePhantasmId": 9944211,
@@ -22828,7 +22841,9 @@
                   }
                 ]
               }
-            ]
+            ],
+            "appendPassiveSkillIds": [],
+            "appendPassiveSkillLvs": []
           },
           "noblePhantasm": {
             "noblePhantasmId": 799,
@@ -23779,7 +23794,9 @@
                   }
                 ]
               }
-            ]
+            ],
+            "appendPassiveSkillIds": [],
+            "appendPassiveSkillLvs": []
           },
           "noblePhantasm": {
             "noblePhantasmId": 799,
@@ -26450,7 +26467,9 @@
                 ]
               }
             ],
-            "addPassive": []
+            "addPassive": [],
+            "appendPassiveSkillIds": [],
+            "appendPassiveSkillLvs": []
           },
           "noblePhantasm": {
             "noblePhantasmId": 9944211,
