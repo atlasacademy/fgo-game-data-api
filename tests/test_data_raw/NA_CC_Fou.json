@@ -48,7 +48,9 @@
           "skillDetailId": 991384,
           "priority": 0
         }
-      ]
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
     }
   ],
   "mstCommandCodeComment": {

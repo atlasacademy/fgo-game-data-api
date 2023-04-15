@@ -653,7 +653,9 @@
             "skillDetailId": 34250,
             "priority": 0
           }
-        ]
+        ],
+        "mstSkillGroup": [],
+        "mstSkillGroupOverwrite": []
       },
       {
         "mstSkill": {
@@ -1269,7 +1271,9 @@
             "skillDetailId": 20551,
             "priority": 0
           }
-        ]
+        ],
+        "mstSkillGroup": [],
+        "mstSkillGroupOverwrite": []
       },
       {
         "mstSkill": {
@@ -1925,7 +1929,9 @@
             "skillDetailId": 83450,
             "priority": 0
           }
-        ]
+        ],
+        "mstSkillGroup": [],
+        "mstSkillGroupOverwrite": []
       }
     ],
     "cardIds": [
@@ -3750,7 +3756,9 @@
           "skillDetailId": 454650,
           "priority": 0
         }
-      ]
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
     },
     {
       "mstSkill": {
@@ -5091,7 +5099,9 @@
           "skillDetailId": 455350,
           "priority": 0
         }
-      ]
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
     },
     {
       "mstSkill": {
@@ -6602,7 +6612,9 @@
           "skillDetailId": 456550,
           "priority": 0
         }
-      ]
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
     }
   ],
   "mstTreasureDevice": [
@@ -7430,6 +7442,18 @@
       ],
       "svtId": 202900,
       "idx": 8027301,
+      "limitCount": -1,
+      "condType": 0,
+      "condId": 0,
+      "condNum": 0
+    },
+    {
+      "individuality": [
+        2770,
+        2772
+      ],
+      "svtId": 202900,
+      "idx": 8031801,
       "limitCount": -1,
       "condType": 0,
       "condId": 0,
@@ -8701,7 +8725,7 @@
       "faceX": 376,
       "faceY": 160,
       "bgImageId": 0,
-      "scale": 1.0,
+      "scale": 1,
       "offsetX": -7,
       "offsetY": 136,
       "offsetXMyroom": 304,
@@ -8714,7 +8738,7 @@
       "faceX": 376,
       "faceY": 160,
       "bgImageId": 0,
-      "scale": 1.0,
+      "scale": 1,
       "offsetX": -7,
       "offsetY": 136,
       "offsetXMyroom": 304,
@@ -8727,7 +8751,7 @@
       "faceX": 375,
       "faceY": 160,
       "bgImageId": 0,
-      "scale": 1.0,
+      "scale": 1,
       "offsetX": -7,
       "offsetY": 136,
       "offsetXMyroom": 304,
@@ -8976,7 +9000,9 @@
           "skillDetailId": 960502,
           "priority": 0
         }
-      ]
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
     },
     {
       "mstSkill": {
@@ -9073,7 +9099,9 @@
           "skillDetailId": 960503,
           "priority": 0
         }
-      ]
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
     },
     {
       "mstSkill": {
@@ -9170,7 +9198,9 @@
           "skillDetailId": 960504,
           "priority": 0
         }
-      ]
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
     },
     {
       "mstSkill": {
@@ -9267,7 +9297,9 @@
           "skillDetailId": 960505,
           "priority": 0
         }
-      ]
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
     },
     {
       "mstSkill": {
@@ -9364,7 +9396,9 @@
           "skillDetailId": 960506,
           "priority": 0
         }
-      ]
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
     },
     {
       "mstSkill": {
@@ -9461,7 +9495,9 @@
           "skillDetailId": 960507,
           "priority": 0
         }
-      ]
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
     },
     {
       "mstSkill": {
@@ -9562,7 +9598,9 @@
           "skillDetailId": 960557,
           "priority": 0
         }
-      ]
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
     },
     {
       "mstSkill": {
@@ -9663,7 +9701,9 @@
           "skillDetailId": 960837,
           "priority": 0
         }
-      ]
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
     },
     {
       "mstSkill": {
@@ -9764,7 +9804,9 @@
           "skillDetailId": 961154,
           "priority": 0
         }
-      ]
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
     }
   ],
   "mstSvtAppendPassiveSkill": [
@@ -10442,7 +10484,9 @@
           "skillDetailId": 3001009,
           "priority": 0
         }
-      ]
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
     },
     {
       "mstSkill": {
@@ -10828,7 +10872,9 @@
           "skillDetailId": 3002009,
           "priority": 0
         }
-      ]
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
     },
     {
       "mstSkill": {
@@ -11484,7 +11530,9 @@
           "skillDetailId": 3008009,
           "priority": 0
         }
-      ]
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
     }
   ],
   "mstSvtAppendPassiveSkillUnlock": [

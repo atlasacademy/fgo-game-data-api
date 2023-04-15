@@ -99,7 +99,9 @@
           "skillDetailId": 990324,
           "priority": 0
         }
-      ]
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
     },
     {
       "mstSkill": {
@@ -156,7 +158,9 @@
           "skillDetailId": 990325,
           "priority": 0
         }
-      ]
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
     }
   ],
   "mstTreasureDevice": [],

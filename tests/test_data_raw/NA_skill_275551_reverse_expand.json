@@ -1508,6 +1508,8 @@
       "priority": 0
     }
   ],
+  "mstSkillGroup": [],
+  "mstSkillGroupOverwrite": [],
   "reverse": {
     "raw": {
       "servant": [
@@ -1791,7 +1793,9 @@
                   "skillDetailId": 275551,
                   "priority": 0
                 }
-              ]
+              ],
+              "mstSkillGroup": [],
+              "mstSkillGroupOverwrite": []
             },
             {
               "mstSkill": {
@@ -1992,7 +1996,9 @@
                   "skillDetailId": 276550,
                   "priority": 0
                 }
-              ]
+              ],
+              "mstSkillGroup": [],
+              "mstSkillGroupOverwrite": []
             },
             {
               "mstSkill": {
@@ -2193,7 +2199,9 @@
                   "skillDetailId": 277350,
                   "priority": 0
                 }
-              ]
+              ],
+              "mstSkillGroup": [],
+              "mstSkillGroupOverwrite": []
             }
           ],
           "mstTreasureDevice": [

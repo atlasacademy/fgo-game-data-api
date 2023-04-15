@@ -266,6 +266,8 @@
       "priority": 1000
     }
   ],
+  "mstSkillGroup": [],
+  "mstSkillGroupOverwrite": [],
   "aiIds": {
     "svt": [
       94040947,
@@ -612,6 +614,8 @@
                   "priority": 1000
                 }
               ],
+              "mstSkillGroup": [],
+              "mstSkillGroupOverwrite": [],
               "aiIds": {
                 "svt": [
                   94040947,
@@ -867,7 +871,9 @@
                   "skillDetailId": 447551,
                   "priority": 0
                 }
-              ]
+              ],
+              "mstSkillGroup": [],
+              "mstSkillGroupOverwrite": []
             },
             {
               "mstSkill": {
@@ -1156,7 +1162,9 @@
                   "skillDetailId": 433650,
                   "priority": 220
                 }
-              ]
+              ],
+              "mstSkillGroup": [],
+              "mstSkillGroupOverwrite": []
             }
           ],
           "mstTreasureDevice": [
@@ -4730,6 +4738,8 @@
                   "priority": 1000
                 }
               ],
+              "mstSkillGroup": [],
+              "mstSkillGroupOverwrite": [],
               "aiIds": {
                 "svt": [
                   94040947,
@@ -4985,7 +4995,9 @@
                   "skillDetailId": 447551,
                   "priority": 0
                 }
-              ]
+              ],
+              "mstSkillGroup": [],
+              "mstSkillGroupOverwrite": []
             },
             {
               "mstSkill": {
@@ -5274,7 +5286,9 @@
                   "skillDetailId": 433650,
                   "priority": 220
                 }
-              ]
+              ],
+              "mstSkillGroup": [],
+              "mstSkillGroupOverwrite": []
             }
           ],
           "mstTreasureDevice": [],
@@ -7641,6 +7655,8 @@
                   "priority": 1000
                 }
               ],
+              "mstSkillGroup": [],
+              "mstSkillGroupOverwrite": [],
               "aiIds": {
                 "svt": [
                   94040947,
@@ -7896,7 +7912,9 @@
                   "skillDetailId": 447551,
                   "priority": 0
                 }
-              ]
+              ],
+              "mstSkillGroup": [],
+              "mstSkillGroupOverwrite": []
             },
             {
               "mstSkill": {
@@ -8185,7 +8203,9 @@
                   "skillDetailId": 433650,
                   "priority": 220
                 }
-              ]
+              ],
+              "mstSkillGroup": [],
+              "mstSkillGroupOverwrite": []
             }
           ],
           "mstTreasureDevice": [],

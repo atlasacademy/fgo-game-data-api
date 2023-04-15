@@ -1083,7 +1083,9 @@
                   "skillDetailId": 149450,
                   "priority": 0
                 }
-              ]
+              ],
+              "mstSkillGroup": [],
+              "mstSkillGroupOverwrite": []
             },
             {
               "mstSkill": {
@@ -1304,7 +1306,9 @@
                   "skillDetailId": 127005,
                   "priority": 0
                 }
-              ]
+              ],
+              "mstSkillGroup": [],
+              "mstSkillGroupOverwrite": []
             },
             {
               "mstSkill": {
@@ -1525,7 +1529,9 @@
                   "skillDetailId": 157350,
                   "priority": 0
                 }
-              ]
+              ],
+              "mstSkillGroup": [],
+              "mstSkillGroupOverwrite": []
             },
             {
               "mstSkill": {
@@ -1786,7 +1792,9 @@
                   "skillDetailId": 127020,
                   "priority": 0
                 }
-              ]
+              ],
+              "mstSkillGroup": [],
+              "mstSkillGroupOverwrite": []
             },
             {
               "mstSkill": {
@@ -2027,7 +2035,9 @@
                   "skillDetailId": 157352,
                   "priority": 0
                 }
-              ]
+              ],
+              "mstSkillGroup": [],
+              "mstSkillGroupOverwrite": []
             }
           ],
           "mstTreasureDevice": [

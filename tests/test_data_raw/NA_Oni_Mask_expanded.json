@@ -149,7 +149,9 @@
           "skillDetailId": 990610,
           "priority": 0
         }
-      ]
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
     }
   ],
   "mstTreasureDevice": [],

@@ -268,7 +268,9 @@
           "skillDetailId": 220450,
           "priority": 0
         }
-      ]
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
     },
     {
       "mstSkill": {
@@ -509,7 +511,9 @@
           "skillDetailId": 414450,
           "priority": 0
         }
-      ]
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
     },
     {
       "mstSkill": {
@@ -710,7 +714,9 @@
           "skillDetailId": 415550,
           "priority": 0
         }
-      ]
+      ],
+      "mstSkillGroup": [],
+      "mstSkillGroupOverwrite": []
     }
   ],
   "mstTreasureDevice": [
