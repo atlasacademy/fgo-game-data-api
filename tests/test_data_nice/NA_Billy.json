@@ -871,6 +871,27 @@
       "condType": "none",
       "condId": 0,
       "condNum": 0
+    },
+    {
+      "idx": 8031801,
+      "trait": [
+        {
+          "id": 2768,
+          "name": "unknown"
+        },
+        {
+          "id": 2769,
+          "name": "unknown"
+        },
+        {
+          "id": 2772,
+          "name": "unknown"
+        }
+      ],
+      "limitCount": -1,
+      "condType": "none",
+      "condId": 0,
+      "condNum": 0
     }
   ],
   "svtChange": [],

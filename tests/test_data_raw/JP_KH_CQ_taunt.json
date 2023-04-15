@@ -24,10 +24,11 @@
           966256,
           1
         ],
+        "script": {},
         "id": 94016184,
         "type": 40,
         "target": 0,
-        "createdAt": 946652400
+        "createdAt": 0
       },
       "parentAis": {
         "svt": [],
@@ -60,10 +61,11 @@
           961075,
           1
         ],
+        "script": {},
         "id": 94016185,
         "type": 40,
         "target": 3,
-        "createdAt": 946652400
+        "createdAt": 0
       },
       "parentAis": {
         "svt": [],
@@ -91,10 +93,11 @@
       "mstAiAct": {
         "targetIndividuality": [],
         "skillVals": [],
+        "script": {},
         "id": 1,
         "type": 0,
         "target": 0,
-        "createdAt": 946652400
+        "createdAt": 0
       },
       "parentAis": {
         "svt": [],

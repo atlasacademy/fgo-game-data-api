@@ -909,6 +909,23 @@
       "condType": "none",
       "condId": 0,
       "condNum": 0
+    },
+    {
+      "idx": 8031801,
+      "trait": [
+        {
+          "id": 2771,
+          "name": "unknown"
+        },
+        {
+          "id": 2772,
+          "name": "unknown"
+        }
+      ],
+      "limitCount": -1,
+      "condType": "none",
+      "condId": 0,
+      "condNum": 0
     }
   ],
   "svtChange": [],

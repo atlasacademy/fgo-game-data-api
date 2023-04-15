@@ -695,8 +695,8 @@
       "mstSkillDetail": [
         {
           "id": 422352,
-          "detail": "敵単体に高確率で宝具封印状態を付与[{0}](1ターン) ＋ 自身に〔魔性〕特攻状態を付与[{0}](3ターン)[g][o]▲[/o][/g]＆〔呪い〕特攻状態を付与[{0}](3ターン)[g][o]▲[/o][/g]",
-          "detailShort": "敵単体に高確率で宝具封印状態を付与[{0}](1ターン) ＋ 自身に〔魔性〕特攻状態を付与[{0}](3ターン)[g][o]▲[/o][/g]＆〔呪い〕特攻状態を付与[{0}](3ターン)[g][o]▲[/o][/g]"
+          "detail": "敵単体に高確率[{0}]で宝具封印状態を付与(1ターン) ＋ 自身に〔魔性〕特攻状態を付与[{0}](3ターン)[g][o]▲[/o][/g]＆〔呪い〕特攻状態を付与[{0}](3ターン)[g][o]▲[/o][/g]",
+          "detailShort": "敵単体に高確率[{0}]で宝具封印状態を付与(1ターン) ＋ 自身に〔魔性〕特攻状態を付与[{0}](3ターン)[g][o]▲[/o][/g]＆〔呪い〕特攻状態を付与[{0}](3ターン)[g][o]▲[/o][/g]"
         }
       ],
       "mstSvtSkill": [
@@ -3524,6 +3524,38 @@
       "commonReleaseId": 0,
       "startedAt": 1649235600,
       "endedAt": 1651031999
+    },
+    {
+      "svtId": 602900,
+      "num": 16,
+      "priority": 179,
+      "skillId": 940269,
+      "condQuestId": 0,
+      "condQuestPhase": 0,
+      "condLv": 0,
+      "condLimitCount": 0,
+      "condFriendshipRank": 0,
+      "eventId": 80409,
+      "flag": 0,
+      "commonReleaseId": 0,
+      "startedAt": 1670403600,
+      "endedAt": 1671422399
+    },
+    {
+      "svtId": 602900,
+      "num": 16,
+      "priority": 183,
+      "skillId": 940274,
+      "condQuestId": 0,
+      "condQuestPhase": 0,
+      "condLv": 0,
+      "condLimitCount": 0,
+      "condFriendshipRank": 0,
+      "eventId": 80414,
+      "flag": 0,
+      "commonReleaseId": 10080244,
+      "startedAt": 1676624400,
+      "endedAt": 1678420799
     },
     {
       "svtId": 602900,
