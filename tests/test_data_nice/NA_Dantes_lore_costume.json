@@ -1013,7 +1013,8 @@
             "uses": [
               "skill",
               "appendSkill",
-              "ascension"
+              "ascension",
+              "costume"
             ],
             "detail": "\"Skill Up & Ascension Material\"\nA page which nobody should ever read.\nUsually mixed in as the first or last page.",
             "individuality": [],
@@ -6468,7 +6469,8 @@
                   2500400,
                   2500500,
                   2500600,
-                  2500700
+                  2500700,
+                  2500800
                 ],
                 "eventId": 0
               }

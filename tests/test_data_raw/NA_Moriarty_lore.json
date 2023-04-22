@@ -4006,7 +4006,7 @@
       "useSkill": true,
       "useAppendSkill": true,
       "useAscension": true,
-      "useCostume": false,
+      "useCostume": true,
       "mstItemSelect": [],
       "mstGift": [],
       "mstGiftAdd": []
