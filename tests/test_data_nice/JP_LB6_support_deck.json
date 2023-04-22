@@ -3075,6 +3075,32 @@
               "name": "stNP"
             }
           ],
+          "npSvts": [
+            {
+              "svtId": 9943170,
+              "num": 1,
+              "priority": 101,
+              "damage": [
+                2,
+                5,
+                8,
+                11,
+                13,
+                16,
+                19,
+                26
+              ],
+              "strengthStatus": 0,
+              "flag": 0,
+              "imageIndex": 0,
+              "condQuestId": 0,
+              "condQuestPhase": 0,
+              "condLv": 0,
+              "condFriendshipRank": 0,
+              "motion": 50,
+              "card": "buster"
+            }
+          ],
           "script": {},
           "functions": [
             {
@@ -5033,6 +5059,25 @@
               "name": "cardNP"
             }
           ],
+          "npSvts": [
+            {
+              "svtId": 9943060,
+              "num": 1,
+              "priority": 101,
+              "damage": [
+                100
+              ],
+              "strengthStatus": 0,
+              "flag": 0,
+              "imageIndex": 0,
+              "condQuestId": 0,
+              "condQuestPhase": 0,
+              "condLv": 0,
+              "condFriendshipRank": 0,
+              "motion": 50,
+              "card": "arts"
+            }
+          ],
           "script": {},
           "functions": [
             {
@@ -6870,6 +6915,28 @@
                   "name": "cardNP"
                 }
               ],
+              "npSvts": [
+                {
+                  "svtId": 9942970,
+                  "num": 1,
+                  "priority": 4,
+                  "damage": [
+                    9,
+                    18,
+                    27,
+                    46
+                  ],
+                  "strengthStatus": 0,
+                  "flag": 0,
+                  "imageIndex": 0,
+                  "condQuestId": 0,
+                  "condQuestPhase": 0,
+                  "condLv": 0,
+                  "condFriendshipRank": 0,
+                  "motion": 30,
+                  "card": "arts"
+                }
+              ],
               "script": {},
               "functions": [
                 {
@@ -7478,6 +7545,28 @@
                 {
                   "id": 4007,
                   "name": "cardNP"
+                }
+              ],
+              "npSvts": [
+                {
+                  "svtId": 9942970,
+                  "num": 1,
+                  "priority": 4,
+                  "damage": [
+                    9,
+                    18,
+                    27,
+                    46
+                  ],
+                  "strengthStatus": 0,
+                  "flag": 0,
+                  "imageIndex": 0,
+                  "condQuestId": 0,
+                  "condQuestPhase": 0,
+                  "condLv": 0,
+                  "condFriendshipRank": 0,
+                  "motion": 30,
+                  "card": "arts"
                 }
               ],
               "script": {},
@@ -8100,6 +8189,28 @@
                   "name": "cardNP"
                 }
               ],
+              "npSvts": [
+                {
+                  "svtId": 9942970,
+                  "num": 1,
+                  "priority": 4,
+                  "damage": [
+                    9,
+                    18,
+                    27,
+                    46
+                  ],
+                  "strengthStatus": 0,
+                  "flag": 0,
+                  "imageIndex": 0,
+                  "condQuestId": 0,
+                  "condQuestPhase": 0,
+                  "condLv": 0,
+                  "condFriendshipRank": 0,
+                  "motion": 30,
+                  "card": "arts"
+                }
+              ],
               "script": {},
               "functions": [
                 {
@@ -8708,6 +8819,28 @@
                 {
                   "id": 4007,
                   "name": "cardNP"
+                }
+              ],
+              "npSvts": [
+                {
+                  "svtId": 9942970,
+                  "num": 1,
+                  "priority": 4,
+                  "damage": [
+                    9,
+                    18,
+                    27,
+                    46
+                  ],
+                  "strengthStatus": 0,
+                  "flag": 0,
+                  "imageIndex": 0,
+                  "condQuestId": 0,
+                  "condQuestPhase": 0,
+                  "condLv": 0,
+                  "condFriendshipRank": 0,
+                  "motion": 30,
+                  "card": "arts"
                 }
               ],
               "script": {},
@@ -9330,6 +9463,28 @@
                   "name": "cardNP"
                 }
               ],
+              "npSvts": [
+                {
+                  "svtId": 9942970,
+                  "num": 1,
+                  "priority": 4,
+                  "damage": [
+                    9,
+                    18,
+                    27,
+                    46
+                  ],
+                  "strengthStatus": 0,
+                  "flag": 0,
+                  "imageIndex": 0,
+                  "condQuestId": 0,
+                  "condQuestPhase": 0,
+                  "condLv": 0,
+                  "condFriendshipRank": 0,
+                  "motion": 30,
+                  "card": "arts"
+                }
+              ],
               "script": {},
               "functions": [
                 {
@@ -9948,6 +10103,28 @@
                 {
                   "id": 4007,
                   "name": "cardNP"
+                }
+              ],
+              "npSvts": [
+                {
+                  "svtId": 9942970,
+                  "num": 1,
+                  "priority": 4,
+                  "damage": [
+                    9,
+                    18,
+                    27,
+                    46
+                  ],
+                  "strengthStatus": 0,
+                  "flag": 0,
+                  "imageIndex": 0,
+                  "condQuestId": 0,
+                  "condQuestPhase": 0,
+                  "condLv": 0,
+                  "condFriendshipRank": 0,
+                  "motion": 30,
+                  "card": "arts"
                 }
               ],
               "script": {},
@@ -10587,6 +10764,25 @@
                   "name": "cardNP"
                 }
               ],
+              "npSvts": [
+                {
+                  "svtId": 9933100,
+                  "num": 1,
+                  "priority": 105,
+                  "damage": [
+                    100
+                  ],
+                  "strengthStatus": 1,
+                  "flag": 0,
+                  "imageIndex": 0,
+                  "condQuestId": 0,
+                  "condQuestPhase": 0,
+                  "condLv": 0,
+                  "condFriendshipRank": 0,
+                  "motion": 30,
+                  "card": "arts"
+                }
+              ],
               "script": {},
               "functions": [
                 {
@@ -11178,6 +11374,25 @@
                   "name": "cardNP"
                 }
               ],
+              "npSvts": [
+                {
+                  "svtId": 9933100,
+                  "num": 1,
+                  "priority": 105,
+                  "damage": [
+                    100
+                  ],
+                  "strengthStatus": 1,
+                  "flag": 0,
+                  "imageIndex": 0,
+                  "condQuestId": 0,
+                  "condQuestPhase": 0,
+                  "condLv": 0,
+                  "condFriendshipRank": 0,
+                  "motion": 30,
+                  "card": "arts"
+                }
+              ],
               "script": {},
               "functions": [
                 {
@@ -11767,6 +11982,25 @@
                 {
                   "id": 4007,
                   "name": "cardNP"
+                }
+              ],
+              "npSvts": [
+                {
+                  "svtId": 9933100,
+                  "num": 1,
+                  "priority": 105,
+                  "damage": [
+                    100
+                  ],
+                  "strengthStatus": 1,
+                  "flag": 0,
+                  "imageIndex": 0,
+                  "condQuestId": 0,
+                  "condQuestPhase": 0,
+                  "condLv": 0,
+                  "condFriendshipRank": 0,
+                  "motion": 30,
+                  "card": "arts"
                 }
               ],
               "script": {},
@@ -12389,6 +12623,28 @@
                 {
                   "id": 4007,
                   "name": "cardNP"
+                }
+              ],
+              "npSvts": [
+                {
+                  "svtId": 9942890,
+                  "num": 1,
+                  "priority": 1,
+                  "damage": [
+                    10,
+                    20,
+                    30,
+                    40
+                  ],
+                  "strengthStatus": 0,
+                  "flag": 0,
+                  "imageIndex": 0,
+                  "condQuestId": 0,
+                  "condQuestPhase": 0,
+                  "condLv": 0,
+                  "condFriendshipRank": 0,
+                  "motion": 30,
+                  "card": "arts"
                 }
               ],
               "script": {},
@@ -13030,6 +13286,28 @@
                 {
                   "id": 4007,
                   "name": "cardNP"
+                }
+              ],
+              "npSvts": [
+                {
+                  "svtId": 9942890,
+                  "num": 1,
+                  "priority": 1,
+                  "damage": [
+                    10,
+                    20,
+                    30,
+                    40
+                  ],
+                  "strengthStatus": 0,
+                  "flag": 0,
+                  "imageIndex": 0,
+                  "condQuestId": 0,
+                  "condQuestPhase": 0,
+                  "condLv": 0,
+                  "condFriendshipRank": 0,
+                  "motion": 30,
+                  "card": "arts"
                 }
               ],
               "script": {},

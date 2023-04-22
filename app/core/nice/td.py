@@ -1,4 +1,3 @@
-from copy import deepcopy
 from dataclasses import dataclass
 from typing import Any, Iterable
 
@@ -7,8 +6,8 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 from ...config import Settings
 from ...schemas.common import Language, Region
 from ...schemas.gameenums import CARD_TYPE_NAME, NiceTdEffectFlag
-from ...schemas.nice import AssetURL, NiceTd
-from ...schemas.raw import TdEntityNoReverse
+from ...schemas.nice import AssetURL, NiceTd, NiceTdSvt
+from ...schemas.raw import MstSvtTreasureDevice, TdEntityNoReverse
 from ..raw import get_td_entity_no_reverse, get_td_entity_no_reverse_many
 from ..utils import get_np_name, get_traits_list, strip_formatting_brackets
 from .func import get_nice_function
@@ -16,6 +15,24 @@ from .skill import get_nice_skill_script
 
 
 settings = Settings()
+
+
+def get_nice_td_svt(td_svt: MstSvtTreasureDevice) -> NiceTdSvt:
+    return NiceTdSvt(
+        svtId=td_svt.svtId,
+        num=td_svt.num,
+        priority=td_svt.priority,
+        damage=td_svt.damage,
+        strengthStatus=td_svt.strengthStatus,
+        flag=td_svt.flag,
+        imageIndex=td_svt.imageIndex,
+        condQuestId=td_svt.condQuestId,
+        condQuestPhase=td_svt.condQuestPhase,
+        condLv=td_svt.condLv,
+        condFriendshipRank=td_svt.condFriendshipRank,
+        motion=td_svt.motion,
+        card=CARD_TYPE_NAME[td_svt.cardId],
+    )
 
 
 def get_nice_td_effect_flag(effectFlag: int) -> NiceTdEffectFlag:
@@ -45,6 +62,11 @@ async def get_nice_td(
         "type": tdEntity.mstTreasureDevice.typeText,
         "effectFlags": [get_nice_td_effect_flag(tdEntity.mstTreasureDevice.effectFlag)],
         "individuality": get_traits_list(tdEntity.mstTreasureDevice.individuality),
+        "npSvts": [
+            get_nice_td_svt(td_svt)
+            for td_svt in tdEntity.mstSvtTreasureDevice
+            if svtId == -1 or td_svt.svtId == svtId
+        ],
     }
 
     if tdEntity.mstTreasureDeviceDetail:
@@ -105,7 +127,6 @@ async def get_nice_td(
     chosen_svts = [
         svt_td for svt_td in tdEntity.mstSvtTreasureDevice if svt_td.svtId == svtId
     ]
-    out_tds = []
 
     base_settings_id = {
         "base_url": settings.asset_url,
@@ -113,7 +134,8 @@ async def get_nice_td(
         "item_id": svtId,
     }
 
-    if not chosen_svts:  # pragma: no cover
+    if not chosen_svts and not tdEntity.mstSvtTreasureDevice:  # pragma: no cover
+        base_settings_id["item_id"] = tdEntity.mstTreasureDevice.id
         nice_td |= {
             "icon": AssetURL.commands.format(**base_settings_id, i="np"),
             "strengthStatus": 0,
@@ -124,16 +146,21 @@ async def get_nice_td(
             "card": CARD_TYPE_NAME[5],
             "npDistribution": [],
         }
-        out_tds.append(nice_td)
+    else:
+        if chosen_svts:
+            chosen_svt = chosen_svts[0]
+        else:
+            chosen_svt = tdEntity.mstSvtTreasureDevice[0]
 
-    for chosen_svt in chosen_svts:
-        out_td = deepcopy(nice_td)
+        if svtId == -1:
+            base_settings_id["item_id"] = chosen_svt.svtId
+
         imageId = chosen_svt.imageIndex
         if imageId < 2:
             file_i = "np"
         else:
             file_i = "np" + str(imageId // 2)
-        out_td |= {
+        nice_td |= {
             "icon": AssetURL.commands.format(**base_settings_id, i=file_i),
             "strengthStatus": chosen_svt.strengthStatus,
             "num": chosen_svt.num,
@@ -143,8 +170,8 @@ async def get_nice_td(
             "card": CARD_TYPE_NAME[chosen_svt.cardId],
             "npDistribution": chosen_svt.damage,
         }
-        out_tds.append(out_td)
-    return out_tds
+
+    return [nice_td]
 
 
 async def get_nice_td_from_id(
@@ -155,10 +182,7 @@ async def get_nice_td_from_id(
 ) -> NiceTd:
     raw_td = await get_td_entity_no_reverse(conn, td_id, expand=True)
 
-    svt_id = next((svt_id.svtId for svt_id in raw_td.mstSvtTreasureDevice), td_id)
-    nice_td = NiceTd.parse_obj(
-        (await get_nice_td(conn, raw_td, svt_id, region, lang))[0]
-    )
+    nice_td = NiceTd.parse_obj((await get_nice_td(conn, raw_td, -1, region, lang))[0])
 
     return nice_td
 

@@ -4286,6 +4286,32 @@
           "name": "aoeNP"
         }
       ],
+      "npSvts": [
+        {
+          "svtId": 1100200,
+          "num": 1,
+          "priority": 101,
+          "damage": [
+            3,
+            6,
+            10,
+            13,
+            16,
+            13,
+            10,
+            29
+          ],
+          "strengthStatus": 1,
+          "flag": 0,
+          "imageIndex": 0,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condFriendshipRank": 0,
+          "motion": 50,
+          "card": "quick"
+        }
+      ],
       "script": {},
       "functions": [
         {
@@ -4898,6 +4924,32 @@
         {
           "id": 4101,
           "name": "aoeNP"
+        }
+      ],
+      "npSvts": [
+        {
+          "svtId": 1100200,
+          "num": 1,
+          "priority": 102,
+          "damage": [
+            3,
+            6,
+            10,
+            13,
+            16,
+            13,
+            10,
+            29
+          ],
+          "strengthStatus": 2,
+          "flag": 0,
+          "imageIndex": 0,
+          "condQuestId": 94026512,
+          "condQuestPhase": 3,
+          "condLv": 0,
+          "condFriendshipRank": 0,
+          "motion": 50,
+          "card": "quick"
         }
       ],
       "script": {},

@@ -6484,6 +6484,27 @@
           "name": "aoeNP"
         }
       ],
+      "npSvts": [
+        {
+          "svtId": 1100900,
+          "num": 1,
+          "priority": 101,
+          "damage": [
+            16,
+            33,
+            51
+          ],
+          "strengthStatus": 0,
+          "flag": 0,
+          "imageIndex": 0,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condFriendshipRank": 0,
+          "motion": 50,
+          "card": "arts"
+        }
+      ],
       "script": {
         "tdTypeChangeIDs": [
           1100901,
@@ -7111,6 +7132,27 @@
           "name": "aoeNP"
         }
       ],
+      "npSvts": [
+        {
+          "svtId": 1100900,
+          "num": 97,
+          "priority": 0,
+          "damage": [
+            16,
+            33,
+            51
+          ],
+          "strengthStatus": 0,
+          "flag": 0,
+          "imageIndex": 0,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condFriendshipRank": 0,
+          "motion": 50,
+          "card": "buster"
+        }
+      ],
       "script": {
         "tdTypeChangeIDs": [
           1100901,
@@ -7736,6 +7778,27 @@
         {
           "id": 4101,
           "name": "aoeNP"
+        }
+      ],
+      "npSvts": [
+        {
+          "svtId": 1100900,
+          "num": 98,
+          "priority": 0,
+          "damage": [
+            16,
+            33,
+            51
+          ],
+          "strengthStatus": 0,
+          "flag": 0,
+          "imageIndex": 0,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condFriendshipRank": 0,
+          "motion": 50,
+          "card": "quick"
         }
       ],
       "script": {

@@ -10441,6 +10441,25 @@
           "name": "cardNP"
         }
       ],
+      "npSvts": [
+        {
+          "svtId": 800100,
+          "num": 1,
+          "priority": 100,
+          "damage": [
+            100
+          ],
+          "strengthStatus": 1,
+          "flag": 0,
+          "imageIndex": 0,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condFriendshipRank": 0,
+          "motion": 50,
+          "card": "arts"
+        }
+      ],
       "script": {},
       "functions": []
     },
@@ -10522,6 +10541,25 @@
         {
           "id": 4007,
           "name": "cardNP"
+        }
+      ],
+      "npSvts": [
+        {
+          "svtId": 800100,
+          "num": 1,
+          "priority": 101,
+          "damage": [
+            100
+          ],
+          "strengthStatus": 1,
+          "flag": 0,
+          "imageIndex": 1,
+          "condQuestId": 1000008,
+          "condQuestPhase": 4,
+          "condLv": 0,
+          "condFriendshipRank": 0,
+          "motion": 50,
+          "card": "arts"
         }
       ],
       "script": {},
@@ -11014,6 +11052,25 @@
         {
           "id": 4007,
           "name": "cardNP"
+        }
+      ],
+      "npSvts": [
+        {
+          "svtId": 800100,
+          "num": 1,
+          "priority": 104,
+          "damage": [
+            100
+          ],
+          "strengthStatus": 2,
+          "flag": 0,
+          "imageIndex": 2,
+          "condQuestId": 1000631,
+          "condQuestPhase": 3,
+          "condLv": 0,
+          "condFriendshipRank": 0,
+          "motion": 50,
+          "card": "arts"
         }
       ],
       "script": {},
@@ -11710,496 +11767,40 @@
           "name": "cardNP"
         }
       ],
-      "script": {},
-      "functions": [
+      "npSvts": [
         {
-          "funcId": 183,
-          "funcType": "addState",
-          "funcTargetType": "ptAll",
-          "funcTargetTeam": "playerAndEnemy",
-          "funcPopupText": "防御力アップ",
-          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
-          "functvals": [],
-          "funcquestTvals": [],
-          "funcGroup": [],
-          "buffs": [
-            {
-              "id": 146,
-              "name": "防御力アップ",
-              "detail": "防御力をアップ",
-              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
-              "type": "upDefence",
-              "buffGroup": 0,
-              "script": {},
-              "vals": [
-                {
-                  "id": 3004,
-                  "name": "buffPositiveEffect"
-                },
-                {
-                  "id": 3007,
-                  "name": "buffIncreaseDefence"
-                },
-                {
-                  "id": 3040,
-                  "name": "buffDefenceUp"
-                },
-                {
-                  "id": 3058,
-                  "name": "buffDefUp"
-                }
+          "svtId": 800100,
+          "num": 1,
+          "priority": 105,
+          "damage": [
+            100
               ],
-              "tvals": [],
-              "ckSelfIndv": [],
-              "ckOpIndv": [],
-              "maxRate": 5000
-            }
-          ],
-          "svals": [
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 300
-            },
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 300
-            },
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 300
-            },
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 300
-            },
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 300
-            }
-          ],
-          "svals2": [
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 350
-            },
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 350
-            },
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 350
-            },
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 350
-            },
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 350
-            }
-          ],
-          "svals3": [
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 400
-            },
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 400
-            },
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 400
-            },
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 400
-            },
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 400
-            }
-          ],
-          "svals4": [
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 450
-            },
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 450
-            },
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 450
-            },
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 450
-            },
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 450
-            }
-          ],
-          "svals5": [
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 500
-            },
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 500
-            },
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 500
-            },
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 500
-            },
-            {
-              "Rate": 1000,
-              "Turn": 3,
-              "Count": -1,
-              "Value": 500
-            }
-          ]
-        },
-        {
-          "funcId": 281,
-          "funcType": "addState",
-          "funcTargetType": "ptAll",
-          "funcTargetTeam": "playerAndEnemy",
-          "funcPopupText": "ダメージカット",
-          "funcPopupIcon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
-          "functvals": [],
-          "funcquestTvals": [],
-          "funcGroup": [],
-          "buffs": [
-            {
-              "id": 149,
-              "name": "ダメージカット",
-              "detail": "被ダメージを減らす",
-              "icon": "https://assets.atlasacademy.io/GameData/JP/BuffIcons/bufficon_301.png",
-              "type": "subSelfdamage",
-              "buffGroup": 0,
-              "script": {},
-              "vals": [
-                {
-                  "id": 3004,
-                  "name": "buffPositiveEffect"
-                },
-                {
-                  "id": 3007,
-                  "name": "buffIncreaseDefence"
-                },
-                {
-                  "id": 3085,
-                  "name": "unknown"
-                },
-                {
-                  "id": 3040,
-                  "name": "buffDefenceUp"
-                }
-              ],
-              "tvals": [],
-              "ckSelfIndv": [],
-              "ckOpIndv": [],
-              "maxRate": 0
-            }
-          ],
-          "svals": [
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 100
-            },
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 550
-            },
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 775
-            },
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 888
-            },
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 1000
-            }
-          ],
-          "svals2": [
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 100
-            },
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 550
-            },
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 775
-            },
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 888
-            },
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 1000
-            }
-          ],
-          "svals3": [
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 100
-            },
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 550
-            },
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 775
-            },
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 888
-            },
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 1000
-            }
-          ],
-          "svals4": [
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 100
-            },
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 550
-            },
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 775
-            },
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 888
-            },
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 1000
-            }
-          ],
-          "svals5": [
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 100
-            },
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 550
-            },
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 775
-            },
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 888
-            },
-            {
-              "Rate": 1000,
-              "Turn": 5,
-              "Count": 3,
-              "Value": 1000
-            }
-          ]
-        }
-      ]
+          "strengthStatus": 2,
+          "flag": 2,
+          "imageIndex": 4,
+          "condQuestId": 3000124,
+          "condQuestPhase": 3,
+          "condLv": 0,
+          "condFriendshipRank": 0,
+          "motion": 50,
+          "card": "arts"
     },
     {
-      "id": 800105,
+          "svtId": 800100,
       "num": 1,
-      "card": "arts",
-      "name": "いまは脆き夢想の城",
-      "originalName": "いまは脆き夢想の城",
-      "ruby": "モールド・キャメロット",
-      "icon": "https://assets.atlasacademy.io/GameData/JP/Servants/Commands/800100/card_servant_np2.png",
-      "rank": "D",
-      "type": "対人宝具",
-      "effectFlags": [
-        "support"
-      ],
-      "detail": "味方全体の防御力をアップ(3ターン)<オーバーチャージで効果アップ>＆被ダメージカット状態を付与(3回・5ターン)",
-      "unmodifiedDetail": "味方全体の防御力をアップ(3ターン)<オーバーチャージで効果アップ>＆被ダメージカット状態を付与[{0}](3回・5ターン)",
-      "npGain": {
-        "buster": [
-          84,
-          84,
-          84,
-          84,
-          84
-        ],
-        "arts": [
-          84,
-          84,
-          84,
-          84,
-          84
-        ],
-        "quick": [
-          84,
-          84,
-          84,
-          84,
-          84
-        ],
-        "extra": [
-          84,
-          84,
-          84,
-          84,
-          84
-        ],
-        "defence": [
-          300,
-          300,
-          300,
-          300,
-          300
-        ],
-        "np": [
-          84,
-          84,
-          84,
-          84,
-          84
-        ]
-      },
-      "npDistribution": [
+          "priority": 106,
+          "damage": [
         100
       ],
       "strengthStatus": 2,
-      "priority": 106,
+          "flag": 2,
+          "imageIndex": 4,
       "condQuestId": 3000124,
       "condQuestPhase": 3,
-      "individuality": [
-        {
-          "id": 3002,
-          "name": "attackMagical"
-        },
-        {
-          "id": 4001,
-          "name": "cardArts"
-        },
-        {
-          "id": 4007,
-          "name": "cardNP"
+          "condLv": 0,
+          "condFriendshipRank": 0,
+          "motion": 50,
+          "card": "arts"
         }
       ],
       "script": {},

@@ -242,9 +242,8 @@ async def get_nice_td_with_reverse(
 ) -> NiceTdReverse:
     raw_td = await raw.get_td_entity_no_reverse(conn, td_id, expand=True)
 
-    svt_id = next((svt_id.svtId for svt_id in raw_td.mstSvtTreasureDevice), td_id)
     nice_td = NiceTdReverse.parse_obj(
-        (await get_nice_td(conn, raw_td, svt_id, region, lang))[0]
+        (await get_nice_td(conn, raw_td, -1, region, lang))[0]
     )
 
     if reverse and reverseDepth >= ReverseDepth.servant:

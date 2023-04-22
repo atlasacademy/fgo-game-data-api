@@ -5043,6 +5043,27 @@
           "name": "aoeNP"
         }
       ],
+      "npSvts": [
+        {
+          "svtId": 304300,
+          "num": 1,
+          "priority": 101,
+          "damage": [
+            16,
+            33,
+            51
+          ],
+          "strengthStatus": 0,
+          "flag": 0,
+          "imageIndex": 0,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condFriendshipRank": 0,
+          "motion": 50,
+          "card": "arts"
+        }
+      ],
       "script": {},
       "functions": [
         {

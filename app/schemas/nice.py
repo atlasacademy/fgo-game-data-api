@@ -642,6 +642,22 @@ class NpGain(BaseModel):
     np: list[int]
 
 
+class NiceTdSvt(BaseModelORJson):
+    svtId: int
+    num: int
+    priority: int
+    damage: list[int]
+    strengthStatus: int
+    flag: int
+    imageIndex: int
+    condQuestId: int
+    condQuestPhase: int
+    condLv: int = 0
+    condFriendshipRank: int = 0
+    motion: int
+    card: NiceCardType
+
+
 class NiceTd(BaseModelORJson):
     id: int
     num: int
@@ -662,6 +678,7 @@ class NiceTd(BaseModelORJson):
     condQuestId: int
     condQuestPhase: int
     individuality: list[NiceTrait]
+    npSvts: list[NiceTdSvt]
     script: NiceSkillScript
     functions: list[NiceFunction]
 

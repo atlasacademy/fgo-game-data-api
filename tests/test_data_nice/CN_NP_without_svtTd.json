@@ -84,6 +84,27 @@
       "name": "aoeNP"
     }
   ],
+  "npSvts": [
+    {
+      "svtId": 603000,
+      "num": 1,
+      "priority": 102,
+      "damage": [
+        16,
+        33,
+        51
+      ],
+      "strengthStatus": 2,
+      "flag": 0,
+      "imageIndex": 0,
+      "condQuestId": 94054488,
+      "condQuestPhase": 3,
+      "condLv": 0,
+      "condFriendshipRank": 0,
+      "motion": 50,
+      "card": "buster"
+    }
+  ],
   "script": {},
   "functions": [
     {

@@ -624,6 +624,25 @@
           "name": "cardNP"
         }
       ],
+      "npSvts": [
+        {
+          "svtId": 9100101,
+          "num": 1,
+          "priority": 321,
+          "damage": [
+            100
+          ],
+          "strengthStatus": 0,
+          "flag": 0,
+          "imageIndex": 0,
+          "condQuestId": 0,
+          "condQuestPhase": 0,
+          "condLv": 0,
+          "condFriendshipRank": 0,
+          "motion": 30,
+          "card": "arts"
+        }
+      ],
       "script": {},
       "functions": [
         {
