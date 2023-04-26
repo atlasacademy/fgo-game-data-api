@@ -1,0 +1,26 @@
+name: Update translation files
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.11"
+      - name: Update translation files
+        run: |
+          git clone https://git.atlasacademy.io/atlasacademy/fgo-game-data.git --branch JP --depth 1 /tmp/fgo-game-data-jp
+          git clone https://git.atlasacademy.io/atlasacademy/fgo-game-data.git --branch NA --depth 1 /tmp/fgo-game-data-na
+          python ./scripts/update_ce_translation.py --jp-master /tmp/fgo-game-data-jp/master --na-master /tmp/fgo-game-data-na/master
+      - name: Commit wiki update
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add app/data/mappings
+          git commit -m "Updated translations" || echo "Nothing to commit"
+          git push
