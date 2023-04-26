@@ -656,6 +656,7 @@ export enum NiceGiftType {
     COMMAND_CODE = "commandCode",
     EVENT_POINT_BUFF = "eventPointBuff",
     EVENT_BOARD_GAME_TOKEN = "eventBoardGameToken",
+    EVENT_COMMAND_ASSIST = "eventCommandAssist",
 }
 
 export enum NiceShopType {
@@ -906,6 +907,7 @@ export enum NiceCondType {
     ALL_SVT_TARGET_SKILL_LV_NUM = "allSvtTargetSkillLvNum",
     SUPER_BOSS_DAMAGE_ABOVE = "superBossDamageAbove",
     SUPER_BOSS_DAMAGE_BELOW = "superBossDamageBelow",
+    EVENT_MISSION_GROUP_ACHIEVE = "eventMissionGroupAchieve",
     NOT_WAR_CLEAR = "notWarClear",
 }
 

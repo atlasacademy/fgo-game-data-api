@@ -1714,6 +1714,7 @@ class GiftType(IntEnum):
     COMMAND_CODE = 11
     EVENT_POINT_BUFF = 12
     EVENT_BOARD_GAME_TOKEN = 13
+    EVENT_COMMAND_ASSIST = 14
 
 
 class NiceGiftType(StrEnum):
@@ -1732,6 +1733,7 @@ class NiceGiftType(StrEnum):
     commandCode = "commandCode"
     eventPointBuff = "eventPointBuff"
     eventBoardGameToken = "eventBoardGameToken"
+    eventCommandAssist = "eventCommandAssist"
 
 
 GIFT_TYPE_NAME: dict[int, NiceGiftType] = {
@@ -1748,6 +1750,7 @@ GIFT_TYPE_NAME: dict[int, NiceGiftType] = {
     11: NiceGiftType.commandCode,
     12: NiceGiftType.eventPointBuff,
     13: NiceGiftType.eventBoardGameToken,
+    14: NiceGiftType.eventCommandAssist,
 }
 
 
@@ -2156,6 +2159,7 @@ class CondType(IntEnum):
     ALL_SVT_TARGET_SKILL_LV_NUM = 174
     SUPER_BOSS_DAMAGE_ABOVE = 175
     SUPER_BOSS_DAMAGE_BELOW = 176
+    EVENT_MISSION_GROUP_ACHIEVE = 177
     NOT_WAR_CLEAR = 179
 
 
@@ -2336,6 +2340,7 @@ class NiceCondType(StrEnum):
     allSvtTargetSkillLvNum = "allSvtTargetSkillLvNum"
     superBossDamageAbove = "superBossDamageAbove"
     superBossDamageBelow = "superBossDamageBelow"
+    eventMissionGroupAchieve = "eventMissionGroupAchieve"
     notWarClear = "notWarClear"
 
 
@@ -2514,6 +2519,7 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     174: NiceCondType.allSvtTargetSkillLvNum,
     175: NiceCondType.superBossDamageAbove,
     176: NiceCondType.superBossDamageBelow,
+    177: NiceCondType.eventMissionGroupAchieve,
     179: NiceCondType.notWarClear,
 }
 
