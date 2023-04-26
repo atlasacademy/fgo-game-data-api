@@ -17,10 +17,10 @@ jobs:
           git clone https://git.atlasacademy.io/atlasacademy/fgo-game-data.git --branch JP --depth 1 /tmp/fgo-game-data-jp
           git clone https://git.atlasacademy.io/atlasacademy/fgo-game-data.git --branch NA --depth 1 /tmp/fgo-game-data-na
           python ./scripts/update_ce_translation.py --jp-master /tmp/fgo-game-data-jp/master --na-master /tmp/fgo-game-data-na/master
-      - name: Commit wiki update
+      - name: Commit translation update
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add app/data/mappings
           git commit -m "Updated translations" || echo "Nothing to commit"
           git push
