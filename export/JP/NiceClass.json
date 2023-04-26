@@ -480,6 +480,21 @@
     "autoSelSupportType": 0
   },
   {
+    "id": 33,
+    "className": "beast",
+    "name": "ビースト",
+    "individuality": "classBeast",
+    "attackRate": 1000,
+    "imageId": 33,
+    "iconImageId": 33,
+    "frameId": 0,
+    "priority": 910,
+    "groupType": 2,
+    "relationId": 33,
+    "supportGroup": 8,
+    "autoSelSupportType": 8
+  },
+  {
     "id": 97,
     "className": "unknown",
     "name": "不明",

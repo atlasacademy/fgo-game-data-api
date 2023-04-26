@@ -350,6 +350,7 @@ class SvtClass(StrEnum):
     salemAbby = "salemAbby"
     uOlgaMarie = "uOlgaMarie"
     uOlgaMarieAlienGod = "uOlgaMarieAlienGod"
+    beast = "beast"
     atlasUnmappedClass = "atlasUnmappedClass"
     # OTHER = "OTHER"
     ALL = "ALL"
@@ -390,6 +391,7 @@ CLASS_NAME: dict[int, SvtClass] = {
     30: SvtClass.beastILost,
     31: SvtClass.uOlgaMarieAlienGod,
     32: SvtClass.uOlgaMarie,
+    33: SvtClass.beast,
     97: SvtClass.unknown,
     # 98
     # 99
@@ -949,6 +951,9 @@ class Trait(StrEnum):
     cantBeSacrificed = "cantBeSacrificed"
     gutsBlock = "gutsBlock"
     classBeastILost = "classBeastILost"
+    holdingHolyGrail = "holdingHolyGrail"
+    standardClassServant = "standardClassServant"
+    classBeast = "classBeast"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -979,6 +984,7 @@ TRAIT_NAME: dict[int, Trait] = {
     121: Trait.classBeastIV,
     122: Trait.classBeastILost,
     123: Trait.classUOlgaMarie,
+    124: Trait.classBeast,
     200: Trait.attributeSky,
     201: Trait.attributeEarth,
     202: Trait.attributeHuman,
@@ -1119,6 +1125,8 @@ TRAIT_NAME: dict[int, Trait] = {
     2849: Trait.defender,
     2850: Trait.hasGoddessMetamorphosis,
     2851: Trait.servantsWithSkyAttribute,
+    2857: Trait.holdingHolyGrail,
+    2858: Trait.standardClassServant,
     # 2xxx: CQ or Story quests buff
     3000: Trait.attackPhysical,  # Normal attack, including NP
     3001: Trait.attackProjectile,
