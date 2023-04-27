@@ -11,12 +11,14 @@ from ....schemas.nice import (
     NiceEventMission,
     NiceEventMissionCondition,
     NiceEventMissionConditionDetail,
+    NiceEventMissionGroup,
     NiceEventRandomMission,
 )
 from ....schemas.raw import (
     MstEventMission,
     MstEventMissionCondition,
     MstEventMissionConditionDetail,
+    MstEventMissionGroup,
     MstEventRandomMission,
 )
 from ...utils import get_traits_list
@@ -134,3 +136,18 @@ def get_nice_random_mission(
         condId=random_mission.condId,
         condNum=random_mission.condNum,
     )
+
+
+def get_nice_mission_groups(
+    mission_groups: list[MstEventMissionGroup],
+) -> list[NiceEventMissionGroup]:
+    group_ids = {group.id for group in mission_groups}
+    return [
+        NiceEventMissionGroup(
+            id=group_id,
+            missionIds=[
+                group.missionId for group in mission_groups if group.id == group_id
+            ],
+        )
+        for group_id in group_ids
+    ]

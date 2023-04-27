@@ -36,6 +36,7 @@ from ...models.raw import (
     mstEventBulletinBoard,
     mstEventBulletinBoardRelease,
     mstEventCampaign,
+    mstEventCommandAssist,
     mstEventCooltimeReward,
     mstEventDigging,
     mstEventDiggingBlock,
@@ -46,6 +47,7 @@ from ...models.raw import (
     mstEventMission,
     mstEventMissionCondition,
     mstEventMissionConditionDetail,
+    mstEventMissionGroup,
     mstEventPointBuff,
     mstEventPointGroup,
     mstEventQuest,
@@ -136,6 +138,7 @@ from ...schemas.raw import (
     MstEventBulletinBoard,
     MstEventBulletinBoardRelease,
     MstEventCampaign,
+    MstEventCommandAssist,
     MstEventCooltimeReward,
     MstEventDigging,
     MstEventDiggingBlock,
@@ -146,6 +149,7 @@ from ...schemas.raw import (
     MstEventMission,
     MstEventMissionCondition,
     MstEventMissionConditionDetail,
+    MstEventMissionGroup,
     MstEventPointBuff,
     MstEventPointGroup,
     MstEventQuest,
@@ -447,6 +451,11 @@ schema_table_fetch_all: dict[  # type:ignore
         mstEventRecipe.c.eventId,
         mstEventRecipe.c.id,
     ),
+    MstEventCommandAssist: (
+        mstEventCommandAssist,
+        mstEventCommandAssist.c.eventId,
+        mstEventCommandAssist.c.id,
+    ),
 }
 
 TFetchAll = TypeVar("TFetchAll", bound=BaseModelORJson)
@@ -534,6 +543,11 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
         mstEventAlloutBattle,
         mstEventAlloutBattle.c.eventId,
         [mstEventAlloutBattle.c.eventId, mstEventAlloutBattle.c.alloutBattleId],
+    ),
+    MstEventMissionGroup: (
+        mstEventMissionGroup,
+        mstEventMissionGroup.c.id,
+        [mstEventMissionGroup.c.id, mstEventMissionGroup.c.missionId],
     ),
 }
 

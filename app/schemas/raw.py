@@ -1085,6 +1085,11 @@ class MstEventMissionConditionDetail(BaseModelORJson):
     targetEventIds: list[int]
 
 
+class MstEventMissionGroup(BaseModelORJson):
+    id: int
+    missionId: int
+
+
 class MstEventTower(BaseModelORJson):
     eventId: int
     towerId: int
@@ -1235,6 +1240,8 @@ class MstEventCampaign(BaseModelORJson):
     eventId: int
     target: int
     idx: int
+    groupId: int | None = None
+    priority: int | None = None
     value: int
     calcType: int
     entryCondMessage: str
@@ -1317,6 +1324,19 @@ class MstEventFortificationSvt(BaseModelORJson):
     svtId: int
     limitCount: int
     lv: int
+    commonReleaseId: int
+
+
+class MstEventCommandAssist(BaseModelORJson):
+    id: int
+    priority: int
+    eventId: int
+    name: str
+    lv: int
+    assistCardId: int
+    imageId: int
+    skillId: int
+    skillLv: int
     commonReleaseId: int
 
 
@@ -1937,6 +1957,7 @@ class EventEntity(BaseModelORJson):
     mstEventRandomMission: list[MstEventRandomMission]
     mstEventMissionCondition: list[MstEventMissionCondition]
     mstEventMissionConditionDetail: list[MstEventMissionConditionDetail]
+    mstEventMissionGroup: list[MstEventMissionGroup]
     mstEventTower: list[MstEventTower]
     mstEventTowerReward: list[MstEventTowerReward]
     mstBoxGacha: list[MstBoxGacha]
@@ -1958,6 +1979,7 @@ class EventEntity(BaseModelORJson):
     mstEventBulletinBoardRelease: list[MstEventBulletinBoardRelease]
     mstEventRecipe: list[MstEventRecipe]
     mstEventRecipeGift: list[MstEventRecipeGift]
+    mstEventCommandAssist: list[MstEventCommandAssist]
     mstItem: list[MstItem]
     mstCommonConsume: list[MstCommonConsume]
     mstCommonRelease: list[MstCommonRelease]
@@ -1969,6 +1991,7 @@ class EventEntity(BaseModelORJson):
     mstSvtExtra: list[MstSvtExtra]
     mstSvtLimitAdd: list[MstSvtLimitAdd]
     mstBgm: list[BgmEntity]
+    mstSkill: list[SkillEntityNoReverse]
 
 
 class WarEntity(BaseModelORJson):

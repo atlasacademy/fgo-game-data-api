@@ -9,6 +9,7 @@ from ....schemas.nice import (
     AssetURL,
     NiceEvent,
     NiceEventCooltime,
+    NiceSkill,
     NiceVoiceCond,
     NiceVoiceGroup,
 )
@@ -18,14 +19,16 @@ from ...utils import fmt_url, get_translation
 from ..bgm import get_nice_bgm_entity_from_raw
 from ..gift import GiftData
 from ..item import get_nice_item_from_raw
+from ..skill import get_nice_skill_from_raw
 from ..svt.voice import get_nice_voice_group
 from .bulletin_board import get_nice_bulletin_board
 from .campaign import get_nice_campaign, get_nice_event_quest
+from .command_assist import get_nice_command_assist
 from .cooltime import get_nice_event_cooltime
 from .digging import get_nice_digging
 from .fortification import get_nice_fortification
 from .lottery import get_nice_lottery
-from .mission import get_nice_missions, get_nice_random_mission
+from .mission import get_nice_mission_groups, get_nice_missions, get_nice_random_mission
 from .point import get_nice_pointBuff, get_nice_pointGroup
 from .recipe import get_nice_recipe
 from .reward import get_nice_reward
@@ -62,6 +65,11 @@ async def get_nice_event(
     conn: AsyncConnection, region: Region, event_id: int, lang: Language
 ) -> NiceEvent:
     raw_event = await raw.get_event_entity(conn, event_id)
+
+    nice_skills = [
+        await get_nice_skill_from_raw(conn, region, skill, NiceSkill, lang)
+        for skill in raw_event.mstSkill
+    ]
 
     base_settings = {"base_url": settings.asset_url, "region": region}
 
@@ -221,6 +229,7 @@ async def get_nice_event(
             get_nice_random_mission(random_mission)
             for random_mission in raw_event.mstEventRandomMission
         ],
+        missionGroups=get_nice_mission_groups(raw_event.mstEventMissionGroup),
         towers=[
             get_nice_event_tower(
                 region, tower, raw_event.mstEventTowerReward, gift_data
@@ -308,6 +317,17 @@ async def get_nice_event(
         ],
         campaignQuests=[
             get_nice_event_quest(quest) for quest in raw_event.mstEventQuest
+        ],
+        commandAssists=[
+            get_nice_command_assist(
+                region,
+                command_assist,
+                raw_event.mstCommonRelease,
+                next(
+                    skill for skill in nice_skills if skill.id == command_assist.skillId
+                ),
+            )
+            for command_assist in raw_event.mstEventCommandAssist
         ],
         campaigns=[
             get_nice_campaign(campaign) for campaign in raw_event.mstEventCampaign

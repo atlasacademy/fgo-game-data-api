@@ -55,6 +55,7 @@ from ..schemas.raw import (
     MstEventBulletinBoard,
     MstEventBulletinBoardRelease,
     MstEventCampaign,
+    MstEventCommandAssist,
     MstEventCooltimeReward,
     MstEventDigging,
     MstEventDiggingBlock,
@@ -65,6 +66,7 @@ from ..schemas.raw import (
     MstEventMission,
     MstEventMissionCondition,
     MstEventMissionConditionDetail,
+    MstEventMissionGroup,
     MstEventPointBuff,
     MstEventPointGroup,
     MstEventQuest,
@@ -820,6 +822,10 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         for target_id in cond.targetIds
     ]
 
+    mission_groups = await fetch.get_all_multiple(
+        conn, MstEventMissionGroup, mission_ids
+    )
+
     cond_details = await fetch.get_all_multiple(
         conn, MstEventMissionConditionDetail, cond_detail_ids
     )
@@ -836,6 +842,16 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
     }
     gacha_talks = await fetch.get_all_multiple(
         conn, MstBoxGachaTalk, box_gacha_talk_ids
+    )
+
+    command_assists = await fetch.get_all(conn, MstEventCommandAssist, event_id)
+    command_assist_release_ids = {
+        command.commonReleaseId for command in command_assists
+    }
+    command_assist_skill_ids = {command.skillId for command in command_assists}
+
+    raw_skills = await get_skill_entity_no_reverse_many(
+        conn, command_assist_skill_ids, True
     )
 
     voice_plays = await fetch.get_all(conn, MstEventVoicePlay, event_id)
@@ -930,7 +946,10 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
     )
 
     common_release_ids = (
-        cooltime_release_ids | recipe_release_ids | fortification_release_ids
+        cooltime_release_ids
+        | recipe_release_ids
+        | fortification_release_ids
+        | command_assist_release_ids
     )
     common_releases = await fetch.get_all_multiple(
         conn, MstCommonRelease, common_release_ids
@@ -1005,6 +1024,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         ),
         mstEventMissionCondition=conds,
         mstEventMissionConditionDetail=cond_details,
+        mstEventMissionGroup=mission_groups,
         mstEventTower=await fetch.get_all(conn, MstEventTower, event_id),
         mstEventTowerReward=tower_rewards,
         mstBoxGacha=box_gachas,
@@ -1028,6 +1048,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         mstEventBulletinBoardRelease=bulletin_releases,
         mstEventRecipe=recipes,
         mstEventRecipeGift=recipe_gifts,
+        mstEventCommandAssist=command_assists,
         mstItem=mstItem,
         mstCommonConsume=common_consumes,
         mstCommonRelease=common_releases,
@@ -1039,6 +1060,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         mstSvtExtra=mstSvtExtra,
         mstSvtLimitAdd=mstSvtLimitAdd,
         mstBgm=mstBgm,
+        mstSkill=raw_skills,
     )
 
 

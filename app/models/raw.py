@@ -1239,6 +1239,14 @@ mstEventMissionConditionDetail = Table(
 )
 
 
+mstEventMissionGroup = Table(
+    "mstEventMissionGroup",
+    metadata,
+    Column("id", Integer),
+    Column("missionId", Integer),
+)
+
+
 mstEventTower = Table(
     "mstEventTower",
     metadata,
@@ -1551,6 +1559,22 @@ mstEventRewardSet = Table(
     Column("name", String),
     Column("detail", String),
     Column("bgImageId", Integer),
+)
+
+
+mstEventCommandAssist = Table(
+    "mstEventCommandAssist",
+    metadata,
+    Column("id", Integer),
+    Column("priority", Integer),
+    Column("eventId", Integer),
+    Column("name", String),
+    Column("lv", Integer),
+    Column("assistCardId", Integer),
+    Column("imageId", Integer),
+    Column("skillId", Integer),
+    Column("skillLv", Integer),
+    Column("commonReleaseId", Integer),
 )
 
 
@@ -2118,12 +2142,18 @@ TABLES_TO_BE_LOADED = [
     [mstCv],
     [mstEquip, mstEquipAdd, mstEquipExp, mstEquipSkill],
     [mstEnemyMaster, mstEnemyMasterBattle],
-    [mstEventMission, mstEventMissionCondition, mstEventMissionConditionDetail],
+    [
+        mstEventMission,
+        mstEventMissionCondition,
+        mstEventMissionConditionDetail,
+        mstEventMissionGroup,
+    ],
     [mstEventPointBuff],
     [mstEventPointGroup],
     [mstEventReward, mstEventRewardScene, mstEventRewardSet],
     [mstEventTower, mstEventTowerReward],
     [mstEventVoicePlay],
+    [mstEventCommandAssist],
     [mstFriendship],
     [mstGiftAdd],
     [mstIllustrator],
