@@ -36,6 +36,7 @@ from ...schemas.nice import (
     AssetURL,
     DeckType,
     EnemyDrop,
+    NiceBgm,
     NiceQuest,
     NiceQuestHint,
     NiceQuestMessage,
@@ -142,9 +143,11 @@ def get_nice_stage(
     waveStartMovies: dict[int, list[NiceStageStartMovie]],
     lang: Language,
 ) -> NiceStage:
-    bgm = get_nice_bgm(
-        region, next(bgm for bgm in bgms if bgm.id == raw_stage.bgmId), lang
-    )
+    filtered_bgms = [bgm for bgm in bgms if bgm.id == raw_stage.bgmId]
+    if filtered_bgms:
+        bgm = get_nice_bgm(region, filtered_bgms[0], lang)
+    else:
+        bgm = NiceBgm(id=0, name="", fileName="", notReleased=True)
 
     return NiceStage(
         wave=raw_stage.wave,
