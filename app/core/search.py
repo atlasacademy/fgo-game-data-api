@@ -455,6 +455,7 @@ async def search_quest(
         },
         enemy_skill=search_param.enemySkillId,
         enemy_np=search_param.enemyNoblePhantasmId,
+        enemy_script=search_param.enemyScript,
     )
 
     return sorted(matches, key=lambda quest: (quest.id, quest.phase))

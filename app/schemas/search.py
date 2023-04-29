@@ -426,6 +426,7 @@ class QuestSearchQueryParams:
     enemyClassName: list[SvtClass] = Query([])
     enemySkillId: list[int] | None = Query(None)
     enemyNoblePhantasmId: list[int] | None = Query(None)
+    enemyScript: list[str] | None = Query(None, max_length=999)
 
     def hasSearchParams(self) -> bool:
         return any(
@@ -445,6 +446,7 @@ class QuestSearchQueryParams:
                 self.enemyClassName,
                 self.enemySkillId,
                 self.enemyNoblePhantasmId,
+                self.enemyScript,
             ]
         )
 
@@ -467,6 +469,7 @@ class QuestSearchQueryParams:
         - **enemyClassName**: Enemy's Class Name Enum.
         - **enemySkillId**: Enemy's Skill, Passive Skill,
         - **enemyNoblePhantasmId**: Enemy's NP
+        - **enemyScript**: JSON string of deckSvt's enemyScript to search. E.g. `enemyScript={"appear":1}`.
 
         At least one of the parameter is required for the query.
         """

@@ -1,6 +1,7 @@
 import functools
 from typing import Any, Iterable, Optional, Union
 
+import orjson
 from sqlalchemy import CTE, Integer, Label, Table
 from sqlalchemy.dialects.postgresql import array_agg
 from sqlalchemy.exc import DBAPIError
@@ -191,6 +192,7 @@ async def get_quest_phase_search(
     enemy_class: Optional[Iterable[int]] = None,
     enemy_skill: Optional[Iterable[int]] = None,
     enemy_np: Optional[Iterable[int]] = None,
+    enemy_script: Iterable[str] | None = None,
 ) -> list[MstQuestWithPhase]:
     from_clause: Union[Join, Table] = MSTQUEST_WITH_PHASE_FROM
     if bgm_id or field_ai_id:
@@ -208,6 +210,7 @@ async def get_quest_phase_search(
         or enemy_class
         or enemy_skill
         or enemy_np
+        or enemy_script
     ):
         from_clause = from_clause.outerjoin(
             rayshiftQuest,
@@ -335,6 +338,35 @@ async def get_quest_phase_search(
     if enemy_np:
         for np_id in enemy_np:
             where_clause.append(questDetail_contains({"treasureDeviceId": np_id}))
+
+    if enemy_script:
+
+        def deck_enemyScript_contain(
+            deck: str, script_data: Any, deck_is_list: bool = True
+        ) -> ColumnElement[bool]:
+            if deck_is_list:
+                return rayshiftQuest.c.questDetail.contains(
+                    {deck: [{"svts": [{"enemyScript": script_data}]}]}
+                )
+
+            return rayshiftQuest.c.questDetail.contains(
+                {deck: {"svts": [{"enemyScript": script_data}]}}
+            )
+
+        for script in enemy_script:
+            try:
+                parsed_script = orjson.loads(script)
+                where_clause.append(
+                    or_(
+                        deck_enemyScript_contain("enemyDeck", parsed_script),
+                        deck_enemyScript_contain("callDeck", parsed_script),
+                        deck_enemyScript_contain("shiftDeck", parsed_script),
+                        deck_enemyScript_contain("transformDeck", parsed_script, False),
+                        deck_enemyScript_contain("aiNpcDeck", parsed_script, False),
+                    )
+                )
+            except orjson.JSONDecodeError:
+                pass
 
     quest_search_stmt = (
         MSTQUEST_WITH_PHASE_SELECT.distinct()
