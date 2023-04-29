@@ -55,8 +55,12 @@ async def get_rayshift_quest_db(
         .where(and_(*where_conds))
     )
 
+    order_by = [rayshiftQuest.c.queryId.desc()]
+
     if not questHash:
-        stmt = stmt.order_by(rayshiftQuestHash.c.questHash.desc())
+        order_by.append(rayshiftQuestHash.c.questHash.desc())
+
+    stmt = stmt.order_by(*order_by)
 
     rayshift_quest = await fetch_one(conn, stmt)
     if rayshift_quest and rayshift_quest.questDetail:
