@@ -4936,3 +4936,45 @@ BUFF_CONVERT_LIMIT_TYPE_NAME: dict[int, NiceBuffConvertLimitType] = {
     0: NiceBuffConvertLimitType.all,
     1: NiceBuffConvertLimitType.self_,
 }
+
+
+class NpcServantFollowerFlag(IntEnum):
+    NPC = 1
+    HIDE_SUPPORT = 2
+    NOT_USED_TREASURE_DEVICE = 4
+    NO_DISPLAY_BONUS_ICON = 8
+    APPLY_SVT_CHANGE = 16
+    HIDE_EQUIP = 32
+    NO_DISPLAY_BONUS_ICON_EQUIP = 64
+    HIDE_TREASURE_DEVICE_LV = 256
+    HIDE_TREASURE_DEVICE_DETAIL = 512
+    HIDE_RARITY = 1024
+
+
+class NiceNpcServantFollowerFlag(StrEnum):
+    """NPC Servant Follower Flag"""
+
+    npc = "npc"
+    hideSupport = "hideSupport"
+    notUsedTreasureDevice = "notUsedTreasureDevice"
+    noDisplayBonusIcon = "noDisplayBonusIcon"
+    applySvtChange = "applySvtChange"
+    hideEquip = "hideEquip"
+    noDisplayBonusIconEquip = "noDisplayBonusIconEquip"
+    hideTreasureDeviceLv = "hideTreasureDeviceLv"
+    hideTreasureDeviceDetail = "hideTreasureDeviceDetail"
+    hideRarity = "hideRarity"
+
+
+NPC_SERVANT_FOLLOWER_FLAG_NAME: dict[int, NiceNpcServantFollowerFlag] = {
+    1: NiceNpcServantFollowerFlag.npc,
+    2: NiceNpcServantFollowerFlag.hideSupport,
+    4: NiceNpcServantFollowerFlag.notUsedTreasureDevice,
+    8: NiceNpcServantFollowerFlag.noDisplayBonusIcon,
+    16: NiceNpcServantFollowerFlag.applySvtChange,
+    32: NiceNpcServantFollowerFlag.hideEquip,
+    64: NiceNpcServantFollowerFlag.noDisplayBonusIconEquip,
+    256: NiceNpcServantFollowerFlag.hideTreasureDeviceLv,
+    512: NiceNpcServantFollowerFlag.hideTreasureDeviceDetail,
+    1024: NiceNpcServantFollowerFlag.hideRarity,
+}

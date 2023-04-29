@@ -1673,3 +1673,16 @@ export enum NiceBuffConvertLimitType {
     ALL = "all",
     SELF = "self",
 }
+
+export enum NiceNpcServantFollowerFlag {
+    NPC = "npc",
+    HIDE_SUPPORT = "hideSupport",
+    NOT_USED_TREASURE_DEVICE = "notUsedTreasureDevice",
+    NO_DISPLAY_BONUS_ICON = "noDisplayBonusIcon",
+    APPLY_SVT_CHANGE = "applySvtChange",
+    HIDE_EQUIP = "hideEquip",
+    NO_DISPLAY_BONUS_ICON_EQUIP = "noDisplayBonusIconEquip",
+    HIDE_TREASURE_DEVICE_LV = "hideTreasureDeviceLv",
+    HIDE_TREASURE_DEVICE_DETAIL = "hideTreasureDeviceDetail",
+    HIDE_RARITY = "hideRarity",
+}

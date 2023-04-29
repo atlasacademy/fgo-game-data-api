@@ -530,6 +530,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "Buff Convert Limit Type",
         "BUFF_CONVERT_LIMIT_TYPE_NAME",
     ),
+    (
+        "NpcServantFollowerEntity.FlagField",
+        "NpcServantFollowerFlag",
+        "NiceNpcServantFollowerFlag",
+        "NPC Servant Follower Flag",
+        "NPC_SERVANT_FOLLOWER_FLAG_NAME",
+    ),
 ]
 
 

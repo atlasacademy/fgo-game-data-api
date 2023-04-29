@@ -65,6 +65,7 @@ from .gameenums import (
     NiceMissionProgressType,
     NiceMissionRewardType,
     NiceMissionType,
+    NiceNpcServantFollowerFlag,
     NicePayType,
     NicePurchaseType,
     NiceQuestAfterClearType,
@@ -2260,6 +2261,7 @@ class NpcServant(BaseModelORJson):
     skills: EnemySkill
     noblePhantasm: SupportServantTd
     limit: SupportServantLimit
+    flags: list[NiceNpcServantFollowerFlag]
 
 
 class SupportServant(BaseModelORJson):
