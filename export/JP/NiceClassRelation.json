@@ -24,6 +24,7 @@
     "beastILost": 1000,
     "uOlgaMarieAlienGod": 1000,
     "beast": 500,
+    "beastVI": 500,
     "cccFinaleEmiyaAlter": 1000
   },
   "archer": {
@@ -51,6 +52,7 @@
     "beastILost": 1000,
     "uOlgaMarieAlienGod": 1000,
     "beast": 500,
+    "beastVI": 500,
     "cccFinaleEmiyaAlter": 1000
   },
   "lancer": {
@@ -78,6 +80,7 @@
     "beastILost": 1000,
     "uOlgaMarieAlienGod": 1000,
     "beast": 500,
+    "beastVI": 500,
     "cccFinaleEmiyaAlter": 1000
   },
   "rider": {
@@ -105,6 +108,7 @@
     "beastILost": 2000,
     "uOlgaMarieAlienGod": 1000,
     "beast": 500,
+    "beastVI": 500,
     "cccFinaleEmiyaAlter": 1000
   },
   "caster": {
@@ -132,6 +136,7 @@
     "beastILost": 2000,
     "uOlgaMarieAlienGod": 1000,
     "beast": 500,
+    "beastVI": 500,
     "cccFinaleEmiyaAlter": 1000
   },
   "assassin": {
@@ -159,6 +164,7 @@
     "beastILost": 2000,
     "uOlgaMarieAlienGod": 1000,
     "beast": 500,
+    "beastVI": 500,
     "cccFinaleEmiyaAlter": 1000
   },
   "berserker": {
@@ -186,6 +192,7 @@
     "beastILost": 1500,
     "uOlgaMarieAlienGod": 1000,
     "beast": 500,
+    "beastVI": 500,
     "cccFinaleEmiyaAlter": 1000
   },
   "shielder": {
@@ -213,6 +220,7 @@
     "beastILost": 1000,
     "uOlgaMarieAlienGod": 1000,
     "beast": 1000,
+    "beastVI": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "ruler": {
@@ -240,6 +248,7 @@
     "beastILost": 1000,
     "uOlgaMarieAlienGod": 1000,
     "beast": 2000,
+    "beastVI": 2000,
     "cccFinaleEmiyaAlter": 1000
   },
   "alterEgo": {
@@ -267,6 +276,7 @@
     "beastILost": 1000,
     "uOlgaMarieAlienGod": 1000,
     "beast": 2000,
+    "beastVI": 2000,
     "cccFinaleEmiyaAlter": 1200
   },
   "avenger": {
@@ -294,6 +304,7 @@
     "beastILost": 1000,
     "uOlgaMarieAlienGod": 1000,
     "beast": 2000,
+    "beastVI": 2000,
     "cccFinaleEmiyaAlter": 1000
   },
   "demonGodPillar": {
@@ -321,6 +332,7 @@
     "beastILost": 1000,
     "uOlgaMarieAlienGod": 1000,
     "beast": 1000,
+    "beastVI": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "beastII": {
@@ -348,6 +360,7 @@
     "beastILost": 1000,
     "uOlgaMarieAlienGod": 1000,
     "beast": 1000,
+    "beastVI": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "beastI": {
@@ -375,6 +388,7 @@
     "beastILost": 1000,
     "uOlgaMarieAlienGod": 1000,
     "beast": 1000,
+    "beastVI": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "moonCancer": {
@@ -402,6 +416,7 @@
     "beastILost": 2000,
     "uOlgaMarieAlienGod": 1000,
     "beast": 2000,
+    "beastVI": 2000,
     "cccFinaleEmiyaAlter": 1200
   },
   "beastIIIR": {
@@ -429,6 +444,7 @@
     "beastILost": 1000,
     "uOlgaMarieAlienGod": 1000,
     "beast": 1000,
+    "beastVI": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "foreigner": {
@@ -456,6 +472,7 @@
     "beastILost": 1000,
     "uOlgaMarieAlienGod": 1000,
     "beast": 2000,
+    "beastVI": 2000,
     "cccFinaleEmiyaAlter": 1000
   },
   "beastIIIL": {
@@ -483,6 +500,7 @@
     "beastILost": 1000,
     "uOlgaMarieAlienGod": 1000,
     "beast": 1000,
+    "beastVI": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "beastUnknown": {
@@ -510,6 +528,7 @@
     "beastILost": 1000,
     "uOlgaMarieAlienGod": 1000,
     "beast": 1000,
+    "beastVI": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "pretender": {
@@ -537,6 +556,7 @@
     "beastILost": 1000,
     "uOlgaMarieAlienGod": 1000,
     "beast": 2000,
+    "beastVI": 2000,
     "cccFinaleEmiyaAlter": 1000
   },
   "beastIV": {
@@ -564,6 +584,7 @@
     "beastILost": 1000,
     "uOlgaMarieAlienGod": 1000,
     "beast": 1000,
+    "beastVI": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "beastILost": {
@@ -591,6 +612,7 @@
     "beastILost": 1000,
     "uOlgaMarieAlienGod": 1000,
     "beast": 1000,
+    "beastVI": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "uOlgaMarieAlienGod": {
@@ -618,6 +640,7 @@
     "beastILost": 1000,
     "uOlgaMarieAlienGod": 1000,
     "beast": 1000,
+    "beastVI": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "beast": {
@@ -645,6 +668,35 @@
     "beastILost": 1000,
     "uOlgaMarieAlienGod": 1000,
     "beast": 1000,
+    "beastVI": 1000,
+    "cccFinaleEmiyaAlter": 1000
+  },
+  "beastVI": {
+    "saber": 1500,
+    "archer": 1500,
+    "lancer": 1500,
+    "rider": 1500,
+    "caster": 1500,
+    "assassin": 1500,
+    "berserker": 2000,
+    "shielder": 1000,
+    "ruler": 500,
+    "alterEgo": 500,
+    "avenger": 500,
+    "demonGodPillar": 1000,
+    "beastII": 1000,
+    "beastI": 1000,
+    "moonCancer": 500,
+    "beastIIIR": 1000,
+    "foreigner": 500,
+    "beastIIIL": 1000,
+    "beastUnknown": 1000,
+    "pretender": 500,
+    "beastIV": 1000,
+    "beastILost": 1000,
+    "uOlgaMarieAlienGod": 1000,
+    "beast": 1000,
+    "beastVI": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "cccFinaleEmiyaAlter": {
@@ -671,6 +723,7 @@
     "beastIV": 1000,
     "beastILost": 1000,
     "uOlgaMarieAlienGod": 1000,
-    "beast": 1000
+    "beast": 1000,
+    "beastVI": 1000
   }
 }

@@ -1463,7 +1463,9 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": []
+    "maxRate": [
+      0
+    ]
   },
   "invisibleBattleChara": {
     "limit": "none",
