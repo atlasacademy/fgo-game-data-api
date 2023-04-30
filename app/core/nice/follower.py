@@ -171,6 +171,7 @@ def get_nice_support_servant(
         traits=get_nice_follower_traits(npcSvtFollower.individuality),
         skills=get_nice_follower_skills(npcSvtFollower, all_skills),
         noblePhantasm=get_nice_follower_td(npcSvtFollower, all_tds),
+        flags=get_flags(npcSvtFollower.flag, NPC_SERVANT_FOLLOWER_FLAG_NAME),
         equips=[get_nice_follower_equip(equip, all_equips) for equip in npcSvtEquip],
         script=get_nice_follower_script(npcFollower.npcScript),
         limit=get_nice_follower_limit(npcSvtFollower),

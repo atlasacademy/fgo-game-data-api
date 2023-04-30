@@ -2276,6 +2276,7 @@ class SupportServant(BaseModelORJson):
     traits: list[NiceTrait]
     skills: EnemySkill
     noblePhantasm: SupportServantTd
+    flags: list[NiceNpcServantFollowerFlag]
     equips: list[SupportServantEquip]
     script: SupportServantScript
     limit: SupportServantLimit
