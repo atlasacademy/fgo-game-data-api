@@ -351,7 +351,10 @@ async def get_nice_servant(
         playable_tds = [
             td
             for td in raw_svt.mstTreasureDevice
-            if td.mstSvtTreasureDevice[0].num == 1
+            if next(
+                svtTd for svtTd in td.mstSvtTreasureDevice if svtTd.svtId == svt_id
+            ).num
+            == 1
         ]
         for playable_td in playable_tds:
             if "tdTypeChangeIDs" in playable_td.mstTreasureDevice.script:
