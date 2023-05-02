@@ -352,6 +352,7 @@ class SvtClass(StrEnum):
     uOlgaMarieAlienGod = "uOlgaMarieAlienGod"
     beast = "beast"
     beastVI = "beastVI"
+    beastVIBoss = "beastVIBoss"
     atlasUnmappedClass = "atlasUnmappedClass"
     # OTHER = "OTHER"
     ALL = "ALL"
@@ -394,6 +395,7 @@ CLASS_NAME: dict[int, SvtClass] = {
     32: SvtClass.uOlgaMarie,
     33: SvtClass.beast,
     34: SvtClass.beastVI,
+    35: SvtClass.beastVIBoss,
     97: SvtClass.unknown,
     # 98
     # 99
@@ -957,6 +959,7 @@ class Trait(StrEnum):
     standardClassServant = "standardClassServant"
     classBeast = "classBeast"
     classBeastVI = "classBeastVI"
+    classBeastVIBoss = "classBeastVIBoss"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -989,6 +992,7 @@ TRAIT_NAME: dict[int, Trait] = {
     123: Trait.classUOlgaMarie,
     124: Trait.classBeast,
     125: Trait.classBeastVI,
+    126: Trait.classBeastVIBoss,
     200: Trait.attributeSky,
     201: Trait.attributeEarth,
     202: Trait.attributeHuman,
