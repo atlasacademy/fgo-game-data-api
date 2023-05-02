@@ -51,6 +51,10 @@ async def get_nice_td(
     region: Region,
     lang: Language,
 ) -> list[dict[str, Any]]:
+    sorted_svtTd = sorted(
+        tdEntity.mstSvtTreasureDevice, key=lambda x: (x.svtId, x.num, -x.priority)
+    )
+
     nice_td: dict[str, Any] = {
         "id": tdEntity.mstTreasureDevice.id,
         "name": get_np_name(
@@ -64,7 +68,7 @@ async def get_nice_td(
         "individuality": get_traits_list(tdEntity.mstTreasureDevice.individuality),
         "npSvts": [
             get_nice_td_svt(td_svt)
-            for td_svt in tdEntity.mstSvtTreasureDevice
+            for td_svt in sorted_svtTd
             if svtId == -1 or td_svt.svtId == svtId
         ],
     }
@@ -124,9 +128,7 @@ async def get_nice_td(
 
             nice_td["functions"].append(nice_func)
 
-    chosen_svts = [
-        svt_td for svt_td in tdEntity.mstSvtTreasureDevice if svt_td.svtId == svtId
-    ]
+    chosen_svts = [svt_td for svt_td in sorted_svtTd if svt_td.svtId == svtId]
 
     base_settings_id = {
         "base_url": settings.asset_url,
@@ -134,7 +136,7 @@ async def get_nice_td(
         "item_id": svtId,
     }
 
-    if not chosen_svts and not tdEntity.mstSvtTreasureDevice:  # pragma: no cover
+    if not chosen_svts and not sorted_svtTd:  # pragma: no cover
         base_settings_id["item_id"] = tdEntity.mstTreasureDevice.id
         nice_td |= {
             "icon": AssetURL.commands.format(**base_settings_id, i="np"),
@@ -150,7 +152,7 @@ async def get_nice_td(
         if chosen_svts:
             chosen_svt = chosen_svts[0]
         else:
-            chosen_svt = tdEntity.mstSvtTreasureDevice[0]
+            chosen_svt = sorted_svtTd[0]
 
         if svtId == -1:
             base_settings_id["item_id"] = chosen_svt.svtId
