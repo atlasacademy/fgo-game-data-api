@@ -2200,7 +2200,9 @@ class NiceStage(BaseModelORJson):
     limitAct: StageLimitActType | None = Field(
         None, title="Action after turn countdown is over"
     )
+    NoEntryIds: list[int] | None = None
     waveStartMovies: list[NiceStageStartMovie] = []
+    originalScript: dict[str, Any]
     enemies: list[QuestEnemy] = []
 
 

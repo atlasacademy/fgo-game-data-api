@@ -160,7 +160,9 @@ def get_nice_stage(
         limitAct=STAGE_LIMIT_ACT_TYPE_NAME[raw_stage.script["LimitAct"]]
         if "LimitAct" in raw_stage.script
         else None,
+        NoEntryIds=raw_stage.script.get("NoEntryIds"),
         waveStartMovies=waveStartMovies.get(raw_stage.wave, []),
+        originalScript=raw_stage.script or {},
         enemies=enemies,
     )
 
