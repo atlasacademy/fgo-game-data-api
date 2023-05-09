@@ -277,13 +277,17 @@ async def get_skill_entity(
     )
 
     if reverse and reverseDepth >= ReverseDepth.servant:
-        activeSkills = {svt_skill.svtId for svt_skill in skill_entity.mstSvtSkill}
-
+        activeSkills = set(
+            await get_reverse_ids(
+                redis, region, RedisReverse.ACTIVE_SKILL_TO_SVT, skill_id
+            )
+        )
         passiveSkills = set(
             await get_reverse_ids(
                 redis, region, RedisReverse.PASSIVE_SKILL_TO_SVT, skill_id
             )
         )
+
         mc_ids = await get_reverse_ids(
             redis, region, RedisReverse.SKILL_TO_MC, skill_id
         )
