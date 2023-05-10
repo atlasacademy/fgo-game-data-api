@@ -127,7 +127,10 @@ async def parse_dataVals(
                         text = "Value"
                     elif i == 2:
                         text = "Value2"
-                elif functype == FuncType.GAIN_NP_INDIVIDUAL_SUM:
+                elif functype in {
+                    FuncType.GAIN_NP_INDIVIDUAL_SUM,
+                    FuncType.SUB_FIELD_BUFF,
+                }:
                     if i == 0:
                         text = "Rate"
                     elif i == 1:
