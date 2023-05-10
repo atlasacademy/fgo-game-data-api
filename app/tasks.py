@@ -41,6 +41,7 @@ from .models.raw import mstSvtExtra
 from .redis import Redis
 from .redis.helpers.repo_version import get_repo_version, set_repo_version
 from .redis.load import load_redis_data, load_svt_extra_redis
+from .routers.secret import app_info
 from .routers.utils import list_string
 from .schemas.base import BaseModelORJson
 from .schemas.common import Language, Region, RepoInfo
@@ -422,7 +423,12 @@ async def generate_exports(
 
             repo_info = await get_repo_version(redis, region)
             if repo_info is not None:
-                await dump_normal(export_path, "info", repo_info.dict())
+                export_info = dict(
+                    **repo_info,
+                    serverHash=app_info.hash,
+                    serverTimestamp=app_info.timestamp,
+                )
+                await dump_normal(export_path, "info", export_info)
 
             run_time = time.perf_counter() - start_time
             logger.info(f"Exported {region} data in {run_time:.2f}s.")
