@@ -1,15 +1,12 @@
 from typing import Any, Optional
 
-import orjson
 from fastapi import APIRouter, BackgroundTasks, Depends, Response
-from git import Repo  # type: ignore
 from pydantic import BaseModel
 
-from ..config import Settings, project_root
+from ..config import Settings, instance_info
 from ..core.info import get_all_repo_info
 from ..db.engine import async_engines
 from ..redis import Redis
-from ..schemas.common import RepoInfo
 from ..tasks import pull_and_update
 from .deps import get_redis
 from .utils import pretty_print_response
@@ -24,20 +21,6 @@ router = APIRouter(
     else "",
     include_in_schema=False,
 )
-
-
-repo = Repo(project_root)
-latest_commit = repo.commit()
-app_info = RepoInfo(
-    hash=latest_commit.hexsha[:6],
-    timestamp=latest_commit.committed_date,  # pyright: reportGeneralTypeIssues=false
-)
-app_settings_str = orjson.loads(settings.json())
-instance_info = {
-    "app_version": app_info.dict(),
-    "app_settings": app_settings_str,
-    "file_path": str(project_root),
-}
 
 
 async def get_secret_info(redis: Redis) -> dict[str, Any]:

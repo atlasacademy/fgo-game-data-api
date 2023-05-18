@@ -11,7 +11,7 @@ from git import Repo  # type: ignore
 from pydantic import DirectoryPath
 from sqlalchemy.ext.asyncio import AsyncConnection, AsyncEngine
 
-from .config import Settings, logger, project_root
+from .config import Settings, app_info, logger, project_root
 from .core.basic import (
     get_all_basic_ccs,
     get_all_basic_equips,
@@ -422,7 +422,6 @@ async def generate_exports(
 
             repo_info = await get_repo_version(redis, region)
             if repo_info is not None:
-                from .routers.secret import app_info
                 export_info = dict(
                     **repo_info.dict(),
                     serverHash=app_info.hash,
@@ -443,7 +442,7 @@ async def update_master_repo_info(
             latest_commit = repo.commit()
             repo_info = RepoInfo(
                 hash=latest_commit.hexsha[:6],
-                timestamp=latest_commit.committed_date,  # pyright: reportGeneralTypeIssues=false
+                timestamp=latest_commit.committed_date,  # pyright: ignore reportGeneralTypeIssues
             )
             await set_repo_version(redis, region, repo_info)
 

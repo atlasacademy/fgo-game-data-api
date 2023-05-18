@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Any, Optional
 
 import orjson
+from git import Repo  # type: ignore
 from pydantic import (
     BaseSettings,
     DirectoryPath,
@@ -19,7 +20,7 @@ from pydantic.main import BaseModel
 from pydantic.tools import parse_obj_as
 from uvicorn.logging import DefaultFormatter
 
-from .schemas.common import Region
+from .schemas.common import Region, RepoInfo
 
 
 project_root = Path(__file__).resolve().parents[1]
@@ -104,3 +105,17 @@ for url in settings.error_webhooks:
         )
         http_handler.setLevel(logging.ERROR)
         logger.addHandler(http_handler)
+
+
+repo = Repo(project_root)
+latest_commit = repo.commit()
+app_info = RepoInfo(
+    hash=latest_commit.hexsha[:6],
+    timestamp=latest_commit.committed_date,
+)
+app_settings_str = orjson.loads(settings.json())
+instance_info = {
+    "app_version": app_info.dict(),
+    "app_settings": app_settings_str,
+    "file_path": str(project_root),
+}
