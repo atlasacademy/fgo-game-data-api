@@ -170,6 +170,8 @@ class FuncType(IntEnum):
     BREAK_GAUGE_UP = 59
     BREAK_GAUGE_DOWN = 60
     MOVE_TO_LAST_SUBMEMBER = 61
+    EXTEND_USER_EQUIP_SKILL = 62
+    UPDATE_ENEMY_ENTRY_MAX_COUNT_EACH_TURN = 63
     EXP_UP = 101
     QP_UP = 102
     DROP_UP = 103
@@ -272,6 +274,8 @@ class NiceFuncType(StrEnum):
     breakGaugeUp = "breakGaugeUp"
     breakGaugeDown = "breakGaugeDown"
     moveToLastSubmember = "moveToLastSubmember"
+    extendUserEquipSkill = "extendUserEquipSkill"
+    updateEnemyEntryMaxCountEachTurn = "updateEnemyEntryMaxCountEachTurn"
     expUp = "expUp"
     qpUp = "qpUp"
     dropUp = "dropUp"
@@ -372,6 +376,8 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     59: NiceFuncType.breakGaugeUp,
     60: NiceFuncType.breakGaugeDown,
     61: NiceFuncType.moveToLastSubmember,
+    62: NiceFuncType.extendUserEquipSkill,
+    63: NiceFuncType.updateEnemyEntryMaxCountEachTurn,
     101: NiceFuncType.expUp,
     102: NiceFuncType.qpUp,
     103: NiceFuncType.dropUp,
@@ -441,6 +447,7 @@ class FuncTargetType(IntEnum):
     ENEMY_ONE_NO_TARGET_NO_ACTION = 27
     PT_ONE_HP_LOWEST_VALUE = 28
     PT_ONE_HP_LOWEST_RATE = 29
+    ENEMY_RANGE = 30
 
 
 class NiceFuncTargetType(StrEnum):
@@ -476,6 +483,7 @@ class NiceFuncTargetType(StrEnum):
     enemyOneNoTargetNoAction = "enemyOneNoTargetNoAction"
     ptOneHpLowestValue = "ptOneHpLowestValue"
     ptOneHpLowestRate = "ptOneHpLowestRate"
+    enemyRange = "enemyRange"
 
 
 FUNC_TARGETTYPE_NAME: dict[int, NiceFuncTargetType] = {
@@ -509,6 +517,7 @@ FUNC_TARGETTYPE_NAME: dict[int, NiceFuncTargetType] = {
     27: NiceFuncTargetType.enemyOneNoTargetNoAction,
     28: NiceFuncTargetType.ptOneHpLowestValue,
     29: NiceFuncTargetType.ptOneHpLowestRate,
+    30: NiceFuncTargetType.enemyRange,
 }
 
 
@@ -1566,6 +1575,9 @@ class DataValsType(IntEnum):
     CopyTargetBuffType = 126
     NotSkillCopyTargetFuncIds = 127
     NotSkillCopyTargetIndividualities = 128
+    IntervalTurn = 129
+    IntervalCount = 130
+    TargetEnemyRange = 131
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -3989,6 +4001,7 @@ class AiActNum(IntEnum):
     REACTION_BEFORE_RESURRECTION = -15
     REACTION_BEFORE_DEAD = -16
     SHIFT_SERVANT_AFTER = -17
+    REACTION_BEFORE_MOVE_WAVE = -18
     REACTION_ENEMY_TURN_START_PRIORITY = -401
     REACTION_ENEMY_TURN_END_PRIORITY = -501
 
@@ -4013,6 +4026,7 @@ class NiceAiActNum(StrEnum):
     reactionBeforeResurrection = "reactionBeforeResurrection"
     reactionBeforeDead = "reactionBeforeDead"
     shiftServantAfter = "shiftServantAfter"
+    reactionBeforeMoveWave = "reactionBeforeMoveWave"
     reactionEnemyTurnStartPriority = "reactionEnemyTurnStartPriority"
     reactionEnemyTurnEndPriority = "reactionEnemyTurnEndPriority"
     unknown = "unknown"
@@ -4036,6 +4050,7 @@ AI_ACT_NUM_NAME: dict[int, NiceAiActNum] = {
     -15: NiceAiActNum.reactionBeforeResurrection,
     -16: NiceAiActNum.reactionBeforeDead,
     -17: NiceAiActNum.shiftServantAfter,
+    -18: NiceAiActNum.reactionBeforeMoveWave,
     -401: NiceAiActNum.reactionEnemyTurnStartPriority,
     -501: NiceAiActNum.reactionEnemyTurnEndPriority,
     -9999: NiceAiActNum.unknown,
