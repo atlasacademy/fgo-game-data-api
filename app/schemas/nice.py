@@ -1786,11 +1786,18 @@ class NiceEventBulletinBoardRelease(BaseModelORJson):
     condNum: int
 
 
+class NiceEventBulletinBoardScript(BaseModelORJson):
+    icon: HttpUrl | None = None
+    name: str | None = None
+
+
 class NiceEventBulletinBoard(BaseModelORJson):
     bulletinBoardId: int
     message: str
     probability: int | None = None
+    dispOrder: int | None = None
     releaseConditions: list[NiceEventBulletinBoardRelease]
+    script: list[NiceEventBulletinBoardScript] = []
 
 
 class NiceEventRecipeGift(BaseModelORJson):

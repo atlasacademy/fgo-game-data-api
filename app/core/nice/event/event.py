@@ -262,7 +262,7 @@ async def get_nice_event(
         ],
         bulletinBoards=[
             get_nice_bulletin_board(
-                bulletin_board, raw_event.mstEventBulletinBoardRelease
+                region, bulletin_board, raw_event.mstEventBulletinBoardRelease
             )
             for bulletin_board in raw_event.mstEventBulletinBoard
         ],

@@ -1260,6 +1260,8 @@ class MstEventBulletinBoard(BaseModelORJson):
     eventId: int
     message: str
     probability: int | None = None
+    dispOrder: int | None = None
+    script: list[dict[str, Any]] | None = None
 
 
 class MstEventBulletinBoardRelease(BaseModelORJson):

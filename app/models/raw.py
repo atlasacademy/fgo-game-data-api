@@ -1395,6 +1395,8 @@ mstEventBulletinBoard = Table(
     Column("eventId", Integer, index=True),
     Column("message", String),
     Column("probability", Integer),
+    Column("dispOrder", Integer),
+    Column("script", JSONB),
 )
 
 mstEventBulletinBoardRelease = Table(
