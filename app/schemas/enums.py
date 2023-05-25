@@ -961,6 +961,7 @@ class Trait(StrEnum):
     classBeast = "classBeast"
     classBeastVI = "classBeastVI"
     classBeastVIBoss = "classBeastVIBoss"
+    buffBound = "buffBound"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1204,6 +1205,7 @@ TRAIT_NAME: dict[int, Trait] = {
     3070: Trait.buffNullifyBuff,
     3076: Trait.cantBeSacrificed,
     3086: Trait.gutsBlock,
+    3087: Trait.buffBound,
     # 6016: No detail
     # 6021: No detail
     # 6022: No detail
