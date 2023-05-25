@@ -421,16 +421,42 @@ async def generate_exports(
                     await dump_nice_events(util_en, mstEvents)
 
             repo_info = await get_repo_version(redis, region)
-            if repo_info is not None:
-                export_info = dict(
-                    **repo_info.dict(),
-                    serverHash=app_info.hash,
-                    serverTimestamp=app_info.timestamp,
-                )
-                await dump_normal(export_path, "info", export_info)
+            if repo_info is None:
+                info_path = export_path / "info.json"
+                if info_path.exists():
+                    repo_info = RepoInfo.parse_file(info_path)
+
+            export_info = await load_export_info(region, region_path[region])
+            if repo_info:
+                export_info = repo_info.dict() | export_info
+            await dump_normal(export_path, "info", export_info)
 
             run_time = time.perf_counter() - start_time
             logger.info(f"Exported {region} data in {run_time:.2f}s.")
+
+
+async def load_export_info(
+    region: Region, region_folder: DirectoryPath
+) -> dict[str, Any]:
+    export_info: dict[str, Any] = {}
+    export_info |= {
+        "serverHash": app_info.hash,
+        "serverTimestamp": app_info.timestamp,
+    }
+
+    if region in (Region.JP, Region.NA, Region.KR):
+        with open(region_folder / "gamedatatop.json", "rb") as fp:
+            gametop = orjson.loads(fp.read())
+            response: dict = gametop["response"][0]["success"]
+            export_info |= {
+                "dataVer": response["dataVer"],
+                "dateVer": response["dateVer"],
+                "assetbundle": response["assetbundle"],
+            }
+        with open(region_folder / "metadata" / "assetbundle.json") as fp:
+            export_info["assetbundleDecrypt"] = orjson.loads(fp.read())
+
+    return export_info
 
 
 async def update_master_repo_info(

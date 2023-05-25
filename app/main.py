@@ -17,7 +17,7 @@ from fastapi_cache import FastAPICache
 from redis.asyncio import Redis as AsyncRedis
 from sqlalchemy.ext.asyncio import AsyncConnection
 
-from .config import Settings, logger, project_root,app_info
+from .config import Settings, app_info, logger, project_root
 from .core.info import get_all_repo_info
 from .db.engine import async_engines, engines
 from .redis import Redis
