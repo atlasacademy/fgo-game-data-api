@@ -447,14 +447,13 @@ async def load_export_info(
     if region in (Region.JP, Region.NA, Region.KR):
         with open(region_folder / "gamedatatop.json", "rb") as fp:
             gametop = orjson.loads(fp.read())
-            response: dict = gametop["response"][0]["success"]
+            response: dict[str, Any] = gametop["response"][0]["success"]
             export_info |= {
                 "dataVer": response["dataVer"],
                 "dateVer": response["dateVer"],
-                "assetbundle": response["assetbundle"],
             }
         with open(region_folder / "metadata" / "assetbundle.json") as fp:
-            export_info["assetbundleDecrypt"] = orjson.loads(fp.read())
+            export_info["assetbundle"] = orjson.loads(fp.read())
 
     return export_info
 

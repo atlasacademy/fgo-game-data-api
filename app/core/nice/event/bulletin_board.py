@@ -1,3 +1,5 @@
+from typing import Any
+
 from ....config import Settings
 from ....core.utils import fmt_url
 from ....schemas.common import Region
@@ -26,7 +28,7 @@ def get_nice_bulletin_board_release(
 
 
 def get_nice_bulletin_board_script(
-    region: Region, script: dict, event_id: int
+    region: Region, script: dict[str, Any], event_id: int
 ) -> NiceEventBulletinBoardScript:
     icon_id = script.get("iconId")
     if icon_id:
