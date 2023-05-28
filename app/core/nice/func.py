@@ -56,6 +56,7 @@ LIST_DATAVALS = {
     "CopyTargetBuffType",
     "NotSkillCopyTargetFuncIds",
     "NotSkillCopyTargetIndividualities",
+    "TargetEnemyRange",
 }
 STRING_DATAVALS = {"PopValueText"}
 STRING_LIST_DATAVALS = {"ApplyValueUp"}
