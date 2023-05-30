@@ -158,6 +158,20 @@ mstSvtSkill = Table(
 )
 
 
+mstSvtSkillRelease = Table(
+    "mstSvtSkillRelease",
+    metadata,
+    Column("svtId", Integer, index=True),
+    Column("num", Integer, index=True),
+    Column("priority", Integer, index=True),
+    Column("idx", Integer),
+    Column("condType", Integer),
+    Column("condTargetId", Integer),
+    Column("condNum", Integer),
+    Column("condGroup", Integer),
+)
+
+
 mstSvtPassiveSkill = Table(
     "mstSvtPassiveSkill",
     metadata,
@@ -322,6 +336,20 @@ Index(
 Index(
     "ix_mstTreasureDeviceLv_funcId_length",
     func.array_length(mstTreasureDeviceLv.c.funcId, 1),
+)
+
+
+mstSvtTreasureDeviceRelease = Table(
+    "mstSvtTreasureDeviceRelease",
+    metadata,
+    Column("svtId", Integer, index=True),
+    Column("num", Integer, index=True),
+    Column("priority", Integer, index=True),
+    Column("idx", Integer),
+    Column("condType", Integer),
+    Column("condTargetId", Integer),
+    Column("condNum", Integer),
+    Column("condGroup", Integer),
 )
 
 
@@ -2195,7 +2223,7 @@ TABLES_TO_BE_LOADED = [
     [mstSvtMultiPortrait],
     [mstSvtPassiveSkill],
     [mstSvtScript],
-    [mstSvtSkill],
+    [mstSvtSkill, mstSvtSkillRelease],
     [mstSvtTreasureDevice],
     [mstSvtVoice],
     [mstSvtVoiceRelation],

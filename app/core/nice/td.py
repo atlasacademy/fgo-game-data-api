@@ -7,17 +7,23 @@ from ...config import Settings
 from ...schemas.common import Language, Region
 from ...schemas.gameenums import CARD_TYPE_NAME, NiceTdEffectFlag
 from ...schemas.nice import AssetURL, NiceTd, NiceTdSvt
-from ...schemas.raw import MstSvtTreasureDevice, TdEntityNoReverse
+from ...schemas.raw import (
+    MstSvtTreasureDevice,
+    MstSvtTreasureDeviceRelease,
+    TdEntityNoReverse,
+)
 from ..raw import get_td_entity_no_reverse, get_td_entity_no_reverse_many
 from ..utils import get_np_name, get_traits_list, strip_formatting_brackets
 from .func import get_nice_function
-from .skill import get_nice_skill_script
+from .skill import get_nice_skill_release, get_nice_skill_script
 
 
 settings = Settings()
 
 
-def get_nice_td_svt(td_svt: MstSvtTreasureDevice) -> NiceTdSvt:
+def get_nice_td_svt(
+    td_svt: MstSvtTreasureDevice, td_releases: list[MstSvtTreasureDeviceRelease]
+) -> NiceTdSvt:
     return NiceTdSvt(
         svtId=td_svt.svtId,
         num=td_svt.num,
@@ -32,6 +38,12 @@ def get_nice_td_svt(td_svt: MstSvtTreasureDevice) -> NiceTdSvt:
         condFriendshipRank=td_svt.condFriendshipRank,
         motion=td_svt.motion,
         card=CARD_TYPE_NAME[td_svt.cardId],
+        releaseConditions=[
+            get_nice_skill_release(release)
+            for release in td_releases
+            if (release.svtId, release.num, release.priority)
+            == (td_svt.svtId, td_svt.num, td_svt.priority)
+        ],
     )
 
 
@@ -67,7 +79,7 @@ async def get_nice_td(
         "effectFlags": [get_nice_td_effect_flag(tdEntity.mstTreasureDevice.effectFlag)],
         "individuality": get_traits_list(tdEntity.mstTreasureDevice.individuality),
         "npSvts": [
-            get_nice_td_svt(td_svt)
+            get_nice_td_svt(td_svt, tdEntity.mstSvtTreasureDeviceRelease)
             for td_svt in sorted_svtTd
             if svtId == -1 or td_svt.svtId == svtId
         ],
@@ -147,6 +159,7 @@ async def get_nice_td(
             "condQuestPhase": 0,
             "card": CARD_TYPE_NAME[5],
             "npDistribution": [],
+            "releaseConditions": [],
         }
     else:
         if chosen_svts:
@@ -171,6 +184,12 @@ async def get_nice_td(
             "condQuestPhase": chosen_svt.condQuestPhase,
             "card": CARD_TYPE_NAME[chosen_svt.cardId],
             "npDistribution": chosen_svt.damage,
+            "releaseConditions": [
+                get_nice_skill_release(release)
+                for release in tdEntity.mstSvtTreasureDeviceRelease
+                if (release.svtId, release.num, release.priority)
+                == (chosen_svt.svtId, chosen_svt.num, chosen_svt.priority)
+            ],
         }
 
     return [nice_td]

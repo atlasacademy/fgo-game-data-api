@@ -612,6 +612,17 @@ class NiceSkillGroupOverwrite(BaseModelORJson):
     )
 
 
+class NiceSvtSkillRelease(BaseModelORJson):
+    # svtId: int
+    # num: int
+    # priority: int
+    idx: int
+    condType: NiceCondType
+    condTargetId: int
+    condNum: int
+    condGroup: int
+
+
 class NiceSkill(BaseModelORJson):
     id: int
     num: int = -1
@@ -633,6 +644,7 @@ class NiceSkill(BaseModelORJson):
     script: NiceSkillScript
     extraPassive: list[ExtraPassive]
     skillAdd: list[NiceSkillAdd]
+    releaseConditions: list[NiceSvtSkillRelease] = []
     aiIds: Optional[dict[AiType, list[int]]] = None
     groupOverwrites: list[NiceSkillGroupOverwrite] | None = None
     functions: list[NiceFunction]
@@ -661,6 +673,7 @@ class NiceTdSvt(BaseModelORJson):
     condFriendshipRank: int = 0
     motion: int
     card: NiceCardType
+    releaseConditions: list[NiceSvtSkillRelease] = []
 
 
 class NiceTd(BaseModelORJson):
@@ -682,6 +695,7 @@ class NiceTd(BaseModelORJson):
     priority: int
     condQuestId: int
     condQuestPhase: int
+    releaseConditions: list[NiceSvtSkillRelease] = []
     individuality: list[NiceTrait]
     npSvts: list[NiceTdSvt]
     script: NiceSkillScript

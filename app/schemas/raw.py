@@ -119,6 +119,21 @@ class MstSvtSkill(BaseModelORJson):
     flag: int  # 0
 
 
+class MstSvtSkillRelease(BaseModelORJson):
+    svtId: int
+    num: int
+    priority: int
+    idx: int
+    condType: int
+    condTargetId: int
+    condNum: int
+    condGroup: int
+
+
+class MstSvtTreasureDeviceRelease(MstSvtSkillRelease):
+    ...
+
+
 class MstSvtPassiveSkill(BaseModelORJson):
     svtId: int
     num: int
@@ -197,6 +212,7 @@ class SkillEntityNoReverse(BaseModelORJson):
     mstSkillDetail: list[MstSkillDetail]
     mstSvtSkill: list[MstSvtSkill]
     mstSkillAdd: list[MstSkillAdd]
+    mstSvtSkillRelease: list[MstSvtSkillRelease]
     mstCommonRelease: list[MstCommonRelease]
     mstSkillLv: list[MstSkillLv]
     mstSkillGroup: list[MstSkillGroup]
@@ -306,6 +322,7 @@ class TdEntityNoReverse(BaseModelORJson):
     mstTreasureDeviceDetail: list[MstTreasureDeviceDetail]
     mstSvtTreasureDevice: list[MstSvtTreasureDevice]
     mstTreasureDeviceLv: list[MstTreasureDeviceLv]
+    mstSvtTreasureDeviceRelease: list[MstSvtTreasureDeviceRelease]
 
 
 class MstSvt(BaseModelORJson):
