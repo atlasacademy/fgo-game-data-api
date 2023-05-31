@@ -2322,6 +2322,7 @@ class NiceQuestPhaseExtraDetail(BaseModelORJson):
     hintMessage: str | None = None
     aiNpc: NiceQuestPhaseAiNpc | None = None
     aiMultiNpc: list[NiceQuestPhaseAiNpc] | None = None
+    overwriteEquipSkills: dict | None = None
 
 
 class NiceRestriction(BaseModelORJson):
