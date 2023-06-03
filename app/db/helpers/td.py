@@ -7,6 +7,7 @@ from sqlalchemy.sql import and_, func, or_, select
 
 from ...models.raw import (
     mstSvtTreasureDevice,
+    mstSvtTreasureDeviceRelease,
     mstTreasureDevice,
     mstTreasureDeviceDetail,
     mstTreasureDeviceLv,
@@ -45,6 +46,15 @@ async def get_tdEntity(
             mstTreasureDeviceLvJson,
             mstTreasureDeviceLvJson.c.treaureDeviceId == mstTreasureDevice.c.id,
         )
+        .outerjoin(
+            mstSvtTreasureDeviceRelease,
+            and_(
+                mstSvtTreasureDeviceRelease.c.svtId == mstSvtTreasureDevice.c.svtId,
+                mstSvtTreasureDeviceRelease.c.num == mstSvtTreasureDevice.c.num,
+                mstSvtTreasureDeviceRelease.c.priority
+                == mstSvtTreasureDevice.c.priority,
+            ),
+        )
     )
 
     SELECT_TD_ENTITY = [
@@ -52,6 +62,7 @@ async def get_tdEntity(
         func.to_jsonb(mstTreasureDevice.table_valued()).label(mstTreasureDevice.name),
         sql_jsonb_agg(mstTreasureDeviceDetail),
         sql_jsonb_agg(mstSvtTreasureDevice),
+        sql_jsonb_agg(mstSvtTreasureDeviceRelease),
         mstTreasureDeviceLvJson.c.mstTreasureDeviceLv,
     ]
 

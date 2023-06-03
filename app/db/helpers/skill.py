@@ -17,6 +17,7 @@ from ...models.raw import (
     mstSkillGroupOverwrite,
     mstSkillLv,
     mstSvtSkill,
+    mstSvtSkillRelease,
 )
 from ...schemas.raw import MstSkill, MstSvtSkill, SkillEntityNoReverse
 from .utils import sql_jsonb_agg
@@ -77,6 +78,14 @@ async def get_skillEntity(
             mstSkillGroupOverwrite.c.skillGroupId == mstSkillGroup.c.id,
         )
         .outerjoin(
+            mstSvtSkillRelease,
+            and_(
+                mstSvtSkillRelease.c.svtId == mstSvtSkill.c.svtId,
+                mstSvtSkillRelease.c.num == mstSvtSkill.c.num,
+                mstSvtSkillRelease.c.priority == mstSvtSkill.c.priority,
+            ),
+        )
+        .outerjoin(
             mstSkillDetail,
             or_(
                 mstSkillDetail.c.id == mstSkill.c.id,
@@ -93,6 +102,7 @@ async def get_skillEntity(
         sql_jsonb_agg(mstCommonRelease),
         sql_jsonb_agg(mstSkillGroup),
         sql_jsonb_agg(mstSkillGroupOverwrite),
+        sql_jsonb_agg(mstSvtSkillRelease),
         mstSkillLvJson.c.mstSkillLv,
         aiIds.c.aiIds,
     ]

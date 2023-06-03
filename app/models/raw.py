@@ -158,6 +158,14 @@ mstSvtSkill = Table(
 )
 
 
+Index(
+    "ix_mstSvtSkill_svtId_num_priority",
+    mstSvtSkill.c.svtId,
+    mstSvtSkill.c.num,
+    mstSvtSkill.c.priority,
+)
+
+
 mstSvtSkillRelease = Table(
     "mstSvtSkillRelease",
     metadata,
@@ -169,6 +177,14 @@ mstSvtSkillRelease = Table(
     Column("condTargetId", Integer),
     Column("condNum", Integer),
     Column("condGroup", Integer),
+)
+
+
+Index(
+    "ix_mstSvtSkillRelease_svtId_num_priority",
+    mstSvtSkillRelease.c.svtId,
+    mstSvtSkillRelease.c.num,
+    mstSvtSkillRelease.c.priority,
 )
 
 
@@ -302,6 +318,14 @@ Index(
 )
 
 
+Index(
+    "ix_mstSvtTreasureDevice_svtId_num_priority",
+    mstSvtTreasureDevice.c.svtId,
+    mstSvtTreasureDevice.c.num,
+    mstSvtTreasureDevice.c.priority,
+)
+
+
 mstTreasureDeviceLv = Table(
     "mstTreasureDeviceLv",
     metadata,
@@ -350,6 +374,14 @@ mstSvtTreasureDeviceRelease = Table(
     Column("condTargetId", Integer),
     Column("condNum", Integer),
     Column("condGroup", Integer),
+)
+
+
+Index(
+    "ix_mstSvtTreasureDeviceRelease_svtId_num_priority",
+    mstSvtTreasureDeviceRelease.c.svtId,
+    mstSvtTreasureDeviceRelease.c.num,
+    mstSvtTreasureDeviceRelease.c.priority,
 )
 
 
@@ -2224,7 +2256,7 @@ TABLES_TO_BE_LOADED = [
     [mstSvtPassiveSkill],
     [mstSvtScript],
     [mstSvtSkill, mstSvtSkillRelease],
-    [mstSvtTreasureDevice],
+    [mstSvtTreasureDevice, mstSvtTreasureDeviceRelease],
     [mstSvtVoice],
     [mstSvtVoiceRelation],
     [mstTreasureBox],
