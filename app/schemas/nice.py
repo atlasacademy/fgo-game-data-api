@@ -2315,6 +2315,16 @@ class NiceQuestPhaseAiNpc(BaseModelORJson):
     aiIds: list[int]
 
 
+class NiceQuestPhaseOverwriteEquipSkill(BaseModelORJson):
+    lv: int
+    id: int
+
+
+class NiceQuestPhaseOverwriteEquipSkills(BaseModelORJson):
+    iconId: int
+    skills: list[NiceQuestPhaseOverwriteEquipSkill]
+
+
 class NiceQuestPhaseExtraDetail(BaseModelORJson):
     questSelect: list[int] | None = None
     singleForceSvtId: int | None = None
@@ -2322,7 +2332,7 @@ class NiceQuestPhaseExtraDetail(BaseModelORJson):
     hintMessage: str | None = None
     aiNpc: NiceQuestPhaseAiNpc | None = None
     aiMultiNpc: list[NiceQuestPhaseAiNpc] | None = None
-    overwriteEquipSkills: dict | None = None
+    overwriteEquipSkills: NiceQuestPhaseOverwriteEquipSkills | None = None
 
 
 class NiceRestriction(BaseModelORJson):
