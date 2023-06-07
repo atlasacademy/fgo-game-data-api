@@ -151,6 +151,7 @@ async def get_nice_td(
     if not chosen_svts and not sorted_svtTd:  # pragma: no cover
         base_settings_id["item_id"] = tdEntity.mstTreasureDevice.id
         nice_td |= {
+            "svtId": tdEntity.mstTreasureDevice.id,
             "icon": AssetURL.commands.format(**base_settings_id, i="np"),
             "strengthStatus": 0,
             "num": 0,
@@ -176,6 +177,7 @@ async def get_nice_td(
         else:
             file_i = "np" + str(imageId // 2)
         nice_td |= {
+            "svtId": chosen_svt.svtId,
             "icon": AssetURL.commands.format(**base_settings_id, i=file_i),
             "strengthStatus": chosen_svt.strengthStatus,
             "num": chosen_svt.num,

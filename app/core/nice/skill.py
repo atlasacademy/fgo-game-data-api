@@ -1,4 +1,3 @@
-from copy import deepcopy
 from dataclasses import dataclass
 from typing import Any, Iterable, Optional, Type, TypeVar
 
@@ -254,25 +253,30 @@ async def get_nice_skill_with_svt(
 
         nice_skill["groupOverwrites"] = skill_groups
 
-    # .mstSvtSkill returns the list of SvtSkill with the same skill_id
     chosen_svts = [
         svt_skill for svt_skill in skillEntity.mstSvtSkill if svt_skill.svtId == svtId
     ]
     if chosen_svts:
-        out_skills = []
-        for chosenSvt in chosen_svts:
-            out_skill = deepcopy(nice_skill)
-            out_skill |= {
-                "strengthStatus": chosenSvt.strengthStatus,
-                "num": chosenSvt.num,
-                "priority": chosenSvt.priority,
-                "condQuestId": chosenSvt.condQuestId,
-                "condQuestPhase": chosenSvt.condQuestPhase,
-                "condLv": chosenSvt.condLv,
-                "condLimitCount": chosenSvt.condLimitCount,
-            }
-            out_skills.append(out_skill)
-        return out_skills
+        chosen_svt = chosen_svts[0]
+    else:
+        chosen_svt = sorted_svtSkill[0]
+
+    nice_skill |= {
+        "svtId": chosen_svt.svtId,
+        "strengthStatus": chosen_svt.strengthStatus,
+        "num": chosen_svt.num,
+        "priority": chosen_svt.priority,
+        "condQuestId": chosen_svt.condQuestId,
+        "condQuestPhase": chosen_svt.condQuestPhase,
+        "condLv": chosen_svt.condLv,
+        "condLimitCount": chosen_svt.condLimitCount,
+        "releaseConditions": [
+            get_nice_skill_release(release)
+            for release in skillEntity.mstSvtSkillRelease
+            if (release.svtId, release.num, release.priority)
+            == (chosen_svt.svtId, chosen_svt.num, chosen_svt.priority)
+        ],
+    }
 
     return [nice_skill]
 

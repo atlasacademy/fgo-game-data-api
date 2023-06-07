@@ -647,6 +647,7 @@ class NiceSkill(BaseModelORJson):
     detail: Optional[str] = None
     unmodifiedDetail: Optional[str] = None
     type: NiceSkillType
+    svtId: int
     strengthStatus: int = -1
     priority: int = -1
     condQuestId: int = -1
@@ -706,6 +707,7 @@ class NiceTd(BaseModelORJson):
     unmodifiedDetail: Optional[str] = None
     npGain: NpGain
     npDistribution: list[int]
+    svtId: int
     strengthStatus: int
     priority: int
     condQuestId: int
