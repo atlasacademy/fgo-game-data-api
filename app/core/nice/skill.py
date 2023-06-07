@@ -256,27 +256,41 @@ async def get_nice_skill_with_svt(
     chosen_svts = [
         svt_skill for svt_skill in skillEntity.mstSvtSkill if svt_skill.svtId == svtId
     ]
-    if chosen_svts:
-        chosen_svt = chosen_svts[0]
-    else:
-        chosen_svt = sorted_svtSkill[0]
 
-    nice_skill |= {
-        "svtId": chosen_svt.svtId,
-        "strengthStatus": chosen_svt.strengthStatus,
-        "num": chosen_svt.num,
-        "priority": chosen_svt.priority,
-        "condQuestId": chosen_svt.condQuestId,
-        "condQuestPhase": chosen_svt.condQuestPhase,
-        "condLv": chosen_svt.condLv,
-        "condLimitCount": chosen_svt.condLimitCount,
-        "releaseConditions": [
-            get_nice_skill_release(release)
-            for release in skillEntity.mstSvtSkillRelease
-            if (release.svtId, release.num, release.priority)
-            == (chosen_svt.svtId, chosen_svt.num, chosen_svt.priority)
-        ],
-    }
+    if not chosen_svts and not sorted_svtSkill:  # pragma: no cover
+        nice_skill |= {
+            "svtId": skillEntity.mstSkill.id,
+            "strengthStatus": -1,
+            "num": -1,
+            "priority": -1,
+            "condQuestId": -1,
+            "condQuestPhase": -1,
+            "condLv": -1,
+            "condLimitCount": -1,
+            "releaseConditions": [],
+        }
+    else:
+        if chosen_svts:
+            chosen_svt = chosen_svts[0]
+        else:
+            chosen_svt = sorted_svtSkill[0]
+
+        nice_skill |= {
+            "svtId": chosen_svt.svtId,
+            "strengthStatus": chosen_svt.strengthStatus,
+            "num": chosen_svt.num,
+            "priority": chosen_svt.priority,
+            "condQuestId": chosen_svt.condQuestId,
+            "condQuestPhase": chosen_svt.condQuestPhase,
+            "condLv": chosen_svt.condLv,
+            "condLimitCount": chosen_svt.condLimitCount,
+            "releaseConditions": [
+                get_nice_skill_release(release)
+                for release in skillEntity.mstSvtSkillRelease
+                if (release.svtId, release.num, release.priority)
+                == (chosen_svt.svtId, chosen_svt.num, chosen_svt.priority)
+            ],
+        }
 
     return [nice_skill]
 
