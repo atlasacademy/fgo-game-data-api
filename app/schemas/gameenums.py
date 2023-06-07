@@ -1575,9 +1575,11 @@ class DataValsType(IntEnum):
     CopyTargetBuffType = 126
     NotSkillCopyTargetFuncIds = 127
     NotSkillCopyTargetIndividualities = 128
-    IntervalTurn = 129
-    IntervalCount = 130
-    TargetEnemyRange = 131
+    ClassIconAuraEffectId = 129
+    ActMasterGenderType = 130
+    IntervalTurn = 131
+    IntervalCount = 132
+    TargetEnemyRange = 133
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -1635,6 +1637,7 @@ class ItemType(IntEnum):
     PP = 31
     TRADE_AP = 32
     RI = 33
+    STORMPOD = 34
 
 
 class NiceItemType(StrEnum):
@@ -1673,6 +1676,7 @@ class NiceItemType(StrEnum):
     pp = "pp"
     tradeAp = "tradeAp"
     ri = "ri"
+    stormpod = "stormpod"
 
 
 ITEM_TYPE_NAME: dict[int, NiceItemType] = {
@@ -1709,6 +1713,7 @@ ITEM_TYPE_NAME: dict[int, NiceItemType] = {
     31: NiceItemType.pp,
     32: NiceItemType.tradeAp,
     33: NiceItemType.ri,
+    34: NiceItemType.stormpod,
 }
 
 
@@ -2172,7 +2177,13 @@ class CondType(IntEnum):
     SUPER_BOSS_DAMAGE_ABOVE = 175
     SUPER_BOSS_DAMAGE_BELOW = 176
     EVENT_MISSION_GROUP_ACHIEVE = 177
+    SVT_FRIENDSHIP_CLASS_NUM_ABOVE = 178
     NOT_WAR_CLEAR = 179
+    SVT_SKILL_LV_CLASS_NUM_ABOVE = 180
+    SVT_CLASS_LV_UP_COUNT = 181
+    SVT_CLASS_SKILL_LV_UP_COUNT = 182
+    SVT_CLASS_LIMIT_UP_COUNT = 183
+    SVT_CLASS_FRIENDSHIP_COUNT = 184
 
 
 class NiceCondType(StrEnum):
@@ -2353,7 +2364,13 @@ class NiceCondType(StrEnum):
     superBossDamageAbove = "superBossDamageAbove"
     superBossDamageBelow = "superBossDamageBelow"
     eventMissionGroupAchieve = "eventMissionGroupAchieve"
+    svtFriendshipClassNumAbove = "svtFriendshipClassNumAbove"
     notWarClear = "notWarClear"
+    svtSkillLvClassNumAbove = "svtSkillLvClassNumAbove"
+    svtClassLvUpCount = "svtClassLvUpCount"
+    svtClassSkillLvUpCount = "svtClassSkillLvUpCount"
+    svtClassLimitUpCount = "svtClassLimitUpCount"
+    svtClassFriendshipCount = "svtClassFriendshipCount"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2532,7 +2549,13 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     175: NiceCondType.superBossDamageAbove,
     176: NiceCondType.superBossDamageBelow,
     177: NiceCondType.eventMissionGroupAchieve,
+    178: NiceCondType.svtFriendshipClassNumAbove,
     179: NiceCondType.notWarClear,
+    180: NiceCondType.svtSkillLvClassNumAbove,
+    181: NiceCondType.svtClassLvUpCount,
+    182: NiceCondType.svtClassSkillLvUpCount,
+    183: NiceCondType.svtClassLimitUpCount,
+    184: NiceCondType.svtClassFriendshipCount,
 }
 
 

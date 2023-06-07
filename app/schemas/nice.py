@@ -360,6 +360,8 @@ class BaseVals(BaseModel):
     CopyTargetBuffType: list[int] | None = None
     NotSkillCopyTargetFuncIds: list[int] | None = None
     NotSkillCopyTargetIndividualities: list[int] | None = None
+    ClassIconAuraEffectId: int | None = None
+    ActMasterGenderType: int | None = None
     IntervalTurn: int | None = None
     IntervalCount: int | None = None
     TargetEnemyRange: list[int] | None = None
