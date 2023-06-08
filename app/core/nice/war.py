@@ -26,6 +26,7 @@ from ...schemas.nice import (
 )
 from ...schemas.raw import (
     MstBgm,
+    MstBlankEarthSpot,
     MstConstant,
     MstMap,
     MstMapGimmick,
@@ -221,6 +222,7 @@ def get_nice_spot(
 ) -> NiceSpot:
     return NiceSpot(
         id=raw_spot.id,
+        blankEarth=False,
         joinSpotIds=raw_spot.joinSpotIds,
         mapId=raw_spot.mapId,
         name=get_translation(lang, raw_spot.name),
@@ -250,6 +252,43 @@ def get_nice_spot(
             for spot_add in mst_spot_adds
             if spot_add.spotId == raw_spot.id
         ],
+        quests=[
+            NiceQuest.parse_obj(
+                get_nice_quest_with_war_spot(region, quest, lang, mstWar, raw_spot)
+            )
+            for quest in quests
+            if quest.mstQuest.spotId == raw_spot.id
+        ],
+    )
+
+
+def get_nice_blank_earth_spot(
+    region: Region,
+    mstWar: MstWar,
+    raw_spot: MstBlankEarthSpot,
+    quests: list[QuestEntity],
+    lang: Language,
+) -> NiceSpot:
+    return NiceSpot(
+        id=raw_spot.id,
+        blankEarth=True,
+        joinSpotIds=[],
+        mapId=raw_spot.mapId,
+        name=get_translation(lang, raw_spot.name),
+        originalName=raw_spot.name,
+        image=None,
+        x=int(raw_spot.x),
+        y=int(raw_spot.y),
+        imageOfsX=0,
+        imageOfsY=0,
+        nameOfsX=0,
+        nameOfsY=0,
+        questOfsX=0,
+        questOfsY=0,
+        nextOfsX=0,
+        nextOfsY=0,
+        closedMessage="",
+        spotAdds=[],
         quests=[
             NiceQuest.parse_obj(
                 get_nice_quest_with_war_spot(region, quest, lang, mstWar, raw_spot)
@@ -299,6 +338,31 @@ async def get_nice_war(
         lang,
     )
 
+    spots: list[NiceSpot] = [
+        get_nice_spot(
+            region,
+            raw_war.mstWar,
+            raw_spot,
+            raw_war.mstSpotAdd,
+            war_asset_id,
+            raw_war.mstQuest,
+            lang,
+        )
+        for raw_spot in raw_war.mstSpot
+        if raw_spot.warId == war_id
+    ]
+    blank_earth_spots = [
+        get_nice_blank_earth_spot(
+            region,
+            raw_war.mstWar,
+            raw_spot,
+            raw_war.mstQuest,
+            lang,
+        )
+        for raw_spot in raw_war.mstBlankEarthSpot
+        if raw_spot.warId == war_id
+    ]
+
     return NiceWar(
         id=raw_war.mstWar.id,
         coordinates=raw_war.mstWar.coordinates,
@@ -321,6 +385,7 @@ async def get_nice_war(
         priority=raw_war.mstWar.priority,
         parentWarId=raw_war.mstWar.parentWarId,
         materialParentWarId=raw_war.mstWar.materialParentWarId,
+        parentBlankEarthSpotId=raw_war.mstWar.parentBlankEarthSpotId,
         emptyMessage=raw_war.mstWar.emptyMessage,
         bgm=bgm,
         scriptId=raw_war.mstWar.scriptId,
@@ -349,19 +414,7 @@ async def get_nice_war(
             )
             for raw_map in raw_war.mstMap
         ],
-        spots=[
-            get_nice_spot(
-                region,
-                raw_war.mstWar,
-                raw_spot,
-                raw_war.mstSpotAdd,
-                war_asset_id,
-                raw_war.mstQuest,
-                lang,
-            )
-            for raw_spot in raw_war.mstSpot
-            if raw_spot.warId == war_id
-        ],
+        spots=spots + blank_earth_spots,
         spotRoads=[
             get_nice_spot_road(region, spot_road, war_asset_id)
             for spot_road in raw_war.mstSpotRoad

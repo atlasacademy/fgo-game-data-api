@@ -2467,6 +2467,7 @@ class NiceSpotAdd(BaseModel):
 
 class NiceSpot(BaseModel):
     id: int
+    blankEarth: bool
     joinSpotIds: list[int]
     mapId: int
     name: str
@@ -2521,6 +2522,7 @@ class NiceWar(BaseModelORJson):
     priority: int
     parentWarId: int
     materialParentWarId: int
+    parentBlankEarthSpotId: int
     emptyMessage: str
     bgm: NiceBgm
     scriptId: str = Field(..., description='Could be "NONE".')

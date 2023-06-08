@@ -1685,6 +1685,7 @@ mstWar = Table(
     Column("priority", Integer),
     Column("parentWarId", Integer),
     Column("materialParentWarId", Integer, default=0),
+    Column("parentBlankEarthSpotId", Integer, default=0),
     Column("flag", Integer),
     Column("emptyMessage", String),
     Column("bgmId", Integer),
@@ -1765,6 +1766,22 @@ mstSpot = Table(
     Column("activeTargetValue", Integer),
     Column("closedMessage", String),
     Column("flag", Integer),
+)
+
+
+mstBlankEarthSpot = Table(
+    "mstBlankEarthSpot",
+    metadata,
+    Column("id", Integer, primary_key=True),
+    Column("warId", Integer, index=True),
+    Column("mapId", Integer),
+    Column("name", String, index=True),
+    Column("objectId", Integer),
+    Column("x", Numeric),
+    Column("y", Numeric),
+    Column("condTargetType", Integer),
+    Column("condTargetId", Integer),
+    Column("condTargetNum", Integer),
 )
 
 
@@ -2271,7 +2288,7 @@ TABLES_TO_BE_LOADED = [
     [mstVoicePlayCond],
     [mstSvt],
     [mstMap],
-    [mstSpot, mstSpotAdd, mstSpotRoad],
+    [mstSpot, mstBlankEarthSpot, mstSpotAdd, mstSpotRoad],
     [mstMapGimmick],
     [mstWarAdd],
     [mstWarQuestSelection],

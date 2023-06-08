@@ -3,8 +3,8 @@ from typing import Iterable
 from sqlalchemy.ext.asyncio import AsyncConnection
 from sqlalchemy.sql import select
 
-from ...models.raw import mstMap, mstSpot, mstWar
-from ...schemas.raw import MstSpot, MstWar
+from ...models.raw import mstBlankEarthSpot, mstMap, mstSpot, mstWar
+from ...schemas.raw import MstBlankEarthSpot, MstSpot, MstWar
 from .utils import fetch_one
 
 
@@ -26,11 +26,18 @@ async def get_war_from_spot(conn: AsyncConnection, spot_id: int) -> MstWar | Non
     return None  # pragma: no cover
 
 
-async def get_spot_from_id(conn: AsyncConnection, spot_id: int) -> MstSpot | None:
+async def get_spot_from_id(
+    conn: AsyncConnection, spot_id: int
+) -> MstSpot | MstBlankEarthSpot | None:
     stmt = select(mstSpot).where(mstSpot.c.id == spot_id)
     spot = await fetch_one(conn, stmt)
     if spot:
         return MstSpot.from_orm(spot)
+
+    stmt = select(mstBlankEarthSpot).where(mstBlankEarthSpot.c.id == spot_id)
+    spot = await fetch_one(conn, stmt)
+    if spot:
+        return MstBlankEarthSpot.from_orm(spot)
 
     return None  # pragma: no cover
 

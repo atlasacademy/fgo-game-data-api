@@ -29,6 +29,7 @@ from ..schemas.raw import (
     MasterMissionEntity,
     MstBgm,
     MstBgmRelease,
+    MstBlankEarthSpot,
     MstBoxGacha,
     MstBoxGachaTalk,
     MstBuff,
@@ -714,7 +715,9 @@ async def get_war_entity(conn: AsyncConnection, war_id: int) -> WarEntity:
     map_ids = [event_map.id for event_map in maps]
 
     spots = await fetch.get_all_multiple(conn, MstSpot, map_ids)
-    spot_ids = [spot.id for spot in spots]
+    blank_earth_spots = await fetch.get_all_multiple(conn, MstBlankEarthSpot, map_ids)
+
+    spot_ids = [spot.id for spot in spots] + [spot.id for spot in blank_earth_spots]
     spot_adds = await fetch.get_all_multiple(conn, MstSpotAdd, spot_ids)
 
     quests = await quest.get_quest_by_spot(conn, spot_ids)
@@ -740,6 +743,7 @@ async def get_war_entity(conn: AsyncConnection, war_id: int) -> WarEntity:
         mstMapGimmick=await fetch.get_all_multiple(conn, MstMapGimmick, map_ids),
         mstBgm=bgms,
         mstSpot=spots,
+        mstBlankEarthSpot=blank_earth_spots,
         mstSpotAdd=spot_adds,
         mstQuest=quests,
         mstSpotRoad=spot_roads,

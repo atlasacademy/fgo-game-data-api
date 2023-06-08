@@ -9,6 +9,7 @@ from ...models.raw import (
     AssetStorage,
     mstBgm,
     mstBgmRelease,
+    mstBlankEarthSpot,
     mstBoxGacha,
     mstBoxGachaTalk,
     mstBuff,
@@ -111,6 +112,7 @@ from ...schemas.raw import (
     AssetStorageLine,
     MstBgm,
     MstBgmRelease,
+    MstBlankEarthSpot,
     MstBoxGacha,
     MstBoxGachaTalk,
     MstBuff,
@@ -474,6 +476,11 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
     Type[BaseModelORJson], tuple[Table, ColumnElement, list[ColumnElement]]
 ] = {
     MstSpot: (mstSpot, mstSpot.c.mapId, [mstSpot.c.id]),
+    MstBlankEarthSpot: (
+        mstBlankEarthSpot,
+        mstBlankEarthSpot.c.mapId,
+        [mstBlankEarthSpot.c.id],
+    ),
     MstSpotAdd: (mstSpotAdd, mstSpotAdd.c.spotId, [mstSpotAdd.c.priority]),
     MstVoice: (mstVoice, mstVoice.c.id, [mstVoice.c.id]),
     MstSvtGroup: (mstSvtGroup, mstSvtGroup.c.id, [mstSvtGroup.c.svtId]),

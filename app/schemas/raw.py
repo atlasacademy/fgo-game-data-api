@@ -1416,6 +1416,7 @@ class MstWar(BaseModelORJson):
     priority: int  # 9046
     parentWarId: int  # 0
     materialParentWarId: int = 0  # 0
+    parentBlankEarthSpotId: int = 0
     flag: int  # 32
     emptyMessage: str  # "クエストがありません"
     bgmId: int  # 8
@@ -1510,6 +1511,19 @@ class MstSpot(BaseModelORJson):
     activeTargetValue: int  # 0
     closedMessage: str  # ""
     flag: int  # 0
+
+
+class MstBlankEarthSpot(BaseModelORJson):
+    id: int
+    warId: int
+    mapId: int
+    name: str
+    objectId: int
+    x: float
+    y: float
+    condTargetType: int
+    condTargetId: int
+    condTargetNum: int
 
 
 class MstSpotAdd(BaseModelORJson):
@@ -2021,6 +2035,7 @@ class WarEntity(BaseModelORJson):
     mstBgm: list[MstBgm]
     mstMapGimmick: list[MstMapGimmick]
     mstSpot: list[MstSpot]
+    mstBlankEarthSpot: list[MstBlankEarthSpot]
     mstSpotAdd: list[MstSpotAdd]
     mstQuest: list[QuestEntity]
     mstSpotRoad: list[MstSpotRoad]

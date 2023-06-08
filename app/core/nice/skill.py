@@ -259,7 +259,7 @@ async def get_nice_skill_with_svt(
 
     if not chosen_svts and not sorted_svtSkill:  # pragma: no cover
         nice_skill |= {
-            "svtId": skillEntity.mstSkill.id,
+            "svtId": -1,
             "strengthStatus": -1,
             "num": -1,
             "priority": -1,
