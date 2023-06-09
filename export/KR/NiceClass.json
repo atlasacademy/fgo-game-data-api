@@ -405,6 +405,21 @@
     "autoSelSupportType": 8
   },
   {
+    "id": 28,
+    "className": "pretender",
+    "name": "프리텐더",
+    "individuality": "classPretender",
+    "attackRate": 1000,
+    "imageId": 28,
+    "iconImageId": 28,
+    "frameId": 0,
+    "priority": 920,
+    "groupType": 2,
+    "relationId": 28,
+    "supportGroup": 8,
+    "autoSelSupportType": 8
+  },
+  {
     "id": 97,
     "className": "unknown",
     "name": "불명",

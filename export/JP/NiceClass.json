@@ -510,6 +510,21 @@
     "autoSelSupportType": 0
   },
   {
+    "id": 35,
+    "className": "beastVIBoss",
+    "name": "ビーストⅥ",
+    "individuality": "classBeastVIBoss",
+    "attackRate": 1000,
+    "imageId": 9999,
+    "iconImageId": 35,
+    "frameId": 20,
+    "priority": 50,
+    "groupType": 2,
+    "relationId": 35,
+    "supportGroup": 999,
+    "autoSelSupportType": 0
+  },
+  {
     "id": 97,
     "className": "unknown",
     "name": "不明",

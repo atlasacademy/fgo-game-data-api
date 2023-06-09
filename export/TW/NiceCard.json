@@ -195,6 +195,27 @@
     }
   },
   "extra": {
+    "1": {
+      "adjustAtk": 1000,
+      "adjustTdGauge": 1000,
+      "adjustCritical": 1000,
+      "addAtk": 0,
+      "addTdGauge": 0,
+      "addCritical": 0,
+      "addTdAtk": 0,
+      "addTdNpGauge": 0,
+      "addTdCritical": 0,
+      "individuality": [
+        {
+          "id": 4004,
+          "name": "cardExtra"
+        },
+        {
+          "id": 4008,
+          "name": "faceCard"
+        }
+      ]
+    },
     "4": {
       "adjustAtk": 1000,
       "adjustTdGauge": 1000,

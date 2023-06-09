@@ -102,7 +102,7 @@
     "groupType": 1,
     "relationId": 7,
     "supportGroup": 7,
-    "autoSelSupportType": 8
+    "autoSelSupportType": 7
   },
   {
     "id": 8,
@@ -132,7 +132,7 @@
     "groupType": 2,
     "relationId": 9,
     "supportGroup": 8,
-    "autoSelSupportType": 8
+    "autoSelSupportType": 7
   },
   {
     "id": 10,
@@ -147,7 +147,7 @@
     "groupType": 2,
     "relationId": 10,
     "supportGroup": 8,
-    "autoSelSupportType": 0
+    "autoSelSupportType": 7
   },
   {
     "id": 11,
@@ -162,7 +162,7 @@
     "groupType": 2,
     "relationId": 11,
     "supportGroup": 8,
-    "autoSelSupportType": 8
+    "autoSelSupportType": 7
   },
   {
     "id": 12,
@@ -342,7 +342,7 @@
     "groupType": 2,
     "relationId": 23,
     "supportGroup": 8,
-    "autoSelSupportType": 8
+    "autoSelSupportType": 7
   },
   {
     "id": 24,
@@ -401,6 +401,36 @@
     "priority": 50,
     "groupType": 2,
     "relationId": 27,
+    "supportGroup": 999,
+    "autoSelSupportType": 8
+  },
+  {
+    "id": 28,
+    "className": "pretender",
+    "name": "Pretender",
+    "individuality": "unknown",
+    "attackRate": 1000,
+    "imageId": 28,
+    "iconImageId": 28,
+    "frameId": 0,
+    "priority": 920,
+    "groupType": 2,
+    "relationId": 28,
+    "supportGroup": 8,
+    "autoSelSupportType": 7
+  },
+  {
+    "id": 29,
+    "className": "beastIV",
+    "name": "獸Ⅳ",
+    "individuality": "unknown",
+    "attackRate": 1000,
+    "imageId": 9999,
+    "iconImageId": 29,
+    "frameId": 20,
+    "priority": 50,
+    "groupType": 2,
+    "relationId": 29,
     "supportGroup": 999,
     "autoSelSupportType": 8
   },
@@ -477,7 +507,7 @@
     "groupType": 1,
     "relationId": 7,
     "supportGroup": 999,
-    "autoSelSupportType": 8
+    "autoSelSupportType": 7
   },
   {
     "id": 124,

@@ -1154,5 +1154,87 @@
     "maxCost": 114,
     "maxFriend": 124,
     "gift": null
+  },
+  "161": {
+    "requiredExp": 577060692,
+    "maxAp": 144,
+    "maxCost": 114,
+    "maxFriend": 125,
+    "gift": {
+      "id": 200,
+      "type": "item",
+      "objectId": 2,
+      "priority": 0,
+      "num": 1
+    }
+  },
+  "162": {
+    "requiredExp": 596203897,
+    "maxAp": 144,
+    "maxCost": 114,
+    "maxFriend": 126,
+    "gift": null
+  },
+  "163": {
+    "requiredExp": 615361682,
+    "maxAp": 145,
+    "maxCost": 114,
+    "maxFriend": 127,
+    "gift": null
+  },
+  "164": {
+    "requiredExp": 634534137,
+    "maxAp": 145,
+    "maxCost": 114,
+    "maxFriend": 128,
+    "gift": null
+  },
+  "165": {
+    "requiredExp": 653721352,
+    "maxAp": 145,
+    "maxCost": 114,
+    "maxFriend": 129,
+    "gift": {
+      "id": 200,
+      "type": "item",
+      "objectId": 2,
+      "priority": 0,
+      "num": 1
+    }
+  },
+  "166": {
+    "requiredExp": 672923417,
+    "maxAp": 145,
+    "maxCost": 114,
+    "maxFriend": 130,
+    "gift": null
+  },
+  "167": {
+    "requiredExp": 692140422,
+    "maxAp": 146,
+    "maxCost": 114,
+    "maxFriend": 131,
+    "gift": null
+  },
+  "168": {
+    "requiredExp": 711372457,
+    "maxAp": 146,
+    "maxCost": 114,
+    "maxFriend": 132,
+    "gift": null
+  },
+  "169": {
+    "requiredExp": 730619612,
+    "maxAp": 146,
+    "maxCost": 114,
+    "maxFriend": 133,
+    "gift": null
+  },
+  "170": {
+    "requiredExp": 749881977,
+    "maxAp": 146,
+    "maxCost": 115,
+    "maxFriend": 134,
+    "gift": null
   }
 }

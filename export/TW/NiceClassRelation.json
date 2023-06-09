@@ -19,6 +19,8 @@
     "foreigner": 1000,
     "beastIIIL": 1000,
     "beastUnknown": 1000,
+    "pretender": 1000,
+    "beastIV": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "archer": {
@@ -41,6 +43,8 @@
     "foreigner": 1000,
     "beastIIIL": 1000,
     "beastUnknown": 1000,
+    "pretender": 1000,
+    "beastIV": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "lancer": {
@@ -63,6 +67,8 @@
     "foreigner": 1000,
     "beastIIIL": 1000,
     "beastUnknown": 1000,
+    "pretender": 1000,
+    "beastIV": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "rider": {
@@ -85,6 +91,8 @@
     "foreigner": 1000,
     "beastIIIL": 1000,
     "beastUnknown": 1000,
+    "pretender": 1000,
+    "beastIV": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "caster": {
@@ -107,6 +115,8 @@
     "foreigner": 1000,
     "beastIIIL": 1000,
     "beastUnknown": 1000,
+    "pretender": 1000,
+    "beastIV": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "assassin": {
@@ -129,6 +139,8 @@
     "foreigner": 1000,
     "beastIIIL": 1000,
     "beastUnknown": 1000,
+    "pretender": 1000,
+    "beastIV": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "berserker": {
@@ -151,6 +163,8 @@
     "foreigner": 500,
     "beastIIIL": 1000,
     "beastUnknown": 1000,
+    "pretender": 1500,
+    "beastIV": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "shielder": {
@@ -173,6 +187,8 @@
     "foreigner": 1000,
     "beastIIIL": 1000,
     "beastUnknown": 1000,
+    "pretender": 1000,
+    "beastIV": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "ruler": {
@@ -195,6 +211,8 @@
     "foreigner": 1000,
     "beastIIIL": 1000,
     "beastUnknown": 1000,
+    "pretender": 1000,
+    "beastIV": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "alterEgo": {
@@ -217,6 +235,8 @@
     "foreigner": 2000,
     "beastIIIL": 1200,
     "beastUnknown": 1000,
+    "pretender": 500,
+    "beastIV": 1000,
     "cccFinaleEmiyaAlter": 1200
   },
   "avenger": {
@@ -239,6 +259,8 @@
     "foreigner": 1000,
     "beastIIIL": 1000,
     "beastUnknown": 1000,
+    "pretender": 1000,
+    "beastIV": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "demonGodPillar": {
@@ -261,6 +283,8 @@
     "foreigner": 1000,
     "beastIIIL": 1000,
     "beastUnknown": 1000,
+    "pretender": 1000,
+    "beastIV": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "beastII": {
@@ -283,6 +307,8 @@
     "foreigner": 1000,
     "beastIIIL": 1000,
     "beastUnknown": 1000,
+    "pretender": 1000,
+    "beastIV": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "beastI": {
@@ -305,6 +331,8 @@
     "foreigner": 1000,
     "beastIIIL": 1000,
     "beastUnknown": 1000,
+    "pretender": 1000,
+    "beastIV": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "moonCancer": {
@@ -327,6 +355,8 @@
     "foreigner": 1000,
     "beastIIIL": 1000,
     "beastUnknown": 1000,
+    "pretender": 1000,
+    "beastIV": 1000,
     "cccFinaleEmiyaAlter": 1200
   },
   "beastIIIR": {
@@ -349,6 +379,8 @@
     "foreigner": 1000,
     "beastIIIL": 1000,
     "beastUnknown": 1000,
+    "pretender": 1000,
+    "beastIV": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "foreigner": {
@@ -371,6 +403,8 @@
     "foreigner": 2000,
     "beastIIIL": 1200,
     "beastUnknown": 1000,
+    "pretender": 2000,
+    "beastIV": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "beastIIIL": {
@@ -413,6 +447,55 @@
     "beastIIIR": 1000,
     "foreigner": 1000,
     "beastUnknown": 1000,
+    "pretender": 1000,
+    "beastIV": 1000,
+    "cccFinaleEmiyaAlter": 1000
+  },
+  "pretender": {
+    "saber": 1500,
+    "archer": 1500,
+    "lancer": 1500,
+    "rider": 500,
+    "caster": 500,
+    "assassin": 500,
+    "berserker": 2000,
+    "shielder": 1000,
+    "ruler": 1000,
+    "alterEgo": 2000,
+    "avenger": 1000,
+    "demonGodPillar": 1000,
+    "beastII": 1000,
+    "beastI": 1000,
+    "moonCancer": 1000,
+    "beastIIIR": 1000,
+    "foreigner": 500,
+    "beastIIIL": 1000,
+    "beastUnknown": 1000,
+    "pretender": 1000,
+    "beastIV": 1000,
+    "cccFinaleEmiyaAlter": 1000
+  },
+  "beastIV": {
+    "saber": 1000,
+    "archer": 1000,
+    "lancer": 1000,
+    "rider": 1000,
+    "caster": 500,
+    "assassin": 1000,
+    "berserker": 1000,
+    "shielder": 1000,
+    "ruler": 1000,
+    "alterEgo": 1000,
+    "avenger": 1000,
+    "demonGodPillar": 1000,
+    "beastII": 1000,
+    "beastI": 1000,
+    "moonCancer": 1000,
+    "beastIIIR": 1000,
+    "foreigner": 1000,
+    "beastUnknown": 1000,
+    "pretender": 1000,
+    "beastIV": 1000,
     "cccFinaleEmiyaAlter": 1000
   },
   "cccFinaleEmiyaAlter": {
@@ -434,6 +517,8 @@
     "beastIIIR": 1000,
     "foreigner": 1000,
     "beastIIIL": 1000,
-    "beastUnknown": 1000
+    "beastUnknown": 1000,
+    "pretender": 1000,
+    "beastIV": 1000
   }
 }

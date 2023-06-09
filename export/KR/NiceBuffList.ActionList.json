@@ -1040,7 +1040,9 @@
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": []
+    "maxRate": [
+      5000
+    ]
   },
   "pierceDefence": {
     "limit": "none",
@@ -1451,7 +1453,9 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": []
+    "maxRate": [
+      0
+    ]
   },
   "donotSkillSelect": {
     "limit": "none",
@@ -1477,7 +1481,9 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": []
+    "maxRate": [
+      0
+    ]
   },
   "buffRate": {
     "limit": "normal",
@@ -1489,7 +1495,9 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": []
+    "maxRate": [
+      5000
+    ]
   },
   "counterFunction": {
     "limit": "none",

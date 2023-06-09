@@ -168,6 +168,24 @@
     }
   },
   "extra": {
+    "1": {
+      "individuality": [
+        {
+          "id": 4004,
+          "name": "cardExtra"
+        },
+        {
+          "id": 4008,
+          "name": "faceCard"
+        }
+      ],
+      "adjustAtk": 1000,
+      "adjustTdGauge": 1000,
+      "adjustCritical": 1000,
+      "addAtk": 0,
+      "addTdGauge": 0,
+      "addCritical": 0
+    },
     "4": {
       "individuality": [
         {
