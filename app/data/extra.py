@@ -98,11 +98,7 @@ def get_extra_svt_data(
     }
 
     latest_valentine_event_id = max(
-        (
-            event
-            for event in mstEvents
-            if VALENTINE_NAME[region] in event.name or event.id in eventId_with_script
-        ),
+        (event for event in mstEvents if event.id in eventId_with_script),
         key=lambda event: int(event.startedAt),
     ).id
 
