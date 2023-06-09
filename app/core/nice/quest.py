@@ -259,12 +259,15 @@ async def get_nice_quest(
     mstWar: Optional[MstWar] = None,
     mstSpot: Optional[MstSpot | MstBlankEarthSpot] = None,
 ) -> dict[str, Any]:
-    if not mstWar:
-        mstWar = await war.get_war_from_spot(conn, raw_quest.mstQuest.spotId)
     if not mstSpot:
         mstSpot = await war.get_spot_from_id(conn, raw_quest.mstQuest.spotId)
-    if mstSpot is None or mstWar is None:  # pragma: no cover
+    if mstSpot is None:  # pragma: no cover
         raise HTTPException(status_code=404, detail="Quest's spot not found")
+
+    if not mstWar:
+        mstWar = await war.get_war_from_spot(conn, raw_quest.mstQuest.spotId)
+    if mstWar is None:  # pragma: no cover
+        raise HTTPException(status_code=404, detail="Quest's war not found")
 
     return get_nice_quest_with_war_spot(region, raw_quest, lang, mstWar, mstSpot)
 
