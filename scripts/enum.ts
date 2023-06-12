@@ -1702,3 +1702,14 @@ export enum NiceNpcServantFollowerFlag {
     HIDE_TREASURE_DEVICE_DETAIL = "hideTreasureDeviceDetail",
     HIDE_RARITY = "hideRarity",
 }
+
+export enum NiceClassBoardSquareFlag {
+    START = "start",
+    BLANK = "blank",
+}
+
+export enum NiceClassBoardSkillType {
+    NONE = "none",
+    PASSIVE = "passive",
+    COMMAND_SPELL = "commandSpell",
+}

@@ -46,6 +46,8 @@ from .gameenums import (
     NiceAiCond,
     NiceBuffType,
     NiceCardType,
+    NiceClassBoardSkillType,
+    NiceClassBoardSquareFlag,
     NiceCombineAdjustTarget,
     NiceCommandCardAttackType,
     NiceCommonConsumeType,
@@ -2575,3 +2577,74 @@ class NiceAiCollection(BaseModelORJson):
     mainAis: list[NiceAi]
     relatedAis: list[NiceAi]
     relatedQuests: list[StageLink]
+
+
+class NiceClassBoardClass(BaseModelORJson):
+    # classBoardBaseId: int
+    classId: int
+    className: SvtClass
+    condType: NiceCondType
+    condTargetId: int
+    condNum: int
+
+
+class NiceClassBoardCommandSpell(BaseModelORJson):
+    # funcIds:list[int]
+    # svals:list[str]
+    # id:int
+    commandSpellId: int
+    # lv: int
+    name: str
+    detail: str
+    # vals:str
+    functions: list[NiceFunction]
+
+
+class NiceClassBoardLock(BaseModelORJson):
+    # itemIds: list[int]
+    # itemNums: list[int]
+    items: list[NiceItemAmount]
+    # id: int
+    closedMessage: str
+    condType: NiceCondType
+    condTargetId: int
+    condNum: int
+
+
+class NiceClassBoardSquare(BaseModelORJson):
+    # itemIds: list[int]
+    # itemNums: list[int]
+    # classBoardBaseId: int
+    id: int
+    icon: HttpUrl | None
+    items: list[NiceItemAmount]
+    posX: int
+    posY: int
+    skillType: NiceClassBoardSkillType
+    # targetId: int
+    targetSkill: NiceSkill | None
+    upSkillLv: int
+    targetCommandSpell: NiceClassBoardCommandSpell | None
+    lock: NiceClassBoardLock | None
+    # assetId: int
+    flags: list[NiceClassBoardSquareFlag]
+    priority: int
+
+
+class NiceClassBoardLine(BaseModelORJson):
+    id: int
+    prevSquareId: int
+    nextSquareId: int
+
+
+class NiceClassBoard(BaseModelORJson):
+    id: int
+    icon: HttpUrl | None
+    dispItems: list[NiceItem]
+    closedMessage: str
+    condType: NiceCondType
+    condTargetId: int
+    condNum: int
+    classes: list[NiceClassBoardClass]
+    squares: list[NiceClassBoardSquare]
+    lines: list[NiceClassBoardLine]

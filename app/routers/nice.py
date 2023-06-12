@@ -7,6 +7,7 @@ from ..core.nice import (
     ai,
     bgm,
     cc,
+    class_board,
     enemy_master,
     item,
     mc,
@@ -30,6 +31,7 @@ from ..schemas.nice import (
     NiceBaseFunctionReverse,
     NiceBgmEntity,
     NiceBuffReverse,
+    NiceClassBoard,
     NiceCommandCode,
     NiceCommonRelease,
     NiceEnemyMaster,
@@ -961,4 +963,24 @@ async def get_enemy_master(
     async with get_db(region) as conn:
         return item_response(
             await enemy_master.get_nice_enemy_master(conn, region, master_id)
+        )
+
+
+@router.get(
+    "/{region}/class-board/{class_board_id}",
+    summary="Get Class Board data",
+    response_description="Nice Class Board Entity",
+    response_model=NiceClassBoard,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()
+async def get_class_board(
+    region: Region,
+    class_board_id: int,
+    lang: Language = Depends(language_parameter),
+) -> Response:
+    async with get_db(region) as conn:
+        return item_response(
+            await class_board.get_nice_class_board(conn, region, class_board_id, lang)
         )

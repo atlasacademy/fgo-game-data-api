@@ -5016,3 +5016,42 @@ NPC_SERVANT_FOLLOWER_FLAG_NAME: dict[int, NiceNpcServantFollowerFlag] = {
     512: NiceNpcServantFollowerFlag.hideTreasureDeviceDetail,
     1024: NiceNpcServantFollowerFlag.hideRarity,
 }
+
+
+class ClassBoardSquareFlag(IntEnum):
+    START = 1
+    BLANK = 2
+
+
+class NiceClassBoardSquareFlag(StrEnum):
+    """Class Board Square Flag"""
+
+    start = "start"
+    blank = "blank"
+
+
+CLASS_BOARD_SQUARE_FLAG_NAME: dict[int, NiceClassBoardSquareFlag] = {
+    1: NiceClassBoardSquareFlag.start,
+    2: NiceClassBoardSquareFlag.blank,
+}
+
+
+class ClassBoardSkillType(IntEnum):
+    NONE = 0
+    PASSIVE = 1
+    COMMAND_SPELL = 2
+
+
+class NiceClassBoardSkillType(StrEnum):
+    """Class Board Skill Type"""
+
+    none = "none"
+    passive = "passive"
+    commandSpell = "commandSpell"
+
+
+CLASS_BOARD_SKILL_TYPE_NAME: dict[int, NiceClassBoardSkillType] = {
+    0: NiceClassBoardSkillType.none,
+    1: NiceClassBoardSkillType.passive,
+    2: NiceClassBoardSkillType.commandSpell,
+}

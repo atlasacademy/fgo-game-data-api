@@ -735,7 +735,7 @@ mstSvtScript = Table(
 )
 
 
-Index("ix_mstSvtScript_svtId", mstSvtScript.c.id // 10)
+Index("ix_mstSvtScript_svtId", mstSvtScript.c.id // 10)  # type: ignore
 
 
 mstSvtComment = Table(
@@ -2173,6 +2173,95 @@ mstAiAct = Table(
 Index("ix_mstAiAct_skillVals", mstAiAct.c.skillVals[1])
 
 
+mstClassBoardBase = Table(
+    "mstClassBoardBase",
+    metadata,
+    Column("dispItemIds", ARRAY(Integer)),
+    Column("id", Integer, primary_key=True),
+    Column("iconId", Integer),
+    Column("closedMessage", String),
+    Column("condType", Integer),
+    Column("condTargetId", Integer),
+    Column("condNum", Integer),
+)
+
+mstClassBoardClass = Table(
+    "mstClassBoardClass",
+    metadata,
+    Column("classBoardBaseId", Integer, index=True),
+    Column("classId", Integer),
+    Column("condType", Integer),
+    Column("condTargetId", Integer),
+    Column("condNum", Integer),
+)
+
+
+mstClassBoardCommandSpell = Table(
+    "mstClassBoardCommandSpell",
+    metadata,
+    Column("funcIds", ARRAY(Integer)),
+    Column("svals", ARRAY(String)),
+    Column("id", Integer, index=True),
+    Column("commandSpellId", Integer),
+    Column("lv", Integer),
+    Column("name", String),
+    Column("detail", String),
+    Column("vals", String),
+)
+
+
+mstClassBoardLine = Table(
+    "mstClassBoardLine",
+    metadata,
+    Column("classBoardBaseId", Integer, index=True),
+    Column("id", Integer),
+    Column("prevSquareId", Integer),
+    Column("nextSquareId", Integer),
+)
+
+
+mstClassBoardLock = Table(
+    "mstClassBoardLock",
+    metadata,
+    Column("itemIds", ARRAY(Integer)),
+    Column("itemNums", ARRAY(Integer)),
+    Column("id", Integer, index=True),
+    Column("closedMessage", String),
+    Column("condType", Integer),
+    Column("condTargetId", Integer),
+    Column("condNum", Integer),
+)
+
+
+mstClassBoardSquare = Table(
+    "mstClassBoardSquare",
+    metadata,
+    Column("itemIds", ARRAY(Integer)),
+    Column("itemNums", ARRAY(Integer)),
+    Column("classBoardBaseId", Integer, index=True),
+    Column("id", Integer),
+    Column("iconId", Integer),
+    Column("posX", Integer),
+    Column("posY", Integer),
+    Column("skillType", Integer),
+    Column("targetId", Integer),
+    Column("upSkillLv", Integer),
+    Column("lockId", Integer),
+    Column("assetId", Integer),
+    Column("flag", Integer),
+    Column("priority", Integer),
+)
+
+
+mstFuncDisp = Table(
+    "mstFuncDisp",
+    metadata,
+    Column("funcIds", ARRAY(Integer)),
+    Column("id", Integer, primary_key=True),
+    Column("detail", String),
+)
+
+
 ScriptFileList = Table(
     "ScriptFileList",
     metadata,
@@ -2295,4 +2384,6 @@ TABLES_TO_BE_LOADED = [
     [mstEventCampaign],
     [mstEventQuest],
     [mstEventAlloutBattle],
+    [mstClassBoardBase, mstClassBoardClass, mstClassBoardLine, mstFuncDisp],
+    [mstClassBoardCommandSpell, mstClassBoardLock, mstClassBoardSquare],
 ]

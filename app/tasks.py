@@ -22,6 +22,7 @@ from .core.basic import (
 )
 from .core.nice.bgm import get_all_nice_bgms
 from .core.nice.cc import get_all_nice_ccs
+from .core.nice.class_board import get_all_nice_class_boards
 from .core.nice.enemy_master import get_all_nice_enemy_masters
 from .core.nice.event.event import get_nice_event
 from .core.nice.event.shop import get_nice_shops_from_raw
@@ -50,6 +51,7 @@ from .schemas.nice import NiceEquip, NiceServant
 from .schemas.raw import (
     AssetStorageLine,
     BgmEntity,
+    MstClassBoardBase,
     MstCommandCode,
     MstCv,
     MstEnemyMaster,
@@ -208,6 +210,15 @@ async def dump_nice_enemy_masters(
         util.conn, util.region, mcs
     )
     await util.dump_orjson("nice_enemy_master", all_enemy_master_data)
+
+
+async def dump_nice_class_boards(
+    util: ExportUtil, boards: list[MstClassBoardBase]
+) -> None:  # pragma: no cover
+    all_class_board_data = await get_all_nice_class_boards(
+        util.conn, util.region, boards, util.lang
+    )
+    await util.dump_orjson("nice_class_board", all_class_board_data)
 
 
 async def dump_nice_bgms(
@@ -378,6 +389,7 @@ async def generate_exports(
                 mstMasterMissions = await fetch.get_everything(conn, MstMasterMission)
                 mstShops = await fetch.get_all(conn, MstShop, 0)
                 mstEnemyMasters = await fetch.get_everything(conn, MstEnemyMaster)
+                mstClassBoardBases = await fetch.get_everything(conn, MstClassBoardBase)
 
                 asset_storage = await fetch.get_everything(conn, AssetStorageLine)
                 await util.dump_orjson("asset_storage", asset_storage)
@@ -391,6 +403,7 @@ async def generate_exports(
                 await dump_nice_bgms(util, bgms)
                 await dump_nice_shops(util, mstShops)
                 await dump_nice_enemy_masters(util, mstEnemyMasters)
+                await dump_nice_class_boards(util, mstClassBoardBases)
 
                 util_en = ExportUtil(conn, redis, region, export_path, Language.en)
                 if region == Region.JP:
