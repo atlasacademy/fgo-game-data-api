@@ -13,6 +13,12 @@ from ...models.raw import (
     mstBoxGacha,
     mstBoxGachaTalk,
     mstBuff,
+    mstClassBoardBase,
+    mstClassBoardClass,
+    mstClassBoardCommandSpell,
+    mstClassBoardLine,
+    mstClassBoardLock,
+    mstClassBoardSquare,
     mstClosedMessage,
     mstCombineAppendPassiveSkill,
     mstCombineCostume,
@@ -116,6 +122,12 @@ from ...schemas.raw import (
     MstBoxGacha,
     MstBoxGachaTalk,
     MstBuff,
+    MstClassBoardBase,
+    MstClassBoardClass,
+    MstClassBoardCommandSpell,
+    MstClassBoardLine,
+    MstClassBoardLock,
+    MstClassBoardSquare,
     MstClosedMessage,
     MstCombineAppendPassiveSkill,
     MstCombineCostume,
@@ -237,6 +249,7 @@ schema_map_fetch_one: dict[  # type:ignore
     MstSvtCoin: (mstSvtCoin, mstSvtCoin.c.svtId),
     MstSvtAdd: (mstSvtAdd, mstSvtAdd.c.svtId),
     MstEventDigging: (mstEventDigging, mstEventDigging.c.eventId),
+    MstClassBoardBase: (mstClassBoardBase, mstClassBoardBase.c.id),
 }
 
 TFetchOne = TypeVar("TFetchOne", bound=BaseModelORJson)
@@ -458,6 +471,21 @@ schema_table_fetch_all: dict[  # type:ignore
         mstEventCommandAssist.c.eventId,
         mstEventCommandAssist.c.id,
     ),
+    MstClassBoardClass: (
+        mstClassBoardClass,
+        mstClassBoardClass.c.classBoardBaseId,
+        mstClassBoardClass.c.classId,
+    ),
+    MstClassBoardLine: (
+        mstClassBoardLine,
+        mstClassBoardLine.c.classBoardBaseId,
+        mstClassBoardLine.c.id,
+    ),
+    MstClassBoardSquare: (
+        mstClassBoardSquare,
+        mstClassBoardSquare.c.classBoardBaseId,
+        mstClassBoardSquare.c.id,
+    ),
 }
 
 TFetchAll = TypeVar("TFetchAll", bound=BaseModelORJson)
@@ -555,6 +583,20 @@ schema_table_fetch_all_multiple: dict[  # type:ignore
         mstEventMissionGroup,
         mstEventMissionGroup.c.id,
         [mstEventMissionGroup.c.id, mstEventMissionGroup.c.missionId],
+    ),
+    MstClassBoardLock: (
+        mstClassBoardLock,
+        mstClassBoardLock.c.id,
+        [mstClassBoardLock.c.id],
+    ),
+    MstClassBoardCommandSpell: (
+        mstClassBoardCommandSpell,
+        mstClassBoardCommandSpell.c.id,
+        [
+            mstClassBoardCommandSpell.c.id,
+            mstClassBoardCommandSpell.c.commandSpellId,
+            mstClassBoardCommandSpell.c.lv,
+        ],
     ),
 }
 

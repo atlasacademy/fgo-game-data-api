@@ -537,6 +537,20 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "NPC Servant Follower Flag",
         "NPC_SERVANT_FOLLOWER_FLAG_NAME",
     ),
+    (
+        "ClassBoardSquareEntity.Flag",
+        "ClassBoardSquareFlag",
+        "NiceClassBoardSquareFlag",
+        "Class Board Square Flag",
+        "CLASS_BOARD_SQUARE_FLAG_NAME",
+    ),
+    (
+        "ClassBoardSkillType",
+        "ClassBoardSkillType",
+        "NiceClassBoardSkillType",
+        "Class Board Skill Type",
+        "CLASS_BOARD_SKILL_TYPE_NAME",
+    ),
 ]
 
 

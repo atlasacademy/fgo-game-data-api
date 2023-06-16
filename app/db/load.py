@@ -20,6 +20,8 @@ from ..models.raw import (
     AssetStorage,
     ScriptFileList,
     mstBuff,
+    mstClassBoardCommandSpell,
+    mstCommandSpell,
     mstEvent,
     mstFunc,
     mstFuncGroup,
@@ -140,6 +142,20 @@ def load_skill_td_lv(
     with open(master_folder / "mstTreasureDeviceLv.json", "rb") as fp:
         mstTreasureDeviceLv_data = orjson.loads(fp.read())
 
+    board_cs_path = master_folder / "mstClassBoardCommandSpell.json"
+    if board_cs_path.exists():
+        with open(board_cs_path, "rb") as fp:
+            mstClassBoardCommandSpell_data = orjson.loads(fp.read())
+    else:
+        mstClassBoardCommandSpell_data = []
+
+    cs_path = master_folder / "mstCommandSpell.json"
+    if cs_path.exists():
+        with open(cs_path, "rb") as fp:
+            mstCommandSpell_data = orjson.loads(fp.read())
+    else:
+        mstCommandSpell_data = []
+
     def get_func_entity(func_id: int) -> dict[Any, Any]:
         func_entity = {
             "mstFunc": mstFuncId[func_id],
@@ -159,13 +175,15 @@ def load_skill_td_lv(
 
         return func_entity
 
-    def get_trigger_skill_ids(entity_lv: dict[str, Any]) -> list[int]:
+    def get_trigger_skill_ids(
+        entity_lv: dict[str, Any], func_field_name: str = "funcId"
+    ) -> list[int]:
         skill_ids = set()
 
         for field_name in ("svals", "svals2", "svals3", "svals4", "svals5"):
             if field_name in entity_lv:
                 for func_id, sval in zip(
-                    entity_lv["funcId"], entity_lv[field_name], strict=False
+                    entity_lv[func_field_name], entity_lv[field_name], strict=False
                 ):
                     if func_id in mstFuncId:
                         func = mstFuncId[func_id]
@@ -207,6 +225,22 @@ def load_skill_td_lv(
         ]
         treasureDeviceLv["relatedSkillIds"] = get_trigger_skill_ids(treasureDeviceLv)
 
+    for classBoardCS in mstClassBoardCommandSpell_data:
+        classBoardCS["expandedFuncId"] = [
+            get_func_entity(func_id)
+            for func_id in classBoardCS["funcIds"]
+            if func_id in mstFuncId
+        ]
+        classBoardCS["relatedSkillIds"] = get_trigger_skill_ids(classBoardCS, "funcIds")
+
+    for commandSpell in mstCommandSpell_data:
+        commandSpell["expandedFuncId"] = [
+            get_func_entity(func_id)
+            for func_id in commandSpell["funcId"]
+            if func_id in mstFuncId
+        ]
+        commandSpell["relatedSkillIds"] = get_trigger_skill_ids(commandSpell)
+
     load_pydantic_to_db(conn, list(mstBuffId.values()), mstBuff)
 
     insert_db(conn, mstFunc, mstFunc_data)
@@ -214,6 +248,8 @@ def load_skill_td_lv(
     insert_db(conn, mstSkillLv, mstSkillLv_data)
     insert_db(conn, mstSkillGroupOverwrite, mstSkillGroupOverwrite_data)
     insert_db(conn, mstTreasureDeviceLv, mstTreasureDeviceLv_data)
+    insert_db(conn, mstClassBoardCommandSpell, mstClassBoardCommandSpell_data)
+    insert_db(conn, mstCommandSpell, mstCommandSpell_data)
 
 
 def load_event(

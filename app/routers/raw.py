@@ -12,6 +12,7 @@ from ..schemas.raw import (
     AiCollection,
     BgmEntity,
     BuffEntity,
+    ClassBoardEntity,
     CommandCodeEntity,
     EnemyMasterEntity,
     EventEntity,
@@ -806,3 +807,24 @@ async def get_enemy_master(
     async with get_db(region) as conn:
         enemy_master_entity = await raw.get_enemy_master_entity(conn, master_id)
         return item_response(enemy_master_entity)
+
+
+@router.get(
+    "/{region}/class-board/{class_board_id}",
+    summary="Get Class Board data",
+    response_description="Class Board entity",
+    response_model=ClassBoardEntity,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()
+async def get_class_board(
+    region: Region,
+    class_board_id: int,
+) -> Response:
+    """
+    Get Class Board info from ID
+    """
+    async with get_db(region) as conn:
+        class_board_entity = await raw.get_class_board_entity(conn, class_board_id)
+        return item_response(class_board_entity)

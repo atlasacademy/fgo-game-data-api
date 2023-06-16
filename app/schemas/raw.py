@@ -2075,6 +2075,89 @@ class AiCollection(BaseModelORJson):
     relatedQuests: list[StageLink]
 
 
+class MstClassBoardBase(BaseModelORJson):
+    dispItemIds: list[int]
+    id: int
+    name: str
+    iconId: int
+    closedMessage: str
+    condType: int
+    condTargetId: int
+    condNum: int
+
+
+class MstClassBoardClass(BaseModelORJson):
+    classBoardBaseId: int
+    classId: int
+    condType: int
+    condTargetId: int
+    condNum: int
+
+
+class MstClassBoardCommandSpell(BaseModelORJson):
+    funcIds: list[int]
+    expandedFuncId: list[FunctionEntityNoReverse] = []
+    svals: list[str]
+    id: int
+    commandSpellId: int
+    lv: int
+    name: str
+    detail: str
+    vals: str
+
+
+class MstClassBoardLine(BaseModelORJson):
+    classBoardBaseId: int
+    id: int
+    prevSquareId: int
+    nextSquareId: int
+
+
+class MstClassBoardLock(BaseModelORJson):
+    itemIds: list[int]
+    itemNums: list[int]
+    id: int
+    closedMessage: str
+    condType: int
+    condTargetId: int
+    condNum: int
+
+
+class MstClassBoardSquare(BaseModelORJson):
+    itemIds: list[int]
+    itemNums: list[int]
+    classBoardBaseId: int
+    id: int
+    iconId: int
+    posX: int
+    posY: int
+    skillType: int
+    targetId: int
+    upSkillLv: int
+    lockId: int
+    assetId: int
+    flag: int
+    priority: int
+
+
+class MstFuncDisp(BaseModelORJson):
+    funcIds: list[int]
+    id: int
+    detail: str
+
+
+class ClassBoardEntity(BaseModelORJson):
+    mstClassBoardBase: MstClassBoardBase
+    mstClassBoardClass: list[MstClassBoardClass]
+    mstClassBoardLine: list[MstClassBoardLine]
+    mstClassBoardSquare: list[MstClassBoardSquare]
+    mstClassBoardLock: list[MstClassBoardLock]
+    mstClassBoardCommandSpell: list[MstClassBoardCommandSpell]
+    mstItem: list[MstItem]
+    mstSkill: list[SkillEntityNoReverse]
+    # mstFuncDisp: list[MstFuncDisp]
+
+
 class AssetStorageLine(BaseModelORJson):
     first: str = Field(
         ...,
