@@ -298,6 +298,7 @@ mstSvtTreasureDevice = Table(
     metadata,
     Column("damage", ARRAY(Integer)),
     Column("strengthStatus", Integer, index=True),
+    Column("treasureDeviceNum", Integer),
     Column("svtId", Integer, index=True),
     Column("num", Integer),
     Column("priority", Integer),

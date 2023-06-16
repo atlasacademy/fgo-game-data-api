@@ -27,6 +27,7 @@ def get_nice_td_svt(
     return NiceTdSvt(
         svtId=td_svt.svtId,
         num=td_svt.num,
+        npNum=td_svt.treasureDeviceNum if td_svt.treasureDeviceNum is not None else 1,
         priority=td_svt.priority,
         damage=td_svt.damage,
         strengthStatus=td_svt.strengthStatus,
@@ -154,6 +155,7 @@ async def get_nice_td(
             "svtId": tdEntity.mstTreasureDevice.id,
             "icon": AssetURL.commands.format(**base_settings_id, i="np"),
             "strengthStatus": 0,
+            "npNum": 1,
             "num": 0,
             "priority": 0,
             "condQuestId": 0,
@@ -181,6 +183,9 @@ async def get_nice_td(
             "icon": AssetURL.commands.format(**base_settings_id, i=file_i),
             "strengthStatus": chosen_svt.strengthStatus,
             "num": chosen_svt.num,
+            "npNum": chosen_svt.treasureDeviceNum
+            if chosen_svt.treasureDeviceNum is not None
+            else 1,
             "priority": chosen_svt.priority,
             "condQuestId": chosen_svt.condQuestId,
             "condQuestPhase": chosen_svt.condQuestPhase,

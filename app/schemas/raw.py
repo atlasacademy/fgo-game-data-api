@@ -281,6 +281,7 @@ class MstTreasureDeviceDetail(BaseModelORJson):
 class MstSvtTreasureDevice(BaseModelORJson):
     damage: list[int]  # [5, 11, 17, 11, 23, 33],
     strengthStatus: int  # 1,
+    treasureDeviceNum: int | None = 1
     svtId: int  # 400900,
     num: int  # 1,
     priority: int  # 101,

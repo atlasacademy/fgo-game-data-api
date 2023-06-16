@@ -684,6 +684,7 @@ class NpGain(BaseModel):
 class NiceTdSvt(BaseModelORJson):
     svtId: int
     num: int
+    npNum: int
     priority: int
     damage: list[int]
     strengthStatus: int
@@ -701,6 +702,7 @@ class NiceTdSvt(BaseModelORJson):
 class NiceTd(BaseModelORJson):
     id: int
     num: int
+    npNum: int
     card: NiceCardType
     name: str
     originalName: str
