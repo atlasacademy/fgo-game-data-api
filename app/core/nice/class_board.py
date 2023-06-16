@@ -75,6 +75,7 @@ async def get_nice_class_board_command_spell(
         functions.append(nice_func)
 
     return NiceClassBoardCommandSpell(
+        id=class_board_css[0].id,
         commandSpellId=class_board_css[0].commandSpellId,
         name=class_board_css[0].name,
         detail=class_board_css[0].detail,
@@ -89,6 +90,7 @@ def get_nice_class_board_lock(
     lang: Language,
 ) -> NiceClassBoardLock:
     return NiceClassBoardLock(
+        id=lock.id,
         items=get_nice_item_amount(
             [
                 get_nice_item_from_raw(region, items_map[item_id], lang)
@@ -180,8 +182,8 @@ async def get_nice_class_board_square(
 def get_nice_class_board_line(line: MstClassBoardLine) -> NiceClassBoardLine:
     return NiceClassBoardLine(
         id=line.id,
-        prevSquareId=line.id,
-        nextSquareId=line.id,
+        prevSquareId=line.prevSquareId,
+        nextSquareId=line.nextSquareId,
     )
 
 

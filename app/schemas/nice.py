@@ -2592,6 +2592,7 @@ class NiceClassBoardClass(BaseModelORJson):
 
 
 class NiceClassBoardCommandSpell(BaseModelORJson):
+    id: int
     commandSpellId: int
     name: str
     detail: str
@@ -2599,6 +2600,7 @@ class NiceClassBoardCommandSpell(BaseModelORJson):
 
 
 class NiceClassBoardLock(BaseModelORJson):
+    id: int
     items: list[NiceItemAmount]
     closedMessage: str
     condType: NiceCondType
