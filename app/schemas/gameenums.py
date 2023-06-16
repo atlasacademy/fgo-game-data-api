@@ -207,6 +207,7 @@ class FuncType(IntEnum):
     GAIN_NP_INDIVIDUAL_SUM = 133
     SET_QUEST_ROUTE_FLAG = 134
     LAST_USE_PLAYER_SKILL_COPY = 135
+    CHANGE_ENEMY_MASTER_FACE = 136
 
 
 class NiceFuncType(StrEnum):
@@ -311,6 +312,7 @@ class NiceFuncType(StrEnum):
     gainNpIndividualSum = "gainNpIndividualSum"
     setQuestRouteFlag = "setQuestRouteFlag"
     lastUsePlayerSkillCopy = "lastUsePlayerSkillCopy"
+    changeEnemyMasterFace = "changeEnemyMasterFace"
 
 
 FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
@@ -413,6 +415,7 @@ FUNC_TYPE_NAME: dict[int, NiceFuncType] = {
     133: NiceFuncType.gainNpIndividualSum,
     134: NiceFuncType.setQuestRouteFlag,
     135: NiceFuncType.lastUsePlayerSkillCopy,
+    136: NiceFuncType.changeEnemyMasterFace,
 }
 
 
@@ -3898,6 +3901,7 @@ class AiActType(IntEnum):
     NOBLE_PHANTASM = 80
     BATTLE_END = 90
     LOSE_END = 91
+    BATTLE_END_NOT_RELATED_SURVIVAL_STATUS = 92
     CHANGE_THINKING = 99
 
 
@@ -3927,6 +3931,7 @@ class NiceAiActType(StrEnum):
     noblePhantasm = "noblePhantasm"
     battleEnd = "battleEnd"
     loseEnd = "loseEnd"
+    battleEndNotRelatedSurvivalStatus = "battleEndNotRelatedSurvivalStatus"
     changeThinking = "changeThinking"
 
 
@@ -3954,6 +3959,7 @@ AI_ACT_TYPE_NAME: dict[int, NiceAiActType] = {
     80: NiceAiActType.noblePhantasm,
     90: NiceAiActType.battleEnd,
     91: NiceAiActType.loseEnd,
+    92: NiceAiActType.battleEndNotRelatedSurvivalStatus,
     99: NiceAiActType.changeThinking,
 }
 
