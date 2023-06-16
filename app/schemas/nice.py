@@ -2584,7 +2584,6 @@ class NiceAiCollection(BaseModelORJson):
 
 
 class NiceClassBoardClass(BaseModelORJson):
-    # classBoardBaseId: int
     classId: int
     className: SvtClass
     condType: NiceCondType
@@ -2593,22 +2592,14 @@ class NiceClassBoardClass(BaseModelORJson):
 
 
 class NiceClassBoardCommandSpell(BaseModelORJson):
-    # funcIds:list[int]
-    # svals:list[str]
-    # id:int
     commandSpellId: int
-    # lv: int
     name: str
     detail: str
-    # vals:str
     functions: list[NiceFunction]
 
 
 class NiceClassBoardLock(BaseModelORJson):
-    # itemIds: list[int]
-    # itemNums: list[int]
     items: list[NiceItemAmount]
-    # id: int
     closedMessage: str
     condType: NiceCondType
     condTargetId: int
@@ -2616,21 +2607,16 @@ class NiceClassBoardLock(BaseModelORJson):
 
 
 class NiceClassBoardSquare(BaseModelORJson):
-    # itemIds: list[int]
-    # itemNums: list[int]
-    # classBoardBaseId: int
     id: int
     icon: HttpUrl | None
     items: list[NiceItemAmount]
     posX: int
     posY: int
     skillType: NiceClassBoardSkillType
-    # targetId: int
     targetSkill: NiceSkill | None
     upSkillLv: int
     targetCommandSpell: NiceClassBoardCommandSpell | None
     lock: NiceClassBoardLock | None
-    # assetId: int
     flags: list[NiceClassBoardSquareFlag]
     priority: int
 
@@ -2644,7 +2630,7 @@ class NiceClassBoardLine(BaseModelORJson):
 class NiceClassBoard(BaseModelORJson):
     id: int
     name: str
-    icon: HttpUrl | None
+    icon: HttpUrl
     dispItems: list[NiceItem]
     closedMessage: str
     condType: NiceCondType

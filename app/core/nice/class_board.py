@@ -147,6 +147,13 @@ async def get_nice_class_board_square(
                 region=region,
                 item_id=f"skill_{square.iconId:05d}",
             )
+        elif square.skillType == ClassBoardSkillType.COMMAND_SPELL:
+            icon = fmt_url(
+                AssetURL.classBoardIcon,
+                base_url=settings.asset_url,
+                region=region,
+                item_id=f"cs_{square.iconId:04d}1",
+            )
 
     return NiceClassBoardSquare(
         id=square.id,
