@@ -632,6 +632,7 @@ schema_map_fetch_everything: dict[  # type:ignore
     MstMasterMission: (mstMasterMission, mstMasterMission.c.id),
     AssetStorageLine: (AssetStorage, AssetStorage.c.path),
     MstSvt: (mstSvt, mstSvt.c.id),
+    MstClassBoardBase: (mstClassBoardBase, mstClassBoardBase.c.id),
 }
 
 TFetchEverything = TypeVar("TFetchEverything", bound=BaseModelORJson)

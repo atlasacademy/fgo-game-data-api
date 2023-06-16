@@ -25,4 +25,5 @@ asset_storage.json
 basic_svt*.json
 nice_shop*.json
 nice_enemy_master*.json
+nice_class_board*.json
 info.json

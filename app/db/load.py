@@ -59,7 +59,8 @@ def recreate_table(conn: Connection, table: Table) -> None:  # pragma: no cover
 def insert_db(conn: Connection, table: Table, db_data: Any) -> None:  # pragma: no cover
     recreate_table(conn, table)
     logger.debug(f"Inserting into {table.name}")
-    conn.execute(table.insert(), db_data)
+    if db_data:
+        conn.execute(table.insert(), db_data)
 
 
 def diff_column_schemas(
