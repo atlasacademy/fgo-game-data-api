@@ -12,6 +12,7 @@ from ...models.raw import (
     mstIllustrator,
     mstSubtitle,
     mstSvt,
+    mstSvtComment,
     mstSvtGroup,
     mstSvtIndividuality,
     mstSvtLimit,
@@ -210,6 +211,7 @@ async def get_svt_search(
     cond_group_value: Optional[set[int]] = None,
     illustrator: Optional[str] = None,
     cv: Optional[str] = None,
+    profile_contains: Optional[str] = None,
 ) -> list[MstSvt]:
     from_clause: Union[Join, Table] = mstSvt
     where_clause: list[_ColumnExpressionArgument[bool]] = [true()]
@@ -292,6 +294,11 @@ async def get_svt_search(
 
     if or_voice_clause:
         where_clause.append(or_(*or_voice_clause))
+    if profile_contains:
+        from_clause = from_clause.outerjoin(
+            mstSvtComment, mstSvtComment.c.svtId == mstSvt.c.id
+        )
+        where_clause.append(mstSvtComment.c.comment.op("&@~")(profile_contains))
 
     svt_search_stmt = (
         select(mstSvt).distinct().select_from(from_clause).where(and_(*where_clause))

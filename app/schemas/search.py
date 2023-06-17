@@ -48,6 +48,7 @@ class ServantSearchQueryParams:
     trait: list[Union[Trait, int]] = Query([])
     notTrait: list[Union[Trait, int]] = Query([])
     voiceCondSvt: list[int] = Query([])
+    profileContains: str | None = Query(None, max_length=999)
 
     def hasSearchParams(self) -> bool:
         return any(
@@ -64,6 +65,7 @@ class ServantSearchQueryParams:
                 self.trait,
                 self.notTrait,
                 self.voiceCondSvt,
+                self.profileContains,
             ]
         )
 
@@ -86,6 +88,7 @@ class ServantSearchQueryParams:
         in the list.
         - **voiceCondValue**: servant `collectionNo` or servant `ID`. Will find the servants that
         have voice lines directed to the given servants.
+        - **profileContains**: string. Will search the servant's profile comments for the string.
 
         At least one of `name`, `type`, `rarity`, `className`, `gender`, `attribute`,
         `trait` or `voiceCondSvt` is required for the query.
@@ -109,6 +112,7 @@ class SvtSearchQueryParams:
     trait: list[Union[Trait, int]] = Query([])
     notTrait: list[Union[Trait, int]] = Query([])
     voiceCondSvt: list[int] = Query([])
+    profileContains: str | None = Query(None, max_length=999)
 
     def hasSearchParams(self) -> bool:
         return any(
@@ -125,6 +129,7 @@ class SvtSearchQueryParams:
                 self.trait,
                 self.notTrait,
                 self.voiceCondSvt,
+                self.profileContains,
             ]
         )
 
@@ -147,6 +152,7 @@ class SvtSearchQueryParams:
         in the list.
         - **voiceCondValue**: servant `collectionNo` or servant `ID`. Will find the servants that
         have voice lines directed to the given servants.
+        - **profileContains**: string. Will search the servant's profile comments for the string.
 
         At least one of `name`, `type`, `rarity`, `className`, `gender`, `attribute`
         `trait` or `voiceCondSvt` is required for the query.

@@ -754,6 +754,8 @@ mstSvtComment = Table(
     Column("condValues", ARRAY(Integer)),
 )
 
+Index("ix_mstSvtComment_comment", mstSvtComment.c.comment, postgresql_using="pgroonga")
+
 
 mstSvtCommentAdd = Table(
     "mstSvtCommentAdd",

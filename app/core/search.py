@@ -198,6 +198,7 @@ async def search_servant(
         cond_group_value=voice_cond_group,
         illustrator=illustrator,
         cv=cv,
+        profile_contains=search_param.profileContains,
     )
 
     if search_param.name:
