@@ -646,7 +646,7 @@ class NiceSkillSvt(BaseModelORJson):
 
 class NiceSkill(BaseModelORJson):
     id: int
-    num: int = -1
+    num: int = 0
     name: str
     originalName: str
     ruby: str
@@ -654,12 +654,12 @@ class NiceSkill(BaseModelORJson):
     unmodifiedDetail: Optional[str] = None
     type: NiceSkillType
     svtId: int
-    strengthStatus: int = -1
-    priority: int = -1
-    condQuestId: int = -1
-    condQuestPhase: int = -1
-    condLv: int = -1
-    condLimitCount: int = -1
+    strengthStatus: int = 0
+    priority: int = 0
+    condQuestId: int = 0
+    condQuestPhase: int = 0
+    condLv: int = 0
+    condLimitCount: int = 0
     icon: Optional[HttpUrl] = None
     coolDown: list[int]
     actIndividuality: list[NiceTrait]

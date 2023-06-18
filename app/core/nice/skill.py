@@ -259,14 +259,14 @@ async def get_nice_skill_with_svt(
 
     if not chosen_svts and not sorted_svtSkill:  # pragma: no cover
         nice_skill |= {
-            "svtId": -1,
-            "strengthStatus": -1,
-            "num": -1,
-            "priority": -1,
-            "condQuestId": -1,
-            "condQuestPhase": -1,
-            "condLv": -1,
-            "condLimitCount": -1,
+            "svtId": 0,
+            "strengthStatus": 0,
+            "num": 0,
+            "priority": 0,
+            "condQuestId": 0,
+            "condQuestPhase": 0,
+            "condLv": 0,
+            "condLimitCount": 0,
             "releaseConditions": [],
         }
     else:
