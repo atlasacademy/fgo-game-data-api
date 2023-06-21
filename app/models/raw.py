@@ -2298,6 +2298,8 @@ ScriptFileList = Table(
     Column("textScript", TEXT),
 )
 
+Index("ix_ScriptFileList_raw", ScriptFileList.c.rawScript, postgresql_using="pgroonga")
+
 Index(
     "ix_ScriptFileList_text", ScriptFileList.c.textScript, postgresql_using="pgroonga"
 )

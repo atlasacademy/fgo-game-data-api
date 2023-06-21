@@ -36,17 +36,23 @@ async def get_script_search(
     conn: AsyncConnection,
     search_query: str,
     script_file_name: str | None = None,
+    raw_script: bool | None = None,
     war_ids: Iterable[int] | None = None,
     limit_result: int = 50,
 ) -> list[ScriptSearchResult]:
-    score = func.pgroonga_score(literal_column("tableoid"), literal_column("ctid"))
-    snippets = func.pgroonga_snippet_html(
-        ScriptFileList.c.textScript, func.pgroonga_query_extract_keywords(search_query)
-    )
+    if raw_script:
+        search_field = ScriptFileList.c.rawScript
+    else:
+        search_field = ScriptFileList.c.textScript
 
     where_conds: list[_ColumnExpressionArgument[bool]] = [
-        ScriptFileList.c.textScript.op("&@~")(search_query)
+        search_field.op("&@~")(search_query)
     ]
+
+    score = func.pgroonga_score(literal_column("tableoid"), literal_column("ctid"))
+    snippets = func.pgroonga_snippet_html(
+        search_field, func.pgroonga_query_extract_keywords(search_query)
+    )
 
     if script_file_name:
         where_conds.append(

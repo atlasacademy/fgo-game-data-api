@@ -471,6 +471,7 @@ async def search_script(
         conn,
         search_param.query,
         search_param.scriptFileName,
+        search_param.rawScript,
         search_param.warId,
         50 if search_param.limit is None else search_param.limit,
     )

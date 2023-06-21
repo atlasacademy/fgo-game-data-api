@@ -487,6 +487,7 @@ class ScriptSearchQueryParams:
     region: Region
     query: str = Query(..., max_length=999)
     scriptFileName: str | None = Query(default=None, max_length=99)
+    rawScript: bool | None = Query(default=None)
     warId: list[int] = Query([])
     limit: int | None = Query(None, le=500)
 
@@ -497,6 +498,7 @@ class ScriptSearchQueryParams:
         - **query**: search query https://groonga.org/docs/reference/grn_expr/query_syntax.html.
         (Queries starting with `column:` are not supported).
         - **scriptFileName**: The script name should contain this string.
+        - **rawScript**: Search raw script instead of only dialogue
         - **warId**: War ID of the quest that with the script.
         For example: 30001 string for LB1 scripts or 9401 for interlude scripts.
         """
