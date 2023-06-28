@@ -1040,7 +1040,9 @@
     "baseValue": 1000,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": []
+    "maxRate": [
+      5000
+    ]
   },
   "pierceDefence": {
     "limit": "none",
@@ -1451,7 +1453,9 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": []
+    "maxRate": [
+      0
+    ]
   },
   "donotSkillSelect": {
     "limit": "none",
@@ -1477,7 +1481,9 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0,
-    "maxRate": []
+    "maxRate": [
+      0
+    ]
   },
   "buffRate": {
     "limit": "normal",
@@ -1644,6 +1650,78 @@
     "limit": "none",
     "plusTypes": [
       "subFieldIndividuality"
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
+  },
+  "functionCommandcodeattackBeforeMainOnly": {
+    "limit": "none",
+    "plusTypes": [
+      "commandcodeattackBeforeFunctionMainOnly"
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
+  },
+  "functionCommandcodeattackAfterMainOnly": {
+    "limit": "none",
+    "plusTypes": [
+      "commandcodeattackAfterFunctionMainOnly"
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
+  },
+  "functionCommandattackBeforeMainOnly": {
+    "limit": "none",
+    "plusTypes": [
+      "commandattackBeforeFunctionMainOnly"
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
+  },
+  "functionCommandattackAfterMainOnly": {
+    "limit": "none",
+    "plusTypes": [
+      "commandattackAfterFunctionMainOnly"
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
+  },
+  "functionAttackBeforeMainOnly": {
+    "limit": "none",
+    "plusTypes": [
+      "attackBeforeFunctionMainOnly"
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0,
+    "maxRate": []
+  },
+  "functionAttackAfterMainOnly": {
+    "limit": "none",
+    "plusTypes": [
+      "attackAfterFunctionMainOnly"
     ],
     "minusTypes": [],
     "baseParam": 1000,

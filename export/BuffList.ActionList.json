@@ -1346,5 +1346,71 @@
     "baseValue": 0,
     "isRec": true,
     "plusAction": 0
+  },
+  "FUNCTION_COMMANDCODEATTACK_BEFORE_MAIN_ONLY": {
+    "limit": 0,
+    "plusTypes": [
+      177
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_COMMANDCODEATTACK_AFTER_MAIN_ONLY": {
+    "limit": 0,
+    "plusTypes": [
+      178
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_COMMANDATTACK_BEFORE_MAIN_ONLY": {
+    "limit": 0,
+    "plusTypes": [
+      179
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_COMMANDATTACK_AFTER_MAIN_ONLY": {
+    "limit": 0,
+    "plusTypes": [
+      180
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_ATTACK_BEFORE_MAIN_ONLY": {
+    "limit": 0,
+    "plusTypes": [
+      181
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
+  },
+  "FUNCTION_ATTACK_AFTER_MAIN_ONLY": {
+    "limit": 0,
+    "plusTypes": [
+      182
+    ],
+    "minusTypes": [],
+    "baseParam": 1000,
+    "baseValue": 0,
+    "isRec": true,
+    "plusAction": 0
   }
 }
