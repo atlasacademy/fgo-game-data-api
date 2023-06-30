@@ -44,6 +44,7 @@ from ...schemas.nice import (
     NiceQuestPhaseRestriction,
     NiceQuestPhaseScript,
     NiceQuestRelease,
+    NiceQuestReleaseOverwrite,
     NiceRestriction,
     NiceStage,
     NiceStageStartMovie,
@@ -58,6 +59,7 @@ from ...schemas.raw import (
     MstQuestHint,
     MstQuestMessage,
     MstQuestRelease,
+    MstQuestReleaseOverwrite,
     MstQuestRestriction,
     MstRestriction,
     MstSpot,
@@ -98,6 +100,31 @@ def get_nice_quest_release(
         targetId=raw_quest_release.targetId,
         value=raw_quest_release.value,
         closedMessage=closed_message.message if closed_message else "",
+    )
+
+
+def get_nice_quest_release_overwrite(
+    raw_release_overwrite: MstQuestReleaseOverwrite,
+    closed_messages: list[MstClosedMessage],
+) -> NiceQuestReleaseOverwrite:
+    closed_message = next(
+        (
+            message
+            for message in closed_messages
+            if message.id == raw_release_overwrite.closedMessageId
+        ),
+        None,
+    )
+    return NiceQuestReleaseOverwrite(
+        priority=raw_release_overwrite.priority,
+        condType=COND_TYPE_NAME[raw_release_overwrite.condType],
+        condId=raw_release_overwrite.condId,
+        condNum=raw_release_overwrite.condNum,
+        closedMessage=closed_message.message if closed_message else "",
+        overlayClosedMessage=raw_release_overwrite.overlayClosedMessage,
+        eventId=raw_release_overwrite.eventId,
+        startedAt=raw_release_overwrite.startedAt,
+        endedAt=raw_release_overwrite.endedAt,
     )
 
 
@@ -238,6 +265,10 @@ def get_nice_quest_with_war_spot(
         "releaseConditions": [
             get_nice_quest_release(release, raw_quest.mstClosedMessage)
             for release in raw_quest.mstQuestRelease
+        ],
+        "releaseOverwrites": [
+            get_nice_quest_release_overwrite(release, raw_quest.mstClosedMessage)
+            for release in raw_quest.mstQuestReleaseOverwrite
         ],
         "phases": sorted(raw_quest.phases),
         "phasesWithEnemies": sorted(raw_quest.phasesWithEnemies),

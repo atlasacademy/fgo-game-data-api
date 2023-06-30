@@ -37,6 +37,7 @@ from ...models.raw import (
     mstQuestPhase,
     mstQuestPhaseDetail,
     mstQuestRelease,
+    mstQuestReleaseOverwrite,
     mstQuestRestriction,
     mstQuestRestrictionInfo,
     mstRestriction,
@@ -418,9 +419,16 @@ JOINED_QUEST_TABLES = (
     )
     .outerjoin(mstItem, mstItem.c.id == any_(mstQuestConsumeItem.c.itemIds))
     .outerjoin(mstQuestRelease, mstQuestRelease.c.questId == mstQuest.c.id)
+    .outerjoin(
+        mstQuestReleaseOverwrite, mstQuestReleaseOverwrite.c.questId == mstQuest.c.id
+    )
     .outerjoin(mstQuestPhase, mstQuestPhase.c.questId == mstQuest.c.id)
     .outerjoin(
-        mstClosedMessage, mstClosedMessage.c.id == mstQuestRelease.c.closedMessageId
+        mstClosedMessage,
+        or_(
+            mstClosedMessage.c.id == mstQuestRelease.c.closedMessageId,
+            mstClosedMessage.c.id == mstQuestReleaseOverwrite.c.closedMessageId,
+        ),
     )
     .outerjoin(mstGiftAddAlias, mstGiftAddAlias.c.giftId == mstQuest.c.giftId)
     .outerjoin(
@@ -466,6 +474,7 @@ SELECT_QUEST_ENTITY = [
     func.to_jsonb(mstQuest.table_valued()).label(mstQuest.name),
     sql_jsonb_agg(mstQuestConsumeItem),
     sql_jsonb_agg(mstQuestRelease),
+    sql_jsonb_agg(mstQuestReleaseOverwrite),
     sql_jsonb_agg(mstClosedMessage),
     sql_jsonb_agg(mstItem),
     sql_jsonb_agg(mstGiftAlias, "mstGift"),
@@ -662,6 +671,7 @@ async def get_quest_phase_entity(
         func.to_jsonb(mstQuest.table_valued()).label(mstQuest.name),
         sql_jsonb_agg(mstQuestConsumeItem),
         sql_jsonb_agg(mstQuestRelease),
+        sql_jsonb_agg(mstQuestReleaseOverwrite),
         sql_jsonb_agg(mstClosedMessage),
         sql_jsonb_agg(mstGiftAlias, "mstGift"),
         sql_jsonb_agg(mstGiftAddAlias, "mstGiftAdd"),

@@ -1928,6 +1928,23 @@ mstQuestRelease = Table(
 )
 
 
+mstQuestReleaseOverwrite = Table(
+    "mstQuestReleaseOverwrite",
+    metadata,
+    Column("questId", Integer),
+    Column("priority", Integer),
+    Column("imagePriority", Integer),
+    Column("condType", Integer),
+    Column("condId", Integer),
+    Column("condNum", Integer),
+    Column("closedMessageId", Integer),
+    Column("overlayClosedMessage", String),
+    Column("eventId", Integer),
+    Column("startedAt", Integer),
+    Column("endedAt", Integer),
+)
+
+
 mstClosedMessage = Table(
     "mstClosedMessage",
     metadata,
@@ -2357,7 +2374,7 @@ TABLES_TO_BE_LOADED = [
     [mstQuestMessage],
     [mstQuestHint],
     [mstQuestPhaseDetail],
-    [mstQuestRelease],
+    [mstQuestRelease, mstQuestReleaseOverwrite],
     [mstQuestRestriction, mstQuestRestrictionInfo, mstRestriction],
     [mstStage],
     [mstStageRemap],

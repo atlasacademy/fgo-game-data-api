@@ -2006,6 +2006,19 @@ class NiceQuestRelease(BaseModelORJson):
     closedMessage: str
 
 
+class NiceQuestReleaseOverwrite(BaseModelORJson):
+    priority: int
+    # imagePriority: int
+    condType: NiceCondType
+    condId: int
+    condNum: int
+    closedMessage: str
+    overlayClosedMessage: str
+    eventId: int
+    startedAt: int
+    endedAt: int
+
+
 class NiceQuestPhaseScript(BaseModelORJson):
     phase: int
     scripts: list[ScriptLink]
@@ -2031,6 +2044,7 @@ class NiceQuest(BaseModelORJson):
     giftIcon: HttpUrl | None = None
     gifts: list[NiceGift]
     releaseConditions: list[NiceQuestRelease]
+    releaseOverwrites: list[NiceQuestReleaseOverwrite]
     phases: list[int]
     phasesWithEnemies: list[int] = Field(
         [],

@@ -1622,6 +1622,20 @@ class MstQuestRelease(BaseModelORJson):
     imagePriority: int  # 3000
 
 
+class MstQuestReleaseOverwrite(BaseModelORJson):
+    questId: int
+    priority: int
+    imagePriority: int
+    condType: int
+    condId: int
+    condNum: int
+    closedMessageId: int
+    overlayClosedMessage: str
+    eventId: int
+    startedAt: int
+    endedAt: int
+
+
 class MstQuestConsumeItem(BaseModelORJson):
     itemIds: list[int]  # [94032205, 94032206]
     nums: list[int]  # [160, 220]
@@ -1931,6 +1945,7 @@ class QuestEntity(BaseModelORJson):
     mstQuest: MstQuest
     mstQuestConsumeItem: list[MstQuestConsumeItem]
     mstQuestRelease: list[MstQuestRelease]
+    mstQuestReleaseOverwrite: list[MstQuestReleaseOverwrite]
     mstClosedMessage: list[MstClosedMessage]
     mstGift: list[MstGift]
     mstGiftAdd: list[MstGiftAdd]
