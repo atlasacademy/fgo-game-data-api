@@ -1735,6 +1735,7 @@ class GiftType(IntEnum):
     EVENT_POINT_BUFF = 12
     EVENT_BOARD_GAME_TOKEN = 13
     EVENT_COMMAND_ASSIST = 14
+    EVENT_HEEL_PORTRAIT = 15
 
 
 class NiceGiftType(StrEnum):
@@ -1754,6 +1755,7 @@ class NiceGiftType(StrEnum):
     eventPointBuff = "eventPointBuff"
     eventBoardGameToken = "eventBoardGameToken"
     eventCommandAssist = "eventCommandAssist"
+    eventHeelPortrait = "eventHeelPortrait"
 
 
 GIFT_TYPE_NAME: dict[int, NiceGiftType] = {
@@ -1771,6 +1773,7 @@ GIFT_TYPE_NAME: dict[int, NiceGiftType] = {
     12: NiceGiftType.eventPointBuff,
     13: NiceGiftType.eventBoardGameToken,
     14: NiceGiftType.eventCommandAssist,
+    15: NiceGiftType.eventHeelPortrait,
 }
 
 
@@ -2187,6 +2190,8 @@ class CondType(IntEnum):
     SVT_CLASS_SKILL_LV_UP_COUNT = 182
     SVT_CLASS_LIMIT_UP_COUNT = 183
     SVT_CLASS_FRIENDSHIP_COUNT = 184
+    COMPLETE_HEEL_PORTRAIT = 185
+    NOT_COMPLETE_HEEL_PORTRAIT = 186
 
 
 class NiceCondType(StrEnum):
@@ -2374,6 +2379,8 @@ class NiceCondType(StrEnum):
     svtClassSkillLvUpCount = "svtClassSkillLvUpCount"
     svtClassLimitUpCount = "svtClassLimitUpCount"
     svtClassFriendshipCount = "svtClassFriendshipCount"
+    completeHeelPortrait = "completeHeelPortrait"
+    notCompleteHeelPortrait = "notCompleteHeelPortrait"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2559,6 +2566,8 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     182: NiceCondType.svtClassSkillLvUpCount,
     183: NiceCondType.svtClassLimitUpCount,
     184: NiceCondType.svtClassFriendshipCount,
+    185: NiceCondType.completeHeelPortrait,
+    186: NiceCondType.notCompleteHeelPortrait,
 }
 
 

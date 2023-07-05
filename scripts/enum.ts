@@ -667,6 +667,7 @@ export enum NiceGiftType {
     EVENT_POINT_BUFF = "eventPointBuff",
     EVENT_BOARD_GAME_TOKEN = "eventBoardGameToken",
     EVENT_COMMAND_ASSIST = "eventCommandAssist",
+    EVENT_HEEL_PORTRAIT = "eventHeelPortrait",
 }
 
 export enum NiceShopType {
@@ -925,6 +926,8 @@ export enum NiceCondType {
     SVT_CLASS_SKILL_LV_UP_COUNT = "svtClassSkillLvUpCount",
     SVT_CLASS_LIMIT_UP_COUNT = "svtClassLimitUpCount",
     SVT_CLASS_FRIENDSHIP_COUNT = "svtClassFriendshipCount",
+    COMPLETE_HEEL_PORTRAIT = "completeHeelPortrait",
+    NOT_COMPLETE_HEEL_PORTRAIT = "notCompleteHeelPortrait",
 }
 
 export enum NiceVoiceCondType {
