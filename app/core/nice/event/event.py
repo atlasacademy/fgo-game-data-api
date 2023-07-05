@@ -27,6 +27,7 @@ from .command_assist import get_nice_command_assist
 from .cooltime import get_nice_event_cooltime
 from .digging import get_nice_digging
 from .fortification import get_nice_fortification
+from .heel_portrait import get_nice_heel_portrait
 from .lottery import get_nice_lottery
 from .mission import get_nice_mission_groups, get_nice_missions, get_nice_random_mission
 from .point import get_nice_pointBuff, get_nice_pointGroup
@@ -328,6 +329,10 @@ async def get_nice_event(
                 ),
             )
             for command_assist in raw_event.mstEventCommandAssist
+        ],
+        heelPortraits=[
+            get_nice_heel_portrait(region, event_id, heel_portrait)
+            for heel_portrait in raw_event.mstHeelPortrait
         ],
         campaigns=[
             get_nice_campaign(campaign) for campaign in raw_event.mstEventCampaign

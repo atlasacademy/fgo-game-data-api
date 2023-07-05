@@ -1643,6 +1643,20 @@ mstEventCommandAssist = Table(
 )
 
 
+mstHeelPortrait = Table(
+    "mstHeelPortrait",
+    metadata,
+    Column("id", Integer),
+    Column("name", String),
+    Column("imageId", Integer),
+    Column("eventId", Integer),
+    Column("dispCondType", Integer),
+    Column("dispCondId", Integer),
+    Column("dispCondNum", Integer),
+    Column("script", JSONB),
+)
+
+
 mstBgm = Table(
     "mstBgm",
     metadata,
@@ -2365,6 +2379,7 @@ TABLES_TO_BE_LOADED = [
     [mstEventTower, mstEventTowerReward],
     [mstEventVoicePlay],
     [mstEventCommandAssist],
+    [mstHeelPortrait],
     [mstFriendship],
     [mstGiftAdd],
     [mstIllustrator],

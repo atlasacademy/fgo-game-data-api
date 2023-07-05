@@ -72,6 +72,7 @@ from ...models.raw import (
     mstFuncGroup,
     mstGift,
     mstGiftAdd,
+    mstHeelPortrait,
     mstIllustrator,
     mstItem,
     mstMap,
@@ -181,6 +182,7 @@ from ...schemas.raw import (
     MstFuncGroup,
     MstGift,
     MstGiftAdd,
+    MstHeelPortrait,
     MstIllustrator,
     MstItem,
     MstMap,
@@ -485,6 +487,11 @@ schema_table_fetch_all: dict[  # type:ignore
         mstClassBoardSquare,
         mstClassBoardSquare.c.classBoardBaseId,
         mstClassBoardSquare.c.id,
+    ),
+    MstHeelPortrait: (
+        mstHeelPortrait,
+        mstHeelPortrait.c.eventId,
+        mstHeelPortrait.c.id,
     ),
 }
 

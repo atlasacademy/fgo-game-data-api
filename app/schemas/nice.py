@@ -1940,6 +1940,16 @@ class NiceEventCommandAssist(BaseModelORJson):
     releaseConditions: list[NiceCommonRelease]
 
 
+class NiceHeelPortrait(BaseModelORJson):
+    id: int
+    name: str
+    image: HttpUrl
+    dispCondType: NiceCondType
+    dispCondId: int
+    dispCondNum: int
+    script: dict[str, Any]
+
+
 class NiceEvent(BaseModelORJson):
     id: int
     type: NiceEventType
@@ -1976,6 +1986,7 @@ class NiceEvent(BaseModelORJson):
     campaigns: list[NiceEventCampaign]
     campaignQuests: list[NiceEventQuest]
     commandAssists: list[NiceEventCommandAssist]
+    heelPortraits: list[NiceHeelPortrait]
     voicePlays: list[NiceEventVoicePlay]
     voices: list[NiceVoiceGroup] = Field(
         ..., description="All voice lines related to this event"

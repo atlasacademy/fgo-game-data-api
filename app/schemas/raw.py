@@ -1374,6 +1374,17 @@ class MstEventAlloutBattle(BaseModelORJson):
     warId: int
 
 
+class MstHeelPortrait(BaseModelORJson):
+    id: int
+    name: str
+    imageId: int
+    eventId: int
+    dispCondType: int
+    dispCondId: int
+    dispCondNum: int
+    script: dict[str, Any]
+
+
 class MstEvent(BaseModelORJson):
     script: list[dict[str, str]]  # []
     id: int  # 10083
@@ -2029,6 +2040,7 @@ class EventEntity(BaseModelORJson):
     mstEventRecipe: list[MstEventRecipe]
     mstEventRecipeGift: list[MstEventRecipeGift]
     mstEventCommandAssist: list[MstEventCommandAssist]
+    mstHeelPortrait: list[MstHeelPortrait]
     mstItem: list[MstItem]
     mstCommonConsume: list[MstCommonConsume]
     mstCommonRelease: list[MstCommonRelease]
