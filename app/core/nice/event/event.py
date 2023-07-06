@@ -331,7 +331,7 @@ async def get_nice_event(
             for command_assist in raw_event.mstEventCommandAssist
         ],
         heelPortraits=[
-            get_nice_heel_portrait(region, event_id, heel_portrait)
+            get_nice_heel_portrait(region, event_id, heel_portrait, lang)
             for heel_portrait in raw_event.mstHeelPortrait
         ],
         campaigns=[

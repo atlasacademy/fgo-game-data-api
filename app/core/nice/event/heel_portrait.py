@@ -1,6 +1,6 @@
 from ....config import Settings
-from ....core.utils import fmt_url
-from ....schemas.common import Region
+from ....core.utils import fmt_url, get_translation
+from ....schemas.common import Language, Region
 from ....schemas.gameenums import COND_TYPE_NAME
 from ....schemas.nice import AssetURL, NiceHeelPortrait
 from ....schemas.raw import MstHeelPortrait
@@ -10,11 +10,11 @@ settings = Settings()
 
 
 def get_nice_heel_portrait(
-    region: Region, event_id: int, heel_portrait: MstHeelPortrait
+    region: Region, event_id: int, heel_portrait: MstHeelPortrait, lang: Language
 ) -> NiceHeelPortrait:
     return NiceHeelPortrait(
         id=heel_portrait.id,
-        name=heel_portrait.name,
+        name=get_translation(lang, heel_portrait.name),
         image=fmt_url(
             AssetURL.eventUi,
             base_url=settings.asset_url,
