@@ -594,6 +594,7 @@ class NiceSkillScript(BaseModel):
     tdTypeChangeIDs: list[int] | None = None
     excludeTdChangeTypes: list[int] | None = None
     SelectAddInfo: list[NiceSelectAddInfo] | None = None
+    actRarity: list[list[int]] | None = None
 
 
 class NiceSkillAdd(BaseModelORJson):
