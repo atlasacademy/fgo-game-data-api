@@ -2504,8 +2504,8 @@ class NiceSpot(BaseModel):
     name: str
     originalName: str
     image: Optional[HttpUrl] = None
-    x: int
-    y: int
+    x: Decimal
+    y: Decimal
     imageOfsX: int
     imageOfsY: int
     nameOfsX: int

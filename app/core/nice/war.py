@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
@@ -236,8 +238,8 @@ def get_nice_spot(
         )
         if raw_spot.imageId != 0
         else None,
-        x=raw_spot.x,
-        y=raw_spot.y,
+        x=Decimal(raw_spot.x),
+        y=Decimal(raw_spot.y),
         imageOfsX=raw_spot.imageOfsX,
         imageOfsY=raw_spot.imageOfsY,
         nameOfsX=raw_spot.nameOfsX,
@@ -277,8 +279,8 @@ def get_nice_blank_earth_spot(
         name=get_translation(lang, raw_spot.name),
         originalName=raw_spot.name,
         image=None,
-        x=int(raw_spot.x),
-        y=int(raw_spot.y),
+        x=Decimal(raw_spot.x),
+        y=Decimal(raw_spot.y),
         imageOfsX=0,
         imageOfsY=0,
         nameOfsX=0,
