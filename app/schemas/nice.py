@@ -2218,6 +2218,7 @@ class DeckType(StrEnum):
     SKILL_SHIFT = "skillShift"
     MISSION_TARGET_SKILL_SHIFT = "missionTargetSkillShift"
     AI_NPC = "aiNpc"
+    SVT_FOLLOWER = "svtFollower"
 
 
 class QuestEnemy(BaseModelORJson):
@@ -2343,6 +2344,7 @@ class NpcServant(BaseModelORJson):
 
 class SupportServant(BaseModelORJson):
     id: int
+    npcSvtFollowerId: int
     priority: int
     name: str
     svt: BasicServant
@@ -2358,6 +2360,7 @@ class SupportServant(BaseModelORJson):
     script: SupportServantScript
     limit: SupportServantLimit
     misc: SupportServantMisc
+    detail: QuestEnemy | None = None
 
 
 class NiceQuestPhaseAiNpc(BaseModelORJson):

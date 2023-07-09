@@ -473,6 +473,12 @@ async def get_nice_quest_phase(
                 for aiNpc in db_data.nice.extraDetail.aiMultiNpc:
                     aiNpc.detail = ai_npcs[aiNpc.npc.npcId]
 
+    def set_follower_data(followers: dict[int, QuestEnemy] | None) -> None:
+        if followers is not None:
+            for follower in db_data.nice.supportServants:
+                if follower.npcSvtFollowerId in followers:
+                    follower.detail = followers[follower.npcSvtFollowerId]
+
     if rayshift_data:
         db_data.nice.stages = rayshift_data.stages
         db_data.nice.drops = rayshift_data.quest_drops
@@ -484,6 +490,7 @@ async def get_nice_quest_phase(
         if rayshift_data.quest_select:
             db_data.nice.extraDetail.questSelect = rayshift_data.quest_select
         set_ai_npc_data(rayshift_data.ai_npcs)
+        set_follower_data(rayshift_data.followers)
         return db_data.nice
 
     stages = sorted(db_data.raw.mstStage, key=lambda stage: stage.wave)
@@ -577,6 +584,7 @@ async def get_nice_quest_phase(
                 db_data.nice.dropsFromAllHashes = questHash is None
 
     set_ai_npc_data(quest_enemies.ai_npcs)
+    set_follower_data(quest_enemies.followers)
 
     waveStartMovies: dict[int, list[NiceStageStartMovie]] = defaultdict(list)
     if (
@@ -614,6 +622,7 @@ async def get_nice_quest_phase(
             quest_drops=nice_quest_drops,
             stages=new_nice_stages,
             ai_npcs=quest_enemies.ai_npcs,
+            followers=quest_enemies.followers,
             quest_select=questSelectScript,
             quest_hash=db_data.nice.enemyHash,
             all_hashes=all_rayshift_hashes,

@@ -110,7 +110,7 @@ def get_nice_buff_script(
             relationId[side][atkClass][defClass] = relationDetail
         script["relationId"] = relationId
 
-    for script_item in {
+    for script_item in (
         "ReleaseText",
         "DamageRelease",
         "checkIndvType",
@@ -126,7 +126,7 @@ def get_nice_buff_script(
         "ProgressSelfTurn",
         "TargetIndiv",
         "extendLowerLimit",
-    }:
+    ):
         if script_item in mstBuff.script:
             script[script_item] = mstBuff.script[script_item]
 

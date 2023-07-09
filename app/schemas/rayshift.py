@@ -138,6 +138,7 @@ class QuestDetail(BaseModelORJson):
     questSelect: int
     eventId: int
     battleType: int
+    myDeck: Deck | None = None
     enemyDeck: list[Deck]
     transformDeck: Deck
     callDeck: list[Deck]

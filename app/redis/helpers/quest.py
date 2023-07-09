@@ -25,6 +25,7 @@ class RayshiftRedisData(BaseModelORJson):
     quest_drops: list[EnemyDrop]
     stages: list[NiceStage]
     ai_npcs: dict[int, QuestEnemy] | None = None
+    followers: dict[int, QuestEnemy] | None = None
     quest_select: list[int] = []
     quest_hash: str | None = None
     all_hashes: list[str] = []

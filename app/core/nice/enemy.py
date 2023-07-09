@@ -361,6 +361,7 @@ def get_enemies_in_stage(
 class QuestEnemies:
     enemy_waves: list[list[QuestEnemy]]
     ai_npcs: dict[int, QuestEnemy] | None = None
+    followers: dict[int, QuestEnemy] | None = None
 
 
 async def get_quest_enemies(
@@ -480,7 +481,25 @@ async def get_quest_enemies(
     else:
         nice_ai_npc = {}
 
-    return QuestEnemies(enemy_waves=out_enemies, ai_npcs=nice_ai_npc)
+    if quest_detail.myDeck is not None:
+        nice_follower = {
+            svt_deck.npcFollowerSvtId: get_quest_enemy(
+                deck_svt_info=EnemyDeckInfo(DeckType.SVT_FOLLOWER, svt_deck),
+                user_svt=user_svt_id[svt_deck.userSvtId],
+                basic_svt=basic_svt_map[svt_deck.userSvtId],
+                drops=[],
+                all_enemy_skills=all_skills,
+                all_enemy_tds=all_tds,
+                lang=lang,
+            )
+            for svt_deck in quest_detail.myDeck.svts
+        }
+    else:
+        nice_follower = {}
+
+    return QuestEnemies(
+        enemy_waves=out_enemies, ai_npcs=nice_ai_npc, followers=nice_follower
+    )
 
 
 async def get_war_board_enemies(

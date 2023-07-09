@@ -43,6 +43,7 @@ async def get_quest_response(
             "region": REGION_ENUM[region],
             "questId": quest_id,
             "questPhase": phase,
+            "showNpcSupport": "true",
         }
         try:
             r = await client.get(f"{QUEST_ENDPOINT}/get", params=params)
@@ -100,6 +101,7 @@ def get_multiple_quests(
     params: dict[str, Union[str, int, list[int]]] = {
         "apiKey": settings.rayshift_api_key.get_secret_value(),
         "region": REGION_ENUM[region],
+        "showNpcSupport": "true",
     }
     if len(query_ids) == 0:
         return {}

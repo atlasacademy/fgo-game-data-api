@@ -568,7 +568,7 @@ async def report_webhooks(
                 await client.post(
                     url, json={"regions": list(region_path.keys()), "event": event}
                 )
-            except Exception:
+            except Exception:  # noqa: BLE001
                 logger.exception(f"Failed to report webhook {index}")
 
 
@@ -580,5 +580,5 @@ async def pull_and_update(
     try:
         await run_in_threadpool(lambda: update_data_repo(region_path))
         await load_and_export(redis, region_path, async_engines, True)
-    except Exception:
+    except Exception:  # noqa: BLE001
         logger.exception("Failed to pull and update data")

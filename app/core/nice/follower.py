@@ -159,6 +159,7 @@ def get_nice_support_servant(
 ) -> SupportServant:
     return SupportServant(
         id=npcFollower.id,
+        npcSvtFollowerId=npcSvtFollower.id,
         priority=npcFollower.priority,
         name=npcSvtFollower.name,
         svt=basic_svt,
