@@ -2317,6 +2317,23 @@ mstCommandSpell = Table(
 )
 
 
+mstFuncTypeDetail = Table(
+    "mstFuncTypeDetail",
+    metadata,
+    Column("funcType", Integer, index=True),
+    Column("ignoreValueUp", Boolean),
+)
+
+
+mstBuffTypeDetail = Table(
+    "mstBuffTypeDetail",
+    metadata,
+    Column("buffType", Integer, primary_key=True),
+    Column("ignoreValueUp", Boolean),
+    Column("script", JSONB),
+)
+
+
 ScriptFileList = Table(
     "ScriptFileList",
     metadata,
@@ -2444,4 +2461,5 @@ TABLES_TO_BE_LOADED = [
     [mstEventAlloutBattle],
     [mstClassBoardBase, mstClassBoardClass, mstClassBoardLine, mstFuncDisp],
     [mstClassBoardLock, mstClassBoardSquare],
+    [mstFuncTypeDetail, mstBuffTypeDetail],
 ]

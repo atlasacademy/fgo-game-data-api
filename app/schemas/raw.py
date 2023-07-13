@@ -2174,6 +2174,17 @@ class MstFuncDisp(BaseModelORJson):
     detail: str
 
 
+class MstFuncTypeDetail(BaseModelORJson):
+    funcType: int
+    ignoreValueUp: bool
+
+
+class MstBuffTypeDetail(BaseModelORJson):
+    buffType: int
+    ignoreValueUp: bool
+    script: dict[str, Any]
+
+
 class ClassBoardEntity(BaseModelORJson):
     mstClassBoardBase: MstClassBoardBase
     mstClassBoardClass: list[MstClassBoardClass]
