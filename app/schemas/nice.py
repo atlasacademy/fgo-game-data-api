@@ -2665,3 +2665,14 @@ class NiceClassBoard(BaseModelORJson):
     classes: list[NiceClassBoardClass]
     squares: list[NiceClassBoardSquare]
     lines: list[NiceClassBoardLine]
+
+
+class NiceFuncTypeDetail(BaseModelORJson):
+    funcType: NiceFuncType
+    ignoreValueUp: bool
+
+
+class NiceBuffTypeDetail(BaseModelORJson):
+    buffType: NiceBuffType
+    ignoreValueUp: bool
+    script: dict[str, Any]
