@@ -175,7 +175,7 @@ def get_nice_stage(
     if filtered_bgms:
         bgm = get_nice_bgm(region, filtered_bgms[0], lang)
     else:
-        bgm = NiceBgm(id=0, name="", fileName="", notReleased=True)
+        bgm = NiceBgm(id=0, name="", originalName="", fileName="", notReleased=True)
 
     return NiceStage(
         wave=raw_stage.wave,
