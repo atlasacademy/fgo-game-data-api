@@ -124,29 +124,30 @@ def get_nice_buff_script(
         "AppId",
         "IncludeIgnoreIndividuality",
         "ProgressSelfTurn",
-        "TargetIndiv",
         "extendLowerLimit",
     ):
         if script_item in mstBuff.script:
             script[script_item] = mstBuff.script[script_item]
 
-    if "INDIVIDUALITIE" in mstBuff.script:
-        script["INDIVIDUALITIE"] = get_nice_trait(mstBuff.script["INDIVIDUALITIE"])
+    for script_item in ("INDIVIDUALITIE", "TargetIndiv"):
+        if script_item in mstBuff.script:
+            script[script_item] = get_nice_trait(mstBuff.script[script_item])
 
-    if "UpBuffRateBuffIndiv" in mstBuff.script:
-        script["UpBuffRateBuffIndiv"] = get_traits_list(
-            int(trait_id)
-            for trait_id in mstBuff.script["UpBuffRateBuffIndiv"].split(",")
-        )
+    for script_item in (
+        "INDIVIDUALITIE_AND",
+        "INDIVIDUALITIE_OR",
+        "UpBuffRateBuffIndiv",
+    ):
+        if script_item in mstBuff.script:
+            script[script_item] = get_traits_list(
+                int(trait_id) for trait_id in mstBuff.script[script_item].split(",")
+            )
 
     if "CheckOpponentBuffTypes" in mstBuff.script:
         script["CheckOpponentBuffTypes"] = [
             BUFF_TYPE_NAME[int(buffType)]
             for buffType in mstBuff.script["CheckOpponentBuffTypes"].split(",")
         ]
-
-    if "TargetIndiv" in mstBuff.script:
-        script["TargetIndiv"] = get_nice_trait(mstBuff.script["TargetIndiv"])
 
     if "convert" in mstBuff.script:
         convert = mstBuff.script["convert"]

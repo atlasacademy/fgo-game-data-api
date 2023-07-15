@@ -116,6 +116,8 @@ class BuffScript(BaseModel):
     DamageRelease: Optional[int] = None
     INDIVIDUALITIE: Optional[NiceTrait] = None
     INDIVIDUALITIE_COUNT_ABOVE: int | None = None
+    INDIVIDUALITIE_AND: list[NiceTrait] | None = None
+    INDIVIDUALITIE_OR: list[NiceTrait] | None = None
     UpBuffRateBuffIndiv: Optional[list[NiceTrait]] = None
     HP_LOWER: Optional[int] = None
     HP_HIGHER: int | None = None
