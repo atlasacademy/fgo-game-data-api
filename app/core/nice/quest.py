@@ -483,6 +483,8 @@ async def get_nice_quest_phase(
                         if (
                             npcSvtFollowerId == 0
                             and quest_enemy.svt.id == follower.svt.id
+                            and quest_enemy.limit.limitCount
+                            == follower.limit.limitCount
                         ):
                             follower.detail = quest_enemy
                             break
