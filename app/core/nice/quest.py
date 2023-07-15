@@ -478,6 +478,14 @@ async def get_nice_quest_phase(
             for follower in db_data.nice.supportServants:
                 if follower.npcSvtFollowerId in followers:
                     follower.detail = followers[follower.npcSvtFollowerId]
+                else:
+                    for npcSvtFollowerId, quest_enemy in followers.items():
+                        if (
+                            npcSvtFollowerId == 0
+                            and quest_enemy.svt.id == follower.svt.id
+                        ):
+                            follower.detail = quest_enemy
+                            break
 
     if rayshift_data:
         db_data.nice.stages = rayshift_data.stages
