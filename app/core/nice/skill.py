@@ -188,8 +188,8 @@ async def get_nice_skill_with_svt(
     }
 
     nice_skill["functions"] = []
-    for funci, _ in enumerate(skillEntity.mstSkillLv[0].funcId):
-        if skillEntity.mstSkillLv[0].expandedFuncId:
+    if skillEntity.mstSkillLv[0].expandedFuncId:
+        for funci, _ in enumerate(skillEntity.mstSkillLv[0].funcId):
             function = skillEntity.mstSkillLv[0].expandedFuncId[funci]
             followerVals = (
                 [

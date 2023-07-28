@@ -33,6 +33,7 @@ class Translation(StrEnum):
     CC = "cc_names"
     MC = "mc_names"
     COSTUME = "costume_names"
+    MANUAL = "manual_names"
 
 
 for translation_file in Translation.__members__.values():
