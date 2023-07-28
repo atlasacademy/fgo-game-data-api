@@ -606,7 +606,13 @@ export enum NiceDataValsType {
     ActMasterGenderType = "actmastergendertype",
     IntervalTurn = "intervalturn",
     IntervalCount = "intervalcount",
+    TriggeredFieldCountTarget = "triggeredfieldcounttarget",
+    TriggeredFieldCountRange = "triggeredfieldcountrange",
     TargetEnemyRange = "targetenemyrange",
+    TriggeredFuncPositionSameTarget = "triggeredfuncpositionsametarget",
+    TriggeredFuncPositionAll = "triggeredfuncpositionall",
+    TriggeredTargetHpRange = "triggeredtargethprange",
+    TriggeredTargetHpRateRange = "triggeredtargethpraterange",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -928,6 +934,7 @@ export enum NiceCondType {
     SVT_CLASS_FRIENDSHIP_COUNT = "svtClassFriendshipCount",
     COMPLETE_HEEL_PORTRAIT = "completeHeelPortrait",
     NOT_COMPLETE_HEEL_PORTRAIT = "notCompleteHeelPortrait",
+    CLASS_BOARD_SQUARE_RELEASED = "classBoardSquareReleased",
 }
 
 export enum NiceVoiceCondType {
@@ -1706,6 +1713,7 @@ export enum NiceNpcServantFollowerFlag {
     HIDE_TREASURE_DEVICE_LV = "hideTreasureDeviceLv",
     HIDE_TREASURE_DEVICE_DETAIL = "hideTreasureDeviceDetail",
     HIDE_RARITY = "hideRarity",
+    NOT_CLASS_BOARD = "notClassBoard",
 }
 
 export enum NiceClassBoardSquareFlag {

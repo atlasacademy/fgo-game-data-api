@@ -1582,7 +1582,13 @@ class DataValsType(IntEnum):
     ActMasterGenderType = 130
     IntervalTurn = 131
     IntervalCount = 132
-    TargetEnemyRange = 133
+    TriggeredFieldCountTarget = 133
+    TriggeredFieldCountRange = 134
+    TargetEnemyRange = 135
+    TriggeredFuncPositionSameTarget = 136
+    TriggeredFuncPositionAll = 137
+    TriggeredTargetHpRange = 138
+    TriggeredTargetHpRateRange = 139
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -2192,6 +2198,7 @@ class CondType(IntEnum):
     SVT_CLASS_FRIENDSHIP_COUNT = 184
     COMPLETE_HEEL_PORTRAIT = 185
     NOT_COMPLETE_HEEL_PORTRAIT = 186
+    CLASS_BOARD_SQUARE_RELEASED = 187
 
 
 class NiceCondType(StrEnum):
@@ -2381,6 +2388,7 @@ class NiceCondType(StrEnum):
     svtClassFriendshipCount = "svtClassFriendshipCount"
     completeHeelPortrait = "completeHeelPortrait"
     notCompleteHeelPortrait = "notCompleteHeelPortrait"
+    classBoardSquareReleased = "classBoardSquareReleased"
 
 
 COND_TYPE_NAME: dict[int, NiceCondType] = {
@@ -2568,6 +2576,7 @@ COND_TYPE_NAME: dict[int, NiceCondType] = {
     184: NiceCondType.svtClassFriendshipCount,
     185: NiceCondType.completeHeelPortrait,
     186: NiceCondType.notCompleteHeelPortrait,
+    187: NiceCondType.classBoardSquareReleased,
 }
 
 
@@ -5002,6 +5011,7 @@ class NpcServantFollowerFlag(IntEnum):
     HIDE_TREASURE_DEVICE_LV = 256
     HIDE_TREASURE_DEVICE_DETAIL = 512
     HIDE_RARITY = 1024
+    NOT_CLASS_BOARD = 2048
 
 
 class NiceNpcServantFollowerFlag(StrEnum):
@@ -5017,6 +5027,7 @@ class NiceNpcServantFollowerFlag(StrEnum):
     hideTreasureDeviceLv = "hideTreasureDeviceLv"
     hideTreasureDeviceDetail = "hideTreasureDeviceDetail"
     hideRarity = "hideRarity"
+    notClassBoard = "notClassBoard"
 
 
 NPC_SERVANT_FOLLOWER_FLAG_NAME: dict[int, NiceNpcServantFollowerFlag] = {
@@ -5030,6 +5041,7 @@ NPC_SERVANT_FOLLOWER_FLAG_NAME: dict[int, NiceNpcServantFollowerFlag] = {
     256: NiceNpcServantFollowerFlag.hideTreasureDeviceLv,
     512: NiceNpcServantFollowerFlag.hideTreasureDeviceDetail,
     1024: NiceNpcServantFollowerFlag.hideRarity,
+    2048: NiceNpcServantFollowerFlag.notClassBoard,
 }
 
 
