@@ -405,7 +405,7 @@ async def get_quest_enemies(
                 all_skill_ids.add(SkillSvt(skill_id, user_svt.svtId))
 
     all_svt_ids = [
-        BasicServantGet(userSvt.svtId, userSvt.limitCount)
+        BasicServantGet(userSvt.svtId, userSvt.dispLimitCount)
         for userSvt in quest_detail.userSvt
     ]
 

@@ -409,6 +409,8 @@ CLASS_NAME: dict[int, SvtClass] = {
     1001: SvtClass.ALL,
     # 1002: SvtClass.EXTRA,
     # 1003: SvtClass.MIX,
+    # 1004: SvtClass.EXTRA1,
+    # 1005: SvtClass.EXTRA2,
 }
 
 
