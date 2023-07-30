@@ -373,8 +373,8 @@ class BaseVals(BaseModel):
     TargetEnemyRange: list[int] | None = None
     TriggeredFuncPositionSameTarget: int | None = None
     TriggeredFuncPositionAll: int | None = None
-    TriggeredTargetHpRange: list[int] | None = None
-    TriggeredTargetHpRateRange: list[int] | None = None
+    TriggeredTargetHpRange: str | None = None
+    TriggeredTargetHpRateRange: str | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo
