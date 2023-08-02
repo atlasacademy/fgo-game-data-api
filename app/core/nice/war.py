@@ -174,7 +174,7 @@ def get_nice_war_quest_selection(
     region: Region,
     quest_selection: MstWarQuestSelection,
     mstWar: MstWar,
-    quests: list[QuestEntity],
+    quest: QuestEntity,
     spots: list[MstSpot],
     lang: Language,
 ) -> NiceWarQuestSelection:
@@ -187,9 +187,6 @@ def get_nice_war_quest_selection(
         )
         if quest_selection.shortCutBannerId != 0
         else None
-    )
-    quest = next(
-        quest for quest in quests if quest.mstQuest.id == quest_selection.questId
     )
     spot = next(spot for spot in spots if spot.id == quest.mstQuest.spotId)
     return NiceWarQuestSelection(
@@ -365,6 +362,8 @@ async def get_nice_war(
         if raw_spot.warId == war_id
     ]
 
+    raw_quest_map = {quest.mstQuest.id: quest for quest in raw_war.mstQuest}
+
     return NiceWar(
         id=raw_war.mstWar.id,
         coordinates=raw_war.mstWar.coordinates,
@@ -426,10 +425,11 @@ async def get_nice_war(
                 region,
                 quest_selection,
                 raw_war.mstWar,
-                raw_war.mstQuest,
+                raw_quest_map[quest_selection.questId],
                 raw_war.mstSpot,
                 lang,
             )
             for quest_selection in raw_war.mstWarQuestSelection
+            if quest_selection.questId in raw_quest_map
         ],
     )
