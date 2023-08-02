@@ -965,6 +965,7 @@ class Trait(StrEnum):
     classBeastVIBoss = "classBeastVIBoss"
     buffBound = "buffBound"
     buffDamageCut = "buffDamageCut"
+    marking = "marking"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1210,6 +1211,7 @@ TRAIT_NAME: dict[int, Trait] = {
     3085: Trait.buffDamageCut,
     3086: Trait.gutsBlock,
     3087: Trait.buffBound,
+    3088: Trait.marking,
     # 6016: No detail
     # 6021: No detail
     # 6022: No detail
