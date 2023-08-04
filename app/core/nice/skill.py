@@ -190,6 +190,8 @@ async def get_nice_skill_with_svt(
     nice_skill["functions"] = []
     if skillEntity.mstSkillLv[0].expandedFuncId:
         for funci, _ in enumerate(skillEntity.mstSkillLv[0].funcId):
+            if funci >= len(skillEntity.mstSkillLv[0].expandedFuncId):
+                break
             function = skillEntity.mstSkillLv[0].expandedFuncId[funci]
             followerVals = (
                 [

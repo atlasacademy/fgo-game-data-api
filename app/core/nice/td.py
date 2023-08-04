@@ -118,10 +118,14 @@ async def get_nice_td(
 
     for funci, _ in enumerate(tdEntity.mstTreasureDeviceLv[0].funcId):
         if tdEntity.mstTreasureDeviceLv[0].expandedFuncId:
+            if funci >= len(tdEntity.mstTreasureDeviceLv[0].expandedFuncId):
+                break
+            function = tdEntity.mstTreasureDeviceLv[0].expandedFuncId[funci]
+
             nice_func = await get_nice_function(
                 conn,
                 region,
-                tdEntity.mstTreasureDeviceLv[0].expandedFuncId[funci],
+                function,
                 svals=[
                     skill_lv.svals[funci] for skill_lv in tdEntity.mstTreasureDeviceLv
                 ],
