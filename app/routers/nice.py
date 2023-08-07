@@ -9,6 +9,7 @@ from ..core.nice import (
     cc,
     class_board,
     enemy_master,
+    gift,
     item,
     mc,
     mm,
@@ -37,6 +38,7 @@ from ..schemas.nice import (
     NiceEnemyMaster,
     NiceEquip,
     NiceEvent,
+    NiceGift,
     NiceItem,
     NiceMasterMission,
     NiceMysticCode,
@@ -984,3 +986,20 @@ async def get_class_board(
         return item_response(
             await class_board.get_nice_class_board(conn, region, class_board_id, lang)
         )
+
+
+@router.get(
+    "/{region}/gift/{gift_id}",
+    summary="Get Gift data",
+    response_description="Nice Gift Entity",
+    response_model=list[NiceGift],
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()
+async def get_gift(
+    region: Region,
+    gift_id: int,
+) -> Response:
+    async with get_db(region) as conn:
+        return list_response(await gift.get_nice_gifts_from_id(conn, region, [gift_id]))

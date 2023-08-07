@@ -1,6 +1,10 @@
+from collections import defaultdict
 from dataclasses import dataclass
 
+from sqlalchemy.ext.asyncio import AsyncConnection
+
 from ...config import Settings
+from ...db.helpers import fetch
 from ...schemas.common import Region
 from ...schemas.gameenums import (
     COMMON_CONSUME_TYPE_NAME,
@@ -107,3 +111,20 @@ def get_nice_gift(
         num=raw_gift.num,
         giftAdds=get_nice_gift_adds(region, raw_gift, gift_adds, gift_maps),
     )
+
+
+async def get_nice_gifts_from_id(
+    conn: AsyncConnection,
+    region: Region,
+    gift_ids: list[int],
+) -> list[NiceGift]:
+    gift_adds = await fetch.get_all_multiple(conn, MstGiftAdd, gift_ids)
+    replacement_gift_ids = {gift.priorGiftId for gift in gift_adds}
+
+    gifts = await fetch.get_all_multiple(
+        conn, MstGift, set(gift_ids) | replacement_gift_ids
+    )
+    gift_maps: dict[int, list[MstGift]] = defaultdict(list)
+    for gift in gifts:
+        gift_maps[gift.id].append(gift)
+    return [get_nice_gift(region, gift, gift_adds, gift_maps) for gift in gifts]
