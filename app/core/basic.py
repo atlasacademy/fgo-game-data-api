@@ -400,6 +400,7 @@ async def get_basic_svt(
     region: Region,
     svt_id: int,
     svt_limit: Optional[int] = None,
+    disp_limit: int | None = None,
     lang: Optional[Language] = None,
     mstSvt: Optional[MstSvt] = None,
 ) -> dict[str, Any]:
@@ -462,38 +463,36 @@ async def get_basic_svt(
     if mstSvt.type == SvtType.SVT_MATERIAL_TD:
         base_settings["item_id"] = mstSvt.baseSvtId
 
+    face_limit = disp_limit or mstSvtLimit.limitCount
+
     if mstSvt.type == SvtType.SERVANT_EQUIP:
         basic_servant["face"] = AssetURL.face.format(**base_settings, i=0)
     elif mstSvt.type in (SvtType.ENEMY, SvtType.ENEMY_COLLECTION):
-        if svtExtra and mstSvtLimit.limitCount in svtExtra.costumeLimitSvtIdMap:
+        if svtExtra and face_limit in svtExtra.costumeLimitSvtIdMap:
             basic_servant["face"] = AssetURL.enemy.format(
                 base_url=settings.asset_url,
                 region=region,
-                item_id=svtExtra.costumeLimitSvtIdMap[
-                    mstSvtLimit.limitCount
-                ].battleCharaId,
-                i=mstSvtLimit.limitCount,
+                item_id=svtExtra.costumeLimitSvtIdMap[face_limit].battleCharaId,
+                i=face_limit,
             )
         else:
-            basic_servant["face"] = AssetURL.enemy.format(
-                **base_settings, i=mstSvtLimit.limitCount
-            )
+            basic_servant["face"] = AssetURL.enemy.format(**base_settings, i=face_limit)
     elif (
         svtExtra
-        and svt_limit is not None
-        and svt_limit > 10
-        and svt_limit in svtExtra.costumeLimitSvtIdMap
+        and face_limit is not None
+        and face_limit > 10
+        and face_limit in svtExtra.costumeLimitSvtIdMap
     ):
         basic_servant["face"] = AssetURL.face.format(
             base_url=settings.asset_url,
             region=region,
-            item_id=svtExtra.costumeLimitSvtIdMap[svt_limit].battleCharaId,
+            item_id=svtExtra.costumeLimitSvtIdMap[face_limit].battleCharaId,
             i=0,
         )
     else:
         basic_servant["face"] = AssetURL.face.format(
             **base_settings,
-            i=LIMIT_TO_FACE_ID.get(mstSvtLimit.limitCount, mstSvtLimit.limitCount),
+            i=LIMIT_TO_FACE_ID.get(face_limit, face_limit),
         )
 
     if region == Region.JP and lang is not None:
@@ -511,11 +510,12 @@ async def get_basic_servant(
     region: Region,
     item_id: int,
     svt_limit: Optional[int] = None,
+    disp_limit: int | None = None,
     lang: Optional[Language] = None,
     mstSvt: Optional[MstSvt] = None,
 ) -> BasicServant:
     return BasicServant.parse_obj(
-        await get_basic_svt(redis, region, item_id, svt_limit, lang, mstSvt)
+        await get_basic_svt(redis, region, item_id, svt_limit, disp_limit, lang, mstSvt)
     )
 
 
@@ -523,6 +523,7 @@ async def get_basic_servant(
 class BasicServantGet:
     svt_id: int
     svt_limit: int
+    disp_limit: int
 
 
 async def get_multiple_basic_servants(
@@ -533,7 +534,9 @@ async def get_multiple_basic_servants(
 ) -> list[BasicServant]:
     return await asyncio.gather(
         *[
-            get_basic_servant(redis, region, detail.svt_id, detail.svt_limit, lang)
+            get_basic_servant(
+                redis, region, detail.svt_id, detail.svt_limit, detail.disp_limit, lang
+            )
             for detail in svt_details
         ]
     )
