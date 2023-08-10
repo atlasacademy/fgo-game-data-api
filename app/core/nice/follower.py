@@ -113,11 +113,11 @@ def get_nice_follower_script(npcScript: str) -> SupportServantScript:
     return script
 
 
-def get_npc_limit(npcFollower: NpcFollower, npcSvtFollower: NpcSvtFollower) -> int:
+def get_npc_disp_limit(npcFollower: NpcFollower, npcSvtFollower: NpcSvtFollower) -> int:
     npcScript = get_nice_follower_script(npcFollower.npcScript)
     return (
         npcScript.dispLimitCount
-        if npcScript.dispLimitCount is not None
+        if npcScript.dispLimitCount
         else npcSvtFollower.limitCount
     )
 
@@ -134,7 +134,11 @@ async def get_nice_npc_servant(
         npcId=npcSvtFollower.id,
         name=npcSvtFollower.name,
         svt=await get_basic_servant(
-            redis, region, npcSvtFollower.svtId, npcSvtFollower.limitCount, lang
+            redis,
+            region,
+            npcSvtFollower.svtId,
+            svt_limit=npcSvtFollower.limitCount,
+            lang=lang,
         ),
         lv=npcSvtFollower.lv,
         atk=npcSvtFollower.atk,
@@ -217,7 +221,8 @@ async def get_nice_support_servants(
     all_svt_ids = [
         BasicServantGet(
             svt_follower_map[npc.leaderSvtId].svtId,
-            get_npc_limit(npc, svt_follower_map[npc.leaderSvtId]),
+            svt_follower_map[npc.leaderSvtId].limitCount,
+            get_npc_disp_limit(npc, svt_follower_map[npc.leaderSvtId]),
         )
         for npc in npcFollower
     ]
