@@ -30,6 +30,7 @@ from .fortification import get_nice_fortification
 from .heel_portrait import get_nice_heel_portrait
 from .lottery import get_nice_lottery
 from .mission import get_nice_mission_groups, get_nice_missions, get_nice_random_mission
+from .mural import get_nice_mural
 from .point import get_nice_pointBuff, get_nice_pointGroup
 from .recipe import get_nice_recipe
 from .reward import get_nice_reward
@@ -334,6 +335,7 @@ async def get_nice_event(
             get_nice_heel_portrait(region, event_id, heel_portrait, lang)
             for heel_portrait in raw_event.mstHeelPortrait
         ],
+        murals=[get_nice_mural(region, mural) for mural in raw_event.mstEventMural],
         campaigns=[
             get_nice_campaign(campaign) for campaign in raw_event.mstEventCampaign
         ],

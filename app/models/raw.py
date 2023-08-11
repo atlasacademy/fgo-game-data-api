@@ -1179,6 +1179,8 @@ mstEventPointBuff = Table(
     Column("detail", String),
     Column("imageId", Integer),
     Column("bgImageId", Integer),
+    Column("skillIconId", Integer),
+    Column("lv", Integer),
     Column("value", Integer),
 )
 
@@ -1632,7 +1634,7 @@ mstEventCommandAssist = Table(
     metadata,
     Column("id", Integer),
     Column("priority", Integer),
-    Column("eventId", Integer),
+    Column("eventId", Integer, index=True),
     Column("name", String),
     Column("lv", Integer),
     Column("assistCardId", Integer),
@@ -1640,6 +1642,19 @@ mstEventCommandAssist = Table(
     Column("skillId", Integer),
     Column("skillLv", Integer),
     Column("commonReleaseId", Integer),
+)
+
+
+mstEventMural = Table(
+    "mstEventMural",
+    metadata,
+    Column("id", Integer),
+    Column("message", String),
+    Column("imageIds", ARRAY(Integer)),
+    Column("eventId", Integer, index=True),
+    Column("num", Integer),
+    Column("condQuestId", Integer),
+    Column("condQuestPhase", Integer),
 )
 
 
@@ -2397,6 +2412,7 @@ TABLES_TO_BE_LOADED = [
     [mstEventVoicePlay],
     [mstEventCommandAssist],
     [mstHeelPortrait],
+    [mstEventMural],
     [mstFriendship],
     [mstGiftAdd],
     [mstIllustrator],

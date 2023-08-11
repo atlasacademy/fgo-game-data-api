@@ -1002,6 +1002,8 @@ class MstEventPointBuff(BaseModelORJson):
     detail: str
     imageId: int
     bgImageId: int
+    skillIconId: int | None = None
+    lv: int | None = None
     value: int
 
 
@@ -1383,6 +1385,16 @@ class MstHeelPortrait(BaseModelORJson):
     dispCondId: int
     dispCondNum: int
     script: dict[str, Any]
+
+
+class MstEventMural(BaseModelORJson):
+    id: int
+    message: str
+    imageIds: list[int]
+    eventId: int
+    num: int
+    condQuestId: int
+    condQuestPhase: int
 
 
 class MstEvent(BaseModelORJson):
@@ -2041,6 +2053,7 @@ class EventEntity(BaseModelORJson):
     mstEventRecipeGift: list[MstEventRecipeGift]
     mstEventCommandAssist: list[MstEventCommandAssist]
     mstHeelPortrait: list[MstHeelPortrait]
+    mstEventMural: list[MstEventMural]
     mstItem: list[MstItem]
     mstCommonConsume: list[MstCommonConsume]
     mstCommonRelease: list[MstCommonRelease]
