@@ -223,7 +223,7 @@ class NiceItemBGType(StrEnum):
     silver = "silver"
     gold = "gold"
     questClearQPReward = "questClearQPReward"
-    five = "five"
+    aquaBlue = "aquaBlue"
 
 
 ITEM_BG_TYPE_NAME: dict[int, NiceItemBGType] = {
@@ -232,7 +232,7 @@ ITEM_BG_TYPE_NAME: dict[int, NiceItemBGType] = {
     2: NiceItemBGType.silver,
     3: NiceItemBGType.gold,
     4: NiceItemBGType.questClearQPReward,
-    5: NiceItemBGType.five,
+    5: NiceItemBGType.aquaBlue,
 }
 
 
@@ -968,6 +968,7 @@ class Trait(StrEnum):
     buffBound = "buffBound"
     buffDamageCut = "buffDamageCut"
     marking = "marking"
+    manuscriptComplete = "manuscriptComplete"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1143,6 +1144,7 @@ TRAIT_NAME: dict[int, Trait] = {
     2851: Trait.servantsWithSkyAttribute,
     2857: Trait.holdingHolyGrail,
     2858: Trait.standardClassServant,
+    2872: Trait.manuscriptComplete,
     # 2xxx: CQ or Story quests buff
     3000: Trait.attackPhysical,  # Normal attack, including NP
     3001: Trait.attackProjectile,
