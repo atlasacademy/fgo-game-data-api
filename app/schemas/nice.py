@@ -1653,6 +1653,8 @@ class NiceEventPointBuff(BaseModelORJson):
     detail: str
     icon: HttpUrl
     background: NiceItemBGType
+    skillIcon: HttpUrl | None
+    lv: int | None
     value: int
 
 
