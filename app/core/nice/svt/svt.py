@@ -388,6 +388,7 @@ async def get_nice_servant(
                     costume, costume_ids[costume.id], lang
                 )
                 for costume in raw_svt.mstSvtCostume
+                if costume.id in costume_ids
             },
             "comments": [
                 get_nice_comment(svt_comment, raw_svt.mstSvtCommentAdd)
