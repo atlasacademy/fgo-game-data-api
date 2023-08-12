@@ -44,6 +44,20 @@ def get_nice_pointGroup(
 def get_nice_pointBuff(
     region: Region, pointBuff: MstEventPointBuff
 ) -> NiceEventPointBuff:
+    if pointBuff.lv is not None and pointBuff.lv > 0 and pointBuff.value == 0:
+        icon = fmt_url(
+            AssetURL.eventUi,
+            base_url=settings.asset_url,
+            region=region,
+            event=f"Prefabs/{pointBuff.eventId}/img_LeaderIcon{pointBuff.imageId:0>2}",
+        )
+    else:
+        icon = fmt_url(
+            AssetURL.items,
+            base_url=settings.asset_url,
+            region=region,
+            item_id=pointBuff.imageId,
+        )
     return NiceEventPointBuff(
         id=pointBuff.id,
         funcIds=pointBuff.funcIds,
@@ -51,18 +65,13 @@ def get_nice_pointBuff(
         eventPoint=pointBuff.eventPoint,
         name=pointBuff.name,
         detail=pointBuff.detail,
-        icon=fmt_url(
-            AssetURL.items,
-            base_url=settings.asset_url,
-            region=region,
-            item_id=pointBuff.imageId,
-        ),
+        icon=icon,
         background=ITEM_BG_TYPE_NAME[pointBuff.bgImageId],
         skillIcon=fmt_url(
             AssetURL.eventUi,
             base_url=settings.asset_url,
             region=region,
-            event=f"Prefabs/{pointBuff.eventId}/img_LeaderIcon{pointBuff.skillIconId:0>2}",
+            event=f"Prefabs/{pointBuff.eventId}/bufficon_{pointBuff.skillIconId:0>2}",
         )
         if pointBuff.skillIconId
         else None,
