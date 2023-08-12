@@ -537,6 +537,22 @@ SHOP_TYPE_NAME_REVERSE: dict[NiceShopType, int] = {
 PAY_TYPE_NAME_REVERSE: dict[NicePayType, int] = {v: k for k, v in PAY_TYPE_NAME.items()}
 
 
+### EventPointActivity.objectType ###
+
+
+class EventPointActivityObjectType(StrEnum):
+    QUEST_ID = "questId"
+    SKILL_ID = "skillId"
+    SHOP_ID = "shopId"
+
+
+EVENT_POINT_ACTIVITY_OBJECT_NAME: dict[int, EventPointActivityObjectType] = {
+    1: EventPointActivityObjectType.QUEST_ID,
+    2: EventPointActivityObjectType.SKILL_ID,
+    3: EventPointActivityObjectType.SHOP_ID,
+}
+
+
 ### Mission Cond Detail Type ###
 
 
@@ -969,6 +985,7 @@ class Trait(StrEnum):
     buffDamageCut = "buffDamageCut"
     marking = "marking"
     manuscriptComplete = "manuscriptComplete"
+    myFairSoldier = "myFairSoldier"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1145,6 +1162,7 @@ TRAIT_NAME: dict[int, Trait] = {
     2857: Trait.holdingHolyGrail,
     2858: Trait.standardClassServant,
     2872: Trait.manuscriptComplete,
+    2873: Trait.myFairSoldier,
     # 2xxx: CQ or Story quests buff
     3000: Trait.attackPhysical,  # Normal attack, including NP
     3001: Trait.attackProjectile,

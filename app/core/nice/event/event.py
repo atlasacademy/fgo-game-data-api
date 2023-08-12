@@ -31,7 +31,7 @@ from .heel_portrait import get_nice_heel_portrait
 from .lottery import get_nice_lottery
 from .mission import get_nice_mission_groups, get_nice_missions, get_nice_random_mission
 from .mural import get_nice_mural
-from .point import get_nice_pointBuff, get_nice_pointGroup
+from .point import get_nice_pointActivity, get_nice_pointBuff, get_nice_pointGroup
 from .recipe import get_nice_recipe
 from .reward import get_nice_reward
 from .reward_scene import get_nice_event_reward_scene
@@ -225,6 +225,10 @@ async def get_nice_event(
         pointBuffs=[
             get_nice_pointBuff(region, pointBuff)
             for pointBuff in raw_event.mstEventPointBuff
+        ],
+        pointActivities=[
+            get_nice_pointActivity(pointActivity)
+            for pointActivity in raw_event.mstEventPointActivity
         ],
         missions=missions,
         randomMissions=[

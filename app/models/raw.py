@@ -1446,6 +1446,8 @@ mstEventCampaign = Table(
     Column("eventId", Integer, index=True),
     Column("target", Integer),
     Column("idx", Integer),
+    Column("groupId", Integer),
+    Column("priority", Integer),
     Column("value", Integer),
     Column("calcType", Integer),
     Column("entryCondMessage", String),
@@ -1655,6 +1657,18 @@ mstEventMural = Table(
     Column("num", Integer),
     Column("condQuestId", Integer),
     Column("condQuestPhase", Integer),
+)
+
+
+mstEventPointActivity = Table(
+    "mstEventPointActivity",
+    metadata,
+    Column("eventId", Integer, index=True),
+    Column("groupId", Integer),
+    Column("objectType", Integer),
+    Column("objectId", Integer),
+    Column("objectValue", BigInteger),
+    Column("point", Integer),
 )
 
 
@@ -2405,8 +2419,7 @@ TABLES_TO_BE_LOADED = [
         mstEventMissionConditionDetail,
         mstEventMissionGroup,
     ],
-    [mstEventPointBuff],
-    [mstEventPointGroup],
+    [mstEventPointBuff, mstEventPointActivity, mstEventPointGroup],
     [mstEventReward, mstEventRewardScene, mstEventRewardSet],
     [mstEventTower, mstEventTowerReward],
     [mstEventVoicePlay],

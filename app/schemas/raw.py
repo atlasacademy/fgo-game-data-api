@@ -1397,6 +1397,15 @@ class MstEventMural(BaseModelORJson):
     condQuestPhase: int
 
 
+class MstEventPointActivity(BaseModelORJson):
+    eventId: int
+    groupId: int
+    objectType: int
+    objectId: int
+    objectValue: int
+    point: int
+
+
 class MstEvent(BaseModelORJson):
     script: list[dict[str, str]]  # []
     id: int  # 10083
@@ -2054,6 +2063,7 @@ class EventEntity(BaseModelORJson):
     mstEventCommandAssist: list[MstEventCommandAssist]
     mstHeelPortrait: list[MstHeelPortrait]
     mstEventMural: list[MstEventMural]
+    mstEventPointActivity: list[MstEventPointActivity]
     mstItem: list[MstItem]
     mstCommonConsume: list[MstCommonConsume]
     mstCommonRelease: list[MstCommonRelease]

@@ -1,12 +1,29 @@
 from ....config import Settings
 from ....schemas.common import Region
-from ....schemas.enums import ITEM_BG_TYPE_NAME
-from ....schemas.nice import AssetURL, NiceEventPointBuff, NiceEventPointGroup
-from ....schemas.raw import MstEventPointBuff, MstEventPointGroup
+from ....schemas.enums import EVENT_POINT_ACTIVITY_OBJECT_NAME, ITEM_BG_TYPE_NAME
+from ....schemas.nice import (
+    AssetURL,
+    NiceEventPointActivity,
+    NiceEventPointBuff,
+    NiceEventPointGroup,
+)
+from ....schemas.raw import MstEventPointActivity, MstEventPointBuff, MstEventPointGroup
 from ...utils import fmt_url
 
 
 settings = Settings()
+
+
+def get_nice_pointActivity(
+    point_activity: MstEventPointActivity,
+) -> NiceEventPointActivity:
+    return NiceEventPointActivity(
+        groupId=point_activity.groupId,
+        point=point_activity.point,
+        objectType=EVENT_POINT_ACTIVITY_OBJECT_NAME[point_activity.objectType],
+        objectId=point_activity.objectId,
+        objectValue=point_activity.objectValue,
+    )
 
 
 def get_nice_pointGroup(
@@ -45,7 +62,7 @@ def get_nice_pointBuff(
             AssetURL.eventUi,
             base_url=settings.asset_url,
             region=region,
-            event=f"Prefabs/{pointBuff.eventId}/bufficon_{pointBuff.skillIconId:0>2}",
+            event=f"Prefabs/{pointBuff.eventId}/img_LeaderIcon{pointBuff.skillIconId:0>2}",
         )
         if pointBuff.skillIconId
         else None,

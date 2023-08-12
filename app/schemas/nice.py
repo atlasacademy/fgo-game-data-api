@@ -28,6 +28,7 @@ from .enums import (
     Attribute,
     EnemyDeathType,
     EnemyRoleType,
+    EventPointActivityObjectType,
     FuncApplyTarget,
     NiceDetailMissionCondLinkType,
     NiceItemBGType,
@@ -1665,6 +1666,14 @@ class NiceEventPointBuff(BaseModelORJson):
     value: int
 
 
+class NiceEventPointActivity(BaseModelORJson):
+    groupId: int
+    point: int
+    objectType: EventPointActivityObjectType
+    objectId: int
+    objectValue: int
+
+
 class NiceEventMissionConditionDetail(BaseModelORJson):
     id: int
     missionTargetId: int
@@ -2001,6 +2010,7 @@ class NiceEvent(BaseModelORJson):
     rewardScenes: list[NiceEventRewardScene]
     pointGroups: list[NiceEventPointGroup]
     pointBuffs: list[NiceEventPointBuff]
+    pointActivities: list[NiceEventPointActivity]
     missions: list[NiceEventMission]
     randomMissions: list[NiceEventRandomMission]
     missionGroups: list[NiceEventMissionGroup]

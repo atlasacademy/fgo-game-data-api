@@ -83,6 +83,7 @@ from ..schemas.raw import (
     MstEventMissionConditionDetail,
     MstEventMissionGroup,
     MstEventMural,
+    MstEventPointActivity,
     MstEventPointBuff,
     MstEventPointGroup,
     MstEventQuest,
@@ -1075,6 +1076,9 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
         mstEventCommandAssist=command_assists,
         mstHeelPortrait=await fetch.get_all(conn, MstHeelPortrait, event_id),
         mstEventMural=await fetch.get_all(conn, MstEventMural, event_id),
+        mstEventPointActivity=await fetch.get_all(
+            conn, MstEventPointActivity, event_id
+        ),
         mstItem=mstItem,
         mstCommonConsume=common_consumes,
         mstCommonRelease=common_releases,

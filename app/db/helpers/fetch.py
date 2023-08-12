@@ -56,6 +56,7 @@ from ...models.raw import (
     mstEventMissionConditionDetail,
     mstEventMissionGroup,
     mstEventMural,
+    mstEventPointActivity,
     mstEventPointBuff,
     mstEventPointGroup,
     mstEventQuest,
@@ -167,6 +168,7 @@ from ...schemas.raw import (
     MstEventMissionConditionDetail,
     MstEventMissionGroup,
     MstEventMural,
+    MstEventPointActivity,
     MstEventPointBuff,
     MstEventPointGroup,
     MstEventQuest,
@@ -499,6 +501,11 @@ schema_table_fetch_all: dict[  # type:ignore
         mstEventMural,
         mstEventMural.c.eventId,
         mstEventMural.c.id,
+    ),
+    MstEventPointActivity: (
+        mstEventPointActivity,
+        mstEventPointActivity.c.eventId,
+        mstEventPointActivity.c.groupId,
     ),
 }
 
