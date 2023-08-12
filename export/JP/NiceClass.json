@@ -688,5 +688,35 @@
     "relationId": 1003,
     "supportGroup": 999,
     "autoSelSupportType": 999
+  },
+  {
+    "id": 1004,
+    "className": null,
+    "name": "EXTRAⅠ",
+    "individuality": "unknown",
+    "attackRate": 1000,
+    "imageId": 9999,
+    "iconImageId": 1004,
+    "frameId": 0,
+    "priority": 50,
+    "groupType": 3,
+    "relationId": 1004,
+    "supportGroup": 999,
+    "autoSelSupportType": 999
+  },
+  {
+    "id": 1005,
+    "className": null,
+    "name": "EXTRAⅡ",
+    "individuality": "unknown",
+    "attackRate": 1000,
+    "imageId": 9999,
+    "iconImageId": 1005,
+    "frameId": 0,
+    "priority": 50,
+    "groupType": 3,
+    "relationId": 1005,
+    "supportGroup": 999,
+    "autoSelSupportType": 999
   }
 ]

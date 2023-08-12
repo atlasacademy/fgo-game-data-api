@@ -435,6 +435,36 @@
     "autoSelSupportType": 8
   },
   {
+    "id": 31,
+    "className": "uOlgaMarieAlienGod",
+    "name": "？",
+    "individuality": "unknown",
+    "attackRate": 1000,
+    "imageId": 9999,
+    "iconImageId": 31,
+    "frameId": 31,
+    "priority": 50,
+    "groupType": 2,
+    "relationId": 31,
+    "supportGroup": 999,
+    "autoSelSupportType": 0
+  },
+  {
+    "id": 32,
+    "className": "uOlgaMarie",
+    "name": "？",
+    "individuality": "unknown",
+    "attackRate": 1000,
+    "imageId": 9999,
+    "iconImageId": 32,
+    "frameId": 31,
+    "priority": 50,
+    "groupType": 2,
+    "relationId": 31,
+    "supportGroup": 999,
+    "autoSelSupportType": 0
+  },
+  {
     "id": 97,
     "className": "unknown",
     "name": "不明",
