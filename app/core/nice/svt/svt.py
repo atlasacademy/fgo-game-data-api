@@ -26,6 +26,7 @@ from ....schemas.gameenums import (
     SvtType,
 )
 from ....schemas.nice import (
+    AssetURL,
     NiceLoreComment,
     NiceLoreCommentAdd,
     NiceServantChange,
@@ -42,7 +43,7 @@ from ....schemas.raw import (
     ServantEntity,
 )
 from ... import raw
-from ...utils import get_traits_list, get_translation
+from ...utils import fmt_url, get_traits_list, get_translation
 from ..item import get_nice_item_amount_qp, get_nice_item_from_raw
 from ..skill import get_nice_skill_with_svt
 from ..td import get_nice_td
@@ -317,6 +318,34 @@ async def get_nice_servant(
         nice_data["script"]["svtBuffTurnExtend"] = (
             raw_svt.mstSvt.script["svtBuffTurnExtend"] == 1
         )
+    if "maleImageId" in raw_svt.mstSvt.script:
+        nice_data["script"]["maleImage"] = {
+            "charaGraph": {
+                "equip": {
+                    raw_svt.mstSvt.script["maleImageId"]: fmt_url(
+                        AssetURL.charaGraphDefault,
+                        base_url=settings.asset_url,
+                        region=region,
+                        item_id=raw_svt.mstSvt.script["maleImageId"],
+                    )
+                }
+            },
+            "faces": {},
+            "charaGraphEx": {},
+            "charaGraphName": {},
+            "narrowFigure": {},
+            "charaFigure": {},
+            "charaFigureForm": {},
+            "charaFigureMulti": {},
+            "commands": {},
+            "status": {},
+            "equipFace": {},
+            "image": {},
+            "spriteModel": {},
+            "charaGraphChange": {},
+            "narrowFigureChange": {},
+            "facesChange": {},
+        }
 
     nice_data["skills"] = [
         skill

@@ -1141,6 +1141,7 @@ class NiceServantScript(BaseModel):
         title="Servant Buff Turn Extend",
         description="Bazett's effect. Extend buff's duration from end of player turn to end of enemy turn.",
     )
+    maleImage: ExtraAssets | None = None
 
 
 class NiceCommandCode(BaseModelORJson):
@@ -1452,6 +1453,12 @@ class NiceEquip(BaseModelORJson):
         ...,
         title="Ascension Add",
         description="Attributes that change when servants ascend.",
+    )
+    script: NiceServantScript = Field(
+        ...,
+        title="Servant Script",
+        description="Random stuffs that get added to the servant entry. "
+        "See each field description for more details.",
     )
     skills: list[NiceSkill] = Field(
         ..., title="Skills", description="list of servant or CE skills."
