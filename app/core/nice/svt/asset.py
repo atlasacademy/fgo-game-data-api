@@ -15,6 +15,39 @@ from ...utils import fmt_url
 settings = Settings()
 
 
+def get_male_image_extraAssets(region: Region, svt_id: int) -> ExtraAssets:
+    base_settings_id: dict[str, Union[int, str]] = {
+        "base_url": settings.asset_url,
+        "region": region,
+        "item_id": svt_id,
+    }
+
+    return ExtraAssets(
+        charaGraph=ExtraAssetsUrl(
+            equip={svt_id: fmt_url(AssetURL.charaGraphDefault, **base_settings_id)}
+        ),
+        faces=ExtraAssetsUrl(
+            equip={svt_id: fmt_url(AssetURL.face, **base_settings_id, i=0)}
+        ),
+        charaGraphEx=ExtraAssetsUrl(),
+        charaGraphName=ExtraAssetsUrl(),
+        narrowFigure=ExtraAssetsUrl(),
+        charaFigure=ExtraAssetsUrl(),
+        charaFigureForm={},
+        charaFigureMulti={},
+        commands=ExtraAssetsUrl(),
+        status=ExtraAssetsUrl(),
+        equipFace=ExtraAssetsUrl(
+            equip={svt_id: fmt_url(AssetURL.equipFace, **base_settings_id, i=0)}
+        ),
+        image=ExtraAssetsUrl(),
+        spriteModel=ExtraAssetsUrl(),
+        charaGraphChange=ExtraAssetsUrl(),
+        narrowFigureChange=ExtraAssetsUrl(),
+        facesChange=ExtraAssetsUrl(),
+    )
+
+
 def get_svt_extraAssets(
     region: Region, svt_id: int, raw_svt: ServantEntity, costume_ids: dict[int, int]
 ) -> ExtraAssets:
