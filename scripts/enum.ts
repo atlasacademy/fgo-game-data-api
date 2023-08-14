@@ -1151,6 +1151,14 @@ export enum NiceEventType {
     MYROOM_PHOTO_CAMPAIGN = "myroomPhotoCampaign",
 }
 
+export enum NiceEventOverwriteType {
+    BG_IMAGE = "bgImage",
+    BGM = "bgm",
+    NAME = "name",
+    BANNER = "banner",
+    NOTICE_BANNER = "noticeBanner",
+}
+
 export enum NiceWarFlag {
     WITH_MAP = "withMap",
     SHOW_ON_MATERIAL = "showOnMaterial",

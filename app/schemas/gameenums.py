@@ -3237,6 +3237,33 @@ EVENT_TYPE_NAME: dict[int, NiceEventType] = {
 }
 
 
+class EventOverwriteType(IntEnum):
+    BG_IMAGE = 1
+    BGM = 2
+    NAME = 3
+    BANNER = 4
+    NOTICE_BANNER = 5
+
+
+class NiceEventOverwriteType(StrEnum):
+    """Event Overwrite Type Enum"""
+
+    bgImage = "bgImage"
+    bgm = "bgm"
+    name_ = "name"
+    banner = "banner"
+    noticeBanner = "noticeBanner"
+
+
+EVENT_OVERWRITE_TYPE_NAME: dict[int, NiceEventOverwriteType] = {
+    1: NiceEventOverwriteType.bgImage,
+    2: NiceEventOverwriteType.bgm,
+    3: NiceEventOverwriteType.name_,
+    4: NiceEventOverwriteType.banner,
+    5: NiceEventOverwriteType.noticeBanner,
+}
+
+
 class WarEntityFlag(IntEnum):
     WITH_MAP = 2
     SHOW_ON_MATERIAL = 4

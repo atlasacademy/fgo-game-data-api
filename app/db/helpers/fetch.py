@@ -39,6 +39,7 @@ from ...models.raw import (
     mstEquipExp,
     mstEquipSkill,
     mstEvent,
+    mstEventAdd,
     mstEventAlloutBattle,
     mstEventBulletinBoard,
     mstEventBulletinBoardRelease,
@@ -151,6 +152,7 @@ from ...schemas.raw import (
     MstEquipExp,
     MstEquipSkill,
     MstEvent,
+    MstEventAdd,
     MstEventAlloutBattle,
     MstEventBulletinBoard,
     MstEventBulletinBoardRelease,
@@ -354,6 +356,7 @@ schema_table_fetch_all: dict[  # type:ignore
         mstEnemyMasterBattle.c.enemyMasterId,
         mstEnemyMasterBattle.c.id,
     ),
+    MstEventAdd: (mstEventAdd, mstEventAdd.c.eventId, mstEventAdd.c.priority),
     MstEventMission: (
         mstEventMission,
         mstEventMission.c.missionTargetId,

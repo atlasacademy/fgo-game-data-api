@@ -4,16 +4,24 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ....config import Settings
 from ....schemas.common import Language, Region
-from ....schemas.gameenums import EVENT_TYPE_NAME, NiceSvtVoiceType, NiceVoiceCondType
+from ....schemas.gameenums import (
+    COND_TYPE_NAME,
+    EVENT_OVERWRITE_TYPE_NAME,
+    EVENT_TYPE_NAME,
+    EventOverwriteType,
+    NiceSvtVoiceType,
+    NiceVoiceCondType,
+)
 from ....schemas.nice import (
     AssetURL,
     NiceEvent,
+    NiceEventAdd,
     NiceEventCooltime,
     NiceSkill,
     NiceVoiceCond,
     NiceVoiceGroup,
 )
-from ....schemas.raw import MstGift
+from ....schemas.raw import MstEventAdd, MstGift
 from ... import raw
 from ...utils import fmt_url, get_translation
 from ..bgm import get_nice_bgm_entity_from_raw
@@ -61,6 +69,30 @@ def conds_related_to_event(voice_conds: list[NiceVoiceCond], event_id: int) -> b
             return True
 
     return False
+
+
+def get_nice_event_add(region: Region, mst_event_add: MstEventAdd) -> NiceEventAdd:
+    banner_url = (
+        fmt_url(
+            AssetURL.banner,
+            base_url=settings.asset_url,
+            region=region,
+            banner=f"event_war_{mst_event_add.overwriteId}",
+        )
+        if mst_event_add.overwriteType == EventOverwriteType.BANNER
+        else None
+    )
+    return NiceEventAdd(
+        overwriteType=EVENT_OVERWRITE_TYPE_NAME[mst_event_add.overwriteType],
+        priority=mst_event_add.priority,
+        overwriteId=mst_event_add.overwriteId,
+        overwriteText=mst_event_add.overwriteText,
+        overwriteBanner=banner_url,
+        condType=COND_TYPE_NAME[mst_event_add.condType],
+        targetId=mst_event_add.targetId,
+        startedAt=mst_event_add.startedAt,
+        endedAt=mst_event_add.endedAt,
+    )
 
 
 async def get_nice_event(
@@ -195,6 +227,9 @@ async def get_nice_event(
         finishedAt=raw_event.mstEvent.finishedAt,
         materialOpenedAt=raw_event.mstEvent.materialOpenedAt,
         warIds=[war.id for war in raw_event.mstWar],
+        eventAdds=[
+            get_nice_event_add(region, event_add) for event_add in raw_event.mstEventAdd
+        ],
         shop=[
             get_nice_shop(
                 region,

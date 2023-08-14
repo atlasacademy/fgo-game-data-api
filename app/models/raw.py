@@ -1143,6 +1143,21 @@ mstEvent = Table(
 )
 
 
+mstEventAdd = Table(
+    "mstEventAdd",
+    metadata,
+    Column("eventId", Integer, index=True),
+    Column("overwriteType", Integer),
+    Column("priority", Integer),
+    Column("overwriteId", Integer),
+    Column("overwriteText", String),
+    Column("condType", Integer),
+    Column("targetId", Integer),
+    Column("startedAt", Integer),
+    Column("endedAt", Integer),
+)
+
+
 mstEventReward = Table(
     "mstEventReward",
     metadata,
@@ -2413,6 +2428,7 @@ TABLES_TO_BE_LOADED = [
     [mstCv],
     [mstEquip, mstEquipAdd, mstEquipExp, mstEquipSkill],
     [mstEnemyMaster, mstEnemyMasterBattle],
+    [mstEventAdd],
     [
         mstEventMission,
         mstEventMissionCondition,

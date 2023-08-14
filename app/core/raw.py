@@ -66,6 +66,7 @@ from ..schemas.raw import (
     MstEquipExp,
     MstEquipSkill,
     MstEvent,
+    MstEventAdd,
     MstEventAlloutBattle,
     MstEventBulletinBoard,
     MstEventBulletinBoardRelease,
@@ -1030,6 +1031,7 @@ async def get_event_entity(conn: AsyncConnection, event_id: int) -> EventEntity:
 
     return EventEntity(
         mstEvent=mstEvent,
+        mstEventAdd=await fetch.get_all(conn, MstEventAdd, event_id),
         mstWar=await event.get_event_wars(conn, event_id),
         mstEventRewardScene=reward_scenes,
         mstEventVoicePlay=voice_plays,

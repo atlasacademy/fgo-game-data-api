@@ -325,6 +325,13 @@ ENUMS: list[tuple[str, str, str, str, str]] = [
         "EVENT_TYPE_NAME",
     ),
     (
+        "EventAddEntity.OverwriteType",
+        "EventOverwriteType",
+        "NiceEventOverwriteType",
+        "Event Overwrite Type Enum",
+        "EVENT_OVERWRITE_TYPE_NAME",
+    ),
+    (
         "WarEntity.Flag",
         "WarEntityFlag",
         "NiceWarFlag",

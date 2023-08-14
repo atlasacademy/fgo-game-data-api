@@ -1406,6 +1406,18 @@ class MstEventPointActivity(BaseModelORJson):
     point: int
 
 
+class MstEventAdd(BaseModelORJson):
+    eventId: int
+    overwriteType: int
+    priority: int
+    overwriteId: int
+    overwriteText: str
+    condType: int
+    targetId: int
+    startedAt: int
+    endedAt: int
+
+
 class MstEvent(BaseModelORJson):
     script: list[dict[str, str]]  # []
     id: int  # 10083
@@ -2021,6 +2033,7 @@ class BgmEntity(BaseModelORJson):
 
 class EventEntity(BaseModelORJson):
     mstEvent: MstEvent
+    mstEventAdd: list[MstEventAdd]
     mstWar: list[MstWar]
     mstEventRewardScene: list[MstEventRewardScene]
     mstEventVoicePlay: list[MstEventVoicePlay]

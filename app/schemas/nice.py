@@ -56,6 +56,7 @@ from .gameenums import (
     NiceConsumeType,
     NiceEventCombineCalc,
     NiceEventFortificationSvtType,
+    NiceEventOverwriteType,
     NiceEventRewardSceneFlag,
     NiceEventType,
     NiceEventWorkType,
@@ -1988,6 +1989,18 @@ class NiceEventMural(BaseModelORJson):
     condQuestPhase: int
 
 
+class NiceEventAdd(BaseModelORJson):
+    overwriteType: NiceEventOverwriteType
+    priority: int
+    overwriteId: int
+    overwriteText: str
+    overwriteBanner: HttpUrl | None = None
+    condType: NiceCondType
+    targetId: int
+    startedAt: int
+    endedAt: int
+
+
 class NiceEvent(BaseModelORJson):
     id: int
     type: NiceEventType
@@ -2005,6 +2018,7 @@ class NiceEvent(BaseModelORJson):
     finishedAt: int
     materialOpenedAt: int
     warIds: list[int]
+    eventAdds: list[NiceEventAdd]
     shop: list[NiceShop]
     rewards: list[NiceEventReward]
     rewardScenes: list[NiceEventRewardScene]
