@@ -986,6 +986,21 @@ class Trait(StrEnum):
     marking = "marking"
     manuscriptComplete = "manuscriptComplete"
     myFairSoldier = "myFairSoldier"
+    zeroStarServant = "zeroStarServant"
+    oneStarServant = "oneStarServant"
+    twoStarServant = "twoStarServant"
+    threeStarServant = "threeStarServant"
+    fourStarServant = "fourStarServant"
+    fiveStarServant = "fiveStarServant"
+    wrathOfTheEnshrinedDeity = "wrathOfTheEnshrinedDeity"
+    caitCuCerpriestessAscension0To2 = "caitCuCerpriestessAscension0To2"
+    caitCuCerpriestessAscension3To4 = "caitCuCerpriestessAscension3To4"
+    fieldAir = "fieldAir"
+    caitCuCerpriestessOnTheField = "caitCuCerpriestessOnTheField"
+    buffNpPerTurn = "buffNpPerTurn"
+    buffStarPerTurn = "buffStarPerTurn"
+    burnEffectivenessUp = "burnEffectivenessUp"
+    murasamaAscension0 = "murasamaAscension0"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1032,6 +1047,12 @@ TRAIT_NAME: dict[int, Trait] = {
     305: Trait.alignmentBalanced,
     306: Trait.alignmentMadness,
     308: Trait.alignmentSummer,
+    400: Trait.zeroStarServant,
+    401: Trait.oneStarServant,
+    402: Trait.twoStarServant,
+    403: Trait.threeStarServant,
+    404: Trait.fourStarServant,
+    405: Trait.fiveStarServant,
     1000: Trait.servant,  # can be NPC or enemy but use a servant's data
     1001: Trait.human,  # Sanson's 3rd skill
     1002: Trait.undead,  # Scathach's 3rd skill
@@ -1161,8 +1182,14 @@ TRAIT_NAME: dict[int, Trait] = {
     2851: Trait.servantsWithSkyAttribute,
     2857: Trait.holdingHolyGrail,
     2858: Trait.standardClassServant,
+    2871: Trait.murasamaAscension0,
     2872: Trait.manuscriptComplete,
     2873: Trait.myFairSoldier,
+    2874: Trait.wrathOfTheEnshrinedDeity,
+    2875: Trait.caitCuCerpriestessAscension0To2,
+    2876: Trait.caitCuCerpriestessAscension3To4,
+    2878: Trait.fieldAir,
+    2879: Trait.caitCuCerpriestessOnTheField,
     # 2xxx: CQ or Story quests buff
     3000: Trait.attackPhysical,  # Normal attack, including NP
     3001: Trait.attackProjectile,
@@ -1230,10 +1257,13 @@ TRAIT_NAME: dict[int, Trait] = {
     3068: Trait.chenGongNp,
     3070: Trait.buffNullifyBuff,
     3076: Trait.cantBeSacrificed,
+    3080: Trait.buffNpPerTurn,
+    3081: Trait.buffStarPerTurn,
     3085: Trait.buffDamageCut,
     3086: Trait.gutsBlock,
     3087: Trait.buffBound,
     3088: Trait.marking,
+    3089: Trait.burnEffectivenessUp,
     # 6016: No detail
     # 6021: No detail
     # 6022: No detail
