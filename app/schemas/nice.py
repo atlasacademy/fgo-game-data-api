@@ -1983,7 +1983,7 @@ class NiceHeelPortrait(BaseModelORJson):
 class NiceEventMural(BaseModelORJson):
     id: int
     message: str
-    imageIds: list[HttpUrl]
+    images: list[HttpUrl]
     num: int
     condQuestId: int
     condQuestPhase: int

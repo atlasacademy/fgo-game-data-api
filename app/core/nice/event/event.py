@@ -374,7 +374,9 @@ async def get_nice_event(
             get_nice_heel_portrait(region, event_id, heel_portrait, lang)
             for heel_portrait in raw_event.mstHeelPortrait
         ],
-        murals=[get_nice_mural(region, mural) for mural in raw_event.mstEventMural],
+        murals=[
+            get_nice_mural(region, event_id, mural) for mural in raw_event.mstEventMural
+        ],
         campaigns=[
             get_nice_campaign(campaign) for campaign in raw_event.mstEventCampaign
         ],

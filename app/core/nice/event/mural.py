@@ -8,16 +8,18 @@ from ...utils import fmt_url
 settings = Settings()
 
 
-def get_nice_mural(region: Region, mural: MstEventMural) -> NiceEventMural:
+def get_nice_mural(
+    region: Region, event_id: int, mural: MstEventMural
+) -> NiceEventMural:
     return NiceEventMural(
         id=mural.id,
         message=mural.message,
-        imageIds=[
+        images=[
             fmt_url(
-                AssetURL.event,
+                AssetURL.eventUi,
                 base_url=settings.asset_url,
                 region=region,
-                event=f"{imageId}",
+                event=f"Prefabs/{event_id}/img_pic_{imageId:03d}",
             )
             for imageId in mural.imageIds
         ],
