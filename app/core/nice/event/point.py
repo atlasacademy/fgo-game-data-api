@@ -1,6 +1,10 @@
 from ....config import Settings
 from ....schemas.common import Region
-from ....schemas.enums import EVENT_POINT_ACTIVITY_OBJECT_NAME, ITEM_BG_TYPE_NAME
+from ....schemas.enums import (
+    EVENT_POINT_ACTIVITY_OBJECT_NAME,
+    ITEM_BG_TYPE_NAME,
+    NiceItemBGType,
+)
 from ....schemas.nice import (
     AssetURL,
     NiceEventPointActivity,
@@ -66,7 +70,7 @@ def get_nice_pointBuff(
         name=pointBuff.name,
         detail=pointBuff.detail,
         icon=icon,
-        background=ITEM_BG_TYPE_NAME[pointBuff.bgImageId],
+        background=ITEM_BG_TYPE_NAME.get(pointBuff.bgImageId, NiceItemBGType.unknown),
         skillIcon=fmt_url(
             AssetURL.eventUi,
             base_url=settings.asset_url,

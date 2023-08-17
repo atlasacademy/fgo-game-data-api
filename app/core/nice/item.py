@@ -6,7 +6,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
 from ...schemas.common import Language, Region
-from ...schemas.enums import ITEM_BG_TYPE_NAME, NiceItemUse
+from ...schemas.enums import ITEM_BG_TYPE_NAME, NiceItemBGType, NiceItemUse
 from ...schemas.gameenums import ITEM_TYPE_NAME, ItemType
 from ...schemas.nice import (
     AssetURL,
@@ -72,7 +72,7 @@ def get_nice_item_from_raw(
         detail=raw_item.detail,
         individuality=get_traits_list(raw_item.individuality),
         icon=icon_url,
-        background=ITEM_BG_TYPE_NAME[raw_item.bgImageId],
+        background=ITEM_BG_TYPE_NAME.get(raw_item.bgImageId, NiceItemBGType.unknown),
         priority=raw_item.priority,
         dropPriority=raw_item.dropPriority,
         itemSelects=[

@@ -224,6 +224,8 @@ class NiceItemBGType(StrEnum):
     gold = "gold"
     questClearQPReward = "questClearQPReward"
     aquaBlue = "aquaBlue"
+    six = "six"
+    unknown = "unknown"
 
 
 ITEM_BG_TYPE_NAME: dict[int, NiceItemBGType] = {
@@ -233,6 +235,7 @@ ITEM_BG_TYPE_NAME: dict[int, NiceItemBGType] = {
     3: NiceItemBGType.gold,
     4: NiceItemBGType.questClearQPReward,
     5: NiceItemBGType.aquaBlue,
+    6: NiceItemBGType.six,
 }
 
 
