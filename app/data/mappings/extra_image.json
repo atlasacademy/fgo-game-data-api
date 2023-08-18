@@ -103,7 +103,8 @@
     "svtId": 2800100,
     "imageIds": [
       "cut252_brk",
-      "cut270_obr"
+      "cut270_obr",
+      "cut499_obr01"
     ]
   },
   {
@@ -132,6 +133,50 @@
     "svtId": 204300,
     "imageIds": [
       "cut671_brl"
+    ]
+  },
+  {
+    "svtId": 1101600,
+    "imageIds": [
+      "cut483_b_mkre00"
+    ]
+  },
+  {
+    "svtId": 405000,
+    "imageIds": [
+      "cut482_a_mszk00",
+      "cut500_szk07"
+    ]
+  },
+  {
+    "svtId": 400800,
+    "imageIds": [
+      "cut496_khg05"
+    ]
+  },
+  {
+    "svtId": 204900,
+    "imageIds": [
+      "cut495_mbgs05"
+    ]
+  },
+  {
+    "svtId": 505300,
+    "imageIds": [
+      "cut493_mrc00"
+    ]
+  },
+  {
+    "svtId": 704700,
+    "imageIds": [
+      "cut487_matc13"
+    ]
+  },
+  {
+    "svtId": 901700,
+    "imageIds": [
+      "cut497_mmls02_1",
+      "cut497_mmls02_2"
     ]
   }
 ]
