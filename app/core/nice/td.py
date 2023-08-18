@@ -156,7 +156,7 @@ async def get_nice_td(
     if not chosen_svts and not sorted_svtTd:  # pragma: no cover
         base_settings_id["item_id"] = tdEntity.mstTreasureDevice.id
         nice_td |= {
-            "svtId": tdEntity.mstTreasureDevice.id,
+            "svtId": 0,
             "icon": AssetURL.commands.format(**base_settings_id, i="np"),
             "strengthStatus": 0,
             "npNum": 1,

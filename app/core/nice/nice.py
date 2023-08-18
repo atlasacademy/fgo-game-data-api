@@ -162,7 +162,7 @@ async def get_nice_func_with_reverse(
                 ],
                 NP=[
                     await get_nice_td_with_reverse(
-                        conn, redis, region, td_id, lang, reverse, reverseDepth
+                        conn, redis, region, td_id, -1, lang, reverse, reverseDepth
                     )
                     for td_id in td_ids
                 ],
@@ -239,6 +239,7 @@ async def get_nice_td_with_reverse(
     redis: Redis,
     region: Region,
     td_id: int,
+    svt_id: int,
     lang: Language,
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.servant,
@@ -247,23 +248,23 @@ async def get_nice_td_with_reverse(
     raw_td = await raw.get_td_entity_no_reverse(conn, td_id, expand=True)
 
     nice_td = NiceTdReverse.parse_obj(
-        (await get_nice_td(conn, raw_td, -1, region, lang))[0]
+        (await get_nice_td(conn, raw_td, svt_id, region, lang))[0]
     )
 
     if reverse and reverseDepth >= ReverseDepth.servant:
         if reverseData == ReverseData.basic:
             basic_td_reverse = BasicReversedSkillTd(
                 servant=[
-                    await get_basic_servant(redis, region, svt_id.svtId, lang=lang)
-                    for svt_id in raw_td.mstSvtTreasureDevice
+                    await get_basic_servant(redis, region, svt_td.svtId, lang=lang)
+                    for svt_td in raw_td.mstSvtTreasureDevice
                 ]
             )
             nice_td.reverse = NiceReversedSkillTdType(basic=basic_td_reverse)
         else:
             td_reverse = NiceReversedSkillTd(
                 servant=[
-                    await get_nice_servant_model(conn, region, svt_id.svtId, lang=lang)
-                    for svt_id in raw_td.mstSvtTreasureDevice
+                    await get_nice_servant_model(conn, region, svt_td.svtId, lang=lang)
+                    for svt_td in raw_td.mstSvtTreasureDevice
                 ]
             )
             nice_td.reverse = NiceReversedSkillTdType(nice=td_reverse)

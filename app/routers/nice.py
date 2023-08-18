@@ -442,6 +442,7 @@ async def find_td(
                     redis,
                     search_param.region,
                     td.id,
+                    -1,
                     lang,
                     reverse,
                     reverseData=reverseData,
@@ -468,11 +469,19 @@ async def get_td(
     reverse: bool = False,
     reverseData: ReverseData = ReverseData.nice,
     redis: Redis = Depends(get_redis),
+    svtId: int | None = None,
 ) -> Response:
     async with get_db(region) as conn:
         return item_response(
             await nice.get_nice_td_with_reverse(
-                conn, redis, region, np_id, lang, reverse, reverseData=reverseData
+                conn,
+                redis,
+                region,
+                np_id,
+                svtId or -1,
+                lang,
+                reverse,
+                reverseData=reverseData,
             )
         )
 
