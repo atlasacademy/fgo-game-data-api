@@ -39,7 +39,7 @@ def get_nice_ascensionAdd(
     ] = {
         ascensionAddField: {"ascension": {}, "costume": {}}
         for ascensionAddField in set(OVERWRITE_FIELDS)
-        | {"individuality", "voicePrefix", "lvMax"}
+        | {"individuality", "voicePrefix", "lvMax", "rarity"}
     }
 
     ascensionAdd["charaGraphChange"] = {"ascension": {}, "costume": {}}
@@ -49,6 +49,7 @@ def get_nice_ascensionAdd(
 
     for limit in raw_svt.mstSvtLimit:
         ascensionAdd["lvMax"]["ascension"][limit.limitCount] = limit.lvMax
+        ascensionAdd["rarity"]["ascension"][limit.limitCount] = limit.rarity
         try:
             strParam = orjson.loads(limit.strParam)
             if "changeGraphCommonReleaseId" in strParam:
