@@ -427,6 +427,7 @@ class QuestSearchQueryParams:
     bgmId: Optional[int] = None
     fieldAiId: Optional[int] = None
     enemySvtId: Optional[int] = None
+    enemyName: str | None = None
     enemySvtAiId: Optional[int] = None
     enemyTrait: list[Union[Trait, int]] = Query([])
     enemyClassName: list[SvtClass] = Query([])
@@ -447,6 +448,7 @@ class QuestSearchQueryParams:
                 self.bgmId,
                 self.enemySvtAiId,
                 self.enemySvtId,
+                self.enemyName,
                 self.fieldAiId,
                 self.enemyTrait,
                 self.enemyClassName,
@@ -470,6 +472,7 @@ class QuestSearchQueryParams:
         - **bgmId**: BGM ID.
         - **fieldAiId**: Field AI ID.
         - **enemySvtId**: Enemy's svt ID (Note that this is not `collectionNo`). Some quests use 99xxxxx svt ID instead of the playable svt ID.
+        - **enemyName**: Enemy's name.
         - **enemySvtAiId**: Enemy's servant AI ID.
         - **enemyTrait**: Enemy's Trait. Trait Enum or an Integer.
         - **enemyClassName**: Enemy's Class Name Enum.

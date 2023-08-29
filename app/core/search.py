@@ -449,6 +449,7 @@ async def search_quest(
         bgm_id=search_param.bgmId,
         field_ai_id=search_param.fieldAiId,
         enemy_svt_id=search_param.enemySvtId,
+        enemy_name=search_param.enemyName,
         enemy_svt_ai_id=search_param.enemySvtAiId,
         enemy_trait=reverse_traits(search_param.enemyTrait),
         enemy_class={

@@ -188,6 +188,7 @@ async def get_quest_phase_search(
     bgm_id: Optional[int] = None,
     field_ai_id: Optional[int] = None,
     enemy_svt_id: Optional[int] = None,
+    enemy_name: str | None = None,
     enemy_svt_ai_id: Optional[int] = None,
     enemy_trait: Optional[Iterable[int]] = None,
     enemy_class: Optional[Iterable[int]] = None,
@@ -206,6 +207,7 @@ async def get_quest_phase_search(
         )
     if (
         enemy_svt_id
+        or enemy_name
         or enemy_svt_ai_id
         or enemy_trait
         or enemy_class
@@ -284,6 +286,29 @@ async def get_quest_phase_search(
         where_clause.append(questDetail_contains({"individuality": list(enemy_trait)}))
     if enemy_svt_id:
         where_clause.append(questDetail_contains({"svtId": enemy_svt_id}))
+    if enemy_name:
+
+        def deck_enemy_contain_name(
+            deck: str, name: str, deck_is_list: bool = True
+        ) -> ColumnElement[bool]:
+            if deck_is_list:
+                return rayshiftQuest.c.questDetail.contains(
+                    {deck: [{"svts": [{"name": name}]}]}
+                )
+
+            return rayshiftQuest.c.questDetail.contains(
+                {deck: {"svts": [{"name": name}]}}
+            )
+
+        where_clause.append(
+            or_(
+                deck_enemy_contain_name("enemyDeck", enemy_name),
+                deck_enemy_contain_name("callDeck", enemy_name),
+                deck_enemy_contain_name("shiftDeck", enemy_name),
+                deck_enemy_contain_name("transformDeck", enemy_name, False),
+                deck_enemy_contain_name("aiNpcDeck", enemy_name, False),
+            )
+        )
     if enemy_class:
         rayshift_svt_ids = select(
             rayshiftQuest.c.questId,
