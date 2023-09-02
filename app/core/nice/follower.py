@@ -9,7 +9,7 @@ from ...core.basic import (
     get_basic_servant,
     get_multiple_basic_servants,
 )
-from ...core.utils import get_flags, get_nice_trait
+from ...core.utils import get_flags, get_nice_trait, get_translation
 from ...redis import Redis
 from ...schemas.basic import BasicServant
 from ...schemas.common import Language, NiceTrait, Region
@@ -160,12 +160,14 @@ def get_nice_support_servant(
     all_skills: MultipleNiceSkills,
     all_tds: MultipleNiceTds,
     all_equips: dict[int, NiceEquip],
+    lang: Language,
 ) -> SupportServant:
     return SupportServant(
         id=npcFollower.id,
         npcSvtFollowerId=npcSvtFollower.id,
         priority=npcFollower.priority,
-        name=npcSvtFollower.name,
+        name=get_translation(lang, npcSvtFollower.name),
+        originalName=npcSvtFollower.name,
         svt=basic_svt,
         releaseConditions=[
             get_nice_follower_release(release) for release in npcFollowerRelease
@@ -255,6 +257,7 @@ async def get_nice_support_servants(
             all_skills=all_skills,
             all_tds=all_tds,
             all_equips=all_equips,
+            lang=lang,
         )
         out_support_servants.append(nice_support_servant)
 

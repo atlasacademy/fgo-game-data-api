@@ -2393,6 +2393,7 @@ class SupportServant(BaseModelORJson):
     npcSvtFollowerId: int
     priority: int
     name: str
+    originalName: str
     svt: BasicServant
     releaseConditions: list[SupportServantRelease]
     lv: int

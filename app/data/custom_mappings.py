@@ -16,6 +16,7 @@ class Translation(StrEnum):
     VOICE = "voice_names"
     OVERWRITE_VOICE = "overwrite_voice_names"
     BGM = "bgm_names"
+    SUPPORT_SERVANT = "support_servant_names"
     ENTITY = "entity_names"
     QUEST = "quest_names"
     SPOT = "spot_names"
