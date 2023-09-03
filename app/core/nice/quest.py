@@ -637,6 +637,14 @@ async def get_nice_quest_phase(
             quest_hash=db_data.nice.enemyHash,
             all_hashes=all_rayshift_hashes,
         )
+
+        if quest_already_closed:
+            ttl = None
+        elif time.time() < db_data.nice.openedAt + settings.quest_cache_length:
+            ttl = int(time.time() - db_data.nice.openedAt)
+        else:
+            ttl = settings.quest_cache_length
+
         await set_stages_cache(
             redis=redis,
             data=cache_data,
@@ -644,8 +652,8 @@ async def get_nice_quest_phase(
             quest_id=quest_id,
             phase=phase,
             lang=lang,
-            hash=questHash,
-            long_ttl=quest_already_closed,
+            hash_=questHash,
+            ttl=ttl,
         )
 
     return db_data.nice

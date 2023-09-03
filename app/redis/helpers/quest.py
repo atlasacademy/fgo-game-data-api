@@ -55,12 +55,12 @@ async def set_stages_cache(
     quest_id: int,
     phase: int,
     lang: Language = Language.jp,
-    hash: str | None = None,
-    long_ttl: bool = False,
+    hash_: str | None = None,
+    ttl: int | None = None,
 ) -> None:
-    redis_key = get_redis_cache_key(region, quest_id, phase, hash, lang)
+    redis_key = get_redis_cache_key(region, quest_id, phase, hash_, lang)
     redis_data = pickle.dumps(data)
-    if long_ttl:
+    if ttl is None:
         await redis.set(redis_key, redis_data)
     else:
-        await redis.set(redis_key, redis_data, ex=settings.quest_cache_length)
+        await redis.set(redis_key, redis_data, ex=ttl)
