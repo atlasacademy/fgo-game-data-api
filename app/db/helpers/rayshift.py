@@ -200,15 +200,19 @@ async def get_rayshift_drops(
         .cte(name="drops")
     )
 
-    all_drops = select(
-        drops.c.queryId,
-        drops.c.stage,
-        drops.c.deckType,
-        cast(drops.c.deckId, Integer).label("deckId"),
-        drops.c.drops["type"].label("type"),
-        drops.c.drops["objectId"].label("objectId"),
-        drops.c.drops["originalNum"].label("originalNum"),
-    ).cte(name="all_drops")
+    all_drops = (
+        select(
+            drops.c.queryId,
+            drops.c.stage,
+            drops.c.deckType,
+            cast(drops.c.deckId, Integer).label("deckId"),
+            drops.c.drops["type"].label("type"),
+            drops.c.drops["objectId"].label("objectId"),
+            drops.c.drops["originalNum"].label("originalNum"),
+        )
+        .where(drops.c.drops["isRateUp"] != cast("true", JSONB))
+        .cte(name="all_drops")
+    )
 
     run_enemy_drop_items = (
         select(
