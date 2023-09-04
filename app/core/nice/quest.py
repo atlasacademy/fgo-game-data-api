@@ -446,7 +446,8 @@ async def get_nice_quest_phase(
     db_data: DBQuestPhase = await get_nice_quest_phase_no_rayshift(
         conn, redis, region, quest_id, phase, lang
     )
-    quest_already_closed = time.time() > db_data.nice.closedAt
+    current_time = int(time.time())
+    quest_already_closed = current_time > db_data.nice.closedAt
 
     if "questSelect" in db_data.raw.mstQuestPhase.script:
         questSelectScript: list[int] = db_data.raw.mstQuestPhase.script["questSelect"]
@@ -640,8 +641,8 @@ async def get_nice_quest_phase(
 
         if quest_already_closed:
             ttl = None
-        elif time.time() < db_data.nice.openedAt + settings.quest_cache_length:
-            ttl = int(time.time() - db_data.nice.openedAt)
+        elif 0 < current_time - db_data.nice.openedAt < settings.quest_cache_length:
+            ttl = current_time - db_data.nice.openedAt
         else:
             ttl = settings.quest_cache_length
 
