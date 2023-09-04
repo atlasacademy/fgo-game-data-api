@@ -210,7 +210,7 @@ async def get_rayshift_drops(
             drops.c.drops["objectId"].label("objectId"),
             drops.c.drops["originalNum"].label("originalNum"),
         )
-        .where(drops.c.drops["isRateUp"] != cast("true", JSONB))
+        .where(drops.c.drops["isRateUp"] != literal_column("'true'::JSONB"))
         .cte(name="all_drops")
     )
 
