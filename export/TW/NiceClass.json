@@ -181,7 +181,7 @@
   },
   {
     "id": 13,
-    "className": null,
+    "className": "13",
     "name": "？",
     "individuality": "unknown",
     "attackRate": 1000,
@@ -196,7 +196,7 @@
   },
   {
     "id": 14,
-    "className": null,
+    "className": "14",
     "name": "？",
     "individuality": "unknown",
     "attackRate": 950,
@@ -211,7 +211,7 @@
   },
   {
     "id": 15,
-    "className": null,
+    "className": "15",
     "name": "？",
     "individuality": "unknown",
     "attackRate": 1050,
@@ -226,7 +226,7 @@
   },
   {
     "id": 16,
-    "className": null,
+    "className": "16",
     "name": "？",
     "individuality": "unknown",
     "attackRate": 1000,
@@ -256,7 +256,7 @@
   },
   {
     "id": 18,
-    "className": null,
+    "className": "18",
     "name": "？",
     "individuality": "unknown",
     "attackRate": 900,
@@ -271,7 +271,7 @@
   },
   {
     "id": 19,
-    "className": null,
+    "className": "19",
     "name": "？",
     "individuality": "unknown",
     "attackRate": 1100,
@@ -451,7 +451,7 @@
   },
   {
     "id": 98,
-    "className": null,
+    "className": "98",
     "name": "NPC(不使用)",
     "individuality": "unknown",
     "attackRate": 1000,
@@ -466,7 +466,7 @@
   },
   {
     "id": 99,
-    "className": null,
+    "className": "99",
     "name": "敵人(不使用)",
     "individuality": "unknown",
     "attackRate": 1000,
@@ -481,7 +481,7 @@
   },
   {
     "id": 100,
-    "className": null,
+    "className": "100",
     "name": "測試(不使用)",
     "individuality": "unknown",
     "attackRate": 1000,
@@ -541,7 +541,7 @@
   },
   {
     "id": 1000,
-    "className": null,
+    "className": "1000",
     "name": "OTHER",
     "individuality": "unknown",
     "attackRate": 1000,
@@ -571,7 +571,7 @@
   },
   {
     "id": 1002,
-    "className": null,
+    "className": "1002",
     "name": "EXTRA",
     "individuality": "unknown",
     "attackRate": 1002,
@@ -586,7 +586,7 @@
   },
   {
     "id": 1003,
-    "className": null,
+    "className": "1003",
     "name": "全職階＠支援顯示用",
     "individuality": "unknown",
     "attackRate": 1000,

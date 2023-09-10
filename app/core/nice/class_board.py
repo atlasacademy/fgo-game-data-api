@@ -2,7 +2,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings
 from ...schemas.common import Language, Region
-from ...schemas.enums import CLASS_NAME, SvtClass
+from ...schemas.enums import get_class_name
 from ...schemas.gameenums import (
     CLASS_BOARD_SKILL_TYPE_NAME,
     CLASS_BOARD_SQUARE_FLAG_NAME,
@@ -45,9 +45,7 @@ def get_nice_class_board_class(
 ) -> NiceClassBoardClass:
     return NiceClassBoardClass(
         classId=class_board_class.classId,
-        className=CLASS_NAME.get(
-            class_board_class.classId, SvtClass.atlasUnmappedClass
-        ),
+        className=get_class_name(class_board_class.classId),
         condType=COND_TYPE_NAME[class_board_class.condType],
         condTargetId=class_board_class.condTargetId,
         condNum=class_board_class.condNum,

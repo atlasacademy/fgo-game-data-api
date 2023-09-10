@@ -6,7 +6,7 @@ from typing import Any, Callable, NamedTuple, Union
 from app.config import Settings
 from app.core.utils import get_traits_list
 from app.schemas.common import Region
-from app.schemas.enums import ATTRIBUTE_NAME, CLASS_NAME, TRAIT_NAME, SvtClass, Trait
+from app.schemas.enums import ATTRIBUTE_NAME, TRAIT_NAME, Trait, get_class_name
 from app.schemas.gameenums import (
     AI_COND_CHECK_NAME,
     AI_COND_NAME,
@@ -223,7 +223,7 @@ def get_nice_class(raw_data: Any) -> Any:
     return [
         {
             "id": class_data["id"],
-            "className": CLASS_NAME.get(class_data["id"]),
+            "className": get_class_name(class_data["id"]),
             "name": class_data["name"],
             "individuality": TRAIT_NAME.get(class_data["individuality"], Trait.unknown)
             if class_data["individuality"]
@@ -244,11 +244,8 @@ def get_nice_class(raw_data: Any) -> Any:
 
 def get_nice_attackrate(raw_data: Any) -> Any:
     return {
-        CLASS_NAME.get(class_data["id"], SvtClass.atlasUnmappedClass): class_data[
-            "attackRate"
-        ]
+        get_class_name(class_data["id"]): class_data["attackRate"]
         for class_data in raw_data
-        if class_data["id"] in CLASS_NAME
     }
 
 
@@ -288,8 +285,8 @@ def get_nice_attri_relation(raw_data: Any) -> Any:
 def get_nice_class_relation(raw_data: Any) -> Any:
     out_data: dict[str, dict[str, int]] = {}
     for class_relation in raw_data:
-        atkAttri = CLASS_NAME.get(class_relation["atkClass"])
-        defAttri = CLASS_NAME.get(class_relation["defClass"])
+        atkAttri = get_class_name(class_relation["atkClass"])
+        defAttri = get_class_name(class_relation["defClass"])
         if atkAttri and defAttri:
             attackRate = class_relation["attackRate"]
             if atkAttri in out_data:

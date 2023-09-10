@@ -181,7 +181,7 @@
   },
   {
     "id": 13,
-    "className": null,
+    "className": "13",
     "name": "？",
     "individuality": "classSaber",
     "attackRate": 1000,
@@ -196,7 +196,7 @@
   },
   {
     "id": 14,
-    "className": null,
+    "className": "14",
     "name": "？",
     "individuality": "classArcher",
     "attackRate": 950,
@@ -211,7 +211,7 @@
   },
   {
     "id": 15,
-    "className": null,
+    "className": "15",
     "name": "？",
     "individuality": "classLancer",
     "attackRate": 1050,
@@ -226,7 +226,7 @@
   },
   {
     "id": 16,
-    "className": null,
+    "className": "16",
     "name": "？",
     "individuality": "classRider",
     "attackRate": 1000,
@@ -256,7 +256,7 @@
   },
   {
     "id": 18,
-    "className": null,
+    "className": "18",
     "name": "？",
     "individuality": "classAssassin",
     "attackRate": 900,
@@ -271,7 +271,7 @@
   },
   {
     "id": 19,
-    "className": null,
+    "className": "19",
     "name": "？",
     "individuality": "classBerserker",
     "attackRate": 1100,
@@ -528,7 +528,7 @@
     "id": 36,
     "className": "uOlgaMarieFlare",
     "name": "？？？",
-    "individuality": "unknown",
+    "individuality": "classUOlgaMarieFlare",
     "attackRate": 1000,
     "imageId": 9999,
     "iconImageId": 31,
@@ -556,7 +556,7 @@
   },
   {
     "id": 98,
-    "className": null,
+    "className": "98",
     "name": "？",
     "individuality": "unknown",
     "attackRate": 1000,
@@ -571,7 +571,7 @@
   },
   {
     "id": 99,
-    "className": null,
+    "className": "99",
     "name": "？",
     "individuality": "unknown",
     "attackRate": 1000,
@@ -586,7 +586,7 @@
   },
   {
     "id": 100,
-    "className": null,
+    "className": "100",
     "name": "？",
     "individuality": "unknown",
     "attackRate": 1000,
@@ -646,7 +646,7 @@
   },
   {
     "id": 1000,
-    "className": null,
+    "className": "1000",
     "name": "OTHER",
     "individuality": "unknown",
     "attackRate": 1000,
@@ -676,7 +676,7 @@
   },
   {
     "id": 1002,
-    "className": null,
+    "className": "1002",
     "name": "EXTRA",
     "individuality": "unknown",
     "attackRate": 1002,
@@ -691,7 +691,7 @@
   },
   {
     "id": 1003,
-    "className": null,
+    "className": "1003",
     "name": "？",
     "individuality": "unknown",
     "attackRate": 1000,
@@ -706,7 +706,7 @@
   },
   {
     "id": 1004,
-    "className": null,
+    "className": "1004",
     "name": "EXTRAⅠ",
     "individuality": "unknown",
     "attackRate": 1000,
@@ -721,7 +721,7 @@
   },
   {
     "id": 1005,
-    "className": null,
+    "className": "1005",
     "name": "EXTRAⅡ",
     "individuality": "unknown",
     "attackRate": 1000,

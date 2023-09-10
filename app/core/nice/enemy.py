@@ -10,11 +10,10 @@ from ...schemas.basic import BasicServant
 from ...schemas.common import Language, Region
 from ...schemas.enums import (
     ATTRIBUTE_NAME,
-    CLASS_NAME,
     ENEMY_DEATH_TYPE_NAME,
     ENEMY_ROLE_TYPE_NAME,
     EnemyRoleType,
-    SvtClass,
+    get_class_name,
 )
 from ...schemas.gameenums import GIFT_TYPE_NAME
 from ...schemas.nice import (
@@ -245,9 +244,7 @@ def get_quest_enemy(
 
     if user_svt.npcSvtClassId != 0:
         basic_svt.classId = user_svt.npcSvtClassId
-        basic_svt.className = CLASS_NAME.get(
-            user_svt.npcSvtClassId, SvtClass.atlasUnmappedClass
-        )
+        basic_svt.className = get_class_name(user_svt.npcSvtClassId)
     if (
         deck_svt.enemyScript and "changeAttri" in deck_svt.enemyScript
     ):  # pragma: no cover

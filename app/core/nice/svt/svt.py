@@ -8,12 +8,11 @@ from ....data.custom_mappings import TRIAL_QUESTS
 from ....schemas.common import Language, NiceCostume, Region
 from ....schemas.enums import (
     ATTRIBUTE_NAME,
-    CLASS_NAME,
     SERVANT_PERSONALITY_NAME,
     SERVANT_POLICY_NAME,
     ServantPersonality,
     ServantPolicy,
-    SvtClass,
+    get_class_name,
 )
 from ....schemas.gameenums import (
     CARD_TYPE_NAME,
@@ -160,9 +159,7 @@ async def get_nice_servant(
         "gender": GENDER_TYPE_NAME[raw_svt.mstSvt.genderType],
         "attribute": ATTRIBUTE_NAME[raw_svt.mstSvt.attri],
         "classId": raw_svt.mstSvt.classId,
-        "className": CLASS_NAME.get(
-            raw_svt.mstSvt.classId, SvtClass.atlasUnmappedClass
-        ),
+        "className": get_class_name(raw_svt.mstSvt.classId),
         "type": SVT_TYPE_NAME[raw_svt.mstSvt.type],
         "flag": SVT_FLAG_NAME[raw_svt.mstSvt.flag],
         "cost": raw_svt.mstSvt.cost,

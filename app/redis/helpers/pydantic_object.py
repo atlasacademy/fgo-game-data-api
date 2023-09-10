@@ -62,7 +62,7 @@ async def fetch_mstSvtLimit(
         if mstSvtLimit:
             return MstSvtLimit.parse_raw(mstSvtLimit)
 
-    lower_limit_range = range(0, 4) if prefer_lower else range(3, -1, -1)
+    lower_limit_range = range(4) if prefer_lower else range(3, -1, -1)
 
     for i in chain(lower_limit_range, range(4, 100)):
         mstSvtLimit = await redis.hget(redis_key, f"{svt_id}:{i}")

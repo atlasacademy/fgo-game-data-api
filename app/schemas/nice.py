@@ -1191,7 +1191,7 @@ class NiceServant(BaseModelORJson):
         description="untranslated svt's battle name",
     )
     classId: int = Field(..., title="svt's class ID")
-    className: SvtClass = Field(
+    className: SvtClass | str = Field(
         ...,
         title="svt's class",
         description="svt's class. "
@@ -2455,7 +2455,7 @@ class NiceQuestPhaseRestriction(BaseModelORJson):
 
 class NiceQuestPhase(NiceQuest):
     phase: int
-    className: list[SvtClass]
+    className: list[SvtClass | str]
     individuality: list[NiceTrait]
     qp: int
     exp: int
@@ -2661,7 +2661,7 @@ class NiceAiCollection(BaseModelORJson):
 
 class NiceClassBoardClass(BaseModelORJson):
     classId: int
-    className: SvtClass
+    className: SvtClass | str
     condType: NiceCondType
     condTargetId: int
     condNum: int

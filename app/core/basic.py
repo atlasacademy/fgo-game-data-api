@@ -34,10 +34,10 @@ from ..schemas.basic import (
 from ..schemas.common import BuffScript, Language, MCAssets, Region, ReverseDepth
 from ..schemas.enums import (
     ATTRIBUTE_NAME,
-    CLASS_NAME,
     FUNC_APPLYTARGET_NAME,
     FUNC_VALS_NOT_BUFF,
     SvtClass,
+    get_class_name,
 )
 from ..schemas.gameenums import (
     BUFF_CONVERT_LIMIT_TYPE_NAME,
@@ -95,14 +95,14 @@ def get_nice_buff_script(
             MstClassRelationOverwrite.parse_obj(overwrite)
             for overwrite in mstBuff.script["relationOverwrite"]
         ]
-        relationId: dict[str, dict[SvtClass, dict[SvtClass, Any]]] = {
+        relationId: dict[str, dict[SvtClass | str, dict[SvtClass | str, Any]]] = {
             "atkSide": defaultdict(dict),
             "defSide": defaultdict(dict),
         }
         for relation in relationOverwrite:
             side = "atkSide" if relation.atkSide == 1 else "defSide"
-            atkClass = CLASS_NAME.get(relation.atkClass, SvtClass.atlasUnmappedClass)
-            defClass = CLASS_NAME.get(relation.defClass, SvtClass.atlasUnmappedClass)
+            atkClass = get_class_name(relation.atkClass)
+            defClass = get_class_name(relation.defClass)
             relationDetail = {
                 "damageRate": relation.damageRate,
                 "type": CLASS_OVERWRITE_NAME[relation.type],
@@ -427,7 +427,7 @@ async def get_basic_svt(
         "name": mstSvt.name,
         "originalName": mstSvt.name,
         "classId": mstSvt.classId,
-        "className": CLASS_NAME.get(mstSvt.classId, SvtClass.atlasUnmappedClass),
+        "className": get_class_name(mstSvt.classId),
         "attribute": ATTRIBUTE_NAME[mstSvt.attri],
         "rarity": mstSvtLimit.rarity,
         "atkMax": mstSvtLimit.atkMax,

@@ -82,7 +82,7 @@ async def get_nice_td(
         "npSvts": [
             get_nice_td_svt(td_svt, tdEntity.mstSvtTreasureDeviceRelease)
             for td_svt in sorted_svtTd
-            if svtId == -1 or td_svt.svtId == svtId
+            if svtId in (-1, td_svt.svtId)
         ],
     }
 

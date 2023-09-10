@@ -85,8 +85,8 @@ class RelationOverwriteDetail(BaseModel):
 
 
 class NiceBuffRelationOverwrite(BaseModel):
-    atkSide: dict[SvtClass, dict[SvtClass, RelationOverwriteDetail]]
-    defSide: dict[SvtClass, dict[SvtClass, RelationOverwriteDetail]]
+    atkSide: dict[SvtClass | str, dict[SvtClass | str, RelationOverwriteDetail]]
+    defSide: dict[SvtClass | str, dict[SvtClass | str, RelationOverwriteDetail]]
 
 
 class BuffConvertScript(BaseModel):

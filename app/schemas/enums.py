@@ -421,6 +421,13 @@ CLASS_NAME: dict[int, SvtClass] = {
 }
 
 
+def get_class_name(class_id: int) -> SvtClass | str:
+    if class_id in CLASS_NAME:
+        return CLASS_NAME[class_id]
+    else:
+        return str(class_id)
+
+
 CLASS_NAME_REVERSE: dict[SvtClass, int] = {v: k for k, v in CLASS_NAME.items()}
 
 
