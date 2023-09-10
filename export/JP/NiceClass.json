@@ -525,6 +525,21 @@
     "autoSelSupportType": 0
   },
   {
+    "id": 36,
+    "className": "uOlgaMarieFlare",
+    "name": "？？？",
+    "individuality": "unknown",
+    "attackRate": 1000,
+    "imageId": 9999,
+    "iconImageId": 31,
+    "frameId": 31,
+    "priority": 50,
+    "groupType": 2,
+    "relationId": 36,
+    "supportGroup": 999,
+    "autoSelSupportType": 0
+  },
+  {
     "id": 97,
     "className": "unknown",
     "name": "不明",

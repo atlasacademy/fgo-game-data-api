@@ -359,6 +359,7 @@ class SvtClass(StrEnum):
     beast = "beast"
     beastVI = "beastVI"
     beastVIBoss = "beastVIBoss"
+    uOlgaMarieFlare = "uOlgaMarieFlare"
     atlasUnmappedClass = "atlasUnmappedClass"
     # OTHER = "OTHER"
     ALL = "ALL"
@@ -402,6 +403,7 @@ CLASS_NAME: dict[int, SvtClass] = {
     33: SvtClass.beast,
     34: SvtClass.beastVI,
     35: SvtClass.beastVIBoss,
+    36: SvtClass.uOlgaMarieFlare,
     97: SvtClass.unknown,
     # 98
     # 99
@@ -1004,6 +1006,7 @@ class Trait(StrEnum):
     buffStarPerTurn = "buffStarPerTurn"
     burnEffectivenessUp = "burnEffectivenessUp"
     murasamaAscension0 = "murasamaAscension0"
+    classUOlgaMarieFlare = "classUOlgaMarieFlare"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1037,6 +1040,7 @@ TRAIT_NAME: dict[int, Trait] = {
     124: Trait.classBeast,
     125: Trait.classBeastVI,
     126: Trait.classBeastVIBoss,
+    127: Trait.classUOlgaMarieFlare,
     200: Trait.attributeSky,
     201: Trait.attributeEarth,
     202: Trait.attributeHuman,
