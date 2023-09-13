@@ -1558,7 +1558,7 @@
   "へべれけパワー": "Drunken Power",
   "魔力放出（宝石） 発動": "Mana Burst (Gem) Activation",
   "自己回復（魔力）": "Self-Restoration (Magical Energy)",
-  "権能『冥界裁判』": "Authority \"Trials of Kur\"",
+  "権能『冥界裁判』": "Authority \"Judgment of Kur\"",
   "全体石化": "Total Petrification",
   "百獣母胎": "Potnia Theron",
   "謳う": "Extol",
@@ -9514,7 +9514,7 @@
   "「あまたの幻が私を守る。さて、破れますか？」": "\"Many layers of illusions protects me. Now, can you break through them?\"",
   "「幻に気を取られてばかりではダメですよ」": "\"You can't keep getting distracted by the illusions\"",
   "「ここが攻め時ですね」": "\"Now's the time to go on the offensive\"",
-  "〔破幻の書 -翠-〕が光り輝き、幻を打ち破った！": " [Book of Illusion Destruction: Green] Shines Brightly and Broke the Illusion",
+  "〔破幻の書 -翠-〕が光り輝き、幻を打ち破った！": "[Book of Illusion Destruction: Green] Shines Brightly and Broke the Illusion",
   "〔破幻の書 -蒼-〕が光り輝き、幻を打ち破った！": "[Book of Illusion Destruction: Blue] Shines Brightly and Broke the Illusion",
   "〔破幻の書 -朱-〕が光り輝き、幻を打ち破った！": "[Book of Illusion Destruction: Vermillion] Shines Brightly and Broke the Illusion",
   "〔破幻の書 -橙-〕が光り輝き、幻を打ち破った！": "[Book of Illusion Destruction: Orange] Shines Brightly and Broke the Illusion",
@@ -10231,5 +10231,6 @@
   "紅の頁": "Crimson Page",
   "吉兆の煌星": "Twinkling Star of Good Omen",
   "吉兆の星": "Star of Good Omen",
-  "凶兆の星": "Star of Bad Omen"
+  "凶兆の星": "Star of Bad Omen",
+  "天の杯 E": "天の杯 E"
 }
