@@ -20,6 +20,7 @@ from ..core.nice import (
 )
 from ..core.nice.common_release import get_nice_common_releases_from_id
 from ..core.nice.event.event import get_nice_event
+from ..core.nice.event.mission import get_nice_event_mission
 from ..core.nice.event.shop import get_nice_shop_from_raw, get_nice_shops_from_raw
 from ..core.nice.script import get_nice_script_search_result
 from ..db.helpers.cc import get_cc_id
@@ -38,6 +39,7 @@ from ..schemas.nice import (
     NiceEnemyMaster,
     NiceEquip,
     NiceEvent,
+    NiceEventMission,
     NiceGift,
     NiceItem,
     NiceMasterMission,
@@ -712,6 +714,26 @@ async def get_mm(
         return item_response(
             await mm.get_nice_master_mission(conn, region, master_mission_id, lang)
         )
+
+
+@router.get(
+    "/{region}/event-mission/{mission_id}",
+    summary="Get Event Mission data",
+    response_description="Event Mission Entity",
+    response_model=NiceEventMission,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()
+async def get_event_mission(
+    region: Region,
+    mission_id: int,
+) -> Response:
+    """
+    Get the event mission data from the given mission ID
+    """
+    async with get_db(region) as conn:
+        return item_response(await get_nice_event_mission(conn, region, mission_id))
 
 
 @router.get(

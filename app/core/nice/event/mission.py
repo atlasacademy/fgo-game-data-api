@@ -1,3 +1,7 @@
+from collections import defaultdict
+
+from sqlalchemy.ext.asyncio import AsyncConnection
+
 from ....schemas.common import Region
 from ....schemas.enums import DETAIL_MISSION_LINK_TYPE
 from ....schemas.gameenums import (
@@ -15,12 +19,15 @@ from ....schemas.nice import (
     NiceEventRandomMission,
 )
 from ....schemas.raw import (
+    EventMissionEntity,
     MstEventMission,
     MstEventMissionCondition,
     MstEventMissionConditionDetail,
     MstEventMissionGroup,
     MstEventRandomMission,
+    MstGift,
 )
+from ... import raw
 from ...utils import get_traits_list
 from ..gift import GiftData, get_nice_gifts
 
@@ -151,3 +158,29 @@ def get_nice_mission_groups(
         )
         for group_id in group_ids
     ]
+
+
+def get_nice_event_mission_from_raw(
+    region: Region, raw_mission: EventMissionEntity
+) -> NiceEventMission:
+    gift_maps: dict[int, list[MstGift]] = defaultdict(list)
+    for gift in raw_mission.mstGift:
+        gift_maps[gift.id].append(gift)
+
+    return get_nice_mission(
+        region,
+        raw_mission.mstEventMission,
+        raw_mission.mstEventMissionCondition,
+        {detail.id: detail for detail in raw_mission.mstEventMissionConditionDetail},
+        GiftData(raw_mission.mstGiftAdd, gift_maps),
+    )
+
+
+async def get_nice_event_mission(
+    conn: AsyncConnection,
+    region: Region,
+    mission_id: int,
+    mstEventMission: MstEventMission | None = None,
+) -> NiceEventMission:
+    raw_mm = await raw.get_event_mission_entity(conn, mission_id, mstEventMission)
+    return get_nice_event_mission_from_raw(region, raw_mm)

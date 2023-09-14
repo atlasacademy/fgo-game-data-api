@@ -31,6 +31,7 @@ from ..schemas.raw import (
     CommandCodeEntity,
     EnemyMasterEntity,
     EventEntity,
+    EventMissionEntity,
     FunctionEntity,
     FunctionEntityNoReverse,
     ItemEntity,
@@ -786,6 +787,44 @@ def get_quest_ids_in_conds(
     return quest_ids
 
 
+async def get_event_mission_entity(
+    conn: AsyncConnection,
+    mission_id: int,
+    mstEventMission: MstEventMission | None = None,
+):
+    if not mstEventMission:
+        mstEventMission = await fetch.get_one(conn, MstEventMission, mission_id)
+    if not mstEventMission:
+        raise HTTPException(status_code=404, detail="Event mission not found")
+
+    conds = await fetch.get_all_multiple(conn, MstEventMissionCondition, [mission_id])
+    cond_detail_ids = [
+        target_id
+        for cond in conds
+        if cond.condType == CondType.MISSION_CONDITION_DETAIL
+        for target_id in cond.targetIds
+    ]
+
+    cond_details = await fetch.get_all_multiple(
+        conn, MstEventMissionConditionDetail, cond_detail_ids
+    )
+
+    gift_ids = {mstEventMission.giftId}
+
+    gift_adds = await fetch.get_all_multiple(conn, MstGiftAdd, gift_ids)
+    replacement_gift_ids = {gift.priorGiftId for gift in gift_adds}
+
+    gifts = await fetch.get_all_multiple(conn, MstGift, gift_ids | replacement_gift_ids)
+
+    return EventMissionEntity(
+        mstEventMission=mstEventMission,
+        mstEventMissionCondition=conds,
+        mstEventMissionConditionDetail=cond_details,
+        mstGift=gifts,
+        mstGiftAdd=gift_adds,
+    )
+
+
 async def get_master_mission_entity(
     conn: AsyncConnection,
     mm_id: int,
@@ -794,7 +833,7 @@ async def get_master_mission_entity(
     if not mstMasterMission:
         mstMasterMission = await fetch.get_one(conn, MstMasterMission, mm_id)
     if not mstMasterMission:
-        raise HTTPException(status_code=404, detail="Master missions not found")
+        raise HTTPException(status_code=404, detail="Master mission not found")
 
     missions = await fetch.get_all(conn, MstEventMission, mm_id)
     mission_ids = [mission.id for mission in missions]

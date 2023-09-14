@@ -252,6 +252,7 @@ schema_map_fetch_one: dict[  # type:ignore
     MstBgm: (mstBgm, mstBgm.c.id),
     MstShop: (mstShop, mstShop.c.id),
     MstShopScript: (mstShopScript, mstShopScript.c.shopId),
+    MstEventMission: (mstEventMission, mstEventMission.c.id),
     MstMasterMission: (mstMasterMission, mstMasterMission.c.id),
     MstSvtExtra: (mstSvtExtra, mstSvtExtra.c.svtId),
     MstSvtCoin: (mstSvtCoin, mstSvtCoin.c.svtId),

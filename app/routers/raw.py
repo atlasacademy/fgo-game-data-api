@@ -16,6 +16,7 @@ from ..schemas.raw import (
     CommandCodeEntity,
     EnemyMasterEntity,
     EventEntity,
+    EventMissionEntity,
     FunctionEntity,
     ItemEntity,
     MasterMissionEntity,
@@ -585,6 +586,23 @@ async def get_item(region: Region, item_id: int) -> Response:
     """
     async with get_db(region) as conn:
         return item_response(await raw.get_item_entity(conn, item_id))
+
+
+@router.get(
+    "/{region}/event-mission/{mission_id}",
+    summary="Get Event Mission data",
+    response_description="Event Mission Entity",
+    response_model=EventMissionEntity,
+    response_model_exclude_unset=True,
+    responses=get_error_code([404]),
+)
+@cache()
+async def get_event_mission(region: Region, mission_id: int) -> Response:
+    """
+    Get the event mission data from the given mission ID
+    """
+    async with get_db(region) as conn:
+        return item_response(await raw.get_event_mission_entity(conn, mission_id))
 
 
 @router.get(

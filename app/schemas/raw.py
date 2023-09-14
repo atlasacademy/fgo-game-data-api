@@ -2117,6 +2117,14 @@ class ShopEntity(BaseModelORJson):
     mstCommonConsume: list[MstCommonConsume]
 
 
+class EventMissionEntity(BaseModelORJson):
+    mstEventMission: MstEventMission
+    mstEventMissionCondition: list[MstEventMissionCondition]
+    mstEventMissionConditionDetail: list[MstEventMissionConditionDetail]
+    mstGift: list[MstGift]
+    mstGiftAdd: list[MstGiftAdd]
+
+
 class MasterMissionEntity(BaseModelORJson):
     mstMasterMission: MstMasterMission
     mstEventMission: list[MstEventMission]
