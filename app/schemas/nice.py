@@ -2434,6 +2434,7 @@ class NiceQuestPhaseExtraDetail(BaseModelORJson):
     aiNpc: NiceQuestPhaseAiNpc | None = None
     aiMultiNpc: list[NiceQuestPhaseAiNpc] | None = None
     overwriteEquipSkills: NiceQuestPhaseOverwriteEquipSkills | None = None
+    waveSetup: int | None = None  # U Olga Marie Quest
 
 
 class NiceRestriction(BaseModelORJson):

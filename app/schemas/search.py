@@ -86,7 +86,7 @@ class ServantSearchQueryParams:
         - **trait**: an integer or an item in the `trait` enum. See the traits detail in the Nice Servant response.
         - **notTrait**: an integer or an item in the `trait` enum. The result entities won't have any of the traits
         in the list.
-        - **voiceCondValue**: servant `collectionNo` or servant `ID`. Will find the servants that
+        - **voiceCondSvt**: servant `collectionNo` or servant `ID`. Will find the servants that
         have voice lines directed to the given servants.
         - **profileContains**: string. Will search the servant's profile comments for the string.
 
