@@ -7,7 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncConnection
 
 from ...config import Settings, logger
 from ...db.helpers import fetch
-from ...schemas.common import Region
+from ...schemas.common import Language, Region
 from ...schemas.enums import FUNC_APPLYTARGET_NAME, FUNC_VALS_NOT_BUFF
 from ...schemas.gameenums import FUNC_TARGETTYPE_NAME, FUNC_TYPE_NAME, FuncType
 from ...schemas.nice import AssetURL, NiceFuncGroup
@@ -292,6 +292,7 @@ async def get_nice_function(
     conn: AsyncConnection,
     region: Region,
     function: FunctionEntityNoReverse,
+    lang: Language,
     svals: Optional[list[str]] = None,
     svals2: Optional[list[str]] = None,
     svals3: Optional[list[str]] = None,
@@ -312,7 +313,7 @@ async def get_nice_function(
             for func_group in function.mstFuncGroup
         ],
         "buffs": [
-            get_nice_buff(buff, region) for buff in function.mstFunc.expandedVals
+            get_nice_buff(buff, region, lang) for buff in function.mstFunc.expandedVals
         ],
     }
 

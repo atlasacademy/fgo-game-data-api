@@ -87,7 +87,7 @@ async def get_nice_buff_with_reverse(
     mstBuff: Optional[MstBuff] = None,
 ) -> NiceBuffReverse:
     raw_buff = await raw.get_buff_entity_no_reverse(conn, buff_id, mstBuff)
-    nice_buff = NiceBuffReverse.parse_obj(get_nice_buff(raw_buff, region))
+    nice_buff = NiceBuffReverse.parse_obj(get_nice_buff(raw_buff, region, lang))
     if reverse and reverseDepth >= ReverseDepth.function:
         func_ids = await get_reverse_ids(
             redis, region, RedisReverse.BUFF_TO_FUNC, buff_id
@@ -128,7 +128,7 @@ async def get_nice_func_with_reverse(
 ) -> NiceBaseFunctionReverse:
     raw_func = await raw.get_func_entity_no_reverse(conn, func_id, True, mstFunc)
     nice_func = NiceBaseFunctionReverse.parse_obj(
-        await get_nice_function(conn, region, raw_func)
+        await get_nice_function(conn, region, raw_func, lang)
     )
 
     if reverse and reverseDepth >= ReverseDepth.skillNp:

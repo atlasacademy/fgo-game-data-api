@@ -126,6 +126,7 @@ async def get_nice_td(
                 conn,
                 region,
                 function,
+                lang,
                 svals=[
                     skill_lv.svals[funci] for skill_lv in tdEntity.mstTreasureDeviceLv
                 ],

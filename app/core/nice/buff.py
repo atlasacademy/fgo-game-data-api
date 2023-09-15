@@ -1,21 +1,24 @@
 from typing import Any
 
 from ...config import Settings
-from ...schemas.common import Region
+from ...schemas.common import Language, Region
 from ...schemas.gameenums import BUFF_TYPE_NAME
 from ...schemas.nice import AssetURL
 from ...schemas.raw import BuffEntityNoReverse
 from ..basic import get_nice_buff_script
-from ..utils import get_traits_list
+from ..utils import get_traits_list, get_translation
 
 
 settings = Settings()
 
 
-def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> dict[str, Any]:
+def get_nice_buff(
+    buffEntity: BuffEntityNoReverse, region: Region, lang: Language
+) -> dict[str, Any]:
     nice_buff: dict[str, Any] = {
         "id": buffEntity.mstBuff.id,
-        "name": buffEntity.mstBuff.name,
+        "name": get_translation(lang, buffEntity.mstBuff.name),
+        "originalName": buffEntity.mstBuff.name,
         "detail": buffEntity.mstBuff.detail,
         "type": BUFF_TYPE_NAME[buffEntity.mstBuff.type],
         "buffGroup": buffEntity.mstBuff.buffGroup,
@@ -34,7 +37,7 @@ def get_nice_buff(buffEntity: BuffEntityNoReverse, region: Region) -> dict[str, 
 
     script = get_nice_buff_script(
         buffEntity.mstBuff,
-        lambda buff: get_nice_buff(BuffEntityNoReverse(mstBuff=buff), region),
+        lambda buff: get_nice_buff(BuffEntityNoReverse(mstBuff=buff), region, lang),
     )
 
     nice_buff["script"] = script

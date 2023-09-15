@@ -791,7 +791,7 @@ async def get_event_mission_entity(
     conn: AsyncConnection,
     mission_id: int,
     mstEventMission: MstEventMission | None = None,
-):
+) -> EventMissionEntity:
     if not mstEventMission:
         mstEventMission = await fetch.get_one(conn, MstEventMission, mission_id)
     if not mstEventMission:

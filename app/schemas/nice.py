@@ -408,6 +408,7 @@ class NiceCommonRelease(BaseModelORJson):
 class NiceBuff(BaseModelORJson):
     id: int = Field(..., title="Buff ID", description="Buff ID.")
     name: str = Field(..., title="Buff name", description="Buff name.")
+    originalName: str
     detail: str = Field(
         ..., title="Buff detailed description", description="Buff detailed description."
     )

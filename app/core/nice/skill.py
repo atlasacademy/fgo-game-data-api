@@ -206,6 +206,7 @@ async def get_nice_skill_with_svt(
                 conn,
                 region,
                 function,
+                lang,
                 svals=[skill_lv.svals[funci] for skill_lv in skillEntity.mstSkillLv],
                 followerVals=followerVals,
             )
@@ -241,7 +242,7 @@ async def get_nice_skill_with_svt(
                     "detail": strip_formatting_brackets(overwrite_detail.detail),
                     "unmodifiedDetail": overwrite_detail.detail,
                     "functions": [
-                        await get_nice_function(conn, region, function, [svals])
+                        await get_nice_function(conn, region, function, lang, [svals])
                         for function, svals in zip(
                             overwrite.expandedFuncId
                             if overwrite.expandedFuncId

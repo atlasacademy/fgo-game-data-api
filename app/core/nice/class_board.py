@@ -56,6 +56,7 @@ async def get_nice_class_board_command_spell(
     conn: AsyncConnection,
     region: Region,
     class_board_css: list[MstClassBoardCommandSpell],
+    lang: Language,
 ) -> NiceClassBoardCommandSpell:
     functions: list[NiceFunction] = []
     for funci, function in enumerate(class_board_css[0].expandedFuncId):
@@ -64,6 +65,7 @@ async def get_nice_class_board_command_spell(
                 conn,
                 region,
                 function,
+                lang,
                 svals=[
                     cs.svals[funci] for cs in class_board_css if cs.commandSpellId == 1
                 ],
@@ -123,7 +125,7 @@ async def get_nice_class_board_square(
     target_cs = [cs for cs in class_command_spells if cs.id == square.targetId]
     if square.skillType == ClassBoardSkillType.COMMAND_SPELL and target_cs:
         command_spell = await get_nice_class_board_command_spell(
-            conn, region, target_cs
+            conn, region, target_cs, lang
         )
     else:
         command_spell = None

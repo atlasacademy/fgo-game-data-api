@@ -24,6 +24,7 @@ from .gameenums import (
 class BasicBuff(BaseModelORJson):
     id: int
     name: str
+    originalName: str
     icon: HttpUrl
     type: NiceBuffType
     script: BuffScript

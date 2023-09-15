@@ -171,10 +171,13 @@ def get_nice_buff_script(
     return script
 
 
-def get_basic_buff_no_reverse(mstBuff: MstBuff, region: Region) -> BasicBuffReverse:
+def get_basic_buff_no_reverse(
+    mstBuff: MstBuff, region: Region, lang: Language
+) -> BasicBuffReverse:
     return BasicBuffReverse(
         id=mstBuff.id,
-        name=mstBuff.name,
+        name=get_translation(lang, mstBuff.name),
+        originalName=mstBuff.name,
         icon=fmt_url(
             AssetURL.buffIcon,
             base_url=settings.asset_url,
@@ -185,7 +188,9 @@ def get_basic_buff_no_reverse(mstBuff: MstBuff, region: Region) -> BasicBuffReve
         script=BuffScript.parse_obj(
             get_nice_buff_script(
                 mstBuff,
-                lambda buff: get_basic_buff_no_reverse(MstBuff.parse_obj(buff), region),
+                lambda buff: get_basic_buff_no_reverse(
+                    MstBuff.parse_obj(buff), region, lang
+                ),
             )
         ),
         vals=get_traits_list(mstBuff.vals),
@@ -203,7 +208,7 @@ async def get_basic_buff_from_raw(
     reverse: bool = False,
     reverseDepth: ReverseDepth = ReverseDepth.function,
 ) -> BasicBuffReverse:
-    basic_buff = get_basic_buff_no_reverse(mstBuff, region)
+    basic_buff = get_basic_buff_no_reverse(mstBuff, region, lang)
     if reverse and reverseDepth >= ReverseDepth.function:
         func_ids = await get_reverse_ids(
             redis, region, RedisReverse.BUFF_TO_FUNC, mstBuff.id
