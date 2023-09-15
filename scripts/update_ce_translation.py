@@ -16,13 +16,18 @@ TRANSLATION_FILES = (
     "voice_names",
     "overwrite_voice_names",
     "bgm_names",
+    "support_servant_names",
+    "entity_names",
+    "quest_names",
+    "buff_names",
+    "spot_names",
+    "enemy_names",
     "skill_names",
     "np_names",
     "event_names",
     "war_names",
-    "entity_names",
-    "quest_names",
-    "spot_names",
+    "war_short_names",
+    "item_names",
     "illustrator_names",
     "cv_names",
     "servant_names",
@@ -388,6 +393,10 @@ def main(jp_master: Path, na_master: Path) -> None:
     update_translation(
         "np_names", jp_master, na_master, "mstTreasureDevice", get_np_names
     )
+    update_translation(
+        "support_servant_names", jp_master, na_master, "npcSvtFollower", get_names
+    )
+    update_translation("buff_names", jp_master, na_master, "mstBuff", get_names)
     update_translation("event_names", jp_master, na_master, "mstEvent", get_names)
     update_translation("war_names", jp_master, na_master, "mstWar", get_war_names)
     update_translation("war_short_names", jp_master, na_master, "mstWar", get_names)

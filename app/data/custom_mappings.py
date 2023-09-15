@@ -19,6 +19,7 @@ class Translation(StrEnum):
     SUPPORT_SERVANT = "support_servant_names"
     ENTITY = "entity_names"
     QUEST = "quest_names"
+    BUFF = "buff_names"
     SPOT = "spot_names"
     ENEMY = "enemy_names"
     SKILL = "skill_names"
