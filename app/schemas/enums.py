@@ -1014,6 +1014,7 @@ class Trait(StrEnum):
     burnEffectivenessUp = "burnEffectivenessUp"
     murasamaAscension0 = "murasamaAscension0"
     classUOlgaMarieFlare = "classUOlgaMarieFlare"
+    elementalsWrath = "elementalsWrath"
 
 
 TRAIT_NAME: dict[int, Trait] = {
@@ -1204,6 +1205,7 @@ TRAIT_NAME: dict[int, Trait] = {
     2876: Trait.caitCuCerpriestessAscension3To4,
     2878: Trait.fieldAir,
     2879: Trait.caitCuCerpriestessOnTheField,
+    2880: Trait.elementalsWrath,
     # 2xxx: CQ or Story quests buff
     3000: Trait.attackPhysical,  # Normal attack, including NP
     3001: Trait.attackProjectile,
