@@ -377,6 +377,7 @@ class BaseVals(BaseModel):
     TriggeredFuncPositionAll: int | None = None
     TriggeredTargetHpRange: str | None = None
     TriggeredTargetHpRateRange: str | None = None
+    ExcludeUnSubStateIndiv: int | None = None
     # Extra dataval from SkillLvEntty.DIC_KEY_APPLY_SUPPORT_SVT
     ApplySupportSvt: Optional[int] = None
     # These are not DataVals but guesses from SkillLvEntity and EventDropUpValInfo

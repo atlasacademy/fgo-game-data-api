@@ -613,6 +613,7 @@ export enum NiceDataValsType {
     TriggeredFuncPositionAll = "triggeredfuncpositionall",
     TriggeredTargetHpRange = "triggeredtargethprange",
     TriggeredTargetHpRateRange = "triggeredtargethpraterange",
+    ExcludeUnSubStateIndiv = "excludeunsubstateindiv",
 }
 
 export enum NiceClassRelationOverwriteType {
@@ -1367,6 +1368,9 @@ export enum NiceAiCond {
     COUNT_PLAYER_SKILL_HIGHER_INCLUDE_MASTER_SKILL = "countPlayerSkillHigherIncludeMasterSkill",
     COUNT_PLAYER_SKILL_LOWER_INCLUDE_MASTER_SKILL = "countPlayerSkillLowerIncludeMasterSkill",
     COUNT_PLAYER_SKILL_EQUAL_INCLUDE_MASTER_SKILL = "countPlayerSkillEqualIncludeMasterSkill",
+    TOTAL_TURN_HIGHER = "totalTurnHigher",
+    TOTAL_TURN_LOWER = "totalTurnLower",
+    TOTAL_TURN_EQUAL = "totalTurnEqual",
 }
 
 export enum NiceAiActType {
@@ -1552,6 +1556,7 @@ export enum NiceAiCondParameter {
     COUNT_PLAYER_NP = "countPlayerNp",
     COUNT_PLAYER_SKILL = "countPlayerSkill",
     COUNT_PLAYER_SKILL_INCLUDE_MASTER_SKILL = "countPlayerSkillIncludeMasterSkill",
+    TOTAL_TURN = "totalTurn",
 }
 
 export enum NiceAiCondRefine {

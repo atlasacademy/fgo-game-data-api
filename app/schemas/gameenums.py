@@ -1589,6 +1589,7 @@ class DataValsType(IntEnum):
     TriggeredFuncPositionAll = 137
     TriggeredTargetHpRange = 138
     TriggeredTargetHpRateRange = 139
+    ExcludeUnSubStateIndiv = 140
 
 
 class ClassRelationOverwriteType(IntEnum):
@@ -3593,6 +3594,9 @@ class AiCond(IntEnum):
     COUNT_PLAYER_SKILL_HIGHER_INCLUDE_MASTER_SKILL = 188
     COUNT_PLAYER_SKILL_LOWER_INCLUDE_MASTER_SKILL = 189
     COUNT_PLAYER_SKILL_EQUAL_INCLUDE_MASTER_SKILL = 190
+    TOTAL_TURN_HIGHER = 191
+    TOTAL_TURN_LOWER = 192
+    TOTAL_TURN_EQUAL = 193
 
 
 class NiceAiCond(StrEnum):
@@ -3765,6 +3769,9 @@ class NiceAiCond(StrEnum):
     )
     countPlayerSkillLowerIncludeMasterSkill = "countPlayerSkillLowerIncludeMasterSkill"
     countPlayerSkillEqualIncludeMasterSkill = "countPlayerSkillEqualIncludeMasterSkill"
+    totalTurnHigher = "totalTurnHigher"
+    totalTurnLower = "totalTurnLower"
+    totalTurnEqual = "totalTurnEqual"
 
 
 AI_COND_NAME: dict[int, NiceAiCond] = {
@@ -3919,6 +3926,9 @@ AI_COND_NAME: dict[int, NiceAiCond] = {
     188: NiceAiCond.countPlayerSkillHigherIncludeMasterSkill,
     189: NiceAiCond.countPlayerSkillLowerIncludeMasterSkill,
     190: NiceAiCond.countPlayerSkillEqualIncludeMasterSkill,
+    191: NiceAiCond.totalTurnHigher,
+    192: NiceAiCond.totalTurnLower,
+    193: NiceAiCond.totalTurnEqual,
 }
 
 
@@ -4426,6 +4436,7 @@ class AiCondParameter(IntEnum):
     COUNT_PLAYER_NP = 36
     COUNT_PLAYER_SKILL = 37
     COUNT_PLAYER_SKILL_INCLUDE_MASTER_SKILL = 38
+    TOTAL_TURN = 39
 
 
 class NiceAiCondParameter(StrEnum):
@@ -4470,6 +4481,7 @@ class NiceAiCondParameter(StrEnum):
     countPlayerNp = "countPlayerNp"
     countPlayerSkill = "countPlayerSkill"
     countPlayerSkillIncludeMasterSkill = "countPlayerSkillIncludeMasterSkill"
+    totalTurn = "totalTurn"
 
 
 AI_COND_PARAMETER_NAME: dict[int, NiceAiCondParameter] = {
@@ -4512,6 +4524,7 @@ AI_COND_PARAMETER_NAME: dict[int, NiceAiCondParameter] = {
     36: NiceAiCondParameter.countPlayerNp,
     37: NiceAiCondParameter.countPlayerSkill,
     38: NiceAiCondParameter.countPlayerSkillIncludeMasterSkill,
+    39: NiceAiCondParameter.totalTurn,
 }
 
 
